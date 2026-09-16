@@ -34,7 +34,19 @@ pnpm build          # what the Build job runs
 CI=1 pnpm e2e       # needs a build first; set PORT=3100 if 3000 is busy
 ```
 
-`pnpm check` before every push. The `pre-push` hook runs `typecheck`; the
+`pnpm check` before every push.
+
+**Green locally, red in CI? Clear generated state first.** CI starts with no
+`.next/`, and type-aware lint depends on route types Next generates there
+(`next/root-params` is `any` without them). A leftover `.next/` from an earlier
+local build hides that class of failure completely:
+
+```bash
+rm -rf .next next-env.d.ts && pnpm check
+```
+
+`lint`, `lint:fix` and `typecheck` run `next typegen` first for exactly this
+reason — don't remove it from the scripts. The `pre-push` hook runs `typecheck`; the
 `pre-commit` hook runs lint-staged on changed files only. Hooks are a fast
 filter, not a substitute for CI.
 

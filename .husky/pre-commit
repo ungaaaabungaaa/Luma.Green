@@ -1,3 +1,7 @@
 # Fast gate: only what changed, and only what's cheap.
 # The full lint/typecheck/test/build matrix runs in CI.
+#
+# Type-aware lint needs Next's generated route types (.next/types). They don't
+# exist on a fresh clone until something generates them, so do it here (<1s).
+pnpm typegen
 pnpm exec lint-staged

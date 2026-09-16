@@ -183,6 +183,10 @@ What it enforces, beyond the obvious:
 - **Import order** is auto-fixed; never hand-sort.
 - `sonarjs` and `unicorn` on top for bug patterns and dead code.
 
+Lint and typecheck run `next typegen` first: route and root-param types are
+generated into `.next/types`, and without them type-aware rules see `any` and
+fail — on a fresh clone and in CI, but never on a machine with a stale `.next/`.
+
 `pnpm lint:fix` handles most of it. Relaxations are scoped and commented —
 vendored `src/components/ui/**`, the Convex validator DSL, tests, e2e, and root
 config files each get a narrow override. If you need a new one, scope it to a
