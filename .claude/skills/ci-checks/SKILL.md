@@ -84,15 +84,33 @@ a fixture or a mock instead.
 
 ## Branch protection
 
-`main` requires: Lint, Format, Typecheck, Unit tests, Build (and E2E when it
-runs), plus one approving review. Configure in GitHub → Settings → Branches.
-Direct pushes to `main` are off — everything lands through a PR.
+`main` is protected (GitHub → Settings → Branches):
+
+- **Required checks:** Lint, Format, Typecheck, Unit tests, Build — pinned to
+  the GitHub Actions app so nothing else can report them green.
+- **PR required, zero approvals.** The team is one person and GitHub doesn't let
+  you approve your own PR, so the author merges once checks are green. When a
+  second developer joins, raise required approvals to 1.
+- **Enforced for admins.** No direct pushes to `main` from anyone — including
+  the owner's token, which is what agents push with.
+- **Merged branches auto-delete**, so `main` stays the only long-lived branch.
+
+**E2E is deliberately not required.** It is path-filtered, and a required check
+that doesn't run never reports — the PR would sit blocked forever.
+
+**Never add `paths:`/`paths-ignore:` to `ci.yml`.** Its five jobs are required
+checks; filtering them out of a docs-only PR blocks that PR permanently. Path
+filters belong only in workflows that are _not_ required, like `e2e.yml`.
 
 ## Adding a check
 
 1. Add the script to `package.json` so it runs identically locally.
-2. Add the job to `ci.yml` with `timeout-minutes` and a `paths:` filter if it's
-   slow.
+2. Decide if it must block merges.
+   - **Yes:** add a job to `ci.yml` with `timeout-minutes` and **no path
+     filter**, then add its exact job name to the required checks.
+   - **No, and it's slow:** give it its own workflow with a `paths:` filter, like
+     `e2e.yml`, and do not make it required.
 3. Prove it fails: push a commit that breaks it, confirm the red X, revert.
    A check that has never failed is a check you cannot trust.
-4. Add it to the branch protection required list.
+4. If required: add the job name to branch protection. The name must match the
+   job's `name:` exactly — a typo is a check that never reports.

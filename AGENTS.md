@@ -120,6 +120,11 @@ Scopes: `app ui i18n convex auth inventory trade carbon seo ci deps docs test mo
 
 **Branches**: `feat/short-slug`, `fix/short-slug`, `chore/short-slug`.
 
+**`main` is protected.** Every change — including an agent's — lands through a
+PR with the five required checks green. Never try to push to `main` directly; it
+will be rejected. The author merges their own PR (solo team, zero approvals), and
+merged branches delete themselves.
+
 **Server vs client**: components are server components unless they need state,
 effects or browser APIs. Push `"use client"` as far down the tree as possible —
 a client boundary at the layout level pulls the whole page into the bundle.

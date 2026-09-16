@@ -53,17 +53,17 @@ Legend: **✅ in repo** (code is here, no account needed) · **🔑 needs accoun
 
 ## Operations
 
-| Item                        | Status     | Notes                                              |
-| --------------------------- | ---------- | -------------------------------------------------- |
-| GitHub Actions CI           | ✅ in repo | 5 checks + E2E on app changes                      |
-| Branch protection on `main` | 🔑         | Configure in GitHub Settings → Branches            |
-| Dependabot                  | ✅ in repo | Grouped weekly npm, monthly actions                |
-| Playwright                  | ✅ in repo | Chromium, PR-only                                  |
-| Vitest                      | ✅ in repo | Unit + i18n parity                                 |
-| Husky + lint-staged         | ✅ in repo | pre-commit, commit-msg, pre-push                   |
-| Uptime monitoring           | ⬜         | UptimeRobot or Better Stack, once there's a URL    |
-| Status page                 | ⬜         | After launch                                       |
-| Backups                     | ⬜         | Convex export → R2, weekly; test a restore monthly |
+| Item                        | Status     | Notes                                                |
+| --------------------------- | ---------- | ---------------------------------------------------- |
+| GitHub Actions CI           | ✅ in repo | 5 checks + E2E on app changes                        |
+| Branch protection on `main` | ✅         | 5 required checks, PR-only (admins too), 0 approvals |
+| Dependabot                  | ✅ in repo | Grouped weekly npm, monthly actions                  |
+| Playwright                  | ✅ in repo | Chromium, PR-only                                    |
+| Vitest                      | ✅ in repo | Unit + i18n parity                                   |
+| Husky + lint-staged         | ✅ in repo | pre-commit, commit-msg, pre-push                     |
+| Uptime monitoring           | ⬜         | UptimeRobot or Better Stack, once there's a URL      |
+| Status page                 | ⬜         | After launch                                         |
+| Backups                     | ⬜         | Convex export → R2, weekly; test a restore monthly   |
 
 ## Setup order (what to do next)
 
@@ -71,7 +71,8 @@ Legend: **✅ in repo** (code is here, no account needed) · **🔑 needs accoun
 2. **Vercel** — import the repo, set the build command to
    `pnpm convex:deploy --cmd 'pnpm build'`, add env vars, confirm the preview
    builds.
-3. **Branch protection** — require the five checks + one review.
+3. ~~**Branch protection**~~ — done. Raise approvals to 1 when a second
+   developer joins.
 4. **CodeRabbit** — install the app on the repo.
 5. **Sentry + PostHog** — 10 minutes each, and they pay for themselves the first
    time something breaks in production.

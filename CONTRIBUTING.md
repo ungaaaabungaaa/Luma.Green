@@ -20,7 +20,8 @@ pnpm dev
 2. Write the change **and its tests** together.
 3. `pnpm check` and `pnpm build` before pushing.
 4. Open a PR, fill in the template, attach screenshots for visible changes.
-5. Get CodeRabbit's pass and a human approval; keep every check green.
+5. Address CodeRabbit's comments and keep every check green. No approval is
+   needed while the team is one person — merge your own PR once it's green.
 6. Squash-merge with a Conventional Commit title.
 
 ## Commit messages

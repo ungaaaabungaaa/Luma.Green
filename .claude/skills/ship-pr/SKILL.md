@@ -64,8 +64,12 @@ reviews.
 comments as a colleague's: fix what's right, reply with reasoning where it's
 wrong, don't silently ignore.
 
-A human approval is still required. Address every comment — resolve it with a
-commit or a reply, never by closing the thread.
+No approval is required while the team is one person — the author merges once
+checks are green (GitHub doesn't allow approving your own PR). That makes the
+review step _yours_ to take seriously: read the diff on GitHub before merging,
+and address every CodeRabbit comment — resolve it with a commit or a reply,
+never by closing the thread. Required approvals go to 1 when a second developer
+joins.
 
 ## Checks
 
