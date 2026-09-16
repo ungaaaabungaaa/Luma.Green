@@ -13,13 +13,13 @@ merged and never overridden.** If a check is wrong, fix the check in its own PR.
 `.github/workflows/ci.yml` — five small, independent jobs. They are split so a
 red X names the problem before you open the log:
 
-| Job          | Command                 | Fails when                                 |
-| ------------ | ----------------------- | ------------------------------------------ |
-| `Lint`       | `npm run lint`          | ESLint error — incl. locale-unsafe imports |
-| `Format`     | `npm run format:check`  | Prettier would reformat a file             |
-| `Typecheck`  | `npm run typecheck`     | `tsc --noEmit` error                       |
-| `Unit tests` | `npm run test:coverage` | A Vitest test fails                        |
-| `Build`      | `npm run build`         | `next build` fails for any locale          |
+| Job          | Command              | Fails when                                       |
+| ------------ | -------------------- | ------------------------------------------------ |
+| `Lint`       | `pnpm lint`          | ESLint error — type-aware, so it is the slow one |
+| `Format`     | `pnpm format:check`  | Prettier would reformat a file                   |
+| `Typecheck`  | `pnpm typecheck`     | `tsc --noEmit` error                             |
+| `Unit tests` | `pnpm test:coverage` | A Vitest test fails                              |
+| `Build`      | `pnpm build`         | `next build` fails for any locale                |
 
 `.github/workflows/e2e.yml` — Playwright, **PRs only**, and only when `src/`,
 `e2e/`, `messages/`, `public/`, or a relevant config changed. It is the
@@ -28,13 +28,13 @@ expensive one (browser + build + run), so it is deliberately not on every push.
 ## Reproduce locally
 
 ```bash
-npm run check          # lint + typecheck + unit — the fast three
-npm run format:check   # what the Format job runs
-npm run build          # what the Build job runs
-CI=1 npm run e2e       # needs a build first; set PORT=3100 if 3000 is busy
+pnpm check          # lint + typecheck + unit — the fast three
+pnpm format:check   # what the Format job runs
+pnpm build          # what the Build job runs
+CI=1 pnpm e2e       # needs a build first; set PORT=3100 if 3000 is busy
 ```
 
-`npm run check` before every push. The `pre-push` hook runs `typecheck`; the
+`pnpm check` before every push. The `pre-push` hook runs `typecheck`; the
 `pre-commit` hook runs lint-staged on changed files only. Hooks are a fast
 filter, not a substitute for CI.
 
@@ -46,10 +46,13 @@ Minutes are finite. The rules that keep them that way:
   cancels the previous run. Never remove this.
 - **`paths:` filters** on anything expensive. A docs-only PR should not build
   chromium.
-- **Cache everything cacheable**: npm (`actions/setup-node` with `cache: npm`),
+- **Cache everything cacheable**: pnpm (`pnpm/action-setup` + `actions/setup-node` with `cache: pnpm`),
   `.next/cache`, and `~/.cache/ms-playwright`.
 - **`timeout-minutes` on every job.** A hung job otherwise burns 6 hours.
-- **Pin actions to a major tag** (`@v4`), and let Dependabot bump them monthly.
+- **Pin actions to a major tag**, and let Dependabot bump them monthly.
+- **`pnpm install --frozen-lockfile`**, never a plain install: CI must fail on a
+  lockfile that doesn't match `package.json` rather than silently resolving
+  something new.
 
 Before adding a job, ask: can this be a step in an existing job instead? Each
 new job re-installs dependencies (~40s). Split only when the split makes a

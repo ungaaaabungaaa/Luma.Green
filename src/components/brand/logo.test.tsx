@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { Logo, LogoMark } from "./logo";
 import { site } from "@/lib/site";
+
+import { Logo, LogoMark } from "./logo";
 
 describe("LogoMark", () => {
   it("exposes the brand name to assistive tech", () => {

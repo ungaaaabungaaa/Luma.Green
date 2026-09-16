@@ -23,29 +23,31 @@ today is a placeholder that renders the mark and the tagline.
 ## Quick start
 
 ```bash
-npm install
-cp .env.example .env.local   # every var is optional to start
-npm run dev                  # http://localhost:3000
+corepack enable          # pnpm 11, pinned in package.json
+pnpm install
+cp .env.example .env.local
+pnpm convex:dev          # links this machine to the Convex project
+pnpm dev                 # http://localhost:3000
 ```
 
-Nothing external is required to run, test or build. Features switch on as keys
-appear in `.env.local`.
+Convex aside, nothing external is required to run, test or build — every other
+service switches itself on when its key appears in `.env.local`.
 
 ## Stack
 
 Next.js 16 (App Router) · TypeScript · Tailwind v4 · shadcn/ui · Convex ·
 next-intl · Zod · React Hook Form · TanStack Query · Vitest · Playwright ·
-PostHog · Sentry · Vercel
+PostHog · Sentry · Vercel — on **pnpm 11**
 
 ## Commands
 
 ```bash
-npm run dev            # dev server
-npm run check          # lint + typecheck + unit tests
-npm run test           # unit tests
-npm run e2e            # Playwright (build first when CI=1)
-npm run build          # production build
-npm run convex:dev     # Convex dev deployment + codegen
+pnpm dev            # dev server
+pnpm check          # lint + typecheck + unit tests
+pnpm test           # unit tests
+pnpm e2e            # Playwright (build first when CI=1)
+pnpm build          # production build
+pnpm convex:dev     # Convex dev deployment + codegen
 ```
 
 ## Languages

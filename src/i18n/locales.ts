@@ -25,7 +25,7 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "en";
 
-export type LocaleMeta = {
+export interface LocaleMeta {
   /** Endonym — how speakers write the language name themselves. */
   label: string;
   /** English name, used in admin tooling and logs. */
@@ -33,7 +33,7 @@ export type LocaleMeta = {
   dir: "ltr" | "rtl";
   /** BCP-47 tag used for `<html lang>` and hreflang. */
   hreflang: string;
-};
+}
 
 export const localeMeta: Record<Locale, LocaleMeta> = {
   en: { label: "English", english: "English", dir: "ltr", hreflang: "en" },

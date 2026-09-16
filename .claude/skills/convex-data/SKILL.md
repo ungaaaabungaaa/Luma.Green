@@ -32,12 +32,14 @@ sector. Enforce this in the function, not in the UI.
 ## Getting started
 
 ```bash
-npm run convex:dev     # creates the dev deployment and convex/_generated
+pnpm convex:dev     # links your machine, pushes the schema, regenerates types
 ```
 
-`convex/_generated` does not exist until that runs, and it is gitignored. **Do
-not import from `convex/_generated` until you have run it** — a fresh clone must
-still typecheck.
+The project is already deployed (`glorious-rooster-470`, EU West 1) and
+`convex/_generated/` **is committed**, so a fresh clone typechecks without a
+deploy key. After any schema change: re-run `pnpm convex:dev` and commit the
+regenerated files in the same commit as the schema. A schema change whose
+generated types are not committed will pass locally and break CI.
 
 ## Writing functions
 

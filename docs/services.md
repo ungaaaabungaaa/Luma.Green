@@ -8,20 +8,22 @@ Legend: **✅ in repo** (code is here, no account needed) · **🔑 needs accoun
 
 ## Core platform
 
-| Service           | Status           | Notes                                                   |
-| ----------------- | ---------------- | ------------------------------------------------------- |
-| Next.js 16        | ✅ in repo       | App Router, Turbopack, RSC by default                   |
-| TypeScript        | ✅ in repo       | `strict`, `npm run typecheck` in CI                     |
-| Tailwind v4       | ✅ in repo       | Tokens + brand scale in `src/app/globals.css`           |
-| shadcn/ui         | ✅ in repo       | 21 primitives vendored, RTL enabled                     |
-| next-intl         | ✅ in repo       | 12 locales, hreflang, RTL                               |
-| Zod               | ✅ in repo       | Env validation today; form/API contracts next           |
-| React Hook Form   | ✅ in repo       | Installed; used once forms land                         |
-| TanStack Query    | ✅ in repo       | Provider mounted                                        |
-| Convex            | 🔑 needs account | Schema written. `npx convex dev` creates the deployment |
-| Vercel            | 🔑 needs account | Import the repo; set env vars per environment           |
-| Domain luma.green | 🔑 needs account | Point DNS at Vercel; add to Cloudflare                  |
-| GitHub            | ✅ in repo       | Actions, Dependabot, templates, CODEOWNERS              |
+| Service           | Status           | Notes                                                     |
+| ----------------- | ---------------- | --------------------------------------------------------- |
+| Next.js 16        | ✅ in repo       | App Router, Turbopack, RSC by default                     |
+| TypeScript        | ✅ in repo       | `strict`, `pnpm typecheck` in CI                          |
+| Tailwind v4       | ✅ in repo       | Tokens + brand scale in `src/app/globals.css`             |
+| shadcn/ui         | ✅ in repo       | 21 primitives vendored, RTL enabled                       |
+| next-intl         | ✅ in repo       | 12 locales, hreflang, RTL                                 |
+| Zod               | ✅ in repo       | Env validation today; form/API contracts next             |
+| React Hook Form   | ✅ in repo       | Installed; used once forms land                           |
+| TanStack Query    | ✅ in repo       | Provider mounted                                          |
+| Convex            | ✅ in repo       | Live: `glorious-rooster-470` (EU West 1), schema deployed |
+| Vercel            | 🔑 needs account | Import the repo; set env vars per environment             |
+| Domain luma.green | 🔑 needs account | Point DNS at Vercel; add to Cloudflare                    |
+| GitHub            | ✅ in repo       | Actions, Dependabot, templates, CODEOWNERS                |
+| pnpm 11           | ✅ in repo       | Pinned via `packageManager`; install scripts allowlisted  |
+| ESLint (strict)   | ✅ in repo       | Type-aware + sonarjs + unicorn + a11y + house rules       |
 
 ## Product services
 
@@ -65,9 +67,10 @@ Legend: **✅ in repo** (code is here, no account needed) · **🔑 needs accoun
 
 ## Setup order (what to do next)
 
-1. **Convex** — `npx convex dev`, commit nothing generated, add
-   `NEXT_PUBLIC_CONVEX_URL` locally.
-2. **Vercel** — import the repo, add env vars, confirm the preview builds.
+1. ~~**Convex**~~ — done. `pnpm convex:dev` on a new machine writes `.env.local`.
+2. **Vercel** — import the repo, set the build command to
+   `pnpm convex:deploy --cmd 'pnpm build'`, add env vars, confirm the preview
+   builds.
 3. **Branch protection** — require the five checks + one review.
 4. **CodeRabbit** — install the app on the repo.
 5. **Sentry + PostHog** — 10 minutes each, and they pay for themselves the first

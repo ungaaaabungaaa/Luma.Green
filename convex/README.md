@@ -2,18 +2,26 @@
 
 The backend: schema, queries, mutations, actions and scheduled functions.
 
-## First run
+## Deployments
+
+The project is live: team `syed-abdul-muqeeth`, project `luma-green`. The
+schema in this folder is deployed to the dev deployment
+`glorious-rooster-470` (EU West 1).
+
+## First run on a new machine
 
 ```bash
-npx convex dev
+pnpm convex:dev
 ```
 
-That creates a dev deployment, writes `NEXT_PUBLIC_CONVEX_URL` and
-`CONVEX_DEPLOYMENT` into `.env.local`, and generates `convex/_generated/`.
+That links your machine to the project, writes `CONVEX_DEPLOYMENT`,
+`NEXT_PUBLIC_CONVEX_URL` and `NEXT_PUBLIC_CONVEX_SITE_URL` into `.env.local`
+(gitignored), regenerates `convex/_generated/`, and pushes the schema.
 
-`_generated/` is **gitignored**. Until you have run the command above it does
-not exist — which is why no application code imports from it yet. A fresh clone
-must still typecheck and build.
+`convex/_generated/` **is committed**. It is generated code, but committing it
+keeps CI hermetic: `pnpm typecheck` works on a fresh clone without a Convex
+deploy key. Re-run `pnpm convex:dev` after any schema change and commit the
+regenerated files with it.
 
 ## Layout
 
@@ -42,7 +50,7 @@ version:
 Production deploys with the frontend build:
 
 ```bash
-npx convex deploy --cmd 'npm run build'
+pnpm convex:deploy --cmd 'pnpm build'
 ```
 
 Schema first, then the app that depends on it. New required fields land in three

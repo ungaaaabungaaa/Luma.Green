@@ -7,28 +7,27 @@ afterEach(() => {
   cleanup();
 });
 
-// jsdom ships neither of these, and shadcn primitives (dialog, sheet, select)
-// reach for them on mount.
-if (!window.matchMedia) {
-  Object.defineProperty(window, "matchMedia", {
-    writable: true,
-    value: (query: string) => ({
-      matches: false,
-      media: query,
-      onchange: null,
-      addListener: vi.fn(),
-      removeListener: vi.fn(),
-      addEventListener: vi.fn(),
-      removeEventListener: vi.fn(),
-      dispatchEvent: vi.fn(),
-    }),
-  });
-}
+/*
+ * jsdom implements neither of these, and the shadcn primitives (dialog, sheet,
+ * select, tooltip) reach for them on mount. `vi.stubGlobal` keeps the stubs off
+ * the real global object and lets Vitest restore them between files.
+ */
+vi.stubGlobal("matchMedia", (query: string) => ({
+  matches: false,
+  media: query,
+  onchange: null,
+  addListener: vi.fn(),
+  removeListener: vi.fn(),
+  addEventListener: vi.fn(),
+  removeEventListener: vi.fn(),
+  dispatchEvent: vi.fn(),
+}));
 
-if (!globalThis.ResizeObserver) {
-  globalThis.ResizeObserver = class {
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  } as unknown as typeof ResizeObserver;
-}
+vi.stubGlobal(
+  "ResizeObserver",
+  class {
+    observe = vi.fn();
+    unobserve = vi.fn();
+    disconnect = vi.fn();
+  },
+);

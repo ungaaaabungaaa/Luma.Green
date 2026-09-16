@@ -26,11 +26,11 @@ E2E specs live in `e2e/<feature>.spec.ts`. Vitest never touches `e2e/`.
 ## Commands
 
 ```bash
-npm run test           # once
-npm run test:watch     # while working
-npm run test:coverage  # what CI runs
-npm run e2e            # Playwright; build first if CI=1
-npm run e2e:ui         # debug a failing spec interactively
+pnpm test           # once
+pnpm test:watch     # while working
+pnpm test:coverage  # what CI runs
+pnpm e2e            # Playwright; build first if CI=1
+pnpm e2e:ui         # debug a failing spec interactively
 ```
 
 ## What a good test looks like

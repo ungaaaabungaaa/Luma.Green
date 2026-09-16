@@ -8,14 +8,15 @@ import { site } from "@/lib/site";
  *
  * Add new public routes to `routes` — the locale fan-out is automatic.
  */
-const routes = [""] as const;
+const routes: readonly string[] = [""];
+
+function url(locale: string, path: string) {
+  return locale === defaultLocale
+    ? `${site.url}${path || "/"}`
+    : `${site.url}/${locale}${path}`;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const url = (locale: string, path: string) =>
-    locale === defaultLocale
-      ? `${site.url}${path || "/"}`
-      : `${site.url}/${locale}${path}`;
-
   return routes.flatMap((path) =>
     locales.map((locale) => ({
       url: url(locale, path),

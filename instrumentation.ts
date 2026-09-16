@@ -6,7 +6,7 @@ const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
  * Server and edge error tracking. Without a DSN this is a no-op, so local runs
  * and CI never talk to Sentry.
  */
-export async function register() {
+export function register() {
   if (!dsn) return;
 
   Sentry.init({

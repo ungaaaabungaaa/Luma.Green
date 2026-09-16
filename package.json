@@ -4,8 +4,10 @@
   "private": true,
   "license": "UNLICENSED",
   "description": "Luma.Green — Cleaner Tomorrow in Motion. Recycling inventory, sector trade and carbon credits in one place.",
+  "packageManager": "pnpm@11.24.0",
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=20.9.0",
+    "pnpm": ">=11"
   },
   "scripts": {
     "dev": "next dev",
@@ -82,6 +84,13 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jest-dom": "^5.10.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-playwright": "^2.12.0",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "eslint-plugin-sonarjs": "^4.2.1",
+    "eslint-plugin-testing-library": "^7.16.2",
+    "eslint-plugin-unicorn": "^74.0.0",
     "husky": "^9.1.7",
     "jsdom": "^30.0.1",
     "lint-staged": "^17.5.1",
@@ -89,6 +98,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "typescript-eslint": "^8.70.0",
     "vitest": "^5.0.1"
   }
 }

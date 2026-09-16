@@ -9,16 +9,16 @@ mechanics.
 git clone https://github.com/ungaaaabungaaa/Luma.Green.git
 cd Luma.Green
 nvm use            # Node 24, per .nvmrc
-npm install        # also installs the git hooks
+pnpm install        # also installs the git hooks
 cp .env.example .env.local
-npm run dev
+pnpm dev
 ```
 
 ## Workflow
 
 1. Branch: `feat/…`, `fix/…`, `chore/…`, `docs/…`, `refactor/…`.
 2. Write the change **and its tests** together.
-3. `npm run check` and `npm run build` before pushing.
+3. `pnpm check` and `pnpm build` before pushing.
 4. Open a PR, fill in the template, attach screenshots for visible changes.
 5. Get CodeRabbit's pass and a human approval; keep every check green.
 6. Squash-merge with a Conventional Commit title.

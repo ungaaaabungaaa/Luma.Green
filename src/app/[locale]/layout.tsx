@@ -1,23 +1,25 @@
-import type { Metadata, Viewport } from "next";
-import { hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
-import type { ReactNode } from "react";
-
 import "../globals.css";
+
+import type { Metadata, Viewport } from "next";
+import { notFound } from "next/navigation";
+import { hasLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { ReactNode } from "react";
 
 import { Providers } from "@/components/providers";
 import {
   defaultLocale,
+  type Locale,
   localeMeta,
   locales,
-  type Locale,
 } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
 import { fontClassName } from "@/lib/fonts";
 import { site } from "@/lib/site";
 
-type LocaleParams = { params: Promise<{ locale: string }> };
+interface LocaleParams {
+  params: Promise<{ locale: string }>;
+}
 
 /** Pre-render every locale at build time. */
 export function generateStaticParams() {
@@ -86,10 +88,6 @@ export default async function LocaleLayout({
 }: LocaleParams & { children: ReactNode }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
-
-  // Opts this subtree into static rendering; without it every page using
-  // translations is forced dynamic.
-  setRequestLocale(locale);
 
   return (
     <html

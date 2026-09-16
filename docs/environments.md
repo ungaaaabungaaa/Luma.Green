@@ -24,8 +24,8 @@ in another.
 
 ```bash
 cp .env.example .env.local
-npx convex dev          # writes NEXT_PUBLIC_CONVEX_URL + CONVEX_DEPLOYMENT
-npm run dev
+pnpm convex:dev          # writes NEXT_PUBLIC_CONVEX_URL + CONVEX_DEPLOYMENT
+pnpm dev
 ```
 
 You need no other account to develop the UI, i18n, or anything that doesn't talk
@@ -53,7 +53,7 @@ than globally:
 Build command once Convex is linked:
 
 ```
-npx convex deploy --cmd 'npm run build'
+pnpm convex:deploy --cmd 'pnpm build'
 ```
 
 That deploys the schema before the frontend that depends on it.

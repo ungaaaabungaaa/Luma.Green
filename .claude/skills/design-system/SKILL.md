@@ -12,7 +12,7 @@ an instrument, not a marketing site — operators use it all day.
 ## Components: shadcn only
 
 ```bash
-npx shadcn@latest add <component>
+pnpm dlx shadcn@latest add <component>
 ```
 
 Primitives are vendored into `src/components/ui/`. Rules:

@@ -13,7 +13,7 @@ on:
       - "public/**"
       - "next.config.ts"
       - "playwright.config.ts"
-      - "package-lock.json"
+      - "pnpm-lock.yaml"
       - ".github/workflows/e2e.yml"
 
 concurrency:
@@ -33,11 +33,12 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci --prefer-offline --no-audit --fund=false
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
 
       # Browser binaries are ~150 MB; caching them saves ~1 min per run.
       - name: Cache Playwright browsers
@@ -45,16 +46,16 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Install chromium
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps chromium
+        run: pnpm exec playwright install --with-deps chromium
       - name: Install system deps
         if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
+        run: pnpm exec playwright install-deps chromium
 
-      - run: npm run build
-      - run: npm run e2e
+      - run: pnpm build
+      - run: pnpm e2e
 
       - name: Upload report
         if: failure()

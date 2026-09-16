@@ -101,8 +101,8 @@ Check any layout change at `/ar` before calling it done.
 3. If the script is not Latin, Cyrillic, Greek or Devanagari, add a Noto face
    for it in `src/lib/fonts.ts` using the shared `--font-noto-script` variable,
    and map the locale in `scriptFontByLocale`.
-4. Run `npm run test` — parity and registry tests must pass.
-5. Run `npm run build` — the new locale should appear in the prerender list.
+4. Run `pnpm test` — parity and registry tests must pass.
+5. Run `pnpm build` — the new locale should appear in the prerender list.
 6. `sitemap.ts` and hreflang alternates pick it up automatically.
 
 ## Translation quality

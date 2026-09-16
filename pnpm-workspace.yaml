@@ -1,0 +1,39 @@
+# pnpm settings for this repo.
+#
+# `allowBuilds` is an explicit allowlist of packages permitted to run install
+# scripts. pnpm blocks them by default — an install script is arbitrary code
+# from a dependency, and the usual way a supply-chain attack lands. Only add a
+# package here when something actually breaks without it, and say why.
+allowBuilds:
+  # Downloads the esbuild binary. Vitest/Vite will not run without it.
+  esbuild: true
+  # Native bindings for the ESLint import resolver used by eslint-config-next.
+  unrs-resolver: true
+  # SWC binary used by @vitejs/plugin-react for the test transform.
+  "@swc/core": true
+  # Fetches the sentry-cli binary used for source-map upload at build time.
+  "@sentry/cli": true
+  # Falls back to a source build of a file watcher we don't rely on.
+  "@parcel/watcher": false
+  # Prints a funding message. That's all.
+  core-js: false
+
+# pnpm 11 will not install a package version younger than its default cooldown
+# (a supply-chain guard: most malicious releases are caught within days). These
+# entries were already in the tree when we migrated from npm, so they are
+# exempted rather than downgraded. Remove an entry once a newer release ages in.
+minimumReleaseAgeExclude:
+  - "@ai-sdk/gateway@4.0.82"
+  - "@ai-sdk/provider-utils@5.0.41"
+  - "@ai-sdk/provider@4.0.15"
+  - "@posthog/core@1.54.2"
+  - "@posthog/types@1.412.1"
+  - "@tanstack/query-core@5.103.0"
+  - "@tanstack/query-devtools@5.103.0"
+  - "@tanstack/react-query-devtools@5.103.0"
+  - "@tanstack/react-query@5.103.0"
+  - "@types/node@24.13.5"
+  - ai@7.0.102
+  - posthog-js@1.433.5
+  - prettier@3.9.7
+  - resend@6.28.1

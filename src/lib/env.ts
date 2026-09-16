@@ -12,11 +12,11 @@ import { z } from "zod";
  *    empty `.env`. Make a var required only once a feature depends on it.
  */
 
+// An unset var and a var set to "" mean the same thing here: not configured.
 const optionalUrl = z
-  .string()
   .url()
   .optional()
-  .or(z.literal("").transform(() => undefined));
+  .or(z.literal("").transform((): undefined => undefined));
 
 const clientSchema = z.object({
   NEXT_PUBLIC_SITE_URL: optionalUrl,
@@ -62,13 +62,15 @@ const serverSchema = z.object({
 
 export type ServerEnv = z.infer<typeof serverSchema>;
 
-let cached: ServerEnv | undefined;
+// Held on an object rather than a bare `let` so the memo write is a property
+// assignment, not a reassignment of module state from inside a function.
+const memo: { value?: ServerEnv } = {};
 
 /** Server-only. Throws if called from the browser. */
 export function serverEnv(): ServerEnv {
   if (typeof window !== "undefined") {
     throw new Error("serverEnv() was called in the browser");
   }
-  cached ??= serverSchema.parse(process.env);
-  return cached;
+  memo.value ??= serverSchema.parse(process.env);
+  return memo.value;
 }

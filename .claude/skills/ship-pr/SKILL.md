@@ -35,8 +35,8 @@ config is three commits.
 ## Before you push
 
 ```bash
-npm run check    # lint + typecheck + unit
-npm run build    # catches what only the production build catches
+pnpm check    # lint + typecheck + unit
+pnpm build    # catches what only the production build catches
 ```
 
 The `pre-commit` hook runs lint-staged on changed files; `pre-push` runs
@@ -86,7 +86,7 @@ must follow Conventional Commits too.
 
 - **Vercel** builds every PR into a preview URL and `main` into production.
   Check the preview before merging — it is the real environment.
-- **Convex** deploys separately (`npx convex deploy`, wired into the Vercel
+- **Convex** deploys separately (`pnpm convex:deploy`, wired into the Vercel
   build command once the project is linked). A schema change deploys _before_
   the frontend that depends on it, never after.
 - Preview deployments are `noindex` (see `src/app/robots.ts`). Verify that holds

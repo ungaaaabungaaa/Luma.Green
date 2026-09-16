@@ -39,7 +39,7 @@ Three properties follow from that and are non-negotiable:
 | Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in           |
 | Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment |
 | UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`     |
-| Data        | Convex                               | Schema in `convex/schema.ts`                       |
+| Data        | Convex                               | Live — `glorious-rooster-470`, EU West 1           |
 | i18n        | next-intl, 12 locales, RTL-ready     | `messages/*.json`                                  |
 | Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server   |
 | Server sync | TanStack Query                       | For non-Convex async work                          |
@@ -47,6 +47,8 @@ Three properties follow from that and are non-negotiable:
 | Analytics   | PostHog                              | Disabled without a key                             |
 | Errors      | Sentry                               | Build only wraps when a DSN exists                 |
 | Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                       |
+| Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift    |
+| Lint        | ESLint flat config, type-aware       | See §10                                            |
 | Mobile      | Expo / React Native (planned)        | `ios/` and `android/` are placeholders             |
 
 ## 3. Layout
@@ -84,7 +86,7 @@ or the `brand-*` scale. A raw hex in a component is a bug — see
 `.claude/skills/design-system`.
 
 **Never add a component by hand that shadcn already ships.** Run
-`npx shadcn@latest add <name>`.
+`pnpm dlx shadcn@latest add <name>`.
 
 **Never commit a secret.** All config goes through `src/lib/env.ts`. Every var
 is optional: a fresh clone with an empty `.env` must build, test and run.
@@ -94,20 +96,20 @@ is optional: a fresh clone with an empty `.env` must build, test and run.
 **Always add tests with the change.** Logic gets a unit test; a user-visible
 flow gets an e2e test. See `.claude/skills/testing`.
 
-**Always keep CI green.** `npm run check` before you push. See
+**Always keep CI green.** `pnpm check` before you push. See
 `.claude/skills/ci-checks`.
 
 ## 5. Commands
 
 ```bash
-npm run dev            # dev server
-npm run check          # lint + typecheck + unit — run before every push
-npm run test           # unit tests
-npm run test:watch     # unit tests, watch mode
-npm run e2e            # Playwright (needs `npm run build` first when CI=1)
-npm run build          # production build
-npm run format         # prettier --write
-npm run convex:dev     # Convex dev deployment + codegen
+pnpm dev            # dev server
+pnpm check          # lint + typecheck + unit — run before every push
+pnpm test           # unit tests
+pnpm test:watch     # unit tests, watch mode
+pnpm e2e            # Playwright (needs `pnpm build` first when CI=1)
+pnpm build          # production build
+pnpm format         # prettier --write
+pnpm convex:dev     # Convex dev deployment + codegen
 ```
 
 ## 6. Conventions
@@ -152,15 +154,45 @@ before calling a flow done.
 These are installed and configured but intentionally inert until someone owns
 them. Don't assume they work; wire them in a focused PR.
 
+Convex **is** wired: the schema is deployed and `convex/_generated` is committed,
+so `api` and `Doc`/`Id` types are safe to import today.
+
 - **Better Auth** — package installed, no adapter. Decide Convex-adapter vs.
   standalone before writing any auth UI.
-- **Convex** — schema exists; `convex/_generated` only appears after
-  `npx convex dev`. Do not import generated types until then.
 - **Razorpay, Resend, MSG91, R2, Mapbox, OpenRouter** — packages installed, keys
   absent. Each needs its own PR with its own tests.
 - **Expo / React Native** — `ios/` and `android/` are empty placeholders.
 
-## 10. Skills
+## 10. Lint
+
+The config is strict on purpose (`eslint.config.mjs`). Type-aware rules run
+against a real TS program, so lint is slower than you may be used to and catches
+things a typecheck alone will not.
+
+What it enforces, beyond the obvious:
+
+- **No floating or misused promises.** A dropped `await` in a settlement or
+  credit mutation loses money silently. This is the most valuable rule here.
+- **No `any`, no `!`.** Fix the shape instead.
+- **No `toLocaleString`/`toLocaleDateString`.** Use next-intl's formatter so
+  output follows the user's locale.
+- **No TS `enum`.** Union of string literals, or a `const` object.
+- **Exhaustive switches** over status unions — adding a trade status breaks every
+  switch that forgot it.
+- **No `next/link`** — locale-aware navigation from `@/i18n/navigation` only.
+- **Import order** is auto-fixed; never hand-sort.
+- `sonarjs` and `unicorn` on top for bug patterns and dead code.
+
+`pnpm lint:fix` handles most of it. Relaxations are scoped and commented —
+vendored `src/components/ui/**`, the Convex validator DSL, tests, e2e, and root
+config files each get a narrow override. If you need a new one, scope it to a
+path and write down why.
+
+**Never add a blanket `eslint-disable` for a file.** A single-line disable with a
+reason comment is fine when the rule is genuinely wrong — as in `src/proxy.ts`,
+where `String.raw` would break Next's static analysis of the matcher.
+
+## 11. Skills
 
 | Skill                          | Use it when                                          |
 | ------------------------------ | ---------------------------------------------------- |

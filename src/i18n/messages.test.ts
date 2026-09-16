@@ -1,26 +1,30 @@
 import { readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
 import { defaultLocale, localeMeta, locales } from "./locales";
 
-const messagesDir = join(process.cwd(), "messages");
+const messagesDir = path.join(process.cwd(), "messages");
+
+const byName = (a: string, b: string) => a.localeCompare(b);
 
 function load(locale: string): Record<string, unknown> {
-  return JSON.parse(readFileSync(join(messagesDir, `${locale}.json`), "utf8"));
+  return JSON.parse(
+    readFileSync(path.join(messagesDir, `${locale}.json`), "utf8"),
+  ) as Record<string, unknown>;
 }
 
-function flatKeys(obj: Record<string, unknown>, prefix = ""): string[] {
-  return Object.entries(obj).flatMap(([key, value]) => {
-    const path = prefix ? `${prefix}.${key}` : key;
+function flatKeys(object: Record<string, unknown>, prefix = ""): string[] {
+  return Object.entries(object).flatMap(([key, value]) => {
+    const keyPath = prefix ? `${prefix}.${key}` : key;
     return value !== null && typeof value === "object" && !Array.isArray(value)
-      ? flatKeys(value as Record<string, unknown>, path)
-      : [path];
+      ? flatKeys(value as Record<string, unknown>, keyPath)
+      : [keyPath];
   });
 }
 
-const baseline = flatKeys(load(defaultLocale)).sort();
+const baseline = flatKeys(load(defaultLocale)).toSorted(byName);
 
 describe("locale registry", () => {
   it("has metadata for every locale", () => {
@@ -32,11 +36,11 @@ describe("locale registry", () => {
 
   it("ships a message file for every registered locale", () => {
     const onDisk = readdirSync(messagesDir)
-      .filter((f) => f.endsWith(".json"))
-      .map((f) => f.replace(/\.json$/, ""))
-      .sort();
+      .filter((file) => file.endsWith(".json"))
+      .map((file) => file.replace(/\.json$/, ""))
+      .toSorted(byName);
 
-    expect(onDisk).toEqual([...locales].sort());
+    expect(onDisk).toEqual([...locales].toSorted(byName));
   });
 });
 
@@ -45,7 +49,7 @@ describe.each(locales)("messages/%s.json", (locale) => {
 
   it("matches the English key set exactly", () => {
     // Catches both missing translations and keys left behind after a rename.
-    expect(flatKeys(messages).sort()).toEqual(baseline);
+    expect(flatKeys(messages).toSorted(byName)).toEqual(baseline);
   });
 
   it("has no empty or untranslated-looking values", () => {
@@ -53,7 +57,7 @@ describe.each(locales)("messages/%s.json", (locale) => {
       const value = key
         .split(".")
         .reduce<unknown>(
-          (acc, part) => (acc as Record<string, unknown>)?.[part],
+          (accumulator, part) => (accumulator as Record<string, unknown>)[part],
           messages,
         );
 

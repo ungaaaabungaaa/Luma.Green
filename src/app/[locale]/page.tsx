@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { LogoMark } from "@/components/brand/logo";
 
@@ -9,14 +9,7 @@ import { LogoMark } from "@/components/brand/logo";
  * build to check). It renders the mark, the name and the tagline — nothing
  * else. Replace it with the real landing page; no other file depends on it.
  */
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-
+export default async function Page() {
   const t = await getTranslations("brand");
 
   return (
