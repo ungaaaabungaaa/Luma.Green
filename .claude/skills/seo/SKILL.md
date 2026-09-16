@@ -1,0 +1,95 @@
+---
+name: seo
+description: SEO rules for Luma.Green — per-route metadata, multilingual hreflang, canonical URLs, sitemap and robots, Open Graph images, structured data and Core Web Vitals. Use when adding a route, changing metadata, or working on discoverability.
+---
+
+# SEO
+
+We publish in 12 languages. Most of the SEO work here is **not** keywords — it
+is telling search engines which language version to show which user, and not
+leaking staging into the index.
+
+## Every route needs metadata
+
+Never ship a route without `generateMetadata`. Title, description and canonical
+are the minimum.
+
+```ts
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "inventory" });
+
+  return {
+    title: t("metaTitle"), // from messages/, never a literal
+    description: t("metaDescription"),
+    alternates: {
+      canonical: pathFor(locale, "/inventory"),
+      languages: {/* every locale + x-default */},
+    },
+  };
+}
+```
+
+The root layout (`src/app/[locale]/layout.tsx`) already sets `metadataBase`, the
+title template (`%s · Luma.Green`), full hreflang alternates, Open Graph and
+Twitter defaults. A child route only overrides what differs.
+
+Titles: under ~60 characters, specific, no keyword stuffing. Descriptions:
+~150 characters, written for a human deciding whether to click.
+
+## Multilingual rules
+
+- **Canonical per locale.** `/ta/inventory` canonicals to itself, never to the
+  English page. Cross-locale canonicals delete the other languages from the
+  index.
+- **hreflang must be reciprocal and complete.** Every locale lists every other
+  locale plus `x-default` → `/`. Generated from `src/i18n/locales.ts`; keep it
+  generated.
+- **`localePrefix: "as-needed"`** means English lives at `/` and other locales at
+  `/<code>`. Don't change this casually — it rewrites every canonical URL.
+- `<html lang>` uses the full hreflang tag (`ta-IN`), `dir` follows the registry.
+
+## Sitemap and robots
+
+`src/app/sitemap.ts` fans every route out across all 12 locales with hreflang
+alternates. **Adding a public route means adding it to the `routes` array** —
+that is the one manual step.
+
+`src/app/robots.ts` blocks everything unless `VERCEL_ENV === "production"`.
+Preview and staging must never be indexed; if you ever see a preview URL in
+search results, that guard was broken.
+
+## Open Graph images
+
+Use `opengraph-image.tsx` (Next's ImageResponse) per route rather than static
+PNGs, so the image can carry the localised title. 1200×630. Keep the mark and
+the tagline legible at thumbnail size.
+
+## Structured data
+
+Add JSON-LD where it earns a rich result — `Organization` on the home page,
+`Product`/`Offer` for public listings, `BreadcrumbList` on nested routes. Render
+it with a `<script type="application/ld+json">` tag containing sanitised data.
+Never describe content that is not on the page; that is a manual-action risk.
+
+## Performance is SEO
+
+Core Web Vitals are a ranking input and our users are on mid-range Android over
+patchy networks.
+
+- Server components by default; `"use client"` only where it's needed.
+- `next/image` for every raster image, always with `width`/`height` to reserve
+  space (CLS).
+- Fonts are `display: "swap"`; only the Latin/Devanagari face preloads. Don't
+  add preloads for script faces — it would ship nine fonts to every user.
+- Watch the bundle when adding a heavy dependency (mapbox-gl, charts) — lazy
+  import it with `next/dynamic`.
+
+## Before shipping a public route
+
+- [ ] `generateMetadata` with title, description, canonical
+- [ ] Added to `routes` in `sitemap.ts`
+- [ ] hreflang renders for all 12 locales (view source at `/ta` and check)
+- [ ] OG image renders and is readable at thumbnail size
+- [ ] Not blocked by robots in production, and blocked everywhere else
+- [ ] Lighthouse SEO ≥ 95 locally

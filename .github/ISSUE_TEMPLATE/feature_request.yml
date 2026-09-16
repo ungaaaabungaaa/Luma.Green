@@ -1,0 +1,31 @@
+name: Feature request
+description: Propose a change to what the product does
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: Whose problem is this — collector, recycler, factory, verifier? What do they do today instead?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Out of scope
+      description: What this deliberately does not cover.
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: Touches
+      options:
+        - label: Schema / Convex
+        - label: Money or carbon maths
+        - label: New user-facing copy (needs 12 translations)
+        - label: Mobile app

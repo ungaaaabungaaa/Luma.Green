@@ -1,0 +1,67 @@
+# CodeRabbit configuration — https://docs.coderabbit.ai
+# The house rules live in AGENTS.md; this tells the reviewer to enforce them.
+language: en
+
+early_access: false
+
+reviews:
+  profile: assertive
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: true
+
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+
+  path_filters:
+    - "!**/package-lock.json"
+    - "!**/coverage/**"
+    - "!**/.next/**"
+    - "!convex/_generated/**"
+    - "!**/*.svg"
+
+  path_instructions:
+    - path: "src/**/*.{ts,tsx}"
+      instructions: >
+        Enforce AGENTS.md. Flag: user-facing strings not read from
+        messages/*.json; imports of next/link or next/navigation instead of
+        @/i18n/navigation; raw hex colours or inline styles instead of design
+        tokens; physical CSS properties (ml-, pl-, text-left) instead of logical
+        ones, which break RTL locales; `any` or non-null assertions; client
+        components that could be server components.
+    - path: "convex/**/*.ts"
+      instructions: >
+        Money must be integer paise and mass integer grams — flag any float
+        arithmetic on either. Every query must go through an index and be
+        bounded with .take() or .paginate(); flag .filter() over a table. Every
+        mutation that changes auditable state must write an auditLog row and
+        must authorise the caller against the org before reading or writing.
+        Issued carbon credits must never be restated by a factor change.
+    - path: "messages/*.json"
+      instructions: >
+        Keys must match messages/en.json exactly. Flag empty strings, English
+        left in a non-English file, and any concatenation-shaped string that
+        should use ICU plural or select syntax.
+    - path: ".github/workflows/**"
+      instructions: >
+        Every job needs timeout-minutes and the workflow needs a concurrency
+        group with cancel-in-progress — this repo runs on GitHub's free plan.
+        Flag any application secret used in a check (not deploy) workflow.
+    - path: "e2e/**/*.ts"
+      instructions: >
+        Flag waitForTimeout and CSS/class-based selectors; require role-based
+        queries and web-first assertions.
+
+  tools:
+    eslint:
+      enabled: true
+    markdownlint:
+      enabled: false
+
+chat:
+  auto_reply: true

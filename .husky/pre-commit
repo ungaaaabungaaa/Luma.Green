@@ -1,0 +1,3 @@
+# Fast gate: only what changed, and only what's cheap.
+# The full lint/typecheck/test/build matrix runs in CI.
+npx lint-staged

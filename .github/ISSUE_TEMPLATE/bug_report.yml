@@ -1,0 +1,34 @@
+name: Bug report
+description: Something behaves incorrectly
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to /ta/inventory
+        2. …
+    validations:
+      required: true
+  - type: input
+    id: locale
+    attributes:
+      label: Locale and device
+      placeholder: "ta-IN, Android Chrome, mid-range phone"
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "production / preview / local"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Logs, screenshots, Sentry link

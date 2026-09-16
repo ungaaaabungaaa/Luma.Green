@@ -1,0 +1,35 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Asia/Kolkata
+    # Grouped so a quiet week is one PR, not fifteen — each PR still burns CI
+    # minutes on the free plan.
+    open-pull-requests-limit: 5
+    groups:
+      react:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+      next:
+        patterns: ["next", "eslint-config-next", "@next/*"]
+      testing:
+        patterns:
+          ["vitest", "@vitest/*", "@testing-library/*", "@playwright/test"]
+      linting:
+        patterns:
+          ["eslint*", "prettier*", "@commitlint/*", "husky", "lint-staged"]
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+    commit-message:
+      prefix: "chore(deps)"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "chore(ci)"
