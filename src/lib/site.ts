@@ -1,3 +1,5 @@
+import { clientEnv } from "./env";
+
 /**
  * Brand constants. Anything user-visible that names the product lives here so
  * a rename is a one-file change.
@@ -8,7 +10,12 @@ export const site = {
   slug: "luma-green",
   tagline: "Cleaner Tomorrow in Motion",
   domain: "luma.green",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://luma.green",
+  /**
+   * Read through `clientEnv`, which treats an empty var as unset. A raw
+   * `process.env.X ?? fallback` lets `""` through, and `new URL("")` then fails
+   * the prerender of every locale.
+   */
+  url: clientEnv.NEXT_PUBLIC_SITE_URL ?? "https://luma.green",
   supportEmail: "support@luma.green",
   github: "https://github.com/ungaaaabungaaa/Luma.Green",
   /** Brand green — keep in sync with `--brand-*` in `globals.css`. */
