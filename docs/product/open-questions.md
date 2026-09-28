@@ -1,0 +1,43 @@
+# Decisions and open questions
+
+The running list. When a question is answered, move it to **Decided** with the
+date and where the answer now lives. Architecture-level decisions also get an
+[ADR](../decisions/README.md).
+
+## Decided
+
+| Date        | Question                            | Answer                                                                                                                                   | Recorded in                                                      |
+| ----------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| 29 Sep 2026 | Pilot city                          | Bengaluru. Kannada, Hindi and English lead                                                                                               | [vision.md](./vision.md)                                         |
+| 29 Sep 2026 | Do households confirm their number? | Yes — SMS code through MSG91 once DLT registration is done                                                                               | [household.md](./household.md), [auth](../architecture/auth.md)  |
+| 29 Sep 2026 | Whose prices do households see?     | The kabadiwala's own; never below the admin's minimum table; the fallback table where none is set                                        | [pricing.md](./pricing.md)                                       |
+| 29 Sep 2026 | Saathi pay                          | Paid by the kabadiwala or manufacturer; structure out of scope for now                                                                   | [roles.md](./roles.md)                                           |
+| 29 Sep 2026 | Name for "foot soldiers"            | Saathi                                                                                                                                   | [roles.md](./roles.md)                                           |
+| 29 Sep 2026 | Backend                             | Convex, one dev and one prod deployment, free plan to start                                                                              | [ADR 0002](../decisions/0002-convex-as-the-backend.md)           |
+| 29 Sep 2026 | UI components                       | shadcn/ui on Tailwind v4 (already in the repo); no hand-rolled components                                                                | [ADR 0010](../decisions/0010-white-theme-mobile-first-shadcn.md) |
+| 29 Sep 2026 | Dark mode                           | None. White theme only                                                                                                                   | [ADR 0010](../decisions/0010-white-theme-mobile-first-shadcn.md) |
+| 29 Sep 2026 | Devices                             | Mobile first everywhere; household and kabadiwala are phone-only; other roles also get desktop layouts                                   | [architecture/frontend.md](../architecture/frontend.md)          |
+| 29 Sep 2026 | Admin                               | One admin. Email + password + authenticator code; name, email, phone, date of birth and the last four Aadhaar digits kept as the profile | [ADR 0004](../decisions/0004-auth-phone-otp-and-admin-totp.md)   |
+| 29 Sep 2026 | Analytics and error tracking        | PostHog, Sentry and similar wait until the partner commits; pilot numbers come from our own data                                         | [ADR 0012](../decisions/0012-pilot-analytics-in-convex.md)       |
+| 29 Sep 2026 | Backups                             | Convex backups plus a daily local backup on the founder's machine                                                                        | [operations/backups.md](../operations/backups.md)                |
+| 29 Sep 2026 | Releases                            | Merge straight to production once all checks pass                                                                                        | [operations/environments.md](../operations/environments.md)      |
+
+## Open
+
+| #   | Question                                                                                                        | Needed by               | Notes                                                        |
+| --- | --------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------ |
+| 1   | Kabadiwala → yard hand-off: who initiates, prices, transport, weighing, payment                                 | Before building it      | [kabadiwala-to-yard.md](./kabadiwala-to-yard.md)             |
+| 2   | "What all he wants" for each hand-off                                                                           | Before each hand-off    | [roles.md](./roles.md)                                       |
+| 3   | GST required for yards, recyclers and manufacturers?                                                            | Before escrow           | Optional in the diagram                                      |
+| 4   | "Location tags" — area names, landmarks, or several sites?                                                      | Onboarding v2           | Built as area names                                          |
+| 5   | Police verification for home-pickup Saathis?                                                                    | Before Saathi pickups   | Safety for households                                        |
+| 6   | What recycle points are worth                                                                                   | Before the pilot        |                                                              |
+| 7   | Keep household photos for model training (with consent)?                                                        | Before the pilot        | Default: delete after 90 days                                |
+| 8   | Dispatch timeout before a booking moves to the next kabadiwala                                                  | Pilot                   | 15 minutes assumed                                           |
+| 9   | Who maintains the minimum and fallback tables, and how often                                                    | Before the pilot        | Assumed: the admin, weekly                                   |
+| 10  | Which kabadiwalas and yards take part in the pilot, and in which areas                                          | Before the pilot        |                                                              |
+| 11  | The "Ponytail" skill the founder mentioned                                                                      | —                       | Not found in the skills or plugin directory; skipped for now |
+| 12  | Is Luma.Green an "e-commerce operator" under GST (tax collection at source on sales through us)?                | Before trades or escrow | Needs a tax adviser                                          |
+| 13  | Does Karnataka's 2025 gig-workers law require registering Saathis or paying a welfare fee?                      | Before Saathi jobs      | Uncertain from public sources                                |
+| 14  | Yards that need no pollution-board consent (white category, e.g. paper baling only): accept a self-declaration? | Onboarding v1           | Built as a "not required" checkbox the admin checks          |
+| 15  | Use MSG91's OTP widget and its default template while our own DLT templates wait for approval?                  | This week               | MSG91 says its widget ships with a default template          |

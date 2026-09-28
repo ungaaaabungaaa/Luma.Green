@@ -26,8 +26,11 @@ existing credit — new factor applies to new issuances only.
 about writes an `auditLog` row in the same mutation: `trade.settled`,
 `credit.issued`, `credit.retired`, `inventory.adjusted`.
 
-**Sector isolation.** An org sees only its own data and only listings in its own
-sector. Enforce this in the function, not in the UI.
+**Scoped by org, visible by location and material.** An org reads and writes
+only its own data. What it can see of others — nearby kabadiwalas for a
+household, nearby stock for a yard — is decided by location and the materials
+it handles, not by a sector (`docs/decisions/0005-orgs-by-kind-visible-by-location.md`).
+Enforce this in the function, not in the UI.
 
 ## Getting started
 

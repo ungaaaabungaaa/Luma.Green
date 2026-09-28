@@ -7,18 +7,19 @@
 <p align="center"><strong>Cleaner Tomorrow in Motion</strong></p>
 
 <p align="center">
-  One ledger for everyone in a recycling sector — collectors, aggregators,
-  recyclers, factories and verifiers. Manage inventory, trade recovered
-  material, and settle verified carbon credits in one place.
+  One platform for the whole recycling chain — households, kabadiwalas, yards,
+  recyclers and manufacturers. Sell scrap in three taps, see the latest prices,
+  and trace every kilogram from the first pickup to the factory.
 </p>
 
 ---
 
 ## Status
 
-Early scaffold. The stack, the design system, the 12-locale i18n layer, the data
-model and the CI gate are in place. Product surfaces are not — the only route
-today is a placeholder that renders the mark and the tagline.
+Building towards a pilot in Bengaluru, October 2026. The public site, the stack,
+the design system, the 12-locale i18n layer and the CI gate are live; onboarding,
+the household flow and the kabadiwala app are next. The plan and every decision
+behind it are in [docs/](docs/README.md).
 
 ## Quick start
 
@@ -69,7 +70,7 @@ src/lib/            env, fonts, site constants
 convex/             schema and server functions
 messages/           one JSON file per locale
 e2e/                Playwright specs
-docs/               architecture, environments, service accounts
+docs/               product plan, architecture, decisions, operations
 .claude/skills/     task playbooks for agents and humans
 ios/ · android/     placeholders for the Expo apps
 ```
