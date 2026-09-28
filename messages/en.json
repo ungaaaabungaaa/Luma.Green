@@ -19,5 +19,132 @@
     "themeLight": "Light",
     "themeDark": "Dark",
     "themeSystem": "System"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "howItWorks": "How it works",
+    "participants": "Who it's for",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content",
+    "getStarted": "Request early access"
+  },
+  "footer": {
+    "summary": "One ledger for everyone in a recycling sector — from the first kilogram collected to the last credit retired.",
+    "navLabel": "Footer",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "recover": {
+      "title": "Recover",
+      "summary": "Material is collected, weighed and recorded into your organisation's inventory."
+    },
+    "trade": {
+      "title": "Trade",
+      "summary": "Organisations in the same sector list lots, agree terms and settle trades."
+    },
+    "retire": {
+      "title": "Retire",
+      "summary": "A settled trade mints carbon credits that are verified, held, traded and finally retired."
+    }
+  },
+  "principles": {
+    "heading": "Built to stand up to an audit",
+    "intro": "A regulator may ask how any credit was produced. The ledger is designed so the answer is always on record.",
+    "auditable": {
+      "title": "Every change is on the record",
+      "body": "Each state change — stock received, trade settled, credit retired — writes an entry to an audit log that is never edited in place."
+    },
+    "exact": {
+      "title": "Numbers that never drift",
+      "body": "Money is kept in whole paise and mass in whole grams. No rounding error can build up between a weighbridge and a settlement."
+    },
+    "frozen": {
+      "title": "Issued credits stay issued",
+      "body": "A credit keeps the emission factor used when it was issued. Revising a factor later never rewrites a credit that already exists."
+    }
+  },
+  "home": {
+    "eyebrow": "Now in early access",
+    "title": "One ledger for everything your sector recovers",
+    "lead": "Luma.Green connects collectors, aggregators, recyclers, factories and verifiers in the same sector. Track inventory, trade recovered material and settle verified carbon credits — with every step on the record.",
+    "secondaryCta": "See how it works",
+    "loopHeading": "Recover. Trade. Retire.",
+    "loopIntro": "One circular flow, from the first kilogram collected to the last credit retired.",
+    "participantsHeading": "Everyone in the loop, on one record",
+    "participantsIntro": "Each organisation joins with a role and a sector, and sees only what belongs to its sector.",
+    "participantsCta": "Find your role",
+    "closingTitle": "Bring your sector onto the ledger",
+    "closingBody": "We are onboarding a small number of organisations first. Tell us where you sit in the loop."
+  },
+  "howItWorks": {
+    "metaTitle": "How it works",
+    "metaDescription": "How material moves through Luma.Green: recovered into inventory, traded within a sector, and turned into verified carbon credits that are held and retired.",
+    "title": "How Luma.Green works",
+    "lead": "Every screen in Luma.Green is a view onto one circular flow. Here is what happens at each step, and what the ledger records.",
+    "stepLabel": "Step {number}",
+    "recover": {
+      "body": "Collectors and aggregators record material as it arrives. Stock is never typed in directly — it is the sum of recorded movements, so every kilogram can be traced to where it came from.",
+      "point1": "Log collections by material and grade",
+      "point2": "Weights stored in whole grams",
+      "point3": "Stock derived from an append-only movement history"
+    },
+    "trade": {
+      "body": "Organisations list lots to others in their sector, agree terms and settle. Stock is reserved when a trade is accepted, so the same material cannot be promised to two buyers.",
+      "point1": "Listings visible only within your sector",
+      "point2": "Stock reserved the moment a trade is accepted",
+      "point3": "Prices and totals kept in whole paise"
+    },
+    "retire": {
+      "body": "A settled trade mints carbon credits using the emission factor in force at that moment. Verifiers sign them off; they can then be held, transferred and finally retired.",
+      "point1": "Emission factor frozen at issuance",
+      "point2": "Independent verifier sign-off",
+      "point3": "Transfers and retirements recorded, never overwritten"
+    }
+  },
+  "participants": {
+    "metaTitle": "Who it's for",
+    "metaDescription": "Luma.Green is built for collectors, aggregators, recyclers, factories and verifiers working in the same recycling sector.",
+    "title": "Who Luma.Green is for",
+    "lead": "Everyone who touches recovered material in a sector — from the first pickup to the final audit.",
+    "collector": {
+      "name": "Collectors",
+      "body": "Pick up material at source and record what was collected, where and how much."
+    },
+    "aggregator": {
+      "name": "Aggregators",
+      "body": "Sort and bulk up material from many collectors into lots ready to trade."
+    },
+    "recycler": {
+      "name": "Recyclers",
+      "body": "Buy lots and process them back into feedstock, with the origin of every lot on record."
+    },
+    "factory": {
+      "name": "Factories",
+      "body": "Source recovered feedstock with a verifiable chain of custody behind every purchase."
+    },
+    "verifier": {
+      "name": "Verifiers",
+      "body": "Audit claims and sign off carbon credits, with the full history of each credit in view."
+    },
+    "sectorHeading": "One sector, one market",
+    "sectorBody": "Every organisation belongs to a sector. You see and trade only within your own, so listings stay relevant and your data stays with the people it concerns."
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Get in touch with the Luma.Green team about early access for your organisation.",
+    "title": "Talk to us",
+    "lead": "We are onboarding a small number of organisations first. Tell us your sector, your role in the loop and roughly how much material moves through you each month.",
+    "emailHeading": "Early access and general questions",
+    "securityHeading": "Security reports",
+    "securityBody": "Found a vulnerability? Please report it privately rather than in public."
+  },
+  "notFound": {
+    "metaTitle": "Page not found",
+    "title": "Page not found",
+    "body": "The page you were looking for does not exist or has moved.",
+    "backHome": "Back to home"
   }
 }
