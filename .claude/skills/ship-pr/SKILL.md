@@ -50,8 +50,8 @@ without asking you anything.
 Required:
 
 - **Tests** for the change. No tests → say why in the description.
-- **Screenshots** for any visible change: light and dark, plus `/ar` if layout
-  moved.
+- **Screenshots** for any visible change: at phone width (390 px), desktop too
+  for business and admin screens, plus `/ar` if layout moved.
 - **No secrets** in the diff. Check twice if you touched `.env.example`.
 - **Migration note** if the schema changed.
 

@@ -218,7 +218,7 @@ where `String.raw` would break Next's static analysis of the matcher.
 | `.claude/skills/testing`       | Writing or changing any code — what to test and how  |
 | `.claude/skills/ci-checks`     | A check is red, or you're adding a new one           |
 | `.claude/skills/i18n`          | Any user-facing string, or adding a locale           |
-| `.claude/skills/design-system` | Building UI — tokens, shadcn, dark mode, RTL         |
+| `.claude/skills/design-system` | Building UI — tokens, shadcn, white theme, RTL       |
 | `.claude/skills/seo`           | Adding a route, metadata, sitemap or structured data |
 | `.claude/skills/convex-data`   | Schema changes, queries, mutations, migrations       |
 | `.claude/skills/ship-pr`       | Opening a PR or preparing a deployment               |

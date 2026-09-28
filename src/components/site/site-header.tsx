@@ -8,7 +8,6 @@ import { Container } from "./container";
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileNav } from "./mobile-nav";
 import { SiteNav } from "./site-nav";
-import { ThemeToggle } from "./theme-toggle";
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
@@ -26,7 +25,6 @@ export async function SiteHeader() {
         <SiteNav className="hidden md:flex" />
         <div className="ms-auto flex items-center gap-1">
           <LanguageSwitcher />
-          <ThemeToggle />
           <Button asChild size="lg" className="ms-2 hidden md:inline-flex">
             <Link href="/contact">{t("getStarted")}</Link>
           </Button>

@@ -47,7 +47,7 @@ export default async function HowItWorksPage() {
               className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-12"
             >
               <div className="space-y-3">
-                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-900 dark:bg-brand-950 dark:text-brand-200">
+                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-900">
                   <Icon aria-hidden className="size-6" />
                 </span>
                 <p className="text-sm font-medium text-primary">

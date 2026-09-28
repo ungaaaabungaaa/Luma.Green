@@ -1,6 +1,6 @@
 ---
 name: design-system
-description: The Luma.Green visual system — brand tokens, semantic colours, shadcn/ui usage, typography (Noto), dark mode, spacing and component patterns. Use when building or restyling any UI, adding a shadcn component, or picking a colour.
+description: The Luma.Green visual system — brand tokens, semantic colours, shadcn/ui usage, typography (Noto), the white-only theme, mobile-first layout, spacing and component patterns. Use when building or restyling any UI, adding a shadcn component, or picking a colour.
 ---
 
 # Design system
@@ -33,15 +33,15 @@ table, tabs, textarea, tooltip.
 
 Two layers, and you must know which you are using.
 
-**Semantic tokens** — for almost everything. They flip correctly in dark mode:
+**Semantic tokens** — for almost everything:
 
 `bg-background` `text-foreground` `bg-card` `bg-muted` `text-muted-foreground`
 `bg-primary` `text-primary-foreground` `bg-destructive` `border-border`
 `ring-ring` `bg-accent` `bg-popover` `bg-sidebar`
 
-**Brand scale** — `brand-50` … `brand-950`, sampled from the mark. Use only
-where the colour must stay green regardless of theme: the logo, carbon-credit
-accents, "material recovered" states, charts.
+**Brand scale** — `brand-50` … `brand-950`, sampled from the mark. Use it for
+brand accents: the logo, verified badges, carbon-credit accents, "material
+recovered" states, charts.
 
 ```tsx
 <div className="bg-card text-card-foreground">…</div>      // right
@@ -50,8 +50,8 @@ accents, "material recovered" states, charts.
 <div style={{ color: "green" }}>…</div>                     // wrong — never
 ```
 
-`--primary` is already brand green in both themes, so a primary button is on
-brand without any extra class.
+`--primary` is brand green, so a primary button is on brand without any extra
+class.
 
 Charts use `--chart-1` … `--chart-5`, a light→deep green ramp. Never pick chart
 colours ad hoc; sequential data reads wrong when hues jump.
@@ -74,11 +74,21 @@ Scale: `text-sm` for dense operational tables, `text-base` for body,
 `text-2xl`/`text-4xl` with `tracking-tight` for headings. Numbers in tables get
 `tabular-nums`.
 
-## Dark mode
+## One theme: white
 
-Both themes are first-class; `next-themes` defaults to system. Every colour
-must come from a token — that is the whole mechanism. Check both themes before
-you call a screen done, and attach both to the PR.
+There is no dark mode and no theme switch
+(`docs/decisions/0010-white-theme-mobile-first-shadcn.md`). Don't write `dark:`
+utilities. Components added with the shadcn CLI still contain them; they stay
+inert because `globals.css` defines the `dark` variant as "inside a `.dark`
+class", which we never set. **Keep that `@custom-variant dark` line** — without
+it Tailwind would apply those styles whenever the phone itself is in dark mode.
+
+## Mobile first
+
+Design every screen at 360–390 px first, then add `md:`/`lg:` layouts where the
+role uses a desktop. Household and kabadiwala screens are phone-only. Touch
+targets are at least 44 px — 48–56 px for the main actions in those two apps.
+Layouts per area: `docs/architecture/frontend.md`.
 
 ## Spacing, radius, motion
 

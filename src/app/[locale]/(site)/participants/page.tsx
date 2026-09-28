@@ -43,7 +43,7 @@ export default async function ParticipantsPage() {
             <li key={key}>
               <Card className="h-full">
                 <CardHeader className="gap-3">
-                  <span className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-100 text-brand-900 dark:bg-brand-950 dark:text-brand-200">
+                  <span className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-100 text-brand-900">
                     <Icon aria-hidden className="size-5" />
                   </span>
                   <CardTitle>
