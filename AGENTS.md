@@ -14,13 +14,21 @@ how to do one job well.
 
 ## 1. What we are building
 
-Luma.Green connects everyone in a recycling sector — collectors, aggregators,
-recyclers, factories and verifiers — on one ledger:
+Luma.Green connects the whole recycling chain on one platform: **households**
+who sell scrap, **kabadiwalas** (local scrap shops) who collect it,
+**preprocessors** (yards) who sort it further, **recyclers** who turn it into raw
+material and **manufacturers** who buy that material — plus **Saathis**, people
+who take pickup and sorting jobs. One **admin** verifies everyone. The pilot runs
+in Bengaluru in October 2026.
 
-1. **Recover** — material is collected and enters an org's inventory.
-2. **Trade** — orgs in the same sector list, match and settle lots.
-3. **Retire** — a settled trade mints carbon credits, which are verified, held,
-   traded and finally retired.
+1. **Recover** — a household books a pickup; the kabadiwala weighs and records it.
+2. **Trade** — material moves up the chain, re-sorted at every step, visible by
+   location and material.
+3. **Retire** (later) — recorded material mints carbon credits, which are
+   verified, held, traded and finally retired.
+
+The plan, the decisions behind it and the runbooks live in `docs/` — start at
+[docs/README.md](docs/README.md) before designing a feature.
 
 Three properties follow from that and are non-negotiable:
 
@@ -39,13 +47,13 @@ Three properties follow from that and are non-negotiable:
 | Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in           |
 | Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment |
 | UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`     |
-| Data        | Convex                               | Live — `glorious-rooster-470`, EU West 1           |
+| Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1       |
 | i18n        | next-intl, 12 locales, RTL-ready     | `messages/*.json`                                  |
 | Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server   |
 | Server sync | TanStack Query                       | For non-Convex async work                          |
-| Auth        | Better Auth                          | Not wired yet — see §9                             |
-| Analytics   | PostHog                              | Disabled without a key                             |
-| Errors      | Sentry                               | Build only wraps when a DSN exists                 |
+| Auth        | Better Auth on Convex                | Phone codes; admin password + TOTP — see §9        |
+| Analytics   | PostHog                              | Deferred — keys stay empty (docs ADR 0012)         |
+| Errors      | Sentry                               | Deferred — build only wraps when a DSN exists      |
 | Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                       |
 | Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift    |
 | Lint        | ESLint flat config, type-aware       | See §10                                            |
@@ -66,7 +74,8 @@ src/
 convex/              schema and server functions
 messages/            one JSON file per locale
 e2e/                 Playwright specs
-docs/                architecture and operational docs
+docs/                product, architecture, decisions (ADRs), operations,
+                     migrations, delivery — start at docs/README.md
 .claude/skills/      task playbooks
 ```
 
@@ -162,8 +171,9 @@ them. Don't assume they work; wire them in a focused PR.
 Convex **is** wired: the schema is deployed and `convex/_generated` is committed,
 so `api` and `Doc`/`Id` types are safe to import today.
 
-- **Better Auth** — package installed, no adapter. Decide Convex-adapter vs.
-  standalone before writing any auth UI.
+- **Better Auth** — decided: the Convex component (`@convex-dev/better-auth`),
+  phone codes for everyone, email + password + authenticator for the one admin.
+  See `docs/architecture/auth.md` before writing any auth code.
 - **Razorpay, Resend, MSG91, R2, Mapbox, OpenRouter** — packages installed, keys
   absent. Each needs its own PR with its own tests.
 - **Expo / React Native** — `ios/` and `android/` are empty placeholders.
