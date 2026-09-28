@@ -16,6 +16,10 @@ updates:
       # by hand, together with .nvmrc and the CI node-version.
       - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
+      # @convex-dev/better-auth 0.12 supports better-auth <1.7 only. Move both
+      # together by hand, then `pnpm auth:schema` (docs/architecture/auth.md).
+      - dependency-name: "better-auth"
+        versions: [">=1.7.0"]
     groups:
       react:
         patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]

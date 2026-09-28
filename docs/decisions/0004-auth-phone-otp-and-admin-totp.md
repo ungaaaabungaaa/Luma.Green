@@ -25,6 +25,10 @@
   Households get a passwordless identity only when they book.
 - **The admin:** email + password, then an authenticator-app code (TOTP), with
   backup codes. Created by a bootstrap command; public email sign-up is off.
+  _Amended 29 Sep 2026: created through a one-time setup page,
+  `/admin/setup`, open only while `ADMIN_EMAIL` is set and no admin exists —
+  simpler for the founder than a command, and it enrols the authenticator in
+  the same sitting._
   Name, email, phone, date of birth and the last four Aadhaar digits are stored
   as the admin's profile.
 - Details: [architecture/auth.md](../architecture/auth.md).

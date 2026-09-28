@@ -24,6 +24,12 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Private areas: never indexed (docs/architecture/urls.md). The pages
+        // also set robots metadata; the header covers non-HTML responses.
+        source: "/admin/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
     ];
   },
 };

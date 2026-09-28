@@ -37,6 +37,7 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Written by `convex dev`. Committed so CI is hermetic, but never linted.
     "convex/_generated/**",
+    "convex/*/_generated/**",
   ]),
 
   ...nextVitals,
@@ -195,6 +196,12 @@ const eslintConfig = defineConfig([
   {
     files: ["convex/**/*.ts"],
     rules: {
+      // Convex module paths can't contain hyphens, and its own convention is
+      // camelCase (e.g. the local `convex/betterAuth/` component).
+      "unicorn/filename-case": [
+        "error",
+        { cases: { camelCase: true, kebabCase: true } },
+      ],
       // The Convex validator DSL is deeply nested by design:
       // `defineTable({ x: v.optional(v.union(v.literal("a"), ...)) })`.
       "unicorn/max-nested-calls": "off",
@@ -209,9 +216,25 @@ const eslintConfig = defineConfig([
     },
   },
 
+  {
+    // Convex builds the app config and the HTTP router by calling methods on
+    // them at module load. That is the framework's API, not a stray effect.
+    files: ["convex/convex.config.ts", "convex/http.ts"],
+    rules: { "unicorn/no-top-level-side-effects": "off" },
+  },
+
   // --- The i18n layer is what wraps the unsafe APIs ----------------------
   {
     files: ["src/i18n/**", "src/proxy.ts", "src/app/**/layout.tsx"],
+    rules: { "no-restricted-imports": "off" },
+  },
+
+  // --- The admin console: English only, outside the locale segment -------
+  {
+    // `/admin` has no locale to lose (docs/architecture/urls.md), so it uses
+    // Next's own `Link` and router. Its copy is English and lives in the
+    // components — the console is never translated.
+    files: ["src/app/admin/**", "src/components/admin/**"],
     rules: { "no-restricted-imports": "off" },
   },
 
@@ -239,7 +262,11 @@ const eslintConfig = defineConfig([
     ...jestDom.configs["flat/recommended"],
   },
   {
-    files: ["src/**/*.{test,spec}.{ts,tsx}", "vitest.setup.ts"],
+    files: [
+      "src/**/*.{test,spec}.{ts,tsx}",
+      "convex/**/*.test.ts",
+      "vitest.setup.ts",
+    ],
     rules: {
       // Tests deliberately poke at edge cases and untyped fixtures.
       "@typescript-eslint/no-non-null-assertion": "off",

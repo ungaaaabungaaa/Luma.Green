@@ -19,49 +19,90 @@ them it is not an account — nothing to remember, nothing to fill in.
 ## How it's built
 
 **Better Auth, running inside Convex** through the `@convex-dev/better-auth`
-component.
+component. Built and tested on 29 Sep 2026.
 
-- **Plugins:** `phoneNumber` (SMS codes), `emailAndPassword` (admin only, public
-  sign-up switched off) and `twoFactor` (authenticator app). Convex's
-  integration supports all three without schema changes. It pins Better Auth to
-  a specific release (`~1.6.x` when checked on 29 Sep 2026), so the repo's
-  `better-auth` version follows the component's, not the other way round.
-- **Next.js:** `convexBetterAuthNextJs` provides the `/api/auth/[...all]`
-  handler and server helpers (`getToken`, `isAuthenticated`). Protected route
-  groups check the session in their **server layout** and redirect; a cookie
-  check in `proxy.ts` alone is not security.
-- **Browser:** sign-in and sign-out happen client-side through the auth client;
-  Convex queries are gated with `useConvexAuth`.
-- **Convex functions** resolve the caller through the component's validated
-  user, never `ctx.auth.getUserIdentity()` alone (it doesn't validate the
-  session), then load the `profiles` row and check role and org membership.
+- **Plugins:** `phoneNumber` (SMS codes), `emailAndPassword` (admin only — the
+  server refuses sign-up for any address but `ADMIN_EMAIL`) and `twoFactor`
+  (authenticator app, with backup codes).
+- **Installed locally** (`convex/betterAuth/`). The component's tables come
+  from our own plugin list: `pnpm auth:schema` writes
+  `convex/betterAuth/generatedSchema.ts`, and `schema.ts` next to it adds our
+  extra indexes. The packaged default schema lagged better-auth 1.6.33 — it
+  had no room for the two-factor lockout fields — which is why. **Run
+  `pnpm auth:schema` after changing a plugin or upgrading `better-auth`.**
+- **Versions move together.** `@convex-dev/better-auth` 0.12 needs
+  `better-auth` `>=1.6.11 <1.7`; the repo pins `~1.6.33` and Dependabot skips
+  1.7+. Upgrade both in one PR, regenerate the schema, and test sign-in.
+- **Next.js:** `convexBetterAuthNextJs` (`src/lib/auth-server.ts`) provides the
+  `/api/auth/[...all]` proxy and server helpers (`isAuthenticated`,
+  `getToken`). Protected layouts check the session on the server and redirect;
+  a cookie check in `proxy.ts` alone is not security. On Vercel only the
+  `.convex.cloud` URL is injected into builds, so the `.convex.site` URL is
+  derived from it.
+- **Browser:** sign-in and sign-out happen client-side through the auth client
+  (`src/lib/auth-client.ts`); Convex queries are gated with `useConvexAuth`.
+- **Convex functions** resolve the caller with `requireUser` / `requireAdmin`
+  (`convex/lib/access.ts`), which use the component's session-validated user —
+  never `ctx.auth.getUserIdentity()` alone — then load the `profiles` row.
+- **Sessions** last 30 days from sign-in and are never extended
+  (`disableSessionRefresh`); then a new SMS code. The admin's last 12 hours.
+- **Rate limits** are stored in the database, so they hold across Convex
+  requests: 10 requests a minute per client IP on the phone endpoints, 3 per
+  10 seconds on two-factor. The client IP is Vercel's `x-forwarded-for`,
+  passed through the Next.js proxy.
 
 ### SMS codes
 
-- 6 digits, valid 5 minutes, 5 attempts, resend after 30 seconds.
-- Rate limits: 3 codes per number per 15 minutes, 10 per day, and a per-device
-  limit (Convex rate-limiter component).
-- **Sending:** Better Auth's `sendOTP` writes an outbox row and schedules an
-  internal action, which calls MSG91 with our DLT template and records the
-  result. Nothing is left as an un-awaited promise, which Convex may drop.
-- **Without MSG91 keys** (every var is optional): on the **dev** deployment the
-  code is written to the Convex function log for testing; on **production** the
-  phone sign-in says "opening soon" instead of pretending to send.
-- **Test numbers** with fixed codes exist only on dev and preview deployments,
-  controlled by a Convex environment variable that production never has.
+- 6 digits, valid 5 minutes, 5 attempts per code, resend after 30 seconds.
+- **Sending:** Better Auth's `sendOTP` schedules an internal action
+  (`convex/sms.ts`), which calls MSG91's OTP API with our code and DLT
+  template. Nothing is left as an un-awaited promise, which Convex may drop.
+- **Without MSG91 keys** (every variable is optional): with `AUTH_DEV_MODE=true`
+  (dev and preview only) the code is written to the Convex log, number masked;
+  otherwise `/login` says phone sign-in opens soon instead of pretending to
+  send.
+- **Before switching MSG91 on** — SMS costs money, and code endpoints attract
+  SMS pumping:
+  1. Cap codes per number (planned: 3 per 15 minutes, 10 a day) on the path
+     to `sms.sendCode`. Not built yet.
+  2. Set MSG91's own per-number OTP limits in its dashboard.
+  3. Anyone can call the Convex site URL directly and fake `x-forwarded-for`,
+     which weakens the per-IP limit. Consider requiring a shared secret header
+     that only our Next.js proxy sends.
 
 ### The admin
 
-- **One admin account.** Created once with a bootstrap command run by the
-  founder (`npx convex run --prod identity:bootstrapAdmin`), which prints a
-  one-time link to set the password. Public sign-up with email is off.
-- **First sign-in** enrols an authenticator app (QR code) and shows backup
-  codes to store offline. Every later sign-in needs the password and a code.
+- **One admin account:** whoever signs up with `ADMIN_EMAIL`, a Convex
+  environment variable. Setup is at **`/admin/setup`**, open only while
+  `ADMIN_EMAIL` is set and no admin exists: name, mobile, date of birth, last
+  four Aadhaar digits, then email and password (12+ characters), then an
+  authenticator app (QR code or typed key) and ten backup codes, shown once.
+  It picks up where it left off if interrupted.
+- **Set `ADMIN_EMAIL` right before running setup, then run it at once.** Until
+  the account exists, anyone who knows the address could claim it. If setup
+  says the account already exists and it wasn't you, delete that user in the
+  Convex dashboard (component `betterAuth` → `user`) and start again.
+- **Every sign-in** at `/admin/login`: password, then a code from the app — or
+  a backup code, each of which works once.
 - **Profile, not credentials.** Name, email, phone, date of birth and the
   **last four** Aadhaar digits are kept in `adminProfiles` as the admin's
   identity record. They are never used to sign in: those details aren't
   secret, and a private company may not store full Aadhaar numbers.
-- Session length 12 hours; the admin area always re-checks the role in Convex.
+- **Session: 12 hours**, capped when it's created. Every console query calls
+  `requireAdmin`, which also requires the authenticator to be on.
+- The console (`/admin`) is **English only** and outside the locale segment.
+
+### Testing
+
+- **Unit:** the rules live in pure functions (`convex/lib/*.test.ts`,
+  `src/components/{auth,admin}/*.test.ts`); `convex/identity.test.ts` uses
+  convex-test to check signed-out callers get nothing.
+- **E2E** (`e2e/auth.spec.ts`) runs against a build without Convex — the
+  state production is in until it's switched on.
+- **By hand, against the dev deployment:** `AUTH_DEV_MODE=true` is set there,
+  so codes appear in `npx convex logs`. The dev admin test account's details
+  are in your `.env.local` (`DEV_ADMIN_*`, never committed); add the key to
+  an authenticator app to sign in.
 
 ## Roles and permissions
 

@@ -72,30 +72,35 @@ variables in Vercel are placeholders. To switch on:
    build injects the URL itself.
 4. **Convex prod variables** (dashboard or `npx convex env set --prod …`):
    `SITE_URL`, `BETTER_AUTH_SECRET` (a fresh `openssl rand -base64 32`), and the
-   MSG91 values once DLT templates are approved.
+   MSG91 values once DLT templates are approved — after the checklist in
+   [auth.md](../architecture/auth.md#sms-codes). Never `AUTH_DEV_MODE`.
 5. **Domain.** Vercel → Domains: add `luma.green` and `www.luma.green`
    (redirect `www` → apex), set the DNS records Vercel shows at the registrar,
    then set `NEXT_PUBLIC_SITE_URL=https://luma.green` for Production and
    update `SITE_URL` on the Convex prod deployment.
-6. **Admin account.** `npx convex run --prod identity:bootstrapAdmin` once the
-   auth code is merged — see [architecture/auth.md](../architecture/auth.md#the-admin).
+6. **Admin account.** Set `ADMIN_EMAIL` on the prod deployment, then open
+   `https://luma.green/admin/setup` straight away and finish it: details,
+   password, authenticator, backup codes — see
+   [architecture/auth.md](../architecture/auth.md#the-admin).
 
 ## Where each variable lives
 
-| Variable                                                                         | Next.js on Vercel                                  | Convex deployment          | Notes                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------- | -------------------------- | ---------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`                                                           | Production: `https://luma.green`                   | —                          | Canonical URLs                                             |
-| `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`                          | Injected by `convex deploy`; local `.env.local`    | —                          | Don't set by hand on Vercel                                |
-| `CONVEX_DEPLOY_KEY`                                                              | Production key → Production; preview key → Preview | —                          | Never in `.env.local`                                      |
-| `CONVEX_DEPLOYMENT`                                                              | —                                                  | —                          | Local `.env.local` only                                    |
-| `SITE_URL`                                                                       | —                                                  | Every deployment           | The site origin Better Auth trusts                         |
-| `BETTER_AUTH_SECRET`                                                             | —                                                  | Every deployment           | Different per deployment                                   |
-| `MSG91_AUTH_KEY`, `MSG91_SENDER_ID`, `MSG91_OTP_TEMPLATE_ID`, other template ids | —                                                  | Prod (and dev for testing) | DLT-approved ids only                                      |
-| `AUTH_TEST_PHONES`                                                               | —                                                  | Dev and preview only       | Test numbers with fixed codes; never on prod               |
-| `OPENROUTER_API_KEY`                                                             | —                                                  | Every deployment           | Hard spend limit on each key                               |
-| `NEXT_PUBLIC_MAPBOX_TOKEN`                                                       | Production and Preview                             | —                          | Restricted to our URLs in the Mapbox dashboard             |
-| PostHog, Sentry                                                                  | Empty until the partner decision                   | —                          | [ADR 0012](../decisions/0012-pilot-analytics-in-convex.md) |
-| Razorpay, Resend, R2                                                             | Later                                              | Later                      | Not used in the pilot                                      |
+| Variable                                                      | Next.js on Vercel                                   | Convex deployment          | Notes                                                      |
+| ------------------------------------------------------------- | --------------------------------------------------- | -------------------------- | ---------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`                                        | Production: `https://luma.green`                    | —                          | Canonical URLs                                             |
+| `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`       | URL injected by `convex deploy`; local `.env.local` | —                          | Don't set by hand on Vercel; the site URL is derived       |
+| `CONVEX_DEPLOY_KEY`                                           | Production key → Production; preview key → Preview  | —                          | Never in `.env.local`                                      |
+| `CONVEX_DEPLOYMENT`                                           | —                                                   | —                          | Local `.env.local` only                                    |
+| `SITE_URL`                                                    | —                                                   | Every deployment           | The site origin Better Auth trusts                         |
+| `EXTRA_TRUSTED_ORIGINS`                                       | —                                                   | Dev only, if needed        | Comma-separated extra origins, e.g. a second local port    |
+| `ADMIN_EMAIL`                                                 | —                                                   | Every deployment           | The one admin; set right before `/admin/setup`             |
+| `BETTER_AUTH_SECRET`                                          | —                                                   | Every deployment           | Different per deployment                                   |
+| `MSG91_AUTH_KEY`, `MSG91_OTP_TEMPLATE_ID`, other template ids | —                                                   | Prod (and dev for testing) | DLT-approved ids only                                      |
+| `AUTH_DEV_MODE`                                               | —                                                   | Dev and preview only       | `true` writes sign-in codes to the Convex log; never prod  |
+| `OPENROUTER_API_KEY`                                          | —                                                   | Every deployment           | Hard spend limit on each key                               |
+| `NEXT_PUBLIC_MAPBOX_TOKEN`                                    | Production and Preview                              | —                          | Restricted to our URLs in the Mapbox dashboard             |
+| PostHog, Sentry                                               | Empty until the partner decision                    | —                          | [ADR 0012](../decisions/0012-pilot-analytics-in-convex.md) |
+| Razorpay, Resend, R2                                          | Later                                               | Later                      | Not used in the pilot                                      |
 
 Values live in the password manager, never in chat, email or the repo.
 

@@ -47,6 +47,22 @@ export function pageMetadata({
 }
 
 /**
+ * Metadata for a private page — sign-in, onboarding, the business app, booking
+ * tracking. Never indexed, and it clears the canonical, hreflang and Open Graph
+ * a child would otherwise inherit from the root layout
+ * (docs/architecture/urls.md#indexing).
+ */
+export function privateMetadata(title: string): Metadata {
+  return {
+    title,
+    robots: { index: false, follow: false },
+    alternates: {},
+    openGraph: null,
+    twitter: null,
+  };
+}
+
+/**
  * Serialise JSON-LD for a `<script type="application/ld+json">` tag. `<` is
  * escaped so a value can never close the script element early.
  */
