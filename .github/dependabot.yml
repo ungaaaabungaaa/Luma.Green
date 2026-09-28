@@ -11,6 +11,11 @@ updates:
     # Grouped so a quiet week is one PR, not fifteen — each PR still burns CI
     # minutes on the free plan.
     open-pull-requests-limit: 5
+    ignore:
+      # Types must describe the runtime we deploy on (.nvmrc). Bump this major
+      # by hand, together with .nvmrc and the CI node-version.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       react:
         patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
