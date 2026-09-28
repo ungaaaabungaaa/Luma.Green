@@ -24,7 +24,9 @@
    investigate second**: Convex deploy keys and environment variables, Vercel
    variables, MSG91, OpenRouter. Rewriting git history does not un-leak a key.
 5. **If personal data may have leaked,** it is a legal matter as well as a
-   technical one: follow the breach steps in
+   technical one: **CERT-In must hear within 6 hours**, and there are further
+   deadlines for the Data Protection Board and the people affected. Follow the
+   breach steps in
    [data-protection.md](./data-protection.md#if-personal-data-leaks) — there are
    deadlines for telling the Data Protection Board and the people affected.
 

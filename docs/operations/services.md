@@ -41,6 +41,16 @@ Legend: **✅ live** · **🟡 partly** · **🔑 needs a human** · **⏸ defer
 
 ### SMS templates to register
 
+**DLT in short** (TRAI rules as amended Feb 2025; MSG91's guides): register
+Luma.Green as a _principal entity_ on a telecom operator's DLT portal (PAN,
+GST, identity and address proof, an authorisation letter; ₹5,000 + GST), then a
+6-letter **sender ID** that matches the brand, then link it to MSG91's
+telemarketer ID ("chain binding"). Each template names the brand, marks
+variables as `{#var#}` and takes 2–4 working days to approve; allow **about a
+week** end to end. A sign-in code sent within 30 minutes of the user asking is
+_transactional_ — no consent template needed. In MSG91, an OTP template uses
+`##OTP##` and is sent with `POST https://control.msg91.com/api/v5/otp`.
+
 Every SMS must match a DLT-approved template exactly, per language (Unicode
 templates for Kannada and Hindi). Register at least these, in English, Kannada
 and Hindi, with `{#var#}` placeholders:

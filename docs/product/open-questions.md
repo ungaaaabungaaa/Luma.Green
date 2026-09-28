@@ -24,16 +24,20 @@ date and where the answer now lives. Architecture-level decisions also get an
 
 ## Open
 
-| #   | Question                                                                        | Needed by             | Notes                                                        |
-| --- | ------------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------ |
-| 1   | Kabadiwala → yard hand-off: who initiates, prices, transport, weighing, payment | Before building it    | [kabadiwala-to-yard.md](./kabadiwala-to-yard.md)             |
-| 2   | "What all he wants" for each hand-off                                           | Before each hand-off  | [roles.md](./roles.md)                                       |
-| 3   | GST required for yards, recyclers and manufacturers?                            | Before escrow         | Optional in the diagram                                      |
-| 4   | "Location tags" — area names, landmarks, or several sites?                      | Onboarding v2         | Built as area names                                          |
-| 5   | Police verification for home-pickup Saathis?                                    | Before Saathi pickups | Safety for households                                        |
-| 6   | What recycle points are worth                                                   | Before the pilot      |                                                              |
-| 7   | Keep household photos for model training (with consent)?                        | Before the pilot      | Default: delete after 90 days                                |
-| 8   | Dispatch timeout before a booking moves to the next kabadiwala                  | Pilot                 | 15 minutes assumed                                           |
-| 9   | Who maintains the minimum and fallback tables, and how often                    | Before the pilot      | Assumed: the admin, weekly                                   |
-| 10  | Which kabadiwalas and yards take part in the pilot, and in which areas          | Before the pilot      |                                                              |
-| 11  | The "Ponytail" skill the founder mentioned                                      | —                     | Not found in the skills or plugin directory; skipped for now |
+| #   | Question                                                                                                        | Needed by               | Notes                                                        |
+| --- | --------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------ |
+| 1   | Kabadiwala → yard hand-off: who initiates, prices, transport, weighing, payment                                 | Before building it      | [kabadiwala-to-yard.md](./kabadiwala-to-yard.md)             |
+| 2   | "What all he wants" for each hand-off                                                                           | Before each hand-off    | [roles.md](./roles.md)                                       |
+| 3   | GST required for yards, recyclers and manufacturers?                                                            | Before escrow           | Optional in the diagram                                      |
+| 4   | "Location tags" — area names, landmarks, or several sites?                                                      | Onboarding v2           | Built as area names                                          |
+| 5   | Police verification for home-pickup Saathis?                                                                    | Before Saathi pickups   | Safety for households                                        |
+| 6   | What recycle points are worth                                                                                   | Before the pilot        |                                                              |
+| 7   | Keep household photos for model training (with consent)?                                                        | Before the pilot        | Default: delete after 90 days                                |
+| 8   | Dispatch timeout before a booking moves to the next kabadiwala                                                  | Pilot                   | 15 minutes assumed                                           |
+| 9   | Who maintains the minimum and fallback tables, and how often                                                    | Before the pilot        | Assumed: the admin, weekly                                   |
+| 10  | Which kabadiwalas and yards take part in the pilot, and in which areas                                          | Before the pilot        |                                                              |
+| 11  | The "Ponytail" skill the founder mentioned                                                                      | —                       | Not found in the skills or plugin directory; skipped for now |
+| 12  | Is Luma.Green an "e-commerce operator" under GST (tax collection at source on sales through us)?                | Before trades or escrow | Needs a tax adviser                                          |
+| 13  | Does Karnataka's 2025 gig-workers law require registering Saathis or paying a welfare fee?                      | Before Saathi jobs      | Uncertain from public sources                                |
+| 14  | Yards that need no pollution-board consent (white category, e.g. paper baling only): accept a self-declaration? | Onboarding v1           | Built as a "not required" checkbox the admin checks          |
+| 15  | Use MSG91's OTP widget and its default template while our own DLT templates wait for approval?                  | This week               | MSG91 says its widget ships with a default template          |
