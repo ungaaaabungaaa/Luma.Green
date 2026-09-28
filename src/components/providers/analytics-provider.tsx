@@ -32,7 +32,9 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  if (!key) return <>{children}</>;
-
-  return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
+  return key ? (
+    <PostHogProvider client={posthog}>{children}</PostHogProvider>
+  ) : (
+    <>{children}</>
+  );
 }

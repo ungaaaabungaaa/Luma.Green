@@ -16,7 +16,9 @@ export function ConvexClientProvider({ children }: { children: ReactNode }) {
     url ? new ConvexReactClient(url) : undefined,
   );
 
-  if (!client) return <>{children}</>;
-
-  return <ConvexProvider client={client}>{children}</ConvexProvider>;
+  return client ? (
+    <ConvexProvider client={client}>{children}</ConvexProvider>
+  ) : (
+    <>{children}</>
+  );
 }
