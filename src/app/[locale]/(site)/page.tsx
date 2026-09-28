@@ -87,8 +87,8 @@ export default async function HomePage() {
             aria-hidden
             className="relative mx-auto hidden aspect-square w-full max-w-sm items-center justify-center lg:flex"
           >
-            <div className="absolute inset-0 rounded-full bg-brand-100 blur-3xl dark:bg-brand-950" />
-            <div className="absolute inset-8 rounded-full border border-brand-200 dark:border-brand-900" />
+            <div className="absolute inset-0 rounded-full bg-brand-100 blur-3xl" />
+            <div className="absolute inset-8 rounded-full border border-brand-200" />
             <LogoMark className="relative size-48" />
           </div>
         </Container>

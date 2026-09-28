@@ -9,7 +9,7 @@ Title must follow Conventional Commits, e.g.
 
 ## How to verify
 
-<!-- Exact steps a reviewer can follow. "Go to /ta, switch theme, …" -->
+<!-- Exact steps a reviewer can follow. "Go to /ta, open the menu, …" -->
 
 1.
 
@@ -23,8 +23,9 @@ Title must follow Conventional Commits, e.g.
 
 ## Screenshots / recordings
 
-<!-- Required for any visible UI change. Light and dark, and one RTL locale
-     (/ar or /ur) if layout changed. -->
+<!-- Required for any visible UI change. At phone width (390 px), plus desktop
+     for business and admin screens, and one RTL locale (/ar or /ur) if
+     layout changed. -->
 
 ## Notes for the reviewer
 

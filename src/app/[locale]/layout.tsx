@@ -49,11 +49,11 @@ export async function generateMetadata({
   };
 }
 
+// White theme only (docs/decisions/0010): tell the browser not to darken
+// form controls or scrollbars when the phone is in dark mode.
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0B3326" },
-  ],
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default async function LocaleLayout({
@@ -67,7 +67,6 @@ export default async function LocaleLayout({
       lang={localeMeta[locale].hreflang}
       dir={localeMeta[locale].dir}
       className={`${fontClassName(locale)} h-full`}
-      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <Providers>{children}</Providers>

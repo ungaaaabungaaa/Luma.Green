@@ -33,7 +33,7 @@ export async function Principles() {
         <ul className="grid gap-8 md:grid-cols-3">
           {principles.map(({ key, icon: Icon }) => (
             <li key={key} className="space-y-3">
-              <span className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-100 text-brand-900 dark:bg-brand-950 dark:text-brand-200">
+              <span className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-100 text-brand-900">
                 <Icon aria-hidden className="size-5" />
               </span>
               <h3 className="font-semibold">{t(`${key}.title`)}</h3>
