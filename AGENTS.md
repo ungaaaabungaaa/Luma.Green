@@ -90,6 +90,11 @@ text to a component is wrong even if it looks fine — see
 `@/i18n/navigation`. ESLint enforces this; the failure it prevents is silent
 (links drop the locale) and only shows up for non-English users.
 
+**The one exception is the admin console** (`src/app/admin`,
+`src/components/admin`): English only, outside the locale segment, so its copy
+lives in the components and it uses Next's own `Link` and router. ESLint
+allows this there and nowhere else.
+
 **Never invent colours.** Use semantic tokens (`bg-primary`, `text-muted-foreground`)
 or the `brand-*` scale. A raw hex in a component is a bug — see
 `.claude/skills/design-system`.
@@ -171,10 +176,15 @@ them. Don't assume they work; wire them in a focused PR.
 Convex **is** wired: the schema is deployed and `convex/_generated` is committed,
 so `api` and `Doc`/`Id` types are safe to import today.
 
-- **Better Auth** — decided: the Convex component (`@convex-dev/better-auth`),
-  phone codes for everyone, email + password + authenticator for the one admin.
-  See `docs/architecture/auth.md` before writing any auth code.
-- **Razorpay, Resend, MSG91, R2, Mapbox, OpenRouter** — packages installed, keys
+Better Auth **is** wired too: phone codes at `/login`, the admin at
+`/admin/login` (set up once at `/admin/setup`). Guard every Convex function
+with `requireUser` / `requireAdmin` from `convex/lib/access.ts`, and run
+`pnpm auth:schema` after changing a Better Auth plugin. Read
+`docs/architecture/auth.md` before touching auth.
+
+- **MSG91** — sending code is in place (`convex/sms.ts`); keys wait for DLT
+  approval, and the per-number cap in `docs/architecture/auth.md` comes first.
+- **Razorpay, Resend, R2, Mapbox, OpenRouter** — packages installed, keys
   absent. Each needs its own PR with its own tests.
 - **Expo / React Native** — `ios/` and `android/` are empty placeholders.
 

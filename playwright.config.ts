@@ -28,6 +28,10 @@ export default defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
     command: process.env.CI ? "pnpm start" : "pnpm dev",
+    // Always test the build as it ships before Convex is connected — the same
+    // in CI and locally, whatever .env.local says. (Next never lets .env files
+    // override a variable that is already set, even to "".)
+    env: { NEXT_PUBLIC_CONVEX_URL: "", NEXT_PUBLIC_CONVEX_SITE_URL: "" },
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

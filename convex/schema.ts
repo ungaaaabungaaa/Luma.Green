@@ -40,6 +40,36 @@ const materialFamily = v.union(
 );
 
 export default defineSchema({
+  /**
+   * One row per signed-in person, linked to their Better Auth user (which
+   * lives inside the auth component). `kind` separates platform staff from
+   * everyone else — see docs/architecture/auth.md.
+   */
+  profiles: defineTable({
+    authUserId: v.string(),
+    phone: v.optional(v.string()), // E.164, verified by SMS code
+    kind: v.union(v.literal("member"), v.literal("admin")),
+    locale: v.string(),
+    ...timestamps,
+  })
+    .index("by_authUserId", ["authUserId"])
+    .index("by_phone", ["phone"]),
+
+  /**
+   * The one admin's identity record. Never used to sign in, and never a full
+   * Aadhaar number — only the last four digits (docs/operations/data-protection.md).
+   */
+  adminProfiles: defineTable({
+    profileId: v.id("profiles"),
+    name: v.string(),
+    email: v.string(),
+    phone: v.string(),
+    dateOfBirth: v.string(), // YYYY-MM-DD
+    aadhaarLast4: v.string(),
+    ...timestamps,
+  }).index("by_profileId", ["profileId"]),
+
+  /** v1 identity table — replaced by `profiles`; removed with the v2 schema. */
   users: defineTable({
     authId: v.string(), // subject from the auth provider
     email: v.optional(v.string()),
@@ -254,6 +284,8 @@ export default defineSchema({
   auditLog: defineTable({
     orgId: v.optional(v.id("orgs")),
     actorUserId: v.optional(v.id("users")),
+    /** The signed-in person behind the change (v2 identity). */
+    actorProfileId: v.optional(v.id("profiles")),
     action: v.string(), // "trade.settled", "credit.retired", …
     entityTable: v.string(),
     entityId: v.string(),
