@@ -8,9 +8,7 @@ import { expect, test } from "@playwright/test";
 test("English root renders the brand and tagline", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Luma.Green",
-  );
+  await expect(page.getByRole("banner").getByText("Luma.Green")).toBeVisible();
   await expect(page.getByText("Cleaner Tomorrow in Motion")).toBeVisible();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
