@@ -17,6 +17,8 @@ export const site = {
    */
   url: clientEnv.NEXT_PUBLIC_SITE_URL ?? "https://luma.green",
   supportEmail: "support@luma.green",
+  /** Private vulnerability reports — see SECURITY.md. */
+  securityEmail: "security@luma.green",
   github: "https://github.com/ungaaaabungaaa/Luma.Green",
   /** Brand green — keep in sync with `--brand-*` in `globals.css`. */
   themeColor: "#1F7A5A",
