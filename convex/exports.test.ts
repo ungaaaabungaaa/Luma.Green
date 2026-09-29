@@ -157,7 +157,7 @@ describe("cleanDocument", () => {
   });
 
   it("treats a blank as clearing the field", () => {
-    expect(cleanDocument("poNumber", "   ")).toBeUndefined();
+    expect(cleanDocument("poNumber", " ".repeat(3))).toBeUndefined();
     expect(cleanDocument("notes", "")).toBeUndefined();
   });
 
@@ -609,7 +609,7 @@ describe("tally", () => {
     });
     // Rows are in date order.
     const dates = report.rows.map((row) => String(row[0]));
-    expect(dates).toEqual([...dates].toSorted());
+    expect(dates).toEqual([...dates].toSorted((a, b) => a.localeCompare(b)));
   });
 
   it("gives the seller a Sales voucher and no Receipt Note", async () => {
