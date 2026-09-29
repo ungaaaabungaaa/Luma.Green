@@ -13,6 +13,7 @@ export const publicRoutes = [
   "/how-it-works",
   "/participants",
   "/contact",
+  "/join",
 ] as const;
 
 export type PublicRoute = (typeof publicRoutes)[number];

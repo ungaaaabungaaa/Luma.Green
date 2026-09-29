@@ -1,0 +1,88 @@
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { NextIntlClientProvider } from "next-intl";
+import type { ReactNode } from "react";
+import { describe, expect, it, vi } from "vitest";
+
+import messages from "../../../messages/en.json";
+import { FieldSet, ToggleChips, WeekdayChips, YesNo } from "./fields";
+
+function withIntl(children: ReactNode) {
+  return (
+    <NextIntlClientProvider locale="en" messages={messages}>
+      {children}
+    </NextIntlClientProvider>
+  );
+}
+
+describe("YesNo", () => {
+  it("starts unanswered — no silent default", () => {
+    render(
+      withIntl(
+        <FieldSet id="gst" legend="Do you have a GST number?">
+          <YesNo name="gst" isYes={undefined} onChange={vi.fn()} />
+        </FieldSet>,
+      ),
+    );
+    const group = screen.getByRole("radiogroup", {
+      name: "Do you have a GST number?",
+    });
+    expect(group).toBeInTheDocument();
+    expect(screen.getByRole("radio", { name: "Yes" })).not.toBeChecked();
+    expect(screen.getByRole("radio", { name: "No" })).not.toBeChecked();
+  });
+
+  it("answers with a boolean", async () => {
+    const onChange = vi.fn();
+    render(
+      withIntl(<YesNo name="gst" isYes={undefined} onChange={onChange} />),
+    );
+    await userEvent.click(screen.getByRole("radio", { name: "No" }));
+    expect(onChange).toHaveBeenCalledWith(false);
+  });
+});
+
+describe("ToggleChips", () => {
+  const options = [
+    { value: "paper", label: "Paper" },
+    { value: "plastic", label: "Plastic" },
+    { value: "metal", label: "Metal" },
+  ] as const;
+
+  it("shows what's picked and keeps the list in option order", async () => {
+    const onChange = vi.fn();
+    render(
+      <ToggleChips options={options} value={["metal"]} onChange={onChange} />,
+    );
+    expect(screen.getByRole("button", { name: "Metal" })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Paper" }));
+    expect(onChange).toHaveBeenLastCalledWith(["paper", "metal"]);
+  });
+
+  it("unpicks on a second tap", async () => {
+    const onChange = vi.fn();
+    render(
+      <ToggleChips
+        options={options}
+        value={["paper", "metal"]}
+        onChange={onChange}
+      />,
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Paper" }));
+    expect(onChange).toHaveBeenLastCalledWith(["metal"]);
+  });
+});
+
+describe("WeekdayChips", () => {
+  it("labels days from the translations", () => {
+    render(withIntl(<WeekdayChips value={["sun"]} onChange={vi.fn()} />));
+    expect(screen.getAllByRole("button")).toHaveLength(7);
+    expect(screen.getByRole("button", { name: "Sun" })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+  });
+});

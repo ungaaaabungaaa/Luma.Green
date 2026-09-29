@@ -58,6 +58,9 @@ Every localized URL above also exists with a locale prefix: `/kn/join/kabadiwala
 - **`/admin` sits outside the locale segment.** It is an internal tool for one
   operator, English only, with its own root layout. The proxy matcher excludes
   it — otherwise next-intl rewrites `/admin` to `/en/admin`.
+- **`/join/status`** is where an applicant lands after signing in without a
+  `?next=`: it shows the role picker, their draft, or where their application
+  stands.
 - **`?next=`** on `/login` only accepts a relative path that starts with a single
   `/`. Anything else is ignored, so the login page can't be used as an open
   redirect.

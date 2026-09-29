@@ -35,8 +35,8 @@ function ltr(text: string): string {
 
 const RESEND_AFTER_SECONDS = 30;
 const CODE_LENGTH = 6;
-/** Where a new sign-in lands when no `?next=` was given. */
-const AFTER_SIGN_IN = "/";
+/** Where a new sign-in lands when no `?next=` was given: their application. */
+const AFTER_SIGN_IN = "/join/status";
 
 /** `/login/verify`: the 6-digit code, then into the app. */
 export function VerifyFlow() {

@@ -176,5 +176,289 @@
     "errorTooMany": "Too many tries. Ask for a new code.",
     "errorGeneric": "Something went wrong. Please try again.",
     "signingIn": "Signing you in…"
+  },
+  "join": {
+    "metaTitle": "Join Luma.Green",
+    "metaDescription": "Kabadiwalas, yards, recyclers, manufacturers and Saathis in Bengaluru: apply to join Luma.Green. A person checks every application, usually within 12–24 hours.",
+    "title": "Join Luma.Green",
+    "lead": "Tell us what you do. A person checks every application, usually within 12–24 hours.",
+    "start": "Start",
+    "youNeed": "You'll need",
+    "homeTitle": "Selling scrap from home?",
+    "homeBody": "You don't need to join. Book a pickup whenever you have something to sell.",
+    "homeLink": "See how it works",
+    "roles": {
+      "kabadiwala": {
+        "title": "Kabadiwala",
+        "body": "You run a scrap shop and buy from homes nearby.",
+        "needs": "Your shop's address and opening hours. Your GST number if you have one."
+      },
+      "yard": {
+        "title": "Yard",
+        "body": "You sort and bale scrap in bulk, then sell it on.",
+        "needs": "Your GST number if you have one, your pollution-control consent (a PDF) and photos of your machines."
+      },
+      "recycler": {
+        "title": "Recycler",
+        "body": "You turn scrap back into raw material.",
+        "needs": "Your GST number if you have one, your pollution-control consent (a PDF) and photos of your machines."
+      },
+      "manufacturer": {
+        "title": "Manufacturer",
+        "body": "You buy recycled material for your factory.",
+        "needs": "Your GST number if you have one, your pollution-control consent (a PDF) and photos of your machines."
+      },
+      "saathi": {
+        "title": "Saathi",
+        "body": "You want paid work: pickups from homes, sorting, or shifts at a factory.",
+        "needs": "A photo ID and a selfie."
+      }
+    },
+    "shell": {
+      "signOut": "Sign out"
+    },
+    "consent": {
+      "title": "Before you start",
+      "lead": "What we'll ask for, and why.",
+      "why": {
+        "kabadiwala": "Your shop's details let nearby homes book you, and let us check that the shop is real. We call your number once to confirm.",
+        "business": "Your consent certificate and machine photos show buyers and sellers that you're licensed and working. We check them against the pollution control board's public register.",
+        "saathi": "Your photo ID and selfie let us confirm who you are before anyone lets you into their home or yard."
+      },
+      "privacy": "Only you and the Luma.Green team can see your details and files. We use them to verify you and to connect you with others on Luma.Green, never to sell. You can ask us to delete them.",
+      "age": "I am 18 or older",
+      "accept": "I've read what's collected and why",
+      "startButton": "Start my application",
+      "starting": "Starting…"
+    },
+    "form": {
+      "saving": "Saving…",
+      "saved": "Saved",
+      "notSaved": "Not saved. Check your connection.",
+      "submit": "Send for verification",
+      "submitting": "Sending…",
+      "next": "Next: documents",
+      "back": "Back",
+      "fixErrors": "Some answers need a look. They're marked below.",
+      "yes": "Yes",
+      "no": "No",
+      "optional": "optional",
+      "gstQuestion": "Do you have a GST number?",
+      "gstin": "GST number",
+      "gstinHint": "15 characters, like 29ABCDE1234F1Z5",
+      "useLocation": "Use my location",
+      "locating": "Finding you…",
+      "locationSaved": "Location saved",
+      "locationFailed": "Couldn't get your location. Allow location for this site, or just type the address. We'll confirm it when we call.",
+      "locationWhy": "So nearby homes and buyers can find you.",
+      "loginPhone": "Your login number",
+      "otherPhones": "Other numbers",
+      "otherPhonesHint": "Up to two more, like a helper or partner. We only call them about your work.",
+      "addPhone": "Add a number",
+      "remove": "Remove",
+      "phoneNumber": "Number",
+      "phoneLabel": "Whose number",
+      "phoneLabelPlaceholder": "Helper, partner…",
+      "hours": "Opening hours",
+      "opens": "Opens",
+      "closes": "Closes",
+      "weeklyOff": "Weekly holiday",
+      "weeklyOffHint": "Leave empty if you're open every day.",
+      "weekdays": {
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat",
+        "sun": "Sun"
+      },
+      "changesTitle": "What to fix"
+    },
+    "kabadiwala": {
+      "title": "Your shop",
+      "ownerName": "Your name",
+      "shopName": "Shop name",
+      "address": "Shop address",
+      "addressHint": "Street, area and a landmark",
+      "offersPickup": "Do you pick up from homes?",
+      "noPickupHint": "No problem. A Saathi near you can do home pickups for your shop.",
+      "vehicle": "Your vehicle",
+      "vehicles": {
+        "handcart": "Handcart",
+        "cycle": "Cycle",
+        "auto": "Auto",
+        "mini_truck": "Mini-truck"
+      }
+    },
+    "business": {
+      "titles": {
+        "yard": "Your yard",
+        "recycler": "Your recycling unit",
+        "manufacturer": "Your factory"
+      },
+      "step": "Step {step} of 2",
+      "businessName": "Business name",
+      "materials": "Materials you handle",
+      "materialsHint": "So we can connect you with the right sellers and buyers.",
+      "materialNames": {
+        "paper": "Paper",
+        "plastic": "Plastic",
+        "metal": "Metal",
+        "glass": "Glass",
+        "ewaste": "E-waste"
+      },
+      "address": "Address",
+      "addressHint": "Plot, street and area",
+      "locationTags": "Area names",
+      "locationTagsHint": "Help others find you, like Peenya Industrial Area. Up to five.",
+      "addTag": "Add",
+      "collects": "Do you collect from your suppliers?",
+      "hours": "Working hours"
+    },
+    "documents": {
+      "title": "Documents and photos",
+      "lead": "We check your consent on the pollution control board's public register.",
+      "notRequired": "Our unit doesn't need a consent",
+      "notRequiredHint": "Some units, like paper baling only, are exempt. Tell us why and we'll check.",
+      "reason": "Why it isn't needed",
+      "board": "Which board issued it?",
+      "boards": {
+        "kspcb": "Karnataka (KSPCB)",
+        "other": "Another state's board"
+      },
+      "boardState": "Which state?",
+      "consentNumber": "Consent or registration number",
+      "consentNumberHint": "As printed on the certificate",
+      "validUntil": "Valid until",
+      "certificate": "Consent certificate",
+      "certificateHint": "One PDF, up to 10 MB.",
+      "machineMedia": "Photos or videos of your machines",
+      "machineMediaHint": "At least two. Show your main machines and the yard. Photos up to 10 MB, videos up to 20 MB.",
+      "declaration": "These documents are genuine and belong to this business."
+    },
+    "saathi": {
+      "title": "About you",
+      "name": "Your name",
+      "nameHint": "As on your ID",
+      "area": "Where you live",
+      "areaHint": "Your area, like Malleshwaram",
+      "radius": "How far can you travel?",
+      "radiusOption": "{km} km",
+      "workTypes": "Work you want",
+      "work": {
+        "home_pickups": "Pickups from homes",
+        "shop_help": "Help at a kabadiwala shop",
+        "yard_sorting": "Sorting at a yard",
+        "factory_shifts": "Shifts at a recycler or factory"
+      },
+      "vehicle": "Your vehicle",
+      "vehicles": {
+        "none": "None",
+        "cycle": "Cycle",
+        "two_wheeler": "Bike or scooter",
+        "auto": "Auto"
+      },
+      "times": "When can you work?",
+      "timeNames": {
+        "morning": "Morning",
+        "afternoon": "Afternoon",
+        "evening": "Evening"
+      },
+      "days": "Which days?",
+      "idProof": "Photo ID",
+      "idProofHint": "Voter ID, driving licence, PAN, or a masked Aadhaar with only the last four digits showing. A photo or PDF, up to 10 MB.",
+      "selfie": "A selfie",
+      "selfieHint": "We match it with your ID."
+    },
+    "files": {
+      "choose": "Choose a file",
+      "addMore": "Add more",
+      "takePhoto": "Take a photo",
+      "uploading": "Uploading…",
+      "remove": "Remove",
+      "size": "{size} MB",
+      "sizeKb": "{size} KB"
+    },
+    "status": {
+      "metaTitle": "Your application",
+      "none": {
+        "title": "Tell us what you do",
+        "lead": "Pick your role to start your application."
+      },
+      "draft": {
+        "title": "Your application isn't sent yet",
+        "lead": "Everything you've filled in is saved.",
+        "continue": "Continue",
+        "changeRole": "Start again as a different role",
+        "confirmChange": "This deletes what you've filled in so far. Start again?"
+      },
+      "submitted": {
+        "title": "Under review",
+        "lead": "Usually 12–24 hours. We'll send you an SMS when it's done.",
+        "sentAt": "Sent {when}",
+        "whatWeCheck": "What we check"
+      },
+      "changes_requested": {
+        "title": "A few changes needed",
+        "lead": "Our team asked for this:",
+        "fix": "Fix and resend"
+      },
+      "approved": {
+        "title": "You're verified",
+        "lead": "Your dashboard is on its way. We'll send you an SMS when it opens."
+      },
+      "rejected": {
+        "title": "We couldn't verify you",
+        "lead": "Our team's reason:",
+        "contact": "Talk to us"
+      },
+      "suspended": {
+        "title": "Your account is paused",
+        "lead": "Please get in touch so we can sort it out.",
+        "contact": "Talk to us"
+      },
+      "roleLabel": "Applying as: {role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "Your shop is where you said on the map",
+          "two": "We call you on your login number",
+          "three": "Your GST number is active, if you gave one"
+        },
+        "business": {
+          "one": "Your GST number is active and matches the business, if you gave one",
+          "two": "Your consent is on the board's register, in date, and covers your work",
+          "three": "Your photos show a working unit, and we call you"
+        },
+        "saathi": {
+          "one": "Your ID is readable and the name matches",
+          "two": "Your selfie matches your ID",
+          "three": "We call you on your number"
+        }
+      }
+    },
+    "errors": {
+      "required": "This is needed",
+      "tooShort": "A little longer, please",
+      "tooLong": "That's too long",
+      "chooseOne": "Choose one",
+      "pickAtLeastOne": "Pick at least one",
+      "gstin": "Check the GST number: 15 characters, like 29ABCDE1234F1Z5",
+      "phone": "Enter a 10-digit mobile number",
+      "duplicatePhone": "This number is already listed",
+      "maxPhones": "Up to two extra numbers",
+      "maxTags": "Up to five area names",
+      "time": "Enter a time",
+      "closesBeforeOpens": "Closing time must be after opening time",
+      "date": "Enter a date",
+      "expired": "This consent has expired. Upload the renewed one.",
+      "explainMore": "Tell us a little more",
+      "declaration": "Please confirm this",
+      "fileMissing": "Please add this",
+      "fileType": "This kind of file can't be used here",
+      "fileTooBig": "This file is too big",
+      "uploadFailed": "Upload failed. Try again.",
+      "generic": "Something went wrong. Try again."
+    }
   }
 }
