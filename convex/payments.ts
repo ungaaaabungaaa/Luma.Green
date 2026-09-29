@@ -328,6 +328,20 @@ function receivedAt(trade: Doc<"trades">): number | null {
   return stepAt(trade, "completed") ?? stepAt(trade, "dispatched");
 }
 
+/** From payment into escrow on, the prototype's escrow holds the money. */
+function isEscrowFunded(status: TradeStatus): boolean {
+  return (
+    status === "paid_to_escrow" ||
+    status === "dispatched" ||
+    status === "completed"
+  );
+}
+
+/** The simulated reference an escrow payment carries: ESC-<receipt no.>. */
+function escrowReference(trade: Doc<"trades">): string {
+  return `ESC-${trade.invoiceNo ?? trade._id.slice(-6).toUpperCase()}`;
+}
+
 /** The seller's or the buyer's vehicle: what the load most likely moves on. */
 function vehicleOf(seller: Doc<"orgs">, buyer: Doc<"orgs">): Vehicle {
   return seller.vehicle ?? buyer.vehicle ?? "mini_truck";
@@ -483,7 +497,7 @@ export async function openLedgerFor(
       counterpartyOrgId: trade.buyerOrgId,
       direction: "receivable",
     });
-    seller = await ctx.db.get("ledgerEntries", id);
+    seller = (await ctx.db.get("ledgerEntries", id)) ?? undefined;
   }
   if (!buyer) {
     const id = await ctx.db.insert("ledgerEntries", {
@@ -492,10 +506,74 @@ export async function openLedgerFor(
       counterpartyOrgId: trade.sellerOrgId,
       direction: "payable",
     });
-    buyer = await ctx.db.get("ledgerEntries", id);
+    buyer = (await ctx.db.get("ledgerEntries", id)) ?? undefined;
   }
   if (!seller || !buyer) throw new ConvexError("LEDGER_WRITE_FAILED");
   return { seller, buyer };
+}
+
+/**
+ * Brings a trade's khata in line with where the trade stands. The market
+ * can call this after every step it applies (accept, pay, dispatch,
+ * confirm): it opens the two rows on acceptance and, once the buyer has
+ * paid into the prototype's escrow, records that payment under its
+ * simulated reference so both sides read as settled. Safe to call twice.
+ */
+export async function syncLedger(
+  ctx: MutationCtx,
+  trade: Doc<"trades">,
+  byProfileId: Id<"profiles">,
+  now: number,
+): Promise<void> {
+  if (!OWED_STATUSES.includes(trade.status)) return;
+  if (isEscrowFunded(trade.status)) {
+    await recordEscrowPayment(ctx, trade, byProfileId, now);
+  }
+  const ledger = await openLedgerFor(ctx, trade, now);
+  const paidPaise = await paidOn(ctx, trade._id);
+  for (const entry of [ledger.seller, ledger.buyer]) {
+    if (entry.paidPaise === paidPaise) continue;
+    await ctx.db.patch("ledgerEntries", entry._id, {
+      paidPaise,
+      status: ledgerStatus(
+        { duePaise: entry.duePaise, paidPaise, dueAt: entry.dueAt },
+        now,
+      ),
+      updatedAt: now,
+    });
+  }
+}
+
+/** The escrow hold on a trade, written once, with its simulated reference. */
+async function recordEscrowPayment(
+  ctx: MutationCtx,
+  trade: Doc<"trades">,
+  byProfileId: Id<"profiles">,
+  now: number,
+): Promise<void> {
+  const rows = await ctx.db
+    .query("payments")
+    .withIndex("by_subject", (q) =>
+      q.eq("subject", "trade").eq("subjectId", trade._id),
+    )
+    .take(PAGE);
+  if (rows.some((row) => row.method === "escrow")) return;
+  const alreadyPaid = rows.reduce((sum, row) => sum + row.amountPaise, 0);
+  const amountPaise = trade.totalPaise - alreadyPaid;
+  if (amountPaise <= 0) return;
+  const paidAt = stepAt(trade, "paid_to_escrow") ?? now;
+  await ctx.db.insert("payments", {
+    subject: "trade",
+    subjectId: trade._id,
+    method: "escrow",
+    reference: escrowReference(trade),
+    amountPaise,
+    paidAt,
+    fromOrgId: trade.buyerOrgId,
+    toOrgId: trade.sellerOrgId,
+    byProfileId,
+    createdAt: now,
+  });
 }
 
 type EntryView = typeof vEntryView.type;
@@ -537,7 +615,11 @@ async function entriesFor(
     if (!counterparty) continue;
     const row = byTrade.get(trade._id);
     const duePaise = row?.duePaise ?? trade.totalPaise;
-    const paidPaise = row?.paidPaise ?? 0;
+    // No khata row yet: the market hasn't opened one. Money paid into the
+    // prototype's escrow still counts as paid, so the two screens agree.
+    const paidPaise =
+      row?.paidPaise ??
+      (isEscrowFunded(trade.status) ? trade.totalPaise : 0);
     const dueAt = row?.dueAt ?? defaultDueAt(acceptedAt(trade));
 
     let msme: EntryView["msme"] = null;
@@ -597,6 +679,17 @@ function byUrgency(a: EntryView, b: EntryView): number {
 
 // --- Khata ---------------------------------------------------------------------------
 
+const vCounterpartyBalance = v.object({
+  org: vCounterparty,
+  receivablePaise: v.number(),
+  payablePaise: v.number(),
+  overdue: v.boolean(),
+  nextDueAt: v.union(v.number(), v.null()),
+  msmeDaysLeft: v.union(v.number(), v.null()),
+});
+
+type CounterpartyBalance = typeof vCounterpartyBalance.type;
+
 export const khataSummary = query({
   args: {},
   returns: v.object({
@@ -605,16 +698,7 @@ export const khataSummary = query({
     overduePaise: v.number(),
     overdueCount: v.number(),
     openCount: v.number(),
-    counterparties: v.array(
-      v.object({
-        org: vCounterparty,
-        receivablePaise: v.number(),
-        payablePaise: v.number(),
-        overdue: v.boolean(),
-        nextDueAt: v.union(v.number(), v.null()),
-        msmeDaysLeft: v.union(v.number(), v.null()),
-      }),
-    ),
+    counterparties: v.array(vCounterpartyBalance),
   }),
   handler: async (ctx) => {
     const { org } = await requireOrg(ctx);
@@ -626,10 +710,7 @@ export const khataSummary = query({
       overdueCount: 0,
       openCount: 0,
     };
-    const parties = new Map<
-      Id<"orgs">,
-      (typeof khataSummary._returnType)["counterparties"][number]
-    >();
+    const parties = new Map<Id<"orgs">, CounterpartyBalance>();
     for (const entry of entries) {
       if (entry.status === "settled") continue;
       totals.openCount += 1;
@@ -882,6 +963,8 @@ export const record = mutation({
       throw new ConvexError("INVALID_DATE");
     }
 
+    // Open the khata rows if the market hasn't, and count the escrow hold.
+    await syncLedger(ctx, trade, profile._id, now);
     const ledger = await openLedgerFor(ctx, trade, now);
     const balancePaise = ledger.seller.duePaise - ledger.seller.paidPaise;
     if (args.amountPaise > balancePaise) throw new ConvexError("OVERPAYMENT");
@@ -1113,9 +1196,10 @@ export const ewayBillPartA = query({
     else if (taxes.reverseCharge) documentType = "Self Invoice";
     return {
       tradeId: trade._id,
-      supplyType: tax.side === "seller" ? "Outward" : "Inward",
-      subType: "Supply",
-      transactionType: "Regular",
+      supplyType:
+        tax.side === "seller" ? ("Outward" as const) : ("Inward" as const),
+      subType: "Supply" as const,
+      transactionType: "Regular" as const,
       documentType,
       documentNo: trade.invoiceNo ?? null,
       documentDate: invoiceAt === null ? null : indiaToday(invoiceAt),
@@ -1125,7 +1209,7 @@ export const ewayBillPartA = query({
         description: tax.materialRef.names.en ?? trade.materialCode,
         hsn: taxes.hsn,
         quantityKg: trade.grams / 1000,
-        unit: "KGS",
+        unit: "KGS" as const,
         taxableValuePaise: trade.totalPaise,
         cgstBp: gstOnDocument > 0 ? halfRate : 0,
         sgstBp: gstOnDocument > 0 ? halfRate : 0,
@@ -1140,7 +1224,7 @@ export const ewayBillPartA = query({
         totalPaise: taxes.invoiceTotalPaise,
       },
       transport: {
-        mode: "Road",
+        mode: "Road" as const,
         vehicle: vehicleOf(seller.org, buyer.org),
         approxDistanceKm: distance,
       },
@@ -1346,7 +1430,7 @@ export const selfInvoice = query({
       cgstPaise: Math.floor(gst / 2),
       sgstPaise: gst - Math.floor(gst / 2),
       totalPaise: tax.trade.totalPaise + gst,
-      reverseCharge: true,
+      reverseCharge: true as const,
     };
   },
 });

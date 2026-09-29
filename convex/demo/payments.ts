@@ -12,8 +12,10 @@ import { ledgerStatus } from "../lib/tax";
  *    (ESC-<invoice>), so the "Paid" tab shows how the money moved;
  *  - the oldest completed trade is part-paid by RTGS and now OVERDUE, so
  *    every demo login on either side of it sees an overdue entry;
- *  - the next completed trade was settled by NEFT with a UTR;
- *  - a kabadiwala's completed sale was settled by UPI, as it would be.
+ *  - the next completed trade was part-paid by NEFT (UTR), balance on credit;
+ *  - a kabadiwala's completed sale was half paid in cash at pickup, the rest
+ *    on 30 days' credit, as yards do;
+ *  - every other completed trade was settled by NEFT with a UTR.
  * Completed household pickups and finished Saathi jobs are recorded too.
  * Declarations: GST status for every business (from its GSTIN), an MSME
  * category, and "for manufacturing" for recyclers and manufacturers.
@@ -57,6 +59,38 @@ function stepAt(
   status: Doc<"trades">["status"],
 ): number | null {
   return trade.timeline.find((step) => step.status === status)?.at ?? null;
+}
+
+/** Cash carries no reference; escrow carries the receipt number; banks a UTR. */
+function referenceFor(
+  method: Doc<"payments">["method"],
+  trade: Doc<"trades">,
+  seed: number,
+): string | undefined {
+  switch (method) {
+    case "cash": {
+      return undefined;
+    }
+    case "upi": {
+      return reference("upi", seed);
+    }
+    case "escrow": {
+      return trade.invoiceNo
+        ? `ESC-${trade.invoiceNo}`
+        : reference("escrow", seed);
+    }
+    case "neft":
+    case "imps":
+    case "rtgs": {
+      return reference("utr", seed);
+    }
+  }
+}
+
+function noteFor(method: Doc<"payments">["method"]): string {
+  return method === "cash"
+    ? "Cash at pickup; balance on credit"
+    : "Part payment on delivery; balance on credit";
 }
 
 /** The MSME category each demo business declares (Udyam). */
@@ -155,9 +189,12 @@ async function seedTradeLedger(
     } else if (trade._id === overdueId) {
       plan = { method: "rtgs", share: 0.5, dueDays: 15 };
     } else if (trade._id === neftId) {
-      plan = { method: "neft", share: 1, dueDays: 30 };
+      plan = { method: "neft", share: 0.6, dueDays: 30 };
     } else if (trade.status === "completed" && seller?.kind === "kabadiwala") {
-      plan = { method: "upi", share: 1, dueDays: 30 };
+      // Yards pay kabadiwalas half in cash at pickup and the rest on credit.
+      plan = { method: "cash", share: 0.5, dueDays: 30 };
+    } else if (trade.status === "completed") {
+      plan = { method: "neft", share: 1, dueDays: 30 };
     } else {
       plan = { method: "escrow", share: 1, dueDays: 30 };
     }
@@ -173,24 +210,17 @@ async function seedTradeLedger(
     );
 
     if (amountPaise > 0) {
-      let kind: "utr" | "upi" | "escrow" = "utr";
-      if (plan.method === "upi") kind = "upi";
-      else if (plan.method === "escrow") kind = "escrow";
       await ctx.db.insert("payments", {
         subject: "trade",
         subjectId: trade._id,
         method: plan.method,
-        reference:
-          plan.method === "escrow" && trade.invoiceNo
-            ? `ESC-${trade.invoiceNo}`
-            : reference(kind, index + 11),
+        reference: referenceFor(plan.method, trade, index + 11),
         amountPaise,
         paidAt,
         fromOrgId: trade.buyerOrgId,
         toOrgId: trade.sellerOrgId,
         byProfileId,
-        note:
-          plan.share < 1 ? "Part payment on delivery; balance on credit" : undefined,
+        note: plan.share < 1 ? noteFor(plan.method) : undefined,
         createdAt: paidAt,
       });
     }
