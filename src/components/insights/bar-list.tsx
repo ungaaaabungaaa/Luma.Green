@@ -1,0 +1,70 @@
+import type { LucideIcon } from "lucide-react";
+
+export interface BarListRow {
+  key: string;
+  label: string;
+  icon: LucideIcon;
+  /** What the bar's length encodes. */
+  value: number;
+  /** The value as people read it, shown at the end of the row. */
+  display: string;
+  detail?: string;
+}
+
+/** A bar's length as a share of the longest, in whole percent (0–100). */
+export function barPercent(value: number, max: number): number {
+  return max <= 0 || value <= 0
+    ? 0
+    : Math.max(1, Math.round((value / max) * 100));
+}
+
+/**
+ * A small horizontal bar chart for one measure across a few categories.
+ * Every value is also written out, so the bars only add the comparison.
+ */
+export function BarList({
+  label,
+  rows,
+}: {
+  label: string;
+  rows: BarListRow[];
+}) {
+  const max = Math.max(0, ...rows.map((row) => row.value));
+  return (
+    <ul
+      aria-label={label}
+      className="flex flex-col gap-4 rounded-2xl border bg-card p-4"
+    >
+      {rows.map((row) => {
+        const Icon = row.icon;
+        return (
+          <li key={row.key} className="flex flex-col gap-1.5">
+            <div className="flex items-center justify-between gap-3">
+              <span className="flex min-w-0 items-center gap-2 font-medium">
+                <Icon
+                  aria-hidden
+                  className="size-4 shrink-0 text-muted-foreground"
+                />
+                <span className="truncate">{row.label}</span>
+              </span>
+              <span className="shrink-0 text-sm font-semibold tabular-nums">
+                {row.display}
+              </span>
+            </div>
+            <div
+              aria-hidden
+              data-testid="bar"
+              className="h-3 min-w-1 rounded-e-sm bg-chart-3"
+              style={{ width: `${String(barPercent(row.value, max))}%` }}
+            />
+            {row.detail ? (
+              <span className="text-xs text-muted-foreground">
+                {row.detail}
+              </span>
+            ) : null}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}

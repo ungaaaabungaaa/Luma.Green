@@ -489,6 +489,255 @@
       "saathi": "Saathi"
     }
   },
+  "saathi": {
+    "greeting": "Hello, {name}",
+    "lead": "Paid work around {area}. Take a job, do it, mark it done.",
+    "demoNote": "Sample data: the jobs, businesses and pay here are examples for the prototype.",
+    "week": {
+      "label": "Earned this week",
+      "hint": "Last 7 days · {count, plural, =0 {no jobs yet} one {# job} other {# jobs}}",
+      "all": "See all earnings"
+    },
+    "today": {
+      "title": "Your jobs today",
+      "empty": "No jobs for today",
+      "emptyBody": "Take an open job below. It shows up here on its day."
+    },
+    "upcoming": {
+      "title": "Coming up",
+      "hint": "You can mark it done on the day."
+    },
+    "open": {
+      "title": "Open jobs",
+      "lead": "Jobs in your area come first.",
+      "empty": "No open jobs right now",
+      "emptyBody": "New jobs from shops, yards and factories show up here."
+    },
+    "work": {
+      "home_pickups": "Pickups from homes",
+      "shop_help": "Help at a shop",
+      "yard_sorting": "Sorting at a yard",
+      "factory_shifts": "Factory shift"
+    },
+    "windows": {
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    },
+    "when": "{day}, {window}",
+    "whenWhere": "{when} · {area}",
+    "days": {
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "yesterday": "Yesterday"
+    },
+    "late": "Not marked done yet",
+    "nearYou": "Your area",
+    "postedBy": "For {name}",
+    "pay": "Pay",
+    "take": "Take this job",
+    "taking": "Taking…",
+    "taken": "Job taken. It's on your list now.",
+    "markDone": "Mark done",
+    "saving": "Saving…",
+    "doneToast": "Well done! {pay} added to your earnings.",
+    "confirm": {
+      "title": "Finished this job?",
+      "body": "{title} in {area}. {pay} will be added to your earnings.",
+      "yes": "Yes, it's done",
+      "no": "Not yet"
+    },
+    "errors": {
+      "JOB_TAKEN": "Someone else took this job. Try another one.",
+      "JOB_EXPIRED": "This job's day has passed.",
+      "SLOT_BUSY": "You already have a job at that time.",
+      "NOT_YOUR_JOB": "This job isn't yours.",
+      "ALREADY_DONE": "This job is already marked done.",
+      "TOO_EARLY": "You can mark it done on the day of the job.",
+      "JOB_NOT_FOUND": "This job isn't available any more.",
+      "generic": "That didn't work. Check your internet and try again."
+    }
+  },
+  "impact": {
+    "title": "Your impact",
+    "lead": "What your business has kept in the recycling loop.",
+    "demoNote": "Sample data: amounts are examples, and CO₂e uses indicative factors — the kg of CO₂e avoided for each kg recycled instead of made new.",
+    "since": "From completed pickups and trades since {date}.",
+    "kpi": {
+      "recycled": "Kilos recycled",
+      "recycledHint": "Each kilo counted once",
+      "recycledContent": "Recycled material bought",
+      "co2e": "CO₂e avoided",
+      "co2eHint": "Compared with making it new",
+      "earned": "Earned from sales",
+      "spent": "Spent on material",
+      "paidHouseholds": "Paid to households",
+      "sales": "{count, plural, =0 {No sales yet} one {# sale} other {# sales}}",
+      "purchases": "{count, plural, =0 {No purchases yet} one {# purchase} other {# purchases}}",
+      "pickups": "{count, plural, =0 {No pickups yet} one {# pickup} other {# pickups}}"
+    },
+    "byFamily": {
+      "title": "By material",
+      "lead": "Kilos recycled, and the CO₂e each material avoided.",
+      "co2e": "{amount} CO₂e avoided"
+    },
+    "flows": {
+      "title": "In and out",
+      "lead": "What came into your business, and what moved on.",
+      "households": "Bought from households",
+      "bought": "Bought from businesses",
+      "sold": "Sold up the chain"
+    },
+    "families": {
+      "paper": "Paper",
+      "plastic": "Plastic",
+      "metal": "Metal",
+      "glass": "Glass",
+      "ewaste": "E-waste",
+      "other": "Other"
+    },
+    "ledger": {
+      "title": "A credit-ready ledger",
+      "lead": "Every kilo is recorded with who, when and where — the evidence carbon and plastic-credit standards ask for.",
+      "who": "Who",
+      "whoBody": "Verified businesses and households, each with a phone number.",
+      "when": "When",
+      "whenBody": "Every step is time-stamped, from pickup to delivery.",
+      "where": "Where",
+      "whereBody": "The shop, yard or factory the material passed through.",
+      "what": "What",
+      "whatBody": "The material and its weight, on a receipt or an invoice."
+    },
+    "empty": {
+      "title": "Nothing recorded yet",
+      "body": "Your numbers show up here after your first completed pickup or trade."
+    },
+    "saathi": {
+      "title": "Your earnings",
+      "lead": "Pay from the jobs you've finished.",
+      "total": "Earned so far",
+      "jobsDone": "{count, plural, one {# job done} other {# jobs done}}",
+      "week": "Earned this week",
+      "weekHint": "Last 7 days · {count, plural, =0 {no jobs} one {# job} other {# jobs}}",
+      "byKind": "By kind of work",
+      "jobs": "{count, plural, one {# job} other {# jobs}}",
+      "history": "Jobs done",
+      "empty": "No finished jobs yet",
+      "emptyBody": "Take a job on your home screen. When you mark it done, the pay shows here.",
+      "findJob": "Find a job",
+      "demoNote": "Sample data: the jobs and pay here are examples for the prototype."
+    }
+  },
+  "compliance": {
+    "title": "Compliance",
+    "lead": "Your licences and records in one place.",
+    "demoNote": "Sample data: the documents, invoices and amounts here are examples for the prototype.",
+    "checklist": {
+      "title": "Checklist",
+      "whatThisMeans": "What this means:"
+    },
+    "status": {
+      "done": "Done",
+      "due_soon": "Renew soon",
+      "overdue": "Expired",
+      "missing": "Missing",
+      "optional": "Optional",
+      "not_needed": "Not needed",
+      "self_declared": "Not checked yet"
+    },
+    "items": {
+      "gst": {
+        "title": "GST registration",
+        "registered": "GSTIN {gstin}",
+        "notRegistered": "Not registered",
+        "note": "A GST number lets you give tax invoices and claim back the tax on what you buy. In Karnataka you must register once your sales pass ₹40 lakh a year, or to sell to another state."
+      },
+      "consent": {
+        "title": "Pollution board consent",
+        "detail": "{board} · {number}",
+        "missing": "No consent on file",
+        "note": "The state pollution control board's consent to operate lets you run a sorting or recycling unit legally. Recyclers and factories ask for it before they buy.",
+        "noteShop": "A small shop that only buys and sorts scrap usually doesn't need one. You would if you start baling, shredding or processing material."
+      },
+      "scale": {
+        "title": "Weighing scale stamped",
+        "detail": "Self-declared. You'll confirm it here soon.",
+        "note": "Scales used to buy and sell must be checked and stamped by the Legal Metrology department, usually once a year. The stamp shows your weights are fair."
+      },
+      "safety": {
+        "title": "Safety kit for workers",
+        "detail": "Self-declared. You'll confirm it here soon.",
+        "note": "Gloves, masks and closed shoes for everyone who sorts or lifts, and a first-aid box on site. Saathis working your jobs need them too."
+      }
+    },
+    "consent": {
+      "title": "Consent validity",
+      "validUntil": "Valid until {date}",
+      "daysLeft": "{days, plural, =0 {Last day today} one {# day left} other {# days left}}",
+      "ranOut": "{days, plural, one {Ran out # day ago} other {Ran out # days ago}}",
+      "reminder": "We'll remind you on {date}, 90 days before it runs out.",
+      "expiringTitle": "Renew your consent now",
+      "expiringBody": "It runs out on {date}. Apply to {board} for renewal now — it can take weeks.",
+      "expiredTitle": "Your consent has run out",
+      "expiredBody": "It ran out on {date}. Renew it with {board} before you buy or sell more material.",
+      "missingTitle": "No consent on file",
+      "missingBody": "Recyclers and factories ask for a valid consent. Send us yours through Help and we'll add it."
+    },
+    "receipts": {
+      "title": "Trade invoices",
+      "lead": "Tax invoices for your trades on Luma.Green, newest first.",
+      "number": "Invoice",
+      "date": "Date",
+      "with": "With",
+      "what": "What",
+      "amount": "Amount",
+      "eway": "E-way bill",
+      "sale": "Sale",
+      "purchase": "Purchase",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "Needed",
+      "ewayNotNeeded": "Not needed",
+      "ewayNeededLong": "E-way bill needed",
+      "ewayNotNeededLong": "No e-way bill needed",
+      "ewayNote": "An e-way bill is needed to move goods worth more than ₹50,000.",
+      "view": "View invoice {number}",
+      "unknown": "A business no longer on Luma.Green",
+      "empty": "No invoices yet",
+      "emptyBody": "An invoice is made when a buyer pays into escrow."
+    },
+    "epr": {
+      "title": "EPR record, FY {from}–{to}",
+      "lead": "Material you received and recycled this financial year (April to March).",
+      "leadManufacturer": "Recycled material you bought this financial year (April to March).",
+      "received": "Received",
+      "recycled": "Recycled",
+      "bought": "Bought",
+      "streams": {
+        "plastic": "Plastic",
+        "ewaste": "E-waste",
+        "battery": "Batteries",
+        "paper": "Paper",
+        "metal": "Metal",
+        "glass": "Glass",
+        "other": "Other"
+      },
+      "regimes": {
+        "pwm_2016": "Plastic Waste Management Rules, 2016",
+        "ewaste_2022": "E-Waste (Management) Rules, 2022",
+        "bwm_2022": "Battery Waste Management Rules, 2022",
+        "none": "No EPR rules for this material yet"
+      },
+      "note": "EPR certificates are generated on CPCB's EPR portals, not here. These totals come from your completed trades, ready for your filing.",
+      "empty": "Nothing recorded this year yet",
+      "emptyBody": "Completed trades from 1 April count here."
+    },
+    "saathi": {
+      "title": "For businesses",
+      "body": "Compliance is for shops, yards, recyclers and factories. Your jobs and pay are on your home screen.",
+      "home": "Go to my jobs"
+    }
+  },
   "sell": {
     "metaTitle": "Sell your scrap",
     "metaDescription": "Sell newspaper, plastic, metal and old electronics from home in Bengaluru. See what shops near you pay, book a pickup and get paid at your door.",
