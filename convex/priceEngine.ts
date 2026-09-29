@@ -17,8 +17,8 @@ import {
   type BoardStatus,
   computeBoard,
   freshDaysLeft,
-  honourRate,
   type HonourRate,
+  honourRate,
   isFresh,
   isInBand,
   LONG_WINDOW_DAYS,
@@ -28,9 +28,9 @@ import {
   POST_DAYS,
   type PriceInput,
   type PriceLevel,
+  weekChangePct,
   WINDOW_DAYS,
   windowDaysFor,
-  weekChangePct,
 } from "./lib/priceMath";
 import { PILOT_CITY } from "./lib/review";
 import { vFamily } from "./lib/validators";

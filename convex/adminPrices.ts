@@ -19,7 +19,7 @@ import {
   suggestedFallback,
   suggestedFloor,
 } from "./lib/priceMath";
-import { priceProblem } from "./lib/review";
+import { type PriceProblem, priceProblem } from "./lib/review";
 import { vFamily } from "./lib/validators";
 import { vNames } from "./lib/views";
 import { vBoardStatus } from "./tables/priceEngine";
@@ -353,6 +353,44 @@ const vImportProblem = v.union(
   v.literal("NOTE_REQUIRED"),
 );
 
+type ImportProblem = PriceProblem | "UNKNOWN_MATERIAL" | "NOTE_REQUIRED";
+
+type ImportOutcome =
+  | { kind: "saved"; lifted: number }
+  | { kind: "unchanged" }
+  | { kind: "skipped"; problem: ImportProblem };
+
+/** One pasted row: checked, then saved like a form edit. */
+async function importRow(
+  ctx: MutationCtx,
+  row: { code: string; floorPaise: number; fallbackPaise: number },
+  change: Pick<PriceChange, "city" | "note" | "actorProfileId" | "now">,
+): Promise<ImportOutcome> {
+  const problem = priceProblem(row.floorPaise, row.fallbackPaise);
+  if (problem) return { kind: "skipped", problem };
+  const material = await materialByCode(ctx, row.code);
+  if (!material?.active) {
+    return { kind: "skipped", problem: "UNKNOWN_MATERIAL" };
+  }
+  try {
+    const saved = await applyReferencePrice(ctx, {
+      ...change,
+      material,
+      floorPaise: row.floorPaise,
+      fallbackPaise: row.fallbackPaise,
+      via: "csv",
+    });
+    return saved.isChanged
+      ? { kind: "saved", lifted: saved.lifted }
+      : { kind: "unchanged" };
+  } catch (error) {
+    if (error instanceof ConvexError && error.data === "NOTE_REQUIRED") {
+      return { kind: "skipped", problem: "NOTE_REQUIRED" };
+    }
+    throw error;
+  }
+}
+
 /**
  * The CSV paste: many materials' floors and fallbacks in one go. Rows that
  * can't be saved are reported by material, the rest are saved one by one
@@ -391,43 +429,32 @@ export const importPrices = mutation({
       saved: 0,
       unchanged: 0,
       lifted: 0,
-      skipped: [] as { materialCode: string; problem: string }[],
+      skipped: [] as { materialCode: string; problem: ImportProblem }[],
     };
     const seen = new Set<string>();
     for (const row of args.rows) {
       const code = row.materialCode.trim().toUpperCase();
       if (seen.has(code)) continue;
       seen.add(code);
-      const problem = priceProblem(row.floorPaise, row.fallbackPaise);
-      if (problem) {
-        result.skipped.push({ materialCode: code, problem });
-        continue;
-      }
-      const material = await materialByCode(ctx, code);
-      if (!material?.active) {
-        result.skipped.push({ materialCode: code, problem: "UNKNOWN_MATERIAL" });
-        continue;
-      }
-      try {
-        const saved = await applyReferencePrice(ctx, {
-          city,
-          material,
-          floorPaise: row.floorPaise,
-          fallbackPaise: row.fallbackPaise,
-          note,
-          via: "csv",
-          actorProfileId: adminProfile?._id,
-          now,
-        });
-        if (saved.isChanged) result.saved += 1;
-        else result.unchanged += 1;
-        result.lifted += saved.lifted;
-      } catch (error) {
-        if (error instanceof ConvexError && error.data === "NOTE_REQUIRED") {
-          result.skipped.push({ materialCode: code, problem: "NOTE_REQUIRED" });
-          continue;
+      const outcome = await importRow(
+        ctx,
+        { code, floorPaise: row.floorPaise, fallbackPaise: row.fallbackPaise },
+        { city, note, actorProfileId: adminProfile?._id, now },
+      );
+      switch (outcome.kind) {
+        case "saved": {
+          result.saved += 1;
+          result.lifted += outcome.lifted;
+          break;
         }
-        throw error;
+        case "unchanged": {
+          result.unchanged += 1;
+          break;
+        }
+        case "skipped": {
+          result.skipped.push({ materialCode: code, problem: outcome.problem });
+          break;
+        }
       }
     }
     await ctx.db.insert("auditLog", {
@@ -435,40 +462,10 @@ export const importPrices = mutation({
       action: "referencePrices.imported",
       entityTable: "referencePrices",
       entityId: city,
-      metadata: {
-        city,
-        rows: args.rows.length,
-        saved: result.saved,
-        unchanged: result.unchanged,
-        lifted: result.lifted,
-        skipped: result.skipped,
-        note,
-      },
+      metadata: { city, rows: args.rows.length, ...result, note },
       createdAt: now,
     });
-    return {
-      ...result,
-      skipped: result.skipped.filter(
-        (
-          entry,
-        ): entry is {
-          materialCode: string;
-          problem:
-            | "UNKNOWN_MATERIAL"
-            | "INVALID_PRICE"
-            | "FLOOR_ABOVE_FALLBACK"
-            | "PRICE_TOO_HIGH"
-            | "NOTE_REQUIRED";
-        } =>
-          [
-            "UNKNOWN_MATERIAL",
-            "INVALID_PRICE",
-            "FLOOR_ABOVE_FALLBACK",
-            "PRICE_TOO_HIGH",
-            "NOTE_REQUIRED",
-          ].includes(entry.problem),
-      ),
-    };
+    return result;
   },
 });
 
@@ -479,7 +476,7 @@ export const importPrices = mutation({
  * dropped and queued for the admin, and a daily move over the limit is held
  * until confirmed (spec §3, §4.7).
  */
-export const setBand = mutation({
+export const saveBand = mutation({
   args: {
     city: v.string(),
     materialCode: v.string(),

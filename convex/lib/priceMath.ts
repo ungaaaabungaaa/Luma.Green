@@ -169,9 +169,10 @@ export function defaultBand(fallbackPaise: number, family: PriceFamily): Band {
 }
 
 export function isInBand(paisePerKg: number, band: Band | null): boolean {
-  return band
-    ? paisePerKg >= band.minPaise && paisePerKg <= band.maxPaise
-    : true;
+  return (
+    band === null ||
+    (paisePerKg >= band.minPaise && paisePerKg <= band.maxPaise)
+  );
 }
 
 export type BandProblem = "INVALID_BAND" | "BAND_MIN_ABOVE_MAX" | "INVALID_MOVE";
@@ -392,14 +393,13 @@ export function computeBoard(input: BoardInput): BoardResult {
   const low = prices.length > 0 ? Math.min(...prices) : null;
   const high = prices.length > 0 ? Math.max(...prices) : null;
 
-  const line =
-    isLive && computed !== null
-      ? circuitBreaker(computed, input)
-      : {
-          typical: input.fallbackPaise ?? computed,
-          heldPaise: null,
-          heldPct: null,
-        };
+  const line = isLive
+    ? circuitBreaker(computed, input)
+    : {
+        typical: input.fallbackPaise ?? computed,
+        heldPaise: null,
+        heldPct: null,
+      };
 
   return {
     status: isLive ? "live" : "guide",
@@ -522,9 +522,13 @@ export function parsePriceCsv(text: string): CsvParse {
     if (trimmed === "") continue;
     const cells = trimmed.split(CSV_SPLIT).map((cell) => cell.trim());
     const code = (cells[0] ?? "").toUpperCase();
-    if (index === 0 && HEADER_WORDS.has(code.toLowerCase().replace(/\s/g, "")))
+    if (
+      index === 0 &&
+      HEADER_WORDS.has(code.toLowerCase().replaceAll(/\s/gu, ""))
+    ) {
       continue;
-    if (cells.length < 3 || code === "") {
+    }
+    if (code === "" || cells.length < 3) {
       problems.push({ line, problem: "COLUMNS", text: trimmed });
       continue;
     }
