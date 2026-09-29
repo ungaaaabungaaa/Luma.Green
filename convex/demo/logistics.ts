@@ -314,45 +314,78 @@ async function openListing(
   );
 }
 
+interface SeededStop {
+  seller: Doc<"orgs">;
+  askPaisePerKg: number;
+  stop: Doc<"loads">["stops"][number];
+}
+
+/** One demo stop, when its seller exists: its lot (if listed) and its bulk. */
+async function seededStop(
+  ctx: MutationCtx,
+  world: DemoWorld,
+  stop: DemoStop,
+): Promise<SeededStop | undefined> {
+  const orgId = world.orgs.get(stop.seller);
+  const seller = orgId ? await ctx.db.get("orgs", orgId) : null;
+  if (!orgId || !seller) return undefined;
+  const listing = await openListing(ctx, orgId, stop.materialCode);
+  const material = await ctx.db
+    .query("materials")
+    .withIndex("by_code", (q) => q.eq("code", stop.materialCode))
+    .first();
+  const grams = kgToGrams(stop.kg);
+  return {
+    seller,
+    askPaisePerKg: listing?.askPaisePerKg ?? 0,
+    stop: {
+      orgId,
+      listingId: listing?._id,
+      materialCode: stop.materialCode,
+      grams,
+      litres: litresFor(grams, material?.family ?? "other", stop.bulk),
+      order: 0,
+      status: stop.status,
+      collectedGrams:
+        stop.collectedKg === undefined ? undefined : kgToGrams(stop.collectedKg),
+      respondedAt: stop.status === "pending" ? undefined : world.now - HOUR,
+    },
+  };
+}
+
+/** When a demo load was planned, left and arrived, relative to `now`. */
+function loadTimes(load: DemoLoad, now: number) {
+  const dayStart = now + load.day * 24 * HOUR;
+  const createdAt = now - (load.day + 1) * 24 * HOUR;
+  const startedAt = load.status === "planned" ? undefined : dayStart - HOUR;
+  const deliveredAt =
+    load.status === "delivered" ? dayStart + 3 * HOUR : undefined;
+  const timeline: { status: LoadStatus; at: number }[] = [
+    { status: "planned", at: createdAt },
+  ];
+  if (startedAt !== undefined) {
+    timeline.push({ status: "collecting", at: startedAt });
+  }
+  if (deliveredAt !== undefined) {
+    timeline.push({ status: "delivered", at: deliveredAt });
+  }
+  return { createdAt, startedAt, deliveredAt, timeline };
+}
+
 async function seedLoad(
   ctx: MutationCtx,
   world: DemoWorld,
   buyerOrgId: Id<"orgs">,
   load: DemoLoad,
 ) {
-  const buyer = await ctx.db.get("orgs", buyerOrgId);
   const vehicle = VEHICLES.find((row) => row.key === load.vehicleType);
-  if (!buyer?.location || !vehicle) return;
+  const buyer = await ctx.db.get("orgs", buyerOrgId);
+  if (!vehicle || !buyer?.location) return;
 
-  // Each stop: the seller, its lot when the base world listed one, and the
-  // material's family for the volume estimate.
-  const stops = [];
+  const stops: SeededStop[] = [];
   for (const stop of load.stops) {
-    const orgId = world.orgs.get(stop.seller);
-    if (!orgId) continue;
-    const seller = await ctx.db.get("orgs", orgId);
-    if (!seller) continue;
-    const listing = await openListing(ctx, orgId, stop.materialCode);
-    const material = await ctx.db
-      .query("materials")
-      .withIndex("by_code", (q) => q.eq("code", stop.materialCode))
-      .first();
-    const grams = kgToGrams(stop.kg);
-    stops.push({
-      seller,
-      askPaisePerKg: listing?.askPaisePerKg ?? 0,
-      stop: {
-        orgId,
-        listingId: listing?._id,
-        materialCode: stop.materialCode,
-        grams,
-        litres: litresFor(grams, material?.family ?? "other", stop.bulk),
-        status: stop.status,
-        collectedGrams:
-          stop.collectedKg === undefined ? undefined : kgToGrams(stop.collectedKg),
-        respondedAt: stop.status === "pending" ? undefined : world.now - HOUR,
-      },
-    });
+    const seeded = await seededStop(ctx, world, stop);
+    if (seeded) stops.push(seeded);
   }
   if (stops.length === 0) return;
 
@@ -379,21 +412,10 @@ async function seedLoad(
   const collected = ordered
     .map((entry) => entry.stop.collectedGrams)
     .filter((grams): grams is number => grams !== undefined);
-
-  const createdAt = world.now - (load.day + 1) * 24 * HOUR;
-  const startedAt =
-    load.status === "planned" ? undefined : world.now + load.day * 24 * HOUR - HOUR;
-  const deliveredAt =
-    load.status === "delivered" ? world.now + load.day * 24 * HOUR + 3 * HOUR : undefined;
-  const timeline: { status: LoadStatus; at: number }[] = [
-    { status: "planned", at: createdAt },
-  ];
-  if (startedAt !== undefined) {
-    timeline.push({ status: "collecting", at: startedAt });
-  }
-  if (deliveredAt !== undefined) {
-    timeline.push({ status: "delivered", at: deliveredAt });
-  }
+  const { createdAt, startedAt, deliveredAt, timeline } = loadTimes(
+    load,
+    world.now,
+  );
 
   await ctx.db.insert("loads", {
     buyerOrgId,

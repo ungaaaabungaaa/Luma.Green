@@ -93,10 +93,9 @@ export function nearestNeighbourOrder<T>(
     for (const [index, stop] of located.entries()) {
       const point = locate(stop);
       const km = point ? haversineKm(here, point) : Infinity;
-      if (km < bestKm) {
-        bestKm = km;
-        bestIndex = index;
-      }
+      if (km >= bestKm) continue;
+      bestKm = km;
+      bestIndex = index;
     }
     const [next] = located.splice(bestIndex, 1);
     if (next === undefined) break;
@@ -108,12 +107,12 @@ export function nearestNeighbourOrder<T>(
 
 /**
  * Road kilometres of a trip: start → each point in order, and back to the
- * start when `returnToStart`. Unknown points are skipped.
+ * start when `shouldReturnToStart`. Unknown points are skipped.
  */
 export function routeKm(
   start: Point,
   points: readonly (Point | undefined)[],
-  returnToStart = true,
+  shouldReturnToStart = true,
 ): number {
   let km = 0;
   let here = start;
@@ -122,7 +121,7 @@ export function routeKm(
     km += haversineKm(here, point);
     here = point;
   }
-  if (returnToStart) km += haversineKm(here, start);
+  if (shouldReturnToStart) km += haversineKm(here, start);
   return roundKm(km * ROAD_FACTOR);
 }
 
@@ -146,8 +145,7 @@ export const BULK_DENSITY: Record<Family, Record<Bulk, number>> = {
 
 /** Whole litres `grams` of a family take up, loose or baled. */
 export function litresFor(grams: number, family: Family, bulk: Bulk): number {
-  if (grams <= 0) return 0;
-  return Math.ceil(grams / BULK_DENSITY[family][bulk]);
+  return grams <= 0 ? 0 : Math.ceil(grams / BULK_DENSITY[family][bulk]);
 }
 
 /** "Baled", "bundled" or "flattened" in a lot's note means it's compacted. */
@@ -204,17 +202,17 @@ export function vehicleFit(
   const fits = vehicles
     .toSorted((a, b) => a.payloadKg - b.payloadKg)
     .map((vehicle) => {
-      const fitsWeight = grams <= vehicle.payloadKg * 1000;
-      const fitsVolume = litres <= vehicle.volumeLitres;
+      const isWithinPayload = grams <= vehicle.payloadKg * 1000;
+      const isWithinVolume = litres <= vehicle.volumeLitres;
       return {
         key: vehicle.key,
         payloadKg: vehicle.payloadKg,
         volumeLitres: vehicle.volumeLitres,
         weightPercent: percentOf(grams, vehicle.payloadKg * 1000),
         volumePercent: percentOf(litres, vehicle.volumeLitres),
-        fitsWeight,
-        fitsVolume,
-        fits: fitsWeight && fitsVolume,
+        fitsWeight: isWithinPayload,
+        fitsVolume: isWithinVolume,
+        fits: isWithinPayload && isWithinVolume,
       };
     });
   return {
@@ -352,7 +350,7 @@ export interface Restriction {
 }
 
 /** Whether two [from, to) hour ranges overlap. */
-export function hoursOverlap(
+export function areHoursOverlapping(
   a: readonly [number, number],
   b: readonly [number, number],
 ): boolean {
@@ -374,7 +372,7 @@ export function restrictionsFor<T extends Restriction>(
       restriction.vehicleTypes.includes(vehicleType) &&
       restriction.from <= date &&
       date <= restriction.to &&
-      hoursOverlap([restriction.hoursFrom, restriction.hoursTo], hours),
+      areHoursOverlapping([restriction.hoursFrom, restriction.hoursTo], hours),
   );
 }
 
@@ -490,8 +488,7 @@ export function pointForAddress(
   areas: Readonly<Record<string, Point>> = BENGALURU_AREAS,
 ): Point | undefined {
   const area = areaOfAddress(address, city).toLowerCase();
-  const exact = areas[area];
-  if (exact) return exact;
+  if (Object.hasOwn(areas, area)) return areas[area];
   const lower = address.toLowerCase();
   const named = Object.keys(areas).find((name) => lower.includes(name));
   return named === undefined ? undefined : areas[named];

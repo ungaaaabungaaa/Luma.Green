@@ -10,7 +10,7 @@ import {
   freightFor,
   freightPerKgPaise,
   haversineKm,
-  hoursOverlap,
+  areHoursOverlapping,
   isBelowMinimum,
   isOpenLoad,
   litresFor,
@@ -296,9 +296,9 @@ describe("road restrictions", () => {
   ];
 
   it("overlaps half-open hour ranges", () => {
-    expect(hoursOverlap([7, 11], [8, 12])).toBe(true);
-    expect(hoursOverlap([7, 11], [11, 15])).toBe(false);
-    expect(hoursOverlap([0, 24], [16, 20])).toBe(true);
+    expect(areHoursOverlapping([7, 11], [8, 12])).toBe(true);
+    expect(areHoursOverlapping([7, 11], [11, 15])).toBe(false);
+    expect(areHoursOverlapping([0, 24], [16, 20])).toBe(true);
   });
 
   it("returns the bans that bite this vehicle in this window", () => {

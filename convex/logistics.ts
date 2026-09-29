@@ -673,7 +673,7 @@ async function contactPhone(
   org: Org | null,
 ): Promise<string | undefined> {
   if (!org) return undefined;
-  const listed = org.phones[0]?.number;
+  const listed = org.phones.at(0)?.number;
   if (listed !== undefined) return listed;
   if (!org.ownerProfileId) return undefined;
   const owner = await ctx.db.get("profiles", org.ownerProfileId);
@@ -988,7 +988,12 @@ async function checkedStop(
     throw new ConvexError("INVALID_WEIGHT");
   }
   const listing = await ctx.db.get("listings", stop.listingId);
-  if (listing?.sellerKind !== sellerKind || listing.city !== buyer.city) {
+  if (
+    !listing ||
+    sellerKind === null ||
+    listing.sellerKind !== sellerKind ||
+    listing.city !== buyer.city
+  ) {
     throw new ConvexError("NOT_FOUND");
   }
   if (listing.status !== "open") throw new ConvexError("LISTING_NOT_OPEN");
