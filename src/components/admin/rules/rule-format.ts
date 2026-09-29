@@ -181,7 +181,22 @@ export function inputAdornment(
   }
 }
 
-/** Codes `rulebook.setRule` can refuse with, in the admin's words. */
+/** A source the browser can open, as against a path into this repo's docs. */
+export function isWebSource(url: string): boolean {
+  return /^https?:\/\//.test(url);
+}
+
+/** `gstcouncil.gov.in` for a link, the path itself for a docs file. */
+export function sourceLabel(url: string): string {
+  if (!isWebSource(url)) return url;
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
+
+/** Codes `rulebook.saveRule` can refuse with, in the admin's words. */
 export const SAVE_ERRORS: Readonly<Record<string, string>> = {
   UNKNOWN_RULE: "This rule isn't in the rulebook any more.",
   INVALID_VALUE: "That value doesn't fit this rule's unit.",
