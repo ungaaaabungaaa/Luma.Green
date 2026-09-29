@@ -1,13 +1,13 @@
 import {
   ArrowLeftRightIcon,
   BoxesIcon,
+  ClipboardCheckIcon,
   FactoryIcon,
-  LeafIcon,
+  HardHatIcon,
   type LucideIcon,
   PackageOpenIcon,
   RecycleIcon,
-  ShieldCheckIcon,
-  TruckIcon,
+  StoreIcon,
 } from "lucide-react";
 
 import type { PublicRoute } from "@/i18n/paths";
@@ -48,11 +48,11 @@ export const footerGroups = [
   links: readonly { href: PublicRoute; label: string }[];
 }[];
 
-/** The three stages of the loop, in order. Copy lives under `loop.<key>`. */
+/** The three stages of the chain, in order. Copy lives under `loop.<key>`. */
 export const loopSteps = [
-  { key: "recover", icon: PackageOpenIcon },
+  { key: "sell", icon: PackageOpenIcon },
   { key: "trade", icon: ArrowLeftRightIcon },
-  { key: "retire", icon: LeafIcon },
+  { key: "record", icon: ClipboardCheckIcon },
 ] as const satisfies readonly { key: string; icon: LucideIcon }[];
 
 /**
@@ -60,9 +60,9 @@ export const loopSteps = [
  * them. Site copy only — the app's roles live in convex/lib/chain.ts.
  */
 export const roles = [
-  { key: "collector", icon: TruckIcon },
-  { key: "aggregator", icon: BoxesIcon },
+  { key: "kabadiwala", icon: StoreIcon },
+  { key: "yard", icon: BoxesIcon },
   { key: "recycler", icon: RecycleIcon },
-  { key: "factory", icon: FactoryIcon },
-  { key: "verifier", icon: ShieldCheckIcon },
+  { key: "manufacturer", icon: FactoryIcon },
+  { key: "saathi", icon: HardHatIcon },
 ] as const satisfies readonly { key: string; icon: LucideIcon }[];

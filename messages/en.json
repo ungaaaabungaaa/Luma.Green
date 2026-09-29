@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Cleaner Tomorrow in Motion",
-    "description": "Luma.Green connects recyclers, collectors and factories in the same sector: manage inventory, trade recovered material, and settle verified carbon credits in one place."
+    "description": "Luma.Green puts India's scrap chain on one platform: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, weighed pickups and a record of every hand-off."
   },
   "common": {
     "loading": "Loading…",
@@ -39,33 +39,33 @@
     "copyright": "© Luma.Green"
   },
   "loop": {
-    "recover": {
-      "title": "Recover",
-      "summary": "Material is collected, weighed and recorded into your organisation's inventory."
+    "sell": {
+      "title": "Sell",
+      "summary": "Households sell scrap from home at a fair price, weighed and paid at the door."
     },
     "trade": {
       "title": "Trade",
-      "summary": "Organisations in the same sector list lots, agree terms and settle trades."
+      "summary": "Businesses trade material up the chain, with payments held in escrow until delivery."
     },
-    "retire": {
-      "title": "Retire",
-      "summary": "A settled trade mints carbon credits that are verified, held, traded and finally retired."
+    "record": {
+      "title": "Record",
+      "summary": "Every hand-off is recorded, ready for compliance, impact and proof of recycling."
     }
   },
   "principles": {
     "heading": "Built to stand up to an audit",
-    "intro": "A regulator may ask how any credit was produced. The ledger is designed so the answer is always on record.",
+    "intro": "A buyer, a regulator or an auditor may ask where material came from. The record is designed so the answer is always there.",
     "auditable": {
       "title": "Every change is on the record",
-      "body": "Each state change — stock received, trade settled, credit retired — writes an entry to an audit log that is never edited in place."
+      "body": "Each step (a pickup weighed, a trade paid, a load delivered) writes an entry to an audit log that is never edited in place."
     },
     "exact": {
       "title": "Numbers that never drift",
       "body": "Money is kept in whole paise and mass in whole grams. No rounding error can build up between a weighbridge and a settlement."
     },
     "frozen": {
-      "title": "Issued credits stay issued",
-      "body": "A credit keeps the emission factor used when it was issued. Revising a factor later never rewrites a credit that already exists."
+      "title": "History stays as it was",
+      "body": "Every receipt keeps the price and weight of its day. Changing a price later never rewrites a receipt that already exists."
     }
   },
   "home": {
@@ -525,62 +525,62 @@
   },
   "howItWorks": {
     "metaTitle": "How it works",
-    "metaDescription": "How material moves through Luma.Green: recovered into inventory, traded within a sector, and turned into verified carbon credits that are held and retired.",
+    "metaDescription": "How scrap moves on Luma.Green: sold from home at a fair price, traded up the chain with escrow, and recorded at every hand-off.",
     "title": "How Luma.Green works",
-    "lead": "Every screen in Luma.Green is a view onto one circular flow. Here is what happens at each step, and what the ledger records.",
+    "lead": "Scrap changes hands four times before it becomes something new. Here is what happens at each step, and what Luma.Green records.",
     "stepLabel": "Step {number}",
-    "recover": {
-      "body": "Collectors and aggregators record material as it arrives. Stock is never typed in directly — it is the sum of recorded movements, so every kilogram can be traced to where it came from.",
-      "point1": "Log collections by material and grade",
-      "point2": "Weights stored in whole grams",
-      "point3": "Stock derived from an append-only movement history"
+    "sell": {
+      "body": "A household picks what it has, sees each nearby shop's offer and books a pickup or a drop-off. The kabadiwala weighs each material and pays in cash or UPI, and both get a receipt.",
+      "point1": "Each shop sets its own prices, never below the published floor",
+      "point2": "Weights recorded in grams from the shop's scale",
+      "point3": "A tracking link, with no account needed"
     },
     "trade": {
-      "body": "Organisations list lots to others in their sector, agree terms and settle. Stock is reserved when a trade is accepted, so the same material cannot be promised to two buyers.",
-      "point1": "Listings visible only within your sector",
-      "point2": "Stock reserved the moment a trade is accepted",
-      "point3": "Prices and totals kept in whole paise"
+      "body": "Kabadiwalas sell sorted stock to yards, yards sell bales to recyclers, and recyclers sell flakes, granules and ingots to factories. The buyer's payment waits in escrow until the goods arrive.",
+      "point1": "Only verified businesses can trade",
+      "point2": "Stock moves when a load is dispatched and received",
+      "point3": "A numbered trade receipt for every paid trade"
     },
-    "retire": {
-      "body": "A settled trade mints carbon credits using the emission factor in force at that moment. Verifiers sign them off; they can then be held, transferred and finally retired.",
-      "point1": "Emission factor frozen at issuance",
-      "point2": "Independent verifier sign-off",
-      "point3": "Transfers and retirements recorded, never overwritten"
+    "record": {
+      "body": "Every hand-off is written down: who, what, how much, when and where. That record powers the price board, stock, compliance and impact figures, and is the evidence EPR and recycling standards ask for.",
+      "point1": "One record from the door to the factory",
+      "point2": "EPR totals by financial year for recyclers and factories",
+      "point3": "Supporting evidence for credits, never counted twice"
     }
   },
   "participants": {
     "metaTitle": "Who it's for",
-    "metaDescription": "Luma.Green is built for collectors, aggregators, recyclers, factories and verifiers working in the same recycling sector.",
+    "metaDescription": "Luma.Green is built for households, kabadiwalas, yards, recyclers, manufacturers and Saathis: everyone who moves scrap from a home to a factory.",
     "title": "Who Luma.Green is for",
-    "lead": "Everyone who touches recovered material in a sector — from the first pickup to the final audit.",
-    "collector": {
-      "name": "Collectors",
-      "body": "Pick up material at source and record what was collected, where and how much."
+    "lead": "Everyone who moves scrap from a home to a factory, and the people who do the work in between.",
+    "kabadiwala": {
+      "name": "Kabadiwalas",
+      "body": "Take pickup requests from homes nearby, weigh and pay fairly, and sell sorted stock to yards."
     },
-    "aggregator": {
-      "name": "Aggregators",
-      "body": "Sort and bulk up material from many collectors into lots ready to trade."
+    "yard": {
+      "name": "Yards",
+      "body": "Buy from kabadiwalas, sort and bale, and sell graded lots to recyclers with payment held in escrow."
     },
     "recycler": {
       "name": "Recyclers",
-      "body": "Buy lots and process them back into feedstock, with the origin of every lot on record."
+      "body": "Buy graded bales from verified yards and sell flakes, granules and ingots to factories."
     },
-    "factory": {
-      "name": "Factories",
-      "body": "Source recovered feedstock with a verifiable chain of custody behind every purchase."
+    "manufacturer": {
+      "name": "Manufacturers",
+      "body": "Order recycled material from verified recyclers, with the records EPR reports need."
     },
-    "verifier": {
-      "name": "Verifiers",
-      "body": "Audit claims and sign off carbon credits, with the full history of each credit in view."
+    "saathi": {
+      "name": "Saathis",
+      "body": "Take paid pickups, sorting work and shifts near home, and see what you've earned."
     },
-    "sectorHeading": "One sector, one market",
-    "sectorBody": "Every organisation belongs to a sector. You see and trade only within your own, so listings stay relevant and your data stays with the people it concerns."
+    "householdHeading": "And every household",
+    "householdBody": "Anyone can sell scrap from home without an account: pick what you have, see each shop's offer, and get paid in cash or UPI with a receipt."
   },
   "contact": {
     "metaTitle": "Contact",
-    "metaDescription": "Get in touch with the Luma.Green team about early access for your organisation.",
+    "metaDescription": "Get in touch with the Luma.Green team about joining the Bengaluru pilot.",
     "title": "Talk to us",
-    "lead": "We are onboarding a small number of organisations first. Tell us your sector, your role in the loop and roughly how much material moves through you each month.",
+    "lead": "We're starting in Bengaluru with a small group of kabadiwalas, yards, recyclers and factories. Tell us who you are, what you trade and roughly how much moves through you each month.",
     "emailHeading": "Early access and general questions",
     "securityHeading": "Security reports",
     "securityBody": "Found a vulnerability? Please report it privately rather than in public."
