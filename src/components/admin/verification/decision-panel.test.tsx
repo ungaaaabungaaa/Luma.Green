@@ -10,7 +10,10 @@ import { DecisionPanel, type DecisionSubject } from "./decision-panel";
 const decide = vi.fn();
 const push = vi.fn();
 
-vi.mock("convex/react", () => ({ useMutation: () => decide }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: () => decide,
+}));
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push }) }));
 vi.mock("sonner", () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
 

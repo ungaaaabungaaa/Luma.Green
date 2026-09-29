@@ -15,7 +15,11 @@ import {
 } from "./test-helpers";
 import type { BookingDetail, BookingView, RateCard } from "./types";
 
-vi.mock("convex/react", () => ({ useQuery: vi.fn(), useMutation: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useQuery: vi.fn(),
+  useMutation: vi.fn(),
+}));
 vi.mock("sonner", () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
 vi.mock("@/i18n/navigation", () => ({
   Link: ({

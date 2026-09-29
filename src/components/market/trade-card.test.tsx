@@ -11,7 +11,10 @@ const { act, toast } = vi.hoisted(() => ({
   toast: { success: vi.fn(), error: vi.fn() },
 }));
 
-vi.mock("convex/react", () => ({ useMutation: () => act }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: () => act,
+}));
 vi.mock("sonner", () => ({ toast }));
 vi.mock("@/i18n/navigation", () => ({
   Link: ({

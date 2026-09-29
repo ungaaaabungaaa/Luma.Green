@@ -28,6 +28,7 @@ function queryResults(): Record<string, unknown> {
 }
 
 vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useMutation: () => vi.fn(),
   useQuery: (query: Parameters<typeof getFunctionName>[0]) =>
     queryResults()[getFunctionName(query)],

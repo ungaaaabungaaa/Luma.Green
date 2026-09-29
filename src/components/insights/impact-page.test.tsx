@@ -15,6 +15,7 @@ const workspace = vi.hoisted((): { current: unknown } => ({
 }));
 
 vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: () => {
     if (impact.current instanceof Error) throw impact.current;
     return impact.current;
@@ -151,7 +152,7 @@ describe("ImpactPage for a business", () => {
     };
     renderPage();
     expect(kpi("Recycled material bought")).toHaveTextContent("1 purchase");
-    expect(kpi("Spent on material")).toHaveTextContent("₹175,000");
+    expect(kpi("Spent on material")).toHaveTextContent("₹1,75,000");
     expect(screen.queryByText("Earned from sales")).not.toBeInTheDocument();
   });
 

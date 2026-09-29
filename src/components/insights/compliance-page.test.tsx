@@ -13,7 +13,10 @@ const workspace = vi.hoisted((): { current: unknown } => ({
   current: undefined,
 }));
 
-vi.mock("convex/react", () => ({ useQuery: () => record.current }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useQuery: () => record.current,
+}));
 vi.mock("@/components/app/use-workspace", () => ({
   useWorkspace: () => workspace.current,
 }));

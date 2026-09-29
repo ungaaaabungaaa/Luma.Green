@@ -16,7 +16,10 @@ vi.mock("@/components/providers/convex-provider", () => ({
   },
 }));
 
-vi.mock("convex/react", () => ({ useMutation: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: vi.fn(),
+}));
 
 const send = vi.fn();
 const prefill = "For my home: a 3 kW system, from the estimate on this page.";

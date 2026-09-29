@@ -14,6 +14,7 @@ const list = vi.fn<() => Requests | undefined>();
 const markAnswered = vi.fn();
 
 vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: () => list(),
   useMutation: () => markAnswered,
 }));

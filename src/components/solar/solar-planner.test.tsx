@@ -11,7 +11,10 @@ vi.mock("@/components/providers/convex-provider", () => ({
   isConvexConfigured: true,
 }));
 
-vi.mock("convex/react", () => ({ useMutation: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: vi.fn(),
+}));
 
 function renderPlanner() {
   return render(
@@ -52,12 +55,12 @@ describe("SolarPlanner", () => {
       screen.getByText("Your bill is about 429 units a month."),
     ).toBeVisible();
     expect(screen.getByText("− ₹78,000")).toBeInTheDocument();
-    expect(screen.getByText("₹114,500 – ₹149,500")).toBeInTheDocument();
+    expect(screen.getByText("₹1,14,500 – ₹1,49,500")).toBeInTheDocument();
     expect(screen.getByText("₹2,940 a month")).toBeInTheDocument();
     expect(screen.getByText("3.2–4.2 years")).toBeInTheDocument();
     expect(
       screen.getByRole("slider", { name: /Savings by year/ }),
-    ).toHaveAttribute("aria-valuetext", "Year 10: ₹352,800 saved");
+    ).toHaveAttribute("aria-valuetext", "Year 10: ₹3,52,800 saved");
     expect(
       screen.getByText(
         "Estimates only, from the assumptions below. A site visit gives the real numbers.",
@@ -115,7 +118,7 @@ describe("SolarPlanner", () => {
 
     expect(bill).toHaveAttribute("aria-invalid", "true");
     expect(screen.getByRole("alert")).toHaveTextContent(
-      "Enter a bill between ₹100 and ₹1,000,000.",
+      "Enter a bill between ₹100 and ₹10,00,000.",
     );
   });
 

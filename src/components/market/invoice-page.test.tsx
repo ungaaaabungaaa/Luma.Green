@@ -13,6 +13,7 @@ const { data } = vi.hoisted(() => ({
 }));
 
 vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: (query: Parameters<typeof getFunctionName>[0]) =>
     getFunctionName(query) === "workspace:mine"
       ? {

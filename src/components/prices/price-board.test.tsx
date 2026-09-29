@@ -16,7 +16,10 @@ vi.mock("@/components/providers/convex-provider", () => ({
   },
 }));
 
-vi.mock("convex/react", () => ({ useQuery: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useQuery: vi.fn(),
+}));
 
 function renderBoard() {
   return render(

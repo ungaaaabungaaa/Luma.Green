@@ -17,6 +17,7 @@ const take = vi.hoisted(() => vi.fn());
 const finish = vi.hoisted(() => vi.fn());
 
 vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: () => board.current,
   useMutation: (reference: Parameters<typeof getFunctionName>[0]) =>
     getFunctionName(reference) === "saathi:take" ? take : finish,

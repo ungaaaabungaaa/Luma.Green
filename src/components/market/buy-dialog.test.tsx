@@ -10,7 +10,10 @@ const { requestTrade, toast } = vi.hoisted(() => ({
   toast: { success: vi.fn(), error: vi.fn() },
 }));
 
-vi.mock("convex/react", () => ({ useMutation: () => requestTrade }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: () => requestTrade,
+}));
 vi.mock("sonner", () => ({ toast }));
 vi.mock("@/i18n/navigation", () => ({
   useRouter: () => ({ push: vi.fn() }),

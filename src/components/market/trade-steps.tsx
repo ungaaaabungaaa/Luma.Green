@@ -26,7 +26,7 @@ export function TradeSteps({ status }: { status: TradeStatus }) {
           <li
             key={step}
             aria-current={state === "current" ? "step" : undefined}
-            className="relative flex flex-col items-center gap-1.5 px-0.5 text-center"
+            className="relative flex flex-col items-center gap-1.5 text-center sm:px-0.5"
           >
             {index > 0 ? (
               <span
@@ -57,7 +57,7 @@ export function TradeSteps({ status }: { status: TradeStatus }) {
             <span
               aria-hidden
               className={cn(
-                "w-full text-xs leading-tight break-words hyphens-auto",
+                "w-full text-[11px] leading-tight break-words hyphens-auto sm:text-xs",
                 state === "todo"
                   ? "text-muted-foreground"
                   : "font-medium text-foreground",

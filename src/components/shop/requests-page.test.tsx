@@ -21,7 +21,11 @@ const mocks = vi.hoisted(() => ({
   search: { current: new URLSearchParams() },
 }));
 
-vi.mock("convex/react", () => ({ useQuery: vi.fn(), useMutation: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useQuery: vi.fn(),
+  useMutation: vi.fn(),
+}));
 vi.mock("sonner", () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
 vi.mock("next/navigation", () => ({
   useSearchParams: () => mocks.search.current,

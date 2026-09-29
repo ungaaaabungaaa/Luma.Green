@@ -8,7 +8,10 @@ import { PriceRow, type PriceRowData } from "./price-row";
 
 const setPrices = vi.fn();
 
-vi.mock("convex/react", () => ({ useMutation: () => setPrices }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: () => setPrices,
+}));
 vi.mock("sonner", () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
 
 const newspaper: PriceRowData = {

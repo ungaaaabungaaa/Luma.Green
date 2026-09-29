@@ -14,7 +14,10 @@ import {
 } from "./test-helpers";
 import type { Stock } from "./types";
 
-vi.mock("convex/react", () => ({ useQuery: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useQuery: vi.fn(),
+}));
 vi.mock("@/i18n/navigation", () => ({
   Link: ({
     href,

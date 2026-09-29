@@ -16,7 +16,10 @@ import type { Id } from "../../../convex/_generated/dataModel";
 import { IRON, NEWSPAPER, PET, renderWithIntl } from "./test-helpers";
 import { WeighAndPay } from "./weigh-and-pay";
 
-vi.mock("convex/react", () => ({ useMutation: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: vi.fn(),
+}));
 vi.mock("sonner", () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
 
 const complete = vi.fn();

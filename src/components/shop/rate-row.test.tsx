@@ -8,7 +8,10 @@ import { priceProblem, RateRow } from "./rate-row";
 import { NEWSPAPER, renderWithIntl } from "./test-helpers";
 import type { RateCardRow } from "./types";
 
-vi.mock("convex/react", () => ({ useMutation: vi.fn() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useMutation: vi.fn(),
+}));
 vi.mock("sonner", () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
 
 const setRate = vi.fn();

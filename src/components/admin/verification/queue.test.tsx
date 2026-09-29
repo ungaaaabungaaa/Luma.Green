@@ -11,7 +11,10 @@ type Queue = FunctionReturnType<typeof api.review.queue>;
 
 const queue = vi.fn<() => Queue | undefined>();
 
-vi.mock("convex/react", () => ({ useQuery: () => queue() }));
+vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
+  useQuery: () => queue(),
+}));
 vi.mock("next/link", () => ({
   default: ({
     href,

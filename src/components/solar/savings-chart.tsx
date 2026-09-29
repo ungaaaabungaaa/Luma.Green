@@ -1,9 +1,9 @@
 "use client";
 
-import { useFormatter, useTranslations } from "next-intl";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
 
-import { useFormat } from "@/components/app/format";
+import { numberLocale, useFormat } from "@/components/app/format";
 import { useChartCursor } from "@/components/site/use-chart-cursor";
 import { useElementWidth } from "@/components/site/use-element-width";
 import {
@@ -48,6 +48,7 @@ export function SavingsChart({
   const t = useTranslations("solar.chart");
   const format = useFormat();
   const intl = useFormatter();
+  const locale = useLocale();
   const [ref, width] = useElementWidth<HTMLDivElement>(560);
   const geometry = useMemo(
     () => savingsGeometry(savingsByYear, netCost, width),
@@ -64,12 +65,12 @@ export function SavingsChart({
   const { plot, yTicks, band, bars } = geometry;
   const money = (rupees: number) => format.money(rupees * 100);
   const compact = (rupees: number) =>
-    intl.number(rupees, {
+    new Intl.NumberFormat(numberLocale(locale), {
       style: "currency",
       currency: "INR",
       notation: "compact",
       maximumFractionDigits: 1,
-    });
+    }).format(rupees);
   const current = bars.at(active ?? -1);
   const activeBar = active === null ? undefined : bars.at(active);
   const first = bars.at(0);

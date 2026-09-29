@@ -15,6 +15,7 @@ const { createListing, toast, data } = vi.hoisted(() => ({
 }));
 
 vi.mock("convex/react", () => ({
+  useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useMutation: () => createListing,
   useQuery: (query: Parameters<typeof getFunctionName>[0]) =>
     getFunctionName(query) === "market:sellable"
