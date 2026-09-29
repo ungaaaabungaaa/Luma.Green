@@ -101,7 +101,8 @@ export const floorTables = {
     at: v.number(),
   })
     .index("by_org_at", ["orgId", "at"])
-    .index("by_trade", ["tradeId"]),
+    .index("by_trade", ["tradeId"])
+    .index("by_scale", ["scaleId"]),
 
   /** The buyer's quality check on a load, with the readings and the outcome. */
   qualityChecks: defineTable({

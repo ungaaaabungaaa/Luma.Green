@@ -59,9 +59,11 @@ const STAMP_OVERRIDES: ReadonlyMap<string, readonly number[]> = new Map([
 
 /** Days of stamp left for a business's `index`th scale. */
 function stampDaysFor(slug: string, index: number): number {
-  const override = STAMP_OVERRIDES.get(slug)?.at(index);
-  if (override !== undefined) return override;
-  return STAMP_SPREAD.at((hashOf(slug) + index) % STAMP_SPREAD.length) ?? 180;
+  return (
+    STAMP_OVERRIDES.get(slug)?.at(index) ??
+    STAMP_SPREAD.at((hashOf(slug) + index) % STAMP_SPREAD.length) ??
+    180
+  );
 }
 
 function scaleSpecs(org: Doc<"orgs">): ScaleSpec[] {
@@ -360,10 +362,9 @@ async function seedSlipsAndChecks(
     const out = sellerSlip(load, scales.get(load.seller._id)?.[0]);
     if (out) drafts.push(out);
     const arrival = buyerSlip(load, scales.get(load.buyer._id)?.[0]);
-    if (arrival) {
-      drafts.push(arrival.draft);
-      checks.push(arrival.check);
-    }
+    if (!arrival) continue;
+    drafts.push(arrival.draft);
+    checks.push(arrival.check);
   }
   await insertSlips(ctx, drafts, gramsOf);
   await seedChecks(ctx, checks, world);

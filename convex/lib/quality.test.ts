@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import {
   batchTotals,
-  isAllowed,
   capacityUse,
   daysUntil,
+  isAllowed,
   isIsoDate,
   mergeLines,
   netGramsOf,

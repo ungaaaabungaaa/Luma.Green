@@ -15,6 +15,7 @@ import { normalizeIndianMobile } from "./lib/phone";
 import {
   batchTotals,
   capacityUse,
+  type DeductionReason,
   type FloorAction,
   isAllowed,
   isIsoDate,
@@ -510,14 +511,11 @@ export const discardScale = mutation({
     const { profile, org } = await requireFloorAction(ctx, "manage_scales");
     const scale = await ctx.db.get("scales", args.scaleId);
     if (scale?.orgId !== org._id) throw new ConvexError("NOT_FOUND");
-    const slips = await ctx.db
+    const used = await ctx.db
       .query("weighSlips")
-      .withIndex("by_org_at", (q) => q.eq("orgId", org._id))
-      .order("desc")
-      .take(PAGE);
-    if (slips.some((slip) => slip.scaleId === scale._id)) {
-      throw new ConvexError("SCALE_IN_USE");
-    }
+      .withIndex("by_scale", (q) => q.eq("scaleId", scale._id))
+      .first();
+    if (used) throw new ConvexError("SCALE_IN_USE");
     await ctx.db.delete("scales", scale._id);
     await audit(ctx, {
       orgId: org._id,
@@ -650,8 +648,9 @@ export const gate = query({
 
 /** Whether the scale's stamp was still good on the day of the slip. */
 function wasStampValid(scale: Doc<"scales"> | null, at: number): boolean {
-  if (!scale) return false;
-  return stampStatus(scale.stampValidUntil, indiaToday(at)).status !== "expired";
+  return scale
+    ? stampStatus(scale.stampValidUntil, indiaToday(at)).status !== "expired"
+    : false;
 }
 
 async function slipView(
@@ -732,7 +731,7 @@ function slipWeights(args: {
   grossGrams: number;
   tareGrams: number;
   deductionGrams?: number;
-  deductionReason?: Doc<"weighSlips">["deductionReason"];
+  deductionReason?: DeductionReason;
 }) {
   if (
     !isPositiveInteger(args.grossGrams) ||
@@ -952,7 +951,7 @@ function readingsFor(
   }
   const isKnown = (param: { key: QualityReading["key"] }) =>
     readings.some((reading) => reading.key === param.key);
-  if (!params.every((param) => isKnown(param))) {
+  if (params.some((param) => !isKnown(param))) {
     throw new ConvexError("UNKNOWN_PARAM");
   }
   return readings;
@@ -961,14 +960,13 @@ function readingsFor(
 /** A deduction's whole per cent, 0 unless the result is a deduction. */
 function deductionFor(
   result: Doc<"qualityChecks">["result"],
-  deductionPct: number | undefined,
+  deductionPct = 0,
 ): number {
   if (result !== "deduct") return 0;
-  const pct = deductionPct ?? 0;
-  if (!isPositiveInteger(pct) || pct > MAX_DEDUCTION_PCT) {
+  if (!isPositiveInteger(deductionPct) || deductionPct > MAX_DEDUCTION_PCT) {
     throw new ConvexError("INVALID_DEDUCTION");
   }
-  return pct;
+  return deductionPct;
 }
 
 /** The load I'm checking: mine, as the buyer, and already moving. */
@@ -1124,6 +1122,14 @@ export const production = query({
       material: materialRef(materials, entry.materialCode),
       grams: entry.grams,
     });
+    const handled = [];
+    for (const material of materials.values()) {
+      if (!material.active || !org.families.includes(material.family)) continue;
+      handled.push({
+        material: materialRef(materials, material.code),
+        stage: material.stage,
+      });
+    }
     return {
       fy,
       capacity: capacity
@@ -1152,15 +1158,7 @@ export const production = query({
           createdAt: batch.createdAt,
         };
       }),
-      materials: [...materials.values()]
-        .filter(
-          (material) =>
-            material.active && org.families.includes(material.family),
-        )
-        .map((material) => ({
-          material: materialRef(materials, material.code),
-          stage: material.stage,
-        })),
+      materials: handled,
       canRecord: isAllowed(role, "record_batch"),
       canSetCapacity: isAllowed(role, "set_capacity"),
     };
