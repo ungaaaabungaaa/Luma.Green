@@ -1694,7 +1694,8 @@ async function addLot(
     materialCode,
     isTouched: false,
   });
-  state.result.lotsCreated += 1;
+  const { result } = state;
+  result.lotsCreated += 1;
 }
 
 /** 1. Pickup receipts, one lot per line. */
@@ -1752,6 +1753,7 @@ async function recordSale(
     (lot) => lot.materialCode === trade.materialCode,
   );
   const { allocations, unmatchedGrams } = allocateSale(candidates, grams, at);
+  const { result } = state;
   for (const allocation of allocations) {
     await state.ctx.db.insert("lotMoves", {
       lotId: allocation.lotId,
@@ -1765,7 +1767,7 @@ async function recordSale(
       lot.remainingGrams -= allocation.grams;
       lot.isTouched = true;
     }
-    state.result.movesCreated += 1;
+    result.movesCreated += 1;
   }
   return unmatchedGrams;
 }
@@ -1831,7 +1833,8 @@ async function addOpeningLot(
     gap + missing,
     openedAt,
   );
-  state.result.openingCreated += 1;
+  const { result } = state;
+  result.openingCreated += 1;
   for (const entry of mine) await recordSale(state, entry.trade, entry.grams);
 }
 
@@ -1844,7 +1847,7 @@ async function addOpeningStock(
   state: Rebuild,
   unmatched: readonly UnmatchedSale[],
 ) {
-  const hasOpeningFor = new Set(
+  const openedMaterials = new Set(
     state.working
       .filter((lot) => lot.origin === "opening")
       .map((lot) => lot.materialCode),
@@ -1856,7 +1859,7 @@ async function addOpeningStock(
   const book = new Map(inventory.map((row) => [row.materialCode, row.grams]));
   const codes = new Set([...book.keys(), ...sumBy(unmatched).keys()]);
   for (const materialCode of codes) {
-    if (hasOpeningFor.has(materialCode)) continue;
+    if (openedMaterials.has(materialCode)) continue;
     await addOpeningLot(state, materialCode, book.get(materialCode) ?? 0, unmatched);
   }
 }
