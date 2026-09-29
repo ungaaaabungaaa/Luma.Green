@@ -488,5 +488,271 @@
       "manufacturer": "Manufacturer",
       "saathi": "Saathi"
     }
+  },
+  "market": {
+    "sampleData": "Prices and amounts on this screen are sample data for the prototype.",
+    "simulated": "Sample data. Payments are simulated in the prototype: no real money moves.",
+    "perKg": "{price}/kg",
+    "recycled": "Recycled",
+    "forBusinessesTitle": "This screen is for businesses",
+    "forBusinessesBody": "Kabadiwalas, yards, recyclers and manufacturers trade here.",
+    "units": {
+      "kg": "kg",
+      "rupee": "₹"
+    },
+    "errors": {
+      "NOT_SIGNED_IN": "You've been signed out. Please sign in again.",
+      "WRONG_ROLE": "Your business can't do this.",
+      "NOT_FOUND": "We couldn't find this. It may have been removed.",
+      "OWN_LISTING": "This is your own lot.",
+      "LISTING_NOT_OPEN": "This lot is no longer for sale.",
+      "NOT_ENOUGH_LEFT": "There isn't that much left in this lot.",
+      "NOT_ENOUGH_STOCK": "You don't have that much in stock. Check your stock first.",
+      "INVALID_WEIGHT": "Enter a weight above 0 kg.",
+      "INVALID_PRICE": "Enter a price above ₹0.",
+      "NOTE_TOO_LONG": "Keep the note to 140 letters or fewer.",
+      "UNKNOWN_MATERIAL": "Pick a material from the list.",
+      "WRONG_STEP": "This trade has already moved on. Check its latest step.",
+      "generic": "Something went wrong. Please try again."
+    },
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "Available",
+      "lotValue": "Whole lot"
+    },
+    "buy": {
+      "button": "Buy",
+      "buttonLabel": "Buy {material} from {seller}",
+      "title": "Buy {material}",
+      "from": "From {seller}, {area}. {weight} available at {price}/kg.",
+      "kgLabel": "How many kg?",
+      "kgHint": "Up to {weight}.",
+      "all": "All {weight}",
+      "kgInvalid": "Enter the weight in kg, like 50 or 12.5.",
+      "kgTooMuch": "Only {weight} is available.",
+      "total": "Total",
+      "totalLine": "{weight} × {price}/kg",
+      "escrow": "You pay into escrow after {seller} accepts. The money goes to them when you confirm delivery.",
+      "ewayBill": "Over ₹50,000: an e-way bill must travel with this load.",
+      "cancel": "Cancel",
+      "submit": "Send request",
+      "sending": "Sending…",
+      "sent": "Request sent to {seller}",
+      "sentNext": "You'll pay into escrow once they accept.",
+      "seeTrades": "See trades"
+    },
+    "browse": {
+      "title": "Buy",
+      "lead": "{kind, select, yard {Sorted scrap from kabadiwalas near you.} recycler {Sorted, baled material from yards.} manufacturer {Recycled material from verified recyclers.} other {Material on sale near you.}}",
+      "filterLabel": "Filter by material",
+      "all": "All",
+      "count": "{count, plural, =0 {No lots} one {# lot on sale} other {# lots on sale}}",
+      "emptyTitle": "Nothing on sale right now",
+      "emptyBody": "New lots show up here as soon as they're listed.",
+      "notForYouTitle": "Kabadiwalas buy from households",
+      "notForYouBody": "On the market you sell: offer your sorted stock to yards.",
+      "goSell": "Sell to yards"
+    },
+    "sell": {
+      "title": "Sell",
+      "lead": "{buyer, select, yard {Offer your sorted stock to yards.} recycler {Offer your bales to recyclers.} manufacturer {Offer your material to manufacturers.} other {Offer your stock to buyers.}}",
+      "notForYouTitle": "Manufacturers buy on Luma.Green",
+      "notForYouBody": "Find recycled material from verified recyclers.",
+      "goBuy": "Buy material",
+      "form": {
+        "title": "New listing",
+        "material": "What are you selling?",
+        "free": "{weight} free to sell",
+        "allPromised": "All listed or sold",
+        "kg": "How many kg?",
+        "kgHint": "Up to {weight}.",
+        "all": "All {weight}",
+        "price": "Your price, ₹ per kg",
+        "market": "Market today {price}/kg",
+        "suggested": "Suggested {price}/kg",
+        "useSuggested": "Use {price}",
+        "farFromMarket": "This is far from today's price. Please check it.",
+        "note": "Note for buyers",
+        "optional": "(optional)",
+        "notePlaceholder": "For example: dry, bundled, 50 kg bales",
+        "noteCount": "{count}/{max}",
+        "value": "Lot value",
+        "submit": "Put on sale",
+        "submitting": "Putting on sale…",
+        "listed": "On sale. {buyer, select, yard {Yards} recycler {Recyclers} manufacturer {Manufacturers} other {Buyers}} can see it now.",
+        "nothingTitle": "Nothing to sell yet",
+        "nothingBody": "Stock you record shows up here. What's already listed or sold isn't counted twice.",
+        "goStock": "Go to stock",
+        "errors": {
+          "pickMaterial": "Pick a material.",
+          "kgInvalid": "Enter the weight in kg, like 50 or 12.5.",
+          "kgTooMuch": "You have {weight} free to sell.",
+          "priceInvalid": "Enter a price in rupees, like 18 or 17.50.",
+          "noteTooLong": "Keep the note to 140 letters or fewer."
+        }
+      },
+      "mine": {
+        "title": "On sale now",
+        "emptyTitle": "Nothing on sale yet",
+        "emptyBody": "Put your first lot on sale with the form.",
+        "past": "Earlier listings",
+        "onSale": "On sale",
+        "listedOn": "Listed {date}",
+        "pastLine": "Listed {date} · {price}/kg",
+        "sold": "Sold out",
+        "withdrawn": "Withdrawn",
+        "withdraw": "Withdraw",
+        "withdrawLabel": "Withdraw {material}",
+        "withdrawConfirm": "Take this lot off the market? Buyers won't see it any more, and requests waiting on it are declined.",
+        "withdrawYes": "Yes, withdraw",
+        "withdrawNo": "Keep it on sale",
+        "withdrawnToast": "{material} taken off the market"
+      }
+    },
+    "trades": {
+      "title": "Trades",
+      "lead": "Every trade, step by step. The money stays in escrow until the buyer confirms delivery.",
+      "buying": "Buying",
+      "selling": "Selling",
+      "tabsLabel": "Buying or selling",
+      "waitingBadge": "{count, plural, one {# needs you} other {# need you}}",
+      "emptyBuyingTitle": "No purchases yet",
+      "emptyBuyingBody": "Lots you ask to buy show up here.",
+      "emptySellingTitle": "No sales yet",
+      "emptySellingBody": "When someone asks to buy one of your lots, it shows up here.",
+      "goBuy": "Find material",
+      "goSell": "Put stock on sale",
+      "card": {
+        "title": "{material} · {weight}",
+        "from": "From {name} · {area}",
+        "to": "To {name} · {area}",
+        "rate": "{price}/kg",
+        "inEscrow": "{amount} held in escrow",
+        "ewayBill": "Over ₹50,000: an e-way bill must travel with this load.",
+        "updated": "Updated {when}",
+        "receipt": "Receipt {number}",
+        "buying": "Buying",
+        "selling": "Selling"
+      },
+      "steps": {
+        "label": "Trade progress",
+        "requested": "Requested",
+        "accepted": "Accepted",
+        "paid_to_escrow": "In escrow",
+        "dispatched": "Dispatched",
+        "completed": "Delivered",
+        "srStep": "{step}: {state}",
+        "state": {
+          "done": "done",
+          "current": "next",
+          "todo": "not yet"
+        }
+      },
+      "declined": "Declined on {date}",
+      "hint": {
+        "requested": {
+          "buyer": "Waiting for {name} to accept.",
+          "seller": "{name} wants to buy this. Accept to keep it for them."
+        },
+        "accepted": {
+          "buyer": "Accepted. Pay into escrow to go ahead: the money is held until you confirm delivery.",
+          "seller": "Waiting for {name} to pay into escrow."
+        },
+        "paid_to_escrow": {
+          "buyer": "Your money is safe in escrow. Waiting for {name} to dispatch.",
+          "seller": "The money is safe in escrow. Send the load, then mark it dispatched."
+        },
+        "dispatched": {
+          "buyer": "On its way. Check the load, then confirm delivery to release the money.",
+          "seller": "On its way. The money is released to you when {name} confirms delivery."
+        },
+        "completed": {
+          "buyer": "Delivered. The money was released to {name}.",
+          "seller": "Delivered. The money was released to you."
+        },
+        "declined": {
+          "buyer": "{name} declined this order, or the lot sold out.",
+          "seller": "You declined this order, or the lot closed."
+        }
+      },
+      "action": {
+        "accept": "Accept order",
+        "decline": "Decline",
+        "pay": "Pay {amount} into escrow",
+        "dispatch": "Mark as dispatched",
+        "confirm": "Confirm delivery"
+      },
+      "busy": "Saving…",
+      "done": {
+        "accept": "Order accepted",
+        "decline": "Order declined",
+        "pay": "Paid into escrow. Receipt {number}",
+        "dispatch": "Marked as dispatched",
+        "confirm": "Delivery confirmed. The money is released to the seller."
+      },
+      "declineConfirm": "Decline this order from {name}? This can't be undone.",
+      "declineYes": "Yes, decline",
+      "declineNo": "Keep it"
+    },
+    "receipt": {
+      "title": "Trade receipt",
+      "numberLabel": "Receipt no.",
+      "dateLabel": "Date",
+      "statusLabel": "Payment",
+      "inEscrow": "In escrow",
+      "settled": "Released",
+      "seller": "Seller",
+      "buyer": "Buyer",
+      "gstin": "GSTIN {gstin}",
+      "noGstin": "Not GST-registered",
+      "material": "Material",
+      "quantity": "Quantity",
+      "rate": "Rate",
+      "amount": "Amount",
+      "total": "Total",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "Paid into Luma.Green escrow on {date}.",
+      "held": "Held in escrow until the buyer confirms delivery.",
+      "released": "Released to the seller on {date}.",
+      "ewayBill": "Goods worth over ₹50,000: an e-way bill must travel with this load.",
+      "notTaxInvoice": "This is a trade receipt, not a GST tax invoice. Tax invoices come with real payments.",
+      "print": "Print",
+      "back": "Back to trades",
+      "missingTitle": "Receipt not found",
+      "missingBody": "This trade isn't one of yours, or the link is wrong.",
+      "pendingTitle": "No receipt yet",
+      "pendingBody": "The receipt is made when the buyer pays into escrow.",
+      "declinedBody": "This trade was declined, so there's no receipt."
+    },
+    "home": {
+      "greeting": "Namaste, {name}",
+      "lead": "{kind, select, yard {Buy from kabadiwalas, sell sorted bales to recyclers.} recycler {Buy sorted scrap from yards, sell recycled material to manufacturers.} manufacturer {Buy recycled material from verified recyclers.} other {Your trades at a glance.}}",
+      "buy": "Buy",
+      "sell": "Sell",
+      "trades": "Trades",
+      "statsTitle": "At a glance",
+      "stats": {
+        "escrow": "In escrow",
+        "escrowHint": "Released when delivery is confirmed",
+        "waiting": "Waiting for you",
+        "waitingHint": "{count, plural, =0 {All caught up} one {# trade needs a step} other {# trades need a step}}",
+        "listings": "On sale",
+        "listingsHint": "{weight} listed",
+        "offers": "Recycled lots",
+        "offersHint": "On sale from recyclers",
+        "completed": "Done this month",
+        "completedHint": "{amount} traded"
+      },
+      "waitingTitle": "Waiting for you",
+      "allTrades": "All trades",
+      "caughtUpTitle": "Nothing needs you right now",
+      "caughtUpBody": "New orders, payments and deliveries show up here.",
+      "offersTitle": "Latest lots for you",
+      "recycledTitle": "Recycled material for you",
+      "recycledBody": "Flakes, granules, kraft and ingots from verified recyclers, ready for your line.",
+      "seeAll": "See all",
+      "noOffersTitle": "No lots on sale right now",
+      "noOffersBody": "New lots show up here as soon as they're listed."
+    }
   }
 }
