@@ -120,7 +120,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-2 border-b bg-background px-4 md:hidden">
         <Link href="/" aria-label={t("homeLink")}>
-          <Logo />
+          <Logo idPrefix="lg-bar" />
         </Link>
         <div className="flex items-center gap-1">
           <LanguageSwitcher />

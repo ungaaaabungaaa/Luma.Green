@@ -179,7 +179,7 @@ function ReceiptDocument({
       >
         <div className="flex flex-wrap items-start justify-between gap-4 border-b pb-5">
           <div className="flex flex-col gap-3">
-            <Logo />
+            <Logo idPrefix="lg-receipt" />
             <h1 className="text-2xl font-semibold tracking-tight">
               {t("receipt.title")}
             </h1>
