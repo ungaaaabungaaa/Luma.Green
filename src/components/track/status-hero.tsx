@@ -1,0 +1,117 @@
+"use client";
+
+import {
+  BanIcon,
+  CircleCheckBigIcon,
+  CircleXIcon,
+  HourglassIcon,
+  type LucideIcon,
+  PartyPopperIcon,
+  TruckIcon,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+
+import { useFormat } from "@/components/app/format";
+import { cn } from "@/lib/utils";
+
+import type { BookingStatus } from "../../../convex/lib/chain";
+import { progressIndex, progressSteps } from "./status";
+import type { TrackedBooking } from "./types";
+
+const HERO: Record<BookingStatus, { icon: LucideIcon; tone: string }> = {
+  requested: { icon: HourglassIcon, tone: "bg-amber-50 text-amber-800" },
+  accepted: { icon: CircleCheckBigIcon, tone: "bg-brand-50 text-primary" },
+  on_the_way: { icon: TruckIcon, tone: "bg-sky-50 text-sky-800" },
+  completed: { icon: PartyPopperIcon, tone: "bg-brand-50 text-primary" },
+  declined: { icon: CircleXIcon, tone: "bg-destructive/10 text-destructive" },
+  cancelled: { icon: BanIcon, tone: "bg-muted text-muted-foreground" },
+};
+
+function Progress({ booking }: { booking: TrackedBooking }) {
+  const t = useTranslations("track.progress");
+  const current = progressIndex(booking.status, booking.mode);
+  if (current === null) return null;
+  const steps = progressSteps(booking.mode);
+  return (
+    <ol
+      aria-label={t("label")}
+      className="grid gap-1.5"
+      style={{ gridTemplateColumns: `repeat(${String(steps.length)}, 1fr)` }}
+    >
+      {steps.map((step, index) => (
+        <li
+          key={step}
+          aria-current={index === current ? "step" : undefined}
+          className="flex flex-col gap-1.5"
+        >
+          <span
+            aria-hidden
+            className={cn(
+              "h-1.5 rounded-full",
+              index <= current ? "bg-primary" : "bg-border",
+            )}
+          />
+          <span
+            className={cn(
+              "text-xs",
+              index === current
+                ? "font-semibold text-foreground"
+                : "text-muted-foreground",
+            )}
+          >
+            {t(step)}
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/**
+ * The top of the tracking page: what's happening now in one sentence, what
+ * it means, and how far along it is. Updates live as the shop answers.
+ */
+export function StatusHero({ booking }: { booking: TrackedBooking }) {
+  const t = useTranslations("track");
+  const format = useFormat();
+  const { icon: Icon, tone } = HERO[booking.status];
+  const shop = booking.shop.name;
+  const paid = format.money(booking.receipt?.totalPaise ?? 0);
+
+  return (
+    <section
+      aria-labelledby="track-title"
+      className="flex flex-col gap-4 rounded-2xl border bg-card p-5"
+    >
+      <div className="flex items-start gap-4">
+        <span
+          className={cn(
+            "flex size-12 shrink-0 items-center justify-center rounded-full",
+            tone,
+          )}
+        >
+          <Icon aria-hidden className="size-6" />
+        </span>
+        <div className="flex min-w-0 flex-col gap-1" role="status">
+          <p className="font-mono text-xs text-muted-foreground">
+            {t("reference", { token: booking.token })}
+          </p>
+          <h1
+            id="track-title"
+            className="text-2xl leading-tight font-semibold tracking-tight text-balance"
+          >
+            {t(`hero.${booking.status}`, {
+              shop,
+              mode: booking.mode,
+              amount: paid,
+            })}
+          </h1>
+          <p className="text-muted-foreground">
+            {t(`hero.${booking.status}Body`)}
+          </p>
+        </div>
+      </div>
+      <Progress booking={booking} />
+    </section>
+  );
+}
