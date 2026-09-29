@@ -13,8 +13,8 @@ import {
   daysUntil,
   defaultDueAt,
   distanceKm,
-  ewayBillCheck as checkEwayBill,
   type EwayBillCheck,
+  ewayBillCheck as checkEwayBill,
   ledgerStatus,
   type MsmeCategory,
   msmeDueAt,
@@ -58,18 +58,18 @@ const NOTE_MAX_LENGTH = 140;
 const CLOCK_SLACK_MS = 5 * 60 * 1000;
 
 /** Trades with money due: from acceptance until the end. */
-const OWED_STATUSES: readonly TradeStatus[] = [
+const OWED_STATUSES: ReadonlySet<TradeStatus> = new Set([
   "accepted",
   "paid_to_escrow",
   "dispatched",
   "completed",
-];
+]);
 /** Trades whose goods have left the seller (a purchase for the register). */
-const INVOICED_STATUSES: readonly TradeStatus[] = [
+const INVOICED_STATUSES: ReadonlySet<TradeStatus> = new Set([
   "paid_to_escrow",
   "dispatched",
   "completed",
-];
+]);
 
 type Side = "buyer" | "seller";
 type Materials = Awaited<ReturnType<typeof materialIndex>>;
@@ -525,7 +525,7 @@ export async function syncLedger(
   byProfileId: Id<"profiles">,
   now: number,
 ): Promise<void> {
-  if (!OWED_STATUSES.includes(trade.status)) return;
+  if (!OWED_STATUSES.has(trade.status)) return;
   if (isEscrowFunded(trade.status)) {
     await recordEscrowPayment(ctx, trade, byProfileId, now);
   }
@@ -607,7 +607,7 @@ async function entriesFor(
 
   const entries: EntryView[] = [];
   for (const trade of [...sales, ...purchases]) {
-    if (!OWED_STATUSES.includes(trade.status)) continue;
+    if (!OWED_STATUSES.has(trade.status)) continue;
     const direction = trade.sellerOrgId === org._id ? "receivable" : "payable";
     const counterparty = await lookupOrg(
       direction === "receivable" ? trade.buyerOrgId : trade.sellerOrgId,
@@ -938,7 +938,7 @@ export const record = mutation({
   handler: async (ctx, args) => {
     const { profile, org } = await requireOrg(ctx);
     const { trade, side } = await tradeFor(ctx, org._id, args.tradeId);
-    if (!OWED_STATUSES.includes(trade.status)) {
+    if (!OWED_STATUSES.has(trade.status)) {
       throw new ConvexError("WRONG_STEP");
     }
     // The escrow hold is the prototype's own step, never typed in by hand.
@@ -1282,7 +1282,7 @@ export const purchaseRegister = query({
       totalPaise: 0,
     };
     for (const trade of purchases) {
-      if (!INVOICED_STATUSES.includes(trade.status)) continue;
+      if (!INVOICED_STATUSES.has(trade.status)) continue;
       const invoiceAt = stepAt(trade, "paid_to_escrow") ?? trade.createdAt;
       const date = indiaToday(invoiceAt);
       if (!date.startsWith(args.month)) continue;

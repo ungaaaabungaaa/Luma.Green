@@ -37,7 +37,7 @@ const OWED = new Set<Doc<"trades">["status"]>([
 
 /** A repeatable, made-up bank or UPI reference of the right shape. */
 function reference(kind: "utr" | "upi" | "escrow", seed: number): string {
-  const digits = String(1_000_000 + ((seed * 7_919) % 8_999_999)).padStart(
+  const digits = String(1_000_000 + ((seed * 7919) % 8_999_999)).padStart(
     7,
     "0",
   );

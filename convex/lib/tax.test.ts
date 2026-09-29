@@ -75,7 +75,7 @@ describe("taxBreakdown", () => {
 
   it("charges no GST or TCS when an unregistered kabadiwala sells paper", () => {
     const result = taxBreakdown({
-      taxableValuePaise: 8_750 * RUPEE,
+      taxableValuePaise: 8750 * RUPEE,
       materialCode: "PAPER-NEWS",
       family: "paper",
       stage: "scrap",
@@ -88,8 +88,8 @@ describe("taxBreakdown", () => {
     expect(result.gstPaise).toBe(0);
     expect(result.reverseCharge).toBe(false);
     expect(result.tcsPaise).toBe(0);
-    expect(result.invoiceTotalPaise).toBe(8_750 * RUPEE);
-    expect(result.buyerPaysSellerPaise).toBe(8_750 * RUPEE);
+    expect(result.invoiceTotalPaise).toBe(8750 * RUPEE);
+    expect(result.buyerPaysSellerPaise).toBe(8750 * RUPEE);
     expect(result.notes).toEqual(
       expect.arrayContaining([
         "noGstUnregistered",
@@ -153,10 +153,10 @@ describe("taxBreakdown", () => {
       vehicle: "truck",
     };
     const over = taxBreakdown(base);
-    expect(over.gstTdsPaise).toBe(6_000 * RUPEE);
+    expect(over.gstTdsPaise).toBe(6000 * RUPEE);
     expect(over.gstPaise).toBe(54_000 * RUPEE);
-    expect(over.buyerPaysSellerPaise).toBe((354_000 - 6_000) * RUPEE);
-    expect(over.buyerPaysGovernmentPaise).toBe(6_000 * RUPEE);
+    expect(over.buyerPaysSellerPaise).toBe((354_000 - 6000) * RUPEE);
+    expect(over.buyerPaysGovernmentPaise).toBe(6000 * RUPEE);
     expect(over.notes).toContain("gstTds");
 
     const under = taxBreakdown({ ...base, taxableValuePaise: 250_000 * RUPEE });
@@ -326,13 +326,13 @@ describe("the khata", () => {
   it("moves open → part → settled as payments arrive", () => {
     const entry = { duePaise: 10_000, paidPaise: 0, dueAt: now + 5 * DAY };
     expect(ledgerStatus(entry, now)).toBe("open");
-    expect(ledgerStatus({ ...entry, paidPaise: 4_000 }, now)).toBe("part");
+    expect(ledgerStatus({ ...entry, paidPaise: 4000 }, now)).toBe("part");
     expect(ledgerStatus({ ...entry, paidPaise: 10_000 }, now)).toBe("settled");
     expect(ledgerStatus({ ...entry, paidPaise: 12_000 }, now)).toBe("settled");
   });
 
   it("is overdue once the due date has passed, unless settled", () => {
-    const late = { duePaise: 10_000, paidPaise: 4_000, dueAt: now - DAY };
+    const late = { duePaise: 10_000, paidPaise: 4000, dueAt: now - DAY };
     expect(ledgerStatus(late, now)).toBe("overdue");
     expect(ledgerStatus({ ...late, paidPaise: 0 }, now)).toBe("overdue");
     expect(ledgerStatus({ ...late, paidPaise: 10_000 }, now)).toBe("settled");

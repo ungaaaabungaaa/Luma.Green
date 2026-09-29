@@ -143,7 +143,7 @@ describe("khataSummary and khataEntries", () => {
     // GreenLoop part-paid the HDPE bales (800 kg × ₹42 = ₹33,600, 60% by NEFT).
     expect(summary.receivablePaise).toBe(13_440 * RUPEE);
     // The yard paid Ramesh half of ₹7,000 in cash at pickup.
-    expect(summary.payablePaise).toBe(3_500 * RUPEE);
+    expect(summary.payablePaise).toBe(3500 * RUPEE);
     expect(summary.overduePaise).toBe(0);
     expect(summary.overdueCount).toBe(0);
     expect(summary.openCount).toBe(2);
@@ -155,7 +155,7 @@ describe("khataSummary and khataEntries", () => {
     const ramesh = summary.counterparties.find(
       (party) => party.org.name === "Ramesh Kabadi Store",
     );
-    expect(ramesh?.payablePaise).toBe(3_500 * RUPEE);
+    expect(ramesh?.payablePaise).toBe(3500 * RUPEE);
     expect(ramesh?.receivablePaise).toBe(0);
     // Ramesh is a micro business: the MSMED 45-day clock runs from delivery.
     expect(ramesh?.msmeDaysLeft).toBeGreaterThan(30);
@@ -260,21 +260,21 @@ describe("record", () => {
     const t = await demoWorld();
     const yard = await signInAs(t, YARD);
     const owed = await entryFor(yard, "payable", "PAPER-NEWS");
-    expect(owed.balancePaise).toBe(3_500 * RUPEE);
+    expect(owed.balancePaise).toBe(3500 * RUPEE);
 
     const first = await yard.mutation(api.payments.record, {
       tradeId: owed.tradeId,
       method: "upi",
       reference: "426512345678",
-      amountPaise: 1_000 * RUPEE,
+      amountPaise: 1000 * RUPEE,
     });
     expect(first.status).toBe("part");
-    expect(first.balancePaise).toBe(2_500 * RUPEE);
+    expect(first.balancePaise).toBe(2500 * RUPEE);
 
     const rows = await ledgerRows(t, owed.tradeId);
     expect(rows).toHaveLength(2);
     for (const row of rows) {
-      expect(row.paidPaise).toBe(4_500 * RUPEE);
+      expect(row.paidPaise).toBe(4500 * RUPEE);
       expect(row.status).toBe("part");
     }
     expect(await auditActions(t, "payments", first.paymentId)).toEqual([
@@ -284,13 +284,13 @@ describe("record", () => {
     // The seller sees the same payment on their side.
     const shop = await signInAs(t, SHOP);
     const theirs = await entryFor(shop, "receivable", "PAPER-NEWS");
-    expect(theirs.balancePaise).toBe(2_500 * RUPEE);
+    expect(theirs.balancePaise).toBe(2500 * RUPEE);
 
     // The seller records the cash balance they received.
     const second = await shop.mutation(api.payments.record, {
       tradeId: owed.tradeId,
       method: "cash",
-      amountPaise: 2_500 * RUPEE,
+      amountPaise: 2500 * RUPEE,
       note: "Balance collected at the yard",
     });
     expect(second.status).toBe("settled");
@@ -307,7 +307,7 @@ describe("record", () => {
     ]);
     expect(payments[1]).toMatchObject({
       reference: "426512345678",
-      amountPaise: 1_000 * RUPEE,
+      amountPaise: 1000 * RUPEE,
       direction: "out",
       counterparty: "Ramesh Kabadi Store",
     });
@@ -337,7 +337,7 @@ describe("record", () => {
       yard.mutation(api.payments.record, {
         ...base,
         method: "upi",
-        reference: "   ",
+        reference: ' '.repeat(3),
       }),
     ).rejects.toThrow(/REFERENCE_REQUIRED/);
     await expect(
@@ -481,8 +481,8 @@ describe("history and forSubject", () => {
     const history = await yard.query(api.payments.history, {});
     expect(history.length).toBeGreaterThanOrEqual(4);
     for (let index = 1; index < history.length; index += 1) {
-      expect(history[index - 1]!.paidAt).toBeGreaterThanOrEqual(
-        history[index]!.paidAt,
+      expect(history[index - 1].paidAt).toBeGreaterThanOrEqual(
+        history[index].paidAt,
       );
     }
     const escrowIn = history.find(
@@ -499,7 +499,7 @@ describe("history and forSubject", () => {
     );
     expect(cashOut).toMatchObject({
       counterparty: "Ramesh Kabadi Store",
-      amountPaise: 3_500 * RUPEE,
+      amountPaise: 3500 * RUPEE,
     });
   });
 
@@ -517,7 +517,7 @@ describe("history and forSubject", () => {
     expect(jobs[0]?.title).toMatch(/Home pickups/);
     expect(jobs[0]?.counterparty).toBe("Lakshmi Devi");
 
-    const booking = pickups[0]!;
+    const booking = pickups[0];
     const forBooking = await shop.query(api.payments.forSubject, {
       subject: "booking",
       subjectId: booking.subjectId as Id<"bookings">,
@@ -598,7 +598,7 @@ describe("breakdown", () => {
       gstPaise: 0,
       reverseCharge: false,
       tcsPaise: 0,
-      invoiceTotalPaise: 7_000 * RUPEE,
+      invoiceTotalPaise: 7000 * RUPEE,
     });
     expect(result.breakdown.ewayBill.needed).toBe(false);
     expect(result.breakdown.notes).toEqual(
@@ -613,8 +613,8 @@ describe("breakdown", () => {
     const yard = await signInAs(t, YARD);
     const result = await yard.query(api.payments.breakdown, { tradeId });
     expect(result.breakdown.reverseCharge).toBe(true);
-    expect(result.breakdown.gstPaise).toBe(3_015 * RUPEE);
-    expect(result.breakdown.buyerPaysGovernmentPaise).toBe(3_015 * RUPEE);
+    expect(result.breakdown.gstPaise).toBe(3015 * RUPEE);
+    expect(result.breakdown.buyerPaysGovernmentPaise).toBe(3015 * RUPEE);
     expect(result.breakdown.buyerPaysSellerPaise).toBe(16_750 * RUPEE);
     expect(result.selfInvoiceDueAt).not.toBeNull();
     expect(result.breakdown.notes).toEqual(
@@ -710,8 +710,8 @@ describe("ewayBillCheck and ewayBillPartA", () => {
     });
     expect(partA.totals).toEqual({
       taxableValuePaise: 76_000 * RUPEE,
-      cgstPaise: 6_840 * RUPEE,
-      sgstPaise: 6_840 * RUPEE,
+      cgstPaise: 6840 * RUPEE,
+      sgstPaise: 6840 * RUPEE,
       igstPaise: 0,
       totalPaise: 89_680 * RUPEE,
     });
@@ -765,7 +765,7 @@ describe("purchaseRegister", () => {
       grams: 500_000,
       taxableValuePaise: 16_750 * RUPEE,
       gstRateBp: 1800,
-      gstPaise: 3_015 * RUPEE,
+      gstPaise: 3015 * RUPEE,
       reverseCharge: true,
       gstTdsPaise: 0,
       tcsPaise: 0,
@@ -841,11 +841,11 @@ describe("selfInvoices and selfInvoice", () => {
       grams: 500_000,
       taxableValuePaise: 16_750 * RUPEE,
       gstRateBp: 1800,
-      gstPaise: 3_015 * RUPEE,
+      gstPaise: 3015 * RUPEE,
       daysLeft: TAX_RULES.selfInvoiceDays - 3,
     });
-    expect(items[0]!.supplier.name).toBe("Ramesh Kabadi Store");
-    expect(items[0]!.dueAt - items[0]!.receivedAt).toBe(
+    expect(items[0].supplier.name).toBe("Ramesh Kabadi Store");
+    expect(items[0].dueAt - items[0].receivedAt).toBe(
       TAX_RULES.selfInvoiceDays * DAY,
     );
 
@@ -854,8 +854,8 @@ describe("selfInvoices and selfInvoice", () => {
       selfInvoiceNo: "SI-LG-26-0099",
       reverseCharge: true,
       gstRateBp: 1800,
-      cgstPaise: 1_507.5 * RUPEE,
-      sgstPaise: 1_507.5 * RUPEE,
+      cgstPaise: 1507.5 * RUPEE,
+      sgstPaise: 1507.5 * RUPEE,
       totalPaise: 19_765 * RUPEE,
     });
     expect(invoice?.supplier.gstin).toBe("URP");

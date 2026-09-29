@@ -145,12 +145,8 @@ export function isMetalScrapHsn(hsn: string): boolean {
 /** GST rate in basis points, from the heading first and the family second. */
 export function gstRateBp(hsn: string, family: Family, stage: Stage): number {
   const heading = hsn.slice(0, 4);
-  if (heading === "4707" || heading === "7001") return 500;
-  if (heading === "6309" || heading === "6310") return 500;
-  if (heading === "3915" || heading === "8548" || heading === "8549") {
-    return 1800;
-  }
-  if (isMetalScrapHsn(hsn)) return 1800;
+  if (heading === "4707" || heading === "7001" || heading === "6309" || heading === "6310") return 500;
+  if (heading === "3915" || heading === "8548" || heading === "8549" || isMetalScrapHsn(hsn)) return 1800;
   return stage === "recycled"
     ? TAX_RULES.recycledGstBp
     : TAX_RULES.scrapGstBp[family];
@@ -232,17 +228,17 @@ export function taxBreakdown(input: TaxInput): TaxBreakdown {
     input.catalogueHsn,
   );
   const rateBp = gstRateBp(hsn, input.family, input.stage);
-  const metal = isMetalScrapHsn(hsn) && input.stage === "scrap";
+  const isMetal = isMetalScrapHsn(hsn) && input.stage === "scrap";
   const notes: TaxNote[] = ["informational"];
 
   // GST: who charges it, if anyone.
-  const reverseCharge =
-    metal && !input.sellerRegistered && input.buyerRegistered;
+  const isReverseCharge =
+    isMetal && !input.sellerRegistered && input.buyerRegistered;
   let gstPaise = 0;
   if (input.sellerRegistered) {
     gstPaise = applyBp(input.taxableValuePaise, rateBp);
     notes.push("forwardCharge");
-  } else if (reverseCharge) {
+  } else if (isReverseCharge) {
     gstPaise = applyBp(input.taxableValuePaise, rateBp);
     notes.push("reverseCharge", "selfInvoice");
   } else {
@@ -252,26 +248,26 @@ export function taxBreakdown(input: TaxInput): TaxBreakdown {
   const invoiceTotalPaise = input.taxableValuePaise + invoiceGstPaise;
 
   // GST TDS: metal scrap between registered businesses over ₹2.5 lakh.
-  const gstTdsApplies =
-    metal &&
+  const isGstTdsApplies =
+    isMetal &&
     input.sellerRegistered &&
     input.buyerRegistered &&
     input.taxableValuePaise > TAX_RULES.gstTdsThresholdPaise;
-  const gstTdsPaise = gstTdsApplies
+  const gstTdsPaise = isGstTdsApplies
     ? applyBp(input.taxableValuePaise, TAX_RULES.gstTdsBp)
     : 0;
-  if (gstTdsApplies) notes.push("gstTds");
+  if (isGstTdsApplies) notes.push("gstTds");
 
   // Income-tax TCS on scrap, collected by the seller from the buyer.
-  const sellerCollectsTcs = input.sellerCollectsTcs ?? input.sellerRegistered;
+  const isSellerCollectsTcs = input.sellerCollectsTcs ?? input.sellerRegistered;
   let tcsPaise = 0;
-  let tcsWaived = false;
+  let isTcsWaived = false;
   if (input.stage !== "scrap") {
     notes.push("tcsNotScrap");
-  } else if (!sellerCollectsTcs) {
+  } else if (!isSellerCollectsTcs) {
     notes.push("tcsSellerSmall");
   } else if (input.buyerManufacturingDeclaration) {
-    tcsWaived = true;
+    isTcsWaived = true;
     notes.push("tcsWaived");
   } else {
     tcsPaise = applyBp(invoiceTotalPaise, TAX_RULES.scrapTcsBp);
@@ -297,17 +293,17 @@ export function taxBreakdown(input: TaxInput): TaxBreakdown {
     taxableValuePaise: input.taxableValuePaise,
     gstRateBp: rateBp,
     gstPaise,
-    reverseCharge,
-    selfInvoiceDays: reverseCharge ? TAX_RULES.selfInvoiceDays : null,
+    reverseCharge: isReverseCharge,
+    selfInvoiceDays: isReverseCharge ? TAX_RULES.selfInvoiceDays : null,
     invoiceGstPaise,
     invoiceTotalPaise,
     gstTdsPaise,
     tcsPaise,
-    tcsWaived,
+    tcsWaived: isTcsWaived,
     ewayBill,
     platformFeePaise,
     buyerPaysSellerPaise: invoiceTotalPaise - gstTdsPaise + tcsPaise,
-    buyerPaysGovernmentPaise: (reverseCharge ? gstPaise : 0) + gstTdsPaise,
+    buyerPaysGovernmentPaise: (isReverseCharge ? gstPaise : 0) + gstTdsPaise,
     sellerRemitsGovernmentPaise: invoiceGstPaise + tcsPaise,
     notes,
   };
@@ -343,8 +339,8 @@ export function isMotorised(vehicle: Vehicle): boolean {
 
 export function ewayBillCheck(input: EwayBillInput): EwayBillCheck {
   const motorised = isMotorised(input.vehicle);
-  const overLimit = input.valuePaise > TAX_RULES.ewayBillLimitPaise;
-  const needed = motorised && overLimit;
+  const isOverLimit = input.valuePaise > TAX_RULES.ewayBillLimitPaise;
+  const isNeeded = motorised && isOverLimit;
   let raisedBy: EwayBillCheck["raisedBy"] = "none";
   if (input.sellerRegistered) raisedBy = "seller";
   else if (input.buyerRegistered) raisedBy = "buyer";
@@ -355,12 +351,12 @@ export function ewayBillCheck(input: EwayBillInput): EwayBillCheck {
       : Math.max(1, Math.ceil(distance / TAX_RULES.ewayBillKmPerDay));
   let note: EwayBillCheck["note"] = "ewayBill";
   if (!motorised) note = "ewayBillNonMotor";
-  else if (!overLimit) note = "ewayBillUnderLimit";
+  else if (!isOverLimit) note = "ewayBillUnderLimit";
   return {
-    needed,
+    needed: isNeeded,
     motorised,
-    overLimit,
-    raisedBy: needed ? raisedBy : "none",
+    overLimit: isOverLimit,
+    raisedBy: isNeeded ? raisedBy : "none",
     validityDays,
     partBOptional:
       distance !== undefined && distance <= TAX_RULES.ewayBillPartBOptionalKm,
