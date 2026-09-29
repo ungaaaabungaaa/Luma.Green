@@ -488,5 +488,217 @@
       "manufacturer": "Manufacturer",
       "saathi": "Saathi"
     }
+  },
+  "shop": {
+    "sampleNote": "Prices, market rates and values on this screen are sample figures for the prototype.",
+    "household": "Household",
+    "perKg": "{price}/kg",
+    "about": "About {amount}",
+    "slot": "{day}, {window}",
+    "dropoff": "Brings it to your shop",
+    "windows": {
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    },
+    "days": {
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "yesterday": "Yesterday"
+    },
+    "status": {
+      "requested": "New",
+      "accepted": "Accepted",
+      "on_the_way": "On the way",
+      "completed": "Paid",
+      "declined": "Declined",
+      "cancelled": "Cancelled"
+    },
+    "methods": {
+      "cash": "Cash",
+      "upi": "UPI"
+    },
+    "families": {
+      "paper": "Paper",
+      "plastic": "Plastic",
+      "metal": "Metal",
+      "glass": "Glass",
+      "ewaste": "E-waste",
+      "other": "Other"
+    },
+    "compare": {
+      "above": "Above market",
+      "below": "Below market",
+      "same": "Same as market"
+    },
+    "errors": {
+      "generic": "Something went wrong. Try again.",
+      "changed": "This request changed in the meantime. Check it again.",
+      "loadTitle": "This didn't load",
+      "loadBody": "Check your internet connection and try again.",
+      "retry": "Try again"
+    },
+    "notShop": {
+      "title": "Only for kabadiwala shops",
+      "body": "Pickup requests and household prices belong to a kabadiwala's shop.",
+      "home": "Go to home"
+    },
+    "home": {
+      "greeting": "Namaste",
+      "newTitle": "New requests",
+      "newNone": "No new requests right now.",
+      "newSome": "{count, plural, one {# household wants a pickup.} other {# households want a pickup.}}",
+      "seeRequests": "See requests",
+      "todayTitle": "Today's pickups",
+      "next": "Next",
+      "todayNone": "No more pickups today.",
+      "seeToday": "See today's pickups",
+      "moneyTitle": "Money and stock",
+      "paidToday": "Paid today",
+      "paidWeek": "Last 7 days",
+      "pickups": "{count, plural, =0 {No pickups} one {# pickup} other {# pickups}}",
+      "stockWorth": "Stock worth",
+      "stockWeight": "{weight} in stock",
+      "priceCheck": "Price check",
+      "allPrices": "All my prices",
+      "perKg": "per kg",
+      "you": "You pay",
+      "market": "Market",
+      "quickLinks": "Shortcuts",
+      "sell": "Sell to a yard",
+      "sellHint": "Offer your stock to yards nearby",
+      "prices": "My prices",
+      "pricesHint": "What you pay households per kg"
+    },
+    "requests": {
+      "title": "Requests",
+      "lead": "Households near you who want to sell their scrap.",
+      "tabs": {
+        "new": "New",
+        "today": "Today",
+        "done": "Done"
+      },
+      "dueNow": "Today",
+      "later": "Coming up",
+      "empty": {
+        "newTitle": "No new requests",
+        "newBody": "When a household books a pickup with you, it shows up here.",
+        "todayTitle": "Nothing to pick up",
+        "todayBody": "Pickups you accept show up here.",
+        "doneTitle": "Nothing finished yet",
+        "doneBody": "Paid and declined pickups show up here."
+      },
+      "estimate": "Estimate",
+      "doneLine": "{when} · {materials}",
+      "accept": "Accept",
+      "decline": "Decline",
+      "startTrip": "Start trip",
+      "weigh": "Weigh and pay",
+      "accepted": "Accepted. You can now see the address and phone number.",
+      "declined": "Request declined.",
+      "onTheWay": "The household can see you're on the way.",
+      "confirmDecline": {
+        "title": "Decline this request?",
+        "body": "You can't undo this.",
+        "confirm": "Yes, decline",
+        "cancel": "Keep it"
+      }
+    },
+    "request": {
+      "back": "All requests",
+      "details": "Pickup details",
+      "where": "Address",
+      "phone": "Phone",
+      "call": "Call",
+      "directions": "Directions",
+      "hidden": "You'll see the full address and phone number once you accept.",
+      "items": "What they have",
+      "estimate": "Estimate",
+      "history": "History",
+      "declined": "You declined this request.",
+      "cancelled": "The household cancelled this pickup.",
+      "notFoundTitle": "Request not found",
+      "notFoundBody": "It may be another shop's request, or the link is wrong.",
+      "steps": {
+        "requested": "Requested",
+        "accepted": "Accepted",
+        "on_the_way": "On the way",
+        "completed": "Weighed and paid",
+        "declined": "Declined",
+        "cancelled": "Cancelled"
+      }
+    },
+    "weigh": {
+      "title": "Weigh and pay",
+      "lead": "Weigh each material. The amount uses your prices.",
+      "kg": "kg",
+      "inputLabel": "{material}, in kg",
+      "less": "Half a kilo less {material}",
+      "more": "Half a kilo more {material}",
+      "remove": "Remove {material}",
+      "estimated": "Guess: {weight}",
+      "noRate": "No price set",
+      "add": "Add another material",
+      "total": "To pay",
+      "method": "Paid by",
+      "confirm": "Confirm {amount} paid",
+      "saving": "Saving…",
+      "invalidKg": "Enter kilograms, like 12 or 12.5.",
+      "nothing": "Weigh at least one material.",
+      "done": "Payment saved."
+    },
+    "receipt": {
+      "thanks": "Thank you for recycling!",
+      "thanksNamed": "Thank you for recycling, {name}!",
+      "title": "Paid {amount}",
+      "method": "{method}, {when}",
+      "points": "{name} earned {points, plural, one {# point} other {# points}}",
+      "pointsHint": "One point for every ₹10.",
+      "line": "{weight} at {price}/kg",
+      "kg": "{kg} kg",
+      "total": "Total",
+      "stock": "Added to your stock.",
+      "back": "Back to requests"
+    },
+    "stock": {
+      "title": "Stock",
+      "lead": "What you have now, and what it's worth today.",
+      "totalWeight": "Total weight",
+      "worth": "Worth today",
+      "worthHint": "At today's market prices",
+      "scrap": "Scrap",
+      "recycled": "Recycled material",
+      "atPrice": "Market {price}/kg",
+      "noPrice": "No market price today",
+      "sellTo": {
+        "yard": "Sell to a yard",
+        "recycler": "Sell to a recycler",
+        "manufacturer": "Sell to a manufacturer"
+      },
+      "emptyTitle": "No stock yet",
+      "emptyShop": "Weigh and pay for a pickup, and it shows up here.",
+      "emptyBusiness": "Buy on the market, and it shows up here.",
+      "buy": "Buy material",
+      "notBusinessTitle": "Only for businesses",
+      "notBusinessBody": "Stock is kept by shops, yards, recyclers and factories."
+    },
+    "prices": {
+      "title": "My prices",
+      "lead": "What you pay households per kg. Never below the minimum.",
+      "label": "Your price for {material}, in rupees per kg",
+      "prefix": "₹",
+      "suffix": "/kg",
+      "minimum": "Minimum {price}/kg",
+      "market": "Market {price}/kg",
+      "notSet": "Not set yet. Households get the city price, {price}/kg.",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "{material}: {price}/kg saved.",
+      "invalid": "Enter a price, like 14 or 14.50.",
+      "belowFloor": "Too low. The minimum is {price}/kg.",
+      "belowFloorUnknown": "Too low. This is under the minimum price.",
+      "emptyTitle": "No materials yet",
+      "emptyBody": "The materials you buy are set when your shop is approved."
+    }
   }
 }

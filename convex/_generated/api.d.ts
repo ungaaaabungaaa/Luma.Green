@@ -32,7 +32,9 @@ import type * as lib_sms from "../lib/sms.js";
 import type * as lib_validators from "../lib/validators.js";
 import type * as lib_views from "../lib/views.js";
 import type * as lib_workspace from "../lib/workspace.js";
+import type * as shop from "../shop.js";
 import type * as sms from "../sms.js";
+import type * as stock from "../stock.js";
 import type * as support from "../support.js";
 import type * as workspace from "../workspace.js";
 
@@ -67,7 +69,9 @@ declare const fullApi: ApiFromModules<{
   "lib/validators": typeof lib_validators;
   "lib/views": typeof lib_views;
   "lib/workspace": typeof lib_workspace;
+  shop: typeof shop;
   sms: typeof sms;
+  stock: typeof stock;
   support: typeof support;
   workspace: typeof workspace;
 }>;
