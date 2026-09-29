@@ -1,0 +1,193 @@
+{
+ "cluster": "Logistics facts for Bengaluru",
+ "answers": [
+  {
+   "question": "What are Bengaluru's standing entry hours and no-entry rules for goods vehicles (city-wide, not temporary notices)? What do local transporters and Porter/Vahak charge per km and for loading for mini-trucks and tempos?",
+   "answer": "Standing city-wide rule (reconfirmed by Joint Commissioner (Traffic) M N Anucheth on 3 Aug 2024): heavy goods vehicles (HGVs) may not move inside Bengaluru city 07:00–11:00 and 16:00–22:00 on Monday–Friday and Sunday, and on Saturdays roughly 10:00/10:30–14:30 and 16:30–21:00 (Deccan Herald prints 10 am, Public TV 10.30 am), so the legal HGV windows are 11:00–16:00 and 22:00–07:00 on weekdays and 14:30–16:30 plus 21:00–10:00 on Saturdays. Under Section 2 of the Motor Vehicles Act 1988 an HGV is a goods carriage over 12,000 kg gross vehicle weight and anything up to 7,500 kg GVW is a light motor vehicle, so 3-wheeler goods autos, Tata Ace, Bolero/8-ft pickups and even a Tata 407 or Eicher rated at or under 7.5 t are not caught by the city-wide ban on ordinary roads; medium goods vehicles (7.5–12 t) are not named in the 2024 orders and lorry associations were still asking in Aug 2024 for small and medium vehicles to be let through, so MGV status is an open item to confirm with BTP. Separate corridor bans are standing orders 'until further orders' from 4 Sep 2026 (Electronics City from 11 Sep 2026): Electronics City elevated corridor bars all goods vehicles including light ones 06:00–22:00 and 3-wheeler goods autos 24 h; Airport Road elevated corridor (Sanjeevnagar Cross to Vidyashilp Junction) bars all goods vehicles 06:00–22:00; BGS/Sirsi Circle flyover on Mysuru Road bars HGVs 24 h and every other goods vehicle including 3-wheeler goods autos 07:00–11:00 and 16:00–22:00; Peenya elevated corridor bars 3-wheeler goods autos 24 h and heavy/medium goods vehicles 07:00–11:00 and 16:00–22:00; the Silk Board–Ragigudda double-decker flyover bars HGVs 24 h. Stretch-level orders also appear, e.g. heavy vehicles barred on Varthur–Gunjur Road (SH-35) 07:00–11:00, 13:00–15:00 and 16:00–21:00 from 24 Sep 2026 until road-widening ends. Watch October 2026: BTP circulated a draft on 15 Jul 2026 (trucks of 8–16 t barred 07:00–22:00, a permanent ban above 16 t with transshipment hubs outside the city, light vehicles carrying milk and vegetables exempt) and JCP (Traffic) Karthik Reddy told Public TV on 25 Sep 2026 that HGVs would be barred 07:00–22:00 'from next month' after talks with transport associations; that is a single news source and no notification had been published by 29 Sep 2026. Prices: Porter's Bengaluru pages publish only starting fares — 3-wheeler (500 kg) ₹205, Tata Ace (750 kg) ₹230, e-loader (350 kg) ₹150, Pickup 8 ft ₹330 — and the per-km/per-minute rate appears only in the in-app quote; Porter's FAQ and terms say tolls are inside the fare, loading/unloading beyond 60 minutes raises it, helpers ('Load Assist') and parking are extra and paid to the driver, cancellation after a driver is assigned costs ₹50, and GST-registered customers pay 5% GST under reverse charge. Vahak has no rate card at all: you post the load and verified lorry owners bid (it claims 10 lakh+ transporters in 850+ cities), which suits yard-to-recycler and outstation LCV loads rather than on-demand pickups. Local-transporter benchmarks from marketing pages (AssureShift updated 29 Sep 2025; Moving Solutions, BookMyTempo and TruckGuru undated): Tata Ace base ₹250–255 including 1 km and 60 minutes, then ₹25–45/km plus ₹5–8/minute waiting; Super Ace or Mahindra pickup ₹300–350 base and ₹30/km; Tata 407 ₹500 base and ₹50/km; intercity Tata Ace ₹26–29/km and Eicher 14 ft ₹31–35/km; loading labour ₹390 when the driver loads, or ₹400–800 per helper per trip. Open items: Porter's actual per-km and helper price in Bengaluru (read from an app quote), MGV treatment under the city ban, and whether the October regime gets notified.",
+   "status": "partly",
+   "decision": "Run pilot pickups on light vehicles (3-wheeler goods autos, Tata Ace, pickups up to 7.5 t GVW) at any hour on surface roads, but route them off the Electronics City and Airport Road elevated corridors, the BGS flyover and the Peenya corridor; schedule any HGV (over 12 t) yard-to-recycler-to-manufacturer leg for 11:00–16:00 or 22:00–07:00 (Saturday 14:30–16:30 or after 21:00) and be ready to shift those to 22:00–07:00 if the October order lands. Book on-demand runs on Porter (₹205/₹230 start, upfront in-app quote), tender recurring or outstation loads on Vahak, and budget ₹25–30/km plus ₹5/min waiting plus ₹400–800 per helper for local transporters until a phone check settles the real rate.",
+   "whoToAsk": "Bengaluru Traffic Police (JCP Traffic office; press notes on btp.karnataka.gov.in and BTP's X account) for the October 2026 notification and whether medium goods vehicles are covered; 10 local tempo operators plus a live Porter app quote for the real per-km and helper rates.",
+   "sources": [
+    {
+     "title": "Deccan Herald: Traffic police ban heavy vehicles during peak hours on Saturdays",
+     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-traffic-police-ban-heavy-vehicles-during-peak-hours-onsaturdays-3135243",
+     "date": "2024-08-03"
+    },
+    {
+     "title": "Deccan Herald: Heavy goods vehicle drivers, owners unhappy with change in timings",
+     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/heavy-goods-vehicle-drivers-owners-unhappy-with-change-in-timings-3136076",
+     "date": "2024-08-04"
+    },
+    {
+     "title": "Public TV: Timings for movement of heavy vehicles in Bengaluru revised",
+     "url": "https://english.publictv.in/timings-for-movement-of-heavy-vehicles-in-city-revised/",
+     "date": "2024-08-03"
+    },
+    {
+     "title": "Deccan Herald: BTP announce vehicle restrictions on five flyovers from September 4",
+     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-traffic-police-announce-vehicle-restrictions-on-five-flyovers-from-september-4-4129293",
+     "date": "2026-08-30"
+    },
+    {
+     "title": "Business Today: Bengaluru traffic restrictions from September 4 (JCP Karthik Reddy quoted)",
+     "url": "https://www.businesstoday.in/india/story/bengaluru-traffic-restrictions-from-september-4-two-wheelers-autos-and-goods-vehicles-face-curbs-on-key-flyovers-552360-2026-08-31",
+     "date": "2026-08-31"
+    },
+    {
+     "title": "The Bengaluru Live: BTP press note, restrictions from September 4 until further orders",
+     "url": "https://thebengalurulive.com/bengaluru-traffic-police-restricts-vehicle-categories-on-bgs-flyover-peenya-elevated-corridor-and-airport-road-from-september-4/",
+     "date": "2026-09-04"
+    },
+    {
+     "title": "Asianet Newsable: BTP draft plan, 14-hour ban on heavy vehicles and private buses",
+     "url": "https://newsable.asianetnews.com/karnataka-news/bengaluru-traffic-police-propose-major-curbs-14-hour-traffic-ban-on-heavy-vehicles-private-buses-under-new-traffic-plan-articleshow-8z09nkb",
+     "date": "2026-07-15"
+    },
+    {
+     "title": "Public TV: Heavy vehicles to be prohibited from entering Bengaluru during peak hours from next month",
+     "url": "https://english.publictv.in/heavy-vehicles-to-be-prohibited-from-entering-bengaluru-during-peak-hours-from-next-month/",
+     "date": "2026-09-25"
+    },
+    {
+     "title": "IBC World News: Partial restriction on heavy vehicles on Varthur-Gunjur Road",
+     "url": "https://ibcworldnews.com/2026/09/23/partial-restriction-on-heavy-vehicles-on-varthur-gunjur-road/",
+     "date": "2026-09-24"
+    },
+    {
+     "title": "Motor Vehicles Act 1988, Section 2 definitions (LMV 7,500 kg, HGV 12,000 kg)",
+     "url": "https://indiankanoon.org/doc/946665/",
+     "date": "1988-10-14"
+    },
+    {
+     "title": "Bengaluru Traffic Police official site (no notification archive found)",
+     "url": "https://btp.karnataka.gov.in/",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "Porter: Book Tata Ace in Bangalore (starting fares)",
+     "url": "https://porter.in/trucks/tata-ace-in-bangalore",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "Porter: Mini truck booking in Bangalore (3-wheeler ₹205, Tata Ace ₹230, e-loader ₹150, Pickup 8ft ₹330)",
+     "url": "https://porter.in/trucks/bangalore",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "Porter Spot FAQ (tolls included, 60-min loading, helper/parking extra, ₹50 cancellation, 5% GST RCM)",
+     "url": "https://porter.in/spot-faq",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "Porter Terms of Service (indicative fare, Load Assist charged extra, RCM GST)",
+     "url": "https://porter.in/terms-of-service",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "Vahak homepage (bidding marketplace, verified lorries)",
+     "url": "https://www.vahak.in/",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "Vahak About Us (850+ cities, 10 lakh+ transporters)",
+     "url": "https://www.vahak.in/about-us",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "AssureShift: Bangalore truck rental guide, rates and traffic rules",
+     "url": "https://www.assureshift.in/blog/tempo-truck-rental-bangalore",
+     "date": "2025-09-29"
+    },
+    {
+     "title": "Moving Solutions: Tata Ace/Chota Hathi rates in Bangalore",
+     "url": "https://www.movingsolutions.in/tata-ace-chota-hathi-for-shifting-in-bangalore.html",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "BookMyTempo: Tata Ace on rent in Bangalore (base ₹255, loading ₹390, packages)",
+     "url": "https://www.bookmytempo.in/bangalore/tata-ace-chota-hathi",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "TruckGuru: Tempo service in Bangalore (₹26–29/km Tata Ace, ₹31–35/km Eicher 14ft)",
+     "url": "https://truckguru.co.in/tempo-service-bangalore",
+     "date": "undated, opened 2026-09-29"
+    }
+   ]
+  },
+  {
+   "question": "Can a startup use ULIP (the government's logistics data platform) to check transporters' vehicles and drivers, and what does access require?",
+   "answer": "Yes. ULIP (goulip.in, run by NICDC Logistics Data Services Ltd, a Government of India–NEC joint venture under DPIIT) is open to private companies including startups: PIB's 1 Oct 2022 release describes the path — register on the portal, submit a use case, pass review, sign a Non-Disclosure Agreement, integrate, clear a system security check and testing, then fetch live data — and by 19 Mar 2025 PIB counted 1,300+ registered companies, 350+ agreements, 43 systems from 11 ministries through 129 APIs and 100 crore+ API transactions, citing transporter verification by UltraTech and Tata Steel as a standard use case. A third-party how-to (NirmanKit, 25 Jun 2026) lists the practical requirements: an incorporated Pvt Ltd, LLP or registered proprietorship with an active GSTIN matching the company name, PAN and address, a developer point of contact, and a written use case with data-retention and security policy; review takes 3–5 working days; the NDA is printed on ₹100 stamp paper, signed, uploaded and posted to NLDSL; you then get sandbox client ID/secret and move to production after uploading integration logs or a demo; expect 7–14 working days to sandbox and ₹0 in government fees (goulip.in itself publishes no fee, so confirm at NDA stage). The relevant APIs are VAHAN/01 (vehicle number → owner name, registration date, RC status, vehicle class, maker, fuel, fitness, insurance and PUCC validity; VAHAN/02 by chassis, /03 by engine), SARATHI/01 (DL number plus date of birth → name, DL status, validity, class of vehicle, badge), plus e-Challan, FASTag and a 'State/UT-specific No entry' API; all endpoints are lookup-only (you need the number from the transporter or Saathi), authentication is username/password to a bearer token with a 30-minute idle expiry at ulip.dpiit.gov.in/ulip/v1.0.0 with a separate staging host, and the helpdesk is 1800 309 8908 / Helpdesk@goulip.in. Two cautions. First, MoRTH's Policy for Data Sharing from the National Transport Repository (released 18 Aug 2025) now governs Vahan/Sarathi data: private recipients need MoRTH approval, PII in API mode is masked unless specifically granted, personal data requires the data principal's consent via an Aadhaar-authenticated OTP to the mobile number on record, and recipients sign a memorandum of data compliances and submit a CERT-In empanelled security-audit certificate; the policy never mentions ULIP, and whether ULIP's VAHAN/SARATHI responses are now masked or consent-gated is not published anywhere, so ask NLDSL before designing the verification flow. Second, Internet Freedom Foundation (23 Sep 2026) documented apps selling full Vahan/Sarathi records for about ₹2 a lookup with no OTP — those are not a lawful source. A priced, licensed fallback for pilot day one is a KYC API vendor such as EKO (RC ₹3.00 and DL ₹1.80 per successful call, excluding 18% GST, no monthly minimum, setup from ₹6,000 per API family) or the admin checking RC and DL photos against mParivahan/Parivahan. Open items: ULIP's fee, if any, and whether a recycling platform's transporter/Saathi verification use case is accepted on first review.",
+   "status": "partly",
+   "decision": "Register on goulip.in this week with a 'transporter vehicle and Saathi driver verification' use case and sign the NDA, aiming for sandbox before 13 Oct 2026; ship the pilot with a licensed KYC API (EKO-class, about ₹3 per RC and ₹1.80 per DL) plus in-app driver consent, and cut over to ULIP VAHAN/01 and SARATHI/01 when production credentials arrive.",
+   "whoToAsk": "NLDSL ULIP helpdesk (1800 309 8908, Helpdesk@goulip.in) on fees, use-case fit, and whether responses are masked or consent-gated after the Aug 2025 MoRTH policy; counsel for the DPDP consent wording and the NDA.",
+   "sources": [
+    {
+     "title": "ULIP portal (goulip.in): systems, APIs, registration, helpdesk",
+     "url": "https://goulip.in/",
+     "date": "2026-09-29 (portal © 2026)"
+    },
+    {
+     "title": "PIB: ULIP receives tremendous response, 13 organisations sign NDA (process described)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1864095",
+     "date": "2022-10-01"
+    },
+    {
+     "title": "PIB: ULIP to facilitate India's logistics sector; 400+ companies registered, 68 NDAs",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1910298",
+     "date": "2023-03-24"
+    },
+    {
+     "title": "PIB: ULIP surpasses 100 crore API transactions; 1,300+ companies, 129 APIs",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2112727",
+     "date": "2025-03-19"
+    },
+    {
+     "title": "NirmanKit: How to integrate with ULIP (eligibility, NDA, sandbox, timelines, ₹0 fees)",
+     "url": "https://www.nirmankit.in/learn/ulip-api-integration-how-to",
+     "date": "2026-06-25"
+    },
+    {
+     "title": "MoRTH: Policy for Data Sharing from the National Transport Repository (PDF)",
+     "url": "https://parivahan.gov.in/sites/default/files/policy/data-sharing-policy.pdf",
+     "date": "2025-08-18"
+    },
+    {
+     "title": "Medianama: MoRTH's new data sharing policy, who gets access to personal information",
+     "url": "https://www.medianama.com/2025/08/223-morths-data-sharing-policy-access-personal-information/",
+     "date": "2025-08-28"
+    },
+    {
+     "title": "Internet Freedom Foundation: How Vahan and Sarathi data is being sold online",
+     "url": "https://internetfreedom.in/less-than-2-for-your-name-and-home-address-how-vahan-and-sarathi-data-is-being-sold-online/",
+     "date": "2026-09-23"
+    },
+    {
+     "title": "ULIP-VAHAN API integration guide (VAHAN/01-03 inputs and fields)",
+     "url": "https://www.scribd.com/document/668134594/ULIP-VAHAN-Integration-Requirement",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "ULIP-SARATHI API integration guide (SARATHI/01 inputs and fields)",
+     "url": "https://www.scribd.com/document/702509581/ULIP-SARATHI-Integration-Requirement",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "GitHub kartikdogra17/ulix README (ULIP base URLs, login token flow, VAHAN/01 and SARATHI/01 fields)",
+     "url": "https://github.com/kartikdogra17/ulix",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "EKO pricing: RC ₹3.00, DL ₹1.80 per verification, excl. GST",
+     "url": "https://eps.eko.in/pricing",
+     "date": "undated, opened 2026-09-29"
+    },
+    {
+     "title": "EKO Driving Licence verification API",
+     "url": "https://eps.eko.in/products/dl-verification-api",
+     "date": "undated, opened 2026-09-29"
+    }
+   ]
+  }
+ ]
+}

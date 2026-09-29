@@ -1,158 +1,193 @@
 {
-  "cluster": "Data protection, IT rules and accessibility",
-  "answers": [
+ "cluster": "Data protection, IT rules and accessibility",
+ "answers": [
+  {
+   "question": "After MeitY's January 2026 consultations, were the DPDP Rules 2025 deadlines (about 13 May 2027 for core duties) shortened for any class of company, and what applies to a small startup handling phone numbers and photos?",
+   "answer": "No. The DPDP Rules 2025 (G.S.R. 846(E), gazetted 13 November 2025) still run on the original three-step clock written into Rule 1: Rules 1, 2 and 17-21 (Board machinery) since 13 Nov 2025; Rule 4 (Consent Manager registration) from 13 Nov 2026; and every duty that touches Luma - Rules 3, 5-16, 22 and 23 (notice, consent, security safeguards, breach reporting, retention, children, rights) - 18 months after publication, i.e. 13 May 2027 (PIB counts from the 14 Nov publication and says 14 May 2027; plan for 13 May). At a closed-door meeting on 22-23 January 2026 MeitY floated pulling Rule 13 (Significant Data Fiduciary audits and DPIAs) forward to 12 months (13 Nov 2026), forcing the Rule 8(3) one-year log-retention duty on all fiduciaries within about 3 months, and switching on a few state-facing provisions (Rules 15, 23; Section 17(2)) immediately, with comments due 4 Feb 2026; the MeitY Secretary said on 11 March 2026 that no decision would be taken until industry inputs were in, and as of the latest checks we opened (Mondaq 14 Aug 2026; the dpdprules.org and dcomply trackers verified 8-28 Sep 2026) no amending gazette exists, so no class of company has an earlier deadline - and the 12-month cut was aimed at Significant Data Fiduciaries, a class the government has not yet even designated, not at a Bengaluru pilot. There is no small-company carve-out either: the Act has no size or turnover threshold, and the Section 17(3) power to exempt 'startups' from notice (s.5), retention/erasure (s.8(3), 8(7)), children's data (s.10) and rights (s.11) has never been exercised. The Third Schedule's automatic-erasure timers bite only e-commerce entities with at least 2 crore registered users (50 lakh for gaming, 2 crore for social media), so they do not apply to Luma, but Rule 8(3)'s one-year retention of processing logs and Rule 6's minimum safeguards (encryption or masking, access control, access logs, backups, processor contracts) will. Phone numbers, names, listing photos and KYC photos are all personal data, so from 13 May 2027 Luma must give a standalone plain-language notice with itemised purposes and a withdrawal route (Rule 3), publish a contact for data questions (Rule 9), answer grievances within a published period of at most 90 days (Rule 14), tell every affected person 'without delay' and the Board within 72 hours after a breach (Rule 7), and obtain verifiable parental consent for anyone under 18 (Rule 10). Penalties run to Rs 250 crore (safeguards), Rs 200 crore (breach notice, children) and Rs 50 crore (anything else), although the Data Protection Board still has no Chairperson or Members (MeitY invited applications on 6 May 2026; none appointed as of 1 Aug 2026). Until May 2027 the IT Act s.43A / SPDI Rules 2011 remain the live law: a published privacy policy and reasonable security practices are already mandatory, and bank or payment-instrument details (which UPI IDs arguably are) count as sensitive personal data under those rules.",
+   "status": "answered",
+   "decision": "Build the pilot to the DPDP standard from 13 October 2026 rather than waiting for May 2027, because it is cheap at pilot scale and the pilot will still be running when the duties bite: consent notice at signup, purpose-limited fields (no Aadhaar numbers, no photos beyond the listing and KYC need), 18+ accounts only, encryption at rest, one-year access logs, a 72-hour breach runbook, a published privacy contact and deletion-on-request; have a privacy lawyer spend half a day on the notice wording. Do not plan around a startup exemption (none exists); re-check egazette.gov.in monthly for any G.S.R. amending Rule 1 of the DPDP Rules, since the only floated acceleration that could touch Luma is Rule 8(3) log retention, which you would already satisfy.",
+   "whoToAsk": "",
+   "sources": [
     {
-      "question": "After MeitY's January 2026 consultations, were the DPDP Rules 2025 deadlines (about 13 May 2027 for core duties) shortened for any class of company, and what applies to a small startup handling phone numbers and photos?",
-      "answer": "No. As of 29 September 2026 nothing has been shortened for anyone: the operative instruments are still the two gazette notifications dated 13 November 2025 (published 14 November 2025) — G.S.R. 843(E), which brings the Act into force in three phases, and G.S.R. 846(E), the DPDP Rules 2025, whose Rule 1 makes Rules 1, 2 and 17–21 (Data Protection Board) apply at once, Rule 4 (consent managers) after 12 months (about 13–14 November 2026), and Rules 3, 5–16, 22 and 23 after 18 months (about 13–14 May 2027), the same date on which Act sections 3–17 (consent, notice, security, breach, erasure, rights, children) and the penalty machinery start. What happened in January 2026: at a closed-door meeting on 22 January 2026 MeitY showed slides proposing to bring Rules 23, 15 and 13(5) into force immediately, the one-year retention duty within three months, and to cut the rest to 12 months (Financial Express reported this as across the board; Moneycontrol reported it as aimed at significant data fiduciaries such as big tech and banks), with comments due 4 February 2026. IAMAI and the startup body Empower India opposed it; on 12 February 2026 MeitY's Deepak Goel said there was no final decision and that startups and MSMEs would not feel it; Meta still called it a proposal on 4 March 2026; on 14 August 2026 MeitY Secretary S. Krishnan told about 30 startups that the notified timelines would hold with no extension; and a 10 September 2026 Live Law analysis still treats about 13 May 2027 as the date when substantive duties and penalties engage. For a small startup there is therefore no shorter deadline, and no exemption either: Act section 17(3) lets the government exempt notified classes 'including startups' from some duties, but I found no such notification and the Rules contain none, so treat it as unavailable. From about 13 May 2027 Luma.Green must give an itemised consent notice for each purpose (Rule 3 — e.g., phone number for OTP login and payment records, scrap photos for listings and verification); apply the Rule 6 minimum safeguards (encryption/masking/tokenisation, access control, access logs with monitoring, backups, one-year retention of logs, security clauses in every processor contract such as Convex, Vercel, SMS and KYC vendors); on a breach tell every affected user without delay and the Data Protection Board without delay, with a detailed report within 72 hours (Rule 7); publish a named contact for data questions (Rule 9); answer rights requests and grievances within 90 days (Rule 14); erase data once the purpose is served (the Third Schedule three-year clocks apply only to e-commerce entities with at least 2 crore users, gaming with 50 lakh, social media with 2 crore, so not to you); and use verifiable parental consent only if under-18s can register (Rule 10). No DPO, audit or impact assessment is needed unless MeitY designates you a Significant Data Fiduciary (Rule 13), which has not yet happened to anyone. Penalties from May 2027 run up to ₹250 crore for failing security safeguards, ₹200 crore for failing to notify a breach or for children's-data violations and ₹50 crore for other breaches; until then IT Act section 43A and the SPDI Rules 2011 still apply, because section 44(2), which repeals s.43A, sits in the 18-month batch.",
-      "status": "answered",
-      "decision": "Build the pilot to the Rules now (Rule 3 consent notice, Rule 6 safeguards, a 72-hour breach runbook, published data contact, 90-day grievance SLA), aim to be compliant at pilot launch and treat 13 May 2027 as the hard legal date; do not plan on a startup exemption, and re-check egazette/MeitY monthly for any amendment (a shortened timeline for significant data fiduciaries would not bind a 30-user pilot).",
-      "whoToAsk": "A privacy counsel to confirm that no section 17(3) startup notification exists and that the pilot cannot be a Significant Data Fiduciary; a monthly check of egazette.gov.in and MeitY's DPDP Rules page for any 2026 amendment notification.",
-      "sources": [
-        {
-          "title": "G.S.R. 843(E) — commencement notification for the DPDP Act 2023 (Gazette of India, MeitY)",
-          "url": "https://egazette.gov.in/WriteReadData/2025/267647.pdf",
-          "date": "2025-11-13"
-        },
-        {
-          "title": "G.S.R. 846(E) — Digital Personal Data Protection Rules, 2025, Rule 1 phasing, Rules 3, 6, 7, 8, 9, 10, 13, 14 and Third Schedule (Gazette of India)",
-          "url": "https://egazette.gov.in/WriteReadData/2025/267650.pdf",
-          "date": "2025-11-13"
-        },
-        {
-          "title": "PIB backgrounder: DPDP Rules, 2025 Notified — 18-month phased compliance, penalties",
-          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf",
-          "date": "2025-11-17"
-        },
-        {
-          "title": "DPDP rules: Centre weighs shorter timeline for large companies — Vaishnaw (Business Line)",
-          "url": "https://www.thehindubusinessline.com/info-tech/dpdp-rules-centre-weighs-shorter-timeline-notes-industrys-global-compliance-standards/article70290169.ece",
-          "date": "2025-11-16"
-        },
-        {
-          "title": "DPDP compliance timeline may be cut to 12 months; comments by 4 February (Financial Express)",
-          "url": "https://www.financialexpress.com/business/news/dpdp-compliance-timeline-may-be-cut-to-12-months/4116289/",
-          "date": "2026-01-22"
-        },
-        {
-          "title": "Industry groups ask IT ministry not to shorten DPDP timeline — details of the 22 January 2026 MeitY slides (Hindustan Times)",
-          "url": "https://www.hindustantimes.com/india-news/industry-groups-asks-it-ministry-to-not-shorten-compliance-timeline-under-dpdp-101770233287416.html",
-          "date": "2026-02-05"
-        },
-        {
-          "title": "Shortened compliance window will not impact MSMEs; no final decision yet — Deepak Goel, MeitY (Business Line)",
-          "url": "https://www.thehindubusinessline.com/news/shortened-compliance-window-for-dpdp-will-not-impact-msmes-deepak-goel-cyber-law-and-data-governance-meity/article70625027.ece",
-          "date": "2026-02-12"
-        },
-        {
-          "title": "Meta flags DPDP compliance timeline concerns — still a proposal (Rediff / Business Standard interview)",
-          "url": "https://www.rediff.com/business/interview/tech-meta-flags-dpdp-compliance-timeline-concerns/20260304.htm",
-          "date": "2026-03-04"
-        },
-        {
-          "title": "DPDP Act implementation: no extension as startups face deadline, says MeitY Secretary S. Krishnan (Fortune India)",
-          "url": "https://www.fortuneindia.com/technology/dpdp-act-implementation-no-extension-as-startups-face-compliance-deadline-says-meity-secretary-s-krishnan/153958",
-          "date": "2026-08-14"
-        },
-        {
-          "title": "Compliance Without Court: what the DPDPA Board's vacancy means for May 2027 (Live Law)",
-          "url": "https://www.livelaw.in/lawschool/articles/compliance-without-court-what-dpdpa-board-vacancy-means-may2027-549463",
-          "date": "2026-09-10"
-        }
-      ]
+     "title": "Digital Personal Data Protection Rules, 2025 - Gazette text, G.S.R. 846(E) (Rule 1 commencement, Rules 6-10, Third Schedule)",
+     "url": "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf",
+     "date": "2025-11-13"
     },
     {
-      "question": "Have amendments to the IT (Intermediary) Rules in 2025–26 changed the 36-hour takedown or the 24-hour/15-day grievance timelines? Which Indian accessibility rules (RPwD Act 2016, IS 17802, GIGW 3.0) apply to a private platform?",
-      "answer": "Yes, both sets of timelines have changed. The IT (Intermediary Guidelines and Digital Media Ethics Code) Amendment Rules, 2025 (notified 22 October 2025, in force 15 November 2025) kept the 36-hour clock in Rule 3(1)(d) but restricted who may issue takedown intimations (Joint Secretary or above; DIG or above for police), required a reasoned notice stating the legal basis and the exact URL, and added a monthly Secretary-level review. The Amendment Rules, 2026 (G.S.R. 120(E), notified 10 February 2026, in force 20 February 2026) then cut the Rule 3(1)(d) deadline for court or government orders from 36 hours to 3 hours; cut the Rule 3(2)(b) removal of nudity, sexual or impersonation (including morphed) content from 24 hours to 2 hours; cut the 72-hour clock for content-removal complaints (Rule 3(2)(a)(i) proviso) to 36 hours; and, per MediaNama's rule-by-rule report, cut the general grievance-disposal period from 15 days to 7 days, while the 24-hour acknowledgement was not reported as changed — the same rules define 'synthetically generated information' and require prominent labels plus permanent metadata on AI-generated visual/audio content, with upload-declaration and verification duties only for significant social media intermediaries (50 lakh+ users). MeitY told platforms on 25 February 2026 there would be no extensions or exemptions; a further draft (30 March and 21 April 2026: Rule 3(4) making MeitY advisories binding, wider Inter-Departmental Committee powers, news content under MIB oversight, continuous visible AI labels) was still not notified on 22 August 2026, and the 6 August 2026 stories about a 'new draft 3-hour rule' were re-reports of a government statement about the February rules already in force. If Luma.Green hosts user content (listing photos, chat, ratings) it is an intermediary for that content and the Rule 3 due diligence applies — published terms, a grievance officer with contact details and the timelines above — but not the SSMI duties. On accessibility, the RPwD Act 2016 binds private 'establishments': section 40 standards, section 46 requires all service providers, government and private, to comply within two years of the rules (i.e., by 15 June 2019), and section 89 sets fines of ₹10,000 for a first offence and ₹50,000 to ₹5 lakh thereafter; Rule 15(1)(c)(iii) of the RPwD Rules 2017, added by the RPwD (Amendment) Rules 2023 (notified 10 May 2023), names IS 17802 (Part 1):2021 and (Part 2):2022 (BIS, notified 24 December 2021 and 4 May 2022) as the ICT standard. In Rajive Raturi v Union of India (8 November 2024, 2024 INSC 858) the Supreme Court held Rule 15(1) ultra vires for being merely recommendatory and ordered mandatory rules within three months; the government's response is the draft RPwD (Amendment) Rules 2026 (S.O. 3962(E) of 16 July 2026, gazetted 20 July 2026, 30-day comments, still under consultation on 3 September 2026), which would apply to every establishment in or outside India offering websites, mobile apps, software, digital content or ICT services to persons in India, require conformity with IS 17802, a published human- and machine-readable Accessibility Conformance Report (VPAT-style) signed at Director level and re-tested on major changes and at least every two years, a grievance officer resolving complaints within 30 days, Schedule I core clauses within one year for turnover of ₹500 crore or more and within 18 months for smaller establishments, full compliance within two years, and section 89 fines plus licence consequences. GIGW 3.0 applies only to government websites and apps at every level (Central, State, district, local), is built on WCAG 2.1 and the RPwD Act, and is not binding on a private platform, though it is a free Indian checklist. The IS 17802 text must be bought from BIS; its Schedule I clause numbering (9 web, 10 non-web documents, 11 software) follows the EN 301 549 structure whose web clauses are WCAG 2.1 AA, so WCAG 2.1 AA is the practical build target (my inference from the clause structure — confirm against the standard).",
-      "status": "partly",
-      "decision": "Appoint a grievance officer now, publish terms and contact details, and run SLAs of acknowledge within 24 hours, resolve within 7 days, 36 hours for content-removal complaints, 2 hours for nudity/impersonation reports and 3 hours for court or government orders; label any AI-generated imagery. Build the app to WCAG 2.1 AA from day one (mobile-first, Kannada/Hindi/English) and keep a draft VPAT/ACR so Luma.Green lands on the 18-month small-establishment track when the 2026 accessibility rules are finalised.",
-      "whoToAsk": "IT counsel to confirm the app's intermediary status for chat and listings and to verify the 7-day grievance figure against G.S.R. 120(E) itself; DEPwD/BIS for the IS 17802 text and the final 2026 rules; an accessibility auditor for the Accessibility Conformance Report.",
-      "sources": [
-        {
-          "title": "G.S.R. 139(E) — IT (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, original Rule 3(1)(d) and 3(2) (Gazette of India)",
-          "url": "https://egazette.gov.in/WriteReadData/2021/225464.pdf",
-          "date": "2021-02-25"
-        },
-        {
-          "title": "Centre notifies amendments to IT Rules, 2021 — Rule 3(1)(d), effective 15 November 2025 (ANI)",
-          "url": "https://www.aninews.in/news/national/general-news/centre-notifies-amendments-to-it-rules-2021-to-enhance-transparency-accountability20251023144256/",
-          "date": "2025-10-23"
-        },
-        {
-          "title": "Govt tightens content takedown rules: 36-hour deadline, officer rank specified (MediaNama)",
-          "url": "https://www.medianama.com/2025/10/223-content-takedown-rules-online-platforms-36-hr-deadline-officer-rank/",
-          "date": "2025-10-23"
-        },
-        {
-          "title": "MeitY notifies new amendments to IT Rules to regulate synthetic media and deepfakes — rule-by-rule changes (MediaNama)",
-          "url": "https://www.medianama.com/2026/02/223-meity-amendments-it-rules-synthetic-media-deepfakes/",
-          "date": "2026-02-10"
-        },
-        {
-          "title": "Govt tightens rules on AI-generated content; 3-hour and 2-hour takedown, in force 20 February (The Hindu)",
-          "url": "https://www.thehindu.com/news/national/govt-tightens-rules-on-ai-generated-deepfake-content-mandates-faster-takedown-of-flagged-material/article70615674.ece",
-          "date": "2026-02-10"
-        },
-        {
-          "title": "India's new IT rules 2026: what the 3-hour takedown deadline means (Financial Express)",
-          "url": "https://www.financialexpress.com/india-news/indias-new-it-rules-2026-what-the-3-hour-takedown-deadline-means-for-social-media-and-ai/4138055/",
-          "date": "2026-02-10"
-        },
-        {
-          "title": "RTI filed on the three-hour takedown rule; 25 February 2026 meeting, no exemptions (MediaNama)",
-          "url": "https://www.medianama.com/2026/03/223-rti-filed-did-meity-consult-anyone-before-introducing-three-hour-content-takedown-rule/",
-          "date": "2026-03-23"
-        },
-        {
-          "title": "Govt tightens social media rules: 2-hour, 3-hour and 36-hour timelines — official statement on the 10 February 2026 amendments (News18)",
-          "url": "https://www.news18.com/india/it-rules-social-media-sensitive-content-takedown-2-hours-deepfakes-10257661.html",
-          "date": "2026-08-06"
-        },
-        {
-          "title": "X stopped publishing compliance reports after synthetic media rules came into force — G.S.R. 120(E) (MediaNama)",
-          "url": "https://www.medianama.com/2026/08/223-x-compliance-reports-synthetic-media-rules/",
-          "date": "2026-08-17"
-        },
-        {
-          "title": "MeitY set to notify portion of IT Rules for stricter compliances — status of the 30 March 2026 draft (Hindustan Times)",
-          "url": "https://www.hindustantimes.com/india-news/meity-set-to-notify-portion-of-it-rules-for-stricter-compliances-101787337230347.html",
-          "date": "2026-08-22"
-        },
-        {
-          "title": "Rajive Raturi v Union of India, 2024 INSC 858 — Rule 15 ultra vires, sections 40, 44–46, 89, IS 17802 via the 2023 amendment (Indian Kanoon)",
-          "url": "https://indiankanoon.org/doc/98908321/",
-          "date": "2024-11-08"
-        },
-        {
-          "title": "S.O. 3962(E) — draft Rights of Persons with Disabilities (Amendment) Rules, 2026 on ICT accessibility (Gazette of India via DEPwD)",
-          "url": "https://cdnbbsr.s3waas.gov.in/s3e58aea67b01fa747687f038dfde066f6/uploads/2026/07/202607271973960991.pdf",
-          "date": "2026-07-20"
-        },
-        {
-          "title": "DEPwD page: comments invited on draft rules for mandatory ICT accessibility standards",
-          "url": "https://depwd.gov.in/%e0%a4%b8%e0%a5%82%e0%a4%9a%e0%a4%a8%e0%a4%be-%e0%a4%94%e0%a4%b0-%e0%a4%b8%e0%a4%82%e0%a4%9a%e0%a4%be%e0%a4%b0-%e0%a4%aa%e0%a5%8d%e0%a4%b0%e0%a5%8c%e0%a4%a6%e0%a5%8d%e0%a4%af%e0%a5%8b%e0%a4%97/",
-          "date": "2026-07-27"
-        },
-        {
-          "title": "IAMAI flags overlap between draft RPwD rules and MIB accessibility norms — consultation still open (BestMediaInfo)",
-          "url": "https://bestmediainfo.com/mediainfo/mediainfo-digital/iamai-flags-overlap-between-draft-rpwd-rules-and-mib-accessibility-norms-12486770",
-          "date": "2026-09-03"
-        },
-        {
-          "title": "GIGW 3.0 — Scope and Objective (applies to government websites and apps; based on WCAG 2.1 and RPwD Act)",
-          "url": "https://guidelines.india.gov.in/scope-and-objective/",
-          "date": "2026-09-25"
-        },
-        {
-          "title": "GIGW 3.0 — Guidelines (accessibility success criteria adopted from WCAG 2.1)",
-          "url": "https://guidelines.india.gov.in/guidelines/",
-          "date": "2026-09-25"
-        },
-        {
-          "title": "GIGW 3.0 — Introduction (NIC, STQC and CERT-In; history of GIGW)",
-          "url": "https://guidelines.india.gov.in/introduction/",
-          "date": "2026-09-25"
-        }
-      ]
+     "title": "PIB explainer: DPDP Rules, 2025 Notified (18-month phased compliance, penalty caps)",
+     "url": "https://www.pib.gov.in/PressNoteDetails.aspx?NoteId=156054&ModuleId=3&reg=3&lang=2",
+     "date": "2025-11-17"
+    },
+    {
+     "title": "APAC News Network: MeitY seeks industry views on faster rollout of DPDP Act, proposes 12-month timeline",
+     "url": "https://apacnewsnetwork.com/2026/01/meity-seeks-industry-views-on-faster-rollout-of-dpdp-act-proposes-12-month-compliance-timeline/",
+     "date": "2026-01-28"
+    },
+    {
+     "title": "APAC News Network: IT Ministry awaiting industry feedback on shorter data protection compliance timeline (MeitY Secretary: no decision yet)",
+     "url": "https://apacnewsnetwork.com/2026/03/it-ministry-awaiting-industry-feedback-on-shorter-data-protection-compliance-timeline/",
+     "date": "2026-03-11"
+    },
+    {
+     "title": "Mondaq: Compression of DPDP enforcement timeline proposed by MeitY (Rule 13 to 12 months for SDFs, Rule 8(3) in 90 days)",
+     "url": "https://www.mondaq.com/india/privacy-protection/1760380/compression-of-dpdp-enforcement-timeline-proposed-by-meity",
+     "date": "2026-03-18"
+    },
+    {
+     "title": "Mondaq: MeitY plans to cut short DPDP compliance timeline and notify cross-border restrictions for SDFs",
+     "url": "https://www.mondaq.com/india/data-protection/1773554/meity-plans-to-cut-short-dpdp-compliance-timeline-and-notify-cross-border-restrictions-for-sdfs",
+     "date": "2026-04-15"
+    },
+    {
+     "title": "Mondaq: DPDP Act and Rules 2025 - the 2026 compliance milestones (13 Nov 2026 and 13 May 2027 unchanged)",
+     "url": "https://www.mondaq.com/india/data-protection/1830402/dpdp-act-and-rules-2025-the-2026-compliance-milestones-businesses-cant-afford-to-miss",
+     "date": "2026-08-14"
+    },
+    {
+     "title": "dpdprules.org timeline: Is the DPDP Act in force? (no amending instrument located; Board unstaffed)",
+     "url": "https://dpdprules.org/timeline",
+     "date": "2026-09-28"
+    },
+    {
+     "title": "dpdprules.org: Section 17 of the DPDP Act (startup exemption power; no notification issued)",
+     "url": "https://dpdprules.org/act/17",
+     "date": "2026-09-23"
+    },
+    {
+     "title": "dcomply: DPDP Rules 2025 - all rules and effective dates (verified 8 Sep 2026)",
+     "url": "https://dpdpa.dcomply.in/rules/",
+     "date": "2026-09-08"
+    },
+    {
+     "title": "dpdprules.org FAQ: interim regime - s.43A and SPDI Rules 2011 apply until s.44(2) commences",
+     "url": "https://dpdprules.org/questions",
+     "date": "2026-09-23"
+    },
+    {
+     "title": "LiveLaw: India's Data Protection Board - established in law, absent in fact",
+     "url": "https://www.livelaw.in/articles/india-data-protection-board-established-law-543751",
+     "date": "2026-08-01"
+    },
+    {
+     "title": "MeitY advertisement: filling up the post of Chairman and Members, Data Protection Board of India",
+     "url": "https://www.meity.gov.in/static/uploads/2026/05/53b1bcf01cab9a0adde463e73fbc3417.pdf",
+     "date": "2026-05-06"
     }
-  ]
+   ]
+  },
+  {
+   "question": "Have amendments to the IT (Intermediary) Rules in 2025-26 changed the 36-hour takedown or the 24-hour/15-day grievance timelines? Which Indian accessibility rules (RPwD Act 2016, IS 17802, GIGW 3.0) apply to a private platform?",
+   "answer": "Yes, twice, and the 36-hour window is gone. G.S.R. 775(E) of 22 October 2025 (in force 15 November 2025) rewrote Rule 3(1)(d) so that government takedown intimations must come from an officer of Joint Secretary rank (Director where none exists) or a DIG-rank police officer, be reasoned, cite the legal basis and exact URL, and be reviewed monthly, but it kept 36 hours. G.S.R. 120(E) of 10 February 2026 (in force 20 February 2026) then cut the clocks for every intermediary: court or government takedown orders 36 hours to 3 hours; grievance disposal 15 days to 7 days (the 24-hour acknowledgement is unchanged); complaints seeking removal of Rule 3(1)(b) prohibited content 72 hours to 36 hours; and non-consensual nudity, sexual content or impersonation/morphed images 24 hours to 2 hours, plus new labelling duties for AI-generated content (MeitY confirmed the 3-hour rule to the Lok Sabha on 25 March 2026). The August 2026 '2-hour takedown' headlines were re-reporting these February rules (SpicyIP, 9 Aug 2026), and the 30 March 2026 draft Second Amendment (comments closed 14 April 2026; safe harbour tied to MeitY advisories, MIB oversight, longer retention) proposes no new clocks and had not been notified in any coverage we opened through September 2026; a March 2026 idea of cutting 3 hours to 1 hour was never notified. Luma hosts listings, photos and household-kabadiwala messages, so it is very likely an 'intermediary' for that third-party content and Rule 3 applies in full - which also means a Grievance Officer's name and contact on the home screen, a user agreement listing the prohibited-content categories with periodic reminders, keeping removed content for 180 days and registration data for 180 days after account closure. On accessibility, the RPwD Act 2016 binds private companies: s.40 lets the Centre set standards, s.46 says service providers 'whether Government or private' must comply within two years of the rules, and s.89 fines Rs 10,000 for a first breach and Rs 50,000 to Rs 5 lakh after; Rule 15(1)(c) of the RPwD Rules 2017, amended 11 May 2023, names IS 17802 Part 1 (2021) and Part 2 (2022) as the ICT standard for websites, applications and ICT-based services, and that is the standard the Chief Commissioner for PwD has enforced against private apps (Practo 2022; audit order 30 Jul 2024; Rs 10,000 fines on 155 establishments in Feb 2025 and Rs 50,000 on 96 in June 2025). GIGW 3.0 (2023) is the manual for Government websites and apps certified by STQC and does not apply to a private platform except as a checklist; IS 17802 is freely downloadable and, per the law-firm notes we read, aligned with WCAG 2.1 Level AA. The Supreme Court (Rajive Raturi, 8 Nov 2024) struck Rule 15(1) for being merely persuasive, and the result is the draft RPwD (Amendment) Rules 2026 (S.O. 3962(E), 16 Jul 2026; comments closed about 19 Aug 2026) which would make IS 17802 mandatory for every establishment offering websites or apps to people in India, with 12 months for companies above Rs 500 crore turnover, 18 months for everyone else, full conformance in 2 years, and a published Accessibility Conformance Report signed at Director level; DEPwD told Medianama (23 Sep 2026) it aims to notify around January 2027, when the Supreme Court next hears the case. Two items are not settled on public pages: whether counsel agrees Luma is an intermediary for its listing and chat features, and the final shape of the 2026 accessibility rules.",
+   "status": "partly",
+   "decision": "Treat Luma as an intermediary from day one: name a Grievance Officer (a founder) on the app home screen and website, wire an in-app report flow with 24-hour acknowledgement and 7-day closure, a 36-hour path for prohibited-content removal requests and a 2-hour path for intimate or impersonation images, keep one phone on call for a 3-hour court or government order, and log removals for 180 days. For accessibility, build to WCAG 2.1 AA now (labels, contrast, screen-reader names, large tap targets, Kannada and Hindi alt text), run an automated plus manual audit before 13 Oct 2026, and keep the results in an ACR-style document so the 2026 rules' 18-month runway costs nothing extra; skip GIGW/STQC certification, which is for government sites.",
+   "whoToAsk": "A technology lawyer (30 minutes) to confirm Luma is an 'intermediary' for user-posted listings and chat and that the simulated escrow does not change that; an IAAP-certified accessibility auditor if you want a paid pre-launch audit; the Chief Commissioner for Persons with Disabilities (ccdisabilities.nic.in) or the Karnataka State Commissioner for PwD for the current enforcement posture toward small private apps.",
+   "sources": [
+    {
+     "title": "MeitY: IT (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, consolidated text updated as on 10.02.2026 (footnotes cite G.S.R. 775(E) 22.10.2025 and G.S.R. 120(E) 10.02.2026)",
+     "url": "https://www.meity.gov.in/static/uploads/2026/02/550681ab908f8afb135b0ad42816a1c9.pdf",
+     "date": "2026-02-10"
+    },
+    {
+     "title": "PIB (Lok Sabha reply): advisories and the 10 Feb 2026 IT Rules amendment - 3-hour takedown",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2245053&reg=3&lang=2",
+     "date": "2026-03-25"
+    },
+    {
+     "title": "Legal500: Update - overview of the IT Intermediary Amendment Rules 2026 (timeline table; in force 20 Feb 2026)",
+     "url": "https://www.legal500.com/intelligence/india/media-telecoms-it-entertainment/update-overview-of-the-it-intermediary-amendment-rules-2026",
+     "date": "2026-02-26"
+    },
+    {
+     "title": "Khaitan & Co ERGO: Amendment to Rule 3(1)(d) of the IT Rules (22 Oct 2025, in force 15 Nov 2025)",
+     "url": "https://www.khaitanco.com/sites/default/files/2025-10/ERGO%20-%20Amendment%20to%20Rule%203(1)(d)%20of%20the%20IT%20Rules%20(24%20Oct%202025).pdf",
+     "date": "2025-10-24"
+    },
+    {
+     "title": "SpicyIP: Old rule, new amnesia - a 6-month-old takedown rule rebranded as breaking news",
+     "url": "https://spicyip.com/2026/08/old-rule-new-amnesia-a-6-month-old-takedown-rule-rebranded-as-breaking-news.html",
+     "date": "2026-08-09"
+    },
+    {
+     "title": "Medianama: Draft IT Rules Second Amendment 2026 explained (comments to 14 Apr 2026)",
+     "url": "https://www.medianama.com/2026/03/223-draft-it-rules-explained-news-post-social-media-fall-under-mibs-oversight-heres-what-means/",
+     "date": "2026-03-31"
+    },
+    {
+     "title": "CyberPeace: critical analysis of the 2026 IT Second Amendment Rules (still draft)",
+     "url": "https://cyberpeace.org/resources/blogs/regulating-speech-or-controlling-it-a-critical-analysis-of-the-2026-it-second-amendment-rules",
+     "date": "2026-04-08"
+    },
+    {
+     "title": "Rights of Persons with Disabilities Act, 2016 - Section 46 (service providers, Government or private)",
+     "url": "https://lawgist.in/rights-of-persons-with-disabilities-act/46",
+     "date": "2016-12-28"
+    },
+    {
+     "title": "India Code: Rights of Persons with Disabilities Act, 2016 (full text incl. s.40, s.46, s.89)",
+     "url": "https://www.indiacode.nic.in/bitstream/123456789/9320/1/disabilitiesacta2016-49.pdf",
+     "date": "2016-12-28"
+    },
+    {
+     "title": "SCC Online: MoSJE notifies RPwD (Amendment) Rules 2023 - IS 17802 Parts 1 and 2 inserted in Rule 15",
+     "url": "https://www.scconline.com/blog/post/2023/05/12/ministry-of-social-justice-and-empowerment-notified-rights-of-persons-with-disabilities-amendment-rules-2023-legal-news/",
+     "date": "2023-05-12"
+    },
+    {
+     "title": "PIB: Final amendment of Rule 15 of the RPwD Rules 2017 (Rule 15(1)(c)(iii) = Accessibility for ICT products and services Parts I and II)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1942363",
+     "date": "2023-07-25"
+    },
+    {
+     "title": "GIGW 3.0 - Introduction (scope: Government websites, portals, apps; STQC CQW certification)",
+     "url": "https://guidelines.india.gov.in/introduction/",
+     "date": "2023-04-01"
+    },
+    {
+     "title": "IS 17802 : Part 1 : 2021 Accessibility for the ICT Products and Services - Requirements (BIS; free copy)",
+     "url": "https://archive.org/details/gov.in.is.17802.1.2021",
+     "date": "2021-12-30"
+    },
+    {
+     "title": "Indian Kanoon: Rajive Raturi vs Union of India (Rule 15(1) ultra vires; mandatory rules ordered)",
+     "url": "https://indiankanoon.org/doc/98908321/",
+     "date": "2024-11-08"
+    },
+    {
+     "title": "AZB & Partners: Bridging the digital divide - India's evolving accessibility framework (CCPD audit order 30 Jul 2024; fines Feb and Jun 2025)",
+     "url": "https://www.azbpartners.com/bank/bridging-the-digital-divide-indias-evolving-accessibility-framework/",
+     "date": "2025-09-15"
+    },
+    {
+     "title": "BananaIP: Accessibility is mandatory for businesses says CCPD (Rahul Bajaj v Practo)",
+     "url": "https://www.bananaip.com/intellepedia/accessibility-rpwd-act-private-businesses-ccpd-guidelines/",
+     "date": "2022-08-28"
+    },
+    {
+     "title": "Mondaq: The new accessibility conformance regime - draft RPwD Amendment Rules 2026 (S.O. 3962(E))",
+     "url": "https://www.mondaq.com/india/compliance/1824050/the-new-accessibility-conformance-regime-key-takeaways-from-the-draft-rpwd-amendment-rules-2026",
+     "date": "2026-07-29"
+    },
+    {
+     "title": "IndiaLaw: Draft RPwD Amendment Rules 2026 - turnover thresholds, ACR duties, comment deadline",
+     "url": "https://www.indialaw.in/blog/regulatory/rpwd-amendment-rules-2026/",
+     "date": "2026-07-29"
+    },
+    {
+     "title": "Verdictum: Supreme Court directs Centre to review expert inputs before finalising accessibility rules (next hearing January 2027)",
+     "url": "https://www.verdictum.in/supreme-court/expert-inputs-for-robust-lacunae-free-accessibility-rules-under-rpwd-act-1618751",
+     "date": "2026-07-29"
+    },
+    {
+     "title": "Adgully: IAMAI flags divergence between draft RPwD rules and MIB accessibility framework",
+     "url": "https://www.adgully.com/post/20072/draft-rpwd-rules-diverge-from-existing-mib-accessibility-framework-iamai",
+     "date": "2026-09-03"
+    },
+    {
+     "title": "Medianama: draft ICT accessibility rules still not in force; DEPwD targeting notification around January 2027",
+     "url": "https://www.medianama.com/2026/09/223-government-proposal-tech-disability/",
+     "date": "2026-09-23"
+    }
+   ]
+  }
+ ]
 }

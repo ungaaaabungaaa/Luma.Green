@@ -1,197 +1,197 @@
 {
-  "cluster": "Kabadiwala economics in Bengaluru",
-  "answers": [
+ "cluster": "Kabadiwala economics in Bengaluru",
+ "answers": [
+  {
+   "question": "How many kabadiwalas operate in Bengaluru, and what share of household dry waste reaches them rather than the city's collection or DWCCs? What gross margin does a kabadiwala keep per material after rent, transport, credit and losses (any published studies or interviews)?",
+   "answer": "There is no census of Bengaluru scrap shops: when BBMP started registering informal waste workers in 2011-12 it printed 3,000 enumeration forms for scrap dealers (Hasiru Dala/SWMRT paper, 2014), but WIEGO's 2013 case study records that the scrap-shop enumeration never went ahead, so roughly 3,000 shops is the only official-order figure; Chennai's mapped 2,500 aggregators (Circulate Initiative, Jan 2023) makes 3,000-4,000 for Bengaluru plausible but unverified, and the city has over 35,000 waste pickers and itinerant buyers (Mongabay, Feb 2022). Bengaluru generates 5,000-6,000 t/day (Citizen Matters, 4 Nov 2025) of which 25-35% is dry (IntechOpen 2020; B.PAC, Nov 2023), i.e. about 1,300-2,000 t/day of dry waste. The DWCC network is small: Hasiru Dala's 34 operator-run centres took in 19,811 t in Apr 2024-Mar 2025 (about 54 t/day, 1.6 t/day per centre) and sent only 6,231 t (31%) to recyclers, the rest being multilayer plastic and rejects (Hasiru Dala Annual Report 2024-25); with 119 functioning centres (Citizen Matters, Sep 2025) to 164 (Nov 2025) that scales to roughly 200-270 t/day, or 10-20% of dry waste, of which only about a third is saleable. By contrast Hasiru Dala/SWMRT estimated in 2014 that 15,000 waste pickers alone retrieve about 1,050 t/day (23% of all MSW, most of the dry fraction), and South First (Mar 2025) still cites 800 t/day handled by waste pickers, so the kabadiwala and waste-picker chain, not DWCCs, moves most saleable dry waste; 60-80% is a defensible planning share, but nobody has measured it. No Bengaluru study publishes a per-material margin net of rent, transport, credit and losses. Circulate Initiative interviews (Jan 2023, Delhi/Mumbai/Chennai) find recyclers capture 70-80% of the trade benefit with collectors and aggregators sharing the remaining 20-30%, and put a scrap dealer's throughput at 800 kg-1 t/day; an unsourced industry glossary (Adhara Viveka, Jun 2026) says each layer adds Rs 2-8/kg. Bengaluru rate cards on 29 Sep 2026 show the spread between buyers: newspaper Rs 10-16/kg, cardboard Rs 3-10, PET/plastic Rs 10-25, iron Rs 22-38, aluminium Rs 150-180, copper Rs 500-720 (The Kabadiwala, ScrapKabadi, scraprates.in). The Sep 2017 DWCC feasibility analysis shows why margins are thin: plastic fell from Rs 30/kg in 2014 to Rs 15 in 2017, white record fetched Rs 11 and cardboard Rs 8, sorting needed 5-8 workers per tonne, and most DWCCs ran at a net loss.",
+   "status": "partly",
+   "decision": "Plan for about 3,000 shops and assume 60-80% of saleable dry waste already flows through them rather than DWCCs; do not hard-code margins in the product, record the buy price and sell price of every lot and compute the spread, using Rs 2-8/kg gross on paper and plastics as the working range until the pilot shops give real numbers.",
+   "whoToAsk": "Hasiru Dala (Nalini Shekar, Pinky Chandran) and SWMRT for the unpublished 2011-12 scrap-dealer enumeration and DWCC inflow data; BSWML for citywide DWCC throughput; a one-month buy/sell ledger from 10 pilot shops for margins by material; also open Hasiru Dala's 'Valuing Urban Waste' (2019) PDF at https://hasirudala.in/assets/Valuing-Urban-Waste-2019-Bp9XVHLf.pdf, which was too large to fetch here.",
+   "sources": [
     {
-      "question": "How many kabadiwalas operate in Bengaluru, and what share of household dry waste reaches them rather than the city's collection or DWCCs? What gross margin does a kabadiwala keep per material after rent, transport, credit and losses (any published studies or interviews)?",
-      "answer": "There is no census of Bengaluru scrap shops: when BBMP started registering informal waste workers in 2011-12 it printed 3,000 enumeration forms for scrap dealers (Hasiru Dala/SWMRT paper, 2014), but WIEGO's 2013 case study records that the scrap-shop enumeration never went ahead, so roughly 3,000 shops is the only official-order figure; Chennai's mapped 2,500 aggregators (Circulate Initiative, Jan 2023) makes 3,000-4,000 for Bengaluru plausible but unverified, and the city has over 35,000 waste pickers and itinerant buyers (Mongabay, Feb 2022). Bengaluru generates 5,000-6,000 t/day (Citizen Matters, 4 Nov 2025) of which 25-35% is dry (IntechOpen 2020; B.PAC, Nov 2023), i.e. about 1,300-2,000 t/day of dry waste. The DWCC network is small: Hasiru Dala's 34 operator-run centres took in 19,811 t in Apr 2024-Mar 2025 (about 54 t/day, 1.6 t/day per centre) and sent only 6,231 t (31%) to recyclers, the rest being multilayer plastic and rejects (Hasiru Dala Annual Report 2024-25); with 119 functioning centres (Citizen Matters, Sep 2025) to 164 (Nov 2025) that scales to roughly 200-270 t/day, or 10-20% of dry waste, of which only about a third is saleable. By contrast Hasiru Dala/SWMRT estimated in 2014 that 15,000 waste pickers alone retrieve about 1,050 t/day (23% of all MSW, most of the dry fraction), and South First (Mar 2025) still cites 800 t/day handled by waste pickers, so the kabadiwala and waste-picker chain, not DWCCs, moves most saleable dry waste; 60-80% is a defensible planning share, but nobody has measured it. No Bengaluru study publishes a per-material margin net of rent, transport, credit and losses. Circulate Initiative interviews (Jan 2023, Delhi/Mumbai/Chennai) find recyclers capture 70-80% of the trade benefit with collectors and aggregators sharing the remaining 20-30%, and put a scrap dealer's throughput at 800 kg-1 t/day; an unsourced industry glossary (Adhara Viveka, Jun 2026) says each layer adds Rs 2-8/kg. Bengaluru rate cards on 29 Sep 2026 show the spread between buyers: newspaper Rs 10-16/kg, cardboard Rs 3-10, PET/plastic Rs 10-25, iron Rs 22-38, aluminium Rs 150-180, copper Rs 500-720 (The Kabadiwala, ScrapKabadi, scraprates.in). The Sep 2017 DWCC feasibility analysis shows why margins are thin: plastic fell from Rs 30/kg in 2014 to Rs 15 in 2017, white record fetched Rs 11 and cardboard Rs 8, sorting needed 5-8 workers per tonne, and most DWCCs ran at a net loss.",
-      "status": "partly",
-      "decision": "Plan for about 3,000 shops and assume 60-80% of saleable dry waste already flows through them rather than DWCCs; do not hard-code margins in the product, record the buy price and sell price of every lot and compute the spread, using Rs 2-8/kg gross on paper and plastics as the working range until the pilot shops give real numbers.",
-      "whoToAsk": "Hasiru Dala (Nalini Shekar, Pinky Chandran) and SWMRT for the unpublished 2011-12 scrap-dealer enumeration and DWCC inflow data; BSWML for citywide DWCC throughput; a one-month buy/sell ledger from 10 pilot shops for margins by material; also open Hasiru Dala's 'Valuing Urban Waste' (2019) PDF at https://hasirudala.in/assets/Valuing-Urban-Waste-2019-Bp9XVHLf.pdf, which was too large to fetch here.",
-      "sources": [
-        {
-          "title": "Informal Waste Workers Contribution in Bangalore (Hasiru Dala, SWMRT, Jain College; ICON SWM paper)",
-          "url": "https://hasirudala.in/assets/Informal-Waste-Workers-Contribution-in-Bangalore-CD4KoDxK.pdf",
-          "date": "2014"
-        },
-        {
-          "title": "Organizing Informal Waste Pickers: A Case Study of Bengaluru (WIEGO, Chaya Chengappa)",
-          "url": "https://www.wiego.org/wp-content/uploads/2019/09/Chengappa-Organizing-Informal-Waste-Pickers-India.pdf",
-          "date": "2013"
-        },
-        {
-          "title": "Hasiru Dala Annual Report 2024-2025 (DWCC data and metrics, Apr 2024-Mar 2025)",
-          "url": "https://hasirudala.in/assets/Annual%20Report%202024-2025%20final-DiEaRuWg.pdf",
-          "date": "2025"
-        },
-        {
-          "title": "Poor segregation is choking Bengaluru's waste system (Citizen Matters)",
-          "url": "https://citizenmatters.in/poor-segregation-is-choking-bengalurus-waste-system-how-can-this-change/",
-          "date": "2025-11-04"
-        },
-        {
-          "title": "Invisible workers, visible waste: Bengaluru's waste pickers struggle without recognition (Citizen Matters)",
-          "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
-          "date": "2025-09-15"
-        },
-        {
-          "title": "Solid Waste Management: Current Scenario and Challenges in Bengaluru (IntechOpen)",
-          "url": "https://www.intechopen.com/chapters/71641",
-          "date": "2020"
-        },
-        {
-          "title": "Bengaluru's Solid Waste Challenge: Current Status & Solutions (B.PAC)",
-          "url": "https://bpac.in/navigating-solid-waste-challenge-in-bengaluru/",
-          "date": "2023-11-27"
-        },
-        {
-          "title": "PlastiCities: the role of grassroots initiatives in managing waste in cities (Mongabay India)",
-          "url": "https://india.mongabay.com/2022/02/plasticities-the-role-of-grassroots-initiatives-to-manage-waste-in-cities/",
-          "date": "2022-02-08"
-        },
-        {
-          "title": "The invisible labour behind Bengaluru's one-of-a-kind waste collection system (The South First)",
-          "url": "https://thesouthfirst.com/featured/the-invisible-labour-behind-bengalurus-one-of-a-kind-waste-collection-system/",
-          "date": "2025-03-24"
-        },
-        {
-          "title": "Mapping Local Plastic Recycling Supply Chains: Insights from Selected Cities in India (The Circulate Initiative)",
-          "url": "https://www.thecirculateinitiative.org/wp-content/uploads/Mapping-Local-Plastic-Recycling-Supply-Chains-Insights-from-Selected-Cities-in-India.pdf",
-          "date": "2023-01"
-        },
-        {
-          "title": "DWCC Door to Door Collection: Feasibility Analysis for Dry Waste Management (BBMP SWM Expert Committee / DWCC Collective)",
-          "url": "https://hasirudala.in/assets/Livelihoods-Dry-Waste-Management-Feasibilty-Analysis-2017-DIwI2gca.pdf",
-          "date": "2017-09"
-        },
-        {
-          "title": "Bengaluru Scrap Rate Today (scraprates.in buyer directory)",
-          "url": "https://scraprates.in/bengaluru",
-          "date": "2026-09-29"
-        },
-        {
-          "title": "Scrap Prices in Bangalore (The Kabadiwala rate card)",
-          "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
-          "date": "2026 (undated page)"
-        },
-        {
-          "title": "Kabadiwala Online Bangalore rates (ScrapKabadi)",
-          "url": "https://scrapkabadi.com/kabadiwala-online-bangalore/",
-          "date": "2026 (undated page)"
-        },
-        {
-          "title": "What is a Kabadiwala? (Adhara Viveka glossary; secondary, unsourced)",
-          "url": "https://adhara-viveka.com/glossary/kabadiwala",
-          "date": "2026-06-10"
-        }
-      ]
+     "title": "Informal Waste Workers Contribution in Bangalore (Hasiru Dala, SWMRT, Jain College; ICON SWM paper)",
+     "url": "https://hasirudala.in/assets/Informal-Waste-Workers-Contribution-in-Bangalore-CD4KoDxK.pdf",
+     "date": "2014"
     },
     {
-      "question": "What minimum load (kg or Rs) makes a home pickup worthwhile for a kabadiwala, how often does a household have enough scrap to sell, and is there evidence on whether households pick the nearest shop or the best price?",
-      "answer": "Published minimums come from the market, not studies: the Bengaluru buyer directory scraprates.in (29 Sep 2026) says verified dealers give free doorstep pickup above a minimum of usually 10-20 kg, and Delhi's Kabadiwala Online says most online kabadiwalas keep a minimum pickup value of around Rs 800-1,000 to cover fuel and labour for van-based collection. Kabadi Man, a Belagavi/Bengaluru pickup platform (Newstrail India, 15 Apr 2026), interviewed 150+ scrap dealers and reports collectors previously walked 15-20 km a day for only 3-5 customers earning Rs 400-500, rising to about Rs 1,500 with routed pickups, so density and routing, not price, is the binding constraint. On accumulation, Bengaluru generates about 0.5 kg/person/day of which paper is 9%, plastic 7%, glass 1% and metal 1% (IntechOpen 2020, using a 2013 sample), so a four-person home yields roughly 0.35 kg/day or 10-11 kg a month of saleable material, worth about Rs 100-150 at today's Bengaluru rates, i.e. one 10 kg sale per month is the natural cadence (this is a derived estimate, not a measured one). Income matters: a Dhanbad household study measured 51 g of plastic waste per person per day in high-income homes versus 8 g in low-income homes (Kumar et al., Waste Management 2018), so richer households reach a sellable load several times faster. On buyer choice, no Indian study directly tests nearest-shop versus best-price; the qualitative evidence is that pre-sorted recyclables come mainly from middle- and high-income homes and are sold to itinerant buyers who come to the door (Circulate Initiative, Jan 2023), that households store items and sell to the scrap dealer to extract full value (CSE, 2021), and that Bengaluru's own DWCC door-to-door data reversed to 80% non-saleable in 2017 because households had already sold the good material to kabadiwalas. In short, households behave convenience-first (whoever comes, or the nearest shop), and price comparison only appears once an app shows rates side by side.",
-      "status": "partly",
-      "decision": "Default a free Saathi home pickup to a 10 kg or roughly Rs 150 minimum, nudge households monthly (that is when a typical home has ~10 kg), and batch pickups by lane so a Saathi does five or more stops per trip; design for convenience-first households and price-sensitive shops.",
-      "whoToAsk": "Weigh the first three lots from 30 pilot households and log the trip time of every Saathi pickup to set the real minimum; ask 10 pilot shops what load they will collect for free today; ask Hasiru Dala for DWCC buy-back weights per household.",
-      "sources": [
-        {
-          "title": "Bengaluru Scrap Rate Today (scraprates.in buyer directory)",
-          "url": "https://scraprates.in/bengaluru",
-          "date": "2026-09-29"
-        },
-        {
-          "title": "Scrap Price List - Live Rates (Kabadiwala Online, Delhi NCR)",
-          "url": "https://kabadiwalaonline.in/price-list/",
-          "date": "2026 (undated page)"
-        },
-        {
-          "title": "Kabadi Man brings structure to India's unorganised scrap sector (Newstrail India)",
-          "url": "https://newstrailindia.com/inner.php?id=29830",
-          "date": "2026-04-15"
-        },
-        {
-          "title": "KabadiMan platform (cities, collection partners, payment)",
-          "url": "https://www.kabadiman.com/",
-          "date": "2026"
-        },
-        {
-          "title": "Solid Waste Management: Current Scenario and Challenges in Bengaluru (IntechOpen)",
-          "url": "https://www.intechopen.com/chapters/71641",
-          "date": "2020"
-        },
-        {
-          "title": "Estimation of the generation rate of different types of plastic wastes and possible revenue recovery from informal recycling (Kumar, Samadder, Kumar, Singh; Waste Management)",
-          "url": "https://doi.org/10.1016/j.wasman.2018.08.045",
-          "date": "2018"
-        },
-        {
-          "title": "Mapping Local Plastic Recycling Supply Chains: Insights from Selected Cities in India (The Circulate Initiative)",
-          "url": "https://www.thecirculateinitiative.org/wp-content/uploads/Mapping-Local-Plastic-Recycling-Supply-Chains-Insights-from-Selected-Cities-in-India.pdf",
-          "date": "2023-01"
-        },
-        {
-          "title": "Plastic Recycling Decoded (Centre for Science and Environment)",
-          "url": "https://www.cseindia.org/content/downloadreports/10885",
-          "date": "2021"
-        },
-        {
-          "title": "DWCC Door to Door Collection: Feasibility Analysis for Dry Waste Management (BBMP SWM Expert Committee / DWCC Collective)",
-          "url": "https://hasirudala.in/assets/Livelihoods-Dry-Waste-Management-Feasibilty-Analysis-2017-DIwI2gca.pdf",
-          "date": "2017-09"
-        }
-      ]
+     "title": "Organizing Informal Waste Pickers: A Case Study of Bengaluru (WIEGO, Chaya Chengappa)",
+     "url": "https://www.wiego.org/wp-content/uploads/2019/09/Chengappa-Organizing-Informal-Waste-Pickers-India.pdf",
+     "date": "2013"
     },
     {
-      "question": "What are the usual payment terms from yard to kabadiwala (cash at pickup vs 7-30 days' credit), typical lot sizes per material, who transports and who pays freight, and the smallest load worth a yard collection?",
-      "answer": "The chain structure is documented but the exact credit days are not. Circulate Initiative interviews (Jan 2023) put a scrap dealer at 800 kg-1 t/day of mixed dry waste and a single-material aggregator (PET bottles, paper, LDPE pouches) at 1-10 t/day, and explain that the extra aggregation layers exist to bridge payment/credit chains between collectors who must be paid on delivery and recyclers who buy minimum volumes weekly or monthly; traders and agents sit in between taking a margin without adding value, larger aggregators bale and shred, and space for bulking is scarce in cities. Cash is the norm at the bottom: Hasiru Dala's demonetisation study (31 Bengaluru waste pickers, scrap dealers and DWCC operators, fieldwork 2017) records that the recycling chain transacts in cash daily, and that when cash vanished traders issued paper slips, cheques that cost Rs 200 per Rs 10,000 to encash, old notes, or simply promised to pay later, while DWCC operators needed cash every morning to pay pickers and sorters, so credit flows upward, from the shop to its buyer, not the reverse. Recykal's marketplace pitch to sellers (2026), no chasing buyers or waiting weeks for your money, confirms that multi-week waits from larger buyers are common. Reference prices for what yards pay: Bengaluru DWCC sale prices in 2017 were white record Rs 11/kg, cardboard Rs 8 and plastic Rs 15 (down from Rs 30 in 2014); informal purchase prices for plastics were PET Rs 22-32/kg, HDPE/PP Rs 12-14 and LDPE Rs 6-15 (CSE, 2021, Mumbai survey), and polyolefin recyclers themselves run on margins under 10% (India Plastics Pact landscape assessment). On freight, TERI (Dec 2021) and the India Plastics Pact note that aggregators haul high-value plastics to Gujarat and Delhi clusters at significant transport cost, but no source states who pays freight at the kabadiwala-to-yard step or the smallest lot a yard will collect; the daily volumes above imply a yard vehicle comes when a shop has roughly half a tonne to a tonne, i.e. a small-truck load, and below that the shop delivers. Hasiru Dala's 2024-25 annual report also flags irregular payments to DWCC operators (from BBMP) and unsold multilayer plastic as the recurring cash-flow problems.",
-      "status": "partly",
-      "decision": "Give every yard-to-kabadiwala lot a payment-terms field (cash at pickup, or credit with a due date defaulting to 7-15 days) and a freight-payer flag; assume a yard collection starts at about 500 kg-1 t per material and that below that the shop delivers or pays freight; treat these as pilot defaults to be corrected in week one.",
-      "whoToAsk": "Three to five Bengaluru yards (one each for paper, plastics and metals) on their real credit days, lot minimums and who pays freight; the 10 pilot shops on how long they currently wait to be paid; Hasiru Dala's DWCC operators on their present buyer terms.",
-      "sources": [
-        {
-          "title": "Mapping Local Plastic Recycling Supply Chains: Insights from Selected Cities in India (The Circulate Initiative)",
-          "url": "https://www.thecirculateinitiative.org/wp-content/uploads/Mapping-Local-Plastic-Recycling-Supply-Chains-Insights-from-Selected-Cities-in-India.pdf",
-          "date": "2023-01"
-        },
-        {
-          "title": "The impact of demonetisation on the recycling sector in Bengaluru (Hasiru Dala)",
-          "url": "https://hasirudala.in/assets/The-impact-of-demonetisation-on-the-recycling-sector-in-Bengaluru-2-BEPQAi-Y.pdf",
-          "date": "2017 (fieldwork six months after Nov 2016)"
-        },
-        {
-          "title": "Recykal Market (seller payment and transparency claims)",
-          "url": "https://recykal.market/",
-          "date": "2026"
-        },
-        {
-          "title": "DWCC Door to Door Collection: Feasibility Analysis for Dry Waste Management (BBMP SWM Expert Committee / DWCC Collective)",
-          "url": "https://hasirudala.in/assets/Livelihoods-Dry-Waste-Management-Feasibilty-Analysis-2017-DIwI2gca.pdf",
-          "date": "2017-09"
-        },
-        {
-          "title": "Plastic Recycling Decoded (Centre for Science and Environment)",
-          "url": "https://www.cseindia.org/content/downloadreports/10885",
-          "date": "2021"
-        },
-        {
-          "title": "Landscape assessment of plastic recycling in India (India Plastics Pact / CII / WRAP)",
-          "url": "https://www.indiaplasticspact.org/website_assets/images/IPP-Landscape-Assessment-Report_Web.pdf",
-          "date": "2023 (undated PDF)"
-        },
-        {
-          "title": "Circular Economy for Plastics in India: A Roadmap (TERI)",
-          "url": "https://www.teriin.org/sites/default/files/2021-12/Circular-Economy-Plastics-India-Roadmap.pdf",
-          "date": "2021-12"
-        },
-        {
-          "title": "Responsible Sourcing in the Plastic Waste and Recycling Sector: Examples of Inclusive Practices in India (The Circulate Initiative)",
-          "url": "https://d2ok6j2rczoyf8.cloudfront.net/uploads/Responsible-Sourcing-in-the-Plastic-Waste-and-Recycling-Sector-Examples-of-Inclusive-Practices-in-India.pdf",
-          "date": "2022-10"
-        },
-        {
-          "title": "Hasiru Dala Annual Report 2024-2025",
-          "url": "https://hasirudala.in/assets/Annual%20Report%202024-2025%20final-DiEaRuWg.pdf",
-          "date": "2025"
-        }
-      ]
+     "title": "Hasiru Dala Annual Report 2024-2025 (DWCC data and metrics, Apr 2024-Mar 2025)",
+     "url": "https://hasirudala.in/assets/Annual%20Report%202024-2025%20final-DiEaRuWg.pdf",
+     "date": "2025"
+    },
+    {
+     "title": "Poor segregation is choking Bengaluru's waste system (Citizen Matters)",
+     "url": "https://citizenmatters.in/poor-segregation-is-choking-bengalurus-waste-system-how-can-this-change/",
+     "date": "2025-11-04"
+    },
+    {
+     "title": "Invisible workers, visible waste: Bengaluru's waste pickers struggle without recognition (Citizen Matters)",
+     "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+     "date": "2025-09-15"
+    },
+    {
+     "title": "Solid Waste Management: Current Scenario and Challenges in Bengaluru (IntechOpen)",
+     "url": "https://www.intechopen.com/chapters/71641",
+     "date": "2020"
+    },
+    {
+     "title": "Bengaluru's Solid Waste Challenge: Current Status & Solutions (B.PAC)",
+     "url": "https://bpac.in/navigating-solid-waste-challenge-in-bengaluru/",
+     "date": "2023-11-27"
+    },
+    {
+     "title": "PlastiCities: the role of grassroots initiatives in managing waste in cities (Mongabay India)",
+     "url": "https://india.mongabay.com/2022/02/plasticities-the-role-of-grassroots-initiatives-to-manage-waste-in-cities/",
+     "date": "2022-02-08"
+    },
+    {
+     "title": "The invisible labour behind Bengaluru's one-of-a-kind waste collection system (The South First)",
+     "url": "https://thesouthfirst.com/featured/the-invisible-labour-behind-bengalurus-one-of-a-kind-waste-collection-system/",
+     "date": "2025-03-24"
+    },
+    {
+     "title": "Mapping Local Plastic Recycling Supply Chains: Insights from Selected Cities in India (The Circulate Initiative)",
+     "url": "https://www.thecirculateinitiative.org/wp-content/uploads/Mapping-Local-Plastic-Recycling-Supply-Chains-Insights-from-Selected-Cities-in-India.pdf",
+     "date": "2023-01"
+    },
+    {
+     "title": "DWCC Door to Door Collection: Feasibility Analysis for Dry Waste Management (BBMP SWM Expert Committee / DWCC Collective)",
+     "url": "https://hasirudala.in/assets/Livelihoods-Dry-Waste-Management-Feasibilty-Analysis-2017-DIwI2gca.pdf",
+     "date": "2017-09"
+    },
+    {
+     "title": "Bengaluru Scrap Rate Today (scraprates.in buyer directory)",
+     "url": "https://scraprates.in/bengaluru",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "Scrap Prices in Bangalore (The Kabadiwala rate card)",
+     "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+     "date": "2026 (undated page)"
+    },
+    {
+     "title": "Kabadiwala Online Bangalore rates (ScrapKabadi)",
+     "url": "https://scrapkabadi.com/kabadiwala-online-bangalore/",
+     "date": "2026 (undated page)"
+    },
+    {
+     "title": "What is a Kabadiwala? (Adhara Viveka glossary; secondary, unsourced)",
+     "url": "https://adhara-viveka.com/glossary/kabadiwala",
+     "date": "2026-06-10"
     }
-  ]
+   ]
+  },
+  {
+   "question": "What minimum load (kg or Rs) makes a home pickup worthwhile for a kabadiwala, how often does a household have enough scrap to sell, and is there evidence on whether households pick the nearest shop or the best price?",
+   "answer": "Published minimums come from the market, not studies: the Bengaluru buyer directory scraprates.in (29 Sep 2026) says verified dealers give free doorstep pickup above a minimum of usually 10-20 kg, and Delhi's Kabadiwala Online says most online kabadiwalas keep a minimum pickup value of around Rs 800-1,000 to cover fuel and labour for van-based collection. Kabadi Man, a Belagavi/Bengaluru pickup platform (Newstrail India, 15 Apr 2026), interviewed 150+ scrap dealers and reports collectors previously walked 15-20 km a day for only 3-5 customers earning Rs 400-500, rising to about Rs 1,500 with routed pickups, so density and routing, not price, is the binding constraint. On accumulation, Bengaluru generates about 0.5 kg/person/day of which paper is 9%, plastic 7%, glass 1% and metal 1% (IntechOpen 2020, using a 2013 sample), so a four-person home yields roughly 0.35 kg/day or 10-11 kg a month of saleable material, worth about Rs 100-150 at today's Bengaluru rates, i.e. one 10 kg sale per month is the natural cadence (this is a derived estimate, not a measured one). Income matters: a Dhanbad household study measured 51 g of plastic waste per person per day in high-income homes versus 8 g in low-income homes (Kumar et al., Waste Management 2018), so richer households reach a sellable load several times faster. On buyer choice, no Indian study directly tests nearest-shop versus best-price; the qualitative evidence is that pre-sorted recyclables come mainly from middle- and high-income homes and are sold to itinerant buyers who come to the door (Circulate Initiative, Jan 2023), that households store items and sell to the scrap dealer to extract full value (CSE, 2021), and that Bengaluru's own DWCC door-to-door data reversed to 80% non-saleable in 2017 because households had already sold the good material to kabadiwalas. In short, households behave convenience-first (whoever comes, or the nearest shop), and price comparison only appears once an app shows rates side by side.",
+   "status": "partly",
+   "decision": "Default a free Saathi home pickup to a 10 kg or roughly Rs 150 minimum, nudge households monthly (that is when a typical home has ~10 kg), and batch pickups by lane so a Saathi does five or more stops per trip; design for convenience-first households and price-sensitive shops.",
+   "whoToAsk": "Weigh the first three lots from 30 pilot households and log the trip time of every Saathi pickup to set the real minimum; ask 10 pilot shops what load they will collect for free today; ask Hasiru Dala for DWCC buy-back weights per household.",
+   "sources": [
+    {
+     "title": "Bengaluru Scrap Rate Today (scraprates.in buyer directory)",
+     "url": "https://scraprates.in/bengaluru",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "Scrap Price List - Live Rates (Kabadiwala Online, Delhi NCR)",
+     "url": "https://kabadiwalaonline.in/price-list/",
+     "date": "2026 (undated page)"
+    },
+    {
+     "title": "Kabadi Man brings structure to India's unorganised scrap sector (Newstrail India)",
+     "url": "https://newstrailindia.com/inner.php?id=29830",
+     "date": "2026-04-15"
+    },
+    {
+     "title": "KabadiMan platform (cities, collection partners, payment)",
+     "url": "https://www.kabadiman.com/",
+     "date": "2026"
+    },
+    {
+     "title": "Solid Waste Management: Current Scenario and Challenges in Bengaluru (IntechOpen)",
+     "url": "https://www.intechopen.com/chapters/71641",
+     "date": "2020"
+    },
+    {
+     "title": "Estimation of the generation rate of different types of plastic wastes and possible revenue recovery from informal recycling (Kumar, Samadder, Kumar, Singh; Waste Management)",
+     "url": "https://doi.org/10.1016/j.wasman.2018.08.045",
+     "date": "2018"
+    },
+    {
+     "title": "Mapping Local Plastic Recycling Supply Chains: Insights from Selected Cities in India (The Circulate Initiative)",
+     "url": "https://www.thecirculateinitiative.org/wp-content/uploads/Mapping-Local-Plastic-Recycling-Supply-Chains-Insights-from-Selected-Cities-in-India.pdf",
+     "date": "2023-01"
+    },
+    {
+     "title": "Plastic Recycling Decoded (Centre for Science and Environment)",
+     "url": "https://www.cseindia.org/content/downloadreports/10885",
+     "date": "2021"
+    },
+    {
+     "title": "DWCC Door to Door Collection: Feasibility Analysis for Dry Waste Management (BBMP SWM Expert Committee / DWCC Collective)",
+     "url": "https://hasirudala.in/assets/Livelihoods-Dry-Waste-Management-Feasibilty-Analysis-2017-DIwI2gca.pdf",
+     "date": "2017-09"
+    }
+   ]
+  },
+  {
+   "question": "What are the usual payment terms from yard to kabadiwala (cash at pickup vs 7-30 days' credit), typical lot sizes per material, who transports and who pays freight, and the smallest load worth a yard collection?",
+   "answer": "The chain structure is documented but the exact credit days are not. Circulate Initiative interviews (Jan 2023) put a scrap dealer at 800 kg-1 t/day of mixed dry waste and a single-material aggregator (PET bottles, paper, LDPE pouches) at 1-10 t/day, and explain that the extra aggregation layers exist to bridge payment/credit chains between collectors who must be paid on delivery and recyclers who buy minimum volumes weekly or monthly; traders and agents sit in between taking a margin without adding value, larger aggregators bale and shred, and space for bulking is scarce in cities. Cash is the norm at the bottom: Hasiru Dala's demonetisation study (31 Bengaluru waste pickers, scrap dealers and DWCC operators, fieldwork 2017) records that the recycling chain transacts in cash daily, and that when cash vanished traders issued paper slips, cheques that cost Rs 200 per Rs 10,000 to encash, old notes, or simply promised to pay later, while DWCC operators needed cash every morning to pay pickers and sorters, so credit flows upward, from the shop to its buyer, not the reverse. Recykal's marketplace pitch to sellers (2026), no chasing buyers or waiting weeks for your money, confirms that multi-week waits from larger buyers are common. Reference prices for what yards pay: Bengaluru DWCC sale prices in 2017 were white record Rs 11/kg, cardboard Rs 8 and plastic Rs 15 (down from Rs 30 in 2014); informal purchase prices for plastics were PET Rs 22-32/kg, HDPE/PP Rs 12-14 and LDPE Rs 6-15 (CSE, 2021, Mumbai survey), and polyolefin recyclers themselves run on margins under 10% (India Plastics Pact landscape assessment). On freight, TERI (Dec 2021) and the India Plastics Pact note that aggregators haul high-value plastics to Gujarat and Delhi clusters at significant transport cost, but no source states who pays freight at the kabadiwala-to-yard step or the smallest lot a yard will collect; the daily volumes above imply a yard vehicle comes when a shop has roughly half a tonne to a tonne, i.e. a small-truck load, and below that the shop delivers. Hasiru Dala's 2024-25 annual report also flags irregular payments to DWCC operators (from BBMP) and unsold multilayer plastic as the recurring cash-flow problems.",
+   "status": "partly",
+   "decision": "Give every yard-to-kabadiwala lot a payment-terms field (cash at pickup, or credit with a due date defaulting to 7-15 days) and a freight-payer flag; assume a yard collection starts at about 500 kg-1 t per material and that below that the shop delivers or pays freight; treat these as pilot defaults to be corrected in week one.",
+   "whoToAsk": "Three to five Bengaluru yards (one each for paper, plastics and metals) on their real credit days, lot minimums and who pays freight; the 10 pilot shops on how long they currently wait to be paid; Hasiru Dala's DWCC operators on their present buyer terms.",
+   "sources": [
+    {
+     "title": "Mapping Local Plastic Recycling Supply Chains: Insights from Selected Cities in India (The Circulate Initiative)",
+     "url": "https://www.thecirculateinitiative.org/wp-content/uploads/Mapping-Local-Plastic-Recycling-Supply-Chains-Insights-from-Selected-Cities-in-India.pdf",
+     "date": "2023-01"
+    },
+    {
+     "title": "The impact of demonetisation on the recycling sector in Bengaluru (Hasiru Dala)",
+     "url": "https://hasirudala.in/assets/The-impact-of-demonetisation-on-the-recycling-sector-in-Bengaluru-2-BEPQAi-Y.pdf",
+     "date": "2017 (fieldwork six months after Nov 2016)"
+    },
+    {
+     "title": "Recykal Market (seller payment and transparency claims)",
+     "url": "https://recykal.market/",
+     "date": "2026"
+    },
+    {
+     "title": "DWCC Door to Door Collection: Feasibility Analysis for Dry Waste Management (BBMP SWM Expert Committee / DWCC Collective)",
+     "url": "https://hasirudala.in/assets/Livelihoods-Dry-Waste-Management-Feasibilty-Analysis-2017-DIwI2gca.pdf",
+     "date": "2017-09"
+    },
+    {
+     "title": "Plastic Recycling Decoded (Centre for Science and Environment)",
+     "url": "https://www.cseindia.org/content/downloadreports/10885",
+     "date": "2021"
+    },
+    {
+     "title": "Landscape assessment of plastic recycling in India (India Plastics Pact / CII / WRAP)",
+     "url": "https://www.indiaplasticspact.org/website_assets/images/IPP-Landscape-Assessment-Report_Web.pdf",
+     "date": "2023 (undated PDF)"
+    },
+    {
+     "title": "Circular Economy for Plastics in India: A Roadmap (TERI)",
+     "url": "https://www.teriin.org/sites/default/files/2021-12/Circular-Economy-Plastics-India-Roadmap.pdf",
+     "date": "2021-12"
+    },
+    {
+     "title": "Responsible Sourcing in the Plastic Waste and Recycling Sector: Examples of Inclusive Practices in India (The Circulate Initiative)",
+     "url": "https://d2ok6j2rczoyf8.cloudfront.net/uploads/Responsible-Sourcing-in-the-Plastic-Waste-and-Recycling-Sector-Examples-of-Inclusive-Practices-in-India.pdf",
+     "date": "2022-10"
+    },
+    {
+     "title": "Hasiru Dala Annual Report 2024-2025",
+     "url": "https://hasirudala.in/assets/Annual%20Report%202024-2025%20final-DiEaRuWg.pdf",
+     "date": "2025"
+    }
+   ]
+  }
+ ]
 }

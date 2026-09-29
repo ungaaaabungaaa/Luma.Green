@@ -1,0 +1,227 @@
+{
+ "cluster": "Material codes, names and factors",
+ "answers": [
+  {
+   "question": "What are the exact 8-digit ITC-HS lines for glass cullet (7001), lead scrap (7802), the 8549 sub-headings (lithium-ion cells, dry cells, CRT glass, circuit boards) and textiles (6309/6310)? Which E-Waste Rules 2022 schedule item codes (ITEW, CEEW, LSEEW numbers) match phones, laptops, TVs, fridges, washing machines and ACs?",
+   "answer": "Glass cullet: use 70010010 (Cullet and other waste and scrap of glass); the only other lines under 7001 are 70010020 (enamel glass in the mass) and 70010090 (other), which a scrap chain never needs. Lead scrap: 78020010 is lead scrap by ISRI code word (Racks soft lead, Radio mixed hard/soft, Ropes wheel weights, Roses babbit, Rink whole intact wet lead-acid batteries, plus intact industrial lead cells) and is import-policy Free; 78020090 'Other' is Restricted, so battery lead and soft lead both go to 78020010. Heading 8549 (new in HS 2022; every Indian line ends in 00): 85491100 waste/spent lead-acid accumulators; 85491200 other cells/batteries containing lead, cadmium or mercury; 85491300 sorted by chemical type and free of Pb/Cd/Hg; 85491400 the same but unsorted; 85491900 other battery waste; 85492100 and 85492900 waste of a kind used principally for precious-metal recovery (with/without the hazardous items); 85493100 electrical/electronic assemblies and printed circuit boards that contain cells, batteries, mercury switches, 'glass from cathode-ray tubes or other activated glass' or Cd/Hg/Pb/PCB-bearing components; 85493900 other assemblies and boards; 85499100 other e-waste containing those same items; 85499900 other e-waste. So map sorted lithium-ion cells to 85491300 (a mixed household battery bin is 85491400), zinc-carbon/alkaline dry cells to 85491300 (85491200 only if mercury cells), populated circuit boards to 85493100 with bare or depopulated boards at 85493900, and CRT glass to 85499100 while it is tube, panel or funnel glass from dismantling (only clean processed cullet would drop to 70010010). Textiles: 63090000 is the single line for worn clothing and other worn articles (the old-clothes stream), and 6310 has nine lines for rags — 63101010/63101020/63101030/63101090 sorted woollen rags, cotton rags, gunny cuttings, other; 63109010/63109020/63109030/63109040/63109090 other (unsorted) woollen, cotton, gunny, synthetic rags, other. E-Waste (Management) Rules 2022 were notified as G.S.R. 801(E) in Gazette No. 713 on 2 November 2022, came into force on 1 April 2023 and list 106 EEE items in seven categories in Schedule I: mobile phones are ITEW15 'Cellular telephones' (tablets ITEW19, phablets ITEW20, cordless phones ITEW14, landline telephones ITEW12); laptops are ITEW3 'Personal Computing: Laptop Computers' (desktops ITEW2, notebooks ITEW4, notepads ITEW5); televisions including LCD/LED are CEEW1 (monitors, screens and display panels CEEW6); refrigerators CEEW2; washing machines CEEW3; air-conditioners excluding centralised plants CEEW4. Useful extras for a kabadiwala catalogue: electric fans LSEEW14, microwaves LSEEW9, irons LSEEW20, grinders/mixers LSEEW21, kettles LSEEW33, UPS ITEW24, inverters ITEW25, printers ITEW6; LSEEW1–LSEEW3 (large cooling appliances, freezers, other large refrigeration) are the commercial cooling lines, not household fridges. One caveat: CBIC's own tariff pages could not be opened (old.cbic.gov.in no longer resolves and the taxinformation portal is script-driven), so the 8-digit lines above come from the DGCI&S ITC-HS chapter PDF (a government copy) and three trade mirrors of the Customs Tariff that agree with each other; a five-minute check on CBIC's tariff browser before anyone exports is enough.",
+   "status": "answered",
+   "decision": "Give every material two optional attributes — an 8-digit ITC-HS line and, for electricals, a Schedule I code — seeded with the mappings above; keep Luma.Green's own material code as the primary key because kabadiwala grades (HM vs LD film, single vs double-door fridge) are finer than HS.",
+   "whoToAsk": "Nothing for the pilot; a customs broker or CA only if a yard ever exports, to confirm the 8549 line for populated boards and CRT glass on that consignment.",
+   "sources": [
+    {
+     "title": "E-Waste (Management) Rules, 2022 — Gazette of India No. 713, G.S.R. 801(E), Schedule I (CPCB copy)",
+     "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/e-waste_rules_2022.pdf",
+     "date": "2022-11-02"
+    },
+    {
+     "title": "CPCB FAQ under E-Waste (Management) Rules, 2022 (106 EEE in seven categories; in force 01-04-2023)",
+     "url": "https://eprewaste.cpcb.gov.in/assets/PDF/faqewaste.pdf",
+     "date": "2024-01-23"
+    },
+    {
+     "title": "DGCI&S ITC-HS Chapter 70 — 7001 00 10 / 20 / 90",
+     "url": "https://www.dgciskol.gov.in/Writereaddata/Downloads/2007/CHP_70.pdf",
+     "date": "2008"
+    },
+    {
+     "title": "Eximguru — ITC-HS 7001 lines and import policy",
+     "url": "https://www.eximguru.com/hs-codes/7001-cullet-and-other-waste-and.aspx",
+     "date": "undated (policy line 2012-04-18)"
+    },
+    {
+     "title": "Eximguru — ITC-HS 7802 lines (78020010 Free, 78020090 Restricted)",
+     "url": "https://www.eximguru.com/hs-codes/7802-lead-waste-and-scrap.aspx",
+     "date": "undated"
+    },
+    {
+     "title": "Busy — HSN 8549 sub-chapter, all eleven 8-digit lines",
+     "url": "https://busy.in/hsn/sub-chapter-8549/",
+     "date": "undated"
+    },
+    {
+     "title": "Eximpe — 854931 / 85493100 wording (CRT glass, mercury switches, PCBs)",
+     "url": "https://eximpe.com/hsncode-finder/854931",
+     "date": "undated"
+    },
+    {
+     "title": "Eximpe — 854991 / 85499100 wording",
+     "url": "https://eximpe.com/hsncode-finder/854991",
+     "date": "undated"
+    },
+    {
+     "title": "Busy — HSN 6310 sub-chapter, nine 8-digit lines",
+     "url": "https://busy.in/hsn/sub-chapter-6310/",
+     "date": "undated"
+    },
+    {
+     "title": "Busy — HSN 6309 (63090000 worn clothing)",
+     "url": "https://busy.in/hsn/sub-chapter-6309/",
+     "date": "undated"
+    }
+   ]
+  },
+  {
+   "question": "What words do Bengaluru kabadiwalas use for plastics and other scrap (Delhi's Teri, Phugga, Jhaap, Panni; English PET, PP, HD, LD; Kannada terms)? Is 'gujari' used for scrap shops in Bengaluru? Are milk pouches a separate paid stream? Are small appliances and fans priced per kg or per piece?",
+   "answer": "Yes, 'gujari' (ಗುಜರಿ, also spelt gujri) is the Bengaluru word: Kannada dictionaries give 'junk shop' as its main sense and 'gujari vyapari' as 'scrap merchant', and the Shivaji Nagar furniture-scrap lanes are simply called 'the Gujri', so 'gujari angadi' is the shop while 'kabadiwala' is the understood Hindi/Urdu import. Dictionary Kannada for the materials is kabbiṇa (ಕಬ್ಬಿಣ, iron), gāju (ಗಾಜು, glass), tāmra (ತಾಮ್ರ, copper), hittāḷe (ಹಿತ್ತಾಳೆ, brass) and raddi for waste paper (hence raddiwala), while plastic is just 'plastic'; but the grade names on Bengaluru price lists are English trade names — PET bottle, Polythene bags (LD), Polythene bags (HM), Plastic (PP) bags, Hard plastic, Soft plastic, Mix plastic, Milk covers, Packaging film, PVC pipe, Sintex/water tank, plastic jar/can/drum. Of the Delhi words only 'panni' (film or carry-bag; 'PP panni' appears in Delhi trade listings) could be confirmed on a page I could open; Teri, Phugga and Jhaap appeared nowhere public (a 2025 Delhi collector article lists only PET, LDPE carry bags and multilayer), so treat them as unverified and collect Bengaluru equivalents in the pilot. Milk pouches are a separate stream but not a paid one: The Kabadiwala's Bengaluru and HSR Layout lists show 'Milk Covers ₹0/kg' and 'Packaging Film ₹0/kg', and the informal trade generally refuses multilayer, thermocol and sub-50-micron bags; the policy backdrop is the 22 August 2019 dairy-ministry '3R' push (rebate for returned pouches at Nandini, Amul, Mother Dairy) and KMF's corn-starch compostable Nandini pouch rolled out across Bengaluru from July 2025 (KMF uses 20–25 lakh pouches a day), so during the pilot LDPE and compostable pouches will arrive side by side and must not be mixed. Appliances: Bengaluru lists price large items per piece — TV LCD/LED ₹50, CRT TV ₹100, laptop ₹250, single-door fridge ₹350, double-door ₹550, washing machine ₹300, microwave ₹130, geyser ₹100, UPS ₹250, CPU ₹150, AC 1.5 T ₹2,500, 2 T ₹3,000 per piece on The Kabadiwala (read 29 September 2026), with other Bengaluru sites quoting fridges ₹1,500–3,000, washing machines ₹800–2,000 and split ACs ₹2,000–4,000 per unit — and small or mixed e-waste per kg (e-waste ₹10/kg, printer ₹10/kg, cooler ₹8–12/kg on the same list; ₹45/kg on scraprates.in). No Bengaluru list I could open prices fans at all, and Delhi dealers disagree (₹36/kg for a ceiling fan at one, ₹200/₹300 per piece small/big at another), so fans, mixers and irons are priced both ways depending on the shop and the copper inside.",
+   "status": "partly",
+   "decision": "Give every material a unit (kg or piece) that the shop can override: default per piece for TV, fridge, washing machine, AC, laptop, CPU, monitor, microwave, geyser and UPS; default per kg for fans, mixers, irons, kettles, printers, coolers and mixed e-waste. Keep 'Milk covers (LDPE, rinsed)' as its own code with ₹0 allowed, plus a separate 'compostable Nandini pouch' code that is never sold as plastic. Use the English trade grades (PET, HM, LD, PP, hard, soft, mix) as canonical labels with a Kannada display name and a free-text local-name field per shop.",
+   "whoToAsk": "10 gujari shops across three BBMP zones plus two Hasiru Dala DWCC operators, visited with a Kannada-speaking Saathi: the local words for PET/HM/LD/PP, whether anyone pays for milk covers, and per-kg versus per-piece for fans, mixers and irons.",
+   "sources": [
+    {
+     "title": "WordHippo — meaning of ಗುಜರಿ (gujari): junk shop; gujari vyapari = scrap merchant",
+     "url": "https://www.wordhippo.com/what-is/the-meaning-of/kannada-word-2f411eaf3f5e2bcbfc0293b194d05b17d5951317.html",
+     "date": "undated"
+    },
+    {
+     "title": "LBB — Gujri market, Shivaji Nagar ('Gujri in Kannada means a scrap yard')",
+     "url": "https://lbb.in/bangalore/gujri-market-for-antiques-and-furniture/",
+     "date": "undated"
+    },
+    {
+     "title": "Wiktionary — ಕಬ್ಬಿಣ (kabbiṇa, iron)",
+     "url": "https://en.wiktionary.org/wiki/ಕಬ್ಬಿಣ",
+     "date": "undated"
+    },
+    {
+     "title": "Wiktionary — ಗಾಜು (gāju, glass)",
+     "url": "https://en.wiktionary.org/wiki/ಗಾಜು",
+     "date": "undated"
+    },
+    {
+     "title": "Wiktionary — ತಾಮ್ರ (tāmra, copper)",
+     "url": "https://en.wiktionary.org/wiki/ತಾಮ್ರ",
+     "date": "undated"
+    },
+    {
+     "title": "Wiktionary — ಹಿತ್ತಾಳೆ (hittāḷe, brass)",
+     "url": "https://en.wiktionary.org/wiki/ಹಿತ್ತಾಳೆ",
+     "date": "undated"
+    },
+    {
+     "title": "The Kabadiwala — scrap prices in Bangalore (Milk Covers ₹0/kg; per-piece appliances)",
+     "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+     "date": "read 2026-09-29"
+    },
+    {
+     "title": "The Kabadiwala — scrap prices in HSR Layout, Bangalore",
+     "url": "https://www.thekabadiwala.com/scrap-rates/bangalore/hsr-layout",
+     "date": "read 2026-09-29"
+    },
+    {
+     "title": "ScrapRates.in — Bangalore scrap rates (e-waste ₹45/kg, plastic ₹14/kg)",
+     "url": "https://scraprates.in/bangalore",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "ScrapKabadi — kabadiwala online Bangalore (fridge, WM, AC per unit)",
+     "url": "https://scrapkabadi.com/kabadiwala-online-bangalore/",
+     "date": "undated"
+    },
+    {
+     "title": "Kabadiwala Online — Bangalore pickup page (AC per piece, e-waste per kg)",
+     "url": "https://kabadiwalaonline.in/kabadiwala-online-in-bangalore/",
+     "date": "undated"
+    },
+    {
+     "title": "Adhara Viveka glossary — kabadiwala, raddiwala, bhangarwala; what the trade refuses",
+     "url": "https://adhara-viveka.com/glossary/kabadiwala",
+     "date": "2026-06-10"
+    },
+    {
+     "title": "Kabadiwalla Uncle (Delhi) — ceiling fan ₹36/kg, appliances per piece",
+     "url": "https://www.kabadiwalla.in/cms-rates",
+     "date": "undated"
+    },
+    {
+     "title": "Delhi Kabadiwala — rate list (ceiling fan ₹200/₹300 per piece)",
+     "url": "https://www.delhikabadiwala.com/rate-list/",
+     "date": "undated"
+    },
+    {
+     "title": "Ukhi — what happens to Delhi's plastic after collection (no slang grades listed)",
+     "url": "https://ukhi.com/what-happens-to-your-plastic-after-delhis-waste-collectors-pick-it-up/",
+     "date": "2025-08"
+    },
+    {
+     "title": "iamrenew — Reduce, Rebate and Reuse: government targets plastic milk pouches",
+     "url": "https://www.iamrenew.com/environment/reduce-rebate-and-reuse-govt-targets-plastic-milk-pouches-for-recycling/",
+     "date": "2019-08-22"
+    },
+    {
+     "title": "The Earth View — KMF rolls out biodegradable Nandini packets in Bengaluru",
+     "url": "https://theearthview.in/nandini-milk-goes-green-kmf-rolls-out-biodegradable-packets-in-bengaluru/",
+     "date": "2025-07-22"
+    }
+   ]
+  },
+  {
+   "question": "Which published source should supply the CO2e emission factor for recycling each material (paper, PET, HDPE, PP, LDPE, ferrous, aluminium, copper, brass, glass, e-waste): CDM AMS-III.AJ, Gold Standard 448, India-specific studies? Who should own an open material-code standard long term (an industry body such as MRAI or IARPMA, a BIS committee, a foundation), and under which licence?",
+   "answer": "Use CDM AMS-III.AJ 'Recovery and recycling of materials from solid wastes' (version 9.0, adopted 8 September 2022) as the backbone: it is public, free, written for non-Annex I hosts like India, and gives formulas plus conservative defaults for HDPE, LDPE, PET, PP, container-glass cullet, steel and aluminium, with paper and cardboard credited only for avoided landfill methane. Its defaults are baseline energy for virgin plastic of 1.11 MWh/t plus 15 GJ/t (PET), 0.83 + 15 (HDPE), 1.67 + 15 (LDPE), 0.56 + 11.6 (PP), 0.026 MWh/t for glass cullet (cullet displaces batch preparation, not melting), and 'Bi' correction factors of 0.72 aluminium, 0.68 steel, 0.56 plastics and 0.67 glass, with metal-specific CO2 factors in the same document; feed its electricity term with CEA's CO2 Baseline Database v21.0 (November 2025), whose FY 2024-25 weighted-average grid factor is 0.710 tCO2/MWh (OM 0.961, BM 0.512, CM 0.736). For copper and mixed e-waste use the sister method AMS-III.BA (e-waste; the Bi factors above come from its Appendix 1); brass has no CDM default and is an open item. Gold Standard methodology 448 (v1.0, published 2 May 2025, written by South Pole) expands AMS-III.AJ and III.BA but its scope is 'metals, alloys and minerals' and it points to LCA databases such as ecoinvent for factors, so it is the route only if you later want Gold Standard credits for metal or e-waste, not a plastics or paper source; Verra's VMR0007 (v1.0, 4 September 2023) is just a VCS wrapper that sends you back to AMS-III.AJ's values. No India-specific per-material recycling factor set exists in public: the India GHG Program (WRI India, CII, TERI) publishes tools rather than material factors, and the Indian LCA papers are single-material academic studies, so do not advertise 'India-specific' factors yet. Where AMS-III.AJ is silent and you need an on-screen indicative number, US EPA WARM v15 (November 2020) is the most complete public table of net recycling factors — corrugated −3.14, newspaper −2.71, mixed paper −3.55, HDPE −0.76, PET −1.04, PP −0.79, aluminium cans −9.13, steel cans −1.83, copper wire −4.49, glass −0.28, mixed electronics −0.79 MTCO2e per short ton (multiply by 1.1023 for per tonne) — but label it 'indicative, US grid'. On ownership, BIS is the wrong first home: its aluminium-scrap standard 'Aluminium & Aluminium Alloy Scrap – Requirements & Conditions of Delivery' had been pending more than two years as of 8 July 2026 after primary producers and recyclers fell out over the draft, BIS told MRAI's February 2024 conference only that 'standardisation will be the norm', and BIS standards are sold, not open. MRAI is metals-only and IARPMA (paper) has no published grade list I could reach, so neither can own a cross-material code on its own. On licence, the Open Definition lists CC0, CC BY 4.0, CC BY-SA, ODC-BY and ODbL as conformant, Mozilla's preferred spec licence is CC0 plus an OWFa patent non-assert, and Beckn's CC BY-NC-SA 4.0 is the cautionary Indian precedent because 'non-commercial' would stop a gujari app or a yard's ERP from using the codes.",
+   "status": "partly",
+   "decision": "Emission factors: AMS-III.AJ v9.0 (plus AMS-III.BA for e-waste metals) with the CEA v21.0 grid factor as the single method for the pilot, WARM v15 only as a labelled indicative fallback, and a pinned factor-version on every carbon number shown. Standard: Luma.Green publishes the material-code list now under CC BY 4.0 (spec and code list) with Apache-2.0 for JSON schemas and SDKs, then within 12–18 months moves governance to a neutral Section 8 foundation whose steering group seats MRAI, IARPMA, a plastics body, Hasiru Dala/waste-picker representatives and CPCB as observer, offering the stable list to BIS as a reference input rather than making BIS the owner; avoid NC and SA clauses.",
+   "whoToAsk": "A lawyer for the Section 8 foundation set-up and the patent non-assert wording; MRAI and Hasiru Dala for steering-group seats; a CDM/Gold Standard validator only if credits are ever sold. Open items: a brass factor (ask TERI or CEEW whether any Indian secondary-brass LCA exists) and downloading AMS-III.AJ v9.0 itself from cdm.unfccc.int in a browser (the site blocks scripted access; the v8.0 draft was used for the default tables).",
+   "sources": [
+    {
+     "title": "CDM AMS-III.AJ Recovery and recycling of materials from solid wastes — draft v08.0 (CDM-MP85-A05) with default Tables 2 and 3",
+     "url": "https://cdm.unfccc.int/sunsetcms/storage/contents/stored-file-20210708220420318/MP85_EA05_AMS-III.AJ.pdf",
+     "date": "2021-07"
+    },
+    {
+     "title": "Verra VMR0007 Recovery and Recycling of Materials from Solid Wastes v1.0 (confirms AMS-III.AJ v9.0 adopted 8 Sep 2022)",
+     "url": "https://verra.org/wp-content/uploads/2023/09/VMR0007-Revision-to-AMS-III.AJ_.pdf",
+     "date": "2023-09-04"
+    },
+    {
+     "title": "Gold Standard 448 Recovery and recycling of materials from solid wastes v1.0 (PDF)",
+     "url": "https://globalgoals.goldstandard.org/standards/448_V1.0_Recovery-and-recycling-of-material-from-solid-wastes.pdf",
+     "date": "2025-05-02"
+    },
+    {
+     "title": "Gold Standard 448 landing page",
+     "url": "https://globalgoals.goldstandard.org/448-recovery-and-recycling-of-materials-from-solid-wastes/",
+     "date": "2025-05-02"
+    },
+    {
+     "title": "CEA CO2 Baseline Database for the Indian Power Sector — User Guide Version 21.0",
+     "url": "https://cea.nic.in/wp-content/uploads/baseline/2025/12/User_Guide_V_21.0.pdf",
+     "date": "2025-11"
+    },
+    {
+     "title": "US EPA WARM Version 15 — Management Practices chapters, Exhibit 1-1 net recycling factors",
+     "url": "https://www.epa.gov/sites/default/files/2020-12/documents/warm_management_practices_v15_10-29-2020.pdf",
+     "date": "2020-11"
+    },
+    {
+     "title": "India GHG Program (WRI India, CII, TERI) — no material factor database",
+     "url": "https://indiaghgp.org/",
+     "date": "undated (latest items 2017)"
+    },
+    {
+     "title": "The Tribune — Aluminium Association of India urges Centre to notify BIS standards for aluminium scrap",
+     "url": "https://www.tribuneindia.com/news/aluminium-quality/aluminium-association-of-india-urges-centre-to-notify-bis-standards-for-aluminium-scrap",
+     "date": "2026-07-08"
+    },
+    {
+     "title": "AlCircle — MRAI 2024 closing day: BIS on scrap standardisation",
+     "url": "https://www.alcircle.com/news/mrai-2024s-closing-call-final-day-cross-border-policies-and-standards-in-india-s-aluminium-landscape-106886",
+     "date": "2024-02-12"
+    },
+    {
+     "title": "Open Definition — conformant licences (CC0, CC BY 4.0, ODC-BY, CC BY-SA, ODbL)",
+     "url": "https://opendefinition.org/licenses/",
+     "date": "undated"
+    },
+    {
+     "title": "Mozilla wiki — Standards/license (CC0 + OWFa preferred for specifications)",
+     "url": "https://wiki.mozilla.org/Standards/license",
+     "date": "undated"
+    },
+    {
+     "title": "Beckn protocol — licence page (CC BY-NC-SA 4.0)",
+     "url": "https://becknprotocol.io/license/",
+     "date": "undated"
+    }
+   ]
+  }
+ ]
+}

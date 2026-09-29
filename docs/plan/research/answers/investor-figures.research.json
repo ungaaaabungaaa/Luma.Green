@@ -1,0 +1,218 @@
+{
+ "cluster": "Investor figures and product policy defaults",
+ "answers": [
+  {
+   "question": "For investors, should Luma.Green quote e-waste at 1.4 Mt (CPCB, FY2024-25) or 6.19 Mt (NITI Aayog, 2024)? Explain how each is measured and which to lead with. What figure is defensible for India's recycling market size and for the number of waste pickers?",
+   "answer": "The two numbers measure different things, so quote both but never in the same series. CPCB's figure is administrative: 13,97,955.59 tonnes (about 1.4 Mt) for FY2024-25, up from 12,54,286.55 t in FY2023-24, computed from sales data filed by registered producers times the average life of the 106 EEE items notified under the E-Waste (Management) Rules 2022 (Lok Sabha written reply, PIB, 11 Aug 2025); the March 2026 reply moved it to 14.14 lakh t generated and 9.79 lakh t recycled (about 69%) for FY2025-26 (PTI/NewsDrum, 9 Mar 2026). NITI Aayog's 6.19 Mt for 2024 (report launched 22 Jan 2026 with TERI) is not a count but a model: the report attributes it to the ITU/UNITAR Global E-waste Monitor series, which estimates e-waste from everything placed on the market across 54 product categories (toys, lamps, tools, all appliances) and their lifespans, independent of producer filings; GEM 2024's own published India figure is 4.1 Mt for 2022, and NITI's Fig. 3 is labelled a projection. Lead with the CPCB number as the official, regulator-backed figure that ties to the EPR system, then show NITI's 6.19 Mt as the modelled upper bound, framed as 'the formal system records roughly a quarter of the modelled stream' -- that gap is Luma.Green's pitch, and NITI supplies the supporting stats: formal recycling about 10% versus a 22% global average, informal sector handling about 62%, only 2,808 collection centres, formal capacity about 1.75 Mt across 400+ recyclers, and an e-waste stream worth about Rs 51,000 crore a year of which only 18% of the technically recoverable value is captured. There is no official 'India recycling market size'; the most quotable analyst figures are EY-Parthenon's India waste-management market of about USD 32 billion (2023), MRAI's projection that scrap demand reaches 65 Mt a year by 2030 with domestic generation covering only half, and MRAI's non-ferrous metals industry at USD 18 billion heading to USD 30 billion in five years (MRAI/ANI, 22 Feb 2025) -- cite the source and year each time and prefer a bottom-up Bengaluru tonnage-times-price model for the deck's own TAM. For waste pickers there is no census: the defensible line is '1.5 to 4 million' (ILO and Chintan estimates, as reported by Down To Earth, 15 May 2026), with the ILO's 2019 paper tracing the 1.5 million to the Alliance of Indian Waste Pickers; a useful proof point is that the Centre's own NAMASTE scheme only set out to enumerate 2.5 lakh waste pickers when it added them in June 2024 (PIB, 5 Jun 2025). One open item: parliamentary replies give different FY2024-25 processing figures (70.7% in one dataset, 11.59 lakh t recycled in another), so quote the FY2025-26 pair (9.79 of 14.14 lakh t) for the recycled share.",
+   "status": "partly",
+   "decision": "Lead with CPCB 1.4 Mt (FY2024-25; 14.1 lakh t FY2025-26) as the official figure, and cite NITI Aayog's 6.19 Mt only as the modelled upper bound that shows the formal-system gap. For market size use sourced analyst figures (USD 32 bn waste management, MRAI 65 Mt scrap demand by 2030) plus a bottom-up model; for waste pickers say '1.5-4 million, no official count'.",
+   "whoToAsk": "A licensed analyst report (EY-Parthenon or Avendus) or MRAI directly if the deck needs one headline 'recycling market' number; everything else is settled from public pages.",
+   "sources": [
+    {
+     "title": "PIB - Parliamentary Question: Electronic Waste Management (Lok Sabha, CPCB FY2023-24 and FY2024-25 figures and method)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2155124",
+     "date": "2025-08-11"
+    },
+    {
+     "title": "NewsDrum/PTI - India generated 14 lakh MT e-waste in 2025-26, 9.79 lakh MT recycled: govt",
+     "url": "https://www.newsdrum.in/national/india-generated-14-lakh-mt-e-waste-in-202526-979-lakh-mt-recycled-govt-11189198",
+     "date": "2026-03-09"
+    },
+    {
+     "title": "Dataful - India's e-waste generation doubles in 8 years, processing 70.7% in FY2024-25",
+     "url": "https://insights.dataful.in/articles/indias-e-waste-generation-doubles-in-8-years-but-processing-remains-skewed",
+     "date": "2025-08-15"
+    },
+    {
+     "title": "NITI Aayog/TERI - Advancing Circular Economy of Waste Electronic and Electrical Equipment (E-waste) and Lithium-Ion Batteries in India (PDF)",
+     "url": "https://niti.gov.in/sites/default/files/2026-01/Advancing-Circular-Economy-of-Waste-Electronic-and-Electrical-Equipment-Ewaste-and-Lithium-Ion-Batteries-in-India.pdf",
+     "date": "2026-01-22"
+    },
+    {
+     "title": "PIB - NITI Aayog launched three reports on circular economy (6.19 MMT in 2024 to 14 MMT by 2030)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219285",
+     "date": "2026-01-27"
+    },
+    {
+     "title": "ThePrint - India's looking at 14 million metric tonnes of e-waste by 2030, recycling can't keep up: NITI Aayog",
+     "url": "https://theprint.in/economy/indias-looking-at-14-million-metric-tonnes-of-e-waste-by-2030-recycling-cant-keep-up-niti-aayog/2838862/",
+     "date": "2026-01-28"
+    },
+    {
+     "title": "ITU/UNITAR - Global E-waste Monitor 2024 (54 UNU-KEY categories; India 4,100 million kg in 2022)",
+     "url": "https://ewastemonitor.info/wp-content/uploads/2024/03/GEM_2024_18-03_web_page_per_page_web.pdf",
+     "date": "2024-03-20"
+    },
+    {
+     "title": "Down To Earth - India's waste economy runs on invisible workers (1.5-4 million waste pickers, ILO/Chintan)",
+     "url": "https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them",
+     "date": "2026-05-15"
+    },
+    {
+     "title": "ILO Working Paper 323 - From Waste to Jobs (AIW estimate of ~1.5 million waste pickers)",
+     "url": "https://www.ilo.org/wcmsp5/groups/public/---ed_dialogue/---sector/documents/publication/wcms_732426.pdf",
+     "date": "2019-01-01"
+    },
+    {
+     "title": "PIB - MoSJE launches Waste Picker Enumeration App under NAMASTE (target 2.5 lakh)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2134303",
+     "date": "2025-06-05"
+    },
+    {
+     "title": "The Core - The Indian Recycling Industry Is Booming. Can It Last? (EY-Parthenon USD 32 bn waste management market)",
+     "url": "https://www.thecore.in/business/recycling-india-hindalco-industries-kumar-mangalam-birla-856405",
+     "date": "2026-01-13"
+    },
+    {
+     "title": "Business Standard/ANI - MRAI's 12th IMRC and Union Budget 2025 (non-ferrous USD 18 bn to 30 bn)",
+     "url": "https://www.business-standard.com/content/press-releases-ani/mrai-s-12th-imrc-and-union-budget-2025-set-the-course-for-india-s-sustainable-recycling-leadership-125022200682_1.html",
+     "date": "2025-02-22"
+    },
+    {
+     "title": "Metals-Hub - India's scrap boom (MRAI: 65 Mt scrap demand by 2030, half domestic)",
+     "url": "https://www.metals-hub.com/en/blog/india-scrap-boom-why-2025-2030-will-be-a-sellers-market/",
+     "date": "2025-06-11"
+    },
+    {
+     "title": "Down To Earth - Rs 51,000 crore worth of materials in India's e-waste",
+     "url": "https://www.downtoearth.org.in/waste/rs-51000-crore-worth-of-materials-in-indias-e-wastemost-slips-through-the-system",
+     "date": "2026-05-04"
+    }
+   ]
+  },
+  {
+   "question": "Recommend defaults with reasoning for the founders' open product decisions: pickup charges or minimum load; recycle points value and CSR funding; zero-value items earning points; excluding batteries and e-waste from the household pilot; auto-accept limited to shop hours; a no-show rule; Saathi accident insurance options and cost; business fees after the pilot.",
+   "answer": "Pickups: do not charge households (the kabadiwala habit is 'I get paid', and a fee flips it) but set a minimum by estimated value, not weight; Delhi comparables show the norm is free pickup with a value floor (ScrapBuddy Rs 200; KabadiwalaOnline Rs 999 plus a Rs 499 cancellation charge), and at Bengaluru rates (newspaper Rs 10/kg, iron Rs 22/kg, PET Rs 10/kg on The Kabadiwala's Bangalore card) a Rs 150-200 floor is roughly 15-20 kg of paper; below the floor, route the request into a weekly area round or a drop-at-shop option rather than on-demand, and set the final floor after two weeks of measured kg-per-stop and Saathi stop time. Points: keep them a closed loop (1 point = Re 1 for easy mental math, earned at about 5% of scrap value, capped per pickup and per month, redeemable only for partner vouchers or a pickup bonus, never cash) and fund them from Luma.Green's own marketing budget; CSR is not a realistic funder of points because the MCA's CSR FAQ (General Circular 14/2021, 25 Aug 2021) excludes activities in a company's normal course of business, sponsorship for marketing benefit, activities benefiting a company's own employees, and spending that fulfils a statutory obligation (which is what EPR is), and CSR money can only flow through an implementing agency that is a Section 8 company, registered trust or society with 12A/80G registration, a three-year track record and CSR-1 registration -- a private company like Luma.Green cannot receive it directly, so the workable CSR route is Saathi welfare (PPE, insurance, training) via a registered NGO partner, while EPR-obligated producers are the natural per-kg funders of collection (NITI's Annexure IV notes CPCB sets EPR certificate prices at 30-100% of environmental compensation, paid only after verification, i.e. slow money that reaches registered recyclers, not collectors). Zero-value items: yes, they can earn points without distorting cash prices as long as points sit on a separate ledger from the cash price and are never cash-convertible, so the shop's price for glass or film stays whatever the market pays (The Kabadiwala's Bangalore card lists no price for glass or clothes, Delhi's KabadiwalaOnline states it does not handle glass or fabrics, ScrapBuddy lists glass at Rs 3/kg, and multilayer plastic fetches about Rs 5/kg in Delhi NCR); the real risk is dumping unsaleable material on the shop, so enable each zero-value category only when a downstream taker (a BBMP dry-waste centre, a textile-reuse partner) is mapped and the shop opts in, with old clothes off by default. Batteries and e-waste: exclude from the household pilot; the E-Waste (Management) Rules 2022 (in force 1 Apr 2023) cover 106 items, require recyclers to register on the CPCB portal (Rule 9) and bulk consumers to hand e-waste only to registered producers, refurbishers or recyclers (Rule 8), and CPCB's directions of 6 Sep 2022 and 30 Jan 2024 make informal e-waste collection the thing SPCBs are told to police, while the Battery Waste Management Rules 2022 (24 Aug 2022) require consumers to keep batteries separate and hand them only to an entity engaged in collection, refurbishment or recycling; add both streams in phase 2 once a KSPCB-registered recycler or a producer take-back partner is contracted and its registration number is recorded on every trade (the pull is real: e-waste pays Rs 10/kg and inverter batteries Rs 70/kg in Bengaluru). Auto-accept: yes, limit it to declared shop hours and to shops with a Saathi marked available, with a daily cap; outside hours, queue the request with the next-opening ETA, because an accepted request is a time promise and a silent no-show costs more trust than a visible delay (product judgement, no public source). No-show rule: since the pilot moves no money, use no cash penalties yet; define a household no-show as Saathi waiting 10 minutes, two calls and a timestamped door photo; first offence forfeits that pickup's points, second within 30 days forces a confirm-one-hour-before step and scheduled rounds only, third suspends on-demand for 30 days; a shop or Saathi no-show switches that shop's auto-accept off for 24 hours and triggers review after two in a week; log reason codes so a Rs 50-100 fee paid to the Saathi can be introduced when payments go live -- Urban Company's model, where the entire customer cancellation fee is passed to the partner for travel cost (UC blog, 25 Oct 2023). Insurance: enrol every Saathi in PMSBY at onboarding (Rs 20 a year for Rs 2 lakh accidental death or total disability and Rs 1 lakh partial, ages 18-70, auto-debit from a bank or post-office account; official rules w.e.f. 1 Jun 2022) and add a group personal-accident policy from day one, which gig workers can join without an employer-employee relationship (Pazcare, 19 Jul 2026); indicative group PA pricing is Rs 100-150 per head per year for Rs 10 lakh in low-risk classes and Rs 200-400 for drivers and riders (Plum), or ICICI Lombard's group rate of about Rs 0.45 per Rs 1,000 sum insured, roughly Rs 450 a year for Rs 10 lakh before GST (Ditto, 15 Jul 2026), so budget Rs 300-600 plus 18% GST per Saathi for Rs 5-10 lakh cover, or a bundled gig product such as Bharatsure's health-plus-accident plan at Rs 69 a month (Business Standard, 6 Sep 2024); legally, the Code on Social Security 2020 took effect 21 Nov 2025 with aggregator contributions of 1-2% of turnover (capped at 5% of payouts) whose start date was still un-notified as of 7 Sep 2026 while worker registration on the central portal is already live (Taxmann, 3 Sep 2026), and Karnataka's Platform Based Gig Workers Act 2025 (commenced 30 May 2025) requires aggregators to register within 45 days and, since 16 Feb 2026, to pay a welfare fee of 1% of each payout capped at Rs 0.50 per two-wheeler, Rs 0.75 per three-wheeler and Rs 1.00 per light-commercial transaction, self-declared quarterly (SCC Online, 18 Feb 2026) -- Luma.Green, a digital platform paying piece-rate Saathis, should assume it is an aggregator. Business fees: comparables are IndiaMART (no commission; subscriptions of Rs 28,000 a year for a Mini Dynamic Catalog, Rs 45,000 for TrustSEAL, Rs 60,000 for Maximiser), Udaan at 0.5-2% per sale, JioMart 1-15% plus Rs 15-30 per order, Amazon Business referral fees from 2%, and Recykal, which discloses only that it charges a marketplace fee plus enterprise SaaS; scrap trades are thin-margin and easy to take off-platform, so the default is kabadiwalas free forever (they are supply), yards and recyclers free during the pilot and then a 0.5-1% per-trade fee capped per trade and charged to the buyer side (the side with GST invoices and bank rails), plus an optional IndiaMART-style paid tier of Rs 2,000-5,000 a month for verification badges, traceability and EPR documentation for recyclers and manufacturers; Karnataka's 1% welfare fee is a cost line, not revenue. Open items: no public source gives Saathi stop cost, Bengaluru glass or textile prices, or Recykal's actual take rate.",
+   "status": "needs-pilot-or-counsel",
+   "decision": "Free pickups with a Rs 150-200 estimated-value floor (below it, weekly rounds or drop-at-shop); closed-loop points at 1 point = Re 1, about 5% of scrap value, capped, never cash, funded by Luma.Green not CSR; zero-value items earn points only where a downstream taker is mapped; no batteries or e-waste in the household pilot; auto-accept only in shop hours with a Saathi available; a three-strike no-show ladder with no cash penalty until payments go live; PMSBY plus a Rs 5-10 lakh group PA policy for every Saathi (about Rs 300-600 plus GST per head per year) and register under the Karnataka Gig Workers Act; post-pilot fees of 0.5-1% per trade on the buyer side plus optional paid tiers, kabadiwalas free.",
+   "whoToAsk": "The pilot itself for the minimum-load floor, no-show thresholds and auto-accept caps (measure kg per stop and Saathi stop time in weeks 1-2); a CA/CS with CSR practice on whether any points programme can sit inside a registered NGO's Schedule VII project; counsel on the Karnataka Gig Workers Act applicability, aggregator registration and whether closed-loop points stay outside RBI's PPI rules; an insurance broker (Plum, Pazcare or Onsurity) for a group PA quote and minimum group size; KSPCB's registered e-waste recycler list and the CPCB EPR portal before enabling e-waste; ten Bengaluru shops on glass, film and old-clothes disposal routes.",
+   "sources": [
+    {
+     "title": "The Kabadiwala - Scrap rates in Bangalore (newspaper Rs 10, iron Rs 22, e-waste Rs 10, inverter battery Rs 70 per kg; no glass or clothes listed)",
+     "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "KabadiwalaOnline (Delhi NCR) - Price list: minimum pickup value Rs 999, Rs 499 cancellation, no glass or fabrics",
+     "url": "https://kabadiwalaonline.in/price-list/",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "ScrapBuddy (Delhi) - Rate card: minimum pickup value Rs 200, glass Rs 3/kg",
+     "url": "https://www.scrapbuddy.in/ratecard",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "Operation SHUDDHI (Delhi NCR) - Plastic scrap rates: multilayer/laminated Rs 5/kg",
+     "url": "https://opshuddhi.org/best-plastic-scrap-prices-india/",
+     "date": "2026-07-06"
+    },
+    {
+     "title": "MCA General Circular 14/2021 - FAQs on Corporate Social Responsibility (exclusions in 4.1-4.3; implementing agencies in 5.2-5.6)",
+     "url": "https://coal.gov.in/sites/default/files/2024-04/FAQ_CSR.pdf",
+     "date": "2021-08-25"
+    },
+    {
+     "title": "E-Waste (Management) Rules, 2022 - Gazette notification (CPCB copy; Rules 8 and 9)",
+     "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/e-waste_rules_2022.pdf",
+     "date": "2022-11-02"
+    },
+    {
+     "title": "PIB - Parliamentary Question: Electronic Waste Management (rules in force 1 Apr 2023; Battery Rules 24 Aug 2022; CPCB directions on informal e-waste)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2155124",
+     "date": "2025-08-11"
+    },
+    {
+     "title": "Chambers - New rules for management of battery waste (consumer duties under BWM Rules 2022)",
+     "url": "https://chambers.com/articles/new-rules-for-management-of-battery-waste-a-much-awaited-change",
+     "date": "2022-09-28"
+    },
+    {
+     "title": "SCC Online - Battery Waste Management Rules, 2022 summary",
+     "url": "https://www.scconline.com/blog/post/2022/08/26/battery-waste-management-rule-2022/",
+     "date": "2022-08-26"
+    },
+    {
+     "title": "Urban Company blog - 12 point program (customer cancellation fee passed entirely to partners; partner life and accident insurance)",
+     "url": "https://www.urbancompany.com/blog/urban-company-announces-12-point-program-to-improve-partner-earnings-and-livelihood",
+     "date": "2023-10-25"
+    },
+    {
+     "title": "Jan Suraksha - Rules for the Pradhan Mantri Suraksha Bima Yojana (Rs 20 a year, Rs 2 lakh cover)",
+     "url": "https://www.jansuraksha.gov.in/Files/PMSBY/English/Rules.pdf",
+     "date": "2022-06-01"
+    },
+    {
+     "title": "Ditto - Personal accident insurance premium chart 2026 (ICICI Lombard group rate Rs 0.45 per Rs 1,000)",
+     "url": "https://joinditto.in/articles/general/personal-accident-insurance-premium-chart/",
+     "date": "2026-07-15"
+    },
+    {
+     "title": "Plum - Group personal accident insurance (Rs 100-600 per employee per year by risk class)",
+     "url": "https://www.plumhq.com/group-personal-accident-insurance",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "Pazcare - Are gig workers eligible for group health insurance in India (group PA needs no employer-employee relationship)",
+     "url": "https://www.pazcare.com/blog/are-gig-workers-eligible-for-group-health-insurance-in-india",
+     "date": "2026-07-19"
+    },
+    {
+     "title": "Business Standard - Bharatsure announces insurance products for gig workers (Rs 69 a month health plus accident)",
+     "url": "https://www.business-standard.com/finance/personal-finance/bharatsure-announces-insurance-products-for-gig-workers-students-124090600632_1.html",
+     "date": "2024-09-06"
+    },
+    {
+     "title": "Taxmann - Aggregator obligations under the Code on Social Security 2020 (in force 21 Nov 2025; contribution start not notified as of 7 Sep 2026)",
+     "url": "https://www.taxmann.com/post/blog/analysis-aggregator-obligations-code-on-social-security/",
+     "date": "2026-09-03"
+    },
+    {
+     "title": "SCC Online - Karnataka notifies gig workers' welfare fee (1% of payouts with per-transaction caps, effective 13 Feb 2026)",
+     "url": "https://www.scconline.com/blog/post/2026/02/18/karnataka-government-notifies-gig-workers-welfare-fee-mandatory/",
+     "date": "2026-02-18"
+    },
+    {
+     "title": "Taxguru - Karnataka Platform Based Gig Workers (Social Security and Welfare) Act 2025 (commenced 30 May 2025; 45-day registration)",
+     "url": "https://taxguru.in/corporate-law/karnataka-platform-based-gig-workers-social-security-welfare-act-2025.html",
+     "date": "2025-12-01"
+    },
+    {
+     "title": "PRS India - Karnataka Platform Based Gig Workers Bill 2025 (welfare fee 1-5%, penalties, definitions)",
+     "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025",
+     "date": "2025-08-12"
+    },
+    {
+     "title": "ILO Digital Labour Observatory - Karnataka Platform Based Gig Workers Act 2025 (aggregator obligations, 14-day termination notice)",
+     "url": "https://digitallabour.ilo.org/legislation/karnataka-platform-based-gig-workers-social-security-and-welfare-act-2025",
+     "date": "2025-01-01"
+    },
+    {
+     "title": "Refrens - Overview of all IndiaMART packages (Rs 28,000 MDC, Rs 45,000 TrustSEAL, Rs 60,000 Maximiser; no commission)",
+     "url": "https://www.refrens.com/grow/detailed-overview-and-analysis-of-all-indiamart-packages/",
+     "date": "2024-02-17"
+    },
+    {
+     "title": "Borzo - Top 10 B2B online marketplaces in India for 2025 (Udaan 0.5-2%, JioMart 1-15%, Amazon Business from 2%)",
+     "url": "https://borzodelivery.com/in/blog/top-10-b2b-online-marketplaces-in-india-for-2025",
+     "date": "2025-02-21"
+    },
+    {
+     "title": "Forbes India - How Recykal is cleaning up the mess (marketplace fee plus SaaS, rate undisclosed)",
+     "url": "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1",
+     "date": "2021-09-02"
+    },
+    {
+     "title": "Recykal Market - Plastic marketplace for sellers and buyers (no fee disclosed)",
+     "url": "https://recykal.market/plastic/",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "NITI Aayog/TERI - Advancing Circular Economy of E-waste and Lithium-Ion Batteries in India (Annexure IV: CPCB EPR certificate price bands)",
+     "url": "https://niti.gov.in/sites/default/files/2026-01/Advancing-Circular-Economy-of-Waste-Electronic-and-Electrical-Equipment-Ewaste-and-Lithium-Ion-Batteries-in-India.pdf",
+     "date": "2026-01-22"
+    }
+   ]
+  }
+ ]
+}

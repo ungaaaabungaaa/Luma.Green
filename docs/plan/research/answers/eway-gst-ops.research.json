@@ -1,0 +1,198 @@
+{
+ "cluster": "E-way bills, GST filing and MSME payment rules",
+ "answers": [
+  {
+   "question": "Is Karnataka's e-way bill limit for intra-state movement ₹50,000 for all goods (confirm from the e-way bill portal or a Karnataka notification), and is the SMS e-way bill facility enough for small yards? Do small yards need a GST filing partner (GSP) to generate e-way bills and e-invoices, and what do such services cost?",
+   "answer": "Yes. Karnataka requires an e-way bill for any intra-state movement of taxable goods worth more than ₹50,000 per consignment, with no higher state limit and no goods-specific carve-out: it was the first state to switch on intra-state e-way bills on 1 April 2018 under Finance Department Notification FD 47 CSL 2017 dated 23 March 2018 (issued under s.164 of the KGST Act, bringing into force the rules notified on 15 March 2018), whereas Maharashtra, Tamil Nadu, Delhi and others later chose ₹1 lakh. Three details matter for the pilot: when a registered yard buys from an unregistered kabadiwala, the yard (the registered party causing the movement) generates the bill and enters 'URP' as the supplier; loads on non-motorised conveyances (pushcarts, cycle carts) and loads under ₹50,000 are exempt; and Part B (vehicle number) is not needed for movement within Karnataka from consignor to transporter under 50 km. The SMS facility is an official NIC mode with no charge: register up to two mobile numbers per GSTIN on ewaybillgst.gov.in, then text 77382 99899 in a fixed format (EWBG to generate, EWBV to change vehicle, EWBC to cancel within 24 hours, EWBT for transporters), one e-way bill per SMS; NIC's manual of 31 March 2018 says it is meant for small taxpayers without IT systems and with few bills a day. That makes SMS adequate as a field backup for a small yard raising a handful of ≥₹50,000 bills a day, but not as the main tool: HSN, pincode, invoice number, value and vehicle are all typed into one message, there is no printout, and it cannot be shared across staff; the free web portal (2FA by SMS OTP, Sandes or the NIC-GST-Shield app has been mandatory for every taxpayer since 1 April 2025), NIC's IMEI-registered Android app and the Excel bulk tool are the other official modes, and since 1 January 2025 a bill cannot be raised on a document older than 180 days. A GSP is not required for anything: direct API access to NIC is limited to taxpayers with turnover of ₹10 crore or more, and everyone else who wants software integration goes through a GSP-backed product, but the portal, SMS and app work without one. E-invoicing is irrelevant to small yards: it applies only where aggregate turnover exceeded ₹5 crore in any year since 2017-18 (Notification 10/2023-Central Tax dated 10 May 2023, effective 1 August 2023), and even a yard above that threshold does not e-invoice the reverse-charge self-invoices it raises for purchases from unregistered suppliers (GSTN e-invoice FAQ v1.3, Q24). Costs of GSP-backed software, all excluding 18% GST: Vyapar Gold ₹799/year (mobile) or ₹4,799/year (mobile + desktop) with unlimited e-way bills and e-invoices (Silver ₹699/₹4,399 caps at 10 a month); myBillBook Pro Max ₹570/month billed yearly (about ₹6,840/year) with unlimited e-way bills; Zoho Books Standard ₹899/month (₹749/month on annual billing) with e-way bills and e-invoicing; TallyPrime Silver ₹22,500 one-time or ₹750/month rental with e-invoicing and e-way bills included; ClearTax's e-invoicing suite starts at ₹7,777/month and is aimed at enterprises. Pure GSP API pricing (Masters India, ClearTax, GSTZen) is quote-only, so it is an open item if Luma.Green ever wants to generate e-way bills from its own app on yards' behalf.",
+   "status": "answered",
+   "decision": "Do not build e-way bill generation into the pilot. Require yards to raise bills on the free NIC portal (SMS as the field backup), and have the pickup/receipt screen ask for the 12-digit e-way bill number whenever consignment value is ₹50,000 or more and the vehicle is motorised; if a yard wants it in-app, recommend Vyapar Gold (₹4,799/year) rather than an enterprise GSP.",
+   "whoToAsk": "The 10 pilot yards, on whether typical kabadiwala-to-yard loads actually cross ₹50,000 at current Bengaluru scrap prices (decides how often the rule bites); Masters India or ClearTax sales, for a GSP API quote if Luma.Green wants to generate bills on yards' behalf later.",
+   "sources": [
+    {
+     "title": "ClearTax: State-wise e-way bill threshold limits (Karnataka: ₹50,000, all taxable goods, FD 47 CSL 2017)",
+     "url": "https://cleartax.in/s/state-wise-threshold-limits-e-way-bills",
+     "date": "undated, opened 29 Sep 2026"
+    },
+    {
+     "title": "TaxGuru: Karnataka to roll out intra-state e-way bill w.e.f. 1 April 2018 (Notification FD 47 CSL 2017)",
+     "url": "https://taxguru.in/goods-and-service-tax/karnataka-roll-intrastate-eway-bill-wef-1st-april-2018.html",
+     "date": "23 Mar 2018"
+    },
+    {
+     "title": "CBIC: e-Way Bill FAQs (common portal, who generates, inward supply from unregistered persons, ₹50,000)",
+     "url": "https://cbic-gst.gov.in/pdf/18062019-FAQs-EwayBill-Faq.pdf",
+     "date": "18 Jun 2019"
+    },
+    {
+     "title": "GST portal: e-Way Bill System (official modes: web, Android app with IMEI, SMS, Excel bulk)",
+     "url": "https://services.gst.gov.in/services/ewaybill/ewaybillsystem",
+     "date": "undated, opened 29 Sep 2026"
+    },
+    {
+     "title": "NIC: E-Way Bill System User Manual for SMS Operations (reproduced on TaxTMI)",
+     "url": "https://www.taxtmi.com/tmi_blog_details?id=515469",
+     "date": "31 Mar 2018"
+    },
+    {
+     "title": "TaxGuru: How to generate e-way bill via SMS (77382 99899, two mobiles, EWBG/EWBV/EWBC)",
+     "url": "https://taxguru.in/goods-and-service-tax/how-to-generate-e-way-bill-via-sms-in-karnataka.html",
+     "date": "3 Apr 2018"
+    },
+    {
+     "title": "ClearTax: e-Way Bill under GST in Karnataka (recipient generates when supplier is unregistered; exemptions; Part B under 50 km)",
+     "url": "https://cleartax.in/s/gst-eway-bill-karnataka",
+     "date": "undated, opened 29 Sep 2026"
+    },
+    {
+     "title": "TaxGuru: 2FA mandatory for e-way bill and e-invoice from 1 April 2025",
+     "url": "https://taxguru.in/goods-and-service-tax/2fa-mandatory-e-way-bill-e-invoice-april-2025.html",
+     "date": "31 Mar 2025"
+    },
+    {
+     "title": "GSTZen: Enable API access in e-way bill portal (direct API only at ₹10 crore+, else via GSP)",
+     "url": "https://gstzen.in/a/enable-api-access-in-e-way-bill-portal.html",
+     "date": "7 Jan 2026"
+    },
+    {
+     "title": "TaxGuru: e-invoicing limit reduced to ₹5 crore from 1 August 2023 (Notification 10/2023-Central Tax)",
+     "url": "https://taxguru.in/goods-and-service-tax/gst-e-invoicing-limit-reduced-rs5-crore-01st-august-2023.html",
+     "date": "10 May 2023"
+    },
+    {
+     "title": "GSTN: GST e-invoice/IRN System FAQs v1.3 (Q24: no e-invoice for supplies received from unregistered persons)",
+     "url": "https://www.gstn.org.in/assets/mainDashboard/Pdf/GST%20e-invoice%20System%20-%20FAQs.pdf",
+     "date": "11 Nov 2020"
+    },
+    {
+     "title": "Techjockey: Vyapar plans and prices (Silver 10 e-way bills/month, Gold unlimited)",
+     "url": "https://www.techjockey.com/detail/vyapar",
+     "date": "2026, opened 29 Sep 2026"
+    },
+    {
+     "title": "myBillBook pricing plans (Pro Max: unlimited e-way bills, e-invoicing)",
+     "url": "https://mybillbook.in/pricing-plans",
+     "date": "opened 29 Sep 2026"
+    },
+    {
+     "title": "Zoho Books India pricing",
+     "url": "https://www.zoho.com/in/books/pricing/",
+     "date": "opened 29 Sep 2026"
+    },
+    {
+     "title": "Tally Solutions: Buy TallyPrime (Silver ₹22,500, rental ₹750/month, e-invoicing and e-way bills included)",
+     "url": "https://tallysolutions.com/buy-tally/",
+     "date": "opened 29 Sep 2026"
+    },
+    {
+     "title": "ClearTax: e-Invoicing + GST compliance solution (from ₹7,777/month)",
+     "url": "https://cleartax.in/s/e-invoicing-gst-compliance-solution/",
+     "date": "undated, opened 29 Sep 2026"
+    },
+    {
+     "title": "Masters India: e-Way Bill API (GSTN-appointed GSP; pricing by quote)",
+     "url": "https://www.mastersindia.co/gst-eway-bill-api/",
+     "date": "undated, opened 29 Sep 2026"
+    }
+   ]
+  },
+  {
+   "question": "Is the MSME 45-day payment rule (MSMED Act s.15–16 and Income-tax s.43B(h)) still in force in 2026, and do Bengaluru yards buying metal from unregistered kabadiwalas issue reverse-charge self-invoices in practice?",
+   "answer": "Yes, both halves are in force. Section 15 of the MSMED Act 2006 requires a buyer to pay a micro or small enterprise by the agreed date, capped at 45 days from acceptance (15 days if nothing is agreed in writing), and s.16 charges compound interest with monthly rests at three times the RBI bank rate on late payment; the MSMED (Amendment) Bill 2026 (introduced 28 July, passed Rajya Sabha 3 August and Lok Sabha 7 August 2026) leaves ss.15–16 untouched and instead tightens enforcement (mediation within 90 days, arbitration referral within 30 days, award within 90 days, online dispute resolution, release of at least 50% of an award if a challenge is pending over six months, TReDS mandatory for CPSEs, recovery as arrears of land revenue), with Presidential assent and commencement not confirmed on any page opened as of 29 September 2026. On the tax side, s.43B(h) of the 1961 Act governs FY 2025-26 (tax audit due 30 September 2026), and from 1 April 2026 the identical rule sits in s.37(2)(g) of the Income-tax Act 2025, which disallows any 'amount payable by the assessee to a micro or small enterprise beyond the time limit specified in section 15 of the MSMED Act' until the year it is actually paid, with no year-end grace; the Finance Ministry confirmed in the Rajya Sabha (Unstarred Q.242, 21 July 2026, MoS Pankaj Chaudhary) that the rule stays and there is no proposal to relax it. It bites only on dues to Udyam-registered micro or small enterprises, and under MSME Ministry office memoranda of 2 July and 1 September 2021 wholesale and retail traders get Udyam registration only for priority-sector lending, so trader-suppliers (which is what most kabadiwalas are, and most are not Udyam-registered anyway) are generally outside it, while a yard or recycler that sorts or processes could be a manufacturing or service MSE; practitioners still call the trader point a grey area. For Luma.Green this only matters once the platform itself pays anyone (the pilot moves no money): capture the Udyam number at admin verification and pay within 15 days by default. On reverse charge: Notification 06/2024-Central Tax (Rate) dated 8 October 2024 (effective 10 October 2024) makes any registered person buying metal scrap of Customs Tariff Chapters 72–81 from any unregistered person liable to pay 18% GST under reverse charge with no value threshold, paid in cash through the electronic cash ledger and creditable as ITC; the yard must raise a self-invoice under s.31(3)(f) within 30 days of receipt (rule 47A, Notification 20/2024-Central Tax dated 8 October 2024, effective 1 November 2024) plus a payment voucher, and its ITC time limit runs from the year of that self-invoice (Circular 211/5/2024 of 26 June 2024). Alongside, a registered buyer must deduct 2% GST TDS on metal scrap bought from registered suppliers where the contract exceeds ₹2.5 lakh (Notification 25/2024-Central Tax) after registering in Form REG-07; metal scrap stayed at 18% after the 22 September 2025 rate rationalisation, while plastic, paper, rubber and e-waste scrap are at 5% and outside this RCM. Households selling their own scrap are not making a supply in the course of business, so no RCM arises on the household-to-kabadiwala leg, but no official page opened says this in terms, so confirm it with a CA. Whether Bengaluru yards actually issue the self-invoices cannot be settled from public pages: an industry post of 29 August 2026 says many small aggregators have not yet absorbed the October 2024 rules and warns those near the ₹40 lakh registration threshold to register, a practitioner note of July 2025 says large cash deals without a tax trail have become high-risk and dealers must segregate ledgers, and practitioner forums (October 2024 to April 2025) show basic confusion over what even counts as 'scrap', so the law is clear but compliance is uneven, and the rule was lobbied for by parts of the recycling industry to level the field against informal traders.",
+   "status": "needs-pilot-or-counsel",
+   "decision": "Treat every kabadiwala-to-yard metal purchase as a reverse-charge transaction unless the kabadiwala has a GSTIN, and design the pilot's yard purchase record as a self-invoice-ready RCM register (yard GSTIN, supplier name/address/phone, 'unregistered' flag, HSN chapter, weight, value, date) with a monthly export; when Luma.Green starts paying suppliers, collect Udyam numbers and pay within 15 days.",
+   "whoToAsk": "A Bengaluru GST practitioner or CA, for the self-invoice mechanics, the household leg and whether trader-kabadiwalas fall under s.37(2)(g); the 10 pilot yards, on whether they actually raise self-invoices and pay RCM monthly (this decides how much the app must do for them); the Gazette of India or the MSME Ministry, for the assent and commencement date of the 2026 Amendment.",
+   "sources": [
+    {
+     "title": "MSME Samadhaan (Ministry of MSME): MSEFC portal, s.16 interest at three times the RBI bank rate after 45 days",
+     "url": "https://samadhaan.msme.gov.in/MyMsme/MSEFC/MSEFC_Welcome.aspx",
+     "date": "undated, opened 29 Sep 2026"
+    },
+    {
+     "title": "TaxGuru: Finance Ministry clarifies Section 43B(h) and the 45-day MSME payment rule (Rajya Sabha Unstarred Q.242, 21 July 2026)",
+     "url": "https://taxguru.in/income-tax/finance-ministry-clarifies-section-43bh-45-day-msme-payment-rule.html",
+     "date": "22 Jul 2026"
+    },
+    {
+     "title": "SAG Infotech: Government defends Section 43B(h), rules out changes (MoS Pankaj Chaudhary)",
+     "url": "https://blog.saginfotech.com/govt-defends-section-43bh-rules-out-changes-msme-payment-compliance",
+     "date": "29 Jul 2026"
+    },
+    {
+     "title": "Income-tax Act 2025, section 37 (s.37(2)(g): sums payable to micro or small enterprises beyond MSMED s.15 time limit)",
+     "url": "https://bharattax.co/income-tax/act-2025/section/37",
+     "date": "opened 29 Sep 2026"
+    },
+    {
+     "title": "Income-tax Act 2025, section 1 (comes into force 1 April 2026)",
+     "url": "https://bharattax.co/income-tax/act-2025/section/1",
+     "date": "opened 29 Sep 2026"
+    },
+    {
+     "title": "TaxUpdate: Section 43B(h) and the 30 September 2026 tax audit; moves to s.37(2)(g) from FY 2026-27; trader grey zone",
+     "url": "https://taxupdate.in/income-tax/893/section-43bh-msme-payment-disallowance-tax-audit-2026-section-37-income-tax-act-2025/",
+     "date": "18 Sep 2026"
+    },
+    {
+     "title": "TaxUpdate: CBDT FAQ deep-dive #7 on Section 43B/43B(h) and s.37 of the 2025 Act (no return-due-date relief; traders generally outside)",
+     "url": "https://taxupdate.in/income-tax/771/cbdt-faq-deep-dive-7-section-43b-43bh-msme-section-37-income-tax-act-2025-actual-payment-tax-audit/",
+     "date": "5 Jun 2026"
+    },
+    {
+     "title": "TaxGuru: Section 43B(h) not applicable to wholesale and retail trade (MSME OMs of 2 July 2021 and 1 September 2021)",
+     "url": "https://taxguru.in/income-tax/provision-section-43b-h-applicable-wholesale-retail-trade.html",
+     "date": "30 Jan 2024"
+    },
+    {
+     "title": "PRS Legislative Research: The MSME Development (Amendment) Bill, 2026 (bill track; no change to s.15)",
+     "url": "https://prsindia.org/billtrack/the-micro-small-and-medium-enterprises-development-amendment-bill-2026",
+     "date": "opened 29 Sep 2026"
+    },
+    {
+     "title": "LiveLaw: Parliament clears MSME Development (Amendment) Bill 2026 (RS 3 Aug, LS 7 Aug 2026; awaits assent)",
+     "url": "https://www.livelaw.in/news-updates/parliament-clears-msme-development-amendment-bill-2026-545020",
+     "date": "10 Aug 2026"
+    },
+    {
+     "title": "LiveLaw: MSME Amendment Bill 2026, rewriting two decades of law (ss.15–16 untouched; s.18 timelines, s.18A recovery, s.19 50% release)",
+     "url": "https://www.livelaw.in/articles/msme-amendment-bill-2026-rewriting-two-decades-of-law-547007",
+     "date": "24 Aug 2026"
+    },
+    {
+     "title": "TaxGuru: Metal scrap supplied by unregistered suppliers brought under reverse charge (text of Notification 06/2024-CT(Rate), 8 Oct 2024, effective 10 Oct 2024; cash ledger only)",
+     "url": "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html",
+     "date": "9 Oct 2024"
+    },
+    {
+     "title": "TaxTMI: GST TDS and RCM on metal scrap effective 10 Oct 2024 (18% RCM, 2% TDS above ₹2.5 lakh, self-invoice in 30 days)",
+     "url": "https://www.taxtmi.com/article/detailed?id=13026",
+     "date": "16 Oct 2024"
+    },
+    {
+     "title": "TaxGuru: New regulation on RCM self-invoicing effective 1 November 2024 (rule 47A, Notification 20/2024-Central Tax)",
+     "url": "https://taxguru.in/goods-and-service-tax/regulation-rcm-invoicing-effective-november-1-2024.html",
+     "date": "17 Oct 2024"
+    },
+    {
+     "title": "Stoxntax: RCM on purchases from unregistered dealers (metal scrap at 18%; cash deals without tax trail now high-risk)",
+     "url": "https://stoxntax.in/2025/09/20/reverse-charge-mechanism-rcm-on-purchases-from-unregistered-dealers/",
+     "date": "Jul–Sep 2025"
+    },
+    {
+     "title": "National Recycling: GST on scrap in India, rates, HSN codes and RCM (metals 18%, plastic/paper/e-waste 5%; small aggregators have not absorbed RCM)",
+     "url": "https://www.nationalrecycling.in/blog/gst-on-scrap-india-rates-hsn-codes-reverse-charge/",
+     "date": "29 Aug 2026"
+    },
+    {
+     "title": "CashFlo: GST compliance for metal scrap dealers (2% TDS, REG-07, common compliance failures)",
+     "url": "https://www.cashflo.io/magazine/gst-compliance-for-metal-scrap-dealers",
+     "date": "11 Nov 2025"
+    },
+    {
+     "title": "TaxTMI forum: RCM on metal scrap, practitioner discussion on what counts as scrap",
+     "url": "https://www.taxtmi.com/forum/issue?id=119353",
+     "date": "16 Oct 2024 – 24 Apr 2025"
+    }
+   ]
+  }
+ ]
+}

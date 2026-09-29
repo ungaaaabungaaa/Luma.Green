@@ -1,241 +1,241 @@
 {
-  "cluster": "EPR exchange, portals and evidence",
-  "answers": [
+ "cluster": "EPR exchange, portals and evidence",
+ "answers": [
+  {
+   "question": "Has MSTC's EPR Electronic Trading & Settlement Platform been approved and launched since June 2026, and have direct buyer-to-seller certificate transfers on the CPCB portals stopped?",
+   "answer": "No on both counts, as far as public records show up to 29 September 2026. MSTC's platform (EPRETP) is built but not trading: on its Q1 FY27 earnings call (transcript filed with BSE on 14 August 2026) MSTC said development \"is now complete along with all the integrations necessary for immediate operationalization\" and that it is \"awaiting the go ahead\" from government/CPCB, opening first for five streams (plastic, e-waste, batteries, tyres, used oil). CPCB put the exchange site (etp.cpcb.gov.in) and the Common EPR single-sign-on portal (epr.cpcb.gov.in) up in early February 2026 for viewing and KYC only, and switched off the standalone plastic portal on 28 June 2026 with data migrated to the common portal, but no CPCB go-live notice or MoEFCC order authorising trading has appeared, and the non-ferrous section of the same common portal was still not live on 20 September 2026. Direct recycler-to-producer transfers on the CPCB portals have therefore not stopped: a June 2026 industry explainer describes both routes as available with EPRETP \"not mandatory\", and on MSTC's own call an analyst noted that large recyclers are still transferring certificates directly to brand owners. What changes on go-live is fixed by CPCB's EPRETP guidelines (uploaded 31 December 2024, reported 15 January 2025): certificates keep being generated and held on the CPCB portal, but price discovery, trading and payment for the listed transfer types \"shall be permitted only through the EPRETP\", with bilateral trading allowed for six months only for entities registered as both obligated entity and processor, and no brokers. Users will pay a registration fee equal to 50% of the EPR-portal application fee plus an annual fee of 25% of that, and MSTC pointed to a 4% CPCB charge on transaction value in the tender documents.",
+   "status": "answered",
+   "decision": "Model certificate movement in the pilot as a direct portal transfer from a registered recycler to a PIBO (Luma records the transfer reference and price; it does not move certificates), keep an EPRETP adapter as a stub, and re-check etp.cpcb.gov.in and MSTC's Q2 FY27 call (mid-November 2026) before promising any exchange-based pricing.",
+   "whoToAsk": "",
+   "sources": [
     {
-      "question": "Has MSTC's EPR Electronic Trading & Settlement Platform been approved and launched since June 2026, and have direct buyer-to-seller certificate transfers on the CPCB portals stopped?",
-      "answer": "No on both counts, as far as public records show up to 29 September 2026. MSTC's platform (EPRETP) is built but not trading: on its Q1 FY27 earnings call (transcript filed with BSE on 14 August 2026) MSTC said development \"is now complete along with all the integrations necessary for immediate operationalization\" and that it is \"awaiting the go ahead\" from government/CPCB, opening first for five streams (plastic, e-waste, batteries, tyres, used oil). CPCB put the exchange site (etp.cpcb.gov.in) and the Common EPR single-sign-on portal (epr.cpcb.gov.in) up in early February 2026 for viewing and KYC only, and switched off the standalone plastic portal on 28 June 2026 with data migrated to the common portal, but no CPCB go-live notice or MoEFCC order authorising trading has appeared, and the non-ferrous section of the same common portal was still not live on 20 September 2026. Direct recycler-to-producer transfers on the CPCB portals have therefore not stopped: a June 2026 industry explainer describes both routes as available with EPRETP \"not mandatory\", and on MSTC's own call an analyst noted that large recyclers are still transferring certificates directly to brand owners. What changes on go-live is fixed by CPCB's EPRETP guidelines (uploaded 31 December 2024, reported 15 January 2025): certificates keep being generated and held on the CPCB portal, but price discovery, trading and payment for the listed transfer types \"shall be permitted only through the EPRETP\", with bilateral trading allowed for six months only for entities registered as both obligated entity and processor, and no brokers. Users will pay a registration fee equal to 50% of the EPR-portal application fee plus an annual fee of 25% of that, and MSTC pointed to a 4% CPCB charge on transaction value in the tender documents.",
-      "status": "answered",
-      "decision": "Model certificate movement in the pilot as a direct portal transfer from a registered recycler to a PIBO (Luma records the transfer reference and price; it does not move certificates), keep an EPRETP adapter as a stub, and re-check etp.cpcb.gov.in and MSTC's Q2 FY27 call (mid-November 2026) before promising any exchange-based pricing.",
-      "whoToAsk": "",
-      "sources": [
-        {
-          "title": "MSTC Q1 FY27 earnings call transcript (BSE filing) — ETP complete, awaiting go-ahead; recyclers still transfer directly",
-          "url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cd29ff2a-46af-453a-a5da-b58aa934c58a.pdf",
-          "date": "2026-08-14"
-        },
-        {
-          "title": "CPCB — Guidelines on Authorization of EPRETP Operator and Functioning of EPRETP (PDF)",
-          "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
-          "date": "2024-12-31"
-        },
-        {
-          "title": "Lexplosion — CPCB issues guidelines for authorization of EPRETP operator",
-          "url": "https://lexplosion.in/cpcb-issues-guidelines-for-authorization-of-extended-producer-responsibility-electronic-trading-and-settlement-platform-operator-obligated-entities-having-epr-obligation-not-to-be-empanelled-as-etp-p/",
-          "date": "2025-01-15"
-        },
-        {
-          "title": "Envirosense — EPRETP Exchange: viewing/KYC only, live trading 'shortly'",
-          "url": "https://envirosense.in/electronic-trading-and-settlement-platform-epr/",
-          "date": "2026-02-04"
-        },
-        {
-          "title": "Enviliance ASIA — India develops common EPR portal and certificate trading platform",
-          "url": "https://enviliance.com/regions/south-asia/in/report_15482",
-          "date": "2026-02"
-        },
-        {
-          "title": "Avigroup — EPR-ETP Portal India: Rumour or Reality? (no launch date announced)",
-          "url": "https://avigroup.in/2026/03/26/epr-etp-portal-india-rumour-or-reality/",
-          "date": "2026-03-26"
-        },
-        {
-          "title": "EPR Solutions — EPR certificates explained: bilateral portal transfers remain available, EPRETP not mandatory",
-          "url": "https://eprsolutions.in/blog/epr-certificates-explained-issuance-and-trading",
-          "date": "2026-06"
-        },
-        {
-          "title": "Karparivartan — CPCB migrates plastic packaging EPR to the Common EPR Portal (old portal off 28 June 2026)",
-          "url": "https://www.karparivartan.com/cpcb-migrates-plastic-packaging-epr-to-the-common-epr-portal/",
-          "date": "2026-08-10"
-        },
-        {
-          "title": "Multibagg — MSTC Q1 FY27: operationalisation needs formal government notification",
-          "url": "https://www.multibagg.ai/market-pulse/articles/mstc-q1fy27-98133",
-          "date": "2026-08-13"
-        },
-        {
-          "title": "Business Standard — Non-ferrous scrap EPR regime faces portal, target-calculation gaps",
-          "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html",
-          "date": "2026-09-20"
-        }
-      ]
+     "title": "MSTC Q1 FY27 earnings call transcript (BSE filing) — ETP complete, awaiting go-ahead; recyclers still transfer directly",
+     "url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cd29ff2a-46af-453a-a5da-b58aa934c58a.pdf",
+     "date": "2026-08-14"
     },
     {
-      "question": "What evidence do CPCB's verification guidelines under the 31 March 2026 plastic amendment (and Registered Environment Auditors) require from processors, and does the plastic EPR portal accept receipts without GST for purchases from informal collectors, as the e-waste portal does? Do the CPCB EPR and SWM portals accept bulk uploads or API connections?",
-      "answer": "The Plastic Waste Management (Amendment) Rules, 2026 (G.S.R. 237(E), 31 March 2026) list no new evidence themselves: they insert \"or Registered Environment Auditor\" after \"designated agency\" in Rule 17(5) and Schedule II paragraphs 12.4 and 13.1, define an REA by reference to the Environment Audit Rules, 2025 (S.O. 3973(E), 29 August 2025), and order CPCB to prescribe a \"guideline for audit and verification for use of recycled content\" within six months, i.e. by 30 September 2026; as of 29 September 2026 no such guideline appears on CPCB's plastic-waste guidelines page, so this is an open item. An REA is a certified auditor (or a firm of two or more) registered with the Environment Audit Designated Agency and assigned by random allocation, and the 2025 rules expressly cover audits \"under the Extended Producer Responsibility framework\" including the plastic, e-waste and battery rules (PIB, 3 September 2025). The evidence a processor must hold today is what the CPCB portal already demands: for each plastic-waste purchase the recycler enters supplier name and address, category, quantity, date and the supplier's GST number, and CPCB's Guidance Manual (February 2023, section 3.2.1) says \"if GST is not available then PAN/Aadhar of supplier has to be provided\" (GST is mandatory only for waste-to-energy, waste-to-oil and co-processors), with a \"copy of invoice/GST e-invoice (as applicable as per GST Act)\" uploaded; CPCB's third-party audit checklist then samples procurement records from both registered and unregistered suppliers, checks GST, e-way bills and e-invoices, and requires a site visit with \"transaction receipts, source of procurement, transportation details\" plus photos or videos. So the plastic portal does accept non-GST purchase receipts from informal collectors identified by PAN or Aadhaar, the same posture as the e-waste portal, whose CPCB FAQ of 23 January 2024 says informal-sector purchases need \"any sales receipt having name and address of the seller\"; the difference is that plastic certificate generation is locked to the recycler's output sale, for which since April 2025 PWPs must upload a GSTN-validated GST e-invoice (IRN and QR code) before the portal issues certificates. On uploads: the plastic portal has a bulk-upload option for procurement or sales from a single counterparty (Excel format with two-year totals plus one PDF), CPCB added a bulk transaction-upload provision with an SOP for PIBOs in 2023, and a CEPP mobile app (April 2025) lets users scan e-invoice QR codes, while PWP purchase entries are single-entry in the manual. No public API exists for any CPCB EPR portal (the only APIs documented are \"secured APIs\" between the CPCB portal and the EPRETP exchange), and the SWM portal (swm.cpcb.gov.in, live for bulk-waste-generator registration since 31 May 2026 under the SWM Rules 2026 in force from 1 April 2026) documents neither bulk upload nor API.",
-      "status": "partly",
-      "decision": "Build receipts to the strictest existing checklist rather than wait for the guideline: every purchase from an informal collector records seller name, address, mobile, PAN or masked Aadhaar, date, category, weight, price and a photo of the paper receipt; every recycler-side sale carries a GST e-invoice number/IRN; transactions export as CSV/Excel in the CPCB bulk-upload column layout; API integration is out of scope for the pilot.",
-      "whoToAsk": "CPCB WM-III / EPR portal helpdesk for whether the recycled-content verification guideline has issued and whether any API exists; a CA for GST treatment (reverse charge, e-way bill thresholds) of purchases from unregistered kabadiwalas.",
-      "sources": [
-        {
-          "title": "Gazette — Plastic Waste Management (Amendment) Rules, 2026, G.S.R. 237(E) (MPCB copy)",
-          "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Plastic_Waste_Management_2026.pdf",
-          "date": "2026-03-31"
-        },
-        {
-          "title": "Gazette — Environment Audit Rules, 2025, S.O. 3973(E)",
-          "url": "https://egazette.gov.in/writeReadData/2025/265833.pdf",
-          "date": "2025-08-29"
-        },
-        {
-          "title": "PIB — Government brings major reform: Environment Audit Rules, 2025",
-          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163488",
-          "date": "2025-09-03"
-        },
-        {
-          "title": "CPCB — Guidance Manual for Centralized EPR Portal for Plastic Packaging (PAN/Aadhaar if no GST; bulk upload; audit checklist)",
-          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
-          "date": "2023-02"
-        },
-        {
-          "title": "CPCB — Instruction Sheet for PWPs: GST e-invoice required for certificate generation",
-          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf",
-          "date": "2025-04"
-        },
-        {
-          "title": "TeamLease RegTech — CPCB instruction sheet for uploading sales transactions via the CEPP app",
-          "url": "https://teamleaseregtech.com/updates/article/41387/cpcb-issued-an-instruction-sheet-for-uploading-sales-transactions-usin/",
-          "date": "2025-04-07"
-        },
-        {
-          "title": "CPCB — FAQs under E-Waste (Management) Rules, 2022 (informal-sector receipt with name and address)",
-          "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
-          "date": "2024-01-23"
-        },
-        {
-          "title": "Enviliance ASIA — Four supplementary CPCB documents incl. bulk upload provision and SOP",
-          "url": "https://enviliance.com/regions/south-asia/in/report_10400",
-          "date": "2023-06-28"
-        },
-        {
-          "title": "CPCB — Plastic waste technical guidelines page (no 2026 verification guideline listed as of check)",
-          "url": "https://cpcb.gov.in/technical-guidelines-3/",
-          "date": "2026-09-29"
-        },
-        {
-          "title": "PIB — Solid Waste Management Rules, 2026 notified; in force 1 April 2026",
-          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676",
-          "date": "2026-01-28"
-        },
-        {
-          "title": "Complinity — Centralised portal for Bulk Waste Generator registration live from 31 May 2026",
-          "url": "https://complinity.com/legal-update/centralised-portal-for-registration-of-bulk-waste-generators-bwgs-notified-24580/",
-          "date": "2026-06-03"
-        },
-        {
-          "title": "LiveLaw — Plastic Waste Management (Amendment) Rules, 2026 explained",
-          "url": "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015",
-          "date": "2026"
-        },
-        {
-          "title": "EcoEx — Integration between e-waste marketplaces and CPCB EPR systems (no CPCB public API described)",
-          "url": "https://ecoex.market/technical-integration-of-data-between-e-waste-marketplaces-and-cpcb-epr-systems/",
-          "date": "2026-02-19"
-        }
-      ]
+     "title": "CPCB — Guidelines on Authorization of EPRETP Operator and Functioning of EPRETP (PDF)",
+     "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
+     "date": "2024-12-31"
     },
     {
-      "question": "Are EPR regimes for non-ferrous metal scrap and for construction and demolition waste in force in 2026, and do they cover kabadiwala metal trades (copper, aluminium, brass)? What did the Delhi High Court decide on the e-waste EPR floor price (₹22/kg)? What are the current recycled-content requirements for plastic packaging after the 2024–2026 amendments?",
-      "answer": "Non-ferrous EPR is in force in law but not in practice. The Hazardous and Other Wastes (Management and Transboundary Movement) Amendment Rules, 2025 (G.S.R. 438(E), 1 July 2025) added Chapter VIII on EPR for scrap of aluminium, copper, zinc \"and their alloys\" (so brass is covered; ferrous scrap is not) from 1 April 2026, requiring manufacturers, producers, collection agents, refurbishers and recyclers to register on a CPCB portal, letting bulk consumers (1,000 tonnes or more a year) hand scrap only to registered entities, and setting producer recycling targets of 10% (2026-27) rising to 30% (2028-29), 50% (2030-31) and 75% (2032-33 onwards), with recycled-content minimums of 5% in 2028-29 rising to 10% aluminium, 20% copper and 25% zinc by 2031-32. A kabadiwala buying copper, aluminium or brass scrap and selling it on is, on the text, a \"collection agent\" (an entity that collects non-ferrous scrap and supplies it to registered recyclers, uploading transactions) and no small-trader threshold has been published, but Business Standard reported on 20 September 2026 that the CPCB non-ferrous portal is still not operational despite the 1 October 2026 deadline in Rule 50(3), the \"average product life\" parameter needed to compute targets is unpublished, first half-yearly returns fall due 31 October 2026, and Rule 50(4) lets the Centre relax filing by up to nine months, so nobody, kabadiwalas included, can currently register or be penalised for not registering. C&D EPR is also in force: the Environment (Construction and Demolition) Waste Management Rules, 2025 (G.S.R. 219(E), April 2025) apply from 1 April 2026 only to projects of 20,000 sq m or more (25% of prior-year waste recycled in 2025-26 rising to 100% from 2028-29; 5% recycled materials in construction in 2026-27 rising to 25% in 2030-31), with producer and recycler registration on cdwm.cpcb.gov.in (dashboard still showing zeros) and metals expressly outside the EPR base (resalable iron, wood, plastic and glass are excluded and managed under other rules), so C&D EPR does not reach kabadiwala metal trades. On the ₹22/kg e-waste floor (the E-Waste (Management) Amendment Rules, 2024 of 8 March 2024 tied certificate prices to 30–100% of environmental compensation, which CPCB set so consumer electronics floor at ₹22/kg), the Delhi High Court has decided nothing final: petitions filed from April 2025 by Daikin, Voltas, Samsung, LG, Havells, Blue Star and later Carrier (Hitachi withdrew) were opposed by the Centre on 8 July 2025; on 24 December 2025 the court stayed, for Blue Star, CPCB's 12 December 2025 requirement that buyers and sellers self-attest compliance with the floor and listed the matter for 27 January 2026; as of the latest report found (13 June 2026) there is no judgment and the floor remains operative, with recyclers pricing at ₹22/kg while some producers ran reverse auctions as low as ₹5.9/kg. Recycled content after the 31 March 2026 amendment: producers, importers and brand owners must use recycled plastic in packaging at Category I (rigid) 30% in 2025-26, 40% in 2026-27, 50% in 2027-28 and 60% from 2028-29; Category II (flexible) 10%, 10%, 20%, 20%; Category III (multi-layer) 5%, 5%, 10%, 10% counted on the plastic layers only; exemptions apply where FSSAI, CDSCO, the Central Insecticide Board or a mandatory Indian Standard forbids recycled content (proof filed in the annual return); the 2025-26 shortfall for food-contact packaging can be carried forward over three years from 2026-27 with at least one-third cleared each year; importers cannot count recycled content in imported material and must buy certificates from PIBOs that exceed targets on an exchange CPCB is to build; and Rule 11(2) now mandates IS 14534:2023 labelling of recycled content. The 14 March 2024 amendment (G.S.R. 201(E)) changed only definitions and compostable/biodegradable labelling, not these targets.",
-      "status": "partly",
-      "decision": "For the pilot, record copper, aluminium, brass and zinc lots as ordinary scrap trades tagged \"non-ferrous EPR-relevant\" (weight, price, buyer, seller) so they can be reported if CPCB opens collection-agent registration; promise no metal EPR certificates; leave C&D out of scope; and keep any e-waste certificate revenue assumption at the ₹22/kg floor until the Delhi High Court rules.",
-      "whoToAsk": "Counsel (or a Delhi High Court case-status check on the Havells/Voltas/Blue Star petitions) for the e-waste ruling; CPCB's hazardous-waste division or KSPCB on whether small scrap dealers will be treated as collection agents and whether any threshold or SOP will apply once the non-ferrous portal opens.",
-      "sources": [
-        {
-          "title": "Business Standard — Non-ferrous scrap EPR regime faces portal, target-calculation gaps",
-          "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html",
-          "date": "2026-09-20"
-        },
-        {
-          "title": "GPC Gateway — New EPR rules for non-ferrous products in India (G.S.R. 438(E), 1 July 2025)",
-          "url": "https://gpcgateway.com/regulatory-regions/india/news-detail/new-epr-rules-announced-for-non-ferrous-products-in-india-MjA0NQ==",
-          "date": "2025-07-31"
-        },
-        {
-          "title": "SCC Online — Digital portal to drive EPR in Hazardous Waste Rules 2025 amendment",
-          "url": "https://www.scconline.com/blog/post/2025/07/04/hazardous-waste-management-rules-epr-amendment-2025/",
-          "date": "2025-07-04"
-        },
-        {
-          "title": "Sarthak Law — ESG update: EPR rules for scrap of non-ferrous metals",
-          "url": "https://sarthaklaw.com/esg-update-epr-rules-for-the-scrap-of-non-ferrous-metals/",
-          "date": "2025-07-14"
-        },
-        {
-          "title": "Karparivartan — EPR registration certificate for non-ferrous metals (definitions, Schedule XI targets)",
-          "url": "https://www.karparivartan.com/epr-registration-certificate-for-non-ferrous-metals/",
-          "date": "2026-08-07"
-        },
-        {
-          "title": "Recirculytics — Non-ferrous metal scrap EPR compliance (recycled-content table by metal)",
-          "url": "https://recirculytics.com/non-fe/"
-        },
-        {
-          "title": "TeamLease RegTech — MSPCB notice on implementation of non-ferrous EPR (collection agent duties)",
-          "url": "https://www.teamleaseregtech.com/updates/article/55118/mspcb-notified-regarding-the-implementation-of-epr-framework-for-non-f/",
-          "date": "2026-04-23"
-        },
-        {
-          "title": "Enviliance ASIA — India publishes EPR rules for C&D waste, effective April 2026",
-          "url": "https://enviliance.com/regions/south-asia/in/report_13452",
-          "date": "2025-05-02"
-        },
-        {
-          "title": "TeamLease RegTech — Environment (Construction and Demolition) Waste Management Rules, 2025 (G.S.R. 219(E))",
-          "url": "https://www.teamleaseregtech.com/updates/article/41401/environment-construction-and-demolition-waste-management-rules-2025/",
-          "date": "2025-04-04"
-        },
-        {
-          "title": "Corporate Professionals — C&D Waste Management Rules 2025 (metals excluded from EPR base)",
-          "url": "https://www.corporateprofessionals.com/regulatoryupdate/environment-construction-and-demolition-waste-management-rules-2025/",
-          "date": "2025-04"
-        },
-        {
-          "title": "CPCB — Construction & Demolition Waste Management portal",
-          "url": "https://cdwm.cpcb.gov.in/",
-          "date": "2026-09-29"
-        },
-        {
-          "title": "Business Standard — Daikin, Hitachi, Voltas sue Centre over e-waste recycling rules",
-          "url": "https://www.business-standard.com/industry/news/daikin-hitachi-voltas-sue-centre-over-its-new-e-waste-recycling-rules-125041101170_1.html",
-          "date": "2025-04-11"
-        },
-        {
-          "title": "Newslaundry — Hitachi venture allows e-waste recycling bids far below govt price",
-          "url": "https://www.newslaundry.com/2025/06/27/hitachi-venture-allows-e-waste-recycling-bids-far-below-govt-price",
-          "date": "2025-06-27"
-        },
-        {
-          "title": "Informist — No evidence of arbitrariness in e-waste policy, govt tells HC",
-          "url": "https://informistmedia.com/MoneyWire/31838/E-Waste-Policy-No-evidence-of-arbitrariness-in-electronic-waste-policy-govt-tells-HC",
-          "date": "2025-07-08"
-        },
-        {
-          "title": "Context (Thomson Reuters Foundation) — Why are electronics giants taking India's e-waste rules to court?",
-          "url": "https://www.context.news/just-transition/why-are-electronics-giants-taking-indias-e-waste-rules-to-court",
-          "date": "2025-10-28"
-        },
-        {
-          "title": "Newslaundry — Blue Star gets temporary relief as Delhi HC stays regulator's e-waste price declaration",
-          "url": "https://www.newslaundry.com/2026/01/14/blue-star-gets-temporary-relief-as-delhi-hc-stays-regulators-e-waste-price-declaration",
-          "date": "2026-01-14"
-        },
-        {
-          "title": "GreenSutra — E-Waste EPR explained 2026 (no final judgment as of June 2026)",
-          "url": "https://greensutra.in/news/e-waste-epr-explained-2026/",
-          "date": "2026-06-13"
-        },
-        {
-          "title": "Gazette — Plastic Waste Management (Amendment) Rules, 2026, G.S.R. 237(E) (recycled-content tables)",
-          "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Plastic_Waste_Management_2026.pdf",
-          "date": "2026-03-31"
-        },
-        {
-          "title": "SCC Online — MoEF notifies Plastic Waste Management (Amendment) Rules, 2024",
-          "url": "https://www.scconline.com/blog/post/2024/03/17/moef-notifies-plastic-waste-management-amendment-rules-2024-legal-news/",
-          "date": "2024-03-17"
-        }
-      ]
+     "title": "Lexplosion — CPCB issues guidelines for authorization of EPRETP operator",
+     "url": "https://lexplosion.in/cpcb-issues-guidelines-for-authorization-of-extended-producer-responsibility-electronic-trading-and-settlement-platform-operator-obligated-entities-having-epr-obligation-not-to-be-empanelled-as-etp-p/",
+     "date": "2025-01-15"
+    },
+    {
+     "title": "Envirosense — EPRETP Exchange: viewing/KYC only, live trading 'shortly'",
+     "url": "https://envirosense.in/electronic-trading-and-settlement-platform-epr/",
+     "date": "2026-02-04"
+    },
+    {
+     "title": "Enviliance ASIA — India develops common EPR portal and certificate trading platform",
+     "url": "https://enviliance.com/regions/south-asia/in/report_15482",
+     "date": "2026-02"
+    },
+    {
+     "title": "Avigroup — EPR-ETP Portal India: Rumour or Reality? (no launch date announced)",
+     "url": "https://avigroup.in/2026/03/26/epr-etp-portal-india-rumour-or-reality/",
+     "date": "2026-03-26"
+    },
+    {
+     "title": "EPR Solutions — EPR certificates explained: bilateral portal transfers remain available, EPRETP not mandatory",
+     "url": "https://eprsolutions.in/blog/epr-certificates-explained-issuance-and-trading",
+     "date": "2026-06"
+    },
+    {
+     "title": "Karparivartan — CPCB migrates plastic packaging EPR to the Common EPR Portal (old portal off 28 June 2026)",
+     "url": "https://www.karparivartan.com/cpcb-migrates-plastic-packaging-epr-to-the-common-epr-portal/",
+     "date": "2026-08-10"
+    },
+    {
+     "title": "Multibagg — MSTC Q1 FY27: operationalisation needs formal government notification",
+     "url": "https://www.multibagg.ai/market-pulse/articles/mstc-q1fy27-98133",
+     "date": "2026-08-13"
+    },
+    {
+     "title": "Business Standard — Non-ferrous scrap EPR regime faces portal, target-calculation gaps",
+     "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html",
+     "date": "2026-09-20"
     }
-  ]
+   ]
+  },
+  {
+   "question": "What evidence do CPCB's verification guidelines under the 31 March 2026 plastic amendment (and Registered Environment Auditors) require from processors, and does the plastic EPR portal accept receipts without GST for purchases from informal collectors, as the e-waste portal does? Do the CPCB EPR and SWM portals accept bulk uploads or API connections?",
+   "answer": "The Plastic Waste Management (Amendment) Rules, 2026 (G.S.R. 237(E), 31 March 2026) list no new evidence themselves: they insert \"or Registered Environment Auditor\" after \"designated agency\" in Rule 17(5) and Schedule II paragraphs 12.4 and 13.1, define an REA by reference to the Environment Audit Rules, 2025 (S.O. 3973(E), 29 August 2025), and order CPCB to prescribe a \"guideline for audit and verification for use of recycled content\" within six months, i.e. by 30 September 2026; as of 29 September 2026 no such guideline appears on CPCB's plastic-waste guidelines page, so this is an open item. An REA is a certified auditor (or a firm of two or more) registered with the Environment Audit Designated Agency and assigned by random allocation, and the 2025 rules expressly cover audits \"under the Extended Producer Responsibility framework\" including the plastic, e-waste and battery rules (PIB, 3 September 2025). The evidence a processor must hold today is what the CPCB portal already demands: for each plastic-waste purchase the recycler enters supplier name and address, category, quantity, date and the supplier's GST number, and CPCB's Guidance Manual (February 2023, section 3.2.1) says \"if GST is not available then PAN/Aadhar of supplier has to be provided\" (GST is mandatory only for waste-to-energy, waste-to-oil and co-processors), with a \"copy of invoice/GST e-invoice (as applicable as per GST Act)\" uploaded; CPCB's third-party audit checklist then samples procurement records from both registered and unregistered suppliers, checks GST, e-way bills and e-invoices, and requires a site visit with \"transaction receipts, source of procurement, transportation details\" plus photos or videos. So the plastic portal does accept non-GST purchase receipts from informal collectors identified by PAN or Aadhaar, the same posture as the e-waste portal, whose CPCB FAQ of 23 January 2024 says informal-sector purchases need \"any sales receipt having name and address of the seller\"; the difference is that plastic certificate generation is locked to the recycler's output sale, for which since April 2025 PWPs must upload a GSTN-validated GST e-invoice (IRN and QR code) before the portal issues certificates. On uploads: the plastic portal has a bulk-upload option for procurement or sales from a single counterparty (Excel format with two-year totals plus one PDF), CPCB added a bulk transaction-upload provision with an SOP for PIBOs in 2023, and a CEPP mobile app (April 2025) lets users scan e-invoice QR codes, while PWP purchase entries are single-entry in the manual. No public API exists for any CPCB EPR portal (the only APIs documented are \"secured APIs\" between the CPCB portal and the EPRETP exchange), and the SWM portal (swm.cpcb.gov.in, live for bulk-waste-generator registration since 31 May 2026 under the SWM Rules 2026 in force from 1 April 2026) documents neither bulk upload nor API.",
+   "status": "partly",
+   "decision": "Build receipts to the strictest existing checklist rather than wait for the guideline: every purchase from an informal collector records seller name, address, mobile, PAN or masked Aadhaar, date, category, weight, price and a photo of the paper receipt; every recycler-side sale carries a GST e-invoice number/IRN; transactions export as CSV/Excel in the CPCB bulk-upload column layout; API integration is out of scope for the pilot.",
+   "whoToAsk": "CPCB WM-III / EPR portal helpdesk for whether the recycled-content verification guideline has issued and whether any API exists; a CA for GST treatment (reverse charge, e-way bill thresholds) of purchases from unregistered kabadiwalas.",
+   "sources": [
+    {
+     "title": "Gazette — Plastic Waste Management (Amendment) Rules, 2026, G.S.R. 237(E) (MPCB copy)",
+     "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Plastic_Waste_Management_2026.pdf",
+     "date": "2026-03-31"
+    },
+    {
+     "title": "Gazette — Environment Audit Rules, 2025, S.O. 3973(E)",
+     "url": "https://egazette.gov.in/writeReadData/2025/265833.pdf",
+     "date": "2025-08-29"
+    },
+    {
+     "title": "PIB — Government brings major reform: Environment Audit Rules, 2025",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163488",
+     "date": "2025-09-03"
+    },
+    {
+     "title": "CPCB — Guidance Manual for Centralized EPR Portal for Plastic Packaging (PAN/Aadhaar if no GST; bulk upload; audit checklist)",
+     "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
+     "date": "2023-02"
+    },
+    {
+     "title": "CPCB — Instruction Sheet for PWPs: GST e-invoice required for certificate generation",
+     "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf",
+     "date": "2025-04"
+    },
+    {
+     "title": "TeamLease RegTech — CPCB instruction sheet for uploading sales transactions via the CEPP app",
+     "url": "https://teamleaseregtech.com/updates/article/41387/cpcb-issued-an-instruction-sheet-for-uploading-sales-transactions-usin/",
+     "date": "2025-04-07"
+    },
+    {
+     "title": "CPCB — FAQs under E-Waste (Management) Rules, 2022 (informal-sector receipt with name and address)",
+     "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+     "date": "2024-01-23"
+    },
+    {
+     "title": "Enviliance ASIA — Four supplementary CPCB documents incl. bulk upload provision and SOP",
+     "url": "https://enviliance.com/regions/south-asia/in/report_10400",
+     "date": "2023-06-28"
+    },
+    {
+     "title": "CPCB — Plastic waste technical guidelines page (no 2026 verification guideline listed as of check)",
+     "url": "https://cpcb.gov.in/technical-guidelines-3/",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "PIB — Solid Waste Management Rules, 2026 notified; in force 1 April 2026",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676",
+     "date": "2026-01-28"
+    },
+    {
+     "title": "Complinity — Centralised portal for Bulk Waste Generator registration live from 31 May 2026",
+     "url": "https://complinity.com/legal-update/centralised-portal-for-registration-of-bulk-waste-generators-bwgs-notified-24580/",
+     "date": "2026-06-03"
+    },
+    {
+     "title": "LiveLaw — Plastic Waste Management (Amendment) Rules, 2026 explained",
+     "url": "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015",
+     "date": "2026"
+    },
+    {
+     "title": "EcoEx — Integration between e-waste marketplaces and CPCB EPR systems (no CPCB public API described)",
+     "url": "https://ecoex.market/technical-integration-of-data-between-e-waste-marketplaces-and-cpcb-epr-systems/",
+     "date": "2026-02-19"
+    }
+   ]
+  },
+  {
+   "question": "Are EPR regimes for non-ferrous metal scrap and for construction and demolition waste in force in 2026, and do they cover kabadiwala metal trades (copper, aluminium, brass)? What did the Delhi High Court decide on the e-waste EPR floor price (₹22/kg)? What are the current recycled-content requirements for plastic packaging after the 2024–2026 amendments?",
+   "answer": "Non-ferrous EPR is in force in law but not in practice. The Hazardous and Other Wastes (Management and Transboundary Movement) Amendment Rules, 2025 (G.S.R. 438(E), 1 July 2025) added Chapter VIII on EPR for scrap of aluminium, copper, zinc \"and their alloys\" (so brass is covered; ferrous scrap is not) from 1 April 2026, requiring manufacturers, producers, collection agents, refurbishers and recyclers to register on a CPCB portal, letting bulk consumers (1,000 tonnes or more a year) hand scrap only to registered entities, and setting producer recycling targets of 10% (2026-27) rising to 30% (2028-29), 50% (2030-31) and 75% (2032-33 onwards), with recycled-content minimums of 5% in 2028-29 rising to 10% aluminium, 20% copper and 25% zinc by 2031-32. A kabadiwala buying copper, aluminium or brass scrap and selling it on is, on the text, a \"collection agent\" (an entity that collects non-ferrous scrap and supplies it to registered recyclers, uploading transactions) and no small-trader threshold has been published, but Business Standard reported on 20 September 2026 that the CPCB non-ferrous portal is still not operational despite the 1 October 2026 deadline in Rule 50(3), the \"average product life\" parameter needed to compute targets is unpublished, first half-yearly returns fall due 31 October 2026, and Rule 50(4) lets the Centre relax filing by up to nine months, so nobody, kabadiwalas included, can currently register or be penalised for not registering. C&D EPR is also in force: the Environment (Construction and Demolition) Waste Management Rules, 2025 (G.S.R. 219(E), April 2025) apply from 1 April 2026 only to projects of 20,000 sq m or more (25% of prior-year waste recycled in 2025-26 rising to 100% from 2028-29; 5% recycled materials in construction in 2026-27 rising to 25% in 2030-31), with producer and recycler registration on cdwm.cpcb.gov.in (dashboard still showing zeros) and metals expressly outside the EPR base (resalable iron, wood, plastic and glass are excluded and managed under other rules), so C&D EPR does not reach kabadiwala metal trades. On the ₹22/kg e-waste floor (the E-Waste (Management) Amendment Rules, 2024 of 8 March 2024 tied certificate prices to 30–100% of environmental compensation, which CPCB set so consumer electronics floor at ₹22/kg), the Delhi High Court has decided nothing final: petitions filed from April 2025 by Daikin, Voltas, Samsung, LG, Havells, Blue Star and later Carrier (Hitachi withdrew) were opposed by the Centre on 8 July 2025; on 24 December 2025 the court stayed, for Blue Star, CPCB's 12 December 2025 requirement that buyers and sellers self-attest compliance with the floor and listed the matter for 27 January 2026; as of the latest report found (13 June 2026) there is no judgment and the floor remains operative, with recyclers pricing at ₹22/kg while some producers ran reverse auctions as low as ₹5.9/kg. Recycled content after the 31 March 2026 amendment: producers, importers and brand owners must use recycled plastic in packaging at Category I (rigid) 30% in 2025-26, 40% in 2026-27, 50% in 2027-28 and 60% from 2028-29; Category II (flexible) 10%, 10%, 20%, 20%; Category III (multi-layer) 5%, 5%, 10%, 10% counted on the plastic layers only; exemptions apply where FSSAI, CDSCO, the Central Insecticide Board or a mandatory Indian Standard forbids recycled content (proof filed in the annual return); the 2025-26 shortfall for food-contact packaging can be carried forward over three years from 2026-27 with at least one-third cleared each year; importers cannot count recycled content in imported material and must buy certificates from PIBOs that exceed targets on an exchange CPCB is to build; and Rule 11(2) now mandates IS 14534:2023 labelling of recycled content. The 14 March 2024 amendment (G.S.R. 201(E)) changed only definitions and compostable/biodegradable labelling, not these targets.",
+   "status": "partly",
+   "decision": "For the pilot, record copper, aluminium, brass and zinc lots as ordinary scrap trades tagged \"non-ferrous EPR-relevant\" (weight, price, buyer, seller) so they can be reported if CPCB opens collection-agent registration; promise no metal EPR certificates; leave C&D out of scope; and keep any e-waste certificate revenue assumption at the ₹22/kg floor until the Delhi High Court rules.",
+   "whoToAsk": "Counsel (or a Delhi High Court case-status check on the Havells/Voltas/Blue Star petitions) for the e-waste ruling; CPCB's hazardous-waste division or KSPCB on whether small scrap dealers will be treated as collection agents and whether any threshold or SOP will apply once the non-ferrous portal opens.",
+   "sources": [
+    {
+     "title": "Business Standard — Non-ferrous scrap EPR regime faces portal, target-calculation gaps",
+     "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html",
+     "date": "2026-09-20"
+    },
+    {
+     "title": "GPC Gateway — New EPR rules for non-ferrous products in India (G.S.R. 438(E), 1 July 2025)",
+     "url": "https://gpcgateway.com/regulatory-regions/india/news-detail/new-epr-rules-announced-for-non-ferrous-products-in-india-MjA0NQ==",
+     "date": "2025-07-31"
+    },
+    {
+     "title": "SCC Online — Digital portal to drive EPR in Hazardous Waste Rules 2025 amendment",
+     "url": "https://www.scconline.com/blog/post/2025/07/04/hazardous-waste-management-rules-epr-amendment-2025/",
+     "date": "2025-07-04"
+    },
+    {
+     "title": "Sarthak Law — ESG update: EPR rules for scrap of non-ferrous metals",
+     "url": "https://sarthaklaw.com/esg-update-epr-rules-for-the-scrap-of-non-ferrous-metals/",
+     "date": "2025-07-14"
+    },
+    {
+     "title": "Karparivartan — EPR registration certificate for non-ferrous metals (definitions, Schedule XI targets)",
+     "url": "https://www.karparivartan.com/epr-registration-certificate-for-non-ferrous-metals/",
+     "date": "2026-08-07"
+    },
+    {
+     "title": "Recirculytics — Non-ferrous metal scrap EPR compliance (recycled-content table by metal)",
+     "url": "https://recirculytics.com/non-fe/"
+    },
+    {
+     "title": "TeamLease RegTech — MSPCB notice on implementation of non-ferrous EPR (collection agent duties)",
+     "url": "https://www.teamleaseregtech.com/updates/article/55118/mspcb-notified-regarding-the-implementation-of-epr-framework-for-non-f/",
+     "date": "2026-04-23"
+    },
+    {
+     "title": "Enviliance ASIA — India publishes EPR rules for C&D waste, effective April 2026",
+     "url": "https://enviliance.com/regions/south-asia/in/report_13452",
+     "date": "2025-05-02"
+    },
+    {
+     "title": "TeamLease RegTech — Environment (Construction and Demolition) Waste Management Rules, 2025 (G.S.R. 219(E))",
+     "url": "https://www.teamleaseregtech.com/updates/article/41401/environment-construction-and-demolition-waste-management-rules-2025/",
+     "date": "2025-04-04"
+    },
+    {
+     "title": "Corporate Professionals — C&D Waste Management Rules 2025 (metals excluded from EPR base)",
+     "url": "https://www.corporateprofessionals.com/regulatoryupdate/environment-construction-and-demolition-waste-management-rules-2025/",
+     "date": "2025-04"
+    },
+    {
+     "title": "CPCB — Construction & Demolition Waste Management portal",
+     "url": "https://cdwm.cpcb.gov.in/",
+     "date": "2026-09-29"
+    },
+    {
+     "title": "Business Standard — Daikin, Hitachi, Voltas sue Centre over e-waste recycling rules",
+     "url": "https://www.business-standard.com/industry/news/daikin-hitachi-voltas-sue-centre-over-its-new-e-waste-recycling-rules-125041101170_1.html",
+     "date": "2025-04-11"
+    },
+    {
+     "title": "Newslaundry — Hitachi venture allows e-waste recycling bids far below govt price",
+     "url": "https://www.newslaundry.com/2025/06/27/hitachi-venture-allows-e-waste-recycling-bids-far-below-govt-price",
+     "date": "2025-06-27"
+    },
+    {
+     "title": "Informist — No evidence of arbitrariness in e-waste policy, govt tells HC",
+     "url": "https://informistmedia.com/MoneyWire/31838/E-Waste-Policy-No-evidence-of-arbitrariness-in-electronic-waste-policy-govt-tells-HC",
+     "date": "2025-07-08"
+    },
+    {
+     "title": "Context (Thomson Reuters Foundation) — Why are electronics giants taking India's e-waste rules to court?",
+     "url": "https://www.context.news/just-transition/why-are-electronics-giants-taking-indias-e-waste-rules-to-court",
+     "date": "2025-10-28"
+    },
+    {
+     "title": "Newslaundry — Blue Star gets temporary relief as Delhi HC stays regulator's e-waste price declaration",
+     "url": "https://www.newslaundry.com/2026/01/14/blue-star-gets-temporary-relief-as-delhi-hc-stays-regulators-e-waste-price-declaration",
+     "date": "2026-01-14"
+    },
+    {
+     "title": "GreenSutra — E-Waste EPR explained 2026 (no final judgment as of June 2026)",
+     "url": "https://greensutra.in/news/e-waste-epr-explained-2026/",
+     "date": "2026-06-13"
+    },
+    {
+     "title": "Gazette — Plastic Waste Management (Amendment) Rules, 2026, G.S.R. 237(E) (recycled-content tables)",
+     "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Plastic_Waste_Management_2026.pdf",
+     "date": "2026-03-31"
+    },
+    {
+     "title": "SCC Online — MoEF notifies Plastic Waste Management (Amendment) Rules, 2024",
+     "url": "https://www.scconline.com/blog/post/2024/03/17/moef-notifies-plastic-waste-management-amendment-rules-2024-legal-news/",
+     "date": "2024-03-17"
+    }
+   ]
+  }
+ ]
 }

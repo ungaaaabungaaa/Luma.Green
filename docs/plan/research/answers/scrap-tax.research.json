@@ -1,177 +1,177 @@
 {
-  "cluster": "Tax on scrap: TCS, GST rates, HSN, metal-scrap TDS",
-  "answers": [
+ "cluster": "Tax on scrap: TCS, GST rates, HSN, metal-scrap TDS",
+ "answers": [
+  {
+   "question": "Did the Finance Act 2026 enact the 2% income-tax TCS on the sale of scrap (up from 1%)? Which sellers are covered (turnover thresholds), and does the exemption for buyers who use scrap in manufacturing survive under the Income-tax Act 2025? Which section carries it now?",
+   "answer": "Yes. The Finance Act, 2026 (No. 4 of 2026) received the President's assent on 30 March 2026, and its section 85 amends the Table in section 394(1) of the Income-tax Act, 2025 so that against Sl. No. 4 ('Sale of scrap', collected by the seller) '1%' is replaced by '2%'; under section 1(2)(a) of the Act this is in force from 1 April 2026 (the same clause was Clause 73 of the Finance Bill introduced on 1 February 2026 and was carried through unchanged). TCS on scrap is therefore now section 394(1), Table Sl. No. 4, at 2% of the amount debited or received, whichever is earlier; the old section 206C(1) of the 1961 Act is repealed. 'Seller' is defined in section 402(33): the Central or State Government, a local authority, a corporation or authority set up by statute, a company, a firm, a co-operative society, and an individual or HUF only if total sales/gross receipts/turnover from business exceeded Rs 1 crore (Rs 50 lakh for a profession) in the immediately preceding tax year — so a sole-proprietor kabadiwala below Rs 1 crore is not a 'seller' and collects nothing, while a yard or recycler that is a firm or company always is. 'Buyer' (section 402(6)) excludes public sector companies, the Central and State Governments, foreign embassies/missions, clubs, and a person buying in retail for personal consumption. The manufacturing exemption survives: section 394(2) says no tax shall be collected from a resident buyer who furnishes a written declaration in duplicate that the goods are for manufacturing, processing or producing articles or things or for generating power and not for trading; section 394(3) makes the seller deliver one copy to the Principal Chief Commissioner/Commissioner by the 7th of the following month. The declaration is now Form No. 127 under Rule 212 of the Income-tax Rules, 2026 (it replaces Form 27C), and the buyer's PAN is mandatory or the form is invalid. Whether TCS applies at all to post-consumer material depends on the definition of 'scrap' — see question 2.",
+   "status": "answered",
+   "decision": "Model TCS as a seller-side flag: off for individual/HUF sellers under Rs 1 crore prior-year turnover, on for firms/companies; when on and the material is 'scrap', collect 2% from 1 April 2026 unless the buyer has a valid Form 127 on file (store the form and PAN per buyer). Ask the CA to confirm whether the 2% is charged on the GST-inclusive invoice value and how it interacts with buyer-side TDS on purchase of goods under section 393(1).",
+   "whoToAsk": "The CA (GST-inclusive base for TCS, interplay with section 393(1) TDS, higher rate where a buyer has no PAN).",
+   "sources": [
     {
-      "question": "Did the Finance Act 2026 enact the 2% income-tax TCS on the sale of scrap (up from 1%)? Which sellers are covered (turnover thresholds), and does the exemption for buyers who use scrap in manufacturing survive under the Income-tax Act 2025? Which section carries it now?",
-      "answer": "Yes. The Finance Act, 2026 (No. 4 of 2026) received the President's assent on 30 March 2026, and its section 85 amends the Table in section 394(1) of the Income-tax Act, 2025 so that against Sl. No. 4 ('Sale of scrap', collected by the seller) '1%' is replaced by '2%'; under section 1(2)(a) of the Act this is in force from 1 April 2026 (the same clause was Clause 73 of the Finance Bill introduced on 1 February 2026 and was carried through unchanged). TCS on scrap is therefore now section 394(1), Table Sl. No. 4, at 2% of the amount debited or received, whichever is earlier; the old section 206C(1) of the 1961 Act is repealed. 'Seller' is defined in section 402(33): the Central or State Government, a local authority, a corporation or authority set up by statute, a company, a firm, a co-operative society, and an individual or HUF only if total sales/gross receipts/turnover from business exceeded Rs 1 crore (Rs 50 lakh for a profession) in the immediately preceding tax year — so a sole-proprietor kabadiwala below Rs 1 crore is not a 'seller' and collects nothing, while a yard or recycler that is a firm or company always is. 'Buyer' (section 402(6)) excludes public sector companies, the Central and State Governments, foreign embassies/missions, clubs, and a person buying in retail for personal consumption. The manufacturing exemption survives: section 394(2) says no tax shall be collected from a resident buyer who furnishes a written declaration in duplicate that the goods are for manufacturing, processing or producing articles or things or for generating power and not for trading; section 394(3) makes the seller deliver one copy to the Principal Chief Commissioner/Commissioner by the 7th of the following month. The declaration is now Form No. 127 under Rule 212 of the Income-tax Rules, 2026 (it replaces Form 27C), and the buyer's PAN is mandatory or the form is invalid. Whether TCS applies at all to post-consumer material depends on the definition of 'scrap' — see question 2.",
-      "status": "answered",
-      "decision": "Model TCS as a seller-side flag: off for individual/HUF sellers under Rs 1 crore prior-year turnover, on for firms/companies; when on and the material is 'scrap', collect 2% from 1 April 2026 unless the buyer has a valid Form 127 on file (store the form and PAN per buyer). Ask the CA to confirm whether the 2% is charged on the GST-inclusive invoice value and how it interacts with buyer-side TDS on purchase of goods under section 393(1).",
-      "whoToAsk": "The CA (GST-inclusive base for TCS, interplay with section 393(1) TDS, higher rate where a buyer has no PAN).",
-      "sources": [
-        {
-          "title": "The Finance Act, 2026 (No. 4 of 2026) — Gazette of India, section 85 amending section 394",
-          "url": "https://egazette.gov.in/WriteReadData/2026/271439.pdf",
-          "date": "2026-03-30"
-        },
-        {
-          "title": "Finance Bill, 2026 as introduced in Lok Sabha — Clause 73 and Notes on Clauses",
-          "url": "https://www.indiabudget.gov.in/doc/Finance_Bill.pdf",
-          "date": "2026-02-01"
-        },
-        {
-          "title": "Taxmann — Finance Act 2026 receives assent of the President",
-          "url": "https://www.taxmann.com/post/blog/finance-act-receives-assent-of-the-president",
-          "date": "2026-04-01"
-        },
-        {
-          "title": "TaxGuru — TCS rates rationalised to uniform 2% from 1 April 2026 (memorandum text)",
-          "url": "https://taxguru.in/income-tax/tcs-rates-rationalised-uniform-2-percent-1st-april-2026.html",
-          "date": "2026-02-02"
-        },
-        {
-          "title": "Section 394(1), Income Tax Act 2025 (text before amendment)",
-          "url": "https://indiankanoon.org/doc/143682200/",
-          "date": "2025-08-21"
-        },
-        {
-          "title": "Section 394, Income-tax Act 2025 — sub-sections (2) and (3) declaration text",
-          "url": "https://eztax.in/income-tax-act-2025/section-394",
-          "date": "2025-08-21"
-        },
-        {
-          "title": "Section 402, Income-tax Act 2025 — definitions of buyer (6), scrap (31), seller (33)",
-          "url": "https://eztax.in/income-tax-act-2025/section-402",
-          "date": "2025-08-21"
-        },
-        {
-          "title": "TDSMAN — TCS on sale of specified goods, section 394(1), 2% on scrap, Form 127",
-          "url": "https://blog.tdsman.com/2026/05/tcs-on-sale-of-specified-goods-section-3941-206c1/",
-          "date": "2026-05-28"
-        },
-        {
-          "title": "TaxGuru — Form 127 buyer declaration under section 394(2) and Rule 212, Income-tax Rules 2026",
-          "url": "https://taxguru.in/income-tax/income-tax-form-127-buyer-declaration-avoid-tcs-goods-manufacturing.html",
-          "date": "2026-03-26"
-        }
-      ]
+     "title": "The Finance Act, 2026 (No. 4 of 2026) — Gazette of India, section 85 amending section 394",
+     "url": "https://egazette.gov.in/WriteReadData/2026/271439.pdf",
+     "date": "2026-03-30"
     },
     {
-      "question": "Does the Act's definition of 'scrap' cover post-consumer recyclables that yards sell, such as newspaper, PET bottles and cartons?",
-      "answer": "Probably not, but it is not settled by statute or circular. Section 402(31) of the Income-tax Act, 2025 defines scrap word-for-word as the 1961 Act did: 'waste and scrap from the manufacture or mechanical working of materials which is definitely not usable as such because of breakage, cutting up, wear and other reasons' — two conditions, an origin in manufacture or mechanical working and unusability as such. Old newspapers, PET bottles, cartons, glass bottles and rags come from consumption, not from a manufacturing process, and are bought precisely because they are usable as raw material, so on the plain words they fall outside the definition. The courts have mostly read it that way: the Gujarat High Court in CIT (TDS) v. Priya Blue Industries (Tax Appeal 604 of 2015, 3 November 2015) held that items usable as such are not scrap even if the trade calls them scrap and that the material must arise from manufacture or mechanical working; ITAT Ahmedabad in Dhasawala Traders (1 September 2016), ITAT Lucknow in Lala Bharat Lal & Sons (ITA 14-16/LKW/2019, 19 February 2020) and another ITAT bench in March 2020 held that a mere trader whose scrap did not arise from manufacture need not collect TCS; and the Madras High Court in Adisankara Spinning Mills (2010) treated cotton waste bought as raw material as not scrap. The contrary view is the Rajkot Special Bench in Bharti Auto Products v. CIT (2013) 145 ITD 1, which held traders liable regardless of source; later tribunals have followed the High Court over the Special Bench, but there is no CBDT circular on post-consumer recyclables and no ruling on kabadiwala material specifically. Two caveats matter for the pilot: metal scrap sold by a yard often does originate in mechanical working (industrial offcuts, turnings, broken machinery), so metal is the family most exposed to TCS; and since the definition is unchanged, all the 206C case law carries over to section 394.",
-      "status": "needs-pilot-or-counsel",
-      "decision": "Default: treat post-consumer paper, PET, cartons, glass and rags as outside 'scrap' (no TCS) and treat metal scrap sold by a firm/company yard as potentially in scope; neutralise the question wherever possible by collecting Form 127 from recycler and manufacturer buyers, and get a written opinion from tax counsel before the first yard-to-recycler metal sale above trivial value.",
-      "whoToAsk": "Tax counsel (written opinion on section 402(31) for post-consumer material and for yard metal sales), then the CA to set the per-material TCS flag.",
-      "sources": [
-        {
-          "title": "Section 402, Income-tax Act 2025 — clause (31) definition of scrap",
-          "url": "https://indiankanoon.org/doc/78786565/",
-          "date": "2025-08-21"
-        },
-        {
-          "title": "CIT (TDS) v. Priya Blue Industries Pvt Ltd — Gujarat High Court, Tax Appeal 604 of 2015",
-          "url": "https://www.casemine.com/judgement/in/56ea8dc3607dba377ff10d6b",
-          "date": "2015-11-03"
-        },
-        {
-          "title": "TaxHeal — Dhasawala Traders v. ITO (ITAT Ahmedabad): ship-breaking products usable as such are not scrap",
-          "url": "https://www.taxheal.com/products-generated-out-of-ship-breaking-is-not-scrap-not-liable-for-tcs-us-206c.html",
-          "date": "2016-10-09"
-        },
-        {
-          "title": "BCAJ — Lala Bharat Lal & Sons v. ITO (ITAT Lucknow): mere trader of scrap not liable under 206C",
-          "url": "https://bcajonline.org/journal/assessee-being-mere-trader-of-scrap-would-not-be-liable-to-collect-tax-at-source-u-s-206c-when-such-scrap-was-not-a-result-of-manufacture-or-mechanical-working-of-materials/",
-          "date": "2020-12-01"
-        },
-        {
-          "title": "ABCAUS — Scrap traders not liable to collect TCS if no manufacture involved (ITAT, March 2020)",
-          "url": "https://abcaus.in/income-tax/trader-scrap-not-liable-collect-tcs-us-206c-result-no-manufacture-involved.html",
-          "date": "2020-03-05"
-        },
-        {
-          "title": "TaxTMI — Meaning of scrap in the context of TCS (Adisankara Spinning Mills, Bharti Auto Products, old newspapers as raw material)",
-          "url": "https://www.taxtmi.com/article/detailed?id=5520",
-          "date": "2014-03-12"
-        },
-        {
-          "title": "TaxGuru — Every scrap sale is not liable to TCS (Bharti Auto Products Special Bench discussed)",
-          "url": "https://taxguru.in/income-tax/every-scrap-sale-is-not-liable-to-tax-collection-at-source-tcs.html",
-          "date": "2020-03-21"
-        }
-      ]
+     "title": "Finance Bill, 2026 as introduced in Lok Sabha — Clause 73 and Notes on Clauses",
+     "url": "https://www.indiabudget.gov.in/doc/Finance_Bill.pdf",
+     "date": "2026-02-01"
     },
     {
-      "question": "After the GST rate changes of 22 September 2025 (Notification 9/2025-CT(Rate)), which GST rate and HSN code apply to each material family: waste paper (4707), plastic scrap (3915), ferrous scrap (7204), copper/aluminium/brass scrap (7404/7602), glass cullet (7001), rags (6309/6310), e-waste (8549), batteries? Which value threshold applies to the 2% GST TDS on metal scrap under Notification 25/2024?",
-      "answer": "Notification 9/2025-Central Tax (Rate) dated 17 September 2025 (in force 22 September 2025) is now the single master rate schedule, and its text places the scrap families as follows: waste paper 4707 in Schedule I (2.5% CGST, so 5% GST, Sl. 317); glass cullet 7001 in Schedule I (5%, Sl. 406); worn clothing and rags 6309/6310 in Schedule I (5%, Sl. 391); plastic waste, parings and scrap 3915 in Schedule II (9% CGST, so 18% GST, Sl. 116); ferrous scrap 7204 (Sl. 263), copper scrap 7404 (Sl. 309, which also covers brass as a copper alloy), aluminium scrap 7602 (Sl. 331), plus nickel 7503, lead 7802, zinc 7902 and tin 8002 scrap, all in Schedule II at 18%; and electrical and electronic waste and scrap 8549 in Schedule II at 18% (Sl. 521). Batteries: all electric accumulators under 8507 (lead-acid, lithium-ion, others) are 18% from 22 September 2025 (Sl. 480) — the GST Council FAQ of 3 September 2025 confirms lithium-ion was already 18% and other batteries came down from 28% — and primary cells 8506 are 18% (Sl. 479); spent batteries sold as waste are classified under 8549 at 18%. None of the scrap headings changed on 22 September 2025 (the Council's HSN-wise change annexure lists no scrap entry), so note the history for plastic: 3915 was cut to 5% on 13 October 2017 (Notification 34/2017) but moved back to 18% on 1 October 2021 (Notification 8/2021, which omitted Schedule I entry 187A and inserted 101A in the 18% schedule), and e-waste went from 5% to 18% on 18 July 2022 (Notification 6/2022). Metal scrap has two extra rules since 10 October 2024: under Notification 6/2024-CT(Rate) a registered buyer who purchases metal scrap of Chapters 72-81 from an unregistered supplier pays the 18% GST under reverse charge with no threshold (so a registered yard buying from an unregistered kabadiwala self-pays the tax), and under Notification 25/2024-Central Tax (9 October 2024, G.S.R. 629(E)) a registered person receiving metal scrap of Chapters 72-81 from another registered person must deduct TDS under section 51 CGST Act at 2% (1% CGST + 1% SGST, or 2% IGST). The threshold is the one in section 51(1) itself: deduction applies 'where the total value of such supply, under a contract, exceeds two lakh and fifty thousand rupees', value taken excluding CGST/SGST/IGST/cess shown on the invoice, so Rs 2,50,000 per contract ex-GST, not per invoice (multiple invoices under one contract are aggregated); no deduction if the supplier's location and the place of supply are in a different State from the recipient's registration. The deductor must register separately in Form GST REG-07 (select 'Others' and type 'Metal Scrap Dealers', per the GSTN advisory of 22 October 2024), deposit by the 10th of the following month and file GSTR-7, with GSTR-7A as the certificate; the supplier gets the credit in its electronic cash ledger. This GST TDS is separate from, and additional to, the 2% income-tax TCS in question 1.",
-      "status": "answered",
-      "decision": "Hard-code a per-material table: 4707, 7001, 6309/6310 at 5%; 3915, 7204, 7404 (incl. brass), 7602, 7503/7802/7902/8002, 8549 and 8507/8506 at 18%; require every registered yard buying metal scrap from an unregistered seller to book reverse-charge GST, and flag any registered-to-registered metal contract whose ex-GST value passes Rs 2,50,000 for 2% GST TDS by the buyer. Ask the CA how a 'contract' is delimited for recurring spot purchases from the same supplier; until then treat a standing supply arrangement as one contract (aggregate its invoices).",
-      "whoToAsk": "The CA (definition of 'contract' for the Rs 2.5 lakh GST-TDS threshold in recurring purchases; REG-07 set-up for each yard).",
-      "sources": [
-        {
-          "title": "Notification No. 9/2025-Central Tax (Rate), Gazette copy — Schedules I and II entries for 3915, 4707, 6309/6310, 7001, 7204, 7404, 7602, 8506, 8507, 8549",
-          "url": "https://cdn.taxo.online/wp-content/uploads/2025/09/09_2025-CTR.pdf",
-          "date": "2025-09-17"
-        },
-        {
-          "title": "PIB press release — Recommendations of the 56th GST Council with HSN-wise annexures (GST Council copy)",
-          "url": "https://gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau_0.pdf",
-          "date": "2025-09-03"
-        },
-        {
-          "title": "PIB/GST Council FAQs on 56th Council decisions — Q54 batteries 8507 uniformly 18%",
-          "url": "https://gstcouncil.gov.in/sites/default/files/2025-09/faq.pdf",
-          "date": "2025-09-03"
-        },
-        {
-          "title": "A2Z Taxcorp — 56th GST Council highlights (8507 other than Li-ion 28% to 18%; no scrap rate increases)",
-          "url": "https://a2ztaxcorp.net/56th-gst-council-meeting-highlights-key-recommendations-on-gst-rate-changes-trade-facilitation-measures/",
-          "date": "2025-09-03"
-        },
-        {
-          "title": "Notification No. 34/2017-Central Tax (Rate) — plastic scrap 3915 inserted in Schedule I (5%) as entry 187A (archived CBIC copy)",
-          "url": "https://web.archive.org/web/20180614072704/http://www.cbic.gov.in/resources//htdocs-cbec/gst/notfctn-34-CGST-rate-english.pdf",
-          "date": "2017-10-13"
-        },
-        {
-          "title": "Notification No. 8/2021-Integrated Tax (Rate) — 187A omitted, 3915 inserted at 18% as 101A, in force 1 Oct 2021 (archived CBIC copy; CGST counterpart 8/2021-CT(Rate) same date)",
-          "url": "https://web.archive.org/web/20211001053936/https://www.cbic.gov.in/resources//htdocs-cbec/gst/notfctn-8-2021-igst-rate-english.pdf",
-          "date": "2021-09-30"
-        },
-        {
-          "title": "Notification No. 6/2022-Central Tax (Rate) — e-waste moved to 18% (entry 371A), in force 18 July 2022 (archived CBIC copy)",
-          "url": "https://web.archive.org/web/20220723150505/https://cbic-gst.gov.in/pdf/central-tax-rate/06_2022-ctr-eng.pdf",
-          "date": "2022-07-13"
-        },
-        {
-          "title": "CBIC — Section 51 CGST Act 2017 (tax deduction at source): Rs 2.5 lakh per contract, value excluding taxes",
-          "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section51_v1.00.html",
-          "date": "2017-04-12"
-        },
-        {
-          "title": "TaxGuru — TDS under GST on metal scrap: Notification No. 25/2024-Central Tax (text, G.S.R. 629(E), effective 10 Oct 2024)",
-          "url": "https://taxguru.in/goods-and-service-tax/tds-gst-metal-scrap-notification-no-25-2024-central-tax.html",
-          "date": "2024-10-14"
-        },
-        {
-          "title": "GSTN — Advisory for GST REG-07 (registration compliance for buyers of metal scrap)",
-          "url": "https://tutorial.gst.gov.in/downloads/news/advisory_on_gst_reg07_22_10_2024.pdf",
-          "date": "2024-10-22"
-        },
-        {
-          "title": "TaxGuru — Metal scrap supplied by unregistered suppliers brought under reverse charge (Notification 6/2024-CT(Rate))",
-          "url": "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html",
-          "date": "2024-10-09"
-        },
-        {
-          "title": "TaxTMI — TDS on metal scrap: clarification on Notification 25/2024 (per-contract threshold, ex-GST, registered suppliers only)",
-          "url": "https://www.taxtmi.com/article/detailed?id=13525",
-          "date": "2025-02-11"
-        },
-        {
-          "title": "TaxGuru — TDS on metal scrap under GST from October 2024 (GSTR-7/7A, cash-ledger credit)",
-          "url": "https://taxguru.in/goods-and-service-tax/tds-metal-scrap-gst.html",
-          "date": "2024-10-23"
-        }
-      ]
+     "title": "Taxmann — Finance Act 2026 receives assent of the President",
+     "url": "https://www.taxmann.com/post/blog/finance-act-receives-assent-of-the-president",
+     "date": "2026-04-01"
+    },
+    {
+     "title": "TaxGuru — TCS rates rationalised to uniform 2% from 1 April 2026 (memorandum text)",
+     "url": "https://taxguru.in/income-tax/tcs-rates-rationalised-uniform-2-percent-1st-april-2026.html",
+     "date": "2026-02-02"
+    },
+    {
+     "title": "Section 394(1), Income Tax Act 2025 (text before amendment)",
+     "url": "https://indiankanoon.org/doc/143682200/",
+     "date": "2025-08-21"
+    },
+    {
+     "title": "Section 394, Income-tax Act 2025 — sub-sections (2) and (3) declaration text",
+     "url": "https://eztax.in/income-tax-act-2025/section-394",
+     "date": "2025-08-21"
+    },
+    {
+     "title": "Section 402, Income-tax Act 2025 — definitions of buyer (6), scrap (31), seller (33)",
+     "url": "https://eztax.in/income-tax-act-2025/section-402",
+     "date": "2025-08-21"
+    },
+    {
+     "title": "TDSMAN — TCS on sale of specified goods, section 394(1), 2% on scrap, Form 127",
+     "url": "https://blog.tdsman.com/2026/05/tcs-on-sale-of-specified-goods-section-3941-206c1/",
+     "date": "2026-05-28"
+    },
+    {
+     "title": "TaxGuru — Form 127 buyer declaration under section 394(2) and Rule 212, Income-tax Rules 2026",
+     "url": "https://taxguru.in/income-tax/income-tax-form-127-buyer-declaration-avoid-tcs-goods-manufacturing.html",
+     "date": "2026-03-26"
     }
-  ]
+   ]
+  },
+  {
+   "question": "Does the Act's definition of 'scrap' cover post-consumer recyclables that yards sell, such as newspaper, PET bottles and cartons?",
+   "answer": "Probably not, but it is not settled by statute or circular. Section 402(31) of the Income-tax Act, 2025 defines scrap word-for-word as the 1961 Act did: 'waste and scrap from the manufacture or mechanical working of materials which is definitely not usable as such because of breakage, cutting up, wear and other reasons' — two conditions, an origin in manufacture or mechanical working and unusability as such. Old newspapers, PET bottles, cartons, glass bottles and rags come from consumption, not from a manufacturing process, and are bought precisely because they are usable as raw material, so on the plain words they fall outside the definition. The courts have mostly read it that way: the Gujarat High Court in CIT (TDS) v. Priya Blue Industries (Tax Appeal 604 of 2015, 3 November 2015) held that items usable as such are not scrap even if the trade calls them scrap and that the material must arise from manufacture or mechanical working; ITAT Ahmedabad in Dhasawala Traders (1 September 2016), ITAT Lucknow in Lala Bharat Lal & Sons (ITA 14-16/LKW/2019, 19 February 2020) and another ITAT bench in March 2020 held that a mere trader whose scrap did not arise from manufacture need not collect TCS; and the Madras High Court in Adisankara Spinning Mills (2010) treated cotton waste bought as raw material as not scrap. The contrary view is the Rajkot Special Bench in Bharti Auto Products v. CIT (2013) 145 ITD 1, which held traders liable regardless of source; later tribunals have followed the High Court over the Special Bench, but there is no CBDT circular on post-consumer recyclables and no ruling on kabadiwala material specifically. Two caveats matter for the pilot: metal scrap sold by a yard often does originate in mechanical working (industrial offcuts, turnings, broken machinery), so metal is the family most exposed to TCS; and since the definition is unchanged, all the 206C case law carries over to section 394.",
+   "status": "needs-pilot-or-counsel",
+   "decision": "Default: treat post-consumer paper, PET, cartons, glass and rags as outside 'scrap' (no TCS) and treat metal scrap sold by a firm/company yard as potentially in scope; neutralise the question wherever possible by collecting Form 127 from recycler and manufacturer buyers, and get a written opinion from tax counsel before the first yard-to-recycler metal sale above trivial value.",
+   "whoToAsk": "Tax counsel (written opinion on section 402(31) for post-consumer material and for yard metal sales), then the CA to set the per-material TCS flag.",
+   "sources": [
+    {
+     "title": "Section 402, Income-tax Act 2025 — clause (31) definition of scrap",
+     "url": "https://indiankanoon.org/doc/78786565/",
+     "date": "2025-08-21"
+    },
+    {
+     "title": "CIT (TDS) v. Priya Blue Industries Pvt Ltd — Gujarat High Court, Tax Appeal 604 of 2015",
+     "url": "https://www.casemine.com/judgement/in/56ea8dc3607dba377ff10d6b",
+     "date": "2015-11-03"
+    },
+    {
+     "title": "TaxHeal — Dhasawala Traders v. ITO (ITAT Ahmedabad): ship-breaking products usable as such are not scrap",
+     "url": "https://www.taxheal.com/products-generated-out-of-ship-breaking-is-not-scrap-not-liable-for-tcs-us-206c.html",
+     "date": "2016-10-09"
+    },
+    {
+     "title": "BCAJ — Lala Bharat Lal & Sons v. ITO (ITAT Lucknow): mere trader of scrap not liable under 206C",
+     "url": "https://bcajonline.org/journal/assessee-being-mere-trader-of-scrap-would-not-be-liable-to-collect-tax-at-source-u-s-206c-when-such-scrap-was-not-a-result-of-manufacture-or-mechanical-working-of-materials/",
+     "date": "2020-12-01"
+    },
+    {
+     "title": "ABCAUS — Scrap traders not liable to collect TCS if no manufacture involved (ITAT, March 2020)",
+     "url": "https://abcaus.in/income-tax/trader-scrap-not-liable-collect-tcs-us-206c-result-no-manufacture-involved.html",
+     "date": "2020-03-05"
+    },
+    {
+     "title": "TaxTMI — Meaning of scrap in the context of TCS (Adisankara Spinning Mills, Bharti Auto Products, old newspapers as raw material)",
+     "url": "https://www.taxtmi.com/article/detailed?id=5520",
+     "date": "2014-03-12"
+    },
+    {
+     "title": "TaxGuru — Every scrap sale is not liable to TCS (Bharti Auto Products Special Bench discussed)",
+     "url": "https://taxguru.in/income-tax/every-scrap-sale-is-not-liable-to-tax-collection-at-source-tcs.html",
+     "date": "2020-03-21"
+    }
+   ]
+  },
+  {
+   "question": "After the GST rate changes of 22 September 2025 (Notification 9/2025-CT(Rate)), which GST rate and HSN code apply to each material family: waste paper (4707), plastic scrap (3915), ferrous scrap (7204), copper/aluminium/brass scrap (7404/7602), glass cullet (7001), rags (6309/6310), e-waste (8549), batteries? Which value threshold applies to the 2% GST TDS on metal scrap under Notification 25/2024?",
+   "answer": "Notification 9/2025-Central Tax (Rate) dated 17 September 2025 (in force 22 September 2025) is now the single master rate schedule, and its text places the scrap families as follows: waste paper 4707 in Schedule I (2.5% CGST, so 5% GST, Sl. 317); glass cullet 7001 in Schedule I (5%, Sl. 406); worn clothing and rags 6309/6310 in Schedule I (5%, Sl. 391); plastic waste, parings and scrap 3915 in Schedule II (9% CGST, so 18% GST, Sl. 116); ferrous scrap 7204 (Sl. 263), copper scrap 7404 (Sl. 309, which also covers brass as a copper alloy), aluminium scrap 7602 (Sl. 331), plus nickel 7503, lead 7802, zinc 7902 and tin 8002 scrap, all in Schedule II at 18%; and electrical and electronic waste and scrap 8549 in Schedule II at 18% (Sl. 521). Batteries: all electric accumulators under 8507 (lead-acid, lithium-ion, others) are 18% from 22 September 2025 (Sl. 480) — the GST Council FAQ of 3 September 2025 confirms lithium-ion was already 18% and other batteries came down from 28% — and primary cells 8506 are 18% (Sl. 479); spent batteries sold as waste are classified under 8549 at 18%. None of the scrap headings changed on 22 September 2025 (the Council's HSN-wise change annexure lists no scrap entry), so note the history for plastic: 3915 was cut to 5% on 13 October 2017 (Notification 34/2017) but moved back to 18% on 1 October 2021 (Notification 8/2021, which omitted Schedule I entry 187A and inserted 101A in the 18% schedule), and e-waste went from 5% to 18% on 18 July 2022 (Notification 6/2022). Metal scrap has two extra rules since 10 October 2024: under Notification 6/2024-CT(Rate) a registered buyer who purchases metal scrap of Chapters 72-81 from an unregistered supplier pays the 18% GST under reverse charge with no threshold (so a registered yard buying from an unregistered kabadiwala self-pays the tax), and under Notification 25/2024-Central Tax (9 October 2024, G.S.R. 629(E)) a registered person receiving metal scrap of Chapters 72-81 from another registered person must deduct TDS under section 51 CGST Act at 2% (1% CGST + 1% SGST, or 2% IGST). The threshold is the one in section 51(1) itself: deduction applies 'where the total value of such supply, under a contract, exceeds two lakh and fifty thousand rupees', value taken excluding CGST/SGST/IGST/cess shown on the invoice, so Rs 2,50,000 per contract ex-GST, not per invoice (multiple invoices under one contract are aggregated); no deduction if the supplier's location and the place of supply are in a different State from the recipient's registration. The deductor must register separately in Form GST REG-07 (select 'Others' and type 'Metal Scrap Dealers', per the GSTN advisory of 22 October 2024), deposit by the 10th of the following month and file GSTR-7, with GSTR-7A as the certificate; the supplier gets the credit in its electronic cash ledger. This GST TDS is separate from, and additional to, the 2% income-tax TCS in question 1.",
+   "status": "answered",
+   "decision": "Hard-code a per-material table: 4707, 7001, 6309/6310 at 5%; 3915, 7204, 7404 (incl. brass), 7602, 7503/7802/7902/8002, 8549 and 8507/8506 at 18%; require every registered yard buying metal scrap from an unregistered seller to book reverse-charge GST, and flag any registered-to-registered metal contract whose ex-GST value passes Rs 2,50,000 for 2% GST TDS by the buyer. Ask the CA how a 'contract' is delimited for recurring spot purchases from the same supplier; until then treat a standing supply arrangement as one contract (aggregate its invoices).",
+   "whoToAsk": "The CA (definition of 'contract' for the Rs 2.5 lakh GST-TDS threshold in recurring purchases; REG-07 set-up for each yard).",
+   "sources": [
+    {
+     "title": "Notification No. 9/2025-Central Tax (Rate), Gazette copy — Schedules I and II entries for 3915, 4707, 6309/6310, 7001, 7204, 7404, 7602, 8506, 8507, 8549",
+     "url": "https://cdn.taxo.online/wp-content/uploads/2025/09/09_2025-CTR.pdf",
+     "date": "2025-09-17"
+    },
+    {
+     "title": "PIB press release — Recommendations of the 56th GST Council with HSN-wise annexures (GST Council copy)",
+     "url": "https://gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau_0.pdf",
+     "date": "2025-09-03"
+    },
+    {
+     "title": "PIB/GST Council FAQs on 56th Council decisions — Q54 batteries 8507 uniformly 18%",
+     "url": "https://gstcouncil.gov.in/sites/default/files/2025-09/faq.pdf",
+     "date": "2025-09-03"
+    },
+    {
+     "title": "A2Z Taxcorp — 56th GST Council highlights (8507 other than Li-ion 28% to 18%; no scrap rate increases)",
+     "url": "https://a2ztaxcorp.net/56th-gst-council-meeting-highlights-key-recommendations-on-gst-rate-changes-trade-facilitation-measures/",
+     "date": "2025-09-03"
+    },
+    {
+     "title": "Notification No. 34/2017-Central Tax (Rate) — plastic scrap 3915 inserted in Schedule I (5%) as entry 187A (archived CBIC copy)",
+     "url": "https://web.archive.org/web/20180614072704/http://www.cbic.gov.in/resources//htdocs-cbec/gst/notfctn-34-CGST-rate-english.pdf",
+     "date": "2017-10-13"
+    },
+    {
+     "title": "Notification No. 8/2021-Integrated Tax (Rate) — 187A omitted, 3915 inserted at 18% as 101A, in force 1 Oct 2021 (archived CBIC copy; CGST counterpart 8/2021-CT(Rate) same date)",
+     "url": "https://web.archive.org/web/20211001053936/https://www.cbic.gov.in/resources//htdocs-cbec/gst/notfctn-8-2021-igst-rate-english.pdf",
+     "date": "2021-09-30"
+    },
+    {
+     "title": "Notification No. 6/2022-Central Tax (Rate) — e-waste moved to 18% (entry 371A), in force 18 July 2022 (archived CBIC copy)",
+     "url": "https://web.archive.org/web/20220723150505/https://cbic-gst.gov.in/pdf/central-tax-rate/06_2022-ctr-eng.pdf",
+     "date": "2022-07-13"
+    },
+    {
+     "title": "CBIC — Section 51 CGST Act 2017 (tax deduction at source): Rs 2.5 lakh per contract, value excluding taxes",
+     "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section51_v1.00.html",
+     "date": "2017-04-12"
+    },
+    {
+     "title": "TaxGuru — TDS under GST on metal scrap: Notification No. 25/2024-Central Tax (text, G.S.R. 629(E), effective 10 Oct 2024)",
+     "url": "https://taxguru.in/goods-and-service-tax/tds-gst-metal-scrap-notification-no-25-2024-central-tax.html",
+     "date": "2024-10-14"
+    },
+    {
+     "title": "GSTN — Advisory for GST REG-07 (registration compliance for buyers of metal scrap)",
+     "url": "https://tutorial.gst.gov.in/downloads/news/advisory_on_gst_reg07_22_10_2024.pdf",
+     "date": "2024-10-22"
+    },
+    {
+     "title": "TaxGuru — Metal scrap supplied by unregistered suppliers brought under reverse charge (Notification 6/2024-CT(Rate))",
+     "url": "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html",
+     "date": "2024-10-09"
+    },
+    {
+     "title": "TaxTMI — TDS on metal scrap: clarification on Notification 25/2024 (per-contract threshold, ex-GST, registered suppliers only)",
+     "url": "https://www.taxtmi.com/article/detailed?id=13525",
+     "date": "2025-02-11"
+    },
+    {
+     "title": "TaxGuru — TDS on metal scrap under GST from October 2024 (GSTR-7/7A, cash-ledger credit)",
+     "url": "https://taxguru.in/goods-and-service-tax/tds-metal-scrap-gst.html",
+     "date": "2024-10-23"
+    }
+   ]
+  }
+ ]
 }

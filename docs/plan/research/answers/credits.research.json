@@ -1,237 +1,237 @@
 {
-  "cluster": "Carbon and plastic credits",
-  "answers": [
+ "cluster": "Carbon and plastic credits",
+ "answers": [
+  {
+   "question": "Will BEE add a material-recovery or recycling methodology to the Indian Carbon Market offset mechanism (waste is a listed sector), and what floor and forbearance prices has CERC approved for carbon credit certificates? How many offset methodologies are approved today?",
+   "answer": "BEE's official list (last updated 7 July 2026) shows 12 approved offset methodologies; the only waste-sector ones are BM WA03.001 Landfill methane recovery, BM WA03.002 Flaring or use of landfill gas and BM WA03.003 Production of compressed biogas, plus a composting tool (BM-T-013). There is no material-recovery, MRF or recycling methodology, none has been published for comment, and BEE's carbon-market page lists no route for a private party to propose one (it only shows public-comment notices on draft procedures and PDDs). 'Waste handling and disposal' is a Phase I sector, so a recycling methodology is legally possible, and BEE has so far adapted CDM methodologies (the CDM already has AMS-III.AJ for recycling, which Verra's VMR0007 builds on), but a 13 Feb 2026 LiveLaw analysis points out the obstacle: the SWM Rules 2026 (in force 1 April 2026) make segregation and recycling mandatory, which collides with the CCTS regulatory-surplus rule, so BEE would have to resolve that before crediting municipal recycling. On prices: CERC notified the CERC (Terms and Conditions for Purchase and Sale of Carbon Credit Certificates) Regulations, 2026 on 27 February 2026 (gazetted 3 March 2026); CCCs trade monthly on power exchanges within a floor price and forbearance price that CERC approves on a proposal from BEE, and the band is written for the compliance mechanism. As of the latest dated commentary we could open (Reclimatize 7 April 2026, Mondaq 12 May 2026, rsustain 27 May 2026) BEE had not proposed and CERC had not approved any rupee values; analyst guesses range Rs 400–1,200/tCO2e (rsustain) and Rs 600–1,200/tCO2e (Reclimatize), and these are not official. Offset projects must have started on or after 1 January 2025, so an October 2026 pilot would qualify on timing if a methodology ever appears. Open item: no public figure for a CCC floor or forbearance price exists today.",
+   "status": "partly",
+   "decision": "Do not put CCTS carbon revenue in the pilot model. Record tonnes by material, source ward and destination from day one so the data is methodology-ready, check BEE's methodologies page monthly, and file a public comment asking BEE to adapt AMS-III.AJ once the SWM 2026 conflict is clarified.",
+   "whoToAsk": "BEE Carbon Market (offset mechanism cell) on whether a recycling methodology is planned and how to propose one; CERC / BEE on when the floor and forbearance prices will be notified.",
+   "sources": [
     {
-      "question": "Will BEE add a material-recovery or recycling methodology to the Indian Carbon Market offset mechanism (waste is a listed sector), and what floor and forbearance prices has CERC approved for carbon credit certificates? How many offset methodologies are approved today?",
-      "answer": "BEE's official list (last updated 7 July 2026) shows 12 approved offset methodologies; the only waste-sector ones are BM WA03.001 Landfill methane recovery, BM WA03.002 Flaring or use of landfill gas and BM WA03.003 Production of compressed biogas, plus a composting tool (BM-T-013). There is no material-recovery, MRF or recycling methodology, none has been published for comment, and BEE's carbon-market page lists no route for a private party to propose one (it only shows public-comment notices on draft procedures and PDDs). 'Waste handling and disposal' is a Phase I sector, so a recycling methodology is legally possible, and BEE has so far adapted CDM methodologies (the CDM already has AMS-III.AJ for recycling, which Verra's VMR0007 builds on), but a 13 Feb 2026 LiveLaw analysis points out the obstacle: the SWM Rules 2026 (in force 1 April 2026) make segregation and recycling mandatory, which collides with the CCTS regulatory-surplus rule, so BEE would have to resolve that before crediting municipal recycling. On prices: CERC notified the CERC (Terms and Conditions for Purchase and Sale of Carbon Credit Certificates) Regulations, 2026 on 27 February 2026 (gazetted 3 March 2026); CCCs trade monthly on power exchanges within a floor price and forbearance price that CERC approves on a proposal from BEE, and the band is written for the compliance mechanism. As of the latest dated commentary we could open (Reclimatize 7 April 2026, Mondaq 12 May 2026, rsustain 27 May 2026) BEE had not proposed and CERC had not approved any rupee values; analyst guesses range Rs 400–1,200/tCO2e (rsustain) and Rs 600–1,200/tCO2e (Reclimatize), and these are not official. Offset projects must have started on or after 1 January 2025, so an October 2026 pilot would qualify on timing if a methodology ever appears. Open item: no public figure for a CCC floor or forbearance price exists today.",
-      "status": "partly",
-      "decision": "Do not put CCTS carbon revenue in the pilot model. Record tonnes by material, source ward and destination from day one so the data is methodology-ready, check BEE's methodologies page monthly, and file a public comment asking BEE to adapt AMS-III.AJ once the SWM 2026 conflict is clarified.",
-      "whoToAsk": "BEE Carbon Market (offset mechanism cell) on whether a recycling methodology is planned and how to propose one; CERC / BEE on when the floor and forbearance prices will be notified.",
-      "sources": [
-        {
-          "title": "BEE – Methodologies and Tools under Offset Mechanism (12 approved methodologies)",
-          "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1",
-          "date": "2026-07-07"
-        },
-        {
-          "title": "BEE – Carbon Market / Offset Mechanism overview (Phase I sectors, documents)",
-          "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294",
-          "date": "2026-09-18"
-        },
-        {
-          "title": "Down To Earth – BEE releases offset methodologies (12, adapted from CDM)",
-          "url": "https://www.downtoearth.org.in/energy/bureau-of-energy-efficiency-releases-offset-methodologies-an-attempt-to-streamline-offset-projects-in-india",
-          "date": "2025-01-28"
-        },
-        {
-          "title": "RGICS – Indian Carbon Market and pro-poor projects (9 methodologies at the time)",
-          "url": "https://www.rgics.org/environment/indian-carbon-market-and-opportunities-for-pro-poor-climate-projects/",
-          "date": "2025-10-30"
-        },
-        {
-          "title": "LiveLaw – Policy gap between SWM Rules 2026 and carbon credits",
-          "url": "https://www.livelaw.in/articles/solid-waste-management-rules-carbon-credits-522972",
-          "date": "2026-02-13"
-        },
-        {
-          "title": "Khaitan & Co ERGO – Carbon Credits Enter the Market: the CCC Regulations 2026",
-          "url": "https://www.khaitanco.com/sites/default/files/2026-03/ERGO_Carbon%20Credit%20Enter%20the%20Market_20%20March%202026.pdf",
-          "date": "2026-03-20"
-        },
-        {
-          "title": "Mondaq – Analysis of the CERC CCC Regulations 2026 (price band applies to compliance mechanism; no values)",
-          "url": "https://www.mondaq.com/india/climate-change/1785596/operationalizing-indias-carbon-market-an-analysis-of-the-cerc-terms-and-conditions-for-purchase-and-sale-of-carbon-credit-certificates-regulations-2026",
-          "date": "2026-05-12"
-        },
-        {
-          "title": "Reclimatize – India's CCC market: price band and what happens next",
-          "url": "https://reclimatize.in/india-ccc-carbon-credit-market-ccts-trading/",
-          "date": "2026-04-07"
-        },
-        {
-          "title": "rsustain – India CCTS Guide 2026 (CCC price yet to be established)",
-          "url": "https://rsustain.org/ccts-guide/",
-          "date": "2026-05-27"
-        },
-        {
-          "title": "ICAP – Indian Carbon Credit Trading Scheme factsheet",
-          "url": "https://icapcarbonaction.com/en/ets/indian-carbon-credit-trading-scheme",
-          "date": "2026-02"
-        },
-        {
-          "title": "Verra – VMR0007 Recovery and Recycling of Materials from Solid Wastes (CDM AMS-III.AJ revision)",
-          "url": "https://verra.org/wp-content/uploads/2023/09/VMR0007-Revision-to-AMS-III.AJ_.pdf",
-          "date": "2023-09-04"
-        }
-      ]
+     "title": "BEE – Methodologies and Tools under Offset Mechanism (12 approved methodologies)",
+     "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1",
+     "date": "2026-07-07"
     },
     {
-      "question": "Can a tonne of plastic that generated a CPCB EPR certificate also earn a Verra plastic credit (WRC/WCC), given PWRM0001's additionality test? Is paper or cardboard creditable under any active methodology (VMR0007, GS 448)?",
-      "answer": "No for the same tonne: Verra's 12 August 2024 clarification to PWRM0001 v1.1 says 'under no circumstances may a project generate Waste Collection Credits for amounts of collected plastic that have already been directly financed through a relevant EPR scheme', and the regulatory-surplus step (Step 1) requires every mandatory EPR scheme in the region to be listed even when the collector is not the obligated party. In India the EPR certificate is generated by the registered recycler for each tonne recycled (against GST invoices of recycled product sales) and sold to PIBOs, so a tonne that produced a certificate has been EPR-financed and is out; PWRM0002 (recycling credits) applies the same test, so a recycler cannot stack a WRC on a certificate either. Beyond that, collection of any material type covered by a mandatory EPR scheme is treated as non-additional unless the scheme is shown to be 'not fully effective' (compliance or collection rate below 50% in the region, from official or third-party data) or the project exceeds a specific mandated threshold; CPCB-reported figures (17 million tonnes of certificates since 2022 against about 3.8 million tonnes of plastic waste generated a year, Down To Earth 1 Sept 2026) make a below-50% showing hard for packaging categories I–III, whose 2026-27 recycling targets are 70%/50%/50%. Plastics outside the packaging EPR (household durables, PVC pipe, toys) and any tonne the recycler does not certify remain candidates, but the VVB decides. Paper and cardboard are not eligible under the Plastic Program at all (only PWRM0001 and PWRM0002 are active, both plastic-only). They are creditable as carbon (not plastic) credits under Verra's VMR0007 v1.0 (4 Sept 2023), a revision of CDM AMS-III.AJ that covers paper/cardboard, plastics, glass and metals, credits avoided landfill methane where the baseline is decay in a dumpsite and applies a 30% discount to virgin-material displacement; AMS-III.AJ is a small-scale methodology (60,000 tCO2e/yr cap). Gold Standard 448 v1.0 (2 May 2025) covers only metals, alloys and minerals, so paper is not creditable there, and it too excludes recycling mandated by law unless non-enforcement above 50% is documented. Open item: the tCO2e per tonne of paper under AMS-III.AJ default factors was not extracted, so revenue per tonne cannot be stated.",
-      "status": "answered",
-      "decision": "Treat EPR certificates and Verra plastic credits as mutually exclusive per tonne; route packaging plastics to EPR-certified recyclers and keep the certificate value, and only consider plastic credits for non-packaging or uncertified streams after a VVB opinion. Paper and cardboard: track tonnes and destinations for a possible VMR0007 carbon project later, not for plastic credits.",
-      "whoToAsk": "A Verra-approved plastic VVB (SCS Global Services or Control Union) for a written view on whether Bengaluru's EPR scheme is 'fully effective' for each material type; CPCB EPR portal data for regional compliance rates.",
-      "sources": [
-        {
-          "title": "Verra – Clarifications to the Plastic Waste Collection Methodology (PWRM0001) v1.1",
-          "url": "https://verra.org/wp-content/uploads/2024/08/Plastic-Waste-Collection-Methodology-PWRM0001-CC-12-Aug-2024.pdf",
-          "date": "2024-08-12"
-        },
-        {
-          "title": "Verra – PWRM0001 Plastic Waste Collection Methodology v1.1",
-          "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
-          "date": "2022-06-30"
-        },
-        {
-          "title": "Verra – PWRM0002 Plastic Waste Recycling Methodology v1.1",
-          "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0002_Plastic-Waste-Recycling-Methodology-v1.1.pdf",
-          "date": "2022-06-30"
-        },
-        {
-          "title": "Verra – Plastic Program active methodologies (PWRM0001, PWRM0002 only)",
-          "url": "https://verra.org/program-methodology/plastic-waste-reduction-standard/active/",
-          "date": "2026"
-        },
-        {
-          "title": "Verra – VMR0007 Recovery and Recycling of Materials from Solid Wastes v1.0",
-          "url": "https://verra.org/wp-content/uploads/2023/09/VMR0007-Revision-to-AMS-III.AJ_.pdf",
-          "date": "2023-09-04"
-        },
-        {
-          "title": "Gold Standard – 448 Recovery and Recycling of Materials from Solid Wastes v1.0 (metals, alloys, minerals)",
-          "url": "https://globalgoals.goldstandard.org/standards/448_V1.0_Recovery-and-recycling-of-material-from-solid-wastes.pdf",
-          "date": "2025-05-02"
-        },
-        {
-          "title": "Gold Standard – 448 methodology page",
-          "url": "https://globalgoals.goldstandard.org/448-recovery-and-recycling-of-materials-from-solid-wastes/",
-          "date": "2025-05-02"
-        },
-        {
-          "title": "Down To Earth – India's EPR plastic recycling boom vs visible waste (certificates, PWP rates)",
-          "url": "https://www.downtoearth.org.in/waste/plastic-regime-needs-transparency",
-          "date": "2026-09-01"
-        },
-        {
-          "title": "GreenSutra – Plastic EPR explained 2026 (targets 2025-26 and 2026-27, PWM Amendment Rules 2026)",
-          "url": "https://greensutra.in/news/plastic-epr-explained-2026/",
-          "date": "2026-06-13"
-        },
-        {
-          "title": "CPCB – Guidelines for assessment of Environmental Compensation under PWM Rules (Rs 5,000/10,000/20,000 per tonne; EC kept ~15-20% above EPR credit prices)",
-          "url": "https://cpcb.gov.in/uploads/plasticwaste/EC_Regime_PWM_04-04-2024.pdf",
-          "date": "2024-04-04"
-        },
-        {
-          "title": "CPCB – EPR Electronic Trading & Settlement Platform guidelines (certificates generated only by recyclers; quarterly floor and ceiling price)",
-          "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
-          "date": "2024-12"
-        }
-      ]
+     "title": "BEE – Carbon Market / Offset Mechanism overview (Phase I sectors, documents)",
+     "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294",
+     "date": "2026-09-18"
     },
     {
-      "question": "Should Luma.Green be the project proponent of a Verra grouped plastic project or partner with a developer such as Hasiru Dala Innovations or Plastics For Change? What does verification cost in India and how many tonnes a year does a plastic-credit project need to pay for itself? What revenue share do collector programmes (Plastic Bank, others) pay collectors, and will a verifier accept ward-level household location as evidence of source?",
-      "answer": "Partner, do not be proponent in the pilot. Verra's Plastic Standard v1.0 (10 Feb 2021) does allow a grouped project: geographic areas drawn as geodetic polygons, new kabadiwala or Saathi 'instances' added at each verification if they meet pre-set eligibility criteria and the proponent holds ownership evidence from each instance's start date, a 7-year crediting period renewable twice (or 10 years fixed), verification at least every three years, and validation can be done together with first verification. But being proponent means carrying the additionality file (see Q2: EPR-covered packaging is probably non-additional in Bengaluru) and the audit bill, and Verra has only 36 registered plastic projects in 20 countries after five years (11 Mar 2026), with India listings limited to JB Ecotex/EnKing in Surat (WRC, Sept 2022), Green Worms/rePurpose 'Hara Kal' in Kerala and Recykal 'Clean Kedarnath' (Nov 2022); we found no Verra project for Hasiru Dala Innovations or Plastics For Change, whose model is WFTO fair-trade and OBP-certified supply (HDI–PFC–The Body Shop, 64 t PET), while rePurpose Global already runs 'Project Sada Shakti' in Bengaluru with Saahas Zero Waste (Oct 2024). Verra's own fees are small: USD 500 account opening plus 500/yr, registration at USD 5 per estimated annual tonne capped at 7,500 (credited against levies), and an issuance levy of USD 1 for the first 100 credits, 3 for 101–500, 5 for 501–1,000, 7 for 1,001–2,500, 10 for 2,501–5,000; that works out to about USD 900/yr at 200 t, 4,300/yr at 1,000 t and 19,800/yr at 3,000 t, i.e. under USD 7 a tonne against 2022–24 price indications of USD 200–800 per credit. The real gate is the VVB audit (validation plus each verification) and MRV staff, which Verra does not track and no VVB publishes for India, so the break-even tonnage cannot be stated honestly; the rule is tonnes × (net credit price − collector premium) must cover VVB fees + MRV cost + Verra fees, and the missing number is a written VVB quote. Collector economics are thin in public: Plastic Bank pays local junk-shop rate plus a bonus, reported as USD 0.16/kg on top of about USD 0.34/kg for PET in the Philippines (The Walrus, Apr 2025, updated Dec 2025) with incomes up 20–35%, while Plastic Bank's own help centre cites a USD 0.01/kg bonus; rePurpose sells credits at about USD 0.50/kg (EIB, Feb 2022) but does not publish the worker share; Plastics For Change offers a guaranteed minimum price plus a fair-trade premium to a community fund with no published percentage. On evidence of source: PWRM0001 requires sources to be 'clearly identifiable' and dry weight measured and cross-checked with invoices and goods-receipt notes at each transfer; the Aug 2024 clarification lets the project 'region' be an administrative unit such as a municipality; and the Plastic Standard accepts, for many collection sites, at least one geodetic coordinate plus enough geographic information for the VVB to sample, so ward-level household location plus kabadiwala shop GPS, weigh slips and invoices is the expected evidence, with the VVB's sampling visit deciding acceptance.",
-      "status": "partly",
-      "decision": "Default: keep plastic credits out of the pilot P&L; approach rePurpose/Saahas (already operating in Bengaluru) or Plastics For Change/HDI to supply verified tonnage and ward-level data as a partner, and revisit becoming proponent only when Luma.Green has 12 months of audited weigh-slip data, a VVB quote, and at least ~1,000 t/yr of demonstrably non-EPR-financed plastic.",
-      "whoToAsk": "SCS Global Services and Control Union (Verra-approved plastic VVBs) for validation and verification quotes for a Bengaluru grouped collection project; rePurpose Global/Saahas and Plastics For Change/HDI for partner terms and the collector premium they actually pay per kg.",
-      "sources": [
-        {
-          "title": "Verra – Plastic Waste Reduction Standard v1.0 (grouped projects, ownership, crediting period, project location)",
-          "url": "https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf",
-          "date": "2021-02-10"
-        },
-        {
-          "title": "Verra – Plastic Program Guide v1.0 (validation and verification may be simultaneous; 20-business-day review)",
-          "url": "https://verra.org/wp-content/uploads/2021/02/Plastic-Program-Guide-v1.0.pdf",
-          "date": "2021-02-10"
-        },
-        {
-          "title": "Verra – Plastic Program Fee Schedule v1.2",
-          "url": "https://verra.org/wp-content/uploads/2024/02/Plastic-Program-Fee-Schedule-v1.2-watermark.pdf",
-          "date": "2023-03-30"
-        },
-        {
-          "title": "CTX Global – Develop a Project under Verra's Plastic Program: A Quick Guide (verification at least every 3 years; VVB fees excluded)",
-          "url": "https://ctxglobal.com/wp-content/uploads/2024/05/Develop-a-Project-under-Verras-Plastic-Program-A-Quick-Guide-Aug-2023.pdf",
-          "date": "2023-08"
-        },
-        {
-          "title": "Verra – Five Years In, Verra's Plastic Program (36 projects, 20 countries, 500,000+ credits)",
-          "url": "https://verra.org/verra-views/five-years-in-verras-plastic-program-is-more-relevant-than-ever/",
-          "date": "2026-03-11"
-        },
-        {
-          "title": "Verra – First plastic project in India listed (JB Ecotex, Surat)",
-          "url": "https://verra.org/first-plastic-project-in-india-listed-on-verra-registry/",
-          "date": "2022-09-30"
-        },
-        {
-          "title": "Verra – Three plastic projects listed (Hara Kal, Kerala; Clean Kedarnath)",
-          "url": "https://verra.org/three-plastic-projects-listed-in-verras-plastic-program/",
-          "date": "2022-11-02"
-        },
-        {
-          "title": "climate-change.in – Verra issues first plastic credits (Second Life Thailand; USD 200–800/t estimate)",
-          "url": "https://www.climate-change.in/media/verra-issues-1st-plastic-waste-reduction-credits",
-          "date": "2023-03"
-        },
-        {
-          "title": "ALLCOT – Plastic credits: how much do they cost? (USD 200–800/t)",
-          "url": "https://allcottrading.com/uncategorized-en/plastic-credits-price-how-much-do-they-cost/",
-          "date": "2024-04-23"
-        },
-        {
-          "title": "Control Union – Plastic Waste Reduction Program validation and verification",
-          "url": "https://www.controlunion.com/certification-program/plastic-waste-reduction-program-plastic-project-validation-and-verification/",
-          "date": "2026"
-        },
-        {
-          "title": "The Walrus – Plastic Bank in the Philippines (USD 0.16/kg bonus on ~USD 0.34/kg PET; incomes +20–35%)",
-          "url": "https://thewalrus.ca/plastic-credits/",
-          "date": "2025-12-12"
-        },
-        {
-          "title": "Plastic Bank help centre – Collection bonus (USD 0.01 per kg)",
-          "url": "https://help.plasticbank.com/en_US/collection-community-member-collection-bonus-social-benefits",
-          "date": "2025"
-        },
-        {
-          "title": "Plastic Bank – FAQ (market rate plus digital bonus; branch receipts)",
-          "url": "https://plasticbank.com/faq/",
-          "date": "2026"
-        },
-        {
-          "title": "EIB – Indian start-up recycles plastic (rePurpose credit about USD 0.50 per kg)",
-          "url": "https://www.eib.org/en/stories/indian-plastic-solution",
-          "date": "2022-02-17"
-        },
-        {
-          "title": "rePurpose Global – The global impact of plastic recovery (Project Sada Shakti, Saahas, Bengaluru)",
-          "url": "https://www.repurpose.global/blog/plastic-recovery-impact",
-          "date": "2024-10-08"
-        },
-        {
-          "title": "Plastics For Change – How waste pickers become stakeholders (guaranteed minimum price)",
-          "url": "https://www.plasticsforchange.org/blog/fair-trade-recycling-how-waste-pickers-become-stakeholders",
-          "date": "2025-02-26"
-        },
-        {
-          "title": "Hasiru Dala Innovations – The world's first ethically traded plastic (HDI–PFC–The Body Shop, WFTO audit)",
-          "url": "https://hasirudalainnovations.com/blog-detail/3/the-worlds-first-ethically-traded-plastic",
-          "date": "2026-07-30"
-        },
-        {
-          "title": "Verra – PWRM0001 v1.1 (applicability condition 3 on identifiable sources; monitoring Table 3)",
-          "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
-          "date": "2022-06-30"
-        },
-        {
-          "title": "Verra – PWRM0001 clarifications (region may be a municipality or district)",
-          "url": "https://verra.org/wp-content/uploads/2024/08/Plastic-Waste-Collection-Methodology-PWRM0001-CC-12-Aug-2024.pdf",
-          "date": "2024-08-12"
-        }
-      ]
+     "title": "Down To Earth – BEE releases offset methodologies (12, adapted from CDM)",
+     "url": "https://www.downtoearth.org.in/energy/bureau-of-energy-efficiency-releases-offset-methodologies-an-attempt-to-streamline-offset-projects-in-india",
+     "date": "2025-01-28"
+    },
+    {
+     "title": "RGICS – Indian Carbon Market and pro-poor projects (9 methodologies at the time)",
+     "url": "https://www.rgics.org/environment/indian-carbon-market-and-opportunities-for-pro-poor-climate-projects/",
+     "date": "2025-10-30"
+    },
+    {
+     "title": "LiveLaw – Policy gap between SWM Rules 2026 and carbon credits",
+     "url": "https://www.livelaw.in/articles/solid-waste-management-rules-carbon-credits-522972",
+     "date": "2026-02-13"
+    },
+    {
+     "title": "Khaitan & Co ERGO – Carbon Credits Enter the Market: the CCC Regulations 2026",
+     "url": "https://www.khaitanco.com/sites/default/files/2026-03/ERGO_Carbon%20Credit%20Enter%20the%20Market_20%20March%202026.pdf",
+     "date": "2026-03-20"
+    },
+    {
+     "title": "Mondaq – Analysis of the CERC CCC Regulations 2026 (price band applies to compliance mechanism; no values)",
+     "url": "https://www.mondaq.com/india/climate-change/1785596/operationalizing-indias-carbon-market-an-analysis-of-the-cerc-terms-and-conditions-for-purchase-and-sale-of-carbon-credit-certificates-regulations-2026",
+     "date": "2026-05-12"
+    },
+    {
+     "title": "Reclimatize – India's CCC market: price band and what happens next",
+     "url": "https://reclimatize.in/india-ccc-carbon-credit-market-ccts-trading/",
+     "date": "2026-04-07"
+    },
+    {
+     "title": "rsustain – India CCTS Guide 2026 (CCC price yet to be established)",
+     "url": "https://rsustain.org/ccts-guide/",
+     "date": "2026-05-27"
+    },
+    {
+     "title": "ICAP – Indian Carbon Credit Trading Scheme factsheet",
+     "url": "https://icapcarbonaction.com/en/ets/indian-carbon-credit-trading-scheme",
+     "date": "2026-02"
+    },
+    {
+     "title": "Verra – VMR0007 Recovery and Recycling of Materials from Solid Wastes (CDM AMS-III.AJ revision)",
+     "url": "https://verra.org/wp-content/uploads/2023/09/VMR0007-Revision-to-AMS-III.AJ_.pdf",
+     "date": "2023-09-04"
     }
-  ]
+   ]
+  },
+  {
+   "question": "Can a tonne of plastic that generated a CPCB EPR certificate also earn a Verra plastic credit (WRC/WCC), given PWRM0001's additionality test? Is paper or cardboard creditable under any active methodology (VMR0007, GS 448)?",
+   "answer": "No for the same tonne: Verra's 12 August 2024 clarification to PWRM0001 v1.1 says 'under no circumstances may a project generate Waste Collection Credits for amounts of collected plastic that have already been directly financed through a relevant EPR scheme', and the regulatory-surplus step (Step 1) requires every mandatory EPR scheme in the region to be listed even when the collector is not the obligated party. In India the EPR certificate is generated by the registered recycler for each tonne recycled (against GST invoices of recycled product sales) and sold to PIBOs, so a tonne that produced a certificate has been EPR-financed and is out; PWRM0002 (recycling credits) applies the same test, so a recycler cannot stack a WRC on a certificate either. Beyond that, collection of any material type covered by a mandatory EPR scheme is treated as non-additional unless the scheme is shown to be 'not fully effective' (compliance or collection rate below 50% in the region, from official or third-party data) or the project exceeds a specific mandated threshold; CPCB-reported figures (17 million tonnes of certificates since 2022 against about 3.8 million tonnes of plastic waste generated a year, Down To Earth 1 Sept 2026) make a below-50% showing hard for packaging categories I–III, whose 2026-27 recycling targets are 70%/50%/50%. Plastics outside the packaging EPR (household durables, PVC pipe, toys) and any tonne the recycler does not certify remain candidates, but the VVB decides. Paper and cardboard are not eligible under the Plastic Program at all (only PWRM0001 and PWRM0002 are active, both plastic-only). They are creditable as carbon (not plastic) credits under Verra's VMR0007 v1.0 (4 Sept 2023), a revision of CDM AMS-III.AJ that covers paper/cardboard, plastics, glass and metals, credits avoided landfill methane where the baseline is decay in a dumpsite and applies a 30% discount to virgin-material displacement; AMS-III.AJ is a small-scale methodology (60,000 tCO2e/yr cap). Gold Standard 448 v1.0 (2 May 2025) covers only metals, alloys and minerals, so paper is not creditable there, and it too excludes recycling mandated by law unless non-enforcement above 50% is documented. Open item: the tCO2e per tonne of paper under AMS-III.AJ default factors was not extracted, so revenue per tonne cannot be stated.",
+   "status": "answered",
+   "decision": "Treat EPR certificates and Verra plastic credits as mutually exclusive per tonne; route packaging plastics to EPR-certified recyclers and keep the certificate value, and only consider plastic credits for non-packaging or uncertified streams after a VVB opinion. Paper and cardboard: track tonnes and destinations for a possible VMR0007 carbon project later, not for plastic credits.",
+   "whoToAsk": "A Verra-approved plastic VVB (SCS Global Services or Control Union) for a written view on whether Bengaluru's EPR scheme is 'fully effective' for each material type; CPCB EPR portal data for regional compliance rates.",
+   "sources": [
+    {
+     "title": "Verra – Clarifications to the Plastic Waste Collection Methodology (PWRM0001) v1.1",
+     "url": "https://verra.org/wp-content/uploads/2024/08/Plastic-Waste-Collection-Methodology-PWRM0001-CC-12-Aug-2024.pdf",
+     "date": "2024-08-12"
+    },
+    {
+     "title": "Verra – PWRM0001 Plastic Waste Collection Methodology v1.1",
+     "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
+     "date": "2022-06-30"
+    },
+    {
+     "title": "Verra – PWRM0002 Plastic Waste Recycling Methodology v1.1",
+     "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0002_Plastic-Waste-Recycling-Methodology-v1.1.pdf",
+     "date": "2022-06-30"
+    },
+    {
+     "title": "Verra – Plastic Program active methodologies (PWRM0001, PWRM0002 only)",
+     "url": "https://verra.org/program-methodology/plastic-waste-reduction-standard/active/",
+     "date": "2026"
+    },
+    {
+     "title": "Verra – VMR0007 Recovery and Recycling of Materials from Solid Wastes v1.0",
+     "url": "https://verra.org/wp-content/uploads/2023/09/VMR0007-Revision-to-AMS-III.AJ_.pdf",
+     "date": "2023-09-04"
+    },
+    {
+     "title": "Gold Standard – 448 Recovery and Recycling of Materials from Solid Wastes v1.0 (metals, alloys, minerals)",
+     "url": "https://globalgoals.goldstandard.org/standards/448_V1.0_Recovery-and-recycling-of-material-from-solid-wastes.pdf",
+     "date": "2025-05-02"
+    },
+    {
+     "title": "Gold Standard – 448 methodology page",
+     "url": "https://globalgoals.goldstandard.org/448-recovery-and-recycling-of-materials-from-solid-wastes/",
+     "date": "2025-05-02"
+    },
+    {
+     "title": "Down To Earth – India's EPR plastic recycling boom vs visible waste (certificates, PWP rates)",
+     "url": "https://www.downtoearth.org.in/waste/plastic-regime-needs-transparency",
+     "date": "2026-09-01"
+    },
+    {
+     "title": "GreenSutra – Plastic EPR explained 2026 (targets 2025-26 and 2026-27, PWM Amendment Rules 2026)",
+     "url": "https://greensutra.in/news/plastic-epr-explained-2026/",
+     "date": "2026-06-13"
+    },
+    {
+     "title": "CPCB – Guidelines for assessment of Environmental Compensation under PWM Rules (Rs 5,000/10,000/20,000 per tonne; EC kept ~15-20% above EPR credit prices)",
+     "url": "https://cpcb.gov.in/uploads/plasticwaste/EC_Regime_PWM_04-04-2024.pdf",
+     "date": "2024-04-04"
+    },
+    {
+     "title": "CPCB – EPR Electronic Trading & Settlement Platform guidelines (certificates generated only by recyclers; quarterly floor and ceiling price)",
+     "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
+     "date": "2024-12"
+    }
+   ]
+  },
+  {
+   "question": "Should Luma.Green be the project proponent of a Verra grouped plastic project or partner with a developer such as Hasiru Dala Innovations or Plastics For Change? What does verification cost in India and how many tonnes a year does a plastic-credit project need to pay for itself? What revenue share do collector programmes (Plastic Bank, others) pay collectors, and will a verifier accept ward-level household location as evidence of source?",
+   "answer": "Partner, do not be proponent in the pilot. Verra's Plastic Standard v1.0 (10 Feb 2021) does allow a grouped project: geographic areas drawn as geodetic polygons, new kabadiwala or Saathi 'instances' added at each verification if they meet pre-set eligibility criteria and the proponent holds ownership evidence from each instance's start date, a 7-year crediting period renewable twice (or 10 years fixed), verification at least every three years, and validation can be done together with first verification. But being proponent means carrying the additionality file (see Q2: EPR-covered packaging is probably non-additional in Bengaluru) and the audit bill, and Verra has only 36 registered plastic projects in 20 countries after five years (11 Mar 2026), with India listings limited to JB Ecotex/EnKing in Surat (WRC, Sept 2022), Green Worms/rePurpose 'Hara Kal' in Kerala and Recykal 'Clean Kedarnath' (Nov 2022); we found no Verra project for Hasiru Dala Innovations or Plastics For Change, whose model is WFTO fair-trade and OBP-certified supply (HDI–PFC–The Body Shop, 64 t PET), while rePurpose Global already runs 'Project Sada Shakti' in Bengaluru with Saahas Zero Waste (Oct 2024). Verra's own fees are small: USD 500 account opening plus 500/yr, registration at USD 5 per estimated annual tonne capped at 7,500 (credited against levies), and an issuance levy of USD 1 for the first 100 credits, 3 for 101–500, 5 for 501–1,000, 7 for 1,001–2,500, 10 for 2,501–5,000; that works out to about USD 900/yr at 200 t, 4,300/yr at 1,000 t and 19,800/yr at 3,000 t, i.e. under USD 7 a tonne against 2022–24 price indications of USD 200–800 per credit. The real gate is the VVB audit (validation plus each verification) and MRV staff, which Verra does not track and no VVB publishes for India, so the break-even tonnage cannot be stated honestly; the rule is tonnes × (net credit price − collector premium) must cover VVB fees + MRV cost + Verra fees, and the missing number is a written VVB quote. Collector economics are thin in public: Plastic Bank pays local junk-shop rate plus a bonus, reported as USD 0.16/kg on top of about USD 0.34/kg for PET in the Philippines (The Walrus, Apr 2025, updated Dec 2025) with incomes up 20–35%, while Plastic Bank's own help centre cites a USD 0.01/kg bonus; rePurpose sells credits at about USD 0.50/kg (EIB, Feb 2022) but does not publish the worker share; Plastics For Change offers a guaranteed minimum price plus a fair-trade premium to a community fund with no published percentage. On evidence of source: PWRM0001 requires sources to be 'clearly identifiable' and dry weight measured and cross-checked with invoices and goods-receipt notes at each transfer; the Aug 2024 clarification lets the project 'region' be an administrative unit such as a municipality; and the Plastic Standard accepts, for many collection sites, at least one geodetic coordinate plus enough geographic information for the VVB to sample, so ward-level household location plus kabadiwala shop GPS, weigh slips and invoices is the expected evidence, with the VVB's sampling visit deciding acceptance.",
+   "status": "partly",
+   "decision": "Default: keep plastic credits out of the pilot P&L; approach rePurpose/Saahas (already operating in Bengaluru) or Plastics For Change/HDI to supply verified tonnage and ward-level data as a partner, and revisit becoming proponent only when Luma.Green has 12 months of audited weigh-slip data, a VVB quote, and at least ~1,000 t/yr of demonstrably non-EPR-financed plastic.",
+   "whoToAsk": "SCS Global Services and Control Union (Verra-approved plastic VVBs) for validation and verification quotes for a Bengaluru grouped collection project; rePurpose Global/Saahas and Plastics For Change/HDI for partner terms and the collector premium they actually pay per kg.",
+   "sources": [
+    {
+     "title": "Verra – Plastic Waste Reduction Standard v1.0 (grouped projects, ownership, crediting period, project location)",
+     "url": "https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf",
+     "date": "2021-02-10"
+    },
+    {
+     "title": "Verra – Plastic Program Guide v1.0 (validation and verification may be simultaneous; 20-business-day review)",
+     "url": "https://verra.org/wp-content/uploads/2021/02/Plastic-Program-Guide-v1.0.pdf",
+     "date": "2021-02-10"
+    },
+    {
+     "title": "Verra – Plastic Program Fee Schedule v1.2",
+     "url": "https://verra.org/wp-content/uploads/2024/02/Plastic-Program-Fee-Schedule-v1.2-watermark.pdf",
+     "date": "2023-03-30"
+    },
+    {
+     "title": "CTX Global – Develop a Project under Verra's Plastic Program: A Quick Guide (verification at least every 3 years; VVB fees excluded)",
+     "url": "https://ctxglobal.com/wp-content/uploads/2024/05/Develop-a-Project-under-Verras-Plastic-Program-A-Quick-Guide-Aug-2023.pdf",
+     "date": "2023-08"
+    },
+    {
+     "title": "Verra – Five Years In, Verra's Plastic Program (36 projects, 20 countries, 500,000+ credits)",
+     "url": "https://verra.org/verra-views/five-years-in-verras-plastic-program-is-more-relevant-than-ever/",
+     "date": "2026-03-11"
+    },
+    {
+     "title": "Verra – First plastic project in India listed (JB Ecotex, Surat)",
+     "url": "https://verra.org/first-plastic-project-in-india-listed-on-verra-registry/",
+     "date": "2022-09-30"
+    },
+    {
+     "title": "Verra – Three plastic projects listed (Hara Kal, Kerala; Clean Kedarnath)",
+     "url": "https://verra.org/three-plastic-projects-listed-in-verras-plastic-program/",
+     "date": "2022-11-02"
+    },
+    {
+     "title": "climate-change.in – Verra issues first plastic credits (Second Life Thailand; USD 200–800/t estimate)",
+     "url": "https://www.climate-change.in/media/verra-issues-1st-plastic-waste-reduction-credits",
+     "date": "2023-03"
+    },
+    {
+     "title": "ALLCOT – Plastic credits: how much do they cost? (USD 200–800/t)",
+     "url": "https://allcottrading.com/uncategorized-en/plastic-credits-price-how-much-do-they-cost/",
+     "date": "2024-04-23"
+    },
+    {
+     "title": "Control Union – Plastic Waste Reduction Program validation and verification",
+     "url": "https://www.controlunion.com/certification-program/plastic-waste-reduction-program-plastic-project-validation-and-verification/",
+     "date": "2026"
+    },
+    {
+     "title": "The Walrus – Plastic Bank in the Philippines (USD 0.16/kg bonus on ~USD 0.34/kg PET; incomes +20–35%)",
+     "url": "https://thewalrus.ca/plastic-credits/",
+     "date": "2025-12-12"
+    },
+    {
+     "title": "Plastic Bank help centre – Collection bonus (USD 0.01 per kg)",
+     "url": "https://help.plasticbank.com/en_US/collection-community-member-collection-bonus-social-benefits",
+     "date": "2025"
+    },
+    {
+     "title": "Plastic Bank – FAQ (market rate plus digital bonus; branch receipts)",
+     "url": "https://plasticbank.com/faq/",
+     "date": "2026"
+    },
+    {
+     "title": "EIB – Indian start-up recycles plastic (rePurpose credit about USD 0.50 per kg)",
+     "url": "https://www.eib.org/en/stories/indian-plastic-solution",
+     "date": "2022-02-17"
+    },
+    {
+     "title": "rePurpose Global – The global impact of plastic recovery (Project Sada Shakti, Saahas, Bengaluru)",
+     "url": "https://www.repurpose.global/blog/plastic-recovery-impact",
+     "date": "2024-10-08"
+    },
+    {
+     "title": "Plastics For Change – How waste pickers become stakeholders (guaranteed minimum price)",
+     "url": "https://www.plasticsforchange.org/blog/fair-trade-recycling-how-waste-pickers-become-stakeholders",
+     "date": "2025-02-26"
+    },
+    {
+     "title": "Hasiru Dala Innovations – The world's first ethically traded plastic (HDI–PFC–The Body Shop, WFTO audit)",
+     "url": "https://hasirudalainnovations.com/blog-detail/3/the-worlds-first-ethically-traded-plastic",
+     "date": "2026-07-30"
+    },
+    {
+     "title": "Verra – PWRM0001 v1.1 (applicability condition 3 on identifiable sources; monitoring Table 3)",
+     "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
+     "date": "2022-06-30"
+    },
+    {
+     "title": "Verra – PWRM0001 clarifications (region may be a municipality or district)",
+     "url": "https://verra.org/wp-content/uploads/2024/08/Plastic-Waste-Collection-Methodology-PWRM0001-CC-12-Aug-2024.pdf",
+     "date": "2024-08-12"
+    }
+   ]
+  }
+ ]
 }
