@@ -360,6 +360,35 @@ type ImportOutcome =
   | { kind: "unchanged" }
   | { kind: "skipped"; problem: ImportProblem };
 
+interface ImportResult {
+  saved: number;
+  unchanged: number;
+  lifted: number;
+  skipped: { materialCode: string; problem: ImportProblem }[];
+}
+
+/** Adds one row's outcome to the import's tally. */
+function tallyOutcome(
+  result: ImportResult,
+  materialCode: string,
+  outcome: ImportOutcome,
+): void {
+  switch (outcome.kind) {
+    case "saved": {
+      result.saved += 1;
+      result.lifted += outcome.lifted;
+      return;
+    }
+    case "unchanged": {
+      result.unchanged += 1;
+      return;
+    }
+    case "skipped": {
+      result.skipped.push({ materialCode, problem: outcome.problem });
+    }
+  }
+}
+
 /** One pasted row: checked, then saved like a form edit. */
 async function importRow(
   ctx: MutationCtx,
@@ -425,11 +454,11 @@ export const importPrices = mutation({
     const note = noteFrom(args.note);
     const adminProfile = await findProfile(ctx, admin._id);
     const now = Date.now();
-    const result = {
+    const result: ImportResult = {
       saved: 0,
       unchanged: 0,
       lifted: 0,
-      skipped: [] as { materialCode: string; problem: ImportProblem }[],
+      skipped: [],
     };
     const seen = new Set<string>();
     for (const row of args.rows) {
@@ -441,21 +470,7 @@ export const importPrices = mutation({
         { code, floorPaise: row.floorPaise, fallbackPaise: row.fallbackPaise },
         { city, note, actorProfileId: adminProfile?._id, now },
       );
-      switch (outcome.kind) {
-        case "saved": {
-          result.saved += 1;
-          result.lifted += outcome.lifted;
-          break;
-        }
-        case "unchanged": {
-          result.unchanged += 1;
-          break;
-        }
-        case "skipped": {
-          result.skipped.push({ materialCode: code, problem: outcome.problem });
-          break;
-        }
-      }
+      tallyOutcome(result, code, outcome);
     }
     await ctx.db.insert("auditLog", {
       actorProfileId: adminProfile?._id,
