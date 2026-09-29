@@ -25,6 +25,12 @@
 > filled with a demo world of sample Bengaluru businesses, prices and trades.
 > What's real and what's sample: [Status](#status).
 
+**The plan.** [docs/plan.md](docs/plan.md) is the Luma.Green Platform Plan:
+the market and where value leaks, who uses the platform, live pricing, the law
+built in, carbon and solar, the standards the industry can adopt, the roadmap
+to all of India, and the risks. Every figure in it links to its source
+([339 of them](docs/plan/sources.md)).
+
 ## What Luma.Green is
 
 Recyclable material in an Indian city passes through many hands, and every
@@ -279,6 +285,7 @@ pnpm screenshots    # the "See it" pictures, from a running app
 
 | Where                                                              | What's in it                                                                               |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| [docs/plan.md](docs/plan.md)                                       | The platform plan: market, users, pricing, law, carbon, standards, roadmap, risks          |
 | [docs/README.md](docs/README.md)                                   | The index: the plan, and the reasons behind it. Start here                                 |
 | [docs/product/features.md](docs/product/features.md)               | Every feature: what's built (with URLs), what's sample data, what's next                   |
 | [docs/testing/README.md](docs/testing/README.md)                   | The A-to-Z test plan: every flow, step by step, with expected results                      |
