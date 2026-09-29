@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — स्वच्छ कल की ओर गतिमान",
-    "description": "Luma.Green puts India's scrap chain on one platform: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, weighed pickups and a record of every hand-off."
+    "description": "Luma.Green भारत के कबाड़ की पूरी चेन को एक प्लेटफ़ॉर्म पर लाता है: घर, कबाड़ीवाले, यार्ड, रीसाइक्लर और फैक्ट्रियाँ। सही कीमत, पिकअप पर तौल और हर लेन-देन का रिकॉर्ड।"
   },
   "common": {
     "loading": "लोड हो रहा है…",
@@ -40,32 +40,32 @@
   },
   "loop": {
     "sell": {
-      "title": "Sell",
-      "summary": "Households sell scrap from home at a fair price, weighed and paid at the door."
+      "title": "बिक्री",
+      "summary": "लोग घर बैठे सही कीमत पर कबाड़ बेचते हैं। माल दरवाज़े पर ही तौला जाता है और पैसे वहीं मिलते हैं।"
     },
     "trade": {
       "title": "व्यापार",
-      "summary": "Businesses trade material up the chain, with payments held in escrow until delivery."
+      "summary": "बिज़नेस चेन में आगे माल की खरीद-बिक्री करते हैं। डिलीवरी तक भुगतान एस्क्रो में जमा रहता है।"
     },
     "record": {
-      "title": "Record",
-      "summary": "Every hand-off is recorded, ready for compliance, impact and proof of recycling."
+      "title": "रिकॉर्ड",
+      "summary": "हर लेन-देन का रिकॉर्ड बनता है, जो कागज़ात, योगदान और रीसाइक्लिंग के सबूत के लिए तैयार रहता है।"
     }
   },
   "principles": {
     "heading": "ऑडिट की कसौटी पर खरा उतरने के लिए बना",
-    "intro": "A buyer, a regulator or an auditor may ask where material came from. The record is designed so the answer is always there.",
+    "intro": "कोई खरीदार, सरकारी विभाग या ऑडिटर पूछ सकता है कि माल कहाँ से आया। रिकॉर्ड इस तरह बनाया गया है कि इसका जवाब हमेशा मिल जाए।",
     "auditable": {
       "title": "हर बदलाव रिकॉर्ड में दर्ज",
-      "body": "Each step (a pickup weighed, a trade paid, a load delivered) writes an entry to an audit log that is never edited in place."
+      "body": "हर कदम (पिकअप पर तौल, सौदे का भुगतान, माल की डिलीवरी) ऑडिट लॉग में दर्ज होता है। जो एक बार दर्ज हो गया, उसे बाद में कभी बदला नहीं जाता।"
     },
     "exact": {
       "title": "आँकड़े हमेशा सटीक",
       "body": "राशि पूरे पैसे में और वज़न पूरे ग्राम में दर्ज किए जाते हैं। इसलिए धर्मकाँटे से लेकर निपटान तक कोई राउंडिंग त्रुटि जमा नहीं हो सकती।"
     },
     "frozen": {
-      "title": "History stays as it was",
-      "body": "Every receipt keeps the price and weight of its day. Changing a price later never rewrites a receipt that already exists."
+      "title": "पुराना रिकॉर्ड जैसा था, वैसा ही रहता है",
+      "body": "हर रसीद में वही कीमत और वज़न रहते हैं, जो उस दिन थे। बाद में कीमत बदलने पर भी पहले से बनी रसीद कभी नहीं बदलती।"
     }
   },
   "home": {
@@ -525,62 +525,62 @@
   },
   "howItWorks": {
     "metaTitle": "यह कैसे काम करता है",
-    "metaDescription": "How scrap moves on Luma.Green: sold from home at a fair price, traded up the chain with escrow, and recorded at every hand-off.",
+    "metaDescription": "Luma.Green पर कबाड़ कैसे आगे बढ़ता है: घर से सही कीमत पर बिकता है, एस्क्रो के ज़रिए चेन में आगे खरीदा-बेचा जाता है, और हर लेन-देन का रिकॉर्ड बनता है।",
     "title": "Luma.Green कैसे काम करता है",
-    "lead": "Scrap changes hands four times before it becomes something new. Here is what happens at each step, and what Luma.Green records.",
+    "lead": "नई चीज़ बनने से पहले कबाड़ चार बार हाथ बदलता है। यहाँ देखें कि हर कदम पर क्या होता है, और Luma.Green क्या दर्ज करता है।",
     "stepLabel": "चरण {number}",
     "sell": {
-      "body": "A household picks what it has, sees each nearby shop's offer and books a pickup or a drop-off. The kabadiwala weighs each material and pays in cash or UPI, and both get a receipt.",
-      "point1": "Each shop sets its own prices, never below the published floor",
-      "point2": "Weights recorded in grams from the shop's scale",
-      "point3": "A tracking link, with no account needed"
+      "body": "घर वाले चुनते हैं कि उनके पास क्या-क्या है, आसपास की हर दुकान का ऑफ़र देखते हैं, और पिकअप या दुकान पर देने की बुकिंग करते हैं। कबाड़ीवाला हर माल अलग-अलग तौलता है और नकद या UPI से पैसे देता है। दोनों को रसीद मिलती है।",
+      "point1": "हर दुकान अपनी कीमतें खुद तय करती है, पर जारी की गई न्यूनतम कीमत से कम कभी नहीं",
+      "point2": "दुकान के तराज़ू पर तौला गया वज़न, ग्राम तक दर्ज",
+      "point3": "ट्रैकिंग लिंक मिलता है, अकाउंट की ज़रूरत नहीं"
     },
     "trade": {
-      "body": "Kabadiwalas sell sorted stock to yards, yards sell bales to recyclers, and recyclers sell flakes, granules and ingots to factories. The buyer's payment waits in escrow until the goods arrive.",
-      "point1": "Only verified businesses can trade",
-      "point2": "Stock moves when a load is dispatched and received",
-      "point3": "A numbered trade receipt for every paid trade"
+      "body": "कबाड़ीवाले छँटा हुआ स्टॉक यार्ड को बेचते हैं, यार्ड गट्ठर रीसाइक्लरों को बेचते हैं, और रीसाइक्लर फ़्लेक्स, दाना और सिल्लियाँ फैक्ट्रियों को बेचते हैं। माल पहुँचने तक खरीदार का पैसा एस्क्रो में रुका रहता है।",
+      "point1": "सिर्फ़ वेरिफ़ाइड बिज़नेस ही खरीद-बिक्री कर सकते हैं",
+      "point2": "माल भेजने पर स्टॉक घटता है, और मिलने पर बढ़ता है",
+      "point3": "भुगतान हुए हर सौदे की नंबर वाली रसीद"
     },
     "record": {
-      "body": "Every hand-off is written down: who, what, how much, when and where. That record powers the price board, stock, compliance and impact figures, and is the evidence EPR and recycling standards ask for.",
-      "point1": "One record from the door to the factory",
-      "point2": "EPR totals by financial year for recyclers and factories",
-      "point3": "Supporting evidence for credits, never counted twice"
+      "body": "हर लेन-देन लिखा जाता है: कौन, क्या, कितना, कब और कहाँ। कीमतों का बोर्ड, स्टॉक, कागज़ात और योगदान के आँकड़े इसी रिकॉर्ड से बनते हैं। EPR और रीसाइक्लिंग के मानक यही सबूत माँगते हैं।",
+      "point1": "दरवाज़े से फैक्ट्री तक एक ही रिकॉर्ड",
+      "point2": "रीसाइक्लरों और फैक्ट्रियों के लिए वित्त वर्ष के हिसाब से EPR के कुल आँकड़े",
+      "point3": "क्रेडिट के लिए सबूत, जो कभी दोबारा नहीं गिना जाता"
     }
   },
   "participants": {
     "metaTitle": "किसके लिए है",
-    "metaDescription": "Luma.Green is built for households, kabadiwalas, yards, recyclers, manufacturers and Saathis: everyone who moves scrap from a home to a factory.",
+    "metaDescription": "Luma.Green घरों, कबाड़ीवालों, यार्ड, रीसाइक्लरों, फैक्ट्रियों और साथियों के लिए बना है: उन सबके लिए जो कबाड़ को घर से फैक्ट्री तक पहुँचाते हैं।",
     "title": "Luma.Green किसके लिए है",
-    "lead": "Everyone who moves scrap from a home to a factory, and the people who do the work in between.",
+    "lead": "वे सब जो कबाड़ को घर से फैक्ट्री तक पहुँचाते हैं, और बीच में काम करने वाले लोग भी।",
     "kabadiwala": {
-      "name": "Kabadiwalas",
-      "body": "Take pickup requests from homes nearby, weigh and pay fairly, and sell sorted stock to yards."
+      "name": "कबाड़ीवाले",
+      "body": "आसपास के घरों से पिकअप की रिक्वेस्ट लें, सही तौलें और सही कीमत दें, फिर छँटा हुआ स्टॉक यार्ड को बेचें।"
     },
     "yard": {
-      "name": "Yards",
-      "body": "Buy from kabadiwalas, sort and bale, and sell graded lots to recyclers with payment held in escrow."
+      "name": "यार्ड",
+      "body": "कबाड़ीवालों से खरीदें, छाँटें और गट्ठर बनाएँ, फिर ग्रेड किए हुए लॉट रीसाइक्लरों को बेचें। भुगतान एस्क्रो में जमा रहता है।"
     },
     "recycler": {
       "name": "रीसाइक्लर",
-      "body": "Buy graded bales from verified yards and sell flakes, granules and ingots to factories."
+      "body": "वेरिफ़ाइड यार्ड से ग्रेड किए हुए गट्ठर खरीदें, फिर फ़्लेक्स, दाना और सिल्लियाँ फैक्ट्रियों को बेचें।"
     },
     "manufacturer": {
-      "name": "Manufacturers",
-      "body": "Order recycled material from verified recyclers, with the records EPR reports need."
+      "name": "फैक्ट्रियाँ",
+      "body": "वेरिफ़ाइड रीसाइक्लरों से रीसाइकिल किया हुआ माल ऑर्डर करें, साथ में EPR रिपोर्ट के लिए ज़रूरी रिकॉर्ड भी।"
     },
     "saathi": {
-      "name": "Saathis",
-      "body": "Take paid pickups, sorting work and shifts near home, and see what you've earned."
+      "name": "साथी",
+      "body": "घर के पास पिकअप, छँटाई और शिफ़्ट का कमाई वाला काम लें, और देखें कि आपने कितना कमाया।"
     },
-    "householdHeading": "And every household",
-    "householdBody": "Anyone can sell scrap from home without an account: pick what you have, see each shop's offer, and get paid in cash or UPI with a receipt."
+    "householdHeading": "और हर घर के लिए",
+    "householdBody": "कोई भी बिना अकाउंट के घर बैठे कबाड़ बेच सकता है: चुनें कि आपके पास क्या है, हर दुकान का ऑफ़र देखें, और नकद या UPI से पैसे पाएँ, साथ में रसीद भी।"
   },
   "contact": {
     "metaTitle": "संपर्क",
-    "metaDescription": "Get in touch with the Luma.Green team about joining the Bengaluru pilot.",
+    "metaDescription": "बेंगलुरु के शुरुआती ट्रायल से जुड़ने के बारे में Luma.Green टीम से संपर्क करें।",
     "title": "हमसे बात करें",
-    "lead": "We're starting in Bengaluru with a small group of kabadiwalas, yards, recyclers and factories. Tell us who you are, what you trade and roughly how much moves through you each month.",
+    "lead": "हम बेंगलुरु में कुछ कबाड़ीवालों, यार्ड, रीसाइक्लरों और फैक्ट्रियों के साथ शुरुआत कर रहे हैं। हमें बताएँ कि आप कौन हैं, किस माल का काम करते हैं, और हर महीने लगभग कितना माल आपके यहाँ से गुज़रता है।",
     "emailHeading": "अर्ली एक्सेस और सामान्य प्रश्न",
     "securityHeading": "सुरक्षा रिपोर्ट",
     "securityBody": "कोई सुरक्षा कमज़ोरी मिली है? कृपया इसे सार्वजनिक रूप से नहीं, बल्कि निजी तौर पर रिपोर्ट करें।"
@@ -2338,7 +2338,7 @@
   "compliance": {
     "title": "कागज़ात",
     "lead": "आपके लाइसेंस और रिकॉर्ड, एक ही जगह।",
-    "demoNote": "Sample data: the documents, receipts and amounts here are examples for the prototype.",
+    "demoNote": "नमूना डेटा: यहाँ दिखाए गए कागज़ात, रसीदें और रकम डेमो के लिए सिर्फ़ उदाहरण हैं।",
     "checklist": {
       "title": "चेकलिस्ट",
       "whatThisMeans": "इसका मतलब:"
@@ -2391,9 +2391,9 @@
       "missingBody": "रीसाइक्लर और फैक्ट्रियों को मान्य मंज़ूरी चाहिए होती है। अपनी मंज़ूरी “मदद” से हमें भेजें, हम इसे जोड़ देंगे।"
     },
     "receipts": {
-      "title": "Trade receipts",
-      "lead": "Receipts for your trades on Luma.Green, newest first. GST tax invoices come with real payments.",
-      "number": "Receipt",
+      "title": "सौदों की रसीदें",
+      "lead": "Luma.Green पर आपके सौदों की रसीदें, सबसे नई सबसे ऊपर। GST टैक्स इनवॉइस असली भुगतान के साथ मिलते हैं।",
+      "number": "रसीद",
       "date": "तारीख़",
       "with": "किसके साथ",
       "what": "क्या",
@@ -2408,10 +2408,10 @@
       "ewayNeededLong": "ई-वे बिल ज़रूरी",
       "ewayNotNeededLong": "ई-वे बिल की ज़रूरत नहीं",
       "ewayNote": "₹50,000 से ज़्यादा का माल ले जाने के लिए ई-वे बिल ज़रूरी है।",
-      "view": "View receipt {number}",
+      "view": "रसीद {number} देखें",
       "unknown": "ऐसा बिज़नेस जो अब Luma.Green पर नहीं है",
-      "empty": "No receipts yet",
-      "emptyBody": "A receipt is made when a buyer pays into escrow."
+      "empty": "अभी कोई रसीद नहीं",
+      "emptyBody": "जब कोई खरीदार एस्क्रो में पैसे जमा करता है, तब रसीद बनती है।"
     },
     "epr": {
       "title": "EPR रिकॉर्ड, वित्त वर्ष {from}–{to}",
