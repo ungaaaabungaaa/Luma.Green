@@ -43,7 +43,7 @@ describe("stock.mine", () => {
       ),
     ).toEqual({
       "PAPER-NEWS": 180_000,
-      "PAPER-CARTON": 95_000,
+      "PAPER-CARTON": 300_000,
       "PLASTIC-PET": 42_000,
       "METAL-IRON": 260_000,
       "METAL-ALU-CAN": 12_000,
@@ -62,7 +62,7 @@ describe("stock.mine", () => {
         paiseFor(row.grams, prices.get(row.material.code) ?? 0),
       );
     }
-    expect(stock.totalGrams).toBe(589_000);
+    expect(stock.totalGrams).toBe(794_000);
     expect(stock.totalValuePaise).toBe(
       stock.rows.reduce((sum, row) => sum + (row.valuePaise ?? 0), 0),
     );
@@ -111,7 +111,7 @@ describe("stock.mine", () => {
     expect(stock.rows.map((row) => row.material.code)).not.toContain(
       "METAL-ALU-CAN",
     );
-    expect(stock.totalGrams).toBe(577_000);
+    expect(stock.totalGrams).toBe(782_000);
   });
 
   it("refuses people without a business", async () => {

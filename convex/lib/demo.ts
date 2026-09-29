@@ -136,7 +136,7 @@ export const DEMO_ORGS: readonly DemoOrg[] = [
     vehicle: "auto",
     stock: {
       "PAPER-NEWS": 180,
-      "PAPER-CARTON": 95,
+      "PAPER-CARTON": 300,
       "PLASTIC-PET": 42,
       "METAL-IRON": 260,
       "METAL-ALU-CAN": 12,
@@ -153,7 +153,7 @@ export const DEMO_ORGS: readonly DemoOrg[] = [
     families: ["paper", "plastic", "metal"],
     offersPickup: true,
     vehicle: "cycle",
-    stock: { "PAPER-NEWS": 120, "METAL-IRON": 140 },
+    stock: { "PAPER-NEWS": 120, "PLASTIC-PET": 100, "METAL-IRON": 140 },
     priceFactor: 1,
   },
   {
@@ -268,7 +268,7 @@ export const DEMO_ORGS: readonly DemoOrg[] = [
     stock: {
       "PLASTIC-PET": 12_000,
       "PLASTIC-HDPE": 5500,
-      "RECYCLED-PET-FLAKE": 9000,
+      "RECYCLED-PET-FLAKE": 15_000,
       "RECYCLED-HDPE-GRANULE": 4000,
     },
   },

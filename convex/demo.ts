@@ -548,16 +548,19 @@ async function seedMarket(ctx: MutationCtx, orgs: OrgIds, now: number) {
     const paisePerKg = priceAt(trade.materialCode, trade.factor);
     const grams = kgToGrams(trade.kg);
     const created = now - trade.daysAgo * DAY - 6 * HOUR;
+    // A request still waits on the seller, so its lot stays open with the
+    // kilos on offer; later steps have already taken them off the lot.
+    const isWaiting = trade.status === "requested";
     const listingId =
       listingFor.get(`${trade.seller}:${trade.materialCode}`) ??
       (await ctx.db.insert("listings", {
         orgId: sellerOrgId,
         sellerKind,
         materialCode: trade.materialCode,
-        grams: 0,
+        grams: isWaiting ? grams : 0,
         askPaisePerKg: paisePerKg,
         city: DEMO_CITY,
-        status: "sold",
+        status: isWaiting ? "open" : "sold",
         createdAt: created,
         updatedAt: created,
       }));

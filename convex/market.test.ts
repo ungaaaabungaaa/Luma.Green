@@ -41,6 +41,25 @@ async function demoWorld() {
 type Test = Awaited<ReturnType<typeof demoWorld>>;
 type Session = Awaited<ReturnType<typeof signInAs>>;
 
+/** Sets a business's stock of one material, as if it sold some elsewhere. */
+async function setStock(t: Test, slug: string, code: string, grams: number) {
+  await t.run(async (ctx) => {
+    const org = await ctx.db
+      .query("orgs")
+      .withIndex("by_slug", (q) => q.eq("slug", slug))
+      .unique();
+    if (!org) throw new Error(`No org ${slug}`);
+    const row = await ctx.db
+      .query("inventory")
+      .withIndex("by_org_material", (q) =>
+        q.eq("orgId", org._id).eq("materialCode", code),
+      )
+      .first();
+    if (!row) throw new Error(`No ${code} stock for ${slug}`);
+    await ctx.db.patch("inventory", row._id, { grams });
+  });
+}
+
 async function stockOf(t: Test, slug: string, code: string) {
   return t.run(async (ctx) => {
     const org = await ctx.db
@@ -410,7 +429,9 @@ describe("act refuses", () => {
   it("a dispatch bigger than the seller's stock", async () => {
     const t = await demoWorld();
     const shop = await signInAs(t, SHOP);
-    // Seeded: 180 kg of cartons paid into escrow; the shop holds 95 kg.
+    // Seeded: 180 kg of cartons paid into escrow. The shop then sold most
+    // of its cartons elsewhere and holds only 95 kg.
+    await setStock(t, "ramesh-kabadi-store", "PAPER-CARTON", 95_000);
     const { selling } = await shop.query(api.market.trades, {});
     const cartons = selling.find(
       (trade) =>
@@ -497,8 +518,8 @@ describe("selling", () => {
       stockGrams: 180_000,
       availableGrams: 30_000,
     });
-    // 95 kg of cartons, all promised to a paid trade.
-    expect(byCode.get("PAPER-CARTON")?.availableGrams).toBe(0);
+    // 300 kg of cartons, 180 kg of them promised to a paid trade.
+    expect(byCode.get("PAPER-CARTON")?.availableGrams).toBe(120_000);
     expect(byCode.get("PLASTIC-PET")?.availableGrams).toBe(42_000);
 
     await expect(
