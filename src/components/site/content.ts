@@ -12,8 +12,6 @@ import {
 
 import type { PublicRoute } from "@/i18n/paths";
 
-import type { Doc } from "../../../convex/_generated/dataModel";
-
 /** Primary navigation. `key` is the label in the `nav` namespace. */
 export const navItems = [
   { href: "/how-it-works", key: "howItWorks" },
@@ -29,8 +27,8 @@ export const loopSteps = [
 ] as const satisfies readonly { key: string; icon: LucideIcon }[];
 
 /**
- * Org roles, in the order material flows through them. Typed against the
- * Convex schema so a role added there fails the build here until it has copy.
+ * The roles the public site describes, in the order material flows through
+ * them. Site copy only — the app's roles live in convex/lib/chain.ts.
  */
 export const roles = [
   { key: "collector", icon: TruckIcon },
@@ -38,10 +36,4 @@ export const roles = [
   { key: "recycler", icon: RecycleIcon },
   { key: "factory", icon: FactoryIcon },
   { key: "verifier", icon: ShieldCheckIcon },
-] as const satisfies readonly { key: Doc<"orgs">["role"]; icon: LucideIcon }[];
-
-/** Compile error if the schema gains a role that `roles` does not list. */
-type Covers<Missing extends never> = Missing;
-export type RolesCoverSchema = Covers<
-  Exclude<Doc<"orgs">["role"], (typeof roles)[number]["key"]>
->;
+] as const satisfies readonly { key: string; icon: LucideIcon }[];

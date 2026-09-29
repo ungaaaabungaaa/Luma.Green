@@ -406,7 +406,8 @@
       },
       "approved": {
         "title": "You're verified",
-        "lead": "Your dashboard is on its way. We'll send you an SMS when it opens."
+        "lead": "Your business is live on Luma.Green.",
+        "open": "Open your dashboard"
       },
       "rejected": {
         "title": "We couldn't verify you",
@@ -459,6 +460,33 @@
       "fileTooBig": "This file is too big",
       "uploadFailed": "Upload failed. Try again.",
       "generic": "Something went wrong. Try again."
+    }
+  },
+  "app": {
+    "navLabel": "App",
+    "homeLink": "Luma.Green home",
+    "signOut": "Sign out",
+    "more": "More",
+    "comingSoon": "This screen is being built.",
+    "nav": {
+      "home": "Home",
+      "requests": "Requests",
+      "stock": "Stock",
+      "prices": "My prices",
+      "buy": "Buy",
+      "sell": "Sell",
+      "trades": "Trades",
+      "impact": "Impact",
+      "compliance": "Compliance",
+      "earnings": "Earnings",
+      "help": "Help"
+    },
+    "roles": {
+      "kabadiwala": "Kabadiwala",
+      "yard": "Yard",
+      "recycler": "Recycler",
+      "manufacturer": "Manufacturer",
+      "saathi": "Saathi"
     }
   }
 }

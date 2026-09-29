@@ -9,6 +9,7 @@ import type { DataModel } from "./_generated/dataModel";
 import authConfig from "./auth.config";
 import authSchema from "./betterAuth/schema";
 import { adminSessionExpiry, isAdminEmail } from "./lib/admin";
+import { DEMO_CODE, isDemoPhone } from "./lib/demo";
 import { isIndianMobile, phoneEmail } from "./lib/phone";
 import { CODE_TTL_MINUTES } from "./lib/sms";
 
@@ -102,7 +103,19 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) =>
         // Hand the code to an action through the scheduler: the request
         // returns at once, and nothing is left as a dangling promise that
         // Convex could drop.
-        sendOTP: async ({ phoneNumber: phone, code }) => {
+        sendOTP: async ({ phoneNumber: phone, code }, endpoint) => {
+          if (endpoint && isDemoPhone(phone, process.env.AUTH_DEV_MODE)) {
+            // Dev only: a demo login's code is always DEMO_CODE and no SMS
+            // goes out. Better Auth stores codes as "<code>:<attempts>".
+            const adapter = endpoint.context.internalAdapter;
+            await adapter.deleteVerificationByIdentifier(phone);
+            await adapter.createVerificationValue({
+              identifier: phone,
+              value: `${DEMO_CODE}:0`,
+              expiresAt: new Date(Date.now() + CODE_TTL_MINUTES * 60 * 1000),
+            });
+            return;
+          }
           if (!("scheduler" in ctx)) {
             throw new Error("Sign-in codes can only be sent from an action.");
           }

@@ -6,15 +6,26 @@ import {
   vApplicationKind,
   vApplicationStatus,
   vFileType,
+  vRadius,
+  vSaathiTime,
+  vSaathiVehicle,
+  vSaathiWork,
+  vShopVehicle,
+  vWeekday,
 } from "./lib/drafts";
+import {
+  vBookingStatus,
+  vFamily,
+  vOrgKind,
+  vTradeStatus,
+} from "./lib/validators";
 
 /**
- * Luma.Green data model — first pass.
+ * Luma.Green data model — docs/architecture/data-model.md.
  *
- * Three loops share one ledger:
- *   1. Recovery  — material is collected and enters an org's inventory.
- *   2. Trade     — orgs in the same sector list, bid on and settle lots.
- *   3. Carbon    — a settled trade mints credits, which are held then retired.
+ * Material moves up the chain: households → kabadiwalas → yards → recyclers
+ * → manufacturers. Each step is on the ledger: bookings and receipts, stock,
+ * listings and trades.
  *
  * Money is stored in paise (integer) and mass in grams (integer). Never float:
  * a rounding drift in either column is a compliance problem, not a UI bug.
@@ -24,27 +35,6 @@ const timestamps = {
   createdAt: v.number(),
   updatedAt: v.number(),
 };
-
-/** Where an org sits in the loop. Drives permissions and the default views. */
-const orgRole = v.union(
-  v.literal("collector"), // picks up material at source
-  v.literal("aggregator"), // sorts and bulks it up
-  v.literal("recycler"), // processes it back into feedstock
-  v.literal("factory"), // consumes recovered feedstock
-  v.literal("verifier"), // audits claims, signs off credits
-);
-
-/** Broad material family. Grades live on the material record itself. */
-const materialFamily = v.union(
-  v.literal("plastic"),
-  v.literal("paper"),
-  v.literal("metal"),
-  v.literal("glass"),
-  v.literal("ewaste"),
-  v.literal("textile"),
-  v.literal("organic"),
-  v.literal("other"),
-);
 
 export default defineSchema({
   /**
@@ -131,222 +121,244 @@ export default defineSchema({
     .index("by_application", ["applicationId"])
     .index("by_storageId", ["storageId"]),
 
-  /** v1 identity table — replaced by `profiles`; removed with the v2 schema. */
-  users: defineTable({
-    authId: v.string(), // subject from the auth provider
-    email: v.optional(v.string()),
-    phone: v.optional(v.string()), // E.164, the primary identifier in India
-    name: v.optional(v.string()),
-    imageUrl: v.optional(v.string()),
-    locale: v.optional(v.string()),
-    ...timestamps,
-  })
-    .index("by_authId", ["authId"])
-    .index("by_phone", ["phone"])
-    .index("by_email", ["email"]),
+  // --- Catalogue and prices ------------------------------------------------
 
-  /** A company, co-op or informal collective operating in one sector. */
+  /**
+   * The material catalogue — Luma.Green's shared material codes. Names are
+   * data (per language, English as the fallback), so adding a material needs
+   * no code change: edit convex/lib/catalogue.ts and re-run the seed.
+   */
+  materials: defineTable({
+    code: v.string(), // e.g. "PAPER-NEWS"
+    family: vFamily,
+    stage: v.union(v.literal("scrap"), v.literal("recycled")),
+    names: v.record(v.string(), v.string()), // locale → name
+    /** kg CO2e avoided per kg recycled instead of made new (indicative). */
+    co2eFactor: v.number(),
+    sortOrder: v.number(),
+    active: v.boolean(),
+  })
+    .index("by_code", ["code"])
+    .index("by_sortOrder", ["sortOrder"]),
+
+  /** The admin's floor and fallback price per material per city. */
+  referencePrices: defineTable({
+    city: v.string(),
+    materialCode: v.string(),
+    floorPaise: v.number(), // per kg; a kabadiwala can't offer less
+    fallbackPaise: v.number(), // per kg; used when a shop hasn't set a price
+    updatedAt: v.number(),
+  }).index("by_city_material", ["city", "materialCode"]),
+
+  /** The daily market price per material per city, for the price board. */
+  marketPrices: defineTable({
+    city: v.string(),
+    materialCode: v.string(),
+    date: v.string(), // YYYY-MM-DD, India time
+    paisePerKg: v.number(),
+  }).index("by_city_material_date", ["city", "materialCode", "date"]),
+
+  /** What one shop pays households, per material. */
+  rateCards: defineTable({
+    orgId: v.id("orgs"),
+    materialCode: v.string(),
+    paisePerKg: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_org_material", ["orgId", "materialCode"])
+    .index("by_material", ["materialCode"]),
+
+  // --- Businesses and Saathis -----------------------------------------------
+
+  /** An approved business: created when the admin approves its application. */
   orgs: defineTable({
+    kind: vOrgKind,
     name: v.string(),
     slug: v.string(),
-    role: orgRole,
-    /** Industry sector — orgs only see and trade within their own. */
-    sector: v.string(),
+    status: v.union(v.literal("active"), v.literal("suspended")),
+    ownerProfileId: v.optional(v.id("profiles")),
+    applicationId: v.optional(v.id("applications")),
+    city: v.string(),
+    area: v.string(),
+    address: v.string(),
+    location: v.optional(v.object({ lat: v.number(), lng: v.number() })),
+    phones: v.array(v.object({ number: v.string(), label: v.string() })),
+    hours: v.optional(v.object({ opens: v.string(), closes: v.string() })),
+    weeklyOff: v.array(vWeekday),
     gstin: v.optional(v.string()),
-    pan: v.optional(v.string()),
-    kycStatus: v.union(
-      v.literal("unverified"),
-      v.literal("pending"),
-      v.literal("verified"),
-      v.literal("rejected"),
-    ),
-    location: v.optional(
+    families: v.array(vFamily),
+    offersPickup: v.boolean(),
+    vehicle: v.optional(vShopVehicle),
+    consent: v.optional(
       v.object({
-        line1: v.optional(v.string()),
-        city: v.optional(v.string()),
-        state: v.optional(v.string()),
-        pincode: v.optional(v.string()),
-        lat: v.optional(v.number()),
-        lng: v.optional(v.number()),
+        board: v.string(),
+        number: v.string(),
+        validUntil: v.string(),
       }),
     ),
     ...timestamps,
   })
     .index("by_slug", ["slug"])
-    .index("by_sector", ["sector"])
-    .index("by_sector_role", ["sector", "role"]),
+    .index("by_owner", ["ownerProfileId"])
+    .index("by_kind_city", ["kind", "city", "status"]),
 
-  /** Join table: who can act for which org, and how much they can do. */
+  /** Who can act for which business. */
   memberships: defineTable({
-    userId: v.id("users"),
+    profileId: v.id("profiles"),
     orgId: v.id("orgs"),
-    role: v.union(
-      v.literal("owner"),
-      v.literal("admin"),
-      v.literal("operator"),
-      v.literal("viewer"),
-    ),
-    ...timestamps,
+    role: v.union(v.literal("owner"), v.literal("staff")),
+    createdAt: v.number(),
   })
-    .index("by_user", ["userId"])
-    .index("by_org", ["orgId"])
-    .index("by_user_org", ["userId", "orgId"]),
+    .index("by_profile", ["profileId"])
+    .index("by_org", ["orgId"]),
 
-  /** Catalogue of tradeable material types, shared across all orgs. */
-  materials: defineTable({
-    code: v.string(), // e.g. "PET-CLEAR-A"
-    family: materialFamily,
+  /** An approved Saathi. */
+  saathiProfiles: defineTable({
+    profileId: v.id("profiles"),
+    applicationId: v.optional(v.id("applications")),
     name: v.string(),
-    grade: v.optional(v.string()),
-    /** kg CO2e avoided per kg recycled vs virgin production. */
-    co2eFactorPerKg: v.number(),
-    /** Source of that factor — every credit must trace back to a citation. */
-    factorSource: v.string(),
-    active: v.boolean(),
+    city: v.string(),
+    area: v.string(),
+    radiusKm: vRadius,
+    workTypes: v.array(vSaathiWork),
+    vehicle: vSaathiVehicle,
+    times: v.array(vSaathiTime),
+    days: v.array(vWeekday),
+    status: v.union(v.literal("active"), v.literal("suspended")),
+    createdAt: v.number(),
+  }).index("by_profile", ["profileId"]),
+
+  // --- Household pickups ------------------------------------------------------
+
+  /** A household's pickup or drop-off, tracked at /t/{token}. */
+  bookings: defineTable({
+    token: v.string(),
+    householdProfileId: v.optional(v.id("profiles")),
+    phone: v.string(),
+    name: v.optional(v.string()),
+    mode: v.union(v.literal("pickup"), v.literal("dropoff")),
+    items: v.array(v.object({ materialCode: v.string(), estKg: v.number() })),
+    estimatePaise: v.number(),
+    orgId: v.id("orgs"),
+    slotDate: v.string(), // YYYY-MM-DD
+    slotWindow: vSaathiTime,
+    address: v.optional(v.string()),
+    status: vBookingStatus,
+    timeline: v.array(v.object({ status: vBookingStatus, at: v.number() })),
+    receipt: v.optional(
+      v.object({
+        lines: v.array(
+          v.object({
+            materialCode: v.string(),
+            grams: v.number(),
+            paisePerKg: v.number(),
+            paise: v.number(),
+          }),
+        ),
+        totalPaise: v.number(),
+        method: v.union(v.literal("cash"), v.literal("upi")),
+        paidAt: v.number(),
+      }),
+    ),
+    points: v.optional(v.number()),
     ...timestamps,
   })
-    .index("by_code", ["code"])
-    .index("by_family", ["family"]),
+    .index("by_token", ["token"])
+    .index("by_org_status", ["orgId", "status"])
+    .index("by_household", ["householdProfileId"]),
 
-  /** Current stock of one material at one org. */
+  // --- Stock and trade --------------------------------------------------------
+
+  /** Stock of one material at one business. */
   inventory: defineTable({
     orgId: v.id("orgs"),
-    materialId: v.id("materials"),
-    quantityGrams: v.number(),
-    reservedGrams: v.number(), // committed to open trades
-    warehouse: v.optional(v.string()),
-    ...timestamps,
+    materialCode: v.string(),
+    grams: v.number(),
+    updatedAt: v.number(),
   })
     .index("by_org", ["orgId"])
-    .index("by_org_material", ["orgId", "materialId"]),
+    .index("by_org_material", ["orgId", "materialCode"]),
 
-  /** Append-only record of every stock change. Inventory is derived from this. */
-  inventoryMovements: defineTable({
-    orgId: v.id("orgs"),
-    materialId: v.id("materials"),
-    deltaGrams: v.number(), // signed
-    reason: v.union(
-      v.literal("collection"),
-      v.literal("purchase"),
-      v.literal("sale"),
-      v.literal("processing_loss"),
-      v.literal("adjustment"),
-      v.literal("write_off"),
-    ),
-    tradeId: v.optional(v.id("trades")),
-    note: v.optional(v.string()),
-    actorUserId: v.optional(v.id("users")),
-    createdAt: v.number(),
-  })
-    .index("by_org", ["orgId"])
-    .index("by_org_created", ["orgId", "createdAt"])
-    .index("by_trade", ["tradeId"]),
-
-  /** An offer to buy or sell a lot, visible to the seller's sector. */
+  /** A lot offered to the next business up the chain. */
   listings: defineTable({
     orgId: v.id("orgs"),
-    materialId: v.id("materials"),
-    side: v.union(v.literal("sell"), v.literal("buy")),
-    quantityGrams: v.number(),
-    pricePerKgPaise: v.number(),
-    minQuantityGrams: v.optional(v.number()),
+    sellerKind: vOrgKind,
+    materialCode: v.string(),
+    grams: v.number(),
+    askPaisePerKg: v.number(),
+    city: v.string(),
+    note: v.optional(v.string()),
     status: v.union(
-      v.literal("draft"),
       v.literal("open"),
-      v.literal("partially_filled"),
-      v.literal("filled"),
-      v.literal("cancelled"),
-      v.literal("expired"),
+      v.literal("sold"),
+      v.literal("withdrawn"),
     ),
-    expiresAt: v.optional(v.number()),
     ...timestamps,
   })
-    .index("by_org", ["orgId"])
-    .index("by_status", ["status"])
-    .index("by_material_status", ["materialId", "status"]),
-
-  /** A matched buy/sell, from agreement through settlement. */
-  trades: defineTable({
-    listingId: v.id("listings"),
-    buyerOrgId: v.id("orgs"),
-    sellerOrgId: v.id("orgs"),
-    materialId: v.id("materials"),
-    quantityGrams: v.number(),
-    pricePerKgPaise: v.number(),
-    totalPaise: v.number(),
-    status: v.union(
-      v.literal("pending"),
-      v.literal("accepted"),
-      v.literal("in_transit"),
-      v.literal("delivered"),
-      v.literal("settled"),
-      v.literal("disputed"),
-      v.literal("cancelled"),
-    ),
-    paymentRef: v.optional(v.string()), // Razorpay order/payment id
-    settledAt: v.optional(v.number()),
-    ...timestamps,
-  })
-    .index("by_buyer", ["buyerOrgId"])
-    .index("by_seller", ["sellerOrgId"])
-    .index("by_status", ["status"])
-    .index("by_listing", ["listingId"]),
+    .index("by_status_kind", ["status", "sellerKind"])
+    .index("by_org", ["orgId"]),
 
   /**
-   * Credits minted from a settled trade. `kgCo2e` is computed from the
-   * material factor at settlement time and frozen — later factor revisions
-   * must not silently restate credits that are already issued.
+   * A purchase between two businesses. Money is held in escrow (simulated in
+   * the prototype) from payment until the buyer confirms delivery.
    */
-  carbonCredits: defineTable({
-    orgId: v.id("orgs"),
-    tradeId: v.optional(v.id("trades")),
-    materialId: v.id("materials"),
-    kgCo2e: v.number(),
-    factorUsed: v.number(),
-    vintageYear: v.number(),
-    status: v.union(
-      v.literal("draft"),
-      v.literal("pending_verification"),
-      v.literal("issued"),
-      v.literal("listed"),
-      v.literal("transferred"),
-      v.literal("retired"),
-      v.literal("rejected"),
-    ),
-    verifierOrgId: v.optional(v.id("orgs")),
-    verifiedAt: v.optional(v.number()),
-    serial: v.string(), // human-readable, unique, printed on certificates
+  trades: defineTable({
+    listingId: v.id("listings"),
+    sellerOrgId: v.id("orgs"),
+    buyerOrgId: v.id("orgs"),
+    materialCode: v.string(),
+    grams: v.number(),
+    paisePerKg: v.number(),
+    totalPaise: v.number(),
+    status: vTradeStatus,
+    timeline: v.array(v.object({ status: vTradeStatus, at: v.number() })),
+    invoiceNo: v.optional(v.string()),
     ...timestamps,
   })
-    .index("by_org", ["orgId"])
-    .index("by_status", ["status"])
-    .index("by_serial", ["serial"])
-    .index("by_trade", ["tradeId"]),
+    .index("by_seller", ["sellerOrgId"])
+    .index("by_buyer", ["buyerOrgId"])
+    .index("by_listing", ["listingId"]),
 
-  /** Every movement of a credit between orgs, plus its final retirement. */
-  creditTransfers: defineTable({
-    creditId: v.id("carbonCredits"),
-    fromOrgId: v.optional(v.id("orgs")), // absent = issuance
-    toOrgId: v.optional(v.id("orgs")), // absent = retirement
-    kgCo2e: v.number(),
-    pricePaise: v.optional(v.number()),
-    kind: v.union(
-      v.literal("issue"),
-      v.literal("transfer"),
-      v.literal("retire"),
+  // --- Saathi work --------------------------------------------------------------
+
+  /** Paid work a business posts for Saathis. */
+  jobs: defineTable({
+    orgId: v.optional(v.id("orgs")),
+    kind: vSaathiWork,
+    title: v.string(),
+    area: v.string(),
+    date: v.string(),
+    window: vSaathiTime,
+    payPaise: v.number(),
+    status: v.union(
+      v.literal("open"),
+      v.literal("assigned"),
+      v.literal("done"),
     ),
-    retirementReason: v.optional(v.string()),
+    saathiProfileId: v.optional(v.id("saathiProfiles")),
     createdAt: v.number(),
   })
-    .index("by_credit", ["creditId"])
-    .index("by_from", ["fromOrgId"])
-    .index("by_to", ["toOrgId"]),
+    .index("by_status", ["status"])
+    .index("by_saathi", ["saathiProfileId"]),
+
+  // --- Help -----------------------------------------------------------------------
+
+  /** Messages from the help centre and the solar page, for the team to answer. */
+  supportRequests: defineTable({
+    profileId: v.optional(v.id("profiles")),
+    name: v.string(),
+    phone: v.string(),
+    role: v.string(),
+    topic: v.string(),
+    message: v.string(),
+    status: v.union(v.literal("open"), v.literal("answered")),
+    createdAt: v.number(),
+  }).index("by_status", ["status"]),
 
   /** Immutable audit trail. Anything a regulator could ask about lands here. */
   auditLog: defineTable({
     orgId: v.optional(v.id("orgs")),
-    actorUserId: v.optional(v.id("users")),
-    /** The signed-in person behind the change (v2 identity). */
+    /** The signed-in person behind the change. */
     actorProfileId: v.optional(v.id("profiles")),
     action: v.string(), // "trade.settled", "credit.retired", …
     entityTable: v.string(),
