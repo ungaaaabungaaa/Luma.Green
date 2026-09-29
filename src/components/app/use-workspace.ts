@@ -1,7 +1,8 @@
 "use client";
 
-import { useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
+
+import { useSignedInQuery } from "@/components/providers/use-signed-in-query";
 
 import { api } from "../../../convex/_generated/api";
 
@@ -16,5 +17,5 @@ export type OrgWorkspace = Extract<Workspace, { kind: "org" }>["org"];
  * so pages can rely on `useOrg()` / `useSaathi()`.
  */
 export function useWorkspace() {
-  return useQuery(api.workspace.mine);
+  return useSignedInQuery(api.workspace.mine);
 }

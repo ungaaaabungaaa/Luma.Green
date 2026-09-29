@@ -15,6 +15,7 @@ import { type ReactNode, useEffect } from "react";
 
 import { Logo } from "@/components/brand/logo";
 import { QueryProvider } from "@/components/providers/query-provider";
+import { useSignedInQuery } from "@/components/providers/use-signed-in-query";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -62,7 +63,7 @@ function isCurrent(pathname: string, href: string): boolean {
  */
 export function ConsoleShell({ children }: { children: ReactNode }) {
   const router = useRouter();
-  const me = useQuery(api.identity.me);
+  const me = useSignedInQuery(api.identity.me);
 
   let redirectTo: string | null = null;
   if (me === null) redirectTo = "/admin/login";

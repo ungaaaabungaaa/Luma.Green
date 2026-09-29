@@ -1,7 +1,8 @@
 "use client";
 
-import { useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
+
+import { useSignedInQuery } from "@/components/providers/use-signed-in-query";
 
 import { api } from "../../../convex/_generated/api";
 
@@ -14,5 +15,5 @@ export type FileSummary = Application["files"][number];
  * `null` when signed out.
  */
 export function useMine(): Mine | undefined {
-  return useQuery(api.applications.mine);
+  return useSignedInQuery(api.applications.mine);
 }
