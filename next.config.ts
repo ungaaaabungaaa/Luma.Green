@@ -48,7 +48,10 @@ export default process.env.NEXT_PUBLIC_SENTRY_DSN
       widenClientFileUpload: true,
       // Proxies Sentry through our own domain so ad blockers don't drop errors.
       tunnelRoute: "/monitoring",
-      disableLogger: true,
+      // Strips the SDK's own debug logging. Sentry 11 moved this under
+      // `webpack` — it has no Turbopack equivalent yet, so it only applies to
+      // webpack builds.
+      webpack: { treeshake: { removeDebugLogging: true } },
       sourcemaps: { deleteSourcemapsAfterUpload: true },
     })
   : config;

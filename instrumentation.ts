@@ -1,5 +1,7 @@
 import * as Sentry from "@sentry/nextjs";
 
+import { privateDataCollection } from "@/lib/sentry";
+
 const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
 
 /**
@@ -16,7 +18,7 @@ export function register() {
     // surprises. Raise deliberately when investigating something specific.
     tracesSampleRate: process.env.VERCEL_ENV === "production" ? 0.1 : 1,
     // Operator data (phone, PAN, GSTIN) must never leave the app in a trace.
-    sendDefaultPii: false,
+    dataCollection: privateDataCollection,
   });
 }
 
