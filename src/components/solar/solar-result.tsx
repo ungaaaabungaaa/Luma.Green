@@ -149,7 +149,7 @@ function Estimate({
         ) : null}
       </div>
 
-      <dl className="grid gap-2 sm:grid-cols-2">
+      <dl className="grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2">
         <Figure label={t("cost")} value={range(estimate.cost)} />
         <Figure
           label={t("subsidy")}

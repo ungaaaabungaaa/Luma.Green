@@ -28,7 +28,7 @@ function Figure({
   extra?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1 rounded-xl bg-muted/50 px-3 py-2.5">
+    <div className="flex min-w-0 flex-col gap-1 rounded-xl bg-muted/50 px-3 py-2.5">
       <dt className="text-xs text-muted-foreground">{label}</dt>
       <dd className="flex flex-wrap items-center gap-x-2 gap-y-1 text-lg font-semibold">
         {value}
@@ -50,7 +50,7 @@ export function PriceDetail({ row }: { row: PriceRow }) {
   return (
     <DialogContent
       showCloseButton={false}
-      className="max-h-[90dvh] overflow-y-auto sm:max-w-2xl"
+      className="max-h-[90dvh] grid-cols-[minmax(0,1fr)] overflow-y-auto sm:max-w-2xl"
     >
       <DialogHeader className="pe-10">
         <DialogTitle className="text-xl font-semibold">{name}</DialogTitle>
