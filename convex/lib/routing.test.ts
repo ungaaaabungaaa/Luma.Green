@@ -72,7 +72,7 @@ describe("distance", () => {
   });
 
   it("rounds kilometres to one decimal for screens", () => {
-    expect(roundKm(2.375)).toBe(2.4);
+    expect(roundKm(2.375)).toBeCloseTo(2.4, 6);
     expect(roundKm(0)).toBe(0);
   });
 

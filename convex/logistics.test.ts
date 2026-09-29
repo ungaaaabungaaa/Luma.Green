@@ -500,25 +500,25 @@ describe("the seeded loads", () => {
     expect(loads.done.map((load) => load.status)).toEqual(["delivered"]);
 
     const collecting = loads.active[0];
-    expect(collecting?.stops.map((stop) => stop.status)).toEqual([
+    expect(collecting.stops.map((stop) => stop.status)).toEqual([
       "collected",
       "accepted",
     ]);
-    expect(collecting?.actions).toEqual(["deliver", "cancel"]);
-    expect(collecting?.stops[1]?.canCollect).toBe(true);
-    expect(collecting?.restrictions.map((row) => row.road)).toContain(
+    expect(collecting.actions).toEqual(["deliver", "cancel"]);
+    expect(collecting.stops[1]?.canCollect).toBe(true);
+    expect(collecting.restrictions.map((row) => row.road)).toContain(
       "Peenya elevated corridor (Tumkur Road)",
     );
 
     const delivered = loads.done[0];
-    expect(delivered?.leavingGrams).toBe(180_000);
-    expect(delivered?.arrivedGrams).toBe(178_000);
-    expect(delivered?.weightGap).toEqual({
+    expect(delivered.leavingGrams).toBe(180_000);
+    expect(delivered.arrivedGrams).toBe(178_000);
+    expect(delivered.weightGap).toEqual({
       gapGrams: 2000,
       allowedGrams: 1800,
       isWithinTolerance: false,
     });
-    expect(delivered?.actions).toEqual([]);
+    expect(delivered.actions).toEqual([]);
   });
 
   it("show each shop the loads that stop at it, with Accept and Decline", async () => {
@@ -963,15 +963,14 @@ describe("the admin's tables", () => {
       note: "Metro works",
     });
     const yard = await signInAs(t, YARD);
-    expect(
-      (
-        await yard.query(api.logistics.checkRestrictions, {
-          vehicleType: "truck",
-          date: indiaToday(),
-          window: "morning",
-        })
-      ).map((row) => row.road),
-    ).toContain("Hosur Road");
+    const trucksInTheMorning = () =>
+      yard.query(api.logistics.checkRestrictions, {
+        vehicleType: "truck",
+        date: indiaToday(),
+        window: "morning",
+      });
+    const before = await trucksInTheMorning();
+    expect(before.map((row) => row.road)).toContain("Hosur Road");
 
     await admin.mutation(api.logistics.adminSaveRestriction, {
       id,
@@ -982,15 +981,8 @@ describe("the admin's tables", () => {
       from: indiaToday(),
       to: shiftDate(indiaToday(), 3),
     });
-    expect(
-      (
-        await yard.query(api.logistics.checkRestrictions, {
-          vehicleType: "truck",
-          date: indiaToday(),
-          window: "morning",
-        })
-      ).map((row) => row.road),
-    ).not.toContain("Hosur Road");
+    const after = await trucksInTheMorning();
+    expect(after.map((row) => row.road)).not.toContain("Hosur Road");
 
     await admin.mutation(api.logistics.adminDeleteRestriction, { id });
     tables = await admin.query(api.logistics.adminTables, {});

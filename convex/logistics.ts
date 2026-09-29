@@ -22,7 +22,7 @@ import { shiftDate } from "./lib/dates";
 import { vSaathiTime } from "./lib/drafts";
 import { SLOT_WINDOW_HOURS, type SlotWindow } from "./lib/households";
 import { indiaToday } from "./lib/onboarding";
-import { isIndianMobile } from "./lib/phone";
+import { normalizeIndianMobile } from "./lib/phone";
 import {
   areaOfAddress,
   type Bulk,
@@ -1063,10 +1063,12 @@ function checkVehicleNo(vehicleNo: string | undefined): string | undefined {
   return cleaned;
 }
 
+/** A driver's number as typed ("98450 00031", "+91…") → E.164, or refused. */
 function checkDriverPhone(phone: string | undefined): string | undefined {
   if (phone === undefined || phone.trim() === "") return;
-  if (!isIndianMobile(phone)) throw new ConvexError("INVALID_PHONE");
-  return phone;
+  const normalized = normalizeIndianMobile(phone);
+  if (normalized === null) throw new ConvexError("INVALID_PHONE");
+  return normalized;
 }
 
 /**
@@ -1245,10 +1247,22 @@ function collectedGrams(stops: readonly Stop[]): number | undefined {
     : weighed.reduce((sum, stop) => sum + (stop.collectedGrams ?? 0), 0);
 }
 
+/** A weight someone typed: whole grams above zero, within reason. */
+function checkOptionalWeight(grams: number | undefined): void {
+  if (
+    grams !== undefined &&
+    (!isPositiveInteger(grams) || grams > MAX_LOAD_GRAMS)
+  ) {
+    throw new ConvexError("INVALID_WEIGHT");
+  }
+}
+
 /**
  * The buyer moves a load along: planned → collecting (the vehicle has left)
- * → delivered (weighed at the gate), or cancelled while still open. The
- * arrival weight is recorded at delivery and compared with what left.
+ * → delivered (weighed at the gate), or cancelled while still open. At
+ * delivery the leaving weight is the weighbridge reading when given, else
+ * the sum of the stops' scale readings; the arrival weight is compared with
+ * it against the admin's tolerance.
  */
 // eslint-disable-next-line unicorn/no-non-function-verb-prefix -- a Convex mutation; its name is the API contract
 export const setLoadStatus = mutation({
@@ -1259,6 +1273,7 @@ export const setLoadStatus = mutation({
       v.literal("delivered"),
       v.literal("cancelled"),
     ),
+    leavingGrams: v.optional(v.number()),
     arrivedGrams: v.optional(v.number()),
   },
   returns: v.null(),
@@ -1268,20 +1283,19 @@ export const setLoadStatus = mutation({
     if (!canMoveLoad(load.status, args.status)) {
       throw new ConvexError("WRONG_STATUS");
     }
-    if (
-      args.arrivedGrams !== undefined &&
-      (!isPositiveInteger(args.arrivedGrams) || args.arrivedGrams > MAX_LOAD_GRAMS)
-    ) {
-      throw new ConvexError("INVALID_WEIGHT");
-    }
+    checkOptionalWeight(args.leavingGrams);
+    checkOptionalWeight(args.arrivedGrams);
     const now = Date.now();
     const isDelivery = args.status === "delivered";
+    const leavingGrams = isDelivery
+      ? (args.leavingGrams ?? collectedGrams(load.stops))
+      : load.leavingGrams;
     await ctx.db.patch("loads", load._id, {
       status: args.status,
       timeline: [...load.timeline, { status: args.status, at: now }],
       startedAt: args.status === "collecting" ? now : load.startedAt,
       deliveredAt: isDelivery ? now : load.deliveredAt,
-      leavingGrams: isDelivery ? collectedGrams(load.stops) : load.leavingGrams,
+      leavingGrams,
       arrivedGrams: isDelivery ? args.arrivedGrams : load.arrivedGrams,
       updatedAt: now,
     });
@@ -1294,7 +1308,44 @@ export const setLoadStatus = mutation({
       metadata: {
         from: load.status,
         to: args.status,
+        leavingGrams: leavingGrams ?? null,
         arrivedGrams: args.arrivedGrams ?? null,
+      },
+    });
+    return null;
+  },
+});
+
+/** The buyer fills in the vehicle number and driver once they're known. */
+// eslint-disable-next-line unicorn/no-non-function-verb-prefix -- a Convex mutation; its name is the API contract
+export const setLoadVehicle = mutation({
+  args: {
+    loadId: v.id("loads"),
+    vehicleNo: v.optional(v.string()),
+    driverPhone: v.optional(v.string()),
+  },
+  returns: v.null(),
+  handler: async (ctx, args) => {
+    const { profile, org } = await requireOrg(ctx, BUYERS);
+    const load = await myLoad(ctx, org, args.loadId);
+    if (!isOpenLoad(load.status)) throw new ConvexError("LOAD_CLOSED");
+    const vehicleNo = checkVehicleNo(args.vehicleNo);
+    const driverPhone = checkDriverPhone(args.driverPhone);
+    const now = Date.now();
+    await ctx.db.patch("loads", load._id, {
+      vehicleNo,
+      driverPhone,
+      updatedAt: now,
+    });
+    await audit(ctx, {
+      orgId: org._id,
+      actorProfileId: profile._id,
+      action: "load.vehicle",
+      entityTable: "loads",
+      entityId: load._id,
+      metadata: {
+        from: { vehicleNo: load.vehicleNo ?? null, driverPhone: load.driverPhone ?? null },
+        to: { vehicleNo: vehicleNo ?? null, driverPhone: driverPhone ?? null },
       },
     });
     return null;
