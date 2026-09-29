@@ -56,6 +56,7 @@ import type * as lib_lifecycle from "../lib/lifecycle.js";
 import type * as lib_onboarding from "../lib/onboarding.js";
 import type * as lib_phone from "../lib/phone.js";
 import type * as lib_review from "../lib/review.js";
+import type * as lib_rules from "../lib/rules.js";
 import type * as lib_sms from "../lib/sms.js";
 import type * as lib_validators from "../lib/validators.js";
 import type * as lib_views from "../lib/views.js";
@@ -148,6 +149,7 @@ declare const fullApi: ApiFromModules<{
   "lib/onboarding": typeof lib_onboarding;
   "lib/phone": typeof lib_phone;
   "lib/review": typeof lib_review;
+  "lib/rules": typeof lib_rules;
   "lib/sms": typeof lib_sms;
   "lib/validators": typeof lib_validators;
   "lib/views": typeof lib_views;
