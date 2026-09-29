@@ -2338,7 +2338,7 @@
   "compliance": {
     "title": "Compliance",
     "lead": "Your licences and records in one place.",
-    "demoNote": "Sample data: the documents, invoices and amounts here are examples for the prototype.",
+    "demoNote": "Sample data: the documents, receipts and amounts here are examples for the prototype.",
     "checklist": {
       "title": "Checklist",
       "whatThisMeans": "What this means:"
@@ -2391,9 +2391,9 @@
       "missingBody": "Recyclers and factories ask for a valid consent. Send us yours through Help and we'll add it."
     },
     "receipts": {
-      "title": "Trade invoices",
-      "lead": "Tax invoices for your trades on Luma.Green, newest first.",
-      "number": "Invoice",
+      "title": "Trade receipts",
+      "lead": "Receipts for your trades on Luma.Green, newest first. GST tax invoices come with real payments.",
+      "number": "Receipt",
       "date": "Date",
       "with": "With",
       "what": "What",
@@ -2408,10 +2408,10 @@
       "ewayNeededLong": "E-way bill needed",
       "ewayNotNeededLong": "No e-way bill needed",
       "ewayNote": "An e-way bill is needed to move goods worth more than ₹50,000.",
-      "view": "View invoice {number}",
+      "view": "View receipt {number}",
       "unknown": "A business no longer on Luma.Green",
-      "empty": "No invoices yet",
-      "emptyBody": "An invoice is made when a buyer pays into escrow."
+      "empty": "No receipts yet",
+      "emptyBody": "A receipt is made when a buyer pays into escrow."
     },
     "epr": {
       "title": "EPR record, FY {from}–{to}",

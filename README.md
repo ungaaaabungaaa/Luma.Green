@@ -93,7 +93,7 @@ layout. The full inventory, with every URL, is
 - **Buy** (`/app/market`): lots from the step below, by material, weight and
   price.
 - **Trades** (`/app/trades`): each purchase and sale through escrow (requested,
-  accepted, in escrow, dispatched, delivered), an invoice once the buyer pays
+  accepted, in escrow, dispatched, delivered), a trade receipt once the buyer pays
   (`/app/trades/{id}/invoice`), and a flag when goods over ₹50,000 need an
   e-way bill.
 - **Stock**, **Sell**, **Impact** and **Compliance**, as for kabadiwalas.
@@ -103,7 +103,7 @@ layout. The full inventory, with every URL, is
 - **Buy** recycled PET flakes, HDPE granules, kraft paper and aluminium ingots
   from verified recyclers, through the same escrow steps.
 - **Compliance** (`/app/compliance`): the EPR record of recycled material
-  bought this financial year, trade invoices, and a checklist of the factory's
+  bought this financial year, trade receipts, and a checklist of the factory's
   own GST, consent and safety.
 - **Impact** (`/app/impact`): recycled material used and the CO₂e it avoided.
 

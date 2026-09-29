@@ -150,10 +150,10 @@ describe("CompliancePage", () => {
     expect(screen.getAllByText("What this means:")).toHaveLength(4);
   });
 
-  it("links every invoice and flags the ones that need an e-way bill", () => {
+  it("links every receipt and flags the ones that need an e-way bill", () => {
     renderPage();
     const links = screen.getAllByRole("link", {
-      name: "View invoice LG-26-0006",
+      name: "View receipt LG-26-0006",
     });
     // One for phones, one for the wider table.
     expect(links.map((link) => link.getAttribute("href"))).toEqual([
