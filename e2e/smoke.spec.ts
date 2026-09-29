@@ -38,7 +38,11 @@ test("unknown locale prefixes 404 instead of rendering English", async ({
 test("sitemap and robots are served", async ({ request }) => {
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
-  expect(await sitemap.text()).toContain("<urlset");
+  const xml = await sitemap.text();
+  expect(xml).toContain("<urlset");
+  for (const path of ["/prices", "/standards", "/solar"]) {
+    expect(xml).toContain(`${path}</loc>`);
+  }
 
   const robots = await request.get("/robots.txt");
   expect(robots.status()).toBe(200);
