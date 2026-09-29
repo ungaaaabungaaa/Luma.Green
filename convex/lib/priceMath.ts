@@ -1,9 +1,9 @@
 /**
  * The price engine's arithmetic — the price engine spec v0.1 (§2 inputs,
- * §4 daily calculation, §5 freshness, §6 honour rate) and docs/plan.md
- * "Live pricing". Pure functions, shared by convex/priceEngine.ts,
- * convex/adminPrices.ts and the admin console, so the screen and the server
- * never disagree. Money is integer paise per kilo throughout.
+ * §3 admin tables, §4 daily calculation, §5 freshness, §6 honour rate) and
+ * docs/plan.md "Live pricing". Pure functions, shared by convex/priceEngine.ts,
+ * convex/adminPrices.ts and both consoles, so the screen and the server never
+ * disagree. Money is integer paise per kilo throughout.
  */
 
 export type PriceLevel = "L1" | "L2";
@@ -44,7 +44,7 @@ export const HONOUR_FLAG_PCT = 20;
 /** Suggested fallback = 28-day median; suggested floor = 75% of it. */
 export const SUGGEST_WINDOW_DAYS = 28;
 export const FLOOR_SHARE = 0.75;
-/** A floor or fallback move bigger than this in a week needs a written reason. */
+/** A floor or fallback move bigger than this needs a written reason. */
 export const WEEKLY_NOTE_PCT = 10;
 
 /** Yard buy posts expire after a week. */
@@ -66,8 +66,21 @@ export function floorToHalfRupee(paise: number): number {
 
 /** The change from one price to another, in percent to one decimal. */
 export function movePct(fromPaise: number, toPaise: number): number | null {
-  if (!(fromPaise > 0)) return null;
-  return Math.round(((toPaise - fromPaise) / fromPaise) * 1000) / 10;
+  return fromPaise > 0
+    ? Math.round(((toPaise - fromPaise) / fromPaise) * 1000) / 10
+    : null;
+}
+
+// --- Rupees as people type them -----------------------------------------------------
+
+const RUPEES = /^(\d{1,7})(?:\.(\d{1,2}))?$/;
+
+/** `14`, `14.5`, `₹ 1,400.50` → paise; null if it isn't a rupee amount. */
+export function rupeesToPaise(input: string): number | null {
+  const amount = input.replaceAll(/[\s,₹]/gu, "");
+  if (!RUPEES.test(amount)) return null;
+  const [whole = "0", fraction = ""] = amount.split(".", 2);
+  return Number(whole) * 100 + Number(fraction.padEnd(2, "0"));
 }
 
 // --- Medians ---------------------------------------------------------------------
@@ -150,17 +163,15 @@ export interface Band {
 export function defaultBand(fallbackPaise: number, family: PriceFamily): Band {
   return {
     minPaise: Math.max(HALF_RUPEE, floorToHalfRupee(fallbackPaise * 0.5)),
-    maxPaise: Math.max(
-      HALF_RUPEE * 2,
-      roundToHalfRupee(fallbackPaise * 2.5),
-    ),
+    maxPaise: Math.max(HALF_RUPEE * 2, roundToHalfRupee(fallbackPaise * 2.5)),
     maxDailyMovePct: maxDailyMoveFor(family),
   };
 }
 
 export function isInBand(paisePerKg: number, band: Band | null): boolean {
-  if (!band) return true;
-  return paisePerKg >= band.minPaise && paisePerKg <= band.maxPaise;
+  return band
+    ? paisePerKg >= band.minPaise && paisePerKg <= band.maxPaise
+    : true;
 }
 
 export type BandProblem = "INVALID_BAND" | "BAND_MIN_ABOVE_MAX" | "INVALID_MOVE";
@@ -171,8 +182,9 @@ export function bandProblem(band: Band): BandProblem | null {
   if (!isWhole(band.minPaise) || !isWhole(band.maxPaise)) return "INVALID_BAND";
   if (band.minPaise >= band.maxPaise) return "BAND_MIN_ABOVE_MAX";
   const move = band.maxDailyMovePct;
-  if (!Number.isFinite(move) || move < 1 || move > 50) return "INVALID_MOVE";
-  return null;
+  return Number.isFinite(move) && move >= 1 && move <= 50
+    ? null
+    : "INVALID_MOVE";
 }
 
 // --- Related businesses count once ------------------------------------------------
@@ -268,6 +280,7 @@ export function orgValueOf(
 /** Groups inputs by business and reduces each to one value. */
 export function orgValues(rows: readonly PriceInput[]): OrgValue[] {
   const byOrg = new Map<string, PriceInput[]>();
+  // eslint-disable-next-line unicorn/prefer-group-by -- Map.groupBy isn't guaranteed in the Convex runtime; this must run in the daily cron.
   for (const row of rows) {
     const list = byOrg.get(row.orgId) ?? [];
     list.push(row);
@@ -337,6 +350,30 @@ export interface BoardResult {
 }
 
 /**
+ * Spec §4 step 7: a Live move bigger than the band's daily limit keeps
+ * yesterday's price and reports what it held back.
+ */
+function circuitBreaker(
+  computed: number,
+  input: BoardInput,
+): { typical: number; heldPaise: number | null; heldPct: number | null } {
+  const previous = input.previousTypical;
+  if (previous === null || input.isConfirmed === true) {
+    return { typical: computed, heldPaise: null, heldPct: null };
+  }
+  const pct = movePct(previous, computed);
+  return pct !== null && Math.abs(pct) > input.maxDailyMovePct
+    ? { typical: previous, heldPaise: computed, heldPct: pct }
+    : { typical: computed, heldPaise: null, heldPct: null };
+}
+
+/** Spec §4 step 8: nothing on an L1 line shows below the floor. */
+function atLeast(value: number | null, floor: number | null): number | null {
+  if (value === null) return null;
+  return floor === null ? value : Math.max(value, floor);
+}
+
+/**
  * Spec §4 steps 3–8 for one material: one value per business (given),
  * outliers dropped, the weighted median as "typical" with the low–high
  * range, Live or Guide, the circuit breaker, and never below the floor.
@@ -351,45 +388,28 @@ export function computeBoard(input: BoardInput): BoardResult {
   const isLive =
     computed !== null && nOrgs >= LIVE_MIN_ORGS && nTrades >= LIVE_MIN_TRADES;
 
-  let typical: number | null = isLive
-    ? computed
-    : (input.fallbackPaise ?? computed);
-  let low = kept.length > 0 ? Math.min(...kept.map((v) => v.paisePerKg)) : null;
-  let high =
-    kept.length > 0 ? Math.max(...kept.map((v) => v.paisePerKg)) : null;
+  const prices = kept.map((value) => value.paisePerKg);
+  const low = prices.length > 0 ? Math.min(...prices) : null;
+  const high = prices.length > 0 ? Math.max(...prices) : null;
 
-  let heldPaise: number | null = null;
-  let heldPct: number | null = null;
-  if (
-    isLive &&
-    typical !== null &&
-    input.previousTypical !== null &&
-    input.isConfirmed !== true
-  ) {
-    const pct = movePct(input.previousTypical, typical);
-    if (pct !== null && Math.abs(pct) > input.maxDailyMovePct) {
-      heldPaise = typical;
-      heldPct = pct;
-      typical = input.previousTypical;
-    }
-  }
-
-  const floor = input.floorPaise;
-  if (floor !== null) {
-    if (typical !== null) typical = Math.max(typical, floor);
-    if (low !== null) low = Math.max(low, floor);
-    if (high !== null) high = Math.max(high, floor);
-  }
+  const line =
+    isLive && computed !== null
+      ? circuitBreaker(computed, input)
+      : {
+          typical: input.fallbackPaise ?? computed,
+          heldPaise: null,
+          heldPct: null,
+        };
 
   return {
     status: isLive ? "live" : "guide",
-    typicalPaise: typical,
-    lowPaise: low,
-    highPaise: high,
+    typicalPaise: atLeast(line.typical, input.floorPaise),
+    lowPaise: atLeast(low, input.floorPaise),
+    highPaise: atLeast(high, input.floorPaise),
     nOrgs,
     nTrades,
-    heldPaise,
-    heldPct,
+    heldPaise: line.heldPaise,
+    heldPct: line.heldPct,
     droppedOutliers: dropped.length,
   };
 }
@@ -426,11 +446,15 @@ export function isUnderCard(
 export function honourRate(lines: readonly PaidLine[]): HonourRate {
   const pickups = new Map<string, boolean>();
   for (const line of lines) {
-    const under = isUnderCard(line.paidPaisePerKg, line.cardPaisePerKg);
-    pickups.set(line.pickupRef, (pickups.get(line.pickupRef) ?? false) || under);
+    const isUnder = isUnderCard(line.paidPaisePerKg, line.cardPaisePerKg);
+    pickups.set(
+      line.pickupRef,
+      (pickups.get(line.pickupRef) ?? false) || isUnder,
+    );
   }
   const total = pickups.size;
-  const under = [...pickups.values()].filter(Boolean).length;
+  let under = 0;
+  for (const isUnder of pickups.values()) if (isUnder) under += 1;
   const underPct = total === 0 ? 0 : Math.round((under / total) * 1000) / 10;
   return { pickups: total, under, underPct, flagged: underPct > HONOUR_FLAG_PCT };
 }
@@ -448,8 +472,8 @@ export function suggestedFloor(fallbackPaise: number): number {
   return Math.max(HALF_RUPEE, floorToHalfRupee(fallbackPaise * FLOOR_SHARE));
 }
 
-/** A move over 10% (against a week ago) needs a written reason. */
-export function needsNote(fromPaise: number | null, toPaise: number): boolean {
+/** A move over 10% needs a written reason. */
+export function requiresNote(fromPaise: number | null, toPaise: number): boolean {
   if (fromPaise === null) return false;
   const pct = movePct(fromPaise, toPaise);
   return pct !== null && Math.abs(pct) > WEEKLY_NOTE_PCT;
@@ -461,6 +485,60 @@ export function weekChangePct(
 ): number | null {
   const last = series.at(-1);
   const weekAgo = series.at(-8);
-  if (!last || !weekAgo) return null;
-  return movePct(weekAgo.paisePerKg, last.paisePerKg);
+  return last && weekAgo ? movePct(weekAgo.paisePerKg, last.paisePerKg) : null;
+}
+
+// --- CSV paste ----------------------------------------------------------------------------
+
+export interface CsvPriceRow {
+  line: number;
+  materialCode: string;
+  floorPaise: number;
+  fallbackPaise: number;
+}
+
+export type CsvProblem = "COLUMNS" | "INVALID_PRICE" | "FLOOR_ABOVE_FALLBACK";
+
+export interface CsvParse {
+  rows: CsvPriceRow[];
+  problems: { line: number; problem: CsvProblem; text: string }[];
+}
+
+const CSV_SPLIT = /[,;\t]/;
+const HEADER_WORDS = new Set(["code", "material", "materialcode"]);
+
+/**
+ * The admin's paste: one material a line as `CODE, floor, fallback` in
+ * rupees (`PAPER-NEWS, 7.50, 10`). Commas, semicolons or tabs between the
+ * columns; a header line and blank lines are skipped; codes are upper-cased.
+ * Problems name the line so the admin can fix it before importing.
+ */
+export function parsePriceCsv(text: string): CsvParse {
+  const rows: CsvPriceRow[] = [];
+  const problems: CsvParse["problems"] = [];
+  for (const [index, raw] of text.split(/\r?\n/).entries()) {
+    const line = index + 1;
+    const trimmed = raw.trim();
+    if (trimmed === "") continue;
+    const cells = trimmed.split(CSV_SPLIT).map((cell) => cell.trim());
+    const code = (cells[0] ?? "").toUpperCase();
+    if (index === 0 && HEADER_WORDS.has(code.toLowerCase().replace(/\s/g, "")))
+      continue;
+    if (cells.length < 3 || code === "") {
+      problems.push({ line, problem: "COLUMNS", text: trimmed });
+      continue;
+    }
+    const floorPaise = rupeesToPaise(cells[1] ?? "");
+    const fallbackPaise = rupeesToPaise(cells[2] ?? "");
+    if (floorPaise === null || fallbackPaise === null || floorPaise === 0) {
+      problems.push({ line, problem: "INVALID_PRICE", text: trimmed });
+      continue;
+    }
+    if (floorPaise > fallbackPaise) {
+      problems.push({ line, problem: "FLOOR_ABOVE_FALLBACK", text: trimmed });
+      continue;
+    }
+    rows.push({ line, materialCode: code, floorPaise, fallbackPaise });
+  }
+  return { rows, problems };
 }

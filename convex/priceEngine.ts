@@ -284,10 +284,10 @@ async function honourRateFor(
   for (const row of receipts) {
     const card = cardOf.get(row.materialCode);
     if (
+      !card ||
       row.source !== "receipt" ||
       row.level !== "L1" ||
-      row.observedAt < since ||
-      !card
+      row.observedAt < since
     ) {
       continue;
     }
@@ -337,8 +337,13 @@ async function ingestShop(run: IngestContext, shop: Doc<"orgs">) {
     .take(PAGE);
   for (const card of cards) {
     const material = run.materials.get(card.materialCode);
-    if (!material?.active || material.stage !== "scrap") continue;
-    if (!isFresh(card.updatedAt, material.family, run.now)) continue;
+    if (
+      !material?.active ||
+      material.stage !== "scrap" ||
+      !isFresh(card.updatedAt, material.family, run.now)
+    ) {
+      continue;
+    }
     count += await ingestObservation(run, {
       materialCode: card.materialCode,
       level: "L1",
@@ -478,8 +483,7 @@ async function computeMaterial(run: MaterialRun): Promise<{
   // cards of shops whose receipts don't honour them.
   let flagged = 0;
   const usable = rows.filter((row) => {
-    if (!run.activeOrgIds.has(row.orgId)) return false;
-    if (row.observedAt > now) return false;
+    if (!run.activeOrgIds.has(row.orgId) || row.observedAt > now) return false;
     if (!isInBand(row.paisePerKg, band)) {
       flagged += 1;
       return false;
@@ -541,7 +545,7 @@ async function computeMaterial(run: MaterialRun): Promise<{
   if (result.typicalPaise === null) return null;
 
   const reviewDate =
-    result.status === "guide" && reference
+    reference && result.status === "guide"
       ? shiftDate(indiaToday(reference.updatedAt), REVIEW_DAYS)
       : undefined;
   const board = {
@@ -571,6 +575,57 @@ async function computeMaterial(run: MaterialRun): Promise<{
   };
 }
 
+/** Step 0: every price input of the last fortnight becomes an observation, once. */
+async function ingestAll(
+  ctx: MutationCtx,
+  input: {
+    city: string;
+    now: number;
+    materials: Materials;
+    shops: readonly Doc<"orgs">[];
+    yards: readonly Doc<"orgs">[];
+    related: Map<string, string>;
+  },
+): Promise<{ known: number; ingested: number }> {
+  const { city, now } = input;
+  const known = await ctx.db
+    .query("priceObservations")
+    .withIndex("by_city_observedAt", (q) =>
+      q.eq("city", city).gte("observedAt", now - LONG_WINDOW_DAYS * DAY),
+    )
+    .take(MAX_OBSERVATIONS);
+  const run: IngestContext = {
+    ctx,
+    city,
+    now,
+    materials: input.materials,
+    refs: new Set(known.flatMap((row) => (row.ref ? [row.ref] : []))),
+    related: input.related,
+  };
+  const orgOf = orgLookup(ctx);
+  let ingested = 0;
+  for (const shop of input.shops) ingested += await ingestShop(run, shop);
+  for (const yard of input.yards) {
+    ingested += await ingestYard(run, yard, orgOf);
+  }
+  return { known: known.length, ingested };
+}
+
+/** Shops whose receipts don't honour their card: their cards leave the board. */
+async function flaggedShopsAmong(
+  ctx: QueryCtx,
+  shops: readonly Doc<"orgs">[],
+  materials: Materials,
+  now: number,
+): Promise<Set<string>> {
+  const flagged = new Set<string>();
+  for (const shop of shops) {
+    const rate = await honourRateFor(ctx, shop, materials, now);
+    if (rate.flagged) flagged.add(shop._id);
+  }
+  return flagged;
+}
+
 /**
  * The whole run: ingest, then one board line per scrap material and level.
  * Shared by the cron, the admin's "run now" and the demo seed.
@@ -585,31 +640,16 @@ export async function runEngine(
   const shops = await activeOrgs(ctx, city, "kabadiwala");
   const yards = await activeOrgs(ctx, city, "yard");
   const related = relatedMap([...shops, ...yards]);
-  const orgOf = orgLookup(ctx);
 
-  const known = await ctx.db
-    .query("priceObservations")
-    .withIndex("by_city_observedAt", (q) =>
-      q.eq("city", city).gte("observedAt", now - LONG_WINDOW_DAYS * DAY),
-    )
-    .take(MAX_OBSERVATIONS);
-  const run: IngestContext = {
-    ctx,
+  const { known, ingested } = await ingestAll(ctx, {
     city,
     now,
     materials,
-    refs: new Set(known.flatMap((row) => (row.ref ? [row.ref] : []))),
+    shops,
+    yards,
     related,
-  };
-  let ingested = 0;
-  for (const shop of shops) ingested += await ingestShop(run, shop);
-  for (const yard of yards) ingested += await ingestYard(run, yard, orgOf);
-
-  const flaggedShops = new Set<string>();
-  for (const shop of shops) {
-    const rate = await honourRateFor(ctx, shop, materials, now);
-    if (rate.flagged) flaggedShops.add(shop._id);
-  }
+  });
+  const flaggedShops = await flaggedShopsAmong(ctx, shops, materials, now);
   const activeOrgIds = new Set<string>(
     [...shops, ...yards].map((org) => org._id),
   );
@@ -622,7 +662,7 @@ export async function runEngine(
     guide: 0,
     held: 0,
     flagged: 0,
-    observations: known.length + ingested,
+    observations: known + ingested,
     ingested,
   };
   for (const material of materials.values()) {
@@ -667,6 +707,75 @@ export const daily = internalMutation({
  * Sample points come from `marketPrices` until the day the engine first
  * published that material; from then on the series is the engine's own.
  */
+/** One material's line on the public board: the engine's row on top of the sample series. */
+async function boardRowFor(
+  ctx: QueryCtx,
+  city: string,
+  material: Doc<"materials">,
+  since: string,
+) {
+  const sample = await ctx.db
+    .query("marketPrices")
+    .withIndex("by_city_material_date", (q) =>
+      q.eq("city", city).eq("materialCode", material.code).gte("date", since),
+    )
+    .take(60);
+  const boards =
+    material.stage === "scrap"
+      ? await ctx.db
+          .query("priceBoards")
+          .withIndex("by_city_material_level_date", (q) =>
+            q
+              .eq("city", city)
+              .eq("materialCode", material.code)
+              .eq("level", "L1")
+              .gte("date", since),
+          )
+          .take(60)
+      : [];
+  const reference = await referenceFor(ctx, city, material.code);
+  const firstBoardDate = boards.at(0)?.date;
+  const series = [
+    ...sample
+      .filter(
+        (point) => firstBoardDate === undefined || point.date < firstBoardDate,
+      )
+      .map((point) => ({ date: point.date, paisePerKg: point.paisePerKg })),
+    ...boards.map((row) => ({ date: row.date, paisePerKg: row.typicalPaise })),
+  ].toSorted((a, b) => a.date.localeCompare(b.date));
+  const latest = boards.at(-1);
+  return {
+    row: {
+      code: material.code,
+      family: material.family,
+      stage: material.stage,
+      names: material.names,
+      todayPaise: latest?.typicalPaise ?? series.at(-1)?.paisePerKg ?? null,
+      weekChangePct: weekChangePct(series),
+      floorPaise: reference?.floorPaise ?? null,
+      series,
+      status: latest?.status ?? null,
+      lowPaise: latest?.lowPaise ?? null,
+      highPaise: latest?.highPaise ?? null,
+      nOrgs: latest?.nOrgs ?? 0,
+      nTrades: latest?.nTrades ?? 0,
+      computedAt: latest?.computedAt ?? null,
+      reviewDate: latest?.reviewDate ?? null,
+      isHeld:
+        latest?.heldPaise !== undefined && latest.confirmedAt === undefined,
+    },
+    boardDate: latest?.date ?? null,
+    computedAt: latest?.computedAt ?? null,
+    sampleDate: sample.at(-1)?.date ?? null,
+  };
+}
+
+function laterOf<T extends string | number>(a: T | null, b: T | null): T | null {
+  if (a === null) return b;
+  if (b === null) return a;
+  return b > a ? b : a;
+}
+
 export const board = query({
   args: { city: v.string() },
   returns: v.object({
@@ -680,86 +789,23 @@ export const board = query({
       .query("materials")
       .withIndex("by_sortOrder")
       .take(PAGE);
-    const today = indiaToday();
-    const since = shiftDate(today, -29);
-    let latestDate: string | null = null;
-    let latestComputed: number | null = null;
+    const since = shiftDate(indiaToday(), -29);
+    let boardDate: string | null = null;
+    let sampleDate: string | null = null;
+    let computedAt: number | null = null;
     const rows = [];
     for (const material of materials) {
       if (!material.active) continue;
-      const sample = await ctx.db
-        .query("marketPrices")
-        .withIndex("by_city_material_date", (q) =>
-          q
-            .eq("city", args.city)
-            .eq("materialCode", material.code)
-            .gte("date", since),
-        )
-        .take(60);
-      const boards =
-        material.stage === "scrap"
-          ? await ctx.db
-              .query("priceBoards")
-              .withIndex("by_city_material_level_date", (q) =>
-                q
-                  .eq("city", args.city)
-                  .eq("materialCode", material.code)
-                  .eq("level", "L1")
-                  .gte("date", since),
-              )
-              .take(60)
-          : [];
-      const reference = await referenceFor(ctx, args.city, material.code);
-      const firstBoardDate = boards[0]?.date;
-      const series = [
-        ...sample
-          .filter(
-            (point) =>
-              firstBoardDate === undefined || point.date < firstBoardDate,
-          )
-          .map((point) => ({ date: point.date, paisePerKg: point.paisePerKg })),
-        ...boards.map((row) => ({
-          date: row.date,
-          paisePerKg: row.typicalPaise,
-        })),
-      ].toSorted((a, b) => a.date.localeCompare(b.date));
-      const latest = boards.at(-1);
-      if (latest) {
-        if (latestDate === null || latest.date > latestDate) {
-          latestDate = latest.date;
-        }
-        if (latestComputed === null || latest.computedAt > latestComputed) {
-          latestComputed = latest.computedAt;
-        }
-      } else {
-        const last = sample.at(-1);
-        if (last && latestDate === null) latestDate = last.date;
-      }
-      rows.push({
-        code: material.code,
-        family: material.family,
-        stage: material.stage,
-        names: material.names,
-        todayPaise:
-          latest?.typicalPaise ?? series.at(-1)?.paisePerKg ?? null,
-        weekChangePct: weekChangePct(series),
-        floorPaise: reference?.floorPaise ?? null,
-        series,
-        status: latest?.status ?? null,
-        lowPaise: latest?.lowPaise ?? null,
-        highPaise: latest?.highPaise ?? null,
-        nOrgs: latest?.nOrgs ?? 0,
-        nTrades: latest?.nTrades ?? 0,
-        computedAt: latest?.computedAt ?? null,
-        reviewDate: latest?.reviewDate ?? null,
-        isHeld:
-          latest?.heldPaise !== undefined && latest.confirmedAt === undefined,
-      });
+      const line = await boardRowFor(ctx, args.city, material, since);
+      boardDate = laterOf(boardDate, line.boardDate);
+      sampleDate = laterOf(sampleDate, line.sampleDate);
+      computedAt = laterOf(computedAt, line.computedAt);
+      rows.push(line.row);
     }
     return {
       city: args.city,
-      date: latestDate,
-      computedAt: latestComputed,
+      date: boardDate ?? sampleDate,
+      computedAt,
       rows,
     };
   },
@@ -894,7 +940,8 @@ export const engine = query({
     }
 
     const honour = [];
-    for (const shop of await activeOrgs(ctx, args.city, "kabadiwala")) {
+    const shops = await activeOrgs(ctx, args.city, "kabadiwala");
+    for (const shop of shops) {
       const rate = await honourRateFor(ctx, shop, materials, now);
       honour.push({
         orgId: shop._id,
@@ -1027,8 +1074,35 @@ export const confirmHold = mutation({
   },
 });
 
-/** Adds a quote from the admin's weekly phone survey (weight ½; spec T3). */
-export const addSurvey = mutation({
+/** The businesses the admin can quote in a survey: shops (L1) and yards (L2). */
+export const businesses = query({
+  args: { city: v.string() },
+  returns: v.array(
+    v.object({
+      id: v.id("orgs"),
+      name: v.string(),
+      area: v.string(),
+      level: vPriceLevel,
+    }),
+  ),
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const shops = await activeOrgs(ctx, args.city, "kabadiwala");
+    const yards = await activeOrgs(ctx, args.city, "yard");
+    return [
+      ...shops.map((org) => ({ org, level: "L1" as const })),
+      ...yards.map((org) => ({ org, level: "L2" as const })),
+    ].map(({ org, level }) => ({
+      id: org._id,
+      name: org.name,
+      area: org.area,
+      level,
+    }));
+  },
+});
+
+/** Records a quote from the admin's weekly phone survey (weight ½; spec T3). */
+export const survey = mutation({
   args: {
     city: v.string(),
     materialCode: v.string(),

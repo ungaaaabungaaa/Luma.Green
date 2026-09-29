@@ -55,6 +55,7 @@ import type * as lib_households from "../lib/households.js";
 import type * as lib_lifecycle from "../lib/lifecycle.js";
 import type * as lib_onboarding from "../lib/onboarding.js";
 import type * as lib_phone from "../lib/phone.js";
+import type * as lib_priceMath from "../lib/priceMath.js";
 import type * as lib_review from "../lib/review.js";
 import type * as lib_sms from "../lib/sms.js";
 import type * as lib_validators from "../lib/validators.js";
@@ -147,6 +148,7 @@ declare const fullApi: ApiFromModules<{
   "lib/lifecycle": typeof lib_lifecycle;
   "lib/onboarding": typeof lib_onboarding;
   "lib/phone": typeof lib_phone;
+  "lib/priceMath": typeof lib_priceMath;
   "lib/review": typeof lib_review;
   "lib/sms": typeof lib_sms;
   "lib/validators": typeof lib_validators;
