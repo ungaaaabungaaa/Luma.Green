@@ -1,47 +1,68 @@
 import {
   ArrowLeftRightIcon,
   BoxesIcon,
+  ClipboardCheckIcon,
   FactoryIcon,
-  LeafIcon,
+  HardHatIcon,
   type LucideIcon,
   PackageOpenIcon,
   RecycleIcon,
-  ShieldCheckIcon,
-  TruckIcon,
+  StoreIcon,
 } from "lucide-react";
 
 import type { PublicRoute } from "@/i18n/paths";
 
-import type { Doc } from "../../../convex/_generated/dataModel";
-
 /** Primary navigation. `key` is the label in the `nav` namespace. */
 export const navItems = [
   { href: "/how-it-works", key: "howItWorks" },
-  { href: "/participants", key: "participants" },
-  { href: "/contact", key: "contact" },
+  { href: "/prices", key: "prices" },
+  { href: "/help", key: "help" },
+  { href: "/join", key: "join" },
 ] as const satisfies readonly { href: PublicRoute; key: string }[];
 
-/** The three stages of the loop, in order. Copy lives under `loop.<key>`. */
+/**
+ * Footer link groups. `heading` is in the `footer` namespace; each `label` is
+ * a full key, as the links share labels with the header.
+ */
+export const footerGroups = [
+  {
+    heading: "useHeading",
+    links: [
+      { href: "/sell", label: "nav.sellScrap" },
+      { href: "/prices", label: "nav.prices" },
+      { href: "/join", label: "nav.join" },
+      { href: "/how-it-works", label: "nav.howItWorks" },
+    ],
+  },
+  {
+    heading: "learnHeading",
+    links: [
+      { href: "/standards", label: "footer.standards" },
+      { href: "/solar", label: "footer.solar" },
+      { href: "/help", label: "nav.help" },
+      { href: "/contact", label: "nav.contact" },
+    ],
+  },
+] as const satisfies readonly {
+  heading: string;
+  links: readonly { href: PublicRoute; label: string }[];
+}[];
+
+/** The three stages of the chain, in order. Copy lives under `loop.<key>`. */
 export const loopSteps = [
-  { key: "recover", icon: PackageOpenIcon },
+  { key: "sell", icon: PackageOpenIcon },
   { key: "trade", icon: ArrowLeftRightIcon },
-  { key: "retire", icon: LeafIcon },
+  { key: "record", icon: ClipboardCheckIcon },
 ] as const satisfies readonly { key: string; icon: LucideIcon }[];
 
 /**
- * Org roles, in the order material flows through them. Typed against the
- * Convex schema so a role added there fails the build here until it has copy.
+ * The roles the public site describes, in the order material flows through
+ * them. Site copy only — the app's roles live in convex/lib/chain.ts.
  */
 export const roles = [
-  { key: "collector", icon: TruckIcon },
-  { key: "aggregator", icon: BoxesIcon },
+  { key: "kabadiwala", icon: StoreIcon },
+  { key: "yard", icon: BoxesIcon },
   { key: "recycler", icon: RecycleIcon },
-  { key: "factory", icon: FactoryIcon },
-  { key: "verifier", icon: ShieldCheckIcon },
-] as const satisfies readonly { key: Doc<"orgs">["role"]; icon: LucideIcon }[];
-
-/** Compile error if the schema gains a role that `roles` does not list. */
-type Covers<Missing extends never> = Missing;
-export type RolesCoverSchema = Covers<
-  Exclude<Doc<"orgs">["role"], (typeof roles)[number]["key"]>
->;
+  { key: "manufacturer", icon: FactoryIcon },
+  { key: "saathi", icon: HardHatIcon },
+] as const satisfies readonly { key: string; icon: LucideIcon }[];

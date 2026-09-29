@@ -7,7 +7,7 @@
  */
 import type { TestConvex } from "convex-test";
 
-import { components } from "../_generated/api";
+import { components, internal } from "../_generated/api";
 import authSchema from "../betterAuth/schema";
 import type schema from "../schema";
 
@@ -72,4 +72,49 @@ export async function signIn(
     return { userId: user._id, sessionId: session._id };
   });
   return t.withIdentity({ subject: userId, sessionId });
+}
+
+/**
+ * Seeds the whole demo world (convex/lib/demo.ts) into a test deployment.
+ * Stub AUTH_DEV_MODE=true first (`vi.stubEnv`).
+ */
+export async function seedDemo(t: Test): Promise<void> {
+  const files = await t.run(async (ctx) => ({
+    certificate: await ctx.storage.store(new Blob(["%PDF-1.4 demo"])),
+    photoA: await ctx.storage.store(new Blob(["<svg/>"])),
+    photoB: await ctx.storage.store(new Blob(["<svg/>"])),
+  }));
+  await t.mutation(internal.demo.seedData, { files });
+}
+
+/** Signs in as an existing user (e.g. a seeded demo phone). */
+export async function signInAs(t: Test, phoneNumber: string) {
+  const now = Date.now();
+  const sessionId = await t.run(async (ctx) => {
+    const user = (await ctx.runQuery(components.betterAuth.adapter.findOne, {
+      model: "user",
+      where: [{ field: "phoneNumber", value: phoneNumber }],
+    })) as { _id: string } | null;
+    if (!user) throw new Error(`No user with ${phoneNumber}`);
+    const session = (await ctx.runMutation(
+      components.betterAuth.adapter.create,
+      {
+        input: {
+          model: "session",
+          data: {
+            userId: user._id,
+            token: `token-${user._id}-${String(now)}`,
+            expiresAt: now + 60 * 60 * 1000,
+            createdAt: now,
+            updatedAt: now,
+          },
+        },
+      },
+    )) as { _id: string; userId: string };
+    return { sessionId: session._id, userId: session.userId };
+  });
+  return t.withIdentity({
+    subject: sessionId.userId,
+    sessionId: sessionId.sessionId,
+  });
 }

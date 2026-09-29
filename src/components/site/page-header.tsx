@@ -1,10 +1,22 @@
 import { Container } from "./container";
 
 /** Title block at the top of every inner page. */
-export function PageHeader({ title, lead }: { title: string; lead: string }) {
+export function PageHeader({
+  title,
+  lead,
+  eyebrow,
+}: {
+  title: string;
+  lead: string;
+  /** A short label above the title — the city, or what kind of page it is. */
+  eyebrow?: string;
+}) {
   return (
     <div className="border-b border-border/60 bg-muted/40">
       <Container className="space-y-4 py-16 sm:py-20">
+        {eyebrow ? (
+          <p className="text-sm font-semibold text-primary">{eyebrow}</p>
+        ) : null}
         <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
           {title}
         </h1>

@@ -14,7 +14,7 @@ export async function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur supports-backdrop-filter:bg-background/75">
-      <Container className="flex h-16 items-center gap-6">
+      <Container className="flex h-16 items-center gap-3 md:gap-6">
         <Link
           href="/"
           aria-label={t("home")}
@@ -25,8 +25,13 @@ export async function SiteHeader() {
         <SiteNav className="hidden md:flex" />
         <div className="ms-auto flex items-center gap-1">
           <LanguageSwitcher />
-          <Button asChild size="lg" className="ms-2 hidden md:inline-flex">
-            <Link href="/contact">{t("getStarted")}</Link>
+          {/* On phones the menu carries this: the header has no room. */}
+          <Button
+            asChild
+            size="lg"
+            className="ms-2 hidden h-10 px-4 sm:inline-flex"
+          >
+            <Link href="/sell">{t("sellScrap")}</Link>
           </Button>
           <MobileNav className="md:hidden" />
         </div>

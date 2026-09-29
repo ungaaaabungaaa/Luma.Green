@@ -7,6 +7,11 @@ import { cn } from "@/lib/utils";
 
 import { navItems } from "./content";
 
+/** The page itself or anything under it — `/help/kabadiwala` is in Help. */
+export function isCurrentSection(pathname: string, href: string): boolean {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function SiteNav({
   className,
   onNavigate,
@@ -20,7 +25,7 @@ export function SiteNav({
   return (
     <nav aria-label={t("label")} className={cn("gap-1", className)}>
       {navItems.map((item) => {
-        const isCurrent = pathname === item.href;
+        const isCurrent = isCurrentSection(pathname, item.href);
         return (
           <Link
             key={item.href}

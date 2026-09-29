@@ -59,16 +59,16 @@ export default async function ParticipantsPage() {
         </ul>
 
         <section
-          aria-labelledby="sector-heading"
+          aria-labelledby="household-heading"
           className="max-w-3xl space-y-3 border-s-4 border-primary ps-6"
         >
           <h2
-            id="sector-heading"
+            id="household-heading"
             className="font-display text-2xl font-semibold tracking-tight"
           >
-            {t("sectorHeading")}
+            {t("householdHeading")}
           </h2>
-          <p className="text-muted-foreground">{t("sectorBody")}</p>
+          <p className="text-muted-foreground">{t("householdBody")}</p>
         </section>
       </Container>
 

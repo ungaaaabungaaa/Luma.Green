@@ -4,6 +4,7 @@ import { useQuery } from "convex/react";
 import {
   HouseIcon,
   IndianRupeeIcon,
+  LifeBuoyIcon,
   LogOutIcon,
   type LucideIcon,
   ShieldCheckIcon,
@@ -13,6 +14,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { type ReactNode, useEffect } from "react";
 
 import { Logo } from "@/components/brand/logo";
+import { QueryProvider } from "@/components/providers/query-provider";
+import { useSignedInQuery } from "@/components/providers/use-signed-in-query";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -25,8 +28,8 @@ interface NavItem {
   href: string;
   label: string;
   icon: LucideIcon;
-  /** Not built yet — shown so the shape of the console is clear. */
-  soon?: boolean;
+  /** A number from `review.summary` to show beside the label. */
+  count?: { key: "waiting" | "openSupport"; label: string };
 }
 
 const nav: readonly NavItem[] = [
@@ -35,10 +38,23 @@ const nav: readonly NavItem[] = [
     href: "/admin/verification",
     label: "Verification",
     icon: ShieldCheckIcon,
-    soon: true,
+    count: { key: "waiting", label: "waiting for review" },
   },
-  { href: "/admin/prices", label: "Prices", icon: IndianRupeeIcon, soon: true },
+  { href: "/admin/prices", label: "Prices", icon: IndianRupeeIcon },
+  {
+    href: "/admin/support",
+    label: "Support",
+    icon: LifeBuoyIcon,
+    count: { key: "openSupport", label: "open" },
+  },
 ];
+
+/** Home only on its own page; every other section on its sub-pages too. */
+function isCurrent(pathname: string, href: string): boolean {
+  return href === "/admin"
+    ? pathname === href
+    : pathname === href || pathname.startsWith(`${href}/`);
+}
 
 /**
  * Every console page sits inside this. The server layout has already checked
@@ -47,7 +63,7 @@ const nav: readonly NavItem[] = [
  */
 export function ConsoleShell({ children }: { children: ReactNode }) {
   const router = useRouter();
-  const me = useQuery(api.identity.me);
+  const me = useSignedInQuery(api.identity.me);
 
   let redirectTo: string | null = null;
   if (me === null) redirectTo = "/admin/login";
@@ -67,8 +83,8 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-dvh flex-col lg:flex-row">
       <Sidebar name={me.adminName ?? "Admin"} />
-      <main id="main" className="flex-1 px-4 py-6 lg:px-10 lg:py-10">
-        {children}
+      <main id="main" className="min-w-0 flex-1 px-4 py-6 lg:px-10 lg:py-10">
+        <QueryProvider>{children}</QueryProvider>
       </main>
     </div>
   );
@@ -77,6 +93,7 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
 function Sidebar({ name }: { name: string }) {
   const pathname = usePathname();
   const router = useRouter();
+  const summary = useQuery(api.review.summary);
 
   async function signOut() {
     await authClient.signOut();
@@ -98,40 +115,29 @@ function Sidebar({ name }: { name: string }) {
       <nav aria-label="Admin">
         <ul className="flex flex-wrap gap-1 lg:flex-col">
           {nav.map((item) => {
-            const isActive = pathname === item.href;
-            const content = (
-              <>
-                <item.icon aria-hidden className="size-4 shrink-0" />
-                <span>{item.label}</span>
-                {item.soon ? (
-                  <span className="ms-auto text-xs text-muted-foreground">
-                    Soon
-                  </span>
-                ) : null}
-              </>
-            );
-            const className = cn(
-              "flex h-9 items-center gap-2 rounded-md px-3 text-sm whitespace-nowrap",
-              isActive && "bg-brand-50 font-medium text-primary",
-            );
+            const isActive = isCurrent(pathname, item.href);
+            const count = item.count ? summary?.[item.count.key] : undefined;
             return (
               <li key={item.href}>
-                {item.soon ? (
-                  <span
-                    aria-disabled="true"
-                    className={cn(className, "text-muted-foreground")}
-                  >
-                    {content}
-                  </span>
-                ) : (
-                  <Link
-                    href={item.href}
-                    aria-current={isActive ? "page" : undefined}
-                    className={cn(className, !isActive && "hover:bg-muted")}
-                  >
-                    {content}
-                  </Link>
-                )}
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "flex h-9 items-center gap-2 rounded-md px-3 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                    isActive
+                      ? "bg-brand-50 font-medium text-primary"
+                      : "hover:bg-muted",
+                  )}
+                >
+                  <item.icon aria-hidden className="size-4 shrink-0" />
+                  <span>{item.label}</span>
+                  {count && item.count ? (
+                    <span className="ms-auto rounded-full bg-primary px-1.5 text-xs leading-5 font-medium text-primary-foreground tabular-nums">
+                      {count}
+                      <span className="sr-only"> {item.count.label}</span>
+                    </span>
+                  ) : null}
+                </Link>
               </li>
             );
           })}

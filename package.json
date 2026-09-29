@@ -28,6 +28,7 @@
     "convex:dev": "convex dev",
     "convex:deploy": "convex deploy",
     "auth:schema": "jiti scripts/generate-auth-schema.mts",
+    "screenshots": "jiti scripts/screenshots.mts",
     "check": "npm run lint && npm run typecheck && npm run test",
     "prepare": "husky"
   },

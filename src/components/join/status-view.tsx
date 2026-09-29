@@ -197,6 +197,9 @@ function ApplicationStatus({ application }: { application: Application }) {
           lead={t("status.approved.lead")}
         >
           {roleLine}
+          <Button asChild size="lg" className="h-12 text-base">
+            <Link href="/app">{t("status.approved.open")}</Link>
+          </Button>
         </StatusCard>
       );
     }

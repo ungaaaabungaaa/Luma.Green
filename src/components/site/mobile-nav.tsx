@@ -57,11 +57,14 @@ export function MobileNav({ className }: { className?: string }) {
             </Button>
           </SheetClose>
         </SheetHeader>
-        <SiteNav className="flex flex-col px-2" onNavigate={close} />
+        <SiteNav
+          className="flex flex-col px-2 [&>a]:py-3 [&>a]:text-base"
+          onNavigate={close}
+        />
         <div className="mt-auto p-4">
-          <Button asChild size="lg" className="w-full">
-            <Link href="/contact" onClick={close}>
-              {t("getStarted")}
+          <Button asChild size="lg" className="h-12 w-full text-base">
+            <Link href="/sell" onClick={close}>
+              {t("sellScrap")}
             </Link>
           </Button>
         </div>

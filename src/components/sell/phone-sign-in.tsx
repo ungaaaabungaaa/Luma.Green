@@ -1,0 +1,323 @@
+"use client";
+
+import { REGEXP_ONLY_DIGITS } from "input-otp";
+import { LockIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { type SyntheticEvent, useEffect, useId, useRef, useState } from "react";
+import { toast } from "sonner";
+
+import { type CodeErrorKey, codeErrorKey } from "@/components/auth/errors";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
+import { Label } from "@/components/ui/label";
+import { authClient } from "@/lib/auth-client";
+
+import {
+  formatIndianMobile,
+  normalizeIndianMobile,
+} from "../../../convex/lib/phone";
+
+const CODE_LENGTH = 6;
+const RESEND_AFTER_SECONDS = 30;
+
+/** Sends a code; "failed" if it couldn't be sent (refused or no network). */
+async function sendCode(phone: string): Promise<"failed" | null> {
+  try {
+    const { error } = await authClient.phoneNumber.sendOtp({
+      phoneNumber: phone,
+    });
+    return error ? "failed" : null;
+  } catch {
+    return "failed";
+  }
+}
+
+/** Checks a code; what went wrong, or null when it was right. */
+async function checkCode(
+  phone: string,
+  code: string,
+): Promise<CodeErrorKey | null> {
+  try {
+    const { error } = await authClient.phoneNumber.verify({
+      phoneNumber: phone,
+      code,
+    });
+    return error ? codeErrorKey(error) : null;
+  } catch {
+    return "errorGeneric";
+  }
+}
+
+/** Keeps a number reading left to right inside RTL sentences. */
+function ltr(text: string): string {
+  return `\u{2066}${text}\u{2069}`;
+}
+
+/**
+ * A household confirms their mobile number without leaving the page: the
+ * number, then the 6-digit SMS code. Households never register — the first
+ * confirmed code creates their sign-in. `onVerified` runs once the code is
+ * accepted; Convex sees the session a moment later (see useAuthReady).
+ */
+export function PhoneSignIn({
+  verifyLabel,
+  onVerified,
+}: {
+  /** The button under the code, e.g. "Confirm and book". */
+  verifyLabel: string;
+  onVerified: () => void;
+}) {
+  const [phone, setPhone] = useState<string | null>(null);
+  return phone === null ? (
+    <NumberForm onSent={setPhone} />
+  ) : (
+    <CodeForm
+      phone={phone}
+      verifyLabel={verifyLabel}
+      onChangeNumber={() => {
+        setPhone(null);
+      }}
+      onVerified={onVerified}
+    />
+  );
+}
+
+function NumberForm({ onSent }: { onSent: (phone: string) => void }) {
+  const t = useTranslations("sell.phone");
+  const id = useId();
+  const [value, setValue] = useState("");
+  const [error, setError] = useState<"invalid" | "sendFailed" | null>(null);
+  const [isSending, setSending] = useState(false);
+
+  async function send(event: SyntheticEvent) {
+    event.preventDefault();
+    const phone = normalizeIndianMobile(value);
+    if (!phone) {
+      setError("invalid");
+      return;
+    }
+    setError(null);
+    setSending(true);
+    const failure = await sendCode(phone);
+    setSending(false);
+    if (failure) {
+      setError("sendFailed");
+      return;
+    }
+    onSent(phone);
+  }
+
+  return (
+    <form
+      noValidate
+      onSubmit={(event) => {
+        void send(event);
+      }}
+      className="flex flex-col gap-3"
+    >
+      <Label htmlFor={id} className="text-base">
+        {t("label")}
+      </Label>
+      <div className="flex gap-2" dir="ltr">
+        <span className="flex h-12 items-center rounded-md border bg-muted px-3 text-lg font-medium">
+          +91
+        </span>
+        <Input
+          id={id}
+          type="tel"
+          inputMode="numeric"
+          autoComplete="tel-national"
+          placeholder="98765 43210"
+          value={value}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={`${id}-hint`}
+          onChange={(event) => {
+            setValue(event.target.value);
+          }}
+          className="h-12 text-lg tracking-wide"
+        />
+      </div>
+      <p
+        id={`${id}-hint`}
+        role={error ? "alert" : undefined}
+        className={
+          error ? "text-sm text-destructive" : "text-sm text-muted-foreground"
+        }
+      >
+        {t(error ?? "hint")}
+      </p>
+      <Button
+        type="submit"
+        size="lg"
+        className="h-12 text-base"
+        disabled={isSending}
+      >
+        {t(isSending ? "sending" : "sendCode")}
+      </Button>
+      <p className="flex gap-2 text-sm text-muted-foreground">
+        <LockIcon aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+        {t("privacy")}
+      </p>
+    </form>
+  );
+}
+
+function CodeForm({
+  phone,
+  verifyLabel,
+  onChangeNumber,
+  onVerified,
+}: {
+  phone: string;
+  verifyLabel: string;
+  onChangeNumber: () => void;
+  onVerified: () => void;
+}) {
+  const t = useTranslations("sell.phone");
+  const id = useId();
+  const [code, setCode] = useState("");
+  const [isChecking, setChecking] = useState(false);
+  const [error, setError] = useState<CodeErrorKey | null>(null);
+  const [secondsLeft, setSecondsLeft] = useState(RESEND_AFTER_SECONDS);
+  const codeInput = useRef<HTMLInputElement>(null);
+
+  // After a wrong code the boxes are cleared; put the cursor back in them.
+  useEffect(() => {
+    if (error) codeInput.current?.focus();
+  }, [error]);
+
+  useEffect(() => {
+    if (secondsLeft <= 0) return;
+    const timer = setTimeout(() => {
+      setSecondsLeft((seconds) => seconds - 1);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [secondsLeft]);
+
+  async function verify(value: string) {
+    if (isChecking || value.length !== CODE_LENGTH) return;
+    setChecking(true);
+    setError(null);
+    const failure = await checkCode(phone, value);
+    if (failure) {
+      setChecking(false);
+      setCode("");
+      setError(failure);
+      return;
+    }
+    onVerified();
+  }
+
+  async function resend() {
+    setError(null);
+    const failure = await sendCode(phone);
+    if (failure) {
+      setError("errorGeneric");
+      return;
+    }
+    setSecondsLeft(RESEND_AFTER_SECONDS);
+    toast.success(t("resent"));
+  }
+
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <p className="text-muted-foreground">
+          {t("sentTo", { phone: ltr(formatIndianMobile(phone)) })}
+        </p>
+        <Button
+          type="button"
+          variant="link"
+          className="h-11 px-0"
+          onClick={onChangeNumber}
+        >
+          {t("changeNumber")}
+        </Button>
+      </div>
+      <form
+        className="flex flex-col gap-3"
+        onSubmit={(event) => {
+          event.preventDefault();
+          void verify(code);
+        }}
+      >
+        <label htmlFor={id} className="text-base font-medium">
+          {t("codeLabel")}
+        </label>
+        <div dir="ltr" className="flex justify-center sm:justify-start">
+          <InputOTP
+            ref={codeInput}
+            id={id}
+            maxLength={CODE_LENGTH}
+            pattern={REGEXP_ONLY_DIGITS}
+            inputMode="numeric"
+            autoComplete="one-time-code"
+            // The code field is the only thing to do here, right after
+            // tapping "Send code".
+
+            autoFocus
+            value={code}
+            disabled={isChecking}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={error ? `${id}-error` : undefined}
+            onChange={(value) => {
+              setCode(value);
+              if (value.length === CODE_LENGTH) void verify(value);
+            }}
+          >
+            <InputOTPGroup>
+              {Array.from({ length: CODE_LENGTH }, (_, index) => (
+                <InputOTPSlot
+                  key={index}
+                  index={index}
+                  className="size-12 text-xl"
+                />
+              ))}
+            </InputOTPGroup>
+          </InputOTP>
+        </div>
+        {error ? (
+          <p
+            id={`${id}-error`}
+            role="alert"
+            className="text-sm text-destructive"
+          >
+            {t(error)}
+          </p>
+        ) : null}
+        <Button
+          type="submit"
+          size="lg"
+          className="h-12 text-base"
+          disabled={isChecking || code.length !== CODE_LENGTH}
+        >
+          {isChecking ? t("verifying") : verifyLabel}
+        </Button>
+      </form>
+      <div className="flex justify-center" aria-live="polite">
+        {secondsLeft > 0 ? (
+          <p className="text-sm text-muted-foreground">
+            {t("resendIn", { seconds: secondsLeft })}
+          </p>
+        ) : (
+          <Button
+            type="button"
+            variant="ghost"
+            onClick={() => {
+              void resend();
+            }}
+          >
+            {t("resend")}
+          </Button>
+        )}
+      </div>
+    </div>
+  );
+}
