@@ -9,11 +9,13 @@
  */
 
 import type * as admin from "../admin.js";
+import type * as adminPrices from "../adminPrices.js";
 import type * as applicationFiles from "../applicationFiles.js";
 import type * as applications from "../applications.js";
 import type * as auth from "../auth.js";
 import type * as catalogue from "../catalogue.js";
 import type * as demo from "../demo.js";
+import type * as files from "../files.js";
 import type * as http from "../http.js";
 import type * as identity from "../identity.js";
 import type * as lib_access from "../lib/access.js";
@@ -28,10 +30,12 @@ import type * as lib_drafts from "../lib/drafts.js";
 import type * as lib_lifecycle from "../lib/lifecycle.js";
 import type * as lib_onboarding from "../lib/onboarding.js";
 import type * as lib_phone from "../lib/phone.js";
+import type * as lib_review from "../lib/review.js";
 import type * as lib_sms from "../lib/sms.js";
 import type * as lib_validators from "../lib/validators.js";
 import type * as lib_views from "../lib/views.js";
 import type * as lib_workspace from "../lib/workspace.js";
+import type * as review from "../review.js";
 import type * as sms from "../sms.js";
 import type * as support from "../support.js";
 import type * as workspace from "../workspace.js";
@@ -44,11 +48,13 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   admin: typeof admin;
+  adminPrices: typeof adminPrices;
   applicationFiles: typeof applicationFiles;
   applications: typeof applications;
   auth: typeof auth;
   catalogue: typeof catalogue;
   demo: typeof demo;
+  files: typeof files;
   http: typeof http;
   identity: typeof identity;
   "lib/access": typeof lib_access;
@@ -63,10 +69,12 @@ declare const fullApi: ApiFromModules<{
   "lib/lifecycle": typeof lib_lifecycle;
   "lib/onboarding": typeof lib_onboarding;
   "lib/phone": typeof lib_phone;
+  "lib/review": typeof lib_review;
   "lib/sms": typeof lib_sms;
   "lib/validators": typeof lib_validators;
   "lib/views": typeof lib_views;
   "lib/workspace": typeof lib_workspace;
+  review: typeof review;
   sms: typeof sms;
   support: typeof support;
   workspace: typeof workspace;
