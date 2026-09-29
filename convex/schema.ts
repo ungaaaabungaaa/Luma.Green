@@ -1,6 +1,13 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
+import {
+  draftSections,
+  vApplicationKind,
+  vApplicationStatus,
+  vFileType,
+} from "./lib/drafts";
+
 /**
  * Luma.Green data model — first pass.
  *
@@ -68,6 +75,61 @@ export default defineSchema({
     aadhaarLast4: v.string(),
     ...timestamps,
   }).index("by_profileId", ["profileId"]),
+
+  /**
+   * One per person joining as a business or a Saathi — docs/product/onboarding.md.
+   * The form is saved here as a draft while they fill it in; the business or
+   * Saathi record itself is created when the admin approves.
+   */
+  applications: defineTable({
+    profileId: v.id("profiles"),
+    kind: vApplicationKind,
+    status: vApplicationStatus,
+    /** Goes up by one on every submit; 0 while never sent. */
+    version: v.number(),
+    locale: v.string(),
+    ageConfirmedAt: v.number(),
+    privacyAcceptedAt: v.number(),
+    ...draftSections,
+    submittedAt: v.optional(v.number()),
+    decidedAt: v.optional(v.number()),
+    decidedBy: v.optional(v.id("profiles")),
+    /** The admin's note on changes requested or a rejection. */
+    note: v.optional(v.string()),
+    ...timestamps,
+  })
+    .index("by_profile", ["profileId"])
+    .index("by_status_submittedAt", ["status", "submittedAt"]),
+
+  /** What was sent at each version, so the admin can see what changed. */
+  applicationSnapshots: defineTable({
+    applicationId: v.id("applications"),
+    version: v.number(),
+    ...draftSections,
+    fileIds: v.array(v.id("applicationFiles")),
+    submittedAt: v.number(),
+  }).index("by_application_version", ["applicationId", "version"]),
+
+  /**
+   * Uploads: PCB certificates, machine photos and videos, photo IDs, selfies.
+   * Private — served only through a permission-checked HTTP action, never a
+   * storage URL. A file that was part of a submitted version is only marked
+   * removed, so earlier versions stay complete.
+   */
+  applicationFiles: defineTable({
+    applicationId: v.id("applications"),
+    profileId: v.id("profiles"),
+    type: vFileType,
+    storageId: v.id("_storage"),
+    name: v.string(),
+    contentType: v.string(),
+    size: v.number(),
+    firstSubmittedVersion: v.optional(v.number()),
+    removedAt: v.optional(v.number()),
+    createdAt: v.number(),
+  })
+    .index("by_application", ["applicationId"])
+    .index("by_storageId", ["storageId"]),
 
   /** v1 identity table — replaced by `profiles`; removed with the v2 schema. */
   users: defineTable({

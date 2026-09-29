@@ -1,0 +1,362 @@
+/// <reference types="vite/client" />
+// @vitest-environment edge-runtime
+import { convexTest } from "convex-test";
+import { afterEach, describe, expect, it, vi } from "vitest";
+
+import { api } from "./_generated/api";
+import type { Id } from "./_generated/dataModel";
+import { convexModules, registerAuth, signIn } from "./lib/auth.testing";
+import schema from "./schema";
+
+const modules = convexModules(import.meta.glob("./**/*.*s"));
+
+function setup() {
+  const t = convexTest(schema, modules);
+  registerAuth(t);
+  return t;
+}
+
+type Test = ReturnType<typeof setup>;
+
+/** A phone user who has signed in once (so their profile exists). */
+async function applicant(t: Test, phone = "+919000000001") {
+  const as = await signIn(t, {
+    email: `${phone.slice(1)}@phone.luma.green`,
+    phoneNumber: phone,
+  });
+  await as.mutation(api.identity.ensureProfile, { locale: "kn" });
+  return as;
+}
+
+const consent = {
+  locale: "kn",
+  ageConfirmed: true,
+  privacyAccepted: true,
+} as const;
+
+const shop = {
+  ownerName: "Ramesh K",
+  shopName: "Ramesh Kabadi Store",
+  gstRegistered: false,
+  address: "12, 4th Cross, Yeshwanthpur, Bengaluru",
+  offersPickup: false,
+  phones: [],
+  opens: "08:00",
+  closes: "20:00",
+  weeklyOff: [],
+};
+
+const ascii = (text: string) => [...new TextEncoder().encode(text)];
+
+/** Just enough of each format for the byte check to recognise it. */
+const SIGNATURES = {
+  pdf: ascii("%PDF-1.7\n"),
+  jpeg: [0xff, 0xd8, 0xff, 0xe0, 0x00, 0x10],
+  mp4: [0x00, 0x00, 0x00, 0x18, ...ascii("ftypisom")],
+  text: ascii("just some notes"),
+};
+
+async function upload(t: Test, format: keyof typeof SIGNATURES) {
+  const bytes = new Uint8Array(SIGNATURES[format].length + 1024);
+  bytes.set(SIGNATURES[format]);
+  return t.run(async (ctx) => ctx.storage.store(new Blob([bytes])));
+}
+
+async function attach(
+  as: Awaited<ReturnType<typeof applicant>>,
+  storageId: Id<"_storage">,
+  type: "pcb_certificate" | "machine_media" | "id_proof" | "selfie",
+  name: string,
+) {
+  const result = await as.action(api.applicationFiles.attach, {
+    storageId,
+    type,
+    name,
+  });
+  if (!result.ok) throw new Error(result.error);
+  return result.fileId;
+}
+
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
+
+describe("signed out", () => {
+  it("sees no application and can't start one", async () => {
+    const t = setup();
+    expect(await t.query(api.applications.mine, {})).toBeNull();
+    await expect(
+      t.mutation(api.applications.start, { kind: "kabadiwala", ...consent }),
+    ).rejects.toThrow(/NOT_SIGNED_IN/);
+    await expect(
+      t.mutation(api.applicationFiles.generateUploadUrl, {}),
+    ).rejects.toThrow(/NOT_SIGNED_IN/);
+  });
+});
+
+describe("a kabadiwala's application", () => {
+  it("goes from draft to submitted, keeping a copy of what was sent", async () => {
+    const t = setup();
+    const ramesh = await applicant(t);
+
+    const id = await ramesh.mutation(api.applications.start, {
+      kind: "kabadiwala",
+      ...consent,
+    });
+    // Starting again as the same role is the same application.
+    expect(
+      await ramesh.mutation(api.applications.start, {
+        kind: "kabadiwala",
+        ...consent,
+      }),
+    ).toBe(id);
+
+    await expect(ramesh.mutation(api.applications.submit, {})).rejects.toThrow(
+      /INCOMPLETE/,
+    );
+
+    await ramesh.mutation(api.applications.saveDraft, { kabadiwala: shop });
+    await ramesh.mutation(api.applications.submit, {});
+
+    const mine = await ramesh.query(api.applications.mine, {});
+    expect(mine).toMatchObject({
+      loginPhone: "+919000000001",
+      application: { id, status: "submitted", version: 1, kabadiwala: shop },
+    });
+
+    const trail = await t.run(async (ctx) => ({
+      snapshots: await ctx.db.query("applicationSnapshots").collect(),
+      audit: await ctx.db.query("auditLog").collect(),
+    }));
+    expect(trail.snapshots).toHaveLength(1);
+    expect(trail.snapshots[0]).toMatchObject({ version: 1, kabadiwala: shop });
+    expect(trail.audit.map((row) => row.action)).toEqual([
+      "profile.created",
+      "application.started",
+      "application.submitted",
+    ]);
+  });
+
+  it("is locked while in review", async () => {
+    const t = setup();
+    const ramesh = await applicant(t);
+    await ramesh.mutation(api.applications.start, {
+      kind: "kabadiwala",
+      ...consent,
+    });
+    await ramesh.mutation(api.applications.saveDraft, { kabadiwala: shop });
+    await ramesh.mutation(api.applications.submit, {});
+
+    await expect(
+      ramesh.mutation(api.applications.saveDraft, { kabadiwala: shop }),
+    ).rejects.toThrow(/NOT_EDITABLE/);
+    await expect(ramesh.mutation(api.applications.submit, {})).rejects.toThrow(
+      /NOT_EDITABLE/,
+    );
+  });
+
+  it("only takes the sections for its role", async () => {
+    const t = setup();
+    const ramesh = await applicant(t);
+    await ramesh.mutation(api.applications.start, {
+      kind: "kabadiwala",
+      ...consent,
+    });
+    await expect(
+      ramesh.mutation(api.applications.saveDraft, { saathi: { name: "X" } }),
+    ).rejects.toThrow(/WRONG_SECTION/);
+  });
+
+  it("can be thrown away before it's sent, to start as another role", async () => {
+    const t = setup();
+    const ramesh = await applicant(t);
+    await ramesh.mutation(api.applications.start, {
+      kind: "kabadiwala",
+      ...consent,
+    });
+    await expect(
+      ramesh.mutation(api.applications.start, { kind: "saathi", ...consent }),
+    ).rejects.toThrow(/ALREADY_APPLYING/);
+
+    await ramesh.mutation(api.applications.discard, {});
+    await ramesh.mutation(api.applications.start, {
+      kind: "saathi",
+      ...consent,
+    });
+    expect(await ramesh.query(api.applications.mine, {})).toMatchObject({
+      application: { kind: "saathi", status: "draft" },
+    });
+  });
+});
+
+describe("privacy between applicants", () => {
+  it("never shows one person's application to another", async () => {
+    const t = setup();
+    const ramesh = await applicant(t, "+919000000001");
+    const suresh = await applicant(t, "+919000000002");
+    await ramesh.mutation(api.applications.start, {
+      kind: "kabadiwala",
+      ...consent,
+    });
+    await ramesh.mutation(api.applications.saveDraft, { kabadiwala: shop });
+
+    expect(await suresh.query(api.applications.mine, {})).toEqual({
+      loginPhone: "+919000000002",
+      application: null,
+    });
+    // And nothing Suresh does touches Ramesh's draft.
+    await expect(
+      suresh.mutation(api.applications.saveDraft, { kabadiwala: shop }),
+    ).rejects.toThrow(/NO_APPLICATION/);
+  });
+
+  it("can't attach or remove someone else's file", async () => {
+    const t = setup();
+    const yard = await applicant(t, "+919000000001");
+    const other = await applicant(t, "+919000000002");
+    await yard.mutation(api.applications.start, { kind: "yard", ...consent });
+    await other.mutation(api.applications.start, { kind: "yard", ...consent });
+
+    const storageId = await upload(t, "pdf");
+    const fileId = await attach(
+      yard,
+      storageId,
+      "pcb_certificate",
+      "consent.pdf",
+    );
+    await expect(
+      other.mutation(api.applicationFiles.remove, { fileId }),
+    ).rejects.toThrow(/FILE_NOT_FOUND/);
+    // Nor claim (or, on a failed check, delete) an upload that's already in use.
+    await expect(
+      attach(other, storageId, "pcb_certificate", "mine-now.pdf"),
+    ).rejects.toThrow(/FILE_IN_USE/);
+    expect(
+      await t.run(async (ctx) => ctx.db.system.get("_storage", storageId)),
+    ).not.toBeNull();
+  });
+});
+
+describe("the admin", () => {
+  it("doesn't apply", async () => {
+    vi.stubEnv("ADMIN_EMAIL", "admin@luma.test");
+    const t = setup();
+    const admin = await signIn(t, {
+      email: "admin@luma.test",
+      twoFactorEnabled: true,
+    });
+    await admin.mutation(api.identity.ensureProfile, { locale: "en" });
+    await expect(
+      admin.mutation(api.applications.start, { kind: "yard", ...consent }),
+    ).rejects.toThrow(/NOT_A_MEMBER/);
+  });
+});
+
+describe("uploads", () => {
+  it("checks the real type from the bytes, deleting what fails", async () => {
+    const t = setup();
+    const yard = await applicant(t);
+    await yard.mutation(api.applications.start, { kind: "yard", ...consent });
+
+    const notes = await upload(t, "text");
+    expect(
+      await yard.action(api.applicationFiles.attach, {
+        storageId: notes,
+        type: "machine_media",
+        name: "shredder.jpg", // the name says photo; the bytes say otherwise
+      }),
+    ).toEqual({ ok: false, error: "fileType" });
+    expect(
+      await t.run(async (ctx) => ctx.db.system.get("_storage", notes)),
+    ).toBeNull();
+
+    // A PDF is fine as a certificate, not as a machine photo.
+    expect(
+      await yard.action(api.applicationFiles.attach, {
+        storageId: await upload(t, "pdf"),
+        type: "machine_media",
+        name: "photo.pdf",
+      }),
+    ).toEqual({ ok: false, error: "fileType" });
+
+    // A yard has no Saathi uploads.
+    await expect(
+      attach(yard, await upload(t, "jpeg"), "selfie", "me.jpg"),
+    ).rejects.toThrow(/WRONG_FILE_TYPE/);
+  });
+
+  it("replaces a single-file slot instead of piling up", async () => {
+    const t = setup();
+    const lakshmi = await applicant(t);
+    await lakshmi.mutation(api.applications.start, {
+      kind: "saathi",
+      ...consent,
+    });
+    for (const name of ["first.jpg", "second.jpg"]) {
+      await attach(lakshmi, await upload(t, "jpeg"), "selfie", name);
+    }
+    const mine = await lakshmi.query(api.applications.mine, {});
+    expect(mine?.application?.files.map((file) => file.name)).toEqual([
+      "second.jpg",
+    ]);
+    expect(mine?.application?.files[0]?.contentType).toBe("image/jpeg");
+  });
+
+  it("lets a complete business submit, and keeps sent files for the record", async () => {
+    const t = setup();
+    const yard = await applicant(t);
+    await yard.mutation(api.applications.start, {
+      kind: "recycler",
+      ...consent,
+    });
+    await yard.mutation(api.applications.saveDraft, {
+      business: {
+        businessName: "Peenya Plastics",
+        gstRegistered: false,
+        materials: ["plastic"],
+        address: "Plot 7, Peenya Industrial Area, Bengaluru",
+        locationTags: [],
+        collectsFromSuppliers: false,
+        phones: [],
+        opens: "09:00",
+        closes: "18:00",
+        weeklyOff: ["sun"],
+      },
+      documents: {
+        pcbNotRequired: false,
+        board: "kspcb",
+        consentNumber: "KSPCB/CFO/2025/77",
+        validUntil: "2099-12-31",
+        declaration: true,
+      },
+    });
+    const files: Id<"applicationFiles">[] = [
+      await attach(
+        yard,
+        await upload(t, "pdf"),
+        "pcb_certificate",
+        "consent.pdf",
+      ),
+    ];
+    await expect(yard.mutation(api.applications.submit, {})).rejects.toThrow(
+      /INCOMPLETE/,
+    );
+    files.push(
+      await attach(
+        yard,
+        await upload(t, "jpeg"),
+        "machine_media",
+        "shredder.jpg",
+      ),
+      await attach(yard, await upload(t, "mp4"), "machine_media", "line.mp4"),
+    );
+    await yard.mutation(api.applications.submit, {});
+
+    const stored = await t.run(async (ctx) =>
+      Promise.all(files.map(async (id) => ctx.db.get("applicationFiles", id))),
+    );
+    expect(stored.map((file) => file?.firstSubmittedVersion)).toEqual([
+      1, 1, 1,
+    ]);
+  });
+});

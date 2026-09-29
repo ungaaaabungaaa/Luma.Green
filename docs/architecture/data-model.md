@@ -38,17 +38,30 @@ id.
 
 ### Participants and onboarding
 
-| Table              | Key fields                                                                                                                                                                                                                                                               | Indexes                                               |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
-| `orgs`             | `kind`, `name`, `slug`, `status`, `ownerProfileId`, `address`, `location {lat,lng}`, `geohash`, `locationTags[]`, `pickup {offers, vehicle?}`, `hours {opens, closes}`, `weeklyOff[]`, `phones[{number,label}]`, `gstin?`, `materials[]`, `pcb? {board, state?, number}` | `by_slug`, `by_owner`, `by_kind_status`, `by_geohash` |
-| `memberships`      | `profileId`, `orgId`, `role` (`owner` \| `staff`)                                                                                                                                                                                                                        | `by_profile`, `by_org`                                |
-| `saathiProfiles`   | `profileId`, `area`, `location`, `geohash`, `radiusKm`, `workTypes[]`, `vehicle`, `availability {times[], days[]}`, `status`                                                                                                                                             | `by_profile`, `by_geohash`                            |
-| `applications`     | `subject` (`{org: id}` \| `{saathi: id}`), `kind`, `status`, `version`, `submittedAt?`, `decidedAt?`, `decidedBy?`, `note?`, `checklist {key: bool}`                                                                                                                     | `by_status_submittedAt`, `by_subject`                 |
-| `applicationFiles` | `applicationId`, `type` (`pcb_certificate`, `machine_photo`, `machine_video`, `id_proof`, `selfie`), `storageId`, `name`, `contentType`, `size`                                                                                                                          | `by_application`                                      |
+Built 29 Sep 2026 (onboarding): `applications`, `applicationSnapshots`,
+`applicationFiles`. The business and Saathi records are created when the
+admin approves — until then everything lives on the application.
+
+| Table                  | Key fields                                                                                                                                                                                                                                                                                     | Indexes                                               |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| `applications`         | `profileId`, `kind` (`kabadiwala` \| `yard` \| `recycler` \| `manufacturer` \| `saathi`), `status`, `version`, `locale`, `ageConfirmedAt`, `privacyAcceptedAt`, the draft sections (`kabadiwala` or `business` + `documents` or `saathi`), `submittedAt?`, `decidedAt?`, `decidedBy?`, `note?` | `by_profile`, `by_status_submittedAt`                 |
+| `applicationSnapshots` | `applicationId`, `version`, the sections as sent, `fileIds[]`, `submittedAt` — one per submit, so the admin sees what changed                                                                                                                                                                  | `by_application_version`                              |
+| `applicationFiles`     | `applicationId`, `profileId`, `type` (`pcb_certificate`, `machine_media`, `id_proof`, `selfie`), `storageId`, `name`, `contentType` (from the file's bytes), `size`, `firstSubmittedVersion?`, `removedAt?`                                                                                    | `by_application`, `by_storageId`                      |
+| `orgs`                 | `kind`, `name`, `slug`, `status`, `ownerProfileId`, `address`, `location {lat,lng}`, `geohash`, `locationTags[]`, `pickup {offers, vehicle?}`, `hours {opens, closes}`, `weeklyOff[]`, `phones[{number,label}]`, `gstin?`, `materials[]`, `pcb? {board, state?, number}` — created on approval | `by_slug`, `by_owner`, `by_kind_status`, `by_geohash` |
+| `memberships`          | `profileId`, `orgId`, `role` (`owner` \| `staff`)                                                                                                                                                                                                                                              | `by_profile`, `by_org`                                |
+| `saathiProfiles`       | `profileId`, `area`, `location`, `geohash`, `radiusKm`, `workTypes[]`, `vehicle`, `availability {times[], days[]}`, `status` — created on approval                                                                                                                                             | `by_profile`, `by_geohash`                            |
 
 `applications.status`: `draft → submitted → approved | changes_requested |
-rejected`, `changes_requested → submitted`, `approved ↔ suspended`. Illegal
-transitions throw; each legal one writes `auditLog`.
+rejected`, `changes_requested → submitted`, `approved ↔ suspended`
+(`convex/lib/lifecycle.ts`). Illegal transitions throw; each legal one writes
+`auditLog`. The field rules live once, in `convex/lib/onboarding.ts`: the
+forms validate with them and `applications.submit` runs them again.
+
+Uploads go to Convex storage first and are attached after a check of their
+real type (the first bytes, not the name or declared type); a rejected one is
+deleted at once. An upload that never gets attached — the tab closed half-way
+— stays orphaned until a daily clean-up job, to be built with the admin
+queue.
 
 ### Catalogue and prices
 

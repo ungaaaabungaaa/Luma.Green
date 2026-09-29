@@ -9,11 +9,17 @@
  */
 
 import type * as admin from "../admin.js";
+import type * as applicationFiles from "../applicationFiles.js";
+import type * as applications from "../applications.js";
 import type * as auth from "../auth.js";
 import type * as http from "../http.js";
 import type * as identity from "../identity.js";
 import type * as lib_access from "../lib/access.js";
 import type * as lib_admin from "../lib/admin.js";
+import type * as lib_applicationAccess from "../lib/applicationAccess.js";
+import type * as lib_drafts from "../lib/drafts.js";
+import type * as lib_lifecycle from "../lib/lifecycle.js";
+import type * as lib_onboarding from "../lib/onboarding.js";
 import type * as lib_phone from "../lib/phone.js";
 import type * as lib_sms from "../lib/sms.js";
 import type * as sms from "../sms.js";
@@ -26,11 +32,17 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   admin: typeof admin;
+  applicationFiles: typeof applicationFiles;
+  applications: typeof applications;
   auth: typeof auth;
   http: typeof http;
   identity: typeof identity;
   "lib/access": typeof lib_access;
   "lib/admin": typeof lib_admin;
+  "lib/applicationAccess": typeof lib_applicationAccess;
+  "lib/drafts": typeof lib_drafts;
+  "lib/lifecycle": typeof lib_lifecycle;
+  "lib/onboarding": typeof lib_onboarding;
   "lib/phone": typeof lib_phone;
   "lib/sms": typeof lib_sms;
   sms: typeof sms;

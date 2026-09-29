@@ -1,6 +1,7 @@
 # Onboarding and verification
 
-> **Status:** agreed spec, 29 Sep 2026. Clickable screens:
+> **Status:** built, 29 Sep 2026 — the forms, uploads and status screen. The
+> admin's verification queue comes next. Clickable screens:
 > [Luma.Green Prototype](https://claude.ai/artifact/4hiq2r5tm5kWDBqTGEPD8C)
 > (private until shared). URLs: [architecture/urls.md](../architecture/urls.md).
 > Data: [architecture/data-model.md](../architecture/data-model.md).
@@ -33,8 +34,9 @@ Language ─► Phone ─► SMS code ─► What do you do? ─► Form for tha
 6. **Submitted.** The status screen shows "Under review — usually 12–24 hours"
    and what we check.
 
-A user can leave at any point and continue later: the form is saved as a draft
-after every step.
+A user can leave at any point and continue later: the form saves itself as a
+draft a moment after every change. After signing in, everyone lands on
+`/join/status`, which picks up where they are.
 
 Every applicant confirms they are **18 or older** and reads the privacy notice
 for their role before the first form ([data protection](../operations/data-protection.md#notice-and-consent)).
@@ -95,7 +97,7 @@ the role.
 | Not required for our unit                         | Checkbox + explanation                             | No                | White-category units (e.g. paper baling only) need no consent; the admin checks the claim                                                                     |
 | Plastic Waste Processor registration _(proposed)_ | Number + PDF                                       | Plastic recyclers | From CPCB's EPR portal; needs a valid consent and GST                                                                                                         |
 | Certificate                                       | PDF, ≤ 10 MB                                       | Yes               | The one PDF upload                                                                                                                                            |
-| Machine photos and videos                         | JPEG/PNG/WebP ≤ 10 MB, MP4 ≤ 20 MB                 | Yes               | At least two items; show the main machines and the yard. 20 MB is the most a private file can be served at ([auth.md](../architecture/auth.md#private-files)) |
+| Machine photos and videos                         | JPEG/PNG/WebP ≤ 10 MB, MP4 or MOV ≤ 20 MB          | Yes               | At least two items; show the main machines and the yard. 20 MB is the most a private file can be served at ([auth.md](../architecture/auth.md#private-files)) |
 | Declaration                                       | Checkbox                                           | Yes               | "These documents are genuine and belong to this business."                                                                                                    |
 
 ### Saathi

@@ -4,15 +4,10 @@ import { convexTest } from "convex-test";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { api } from "./_generated/api";
+import { convexModules } from "./lib/auth.testing";
 import schema from "./schema";
 
-// Every function module, without tests or type declarations. (Vite's glob
-// doesn't support the `!(*.*.*)` pattern from the convex-test docs.)
-const modules = Object.fromEntries(
-  Object.entries(import.meta.glob("./**/*.*s")).filter(
-    ([path]) => !path.endsWith(".test.ts") && !path.endsWith(".d.ts"),
-  ),
-);
+const modules = convexModules(import.meta.glob("./**/*.*s"));
 
 afterEach(() => {
   vi.unstubAllEnvs();

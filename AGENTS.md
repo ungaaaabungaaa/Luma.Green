@@ -182,6 +182,11 @@ with `requireUser` / `requireAdmin` from `convex/lib/access.ts`, and run
 `pnpm auth:schema` after changing a Better Auth plugin. Read
 `docs/architecture/auth.md` before touching auth.
 
+Onboarding **is** wired: `/join` (public) → `/join/{kind}` → `/join/status`.
+Every field rule lives once in `convex/lib/onboarding.ts` — the forms validate
+with those schemas and `applications.submit` runs them again; change a rule
+there, never in a component.
+
 - **MSG91** — sending code is in place (`convex/sms.ts`); keys wait for DLT
   approval, and the per-number cap in `docs/architecture/auth.md` comes first.
 - **Razorpay, Resend, R2, Mapbox, OpenRouter** — packages installed, keys
