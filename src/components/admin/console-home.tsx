@@ -2,11 +2,14 @@
 
 import { useQuery } from "convex/react";
 import {
-  DatabaseBackupIcon,
+  AlarmClockIcon,
+  ArrowRightIcon,
   IndianRupeeIcon,
+  LifeBuoyIcon,
   type LucideIcon,
   ShieldCheckIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 import {
   Card,
@@ -25,42 +28,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { isLocale, localeMeta } from "@/i18n/locales";
+import { cn } from "@/lib/utils";
 
 import { api } from "../../../convex/_generated/api";
-import { formatIndianMobile } from "../../../convex/lib/phone";
-
-/** Admin times are shown in India time, whatever the laptop's zone. */
-const when = new Intl.DateTimeFormat("en-IN", {
-  dateStyle: "medium",
-  timeStyle: "short",
-  timeZone: "Asia/Kolkata",
-});
-
-const upcoming: readonly {
-  title: string;
-  body: string;
-  icon: LucideIcon;
-}[] = [
-  {
-    title: "Verification queue",
-    body: "Applications from kabadiwalas, yards, recyclers, manufacturers and Saathis land here with the onboarding release.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Price tables",
-    body: "The minimum and fallback prices per material, per kilo.",
-    icon: IndianRupeeIcon,
-  },
-  {
-    title: "Backups",
-    body: "Daily exports on the office Mac — docs/operations/backups.md.",
-    icon: DatabaseBackupIcon,
-  },
-];
+import { formatPhone, formatWhen } from "./format";
 
 export function ConsoleHome() {
   const me = useQuery(api.identity.me);
   const overview = useQuery(api.admin.overview);
+  const summary = useQuery(api.review.summary);
   const firstName = me?.adminName?.split(" ", 1)[0];
 
   return (
@@ -70,25 +46,63 @@ export function ConsoleHome() {
           {firstName ? `Welcome, ${firstName}` : "Welcome"}
         </h1>
         <p className="text-muted-foreground">
-          The pilot console. It grows with each release.
+          What needs you today, and the latest people to join the pilot.
         </p>
       </div>
 
-      <ul className="grid gap-4 md:grid-cols-3">
-        {upcoming.map((item) => (
-          <li key={item.title}>
-            <Card className="h-full">
-              <CardHeader>
-                <item.icon aria-hidden className="size-5 text-primary" />
-                <CardTitle>
-                  <h2>{item.title}</h2>
-                </CardTitle>
-                <CardDescription>{item.body}</CardDescription>
-              </CardHeader>
-            </Card>
-          </li>
-        ))}
+      <ul className="grid gap-4 sm:grid-cols-3" aria-busy={!summary}>
+        <li>
+          <StatLink
+            href="/admin/verification"
+            icon={ShieldCheckIcon}
+            label="Waiting for review"
+            value={summary?.waiting}
+            hint={
+              summary && summary.dueSoon > 0
+                ? `${String(summary.dueSoon)} due soon`
+                : "Decide within 24 hours"
+            }
+          />
+        </li>
+        <li>
+          <StatLink
+            href="/admin/verification"
+            icon={AlarmClockIcon}
+            label="Overdue"
+            value={summary?.overdue}
+            hint="Waiting more than 24 hours"
+            isUrgent={Boolean(summary?.overdue)}
+          />
+        </li>
+        <li>
+          <StatLink
+            href="/admin/support"
+            icon={LifeBuoyIcon}
+            label="Open support requests"
+            value={summary?.openSupport}
+            hint="From the help centre and solar page"
+          />
+        </li>
       </ul>
+
+      <Link
+        href="/admin/prices"
+        className="group flex items-center gap-4 rounded-xl bg-card p-4 ring-1 ring-foreground/10 outline-none hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50"
+      >
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary">
+          <IndianRupeeIcon aria-hidden className="size-5" />
+        </span>
+        <span className="flex min-w-0 flex-1 flex-col">
+          <span className="font-medium">Price tables</span>
+          <span className="text-sm text-muted-foreground">
+            The minimum and fallback price per kilo, for every material.
+          </span>
+        </span>
+        <ArrowRightIcon
+          aria-hidden
+          className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5"
+        />
+      </Link>
 
       <Card>
         <CardHeader>
@@ -104,6 +118,57 @@ export function ConsoleHome() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+/** A number that needs the admin, linking to where they deal with it. */
+function StatLink({
+  href,
+  icon: Icon,
+  label,
+  value,
+  hint,
+  isUrgent = false,
+}: {
+  href: string;
+  icon: LucideIcon;
+  label: string;
+  value: number | undefined;
+  hint: string;
+  isUrgent?: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "flex h-full flex-col gap-1 rounded-xl bg-card p-4 ring-1 ring-foreground/10 outline-none hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50",
+        isUrgent && "ring-destructive/40",
+      )}
+    >
+      <span className="flex items-center justify-between gap-2 text-sm text-muted-foreground">
+        {label}
+        <Icon
+          aria-hidden
+          className={cn(
+            "size-4",
+            isUrgent ? "text-destructive" : "text-muted-foreground",
+          )}
+        />
+      </span>
+      {value === undefined ? (
+        <Skeleton className="h-8 w-12" />
+      ) : (
+        <span
+          className={cn(
+            "text-3xl font-semibold tracking-tight tabular-nums",
+            isUrgent && "text-destructive",
+          )}
+        >
+          {value}
+        </span>
+      )}
+      <span className="text-xs text-muted-foreground">{hint}</span>
+    </Link>
   );
 }
 
@@ -142,14 +207,14 @@ function RecentSignIns({
         {people.map((person) => (
           <TableRow key={person.id}>
             <TableCell className="font-mono">
-              {person.phone ? formatIndianMobile(person.phone) : "—"}
+              {formatPhone(person.phone)}
             </TableCell>
             <TableCell>
               {isLocale(person.locale)
                 ? localeMeta[person.locale].english
                 : person.locale}
             </TableCell>
-            <TableCell>{when.format(person.createdAt)}</TableCell>
+            <TableCell>{formatWhen(person.createdAt)}</TableCell>
           </TableRow>
         ))}
       </TableBody>
