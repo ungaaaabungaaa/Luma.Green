@@ -20,16 +20,22 @@
     "label": "Main",
     "home": "Home",
     "howItWorks": "How it works",
-    "participants": "Who it's for",
     "contact": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "skipToContent": "Skip to content",
-    "getStarted": "Request early access"
+    "prices": "Prices",
+    "help": "Help",
+    "join": "Join",
+    "sellScrap": "Sell scrap"
   },
   "footer": {
-    "summary": "One ledger for everyone in a recycling sector — from the first kilogram collected to the last credit retired.",
+    "about": "India's scrap chain on one platform, from the home to the factory. Every hand-off weighed, priced and recorded.",
     "navLabel": "Footer",
+    "useHeading": "Use Luma.Green",
+    "learnHeading": "Learn more",
+    "standards": "Industry standards",
+    "solar": "Rooftop solar",
     "copyright": "© Luma.Green"
   },
   "loop": {
@@ -63,17 +69,459 @@
     }
   },
   "home": {
-    "eyebrow": "Now in early access",
-    "title": "One ledger for everything your sector recovers",
-    "lead": "Luma.Green connects collectors, aggregators, recyclers, factories and verifiers in the same sector. Track inventory, trade recovered material and settle verified carbon credits — with every step on the record.",
-    "secondaryCta": "See how it works",
-    "loopHeading": "Recover. Trade. Retire.",
-    "loopIntro": "One circular flow, from the first kilogram collected to the last credit retired.",
-    "participantsHeading": "Everyone in the loop, on one record",
-    "participantsIntro": "Each organisation joins with a role and a sector, and sees only what belongs to its sector.",
-    "participantsCta": "Find your role",
-    "closingTitle": "Bring your sector onto the ledger",
-    "closingBody": "We are onboarding a small number of organisations first. Tell us where you sit in the loop."
+    "metaDescription": "Luma.Green puts India's scrap chain on one platform: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, verified businesses and a receipt at every step.",
+    "hero": {
+      "eyebrow": "Starting in Bengaluru",
+      "title": "India's scrap chain, on one platform",
+      "lead": "Sell scrap from home at a fair price. Trade it up the chain with verified businesses. Every hand-off is weighed, priced and recorded.",
+      "sell": "Sell your scrap",
+      "join": "Join as a business",
+      "prices": "See today's prices"
+    },
+    "teaser": {
+      "title": "Today's prices",
+      "placeAndDate": "Bengaluru · {date}",
+      "place": "Bengaluru",
+      "seeAll": "See all prices",
+      "demoNote": "Sample prices for the prototype.",
+      "unavailable": "Today's prices will show here soon.",
+      "error": "Prices couldn't load right now."
+    },
+    "chain": {
+      "heading": "How scrap moves",
+      "intro": "Scrap changes hands four times before it becomes something new. It is sorted better at every step, and Luma.Green records every hand-off.",
+      "steps": {
+        "household": {
+          "name": "Households",
+          "body": "Sell old paper, plastic, metal and e-waste."
+        },
+        "kabadiwala": {
+          "name": "Kabadiwalas",
+          "body": "Buy it, weigh it and sort it by material."
+        },
+        "yard": {
+          "name": "Yards",
+          "body": "Grade it and press it into bales."
+        },
+        "recycler": {
+          "name": "Recyclers",
+          "body": "Turn bales into flakes, granules and ingots."
+        },
+        "manufacturer": {
+          "name": "Manufacturers",
+          "body": "Make new products from recycled material."
+        }
+      },
+      "money": "Money flows back at every step: cash or UPI at the door, escrow between businesses.",
+      "saathi": "Saathis help all along the chain with pickups, sorting and shifts."
+    },
+    "roles": {
+      "heading": "Something for everyone in the chain",
+      "intro": "Six kinds of people keep scrap moving. Here is what Luma.Green does for each of them.",
+      "household": {
+        "title": "Households",
+        "one": "See what your scrap is worth before you book.",
+        "two": "Pickup at your door, or drop it at a shop.",
+        "three": "Paid in cash or UPI, with a receipt.",
+        "cta": "Sell your scrap"
+      },
+      "kabadiwala": {
+        "title": "Kabadiwalas",
+        "one": "Pickup requests from homes nearby.",
+        "two": "Set your own prices, never below the floor.",
+        "three": "Sell your sorted stock to yards.",
+        "cta": "Join as a kabadiwala"
+      },
+      "yard": {
+        "title": "Yards",
+        "one": "See what nearby shops have in stock.",
+        "two": "Buy in bulk and sell bales to recyclers.",
+        "three": "Payment held in escrow until delivery.",
+        "cta": "Join as a yard"
+      },
+      "recycler": {
+        "title": "Recyclers",
+        "one": "Graded bales from verified yards.",
+        "two": "Every lot with its chain of custody.",
+        "three": "Sell your output to factories.",
+        "cta": "Join as a recycler"
+      },
+      "manufacturer": {
+        "title": "Manufacturers",
+        "one": "See what recyclers are producing.",
+        "two": "Order recycled material with escrow.",
+        "three": "Records for your EPR reports.",
+        "cta": "Join as a manufacturer"
+      },
+      "saathi": {
+        "title": "Saathis",
+        "one": "Paid work near you: pickups, sorting and shifts.",
+        "two": "Choose your area and your hours.",
+        "three": "Verified, so homes and businesses trust you.",
+        "cta": "Join as a Saathi"
+      }
+    },
+    "trust": {
+      "heading": "Built on trust",
+      "intro": "Scrap has always run on cash and guesswork. These rules change that.",
+      "verified": {
+        "title": "Verified businesses",
+        "body": "A person checks every business and every Saathi before they can trade."
+      },
+      "floor": {
+        "title": "Fair prices, with a floor",
+        "body": "Shops set their own prices, but never below the minimum we publish for each material."
+      },
+      "escrow": {
+        "title": "Escrow for business trades",
+        "body": "The buyer's money is held safely and released when the goods arrive."
+      },
+      "receipts": {
+        "title": "Digital receipts",
+        "body": "Every pickup and trade gets a receipt: what, how much and at what price."
+      },
+      "languages": {
+        "title": "{count, number} languages",
+        "body": "Kannada, Hindi, Tamil, English and more, with big buttons and few words."
+      }
+    },
+    "whyNow": {
+      "heading": "Why now",
+      "intro": "Three changes make this the moment to put India's scrap chain on record.",
+      "epr": {
+        "title": "EPR rules",
+        "body": "Extended Producer Responsibility rules for plastic packaging, e-waste and batteries ask producers to prove that material was really collected and recycled. That proof has to start at the first hand-off."
+      },
+      "informal": {
+        "title": "The informal sector",
+        "body": "Kabadiwalas and informal workers already do much of India's recycling, with little access to fair prices, records or recognition. Luma.Green works with them, not around them."
+      },
+      "upi": {
+        "title": "UPI everywhere",
+        "body": "Paying by phone is normal now, even at the smallest shop. Every payment can leave a record."
+      }
+    },
+    "closing": {
+      "title": "Start with what you have",
+      "body": "A bag of old newspapers or a truckload of bales: there is a place for it on Luma.Green.",
+      "sell": "Sell your scrap",
+      "join": "Join as a business"
+    }
+  },
+  "prices": {
+    "metaTitle": "Scrap prices in Bengaluru today",
+    "metaDescription": "Today's scrap prices in Bengaluru, per kg: paper, plastic, metal, glass and e-waste, with the week's change, a 30-day chart and the least a shop may pay.",
+    "eyebrow": "Bengaluru",
+    "title": "Today's scrap prices",
+    "lead": "What scrap sells for today, per kilo. Shops set their own prices, but never below the floor. Tap a material to see its last 30 days.",
+    "demoNote": "Sample prices for the prototype, not live market rates.",
+    "date": "Prices for {date}",
+    "floorHelp": "Floor: the least a verified shop may pay you for a kilo.",
+    "perKg": "{price}/kg",
+    "floor": "Floor {price}",
+    "noPrice": "No price yet",
+    "columns": {
+      "material": "Material",
+      "today": "Today",
+      "week": "This week",
+      "month": "30 days",
+      "floor": "Floor"
+    },
+    "families": {
+      "paper": "Paper",
+      "plastic": "Plastic",
+      "metal": "Metal",
+      "glass": "Glass",
+      "ewaste": "E-waste",
+      "other": "Other"
+    },
+    "factoryGate": {
+      "title": "Factory gate",
+      "body": "Recycled material, as recyclers sell it to manufacturers."
+    },
+    "change": {
+      "up": "Up {pct} this week",
+      "down": "Down {pct} this week",
+      "flat": "No change this week",
+      "unknown": "Not enough history yet"
+    },
+    "detail": {
+      "description": "{code} · {family} · Bengaluru",
+      "today": "Today",
+      "low": "30-day low",
+      "high": "30-day high",
+      "floor": "Floor",
+      "noFloor": "None",
+      "close": "Close",
+      "noHistory": "No price history yet."
+    },
+    "chart": {
+      "label": "{material}: price per kilo, day by day. Use the arrow keys to move between days.",
+      "point": "{date}: {price}",
+      "floor": "Floor {price}",
+      "table": "Show the numbers",
+      "tableCaption": "{material}, price per kilo by day",
+      "date": "Date",
+      "price": "Price per kg"
+    },
+    "unavailable": {
+      "title": "Prices aren't available right now",
+      "body": "The price board is being connected. Please check back soon."
+    },
+    "empty": {
+      "title": "No prices yet",
+      "body": "Today's prices will show here once they're published."
+    },
+    "error": {
+      "title": "Prices couldn't load",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "sellCta": {
+      "title": "Got scrap at home?",
+      "body": "Book a pickup and get paid at your door.",
+      "action": "Sell your scrap"
+    }
+  },
+  "standards": {
+    "metaTitle": "The Luma.Green standard",
+    "metaDescription": "Open material codes and simple rules for fair scrap trade in India: grading, weighing, receipts, verification and escrow. Free for anyone to adopt.",
+    "eyebrow": "Open standard",
+    "title": "The Luma.Green standard",
+    "lead": "Simple, open rules for trading scrap fairly: one code for every material, clear grading, honest weighing and a record at every hand-off. Anyone in the industry can adopt them.",
+    "onThisPage": "On this page",
+    "codes": {
+      "title": "One code for every material",
+      "nav": "Material codes",
+      "body": "The same scrap goes by many local names. An open code gives each material one name everyone can use, so a kilo of newspaper means the same thing at a shop, a yard and a factory.",
+      "caption": "Luma.Green material codes",
+      "count": "{count, plural, one {# material} other {# materials}}",
+      "download": "Download the codes (CSV)",
+      "columns": {
+        "code": "Code",
+        "name": "Material",
+        "family": "Family",
+        "stage": "Stage"
+      },
+      "stages": {
+        "scrap": "Scrap",
+        "recycled": "Recycled"
+      },
+      "unavailable": "The code list isn't available right now. Please check back soon.",
+      "empty": "No material codes yet.",
+      "error": "The code list couldn't load.",
+      "retry": "Try again"
+    },
+    "grading": {
+      "title": "Grading: dry, sorted, clean",
+      "nav": "Grading",
+      "body": "A fair price needs a clear grade. Three checks come before any weighing.",
+      "dry": {
+        "title": "Dry",
+        "body": "Water is not scrap. Wet paper and cardboard are dried before they are weighed."
+      },
+      "sorted": {
+        "title": "Sorted",
+        "body": "One material per bag or bale, under one code. A mixed load goes under a MIXED code."
+      },
+      "clean": {
+        "title": "No contamination",
+        "body": "No food, oil, soil or stones. Anything that isn't the material comes out first."
+      }
+    },
+    "weighing": {
+      "title": "Fair weighing",
+      "nav": "Weighing",
+      "body": "Most arguments in scrap are about weight. These rules keep the scale honest.",
+      "stamped": {
+        "title": "Stamped scales",
+        "body": "Weigh only on a scale verified and stamped by the Legal Metrology department."
+      },
+      "shown": {
+        "title": "The seller sees the weight",
+        "body": "The display faces the seller, and the weight is read out before a price is agreed."
+      },
+      "receipt": {
+        "title": "A digital receipt",
+        "body": "The weight goes on a receipt to the gram, never rounded in anyone's favour."
+      }
+    },
+    "custody": {
+      "title": "Receipts and chain of custody",
+      "nav": "Receipts",
+      "body": "Every hand-off gets a receipt. Receipts link from step to step, so a bale at a recycler can be traced back to the shops it came from.",
+      "receiptTitle": "What every receipt shows",
+      "fields": {
+        "number": "Receipt number",
+        "time": "Date and time",
+        "seller": "Seller",
+        "buyer": "Buyer",
+        "code": "Material code",
+        "weight": "Weight, to the gram",
+        "rate": "Rate per kg",
+        "total": "Total, and how it was paid"
+      }
+    },
+    "verification": {
+      "title": "Verification",
+      "nav": "Verification",
+      "body": "A person checks every business and every Saathi before they can trade.",
+      "business": "Businesses: the GST number if they have one, photos of the shop or unit, and a phone call.",
+      "consent": "Yards, recyclers and factories: a valid consent from the state pollution control board.",
+      "saathi": "Saathis: a photo ID and a selfie that matches it."
+    },
+    "escrow": {
+      "title": "Escrow between businesses",
+      "nav": "Escrow",
+      "body": "In a trade between businesses, nobody ships or pays on trust alone. The money waits in escrow until the goods arrive.",
+      "steps": {
+        "accepted": "The seller accepts the order",
+        "paid": "The buyer pays into escrow",
+        "dispatched": "The seller dispatches the goods",
+        "released": "The buyer confirms, and the money is released"
+      }
+    },
+    "adopt": {
+      "title": "Use the standard",
+      "body": "The codes and rules are open and free. Use them in your shop, yard or factory, on Luma.Green or off it, and tell us what would make them better.",
+      "cta": "Talk to us"
+    }
+  },
+  "solar": {
+    "metaTitle": "Rooftop solar calculator for Karnataka",
+    "metaDescription": "Estimate the rooftop solar system your home or business in Karnataka needs, the cost after the PM Surya Ghar subsidy, and how soon it pays for itself.",
+    "eyebrow": "Karnataka",
+    "title": "Rooftop solar for your home or business",
+    "lead": "Find the right size for your roof, the cost after the government subsidy, and how soon it pays for itself. Every number here is an estimate.",
+    "form": {
+      "heading": "Your details",
+      "kind": "Who is it for?",
+      "kinds": {
+        "home": "My home",
+        "business": "My business"
+      },
+      "mode": "Your electricity use",
+      "modes": {
+        "bill": "Monthly bill",
+        "units": "Units a month"
+      },
+      "bill": "Monthly electricity bill",
+      "billHint": "In rupees, like 2500",
+      "units": "Units used a month",
+      "unitsHint": "It's on your bill, like 300",
+      "unitsSuffix": "units",
+      "roof": "Shade-free roof space",
+      "roofHint": "Leave it empty if you're not sure.",
+      "roofUnit": "Unit for roof space",
+      "areaUnits": {
+        "sqft": "sq ft",
+        "m2": "m²"
+      },
+      "optional": "optional",
+      "errors": {
+        "bill": "Enter a bill between {min} and {max}.",
+        "units": "Enter between {min} and {max} units.",
+        "roof": "Enter a roof size above zero, or leave it empty."
+      }
+    },
+    "result": {
+      "heading": "Your estimate",
+      "prompt": "Enter your bill or units to see your estimate.",
+      "size": "Suggested system",
+      "kw": "{kw} kW",
+      "sizeHint": "Makes about {units} units a month and needs about {area} of roof.",
+      "areaIn": "{value} {unit, select, sqft {sq ft} other {m²}}",
+      "fromBill": "Your bill is about {units} units a month.",
+      "limitedByRoof": "Sized to fit your roof. More roof space could cover more of your bill.",
+      "roofTooSmallTitle": "Your roof looks too small",
+      "roofTooSmallBody": "Even the smallest system, 1 kW, needs about {area} of shade-free roof. Talk to us: there may be another way.",
+      "cost": "Cost before subsidy",
+      "subsidy": "PM Surya Ghar subsidy",
+      "noSubsidy": "Not for businesses",
+      "netCost": "Your cost",
+      "savings": "You save about",
+      "perMonth": "{amount} a month",
+      "payback": "Pays for itself in",
+      "yearsRange": "{low}–{high} years",
+      "years": "{count, plural, one {# year} other {# years}}",
+      "range": "{low} – {high}",
+      "minus": "− {amount}",
+      "noPayback": "Not from these savings",
+      "demoNote": "Estimates only, from the assumptions below. A site visit gives the real numbers."
+    },
+    "chart": {
+      "title": "Savings over {years, number} years",
+      "legendPaying": "Still paying back",
+      "legendPaid": "Paid back",
+      "legendCost": "Your cost",
+      "label": "Savings by year. Use the arrow keys to move between years.",
+      "point": "Year {year, number}: {amount} saved",
+      "yearLabel": "Year {year, number}",
+      "table": "Show the numbers",
+      "tableCaption": "Savings by year",
+      "year": "Year",
+      "saved": "Saved so far"
+    },
+    "assumptions": {
+      "title": "How we estimate",
+      "production": "1 kW of panels makes about {units} units a month in Karnataka.",
+      "roof": "Each kW needs about {m2} m² ({sqft} sq ft) of shade-free roof.",
+      "cost": "Installation costs about {low}–{high} per kW.",
+      "tariff": "A bill is turned into units at about {home} a unit for homes and {business} for businesses.",
+      "subsidy": "Homes get {first} per kW for the first 2 kW and {third} for the 3rd kW, up to {cap}. Businesses get none.",
+      "savings": "Savings count only the power you use yourself, at today's rates."
+    },
+    "subsidy": {
+      "title": "The PM Surya Ghar subsidy",
+      "body": "PM Surya Ghar: Muft Bijli Yojana is the Government of India's scheme for rooftop solar on homes. The subsidy is paid into your bank account after the system is installed and inspected.",
+      "caption": "Subsidy by system size, for homes",
+      "size": "System size",
+      "amount": "Subsidy",
+      "atLeast": "{kw} kW or more",
+      "kw": "{kw} kW",
+      "source": "Rules and applications:",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "(opens in a new tab)",
+      "business": "Businesses don't get this subsidy, but they often save more, because they pay more for each unit."
+    },
+    "next": {
+      "title": "What happens next",
+      "one": {
+        "title": "We call you",
+        "body": "We ask about your roof, your bill and when you'd like to start."
+      },
+      "two": {
+        "title": "A site visit",
+        "body": "A verified installer checks your roof and gives you a firm quote."
+      },
+      "three": {
+        "title": "Subsidy and net metering",
+        "body": "We help you apply for the subsidy and for net metering with your electricity company."
+      }
+    },
+    "contact": {
+      "title": "Talk to us",
+      "lead": "Tell us where to reach you. We'll call you back.",
+      "name": "Your name",
+      "phone": "Mobile number",
+      "phoneHint": "We'll call you on this number.",
+      "message": "Anything we should know?",
+      "messageHint": "Your estimate is already filled in. Add anything you like.",
+      "prefill": "{kind, select, home {For my home} other {For my business}}: a {kw} kW system, from the estimate on this page.",
+      "send": "Send",
+      "sending": "Sending…",
+      "sentTitle": "Thank you, {name}",
+      "sentBody": "We've got your message and will call you soon.",
+      "another": "Send another message",
+      "privacy": "We use your number only to call you about solar.",
+      "unavailable": "Messages can't be sent from this page yet. Email us at <link>{email}</link>.",
+      "errors": {
+        "name": "Enter your name.",
+        "phone": "Enter a 10-digit Indian mobile number.",
+        "message": "Write a few words, up to 1,000 letters.",
+        "generic": "We couldn't send that. Please try again."
+      }
+    }
   },
   "howItWorks": {
     "metaTitle": "How it works",

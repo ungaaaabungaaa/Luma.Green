@@ -15,9 +15,38 @@ import type { PublicRoute } from "@/i18n/paths";
 /** Primary navigation. `key` is the label in the `nav` namespace. */
 export const navItems = [
   { href: "/how-it-works", key: "howItWorks" },
-  { href: "/participants", key: "participants" },
-  { href: "/contact", key: "contact" },
+  { href: "/prices", key: "prices" },
+  { href: "/help", key: "help" },
+  { href: "/join", key: "join" },
 ] as const satisfies readonly { href: PublicRoute; key: string }[];
+
+/**
+ * Footer link groups. `heading` is in the `footer` namespace; each `label` is
+ * a full key, as the links share labels with the header.
+ */
+export const footerGroups = [
+  {
+    heading: "useHeading",
+    links: [
+      { href: "/sell", label: "nav.sellScrap" },
+      { href: "/prices", label: "nav.prices" },
+      { href: "/join", label: "nav.join" },
+      { href: "/how-it-works", label: "nav.howItWorks" },
+    ],
+  },
+  {
+    heading: "learnHeading",
+    links: [
+      { href: "/standards", label: "footer.standards" },
+      { href: "/solar", label: "footer.solar" },
+      { href: "/help", label: "nav.help" },
+      { href: "/contact", label: "nav.contact" },
+    ],
+  },
+] as const satisfies readonly {
+  heading: string;
+  links: readonly { href: PublicRoute; label: string }[];
+}[];
 
 /** The three stages of the loop, in order. Copy lives under `loop.<key>`. */
 export const loopSteps = [

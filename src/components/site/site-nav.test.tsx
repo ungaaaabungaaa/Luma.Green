@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import messages from "../../../messages/en.json";
-import { SiteNav } from "./site-nav";
+import { isCurrentSection, SiteNav } from "./site-nav";
 
 const pathname = vi.hoisted(() => ({ current: "/" }));
 
@@ -37,29 +37,48 @@ describe("SiteNav", () => {
     pathname.current = "/";
   });
 
-  it("is a named navigation landmark with every public page", () => {
+  it("is a named landmark with the four places people go", () => {
     renderNav();
 
     const nav = screen.getByRole("navigation", { name: "Main" });
     expect(nav).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "How it works" })).toHaveAttribute(
-      "href",
-      "/how-it-works",
-    );
-    expect(screen.getByRole("link", { name: "Who it's for" })).toBeVisible();
-    expect(screen.getByRole("link", { name: "Contact" })).toBeVisible();
+    expect(
+      screen.getAllByRole("link").map((link) => link.getAttribute("href")),
+    ).toEqual(["/how-it-works", "/prices", "/help", "/join"]);
+    expect(screen.getByRole("link", { name: "Prices" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Help" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Join" })).toBeVisible();
   });
 
   it("marks only the current page for assistive tech", () => {
-    pathname.current = "/contact";
+    pathname.current = "/prices";
     renderNav();
 
-    expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Prices" })).toHaveAttribute(
       "aria-current",
       "page",
     );
     expect(
       screen.getByRole("link", { name: "How it works" }),
     ).not.toHaveAttribute("aria-current");
+  });
+
+  it("keeps a section current on the pages under it", () => {
+    pathname.current = "/help/kabadiwala";
+    renderNav();
+
+    expect(screen.getByRole("link", { name: "Help" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
+  });
+});
+
+describe("isCurrentSection", () => {
+  it("matches the page and what's under it, not lookalike paths", () => {
+    expect(isCurrentSection("/help", "/help")).toBe(true);
+    expect(isCurrentSection("/help/yard", "/help")).toBe(true);
+    expect(isCurrentSection("/helpful", "/help")).toBe(false);
+    expect(isCurrentSection("/", "/help")).toBe(false);
   });
 });
