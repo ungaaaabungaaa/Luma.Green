@@ -303,6 +303,10 @@ async function runShareOf(reader: Reader, run: Run | null): Promise<number> {
   return total === 0 ? 0 : weighted / total;
 }
 
+async function sortedShareOf(reader: Reader, originId: string) {
+  return runShareOf(reader, await runOf(reader.ctx, originId));
+}
+
 /**
  * How much of a lot has receipts behind it, 0 to 1. Pickups and purchases
  * are receipted at their own hand-off; opening stock never is; a sorting
@@ -324,9 +328,7 @@ async function receiptShareOf(reader: Reader, lot: Lot): Promise<number> {
     }
     case "sorting":
     case "production": {
-      share = runOf(reader.ctx, lot.originId).then((run) =>
-        runShareOf(reader, run),
-      );
+      share = sortedShareOf(reader, lot.originId);
       break;
     }
   }
@@ -777,99 +779,128 @@ function emptyBalanceRow(material: MaterialRef): BalanceRow {
   };
 }
 
-function addLotToBalance(row: BalanceRow, lot: Lot) {
-  row.lotStockGrams += lot.remainingGrams;
-  switch (lot.origin) {
-    case "opening": {
-      row.openingGrams += lot.grams;
-      break;
+/**
+ * One business's mass balance as it adds up: a row per material, from its
+ * lots, its sales in the ledger and its stock book.
+ */
+class BalanceSheet {
+  private readonly rows = new Map<string, BalanceRow>();
+  /** Kilos of sales that a lot move accounts for, per material. */
+  private readonly matched = new Map<string, number>();
+
+  constructor(private readonly reader: Reader) {}
+
+  private rowFor(code: string): BalanceRow {
+    let row = this.rows.get(code);
+    if (!row) {
+      row = emptyBalanceRow(materialRef(this.reader.materials, code));
+      this.rows.set(code, row);
     }
-    case "pickup":
-    case "purchase": {
-      row.receivedGrams += lot.grams;
-      break;
+    return row;
+  }
+
+  /** What a lot brought in, what's left, and what its moves took out. */
+  async addLot(lot: Lot) {
+    const row = this.rowFor(lot.materialCode);
+    row.lotStockGrams += lot.remainingGrams;
+    switch (lot.origin) {
+      case "opening": {
+        row.openingGrams += lot.grams;
+        break;
+      }
+      case "pickup":
+      case "purchase": {
+        row.receivedGrams += lot.grams;
+        break;
+      }
+      case "sorting":
+      case "production": {
+        row.producedGrams += lot.grams;
+        break;
+      }
     }
-    case "sorting":
-    case "production": {
-      row.producedGrams += lot.grams;
-      break;
+    // Sold moves count against receipts; every other move is stock sorted or used.
+    const share = await receiptShareOf(this.reader, lot);
+    const moves = await movesOf(this.reader.ctx, lot._id);
+    for (const move of moves) {
+      if (move.kind === "sold") {
+        row.soldWithoutReceiptsGrams += Math.round(move.grams * (1 - share));
+        this.matched.set(
+          lot.materialCode,
+          (this.matched.get(lot.materialCode) ?? 0) + move.grams,
+        );
+      } else {
+        row.consumedGrams += move.grams;
+      }
     }
   }
-}
 
-/** Sold moves count against receipts; every other move is stock sorted or used. */
-function addMovesToBalance(
-  row: BalanceRow,
-  moves: readonly Move[],
-  share: number,
-): number {
-  let matched = 0;
-  for (const move of moves) {
-    if (move.kind === "sold") {
-      row.soldWithoutReceiptsGrams += Math.round(move.grams * (1 - share));
-      matched += move.grams;
-    } else {
-      row.consumedGrams += move.grams;
+  /** Rejects belong to the materials that went in, in proportion. */
+  async addRejects() {
+    const runs = await runsOf(this.reader.ctx, this.reader.viewer._id);
+    for (const run of runs) {
+      const total = run.inputs.reduce((sum, input) => sum + input.grams, 0);
+      if (total === 0 || run.rejectGrams === 0) continue;
+      for (const input of run.inputs) {
+        const parent = await this.reader.lotOf(input.lotId);
+        if (!parent) continue;
+        const row = this.rowFor(parent.materialCode);
+        row.rejectGrams += Math.round((run.rejectGrams * input.grams) / total);
+      }
     }
   }
-  return matched;
-}
 
-/** Rejects belong to the materials that went in, in proportion. */
-async function addRejects(
-  reader: Reader,
-  rowFor: (code: string) => BalanceRow,
-) {
-  const runs = await runsOf(reader.ctx, reader.viewer._id);
-  for (const run of runs) {
-    const total = run.inputs.reduce((sum, input) => sum + input.grams, 0);
-    if (run.rejectGrams === 0 || total === 0) continue;
-    for (const input of run.inputs) {
-      const parent = await reader.lotOf(input.lotId);
-      if (!parent) continue;
-      rowFor(parent.materialCode).rejectGrams += Math.round(
-        (run.rejectGrams * input.grams) / total,
-      );
+  /** Sales from the ledger: delivered, or on the road. */
+  async addSales() {
+    const sales = await this.reader.ctx.db
+      .query("trades")
+      .withIndex("by_seller", (q) => q.eq("sellerOrgId", this.reader.viewer._id))
+      .order("desc")
+      .take(MAX_ROWS);
+    for (const trade of sales) {
+      if (!hasLeft(trade)) continue;
+      const row = this.rowFor(trade.materialCode);
+      if (trade.status === "completed") row.soldGrams += trade.grams;
+      else row.inTransitGrams += trade.grams;
     }
   }
-}
 
-async function addSales(ctx: QueryCtx, orgId: Id<"orgs">, rowFor: (code: string) => BalanceRow) {
-  const sales = await ctx.db
-    .query("trades")
-    .withIndex("by_seller", (q) => q.eq("sellerOrgId", orgId))
-    .order("desc")
-    .take(MAX_ROWS);
-  for (const trade of sales) {
-    if (!hasLeft(trade)) continue;
-    const row = rowFor(trade.materialCode);
-    if (trade.status === "completed") row.soldGrams += trade.grams;
-    else row.inTransitGrams += trade.grams;
+  /** The stock book, for materials it holds or the lots know. */
+  async addBook() {
+    const inventory = await this.reader.ctx.db
+      .query("inventory")
+      .withIndex("by_org", (q) => q.eq("orgId", this.reader.viewer._id))
+      .take(MAX_LOTS);
+    for (const item of inventory) {
+      if (item.grams <= 0 && !this.rows.has(item.materialCode)) continue;
+      const row = this.rowFor(item.materialCode);
+      row.bookStockGrams += item.grams;
+    }
   }
-}
 
-async function addBook(
-  ctx: QueryCtx,
-  orgId: Id<"orgs">,
-  rows: Map<string, BalanceRow>,
-  rowFor: (code: string) => BalanceRow,
-) {
-  const inventory = await ctx.db
-    .query("inventory")
-    .withIndex("by_org", (q) => q.eq("orgId", orgId))
-    .take(MAX_LOTS);
-  for (const item of inventory) {
-    if (item.grams <= 0 && !rows.has(item.materialCode)) continue;
-    rowFor(item.materialCode).bookStockGrams += item.grams;
+  /** Every row with its warnings, the ones that need a look first. */
+  finish(): { rows: BalanceRow[]; warningCount: number } {
+    let warningCount = 0;
+    for (const row of this.rows.values()) {
+      const gone = row.soldGrams + row.inTransitGrams;
+      const matched = this.matched.get(row.material.code) ?? 0;
+      row.unmatchedGrams = Math.max(0, gone - matched);
+      row.soldWithoutReceiptsGrams += row.unmatchedGrams;
+      if (row.unmatchedGrams > 0) row.warnings.push("sold_more_than_received");
+      if (row.bookStockGrams !== row.lotStockGrams) {
+        row.warnings.push("book_differs");
+      }
+      warningCount += row.warnings.length;
+    }
+    return {
+      rows: [...this.rows.values()].toSorted(
+        (a, b) =>
+          b.warnings.length - a.warnings.length ||
+          b.lotStockGrams - a.lotStockGrams,
+      ),
+      warningCount,
+    };
   }
-}
-
-function finishBalance(row: BalanceRow, matchedGrams: number) {
-  const gone = row.soldGrams + row.inTransitGrams;
-  row.unmatchedGrams = Math.max(0, gone - matchedGrams);
-  row.soldWithoutReceiptsGrams += row.unmatchedGrams;
-  if (row.unmatchedGrams > 0) row.warnings.push("sold_more_than_received");
-  if (row.bookStockGrams !== row.lotStockGrams) row.warnings.push("book_differs");
 }
 
 /**
@@ -887,47 +918,12 @@ export const massBalance = query({
     const { org } = await requireOrg(ctx);
     const lots = await lotsOf(ctx, org._id);
     const reader = await readerFor(ctx, org, lots);
-    const rows = new Map<string, BalanceRow>();
-    const rowFor = (code: string) => {
-      let row = rows.get(code);
-      if (!row) {
-        row = emptyBalanceRow(materialRef(reader.materials, code));
-        rows.set(code, row);
-      }
-      return row;
-    };
-
-    const matched = new Map<string, number>();
-    for (const lot of lots) {
-      const row = rowFor(lot.materialCode);
-      addLotToBalance(row, lot);
-      const share = await receiptShareOf(reader, lot);
-      const moves = await movesOf(ctx, lot._id);
-      matched.set(
-        lot.materialCode,
-        (matched.get(lot.materialCode) ?? 0) +
-          addMovesToBalance(row, moves, share),
-      );
-    }
-    await addRejects(reader, rowFor);
-    await addSales(ctx, org._id, rowFor);
-    await addBook(ctx, org._id, rows, rowFor);
-
-    const result: BalanceRow[] = [];
-    let warningCount = 0;
-    for (const row of rows.values()) {
-      finishBalance(row, matched.get(row.material.code) ?? 0);
-      warningCount += row.warnings.length;
-      result.push(row);
-    }
-    return {
-      rows: result.toSorted(
-        (a, b) =>
-          b.warnings.length - a.warnings.length ||
-          b.lotStockGrams - a.lotStockGrams,
-      ),
-      warningCount,
-    };
+    const sheet = new BalanceSheet(reader);
+    for (const lot of lots) await sheet.addLot(lot);
+    await sheet.addRejects();
+    await sheet.addSales();
+    await sheet.addBook();
+    return sheet.finish();
   },
 });
 
@@ -1442,9 +1438,7 @@ function mergedLines<T extends { grams: number }>(
     if (known) known.grams += line.grams;
     else byKey.set(keyOf(line), { ...line });
   }
-  const merged: T[] = [];
-  for (const line of byKey.values()) merged.push(line);
-  return merged;
+  return [...byKey.values()];
 }
 
 /** The run's shape: lines, totals and note — refusing mass from nowhere. */
