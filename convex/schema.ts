@@ -19,6 +19,7 @@ import {
   vOrgKind,
   vTradeStatus,
 } from "./lib/validators";
+import { areaTables } from "./tables";
 
 /**
  * Luma.Green data model — docs/architecture/data-model.md.
@@ -137,6 +138,38 @@ export default defineSchema({
     co2eFactor: v.number(),
     sortOrder: v.number(),
     active: v.boolean(),
+    // --- Luma Material Codes v0.1 (optional until the catalogue fills them)
+    /** household: sold at the door; trade: sorted for a yard; industrial: recycler output. */
+    level: v.optional(
+      v.union(
+        v.literal("household"),
+        v.literal("trade"),
+        v.literal("industrial"),
+      ),
+    ),
+    /** The coarser code this one is sorted out of (PAPER-MIXED → PAPER-NEWS). */
+    parentCode: v.optional(v.string()),
+    /** Priced per kg, or per piece for appliances. Mass is always stored in grams. */
+    unit: v.optional(v.union(v.literal("kg"), v.literal("piece"))),
+    typicalGramsPerPiece: v.optional(v.number()),
+    /** cash: bought; points: taken for points only; free: taken away free; not_accepted. */
+    valueClass: v.optional(
+      v.union(
+        v.literal("cash"),
+        v.literal("points"),
+        v.literal("free"),
+        v.literal("not_accepted"),
+      ),
+    ),
+    /** Batteries, e-waste, used oil: special handling and authorised buyers only. */
+    hazardous: v.optional(v.boolean()),
+    authorisedOnly: v.optional(v.boolean()),
+    /** Indian tariff line (8-digit where known), ISRI/ReMA grade, EPR category. */
+    hsn: v.optional(v.string()),
+    isri: v.optional(v.string()),
+    eprCategory: v.optional(v.string()),
+    /** Street and trade names by locale, for search and voice. */
+    aliases: v.optional(v.record(v.string(), v.array(v.string()))),
   })
     .index("by_code", ["code"])
     .index("by_sortOrder", ["sortOrder"]),
@@ -206,7 +239,16 @@ export default defineSchema({
   memberships: defineTable({
     profileId: v.id("profiles"),
     orgId: v.id("orgs"),
-    role: v.union(v.literal("owner"), v.literal("staff")),
+    role: v.union(
+      v.literal("owner"),
+      v.literal("staff"),
+      v.literal("purchase"),
+      v.literal("gate"),
+      v.literal("quality"),
+      v.literal("accounts"),
+      v.literal("compliance"),
+      v.literal("plant"),
+    ),
     createdAt: v.number(),
   })
     .index("by_profile", ["profileId"])
@@ -368,4 +410,7 @@ export default defineSchema({
   })
     .index("by_org_created", ["orgId", "createdAt"])
     .index("by_entity", ["entityTable", "entityId"]),
+
+  // --- Areas (convex/tables/<area>.ts) -------------------------------------
+  ...areaTables,
 });

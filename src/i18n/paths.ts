@@ -19,6 +19,15 @@ export const publicRoutes = [
   "/standards",
   "/solar",
   "/help",
+  "/prices/method",
+  "/prices/index",
+  "/city/bengaluru",
+  "/partners",
+  "/legal/terms",
+  "/legal/privacy",
+  "/legal/grievance",
+  "/install",
+  "/sell/society",
 ] as const;
 
 export type PublicRoute = (typeof publicRoutes)[number];

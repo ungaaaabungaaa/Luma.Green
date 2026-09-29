@@ -2,12 +2,25 @@
 
 import { useQuery } from "convex/react";
 import {
+  BadgeCheckIcon,
+  BarChart3Icon,
+  BookOpenIcon,
+  BuildingIcon,
+  CalendarIcon,
   HouseIcon,
   IndianRupeeIcon,
   LifeBuoyIcon,
+  LockIcon,
   LogOutIcon,
   type LucideIcon,
+  MapIcon,
+  MegaphoneIcon,
+  MessageSquareIcon,
+  RadarIcon,
+  ScrollTextIcon,
   ShieldCheckIcon,
+  SunIcon,
+  TruckIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -47,6 +60,23 @@ const nav: readonly NavItem[] = [
     icon: LifeBuoyIcon,
     count: { key: "openSupport", label: "open" },
   },
+  { href: "/admin/businesses", label: "Businesses", icon: BuildingIcon },
+  { href: "/admin/ops", label: "Ops", icon: RadarIcon },
+  { href: "/admin/disputes", label: "Disputes", icon: MegaphoneIcon },
+  {
+    href: "/admin/registrations",
+    label: "Registrations",
+    icon: BadgeCheckIcon,
+  },
+  { href: "/admin/rules", label: "Rules", icon: BookOpenIcon },
+  { href: "/admin/calendar", label: "Calendar", icon: CalendarIcon },
+  { href: "/admin/logistics", label: "Logistics", icon: TruckIcon },
+  { href: "/admin/solar", label: "Solar", icon: SunIcon },
+  { href: "/admin/messages", label: "Messages", icon: MessageSquareIcon },
+  { href: "/admin/data-requests", label: "Data requests", icon: LockIcon },
+  { href: "/admin/city", label: "City", icon: MapIcon },
+  { href: "/admin/pilot", label: "Pilot numbers", icon: BarChart3Icon },
+  { href: "/admin/audit", label: "Audit log", icon: ScrollTextIcon },
 ];
 
 /** Home only on its own page; every other section on its sub-pages too. */

@@ -2186,7 +2186,29 @@
       "impact": "ਅਸਰ",
       "compliance": "ਨਿਯਮਾਂ ਦੀ ਪਾਲਣਾ",
       "earnings": "ਕਮਾਈ",
-      "help": "ਮਦਦ"
+      "help": "ਮਦਦ",
+      "lots": "Lots",
+      "scales": "Scales",
+      "gate": "Gate",
+      "production": "Production",
+      "team": "Team",
+      "route": "Today's route",
+      "loads": "Loads",
+      "khata": "Khata",
+      "exports": "Exports",
+      "centre": "Centre",
+      "workRecord": "Work record",
+      "contracts": "Contracts",
+      "disputes": "Disputes",
+      "privacy": "Privacy",
+      "registrations": "Registrations",
+      "credits": "Credits",
+      "energy": "Energy",
+      "solar": "Solar",
+      "training": "Training",
+      "policies": "What I buy",
+      "demand": "Wanted",
+      "notifications": "Notifications"
     },
     "roles": {
       "kabadiwala": "ਕਬਾੜੀਆ",
@@ -3206,5 +3228,17 @@
       "emptyTitle": "ਅਜੇ ਕੋਈ ਮਾਲ ਨਹੀਂ",
       "emptyBody": "ਤੁਸੀਂ ਕਿਹੜਾ ਮਾਲ ਖਰੀਦਦੇ ਹੋ, ਇਹ ਤੁਹਾਡੀ ਦੁਕਾਨ ਨੂੰ ਮਨਜ਼ੂਰੀ ਮਿਲਣ ਵੇਲੇ ਤੈਅ ਹੁੰਦਾ ਹੈ।"
     }
+  },
+  "soon": {
+    "method": "How we calculate prices",
+    "index": "Bengaluru scrap index",
+    "city": "Bengaluru's scrap chain in numbers",
+    "partners": "Partners",
+    "material": "Material code",
+    "terms": "Terms of use",
+    "privacy": "Privacy",
+    "grievance": "Complaints and grievances",
+    "install": "Install the app",
+    "society": "Pickups for apartments and offices"
   }
 }

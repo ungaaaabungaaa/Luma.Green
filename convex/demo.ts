@@ -1,12 +1,32 @@
 import { ConvexError, v } from "convex/values";
 
 import { components, internal } from "./_generated/api";
-import type { Id } from "./_generated/dataModel";
+import type { Id, TableNames } from "./_generated/dataModel";
 import {
   internalAction,
   internalMutation,
   type MutationCtx,
 } from "./_generated/server";
+import { seedAdminExtras } from "./demo/adminExtras";
+import { seedCity } from "./demo/city";
+import { seedCredits } from "./demo/credits";
+import { seedExports } from "./demo/exports";
+import { seedFloor } from "./demo/floor";
+import { seedGrievance } from "./demo/grievance";
+import { seedHazard } from "./demo/hazard";
+import { seedInstitutions } from "./demo/institutions";
+import { seedKabadi } from "./demo/kabadi";
+import { seedLogistics } from "./demo/logistics";
+import { seedLots } from "./demo/lots";
+import { seedMarketExtras } from "./demo/marketExtras";
+import { seedNotifications } from "./demo/notifications";
+import { seedOnboarding } from "./demo/onboarding";
+import { seedPayments } from "./demo/payments";
+import { seedPriceEngine } from "./demo/priceEngine";
+import { seedRulebook } from "./demo/rulebook";
+import { seedSolar } from "./demo/solar";
+import { seedSupport as seedSupportArea } from "./demo/support";
+import { seedWorld } from "./demo/world";
 import { CATALOGUE, catalogueEntry } from "./lib/catalogue";
 import {
   bookingToken,
@@ -28,8 +48,10 @@ import {
   type DemoRole,
 } from "./lib/demo";
 import { demoPdf, demoPicture } from "./lib/demoFiles";
+import type { DemoWorld } from "./lib/demoWorld";
 import { indiaToday, MATERIAL_FAMILIES } from "./lib/onboarding";
 import { phoneEmail } from "./lib/phone";
+import { areaTableNames } from "./tables";
 
 /**
  * The demo world: `npx convex run demo:seed` fills an empty dev deployment,
@@ -128,8 +150,10 @@ export const clearData = internalMutation({
       "trades",
       "jobs",
       "supportRequests",
-    ] as const;
-    for (const table of tables) {
+      "auditLog",
+    ] as const satisfies readonly TableNames[];
+    const everyTable: TableNames[] = [...tables, ...areaTableNames];
+    for (const table of everyTable) {
       const rows = await ctx.db.query(table).collect();
       for (const row of rows) await ctx.db.delete(table, row._id);
     }
@@ -201,6 +225,29 @@ export const seedData = internalMutation({
     await seedJobs(ctx, orgs, profiles, today, now);
     await seedApplicants(ctx, profiles, args.files, now);
     await seedSupport(ctx, now);
+
+    // Every area's own sample data, on top of the base world.
+    const world: DemoWorld = { now, today, orgs, profiles, files: args.files };
+    await seedWorld(ctx, world);
+    await seedLots(ctx, world);
+    await seedFloor(ctx, world);
+    await seedRulebook(ctx, world);
+    await seedPriceEngine(ctx, world);
+    await seedLogistics(ctx, world);
+    await seedPayments(ctx, world);
+    await seedExports(ctx, world);
+    await seedInstitutions(ctx, world);
+    await seedCity(ctx, world);
+    await seedGrievance(ctx, world);
+    await seedHazard(ctx, world);
+    await seedCredits(ctx, world);
+    await seedSolar(ctx, world);
+    await seedSupportArea(ctx, world);
+    await seedKabadi(ctx, world);
+    await seedMarketExtras(ctx, world);
+    await seedAdminExtras(ctx, world);
+    await seedNotifications(ctx, world);
+    await seedOnboarding(ctx, world);
     return { seeded: true };
   },
 });
