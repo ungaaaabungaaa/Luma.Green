@@ -20,8 +20,8 @@ describe("csvEscape", () => {
   it("writes nothing for empty cells and unusable numbers", () => {
     expect(csvEscape(null)).toBe("");
     expect(csvEscape(undefined)).toBe("");
-    expect(csvEscape(Number.NaN)).toBe("");
-    expect(csvEscape(Number.POSITIVE_INFINITY)).toBe("");
+    expect(csvEscape(NaN)).toBe("");
+    expect(csvEscape(Infinity)).toBe("");
   });
 
   it("spells booleans the way spreadsheets read them", () => {

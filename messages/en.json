@@ -3240,5 +3240,203 @@
     "grievance": "Complaints and grievances",
     "install": "Install the app",
     "society": "Pickups for apartments and offices"
+  },
+  "exports": {
+    "title": "Exports",
+    "lead": "Files for your accountant, the CPCB portals and the city, made from your trades and pickups.",
+    "sampleData": "Sample data. The trades, kilos and documents on this screen are examples for the prototype.",
+    "forBusinessesTitle": "This screen is for businesses",
+    "forBusinessesBody": "Kabadiwalas, yards, recyclers and manufacturers download their files here.",
+    "pick": {
+      "title": "What do you need?",
+      "label": "Report"
+    },
+    "period": {
+      "label": "Period",
+      "quarter": "Q{quarter} of FY {fy} ({months})",
+      "months": "{from} to {to}"
+    },
+    "reports": {
+      "tally": {
+        "title": "Tally vouchers",
+        "body": "Purchase, Receipt Note and Sales vouchers for one month, one row per trade.",
+        "fits": "For TallyPrime: Import Data, then Transactions. Map the columns once; Tally lists any problem rows before it saves.",
+        "file": "Tally vouchers"
+      },
+      "eprPurchaseRegister": {
+        "title": "EPR purchase register",
+        "body": "Every load you received in a month: supplier, GSTIN, EPR category and kilos.",
+        "fits": "For the CPCB EPR portals (eprplastic.cpcb.gov.in and the others): the columns follow the purchase entry. Add the supplier's PAN and the invoice copy on the portal.",
+        "file": "EPR purchase register"
+      },
+      "swmQuarterly": {
+        "title": "SWM quarterly return",
+        "body": "Received, sorted and sent to registered processors, by stream and material, for one quarter.",
+        "fits": "For swm.cpcb.gov.in: the return every dry-waste collector and sorter files under rule 9 of the SWM Rules 2026, by the 15th after the quarter ends.",
+        "file": "SWM quarterly return"
+      },
+      "monthlyRecyclables": {
+        "title": "Monthly recyclables report",
+        "body": "What came in from homes and businesses, what you sold and to whom, and today's stock, by material.",
+        "fits": "The monthly report a dry-waste centre or MRF gives the city. The same numbers go into the city's Swachh Survekshan upload.",
+        "file": "Monthly recyclables report"
+      },
+      "evidencePack": {
+        "title": "Document pack",
+        "file": "Document pack"
+      }
+    },
+    "preview": {
+      "title": "Preview",
+      "count": "{count, plural, =0 {No rows} one {# row} other {# rows}}",
+      "showing": "Showing the first {shown} of {count} rows.",
+      "columnsNote": "Column names stay in English: that is what the software on the other side reads.",
+      "emptyTitle": "Nothing in this period",
+      "emptyBody": "Trades and pickups from {period} will show up here.",
+      "download": "Download CSV",
+      "downloading": "Preparing…",
+      "downloaded": "Downloaded {file}",
+      "fitsTitle": "Where it goes"
+    },
+    "packs": {
+      "title": "Document packs",
+      "lead": "One pack per trade: the timeline, both businesses and the paperwork.",
+      "open": "Open the document pack for {material} with {name}",
+      "trade": "{material} · {weight}",
+      "with": "{side, select, buyer {From {name}} other {To {name}}}",
+      "documents": "{count, plural, =0 {No documents yet} one {# document} other {# documents}}",
+      "emptyTitle": "No trades yet",
+      "emptyBody": "Every trade gets a document pack as soon as it starts.",
+      "seeAll": "See all trades"
+    },
+    "runs": {
+      "title": "Downloads",
+      "emptyTitle": "No downloads yet",
+      "emptyBody": "Files you download are listed here, so you can see what was sent and when.",
+      "rows": "{count, plural, one {# row} other {# rows}}",
+      "line": "{period} · {rows}",
+      "packLine": "Trade {reference}"
+    },
+    "status": {
+      "requested": "Requested",
+      "accepted": "Accepted",
+      "paid_to_escrow": "In escrow",
+      "dispatched": "Dispatched",
+      "completed": "Delivered",
+      "declined": "Declined"
+    },
+    "errors": {
+      "NOT_SIGNED_IN": "You've been signed out. Please sign in again.",
+      "NO_BUSINESS": "This screen is for businesses.",
+      "NOT_FOUND": "We couldn't find this trade. It may have been removed.",
+      "NOT_YOUR_FIELD": "Only the other side of the trade fills this in.",
+      "INVALID_EWAY_BILL": "An e-way bill number has 12 digits.",
+      "INVALID_IRN": "An IRN has 64 letters and digits. Copy it from the e-invoice.",
+      "INVALID_VEHICLE": "Enter the number plate, like KA01AB1234.",
+      "INVALID_PHONE": "Enter a 10-digit Indian mobile number.",
+      "TOO_LONG": "That is too long. Keep it short.",
+      "INVALID_PERIOD": "Pick a period from the list.",
+      "INVALID_ROWS": "Something went wrong. Please try again.",
+      "generic": "Something went wrong. Please try again."
+    },
+    "documents": {
+      "title": "Documents",
+      "lead": "{material} · {weight} · {seller} to {buyer}",
+      "back": "Back to trades",
+      "receipt": "Receipt {number}",
+      "noReceipt": "No receipt yet",
+      "viewReceipt": "See the receipt",
+      "missingTitle": "Trade not found",
+      "missingBody": "This trade isn't one of yours, or the link is wrong.",
+      "summary": {
+        "title": "The trade",
+        "amount": "Amount",
+        "rate": "{price}/kg",
+        "seller": "Seller",
+        "buyer": "Buyer",
+        "you": "you",
+        "gstin": "GSTIN {gstin}",
+        "noGstin": "Not GST-registered",
+        "ewayBill": "Over ₹50,000: an e-way bill must travel with this load. {side, select, buyer {The buyer raises it, as the seller is not GST-registered.} other {The seller raises it.}}"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "notYet": "Not yet",
+        "requested": "Requested",
+        "requestedDetail": "{buyer} asked to buy {weight} of {material} at {rate}.",
+        "accepted": "Accepted",
+        "acceptedDetail": "{seller} accepted the order.",
+        "paid_to_escrow": "Paid into escrow",
+        "paid_to_escrowDetail": "Payment reference: receipt {number}.",
+        "paid_to_escrowPending": "The payment reference appears once the buyer pays.",
+        "dispatched": "Dispatched",
+        "dispatchedDetail": "The load left {seller}.",
+        "completed": "Delivered",
+        "completedDetail": "{buyer} confirmed delivery. The money was released to {seller}.",
+        "declined": "Declined on {date}. There is nothing more to record.",
+        "srStep": "{step}: {state}",
+        "state": {
+          "done": "done",
+          "todo": "not yet"
+        }
+      },
+      "fields": {
+        "poNumber": "Purchase order (PO) number",
+        "grnNumber": "Goods receipt note (GRN) number",
+        "ewayBillNo": "E-way bill number",
+        "irn": "E-invoice IRN",
+        "vehicleNo": "Vehicle number",
+        "driverPhone": "Driver's phone",
+        "notes": "Notes"
+      },
+      "short": {
+        "poNumber": "PO",
+        "grnNumber": "GRN",
+        "ewayBillNo": "E-way bill",
+        "irn": "IRN",
+        "vehicleNo": "Vehicle",
+        "driverPhone": "Driver",
+        "notes": "Notes"
+      },
+      "hints": {
+        "poNumber": "Your own PO number for this purchase.",
+        "grnNumber": "The GRN you raise when the load is weighed in.",
+        "ewayBillNo": "12 digits from the e-way bill portal. Needed when the load is worth over ₹50,000.",
+        "irn": "The 64-character Invoice Reference Number on your GST e-invoice.",
+        "vehicleNo": "The truck's number plate, like KA01AB1234.",
+        "driverPhone": "So the other side's gate can call the driver.",
+        "notes": "Anything the other side should know: weights, deductions, timings."
+      },
+      "mine": {
+        "title": "Your documents",
+        "lead": "Fill in what you have. The other side sees it at once.",
+        "optional": "(optional)",
+        "save": "Save documents",
+        "saving": "Saving…",
+        "saved": "Documents saved",
+        "nothingChanged": "Nothing changed"
+      },
+      "theirs": {
+        "title": "From {name}",
+        "empty": "{name} hasn't recorded anything yet."
+      },
+      "share": {
+        "title": "Send this pack",
+        "lead": "A short summary for WhatsApp, or the full pack as a file for your records or an auditor.",
+        "whatsapp": "Share on WhatsApp",
+        "shared": "Shared",
+        "download": "Download pack",
+        "downloading": "Preparing…",
+        "downloaded": "Downloaded {file}",
+        "text": {
+          "title": "Luma.Green trade {number}",
+          "titleNoNumber": "Luma.Green trade",
+          "line": "{material} · {weight} · {amount}",
+          "parties": "{seller} → {buyer}",
+          "status": "{status}: {date}",
+          "document": "{label}: {value}"
+        }
+      }
+    }
   }
 }

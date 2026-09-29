@@ -501,11 +501,13 @@ function ewayBillOf(documents: Record<Side, Documents>): string {
   return documents.seller.ewayBillNo ?? documents.buyer.ewayBillNo ?? "";
 }
 
+/** The fields that are paperwork; notes are not counted as a document. */
+const PAPER_FIELDS = DOCUMENT_FIELDS.filter((field) => field !== "notes");
+
 function countFilled(documents: Record<Side, Documents>): number {
   return [documents.buyer, documents.seller].reduce(
     (count, row) =>
-      count +
-      DOCUMENT_FIELDS.filter((field) => row[field] !== undefined).length,
+      count + PAPER_FIELDS.filter((field) => row[field] !== undefined).length,
     0,
   );
 }
@@ -848,7 +850,10 @@ export const evidencePack = query({
                 number: trade.invoiceNo,
                 issuedAt,
                 releasedAt,
-                escrow: releasedAt === null ? "held" : "released",
+                escrow:
+                  releasedAt === null
+                    ? ("held" as const)
+                    : ("released" as const),
               }
             : null,
         origin: await originOf(ctx, seller, trade),
@@ -1113,7 +1118,7 @@ interface Movement {
 class Movements {
   private readonly byCode = new Map<string, Movement>();
 
-  of(code: string): Movement {
+  private of(code: string): Movement {
     let row = this.byCode.get(code);
     if (!row) {
       row = {
@@ -1128,6 +1133,29 @@ class Movements {
       this.byCode.set(code, row);
     }
     return row;
+  }
+
+  /** A household pickup paid for. */
+  fromHousehold(code: string, grams: number): void {
+    this.of(code).fromHouseholdsGrams += grams;
+  }
+
+  /** A purchase from another business, delivered. */
+  fromBusiness(code: string, grams: number): void {
+    this.of(code).fromBusinessesGrams += grams;
+  }
+
+  /** A sale dispatched to a buyer, named as the return wants it. */
+  sent(code: string, grams: number, paise: number, buyer: string | null) {
+    const row = this.of(code);
+    row.sentGrams += grams;
+    row.sentPaise += paise;
+    if (buyer !== null) row.buyers.add(buyer);
+  }
+
+  /** Today's stock of a material. */
+  stock(code: string, grams: number): void {
+    this.of(code).stockGrams = grams;
   }
 
   /** Rows in catalogue order; materials the catalogue lacks come last. */
@@ -1160,9 +1188,14 @@ async function addPickups(
   for (const pickup of pickups) {
     if (!pickup.receipt || !isInRange(pickup.receipt.paidAt, range)) continue;
     for (const line of pickup.receipt.lines) {
-      movements.of(line.materialCode).fromHouseholdsGrams += line.grams;
+      movements.fromHousehold(line.materialCode, line.grams);
     }
   }
+}
+
+/** How a buyer is named in a return: with its GSTIN when it has one. */
+function registeredName(buyer: Doc<"orgs">): string {
+  return buyer.gstin ? `${buyer.name} (GSTIN ${buyer.gstin})` : buyer.name;
 }
 
 /** Purchases delivered and sales dispatched in the period, by material. */
@@ -1177,20 +1210,18 @@ async function addTrades(
   for (const { trade, side } of trades) {
     if (side === "buyer") {
       if (isInRange(reachedAt(trade, "completed"), range)) {
-        movements.of(trade.materialCode).fromBusinessesGrams += trade.grams;
+        movements.fromBusiness(trade.materialCode, trade.grams);
       }
       continue;
     }
     if (!isInRange(reachedAt(trade, "dispatched"), range)) continue;
-    const row = movements.of(trade.materialCode);
-    row.sentGrams += trade.grams;
-    row.sentPaise += trade.totalPaise;
     const buyer = await orgOf(trade.buyerOrgId);
-    if (buyer) {
-      row.buyers.add(
-        buyer.gstin ? `${buyer.name} (GSTIN ${buyer.gstin})` : buyer.name,
-      );
-    }
+    movements.sent(
+      trade.materialCode,
+      trade.grams,
+      trade.totalPaise,
+      buyer ? registeredName(buyer) : null,
+    );
   }
 }
 
@@ -1201,14 +1232,16 @@ async function addStock(ctx: QueryCtx, org: Doc<"orgs">, movements: Movements) {
     .withIndex("by_org", (q) => q.eq("orgId", org._id))
     .take(HISTORY);
   for (const row of stock) {
-    if (row.grams > 0) movements.of(row.materialCode).stockGrams = row.grams;
+    if (row.grams > 0) movements.stock(row.materialCode, row.grams);
   }
 }
 
 /**
  * What came in, went out and is on hand, per material, over a period:
  * household pickups paid for, purchases delivered, sales dispatched, and
- * today's stock. Rows come back in catalogue order, empty ones left out.
+ * today's stock. Stock is only known for today, so it's left out of a
+ * report for an earlier period. Rows come back in catalogue order, empty
+ * ones left out.
  */
 async function movementsFor(
   ctx: QueryCtx,
@@ -1219,7 +1252,7 @@ async function movementsFor(
   const movements = new Movements();
   await addPickups(ctx, org, range, movements);
   await addTrades(ctx, org, range, movements);
-  await addStock(ctx, org, movements);
+  if (isInRange(Date.now(), range)) await addStock(ctx, org, movements);
   return movements
     .inOrder(materials)
     .filter(
@@ -1236,6 +1269,11 @@ function buyersCell(buyers: ReadonlySet<string>): string {
 
 function sum(rows: readonly Movement[], pick: (row: Movement) => number) {
   return rows.reduce((total, row) => total + pick(row), 0);
+}
+
+/** Everything that came in: household pickups and purchases. */
+function receivedGrams(row: Movement): number {
+  return row.fromHouseholdsGrams + row.fromBusinessesGrams;
 }
 
 // --- SWM quarterly return --------------------------------------------------------------
@@ -1270,8 +1308,6 @@ export const swmQuarterly = query({
     const range = requirePeriod(args.period, "quarter");
     const materials = await materialIndex(ctx);
     const movements = await movementsFor(ctx, org, range, materials);
-    const received = (row: Movement) =>
-      row.fromHouseholdsGrams + row.fromBusinessesGrams;
 
     const records: Record<SwmColumn, Cell>[] = movements.map((row) => {
       const material = materials.get(row.code);
@@ -1281,8 +1317,8 @@ export const swmQuarterly = query({
         Material: englishName(materials, row.code),
         "Material Code": row.code,
         HSN: taxFor(material, row.code).hsn,
-        "Received (kg)": kg(received(row)),
-        "Sorted (kg)": kg(received(row)),
+        "Received (kg)": kg(receivedGrams(row)),
+        "Sorted (kg)": kg(receivedGrams(row)),
         "Sent to registered processors (kg)": kg(row.sentGrams),
         "Sent to": buyersCell(row.buyers),
         "Stock on hand (kg)": kg(row.stockGrams),
@@ -1295,8 +1331,8 @@ export const swmQuarterly = query({
         Material: "Total",
         "Material Code": "",
         HSN: "",
-        "Received (kg)": kg(sum(movements, received)),
-        "Sorted (kg)": kg(sum(movements, received)),
+        "Received (kg)": kg(sum(movements, receivedGrams)),
+        "Sorted (kg)": kg(sum(movements, receivedGrams)),
         "Sent to registered processors (kg)": kg(
           sum(movements, (row) => row.sentGrams),
         ),
@@ -1387,7 +1423,10 @@ export const monthlyRecyclables = query({
 
 // --- Download history ------------------------------------------------------------------
 
-/** Files I downloaded, newest first. */
+/**
+ * Files I downloaded, newest first. A document pack's `period` is a trade
+ * id, so it also carries the trade's receipt number as `reference`.
+ */
 export const runs = query({
   args: {},
   returns: v.array(
@@ -1395,6 +1434,7 @@ export const runs = query({
       id: v.id("exportRuns"),
       kind: vExportKind,
       period: v.string(),
+      reference: v.union(v.string(), v.null()),
       rows: v.number(),
       createdAt: v.number(),
     }),
@@ -1403,16 +1443,27 @@ export const runs = query({
     const { org } = await requireOrg(ctx);
     const rows = await ctx.db
       .query("exportRuns")
-      .withIndex("by_org", (q) => q.eq("orgId", org._id))
+      .withIndex("by_org_created", (q) => q.eq("orgId", org._id))
       .order("desc")
       .take(RUNS_SHOWN);
-    return rows.map((row) => ({
-      id: row._id,
-      kind: row.kind,
-      period: row.period,
-      rows: row.rows,
-      createdAt: row.createdAt,
-    }));
+    const views = [];
+    for (const row of rows) {
+      let reference: string | null = null;
+      if (row.kind === "evidencePack") {
+        const tradeId = ctx.db.normalizeId("trades", row.period);
+        const trade = tradeId ? await ctx.db.get("trades", tradeId) : null;
+        reference = trade?.invoiceNo ?? null;
+      }
+      views.push({
+        id: row._id,
+        kind: row.kind,
+        period: row.period,
+        reference,
+        rows: row.rows,
+        createdAt: row.createdAt,
+      });
+    }
+    return views;
   },
 });
 

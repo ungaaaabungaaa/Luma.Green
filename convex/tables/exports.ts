@@ -51,5 +51,5 @@ export const exportsTables = {
     period: v.string(),
     rows: v.number(),
     createdAt: v.number(),
-  }).index("by_org", ["orgId"]),
+  }).index("by_org_created", ["orgId", "createdAt"]),
 };
