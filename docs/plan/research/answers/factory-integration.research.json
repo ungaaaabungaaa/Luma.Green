@@ -1,238 +1,238 @@
 {
- "cluster": "How yards, recyclers and mills work today",
- "answers": [
-  {
-   "question": "Which accounting software do small scrap yards and recyclers in India use (Tally, Busy, Marg, Excel), which Tally release is common, and does Tally accept Excel imports or only XML? Do yards weigh on their own stamped weighbridge, a public weighbridge or platform scales, and do slips carry serial numbers?",
-   "answer": "No public survey covers scrap yards specifically, but the general market points to Tally: Tally says 2.5 million+ businesses use it (tallysolutions.com, read 30 Sep 2026), IMARC (7 Jul 2026) sizes India's accounting-software market at USD 698.87 million in 2025 with SMEs at 65% and names Tally, Busy, Marg and Zoho as the key players, and Marg positions itself for pharma/FMCG distribution, not scrap. The scrap-specific evidence is about informality rather than software: the ILO-SNDT Pune study found retail scrap traders issue no receipts to collectors and that 'cheating in weights' and credit slips instead of cash are common; a 22 Sep 2026 tax guide notes dealers under Rs 2 crore turnover (Rs 3 crore if cash receipts are 5% or less) can file under presumptive section 44AD with no books at all, though it advises keeping purchase and sales registers and weighment slips; a 11 Nov 2025 GST guide lists the registers, e-way bills and the Oct 2024 metal-scrap TDS (2% above Rs 2.5 lakh) and RCM rules a registered dealer must handle. Working assumption for the pilot: GST-registered yards and recyclers keep books in Tally (often run by their CA), kabadiwalas keep a notebook, WhatsApp or Excel. On Tally releases: the current version is TallyPrime 7.1 (20 May 2026); Excel import (default template or a mapped custom sheet, covering masters and transactions such as sales, purchase, receipt and payment) only exists from TallyPrime 4.0 (27 Nov 2023), JSON from 7.0, while XML import works on every release including older TallyPrime and Tally.ERP 9, so pre-4.0 installs are XML-only; there is no public data on which release yards run, so that is an open item. On weighing: section 24 of the Legal Metrology Act 2009 requires every weight or measure used in a transaction to be verified and stamped, Rule 27(2) of the Legal Metrology (General) Rules 2011 sets re-verification at 12 months for weighbridges and platform scales (24 months for beam scales and counter machines), and a 6 Jul 2026 amendment cut the standard weights needed to verify instruments of 1 tonne and above from 50% to 20% of capacity; a 3 Jun 2026 guide for new scrap dealers recommends a 30–60 tonne platform scale at Rs 2.5–6 lakh certified by the district Weights and Measures inspector, and in practice kabadiwalas use small platform or hanging scales while truck loads go over the yard's own weighbridge or a nearby public weighbridge. On slips: the 2011 rules prescribe no ticket format or serial numbers; computerised weighbridge software prints serial-numbered gross/tare/net tickets, and the ReMA ISRI Specifications (July 2026) show how the trade treats them, with the buyer's certified-scale weight governing and no adjustment for weight variance of 1% or less. Open items: the Karnataka verification-fee schedule (the 2021 Karnataka Legal Metrology (Enforcement) Amendment Rules revised fees but the weighbridge figure is not on an open page) and whether Bengaluru yards' scales are actually in-date.",
-   "status": "partly",
-   "decision": "Ship a Tally XML export (works on every Tally release) plus a plain CSV/Excel; do not build a live Tally connector for the pilot. Have the platform assign its own serial number to every weighment, store the scale ID, its stamp-expiry date and a photo of the yard's slip, and treat the yard's certified scale as the governing weight.",
-   "whoToAsk": "Ask 10 Bengaluru yards and recyclers which software and Tally release they run and whether they weigh on their own weighbridge, a public weighbridge or a platform scale; ask their CA how books are kept; ask the Assistant Controller of Legal Metrology, Bengaluru for the current verification fee for weighbridges and platform scales and whether a public-weighbridge licence is needed.",
-   "sources": [
+  "cluster": "How yards, recyclers and mills work today",
+  "answers": [
     {
-     "title": "Tally Solutions – About us (2.5 million+ businesses)",
-     "url": "https://tallysolutions.com/about-us/",
-     "date": "read 30 Sep 2026"
+      "question": "Which accounting software do small scrap yards and recyclers in India use (Tally, Busy, Marg, Excel), which Tally release is common, and does Tally accept Excel imports or only XML? Do yards weigh on their own stamped weighbridge, a public weighbridge or platform scales, and do slips carry serial numbers?",
+      "answer": "No public survey covers scrap yards specifically, but the general market points to Tally: Tally says 2.5 million+ businesses use it (tallysolutions.com, read 30 Sep 2026), IMARC (7 Jul 2026) sizes India's accounting-software market at USD 698.87 million in 2025 with SMEs at 65% and names Tally, Busy, Marg and Zoho as the key players, and Marg positions itself for pharma/FMCG distribution, not scrap. The scrap-specific evidence is about informality rather than software: the ILO-SNDT Pune study found retail scrap traders issue no receipts to collectors and that 'cheating in weights' and credit slips instead of cash are common; a 22 Sep 2026 tax guide notes dealers under Rs 2 crore turnover (Rs 3 crore if cash receipts are 5% or less) can file under presumptive section 44AD with no books at all, though it advises keeping purchase and sales registers and weighment slips; a 11 Nov 2025 GST guide lists the registers, e-way bills and the Oct 2024 metal-scrap TDS (2% above Rs 2.5 lakh) and RCM rules a registered dealer must handle. Working assumption for the pilot: GST-registered yards and recyclers keep books in Tally (often run by their CA), kabadiwalas keep a notebook, WhatsApp or Excel. On Tally releases: the current version is TallyPrime 7.1 (20 May 2026); Excel import (default template or a mapped custom sheet, covering masters and transactions such as sales, purchase, receipt and payment) only exists from TallyPrime 4.0 (27 Nov 2023), JSON from 7.0, while XML import works on every release including older TallyPrime and Tally.ERP 9, so pre-4.0 installs are XML-only; there is no public data on which release yards run, so that is an open item. On weighing: section 24 of the Legal Metrology Act 2009 requires every weight or measure used in a transaction to be verified and stamped, Rule 27(2) of the Legal Metrology (General) Rules 2011 sets re-verification at 12 months for weighbridges and platform scales (24 months for beam scales and counter machines), and a 6 Jul 2026 amendment cut the standard weights needed to verify instruments of 1 tonne and above from 50% to 20% of capacity; a 3 Jun 2026 guide for new scrap dealers recommends a 30–60 tonne platform scale at Rs 2.5–6 lakh certified by the district Weights and Measures inspector, and in practice kabadiwalas use small platform or hanging scales while truck loads go over the yard's own weighbridge or a nearby public weighbridge. On slips: the 2011 rules prescribe no ticket format or serial numbers; computerised weighbridge software prints serial-numbered gross/tare/net tickets, and the ReMA ISRI Specifications (July 2026) show how the trade treats them, with the buyer's certified-scale weight governing and no adjustment for weight variance of 1% or less. Open items: the Karnataka verification-fee schedule (the 2021 Karnataka Legal Metrology (Enforcement) Amendment Rules revised fees but the weighbridge figure is not on an open page) and whether Bengaluru yards' scales are actually in-date.",
+      "status": "partly",
+      "decision": "Ship a Tally XML export (works on every Tally release) plus a plain CSV/Excel; do not build a live Tally connector for the pilot. Have the platform assign its own serial number to every weighment, store the scale ID, its stamp-expiry date and a photo of the yard's slip, and treat the yard's certified scale as the governing weight.",
+      "whoToAsk": "Ask 10 Bengaluru yards and recyclers which software and Tally release they run and whether they weigh on their own weighbridge, a public weighbridge or a platform scale; ask their CA how books are kept; ask the Assistant Controller of Legal Metrology, Bengaluru for the current verification fee for weighbridges and platform scales and whether a public-weighbridge licence is needed.",
+      "sources": [
+        {
+          "title": "Tally Solutions – About us (2.5 million+ businesses)",
+          "url": "https://tallysolutions.com/about-us/",
+          "date": "read 30 Sep 2026"
+        },
+        {
+          "title": "IMARC – India Accounting Software Market",
+          "url": "https://www.imarcgroup.com/india-accounting-software-market",
+          "date": "7 Jul 2026"
+        },
+        {
+          "title": "Release Notes for TallyPrime 4.0 (Excel import introduced)",
+          "url": "https://help.tallysolutions.com/release-notes-tallyprime-4/",
+          "date": "27 Nov 2023"
+        },
+        {
+          "title": "Release Notes for TallyPrime 7.1",
+          "url": "https://help.tallysolutions.com/release-notes-tallyprime-7-1/",
+          "date": "20 May 2026"
+        },
+        {
+          "title": "TallyHelp – Import data from XML or JSON (format support by release)",
+          "url": "https://help.tallysolutions.com/import-data-from-xml-or-json/",
+          "date": "read 30 Sep 2026"
+        },
+        {
+          "title": "TallyHelp – Import data using any Excel file",
+          "url": "https://help.tallysolutions.com/import-data-using-any-excel-file/",
+          "date": "read 30 Sep 2026"
+        },
+        {
+          "title": "Legal Metrology Act, 2009 (section 24, verification and stamping)",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/4892/1/legalmetrology_act_2009.pdf",
+          "date": "2009"
+        },
+        {
+          "title": "Legal Metrology (General) Rules, 2011 – Rule 27 re-verification periods",
+          "url": "https://indiankanoon.org/doc/67045693/",
+          "date": "2011"
+        },
+        {
+          "title": "NewsOnAir – Govt amends Legal Metrology Rules for high-capacity weighing instruments",
+          "url": "https://newsonair.gov.in/govt-amends-legal-metrology-rules-for-verification-of-high-capacity-weighing-instruments/",
+          "date": "6 Jul 2026"
+        },
+        {
+          "title": "Karnataka Legal Metrology (Enforcement) (Amendment) Rules 2021 – summary",
+          "url": "https://complinity.com/legal-update/government-of-karnataka-has-amended-karnataka-legal-metrology-enforcement-rules-2011--8132/",
+          "date": "3 Dec 2022"
+        },
+        {
+          "title": "National Recycling – How to start a scrap dealer business in India",
+          "url": "https://www.nationalrecycling.in/blog/start-scrap-dealer-business-india/",
+          "date": "3 Jun 2026"
+        },
+        {
+          "title": "TaxGarden – Income tax for scrap dealers and recyclers, AY 2026-27",
+          "url": "https://taxgarden.in/blog/income-tax-for-scrap-dealers-recycling-business-owners-india-ay-2026-27",
+          "date": "22 Sep 2026"
+        },
+        {
+          "title": "Cashflo – GST compliance for metal scrap dealers",
+          "url": "https://www.cashflo.io/magazine/gst-compliance-for-metal-scrap-dealers",
+          "date": "11 Nov 2025"
+        },
+        {
+          "title": "ILO-SNDT study of scrap collectors, scrap traders and recycling enterprises in Pune",
+          "url": "https://www.swachcoop.com/pdf/ILO%20Study.pdf",
+          "date": "undated preliminary report"
+        },
+        {
+          "title": "ReMA ISRI Specifications (weight discrepancies, certified scale tickets)",
+          "url": "https://www.isrispecs.org/wp-content/uploads/2026/09/2026-July-ReMA_ISRI_Specifications.pdf",
+          "date": "Jul 2026"
+        }
+      ]
     },
     {
-     "title": "IMARC – India Accounting Software Market",
-     "url": "https://www.imarcgroup.com/india-accounting-software-market",
-     "date": "7 Jul 2026"
-    },
-    {
-     "title": "Release Notes for TallyPrime 4.0 (Excel import introduced)",
-     "url": "https://help.tallysolutions.com/release-notes-tallyprime-4/",
-     "date": "27 Nov 2023"
-    },
-    {
-     "title": "Release Notes for TallyPrime 7.1",
-     "url": "https://help.tallysolutions.com/release-notes-tallyprime-7-1/",
-     "date": "20 May 2026"
-    },
-    {
-     "title": "TallyHelp – Import data from XML or JSON (format support by release)",
-     "url": "https://help.tallysolutions.com/import-data-from-xml-or-json/",
-     "date": "read 30 Sep 2026"
-    },
-    {
-     "title": "TallyHelp – Import data using any Excel file",
-     "url": "https://help.tallysolutions.com/import-data-using-any-excel-file/",
-     "date": "read 30 Sep 2026"
-    },
-    {
-     "title": "Legal Metrology Act, 2009 (section 24, verification and stamping)",
-     "url": "https://www.indiacode.nic.in/bitstream/123456789/4892/1/legalmetrology_act_2009.pdf",
-     "date": "2009"
-    },
-    {
-     "title": "Legal Metrology (General) Rules, 2011 – Rule 27 re-verification periods",
-     "url": "https://indiankanoon.org/doc/67045693/",
-     "date": "2011"
-    },
-    {
-     "title": "NewsOnAir – Govt amends Legal Metrology Rules for high-capacity weighing instruments",
-     "url": "https://newsonair.gov.in/govt-amends-legal-metrology-rules-for-verification-of-high-capacity-weighing-instruments/",
-     "date": "6 Jul 2026"
-    },
-    {
-     "title": "Karnataka Legal Metrology (Enforcement) (Amendment) Rules 2021 – summary",
-     "url": "https://complinity.com/legal-update/government-of-karnataka-has-amended-karnataka-legal-metrology-enforcement-rules-2011--8132/",
-     "date": "3 Dec 2022"
-    },
-    {
-     "title": "National Recycling – How to start a scrap dealer business in India",
-     "url": "https://www.nationalrecycling.in/blog/start-scrap-dealer-business-india/",
-     "date": "3 Jun 2026"
-    },
-    {
-     "title": "TaxGarden – Income tax for scrap dealers and recyclers, AY 2026-27",
-     "url": "https://taxgarden.in/blog/income-tax-for-scrap-dealers-recycling-business-owners-india-ay-2026-27",
-     "date": "22 Sep 2026"
-    },
-    {
-     "title": "Cashflo – GST compliance for metal scrap dealers",
-     "url": "https://www.cashflo.io/magazine/gst-compliance-for-metal-scrap-dealers",
-     "date": "11 Nov 2025"
-    },
-    {
-     "title": "ILO-SNDT study of scrap collectors, scrap traders and recycling enterprises in Pune",
-     "url": "https://www.swachcoop.com/pdf/ILO%20Study.pdf",
-     "date": "undated preliminary report"
-    },
-    {
-     "title": "ReMA ISRI Specifications (weight discrepancies, certified scale tickets)",
-     "url": "https://www.isrispecs.org/wp-content/uploads/2026/09/2026-July-ReMA_ISRI_Specifications.pdf",
-     "date": "Jul 2026"
+      "question": "What grade names, quality parameters and deduction rules do Bengaluru or South Indian buyers and paper mills apply to waste paper, PET and metal (ISRI names, mill specs, moisture and contamination deductions)? Do recyclers hold CPCB processor (PWP) registration, and does the plastic portal accept bulk uploads or only single-entry forms? Would GRS, ISCC PLUS auditors or CPCB physical verification accept a platform's weight and photo record as supporting evidence?",
+      "answer": "Grades are local trade names layered on the ReMA (ex-ISRI) specifications (July 2026 edition): for paper, OCC (11) allows prohibitives up to 1% and outthrows-plus-prohibitives up to 5%, double-sorted OCC (12) 0.5%/2%, sorted office paper (37) 1%/2%, unsorted office paper (36) 2%/10%, maximum moisture is 12% with the buyer entitled to test, adjust or reject, and no weight adjustment applies under 1% variance; Bengaluru listings (IndiaMART, 29 Sep 2026) trade as OCC Rs 15/kg, duplex Rs 16, newspaper Rs 18, mixed Rs 13, white cutting Rs 35, old books Rs 40 and colour record Rs 10/kg, and the Pune ILO study records the dealer names kraft, white record, RS, mixed mein and pushta. For PET the APR/ReMA bale spec (Sep 2022, carried in the July 2026 circular) grades bales A (94%+ PET fraction), B (83–93%) and C (73–82%), caps and labels may stay on, any single contaminant is capped at 2%, PVC is zero-tolerance and the India Plastics Pact (Nov 2022) notes 83–88% of Indian bottles are clear and 10–15% green so traders colour-sort before selling; Bengaluru listings on 29 Sep 2026 run Rs 15–20/kg loose and Rs 35–57/kg baled or washed clear. For metals, BIS IS 2549:2023 (17 Feb 2023) classifies ferrous scrap into home, prompt and obsolete with HMS, LMS, bundles, turnings and foundry grades, IS 2066 (Part 1):2024 codes aluminium scrap, and the Aluminium Association of India was still pressing on 8 Jul 2026 for notification of the pending 'Aluminium & Aluminium Alloy Scrap – Requirements & Conditions of Delivery' standard; ReMA names in use are Taint/Tabor (clean mixed old alloy sheet, oil under 1%), Zorba, Barley/Berry/Candy copper, Honey brass and No.1 HMS (code 200, quarter-inch thick), and Bengaluru listings quote aluminium utensil/'bartan'/Tense Rs 215–220/kg, extrusion Rs 285, wire Rs 122, Millberry/Berry-Candy copper Rs 1,330/kg, cast iron Rs 27/kg and GI Rs 42/kg. South Indian mills' actual moisture and dirt ('kachra') deduction formulas are contract terms and are not on any open page, so that is an open item. On CPCB: every recycler and end-of-life processor must register as a PWP with its SPCB (KSPCB here) on eprplastic.cpcb.gov.in, paying Rs 5,000 (under 200 TPA), Rs 20,000 (200–2,000 TPA) or Rs 50,000 (over 2,000 TPA) plus 25% a year as processing fee, with a fresh registration valid one year and renewals three years, and can issue certificates only after the SPCB regional officer's physical verification (due within 30 days) that checks PAN/GST, GPS location, machinery, power load, electricity bill and geo-tagged photos and fixes a 'conversion factor' (CPCB SOP 15 Mar 2022; guidance manual Feb 2023); collectors, kabadiwalas and yards that only aggregate do not register (FAQ Q14). The PWP portal is single-entry: CPCB's module guidance (Nov 2022, Q18) says 'only single entries can be made in the procurement section', each procurement needs the supplier's GST or PAN/Aadhaar and invoice, each sale needs a signed GST e-invoice with IRN and QR code (the 7 Apr 2025 CEPP app scans one QR at a time), and the 'bulk upload' in the Feb 2023 manual is a PIBO-side aggregate of two years of purchases from one unregistered entity plus a PDF statement, not a row-wise Excel; note e-invoicing is mandatory only above Rs 5 crore turnover (from 1 Aug 2023) and optional below, so a small recycler must self-enable on the IRP to sell into the EPR system. Enforcement is tightening: CSE (Oct 2024) counted 2,499 registered PWPs as of 14 Aug 2024 and 6 lakh fraudulent certificates, CPCB's April 2024 EC guidelines levy Rs 5,000 per tonne for misreported quantities, and the PWM (Amendment) Rules 2026 (G.S.R. 237(E), 31 Mar 2026) let 'registered environment auditors' verify processors and require recycled packaging to conform to IS 14534:2023. On auditors: GRS 5.0 (published 1 Jul 2026, mandatory 31 Dec 2026) requires the first certified entity to hold a Reclaimed Material Supplier Agreement and a signed Reclaimed Material Declaration Form (which since 24 Jul 2025 covers non-textile waste such as PET) for every input, to inspect incoming shipments and keep records, exempts collection from individuals, and has certification bodies verify 10% of collectors (2% on site) for RMDF authenticity; ISCC PLUS 203-1 v1.1 (13 Nov 2025) requires records of incoming material 'e.g. weighbridge tickets, bill of lading and sustainability declarations' kept 'as hard copies and/or electronically' for five years, each delivery documented by weighbridge tickets 'or similar documents', collecting points to run plausibility checks on amounts, and signed self-declarations from points of origin (which may sit inside a contract or terms and conditions), while household post-consumer collection stays outside the certified chain; CPCB physical verification checks the facility, not transactions, and the portal accepts only invoices. So a platform weight-and-photo record is good supporting evidence (delivery documentation, inspection records, plausibility checks, the data to pre-fill an RMDF or self-declaration) but never a substitute for the signed RMDF, self-declaration or GST invoice, and whether a given auditor will lean on it is a pilot question.",
+      "status": "needs-pilot-or-counsel",
+      "decision": "Adopt ReMA/ISRI names as the canonical grade codes with a local-name alias per grade (OCC/duplex/record/white cutting; PET clear/green/mixed with an A/B/C PET-fraction field; HMS/cast/GI, aluminium utensil/extrusion/wire, copper Millberry/Berry) and capture moisture % and contamination % per lot with a free-text deduction field, since mill deduction formulas are contract-specific. Treat recyclers as CPCB-registered PWPs and build a one-invoice-per-row export (supplier GST or PAN/Aadhaar, quantity, category, date, invoice number, IRN) that an operator keys into the portal, not a bulk feed. Design the weight-and-photo record as an audit exhibit that sits beside, and pre-fills, the signed RMDF/ISCC self-declaration and the GST invoice.",
+      "whoToAsk": "Purchase desks at three South Indian mills (for example South India Paper Mills, Nanjangud; Seshasayee; TNPL) and two Bengaluru PET and metal recyclers for their written moisture/contamination deduction rules; KSPCB's regional office for how it runs physical verification and conversion factors; one accredited GRS certification body and one ISCC PLUS certification body active in India to confirm they will accept the platform record as delivery documentation; the CPCB helpline (011-43102469) and a CA on e-invoice enablement for a sub-Rs 5 crore recycler.",
+      "sources": [
+        {
+          "title": "ReMA ISRI Specifications – paper stock, plastics, ferrous and nonferrous grades",
+          "url": "https://www.isrispecs.org/wp-content/uploads/2026/09/2026-July-ReMA_ISRI_Specifications.pdf",
+          "date": "Jul 2026"
+        },
+        {
+          "title": "APR Model Bale Specification: PET Bottles (No PET Thermoforms)",
+          "url": "https://plasticsrecycling.org/wp-content/uploads/2024/09/APR-BaleSpec-PETBottle-NoThermoforms.pdf",
+          "date": "Sep 2022"
+        },
+        {
+          "title": "India Plastics Pact – Design guidance for food contact grade PET bottles",
+          "url": "https://www.indiaplasticspact.org/uploads/1703753569document.pdf",
+          "date": "Nov 2022"
+        },
+        {
+          "title": "IndiaMART – Waste paper in Bengaluru (grade names and Rs/kg)",
+          "url": "https://dir.indiamart.com/bengaluru/waste-paper.html",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "IndiaMART – PET bottle scrap in Bengaluru",
+          "url": "https://dir.indiamart.com/bengaluru/pet-bottle-scrap.html",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "IndiaMART – Aluminium scrap in Bengaluru",
+          "url": "https://dir.indiamart.com/bengaluru/aluminium-scrap.html",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "IndiaMART – Copper scrap in Bengaluru",
+          "url": "https://dir.indiamart.com/bengaluru/copper-scrap.html",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "IndiaMART – Iron scrap in Bengaluru",
+          "url": "https://dir.indiamart.com/bengaluru/iron-scrap.html",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "IS 2549:2023 Processed Ferrous Scrap – Code for Classification (BIS)",
+          "url": "https://archive.org/details/gov.in.is.2549.2023",
+          "date": "17 Feb 2023"
+        },
+        {
+          "title": "OfBusiness – Ferrous scrap codes updated (IS 2549:2023 grades)",
+          "url": "https://www.ofbusiness.com/blog/metals/ferrous-scrap-codes-updated-facilitating-recycling-industry-efficiency-24655",
+          "date": "2023"
+        },
+        {
+          "title": "BIS – IS 2066 (Part 1):2024 Coding and classification of aluminium scrap",
+          "url": "http://www.services.bis.gov.in/php/BIS_2.0/bisconnect/knowyourstandards/Indian_standards/isdetails/MzIzMjY=",
+          "date": "2024"
+        },
+        {
+          "title": "The Tribune – Aluminium Association of India urges Centre to notify BIS standards for aluminium scrap",
+          "url": "https://www.tribuneindia.com/news/aluminium-quality/aluminium-association-of-india-urges-centre-to-notify-bis-standards-for-aluminium-scrap",
+          "date": "8 Jul 2026"
+        },
+        {
+          "title": "CPCB – SOP for Registration of Plastic Waste Processors",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/SOP%20PWP_0001.pdf",
+          "date": "15 Mar 2022"
+        },
+        {
+          "title": "CPCB – FAQs, Centralized EPR Portal for Plastic Packaging (fees, who registers)",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/FAQs.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "CPCB – Guidance Manual for Centralized EPR Portal (physical verification checklist, bulk upload)",
+          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
+          "date": "Feb 2023"
+        },
+        {
+          "title": "CPCB – Guidance document for Module IA, II & III (PWP procurement fields, Q18 single entries)",
+          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Instruction_Sheet.pdf",
+          "date": "Nov 2022"
+        },
+        {
+          "title": "CPCB – Instruction Sheet for PWP sales (GST e-invoice with IRN and QR)",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "TeamLease RegTech – CPCB instruction sheet for uploading sales via the CEPP app",
+          "url": "https://teamleaseregtech.com/updates/article/41387/cpcb-issued-an-instruction-sheet-for-uploading-sales-transactions-usin/",
+          "date": "7 Apr 2025"
+        },
+        {
+          "title": "GST e-Invoice portal – e-invoice enablement thresholds (Rs 5 crore from 01-08-2023, optional below)",
+          "url": "https://einvoice1.gst.gov.in/Others/EinvEnabled",
+          "date": "read 30 Sep 2026"
+        },
+        {
+          "title": "CPCB – Guidelines for assessment of Environment Compensation under PWM Rules",
+          "url": "https://cpcb.nic.in/uploads/plasticwaste/EC_Regime_PWM_04-04-2024.pdf",
+          "date": "Apr 2024"
+        },
+        {
+          "title": "Gazette of India G.S.R. 237(E) – Plastic Waste Management (Amendment) Rules, 2026 (CG-DL-E-31032026-271465)",
+          "url": "https://egazette.gov.in/",
+          "date": "31 Mar 2026"
+        },
+        {
+          "title": "CSE – Unpacking EPR for plastic packaging in India",
+          "url": "https://www.breakfreefromplastic.org/wp-content/uploads/2024/11/http___cdn.cseindia.org_attachments_0.31282200_1730173267_unpacking-epr-for-plastic-packaging-in-india.pdf",
+          "date": "Oct 2024"
+        },
+        {
+          "title": "Textile Exchange – Global Recycled Standard 5.0 (GRS-101-V5.0)",
+          "url": "https://textileexchange.org/app/uploads/2020/08/GRS-101-V5.0-Global-Recycled-Standard.pdf",
+          "date": "1 Jul 2026"
+        },
+        {
+          "title": "Textile Exchange – GRS Implementation Manual 5.0 (GRS-201-V5.0)",
+          "url": "https://textileexchange.org/app/uploads/2020/08/GRS-201-V5.0-GRS-Implementation-Manual.pdf",
+          "date": "Jul 2026"
+        },
+        {
+          "title": "FashionUnited – Textile Exchange updates Reclaimed Material Declaration Form (covers non-textile waste)",
+          "url": "https://fashionunited.uk/news/business/textile-exchange-updates-form-for-better-tracing-of-textile-waste-across-supply-chain/2025072482982",
+          "date": "24 Jul 2025"
+        },
+        {
+          "title": "ISCC PLUS 203-1 Traceability v1.1",
+          "url": "https://www.iscc-system.org/wp-content/uploads/2025/11/ISCC_PLUS_203-1_Traceability_v1.1.pdf",
+          "date": "13 Nov 2025"
+        },
+        {
+          "title": "ILO-SNDT study of scrap collectors, traders and recycling enterprises in Pune (local grade names)",
+          "url": "https://www.swachcoop.com/pdf/ILO%20Study.pdf",
+          "date": "undated preliminary report"
+        },
+        {
+          "title": "IPPTA – Paper waste recycling in India: current scenario and future prospects",
+          "url": "https://ippta.co/wp-content/uploads/2023/11/88-94.pdf",
+          "date": "2023"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "What grade names, quality parameters and deduction rules do Bengaluru or South Indian buyers and paper mills apply to waste paper, PET and metal (ISRI names, mill specs, moisture and contamination deductions)? Do recyclers hold CPCB processor (PWP) registration, and does the plastic portal accept bulk uploads or only single-entry forms? Would GRS, ISCC PLUS auditors or CPCB physical verification accept a platform's weight and photo record as supporting evidence?",
-   "answer": "Grades are local trade names layered on the ReMA (ex-ISRI) specifications (July 2026 edition): for paper, OCC (11) allows prohibitives up to 1% and outthrows-plus-prohibitives up to 5%, double-sorted OCC (12) 0.5%/2%, sorted office paper (37) 1%/2%, unsorted office paper (36) 2%/10%, maximum moisture is 12% with the buyer entitled to test, adjust or reject, and no weight adjustment applies under 1% variance; Bengaluru listings (IndiaMART, 29 Sep 2026) trade as OCC Rs 15/kg, duplex Rs 16, newspaper Rs 18, mixed Rs 13, white cutting Rs 35, old books Rs 40 and colour record Rs 10/kg, and the Pune ILO study records the dealer names kraft, white record, RS, mixed mein and pushta. For PET the APR/ReMA bale spec (Sep 2022, carried in the July 2026 circular) grades bales A (94%+ PET fraction), B (83–93%) and C (73–82%), caps and labels may stay on, any single contaminant is capped at 2%, PVC is zero-tolerance and the India Plastics Pact (Nov 2022) notes 83–88% of Indian bottles are clear and 10–15% green so traders colour-sort before selling; Bengaluru listings on 29 Sep 2026 run Rs 15–20/kg loose and Rs 35–57/kg baled or washed clear. For metals, BIS IS 2549:2023 (17 Feb 2023) classifies ferrous scrap into home, prompt and obsolete with HMS, LMS, bundles, turnings and foundry grades, IS 2066 (Part 1):2024 codes aluminium scrap, and the Aluminium Association of India was still pressing on 8 Jul 2026 for notification of the pending 'Aluminium & Aluminium Alloy Scrap – Requirements & Conditions of Delivery' standard; ReMA names in use are Taint/Tabor (clean mixed old alloy sheet, oil under 1%), Zorba, Barley/Berry/Candy copper, Honey brass and No.1 HMS (code 200, quarter-inch thick), and Bengaluru listings quote aluminium utensil/'bartan'/Tense Rs 215–220/kg, extrusion Rs 285, wire Rs 122, Millberry/Berry-Candy copper Rs 1,330/kg, cast iron Rs 27/kg and GI Rs 42/kg. South Indian mills' actual moisture and dirt ('kachra') deduction formulas are contract terms and are not on any open page, so that is an open item. On CPCB: every recycler and end-of-life processor must register as a PWP with its SPCB (KSPCB here) on eprplastic.cpcb.gov.in, paying Rs 5,000 (under 200 TPA), Rs 20,000 (200–2,000 TPA) or Rs 50,000 (over 2,000 TPA) plus 25% a year as processing fee, with a fresh registration valid one year and renewals three years, and can issue certificates only after the SPCB regional officer's physical verification (due within 30 days) that checks PAN/GST, GPS location, machinery, power load, electricity bill and geo-tagged photos and fixes a 'conversion factor' (CPCB SOP 15 Mar 2022; guidance manual Feb 2023); collectors, kabadiwalas and yards that only aggregate do not register (FAQ Q14). The PWP portal is single-entry: CPCB's module guidance (Nov 2022, Q18) says 'only single entries can be made in the procurement section', each procurement needs the supplier's GST or PAN/Aadhaar and invoice, each sale needs a signed GST e-invoice with IRN and QR code (the 7 Apr 2025 CEPP app scans one QR at a time), and the 'bulk upload' in the Feb 2023 manual is a PIBO-side aggregate of two years of purchases from one unregistered entity plus a PDF statement, not a row-wise Excel; note e-invoicing is mandatory only above Rs 5 crore turnover (from 1 Aug 2023) and optional below, so a small recycler must self-enable on the IRP to sell into the EPR system. Enforcement is tightening: CSE (Oct 2024) counted 2,499 registered PWPs as of 14 Aug 2024 and 6 lakh fraudulent certificates, CPCB's April 2024 EC guidelines levy Rs 5,000 per tonne for misreported quantities, and the PWM (Amendment) Rules 2026 (G.S.R. 237(E), 31 Mar 2026) let 'registered environment auditors' verify processors and require recycled packaging to conform to IS 14534:2023. On auditors: GRS 5.0 (published 1 Jul 2026, mandatory 31 Dec 2026) requires the first certified entity to hold a Reclaimed Material Supplier Agreement and a signed Reclaimed Material Declaration Form (which since 24 Jul 2025 covers non-textile waste such as PET) for every input, to inspect incoming shipments and keep records, exempts collection from individuals, and has certification bodies verify 10% of collectors (2% on site) for RMDF authenticity; ISCC PLUS 203-1 v1.1 (13 Nov 2025) requires records of incoming material 'e.g. weighbridge tickets, bill of lading and sustainability declarations' kept 'as hard copies and/or electronically' for five years, each delivery documented by weighbridge tickets 'or similar documents', collecting points to run plausibility checks on amounts, and signed self-declarations from points of origin (which may sit inside a contract or terms and conditions), while household post-consumer collection stays outside the certified chain; CPCB physical verification checks the facility, not transactions, and the portal accepts only invoices. So a platform weight-and-photo record is good supporting evidence (delivery documentation, inspection records, plausibility checks, the data to pre-fill an RMDF or self-declaration) but never a substitute for the signed RMDF, self-declaration or GST invoice, and whether a given auditor will lean on it is a pilot question.",
-   "status": "needs-pilot-or-counsel",
-   "decision": "Adopt ReMA/ISRI names as the canonical grade codes with a local-name alias per grade (OCC/duplex/record/white cutting; PET clear/green/mixed with an A/B/C PET-fraction field; HMS/cast/GI, aluminium utensil/extrusion/wire, copper Millberry/Berry) and capture moisture % and contamination % per lot with a free-text deduction field, since mill deduction formulas are contract-specific. Treat recyclers as CPCB-registered PWPs and build a one-invoice-per-row export (supplier GST or PAN/Aadhaar, quantity, category, date, invoice number, IRN) that an operator keys into the portal, not a bulk feed. Design the weight-and-photo record as an audit exhibit that sits beside, and pre-fills, the signed RMDF/ISCC self-declaration and the GST invoice.",
-   "whoToAsk": "Purchase desks at three South Indian mills (for example South India Paper Mills, Nanjangud; Seshasayee; TNPL) and two Bengaluru PET and metal recyclers for their written moisture/contamination deduction rules; KSPCB's regional office for how it runs physical verification and conversion factors; one accredited GRS certification body and one ISCC PLUS certification body active in India to confirm they will accept the platform record as delivery documentation; the CPCB helpline (011-43102469) and a CA on e-invoice enablement for a sub-Rs 5 crore recycler.",
-   "sources": [
-    {
-     "title": "ReMA ISRI Specifications – paper stock, plastics, ferrous and nonferrous grades",
-     "url": "https://www.isrispecs.org/wp-content/uploads/2026/09/2026-July-ReMA_ISRI_Specifications.pdf",
-     "date": "Jul 2026"
-    },
-    {
-     "title": "APR Model Bale Specification: PET Bottles (No PET Thermoforms)",
-     "url": "https://plasticsrecycling.org/wp-content/uploads/2024/09/APR-BaleSpec-PETBottle-NoThermoforms.pdf",
-     "date": "Sep 2022"
-    },
-    {
-     "title": "India Plastics Pact – Design guidance for food contact grade PET bottles",
-     "url": "https://www.indiaplasticspact.org/uploads/1703753569document.pdf",
-     "date": "Nov 2022"
-    },
-    {
-     "title": "IndiaMART – Waste paper in Bengaluru (grade names and Rs/kg)",
-     "url": "https://dir.indiamart.com/bengaluru/waste-paper.html",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "IndiaMART – PET bottle scrap in Bengaluru",
-     "url": "https://dir.indiamart.com/bengaluru/pet-bottle-scrap.html",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "IndiaMART – Aluminium scrap in Bengaluru",
-     "url": "https://dir.indiamart.com/bengaluru/aluminium-scrap.html",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "IndiaMART – Copper scrap in Bengaluru",
-     "url": "https://dir.indiamart.com/bengaluru/copper-scrap.html",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "IndiaMART – Iron scrap in Bengaluru",
-     "url": "https://dir.indiamart.com/bengaluru/iron-scrap.html",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "IS 2549:2023 Processed Ferrous Scrap – Code for Classification (BIS)",
-     "url": "https://archive.org/details/gov.in.is.2549.2023",
-     "date": "17 Feb 2023"
-    },
-    {
-     "title": "OfBusiness – Ferrous scrap codes updated (IS 2549:2023 grades)",
-     "url": "https://www.ofbusiness.com/blog/metals/ferrous-scrap-codes-updated-facilitating-recycling-industry-efficiency-24655",
-     "date": "2023"
-    },
-    {
-     "title": "BIS – IS 2066 (Part 1):2024 Coding and classification of aluminium scrap",
-     "url": "http://www.services.bis.gov.in/php/BIS_2.0/bisconnect/knowyourstandards/Indian_standards/isdetails/MzIzMjY=",
-     "date": "2024"
-    },
-    {
-     "title": "The Tribune – Aluminium Association of India urges Centre to notify BIS standards for aluminium scrap",
-     "url": "https://www.tribuneindia.com/news/aluminium-quality/aluminium-association-of-india-urges-centre-to-notify-bis-standards-for-aluminium-scrap",
-     "date": "8 Jul 2026"
-    },
-    {
-     "title": "CPCB – SOP for Registration of Plastic Waste Processors",
-     "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/SOP%20PWP_0001.pdf",
-     "date": "15 Mar 2022"
-    },
-    {
-     "title": "CPCB – FAQs, Centralized EPR Portal for Plastic Packaging (fees, who registers)",
-     "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/FAQs.pdf",
-     "date": "undated"
-    },
-    {
-     "title": "CPCB – Guidance Manual for Centralized EPR Portal (physical verification checklist, bulk upload)",
-     "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
-     "date": "Feb 2023"
-    },
-    {
-     "title": "CPCB – Guidance document for Module IA, II & III (PWP procurement fields, Q18 single entries)",
-     "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Instruction_Sheet.pdf",
-     "date": "Nov 2022"
-    },
-    {
-     "title": "CPCB – Instruction Sheet for PWP sales (GST e-invoice with IRN and QR)",
-     "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf",
-     "date": "undated"
-    },
-    {
-     "title": "TeamLease RegTech – CPCB instruction sheet for uploading sales via the CEPP app",
-     "url": "https://teamleaseregtech.com/updates/article/41387/cpcb-issued-an-instruction-sheet-for-uploading-sales-transactions-usin/",
-     "date": "7 Apr 2025"
-    },
-    {
-     "title": "GST e-Invoice portal – e-invoice enablement thresholds (Rs 5 crore from 01-08-2023, optional below)",
-     "url": "https://einvoice1.gst.gov.in/Others/EinvEnabled",
-     "date": "read 30 Sep 2026"
-    },
-    {
-     "title": "CPCB – Guidelines for assessment of Environment Compensation under PWM Rules",
-     "url": "https://cpcb.nic.in/uploads/plasticwaste/EC_Regime_PWM_04-04-2024.pdf",
-     "date": "Apr 2024"
-    },
-    {
-     "title": "Gazette of India G.S.R. 237(E) – Plastic Waste Management (Amendment) Rules, 2026 (CG-DL-E-31032026-271465)",
-     "url": "https://egazette.gov.in/",
-     "date": "31 Mar 2026"
-    },
-    {
-     "title": "CSE – Unpacking EPR for plastic packaging in India",
-     "url": "https://www.breakfreefromplastic.org/wp-content/uploads/2024/11/http___cdn.cseindia.org_attachments_0.31282200_1730173267_unpacking-epr-for-plastic-packaging-in-india.pdf",
-     "date": "Oct 2024"
-    },
-    {
-     "title": "Textile Exchange – Global Recycled Standard 5.0 (GRS-101-V5.0)",
-     "url": "https://textileexchange.org/app/uploads/2020/08/GRS-101-V5.0-Global-Recycled-Standard.pdf",
-     "date": "1 Jul 2026"
-    },
-    {
-     "title": "Textile Exchange – GRS Implementation Manual 5.0 (GRS-201-V5.0)",
-     "url": "https://textileexchange.org/app/uploads/2020/08/GRS-201-V5.0-GRS-Implementation-Manual.pdf",
-     "date": "Jul 2026"
-    },
-    {
-     "title": "FashionUnited – Textile Exchange updates Reclaimed Material Declaration Form (covers non-textile waste)",
-     "url": "https://fashionunited.uk/news/business/textile-exchange-updates-form-for-better-tracing-of-textile-waste-across-supply-chain/2025072482982",
-     "date": "24 Jul 2025"
-    },
-    {
-     "title": "ISCC PLUS 203-1 Traceability v1.1",
-     "url": "https://www.iscc-system.org/wp-content/uploads/2025/11/ISCC_PLUS_203-1_Traceability_v1.1.pdf",
-     "date": "13 Nov 2025"
-    },
-    {
-     "title": "ILO-SNDT study of scrap collectors, traders and recycling enterprises in Pune (local grade names)",
-     "url": "https://www.swachcoop.com/pdf/ILO%20Study.pdf",
-     "date": "undated preliminary report"
-    },
-    {
-     "title": "IPPTA – Paper waste recycling in India: current scenario and future prospects",
-     "url": "https://ippta.co/wp-content/uploads/2023/11/88-94.pdf",
-     "date": "2023"
-    }
-   ]
-  }
- ]
+  ]
 }

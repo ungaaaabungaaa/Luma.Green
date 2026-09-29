@@ -1,450 +1,450 @@
 {
- "cluster": "Checks on the plan's 15 named risks",
- "answers": [
-  {
-   "question": "(1) Legal review lands after real users arrive — is 'book the review for 6–12 Oct, open with household pickups and kabadiwala tools, switch on business trades and Saathi jobs once it clears' enough?",
-   "answer": "The dates that bite are statutory, not the lawyer's. The DPDP Rules 2025 were notified on 13 Nov 2025 (G.S.R. 846(E)); rule 1 puts the substantive rules (3, 5–16, 22, 23: notice, consent, security, breach, erasure, rights) in force 18 months later, i.e. 13 May 2027, and consent-manager rule 4 at 12 months (13 Nov 2026), so DPDP does not bite on 13 Oct 2026 — but penalties run to ₹250 crore for security failures and ₹50 crore for other breaches, so the design must be right now. What does apply from day one is the Consumer Protection (E-Commerce) Rules 2020 (G.S.R. 462(E), 23 Jul 2020): any person operating a digital platform for e-commerce must display a grievance officer's name and contact, acknowledge complaints within 48 hours and resolve them within one month, and the rules expect the entity to be a company; the IT Rules 2021 add a 24-hour acknowledgement and 15-day resolution for intermediaries. Karnataka's gig Act (in force 30 May 2025) requires aggregator registration within 45 days and a 1% welfare fee from 13 Feb 2026 — so Saathi jobs do need to wait for registration, which the guard already does. The guard is enough for business trades and Saathi jobs but not for the household phase: terms, a privacy notice, receipt wording and a named grievance officer must exist on 13 Oct, and those cannot wait for a review that may slip. Split the review into a day-one pack (terms, privacy notice, grievance officer, receipt text, Kannada versions) that must clear by 12 Oct, and a phase-two pack (business rulebook, Saathi terms, escrow) that gates those features.",
-   "status": "partly",
-   "decision": "Split the legal review: a day-one pack (terms, privacy notice, named grievance officer, receipt wording) cleared by 12 Oct or the household launch becomes invite-only; a phase-two pack gates business trades and Saathi jobs.",
-   "whoToAsk": "Counsel (day-one pack and whether the entity is a company as the E-Commerce Rules expect) and a CA for receipts and GST wording.",
-   "sources": [
+  "cluster": "Checks on the plan's 15 named risks",
+  "answers": [
     {
-     "title": "Digital Personal Data Protection Rules, 2025 — gazette text, G.S.R. 846(E), rule 1 (commencement), rule 6, rule 8, Third Schedule",
-     "url": "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf",
-     "date": "2025-11-13"
+      "question": "(1) Legal review lands after real users arrive — is 'book the review for 6–12 Oct, open with household pickups and kabadiwala tools, switch on business trades and Saathi jobs once it clears' enough?",
+      "answer": "The dates that bite are statutory, not the lawyer's. The DPDP Rules 2025 were notified on 13 Nov 2025 (G.S.R. 846(E)); rule 1 puts the substantive rules (3, 5–16, 22, 23: notice, consent, security, breach, erasure, rights) in force 18 months later, i.e. 13 May 2027, and consent-manager rule 4 at 12 months (13 Nov 2026), so DPDP does not bite on 13 Oct 2026 — but penalties run to ₹250 crore for security failures and ₹50 crore for other breaches, so the design must be right now. What does apply from day one is the Consumer Protection (E-Commerce) Rules 2020 (G.S.R. 462(E), 23 Jul 2020): any person operating a digital platform for e-commerce must display a grievance officer's name and contact, acknowledge complaints within 48 hours and resolve them within one month, and the rules expect the entity to be a company; the IT Rules 2021 add a 24-hour acknowledgement and 15-day resolution for intermediaries. Karnataka's gig Act (in force 30 May 2025) requires aggregator registration within 45 days and a 1% welfare fee from 13 Feb 2026 — so Saathi jobs do need to wait for registration, which the guard already does. The guard is enough for business trades and Saathi jobs but not for the household phase: terms, a privacy notice, receipt wording and a named grievance officer must exist on 13 Oct, and those cannot wait for a review that may slip. Split the review into a day-one pack (terms, privacy notice, grievance officer, receipt text, Kannada versions) that must clear by 12 Oct, and a phase-two pack (business rulebook, Saathi terms, escrow) that gates those features.",
+      "status": "partly",
+      "decision": "Split the legal review: a day-one pack (terms, privacy notice, named grievance officer, receipt wording) cleared by 12 Oct or the household launch becomes invite-only; a phase-two pack gates business trades and Saathi jobs.",
+      "whoToAsk": "Counsel (day-one pack and whether the entity is a company as the E-Commerce Rules expect) and a CA for receipts and GST wording.",
+      "sources": [
+        {
+          "title": "Digital Personal Data Protection Rules, 2025 — gazette text, G.S.R. 846(E), rule 1 (commencement), rule 6, rule 8, Third Schedule",
+          "url": "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf",
+          "date": "2025-11-13"
+        },
+        {
+          "title": "PIB backgrounder: DPDP Rules 2025 notified (18-month phasing; penalties ₹250/200/50 crore)",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf",
+          "date": "2025-11-17"
+        },
+        {
+          "title": "Consumer Protection (E-Commerce) Rules, 2020 — text (rule 3(1)(b), rule 4 grievance officer 48 h / 1 month, rule 5)",
+          "url": "https://www.taxtmi.com/article/detailed?id=9460",
+          "date": "2020-07-23"
+        },
+        {
+          "title": "IT (Intermediary Guidelines and Digital Media Ethics Code) Rules 2021, updated 06.04.2023 — rule 3(2): acknowledge in 24 hours, resolve in 15 days",
+          "url": "https://www.meity.gov.in/static/uploads/2024/02/Information-Technology-Intermediary-Guidelines-and-Digital-Media-Ethics-Code-Rules-2021-updated-06.04.2023-.pdf",
+          "date": "2023-04-06"
+        },
+        {
+          "title": "Mondaq: Karnataka Platform Based Gig Workers Act 2025 — notified 12 Sep 2025, effective 30 May 2025, Rules 19 Nov 2025, 45-day registration",
+          "url": "https://www.mondaq.com/india/employee-rights-labour-relations/1713454/karnataka-platform-based-gig-workers-social-security-and-welfare-act-2025",
+          "date": "2025-12-03"
+        }
+      ]
     },
     {
-     "title": "PIB backgrounder: DPDP Rules 2025 notified (18-month phasing; penalties ₹250/200/50 crore)",
-     "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf",
-     "date": "2025-11-17"
+      "question": "(2) Overclaiming traceability — is 'trace by mass balance and say so; records are supporting evidence, never certification' enough?",
+      "answer": "Mass balance is the recognised chain-of-custody method for exactly this situation: ISCC's guidance (13 Feb 2026) defines it as certified and non-certified material physically mixed through the value chain but kept separate by verifiable bookkeeping, with credits never exceeding inputs. India's own EPR machinery is quantity-based, not item-based: CPCB's e-waste FAQ (23 Jan 2024) says a recycler proves purchases with the seller's sales invoice, or, for informal-sector purchases, 'any sales receipt having name and address of the seller', and certificates are generated against quantities processed; the SWM Rules 2026 returns (rule 8(g)) are likewise tonnage by source and destination. So no regulator expects bottle-level identity, and a weighed, dated, receipted hand-off ledger is the standard of evidence. The guard is enough provided every export and receipt carries the one-line statement that this is a mass-balance record, not a chain-of-custody certificate, and the app never says 'your bottle became X'. Build the ledger so a later ISCC or Verra auditor can reconcile inputs against outputs per site per period (weight, material code, from, to, timestamp, photo hash); that is what converts a record into certifiable evidence if a brand ever asks.",
+      "status": "answered",
+      "decision": "Keep mass balance; add the disclaimer line to every receipt and export; structure the ledger as per-site, per-period input/output so it can be audited later.",
+      "whoToAsk": "",
+      "sources": [
+        {
+          "title": "ISCC — Mass balance and attribution: understanding the difference",
+          "url": "https://iscc-system.org/mass-balance-and-attribution-understanding-the-difference/",
+          "date": "2026-02-13"
+        },
+        {
+          "title": "CPCB — FAQs under E-Waste (Management) Rules 2022 (purchase proof from formal and informal sellers)",
+          "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "2024-01-23"
+        },
+        {
+          "title": "Solid Waste Management Rules 2026, S.O. 388(E) — CPCB copy (rule 8(g) quantity-based returns)",
+          "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
+          "date": "2026-01-27"
+        }
+      ]
     },
     {
-     "title": "Consumer Protection (E-Commerce) Rules, 2020 — text (rule 3(1)(b), rule 4 grievance officer 48 h / 1 month, rule 5)",
-     "url": "https://www.taxtmi.com/article/detailed?id=9460",
-     "date": "2020-07-23"
+      "question": "(3) Exchange prices (MCX/LME) on public pages — is 'no exchange number on any public screen; reference prices stay with the admin' enough?",
+      "answer": "I could not re-open the MCX data-feed page or the LME data-distribution page today: mcxindia.com returned an Akamai 'Access Denied' to both a browser fetch and curl, and lme.com sat behind a Cloudflare challenge; the plan's sources list records both as opened on 29 Sep 2026, and the search summaries of the MCX page say only delayed data may be shown on public websites, that non-members must subscribe via MCX or an authorised distributor, and that resale and public-internet display need the exchange's permission. What I could verify today is how licensed and unlicensed display looks in practice: a SEBI-registered broker (Upstox) publishes MCX copper with a timestamp (₹1,392.50 at 22:36 IST on 29 Sep 2026), and a trade magazine republishes MCX aluminium ₹351/kg and LME aluminium US$3,251.50/t (29 Sep 2026) with the note that the MCX figure is 'manually updated with verified rates' — i.e. hand-typed, not a feed. The guard is enough for launch. For the admin console, have the admin type a reference number by hand with source and date into the audit log rather than storing or redistributing any feed; that is ordinary use of a published figure, not redistribution. Licence a delayed feed only if the public price board later needs exchange-linked charts, and keep the plan's second point in mind: showing factory or exchange numbers to households exposes kabadiwala margins and is a relationship risk before it is a legal one.",
+      "status": "partly",
+      "decision": "Keep exchange numbers off public and shop-facing screens; the admin enters reference prices manually with source and date; no data feed until a licence is bought.",
+      "whoToAsk": "MCX market-data team via the data-feed page and LME market-data licensing, if a delayed feed is ever wanted; counsel is not needed for the launch position.",
+      "sources": [
+        {
+          "title": "Upstox — MCX copper price page (public display by a SEBI broker, timestamped)",
+          "url": "https://upstox.com/commodity-market-trading/mcx-copper-price/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Aluminium Magazine — current aluminium price (MCX, LME; 'manually updated')",
+          "url": "https://aluminiummagazine.com/mag/business/current-aluminium-price.html",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "MCX — Datafeed (not re-opened today: access denied; listed as opened 29 Sep 2026 in docs/plan/sources.md)",
+          "url": "https://www.mcxindia.com/technology/datafeed",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "LME — Data distribution licence (not re-opened today: Cloudflare challenge; listed as opened 29 Sep 2026 in docs/plan/sources.md)",
+          "url": "https://www.lme.com/en/market-data/market-data-licensing/data-distribution",
+          "date": "2026-09-29"
+        }
+      ]
     },
     {
-     "title": "IT (Intermediary Guidelines and Digital Media Ethics Code) Rules 2021, updated 06.04.2023 — rule 3(2): acknowledge in 24 hours, resolve in 15 days",
-     "url": "https://www.meity.gov.in/static/uploads/2024/02/Information-Technology-Intermediary-Guidelines-and-Digital-Media-Ethics-Code-Rules-2021-updated-06.04.2023-.pdf",
-     "date": "2023-04-06"
+      "question": "(4) Shared price floors read as price-fixing under Competition Act s.3 — any CCI precedent on platform-set floors or MSP-like minimums, and is 'floors framed as household protection; shops price freely above them; counsel to confirm' enough?",
+      "answer": "Section 3(3)(a) presumes harm from agreements among enterprises in the same trade that directly or indirectly determine purchase or sale prices, so buying-price coordination among shops is squarely covered, and the Competition (Amendment) Act 2023 added a proviso (notified 19 May 2023) presuming a party 'not engaged in identical or similar trade' — a platform — to be part of such an agreement 'if it participates or intends to participate in the furtherance of such agreement' (hub-and-spoke). There is no CCI or court ruling on a platform-set purchase-price floor for independent sellers; the closest precedents cut in your favour and against you at once. In favour: the Supreme Court in Samir Agrawal v CCI (15 Dec 2020) held that Ola's and Uber's app-set fares were not a hub-and-spoke cartel because thousands of drivers had no meeting of minds and merely accepted a price the platform set unilaterally. Against: the CCI found the Trustees' Association of India and three trustee companies guilty under s.3(3) for fixing minimum fees (order reported 3 Sep 2026, no penalty because members often charged below the floor), fined the Agro Input Dealers Association and office-bearers for coordinating members (21 Aug 2026, s.3(3)(b), penalties from ₹8,622 to ₹4.98 lakh), and has treated buyer–seller price arrangements (Godrej/Panasonic) under s.3(3). The line the precedents draw is agreement among competitors: a floor the admin sets alone from a documented formula, protecting the weaker side, with shops free to pay more, looks like Uber/Ola; a floor that shops vote on, that an association endorses, that is fed by shop-to-shop price sharing, or that becomes the price everyone pays looks like the trustees' case with Luma.Green as the hub. The guard is enough only with those conditions written into the product: never consult shop groups on the floor, never show one shop another shop's buying prices, and watch the share of trades struck exactly at the floor.",
+      "status": "needs-pilot-or-counsel",
+      "decision": "Keep admin-set floors from the documented formula (75% of the 28-day median), no shop consultation or association role, no shop-to-shop price visibility, and an audit metric for trades at exactly the floor; hand counsel a one-page memo on this design.",
+      "whoToAsk": "Competition counsel to confirm the design and the wording on the price board.",
+      "sources": [
+        {
+          "title": "CCI — Competition (Amendment) Act 2023, salient features (hub-and-spoke presumption)",
+          "url": "https://www.cci.gov.in/images/publications_booklet/en/competition-amendment-act-2023-salient-features1684831868.pdf",
+          "date": "2023-05-23"
+        },
+        {
+          "title": "SCC Online blog — Navigating hub-and-spoke cartels in India: the new proviso to s.3(3), notified 19 May 2023",
+          "url": "https://www.scconline.com/blog/post/2023/10/05/navigating-hub-and-spoke-cartel-in-india-an-analytical-overview-of-new-provision/",
+          "date": "2023-10-05"
+        },
+        {
+          "title": "Supreme Court — Samir Agrawal v Competition Commission of India (Ola/Uber, no hub-and-spoke)",
+          "url": "https://indiankanoon.org/doc/65191688/",
+          "date": "2020-12-15"
+        },
+        {
+          "title": "Bar & Bench — CCI holds Trustees' Association of India guilty of cartelisation for fixing minimum fees",
+          "url": "https://www.barandbench.com/news/litigation/cci-holds-trustees-association-of-india-guilty-of-cartelisation-for-fixing-minimum-fees",
+          "date": "2026-09-03"
+        },
+        {
+          "title": "IntoLegalWorld — CCI penalises Agro Input Dealers Association (order of 21 Aug 2026)",
+          "url": "https://www.intolegalworld.com/post/cci-penalises-agro-input-dealers-association-for-cartelisation-case-analysis-of-the-august-2026-ord",
+          "date": "2026-08-21"
+        },
+        {
+          "title": "Mondaq — Buyer–seller arrangements: is CCI expanding the cartel horizons? (Godrej/Panasonic)",
+          "url": "https://www.mondaq.com/india/antitrust-eu-competition-/861018/buyer-seller-arrangements-is-cci-expanding-the-cartel-horizons",
+          "date": "2019-12-16"
+        }
+      ]
     },
     {
-     "title": "Mondaq: Karnataka Platform Based Gig Workers Act 2025 — notified 12 Sep 2025, effective 30 May 2025, Rules 19 Nov 2025, 45-day registration",
-     "url": "https://www.mondaq.com/india/employee-rights-labour-relations/1713454/karnataka-platform-based-gig-workers-social-security-and-welfare-act-2025",
-     "date": "2025-12-03"
+      "question": "(5) Price crashes and stale floors — is 'floors as a share of the reference price, a suspend switch, dated rows' enough?",
+      "answer": "The crash the plan cites is real and sourced: the Indian Recovered Paper Traders Association said on 9 Jun 2023 that domestic recovered-paper collection had fallen 50–55% and about 30% of kabadiwalas and feriwalas had left the trade when kraft waste paper dropped to ₹11,000–13,500 per tonne (₹11,000 in Chennai); on 16 Feb 2024 the same association reported a further 20% fall within about ten days (₹19.50 to ₹15.50–16 per kg) as mills cut rates. Today's retail kabadiwala rates in Bangalore on a public rate card are newspaper ₹10/kg, carton ₹3/kg, PET ₹10/kg, iron ₹22/kg, aluminium ₹150/kg and copper ₹500/kg, so a 20% move in ten days on paper is a ₹2/kg move against a ₹10 price. A floor set at 75% of a 28-day median is above market within about two weeks of a 2023-style fall, because the median lags; the suspend switch then depends on someone noticing. The guard's mechanics are right but need a trigger: flag a material when its 7-day median falls below floor ÷ 0.9, auto-suspend the floor for that material when a set share of trades is refused or struck at the floor for three days, and show the floor's date on the price board so shops see it is not stale. No further figures are needed; the missing item is your own trade data, which the pilot will produce.",
+      "status": "answered",
+      "decision": "Keep 75% of the 28-day median as the default, add a 7-day trigger and a per-material auto-suspend, and print the floor date on the board.",
+      "whoToAsk": "",
+      "sources": [
+        {
+          "title": "The Pulp and Paper Times — Price of waste paper plummeted to its lowest level in five months (IRPTA: collection down 50–55%)",
+          "url": "https://thepulpandpapertimes.com/news/price-of-waste-paper-plummeted-to-its-lowest-level-in-the-previous-five-months-881",
+          "date": "2023-06-09"
+        },
+        {
+          "title": "The Pulp and Paper Times — Domestic waste paper prices experience sharp decline (20% in ten days)",
+          "url": "https://thepulpandpapertimes.com/news/india/domestic-waste-paper-prices-1003",
+          "date": "2024-02-16"
+        },
+        {
+          "title": "The Kabadiwala — Scrap prices in Bangalore (live rate card)",
+          "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+          "date": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "question": "(6) Hazardous material to the wrong buyer — is 'sell only to businesses whose registration the admin verified; decide whether to hide them from the household pilot' enough?",
+      "answer": "The rules are explicit about who may receive each stream. E-Waste (Management) Rules 2022 (in force 1 Apr 2023): CPCB's FAQ of 23 Jan 2024 says only producers, recyclers and refurbishers registered on the EPR portal may collect e-waste, bulk consumers must hand e-waste only to them, and registered entities may not deal with unregistered ones; a recycler buying from the informal sector must upload a receipt with the seller's name and address. Battery Waste Management Rules 2022 (22 Aug 2022) make consumers discard batteries separately to a collection or recycling entity and keep the list of registered recyclers with the State Pollution Control Boards. Used oil has had EPR since 1 Apr 2024 (Hazardous and Other Wastes Second Amendment Rules 2023): collection agents and recyclers must register on CPCB's portal. Waste tyres have EPR under the Hazardous and Other Wastes Amendment Rules 2022, with producers, recyclers and retreaders registered on CPCB's tyre portal. A kabadiwala is not a registered e-waste collector, so a household-to-kabadiwala e-waste sale inside the app is the informal channel these rules try to close; the exposure sits with the shop and the recycler, but the platform that arranged it will be named. The guard is right for business trades if the admin records the CPCB or KSPCB registration number and its expiry and checks it on the portal; for households the answer to the plan's open decision is to keep e-waste, batteries, tyres and used oil out of the pilot and show a 'where to take this' note instead.",
+      "status": "answered",
+      "decision": "Exclude e-waste, batteries, tyres and used oil from the household pilot; allow them only business-to-registered-recycler with the registration number verified on the CPCB or KSPCB portal.",
+      "whoToAsk": "KSPCB for the Karnataka authorised-recycler lists; the CPCB e-waste, battery, used-oil and tyre portals for registration checks.",
+      "sources": [
+        {
+          "title": "CPCB — FAQs under E-Waste (Management) Rules 2022",
+          "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "2024-01-23"
+        },
+        {
+          "title": "SCC Online blog — Battery Waste Management Rules 2022 (notified 22 Aug 2022; consumer duties)",
+          "url": "https://www.scconline.com/blog/post/2022/08/26/battery-waste-management-rule-2022/",
+          "date": "2022-08-26"
+        },
+        {
+          "title": "CPCB — FAQs under Battery Waste Management Rules 2022 (registered recycler lists via SPCBs)",
+          "url": "https://eprbattery.cpcb.gov.in/upload/adminDoc/Frequently%20Asked%20Questions%20(General).pdf",
+          "date": "2023-03-21"
+        },
+        {
+          "title": "CPCB Used Oil EPR portal — About (EPR from 1 Apr 2024; collection agents and recyclers register)",
+          "url": "https://eprusedoil.cpcb.gov.in/aboutus",
+          "date": "2024-04-01"
+        },
+        {
+          "title": "CPCB Waste Tyre EPR portal (Hazardous and Other Wastes Amendment Rules 2022)",
+          "url": "https://eprtyres.cpcb.gov.in/",
+          "date": "2022-07-21"
+        }
+      ]
+    },
+    {
+      "question": "(7) Gig-worker law — is 'Saathi work register, written terms, fee calculator; counsel on classification' enough?",
+      "answer": "Two regimes apply and neither turns on whether Saathis are employees. The Code on Social Security 2020 came into force on 21 Nov 2025; an 'aggregator' is 'a digital intermediary or a market place for a buyer or user of a service to connect with the seller or the service provider', Schedule VII lists nine categories including logistics, e-marketplace and 'any other goods and services provider platform', and s.114(4) sets a contribution of 1–2% of annual turnover capped at 5% of payments to gig workers — but as of 1 Jul 2026 neither the rate nor the start date had been notified. Karnataka's Platform Based Gig Workers (Social Security and Welfare) Act 2025 is live: effective 30 May 2025 (ordinance), Act notified 12 Sep 2025, Rules 19 Nov 2025; aggregators register with the Welfare Board within 45 days and file a machine-readable worker database; the welfare fee was notified on 16 Feb 2026 at 1% per transaction with caps of ₹0.50–₹1.50 (logistics two-wheeler ₹0.50, e-marketplace two-wheeler ₹0.50, professional services ₹1.50), effective 13 Feb 2026, deposited quarterly and self-reported until the verification system runs; the Rules give Saathi-type grievances 7 working days to be raised and 15 working days to be resolved; penalties run ₹5,000–₹1 lakh with 12% interest on unpaid fees. Swiggy, Zomato, Zepto and IAMAI have challenged the Act in the Karnataka High Court, which refused a stay (8 Jul 2026). A pickup-and-sorting app paying Saathis per job through the platform is an aggregator on either definition; the open point is only which schedule row (logistics or e-marketplace) sets the cap. The guard is right and the cost is small (1% of Saathi payouts, at most ₹1.50 a job); what is missing is the registration itself, which must precede the first paid job.",
+      "status": "answered",
+      "decision": "Register as an aggregator with the Karnataka Welfare Board before the first Saathi job, budget the 1% welfare fee as a line in the fee calculator, and keep the Code on Social Security contribution as a watch item.",
+      "whoToAsk": "Karnataka Labour Department / Platform Based Gig Workers Welfare Board for the schedule row; counsel for the Saathi terms.",
+      "sources": [
+        {
+          "title": "Taxmann — Aggregator obligations under the Code on Social Security 2020 (in force 21 Nov 2025; s.114(4); Schedule VII)",
+          "url": "https://www.taxmann.com/post/blog/analysis-aggregator-obligations-code-on-social-security/",
+          "date": "2026-09-25"
+        },
+        {
+          "title": "Mondaq — Karnataka Platform Based Gig Workers Act 2025 (dates, 45-day registration)",
+          "url": "https://www.mondaq.com/india/employee-rights-labour-relations/1713454/karnataka-platform-based-gig-workers-social-security-and-welfare-act-2025",
+          "date": "2025-12-03"
+        },
+        {
+          "title": "SCC Online blog — Karnataka notifies gig workers' welfare fee (1% with caps, effective 13 Feb 2026)",
+          "url": "https://www.scconline.com/blog/post/2026/02/18/karnataka-government-notifies-gig-workers-welfare-fee-mandatory/",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "The South First — Karnataka gig workers Rules: portal registration, 7/15 working-day grievance timelines",
+          "url": "https://thesouthfirst.com/karnataka/karnataka-platform-based-gig-workers-act-2025-rules-notified-board-to-meet-at-least-once-every-three-months/",
+          "date": "2026-03-31"
+        },
+        {
+          "title": "PRS — Karnataka Platform Based Gig Workers Bill 2025 (penalties ₹5,000–₹1 lakh; 12% interest)",
+          "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025",
+          "date": "2025-08-12"
+        },
+        {
+          "title": "Business Standard — Karnataka Gig Workers Act: what the law says and why it is contested (High Court challenge, no stay)",
+          "url": "https://www.business-standard.com/india-news/karnataka-gig-workers-act-explained-benefits-high-court-platforms-126070800776_1.html",
+          "date": "2026-07-08"
+        }
+      ]
+    },
+    {
+      "question": "(8) SWM Rules 2026 making informal shops visible — is 'city exports carry totals only; business data shared with consent; a help-me-register task' enough?",
+      "answer": "The Solid Waste Management Rules 2026 (S.O. 388(E), 27 Jan 2026, in force 1 Apr 2026) define an 'informal waste collector' to include 'individuals, associations or waste traders' engaged in 'collecting, segregating, sorting, sale and purchase of waste materials' — that is the kabadiwala. The duties I could find run through the local body rather than the shop: rule 39(53) makes urban local bodies build a ward-wise database on the central portal of everyone, 'including in informal sector such as waste pickers or collectors', involved in collection, sorting, transport or recycling, and rule 39(54) tells them to integrate those people and organisations; rule 8 makes local bodies, concessionaires and any third party they authorise register on the portal; CPCB's summary adds 'no engagement with unregistered or unauthorised entities' and a portal target of 1 Oct 2026. Rule 17 lets State Pollution Control Boards levy environmental compensation on 'entities carrying out activities without registration as mandated' and on entities engaged in collection, sorting or transport, under guidelines CPCB has yet to publish, with action under s.15 of the Environment (Protection) Act on top. So the text does not fine a kabadiwala today for being unregistered, but it makes unregistered shops non-compliant counterparties as soon as the local database and CPCB's guidelines exist, and Down To Earth (29 Jan 2026) notes the rules say little about how integration should happen. The guard is enough for the pilot; the 'help me register' task is the right response because the ward database is where shops will need to appear. Add one thing: treat any request from GBA, BSWML or KSPCB for shop-level data as a legal request that goes to counsel, not an export button.",
+      "status": "partly",
+      "decision": "Keep totals-only exports and per-business consent; add a 'share my registration with GBA' consent flag; route any authority data request through counsel; watch for CPCB's environmental-compensation guidelines.",
+      "whoToAsk": "GBA/BSWML solid-waste cell on the ward database and KSPCB on compensation guidelines once CPCB publishes them.",
+      "sources": [
+        {
+          "title": "Solid Waste Management Rules 2026, S.O. 388(E) — CPCB copy (definition (zb), rules 8, 17, 39(53)–(54))",
+          "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "CPCB — Salient features of Solid Waste Management Rules 2026",
+          "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Down To Earth — India's new Solid Waste Management Rules promise greater discipline while navigating familiar fault lines",
+          "url": "https://www.downtoearth.org.in/waste/indias-new-solid-waste-management-rules-promise-greater-discipline-while-navigating-familiar-fault-lines",
+          "date": "2026-01-29"
+        }
+      ]
+    },
+    {
+      "question": "(9) DPDP retention (logs kept a year) vs the promise to delete household photos at 90 days — is 'delete images, keep a hash and metadata; counsel to reconcile' enough?",
+      "answer": "The two obligations are about different things and do not collide. Rule 6(1)(e) of the DPDP Rules 2025 requires a data fiduciary to 'retain such logs and personal data for a period of one year' for detecting and investigating unauthorised access — the access logs and what is needed to investigate a breach, unless another law says otherwise. Rule 8(3) requires retaining 'personal data, associated traffic data and other logs of the processing' for at least one year for the Seventh Schedule (state-request) purposes, and its illustration is an e-book platform keeping order, payment and delivery events for a year even after the user deletes the account. The Third Schedule's three-years-from-last-activity rule applies only to e-commerce entities with at least two crore registered users, gaming intermediaries with fifty lakh and social-media intermediaries with two crore, so it does not reach Luma.Green. All of this (rules 3, 5–16) starts on 13 May 2027, and the Act itself wants personal data erased once its purpose is served. A household photo is content whose purpose ends with the pickup; the event record (who uploaded what, when, its hash, the pickup and payment events) is the log. Deleting the image at 90 days while keeping that record for twelve months and then erasing it satisfies both rules, so the guard is enough; write it into the privacy notice in those words.",
+      "status": "answered",
+      "decision": "Keep: photo deleted at 90 days; event log with hash retained 12 months then erased; state both in the privacy notice before 13 May 2027.",
+      "whoToAsk": "Counsel only to sign off the notice wording.",
+      "sources": [
+        {
+          "title": "Digital Personal Data Protection Rules, 2025 — gazette text, rule 1(4), rule 6(1)(e), rule 8, Third Schedule",
+          "url": "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf",
+          "date": "2025-11-13"
+        },
+        {
+          "title": "dpdpa.com — Rule 6 text",
+          "url": "https://www.dpdpa.com/dpdparules/rule6.html",
+          "date": "2025-11-13"
+        },
+        {
+          "title": "dpdpa.com — Rule 8 text",
+          "url": "https://www.dpdpa.com/dpdparules/rule8.html",
+          "date": "2025-11-13"
+        }
+      ]
+    },
+    {
+      "question": "(10) App weights read as certified — is 'receipts say recorded weight; the stamped scale stays the legal record' enough?",
+      "answer": "The law attaches to the scale, not the app. Section 24 of the Legal Metrology Act 2009 requires any weight or measure that is or is likely to be 'used in any transaction' to be verified and stamped before use; s.33 punishes use of an unverified weight with a fine of ₹2,000 to ₹10,000 and up to one year's imprisonment for a repeat; s.25 punishes non-standard weights with fines up to ₹25,000; ss.10–11 require prices to be quoted in standard units. Electronic scales are re-stamped annually, and Karnataka's e-Mapan portal issues and lets you search verification certificates. The Jan Vishwas (Amendment of Provisions) Act 2026 (passed 1–2 Apr 2026) brings improvement notices for a first offence; the Department of Consumer Affairs brought the Legal Metrology amendments into force from 1 May 2026 (S.O. 2103(E), 27 Apr 2026). So the app's 'recorded weight' label is fine, and the real exposure is a shop pricing a household on an unstamped or expired scale. The guard is enough but incomplete: capture each business's e-Mapan verification certificate number and expiry at onboarding, print 'weighed on the shop's scale, certificate no. …' on receipts, and never use the word 'certified' for an app value.",
+      "status": "answered",
+      "decision": "Keep 'recorded weight'; add a per-business scale-certificate field with expiry (e-Mapan) and show it on receipts.",
+      "whoToAsk": "Karnataka Legal Metrology (toll-free 1800 599 1100) for a formal reading on receipt wording, if counsel wants it.",
+      "sources": [
+        {
+          "title": "Legal Metrology Act 2009 — full text (ss.10–11, 24, 25, 33)",
+          "url": "https://indiankanoon.org/doc/122504373/",
+          "date": "2010-01-13"
+        },
+        {
+          "title": "PRS — The Jan Vishwas (Amendment of Provisions) Bill 2026 (improvement notices under the Legal Metrology Act)",
+          "url": "https://prsindia.org/billtrack/the-jan-vishwas-amendment-of-provisions-bill-2026",
+          "date": "2026-04-02"
+        },
+        {
+          "title": "TeamLease RegTech — DoCA brings Jan Vishwas Legal Metrology amendments into force from 1 May 2026 (S.O. 2103(E))",
+          "url": "https://www.teamleaseregtech.com/updates/article/55280/doca-enforcement-of-jan-vishwas-amendments-relating-to-legal-metrology/",
+          "date": "2026-04-27"
+        },
+        {
+          "title": "e-Mapan — Department of Legal Metrology, Government of Karnataka (verification certificate search)",
+          "url": "https://emapan.karnataka.gov.in/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "legalmetrologyindia.com — Legal Metrology stamping of weighing scales (annual re-stamping)",
+          "url": "https://legalmetrologyindia.com/blog/legal-metrology-stamping-of-weighing-scale/",
+          "date": "2025-02-07"
+        }
+      ]
+    },
+    {
+      "question": "(11) Waste-picker politics in Bengaluru — is 'co-design with Hasiru Dala and the union; pickers must earn more, not less' enough?",
+      "answer": "Bengaluru's dry-waste chain runs through ward Dry Waste Collection Centres operated by waste-picker entrepreneurs with Hasiru Dala's support: each ward has a DWCC that sorts dry waste and sells it to recyclers, Hasiru Dala manages 40 of them across eight divisions, and 30–40% of dry waste is recycled through them. The 2026 picture is unsettled: BSWML is replacing the ad hoc door-to-door contracts with 33 constituency packages using GPS-tracked three-tonne vehicles (21 approved, work orders being issued, 5 Sep 2026), seven packages had to be re-tendered on 22 Sep 2026 after the lowest bidders declined, and in March 2026 a blocked landfill and contractors paying workers irregularly produced a city-wide crisis. The SWM Rules 2026 now oblige local bodies to database and integrate waste pickers and informal collectors (rule 39(53)–(54)). A household-to-kabadiwala app therefore competes at ward level for the same sellable dry waste the DWCC depends on, and pickers and DWCC operators will read it as diversion unless they are inside it. The guard names the right partners but no mechanism; the mechanism is to onboard DWCC operators as shops (they are the ward's authorised dry-waste receivers), let pickers register as Saathis, and start only in wards whose DWCC operator has agreed. This cannot be settled from public pages; it is a negotiation.",
+      "status": "needs-pilot-or-counsel",
+      "decision": "Sign an MoU with Hasiru Dala before 13 Oct; pilot only in wards whose DWCC operator is onboarded as a shop; offer pickers Saathi registration first.",
+      "whoToAsk": "Hasiru Dala, the waste-pickers' union, and the GBA/BSWML solid-waste cell.",
+      "sources": [
+        {
+          "title": "The News Minute — Study on the contribution of Bengaluru waste pickers (40 DWCCs; 30–40% recycled)",
+          "url": "https://www.thenewsminute.com/karnataka/this-study-brought-the-contribution-of-bengaluru-waste-pickers-to-the-forefront",
+          "date": "2023-12-13"
+        },
+        {
+          "title": "Project Tech4Dev — Hasiru Dala: about dry waste collection centres",
+          "url": "https://projecttech4dev.org/hasiru-dala-about-dry-waste-collection-centres/",
+          "date": "2019-11-01"
+        },
+        {
+          "title": "Deccan Herald — New waste collection contracts to roll out in two months: Krishna Byre Gowda",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/new-waste-collection-contracts-to-roll-out-in-two-months-krishna-byre-gowda-4136380",
+          "date": "2026-09-05"
+        },
+        {
+          "title": "Deccan Herald — Seven Bengaluru garbage collection packages re-tendered",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/seven-bengaluru-garbage-collection-packages-re-tendered-what-went-wrong-4154643",
+          "date": "2026-09-22"
+        },
+        {
+          "title": "The South First — Bengaluru's garbage crisis: blocked landfills, unpaid workers and piling waste",
+          "url": "https://thesouthfirst.com/karnataka/bengalurus-garbage-crisis-blocked-landfills-unpaid-workers-and-piling-waste/",
+          "date": "2026-03-05"
+        },
+        {
+          "title": "Solid Waste Management Rules 2026 — rule 39(53)–(54) on waste-picker databases and integration",
+          "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
+          "date": "2026-01-27"
+        }
+      ]
+    },
+    {
+      "question": "(12) Support promises one person can't keep (15-minute replies, 10-minute safety callbacks) — is 'a rota of at least two before 13 Oct; auto-accept limited to shop hours' enough?",
+      "answer": "No law requires 15-minute replies or 10-minute callbacks; the legal minimums are slower and are the ones that must be met. The Consumer Protection (E-Commerce) Rules 2020 require a displayed grievance officer who acknowledges within 48 hours and resolves within one month; the IT Rules 2021 require intermediaries to acknowledge within 24 hours and resolve within 15 days; Karnataka's gig Rules give Saathi grievances 15 working days to be resolved. A published 15-minute promise becomes a term of service the moment it appears on the site, and a missed safety callback is a reputational and possibly tortious problem regardless of law. The guard (two people on a rota, auto-accept only in shop hours) is the right operational floor, but the promise should be rewritten: publish 24-hour acknowledgement and 15-day resolution as commitments, keep 15 minutes as an internal target shown nowhere, and for safety callbacks promise only what a two-person duty phone can deliver (for example 30 minutes, 8am–8pm) with a plain 'call 112' line for emergencies.",
+      "status": "answered",
+      "decision": "Publish 24 h / 15 days as the commitments and a named grievance officer; keep 15 minutes and 10 minutes as internal targets; staff a two-person duty phone for safety callbacks in stated hours.",
+      "whoToAsk": "",
+      "sources": [
+        {
+          "title": "Consumer Protection (E-Commerce) Rules, 2020 — rule 4(4)–(5) grievance officer, 48 hours / one month",
+          "url": "https://www.taxtmi.com/article/detailed?id=9460",
+          "date": "2020-07-23"
+        },
+        {
+          "title": "IT (Intermediary Guidelines and Digital Media Ethics Code) Rules 2021, updated 06.04.2023 — rule 3(2)",
+          "url": "https://www.meity.gov.in/static/uploads/2024/02/Information-Technology-Intermediary-Guidelines-and-Digital-Media-Ethics-Code-Rules-2021-updated-06.04.2023-.pdf",
+          "date": "2023-04-06"
+        },
+        {
+          "title": "The South First — Karnataka gig workers Rules: grievances within 7 working days, resolved in 15",
+          "url": "https://thesouthfirst.com/karnataka/karnataka-platform-based-gig-workers-act-2025-rules-notified-board-to-meet-at-least-once-every-three-months/",
+          "date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "question": "(13) Plastic-credit revenue and additionality — is 'kept out of the base case' enough?",
+      "answer": "Yes, and the reason is now written into the standard. Verra's corrections and clarifications to the Plastic Waste Collection Methodology PWRM0001 (12 Aug 2024, effective immediately) require project proponents to list every binding law on plastic collection in the region and to treat 'mandated extended producer responsibility (EPR) schemes in a project region' as part of the regulatory-surplus test; a project may still claim surplus only by showing those requirements are not systematically enforced, for example that the regional compliance rate is below 50%. India's Plastic Waste Management Rules run a CPCB EPR-certificate market in which registered recyclers generate credits by tonnage and producers buy them, so plastic that Luma.Green's chain sells into that certificate stream is already counted against a producer's obligation and cannot also be sold as a voluntary credit without double counting. Proving a sub-50% compliance rate for Bengaluru is a research project with a validation body, not a pilot task. Keeping plastic credits out of the base case is the right call; if it is revisited, the first question is whether the recyclers in the chain generate EPR certificates on that material.",
+      "status": "answered",
+      "decision": "Keep plastic credits out of the base case; revisit only with a Verra validation body and evidence on regional EPR compliance.",
+      "whoToAsk": "A Verra-approved validation body, if ever pursued.",
+      "sources": [
+        {
+          "title": "Verra — Corrections and clarifications to the Plastic Waste Collection Methodology PWRM0001 (regulatory surplus and EPR)",
+          "url": "https://verra.org/wp-content/uploads/2024/08/Plastic-Waste-Collection-Methodology-PWRM0001-CC-12-Aug-2024.pdf",
+          "date": "2024-08-12"
+        },
+        {
+          "title": "Verra — Program notice: corrections and clarifications to Plastic Program documents",
+          "url": "https://verra.org/program-notice/corrections-and-clarifications-to-plastic-program-documents/",
+          "date": "2024-08-12"
+        },
+        {
+          "title": "CPCB — FAQs under E-Waste (Management) Rules 2022 (EPR certificates generated by registered recyclers by quantity; same portal model as plastics)",
+          "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "2024-01-23"
+        }
+      ]
+    },
+    {
+      "question": "(14) Escrow eligibility — split settlement needs ₹40 lakh of our own turnover; is 'bank escrow with a trustee, or each yard as its own merchant' enough?",
+      "answer": "The ₹40 lakh figure is confirmed and comes from the regulator, not just the vendor. The RBI (Regulation of Payment Aggregators) Directions 2025 (15 Sep 2025, effective immediately) require a non-bank PA to hold ₹15 crore net worth at application and ₹25 crore within three years, bar a PA from running a marketplace, let a marketplace onboarded by a PA accept payments only for sellers onboarded on its platform, and allow a PA to pay a third party on a merchant's instruction only where the merchant has annual turnover above ₹40 lakh (or export turnover above ₹5 lakh) and the third party is the payee who interfaces with the payer. Razorpay Route applies exactly that: domestic turnover above ₹40 lakh on GSTR-3B in FY25 or FY26, a written use-case confirmation, and proofs that were due by 31 Dec 2025. A new company with no filed turnover therefore cannot use Route-style split settlement, so the pilot's simulated escrow is the only honest option now. The two fallbacks in the plan are the right ones: each yard or recycler as its own merchant on a PA, with the buyer paying the yard directly and Luma.Green invoicing its fee separately; or a bank escrow with a trustee (RazorpayX Escrow+ routes through ICICI, RBL and Yes Bank with trusteeship bundled; pricing is not published). The guard is enough; the missing numbers are escrow fees and setup time, which only a quote will give.",
+      "status": "answered",
+      "decision": "Pilot with simulated escrow; at go-live use direct-to-yard payment through a PA with Luma.Green's fee invoiced separately; move to a bank escrow with trustee when volumes justify the fees; revisit Route once GSTR-3B shows ₹40 lakh.",
+      "whoToAsk": "Razorpay or Cashfree sales for split-settlement onboarding; a bank escrow desk (ICICI, RBL or Yes Bank) for trustee fees and setup time.",
+      "sources": [
+        {
+          "title": "RBI — Reserve Bank of India (Regulation of Payment Aggregators) Directions, 2025",
+          "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "Vinod Kothari Consultants — Key highlights of the PA Directions 2025",
+          "url": "https://vinodkothari.com/wp-content/uploads/2025/09/Key-Highlights-of-PA-2025-2.pdf",
+          "date": "2025-09-16"
+        },
+        {
+          "title": "Medianama — Explained: RBI's master direction for payment aggregators",
+          "url": "https://www.medianama.com/2025/09/223-explained-rbi-master-direction-payment-aggregators/",
+          "date": "2025-09-16"
+        },
+        {
+          "title": "Razorpay Docs — Route (eligibility: ₹40 lakh domestic turnover, FY25/FY26)",
+          "url": "https://razorpay.com/docs/payments/route/?preferred-country=IN",
+          "date": "2025-12-31"
+        },
+        {
+          "title": "RazorpayX Escrow+ accounts (escrow, bank, trustee)",
+          "url": "https://razorpay.com/x/escrow-accounts/",
+          "date": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "question": "(15) Demo data mistaken for real firms — is 'demo GSTINs fail the GSTIN checksum, names are invented, every screen with sample figures says so' enough?",
+      "answer": "A GSTIN is 15 characters: a two-digit state code, the ten-character PAN, an entity code, the letter Z and a check character computed from the first 14 with a 36-symbol alphabet and alternating weights of 1 and 2 (the ISO 7064 MOD 37-36 family). A string whose check character does not match cannot be a real registration, and the GST portal's search rejects it, so a checksum-invalid demo GSTIN can never collide with a real firm; the converse also holds — a checksum-valid string is only 'internally consistent' and only GSTN's search or API proves it exists (dev.to, 8 Aug 2026). The guard is therefore enough for GSTINs, and the invented names and sample-figures banner cover the rest of the screen. Extend the same idea to the other identifiers demo screens show: consent numbers are not checksummed, so prefix them 'DEMO-'; use phone numbers that cannot be Indian mobiles (Indian mobiles start with 6–9); and keep demo tenants in a separate environment so a demo row can never be exported with real ones. At onboarding, verify every real GSTIN against the GST portal's public search before the admin approves a business.",
+      "status": "answered",
+      "decision": "Keep; add DEMO- prefixes to consent numbers, impossible phone numbers, a separate demo tenant, and GST-portal verification of real GSTINs at onboarding.",
+      "whoToAsk": "",
+      "sources": [
+        {
+          "title": "dev.to — How GSTIN checksum validation works (and why it isn't enough)",
+          "url": "https://dev.to/tarun_vaghasia_a387e1ac9b/how-gstin-checksum-validation-works-and-why-it-isnt-enough-3l8e",
+          "date": "2026-08-08"
+        },
+        {
+          "title": "GST portal — Search taxpayer by GSTIN/UIN",
+          "url": "https://services.gst.gov.in/services/searchtp",
+          "date": "2026-09-29"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "(2) Overclaiming traceability — is 'trace by mass balance and say so; records are supporting evidence, never certification' enough?",
-   "answer": "Mass balance is the recognised chain-of-custody method for exactly this situation: ISCC's guidance (13 Feb 2026) defines it as certified and non-certified material physically mixed through the value chain but kept separate by verifiable bookkeeping, with credits never exceeding inputs. India's own EPR machinery is quantity-based, not item-based: CPCB's e-waste FAQ (23 Jan 2024) says a recycler proves purchases with the seller's sales invoice, or, for informal-sector purchases, 'any sales receipt having name and address of the seller', and certificates are generated against quantities processed; the SWM Rules 2026 returns (rule 8(g)) are likewise tonnage by source and destination. So no regulator expects bottle-level identity, and a weighed, dated, receipted hand-off ledger is the standard of evidence. The guard is enough provided every export and receipt carries the one-line statement that this is a mass-balance record, not a chain-of-custody certificate, and the app never says 'your bottle became X'. Build the ledger so a later ISCC or Verra auditor can reconcile inputs against outputs per site per period (weight, material code, from, to, timestamp, photo hash); that is what converts a record into certifiable evidence if a brand ever asks.",
-   "status": "answered",
-   "decision": "Keep mass balance; add the disclaimer line to every receipt and export; structure the ledger as per-site, per-period input/output so it can be audited later.",
-   "whoToAsk": "",
-   "sources": [
-    {
-     "title": "ISCC — Mass balance and attribution: understanding the difference",
-     "url": "https://iscc-system.org/mass-balance-and-attribution-understanding-the-difference/",
-     "date": "2026-02-13"
-    },
-    {
-     "title": "CPCB — FAQs under E-Waste (Management) Rules 2022 (purchase proof from formal and informal sellers)",
-     "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
-     "date": "2024-01-23"
-    },
-    {
-     "title": "Solid Waste Management Rules 2026, S.O. 388(E) — CPCB copy (rule 8(g) quantity-based returns)",
-     "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
-     "date": "2026-01-27"
-    }
-   ]
-  },
-  {
-   "question": "(3) Exchange prices (MCX/LME) on public pages — is 'no exchange number on any public screen; reference prices stay with the admin' enough?",
-   "answer": "I could not re-open the MCX data-feed page or the LME data-distribution page today: mcxindia.com returned an Akamai 'Access Denied' to both a browser fetch and curl, and lme.com sat behind a Cloudflare challenge; the plan's sources list records both as opened on 29 Sep 2026, and the search summaries of the MCX page say only delayed data may be shown on public websites, that non-members must subscribe via MCX or an authorised distributor, and that resale and public-internet display need the exchange's permission. What I could verify today is how licensed and unlicensed display looks in practice: a SEBI-registered broker (Upstox) publishes MCX copper with a timestamp (₹1,392.50 at 22:36 IST on 29 Sep 2026), and a trade magazine republishes MCX aluminium ₹351/kg and LME aluminium US$3,251.50/t (29 Sep 2026) with the note that the MCX figure is 'manually updated with verified rates' — i.e. hand-typed, not a feed. The guard is enough for launch. For the admin console, have the admin type a reference number by hand with source and date into the audit log rather than storing or redistributing any feed; that is ordinary use of a published figure, not redistribution. Licence a delayed feed only if the public price board later needs exchange-linked charts, and keep the plan's second point in mind: showing factory or exchange numbers to households exposes kabadiwala margins and is a relationship risk before it is a legal one.",
-   "status": "partly",
-   "decision": "Keep exchange numbers off public and shop-facing screens; the admin enters reference prices manually with source and date; no data feed until a licence is bought.",
-   "whoToAsk": "MCX market-data team via the data-feed page and LME market-data licensing, if a delayed feed is ever wanted; counsel is not needed for the launch position.",
-   "sources": [
-    {
-     "title": "Upstox — MCX copper price page (public display by a SEBI broker, timestamped)",
-     "url": "https://upstox.com/commodity-market-trading/mcx-copper-price/",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "Aluminium Magazine — current aluminium price (MCX, LME; 'manually updated')",
-     "url": "https://aluminiummagazine.com/mag/business/current-aluminium-price.html",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "MCX — Datafeed (not re-opened today: access denied; listed as opened 29 Sep 2026 in docs/plan/sources.md)",
-     "url": "https://www.mcxindia.com/technology/datafeed",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "LME — Data distribution licence (not re-opened today: Cloudflare challenge; listed as opened 29 Sep 2026 in docs/plan/sources.md)",
-     "url": "https://www.lme.com/en/market-data/market-data-licensing/data-distribution",
-     "date": "2026-09-29"
-    }
-   ]
-  },
-  {
-   "question": "(4) Shared price floors read as price-fixing under Competition Act s.3 — any CCI precedent on platform-set floors or MSP-like minimums, and is 'floors framed as household protection; shops price freely above them; counsel to confirm' enough?",
-   "answer": "Section 3(3)(a) presumes harm from agreements among enterprises in the same trade that directly or indirectly determine purchase or sale prices, so buying-price coordination among shops is squarely covered, and the Competition (Amendment) Act 2023 added a proviso (notified 19 May 2023) presuming a party 'not engaged in identical or similar trade' — a platform — to be part of such an agreement 'if it participates or intends to participate in the furtherance of such agreement' (hub-and-spoke). There is no CCI or court ruling on a platform-set purchase-price floor for independent sellers; the closest precedents cut in your favour and against you at once. In favour: the Supreme Court in Samir Agrawal v CCI (15 Dec 2020) held that Ola's and Uber's app-set fares were not a hub-and-spoke cartel because thousands of drivers had no meeting of minds and merely accepted a price the platform set unilaterally. Against: the CCI found the Trustees' Association of India and three trustee companies guilty under s.3(3) for fixing minimum fees (order reported 3 Sep 2026, no penalty because members often charged below the floor), fined the Agro Input Dealers Association and office-bearers for coordinating members (21 Aug 2026, s.3(3)(b), penalties from ₹8,622 to ₹4.98 lakh), and has treated buyer–seller price arrangements (Godrej/Panasonic) under s.3(3). The line the precedents draw is agreement among competitors: a floor the admin sets alone from a documented formula, protecting the weaker side, with shops free to pay more, looks like Uber/Ola; a floor that shops vote on, that an association endorses, that is fed by shop-to-shop price sharing, or that becomes the price everyone pays looks like the trustees' case with Luma.Green as the hub. The guard is enough only with those conditions written into the product: never consult shop groups on the floor, never show one shop another shop's buying prices, and watch the share of trades struck exactly at the floor.",
-   "status": "needs-pilot-or-counsel",
-   "decision": "Keep admin-set floors from the documented formula (75% of the 28-day median), no shop consultation or association role, no shop-to-shop price visibility, and an audit metric for trades at exactly the floor; hand counsel a one-page memo on this design.",
-   "whoToAsk": "Competition counsel to confirm the design and the wording on the price board.",
-   "sources": [
-    {
-     "title": "CCI — Competition (Amendment) Act 2023, salient features (hub-and-spoke presumption)",
-     "url": "https://www.cci.gov.in/images/publications_booklet/en/competition-amendment-act-2023-salient-features1684831868.pdf",
-     "date": "2023-05-23"
-    },
-    {
-     "title": "SCC Online blog — Navigating hub-and-spoke cartels in India: the new proviso to s.3(3), notified 19 May 2023",
-     "url": "https://www.scconline.com/blog/post/2023/10/05/navigating-hub-and-spoke-cartel-in-india-an-analytical-overview-of-new-provision/",
-     "date": "2023-10-05"
-    },
-    {
-     "title": "Supreme Court — Samir Agrawal v Competition Commission of India (Ola/Uber, no hub-and-spoke)",
-     "url": "https://indiankanoon.org/doc/65191688/",
-     "date": "2020-12-15"
-    },
-    {
-     "title": "Bar & Bench — CCI holds Trustees' Association of India guilty of cartelisation for fixing minimum fees",
-     "url": "https://www.barandbench.com/news/litigation/cci-holds-trustees-association-of-india-guilty-of-cartelisation-for-fixing-minimum-fees",
-     "date": "2026-09-03"
-    },
-    {
-     "title": "IntoLegalWorld — CCI penalises Agro Input Dealers Association (order of 21 Aug 2026)",
-     "url": "https://www.intolegalworld.com/post/cci-penalises-agro-input-dealers-association-for-cartelisation-case-analysis-of-the-august-2026-ord",
-     "date": "2026-08-21"
-    },
-    {
-     "title": "Mondaq — Buyer–seller arrangements: is CCI expanding the cartel horizons? (Godrej/Panasonic)",
-     "url": "https://www.mondaq.com/india/antitrust-eu-competition-/861018/buyer-seller-arrangements-is-cci-expanding-the-cartel-horizons",
-     "date": "2019-12-16"
-    }
-   ]
-  },
-  {
-   "question": "(5) Price crashes and stale floors — is 'floors as a share of the reference price, a suspend switch, dated rows' enough?",
-   "answer": "The crash the plan cites is real and sourced: the Indian Recovered Paper Traders Association said on 9 Jun 2023 that domestic recovered-paper collection had fallen 50–55% and about 30% of kabadiwalas and feriwalas had left the trade when kraft waste paper dropped to ₹11,000–13,500 per tonne (₹11,000 in Chennai); on 16 Feb 2024 the same association reported a further 20% fall within about ten days (₹19.50 to ₹15.50–16 per kg) as mills cut rates. Today's retail kabadiwala rates in Bangalore on a public rate card are newspaper ₹10/kg, carton ₹3/kg, PET ₹10/kg, iron ₹22/kg, aluminium ₹150/kg and copper ₹500/kg, so a 20% move in ten days on paper is a ₹2/kg move against a ₹10 price. A floor set at 75% of a 28-day median is above market within about two weeks of a 2023-style fall, because the median lags; the suspend switch then depends on someone noticing. The guard's mechanics are right but need a trigger: flag a material when its 7-day median falls below floor ÷ 0.9, auto-suspend the floor for that material when a set share of trades is refused or struck at the floor for three days, and show the floor's date on the price board so shops see it is not stale. No further figures are needed; the missing item is your own trade data, which the pilot will produce.",
-   "status": "answered",
-   "decision": "Keep 75% of the 28-day median as the default, add a 7-day trigger and a per-material auto-suspend, and print the floor date on the board.",
-   "whoToAsk": "",
-   "sources": [
-    {
-     "title": "The Pulp and Paper Times — Price of waste paper plummeted to its lowest level in five months (IRPTA: collection down 50–55%)",
-     "url": "https://thepulpandpapertimes.com/news/price-of-waste-paper-plummeted-to-its-lowest-level-in-the-previous-five-months-881",
-     "date": "2023-06-09"
-    },
-    {
-     "title": "The Pulp and Paper Times — Domestic waste paper prices experience sharp decline (20% in ten days)",
-     "url": "https://thepulpandpapertimes.com/news/india/domestic-waste-paper-prices-1003",
-     "date": "2024-02-16"
-    },
-    {
-     "title": "The Kabadiwala — Scrap prices in Bangalore (live rate card)",
-     "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
-     "date": "2026-09-29"
-    }
-   ]
-  },
-  {
-   "question": "(6) Hazardous material to the wrong buyer — is 'sell only to businesses whose registration the admin verified; decide whether to hide them from the household pilot' enough?",
-   "answer": "The rules are explicit about who may receive each stream. E-Waste (Management) Rules 2022 (in force 1 Apr 2023): CPCB's FAQ of 23 Jan 2024 says only producers, recyclers and refurbishers registered on the EPR portal may collect e-waste, bulk consumers must hand e-waste only to them, and registered entities may not deal with unregistered ones; a recycler buying from the informal sector must upload a receipt with the seller's name and address. Battery Waste Management Rules 2022 (22 Aug 2022) make consumers discard batteries separately to a collection or recycling entity and keep the list of registered recyclers with the State Pollution Control Boards. Used oil has had EPR since 1 Apr 2024 (Hazardous and Other Wastes Second Amendment Rules 2023): collection agents and recyclers must register on CPCB's portal. Waste tyres have EPR under the Hazardous and Other Wastes Amendment Rules 2022, with producers, recyclers and retreaders registered on CPCB's tyre portal. A kabadiwala is not a registered e-waste collector, so a household-to-kabadiwala e-waste sale inside the app is the informal channel these rules try to close; the exposure sits with the shop and the recycler, but the platform that arranged it will be named. The guard is right for business trades if the admin records the CPCB or KSPCB registration number and its expiry and checks it on the portal; for households the answer to the plan's open decision is to keep e-waste, batteries, tyres and used oil out of the pilot and show a 'where to take this' note instead.",
-   "status": "answered",
-   "decision": "Exclude e-waste, batteries, tyres and used oil from the household pilot; allow them only business-to-registered-recycler with the registration number verified on the CPCB or KSPCB portal.",
-   "whoToAsk": "KSPCB for the Karnataka authorised-recycler lists; the CPCB e-waste, battery, used-oil and tyre portals for registration checks.",
-   "sources": [
-    {
-     "title": "CPCB — FAQs under E-Waste (Management) Rules 2022",
-     "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
-     "date": "2024-01-23"
-    },
-    {
-     "title": "SCC Online blog — Battery Waste Management Rules 2022 (notified 22 Aug 2022; consumer duties)",
-     "url": "https://www.scconline.com/blog/post/2022/08/26/battery-waste-management-rule-2022/",
-     "date": "2022-08-26"
-    },
-    {
-     "title": "CPCB — FAQs under Battery Waste Management Rules 2022 (registered recycler lists via SPCBs)",
-     "url": "https://eprbattery.cpcb.gov.in/upload/adminDoc/Frequently%20Asked%20Questions%20(General).pdf",
-     "date": "2023-03-21"
-    },
-    {
-     "title": "CPCB Used Oil EPR portal — About (EPR from 1 Apr 2024; collection agents and recyclers register)",
-     "url": "https://eprusedoil.cpcb.gov.in/aboutus",
-     "date": "2024-04-01"
-    },
-    {
-     "title": "CPCB Waste Tyre EPR portal (Hazardous and Other Wastes Amendment Rules 2022)",
-     "url": "https://eprtyres.cpcb.gov.in/",
-     "date": "2022-07-21"
-    }
-   ]
-  },
-  {
-   "question": "(7) Gig-worker law — is 'Saathi work register, written terms, fee calculator; counsel on classification' enough?",
-   "answer": "Two regimes apply and neither turns on whether Saathis are employees. The Code on Social Security 2020 came into force on 21 Nov 2025; an 'aggregator' is 'a digital intermediary or a market place for a buyer or user of a service to connect with the seller or the service provider', Schedule VII lists nine categories including logistics, e-marketplace and 'any other goods and services provider platform', and s.114(4) sets a contribution of 1–2% of annual turnover capped at 5% of payments to gig workers — but as of 1 Jul 2026 neither the rate nor the start date had been notified. Karnataka's Platform Based Gig Workers (Social Security and Welfare) Act 2025 is live: effective 30 May 2025 (ordinance), Act notified 12 Sep 2025, Rules 19 Nov 2025; aggregators register with the Welfare Board within 45 days and file a machine-readable worker database; the welfare fee was notified on 16 Feb 2026 at 1% per transaction with caps of ₹0.50–₹1.50 (logistics two-wheeler ₹0.50, e-marketplace two-wheeler ₹0.50, professional services ₹1.50), effective 13 Feb 2026, deposited quarterly and self-reported until the verification system runs; the Rules give Saathi-type grievances 7 working days to be raised and 15 working days to be resolved; penalties run ₹5,000–₹1 lakh with 12% interest on unpaid fees. Swiggy, Zomato, Zepto and IAMAI have challenged the Act in the Karnataka High Court, which refused a stay (8 Jul 2026). A pickup-and-sorting app paying Saathis per job through the platform is an aggregator on either definition; the open point is only which schedule row (logistics or e-marketplace) sets the cap. The guard is right and the cost is small (1% of Saathi payouts, at most ₹1.50 a job); what is missing is the registration itself, which must precede the first paid job.",
-   "status": "answered",
-   "decision": "Register as an aggregator with the Karnataka Welfare Board before the first Saathi job, budget the 1% welfare fee as a line in the fee calculator, and keep the Code on Social Security contribution as a watch item.",
-   "whoToAsk": "Karnataka Labour Department / Platform Based Gig Workers Welfare Board for the schedule row; counsel for the Saathi terms.",
-   "sources": [
-    {
-     "title": "Taxmann — Aggregator obligations under the Code on Social Security 2020 (in force 21 Nov 2025; s.114(4); Schedule VII)",
-     "url": "https://www.taxmann.com/post/blog/analysis-aggregator-obligations-code-on-social-security/",
-     "date": "2026-09-25"
-    },
-    {
-     "title": "Mondaq — Karnataka Platform Based Gig Workers Act 2025 (dates, 45-day registration)",
-     "url": "https://www.mondaq.com/india/employee-rights-labour-relations/1713454/karnataka-platform-based-gig-workers-social-security-and-welfare-act-2025",
-     "date": "2025-12-03"
-    },
-    {
-     "title": "SCC Online blog — Karnataka notifies gig workers' welfare fee (1% with caps, effective 13 Feb 2026)",
-     "url": "https://www.scconline.com/blog/post/2026/02/18/karnataka-government-notifies-gig-workers-welfare-fee-mandatory/",
-     "date": "2026-02-18"
-    },
-    {
-     "title": "The South First — Karnataka gig workers Rules: portal registration, 7/15 working-day grievance timelines",
-     "url": "https://thesouthfirst.com/karnataka/karnataka-platform-based-gig-workers-act-2025-rules-notified-board-to-meet-at-least-once-every-three-months/",
-     "date": "2026-03-31"
-    },
-    {
-     "title": "PRS — Karnataka Platform Based Gig Workers Bill 2025 (penalties ₹5,000–₹1 lakh; 12% interest)",
-     "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025",
-     "date": "2025-08-12"
-    },
-    {
-     "title": "Business Standard — Karnataka Gig Workers Act: what the law says and why it is contested (High Court challenge, no stay)",
-     "url": "https://www.business-standard.com/india-news/karnataka-gig-workers-act-explained-benefits-high-court-platforms-126070800776_1.html",
-     "date": "2026-07-08"
-    }
-   ]
-  },
-  {
-   "question": "(8) SWM Rules 2026 making informal shops visible — is 'city exports carry totals only; business data shared with consent; a help-me-register task' enough?",
-   "answer": "The Solid Waste Management Rules 2026 (S.O. 388(E), 27 Jan 2026, in force 1 Apr 2026) define an 'informal waste collector' to include 'individuals, associations or waste traders' engaged in 'collecting, segregating, sorting, sale and purchase of waste materials' — that is the kabadiwala. The duties I could find run through the local body rather than the shop: rule 39(53) makes urban local bodies build a ward-wise database on the central portal of everyone, 'including in informal sector such as waste pickers or collectors', involved in collection, sorting, transport or recycling, and rule 39(54) tells them to integrate those people and organisations; rule 8 makes local bodies, concessionaires and any third party they authorise register on the portal; CPCB's summary adds 'no engagement with unregistered or unauthorised entities' and a portal target of 1 Oct 2026. Rule 17 lets State Pollution Control Boards levy environmental compensation on 'entities carrying out activities without registration as mandated' and on entities engaged in collection, sorting or transport, under guidelines CPCB has yet to publish, with action under s.15 of the Environment (Protection) Act on top. So the text does not fine a kabadiwala today for being unregistered, but it makes unregistered shops non-compliant counterparties as soon as the local database and CPCB's guidelines exist, and Down To Earth (29 Jan 2026) notes the rules say little about how integration should happen. The guard is enough for the pilot; the 'help me register' task is the right response because the ward database is where shops will need to appear. Add one thing: treat any request from GBA, BSWML or KSPCB for shop-level data as a legal request that goes to counsel, not an export button.",
-   "status": "partly",
-   "decision": "Keep totals-only exports and per-business consent; add a 'share my registration with GBA' consent flag; route any authority data request through counsel; watch for CPCB's environmental-compensation guidelines.",
-   "whoToAsk": "GBA/BSWML solid-waste cell on the ward database and KSPCB on compensation guidelines once CPCB publishes them.",
-   "sources": [
-    {
-     "title": "Solid Waste Management Rules 2026, S.O. 388(E) — CPCB copy (definition (zb), rules 8, 17, 39(53)–(54))",
-     "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
-     "date": "2026-01-27"
-    },
-    {
-     "title": "CPCB — Salient features of Solid Waste Management Rules 2026",
-     "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
-     "date": "2026-01-28"
-    },
-    {
-     "title": "Down To Earth — India's new Solid Waste Management Rules promise greater discipline while navigating familiar fault lines",
-     "url": "https://www.downtoearth.org.in/waste/indias-new-solid-waste-management-rules-promise-greater-discipline-while-navigating-familiar-fault-lines",
-     "date": "2026-01-29"
-    }
-   ]
-  },
-  {
-   "question": "(9) DPDP retention (logs kept a year) vs the promise to delete household photos at 90 days — is 'delete images, keep a hash and metadata; counsel to reconcile' enough?",
-   "answer": "The two obligations are about different things and do not collide. Rule 6(1)(e) of the DPDP Rules 2025 requires a data fiduciary to 'retain such logs and personal data for a period of one year' for detecting and investigating unauthorised access — the access logs and what is needed to investigate a breach, unless another law says otherwise. Rule 8(3) requires retaining 'personal data, associated traffic data and other logs of the processing' for at least one year for the Seventh Schedule (state-request) purposes, and its illustration is an e-book platform keeping order, payment and delivery events for a year even after the user deletes the account. The Third Schedule's three-years-from-last-activity rule applies only to e-commerce entities with at least two crore registered users, gaming intermediaries with fifty lakh and social-media intermediaries with two crore, so it does not reach Luma.Green. All of this (rules 3, 5–16) starts on 13 May 2027, and the Act itself wants personal data erased once its purpose is served. A household photo is content whose purpose ends with the pickup; the event record (who uploaded what, when, its hash, the pickup and payment events) is the log. Deleting the image at 90 days while keeping that record for twelve months and then erasing it satisfies both rules, so the guard is enough; write it into the privacy notice in those words.",
-   "status": "answered",
-   "decision": "Keep: photo deleted at 90 days; event log with hash retained 12 months then erased; state both in the privacy notice before 13 May 2027.",
-   "whoToAsk": "Counsel only to sign off the notice wording.",
-   "sources": [
-    {
-     "title": "Digital Personal Data Protection Rules, 2025 — gazette text, rule 1(4), rule 6(1)(e), rule 8, Third Schedule",
-     "url": "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf",
-     "date": "2025-11-13"
-    },
-    {
-     "title": "dpdpa.com — Rule 6 text",
-     "url": "https://www.dpdpa.com/dpdparules/rule6.html",
-     "date": "2025-11-13"
-    },
-    {
-     "title": "dpdpa.com — Rule 8 text",
-     "url": "https://www.dpdpa.com/dpdparules/rule8.html",
-     "date": "2025-11-13"
-    }
-   ]
-  },
-  {
-   "question": "(10) App weights read as certified — is 'receipts say recorded weight; the stamped scale stays the legal record' enough?",
-   "answer": "The law attaches to the scale, not the app. Section 24 of the Legal Metrology Act 2009 requires any weight or measure that is or is likely to be 'used in any transaction' to be verified and stamped before use; s.33 punishes use of an unverified weight with a fine of ₹2,000 to ₹10,000 and up to one year's imprisonment for a repeat; s.25 punishes non-standard weights with fines up to ₹25,000; ss.10–11 require prices to be quoted in standard units. Electronic scales are re-stamped annually, and Karnataka's e-Mapan portal issues and lets you search verification certificates. The Jan Vishwas (Amendment of Provisions) Act 2026 (passed 1–2 Apr 2026) brings improvement notices for a first offence; the Department of Consumer Affairs brought the Legal Metrology amendments into force from 1 May 2026 (S.O. 2103(E), 27 Apr 2026). So the app's 'recorded weight' label is fine, and the real exposure is a shop pricing a household on an unstamped or expired scale. The guard is enough but incomplete: capture each business's e-Mapan verification certificate number and expiry at onboarding, print 'weighed on the shop's scale, certificate no. …' on receipts, and never use the word 'certified' for an app value.",
-   "status": "answered",
-   "decision": "Keep 'recorded weight'; add a per-business scale-certificate field with expiry (e-Mapan) and show it on receipts.",
-   "whoToAsk": "Karnataka Legal Metrology (toll-free 1800 599 1100) for a formal reading on receipt wording, if counsel wants it.",
-   "sources": [
-    {
-     "title": "Legal Metrology Act 2009 — full text (ss.10–11, 24, 25, 33)",
-     "url": "https://indiankanoon.org/doc/122504373/",
-     "date": "2010-01-13"
-    },
-    {
-     "title": "PRS — The Jan Vishwas (Amendment of Provisions) Bill 2026 (improvement notices under the Legal Metrology Act)",
-     "url": "https://prsindia.org/billtrack/the-jan-vishwas-amendment-of-provisions-bill-2026",
-     "date": "2026-04-02"
-    },
-    {
-     "title": "TeamLease RegTech — DoCA brings Jan Vishwas Legal Metrology amendments into force from 1 May 2026 (S.O. 2103(E))",
-     "url": "https://www.teamleaseregtech.com/updates/article/55280/doca-enforcement-of-jan-vishwas-amendments-relating-to-legal-metrology/",
-     "date": "2026-04-27"
-    },
-    {
-     "title": "e-Mapan — Department of Legal Metrology, Government of Karnataka (verification certificate search)",
-     "url": "https://emapan.karnataka.gov.in/",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "legalmetrologyindia.com — Legal Metrology stamping of weighing scales (annual re-stamping)",
-     "url": "https://legalmetrologyindia.com/blog/legal-metrology-stamping-of-weighing-scale/",
-     "date": "2025-02-07"
-    }
-   ]
-  },
-  {
-   "question": "(11) Waste-picker politics in Bengaluru — is 'co-design with Hasiru Dala and the union; pickers must earn more, not less' enough?",
-   "answer": "Bengaluru's dry-waste chain runs through ward Dry Waste Collection Centres operated by waste-picker entrepreneurs with Hasiru Dala's support: each ward has a DWCC that sorts dry waste and sells it to recyclers, Hasiru Dala manages 40 of them across eight divisions, and 30–40% of dry waste is recycled through them. The 2026 picture is unsettled: BSWML is replacing the ad hoc door-to-door contracts with 33 constituency packages using GPS-tracked three-tonne vehicles (21 approved, work orders being issued, 5 Sep 2026), seven packages had to be re-tendered on 22 Sep 2026 after the lowest bidders declined, and in March 2026 a blocked landfill and contractors paying workers irregularly produced a city-wide crisis. The SWM Rules 2026 now oblige local bodies to database and integrate waste pickers and informal collectors (rule 39(53)–(54)). A household-to-kabadiwala app therefore competes at ward level for the same sellable dry waste the DWCC depends on, and pickers and DWCC operators will read it as diversion unless they are inside it. The guard names the right partners but no mechanism; the mechanism is to onboard DWCC operators as shops (they are the ward's authorised dry-waste receivers), let pickers register as Saathis, and start only in wards whose DWCC operator has agreed. This cannot be settled from public pages; it is a negotiation.",
-   "status": "needs-pilot-or-counsel",
-   "decision": "Sign an MoU with Hasiru Dala before 13 Oct; pilot only in wards whose DWCC operator is onboarded as a shop; offer pickers Saathi registration first.",
-   "whoToAsk": "Hasiru Dala, the waste-pickers' union, and the GBA/BSWML solid-waste cell.",
-   "sources": [
-    {
-     "title": "The News Minute — Study on the contribution of Bengaluru waste pickers (40 DWCCs; 30–40% recycled)",
-     "url": "https://www.thenewsminute.com/karnataka/this-study-brought-the-contribution-of-bengaluru-waste-pickers-to-the-forefront",
-     "date": "2023-12-13"
-    },
-    {
-     "title": "Project Tech4Dev — Hasiru Dala: about dry waste collection centres",
-     "url": "https://projecttech4dev.org/hasiru-dala-about-dry-waste-collection-centres/",
-     "date": "2019-11-01"
-    },
-    {
-     "title": "Deccan Herald — New waste collection contracts to roll out in two months: Krishna Byre Gowda",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/new-waste-collection-contracts-to-roll-out-in-two-months-krishna-byre-gowda-4136380",
-     "date": "2026-09-05"
-    },
-    {
-     "title": "Deccan Herald — Seven Bengaluru garbage collection packages re-tendered",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/seven-bengaluru-garbage-collection-packages-re-tendered-what-went-wrong-4154643",
-     "date": "2026-09-22"
-    },
-    {
-     "title": "The South First — Bengaluru's garbage crisis: blocked landfills, unpaid workers and piling waste",
-     "url": "https://thesouthfirst.com/karnataka/bengalurus-garbage-crisis-blocked-landfills-unpaid-workers-and-piling-waste/",
-     "date": "2026-03-05"
-    },
-    {
-     "title": "Solid Waste Management Rules 2026 — rule 39(53)–(54) on waste-picker databases and integration",
-     "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
-     "date": "2026-01-27"
-    }
-   ]
-  },
-  {
-   "question": "(12) Support promises one person can't keep (15-minute replies, 10-minute safety callbacks) — is 'a rota of at least two before 13 Oct; auto-accept limited to shop hours' enough?",
-   "answer": "No law requires 15-minute replies or 10-minute callbacks; the legal minimums are slower and are the ones that must be met. The Consumer Protection (E-Commerce) Rules 2020 require a displayed grievance officer who acknowledges within 48 hours and resolves within one month; the IT Rules 2021 require intermediaries to acknowledge within 24 hours and resolve within 15 days; Karnataka's gig Rules give Saathi grievances 15 working days to be resolved. A published 15-minute promise becomes a term of service the moment it appears on the site, and a missed safety callback is a reputational and possibly tortious problem regardless of law. The guard (two people on a rota, auto-accept only in shop hours) is the right operational floor, but the promise should be rewritten: publish 24-hour acknowledgement and 15-day resolution as commitments, keep 15 minutes as an internal target shown nowhere, and for safety callbacks promise only what a two-person duty phone can deliver (for example 30 minutes, 8am–8pm) with a plain 'call 112' line for emergencies.",
-   "status": "answered",
-   "decision": "Publish 24 h / 15 days as the commitments and a named grievance officer; keep 15 minutes and 10 minutes as internal targets; staff a two-person duty phone for safety callbacks in stated hours.",
-   "whoToAsk": "",
-   "sources": [
-    {
-     "title": "Consumer Protection (E-Commerce) Rules, 2020 — rule 4(4)–(5) grievance officer, 48 hours / one month",
-     "url": "https://www.taxtmi.com/article/detailed?id=9460",
-     "date": "2020-07-23"
-    },
-    {
-     "title": "IT (Intermediary Guidelines and Digital Media Ethics Code) Rules 2021, updated 06.04.2023 — rule 3(2)",
-     "url": "https://www.meity.gov.in/static/uploads/2024/02/Information-Technology-Intermediary-Guidelines-and-Digital-Media-Ethics-Code-Rules-2021-updated-06.04.2023-.pdf",
-     "date": "2023-04-06"
-    },
-    {
-     "title": "The South First — Karnataka gig workers Rules: grievances within 7 working days, resolved in 15",
-     "url": "https://thesouthfirst.com/karnataka/karnataka-platform-based-gig-workers-act-2025-rules-notified-board-to-meet-at-least-once-every-three-months/",
-     "date": "2026-03-31"
-    }
-   ]
-  },
-  {
-   "question": "(13) Plastic-credit revenue and additionality — is 'kept out of the base case' enough?",
-   "answer": "Yes, and the reason is now written into the standard. Verra's corrections and clarifications to the Plastic Waste Collection Methodology PWRM0001 (12 Aug 2024, effective immediately) require project proponents to list every binding law on plastic collection in the region and to treat 'mandated extended producer responsibility (EPR) schemes in a project region' as part of the regulatory-surplus test; a project may still claim surplus only by showing those requirements are not systematically enforced, for example that the regional compliance rate is below 50%. India's Plastic Waste Management Rules run a CPCB EPR-certificate market in which registered recyclers generate credits by tonnage and producers buy them, so plastic that Luma.Green's chain sells into that certificate stream is already counted against a producer's obligation and cannot also be sold as a voluntary credit without double counting. Proving a sub-50% compliance rate for Bengaluru is a research project with a validation body, not a pilot task. Keeping plastic credits out of the base case is the right call; if it is revisited, the first question is whether the recyclers in the chain generate EPR certificates on that material.",
-   "status": "answered",
-   "decision": "Keep plastic credits out of the base case; revisit only with a Verra validation body and evidence on regional EPR compliance.",
-   "whoToAsk": "A Verra-approved validation body, if ever pursued.",
-   "sources": [
-    {
-     "title": "Verra — Corrections and clarifications to the Plastic Waste Collection Methodology PWRM0001 (regulatory surplus and EPR)",
-     "url": "https://verra.org/wp-content/uploads/2024/08/Plastic-Waste-Collection-Methodology-PWRM0001-CC-12-Aug-2024.pdf",
-     "date": "2024-08-12"
-    },
-    {
-     "title": "Verra — Program notice: corrections and clarifications to Plastic Program documents",
-     "url": "https://verra.org/program-notice/corrections-and-clarifications-to-plastic-program-documents/",
-     "date": "2024-08-12"
-    },
-    {
-     "title": "CPCB — FAQs under E-Waste (Management) Rules 2022 (EPR certificates generated by registered recyclers by quantity; same portal model as plastics)",
-     "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
-     "date": "2024-01-23"
-    }
-   ]
-  },
-  {
-   "question": "(14) Escrow eligibility — split settlement needs ₹40 lakh of our own turnover; is 'bank escrow with a trustee, or each yard as its own merchant' enough?",
-   "answer": "The ₹40 lakh figure is confirmed and comes from the regulator, not just the vendor. The RBI (Regulation of Payment Aggregators) Directions 2025 (15 Sep 2025, effective immediately) require a non-bank PA to hold ₹15 crore net worth at application and ₹25 crore within three years, bar a PA from running a marketplace, let a marketplace onboarded by a PA accept payments only for sellers onboarded on its platform, and allow a PA to pay a third party on a merchant's instruction only where the merchant has annual turnover above ₹40 lakh (or export turnover above ₹5 lakh) and the third party is the payee who interfaces with the payer. Razorpay Route applies exactly that: domestic turnover above ₹40 lakh on GSTR-3B in FY25 or FY26, a written use-case confirmation, and proofs that were due by 31 Dec 2025. A new company with no filed turnover therefore cannot use Route-style split settlement, so the pilot's simulated escrow is the only honest option now. The two fallbacks in the plan are the right ones: each yard or recycler as its own merchant on a PA, with the buyer paying the yard directly and Luma.Green invoicing its fee separately; or a bank escrow with a trustee (RazorpayX Escrow+ routes through ICICI, RBL and Yes Bank with trusteeship bundled; pricing is not published). The guard is enough; the missing numbers are escrow fees and setup time, which only a quote will give.",
-   "status": "answered",
-   "decision": "Pilot with simulated escrow; at go-live use direct-to-yard payment through a PA with Luma.Green's fee invoiced separately; move to a bank escrow with trustee when volumes justify the fees; revisit Route once GSTR-3B shows ₹40 lakh.",
-   "whoToAsk": "Razorpay or Cashfree sales for split-settlement onboarding; a bank escrow desk (ICICI, RBL or Yes Bank) for trustee fees and setup time.",
-   "sources": [
-    {
-     "title": "RBI — Reserve Bank of India (Regulation of Payment Aggregators) Directions, 2025",
-     "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896",
-     "date": "2025-09-15"
-    },
-    {
-     "title": "Vinod Kothari Consultants — Key highlights of the PA Directions 2025",
-     "url": "https://vinodkothari.com/wp-content/uploads/2025/09/Key-Highlights-of-PA-2025-2.pdf",
-     "date": "2025-09-16"
-    },
-    {
-     "title": "Medianama — Explained: RBI's master direction for payment aggregators",
-     "url": "https://www.medianama.com/2025/09/223-explained-rbi-master-direction-payment-aggregators/",
-     "date": "2025-09-16"
-    },
-    {
-     "title": "Razorpay Docs — Route (eligibility: ₹40 lakh domestic turnover, FY25/FY26)",
-     "url": "https://razorpay.com/docs/payments/route/?preferred-country=IN",
-     "date": "2025-12-31"
-    },
-    {
-     "title": "RazorpayX Escrow+ accounts (escrow, bank, trustee)",
-     "url": "https://razorpay.com/x/escrow-accounts/",
-     "date": "2026-09-29"
-    }
-   ]
-  },
-  {
-   "question": "(15) Demo data mistaken for real firms — is 'demo GSTINs fail the GSTIN checksum, names are invented, every screen with sample figures says so' enough?",
-   "answer": "A GSTIN is 15 characters: a two-digit state code, the ten-character PAN, an entity code, the letter Z and a check character computed from the first 14 with a 36-symbol alphabet and alternating weights of 1 and 2 (the ISO 7064 MOD 37-36 family). A string whose check character does not match cannot be a real registration, and the GST portal's search rejects it, so a checksum-invalid demo GSTIN can never collide with a real firm; the converse also holds — a checksum-valid string is only 'internally consistent' and only GSTN's search or API proves it exists (dev.to, 8 Aug 2026). The guard is therefore enough for GSTINs, and the invented names and sample-figures banner cover the rest of the screen. Extend the same idea to the other identifiers demo screens show: consent numbers are not checksummed, so prefix them 'DEMO-'; use phone numbers that cannot be Indian mobiles (Indian mobiles start with 6–9); and keep demo tenants in a separate environment so a demo row can never be exported with real ones. At onboarding, verify every real GSTIN against the GST portal's public search before the admin approves a business.",
-   "status": "answered",
-   "decision": "Keep; add DEMO- prefixes to consent numbers, impossible phone numbers, a separate demo tenant, and GST-portal verification of real GSTINs at onboarding.",
-   "whoToAsk": "",
-   "sources": [
-    {
-     "title": "dev.to — How GSTIN checksum validation works (and why it isn't enough)",
-     "url": "https://dev.to/tarun_vaghasia_a387e1ac9b/how-gstin-checksum-validation-works-and-why-it-isnt-enough-3l8e",
-     "date": "2026-08-08"
-    },
-    {
-     "title": "GST portal — Search taxpayer by GSTIN/UIN",
-     "url": "https://services.gst.gov.in/services/searchtp",
-     "date": "2026-09-29"
-    }
-   ]
-  }
- ]
+  ]
 }

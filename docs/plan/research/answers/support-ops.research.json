@@ -1,198 +1,198 @@
 {
- "cluster": "Support line, voice and messaging",
- "answers": [
-  {
-   "question": "For a pilot support line: SIM vs virtual number, and can the same number move from the WhatsApp Business app to the WhatsApp Cloud API or a provider such as MSG91 later without losing the number? Do outbound IVR or automated voice reminders need TRAI DLT registration (140/160 number series) before scale?",
-   "answer": "Number type: Meta's Cloud API accepts any number you own that can receive an SMS or a voice call for the one-time code (mobile recommended; fixed-line and VoIP allowed with limits), and cloud-telephony 'longcode' virtual numbers such as MSG91's cannot receive SMS, so they verify by phone call and must not already be on personal WhatsApp; a virtual number also stays in the provider's pool and costs money (MyOperator's cheapest plan with unlimited calling and WhatsApp is ₹5,000/month; Exotel and MSG91 only quote on request), whereas a SIM is yours and moves between phones and providers. Recommendation: a dedicated SIM in the company's or a founder's name, run in the WhatsApp Business app, for the pilot; add a virtual number only when you need inbound IVR, call recording or multi-agent routing. Moving to the API without losing the number: Meta documents two routes — (a) 'coexistence' (Business app and Cloud API on the same number via a partner; MSG91's onboarding has a 'Connect WhatsApp Business App Number' option), which needs app version 2.24.17 or higher, syncs up to 180 days of 1:1 chats if done within 24 hours, caps throughput at 20 messages/second, disables broadcast lists, disappearing and view-once messages, does not sync groups, has no calling API, and can be disconnected from the app under Settings > Account > Business Platform; India is covered (Wati, 17 Aug 2026; AiSensy) — or (b) full migration: back up, delete the account in the app, wait about 3 minutes, register on the Cloud API; chat history is lost and the number cannot return to the app unless deregistered. Moving between providers later (MSG91 to another BSP or direct Cloud API): Meta's WABA-to-WABA migration keeps the number, display name, messaging limits and Official Business Account status, copies only templates that are APPROVED with GREEN quality, resets template quality ratings, and requires two-step verification switched off and Business Verification done; MSG91's own guide says just disable 2FA and cancel the plan, no need to delete the number; one caveat from 360dialog: WABA migration is not supported for a coexistence number, so disconnect coexistence first. TRAI: yes — TRAI's 18 June 2024 guidelines under TCCCPR-2018 require every sender, explicitly including 'SMEs, big and small businesses, and any entity', to register on a telecom operator's DLT platform before sending any commercial communication by voice or SMS, to make commercial voice calls only from the 140 (promotional) or 160 (service/transactional) series with registered voice headers, and not to use ordinary 10-digit fixed or mobile numbers for promotional, service or transactional calls; the 12 Feb 2025 amendment (in force 30 days after gazette publication, some clauses 60 days) adds that 'Every Sender shall notify the Originating Access Provider, in advance, about the use of Auto Dialer or Robo-Calls' and their objective in writing, defines a transactional call as one within 30 minutes of a customer-initiated transaction, and treats service calls to existing customers as needing no explicit consent. The practical catch: DoT allotted the 160 series on 30 May 2024 with operators verifying each entity, the first stage covers RBI/SEBI/IRDAI/PFRDA-regulated entities and government, and provider pages as of 24 Sep 2026 (Acefone; Plivo) still say non-BFSI businesses cannot get a 160 number (Acefone mentions a 1601 sub-series for utilities, logistics and couriers), with inventory of only 1,000 numbers per operator per circle (Exotel, 26 Jun 2024). So for the 13 Oct 2026 pilot: send pickup reminders as WhatsApp utility templates and human calls, start DLT registration on an operator portal (Airtel, Jio, Vi, BSNL or Tata) now because entity, header and template approvals take days, and before scaling automated voice get a 140-series number through a registered telemarketer or cloud-telephony provider for anything promotional and ask the provider whether a 160 number can be allotted to a non-BFSI Karnataka entity. Open items: monthly price of an Exotel or MSG91 virtual number (quote-only), and whether a landline-type virtual number placed in the WhatsApp Business app qualifies for coexistence (Meta only says the number must already be registered in the app).",
-   "status": "partly",
-   "decision": "Buy a dedicated SIM for the pilot support line and run it in the WhatsApp Business app; when you need the API, onboard through a partner's coexistence flow (MSG91 offers it) so the number and up to 180 days of chats carry over, and keep two-step verification off before any provider move. Register Luma.Green on a DLT portal now, keep automated outbound voice off until that is done, and use WhatsApp utility templates plus human calls for reminders during the pilot.",
-   "whoToAsk": "Your cloud-telephony provider (Exotel or MSG91) for virtual-number pricing and whether a 160-series number can be allotted to a non-BFSI entity in Karnataka today; the operator DLT portal (Airtel/Jio/Vi) for registration timelines; a telecom-compliance counsel to confirm that low-volume human callbacks from the support SIM are acceptable during the pilot.",
-   "sources": [
+  "cluster": "Support line, voice and messaging",
+  "answers": [
     {
-     "title": "Meta — WhatsApp Cloud API: Phone numbers (eligibility, numbers already on WhatsApp must be deleted first)",
-     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/phone-numbers/",
-     "date": "accessed 30 Sep 2026"
+      "question": "For a pilot support line: SIM vs virtual number, and can the same number move from the WhatsApp Business app to the WhatsApp Cloud API or a provider such as MSG91 later without losing the number? Do outbound IVR or automated voice reminders need TRAI DLT registration (140/160 number series) before scale?",
+      "answer": "Number type: Meta's Cloud API accepts any number you own that can receive an SMS or a voice call for the one-time code (mobile recommended; fixed-line and VoIP allowed with limits), and cloud-telephony 'longcode' virtual numbers such as MSG91's cannot receive SMS, so they verify by phone call and must not already be on personal WhatsApp; a virtual number also stays in the provider's pool and costs money (MyOperator's cheapest plan with unlimited calling and WhatsApp is ₹5,000/month; Exotel and MSG91 only quote on request), whereas a SIM is yours and moves between phones and providers. Recommendation: a dedicated SIM in the company's or a founder's name, run in the WhatsApp Business app, for the pilot; add a virtual number only when you need inbound IVR, call recording or multi-agent routing. Moving to the API without losing the number: Meta documents two routes — (a) 'coexistence' (Business app and Cloud API on the same number via a partner; MSG91's onboarding has a 'Connect WhatsApp Business App Number' option), which needs app version 2.24.17 or higher, syncs up to 180 days of 1:1 chats if done within 24 hours, caps throughput at 20 messages/second, disables broadcast lists, disappearing and view-once messages, does not sync groups, has no calling API, and can be disconnected from the app under Settings > Account > Business Platform; India is covered (Wati, 17 Aug 2026; AiSensy) — or (b) full migration: back up, delete the account in the app, wait about 3 minutes, register on the Cloud API; chat history is lost and the number cannot return to the app unless deregistered. Moving between providers later (MSG91 to another BSP or direct Cloud API): Meta's WABA-to-WABA migration keeps the number, display name, messaging limits and Official Business Account status, copies only templates that are APPROVED with GREEN quality, resets template quality ratings, and requires two-step verification switched off and Business Verification done; MSG91's own guide says just disable 2FA and cancel the plan, no need to delete the number; one caveat from 360dialog: WABA migration is not supported for a coexistence number, so disconnect coexistence first. TRAI: yes — TRAI's 18 June 2024 guidelines under TCCCPR-2018 require every sender, explicitly including 'SMEs, big and small businesses, and any entity', to register on a telecom operator's DLT platform before sending any commercial communication by voice or SMS, to make commercial voice calls only from the 140 (promotional) or 160 (service/transactional) series with registered voice headers, and not to use ordinary 10-digit fixed or mobile numbers for promotional, service or transactional calls; the 12 Feb 2025 amendment (in force 30 days after gazette publication, some clauses 60 days) adds that 'Every Sender shall notify the Originating Access Provider, in advance, about the use of Auto Dialer or Robo-Calls' and their objective in writing, defines a transactional call as one within 30 minutes of a customer-initiated transaction, and treats service calls to existing customers as needing no explicit consent. The practical catch: DoT allotted the 160 series on 30 May 2024 with operators verifying each entity, the first stage covers RBI/SEBI/IRDAI/PFRDA-regulated entities and government, and provider pages as of 24 Sep 2026 (Acefone; Plivo) still say non-BFSI businesses cannot get a 160 number (Acefone mentions a 1601 sub-series for utilities, logistics and couriers), with inventory of only 1,000 numbers per operator per circle (Exotel, 26 Jun 2024). So for the 13 Oct 2026 pilot: send pickup reminders as WhatsApp utility templates and human calls, start DLT registration on an operator portal (Airtel, Jio, Vi, BSNL or Tata) now because entity, header and template approvals take days, and before scaling automated voice get a 140-series number through a registered telemarketer or cloud-telephony provider for anything promotional and ask the provider whether a 160 number can be allotted to a non-BFSI Karnataka entity. Open items: monthly price of an Exotel or MSG91 virtual number (quote-only), and whether a landline-type virtual number placed in the WhatsApp Business app qualifies for coexistence (Meta only says the number must already be registered in the app).",
+      "status": "partly",
+      "decision": "Buy a dedicated SIM for the pilot support line and run it in the WhatsApp Business app; when you need the API, onboard through a partner's coexistence flow (MSG91 offers it) so the number and up to 180 days of chats carry over, and keep two-step verification off before any provider move. Register Luma.Green on a DLT portal now, keep automated outbound voice off until that is done, and use WhatsApp utility templates plus human calls for reminders during the pilot.",
+      "whoToAsk": "Your cloud-telephony provider (Exotel or MSG91) for virtual-number pricing and whether a 160-series number can be allotted to a non-BFSI entity in Karnataka today; the operator DLT portal (Airtel/Jio/Vi) for registration timelines; a telecom-compliance counsel to confirm that low-volume human callbacks from the support SIM are acceptable during the pilot.",
+      "sources": [
+        {
+          "title": "Meta — WhatsApp Cloud API: Phone numbers (eligibility, numbers already on WhatsApp must be deleted first)",
+          "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/phone-numbers/",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Meta — Migrate an existing WhatsApp number to a business account (delete account, ~3 minutes, history lost, partner coexistence alternative)",
+          "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started/migrate-existing-whatsapp-number-to-a-business-account",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Meta — Onboard WhatsApp Business app users (coexistence: app v2.24.17+, 180-day sync within 24 h, 20 mps cap, disabled features, disconnect path; Embedded Signup v2 deprecated 15 Oct 2026)",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users/",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Meta — Migrate a phone number to a different WABA (what is preserved, templates, 2-step verification off)",
+          "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/guides/migrate-phone-to-different-waba",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "MSG91 — WhatsApp onboarding of an MSG91 virtual (longcode) number: cannot receive SMS, verify by call",
+          "url": "https://msg91.com/help/whatsapp/how-to-use-virtual-number-for-whatsapp-service",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "MSG91 — How to remove/migrate my WhatsApp number from MSG91 (disable 2FA, no need to delete)",
+          "url": "https://msg91.com/help/best-practices/how-to-remove-my-number-from-whatsapp-from-msg91-",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "360dialog — Coexistence (no WABA migration for coexistence numbers, no calling API, disconnect path)",
+          "url": "https://docs.360dialog.com/docs/resources/phone-numbers/coexistence",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Wati — Coexistence for SMBs (available in India as of mid-2026)",
+          "url": "https://www.wati.io/en/blog/coexistence-for-smbs/",
+          "date": "17 Aug 2026"
+        },
+        {
+          "title": "AiSensy — WhatsApp Co-existence: everything you need to know (available for Indian numbers, 6-month chat sync)",
+          "url": "https://aisensy.com/tutorials/whatsapp-co-existence-everything-you-need-to-know",
+          "date": "accessed 30 Sep 2026 (undated)"
+        },
+        {
+          "title": "MyOperator — Virtual Number plans (₹5,000/month Sedan, ₹15,000/month SUV)",
+          "url": "https://myoperator.com/virtual-number",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "TRAI — Important Guidelines for sending commercial communication through Voice Calls or SMS (DLT registration for all senders, 140/160 only, no 10-digit numbers)",
+          "url": "https://www.airtel.in/business/commercial-communication/assets/documents/Help_Modules/TRAI_Directive_For_Voice.pdf",
+          "date": "18 Jun 2024"
+        },
+        {
+          "title": "TRAI — Telecom Commercial Communications Customer Preference (Second Amendment) Regulations, 2025 (auto-dialer/robo-call intimation, transactional/service definitions)",
+          "url": "https://trai.gov.in/sites/default/files/2025-02/Regulation_12022025.pdf",
+          "date": "12 Feb 2025"
+        },
+        {
+          "title": "PIB — DoT allots separate numbering series (160) exclusively for service and transactional voice calls",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2022249",
+          "date": "30 May 2024"
+        },
+        {
+          "title": "TRAI — Press Release 58/2024, Joint Committee of Regulators (140 migration to DLT, 160 pilot with RBI, action on PRI/SIP robocalls)",
+          "url": "https://trai.gov.in/sites/default/files/2024-10/PR_No.58of2024.pdf",
+          "date": "27 Aug 2024"
+        },
+        {
+          "title": "Acefone — TRAI 160 number series guide (eligibility still BFSI/government; 1601 for utilities, logistics, courier)",
+          "url": "https://www.acefone.com/blog/all-about-160-number-series/",
+          "date": "updated 24 Sep 2026"
+        },
+        {
+          "title": "Plivo — 160-series provisioning (BFSI only, Tata DLT, 7–14 business days)",
+          "url": "https://www.plivo.com/docs/voice/concepts/160-series-provisioning",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Exotel — 160 number: challenges from a telecom networking perspective (1,000 numbers per operator per circle)",
+          "url": "https://exotel.com/blog/160-number-challenges-from-a-telecom-networking-perspective/",
+          "date": "26 Jun 2024"
+        }
+      ]
     },
     {
-     "title": "Meta — Migrate an existing WhatsApp number to a business account (delete account, ~3 minutes, history lost, partner coexistence alternative)",
-     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started/migrate-existing-whatsapp-number-to-a-business-account",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Meta — Onboard WhatsApp Business app users (coexistence: app v2.24.17+, 180-day sync within 24 h, 20 mps cap, disabled features, disconnect path; Embedded Signup v2 deprecated 15 Oct 2026)",
-     "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users/",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Meta — Migrate a phone number to a different WABA (what is preserved, templates, 2-step verification off)",
-     "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/guides/migrate-phone-to-different-waba",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "MSG91 — WhatsApp onboarding of an MSG91 virtual (longcode) number: cannot receive SMS, verify by call",
-     "url": "https://msg91.com/help/whatsapp/how-to-use-virtual-number-for-whatsapp-service",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "MSG91 — How to remove/migrate my WhatsApp number from MSG91 (disable 2FA, no need to delete)",
-     "url": "https://msg91.com/help/best-practices/how-to-remove-my-number-from-whatsapp-from-msg91-",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "360dialog — Coexistence (no WABA migration for coexistence numbers, no calling API, disconnect path)",
-     "url": "https://docs.360dialog.com/docs/resources/phone-numbers/coexistence",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Wati — Coexistence for SMBs (available in India as of mid-2026)",
-     "url": "https://www.wati.io/en/blog/coexistence-for-smbs/",
-     "date": "17 Aug 2026"
-    },
-    {
-     "title": "AiSensy — WhatsApp Co-existence: everything you need to know (available for Indian numbers, 6-month chat sync)",
-     "url": "https://aisensy.com/tutorials/whatsapp-co-existence-everything-you-need-to-know",
-     "date": "accessed 30 Sep 2026 (undated)"
-    },
-    {
-     "title": "MyOperator — Virtual Number plans (₹5,000/month Sedan, ₹15,000/month SUV)",
-     "url": "https://myoperator.com/virtual-number",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "TRAI — Important Guidelines for sending commercial communication through Voice Calls or SMS (DLT registration for all senders, 140/160 only, no 10-digit numbers)",
-     "url": "https://www.airtel.in/business/commercial-communication/assets/documents/Help_Modules/TRAI_Directive_For_Voice.pdf",
-     "date": "18 Jun 2024"
-    },
-    {
-     "title": "TRAI — Telecom Commercial Communications Customer Preference (Second Amendment) Regulations, 2025 (auto-dialer/robo-call intimation, transactional/service definitions)",
-     "url": "https://trai.gov.in/sites/default/files/2025-02/Regulation_12022025.pdf",
-     "date": "12 Feb 2025"
-    },
-    {
-     "title": "PIB — DoT allots separate numbering series (160) exclusively for service and transactional voice calls",
-     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2022249",
-     "date": "30 May 2024"
-    },
-    {
-     "title": "TRAI — Press Release 58/2024, Joint Committee of Regulators (140 migration to DLT, 160 pilot with RBI, action on PRI/SIP robocalls)",
-     "url": "https://trai.gov.in/sites/default/files/2024-10/PR_No.58of2024.pdf",
-     "date": "27 Aug 2024"
-    },
-    {
-     "title": "Acefone — TRAI 160 number series guide (eligibility still BFSI/government; 1601 for utilities, logistics, courier)",
-     "url": "https://www.acefone.com/blog/all-about-160-number-series/",
-     "date": "updated 24 Sep 2026"
-    },
-    {
-     "title": "Plivo — 160-series provisioning (BFSI only, Tata DLT, 7–14 business days)",
-     "url": "https://www.plivo.com/docs/voice/concepts/160-series-provisioning",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Exotel — 160 number: challenges from a telecom networking perspective (1,000 numbers per operator per circle)",
-     "url": "https://exotel.com/blog/160-number-challenges-from-a-telecom-networking-perspective/",
-     "date": "26 Jun 2024"
+      "question": "Which text-to-speech service fits a pilot in Kannada, Tamil, Telugu, Hindi and Urdu: Google Chirp 3 HD, AI4Bharat Indic Parler-TTS, Bhashini, Sarvam? Compare pricing, language coverage and startup access. Who could record human voice clips quickly and cheaply in Bengaluru?",
+      "answer": "Coverage: Google's Chirp 3: HD (docs updated 24 Sep 2026) lists hi-IN, kn-IN, ta-IN, te-IN and ur-IN, the only paid option here that covers all five; Sarvam's Bulbul v3 covers 11 languages (bn, en, gu, hi, kn, ml, mr, od, pa, ta, te) — Hindi, Kannada, Tamil and Telugu but no Urdu — with 30+ voices, 2,500 characters per request, REST and streaming; AI4Bharat's Indic Parler-TTS (Apache 2.0, self-hosted) covers 21 languages including all five with 69 voices (its Urdu native-speaker score is 77.75 vs 95–99 for the best languages), while the newer IndicF5 (MIT, voice cloning from a reference clip, consent required) covers 11 languages without Urdu; the government Bhashini platform lists TTS models for Kannada, Tamil, Telugu and Hindi from AI4Bharat, IISc, Bodhan and IIT Madras, and Urdu only from IIT Madras. Pricing: Google Chirp 3: HD is US$30 per 1 million characters after 1 million free characters per month (legacy Standard and WaveNet US$4 per million after 4 million free, Neural2 US$16, Studio US$160, instant custom voice US$60; pricing page accessed 30 Sep 2026); Sarvam is ₹30 per 10,000 characters (₹3 per 1,000) for TTS and the same for voice cloning, with ₹100 free credits at signup, so the two are within the same order of magnitude once Google's free tier is used up; Parler-TTS and IndicF5 cost only your GPU time; Bhashini is free for proof-of-concept after registering at dashboard.bhashini.co.in (approval by the DIBD team), but its docs say production use or charging end users needs the paid version by contacting the Bhashini team, and no public price exists (its CEO said on 18 Apr 2024 that many services would be charged). Startup access: Google gives a US$300 free trial, US$2,000 for pre-funded startups and up to US$200,000 (US$350,000 for AI-first) for Seed–Series A through the Google for Startups Cloud Program; Sarvam runs a startup programme offering '6–12 months of credits matched to your scale' through an application form, amount unspecified; Bhashini's Startup Velocity page is a JavaScript app I could not read, so its terms are an open item — and note that bhashini.ai is a private company, not the government platform. Recommendation: use Google Chirp 3: HD for the pilot (one API, Urdu included, and 1 million free characters a month means a 150-character reminder played about 6,600 times costs nothing), keep Sarvam Bulbul v3 as the India-hosted alternative for the four non-Urdu languages, run Indic Parler-TTS only if you want zero per-character cost and can host a GPU, and treat Bhashini as PoC-only until it quotes a price. Human clips in Bengaluru: Karya (sales@karya.in, CMH Road, Bengaluru) is a nonprofit speech-data house working across the 22 official languages that takes custom recording projects with paid workers; Talentrack's Bangalore directory lists 30+ voice artists in Kannada, Tamil, Telugu and Hindi (Urdu not listed) whom you contact directly; studio hire in the city starts around ₹600/hour (Polite Productions, Indiranagar, IndiaMART listing) and Taperfox is a dedicated Bangalore voice-over studio that quotes per project. The market reference for IVR work is ₹400 per prompt with a 20-prompt minimum (a Mumbai artist's 2026 rate card), so 30 prompts in 5 languages is roughly ₹60,000 at that rate, or a fraction of that if a native-speaking team member or Saathi records the fixed prompts in a ₹600/hour studio and TTS handles the variable parts. Open items: an Urdu voice artist in Bengaluru (none of the pages opened lists one), Bhashini's production price, and the size of Sarvam's startup credits.",
+      "status": "partly",
+      "decision": "Default to Google Chirp 3: HD for all five languages during the pilot, with Sarvam Bulbul v3 as the India-hosted fallback for Hindi, Kannada, Tamil and Telugu. Record the fixed greetings and menu prompts with humans — brief Karya or a Talentrack artist, or a native-speaking team member in a ₹600/hour studio — and budget on the ₹400-per-prompt reference.",
+      "whoToAsk": "Karya (sales@karya.in) and two Talentrack Kannada/Urdu artists for quotes on a 30-prompt, 5-language set; the Bhashini team via the dashboard.bhashini.co.in registration for production pricing and Startup Velocity terms; Sarvam's startup programme form for the credit amount.",
+      "sources": [
+        {
+          "title": "Google Cloud — Chirp 3: HD voices (supported locales incl. hi-IN, kn-IN, ta-IN, te-IN, ur-IN; restrictions)",
+          "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+          "date": "updated 24 Sep 2026"
+        },
+        {
+          "title": "Google Cloud — Text-to-Speech pricing (Chirp 3: HD US$30/M after 1M free; legacy tiers)",
+          "url": "https://cloud.google.com/text-to-speech/pricing",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Google Cloud — Google for Startups Cloud Program (US$2,000 pre-funded; up to US$200,000 / US$350,000 AI-first; US$300 free trial)",
+          "url": "https://cloud.google.com/startup",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Sarvam AI — Pricing (Bulbul v3 ₹30 per 10K characters; ₹100 welcome credits)",
+          "url": "https://docs.sarvam.ai/api/getting-started/pricing",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Sarvam AI — API pricing (Starter pay-as-you-go, ₹3 per 1,000 characters TTS, Enterprise)",
+          "url": "https://www.sarvam.ai/api-pricing",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Sarvam AI — Text-to-Speech API reference (11 language codes, bulbul:v3 speakers, 2,500-character limit)",
+          "url": "https://docs.sarvam.ai/api-reference-docs/text-to-speech/convert",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Sarvam AI — Startup program (6–12 months of credits)",
+          "url": "https://www.sarvam.ai/startup-program",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Hugging Face — ai4bharat/indic-parler-tts (Apache 2.0, 21 languages incl. Urdu, 69 voices)",
+          "url": "https://huggingface.co/ai4bharat/indic-parler-tts",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Hugging Face — ai4bharat/IndicF5 (MIT, 11 languages, voice cloning with consent)",
+          "url": "https://huggingface.co/ai4bharat/IndicF5",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Bhashini APIs — Available models for usage (TTS models per language incl. Urdu via IIT Madras)",
+          "url": "https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Bhashini APIs — Pre-requisites and onboarding (register at dashboard.bhashini.co.in, DIBD approval)",
+          "url": "https://dibd-bhashini.gitbook.io/bhashini-apis/pre-requisites-and-onboarding",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Bhashini APIs — Overall understanding (PoC-only; contact Bhashini for paid production use)",
+          "url": "https://dibd-bhashini.gitbook.io/bhashini-apis",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "CDO Magazine — Bhashini gears up for monetization",
+          "url": "https://www.cdomagazine.tech/aiml/indian-govt-ai-translation-platform-bhashini-gears-up-for-monetization",
+          "date": "18 Apr 2024"
+        },
+        {
+          "title": "Karya — home (Bengaluru; 22 official languages; custom data projects; sales@karya.in)",
+          "url": "https://www.karya.in/",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Talentrack — Top voice-over artists in Bangalore (30+ artists; Kannada, Tamil, Telugu, Hindi)",
+          "url": "https://www.talentrack.in/top-voice-over-artist-in-bangalore",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "IndiaMART — Polite Productions recording studio, Indiranagar, ₹600/hour",
+          "url": "https://www.indiamart.com/proddetail/recording-studio-23062831930.html",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Taperfox — Voice-over and dubbing studio in Bangalore (quote-based)",
+          "url": "https://taperfox.com/services/voice-over-studio/",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Peter Abraham — Voice-over cost in India 2026 (IVR ₹400 per prompt, 20-prompt minimum)",
+          "url": "https://peterabraham.in/voice-over-cost-india/",
+          "date": "2026 (undated page)"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "Which text-to-speech service fits a pilot in Kannada, Tamil, Telugu, Hindi and Urdu: Google Chirp 3 HD, AI4Bharat Indic Parler-TTS, Bhashini, Sarvam? Compare pricing, language coverage and startup access. Who could record human voice clips quickly and cheaply in Bengaluru?",
-   "answer": "Coverage: Google's Chirp 3: HD (docs updated 24 Sep 2026) lists hi-IN, kn-IN, ta-IN, te-IN and ur-IN, the only paid option here that covers all five; Sarvam's Bulbul v3 covers 11 languages (bn, en, gu, hi, kn, ml, mr, od, pa, ta, te) — Hindi, Kannada, Tamil and Telugu but no Urdu — with 30+ voices, 2,500 characters per request, REST and streaming; AI4Bharat's Indic Parler-TTS (Apache 2.0, self-hosted) covers 21 languages including all five with 69 voices (its Urdu native-speaker score is 77.75 vs 95–99 for the best languages), while the newer IndicF5 (MIT, voice cloning from a reference clip, consent required) covers 11 languages without Urdu; the government Bhashini platform lists TTS models for Kannada, Tamil, Telugu and Hindi from AI4Bharat, IISc, Bodhan and IIT Madras, and Urdu only from IIT Madras. Pricing: Google Chirp 3: HD is US$30 per 1 million characters after 1 million free characters per month (legacy Standard and WaveNet US$4 per million after 4 million free, Neural2 US$16, Studio US$160, instant custom voice US$60; pricing page accessed 30 Sep 2026); Sarvam is ₹30 per 10,000 characters (₹3 per 1,000) for TTS and the same for voice cloning, with ₹100 free credits at signup, so the two are within the same order of magnitude once Google's free tier is used up; Parler-TTS and IndicF5 cost only your GPU time; Bhashini is free for proof-of-concept after registering at dashboard.bhashini.co.in (approval by the DIBD team), but its docs say production use or charging end users needs the paid version by contacting the Bhashini team, and no public price exists (its CEO said on 18 Apr 2024 that many services would be charged). Startup access: Google gives a US$300 free trial, US$2,000 for pre-funded startups and up to US$200,000 (US$350,000 for AI-first) for Seed–Series A through the Google for Startups Cloud Program; Sarvam runs a startup programme offering '6–12 months of credits matched to your scale' through an application form, amount unspecified; Bhashini's Startup Velocity page is a JavaScript app I could not read, so its terms are an open item — and note that bhashini.ai is a private company, not the government platform. Recommendation: use Google Chirp 3: HD for the pilot (one API, Urdu included, and 1 million free characters a month means a 150-character reminder played about 6,600 times costs nothing), keep Sarvam Bulbul v3 as the India-hosted alternative for the four non-Urdu languages, run Indic Parler-TTS only if you want zero per-character cost and can host a GPU, and treat Bhashini as PoC-only until it quotes a price. Human clips in Bengaluru: Karya (sales@karya.in, CMH Road, Bengaluru) is a nonprofit speech-data house working across the 22 official languages that takes custom recording projects with paid workers; Talentrack's Bangalore directory lists 30+ voice artists in Kannada, Tamil, Telugu and Hindi (Urdu not listed) whom you contact directly; studio hire in the city starts around ₹600/hour (Polite Productions, Indiranagar, IndiaMART listing) and Taperfox is a dedicated Bangalore voice-over studio that quotes per project. The market reference for IVR work is ₹400 per prompt with a 20-prompt minimum (a Mumbai artist's 2026 rate card), so 30 prompts in 5 languages is roughly ₹60,000 at that rate, or a fraction of that if a native-speaking team member or Saathi records the fixed prompts in a ₹600/hour studio and TTS handles the variable parts. Open items: an Urdu voice artist in Bengaluru (none of the pages opened lists one), Bhashini's production price, and the size of Sarvam's startup credits.",
-   "status": "partly",
-   "decision": "Default to Google Chirp 3: HD for all five languages during the pilot, with Sarvam Bulbul v3 as the India-hosted fallback for Hindi, Kannada, Tamil and Telugu. Record the fixed greetings and menu prompts with humans — brief Karya or a Talentrack artist, or a native-speaking team member in a ₹600/hour studio — and budget on the ₹400-per-prompt reference.",
-   "whoToAsk": "Karya (sales@karya.in) and two Talentrack Kannada/Urdu artists for quotes on a 30-prompt, 5-language set; the Bhashini team via the dashboard.bhashini.co.in registration for production pricing and Startup Velocity terms; Sarvam's startup programme form for the credit amount.",
-   "sources": [
-    {
-     "title": "Google Cloud — Chirp 3: HD voices (supported locales incl. hi-IN, kn-IN, ta-IN, te-IN, ur-IN; restrictions)",
-     "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
-     "date": "updated 24 Sep 2026"
-    },
-    {
-     "title": "Google Cloud — Text-to-Speech pricing (Chirp 3: HD US$30/M after 1M free; legacy tiers)",
-     "url": "https://cloud.google.com/text-to-speech/pricing",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Google Cloud — Google for Startups Cloud Program (US$2,000 pre-funded; up to US$200,000 / US$350,000 AI-first; US$300 free trial)",
-     "url": "https://cloud.google.com/startup",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Sarvam AI — Pricing (Bulbul v3 ₹30 per 10K characters; ₹100 welcome credits)",
-     "url": "https://docs.sarvam.ai/api/getting-started/pricing",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Sarvam AI — API pricing (Starter pay-as-you-go, ₹3 per 1,000 characters TTS, Enterprise)",
-     "url": "https://www.sarvam.ai/api-pricing",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Sarvam AI — Text-to-Speech API reference (11 language codes, bulbul:v3 speakers, 2,500-character limit)",
-     "url": "https://docs.sarvam.ai/api-reference-docs/text-to-speech/convert",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Sarvam AI — Startup program (6–12 months of credits)",
-     "url": "https://www.sarvam.ai/startup-program",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Hugging Face — ai4bharat/indic-parler-tts (Apache 2.0, 21 languages incl. Urdu, 69 voices)",
-     "url": "https://huggingface.co/ai4bharat/indic-parler-tts",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Hugging Face — ai4bharat/IndicF5 (MIT, 11 languages, voice cloning with consent)",
-     "url": "https://huggingface.co/ai4bharat/IndicF5",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Bhashini APIs — Available models for usage (TTS models per language incl. Urdu via IIT Madras)",
-     "url": "https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Bhashini APIs — Pre-requisites and onboarding (register at dashboard.bhashini.co.in, DIBD approval)",
-     "url": "https://dibd-bhashini.gitbook.io/bhashini-apis/pre-requisites-and-onboarding",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Bhashini APIs — Overall understanding (PoC-only; contact Bhashini for paid production use)",
-     "url": "https://dibd-bhashini.gitbook.io/bhashini-apis",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "CDO Magazine — Bhashini gears up for monetization",
-     "url": "https://www.cdomagazine.tech/aiml/indian-govt-ai-translation-platform-bhashini-gears-up-for-monetization",
-     "date": "18 Apr 2024"
-    },
-    {
-     "title": "Karya — home (Bengaluru; 22 official languages; custom data projects; sales@karya.in)",
-     "url": "https://www.karya.in/",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Talentrack — Top voice-over artists in Bangalore (30+ artists; Kannada, Tamil, Telugu, Hindi)",
-     "url": "https://www.talentrack.in/top-voice-over-artist-in-bangalore",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "IndiaMART — Polite Productions recording studio, Indiranagar, ₹600/hour",
-     "url": "https://www.indiamart.com/proddetail/recording-studio-23062831930.html",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Taperfox — Voice-over and dubbing studio in Bangalore (quote-based)",
-     "url": "https://taperfox.com/services/voice-over-studio/",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Peter Abraham — Voice-over cost in India 2026 (IVR ₹400 per prompt, 20-prompt minimum)",
-     "url": "https://peterabraham.in/voice-over-cost-india/",
-     "date": "2026 (undated page)"
-    }
-   ]
-  }
- ]
+  ]
 }

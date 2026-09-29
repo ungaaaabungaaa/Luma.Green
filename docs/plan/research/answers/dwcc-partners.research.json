@@ -1,262 +1,262 @@
 {
- "cluster": "Dry-waste centres, NAMASTE and NGO partners",
- "answers": [
-  {
-   "question": "How many dry waste collection centres (DWCCs) operate in Bengaluru today (figures range from 119 in Sep 2025 to 164/166), who runs them and under what contracts with the city?",
-   "answer": "The only dated, city-wide operating count on a public page is Citizen Matters' 15 Sep 2025 report: of the 198 centres sanctioned (one per old BBMP ward, after the 2010 Lok Adalat order upheld by the High Court in 2012), 'only 141 remain, and just 119 are operational', serving 127 wards; Hasiru Dala's Nalini Shekar put the total at 140 on 18 Oct 2024, and Deccan Herald (11 Jan 2025) said 'more than 160' exist but a source estimated only 30-35 run efficiently. The 166 figure is the May 2019 functional count (166 of 198 sanctioned); '164' could not be traced to any dated page, and the OpenCity copy of BBMP's DWCC map (re-uploaded 25 Nov 2025) has 336 pins including old sites, so it is not an operating count. The denominator also changed in 2025: the 198 wards became 369 across five city corporations under the Greater Bengaluru Authority, so roughly 120 centres now cover about a third of today's wards. The city does not run them: DWCCs are BBMP-owned sheds operated by NGOs, waste-picker self-help groups and individual waste-picker entrepreneurs; Hasiru Dala supports 35 (33 in 2019), Swachha and Gilgal Charitable Trust are named as other resource organisations, ITC ran the Shivajinagar 'Kartavya' centre (2015), and the garbage contractors' association says dry waste is 'entirely the responsibility of non-governmental organisations and self-help groups' (Jan 2025). Contract terms: BBMP's DWCC operating procedure (annex to the ward services agreement) makes the centre BBMP property, obliges the operator to accept all dry-waste streams, sort into at least five categories, log daily weights on BBMP's portal and report monthly, with the collection contractor dropping low-value waste free; operators keep the sale proceeds and, per the original design, get 'zero subsidies in operations'. The 2020-vintage MoUs paid Rs 56,316 for six months of operation plus Rs 23,316 a month for maintenance where BBMP supplied no vehicle, but BBMP owed Rs 9.41 crore across 46 wards (980 centre-months) by May 2023, and by Sep 2025 the MoUs had lapsed so that 'there are no transactions between the waste pickers and the BBMP'; operators live off recyclables sales. BSWML's May 2025 collection tender routes household dry waste to 'dry waste collection centres operated by not-for-profit organisations', and on 16 Aug 2025 the state ordered a DWCC or MRF in every ward 'by partnering with ragpickers' while moving collection from BSWML to BBMP zonal commissioners and then to the five corporations, with BSWML keeping processing and disposal. Bengaluru generates about 1,925 tonnes of dry waste a day, of which about 1,200 tonnes is processed (Aug 2025).",
-   "status": "answered",
-   "decision": "Model Bengaluru as roughly 120 operating DWCCs (not 166) run by NGOs and waste-picker SHGs with no city payments flowing; treat each centre as a candidate 'yard' node whose operator (not the city) is the counterparty, and confirm the live list for the pilot wards with the city corporation's SWM wing before 13 Oct 2026.",
-   "whoToAsk": "The SWM chief engineer of the city corporation covering the pilot wards (under GBA) and BSWML for the current DWCC list and MoU status; Hasiru Dala for its 35 centres and their operators.",
-   "sources": [
+  "cluster": "Dry-waste centres, NAMASTE and NGO partners",
+  "answers": [
     {
-     "title": "Invisible workers, visible waste: Bengaluru's waste pickers struggle without recognition (Citizen Matters)",
-     "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
-     "date": "2025-09-15"
+      "question": "How many dry waste collection centres (DWCCs) operate in Bengaluru today (figures range from 119 in Sep 2025 to 164/166), who runs them and under what contracts with the city?",
+      "answer": "The only dated, city-wide operating count on a public page is Citizen Matters' 15 Sep 2025 report: of the 198 centres sanctioned (one per old BBMP ward, after the 2010 Lok Adalat order upheld by the High Court in 2012), 'only 141 remain, and just 119 are operational', serving 127 wards; Hasiru Dala's Nalini Shekar put the total at 140 on 18 Oct 2024, and Deccan Herald (11 Jan 2025) said 'more than 160' exist but a source estimated only 30-35 run efficiently. The 166 figure is the May 2019 functional count (166 of 198 sanctioned); '164' could not be traced to any dated page, and the OpenCity copy of BBMP's DWCC map (re-uploaded 25 Nov 2025) has 336 pins including old sites, so it is not an operating count. The denominator also changed in 2025: the 198 wards became 369 across five city corporations under the Greater Bengaluru Authority, so roughly 120 centres now cover about a third of today's wards. The city does not run them: DWCCs are BBMP-owned sheds operated by NGOs, waste-picker self-help groups and individual waste-picker entrepreneurs; Hasiru Dala supports 35 (33 in 2019), Swachha and Gilgal Charitable Trust are named as other resource organisations, ITC ran the Shivajinagar 'Kartavya' centre (2015), and the garbage contractors' association says dry waste is 'entirely the responsibility of non-governmental organisations and self-help groups' (Jan 2025). Contract terms: BBMP's DWCC operating procedure (annex to the ward services agreement) makes the centre BBMP property, obliges the operator to accept all dry-waste streams, sort into at least five categories, log daily weights on BBMP's portal and report monthly, with the collection contractor dropping low-value waste free; operators keep the sale proceeds and, per the original design, get 'zero subsidies in operations'. The 2020-vintage MoUs paid Rs 56,316 for six months of operation plus Rs 23,316 a month for maintenance where BBMP supplied no vehicle, but BBMP owed Rs 9.41 crore across 46 wards (980 centre-months) by May 2023, and by Sep 2025 the MoUs had lapsed so that 'there are no transactions between the waste pickers and the BBMP'; operators live off recyclables sales. BSWML's May 2025 collection tender routes household dry waste to 'dry waste collection centres operated by not-for-profit organisations', and on 16 Aug 2025 the state ordered a DWCC or MRF in every ward 'by partnering with ragpickers' while moving collection from BSWML to BBMP zonal commissioners and then to the five corporations, with BSWML keeping processing and disposal. Bengaluru generates about 1,925 tonnes of dry waste a day, of which about 1,200 tonnes is processed (Aug 2025).",
+      "status": "answered",
+      "decision": "Model Bengaluru as roughly 120 operating DWCCs (not 166) run by NGOs and waste-picker SHGs with no city payments flowing; treat each centre as a candidate 'yard' node whose operator (not the city) is the counterparty, and confirm the live list for the pilot wards with the city corporation's SWM wing before 13 Oct 2026.",
+      "whoToAsk": "The SWM chief engineer of the city corporation covering the pilot wards (under GBA) and BSWML for the current DWCC list and MoU status; Hasiru Dala for its 35 centres and their operators.",
+      "sources": [
+        {
+          "title": "Invisible workers, visible waste: Bengaluru's waste pickers struggle without recognition (Citizen Matters)",
+          "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "How Bengaluru's crumbling Dry Waste Collection Centres can be overhauled (Citizen Matters)",
+          "url": "https://citizenmatters.in/dry-waste-collection-centres-need-design-changes-to-make-them-function-better/",
+          "date": "2019-05-20"
+        },
+        {
+          "title": "Bengaluru's dry waste management at a crossroads (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bengalurus-dry-waste-management-at-a-crossroads-3350529",
+          "date": "2025-01-11"
+        },
+        {
+          "title": "'Waste pickers are treated like step-children...' interview with Nalini Shekar (Question of Cities)",
+          "url": "https://questionofcities.org/waste-pickers-are-treated-like-step-children-but-the-formal-sector-cant-work-without-them/",
+          "date": "2024-10-18"
+        },
+        {
+          "title": "Waste management organisations urge BBMP to pay workers due wages (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/waste-management-organisations-urge-bbmp-to-pay-workers-due-wages-1223953.html",
+          "date": "2023-06-01"
+        },
+        {
+          "title": "BBMP draft services agreement, Annex-I: Operating Procedure for Dry Waste Collection Centres (OpenCity dataset)",
+          "url": "https://data.opencity.in/dataset/bbmp-operating-dry-waste-collection-centres",
+          "date": "2025-11-25"
+        },
+        {
+          "title": "Poor ranking: govt strips BSWML of garbage collection (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/poor-ranking-govt-strips-bswml-of-garbage-collection-3683325",
+          "date": "2025-08-16"
+        },
+        {
+          "title": "Solid waste management agency floats tender to collect, transport garbage (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/solid-waste-management-agency-floats-tender-to-collect-transport-garbage-3563568",
+          "date": "2025-05-30"
+        },
+        {
+          "title": "Revamped collection system threatens waste pickers' jobs (Deccan Herald)",
+          "url": "https://www.deccanherald.com/city/revamped-collection-system-threatens-waste-pickers-jobs-1151320.html",
+          "date": "2022-10-07"
+        },
+        {
+          "title": "From waste wise projects to dry waste centers, story of trash in Bengaluru (Citizen Matters)",
+          "url": "https://citizenmatters.in/from-waste-wise-projects-to-dry-waste-centers-story-of-trash-in-bengaluru/",
+          "date": "2015-12-09"
+        },
+        {
+          "title": "Palike dry waste collection centres remain unutilised (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/palike-dry-waste-collection-centres-2113646",
+          "date": "2015-02-23"
+        },
+        {
+          "title": "Administrative divisions of Bengaluru (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Bengaluru",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "BBMP Dry Waste Collection Centres Map, KML (OpenCity)",
+          "url": "https://data.opencity.in/dataset/bbmp-solid-waste-management-data/resource/e6aa9364-b0ab-4b5d-8076-95c45d985599",
+          "date": "2025-11-25"
+        }
+      ]
     },
     {
-     "title": "How Bengaluru's crumbling Dry Waste Collection Centres can be overhauled (Citizen Matters)",
-     "url": "https://citizenmatters.in/dry-waste-collection-centres-need-design-changes-to-make-them-function-better/",
-     "date": "2019-05-20"
+      "question": "Does the NAMASTE waste-picker component continue beyond FY2025-26, which resource organisation is empanelled for Karnataka, and has waste-picker registration started in Bengaluru?",
+      "answer": "The waste-picker component was approved by the Standing Finance Committee on 20 Jun 2024 for FY2024-25 and 2025-26 only; the Revised Scheme Guidelines (MoSJE, PDF dated 15 Dec 2025) say it 'may be continued thereafter in the light of an evaluation done by the MoSJE and MoHUA', and the parent NAMASTE scheme was itself sanctioned for three years to 2025-26 with Rs 349.70 crore (PIB, 25 Aug 2023). No gazette, Cabinet note or budget line approving continuation into FY2026-27 was found on an official page, but the scheme is visibly still running: a Lok Sabha reply of 17 Mar 2026 put 2.34 lakh waste pickers under its ambit, MoS Ramdas Athawale distributed NAMASTE and Ayushman cards to 300+ waste pickers in Delhi on 4 Sep 2026, a 22 Sep 2026 ministry update reports 2,51,756 waste pickers profiled in 34 states/UTs (up from 37,980 validated in Aug 2025 and 1.52 lakh validated by 23 Jan 2026), and on 21 Aug 2026 the Centre was reported (citing The Hindu and PIB) to be proposing a rural expansion costing about Rs 498.73 crore through 2030-31 — treat that as a proposal, not an approval. The guidelines pay CSOs, CSCs, ROs or ULBs Rs 250 per e-KYC-validated waste picker (raised from Rs 150), an RO management fee of Rs 10,000 per DWCC per month for 12 months, and up to Rs 5 lakh capital subsidy per DWCC for up to two collection vehicles, against targets of 2.5 lakh profiles and 750 DWCCs; occupation can be verified by 'recent receipts from sale of scrap' or endorsement by scrap-shop owners, which Luma.Green's receipts could supply. Resource organisations are empanelled centrally by NSKFDC through an Expression of Interest (states not covered may empanel locally); the NAMASTE portal's dashboard showed 11 ROs, 9 training providers and 10,894 profiles across 3 states as of 28 Feb 2025, but no public page names the RO for Karnataka, and the state-wise annex to the 22 Jul 2025 Lok Sabha answer is a scan we could not read. On Bengaluru, Citizen Matters (15 Sep 2025) reports the 2013 BBMP ID cards have expired after 10 years, new waste pickers 'are not able to obtain ID cards', and no NAMASTE profiling camp is mentioned; Nalini Shekar (18 Oct 2024) said Karnataka has about 4.23 lakh waste pickers and only about 25,000 ID cards. Pune was the first city to formally implement the component (26 Mar 2025); NSKFDC's Aug 2025 slides show 700+ ULBs in 30 states/UTs had started profiling (about 91,000 surveyed, 42,000 validated), so Bengaluru may be among them, but that is unconfirmed.",
+      "status": "partly",
+      "decision": "Do not gate Saathi onboarding on a NAMASTE ID; capture it as an optional KYC field, and design Luma.Green's sale receipts so they qualify as the 'recent receipts from sale of scrap' evidence the guidelines accept, so a partner RO can profile Saathis at Rs 250 each if and when Bengaluru profiling runs.",
+      "whoToAsk": "NSKFDC (nskfdc-msje@nic.in, +91-11-26382476) for the Karnataka RO and the FY2026-27 continuation order; Karnataka Directorate of Municipal Administration and the pilot city corporation's SWM wing for whether profiling has started in Bengaluru; Hasiru Dala for ground truth on camps and ID cards.",
+      "sources": [
+        {
+          "title": "Revised Scheme Guidelines for inclusion of Waste Pickers Component under NAMASTE (MoSJE)",
+          "url": "https://socialjustice.gov.in/writereaddata/UploadFile/37031765796227.pdf",
+          "date": "2025-12-15"
+        },
+        {
+          "title": "National Action for Mechanised Sanitation Ecosystem (NAMASTE) — scheme outlay Rs 349.70 crore to 2025-26 (PIB)",
+          "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1952044",
+          "date": "2023-08-25"
+        },
+        {
+          "title": "MoSJE launches Waste Picker Enumeration App under NAMASTE (PIB)",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2134303",
+          "date": "2025-06-05"
+        },
+        {
+          "title": "NAMASTE backgrounder — 37,980 waste pickers validated by Aug 2025 (PIB)",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/sep/doc2025910632601.pdf",
+          "date": "2025-09-10"
+        },
+        {
+          "title": "Lok Sabha Starred Question No. 28 on NAMASTE (answered 22 Jul 2025)",
+          "url": "https://sansad.in/getFile/loksabhaquestions/annex/185/AS28_WrZKXl.pdf?source=pqals",
+          "date": "2025-07-22"
+        },
+        {
+          "title": "Bringing informal waste pickers into the formal system — NSKFDC slides at CSE symposium",
+          "url": "https://cdn.cseindia.org/attachments/0.05157100_1754469411_p-k-singh.pdf",
+          "date": "2025-08-06"
+        },
+        {
+          "title": "Waste-picker enumeration data and NAMASTE Scheme — 1.52 lakh validated by 23 Jan 2026 (Carpe Diem IAS)",
+          "url": "https://www.carpediemias.com/current-affairs/article/waste-picker-enumeration-data-and-namaste-scheme",
+          "date": "2026-02-05"
+        },
+        {
+          "title": "622 sanitation worker deaths since 2017 — Lok Sabha reply of 17 Mar 2026 (NewsGram)",
+          "url": "https://www.newsgram.com/human-rights/2026/03/19/622-sanitation-worker-deaths-since-2017",
+          "date": "2026-03-19"
+        },
+        {
+          "title": "Centre set to expand NAMASTE to rural India, Rs 498.73 crore through 2030-31 (Vajiram & Ravi, citing The Hindu/PIB)",
+          "url": "https://vajiramandravi.com/current-affairs/namaste-scheme-expansion/",
+          "date": "2026-08-21"
+        },
+        {
+          "title": "Ramdas Athawale distributes NAMASTE, Ayushman cards to waste pickers in Delhi (DD India)",
+          "url": "https://ddindia.co.in/2026/09/ramdas-athawale-distributes-namaste-ayushman-cards-to-waste-pickers-in-delhi/",
+          "date": "2026-09-04"
+        },
+        {
+          "title": "NAMASTE Scheme profiles over 3.4 lakh sanitation workers — 2,51,756 waste pickers (Indian Masterminds)",
+          "url": "https://indianmasterminds.com/news/namaste-scheme-sanitation-workers-safety-235624/",
+          "date": "2026-09-22"
+        },
+        {
+          "title": "NSKFDC NAMASTE portal dashboard (11 ROs, 9 training providers; last updated 28 Feb 2025)",
+          "url": "https://namaste.uat-projects.com/en",
+          "date": "2025-02-28"
+        },
+        {
+          "title": "India launches NAMASTE scheme to recognize waste pickers — Pune first city (International Alliance of Waste Pickers)",
+          "url": "https://wastepickersinternational.org/2025/04/02/india-launches-namaste-scheme-to-recognize-and-support-waste-pickers/",
+          "date": "2025-04-02"
+        },
+        {
+          "title": "Invisible workers, visible waste (Citizen Matters)",
+          "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "Nalini Shekar interview — Karnataka 4.23 lakh waste pickers, 25,000 ID cards (Question of Cities)",
+          "url": "https://questionofcities.org/waste-pickers-are-treated-like-step-children-but-the-formal-sector-cant-work-without-them/",
+          "date": "2024-10-18"
+        }
+      ]
     },
     {
-     "title": "Bengaluru's dry waste management at a crossroads (Deccan Herald)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bengalurus-dry-waste-management-at-a-crossroads-3350529",
-     "date": "2025-01-11"
-    },
-    {
-     "title": "'Waste pickers are treated like step-children...' interview with Nalini Shekar (Question of Cities)",
-     "url": "https://questionofcities.org/waste-pickers-are-treated-like-step-children-but-the-formal-sector-cant-work-without-them/",
-     "date": "2024-10-18"
-    },
-    {
-     "title": "Waste management organisations urge BBMP to pay workers due wages (Deccan Herald)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/waste-management-organisations-urge-bbmp-to-pay-workers-due-wages-1223953.html",
-     "date": "2023-06-01"
-    },
-    {
-     "title": "BBMP draft services agreement, Annex-I: Operating Procedure for Dry Waste Collection Centres (OpenCity dataset)",
-     "url": "https://data.opencity.in/dataset/bbmp-operating-dry-waste-collection-centres",
-     "date": "2025-11-25"
-    },
-    {
-     "title": "Poor ranking: govt strips BSWML of garbage collection (Deccan Herald)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/poor-ranking-govt-strips-bswml-of-garbage-collection-3683325",
-     "date": "2025-08-16"
-    },
-    {
-     "title": "Solid waste management agency floats tender to collect, transport garbage (Deccan Herald)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/solid-waste-management-agency-floats-tender-to-collect-transport-garbage-3563568",
-     "date": "2025-05-30"
-    },
-    {
-     "title": "Revamped collection system threatens waste pickers' jobs (Deccan Herald)",
-     "url": "https://www.deccanherald.com/city/revamped-collection-system-threatens-waste-pickers-jobs-1151320.html",
-     "date": "2022-10-07"
-    },
-    {
-     "title": "From waste wise projects to dry waste centers, story of trash in Bengaluru (Citizen Matters)",
-     "url": "https://citizenmatters.in/from-waste-wise-projects-to-dry-waste-centers-story-of-trash-in-bengaluru/",
-     "date": "2015-12-09"
-    },
-    {
-     "title": "Palike dry waste collection centres remain unutilised (Deccan Herald)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/palike-dry-waste-collection-centres-2113646",
-     "date": "2015-02-23"
-    },
-    {
-     "title": "Administrative divisions of Bengaluru (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Bengaluru",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "BBMP Dry Waste Collection Centres Map, KML (OpenCity)",
-     "url": "https://data.opencity.in/dataset/bbmp-solid-waste-management-data/resource/e6aa9364-b0ab-4b5d-8076-95c45d985599",
-     "date": "2025-11-25"
+      "question": "Would Hasiru Dala, Saahas, ITC WOW's centre operators or the Karnataka waste-pickers' union co-run kabadiwala and Saathi onboarding, or run a DWCC as a pilot yard, and on what terms do such NGOs usually work (fee per onboarding, grants, CSR)? What is Hasiru Dala Innovations' own traceable-plastic business with brands, and how should Luma.Green avoid competing with it?",
+      "answer": "No public page says any of them will co-run Luma.Green onboarding — that takes a meeting — but their models show who fits which role. Hasiru Dala is a member-based waste-picker organisation (annual membership fee Rs 50 in its early years; registered 2013) that is the resource organisation behind 35 Bengaluru DWCCs (Sep 2025), has secured 11,300+ occupational ID cards across Karnataka and Andhra Pradesh, checks waste pickers' documents and enrols them in schemes, and is grant- and CSR-funded (FCRA, 80G, 12A, CSR-1 certified); its 2013 DWCC plan already assumed three partners — BBMP building the shed, a sponsor paying user fees, and the collective operating — so it is the natural Saathi-onboarding and DWCC-as-pilot-yard partner. The Karnataka waste-picker union (registered with the state, 2,300+ members, formed around 2023) and the Thyajya Shramika Sanghatane collective that petitioned BBMP in 2022 and 2023 over unpaid DWCC dues are the bodies to consult on Saathi pay and pickup terms. Saahas is an NGO (2001; 226 livelihoods, 5,227 MT dry waste managed; CSR partners Juniper Networks, Tata Realty, Rainmatter) with a sister company Saahas Zero Waste (Pvt Ltd, 2013; 420+ staff, 100+ tonnes a day, 112 informal workers formalised, a 10-TPD MRF at Jigani and a 25-tonne-a-month textile facility) whose 'Let's Transform' programme, funded by IKEA Social Entrepreneurship since 2022, onboards informal scrap-dealer micro-entrepreneurs (three so far, each employing about 20 workers) with equipment, compliance and a business model in return for plastic supply and supply-chain analytics — the closest existing template for kabadiwala onboarding. ITC's WOW is a corporate CSR programme (17,900+ waste collectors, 150+ social entrepreneurs, 67,100 MT of dry waste in 2024-25) that works through 'super franchisee' aggregators and its own dry-resource collection centres, ran BBMP's Shivajinagar DWCC in 2015, and routes paper to ITC's mills. Public fee benchmarks: NAMASTE pays Rs 250 per validated profile and Rs 10,000 per DWCC per month to resource organisations; the lapsed BBMP MoUs paid Rs 56,316 per six months plus Rs 23,316 a month; The Body Shop works on 'long-term fixed-price contracts'; no NGO publishes a per-onboarding fee, so that number is an open item. Hasiru Dala Innovations (HDI) is a separate for-profit (Nov 2015; Rs 5 crore revenue in FY2017-18, investors including Social Alpha) running total waste management for 370+ clients, 800+ events, EPR compliance services, and a 'plastics circularity' line: WFTO Fair Trade Guaranteed, blockchain-traceable post-consumer plastic aggregated from waste-picker entrepreneurs, DWCCs and scrap dealers (327 'supplier clients') at its own aggregation centre and sold to recyclers (e.g. Vishuddh Recycle) and brands — since 9 May 2019 supplying The Body Shop through Plastics for Change (250 tonnes in year one, 900 tonnes over three years, up to 2,500 Bengaluru waste pickers), and Plastics for Change's brand list now includes L'Oréal, Estée Lauder, Unilever and IKEA. HDI is therefore a buyer competing for the same kabadiwala and DWCC material, so Luma.Green should stay a neutral ledger that records cash and UPI sales, never buys, sells or brokers material or EPR credits, does not pitch brands, and invites HDI's aggregation centre in as a 'yard' node whose traceability export can feed its WFTO and EPR audits.",
+      "status": "partly",
+      "decision": "Open with Hasiru Dala for Saathi onboarding and one of its 35 DWCCs as the pilot yard, and with Saahas Zero Waste for kabadiwala onboarding, each under a written MoU paying a per-onboarding fee benchmarked to NAMASTE's Rs 250 and a monthly support fee benchmarked to Rs 10,000 per centre (funded by Luma.Green or a CSR grant); treat HDI as a downstream yard/recycler partner by never trading material or EPR credits, and bring ITC WOW in only after the pilot.",
+      "whoToAsk": "Hasiru Dala's leadership and its DWCC operators, Saahas Zero Waste's founder, HDI's management and the Karnataka waste-picker union's office-bearers for actual willingness and fees (one meeting each, since none is published); a CA or counsel on routing CSR money to the fees under Section 135 and the partner's CSR-1 status.",
+      "sources": [
+        {
+          "title": "Invisible workers, visible waste — Hasiru Dala supports 35 DWCCs; Karnataka union 2,300+ members (Citizen Matters)",
+          "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "Waste management organisations urge BBMP to pay workers due wages — ROs Hasiru Dala, Swachha, Gilgal; Thyajya Shramika Sanghatane (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/waste-management-organisations-urge-bbmp-to-pay-workers-due-wages-1223953.html",
+          "date": "2023-06-01"
+        },
+        {
+          "title": "Hasiru Dala profile — 11,300+ ID cards, FCRA/80G/12A/CSR-1 (Give.do)",
+          "url": "https://give.do/discover/Q17/hasiru-dala/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Organizing Informal Waste Pickers: A Case Study of Bengaluru (WIEGO, Chengappa)",
+          "url": "https://www.wiego.org/wp-content/uploads/2019/09/Chengappa-Organizing-Informal-Waste-Pickers-India.pdf",
+          "date": "2013-01-01"
+        },
+        {
+          "title": "Hasiru Dala is lifting waste pickers up from the dumps — HDI revenue and investors (Forbes India)",
+          "url": "https://www.forbesindia.com/article/sustainability-special/hasiru-dala-is-lifting-waste-pickers-up-from-the-dumps/50337/1",
+          "date": "2018-05-30"
+        },
+        {
+          "title": "Hasiru Dala Innovations — services, 370+ clients, 327 supplier clients, WFTO plastics circularity",
+          "url": "https://hasirudalainnovations.com/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "The World's First Ethically Traded Plastic (Hasiru Dala Innovations blog)",
+          "url": "https://hasirudalainnovations.com/blog/the-worlds-first-ethically-traded-plastic/",
+          "date": "2026-07-30"
+        },
+        {
+          "title": "Launching the world's first fair trade plastic with The Body Shop (Plastics for Change)",
+          "url": "https://www.plasticsforchange.org/blog/category/plastics-for-change-launches-the-worlds-first-fairly-traded-recycled-plastic-with-brand-partner-the-body-shop",
+          "date": "2019-05-09"
+        },
+        {
+          "title": "Plastics for Change — brand partners and model",
+          "url": "https://www.plasticsforchange.org/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Community Fair Trade recycled plastic (The Body Shop)",
+          "url": "https://www.thebodyshop.com/en-gb/about-us/brand-values/sustainability/community-fair-trade-plastic/a/a00013",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Saahas NGO — impact figures and CSR partners",
+          "url": "https://saahas.org/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "About Saahas Zero Waste — Pvt Ltd, 420+ staff, 112 informal workers formalised",
+          "url": "https://www.saahaszerowaste.com/explore/about-saahas-zero-waste/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Saahas Zero Waste — Let's Transform micro-entrepreneur programme (IKEA Social Entrepreneurship)",
+          "url": "https://www.ikeasocialentrepreneurship.org/en/partnerships/accelerating-for-impact/saahas-zero-waste",
+          "date": "2022-01-01"
+        },
+        {
+          "title": "Textile recycling: Bengaluru's community turns waste into wealth — Saahas Zero Waste TRF (Deccan Herald)",
+          "url": "https://www.deccanherald.com/amp/story/india/karnataka/bengaluru/a-community-driven-waste-to-wealth-model-in-bengaluru-3915616",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Towards Circularity — ITC WOW figures 2024-25 (ITC)",
+          "url": "https://www.itcportal.com/sustainability/circularity.aspx",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Palike dry waste collection centres — ITC-run Kartavya DWCC, Shivajinagar (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/palike-dry-waste-collection-centres-2113646",
+          "date": "2015-02-23"
+        },
+        {
+          "title": "Revamped collection system threatens waste pickers' jobs — Thyajya Shramika Sangatane petition (Deccan Herald)",
+          "url": "https://www.deccanherald.com/city/revamped-collection-system-threatens-waste-pickers-jobs-1151320.html",
+          "date": "2022-10-07"
+        },
+        {
+          "title": "Revised Scheme Guidelines, Waste Pickers Component under NAMASTE — RO fee and profiling incentive (MoSJE)",
+          "url": "https://socialjustice.gov.in/writereaddata/UploadFile/37031765796227.pdf",
+          "date": "2025-12-15"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "Does the NAMASTE waste-picker component continue beyond FY2025-26, which resource organisation is empanelled for Karnataka, and has waste-picker registration started in Bengaluru?",
-   "answer": "The waste-picker component was approved by the Standing Finance Committee on 20 Jun 2024 for FY2024-25 and 2025-26 only; the Revised Scheme Guidelines (MoSJE, PDF dated 15 Dec 2025) say it 'may be continued thereafter in the light of an evaluation done by the MoSJE and MoHUA', and the parent NAMASTE scheme was itself sanctioned for three years to 2025-26 with Rs 349.70 crore (PIB, 25 Aug 2023). No gazette, Cabinet note or budget line approving continuation into FY2026-27 was found on an official page, but the scheme is visibly still running: a Lok Sabha reply of 17 Mar 2026 put 2.34 lakh waste pickers under its ambit, MoS Ramdas Athawale distributed NAMASTE and Ayushman cards to 300+ waste pickers in Delhi on 4 Sep 2026, a 22 Sep 2026 ministry update reports 2,51,756 waste pickers profiled in 34 states/UTs (up from 37,980 validated in Aug 2025 and 1.52 lakh validated by 23 Jan 2026), and on 21 Aug 2026 the Centre was reported (citing The Hindu and PIB) to be proposing a rural expansion costing about Rs 498.73 crore through 2030-31 — treat that as a proposal, not an approval. The guidelines pay CSOs, CSCs, ROs or ULBs Rs 250 per e-KYC-validated waste picker (raised from Rs 150), an RO management fee of Rs 10,000 per DWCC per month for 12 months, and up to Rs 5 lakh capital subsidy per DWCC for up to two collection vehicles, against targets of 2.5 lakh profiles and 750 DWCCs; occupation can be verified by 'recent receipts from sale of scrap' or endorsement by scrap-shop owners, which Luma.Green's receipts could supply. Resource organisations are empanelled centrally by NSKFDC through an Expression of Interest (states not covered may empanel locally); the NAMASTE portal's dashboard showed 11 ROs, 9 training providers and 10,894 profiles across 3 states as of 28 Feb 2025, but no public page names the RO for Karnataka, and the state-wise annex to the 22 Jul 2025 Lok Sabha answer is a scan we could not read. On Bengaluru, Citizen Matters (15 Sep 2025) reports the 2013 BBMP ID cards have expired after 10 years, new waste pickers 'are not able to obtain ID cards', and no NAMASTE profiling camp is mentioned; Nalini Shekar (18 Oct 2024) said Karnataka has about 4.23 lakh waste pickers and only about 25,000 ID cards. Pune was the first city to formally implement the component (26 Mar 2025); NSKFDC's Aug 2025 slides show 700+ ULBs in 30 states/UTs had started profiling (about 91,000 surveyed, 42,000 validated), so Bengaluru may be among them, but that is unconfirmed.",
-   "status": "partly",
-   "decision": "Do not gate Saathi onboarding on a NAMASTE ID; capture it as an optional KYC field, and design Luma.Green's sale receipts so they qualify as the 'recent receipts from sale of scrap' evidence the guidelines accept, so a partner RO can profile Saathis at Rs 250 each if and when Bengaluru profiling runs.",
-   "whoToAsk": "NSKFDC (nskfdc-msje@nic.in, +91-11-26382476) for the Karnataka RO and the FY2026-27 continuation order; Karnataka Directorate of Municipal Administration and the pilot city corporation's SWM wing for whether profiling has started in Bengaluru; Hasiru Dala for ground truth on camps and ID cards.",
-   "sources": [
-    {
-     "title": "Revised Scheme Guidelines for inclusion of Waste Pickers Component under NAMASTE (MoSJE)",
-     "url": "https://socialjustice.gov.in/writereaddata/UploadFile/37031765796227.pdf",
-     "date": "2025-12-15"
-    },
-    {
-     "title": "National Action for Mechanised Sanitation Ecosystem (NAMASTE) — scheme outlay Rs 349.70 crore to 2025-26 (PIB)",
-     "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1952044",
-     "date": "2023-08-25"
-    },
-    {
-     "title": "MoSJE launches Waste Picker Enumeration App under NAMASTE (PIB)",
-     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2134303",
-     "date": "2025-06-05"
-    },
-    {
-     "title": "NAMASTE backgrounder — 37,980 waste pickers validated by Aug 2025 (PIB)",
-     "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/sep/doc2025910632601.pdf",
-     "date": "2025-09-10"
-    },
-    {
-     "title": "Lok Sabha Starred Question No. 28 on NAMASTE (answered 22 Jul 2025)",
-     "url": "https://sansad.in/getFile/loksabhaquestions/annex/185/AS28_WrZKXl.pdf?source=pqals",
-     "date": "2025-07-22"
-    },
-    {
-     "title": "Bringing informal waste pickers into the formal system — NSKFDC slides at CSE symposium",
-     "url": "https://cdn.cseindia.org/attachments/0.05157100_1754469411_p-k-singh.pdf",
-     "date": "2025-08-06"
-    },
-    {
-     "title": "Waste-picker enumeration data and NAMASTE Scheme — 1.52 lakh validated by 23 Jan 2026 (Carpe Diem IAS)",
-     "url": "https://www.carpediemias.com/current-affairs/article/waste-picker-enumeration-data-and-namaste-scheme",
-     "date": "2026-02-05"
-    },
-    {
-     "title": "622 sanitation worker deaths since 2017 — Lok Sabha reply of 17 Mar 2026 (NewsGram)",
-     "url": "https://www.newsgram.com/human-rights/2026/03/19/622-sanitation-worker-deaths-since-2017",
-     "date": "2026-03-19"
-    },
-    {
-     "title": "Centre set to expand NAMASTE to rural India, Rs 498.73 crore through 2030-31 (Vajiram & Ravi, citing The Hindu/PIB)",
-     "url": "https://vajiramandravi.com/current-affairs/namaste-scheme-expansion/",
-     "date": "2026-08-21"
-    },
-    {
-     "title": "Ramdas Athawale distributes NAMASTE, Ayushman cards to waste pickers in Delhi (DD India)",
-     "url": "https://ddindia.co.in/2026/09/ramdas-athawale-distributes-namaste-ayushman-cards-to-waste-pickers-in-delhi/",
-     "date": "2026-09-04"
-    },
-    {
-     "title": "NAMASTE Scheme profiles over 3.4 lakh sanitation workers — 2,51,756 waste pickers (Indian Masterminds)",
-     "url": "https://indianmasterminds.com/news/namaste-scheme-sanitation-workers-safety-235624/",
-     "date": "2026-09-22"
-    },
-    {
-     "title": "NSKFDC NAMASTE portal dashboard (11 ROs, 9 training providers; last updated 28 Feb 2025)",
-     "url": "https://namaste.uat-projects.com/en",
-     "date": "2025-02-28"
-    },
-    {
-     "title": "India launches NAMASTE scheme to recognize waste pickers — Pune first city (International Alliance of Waste Pickers)",
-     "url": "https://wastepickersinternational.org/2025/04/02/india-launches-namaste-scheme-to-recognize-and-support-waste-pickers/",
-     "date": "2025-04-02"
-    },
-    {
-     "title": "Invisible workers, visible waste (Citizen Matters)",
-     "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
-     "date": "2025-09-15"
-    },
-    {
-     "title": "Nalini Shekar interview — Karnataka 4.23 lakh waste pickers, 25,000 ID cards (Question of Cities)",
-     "url": "https://questionofcities.org/waste-pickers-are-treated-like-step-children-but-the-formal-sector-cant-work-without-them/",
-     "date": "2024-10-18"
-    }
-   ]
-  },
-  {
-   "question": "Would Hasiru Dala, Saahas, ITC WOW's centre operators or the Karnataka waste-pickers' union co-run kabadiwala and Saathi onboarding, or run a DWCC as a pilot yard, and on what terms do such NGOs usually work (fee per onboarding, grants, CSR)? What is Hasiru Dala Innovations' own traceable-plastic business with brands, and how should Luma.Green avoid competing with it?",
-   "answer": "No public page says any of them will co-run Luma.Green onboarding — that takes a meeting — but their models show who fits which role. Hasiru Dala is a member-based waste-picker organisation (annual membership fee Rs 50 in its early years; registered 2013) that is the resource organisation behind 35 Bengaluru DWCCs (Sep 2025), has secured 11,300+ occupational ID cards across Karnataka and Andhra Pradesh, checks waste pickers' documents and enrols them in schemes, and is grant- and CSR-funded (FCRA, 80G, 12A, CSR-1 certified); its 2013 DWCC plan already assumed three partners — BBMP building the shed, a sponsor paying user fees, and the collective operating — so it is the natural Saathi-onboarding and DWCC-as-pilot-yard partner. The Karnataka waste-picker union (registered with the state, 2,300+ members, formed around 2023) and the Thyajya Shramika Sanghatane collective that petitioned BBMP in 2022 and 2023 over unpaid DWCC dues are the bodies to consult on Saathi pay and pickup terms. Saahas is an NGO (2001; 226 livelihoods, 5,227 MT dry waste managed; CSR partners Juniper Networks, Tata Realty, Rainmatter) with a sister company Saahas Zero Waste (Pvt Ltd, 2013; 420+ staff, 100+ tonnes a day, 112 informal workers formalised, a 10-TPD MRF at Jigani and a 25-tonne-a-month textile facility) whose 'Let's Transform' programme, funded by IKEA Social Entrepreneurship since 2022, onboards informal scrap-dealer micro-entrepreneurs (three so far, each employing about 20 workers) with equipment, compliance and a business model in return for plastic supply and supply-chain analytics — the closest existing template for kabadiwala onboarding. ITC's WOW is a corporate CSR programme (17,900+ waste collectors, 150+ social entrepreneurs, 67,100 MT of dry waste in 2024-25) that works through 'super franchisee' aggregators and its own dry-resource collection centres, ran BBMP's Shivajinagar DWCC in 2015, and routes paper to ITC's mills. Public fee benchmarks: NAMASTE pays Rs 250 per validated profile and Rs 10,000 per DWCC per month to resource organisations; the lapsed BBMP MoUs paid Rs 56,316 per six months plus Rs 23,316 a month; The Body Shop works on 'long-term fixed-price contracts'; no NGO publishes a per-onboarding fee, so that number is an open item. Hasiru Dala Innovations (HDI) is a separate for-profit (Nov 2015; Rs 5 crore revenue in FY2017-18, investors including Social Alpha) running total waste management for 370+ clients, 800+ events, EPR compliance services, and a 'plastics circularity' line: WFTO Fair Trade Guaranteed, blockchain-traceable post-consumer plastic aggregated from waste-picker entrepreneurs, DWCCs and scrap dealers (327 'supplier clients') at its own aggregation centre and sold to recyclers (e.g. Vishuddh Recycle) and brands — since 9 May 2019 supplying The Body Shop through Plastics for Change (250 tonnes in year one, 900 tonnes over three years, up to 2,500 Bengaluru waste pickers), and Plastics for Change's brand list now includes L'Oréal, Estée Lauder, Unilever and IKEA. HDI is therefore a buyer competing for the same kabadiwala and DWCC material, so Luma.Green should stay a neutral ledger that records cash and UPI sales, never buys, sells or brokers material or EPR credits, does not pitch brands, and invites HDI's aggregation centre in as a 'yard' node whose traceability export can feed its WFTO and EPR audits.",
-   "status": "partly",
-   "decision": "Open with Hasiru Dala for Saathi onboarding and one of its 35 DWCCs as the pilot yard, and with Saahas Zero Waste for kabadiwala onboarding, each under a written MoU paying a per-onboarding fee benchmarked to NAMASTE's Rs 250 and a monthly support fee benchmarked to Rs 10,000 per centre (funded by Luma.Green or a CSR grant); treat HDI as a downstream yard/recycler partner by never trading material or EPR credits, and bring ITC WOW in only after the pilot.",
-   "whoToAsk": "Hasiru Dala's leadership and its DWCC operators, Saahas Zero Waste's founder, HDI's management and the Karnataka waste-picker union's office-bearers for actual willingness and fees (one meeting each, since none is published); a CA or counsel on routing CSR money to the fees under Section 135 and the partner's CSR-1 status.",
-   "sources": [
-    {
-     "title": "Invisible workers, visible waste — Hasiru Dala supports 35 DWCCs; Karnataka union 2,300+ members (Citizen Matters)",
-     "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
-     "date": "2025-09-15"
-    },
-    {
-     "title": "Waste management organisations urge BBMP to pay workers due wages — ROs Hasiru Dala, Swachha, Gilgal; Thyajya Shramika Sanghatane (Deccan Herald)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/waste-management-organisations-urge-bbmp-to-pay-workers-due-wages-1223953.html",
-     "date": "2023-06-01"
-    },
-    {
-     "title": "Hasiru Dala profile — 11,300+ ID cards, FCRA/80G/12A/CSR-1 (Give.do)",
-     "url": "https://give.do/discover/Q17/hasiru-dala/",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "Organizing Informal Waste Pickers: A Case Study of Bengaluru (WIEGO, Chengappa)",
-     "url": "https://www.wiego.org/wp-content/uploads/2019/09/Chengappa-Organizing-Informal-Waste-Pickers-India.pdf",
-     "date": "2013-01-01"
-    },
-    {
-     "title": "Hasiru Dala is lifting waste pickers up from the dumps — HDI revenue and investors (Forbes India)",
-     "url": "https://www.forbesindia.com/article/sustainability-special/hasiru-dala-is-lifting-waste-pickers-up-from-the-dumps/50337/1",
-     "date": "2018-05-30"
-    },
-    {
-     "title": "Hasiru Dala Innovations — services, 370+ clients, 327 supplier clients, WFTO plastics circularity",
-     "url": "https://hasirudalainnovations.com/",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "The World's First Ethically Traded Plastic (Hasiru Dala Innovations blog)",
-     "url": "https://hasirudalainnovations.com/blog/the-worlds-first-ethically-traded-plastic/",
-     "date": "2026-07-30"
-    },
-    {
-     "title": "Launching the world's first fair trade plastic with The Body Shop (Plastics for Change)",
-     "url": "https://www.plasticsforchange.org/blog/category/plastics-for-change-launches-the-worlds-first-fairly-traded-recycled-plastic-with-brand-partner-the-body-shop",
-     "date": "2019-05-09"
-    },
-    {
-     "title": "Plastics for Change — brand partners and model",
-     "url": "https://www.plasticsforchange.org/",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "Community Fair Trade recycled plastic (The Body Shop)",
-     "url": "https://www.thebodyshop.com/en-gb/about-us/brand-values/sustainability/community-fair-trade-plastic/a/a00013",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "Saahas NGO — impact figures and CSR partners",
-     "url": "https://saahas.org/",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "About Saahas Zero Waste — Pvt Ltd, 420+ staff, 112 informal workers formalised",
-     "url": "https://www.saahaszerowaste.com/explore/about-saahas-zero-waste/",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "Saahas Zero Waste — Let's Transform micro-entrepreneur programme (IKEA Social Entrepreneurship)",
-     "url": "https://www.ikeasocialentrepreneurship.org/en/partnerships/accelerating-for-impact/saahas-zero-waste",
-     "date": "2022-01-01"
-    },
-    {
-     "title": "Textile recycling: Bengaluru's community turns waste into wealth — Saahas Zero Waste TRF (Deccan Herald)",
-     "url": "https://www.deccanherald.com/amp/story/india/karnataka/bengaluru/a-community-driven-waste-to-wealth-model-in-bengaluru-3915616",
-     "date": "2026-03-01"
-    },
-    {
-     "title": "Towards Circularity — ITC WOW figures 2024-25 (ITC)",
-     "url": "https://www.itcportal.com/sustainability/circularity.aspx",
-     "date": "2026-09-29"
-    },
-    {
-     "title": "Palike dry waste collection centres — ITC-run Kartavya DWCC, Shivajinagar (Deccan Herald)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/palike-dry-waste-collection-centres-2113646",
-     "date": "2015-02-23"
-    },
-    {
-     "title": "Revamped collection system threatens waste pickers' jobs — Thyajya Shramika Sangatane petition (Deccan Herald)",
-     "url": "https://www.deccanherald.com/city/revamped-collection-system-threatens-waste-pickers-jobs-1151320.html",
-     "date": "2022-10-07"
-    },
-    {
-     "title": "Revised Scheme Guidelines, Waste Pickers Component under NAMASTE — RO fee and profiling incentive (MoSJE)",
-     "url": "https://socialjustice.gov.in/writereaddata/UploadFile/37031765796227.pdf",
-     "date": "2025-12-15"
-    }
-   ]
-  }
- ]
+  ]
 }

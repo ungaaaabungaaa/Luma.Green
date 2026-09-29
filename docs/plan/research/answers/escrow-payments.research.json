@@ -1,267 +1,267 @@
 {
- "cluster": "Escrow, payment partners and lending",
- "answers": [
-  {
-   "question": "Will Razorpay Route or Cashfree Easy Split let a platform split settlements to sellers before it has ₹40 lakh of its own turnover under RBI's September 2025 payment-aggregator directions? If not, what are the alternatives: onboarding each yard as its own merchant, or a bank escrow with a trustee (RazorpayX Escrow+, Castler), with their pricing and KYC requirements for kabadiwalas without GST registration?",
-   "answer": "No. The RBI (Regulation of Payment Aggregators) Directions, 2025 (15 Sept 2025, RBI/DPSS/2025-26/141), Table 1 'permitted debits' (iv), let a payment aggregator pay a third party on a merchant's instruction only when that merchant has annual domestic turnover above ₹40 lakh (or export turnover above ₹5 lakh) and the third party is the payee who actually deals with the payer; clauses 10(a) and 13(g) otherwise restrict settlement to the contracted merchant's own bank account. Razorpay applies this literally: Route needs GST-3B returns (FY25 or FY26) showing outward taxable supplies above ₹40 lakh or an FIRC above ₹5 lakh, a self-declaration is accepted only for GST-exempt or first-year businesses and must still declare more than ₹40 lakh, proofs were due 31 Dec 2025, and 'if your business does not currently meet the turnover criteria, Route access cannot be continued' (its suggested fallback is to take full settlement yourself and pay vendors from your own account; pricing is 2% gateway fee + 0.1% Route transfer fee + 18% GST). Cashfree's public Easy Split pages (0.20–0.25% split fee on top of a 1.95% gateway rate, or 0% up to ₹20 lakh cumulative GMV until 31 Mar 2027) print no turnover gate and say the product is enabled by your account manager, but the RBI rule binds Cashfree too, so assume the same test until Cashfree confirms otherwise in writing. Alternative A (recommended): onboard each yard and kabadiwala as its own merchant — Razorpay's Partner sub-merchant onboarding APIs let them complete KYC inside your app and accept 'individual', 'proprietorship' and 'not_yet_registered' types; an individual needs only owner PAN, a bank account and Aadhaar/passport/voter ID, GST is 'optional' for a proprietorship (an MSME/Udyam or Shops & Establishment certificate serves as business proof); Cashfree Easy Split vendors likewise need PAN plus one address proof, 'individual vendors do not need a GSTIN', and business vendors need one only after ₹20 lakh of settlements in 12 months. RBI clause 13(b) allows a merchant with turnover up to ₹40 lakh to be onboarded with PAN or Form 60, a physical contact-point verification and one officially valid document (mandatory for merchants onboarded from 1 Jan 2026), so kabadiwalas without GST are onboardable — the buyer then pays the seller directly and Luma.Green collects its own fee separately, so no third-party split ever occurs. Alternative B: a bank escrow with a trustee — RazorpayX Escrow+ (RBL, ICICI, Yes Bank; trustees Axis Trustee and Mitcon Credentia; steps: escrow checklist, bank approval, escrow agreement, account opening, API integration; marketplaces listed as a use case) or Castler (15+ banks including HDFC, SBI, Canara, Union; 'hold buyer funds until delivery is confirmed, then release to the seller'; KYC links, AML screening and penny-drop for every counterparty) — but neither publishes pricing, and Castler's own guide lists PAN/Aadhaar/incorporation documents for all parties, a signed escrow agreement and a board resolution, so it is a slower fixed-cost route suited to yard-to-recycler volumes rather than ₹500 kabadiwala payouts. Whatever you choose, Luma.Green itself must never pool buyers' money in its own account: that is payment-aggregator business needing RBI authorisation with ₹15 crore net worth at application and ₹25 crore by the end of the third financial year — the pilot's simulated escrow is fine precisely because no money moves.",
-   "status": "partly",
-   "decision": "Keep the pilot cash/UPI-recording only. At go-live use the direct-to-seller model (each yard and kabadiwala onboarded as its own Razorpay or Cashfree sub-merchant with PAN + bank + ID, GST optional), bill Luma.Green's fee separately, and apply for Route/Easy Split only once a GST-3B shows more than ₹40 lakh of outward supplies; get Escrow+ and Castler quotes now but treat escrow as a later yard-to-recycler feature.",
-   "whoToAsk": "Razorpay Route team (whether a >₹40 lakh self-declaration from a first-year company is accepted); Cashfree account manager (Easy Split eligibility below ₹40 lakh, in writing); escrow-rzpx@razorpay.com and Castler sales for pricing and set-up time; a payments lawyer to confirm the sub-merchant plus separate-fee design never makes Luma.Green a payment aggregator.",
-   "sources": [
+  "cluster": "Escrow, payment partners and lending",
+  "answers": [
     {
-     "title": "RBI (Regulation of Payment Aggregators) Directions, 2025 — Master Direction (Table 1 permitted debits; clauses 10, 13, 16)",
-     "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896",
-     "date": "2025-09-15"
+      "question": "Will Razorpay Route or Cashfree Easy Split let a platform split settlements to sellers before it has ₹40 lakh of its own turnover under RBI's September 2025 payment-aggregator directions? If not, what are the alternatives: onboarding each yard as its own merchant, or a bank escrow with a trustee (RazorpayX Escrow+, Castler), with their pricing and KYC requirements for kabadiwalas without GST registration?",
+      "answer": "No. The RBI (Regulation of Payment Aggregators) Directions, 2025 (15 Sept 2025, RBI/DPSS/2025-26/141), Table 1 'permitted debits' (iv), let a payment aggregator pay a third party on a merchant's instruction only when that merchant has annual domestic turnover above ₹40 lakh (or export turnover above ₹5 lakh) and the third party is the payee who actually deals with the payer; clauses 10(a) and 13(g) otherwise restrict settlement to the contracted merchant's own bank account. Razorpay applies this literally: Route needs GST-3B returns (FY25 or FY26) showing outward taxable supplies above ₹40 lakh or an FIRC above ₹5 lakh, a self-declaration is accepted only for GST-exempt or first-year businesses and must still declare more than ₹40 lakh, proofs were due 31 Dec 2025, and 'if your business does not currently meet the turnover criteria, Route access cannot be continued' (its suggested fallback is to take full settlement yourself and pay vendors from your own account; pricing is 2% gateway fee + 0.1% Route transfer fee + 18% GST). Cashfree's public Easy Split pages (0.20–0.25% split fee on top of a 1.95% gateway rate, or 0% up to ₹20 lakh cumulative GMV until 31 Mar 2027) print no turnover gate and say the product is enabled by your account manager, but the RBI rule binds Cashfree too, so assume the same test until Cashfree confirms otherwise in writing. Alternative A (recommended): onboard each yard and kabadiwala as its own merchant — Razorpay's Partner sub-merchant onboarding APIs let them complete KYC inside your app and accept 'individual', 'proprietorship' and 'not_yet_registered' types; an individual needs only owner PAN, a bank account and Aadhaar/passport/voter ID, GST is 'optional' for a proprietorship (an MSME/Udyam or Shops & Establishment certificate serves as business proof); Cashfree Easy Split vendors likewise need PAN plus one address proof, 'individual vendors do not need a GSTIN', and business vendors need one only after ₹20 lakh of settlements in 12 months. RBI clause 13(b) allows a merchant with turnover up to ₹40 lakh to be onboarded with PAN or Form 60, a physical contact-point verification and one officially valid document (mandatory for merchants onboarded from 1 Jan 2026), so kabadiwalas without GST are onboardable — the buyer then pays the seller directly and Luma.Green collects its own fee separately, so no third-party split ever occurs. Alternative B: a bank escrow with a trustee — RazorpayX Escrow+ (RBL, ICICI, Yes Bank; trustees Axis Trustee and Mitcon Credentia; steps: escrow checklist, bank approval, escrow agreement, account opening, API integration; marketplaces listed as a use case) or Castler (15+ banks including HDFC, SBI, Canara, Union; 'hold buyer funds until delivery is confirmed, then release to the seller'; KYC links, AML screening and penny-drop for every counterparty) — but neither publishes pricing, and Castler's own guide lists PAN/Aadhaar/incorporation documents for all parties, a signed escrow agreement and a board resolution, so it is a slower fixed-cost route suited to yard-to-recycler volumes rather than ₹500 kabadiwala payouts. Whatever you choose, Luma.Green itself must never pool buyers' money in its own account: that is payment-aggregator business needing RBI authorisation with ₹15 crore net worth at application and ₹25 crore by the end of the third financial year — the pilot's simulated escrow is fine precisely because no money moves.",
+      "status": "partly",
+      "decision": "Keep the pilot cash/UPI-recording only. At go-live use the direct-to-seller model (each yard and kabadiwala onboarded as its own Razorpay or Cashfree sub-merchant with PAN + bank + ID, GST optional), bill Luma.Green's fee separately, and apply for Route/Easy Split only once a GST-3B shows more than ₹40 lakh of outward supplies; get Escrow+ and Castler quotes now but treat escrow as a later yard-to-recycler feature.",
+      "whoToAsk": "Razorpay Route team (whether a >₹40 lakh self-declaration from a first-year company is accepted); Cashfree account manager (Easy Split eligibility below ₹40 lakh, in writing); escrow-rzpx@razorpay.com and Castler sales for pricing and set-up time; a payments lawyer to confirm the sub-merchant plus separate-fee design never makes Luma.Green a payment aggregator.",
+      "sources": [
+        {
+          "title": "RBI (Regulation of Payment Aggregators) Directions, 2025 — Master Direction (Table 1 permitted debits; clauses 10, 13, 16)",
+          "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "Same Directions, PDF mirror (FIDC)",
+          "url": "https://www.fidcindia.org.in/wp-content/uploads/2025/09/RBI-PAYMENT-AGGREGATORS-DIRECTIONS-15-09-25.pdf",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "Razorpay Route FAQs — ₹40 lakh turnover proof, self-declaration, discontinuation",
+          "url": "https://razorpay.com/docs/payments/route/faqs/?preferred-country=IN",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Razorpay Route overview — eligibility and 31 Dec 2025 deadline",
+          "url": "https://razorpay.com/docs/payments/route/?preferred-country=IN",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Razorpay pricing — 2% gateway, Route 0.1%",
+          "url": "https://razorpay.com/pricing/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Razorpay Route integration guide — business types and KYC matrix",
+          "url": "https://razorpay.com/docs/payments/route/integration-guide/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Razorpay Partner sub-merchant onboarding APIs",
+          "url": "https://razorpay.com/docs/partners/aggregators/onboarding-api/?preferred-country=IN",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Razorpay sub-merchant KYC requirements appendix (GST optional for proprietorship)",
+          "url": "https://razorpay.com/docs/partners/aggregators/onboarding-api/appendix/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Cashfree Easy Split — vendor KYC (individual vendors need no GSTIN)",
+          "url": "https://www.cashfree.com/docs/payments/split/vendor/kyc",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Cashfree Easy Split overview",
+          "url": "https://www.cashfree.com/docs/payments/split/overview",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Cashfree pricing — 1.95% gateway, Easy Split 0.20–0.25%, 0% up to ₹20 lakh GMV",
+          "url": "https://www.cashfree.com/payment-gateway-charges/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "RazorpayX Escrow accounts — banks, trustees, onboarding steps",
+          "url": "https://razorpay.com/x/escrow-accounts/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "RazorpayX Escrow docs",
+          "url": "https://razorpay.com/docs/x/account-types/escrow/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Razorpay blog — Escrow+ launch with RBL, ICICI and Axis Trustee",
+          "url": "https://razorpay.com/blog/business-banking/escrow-account-razorpayx/",
+          "date": "2023-05-09"
+        },
+        {
+          "title": "Castler escrow banking — partner banks, marketplace use case, onboarding agent",
+          "url": "https://castler.com/escrow-banking",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Castler — how to open an escrow account in India (documents)",
+          "url": "https://castler.com/learning-hub/how-to-open-an-escrow-account-in-india-a-complete-guide",
+          "date": "2025-07-22"
+        },
+        {
+          "title": "Udyam registration portal — Aadhaar-based; PAN/GSTIN as applicable under CGST Act",
+          "url": "https://udyamregistration.gov.in/",
+          "date": "accessed 2026-09-29"
+        }
+      ]
     },
     {
-     "title": "Same Directions, PDF mirror (FIDC)",
-     "url": "https://www.fidcindia.org.in/wp-content/uploads/2025/09/RBI-PAYMENT-AGGREGATORS-DIRECTIONS-15-09-25.pdf",
-     "date": "2025-09-15"
+      "question": "Is the 0.4% UPI merchant fee on payments above ₹2,000 from 15 October 2026 confirmed by NPCI or RBI, what small-merchant limit avoids it, and what are today's UPI per-transaction limits?",
+      "answer": "Yes, it is confirmed by the Government and NPCI, though the rate itself is not in any gazette: notification S.O. 5067(E) of 14 Sept 2026 (Department of Financial Services, under s.10A of the Payment and Settlement Systems Act) now protects only RuPay debit cards and 'UPI transactions upto Rs. 2,000' from charges, and the Ministry of Finance press release and FAQ of 15 Sept 2026 (PIB PRID 2310586; NPCI hosts the same FAQ) set the framework effective 15 Oct 2026, with NPCI's UPI Steering Committee deciding operating parameters. The numbers: 0.4% MDR on person-to-merchant (P2M) UPI payments above ₹2,000, charged on the whole amount (₹3,000 → ₹12; ₹50,000 → ₹200), capped at ₹300 for payments of ₹75,000 and above; a flat ₹5 for railways, telecom, insurance, fuel, agricultural inputs and utilities; 0.02% (cap ₹300) for capital-market payments; P2P transfers, payments up to ₹2,000 and UPI AutoPay mandates carry no MDR; merchants may not pass it on and apps may not add platform fees; 5% of collections go to a small-merchant fund; NPCI clarified on 22 Sept 2026 that 18% GST applies on the MDR fee itself (a ₹5,000 receipt costs ₹20 + ₹3.60), recoverable as input credit by GST-registered merchants. RBI endorsed the framework on 16 Sept 2026 ('an important step towards strengthening the long-term sustainability of India's digital payments ecosystem') but has issued no circular, and on 28 Sept 2026 the Supreme Court asked the Centre to explain the levy's legal basis on affidavit within four weeks while refusing an interim stay — so plan for 15 Oct and watch late October. The small-merchant escape is the P2PM category: merchants 'receiving up to Rs 1 lac per month through UPI QR directly into their accounts' pay zero MDR on every payment, even above ₹2,000, with no GST registration needed; acquiring banks and PSPs run velocity checks, and a P2PM merchant whose inward UPI credits exceed ₹1 lakh a month for three consecutive months is moved to P2M. For Luma.Green that means most kabadiwalas stay MDR-free if their UPI QR receipts stay under ₹1 lakh/month, while yards (P2M) will pay 0.4% + GST on receipts above ₹2,000 from 15 Oct; a household paying a kabadiwala's personal VPA is P2P and free. Today's UPI limits: NPCI's default is ₹1 lakh per transaction and per day for P2P and ordinary merchant payments (about 20 transactions a day, banks may set lower caps); after RBI let NPCI set P2M limits on 9 Apr 2025, NPCI's circular effective 15 Sept 2025 raised verified merchants in capital markets, insurance, travel and loan EMIs to ₹5 lakh per transaction and ₹10 lakh per day, credit-card bills to ₹5 lakh/₹6 lakh, jewellery ₹2 lakh/₹6 lakh, digital term deposits and GeM ₹5 lakh, and tax, hospital and education payments to ₹5 lakh — scrap trade is not a special category, so yard-to-recycler payments above ₹1 lakh need IMPS/NEFT/RTGS. I could not open NPCI's own circular page (script-rendered), so the category table rests on the government's NewsOnAir summary and dated industry write-ups.",
+      "status": "answered",
+      "decision": "Model 0.4% (cap ₹300) plus 18% GST on every yard-side UPI receipt above ₹2,000 from 15 Oct 2026; store each seller's UPI mode (P2P VPA / P2PM QR / P2M) in the ledger and warn kabadiwalas approaching ₹1 lakh a month; cap UPI entries at ₹1 lakh per transaction and route larger payments to bank transfer.",
+      "whoToAsk": "Each kabadiwala's UPI app/acquiring bank to confirm P2PM classification; watch NPCI's operating circular and the Centre's Supreme Court affidavit (due around 26 Oct 2026) for any change to the 15 Oct start.",
+      "sources": [
+        {
+          "title": "Gazette notification S.O. 5067(E) — charges barred only on RuPay debit and UPI up to ₹2,000 (TaxGuru summary with text)",
+          "url": "https://taxguru.in/finance/government-charges-upi-payments-exceeding-rs-2-000.html",
+          "date": "2026-09-16"
+        },
+        {
+          "title": "Department of Financial Services — press release on MDR on UPI",
+          "url": "https://financialservices.gov.in/press-release-merchant-discount-rate-mdr-upi",
+          "date": "2026-09-15"
+        },
+        {
+          "title": "PIB — UPI continues to remain free for P2P and 96% of merchant transactions (full framework)",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2310586&reg=48&lang=1",
+          "date": "2026-09-15"
+        },
+        {
+          "title": "DFS/NPCI FAQs — MDR on select UPI P2M transactions (P2PM definition Q23–Q29, examples Q35)",
+          "url": "https://financialservices.gov.in/sites/default/files/2026-09/FAQs---Merchant-Discount-Rate--MDR--on-Select-UPI--P2M--Transactions_0.pdf",
+          "date": "2026-09-15"
+        },
+        {
+          "title": "Business Today — NPCI: 18% GST on MDR, small merchants unaffected",
+          "url": "https://www.businesstoday.in/latest/economy/story/upi-mdr-gst-npci-says-small-merchants-and-96-of-transactions-remain-unaffected-from-october-15-557039-2026-09-22",
+          "date": "2026-09-22"
+        },
+        {
+          "title": "The Tribune — RBI backs MDR framework (RBI statement of 16 Sept 2026)",
+          "url": "https://www.tribuneindia.com/news/business/rbi-backs-governments-mdr-framework-calls-it-important-step-towards-sustainable-upi-ecosystem",
+          "date": "2026-09-16"
+        },
+        {
+          "title": "The Probe — why the 0.4% rate is in no gazette",
+          "url": "https://theprobe.in/governance/upi-mdr-charge-no-gazette-12544678",
+          "date": "2026-09"
+        },
+        {
+          "title": "The Probe — Supreme Court asks Centre for affidavit, no stay",
+          "url": "https://theprobe.in/governance/upi-payments-levy-supreme-court-centre-affidavit-12585393",
+          "date": "2026-09-28"
+        },
+        {
+          "title": "SCC Online — NPCI MDR FAQs explained",
+          "url": "https://www.scconline.com/blog/post/2026/09/16/npci-released-upi-mdr-faqs-explained/",
+          "date": "2026-09-16"
+        },
+        {
+          "title": "MediaNama — RBI lets NPCI set UPI P2M limits (P2P stays ₹1 lakh)",
+          "url": "https://www.medianama.com/2025/04/223-rbi-upi-transaction-limit-2025-fy26-monetary-policy-review/",
+          "date": "2025-04-10"
+        },
+        {
+          "title": "NewsOnAir (Govt) — NPCI raises UPI merchant limit to ₹10 lakh a day for verified categories",
+          "url": "https://www.newsonair.gov.in/npci-hikes-upi-limit-for-merchant-payments-to-%E2%82%B910-lakh-per-day",
+          "date": "2025-09-13"
+        },
+        {
+          "title": "Oquilia — UPI category-wise limits table (NPCI circular 28 Aug 2025, effective 15 Sept 2025)",
+          "url": "https://www.oquilia.com/news/upi-transaction-limits-2026-p2p-p2m-category-wise",
+          "date": "2026-08-28"
+        },
+        {
+          "title": "Razorpay blog — UPI transaction limits per day (₹1 lakh default, ₹5 lakh categories)",
+          "url": "https://razorpay.com/blog/upi-transaction-limit-per-day/",
+          "date": "2026-06-08"
+        }
+      ]
     },
     {
-     "title": "Razorpay Route FAQs — ₹40 lakh turnover proof, self-declaration, discontinuation",
-     "url": "https://razorpay.com/docs/payments/route/faqs/?preferred-country=IN",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Razorpay Route overview — eligibility and 31 Dec 2025 deadline",
-     "url": "https://razorpay.com/docs/payments/route/?preferred-country=IN",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Razorpay pricing — 2% gateway, Route 0.1%",
-     "url": "https://razorpay.com/pricing/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Razorpay Route integration guide — business types and KYC matrix",
-     "url": "https://razorpay.com/docs/payments/route/integration-guide/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Razorpay Partner sub-merchant onboarding APIs",
-     "url": "https://razorpay.com/docs/partners/aggregators/onboarding-api/?preferred-country=IN",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Razorpay sub-merchant KYC requirements appendix (GST optional for proprietorship)",
-     "url": "https://razorpay.com/docs/partners/aggregators/onboarding-api/appendix/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Cashfree Easy Split — vendor KYC (individual vendors need no GSTIN)",
-     "url": "https://www.cashfree.com/docs/payments/split/vendor/kyc",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Cashfree Easy Split overview",
-     "url": "https://www.cashfree.com/docs/payments/split/overview",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Cashfree pricing — 1.95% gateway, Easy Split 0.20–0.25%, 0% up to ₹20 lakh GMV",
-     "url": "https://www.cashfree.com/payment-gateway-charges/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "RazorpayX Escrow accounts — banks, trustees, onboarding steps",
-     "url": "https://razorpay.com/x/escrow-accounts/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "RazorpayX Escrow docs",
-     "url": "https://razorpay.com/docs/x/account-types/escrow/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Razorpay blog — Escrow+ launch with RBL, ICICI and Axis Trustee",
-     "url": "https://razorpay.com/blog/business-banking/escrow-account-razorpayx/",
-     "date": "2023-05-09"
-    },
-    {
-     "title": "Castler escrow banking — partner banks, marketplace use case, onboarding agent",
-     "url": "https://castler.com/escrow-banking",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Castler — how to open an escrow account in India (documents)",
-     "url": "https://castler.com/learning-hub/how-to-open-an-escrow-account-in-india-a-complete-guide",
-     "date": "2025-07-22"
-    },
-    {
-     "title": "Udyam registration portal — Aadhaar-based; PAN/GSTIN as applicable under CGST Act",
-     "url": "https://udyamregistration.gov.in/",
-     "date": "accessed 2026-09-29"
+      "question": "Which banks or NBFCs lend to small scrap dealers and yards in Bengaluru (Mudra loans through partner banks, NBFC purchase finance such as Oxyzo), and would they accept a platform's verified trade history as part of underwriting? Are there examples of recycling-sector lending programmes in India?",
+      "answer": "The default lender for a kabadiwala or small yard is any bank, RRB, small finance bank, NBFC or MFI lending under Pradhan Mantri MUDRA Yojana: collateral-free loans for 'manufacturing, trading and services' — Shishu up to ₹50,000, Kishore ₹50,000–5 lakh, Tarun ₹5–10 lakh and, since 24 Oct 2024, Tarun Plus ₹10–20 lakh for borrowers who repaid a Tarun loan — guaranteed under CGFMU; MUDRA itself never lends, so the yard applies at a bank branch, and the first step is a free Aadhaar-based Udyam registration, which needs PAN and GSTIN only 'as per applicability of the CGST Act'. For yards and recyclers with scale, Oxyzo (OfBusiness's NBFC) offers purchase finance that pays the supplier directly with 60–120-day repayment, unsecured limits up to ₹5 crore, interest 'from 12% per annum' and fees from 1% — but it requires ₹3 crore+ annual turnover, 3+ years' vintage, GSTIN and audited financials, so it fits recyclers and large yards, not kabadiwalas; Kinara Capital, a Bengaluru-headquartered NBFC, advertises collateral-free ₹1–30 lakh loans for trading businesses registered 2+ years (its pages blocked my fetch, so verify on its site). On platform trade history: banks will not underwrite on it alone (they need bank statements, bureau data and KYC), but anchor-led NBFC programmes do — Progcap (22 June 2025) runs 'transaction-led underwriting' with 128 anchor brands, 30,000+ borrowers, a ₹10 lakh average ticket and 1.1% gross NPAs, and Rupifi embeds 15–90-day B2B credit inside marketplaces funded by Muthoot Finance, UGRO Capital and LiquiLoans; the RBI Digital Lending Directions of 8 May 2025 let a platform act as a Lending Service Provider for 'customer acquisition, services incidental to underwriting and pricing … recovery', with any default-loss guarantee capped at 5% of the disbursed portfolio, so Luma.Green can become the anchor once it has 6–12 months of reconciled per-party trade data — whether a given lender bites is a pilot outcome, not settled from public pages. Recycling-sector precedents exist: in Bengaluru, S3IDF, Hasiru Dala and Rang De (2017) channelled crowdfunded low-interest micro-loans to informal waste entrepreneurs, with S3IDF guaranteeing part and repayments routed through Hasiru Dala, replacing moneylenders charging 24–40%; the EU/GIZ marine-litter project's Risk Sharing Facility at SIDBI (EUR 3.8 million corpus, Bengaluru a project city) guarantees 50% of bank/NBFC working-capital or capex loans to waste firms under ₹25 crore turnover (25% above) and by its mid-term review had backed NEPRA's working-capital loan and GPS Renewables' biogas plant, with MoHUA/HUDCO planning a scaled-up version. Government schemes: MSE-SPICE (launched 20 Dec 2023, ₹472.5 crore outlay to 2026-27, SIDBI-implemented) gives Udyam-registered micro/small units a 25% capital subsidy on plant and machinery, max ₹12.5 lakh on projects up to ₹50 lakh, brownfield only, for plastic, rubber, e-waste and other circular sectors — Bank of Baroda joined on 9 Sept 2025 with CGTMSE collateral-free loans; NAMASTE's waste-picker component (guidelines 2024) pays a capital subsidy of ₹2.5 lakh plus 25% of the remaining cost (max ₹5 lakh per dry-waste collection centre, 750 DWCCs) for waste-collection vehicles bought by waste-picker SHGs; and SIDBI–Shell Foundation's EN-Trans RSF (22 Apr 2026, US$3.1 million second-loss cover for roughly ₹250 crore of loans via banks, RRBs, SFBs and NBFC-MFIs) is the newest template, though aimed at solar assets. ANDE's Sept 2024 sector guide confirms the gap: early-stage waste businesses usually get working capital only from NBFCs at 16–18% against about 12% from banks, and guarantees or FLDG structures are what unlock bank money.",
+      "status": "partly",
+      "decision": "No lending in the pilot. Get every yard and kabadiwala Udyam-registered during KYC; build the ledger so each party has an exportable six-month statement (volumes, counterparties, settlement times, disputes); after the pilot pitch an anchor programme to Kinara Capital (kabadiwalas and small yards) and Oxyzo (recyclers), point yards buying balers or vehicles to MSE-SPICE and waste-picker SHGs to NAMASTE, and ask SIDBI Bengaluru about the risk-sharing facility.",
+      "whoToAsk": "Kinara Capital and Oxyzo partnership teams (appetite for an anchor programme on Luma.Green's ledger); SIDBI Bengaluru regional office (RSF and SPICE); a public-sector bank branch manager on PMMY appetite for scrap traders; a fintech lawyer on LSP obligations before Luma.Green refers any loan.",
+      "sources": [
+        {
+          "title": "PIB backgrounder — PMMY loan limit raised to ₹20 lakh, Tarun Plus, CGFMU",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/oct/doc20241029426401.pdf",
+          "date": "2024-10-29"
+        },
+        {
+          "title": "MUDRA — offerings (categories, collateral-free, refinance only, trading eligible)",
+          "url": "https://www.mudra.org.in/Offerings",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Udyam registration portal — Aadhaar-based, PAN/GSTIN as applicable",
+          "url": "https://udyamregistration.gov.in/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Oxyzo — purchase finance (tenure, rates, ₹3 crore turnover, 3 years)",
+          "url": "https://www.oxyzo.in/purchase-finance",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Oxyzo — FAQs (eligibility, documents)",
+          "url": "https://www.oxyzo.in/faqs",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Kinara Capital — business loan eligibility (page returned 403; verify)",
+          "url": "https://kinaracapital.com/business-loan-eligibility-criteria/",
+          "date": "not opened"
+        },
+        {
+          "title": "Outlook Business — Progcap transaction-led underwriting, 128 anchors",
+          "url": "https://www.outlookbusiness.com/corporate/progcap-aims-3000-cr-aum-loan-sanction-of-5200-cr-by-fiscal-end",
+          "date": "2025-06-22"
+        },
+        {
+          "title": "Rupifi — embedded B2B credit and lending partners",
+          "url": "https://www.rupifi.com/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Argus Partners — RBI Digital Lending Directions 2025 overview (LSP definition, 5% DLG cap)",
+          "url": "https://www.argus-p.com/updates/updates/rbi-digital-lending-directions-2025-an-overview/",
+          "date": "2025-05-26"
+        },
+        {
+          "title": "S3IDF — Bengaluru waste-entrepreneur credit with Hasiru Dala and Rang De",
+          "url": "https://s3idf.org/sector-update-changing-landscape-bengalurus-waste-management-systems/",
+          "date": "2017-08-17"
+        },
+        {
+          "title": "EU/GIZ India circular-economy project — mid-term evaluation (SIDBI Risk Sharing Facility, NEPRA, GPS Renewables)",
+          "url": "https://mitigation-action.org/wp-content/uploads/Mid-Term-ELE-Report-India-Circular-Economy.pdf",
+          "date": "2024 (covers to Dec 2023)"
+        },
+        {
+          "title": "SIDBI — MSE-SPICE FAQs (25% subsidy, ₹12.5 lakh cap, Udyam, brownfield)",
+          "url": "https://www.sidbi.in/uploads/financialreport/FAQ-SPICE.pdf",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "SIDBI — MSE-SPICE scheme page",
+          "url": "https://www.sidbi.in/en/pages/mse-scheme-for-promotion-and-investment-in-circular-economy-mse-spice",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Indian Masterminds — Bank of Baroda and SIDBI launch bob Earth Circular Economy Scheme under MSE-SPICE",
+          "url": "https://indianmasterminds.com/news/bank-of-baroda-sidbi-mse-spice-green-finance-143709/",
+          "date": "2025-09-09"
+        },
+        {
+          "title": "Shell Foundation — SIDBI EN-Trans risk sharing facility for nano-entrepreneurs",
+          "url": "https://shellfoundation.org/press-release/sidbi-and-shell-foundation-launch-us3-1-million-initiative-to-expand-access-to-green-finance-for-nano-entrepreneurs/",
+          "date": "2026-04-22"
+        },
+        {
+          "title": "MoSJE — NAMASTE waste-picker component guidelines (vehicle capital subsidy)",
+          "url": "https://www.socialjustice.gov.in/public/ckeditor/upload/86351727949710.pdf",
+          "date": "2024"
+        },
+        {
+          "title": "ANDE — Investing in the waste and circularity sector in India (NBFC rates, guarantees)",
+          "url": "https://andeglobal.org/wp-content/uploads/2024/09/Investing-in-the-Waste-and-Circularity-Sector-in-India-Sep-2024.pdf",
+          "date": "2024-09"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "Is the 0.4% UPI merchant fee on payments above ₹2,000 from 15 October 2026 confirmed by NPCI or RBI, what small-merchant limit avoids it, and what are today's UPI per-transaction limits?",
-   "answer": "Yes, it is confirmed by the Government and NPCI, though the rate itself is not in any gazette: notification S.O. 5067(E) of 14 Sept 2026 (Department of Financial Services, under s.10A of the Payment and Settlement Systems Act) now protects only RuPay debit cards and 'UPI transactions upto Rs. 2,000' from charges, and the Ministry of Finance press release and FAQ of 15 Sept 2026 (PIB PRID 2310586; NPCI hosts the same FAQ) set the framework effective 15 Oct 2026, with NPCI's UPI Steering Committee deciding operating parameters. The numbers: 0.4% MDR on person-to-merchant (P2M) UPI payments above ₹2,000, charged on the whole amount (₹3,000 → ₹12; ₹50,000 → ₹200), capped at ₹300 for payments of ₹75,000 and above; a flat ₹5 for railways, telecom, insurance, fuel, agricultural inputs and utilities; 0.02% (cap ₹300) for capital-market payments; P2P transfers, payments up to ₹2,000 and UPI AutoPay mandates carry no MDR; merchants may not pass it on and apps may not add platform fees; 5% of collections go to a small-merchant fund; NPCI clarified on 22 Sept 2026 that 18% GST applies on the MDR fee itself (a ₹5,000 receipt costs ₹20 + ₹3.60), recoverable as input credit by GST-registered merchants. RBI endorsed the framework on 16 Sept 2026 ('an important step towards strengthening the long-term sustainability of India's digital payments ecosystem') but has issued no circular, and on 28 Sept 2026 the Supreme Court asked the Centre to explain the levy's legal basis on affidavit within four weeks while refusing an interim stay — so plan for 15 Oct and watch late October. The small-merchant escape is the P2PM category: merchants 'receiving up to Rs 1 lac per month through UPI QR directly into their accounts' pay zero MDR on every payment, even above ₹2,000, with no GST registration needed; acquiring banks and PSPs run velocity checks, and a P2PM merchant whose inward UPI credits exceed ₹1 lakh a month for three consecutive months is moved to P2M. For Luma.Green that means most kabadiwalas stay MDR-free if their UPI QR receipts stay under ₹1 lakh/month, while yards (P2M) will pay 0.4% + GST on receipts above ₹2,000 from 15 Oct; a household paying a kabadiwala's personal VPA is P2P and free. Today's UPI limits: NPCI's default is ₹1 lakh per transaction and per day for P2P and ordinary merchant payments (about 20 transactions a day, banks may set lower caps); after RBI let NPCI set P2M limits on 9 Apr 2025, NPCI's circular effective 15 Sept 2025 raised verified merchants in capital markets, insurance, travel and loan EMIs to ₹5 lakh per transaction and ₹10 lakh per day, credit-card bills to ₹5 lakh/₹6 lakh, jewellery ₹2 lakh/₹6 lakh, digital term deposits and GeM ₹5 lakh, and tax, hospital and education payments to ₹5 lakh — scrap trade is not a special category, so yard-to-recycler payments above ₹1 lakh need IMPS/NEFT/RTGS. I could not open NPCI's own circular page (script-rendered), so the category table rests on the government's NewsOnAir summary and dated industry write-ups.",
-   "status": "answered",
-   "decision": "Model 0.4% (cap ₹300) plus 18% GST on every yard-side UPI receipt above ₹2,000 from 15 Oct 2026; store each seller's UPI mode (P2P VPA / P2PM QR / P2M) in the ledger and warn kabadiwalas approaching ₹1 lakh a month; cap UPI entries at ₹1 lakh per transaction and route larger payments to bank transfer.",
-   "whoToAsk": "Each kabadiwala's UPI app/acquiring bank to confirm P2PM classification; watch NPCI's operating circular and the Centre's Supreme Court affidavit (due around 26 Oct 2026) for any change to the 15 Oct start.",
-   "sources": [
-    {
-     "title": "Gazette notification S.O. 5067(E) — charges barred only on RuPay debit and UPI up to ₹2,000 (TaxGuru summary with text)",
-     "url": "https://taxguru.in/finance/government-charges-upi-payments-exceeding-rs-2-000.html",
-     "date": "2026-09-16"
-    },
-    {
-     "title": "Department of Financial Services — press release on MDR on UPI",
-     "url": "https://financialservices.gov.in/press-release-merchant-discount-rate-mdr-upi",
-     "date": "2026-09-15"
-    },
-    {
-     "title": "PIB — UPI continues to remain free for P2P and 96% of merchant transactions (full framework)",
-     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2310586&reg=48&lang=1",
-     "date": "2026-09-15"
-    },
-    {
-     "title": "DFS/NPCI FAQs — MDR on select UPI P2M transactions (P2PM definition Q23–Q29, examples Q35)",
-     "url": "https://financialservices.gov.in/sites/default/files/2026-09/FAQs---Merchant-Discount-Rate--MDR--on-Select-UPI--P2M--Transactions_0.pdf",
-     "date": "2026-09-15"
-    },
-    {
-     "title": "Business Today — NPCI: 18% GST on MDR, small merchants unaffected",
-     "url": "https://www.businesstoday.in/latest/economy/story/upi-mdr-gst-npci-says-small-merchants-and-96-of-transactions-remain-unaffected-from-october-15-557039-2026-09-22",
-     "date": "2026-09-22"
-    },
-    {
-     "title": "The Tribune — RBI backs MDR framework (RBI statement of 16 Sept 2026)",
-     "url": "https://www.tribuneindia.com/news/business/rbi-backs-governments-mdr-framework-calls-it-important-step-towards-sustainable-upi-ecosystem",
-     "date": "2026-09-16"
-    },
-    {
-     "title": "The Probe — why the 0.4% rate is in no gazette",
-     "url": "https://theprobe.in/governance/upi-mdr-charge-no-gazette-12544678",
-     "date": "2026-09"
-    },
-    {
-     "title": "The Probe — Supreme Court asks Centre for affidavit, no stay",
-     "url": "https://theprobe.in/governance/upi-payments-levy-supreme-court-centre-affidavit-12585393",
-     "date": "2026-09-28"
-    },
-    {
-     "title": "SCC Online — NPCI MDR FAQs explained",
-     "url": "https://www.scconline.com/blog/post/2026/09/16/npci-released-upi-mdr-faqs-explained/",
-     "date": "2026-09-16"
-    },
-    {
-     "title": "MediaNama — RBI lets NPCI set UPI P2M limits (P2P stays ₹1 lakh)",
-     "url": "https://www.medianama.com/2025/04/223-rbi-upi-transaction-limit-2025-fy26-monetary-policy-review/",
-     "date": "2025-04-10"
-    },
-    {
-     "title": "NewsOnAir (Govt) — NPCI raises UPI merchant limit to ₹10 lakh a day for verified categories",
-     "url": "https://www.newsonair.gov.in/npci-hikes-upi-limit-for-merchant-payments-to-%E2%82%B910-lakh-per-day",
-     "date": "2025-09-13"
-    },
-    {
-     "title": "Oquilia — UPI category-wise limits table (NPCI circular 28 Aug 2025, effective 15 Sept 2025)",
-     "url": "https://www.oquilia.com/news/upi-transaction-limits-2026-p2p-p2m-category-wise",
-     "date": "2026-08-28"
-    },
-    {
-     "title": "Razorpay blog — UPI transaction limits per day (₹1 lakh default, ₹5 lakh categories)",
-     "url": "https://razorpay.com/blog/upi-transaction-limit-per-day/",
-     "date": "2026-06-08"
-    }
-   ]
-  },
-  {
-   "question": "Which banks or NBFCs lend to small scrap dealers and yards in Bengaluru (Mudra loans through partner banks, NBFC purchase finance such as Oxyzo), and would they accept a platform's verified trade history as part of underwriting? Are there examples of recycling-sector lending programmes in India?",
-   "answer": "The default lender for a kabadiwala or small yard is any bank, RRB, small finance bank, NBFC or MFI lending under Pradhan Mantri MUDRA Yojana: collateral-free loans for 'manufacturing, trading and services' — Shishu up to ₹50,000, Kishore ₹50,000–5 lakh, Tarun ₹5–10 lakh and, since 24 Oct 2024, Tarun Plus ₹10–20 lakh for borrowers who repaid a Tarun loan — guaranteed under CGFMU; MUDRA itself never lends, so the yard applies at a bank branch, and the first step is a free Aadhaar-based Udyam registration, which needs PAN and GSTIN only 'as per applicability of the CGST Act'. For yards and recyclers with scale, Oxyzo (OfBusiness's NBFC) offers purchase finance that pays the supplier directly with 60–120-day repayment, unsecured limits up to ₹5 crore, interest 'from 12% per annum' and fees from 1% — but it requires ₹3 crore+ annual turnover, 3+ years' vintage, GSTIN and audited financials, so it fits recyclers and large yards, not kabadiwalas; Kinara Capital, a Bengaluru-headquartered NBFC, advertises collateral-free ₹1–30 lakh loans for trading businesses registered 2+ years (its pages blocked my fetch, so verify on its site). On platform trade history: banks will not underwrite on it alone (they need bank statements, bureau data and KYC), but anchor-led NBFC programmes do — Progcap (22 June 2025) runs 'transaction-led underwriting' with 128 anchor brands, 30,000+ borrowers, a ₹10 lakh average ticket and 1.1% gross NPAs, and Rupifi embeds 15–90-day B2B credit inside marketplaces funded by Muthoot Finance, UGRO Capital and LiquiLoans; the RBI Digital Lending Directions of 8 May 2025 let a platform act as a Lending Service Provider for 'customer acquisition, services incidental to underwriting and pricing … recovery', with any default-loss guarantee capped at 5% of the disbursed portfolio, so Luma.Green can become the anchor once it has 6–12 months of reconciled per-party trade data — whether a given lender bites is a pilot outcome, not settled from public pages. Recycling-sector precedents exist: in Bengaluru, S3IDF, Hasiru Dala and Rang De (2017) channelled crowdfunded low-interest micro-loans to informal waste entrepreneurs, with S3IDF guaranteeing part and repayments routed through Hasiru Dala, replacing moneylenders charging 24–40%; the EU/GIZ marine-litter project's Risk Sharing Facility at SIDBI (EUR 3.8 million corpus, Bengaluru a project city) guarantees 50% of bank/NBFC working-capital or capex loans to waste firms under ₹25 crore turnover (25% above) and by its mid-term review had backed NEPRA's working-capital loan and GPS Renewables' biogas plant, with MoHUA/HUDCO planning a scaled-up version. Government schemes: MSE-SPICE (launched 20 Dec 2023, ₹472.5 crore outlay to 2026-27, SIDBI-implemented) gives Udyam-registered micro/small units a 25% capital subsidy on plant and machinery, max ₹12.5 lakh on projects up to ₹50 lakh, brownfield only, for plastic, rubber, e-waste and other circular sectors — Bank of Baroda joined on 9 Sept 2025 with CGTMSE collateral-free loans; NAMASTE's waste-picker component (guidelines 2024) pays a capital subsidy of ₹2.5 lakh plus 25% of the remaining cost (max ₹5 lakh per dry-waste collection centre, 750 DWCCs) for waste-collection vehicles bought by waste-picker SHGs; and SIDBI–Shell Foundation's EN-Trans RSF (22 Apr 2026, US$3.1 million second-loss cover for roughly ₹250 crore of loans via banks, RRBs, SFBs and NBFC-MFIs) is the newest template, though aimed at solar assets. ANDE's Sept 2024 sector guide confirms the gap: early-stage waste businesses usually get working capital only from NBFCs at 16–18% against about 12% from banks, and guarantees or FLDG structures are what unlock bank money.",
-   "status": "partly",
-   "decision": "No lending in the pilot. Get every yard and kabadiwala Udyam-registered during KYC; build the ledger so each party has an exportable six-month statement (volumes, counterparties, settlement times, disputes); after the pilot pitch an anchor programme to Kinara Capital (kabadiwalas and small yards) and Oxyzo (recyclers), point yards buying balers or vehicles to MSE-SPICE and waste-picker SHGs to NAMASTE, and ask SIDBI Bengaluru about the risk-sharing facility.",
-   "whoToAsk": "Kinara Capital and Oxyzo partnership teams (appetite for an anchor programme on Luma.Green's ledger); SIDBI Bengaluru regional office (RSF and SPICE); a public-sector bank branch manager on PMMY appetite for scrap traders; a fintech lawyer on LSP obligations before Luma.Green refers any loan.",
-   "sources": [
-    {
-     "title": "PIB backgrounder — PMMY loan limit raised to ₹20 lakh, Tarun Plus, CGFMU",
-     "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/oct/doc20241029426401.pdf",
-     "date": "2024-10-29"
-    },
-    {
-     "title": "MUDRA — offerings (categories, collateral-free, refinance only, trading eligible)",
-     "url": "https://www.mudra.org.in/Offerings",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Udyam registration portal — Aadhaar-based, PAN/GSTIN as applicable",
-     "url": "https://udyamregistration.gov.in/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Oxyzo — purchase finance (tenure, rates, ₹3 crore turnover, 3 years)",
-     "url": "https://www.oxyzo.in/purchase-finance",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Oxyzo — FAQs (eligibility, documents)",
-     "url": "https://www.oxyzo.in/faqs",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Kinara Capital — business loan eligibility (page returned 403; verify)",
-     "url": "https://kinaracapital.com/business-loan-eligibility-criteria/",
-     "date": "not opened"
-    },
-    {
-     "title": "Outlook Business — Progcap transaction-led underwriting, 128 anchors",
-     "url": "https://www.outlookbusiness.com/corporate/progcap-aims-3000-cr-aum-loan-sanction-of-5200-cr-by-fiscal-end",
-     "date": "2025-06-22"
-    },
-    {
-     "title": "Rupifi — embedded B2B credit and lending partners",
-     "url": "https://www.rupifi.com/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Argus Partners — RBI Digital Lending Directions 2025 overview (LSP definition, 5% DLG cap)",
-     "url": "https://www.argus-p.com/updates/updates/rbi-digital-lending-directions-2025-an-overview/",
-     "date": "2025-05-26"
-    },
-    {
-     "title": "S3IDF — Bengaluru waste-entrepreneur credit with Hasiru Dala and Rang De",
-     "url": "https://s3idf.org/sector-update-changing-landscape-bengalurus-waste-management-systems/",
-     "date": "2017-08-17"
-    },
-    {
-     "title": "EU/GIZ India circular-economy project — mid-term evaluation (SIDBI Risk Sharing Facility, NEPRA, GPS Renewables)",
-     "url": "https://mitigation-action.org/wp-content/uploads/Mid-Term-ELE-Report-India-Circular-Economy.pdf",
-     "date": "2024 (covers to Dec 2023)"
-    },
-    {
-     "title": "SIDBI — MSE-SPICE FAQs (25% subsidy, ₹12.5 lakh cap, Udyam, brownfield)",
-     "url": "https://www.sidbi.in/uploads/financialreport/FAQ-SPICE.pdf",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "SIDBI — MSE-SPICE scheme page",
-     "url": "https://www.sidbi.in/en/pages/mse-scheme-for-promotion-and-investment-in-circular-economy-mse-spice",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Indian Masterminds — Bank of Baroda and SIDBI launch bob Earth Circular Economy Scheme under MSE-SPICE",
-     "url": "https://indianmasterminds.com/news/bank-of-baroda-sidbi-mse-spice-green-finance-143709/",
-     "date": "2025-09-09"
-    },
-    {
-     "title": "Shell Foundation — SIDBI EN-Trans risk sharing facility for nano-entrepreneurs",
-     "url": "https://shellfoundation.org/press-release/sidbi-and-shell-foundation-launch-us3-1-million-initiative-to-expand-access-to-green-finance-for-nano-entrepreneurs/",
-     "date": "2026-04-22"
-    },
-    {
-     "title": "MoSJE — NAMASTE waste-picker component guidelines (vehicle capital subsidy)",
-     "url": "https://www.socialjustice.gov.in/public/ckeditor/upload/86351727949710.pdf",
-     "date": "2024"
-    },
-    {
-     "title": "ANDE — Investing in the waste and circularity sector in India (NBFC rates, guarantees)",
-     "url": "https://andeglobal.org/wp-content/uploads/2024/09/Investing-in-the-Waste-and-Circularity-Sector-in-India-Sep-2024.pdf",
-     "date": "2024-09"
-    }
-   ]
-  }
- ]
+  ]
 }
