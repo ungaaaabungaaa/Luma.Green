@@ -46,12 +46,14 @@ const EARLIER_ROWS: readonly {
 ];
 
 /**
- * Where each demo business's scale stamp falls, in days from today: one
- * overdue, one due soon, the rest spread over the year.
+ * Where each demo business's scale stamp falls, in days from today, in the
+ * order the businesses were seeded: the first due soon, one overdue, the
+ * rest spread over the year.
  */
-function stampOffset(index: number): number {
-  const spread = [18, 61, -12, 140, 95, 230, 47, 310, 175, 265, 120, 200];
-  return spread[index % spread.length] ?? 90;
+const STAMP_SPREAD = [18, 61, -12, 140, 95, 230, 47, 310, 175, 265, 120, 200];
+
+export function stampOffset(index: number): number {
+  return STAMP_SPREAD[index % STAMP_SPREAD.length];
 }
 
 function scaleTitle(kind: Doc<"orgs">["kind"]): string {
@@ -79,8 +81,9 @@ async function seedRules(ctx: MutationCtx, world: DemoWorld) {
 }
 
 async function seedBusinessDates(ctx: MutationCtx, world: DemoWorld) {
-  const orgs = [...world.orgs.values()];
-  for (const [index, orgId] of orgs.entries()) {
+  let index = -1;
+  for (const orgId of world.orgs.values()) {
+    index += 1;
     const org = await ctx.db.get("orgs", orgId);
     if (!org) continue;
 
@@ -154,7 +157,8 @@ async function seedPlatformDates(ctx: MutationCtx, world: DemoWorld) {
     },
     {
       kind: "custom",
-      title: "Register as an aggregator with the Karnataka gig-workers welfare board",
+      title:
+        "Register as an aggregator with the Karnataka gig-workers welfare board",
       dueAt: shiftDate(world.today, 45),
       note: "Within 45 days of the first Saathi payout through the platform; only if Luma.Green pays Saathis itself.",
     },

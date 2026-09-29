@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { api, internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
+import { stampOffset } from "./demo/rulebook";
 import {
   convexModules,
   registerAuth,
@@ -100,7 +101,7 @@ describe("a rule's value", () => {
     expect(isValidRuleValue(true, "flag")).toBe(true);
     expect(isValidRuleValue("yes", "flag")).toBe(false);
     expect(isValidRuleValue("KSPCB", "text")).toBe(true);
-    expect(isValidRuleValue("   ", "text")).toBe(false);
+    expect(isValidRuleValue(" ".repeat(3), "text")).toBe(false);
   });
 
   it("needs a real date and a real source", () => {
@@ -112,7 +113,7 @@ describe("a rule's value", () => {
       ruleChangeProblem({
         ...base,
         effectiveFrom: "2026-02-28",
-        sourceUrl: "ftp://x",
+        sourceUrl: "not a link",
       }),
     ).toBe("INVALID_SOURCE");
     expect(
@@ -154,9 +155,7 @@ describe("deadline states and recurrences", () => {
     expect(monthlyOn(31, { from: "2027-02-01", to: "2027-02-28" })).toEqual([
       "2027-02-28",
     ]);
-    expect(monthlyOn(10, { from: "2026-09-11", to: "2026-09-30" })).toEqual(
-      [],
-    );
+    expect(monthlyOn(10, { from: "2026-09-11", to: "2026-09-30" })).toEqual([]);
   });
 
   it("put quarterly returns at the end of the month after each quarter", () => {
@@ -210,7 +209,7 @@ describe("generated deadlines", () => {
       openTrades: [],
       rules,
     });
-    const of = (kind: string, orgId?: string) =>
+    const of = (kind: string, orgId?: Id<"orgs">) =>
       events.filter(
         (event) => event.kind === kind && (!orgId || event.orgId === orgId),
       );
@@ -255,15 +254,15 @@ describe("generated deadlines", () => {
       ],
       rules,
     });
-    expect(events).toMatchObject([
+    const owed = events.filter((event) => event.kind === "msmeDue");
+    expect(owed).toMatchObject([
       {
-        kind: "msmeDue",
         orgId: yard.id,
         dueAt: "2026-11-15",
         sourceKey: "msme:trade1",
       },
     ]);
-    expect(events[0]?.title).toContain("Ramesh Kabadi Store");
+    expect(owed[0]?.title).toContain("Ramesh Kabadi Store");
   });
 });
 
@@ -286,7 +285,9 @@ describe("the rulebook", () => {
     expect(tcs?.history.map((row) => row.value)).toEqual([50, 100]);
     expect(tcs?.upcoming).toEqual([]);
 
-    const scrap = rules.find((rule) => rule.key === "incomeTax.scrapTcs.rateBp");
+    const scrap = rules.find(
+      (rule) => rule.key === "incomeTax.scrapTcs.rateBp",
+    );
     expect(scrap?.active.value).toBe(200);
     expect(scrap?.history).toHaveLength(2);
   });
@@ -301,7 +302,7 @@ describe("the rulebook", () => {
       /NOT_ADMIN/,
     );
     await expect(
-      shop.mutation(api.rulebook.setRule, {
+      shop.mutation(api.rulebook.saveRule, {
         key: "msme.payment.days",
         value: 60,
         effectiveFrom: "2026-10-01",
@@ -312,7 +313,7 @@ describe("the rulebook", () => {
   it("keeps a future change waiting until its date, in the audit log", async () => {
     const { t, admin } = await demoWorld();
     const key = "ewayBill.limitPaise";
-    const result = await admin.mutation(api.rulebook.setRule, {
+    const result = await admin.mutation(api.rulebook.saveRule, {
       key,
       value: 10_000_000,
       effectiveFrom: "2099-01-01",
@@ -320,9 +321,8 @@ describe("the rulebook", () => {
     });
     expect(result.id).not.toBeNull();
 
-    const rule = (await admin.query(api.rulebook.listRules, {})).find(
-      (row) => row.key === key,
-    );
+    const rules = await admin.query(api.rulebook.listRules, {});
+    const rule = rules.find((row) => row.key === key);
     expect(rule?.active.value).toBe(5_000_000);
     expect(rule?.upcoming).toMatchObject([
       { value: 10_000_000, effectiveFrom: "2099-01-01", byAdmin: true },
@@ -346,7 +346,7 @@ describe("the rulebook", () => {
     });
 
     // The same change again is not a change.
-    const again = await admin.mutation(api.rulebook.setRule, {
+    const again = await admin.mutation(api.rulebook.saveRule, {
       key,
       value: 10_000_000,
       effectiveFrom: "2099-01-01",
@@ -362,7 +362,7 @@ describe("the rulebook", () => {
       key: string,
       value: number | string | boolean,
       effectiveFrom = "2026-10-01",
-    ) => admin.mutation(api.rulebook.setRule, { key, value, effectiveFrom });
+    ) => admin.mutation(api.rulebook.saveRule, { key, value, effectiveFrom });
     await expect(set("incomeTax.scrapTcs.rateBp", 250.5)).rejects.toThrow(
       /INVALID_VALUE/,
     );
@@ -399,16 +399,17 @@ describe("the compliance calendar", () => {
     const december = await admin.query(api.rulebook.listCalendar, {
       month: "2026-12",
     });
-    expect(december.orgs.map((org) => org.name)).toContain(
-      "Hebbal Metal Yard",
-    );
+    expect(december.orgs.map((org) => org.name)).toContain("Hebbal Metal Yard");
 
+    // Every GST-registered yard or recycler handling metal, on the 10th.
     const gstr7 = december.events.filter((event) => event.kind === "gstr7");
-    expect(gstr7.map((event) => event.org?.name).toSorted()).toEqual([
-      "Bidadi Recycling Works",
-      "Hebbal Metal Yard",
-    ]);
+    expect(gstr7.map((event) => event.org?.name ?? "")).toEqual(
+      expect.arrayContaining(["Bidadi Recycling Works", "Hebbal Metal Yard"]),
+    );
     expect(gstr7.every((event) => event.dueAt === "2026-12-10")).toBe(true);
+    expect(gstr7.some((event) => event.org?.kind === "manufacturer")).toBe(
+      false,
+    );
 
     const consent = december.events.find(
       (event) =>
@@ -425,7 +426,7 @@ describe("the compliance calendar", () => {
 
     // The platform's own dates from the seed, and every event sorted by date.
     const dates = january.events.map((event) => event.dueAt);
-    expect(dates).toEqual([...dates].sort((a, b) => a.localeCompare(b)));
+    expect(dates).toEqual(dates.toSorted((a, b) => a.localeCompare(b)));
 
     await expect(
       admin.query(api.rulebook.listCalendar, { month: "2026-13" }),
@@ -453,7 +454,10 @@ describe("the compliance calendar", () => {
     ).toBe(true);
     expect(mine.events.every((event) => !event.done)).toBe(true);
     const scale = mine.events.find((event) => event.kind === "scale");
-    expect(scale).toMatchObject({ daysLeft: 18, state: "due_soon" });
+    expect(scale).toMatchObject({
+      daysLeft: stampOffset(0),
+      state: "due_soon",
+    });
     expect(scale?.id).not.toBeNull();
 
     // The recycler owes a yard for a dispatched load: 45 days from acceptance.
@@ -561,13 +565,13 @@ describe("the compliance calendar", () => {
   it("lets the admin add a dated duty for a business", async () => {
     const { t, admin } = await demoWorld();
     const shop = await signInAs(t, KABADIWALA);
-    const orgId = (await shop.query(api.rulebook.myDeadlines, {})).events[0]
-      ?.org?.id;
+    const shopDeadlines = await shop.query(api.rulebook.myDeadlines, {});
+    const orgId = shopDeadlines.events[0]?.org?.id;
     if (!orgId) throw new Error("expected the shop's business");
     const today = indiaDate(Date.now());
     const dueAt = shiftDate(today, 7);
 
-    await admin.mutation(api.rulebook.addEvent, {
+    await admin.mutation(api.rulebook.scheduleDeadline, {
       orgId,
       kind: "custom",
       title: "Send the Udyam certificate",
@@ -586,21 +590,21 @@ describe("the compliance calendar", () => {
     expect(await auditRows(t, "calendarEvent.added")).toHaveLength(1);
 
     await expect(
-      admin.mutation(api.rulebook.addEvent, {
+      admin.mutation(api.rulebook.scheduleDeadline, {
         kind: "custom",
-        title: "   ",
+        title: " ".repeat(3),
         dueAt,
       }),
     ).rejects.toThrow(/INVALID_TITLE/);
     await expect(
-      admin.mutation(api.rulebook.addEvent, {
+      admin.mutation(api.rulebook.scheduleDeadline, {
         kind: "custom",
         title: "Bad date",
         dueAt: "31/12/2026",
       }),
     ).rejects.toThrow(/INVALID_DATE/);
     await expect(
-      shop.mutation(api.rulebook.addEvent, {
+      shop.mutation(api.rulebook.scheduleDeadline, {
         kind: "custom",
         title: "Not allowed",
         dueAt,

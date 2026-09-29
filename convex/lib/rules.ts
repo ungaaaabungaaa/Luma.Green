@@ -1,4 +1,4 @@
-import type { Doc, Id } from "../_generated/dataModel";
+import type { Id } from "../_generated/dataModel";
 import type { QueryCtx } from "../_generated/server";
 import type { OrgKind } from "./chain";
 import { shiftDate } from "./dates";
@@ -117,7 +117,8 @@ export const RULE_DEFAULTS = [
     unit: "days",
     effectiveFrom: "2024-11-01",
     note: "A registered yard buying metal scrap from an unregistered kabadiwala pays the GST itself and must issue the self-invoice within this many days of receiving the goods (Rule 47A, Notification 20/2024-CT).",
-    sourceUrl: "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-20-2024.pdf",
+    sourceUrl:
+      "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-20-2024.pdf",
   },
   {
     key: "gst.einvoice.turnoverPaise",
@@ -127,7 +128,8 @@ export const RULE_DEFAULTS = [
     unit: "paise",
     effectiveFrom: "2023-08-01",
     note: "Businesses whose aggregate turnover passed this in any year since 2017-18 must issue an IRN for every invoice (Notification 10/2023-CT). Large yards, recyclers and manufacturers.",
-    sourceUrl: "https://www.gstcouncil.gov.in/sites/default/files/2024-05/10ct_eng.pdf",
+    sourceUrl:
+      "https://www.gstcouncil.gov.in/sites/default/files/2024-05/10ct_eng.pdf",
   },
   {
     key: "gst.registration.turnoverPaise",
@@ -326,7 +328,8 @@ export const RULE_DEFAULTS = [
     unit: "flag",
     effectiveFrom: "2026-10-13",
     note: "Off during the pilot (ADR 0009): buyers pay sellers directly and Luma.Green only records it, which keeps the platform outside GST TCS, GSTR-8 and RBI payment-aggregator licensing. Turning this on adds GSTR-8 to the calendar and the TCS lines to trades.",
-    sourceUrl: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896",
+    sourceUrl:
+      "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896",
   },
   {
     key: "escrow.releaseToleranceBp",
@@ -352,11 +355,12 @@ export const RULE_DEFAULTS = [
     key: "upi.smallMerchant.monthlyLimitPaise",
     group: "payments",
     label: "UPI small-merchant monthly limit",
-    value: 1 * LAKH * RUPEE,
+    value: LAKH * RUPEE,
     unit: "paise",
     effectiveFrom: "2025-04-09",
     note: "What a small merchant without full KYC can receive by UPI in a month; a single person-to-person payment is also capped at ₹1 lakh. Household pickups fit easily; yard and recycler loads need NEFT, IMPS or RTGS.",
-    sourceUrl: "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=60178",
+    sourceUrl:
+      "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=60178",
   },
   // --- Prices ---------------------------------------------------------------------------
   {
@@ -470,10 +474,7 @@ export function ruleType(unit: RuleUnit): RuleType {
 }
 
 export type RuleProblem =
-  | "INVALID_VALUE"
-  | "INVALID_DATE"
-  | "NOTE_TOO_LONG"
-  | "INVALID_SOURCE";
+  "INVALID_VALUE" | "INVALID_DATE" | "NOTE_TOO_LONG" | "INVALID_SOURCE";
 
 export const NOTE_MAX_CHARS = 600;
 export const TEXT_MAX_CHARS = 80;
@@ -495,10 +496,9 @@ export function isValidRuleValue(value: RuleValue, unit: RuleUnit): boolean {
       );
     }
     case "number": {
-      if (typeof value !== "number" || !Number.isInteger(value) || value < 0) {
-        return false;
-      }
-      return unit === "bp" ? value <= MAX_BP : true;
+      return typeof value !== "number" ||
+        !Number.isSafeInteger(value) ||
+        value < 0 ? false : unit !== "bp" || value <= MAX_BP;
     }
   }
 }
@@ -511,13 +511,18 @@ export function isIsoDate(date: string): boolean {
   if (!match) return false;
   const parsed = new Date(`${date}T00:00:00Z`);
   return (
-    !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === date
+    !Number.isNaN(parsed.getTime()) &&
+    parsed.toISOString().slice(0, 10) === date
   );
 }
 
+/** A web link, or a path into this repo's docs. */
 export function isValidSource(url: string): boolean {
-  if (url.length === 0 || url.length > SOURCE_MAX_CHARS) return false;
-  return /^https?:\/\/\S+$/.test(url) || /^docs\/[\w./-]+$/.test(url);
+  return (
+    url.length > 0 &&
+    url.length <= SOURCE_MAX_CHARS &&
+    (/^https?:\/\/\S+$/.test(url) || /^docs\/[\w./-]+$/.test(url))
+  );
 }
 
 /** The first thing wrong with a proposed change, or null. */
@@ -531,10 +536,9 @@ export function ruleChangeProblem(change: {
   if (!isValidRuleValue(change.value, change.unit)) return "INVALID_VALUE";
   if (!isIsoDate(change.effectiveFrom)) return "INVALID_DATE";
   if ((change.note ?? "").length > NOTE_MAX_CHARS) return "NOTE_TOO_LONG";
-  if (change.sourceUrl !== undefined && !isValidSource(change.sourceUrl)) {
-    return "INVALID_SOURCE";
-  }
-  return null;
+  return change.sourceUrl !== undefined && !isValidSource(change.sourceUrl)
+    ? "INVALID_SOURCE"
+    : null;
 }
 
 // --- Which row applies -----------------------------------------------------
@@ -608,7 +612,7 @@ export async function ruleNumber(
 }
 
 /** `ruleValue` for an on/off rule. */
-export async function ruleFlag(
+export async function isRuleOn(
   ctx: QueryCtx,
   key: RuleKey,
   today?: string,
@@ -677,7 +681,7 @@ export interface CalendarOrg {
   name: string;
   gstin?: string;
   families: readonly string[];
-  consent?: Doc<"orgs">["consent"];
+  consent?: { board: string; number: string; validUntil: string };
 }
 
 /** A trade whose seller hasn't been paid in full yet. */
@@ -707,9 +711,10 @@ export interface DateRange {
   to: string;
 }
 
+/** The numbers in a well-formed YYYY-MM-DD date. */
 function parts(date: string): { year: number; month: number; day: number } {
   const [year, month, day] = date.split("-").map(Number);
-  return { year: year ?? 0, month: month ?? 1, day: day ?? 1 };
+  return { year, month, day };
 }
 
 function pad(value: number): string {
@@ -728,21 +733,16 @@ function isoDate(year: number, month: number, day: number): string {
 function monthsIn(range: DateRange): [number, number][] {
   const start = parts(range.from);
   const end = parts(range.to);
+  const first = start.year * 12 + (start.month - 1);
+  const last = end.year * 12 + (end.month - 1);
   const months: [number, number][] = [];
-  let year = start.year;
-  let month = start.month;
-  while (year < end.year || (year === end.year && month <= end.month)) {
-    months.push([year, month]);
-    month += 1;
-    if (month > 12) {
-      month = 1;
-      year += 1;
-    }
+  for (let index = first; index <= last; index += 1) {
+    months.push([Math.floor(index / 12), (index % 12) + 1]);
   }
   return months;
 }
 
-function inRange(date: string, range: DateRange): boolean {
+function isInRange(date: string, range: DateRange): boolean {
   return date >= range.from && date <= range.to;
 }
 
@@ -752,17 +752,21 @@ export function monthlyOn(day: number, range: DateRange): string[] {
     .map(([year, month]) =>
       isoDate(year, month, Math.min(day, lastDayOf(year, month))),
     )
-    .filter((date) => inRange(date, range));
+    .filter((date) => isInRange(date, range));
 }
 
 /** `month`/`day` of every year in the range. */
-export function yearlyOn(month: number, day: number, range: DateRange): string[] {
+export function yearlyOn(
+  month: number,
+  day: number,
+  range: DateRange,
+): string[] {
   const start = parts(range.from).year;
   const end = parts(range.to).year;
   const dates: string[] = [];
   for (let year = start; year <= end; year += 1) {
     const date = isoDate(year, month, Math.min(day, lastDayOf(year, month)));
-    if (inRange(date, range)) dates.push(date);
+    if (isInRange(date, range)) dates.push(date);
   }
   return dates;
 }
@@ -774,7 +778,7 @@ export function yearlyOn(month: number, day: number, range: DateRange): string[]
 export function quarterlyReturnDates(range: DateRange): string[] {
   return [1, 4, 7, 10]
     .flatMap((month) => yearlyOn(month, 31, range))
-    .toSorted();
+    .toSorted((a, b) => a.localeCompare(b));
 }
 
 /** Yearly on `anchor`'s month and day, from `anchor`'s year on. */
@@ -784,7 +788,7 @@ export function yearlyFrom(anchor: string, range: DateRange): string[] {
 }
 
 /** Businesses that deduct GST TDS on metal scrap and file GSTR-7. */
-function filesGstr7(org: CalendarOrg): boolean {
+function mustFileGstr7(org: CalendarOrg): boolean {
   return (
     Boolean(org.gstin) &&
     (org.kind === "yard" || org.kind === "recycler") &&
@@ -800,85 +804,83 @@ export interface CalendarRules {
   darkPatternFirstDue: string;
 }
 
-/**
- * The deadlines that follow from who a business is, computed for a range
- * rather than stored: consent expiry, monthly and yearly filings, payment
- * limits on open trades and the platform's own dates. Stored rows with the
- * same `sourceKey` (marked done, or written by the reminders cron) win.
- */
-export function generatedDeadlines(input: {
-  range: DateRange;
-  orgs: readonly CalendarOrg[];
-  openTrades: readonly OpenTrade[];
-  rules: CalendarRules;
-}): GeneratedEvent[] {
-  const { range, orgs, openTrades, rules } = input;
+/** A recurring filing for one business: the same text on every date. */
+function filings(
+  org: CalendarOrg,
+  kind: CalendarKind,
+  dates: readonly string[],
+  text: { title: string; note: string },
+): GeneratedEvent[] {
+  return dates.map((dueAt) => ({
+    sourceKey: `${kind}:${org.id}:${dueAt}`,
+    kind,
+    title: text.title,
+    dueAt,
+    orgId: org.id,
+    note: text.note,
+  }));
+}
+
+/** What one business owes in the range, from its consent, GSTIN and materials. */
+function orgDeadlines(org: CalendarOrg, range: DateRange): GeneratedEvent[] {
   const events: GeneratedEvent[] = [];
-
-  for (const org of orgs) {
-    if (org.consent?.validUntil && inRange(org.consent.validUntil, range)) {
-      events.push({
-        sourceKey: `consent:${org.id}:${org.consent.validUntil}`,
-        kind: "consent",
-        title: `${org.consent.board} consent expires`,
-        dueAt: org.consent.validUntil,
-        orgId: org.id,
-        note: `Consent ${org.consent.number}. Apply for renewal well ahead: it can take weeks.`,
-      });
-    }
-    if (filesGstr7(org)) {
-      for (const dueAt of monthlyOn(10, range)) {
-        events.push({
-          sourceKey: `gstr7:${org.id}:${dueAt}`,
-          kind: "gstr7",
-          title: "GSTR-7: deposit GST TDS on metal scrap",
-          dueAt,
-          orgId: org.id,
-          note: "2% deducted on metal scrap bought from GST-registered sellers over ₹2.5 lakh, deposited with the return by the 10th.",
-        });
-      }
-    }
-    if (org.kind === "recycler" && org.families.includes("plastic")) {
-      for (const dueAt of yearlyOn(4, 30, range)) {
-        events.push({
-          sourceKey: `eprReturn:${org.id}:${dueAt}`,
-          kind: "eprReturn",
-          title: "EPR annual return (plastic processor)",
-          dueAt,
-          orgId: org.id,
-          note: "Registered plastic waste processors file their annual return on eprplastic.cpcb.gov.in by 30 April.",
-        });
-      }
-    }
-    if (org.kind === "manufacturer" && org.families.includes("plastic")) {
-      for (const dueAt of yearlyOn(6, 30, range)) {
-        events.push({
-          sourceKey: `eprReturn:${org.id}:${dueAt}`,
-          kind: "eprReturn",
-          title: "EPR annual return (brand owner)",
-          dueAt,
-          orgId: org.id,
-          note: "Producers, importers and brand owners file by 30 June, naming the recyclers whose certificates they used.",
-        });
-      }
-    }
-    if (org.kind === "recycler" && org.families.includes("ewaste")) {
-      for (const dueAt of quarterlyReturnDates(range)) {
-        events.push({
-          sourceKey: `eprQuarterly:${org.id}:${dueAt}`,
-          kind: "eprQuarterly",
-          title: "EPR quarterly return (e-waste)",
-          dueAt,
-          orgId: org.id,
-          note: "E-waste, battery, tyre and used-oil recyclers file quarterly returns by the end of the month after the quarter.",
-        });
-      }
-    }
+  const { consent } = org;
+  if (consent && isInRange(consent.validUntil, range)) {
+    events.push({
+      sourceKey: `consent:${org.id}:${consent.validUntil}`,
+      kind: "consent",
+      title: `${consent.board} consent expires`,
+      dueAt: consent.validUntil,
+      orgId: org.id,
+      note: `Consent ${consent.number}. Apply for renewal well ahead: it can take weeks.`,
+    });
   }
+  if (mustFileGstr7(org)) {
+    events.push(
+      ...filings(org, "gstr7", monthlyOn(10, range), {
+        title: "GSTR-7: deposit GST TDS on metal scrap",
+        note: "2% deducted on metal scrap bought from GST-registered sellers over ₹2.5 lakh, deposited with the return by the 10th.",
+      }),
+    );
+  }
+  const isHandlesPlastic = org.families.includes("plastic");
+  if (org.kind === "recycler" && isHandlesPlastic) {
+    events.push(
+      ...filings(org, "eprReturn", yearlyOn(4, 30, range), {
+        title: "EPR annual return (plastic processor)",
+        note: "Registered plastic waste processors file their annual return on eprplastic.cpcb.gov.in by 30 April.",
+      }),
+    );
+  }
+  if (org.kind === "manufacturer" && isHandlesPlastic) {
+    events.push(
+      ...filings(org, "eprReturn", yearlyOn(6, 30, range), {
+        title: "EPR annual return (brand owner)",
+        note: "Producers, importers and brand owners file by 30 June, naming the recyclers whose certificates they used.",
+      }),
+    );
+  }
+  if (org.kind === "recycler" && org.families.includes("ewaste")) {
+    events.push(
+      ...filings(org, "eprQuarterly", quarterlyReturnDates(range), {
+        title: "EPR quarterly return (e-waste)",
+        note: "E-waste, battery, tyre and used-oil recyclers file quarterly returns by the end of the month after the quarter.",
+      }),
+    );
+  }
+  return events;
+}
 
+/** The MSME payment deadline on every trade whose seller is still owed. */
+function tradeDeadlines(
+  openTrades: readonly OpenTrade[],
+  range: DateRange,
+  rules: CalendarRules,
+): GeneratedEvent[] {
+  const events: GeneratedEvent[] = [];
   for (const trade of openTrades) {
     const dueAt = shiftDate(indiaDate(trade.acceptedAt), rules.msmeDays);
-    if (!inRange(dueAt, range)) continue;
+    if (!isInRange(dueAt, range)) continue;
     events.push({
       sourceKey: `msme:${trade.id}`,
       kind: "msmeDue",
@@ -888,7 +890,15 @@ export function generatedDeadlines(input: {
       note: `${String(rules.msmeDays)} days from accepting the goods, if the seller is a Udyam-registered micro or small enterprise. After that, compound interest at three times the bank rate.`,
     });
   }
+  return events;
+}
 
+/** The platform's own duties: GSTR-8 once escrow collects money, the yearly audit. */
+function platformDeadlines(
+  range: DateRange,
+  rules: CalendarRules,
+): GeneratedEvent[] {
+  const events: GeneratedEvent[] = [];
   if (rules.escrowLive) {
     for (const dueAt of monthlyOn(10, range)) {
       events.push({
@@ -911,6 +921,25 @@ export function generatedDeadlines(input: {
       });
     }
   }
+  return events;
+}
 
-  return events.toSorted((a, b) => a.dueAt.localeCompare(b.dueAt));
+/**
+ * The deadlines that follow from who a business is, computed for a range
+ * rather than stored: consent expiry, monthly and yearly filings, payment
+ * limits on open trades and the platform's own dates. Stored rows with the
+ * same `sourceKey` (marked done, or written by the reminders cron) win.
+ */
+export function generatedDeadlines(input: {
+  range: DateRange;
+  orgs: readonly CalendarOrg[];
+  openTrades: readonly OpenTrade[];
+  rules: CalendarRules;
+}): GeneratedEvent[] {
+  const { range, orgs, openTrades, rules } = input;
+  return [
+    ...orgs.flatMap((org) => orgDeadlines(org, range)),
+    ...tradeDeadlines(openTrades, range, rules),
+    ...platformDeadlines(range, rules),
+  ].toSorted((a, b) => a.dueAt.localeCompare(b.dueAt));
 }
