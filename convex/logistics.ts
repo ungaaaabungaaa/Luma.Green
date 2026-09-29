@@ -667,6 +667,19 @@ function orgLookup(ctx: QueryCtx) {
   };
 }
 
+/** A number the driver can call: the shop's listed phone, else its owner's. */
+async function contactPhone(
+  ctx: QueryCtx,
+  org: Org | null,
+): Promise<string | undefined> {
+  if (!org) return undefined;
+  const listed = org.phones[0]?.number;
+  if (listed !== undefined) return listed;
+  if (!org.ownerProfileId) return undefined;
+  const owner = await ctx.db.get("profiles", org.ownerProfileId);
+  return owner?.phone;
+}
+
 function sideOf(load: Load, orgId: Id<"orgs">): Side | null {
   if (load.buyerOrgId === orgId) return "buyer";
   return load.stops.some((stop) => stop.orgId === orgId) ? "seller" : null;
@@ -706,8 +719,7 @@ async function stopViews(
       name: org?.name ?? "",
       area: org?.area ?? "",
       address: org?.address ?? "",
-      phone:
-        side === "buyer" ? org?.phones[0]?.number : undefined,
+      phone: side === "buyer" ? await contactPhone(ctx, org) : undefined,
       material: materialRef(materials, stop.materialCode),
       grams: stop.grams,
       litres: stop.litres,
