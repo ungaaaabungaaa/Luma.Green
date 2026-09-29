@@ -55,9 +55,10 @@ recycler. The platform keeps who sold what to whom, how much and at what price.
 | **Admin**                    | The Luma.Green team                          | Verify every business and Saathi by hand, keep the price tables, answer messages | Email, password and authenticator app          |
 
 A person checks every business and every Saathi before they can trade. The
-interface speaks 12 languages, with Kannada, Hindi and English first for
-Bengaluru, and is made for people using a smartphone for work for the first
-time: plain words, icons, big buttons and numbers that carry the meaning.
+interface speaks 12 languages, including Kannada, Tamil, Telugu, Urdu (right to
+left) and Hindi for Bengaluru, and is made for people using a smartphone for
+work for the first time: plain words, icons, big buttons, and numbers that carry
+the meaning, with rupees grouped in lakhs.
 
 ## What's in the prototype
 
@@ -70,9 +71,10 @@ layout. The full inventory, with every URL, is
 - **Sell** at `/sell`, in four steps: what you have, which verified shop (each
   one's offer for your scrap, nearest first), when to pick it up or drop it
   off, then book with a code sent to your number.
-- **Track** at `/t/{code}`, the link sent by SMS: when, which shop and how much
-  to expect, live; afterwards, what was weighed and paid, and the recycle
-  points earned. Cancelling is free until the shop is on the way.
+- **Track** at `/t/{code}`, the link shown after booking (and sent by SMS once
+  SMS is switched on): when, which shop and how much to expect, live;
+  afterwards, what was weighed and paid, and the recycle points earned.
+  Cancelling is free until the shop is on the way.
 
 **Kabadiwalas**, in the app at `/app`:
 
@@ -308,7 +310,9 @@ October 2026.
 **Sample**, there to show the idea:
 
 - The demo world: every business, person, pickup, lot, trade and job, defined in
-  [convex/lib/demo.ts](convex/lib/demo.ts).
+  [convex/lib/demo.ts](convex/lib/demo.ts). The names are invented, and the
+  demo GSTINs and pollution-board consent numbers are made up (the GSTINs fail
+  the official checksum on purpose).
 - Prices are Bengaluru sample figures, not market data. CO₂e factors and solar
   figures are indicative. Screens that show them say so.
 - No money moves. Households are paid at the door and the amount is recorded
