@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   batchTotals,
-  can,
+  isAllowed,
   capacityUse,
   daysUntil,
   isIsoDate,
@@ -63,7 +63,7 @@ describe("quality defaults", () => {
       stage: "recycled",
     });
     for (const [index, limit] of flakes.entries()) {
-      expect(limit.limit).toBeLessThan(scrap[index]!.limit);
+      expect(limit.limit).toBeLessThan(scrap[index].limit);
     }
   });
 
@@ -256,22 +256,22 @@ describe("production", () => {
 
 describe("team roles", () => {
   it("lets only the owner manage the team", () => {
-    expect(can("owner", "manage_team")).toBe(true);
+    expect(isAllowed("owner", "manage_team")).toBe(true);
     for (const role of TEAM_ROLES) {
-      expect(can(role, "manage_team")).toBe(false);
+      expect(isAllowed(role, "manage_team")).toBe(false);
     }
-    expect(can("staff", "manage_team")).toBe(false);
+    expect(isAllowed("staff", "manage_team")).toBe(false);
   });
 
   it("gives each role its own job", () => {
-    expect(can("gate", "record_slip")).toBe(true);
-    expect(can("gate", "quality_check")).toBe(false);
-    expect(can("quality", "quality_check")).toBe(true);
-    expect(can("plant", "record_batch")).toBe(true);
-    expect(can("plant", "set_capacity")).toBe(false);
-    expect(can("compliance", "set_capacity")).toBe(true);
-    expect(can("compliance", "manage_scales")).toBe(true);
-    expect(can("accounts", "record_slip")).toBe(false);
+    expect(isAllowed("gate", "record_slip")).toBe(true);
+    expect(isAllowed("gate", "quality_check")).toBe(false);
+    expect(isAllowed("quality", "quality_check")).toBe(true);
+    expect(isAllowed("plant", "record_batch")).toBe(true);
+    expect(isAllowed("plant", "set_capacity")).toBe(false);
+    expect(isAllowed("compliance", "set_capacity")).toBe(true);
+    expect(isAllowed("compliance", "manage_scales")).toBe(true);
+    expect(isAllowed("accounts", "record_slip")).toBe(false);
   });
 
   it("sends every role to a screen that exists", () => {

@@ -14,9 +14,9 @@ import { indiaToday } from "./lib/onboarding";
 import { normalizeIndianMobile } from "./lib/phone";
 import {
   batchTotals,
-  can,
   capacityUse,
   type FloorAction,
+  isAllowed,
   isIsoDate,
   isPercent,
   MAX_CAPACITY_TONNES,
@@ -30,6 +30,7 @@ import {
   qualityDefaults,
   type QualityReading,
   reverificationMonths,
+  ROLE_HOME,
   stampStatus,
   weightMismatch,
 } from "./lib/quality";
@@ -74,6 +75,7 @@ const MAX_INVITES = 30;
 const MAX_LINES = 10;
 const NOTE_MAX_LENGTH = 140;
 const REASON_MAX_LENGTH = 280;
+const NAME_MAX_LENGTH = 60;
 /** The heaviest gross weight a slip may carry: a 200-tonne weighbridge. */
 const MAX_GROSS_GRAMS = MAX_SCALE_CAPACITY_KG * 1000;
 /** How far back a batch may be dated. */
@@ -225,7 +227,7 @@ async function requireFloorAction(
   kinds?: readonly OrgKind[],
 ) {
   const floor = await requireFloor(ctx, kinds);
-  if (!can(floor.role, action)) throw new ConvexError("NOT_ALLOWED");
+  if (!isAllowed(floor.role, action)) throw new ConvexError("NOT_ALLOWED");
   return floor;
 }
 
@@ -288,6 +290,10 @@ function directionFor(side: Side): "in" | "out" {
   return side === "buyer" ? "in" : "out";
 }
 
+function counterpartyIdOf(trade: Doc<"trades">, orgId: Id<"orgs">) {
+  return trade.buyerOrgId === orgId ? trade.sellerOrgId : trade.buyerOrgId;
+}
+
 function toScaleView(scale: Doc<"scales">, today: string) {
   const stamp = stampStatus(scale.stampValidUntil, today);
   return {
@@ -304,16 +310,16 @@ function toScaleView(scale: Doc<"scales">, today: string) {
   };
 }
 
-/** Looks each business up once per request. */
-function orgLookup(ctx: QueryCtx) {
-  const cache = new Map<Id<"orgs">, Promise<Doc<"orgs"> | null>>();
-  return (id: Id<"orgs">) => {
-    let org = cache.get(id);
-    if (!org) {
-      org = ctx.db.get("orgs", id);
-      cache.set(id, org);
+/** Looks each row of a table up once per request. */
+function lookup<Table extends "orgs" | "scales">(ctx: QueryCtx, table: Table) {
+  const cache = new Map<Id<Table>, Promise<Doc<Table> | null>>();
+  return (id: Id<Table>): Promise<Doc<Table> | null> => {
+    let row = cache.get(id);
+    if (!row) {
+      row = ctx.db.get(table, id);
+      cache.set(id, row);
     }
-    return org;
+    return row;
   };
 }
 
@@ -334,8 +340,15 @@ async function myLoads(ctx: QueryCtx, orgId: Id<"orgs">) {
     .order("desc")
     .take(PAGE);
   return [...bought, ...sold]
-    .filter(isWeighable)
+    .filter((trade) => isWeighable(trade))
     .toSorted((a, b) => b.updatedAt - a.updatedAt);
+}
+
+async function scalesOf(ctx: QueryCtx, orgId: Id<"orgs">) {
+  return ctx.db
+    .query("scales")
+    .withIndex("by_org", (q) => q.eq("orgId", orgId))
+    .take(MAX_SCALES);
 }
 
 function scaleInputs(
@@ -369,6 +382,22 @@ function scaleInputs(
   };
 }
 
+// --- Roles ----------------------------------------------------------------------------
+
+/**
+ * The signed-in member's role in their business and the screen that role
+ * opens on (convex/lib/quality.ts ROLE_HOME), so the app can land a gate
+ * operator on the gate and an accountant on the khata.
+ */
+export const myRole = query({
+  args: {},
+  returns: v.object({ role: vMemberRole, home: v.string() }),
+  handler: async (ctx) => {
+    const { role } = await requireFloor(ctx);
+    return { role, home: ROLE_HOME[role] };
+  },
+});
+
 // --- Scales ---------------------------------------------------------------------------
 
 /**
@@ -386,23 +415,20 @@ export const scales = query({
   handler: async (ctx) => {
     const { org, role } = await requireFloor(ctx);
     const today = indiaToday();
-    const rows = await ctx.db
-      .query("scales")
-      .withIndex("by_org", (q) => q.eq("orgId", org._id))
-      .take(MAX_SCALES);
+    const rows = await scalesOf(ctx, org._id);
     const views = rows
       .map((scale) => toScaleView(scale, today))
       .toSorted((a, b) => a.daysLeft - b.daysLeft);
     return {
       rows: views,
       dueSoon: views.filter((scale) => scale.status !== "ok").length,
-      canManage: can(role, "manage_scales"),
+      canManage: isAllowed(role, "manage_scales"),
     };
   },
 });
 
 /** Registers a scale with its Legal Metrology stamp. */
-export const addScale = mutation({
+export const registerScale = mutation({
   args: {
     kind: vScaleKind,
     capacityKg: v.number(),
@@ -413,10 +439,7 @@ export const addScale = mutation({
   returns: v.id("scales"),
   handler: async (ctx, args) => {
     const { profile, org } = await requireFloorAction(ctx, "manage_scales");
-    const existing = await ctx.db
-      .query("scales")
-      .withIndex("by_org", (q) => q.eq("orgId", org._id))
-      .take(MAX_SCALES);
+    const existing = await scalesOf(ctx, org._id);
     if (existing.length >= MAX_SCALES) throw new ConvexError("TOO_MANY_SCALES");
     const now = Date.now();
     const fields = scaleInputs(args, now);
@@ -479,8 +502,8 @@ export const editScale = mutation({
   },
 });
 
-/** Removes a scale that was entered by mistake; one that has weighed loads stays. */
-export const removeScale = mutation({
+/** Discards a scale that was entered by mistake; one that has weighed loads stays. */
+export const discardScale = mutation({
   args: { scaleId: v.id("scales") },
   returns: v.null(),
   handler: async (ctx, args) => {
@@ -521,13 +544,10 @@ export const publicStamp = query({
   handler: async (ctx, args) => {
     const org = await ctx.db.get("orgs", args.orgId);
     if (org?.status !== "active") return null;
-    const rows = await ctx.db
-      .query("scales")
-      .withIndex("by_org", (q) => q.eq("orgId", org._id))
-      .take(MAX_SCALES);
-    const best = rows.toSorted((a, b) =>
-      b.stampValidUntil.localeCompare(a.stampValidUntil),
-    )[0];
+    const rows = await scalesOf(ctx, org._id);
+    const best = rows
+      .toSorted((a, b) => b.stampValidUntil.localeCompare(a.stampValidUntil))
+      .at(0);
     if (!best) return null;
     return {
       validUntil: best.stampValidUntil,
@@ -537,6 +557,45 @@ export const publicStamp = query({
 });
 
 // --- Gate: weigh slips ------------------------------------------------------------------
+
+/** What's on record for one load, from my side. */
+async function loadView(
+  ctx: QueryCtx,
+  trade: Doc<"trades">,
+  org: Doc<"orgs">,
+  counterparty: Doc<"orgs">,
+  materials: Materials,
+  side: Side,
+) {
+  const onTrade = await ctx.db
+    .query("weighSlips")
+    .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
+    .take(RECENT);
+  const mine = onTrade
+    .filter((slip) => slip.orgId === org._id)
+    .toSorted((a, b) => b.at - a.at);
+  const checks = await ctx.db
+    .query("qualityChecks")
+    .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
+    .take(RECENT);
+  const check = checks.find((row) => row.orgId === org._id);
+  return {
+    tradeId: trade._id,
+    side,
+    direction: directionFor(side),
+    status: trade.status,
+    material: materialRef(materials, trade.materialCode),
+    grams: trade.grams,
+    counterparty: partyOf(counterparty),
+    slips: mine.length,
+    lastNetGrams: mine[0]?.netGrams ?? null,
+    check: check
+      ? { result: check.result, deductionPct: check.deductionPct }
+      : null,
+    invoiceNo: trade.invoiceNo,
+    updatedAt: trade.updatedAt,
+  };
+}
 
 /**
  * `/app/gate`: the scales to weigh on and the loads to weigh — my trades
@@ -556,56 +615,27 @@ export const gate = query({
   handler: async (ctx) => {
     const { org, role } = await requireFloor(ctx, FACTORY_KINDS);
     const today = indiaToday();
-    const scaleRows = await ctx.db
-      .query("scales")
-      .withIndex("by_org", (q) => q.eq("orgId", org._id))
-      .take(MAX_SCALES);
+    const scaleRows = await scalesOf(ctx, org._id);
     const materials = await materialIndex(ctx);
-    const orgOf = orgLookup(ctx);
-    const trades = (await myLoads(ctx, org._id)).slice(0, PAGE / 2);
+    const orgOf = lookup(ctx, "orgs");
+    const all = await myLoads(ctx, org._id);
+    const trades = all.slice(0, PAGE / 2);
 
     const loads = [];
     for (const trade of trades) {
       const side = sideOf(trade, org._id);
       if (!side) continue;
-      const counterparty = await orgOf(
-        side === "buyer" ? trade.sellerOrgId : trade.buyerOrgId,
-      );
+      const counterparty = await orgOf(counterpartyIdOf(trade, org._id));
       if (!counterparty) continue;
-      const onTrade = await ctx.db
-        .query("weighSlips")
-        .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
-        .take(RECENT);
-      const mine = onTrade
-        .filter((slip) => slip.orgId === org._id)
-        .toSorted((a, b) => b.at - a.at);
-      const checks = await ctx.db
-        .query("qualityChecks")
-        .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
-        .take(RECENT);
-      const check = checks.find((row) => row.orgId === org._id);
-      loads.push({
-        tradeId: trade._id,
-        side,
-        direction: directionFor(side),
-        status: trade.status,
-        material: materialRef(materials, trade.materialCode),
-        grams: trade.grams,
-        counterparty: partyOf(counterparty),
-        slips: mine.length,
-        lastNetGrams: mine[0]?.netGrams ?? null,
-        check: check
-          ? { result: check.result, deductionPct: check.deductionPct }
-          : null,
-        invoiceNo: trade.invoiceNo,
-        updatedAt: trade.updatedAt,
-      });
+      loads.push(
+        await loadView(ctx, trade, org, counterparty, materials, side),
+      );
     }
     return {
       kind: org.kind,
       role,
-      canRecordSlip: can(role, "record_slip"),
-      canCheck: can(role, "quality_check"),
+      canRecordSlip: isAllowed(role, "record_slip"),
+      canCheck: isAllowed(role, "quality_check"),
       scales: scaleRows
         .map((scale) => toScaleView(scale, today))
         .toSorted((a, b) => b.capacityKg - a.capacityKg),
@@ -617,6 +647,53 @@ export const gate = query({
     };
   },
 });
+
+/** Whether the scale's stamp was still good on the day of the slip. */
+function wasStampValid(scale: Doc<"scales"> | null, at: number): boolean {
+  if (!scale) return false;
+  return stampStatus(scale.stampValidUntil, indiaToday(at)).status !== "expired";
+}
+
+async function slipView(
+  ctx: QueryCtx,
+  slip: Doc<"weighSlips">,
+  org: Doc<"orgs">,
+  materials: Materials,
+  scaleOf: (id: Id<"scales">) => Promise<Doc<"scales"> | null>,
+  orgOf: (id: Id<"orgs">) => Promise<Doc<"orgs"> | null>,
+) {
+  const scale = await scaleOf(slip.scaleId);
+  const trade = slip.tradeId ? await ctx.db.get("trades", slip.tradeId) : null;
+  const counterparty = trade
+    ? await orgOf(counterpartyIdOf(trade, org._id))
+    : null;
+  return {
+    id: slip._id,
+    slipNumber: slip.slipNumber,
+    direction: slip.direction,
+    vehicleNo: slip.vehicleNo,
+    grossGrams: slip.grossGrams,
+    tareGrams: slip.tareGrams,
+    deductionGrams: slip.deductionGrams,
+    deductionReason: slip.deductionReason,
+    netGrams: slip.netGrams,
+    at: slip.at,
+    scaleKind: scale?.kind ?? ("platform" as const),
+    stampWasValid: wasStampValid(scale, slip.at),
+    trade: trade
+      ? {
+          id: trade._id,
+          material: materialRef(materials, trade.materialCode),
+          grams: trade.grams,
+          counterparty: counterparty?.name ?? "",
+          mismatch: weightMismatch(slip.netGrams, trade.grams),
+        }
+      : null,
+    photoUrl: slip.photoStorageId
+      ? await ctx.storage.getUrl(slip.photoStorageId)
+      : null,
+  };
+}
 
 /** My most recent weigh slips, with the gap against the trade on each. */
 export const slips = query({
@@ -630,53 +707,11 @@ export const slips = query({
       .order("desc")
       .take(RECENT);
     const materials = await materialIndex(ctx);
-    const orgOf = orgLookup(ctx);
-    const scaleCache = new Map<Id<"scales">, Doc<"scales"> | null>();
-
+    const orgOf = lookup(ctx, "orgs");
+    const scaleOf = lookup(ctx, "scales");
     const views = [];
     for (const slip of rows) {
-      let scale = scaleCache.get(slip.scaleId);
-      if (scale === undefined) {
-        scale = await ctx.db.get("scales", slip.scaleId);
-        scaleCache.set(slip.scaleId, scale);
-      }
-      const trade = slip.tradeId
-        ? await ctx.db.get("trades", slip.tradeId)
-        : null;
-      const counterparty = trade
-        ? await orgOf(
-            trade.buyerOrgId === org._id ? trade.sellerOrgId : trade.buyerOrgId,
-          )
-        : null;
-      views.push({
-        id: slip._id,
-        slipNumber: slip.slipNumber,
-        direction: slip.direction,
-        vehicleNo: slip.vehicleNo,
-        grossGrams: slip.grossGrams,
-        tareGrams: slip.tareGrams,
-        deductionGrams: slip.deductionGrams,
-        deductionReason: slip.deductionReason,
-        netGrams: slip.netGrams,
-        at: slip.at,
-        scaleKind: scale?.kind ?? ("platform" as const),
-        stampWasValid: scale
-          ? stampStatus(scale.stampValidUntil, indiaToday(slip.at)).status !==
-            "expired"
-          : false,
-        trade: trade
-          ? {
-              id: trade._id,
-              material: materialRef(materials, trade.materialCode),
-              grams: trade.grams,
-              counterparty: counterparty?.name ?? "",
-              mismatch: weightMismatch(slip.netGrams, trade.grams),
-            }
-          : null,
-        photoUrl: slip.photoStorageId
-          ? await ctx.storage.getUrl(slip.photoStorageId)
-          : null,
-      });
+      views.push(await slipView(ctx, slip, org, materials, scaleOf, orgOf));
     }
     return views;
   },
@@ -691,6 +726,52 @@ export const slipPhotoUploadUrl = mutation({
     return ctx.storage.generateUploadUrl();
   },
 });
+
+/** Gross, tare and deduction checked as integer grams; the net they leave. */
+function slipWeights(args: {
+  grossGrams: number;
+  tareGrams: number;
+  deductionGrams?: number;
+  deductionReason?: Doc<"weighSlips">["deductionReason"];
+}) {
+  if (
+    !isPositiveInteger(args.grossGrams) ||
+    !isNonNegativeInteger(args.tareGrams) ||
+    args.grossGrams > MAX_GROSS_GRAMS ||
+    args.grossGrams <= args.tareGrams
+  ) {
+    throw new ConvexError("INVALID_WEIGHT");
+  }
+  const deductionGrams = args.deductionGrams ?? 0;
+  const netGrams = netGramsOf(args.grossGrams, args.tareGrams, deductionGrams);
+  if (!isNonNegativeInteger(deductionGrams) || netGrams <= 0) {
+    throw new ConvexError("INVALID_DEDUCTION");
+  }
+  if (deductionGrams > 0 && !args.deductionReason) {
+    throw new ConvexError("REASON_REQUIRED");
+  }
+  return {
+    deductionGrams,
+    deductionReason: deductionGrams > 0 ? args.deductionReason : undefined,
+    netGrams,
+  };
+}
+
+/** The trade a slip is weighed against, checked to be mine and at the right step. */
+async function loadToWeigh(
+  ctx: QueryCtx,
+  orgId: Id<"orgs">,
+  tradeId: Id<"trades"> | undefined,
+  direction: "in" | "out",
+): Promise<Doc<"trades"> | null> {
+  if (!tradeId) return null;
+  const trade = await ctx.db.get("trades", tradeId);
+  const side = trade ? sideOf(trade, orgId) : null;
+  if (!trade || !side) throw new ConvexError("NOT_FOUND");
+  if (!isWeighable(trade)) throw new ConvexError("WRONG_STEP");
+  if (directionFor(side) !== direction) throw new ConvexError("WRONG_DIRECTION");
+  return trade;
+}
 
 /**
  * The gate's three taps: the vehicle, gross and tare (net is worked out),
@@ -724,42 +805,13 @@ export const recordSlip = mutation({
     );
     const vehicleNo = normalizeVehicleNumber(args.vehicleNo);
     if (!vehicleNo) throw new ConvexError("INVALID_VEHICLE");
-    if (
-      !isPositiveInteger(args.grossGrams) ||
-      !isNonNegativeInteger(args.tareGrams) ||
-      args.grossGrams > MAX_GROSS_GRAMS ||
-      args.grossGrams <= args.tareGrams
-    ) {
-      throw new ConvexError("INVALID_WEIGHT");
-    }
-    const deductionGrams = args.deductionGrams ?? 0;
-    const netGrams = netGramsOf(
-      args.grossGrams,
-      args.tareGrams,
-      deductionGrams,
-    );
-    if (!isNonNegativeInteger(deductionGrams) || netGrams <= 0) {
-      throw new ConvexError("INVALID_DEDUCTION");
-    }
-    if (deductionGrams > 0 && !args.deductionReason) {
-      throw new ConvexError("REASON_REQUIRED");
-    }
+    const weights = slipWeights(args);
     const scale = await ctx.db.get("scales", args.scaleId);
     if (scale?.orgId !== org._id) throw new ConvexError("NOT_FOUND");
     if (args.grossGrams > scale.capacityKg * 1000) {
       throw new ConvexError("OVER_CAPACITY");
     }
-
-    let trade: Doc<"trades"> | null = null;
-    if (args.tradeId) {
-      trade = await ctx.db.get("trades", args.tradeId);
-      const side = trade ? sideOf(trade, org._id) : null;
-      if (!trade || !side) throw new ConvexError("NOT_FOUND");
-      if (!isWeighable(trade)) throw new ConvexError("WRONG_STEP");
-      if (directionFor(side) !== args.direction) {
-        throw new ConvexError("WRONG_DIRECTION");
-      }
-    }
+    const trade = await loadToWeigh(ctx, org._id, args.tradeId, args.direction);
 
     const now = Date.now();
     const last = await ctx.db
@@ -771,7 +823,9 @@ export const recordSlip = mutation({
       last?.slipNumber,
       indiaToday(now).slice(2, 4),
     );
-    const mismatch = trade ? weightMismatch(netGrams, trade.grams) : null;
+    const mismatch = trade
+      ? weightMismatch(weights.netGrams, trade.grams)
+      : null;
     const slipId = await ctx.db.insert("weighSlips", {
       orgId: org._id,
       tradeId: trade?._id,
@@ -779,9 +833,7 @@ export const recordSlip = mutation({
       vehicleNo,
       grossGrams: args.grossGrams,
       tareGrams: args.tareGrams,
-      deductionGrams,
-      deductionReason: deductionGrams > 0 ? args.deductionReason : undefined,
-      netGrams,
+      ...weights,
       slipNumber,
       scaleId: scale._id,
       byProfileId: profile._id,
@@ -800,14 +852,14 @@ export const recordSlip = mutation({
         tradeId: trade?._id,
         grossGrams: args.grossGrams,
         tareGrams: args.tareGrams,
-        deductionGrams,
-        netGrams,
+        deductionGrams: weights.deductionGrams,
+        netGrams: weights.netGrams,
         scaleId: scale._id,
         stampValidUntil: scale.stampValidUntil,
         mismatch,
       },
     });
-    return { slipId, slipNumber, netGrams, mismatch };
+    return { slipId, slipNumber, netGrams: weights.netGrams, mismatch };
   },
 });
 
@@ -847,7 +899,7 @@ export const checks = query({
   handler: async (ctx) => {
     const { org } = await requireFloor(ctx, FACTORY_KINDS);
     const materials = await materialIndex(ctx);
-    const orgOf = orgLookup(ctx);
+    const orgOf = lookup(ctx, "orgs");
 
     const mineRows = await ctx.db
       .query("qualityChecks")
@@ -867,7 +919,8 @@ export const checks = query({
       .order("desc")
       .take(PAGE / 2);
     const onMySales = [];
-    for (const trade of sold.filter(isWeighable)) {
+    for (const trade of sold) {
+      if (!isWeighable(trade)) continue;
       const rows = await ctx.db
         .query("qualityChecks")
         .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
@@ -884,6 +937,56 @@ export const checks = query({
     };
   },
 });
+
+/** The readings a check submitted, matched to the material's default limits. */
+function readingsFor(
+  params: readonly { key: QualityReading["key"]; value: number }[],
+  defaults: readonly { key: QualityReading["key"]; limit: number }[],
+): QualityReading[] {
+  const readings: QualityReading[] = [];
+  for (const limit of defaults) {
+    const reading = params.find((param) => param.key === limit.key);
+    if (!reading) throw new ConvexError("MISSING_READING");
+    if (!isPercent(reading.value)) throw new ConvexError("INVALID_READING");
+    readings.push({ ...limit, value: reading.value });
+  }
+  const isKnown = (param: { key: QualityReading["key"] }) =>
+    readings.some((reading) => reading.key === param.key);
+  if (!params.every((param) => isKnown(param))) {
+    throw new ConvexError("UNKNOWN_PARAM");
+  }
+  return readings;
+}
+
+/** A deduction's whole per cent, 0 unless the result is a deduction. */
+function deductionFor(
+  result: Doc<"qualityChecks">["result"],
+  deductionPct: number | undefined,
+): number {
+  if (result !== "deduct") return 0;
+  const pct = deductionPct ?? 0;
+  if (!isPositiveInteger(pct) || pct > MAX_DEDUCTION_PCT) {
+    throw new ConvexError("INVALID_DEDUCTION");
+  }
+  return pct;
+}
+
+/** The load I'm checking: mine, as the buyer, and already moving. */
+async function loadToCheck(ctx: QueryCtx, orgId: Id<"orgs">, tradeId: Id<"trades">) {
+  const trade = await ctx.db.get("trades", tradeId);
+  const side = trade ? sideOf(trade, orgId) : null;
+  if (!trade || !side) throw new ConvexError("NOT_FOUND");
+  if (side !== "buyer") throw new ConvexError("WRONG_SIDE");
+  if (!isWeighable(trade)) throw new ConvexError("WRONG_STEP");
+  const earlier = await ctx.db
+    .query("qualityChecks")
+    .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
+    .take(RECENT);
+  if (earlier.some((row) => row.orgId === orgId)) {
+    throw new ConvexError("ALREADY_CHECKED");
+  }
+  return trade;
+}
 
 /**
  * The buyer's check on a load: the readings against the material's default
@@ -906,60 +1009,24 @@ export const check = mutation({
       "quality_check",
       FACTORY_KINDS,
     );
-    const trade = await ctx.db.get("trades", args.tradeId);
-    const side = trade ? sideOf(trade, org._id) : null;
-    if (!trade || !side) throw new ConvexError("NOT_FOUND");
-    if (side !== "buyer") throw new ConvexError("WRONG_SIDE");
-    if (!isWeighable(trade)) throw new ConvexError("WRONG_STEP");
-    const earlier = await ctx.db
-      .query("qualityChecks")
-      .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
-      .take(RECENT);
-    if (earlier.some((row) => row.orgId === org._id)) {
-      throw new ConvexError("ALREADY_CHECKED");
-    }
-
+    const trade = await loadToCheck(ctx, org._id, args.tradeId);
     const materials = await materialIndex(ctx);
     const material = materials.get(trade.materialCode);
-    const defaults = qualityDefaults({
-      code: trade.materialCode,
-      family: material?.family ?? "other",
-      stage: material?.stage ?? "scrap",
-    });
-    const readings: QualityReading[] = [];
-    for (const limit of defaults) {
-      const reading = args.params.find((param) => param.key === limit.key);
-      if (!reading) throw new ConvexError("MISSING_READING");
-      if (!isPercent(reading.value)) throw new ConvexError("INVALID_READING");
-      readings.push({ ...limit, value: reading.value });
-    }
-    if (
-      args.params.some(
-        (param) => !readings.some((reading) => reading.key === param.key),
-      )
-    ) {
-      throw new ConvexError("UNKNOWN_PARAM");
-    }
-
-    let deductionPct = 0;
-    if (args.result === "deduct") {
-      deductionPct = args.deductionPct ?? 0;
-      if (
-        !isPositiveInteger(deductionPct) ||
-        deductionPct > MAX_DEDUCTION_PCT
-      ) {
-        throw new ConvexError("INVALID_DEDUCTION");
-      }
-    }
+    const readings = readingsFor(
+      args.params,
+      qualityDefaults({
+        code: trade.materialCode,
+        family: material?.family ?? "other",
+        stage: material?.stage ?? "scrap",
+      }),
+    );
+    const deductionPct = deductionFor(args.result, args.deductionPct);
     const reason = optionalText(
       args.reason,
       REASON_MAX_LENGTH,
       "REASON_TOO_LONG",
     );
-    if (
-      args.result !== "accept" &&
-      (reason === undefined || reason.length < 3)
-    ) {
+    if (args.result !== "accept" && (reason?.length ?? 0) < 3) {
       throw new ConvexError("REASON_REQUIRED");
     }
 
@@ -1076,8 +1143,8 @@ export const production = query({
           id: batch._id,
           date: batch.date,
           shift: batch.shift,
-          inputs: batch.inputs.map(line),
-          outputs: batch.outputs.map(line),
+          inputs: batch.inputs.map((entry) => line(entry)),
+          outputs: batch.outputs.map((entry) => line(entry)),
           inputGrams: sums.inputGrams,
           outputGrams: sums.outputGrams,
           yieldPct: batch.yieldPct,
@@ -1085,7 +1152,7 @@ export const production = query({
           createdAt: batch.createdAt,
         };
       }),
-      materials: Array.from(materials.values())
+      materials: [...materials.values()]
         .filter(
           (material) =>
             material.active && org.families.includes(material.family),
@@ -1094,8 +1161,8 @@ export const production = query({
           material: materialRef(materials, material.code),
           stage: material.stage,
         })),
-      canRecord: can(role, "record_batch"),
-      canSetCapacity: can(role, "set_capacity"),
+      canRecord: isAllowed(role, "record_batch"),
+      canSetCapacity: isAllowed(role, "set_capacity"),
     };
   },
 });
@@ -1174,7 +1241,7 @@ export const recordBatch = mutation({
 });
 
 /** Declares the installed capacity, as on the consent or the EPR registration. */
-export const setCapacity = mutation({
+export const declareCapacity = mutation({
   args: { tonnesPerYear: v.number(), source: vCapacitySource },
   returns: v.null(),
   handler: async (ctx, args) => {
@@ -1292,7 +1359,7 @@ export const team = query({
           invitedAt: invite.invitedAt,
         })),
       myRole: role,
-      canManage: can(role, "manage_team"),
+      canManage: isAllowed(role, "manage_team"),
     };
   },
 });
@@ -1309,20 +1376,23 @@ async function membershipAt(
   return rows.find((row) => row.orgId === orgId) ?? null;
 }
 
-/** Turns a pending invitation into a membership for `profile`. */
-async function acceptInvite(
+/**
+ * Turns a pending invitation into a membership for `profile`. Returns the
+ * new membership, or null when the person was already on that team.
+ */
+async function acceptInviteFor(
   ctx: MutationCtx,
   invite: Doc<"teamInvites">,
   profile: Doc<"profiles">,
   now: number,
-): Promise<boolean> {
+): Promise<Id<"memberships"> | null> {
   const existing = await membershipAt(ctx, profile._id, invite.orgId);
   await ctx.db.patch("teamInvites", invite._id, {
     status: "accepted",
     acceptedAt: now,
     acceptedProfileId: profile._id,
   });
-  if (existing) return false;
+  if (existing) return null;
   const membershipId = await ctx.db.insert("memberships", {
     profileId: profile._id,
     orgId: invite.orgId,
@@ -1337,7 +1407,7 @@ async function acceptInvite(
     entityId: membershipId,
     metadata: { role: invite.role, inviteId: invite._id },
   });
-  return true;
+  return membershipId;
 }
 
 /**
@@ -1358,7 +1428,7 @@ export const invite = mutation({
     );
     const phone = normalizeIndianMobile(args.phone);
     if (!phone) throw new ConvexError("INVALID_PHONE");
-    const name = optionalText(args.name, 60, "INVALID_NAME");
+    const name = optionalText(args.name, NAME_MAX_LENGTH, "INVALID_NAME");
 
     const person = await ctx.db
       .query("profiles")
@@ -1402,7 +1472,7 @@ export const invite = mutation({
     });
     if (!person) return { status: "pending" as const };
     const created = await ctx.db.get("teamInvites", inviteId);
-    if (created) await acceptInvite(ctx, created, person, now);
+    if (created) await acceptInviteFor(ctx, created, person, now);
     return { status: "accepted" as const };
   },
 });
@@ -1435,7 +1505,7 @@ export const cancelInvite = mutation({
 });
 
 /** Takes a person off the team. The owner can't be removed. */
-export const removeMember = mutation({
+export const dismissMember = mutation({
   args: { membershipId: v.id("memberships") },
   returns: v.null(),
   handler: async (ctx, args) => {
@@ -1473,17 +1543,18 @@ export async function acceptInvitesFor(
   profileId: Id<"profiles">,
 ): Promise<number> {
   const profile = await ctx.db.get("profiles", profileId);
-  if (!profile?.phone) return 0;
+  const phone = profile?.phone;
+  if (!profile || !phone) return 0;
   const pending = await ctx.db
     .query("teamInvites")
     .withIndex("by_phone_status", (q) =>
-      q.eq("phone", profile.phone ?? "").eq("status", "pending"),
+      q.eq("phone", phone).eq("status", "pending"),
     )
     .take(20);
   const now = Date.now();
   let created = 0;
   for (const invite of pending) {
-    if (await acceptInvite(ctx, invite, profile, now)) created += 1;
+    if (await acceptInviteFor(ctx, invite, profile, now)) created += 1;
   }
   return created;
 }

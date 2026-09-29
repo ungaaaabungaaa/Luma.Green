@@ -29,6 +29,13 @@ import {
 const HOUR = 60 * 60 * 1000;
 const DAY = 24 * HOUR;
 
+function hashOf(text: string): number {
+  let hash = 0;
+  for (const char of text)
+    hash = (hash * 31 + (char.codePointAt(0) ?? 0)) % 9973;
+  return hash;
+}
+
 // --- Scales -----------------------------------------------------------------------
 
 interface ScaleSpec {
@@ -42,30 +49,26 @@ interface ScaleSpec {
 const STAMP_SPREAD = [240, 150, 320, 95, 200, 60, 280, 130, 45, 175, 300, 110];
 
 /** The demo logins see something worth noticing on their scales screen. */
-const STAMP_OVERRIDES: Record<string, readonly number[]> = {
-  "ramesh-kabadi-store": [20], // reminder badge: re-verify within 30 days
-  "peenya-paper-plastic-yard": [265, 12], // weighbridge fine, platform due
-  "greenloop-polymers": [300, 140],
-  "deccan-packaging": [80],
-  "hebbal-metal-yard": [-15], // ran out: shows on the public card
-};
+const STAMP_OVERRIDES: ReadonlyMap<string, readonly number[]> = new Map([
+  ["ramesh-kabadi-store", [20]], // reminder badge: re-verify within 30 days
+  ["peenya-paper-plastic-yard", [265, 12]], // weighbridge fine, platform due
+  ["greenloop-polymers", [300, 140]],
+  ["deccan-packaging", [80]],
+  ["hebbal-metal-yard", [-15]], // ran out: shows on the public card
+]);
 
-function hashOf(text: string): number {
-  let hash = 0;
-  for (const char of text)
-    hash = (hash * 31 + (char.codePointAt(0) ?? 0)) % 9973;
-  return hash;
+/** Days of stamp left for a business's `index`th scale. */
+function stampDaysFor(slug: string, index: number): number {
+  const override = STAMP_OVERRIDES.get(slug)?.at(index);
+  if (override !== undefined) return override;
+  return STAMP_SPREAD.at((hashOf(slug) + index) % STAMP_SPREAD.length) ?? 180;
 }
 
 function scaleSpecs(org: Doc<"orgs">): ScaleSpec[] {
-  const seed = hashOf(org.slug);
-  const days = (index: number) =>
-    STAMP_OVERRIDES[org.slug]?.[index] ??
-    STAMP_SPREAD[(seed + index) % STAMP_SPREAD.length] ??
-    180;
+  const days = (index: number) => stampDaysFor(org.slug, index);
   switch (org.kind) {
     case "kabadiwala": {
-      return seed % 2 === 0
+      return hashOf(org.slug) % 2 === 0
         ? [{ kind: "platform", capacityKg: 300, validInDays: days(0) }]
         : [
             { kind: "platform", capacityKg: 200, validInDays: days(0) },
@@ -88,6 +91,21 @@ function scaleSpecs(org: Doc<"orgs">): ScaleSpec[] {
       return [
         { kind: "weighbridge", capacityKg: 50_000, validInDays: days(0) },
       ];
+    }
+  }
+}
+
+function scaleNote(kind: ScaleKind): string | undefined {
+  switch (kind) {
+    case "weighbridge": {
+      return "At the main gate";
+    }
+    case "spring": {
+      return "For small lots at the counter";
+    }
+    case "platform":
+    case "beam": {
+      return undefined;
     }
   }
 }
@@ -115,12 +133,7 @@ async function seedScales(
           capacityKg: spec.capacityKg,
           stampNumber: `KA/LM/BLR/${validUntil.slice(0, 4)}/${String(serial).padStart(4, "0")}`,
           stampValidUntil: validUntil,
-          note:
-            spec.kind === "weighbridge"
-              ? "At the main gate"
-              : spec.kind === "spring"
-                ? "For small lots at the counter"
-                : undefined,
+          note: scaleNote(spec.kind),
           createdAt: world.now - stampedDaysAgo * DAY,
           updatedAt: world.now - stampedDaysAgo * DAY,
         }),
@@ -150,31 +163,33 @@ const TARE_KG: Record<OrgKind, number> = {
   manufacturer: 6400,
 };
 
+interface ShortLoad {
+  shortPerMille: number;
+  deductionKg: number;
+  reason: DeductionReason;
+  check: {
+    readings: Record<string, number>;
+    deductionPct: number;
+    note: string;
+  };
+}
+
 /** Buyers whose scales read short on one demo load, and what they deducted. */
-const SHORT_LOADS: Record<
-  string,
-  {
-    shortPerMille: number;
-    deductionKg: number;
-    reason: DeductionReason;
-    check: {
-      readings: Record<string, number>;
-      deductionPct: number;
-      note: string;
-    };
-  }
-> = {
-  "peenya-paper-plastic-yard>greenloop-polymers:PLASTIC-HDPE": {
-    shortPerMille: 5,
-    deductionKg: 16,
-    reason: "moisture",
-    check: {
-      readings: { moisture: 2, contamination: 4, offColour: 1 },
-      deductionPct: 3,
-      note: "Caps and labels mixed in; two bales wet at the bottom.",
+const SHORT_LOADS: ReadonlyMap<string, ShortLoad> = new Map([
+  [
+    "peenya-paper-plastic-yard>greenloop-polymers:PLASTIC-HDPE",
+    {
+      shortPerMille: 5,
+      deductionKg: 16,
+      reason: "moisture",
+      check: {
+        readings: { moisture: 2, contamination: 4, offColour: 1 },
+        deductionPct: 3,
+        note: "Caps and labels mixed in; two bales wet at the bottom.",
+      },
     },
-  },
-};
+  ],
+]);
 
 interface SlipDraft {
   orgId: Id<"orgs">;
@@ -191,95 +206,122 @@ interface SlipDraft {
   at: number;
 }
 
+interface CheckDraft {
+  org: Doc<"orgs">;
+  trade: Doc<"trades">;
+  at: number;
+  short: ShortLoad | undefined;
+}
+
+interface Load {
+  trade: Doc<"trades">;
+  seller: Doc<"orgs">;
+  buyer: Doc<"orgs">;
+  plate: string;
+  tareGrams: number;
+  short: ShortLoad | undefined;
+}
+
 function reachedAt(trade: Doc<"trades">, status: Doc<"trades">["status"]) {
   return trade.timeline.find((entry) => entry.status === status)?.at;
 }
 
+/** The seller weighs out at dispatch: the trade's grams, as agreed. */
+function sellerSlip(load: Load, scaleId: Id<"scales"> | undefined) {
+  const { seller, trade } = load;
+  if (!scaleId || !seller.ownerProfileId || seller.kind === "kabadiwala") {
+    return null;
+  }
+  const dispatchedAt = reachedAt(trade, "dispatched") ?? trade.updatedAt;
+  const draft: SlipDraft = {
+    orgId: seller._id,
+    tradeId: trade._id,
+    direction: "out",
+    vehicleNo: load.plate,
+    grossGrams: trade.grams + load.tareGrams,
+    tareGrams: load.tareGrams,
+    deductionGrams: 0,
+    netGrams: trade.grams,
+    scaleId,
+    byProfileId: seller.ownerProfileId,
+    at: dispatchedAt - HOUR,
+  };
+  return draft;
+}
+
 /**
- * Both ends of every load that has moved: the seller weighs out at
- * dispatch (the trade's grams, as agreed), the buyer weighs in on arrival —
- * a shade under, and on one load enough under to be flagged.
+ * The buyer weighs in on arrival — a shade under the seller's figure (3‰ or
+ * 6‰), and on the one short load enough under to be flagged.
  */
-async function seedSlipsAndChecks(
+function buyerSlip(load: Load, scaleId: Id<"scales"> | undefined) {
+  const { buyer, trade, short } = load;
+  if (!scaleId || !buyer.ownerProfileId || trade.status !== "completed") {
+    return null;
+  }
+  const arrivedAt = (reachedAt(trade, "completed") ?? trade.updatedAt) - HOUR;
+  const perMille = short?.shortPerMille ?? (hashOf(trade._id) % 2 === 0 ? 3 : 6);
+  const weighed = trade.grams - Math.round((trade.grams * perMille) / 1000);
+  const deductionGrams = short ? kgToGrams(short.deductionKg) : 0;
+  const draft: SlipDraft = {
+    orgId: buyer._id,
+    tradeId: trade._id,
+    direction: "in",
+    vehicleNo: load.plate,
+    grossGrams: weighed + load.tareGrams,
+    tareGrams: load.tareGrams,
+    deductionGrams,
+    deductionReason: short?.reason,
+    netGrams: weighed - deductionGrams,
+    scaleId,
+    byProfileId: buyer.ownerProfileId,
+    at: arrivedAt,
+  };
+  const check: CheckDraft = { org: buyer, trade, at: arrivedAt + HOUR / 2, short };
+  return { draft, check };
+}
+
+/** Every demo trade that has moved, with who sent it and what carried it. */
+async function movedLoads(
   ctx: MutationCtx,
   orgs: ReadonlyMap<Id<"orgs">, Doc<"orgs">>,
-  scales: ReadonlyMap<Id<"orgs">, Id<"scales">[]>,
-  world: DemoWorld,
-) {
+): Promise<Load[]> {
   const trades = await ctx.db.query("trades").collect();
-  const drafts: SlipDraft[] = [];
-  const checks: {
-    org: Doc<"orgs">;
-    trade: Doc<"trades">;
-    at: number;
-    short: (typeof SHORT_LOADS)[string] | undefined;
-  }[] = [];
-
+  const loads: Load[] = [];
   for (const trade of trades) {
     if (trade.status !== "dispatched" && trade.status !== "completed") continue;
     const seller = orgs.get(trade.sellerOrgId);
     const buyer = orgs.get(trade.buyerOrgId);
     if (!seller || !buyer) continue;
-    const plate =
-      PLATES[hashOf(seller.slug + trade.materialCode) % PLATES.length];
-    const tareGrams = kgToGrams(TARE_KG[seller.kind]);
-    const short =
-      SHORT_LOADS[`${seller.slug}>${buyer.slug}:${trade.materialCode}`];
-
-    const dispatchedAt = reachedAt(trade, "dispatched") ?? trade.updatedAt;
-    const sellerScale = scales.get(seller._id)?.[0];
-    if (seller.kind !== "kabadiwala" && seller.ownerProfileId && sellerScale) {
-      drafts.push({
-        orgId: seller._id,
-        tradeId: trade._id,
-        direction: "out",
-        vehicleNo: plate ?? PLATES[0] ?? "",
-        grossGrams: trade.grams + tareGrams,
-        tareGrams,
-        deductionGrams: 0,
-        netGrams: trade.grams,
-        scaleId: sellerScale,
-        byProfileId: seller.ownerProfileId,
-        at: dispatchedAt - HOUR,
-      });
-    }
-
-    if (trade.status !== "completed") continue;
-    const arrivedAt = (reachedAt(trade, "completed") ?? trade.updatedAt) - HOUR;
-    const buyerScale = scales.get(buyer._id)?.[0];
-    if (!buyer.ownerProfileId || !buyerScale) continue;
-    // A shade under the seller's figure: 3‰ or 6‰, more on the short load.
-    const perMille =
-      short?.shortPerMille ?? (hashOf(trade._id) % 2 === 0 ? 3 : 6);
-    const weighed = trade.grams - Math.round((trade.grams * perMille) / 1000);
-    const deductionGrams = short ? kgToGrams(short.deductionKg) : 0;
-    drafts.push({
-      orgId: buyer._id,
-      tradeId: trade._id,
-      direction: "in",
-      vehicleNo: plate ?? PLATES[0] ?? "",
-      grossGrams: weighed + tareGrams,
-      tareGrams,
-      deductionGrams,
-      deductionReason: short?.reason,
-      netGrams: weighed - deductionGrams,
-      scaleId: buyerScale,
-      byProfileId: buyer.ownerProfileId,
-      at: arrivedAt,
+    loads.push({
+      trade,
+      seller,
+      buyer,
+      plate: PLATES[hashOf(seller.slug + trade.materialCode) % PLATES.length],
+      tareGrams: kgToGrams(TARE_KG[seller.kind]),
+      short: SHORT_LOADS.get(
+        `${seller.slug}>${buyer.slug}:${trade.materialCode}`,
+      ),
     });
-    checks.push({ org: buyer, trade, at: arrivedAt + HOUR / 2, short });
   }
+  return loads;
+}
 
-  // Slips are numbered per business in the order they were written.
+/** Slips are numbered per business in the order they were written. */
+async function insertSlips(
+  ctx: MutationCtx,
+  drafts: readonly SlipDraft[],
+  gramsOf: ReadonlyMap<Id<"trades">, number>,
+) {
   const lastNumber = new Map<Id<"orgs">, string>();
-  for (const draft of drafts.toSorted((a, b) => a.at - b.at)) {
+  const ordered = drafts.toSorted((a, b) => a.at - b.at);
+  for (const draft of ordered) {
     const slipNumber = nextSlipNumber(
       lastNumber.get(draft.orgId),
       new Date(draft.at + 5.5 * HOUR).toISOString().slice(2, 4),
     );
     lastNumber.set(draft.orgId, slipNumber);
     const slipId = await ctx.db.insert("weighSlips", { ...draft, slipNumber });
-    const trade = trades.find((row) => row._id === draft.tradeId);
+    const tradeGrams = gramsOf.get(draft.tradeId);
     await ctx.db.insert("auditLog", {
       orgId: draft.orgId,
       actorProfileId: draft.byProfileId,
@@ -291,32 +333,53 @@ async function seedSlipsAndChecks(
         direction: draft.direction,
         tradeId: draft.tradeId,
         netGrams: draft.netGrams,
-        mismatch: trade ? weightMismatch(draft.netGrams, trade.grams) : null,
+        mismatch:
+          tradeGrams === undefined
+            ? null
+            : weightMismatch(draft.netGrams, tradeGrams),
         demo: true,
       },
       createdAt: draft.at,
     });
   }
+}
 
+/** Both ends of every load that has moved, and the buyer's check on it. */
+async function seedSlipsAndChecks(
+  ctx: MutationCtx,
+  orgs: ReadonlyMap<Id<"orgs">, Doc<"orgs">>,
+  scales: ReadonlyMap<Id<"orgs">, Id<"scales">[]>,
+  world: DemoWorld,
+) {
+  const loads = await movedLoads(ctx, orgs);
+  const drafts: SlipDraft[] = [];
+  const checks: CheckDraft[] = [];
+  const gramsOf = new Map<Id<"trades">, number>();
+  for (const load of loads) {
+    gramsOf.set(load.trade._id, load.trade.grams);
+    const out = sellerSlip(load, scales.get(load.seller._id)?.[0]);
+    if (out) drafts.push(out);
+    const arrival = buyerSlip(load, scales.get(load.buyer._id)?.[0]);
+    if (arrival) {
+      drafts.push(arrival.draft);
+      checks.push(arrival.check);
+    }
+  }
+  await insertSlips(ctx, drafts, gramsOf);
   await seedChecks(ctx, checks, world);
 }
 
 /** The buyer's quality checks: within limits, except the one short load. */
 async function seedChecks(
   ctx: MutationCtx,
-  checks: readonly {
-    org: Doc<"orgs">;
-    trade: Doc<"trades">;
-    at: number;
-    short: (typeof SHORT_LOADS)[string] | undefined;
-  }[],
+  checks: readonly CheckDraft[],
   world: DemoWorld,
 ) {
-  const materials = new Map(
-    (await ctx.db.query("materials").withIndex("by_sortOrder").collect()).map(
-      (material) => [material.code, material],
-    ),
-  );
+  const rows = await ctx.db
+    .query("materials")
+    .withIndex("by_sortOrder")
+    .collect();
+  const materials = new Map(rows.map((material) => [material.code, material]));
   for (const { org, trade, at, short } of checks) {
     if (!org.ownerProfileId) continue;
     const material = materials.get(trade.materialCode);
@@ -423,55 +486,60 @@ const YARD_RECIPES: readonly Recipe[] = [
 
 const SHIFT_CYCLE: readonly Shift[] = ["day", "evening", "day", "night"];
 
+/** One batch from a recipe; `index` wobbles the weight ±6% so no two read alike. */
+function batchFrom(recipe: Recipe, index: number) {
+  const wobble = 1 + ((index % 7) - 3) * 0.02;
+  const inputKg = Math.round(recipe.batchKg * wobble);
+  const line = (entry: { materialCode: string; share: number }) => ({
+    materialCode: entry.materialCode,
+    grams: kgToGrams(Math.round(inputKg * entry.share)),
+  });
+  const inputs = recipe.inputs.map((entry) => line(entry));
+  const outputs = recipe.outputs.map((entry) => line(entry));
+  return { inputs, outputs, yieldPct: batchTotals(inputs, outputs).yieldPct };
+}
+
 /**
- * Batches since the financial year began: every third day for recyclers,
- * every sixth for yards, rotating through the recipes the business handles.
- * Weights wobble a little so no two batches read the same.
+ * One business's batches since the financial year began: every third day
+ * for recyclers, every sixth for yards, rotating through its recipes.
  */
+async function seedOrgBatches(
+  ctx: MutationCtx,
+  org: Doc<"orgs">,
+  recipes: readonly Recipe[],
+  world: DemoWorld,
+) {
+  const firstDay = daysUntil(financialYear(world.today).from, world.today);
+  const step = org.kind === "yard" ? 6 : 3;
+  let index = hashOf(org.slug);
+  for (let day = firstDay; day <= -1; day += step) {
+    index += 1;
+    const batch = batchFrom(recipes[index % recipes.length], index);
+    await ctx.db.insert("productionBatches", {
+      orgId: org._id,
+      date: shiftDate(world.today, day),
+      shift: SHIFT_CYCLE[index % SHIFT_CYCLE.length],
+      ...batch,
+      note:
+        index % 9 === 0 ? "Line stopped 40 min for a belt change" : undefined,
+      byProfileId: org.ownerProfileId,
+      createdAt: world.now + day * DAY + 18 * HOUR,
+    });
+  }
+}
+
 async function seedBatches(
   ctx: MutationCtx,
   orgs: readonly Doc<"orgs">[],
   world: DemoWorld,
 ) {
-  const fy = financialYear(world.today);
-  const firstDay = daysUntil(fy.from, world.today);
   for (const org of orgs) {
-    const isYard = org.kind === "yard";
-    if (org.kind !== "recycler" && !isYard) continue;
-    const recipes = (isYard ? YARD_RECIPES : RECYCLER_RECIPES).filter(
-      (recipe) => org.families.includes(recipe.family),
+    if (org.kind !== "yard" && org.kind !== "recycler") continue;
+    const book = org.kind === "yard" ? YARD_RECIPES : RECYCLER_RECIPES;
+    const recipes = book.filter((recipe) =>
+      org.families.includes(recipe.family),
     );
-    if (recipes.length === 0) continue;
-    const step = isYard ? 6 : 3;
-    let index = hashOf(org.slug);
-    for (let day = firstDay; day <= -1; day += step) {
-      index += 1;
-      const recipe = recipes[index % recipes.length];
-      const shift = SHIFT_CYCLE[index % SHIFT_CYCLE.length];
-      if (!recipe || !shift) continue;
-      const wobble = 1 + ((index % 7) - 3) * 0.02; // ±6%
-      const inputKg = Math.round(recipe.batchKg * wobble);
-      const line = (entry: { materialCode: string; share: number }) => ({
-        materialCode: entry.materialCode,
-        grams: kgToGrams(Math.round(inputKg * entry.share)),
-      });
-      const inputs = recipe.inputs.map(line);
-      const outputs = recipe.outputs.map(line);
-      const totals = batchTotals(inputs, outputs);
-      const date = shiftDate(world.today, day);
-      await ctx.db.insert("productionBatches", {
-        orgId: org._id,
-        date,
-        shift,
-        inputs,
-        outputs,
-        yieldPct: totals.yieldPct,
-        note:
-          index % 9 === 0 ? "Line stopped 40 min for a belt change" : undefined,
-        byProfileId: org.ownerProfileId,
-        createdAt: world.now + day * DAY + 18 * HOUR,
-      });
-    }
+    if (recipes.length > 0) await seedOrgBatches(ctx, org, recipes, world);
   }
 }
 

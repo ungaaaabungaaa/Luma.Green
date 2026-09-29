@@ -410,6 +410,6 @@ const ALLOWED: Record<FloorAction, readonly MemberRole[]> = {
 };
 
 /** Whether a member with `role` may take `action` for their business. */
-export function can(role: MemberRole, action: FloorAction): boolean {
+export function isAllowed(role: MemberRole, action: FloorAction): boolean {
   return ALLOWED[action].includes(role);
 }
