@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+import { MyBookings } from "@/components/sell/my-bookings";
+import { SellFlow } from "@/components/sell/sell-flow";
+import { SellHero } from "@/components/sell/sell-hero";
+import { Container } from "@/components/site/container";
+import { localeFromParams } from "@/i18n/paths";
+import { pageMetadata } from "@/lib/seo";
+
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const locale = await localeFromParams(params);
+  const t = await getTranslations({ locale, namespace: "sell" });
+  return pageMetadata({
+    locale,
+    path: "/sell",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  });
+}
+
+/**
+ * `/sell`: a household sells scrap without an account — docs/product/household.md.
+ * Public and indexed; the booking itself needs only an SMS code.
+ */
+export default function SellPage() {
+  return (
+    <div className="flex flex-1 flex-col bg-muted/40">
+      <Container className="flex max-w-3xl flex-col gap-8 pt-8 pb-10 sm:pt-12">
+        <SellHero />
+        <MyBookings />
+        <SellFlow />
+      </Container>
+    </div>
+  );
+}
