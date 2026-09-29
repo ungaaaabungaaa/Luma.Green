@@ -137,6 +137,1265 @@
     "securityHeading": "Security reports",
     "securityBody": "Found a vulnerability? Please report it privately rather than in public."
   },
+  "help": {
+    "metaTitle": "Help centre",
+    "metaDescription": "Simple guides, answers and training for households, kabadiwalas, yards, recyclers, manufacturers and Saathis on Luma.Green.",
+    "eyebrow": "Help centre",
+    "title": "How can we help?",
+    "lead": "Short guides, plain answers and quick training for everyone on Luma.Green.",
+    "home": "Help",
+    "breadcrumb": "You are here",
+    "hours": "Monday to Saturday, 9 am to 7 pm",
+    "replyTime": "We reply within one working day.",
+    "search": {
+      "label": "Search help",
+      "placeholder": "Try: SMS code or escrow",
+      "clear": "Clear search",
+      "summary": "{count, plural, =0 {No answers} one {# answer} other {# answers}} for “{query}”",
+      "topicSummary": "{count, plural, =0 {No answers} one {# answer} other {# answers}} about {topic}",
+      "emptyTitle": "Nothing found",
+      "emptyBody": "Try one short word, pick a topic, or ask us directly.",
+      "ask": "Ask us",
+      "guide": "Guide",
+      "question": "Question",
+      "forRoles": "For {roles}",
+      "showMore": "Show all {count} answers"
+    },
+    "topicsHeading": "Browse by topic",
+    "topics": {
+      "start": "Getting started",
+      "signIn": "Signing in",
+      "pickups": "Pickups",
+      "prices": "Prices",
+      "weighing": "Weighing and receipts",
+      "payments": "Payments",
+      "trading": "Buying and selling",
+      "documents": "Documents and checks",
+      "safety": "Safety",
+      "carbon": "Carbon and EPR",
+      "disputes": "Problems and disputes",
+      "privacy": "Privacy"
+    },
+    "rolesHeading": "Help for you",
+    "rolesLead": "Choose who you are to see your guides, questions and training.",
+    "guideCount": "{count, plural, one {# guide} other {# guides}}",
+    "roles": {
+      "household": {
+        "name": "Households",
+        "who": "Selling scrap from home",
+        "title": "Help for households",
+        "lead": "Book a pickup, get a fair weigh and get paid at your door. No account needed."
+      },
+      "kabadiwala": {
+        "name": "Kabadiwalas",
+        "who": "Running a scrap shop",
+        "title": "Help for kabadiwalas",
+        "lead": "Take pickups, weigh and pay in a minute, set your prices and sell to yards."
+      },
+      "yard": {
+        "name": "Yards",
+        "who": "Buying from kabadiwalas and sorting further",
+        "title": "Help for yards",
+        "lead": "Find stock near you, sell sorted bales to recyclers and trade safely with escrow."
+      },
+      "recycler": {
+        "name": "Recyclers",
+        "who": "Turning scrap into raw material",
+        "title": "Help for recyclers",
+        "lead": "Buy graded scrap from yards, sell your output to factories and keep your EPR records clean."
+      },
+      "manufacturer": {
+        "name": "Manufacturers",
+        "who": "Making things from recycled material",
+        "title": "Help for manufacturers",
+        "lead": "Order recycled material, check deliveries and keep the records EPR asks for."
+      },
+      "saathi": {
+        "name": "Saathis",
+        "who": "Taking pickups and short shifts",
+        "title": "Help for Saathis",
+        "lead": "Join with a photo ID, find jobs near you, work safely and get paid."
+      }
+    },
+    "role": {
+      "onThisPage": "On this page",
+      "guidesHeading": "Guides",
+      "guidesLead": "Step by step, with pictures.",
+      "steps": "{count, plural, one {# step} other {# steps}}",
+      "faqsHeading": "Common questions",
+      "faqsLead": "Tap a question to see the answer.",
+      "tutorialsHeading": "Videos",
+      "tutorialsLead": "Short videos in your language.",
+      "trainingHeading": "Training",
+      "trainingLead": "Short lessons. Mark each one done as you go.",
+      "otherRoles": "Help for someone else"
+    },
+    "guide": {
+      "metaTitle": "{guide} · {role}",
+      "stepsHeading": "Steps",
+      "stepLabel": "Step {number} of {total}",
+      "relatedHeading": "Related questions",
+      "nextHeading": "Next guide"
+    },
+    "tutorial": {
+      "comingSoon": "Video coming soon",
+      "minutes": "{minutes} min"
+    },
+    "training": {
+      "progressLabel": "Your training",
+      "progress": "{done} of {total} done",
+      "minutes": "{minutes} min",
+      "markDone": "Mark as done",
+      "openGuide": "Open the guide",
+      "badgeTitle": "Training complete",
+      "badgeBody": "Well done! You finished every lesson. Come back any time for a refresher.",
+      "reset": "Start again",
+      "savedHere": "Your progress is saved on this device."
+    },
+    "contactStrip": {
+      "title": "Still need help?",
+      "body": "Talk to a person. We reply within one working day.",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "write": "Write to us"
+    },
+    "contact": {
+      "metaTitle": "Contact support",
+      "metaDescription": "Ask the Luma.Green team anything by phone, WhatsApp or a short message. We reply within one working day.",
+      "title": "Contact us",
+      "lead": "A real person reads every message. Ask in your own words.",
+      "formHeading": "Send a message",
+      "name": "Your name",
+      "phone": "Mobile number",
+      "phoneHint": "We'll call or SMS you on this number.",
+      "role": "You are",
+      "topic": "What is it about?",
+      "choose": "Choose one",
+      "message": "Your message",
+      "messageHint": "What happened, and when? Add your booking or trade number if you have one.",
+      "messageCount": "{count, number} of {max, number}",
+      "roles": {
+        "household": "A household",
+        "kabadiwala": "A kabadiwala",
+        "yard": "A yard",
+        "recycler": "A recycler",
+        "manufacturer": "A manufacturer",
+        "saathi": "A Saathi",
+        "other": "Someone else"
+      },
+      "topics": {
+        "account": "Signing in or my account",
+        "pickup": "A pickup",
+        "prices": "Prices",
+        "payments": "Payments",
+        "documents": "Documents and checks",
+        "trade": "A trade between businesses",
+        "solar": "Solar",
+        "other": "Something else"
+      },
+      "submit": "Send message",
+      "sending": "Sending…",
+      "privacy": "We use your number only to reply to you.",
+      "sentTitle": "Message sent",
+      "sentBody": "Thank you. We'll call or SMS you within one working day.",
+      "sendAnother": "Send another message",
+      "backToHelp": "Back to help",
+      "errors": {
+        "nameInvalid": "Write your name (2 to 80 letters).",
+        "phoneInvalid": "Enter a 10-digit Indian mobile number.",
+        "roleMissing": "Choose who you are.",
+        "topicMissing": "Choose what it's about.",
+        "messageShort": "Write a little more: at least 5 letters.",
+        "messageLong": "Keep it under 1,000 letters.",
+        "generic": "We couldn't send that. Check your connection and try again."
+      },
+      "unavailableTitle": "Messages are switched off here",
+      "unavailableBody": "Call or WhatsApp us instead. We're happy to help.",
+      "otherWays": "Other ways to reach us",
+      "callTitle": "Call us",
+      "whatsappTitle": "WhatsApp us",
+      "hoursTitle": "Opening hours",
+      "replyTitle": "When we reply",
+      "sampleNumbers": "Prototype: these are sample numbers."
+    },
+    "guides": {
+      "signIn": {
+        "title": "Sign in with an SMS code",
+        "summary": "No password. Your mobile number and a 6-digit code are all you need.",
+        "steps": {
+          "open": {
+            "title": "Open the sign-in page",
+            "body": "Go to luma.green/login and choose your language."
+          },
+          "number": {
+            "title": "Enter your mobile number",
+            "body": "Type the 10-digit number you joined with."
+          },
+          "code": {
+            "title": "Type the 6-digit code",
+            "body": "We send it by SMS. It works for 5 minutes. No SMS after 30 seconds? Tap Resend."
+          },
+          "stay": {
+            "title": "Stay signed in",
+            "body": "You stay signed in on that phone for 30 days. Never share your code: our team will never ask for it."
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "Stay safe at work",
+        "summary": "Safety gear, lifting, sharp scrap, batteries and machines: the basics that prevent injuries.",
+        "steps": {
+          "gear": {
+            "title": "Wear your safety gear (PPE)",
+            "body": "Gloves and closed shoes, always. Add a mask for dusty loads and goggles when cutting or crushing."
+          },
+          "lift": {
+            "title": "Lift with your legs",
+            "body": "Bend your knees, keep the load close and don't twist. Get help with anything over 25 kg."
+          },
+          "sharp": {
+            "title": "Watch for sharp edges",
+            "body": "Glass, tin and wire cut easily. Carry glass in a box, never loose in a sack."
+          },
+          "batteries": {
+            "title": "Keep batteries and e-waste apart",
+            "body": "Store them dry and cool, away from other scrap. Never burn wires or break open batteries or screens."
+          },
+          "machines": {
+            "title": "Switch off before you clear a jam",
+            "body": "Stop a baler or shredder and unplug it first. Never reach in while it runs."
+          },
+          "firstAid": {
+            "title": "Keep first aid close",
+            "body": "Keep a first-aid kit and clean water on site. For a deep cut or a burn, get medical help at once."
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "Join and get verified",
+        "summary": "What to have ready, and what our team checks before your business goes live.",
+        "steps": {
+          "start": {
+            "title": "Start at luma.green/join",
+            "body": "Sign in with your mobile number and choose Yard, Recycler or Manufacturer."
+          },
+          "details": {
+            "title": "Add your business details",
+            "body": "Name, address and map pin, the materials you handle and your working hours. GST is optional."
+          },
+          "consent": {
+            "title": "Add your pollution-board consent",
+            "body": "Your KSPCB consent, or your state board's: its number, the valid-until date and the certificate as a PDF."
+          },
+          "photos": {
+            "title": "Add machine photos",
+            "body": "At least two photos or short videos of your main machines and your site."
+          },
+          "review": {
+            "title": "We check within 12–24 hours",
+            "body": "A person checks every document. If something is missing, we tell you exactly what to fix."
+          },
+          "live": {
+            "title": "Start trading",
+            "body": "Once you're approved, your dashboard opens and buyers and sellers near you can find you."
+          }
+        }
+      },
+      "escrow": {
+        "title": "How escrow keeps a trade safe",
+        "summary": "The buyer's money is held safely until the load arrives as agreed.",
+        "steps": {
+          "request": {
+            "title": "The buyer sends a request",
+            "body": "It shows the material, the kilos and the price per kg."
+          },
+          "accept": {
+            "title": "The seller accepts",
+            "body": "Nothing is paid yet. Call each other if you need to agree details."
+          },
+          "pay": {
+            "title": "The buyer pays into escrow",
+            "body": "The money is held safely, not yet with the seller. The seller can see it's there before loading."
+          },
+          "dispatch": {
+            "title": "The seller sends the load",
+            "body": "Mark it as sent. The invoice travels with it, and an e-way bill when one is needed."
+          },
+          "confirm": {
+            "title": "The buyer confirms delivery",
+            "body": "Check the weight and quality, then confirm. The money is released to the seller."
+          }
+        }
+      },
+      "paperwork": {
+        "title": "Invoices and e-way bills",
+        "summary": "The papers that travel with every load.",
+        "steps": {
+          "invoice": {
+            "title": "Get the invoice from the trade",
+            "body": "Every trade has an invoice you can open, print or share."
+          },
+          "ewayBill": {
+            "title": "E-way bill over ₹50,000",
+            "body": "GST rules need an e-way bill to move goods worth more than ₹50,000. Some states set a different limit."
+          },
+          "vehicle": {
+            "title": "Papers go with the vehicle",
+            "body": "Carry the invoice and e-way bill in the vehicle, and check the vehicle number matches."
+          },
+          "keep": {
+            "title": "Keep your records",
+            "body": "Receipts and invoices stay in the app for 6 years, the time tax law asks for."
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "When a load doesn't match",
+        "summary": "What to do if the weight or quality isn't what you agreed.",
+        "steps": {
+          "check": {
+            "title": "Check before you confirm",
+            "body": "Weigh the load and look at the quality when it arrives, while the driver is there."
+          },
+          "hold": {
+            "title": "Don't confirm a short load",
+            "body": "Confirming releases the money. Until you confirm, it stays in escrow."
+          },
+          "report": {
+            "title": "Report it with photos",
+            "body": "Call us or write from Help, Contact us. Add photos of the weighing slip and the material."
+          },
+          "settle": {
+            "title": "We help both sides agree",
+            "body": "We look at the weights, photos and messages from both of you. The money stays safe until it's settled."
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "Carbon credits and EPR, simply",
+        "summary": "Why recorded recycling matters, and what brands and recyclers must know.",
+        "steps": {
+          "record": {
+            "title": "Every kilo is recorded",
+            "body": "Each weighing and trade on Luma.Green is logged with the material, weight, date and place."
+          },
+          "carbon": {
+            "title": "Recycling saves carbon",
+            "body": "Making things from recycled material uses less energy than making them new. That saving can later become carbon credits."
+          },
+          "epr": {
+            "title": "EPR: makers must take back",
+            "body": "Extended Producer Responsibility means brands that sell packaging, electronics or batteries must get a share of that waste recycled."
+          },
+          "certificates": {
+            "title": "Recyclers issue EPR certificates",
+            "body": "Registered recyclers issue certificates on the CPCB portal for what they recycle. Brands buy them to meet their targets."
+          },
+          "proof": {
+            "title": "Clean records are your proof",
+            "body": "Our trail from home to factory shows where material came from. Carbon credits on Luma.Green come later."
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "Book your first pickup",
+        "summary": "From photo to booked pickup in about two minutes. No account needed.",
+        "steps": {
+          "photo": {
+            "title": "Take a photo of your scrap",
+            "body": "Open luma.green/sell and photograph your pile. More than one photo is fine."
+          },
+          "estimate": {
+            "title": "Check the estimate",
+            "body": "We show what we see and roughly how many kilos. Change the kilos if they look wrong."
+          },
+          "choose": {
+            "title": "Choose pickup or drop-off",
+            "body": "See verified kabadiwalas near you, nearest first, with their hours."
+          },
+          "slot": {
+            "title": "Pick a time",
+            "body": "Choose a time slot, then check your address and map pin."
+          },
+          "code": {
+            "title": "Confirm your number",
+            "body": "Type the 6-digit code we send by SMS. That's all: no password."
+          },
+          "track": {
+            "title": "Get your tracking link",
+            "body": "We SMS you a link to follow your pickup."
+          }
+        }
+      },
+      "getReady": {
+        "title": "Get your scrap ready",
+        "summary": "Sorted, dry scrap is weighed faster and sells for more.",
+        "steps": {
+          "paper": {
+            "title": "Keep paper dry and flat",
+            "body": "Stack newspapers and flatten boxes. Wet paper is worth less."
+          },
+          "bottles": {
+            "title": "Empty and squash bottles",
+            "body": "Pour out any liquid and press plastic bottles flat to save space."
+          },
+          "metal": {
+            "title": "Keep metal apart",
+            "body": "Put tins, steel and aluminium in their own bag."
+          },
+          "ewaste": {
+            "title": "Set gadgets and batteries aside",
+            "body": "Keep old phones, chargers and batteries in a separate box, away from heat."
+          },
+          "door": {
+            "title": "Put the bags near the door",
+            "body": "It makes the pickup quick. Keep them somewhere dry."
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "Track your pickup",
+        "summary": "When, who and how much, all on one page.",
+        "steps": {
+          "open": {
+            "title": "Open the link in your SMS",
+            "body": "It works on any phone. You don't need to sign in."
+          },
+          "when": {
+            "title": "See when",
+            "body": "Your date and time slot. We tell you if anything changes."
+          },
+          "who": {
+            "title": "See who is coming",
+            "body": "Their name, shop and verified badge. Tap Call to talk to them."
+          },
+          "after": {
+            "title": "See what you got",
+            "body": "After the pickup, the page shows what you were paid and your recycle points."
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "Weighing and payment at your door",
+        "summary": "How to make sure every kilo counts.",
+        "steps": {
+          "zero": {
+            "title": "Check the scale reads zero",
+            "body": "Before anything goes on, the empty scale should show 0."
+          },
+          "each": {
+            "title": "Each material is weighed on its own",
+            "body": "Paper, plastic and metal have different prices, so they're weighed apart."
+          },
+          "amount": {
+            "title": "The app works out the amount",
+            "body": "Kilos times the kabadiwala's price per kg. You see the total before you're paid."
+          },
+          "pay": {
+            "title": "Get paid on the spot",
+            "body": "In cash or UPI, before they leave. Luma.Green never holds your money."
+          },
+          "receipt": {
+            "title": "Check your receipt",
+            "body": "Your tracking page shows each material, its weight and price, and the total."
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "How prices are set",
+        "summary": "Why the estimate is a range, and how the final amount is worked out.",
+        "steps": {
+          "estimate": {
+            "title": "Estimates use city prices",
+            "body": "Before you choose a kabadiwala, we use standard Bengaluru prices, so you see a range."
+          },
+          "own": {
+            "title": "Each kabadiwala sets a price",
+            "body": "Once you choose one, you see their own price for each material."
+          },
+          "floor": {
+            "title": "Never below the minimum",
+            "body": "Luma.Green sets a minimum price for every material. No kabadiwala can pay less."
+          },
+          "final": {
+            "title": "The weight decides the amount",
+            "body": "You're paid for what is weighed at your door, at that kabadiwala's price."
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "Cancel or change a booking",
+        "summary": "Plans change. Here's what to do.",
+        "steps": {
+          "open": {
+            "title": "Open your tracking link",
+            "body": "Everything about your booking is there."
+          },
+          "cancel": {
+            "title": "Cancel for free",
+            "body": "You can cancel until the kabadiwala is on the way. It costs nothing."
+          },
+          "declined": {
+            "title": "If a kabadiwala can't come",
+            "body": "We offer your pickup to the next nearest one and tell you by SMS."
+          },
+          "help": {
+            "title": "Need a different time?",
+            "body": "Cancel and book again, or call us and we'll help."
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "Old phones, batteries and e-waste",
+        "summary": "Safe to keep at home, safe to hand over.",
+        "steps": {
+          "apart": {
+            "title": "Keep them in one dry box",
+            "body": "Away from the stove, water and sunlight, and out of children's reach."
+          },
+          "tape": {
+            "title": "Tape the battery ends",
+            "body": "Put tape over the metal ends so they can't spark."
+          },
+          "swollen": {
+            "title": "Don't press a swollen battery",
+            "body": "A puffed-up battery can catch fire. Keep it on its own in a metal tin and tell the kabadiwala."
+          },
+          "handover": {
+            "title": "Hand gadgets over whole",
+            "body": "Don't break phones or take out parts. Say it's e-waste when you book."
+          }
+        }
+      },
+      "registerShop": {
+        "title": "Register your shop",
+        "summary": "What to fill in, and how long the check takes.",
+        "steps": {
+          "start": {
+            "title": "Start at luma.green/join",
+            "body": "Sign in with your mobile number and choose Kabadiwala."
+          },
+          "shop": {
+            "title": "Add your shop",
+            "body": "Your name, shop name, address with a map pin, and opening hours."
+          },
+          "pickups": {
+            "title": "Say if you do pickups",
+            "body": "Pick your vehicle: handcart, cycle, auto or mini-truck. No vehicle? Households can still drop off."
+          },
+          "gst": {
+            "title": "GST is optional",
+            "body": "Add your GST number if you have one. If not, just say so."
+          },
+          "review": {
+            "title": "We check within 12–24 hours",
+            "body": "A person checks your details. When you're approved, your dashboard opens."
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "Answer pickup requests",
+        "summary": "New pickups from households near you, and how to handle them.",
+        "steps": {
+          "see": {
+            "title": "See new requests",
+            "body": "Each shows the area, time slot, materials, rough kilos and what you'd pay."
+          },
+          "answer": {
+            "title": "Accept or reject",
+            "body": "Accept to take it. If you reject, it goes to the next nearest kabadiwala, and the household isn't told who."
+          },
+          "auto": {
+            "title": "Turn on auto-accept",
+            "body": "With auto-accept on, every request in your area is accepted at once, even at night."
+          },
+          "go": {
+            "title": "Call and go",
+            "body": "Once you accept, you see the phone number and exact address. Call to say you're on the way."
+          }
+        }
+      },
+      "weighAndPay": {
+        "title": "Weigh and pay",
+        "summary": "Record a pickup in under a minute.",
+        "steps": {
+          "zero": {
+            "title": "Zero the scale",
+            "body": "Start from 0 with nothing on it, where the household can see."
+          },
+          "weigh": {
+            "title": "Weigh each material",
+            "body": "Enter the kilos for each one. Use + and − for half-kilo steps."
+          },
+          "total": {
+            "title": "Show the total",
+            "body": "The app works it out from your prices. Show the screen to the household."
+          },
+          "pay": {
+            "title": "Pay in cash or UPI",
+            "body": "Pay before you leave, and choose how you paid."
+          },
+          "save": {
+            "title": "Save",
+            "body": "The household sees the receipt on their tracking page, and your stock goes up by what you weighed."
+          }
+        }
+      },
+      "setPrices": {
+        "title": "Set your prices",
+        "summary": "You choose what you pay, above the minimum.",
+        "steps": {
+          "open": {
+            "title": "Open My prices",
+            "body": "You see every material with the minimum price beside it."
+          },
+          "enter": {
+            "title": "Enter your price per kg",
+            "body": "Type what you want to pay households for each material."
+          },
+          "floor": {
+            "title": "Stay above the minimum",
+            "body": "A price below the minimum isn't saved. If the minimum goes up, your price goes up too, and we tell you."
+          },
+          "blank": {
+            "title": "Leave a material blank",
+            "body": "If you set no price, the city's standard price is used."
+          },
+          "history": {
+            "title": "Old receipts don't change",
+            "body": "A new price counts only for new pickups. Past receipts keep the price that was paid."
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "Sort your stock and sell to yards",
+        "summary": "From many small pickups to a load a yard wants.",
+        "steps": {
+          "grows": {
+            "title": "Your stock fills up by itself",
+            "body": "Every pickup you weigh is added to My stock."
+          },
+          "sort": {
+            "title": "Record your sorting",
+            "body": "Split mixed scrap into what it really is. For example, mixed paper into newspaper, cardboard and waste."
+          },
+          "show": {
+            "title": "Show your stock to yards",
+            "body": "Turn on Show to yards so yards near you can see what you have."
+          },
+          "sell": {
+            "title": "Accept a yard's request",
+            "body": "Check the kilos and the price, then accept. The yard pays into escrow before collecting."
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "When a household disagrees",
+        "summary": "Stay calm, be clear and keep it fair.",
+        "steps": {
+          "reweigh": {
+            "title": "Weigh again together",
+            "body": "Zero the scale and weigh the item again where they can see."
+          },
+          "show": {
+            "title": "Show your price",
+            "body": "Show the price per kg and the total on your phone."
+          },
+          "noForce": {
+            "title": "Don't force a sale",
+            "body": "If they still don't agree, they don't have to sell that material. Leave it out of the receipt."
+          },
+          "call": {
+            "title": "Call us if you're stuck",
+            "body": "We can talk to both of you. Every receipt shows the weights and prices."
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "Buy stock from kabadiwalas",
+        "summary": "Find sorted scrap near you and book a collection.",
+        "steps": {
+          "browse": {
+            "title": "Open Buy",
+            "body": "See stock near you by material and distance, with the kilos and price."
+          },
+          "request": {
+            "title": "Send a request",
+            "body": "Choose how many kilos you want. The price per kg is shown before you send."
+          },
+          "pay": {
+            "title": "Pay into escrow",
+            "body": "When the kabadiwala accepts, pay. The money is held until you confirm."
+          },
+          "collect": {
+            "title": "Collect and weigh",
+            "body": "Pick up the load and weigh it at your yard."
+          },
+          "confirm": {
+            "title": "Confirm to release payment",
+            "body": "If the weight and quality are right, confirm. The kabadiwala is paid."
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "Sell sorted bales to recyclers",
+        "summary": "List what you have once, and let recyclers come to you.",
+        "steps": {
+          "list": {
+            "title": "List what you have",
+            "body": "In Sell, add the material, the kilos and your price per kg."
+          },
+          "requests": {
+            "title": "Get requests",
+            "body": "Recyclers who buy that material can see your listing and send a request."
+          },
+          "accept": {
+            "title": "Accept, then wait for payment",
+            "body": "Load only once the buyer's money is in escrow."
+          },
+          "dispatch": {
+            "title": "Send the load",
+            "body": "Mark it as sent, with the invoice, and an e-way bill for loads over ₹50,000."
+          },
+          "paid": {
+            "title": "Get paid",
+            "body": "When the recycler confirms delivery, the money is released to you."
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "Buy sorted scrap from yards",
+        "summary": "Steady, graded input for your line.",
+        "steps": {
+          "browse": {
+            "title": "Find bales near you",
+            "body": "Open Buy to see yards' listings by material and distance."
+          },
+          "request": {
+            "title": "Request a load",
+            "body": "Choose the kilos. The price per kg is shown before you send."
+          },
+          "pay": {
+            "title": "Pay into escrow",
+            "body": "Once the yard accepts, pay. The money is held until you confirm delivery."
+          },
+          "confirm": {
+            "title": "Weigh, check, confirm",
+            "body": "Weigh the load at your gate and check the grade before you confirm."
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "Sell recycled material to manufacturers",
+        "summary": "Show what your line makes, so factories can order.",
+        "steps": {
+          "list": {
+            "title": "List your output",
+            "body": "Add flakes, granules, bales or ingots with the kilos you have and your price per kg."
+          },
+          "orders": {
+            "title": "Get orders",
+            "body": "Manufacturers see your listing and send requests for the kilos they need."
+          },
+          "load": {
+            "title": "Load after payment",
+            "body": "Accept, then send the load once the payment is in escrow."
+          },
+          "paid": {
+            "title": "Get paid on delivery",
+            "body": "The money is released when the manufacturer confirms."
+          }
+        }
+      },
+      "orderRecycled": {
+        "title": "Order recycled material",
+        "summary": "Find recycled input and order what you need.",
+        "steps": {
+          "browse": {
+            "title": "See what recyclers have",
+            "body": "Open Buy to see recycled material by type, kilos available and price."
+          },
+          "order": {
+            "title": "Send an order",
+            "body": "Choose the kilos and send. The recycler accepts or declines."
+          },
+          "pay": {
+            "title": "Pay into escrow",
+            "body": "Pay once they accept. The money is held until you confirm delivery."
+          },
+          "receive": {
+            "title": "Receive the load",
+            "body": "Weigh it and check the grade at your gate."
+          },
+          "confirm": {
+            "title": "Confirm delivery",
+            "body": "Confirm to release the payment to the recycler."
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "Check a delivery",
+        "summary": "A quick check before you confirm and release payment.",
+        "steps": {
+          "papers": {
+            "title": "Match the papers",
+            "body": "The invoice and e-way bill should match your order and the vehicle."
+          },
+          "weigh": {
+            "title": "Weigh it yourself",
+            "body": "Weigh the truck full and empty. The difference is what you received."
+          },
+          "look": {
+            "title": "Look at the material",
+            "body": "Check colour, moisture and dirt against what you ordered."
+          },
+          "decide": {
+            "title": "Confirm or report",
+            "body": "All good? Confirm. Not right? Report it with photos, and the money stays in escrow."
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "Become a Saathi",
+        "summary": "Join with a photo ID and a selfie, and start taking jobs near you.",
+        "steps": {
+          "start": {
+            "title": "Start at luma.green/join",
+            "body": "Sign in with your mobile number and choose Saathi."
+          },
+          "work": {
+            "title": "Choose your work",
+            "body": "Home pickups, help at a kabadiwala shop, sorting at a yard, or shifts at a recycler or factory."
+          },
+          "area": {
+            "title": "Set your area and times",
+            "body": "Where you live, how far you'll travel (2, 5 or 10 km) and when you're free."
+          },
+          "id": {
+            "title": "Add a photo ID and a selfie",
+            "body": "Voter ID, driving licence, PAN or a masked Aadhaar. Never a full Aadhaar number."
+          },
+          "review": {
+            "title": "We check within 12–24 hours",
+            "body": "A person matches your selfie to your ID. Then you can take jobs."
+          }
+        }
+      },
+      "findJobs": {
+        "title": "Find and take jobs",
+        "summary": "Work near you, when you want it.",
+        "steps": {
+          "home": {
+            "title": "See jobs on Home",
+            "body": "Each job shows the place, day, time and pay."
+          },
+          "accept": {
+            "title": "Accept a job",
+            "body": "Tap Accept. The business can see you're coming."
+          },
+          "arrive": {
+            "title": "Be on time",
+            "body": "Call ahead if you'll be late. Being on time gets you more work."
+          },
+          "done": {
+            "title": "Mark it done",
+            "body": "After the job, mark it done so it shows in your earnings."
+          }
+        }
+      },
+      "homePickup": {
+        "title": "Do a home pickup",
+        "summary": "Friendly, quick and fair at every door.",
+        "steps": {
+          "call": {
+            "title": "Call before you go",
+            "body": "Say your name, which shop you're from and when you'll arrive."
+          },
+          "greet": {
+            "title": "Introduce yourself",
+            "body": "At the door, say your name and the shop's name. Wait to be invited in."
+          },
+          "weigh": {
+            "title": "Weigh where they can see",
+            "body": "Zero the scale and weigh each material in front of them."
+          },
+          "record": {
+            "title": "Pay and record",
+            "body": "Pay as the shop has asked, and save the payment before you leave."
+          },
+          "deliver": {
+            "title": "Bring it to the shop",
+            "body": "Take the scrap straight to the shop and hand it over."
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "How you get paid",
+        "summary": "Agree the pay first, then check it in Earnings.",
+        "steps": {
+          "agree": {
+            "title": "Agree the pay first",
+            "body": "The shop or business you work for pays you. Agree the amount before the job starts."
+          },
+          "earnings": {
+            "title": "Check Earnings",
+            "body": "See the jobs you've done and what each one paid."
+          },
+          "upi": {
+            "title": "Ask for UPI",
+            "body": "UPI leaves a record, so there's never a doubt about what you got."
+          },
+          "problem": {
+            "title": "Not paid?",
+            "body": "Talk to the business first. Still stuck? Call us."
+          }
+        }
+      }
+    },
+    "faqs": {
+      "noCode": {
+        "q": "I didn't get the SMS code",
+        "a": "Wait 30 seconds and tap Resend. Check the number is right and your phone has signal. A code works for 5 minutes."
+      },
+      "newPhone": {
+        "q": "I have a new phone or a new number",
+        "a": "New phone, same number: just sign in again. New number: call us, and we'll move your account once we've checked it's you."
+      },
+      "deleteData": {
+        "q": "Can I see or delete my data?",
+        "a": "Yes. Write to us from Contact and we'll do it within 30 days. We keep only what the law needs, such as receipts."
+      },
+      "verifyTime": {
+        "q": "How long does the check take?",
+        "a": "Usually 12 to 24 hours after you send your application. If we need anything else, we tell you exactly what."
+      },
+      "noAccount": {
+        "q": "Do I need an account?",
+        "a": "No. You confirm your mobile number with an SMS code when you book. There's no password to remember."
+      },
+      "whatCanISell": {
+        "q": "What can I sell?",
+        "a": "Paper and cardboard, plastic bottles and containers, metal, glass and old electronics. Not sure? Take a photo and the estimate will tell you."
+      },
+      "howPriceWorks": {
+        "q": "How is my money worked out?",
+        "a": "The weight of each material times the kabadiwala's price per kg. Their price can never be below the minimum Luma.Green sets."
+      },
+      "howPaid": {
+        "q": "How do I get paid?",
+        "a": "At your door, in cash or UPI, before the kabadiwala leaves. Luma.Green records the payment but never holds your money."
+      },
+      "recyclePoints": {
+        "q": "What are recycle points?",
+        "a": "A thank-you for recycling: 1 point for every ₹10 you're paid. What you can use them for is coming soon."
+      },
+      "weightWrong": {
+        "q": "What if the weight looks wrong?",
+        "a": "Ask them to weigh it again in front of you, starting from zero. Still not right? Call us: the receipt shows every weight."
+      },
+      "canCancel": {
+        "q": "Can I cancel?",
+        "a": "Yes, for free, until the kabadiwala is on the way. Open your tracking link and tap Cancel."
+      },
+      "kabadiwalasChecked": {
+        "q": "Are kabadiwalas checked?",
+        "a": "Yes. Our team checks every shop before it can take bookings. Look for the verified badge."
+      },
+      "whoSeesAddress": {
+        "q": "Who sees my number and address?",
+        "a": "Only the kabadiwala who accepts your pickup, and our team. We keep them for 12 months after your last booking."
+      },
+      "photosKept": {
+        "q": "What happens to my photos?",
+        "a": "They are used only for your estimate and deleted within 90 days."
+      },
+      "whyVerify": {
+        "q": "Why do I have to be verified?",
+        "a": "Households trust you at their door. Checking every shop keeps them safe and makes your verified badge mean something."
+      },
+      "gstNeeded": {
+        "q": "Do I need a GST number?",
+        "a": "No, it's optional. Add it if you have one."
+      },
+      "ownPrices": {
+        "q": "Can I set my own prices?",
+        "a": "Yes, for every material, as long as it's not below the minimum price Luma.Green sets."
+      },
+      "noVehicle": {
+        "q": "I don't have a vehicle. Can I still join?",
+        "a": "Yes. Households can bring scrap to your shop. Saathi pickups for shops without a vehicle are coming later."
+      },
+      "autoAccept": {
+        "q": "What is auto-accept?",
+        "a": "When it's on, every new request in your area is accepted straight away, even at night. Turn it off when you can't go."
+      },
+      "rejectRequest": {
+        "q": "What happens if I reject a request?",
+        "a": "It goes to the next nearest kabadiwala. The household isn't told who said no."
+      },
+      "payHousehold": {
+        "q": "Does Luma.Green pay the household for me?",
+        "a": "No. You pay them in cash or UPI at the door. The app records how much and how."
+      },
+      "paidByYard": {
+        "q": "How am I paid when I sell to a yard?",
+        "a": "The yard pays into escrow before collecting. When they confirm the load, the money is released to you."
+      },
+      "whoSeesShop": {
+        "q": "Who can see my shop?",
+        "a": "Once you're approved, your shop name, area and hours are public so households can find you. Your documents stay private."
+      },
+      "consentDocs": {
+        "q": "What documents do I need?",
+        "a": "Your pollution-board consent (KSPCB in Karnataka) with its number, valid-until date and certificate as a PDF, plus photos of your machines. GST is optional."
+      },
+      "noConsentNeeded": {
+        "q": "My unit doesn't need a consent. Can I still join?",
+        "a": "Yes. Tick the box that says your unit doesn't need one, and tell us why, for example paper baling only. We check it."
+      },
+      "consentExpiry": {
+        "q": "What happens when my consent expires?",
+        "a": "We remind you 30 days before. Upload the renewed certificate to keep trading."
+      },
+      "findStock": {
+        "q": "How do I find stock near me?",
+        "a": "Open Buy. Stock from verified kabadiwalas is shown by material, nearest first."
+      },
+      "whoSetsPrice": {
+        "q": "Who sets the price?",
+        "a": "The seller lists a price per kg. You see it before you send a request, and you can call to agree details."
+      },
+      "whatIsEscrow": {
+        "q": "What is escrow?",
+        "a": "A safe middle step: the buyer's money is held until the load arrives as agreed, then released to the seller."
+      },
+      "whenSellerPaid": {
+        "q": "When is the seller paid?",
+        "a": "As soon as the buyer confirms delivery."
+      },
+      "shortLoad": {
+        "q": "What if a load is short?",
+        "a": "Don't confirm it. Report it with photos of the weighing slip. The money stays in escrow while we sort it out."
+      },
+      "ewayBill": {
+        "q": "Do I need an e-way bill?",
+        "a": "Yes, to move goods worth more than ₹50,000, and the trade screen reminds you. Some states set a different limit."
+      },
+      "whoSeesBusiness": {
+        "q": "Who can see my business?",
+        "a": "Verified buyers and sellers see your name, area and the materials you handle. Only you and our team see your documents."
+      },
+      "pwpRegistration": {
+        "q": "I recycle plastic. Do I need anything more?",
+        "a": "Keep your CPCB Plastic Waste Processor registration ready. Brands ask for it, and it lets you issue EPR certificates."
+      },
+      "buyFromAnyYard": {
+        "q": "Can I buy from more than one yard?",
+        "a": "Yes. Buy from any verified yard that lists what you need, as often as you like."
+      },
+      "eprRecords": {
+        "q": "Do Luma.Green records help with EPR?",
+        "a": "Yes. Every trade records the material, weight, date and seller, which backs up your EPR filings. You still file on the CPCB portal."
+      },
+      "carbonCredits": {
+        "q": "Will I earn carbon credits?",
+        "a": "Not yet. We record every kilo now so credits can be issued later, once the method is verified."
+      },
+      "whatCanIBuy": {
+        "q": "What can I buy?",
+        "a": "Recycled material from verified recyclers, such as PET flakes, HDPE granules, kraft paper and aluminium ingots."
+      },
+      "qualityWrong": {
+        "q": "What if the quality isn't what I ordered?",
+        "a": "Don't confirm. Report it with photos. The money stays in escrow while we help you and the recycler agree."
+      },
+      "recycledContent": {
+        "q": "Does buying recycled help with EPR?",
+        "a": "Yes. Plastic EPR rules set recycled-content targets for packaging, and your trade records show how much recycled material you bought."
+      },
+      "carbonClaims": {
+        "q": "Can I claim carbon savings?",
+        "a": "Your Impact screen estimates the carbon saved. Treat these numbers as indicative until they are independently verified."
+      },
+      "whoCanJoin": {
+        "q": "Who can be a Saathi?",
+        "a": "Anyone 18 or older who wants to earn from short jobs near home."
+      },
+      "whichId": {
+        "q": "Which ID can I use?",
+        "a": "Voter ID, driving licence, PAN, a DigiLocker document, or an Aadhaar that shows only the last 4 digits."
+      },
+      "fullAadhaar": {
+        "q": "Why not my full Aadhaar?",
+        "a": "We never keep Aadhaar numbers. If you upload a full one by mistake, we'll ask for a masked copy and delete the first."
+      },
+      "needVehicle": {
+        "q": "Do I need a vehicle?",
+        "a": "No. Shop help and shifts don't need one. For home pickups, a cycle, bike or auto helps."
+      },
+      "whoPaysMe": {
+        "q": "Who pays me?",
+        "a": "The kabadiwala or business you work for. Agree the amount before you start."
+      },
+      "chooseHours": {
+        "q": "Can I choose when I work?",
+        "a": "Yes. You tell us the times and days you're free, and you take only the jobs you want."
+      },
+      "safetyGear": {
+        "q": "What safety gear do I need?",
+        "a": "Gloves and closed shoes for every job, and a mask for dusty work. Ask the business if they need anything more."
+      },
+      "whoSeesId": {
+        "q": "Who sees my ID and selfie?",
+        "a": "Only you and our team, to check it's really you."
+      },
+      "jobWentWrong": {
+        "q": "Something went wrong on a job. What do I do?",
+        "a": "First, stay safe. Tell the business, then call us. We'll listen to both sides."
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "Book a pickup in two minutes",
+      "sortAtHome": "Sorting scrap at home",
+      "batterySafety": "Old batteries, handled safely",
+      "firstDay": "Your first day on Luma.Green",
+      "weighAndPayVideo": "Weigh and pay in a minute",
+      "settingPrices": "Setting your prices",
+      "buyingFromKabadiwalas": "Buying from kabadiwalas",
+      "listingBales": "Listing bales for recyclers",
+      "escrowExplained": "Escrow in two minutes",
+      "buyingFromYards": "Buying from yards",
+      "sellingOutput": "Selling your output",
+      "eprPlainWords": "EPR in plain words",
+      "firstOrder": "Placing your first order",
+      "checkingDelivery": "Checking a delivery",
+      "becomingSaathi": "Becoming a Saathi",
+      "goodPickup": "A good home pickup",
+      "liftingSafely": "Lifting and carrying safely"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "What can be recycled",
+        "p1": "Paper, cardboard, most plastics, metal and glass all have value.",
+        "p2": "Old phones, chargers and batteries are e-waste: keep them apart.",
+        "p3": "Food waste and dirty nappies can't be recycled."
+      },
+      "sortOnce": {
+        "title": "Sort it once",
+        "p1": "One bag each for paper, plastic and metal.",
+        "p2": "Keep everything dry and clean.",
+        "p3": "Sorted scrap is weighed faster and paid better."
+      },
+      "batteriesSafe": {
+        "title": "Batteries, safely",
+        "p1": "Tape the metal ends.",
+        "p2": "Keep them dry, cool and away from children.",
+        "p3": "Never throw them in the bin or a fire."
+      },
+      "fairWeigh": {
+        "title": "Get a fair weigh",
+        "p1": "Check the scale starts at zero.",
+        "p2": "Watch each material being weighed.",
+        "p3": "Check the total on your receipt."
+      },
+      "usingTheApp": {
+        "title": "Using the app",
+        "p1": "Sign in with your number and an SMS code.",
+        "p2": "Accept or reject new requests quickly.",
+        "p3": "Turn auto-accept on only when you can go."
+      },
+      "weighingFairly": {
+        "title": "Weighing fairly",
+        "p1": "Zero the scale in front of the household.",
+        "p2": "Weigh each material on its own.",
+        "p3": "Show the total before you pay."
+      },
+      "safeHandling": {
+        "title": "Handling scrap safely",
+        "p1": "Gloves and closed shoes, every time.",
+        "p2": "Lift with your legs, and get help over 25 kg.",
+        "p3": "Keep batteries and e-waste apart."
+      },
+      "servingHouseholds": {
+        "title": "Serving households well",
+        "p1": "Call before you go and arrive in your slot.",
+        "p2": "Be polite and weigh where they can see.",
+        "p3": "Pay before you leave, every time."
+      },
+      "sellingToYards": {
+        "title": "Selling to yards",
+        "p1": "Record your sorting so your stock is right.",
+        "p2": "Show your stock to yards near you.",
+        "p3": "Load only after the payment is in escrow."
+      },
+      "buyingStock": {
+        "title": "Buying stock",
+        "p1": "Find stock near you in Buy.",
+        "p2": "Check the price per kg before you send a request.",
+        "p3": "Weigh every load before you confirm."
+      },
+      "tradingWithEscrow": {
+        "title": "Trading with escrow",
+        "p1": "The buyer pays into escrow after the seller accepts.",
+        "p2": "The seller loads only when the money is there.",
+        "p3": "Confirming delivery releases the money."
+      },
+      "papersForLoads": {
+        "title": "Papers for every load",
+        "p1": "An invoice for every trade.",
+        "p2": "An e-way bill for loads over ₹50,000.",
+        "p3": "The papers travel in the vehicle."
+      },
+      "siteSafety": {
+        "title": "Safety on site",
+        "p1": "Gloves, closed shoes, and a mask where it's dusty.",
+        "p2": "Switch off and unplug a machine before clearing a jam.",
+        "p3": "First aid and clean water always on site."
+      },
+      "buyingInputs": {
+        "title": "Buying your input",
+        "p1": "Find graded bales from yards in Buy.",
+        "p2": "Pay into escrow once the yard accepts.",
+        "p3": "Check the grade before you confirm."
+      },
+      "eprBasics": {
+        "title": "EPR basics",
+        "p1": "Brands must get a share of their waste recycled.",
+        "p2": "Registered recyclers issue certificates on the CPCB portal.",
+        "p3": "Clean trade records back up every claim."
+      },
+      "orderingRecycled": {
+        "title": "Ordering recycled material",
+        "p1": "Compare listings by type, kilos and price.",
+        "p2": "Send an order for the kilos you need.",
+        "p3": "Pay into escrow once it's accepted."
+      },
+      "checkingDeliveries": {
+        "title": "Checking deliveries",
+        "p1": "Match the invoice and e-way bill to the order.",
+        "p2": "Weigh the truck full and empty.",
+        "p3": "Confirm only when the weight and quality are right."
+      },
+      "firstJob": {
+        "title": "Your first job",
+        "p1": "Check the place, time and pay before you accept.",
+        "p2": "Call ahead and arrive on time.",
+        "p3": "Mark the job done when you finish."
+      },
+      "inPeoplesHomes": {
+        "title": "Working in people's homes",
+        "p1": "Say who you are and which shop you're from.",
+        "p2": "Wait to be invited in.",
+        "p3": "Weigh where they can see, and be polite."
+      },
+      "gettingPaid": {
+        "title": "Getting paid",
+        "p1": "Agree the pay before the job starts.",
+        "p2": "Ask for UPI so there's a record.",
+        "p3": "Check every job in Earnings."
+      }
+    }
+  },
   "notFound": {
     "metaTitle": "Page not found",
     "title": "Page not found",
