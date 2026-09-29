@@ -60,6 +60,7 @@ import type * as lib_sms from "../lib/sms.js";
 import type * as lib_validators from "../lib/validators.js";
 import type * as lib_views from "../lib/views.js";
 import type * as lib_workspace from "../lib/workspace.js";
+import type * as lots from "../lots.js";
 import type * as market from "../market.js";
 import type * as notifications from "../notifications.js";
 import type * as priceEngine from "../priceEngine.js";
@@ -152,6 +153,7 @@ declare const fullApi: ApiFromModules<{
   "lib/validators": typeof lib_validators;
   "lib/views": typeof lib_views;
   "lib/workspace": typeof lib_workspace;
+  lots: typeof lots;
   market: typeof market;
   notifications: typeof notifications;
   priceEngine: typeof priceEngine;

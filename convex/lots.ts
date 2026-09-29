@@ -49,11 +49,12 @@ type Run = Doc<"sortingRuns">;
 type Org = Doc<"orgs">;
 type Trade = Doc<"trades">;
 type Materials = Awaited<ReturnType<typeof materialIndex>>;
+type MaterialRef = Infer<typeof vMaterialRef>;
 
 export type LotOrigin = Infer<typeof vLotOrigin>;
 export type LotStatus = Infer<typeof vLotStatus>;
 
-// --- Pure rules ---------------------------------------------------------------
+// --- Pure rules -------------------------------------------------------------
 
 export interface OpenLot {
   id: Id<"lots">;
@@ -119,19 +120,19 @@ export function sortingTotals(
   };
 }
 
-/** Whether a lot with `remaining` grams left is open, sold out or sorted away. */
+/** Whether a lot with `remainingGrams` left is open, sold out or sorted away. */
 export function lotStatusFor(
   remainingGrams: number,
   moves: readonly Pick<Move, "kind" | "grams">[],
 ): LotStatus {
   if (remainingGrams > 0) return "open";
   let sold = 0;
-  let sorted = 0;
+  let other = 0;
   for (const move of moves) {
     if (move.kind === "sold") sold += move.grams;
-    else sorted += move.grams;
+    else other += move.grams;
   }
-  return sorted > sold ? "consumed" : "sold";
+  return other > sold ? "consumed" : "sold";
 }
 
 function isPositiveInteger(value: number): boolean {
@@ -148,12 +149,12 @@ function hasLeft(trade: Trade): boolean {
   return trade.status === "dispatched" || trade.status === "completed";
 }
 
-function leftAt(trade: Trade): number {
-  return reachedAt(trade, "dispatched") ?? completedAt(trade);
-}
-
 function completedAt(trade: Trade): number {
   return reachedAt(trade, "completed") ?? trade.updatedAt;
+}
+
+function leftAt(trade: Trade): number {
+  return reachedAt(trade, "dispatched") ?? completedAt(trade);
 }
 
 /**
@@ -180,14 +181,14 @@ function firstName(name: string | undefined): string | null {
   return first === undefined || first === "" ? null : first;
 }
 
-// --- Loading one business's lots ---------------------------------------------------
+// --- Loading one business's lots --------------------------------------------
 
-function materialRef(materials: Materials, code: string) {
+function materialRef(materials: Materials, code: string): MaterialRef {
   const material = materials.get(code);
   return {
     code,
     names: material?.names ?? { en: code },
-    family: material?.family ?? ("other" as const),
+    family: material?.family ?? "other",
   };
 }
 
@@ -213,79 +214,127 @@ async function runsOf(ctx: QueryCtx, orgId: Id<"orgs">): Promise<Run[]> {
     .take(MAX_LOTS);
 }
 
-/** Looks each business up once per request. */
-function orgLookup(ctx: QueryCtx) {
-  const cache = new Map<Id<"orgs">, Promise<Org | null>>();
-  return (id: Id<"orgs">) => {
-    let org = cache.get(id);
-    if (!org) {
-      org = ctx.db.get("orgs", id);
-      cache.set(id, org);
-    }
-    return org;
+async function childLotsOf(ctx: QueryCtx, run: Run): Promise<Lot[]> {
+  const sorted = await ctx.db
+    .query("lots")
+    .withIndex("by_origin", (q) =>
+      q.eq("origin", "sorting").eq("originId", run._id),
+    )
+    .take(MAX_OUTPUTS);
+  const produced = await ctx.db
+    .query("lots")
+    .withIndex("by_origin", (q) =>
+      q.eq("origin", "production").eq("originId", run._id),
+    )
+    .take(MAX_OUTPUTS);
+  return [...sorted, ...produced];
+}
+
+/** Everything the read functions share: caches and the viewer's business. */
+interface Reader {
+  ctx: QueryCtx;
+  viewer: Org;
+  materials: Materials;
+  orgOf: (id: Id<"orgs">) => Promise<Org | null>;
+  lotOf: (id: Id<"lots">) => Promise<Lot | null>;
+  shares: Map<Id<"lots">, Promise<number>>;
+}
+
+async function readerFor(
+  ctx: QueryCtx,
+  viewer: Org,
+  known: readonly Lot[],
+): Promise<Reader> {
+  const orgs = new Map<Id<"orgs">, Promise<Org | null>>();
+  const lots = new Map<Id<"lots">, Promise<Lot | null>>();
+  for (const lot of known) lots.set(lot._id, Promise.resolve(lot));
+  return {
+    ctx,
+    viewer,
+    materials: await materialIndex(ctx),
+    orgOf: (id) => {
+      let org = orgs.get(id);
+      if (!org) {
+        org = ctx.db.get("orgs", id);
+        orgs.set(id, org);
+      }
+      return org;
+    },
+    lotOf: (id) => {
+      let lot = lots.get(id);
+      if (!lot) {
+        lot = ctx.db.get("lots", id);
+        lots.set(id, lot);
+      }
+      return lot;
+    },
+    shares: new Map(),
   };
 }
 
-/** Looks each lot up once per request, whichever business owns it. */
-function lotLookup(ctx: QueryCtx, known: Iterable<Lot> = []) {
-  const cache = new Map<Id<"lots">, Promise<Lot | null>>();
-  for (const lot of known) cache.set(lot._id, Promise.resolve(lot));
-  return (id: Id<"lots">) => {
-    let lot = cache.get(id);
-    if (!lot) {
-      lot = ctx.db.get("lots", id);
-      cache.set(id, lot);
-    }
-    return lot;
-  };
+async function runOf(
+  ctx: QueryCtx,
+  originId: string,
+): Promise<Run | null> {
+  const runId = ctx.db.normalizeId("sortingRuns", originId);
+  return runId ? ctx.db.get("sortingRuns", runId) : null;
+}
+
+async function bookingOf(ctx: QueryCtx, originId: string) {
+  const bookingId = ctx.db.normalizeId("bookings", originId);
+  return bookingId ? ctx.db.get("bookings", bookingId) : null;
+}
+
+async function tradeOf(ctx: QueryCtx, originId: string) {
+  const tradeId = ctx.db.normalizeId("trades", originId);
+  return tradeId ? ctx.db.get("trades", tradeId) : null;
+}
+
+/** A run's outputs inherit their inputs' receipts, weighted by grams. */
+async function runShareOf(reader: Reader, run: Run | null): Promise<number> {
+  if (!run || run.inputs.length === 0) return 0;
+  let weighted = 0;
+  let total = 0;
+  for (const input of run.inputs) {
+    const parent = await reader.lotOf(input.lotId);
+    total += input.grams;
+    if (parent) weighted += input.grams * (await receiptShareOf(reader, parent));
+  }
+  return total === 0 ? 0 : weighted / total;
 }
 
 /**
  * How much of a lot has receipts behind it, 0 to 1. Pickups and purchases
  * are receipted at their own hand-off; opening stock never is; a sorting
- * run's outputs inherit their inputs' share, weighted by grams.
+ * run's outputs inherit their inputs' share.
  */
-async function receiptShareOf(
-  ctx: QueryCtx,
-  lotOf: ReturnType<typeof lotLookup>,
-  memo: Map<Id<"lots">, Promise<number>>,
-  lot: Lot,
-): Promise<number> {
-  const known = memo.get(lot._id);
+async function receiptShareOf(reader: Reader, lot: Lot): Promise<number> {
+  const known = reader.shares.get(lot._id);
   if (known) return known;
-  const share = (async () => {
-    switch (lot.origin) {
-      case "pickup":
-      case "purchase": {
-        return 1;
-      }
-      case "opening": {
-        return 0;
-      }
-      case "sorting":
-      case "production": {
-        const runId = ctx.db.normalizeId("sortingRuns", lot.originId);
-        const run = runId ? await ctx.db.get("sortingRuns", runId) : null;
-        if (!run || run.inputs.length === 0) return 0;
-        let weighted = 0;
-        let total = 0;
-        for (const input of run.inputs) {
-          const parent = await lotOf(input.lotId);
-          total += input.grams;
-          if (parent) {
-            weighted +=
-              input.grams * (await receiptShareOf(ctx, lotOf, memo, parent));
-          }
-        }
-        return total === 0 ? 0 : weighted / total;
-      }
+  let share: Promise<number>;
+  switch (lot.origin) {
+    case "pickup":
+    case "purchase": {
+      share = Promise.resolve(1);
+      break;
     }
-  })();
-  memo.set(lot._id, share);
+    case "opening": {
+      share = Promise.resolve(0);
+      break;
+    }
+    case "sorting":
+    case "production": {
+      share = runOf(reader.ctx, lot.originId).then((run) =>
+        runShareOf(reader, run),
+      );
+      break;
+    }
+  }
+  reader.shares.set(lot._id, share);
   return share;
 }
 
-// --- Result shapes ---------------------------------------------------------------
+// --- Result shapes ----------------------------------------------------------
 
 const vSource = v.union(
   v.object({ kind: v.literal("pickup"), area: v.union(v.string(), v.null()) }),
@@ -315,6 +364,8 @@ const vLotRow = v.object({
   source: vSource,
 });
 
+type LotRow = Infer<typeof vLotRow>;
+
 const vWentTo = v.object({
   name: v.string(),
   kind: vOrgKind,
@@ -338,6 +389,8 @@ const vMaterialGroup = v.object({
   wentTo: v.array(vWentTo),
   lots: v.array(vLotRow),
 });
+
+type MaterialGroup = Infer<typeof vMaterialGroup>;
 
 const vRunRow = v.object({
   id: v.id("sortingRuns"),
@@ -379,6 +432,8 @@ const vBalanceRow = v.object({
   bookStockGrams: v.number(),
   warnings: v.array(vBalanceWarning),
 });
+
+type BalanceRow = Infer<typeof vBalanceRow>;
 
 const vTraceNode = v.union(
   v.object({
@@ -466,6 +521,7 @@ const vChecklist = v.array(
 );
 
 export type CheckStatus = Infer<typeof vCheckStatus>;
+export type Checklist = Infer<typeof vChecklist>;
 
 const vLotDetail = v.object({
   lot: vLotRow,
@@ -476,26 +532,31 @@ const vLotDetail = v.object({
   creditReady: v.boolean(),
 });
 
-// --- Rows -------------------------------------------------------------------------
+const vRebuildResult = v.object({
+  lotsCreated: v.number(),
+  movesCreated: v.number(),
+  openingCreated: v.number(),
+});
+
+export type RebuildResult = Infer<typeof vRebuildResult>;
+
+// --- Rows -------------------------------------------------------------------
 
 async function sourceOf(
-  ctx: QueryCtx,
-  orgOf: ReturnType<typeof orgLookup>,
+  reader: Reader,
   lot: Lot,
-  city: string,
 ): Promise<Infer<typeof vSource>> {
   switch (lot.origin) {
     case "pickup": {
-      const bookingId = ctx.db.normalizeId("bookings", lot.originId);
-      const booking = bookingId
-        ? await ctx.db.get("bookings", bookingId)
-        : null;
-      return { kind: "pickup", area: areaOf(booking?.address, city) };
+      const booking = await bookingOf(reader.ctx, lot.originId);
+      return {
+        kind: "pickup",
+        area: areaOf(booking?.address, reader.viewer.city),
+      };
     }
     case "purchase": {
-      const tradeId = ctx.db.normalizeId("trades", lot.originId);
-      const trade = tradeId ? await ctx.db.get("trades", tradeId) : null;
-      const seller = trade ? await orgOf(trade.sellerOrgId) : null;
+      const trade = await tradeOf(reader.ctx, lot.originId);
+      const seller = trade ? await reader.orgOf(trade.sellerOrgId) : null;
       return {
         kind: "purchase",
         sellerName: seller?.name ?? "",
@@ -504,9 +565,8 @@ async function sourceOf(
     }
     case "sorting":
     case "production": {
-      const runId = ctx.db.normalizeId("sortingRuns", lot.originId);
-      const run = runId ? await ctx.db.get("sortingRuns", runId) : null;
-      return { kind: "run", runId, date: run?.date ?? null };
+      const run = await runOf(reader.ctx, lot.originId);
+      return { kind: "run", runId: run?._id ?? null, date: run?.date ?? null };
     }
     case "opening": {
       return { kind: "opening" };
@@ -514,24 +574,17 @@ async function sourceOf(
   }
 }
 
-async function lotRow(
-  ctx: QueryCtx,
-  lot: Lot,
-  org: Org,
-  materials: Materials,
-  orgOf: ReturnType<typeof orgLookup>,
-  receiptShare: number,
-): Promise<Infer<typeof vLotRow>> {
+async function lotRow(reader: Reader, lot: Lot): Promise<LotRow> {
   return {
     id: lot._id,
-    material: materialRef(materials, lot.materialCode),
+    material: materialRef(reader.materials, lot.materialCode),
     grams: lot.grams,
     remainingGrams: lot.remainingGrams,
     origin: lot.origin,
     status: lot.status,
     createdAt: lot.createdAt,
-    receiptShare,
-    source: await sourceOf(ctx, orgOf, lot, org.city),
+    receiptShare: await receiptShareOf(reader, lot),
+    source: await sourceOf(reader, lot),
   };
 }
 
@@ -552,7 +605,84 @@ function runRow(run: Run, materials: Materials): Infer<typeof vRunRow> {
   };
 }
 
-// --- Queries ----------------------------------------------------------------------
+// --- Lots by material -------------------------------------------------------
+
+type Grouping = MaterialGroup & { buyers: Map<Id<"orgs">, number> };
+
+function emptyGroup(material: MaterialRef): Grouping {
+  return {
+    material,
+    openGrams: 0,
+    lotCount: 0,
+    origins: { pickup: 0, purchase: 0, sorting: 0, production: 0, opening: 0 },
+    wentTo: [],
+    lots: [],
+    buyers: new Map(),
+  };
+}
+
+/** Who bought from a lot and how much, from its "sold" moves. */
+async function addBuyers(reader: Reader, lot: Lot, buyers: Map<Id<"orgs">, number>) {
+  const moves = await movesOf(reader.ctx, lot._id);
+  for (const move of moves) {
+    if (move.kind !== "sold" || !move.tradeId) continue;
+    const trade = await reader.ctx.db.get("trades", move.tradeId);
+    if (!trade) continue;
+    buyers.set(trade.buyerOrgId, (buyers.get(trade.buyerOrgId) ?? 0) + move.grams);
+  }
+}
+
+async function finishGroup(reader: Reader, group: Grouping): Promise<MaterialGroup> {
+  const { buyers, ...rest } = group;
+  const wentTo: Infer<typeof vWentTo>[] = [];
+  for (const [buyerId, grams] of buyers) {
+    const buyer = await reader.orgOf(buyerId);
+    if (buyer) wentTo.push({ name: buyer.name, kind: buyer.kind, grams });
+  }
+  return { ...rest, wentTo: wentTo.toSorted((a, b) => b.grams - a.grams) };
+}
+
+interface Totals {
+  openGrams: number;
+  lotCount: number;
+  receiptedGrams: number;
+}
+
+/** Newest lots first, grouped by material, with who bought from each group. */
+async function groupLots(
+  reader: Reader,
+  lots: readonly Lot[],
+): Promise<{ groups: MaterialGroup[]; totals: Totals }> {
+  const groups = new Map<string, Grouping>();
+  const totals: Totals = { openGrams: 0, lotCount: 0, receiptedGrams: 0 };
+  const newestFirst = lots.toSorted((a, b) => b.createdAt - a.createdAt);
+  for (const lot of newestFirst) {
+    const row = await lotRow(reader, lot);
+    let group = groups.get(lot.materialCode);
+    if (!group) {
+      group = emptyGroup(row.material);
+      groups.set(lot.materialCode, group);
+    }
+    group.lots.push(row);
+    group.lotCount += 1;
+    group.openGrams += lot.remainingGrams;
+    group.origins[lot.origin] += 1;
+    totals.lotCount += 1;
+    totals.openGrams += lot.remainingGrams;
+    totals.receiptedGrams += Math.round(lot.remainingGrams * row.receiptShare);
+    await addBuyers(reader, lot, group.buyers);
+  }
+  const finished: MaterialGroup[] = [];
+  for (const group of groups.values()) {
+    finished.push(await finishGroup(reader, group));
+  }
+  return {
+    groups: finished.toSorted(
+      (a, b) => b.openGrams - a.openGrams || b.lotCount - a.lotCount,
+    ),
+    totals,
+  };
+}
 
 /**
  * `/app/lots`: my lots grouped by material — kilos on hand, where they came
@@ -573,84 +703,174 @@ export const mine = query({
   }),
   handler: async (ctx) => {
     const { org } = await requireOrg(ctx);
-    const materials = await materialIndex(ctx);
-    const orgOf = orgLookup(ctx);
     const lots = await lotsOf(ctx, org._id);
-    const lotOf = lotLookup(ctx, lots);
-    const shares = new Map<Id<"lots">, Promise<number>>();
-
-    const groups = new Map<
-      string,
-      Infer<typeof vMaterialGroup> & { buyers: Map<Id<"orgs">, number> }
-    >();
-    const totals = { openGrams: 0, lotCount: 0, receiptedGrams: 0 };
-
-    for (const lot of lots.toSorted((a, b) => b.createdAt - a.createdAt)) {
-      const share = await receiptShareOf(ctx, lotOf, shares, lot);
-      const row = await lotRow(ctx, lot, org, materials, orgOf, share);
-      let group = groups.get(lot.materialCode);
-      if (!group) {
-        group = {
-          material: materialRef(materials, lot.materialCode),
-          openGrams: 0,
-          lotCount: 0,
-          origins: {
-            pickup: 0,
-            purchase: 0,
-            sorting: 0,
-            production: 0,
-            opening: 0,
-          },
-          wentTo: [],
-          lots: [],
-          buyers: new Map(),
-        };
-        groups.set(lot.materialCode, group);
-      }
-      group.lots.push(row);
-      group.lotCount += 1;
-      group.openGrams += lot.remainingGrams;
-      group.origins[lot.origin] += 1;
-      totals.lotCount += 1;
-      totals.openGrams += lot.remainingGrams;
-      totals.receiptedGrams += Math.round(lot.remainingGrams * share);
-
-      for (const move of await movesOf(ctx, lot._id)) {
-        if (move.kind !== "sold" || !move.tradeId) continue;
-        const trade = await ctx.db.get("trades", move.tradeId);
-        if (!trade) continue;
-        group.buyers.set(
-          trade.buyerOrgId,
-          (group.buyers.get(trade.buyerOrgId) ?? 0) + move.grams,
-        );
-      }
-    }
-
-    const result = [];
-    for (const group of groups.values()) {
-      const { buyers, ...rest } = group;
-      const wentTo = [];
-      for (const [buyerId, grams] of buyers) {
-        const buyer = await orgOf(buyerId);
-        if (buyer) wentTo.push({ name: buyer.name, kind: buyer.kind, grams });
-      }
-      result.push({
-        ...rest,
-        wentTo: wentTo.toSorted((a, b) => b.grams - a.grams),
-      });
-    }
-
+    const reader = await readerFor(ctx, org, lots);
+    const { groups, totals } = await groupLots(reader, lots);
     const runs = await runsOf(ctx, org._id);
     return {
       kind: org.kind,
-      groups: result.toSorted(
-        (a, b) => b.openGrams - a.openGrams || b.lotCount - a.lotCount,
-      ),
-      runs: runs.slice(0, 10).map((run) => runRow(run, materials)),
+      groups,
+      runs: runs.slice(0, 10).map((run) => runRow(run, reader.materials)),
       totals,
     };
   },
 });
+
+/**
+ * "Record a sorting run": my open lots to pick inputs from, and the active
+ * materials the outputs can be.
+ */
+export const openLots = query({
+  args: {},
+  returns: v.object({
+    lots: v.array(vLotRow),
+    materials: v.array(
+      v.object({
+        code: v.string(),
+        names: v.record(v.string(), v.string()),
+        family: vMaterialRef.fields.family,
+        stage: v.union(v.literal("scrap"), v.literal("recycled")),
+      }),
+    ),
+  }),
+  handler: async (ctx) => {
+    const { org } = await requireOrg(ctx);
+    const all = await lotsOf(ctx, org._id);
+    const open = all.filter(
+      (lot) => lot.status === "open" && lot.remainingGrams > 0,
+    );
+    const reader = await readerFor(ctx, org, open);
+    const lots: LotRow[] = [];
+    const oldestFirst = open.toSorted((a, b) => a.createdAt - b.createdAt);
+    for (const lot of oldestFirst) lots.push(await lotRow(reader, lot));
+    const materials = [];
+    for (const material of reader.materials.values()) {
+      if (!material.active) continue;
+      materials.push({
+        code: material.code,
+        names: material.names,
+        family: material.family,
+        stage: material.stage,
+      });
+    }
+    return { lots, materials };
+  },
+});
+
+// --- Mass balance -----------------------------------------------------------
+
+function emptyBalanceRow(material: MaterialRef): BalanceRow {
+  return {
+    material,
+    openingGrams: 0,
+    receivedGrams: 0,
+    producedGrams: 0,
+    consumedGrams: 0,
+    rejectGrams: 0,
+    soldGrams: 0,
+    inTransitGrams: 0,
+    soldWithoutReceiptsGrams: 0,
+    unmatchedGrams: 0,
+    lotStockGrams: 0,
+    bookStockGrams: 0,
+    warnings: [],
+  };
+}
+
+function addLotToBalance(row: BalanceRow, lot: Lot) {
+  row.lotStockGrams += lot.remainingGrams;
+  switch (lot.origin) {
+    case "opening": {
+      row.openingGrams += lot.grams;
+      break;
+    }
+    case "pickup":
+    case "purchase": {
+      row.receivedGrams += lot.grams;
+      break;
+    }
+    case "sorting":
+    case "production": {
+      row.producedGrams += lot.grams;
+      break;
+    }
+  }
+}
+
+/** Sold moves count against receipts; every other move is stock sorted or used. */
+function addMovesToBalance(
+  row: BalanceRow,
+  moves: readonly Move[],
+  share: number,
+): number {
+  let matched = 0;
+  for (const move of moves) {
+    if (move.kind === "sold") {
+      row.soldWithoutReceiptsGrams += Math.round(move.grams * (1 - share));
+      matched += move.grams;
+    } else {
+      row.consumedGrams += move.grams;
+    }
+  }
+  return matched;
+}
+
+/** Rejects belong to the materials that went in, in proportion. */
+async function addRejects(
+  reader: Reader,
+  rowFor: (code: string) => BalanceRow,
+) {
+  const runs = await runsOf(reader.ctx, reader.viewer._id);
+  for (const run of runs) {
+    const total = run.inputs.reduce((sum, input) => sum + input.grams, 0);
+    if (run.rejectGrams === 0 || total === 0) continue;
+    for (const input of run.inputs) {
+      const parent = await reader.lotOf(input.lotId);
+      if (!parent) continue;
+      rowFor(parent.materialCode).rejectGrams += Math.round(
+        (run.rejectGrams * input.grams) / total,
+      );
+    }
+  }
+}
+
+async function addSales(ctx: QueryCtx, orgId: Id<"orgs">, rowFor: (code: string) => BalanceRow) {
+  const sales = await ctx.db
+    .query("trades")
+    .withIndex("by_seller", (q) => q.eq("sellerOrgId", orgId))
+    .order("desc")
+    .take(MAX_ROWS);
+  for (const trade of sales) {
+    if (!hasLeft(trade)) continue;
+    const row = rowFor(trade.materialCode);
+    if (trade.status === "completed") row.soldGrams += trade.grams;
+    else row.inTransitGrams += trade.grams;
+  }
+}
+
+async function addBook(
+  ctx: QueryCtx,
+  orgId: Id<"orgs">,
+  rows: Map<string, BalanceRow>,
+  rowFor: (code: string) => BalanceRow,
+) {
+  const inventory = await ctx.db
+    .query("inventory")
+    .withIndex("by_org", (q) => q.eq("orgId", orgId))
+    .take(MAX_LOTS);
+  for (const item of inventory) {
+    if (item.grams <= 0 && !rows.has(item.materialCode)) continue;
+    rowFor(item.materialCode).bookStockGrams += item.grams;
+  }
+}
+
+function finishBalance(row: BalanceRow, matchedGrams: number) {
+  const gone = row.soldGrams + row.inTransitGrams;
+  row.unmatchedGrams = Math.max(0, gone - matchedGrams);
+  row.soldWithoutReceiptsGrams += row.unmatchedGrams;
+  if (row.unmatchedGrams > 0) row.warnings.push("sold_more_than_received");
+  if (row.bookStockGrams !== row.lotStockGrams) row.warnings.push("book_differs");
+}
 
 /**
  * Per material: what came in, what went out and what's left, from the lots
@@ -665,118 +885,43 @@ export const massBalance = query({
   }),
   handler: async (ctx) => {
     const { org } = await requireOrg(ctx);
-    const materials = await materialIndex(ctx);
     const lots = await lotsOf(ctx, org._id);
-    const lotOf = lotLookup(ctx, lots);
-    const shares = new Map<Id<"lots">, Promise<number>>();
-
-    const rows = new Map<string, Infer<typeof vBalanceRow>>();
+    const reader = await readerFor(ctx, org, lots);
+    const rows = new Map<string, BalanceRow>();
     const rowFor = (code: string) => {
       let row = rows.get(code);
       if (!row) {
-        row = {
-          material: materialRef(materials, code),
-          openingGrams: 0,
-          receivedGrams: 0,
-          producedGrams: 0,
-          consumedGrams: 0,
-          rejectGrams: 0,
-          soldGrams: 0,
-          inTransitGrams: 0,
-          soldWithoutReceiptsGrams: 0,
-          unmatchedGrams: 0,
-          lotStockGrams: 0,
-          bookStockGrams: 0,
-          warnings: [],
-        };
+        row = emptyBalanceRow(materialRef(reader.materials, code));
         rows.set(code, row);
       }
       return row;
     };
 
-    const matchedByMaterial = new Map<string, number>();
+    const matched = new Map<string, number>();
     for (const lot of lots) {
       const row = rowFor(lot.materialCode);
-      row.lotStockGrams += lot.remainingGrams;
-      switch (lot.origin) {
-        case "opening": {
-          row.openingGrams += lot.grams;
-          break;
-        }
-        case "pickup":
-        case "purchase": {
-          row.receivedGrams += lot.grams;
-          break;
-        }
-        case "sorting":
-        case "production": {
-          row.producedGrams += lot.grams;
-          break;
-        }
-      }
-      const share = await receiptShareOf(ctx, lotOf, shares, lot);
-      for (const move of await movesOf(ctx, lot._id)) {
-        if (move.kind === "sold") {
-          row.soldWithoutReceiptsGrams += Math.round(move.grams * (1 - share));
-          matchedByMaterial.set(
-            lot.materialCode,
-            (matchedByMaterial.get(lot.materialCode) ?? 0) + move.grams,
-          );
-        } else {
-          row.consumedGrams += move.grams;
-        }
-      }
+      addLotToBalance(row, lot);
+      const share = await receiptShareOf(reader, lot);
+      const moves = await movesOf(ctx, lot._id);
+      matched.set(
+        lot.materialCode,
+        (matched.get(lot.materialCode) ?? 0) +
+          addMovesToBalance(row, moves, share),
+      );
     }
+    await addRejects(reader, rowFor);
+    await addSales(ctx, org._id, rowFor);
+    await addBook(ctx, org._id, rows, rowFor);
 
-    // Rejects belong to the materials that went in, in proportion.
-    for (const run of await runsOf(ctx, org._id)) {
-      if (run.rejectGrams === 0) continue;
-      const total = run.inputs.reduce((sum, input) => sum + input.grams, 0);
-      for (const input of run.inputs) {
-        const parent = await lotOf(input.lotId);
-        if (!parent || total === 0) continue;
-        rowFor(parent.materialCode).rejectGrams += Math.round(
-          (run.rejectGrams * input.grams) / total,
-        );
-      }
-    }
-
-    const sales = await ctx.db
-      .query("trades")
-      .withIndex("by_seller", (q) => q.eq("sellerOrgId", org._id))
-      .order("desc")
-      .take(MAX_ROWS);
-    for (const trade of sales) {
-      if (!hasLeft(trade)) continue;
-      const row = rowFor(trade.materialCode);
-      if (trade.status === "completed") row.soldGrams += trade.grams;
-      else row.inTransitGrams += trade.grams;
-    }
-
-    const inventory = await ctx.db
-      .query("inventory")
-      .withIndex("by_org", (q) => q.eq("orgId", org._id))
-      .take(MAX_LOTS);
-    for (const item of inventory) {
-      if (item.grams <= 0 && !rows.has(item.materialCode)) continue;
-      rowFor(item.materialCode).bookStockGrams += item.grams;
-    }
-
+    const result: BalanceRow[] = [];
     let warningCount = 0;
     for (const row of rows.values()) {
-      const gone = row.soldGrams + row.inTransitGrams;
-      const matched = matchedByMaterial.get(row.material.code) ?? 0;
-      row.unmatchedGrams = Math.max(0, gone - matched);
-      row.soldWithoutReceiptsGrams += row.unmatchedGrams;
-      if (row.unmatchedGrams > 0) row.warnings.push("sold_more_than_received");
-      if (row.bookStockGrams !== row.lotStockGrams) {
-        row.warnings.push("book_differs");
-      }
+      finishBalance(row, matched.get(row.material.code) ?? 0);
       warningCount += row.warnings.length;
+      result.push(row);
     }
-
     return {
-      rows: [...rows.values()].toSorted(
+      rows: result.toSorted(
         (a, b) =>
           b.warnings.length - a.warnings.length ||
           b.lotStockGrams - a.lotStockGrams,
@@ -786,16 +931,15 @@ export const massBalance = query({
   },
 });
 
-// --- Tracing -------------------------------------------------------------------------
+// --- Tracing ----------------------------------------------------------------
 
-interface Tracer {
-  ctx: QueryCtx;
-  viewer: Org;
-  materials: Materials;
-  orgOf: ReturnType<typeof orgLookup>;
-  lotOf: ReturnType<typeof lotLookup>;
+interface Tracer extends Reader {
   nodes: TraceNode[];
   seen: Set<string>;
+}
+
+function tracerFor(reader: Reader): Tracer {
+  return { ...reader, nodes: [], seen: new Set() };
 }
 
 function orgName(org: Org | null): string {
@@ -803,15 +947,36 @@ function orgName(org: Org | null): string {
 }
 
 /** Adds a node unless the tree is already as wide as it may be. */
-function push(tracer: Tracer, node: TraceNode): boolean {
-  if (tracer.nodes.length >= TRACE_NODES) {
-    const last = tracer.nodes.at(-1);
-    if (last?.kind === "more") last.count += 1;
-    else tracer.nodes.push({ kind: "more", depth: node.depth, count: 1 });
-    return false;
+function didAdd(tracer: Tracer, node: TraceNode): boolean {
+  if (tracer.nodes.length < TRACE_NODES) {
+    tracer.nodes.push(node);
+    return true;
   }
-  tracer.nodes.push(node);
-  return true;
+  const last = tracer.nodes.at(-1);
+  if (last?.kind === "more") last.count += 1;
+  else tracer.nodes.push({ kind: "more", depth: node.depth, count: 1 });
+  return false;
+}
+
+function lotNode(
+  tracer: Tracer,
+  lot: Lot,
+  depth: number,
+  grams: number,
+  owner: Org | null,
+): TraceNode {
+  return {
+    kind: "lot",
+    depth,
+    lotId: lot._id,
+    isMine: lot.orgId === tracer.viewer._id,
+    orgName: orgName(owner),
+    material: materialRef(tracer.materials, lot.materialCode),
+    grams,
+    origin: lot.origin,
+    status: lot.status,
+    createdAt: lot.createdAt,
+  };
 }
 
 function tradeNode(
@@ -853,8 +1018,102 @@ function runNode(run: Run, depth: number, owner: Org | null): TraceNode {
 }
 
 /** Kilos of `part` attributed when `whole` is split over `share` of `total`. */
-function portion(part: number, share: number, total: number): number {
-  return total === 0 ? 0 : Math.round((part * share) / total);
+function portion(whole: number, share: number, total: number): number {
+  return total === 0 ? 0 : Math.round((whole * share) / total);
+}
+
+async function backFromPickup(
+  tracer: Tracer,
+  lot: Lot,
+  grams: number,
+  depth: number,
+) {
+  const booking = await bookingOf(tracer.ctx, lot.originId);
+  if (!booking?.receipt) return;
+  const line = booking.receipt.lines.find(
+    (item) => item.materialCode === lot.materialCode,
+  );
+  const shop = await tracer.orgOf(booking.orgId);
+  const isMine = booking.orgId === tracer.viewer._id;
+  didAdd(tracer, {
+    kind: "pickup",
+    depth,
+    at: booking.receipt.paidAt,
+    shopName: orgName(shop),
+    area: areaOf(booking.address, shop?.city ?? tracer.viewer.city),
+    household: isMine ? firstName(booking.name) : null,
+    grams: line?.grams ?? grams,
+    paise: line?.paise ?? 0,
+    method: booking.receipt.method,
+  });
+}
+
+/** The trade, then the seller's lots it was matched to by mass balance. */
+async function backFromPurchase(
+  tracer: Tracer,
+  lot: Lot,
+  grams: number,
+  depth: number,
+) {
+  const trade = await tradeOf(tracer.ctx, lot.originId);
+  if (!trade) return;
+  const seller = await tracer.orgOf(trade.sellerOrgId);
+  const buyer = await tracer.orgOf(trade.buyerOrgId);
+  if (!didAdd(tracer, tradeNode(trade, depth, grams, seller, buyer))) return;
+  const moves = await tracer.ctx.db
+    .query("lotMoves")
+    .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
+    .take(MAX_LOTS);
+  for (const move of moves) {
+    const source = await tracer.lotOf(move.lotId);
+    if (!source) continue;
+    await traceLotBack(
+      tracer,
+      source,
+      portion(grams, move.grams, trade.grams),
+      depth + 1,
+    );
+  }
+}
+
+/** The run, then each input lot in proportion to what it put in. */
+async function backFromRun(
+  tracer: Tracer,
+  lot: Lot,
+  grams: number,
+  depth: number,
+) {
+  const run = await runOf(tracer.ctx, lot.originId);
+  if (!run) return;
+  const owner = await tracer.orgOf(run.orgId);
+  if (!didAdd(tracer, runNode(run, depth, owner))) return;
+  const total = run.inputs.reduce((sum, input) => sum + input.grams, 0);
+  for (const input of run.inputs) {
+    const parent = await tracer.lotOf(input.lotId);
+    if (!parent) continue;
+    await traceLotBack(
+      tracer,
+      parent,
+      portion(grams, input.grams, total),
+      depth + 1,
+    );
+  }
+}
+
+async function backFromOpening(
+  tracer: Tracer,
+  lot: Lot,
+  grams: number,
+  depth: number,
+) {
+  const owner = await tracer.orgOf(lot.orgId);
+  didAdd(tracer, {
+    kind: "opening",
+    depth,
+    orgName: orgName(owner),
+    grams,
+    createdAt: lot.createdAt,
+  });
 }
 
 /**
@@ -868,90 +1127,23 @@ async function traceBack(
   grams: number,
   depth: number,
 ): Promise<void> {
-  const { ctx } = tracer;
   if (depth > TRACE_DEPTH) {
-    push(tracer, { kind: "more", depth, count: 1 });
+    didAdd(tracer, { kind: "more", depth, count: 1 });
     return;
   }
   switch (lot.origin) {
     case "pickup": {
-      const bookingId = ctx.db.normalizeId("bookings", lot.originId);
-      const booking = bookingId
-        ? await ctx.db.get("bookings", bookingId)
-        : null;
-      if (!booking?.receipt) return;
-      const line = booking.receipt.lines.find(
-        (item) => item.materialCode === lot.materialCode,
-      );
-      const shop = await tracer.orgOf(booking.orgId);
-      const isMine = booking.orgId === tracer.viewer._id;
-      push(tracer, {
-        kind: "pickup",
-        depth,
-        at: booking.receipt.paidAt,
-        shopName: orgName(shop),
-        area: areaOf(booking.address, shop?.city ?? tracer.viewer.city),
-        household: isMine ? firstName(booking.name) : null,
-        grams: line?.grams ?? grams,
-        paise: line?.paise ?? 0,
-        method: booking.receipt.method,
-      });
-      return;
+      return backFromPickup(tracer, lot, grams, depth);
     }
     case "purchase": {
-      const tradeId = ctx.db.normalizeId("trades", lot.originId);
-      const trade = tradeId ? await ctx.db.get("trades", tradeId) : null;
-      if (!trade) return;
-      const seller = await tracer.orgOf(trade.sellerOrgId);
-      const buyer = await tracer.orgOf(trade.buyerOrgId);
-      if (!push(tracer, tradeNode(trade, depth, grams, seller, buyer))) return;
-      // The seller's lots this trade was matched to, by mass balance.
-      const moves = await ctx.db
-        .query("lotMoves")
-        .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
-        .take(MAX_LOTS);
-      for (const move of moves) {
-        const source = await tracer.lotOf(move.lotId);
-        if (!source) continue;
-        await traceLotBack(
-          tracer,
-          source,
-          portion(grams, move.grams, trade.grams),
-          depth + 1,
-        );
-      }
-      return;
+      return backFromPurchase(tracer, lot, grams, depth);
     }
     case "sorting":
     case "production": {
-      const runId = ctx.db.normalizeId("sortingRuns", lot.originId);
-      const run = runId ? await ctx.db.get("sortingRuns", runId) : null;
-      if (!run) return;
-      const owner = await tracer.orgOf(run.orgId);
-      if (!push(tracer, runNode(run, depth, owner))) return;
-      const total = run.inputs.reduce((sum, input) => sum + input.grams, 0);
-      for (const input of run.inputs) {
-        const parent = await tracer.lotOf(input.lotId);
-        if (!parent) continue;
-        await traceLotBack(
-          tracer,
-          parent,
-          portion(grams, input.grams, total),
-          depth + 1,
-        );
-      }
-      return;
+      return backFromRun(tracer, lot, grams, depth);
     }
     case "opening": {
-      const owner = await tracer.orgOf(lot.orgId);
-      push(tracer, {
-        kind: "opening",
-        depth,
-        orgName: orgName(owner),
-        grams,
-        createdAt: lot.createdAt,
-      });
-      return;
+      return backFromOpening(tracer, lot, grams, depth);
     }
   }
 }
@@ -967,85 +1159,64 @@ async function traceLotBack(
   if (tracer.seen.has(key)) return;
   tracer.seen.add(key);
   const owner = await tracer.orgOf(lot.orgId);
-  const shown = push(tracer, {
-    kind: "lot",
-    depth,
-    lotId: lot._id,
-    isMine: lot.orgId === tracer.viewer._id,
-    orgName: orgName(owner),
-    material: materialRef(tracer.materials, lot.materialCode),
-    grams,
-    origin: lot.origin,
-    status: lot.status,
-    createdAt: lot.createdAt,
-  });
-  if (shown) await traceBack(tracer, lot, grams, depth + 1);
+  const isShown = didAdd(tracer, lotNode(tracer, lot, depth, grams, owner));
+  if (isShown) await traceBack(tracer, lot, grams, depth + 1);
 }
 
-/**
- * Forward to where the kilos went: sales to the buyer (one hop — the buyer's
- * own onward sales are theirs to show), and sorting runs to their outputs.
- */
+/** A sale to the buyer: one hop — the buyer's onward sales are theirs to show. */
+async function forwardSale(tracer: Tracer, move: Move, depth: number) {
+  if (!move.tradeId) return;
+  const trade = await tracer.ctx.db.get("trades", move.tradeId);
+  if (!trade) return;
+  const seller = await tracer.orgOf(trade.sellerOrgId);
+  const buyer = await tracer.orgOf(trade.buyerOrgId);
+  didAdd(tracer, tradeNode(trade, depth, move.grams, seller, buyer));
+}
+
+/** A sorting run and the lots it made, each traced onward. */
+async function forwardRun(
+  tracer: Tracer,
+  runId: Id<"sortingRuns">,
+  depth: number,
+) {
+  const run = await tracer.ctx.db.get("sortingRuns", runId);
+  if (!run) return;
+  const owner = await tracer.orgOf(run.orgId);
+  if (!didAdd(tracer, runNode(run, depth, owner))) return;
+  const children = await childLotsOf(tracer.ctx, run);
+  for (const child of children) {
+    const node = lotNode(tracer, child, depth + 1, child.grams, owner);
+    if (didAdd(tracer, node)) await traceForward(tracer, child, depth + 2);
+  }
+}
+
+/** Forward to where the kilos went: sales and sorting runs, in time order. */
 async function traceForward(
   tracer: Tracer,
   lot: Lot,
   depth: number,
 ): Promise<void> {
-  const { ctx } = tracer;
   if (depth > TRACE_DEPTH) {
-    push(tracer, { kind: "more", depth, count: 1 });
+    didAdd(tracer, { kind: "more", depth, count: 1 });
     return;
   }
   const key = `forward:${lot._id}`;
   if (tracer.seen.has(key)) return;
   tracer.seen.add(key);
-  const moves = (await movesOf(ctx, lot._id)).toSorted((a, b) => a.at - b.at);
+  const moves = await movesOf(tracer.ctx, lot._id);
+  const inOrder = moves.toSorted((a, b) => a.at - b.at);
   const runsShown = new Set<Id<"sortingRuns">>();
-  for (const move of moves) {
-    if (move.kind === "sold" && move.tradeId) {
-      const trade = await ctx.db.get("trades", move.tradeId);
-      if (!trade) continue;
-      const seller = await tracer.orgOf(trade.sellerOrgId);
-      const buyer = await tracer.orgOf(trade.buyerOrgId);
-      push(tracer, tradeNode(trade, depth, move.grams, seller, buyer));
+  for (const move of inOrder) {
+    if (move.kind === "sold") {
+      await forwardSale(tracer, move, depth);
     } else if (move.sortingRunId && !runsShown.has(move.sortingRunId)) {
       runsShown.add(move.sortingRunId);
-      const run = await ctx.db.get("sortingRuns", move.sortingRunId);
-      if (!run) continue;
-      const owner = await tracer.orgOf(run.orgId);
-      if (!push(tracer, runNode(run, depth, owner))) return;
-      const children = [
-        ...(await ctx.db
-          .query("lots")
-          .withIndex("by_origin", (q) =>
-            q.eq("origin", "sorting").eq("originId", run._id),
-          )
-          .take(MAX_OUTPUTS)),
-        ...(await ctx.db
-          .query("lots")
-          .withIndex("by_origin", (q) =>
-            q.eq("origin", "production").eq("originId", run._id),
-          )
-          .take(MAX_OUTPUTS)),
-      ];
-      for (const child of children) {
-        const shown = push(tracer, {
-          kind: "lot",
-          depth: depth + 1,
-          lotId: child._id,
-          isMine: child.orgId === tracer.viewer._id,
-          orgName: orgName(owner),
-          material: materialRef(tracer.materials, child.materialCode),
-          grams: child.grams,
-          origin: child.origin,
-          status: child.status,
-          createdAt: child.createdAt,
-        });
-        if (shown) await traceForward(tracer, child, depth + 2);
-      }
+      await forwardRun(tracer, move.sortingRunId, depth);
     }
   }
 }
+
+// --- Credit readiness -------------------------------------------------------
 
 /** Done when all of it is covered, partial when some is, missing when none. */
 function coverage(covered: number, total: number): CheckStatus {
@@ -1062,24 +1233,18 @@ function coverage(covered: number, total: number): CheckStatus {
 export function readinessOf(
   receiptShare: number,
   forward: readonly TraceNode[],
-): { checklist: { id: Infer<typeof vCheckItem>; status: CheckStatus }[] } {
+): Checklist {
   const receipted = coverage(receiptShare, 1);
   const sales = forward.filter((node) => node.kind === "trade");
+  const consented = sales.filter((sale) => sale.buyerConsent).length;
   const consent: CheckStatus =
-    sales.length === 0
-      ? "not_yet"
-      : coverage(
-          sales.filter((sale) => sale.buyerConsent).length,
-          sales.length,
-        );
-  return {
-    checklist: [
-      { id: "weighed", status: receipted },
-      { id: "both_sides", status: receipted },
-      { id: "paid", status: receipted },
-      { id: "receiver_consent", status: consent },
-    ],
-  };
+    sales.length === 0 ? "not_yet" : coverage(consented, sales.length);
+  return [
+    { id: "weighed", status: receipted },
+    { id: "both_sides", status: receipted },
+    { id: "paid", status: receipted },
+    { id: "receiver_consent", status: consent },
+  ];
 }
 
 async function lotDetail(
@@ -1087,26 +1252,13 @@ async function lotDetail(
   org: Org,
   lot: Lot,
 ): Promise<Infer<typeof vLotDetail>> {
-  const materials = await materialIndex(ctx);
-  const orgOf = orgLookup(ctx);
-  const lotOf = lotLookup(ctx, [lot]);
-  const share = await receiptShareOf(ctx, lotOf, new Map(), lot);
-  const row = await lotRow(ctx, lot, org, materials, orgOf, share);
-
-  const back: Tracer = {
-    ctx,
-    viewer: org,
-    materials,
-    orgOf,
-    lotOf,
-    nodes: [],
-    seen: new Set(),
-  };
+  const reader = await readerFor(ctx, org, [lot]);
+  const row = await lotRow(reader, lot);
+  const back = tracerFor(reader);
   await traceBack(back, lot, lot.grams, 0);
-  const forward: Tracer = { ...back, nodes: [], seen: new Set() };
+  const forward = tracerFor(reader);
   await traceForward(forward, lot, 0);
-
-  const { checklist } = readinessOf(share, forward.nodes);
+  const checklist = readinessOf(row.receiptShare, forward.nodes);
   return {
     lot: row,
     business: { name: org.name, kind: org.kind },
@@ -1203,7 +1355,12 @@ export const evidencePack = query({
   },
 });
 
-// --- Stock book ------------------------------------------------------------------------
+// --- Stock book -------------------------------------------------------------
+
+interface Actor {
+  orgId: Id<"orgs">;
+  profileId?: Id<"profiles">;
+}
 
 /**
  * Adds (or, negative, takes) grams of one material in the stock book, the
@@ -1212,7 +1369,7 @@ export const evidencePack = query({
  */
 async function adjustStock(
   ctx: MutationCtx,
-  actor: { orgId: Id<"orgs">; profileId?: Id<"profiles"> },
+  actor: Actor,
   materialCode: string,
   deltaGrams: number,
   runId: Id<"sortingRuns">,
@@ -1248,35 +1405,152 @@ async function adjustStock(
   });
 }
 
-// --- Sorting runs ------------------------------------------------------------------------
+// --- Sorting runs -----------------------------------------------------------
 
-/** One line per lot or material (repeats are added up), every gram a positive integer. */
-function merged<T extends { grams: number }, K extends keyof T>(
-  lines: readonly T[],
-  key: K,
-  max: number,
-  emptyCode: string,
-  tooMany: string,
-): T[] {
-  if (lines.length === 0) throw new ConvexError(emptyCode);
-  if (lines.length > max) throw new ConvexError(tooMany);
-  const byKey = new Map<T[K], T>();
-  for (const line of lines) {
-    if (!isPositiveInteger(line.grams)) throw new ConvexError("INVALID_WEIGHT");
-    const known = byKey.get(line[key]);
-    if (known) known.grams += line.grams;
-    else byKey.set(line[key], { ...line });
-  }
-  return [...byKey.values()];
+interface InputLine {
+  lotId: Id<"lots">;
+  grams: number;
 }
 
-interface RunInput {
-  inputs: { lotId: Id<"lots">; grams: number }[];
-  outputs: { materialCode: string; grams: number }[];
+interface OutputLine {
+  materialCode: string;
+  grams: number;
+}
+
+export interface RunInput {
+  inputs: InputLine[];
+  outputs: OutputLine[];
   rejectGrams: number;
   note?: string;
   date: string;
   now: number;
+}
+
+/** One line per key (repeats are added up), every gram a positive integer. */
+function mergedLines<T extends { grams: number }>(
+  lines: readonly T[],
+  keyOf: (line: T) => string,
+  max: number,
+  emptyCode: string,
+): T[] {
+  if (lines.length === 0) throw new ConvexError(emptyCode);
+  if (lines.length > max) throw new ConvexError("TOO_MANY_LINES");
+  const byKey = new Map<string, T>();
+  for (const line of lines) {
+    if (!isPositiveInteger(line.grams)) throw new ConvexError("INVALID_WEIGHT");
+    const known = byKey.get(keyOf(line));
+    if (known) known.grams += line.grams;
+    else byKey.set(keyOf(line), { ...line });
+  }
+  const merged: T[] = [];
+  for (const line of byKey.values()) merged.push(line);
+  return merged;
+}
+
+/** The run's shape: lines, totals and note — refusing mass from nowhere. */
+function checkRun(run: RunInput) {
+  const inputs = mergedLines(
+    run.inputs,
+    (line) => line.lotId,
+    MAX_INPUTS,
+    "NOTHING_TO_SORT",
+  );
+  const outputs = mergedLines(
+    run.outputs,
+    (line) => line.materialCode,
+    MAX_OUTPUTS,
+    "NOTHING_SORTED",
+  );
+  if (!Number.isSafeInteger(run.rejectGrams) || run.rejectGrams < 0) {
+    throw new ConvexError("INVALID_WEIGHT");
+  }
+  const note = run.note?.trim();
+  if (note !== undefined && note.length > NOTE_MAX_LENGTH) {
+    throw new ConvexError("NOTE_TOO_LONG");
+  }
+  const totals = sortingTotals(inputs, outputs, run.rejectGrams);
+  if (totals.lossGrams < 0) throw new ConvexError("OUTPUT_EXCEEDS_INPUT");
+  return {
+    inputs,
+    outputs,
+    totals,
+    note: note === undefined || note === "" ? undefined : note,
+  };
+}
+
+function checkOutputs(materials: Materials, outputs: readonly OutputLine[]) {
+  for (const output of outputs) {
+    if (materials.get(output.materialCode)?.active !== true) {
+      throw new ConvexError("UNKNOWN_MATERIAL");
+    }
+  }
+}
+
+/** My open lots with enough left, paired with what the run takes from each. */
+async function parentsOf(
+  ctx: MutationCtx,
+  org: Org,
+  inputs: readonly InputLine[],
+): Promise<{ lot: Lot; grams: number }[]> {
+  const parents: { lot: Lot; grams: number }[] = [];
+  for (const input of inputs) {
+    const lot = await ctx.db.get("lots", input.lotId);
+    if (lot?.orgId !== org._id) throw new ConvexError("NOT_FOUND");
+    if (lot.status !== "open") throw new ConvexError("LOT_NOT_OPEN");
+    if (input.grams > lot.remainingGrams) {
+      throw new ConvexError("NOT_ENOUGH_IN_LOT");
+    }
+    parents.push({ lot, grams: input.grams });
+  }
+  return parents;
+}
+
+async function takeInput(
+  ctx: MutationCtx,
+  actor: Actor,
+  parent: { lot: Lot; grams: number },
+  runId: Id<"sortingRuns">,
+  now: number,
+) {
+  await ctx.db.insert("lotMoves", {
+    lotId: parent.lot._id,
+    kind: "sorted",
+    grams: parent.grams,
+    sortingRunId: runId,
+    at: now,
+  });
+  const remainingGrams = parent.lot.remainingGrams - parent.grams;
+  const moves = await movesOf(ctx, parent.lot._id);
+  await ctx.db.patch("lots", parent.lot._id, {
+    remainingGrams,
+    status: lotStatusFor(remainingGrams, moves),
+  });
+  await adjustStock(ctx, actor, parent.lot.materialCode, -parent.grams, runId, now);
+}
+
+async function addOutput(
+  ctx: MutationCtx,
+  actor: Actor,
+  materials: Materials,
+  output: OutputLine,
+  runId: Id<"sortingRuns">,
+  parentLotIds: Id<"lots">[],
+  now: number,
+): Promise<Id<"lots">> {
+  const stage = materials.get(output.materialCode)?.stage;
+  const lotId = await ctx.db.insert("lots", {
+    orgId: actor.orgId,
+    materialCode: output.materialCode,
+    grams: output.grams,
+    remainingGrams: output.grams,
+    origin: stage === "recycled" ? "production" : "sorting",
+    originId: runId,
+    parentLotIds,
+    status: "open",
+    createdAt: now,
+  });
+  await adjustStock(ctx, actor, output.materialCode, output.grams, runId, now);
+  return lotId;
 }
 
 /**
@@ -1290,110 +1564,31 @@ async function recordRun(
   actorProfileId: Id<"profiles"> | undefined,
   run: RunInput,
 ): Promise<{ runId: Id<"sortingRuns">; lotIds: Id<"lots">[] }> {
-  const inputs = merged(
-    run.inputs,
-    "lotId",
-    MAX_INPUTS,
-    "NOTHING_TO_SORT",
-    "TOO_MANY_LINES",
-  );
-  const outputs = merged(
-    run.outputs,
-    "materialCode",
-    MAX_OUTPUTS,
-    "NOTHING_SORTED",
-    "TOO_MANY_LINES",
-  );
-  if (!Number.isSafeInteger(run.rejectGrams) || run.rejectGrams < 0) {
-    throw new ConvexError("INVALID_WEIGHT");
-  }
-  if (run.note !== undefined && run.note.length > NOTE_MAX_LENGTH) {
-    throw new ConvexError("NOTE_TOO_LONG");
-  }
-  const totals = sortingTotals(inputs, outputs, run.rejectGrams);
-  if (totals.lossGrams < 0) throw new ConvexError("OUTPUT_EXCEEDS_INPUT");
-
+  const { inputs, outputs, totals, note } = checkRun(run);
   const materials = await materialIndex(ctx);
-  for (const output of outputs) {
-    if (materials.get(output.materialCode)?.active !== true) {
-      throw new ConvexError("UNKNOWN_MATERIAL");
-    }
-  }
-  const parents: Lot[] = [];
-  for (const input of inputs) {
-    const lot = await ctx.db.get("lots", input.lotId);
-    if (lot?.orgId !== org._id) throw new ConvexError("NOT_FOUND");
-    if (lot.status !== "open") throw new ConvexError("LOT_NOT_OPEN");
-    if (input.grams > lot.remainingGrams) {
-      throw new ConvexError("NOT_ENOUGH_IN_LOT");
-    }
-    parents.push(lot);
-  }
+  checkOutputs(materials, outputs);
+  const parents = await parentsOf(ctx, org, inputs);
 
-  const note = run.note?.trim();
   const runId = await ctx.db.insert("sortingRuns", {
     orgId: org._id,
     date: run.date,
     inputs,
     outputs,
     rejectGrams: run.rejectGrams,
-    note: note === undefined || note === "" ? undefined : note,
+    note,
     createdAt: run.now,
   });
-  const actor = { orgId: org._id, profileId: actorProfileId };
-
-  for (const [index, input] of inputs.entries()) {
-    const parent = parents[index];
-    if (!parent) continue;
-    await ctx.db.insert("lotMoves", {
-      lotId: parent._id,
-      kind: "sorted",
-      grams: input.grams,
-      sortingRunId: runId,
-      at: run.now,
-    });
-    const remainingGrams = parent.remainingGrams - input.grams;
-    await ctx.db.patch("lots", parent._id, {
-      remainingGrams,
-      status: lotStatusFor(remainingGrams, await movesOf(ctx, parent._id)),
-    });
-    await adjustStock(
-      ctx,
-      actor,
-      parent.materialCode,
-      -input.grams,
-      runId,
-      run.now,
-    );
+  const actor: Actor = { orgId: org._id, profileId: actorProfileId };
+  for (const parent of parents) {
+    await takeInput(ctx, actor, parent, runId, run.now);
   }
-
+  const parentLotIds = parents.map((parent) => parent.lot._id);
   const lotIds: Id<"lots">[] = [];
-  const parentLotIds = parents.map((parent) => parent._id);
   for (const output of outputs) {
-    const stage = materials.get(output.materialCode)?.stage;
     lotIds.push(
-      await ctx.db.insert("lots", {
-        orgId: org._id,
-        materialCode: output.materialCode,
-        grams: output.grams,
-        remainingGrams: output.grams,
-        origin: stage === "recycled" ? "production" : "sorting",
-        originId: runId,
-        parentLotIds,
-        status: "open",
-        createdAt: run.now,
-      }),
-    );
-    await adjustStock(
-      ctx,
-      actor,
-      output.materialCode,
-      output.grams,
-      runId,
-      run.now,
+      await addOutput(ctx, actor, materials, output, runId, parentLotIds, run.now),
     );
   }
-
   await ctx.db.insert("auditLog", {
     orgId: org._id,
     actorProfileId,
@@ -1450,22 +1645,238 @@ export async function seedSortingRun(
   return recordRun(ctx, org, undefined, run);
 }
 
-// --- Rebuilding from the ledger -------------------------------------------------------------
+// --- Rebuilding from the ledger ---------------------------------------------
 
-export interface RebuildResult {
-  lotsCreated: number;
-  movesCreated: number;
-  openingCreated: number;
+interface WorkingLot extends OpenLot {
+  materialCode: string;
+  isTouched: boolean;
 }
 
-const vRebuildResult = v.object({
-  lotsCreated: v.number(),
-  movesCreated: v.number(),
-  openingCreated: v.number(),
-});
+interface Rebuild {
+  ctx: MutationCtx;
+  org: Org;
+  /** origin:originId:material of every lot, so nothing is created twice. */
+  known: Set<string>;
+  working: WorkingLot[];
+  result: RebuildResult;
+}
+
+interface UnmatchedSale {
+  trade: Trade;
+  grams: number;
+}
 
 function lotKey(origin: LotOrigin, originId: string, materialCode: string) {
   return `${origin}:${originId}:${materialCode}`;
+}
+
+async function addLot(
+  state: Rebuild,
+  origin: LotOrigin,
+  originId: string,
+  materialCode: string,
+  grams: number,
+  createdAt: number,
+) {
+  const key = lotKey(origin, originId, materialCode);
+  if (state.known.has(key) || grams <= 0) return;
+  state.known.add(key);
+  const id = await state.ctx.db.insert("lots", {
+    orgId: state.org._id,
+    materialCode,
+    grams,
+    remainingGrams: grams,
+    origin,
+    originId,
+    parentLotIds: [],
+    status: "open",
+    createdAt,
+  });
+  state.working.push({
+    id,
+    origin,
+    createdAt,
+    remainingGrams: grams,
+    materialCode,
+    isTouched: false,
+  });
+  state.result.lotsCreated += 1;
+}
+
+/** 1. Pickup receipts, one lot per line. */
+async function addReceiptLots(state: Rebuild) {
+  const bookings = await state.ctx.db
+    .query("bookings")
+    .withIndex("by_org_status", (q) =>
+      q.eq("orgId", state.org._id).eq("status", "completed"),
+    )
+    .order("desc")
+    .take(MAX_ROWS);
+  for (const booking of bookings) {
+    if (!booking.receipt) continue;
+    for (const line of booking.receipt.lines) {
+      await addLot(
+        state,
+        "pickup",
+        booking._id,
+        line.materialCode,
+        line.grams,
+        booking.receipt.paidAt,
+      );
+    }
+  }
+}
+
+/** 2. Completed purchases, one lot each. */
+async function addPurchaseLots(state: Rebuild) {
+  const purchases = await state.ctx.db
+    .query("trades")
+    .withIndex("by_buyer", (q) => q.eq("buyerOrgId", state.org._id))
+    .order("desc")
+    .take(MAX_ROWS);
+  for (const trade of purchases) {
+    if (trade.status !== "completed") continue;
+    await addLot(
+      state,
+      "purchase",
+      trade._id,
+      trade.materialCode,
+      trade.grams,
+      completedAt(trade),
+    );
+  }
+}
+
+/** Matches a sale to my lots of that material and records the moves. */
+async function recordSale(
+  state: Rebuild,
+  trade: Trade,
+  grams: number,
+): Promise<number> {
+  const at = leftAt(trade);
+  const candidates = state.working.filter(
+    (lot) => lot.materialCode === trade.materialCode,
+  );
+  const { allocations, unmatchedGrams } = allocateSale(candidates, grams, at);
+  for (const allocation of allocations) {
+    await state.ctx.db.insert("lotMoves", {
+      lotId: allocation.lotId,
+      kind: "sold",
+      grams: allocation.grams,
+      tradeId: trade._id,
+      at,
+    });
+    const lot = state.working.find((entry) => entry.id === allocation.lotId);
+    if (lot) {
+      lot.remainingGrams -= allocation.grams;
+      lot.isTouched = true;
+    }
+    state.result.movesCreated += 1;
+  }
+  return unmatchedGrams;
+}
+
+/** 3. Sales that have left, matched in the order they left. */
+async function recordSales(state: Rebuild): Promise<UnmatchedSale[]> {
+  const trades = await state.ctx.db
+    .query("trades")
+    .withIndex("by_seller", (q) => q.eq("sellerOrgId", state.org._id))
+    .order("desc")
+    .take(MAX_ROWS);
+  const sales = trades
+    .filter((trade) => hasLeft(trade))
+    .toSorted((a, b) => leftAt(a) - leftAt(b));
+  const unmatched: UnmatchedSale[] = [];
+  for (const trade of sales) {
+    const already = await state.ctx.db
+      .query("lotMoves")
+      .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
+      .first();
+    if (already) continue;
+    const grams = await recordSale(state, trade, trade.grams);
+    if (grams > 0) unmatched.push({ trade, grams });
+  }
+  return unmatched;
+}
+
+function sumBy(entries: readonly UnmatchedSale[]): Map<string, number> {
+  const totals = new Map<string, number>();
+  for (const entry of entries) {
+    const code = entry.trade.materialCode;
+    totals.set(code, (totals.get(code) ?? 0) + entry.grams);
+  }
+  return totals;
+}
+
+/** What the book holds beyond the lots, plus what sold without any lot. */
+async function addOpeningLot(
+  state: Rebuild,
+  materialCode: string,
+  bookGrams: number,
+  unmatched: readonly UnmatchedSale[],
+) {
+  const onLots = state.working
+    .filter((lot) => lot.materialCode === materialCode)
+    .reduce((sum, lot) => sum + lot.remainingGrams, 0);
+  const gap = Math.max(0, bookGrams - onLots);
+  const mine = unmatched.filter(
+    (entry) => entry.trade.materialCode === materialCode,
+  );
+  const missing = mine.reduce((sum, entry) => sum + entry.grams, 0);
+  if (gap + missing <= 0) return;
+  // It was there before the first sale that needed it, at the latest.
+  const openedAt = Math.min(
+    state.org.createdAt,
+    ...mine.map((entry) => leftAt(entry.trade) - 1),
+  );
+  await addLot(
+    state,
+    "opening",
+    state.org._id,
+    materialCode,
+    gap + missing,
+    openedAt,
+  );
+  state.result.openingCreated += 1;
+  for (const entry of mine) await recordSale(state, entry.trade, entry.grams);
+}
+
+/**
+ * 4. Opening stock, once per material: what the business held when it
+ *    joined, which no receipt explains. Never created twice, so later sales
+ *    beyond receipts stay unmatched and show as a warning.
+ */
+async function addOpeningStock(
+  state: Rebuild,
+  unmatched: readonly UnmatchedSale[],
+) {
+  const hasOpeningFor = new Set(
+    state.working
+      .filter((lot) => lot.origin === "opening")
+      .map((lot) => lot.materialCode),
+  );
+  const inventory = await state.ctx.db
+    .query("inventory")
+    .withIndex("by_org", (q) => q.eq("orgId", state.org._id))
+    .take(MAX_LOTS);
+  const book = new Map(inventory.map((row) => [row.materialCode, row.grams]));
+  const codes = new Set([...book.keys(), ...sumBy(unmatched).keys()]);
+  for (const materialCode of codes) {
+    if (hasOpeningFor.has(materialCode)) continue;
+    await addOpeningLot(state, materialCode, book.get(materialCode) ?? 0, unmatched);
+  }
+}
+
+/** 5. Settle what changed. */
+async function settleLots(state: Rebuild) {
+  for (const lot of state.working) {
+    if (!lot.isTouched) continue;
+    const moves = await movesOf(state.ctx, lot.id);
+    await state.ctx.db.patch("lots", lot.id, {
+      remainingGrams: lot.remainingGrams,
+      status: lotStatusFor(lot.remainingGrams, moves),
+    });
+  }
 }
 
 /**
@@ -1479,192 +1890,49 @@ function lotKey(origin: LotOrigin, originId: string, materialCode: string) {
 export async function rebuildOrg(
   ctx: MutationCtx,
   org: Org,
-  now: number,
 ): Promise<RebuildResult> {
-  const result: RebuildResult = {
-    lotsCreated: 0,
-    movesCreated: 0,
-    openingCreated: 0,
-  };
   const lots = await lotsOf(ctx, org._id);
-  const known = new Set(
-    lots.map((lot) => lotKey(lot.origin, lot.originId, lot.materialCode)),
-  );
-  const working: (OpenLot & { materialCode: string; touched: boolean })[] =
-    lots.map((lot) => ({
+  const state: Rebuild = {
+    ctx,
+    org,
+    known: new Set(
+      lots.map((lot) => lotKey(lot.origin, lot.originId, lot.materialCode)),
+    ),
+    working: lots.map((lot) => ({
       id: lot._id,
       origin: lot.origin,
       createdAt: lot.createdAt,
       remainingGrams: lot.remainingGrams,
       materialCode: lot.materialCode,
-      touched: false,
-    }));
-
-  const addLot = async (
-    origin: LotOrigin,
-    originId: string,
-    materialCode: string,
-    grams: number,
-    createdAt: number,
-  ) => {
-    const key = lotKey(origin, originId, materialCode);
-    if (known.has(key) || grams <= 0) return;
-    known.add(key);
-    const id = await ctx.db.insert("lots", {
-      orgId: org._id,
-      materialCode,
-      grams,
-      remainingGrams: grams,
-      origin,
-      originId,
-      parentLotIds: [],
-      status: "open",
-      createdAt,
-    });
-    working.push({
-      id,
-      origin,
-      createdAt,
-      remainingGrams: grams,
-      materialCode,
-      touched: false,
-    });
-    result.lotsCreated += 1;
+      isTouched: false,
+    })),
+    result: { lotsCreated: 0, movesCreated: 0, openingCreated: 0 },
   };
+  await addReceiptLots(state);
+  await addPurchaseLots(state);
+  const unmatched = await recordSales(state);
+  await addOpeningStock(state, unmatched);
+  await settleLots(state);
+  return state.result;
+}
 
-  // 1. Pickup receipts, one lot per line.
-  const bookings = await ctx.db
-    .query("bookings")
-    .withIndex("by_org_status", (q) =>
-      q.eq("orgId", org._id).eq("status", "completed"),
-    )
-    .order("desc")
-    .take(MAX_ROWS);
-  for (const booking of bookings) {
-    if (!booking.receipt) continue;
-    for (const line of booking.receipt.lines) {
-      await addLot(
-        "pickup",
-        booking._id,
-        line.materialCode,
-        line.grams,
-        booking.receipt.paidAt,
-      );
-    }
-  }
-
-  // 2. Completed purchases.
-  const purchases = await ctx.db
-    .query("trades")
-    .withIndex("by_buyer", (q) => q.eq("buyerOrgId", org._id))
-    .order("desc")
-    .take(MAX_ROWS);
-  for (const trade of purchases) {
-    if (trade.status !== "completed") continue;
-    await addLot(
-      "purchase",
-      trade._id,
-      trade.materialCode,
-      trade.grams,
-      completedAt(trade),
-    );
-  }
-
-  // 3. Sales that have left, matched to lots in the order they left.
-  const sales = (
-    await ctx.db
-      .query("trades")
-      .withIndex("by_seller", (q) => q.eq("sellerOrgId", org._id))
-      .order("desc")
-      .take(MAX_ROWS)
-  )
-    .filter((trade) => hasLeft(trade))
-    .toSorted((a, b) => leftAt(a) - leftAt(b));
-  const unmatched: { trade: Trade; grams: number }[] = [];
-  const allocate = async (trade: Trade, grams: number) => {
-    const at = leftAt(trade);
-    const { allocations, unmatchedGrams } = allocateSale(
-      working.filter((lot) => lot.materialCode === trade.materialCode),
-      grams,
-      at,
-    );
-    for (const allocation of allocations) {
-      await ctx.db.insert("lotMoves", {
-        lotId: allocation.lotId,
-        kind: "sold",
-        grams: allocation.grams,
-        tradeId: trade._id,
-        at,
-      });
-      const lot = working.find((entry) => entry.id === allocation.lotId);
-      if (lot) {
-        lot.remainingGrams -= allocation.grams;
-        lot.touched = true;
-      }
-      result.movesCreated += 1;
-    }
-    return unmatchedGrams;
-  };
-  for (const trade of sales) {
-    const already = await ctx.db
-      .query("lotMoves")
-      .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
-      .first();
-    if (already) continue;
-    const left = await allocate(trade, trade.grams);
-    if (left > 0) unmatched.push({ trade, grams: left });
-  }
-
-  // 4. Opening stock, once: what the book holds beyond the lots, plus what
-  //    was sold without any lot to come from.
-  const hasOpening = new Set(
-    working
-      .filter((lot) => lot.origin === "opening")
-      .map((lot) => lot.materialCode),
-  );
-  const inventory = await ctx.db
-    .query("inventory")
-    .withIndex("by_org", (q) => q.eq("orgId", org._id))
-    .take(MAX_LOTS);
-  const book = new Map(inventory.map((row) => [row.materialCode, row.grams]));
-  const unmatchedBy = new Map<string, number>();
-  for (const entry of unmatched) {
-    unmatchedBy.set(
-      entry.trade.materialCode,
-      (unmatchedBy.get(entry.trade.materialCode) ?? 0) + entry.grams,
-    );
-  }
-  const codes = new Set([...book.keys(), ...unmatchedBy.keys()]);
-  for (const materialCode of codes) {
-    if (hasOpening.has(materialCode)) continue;
-    const onLots = working
-      .filter((lot) => lot.materialCode === materialCode)
-      .reduce((sum, lot) => sum + lot.remainingGrams, 0);
-    const gap = Math.max(0, (book.get(materialCode) ?? 0) - onLots);
-    const missing = unmatchedBy.get(materialCode) ?? 0;
-    if (gap + missing <= 0) continue;
-    const openedAt = Math.min(
-      org.createdAt,
-      ...unmatched
-        .filter((entry) => entry.trade.materialCode === materialCode)
-        .map((entry) => leftAt(entry.trade) - 1),
-    );
-    await addLot("opening", org._id, materialCode, gap + missing, openedAt);
-    result.openingCreated += 1;
-    for (const entry of unmatched) {
-      if (entry.trade.materialCode !== materialCode) continue;
-      await allocate(entry.trade, entry.grams);
-    }
-  }
-
-  // 5. Settle what changed.
-  for (const lot of working) {
-    if (!lot.touched) continue;
-    await ctx.db.patch("lots", lot.id, {
-      remainingGrams: lot.remainingGrams,
-      status: lotStatusFor(lot.remainingGrams, await movesOf(ctx, lot.id)),
-    });
-  }
+/** Rebuilds and writes the audit row; shared by the seed and both mutations. */
+export async function rebuildLedger(
+  ctx: MutationCtx,
+  org: Org,
+  actorProfileId?: Id<"profiles">,
+): Promise<RebuildResult> {
+  const now = Date.now();
+  const result = await rebuildOrg(ctx, org);
+  await ctx.db.insert("auditLog", {
+    orgId: org._id,
+    actorProfileId,
+    action: "lots.rebuilt",
+    entityTable: "orgs",
+    entityId: org._id,
+    metadata: result,
+    createdAt: now,
+  });
   return result;
 }
 
@@ -1675,17 +1943,7 @@ export const rebuildFromLedger = internalMutation({
   handler: async (ctx, args) => {
     const org = await ctx.db.get("orgs", args.orgId);
     if (!org) throw new ConvexError("NOT_FOUND");
-    const now = Date.now();
-    const result = await rebuildOrg(ctx, org, now);
-    await ctx.db.insert("auditLog", {
-      orgId: org._id,
-      action: "lots.rebuilt",
-      entityTable: "orgs",
-      entityId: org._id,
-      metadata: result,
-      createdAt: now,
-    });
-    return result;
+    return rebuildLedger(ctx, org);
   },
 });
 
@@ -1698,17 +1956,6 @@ export const rebuild = mutation({
   returns: vRebuildResult,
   handler: async (ctx) => {
     const { profile, org } = await requireOrg(ctx);
-    const now = Date.now();
-    const result = await rebuildOrg(ctx, org, now);
-    await ctx.db.insert("auditLog", {
-      orgId: org._id,
-      actorProfileId: profile._id,
-      action: "lots.rebuilt",
-      entityTable: "orgs",
-      entityId: org._id,
-      metadata: result,
-      createdAt: now,
-    });
-    return result;
+    return rebuildLedger(ctx, org, profile._id);
   },
 });
