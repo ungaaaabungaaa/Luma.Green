@@ -105,15 +105,14 @@ export function formatRuleValue(value: RuleValue, unit: RuleUnit): string {
 export function ruleInputValue(value: RuleValue, unit: RuleUnit): string {
   if (typeof value !== "number") return String(value);
   if (unit === "paise") {
-    return value % 100 === 0
-      ? String(value / 100)
-      : (value / 100).toFixed(2);
+    return value % 100 === 0 ? String(value / 100) : (value / 100).toFixed(2);
   }
   if (unit === "bp") return String(value / 100);
   return String(value);
 }
 
-export type RuleInputProblem = "EMPTY" | "NOT_A_NUMBER" | "NEGATIVE" | "OVER_100";
+export type RuleInputProblem =
+  "EMPTY" | "NOT_A_NUMBER" | "NEGATIVE" | "OVER_100";
 
 export const INPUT_PROBLEM_MESSAGES: Record<RuleInputProblem, string> = {
   EMPTY: "Type a value.",
@@ -157,9 +156,10 @@ export function parseRuleInput(
 }
 
 /** The character shown beside the input: ₹ before rupees, % after a rate. */
-export function inputAdornment(
-  unit: RuleUnit,
-): { prefix?: string; suffix?: string } {
+export function inputAdornment(unit: RuleUnit): {
+  prefix?: string;
+  suffix?: string;
+} {
   switch (unit) {
     case "paise": {
       return { prefix: "₹" };

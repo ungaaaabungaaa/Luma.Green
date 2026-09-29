@@ -14,10 +14,7 @@ import {
   TriangleAlertIcon,
 } from "lucide-react";
 
-import type {
-  CalendarKind,
-  DeadlineState,
-} from "../../../../convex/lib/rules";
+import type { CalendarKind, DeadlineState } from "../../../../convex/lib/rules";
 import { CALENDAR_KINDS } from "../../../../convex/lib/rules";
 
 /** The console's words and marks for each kind of deadline. English only. */
@@ -102,6 +99,29 @@ const monthFormat = new Intl.DateTimeFormat("en-IN", {
 /** `September 2026` */
 export function monthLabel(month: string): string {
   return monthFormat.format(new Date(`${month}-01T00:00:00Z`));
+}
+
+const dayHeadingFormat = new Intl.DateTimeFormat("en-IN", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  timeZone: "UTC",
+});
+
+/** `Thursday 10 September`, for a day's heading in the list. */
+export function dayHeading(date: string): string {
+  return dayHeadingFormat.format(new Date(`${date}T00:00:00Z`));
+}
+
+/** What a screen reader hears on a day cell: `10 September, 3 deadlines`. */
+export function dayCellLabel(date: string, count: number): string {
+  const day = dayHeadingFormat
+    .formatToParts(new Date(`${date}T00:00:00Z`))
+    .filter((part) => part.type === "day" || part.type === "month")
+    .map((part) => part.value)
+    .join(" ");
+  if (count === 0) return `${day}, nothing due`;
+  return `${day}, ${String(count)} ${count === 1 ? "deadline" : "deadlines"}`;
 }
 
 export interface MonthCell {

@@ -79,7 +79,8 @@ function RuleSheetBody({
       <SheetHeader className="pe-12">
         <SheetTitle className="text-lg">{rule.label}</SheetTitle>
         <SheetDescription>
-          <span className="font-mono">{rule.key}</span> · {UNIT_LABELS[rule.unit]}
+          <span className="font-mono">{rule.key}</span> ·{" "}
+          {UNIT_LABELS[rule.unit]}
         </SheetDescription>
       </SheetHeader>
       <div className="flex flex-col gap-6 px-4 pb-6">

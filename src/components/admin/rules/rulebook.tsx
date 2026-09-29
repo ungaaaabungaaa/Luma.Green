@@ -74,8 +74,8 @@ export function Rulebook() {
       {header}
       <p className="text-sm text-muted-foreground">
         Research, not legal advice: a lawyer and a CA review these numbers
-        before real money moves. Each rule links to the notification or
-        document it comes from.
+        before real money moves. Each rule links to the notification or document
+        it comes from.
       </p>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div className="relative w-full sm:max-w-xs">

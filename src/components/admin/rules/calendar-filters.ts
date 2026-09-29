@@ -1,3 +1,4 @@
+import type { Id } from "../../../../convex/_generated/dataModel";
 import type { CalendarKind, DeadlineState } from "../../../../convex/lib/rules";
 import type { CalendarEvent } from "./rule-types";
 
