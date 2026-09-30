@@ -1,0 +1,47 @@
+{
+ "branch": "worktree-wf_21434ea1-012-5",
+ "worktreePath": "/Users/syedabdulmuqeeth/Developer/Luma.Green/.claude/worktrees/wf_21434ea1-012-5",
+ "commit": "787d8d2c391b70e0fb36b01766a808cb1df0cdb7",
+ "summary": "Built the Saathi app and the Impact and Compliance screens on top of the lead's latest commit. The worktree started at 1403f83 (main) without the prototype foundation, so I fast-forwarded the branch to feat/prototype dfd8c19 before starting; the other worktrees 012-1 to 012-8 were also at 1403f83 when checked. Backend: convex/saathi.ts has board (open jobs city-wide with the Saathi's own area first, their assigned jobs, finished jobs and earnings, each with the posting business), take (open to assigned to me; refuses a taken job, a past-dated job and a double-booked slot) and finish (assigned to me to done; refuses someone else's job, a job already done and finishing before the job's day). Both mutations write auditLog. convex/insights.ts has impact, a union on kind: for a business, kilos from households, bought and sold in completed trades, kilos recycled counted once per material family (the larger of in and out, CO2e taken from the same side), CO2e from the materials table, money earned and spent, and a by-family breakdown; for a Saathi, jobs done, earnings, earnings by kind of work and recent jobs. It also has compliance: GSTIN, consent status (ok / expiring under 90 days / expired / missing) with days left and a reminder date, a checklist (GST, consent, Legal Metrology scale stamp and safety kit, the last two self-declared), trade invoices with e-way bill flags, and the April-to-March EPR record for recyclers and manufacturers by stream (PWM Rules 2016, E-Waste Rules 2022, Battery Waste Management Rules 2022; batteries split out of e-waste; none for paper, metal and glass) with a note that certificates are generated on CPCB's EPR portals. The pure rules are exported and unit-tested. UI: SaathiHome (this week's pay card, today's jobs with a confirmed Mark done, jobs coming up, open jobs with Take, icons for kind of work and time of day, 48px targets); ImpactPage (KPIs chosen per business kind, a plain-div bar chart by material using the chart-3 token, which passes the dataviz palette checks, in and out flows, the credit-ready ledger explainer; Saathis see earnings and finished jobs); CompliancePage (consent validity card with reminder or renew / expired alerts, the checklist with a 'what this means' note per item, invoices as cards on phones and a table on wide screens linking to /app/trades/{id}/invoice, the EPR summary; Saathis are pointed back to their jobs). All three have skeletons, empty states, an error boundary with retry, toast plus inline errors, and one DemoNote each. Tests: 35 convex-test cases (board contents, take and finish rules, refusals for signed out, wrong role and someone else's job, exact impact numbers on the demo world, consent math including the last day and a leap year, the financial-year boundary, consent expiring and expired on data) and 35 component and unit tests. The Date object is frozen at 29 Sep 2026 in the Convex tests so they stay deterministic.",
+ "routes": [
+  "/app (Saathi home, rendered by RoleHome for Saathis)",
+  "/app/impact",
+  "/app/compliance"
+ ],
+ "convexFunctions": [
+  "saathi.board (query)",
+  "saathi.take (mutation)",
+  "saathi.finish (mutation)",
+  "insights.impact (query)",
+  "insights.compliance (query)"
+ ],
+ "messageNamespaces": [
+  "saathi",
+  "impact",
+  "compliance"
+ ],
+ "checks": {
+  "typecheck": "pass (pnpm typecheck)",
+  "lint": "pass (pnpm exec eslint on convex/saathi.ts, convex/insights.ts, both Convex test files, src/components/saathi, src/components/insights)",
+  "tests": "pass: 70/70 in my files (convex/saathi.test.ts, convex/insights.test.ts, 7 component and unit test files). Full suite: only src/i18n/messages.test.ts fails (22 translation-parity cases, expected until translations land)"
+ },
+ "unfinished": [
+  "Weighing-scale stamp and safety kit are self-declared placeholders that always show 'Not checked yet'. The schema has no field to store a confirmation, and adding one would be a schema change, which is out of scope.",
+  "The consent reminder is shown as a date (90 days before expiry); nothing sends a notification yet.",
+  "No browser check was done (instructions). Suggested checks: /app as +919000000105 (Lakshmi); /app/impact and /app/compliance as 101 (kabadiwala), 102 (yard), 103 (recycler: EPR received 800 kg, recycled 2,500 kg), 104 (manufacturer) and 105.",
+  "Non-English message files are not updated, by design."
+ ],
+ "mergeNotes": [
+  "Base: this branch was fast-forwarded from 1403f83 to the lead's feat/prototype dfd8c19 before any work. All other agent worktrees were also at 1403f83 when checked, so verify their bases.",
+  "convex/_generated/api.d.ts adds the insights and saathi modules. Expect conflicts; re-run `npx convex codegen --typecheck disable` after merging all areas. No schema change.",
+  "messages/en.json: three new top-level namespaces (saathi, impact, compliance) appended after 'app', additions only. Resolve textual conflicts with other areas by keeping every namespace.",
+  "convex/insights.ts imports helpers from convex/saathi.ts (earningsOf, jobsOf, jobViews, bySchedule, RECENT_DONE, vJobView). Both modules export plain helpers and validators alongside Convex functions, as support.ts already does with SUPPORT_TOPICS.",
+  "Invoice links go to /app/trades/{tradeId}/invoice and assume the market area's InvoicePage takes a trades Id. The invoice date shown is the paid_to_escrow step time, which is when the seed issues invoice numbers.",
+  "Kilos recycled count each kilo once per material family (max of in and out, CO2e from the same side, conservative). Demo figures: Ramesh 434 kg and 449 kg CO2e (paid households Rs 1,587.41 for 3 pickups; Rs 7,000 for 1 sale); Peenya 1.2 t and 1,200 kg; GreenLoop 2.5 t; Deccan 2.5 t bought.",
+  "Saathi 'earned this week' means the last 7 days (today plus the 6 days before) by job date, and is labelled 'Last 7 days'. A Monday-to-Sunday week would show Rs 0 on 29 Sep with the seeded jobs.",
+  "No demo login has a consent under 90 days on 29 Sep 2026, so the renew-soon and expired states only appear if a date is edited. Both are covered by tests.",
+  "The shared useFormat() formats 'en' money with Western grouping (Rs 175,000). Lakh grouping would need en-IN in src/components/app/format.ts, which is not my file.",
+  "src/components/insights/query-boundary.tsx (error boundary with retry, using common.error and common.retry) can be reused by other areas.",
+  "Worktree still exists for the merge. Delete it after merging to free disk space, as the user asked."
+ ]
+}

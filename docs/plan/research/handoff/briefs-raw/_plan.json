@@ -1,0 +1,1215 @@
+{
+ "lead": "Luma.Green becomes the record-keeping and trading layer for India's informal recycling chain. Every hand-off from household to manufacturer is weighed, priced, verified and traceable, in 12 languages on a basic Android phone, and the platform earns further up the chain rather than at the doorstep. The first thing it proves, in Bengaluru, is that one bale at a recycler can be traced back to the individual household pickups it came from. Each link carries a confirmed weight, a verified buyer and a receipt that both sides agreed to, which is the missing evidence behind about 7 lakh fake EPR certificates and ₹2,384 crore of scrap invoices for goods that never moved.",
+ "overview": {
+  "nodes": [
+   {
+    "id": "household",
+    "label": "Household / RWA",
+    "kind": "user"
+   },
+   {
+    "id": "kabadiwala",
+    "label": "Kabadiwala (scrap shop)",
+    "kind": "user"
+   },
+   {
+    "id": "saathi",
+    "label": "Saathi (gig worker, waste picker)",
+    "kind": "user"
+   },
+   {
+    "id": "yard",
+    "label": "Yard / DWCC (preprocessor)",
+    "kind": "user"
+   },
+   {
+    "id": "recycler",
+    "label": "Recycler",
+    "kind": "user"
+   },
+   {
+    "id": "manufacturer",
+    "label": "Manufacturer",
+    "kind": "user"
+   },
+   {
+    "id": "brand",
+    "label": "Brand / PRO / auditor (read-only)",
+    "kind": "user"
+   },
+   {
+    "id": "city",
+    "label": "City SWM officer (read-only)",
+    "kind": "user"
+   },
+   {
+    "id": "admin",
+    "label": "Luma.Green admin",
+    "kind": "user"
+   },
+   {
+    "id": "investor",
+    "label": "Investor / lender (read-only)",
+    "kind": "user"
+   },
+   {
+    "id": "sell",
+    "label": "Sell: photo estimate, booking, tracking",
+    "kind": "module"
+   },
+   {
+    "id": "shop",
+    "label": "Shop: requests, weigh-and-pay, stock, rate card",
+    "kind": "module"
+   },
+   {
+    "id": "exchange",
+    "label": "Exchange: stock board, pooled collection, orders",
+    "kind": "module"
+   },
+   {
+    "id": "prices",
+    "label": "Prices: board, floors, bands, index",
+    "kind": "module"
+   },
+   {
+    "id": "trace",
+    "label": "Trace: lot passport, documents, exports",
+    "kind": "module"
+   },
+   {
+    "id": "payments",
+    "label": "Payments: recorded now, escrow later",
+    "kind": "module"
+   },
+   {
+    "id": "trust",
+    "label": "Trust: verification, badges, disputes",
+    "kind": "module"
+   },
+   {
+    "id": "work",
+    "label": "Saathi work: jobs, Saathi Ready",
+    "kind": "module"
+   },
+   {
+    "id": "compliance",
+    "label": "Compliance: rulebook, vault, calendar",
+    "kind": "module"
+   },
+   {
+    "id": "impact",
+    "label": "Impact: EPR evidence, carbon estimates, solar",
+    "kind": "module"
+   },
+   {
+    "id": "insights",
+    "label": "Insights: traction, ward dashboards",
+    "kind": "module"
+   },
+   {
+    "id": "upi",
+    "label": "UPI / bank (NEFT, RTGS)",
+    "kind": "external"
+   },
+   {
+    "id": "pa",
+    "label": "Payment aggregator escrow (Razorpay Route)",
+    "kind": "external"
+   },
+   {
+    "id": "cpcb",
+    "label": "CPCB EPR and SWM portals",
+    "kind": "external"
+   },
+   {
+    "id": "gst",
+    "label": "GST, e-way bill, Tally",
+    "kind": "external"
+   },
+   {
+    "id": "sms",
+    "label": "SMS (MSG91) and WhatsApp",
+    "kind": "external"
+   },
+   {
+    "id": "kspcb",
+    "label": "KSPCB XGN, e-Mapan, DigiLocker",
+    "kind": "external"
+   }
+  ],
+  "edges": [
+   {
+    "from": "household",
+    "to": "sell",
+    "label": "Photos, booking, SMS code",
+    "flow": "data"
+   },
+   {
+    "from": "sell",
+    "to": "shop",
+    "label": "Pickup request, auto-accept or re-offer",
+    "flow": "data"
+   },
+   {
+    "from": "household",
+    "to": "kabadiwala",
+    "label": "Mixed scrap at the door or drop-off",
+    "flow": "material"
+   },
+   {
+    "from": "kabadiwala",
+    "to": "household",
+    "label": "Cash or P2P UPI for weighed kg",
+    "flow": "money"
+   },
+   {
+    "from": "shop",
+    "to": "trace",
+    "label": "Weighed receipt: grams x paise, scale photo, handover code",
+    "flow": "data"
+   },
+   {
+    "from": "saathi",
+    "to": "kabadiwala",
+    "label": "Pickups, sorting shifts",
+    "flow": "material"
+   },
+   {
+    "from": "kabadiwala",
+    "to": "saathi",
+    "label": "Pay per job, off-platform",
+    "flow": "money"
+   },
+   {
+    "from": "shop",
+    "to": "exchange",
+    "label": "Published sorted stock",
+    "flow": "data"
+   },
+   {
+    "from": "kabadiwala",
+    "to": "yard",
+    "label": "Sorted loads, pooled collection",
+    "flow": "material"
+   },
+   {
+    "from": "yard",
+    "to": "kabadiwala",
+    "label": "Cash, UPI or NEFT with UTR recorded",
+    "flow": "money"
+   },
+   {
+    "from": "yard",
+    "to": "recycler",
+    "label": "Graded bales with weighbridge slip",
+    "flow": "material"
+   },
+   {
+    "from": "recycler",
+    "to": "pa",
+    "label": "Trade payment into escrow (later)",
+    "flow": "money"
+   },
+   {
+    "from": "pa",
+    "to": "yard",
+    "label": "Release on weight confirmation",
+    "flow": "money"
+   },
+   {
+    "from": "recycler",
+    "to": "manufacturer",
+    "label": "Flakes, granules, kraft, ingots",
+    "flow": "material"
+   },
+   {
+    "from": "manufacturer",
+    "to": "upi",
+    "label": "NEFT/RTGS to verified seller account",
+    "flow": "money"
+   },
+   {
+    "from": "prices",
+    "to": "sell",
+    "label": "Rates above admin floor",
+    "flow": "data"
+   },
+   {
+    "from": "admin",
+    "to": "prices",
+    "label": "Dated floors, fallbacks, bands",
+    "flow": "data"
+   },
+   {
+    "from": "admin",
+    "to": "trust",
+    "label": "Hand verification, badges",
+    "flow": "data"
+   },
+   {
+    "from": "kspcb",
+    "to": "trust",
+    "label": "Consent, scale stamp, ID checks",
+    "flow": "data"
+   },
+   {
+    "from": "trace",
+    "to": "brand",
+    "label": "Evidence pack per lot",
+    "flow": "data"
+   },
+   {
+    "from": "trace",
+    "to": "cpcb",
+    "label": "EPR purchase register, SWM returns (export)",
+    "flow": "data"
+   },
+   {
+    "from": "trace",
+    "to": "gst",
+    "label": "Tally import files, e-way bill fields",
+    "flow": "data"
+   },
+   {
+    "from": "sms",
+    "to": "household",
+    "label": "Codes, tracking, receipts",
+    "flow": "data"
+   },
+   {
+    "from": "insights",
+    "to": "city",
+    "label": "Ward totals",
+    "flow": "data"
+   },
+   {
+    "from": "insights",
+    "to": "investor",
+    "label": "Traction, shadow revenue",
+    "flow": "data"
+   },
+   {
+    "from": "brand",
+    "to": "recycler",
+    "label": "Pays for verified recycled content",
+    "flow": "money"
+   },
+   {
+    "from": "yard",
+    "to": "impact",
+    "label": "Solar quote requests, energy data",
+    "flow": "data"
+   }
+  ]
+ },
+ "personas": [
+  {
+   "user": "Household (apartment)",
+   "who": "A resident of a Bengaluru flat who sells newspaper, cartons, PET and metal a few times a year; often a woman managing the home.",
+   "needs": "A fair, visible price before booking, a pickup that actually turns up, honest weighing, and cash or UPI before the kabadiwala leaves.",
+   "device": "Own Android phone, Chrome; sometimes a shared family phone",
+   "language": "Kannada, Tamil, Telugu, Urdu, Hindi or English; mostly literate",
+   "companyServes": "No account. Photo, then AI estimate, then side-by-side nearby shops with their rates, then booking with an SMS code, a tracking link, a receipt confirmed with a handover code, and recycle points."
+  },
+  {
+   "user": "Household (independent house, low literacy)",
+   "who": "An older or less-schooled householder in a peri-urban area with bulky metal, appliances and raddi.",
+   "needs": "No typing, pictures and voice, and help from a person.",
+   "device": "Shared or basic Android phone",
+   "language": "Kannada, Tamil, Telugu or Urdu; limited reading",
+   "companyServes": "A Hear-it button on each step, one-tap call and WhatsApp, and a kabadiwala or Saathi who books on their behalf (the household confirms by SMS code)."
+  },
+  {
+   "user": "RWA / bulk generator",
+   "who": "Committee or facility manager of a society, office, hotel or campus producing 100 kg or more of waste a day.",
+   "needs": "Registration and annual returns under the SWM Rules 2026, verified vendors only, and monthly kg figures by waste stream.",
+   "device": "Laptop and phone",
+   "language": "English plus the local language",
+   "companyServes": "Scheduled pickups by a verified kabadiwala, monthly weighed statements and a yearly summary for the CPCB return (pilot design partners, paid plan later)."
+  },
+  {
+   "user": "Kabadiwala",
+   "who": "Owner of a small scrap shop handling about 250–300 kg a day, often unregistered for GST, sometimes with a cycle cart or auto.",
+   "needs": "More households, stable prices, no weight disputes, buyers for sorted stock, and screens that need little reading.",
+   "device": "Android phone, WhatsApp",
+   "language": "Kannada, Tamil, Telugu, Urdu, Hindi or Bengali; many with little formal schooling",
+   "companyServes": "Requests with auto-accept, today's route, weigh-and-pay in half-kilo steps, their own rate card above the floor, stock and sorting, and posting stock to yards. Free."
+  },
+  {
+   "user": "Saathi",
+   "who": "A waste picker or someone looking for quick gig work: pickups, sorting shifts, cleaning. Often a migrant whose documents have lapsed.",
+   "needs": "Pay shown before accepting, safe work, IDs accepted other than Aadhaar, and a fair appeal if their account is paused.",
+   "device": "Basic or shared Android phone",
+   "language": "Kannada, Tamil, Telugu or Bengali; low literacy",
+   "companyServes": "Onboarding with a driving licence, voter ID, BBMP card or NGO letter plus a selfie, a Saathi Ready picture module, job cards with hazards and PPE, and a work record usable for NAMASTE and e-Shram. Pay stays off-platform."
+  },
+  {
+   "user": "DWCC operator / waste-picker collective",
+   "who": "Runs a ward dry-waste collection centre with 20–25 workers, often supported by Hasiru Dala; its agreement with the city has lapsed.",
+   "needs": "Buyers, a sale register the city will accept, and evidence for renewing its agreement and claiming NAMASTE fees.",
+   "device": "Phone plus a paper logbook",
+   "language": "Kannada, Tamil or Telugu",
+   "companyServes": "A yard account with a DWCC flag: daily weight sheet, sale register and monthly report, plus access to recyclers."
+  },
+  {
+   "user": "Yard owner (preprocessor)",
+   "who": "Buys 1–30 t a day from kabadiwalas, sorts and bales, and sells to recyclers. Pays cash now and gets paid late.",
+   "needs": "Supply nearby, full trucks, weight and quality it can trust, and GST paperwork on metal (reverse charge, 2% TDS).",
+   "device": "Phone and desktop, weighbridge",
+   "language": "Local language plus English for documents",
+   "companyServes": "Stock map, pooled collection, weight slips from both sides, grade cards, trade document pack, tax flags, Tally export, and a solar savings card."
+  },
+  {
+   "user": "Gate / weighbridge operator",
+   "who": "Staff member at a yard or recycler gate who weighs trucks in and out.",
+   "needs": "Three taps per truck, in their own language.",
+   "device": "Phone",
+   "language": "Kannada or Hindi",
+   "companyServes": "A gate screen: vehicle number, gross, tare and net weight, a slip photo, and an automatic flag when the gap is over 1%."
+  },
+  {
+   "user": "Recycler (procurement and compliance)",
+   "who": "A registered plastic, paper or metal recycler with a KSPCB consent and CPCB processor registration.",
+   "needs": "Graded feedstock, proof of post-consumer origin for EPR, production kept within capacity, and a clean audit trail.",
+   "device": "Desktop",
+   "language": "English and Hindi",
+   "companyServes": "Verified supply, lot passports, the EPR purchase register in CPCB field order, capacity warnings and a compliance vault."
+  },
+  {
+   "user": "Accounts team (yard, recycler or manufacturer)",
+   "who": "The accountant who runs Tally and files GST.",
+   "needs": "Vouchers without retyping, the e-way bill, reverse-charge and TDS flags, and 45-day MSME due dates.",
+   "device": "Desktop running Tally",
+   "language": "English",
+   "companyServes": "Excel files in Tally's import layout, invoice fields, a payables and receivables clock, and UTR capture."
+  },
+  {
+   "user": "Manufacturer",
+   "who": "A paper mill, steel furnace or packaging converter buying recycled input.",
+   "needs": "Steady, graded, tax-compliant domestic feedstock, and recycled-content proof for its customers.",
+   "device": "Desktop, ERP",
+   "language": "English",
+   "companyServes": "Recycler output listings, orders, trace to origin, and simulated escrow now with real escrow later."
+  },
+  {
+   "user": "Brand / PRO / auditor",
+   "who": "An EPR compliance manager or verifier who has to meet recycled-content targets of 40% in 2026-27 for rigid packaging.",
+   "needs": "Believable evidence behind certificates after the fake-certificate scandals.",
+   "device": "Desktop",
+   "language": "English",
+   "companyServes": "A read-only login with evidence packs per lot. Luma.Green never issues or trades certificates."
+  },
+  {
+   "user": "City SWM officer",
+   "who": "Nodal officer at one of the Greater Bengaluru Authority corporations or at BSWML.",
+   "needs": "Ward-level dry-waste recovery figures and digital sale registers, which count towards Swachh Survekshan and GFC marks.",
+   "device": "Desktop",
+   "language": "Kannada and English",
+   "companyServes": "A read-only ward dashboard of totals, and a monthly export shaped for Swachhatam."
+  },
+  {
+   "user": "Investor / lender",
+   "who": "A seed investor judging traction, or an NBFC judging a yard's creditworthiness.",
+   "needs": "Real flows, unit economics, retention, and verified trade history.",
+   "device": "Desktop or phone",
+   "language": "English",
+   "companyServes": "Traction dashboard with shadow revenue (investor), and a trade-history export shared with the user's consent (lender, later)."
+  },
+  {
+   "user": "Luma.Green admin",
+   "who": "The founder, and later an operations team, verifying every business by hand and handling support.",
+   "needs": "Verify within 12–24 h, change prices and rules without a code release, and settle disputes quickly.",
+   "device": "Desktop and phone",
+   "language": "English and Kannada",
+   "companyServes": "Verification queue with checklists, price console, rulebook tables, complaints with timers, and an audit log."
+  }
+ ],
+ "sections": {
+  "market": "Luma.Green sits on at least **₹1.8–2.1 lakh crore a year** of recyclable material, and households see only a fraction of its value. Ferrous scrap alone is 41 Mt at ₹36.5–41.5/kg ([BigMint](https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405), [Dialogue Earth](https://www.eco-business.com/news/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/)). Paper adds about 17 Mt of recovered fibre ([W&R Mag](https://www.wasterecyclingmag.com/news/india-s-recovered-fibre-sector-requires-reforms-to-reach-full-potential)).\n\n| Material (Bengaluru, Sep 2026) | Household gets, ₹/kg | Factory pays, ₹/kg | Household share |\n|---|---|---|---|\n| Copper | 500–588 | 1,394 MCX; 1,454 armature | 35–42% |\n| Brass | 400–439 | 950–990 | 40–46% |\n| Aluminium | 150–154 | 293–365 | about 50% |\n| Aluminium cans | 60 | MCX aluminium 347.50 | about 17% |\n| PET | 10 | 44 | about 23% |\n| Cardboard | 3–8 | OCC 14–18 at mill | 20–55% |\n| Iron | 22–39 | 36.5–41.5 | 55–100% |\n\nSources: [The Kabadiwala](https://www.thekabadiwala.com/scrap-rates/Bangalore), [scraprates](https://scraprates.in/bangalore), [MCX via Upstox](https://upstox.com/commodity-market-trading/mcx-copper-price/), [Shree Metal](https://shreemetalprices.com/delhi-scrap-prices-today/), [ScrapC](https://scrapc.com/news/pet-bottle-price/), [BIN](https://joinbin.com/scrap-rate-cardboard-india), [Aluminium Magazine](https://aluminiummagazine.com/mag/business/current-aluminium-price.html).\n\n**What shapes the plan**\n- The first mile is informal. 1.5–4 million waste pickers move 60–70% of urban recyclables ([DTE](https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them)), and 80–85% of Bengaluru's dry waste passes through informal hands ([BBMP study](https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru's%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf)). Design for cash, first smartphones and GST as optional.\n- Hand-offs run to 4–6 tiers. Model yards as one role with a size and tier attribute that can buy from other yards, instead of adding a role for every tier.\n- Trust is weak at the scale. Bengaluru scrap shops were caught with remote-controlled chips in their scales ([Deccan Herald](https://www.deccanherald.com/india/karnataka/bengaluru/weighing-scale-racket-in-bengaluru-busted-by-kamakshipalya-police-1201713.html)), and Bengaluru Urban had 5,375 Legal Metrology cases in 17 months ([NewsKarnataka](https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024)).\n- Quality leaks value. Wet cardboard loses 30–50% ([BIN](https://joinbin.com/scrap-rate-cardboard-india)), so every B2B hand-off records gross, deduction, reason and net weight.\n- India is short of domestic scrap. It imports about 7 Mt of recovered paper a year and a quarter of its ferrous scrap, so mills will pay for supply that is sorted and traceable.\n- Bengaluru specifics: 119 of 198 DWCCs are still operating and their city agreements have lapsed ([Citizen Matters](https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/)). Mother tongues are Kannada 42%, Tamil 16%, Telugu 14% and Urdu 13% ([Census 2011](https://en.wikipedia.org/wiki/Bengaluru)).\n- National figures conflict (e-waste is 1.4 Mt per CPCB against 6.19 Mt per NITI Aayog). Every investor number cites its source and definition. The ₹1.8–2.1 lakh crore figure is our own bottom-up estimate.",
+  "competitors": "No competitor connects household bookings, kabadiwala tools and yard-to-factory trade on one platform. **Decision: equip the kabadiwalas who already exist, don't run a fleet, and lead the pitch with the traced chain.**\n\n| Player | What they do | Scale | What we take from them |\n|---|---|---|---|\n| The Kabadiwala + Scrapr | Own fleet in small cities; a partner-kabadiwala marketplace in 25+ Bengaluru areas | 5,000+ kabadiwalas, $3.33M raised ([Sankalp](https://www.sankalpforum.com/from-college-frustration-to-organizing-indias-waste-economy-sankalpchangemakers-features-anurag-asati-co-founder-the-kabadiwala/), [Tracxn](https://tracxn.com/d/companies/the-kabadiwala/__m3UNbioxN9Vlb-olXsWxlH2fS3RjMA9DD-dTecfCnLc)) | Its top complaints are no-shows and requests that get stuck ([App Store](https://apps.apple.com/in/app/the-kabadiwala/id1610864605)). Reliability becomes our feature |\n| ScrapUncle | Own crews, published rate cards | ₹22 Cr raised Jan 2026 ([Inc42](https://inc42.com/buzz/cleantech-startup-scrapuncle-raises-inr-22-cr-to-expand-presence-across-delhi-ncr/)) | Shows households prices before pickup and pays before leaving |\n| Recykal (Uzed closed) | Household app lost money at 45–60 min per order; moved to B2B and EPR | ₹1,498 Cr gross revenue FY26 ([CSR Universe](https://thecsruniverse.com/articles/recykal-raises-usd-23-million-to-expand-circular-economy-technology-and-global-operations), [Forbes India](https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1)) | Its document pack is now the norm; it deals only with GST-verified businesses, which leaves kabadiwalas to us |\n| Attero MetalMandi | AI photo pricing for metal dealers | 15,000 t/month, not in Bengaluru ([Tribune](https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp)) | Route material to recyclers' own buying apps rather than fight them |\n| Hasiru Dala / HDI | DWCCs, fair-trade traceable plastic, bulk generators | 370+ bulk clients ([HDI](https://hasirudalainnovations.com/)) | Partner, don't compete: their DWCCs become our first yards and Saathi pool |\n| Karo Sambhav, ReCircle, Banyan | PRO traceability, largely manual | 5,000 aggregators; 3,500 waste pickers | We produce the same proof automatically as part of daily work |\n| Metaloop, Rubicon | Financed trades themselves; thin broker margins | Metaloop in restructuring since Jun 2026 ([Leadersnet](https://www.leadersnet.at/news/101092,bekanntes-austro-startup-schlittert-in-millionenpleite.html)) | Never pre-pay for trades, hold stock or hold anyone's money |\n\nDifferentiators to show investors, in order:\n1. The lot passport from recycler back to household.\n2. The photo estimate priced from our own tables.\n3. A Kannada-first app built for low literacy, with voice.\n4. Shop rates shown side by side, above an admin floor.\n5. A free yard book that small yards will actually use.",
+  "pricing": "**Material prices: build the board only from Luma.Green's own data.** No exchange feed is shown publicly. Money is stored in integer paise and weight in grams, and every table carries an effective date (ADR 0008).\n\n| Layer | Decision | Why |\n|---|---|---|\n| Floors and fallbacks | Admin-edited per city and material. Suggested fallback = 28-day median; floor = 75% of fallback, rounded down to ₹0.50. Changes over 10% a week need a written reason. A suspend switch per material | Paper collection halved in the 2023 crash ([P&P Times](https://thepulpandpapertimes.com/news/price-of-waste-paper-plummeted-to-its-lowest-level-in-the-previous-five-months-881)) |\n| Plausible bands | Min and max per material; the largest daily move allowed is ±10% for paper and plastic, ±5% for metals | Catches mistakes such as a stray ₹25/kg newspaper rate |\n| Reference prices | Entered weekly by the admin with source and date; visible only to the admin and investor views | MCX allows delayed data only under an agreement; LME needs a US$25k/yr licence ([MCX](https://www.mcxindia.com/technology/datafeed), [LME](https://www.lme.com/en/market-data/market-data-licensing/data-distribution)) |\n| Public board | /prices/bengaluru: range, typical price, 7-day change, Live or Guide, number of shops. Live needs 3 or more independent businesses and at least 1 trade. Sample-data badge in the prototype | Nobody publishes dated Bengaluru household prices |\n| Freshness | Rate cards stay fresh for 14 days (paper, plastic) or 7 days (metals), with an SMS reminder; stale cards drop off the board | Paper fell 20% in 10 days in Feb 2024 ([P&P Times](https://thepulpandpapertimes.com/news/india/domestic-waste-paper-prices-1003)) |\n| Honour rate | Compare each shop's posted rate with what its receipts actually paid; a gap flags the shop | Stops shops advertising a high rate to win bookings |\n\n**Luma.Green's own revenue: free at the door, paid further up the chain.** A 20 kg basket pays the household about ₹250, so a 5% fee is about ₹12, less than the pickup costs, and cash makes skipping the app easy ([Gurley](https://abovethecrowd.com/2013/04/18/a-rake-too-far-optimal-platformpricing-strategy/)). The revenue streams live in a plans table, are all ₹0 in the pilot, and the dashboard shows the shadow revenue they would have earned.\n\n| Stream | Payer | Price (hypothesis) | Starts |\n|---|---|---|---|\n| Society / bulk-generator compliance plan | RWAs, offices | ₹500–2,000/month | After the pilot |\n| Yard workspace (book, documents, exports) | Yards, DWCCs | ₹1,500–5,000/month | After the pilot |\n| B2B trade fee (plus escrow later) | Buyer | 0.5–1% of lot value | Scale |\n| EPR evidence packs | Recyclers, PROs, brands | ₹ per tonne | Scale |\n| Price index and data | Recyclers, manufacturers | Subscription | Scale |\n| Loan and solar referrals | Lenders, installers | Per loan or install; the lender pays, never the borrower ([RBI](https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12848&Mode=0)) | Scale |",
+  "compliance": "**The pilot stays out of the heavy regimes by keeping money off the platform. Every legal number lives in an admin-edited, dated Rulebook table, because at least six of them changed between Jul 2024 and Jan 2027.**\n\n| Rule | Trigger / number | What Luma.Green does | When |\n|---|---|---|---|\n| RBI payment aggregators | Holding trade money needs an authorised PA; splitting payments to sellers needs ₹40 lakh of own turnover ([RBI MD](https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12896&Mode=0), [Route](https://razorpay.com/docs/payments/route/)) | Record payments only; escrow simulated in the prototype | Now |\n| GST e-commerce TCS | 0.5%, only once Luma collects the money (s.52) | An 'ECO switch' that turns on TCS and GSTR-8 when escrow starts | Scale |\n| Income-tax e-commerce TDS | 0.1%, and may apply even to direct payments (s.393) | Get a CA opinion before B2B trades; capture PAN optionally | Pilot |\n| Metal scrap GST | Reverse charge from unregistered sellers; self-invoice within 30 days; 2% TDS above ₹2.5 lakh ([06/2024](https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf), [25/2024](https://gstcouncil.gov.in/sites/default/files/2024-10/ct-25-2024.pdf)) | Flags and self-invoice data on each trade | Pilot |\n| E-way bill | Over ₹50,000 by motor vehicle in Karnataka; handcarts exempt ([Rule 138](https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter16/rule138_v1.00.html)) | Yes/no checker plus pre-filled Part A | Pilot |\n| SWM Rules 2026 | In force 1 Apr 2026; bulk generators and dry-waste sorters register and file returns; trade only with registered parties ([SWM 2026](https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf)) | Registration fields on every org; optional 'registered sellers only' filter; returns export | Pilot |\n| Legal Metrology | Electronic scales re-verified every 12 months; under-weighing is an offence ([r.27](https://indiankanoon.org/doc/67045693/), [e-Mapan](https://emapan.karnataka.gov.in/)) | Scale register, verified-scale badge, scale photo per weighing | Now |\n| E-Commerce Amendment Rules 2026 | From 1 Jan 2027: grievance acknowledged in 48 h and resolved in 1 month, seller disclosure, ranking explanation, yearly dark-pattern audit ([G.S.R. 789(E)](https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/whatsnews/E_Commerce_Amendment_Rules_2026_2026-09-11_18-12-39.pdf)) | Grievance desk, legal-pages pack | Pilot |\n| IT Rules 2021 | Grievance acknowledged in 24 h and resolved in 15 days; 36 h takedowns | Same desk; admin takedown action with audit log | Pilot |\n| DPDP Rules 2025 | Core duties from about 13 May 2027; breach reported within 72 h; penalties up to ₹250 cr ([DPDP](https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf)) | Notices per role, consent log, household photos deleted after 90 days, households kept out of MRV records | Pilot |\n| Aadhaar | No Aadhaar image accepted as ID unless its QR signature is verified; the number is never stored ([UIDAI](https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf)) | Prefer a driving licence, voter ID, PAN, DigiLocker or a BBMP card | Pilot |\n| Karnataka gig-worker law | Platform registers within 45 days; 1% welfare fee capped at ₹0.50–1.50 per job; 14 days' notice before removal ([PRS](https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025), [SCC](https://www.scconline.com/blog/post/2026/02/18/karnataka-government-notifies-gig-workers-welfare-fee-mandatory/)) | Saathi pay off-platform; payout ledger; appeal flow with a 14-day clock | Pilot |\n| Hazardous streams | E-waste and batteries only to registered recyclers; child labour banned in battery, e-waste and plastics work | Authorised-buyer routing; business declarations; 18+ check for Saathis | Pilot |\n| MSMED Act | Pay micro and small suppliers within 45 days ([Samadhaan](https://samadhaan.msme.gov.in/)) | Due-date clock on trades | Pilot |\n\nEvery tax or legal output is labelled 'for information, confirm with your CA'. A lawyer and a CA review the Rulebook before real users arrive.",
+  "carbonSolar": "**Carbon: report impact and build credit-readiness. Mint nothing.** None of India's 8 approved offset methods credits recycling, CCC trading is only starting around Oct 2026 ([BEE](https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294), [Carbon Pulse](https://carbon-pulse.com/365604/)), and recycling is not on India's Article 6.4 list ([MoEFCC](https://moef.gov.in/uploads/pdf/article_6.4.pdf)).\n\n| Instrument | Unit and price | Our role | When |\n|---|---|---|---|\n| Plastic credits (Verra PWRM0001/0002, PCX) | 1 credit = 1 t; PCX lists $106–804/t ([PCX](https://www.pcxsolutions.org/post/pcx-solutions-releases-updated-plastic-credit-standard-mandates-third-party-verification)) | Bengaluru grouped project with a partner developer; lots marked credit-ready | Scale |\n| Carbon credits (VMR0007, GS 448) | 2024 voluntary average $6.34/tCO2e ([SOVCM](https://3298623.fs1.hubspotusercontent-na1.net/hubfs/3298623/SOVCM%202025/Ecosystem%20Marketplace%20State%20of%20the%20Voluntary%20Carbon%20Market%202025.pdf)) | Metals only; paper has no active method | Scale |\n| EPR certificates | Issued only by registered processors; traded on CPCB's exchange, which bars brokers ([EPRETP](https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm)) | Evidence packs only | Pilot export, scale product |\n\n- **Replace the v1 carbonCredits minting table** with three numbers per lot: kg diverted, indicative tCO2e (factor frozen per lot from a dated table) and credit-ready tonnes. Only registry serial numbers are ever called credits.\n- **One claim per lot**, with a status of none, EPR certificate number, reserved, registry serial or retired. This blocks double counting across EPR certificates, plastic credits and carbon credits.\n- **Credit-rights clause and a baseline declaration at onboarding in the pilot.** Verra requires ownership evidence from each instance's start date and validation within 2 years ([Verra PS](https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf)). A published revenue share, shown in the green-bonus preview, gives kabadiwalas and Saathis a reason to sign.\n- **MRV weight is taken at dispatch** on a calibrated scale with a GRN and invoice ([PWRM0001](https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf)). Doorstep half-kilo weighing stays for payment only.\n\n**Solar: sell to our own yards and recyclers first, not to Bengaluru homes.** Karnataka has only 938 MW of rooftop solar out of India's 32.6 GW ([MNRE](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/09/202609081073775955.pdf)), and Gruha Jyothi already makes the first 200 units free for homes.\n\n| Case | System | Payback |\n|---|---|---|\n| Home paying its bill (LT-1, 350 units) | 3 kW, ₹57,000 after subsidy | 2.2–2.8 years |\n| Gruha Jyothi home, net metering | 2 kW | 11–34 years (don't promote) |\n| LT-5 yard, 2,500 units | 15 kW non-DCR | 3.2–5.4 years |\n| HT-2(a) recycler, 60,000 units | 200 kW non-DCR | 2.5–3.5 years |\n\nSources: [KERC DSPV tariff](https://kerc.karnataka.gov.in/uploads/48561787653428.pdf), [KERC regulations](https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf), [PM Surya Ghar](https://pib.gov.in/newsite/erelcontent.aspx?relid=292054).\n\n- Build a calculator whose constants are dated config rows (tariffs, export rates, subsidy, CUF 100–138.7 kWh/kW/month), with a 'Your yard could save ₹X/month' card for businesses.\n- Solar quotes go through a services request flow to verified installers, who become a new provider role. Charge installers, never consumers.\n- Add a banner: net-metered projects commissioned after 31 Dec 2026 need domestic cells from ALMM List-II ([PIB](https://pib.gov.in/newsite/erelcontent.aspx?relid=291400)).\n- Old panels and batteries are catalogue items routed only to registered recyclers.",
+  "integrations": "**Integrate through exports and deep links first, and add APIs only where they exist and pay back.** Government portals have no public APIs (CPCB SWM and EPR, Swachhatam), and some sit behind CAPTCHAs (KSPCB XGN), so the admin checks those by hand.\n\n| System | How | Cost | When |\n|---|---|---|---|\n| SMS (MSG91, already chosen) | Codes and receipts; add an '@luma.green #code' last line to every OTP template before DLT approval so Chrome can auto-fill it ([WebOTP](https://developer.chrome.com/docs/identity/web-apis/web-otp)) | Per SMS | Now |\n| WhatsApp | wa.me links with the context pre-filled, and the Web Share API for PDFs; the Business app (free) for the help desk ([pricing](https://developers.facebook.com/docs/whatsapp/pricing/)) | ₹0 for chats the user starts | Now; Cloud API or MSG91 Hello at scale |\n| Mapbox | Optimization v1 for today's route (up to 12 stops) ([docs](https://docs.mapbox.com/api/navigation/optimization-v1/)) | Free up to 100k requests a month | Now; VROOM for multi-vehicle routing at scale |\n| UPI | Kabadiwala scans the household's UPI QR; UTR recorded | ₹0 P2P | Now |\n| Tally | Excel files in Tally's import layout (Purchase, Receipt Note, Sales) ([Tally](https://help.tallysolutions.com/import-data-in-tally/)) | ₹0 | Now; XML after testing with accountants; connector at scale |\n| CPCB EPR portal | Monthly purchase register CSV in portal field order ([manual](https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf)) | ₹0 | Pilot |\n| CPCB SWM portal / Swachhatam | Quarterly returns and ward totals as CSV | ₹0 | Pilot |\n| KSPCB XGN, e-Mapan | Admin looks up consent and scale certificates by hand; number and expiry stored | ₹0 | Now |\n| GSTN via a GSP | GSTIN status check at onboarding; e-invoice and e-way bill later ([GSTN](https://developer.gst.gov.in/apiportal/)) | Per call | Pilot / scale |\n| DigiLocker via API Setu | Driving licence or PAN pulled with the user's consent ([API Setu](https://apisetu.gov.in/digilocker)) | Onboarding as a requester | Pilot |\n| Razorpay Route / Cashfree | Virtual account (about ₹20 per payment) plus a held transfer (0.1–0.25%) ([Cashfree](https://www.cashfree.com/payment-gateway-charges/)) | About 0.3% per trade | Scale (needs ₹40 lakh turnover) |\n| Speech (Sarvam or Chirp 3 HD) | Pre-recorded prompts; voice notes transcribed at about ₹0.25 each ([Sarvam](https://www.sarvam.ai/api-pricing)) | Low | Now (recorded); pilot (transcription) |\n| Freight partners (Porter, Vahak), ONDC logistics | Freight estimate from our own rate table, booked with the yard's own transporter ([Porter](https://porter.in/trucks/bangalore)) | ₹0 | Scale |\n\nThere are no live exchange feeds (MCX, LME, BigMint) until a licence and legal review are done.",
+  "support": "**The help model is a real person on WhatsApp or phone, backed by picture-and-voice step cards.** Text interfaces failed first-time low-literacy users, and a live operator was about 10 times more accurate ([Microsoft Research](https://www.microsoft.com/en-us/research/publication/designing-mobile-interfaces-for-novice-and-low-literacy-users/)).\n\n| Channel (pilot, 13–20 Oct) | Hours | First reply | Resolved within |\n|---|---|---|---|\n| One number for WhatsApp and calls | 8 AM–8 PM, every day | 15 min | Pickup-day issues the same day; others 24 h |\n| In-app help form (convex/support.ts) | Any time | 2 h during hours | 24 h |\n| Safety | Any time | Call back within 10 min | Same day |\n| Saathi pay or removal complaint | — | 48 h | 14 days (Karnataka standard) |\n| Application | — | — | 12–24 h |\n\n- **Help button on every screen**: WhatsApp with role, screen and booking code pre-filled; Call; or the form. It costs nothing, because Meta doesn't charge for chats the user starts ([Meta](https://developers.facebook.com/docs/whatsapp/pricing/)).\n- **Help hubs at /help/{role}**: 6–10 step cards and 8–12 FAQs each, stored as data keyed by role, topic, language and slug, with a 'Did this help?' tap logged to pilot events.\n- **Languages for the pilot**: hand-checked text and human voice in Kannada, Tamil, Hindi, Urdu and English first, then Telugu and Bengali. The other locales show 'translation coming'.\n- **Onboarding at the shop**: a 20–30 minute visit with a practice booking, a named 'digital buddy' and a laminated A5 picture card. Peer-made local video drove 7 times the adoption ([Digital Green](https://www.microsoft.com/en-us/research/publication/digital-green-participatory-video-for-agricultural-extension/)).\n- **Partners**: Hasiru Dala (2,314 trainings for 61,114 people, [Hasiru Dala](https://hasirudala.in/initiatives/training)) co-runs Saathi and DWCC onboarding.\n- **Scale**: MSG91 Hello shared inbox (₹1,500–3,000/month, [MSG91](https://msg91.com/in/pricing/hello)), IVR with missed-call callback, and community trainers paid per active user.",
+  "standards": "**Luma.Green sets the norms by publishing them openly, starting with material codes and a receipt format.** Standards-based network effects rank second of 16 types ([NFX](https://www.nfx.com/post/network-effects-bible)), and ReMA's free scrap specifications are the trade's common language ([ReMA](https://www.isrispecs.org/)).\n\n| Standard | What it fixes | Version / owner |\n|---|---|---|\n| Luma Material Codes (LMC) | ASCII codes in the existing FAMILY-GRADE form (PAPER-NEWS), never renamed or reused. Each code has names in 12 languages, local aliases, HSN code, unit and GST unit code, ReMA/ISRI or IS 2549 grade, EPR category, value class, and hazardous and authorised-buyer flags ([tariff 7404](https://www.eximguru.com/indian-customs-duty/7404-copper-waste-and-scrap.aspx), [3915](https://www.eximguru.com/hs-codes/3915-waste-parings-and-scrap-of.aspx)) | v0.1.0 under CC BY 4.0; public page with JSON and CSV |\n| Hand-off receipt | Lot ID, parent lots, sender and receiver IDs, material code, gross, tare, deduction and reason, net grams, rate in paise, payment method and UTR, scale ID, slip photo hash, time and geohash | v0.1 JSON schema, published with the codes |\n| Weighing norm | Stamped scale (Legal Metrology), a photo of the reading, both sides confirm; no adjustment within ±1% on B2B loads, as ISRI does for domestic loads ([ISRI](https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf)) | Platform rule |\n| Grade cards | Default limits per material: paper moisture ≤12%; OCC prohibitives ≤1% and prohibitives plus outthrows ≤5%; tuned with Bengaluru yards | Admin-edited table |\n| Luma Verified badge | Checks passed and date; consent validity; scale stamp expiry; withdrawn if rules are broken | Platform rule |\n| Local names | Collected from 10 pilot kabadiwalas with voice clips and stored as aliases, never display names (seesa means lead, sheesha means glass) | Pilot sprint |\n\n- Rates, GST and emission factors live in separate dated tables keyed by code, so a rate change never rewrites a receipt.\n- Governance: anyone can propose a change, versions are numbered, and an advisory group of kabadiwalas, yards, a recycler and Hasiru Dala reviews changes. Offer the codes to a neutral body (IARPMA/MRAI or a BIS committee) once others use them.\n- We cite ISRI code words and numbers but write our own definitions, because the ISRI text is copyrighted."
+ },
+ "modules": [
+  {
+   "name": "Sell (household)",
+   "purpose": "Turn a photo into a booked pickup or drop-off with a fair, visible price and no account.",
+   "users": [
+    "household",
+    "kabadiwala"
+   ],
+   "features": [
+    "Photo to AI estimate limited to about 20 household codes, priced from Luma tables; 'no cash value, free take-away' for zero-value items",
+    "Nearby verified shops side by side with their rates for these materials, distance, hours and badges; best price tagged",
+    "Pickup time slots with a limit per kabadiwala, a minimum load (default 15 kg) and a drop-off code for small loads",
+    "Vehicle fit from estimated kg and bulk",
+    "Booking confirmed by SMS code; tracking link showing when, who and how much; ETA while on the way",
+    "Auto re-offer to the next shop after a 15-minute timeout; self-serve cancel and reschedule",
+    "Receipt confirmed with a handover code; recycle points as an impact count with no cash value"
+   ]
+  },
+  {
+   "name": "Shop (kabadiwala)",
+   "purpose": "Give a low-literacy shop owner a phone-first workday: requests, route, weigh, pay, sort, sell.",
+   "users": [
+    "kabadiwala",
+    "saathi"
+   ],
+   "features": [
+    "Requests with Accept/Reject, read-aloud and auto-accept",
+    "Today's route (Mapbox, up to 12 stops) and 'I'm on the way'",
+    "Weigh-and-pay: half-kilo steppers, scale photo per material, cash or UPI with optional UTR",
+    "Rate card above the floor, with a buys / takes free / doesn't take flag per material",
+    "Stock and sorting runs (mixed paper in, newspaper, cardboard and reject out)",
+    "Publish stock to yards; accept pooled-collection invites",
+    "Scale register with Legal Metrology stamp expiry and reminder"
+   ]
+  },
+  {
+   "name": "Exchange (B2B)",
+   "purpose": "Match kabadiwala stock to yards, and yard bales to recyclers and manufacturers, with documents at every step.",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ],
+   "features": [
+    "Two-way stock board: sellers post what they have, buyers post what they want; accept or make one counter-offer",
+    "Pooled collection: fill one vehicle from several shops, with a capacity bar for kg and volume",
+    "Gate screen: weigh-in and weigh-out, slip photo, both sides' weights, flag above 1%",
+    "Quality check with grade card, deductions with photo and reason, accept / deduct / reject",
+    "Trade timeline: requested, accepted, funded (simulated escrow), dispatched, weighed, released",
+    "Trade document pack PDF: PO, weight slips, quality result, GRN, invoice, e-way bill number",
+    "Freight estimate from an admin vehicle-rate table"
+   ]
+  },
+  {
+   "name": "Prices",
+   "purpose": "Keep prices fair, dated and editable without code, and publish a trusted Bengaluru board.",
+   "users": [
+    "admin",
+    "household",
+    "kabadiwala",
+    "yard",
+    "investor"
+   ],
+   "features": [
+    "Admin price console: floors, fallbacks, bands, suspend switch per material, CSV paste, audit log",
+    "Reference prices (admin and investor views only) with source and date",
+    "Public board /prices/bengaluru with Live/Guide status and a sample-data badge",
+    "'Where your rupee goes' chart for newspaper and aluminium cans",
+    "Daily 06:00 IST calculation with a circuit breaker (pilot)",
+    "Freshness reminders and an honour rate per shop (pilot)"
+   ]
+  },
+  {
+   "name": "Trace and documents",
+   "purpose": "Make every kilogram traceable from household to factory, and export it in the formats buyers and regulators already use.",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "brand",
+    "admin"
+   ],
+   "features": [
+    "Lot passport: QR per lot or bale, parent lots, map timeline, weights, photos, receipts",
+    "Mass-balance check: warns when sales exceed receipts or declared capacity",
+    "Read-only share link for auditors and brands",
+    "Exports: Tally Excel, CPCB EPR purchase register CSV, SWM quarterly return CSV",
+    "One-claim-per-lot status (none, EPR certificate, reserved, registry serial, retired)"
+   ]
+  },
+  {
+   "name": "Payments",
+   "purpose": "Record every rupee now, and move to licensed escrow only when volume and eligibility allow.",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ],
+   "features": [
+    "Payment method on every receipt: cash, P2P UPI or merchant UPI, plus UTR",
+    "Verified payout account with the holder's name matched",
+    "Simulated escrow with a live breakdown of GST, 0.5% TCS, 0.1% TDS and fees (prototype)",
+    "Due dates with the MSME 45-day clock; cash-limit warnings above ₹10,000 per person per day",
+    "Razorpay Route escrow with a virtual account, or bank escrow with a trustee for large orders (scale)"
+   ]
+  },
+  {
+   "name": "Trust and verification",
+   "purpose": "Verify every business and person by hand, show the result, and resolve disputes quickly.",
+   "users": [
+    "admin",
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "saathi"
+   ],
+   "features": [
+    "Verification queue with a checklist per role and a 12–24 h clock",
+    "Badges: phone, documents, scale verified, site verified, consent valid until <date>",
+    "Registrations stored as rows: GSTIN, KSPCB consent, CPCB EPR, SWM or local-body registration, Udyam",
+    "ID checks without Aadhaar numbers: driving licence, voter ID, PAN, DigiLocker, BBMP card",
+    "'Something's wrong' complaints with 48 h and 30-day timers; account pause with reason and appeal",
+    "Two-way ratings only from code-confirmed pickups",
+    "Weight-trust view: weighed vs estimated kg against the city median"
+   ]
+  },
+  {
+   "name": "Saathi work",
+   "purpose": "Give gig workers safe, visible, fairly treated work while pay stays off-platform in the pilot.",
+   "users": [
+    "saathi",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ],
+   "features": [
+    "Onboarding with area, radius, work types, vehicle, ID and selfie",
+    "Saathi Ready: 5 picture cards, picture quiz and a badge",
+    "Job cards: pay shown before accepting, hazards and PPE, right to refuse",
+    "SOS button, incident report, 14-day appeal",
+    "Work register (days, kg, pay) exportable for NAMASTE, e-Shram and the Karnataka welfare board"
+   ]
+  },
+  {
+   "name": "Compliance",
+   "purpose": "Turn changing Indian rules into data and reminders instead of code.",
+   "users": [
+    "admin",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "kabadiwala"
+   ],
+   "features": [
+    "Rulebook: every threshold, rate and deadline with an effective-from date",
+    "Tax flags per trade: e-way bill, metal reverse charge with self-invoice, 2% GST TDS, TCS on scrap",
+    "Compliance vault: consent number, colour category and validity; EPR and PWP registration; installed capacity",
+    "Calendar: GSTR-7 and GSTR-8, SWM returns, consent expiry, scale re-verification, yearly dark-pattern audit",
+    "Authorised-buyer routing for batteries, e-waste, tyres and used oil"
+   ]
+  },
+  {
+   "name": "Impact: EPR, carbon and solar",
+   "purpose": "Sell verified evidence, not certificates, and add clean-energy services for the chain.",
+   "users": [
+    "recycler",
+    "manufacturer",
+    "brand",
+    "yard",
+    "household",
+    "admin"
+   ],
+   "features": [
+    "Impact counter: kg diverted, indicative tCO2e, credit-ready tonnes",
+    "Brand collection dashboard by plastic category, city and lot",
+    "Green-bonus preview of the revenue share (illustrative)",
+    "Solar savings calculator from dated KERC and BESCOM tables; 'your yard could save' card",
+    "Solar quote requests to verified installers (a new provider role)"
+   ]
+  },
+  {
+   "name": "Insights",
+   "purpose": "Show traction to investors and ward totals to cities from the same event data.",
+   "users": [
+    "investor",
+    "admin",
+    "city"
+   ],
+   "features": [
+    "Traction dashboard: kg traced, recorded ₹, completion rate, time to accept, estimate accuracy, retention, shadow revenue",
+    "Panel of national figures with a source for each",
+    "Ward dashboard for city officers (totals only)",
+    "Observer logins: investor, brand/auditor, city"
+   ]
+  },
+  {
+   "name": "Standards",
+   "purpose": "Publish the codes and formats that others can adopt.",
+   "users": [
+    "admin",
+    "recycler",
+    "manufacturer",
+    "yard",
+    "investor"
+   ],
+   "features": [
+    "Public Luma Material Codes page in 12 languages with JSON and CSV (CC BY 4.0)",
+    "Hand-off receipt schema",
+    "Grade cards and weighing norm",
+    "Change log and a way to propose changes"
+   ]
+  },
+  {
+   "name": "Help and support",
+   "purpose": "Get anyone to a person within one tap, in their language.",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ],
+   "features": [
+    "Help button: WhatsApp, Call or form, with context pre-filled",
+    "Help hubs /help/{role}: step cards with voice, FAQs as data",
+    "Admin support inbox with role, topic and clocks",
+    "Show-me videos and printed shop and door cards (pilot)"
+   ]
+  }
+ ],
+ "roadmap": [
+  {
+   "phase": "0. Investor prototype",
+   "window": "29 Sep – 10 Oct 2026",
+   "goals": [
+    "Every role has a demo login and a screen worth showing, on seeded Bengaluru data",
+    "Lot passport, simulated escrow and traction dashboard live",
+    "Material codes v0.1 published; Rulebook, plans and price tables as admin-edited data",
+    "Buttons 48/56 px on field screens, lakh number format, contrast fixes, 'Hear it' in Kannada, Hindi and English",
+    "A written test guide covering every role and flow A to Z"
+   ],
+   "gate": "All 13 demo scripts run end to end at 360×800 on Chrome for Android without developer help; every number carries a sample-data badge; CI green."
+  },
+  {
+   "phase": "1. Bengaluru pilot",
+   "window": "13 Oct – 31 Dec 2026",
+   "goals": [
+    "6–10 verified kabadiwalas, 2 yards including one Hasiru Dala-supported DWCC, 1 recycler, 3–5 Saathis, 2–3 societies as design partners",
+    "Proof of pickup, scale register, complaints desk, grievance officer, WhatsApp help desk",
+    "Voice and hand-checked text in Kannada, Tamil, Urdu, Hindi and English",
+    "Weight slips from both sides and grade cards on the first kabadiwala-to-yard trades; payments recorded, not held",
+    "Credit-rights clause and baseline declaration signed at onboarding",
+    "CA and lawyer review of the Rulebook, TDS/ECO status and gig-law status"
+   ],
+   "gate": "5 t traced, at least 80% of pickups completed, median time to accept 15 min or less, AI estimate within 30% of weighed kg, 100% of pickups with receipts, at least 3 real kabadiwala-to-yard trades, no unresolved safety incident."
+  },
+  {
+   "phase": "2. Bengaluru at scale, then Karnataka",
+   "window": "Jan – Jun 2027",
+   "goals": [
+    "E-Commerce Amendment Rules compliance from 1 Jan 2027; DPDP-ready by May 2027",
+    "Paid society compliance plan and yard workspace switched on",
+    "Public price board goes Live on real data; honour rate; freshness reminders",
+    "GSTIN via GSP, DigiLocker ID, Tally XML, CPCB and SWM exports in use",
+    "Mysuru and Hubballi as copy-by-data cities"
+   ],
+   "gate": "100 t/month traced, paying customers in 2 revenue streams, kabadiwala and yard retention of 60% or more at 6 months, first escrow trade through Route once the ₹40 lakh eligibility is met, or through a bank escrow."
+  },
+  {
+   "phase": "3. South and west India",
+   "window": "Jul 2027 – Mar 2028",
+   "goals": [
+    "Hyderabad, Chennai, Pune/Mumbai as clusters (1 yard, 15–30 kabadiwalas, 3–5 societies each)",
+    "EPR evidence packs sold to recyclers and PROs; Verra grouped plastic project with a partner",
+    "Loan referrals through an RBI-regulated lender; solar installers onboarded",
+    "MSG91 Hello inbox, IVR, community trainers"
+   ],
+   "gate": "Retention in new clusters at least equal to Bengaluru; evidence packs accepted in at least one CPCB or auditor check; unit economics positive per cluster before contribution to overheads."
+  },
+  {
+   "phase": "4. India-wide, every stream",
+   "window": "2028 onwards",
+   "goals": [
+    "All-state tariff, floor and rule tables; e-waste, battery, tyre and textile routing to authorised buyers",
+    "Licensed metals reference feed; monthly Luma City Scrap Index",
+    "ONDC and partner freight; multi-vehicle routing",
+    "Material codes handed to a neutral industry body"
+   ],
+   "gate": "Codes and receipt format used by at least one party outside Luma.Green (a trade body, a regulator export or a large recycler)."
+  }
+ ],
+ "prototypeScope": [
+  {
+   "feature": "Lot passport: trace one bale from recycler back to household pickups",
+   "users": [
+    "recycler",
+    "manufacturer",
+    "yard",
+    "kabadiwala",
+    "brand",
+    "investor"
+   ],
+   "why": "The single screen that proves 'every hand-off recorded' and answers the fake-certificate and fake-invoice problem.",
+   "demo": "Log in as GreenLoop Polymers, open PET bale LOT-0412, and walk the map back through the Peenya yard and the kabadiwala to 14 household receipts, with weights, slip photos and verified badges."
+  },
+  {
+   "feature": "Household sell flow with shop rates side by side",
+   "users": [
+    "household",
+    "kabadiwala"
+   ],
+   "why": "The highest-volume path and the AI estimate are the headline difference from every competitor.",
+   "demo": "Snap three photos, see '12–15 kg, ₹140–180', compare three nearby shops' rates, book a 10–12 slot with the SMS code, and open the tracking link."
+  },
+  {
+   "feature": "Proof of pickup: weigh-and-pay with handover code, scale photo and confirmed receipt",
+   "users": [
+    "kabadiwala",
+    "household"
+   ],
+   "why": "Honest weighing is the household's first fear; the confirmed receipt is the trust feature.",
+   "demo": "As the kabadiwala, open today's pickup, weigh with the half-kilo steppers, snap the scale, enter the household's 4-digit code, and show the SMS receipt with 'I got ₹408'."
+  },
+  {
+   "feature": "Investor traction dashboard with shadow revenue and sourced national figures",
+   "users": [
+    "investor",
+    "admin"
+   ],
+   "why": "Investors judge match rate, time to match, retention and a credible model on one screen.",
+   "demo": "Log in as the investor observer: kg by material, ₹ recorded, median accept of 11 min, estimate accuracy, shadow revenue by stream, and a national panel with sources."
+  },
+  {
+   "feature": "Kabadiwala-to-yard stock board with pooled collection and two-sided weight slip",
+   "users": [
+    "kabadiwala",
+    "yard"
+   ],
+   "why": "The founder calls this hand-off the most important, and no competitor serves it for small shops.",
+   "demo": "As the yard, fill a Tata Ace from three shops' newspaper on the map until the capacity bar is full, send invites, then record the gate weight and see the 2.4% gap flagged."
+  },
+  {
+   "feature": "B2B trade timeline with simulated escrow, tax and fee breakdown and document pack",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer"
+   ],
+   "why": "Shows the escrow and compliance layer and the revenue model without moving real money.",
+   "demo": "Open the ₹89,680 PET trade and step through funded, dispatched (e-way bill needed), weighed and released, showing the 0.5% TCS, 0.1% TDS and fee lines, then download the PDF pack."
+  },
+  {
+   "feature": "Bengaluru price board and 'Where your rupee goes'",
+   "users": [
+    "household",
+    "kabadiwala",
+    "investor"
+   ],
+   "why": "Makes the 'latest prices' promise visible and shows the household gets about 17% of the aluminium price for cans.",
+   "demo": "Open /prices/bengaluru (sample-data badge), tap newspaper for the range, 7-day change and number of shops, then the chart from household ₹10 to mill ₹14–15."
+  },
+  {
+   "feature": "Admin verification with trust badges, compliance vault and price console",
+   "users": [
+    "admin",
+    "yard",
+    "kabadiwala"
+   ],
+   "why": "Hand verification is the platform's quality moat; data-driven prices and rules meet the 'easy to change' requirement.",
+   "demo": "Approve the pending yard application (consent valid till 2031, scale stamp checked), then raise the newspaper floor by ₹0.50 with a reason and see it in the audit log."
+  },
+  {
+   "feature": "Saathi onboarding, Saathi Ready module and job cards",
+   "users": [
+    "saathi",
+    "kabadiwala",
+    "yard"
+   ],
+   "why": "Gives the gig role a screen and shows the dignity and safety story.",
+   "demo": "As the Saathi, pass the 5-card picture quiz, earn the Ready badge, and open a sorting-shift job card showing pay, PPE and the Accept button."
+  },
+  {
+   "feature": "Public Luma Material Codes v0.1",
+   "users": [
+    "investor",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ],
+   "why": "A standard-setting asset in weeks; every other module reuses it.",
+   "demo": "Open /standards/materials in Kannada, search 'raddi', see PAPER-NEWS with HSN 4707 30 00, unit and grade limits, then download the JSON."
+  },
+  {
+   "feature": "Brand and auditor evidence view",
+   "users": [
+    "brand",
+    "recycler",
+    "admin"
+   ],
+   "why": "Shows the scale revenue line (verified evidence for EPR) without trading certificates.",
+   "demo": "Log in as the brand observer: 1.2 t Category I rigid plastic this month by lot, then open one evidence pack and export the CSV."
+  },
+  {
+   "feature": "Solar savings card for yards and recyclers",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer"
+   ],
+   "why": "Shows the chain becoming a clean-energy customer, with real KERC numbers and no external APIs.",
+   "demo": "On the yard dashboard: 'A 15 kW system could save ₹6,600–10,800 a month, payback 3.2–5.4 years', then tap to request quotes."
+  },
+  {
+   "feature": "Help button and role help hubs with voice",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ],
+   "why": "Proves the low-literacy, human-backed support model on every screen.",
+   "demo": "Tap Help on the weigh screen: WhatsApp opens with the booking code pre-filled; open /help/kabadiwala and play the Kannada voice for 'Weigh and pay'."
+  }
+ ],
+ "helpCentre": "## Help centre plan\\n\\nThe help centre lives at /help/{role} and a public /help index. Each guide is 3–6 step cards (icon, screenshot, one line, voice), and each FAQ is a question with a one-line answer. Every item ends with **Still stuck? WhatsApp · Call · Write to us**. Content is stored as data keyed by role, topic, language and slug. [decide] marks answers that need a founder decision.\\n\\n### Every hub\\n- **Change language?** Tap the language button at the top and pick one of 12.\\n- **SMS code didn't come?** Wait 30 seconds, tap Resend, and check the number; if it still fails, WhatsApp us.\\n- **Install the app?** In Chrome, tap Install or 'Add to Home screen'.\\n- **Can't read well?** Tap the speaker on any card, or send us a voice note.\\n- **Reach a person?** WhatsApp or call the support number, 8 AM–8 PM every day.\\n- **My data?** We keep only what we need to verify you and run bookings; ask us to see or delete it.\\n\\n### Household (no account)\\nGuides: Sell in 3 steps · Take photos that estimate well · Book a pickup · Drop off at a shop · Track your pickup · Weighing and payment at the door · Cancel or change · Your points.\\n- **Need an account?** No; you confirm your mobile once with an SMS code.\\n- **What do you take?** Paper, cardboard, plastic, metal and glass; batteries and e-waste go only to authorised recyclers; no food, sanitary or medical waste.\\n- **Why a different amount from the estimate?** You're paid for the weighed kilos at the shop's rate; the photo gives only a range.\\n- **Who sets the price?** Each shop sets its own, never below Luma.Green's minimum.\\n- **How am I paid?** Cash or UPI from the kabadiwala before they leave; Luma.Green only records it.\\n- **The weight looks wrong?** Ask for a re-weigh in front of you, don't give the handover code, and tap 'Something's wrong'.\\n- **Pickup charge?** [decide] Proposed: free in the pilot; small loads are better as drop-off.\\n- **No shop accepted?** After 15 minutes we offer the booking to the next shop and SMS you.\\n- **Who sees my address?** Only the kabadiwala who accepts, after they accept.\\n- **Photos?** Used for the estimate and deleted after 90 days.\\n\\n### Kabadiwala\\nGuides: Join · After you apply · Set my prices · Accept or reject · Auto-accept · Today's route · Weigh and pay · Record sorting · Show stock to yards · Add my scale.\\n- **Need GST?** No; mark 'Not GST-registered'.\\n- **Verification time?** 12–24 hours; we call your login number.\\n- **Commission?** None in the pilot. [decide] what comes after.\\n- **Why a minimum price?** So households get a fair rate; you can always pay more.\\n- **Why a scale photo?** It protects you in a dispute and earns the 'Scale verified' badge.\\n- **What is the handover code?** The household's 4 digits; the pickup completes only when you enter it.\\n- **No vehicle?** Switch off home pickups; households can still drop off at your shop.\\n- **Customer not home?** Call from Today, then WhatsApp us the booking code. [decide] the no-show rule.\\n- **Account paused?** The screen shows why; tap Appeal.\\n\\n### Yard / DWCC\\nGuides: Join as a yard · Upload consent and machine photos · 'Consent not required' (paper baling) · Find stock · Pooled collection · Gate weighing · Quality and deductions · Export to Tally.\\n- **Which consent?** KSPCB consent in Karnataka, or your state board's; we check it on the public register.\\n- **Is GST required?** Optional now; you'll need it to buy metal from unregistered kabadiwalas (reverse charge).\\n- **When is an e-way bill needed?** For a motor-vehicle load over ₹50,000; the app tells you per load.\\n- **Weights differ?** No adjustment within 1%; above that, the certified slip decides.\\n- **Who pays freight?** Set 'yard collects' or 'kabadiwala delivers' per trade.\\n- **More than one yard?** One address per account; WhatsApp us to add more.\\n\\n### Recycler\\nGuides: Join · Upload consent and PWP registration · Find sorted lots · Order from a yard · Publish output · Export the EPR register · Open a lot passport.\\n- **Plastic extra?** Add your CPCB Plastic Waste Processor registration.\\n- **Does Luma issue EPR certificates?** No; we give you evidence to back yours.\\n- **Payments?** Recorded now; escrow is planned.\\n- **Capacity warning?** We warn at 80% and 100% of your declared yearly capacity.\\n\\n### Manufacturer\\nGuides: Join (one PDF) · See recycler output · Place an order · Trace a lot · Team roles.\\n- **What do I need?** Business details and your pollution-board certificate; GST optional.\\n- **Recycled-content proof?** Open the lot passport or share its read-only link.\\n- **Pay through Luma?** Not yet; escrow is planned.\\n\\n### Saathi\\nGuides: Join · Photo ID and selfie · Saathi Ready · Take a job · Do a home pickup · Get help fast.\\n- **Which ID?** Driving licence, voter ID, PAN, DigiLocker document or BBMP waste-picker card.\\n- **Who pays me?** The shop or company you work for, directly; pay is shown before you accept.\\n- **Can I say no?** Yes, always.\\n- **Hurt or unsafe?** Call 112, then us; we call back within 10 minutes.\\n- **Paused?** We show the reason; appeals are answered within 14 days.\\n- **Police verification?** [decide] Likely required for home pickups (Seva Sindhu certificate).\\n\\n### Observers (investor, brand, city)\\n- **Is this real data?** No; the prototype shows sample data, badged on every number.\\n- **Can I export?** Yes, CSV from each dashboard.\\n\\n### Admin (internal)\\nGuides: Verify an application · Ask for changes · Answer a request · Weight dispute · Safety incident · Pause and appeal · Edit a price or rule · Edit a help card.\\n- **Full Aadhaar uploaded?** Delete it and ask for another ID.\\n- **Underpaid household?** Compare weighed kg × rate card and the scale photo; warn the shop.",
+ "materialCatalogue": "Luma Material Codes v0.1 keep the repo's existing FAMILY-GRADE codes (convex/lib/catalogue.ts) and add new ones. Codes are immutable. **Level:** H = household (AI and doorstep), T = trade (yard grade), I = industrial output. **Value class:** cash / points (no cash value, free take-away) / not accepted. **Flags:** M = metal scrap (chapters 72–81, reverse charge and TDS), A = authorised buyers only, Hz = hazardous (PPE). GST rates come from a separate dated table (Notification 9/2025: 5% for paper, glass and textile; 18% for plastic, metal, e-waste and batteries). HSN codes marked (tbc) need checking against the CBIC tariff.\\n\\n| Code | Status | Level | Name | Trade names / aliases | HSN | Unit | Value | Flags | Reference grade |\\n|---|---|---|---|---|---|---|---|---|---|\\n| PAPER-NEWS | existing | H | Old newspapers | raddi, akhbaar, pasti | 4707 30 00 | kg | cash | | ISRI 58; moisture ≤12% |\\n| PAPER-CARTON | existing | H | Cardboard boxes | gatta, attai, rattu | 4707 10 00 | kg | cash | | ISRI 11: prohibitives ≤1%, outthrows + prohibitives ≤5% |\\n| PAPER-BOOKS | existing | H | Books and notebooks | kitaab-copy | 4707 20 00 | kg | cash | | Covers out |\\n| PAPER-OFFICE | existing | T | Sorted office / white record | record | 4707 20 00 | kg, BAL | cash | | ISRI 37 |\\n| PAPER-MIXED | existing | H | Mixed paper | mix raddi | 4707 90 00 | kg | cash | | ISRI 54 |\\n| PAPER-CARTON-DS | new | T | Double-sorted OCC, box cuttings | box cutting | 4707 10 00 | BAL, MTS | cash | | ISRI 12 |\\n| PAPER-TETRA | new | H | Beverage and aseptic cartons | Tetra Pak | 4707 90 00 (tbc) | kg | points | | EPR Cat III |\\n| PLASTIC-PET | existing | H | PET bottles | Teri, botal | 3915 90 42 | kg | cash | | Resin 1; EPR Cat I |\\n| PLASTIC-HDPE | existing | T | HDPE drums, cans, crates | Jhaap, Kaala (black) | 3915 10 00 | kg | cash | | Resin 2 |\\n| PLASTIC-PP | existing | T | PP, clear to coloured | Phugga | 3915 90 10 | kg | cash | | Resin 5; value falls as colour darkens |\\n| PLASTIC-LDPE | existing | H | Carry bags and film | Panni, thaili | 3915 10 00 | kg | cash | | Resin 4; EPR Cat II |\\n| PLASTIC-MIXED | existing | H | Mixed hard plastic | hard plastic | 3915 90 90 | kg | cash | | Yard sorts to PP or HDPE |\\n| PLASTIC-MILK | new | H | Milk pouches, rinsed | haalina cover, doodh thaili | 3915 10 00 | kg | cash | | Confirm as a separate Bengaluru stream |\\n| PLASTIC-MLP | new | H | Multi-layer packets | chips packet | 3915 90 90 | kg | points | | EPR Cat III; goes to cement kilns |\\n| PLASTIC-WOVEN | new | T | Woven PP sacks | Jabla, bori | 3915 90 10 | kg | cash | | EPR Cat II |\\n| PLASTIC-PVC | new | T | Hard PVC pipes | PVC | 3915 30 90 | kg | cash | | Resin 3 |\\n| PLASTIC-PS-ABS | new | T | PS, HIPS, ABS appliance bodies | Kadak | 3915 20 00 | kg | cash | | Resin 6/7 |\\n| OTHER-THERMOCOL | new | H | Thermocol (EPS) | thermocol | 3915 20 00 | kg | not accepted | | Shown in the 'we don't buy' list |\\n| METAL-IRON | existing | H | Light iron and steel | loha, kabbina, irumbu | 7204 49 00 | kg | cash | M | IS 2549:2023 |\\n| METAL-IRON-HMS | new | T | Heavy melting steel 1 and 2 | bhari loha | 7204 49 00 | MTS | cash | M | ISRI 200–206 |\\n| METAL-CAST | new | T | Cast iron | CI | 7204 10 00 | kg, MTS | cash | M | IS 2549:2023 |\\n| METAL-TIN | new | H | Tin cans | dabba, takaram | 7204 30 00 | kg | cash | M | Empty and dry |\\n| METAL-SS | existing | H | Stainless steel utensils | steel bartan | 7204 21 90 | kg | cash | M | |\\n| METAL-ALU-CAN | existing | H | Aluminium cans | cans | 7602 00 10 | kg | cash | M | ISRI Taldon/Talcred |\\n| METAL-ALU | existing | H | Aluminium utensils and sheet | aluminium bartan | 7602 00 90 | kg | cash | M | Remove iron and plastic |\\n| METAL-COPPER | existing | H | Copper, ungraded | tamba, tamra, cembu | 7404 00 12/19 | kg | cash | M | Yard grades into bright, No.1, No.2 |\\n| METAL-COPPER-BRIGHT | new | T | Bare bright copper wire | Barley | 7404 00 12 | kg | cash | M | Bare, unalloyed |\\n| METAL-COPPER-2 | new | T | No.2 copper | Birch/Cliff | 7404 00 12 | kg | cash | M | Nominal 96%, minimum 94% copper |\\n| METAL-BRASS | existing | H | Yellow brass | peetal, hittale | 7404 00 22 | kg | cash | M | ISRI Honey |\\n| METAL-LEAD | new | T | Lead pipe and sheet (not batteries) | seesa (not sheesha, glass), eeyam | 7802 (tbc) | kg | cash | M, Hz | ISRI Racks |\\n| GLASS-BOTTLE | existing | H | Whole bottles for reuse | botal, baatli | 7010 (tbc) | kg, DOZ | cash | | Reuse before crushing |\\n| GLASS-MIXED | new | H | Broken container glass | kaanch, gaaju | 7001 (tbc) | kg | points | | Ceramics ≤2%, no CRT glass |\\n| GLASS-CULLET-FLINT | new | T | Clear cullet | — | 7001 (tbc) | MTS | cash | | 95–100% clear |\\n| EWASTE-PHONE | existing | H | Mobile phones and tablets | mobile | 8549 | NOS | cash | A | E-waste schedule ITEW |\\n| EWASTE-LAPTOP | new | H | Laptops | laptop | 8549 | NOS | cash | A | ITEW |\\n| EWASTE-SCREEN | new | H | Flat TVs and monitors | LCD/LED | 8549 | NOS | cash | A | CEEW |\\n| EWASTE-FRIDGE | new | H | Refrigerators (1, 2 or 3 doors) | fridge | 8549 | NOS | cash | A, Hz | Refrigerant recovery |\\n| EWASTE-AC | new | H | Air conditioners (1, 1.5 or 2 ton) | AC | 8549 | NOS | cash | A, Hz | Refrigerant recovery |\\n| EWASTE-SMALL | existing | H | Small appliances | fan, mixer, charger | 8549 | kg | cash | A | Mixed small e-waste |\\n| EWASTE-CABLE | existing | H | Insulated cable | cable | 7404 00 19 | kg | cash | M | ISRI Druid; priced on copper recovery; high theft risk |\\n| EWASTE-BATTERY | existing | H | Batteries (any), whole | battery, cell | 8549 (tbc) | kg | cash | A, Hz | Routed to BATTERY-* |\\n| BATTERY-LEAD | new | T | Lead-acid, whole, upright | battery | 8549 11 00 | kg, NOS | cash | A, Hz | ISRI Rains/Rink |\\n| BATTERY-LI | new | T | Lithium-ion packs | — | 8549 (tbc) | kg | cash | A, Hz | Under 30% charge, terminals taped |\\n| SOLAR-PANEL | new | H | Old PV modules | solar plate | 8549 (tbc) | NOS | points | A | E-waste CEEW14; storage duty |\\n| OTHER-CLOTHES | existing | H | Used clothes | purane kapde | 6309 | kg | points | | Reuse sort first |\\n| TEXTILE-RAG | new | T | Cotton rags, sorted | chindi | 6310 10 | kg | cash | | Dry |\\n| TEXTILE-CUT | new | T | Garment-factory cuttings | katran | 6310 10 | kg | cash | | Declare fibre |\\n| RECYCLED-PET-FLAKE | existing | I | PET flakes | flakes | 3915 90 42 | kg, MTS | cash | | IS 14534:2023 |\\n| RECYCLED-HDPE-GRANULE | existing | I | HDPE granules | dana | 3915 10 00 (tbc) | MTS | cash | | IS 14534:2023 |\\n| RECYCLED-KRAFT | existing | I | Recycled kraft paper | kraft | 4804 (tbc) | MTS | cash | | Mill grade |\\n| RECYCLED-ALU-INGOT | existing | I | Secondary aluminium ingot | ingot | 7601 (tbc) | MTS | cash | | Alloy spec |",
+ "risks": [
+  "Investors may read seeded numbers as traction. Mitigation: a sample-data badge on every number, seed data kept separate, and the prototype called a prototype in every deck.",
+  "Direct overlap with Scrapr's partner-kabadiwala marketplace in 25+ Bengaluru areas. Mitigation: lead the pitch with the traced chain, the photo estimate, Kannada-first voice and the yard tools, not with 'a kabadiwala marketplace'.",
+  "Household pickups lose money (45–60 minutes per order; a hired Tata Ace costs ₹9.2/kg on a 25 kg lot). Mitigation: minimum loads, drop-off as the default, slot limits, the kabadiwala's own vehicle, and apartment pickup days.",
+  "Kabadiwalas may turn against factory reference prices shown to households, or trade off-platform to avoid fees. Mitigation: reference prices go to admin and investor views only, no doorstep commission, and the value to kabadiwalas comes from tools and yard access.",
+  "Handling trade money without an authorised aggregator is illegal, and escrow switches on GST TCS, income-tax TDS and seller registration. Mitigation: record-only in the pilot, simulated escrow in the demo, and Route or bank escrow only after legal and CA sign-off.",
+  "EPR and carbon mis-positioning: calling our records certificates, or minting credits in the v1 carbonCredits table, would not survive due diligence and could draw greenwashing complaints. Mitigation: sell evidence only; only registry serial numbers are called credits.",
+  "Fraud through the platform: fake pickups, light scales, circular trades like the ₹2,384 crore Karnataka case, and stolen copper cable. Mitigation: handover codes, scale photos, two-sided weights, mass-balance checks, related-account merging and theft-risk flags.",
+  "Gig-worker law: Luma.Green may count as an aggregator for Saathi jobs (registration within 45 days, 1% fee, 14 days' notice before removal). Mitigation: pay stays off-platform, a payout ledger from day one, and an appeal flow.",
+  "Privacy: ID photos, selfies, household addresses and migrant workers' data, with DPDP penalties up to ₹250 crore and UIDAI rules on Aadhaar. Mitigation: no Aadhaar numbers, 90-day photo deletion, households kept out of MRV records, and totals only for cities.",
+  "Hazardous streams (batteries, e-waste, tyres, used oil) sent to unauthorised buyers would create legal and reputational liability. Mitigation: authorised-buyer routing; keep them out of the open pilot market until checks exist.",
+  "A single admin cannot verify, price, support and judge disputes at scale, and pricing plus dispute judging in one person is a conflict of interest. Mitigation: rulebook data, clocks, and a second operator before the pilot expands.",
+  "Rules change constantly (six or more legal numbers since Jul 2024; KERC tariffs twice in 2026). Mitigation: every threshold is a dated admin row and every tax output is labelled for information.",
+  "Waste-picker politics in Bengaluru: a platform seen as displacing pickers will meet resistance. Mitigation: co-design with Hasiru Dala and the union, DWCCs as yards, and the Saathi work record helping them get recognised.",
+  "The UPI merchant fee (0.4% above ₹2,000 from 15 Oct 2026) and metal reverse charge may push B2B trades back to cash. Mitigation: record the method and steer larger payments to NEFT with a UTR."
+ ],
+ "openQuestions": [
+  "Does Luma.Green count as an 'e-commerce operator' for the 0.1% income-tax TDS and for GST while money stays off-platform? This needs a CA opinion before B2B trades.",
+  "Is Saathi work 'platform-based gig work' under the Karnataka law when the kabadiwala pays the Saathi directly, and what welfare-fee category applies?",
+  "Which Greater Bengaluru Authority corporation and which Hasiru Dala-supported DWCC will co-run the pilot, and will GBA recognise verified kabadiwalas as authorised collectors under the SWM Rules 2026?",
+  "What gross margin does a Bengaluru kabadiwala keep per material, what minimum load makes a home pickup worthwhile, and do households choose the nearest shop or the best price?",
+  "Who pays freight between kabadiwala and yard, what are the usual credit terms (cash vs 7–30 days), and what lot sizes are typical per material?",
+  "Which words do Bengaluru kabadiwalas actually use for each material (Delhi slang vs English vs Kannada), and are milk pouches a separate paid stream?",
+  "Founder decisions for the help centre: pickup charge or minimum, what recycle points are worth, business fees after the pilot, the no-show rule, Saathi insurance and police verification.",
+  "Will registered recyclers, PROs and auditors accept Luma.Green's weight, photo and trace records as supporting evidence, and would brands pay per tonne for them?",
+  "Should the pilot exclude batteries and e-waste entirely until authorised-buyer routing and CPCB/KSPCB checks are live?",
+  "Can a Gruha Jyothi household take gross metering and keep its 200 free units? Ask BESCOM before showing any home solar case.",
+  "Which escrow route fits first: Razorpay Route once Luma has ₹40 lakh of turnover, onboarding each yard as its own merchant, or a bank escrow with a trustee?",
+  "Who long-term owns the Luma Material Codes: Luma.Green, an industry association, or a BIS committee, and under which licence after v1?"
+ ],
+ "sources": [
+  {
+   "title": "BigMint: ferrous scrap index, 23 Sep 2026",
+   "url": "https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405"
+  },
+  {
+   "title": "Dialogue Earth / Eco-Business: India needs more scrap for green steel (May 2026)",
+   "url": "https://www.eco-business.com/news/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/"
+  },
+  {
+   "title": "Waste & Recycling Magazine: India's recovered fibre sector (Jan 2026)",
+   "url": "https://www.wasterecyclingmag.com/news/india-s-recovered-fibre-sector-requires-reforms-to-reach-full-potential"
+  },
+  {
+   "title": "Down To Earth: India's waste economy runs on invisible workers (May 2026)",
+   "url": "https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them"
+  },
+  {
+   "title": "The Kabadiwala: scrap prices in Bangalore",
+   "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore"
+  },
+  {
+   "title": "scraprates.in: Bangalore scrap rates (28 Sep 2026)",
+   "url": "https://scraprates.in/bangalore"
+  },
+  {
+   "title": "Upstox: MCX copper price",
+   "url": "https://upstox.com/commodity-market-trading/mcx-copper-price/"
+  },
+  {
+   "title": "Shree Metal Prices: Delhi scrap prices",
+   "url": "https://shreemetalprices.com/delhi-scrap-prices-today/"
+  },
+  {
+   "title": "ScrapC: PET bottle price",
+   "url": "https://scrapc.com/news/pet-bottle-price/"
+  },
+  {
+   "title": "BIN: cardboard scrap rate in India 2026",
+   "url": "https://joinbin.com/scrap-rate-cardboard-india"
+  },
+  {
+   "title": "Aluminium Magazine: current aluminium price (28 Sep 2026)",
+   "url": "https://aluminiummagazine.com/mag/business/current-aluminium-price.html"
+  },
+  {
+   "title": "BBMP / SVP: Extracting Value from Bengaluru's Dry Waste Chain (2014)",
+   "url": "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru's%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+  },
+  {
+   "title": "Deccan Herald: weighing scale racket busted in Bengaluru (Mar 2023)",
+   "url": "https://www.deccanherald.com/india/karnataka/bengaluru/weighing-scale-racket-in-bengaluru-busted-by-kamakshipalya-police-1201713.html"
+  },
+  {
+   "title": "NewsKarnataka: fraud in weights and measurements in Bengaluru (Nov 2024)",
+   "url": "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+  },
+  {
+   "title": "Citizen Matters: Bengaluru's waste pickers struggle without recognition (Sep 2025)",
+   "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+  },
+  {
+   "title": "Wikipedia: Bengaluru (Census 2011 languages)",
+   "url": "https://en.wikipedia.org/wiki/Bengaluru"
+  },
+  {
+   "title": "Pulp and Paper Times: waste paper price slump (Jun 2023)",
+   "url": "https://thepulpandpapertimes.com/news/price-of-waste-paper-plummeted-to-its-lowest-level-in-the-previous-five-months-881"
+  },
+  {
+   "title": "Pulp and Paper Times: domestic waste paper prices fall (Feb 2024)",
+   "url": "https://thepulpandpapertimes.com/news/india/domestic-waste-paper-prices-1003"
+  },
+  {
+   "title": "MCX: data feed terms",
+   "url": "https://www.mcxindia.com/technology/datafeed"
+  },
+  {
+   "title": "LME: data distribution licence",
+   "url": "https://www.lme.com/en/market-data/market-data-licensing/data-distribution"
+  },
+  {
+   "title": "Sankalp Forum: The Kabadiwala co-founder interview (Sep 2025)",
+   "url": "https://www.sankalpforum.com/from-college-frustration-to-organizing-indias-waste-economy-sankalpchangemakers-features-anurag-asati-co-founder-the-kabadiwala/"
+  },
+  {
+   "title": "Tracxn: The Kabadiwala",
+   "url": "https://tracxn.com/d/companies/the-kabadiwala/__m3UNbioxN9Vlb-olXsWxlH2fS3RjMA9DD-dTecfCnLc"
+  },
+  {
+   "title": "App Store: The Kabadiwala reviews",
+   "url": "https://apps.apple.com/in/app/the-kabadiwala/id1610864605"
+  },
+  {
+   "title": "Inc42: ScrapUncle raises ₹22 Cr (Jan 2026)",
+   "url": "https://inc42.com/buzz/cleantech-startup-scrapuncle-raises-inr-22-cr-to-expand-presence-across-delhi-ncr/"
+  },
+  {
+   "title": "Forbes India: How Recykal is cleaning up the mess (2021)",
+   "url": "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1"
+  },
+  {
+   "title": "The CSR Universe: Recykal raises USD 23 million (Jun 2026)",
+   "url": "https://thecsruniverse.com/articles/recykal-raises-usd-23-million-to-expand-circular-economy-technology-and-global-operations"
+  },
+  {
+   "title": "The Tribune: Attero's MetalMandi crosses 2 lakh downloads (Apr 2026)",
+   "url": "https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp"
+  },
+  {
+   "title": "Hasiru Dala Innovations",
+   "url": "https://hasirudalainnovations.com/"
+  },
+  {
+   "title": "Leadersnet: Metaloop insolvency (Jun 2026)",
+   "url": "https://www.leadersnet.at/news/101092,bekanntes-austro-startup-schlittert-in-millionenpleite.html"
+  },
+  {
+   "title": "Bill Gurley: A Rake Too Far",
+   "url": "https://abovethecrowd.com/2013/04/18/a-rake-too-far-optimal-platformpricing-strategy/"
+  },
+  {
+   "title": "RBI: Digital Lending Directions 2025",
+   "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12848&Mode=0"
+  },
+  {
+   "title": "RBI: Master Direction on Payment Aggregators (15 Sep 2025)",
+   "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12896&Mode=0"
+  },
+  {
+   "title": "Razorpay Route documentation",
+   "url": "https://razorpay.com/docs/payments/route/"
+  },
+  {
+   "title": "Cashfree payment gateway charges",
+   "url": "https://www.cashfree.com/payment-gateway-charges/"
+  },
+  {
+   "title": "Notification 06/2024-CT(Rate): reverse charge on metal scrap",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf"
+  },
+  {
+   "title": "Notification 25/2024-CT: TDS on metal scrap",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-25-2024.pdf"
+  },
+  {
+   "title": "CBIC: CGST Rule 138 (e-way bill)",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter16/rule138_v1.00.html"
+  },
+  {
+   "title": "MoEFCC: Solid Waste Management Rules 2026",
+   "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+  },
+  {
+   "title": "Legal Metrology (General) Rules 2011, rule 27",
+   "url": "https://indiankanoon.org/doc/67045693/"
+  },
+  {
+   "title": "e-Mapan: Legal Metrology Karnataka",
+   "url": "https://emapan.karnataka.gov.in/"
+  },
+  {
+   "title": "DoCA: Consumer Protection (E-Commerce) Amendment Rules 2026",
+   "url": "https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/whatsnews/E_Commerce_Amendment_Rules_2026_2026-09-11_18-12-39.pdf"
+  },
+  {
+   "title": "DPDP Rules 2025 (G.S.R. 846(E))",
+   "url": "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf"
+  },
+  {
+   "title": "UIDAI: Aadhaar Authentication and Offline Verification Regulations (to 30 Dec 2025)",
+   "url": "https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf"
+  },
+  {
+   "title": "PRS: Karnataka Platform-based Gig Workers Bill 2025",
+   "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+  },
+  {
+   "title": "SCC Online: Karnataka gig workers welfare fee (Feb 2026)",
+   "url": "https://www.scconline.com/blog/post/2026/02/18/karnataka-government-notifies-gig-workers-welfare-fee-mandatory/"
+  },
+  {
+   "title": "MSME Samadhaan: delayed payments",
+   "url": "https://samadhaan.msme.gov.in/"
+  },
+  {
+   "title": "BEE: Carbon Credit Trading Scheme",
+   "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294"
+  },
+  {
+   "title": "Carbon Pulse: India to begin CCC trading by Oct 2026",
+   "url": "https://carbon-pulse.com/365604/"
+  },
+  {
+   "title": "MoEFCC: Article 6.4 activities list (Jun 2024)",
+   "url": "https://moef.gov.in/uploads/pdf/article_6.4.pdf"
+  },
+  {
+   "title": "PCX: updated plastic credit standard",
+   "url": "https://www.pcxsolutions.org/post/pcx-solutions-releases-updated-plastic-credit-standard-mandates-third-party-verification"
+  },
+  {
+   "title": "Ecosystem Marketplace: State of the Voluntary Carbon Market 2025",
+   "url": "https://3298623.fs1.hubspotusercontent-na1.net/hubfs/3298623/SOVCM%202025/Ecosystem%20Marketplace%20State%20of%20the%20Voluntary%20Carbon%20Market%202025.pdf"
+  },
+  {
+   "title": "CPCB: EPR Electronic Trading and Settlement Platform guidelines",
+   "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm"
+  },
+  {
+   "title": "Verra: Plastic Waste Reduction Standard v1.0",
+   "url": "https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf"
+  },
+  {
+   "title": "Verra: PWRM0001 plastic collection methodology v1.1",
+   "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf"
+  },
+  {
+   "title": "MNRE: state-wise RE capacity 31 Aug 2026",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/09/202609081073775955.pdf"
+  },
+  {
+   "title": "KERC: generic tariff for distributed solar (25 Aug 2026)",
+   "url": "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf"
+  },
+  {
+   "title": "KERC: Distributed Solar PV Regulations 2026",
+   "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf"
+  },
+  {
+   "title": "PIB: PM Surya Ghar subsidy and loans (Jul 2026)",
+   "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=292054"
+  },
+  {
+   "title": "PIB: ALMM List-II window to 31 Dec 2026",
+   "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=291400"
+  },
+  {
+   "title": "Chrome for Developers: WebOTP API",
+   "url": "https://developer.chrome.com/docs/identity/web-apis/web-otp"
+  },
+  {
+   "title": "Meta: WhatsApp Business Platform pricing",
+   "url": "https://developers.facebook.com/docs/whatsapp/pricing/"
+  },
+  {
+   "title": "Mapbox: Optimization API v1",
+   "url": "https://docs.mapbox.com/api/navigation/optimization-v1/"
+  },
+  {
+   "title": "TallyHelp: import data into TallyPrime",
+   "url": "https://help.tallysolutions.com/import-data-in-tally/"
+  },
+  {
+   "title": "CPCB: EPR plastic portal guidance manual",
+   "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf"
+  },
+  {
+   "title": "GSTN developer API portal",
+   "url": "https://developer.gst.gov.in/apiportal/"
+  },
+  {
+   "title": "API Setu: DigiLocker",
+   "url": "https://apisetu.gov.in/digilocker"
+  },
+  {
+   "title": "Sarvam AI: API pricing",
+   "url": "https://www.sarvam.ai/api-pricing"
+  },
+  {
+   "title": "Porter: trucks in Bangalore",
+   "url": "https://porter.in/trucks/bangalore"
+  },
+  {
+   "title": "Microsoft Research: mobile interfaces for low-literacy users (2011)",
+   "url": "https://www.microsoft.com/en-us/research/publication/designing-mobile-interfaces-for-novice-and-low-literacy-users/"
+  },
+  {
+   "title": "Microsoft Research: Digital Green participatory video (2009)",
+   "url": "https://www.microsoft.com/en-us/research/publication/digital-green-participatory-video-for-agricultural-extension/"
+  },
+  {
+   "title": "Hasiru Dala: training programmes",
+   "url": "https://hasirudala.in/initiatives/training"
+  },
+  {
+   "title": "MSG91 Hello pricing",
+   "url": "https://msg91.com/in/pricing/hello"
+  },
+  {
+   "title": "NFX: The Network Effects Bible",
+   "url": "https://www.nfx.com/post/network-effects-bible"
+  },
+  {
+   "title": "ReMA / ISRI scrap specifications",
+   "url": "https://www.isrispecs.org/"
+  },
+  {
+   "title": "ISRI Scrap Specifications Circular 2024",
+   "url": "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+  },
+  {
+   "title": "Eximguru: ITC-HS 7404 copper scrap",
+   "url": "https://www.eximguru.com/indian-customs-duty/7404-copper-waste-and-scrap.aspx"
+  },
+  {
+   "title": "Eximguru: ITC-HS 3915 plastic scrap",
+   "url": "https://www.eximguru.com/hs-codes/3915-waste-parings-and-scrap-of.aspx"
+  }
+ ]
+}

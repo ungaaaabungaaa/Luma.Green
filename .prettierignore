@@ -10,3 +10,5 @@ package-lock.json
 # formatting it only turns every dependency PR's Format check red.
 pnpm-lock.yaml
 *.min.*
+# Verbatim agent outputs handed to the cloud session; never reformatted.
+docs/plan/research/handoff

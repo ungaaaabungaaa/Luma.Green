@@ -1,0 +1,670 @@
+[
+ {
+  "topic": "Payments and finance",
+  "question": "Is Luma an 'e-commerce operator' under the Income-tax Act 2025 (section 393(1), row 8(v)) and under CGST section 52 for bookings where money never passes through it? This is repo open question 12."
+ },
+ {
+  "topic": "Payments and finance",
+  "question": "Does the Act's definition of 'scrap' cover post-consumer recyclables that yards sell (newspaper, PET, cartons)? And did Finance Act 2026 enact the 2% scrap TCS rate unchanged from 1 Apr 2026?"
+ },
+ {
+  "topic": "Payments and finance",
+  "question": "Which GST rate and HSN code apply to each material in the catalogue after the 22 Sep 2025 rate changes? What value threshold applies to the 2% GST TDS on metal scrap?"
+ },
+ {
+  "topic": "Payments and finance",
+  "question": "Will Razorpay or Cashfree let Luma split payments to sellers before Luma has ₹40 lakh of its own turnover? If not, should each yard and recycler be onboarded as its own merchant, or should escrow be a bank escrow with a trustee (RazorpayX Escrow+, CastlerX)?"
+ },
+ {
+  "topic": "Payments and finance",
+  "question": "Who pays Luma's fee on business trades (buyer, seller or both)? Does Luma charge kabadiwalas for household pickups, per pickup or as a subscription?"
+ },
+ {
+  "topic": "Payments and finance",
+  "question": "What weight difference and what time window release escrow? For example, within ±1% at the buyer's weighbridge, confirmed within 48 hours."
+ },
+ {
+  "topic": "Payments and finance",
+  "question": "Is Luma an 'aggregator' under Karnataka's gig-workers law for Saathi jobs? If so, which welfare-fee rate category applies?"
+ },
+ {
+  "topic": "Payments and finance",
+  "question": "Which bank or NBFC partners will lend in the Bengaluru pilot (for example Mudra loans through a partner bank, or NBFC purchase finance)? Will they accept Luma's receipts as underwriting data?"
+ },
+ {
+  "topic": "business",
+  "question": "Under the SWM Rules 2026, who issues EBWGR certificates and at what price? Can a network of kabadiwalas and yards supply them to Bengaluru societies? (We need the text of the 27 Jan 2026 notification.)"
+ },
+ {
+  "topic": "business",
+  "question": "What are kabadiwalas' real gross margins per material, and will they pay a monthly subscription or only per lead?"
+ },
+ {
+  "topic": "business",
+  "question": "What are typical kabadiwala-to-yard lot sizes, how many days of credit are given, and who transports the material? This sizes both the business-to-business fee and the need for financing."
+ },
+ {
+  "topic": "business",
+  "question": "Has Karnataka's gig-worker Bill been passed and brought into force, and what fee rate would apply to Saathi jobs?"
+ },
+ {
+  "topic": "business",
+  "question": "Will Luma.Green count as an e-commerce operator under GST (and so have to collect tax at source) once trades or escrow go live?"
+ },
+ {
+  "topic": "business",
+  "question": "Do CPCB's EPR and SWM portals accept bulk uploads or API connections from outside record systems?"
+ },
+ {
+  "topic": "business",
+  "question": "Which neutral body should look after the material codes in the long run: an industry association, a BIS committee, or a foundation?"
+ },
+ {
+  "topic": "business",
+  "question": "What are the current recycled-content requirements after any 2024–2026 amendments to the plastic rules?"
+ },
+ {
+  "topic": "carbon",
+  "question": "Will BEE add a material-recovery or recycling methodology to the ICM offset mechanism (waste is a Phase I sector), and when?"
+ },
+ {
+  "topic": "carbon",
+  "question": "What floor and forbearance prices will CERC approve for CCCs, and will offset CCCs ever count toward compliance?"
+ },
+ {
+  "topic": "carbon",
+  "question": "Should Luma be the project proponent of a Verra grouped plastic project, or partner with an existing developer such as Hasiru Dala Innovations in Bengaluru?"
+ },
+ {
+  "topic": "carbon",
+  "question": "What share of net credit revenue will kabadiwalas, yards and Saathis accept for assigning their credit rights, and should it be paid per kg after issuance or advanced earlier?"
+ },
+ {
+  "topic": "carbon",
+  "question": "Can a tonne that generated a CPCB EPR certificate also earn a Verra WRC or WCC? This needs a legal opinion and a verifier's view."
+ },
+ {
+  "topic": "carbon",
+  "question": "Is paper or cardboard creditable under any active methodology? VMR0007 and GS 448, as read here, do not cover it."
+ },
+ {
+  "topic": "carbon",
+  "question": "What does a verification cost in India, and how many tonnes a year does it take for plastic credits to pay?"
+ },
+ {
+  "topic": "carbon",
+  "question": "What will CPCB's SWM 2026 portal require of informal aggregators such as kabadiwalas, and can Luma report on their behalf?"
+ },
+ {
+  "topic": "carbon",
+  "question": "Will a verifier accept ward- or geohash-level household location as evidence of an identifiable source?"
+ },
+ {
+  "topic": "competitors-b2b",
+  "question": "Is the MSTC-run EPR exchange live, and are certificate deals outside it now banned? An industry blog on 26 March 2026 found no launch date, while an April 2026 compliance guide says using it is compulsory in 2026. Only CPCB can confirm."
+ },
+ {
+  "topic": "competitors-b2b",
+  "question": "What proof of material origin do registered recyclers and PROs in Karnataka need for CPCB and Karnataka pollution-board (KSPCB) audits, and would they pay for a lot history?"
+ },
+ {
+  "topic": "competitors-b2b",
+  "question": "Will Hasiru Dala, other collection-centre operators and the city's waste authority agree to keep the centres' stock records on Luma.Green?"
+ },
+ {
+  "topic": "competitors-b2b",
+  "question": "What do Recykal and MetalMandi charge small aggregators, and what are their minimum lot sizes and payment terms? None of this is published."
+ },
+ {
+  "topic": "competitors-b2b",
+  "question": "Which Bengaluru materials (paper, PET, metals) move from kabadiwalas to yards in enough volume to show real matches in the investor demo?"
+ },
+ {
+  "topic": "competitors-b2b",
+  "question": "Can a young company like Luma.Green meet Razorpay Route's turnover minimums, or will escrow need a bank partner?"
+ },
+ {
+  "topic": "competitors-b2b",
+  "question": "Does helping businesses trade make Luma.Green a GST 'e-commerce operator' that must collect tax on each sale? (open question 12 in docs/product/open-questions.md)"
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "What does Scrapr charge partner kabadiwalas (subscription or commission), and how many of its 5,000+ kabadiwalas are active in Bengaluru? Its pricing page returned 404."
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "Is ScrapUncle actually operating in Bengaluru? Its rate card lists Bengaluru, but its January 2026 funding news mentions only Delhi NCR."
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "What minimum load (in kg or ₹) makes a home pickup worth the trip for a Bengaluru kabadiwala, and what share of households reach it? To be measured in the pilot."
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "When shown both, do households pick the nearest kabadiwala or the one with the best price?"
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "How often does a typical Bengaluru household have enough scrap to sell (monthly, quarterly)? This sets the repeat-use numbers investors will expect."
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "Can Luma.Green hand low-value materials to waste-picker-run DWCCs or Hasiru Dala, and on what terms?"
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "How many DWCCs operate today under the Greater Bengaluru Authority? The latest figure found (166 working of 198) is from 2019."
+ },
+ {
+  "topic": "competitors-b2c",
+  "question": "Do the Android versions of competitor apps offer Indian languages? Only the iPhone listings were checked, and they show English only."
+ },
+ {
+  "topic": "design",
+  "question": "Which languages do the actual pilot kabadiwalas and households in Bengaluru read and speak, and how many can read numbers but not words? A 5-person check would settle it."
+ },
+ {
+  "topic": "design",
+  "question": "Do Bengali, Marathi and Urdu pilot users prefer international digits or their own script's digits for prices and weights?"
+ },
+ {
+  "topic": "design",
+  "question": "Do users recognise materials faster from real photos or from drawn pictures? This needs a quick recognition test before the material tiles are fixed."
+ },
+ {
+  "topic": "design",
+  "question": "Do the bin colours in the new Solid Waste Management Rules (wet, dry, sanitary, special care) clash with the planned material colours? Not checked here."
+ },
+ {
+  "topic": "design",
+  "question": "Which text-to-speech service for the pilot: Google's Chirp 3 HD, the free Indic Parler-TTS, or Bhashini/Sarvam? Pricing and startup access to Bhashini were not checked."
+ },
+ {
+  "topic": "design",
+  "question": "Does the Convex client keep unsent changes after the app reloads offline, or does the weigh-and-pay queue need to be stored on the phone by us? Next's automatic retries cover its own form actions, not Convex updates."
+ },
+ {
+  "topic": "design",
+  "question": "What are the licence terms of IconScout, Blush and Icons8? Their pages blocked our access."
+ },
+ {
+  "topic": "design",
+  "question": "Which Indian accessibility rules (the RPwD Act 2016, the Indian standard IS 17802, the government's GIGW 3.0 guidelines) apply to a private platform like Luma.Green? Not checked here."
+ },
+ {
+  "topic": "design",
+  "question": "What budget and timeline are there for commissioning a custom set of Indian clothing and props for the illustrations?"
+ },
+ {
+  "topic": "epr",
+  "question": "Has MSTC's EPR trading platform been approved since June 2026, and when will direct buyer-to-seller transfers on the CPCB portals stop? A trade report (Enviliance, Apr 2026) says CPCB launched a common login portal, epr.cpcb.gov.in, in February 2026; this needs checking."
+ },
+ {
+  "topic": "epr",
+  "question": "What evidence will CPCB's verification guidelines under the 31 Mar 2026 plastic amendment (due around September–October 2026) and Registered Environment Auditors accept? Could chain-of-custody records generated on a platform count as proof of post-consumer origin?"
+ },
+ {
+  "topic": "epr",
+  "question": "Does the plastic EPR portal accept receipts without GST for processors' purchases from informal collectors, as the e-waste portal does, or only GST e-invoices?"
+ },
+ {
+  "topic": "epr",
+  "question": "Trade sources list EPR regimes for non-ferrous metals and for construction and demolition waste as in force in 2026. Do they cover kabadiwala metal trades (copper, aluminium, brass), and who creates certificates there?"
+ },
+ {
+  "topic": "epr",
+  "question": "Do the Solid Waste Management Rules 2026, reported to be in force from 1 April 2026, require aggregators or scrap dealers to register on a portal?"
+ },
+ {
+  "topic": "epr",
+  "question": "What will the Delhi High Court finally rule on the e-waste floor price (reported at ₹22/kg), and will prices elsewhere be reset each quarter on the exchange?"
+ },
+ {
+  "topic": "epr",
+  "question": "Which KSPCB-registered plastic processors, e-waste recyclers and battery recyclers near Bengaluru would join a verified-feedstock pilot, and what documents do they ask yards for today?"
+ },
+ {
+  "topic": "epr",
+  "question": "Plastic certificates can be issued in a local authority's name. Should Luma.Green partner with Bengaluru's municipal dry-waste collection network?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "Which accounting software do the pilot yards and recyclers use (Tally, Busy, Marg, Excel), and which Tally release? This decides between Excel and XML exports."
+ },
+ {
+  "topic": "industry-integration",
+  "question": "Do pilot yards weigh on their own stamped weighbridge, a public weighbridge or platform scales, and does their slip carry a serial number?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "What grade names, quality parameters and deduction rules do Bengaluru buyers write on POs today (ISRI names, mill specs, local names)?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "For metal, do pilot yards buy from unregistered kabadiwalas, and do they issue reverse-charge self-invoices today?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "Do pilot recyclers hold CPCB processor (PWP) registration, and does the portal accept bulk uploads from processors, or only the per-invoice 'Single Entry' form the manual shows?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "Will buyers, GRS/ISCC auditors or CPCB physical verification accept Luma.Green's weight and photo record as supporting evidence?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "What TCS rate on scrap did the Finance Act 2026 actually enact, what is Karnataka's intra-state e-way bill limit, and is the 45-day MSME payment rule kept under the Income-tax Act 2025?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "Which factory roles will actually log in during the pilot: only the owner, or also gate, quality and accounts staff?"
+ },
+ {
+  "topic": "industry-integration",
+  "question": "Should brand owners and auditors get read-only trace links in the investor demo, and who controls sharing them?"
+ },
+ {
+  "topic": "legal",
+  "question": "Does e-commerce operator TDS (0.1%, the old s.194-O) apply to Luma.Green when buyers pay sellers directly, and which section of the Income-tax Act 2025 now carries it?"
+ },
+ {
+  "topic": "legal",
+  "question": "Are households 'consumers' under the Consumer Protection Act when they sell scrap and get a free pickup? That decides whether the E-Commerce Rules' grievance duties cover the household leg (assume yes)."
+ },
+ {
+  "topic": "legal",
+  "question": "Is Luma.Green an 'aggregator' for Saathi work under the Social Security Code's Seventh Schedule and the Karnataka Act if Saathis are paid by kabadiwalas, not by the platform? If so, what is the welfare fee calculated on?"
+ },
+ {
+  "topic": "legal",
+  "question": "What is the status of the reported 2026 Karnataka High Court challenge to the gig welfare fee?"
+ },
+ {
+  "topic": "legal",
+  "question": "After MeitY's January 2026 consultations, were the DPDP deadlines (about 13 May 2027) shortened for any class of company?"
+ },
+ {
+  "topic": "legal",
+  "question": "Have amendments to the IT Rules in 2025–26 changed the 36-hour takedown and the 24-hour / 15-day grievance timelines? The version checked was consolidated to April 2023."
+ },
+ {
+  "topic": "legal",
+  "question": "Did the Finance Act 2026 enact 2% TCS on scrap? Which sellers are covered, and does the exemption for buyers who use scrap in manufacturing survive in the 2025 Act?"
+ },
+ {
+  "topic": "legal",
+  "question": "What penalty now applies to an unverified scale after the Jan Vishwas changes in force from 1 May 2026, and does Karnataka's enforcement rule require yearly re-verification for every instrument?"
+ },
+ {
+  "topic": "legal",
+  "question": "Do plain kabadiwala shops that only collect and store scrap need any KSPCB consent or authorisation under the waste rules? They are not in KSPCB's category lists."
+ },
+ {
+  "topic": "legal",
+  "question": "Does Bengaluru police require scrap dealers to hold a licence or keep purchase registers?"
+ },
+ {
+  "topic": "legal",
+  "question": "Should the e-way bill helper use a Karnataka-specific intra-state limit, or is ₹50,000 correct for all intra-state movement? Confirm on the e-way bill portal."
+ },
+ {
+  "topic": "logistics",
+  "question": "In Bengaluru, do yards usually collect with their own vehicles or do kabadiwalas deliver? Who pays the freight? (Ask pilot yards.)"
+ },
+ {
+  "topic": "logistics",
+  "question": "What do pilot yards and local transporters actually charge per km and for loading? Porter publishes only starting fares."
+ },
+ {
+  "topic": "logistics",
+  "question": "What is the smallest load per material worth a yard collection, by kg and by volume?"
+ },
+ {
+  "topic": "logistics",
+  "question": "Will yards generate e-way bills in their own GST software, or does Luma.Green need a GST filing partner? Is the SMS e-way bill enough for small yards?"
+ },
+ {
+  "topic": "logistics",
+  "question": "Will the Greater Bengaluru Authority require kabadiwalas, or Luma.Green, to register under the SWM Rules 2026 before collecting from bulk generators (e.g. apartment societies producing over 100 kg a day)?"
+ },
+ {
+  "topic": "logistics",
+  "question": "Is Luma.Green an 'aggregator' under Karnataka's gig-workers law if Saathis do pickups but are paid by kabadiwalas?"
+ },
+ {
+  "topic": "logistics",
+  "question": "Have the Legal Metrology penalties listed by Invest Karnataka (Sep 2025) changed since?"
+ },
+ {
+  "topic": "logistics",
+  "question": "Can a startup use ULIP, the government's logistics data platform (vehicle records, driving licences, FASTag data), to check transporters' vehicles and drivers? Not checked in this research."
+ },
+ {
+  "topic": "logistics",
+  "question": "What are Bengaluru's standing, city-wide entry hours for goods vehicles? Only the temporary September 2026 notices were checked."
+ },
+ {
+  "topic": "market",
+  "question": "How many kabadiwalas operate in Bengaluru, and what share of household dry waste reaches them rather than the city's waste company or the dry waste collection centres? No census was found."
+ },
+ {
+  "topic": "market",
+  "question": "What margin does a Bengaluru kabadiwala actually keep per material after rent, transport, credit and losses? Interview 10–20 shops before households see reference prices."
+ },
+ {
+  "topic": "market",
+  "question": "What are the usual payment terms from yard to kabadiwala in Bengaluru (cash at pickup, or 7–30 days' credit), and what are the minimum lot sizes per material?"
+ },
+ {
+  "topic": "market",
+  "question": "Which reference-price sources can be used legally and cheaply: MCX, a BigMint subscription, mill price notices?"
+ },
+ {
+  "topic": "market",
+  "question": "For investors, should we quote the pollution board's 1.4 Mt of e-waste or NITI Aayog's 6.19 Mt? Or both, with how each is measured?"
+ },
+ {
+  "topic": "market",
+  "question": "Has the replacement for the Solid Waste Management Rules 2016 come into force, and does it require kabadiwalas or aggregators to register? This was not verified here."
+ },
+ {
+  "topic": "market",
+  "question": "Should batteries, e-waste and tyres be left out of the Bengaluru pilot entirely until the authorised-buyer check exists?"
+ },
+ {
+  "topic": "market",
+  "question": "Can recycle points reward zero-value items (glass, film, old clothes) without distorting the cash prices for other materials?"
+ },
+ {
+  "topic": "materials",
+  "question": "What are the exact 8-digit lines for glass (7001 00 xx), lead (7802 00 xx), the 8549 sub-headings (lithium-ion, dry cells, CRT glass, circuit boards), 6309/6310 and reusable bottles (7010)? Confirm against the CBIC tariff before publishing."
+ },
+ {
+  "topic": "materials",
+  "question": "Which e-waste schedule item codes (the ITEW, CEEW and LSEEW numbers) match each appliance code? This needs the official schedule text."
+ },
+ {
+  "topic": "materials",
+  "question": "What words do Bengaluru kabadiwalas use for plastics: Delhi's Teri, Phugga, Jhaap and Panni, English PET, PP, HD and LD, or Kannada terms? Are milk pouches (Nandini) a separate paid stream?"
+ },
+ {
+  "topic": "materials",
+  "question": "Is 'gujari' used for scrap shops in Bengaluru, given that the dictionary defines it as a small retail or evening market?"
+ },
+ {
+  "topic": "materials",
+  "question": "Should small appliances and fans be priced per kg (Delhi cards pay Rs 25/kg for fans) or per piece?"
+ },
+ {
+  "topic": "materials",
+  "question": "Will the pilot show tax facts at all, given that ADR 0009 keeps money off-platform first?"
+ },
+ {
+  "topic": "materials",
+  "question": "Did new national solid-waste rules (reported for 2026, not verified here) add a separate household stream for hazardous items that should own batteries and bulbs?"
+ },
+ {
+  "topic": "materials",
+  "question": "Who owns the standard in the long term (Luma alone or a group of industry partners), and under which licence?"
+ },
+ {
+  "topic": "materials",
+  "question": "Which source should supply the emission factor for each code? That is for the carbon module's research."
+ },
+ {
+  "topic": "personas",
+  "question": "Does a scrap-pickup marketplace or Saathi job board fall under Karnataka's gig act ('home services' or 'e-marketplace') or the Social Security Code's definition of an aggregator?"
+ },
+ {
+  "topic": "personas",
+  "question": "Which SWM 2026 registration should pilot yards (and Luma.Green) hold with GBA/BSWML, and will GBA recognise kabadiwalas as 'authorised' informal waste collectors?"
+ },
+ {
+  "topic": "personas",
+  "question": "Will a Hasiru Dala-supported DWCC or the Karnataka waste-pickers' union co-run the pilot as a yard and Saathi pool?"
+ },
+ {
+  "topic": "personas",
+  "question": "How many pilot kabadiwalas accept UPI, and do they stay under the ₹1 lakh a month small-merchant limit that avoids the new UPI fee?"
+ },
+ {
+  "topic": "personas",
+  "question": "What evidence from informal collection would a brand's EPR auditor accept (photo, weight, GPS, counterparty registration), and would brands pay for it?"
+ },
+ {
+  "topic": "personas",
+  "question": "Do Bengaluru RWAs and tech parks expect to be paid for dry waste or to pay for compliant collection, and what report format does BSWML ask of them?"
+ },
+ {
+  "topic": "personas",
+  "question": "Which ID or attestation can undocumented migrant waste pickers provide, and will an NGO's attestation be enough for verification?"
+ },
+ {
+  "topic": "personas",
+  "question": "What are recycle points worth, and could CSR budgets fund them?"
+ },
+ {
+  "topic": "pricing",
+  "question": "Will Bengaluru yards post buy prices on the platform, and may we combine them into a public board line, even anonymously?"
+ },
+ {
+  "topic": "pricing",
+  "question": "Cans: price per kg or per can? Households count cans; weigh a sample of local cans to set a factor."
+ },
+ {
+  "topic": "pricing",
+  "question": "Price basis above the household level: GST-inclusive or exclusive, and do reverse-charge or TDS rules apply when businesses buy metal scrap from unregistered kabadiwalas? This needs a tax adviser before yard prices are shown."
+ },
+ {
+  "topic": "pricing",
+  "question": "Doorstep vs drop-off: should drop-off pay a published premium, given that doorstep pickup usually needs 25–50 kg or a minimum value (e.g. ₹999 at Kabadiwala Online)?"
+ },
+ {
+  "topic": "pricing",
+  "question": "Should households see named kabadiwalas' prices side by side (open question 3 in pricing.md), or only the city range plus their chosen shop's card?"
+ },
+ {
+  "topic": "pricing",
+  "question": "Is one city-wide floor enough for Bengaluru (open question 2 in pricing.md)? The evidence supports city-wide for the pilot and areas later."
+ },
+ {
+  "topic": "pricing",
+  "question": "How far do WhatsApp groups and phone calls from the next buyer set daily rates for Bengaluru kabadiwalas and yards? No source opened here documents it; ask in pilot interviews."
+ },
+ {
+  "topic": "pricing",
+  "question": "At scale, which licensed metal reference (MCX delayed or end-of-day via a vendor, or BigMint), at what yearly cost, and who pays?"
+ },
+ {
+  "topic": "pricing",
+  "question": "Housekeeping: while trying to open the IOSCO benchmark-principles PDF on iosco.org, the Browser pane showed a file-save dialog. The file isn't needed; cancel the dialog if it is still open."
+ },
+ {
+  "topic": "public-systems",
+  "question": "Will GBA or BSWML treat kabadiwalas and DWCCs as 'entities involved in sorting' that must register under rule 9, and can individual kabadiwalas and DWCCs (not just bulk generators) register on swm.cpcb.gov.in yet?"
+ },
+ {
+  "topic": "public-systems",
+  "question": "Will CPCB publish an API or a bulk-upload format for quarterly returns and EBWGR evidence once the portal covers every obligated entity (due about Oct 2026)?"
+ },
+ {
+  "topic": "public-systems",
+  "question": "Does the NAMASTE waste-picker component continue beyond FY 2025-26? Which resource organisation is empanelled for Karnataka, and has waste-picker registration started in Bengaluru?"
+ },
+ {
+  "topic": "public-systems",
+  "question": "What will Bengaluru's new SWM by-laws (due 31 Mar 2027) say about 'authorised' waste pickers, collectors and traders? Will they keep the national 100 kg/day threshold for bulk generators?"
+ },
+ {
+  "topic": "public-systems",
+  "question": "Which of the five corporations would host a pilot dashboard, who is its SWM nodal officer, and exactly which fields does it report monthly to Swachhatam?"
+ },
+ {
+  "topic": "public-systems",
+  "question": "Is SBM-Urban extended or relaunched after 2026, and how does the Swachh Survekshan 2026-27 toolkit change the dry-waste and digital-monitoring indicators?"
+ },
+ {
+  "topic": "public-systems",
+  "question": "Is Karnataka's platform-based gig-workers law in force, and does it cover Saathi pickup and shift work?"
+ },
+ {
+  "topic": "public-systems",
+  "question": "How many DWCCs actually operate in Bengaluru today, who runs them and under what contracts? Public figures range from 119 functioning (Sep 2025) to 164 (Nov 2025)."
+ },
+ {
+  "topic": "solar",
+  "question": "Can a Gruha Jyothi household install rooftop solar under gross (or net) metering and keep its 200 free units? Ask BESCOM's DSM wing."
+ },
+ {
+  "topic": "solar",
+  "question": "Which LT-5 and HT-2(a) rates apply in FY2026-27 after the 3 Mar 2026 review order, which names only FY2025-26? Check a current BESCOM bill."
+ },
+ {
+  "topic": "solar",
+  "question": "What does a rooftop system actually generate in Bengaluru? KERC assumes 19% CUF (about 1,664 kWh/kW/yr) while installers argued for 13.5–17.5%. Check with 5–10 real generation-meter readings."
+ },
+ {
+  "topic": "solar",
+  "question": "What do Bengaluru installers charge today for 1–3 kW DCR home systems and 10–200 kW business systems, compared with the Rs 45,000, Rs 27,090 and Rs 36,015 per kW benchmarks?"
+ },
+ {
+  "topic": "solar",
+  "question": "Does BESCOM publish its installer list (required by KERC regulation 14.1) in a usable format? How does an installer register for PM Surya Ghar in BESCOM's area?"
+ },
+ {
+  "topic": "solar",
+  "question": "When will CPCB publish the PV-waste storage guideline and recovery norms that rule 12 of the E-Waste Rules refers to? Will any PV EPR target come before 2034-35?"
+ },
+ {
+  "topic": "solar",
+  "question": "What are the terms of MSE-GIFT and MSE-SPICE (interest subvention, capital subsidy caps), and do scrap and recycling units qualify? Get these from SIDBI directly; the brochures were behind a bot check."
+ },
+ {
+  "topic": "solar",
+  "question": "Is Bengaluru one of PM Surya Ghar's 46 City Accelerator Programme cities, and could Luma.Green partner with it?"
+ },
+ {
+  "topic": "solar",
+  "question": "Do yards on leased land need the landlord's consent for rooftop solar, and how many pilot yards fail KERC's no-unpaid-dues rule?"
+ },
+ {
+  "topic": "support-training",
+  "question": "Which number becomes the support line (a new SIM or a virtual number)? Can the same number move from the WhatsApp Business app to the Cloud API or MSG91 later without losing chat history?"
+ },
+ {
+  "topic": "support-training",
+  "question": "Who answers after 8 PM when auto-accepted night bookings go wrong, and should auto-accept be limited to opening hours during the pilot?"
+ },
+ {
+  "topic": "support-training",
+  "question": "Is Luma.Green an 'e-commerce entity' under the Consumer Protection (E-Commerce) Rules 2020? If so it needs a grievance officer, and (to be verified with counsel) must acknowledge complaints within 48 hours and resolve them within one month. What complaint response times do the DPDP Rules 2025 set?"
+ },
+ {
+  "topic": "support-training",
+  "question": "Has Karnataka's Platform-based Gig Workers Bill 2025 been notified along with its rules, and does the internal dispute committee and 1-5% welfare fee apply to Saathis at pilot scale?"
+ },
+ {
+  "topic": "support-training",
+  "question": "Would Hasiru Dala, Saahas or ITC WOW's dry waste collection centre operators co-run kabadiwala and Saathi onboarding in Bengaluru, and on what terms (fee per onboarding, data sharing)?"
+ },
+ {
+  "topic": "support-training",
+  "question": "Who records the human voice clips in Kannada, Tamil, Hindi and Urdu before 13 October, and is Telugu needed for the pilot neighbourhoods?"
+ },
+ {
+  "topic": "support-training",
+  "question": "Several FAQ answers need founder decisions: whether pickups carry a charge or minimum quantity, what recycle points are worth, fees for businesses after the pilot, the no-show rule, Saathi pay display, insurance and police verification."
+ },
+ {
+  "topic": "support-training",
+  "question": "Do outbound IVR or automated voice reminders need TRAI/DLT registration (for example the 140/160 number series) before they are used at scale?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "Will UIDAI register an early-stage startup as an OVSE, at what fee, and does the Aadhaar App credential flow work from a web app/PWA (deep link or QR) rather than only from native apps?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "For the pilot, should masked Aadhaar be accepted at all, given the QR-signature check it requires? Or only a driving licence, voter ID, PAN, DigiLocker documents and BBMP waste-picker cards?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "Can a Saathi apply for the Seva Sindhu Police Verification Certificate themselves, and what are the fee and turnaround? Do a kabadiwala's helpers who visit homes need one too?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "Do the pilot kabadiwalas' scales carry valid Legal Metrology stamps today, and how many use spring balances rather than electronic scales?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "How far can the estimate and the weighed kg normally differ for each material before a flag is fair? This needs pilot data."
+ },
+ {
+  "topic": "trust-safety",
+  "question": "Are Saathi jobs 'platform-based gig work' under the Karnataka law if the kabadiwala pays the Saathi outside the platform? If so, who pays the welfare fee?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "Which materials should count as high theft risk in Bengaluru (BESCOM copper, BWSSB manhole covers, metro and railway fittings), and would the police and utilities post alerts?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "Do the E-Commerce Rules apply when the household is the seller and the kabadiwala the buyer? Or does Luma.Green adopt the grievance norms voluntarily?"
+ },
+ {
+  "topic": "trust-safety",
+  "question": "What moisture and contamination deductions do Bengaluru yards and paper mills actually apply today? The grade-card defaults should start from these."
+ },
+ {
+  "topic": "trust-safety",
+  "question": "Which escrow or payment partner will Luma.Green use, and what KYC will it ask of kabadiwalas who have no GST registration?"
+ },
+ {
+  "topic": "plan",
+  "question": "Does Luma.Green count as an 'e-commerce operator' for the 0.1% income-tax TDS and for GST while money stays off-platform? This needs a CA opinion before B2B trades."
+ },
+ {
+  "topic": "plan",
+  "question": "Is Saathi work 'platform-based gig work' under the Karnataka law when the kabadiwala pays the Saathi directly, and what welfare-fee category applies?"
+ },
+ {
+  "topic": "plan",
+  "question": "Which Greater Bengaluru Authority corporation and which Hasiru Dala-supported DWCC will co-run the pilot, and will GBA recognise verified kabadiwalas as authorised collectors under the SWM Rules 2026?"
+ },
+ {
+  "topic": "plan",
+  "question": "What gross margin does a Bengaluru kabadiwala keep per material, what minimum load makes a home pickup worthwhile, and do households choose the nearest shop or the best price?"
+ },
+ {
+  "topic": "plan",
+  "question": "Who pays freight between kabadiwala and yard, what are the usual credit terms (cash vs 7–30 days), and what lot sizes are typical per material?"
+ },
+ {
+  "topic": "plan",
+  "question": "Which words do Bengaluru kabadiwalas actually use for each material (Delhi slang vs English vs Kannada), and are milk pouches a separate paid stream?"
+ },
+ {
+  "topic": "plan",
+  "question": "Founder decisions for the help centre: pickup charge or minimum, what recycle points are worth, business fees after the pilot, the no-show rule, Saathi insurance and police verification."
+ },
+ {
+  "topic": "plan",
+  "question": "Will registered recyclers, PROs and auditors accept Luma.Green's weight, photo and trace records as supporting evidence, and would brands pay per tonne for them?"
+ },
+ {
+  "topic": "plan",
+  "question": "Should the pilot exclude batteries and e-waste entirely until authorised-buyer routing and CPCB/KSPCB checks are live?"
+ },
+ {
+  "topic": "plan",
+  "question": "Can a Gruha Jyothi household take gross metering and keep its 200 free units? Ask BESCOM before showing any home solar case."
+ },
+ {
+  "topic": "plan",
+  "question": "Which escrow route fits first: Razorpay Route once Luma has ₹40 lakh of turnover, onboarding each yard as its own merchant, or a bank escrow with a trustee?"
+ },
+ {
+  "topic": "plan",
+  "question": "Who long-term owns the Luma Material Codes: Luma.Green, an industry association, or a BIS committee, and under which licence after v1?"
+ }
+]

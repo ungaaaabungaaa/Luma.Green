@@ -1,197 +1,197 @@
 {
- "cluster": "Solid Waste Management Rules 2026 and Bengaluru",
- "answers": [
-  {
-   "question": "Are the Solid Waste Management Rules 2026 in force (reported 1 April 2026)? Must kabadiwalas, scrap dealers, aggregators or 'entities involved in sorting' register on CPCB's portal (rule 9, rule 17 environmental compensation), and can individual shops register or only larger entities? What is the bulk-generator threshold (100 kg/day)?",
-   "answer": "Yes: MoEFCC notified the rules as S.O. 388(E) on 27 January 2026 (Gazette of India Extraordinary No. 360, 28 January 2026) and rule 1(2) brings them into force from 1 April 2026, superseding the 2016 rules. The words 'kabadiwala', 'scrap dealer' and 'aggregator' do not appear anywhere in the gazette; rule 9 covers 'each entity involved in sorting of waste, into recyclable or non-recyclable waste ... at Material Recovery Facility' and requires it to register with the local body (the city corporation, not CPCB directly), report quarterly on the portal by the 15th of the first month of each quarter, and deal only with registered entities (rule 9(5)) - so a yard or aggregator that sorts and bales is a rule-9 entity, while a shop that only buys and resells is an 'informal waste collector' (rule 3(1)(zb): 'individuals, associations or waste traders ... collecting, segregating, sorting, sale and purchase of waste materials'), for whom the rules impose no registration duty but oblige the corporation to enumerate them ward-wise on the portal (rule 39(53)) and 'establish a system to recognise them' (rule 39(54)); the State UDD must upload registrations of waste pickers working with the local authority or its authorised third party by 30 June every year (rule 35(2)(xix)). Recyclers and processors need local-body registration plus SPCB authorisation via Form I (rules 7(a),(f) and 41(1)(iii),(xiv)); the SPCB may charge a registration fee and an annual returns fee per CPCB guidelines (rule 41(1)(xv)). Rule 17(1)(a) levies environmental compensation on 'entities carrying out activities without registration as mandated under these rules', so the fine risk attaches to sorting yards, processors and collection contractors that skip registration, not to a shop that has no registration duty; the bigger commercial risk is exclusion, because bulk generators and RWAs may not engage unregistered/unauthorised entities (rules 5(1)(b), 5(2), 6(g)). The EC guidelines themselves do not exist yet: on 10 August 2026 the Supreme Court directed MoEFCC to frame them and listed the matter for 29 September 2026. CPCB's portal (swm.cpcb.gov.in) went live on 31 May 2026, but as of 29 September 2026 its only public module is bulk-waste-generator registration under rule 6(a), verified by the ULB and SPCB, with the 'registration fee (if applicable) payable after activation of the payment gateway'; there is no self-registration path for individual shops, MRFs or collectors yet, even though rule 16(1) gave CPCB six months (to 1 October 2026) to have all obligated-entity modules live. The bulk-waste-generator threshold (rule 3(1)(i)) is any one of floor area of 20,000 sq m or more, water consumption of 40,000 litres/day, or solid waste of 100 kg/day, applied to institutional and commercial users and residential societies; Bengaluru's BSWML additionally treats apartments with more than 100 dwelling units or a site area above 5,000 sq m as bulk generators (circular of 6 April 2026).",
-   "status": "partly",
-   "decision": "Treat every Luma.Green yard or aggregator that sorts as a rule-9 entity and register it with its city corporation before the 13 October pilot; treat kabadiwalas as 'informal waste collectors' whose admin verification record should be exportable to the corporation's ward database under rule 39(53)-(54), and do not tell shops they must register on CPCB (they cannot yet). Flag a customer as a bulk generator on 100 kg/day OR 20,000 sq m OR 40,000 L/day, plus Bengaluru's >100 flats or >5,000 sq m site.",
-   "whoToAsk": "The SWM wing of the relevant Bengaluru city corporation (Special Commissioner, SWM) and BSWML (ceobswml@bbmp.gov.in) on how a sorting yard registers under rule 9 today; environmental counsel on whether a kabadiwala shop that bales material counts as 'sorting at a Material Recovery Facility'; CPCB portal helpdesk on when non-BWG modules and the fee go live.",
-   "sources": [
+  "cluster": "Solid Waste Management Rules 2026 and Bengaluru",
+  "answers": [
     {
-     "title": "Gazette of India S.O. 388(E) - Solid Waste Management Rules, 2026 (full text, PIB-hosted PDF)",
-     "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
-     "date": "2026-01-28"
+      "question": "Are the Solid Waste Management Rules 2026 in force (reported 1 April 2026)? Must kabadiwalas, scrap dealers, aggregators or 'entities involved in sorting' register on CPCB's portal (rule 9, rule 17 environmental compensation), and can individual shops register or only larger entities? What is the bulk-generator threshold (100 kg/day)?",
+      "answer": "Yes: MoEFCC notified the rules as S.O. 388(E) on 27 January 2026 (Gazette of India Extraordinary No. 360, 28 January 2026) and rule 1(2) brings them into force from 1 April 2026, superseding the 2016 rules. The words 'kabadiwala', 'scrap dealer' and 'aggregator' do not appear anywhere in the gazette; rule 9 covers 'each entity involved in sorting of waste, into recyclable or non-recyclable waste ... at Material Recovery Facility' and requires it to register with the local body (the city corporation, not CPCB directly), report quarterly on the portal by the 15th of the first month of each quarter, and deal only with registered entities (rule 9(5)) - so a yard or aggregator that sorts and bales is a rule-9 entity, while a shop that only buys and resells is an 'informal waste collector' (rule 3(1)(zb): 'individuals, associations or waste traders ... collecting, segregating, sorting, sale and purchase of waste materials'), for whom the rules impose no registration duty but oblige the corporation to enumerate them ward-wise on the portal (rule 39(53)) and 'establish a system to recognise them' (rule 39(54)); the State UDD must upload registrations of waste pickers working with the local authority or its authorised third party by 30 June every year (rule 35(2)(xix)). Recyclers and processors need local-body registration plus SPCB authorisation via Form I (rules 7(a),(f) and 41(1)(iii),(xiv)); the SPCB may charge a registration fee and an annual returns fee per CPCB guidelines (rule 41(1)(xv)). Rule 17(1)(a) levies environmental compensation on 'entities carrying out activities without registration as mandated under these rules', so the fine risk attaches to sorting yards, processors and collection contractors that skip registration, not to a shop that has no registration duty; the bigger commercial risk is exclusion, because bulk generators and RWAs may not engage unregistered/unauthorised entities (rules 5(1)(b), 5(2), 6(g)). The EC guidelines themselves do not exist yet: on 10 August 2026 the Supreme Court directed MoEFCC to frame them and listed the matter for 29 September 2026. CPCB's portal (swm.cpcb.gov.in) went live on 31 May 2026, but as of 29 September 2026 its only public module is bulk-waste-generator registration under rule 6(a), verified by the ULB and SPCB, with the 'registration fee (if applicable) payable after activation of the payment gateway'; there is no self-registration path for individual shops, MRFs or collectors yet, even though rule 16(1) gave CPCB six months (to 1 October 2026) to have all obligated-entity modules live. The bulk-waste-generator threshold (rule 3(1)(i)) is any one of floor area of 20,000 sq m or more, water consumption of 40,000 litres/day, or solid waste of 100 kg/day, applied to institutional and commercial users and residential societies; Bengaluru's BSWML additionally treats apartments with more than 100 dwelling units or a site area above 5,000 sq m as bulk generators (circular of 6 April 2026).",
+      "status": "partly",
+      "decision": "Treat every Luma.Green yard or aggregator that sorts as a rule-9 entity and register it with its city corporation before the 13 October pilot; treat kabadiwalas as 'informal waste collectors' whose admin verification record should be exportable to the corporation's ward database under rule 39(53)-(54), and do not tell shops they must register on CPCB (they cannot yet). Flag a customer as a bulk generator on 100 kg/day OR 20,000 sq m OR 40,000 L/day, plus Bengaluru's >100 flats or >5,000 sq m site.",
+      "whoToAsk": "The SWM wing of the relevant Bengaluru city corporation (Special Commissioner, SWM) and BSWML (ceobswml@bbmp.gov.in) on how a sorting yard registers under rule 9 today; environmental counsel on whether a kabadiwala shop that bales material counts as 'sorting at a Material Recovery Facility'; CPCB portal helpdesk on when non-BWG modules and the fee go live.",
+      "sources": [
+        {
+          "title": "Gazette of India S.O. 388(E) - Solid Waste Management Rules, 2026 (full text, PIB-hosted PDF)",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "PIB: New Solid Waste Management Rules Notified; To Come into Force from April 1, 2026",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "CPCB: Salient features of Solid Waste Management Rules, 2026",
+          "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
+          "date": "2026 (undated, after 27 Jan 2026)"
+        },
+        {
+          "title": "CPCB Centralised Online Portal for Solid Waste Management (BWG registration module only)",
+          "url": "https://swm.cpcb.gov.in/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Complinity: Centralised Portal for Registration of Bulk Waste Generators notified (portal live 31/05/2026)",
+          "url": "https://complinity.com/legal-update/centralised-portal-for-registration-of-bulk-waste-generators-bwgs-notified-24580/",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "Sentinel Assam: APCB orders urban bodies to register all bulk waste generators on new national portal",
+          "url": "https://www.sentinelassam.com/topheadlines/apcb-orders-urban-bodies-to-register-all-bulk-waste-generators-on-new-national-portal",
+          "date": "2026-06-28"
+        },
+        {
+          "title": "Jurishour: Supreme Court directs Centre to frame environmental compensation guidelines under SWM Rules 2026",
+          "url": "https://www.jurishour.in/supreme-court/frame-guidelines-environmental-compensation-solid-waste-management-rules-2026/",
+          "date": "2026-08-10"
+        },
+        {
+          "title": "Down to Earth: India's new SWM rules promise greater discipline while navigating familiar fault lines (informal sector gap)",
+          "url": "https://www.downtoearth.org.in/waste/indias-new-solid-waste-management-rules-promise-greater-discipline-while-navigating-familiar-fault-lines",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "BSWML circular to RWAs: waste management data for property tax FY 2026-27 (local BWG criteria)",
+          "url": "https://bswml.karnataka.gov.in/uploads/OM-Information%20to%20RWA%2010_1775892207.pdf",
+          "date": "2026-04-06"
+        }
+      ]
     },
     {
-     "title": "PIB: New Solid Waste Management Rules Notified; To Come into Force from April 1, 2026",
-     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676",
-     "date": "2026-01-28"
+      "question": "Under the SWM Rules 2026, who issues EBWGR (bulk waste generator) certificates and at what price? Can a network of kabadiwalas and yards supply compliant collection to Bengaluru apartment societies?",
+      "answer": "Only the local body (city corporation) may generate an Extended Bulk Waste Generator Responsibility certificate, on CPCB's portal, after registering itself there (rule 10(1)-(2)); the certificate equals the kilograms of waste the local body (or its registered third party) collected and sent to registered processors or recyclers (rule 10(3)), wet-waste certificates issue only after the processing facility reports receipt on the portal (rule 10(4)), each certificate is valid for three years (rule 10(6)), and it is issued for total waste - wet, dry, sanitary and special care - 'against payment of a fee', with the dry-waste portion naming the registered recyclers used (rule 39(38)). There is no national price: rule 10(7) says the cost is finalised per CPCB guidelines with MoHUA/DDWS, rule 39(37)-(38)(ii) says each ULB notifies the cost in its by-laws after State approval, and rule 10(9) splits the proceeds with the concessionaire and SPCB; as of 29 September 2026 no CPCB pricing norm is public, the portal's payment gateway is inactive, and no Bengaluru by-law price exists (by-laws are due 31 March 2027). Bengaluru's working number is Rs 12/kg: the State capped bulk-waste service charges at Rs 12/kg by notification of 4 March 2025, BSWML's April 2026 property-tax declaration charges bulk generators with neither on-site processing nor an Authorised Waste Processor 'Rs 12 per kg x 365 days x quantity per day', and the Bengaluru Development Minister said on 22 July 2026 that Rs 12 is the ceiling with vendors quoting around Rs 8/kg. On compliance, a bulk generator must hand dry, sanitary and special-care waste 'to the local body or agency authorised by it' and 'not engage with any entity not having registration' (rules 6(b), 6(g)); RWAs and gated communities above 5,000 sq m must hand recyclables to 'authorised waste pickers or authorised recyclers' within one year of notification, i.e. by 27 January 2027 (rule 5(2)); households hand over to 'authorised waste pickers or waste collectors' as directed by the local body (rule 5(1)(b)) - so a kabadiwala network is compliant only once the corporation or BSWML authorises it, regardless of size. Today BSWML has notified just five Authorised Waste Processors mapped by corporation (Mukka Proteins/Ecosphere for North and East, MSGP Infratech for West and Central, Sustainable Impacts with Hasirudala Innovations for South, and Swachh Eco Solutions 'for dry waste only' in Yeshvanthpura), delisted 90% of earlier vendors in August 2025, and had surveyed 5,837 bulk generators by 5 May 2026; BSWML's own MD admitted in January 2026 that dry waste is 'largely picked up by informal recyclers' and that only a handful of 800 approached apartments had joined, so current practice is widely non-compliant. The realistic route is: register yards as rule-9 sorting/MRF entities with the corporation, then seek BSWML empanelment as a dry-waste-only AWP (the Swachh Eco precedent) or subcontract under an existing AWP (Hasirudala Innovations is already inside the South AWP), and give the corporation per-building kg data it needs to generate EBWGR certificates; rule 9(7)-(8) also lets registered MRFs act as drop-off points at a service cost fixed by the local body.",
+      "status": "partly",
+      "decision": "Model EBWGR in the product as a corporation-issued certificate in kilograms that Luma.Green reports into, never issues; for the pilot, serve households and apartments below the bulk thresholds (under 100 flats, under 5,000 sq m site) where only local-body 'authorisation' of collectors applies, and offer bulk generators that already have an AWP a dry-waste kg report instead of collection. Use Rs 12/kg as the ceiling and Rs 8/kg as the market rate in any model, and open a dry-waste-only AWP empanelment conversation with BSWML now.",
+      "whoToAsk": "BSWML's bulk-waste cell (Deputy General Manager, Millers Tank Bund Road; ceobswml@bbmp.gov.in) for dry-waste AWP empanelment criteria and the 4 March 2025 notification text; the relevant city corporation for rule-9 registration; CPCB's portal helpdesk on when EBWGR pricing norms and the payment gateway go live; Hasiru Dala / Hasirudala Innovations on subcontracting under the South AWP.",
+      "sources": [
+        {
+          "title": "Gazette of India S.O. 388(E) - Solid Waste Management Rules, 2026 (rules 5, 6, 9, 10, 39(37)-(38))",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "BSWML circular: dissemination of waste management data to bulk waste generator entities (RWAs) for FY 2026-27 property tax",
+          "url": "https://bswml.karnataka.gov.in/uploads/OM-Information%20to%20RWA%2010_1775892207.pdf",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "BSWML: SWM user fee declaration requirement for bulk waste generators (Rs 12/kg, list of Authorised Waste Processors)",
+          "url": "https://bswml.karnataka.gov.in/uploads/Final%20SWM%20User%20Fee%20declartion%20requirement_1775892176.pdf",
+          "date": "2026-04"
+        },
+        {
+          "title": "BSWML: List of surveyed bulk waste generators as on 05.05.2026 (5,837 entries)",
+          "url": "https://bswml.karnataka.gov.in/uploads/BWG%20Survey%20Data%2004_1778744319.pdf",
+          "date": "2026-05-05"
+        },
+        {
+          "title": "BSWML: Bulk Waste Management page (authorised processors by corporation)",
+          "url": "https://bswml.karnataka.gov.in/182/bulk-waste-management/en",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "Deccan Herald: BSWML authorises single private firm to collect bulk waste in Bengaluru North and East (Rs 12/kg cap, 4 March 2025 notification)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bswml-authorises-single-private-firm-to-collect-bulk-waste-in-bengaluru-north-and-east-3838916",
+          "date": "2025-12-21"
+        },
+        {
+          "title": "Deccan Herald: BSWML delists 90% vendors after scrutiny, apartments left with little leverage",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bswml-delists-90-vendors-after-scrutiny-apartments-left-with-little-leverage-3674056",
+          "date": "2025-08-09"
+        },
+        {
+          "title": "The Hans India: Legal framework mandated for bulk waste management in apartments (Rs 12/kg ceiling, ~Rs 8/kg market)",
+          "url": "https://www.thehansindia.com/news/cities/bengaluru/legal-framework-mandated-for-bulk-waste-mgmt-in-apartments-1100042",
+          "date": "2026-07-22"
+        },
+        {
+          "title": "IBC World News: Bulk waste rules only on paper, illegal collection on the ground found",
+          "url": "https://ibcworldnews.com/2026/01/12/bulk-waste-rules-only-on-paper-illegal-collection-on-the-ground-found/",
+          "date": "2026-01-12"
+        },
+        {
+          "title": "Deccan Herald (via Dailyhunt): New waste rules, old problems - Bengaluru's 4-bin plan faces early heat (EBWGR, BAF comments)",
+          "url": "https://m.dailyhunt.in/news/india/english/deccan+herald-epaper-deccan/new+waste+rules+old+problems+bengalurus+4bin+plan+faces+early+heat-newsid-n710713836",
+          "date": "2026-05-02"
+        },
+        {
+          "title": "CPCB Centralised Online Portal for Solid Waste Management (payment gateway not active)",
+          "url": "https://swm.cpcb.gov.in/",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "EHS Saral: EBWGR Certificate - eligibility, process, cost and records (no fixed national rate)",
+          "url": "https://ehssaral.com/blog/ebwgr-certificate",
+          "date": "2026-06-08"
+        }
+      ]
     },
     {
-     "title": "CPCB: Salient features of Solid Waste Management Rules, 2026",
-     "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
-     "date": "2026 (undated, after 27 Jan 2026)"
-    },
-    {
-     "title": "CPCB Centralised Online Portal for Solid Waste Management (BWG registration module only)",
-     "url": "https://swm.cpcb.gov.in/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Complinity: Centralised Portal for Registration of Bulk Waste Generators notified (portal live 31/05/2026)",
-     "url": "https://complinity.com/legal-update/centralised-portal-for-registration-of-bulk-waste-generators-bwgs-notified-24580/",
-     "date": "2026-06-03"
-    },
-    {
-     "title": "Sentinel Assam: APCB orders urban bodies to register all bulk waste generators on new national portal",
-     "url": "https://www.sentinelassam.com/topheadlines/apcb-orders-urban-bodies-to-register-all-bulk-waste-generators-on-new-national-portal",
-     "date": "2026-06-28"
-    },
-    {
-     "title": "Jurishour: Supreme Court directs Centre to frame environmental compensation guidelines under SWM Rules 2026",
-     "url": "https://www.jurishour.in/supreme-court/frame-guidelines-environmental-compensation-solid-waste-management-rules-2026/",
-     "date": "2026-08-10"
-    },
-    {
-     "title": "Down to Earth: India's new SWM rules promise greater discipline while navigating familiar fault lines (informal sector gap)",
-     "url": "https://www.downtoearth.org.in/waste/indias-new-solid-waste-management-rules-promise-greater-discipline-while-navigating-familiar-fault-lines",
-     "date": "2026-01-29"
-    },
-    {
-     "title": "BSWML circular to RWAs: waste management data for property tax FY 2026-27 (local BWG criteria)",
-     "url": "https://bswml.karnataka.gov.in/uploads/OM-Information%20to%20RWA%2010_1775892207.pdf",
-     "date": "2026-04-06"
+      "question": "Will the Greater Bengaluru Authority (GBA) or BSWML recognise verified kabadiwalas as 'authorised' informal waste collectors, and what will Bengaluru's new SWM by-laws (due 31 March 2027) say? Do the 2026 rules add a separate household 'special care' stream (batteries, bulbs) and what bin colours do they prescribe?",
+      "answer": "Nothing public commits GBA or BSWML to recognising kabadiwalas yet, but the rules make recognition a duty: rule 39(5) requires every urban local body to frame by-laws incorporating the rules by 31 March 2027, rule 39(53) requires a ward-wise database of informal collectors on the portal, and rule 39(54) requires the local body to 'establish a system to recognise them or organisations representing them' - the form is left to each city. In Bengaluru the 'local body' is now each of the five city corporations constituted under the Greater Bengaluru Governance Act 2024 (UDD order of 2 September 2025), with GBA coordinating; BSWML lost primary collection in August 2025 and was told to focus on processing and disposal, although it still runs the bulk-generator programme. As of 29 September 2026 no draft SWM by-law has been published (the 2026 Bengaluru by-laws dataset holds only building by-laws, effective 14 May 2026, and the Bangalore Apartments Federation said on 2 May 2026 that corporations 'must bring a bylaw before the implementation, which has not happened yet'), so the BBMP SWM Bye-laws 2020 (notified 4 June 2020, still cited in BSWML's 6 April 2026 circular) remain the reference: they provide for registering waste pickers and traders and issuing ID cards, BBMP has issued occupational ID cards to waste pickers since 2011 under a 2016 tripartite arrangement with Hasiru Dala, and the August 2025 government review ordered a dry waste collection centre or MRF in every ward 'by partnering with ragpickers'. The best reading is that the new by-laws will carry forward waste-picker registration, ID cards and the DWCC model, add the four streams, the special-care deposition network, the EBWGR certificate price and spot fines (rules 39(31), 39(37)), while a distinct 'authorised kabadiwala shop' category is undetermined and worth lobbying for in the public-objection window. Yes, special care is a separate mandatory household stream: rule 5(1)(b) requires segregation into wet, dry, sanitary and special care waste, and rule 3(1)(zx) defines special care waste as household-level 'discarded paint drums, pesticide cans or containers or bottles, compact fluorescent lamp or bulbs, tube lights, expired medicines, broken mercury thermometers, waste batteries, used or waste needles and syringes and contaminated gauze, or any other waste notified by CPCB'; ULBs must run one deposition centre per 5 sq km with notified timings (rule 39(48)) and registered MRFs may serve as deposition centres (rule 9(7)(ii)), while rule 2 keeps e-waste and battery waste under their own rules, so the stream is a household collection channel, not a licence to process batteries. Bengaluru is early: BSWML told a 700-person workshop on 18 April 2026 that the fourth stream is being introduced, and its April 2026 property-tax declaration already asks bulk generators for special-care kg/day and the processor used. The rules prescribe no household bin colours at all - the gazette contains no colour code, and only the local-body reporting form mentions 'green, blue and black bins' at storage depots; the convention used by the Swachhata Knowledge Partner deck of 20 June 2026 is green = wet, blue = dry, red = sanitary, black = special care, BBMP's own by-laws used green, blue and red (red for domestic hazardous plus sanitary), and some explainers use orange for special care, so the special-care and sanitary colours are unsettled until Bengaluru's by-laws fix them.",
+      "status": "partly",
+      "decision": "Build the app around four streams with special care as its own stream (using the rule 3(1)(zx) item list), show green/blue/red/black as defaults but label by stream name and keep colours configurable per city, and do not make the pilot depend on GBA recognition: instead produce a per-kabadiwala verification record that matches the 2020 by-laws' waste-picker/trader registration (name, ward, shop address, photo ID, GST or none) and offer each corporation the ward database rule 39(53) requires. Track by-law drafts and file comments asking for an 'authorised informal waste collector/trader' category.",
+      "whoToAsk": "Special Commissioner (SWM) of the pilot ward's city corporation and the GBA Chief Commissioner's office on by-law drafting and the public-objection timetable; BSWML on DWCC/MRF partnerships and special-care deposition centres; Hasiru Dala on the ID-card precedent and how traders were treated under the 2020 by-laws.",
+      "sources": [
+        {
+          "title": "Gazette of India S.O. 388(E) - Solid Waste Management Rules, 2026 (rules 2, 3(1)(zx), 5, 9(7), 39(5), 39(48), 39(53)-(54); Form IV)",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "CPCB: Salient features of Solid Waste Management Rules, 2026 (special care waste examples)",
+          "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
+          "date": "2026 (undated, after 27 Jan 2026)"
+        },
+        {
+          "title": "Deccan Herald: Poor ranking - Govt strips BSWML of garbage collection (DWCC/MRF in every ward with ragpickers)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/poor-ranking-govt-strips-bswml-of-garbage-collection-3683325",
+          "date": "2025-08-16"
+        },
+        {
+          "title": "Deccan Herald (via Dailyhunt): New waste rules, old problems - Bengaluru's 4-bin plan faces early heat",
+          "url": "https://m.dailyhunt.in/news/india/english/deccan+herald-epaper-deccan/new+waste+rules+old+problems+bengalurus+4bin+plan+faces+early+heat-newsid-n710713836",
+          "date": "2026-05-02"
+        },
+        {
+          "title": "OpenCity: Bengaluru City Corporations Bye-laws 2026 dataset (building by-laws only)",
+          "url": "https://data.opencity.in/dataset/bengaluru-city-corporations-bye-laws-2026",
+          "date": "2026-07-14"
+        },
+        {
+          "title": "BSWML: Government Orders (UDD order of 02.09.2025 constituting 5 new city corporations)",
+          "url": "https://bswml.karnataka.gov.in/168/government--orders/en",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "BSWML circular to RWAs citing SWM Rules 2026 and SWM Bye Laws 2020 (special-care kg declaration)",
+          "url": "https://bswml.karnataka.gov.in/uploads/OM-Information%20to%20RWA%2010_1775892207.pdf",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "Radio Active CR: Dialogues on Waste - all about the BBMP SWM Bye-laws 2020 (notified 4 June 2020)",
+          "url": "https://radioactivecr.wordpress.com/2020/11/11/dialogues-on-waste-ep-2-3-all-about-the-bbmp-swm-byelaws-2020/",
+          "date": "2020-11-11"
+        },
+        {
+          "title": "Citizen Matters: BBMP's new SWM bye-laws - waste pickers, ID cards, bin colours, penalties",
+          "url": "https://citizenmatters.in/bengaluru-bbmp-solid-waste-management-swm-draft-bye-laws-segregation-penalty/",
+          "date": "2019-08-23"
+        },
+        {
+          "title": "DMEO (NITI Aayog) case study: Integration of informal waste workers - Hasiru Dala and BBMP (ID cards since 2011)",
+          "url": "https://www.dmeo.gov.in/sites/default/files/2021-08/Package4_UrbanTransformation_CaseStudy42.pdf",
+          "date": "2021-08"
+        },
+        {
+          "title": "CWAS (CEPT, Swachhata Knowledge Partner): The Solid Waste Management Rules, 2026 - keynote deck (bin colour convention, timelines)",
+          "url": "https://cwas.org.in/resources/file_manager/Solid%20Waste%20Management%20Rules,%202026.pdf",
+          "date": "2026-06-20"
+        },
+        {
+          "title": "Earth5R: SWM Rules 2026 - India's four-stream waste segregation shift (alternative colour convention)",
+          "url": "https://earth5r.org/swm-rules-2026-india-four-stream-waste-segregation/",
+          "date": "2026-03-31"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "Under the SWM Rules 2026, who issues EBWGR (bulk waste generator) certificates and at what price? Can a network of kabadiwalas and yards supply compliant collection to Bengaluru apartment societies?",
-   "answer": "Only the local body (city corporation) may generate an Extended Bulk Waste Generator Responsibility certificate, on CPCB's portal, after registering itself there (rule 10(1)-(2)); the certificate equals the kilograms of waste the local body (or its registered third party) collected and sent to registered processors or recyclers (rule 10(3)), wet-waste certificates issue only after the processing facility reports receipt on the portal (rule 10(4)), each certificate is valid for three years (rule 10(6)), and it is issued for total waste - wet, dry, sanitary and special care - 'against payment of a fee', with the dry-waste portion naming the registered recyclers used (rule 39(38)). There is no national price: rule 10(7) says the cost is finalised per CPCB guidelines with MoHUA/DDWS, rule 39(37)-(38)(ii) says each ULB notifies the cost in its by-laws after State approval, and rule 10(9) splits the proceeds with the concessionaire and SPCB; as of 29 September 2026 no CPCB pricing norm is public, the portal's payment gateway is inactive, and no Bengaluru by-law price exists (by-laws are due 31 March 2027). Bengaluru's working number is Rs 12/kg: the State capped bulk-waste service charges at Rs 12/kg by notification of 4 March 2025, BSWML's April 2026 property-tax declaration charges bulk generators with neither on-site processing nor an Authorised Waste Processor 'Rs 12 per kg x 365 days x quantity per day', and the Bengaluru Development Minister said on 22 July 2026 that Rs 12 is the ceiling with vendors quoting around Rs 8/kg. On compliance, a bulk generator must hand dry, sanitary and special-care waste 'to the local body or agency authorised by it' and 'not engage with any entity not having registration' (rules 6(b), 6(g)); RWAs and gated communities above 5,000 sq m must hand recyclables to 'authorised waste pickers or authorised recyclers' within one year of notification, i.e. by 27 January 2027 (rule 5(2)); households hand over to 'authorised waste pickers or waste collectors' as directed by the local body (rule 5(1)(b)) - so a kabadiwala network is compliant only once the corporation or BSWML authorises it, regardless of size. Today BSWML has notified just five Authorised Waste Processors mapped by corporation (Mukka Proteins/Ecosphere for North and East, MSGP Infratech for West and Central, Sustainable Impacts with Hasirudala Innovations for South, and Swachh Eco Solutions 'for dry waste only' in Yeshvanthpura), delisted 90% of earlier vendors in August 2025, and had surveyed 5,837 bulk generators by 5 May 2026; BSWML's own MD admitted in January 2026 that dry waste is 'largely picked up by informal recyclers' and that only a handful of 800 approached apartments had joined, so current practice is widely non-compliant. The realistic route is: register yards as rule-9 sorting/MRF entities with the corporation, then seek BSWML empanelment as a dry-waste-only AWP (the Swachh Eco precedent) or subcontract under an existing AWP (Hasirudala Innovations is already inside the South AWP), and give the corporation per-building kg data it needs to generate EBWGR certificates; rule 9(7)-(8) also lets registered MRFs act as drop-off points at a service cost fixed by the local body.",
-   "status": "partly",
-   "decision": "Model EBWGR in the product as a corporation-issued certificate in kilograms that Luma.Green reports into, never issues; for the pilot, serve households and apartments below the bulk thresholds (under 100 flats, under 5,000 sq m site) where only local-body 'authorisation' of collectors applies, and offer bulk generators that already have an AWP a dry-waste kg report instead of collection. Use Rs 12/kg as the ceiling and Rs 8/kg as the market rate in any model, and open a dry-waste-only AWP empanelment conversation with BSWML now.",
-   "whoToAsk": "BSWML's bulk-waste cell (Deputy General Manager, Millers Tank Bund Road; ceobswml@bbmp.gov.in) for dry-waste AWP empanelment criteria and the 4 March 2025 notification text; the relevant city corporation for rule-9 registration; CPCB's portal helpdesk on when EBWGR pricing norms and the payment gateway go live; Hasiru Dala / Hasirudala Innovations on subcontracting under the South AWP.",
-   "sources": [
-    {
-     "title": "Gazette of India S.O. 388(E) - Solid Waste Management Rules, 2026 (rules 5, 6, 9, 10, 39(37)-(38))",
-     "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
-     "date": "2026-01-28"
-    },
-    {
-     "title": "BSWML circular: dissemination of waste management data to bulk waste generator entities (RWAs) for FY 2026-27 property tax",
-     "url": "https://bswml.karnataka.gov.in/uploads/OM-Information%20to%20RWA%2010_1775892207.pdf",
-     "date": "2026-04-06"
-    },
-    {
-     "title": "BSWML: SWM user fee declaration requirement for bulk waste generators (Rs 12/kg, list of Authorised Waste Processors)",
-     "url": "https://bswml.karnataka.gov.in/uploads/Final%20SWM%20User%20Fee%20declartion%20requirement_1775892176.pdf",
-     "date": "2026-04"
-    },
-    {
-     "title": "BSWML: List of surveyed bulk waste generators as on 05.05.2026 (5,837 entries)",
-     "url": "https://bswml.karnataka.gov.in/uploads/BWG%20Survey%20Data%2004_1778744319.pdf",
-     "date": "2026-05-05"
-    },
-    {
-     "title": "BSWML: Bulk Waste Management page (authorised processors by corporation)",
-     "url": "https://bswml.karnataka.gov.in/182/bulk-waste-management/en",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "Deccan Herald: BSWML authorises single private firm to collect bulk waste in Bengaluru North and East (Rs 12/kg cap, 4 March 2025 notification)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bswml-authorises-single-private-firm-to-collect-bulk-waste-in-bengaluru-north-and-east-3838916",
-     "date": "2025-12-21"
-    },
-    {
-     "title": "Deccan Herald: BSWML delists 90% vendors after scrutiny, apartments left with little leverage",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bswml-delists-90-vendors-after-scrutiny-apartments-left-with-little-leverage-3674056",
-     "date": "2025-08-09"
-    },
-    {
-     "title": "The Hans India: Legal framework mandated for bulk waste management in apartments (Rs 12/kg ceiling, ~Rs 8/kg market)",
-     "url": "https://www.thehansindia.com/news/cities/bengaluru/legal-framework-mandated-for-bulk-waste-mgmt-in-apartments-1100042",
-     "date": "2026-07-22"
-    },
-    {
-     "title": "IBC World News: Bulk waste rules only on paper, illegal collection on the ground found",
-     "url": "https://ibcworldnews.com/2026/01/12/bulk-waste-rules-only-on-paper-illegal-collection-on-the-ground-found/",
-     "date": "2026-01-12"
-    },
-    {
-     "title": "Deccan Herald (via Dailyhunt): New waste rules, old problems - Bengaluru's 4-bin plan faces early heat (EBWGR, BAF comments)",
-     "url": "https://m.dailyhunt.in/news/india/english/deccan+herald-epaper-deccan/new+waste+rules+old+problems+bengalurus+4bin+plan+faces+early+heat-newsid-n710713836",
-     "date": "2026-05-02"
-    },
-    {
-     "title": "CPCB Centralised Online Portal for Solid Waste Management (payment gateway not active)",
-     "url": "https://swm.cpcb.gov.in/",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "EHS Saral: EBWGR Certificate - eligibility, process, cost and records (no fixed national rate)",
-     "url": "https://ehssaral.com/blog/ebwgr-certificate",
-     "date": "2026-06-08"
-    }
-   ]
-  },
-  {
-   "question": "Will the Greater Bengaluru Authority (GBA) or BSWML recognise verified kabadiwalas as 'authorised' informal waste collectors, and what will Bengaluru's new SWM by-laws (due 31 March 2027) say? Do the 2026 rules add a separate household 'special care' stream (batteries, bulbs) and what bin colours do they prescribe?",
-   "answer": "Nothing public commits GBA or BSWML to recognising kabadiwalas yet, but the rules make recognition a duty: rule 39(5) requires every urban local body to frame by-laws incorporating the rules by 31 March 2027, rule 39(53) requires a ward-wise database of informal collectors on the portal, and rule 39(54) requires the local body to 'establish a system to recognise them or organisations representing them' - the form is left to each city. In Bengaluru the 'local body' is now each of the five city corporations constituted under the Greater Bengaluru Governance Act 2024 (UDD order of 2 September 2025), with GBA coordinating; BSWML lost primary collection in August 2025 and was told to focus on processing and disposal, although it still runs the bulk-generator programme. As of 29 September 2026 no draft SWM by-law has been published (the 2026 Bengaluru by-laws dataset holds only building by-laws, effective 14 May 2026, and the Bangalore Apartments Federation said on 2 May 2026 that corporations 'must bring a bylaw before the implementation, which has not happened yet'), so the BBMP SWM Bye-laws 2020 (notified 4 June 2020, still cited in BSWML's 6 April 2026 circular) remain the reference: they provide for registering waste pickers and traders and issuing ID cards, BBMP has issued occupational ID cards to waste pickers since 2011 under a 2016 tripartite arrangement with Hasiru Dala, and the August 2025 government review ordered a dry waste collection centre or MRF in every ward 'by partnering with ragpickers'. The best reading is that the new by-laws will carry forward waste-picker registration, ID cards and the DWCC model, add the four streams, the special-care deposition network, the EBWGR certificate price and spot fines (rules 39(31), 39(37)), while a distinct 'authorised kabadiwala shop' category is undetermined and worth lobbying for in the public-objection window. Yes, special care is a separate mandatory household stream: rule 5(1)(b) requires segregation into wet, dry, sanitary and special care waste, and rule 3(1)(zx) defines special care waste as household-level 'discarded paint drums, pesticide cans or containers or bottles, compact fluorescent lamp or bulbs, tube lights, expired medicines, broken mercury thermometers, waste batteries, used or waste needles and syringes and contaminated gauze, or any other waste notified by CPCB'; ULBs must run one deposition centre per 5 sq km with notified timings (rule 39(48)) and registered MRFs may serve as deposition centres (rule 9(7)(ii)), while rule 2 keeps e-waste and battery waste under their own rules, so the stream is a household collection channel, not a licence to process batteries. Bengaluru is early: BSWML told a 700-person workshop on 18 April 2026 that the fourth stream is being introduced, and its April 2026 property-tax declaration already asks bulk generators for special-care kg/day and the processor used. The rules prescribe no household bin colours at all - the gazette contains no colour code, and only the local-body reporting form mentions 'green, blue and black bins' at storage depots; the convention used by the Swachhata Knowledge Partner deck of 20 June 2026 is green = wet, blue = dry, red = sanitary, black = special care, BBMP's own by-laws used green, blue and red (red for domestic hazardous plus sanitary), and some explainers use orange for special care, so the special-care and sanitary colours are unsettled until Bengaluru's by-laws fix them.",
-   "status": "partly",
-   "decision": "Build the app around four streams with special care as its own stream (using the rule 3(1)(zx) item list), show green/blue/red/black as defaults but label by stream name and keep colours configurable per city, and do not make the pilot depend on GBA recognition: instead produce a per-kabadiwala verification record that matches the 2020 by-laws' waste-picker/trader registration (name, ward, shop address, photo ID, GST or none) and offer each corporation the ward database rule 39(53) requires. Track by-law drafts and file comments asking for an 'authorised informal waste collector/trader' category.",
-   "whoToAsk": "Special Commissioner (SWM) of the pilot ward's city corporation and the GBA Chief Commissioner's office on by-law drafting and the public-objection timetable; BSWML on DWCC/MRF partnerships and special-care deposition centres; Hasiru Dala on the ID-card precedent and how traders were treated under the 2020 by-laws.",
-   "sources": [
-    {
-     "title": "Gazette of India S.O. 388(E) - Solid Waste Management Rules, 2026 (rules 2, 3(1)(zx), 5, 9(7), 39(5), 39(48), 39(53)-(54); Form IV)",
-     "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
-     "date": "2026-01-28"
-    },
-    {
-     "title": "CPCB: Salient features of Solid Waste Management Rules, 2026 (special care waste examples)",
-     "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
-     "date": "2026 (undated, after 27 Jan 2026)"
-    },
-    {
-     "title": "Deccan Herald: Poor ranking - Govt strips BSWML of garbage collection (DWCC/MRF in every ward with ragpickers)",
-     "url": "https://www.deccanherald.com/india/karnataka/bengaluru/poor-ranking-govt-strips-bswml-of-garbage-collection-3683325",
-     "date": "2025-08-16"
-    },
-    {
-     "title": "Deccan Herald (via Dailyhunt): New waste rules, old problems - Bengaluru's 4-bin plan faces early heat",
-     "url": "https://m.dailyhunt.in/news/india/english/deccan+herald-epaper-deccan/new+waste+rules+old+problems+bengalurus+4bin+plan+faces+early+heat-newsid-n710713836",
-     "date": "2026-05-02"
-    },
-    {
-     "title": "OpenCity: Bengaluru City Corporations Bye-laws 2026 dataset (building by-laws only)",
-     "url": "https://data.opencity.in/dataset/bengaluru-city-corporations-bye-laws-2026",
-     "date": "2026-07-14"
-    },
-    {
-     "title": "BSWML: Government Orders (UDD order of 02.09.2025 constituting 5 new city corporations)",
-     "url": "https://bswml.karnataka.gov.in/168/government--orders/en",
-     "date": "accessed 2026-09-29"
-    },
-    {
-     "title": "BSWML circular to RWAs citing SWM Rules 2026 and SWM Bye Laws 2020 (special-care kg declaration)",
-     "url": "https://bswml.karnataka.gov.in/uploads/OM-Information%20to%20RWA%2010_1775892207.pdf",
-     "date": "2026-04-06"
-    },
-    {
-     "title": "Radio Active CR: Dialogues on Waste - all about the BBMP SWM Bye-laws 2020 (notified 4 June 2020)",
-     "url": "https://radioactivecr.wordpress.com/2020/11/11/dialogues-on-waste-ep-2-3-all-about-the-bbmp-swm-byelaws-2020/",
-     "date": "2020-11-11"
-    },
-    {
-     "title": "Citizen Matters: BBMP's new SWM bye-laws - waste pickers, ID cards, bin colours, penalties",
-     "url": "https://citizenmatters.in/bengaluru-bbmp-solid-waste-management-swm-draft-bye-laws-segregation-penalty/",
-     "date": "2019-08-23"
-    },
-    {
-     "title": "DMEO (NITI Aayog) case study: Integration of informal waste workers - Hasiru Dala and BBMP (ID cards since 2011)",
-     "url": "https://www.dmeo.gov.in/sites/default/files/2021-08/Package4_UrbanTransformation_CaseStudy42.pdf",
-     "date": "2021-08"
-    },
-    {
-     "title": "CWAS (CEPT, Swachhata Knowledge Partner): The Solid Waste Management Rules, 2026 - keynote deck (bin colour convention, timelines)",
-     "url": "https://cwas.org.in/resources/file_manager/Solid%20Waste%20Management%20Rules,%202026.pdf",
-     "date": "2026-06-20"
-    },
-    {
-     "title": "Earth5R: SWM Rules 2026 - India's four-stream waste segregation shift (alternative colour convention)",
-     "url": "https://earth5r.org/swm-rules-2026-india-four-stream-waste-segregation/",
-     "date": "2026-03-31"
-    }
-   ]
-  }
- ]
+  ]
 }

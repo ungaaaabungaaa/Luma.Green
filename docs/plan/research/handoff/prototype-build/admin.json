@@ -1,0 +1,51 @@
+{
+ "branch": "worktree-wf_21434ea1-012-1",
+ "worktreePath": "/Users/syedabdulmuqeeth/Developer/Luma.Green/.claude/worktrees/wf_21434ea1-012-1",
+ "commit": "dcbaf295cec8a4c650019ca5ffb634fce25290cc",
+ "summary": "Admin console built end to end: verification queue, decisions, private files, price tables and support inbox.\n\nBackend:\n- convex/review.ts has four functions, all behind requireAdmin:\n  - queue: applications in review, oldest first, then those sent back for changes. Each row has name, contact, phone, area, hours waiting, SLA (ok / due_soon / overdue, using the lifecycle.ts constants), file count and version.\n  - summary: the counts for the home page and the menu.\n  - get: the form by section, active files, login phone, number of earlier versions, which fields changed since the last version, and the application's audit trail.\n  - decide: approve, ask for changes or reject, checked with canMove. Changes and reject need a note of 5+ characters. Approving creates the org (unique slug, area, consent, families, pickups), the owner membership and, for a kabadiwala, a rate card at the city fallback prices; for a Saathi it creates the saathiProfile. Approving a suspended application switches its org back on instead of creating a second one. Every decision and every org/Saathi creation is written to auditLog.\n- convex/lib/review.ts (new, pure) holds the rules both server and UI use: SLA, note check, application→org/Saathi mapping, area and slug, version diff, price validation.\n- convex/adminPrices.ts: list and set. Set checks whole paise, 0 < floor ≤ fallback and a ₹10,000/kg cap, and writes the old values to auditLog. Raising a floor also lifts shop prices below it (pricing.md rule 2).\n- Private files: GET and OPTIONS /files/{fileId} added to convex/http.ts, backed by convex/files.ts. The caller sends the Convex token as a Bearer header and is checked with authComponent.safeGetAuthUser. Only the admin (ADMIN_EMAIL with an authenticator) or the uploader gets the file; otherwise 401/403/404. Responses are Cache-Control: private, no-store, with CORS for SITE_URL and EXTRA_TRUSTED_ORIGINS. The permission, CORS and content-disposition checks are pure functions with unit tests.\n\nUI (English, inline copy, next/link):\n- /admin/verification: table on desktop, cards on phones. SLA badges and waiting times update every minute, and there is a separate \"With the applicant\" section.\n- /admin/verification/[id]:\n  - details by section, with \"Changed\" markers and a consent-expiry warning\n  - file viewer: gets the Convex token via authClient.convex.token(), fetches through TanStack Query, shows images inline and PDFs in an iframe via object URLs; videos load only when clicked\n  - per-role checklist from onboarding.md; Approve stays disabled until every item is ticked\n  - dialogs for approve / ask for changes / reject (note required for the last two); after a decision it returns to the queue with a toast\n- /admin/prices: editable ₹/kg floor and fallback per material, grouped by family, with inline validation, Undo and a DemoNote.\n- /admin/support: Open / Answered / All tabs, call links, mark answered.\n- Console shell: Verification, Prices and Support are live nav items with counts. The home page shows waiting, overdue and open support requests. Console pages have an error boundary.\n\nTests (122 in 17 files for this area, all passing):\n- convex-test covers queue ordering and SLA, summary, get, decide (including every refusal), adminPrices and the HTTP file route (200/401/403/404, CORS, preflight).\n- Unit and component tests cover the rest of the UI logic.\n\nNothing was browser-tested: no dev server or Playwright, as instructed.",
+ "routes": [
+  "/admin (console home: live counts for waiting, overdue and open support requests)",
+  "/admin/verification",
+  "/admin/verification/[id]",
+  "/admin/prices",
+  "/admin/support",
+  "Convex HTTP: GET /files/{fileId} and OPTIONS /files/{fileId} on the .convex.site URL"
+ ],
+ "convexFunctions": [
+  "review.queue (query)",
+  "review.summary (query)",
+  "review.get (query, args {applicationId: string}; returns null if not found)",
+  "review.decide (mutation, {applicationId, decision: approve|changes|reject, note?})",
+  "adminPrices.list (query, {city})",
+  "adminPrices.set (mutation, {city, materialCode, floorPaise, fallbackPaise}; returns {lifted})",
+  "files.lookup (internalQuery)",
+  "files.serve (httpAction, GET /files/*)",
+  "files.preflight (httpAction, OPTIONS /files/*)"
+ ],
+ "messageNamespaces": [],
+ "checks": {
+  "typecheck": "pass (pnpm typecheck)",
+  "lint": "pass: eslint on all 45 changed source and test files, 0 problems; prettier --check clean; the commit hooks (lint-staged, commitlint) passed",
+  "tests": "pass for this area: 122 tests in 17 files. Full suite: 284 passed; the only failing file is src/i18n/messages.test.ts (22 failures from pending translations, not touched here)."
+ },
+ "unfinished": [
+  "Not run in a browser or with Playwright (instructions said not to); no e2e spec added.",
+  "The onboarding doc says an unmasked Aadhaar should be deleted. The console has no admin file-delete action; the checklist tells the admin to ask for changes instead, and the replaced file stays in storage marked as removed.",
+  "Applicants get no SMS on decisions (MSG91 isn't wired yet); they see the decision and note on /join/status.",
+  "There is no suspend/unsuspend screen. decide handles approving a suspended application (it reactivates the org rather than creating a duplicate).",
+  "support.markAnswered (the lead's file) writes no auditLog row; I left it unchanged.",
+  "Checklist ticks live only in page state, as specified; they reset on reload."
+ ],
+ "mergeNotes": [
+  "This worktree started at 1403f83 (main), not the lead's latest commit. It had no changes yet, so I fast-forwarded it to feat/prototype dfd8c19 before starting. Other worktrees may have started from the same wrong base.",
+  "convex/_generated/api.d.ts was regenerated with codegen only (no deploy) and now lists adminPrices, files, lib/review and review. It will conflict with other areas' codegen; resolve by taking either side and re-running `npx convex codegen --typecheck disable` after merging.",
+  "One new shared file: convex/lib/review.ts. It is pure rules code used by both Convex and the console, in the same style as lib/onboarding.ts. No existing convex/lib file was edited.",
+  "Existing files edited: convex/http.ts (/files/ routes added after Better Auth's), src/components/admin/console-shell.tsx and src/components/admin/console-home.tsx. console-shell now wraps console pages in the shared QueryProvider, which the file viewer needs. New error boundary: src/app/admin/(console)/error.tsx.",
+  "The file viewer needs the new functions deployed (`npx convex dev`). The site's origin must also be in SITE_URL or EXTRA_TRUSTED_ORIGINS on the dev deployment; otherwise CORS blocks the fetch and the viewer shows \"The file didn't load\". The browser uses NEXT_PUBLIC_CONVEX_SITE_URL, or derives it from NEXT_PUBLIC_CONVEX_URL.",
+  "adminPrices.set writes to rateCards when a floor is raised (pricing.md rule 2), logging auditLog 'rateCard.liftedToFloor'. Worth knowing for whoever owns the kabadiwala rate-card screen.",
+  "The console reuses presentational parts from src/components/app/page-parts (AppPageHeader, EmptyState, ListSkeleton, StatusPill, DemoNote), read-only.",
+  "New auditLog actions: application.approved, application.changes_requested, application.rejected (metadata {from, to, note, version, orgId|saathiProfileId}), org.created, saathi.created, referencePrice.updated, rateCard.liftedToFloor.",
+  "Demo path: sign in as admin@luma.test, go to /admin/verification, open Irfan Metal & Plastic Yard (due soon, 3 files) or Kavitha Raddi Shop, tick the checklist, Approve. Then +919000000107 or +919000000108 opens their dashboard at /app.",
+  "The user asked that each worktree be deleted once merged, to free disk space. This worktree has node_modules (pnpm hard links) and an untracked .env.local, so remove it with `git worktree remove --force` after the merge."
+ ]
+}

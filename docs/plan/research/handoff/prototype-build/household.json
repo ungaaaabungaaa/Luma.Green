@@ -1,0 +1,44 @@
+{
+ "branch": "worktree-wf_21434ea1-012-4",
+ "worktreePath": "/Users/syedabdulmuqeeth/Developer/Luma.Green/.claude/worktrees/wf_21434ea1-012-4",
+ "commit": "1f243a3b479592832b0b540ea646e5226f892295",
+ "summary": "The household area is built and committed: /sell (a public page, in the sitemap) and /t/{token} (a private tracking page in the new (household) route group). Lint, typecheck and my 96 tests all pass. I couldn't run the app, so nothing has been checked in a browser yet.\n\nMy worktree branch started at 1403f83, which doesn't have the prototype foundation (schema, lib/chain, lib/workspace, the app components). I fast-forwarded it to feat/prototype dfd8c19 before building. The other seven worktree branches started at 1403f83 too.\n\nBackend, in convex/households.ts:\n- shops (public): every active kabadiwala in Bengaluru, with what that shop would pay for the basket. It uses the shop's own rates and the city fallback price for anything the shop hasn't priced, and lists those fallback items. Shops come nearest first when a location is given, otherwise best offer first. Each shop has its area, address, hours and whether it picks up.\n- book: needs a signed-in household with a phone on its profile. It checks the basket (1–20 items, each over 0 and up to 500 kg, scrap materials only), the shop, the mode (a pickup needs an address and a shop that picks up), a day from today to 7 days ahead, and that the chosen time hasn't passed. It cleans up the name and address, allows at most 5 open bookings per household, creates a 'requested' booking with its estimate and timeline, writes an audit row, and returns the token.\n- track (public by token): status, timeline, items and receipt lines with material names, estimate, points, and the shop's name, area, address, hours and phone. It never returns the household's phone, address or name. It also says whether the viewer is the household that booked, and whether the booking can still be cancelled.\n- mine: the signed-in household's bookings, newest first; null when signed out.\n- cancel: only the household that booked, and only while it is requested or accepted; writes an audit row.\n\nThe rules shared by server and UI live once in a new pure file, convex/lib/households.ts.\n\n/sell is a 4-step flow; the step is kept in the address (?step=…) so the phone's back button goes back a step.\n1. What do you have: materials grouped by family, each family with its own colour and icon, and today's price per material. Tap a material to add it, then set the kilos with − / + (it becomes \"remove\" at the smallest amount), a box to type in, or one-tap amounts. A running estimate and a Next button stay stuck to the bottom of the screen.\n2. Who buys it: pickup or drop-off, then the shops with their offers, \"Best price\" and \"Nearest\" badges and an optional \"Use my location\". Shops that don't pick up can't be chosen for a pickup, with a note saying why.\n3. When: the next 7 days that still have a time open, morning/afternoon/evening with times that have passed closed off, then the address (pickup) or the shop's address and hours (drop-off), and the household's name. Anything missing is pointed out when they try to go on.\n4. Book: a summary with a Change link per section, the money and recycle points, then the phone. A signed-in household taps Book; anyone else enters their number and the SMS code inline, and the booking is made as soon as the code is accepted. They then land on /t/{token}. If the server refuses, the message comes with a \"Fix it\" link to the right step.\n\nThe basket and answers are kept in session storage until booking, so a reload or a language switch keeps them. Households who have booked before see \"Your bookings\" at the top of /sell.\n\n/t/{token} shows:\n- a status hero whose headline and progress bar update live as the shop answers\n- when, and whether it's a pickup or drop-off\n- the shop, with a Call button\n- the estimate, or once weighed, the receipt with what was paid, how, and the points\n- what's being collected, and the history\n- Cancel: the household confirms first; someone with only the link confirms their number by SMS inside the dialog\n- after a decline, \"Try another shop\" reloads the same scrap into /sell\n- a friendly not-found page for a bad link\n\nPages with prices say once that they are sample data (DemoNote).\n\nTests: convex-test for every function (happy paths plus signed out, wrong shop, someone else's booking, the date/kg/address/name rules, the open-booking limit, and a check that no phone or address leaks from track). Component tests cover the kg stepper, grid, shop list, \"When?\" step and tracking page. One test drives the whole flow from basket to booking.",
+ "routes": [
+  "/sell",
+  "/sell?step=shop",
+  "/sell?step=when",
+  "/sell?step=confirm",
+  "/t/[token]"
+ ],
+ "convexFunctions": [
+  "households:shops",
+  "households:book",
+  "households:track",
+  "households:mine",
+  "households:cancel"
+ ],
+ "messageNamespaces": [
+  "sell",
+  "track"
+ ],
+ "checks": {
+  "typecheck": "pass (pnpm typecheck)",
+  "lint": "pass (pnpm exec eslint on every file I added or changed, including tests)",
+  "tests": "pass: 96 tests in 11 files (convex/households.test.ts, convex/lib/households.test.ts, and src/components/sell and src/components/track tests). In the full suite only src/i18n/messages.test.ts fails, because the other locales don't have the new keys yet (expected)."
+ },
+ "unfinished": [
+  "The app hasn't been run in a browser (the task said not to), so nothing has been checked visually. Worth checking on /sell: the sticky bottom bar at 375 px, the SMS code step with a new number, 'Use my location', and a language switch mid-flow (the basket is kept, but the page goes back to step 1).",
+  "The other 11 locales need the new sell.* and track.* keys; src/i18n/messages.test.ts fails until they are translated.",
+  "The household doc mentions a short code to show at the shop for drop-offs; that wasn't in this task and isn't built. Drop-offs are booked and tracked like pickups."
+ ],
+ "mergeNotes": [
+  "The other seven worktree branches also started at 1403f83, not feat/prototype (dfd8c19). If those agents didn't fast-forward, their branches are missing the foundation. Check each branch's base before merging.",
+  "I created one file outside the listed paths: convex/lib/households.ts, a pure rules module shared by the server and the screens (the same pattern as convex/lib/onboarding.ts). No existing file in convex/lib was edited. Rename or move it if you'd rather keep convex/lib shared-only.",
+  "convex/_generated/api.d.ts gains households and lib/households. Every branch touches this file, so re-run `npx convex codegen` after merging rather than hand-merging it.",
+  "households:* has to be pushed to the shared dev deployment before /sell and /t work: `npx convex dev`, or deploy after merging. No schema change was needed. The existing seed is enough: demo household +919000000109 with code 123456, and tracking links /t/priyademo1 (requested) and /t/priyademo2 (completed).",
+  "messages/en.json only gains the sell and track namespaces; no other locale files were touched.",
+  "Material family colours and icons are defined once, in src/components/sell/family.tsx (FAMILY_STYLE and FamilyIcon), using only amber, sky, the brand scale and neutrals. They could become the --material-* tokens in globals.css that docs/architecture/frontend.md plans, and other areas (stock, prices) could reuse them.",
+  "Optional, since I didn't touch config: next.config.ts could send `X-Robots-Tag: noindex` for /t/:path* and /:locale/t/:path*. The page and layout already set noindex in their metadata.",
+  "For the kabadiwala requests area: track never exposes the household's phone or address, and shows the shop's phone (its first listed number, else the owner's profile phone) for the Call button. book allows at most 5 open bookings per household, and a pickup whose time today has passed is refused (SLOT_PASSED)."
+ ]
+}

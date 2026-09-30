@@ -1,0 +1,352 @@
+{
+ "topic": "public-systems",
+ "headline": "The Solid Waste Management Rules 2026 took effect on 1 April 2026. They require bulk generators, collectors and dry-waste sorters to register on CPCB's portal (live since 31 May 2026) and file weighed quarterly returns, and they require cities to recognise waste pickers and waste traders. Luma.Green's weighed record of every hand-off can therefore serve as the compliance and dashboard layer for Bengaluru's 5 new corporations, 369 wards and 119–164 dry waste collection centres.",
+ "findings": [
+  {
+   "point": "The SWM Rules 2026 replaced the 2016 rules on 1 April 2026. Registration and weighed returns are now mandatory along the whole dry-waste chain.",
+   "detail": "S.O. 388(E) was dated 27 Jan 2026; the draft was S.O. 5369(E) of 9 Dec 2024. Waste must be separated at source into four streams (wet, dry, sanitary, special care) and handed only to authorised waste pickers or collectors (r.5). A bulk waste generator (BWG) is anyone with 20,000 m² or more of floor area, 40,000 L/day of water use, or 100 kg/day of waste; residential societies are named explicitly. BWGs register on the central portal, may not deal with unregistered entities, and file annual returns by 30 June (r.6). Collectors (the city, a concessionaire or an authorised third party) register and file quarterly returns by the 15th of the first month of the next quarter, listing each generator. Their fleets must carry tracking devices in cities over 50,000 people (r.8). Anyone sorting dry waste must register with the city, report quantities received, sorted and sent onward every quarter, and trade only with registered entities (r.9). Operating without registration attracts environmental compensation (r.17). Within one year, RWAs, gated communities over 5,000 m², markets, hotels and restaurants must hand recyclables to authorised waste pickers or recyclers (r.5(2)). Cities must adopt new by-laws by 31 Mar 2027 (r.39(5)). Million-plus cities get 18 months for infrastructure (Schedule I).",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+   ]
+  },
+  {
+   "point": "CPCB's central SWM portal is live for BWG registration (since 31 May 2026) but publishes no API, so exports are the practical integration for now.",
+   "detail": "Rule 16 gives CPCB six months from 1 Apr 2026 (about 1 Oct 2026) to run one online system for registering and filing returns for every obligated entity. It must include a public dashboard of waste generated, collected, processed and landfilled, broken down to state, district and city level. CPCB's home page says BWG registration opened at swm.cpcb.gov.in on 31/05/2026 and that fee guidelines for registration and annual returns have been issued. No API or bulk-upload format was found. Rule 9(7) lets registered material recovery facilities (MRFs) act as uptake points for producers and processors under extended producer responsibility (EPR) rules.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/",
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+   ]
+  },
+  {
+   "point": "EBWGR certificates turn weighed pickups from bulk generators into a compliance record, and only the city can issue them.",
+   "detail": "Under rule 10, only the local body issues Extended Bulk Waste Generator Responsibility (EBWGR) certificates on the portal. One unit equals 1 kg collected from BWGs and delivered to registered processors or recyclers. Wet-waste certificates can be issued only after the processor reports receipt. Every transaction is recorded when annual returns are filed, the cost is charged to the BWG, and non-compliance draws environmental compensation. Existing BWGs that cannot compost on site must buy certificates (r.6(d)). A Luma.Green pickup receipt records who, what, how many kg and which registered buyer received it, which is the evidence a city needs to issue dry-waste certificates.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+   ]
+  },
+  {
+   "point": "Recognising waste pickers and waste traders (kabadiwalas) is now a legal duty tracked on the portal, and Bengaluru's waste-picker ID cards have lapsed.",
+   "detail": "The 2026 rules define 'informal waste collector' to include waste traders who buy and sell recyclables (r.3(1)(zb)). States must identify, count and register waste pickers within a year and repeat this every 5 years (r.35(1)(i)), uploading registrations by 30 June each year (r.35(2)(xix)). Cities must keep a ward-wise database of everyone in waste work, including informal pickers, and set up a way to recognise waste pickers, informal collectors or their organisations (r.39(53)–(54)). In Bengaluru, BBMP issued waste-picker ID cards in 2013, valid for 10 years, and has stopped issuing them. The 3-year DWCC MoUs signed in 2020 have lapsed. A Karnataka waste-picker union formed about 2023 has over 2,300 members (Citizen Matters, 15 Sep 2025).",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+   ]
+  },
+  {
+   "point": "NAMASTE gives cities a funded way to register waste pickers and run DWCCs, and it accepts scrap-sale receipts as proof of occupation.",
+   "detail": "MoSJE added waste pickers to the NAMASTE scheme from FY 2024-25 (approved on 20 Jun 2024), planned for FY 2024-25 to 2025-26 across 4,800+ cities. Cities and NGOs profile waste pickers with the NAMASTE app, and the system issues a unique ID and an ID card authorising waste picking in that city. Accepted proof includes recent scrap-sale receipts or endorsement by scrap-shop owners. NGOs and resource organisations earn ₹250 per waste picker validated with e-KYC. The scheme plans 750 DWCCs run by waste-picker collectives, with a resource-organisation fee of ₹10,000 per DWCC per month for 12 months and a vehicle subsidy of up to ₹5 lakh per DWCC. It also covers protective kits for 75,000 workers, ₹5 lakh per family per year of Ayushman Bharat (AB-PMJAY) health cover, and help registering on e-Shram.",
+   "sourceUrls": [
+    "https://namastescheme.com/upload/notification/SH2ILCjRgaUerotvjAiFsS0bdap2FjI3lZlo1aae.pdf"
+   ]
+  },
+  {
+   "point": "City rankings reward exactly the data Luma.Green produces: dry-waste recovery, where the material goes next, and sale registers kept in software.",
+   "detail": "Swachh Survekshan 2025-26 is scored out of 12,500 marks. The 1,500-mark solid-waste processing section includes three relevant indicators: 3.4, dry waste processed vs generated plus onward links to recyclers (100 marks); 3.7, BWG processing, including empanelling every third-party vendor (150); and 3.9, Reduce-Reuse-Recycle (RRR) centres (150). Cities file monthly figures on the Swachhatam portal. If those claims miss independent field checks by more than 20%, 15–30 marks are deducted per indicator. Under the Garbage Free Cities (GFC) star rating (toolkit of Aug 2024), a city needs at least 50% of dry waste processed for 1 star, 70% for 3, 80% for 5 and 90% for 7. Component 21, digital monitoring, requires software rather than Excel. It is worth 200 marks when processing facilities keep a digital sale register with vendor details, and 450 when BWG processing is also covered.",
+   "sourceUrls": [
+    "https://sbmurban.org/storage/app/media/pdf/Swachh-Survekshan-2025-26-Toolkit.pdf",
+    "https://sbmurban.org/storage/app/media/pdf/gfc/GFC-Toolkit-Aug-2024.pdf"
+   ]
+  },
+  {
+   "point": "The SBM-U model MRF contract already specifies a digital inventory, daily weight sheets and sales reports, which is a ready specification for a Luma.Green mode for yards and DWCCs.",
+   "detail": "The model tender and concession for MRFs covers public-private design-build-finance-operate-transfer deals of 25–200 TPD with a 10- or 15-year term. The operator must run a weighbridge and keep daily records in a digital inventory system for each sorted material. Daily weight sheets record date, truck number, time, weight and ward. Weekly and monthly reports cover tonnes of recyclables recovered and sold. The operator also runs dry-waste drop-off points in wards and a toll-free line for bulk dry waste, keeps rejects to 20% of input or less, and splits any carbon-credit revenue 50:50 with the city. The recyclables belong to the operator, who may sell them to any buyer.",
+   "sourceUrls": [
+    "https://sbmurban.org/storage/app/media/pdf/Final-Model-RFP-and-CA-MRF.pdf"
+   ]
+  },
+  {
+   "point": "Bengaluru's civic bodies were reorganised in 2025–26: the GBA now has five corporations and 369 wards, with elections due by 31 Dec 2026.",
+   "detail": "The Greater Bengaluru Authority (GBA) formally replaced BBMP on 2 Sep 2025, going from 198 wards to five corporations with 369 wards. The Supreme Court extended the election deadline to 31 Dec 2026. Citizens' manifestos ask for enforced segregation, bulk-waste regulation, certified contractors and performance-based contracts, with BSWML involved. New councils, plus new SWM by-laws due by 31 Mar 2027, open a window to get verified kabadiwalas and DWCCs recognised as authorised collectors and to offer ward dashboards.",
+   "sourceUrls": [
+    "https://citizenmatters.in/building-violations-traffic-waste-bengaluru-becc-citizens-manifesto-jam/",
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+   ]
+  },
+  {
+   "point": "Bengaluru's dry-waste system is under-built and poorly documented, a data gap Luma.Green can fill.",
+   "detail": "The city generates roughly 5,000–6,000 t of waste a day. Experts put source segregation at 40–50%. About 3,200 t/day of unsegregated waste is dumped at Mittaganahalli, 40 km away, and the six segregation plants handle about 25% (Citizen Matters, 4 Nov 2025). Of 198 DWCCs set up in 2012-13, 141 remain and 119 operate, serving 127 wards; Hasiru Dala supports 35 of them (Sep 2025). A Nov 2025 article cites 164 DWCCs, so there is no reliable public list. CPCB's 2023-24 report gives Karnataka (316 cities and towns) 12,140 TPD generated, 7,694 treated, 3,048 landfilled and a 1,398 TPD gap, with BBMP segregation at 53–55%. Nationally, 185,195 TPD is generated and 62% processed.",
+   "sourceUrls": [
+    "https://citizenmatters.in/poor-segregation-is-choking-bengalurus-waste-system-how-can-this-change/",
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+    "https://cpcb.gov.in/uploads/MSW/MSW_AnnualReport_2023-24..pdf"
+   ]
+  },
+  {
+   "point": "Waste-picker organisations are the natural partners, and SWaCH shows the model working at city scale.",
+   "detail": "SWaCH is Pune's waste-picker cooperative, in partnership with the Pune Municipal Corporation since 2008. As of 31 Dec 2024 it had 3,900+ waste pickers serving 10 lakh properties and 40 lakh people. It collects about 1,500–1,600 t/day, diverts about 220 t/day (35%) from landfill, recycles or diverts about 80,000 t/yr and avoids about 100,000 t of CO2 a year. Bengaluru has the same building blocks: Hasiru Dala supports 35 DWCCs and the new union has 2,300+ members.",
+   "sourceUrls": [
+    "https://swachcoop.com/about/impact/",
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+   ]
+  },
+  {
+   "point": "Karnataka pollution-board checks stay manual: the XGN consent lookup sits behind a CAPTCHA with no API, and paper baling is White category.",
+   "detail": "KSPCB handles consents to establish and operate, and waste authorisations, on XGN. Its public consent-order search needs a name, a mobile number, the consent order number and a CAPTCHA, so verification is a human job. Luma.Green should store the order number, category and validity dates and have the admin confirm them. KSPCB's category list puts hydraulic baling of waste paper in White (no consent needed) and reprocessing of waste plastic including PVC in Orange (code 1366). That supports the 'consent not required' checkbox for paper-only yards.",
+   "sourceUrls": [
+    "https://kspcb.karnataka.gov.in/consent-management/categorisation-rog",
+    "https://xgn.karnataka.gov.in/CSHARP/ConsentOrderSearch.aspx"
+   ]
+  },
+  {
+   "point": "National identity and business systems have usable APIs (GST through licensed providers, DigiLocker through API Setu); Udyam can only be checked by its QR code.",
+   "detail": "GSTN's developer portal lists Taxpayer, Public (including e-commerce operator) and invoice-registration (IRP) API groups; production access goes through a licensed GST Suvidha Provider (GSP). DigiLocker integration is published on API Setu: the Requester API spec v1.12 (Oct 2023), the Meri Pehchaan API spec v2.4 (Sep 2026) and a partner onboarding SOP, with the partner keeping its own interface. As of 22 Sep 2026 there were 5.38 crore Udyam registrations plus 4.31 crore on the Udyam Assist Platform for informal micro enterprises. Registration is free and certificates carry a dynamic QR code. No public verification API was found.",
+   "sourceUrls": [
+    "https://developer.gst.gov.in/apiportal/",
+    "https://apisetu.gov.in/digilocker",
+    "https://udyamregistration.gov.in/"
+   ]
+  },
+  {
+   "point": "GST rules on metal scrap already require yards to keep clean purchase records from unregistered kabadiwalas.",
+   "detail": "The 54th GST Council (9 Sep 2024) recommended two changes. First, reverse charge on metal scrap sold by an unregistered person to a registered one: the buyer pays the tax even if the seller is under the threshold. Second, 2% TDS on metal scrap sold between registered businesses. Once trades move onto the platform, the kabadiwala-to-yard receipt can be the basis for the yard's reverse-charge self-invoice.",
+   "sourceUrls": [
+    "https://gstcouncil.gov.in/sites/default/files/2024-09/pib2053233.pdf"
+   ]
+  },
+  {
+   "point": "Logistics and payout options exist off the shelf: ONDC's open logistics specifications and UPI payouts through a payment aggregator.",
+   "detail": "ONDC publishes its logistics specifications and reference apps on GitHub (Logistics-specifications, ref-logistics-app, logistics v1.2.5 logs updated Oct 2025); joining requires registering as a network participant. Payouts can run through an aggregator such as RazorpayX: UPI up to ₹1 lakh per transaction at any hour, IMPS up to ₹5 lakh, with a KYC-verified business account required. That covers Saathi payouts later. For the pilot, recording cash or UPI paid at the door keeps money off the platform, as decided in ADR 0009.",
+   "sourceUrls": [
+    "https://github.com/orgs/ONDC-Official/repositories?q=logistics",
+    "https://razorpay.com/docs/x/payouts/"
+   ]
+  },
+  {
+   "point": "Karnataka's gig-worker law could make Luma.Green an 'aggregator' for Saathis.",
+   "detail": "The Karnataka Platform-based Gig Workers (Social Security and Welfare) Bill was introduced on 12 Aug 2025 to replace a May 2025 ordinance. Aggregators must register within 45 days and share worker data with a Welfare Board, which issues each worker a unique ID within 30 days. They also pay a welfare fee of 1–5% of every payout. Penalties run from ₹5,000 to ₹1 lakh. Whether it is in force, and whether it covers pickup and shift work, still needs confirming (open question #13 in the docs).",
+   "sourceUrls": [
+    "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Ward dashboard for city officials: read-only, shown on demo data first",
+   "why": "GBA's five corporations are scored on dry waste processed and where it goes next (SS 2025-26 indicator 3.4). They lose marks when their monthly Swachhatam figures fail field checks, and GFC Component 21 gives 200–450 marks for software-based sale registers with vendor details. A ward map showing kg by material, the share sent to registered recyclers and the number of verified kabadiwalas, DWCCs and Saathis is the strongest demo for both investors and cities. Build it from the existing pickupReceipts plus an admin-editable ward table (geohash to ward), showing totals only and no personal data.",
+   "priority": "prototype-now",
+   "users": [
+    "city officials (GBA, corporation SWM nodal officers, BSWML)",
+    "admin",
+    "investors"
+   ]
+  },
+  {
+   "feature": "Hand-off ledger tagged with the 2026 waste stream, material code and each party's registration number, with a one-click quarterly-return export",
+   "why": "Rules 8(g) and 9(4) require collectors and dry-waste sorters to file quarterly returns by the 15th of the next quarter covering what they received, sorted and sent to registered processors; BWGs file annual returns by 30 June. Tag every receipt line with its stream (dry, wet, sanitary or special care), its material code and the buyer's registration number. Keep the material-to-stream mapping and all deadlines in admin-editable tables so rule changes are data edits, not code. A single button then produces the CSV or PDF each party files.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "yard / DWCC operator",
+    "recycler",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Compliance fields and badges on business profiles: city/CPCB portal registration no., KSPCB consent order no. with category and validity, GSTIN, Udyam/UAP no.",
+   "why": "Bulk generators and facilities may not deal with unregistered entities (r.6(g), 9(5)), and operating unregistered draws environmental compensation (r.17). The admin checks the KSPCB number by hand on XGN, which has a CAPTCHA and no API; the platform stores the expiry date and reminds before it runs out. Keep the 'consent not required' option for White-category paper baling. Show a 'Registered with <corporation>' badge to bulk-generator customers.",
+   "priority": "prototype-now",
+   "users": [
+    "admin",
+    "yards",
+    "recyclers",
+    "manufacturers",
+    "RWAs / bulk waste generators"
+   ]
+  },
+  {
+   "feature": "DWCC operator mode: daily weight sheet, sale register (buyer, material, kg, price) and monthly recyclables report",
+   "why": "This mirrors the SBM-U model MRF contract, which requires a digital inventory, daily weight sheets and sales reports. Bengaluru has 119–164 DWCCs, many on 2020 MoUs that have lapsed. Offering 2–5 Hasiru Dala-supported DWCCs a free 'yard' account gives them evidence for MoU renewal and NAMASTE resource-organisation fees (₹10,000 per DWCC per month), and gives Luma.Green real dry-waste volumes.",
+   "priority": "pilot",
+   "users": [
+    "DWCC operators",
+    "waste-picker collectives",
+    "Hasiru Dala",
+    "city officials"
+   ]
+  },
+  {
+   "feature": "Occupational record for waste pickers and Saathis: a kabadiwala-issued receipt for every sale, a one-tap 'endorse', a printable 6-month history, and a field for the NAMASTE or city ID once issued",
+   "why": "NAMASTE accepts scrap-sale receipts or endorsement by a scrap shop as proof of occupation. The 2026 rules make city registration of waste pickers an annual duty, uploaded by 30 June. Bengaluru's 2013 ID cards have expired and are not being reissued, so Luma.Green receipts can help thousands of pickers get recognised.",
+   "priority": "pilot",
+   "users": [
+    "Saathis / waste pickers",
+    "kabadiwalas",
+    "Hasiru Dala and the waste-picker union",
+    "city officials"
+   ]
+  },
+  {
+   "feature": "Scheduled pickups for RWAs and other bulk generators, with an EBWGR evidence pack and empanelment of verified kabadiwalas",
+   "why": "Residential societies producing 100 kg/day or more are bulk generators. They must register on swm.cpcb.gov.in (live since 31 May 2026), use registered collectors and obtain EBWGR certificates, which only the city issues based on kg delivered to registered recyclers. SS 2025-26 indicator 3.7 checks that cities empanel every vendor serving bulk generators. Per-pickup weights plus the receiving recycler give the RWA its annual-return data and the corporation the basis to issue certificates.",
+   "priority": "pilot",
+   "users": [
+    "RWAs / bulk waste generators",
+    "kabadiwalas",
+    "city officials"
+   ]
+  },
+  {
+   "feature": "One data-sharing MoU with a corporation or BSWML, co-signed with Hasiru Dala",
+   "why": "The new corporations (elections by 31 Dec 2026) must adopt SWM by-laws by 31 Mar 2027, a window to get verified kabadiwalas and DWCCs named as authorised collectors. Offer the dashboard and a monthly export shaped for Swachhatam (totals only, safe under the DPDP Act). In return, ask for the DWCC list, ward boundaries and a named SWM nodal officer (r.39(12)).",
+   "priority": "pilot",
+   "users": [
+    "founders",
+    "city officials",
+    "waste-picker organisations"
+   ]
+  },
+  {
+   "feature": "Checks through official APIs: GSTIN status via a GSP, and Saathi ID via DigiLocker's requester API",
+   "why": "A single admin verifies every applicant by hand. A GSP call confirms GSTIN status instantly. DigiLocker (through API Setu) pulls a driving licence or PAN with the user's consent, so the platform never handles Aadhaar numbers. Manual upload stays as the fallback.",
+   "priority": "pilot",
+   "users": [
+    "admin",
+    "Saathis",
+    "kabadiwalas, yards, recyclers, manufacturers"
+   ]
+  },
+  {
+   "feature": "GST helper for metal scrap: reverse-charge self-invoice and 2% TDS flags on yard purchases",
+   "why": "Since the 54th GST Council, yards buying metal scrap from unregistered kabadiwalas pay the tax under reverse charge, and metal scrap sold between businesses carries 2% TDS. Generating the self-invoice from the hand-off receipt makes this automatic once trades and escrow run on the platform.",
+   "priority": "scale",
+   "users": [
+    "yards",
+    "recyclers",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Chain-of-custody export for recyclers' EPR claims, with registered DWCCs/MRFs acting as EPR uptake points",
+   "why": "Rule 9(7) lets registered MRFs serve as uptake points for producers and processors under EPR rules. Recyclers need proof of where material came from for EPR certificates, and CPCB's EPR portals have no public API. A CSV of origin per batch (ward, collector, kg, dates) is simple to build and valuable.",
+   "priority": "scale",
+   "users": [
+    "recyclers",
+    "producers and brand owners (PIBOs)",
+    "DWCC / MRF operators"
+   ]
+  },
+  {
+   "feature": "ONDC logistics booking for kabadiwala-to-yard loads",
+   "why": "ONDC's logistics specifications and reference apps are open, so joining as a buyer on the network gives access to its logistics providers without building or managing a fleet.",
+   "priority": "scale",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "Saathis"
+   ]
+  },
+  {
+   "feature": "Saathi welfare compliance switch: Karnataka welfare board registration, e-Shram referral, and payouts through a payment aggregator with a configurable welfare-fee rate",
+   "why": "If Saathi work falls under Karnataka's gig-worker law, Luma.Green must register within 45 days, share worker data and pay a 1–5% fee on every payout. Building payouts through an aggregator (UPI up to ₹1 lakh per transaction) with the fee rate held as data turns the law into a setting rather than a rewrite.",
+   "priority": "scale",
+   "users": [
+    "Saathis",
+    "admin",
+    "founders"
+   ]
+  }
+ ],
+ "artifactMarkdown": "# Integration map: how Luma.Green plugs into public systems (as of 29 Sep 2026)\n\n\"None found\" means no public API was located on the official site on 29 Sep 2026. Never automate lookups that sit behind a CAPTCHA; the admin does those by hand.\n\n| # | System | Owner | What we exchange | API? | Priority |\n|---|---|---|---|---|---|\n| 1 | GBA, its 5 city corporations and BSWML | Govt of Karnataka | **Give:** ward-level kg by material and stream, share sent to registered recyclers, counts of verified kabadiwalas / DWCCs / Saathis (totals only). **Get:** DWCC list, ward boundaries, registered collectors, bulk-generator list, a named SWM nodal officer | None: MoU, read-only dashboard and monthly CSV | prototype-now (dashboard on demo data), then pilot (MoU) |\n| 2 | Swachhatam monthly reporting, Swachh Survekshan and Garbage Free Cities star rating | MoHUA (SBM-Urban) | Monthly export shaped to SS 2025-26 indicators 3.4 (dry waste processed and where it went) and 3.7 (bulk-generator vendors), and GFC Component 21 (digital sale register with vendor details). The city uploads it | None: city login only | pilot |\n| 3 | CPCB central SWM portal (swm.cpcb.gov.in) | CPCB / MoEFCC | Registration numbers of our kabadiwalas, yards, DWCCs and RWA / bulk-generator customers; quarterly returns (received, sorted, sent to registered processors); kg evidence for city-issued EBWGR certificates | None found: web forms; bulk-generator registration live since 31 May 2026 | pilot (exports), then scale (API if CPCB publishes one) |\n| 4 | Dry waste collection centres (DWCCs) and MRFs | City plus a waste-picker collective or contractor | Luma.Green is their register: daily weight sheet, sale register (buyer, material, kg, price), monthly recyclables report | n/a: we are the system | pilot |\n| 5 | NAMASTE waste-picker system and app | MoSJE with MoHUA | Proof of occupation for registration (scrap-sale receipts, kabadiwala endorsement); NAMASTE or city ID number stored on the Saathi profile | None: city / NGO login | pilot |\n| 6 | Waste-picker organisations (Hasiru Dala, Karnataka waste-picker union; SWaCH in Pune as the reference model) | Civil society | Co-design, onboarding DWCCs and Saathis, training; volumes reported back to them | n/a: partnership | pilot |\n| 7 | KSPCB XGN consents | Karnataka State Pollution Control Board | Consent order number, category (white / green / orange / red) and validity for yards, recyclers and manufacturers; admin checks by hand | None: public lookup behind a CAPTCHA | prototype-now (fields), then pilot (checks) |\n| 8 | CPCB EPR portals (plastic packaging, e-waste, batteries, tyres, used oil, end-of-life vehicles) | CPCB | Per-batch chain-of-custody export for recyclers' EPR claims; DWCC / MRF as an EPR uptake point (SWM 2026 r.9(7)) | None found | scale |\n| 9 | GSTN, through a licensed GST Suvidha Provider | GSTN / CBIC | GSTIN status at onboarding; later invoices, e-way bills, and metal-scrap reverse-charge self-invoices with 2% TDS | Yes, through a GSP (Taxpayer, Public and IRP API groups) | pilot (GSTIN check), then scale (invoicing) |\n| 10 | DigiLocker, through API Setu | MeitY / NeGD | Consented pull of a driving licence or PAN to verify a Saathi; no Aadhaar number stored | Yes: Requester API (spec v1.12), Meri Pehchaan (v2.4), partner onboarding SOP | pilot |\n| 11 | Udyam and the Udyam Assist Platform | Ministry of MSME | Udyam or Udyam Assist number as an optional trust badge; nudge informal kabadiwalas to register (it is free) | None found: admin scans the certificate's QR code | pilot |\n| 12 | UPI, through an RBI-authorised payment aggregator | NPCI / aggregator (e.g. Razorpay) | Now: show the kabadiwala's own UPI QR at the door and record the method plus an optional reference. Later: collections and Saathi payouts | Yes, through aggregator APIs (e.g. UPI payouts up to ₹1 lakh per transaction) | prototype-now (record the payment), then scale (payouts) |\n| 13 | ONDC logistics | ONDC (Section 8 company promoted by DPIIT) | Book trucks for kabadiwala-to-yard loads from logistics providers on the network | Yes: open Beckn-based specifications and reference apps; requires network registration | scale |\n| 14 | e-Shram | Ministry of Labour and Employment | Referral so Saathis and waste pickers get a Universal Account Number (NAMASTE already helps with this) | None found | scale |\n| 15 | Karnataka gig-workers welfare board | Govt of Karnataka (Labour) | If Saathi work is covered: register as an aggregator, share worker data, pay a 1–5% welfare fee on each payout | Unknown: Bill introduced 12 Aug 2025 | scale (legal check before Saathi payouts go live) |\n\n## Key dates to design around\n\n- **1 Apr 2026**: SWM Rules 2026 in force (S.O. 388(E), 27 Jan 2026).\n- **31 May 2026**: CPCB portal opened for bulk-generator registration.\n- **About 1 Oct 2026**: CPCB portal due for every obligated entity (six months after the rules took effect, r.16).\n- **31 Dec 2026**: deadline for elections to Bengaluru's corporations.\n- **About Jan 2027**: states must have counted and registered waste pickers, and RWAs, gated communities, markets and hotels must hand recyclables only to authorised waste pickers or recyclers (one year after notification).\n- **31 Mar 2027**: cities' new SWM by-laws due.\n- **Every quarter, by the 15th of the next quarter's first month**: collectors' and sorters' returns. **Every 30 June**: annual returns, plus the waste-picker registration upload.\n- **About Oct 2027**: million-plus cities such as Bengaluru must have the infrastructure (including MRFs) in place (18 months, Schedule I).",
+ "risks": [
+  "Enforcement exposure: the 2026 rules impose environmental compensation on anyone collecting or sorting without registration (r.17). A platform that makes informal kabadiwalas visible to officials could expose them before they register. Share only totals until each business consents and holds a registration number.",
+  "Government systems offer no APIs. The CPCB SWM portal, Swachhatam, the NAMASTE system and KSPCB XGN (CAPTCHA) are web forms or logins, so integration means exports and manual checks, and one admin's workload grows with every city.",
+  "Bengaluru's institutions are in flux. The GBA dates from 2025, five corporations have elections due by 31 Dec 2026, and DWCC MoUs have lapsed. Our counterparts and priorities may change after the elections.",
+  "Scheme funding may end. SBM-U 2.0 was set for 2021–26, and NAMASTE's waste-picker component was planned for FY 2024-25 to 2025-26. Anchor the pitch in the statutory 2026 rules rather than scheme money.",
+  "Data protection: waste-picker identities (often scheduled-caste workers), household addresses and income data are sensitive. City dashboards must show totals only, with consent and purpose limits built to the DPDP standard.",
+  "Livelihood conflict: waste-picker groups may see a platform as privatisation or middlemen taking their material. Co-design with Hasiru Dala and the union, and make sure pickers keep access to dry waste and see more income, not less.",
+  "Public numbers conflict (DWCCs 119 vs 164; BBMP segregation 53–55% per CPCB vs 40–50% per experts). Dashboards need a source and date on every figure, and should be framed as help, so officials are not embarrassed.",
+  "Tax exposure grows as trades move onto the platform: reverse charge and 2% TDS on metal scrap, and possible e-commerce operator obligations (open question #12 in the docs)."
+ ],
+ "openQuestions": [
+  "Will GBA or BSWML treat kabadiwalas and DWCCs as 'entities involved in sorting' that must register under rule 9, and can individual kabadiwalas and DWCCs (not just bulk generators) register on swm.cpcb.gov.in yet?",
+  "Will CPCB publish an API or a bulk-upload format for quarterly returns and EBWGR evidence once the portal covers every obligated entity (due about Oct 2026)?",
+  "Does the NAMASTE waste-picker component continue beyond FY 2025-26? Which resource organisation is empanelled for Karnataka, and has waste-picker registration started in Bengaluru?",
+  "What will Bengaluru's new SWM by-laws (due 31 Mar 2027) say about 'authorised' waste pickers, collectors and traders? Will they keep the national 100 kg/day threshold for bulk generators?",
+  "Which of the five corporations would host a pilot dashboard, who is its SWM nodal officer, and exactly which fields does it report monthly to Swachhatam?",
+  "Is SBM-Urban extended or relaunched after 2026, and how does the Swachh Survekshan 2026-27 toolkit change the dry-waste and digital-monitoring indicators?",
+  "Is Karnataka's platform-based gig-workers law in force, and does it cover Saathi pickup and shift work?",
+  "How many DWCCs actually operate in Bengaluru today, who runs them and under what contracts? Public figures range from 119 functioning (Sep 2025) to 164 (Nov 2025)."
+ ],
+ "sources": [
+  {
+   "title": "Solid Waste Management Rules, 2026: Gazette S.O. 388(E), 27 Jan 2026 (CPCB copy)",
+   "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+  },
+  {
+   "title": "CPCB home page: central portal for bulk waste generator registration live from 31 May 2026",
+   "url": "https://cpcb.gov.in/"
+  },
+  {
+   "title": "CPCB Annual Report on Solid Waste Management 2023-24",
+   "url": "https://cpcb.gov.in/uploads/MSW/MSW_AnnualReport_2023-24..pdf"
+  },
+  {
+   "title": "Swachh Survekshan 2025-26 Toolkit (MoHUA, SBM-U)",
+   "url": "https://sbmurban.org/storage/app/media/pdf/Swachh-Survekshan-2025-26-Toolkit.pdf"
+  },
+  {
+   "title": "Garbage Free Cities Star Rating Toolkit, Aug 2024 (MoHUA)",
+   "url": "https://sbmurban.org/storage/app/media/pdf/gfc/GFC-Toolkit-Aug-2024.pdf"
+  },
+  {
+   "title": "SBM-U Model RFP and Concession Agreement for Material Recovery Facility",
+   "url": "https://sbmurban.org/storage/app/media/pdf/Final-Model-RFP-and-CA-MRF.pdf"
+  },
+  {
+   "title": "Revised Scheme Guidelines: Waste Pickers component under NAMASTE (MoSJE)",
+   "url": "https://namastescheme.com/upload/notification/SH2ILCjRgaUerotvjAiFsS0bdap2FjI3lZlo1aae.pdf"
+  },
+  {
+   "title": "Citizen Matters: Bengaluru's waste pickers struggle without recognition (15 Sep 2025)",
+   "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+  },
+  {
+   "title": "Citizen Matters: Poor segregation is choking Bengaluru's waste system (4 Nov 2025)",
+   "url": "https://citizenmatters.in/poor-segregation-is-choking-bengalurus-waste-system-how-can-this-change/"
+  },
+  {
+   "title": "Citizen Matters: BECC citizens' manifesto; GBA, 369 wards, elections by 31 Dec 2026 (17 Sep 2026)",
+   "url": "https://citizenmatters.in/building-violations-traffic-waste-bengaluru-becc-citizens-manifesto-jam/"
+  },
+  {
+   "title": "SWaCH Pune: Impact (as of 31 Dec 2024)",
+   "url": "https://swachcoop.com/about/impact/"
+  },
+  {
+   "title": "KSPCB: Categorisation of industries (R/O/G/W)",
+   "url": "https://kspcb.karnataka.gov.in/consent-management/categorisation-rog"
+  },
+  {
+   "title": "KSPCB XGN: Consent order search",
+   "url": "https://xgn.karnataka.gov.in/CSHARP/ConsentOrderSearch.aspx"
+  },
+  {
+   "title": "GST Council: Recommendations of the 54th meeting (metal scrap reverse charge and TDS)",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-09/pib2053233.pdf"
+  },
+  {
+   "title": "GSTN developer API portal",
+   "url": "https://developer.gst.gov.in/apiportal/"
+  },
+  {
+   "title": "API Setu: DigiLocker integration (Requester API, Meri Pehchaan)",
+   "url": "https://apisetu.gov.in/digilocker"
+  },
+  {
+   "title": "Udyam Registration portal: Udyam and Udyam Assist Platform counts",
+   "url": "https://udyamregistration.gov.in/"
+  },
+  {
+   "title": "ONDC-Official GitHub: logistics specifications and reference apps",
+   "url": "https://github.com/orgs/ONDC-Official/repositories?q=logistics"
+  },
+  {
+   "title": "RazorpayX Payouts documentation",
+   "url": "https://razorpay.com/docs/x/payouts/"
+  },
+  {
+   "title": "PRS India: Karnataka Platform-based Gig Workers (Social Security and Welfare) Bill, 2025",
+   "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+  }
+ ]
+}

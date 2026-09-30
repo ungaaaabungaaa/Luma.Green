@@ -73,3 +73,6 @@ android/.gradle/
 
 # os
 Thumbs.db
+
+# Worktrees the Claude desktop app cuts for parallel agents
+.claude/worktrees/

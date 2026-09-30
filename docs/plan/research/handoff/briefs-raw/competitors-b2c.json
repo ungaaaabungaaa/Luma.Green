@@ -1,0 +1,353 @@
+{
+ "topic": "competitors-b2c",
+ "headline": "Household scrap pickup is proven but thin-margin. Recykal closed its ~0.5-million-download consumer app because each pickup took 45–60 minutes, and the market leader, The Kabadiwala, already runs a partner-kabadiwala marketplace in Bengaluru (Scrapr, 5,000+ kabadiwalas). Luma.Green has to win on reliability, photo estimates, prices shown before booking and a Kannada-first app, not on the marketplace idea itself.",
+ "findings": [
+  {
+   "point": "Running your own pickup fleet for households loses money. The best-known failure is Recykal's consumer app.",
+   "detail": "Recykal's Uzed app reached about 0.5 million downloads and around 1,000 orders a day in Hyderabad and Pune. But each order took 45–60 minutes to collect and weigh, and households produced too little material for recyclers. In 2019 Recykal switched to bulk generators (at least 10 kg a day), and revenue grew from ₹1.8 Cr in FY19 to ₹21.2 Cr in FY20. For Luma.Green: sending bookings to existing kabadiwalas avoids the fleet cost that killed Uzed. The pilot still has to show that kabadiwalas find small pickups worth the trip.",
+   "sourceUrls": [
+    "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1",
+    "https://kr-asia.com/recykal-is-indias-uber-of-waste-collection-startup-stories"
+   ]
+  },
+  {
+   "point": "The market leader already runs Luma.Green's core model, a marketplace of partner kabadiwalas, in Bengaluru.",
+   "detail": "The Kabadiwala (Bhopal, since 2013) owns vehicles, warehouses and sorting plants (MRFs) in smaller cities. In Delhi NCR, Mumbai, Bengaluru, Hyderabad and Pune it uses partner kabadiwalas through its Scrapr app, run by the same company (ASAR Green Kabadi Pvt Ltd). On Scrapr a household enters an address, picks the load size and vehicle, then chooses a partner by distance and price. Scrapr claims 5,000+ kabadiwalas, 11 cities and 25+ Bengaluru neighbourhoods (Koramangala, Indiranagar, Jayanagar). So a marketplace for kabadiwalas is not new on its own. Luma.Green's real differences are the photo estimate, the floor-price table, a Kannada-first app for kabadiwalas with little schooling, and the yard and recycler chain behind the kabadiwala.",
+   "sourceUrls": [
+    "https://www.sankalpforum.com/from-college-frustration-to-organizing-indias-waste-economy-sankalpchangemakers-features-anurag-asati-co-founder-the-kabadiwala/",
+    "https://www.scrapr.app/city/bangalore",
+    "https://www.scrapr.app/",
+    "https://apps.apple.com/in/app/the-kabadiwala/id1610864605"
+   ]
+  },
+  {
+   "point": "Funding rounds in consumer scrap pickup are small and the leaders are small companies. The idea is proven, but no one has won the market.",
+   "detail": "The Kabadiwala has raised $3.33M over 6 rounds (Roots Ventures, ABCOM and others). Tracxn puts its FY25 revenue at ₹10–50 Cr with only 16 staff. It reports 4 lakh+ consumers and 500+ tonnes a month. ScrapUncle raised ₹22 Cr in a pre-Series A round on 28 Jan 2026 (Orios, Acumen). That followed ₹60 lakh for 5% on Shark Tank India season 2 in Feb 2023, a ₹12 Cr valuation, when it had done 22,000 pickups. It now claims 300K+ pickups and 20M kg, with ₹10–50 Cr revenue in FY25 and 63 staff. The only large balance sheet belongs to Attero's MetalMandi (2 lakh+ downloads, 50K+ monthly users, 15,000 tonnes a month by April 2026), which serves dealers rather than households.",
+   "sourceUrls": [
+    "https://tracxn.com/d/companies/the-kabadiwala/__m3UNbioxN9Vlb-olXsWxlH2fS3RjMA9DD-dTecfCnLc",
+    "https://inc42.com/buzz/cleantech-startup-scrapuncle-raises-inr-22-cr-to-expand-presence-across-delhi-ncr/",
+    "https://thebetterindia.com/310812/mukul-chhabra-scrapuncle-delhi-startup-collects-recycles-scrap-wins-lakhs-shark-tank/",
+    "https://tracxn.com/d/companies/scrapuncle/__jzAmdPKg7OJsmIPkOiGZVGyX0NYaL0wHECgJv-7oMg0",
+    "https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp"
+   ]
+  },
+  {
+   "point": "The top complaints are no-shows and broken promises, not low prices.",
+   "detail": "The Kabadiwala's iPhone app has 4.2 stars from 360 ratings. Its reviews describe:\n- partners who never arrive\n- slow dealer assignment\n- a dealer who refused a 14 km trip, while the request stayed stuck and could not be cancelled\n- a ₹30 fee on 13 kg when the app promised free pickup above 10 kg (its own terms say 15 kg)\n\nThe company's replies send users to a WhatsApp number. EpiCircle (4.7 stars from 105 ratings) has a review about last-minute cancellations with no notice, and Kabadixpress users could not register. When independent dealers do the pickups, their no-shows end up in the platform's reviews.",
+   "sourceUrls": [
+    "https://apps.apple.com/in/app/the-kabadiwala/id1610864605",
+    "https://apps.apple.com/in/app/epicircle/id6711347475",
+    "https://www.thekabadiwala.com/terms-and-conditions",
+    "https://apps.apple.com/in/app/kabadixpress/id1529425919"
+   ]
+  },
+  {
+   "point": "Minimum-load rules differ from player to player and put off households with small amounts.",
+   "detail": "The Kabadiwala's terms require 15 kg, or 'pickup charges may apply'. Kabadiwala Online (ScrapKabadi) says 'Min pickup ₹999'. ScrapUncle only takes clothes and glass alongside other items and refuses thermocol, wood and ceramics. A 2026 study in three small Indian cities (171 participants) found that small households cannot build up enough recyclables to get regular dealer visits. Luma.Green's drop-off option, with a code to show at the shop, answers this directly and should be shown up front.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/terms-and-conditions",
+    "https://kabadiwalaonline.in/price-list/",
+    "https://scrapuncle.com/local-rate",
+    "https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2026.1716184/full"
+   ]
+  },
+  {
+   "point": "Published Bengaluru prices for the same material differ by 1.5 to 3 times, so no one yet owns trusted prices.",
+   "detail": "Newspaper: ₹10/kg at The Kabadiwala, ₹11–13 at ScrapUncle, ₹14–16 at ScrapKabadi. Cardboard: ₹3, ₹7–8 and ₹8–10. Iron: ₹22, ₹20–25 and ₹28–32, while ScrapRates.in (40+ Bengaluru buyers listed) showed ₹39.31/kg on 28 Sep 2026. Copper: ₹500, ₹404–505 and ₹680–720. Sites that only collect leads advertise the highest numbers. Luma.Green's dated floor and fallback tables, plus each kabadiwala's own rate card shown before booking, can become the reference price. The estimate screen should show ranges and say the final rate is set at the door.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/scrap-rates/bangalore",
+    "https://scrapuncle.com/local-rate",
+    "https://scrapkabadi.com/kabadiwala-online-bangalore/",
+    "https://scraprates.in/bangalore"
+   ]
+  },
+  {
+   "point": "Households want a reliable pickup time, honest weighing, a fixed price without haggling, and cash or UPI before the collector leaves.",
+   "detail": "ScrapUncle's founder built the company around missed kabadiwala pickups, inconsistent pricing and no idea where the waste went. On Shark Tank he stressed prices quoted before pickup, safe verified staff and service for apartment residents. ScrapUncle advertises digital weighing and 'instant payment before we leave'. Pune's Scrapdeal, which took no outside funding, reports 80–90% of customers coming back across 500+ housing societies, partly because there is no bargaining. Money is the main reason households sell, but the amounts are small.",
+   "sourceUrls": [
+    "https://thebetterindia.com/310812/mukul-chhabra-scrapuncle-delhi-startup-collects-recycles-scrap-wins-lakhs-shark-tank/",
+    "https://www.karostartup.com/startup-stories/from-missed-kabadiwala-pickups-to-real-story-of-scrapuncle",
+    "https://scrapuncle.com/",
+    "https://thebetterindia.com/451566/scrapdeal-pune-recycling-startup/",
+    "https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2026.1716184/full"
+   ]
+  },
+  {
+   "point": "Booking by WhatsApp or phone is standard, and the leading apps are English-only.",
+   "detail": "These players all take bookings or support outside their app:\n- The Kabadiwala: WhatsApp Business and phone\n- ScrapUncle: WhatsApp\n- Crapbin: phone and WhatsApp\n- ScrapKabadi: WhatsApp and phone only, with no app\n- ScrapQ: a missed-call number\n\nThe iPhone app listings of The Kabadiwala and ScrapUncle show English as the only language. Luma.Green's 12 hand-translated languages, led by Kannada, fill a real gap. A way to reach Luma.Green on WhatsApp is probably needed sooner than the 'later' in the current plan.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/",
+    "https://scrapuncle.com/",
+    "https://www.crapbin.com/",
+    "https://scrapkabadi.com/kabadiwala-online-bangalore/",
+    "https://scrapq.en.aptoide.com/app",
+    "https://apps.apple.com/us/app/scrapuncle-sell-scrap-online/id1500650126"
+   ]
+  },
+  {
+   "point": "Rewards are mostly referral coupons and environmental-impact stats. The one unusual scheme looks like an investment product.",
+   "detail": "The Kabadiwala offers referral rewards, coupons, gift cards and 'trees and water saved' stats. EpiCircle lets users convert earnings into gold or silver with '11–15% annual returns', plus green coins and Amazon, Zomato and Domino's coupons. In 2019 Junkart paid by Paytm or let users donate to an NGO. No source links rewards to customers coming back; the retention stories (Scrapdeal, ScrapUncle) are about reliability. Luma.Green's recycle points should stay simple and have no cash value during the pilot, because ADR 0009 keeps money off the platform.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/individual",
+    "https://apps.apple.com/in/app/epicircle/id6711347475",
+    "https://www.theceo.in/press-release/epicircle-pioneers-a-circular-economy-through-a-win-win-scrap-management",
+    "https://thebetterindia.com/181221/lifestyle-online-kabadiwala-pickup-service-scrap-waste-startup-india/"
+   ]
+  },
+  {
+   "point": "No household pickup app advertises a price estimate from photos. The only AI image pricing, MetalMandi, is built for dealers.",
+   "detail": "The Kabadiwala, ScrapUncle, ScrapQ, EpiCircle, Scrapdeal and Crapbin all price from a material list or by weighing at the door. Kabadiwala Online's enquiry form takes photos, but for a manual quote. Attero's MetalMandi uses AI image detection to identify metal and e-waste scrap and judge its quality, but it serves dealers. Bintix scans packaging with AI behind the scenes to build data for brands. Luma.Green's flow (photo, then materials and a kilogram range, then rupees from its own price tables) stands out for households and makes a strong investor demo.",
+   "sourceUrls": [
+    "https://www.metalmandi.in/blog/best-app-to-sell-scrap-online-in-india",
+    "https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp",
+    "https://www.bintix.com/",
+    "https://kabadiwalaonline.in/price-list/"
+   ]
+  },
+  {
+   "point": "The players that survive move into processing, recycling compliance (EPR) and data. Several consumer-only players have shut down.",
+   "detail": "Survivors:\n- ScrapUncle is spending its new money on collection infrastructure and a planned in-house e-waste recycling plant.\n- Crapbin started in 2018 as a free-pickup online kabadiwala and now calls itself a CPCB/TSPCB-authorised e-waste recycler.\n- Kabadiwalla Connect moved from its RecyKle household app (2016) to 'Hyperlokal', a B2B service that sources material through scrap shops (June 2020).\n- Bintix earns from consumption data drawn from the packaging of about 41,000 households.\n\nGone: Junkart (Delhi NCR, Mumbai and Bengaluru in 2019), whose junkart.in domain no longer resolves; Kabadi-Xpress, whose kabadi-xpress.com now redirects to an unrelated site; and Recykal's Uzed. This supports pitching Luma.Green as the whole chain (kabadiwala, yard, recycler, manufacturer, then EPR and carbon) rather than a household app alone.",
+   "sourceUrls": [
+    "https://inc42.com/buzz/cleantech-startup-scrapuncle-raises-inr-22-cr-to-expand-presence-across-delhi-ncr/",
+    "https://www.crapbin.com/",
+    "https://www.kabadiwallaconnect.in/achievements",
+    "https://www.bintix.com/",
+    "https://thebetterindia.com/181221/lifestyle-online-kabadiwala-pickup-service-scrap-waste-startup-india/",
+    "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1"
+   ]
+  },
+  {
+   "point": "Bengaluru specifics: a city network of dry-waste centres run by waste pickers takes mixed dry waste, brands collect e-waste free, and several app competitors are already here.",
+   "detail": "In 2019 Bengaluru had 198 approved Dry Waste Collection Centres (DWCCs), 166 of them working, each handling 0.5–4.5 tonnes a day. Waste pickers ran 33 of them with support from the NGO Hasiru Dala, and about 82% of the dry waste they received was low-value.\n\nEcoFlyp (Aug 2026) lists 10 doorstep e-waste pickups in Bengaluru, mostly free take-back schemes from brands such as Croma, Xiaomi, Samsung, LG, HP and boAt. So e-waste earns households little.\n\nCompetitors already in the city:\n- The Kabadiwala / Scrapr\n- ScrapUncle, whose rate card lists Bengaluru\n- Bintix, scanning 58,714 packs a week in Bengaluru\n- ScrapKabadi\n- ScrapRates.in, with 40+ buyers listed\n- Hasiru Dala Innovations, with 370+ business and institutional clients in FY24–25\n\nLuma.Green's money for households lies in paper, metal and plastic. Low-value leftovers could go to DWCCs.",
+   "sourceUrls": [
+    "https://citizenmatters.in/dry-waste-collection-centres-need-design-changes-to-make-them-function-better/",
+    "https://ecoflyp.com/bengaluru/discover/e-waste-disposal-recycling",
+    "https://www.bintix.com/",
+    "https://www.scrapr.app/city/bangalore",
+    "https://scraprates.in/bangalore",
+    "https://hasirudalainnovations.com/"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Show nearby kabadiwalas side by side on the estimate, with distance and their price for these materials, and tag the best price",
+   "why": "Scrapr already lets households choose a partner by distance and price, and published Bengaluru rates differ by up to 3 times. Showing each verified shop's rate card for the photographed materials (the fallback table where a shop has set none) answers open question 3 in pricing.md. It also makes the 'latest prices' promise visible in the investor demo, using data Luma.Green already stores.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "investors"
+   ]
+  },
+  {
+   "feature": "Reliability loop: auto-accept, re-offer the booking to the next kabadiwala after a timeout, and a live 'who is coming, when, on the way' screen",
+   "why": "No-shows, slow assignment and stuck requests are the top complaints about The Kabadiwala and EpiCircle. Demoing a booking that moves to the next kabadiwala after the timeout (open question 8), with SMS updates, shows investors that Luma.Green has designed for the problem that hurts the incumbents.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Digital receipt after weighing: kg × rate for each material, cash or UPI, estimate against actual, and a kg and CO2e impact line, shareable by link",
+   "why": "Honest weighing and instant payment are what households value, and every leader advertises digital scales and bills. Showing estimate against actual builds trust in the AI and feeds the pilot measures. The impact line sets up the carbon module.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "A public, search-indexed 'Bengaluru scrap rates today' page built from the dated floor and fallback tables, with history",
+   "why": "City rate pages are how The Kabadiwala, ScrapKabadi and ScrapRates.in attract search traffic. Luma.Green's dated tables already hold this data, so the page costs little. It gives kabadiwalas a reference price and shows investors the planned live-prices module. The numbers should be labelled as indicative.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "investors"
+   ]
+  },
+  {
+   "feature": "Show each kabadiwala's minimum before booking, offer 'too small for a pickup? drop it off' with the shop code, and never charge a surprise fee",
+   "why": "Minimums differ (15 kg, ₹999, 'only with other items'), and a ₹30 surprise fee led to a public complaint. Showing the minimum at booking and sending small loads to drop-off turns a sore point into a feature. It also uses kabadiwalas without a vehicle, who stay visible for drop-offs.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Let each kabadiwala mark every material as 'buys', 'takes free' or 'doesn't take', and show it on the estimate",
+   "why": "The Kabadiwala lists some items at ₹0 instead of refusing them, ScrapUncle refuses thermocol, wood and ceramics, and about 82% of the dry waste reaching Bengaluru's collection centres is low-value. A three-way flag on the existing rate card sets expectations and avoids arguments at the door. Later it lets leftovers be sent to DWCCs.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Add a WhatsApp support number (tap to chat) and a 'share to WhatsApp' button on the tracking page now; build the full WhatsApp booking bot later",
+   "why": "Every leader takes bookings or support over WhatsApp or phone, and slow support is a top complaint. A tap-to-chat number and a share button need no WhatsApp API work and cover most of the value until the planned bot is built.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Self-serve cancel and reschedule, a two-tap rating after each pickup, and a reliability score for each kabadiwala that affects who gets offered bookings first",
+   "why": "One review describes a request that got stuck and could not be cancelled, and ScrapUncle has added a review for each pickup. Ranking nearby shops partly on their acceptance and completion record from pilot data stops unreliable dealers from damaging the brand.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Apartment pickup days: a kabadiwala opens a time slot at a housing complex and residents book into it",
+   "why": "Scrapdeal's 500+ housing societies with 80–90% repeat customers, and Bintix's model of about 41,000 households signed up through their communities, show apartments are the efficient household channel. Grouping pickups raises the kilograms per trip, which was the problem that sank Uzed. Bengaluru's apartment resident associations (RWAs) are an easy way in for the pilot.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "RWAs",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Make recycle points an impact count (kg recycled, CO2e) with no cash value in the pilot, add referral bonuses later, and never offer gold or 'returns'",
+   "why": "Competitors' rewards are coupons and impact stats, and no source ties them to customers coming back. EpiCircle's '11–15% returns' in gold and silver looks like a financial product. ADR 0009 keeps money off the platform, so points with a cash value would need payments first. This settles open question 6 simply.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Send household e-waste to authorised recyclers and brand take-back schemes, with income tied to recycling compliance (EPR) later",
+   "why": "Bengaluru households already have about 10 doorstep e-waste options, most of them free brand take-backs, so e-waste earns them little. Survivors such as Crapbin and ScrapUncle make their money by processing e-waste. Luma.Green should earn through its recycler network rather than compete on the price paid to households.",
+   "priority": "scale",
+   "users": [
+    "households",
+    "recyclers",
+    "brands"
+   ]
+  },
+  {
+   "feature": "A data product for brands and EPR compliance bodies: anonymised material and packaging data, collected only with consent",
+   "why": "Bintix pays for its household service by selling consumption analysis from the packaging of about 41,000 households. Luma.Green's photos and weighed receipts produce similar data at every step of the chain and could become a second revenue line. This needs explicit consent under India's data-protection law and must keep the 90-day photo deletion rule.",
+   "priority": "scale",
+   "users": [
+    "brands",
+    "admin"
+   ]
+  }
+ ],
+ "artifactMarkdown": "### Household scrap-pickup players vs Luma.Green (checked 29 Sep 2026)\n\n| Player | Model | Cities | Funding · scale | Booking | Rate list | Minimum / fees | How households are paid | Rewards | Photo → price | Household chooses the kabadiwala | Complaints · status |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| **Luma.Green** | Marketplace of verified independent kabadiwalas, plus the yard → recycler → manufacturer chain | Bengaluru pilot, Oct 2026 | Prototype | Web app that installs like an app, no account; 12 languages (Kannada, Hindi, English first); SMS tracking link; WhatsApp planned | ✓ each shop's own rates above an admin minimum, with a fallback table; all dated | None; drop-off with a shop code for small loads | Cash or UPI at the door (recorded, not processed) | Recycle points (value open) | ✓ AI gives the materials and a kg range; rupees come from the price tables | ✓ nearest first, with hours and pickup or drop-off | Not live yet |\n| **The Kabadiwala + Scrapr** (Bhopal, 2013) | Mixed: owns vehicles and sorting plants in smaller cities; partner kabadiwalas through the Scrapr app in metros | 15 cities incl. Bengaluru (Scrapr: 25+ Bengaluru areas) | $3.33M over 6 rounds; 4 lakh+ consumers; 5,000+ kabadiwalas; 500+ t/month; ₹10–50 Cr revenue FY25 | App (500K+ downloads per Aptoide; iPhone 4.2★ from 360 ratings, English only), web, WhatsApp Business, phone | ✓ fixed city list in ₹/kg or ₹/piece; low-value items shown at ₹0 | 15 kg, or \"pickup charges may apply\" | Cash, UPI or IMPS, instant | Referral rewards, coupons, gift cards, impact stats | ✗ | ✓ on Scrapr, by distance and price | No-shows, a refusal over 14 km, a stuck request, a ₹30 fee dispute |\n| **ScrapUncle** (Delhi, 2019) | Runs the whole chain itself: trained agents, collection centres; e-waste plant planned | Delhi NCR; rate card also lists Bengaluru | ₹22 Cr pre-Series A (Jan 2026); 300K+ pickups; 20M kg; ₹10–50 Cr revenue FY25 | App (English only; live tracking), web, WhatsApp | ✓ ranges (newspaper ₹11–13/kg) | Clothes and glass only with other items; refuses thermocol, wood, ceramics | Instant, \"before we leave\" | — | ✗ | ✗ assigned | Claims 4.0★; Play Store reviews could not be read |\n| **ScrapQ** (Hyderabad) | Own \"recycling officers\" for homes and businesses | Hyderabad, Vizag | Not disclosed; 10K+ downloads | App (last update 2023), missed call | ? | ? | Paid (method not stated) | — | ✗ | ✗ | App looks unmaintained |\n| **EpiCircle** (Gurugram) | Own pickup crew; 250+ ragpickers signed up | Gurugram, Jaipur, Chandigarh, Mohali, Panchkula | Startup India seed fund + angels; 5,000+ customers; 40 t (Dec 2024) | App (iPhone 4.7★ from 105 ratings) | ? | ? | Paid by weight; can convert to gold or silver with \"11–15% annual returns\" | Green coins, brand coupons | ✗ | ✗ | Last-minute cancellations |\n| **Bintix** (Hyderabad) | Scheduled dry-waste pickup for households; sells packaging and consumption data to brands | 6 metros incl. Bengaluru | $1.93M; ~41,000 households; 6,082 t diverted | Bintix Home app | ✗ | ? | \"Track and earn\" in the app | In-app | AI scans packaging behind the scenes (for brand data) | ✗ | — |\n| **Scrapdeal** (Pune) | Own staff; no outside funding, profitable | Pune | No outside funding; 10 lakh+ kg; 1.5 lakh downloads; 500+ housing societies; 80–90% repeat customers | App | ✓ daily (newspaper ≈ ₹11/kg) | ? | Instant, cash or digital | — | ✗ | ✗ | — |\n| **Crapbin** (Hyderabad, 2018) | Started as a free-pickup online kabadiwala; now a CPCB/TSPCB-authorised e-waste recycler | Hyderabad, Mumbai | Not disclosed; 470 t in its first 8 months | App, web, phone, WhatsApp | ? | Free pickup | Instant | Shared profit with an education cause (2019) | ✗ | ✗ | — |\n| **ScrapKabadi / Kabadiwala Online** | Websites that collect enquiries by call and WhatsApp and pass them to dealers | Claims 100+ Bengaluru areas and 8+ cities | Not disclosed | WhatsApp, call, web form with photos (no app) | ✓ \"updated daily\" (Bengaluru newspaper ₹14–16/kg) | \"Min pickup ₹999\" | UPI, bank, cash | — | Manual quote from photos | ✗ | Claims can't be checked; rates above others |\n| **MetalMandi** (Attero) | Marketplace for metal and e-waste scrap; buyers quote, sellers negotiate | 100+ cities, 28 states | Owned by Attero; 2 lakh+ downloads; 50K+ monthly users; 15,000 t/month (Apr 2026) | App | ✓ live, tracks market prices | — | Bank transfer | — | ✓ AI image detection (type and quality) | Buyers quote | Built for dealers, not households |\n| **Kabadiwalla Connect** (Chennai, 2014) | RecyKle household app (2016) found the nearest kabadiwala; now \"Hyperlokal\", a B2B service sourcing through scrap shops | Chennai; Indonesia | Grants (WEF, Shell GameChanger, Expo 2020) | RecyKle (dormant) | ✗ | — | — | — | ✗ | ✓ nearest kabadiwala (RecyKle) | Moved away from households |\n| **Recykal** (Hyderabad, 2016) | Uzed household pickup app (~0.5M downloads, ~1,000 orders/day) closed in 2019; now a B2B marketplace, recycling compliance (EPR) and QR-code deposit refunds | India (B2B) | ~$59M total; ₹110 Cr round (Apr 2024) | Uzed closed; deposit refunds by QR code | — | Bulk generators only (at least 10 kg/day) | Deposit refunds to bank in real time | — | ✗ | ✗ | Each Uzed order took 45–60 min |\n\n✓ offered or advertised · ✗ not offered or advertised on the pages opened · ? not found · — not applicable. Most figures are self-reported by the companies or Tracxn estimates.\n\nAlso checked: **Junkart** (Delhi NCR, Mumbai and Bengaluru in 2019; paid in cash or Paytm, or donated to an NGO): junkart.in no longer resolves. **Kabadi-Xpress** (Delhi): its domain now redirects to an unrelated site. **Kabadi Techno**: a kabadiwala-marketplace idea with a 2–10 person team and no disclosed scale.",
+ "risks": [
+  "Direct overlap with the leader: The Kabadiwala's Scrapr already runs a partner-kabadiwala marketplace in 25+ Bengaluru neighbourhoods and claims 5,000+ kabadiwalas nationally. Investors who know it will discount a 'marketplace for kabadiwalas' pitch unless Luma.Green leads with the photo estimate, the Kannada-first app for low-literacy kabadiwalas and the full chain.",
+  "Thin margins: household loads are small (each Uzed order took 45–60 minutes, and the app closed). If pilot kabadiwalas find pickups unprofitable they will stop accepting them, which is already a stop condition in pilot.md.",
+  "Reliability depends on others: independent kabadiwalas' no-shows and refusals become Luma.Green's bad reviews, as The Kabadiwala's App Store reviews show.",
+  "Price expectations: some sites advertise newspaper at ₹14–16/kg against ₹10–13 elsewhere. If the estimate or the fallback table is higher than what shops pay at the door, households feel cheated. If the minimum prices are above market, shops refuse bookings.",
+  "Rewards and money: points with a cash value, or gold-linked 'returns' like EpiCircle's, raise payment and financial-product questions that ADR 0009 deliberately avoids in the pilot.",
+  "Privacy: photos of homes, exact addresses and phone numbers are sensitive. Any data product needs explicit consent and anonymisation under the DPDP Act.",
+  "Shutdown history: Junkart, Kabadi-Xpress and Recykal's Uzed are gone. Investors will ask how often households sell and how many come back, which is hard to show in a short pilot because households sell scrap only every few weeks or months.",
+  "Data quality: most competitor numbers (users, kg, downloads) are self-reported or Tracxn estimates, and Play Store pages could not be read, so treat the matrix as indicative."
+ ],
+ "openQuestions": [
+  "What does Scrapr charge partner kabadiwalas (subscription or commission), and how many of its 5,000+ kabadiwalas are active in Bengaluru? Its pricing page returned 404.",
+  "Is ScrapUncle actually operating in Bengaluru? Its rate card lists Bengaluru, but its January 2026 funding news mentions only Delhi NCR.",
+  "What minimum load (in kg or ₹) makes a home pickup worth the trip for a Bengaluru kabadiwala, and what share of households reach it? To be measured in the pilot.",
+  "When shown both, do households pick the nearest kabadiwala or the one with the best price?",
+  "How often does a typical Bengaluru household have enough scrap to sell (monthly, quarterly)? This sets the repeat-use numbers investors will expect.",
+  "Can Luma.Green hand low-value materials to waste-picker-run DWCCs or Hasiru Dala, and on what terms?",
+  "How many DWCCs operate today under the Greater Bengaluru Authority? The latest figure found (166 working of 198) is from 2019.",
+  "Do the Android versions of competitor apps offer Indian languages? Only the iPhone listings were checked, and they show English only."
+ ],
+ "sources": [
+  {
+   "title": "Forbes India — How Recykal is cleaning up the mess (2 Sep 2021): Uzed consumer app and the switch to B2B",
+   "url": "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1"
+  },
+  {
+   "title": "Sankalp Forum — Anurag Asati, co-founder of The Kabadiwala (23 Sep 2025): partner model in metros, Scrapr, scale",
+   "url": "https://www.sankalpforum.com/from-college-frustration-to-organizing-indias-waste-economy-sankalpchangemakers-features-anurag-asati-co-founder-the-kabadiwala/"
+  },
+  {
+   "title": "Scrapr — Online Kabadiwala in Bangalore",
+   "url": "https://www.scrapr.app/city/bangalore"
+  },
+  {
+   "title": "The Kabadiwala — Scrap prices in Bangalore",
+   "url": "https://www.thekabadiwala.com/scrap-rates/bangalore"
+  },
+  {
+   "title": "The Kabadiwala — Terms and Conditions (15 kg minimum)",
+   "url": "https://www.thekabadiwala.com/terms-and-conditions"
+  },
+  {
+   "title": "The Kabadiwala — App Store listing and reviews",
+   "url": "https://apps.apple.com/in/app/the-kabadiwala/id1610864605"
+  },
+  {
+   "title": "Tracxn — The Kabadiwala company profile",
+   "url": "https://tracxn.com/d/companies/the-kabadiwala/__m3UNbioxN9Vlb-olXsWxlH2fS3RjMA9DD-dTecfCnLc"
+  },
+  {
+   "title": "Inc42 — ScrapUncle raises INR 22 Cr pre-Series A (28 Jan 2026)",
+   "url": "https://inc42.com/buzz/cleantech-startup-scrapuncle-raises-inr-22-cr-to-expand-presence-across-delhi-ncr/"
+  },
+  {
+   "title": "ScrapUncle — Local scrap rates (Delhi NCR and Bengaluru)",
+   "url": "https://scrapuncle.com/local-rate"
+  },
+  {
+   "title": "The Better India — ScrapUncle on Shark Tank India (13 Feb 2023)",
+   "url": "https://thebetterindia.com/310812/mukul-chhabra-scrapuncle-delhi-startup-collects-recycles-scrap-wins-lakhs-shark-tank/"
+  },
+  {
+   "title": "The Tribune — Attero's MetalMandi crosses 2 lakh downloads (7 Apr 2026)",
+   "url": "https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp"
+  },
+  {
+   "title": "Bintix — homepage (households, city pack counts, data products)",
+   "url": "https://www.bintix.com/"
+  },
+  {
+   "title": "EpiCircle — App Store listing and reviews",
+   "url": "https://apps.apple.com/in/app/epicircle/id6711347475"
+  },
+  {
+   "title": "The Better India — Scrapdeal, Pune's digital kabadiwala (18 Jun 2025)",
+   "url": "https://thebetterindia.com/451566/scrapdeal-pune-recycling-startup/"
+  },
+  {
+   "title": "Kabadiwala Online (ScrapKabadi) — Scrap price list and minimum pickup",
+   "url": "https://kabadiwalaonline.in/price-list/"
+  },
+  {
+   "title": "ScrapRates.in — Bangalore scrap rates today (28 Sep 2026)",
+   "url": "https://scraprates.in/bangalore"
+  },
+  {
+   "title": "Citizen Matters — Bengaluru's Dry Waste Collection Centres need design changes (20 May 2019)",
+   "url": "https://citizenmatters.in/dry-waste-collection-centres-need-design-changes-to-make-them-function-better/"
+  },
+  {
+   "title": "EcoFlyp — E-waste disposal and recycling in Bengaluru (Aug 2026)",
+   "url": "https://ecoflyp.com/bengaluru/discover/e-waste-disposal-recycling"
+  },
+  {
+   "title": "Frontiers in Sustainable Cities — Household waste segregation in India's small cities (Trushna et al., 2026)",
+   "url": "https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2026.1716184/full"
+  },
+  {
+   "title": "Kabadiwalla Connect — Achievements (RecyKle, Hyperlokal, grants)",
+   "url": "https://www.kabadiwallaconnect.in/achievements"
+  }
+ ]
+}

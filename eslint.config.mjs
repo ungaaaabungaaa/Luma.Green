@@ -38,6 +38,10 @@ const eslintConfig = defineConfig([
     // Written by `convex dev`. Committed so CI is hermetic, but never linted.
     "convex/_generated/**",
     "convex/*/_generated/**",
+    // Verbatim agent outputs and scratch tools handed to the cloud session.
+    "docs/plan/research/handoff/**",
+    // Worktrees the Claude desktop app cuts for parallel agents: whole copies of the repo.
+    ".claude/worktrees/**",
   ]),
 
   ...nextVitals,

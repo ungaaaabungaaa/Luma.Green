@@ -1,0 +1,378 @@
+{
+ "topic": "competitors-b2b",
+ "headline": "Of 18 recycling platforms reviewed, none connects household bookings, kabadiwala tools and yard-to-recycler trade on one platform that many buyers use. Recykal (₹1,498 crore gross revenue in FY26) only deals with sellers that have verified GST registration, and EPR certificates can only be traded on CPCB's regulated exchange, which charges 4% and requires its operator to earn ₹50 crore a year. So Luma.Green's opening is a traced first mile plus simple yard tools, not bulk trading or EPR credits.",
+ "findings": [
+  {
+   "point": "EPR certificates can only be traded on an exchange regulated by CPCB, and Luma.Green can neither run nor broker it",
+   "detail": "CPCB's guidelines for the EPR Electronic Trading & Settlement Platform (EPRETP, issued around January 2025) change who handles what. Certificates are still created on CPCB's EPR portal. Setting prices, trading and payment move to one authorised exchange covering plastic, e-waste, batteries, tyres and used oil. How it works: each week the exchange runs a sealed auction in which buyers and sellers both place orders and all matched trades clear at one price. A market at that fixed price stays open between auctions. CPCB sets a minimum and maximum price every quarter. Buyers pay 100% into an escrow account owned by a bank, and sellers are paid within two days. The fee is 4% (2% from each side) and 30% of it goes to the regulator. Brokers are not allowed. Prices, volumes and past prices must be published as downloads and through an API. To run the exchange a company needs ₹50 crore a year of trading-platform revenue for three years, ₹10 crore average net worth, ten years' experience, and capacity for 50 lakh transactions a year or 1 lakh users. MSTC was recommended as the operator, but as of 26 March 2026 CPCB had not announced a launch date.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
+    "https://avigroup.in/2026/03/26/epr-etp-portal-india-rumour-or-reality/"
+   ]
+  },
+  {
+   "point": "EPR now covers metal scrap, so yards and recyclers will need proof of where their material came from",
+   "detail": "MoEFCC brought in EPR for non-ferrous metal scrap on 1 July 2025, in force from 1 April 2026. Companies that make or sell products containing non-ferrous metals must register on CPCB's portal, meet yearly recycling targets, file half-yearly and yearly returns, buy certificates to cover any shortfall, and use a minimum amount of metal recycled in India. The older EPR schemes already split certificates by type. Plastic has three kinds: recycling, end-of-life, and use of recycled content. They come in lots of 1 to 1,000 t and last three years. E-waste certificates are issued per metal: iron, aluminium, copper and gold. Recycling certificates are created by recyclers and processors, who are exactly the buyers Luma.Green's yards sell to.",
+   "sourceUrls": [
+    "https://trilegal.com/knowledge_repository/trilegal-update-environment-law-monthly-updates-july-2025/",
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm"
+   ]
+  },
+  {
+   "point": "Recykal already runs the bulk-trade features Luma.Green has planned, at scale and in Karnataka",
+   "detail": "On Recykal.Market's plastic side, sellers are GST-verified and rated. It shows 3,000+ live lots and promises grade testing where the material is loaded. It tracks trucks by GPS with arrival times and finds checked transporters at short notice. Each trade gets a document set (invoice, e-way bill, weight certificate) and a stored bundle of GST records for audits. E-waste lots sell at a fixed price or by one of four auction types: open, sealed, cascaded or reverse. Recykal has sold EPR services to brands since 2019. Gross revenue in FY26 was ₹1,498 crore, up 53% from ₹978 crore, and losses fell to 4% of revenue. It raised a $23M bridge round on 20 June 2026, partly for Europe and the UK. Two gaps: its iOS seller app is in English only (2 ratings) across 16 states including Karnataka, and it deals only with businesses whose GST registration it has checked.",
+   "sourceUrls": [
+    "https://recykal.market/plastic/",
+    "https://recykal.market/electronics/",
+    "https://thecsruniverse.com/articles/recykal-raises-usd-23-million-to-expand-circular-economy-technology-and-global-operations",
+    "https://apps.apple.com/in/app/recykal-marketplace-for-seller/id1627216885",
+    "https://en.wikipedia.org/wiki/Recykal"
+   ]
+  },
+  {
+   "point": "Big recyclers are building their own apps to buy straight from dealers and homes",
+   "detail": "Attero launched MetalMandi in January 2025. Scrap dealers use it to list and sell metal scrap, with prices set by AI and logistics arranged for them. By June 2025 it supplied about 70% of the e-waste Attero bought, and the target was 1,000 t a day by mid-2025. Attero's app for households to hand back old electronics, Selsmart (mid-2024), supplied about 10%. Attero processes 1.44 lakh t of e-waste a year and says 95% of India's e-waste goes through informal hands. Recyclers with their own buying apps will compete for kabadiwala supply, so Luma.Green, which favours no single buyer, should route material to them rather than fight them.",
+   "sourceUrls": [
+    "https://thebetterindia.com/448893/attero-nitin-e-waste-recycling-metalmandi-selsmart-india/"
+   ]
+  },
+  {
+   "point": "Newer Indian B2B marketplaces sell trust: verified buyers, lab tests, escrow and paid tiers",
+   "detail": "ScrapCart sells factory scrap by live auction, tender or fixed-price listing. It tests metal composition with an XRF analyser, and an outside escrow partner holds the payment until delivery is checked. It claims 200+ verified buyers in Haryana, Gujarat and Maharashtra. Recyclaro (2025; Noida and Dubai) offers listings and requests for quotes (RFQs) from businesses whose identity it has checked. It covers six material families, publishes a daily price index for 12 materials, and says it produces EPR and ESG reports automatically. Pricing: Basic is free (3–5 listings and 2 RFQs a month), Premium ₹8,299 a month, Enterprise ₹24,900 a month, and market data ₹4,199 a month. Both serve registered businesses, not kabadiwalas.",
+   "sourceUrls": [
+    "https://scrapcart.com/",
+    "https://recyclaro.com/"
+   ]
+  },
+  {
+   "point": "PROs and recyclers pay to build traceable supply from informal collectors, mostly by hand",
+   "detail": "Karo Sambhav is a producer responsibility organisation (PRO): it meets EPR duties on behalf of brands. It barcodes every item, tracks trucks by GPS, and has staff upload photos into an app at pickup. Image recognition then checks an aggregator's bill against what is actually on the truck. It also helps small collectors register for GST and keep bill books (5,000 informal aggregators across 28 states and 3 UTs in 2020). ReCircle runs its own tracking platform, ClimaOne, for plastic credits, working with 3,500+ waste pickers (it calls them Safai Saathis) in 310+ cities and 45 processors; it reports 161,000+ t kept out of landfill. Banyan Nation has mapped and trained thousands of informal collectors and aggregators, and tracks waste from collection to recycling for brands such as Reckitt, Marico and Tata Motors. Luma.Green's pickup and hand-off records would produce this same proof automatically, as part of daily work.",
+   "sourceUrls": [
+    "https://news.microsoft.com/source/asia/features/karo-sambhav-responsible-e-waste-recycling-india/",
+    "https://www.industrialautomationindia.in/directory/recircle",
+    "https://www.banyannation.com/"
+   ]
+  },
+  {
+   "point": "The informal first mile avoids GST and digital records, so the app has to be worth using on its own terms",
+   "detail": "Mongabay (22 May 2026) reports three things. Kabadiwalas prefer cash and avoid GST records so they stay anonymous. EPR rules leave informal collectors out even though they handle most of the waste. And efforts to formalise them are still rare. Kabadiwalla Connect started mapping Chennai's informal network in 2015 and had about 2,000 kabadiwalas on its platform by 2022. It offers apps to plan work and set prices, identity checks, tracking of material through each sale, guaranteed supply for processors, and collection run through local scrap shops. For Luma.Green this means GST must stay optional and cash payments must be recordable.",
+   "sourceUrls": [
+    "https://india.mongabay.com/2026/05/how-ngos-are-bringing-indias-informal-waste-collectors-into-the-system/",
+    "https://circle-economy.com/knowledge-hub/article/7396",
+    "https://www.kabadiwallaconnect.in/"
+   ]
+  },
+  {
+   "point": "Bengaluru's dry-waste collection centres are organised but still keep their books on paper",
+   "detail": "Around 2020, Hasiru Dala supported 33 Dry Waste Collection Centres (DWCCs) run by waste-picker entrepreneurs. Its stock system records what comes in from door-to-door collection and drop-offs, and what is sold to recyclers each week. But workers write figures on paper and enter them once a month, so mistakes are only caught afterwards by flagging and reviewing entries. Hasiru Dala Innovations (HDI) now collects seven days a week for 370+ clients that produce waste in bulk. It also supplies fair-trade, fully traceable household plastic to recyclers and brands, with 327 supplier clients. These centres are natural yards for the pilot, and HDI is a local rival for traceable plastic.",
+   "sourceUrls": [
+    "https://projecttech4dev.org/design-considerations-for-hasirudalas-dry-waste-collection-ims/",
+    "https://hasirudalainnovations.com/"
+   ]
+  },
+  {
+   "point": "Yard software abroad is mature; small Indian yards have no simple phone-based equivalent",
+   "detail": "Scrap Dragon (US) is linked to the weighing scale and takes a photo of the load and the seller's ID automatically at each purchase. It reports to US state metal-theft databases, tracks barcoded stock, runs dispatch with a web app for drivers and connects to accounting software. In India, Recykal's document set and GST records serve the buyer end. Apart from Kabadiwalla Connect's Chennai tools and Hasiru Dala's own system for its centres, no platform reviewed gives small yards a daily stock-and-sales book. A free one would also produce Luma.Green's trace data.",
+   "sourceUrls": [
+    "https://scrapdragon.com/",
+    "https://recykal.market/plastic/",
+    "https://projecttech4dev.org/design-considerations-for-hasirudalas-dry-waste-collection-ims/",
+    "https://circle-economy.com/knowledge-hub/article/7396"
+   ]
+  },
+  {
+   "point": "Global marketplaces keep listing free and charge for guarantees, data or contracts",
+   "detail": "Scrapo's plastics marketplace is free on web, iOS and Android. Its paid ScrapoSure service checks the seller, inspects the material, watches the loading, helps with shipping and secures the payment. ScrapMonster publishes scrap prices for the US, Europe, China and India; live prices are for paying subscribers only. It also carries buy and sell offers and a company directory. Circular.co (US, full launch June 2022) adds online contracts, payment handling, logistics and market data for recycled plastics; its partners offered 12 million lb of material a month.",
+   "sourceUrls": [
+    "https://scrapo.com/about-us",
+    "https://www.scrapmonster.com/",
+    "https://usplasticspact.org/case-study/circular-co/"
+   ]
+  },
+  {
+   "point": "Well-funded players have failed by financing trades themselves or brokering on thin margins",
+   "detail": "Metaloop (Graz) handled the negotiation, transport and payment for trades in secondary metals. It picked material up in about three days and checked it on calibrated scales, by eye, and by chemical (spectral) analysis. A court opened restructuring on 17 June 2026, with about €11.08M owed to 153 creditors and 10 staff affected. This happened even though it had started covering its operating costs in early 2026. When some owners refused to put in more cash, financing every trade became too expensive. Rubicon, a US waste broker, made $4.5M gross profit on $163.1M revenue in Q2 2024. It was delisted from the NYSE in June 2024 and had to sell its fleet software business. The lesson for Luma.Green: never pre-pay for trades and never hold stock of its own.",
+   "sourceUrls": [
+    "https://www.leadersnet.at/news/101092,bekanntes-austro-startup-schlittert-in-millionenpleite.html",
+    "https://www.metaloop.com/about-us/faq/",
+    "https://www.wastedive.com/news/rubicon-sale-timeline-take-private-offer-enrich-saas/724960/"
+   ]
+  },
+  {
+   "point": "Escrow is normal between businesses, but it needs a regulated partner and has conditions to qualify",
+   "detail": "CPCB's exchange takes 100% of the buyer's payment into an escrow account owned by a bank. ScrapCart and Scrapo offer escrow or secured payment. Razorpay Route, the payment service named in Luma.Green's ADR 0009, is built for marketplaces that pay many sellers and can hold payouts for a set time. But Razorpay asks businesses to meet turnover minimums and confirm in writing what they will use it for, as RBI requires. Escrow should therefore not be promised for the pilot or the investor demo.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
+    "https://razorpay.com/docs/payments/route/",
+    "https://scrapcart.com/",
+    "https://scrapo.com/about-us"
+   ]
+  },
+  {
+   "point": "No platform reviewed connects household bookings, kabadiwala tools and yard-to-recycler trade",
+   "detail": "B2B marketplaces deal only with businesses whose GST registration or identity they have checked (Recykal, ScrapCart, Recyclaro). PROs and recyclers reach collectors through their own programmes or buying apps (Karo Sambhav, ReCircle, Banyan Nation, Attero). Specialists in the first mile each work in one city (Kabadiwalla Connect in Chennai, Hasiru Dala in Bengaluru). The global players are trading or data sites built for registered companies. Luma.Green's single record from household to manufacturer, in 12 languages and with GST optional, fills the space none of them cover.",
+   "sourceUrls": [
+    "https://recykal.market/plastic/",
+    "https://apps.apple.com/in/app/recykal-marketplace-for-seller/id1627216885",
+    "https://recyclaro.com/",
+    "https://circle-economy.com/knowledge-hub/article/7396",
+    "https://projecttech4dev.org/design-considerations-for-hasirudalas-dry-waste-collection-ims/"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Lot history with a shareable origin sheet",
+   "why": "Recykal, Karo Sambhav, ReCircle, Banyan Nation and ScrapCart all sell traceability, but each starts after the first mile. Show one lot (say 320 kg of newspaper) with every hand-off: the pickups it came from (area only), weights, photos, prices and times. Then offer a QR code or PDF sheet the yard can pass on to its buyer. It reads the stock-movement records already planned, and it is the clearest investor demo of what makes Luma.Green different. Call it an origin record, never an EPR certificate.",
+   "priority": "prototype-now",
+   "users": [
+    "yard (preprocessor)",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Two-way stock board: kabadiwalas post what they have, yards post what they want; accept or make one counter-offer",
+   "why": "Listings with negotiation are the norm (Recykal's moderated deals, Recyclaro's requests for quotes). Auctions (Recykal e-waste, ScrapCart, CPCB's exchange) suit big industrial lots, not a shop's 300 kg of paper. Letting both sides post answers the open question of who starts a trade without choosing one. Minimum quantities and search distance go in tables the admin can edit.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "yard (preprocessor)"
+   ]
+  },
+  {
+   "feature": "Verified badge on every business card, showing how long its consent document is valid",
+   "why": "Every B2B rival leads with verification: Recykal checks GST for every seller, Recyclaro checks identity, ScrapCart verifies its buyers. Luma.Green already checks every business by hand. Showing 'verified on <date>, pollution-board consent valid until <date>' in listings costs little and puts that trust on screen.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "yard (preprocessor)",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Bengaluru price board built from recorded trades",
+   "why": "ScrapMonster, Recyclaro (₹4,199 a month) and MetalMandi sell quotes, price indexes or AI prices. Luma.Green can show what was actually paid at each hand-off, for example the typical (median) ₹/kg for each material over the last 7 days, from household to kabadiwala and from kabadiwala to yard, next to the admin minimum. It comes from data the pilot records anyway (sample data can fill it for the demo) and grows into the planned live-prices module.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard (preprocessor)",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Hand-over check on both sides: weight, a photo of each material, and a dispute button",
+   "why": "Weight and grade checks are expected everywhere (Recykal grade testing, ScrapCart composition tests, Metaloop calibrated scales). When a kabadiwala hands a load to a yard, both sides confirm the weight (shop scale against yard weighbridge) and a photo of each material. A difference bigger than an allowance the admin sets (for example 2%) opens a dispute for the admin. The confirmed figures feed the lot history.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard (preprocessor)",
+    "saathi",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Free yard book: stock in and out, sorting, sales, photo of the weighbridge slip",
+   "why": "Yard software like Scrap Dragon has no simple Indian-language equivalent that works on a phone, and Hasiru Dala's system for its centres still starts on paper with monthly entry. A daily book using the same stock tables as the kabadiwala app gives yards a reason to open Luma.Green every day and produces trace data.",
+   "priority": "pilot",
+   "users": [
+    "yard (preprocessor)",
+    "kabadiwala",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Trade documents generated from the record",
+   "why": "Recykal wins recyclers with a document set per trade (invoice, e-way bill, weight certificate) and stored GST records. Luma.Green can produce one PDF per trade with a delivery challan or draft invoice, weight slip and photos, add the GST number when there is one, and pre-fill the e-way bill fields for loads that need one, without filing anything.",
+   "priority": "pilot",
+   "users": [
+    "yard (preprocessor)",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "Record proof of payment now; add escrow later through a licensed partner",
+   "why": "Escrow is standard between businesses (CPCB's bank escrow, ScrapCart, ScrapoSure), but Razorpay Route has turnover and RBI conditions. Metaloop failed once financing trades became too costly. In the pilot, record the UPI reference or a photo of the cash receipt for each trade and mark advance payments. Never pre-pay for trades, hold stock or hold anyone's money. Add Route or a bank escrow when trade volume justifies it.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard (preprocessor)",
+    "recycler",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Bring Bengaluru's dry-waste collection centres on as yards",
+   "why": "The centres run by waste pickers (33 supported by Hasiru Dala) already sort dry waste and sell to recyclers, and Hasiru Dala Innovations sells traceable plastic. Partnering gives the pilot real yard volume and turns a likely rival into a supplier on the platform. It needs only a 'collection centre' flag on the existing yard type, not a new role.",
+   "priority": "pilot",
+   "users": [
+    "yard (preprocessor)",
+    "admin"
+   ]
+  },
+  {
+   "feature": "EPR evidence export for registered recyclers and PROs",
+   "why": "Recyclers and processors create the certificates and trade them on CPCB's exchange, which does not allow brokers and requires its operator to earn ₹50 crore a year. Luma.Green's part is the evidence. It can export each lot's origin area, weights, photos, GPS and dates, sorted into CPCB's categories (plastic Cat I–III; e-waste iron, aluminium, copper, gold; non-ferrous metals from April 2026). Once the exchange is live, it can also read the exchange's published prices through its API.",
+   "priority": "scale",
+   "users": [
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Free for the first mile; paid plans for yards, recyclers and manufacturers",
+   "why": "Price points to compare: Recyclaro charges ₹8,299–24,900 a month, ScrapMonster charges for live prices, Scrapo charges for its guarantee service, and CPCB's exchange takes 4% per trade. Rubicon's thin broker margin ($4.5M gross profit on $163.1M in one quarter) shows a cut of each trade may not be enough to fund the business. Charge buyers for exports, trade documents, analytics and API access, and never take a share of the kabadiwala's cash.",
+   "priority": "scale",
+   "users": [
+    "yard (preprocessor)",
+    "recycler",
+    "manufacturer"
+   ]
+  }
+ ],
+ "artifactMarkdown": "**Feature matrix: B2B recycling, EPR and traceability platforms against Luma.Green** (public pages checked 29 Sep 2026)\n\n✓ offered · ~ partial, or claimed without detail · — not offered or not found · plan = on Luma.Green's roadmap\n\n| Player (base · type) | Listings / RFQ | Bids / auctions | Escrow / payment protection | Logistics | Quality checks | EPR certificates | Traceability | Yard / shop tools | Price data | Informal first mile | Scale · status |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| **Luma.Green** (Bengaluru · pilot Oct 2026) | plan: kabadiwala stock shown to yards | plan: raw-material exchange | later: Razorpay Route; pilot only records cash/UPI | plan: Saathis | ~ weighed at pickup; the weighed amount replaces the estimate | — | ✓ by design: every hand-off recorded | ~ kabadiwala stock, sorting, rate card; yard side planned | ~ own rates above the admin minimum and fallback prices; live prices planned | ✓ households (no sign-up), kabadiwalas, Saathis | 12 hand-translated languages; household to manufacturer |\n| **Recykal.Market** (Hyderabad · marketplace) | ✓ 3,000+ live plastic listings | ✓ e-waste: open, sealed, cascaded, reverse | ~ moderated deals; no escrow stated | ✓ GPS tracking; vetted transporters | ✓ grade tested at source | ✓ separate EPR line since 2019 | ✓ listing to delivery | ~ document set, stored GST records (buyer side) | ✓ live rates | — GST-verified sellers only | FY26 gross revenue ₹1,498 cr; $23M Jun 2026; iOS seller app English-only |\n| **Attero MetalMandi + Selsmart** (Noida · recycler-owned) | ✓ dealers list metal scrap | ~ AI quotes | — not stated | ✓ pickup | ~ not detailed | ~ Attero as recycler, not in the app | ~ | — | ✓ AI pricing | ~ dealers; Selsmart home pickups | MetalMandi (Jan 2025) about 70% of Attero e-waste sourcing |\n| **ScrapCart** (HR, GJ, MH · factory scrap) | ✓ fixed listings | ✓ live auctions, tenders | ✓ outside escrow partner holds payment until delivery checked | ✓ guaranteed pickup times | ✓ XRF composition tests | ~ EPR-compliant material types, CPCB forms | ✓ claims blockchain certificates | — | ✓ daily, linked to London Metal Exchange (LME) prices | — factories | 200+ verified buyers |\n| **Recyclaro** (Noida, Dubai · 2025) | ✓ listings + requests for quotes | — | — not stated | ~ pickup scheduling, tracking | — | ~ claims automated EPR/ESG reports | ~ audit logs | ~ one dashboard | ✓ index, 12 materials (₹4,199/mo) | — identity-checked firms | 500+ partners; free, ₹8,299 or ₹24,900 a month |\n| **Karo Sambhav** (Gurugram · PRO) | — | — | — | ✓ GPS trucks | ~ image check of truck against bill | ✓ PRO | ✓ barcode per item; photo app | — | — | ✓ 5,000 aggregators; GST and bill-book help | 28 states + 3 UTs (2020) |\n| **ReCircle** (Mumbai · EPR + recovery) | — | — | — | ~ to 45 processors | — | ✓ EPR, plastic credits | ✓ ClimaOne | — | — | ✓ 3,500+ waste pickers (Safai Saathis) | 310+ cities; 161,000+ t diverted |\n| **Banyan Nation** (Hyderabad · recycler + data) | — | — | — | — | ~ own recycled resin | — | ✓ collection to recycling | — | — | ✓ thousands of collectors mapped | Clients incl. Reckitt, Marico, Tata Motors |\n| **Kabadiwalla Connect** (Chennai) | — | — | — | ✓ collection through local scrap shops | — | — | ✓ identity checks + tracking of each sale | ✓ apps to plan work, set prices | ~ pricing help | ✓ about 2,000 kabadiwalas (2022) | Guaranteed supply for processors |\n| **Hasiru Dala / HDI** (Bengaluru) | — | — | — | ✓ daily pickups for bulk producers of waste | — | — | ✓ fair-trade traceable plastic | ✓ stock system for its collection centres (paper, monthly entry) | — | ✓ collection centres run by waste pickers | 33 centres (c. 2020); 370+ bulk clients |\n| **CPCB EPR portal + EPRETP** (MSTC as operator) | ✓ buy and sell orders | ✓ weekly one-price sealed auction + fixed-price market | ✓ 100% paid into bank escrow; sellers paid within 2 days | — | — | ✓ the only place certificates are made and traded | ~ at processor level | — | ✓ prices and volumes by download and API | — informal collectors excluded | 4% fee; no brokers; launch date unconfirmed (Mar 2026) |\n| **Scrapo** (Silicon Valley · plastics) | ✓ list in under a minute | ~ offers by chat | ✓ ScrapoSure secure payment | ~ shipping help | ✓ inspection, loading supervised | — | — | — | — | — | Free marketplace; ScrapoSure paid |\n| **ScrapMonster** (US · data) | ✓ buy and sell offers | — | — | — | — | — | — | — directory only | ✓ US, EU, China, India; live data paid | — | Free, with paid extras |\n| **Metaloop** (Graz · metals) | ✓ matches buyers and sellers | — | — financed trades itself | ✓ pickup in about 3 days | ✓ calibrated scale, visual, chemical analysis | — | ~ | — | ~ fixed price or formula tied to LME | — | Restructuring since 17 Jun 2026; about €11.08M owed |\n| **Rubicon** (US · waste broker) | — | — | — | ✓ hauler network | — | — | ~ invoice checks | — fleet software sold 2024 | — | — | Q2 2024: $4.5M gross profit on $163.1M revenue; NYSE delisted Jun 2024 |\n| **Circular.co** (US · recycled plastics) | ✓ | — | ~ payment handling | ✓ | — | — | — | — | ✓ market data | — | Live since Jun 2022; partners offered 12M lb/month |\n\nAlso reviewed:\n- **Namo eWaste** (Faridabad): listed on the NSE; e-waste recycler with EPR services, collection and return transport, and IT equipment disposal; 1 lakh+ t a year across four facilities; no marketplace.\n- **Rheaply** (US): tracks an organisation's equipment and runs an internal marketplace for reusing it, with a network of 3,400+ partners.\n- **Scrap Dragon** (US): yard software that takes a photo and ID automatically at the scale, reports to metal-theft databases, tracks barcoded stock and runs dispatch.\n\n**Gaps Luma.Green can fill:**\n1. Nobody connects household bookings, kabadiwala tools and yard-to-recycler trade.\n2. Small yards and Bengaluru's dry-waste collection centres have no stock book that works on a phone in Indian languages.\n3. Registered recyclers and PROs need proof of where material came from in the first mile, now for non-ferrous metals too.\n4. Local prices as actually paid at each hand-off, not quotes.\n5. Trust for small lots through a verified badge and a weight check by both sides, instead of lab tests and escrow.",
+ "risks": [
+  "Recykal (₹1,498 crore gross revenue in FY26, $23M raised in June 2026, seller app live in Karnataka) could reach down to kabadiwalas faster than Luma.Green can reach up to bulk trade.",
+  "Recyclers' own buying apps, such as Attero's MetalMandi, can outbid a platform that favours no single buyer for kabadiwala supply and pull traders away from it.",
+  "Kabadiwalas prefer cash and avoid GST records, so records may be incomplete or late; any traceability claim is only as good as the data entered.",
+  "Calling Luma.Green's origin record a 'certificate', or offering to 'sell EPR credits', would break CPCB rules: certificates are created by recyclers and processors and can only be traded on the regulated exchange, where brokers are not allowed.",
+  "Handling money without a licensed payment partner, or pre-paying for trades, brings legal and financial risk (Metaloop entered restructuring in June 2026).",
+  "Cheating on weight or quality at hand-over (wet paper, mixed grades) will destroy trust unless both sides check the load and there is a way to raise disputes.",
+  "In Bengaluru, Hasiru Dala Innovations already sells fair-trade, traceable plastic to recyclers and brands; competing with it instead of partnering would split the same supply.",
+  "EPR rules and the exchange's launch keep changing, so anything tied to them (categories, fees, price limits) must live in tables the admin can edit, not in code.",
+  "Brokers earn thin margins (Rubicon: $4.5M gross profit on $163.1M revenue in Q2 2024), so a cut of each trade alone may not pay for running the platform."
+ ],
+ "openQuestions": [
+  "Is the MSTC-run EPR exchange live, and are certificate deals outside it now banned? An industry blog on 26 March 2026 found no launch date, while an April 2026 compliance guide says using it is compulsory in 2026. Only CPCB can confirm.",
+  "What proof of material origin do registered recyclers and PROs in Karnataka need for CPCB and Karnataka pollution-board (KSPCB) audits, and would they pay for a lot history?",
+  "Will Hasiru Dala, other collection-centre operators and the city's waste authority agree to keep the centres' stock records on Luma.Green?",
+  "What do Recykal and MetalMandi charge small aggregators, and what are their minimum lot sizes and payment terms? None of this is published.",
+  "Which Bengaluru materials (paper, PET, metals) move from kabadiwalas to yards in enough volume to show real matches in the investor demo?",
+  "Can a young company like Luma.Green meet Razorpay Route's turnover minimums, or will escrow need a bank partner?",
+  "Does helping businesses trade make Luma.Green a GST 'e-commerce operator' that must collect tax on each sale? (open question 12 in docs/product/open-questions.md)"
+ ],
+ "sources": [
+  {
+   "title": "CPCB: EPR Electronic Trading & Settlement Platform (EPRETP), guidelines for authorising the operator and running the platform",
+   "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm"
+  },
+  {
+   "title": "Recykal.Market: plastic marketplace for buyers",
+   "url": "https://recykal.market/plastic/"
+  },
+  {
+   "title": "The CSR Universe: Recykal raises USD 23 million (20 Jun 2026)",
+   "url": "https://thecsruniverse.com/articles/recykal-raises-usd-23-million-to-expand-circular-economy-technology-and-global-operations"
+  },
+  {
+   "title": "App Store: Recykal Marketplace for Seller",
+   "url": "https://apps.apple.com/in/app/recykal-marketplace-for-seller/id1627216885"
+  },
+  {
+   "title": "Recykal.Market: electronics marketplace",
+   "url": "https://recykal.market/electronics/"
+  },
+  {
+   "title": "The Better India: How Attero is solving India's growing e-waste problem, on MetalMandi and Selsmart (16 Jun 2025)",
+   "url": "https://thebetterindia.com/448893/attero-nitin-e-waste-recycling-metalmandi-selsmart-india/"
+  },
+  {
+   "title": "ScrapCart: industrial scrap marketplace",
+   "url": "https://scrapcart.com/"
+  },
+  {
+   "title": "Recyclaro: B2B recyclables platform",
+   "url": "https://recyclaro.com/"
+  },
+  {
+   "title": "Microsoft Source Asia: Cleaning up India's mountains of e-waste, on Karo Sambhav (9 Dec 2020)",
+   "url": "https://news.microsoft.com/source/asia/features/karo-sambhav-responsible-e-waste-recycling-india/"
+  },
+  {
+   "title": "Mongabay India: How NGOs are bringing India's informal waste collectors into the system (22 May 2026)",
+   "url": "https://india.mongabay.com/2026/05/how-ngos-are-bringing-indias-informal-waste-collectors-into-the-system/"
+  },
+  {
+   "title": "Project Tech4Dev: Design considerations for Hasiru Dala's dry-waste collection stock system",
+   "url": "https://projecttech4dev.org/design-considerations-for-hasirudalas-dry-waste-collection-ims/"
+  },
+  {
+   "title": "Hasiru Dala Innovations (Bengaluru)",
+   "url": "https://hasirudalainnovations.com/"
+  },
+  {
+   "title": "Leadersnet: Metaloop Europe is insolvent (17 Jun 2026)",
+   "url": "https://www.leadersnet.at/news/101092,bekanntes-austro-startup-schlittert-in-millionenpleite.html"
+  },
+  {
+   "title": "Waste Dive: Rubicon required to start a sale process after selling its fleet technology business (22 Aug 2024)",
+   "url": "https://www.wastedive.com/news/rubicon-sale-timeline-take-private-offer-enrich-saas/724960/"
+  },
+  {
+   "title": "Scrap Dragon: recycling and scrap-yard software",
+   "url": "https://scrapdragon.com/"
+  },
+  {
+   "title": "Scrapo: About",
+   "url": "https://scrapo.com/about-us"
+  },
+  {
+   "title": "US Plastics Pact: Circular.co case study",
+   "url": "https://usplasticspact.org/case-study/circular-co/"
+  },
+  {
+   "title": "ScrapMonster",
+   "url": "https://www.scrapmonster.com/"
+  },
+  {
+   "title": "AVI Group: EPR-ETP portal India, rumour or reality? (26 Mar 2026)",
+   "url": "https://avigroup.in/2026/03/26/epr-etp-portal-india-rumour-or-reality/"
+  },
+  {
+   "title": "Trilegal: Environment law monthly updates, July 2025 (EPR for non-ferrous metal scrap)",
+   "url": "https://trilegal.com/knowledge_repository/trilegal-update-environment-law-monthly-updates-july-2025/"
+  },
+  {
+   "title": "Industrial Automation India directory: ReCircle",
+   "url": "https://www.industrialautomationindia.in/directory/recircle"
+  },
+  {
+   "title": "Banyan Nation",
+   "url": "https://www.banyannation.com/"
+  },
+  {
+   "title": "Circle Economy Knowledge Hub: Kabadiwalla Connect's technology for including informal waste pickers in Chennai",
+   "url": "https://circle-economy.com/knowledge-hub/article/7396"
+  },
+  {
+   "title": "Kabadiwalla Connect",
+   "url": "https://www.kabadiwallaconnect.in/"
+  },
+  {
+   "title": "Metaloop: FAQ",
+   "url": "https://www.metaloop.com/about-us/faq/"
+  },
+  {
+   "title": "Razorpay Docs: Route",
+   "url": "https://razorpay.com/docs/payments/route/"
+  },
+  {
+   "title": "Wikipedia: Recykal",
+   "url": "https://en.wikipedia.org/wiki/Recykal"
+  },
+  {
+   "title": "Namo eWaste Management",
+   "url": "https://namoewaste.com/"
+  },
+  {
+   "title": "Rheaply",
+   "url": "https://rheaply.com/"
+  }
+ ]
+}

@@ -1,183 +1,183 @@
 {
- "cluster": "Verifying people without storing Aadhaar",
- "answers": [
-  {
-   "question": "Will UIDAI register an early-stage startup as an Offline Verification Seeking Entity (OVSE), at what fee and process, and does the Aadhaar app's credential-sharing flow work from a web app or PWA rather than a native app? Should a pilot accept masked Aadhaar at all given the QR-signature check, or only driving licence, voter ID, PAN or DigiLocker documents?",
-   "answer": "Yes in principle: UIDAI's OVSE page (published 13 May 2026, updated 18 Sep 2026) invites \"any other entity requiring Aadhaar offline verification\" (gig economy and NGOs are listed use cases) to apply at https://ovse.uidai.gov.in/, and Regulation 13A (inserted 9 Dec 2025) sets no size, age or turnover test, only a lawful purpose, UIDAI's terms, and the documents the January 2026 handbook lists: PAN, certificate of incorporation/CIN, company profile, a self-declaration, a registered domain, an HTTPS callback URL, a Class 2 or 3 public certificate valid 2 years and an SVG logo under 10 KB. About 100 entities (fintechs, event and hospitality firms, background-verification companies, government departments) were registered within roughly three months of the January 2026 rollout and IAMAI was onboarded in August 2026, so private companies of all sizes are being accepted. Fee: Regulation 13A(9) lets UIDAI charge registration and per-transaction fees, but no amount is published on any official page; secondary guides (Decentro, 27 Apr 2026; SecuredApp, 22 Aug 2026) call it nominal or unpublished and report a few weeks to a couple of months from application to go-live, so the fee is an open item and OVSE registration cannot sit on the 13 Oct critical path. Web/PWA: the Aadhaar app's credential flow does work for web verifiers. UIDAI's developer docs describe a portal-initiated journey in which your web page shows a QR code carrying a JWT signed with your certificate, the person scans it with the Aadhaar app (face auth, picks which fields to share), and the app POSTs a selectively-disclosed SD-JWT to your HTTPS callback URL, which your backend verifies against UIDAI's public key; the handbook names three pathways (cross-device QR, app-to-app intent, web-to-app intent) and an Android/iOS App ID is mandatory only for app-to-app. Practical consequences: request signing and the callback must live server-side (a Convex HTTP action), and the same-phone web-to-app handoff from an installed PWA, especially on iOS, is not documented in detail, so treat it as a pilot test, while the cross-device QR (admin's screen, worker's phone) is the safe path and fits your one-admin model. Masked Aadhaar: the secure QR on every e-Aadhaar, masked e-Aadhaar and PVC card is digitally signed by UIDAI (2048-bit) and by regulatory definition carries only the last 4 digits plus name, DOB, gender, address and photo, so masking does not break verification; Regulation 16C forbids accepting Aadhaar in any form without checking that signature, and the handbook says QR and e-Aadhaar signature checks do not require OVSE registration. UIDAI's FAQ (updated 18 Sep 2026) says QR reading is limited to the Aadhaar App and the Aadhaar QR Scanner app, so for the pilot do not build a parser or accept card uploads: the admin validates in person with UIDAI's scanner app and records only name, last 4 digits, a QR-verified flag, date and admin ID. Storing the Aadhaar number is barred (Regulations 14A(b) and 20A; Act s.29(4); s.40 penalty up to Rs 1 lakh for a company) and Regulation 5(3) requires that nobody is refused service for not offering Aadhaar, so driving licence, voter ID and PAN must be accepted in any case.",
-   "status": "partly",
-   "decision": "For the 13 Oct pilot verify people with driving licence, voter ID or PAN (DigiLocker once live) checked by the admin, and accept Aadhaar only as an in-person secure-QR check using UIDAI's own scanner app (masked e-Aadhaar is fine), storing last 4 digits and a verified flag and never an image or the full number. Apply for OVSE registration this week (cross-device QR pathway, domain plus callback URL, Class 3 DSC) and move Saathi and kabadiwala verification to the Aadhaar-app credential flow once approved.",
-   "whoToAsk": "ovse.registration@uidai.net.in / ovse.support@uidai.net.in for the current fee, terms and typical approval time; a two-phone pilot test for the same-device web-to-app handoff from the PWA on Android and iOS; counsel for the DPDP consent notice wording shown before any ID check.",
-   "sources": [
+  "cluster": "Verifying people without storing Aadhaar",
+  "answers": [
     {
-     "title": "UIDAI - Offline Verification Seeking Entity (OVSE): use cases, technical requirements, FAQs, 'Download OVSE Handbook' (Aadhaar offline verification Handbook, January 2026)",
-     "url": "https://uidai.gov.in/en/ovse",
-     "date": "2026-09-18"
+      "question": "Will UIDAI register an early-stage startup as an Offline Verification Seeking Entity (OVSE), at what fee and process, and does the Aadhaar app's credential-sharing flow work from a web app or PWA rather than a native app? Should a pilot accept masked Aadhaar at all given the QR-signature check, or only driving licence, voter ID, PAN or DigiLocker documents?",
+      "answer": "Yes in principle: UIDAI's OVSE page (published 13 May 2026, updated 18 Sep 2026) invites \"any other entity requiring Aadhaar offline verification\" (gig economy and NGOs are listed use cases) to apply at https://ovse.uidai.gov.in/, and Regulation 13A (inserted 9 Dec 2025) sets no size, age or turnover test, only a lawful purpose, UIDAI's terms, and the documents the January 2026 handbook lists: PAN, certificate of incorporation/CIN, company profile, a self-declaration, a registered domain, an HTTPS callback URL, a Class 2 or 3 public certificate valid 2 years and an SVG logo under 10 KB. About 100 entities (fintechs, event and hospitality firms, background-verification companies, government departments) were registered within roughly three months of the January 2026 rollout and IAMAI was onboarded in August 2026, so private companies of all sizes are being accepted. Fee: Regulation 13A(9) lets UIDAI charge registration and per-transaction fees, but no amount is published on any official page; secondary guides (Decentro, 27 Apr 2026; SecuredApp, 22 Aug 2026) call it nominal or unpublished and report a few weeks to a couple of months from application to go-live, so the fee is an open item and OVSE registration cannot sit on the 13 Oct critical path. Web/PWA: the Aadhaar app's credential flow does work for web verifiers. UIDAI's developer docs describe a portal-initiated journey in which your web page shows a QR code carrying a JWT signed with your certificate, the person scans it with the Aadhaar app (face auth, picks which fields to share), and the app POSTs a selectively-disclosed SD-JWT to your HTTPS callback URL, which your backend verifies against UIDAI's public key; the handbook names three pathways (cross-device QR, app-to-app intent, web-to-app intent) and an Android/iOS App ID is mandatory only for app-to-app. Practical consequences: request signing and the callback must live server-side (a Convex HTTP action), and the same-phone web-to-app handoff from an installed PWA, especially on iOS, is not documented in detail, so treat it as a pilot test, while the cross-device QR (admin's screen, worker's phone) is the safe path and fits your one-admin model. Masked Aadhaar: the secure QR on every e-Aadhaar, masked e-Aadhaar and PVC card is digitally signed by UIDAI (2048-bit) and by regulatory definition carries only the last 4 digits plus name, DOB, gender, address and photo, so masking does not break verification; Regulation 16C forbids accepting Aadhaar in any form without checking that signature, and the handbook says QR and e-Aadhaar signature checks do not require OVSE registration. UIDAI's FAQ (updated 18 Sep 2026) says QR reading is limited to the Aadhaar App and the Aadhaar QR Scanner app, so for the pilot do not build a parser or accept card uploads: the admin validates in person with UIDAI's scanner app and records only name, last 4 digits, a QR-verified flag, date and admin ID. Storing the Aadhaar number is barred (Regulations 14A(b) and 20A; Act s.29(4); s.40 penalty up to Rs 1 lakh for a company) and Regulation 5(3) requires that nobody is refused service for not offering Aadhaar, so driving licence, voter ID and PAN must be accepted in any case.",
+      "status": "partly",
+      "decision": "For the 13 Oct pilot verify people with driving licence, voter ID or PAN (DigiLocker once live) checked by the admin, and accept Aadhaar only as an in-person secure-QR check using UIDAI's own scanner app (masked e-Aadhaar is fine), storing last 4 digits and a verified flag and never an image or the full number. Apply for OVSE registration this week (cross-device QR pathway, domain plus callback URL, Class 3 DSC) and move Saathi and kabadiwala verification to the Aadhaar-app credential flow once approved.",
+      "whoToAsk": "ovse.registration@uidai.net.in / ovse.support@uidai.net.in for the current fee, terms and typical approval time; a two-phone pilot test for the same-device web-to-app handoff from the PWA on Android and iOS; counsel for the DPDP consent notice wording shown before any ID check.",
+      "sources": [
+        {
+          "title": "UIDAI - Offline Verification Seeking Entity (OVSE): use cases, technical requirements, FAQs, 'Download OVSE Handbook' (Aadhaar offline verification Handbook, January 2026)",
+          "url": "https://uidai.gov.in/en/ovse",
+          "date": "2026-09-18"
+        },
+        {
+          "title": "UIDAI - Aadhaar (Authentication and Offline Verification) Regulations, 2021, updated as on 15.12.2025 (Regs 2(bc),(be),(mb), 3A, 5, 6, 13A, 14A, 16A-16C, 20A)",
+          "url": "https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf",
+          "date": "2025-12-30"
+        },
+        {
+          "title": "UIDAI - Aadhaar App FAQs (sharing with OVSE, QR standard, no SDK)",
+          "url": "https://uidai.gov.in/en/aadhaar-app-faq",
+          "date": "2026-09-18"
+        },
+        {
+          "title": "PIB - New Aadhaar App dedicated to the nation",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219790&reg=3&lang=1",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "UIDAI Aadhaar App Documentation - Portal Initiated Credential Exchange Journey",
+          "url": "https://docs.uidai.gov.in/readme/app-to-app-credential-flows/uidai-specifications/portal-initiated-credential-exchange-journey",
+          "date": "2026 (site: last updated ~9 months ago)"
+        },
+        {
+          "title": "UIDAI Aadhaar App Documentation - OPENID4VP Cross-Device Flow",
+          "url": "https://docs.uidai.gov.in/readme/app-to-app-credential-flows/openid4vp-specifications/openid4vp-cross-device-flow",
+          "date": "2026"
+        },
+        {
+          "title": "UIDAI Aadhaar App Documentation - OPENID4VP Same Device Flow Specifications",
+          "url": "https://docs.uidai.gov.in/readme/app-to-app-credential-flows/openid4vp-specifications/openid4vp-same-device-flow-specifications",
+          "date": "2026"
+        },
+        {
+          "title": "UIDAI - QR Code Reader (secure QR contents and validation tools)",
+          "url": "https://uidai.gov.in/en/qr-code-reader",
+          "date": "2026-09-28 (page last reviewed)"
+        },
+        {
+          "title": "Aadhaar Act 2016 as amended (ss. 4(3), 8A, 29(4), 40)",
+          "url": "https://uidai.gov.in/images/Aadhaar_Act_2016_as_amended.pdf",
+          "date": "2019-07-25 (amendment in force)"
+        },
+        {
+          "title": "ETV Bharat - 100 entities onboard for Aadhaar-based offline verification",
+          "url": "https://www.etvbharat.com/amp/en/bharat/several-entities-onboard-to-use-aadhaar-based-offline-verification-enn26042005088",
+          "date": "2026-04-20"
+        },
+        {
+          "title": "Elets eGov - IAMAI onboarded as UIDAI Offline Verification Entity",
+          "url": "https://egov.eletsonline.com/2026/08/iamai-onboarded-as-uidai-offline-verification-entity/",
+          "date": "2026-08-24"
+        },
+        {
+          "title": "Vinod Kothari Consultants - A new way to verify Aadhaar offline: face matching (2025 amendment, Reg 13A)",
+          "url": "https://vinodkothari.com/2025/12/a-new-way-to-verify-aadhaar-offline-introduction-of-face-matching/",
+          "date": "2025-12-10"
+        },
+        {
+          "title": "Decentro - Aadhaar OVSE: how to register, comply and integrate (fee 'nominal', weeks to months)",
+          "url": "https://decentro.tech/blog/become-aadhaar-ovse/",
+          "date": "2026-04-27"
+        },
+        {
+          "title": "SecuredApp - How to become an OVSE under UIDAI (fee not published)",
+          "url": "https://blog.securedapp.io/how-to-become-ovse-uidai-self-sovereign-identity/",
+          "date": "2026-08-22"
+        }
+      ]
     },
     {
-     "title": "UIDAI - Aadhaar (Authentication and Offline Verification) Regulations, 2021, updated as on 15.12.2025 (Regs 2(bc),(be),(mb), 3A, 5, 6, 13A, 14A, 16A-16C, 20A)",
-     "url": "https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf",
-     "date": "2025-12-30"
-    },
-    {
-     "title": "UIDAI - Aadhaar App FAQs (sharing with OVSE, QR standard, no SDK)",
-     "url": "https://uidai.gov.in/en/aadhaar-app-faq",
-     "date": "2026-09-18"
-    },
-    {
-     "title": "PIB - New Aadhaar App dedicated to the nation",
-     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219790&reg=3&lang=1",
-     "date": "2026-01-28"
-    },
-    {
-     "title": "UIDAI Aadhaar App Documentation - Portal Initiated Credential Exchange Journey",
-     "url": "https://docs.uidai.gov.in/readme/app-to-app-credential-flows/uidai-specifications/portal-initiated-credential-exchange-journey",
-     "date": "2026 (site: last updated ~9 months ago)"
-    },
-    {
-     "title": "UIDAI Aadhaar App Documentation - OPENID4VP Cross-Device Flow",
-     "url": "https://docs.uidai.gov.in/readme/app-to-app-credential-flows/openid4vp-specifications/openid4vp-cross-device-flow",
-     "date": "2026"
-    },
-    {
-     "title": "UIDAI Aadhaar App Documentation - OPENID4VP Same Device Flow Specifications",
-     "url": "https://docs.uidai.gov.in/readme/app-to-app-credential-flows/openid4vp-specifications/openid4vp-same-device-flow-specifications",
-     "date": "2026"
-    },
-    {
-     "title": "UIDAI - QR Code Reader (secure QR contents and validation tools)",
-     "url": "https://uidai.gov.in/en/qr-code-reader",
-     "date": "2026-09-28 (page last reviewed)"
-    },
-    {
-     "title": "Aadhaar Act 2016 as amended (ss. 4(3), 8A, 29(4), 40)",
-     "url": "https://uidai.gov.in/images/Aadhaar_Act_2016_as_amended.pdf",
-     "date": "2019-07-25 (amendment in force)"
-    },
-    {
-     "title": "ETV Bharat - 100 entities onboard for Aadhaar-based offline verification",
-     "url": "https://www.etvbharat.com/amp/en/bharat/several-entities-onboard-to-use-aadhaar-based-offline-verification-enn26042005088",
-     "date": "2026-04-20"
-    },
-    {
-     "title": "Elets eGov - IAMAI onboarded as UIDAI Offline Verification Entity",
-     "url": "https://egov.eletsonline.com/2026/08/iamai-onboarded-as-uidai-offline-verification-entity/",
-     "date": "2026-08-24"
-    },
-    {
-     "title": "Vinod Kothari Consultants - A new way to verify Aadhaar offline: face matching (2025 amendment, Reg 13A)",
-     "url": "https://vinodkothari.com/2025/12/a-new-way-to-verify-aadhaar-offline-introduction-of-face-matching/",
-     "date": "2025-12-10"
-    },
-    {
-     "title": "Decentro - Aadhaar OVSE: how to register, comply and integrate (fee 'nominal', weeks to months)",
-     "url": "https://decentro.tech/blog/become-aadhaar-ovse/",
-     "date": "2026-04-27"
-    },
-    {
-     "title": "SecuredApp - How to become an OVSE under UIDAI (fee not published)",
-     "url": "https://blog.securedapp.io/how-to-become-ovse-uidai-self-sovereign-identity/",
-     "date": "2026-08-22"
+      "question": "How does a private company onboard as a DigiLocker requester through API Setu (process, cost, timeline), and can an NGO's attestation stand in for ID for undocumented migrant waste pickers under KYC-style verification?",
+      "answer": "Route: DigiLocker requester access is granted by NeGD (MeitY) through the API Setu partners portal (https://partners.apisetu.gov.in) under the Partner Organisation Onboarding SOP dated 5 June 2024: a senior authorised person registers with an official-domain email, the entity is verified (CIN/GSTIN/PAN/Udyam) through Entity Locker with the nodal officer's Aadhaar OTP, you submit the use cases and integration flow, a business-development manager and an onboarding committee (which meets weekly) review it, the CEO gives final approval, you sign the Requester Terms of Use, integrate against the Requester API (v1.12, Oct 2023) or Meri Pehchaan API (v2.4, Sep 2026), demo the flow and go live; afterwards NeGD expects quarterly usage reports and an STQC audit report of your application. Eligibility: the SOP says \"all private organisations\" registered under the Companies Act, MSME, Startup India etc. can be partners, but you need a functional website describing your service, your own digital signature certificate, and it refuses \"temporary access for testing\" and deletes unverified accounts after 3 months; the \"3 completed fiscal years\" rule often quoted comes from NeGD's separate API-as-a-service provider empanelment (June 2025), not the requester path. Cost: the Requester Terms of Use (updated 2 June 2025) state \"Currently, there are no platform charges applicable\", so your costs are the DSC, engineering and the STQC audit. Timeline: no official SLA is published; practitioners (NamoID, 6 Jun 2026) call organisational approval \"the long pole\" with the technical work about a day, so plan on several weeks to a couple of months, use a TSP such as Setu (sandbox and production, credentials issued by Setu, no public pricing) or manual checks for a 13 Oct start, and apply directly in parallel; MeitY's Request for Empanelment of 21 Sep 2026 signals a push to bring private-sector requesters on through empanelled agencies. NGO attestation: under the RBI KYC Master Direction (updated 14 Aug 2025) an officially valid document is a passport, driving licence, Aadhaar, voter ID, NREGA job card or NPR letter; the 2014 relaxation accepting a gazetted officer's letter no longer appears in the Direction and NGO letters have never been OVDs, so the only formal banking fallback is the Small Account (self-attested photo plus signature or thumb impression before a bank officer; credits up to Rs 1 lakh a year, withdrawals up to Rs 10,000 a month, balance up to Rs 50,000; 12 months, extendable by 12 if an OVD has been applied for). Because Luma moves no money in the pilot and is not an RBI-regulated entity, RBI KYC does not bind your own verification, and there is official precedent for community attestation of occupation: the NAMASTE waste-picker guidelines (SFC approval 20 Jun 2024) let ULB-engaged CSOs profile waste pickers and accept \"endorsement by scrap shop owners / other registered waste pickers / local sanitation staff or membership of recognised waste picker organisations\", after which the ULB validates and the system issues an ID card (1.52 lakh enumerated nationally as of 3 Feb 2026). Bengaluru specifics: BBMP's occupational ID cards (about 10,437 issued through Hasiru Dala since 2011) required proof of city residence and excluded migrants, and BBMP has stopped issuing or renewing them (Citizen Matters, 15 Sep 2025); e-Shram needs an Aadhaar number plus an Aadhaar-linked mobile or CSC biometrics. So an attestation letter from a recognised waste-picker organisation (Hasiru Dala) or a verified kabadiwala plus an admin-taken photo can support a capped provisional Saathi tier (no cash custody, pickups paired with a verified partner) with a 90-day path to a NAMASTE ID, e-Shram or Aadhaar via the NGO's social-security desk and a DPDP-compliant notice and consent, but it can never substitute at the payment layer: when escrow goes live, payouts need a bank or UPI account, which needs the bank's own KYC.",
+      "status": "partly",
+      "decision": "Apply for direct DigiLocker requester access now (no platform charge; expect weeks) and, if you need DigiLocker on day one, integrate through a TSP for the pilot. Treat NGO or kabadiwala attestation as a capped provisional tier with an expiry, not as identity proof, and have counsel sign off the tier and the DPDP notice before 13 Oct.",
+      "whoToAsk": "The DigiLocker onboarding team via the partners portal for current approval time, whether the SOP's 'authorisation from regulatory bodies' clause applies to requesters, and the STQC audit scope; counsel for the provisional tier and DPDP notice; Hasiru Dala and the city corporation's NAMASTE nodal officer for enumeration status in Bengaluru and whether the NAMASTE app needs Aadhaar; a bank branch for Small Account practice.",
+      "sources": [
+        {
+          "title": "NeGD/MeitY - Partner Organisation Onboarding Standard Operating Procedure (SOP) for DigiLocker",
+          "url": "https://cf-media.api-setu.in/resources/Partners-SOP.pdf",
+          "date": "2024-06-05"
+        },
+        {
+          "title": "DigiLocker - Terms of Use, Requester (clause 9: no platform charges currently)",
+          "url": "https://cf-media.api-setu.in/resources/DigiLocker-Terms-of-User-Requester-june-2025.pdf",
+          "date": "2025-06-02"
+        },
+        {
+          "title": "API Setu - DigiLocker Partners Resource Center (Requester API v1.12 Oct 2023, Meri Pehchaan API v2.4 Sep 2026, SOP, Terms)",
+          "url": "https://apisetu.gov.in/digilocker",
+          "date": "2026-09"
+        },
+        {
+          "title": "API Setu partners portal (sign up / sign in)",
+          "url": "https://partners.apisetu.gov.in",
+          "date": "2026"
+        },
+        {
+          "title": "DigiLocker - FAQs during video conference with entities/partners (updated till 24.03.2025)",
+          "url": "https://www.digilocker.gov.in/assets/FAQ%20DL%20EL_onboarding.pdf",
+          "date": "2025-03-24"
+        },
+        {
+          "title": "NeGD - Guidelines for Onboarding for API as a Service Provider v15 (3-fiscal-year rule applies to API providers, not requesters)",
+          "url": "https://negd.gov.in/wp-content/uploads/2025/06/Guidelines-for-Onboarding-for-API-as-a-service-provider-v15-Rev-1-1.pdf",
+          "date": "2025-06"
+        },
+        {
+          "title": "Medianama - MeitY plans to expand DigiLocker into private sectors like finance, health",
+          "url": "https://www.medianama.com/2026/09/223-meity-digilocker-private-sectors-finance-health/",
+          "date": "2026-09-25"
+        },
+        {
+          "title": "NamoID - DigiLocker API integration: step-by-step guide (approval is 'the long pole')",
+          "url": "https://namoid.in/blog/digilocker-api-integration-guide",
+          "date": "2026-06-06"
+        },
+        {
+          "title": "Setu - DigiLocker integration guide (sandbox/production, credentials issued by Setu)",
+          "url": "https://docs.setu.co/data/digilocker/quickstart",
+          "date": "2026 (undated page)"
+        },
+        {
+          "title": "RBI - Master Direction - Know Your Customer (KYC) Direction, 2016 (OVD definition; para 23 Small Account)",
+          "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566",
+          "date": "2025-08-14"
+        },
+        {
+          "title": "RBI press release - simplified KYC measures (gazetted officer letter; superseded, not in current Direction)",
+          "url": "https://www.rbi.org.in/commonman/English/Scripts/PressReleases.aspx?Id=1497",
+          "date": "2014-08-26"
+        },
+        {
+          "title": "MoSJE - Scheme Guidelines for inclusion of Waste Pickers component under NAMASTE (section 7.1 enumeration and ID cards; 7.3 SWM Rule 15)",
+          "url": "https://www.socialjustice.gov.in/public/ckeditor/upload/86351727949710.pdf",
+          "date": "2024-06-20 (SFC approval)"
+        },
+        {
+          "title": "Civilsdaily - NAMASTE scheme and waste pickers enumeration data 2026 (Parliament, 3 Feb 2026)",
+          "url": "https://www.civilsdaily.com/news/namaste-scheme-and-waste-pickers-enumeration-data-2026/",
+          "date": "2026-02-05"
+        },
+        {
+          "title": "Citizen Matters - Invisible workers, visible waste: Bengaluru's waste pickers struggle without recognition (BBMP stopped issuing ID cards)",
+          "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "30 Stades - How Bengaluru's Hasiru Dala gave identity and dignity to over 10,000 waste pickers",
+          "url": "https://30stades.com/2021/05/19/how-bengaluru-hasiru-dala-gave-identity-dignity-to-over-10000-waste-pickers-management-recycling/",
+          "date": "2021-05-19"
+        },
+        {
+          "title": "e-Shram portal FAQs (Aadhaar and Aadhaar-linked mobile required; CSC biometric alternative)",
+          "url": "https://eshram.gov.in/faqs",
+          "date": "2026"
+        },
+        {
+          "title": "CPCB - Solid Waste Management Rules, 2016 (Rule 15(c),(d): recognise and integrate waste pickers, provide identity cards)",
+          "url": "https://cpcb.gov.in/uploads/MSW/SWM_2016.pdf",
+          "date": "2016-04-08"
+        },
+        {
+          "title": "UIDAI - Aadhaar (Authentication and Offline Verification) Regulations, 2021 (Reg 5(1)(c),(3): no denial of service for not using Aadhaar)",
+          "url": "https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf",
+          "date": "2025-12-30"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "How does a private company onboard as a DigiLocker requester through API Setu (process, cost, timeline), and can an NGO's attestation stand in for ID for undocumented migrant waste pickers under KYC-style verification?",
-   "answer": "Route: DigiLocker requester access is granted by NeGD (MeitY) through the API Setu partners portal (https://partners.apisetu.gov.in) under the Partner Organisation Onboarding SOP dated 5 June 2024: a senior authorised person registers with an official-domain email, the entity is verified (CIN/GSTIN/PAN/Udyam) through Entity Locker with the nodal officer's Aadhaar OTP, you submit the use cases and integration flow, a business-development manager and an onboarding committee (which meets weekly) review it, the CEO gives final approval, you sign the Requester Terms of Use, integrate against the Requester API (v1.12, Oct 2023) or Meri Pehchaan API (v2.4, Sep 2026), demo the flow and go live; afterwards NeGD expects quarterly usage reports and an STQC audit report of your application. Eligibility: the SOP says \"all private organisations\" registered under the Companies Act, MSME, Startup India etc. can be partners, but you need a functional website describing your service, your own digital signature certificate, and it refuses \"temporary access for testing\" and deletes unverified accounts after 3 months; the \"3 completed fiscal years\" rule often quoted comes from NeGD's separate API-as-a-service provider empanelment (June 2025), not the requester path. Cost: the Requester Terms of Use (updated 2 June 2025) state \"Currently, there are no platform charges applicable\", so your costs are the DSC, engineering and the STQC audit. Timeline: no official SLA is published; practitioners (NamoID, 6 Jun 2026) call organisational approval \"the long pole\" with the technical work about a day, so plan on several weeks to a couple of months, use a TSP such as Setu (sandbox and production, credentials issued by Setu, no public pricing) or manual checks for a 13 Oct start, and apply directly in parallel; MeitY's Request for Empanelment of 21 Sep 2026 signals a push to bring private-sector requesters on through empanelled agencies. NGO attestation: under the RBI KYC Master Direction (updated 14 Aug 2025) an officially valid document is a passport, driving licence, Aadhaar, voter ID, NREGA job card or NPR letter; the 2014 relaxation accepting a gazetted officer's letter no longer appears in the Direction and NGO letters have never been OVDs, so the only formal banking fallback is the Small Account (self-attested photo plus signature or thumb impression before a bank officer; credits up to Rs 1 lakh a year, withdrawals up to Rs 10,000 a month, balance up to Rs 50,000; 12 months, extendable by 12 if an OVD has been applied for). Because Luma moves no money in the pilot and is not an RBI-regulated entity, RBI KYC does not bind your own verification, and there is official precedent for community attestation of occupation: the NAMASTE waste-picker guidelines (SFC approval 20 Jun 2024) let ULB-engaged CSOs profile waste pickers and accept \"endorsement by scrap shop owners / other registered waste pickers / local sanitation staff or membership of recognised waste picker organisations\", after which the ULB validates and the system issues an ID card (1.52 lakh enumerated nationally as of 3 Feb 2026). Bengaluru specifics: BBMP's occupational ID cards (about 10,437 issued through Hasiru Dala since 2011) required proof of city residence and excluded migrants, and BBMP has stopped issuing or renewing them (Citizen Matters, 15 Sep 2025); e-Shram needs an Aadhaar number plus an Aadhaar-linked mobile or CSC biometrics. So an attestation letter from a recognised waste-picker organisation (Hasiru Dala) or a verified kabadiwala plus an admin-taken photo can support a capped provisional Saathi tier (no cash custody, pickups paired with a verified partner) with a 90-day path to a NAMASTE ID, e-Shram or Aadhaar via the NGO's social-security desk and a DPDP-compliant notice and consent, but it can never substitute at the payment layer: when escrow goes live, payouts need a bank or UPI account, which needs the bank's own KYC.",
-   "status": "partly",
-   "decision": "Apply for direct DigiLocker requester access now (no platform charge; expect weeks) and, if you need DigiLocker on day one, integrate through a TSP for the pilot. Treat NGO or kabadiwala attestation as a capped provisional tier with an expiry, not as identity proof, and have counsel sign off the tier and the DPDP notice before 13 Oct.",
-   "whoToAsk": "The DigiLocker onboarding team via the partners portal for current approval time, whether the SOP's 'authorisation from regulatory bodies' clause applies to requesters, and the STQC audit scope; counsel for the provisional tier and DPDP notice; Hasiru Dala and the city corporation's NAMASTE nodal officer for enumeration status in Bengaluru and whether the NAMASTE app needs Aadhaar; a bank branch for Small Account practice.",
-   "sources": [
-    {
-     "title": "NeGD/MeitY - Partner Organisation Onboarding Standard Operating Procedure (SOP) for DigiLocker",
-     "url": "https://cf-media.api-setu.in/resources/Partners-SOP.pdf",
-     "date": "2024-06-05"
-    },
-    {
-     "title": "DigiLocker - Terms of Use, Requester (clause 9: no platform charges currently)",
-     "url": "https://cf-media.api-setu.in/resources/DigiLocker-Terms-of-User-Requester-june-2025.pdf",
-     "date": "2025-06-02"
-    },
-    {
-     "title": "API Setu - DigiLocker Partners Resource Center (Requester API v1.12 Oct 2023, Meri Pehchaan API v2.4 Sep 2026, SOP, Terms)",
-     "url": "https://apisetu.gov.in/digilocker",
-     "date": "2026-09"
-    },
-    {
-     "title": "API Setu partners portal (sign up / sign in)",
-     "url": "https://partners.apisetu.gov.in",
-     "date": "2026"
-    },
-    {
-     "title": "DigiLocker - FAQs during video conference with entities/partners (updated till 24.03.2025)",
-     "url": "https://www.digilocker.gov.in/assets/FAQ%20DL%20EL_onboarding.pdf",
-     "date": "2025-03-24"
-    },
-    {
-     "title": "NeGD - Guidelines for Onboarding for API as a Service Provider v15 (3-fiscal-year rule applies to API providers, not requesters)",
-     "url": "https://negd.gov.in/wp-content/uploads/2025/06/Guidelines-for-Onboarding-for-API-as-a-service-provider-v15-Rev-1-1.pdf",
-     "date": "2025-06"
-    },
-    {
-     "title": "Medianama - MeitY plans to expand DigiLocker into private sectors like finance, health",
-     "url": "https://www.medianama.com/2026/09/223-meity-digilocker-private-sectors-finance-health/",
-     "date": "2026-09-25"
-    },
-    {
-     "title": "NamoID - DigiLocker API integration: step-by-step guide (approval is 'the long pole')",
-     "url": "https://namoid.in/blog/digilocker-api-integration-guide",
-     "date": "2026-06-06"
-    },
-    {
-     "title": "Setu - DigiLocker integration guide (sandbox/production, credentials issued by Setu)",
-     "url": "https://docs.setu.co/data/digilocker/quickstart",
-     "date": "2026 (undated page)"
-    },
-    {
-     "title": "RBI - Master Direction - Know Your Customer (KYC) Direction, 2016 (OVD definition; para 23 Small Account)",
-     "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566",
-     "date": "2025-08-14"
-    },
-    {
-     "title": "RBI press release - simplified KYC measures (gazetted officer letter; superseded, not in current Direction)",
-     "url": "https://www.rbi.org.in/commonman/English/Scripts/PressReleases.aspx?Id=1497",
-     "date": "2014-08-26"
-    },
-    {
-     "title": "MoSJE - Scheme Guidelines for inclusion of Waste Pickers component under NAMASTE (section 7.1 enumeration and ID cards; 7.3 SWM Rule 15)",
-     "url": "https://www.socialjustice.gov.in/public/ckeditor/upload/86351727949710.pdf",
-     "date": "2024-06-20 (SFC approval)"
-    },
-    {
-     "title": "Civilsdaily - NAMASTE scheme and waste pickers enumeration data 2026 (Parliament, 3 Feb 2026)",
-     "url": "https://www.civilsdaily.com/news/namaste-scheme-and-waste-pickers-enumeration-data-2026/",
-     "date": "2026-02-05"
-    },
-    {
-     "title": "Citizen Matters - Invisible workers, visible waste: Bengaluru's waste pickers struggle without recognition (BBMP stopped issuing ID cards)",
-     "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
-     "date": "2025-09-15"
-    },
-    {
-     "title": "30 Stades - How Bengaluru's Hasiru Dala gave identity and dignity to over 10,000 waste pickers",
-     "url": "https://30stades.com/2021/05/19/how-bengaluru-hasiru-dala-gave-identity-dignity-to-over-10000-waste-pickers-management-recycling/",
-     "date": "2021-05-19"
-    },
-    {
-     "title": "e-Shram portal FAQs (Aadhaar and Aadhaar-linked mobile required; CSC biometric alternative)",
-     "url": "https://eshram.gov.in/faqs",
-     "date": "2026"
-    },
-    {
-     "title": "CPCB - Solid Waste Management Rules, 2016 (Rule 15(c),(d): recognise and integrate waste pickers, provide identity cards)",
-     "url": "https://cpcb.gov.in/uploads/MSW/SWM_2016.pdf",
-     "date": "2016-04-08"
-    },
-    {
-     "title": "UIDAI - Aadhaar (Authentication and Offline Verification) Regulations, 2021 (Reg 5(1)(c),(3): no denial of service for not using Aadhaar)",
-     "url": "https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf",
-     "date": "2025-12-30"
-    }
-   ]
-  }
- ]
+  ]
 }

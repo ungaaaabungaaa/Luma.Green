@@ -1,0 +1,354 @@
+{
+ "topic": "trust-safety",
+ "headline": "Scrap fraud happens where the records stop matching the physical material. In May 2026 Karnataka's tax department busted 127 shell firms that had invoiced ₹2,384 crore of scrap that never moved. Luma.Green's trust edge is making every hand-off provable: a verified person, a scale checked under the Legal Metrology law, a photo taken in the app and a receipt the household confirms. Most of this can be shown to investors within weeks.",
+ "findings": [
+  {
+   "point": "Checking a masked-Aadhaar image by eye, as the onboarding plan does now, does not meet UIDAI's rules",
+   "detail": "UIDAI's offline-verification regulations (consolidated up to 30 Dec 2025) set four rules. A verifying entity must not collect, use or store Aadhaar numbers or biometrics (reg. 14A(1)(b)). It must tell UIDAI within 72 hours of any Aadhaar-related compromise (14A(1)(d)). It may not accept an Aadhaar, paper or electronic, as proof of identity until it has checked UIDAI's digital signature in the Secure QR code (16C). Its logs may keep offline data with consent but never the number (20A), and no entity may run offline verification on another's behalf (16A(2)). So when a Saathi uploads a masked Aadhaar (docs/product/onboarding.md), the admin should verify its QR signature with UIDAI's scanner or ask for a different ID.",
+   "sourceUrls": [
+    "https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf"
+   ]
+  },
+  {
+   "point": "Since December 2025 the Aadhaar App can prove name, photo and age without sharing the Aadhaar number",
+   "detail": "The Aadhaar (Authentication and Offline Verification) Amendment Regulations 2025 (Gazette, 9 Dec 2025) created two things. The first is the 'Aadhaar Verifiable Credential': a UIDAI-signed record with at most the last 4 digits plus name, address, gender, date of birth and photo, which the person can share in full or in part. The second is 'Offline Face Verification': a live face is matched against the photo stored in the person's Aadhaar app. An entity that wants to use these must register with UIDAI as an OVSE (offline verification seeking entity, reg. 13A). UIDAI may charge registration and per-verification fees, and must give reasons within 15 days if it rejects an application. For Saathis this proves identity and 18+ without an Aadhaar number ever reaching Luma.Green.",
+   "sourceUrls": [
+    "https://backend.uidai.gov.in/get/files/media/document/2026-06/Regulation.pdf"
+   ]
+  },
+  {
+   "point": "DigiLocker covers IDs other than Aadhaar, and RBI's video-KYC rules are a template for checking businesses remotely",
+   "detail": "DigiLocker reports 70+ crore registered users and 900+ crore issued documents, and organisations can register as 'requesters'. That means a driving licence or PAN can be pulled from the issuing authority instead of trusting an uploaded image. RBI's KYC Master Direction (amended 14 Aug 2025) sets the rules for video KYC (V-CIP): trained officials; live GPS location and timestamp; varied questions to prove the call is live, not recorded; recordings stored in India with end-to-end encryption; and Aadhaar XML/QR no older than 3 working days. These rules bind only RBI-regulated entities, so Luma.Green does not need them, and the escrow bank or payment partner will do its own KYC. A lighter version would still help: a recorded, location-stamped live video walk-through of the yard, the machines and the pollution-board consent certificate lets one admin verify businesses outside Bengaluru.",
+   "sourceUrls": [
+    "https://www.digilocker.gov.in/",
+    "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566"
+   ]
+  },
+  {
+   "point": "A scrap buyer who under-weighs commits a Legal Metrology offence, and Bengaluru enforces the law",
+   "detail": "Karnataka's September 2025 summary of the Legal Metrology Act 2009 lists three relevant offences. A buyer who fraudulently receives more than they paid for faces a fine of up to ₹10,000, and up to 1 year in jail for a repeat (s.30(c)). Tampering with a weight to deceive carries up to ₹50,000, and 6–12 months in jail for a repeat (s.26). Using an unverified weight carries ₹2,000–₹10,000 (s.33). In the 17 months to August 2024, Legal Metrology officers in Bengaluru Urban ran 20,391 inspections, filed 5,375 cases and collected ₹1.79 crore in fines. Karnataka's e-Mapan portal lets anyone look up and check a weighing instrument's verification certificate and file a complaint (toll-free 1800 599 1100). The admin can therefore check a kabadiwala's scale for free.",
+   "sourceUrls": [
+    "https://investkarnataka.co.in/wp-content/uploads/2025/09/Penalty-Details-Legal-Metrology.pdf",
+    "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024",
+    "https://emapan.karnataka.gov.in/"
+   ]
+  },
+  {
+   "point": "Bengaluru's biggest scrap fraud of 2026 was invoices with no material behind them",
+   "detail": "In May 2026 Karnataka's Commercial Taxes department exposed a ₹2,384 crore fake input-tax-credit network. It used 127 bogus entities set up with forged documents and fake rental agreements, traded invoices in circles with no goods moving, and invoiced 30–35 t of tungsten-carbide scrap a month when only 8–10 t a month is available. Officials caught it through e-way bill data, bank-transaction analysis and mapping the network of firms. For Luma.Green: every B2B record should be tied to a physical, weighed hand-off with a GPS location, and checked against how much the seller could plausibly handle.",
+   "sourceUrls": [
+    "https://thebengalurulive.com/%E2%82%B92384-crore-fake-itc-cartel-busted-karnataka-commercial-taxes-department-uncovers-massive-tungsten-carbide-scrap-invoice-scam-two-arrested/"
+   ]
+  },
+  {
+   "point": "Recycling certificate schemes have failed the same way, which matters for Luma.Green's carbon plans",
+   "detail": "CPCB's audit of 2022-23 plastic EPR (extended producer responsibility) certificates found more than 600,000 fraudulent ones. They came from four recyclers in Gujarat, Maharashtra and Karnataka that issued more certificates than their plants could process. About 2,348 plastic recyclers are registered in India. Any carbon credit or EPR claim Luma.Green issues later should be capped at the recycler's verified capacity and traced back to weighed lots.",
+   "sourceUrls": [
+    "https://climatesamurai.com/2024/07/15/cpcb-uncovers-massive-fraud-over-600000-fake-pollution-trading-certificates-found-in-plastic-recycling-audit/"
+   ]
+  },
+  {
+   "point": "Industry norms for quality and weight already exist and can be adopted as starting defaults",
+   "detail": "ISRI's Scrap Specifications Circular 2024 (effective February 2024) sets several rules. Paper must be packed at no more than 12% moisture; buyer and seller agree the test method in advance, and excess moisture allows the buyer to adjust the weight or reject the load. In a weight dispute the buyer's certified scale governs, and no adjustment is made when the difference is 1% or less on domestic loads (2% for export). Old corrugated boxes may contain at most 1% prohibited material and 5% off-grade paper plus prohibited material combined. Medical, food and hazardous waste are not tolerated at all, and unresolved disputes can go to arbitration. These give ready defaults for grade cards and kabadiwala-to-yard terms, to be tuned for Indian conditions.",
+   "sourceUrls": [
+    "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+   ]
+  },
+  {
+   "point": "Theft alerts sent to buyers are a proven, cheap way to stop stolen material being sold",
+   "detail": "On ScrapTheftAlert, run by the US recycling industry body ReMA, police post validated theft reports that reach every subscribed recycler within 100 miles. By September 2026 it had issued 26,705 alerts to 38,209 users and helped recover about $4.0 million of property; copper cable is among the most common items. The Indian equivalents to flag would be copper cable, manhole covers and batteries.",
+   "sourceUrls": [
+    "https://www.scraptheftalert.com/"
+   ]
+  },
+  {
+   "point": "India's child-labour law names the riskiest tasks in this trade",
+   "detail": "Children under 14 may not work in any occupation (s.3). Adolescents aged 14–18 may not work in the processes listed in the Schedule (s.3A). Since 30 Aug 2017 that list includes making and repairing batteries, work with e-waste, pulp and paper, synthetic resins and plastics, and metals such as lead, copper and aluminium. Children may not help even a family business with 'rag picking and scavenging' or work involving lead. The penalty is 6 months to 2 years in jail and/or a ₹20,000–₹50,000 fine, rising to 1–3 years for a repeat, and the police can act without a warrant. The Act is hosted on the Labour Ministry's PENCIL portal, which also takes complaints.",
+   "sourceUrls": [
+    "https://pencil.gov.in/35%20child%20labour%20act%20latest%2004112022.pdf"
+   ]
+  },
+  {
+   "point": "The new waste rules (from April 2026) and CPCB's battery guidelines set worker-safety duties",
+   "detail": "The Solid Waste Management Rules 2026 (notified 27 Jan 2026, in force 1 Apr 2026) do four relevant things. They define 'informal waste collector' to include waste traders who buy and sell recyclables. They require that people who collect and transport waste get proper PPE and training. They require waste pickers who work with local bodies to be registered on a central portal by 30 June each year. They tell bulk generators such as large gated communities, RWAs and hotels to hand recyclables only to authorised waste pickers or recyclers and not to deal with unregistered entities. CPCB's July 2026 battery guidelines ban draining acid, dismantling or removing seals at drop points. They also require collection centres to weigh and record each delivery, and require gloves, eyewear, an apron and shoes when handling damaged batteries.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
+    "https://eprbattery.cpcb.gov.in/upload/adminDoc/Guidelines%20for%20Collectio,%20Handling,%20Storage%20and%20Transportation%20of%20Waste%20Batteries.pdf"
+   ]
+  },
+  {
+   "point": "Karnataka's gig-worker law will cover Saathi jobs",
+   "detail": "The Karnataka Platform-Based Gig Workers (Social Security and Welfare) law began as an ordinance in May 2025; the bill was introduced on 12 Aug 2025. It requires platforms to register within 45 days and workers to be registered within 30 days of joining, with an ID that works across platforms. Platforms pay a welfare fee of 1–5% of each payout (the state sets the rate). They must run an internal dispute committee; if it does not reply within 14 days, the worker can go to the state board. No worker can be removed without written reasons and 14 days' notice. Fines run from ₹5,000 to ₹1 lakh, and unpaid fees carry 12% interest. Saathi suspensions and payouts must be designed around these rules.",
+   "sourceUrls": [
+    "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+   ]
+  },
+  {
+   "point": "Bengaluru already has ways to vet people who visit homes",
+   "detail": "Karnataka's Seva Sindhu portal issues a Police Verification Certificate for domestic workers and housekeeping staff, and one for company employees. That answers open question 5 (police checks for Saathis doing home pickups). Bengaluru has formally recognised waste pickers since August 2011 through BBMP occupational ID cards: 10,437 had been issued by May 2021. The waste-picker organisation Hasiru Dala pushed for the cards and also ran 59 of the city's 140 dry waste collection centres. Luma.Green can accept these cards as ID and partner with Hasiru Dala to recruit Saathis.",
+   "sourceUrls": [
+    "https://sevasindhu.karnataka.gov.in/Category/Police_Security_Services.html",
+    "https://30stades.com/2021/05/19/how-bengaluru-hasiru-dala-gave-identity-dignity-to-over-10000-waste-pickers-management-recycling/"
+   ]
+  },
+  {
+   "point": "Complaint and rating rules for online marketplaces tighten from 1 January 2027",
+   "detail": "The Consumer Protection (E-Commerce) (Amendment) Rules 2026 (G.S.R. 789(E), 9 Sep 2026, in force 1 Jan 2027) require several things. A grievance officer must be named. Complaints must be acknowledged within 48 hours, with a copy of the complaint as recorded, and resolved within one month. Sellers' ratings or combined feedback must be shown, and the main factors that decide ranking must be explained in plain language. Platforms must join the National Consumer Helpline network and audit themselves for manipulative design every year. It is untested whether these rules bind a platform where households are the sellers, but they are cheap to follow.",
+   "sourceUrls": [
+    "https://consumeraffairs.gov.in/public/upload/files/E%20Commerce%20Amendment%20Rules%202026_1789127949.pdf"
+   ]
+  },
+  {
+   "point": "Unpaid B2B bills are a large, documented problem that escrow can address",
+   "detail": "Under the MSMED Act, buyers must pay micro and small suppliers within 45 days or owe compound interest at three times the RBI bank rate, and state councils must decide cases within 90 days. The government's MSME Samadhaan portal shows 256,892 applications and ₹31,690 crore claimed across 112,929 cases. Many yards and recyclers are small enterprises, so tracking due dates and releasing escrow on clear rules is a strong pitch.",
+   "sourceUrls": [
+    "https://samadhaan.msme.gov.in/"
+   ]
+  },
+  {
+   "point": "Photo-based grading works at facility scale; at the door it should stay an estimate",
+   "detail": "Greyparrot's cameras above conveyor belts analysed more than 52 billion waste objects in 2025 across 115+ material categories. It has 300+ units in 65+ facilities in 20+ countries, replacing manual sampling that covers under 0.1% of the material. That supports AI grading of yard lots later. For households the AI should only estimate; disputes should rest on photos taken in the app and weighed records, not on the model's verdict.",
+   "sourceUrls": [
+    "https://www.greyparrot.ai/"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Proof of pickup: a handover code, a photo of the scale reading, and a receipt the household confirms",
+   "why": "This one feature closes the four cheapest frauds: fake pickups, farming recycle points, light scales and short cash payments. It uses data the booking flow already has. The household's tracking page (/b/{code}) shows a 4-digit code that the kabadiwala must enter to complete the pickup. The kabadiwala takes one photo of the scale display per material, through the app's camera only, and the server records the time and the phone's location. The household then gets an SMS receipt (kg × rate for each material) with a one-tap 'I got ₹X' or 'Something's wrong'. Under-weighing by a buyer is an offence under Legal Metrology Act s.30(c)/s.33, and Bengaluru Urban filed 5,375 weights-and-measures cases in 17 months. It needs one new SMS template registered on DLT (the SMS template registry).",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Trust badges on every business card: phone → documents → scale → site",
+   "why": "This turns the admin's checklist into something households and yards can see. 'Scale verified' means the admin looked up the kabadiwala's Legal Metrology certificate on e-Mapan (free) and recorded its number and expiry date, with a reminder before it expires. 'Site verified' means a visit, or a recorded, location-stamped live video walk-through modelled on RBI's video-KYC rules, so one admin can cover yards outside Bengaluru. Store the badge rules as rows in a table so they can change without new code.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "yards",
+    "recyclers",
+    "manufacturers",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Weight-trust and anomaly view in the admin console",
+   "why": "The pilot already stores the estimated and weighed kg for each pickup. Comparing each kabadiwala's weighed-to-estimated ratio with the city median for each material spots steady under-weighing and fake volume. It is the same plausibility logic that exposed the ₹2,384 crore shell network and the 600,000 excess EPR certificates. A flag should trigger a test pickup and a conversation, never an automatic suspension.",
+   "priority": "prototype-now",
+   "users": [
+    "admin"
+   ]
+  },
+  {
+   "feature": "Complaints and disputes with deadline timers",
+   "why": "Add a 'Something's wrong' button with categories: weight, payment, behaviour, no-show and safety. The photos, receipt and location are attached automatically. The complaint is acknowledged within 48 hours and resolved within 30 days, the standard in the E-Commerce Amendment Rules 2026 (in force 1 Jan 2027). A named grievance officer is shown in the app. This reuses the existing application SLA pattern ('Due soon' / 'Overdue') and the audit log, so the build is small.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "yards",
+    "saathis",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Grade cards: one admin-editable table of material rules",
+   "why": "One table per material sets its grade code and allowed moisture and contamination; the ISRI defaults are paper at 12% moisture or less, and corrugated boxes at 1% prohibited material and 5% off-grade plus prohibited. It also marks materials at high risk of theft (copper cable, manhole covers), marks hazardous ones with a PPE list, and says who may buy them (batteries and e-waste only to authorised recyclers). Buyers who deduct weight must attach a photo and a reason, and the seller sees it. Because it is data, not code, the founders can change it any time.",
+   "priority": "pilot",
+   "users": [
+    "admin",
+    "kabadiwalas",
+    "yards",
+    "recyclers"
+   ]
+  },
+  {
+   "feature": "Safety pack for home pickups",
+   "why": "This answers open question 5. Saathis and helpers who visit homes need a Karnataka Police Verification Certificate from Seva Sindhu. Other pieces: the person's name, photo and badge on the tracking page; calls through masked numbers; share-trip and an SOS button; and a strike-based suspension policy. Accept BBMP waste-picker occupational ID cards (10,437 issued since 2011) as ID, and recruit Saathis through Hasiru Dala.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "saathis",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Identity checks that never handle an Aadhaar number",
+   "why": "For the pilot, prefer a driving licence, voter ID, PAN, a DigiLocker document or a BBMP waste-picker card. Accept a masked Aadhaar only after its Secure QR signature has been verified, as UIDAI reg. 16C requires, and never store the number (reg. 14A). Selfie matching against the ID stays with the admin. At scale, register Luma.Green itself as an OVSE (reg. 13A); a KYC vendor cannot verify on its behalf (reg. 16A(2)). Then accept Aadhaar App credentials with offline face verification, which prove name, photo and 18+ without the number.",
+   "priority": "pilot",
+   "users": [
+    "saathis",
+    "kabadiwalas",
+    "yards",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Saathi safety, child-labour and fair-removal rules",
+   "why": "Job cards list the hazards and required PPE; the CPCB rule for damaged batteries is gloves, eyewear, apron and shoes, and Saathis never drain acid or dismantle. Add an incident button and first-aid guidance. Check 18+ from the date of birth on the ID. Businesses declare that no one under 14 works for them and no one under 18 works in listed processes (batteries, e-waste, plastics, paper). A report button reaches the admin and links to PENCIL. Before removing a Saathi, give written reasons and 14 days' notice, as Karnataka's gig-worker law requires; only safety cases justify an immediate pause. The SWM Rules 2026 already require PPE and training for collection staff.",
+   "priority": "pilot",
+   "users": [
+    "saathis",
+    "kabadiwalas",
+    "yards",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Two-way ratings tied to confirmed transactions",
+   "why": "Ratings can only come from a pickup completed with the handover code, one per booking, in both directions: household to kabadiwala and kabadiwala to household or Saathi. This makes fake reviews from spare SIM cards useless. The pilot's two-question follow-up SMS becomes the rating. Publish a plain-language page on how ranking works, as the 2026 e-commerce rules expect.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "saathis"
+   ]
+  },
+  {
+   "feature": "Integrity rules for B2B hand-offs, and escrow release",
+   "why": "Record both sides' weights, with no adjustment inside a ±1% band. Require a photo of the certified weighbridge slip (gross, tare, net, vehicle number) above a threshold. Check each GSTIN live on the GST portal (active, returns filed). Generate invoices only from recorded hand-offs, and flag volumes above the business's declared capacity. Release escrow after a quality-check window and track the MSMED 45-day payment deadline; ₹31,690 crore is stuck across 112,929 small-business cases. This is also what makes later carbon or EPR claims believable.",
+   "priority": "scale",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "recyclers",
+    "manufacturers",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Stolen-material alerts to buyers",
+   "why": "Verified police or utility accounts (for example BESCOM, the city electricity utility) post alerts that reach every kabadiwala and yard within a set radius, and sellers of flagged categories must give ID and a photo. ReMA's ScrapTheftAlert shows the model works: 26,705 alerts, 38,209 users and about $4.0 million recovered.",
+   "priority": "scale",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "admin"
+   ]
+  },
+  {
+   "feature": "AI photo grading of yard lots",
+   "why": "Camera-based recognition is proven at facility scale: Greyparrot analysed 52 billion objects across 115+ categories in 2025, replacing sampling that covers under 0.1% of material. Use it for bale quality checks and as evidence in grade disputes at yards. For households the AI stays estimate-only, and prices always come from the price tables.",
+   "priority": "scale",
+   "users": [
+    "yards",
+    "recyclers",
+    "admin"
+   ]
+  }
+ ],
+ "artifactMarkdown": "**Fraud and safety risks, and Luma.Green's control for each.** Stage: prototype-now = can be demoed in weeks; pilot = needed for Bengaluru, Oct 2026; scale = India-wide later.\n\n| # | Risk | Where it happens | What it looks like | Platform control | Stage |\n|---|---|---|---|---|---|\n| 1 | Tampered or unverified scale | Kabadiwala at the door; yard weighbridge | Spring balance reads light, a magnet under the pan, an unstamped scale. Under-weighing by a buyer is an offence (Legal Metrology Act s.30(c), s.26, s.33) | \"Scale verified\" badge after the admin checks the Legal Metrology certificate on e-Mapan (number and expiry stored, reminder before expiry); an in-app photo of the scale display for each material; tip for households: weigh a sealed 1 kg pack first | Prototype-now (photo, badge) · pilot (e-Mapan check) |\n| 2 | Paid less than the receipt says | Kabadiwala pays household | Receipt says ₹480, household got ₹400; a fake \"payment successful\" screen | SMS receipt per material (kg × rate); household taps \"I got ₹X\" or \"Something's wrong\"; unconfirmed payments count against the kabadiwala | Prototype-now |\n| 3 | Fake pickups and farmed recycle points | Kabadiwala working with friendly phone numbers | Pickups marked \"completed\" with no visit, to inflate points or volume | 4-digit handover code from the household's tracking page; GPS near the map pin; limits per phone and per device; points only after the household confirms | Prototype-now |\n| 4 | Steady under-weighing | One kabadiwala across many pickups | Weighed kg always well below the AI estimate while other kabadiwalas match | Admin view comparing weighed with estimated kg against the city median for each material; a flag leads to a test pickup before any action | Prototype-now (view) · pilot (flags) |\n| 5 | Water, sand or stones added to gain weight | Kabadiwala → yard → mill | Wet paper, dirt-filled plastic bales | Grade card per material starting from ISRI limits (paper ≤12% moisture; corrugated boxes ≤1% prohibited material, ≤5% off-grade plus prohibited); every deduction needs a photo and reason, and the seller sees it | Pilot |\n| 6 | Mixed or mislabelled grades | Every hand-off | Mixed paper sold as newspaper; brass mixed with iron | One coded material catalogue; sorting recorded as sort-out/sort-in entries, never silent edits; photo per lot; AI grading at yards later | Prototype-now (catalogue) · scale (AI) |\n| 7 | Weight disputes on truckloads | Kabadiwala → yard → recycler | Yard weighbridge reads 5% lower than the shop scale | Record both weights; no adjustment within ±1% (ISRI domestic rule); beyond that, a photo of the certified slip (gross, tare, net, vehicle number) decides | Pilot |\n| 8 | Shell firms and fake invoices | Yards, recyclers, \"traders\" | 127 Bengaluru shell firms, ₹2,384 crore of fake tax credit, invoices with no goods moving (May 2026) | GSTIN checked live (active, returns filed); invoices only from a weighed hand-off with location; flag volumes above declared capacity and sudden turnover jumps | Pilot · scale |\n| 9 | Certificates with no material behind them (EPR, carbon) | Recyclers | 600,000+ plastic EPR certificates issued beyond plant capacity | Credits only from traced, weighed chains; capped at verified capacity; audit trail that can be exported | Scale |\n| 10 | Fake stock, no-shows, non-delivery, unpaid bills | B2B listings; household bookings | Stock that doesn't exist; kabadiwala never arrives; buyer doesn't pay | Stock calculated only from weighed movements; completion and no-show rate on profiles; booking reassigned after a timeout; escrow released after a quality-check window; 45-day payment reminders | Prototype-now (reliability) · scale (escrow) |\n| 11 | Stolen material | Kabadiwala or yard buying | Utility copper cable, manhole covers, batteries in bulk from one seller | \"High theft risk\" material flag → seller's confirmed phone, photo and a quantity cap; alerts from verified police or utilities to buyers within a radius (ReMA model) | Pilot (flags) · scale (alerts) |\n| 12 | Identity fraud | Onboarding (Saathis, business owners) | Borrowed or edited ID; unmasked Aadhaar | Selfie compared with ID photo; DigiLocker documents preferred; masked Aadhaar only if its Secure QR verifies (reg. 16C); Aadhaar number never stored (reg. 14A); later, Aadhaar App credential with offline face check as a registered OVSE | Pilot · scale |\n| 13 | Unsafe person at the door | Household pickups | Theft or harassment by a pickup person | Verified people only; Karnataka Police Verification Certificate (Seva Sindhu) before home pickups; name, photo and badge on the tracking page; masked calls; share-trip and SOS | Pilot |\n| 14 | Injury and hazardous material | Saathis on pickups and sorting shifts | Cuts, acid or lead exposure, lithium-battery fires, abuse | Job card lists hazards and PPE (damaged batteries: gloves, eyewear, apron, shoes); no dismantling or acid draining; incident button; right to refuse a job; two-way ratings | Pilot |\n| 15 | Child labour | Shops, yards, sorting | Children rag-picking or sorting; teenagers on battery, e-waste or plastics work (banned by the Child Labour Act Schedule) | Saathis 18+ from the date of birth on their ID; business declaration; report button to the admin with a PENCIL link; zero-tolerance suspension | Prototype-now (declaration) · pilot |\n| 16 | Unfair removal of a worker | Saathis | Account paused with no reason given | Written reason and 14 days' notice before removal (Karnataka gig-worker law); immediate pause only for safety cases; internal dispute route | Pilot |\n| 17 | Fake reviews | Kabadiwala and yard profiles | Self-reviews from spare SIM cards | Ratings only from code-confirmed pickups, one per booking; a published page on how ranking works (E-Commerce Amendment Rules 2026) | Pilot |\n| 18 | Complaints ignored | All roles | No answer and no record | Named grievance officer; acknowledged within 48 h and resolved within 1 month; deadline timers and outcomes in the audit log | Prototype-now |",
+ "risks": [
+  "Holding ID documents and selfies is a liability. A leak, or a stray unmasked Aadhaar upload, becomes a reportable incident: to UIDAI within 72 hours if Luma.Green registers as an OVSE, and to CERT-In within 6 hours. Collect as few documents as possible and delete them on schedule.",
+  "One admin cannot verify, investigate and settle disputes at India scale. Decisions will be slow and inconsistent. Having the same person set price floors and judge disputes is also a conflict of interest.",
+  "Fraud flags can be wrong. The AI weight estimate has material-specific errors, so a comparison score can wrongly accuse honest kabadiwalas. Suspending people without due process damages supply, and for Saathis may breach the Karnataka law's 14-day notice rule.",
+  "Evidence can be faked: gallery photos, edited photo metadata, GPS-spoofing apps and handover codes read out over the phone. Allow in-app camera capture only, use server timestamps, and never treat a single signal as proof.",
+  "Luma.Green could be held liable, legally or in reputation, for theft, harassment or injury during a home pickup. The pilot has no insurance.",
+  "Acting as a channel for stolen metal or fake invoices invites police and GST scrutiny, especially once invoices or e-way bills are generated through the platform.",
+  "Saathi jobs may make Luma.Green an 'aggregator' under Karnataka's gig-worker law and the national Social Security Code. That brings registration, a welfare fee and dispute committees.",
+  "Heavy KYC and photo steps may put off kabadiwalas who are new to smartphones or have little formal schooling. Keep the steps where risk is low optional and light.",
+  "Child labour found at a partner yard would be serious reputational damage in front of investors, and self-declarations alone are weak evidence.",
+  "Moisture and contamination limits copied from ISRI (a US standard) may not fit Indian monsoon conditions or local trade practice. They need local calibration before they are enforced."
+ ],
+ "openQuestions": [
+  "Will UIDAI register an early-stage startup as an OVSE, at what fee, and does the Aadhaar App credential flow work from a web app/PWA (deep link or QR) rather than only from native apps?",
+  "For the pilot, should masked Aadhaar be accepted at all, given the QR-signature check it requires? Or only a driving licence, voter ID, PAN, DigiLocker documents and BBMP waste-picker cards?",
+  "Can a Saathi apply for the Seva Sindhu Police Verification Certificate themselves, and what are the fee and turnaround? Do a kabadiwala's helpers who visit homes need one too?",
+  "Do the pilot kabadiwalas' scales carry valid Legal Metrology stamps today, and how many use spring balances rather than electronic scales?",
+  "How far can the estimate and the weighed kg normally differ for each material before a flag is fair? This needs pilot data.",
+  "Are Saathi jobs 'platform-based gig work' under the Karnataka law if the kabadiwala pays the Saathi outside the platform? If so, who pays the welfare fee?",
+  "Which materials should count as high theft risk in Bengaluru (BESCOM copper, BWSSB manhole covers, metro and railway fittings), and would the police and utilities post alerts?",
+  "Do the E-Commerce Rules apply when the household is the seller and the kabadiwala the buyer? Or does Luma.Green adopt the grievance norms voluntarily?",
+  "What moisture and contamination deductions do Bengaluru yards and paper mills actually apply today? The grade-card defaults should start from these.",
+  "Which escrow or payment partner will Luma.Green use, and what KYC will it ask of kabadiwalas who have no GST registration?"
+ ],
+ "sources": [
+  {
+   "title": "Aadhaar (Authentication and Offline Verification) Regulations, 2021 — clean copy updated to 30 Dec 2025 (UIDAI)",
+   "url": "https://old.uidai.gov.in/images/The_Aadhaar_Authentication_and_Offline_Verifications_Regulations_2021-_Clean_copy-30122025.pdf"
+  },
+  {
+   "title": "Aadhaar (Authentication and Offline Verification) Amendment Regulations, 2025 — Gazette notification of 9 Dec 2025 (UIDAI)",
+   "url": "https://backend.uidai.gov.in/get/files/media/document/2026-06/Regulation.pdf"
+  },
+  {
+   "title": "DigiLocker (MeitY) — home page: users, issued documents, issuer/requester registration",
+   "url": "https://www.digilocker.gov.in/"
+  },
+  {
+   "title": "RBI Master Direction – Know Your Customer (KYC) Direction, 2016 (updated 14 Aug 2025): V-CIP",
+   "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566"
+  },
+  {
+   "title": "Penalty details under the Legal Metrology Act, 2009 (Invest Karnataka, Sep 2025)",
+   "url": "https://investkarnataka.co.in/wp-content/uploads/2025/09/Penalty-Details-Legal-Metrology.pdf"
+  },
+  {
+   "title": "Fraud in weights and measurements continues despite digital advances in Bengaluru (News Karnataka, 6 Nov 2024)",
+   "url": "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+  },
+  {
+   "title": "e-Mapan — Department of Legal Metrology, Government of Karnataka",
+   "url": "https://emapan.karnataka.gov.in/"
+  },
+  {
+   "title": "₹2,384 crore fake ITC cartel busted: tungsten carbide scrap invoice scam (The Bengaluru Live, May 2026)",
+   "url": "https://thebengalurulive.com/%E2%82%B92384-crore-fake-itc-cartel-busted-karnataka-commercial-taxes-department-uncovers-massive-tungsten-carbide-scrap-invoice-scam-two-arrested/"
+  },
+  {
+   "title": "CPCB uncovers 600,000+ fake EPR certificates in plastic recycling audit (Climate Samurai, 15 Jul 2024)",
+   "url": "https://climatesamurai.com/2024/07/15/cpcb-uncovers-massive-fraud-over-600000-fake-pollution-trading-certificates-found-in-plastic-recycling-audit/"
+  },
+  {
+   "title": "ISRI Scrap Specifications Circular 2024",
+   "url": "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+  },
+  {
+   "title": "ScrapTheftAlert.com (Recycled Materials Association)",
+   "url": "https://www.scraptheftalert.com/"
+  },
+  {
+   "title": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 — consolidated text with Schedule (PENCIL portal, Ministry of Labour)",
+   "url": "https://pencil.gov.in/35%20child%20labour%20act%20latest%2004112022.pdf"
+  },
+  {
+   "title": "Solid Waste Management Rules, 2026 (MoEFCC S.O. 388(E), 27 Jan 2026)",
+   "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+  },
+  {
+   "title": "Guidelines for Collection, Handling, Storage and Transportation of Waste Batteries (CPCB, July 2026)",
+   "url": "https://eprbattery.cpcb.gov.in/upload/adminDoc/Guidelines%20for%20Collectio,%20Handling,%20Storage%20and%20Transportation%20of%20Waste%20Batteries.pdf"
+  },
+  {
+   "title": "The Karnataka Platform-Based Gig Workers (Social Security and Welfare) Bill, 2025 (PRS Legislative Research)",
+   "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+  },
+  {
+   "title": "Consumer Protection (E-Commerce) (Amendment) Rules, 2026 — G.S.R. 789(E), 9 Sep 2026",
+   "url": "https://consumeraffairs.gov.in/public/upload/files/E%20Commerce%20Amendment%20Rules%202026_1789127949.pdf"
+  },
+  {
+   "title": "Seva Sindhu — Police and Security services, Government of Karnataka",
+   "url": "https://sevasindhu.karnataka.gov.in/Category/Police_Security_Services.html"
+  },
+  {
+   "title": "How Bengaluru's Hasiru Dala gave identity and dignity to over 10,000 waste pickers (30 Stades, May 2021)",
+   "url": "https://30stades.com/2021/05/19/how-bengaluru-hasiru-dala-gave-identity-dignity-to-over-10000-waste-pickers-management-recycling/"
+  },
+  {
+   "title": "Greyparrot — AI waste analytics platform",
+   "url": "https://www.greyparrot.ai/"
+  },
+  {
+   "title": "MSME Samadhaan — Delayed Payment Monitoring System (Ministry of MSME)",
+   "url": "https://samadhaan.msme.gov.in/"
+  }
+ ]
+}

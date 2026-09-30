@@ -1,203 +1,203 @@
 {
- "cluster": "Languages, digits, pictures and offline behaviour",
- "answers": [
-  {
-   "question": "Which languages do Bengaluru's likely pilot wards (Yeshwanthpur, Peenya, Malleshwaram, Rajajinagar, Mathikere) speak and read (census and local data), and how large is the share who can read numbers but not words? Do Bengali, Marathi and Urdu readers in India prefer international digits or native-script digits in apps and prices?",
-   "answer": "There is no official ward-level language data: Census 2011 (still the last count) publishes mother tongue only down to district/city, so the five wards must be read from city figures plus local signals. For Bengaluru city in 2011 the shares were Kannada 42.05%, Tamil 16.34%, Telugu 13.73%, Urdu 13.00%, Hindi 4.64%, Malayalam about 3.2% and Marathi about 2.1%, and 50.6% of residents were migrants; Malleshwaram (laid out 1889) and Rajajinagar (1949, half industrial plots and half housing) are old Kannada-majority layouts with Tamil and Telugu minorities, while Peenya and Yeshwanthpur (industrial estates plus the APMC yard) and adjoining Mathikere draw Hindi-belt and Bengali workers: a 2022 Indian Journal of Labour Economics study interviewed 49 Bengali-speaking migrants in Bengaluru found at road junctions, construction sites, scrap collection centres and manufacturing units. Reading: Bengaluru Urban's Census 2011 literacy rate was 87.67% (men 91.01%, women 84.01%), so roughly 1 in 8 people aged 7+ could not read or write any language, and NFHS-5 (2019-21) puts Karnataka's tested literacy at 73% of women and 85% of men aged 15-49, so among women and migrant labour expect 20-30% who cannot read words. No Indian survey measures 'reads digits but not words'; the closest evidence is Microsoft Research's Bangalore slum work (2006 ICTD paper, 80+ domestic workers; 2011 ToCHI paper across India, Kenya, the Philippines and South Africa) which describes its users as 'functionally illiterate or semiliterate but partially numerate' and keeps numbers in a text-free UI because 'many nonliterate people can read numerical digits'. ASER 2023 (released 16 Jan 2024, rural 14-18-year-olds) adds that 25% cannot read a Std II text fluently and only 43.3% can do 3-by-1-digit division, so assume digit recognition is near-universal but arithmetic (totals, per-kg maths) is not; the app must do the multiplication and show the result. Digits: the Unicode CLDR data inside every browser and Node defaults Bengali to Bengali digits (০-৯), Marathi to Devanagari digits (०-९) and Urdu-India (ur-IN) to Extended Arabic-Indic digits (۰-۹), while Hindi, Kannada, Tamil, Telugu and plain 'ur' default to Latin; I verified on Node 24 that the app's bare locale codes already print '১,২৩৪.৫০' for bn and '₹१,२३४.५०' for mr, and '₹1,234.50' for ur. Readers of those languages do meet native digits daily: on 30 Sep 2026 Anandabazar's home page used 66 Bengali versus 4 Latin digits, Loksatta 151 Devanagari versus 68 Latin, Inquilab (Urdu) 43 Arabic-Indic versus 10 Latin, whereas Kannada's Udayavani used Latin only; Bengali and Marathi Wikipedias standardised on native numerals while urban Hindi readers prefer Latin (CIS-A2K, 24 Sep 2022). But no published study shows a preference for native digits in app prices, and every part of the money trail a seller compares against (rupee notes, UPI apps, bank SMS, the shop's scale display, GST invoices) uses Latin digits, and in Bengaluru these readers are small minorities who also read Hindi or Kannada.",
-   "status": "partly",
-   "decision": "Ship kn, en, hi, ta, te and ur for the pilot (94% of the city's mother tongues) with bn switched on for Peenya scrap shops; format every price, weight, phone number and OTP with Latin digits in all 12 locales (set numberingSystem 'latn' in the next-intl formats and add a test that bn/mr/ur money strings contain only ASCII digits), keeping native digits off until a seller asks; treat about 1 in 8 adults (up to 1 in 4 among women and migrant workers) as unable to read words but able to read digits, so every material and action gets an icon plus a spoken label and the app does all arithmetic.",
-   "whoToAsk": "Ward-level language mix and the digits-not-words share cannot be settled from public pages: have Saathis run a 5-minute doorstep card test with 10 scrap shops and 30 households per ward in the first pilot week (show a price card in Latin and native digits plus a word label; record which they read aloud correctly). BBMP ward offices hold no language data.",
-   "sources": [
+  "cluster": "Languages, digits, pictures and offline behaviour",
+  "answers": [
     {
-     "title": "Bengaluru - population by mother tongue, Census 2011 (Wikipedia tabulation of Census C-16)",
-     "url": "https://en.wikipedia.org/wiki/Bengaluru",
-     "date": "accessed 30 Sep 2026"
+      "question": "Which languages do Bengaluru's likely pilot wards (Yeshwanthpur, Peenya, Malleshwaram, Rajajinagar, Mathikere) speak and read (census and local data), and how large is the share who can read numbers but not words? Do Bengali, Marathi and Urdu readers in India prefer international digits or native-script digits in apps and prices?",
+      "answer": "There is no official ward-level language data: Census 2011 (still the last count) publishes mother tongue only down to district/city, so the five wards must be read from city figures plus local signals. For Bengaluru city in 2011 the shares were Kannada 42.05%, Tamil 16.34%, Telugu 13.73%, Urdu 13.00%, Hindi 4.64%, Malayalam about 3.2% and Marathi about 2.1%, and 50.6% of residents were migrants; Malleshwaram (laid out 1889) and Rajajinagar (1949, half industrial plots and half housing) are old Kannada-majority layouts with Tamil and Telugu minorities, while Peenya and Yeshwanthpur (industrial estates plus the APMC yard) and adjoining Mathikere draw Hindi-belt and Bengali workers: a 2022 Indian Journal of Labour Economics study interviewed 49 Bengali-speaking migrants in Bengaluru found at road junctions, construction sites, scrap collection centres and manufacturing units. Reading: Bengaluru Urban's Census 2011 literacy rate was 87.67% (men 91.01%, women 84.01%), so roughly 1 in 8 people aged 7+ could not read or write any language, and NFHS-5 (2019-21) puts Karnataka's tested literacy at 73% of women and 85% of men aged 15-49, so among women and migrant labour expect 20-30% who cannot read words. No Indian survey measures 'reads digits but not words'; the closest evidence is Microsoft Research's Bangalore slum work (2006 ICTD paper, 80+ domestic workers; 2011 ToCHI paper across India, Kenya, the Philippines and South Africa) which describes its users as 'functionally illiterate or semiliterate but partially numerate' and keeps numbers in a text-free UI because 'many nonliterate people can read numerical digits'. ASER 2023 (released 16 Jan 2024, rural 14-18-year-olds) adds that 25% cannot read a Std II text fluently and only 43.3% can do 3-by-1-digit division, so assume digit recognition is near-universal but arithmetic (totals, per-kg maths) is not; the app must do the multiplication and show the result. Digits: the Unicode CLDR data inside every browser and Node defaults Bengali to Bengali digits (০-৯), Marathi to Devanagari digits (०-९) and Urdu-India (ur-IN) to Extended Arabic-Indic digits (۰-۹), while Hindi, Kannada, Tamil, Telugu and plain 'ur' default to Latin; I verified on Node 24 that the app's bare locale codes already print '১,২৩৪.৫০' for bn and '₹१,२३४.५०' for mr, and '₹1,234.50' for ur. Readers of those languages do meet native digits daily: on 30 Sep 2026 Anandabazar's home page used 66 Bengali versus 4 Latin digits, Loksatta 151 Devanagari versus 68 Latin, Inquilab (Urdu) 43 Arabic-Indic versus 10 Latin, whereas Kannada's Udayavani used Latin only; Bengali and Marathi Wikipedias standardised on native numerals while urban Hindi readers prefer Latin (CIS-A2K, 24 Sep 2022). But no published study shows a preference for native digits in app prices, and every part of the money trail a seller compares against (rupee notes, UPI apps, bank SMS, the shop's scale display, GST invoices) uses Latin digits, and in Bengaluru these readers are small minorities who also read Hindi or Kannada.",
+      "status": "partly",
+      "decision": "Ship kn, en, hi, ta, te and ur for the pilot (94% of the city's mother tongues) with bn switched on for Peenya scrap shops; format every price, weight, phone number and OTP with Latin digits in all 12 locales (set numberingSystem 'latn' in the next-intl formats and add a test that bn/mr/ur money strings contain only ASCII digits), keeping native digits off until a seller asks; treat about 1 in 8 adults (up to 1 in 4 among women and migrant workers) as unable to read words but able to read digits, so every material and action gets an icon plus a spoken label and the app does all arithmetic.",
+      "whoToAsk": "Ward-level language mix and the digits-not-words share cannot be settled from public pages: have Saathis run a 5-minute doorstep card test with 10 scrap shops and 30 households per ward in the first pilot week (show a price card in Latin and native digits plus a word label; record which they read aloud correctly). BBMP ward offices hold no language data.",
+      "sources": [
+        {
+          "title": "Bengaluru - population by mother tongue, Census 2011 (Wikipedia tabulation of Census C-16)",
+          "url": "https://en.wikipedia.org/wiki/Bengaluru",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Bangalore (Bengaluru) district Census 2011 - literacy 87.67%",
+          "url": "https://www.census2011.co.in/census/district/242-bangalore.html",
+          "date": "Census 2011, accessed 30 Sep 2026"
+        },
+        {
+          "title": "NFHS-5 (2019-21) Karnataka state report, literacy of women and men 15-49",
+          "url": "https://dhsprogram.com/pubs/pdf/FR374/FR374_Karnataka.pdf",
+          "date": "2021"
+        },
+        {
+          "title": "Bengali Migrant Workers in South India (Indian Journal of Labour Economics) - 49 Bengali workers in Bengaluru; 50.6% of Bengaluru are migrants",
+          "url": "https://idsk.edu.in/wp-content/uploads/2022/06/Chakraborty_et_al-2022-The_Indian_Journal_of_Labour_Economics.pdf",
+          "date": "2022"
+        },
+        {
+          "title": "Medhi, Sagar, Toyama - Text-Free User Interfaces for Illiterate and Semi-Literate Users (ICTD 2006, Bangalore slums)",
+          "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/medhi_ictd2006.pdf",
+          "date": "2006"
+        },
+        {
+          "title": "Medhi et al. - Designing Mobile Interfaces for Novice and Low-Literacy Users (ACM ToCHI)",
+          "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ToCHI2711_Medhi.pdf",
+          "date": "April 2011"
+        },
+        {
+          "title": "ASER 2023 'Beyond Basics' press release",
+          "url": "https://asercentre.org/wp-content/uploads/2022/12/ASER-2023-press-release1_English_16-Jan.pdf",
+          "date": "16 Jan 2024"
+        },
+        {
+          "title": "CIS-A2K - Numerals in Indic Languages and Indic-language Wikipedias",
+          "url": "https://meta.wikimedia.org/wiki/CIS-A2K/Indic_Languages/Numerals_in_Indic_Languages_%26_Indic_language_Wikipedias",
+          "date": "24 Sep 2022"
+        },
+        {
+          "title": "Unicode CLDR bn.xml - defaultNumberingSystem beng",
+          "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/bn.xml",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Unicode CLDR mr.xml - defaultNumberingSystem deva",
+          "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/mr.xml",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Unicode CLDR ur_IN.xml - defaultNumberingSystem arabext",
+          "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ur_IN.xml",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Anandabazar Patrika home page (digit count: 66 Bengali vs 4 Latin)",
+          "url": "https://www.anandabazar.com/",
+          "date": "30 Sep 2026"
+        },
+        {
+          "title": "Loksatta home page (digit count: 151 Devanagari vs 68 Latin)",
+          "url": "https://www.loksatta.com/",
+          "date": "30 Sep 2026"
+        },
+        {
+          "title": "Inquilab (Urdu) home page (digit count: 43 Arabic-Indic vs 10 Latin)",
+          "url": "https://www.inquilab.com/",
+          "date": "30 Sep 2026"
+        },
+        {
+          "title": "Rajajinagar (1949 industrial-plus-housing layout)",
+          "url": "https://en.wikipedia.org/wiki/Rajajinagar",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Malleswaram (planned 1889 layout)",
+          "url": "https://en.wikipedia.org/wiki/Malleswaram",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Yeshwanthpur (APMC yard, industrial area)",
+          "url": "https://en.wikipedia.org/wiki/Yeshwanthpur",
+          "date": "accessed 30 Sep 2026"
+        }
+      ]
     },
     {
-     "title": "Bangalore (Bengaluru) district Census 2011 - literacy 87.67%",
-     "url": "https://www.census2011.co.in/census/district/242-bangalore.html",
-     "date": "Census 2011, accessed 30 Sep 2026"
-    },
-    {
-     "title": "NFHS-5 (2019-21) Karnataka state report, literacy of women and men 15-49",
-     "url": "https://dhsprogram.com/pubs/pdf/FR374/FR374_Karnataka.pdf",
-     "date": "2021"
-    },
-    {
-     "title": "Bengali Migrant Workers in South India (Indian Journal of Labour Economics) - 49 Bengali workers in Bengaluru; 50.6% of Bengaluru are migrants",
-     "url": "https://idsk.edu.in/wp-content/uploads/2022/06/Chakraborty_et_al-2022-The_Indian_Journal_of_Labour_Economics.pdf",
-     "date": "2022"
-    },
-    {
-     "title": "Medhi, Sagar, Toyama - Text-Free User Interfaces for Illiterate and Semi-Literate Users (ICTD 2006, Bangalore slums)",
-     "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/medhi_ictd2006.pdf",
-     "date": "2006"
-    },
-    {
-     "title": "Medhi et al. - Designing Mobile Interfaces for Novice and Low-Literacy Users (ACM ToCHI)",
-     "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ToCHI2711_Medhi.pdf",
-     "date": "April 2011"
-    },
-    {
-     "title": "ASER 2023 'Beyond Basics' press release",
-     "url": "https://asercentre.org/wp-content/uploads/2022/12/ASER-2023-press-release1_English_16-Jan.pdf",
-     "date": "16 Jan 2024"
-    },
-    {
-     "title": "CIS-A2K - Numerals in Indic Languages and Indic-language Wikipedias",
-     "url": "https://meta.wikimedia.org/wiki/CIS-A2K/Indic_Languages/Numerals_in_Indic_Languages_%26_Indic_language_Wikipedias",
-     "date": "24 Sep 2022"
-    },
-    {
-     "title": "Unicode CLDR bn.xml - defaultNumberingSystem beng",
-     "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/bn.xml",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Unicode CLDR mr.xml - defaultNumberingSystem deva",
-     "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/mr.xml",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Unicode CLDR ur_IN.xml - defaultNumberingSystem arabext",
-     "url": "https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/ur_IN.xml",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Anandabazar Patrika home page (digit count: 66 Bengali vs 4 Latin)",
-     "url": "https://www.anandabazar.com/",
-     "date": "30 Sep 2026"
-    },
-    {
-     "title": "Loksatta home page (digit count: 151 Devanagari vs 68 Latin)",
-     "url": "https://www.loksatta.com/",
-     "date": "30 Sep 2026"
-    },
-    {
-     "title": "Inquilab (Urdu) home page (digit count: 43 Arabic-Indic vs 10 Latin)",
-     "url": "https://www.inquilab.com/",
-     "date": "30 Sep 2026"
-    },
-    {
-     "title": "Rajajinagar (1949 industrial-plus-housing layout)",
-     "url": "https://en.wikipedia.org/wiki/Rajajinagar",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Malleswaram (planned 1889 layout)",
-     "url": "https://en.wikipedia.org/wiki/Malleswaram",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Yeshwanthpur (APMC yard, industrial area)",
-     "url": "https://en.wikipedia.org/wiki/Yeshwanthpur",
-     "date": "accessed 30 Sep 2026"
+      "question": "Is there evidence on whether low-literacy users recognise materials faster from photos or drawn pictures? Do the SWM Rules 2026 bin colours (wet, dry, sanitary, special care) clash with a green/amber/sky palette for materials? Does the Convex React client keep unsent mutations across an offline reload, or must a weigh-and-pay queue be stored on the phone? What are the licence terms of IconScout, Blush and Icons8 illustrations for commercial apps?",
+      "answer": "Photos versus drawings: the best evidence is from Bangalore itself; Medhi, Prasad and Toyama (WWW 2007) showed 13 health symptoms to 200 illiterate adults in 10 formats and found static hand-drawn pictures were better understood than photographs or icons, voice annotation sped comprehension, and 'richer information is not necessarily better understood', and the 2006 Bangalore-slum study likewise found people could identify both photos and cartoons but preferred semi-abstract cartoons, with photorealism useful only when drilling into detail. For sorting specifically, UBC's three experiments (Journal of Environmental Psychology 58, 2018, literate students, four bins) measured 75.9% accuracy with pictures and 75.2% with icons against 70.2% with words, and found that adding 'not allowed' items to icon signs hurt, so use simple drawn pictures of the exact local item (milk sachet, newspaper bundle, cooking pot) with a spoken name, keep photos for the drill-down, and never rely on text-only labels or 'not this' lists. Bin colours: the SWM Rules 2026 (S.O. 388(E), gazetted 28 Jan 2026, in force 1 Apr 2026) make four-stream segregation mandatory and direct local bodies that public bins 'for storage of wet waste shall be painted green, those for storage of dry waste shall be printed blue and if required in public toilets bins painted in red may be placed for sanitary waste'; special-care waste gets no colour (the annual-return forms still count 'green, blue and black bins', black being the old domestic-hazardous colour), and BBMP has used green-wet and red-sanitary bins since at least Aug 2019. Luma's current chips (src/components/sell/family.tsx) put paper on amber, plastic and glass on sky, e-waste on brand green and metal on neutral: the one real clash is green, which every Bengaluru household has been trained to read as 'wet waste', so green on a material chip (e-waste today) or as a 'good to sell' signal muddles the message; sky/blue is actually consistent because everything Luma buys is dry waste, amber has no household-bin meaning (yellow is a hospital biomedical colour only), and red must stay reserved for reject/hazard. Convex: the React client 'automatically retries mutations until they are confirmed to have been written to the database', guarantees each runs once, and 'will warn users if they try to close their browser tab while there are outstanding mutations' (the unsavedChangesWarning option), but that queue lives only in memory; in convex 1.46.0 as installed in this repo the RequestManager keeps in-flight requests in a JavaScript Map and the client code never touches localStorage or IndexedDB, and Convex's own FAQ says it 'doesn't currently provide a full offline sync mechanism'. So a reload, a killed tab or a phone restart while offline silently drops unsent weigh-and-pay records, and the queue must be stored on the phone. Licences (checked 30 Sep 2026): IconScout licenses every asset 'to a single end product', its Digital License allows unlimited use in websites and mobile apps but no redistribution, logo use or print merchandise, free assets carry per-asset attribution requirements shown at download, and the Individual plan is $14.99 per user per month billed annually ($19.99 monthly). Icons8's Universal Multimedia License (effective 27 Nov 2025) requires free accounts to embed a visible, clickable link to icons8.com wherever the assets appear ('Icons by Icons8'), a paid subscription drops attribution and lets you keep using downloaded assets after cancelling, and nobody may ship assets so that third parties can extract them as standalone files. Blush states 'All Illustrations published on Blush can be used for free' in commercial products with unlimited copies and no attribution, forbids reselling, merchandising or compiling a competing library, and Pro adds SVG, print-resolution PNG and the full catalogue; its price is drawn only inside the sign-up widget, so that number is an open item.",
+      "status": "partly",
+      "decision": "Use drawn, semi-abstract pictures of the actual local item with a spoken label for every material, photos only in the drill-down. Re-colour the chips: a blue 'dry/recyclable' header, amber, neutral and a third non-bin colour (for example violet) for families, green only for brand, verified and CO2 accents, red only for reject/hazard. Keep a weigh-and-pay outbox in IndexedDB keyed by a client-generated UUID, make the mutation idempotent on that key, replay on reconnect, and show 'saved on phone, not yet sent' until the server confirms. For artwork, start with Blush free (no attribution, PNG only) or one IconScout Individual seat ($14.99/month) licensed to the Luma app as the single end product; if any Icons8 free asset ships, put the link credit on the About screen.",
+      "whoToAsk": "Blush Pro price: open blush.design/plans while signed in (not in the public page). Chip colours: confirm with a 10-household card sort in the first pilot week. Convex outbox: ask the Convex team on their Discord whether a persisted mutation queue is on the roadmap before building anything larger than the pilot needs.",
+      "sources": [
+        {
+          "title": "Medhi, Prasad, Toyama - Optimal audio-visual representations for illiterate users of computers (WWW 2007, Microsoft Research)",
+          "url": "https://www.microsoft.com/en-us/research/publication/optimal-audio-visual-representations-for-illiterate-users/",
+          "date": "May 2007"
+        },
+        {
+          "title": "Medhi, Sagar, Toyama - Text-Free User Interfaces for Illiterate and Semi-Literate Users (ICTD 2006)",
+          "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/medhi_ictd2006.pdf",
+          "date": "2006"
+        },
+        {
+          "title": "Medhi et al. - Designing Mobile Interfaces for Novice and Low-Literacy Users (ACM ToCHI; states hand-drawn beats photos or icons)",
+          "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ToCHI2711_Medhi.pdf",
+          "date": "April 2011"
+        },
+        {
+          "title": "Wu et al. - How does the design of waste disposal signage influence waste disposal behavior? (Journal of Environmental Psychology 58)",
+          "url": "https://zhaolab.psych.ubc.ca/pdfs/JEVP_2018.pdf",
+          "date": "2018"
+        },
+        {
+          "title": "Solid Waste Management Rules 2026, gazette S.O. 388(E) (OpenCity copy)",
+          "url": "https://data.opencity.in/dataset/0726dd20-6d63-46fa-8c95-c41c20019cdf/resource/f9ba12fc-f9e6-4847-95e3-e7b64a2221a8/download/new-swm-rules.pdf",
+          "date": "28 Jan 2026"
+        },
+        {
+          "title": "PIB - New Solid Waste Management Rules notified; in force from 1 April 2026",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676",
+          "date": "28 Jan 2026"
+        },
+        {
+          "title": "CPCB - Salient features of Solid Waste Management Rules, 2026",
+          "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
+          "date": "2026"
+        },
+        {
+          "title": "Deccan Chronicle - Colour-coding waste! BBMP goes a step ahead",
+          "url": "https://www.deccanchronicle.com/nation/current-affairs/180819/colour-coding-waste-bbmp-goes-a-step-ahead.html",
+          "date": "18 Aug 2019"
+        },
+        {
+          "title": "Convex docs - Convex React (mutation retries and tab-close warning)",
+          "url": "https://docs.convex.dev/client/react",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Convex docs - ConvexReactClientOptions (unsavedChangesWarning)",
+          "url": "https://docs.convex.dev/api/interfaces/react.ConvexReactClientOptions",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Convex - Sync page FAQ ('doesn't currently provide a full offline sync mechanism')",
+          "url": "https://www.convex.dev/sync",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "convex-rn - experimental offline queue for Convex (shows the gap in the official client)",
+          "url": "https://github.com/misterlib/convex-rn",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "IconScout License (single end product; Digital vs Physical Unlimited)",
+          "url": "https://iconscout.com/licenses",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "IconScout Pricing (Individual $14.99/month annual)",
+          "url": "https://iconscout.com/pricing",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "IconScout Free Illustrations FAQ (some free assets require attribution)",
+          "url": "https://iconscout.com/free-illustrations",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Icons8 - Universal Multimedia License Agreement",
+          "url": "https://intercom.help/icons8-7fb7577e8170/en/articles/5534926-universal-multimedia-license-agreement-for-icons8",
+          "date": "effective 27 Nov 2025"
+        },
+        {
+          "title": "Icons8 Pricing FAQ (no attribution on paid; keep assets after cancelling)",
+          "url": "https://icons8.com/pricing",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Blush License",
+          "url": "https://blush.design/license",
+          "date": "accessed 30 Sep 2026"
+        },
+        {
+          "title": "Blush Pricing and Plans (Pro adds SVG and print PNG; no attribution)",
+          "url": "https://blush.design/plans",
+          "date": "accessed 30 Sep 2026"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "Is there evidence on whether low-literacy users recognise materials faster from photos or drawn pictures? Do the SWM Rules 2026 bin colours (wet, dry, sanitary, special care) clash with a green/amber/sky palette for materials? Does the Convex React client keep unsent mutations across an offline reload, or must a weigh-and-pay queue be stored on the phone? What are the licence terms of IconScout, Blush and Icons8 illustrations for commercial apps?",
-   "answer": "Photos versus drawings: the best evidence is from Bangalore itself; Medhi, Prasad and Toyama (WWW 2007) showed 13 health symptoms to 200 illiterate adults in 10 formats and found static hand-drawn pictures were better understood than photographs or icons, voice annotation sped comprehension, and 'richer information is not necessarily better understood', and the 2006 Bangalore-slum study likewise found people could identify both photos and cartoons but preferred semi-abstract cartoons, with photorealism useful only when drilling into detail. For sorting specifically, UBC's three experiments (Journal of Environmental Psychology 58, 2018, literate students, four bins) measured 75.9% accuracy with pictures and 75.2% with icons against 70.2% with words, and found that adding 'not allowed' items to icon signs hurt, so use simple drawn pictures of the exact local item (milk sachet, newspaper bundle, cooking pot) with a spoken name, keep photos for the drill-down, and never rely on text-only labels or 'not this' lists. Bin colours: the SWM Rules 2026 (S.O. 388(E), gazetted 28 Jan 2026, in force 1 Apr 2026) make four-stream segregation mandatory and direct local bodies that public bins 'for storage of wet waste shall be painted green, those for storage of dry waste shall be printed blue and if required in public toilets bins painted in red may be placed for sanitary waste'; special-care waste gets no colour (the annual-return forms still count 'green, blue and black bins', black being the old domestic-hazardous colour), and BBMP has used green-wet and red-sanitary bins since at least Aug 2019. Luma's current chips (src/components/sell/family.tsx) put paper on amber, plastic and glass on sky, e-waste on brand green and metal on neutral: the one real clash is green, which every Bengaluru household has been trained to read as 'wet waste', so green on a material chip (e-waste today) or as a 'good to sell' signal muddles the message; sky/blue is actually consistent because everything Luma buys is dry waste, amber has no household-bin meaning (yellow is a hospital biomedical colour only), and red must stay reserved for reject/hazard. Convex: the React client 'automatically retries mutations until they are confirmed to have been written to the database', guarantees each runs once, and 'will warn users if they try to close their browser tab while there are outstanding mutations' (the unsavedChangesWarning option), but that queue lives only in memory; in convex 1.46.0 as installed in this repo the RequestManager keeps in-flight requests in a JavaScript Map and the client code never touches localStorage or IndexedDB, and Convex's own FAQ says it 'doesn't currently provide a full offline sync mechanism'. So a reload, a killed tab or a phone restart while offline silently drops unsent weigh-and-pay records, and the queue must be stored on the phone. Licences (checked 30 Sep 2026): IconScout licenses every asset 'to a single end product', its Digital License allows unlimited use in websites and mobile apps but no redistribution, logo use or print merchandise, free assets carry per-asset attribution requirements shown at download, and the Individual plan is $14.99 per user per month billed annually ($19.99 monthly). Icons8's Universal Multimedia License (effective 27 Nov 2025) requires free accounts to embed a visible, clickable link to icons8.com wherever the assets appear ('Icons by Icons8'), a paid subscription drops attribution and lets you keep using downloaded assets after cancelling, and nobody may ship assets so that third parties can extract them as standalone files. Blush states 'All Illustrations published on Blush can be used for free' in commercial products with unlimited copies and no attribution, forbids reselling, merchandising or compiling a competing library, and Pro adds SVG, print-resolution PNG and the full catalogue; its price is drawn only inside the sign-up widget, so that number is an open item.",
-   "status": "partly",
-   "decision": "Use drawn, semi-abstract pictures of the actual local item with a spoken label for every material, photos only in the drill-down. Re-colour the chips: a blue 'dry/recyclable' header, amber, neutral and a third non-bin colour (for example violet) for families, green only for brand, verified and CO2 accents, red only for reject/hazard. Keep a weigh-and-pay outbox in IndexedDB keyed by a client-generated UUID, make the mutation idempotent on that key, replay on reconnect, and show 'saved on phone, not yet sent' until the server confirms. For artwork, start with Blush free (no attribution, PNG only) or one IconScout Individual seat ($14.99/month) licensed to the Luma app as the single end product; if any Icons8 free asset ships, put the link credit on the About screen.",
-   "whoToAsk": "Blush Pro price: open blush.design/plans while signed in (not in the public page). Chip colours: confirm with a 10-household card sort in the first pilot week. Convex outbox: ask the Convex team on their Discord whether a persisted mutation queue is on the roadmap before building anything larger than the pilot needs.",
-   "sources": [
-    {
-     "title": "Medhi, Prasad, Toyama - Optimal audio-visual representations for illiterate users of computers (WWW 2007, Microsoft Research)",
-     "url": "https://www.microsoft.com/en-us/research/publication/optimal-audio-visual-representations-for-illiterate-users/",
-     "date": "May 2007"
-    },
-    {
-     "title": "Medhi, Sagar, Toyama - Text-Free User Interfaces for Illiterate and Semi-Literate Users (ICTD 2006)",
-     "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/medhi_ictd2006.pdf",
-     "date": "2006"
-    },
-    {
-     "title": "Medhi et al. - Designing Mobile Interfaces for Novice and Low-Literacy Users (ACM ToCHI; states hand-drawn beats photos or icons)",
-     "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ToCHI2711_Medhi.pdf",
-     "date": "April 2011"
-    },
-    {
-     "title": "Wu et al. - How does the design of waste disposal signage influence waste disposal behavior? (Journal of Environmental Psychology 58)",
-     "url": "https://zhaolab.psych.ubc.ca/pdfs/JEVP_2018.pdf",
-     "date": "2018"
-    },
-    {
-     "title": "Solid Waste Management Rules 2026, gazette S.O. 388(E) (OpenCity copy)",
-     "url": "https://data.opencity.in/dataset/0726dd20-6d63-46fa-8c95-c41c20019cdf/resource/f9ba12fc-f9e6-4847-95e3-e7b64a2221a8/download/new-swm-rules.pdf",
-     "date": "28 Jan 2026"
-    },
-    {
-     "title": "PIB - New Solid Waste Management Rules notified; in force from 1 April 2026",
-     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676",
-     "date": "28 Jan 2026"
-    },
-    {
-     "title": "CPCB - Salient features of Solid Waste Management Rules, 2026",
-     "url": "https://cpcb.gov.in/uploads/MSW/Salient_features_SWM_Rules2026.pdf",
-     "date": "2026"
-    },
-    {
-     "title": "Deccan Chronicle - Colour-coding waste! BBMP goes a step ahead",
-     "url": "https://www.deccanchronicle.com/nation/current-affairs/180819/colour-coding-waste-bbmp-goes-a-step-ahead.html",
-     "date": "18 Aug 2019"
-    },
-    {
-     "title": "Convex docs - Convex React (mutation retries and tab-close warning)",
-     "url": "https://docs.convex.dev/client/react",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Convex docs - ConvexReactClientOptions (unsavedChangesWarning)",
-     "url": "https://docs.convex.dev/api/interfaces/react.ConvexReactClientOptions",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Convex - Sync page FAQ ('doesn't currently provide a full offline sync mechanism')",
-     "url": "https://www.convex.dev/sync",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "convex-rn - experimental offline queue for Convex (shows the gap in the official client)",
-     "url": "https://github.com/misterlib/convex-rn",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "IconScout License (single end product; Digital vs Physical Unlimited)",
-     "url": "https://iconscout.com/licenses",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "IconScout Pricing (Individual $14.99/month annual)",
-     "url": "https://iconscout.com/pricing",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "IconScout Free Illustrations FAQ (some free assets require attribution)",
-     "url": "https://iconscout.com/free-illustrations",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Icons8 - Universal Multimedia License Agreement",
-     "url": "https://intercom.help/icons8-7fb7577e8170/en/articles/5534926-universal-multimedia-license-agreement-for-icons8",
-     "date": "effective 27 Nov 2025"
-    },
-    {
-     "title": "Icons8 Pricing FAQ (no attribution on paid; keep assets after cancelling)",
-     "url": "https://icons8.com/pricing",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Blush License",
-     "url": "https://blush.design/license",
-     "date": "accessed 30 Sep 2026"
-    },
-    {
-     "title": "Blush Pricing and Plans (Pro adds SVG and print PNG; no attribution)",
-     "url": "https://blush.design/plans",
-     "date": "accessed 30 Sep 2026"
-    }
-   ]
-  }
- ]
+  ]
 }

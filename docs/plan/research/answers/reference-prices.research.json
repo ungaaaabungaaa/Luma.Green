@@ -1,198 +1,198 @@
 {
- "cluster": "Reference prices and price policy",
- "answers": [
-  {
-   "question": "Which reference-price sources can Luma.Green use legally and cheaply: MCX delayed data (terms and yearly cost through an authorised vendor), a BigMint data licence (price), mill price notices (paper mills publishing waste-paper buying prices)? May anonymised yard buy-price posts be combined into a public board line?",
-   "answer": "MCX: the exchange's own datafeed policy (page checked 29 Sep 2026, policy document dated 10 Jul 2026) lets a non-member show exchange data on its website or app only under a signed data-feed agreement, allows only delayed data for public website display, bars resale, and requires MCX's explicit permission for any public-internet display; the domestic price list effective 1 Jul 2024 charges Rs 2,00,000 a year for a 15-minute-delayed feed across terminal, website and mobile (80% of list, Rs 1,60,000, for a single segment such as website-only; 10-min Rs 3,00,000; 5-min Rs 4,50,000), Rs 2,00,000 a year for end-of-day Bhav copy or for polled spot prices, plus Rs 1,00,000 a year internet connectivity, all before 18% GST, so the cheapest lawful public MCX line costs about Rs 3.1-3.5 lakh a year. Authorised real-time vendors (list dated 5 Jun 2024: Bloomberg, Refinitiv, ICE, FactSet, Cogencis, Global Financial Datafeeds, TrueData, Ticker Data) sell screen access to individuals (TrueData advertises a free 15-minute-delayed tier), but the vendor tariff's delayed entitlement is Rs 300 per terminal per month for the subscriber's own screen, any onward display still needs MCX approval and fees, and MCX's website terms forbid copying, republishing or scraping the free quotes on mcxindia.com. BigMint: its terms make every subscription single-user and non-redistributable, its data-licensing FAQ says you may not post BigMint prices on your website or any public domain without a redistribution licence that is 'priced at a slight premium' on request, no price is published for any plan (Silver/Gold/Platinum/Platinum+ web, Price Only/Standard/Professional app), and its scrap coverage is ferrous and non-ferrous metal with no paper series and no Bengaluru series visible. Mill notices: no Indian kraft mill was found publishing a public waste-paper buying price; the public, dated figures come from trade press quoting the Indian Recovered Paper Traders Association (Pulp & Paper Times, 26 Jul 2023: kraft waste Rs 15.80/kg Meerut, Rs 15/kg Gujarat, Rs 13-13.5/kg at southern mills; 25 Sep 2024: kraft waste to finished kraft gap Rs 12.50-13/kg; 28 Jan 2025: North India corrugated waste Rs 20,500/MT), so a mill line for Bengaluru has to be a weekly phone poll of two or three mills recorded with date and source. Anonymised yard posts: section 3(3) of the Competition Act presumes harm from any arrangement among competitors that directly or indirectly determines purchase prices, the CCI Compliance Manual (2 May 2017) lists 'past, current or future prices' and 'individual company prices' as don'ts for any competitor contact while allowing a firm to confirm market prices through 'open market sources', and since the bearings (2020), beer and paper cartel orders (2021) the CCI treats price-information exchange as a standalone violation even without implementation (AZB analysis, 31 Dec 2021); India has no formal safe harbour, but the EU's 2023 Horizontal Guidelines (21 Jul 2023) spell out the accepted design: rely on aggregate and historical data, reduce frequency, restrict access, and never circulate individualised figures. A board line that is Luma.Green's own aggregation of the previous day's posts from at least five independent yards, shown as a median and range with no yard names, where yards cannot see one another's posts and Luma.Green publishes no 'suggested' or floor price for yards, fits that design and is legally the safer way to give the chain a reference; it still needs a competition lawyer's sign-off before launch.",
-   "status": "partly",
-   "decision": "For the pilot, publish only Luma.Green's own aggregated yard line (previous-day median and range, at least five yards, no identities, yards blind to each other's posts) plus a dated weekly phone poll of two or three kraft mills; do not license MCX or BigMint yet, use their free public pages internally for direction only, and budget about Rs 3.5 lakh a year (15-minute-delayed website licence plus connectivity plus GST) if the board later needs an exchange number.",
-   "whoToAsk": "Competition counsel, for the aggregated board line and for how the household floor is framed; MCX datafeed desk (datafeed@mcxindia.com, +91 22 6731 8888 ext 9206) for a written quote and the exact permission scope for a website line; BigMint sales (info@steelmint.com) for a single-user plan price and a redistribution-licence quote; IRPTA and two or three Karnataka/Tamil Nadu kraft mills for a standing weekly mill-gate quote.",
-   "sources": [
+  "cluster": "Reference prices and price policy",
+  "answers": [
     {
-     "title": "MCX - Data Feed (policy, subscriber types, delayed lags, connectivity charges)",
-     "url": "https://www.mcxindia.com/technology/datafeed",
-     "date": "Policy dated 10 Jul 2026; page read 29 Sep 2026"
+      "question": "Which reference-price sources can Luma.Green use legally and cheaply: MCX delayed data (terms and yearly cost through an authorised vendor), a BigMint data licence (price), mill price notices (paper mills publishing waste-paper buying prices)? May anonymised yard buy-price posts be combined into a public board line?",
+      "answer": "MCX: the exchange's own datafeed policy (page checked 29 Sep 2026, policy document dated 10 Jul 2026) lets a non-member show exchange data on its website or app only under a signed data-feed agreement, allows only delayed data for public website display, bars resale, and requires MCX's explicit permission for any public-internet display; the domestic price list effective 1 Jul 2024 charges Rs 2,00,000 a year for a 15-minute-delayed feed across terminal, website and mobile (80% of list, Rs 1,60,000, for a single segment such as website-only; 10-min Rs 3,00,000; 5-min Rs 4,50,000), Rs 2,00,000 a year for end-of-day Bhav copy or for polled spot prices, plus Rs 1,00,000 a year internet connectivity, all before 18% GST, so the cheapest lawful public MCX line costs about Rs 3.1-3.5 lakh a year. Authorised real-time vendors (list dated 5 Jun 2024: Bloomberg, Refinitiv, ICE, FactSet, Cogencis, Global Financial Datafeeds, TrueData, Ticker Data) sell screen access to individuals (TrueData advertises a free 15-minute-delayed tier), but the vendor tariff's delayed entitlement is Rs 300 per terminal per month for the subscriber's own screen, any onward display still needs MCX approval and fees, and MCX's website terms forbid copying, republishing or scraping the free quotes on mcxindia.com. BigMint: its terms make every subscription single-user and non-redistributable, its data-licensing FAQ says you may not post BigMint prices on your website or any public domain without a redistribution licence that is 'priced at a slight premium' on request, no price is published for any plan (Silver/Gold/Platinum/Platinum+ web, Price Only/Standard/Professional app), and its scrap coverage is ferrous and non-ferrous metal with no paper series and no Bengaluru series visible. Mill notices: no Indian kraft mill was found publishing a public waste-paper buying price; the public, dated figures come from trade press quoting the Indian Recovered Paper Traders Association (Pulp & Paper Times, 26 Jul 2023: kraft waste Rs 15.80/kg Meerut, Rs 15/kg Gujarat, Rs 13-13.5/kg at southern mills; 25 Sep 2024: kraft waste to finished kraft gap Rs 12.50-13/kg; 28 Jan 2025: North India corrugated waste Rs 20,500/MT), so a mill line for Bengaluru has to be a weekly phone poll of two or three mills recorded with date and source. Anonymised yard posts: section 3(3) of the Competition Act presumes harm from any arrangement among competitors that directly or indirectly determines purchase prices, the CCI Compliance Manual (2 May 2017) lists 'past, current or future prices' and 'individual company prices' as don'ts for any competitor contact while allowing a firm to confirm market prices through 'open market sources', and since the bearings (2020), beer and paper cartel orders (2021) the CCI treats price-information exchange as a standalone violation even without implementation (AZB analysis, 31 Dec 2021); India has no formal safe harbour, but the EU's 2023 Horizontal Guidelines (21 Jul 2023) spell out the accepted design: rely on aggregate and historical data, reduce frequency, restrict access, and never circulate individualised figures. A board line that is Luma.Green's own aggregation of the previous day's posts from at least five independent yards, shown as a median and range with no yard names, where yards cannot see one another's posts and Luma.Green publishes no 'suggested' or floor price for yards, fits that design and is legally the safer way to give the chain a reference; it still needs a competition lawyer's sign-off before launch.",
+      "status": "partly",
+      "decision": "For the pilot, publish only Luma.Green's own aggregated yard line (previous-day median and range, at least five yards, no identities, yards blind to each other's posts) plus a dated weekly phone poll of two or three kraft mills; do not license MCX or BigMint yet, use their free public pages internally for direction only, and budget about Rs 3.5 lakh a year (15-minute-delayed website licence plus connectivity plus GST) if the board later needs an exchange number.",
+      "whoToAsk": "Competition counsel, for the aggregated board line and for how the household floor is framed; MCX datafeed desk (datafeed@mcxindia.com, +91 22 6731 8888 ext 9206) for a written quote and the exact permission scope for a website line; BigMint sales (info@steelmint.com) for a single-user plan price and a redistribution-licence quote; IRPTA and two or three Karnataka/Tamil Nadu kraft mills for a standing weekly mill-gate quote.",
+      "sources": [
+        {
+          "title": "MCX - Data Feed (policy, subscriber types, delayed lags, connectivity charges)",
+          "url": "https://www.mcxindia.com/technology/datafeed",
+          "date": "Policy dated 10 Jul 2026; page read 29 Sep 2026"
+        },
+        {
+          "title": "MCX Data Feed Price List for Domestic Vendors (Rs 2,00,000/yr 15-min delayed; EOD; spot; non-display)",
+          "url": "https://www.mcxindia.com/docs/default-source/datafeedlink/mcx-data-feed-price-list-for-domestic-vendors----effective-from-july-01-20246be30cd5-d0b6-46c8-a0de-10c9cfabed14.pdf?sfvrsn=c41d4e85_1",
+          "date": "Effective 1 Jul 2024"
+        },
+        {
+          "title": "MCX Authorised Realtime Data Vendors",
+          "url": "https://www.mcxindia.com/docs/default-source/datafeedlink/authorised-realtime-data-vendors488cd0da-9686-42f7-9077-2fc7a88de7f6.pdf?sfvrsn=501418c_1",
+          "date": "5 Jun 2024"
+        },
+        {
+          "title": "MCX Terms and Conditions of Usage for Website (no copying, republishing or scraping)",
+          "url": "https://www.mcxindia.com/terms-and-conditions-of-usage-for-website",
+          "date": "Read 29 Sep 2026"
+        },
+        {
+          "title": "TrueData - authorised NSE/BSE/MCX vendor (free 15-min delayed tier)",
+          "url": "https://www.truedata.in/",
+          "date": "Read 29 Sep 2026"
+        },
+        {
+          "title": "BigMint Terms and Conditions (single user, no redistribution)",
+          "url": "https://www.bigmint.co/terms-and-conditions",
+          "date": "Undated; read 29 Sep 2026"
+        },
+        {
+          "title": "BigMint Data Licensing FAQ (no posting prices on your website without redistribution licence)",
+          "url": "https://www.bigmint.co/datalicensing",
+          "date": "Undated; read 29 Sep 2026"
+        },
+        {
+          "title": "BigMint Scrap & Metallics (Indian ferrous scrap series; gated)",
+          "url": "https://www.bigmint.co/scrapmetallics",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "Pulp & Paper Times - Waste paper prices increased 10-15% in July (IRPTA quotes by region)",
+          "url": "https://thepulpandpapertimes.com/news/waste-paper-price-increased-by-10-to-15-in-july-898",
+          "date": "26 Jul 2023"
+        },
+        {
+          "title": "Pulp & Paper Times - Price and demand scenarios in the kraft paper industry (IRPTA)",
+          "url": "https://thepulpandpapertimes.com/news/industry-news/price-and-2119",
+          "date": "25 Sep 2024"
+        },
+        {
+          "title": "Pulp & Paper Times - Kraft paper mills face shutdowns and price fluctuations (Rs 20,500/MT North India)",
+          "url": "https://thepulpandpapertimes.com/news/industry-news/kraft-paper-mills-2187",
+          "date": "28 Jan 2025"
+        },
+        {
+          "title": "CCI Competition Compliance Manual for Enterprises (do's and don'ts on prices, trade associations)",
+          "url": "https://www.cci.gov.in/images/publications_compliance_manual/en/compliance-manual1652179683.pdf",
+          "date": "2 May 2017"
+        },
+        {
+          "title": "AZB & Partners - Information Exchange: a standalone violation under Indian competition law",
+          "url": "https://www.azbpartners.com/bank/information-exchange-a-standalone-violation-under-indian-competition-law/",
+          "date": "31 Dec 2021"
+        },
+        {
+          "title": "European Commission - Guidelines on horizontal co-operation agreements, OJ C 259 (information exchange chapter)",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52023XC0721(01)",
+          "date": "21 Jul 2023"
+        }
+      ]
     },
     {
-     "title": "MCX Data Feed Price List for Domestic Vendors (Rs 2,00,000/yr 15-min delayed; EOD; spot; non-display)",
-     "url": "https://www.mcxindia.com/docs/default-source/datafeedlink/mcx-data-feed-price-list-for-domestic-vendors----effective-from-july-01-20246be30cd5-d0b6-46c8-a0de-10c9cfabed14.pdf?sfvrsn=c41d4e85_1",
-     "date": "Effective 1 Jul 2024"
-    },
-    {
-     "title": "MCX Authorised Realtime Data Vendors",
-     "url": "https://www.mcxindia.com/docs/default-source/datafeedlink/authorised-realtime-data-vendors488cd0da-9686-42f7-9077-2fc7a88de7f6.pdf?sfvrsn=501418c_1",
-     "date": "5 Jun 2024"
-    },
-    {
-     "title": "MCX Terms and Conditions of Usage for Website (no copying, republishing or scraping)",
-     "url": "https://www.mcxindia.com/terms-and-conditions-of-usage-for-website",
-     "date": "Read 29 Sep 2026"
-    },
-    {
-     "title": "TrueData - authorised NSE/BSE/MCX vendor (free 15-min delayed tier)",
-     "url": "https://www.truedata.in/",
-     "date": "Read 29 Sep 2026"
-    },
-    {
-     "title": "BigMint Terms and Conditions (single user, no redistribution)",
-     "url": "https://www.bigmint.co/terms-and-conditions",
-     "date": "Undated; read 29 Sep 2026"
-    },
-    {
-     "title": "BigMint Data Licensing FAQ (no posting prices on your website without redistribution licence)",
-     "url": "https://www.bigmint.co/datalicensing",
-     "date": "Undated; read 29 Sep 2026"
-    },
-    {
-     "title": "BigMint Scrap & Metallics (Indian ferrous scrap series; gated)",
-     "url": "https://www.bigmint.co/scrapmetallics",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "Pulp & Paper Times - Waste paper prices increased 10-15% in July (IRPTA quotes by region)",
-     "url": "https://thepulpandpapertimes.com/news/waste-paper-price-increased-by-10-to-15-in-july-898",
-     "date": "26 Jul 2023"
-    },
-    {
-     "title": "Pulp & Paper Times - Price and demand scenarios in the kraft paper industry (IRPTA)",
-     "url": "https://thepulpandpapertimes.com/news/industry-news/price-and-2119",
-     "date": "25 Sep 2024"
-    },
-    {
-     "title": "Pulp & Paper Times - Kraft paper mills face shutdowns and price fluctuations (Rs 20,500/MT North India)",
-     "url": "https://thepulpandpapertimes.com/news/industry-news/kraft-paper-mills-2187",
-     "date": "28 Jan 2025"
-    },
-    {
-     "title": "CCI Competition Compliance Manual for Enterprises (do's and don'ts on prices, trade associations)",
-     "url": "https://www.cci.gov.in/images/publications_compliance_manual/en/compliance-manual1652179683.pdf",
-     "date": "2 May 2017"
-    },
-    {
-     "title": "AZB & Partners - Information Exchange: a standalone violation under Indian competition law",
-     "url": "https://www.azbpartners.com/bank/information-exchange-a-standalone-violation-under-indian-competition-law/",
-     "date": "31 Dec 2021"
-    },
-    {
-     "title": "European Commission - Guidelines on horizontal co-operation agreements, OJ C 259 (information exchange chapter)",
-     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52023XC0721(01)",
-     "date": "21 Jul 2023"
+      "question": "Aluminium cans: should the household price be per kg or per can, and what does a beverage can weigh (cans per kg)? Above the household level, should prices be shown GST-inclusive or exclusive? Should drop-off pay a published premium over doorstep pickup, and is one city-wide floor enough for a pilot? What evidence is there that WhatsApp groups and calls from the next buyer set daily rates for kabadiwalas and yards?",
+      "answer": "Price cans per kg, not per can: Bengaluru's trade already does so, with The Kabadiwala's Bangalore list (29 Sep 2026) showing 'Beverage Cans (Aluminium) Rs 60/kg' against Rs 150/kg for ordinary aluminium and scraprates.in showing aluminium at Rs 156/kg, because cans are thin, lacquered and usually crushed, so counting invites disputes while weight is what the yard pays on. An empty can weighs roughly 10-15 g: about 14 g (some 70 per kg) for a US 355 ml can per Wikipedia's EPA-sourced figure (2011), 14.9 g average for Australian 330 ml cans (2001), 11.3 g in the Australian Aluminium Council/Roland Berger assessment (May 2023, about 88 per kg) and as low as 9.5 g for Ball's lightweight 330 ml (2012); Ball India makes 185, 250, 330, 355 and 500 ml cans (Jan 2022), so India's slim-and-sleek-heavy mix implies about 75-100 cans per kg, and at Rs 60/kg a can is worth under one rupee, which is why a per-can price would look absurd. GST: under Notification 9/2025-Central Tax (Rate) of 17 Sep 2025, effective 22 Sep 2025, metal scrap including aluminium (7602) and plastic scrap (3915) sit in Schedule II at 18%, while paper waste (4707), glass cullet (7001) and rubber waste (4004) sit in Schedule I at 5%; since 10 Oct 2024 a registered buyer pays 18% under reverse charge on metal scrap bought from unregistered sellers (Notification 06/2024-CT(R), 8 Oct 2024) and must deduct 2% GST-TDS on registered-to-registered metal scrap where the taxable value exceeds Rs 2,50,000 per transaction (Notification 25/2024-CT, 9 Oct 2024). The trade quotes ex-GST (Steel Baba: every price 'excludes 18% GST', 29 Sep 2026; Tata nexarc: prices exclude tax and freight, 7 Sep 2026), so above the household level show the base price ex-GST with the rate badge and the computed total beside it, store base, rate and tax as separate integers, and flag whether reverse charge applies; households, who are unregistered, see one all-in number. Drop-off versus pickup: Bengaluru dealers quote doorstep pickups Rs 5-7/kg below the wholesale baseline and give free pickup only from about 25-50 kg (walk-ins from 10-20 kg), with 100 kg-plus lots earning better rates (scraprates.in, 29 Sep 2026); Delhi-NCR apps enforce minimum pickups of Rs 999 (Kabadiwala Online) or Rs 5,000 and 30 kg (Recycle Baba) and a Rs 499 cancellation charge to cover vehicle and manpower, and Prime Scrap (Noida) sets 15 kg minimum with rates 'updated daily based on MCX and regional markets', so yes, publish a drop-off premium (equivalently a pickup deduction) and a minimum pickup lot, with the amount set from the pilot's measured Saathi cost per stop rather than guessed now. Floor: public sources treat Bengaluru as one market (5-8% above the Karnataka average, quotes differentiated by PIN code only), so one city-wide floor is enough for the pilot, with zone offsets added only if pilot data show a consistent spread above 5%, and the floor should be framed as Luma.Green's own guaranteed offer rather than a rate agreed among kabadiwalas, which would raise the competition-law issue in question 1. WhatsApp and calls: the daily-rate economy is visibly WhatsApp- and phone-first (Steel Baba and Tata nexarc push daily scrap rates by WhatsApp and missed call; the 'Scrap Price Daily (Kabad Rate)' Android app has 50,000-plus downloads, last updated 23 Aug 2026; kabadiwala apps state rates 'change daily' and that 'there is no single scrap price', asking sellers to 'call or WhatsApp' to confirm), and Bengaluru studies record the resulting power imbalance (WIEGO 2013: pickers 'exploited by scrap dealers on the price and weight'; Systemiq 2024 Bengaluru case: 68% of surveyed pickers know the price before selling, with 'lack of transparency ... with buyers (prices)' a leading complaint), but no public study documents the specific group-and-callback mechanism for kabadiwalas and yards, so that claim rests on trade practice and should be confirmed shop by shop.",
+      "status": "partly",
+      "decision": "Household aluminium cans priced per kg with an on-screen helper of '~Rs x per can' at 80 cans/kg until the pilot weighs 100 cans; above households show ex-GST base + rate + total (18% metal and plastic, 5% paper and glass) and record reverse-charge status; one Bengaluru floor framed as Luma.Green's own offer; publish a drop-off premium and a minimum pickup lot, with the size fixed from Saathi cost per stop in the first pilot weeks.",
+      "whoToAsk": "Ten kabadiwala shops and two yards, for the real rate-setting channel and the current pickup-versus-drop-off spread in Bengaluru; a CA, for booking reverse-charge GST and 2% GST-TDS when kabadiwalas are unregistered or cross Rs 2.5 lakh per invoice; the pilot itself, to weigh 100 mixed cans in week one and to cost a Saathi stop.",
+      "sources": [
+        {
+          "title": "The Kabadiwala - Scrap prices in Bangalore (Beverage Cans Rs 60/kg; Aluminium Rs 150/kg)",
+          "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+          "date": "Read 29 Sep 2026"
+        },
+        {
+          "title": "scraprates.in - Bengaluru scrap rates (aluminium Rs 156.16/kg; 5-8% above state average; 10-25 kg pickup minimums)",
+          "url": "https://scraprates.in/bengaluru",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "scraprates.in - Bangalore newspaper scrap rate (pickup quotes Rs 5-7/kg below wholesale; free pickup from 25-50 kg)",
+          "url": "https://scraprates.in/bangalore/newspaper-scrap-price",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "Wikipedia - Drink can (14 g, ~70 per kg US can, 2011; 14.9 g Australian 330 ml, 2001)",
+          "url": "https://en.wikipedia.org/wiki/Drink_can",
+          "date": "Read 29 Sep 2026"
+        },
+        {
+          "title": "Australian Aluminium Council / Roland Berger - Aluminium Cans Market Assessment (estimated 11.3 g per can)",
+          "url": "https://aluminium.org.au/wp-content/uploads/2023/10/231009-Aluminium-Cans-Market-Assessment-Australia.pdf",
+          "date": "May 2023"
+        },
+        {
+          "title": "CanTech International - Ball reduces 330 ml can to under 9.5 g",
+          "url": "https://www.cantechonline.com/news/3522/ball-reduces-weight-of-beverage-cans/",
+          "date": "14 Nov 2012"
+        },
+        {
+          "title": "FoodTechBiz - Ball Beverage Packaging India can sizes (185-500 ml)",
+          "url": "https://www.foodtechbiz.com/opinion/aluminum-cans-help-to-meet-sustainability-goals-ball-beverage-packaging-india",
+          "date": "18 Jan 2022"
+        },
+        {
+          "title": "CBIC Notification No. 9/2025-Central Tax (Rate) - schedules (4707, 7001, 4004 at 5%; 3915, 7204, 7602 at 18%)",
+          "url": "https://d23z1tp9il9etb.cloudfront.net/download/gstlaw/NOTIFICATION%20NO.%209_2025-CENTRAL%20TAX%20(RATE)1759486688.pdf",
+          "date": "17 Sep 2025 (effective 22 Sep 2025)"
+        },
+        {
+          "title": "Busy.in - GST rates on scrap after 22 Sep 2025 (table by HSN)",
+          "url": "https://busy.in/gst-rates/scrap/",
+          "date": "8 Sep 2026"
+        },
+        {
+          "title": "Taxguru - Metal scrap from unregistered suppliers brought under reverse charge (Notification 06/2024-CT(R))",
+          "url": "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html",
+          "date": "9 Oct 2024"
+        },
+        {
+          "title": "Taxguru - TDS under GST on metal scrap (Notification 25/2024-Central Tax, 2%, Rs 2.5 lakh threshold)",
+          "url": "https://taxguru.in/goods-and-service-tax/tds-gst-metal-scrap-notification-no-25-2024-central-tax.html",
+          "date": "14 Oct 2024"
+        },
+        {
+          "title": "Steel Baba - Iron scrap rate today (all prices exclude 18% GST; WhatsApp delivery; Bengaluru Rs 35,400/MT)",
+          "url": "https://steel-baba.com/",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "Steel Baba - Mandi Gobindgarh scrap rate today (dealer surveys, WhatsApp quotes)",
+          "url": "https://steel-baba.com/today-scrap-rate-mandi-gobindgarh/",
+          "date": "29 Sep 2026"
+        },
+        {
+          "title": "Tata nexarc - Iron scrap rate today (WhatsApp/missed-call rates; prices exclude tax)",
+          "url": "https://blog.tatanexarc.com/da/iron-scrap-rate-today/",
+          "date": "7 Sep 2026"
+        },
+        {
+          "title": "Google Play - Scrap Price Daily (Kabad Rate) by SteelMenu (50K+ downloads)",
+          "url": "https://play.google.com/store/apps/details?id=com.steelmenubusiness.priceweightcalculator&hl=en_IE",
+          "date": "Updated 23 Aug 2026"
+        },
+        {
+          "title": "Kabadiwala Online - Scrap price list (rates change daily; min pickup Rs 999; Rs 499 cancellation)",
+          "url": "https://kabadiwalaonline.in/price-list/",
+          "date": "Read 29 Sep 2026"
+        },
+        {
+          "title": "Scrap Kabadi - Scrap price today ('no single scrap price'; call or WhatsApp for live rates)",
+          "url": "https://scrapkabadi.com/scrap-price-today/",
+          "date": "Read 29 Sep 2026"
+        },
+        {
+          "title": "Prime Scrap - Current rates (15 kg minimum; rates updated daily on MCX and regional markets)",
+          "url": "https://www.primescrap.in/rates",
+          "date": "Rates dated 23 Jun 2026; read 29 Sep 2026"
+        },
+        {
+          "title": "Recycle Baba - Scrap price list (Rs 5,000 / 30 kg minimum pickup)",
+          "url": "https://recyclebaba.com/scrap-price-list",
+          "date": "Read 29 Sep 2026"
+        },
+        {
+          "title": "WIEGO - Organizing Informal Waste Pickers: A Case Study of Bengaluru (Chengappa)",
+          "url": "https://www.wiego.org/wp-content/uploads/2019/09/Chengappa-Organizing-Informal-Waste-Pickers-India.pdf",
+          "date": "2013"
+        },
+        {
+          "title": "Fair Circularity Initiative / Systemiq - A Living Income for the Informal Waste Sector (Bengaluru case study)",
+          "url": "https://www.systemiq.earth/reports/downloads/Systemiq-A_Living_Income_for_the_Informal_Waste_Sector_EN.pdf",
+          "date": "2024"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "question": "Aluminium cans: should the household price be per kg or per can, and what does a beverage can weigh (cans per kg)? Above the household level, should prices be shown GST-inclusive or exclusive? Should drop-off pay a published premium over doorstep pickup, and is one city-wide floor enough for a pilot? What evidence is there that WhatsApp groups and calls from the next buyer set daily rates for kabadiwalas and yards?",
-   "answer": "Price cans per kg, not per can: Bengaluru's trade already does so, with The Kabadiwala's Bangalore list (29 Sep 2026) showing 'Beverage Cans (Aluminium) Rs 60/kg' against Rs 150/kg for ordinary aluminium and scraprates.in showing aluminium at Rs 156/kg, because cans are thin, lacquered and usually crushed, so counting invites disputes while weight is what the yard pays on. An empty can weighs roughly 10-15 g: about 14 g (some 70 per kg) for a US 355 ml can per Wikipedia's EPA-sourced figure (2011), 14.9 g average for Australian 330 ml cans (2001), 11.3 g in the Australian Aluminium Council/Roland Berger assessment (May 2023, about 88 per kg) and as low as 9.5 g for Ball's lightweight 330 ml (2012); Ball India makes 185, 250, 330, 355 and 500 ml cans (Jan 2022), so India's slim-and-sleek-heavy mix implies about 75-100 cans per kg, and at Rs 60/kg a can is worth under one rupee, which is why a per-can price would look absurd. GST: under Notification 9/2025-Central Tax (Rate) of 17 Sep 2025, effective 22 Sep 2025, metal scrap including aluminium (7602) and plastic scrap (3915) sit in Schedule II at 18%, while paper waste (4707), glass cullet (7001) and rubber waste (4004) sit in Schedule I at 5%; since 10 Oct 2024 a registered buyer pays 18% under reverse charge on metal scrap bought from unregistered sellers (Notification 06/2024-CT(R), 8 Oct 2024) and must deduct 2% GST-TDS on registered-to-registered metal scrap where the taxable value exceeds Rs 2,50,000 per transaction (Notification 25/2024-CT, 9 Oct 2024). The trade quotes ex-GST (Steel Baba: every price 'excludes 18% GST', 29 Sep 2026; Tata nexarc: prices exclude tax and freight, 7 Sep 2026), so above the household level show the base price ex-GST with the rate badge and the computed total beside it, store base, rate and tax as separate integers, and flag whether reverse charge applies; households, who are unregistered, see one all-in number. Drop-off versus pickup: Bengaluru dealers quote doorstep pickups Rs 5-7/kg below the wholesale baseline and give free pickup only from about 25-50 kg (walk-ins from 10-20 kg), with 100 kg-plus lots earning better rates (scraprates.in, 29 Sep 2026); Delhi-NCR apps enforce minimum pickups of Rs 999 (Kabadiwala Online) or Rs 5,000 and 30 kg (Recycle Baba) and a Rs 499 cancellation charge to cover vehicle and manpower, and Prime Scrap (Noida) sets 15 kg minimum with rates 'updated daily based on MCX and regional markets', so yes, publish a drop-off premium (equivalently a pickup deduction) and a minimum pickup lot, with the amount set from the pilot's measured Saathi cost per stop rather than guessed now. Floor: public sources treat Bengaluru as one market (5-8% above the Karnataka average, quotes differentiated by PIN code only), so one city-wide floor is enough for the pilot, with zone offsets added only if pilot data show a consistent spread above 5%, and the floor should be framed as Luma.Green's own guaranteed offer rather than a rate agreed among kabadiwalas, which would raise the competition-law issue in question 1. WhatsApp and calls: the daily-rate economy is visibly WhatsApp- and phone-first (Steel Baba and Tata nexarc push daily scrap rates by WhatsApp and missed call; the 'Scrap Price Daily (Kabad Rate)' Android app has 50,000-plus downloads, last updated 23 Aug 2026; kabadiwala apps state rates 'change daily' and that 'there is no single scrap price', asking sellers to 'call or WhatsApp' to confirm), and Bengaluru studies record the resulting power imbalance (WIEGO 2013: pickers 'exploited by scrap dealers on the price and weight'; Systemiq 2024 Bengaluru case: 68% of surveyed pickers know the price before selling, with 'lack of transparency ... with buyers (prices)' a leading complaint), but no public study documents the specific group-and-callback mechanism for kabadiwalas and yards, so that claim rests on trade practice and should be confirmed shop by shop.",
-   "status": "partly",
-   "decision": "Household aluminium cans priced per kg with an on-screen helper of '~Rs x per can' at 80 cans/kg until the pilot weighs 100 cans; above households show ex-GST base + rate + total (18% metal and plastic, 5% paper and glass) and record reverse-charge status; one Bengaluru floor framed as Luma.Green's own offer; publish a drop-off premium and a minimum pickup lot, with the size fixed from Saathi cost per stop in the first pilot weeks.",
-   "whoToAsk": "Ten kabadiwala shops and two yards, for the real rate-setting channel and the current pickup-versus-drop-off spread in Bengaluru; a CA, for booking reverse-charge GST and 2% GST-TDS when kabadiwalas are unregistered or cross Rs 2.5 lakh per invoice; the pilot itself, to weigh 100 mixed cans in week one and to cost a Saathi stop.",
-   "sources": [
-    {
-     "title": "The Kabadiwala - Scrap prices in Bangalore (Beverage Cans Rs 60/kg; Aluminium Rs 150/kg)",
-     "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore",
-     "date": "Read 29 Sep 2026"
-    },
-    {
-     "title": "scraprates.in - Bengaluru scrap rates (aluminium Rs 156.16/kg; 5-8% above state average; 10-25 kg pickup minimums)",
-     "url": "https://scraprates.in/bengaluru",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "scraprates.in - Bangalore newspaper scrap rate (pickup quotes Rs 5-7/kg below wholesale; free pickup from 25-50 kg)",
-     "url": "https://scraprates.in/bangalore/newspaper-scrap-price",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "Wikipedia - Drink can (14 g, ~70 per kg US can, 2011; 14.9 g Australian 330 ml, 2001)",
-     "url": "https://en.wikipedia.org/wiki/Drink_can",
-     "date": "Read 29 Sep 2026"
-    },
-    {
-     "title": "Australian Aluminium Council / Roland Berger - Aluminium Cans Market Assessment (estimated 11.3 g per can)",
-     "url": "https://aluminium.org.au/wp-content/uploads/2023/10/231009-Aluminium-Cans-Market-Assessment-Australia.pdf",
-     "date": "May 2023"
-    },
-    {
-     "title": "CanTech International - Ball reduces 330 ml can to under 9.5 g",
-     "url": "https://www.cantechonline.com/news/3522/ball-reduces-weight-of-beverage-cans/",
-     "date": "14 Nov 2012"
-    },
-    {
-     "title": "FoodTechBiz - Ball Beverage Packaging India can sizes (185-500 ml)",
-     "url": "https://www.foodtechbiz.com/opinion/aluminum-cans-help-to-meet-sustainability-goals-ball-beverage-packaging-india",
-     "date": "18 Jan 2022"
-    },
-    {
-     "title": "CBIC Notification No. 9/2025-Central Tax (Rate) - schedules (4707, 7001, 4004 at 5%; 3915, 7204, 7602 at 18%)",
-     "url": "https://d23z1tp9il9etb.cloudfront.net/download/gstlaw/NOTIFICATION%20NO.%209_2025-CENTRAL%20TAX%20(RATE)1759486688.pdf",
-     "date": "17 Sep 2025 (effective 22 Sep 2025)"
-    },
-    {
-     "title": "Busy.in - GST rates on scrap after 22 Sep 2025 (table by HSN)",
-     "url": "https://busy.in/gst-rates/scrap/",
-     "date": "8 Sep 2026"
-    },
-    {
-     "title": "Taxguru - Metal scrap from unregistered suppliers brought under reverse charge (Notification 06/2024-CT(R))",
-     "url": "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html",
-     "date": "9 Oct 2024"
-    },
-    {
-     "title": "Taxguru - TDS under GST on metal scrap (Notification 25/2024-Central Tax, 2%, Rs 2.5 lakh threshold)",
-     "url": "https://taxguru.in/goods-and-service-tax/tds-gst-metal-scrap-notification-no-25-2024-central-tax.html",
-     "date": "14 Oct 2024"
-    },
-    {
-     "title": "Steel Baba - Iron scrap rate today (all prices exclude 18% GST; WhatsApp delivery; Bengaluru Rs 35,400/MT)",
-     "url": "https://steel-baba.com/",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "Steel Baba - Mandi Gobindgarh scrap rate today (dealer surveys, WhatsApp quotes)",
-     "url": "https://steel-baba.com/today-scrap-rate-mandi-gobindgarh/",
-     "date": "29 Sep 2026"
-    },
-    {
-     "title": "Tata nexarc - Iron scrap rate today (WhatsApp/missed-call rates; prices exclude tax)",
-     "url": "https://blog.tatanexarc.com/da/iron-scrap-rate-today/",
-     "date": "7 Sep 2026"
-    },
-    {
-     "title": "Google Play - Scrap Price Daily (Kabad Rate) by SteelMenu (50K+ downloads)",
-     "url": "https://play.google.com/store/apps/details?id=com.steelmenubusiness.priceweightcalculator&hl=en_IE",
-     "date": "Updated 23 Aug 2026"
-    },
-    {
-     "title": "Kabadiwala Online - Scrap price list (rates change daily; min pickup Rs 999; Rs 499 cancellation)",
-     "url": "https://kabadiwalaonline.in/price-list/",
-     "date": "Read 29 Sep 2026"
-    },
-    {
-     "title": "Scrap Kabadi - Scrap price today ('no single scrap price'; call or WhatsApp for live rates)",
-     "url": "https://scrapkabadi.com/scrap-price-today/",
-     "date": "Read 29 Sep 2026"
-    },
-    {
-     "title": "Prime Scrap - Current rates (15 kg minimum; rates updated daily on MCX and regional markets)",
-     "url": "https://www.primescrap.in/rates",
-     "date": "Rates dated 23 Jun 2026; read 29 Sep 2026"
-    },
-    {
-     "title": "Recycle Baba - Scrap price list (Rs 5,000 / 30 kg minimum pickup)",
-     "url": "https://recyclebaba.com/scrap-price-list",
-     "date": "Read 29 Sep 2026"
-    },
-    {
-     "title": "WIEGO - Organizing Informal Waste Pickers: A Case Study of Bengaluru (Chengappa)",
-     "url": "https://www.wiego.org/wp-content/uploads/2019/09/Chengappa-Organizing-Informal-Waste-Pickers-India.pdf",
-     "date": "2013"
-    },
-    {
-     "title": "Fair Circularity Initiative / Systemiq - A Living Income for the Informal Waste Sector (Bengaluru case study)",
-     "url": "https://www.systemiq.earth/reports/downloads/Systemiq-A_Living_Income_for_the_Informal_Waste_Sector_EN.pdf",
-     "date": "2024"
-    }
-   ]
-  }
- ]
+  ]
 }
