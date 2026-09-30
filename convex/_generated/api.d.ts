@@ -36,6 +36,7 @@ import type * as demo_rulebook from "../demo/rulebook.js";
 import type * as demo_solar from "../demo/solar.js";
 import type * as demo_support from "../demo/support.js";
 import type * as demo_world from "../demo/world.js";
+import type * as exports from "../exports.js";
 import type * as files from "../files.js";
 import type * as floor from "../floor.js";
 import type * as households from "../households.js";
@@ -134,6 +135,7 @@ declare const fullApi: ApiFromModules<{
   "demo/solar": typeof demo_solar;
   "demo/support": typeof demo_support;
   "demo/world": typeof demo_world;
+  exports: typeof exports;
   files: typeof files;
   floor: typeof floor;
   households: typeof households;
