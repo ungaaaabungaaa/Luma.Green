@@ -21,8 +21,8 @@ recyclers. Every one of those processes also makes by-products (caps and
 labels, dross, tyre steel, bran, bagasse) and residual waste (sludge, slag,
 fines), and today the platform has no way to say so.
 
-Two names collided: the code called the yard `preprocessor`, while the founder
-uses "pre-processor" for the new role.
+Two names collided: the docs called the yard `preprocessor` (the code already
+says `yard`), while the founder uses "pre-processor" for the new role.
 
 ## Decision
 
@@ -42,8 +42,8 @@ uses "pre-processor" for the new role.
    MRF), `yard`, `preprocessor` (the founder's meaning), `recycler`,
    `compounder`, `manufacturer`, `brand` (an EPR-obligated producer that buys
    material and evidence) and `handler` (authorised waste handler, co-processor
-   or TSDF). The yard's code name changes from `preprocessor` to `yard` before
-   any production data exists; the interface already says "yard".
+   or TSDF). The docs now follow the code and say `yard`; `preprocessor` is free
+   for the founder's meaning.
 4. **Five price levels.** L1 kabadiwala → household, L2 yard → kabadiwala, L3
    pre-processor or recycler → yard, L4 recycler or compounder → manufacturer,
    L5 manufacturer → industrial buyer. Every price row carries a level, a
@@ -63,9 +63,8 @@ uses "pre-processor" for the new role.
   verification checklists exist (research cluster `new-roles-onboarding`).
 - The schema gains `state` on materials, a `processingRuns` table, output
   lineage on lots, `level` on price rows and a buyer gate on listings — see
-  [data-model.md](../architecture/data-model.md). The `preprocessor` → `yard`
-  rename touches the schema, lifecycle, onboarding rules and message keys in
-  one PR.
+  [data-model.md](../architecture/data-model.md). Adding the new kinds touches
+  the schema, lifecycle, onboarding rules and message keys in one PR.
 - The price board needs grade dimensions per family so one code is never
   quoted at two levels at once (research cluster `intermediate-prices`).
 - Mass balance becomes checkable: input weight = outputs + waste ± a tolerance
@@ -78,5 +77,6 @@ uses "pre-processor" for the new role.
 - **Keep four kinds and treat processing as "sorting"** — hides the value
   created between bale and pellet and cannot express by-products or waste.
 - **Model state as free text on a lot** — unqueryable; buyers search by state.
-- **Keep `preprocessor` for the yard and name the new role `processor`** —
-  contradicts every document the founder writes; the rename is cheap now.
+- **Call the new role `processor` to avoid the clash with the docs' old name
+  for the yard** — contradicts every document the founder writes; the docs
+  were wrong, not the code.

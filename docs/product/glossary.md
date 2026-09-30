@@ -7,7 +7,7 @@ Words used across the docs and the code. Code names are in `backticks`.
 | **Household** (`household`)              | Anyone selling scrap from home. Never registers; confirms a phone number by SMS code when booking.                                                      |
 | **Kabadiwala** (`kabadiwala`)            | Owner of a small local scrap shop ("kabadi"). Buys from households, sorts, sells to yards.                                                              |
 | **Dry-waste centre** (`dwcc`)            | A ward dry-waste collection centre, MRF or picker cooperative; runs on the platform as a yard account.                                                  |
-| **Yard** (`yard`)                        | A large yard that buys from kabadiwalas, grades and bales. Was `preprocessor` in the code until 30 Sep 2026.                                            |
+| **Yard** (`yard`)                        | A large yard that buys from kabadiwalas, grades and bales. The docs called it `preprocessor` until 30 Sep 2026; the code always said `yard`.            |
 | **Pre-processor** (`preprocessor`)       | Turns bales and lots into factory feedstock: PET flakes, granules, copper granules, shredded steel, crumb rubber, aggregates.                           |
 | **Compounder** (`compounder`)            | Blends recovered material to a manufacturer's specification: compounds, masterbatch, alloys.                                                            |
 | **Brand** (`brand`)                      | A producer or importer with EPR duties that buys recycled material and chain-of-custody evidence.                                                       |
