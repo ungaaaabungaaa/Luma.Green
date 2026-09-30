@@ -1,0 +1,46 @@
+{
+ "branch": "worktree-wf_21434ea1-012-6",
+ "worktreePath": "/Users/syedabdulmuqeeth/Developer/Luma.Green/.claude/worktrees/wf_21434ea1-012-6",
+ "commit": "7129bbf3f589d03e87a24f4800d8b6d155d4f101",
+ "summary": "Public area built and committed (feat(app): public pages — home story, price board, standards, solar). HOME (/): new story \"India's scrap chain, on one platform\" — hero with Sell your scrap (/sell), Join as a business (/join), See today's prices (/prices) beside a live price card (4 everyday materials from catalogue.priceBoard({city:'Bengaluru'}), DemoNote); a drawn chain diagram (inline-SVG nodes, arrows and an every-step bracket in brand colours; vertical on phones, across on md+, mirrored in RTL) with money and Saathi lanes; what each role gets (6 cards, households → /sell, others → /join/{kind}); trust points (verified businesses, floor, escrow, receipts, 12 languages from the locale registry); Why now (EPR, informal sector, UPI; no numbers); closing panel with Sell/Join. Old sector/verifier copy retired from home. /prices: client PriceBoard (useQuery) grouped by family + a \"Factory gate\" section for recycled; rows show ₹/kg, 7-day change (arrow + %, words for screen readers), 30-day sparkline, floor; a row opens a Dialog with a 30-day chart (dashed floor line, crosshair via pointer or arrow keys as an ARIA slider, table of the numbers); loading/empty/error-retry/Convex-not-configured states; DemoNote; sell CTA. /standards: \"The Luma.Green standard\" — live material-code table (code, name in reader's language, family, stage) with client-side Blob CSV download (UTF-8 BOM, RFC 4180, formula-injection safe), norms for grading, fair weighing, receipts/chain of custody (receipt anatomy), verification, escrow steps, jump list, adopt panel. /solar: calculator (home/business, bill ₹ or units, optional roof in sq ft or m²) → suggested kW, cost ₹55k–65k/kW, PM Surya Ghar subsidy (homes only; 30k/kW first 2 kW, 18k 3rd, cap 78k), savings, payback range, 10-year savings column chart vs net-cost band; pure maths in src/components/solar/calc.ts; assumptions listed from the same constants; subsidy explainer with slab table and cited https://pmsuryaghar.gov.in; \"Talk to us\" form (RHF + zod mirroring server rules) → api.support.send topic 'solar' (role household/other), prefilled with the estimate; email fallback without Convex. Site chrome: nav = How it works, Prices, Help, Join (current section also on sub-paths); header button \"Sell scrap\" → /sell (sm+; in the mobile menu on phones); footer groups link Sell scrap, Prices, Join, How it works, Industry standards (/standards), Rooftop solar (/solar), Help, Contact. No Convex functions added; uses existing catalogue.priceBoard, catalogue.materials, support.send.",
+ "routes": [
+  "/",
+  "/prices",
+  "/standards",
+  "/solar"
+ ],
+ "convexFunctions": [],
+ "messageNamespaces": [
+  "home (rewritten; every key renamed so stale translations can't linger)",
+  "prices",
+  "standards",
+  "solar",
+  "nav (new: prices, help, join, sellScrap)",
+  "footer (new: about, useHeading, learnHeading, standards, solar)"
+ ],
+ "checks": {
+  "typecheck": "pass (pnpm typecheck)",
+  "lint": "pass — eslint on every file I touched incl. e2e/site.spec.ts and e2e/smoke.spec.ts: 0 errors, 0 warnings; prettier --check clean",
+  "tests": "pass — 16 files / 110 tests in src/components/{site,prices,standards,solar} (unit: solar maths, chart geometry, board helpers, CSV, contact schema; component: price board + dialog/keyboard, home price card, code table + CSV download, solar planner, contact form, nav, server-rendered home/standards/subsidy sections). Full non-Convex suite: 27/28 files pass; only src/i18n/messages.test.ts fails (expected until translations land). E2E specs updated, not run (per instructions)."
+ },
+ "unfinished": [
+  "No browser/visual check (dev/build/Playwright not allowed here): please eyeball /, /prices (incl. the chart dialog), /standards and /solar at 375px and desktop, and /ar for RTL (chain arrows mirror; charts stay left-to-right by design).",
+  "e2e/site.spec.ts and e2e/smoke.spec.ts updated but not run; the 'header navigation reaches /help' test needs the help area's /help page.",
+  "Translations: 318 new English keys need translating into the other 11 locales, and the retired keys (see mergeNotes) must be removed from those files for the parity test.",
+  "Not my files, still carrying old copy: /how-it-works (Recover/Trade/Retire, credits, sector; still linked in the nav), /participants (sector/verifier; now unlinked but still in publicRoutes/sitemap), /contact lead (sectors), and meta.description (root default description)."
+ ],
+ "mergeNotes": [
+  "Base: the worktree was created at 1403f83 (before the foundation); I fast-forwarded it to feat/prototype dfd8c19 first, so this branch is dfd8c19 + one commit (7129bbf).",
+  "Removed from messages/en.json (no page uses them any more): nav.participants, nav.getStarted, footer.summary, home.eyebrow, home.title, home.lead, home.secondaryCta, home.loopHeading, home.loopIntro, home.participantsHeading, home.participantsIntro, home.participantsCta, home.closingTitle, home.closingBody. They remain in the other 11 locale files — delete them there when translating. No existing value outside my namespaces was changed.",
+  "The home page's meta description now comes from home.metaDescription (the title still uses meta.title, so e2e title checks hold); meta.description (layout default) still has the old sector copy — consider updating it.",
+  "ClosingCta (src/components/site/closing-cta.tsx) keeps its name and no-props API; it is also rendered by /how-it-works and /participants and now offers Sell your scrap (/sell) and Join as a business (/join).",
+  "src/components/site/content.ts: navItems changed and footerGroups added; loopSteps and roles left untouched for /how-it-works and /participants. PageHeader gained an optional `eyebrow` prop (backwards compatible).",
+  "The header 'Sell scrap' button shows from sm (640px); on phones it is the main button at the bottom of the mobile menu (same pattern as the old header CTA). It does not fit next to the logo and language switcher at 375px.",
+  "Links to other areas' routes: /sell, /help, /join/{kind} — /sell and /help 404 until those areas merge.",
+  "Convex: no schema or function changes and no codegen needed. Uses catalogue.priceBoard({city:'Bengaluru'}), catalogue.materials and support.send({topic:'solar', role: 'household' for homes / 'other' for businesses}). Every live panel checks isConvexConfigured and sits in an error boundary (src/components/site/data-boundary.tsx) with a retry.",
+  "Solar assumptions that are mine, not the brief's: an average tariff of ₹7 a unit (homes) and ₹9 (businesses) to turn a bill into units, a 1 kW minimum system, sizing to the nearest 0.5 kW, and savings counting only on-site use. All are stated on the page and live in SOLAR in src/components/solar/calc.ts.",
+  "Reusable helpers others may want: src/components/site/chart-kit.ts (scale, nice ticks, line/area/column paths), use-element-width.ts, use-chart-cursor.ts (pointer + keyboard chart cursor), data-boundary.tsx, and intl-server.testing.ts (a next-intl/server stand-in for rendering async server components in Vitest: vi.mock('next-intl/server', () => import('@/components/site/intl-server.testing'))).",
+  "Heads-up for other areas: the vendored src/components/ui/dialog.tsx has an untranslated sr-only 'Close' on its built-in X button. price-detail.tsx passes showCloseButton={false} and renders a DialogClose with a translated aria-label. Also, eslint --fix rewrote a \"﻿\" escape into an invisible literal BOM; I used String.fromCodePoint(0xfe_ff) instead.",
+  "E2E runs with NEXT_PUBLIC_CONVEX_URL empty, so site.spec asserts the 'not connected' states for /prices, the home price card and the code list, and runs the pure solar calculator in full. smoke.spec now also checks that /prices, /standards and /solar are in sitemap.xml."
+ ]
+}

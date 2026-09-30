@@ -1,0 +1,324 @@
+{
+ "topic": "Payments and finance",
+ "headline": "Escrow for scrap trades is doable without a licence through a payment aggregator, at about 0.1–0.25% per held transfer plus about ₹20 per bank-transfer collection (against about 2% + GST through checkout). But RBI's September 2025 rules only allow split settlement to sellers once Luma has more than ₹40 lakh of its own turnover, and collecting trade money makes Luma withhold 0.5% GST TCS and 0.1% income-tax TDS on every trade. So the pilot should keep money off-platform and only record it.",
+ "findings": [
+  {
+   "point": "Luma must not hold trade money itself. RBI's 2025 payment-aggregator rules put escrow money in an authorised aggregator's bank escrow, and paying sellers from it requires the marketplace to have more than ₹40 lakh annual turnover.",
+   "detail": "RBI's Master Direction on Payment Aggregators (15 Sep 2025) sets these rules:\n- A non-bank aggregator needs ₹15 crore net worth when it applies and ₹25 crore by the end of its third year.\n- An aggregator may not run a marketplace itself.\n- Merchant money must sit in a separate escrow account at a scheduled commercial bank, with compliance due by 31 Dec 2025.\n- When the merchant gets paid is left to the aggregator–merchant agreement, as long as it is fair and states the timeline. This is what makes 'hold until delivered' lawful.\n- The aggregator may pay a third party (a marketplace's seller) on the marketplace's instruction only if the marketplace's annual turnover is above ₹40 lakh (or exports above ₹5 lakh).\n- The aggregator must stop a marketplace collecting money for sellers it has not onboarded.\n- Merchants under ₹40 lakh turnover can be onboarded with PAN/Form 60, a physical address check and one officially valid document.\n- The escrow may not be used for cash-on-delivery.",
+   "sourceUrls": [
+    "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12896&Mode=0"
+   ]
+  },
+  {
+   "point": "Razorpay Route can already hold money until delivery, but Razorpay enforces the ₹40 lakh rule and switched off accounts that had not proved compliance by 31 Dec 2025.",
+   "detail": "How the hold works:\n- A Route transfer created with on_hold=true does not settle until Luma sets it to false.\n- on_hold_until sets an automatic release time. Without it the hold lasts indefinitely. Once that time passes, funds settle by the next working day.\n\nWho can use Route (in FY25 or FY26):\n- More than ₹40 lakh of domestic turnover, shown in GST-3B returns, or more than ₹5 lakh of exports.\n- A signed declaration that every linked account deals directly with the customer.\n- Accounts that had not sent these proofs by 31 Dec 2025 had Route disabled.\n\nPricing:\n- A 2% + 18% GST platform fee on every domestic payment method, including UPI. UPI carries no bank charge (zero MDR), but the 2% platform fee still applies.\n- Settlement is next working day (T+1); instant settlement costs extra.\n- Route adds 0.25% per transfer (0.1% on a limited-time offer).",
+   "sourceUrls": [
+    "https://razorpay.com/docs/payments/route/",
+    "https://razorpay.com/docs/api/payments/route/modify-settlement-hold/",
+    "https://razorpay.com/pricing/",
+    "https://razorpay.com/route/"
+   ]
+  },
+  {
+   "point": "For business trades, a bank transfer into a virtual account costs about ₹20 per payment against about 2% through checkout, and UPI's ₹1 lakh cap rules UPI out for most truckloads anyway.",
+   "detail": "Cashfree's price list:\n- ₹20 flat for each IMPS/NEFT/RTGS payment into a virtual bank account.\n- A 1.95–2.0% checkout platform fee (new merchants pay 0% on their first ₹20 lakh until 31 Mar 2027).\n- Easy Split payouts to vendors at 0.20–0.25%.\n- Next-day settlement by 8 PM by default.\n\nOn the prototype's ₹89,680 PET trade, that is ₹23.60 against ₹2,116 once GST is included.\n\nUPI limits (RBI, 9 Apr 2025): ₹1 lakh per payment for person-to-person (P2P) and most person-to-merchant (P2M) payments. Some P2M uses allow ₹2 lakh or ₹5 lakh. NPCI may now revise P2M limits, but P2P stays at ₹1 lakh. Household pickups of a few hundred rupees fit easily in P2P UPI; yard and recycler loads need NEFT, IMPS or RTGS.",
+   "sourceUrls": [
+    "https://www.cashfree.com/payment-gateway-charges/",
+    "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=60178"
+   ]
+  },
+  {
+   "point": "A bank escrow with a trustee is the practical fallback where aggregator splits don't fit.",
+   "detail": "RazorpayX Escrow+ sets up a three-party account:\n- The depositor is the primary account holder, a trustee is the secondary holder, and the bank is the third party. RazorpayX supplies only the technology.\n- Trustees come from Razorpay's onboarded partners, and payouts can go out through several partner banks.\n- Marketplace escrow and supply-chain financing are listed use cases.\n- RazorpayX current accounts are held at ICICI, RBL and Yes Bank.\n- Pricing is quote-based.\n\nThis does not depend on Route's ₹40 lakh turnover rule, and it suits large recycler-to-manufacturer orders paid by RTGS.",
+   "sourceUrls": [
+    "https://razorpay.com/x/escrow-accounts/"
+   ]
+  },
+  {
+   "point": "The Income-tax Act 2025, in force from 1 Apr 2026, keeps tight cash limits that affect yards buying from kabadiwalas.",
+   "detail": "- Section 36(4): a business expense paid in cash above ₹10,000 to one person in one day is not tax-deductible (₹35,000 when hiring goods vehicles).\n- Section 186: nobody may receive ₹2 lakh or more in cash from one person in a day, in one transaction, or for one event.\n- Section 187: businesses with turnover above ₹50 crore must accept the prescribed electronic payment methods.\n\nSo a yard paying ₹25,000 in cash for a kabadiwala's load loses the tax deduction. Nudging these payments to UPI or NEFT, and recording the payment reference, is directly useful to yards.",
+   "sourceUrls": [
+    "https://prsindia.org/files/bills_acts/bills_parliament/2025/Bill_as_passed_by_LS_Income_Tax_(No.2)_Bill.pdf"
+   ]
+  },
+  {
+   "point": "If Luma counts as an 'e-commerce operator', it owes 0.1% TDS on the sales it facilitates, even when buyers pay sellers directly.",
+   "detail": "- Section 393(1), Table row 8(v) of the 2025 Act: an e-commerce operator deducts 0.1% of the gross sales of goods or services it facilitates, with no minimum amount.\n- A note to that row treats payments made directly from buyer to seller as if the operator had made them.\n- Individuals and HUFs with sales of up to ₹5 lakh in the year are exempt only if they give the operator their PAN or Aadhaar.\n- The separate 0.1% TDS that buyers deduct on purchases above ₹50 lakh does not apply where another TDS or TCS rule already covers the deal.\n\nThis is the repo's open question 12. Households and most kabadiwalas stay under ₹5 lakh but would have to give PAN or Aadhaar. Busy kabadiwalas selling to yards through Luma could go over it.",
+   "sourceUrls": [
+    "https://prsindia.org/files/bills_acts/bills_parliament/2025/Bill_as_passed_by_LS_Income_Tax_(No.2)_Bill.pdf"
+   ]
+  },
+  {
+   "point": "The GST that e-commerce operators must collect (TCS) is now 0.5%, and it applies once Luma starts collecting trade money.",
+   "detail": "The 53rd GST Council (22 Jun 2024) cut this TCS from 1% to 0.5% of net taxable supplies: 0.25% central GST + 0.25% state GST, or 0.5% integrated GST. It did so because GSTN data showed about half of the TCS collected was later refunded to sellers.\n\nUnder CGST section 52 this TCS applies to supplies where the operator collects the payment. So the record-only pilot (ADR 0009) is outside it. Escrow would bring registration as an e-commerce operator, monthly deposits and returns. Confirm the trigger with a CA.",
+   "sourceUrls": [
+    "https://www.gstcouncil.gov.in/sites/default/files/Minutes/53rd_minutes_converted.pdf"
+   ]
+  },
+  {
+   "point": "Income-tax TCS on sale of scrap is 1% today and was proposed to rise to 2% from 1 Apr 2026, but a recycler's 'for manufacturing' declaration removes it.",
+   "detail": "- Section 394(1), Table row 4: the seller collects 1% TCS on a sale of scrap.\n- 'Seller' means government; a company, firm or co-operative; or an individual or HUF whose business turnover was above ₹1 crore the year before. Small kabadiwalas are therefore out; larger yards are in.\n- A buyer based in India that declares in writing that the goods are for manufacturing or processing, not trading, is not charged the TCS (section 394(2)).\n- 'Scrap' is defined as waste from manufacturing or mechanical working that can't be used as it is because of breakage, cutting up or wear. Whether post-consumer recyclables count is a question for a CA.\n- The Finance Bill 2026 memorandum proposed raising the scrap rate to 2% from 1 Apr 2026.",
+   "sourceUrls": [
+    "https://prsindia.org/files/bills_acts/bills_parliament/2025/Bill_as_passed_by_LS_Income_Tax_(No.2)_Bill.pdf",
+    "https://www.indiabudget.gov.in/doc/memo.pdf"
+   ]
+  },
+  {
+   "point": "Metal scrap has special GST rules: the buyer pays the GST when buying from an unregistered seller, and 2% GST TDS applies between businesses. Karnataka backed keeping the rate at 18%.",
+   "detail": "The 54th GST Council (9 Sep 2024) approved:\n- 2% TDS on metal scrap sold between GST-registered businesses.\n- Reverse charge when an unregistered person sells metal scrap to a registered one: the buyer pays the GST even if the seller is below the registration limit, and the seller must register once it crosses that limit.\n\nKarnataka backed Uttar Pradesh in keeping metal scrap at 18% rather than cutting it to 5%. Karnataka had earlier warned that reverse charge breaks the input-tax-credit chain. A proposal to require e-way bills for all scrap, whatever the value, went to the Fitment Committee for study.\n\nThe e-way bill portal already requires a bill for goods worth more than ₹50,000 moved for sale, including goods bought from unregistered persons, such as a yard collecting a load from a kabadiwala.",
+   "sourceUrls": [
+    "https://www.gstcouncil.gov.in/sites/default/files/Minutes/54th_meeting_minutes_conv.pdf",
+    "https://ewaybillgst.gov.in/"
+   ]
+  },
+  {
+   "point": "MSME law and TReDS give Udyam-registered yards a 45-day payment guarantee and fast cash against invoices to big buyers.",
+   "detail": "MSMED Act:\n- A buyer must pay a micro or small supplier within 45 days of accepting the goods.\n- After that, the buyer owes compound interest (added monthly) at three times the RBI bank rate.\n- Each state's MSE Facilitation Council enforces this. The supplier needs Udyam registration.\n\nTReDS (invoice financing exchanges: Invoicemart, a joint venture of Axis Bank and mjunction; the others are RXIL, M1xchange and DTX India):\n- The buyer accepts the invoice and financiers bid on it.\n- The MSME is paid within 24 hours of the best bid, and the buyer repays the financier on the due date. The MSME takes on no debt.\n- Companies with turnover above ₹250 crore had to register on TReDS by 31 Mar 2025 (notification S.O. 4845(E), Nov 2024).\n- Budget 2026 requires central public sector companies to pay vendors through TReDS.",
+   "sourceUrls": [
+    "https://samadhaan.msme.gov.in/",
+    "https://www.invoicemart.com/"
+   ]
+  },
+  {
+   "point": "Formal credit for kabadiwalas comes through Mudra lenders and schemes tied to Udyam registration; Luma's receipts could be the missing record of their cash flow.",
+   "detail": "MUDRA refinances banks, regional rural banks, small finance banks, microfinance institutions and NBFCs; it does not lend directly. Its loan tiers:\n- Shishu: up to ₹50,000\n- Kishor: up to ₹5 lakh\n- Tarun: up to ₹10 lakh\n- TarunPlus: up to ₹20 lakh, for borrowers who repaid a Tarun loan\n\nBudget 2025 promised:\n- Credit cards with a ₹5 lakh limit for micro enterprises registered on the Udyam portal (10 lakh cards in the first year).\n- Credit-guarantee cover for micro and small enterprises raised from ₹5 crore to ₹10 crore.\n- A revamped PM SVANidhi with ₹30,000 UPI-linked credit cards for street vendors, which is relevant to itinerant scrap buyers.",
+   "sourceUrls": [
+    "https://www.mudra.org.in/",
+    "https://www.indiabudget.gov.in/budget2025-26/doc/budget_speech.pdf"
+   ]
+  },
+  {
+   "point": "Purchase finance for yards can pay kabadiwalas on the spot, and RBI's 2025 digital-lending rules let the lender pay the supplier directly.",
+   "detail": "Oxyzo (OfBusiness's NBFC) purchase finance:\n- Pays the supplier directly; the yard repays over 60–120 days.\n- Rates start at 12% a year, charged only on the amount and days used.\n- Needs ₹3 crore+ turnover and 3+ years in business; proprietorships are eligible.\n\nRBI Digital Lending Directions (8 May 2025):\n- Loans are paid into the borrower's own account, except loans for a specific purpose, which may go straight to the end beneficiary.\n- Repayments go directly to the lender, never through an account held by the lending service provider (LSP).\n- The lender, not the borrower, pays the LSP's fee.\n- An LSP working with several lenders must show every matching offer and name the lenders that didn't match.\n- Borrowers get a cooling-off period of at least one day.\n- Default-loss guarantees are capped at 5% of the loan portfolio.",
+   "sourceUrls": [
+    "https://www.oxyzo.in/en/products/purchase-finance",
+    "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12848&Mode=0"
+   ]
+  },
+  {
+   "point": "Paying Saathis through Luma could bring Karnataka's 1–5% gig-worker welfare fee. National schemes now cover platform workers' health.",
+   "detail": "Karnataka's platform gig-workers law (PRS summary of the 2025 Bill) makes aggregators pay a welfare fee of 1–5% of each payout to a gig worker. The state sets the rate for each category of aggregator, and the money goes into a Karnataka gig-workers' social-security fund.\n\nBudget 2025 promised platform gig workers ID cards, e-Shram registration and PM-JAY health cover, reaching about 1 crore workers.\n\nToday Saathis are paid directly by the kabadiwala or manufacturer, which keeps Luma outside the payout chain.",
+   "sourceUrls": [
+    "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025",
+    "https://www.indiabudget.gov.in/budget2025-26/doc/budget_speech.pdf"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Weigh-and-pay receipt: one tap for 'Paid in cash' or 'Paid by UPI', an optional UPI reference, and an SMS link to the itemised receipt",
+   "why": "Households and kabadiwalas already settle at the door in cash or person-to-person UPI, free and well under the ₹1 lakh UPI cap. Recording itemised receipts (grams × paise per kg, as ADR 0009 plans) proves 'business done through Luma' to investors without any payment licence. If a UPI app blocks the hand-off, the kabadiwala scans the household's own UPI QR instead.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "household"
+   ]
+  },
+  {
+   "feature": "Trade timeline with escrow stages and a live breakdown of fees and taxes, using simulated money",
+   "why": "The trades table already has a paid_to_escrow state. The screen shows the steps funded → dispatched (e-way bill) → weighed → released, with lines for GST, 0.5% GST TCS, 0.1% TDS, the payment aggregator's fee and Luma's fee. That shows investors the trust and compliance layer before any real money moves. Later the simulation can be swapped for Razorpay Route test mode, using held (on_hold) transfers.",
+   "priority": "prototype-now",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "A dated 'money rules' table in the admin console",
+   "why": "These rates change by government notification: e-commerce TCS went from 1% to 0.5% in 2024, scrap TCS was proposed to go from 1% to 2% in April 2026, and NPCI can revise UPI merchant limits. Store fee and tax rates as whole-number basis points, and limits (₹10,000 cash, ₹50,000 e-way bill, ₹1 lakh UPI, ₹2 lakh RTGS minimum) in paise, each with an effectiveFrom date like the price tables. The admin then changes data, not code, and old trades keep the rates they used.",
+   "priority": "prototype-now",
+   "users": [
+    "admin"
+   ]
+  },
+  {
+   "feature": "A verified payout account at onboarding: a bank account or UPI ID whose holder name is matched",
+   "why": "With a reverse penny drop from Razorpay or Cashfree, the user sends ₹1 by UPI, gets it refunded, and the check returns the registered account name. The admin can compare it with the GST or PAN name in the application. Business buyers then pay a verified payee, and their bank's NEFT/RTGS name check (which RBI made mandatory from 1 Apr 2025) confirms it again.",
+   "priority": "pilot",
+   "users": [
+    "admin",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "Pay-on-delivery for kabadiwala-to-yard and yard-to-recycler trades: weighbridge confirmation, capture of the bank reference (UTR), and due-date reminders",
+   "why": "Money stays off-platform, so no payment aggregator and no GST TCS, while business payments become digital and traceable. Show the MSMED 45-day due date for Udyam micro and small sellers (compound interest at three times the bank rate after that). Warn yards before a cash payment above ₹10,000 per person per day, because it is not tax-deductible.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler"
+   ]
+  },
+  {
+   "feature": "Yard compliance pack: self-invoice data for metal bought from unregistered kabadiwalas, e-way bill flags, and a monthly purchase register",
+   "why": "Registered yards pay the GST themselves (reverse charge) on metal scrap bought from unregistered sellers. They also need e-way bills for loads over ₹50,000, including goods bought from unregistered persons. Building this from Luma's receipts turns a compliance chore into a reason to use Luma. Every document should say 'confirm with your CA'.",
+   "priority": "pilot",
+   "users": [
+    "yard"
+   ]
+  },
+  {
+   "feature": "Escrow through a payment aggregator: the buyer pays into a virtual account and Luma holds a Razorpay Route transfer until delivery (Cashfree Easy Split as a second provider; PhonePe's gateway as a checkout option)",
+   "why": "A bank transfer into a virtual account (about ₹20) plus a held transfer (0.1–0.25%) keeps costs under about 0.3% of a trade, against about 2.4% through checkout. Money is released when the buyer confirms the weight, or automatically at on_hold_until. Before this can go live Luma needs:\n- more than ₹40 lakh of its own turnover\n- the payer-payee declaration\n- GST registration as an e-commerce operator\n- a TAN for deducting TDS",
+   "priority": "scale",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Bank escrow with a trustee for large recycler-to-manufacturer orders (RazorpayX Escrow+ or CastlerX)",
+   "why": "A three-party escrow (depositor, trustee, bank) doesn't depend on the aggregator's ₹40 lakh turnover rule and fits orders of ₹10 lakh and more paid by RTGS. Pricing is quote-based, so start with one buyer-seller pair and one bank.",
+   "priority": "scale",
+   "users": [
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Working-capital offers inside Luma, with Luma acting as a lending service provider",
+   "why": "Three existing products fit:\n- NBFC purchase finance (Oxyzo-style) lets a yard pay the kabadiwala on the spot and repay in 60–120 days.\n- TReDS gets Udyam yards selling to buyers with ₹250 crore+ turnover paid within 24 hours of the best bid.\n- Mudra loans and the ₹5 lakh micro-enterprise credit cards suit kabadiwalas.\n\nLuma's receipt history is the underwriting data. Luma must follow RBI's 2025 digital-lending rules: show all offers, keep no pooled accounts, and be paid by the lender, not the borrower.",
+   "priority": "scale",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler"
+   ]
+  },
+  {
+   "feature": "Capture Udyam (or Udyam Assist) registration and GSTIN at onboarding, with the benefits explained in plain words",
+   "why": "Udyam registration is free, and Udyam Assist covers informal micro enterprises. It unlocks the 45-day payment protection, TReDS, Mudra loans and the Budget 2025 micro-enterprise credit cards. An optional field and a help link in onboarding cost almost nothing.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard"
+   ]
+  },
+  {
+   "feature": "Built-in insurance: accident and health cover for Saathis and kabadiwalas, goods-in-transit cover on escrow trades, and help with e-Shram registration",
+   "why": "Budget 2025 extended PM-JAY health cover and e-Shram registration to platform gig workers. One insurer partner could price accident cover and per-trade transit cover, which also reduces the risk of escrow disputes. Get quotes before promising any figures.",
+   "priority": "scale",
+   "users": [
+    "saathi",
+    "kabadiwala",
+    "yard",
+    "recycler"
+   ]
+  }
+ ],
+ "artifactMarkdown": "## Money flow 1: one household pickup (Bengaluru pilot)\n\n**Example:** a verified kabadiwala picks up 24 kg from a home. Rates come from the prototype's Bengaluru fallback table. Luma stores every amount in paise and every weight in grams.\n\n| Material | Weighed | Rate | Amount |\n|---|---:|---:|---:|\n| Newspaper | 12.0 kg | ₹14/kg | ₹168.00 |\n| Cardboard | 4.0 kg | ₹10/kg | ₹40.00 |\n| PET bottles | 3.0 kg | ₹20/kg | ₹60.00 |\n| Iron and steel | 5.0 kg | ₹28/kg | ₹140.00 |\n| **Total** | **24.0 kg** | | **₹408.00** |\n\n| # | Step | Who pays whom | Amount | Fee |\n|---|---|---|---:|---:|\n| 1 | Photo estimate and booking, confirmed by SMS code | Nobody. Luma pays its own AI and SMS costs | ₹0 | ₹0 |\n| 2 | Kabadiwala weighs each material. The app prices each line from their rate card, never below the admin's minimum | — | ₹408.00 | ₹0 |\n| 3a | Payment in cash at the door | Kabadiwala → household | ₹408.00 | ₹0 |\n| 3b | Or UPI: the kabadiwala scans the household's UPI QR or pays their UPI number. Person-to-person, instant, up to ₹1 lakh per payment | Kabadiwala → household | ₹408.00 | ₹0 |\n| 4 | Kabadiwala taps \"Cash\" or \"UPI\" and can add the 12-digit UPI reference. Luma saves the receipt | — | — | ₹0 |\n| 5 | Household gets an SMS link to the itemised receipt and their recycle points | — | — | About 1 SMS, paid by Luma |\n\n**Result**\n\n| Party | Money | Other |\n|---|---:|---|\n| Household | +₹408.00 | — |\n| Kabadiwala | −₹408.00 | +24 kg of stock |\n| Luma | ₹0 revenue, ₹0 payment fees | Moves no money (ADR 0009) |\n\n**Tax notes**\n- A household selling its own scrap owes no GST.\n- A kabadiwala below the GST registration limit charges none.\n- **Open question:** if Luma counts as an \"e-commerce operator\", 0.1% TDS applies, which is ₹0.41 here. People selling under ₹5 lakh a year are exempt only if they give their PAN or Aadhaar.\n- **Later in the chain:** when the kabadiwala sells the 5 kg of iron to a GST-registered yard, the yard pays 18% GST on it under reverse charge.\n\n## Money flow 2: one yard-to-recycler trade\n\n**Example** (from the prototype's demo world): Peenya Paper & Plastic Yard sells 2,000 kg of baled PET bottles to GreenLoop Polymers at ₹38/kg.\n\n| Invoice line | Amount |\n|---|---:|\n| Taxable value: 2,000 kg × ₹38 | ₹76,000.00 |\n| GST at 18% (assumed rate for plastic scrap; confirm the HSN code) | ₹13,680.00 |\n| **Invoice total** | **₹89,680.00** |\n| Income-tax TCS on scrap, if GreenLoop gives the \"for manufacturing\" declaration | ₹0 |\n| Same TCS without the declaration, if the yard is a company or firm or has over ₹1 crore turnover | 1% = ₹896.80, or 2% (proposed from 1 Apr 2026) = ₹1,793.60 on the invoice value; confirm the base with a CA |\n| Extra step if this were metal scrap | GreenLoop would also keep back 2% GST TDS = ₹1,520.00 |\n\n### Path A, the pilot: Luma records, money goes bank to bank\n\n| # | Step | Money | Fee |\n|---|---|---:|---:|\n| 1 | GreenLoop accepts the yard's offer in Luma | — | ₹0 |\n| 2 | Yard dispatches the load with a tax invoice and an e-way bill (needed because the value is over ₹50,000) | — | ₹0 |\n| 3 | GreenLoop weighs the load at its weighbridge. The weight and a photo of the slip go into Luma. The invoice is adjusted if the weight differs | — | ₹0 |\n| 4 | GreenLoop pays the yard's verified bank account by NEFT or IMPS and enters the bank reference (UTR). UPI is only possible up to ₹1 lakh; RTGS starts at ₹2 lakh | ₹89,680.00 from GreenLoop to yard | The bank's own transfer charge |\n| 5 | Luma marks the trade complete. If the yard is a Udyam micro or small enterprise, Luma shows the 45-day MSMED due date | — | ₹0 |\n\n**Result:** the yard receives ₹89,680.00. Luma collects no money, so it owes no GST TCS. Any Luma fee is billed separately.\n\n### Path B, later: escrow through a payment aggregator\n\nThis uses Razorpay Route as the example. It assumes Luma's fee is 1% of the taxable value, charged to the seller.\n\n| # | Step | Money | Fee (including 18% GST on fees) |\n|---|---|---:|---:|\n| 1 | Luma creates a virtual bank account (VA) for this trade | — | — |\n| 2 | GreenLoop pays into the VA by NEFT or IMPS. The money sits in the aggregator's escrow account at a scheduled commercial bank | ₹89,680.00 in | About ₹23.60 (₹20 flat, Cashfree's list price). Paying through checkout at 2% would cost ₹2,116.45 |\n| 3 | Luma creates a Route transfer to the yard's linked account with `on_hold: true` | ₹88,327.20 held | Route fee 0.25% = ₹260.57 (₹104.23 at the 0.1% offer) |\n| 4 | Yard dispatches with an e-way bill. GreenLoop weighs the load and confirms in Luma within the agreed time. If GreenLoop disputes, the hold stays | — | — |\n| 5 | Luma sets `on_hold: false`, or the `on_hold_until` time passes. The money settles to the yard on its normal cycle, usually the next working day | ₹88,327.20 out | — |\n| 6 | Luma pays GST TCS at 0.5% (₹380.00) and income-tax TDS at 0.1% (₹76.00) to the government. The yard claims both back as tax credits | ₹456.00 to the government | — |\n| 7 | Luma keeps its fee of ₹760.00 plus ₹136.80 GST | ₹896.80 | — |\n\n**Check:** ₹88,327.20 + ₹380.00 + ₹76.00 + ₹896.80 = ₹89,680.00\n\n**What each side ends up with**\n- **Luma's margin** is about ₹760.00 − ₹240.82 in aggregator fees before GST (₹20.00 + ₹220.82) = ₹519.18, which is 0.68% of the taxable value. At Route's offer rate it is ₹651.67.\n- **The yard's real cost** is ₹760.00. The TCS and TDS come back as tax credits, and the GST on Luma's fee is an input credit if the yard is GST-registered.\n\n**Before Path B can go live, Luma needs:**\n- More than ₹40 lakh of its own turnover in GST-3B returns (the RBI rule, which Razorpay applies)\n- The payer-payee declaration\n- GST registration as an e-commerce operator\n- A TAN for deducting TDS\n- A written policy on disputes and how much weight difference is accepted\n\nThe fees above come from two providers' public price lists: Razorpay for Route and Cashfree for the virtual account. In practice one aggregator would be used.\n\n## How fast the money lands\n\n| Payment rail | Speed | Limit |\n|---|---|---|\n| UPI (person-to-person, most merchant payments) | Seconds | ₹1 lakh per payment (₹2–5 lakh for some merchant categories) |\n| NEFT | Half-hourly batches, 24×7 | — |\n| RTGS | Real time, 24×7 | Minimum ₹2 lakh |\n| Aggregator settlement (Razorpay, Cashfree) | Next working day as standard; instant for a fee | — |\n| Route transfer after release | Next working day | — |\n| TReDS (a yard's invoice to a large buyer) | Within 24 hours of the best bid | Sellers must be MSMEs |",
+ "risks": [
+  "Letting trade money pass through Luma's own bank account would be unauthorised payment aggregation under the Payment and Settlement Systems Act. Every rupee held for a trade must sit in an authorised payment aggregator's escrow or a bank escrow.",
+  "Razorpay switched off Route for accounts that had not proved their turnover and signed the payer-payee declaration by 31 Dec 2025. A pre-revenue Luma may not reach ₹40 lakh of its own GST-3B turnover, which would delay escrow unless it uses a bank escrow or onboards each seller as its own merchant.",
+  "Escrow makes Luma a tax collector: registration as an e-commerce operator, 0.5% GST TCS deposits and monthly returns, and 0.1% TDS under a TAN. Missed filings bring interest and penalties.",
+  "Luma could be treated as an e-commerce operator even while money stays off-platform. Then 0.1% TDS is deemed on sales paid directly between the parties, and households and kabadiwalas under ₹5 lakh a year are exempt only if they give their PAN or Aadhaar.",
+  "Checkout fees (2% + GST, even on UPI) are larger than a 1% take rate. Business payments have to be steered to bank transfers, and UPI's ₹1 lakh cap blocks most truckloads anyway.",
+  "If Luma records cash business deals, it is documenting yards' non-deductible payments (over ₹10,000 per person per day) and prohibited cash receipts (₹2 lakh or more). The app should steer these payments to digital methods.",
+  "Reverse-charge GST on metal scrap, the 2% GST TDS and e-way bills are the yards' and recyclers' duties. Wrong HSN codes or rates on Luma's receipts could mislead their GST filings, so every document should say 'for information; confirm with your CA'.",
+  "If the proposed rise of scrap TCS to 2% was enacted, recyclers that cannot give a manufacturing declaration will need more working capital.",
+  "Some UPI apps may block or limit person-to-person payment links opened from another app. Scanning the household's UPI QR must stay available as the fallback.",
+  "As a lending service provider, Luma takes on RBI conduct duties (showing all lenders' offers, no pooled accounts, a grievance officer) and reputational risk if kabadiwalas default.",
+  "If Luma pays Saathis itself, Karnataka's welfare fee (1–5% of each payout) and registration duties may apply. Keep Saathi pay directly between the Saathi and whoever hires them until this is clear."
+ ],
+ "openQuestions": [
+  "Is Luma an 'e-commerce operator' under the Income-tax Act 2025 (section 393(1), row 8(v)) and under CGST section 52 for bookings where money never passes through it? This is repo open question 12.",
+  "Does the Act's definition of 'scrap' cover post-consumer recyclables that yards sell (newspaper, PET, cartons)? And did Finance Act 2026 enact the 2% scrap TCS rate unchanged from 1 Apr 2026?",
+  "Which GST rate and HSN code apply to each material in the catalogue after the 22 Sep 2025 rate changes? What value threshold applies to the 2% GST TDS on metal scrap?",
+  "Will Razorpay or Cashfree let Luma split payments to sellers before Luma has ₹40 lakh of its own turnover? If not, should each yard and recycler be onboarded as its own merchant, or should escrow be a bank escrow with a trustee (RazorpayX Escrow+, CastlerX)?",
+  "Who pays Luma's fee on business trades (buyer, seller or both)? Does Luma charge kabadiwalas for household pickups, per pickup or as a subscription?",
+  "What weight difference and what time window release escrow? For example, within ±1% at the buyer's weighbridge, confirmed within 48 hours.",
+  "Is Luma an 'aggregator' under Karnataka's gig-workers law for Saathi jobs? If so, which welfare-fee rate category applies?",
+  "Which bank or NBFC partners will lend in the Bengaluru pilot (for example Mudra loans through a partner bank, or NBFC purchase finance)? Will they accept Luma's receipts as underwriting data?"
+ ],
+ "sources": [
+  {
+   "title": "RBI Master Direction on Regulation of Payment Aggregator (PA), 15 Sep 2025",
+   "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12896&Mode=0"
+  },
+  {
+   "title": "RBI Statement on Developmental and Regulatory Policies, 9 Apr 2025 (UPI transaction limits)",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=60178"
+  },
+  {
+   "title": "Reserve Bank of India (Digital Lending) Directions, 2025",
+   "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12848&Mode=0"
+  },
+  {
+   "title": "Income-tax (No. 2) Bill, 2025 as passed, now the Income-tax Act, 2025 (PRS copy)",
+   "url": "https://prsindia.org/files/bills_acts/bills_parliament/2025/Bill_as_passed_by_LS_Income_Tax_(No.2)_Bill.pdf"
+  },
+  {
+   "title": "Finance Bill 2026: Memorandum explaining the provisions (TCS rationalisation)",
+   "url": "https://www.indiabudget.gov.in/doc/memo.pdf"
+  },
+  {
+   "title": "Minutes of the 54th GST Council meeting, 9 Sep 2024 (metal scrap RCM and TDS)",
+   "url": "https://www.gstcouncil.gov.in/sites/default/files/Minutes/54th_meeting_minutes_conv.pdf"
+  },
+  {
+   "title": "Minutes of the 53rd GST Council meeting, 22 Jun 2024 (e-commerce operator TCS cut to 0.5%)",
+   "url": "https://www.gstcouncil.gov.in/sites/default/files/Minutes/53rd_minutes_converted.pdf"
+  },
+  {
+   "title": "GST e-Way Bill System (NIC portal)",
+   "url": "https://ewaybillgst.gov.in/"
+  },
+  {
+   "title": "Razorpay pricing",
+   "url": "https://razorpay.com/pricing/"
+  },
+  {
+   "title": "Razorpay Route product page (add-on pricing)",
+   "url": "https://razorpay.com/route/"
+  },
+  {
+   "title": "Razorpay Route documentation (eligibility after RBI PA rules)",
+   "url": "https://razorpay.com/docs/payments/route/"
+  },
+  {
+   "title": "Razorpay API: Modify Settlement Hold for Transfers",
+   "url": "https://razorpay.com/docs/api/payments/route/modify-settlement-hold/"
+  },
+  {
+   "title": "Cashfree Payments: payment gateway charges (Easy Split, virtual accounts)",
+   "url": "https://www.cashfree.com/payment-gateway-charges/"
+  },
+  {
+   "title": "RazorpayX Escrow+ accounts",
+   "url": "https://razorpay.com/x/escrow-accounts/"
+  },
+  {
+   "title": "Invoicemart TReDS (Axis Bank and mjunction)",
+   "url": "https://www.invoicemart.com/"
+  },
+  {
+   "title": "MSME Samadhaan: delayed payments under the MSMED Act",
+   "url": "https://samadhaan.msme.gov.in/"
+  },
+  {
+   "title": "MUDRA: Pradhan Mantri MUDRA Yojana",
+   "url": "https://www.mudra.org.in/"
+  },
+  {
+   "title": "Union Budget 2025-26 speech",
+   "url": "https://www.indiabudget.gov.in/budget2025-26/doc/budget_speech.pdf"
+  },
+  {
+   "title": "Oxyzo purchase finance",
+   "url": "https://www.oxyzo.in/en/products/purchase-finance"
+  },
+  {
+   "title": "PRS: The Karnataka Platform-based Gig Workers (Social Security and Welfare) Bill, 2025",
+   "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+  }
+ ]
+}

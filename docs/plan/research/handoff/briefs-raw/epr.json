@@ -1,0 +1,361 @@
+{
+ "topic": "epr",
+ "headline": "India's six live EPR regimes create certificates only from a registered recycler's records, which must be backed by invoices, entered in date order and capped at plant capacity. CPCB found about 7 lakh fake plastic certificates (38 times what recyclers could have produced), so verifiable chain-of-custody data starting at the kabadiwala is the missing layer Luma.Green can supply.",
+ "findings": [
+  {
+   "point": "Six EPR regimes are live, each on its own CPCB portal, and all work the same way: obligated producers buy certificates that only registered processors can generate.",
+   "detail": "The six regimes:\n- **Plastic packaging.** EPR Guidelines in Schedule II of the PWM Rules, 16 Feb 2022. Amended 14 Mar 2024 and again by GSR 237(E) on 31 Mar 2026.\n- **E-waste, including solar PV.** GSR 801(E), in force 1 Apr 2023.\n- **Batteries.** S.O. 3984(E), 22 Aug 2022.\n- **Waste tyres.** HOWM Rules Schedule IX, GSR 593(E), 21 Jul 2022.\n- **Used oil.** HOWM Rules Chapter VII, GSR 677(E) of 18 Sep 2023, in force 1 Apr 2024.\n- **End-of-life vehicles (ELV).** S.O. 98(E), 6 Jan 2025, in force 1 Apr 2025.\n\nIn every regime, CPCB's portal creates certificates in the processor's name from the processor's own uploads of purchases, output and sales. Producers buy these certificates to meet their targets and file annual returns. If the producer's and the processor's figures differ, the lower one counts.\n\nPortals: eprplastic.cpcb.gov.in, eprewaste.cpcb.gov.in, eprbattery.cpcb.gov.in, eprtyres.cpcb.gov.in, eprusedoil.cpcb.gov.in and eprelv.cpcb.gov.in.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf",
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+    "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf",
+    "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf",
+    "https://eprelv.cpcb.gov.in/static/doc/ELV_Rules_2025.pdf"
+   ]
+  },
+  {
+   "point": "Kabadiwalas and yards do not register under any regime, except as used-oil collection agents. They appear in the records only as the seller on a recycler's purchase entry.",
+   "detail": "How each regime treats collectors:\n- **Plastic.** Only units that recycle, co-process, turn waste into energy or oil, or compost it register as Plastic Waste Processors (PWPs). Collectors do not register (CPCB FAQ).\n- **E-waste.** Only manufacturers, producers, recyclers and refurbishers register; dismantlers and bulk consumers do not. Collection is formally limited to registered entities. Even so, a recycler buying from the informal sector may upload any receipt that shows the seller's name and address, and every seller's invoice must state the weight (CPCB FAQ, Jan 2024).\n- **Tyres.** The recycler's purchase form asks for supplier name, address, domestic or import, tonnes, invoice number and date. The supplier's GSTIN is optional.\n- **Batteries.** Anyone collecting or sorting waste batteries must hand them only to registered recyclers or refurbishers. The state pollution board (SPCB) can charge them environmental compensation (EC) for unsafe handling.\n- **Used oil (the exception).** Collection agents must register on the portal, deliver only to registered recyclers, and file quarterly returns plus an annual return by 30 June.",
+   "sourceUrls": [
+    "https://eprplastic.cpcb.gov.in/plastic/downloads/FAQs.pdf",
+    "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+    "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf",
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+    "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf"
+   ]
+  },
+  {
+   "point": "Certificates are created only from records that are backed by invoices, entered in date order and capped at capacity. Luma.Green's receipts and stock movements already have this append-only shape.",
+   "detail": "- **E-waste recyclers** enter purchases first (by EEE item code, with invoices), then production, then end-product sales, strictly in date order. The portal rejects back-dated rows and allows no edits after saving. Output cannot exceed what was bought for each item code, and a year's purchases cannot exceed processing capacity. Sales invoices must be linked to GST.\n- **Plastic PWPs** must upload a signed GST e-invoice for each sale before certificates are created. It must show buyer and seller GSTIN, IRN, date, HSN code, amount, invoice number and QR code, and it is checked against GSTN. Recycled tonnage may never exceed installed capacity, and certificates carry the unit's GST data.\n- **Battery certificates** are also capped at installed capacity.\n- **SPCBs** check capacity on site and review geo-tagged photos and videos of plants on the portal.",
+   "sourceUrls": [
+    "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf",
+    "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf",
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf"
+   ]
+  },
+  {
+   "point": "Each regime counts certificates in a different unit, so Luma.Green's material catalogue needs a mapping to each regime with its conversion factors.",
+   "detail": "- **Plastic:** tonnes, by category (I rigid, II flexible, III multilayer, IV compostable) and by type (recycling, end-of-life, recycled content, reuse). Issued in lots of 1 to 1,000 t and valid for 3 years from issue.\n- **E-waste:** kg of iron, aluminium, copper or gold sold. Valid until 2 years after the end of the financial year in which it was created.\n- **Batteries:** kg. CPCB's working method credits kg of key metal recovered and sold (lead, lithium, cobalt, nickel, manganese, zinc, copper, cadmium, aluminium, iron). The formula in the rules instead scales kg processed by actual recovery divided by the target recovery, and cuts imported feed by 20%. Valid 7 years.\n- **Tyres:** credit = tonnes sold × conversion factor × weightage. Crumb rubber 1.333 × 1.0; reclaimed rubber 1.298 × 1.3; CRMB 0.2 × 1.1; recovered carbon black 3.676 × 1.25; pyrolysis oil and char 1.49 × 0.8 (continuous) or × 0.5 (batch). So 10 t of crumb rubber sold earns 13.33 t.\n- **Used oil:** quantity × conversion factor × weightage (re-refined base oil 1.0, co-processing 0.25). Issued in lots of 100 to 10,000 kg.\n- **ELV:** 1 kg of certificate per kg of steel scrap at a Registered Vehicle Scrapping Facility (RVSF). Valid 5 years.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
+    "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf",
+    "https://eprbattery.cpcb.gov.in/upload/adminDoc/EPR_certificate_generation_Final.pdf",
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+    "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf",
+    "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf",
+    "https://eprelv.cpcb.gov.in/static/doc/ELV_Rules_2025.pdf"
+   ]
+  },
+  {
+   "point": "Targets rise steeply through 2028, so obligated producers need more verifiable post-consumer material every year.",
+   "detail": "Targets for FY2026-27, with the next steps:\n- **Plastic minimum recycling** (as a share of the EPR target): Cat I 70%, Cat II and III 50%, Cat IV 70%. From 2027-28 these become 80%, 60%, 60% and 80%.\n- **Plastic recycled content:** Cat I packaging 40% this year, rising to 60% by 2028-29. Cat II is 10% and Cat III 5% this year, rising to 20% and 10% from 2027-28.\n- **E-waste:** 70% of estimated waste generated, then 80% from 2027-28.\n- **Batteries:** material recovery 90% for portable and EV batteries, 60% for automotive and industrial. Domestic recycled content 40% for automotive and industrial; for portable and EV it starts at 5% in 2027-28 and reaches 20% by 2030-31.\n- **Tyres:** 100% of new tyres made or imported two years earlier.\n- **Used oil:** 20% of base and lubricating oil sold in 2024-25, rising to 40% in 2028-29 and 50% from 2030-31.\n- **ELV:** 8% of the steel in vehicles sold 20 years earlier (non-transport) or 15 years earlier (transport). This rises to 13% from 2030-31 and 18% from 2035-36.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+    "https://www.legitquest.com/act/hazardous-and-other-wastes-management-and-transboundary-movement-amendment-rules-2022/c345",
+    "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf",
+    "https://eprelv.cpcb.gov.in/static/doc/ELV_Rules_2025.pdf"
+   ]
+  },
+  {
+   "point": "Certificate fraud is the system's biggest failure, and penalties now hit processors that over-claim.",
+   "detail": "**What was found:**\n- The Centre for Science and Environment (CSE, 30 Oct 2024) reported about 7 lakh fake plastic EPR certificates, 38 times what recyclers could actually have produced.\n- ₹355 crore of environmental compensation was imposed.\n- Co-processors claimed 335.4 million tonnes a year against 11.4 million tonnes of capacity.\n- 41,577 producers, importers and brand owners were registered, with no virgin-plastic makers among them.\n- The National Green Tribunal (NGT) took up the case on 26 Jul 2024 over about 6 lakh fake certificates from four recyclers, one of them in Karnataka.\n\n**Penalties now in the rules:**\n- Plastic processors that give false information are barred from the EPR system for 1 year.\n- E-waste registrations can be revoked for up to 3 years, plus environmental compensation.\n- Tyre or used-oil recyclers that over-claim by more than 5% of actual recycling face prosecution under section 15 of the Environment Protection Act (tyres) or revocation (used oil). For used oil, a third offence means permanent revocation.",
+   "sourceUrls": [
+    "https://www.cseindia.org/is-the-polluter-really-paying-in-india-s-plastic-packaging-waste-management-ecosystem--12445",
+    "https://www.scconline.com/blog/post/2024/07/31/ngt-issues-notice-cpcb-moefcc-recovery-of-6-lakh-fake-epr-certificates-from-plastic-recycling-companies/",
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf",
+    "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf",
+    "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf"
+   ]
+  },
+  {
+   "point": "Most regimes now fix a certificate price band of 30–100% of the environmental compensation. The e-waste floor, reported at ₹22/kg, is being fought in the Delhi High Court.",
+   "detail": "**Where the band applies.** The battery rules (GSR 190(E), 14 Mar 2024), tyre and used-oil rules (GSR 177(E), 12 Mar 2024) and ELV rules (rule 9(14)) all require CPCB to set a ceiling at 100% and a floor at 30% of the environmental compensation. Trades on the portal must fall inside that band.\n\n**The e-waste dispute.** The 2024 e-waste amendment brought in a minimum price, reported at ₹22/kg. Blue Star, Havells, Daikin, Voltas, Samsung and LG are challenging it. In December 2025 the court paused, for Blue Star, CPCB's 12 December requirement that buyers and sellers declare they traded at or above the floor. The main case was still pending in January 2026.\n\n**Late compliance.** Environmental compensation is partly refunded if a shortfall is cleared late:\n- Plastic: 75%, 60% or 40% back if cleared within one, two or three years.\n- Used oil: 85%, 60% or 30% back on the same timeline.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2024.pdf",
+    "https://eprtyres.cpcb.gov.in/rules/pdf/amendment-Rules-2024.pdf",
+    "https://eprelv.cpcb.gov.in/static/doc/ELV_Rules_2025.pdf",
+    "https://www.newslaundry.com/2026/01/14/blue-star-gets-temporary-relief-as-delhi-hc-stays-regulators-e-waste-price-declaration",
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf"
+   ]
+  },
+  {
+   "point": "A national exchange for EPR certificates is built but not yet approved, and it bans brokers. Luma.Green should supply it with data and material, not compete with it.",
+   "detail": "**The design.** CPCB's guidelines for the EPR Electronic Trading & Settlement Platform (issued around Jan 2025) cover plastic, e-waste, batteries, tyres and used oil. Certificates are still created and transferred on the CPCB portals; pricing and payment move to the exchange. Key rules:\n- A weekly uniform-price auction plus continuous trading.\n- Floor and ceiling prices reset every quarter by CPCB.\n- Payment through escrow.\n- A 4% fee (2% from each side), of which 30% goes to CPCB.\n- Prices and volumes published through an API.\n- No brokers.\n- Participants pay registration equal to 50% of the portal application fee, plus 25% of that each year.\n- Direct trades by entities that are both an obligated entity and a processor are allowed for only 6 months after launch.\n\n**Who may run it.** An operator needs at least ₹50 crore of annual platform revenue, ₹10 crore net worth, 10 years of experience and capacity for 50 lakh transactions a year.\n\n**Status.** MSTC has built the platform, but approval was still pending in June 2026. Until then, certificates move between buyers and sellers directly on the portals.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm",
+    "https://www.multibagg.ai/market-pulse/articles/mstc-q4-fy26-results-strategy-cmq60g6brdtu1mi0j4x3oatul"
+   ]
+  },
+  {
+   "point": "Checking is shifting to independent auditors. The 31 Mar 2026 plastic amendment lets Registered Environment Auditors verify compliance, and CPCB's guidelines for this are due around now.",
+   "detail": "What GSR 237(E) changes:\n- Plastic Waste Processors now include end-of-life processors.\n- Turning plastic waste into feedstock chemicals or new plastic counts as recycling.\n- Auditors registered under the Environment Audit Rules 2025 may verify compliance. CPCB has 6 months, roughly to the end of September 2026, to publish its verification guidelines.\n- Brands may carry forward unmet 2025-26 food-contact recycled-content targets for 3 years, provided they clear at least a third each year.\n- Recycled packaging must meet IS 14534:2023 and be labelled.\n- Enforcement moves to local bodies, overseen by state committees chaired by Chief Secretaries.\n\nE-waste and tyre certificates are already subject to environmental audit by CPCB or agencies it authorises.",
+   "sourceUrls": [
+    "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015",
+    "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf",
+    "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf"
+   ]
+  },
+  {
+   "point": "Filing deadlines change often, so they belong in editable data, not in code.",
+   "detail": "**Standard deadlines:**\n- E-waste, battery, tyre and used-oil recyclers file quarterly returns by the end of the month after each quarter.\n- Plastic processors file annual returns by 30 April; producers, importers and brand owners by 30 June.\n- RVSFs file quarterly Form 3 by the 30th of the next month.\n\n**Extensions are routine:**\n- The used-oil portal extended returns to 31 Mar 2026 (order of 23 Jan 2026), then moved FY2025-26 annual returns to 30 Nov 2026.\n- The 2024 hazardous-waste amendment lets the Centre relax any return timeline by up to 9 months.\n\nCPCB also asked the state boards on 15 Sep 2025 to physically inspect registered used-oil recyclers, and it issued a notice requiring GST e-invoices.",
+   "sourceUrls": [
+    "https://eprusedoil.cpcb.gov.in/",
+    "https://eprtyres.cpcb.gov.in/rules/pdf/amendment-Rules-2024.pdf",
+    "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf",
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+    "https://eprelv.cpcb.gov.in/static/doc/ELV_Rules_2025.pdf"
+   ]
+  },
+  {
+   "point": "Solar panels are covered by the e-waste rules but earn no tradable certificate today. The duty is to store waste modules until 2034-35.",
+   "detail": "CPCB's e-waste FAQ says every maker and producer of solar PV modules, panels or cells must store the waste they generate up to 2034-35, following CPCB guidelines.\n\nE-waste certificates exist only for iron, aluminium, copper and gold, plus refurbishing certificates by equipment code. The exchange's certificate list has no solar category.\n\nFor Luma.Green's planned solar module, this means recording where modules are routed and stored, not generating credits.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm"
+   ]
+  },
+  {
+   "point": "Brands may legally pay for collection networks, and plastic certificates can be issued in a local body's name. That gives Luma.Green a way to earn from collection without selling certificates.",
+   "detail": "**What brands may do.** The plastic guidelines let producers, importers and brand owners run deposit-refund, buy-back or similar schemes, and use voluntary collection points and third-party agencies.\n\n**What they must still show.** Their 30 June annual return must include recycling certificates from registered processors only, and must name the recyclers they used.\n\n**Local bodies.** A processor's certificate is issued in the name of a brand or a local authority, by agreement between them. The exchange lets local bodies sell certificates to brands. This matters for Bengaluru's municipal dry-waste network.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm"
+   ]
+  },
+  {
+   "point": "In Karnataka, the state board (KSPCB) is the regulator Luma.Green's partners answer to, and it has already been caught up in a fake-certificate case.",
+   "detail": "**KSPCB's role:**\n- Plastic processors register with their state board through CPCB's central portal, and the state board charges them environmental compensation.\n- Battery recyclers register with the state board. It can also charge anyone who collects or sorts batteries (kabadiwalas and yards included) for unsafe handling.\n- State boards physically check e-waste and tyre recyclers' capacity.\n\n**The Karnataka case.** The NGT's July 2024 notice named Enviro Recyclean Pvt Ltd of Karnataka among four recyclers accused of about 6 lakh fake certificates.\n\n**What changes next.** The 2026 plastic amendment moves enforcement to local bodies, under a state committee chaired by the Chief Secretary.\n\n**For the pilot.** Verified, auditable supply is a selling point to KSPCB-registered processors in Bengaluru.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+    "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf",
+    "https://www.scconline.com/blog/post/2024/07/31/ngt-issues-notice-cpcb-moefcc-recovery-of-6-lakh-fake-epr-certificates-from-plastic-recycling-companies/",
+    "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "EPR tag on every catalogue material: regime, category, unit and conversion factor, stored as dated data the admin can edit",
+   "why": "Certificates are counted per regime and category: plastic Cat I–IV in tonnes, e-waste and battery metal in kg, tyre credits with conversion factor × weightage, ELV steel in kg. CPCB revises these factors by notification. Add an eprMappings table keyed like priceFloors (materialId, regime, category, unit, factor, effectiveFrom). Every stock and lot screen can then show totals such as '1.2 t Cat I rigid this month', and a CPCB change needs no code change. It is cheap, visible in a demo, and every later EPR feature builds on it.",
+   "priority": "prototype-now",
+   "users": [
+    "admin",
+    "preprocessor (yard)",
+    "recycler",
+    "manufacturer (brand/PIBO)"
+   ]
+  },
+  {
+   "feature": "Lot passport: a QR-tagged bale or lot carrying its full chain of custody, with a one-click evidence pack",
+   "why": "After about 7 lakh fake plastic certificates, recyclers and brands need proof that tonnage exists and is post-consumer. Group the existing append-only pickup receipts and stock movements into lots or bales with a QR code, which the recycler scans on arrival. The lot's timeline (who, what, grams, when, where, photos, receipts) exports as a PDF or CSV evidence pack for state-board checks and Registered Environment Auditors. Demo it end to end with seed data: household pickup → kabadiwala → yard bale → recycler intake.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "preprocessor (yard)",
+    "recycler",
+    "manufacturer (brand/PIBO)",
+    "auditor"
+   ]
+  },
+  {
+   "feature": "Exports that match the CPCB portals, for recyclers",
+   "why": "Recyclers retype the same purchases and sales into each CPCB portal, and the portals reject back-dated rows and forbid edits. Exports should follow each portal's fields and date order:\n- e-waste purchases by item code;\n- tyre purchases (supplier, address, source, tonnes, invoice number, optional GSTIN, date);\n- plastic sale e-invoice fields (GSTINs, IRN, HSN code, amount);\n- battery quarterly Form 4 totals.\n\nThis saves hours each quarter and needs no CPCB API.",
+   "priority": "prototype-now",
+   "users": [
+    "recycler"
+   ]
+  },
+  {
+   "feature": "Brand collection dashboard: kg collected by plastic category, city and lot, with links to the evidence",
+   "why": "The plastic guidelines let brands pay for buy-back or deposit-refund schemes and third-party collectors, while certificates must come from registered processors. Recycled-content duties (Cat I 40% this year, 60% by 2028-29) add demand for traceable recycled plastic. A mocked dashboard shows investors a revenue line: brands pay Luma.Green for verified collection, and partner processors issue the certificates. Luma.Green never trades certificates itself, which the national exchange forbids to brokers.",
+   "priority": "prototype-now",
+   "users": [
+    "manufacturer (brand/PIBO)",
+    "recycler",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Receipt for sellers without a GSTIN",
+   "why": "For e-waste bought from informal sellers, CPCB accepts a receipt that names the seller and address and states the weight. Tyre purchase entries make the supplier's GSTIN optional. Issue a numbered, signed digital receipt for every kabadiwala → yard and yard → recycler sale: seller name, address, material, weight in grams, date, photo and a verification QR. This turns an informal trade into purchase evidence a recycler can upload.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "preprocessor (yard)",
+    "recycler"
+   ]
+  },
+  {
+   "feature": "GSTIN, e-invoice number (IRN) and e-way bill on business-to-business trades, plus recycled-content details on recycler → manufacturer orders",
+   "why": "Plastic certificates need a GST e-invoice for each sale, checked against GSTN, and e-waste and tyre certificates need GST-linked sales invoices. Add optional fields on yard → recycler and recycler → manufacturer trades: GSTIN (format-checked, then confirmed by the admin), IRN, e-way bill number and the invoice PDF. On recycler → manufacturer orders, also record polymer, category and recycled content, with IS 14534:2023 labelling. The recycler's certificate paperwork then starts on Luma.Green. This also answers open question 9 in kabadiwala-to-yard.md (what paperwork changes hands).",
+   "priority": "pilot",
+   "users": [
+    "preprocessor (yard)",
+    "recycler",
+    "manufacturer (brand/PIBO)"
+   ]
+  },
+  {
+   "feature": "Capacity and date-order checks on the recycler's ledger",
+   "why": "The portals cap purchases and certificates at registered capacity and reject back-dated or edited entries. Over-claiming by more than 5% (tyres, used oil) is grounds for revocation or prosecution. Store each recycler's registered capacity per category (tonnes a year) from onboarding. Warn at 80% and 100% of the year's capacity. Keep ledger entries unchangeable, with corrections added as new linked entries.",
+   "priority": "pilot",
+   "users": [
+    "recycler",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Verified EPR registrations on business profiles",
+   "why": "Only registered processors can create certificates, and the battery rules make dealing with unregistered entities a violation. Onboarding already proposes a Plastic Waste Processor registration field. Extend it to every regime: e-waste recycler or refurbisher, battery recycler (state board), tyre recycler or retreader, used-oil recycler or collection agent, and vehicle scrapping facility. Capture the number, certificate PDF and expiry date, have the admin check them, and show a 'registered for …' badge. Kabadiwalas and yards then know where regulated materials may go.",
+   "priority": "pilot",
+   "users": [
+    "admin",
+    "recycler",
+    "preprocessor (yard)",
+    "manufacturer (brand/PIBO)"
+   ]
+  },
+  {
+   "feature": "Compliance calendar driven by editable rules, with SMS or WhatsApp reminders",
+   "why": "Deadlines move: used-oil FY2025-26 returns are now due 30 Nov 2026, and the Centre can relax any hazardous-waste timeline by up to 9 months. Price bands and floors are in court. Keep regimes, due dates, price bands, certificate validity and factors in one dated table the admin can edit. Remind recyclers and brands before quarterly returns (end of the following month) and annual returns (30 April for processors, 30 June for producers).",
+   "priority": "pilot",
+   "users": [
+    "recycler",
+    "manufacturer (brand/PIBO)",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Routing rules for e-waste, batteries, used oil, tyres and solar modules",
+   "why": "Each of these has a restricted path:\n- E-waste may be collected only by registered producers, recyclers or refurbishers.\n- Waste batteries must go to registered recyclers or refurbishers.\n- Used oil may be collected only by registered collection agents.\n- Solar modules go to the producer's storage until 2034-35.\n\nWhen a household photo estimate or a kabadiwala stock line falls into one of these, route it to registered partners from the verified-registration list. Warn unregistered handlers and keep the item off the open marketplace.",
+   "priority": "scale",
+   "users": [
+    "household",
+    "kabadiwala",
+    "preprocessor (yard)",
+    "recycler"
+   ]
+  },
+  {
+   "feature": "Read-only EPR market prices from the national exchange",
+   "why": "The authorised exchange must publish prices, volumes and price history through an API. Showing weekly clearing prices by category helps recyclers value their feedstock and brands plan budgets. It keeps Luma.Green on the data side of the no-broker rule and can feed the planned live-prices module once MSTC's platform is approved.",
+   "priority": "scale",
+   "users": [
+    "recycler",
+    "manufacturer (brand/PIBO)"
+   ]
+  }
+ ],
+ "artifactMarkdown": "### EPR regimes in force in India (as of 29 Sep 2026)\n\n| Regime (rules; latest change) | Who is obligated | Who generates certificates | Certificate unit · validity · price | Portal | Targets for FY2026-27 (next step) | What Luma.Green users must record |\n|---|---|---|---|---|---|---|\n| **Plastic packaging**: PWM Rules 2016 + EPR Guidelines (Sch. II, 16 Feb 2022); amended 14 Mar 2024 and 31 Mar 2026 (GSR 237(E)) | Producers, importers and brand owners (PIBOs). Those in more than 2 states register with CPCB; those in 1–2 states with the SPCB. Micro/small brand owners and exporters are exempt | Registered Plastic Waste Processors (recyclers; co-processors, waste-to-energy/oil and composting units for end-of-life). PIBOs generate their own recycled-content and reuse certificates | Tonnes, by category (I rigid, II flexible, III multilayer, IV compostable) and type (recycling, end-of-life, recycled content, reuse). Lots of 1–1,000 t; valid 3 yrs from issue. Floor/ceiling to be set quarterly on the national exchange | eprplastic.cpcb.gov.in | Minimum recycling: Cat I 70%, II/III 50%, IV 70% (80/60/60/80% from 2027-28). Recycled content: Cat I 40%, II 10%, III 5% (Cat I reaches 60% by 2028-29) | **Kabadiwala/yard:** kg per hand-off by EPR category; post- vs pre-consumer; seller, date, place, lot ID. **Recycler:** purchases; kg processed per category, never above installed capacity; signed GST e-invoice for each sale (both GSTINs, IRN, HSN, amount, number, QR); annual return by 30 Apr |\n| **E-waste (incl. solar PV)**: E-Waste (Management) Rules 2022 (GSR 801(E); in force 1 Apr 2023); amended 8 Mar 2024 | Producers of listed electrical and electronic equipment (makers, importers, own-brand sellers). Solar PV makers must store waste modules until 2034-35 | Registered recyclers (EPR certificates); registered refurbishers (refurbishing certificates by equipment code) | kg of recovered iron, aluminium, copper or gold sold. Lots down to 0.000001 kg; valid until 2 yrs after the financial year of issue. Floor reported at ₹22/kg, challenged in the Delhi High Court | eprewaste.cpcb.gov.in | 70% of estimated e-waste generated (80% from 2027-28). Solar: storage duty only | **Kabadiwala/yard selling to a recycler:** receipt with seller name, address, item and weight (a GST invoice if registered). **Recycler:** purchases by item code with invoices; production and sales in date order; GST-linked sales invoices; purchases within capacity; quarterly return by end of the following month |\n| **Batteries**: BWM Rules 2022 (S.O. 3984(E), 22 Aug 2022); GSR 190(E), 14 Mar 2024 | Producers of portable, automotive, industrial and EV batteries (makers, importers, own-brand sellers) | Recyclers and refurbishers registered with the state board | kg. CPCB credits kg of key metal recovered and sold (lead, lithium, cobalt, nickel, manganese, zinc, copper, cadmium, aluminium, iron). The rules' formula scales kg processed by actual ÷ target recovery, ×0.8 for imported feed. Valid 7 yrs; price 30–100% of EC | eprbattery.cpcb.gov.in | Recovery: portable/EV 90%, automotive/industrial 60%. Domestic recycled content: automotive/industrial 40%; portable/EV 5% from 2027-28 (20% by 2030-31) | **Kabadiwala/yard (collects and sorts):** battery type, chemistry, kg, source; hand over only to a registered recycler or refurbisher. **Recycler:** kg received per source; dry weight processed; recovery per metal; metal sales invoices; hazardous residue; quarterly Form 4 by end of the following month |\n| **Waste tyres**: HOWM Rules 2016, Sch. IX (GSR 593(E), 21 Jul 2022); GSR 177(E), 12 Mar 2024 | Tyre makers and importers; importers of waste tyres | Registered recyclers (EPR credits); registered retreaders (retreading certificates that defer the obligation) | Tonnes = end product sold × conversion factor × weightage. Crumb rubber 1.333×1.0; reclaimed rubber 1.298×1.3; CRMB 0.2×1.1; recovered carbon black 3.676×1.25; pyrolysis oil/char 1.49×0.8 (continuous) or ×0.5 (batch). Valid until 2 yrs after the financial year; price 30–100% of EC | eprtyres.cpcb.gov.in | 100% of new tyres made or imported two years earlier | **Yard/recycler purchase:** supplier name, address, domestic/import, tonnes, invoice number, supplier GSTIN (optional), date. **Recycler:** GST-linked sales invoices for end products; sales within registered capacity; quarterly and annual returns |\n| **Used oil**: HOWM Rules 2016, Ch. VII (GSR 677(E), 18 Sep 2023; in force 1 Apr 2024); GSR 177(E) | Producers of base oil and lubricating oil; used-oil importers (100% of last year's imports) | Registered recyclers (re-refiners) and co-processors | kg = end product × conversion factor × weightage (re-refined base oil 1.0; co-processing/energy recovery 0.25). Lots of 100–10,000 kg; valid until 2 yrs after the financial year; price 30–100% of EC. Producers may buy no more than their liability + 10% | eprusedoil.cpcb.gov.in | 20% of base/lubricating oil sold in 2024-25 (40% in 2028-29; 50% from 2030-31) | **Only registered collection agents may collect.** They record generator, quantity, date and the recycler it went to; file quarterly returns and an annual return by 30 Jun. Unregistered kabadiwalas should not buy used oil |\n| **End-of-life vehicles**: Environment Protection (ELV) Rules 2025 (S.O. 98(E), 6 Jan 2025; in force 1 Apr 2025) | Vehicle producers. Bulk consumers must hand their end-of-life vehicles in for scrapping | Registered Vehicle Scrapping Facilities (RVSFs) only | 1 kg of certificate per kg of steel scrap at the RVSF, once all other materials are accounted for. Valid 5 yrs; price 30–100% of EC | eprelv.cpcb.gov.in | 8% of the steel in vehicles sold in 2006-07 (non-transport) or 2011-12 (transport) (13% from 2030-31; 18% from 2035-36) | **RVSF:** vehicles received; material weights by category and where each went (recyclers, hazardous-waste facility); quarterly Form 3 by the 30th of the next month. **Yard buying vehicle parts or steel:** keep the RVSF's papers; informal dismantling earns no credit |\n\n- **Common to all:** CPCB's portal creates certificates in the processor's name from its uploads of purchases, output and sales. Producers buy them. If the two sides' figures differ, the lower one counts. Entries cannot be back-dated or edited.\n- **Trading:** pricing and payment are moving to CPCB's EPR Electronic Trading & Settlement Platform. MSTC has built it; approval was pending as of June 2026. It runs a weekly uniform-price auction plus continuous trading, charges a 4% fee (2% from each side) and allows no brokers.\n- **Not in the table, to verify first:** construction and demolition waste (from 1 Apr 2026) and non-ferrous metals, which trade sources list as EPR regimes.\n- **Abbreviations:** EC = environmental compensation (the penalty for missing a target). SPCB = state pollution control board. PIBO = producer, importer or brand owner. Financial year = April–March.",
+ "risks": [
+  "Liability for helping a violation: the used-oil rules let CPCB charge environmental compensation to any entity that aids or abets a violation, and the battery rules cover anyone who helps an obligated entity evade its duties. A platform whose inflated weights or unregistered routing feed false certificates could be pulled in, so records must be tamper-evident and anomalies flagged.",
+  "Partners' exposure: over-claiming leads to one of the following:\n- a 1-year bar for plastic processors;\n- e-waste registration revoked for up to 3 years;\n- permanent revocation for used-oil recyclers on a third offence;\n- prosecution under section 15 of the Environment Protection Act.\nAny data-quality failure on Luma.Green becomes a partner's legal problem.",
+  "Positioning: the national EPR exchange allows no brokers, and running one requires at least ₹50 crore of annual platform revenue and 10 years of experience. Pitching Luma.Green as a 'credit marketplace' will not survive due diligence; position it as verified material and data.",
+  "Rule changes: the plastic rules were amended in 2022, 2024 and March 2026, deadlines are extended repeatedly, and the e-waste floor price is in court. Hard-coded factors, prices or dates will go out of date.",
+  "Legal grey zone for kabadiwalas: e-waste collection is limited to registered entities, used-oil collectors must register, and lead-acid batteries and used oil are hazardous. Openly helping unregistered handlers could draw KSPCB attention during the Bengaluru pilot.",
+  "GST friction: plastic certificates depend on GST e-invoices, which unregistered kabadiwalas cannot issue. Whether Luma.Green counts as a GST e-commerce operator is still an open question in the repo (question 12).",
+  "Privacy: receipts and evidence packs carry seller names, addresses and locations. Sharing them with recyclers and auditors needs notice, clear purpose and minimal data under the DPDP Act, and the packs must never be public.",
+  "No documented third-party API into the CPCB portals was found. Integration will be exports and manual uploads for the foreseeable future, so Luma.Green's value must not depend on automated filing.",
+  "Uncertain revenue: fraud drove certificate prices down, and prices are now set by price bands and court cases. Income from brand-funded collection will rise and fall with enforcement until the exchange and price floors settle."
+ ],
+ "openQuestions": [
+  "Has MSTC's EPR trading platform been approved since June 2026, and when will direct buyer-to-seller transfers on the CPCB portals stop? A trade report (Enviliance, Apr 2026) says CPCB launched a common login portal, epr.cpcb.gov.in, in February 2026; this needs checking.",
+  "What evidence will CPCB's verification guidelines under the 31 Mar 2026 plastic amendment (due around September–October 2026) and Registered Environment Auditors accept? Could chain-of-custody records generated on a platform count as proof of post-consumer origin?",
+  "Does the plastic EPR portal accept receipts without GST for processors' purchases from informal collectors, as the e-waste portal does, or only GST e-invoices?",
+  "Trade sources list EPR regimes for non-ferrous metals and for construction and demolition waste as in force in 2026. Do they cover kabadiwala metal trades (copper, aluminium, brass), and who creates certificates there?",
+  "Do the Solid Waste Management Rules 2026, reported to be in force from 1 April 2026, require aggregators or scrap dealers to register on a portal?",
+  "What will the Delhi High Court finally rule on the e-waste floor price (reported at ₹22/kg), and will prices elsewhere be reset each quarter on the exchange?",
+  "Which KSPCB-registered plastic processors, e-waste recyclers and battery recyclers near Bengaluru would join a verified-feedstock pilot, and what documents do they ask yards for today?",
+  "Plastic certificates can be issued in a local authority's name. Should Luma.Green partner with Bengaluru's municipal dry-waste collection network?"
+ ],
+ "sources": [
+  {
+   "title": "Guidelines on Extended Producer Responsibility for Plastic Packaging (PWM Rules, Schedule II, Feb 2022) — CPCB",
+   "url": "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf"
+  },
+  {
+   "title": "FAQs — Centralized EPR Portal for Plastic Packaging — CPCB",
+   "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/FAQs.pdf"
+  },
+  {
+   "title": "Instruction Sheet for PWPs: GST e-invoices for EPR certificate generation — CPCB",
+   "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf"
+  },
+  {
+   "title": "Plastic Waste Management (Amendment) Rules, 2026 (GSR 237(E)) explained — LiveLaw",
+   "url": "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015"
+  },
+  {
+   "title": "Guidance document for generation and transfer of EPR certificates for e-waste — CPCB",
+   "url": "https://eprewaste.cpcb.gov.in/assets/Guidance%20document%20for%20E-Waste%20-%20generation%20and%20transfer%20of%20EPR%20Certificate_Final%20(1).pdf"
+  },
+  {
+   "title": "FAQs under E-Waste (Management) Rules, 2022 (23 Jan 2024) — CPCB",
+   "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf"
+  },
+  {
+   "title": "Battery Waste Management Rules, 2022 (S.O. 3984(E)) — MoEFCC, CPCB copy",
+   "url": "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf"
+  },
+  {
+   "title": "Battery Waste Management (Amendment) Rules, 2024 (G.S.R. 190(E), 14 Mar 2024) — MoEFCC",
+   "url": "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2024.pdf"
+  },
+  {
+   "title": "Mechanism for Generation of EPR Certificates (batteries) — CPCB",
+   "url": "https://eprbattery.cpcb.gov.in/upload/adminDoc/EPR_certificate_generation_Final.pdf"
+  },
+  {
+   "title": "Guidance document for generation and transfer of EPR certificates for waste tyres — CPCB",
+   "url": "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf"
+  },
+  {
+   "title": "Hazardous and Other Wastes Amendment Rules, 2024 (G.S.R. 177(E), 12 Mar 2024) — MoEFCC",
+   "url": "https://eprtyres.cpcb.gov.in/rules/pdf/amendment-Rules-2024.pdf"
+  },
+  {
+   "title": "Hazardous and Other Wastes Amendment Rules, 2022 (Schedule IX, waste tyre EPR) — LegitQuest",
+   "url": "https://www.legitquest.com/act/hazardous-and-other-wastes-management-and-transboundary-movement-amendment-rules-2022/c345"
+  },
+  {
+   "title": "Hazardous and Other Wastes Second Amendment Rules, 2023 (EPR for used oil) — MoEFCC",
+   "url": "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf"
+  },
+  {
+   "title": "Used Oil EPR Portal: notices, extensions and collection agents — CPCB",
+   "url": "https://eprusedoil.cpcb.gov.in/"
+  },
+  {
+   "title": "Environment Protection (End-of-Life Vehicles) Rules, 2025 (S.O. 98(E)) — MoEFCC",
+   "url": "https://eprelv.cpcb.gov.in/static/doc/ELV_Rules_2025.pdf"
+  },
+  {
+   "title": "Guidelines for authorisation and functioning of the EPR Electronic Trading & Settlement Platform — CPCB",
+   "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS80MzBfMTczNTYzNzY5Nl9tZWRpYXBob3RvMTM5ODcucGRm"
+  },
+  {
+   "title": "MSTC Q4 FY26 results: EPR trading platform built, approval pending (9 Jun 2026) — Multibagg",
+   "url": "https://www.multibagg.ai/market-pulse/articles/mstc-q4-fy26-results-strategy-cmq60g6brdtu1mi0j4x3oatul"
+  },
+  {
+   "title": "Is the polluter really paying in India's plastic packaging waste management ecosystem? (Oct 2024) — CSE",
+   "url": "https://www.cseindia.org/is-the-polluter-really-paying-in-india-s-plastic-packaging-waste-management-ecosystem--12445"
+  },
+  {
+   "title": "NGT issues notice on 6 lakh fake EPR certificates, including a Karnataka recycler (Jul 2024) — SCC Online",
+   "url": "https://www.scconline.com/blog/post/2024/07/31/ngt-issues-notice-cpcb-moefcc-recovery-of-6-lakh-fake-epr-certificates-from-plastic-recycling-companies/"
+  },
+  {
+   "title": "Blue Star gets temporary relief as Delhi HC stays regulator's e-waste price declaration (14 Jan 2026) — Newslaundry",
+   "url": "https://www.newslaundry.com/2026/01/14/blue-star-gets-temporary-relief-as-delhi-hc-stays-regulators-e-waste-price-declaration"
+  }
+ ]
+}

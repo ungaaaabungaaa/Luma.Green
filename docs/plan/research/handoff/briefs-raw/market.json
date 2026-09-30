@@ -1,0 +1,428 @@
+{
+ "topic": "market",
+ "headline": "India's recycling runs on an informal first mile: 1.5–4 million waste pickers, plus kabadiwalas and two or three tiers of dealers, move 60–70% of urban recyclables, and value leaks at every hop. This week a Bengaluru household gets ₹500–590/kg for copper that trades at ₹1,394–1,454/kg, about 35–42% of the wholesale price.",
+ "findings": [
+  {
+   "point": "The material that reaches Indian mills is worth at least ₹1.8–2.1 lakh crore (about $20–24B) a year, and ferrous scrap is 80–85% of it. Every stream is growing.",
+   "detail": "This is our own bottom-up estimate: cited volumes multiplied by current factory-gate prices.\n- Ferrous scrap: 41 Mt used in FY2024-25 at ₹36.5–41.5/kg (BigMint, 23 Sep 2026) comes to ₹1.50–1.70 lakh crore.\n- Recovered paper: about 17 Mt (roughly 75% of the 23 Mt of paper made in 2024-25) at ₹14–18/kg delivered to mills comes to ₹0.24–0.31 lakh crore.\n- Plastics: 2.5 Mt of EPR-certified processing (2022-23) at ₹10–44/kg comes to ₹0.03–0.11 lakh crore.\n\nCopper, aluminium, brass, lead, glass, e-waste, textiles and tyres are not included, so treat the total as a floor. The dollar figure assumes ₹88 to the dollar.\n\nIndustry framing:\n- MRAI (citing an Avendus report) puts the recycling market at about $20B by 2030, with 2.5 million jobs and a network of 25,000 MSMEs (Nov 2025).\n- The Ministry of Textiles projects textile recycling alone at $3.5B by 2030 (Feb 2026).\n\nGrowth:\n- Domestic steel scrap generation is expected to grow 6–8% a year to 2050.\n- Official e-waste rose 11% from FY2023-24 to FY2024-25. NITI Aayog projects 17% a year.\n- Li-ion batteries reaching end of life go from 19 kt (2023) to 233 kt by 2035.\n- Urban municipal waste is 1,66,096 t/day, 80.17% of it processed (MoHUA, 1 Dec 2025).",
+   "sourceUrls": [
+    "https://www.eco-business.com/news/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/",
+    "https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405",
+    "https://www.wasterecyclingmag.com/news/india-s-recovered-fibre-sector-requires-reforms-to-reach-full-potential",
+    "https://joinbin.com/scrap-rate-cardboard-india",
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1943210",
+    "https://businessindia.co/magazine/interview/journey-to-a-circular-economy",
+    "https://www.texmin.gov.in/static/uploads/2026/03/407c2f186a2044a4497c9c9803d16a2c.pdf",
+    "https://theprint.in/economy/indias-looking-at-14-million-metric-tonnes-of-e-waste-by-2030-recycling-cant-keep-up-niti-aayog/2838862/",
+    "https://www.etvbharat.com/en/bharat/india-waste-processing-facility-in-municipality-areas-increases-to-80-percent-mohua-enn25120105121"
+   ]
+  },
+  {
+   "point": "Informal workers run the first mile: 60–70% of urban recyclables, about 62–75% of e-waste and 70% of retired batteries.",
+   "detail": "- **Waste pickers:** Down To Earth (15 May 2026, citing the ILO and Chintan) counts 1.5–4 million informal waste pickers. They handle 60–70% of urban recyclables and about 70% of plastic recycling. They earn ₹200–400 on a good day, typically under ₹10,000 a month.\n- **E-waste:** NITI Aayog (Jan 2026) says about 62% is handled informally. The Chatter (Apr 2026) says the formal share rose from about 1% to about 25% after the 2022 EPR rules.\n- **Batteries:** in 2020, 70% of retired batteries were collected by informal aggregators, 20% by manufacturers and 10% by formal handlers (WRI India, Jul 2024).\n\nWhat this means for Luma.Green: the supply side is people who are paid in cash, often undocumented and on a first smartphone. The onboarding and household flows must work for them.",
+   "sourceUrls": [
+    "https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them",
+    "https://theprint.in/economy/indias-looking-at-14-million-metric-tonnes-of-e-waste-by-2030-recycling-cant-keep-up-niti-aayog/2838862/",
+    "https://thechatter.zerodha.com/p/how-indias-e-waste-rules-found-their",
+    "https://wri-india.org/sites/default/files/ConferenceProceeding-WRI-India-Battery-circularity-policy-regulations-implementation-strategies.pdf"
+   ]
+  },
+  {
+   "point": "Four to six hand-offs sit between a household and a factory. Luma.Green's roles assume one yard between kabadiwala and recycler.",
+   "detail": "- **Plastics:** CSE maps the unorganised chain as household or waste picker → kabadiwala → small dealer → medium dealer → large dealer → recycler, then a converter or manufacturer.\n- **Textiles:** brokers appear at several steps: collector → local aggregator → trader → shredder → open-end spinning mill (Fashion for Good, 2022). South India's cutting waste goes to the Tirupur–Coimbatore–Erode belt. Panipat takes in 3,500–5,250 t/day (Ministry of Textiles, 2026).\n- **Ferrous scrap:** it moves through area aggregators to furnace hubs such as Mandi Gobindgarh, the market behind BigMint's index.\n\nEach hop adds sorting, baling, freight, credit and a margin.\n\nWhat this means for the data model: yards must be able to buy from other yards, with a size or tier attribute, rather than a new role for each dealer tier.",
+   "sourceUrls": [
+    "https://cdn.cseindia.org/attachments/0.97245800_1570432310_factsheet3.pdf",
+    "https://saahaszerowaste.com/explore/reports-and-case-study/Sorting-for-Circularity-Wealth-in-Waste.pdf",
+    "https://www.texmin.gov.in/static/uploads/2026/03/407c2f186a2044a4497c9c9803d16a2c.pdf",
+    "https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405"
+   ]
+  },
+  {
+   "point": "Hidden prices are the biggest leak. Bengaluru households get about 35–42% of the wholesale price for copper and about 23% for PET bottles.",
+   "detail": "Prices at the household's door in Bengaluru (The Kabadiwala; scraprates.in, 28 Sep 2026):\n- copper ₹500–588/kg\n- brass ₹400–439/kg\n- aluminium ₹150–154/kg\n- iron ₹22–39/kg\n- PET ₹10/kg\n- newspaper ₹10–14/kg\n- cardboard ₹3–8/kg\n\nFactory or wholesale prices:\n- copper ₹1,394/kg on MCX (28 Sep 2026); copper armature ₹1,454/kg in Delhi\n- brass ₹950–990/kg in Delhi\n- aluminium ₹293–365/kg in Delhi\n- ferrous index ₹41.5/kg; HMS 80:20 ₹36.5/kg in Mumbai (23 Sep 2026)\n- PET bottle scrap ₹44/kg in Bengaluru (Sep 2026)\n- baled cardboard (OCC) ₹14–18/kg delivered to mills (Apr 2026)\n\nShare of the factory price the household gets:\n- copper about 35–42%\n- brass about 40–46%\n- aluminium about 50%\n- PET about 23%\n- cardboard about 20–55%\n- iron about 55–100% (the narrowest gap)\n\nSorting, cleaning, grade, freight and credit explain part of each gap. The widest gaps, though, are in metals priced off an exchange, where door rates lag the market. That points to missing information more than to cost.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+    "https://scraprates.in/bangalore",
+    "https://upstox.com/commodity-market-trading/mcx-copper-price/",
+    "https://shreemetalprices.com/delhi-scrap-prices-today/",
+    "https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405",
+    "https://scrapc.com/news/pet-bottle-price/",
+    "https://joinbin.com/scrap-rate-cardboard-india"
+   ]
+  },
+  {
+   "point": "Rigged scales have been found in Bengaluru scrap shops.",
+   "detail": "- **March 2023, Kamakshipalya:** a resident selling about 40 kg of newspapers at an old-paper shop saw the reading being adjusted with a remote. Police then arrested 17 shopkeepers from scrap shops, ration shops and meat stalls. Their scales had circuit-board chips fitted by two former contract technicians of the Legal Metrology department (Deccan Herald, 19 Mar 2023).\n- **Official enforcement:** Karnataka's Legal Metrology department booked 5,375 cases in Bengaluru Urban in the 17 months to Aug 2024, with ₹1.79 crore in fines. It takes complaints on emapan.karnataka.gov.in (NewsKarnataka, Nov 2024).\n\nWhat this means for Luma.Green: a receipt that both sides confirm is a trust feature for households, not an extra.",
+   "sourceUrls": [
+    "https://www.deccanherald.com/india/karnataka/bengaluru/weighing-scale-racket-in-bengaluru-busted-by-kamakshipalya-police-1201713.html",
+    "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+   ]
+  },
+  {
+   "point": "Moisture and contamination take 20–50% of the value, mostly off the record.",
+   "detail": "- **Cardboard:** wet cardboard loses 30–50% of its value and may be rejected (BIN, Apr 2026).\n- **Bengaluru dry waste:** operators of the city's dry waste collection centres (DWCCs) say only about 30% of incoming dry waste is good enough to earn from. In the rains, pickers have to dry material before they can sell it (Citizen Matters, Sep 2025).\n- **Textiles:** garment cutting waste sold mixed carries up to 20% contamination and fetches ₹6–35/kg. Sorted white cuttings fetch ₹50–60/kg (Fashion for Good, 2022).\n\nWhat this means for Luma.Green: every business-to-business hand-off needs a quality grade and an explicit deduction line: gross weight, deduction, reason and net weight.",
+   "sourceUrls": [
+    "https://joinbin.com/scrap-rate-cardboard-india",
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+    "https://saahaszerowaste.com/explore/reports-and-case-study/Sorting-for-Circularity-Wealth-in-Waste.pdf"
+   ]
+  },
+  {
+   "point": "Cash, credit and the 18% GST keep trade informal. Since October 2024 the tax burden on metal scrap has shifted to yards.",
+   "detail": "- **Cash:** collectors on the ground buy in cash and avoid digital payments (Karo Sambhav, quoted by Mongabay, 22 May 2026).\n- **Tax:** MRAI says the 18% GST on recycled materials is unaffordable for small operators, which keeps them outside GST (Nov 2025). WRI blames the same 18% on retired batteries for diverting them to informal recyclers. The Chatter notes informal e-waste buyers outbid formal ones because they carry no GST overhead.\n- **Metal scrap rules:** since 10 Oct 2024, a registered buyer of metal scrap (tariff chapters 72–81) from an unregistered seller pays the GST itself under reverse charge (Notification 06/2024-CT(R)). Business-to-business supplies also carry 2% GST TDS.\n\nWhat this means for Luma.Green: record payments and amounts owed without moving money, and keep the GST number optional.",
+   "sourceUrls": [
+    "https://india.mongabay.com/2026/05/how-ngos-are-bringing-indias-informal-waste-collectors-into-the-system/",
+    "https://businessindia.co/magazine/interview/journey-to-a-circular-economy",
+    "https://wri-india.org/sites/default/files/ConferenceProceeding-WRI-India-Battery-circularity-policy-regulations-implementation-strategies.pdf",
+    "https://thechatter.zerodha.com/p/how-indias-e-waste-rules-found-their",
+    "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html"
+   ]
+  },
+  {
+   "point": "Price swings are large enough to stop collection altogether.",
+   "detail": "- **Paper, 2023:** kraft waste paper fell to ₹11,000–13,500/t (₹11–14/kg) in mid-2023. Domestic collection of recovered paper dropped 50–55% and many collectors quit (IRPTA, via The Pulp and Paper Times, Jun 2023).\n- **Steel scrap, Sep 2026:** a north Indian mill owner said mills had cut scrap buying by 50–60% amid oversupply, and the ferrous index slipped to ₹41,500/t (BigMint, 23 Sep 2026).\n- **Bengaluru:** dry waste collection centres turn pickers away when rates fall (Citizen Matters, Sep 2025).\n\nWhat this means for Luma.Green: an admin minimum price that is right today can be above the market within weeks.",
+   "sourceUrls": [
+    "https://thepulpandpapertimes.com/news/price-of-waste-paper-plummeted-to-its-lowest-level-in-the-previous-five-months-881",
+    "https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405",
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+   ]
+  },
+  {
+   "point": "India is short of domestic scrap and fibre. The bottleneck is collection, not demand, which is why mills should pay for sorted, traceable supply.",
+   "detail": "- **Paper:** India made about 23 Mt in 2024-25, around 75% of it from recovered fibre. Yet domestic recovery is only about 30%, and about 7 Mt of recovered paper is imported every year (Waste & Recycling Magazine citing the paper makers' association IPMA, 9 Jan 2026).\n- **Steel:** 41 Mt of ferrous scrap was used in FY2024-25, about a quarter of it imported. Scrap is only about 23% of steel feed, against a 2047 goal of 50%. By March 2025, 48 countries restricted scrap exports (Dialogue Earth, 7 May 2026).\n\nThis gives Luma.Green's pitch to recyclers and manufacturers a structural basis.",
+   "sourceUrls": [
+    "https://www.wasterecyclingmag.com/news/india-s-recovered-fibre-sector-requires-reforms-to-reach-full-potential",
+    "https://www.eco-business.com/news/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/"
+   ]
+  },
+  {
+   "point": "Plastics, e-waste, batteries and tyres fall under producer-responsibility (EPR) rules, which add a second price for proof of recycling on top of the material.",
+   "detail": "- **Plastics:** officially 4.13 Mt was generated in 2020-21. In 2022-23, EPR obligations were about 3 Mt and processors issued 2.5 Mt of certificates (PIB, 27 Jul 2023).\n- **E-waste:** 12.54 lakh t (FY2023-24), 13.98 lakh t (FY2024-25) and 14.14 lakh t (FY2025-26) were generated, with 9.79 lakh t recycled in FY2025-26 (PIB; Lok Sabha, 9 Mar 2026). EPR certificates trade at ₹10–50/kg, with a ₹22/kg floor set in March 2024 that large manufacturers are challenging in the Delhi High Court (The Chatter, Apr 2026).\n- **Tyres:** EPR since 2022, with a 100% target from 2024-25. India imported 13.72 lakh t of waste rubber in FY2024-25. Only 296 of 736 tyre-oil (pyrolysis) plants are registered. Imported tyres cost ₹2–5/kg against ₹20–25/kg for domestic ones, because India has no collection centres for used tyres (The Reporters' Collective, Feb 2026).\n\nWhat this means for Luma.Green: a documented chain from household to recycler is worth money to recyclers and brands, and hazardous streams must go only to authorised buyers.",
+   "sourceUrls": [
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1943210",
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2155124",
+    "https://www.newsdrum.in/national/india-generated-14-lakh-mt-e-waste-in-202526-979-lakh-mt-recycled-govt-11189198",
+    "https://thechatter.zerodha.com/p/how-indias-e-waste-rules-found-their",
+    "https://www.reporters-collective.in/trc/india-is-becoming-worlds-waste-tyre-furnace"
+   ]
+  },
+  {
+   "point": "Official figures undercount, so Luma.Green's transaction records are themselves an asset.",
+   "detail": "- **E-waste:** the Central Pollution Control Board estimates 1.40 Mt for FY2024-25, from sales data and product lifetimes. NITI Aayog's January 2026 report says 6.19 Mt in 2024, with only about 10% recycled formally.\n- **Plastics:** a Nature study (Oct 2024) estimates India emits 9.3 Mt a year of plastic pollution, over twice the official 4.1 Mt of plastic waste. It notes official data leave out rural areas, open burning and informal recycling.\n\nNobody holds data on weight, material, price, place and date at each hand-off. Luma.Green's receipts would.",
+   "sourceUrls": [
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2155124",
+    "https://theprint.in/economy/indias-looking-at-14-million-metric-tonnes-of-e-waste-by-2030-recycling-cant-keep-up-niti-aayog/2838862/",
+    "https://india.mongabay.com/2024/10/emissions-from-indias-macroplastic-pollution-is-the-highest-finds-study/",
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1943210"
+   ]
+  },
+  {
+   "point": "Bengaluru already has infrastructure run by waste pickers, and it is fraying.",
+   "detail": "- **Volumes:** Bengaluru produces 5,000–6,000 t/day of solid waste, run by Bengaluru Solid Waste Management Ltd (Citizen Matters, Apr 2026). That is about 3% of India's urban total. Waste pickers process about 800 t/day of recyclables (Hasiru Dala, via The South First, Mar 2025) and save the city about ₹84 crore a year (Down To Earth, May 2026).\n- **Recognition:** the city corporation (BBMP) issued waste-picker ID cards from 2011. It set up 198 dry waste collection centres (DWCCs), one per ward, in 2012-13.\n- **Decline:** by September 2025, 141 centres remained and 119 were operating across 127 wards. Hasiru Dala supports 35 of them. The ID cards have expired and the 2020 agreements with the city have lapsed (Citizen Matters, Sep 2025).\n- **Earnings:** a good month at one centre earns about ₹1.5 lakh, shared among 20–25 workers. City waste bye-laws (2020) let pickers keep income from selling dry waste.\n- **Plastics:** Karnataka generated 3.68 lakh t of plastic waste in 2020-21 (PIB).",
+   "sourceUrls": [
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+    "https://thesouthfirst.com/featured/the-invisible-labour-behind-bengalurus-one-of-a-kind-waste-collection-system/",
+    "https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them",
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1943210",
+    "https://www.etvbharat.com/en/bharat/india-waste-processing-facility-in-municipality-areas-increases-to-80-percent-mohua-enn25120105121"
+   ]
+  },
+  {
+   "point": "For bulky, low-value streams such as glass, old clothes and packaging film, households get almost nothing.",
+   "detail": "- **Glass:** about 3 Mt of waste a year, 35–45% recycled (Saahas Zero Waste). Households in Delhi NCR get ₹1–2/kg (Recycle Baba). Crushed white glass (cullet) sells at ₹5–12/kg (IndiaMART listings).\n- **Textiles:** 7.07 Mt a year (2.97 Mt from factories before sale, 4.10 Mt from households), plus 0.6 Mt imported. 97% of factory waste is recycled, but about 1.9 Mt of household textiles is landfilled or burned (Ministry of Textiles, Feb 2026). Households get about ₹2/kg for old clothes. Bengaluru is a garment-making hub, and its cutting waste goes to the Tirupur belt.\n- **Packaging:** The Kabadiwala lists milk covers and packaging film at ₹0/kg.\n\nWhat this means for Luma.Green: the AI estimate should say \"no cash value, free take-away\" for these items instead of showing ₹0. Recycle points can reward them.",
+   "sourceUrls": [
+    "https://www.saahaszerowaste.com/waste-types/glass-waste-management/",
+    "https://recyclebaba.com/scrap-price-list",
+    "https://dir.indiamart.com/delhi/scrap-glass.html",
+    "https://www.texmin.gov.in/static/uploads/2026/03/407c2f186a2044a4497c9c9803d16a2c.pdf",
+    "https://saahaszerowaste.com/explore/reports-and-case-study/Sorting-for-Circularity-Wealth-in-Waste.pdf",
+    "https://www.thekabadiwala.com/scrap-rates/Bangalore"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Reference price shown beside the kabadiwala's price. Add a dated `referencePrices` table (city or market, material, paise per kg, source, effectiveFrom) that the admin fills weekly from MCX, BigMint and mill notices. It follows the same pattern as `priceFloors` and `fallbackRates`.",
+   "why": "In Bengaluru, door prices for copper, brass and aluminium are 35–50% of wholesale, and PET is about 23%. Showing the reference price in the kabadiwala rate card and in the admin and investor view makes the promise to \"see the latest prices\" visible straight away. Decide in the pilot whether households see it too.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "admin",
+    "investor"
+   ]
+  },
+  {
+   "feature": "Material catalogue kept as admin-editable data, with a unit (kg or piece), a value class (cash, points only, not accepted), a hazardous flag and an authorised-buyer-only flag. Rate cards also accept a price per piece.",
+   "why": "Names and grades change at every hop. Appliances are bought per piece at the door (laptop ₹250, fridge ₹350–550, air conditioner ₹2,500–3,000), which a paise-per-kg rate card cannot express. Milk covers and film are worth ₹0. Batteries, e-waste and tyres legally need authorised buyers.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Investor dashboard showing the Bengaluru chain in numbers: kg by material, rupees paid to households, the household's share of the factory price, hand-offs recorded and weight disputes. Add a panel of sourced national figures.",
+   "why": "Investors need the size of the market and the leak on one screen. Sourced figures include 41 Mt of ferrous scrap, 23 Mt of paper at 75% recycled fibre, 14.1 lakh t of e-waste, 7.07 Mt of textiles, 1.5–4 million waste pickers and at least ₹1.8–2.1 lakh crore of annual flow. Seeded demo data is enough for the prototype.",
+   "priority": "prototype-now",
+   "users": [
+    "admin",
+    "investor"
+   ]
+  },
+  {
+   "feature": "Weighing receipt that both sides confirm. On `pickupReceipts`, add an optional photo of the scale display, a household confirm tap, and an automatic flag when the weighed kg is far below the AI estimate. Show the kabadiwala scale's Legal Metrology stamp date, checked during onboarding.",
+   "why": "Bengaluru scrap shops have been caught with scales fitted with remote-controlled chips (2023). Bengaluru Urban saw 5,375 Legal Metrology cases in 17 months. Being cheated on weight is the household's first fear.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Gross, deduction and net on every business-to-business hand-off: gross grams, deduction %, reason (moisture, contamination, tare), net grams and a quality grade on kabadiwala-to-yard trades.",
+   "why": "Wet cardboard loses 30–50% of its value. Only about 30% of what reaches Bengaluru's dry waste collection centres is good enough to earn from, and textile cutting waste carries up to 20% contamination. Deductions are where disputes happen, and today none of them are written down.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler"
+   ]
+  },
+  {
+   "feature": "A simple khata (credit ledger) on trades: amount due, due date, part payments and the cash or UPI reference. No money moves on the platform, which keeps ADR 0009 intact.",
+   "why": "Trade in this chain runs on cash and credit. Since October 2024, reverse-charge GST on metal scrap bought from unregistered sellers pushes working-capital strain onto yards. Recording who owes whom is the first step towards escrow later.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "saathi"
+   ]
+  },
+  {
+   "feature": "Onboard dry waste collection centres (DWCCs) and waste-picker cooperatives as sellers: a DWCC flag on kabadiwala-type organisations, recruited with Hasiru Dala.",
+   "why": "About 800 t/day of Bengaluru's recyclables already pass through waste pickers, and 119 centres are operating. They need buyers and fair prices: their ID cards have expired and their agreements with the city have lapsed. Partnering with them brings immediate supply to yards and avoids political pushback.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Guardrails on the minimum price. Each floor can be set as a percentage of the reference price, with an admin override and a suspend switch per material. Rows stay dated.",
+   "why": "The 2023 waste-paper crash halved collection, and in September 2026 mills cut scrap buying by 50–60%. A fixed floor can end up above the market and stop trade within weeks.",
+   "priority": "pilot",
+   "users": [
+    "admin",
+    "kabadiwala"
+   ]
+  },
+  {
+   "feature": "Only authorised buyers for hazardous streams. A yard or recycler must upload its state pollution board authorisation or EPR registration before it can buy lead-acid batteries, e-waste or tyres.",
+   "why": "Informal smelters and unregistered tyre-oil plants (440 of 736) outbid formal recyclers. Connecting hazardous waste to unauthorised buyers is a legal and reputational risk for the platform.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Chain-of-custody export for EPR and buyers: lot IDs linking pickup receipts, stock and trades with weights and dates, exported as CSV or PDF.",
+   "why": "Recyclers need documented feedstock to claim EPR certificates, which trade at ₹10–50/kg for e-waste; plastics processors issued 2.5 Mt of certificates in 2022-23. Mills short of domestic scrap and fibre will pay for traceable supply.",
+   "priority": "scale",
+   "users": [
+    "recycler",
+    "manufacturer",
+    "yard",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Metal-scrap GST helper: tag tariff chapters 72–81, record each seller's GST status, show the buyer when reverse charge or 2% TDS applies, and produce a purchase voucher. Informational only, not tax advice.",
+   "why": "From 10 October 2024, the buyer pays the GST on metal scrap bought from unregistered kabadiwalas, and business-to-business supplies carry 2% TDS. Yards will need this before they move volume onto the platform.",
+   "priority": "scale",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "A monthly Luma.Green first-mile scrap index per city: median household price, kabadiwala-to-yard price and the spread for each material, built from the platform's receipts.",
+   "why": "Official volumes are disputed, and metals already have BigMint and MCX indices. No first-mile price series exists. Publishing one is how the platform starts to set the industry's norms.",
+   "priority": "scale",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "investor"
+   ]
+  }
+ ],
+ "artifactMarkdown": "### Indian recyclables: volume, recycling rate and price at each end (Sep 2026 unless noted)\n\n| Material | Annual volume in India | Recycling / recovery | Household end, ₹/kg (door price) | Factory end, ₹/kg (traded grade) | Household share | Sources |\n|---|---|---|---|---|---|---|\n| Paper & board | 23 Mt paper made in 2024-25; about 7 Mt recovered paper imported a year | About 75% of paper is made from recovered fibre; domestic recovery about 30% | Newspaper 10–14; cardboard 3–8 (Bengaluru); kabadiwala cardboard nationally 10–12 | Baled cardboard (OCC) to mills 14–18 (Apr 2026); kraft waste fell to 11–14 in the 2023 slump | Cardboard about 20–55% (Bengaluru) | [W&R Mag](https://www.wasterecyclingmag.com/news/india-s-recovered-fibre-sector-requires-reforms-to-reach-full-potential), [BIN](https://joinbin.com/scrap-rate-cardboard-india), [Kabadiwala](https://www.thekabadiwala.com/scrap-rates/Bangalore), [scraprates](https://scraprates.in/bangalore), [P&P Times](https://thepulpandpapertimes.com/news/price-of-waste-paper-plummeted-to-its-lowest-level-in-the-previous-five-months-881) |\n| Plastics (all) | 4.13 Mt officially (2020-21); Karnataka 0.37 Mt | 2.5 Mt of EPR certificates against about 3 Mt of obligations (2022-23); about 70% recycled via the informal chain; 9.3 Mt a year leaks as pollution (Nature 2024) | Mixed 5; soft or film 10; hard 2; milk covers and film 0 | Varies by polymer | n/a | [PIB](https://www.pib.gov.in/PressReleasePage.aspx?PRID=1943210), [DTE](https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them), [Mongabay](https://india.mongabay.com/2024/10/emissions-from-indias-macroplastic-pollution-is-the-highest-finds-study/) |\n| PET bottles | Part of plastics | Not sourced | 10 | Bottle scrap 44 in Bengaluru; 40–50 across 13 cities | About 23% | [Kabadiwala](https://www.thekabadiwala.com/scrap-rates/Bangalore), [ScrapC](https://scrapc.com/news/pet-bottle-price/) |\n| Iron & steel | 41 Mt scrap used in FY2024-25, about 25% imported | Scrap is about 23% of steel feed; target 50% by 2047 | 22–39 | HMS 80:20 36.5 (Mumbai); index 41.5 (Mandi Gobindgarh), 23 Sep | About 55–100% | [Eco-Business](https://www.eco-business.com/news/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/), [BigMint](https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405) |\n| Aluminium | Not sourced | Not sourced | 150–154 | 293 (utensil) to 365 (rod), Delhi, 28 Sep | About 50% | [Shree Metal](https://shreemetalprices.com/delhi-scrap-prices-today/), [scraprates](https://scraprates.in/bangalore) |\n| Copper | Not sourced | Not sourced | 500–588 | 1,394 (MCX, 28 Sep); armature 1,454 (Delhi) | About 35–42% | [Upstox/MCX](https://upstox.com/commodity-market-trading/mcx-copper-price/), [Shree Metal](https://shreemetalprices.com/delhi-scrap-prices-today/) |\n| Brass | Not sourced | Not sourced | 400–439 | 950–990 (Delhi) | About 40–46% | [Shree Metal](https://shreemetalprices.com/delhi-scrap-prices-today/) |\n| Glass | About 3 Mt of waste a year | 35–45% | 1–2 (Delhi NCR; often not bought) | Crushed white glass (cullet) 5–12 (Delhi NCR listings) | About 10–40% | [Saahas](https://www.saahaszerowaste.com/waste-types/glass-waste-management/), [Recycle Baba](https://recyclebaba.com/scrap-price-list), [IndiaMART](https://dir.indiamart.com/delhi/scrap-glass.html) |\n| E-waste | 14.14 lakh t generated in FY2025-26 (pollution board); 6.19 Mt in 2024 (NITI Aayog) | 9.79 lakh t recycled in FY2025-26; about 62–75% informal | Mixed 10–46; appliances per piece (laptop 250, fridge 350–550) | EPR certificate 10–50 (floor 22), on top of the material value | n/a | [PIB](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2155124), [NewsDrum](https://www.newsdrum.in/national/india-generated-14-lakh-mt-e-waste-in-202526-979-lakh-mt-recycled-govt-11189198), [ThePrint](https://theprint.in/economy/indias-looking-at-14-million-metric-tonnes-of-e-waste-by-2030-recycling-cant-keep-up-niti-aayog/2838862/), [Chatter](https://thechatter.zerodha.com/p/how-indias-e-waste-rules-found-their) |\n| Textiles | 7.07 Mt (2.97 Mt factory waste + 4.10 Mt household) plus 0.6 Mt imported | Factory waste 97% recycled; about 46% of household textiles landfilled or burned | Old clothes about 2 (Delhi NCR) | Mixed cutting waste 6–35; white cuttings 50–60; fibre waste 15–50 (2022) | 30% or less | [MoT](https://www.texmin.gov.in/static/uploads/2026/03/407c2f186a2044a4497c9c9803d16a2c.pdf), [FFG](https://saahaszerowaste.com/explore/reports-and-case-study/Sorting-for-Circularity-Wealth-in-Waste.pdf) |\n| Lead-acid batteries | Not sourced | About 70% of retired batteries collected informally (2020) | 70–90 per kg of battery | Lead ingot 190–196 (Delhi) | n/a (a battery is not an ingot) | [WRI](https://wri-india.org/sites/default/files/ConferenceProceeding-WRI-India-Battery-circularity-policy-regulations-implementation-strategies.pdf), [scraprates](https://scraprates.in/bangalore) |\n| Li-ion batteries | 19 kt reached end of life in 2023; 233 kt by 2035 | Mostly informal or stored at home | 87 | Not sourced | n/a | [ThePrint](https://theprint.in/economy/indias-looking-at-14-million-metric-tonnes-of-e-waste-by-2030-recycling-cant-keep-up-niti-aayog/2838862/) |\n| Tyres | About 25 lakh t of end-of-life tyres a year; 13.72 lakh t of waste rubber imported in FY2024-25 | EPR target 100% from 2024-25; 296 of 736 pyrolysis plants registered | Rarely bought from households | Domestic waste tyres 20–25; imported 2–5 (Madhya Pradesh) | n/a | [Reporters' Collective](https://www.reporters-collective.in/trc/india-is-becoming-worlds-waste-tyre-furnace) |\n\nHow to read the table:\n- **Household end** is what a kabadiwala pays at the door in Bengaluru (The Kabadiwala, an undated page; scraprates.in, 28 Sep 2026), unless the row says Delhi NCR.\n- **Factory end** is the price for a traded grade at a mill, smelter or recycler.\n- **Household share** is the door price divided by the factory price, as a rough guide. Sorting, cleaning, grade, freight and credit explain part of every gap.\n- **Volumes** for e-waste and plastics are disputed; see the findings.\n- **Before use:** re-check the door prices with 10–20 Bengaluru shops before they seed the fallback table.",
+ "risks": [
+  "Showing factory prices to households may turn kabadiwalas against the platform. Their margin pays for sorting, transport, rent, credit and losses. Show the reference price to kabadiwalas and investors first, and test how households react in the pilot.",
+  "Some price sources limit redistribution (MCX, BigMint, ScrapMonster). Others are unverified aggregators (scraprates.in, rate-list sites) or undated pages (The Kabadiwala). Label every reference price with its source and date, call it indicative, and never promise it.",
+  "Market figures conflict by large factors: e-waste is 1.4 Mt by the pollution board and 6.19 Mt by NITI Aayog; plastics are 4.1 Mt officially against 9.3 Mt of pollution. The ₹1.8–2.1 lakh crore flow is our own estimate. Every investor slide must cite and define its number.",
+  "Recording informal cash trades may raise GST questions for users (18% GST, reverse charge on metal scrap) and put them off. Keep the GST number optional and get tax advice before adding any invoice or voucher feature.",
+  "Batteries, e-waste and tyres must go to authorised recyclers under the 2022 rules. The platform could be liable if it matches them with unauthorised buyers.",
+  "Admin minimum prices can freeze trade in a price crash. That happened in the 2023 waste-paper slump and the steel-scrap buying cuts of September 2026.",
+  "Waste-picker politics in Bengaluru are sensitive: the city's agreements with waste pickers have lapsed, their ID cards have expired and the waste company is under Lokayukta scrutiny. A platform seen as displacing waste pickers could meet resistance; partnering with Hasiru Dala-type groups lowers the risk.",
+  "Weights recorded in the app are not certified weights under Legal Metrology law. The shop's stamped scale stays the legal instrument, so never market receipts as certified weights."
+ ],
+ "openQuestions": [
+  "How many kabadiwalas operate in Bengaluru, and what share of household dry waste reaches them rather than the city's waste company or the dry waste collection centres? No census was found.",
+  "What margin does a Bengaluru kabadiwala actually keep per material after rent, transport, credit and losses? Interview 10–20 shops before households see reference prices.",
+  "What are the usual payment terms from yard to kabadiwala in Bengaluru (cash at pickup, or 7–30 days' credit), and what are the minimum lot sizes per material?",
+  "Which reference-price sources can be used legally and cheaply: MCX, a BigMint subscription, mill price notices?",
+  "For investors, should we quote the pollution board's 1.4 Mt of e-waste or NITI Aayog's 6.19 Mt? Or both, with how each is measured?",
+  "Has the replacement for the Solid Waste Management Rules 2016 come into force, and does it require kabadiwalas or aggregators to register? This was not verified here.",
+  "Should batteries, e-waste and tyres be left out of the Bengaluru pilot entirely until the authorised-buyer check exists?",
+  "Can recycle points reward zero-value items (glass, film, old clothes) without distorting the cash prices for other materials?"
+ ],
+ "sources": [
+  {
+   "title": "PIB — Parliamentary question: Electronic Waste Management (11 Aug 2025)",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2155124"
+  },
+  {
+   "title": "NewsDrum — India generated 14 lakh MT e-waste in 2025–26, 9.79 lakh MT recycled (Lok Sabha, Mar 2026)",
+   "url": "https://www.newsdrum.in/national/india-generated-14-lakh-mt-e-waste-in-202526-979-lakh-mt-recycled-govt-11189198"
+  },
+  {
+   "title": "PIB — Generation of plastic waste (27 Jul 2023)",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1943210"
+  },
+  {
+   "title": "ETV Bharat — Waste processing in municipal areas rises to 80.17%: MoHUA (Dec 2025)",
+   "url": "https://www.etvbharat.com/en/bharat/india-waste-processing-facility-in-municipality-areas-increases-to-80-percent-mohua-enn25120105121"
+  },
+  {
+   "title": "Eco-Business / Dialogue Earth — India needs more scrap to boost green steelmaking (May 2026)",
+   "url": "https://www.eco-business.com/news/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/"
+  },
+  {
+   "title": "BigMint — India: ferrous scrap index slips further (23 Sep 2026)",
+   "url": "https://www.bigmint.co/insights/detail/india-bigmints-ferrous-scrap-index-slips-further-on-cautious-steel-market-sentiment-792405"
+  },
+  {
+   "title": "Waste & Recycling Magazine — India's recovered fibre sector requires reforms (Jan 2026)",
+   "url": "https://www.wasterecyclingmag.com/news/india-s-recovered-fibre-sector-requires-reforms-to-reach-full-potential"
+  },
+  {
+   "title": "Ministry of Textiles — Mapping of Textile Waste Value Chain in India (Feb 2026)",
+   "url": "https://www.texmin.gov.in/static/uploads/2026/03/407c2f186a2044a4497c9c9803d16a2c.pdf"
+  },
+  {
+   "title": "Fashion for Good — Wealth in Waste: India's potential to bring textile waste back into the supply chain (2022)",
+   "url": "https://saahaszerowaste.com/explore/reports-and-case-study/Sorting-for-Circularity-Wealth-in-Waste.pdf"
+  },
+  {
+   "title": "ThePrint — NITI Aayog: India looking at 14 Mt of e-waste by 2030 (Jan 2026)",
+   "url": "https://theprint.in/economy/indias-looking-at-14-million-metric-tonnes-of-e-waste-by-2030-recycling-cant-keep-up-niti-aayog/2838862/"
+  },
+  {
+   "title": "The Chatter (Zerodha) — How India's e-waste rules found their teeth (Apr 2026)",
+   "url": "https://thechatter.zerodha.com/p/how-indias-e-waste-rules-found-their"
+  },
+  {
+   "title": "WRI India — Battery circularity in India: policy, regulations and implementation (Jul 2024)",
+   "url": "https://wri-india.org/sites/default/files/ConferenceProceeding-WRI-India-Battery-circularity-policy-regulations-implementation-strategies.pdf"
+  },
+  {
+   "title": "The Reporters' Collective — India is becoming the world's waste tyre furnace (Feb 2026)",
+   "url": "https://www.reporters-collective.in/trc/india-is-becoming-worlds-waste-tyre-furnace"
+  },
+  {
+   "title": "Down To Earth — India's waste economy runs on invisible workers (May 2026)",
+   "url": "https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them"
+  },
+  {
+   "title": "CSE — The Plastics Factsheet 3: Recycling plastics (2019)",
+   "url": "https://cdn.cseindia.org/attachments/0.97245800_1570432310_factsheet3.pdf"
+  },
+  {
+   "title": "Business India — MRAI president interview: Journey to a circular economy (Nov 2025)",
+   "url": "https://businessindia.co/magazine/interview/journey-to-a-circular-economy"
+  },
+  {
+   "title": "Mongabay India — India's macroplastic emissions are the highest, finds Nature study (Oct 2024)",
+   "url": "https://india.mongabay.com/2024/10/emissions-from-indias-macroplastic-pollution-is-the-highest-finds-study/"
+  },
+  {
+   "title": "Mongabay India — How NGOs are bringing India's informal waste collectors into the system (May 2026)",
+   "url": "https://india.mongabay.com/2026/05/how-ngos-are-bringing-indias-informal-waste-collectors-into-the-system/"
+  },
+  {
+   "title": "Citizen Matters — Invisible workers, visible waste: Bengaluru's waste pickers (Sep 2025)",
+   "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+  },
+  {
+   "title": "The South First — The invisible labour behind Bengaluru's waste collection system (Mar 2025)",
+   "url": "https://thesouthfirst.com/featured/the-invisible-labour-behind-bengalurus-one-of-a-kind-waste-collection-system/"
+  },
+  {
+   "title": "Deccan Herald — Weighing scale racket in Bengaluru busted by Kamakshipalya police (Mar 2023)",
+   "url": "https://www.deccanherald.com/india/karnataka/bengaluru/weighing-scale-racket-in-bengaluru-busted-by-kamakshipalya-police-1201713.html"
+  },
+  {
+   "title": "NewsKarnataka — Fraud in weights and measurements continues in Bengaluru (Nov 2024)",
+   "url": "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+  },
+  {
+   "title": "The Kabadiwala — Scrap prices in Bangalore",
+   "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore"
+  },
+  {
+   "title": "scraprates.in — Scrap rate today in Bangalore (28 Sep 2026)",
+   "url": "https://scraprates.in/bangalore"
+  },
+  {
+   "title": "Upstox — MCX copper price (28 Sep 2026)",
+   "url": "https://upstox.com/commodity-market-trading/mcx-copper-price/"
+  },
+  {
+   "title": "Shree Metal Prices — Delhi scrap prices today (28 Sep 2026)",
+   "url": "https://shreemetalprices.com/delhi-scrap-prices-today/"
+  },
+  {
+   "title": "ScrapC — PET bottle scrap latest price in India",
+   "url": "https://scrapc.com/news/pet-bottle-price/"
+  },
+  {
+   "title": "BIN — Cardboard scrap rate in India 2026",
+   "url": "https://joinbin.com/scrap-rate-cardboard-india"
+  },
+  {
+   "title": "The Pulp and Paper Times — Waste paper price at five-month low; collection falls (Jun 2023)",
+   "url": "https://thepulpandpapertimes.com/news/price-of-waste-paper-plummeted-to-its-lowest-level-in-the-previous-five-months-881"
+  },
+  {
+   "title": "Saahas Zero Waste — Glass waste management in India",
+   "url": "https://www.saahaszerowaste.com/waste-types/glass-waste-management/"
+  },
+  {
+   "title": "IndiaMART — Scrap glass listings, Delhi",
+   "url": "https://dir.indiamart.com/delhi/scrap-glass.html"
+  },
+  {
+   "title": "Recycle Baba — Scrap price list (Delhi NCR)",
+   "url": "https://recyclebaba.com/scrap-price-list"
+  },
+  {
+   "title": "TaxGuru — Metal scrap supplied by unregistered suppliers brought under reverse charge (Oct 2024)",
+   "url": "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html"
+  }
+ ]
+}

@@ -1,0 +1,2 @@
+# Message catalogues merge key-by-key: git config merge.json3.driver "python3 scripts/i18n/json3merge.py %O %A %B"
+messages/*.json merge=json3

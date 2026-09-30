@@ -1,0 +1,349 @@
+{
+ "topic": "business",
+ "headline": "In Indian recycling, the money has followed regulation rather than households: Recykal's revenue went from ₹1.8 crore (FY19) to ₹21.2 crore (FY20) after it moved from a scrap marketplace to EPR compliance. The SWM Rules 2026 (in force since 1 April 2026) and the rise in required recycled content for rigid plastic packaging (30% in FY2025-26, 60% from FY2028-29) make Luma.Green's weighed hand-off records the thing to sell, not commissions on household pickups.",
+ "findings": [
+  {
+   "point": "Revenue in Indian recycling has followed compliance, not household pickups.",
+   "detail": "Recykal (Hyderabad) started in 2017 as a marketplace linking collection centres to recyclers. In 2019 it moved to EPR compliance services for brands. Forbes India reports revenue of ₹1.8 crore in FY19 (loss ₹3.6 crore), rising to ₹21.2 crore in FY20 (loss ₹5.3 crore). Its funding went: $2M pre-Series A (June 2019, Triton and Ajay Parekh); a Series A from Circulate Capital (Dec 2020); $22M in Jan 2022 with Morgan Stanley; and a reported ₹110 crore in April 2024. By 2023 it worked with 620+ brands, 675 recyclers and 12,000 businesses and had moved more than 1 million tonnes. The founder said each reverse-logistics order took 45 to 60 minutes. Lesson for Luma.Green: sell the compliance-grade record of the chain, and treat households as the source of supply.",
+   "sourceUrls": [
+    "https://en.wikipedia.org/wiki/Recykal",
+    "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1"
+   ]
+  },
+  {
+   "point": "A household pickup is worth about ₹250. A commission on it cannot fund the company, and it pushes people to trade off the platform.",
+   "detail": "Scrapuncle's published rates for Delhi NCR and Bengaluru, per kg: newspaper and books ₹11–13, cardboard and plastic ₹7–8, iron ₹20–25, steel ₹34–42, aluminium ₹90–112, brass ₹260–325, copper ₹404–505. At mid-rates, a typical 20 kg basket of paper, cardboard, plastic and iron pays the household about ₹246 (our calculation). A 5% fee on that is about ₹12, far less than a 45 to 60 minute pickup costs. Bill Gurley's argument about platform fees applies: a high fee drives suppliers off the platform and invites competitors, and cash or UPI at the door makes going direct easy. Keep household and kabadiwala transactions free, and earn further up the chain, where lots are bigger and metals lift the value per tonne.",
+   "sourceUrls": [
+    "https://www.scrapuncle.com/rates",
+    "https://abovethecrowd.com/2013/04/18/a-rake-too-far-optimal-platformpricing-strategy/",
+    "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1"
+   ]
+  },
+  {
+   "point": "The Solid Waste Management Rules 2026 create a new paying customer: bulk waste generators, including apartment societies.",
+   "detail": "From CPCB's fee guidelines (September 2026): MoEFCC notified the SWM Rules 2026 on 27 Jan 2026. They replace the 2016 rules and took effect on 1 Apr 2026.\n- **Who counts as a bulk generator:** any building of at least 20,000 m², or one using at least 40,000 litres of water a day, or one generating at least 100 kg of waste a day. This includes residential societies, offices, institutions, hotels, malls and markets.\n- **What they must do:** register on a central CPCB portal, file annual returns by 30 June, and buy Extended Bulk Waste Generator Responsibility (EBWGR) certificates covering the waste they generate.\n- **Sorters:** every entity that sorts dry waste into recyclable and non-recyclable must register with the local body (Rule 9(1)).\n- **Portal fees:** one-time registration of ₹1,000–5,000 for residential societies and ₹2,000–10,000 for commercial generators, plus 25% of that every year. Sorting and processing sites (MRFs) pay ₹1,500–7,500.\n\nMany mid-size and large apartment societies in Bengaluru are likely to qualify (our inference). That makes them a recurring, compliance-driven channel for pickups, weighed receipts and the data for their annual returns.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS81MDRfMTc5MDE2MjE1NV9tZWRpYXBob3RvMzAyOTUucGRm"
+   ]
+  },
+  {
+   "point": "Plastic EPR requires the recycled content of rigid packaging to rise from 30% to 60%, so brands need feedstock they can trace.",
+   "detail": "Plastic Waste Management (Amendment) Rules 2022 (G.S.R. 133(E), 16 Feb 2022).\n- **Required recycled content:** Category I rigid packaging needs 30% in FY2025-26, 40% in FY2026-27, 50% in FY2027-28 and 60% from FY2028-29. Category II goes from 10% to 20%; Category III from 5% to 10%.\n- **Minimum recycling:** for Category I, 60% of the EPR target in FY2025-26, rising to 80% from FY2027-28.\n- **Certificates:** only registered plastic waste processors may issue them. The volume cannot exceed the processor's installed capacity, each certificate must carry GST data, and a processor found giving false information is barred for one year.\n\nWeighed, verified chain-of-custody records are what recyclers need to back their certificates. Check for later amendments before quoting these percentages to investors.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf"
+   ]
+  },
+  {
+   "point": "Trading in EPR certificates is run by the government within a fixed price band, so Luma.Green should supply evidence rather than run a certificate exchange.",
+   "detail": "The E-Waste (Management) Amendment Rules 2024 (G.S.R. 164(E), 8 Mar 2024) do three things:\n- They let the Central Government set up platforms for exchanging EPR certificates by order.\n- They require CPCB to set a maximum and minimum certificate price of 100% and 30% of the penalty for not meeting EPR obligations.\n- They require registered entities to trade through the portal within that band.\n\nThe margin on trading certificates is therefore capped and the venue is fixed. The businesses Luma.Green can defend are evidence packs for registered recyclers and producer responsibility organisations (PROs), and help with registrations and annual returns.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/Projects/E-Waste/E-waste-Third-Amendment-Rules-2024.pdf"
+   ]
+  },
+  {
+   "point": "Carbon is possible upside, not part of the base case: none of India's offset methods covers dry recyclables yet.",
+   "detail": "The Indian Carbon Market portal lists 12 approved offset methods:\n- 3 energy\n- 2 industrial\n- 3 waste: landfill methane recovery, flaring or use of landfill gas, and compressed biogas\n- 2 forestry\n- 2 agriculture\n\nIt also has tools for composting and landfill emissions. None of these covers recycling paper, plastic or metal.\n\nIn the voluntary market, Verra's plastic program issues credits for collecting and for recycling plastic. One credit is one tonne, counted only above a baseline that is reviewed every 7 years, and projects must protect waste pickers. The program is still small: 40+ projects, 40,000+ credits, 25+ countries. For now, show CO2e avoided as an impact measure, and pursue plastic credits later through a registered project partner.",
+   "sourceUrls": [
+    "https://indiancarbonmarket.gov.in/offset-mechanism/MzI=",
+    "https://verra.org/programs/plastic/"
+   ]
+  },
+  {
+   "point": "Traceability is what unlocks trade finance, and Indian lending rules decide how a platform can earn from it.",
+   "detail": "Metycle (European metals trading) traded more than $120M in 12 months, up 150% on the year, and secured a $150M credit facility from Rivonia Road Capital. Its TrustTrack record ties origin, composition, processing and delivery to each batch, for both buyers and lenders.\n\nIn India, RBI's Digital Lending guidelines (2 Sept 2022) set these rules for platforms that refer borrowers:\n- The lender pays the referring platform's fees; the borrower does not.\n- Loan money and repayments move directly between borrower and lender, never through a third party's pooled account.\n- Borrowers get a key fact statement.\n- Lenders publish the list of platforms they use.\n\nSo Luma.Green can earn referral fees paid by lenders, using its receipts as evidence for credit decisions, but it must never hold or route loan money.",
+   "sourceUrls": [
+    "https://www.metycle.com/",
+    "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12382&Mode=0"
+   ]
+  },
+  {
+   "point": "Bengaluru already has household-pickup competitors. Luma.Green's way in is to equip the existing kabadiwalas and connect them to yards, recyclers and manufacturers.",
+   "detail": "Scrapuncle serves Delhi NCR and Bengaluru with a published rate list. The Kabadiwala operates in 15 cities including Bangalore. It claims 100,000+ customers, 81.1 million kg kept out of landfill and 500+ corporate partners, sells plastic EPR services as a PRO, and says it raised about ₹3 crore. Scrapuncle sends its own trained crews and The Kabadiwala runs its own collection service, so neither works through the local kabadiwala. Luma.Green instead gives the city's existing kabadiwalas rate cards, weigh-and-record and stock tracking, and links them to yards, recyclers and manufacturers. Neither competitor connects the whole chain like this.",
+   "sourceUrls": [
+    "https://www.scrapuncle.com/rates",
+    "https://www.thekabadiwala.com/"
+   ]
+  },
+  {
+   "point": "India's waste gap is large and measurable: 21% of municipal waste is unaccounted for, and Bengaluru separates only about half its waste at source.",
+   "detail": "CPCB's 2023-24 annual report gives these national figures, in tonnes per day:\n- 1,85,195 generated\n- 1,79,479 collected (about 97%)\n- 1,13,935 processed or treated (62%)\n- 32,531 landfilled (17%)\n- 38,729 unaccounted (21%)\n\nKarnataka generates 12,140 tonnes a day, treats 7,694 and landfills 3,048. It has 316 urban local bodies and 201 dumpsites. BBMP (Bengaluru) separates 53–55% of waste at source. The investor pitch: Luma.Green records the flows the formal system cannot see.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/MSW/MSW_AnnualReport_2023-24..pdf"
+   ]
+  },
+  {
+   "point": "Investors will judge this marketplace on how often buyers and sellers are matched, how fast, the fee it keeps, and two separate retention curves.",
+   "detail": "a16z lists 13 marketplace measures:\n- match rate and market depth\n- time to match\n- how concentrated the trade is\n- the share of each transaction kept as revenue (take rate)\n- unit economics\n- how many users also use rivals, and the cost of switching\n- user cohorts, retention of the core action and revenue retention\n- retention in new versus established markets\n- the spread of engagement among the heaviest users\n\nLenny Rachitsky's benchmarks for 6-month retention: consumer transactional products about 30% good and 50% great; small-business software about 60% and 80%. For 12-month net revenue retention in small-business software, about 90% is good and 110% great.\n\nFor Luma.Green, households follow the consumer curve and kabadiwalas and yards follow the small-business curve. Retention in each new cluster compared with the first proves the city playbook.",
+   "sourceUrls": [
+    "https://a16z.com/13-metrics-for-marketplace-companies/",
+    "https://www.lennysnewsletter.com/p/what-is-good-retention-issue-29"
+   ]
+  },
+  {
+   "point": "The strongest lasting advantage available is a standard: open material codes and a receipt format that others adopt.",
+   "detail": "NFX ranks standards-based ('protocol') network effects second of 16 types, after physical networks. Marketplace effects rank 6th and data effects 9th. Local marketplaces whose value levels off as they grow, which is what a household pickup market is, rank 8th.\n\nReMA's scrap specifications (July 2026 edition) show how a standard wins. They are free to use and cover ferrous and non-ferrous metals, paper, plastics, electronics, glass and tyres. Anyone can propose changes. Traders use them as the common language in contracts and agree any departures in writing.\n\nIndia has recent examples of open protocols being adopted: the Beckn protocol runs ONDC, the Unified Energy Interface, the Unified Health Interface and Bengaluru's Namma Yatri.",
+   "sourceUrls": [
+    "https://www.nfx.com/post/network-effects-bible",
+    "https://www.isrispecs.org/",
+    "https://beckn.io/"
+   ]
+  },
+  {
+   "point": "Saathi gig work in Karnataka will carry a welfare fee of 1–5% of each payout.",
+   "detail": "PRS summarises the Karnataka Platform-based Gig Workers (Social Security and Welfare) Bill 2025. An ordinance came in May 2025 and the Bill was introduced on 12 Aug 2025.\n- **Who it covers:** an aggregator is any digital intermediary that connects buyers and sellers of goods or services.\n- **Fee:** the aggregator pays a welfare fee of 1–5% of each payout to a gig worker, with the rate set by category.\n- **Duties:** register with the Welfare Board within 45 days of the law starting, share worker data and report every payment.\n\nAny Saathi job priced on Luma.Green must include this fee and keep a ledger of payouts.",
+   "sourceUrls": [
+    "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+   ]
+  },
+  {
+   "point": "Rooftop solar leads are a cheap extra sale to households the kabadiwala has already met at the door.",
+   "detail": "PM Surya Ghar: Muft Bijli Yojana was approved in Feb 2024. It has ₹75,021 crore to put rooftop solar on 1 crore homes, with subsidies of up to ₹78,000 per household depending on consumption. These figures come from a Wikipedia summary; confirm them on pmsuryaghar.gov.in. Households who have just had a paid pickup, and the roofs of yards, are natural leads for approved solar vendors. We don't know what vendors pay per lead, so treat this as small upside.",
+   "sourceUrls": [
+    "https://en.wikipedia.org/wiki/Pradhan_Mantri_Surya_Ghar_Muft_Bijli_Yojana"
+   ]
+  },
+  {
+   "point": "CPCB's state figures, together with the languages Luma.Green already supports, give the order for expanding city by city.",
+   "detail": "Municipal waste generated per day by state (CPCB 2023-24), with the unaccounted share where large:\n- Maharashtra: 24,299 tonnes\n- Uttar Pradesh: 20,114 tonnes\n- Tamil Nadu: 17,843 tonnes (8,630 unaccounted)\n- West Bengal: 14,072 tonnes (9,585 unaccounted)\n- Karnataka: 12,140 tonnes\n- Gujarat: 12,000 tonnes\n- Telangana: 11,714 tonnes\n- Delhi: 11,342 tonnes (3,464 unaccounted)\n\nThe main language of every one of these states is already among Luma.Green's 12 languages. Each new city should be set up by changing data, not code: floor and fallback price tables, local material names, pollution-board document types and local-body registration.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/MSW/MSW_AnnualReport_2023-24..pdf"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Traction dashboard: extend the admin pilot-numbers page into a view for investors",
+   "why": "a16z's marketplace measures (match rate, time to match, take rate, retention by cohort and by city) are what seed investors ask for, and the events table from ADR 0012 already captures most of them. Show kg traced by material, recorded rupee value of trades, completion rate, median time to accept, how close the AI's weight estimate is to the weighed kg, repeat households, active verified businesses, 'shadow revenue' (what fees would have earned if switched on) and CO2e avoided. Label the prototype clearly as demo data.",
+   "priority": "prototype-now",
+   "users": [
+    "admin",
+    "founders",
+    "investors"
+   ]
+  },
+  {
+   "feature": "Trace view: one short code or QR per lot, linking household receipts to kabadiwala stock, the yard lot and the recycler batch",
+   "why": "It shows the core idea, recording every hand-off, on one screen. Plastic EPR certificates must match real capacity and carry GST data, and the SWM Rules 2026 require registrations and annual returns. Metycle's batch-level record backs a $150M credit facility. Export the chain as CSV or JSON with GST number, material code, weight and date so it can feed CPCB returns.",
+   "priority": "prototype-now",
+   "users": [
+    "yards",
+    "recyclers",
+    "manufacturers",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Open material codes v0.1: an admin-editable table, a public page and a CSV/JSON download under the CC BY 4.0 licence",
+   "why": "Standards-based network effects are the strongest kind (NFX ranks them 2nd of 16), and ReMA's specifications show that a free list of grades that anyone can propose changes to becomes the trade's common language. Each code carries names in 12 languages, a photo, a unit, the matching ReMA grade, the HSN tax code and the CPCB category. Because it is a table, it can be changed without code.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "yards",
+    "recyclers",
+    "manufacturers",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Pricing plans stored as data, with 'shadow revenue'",
+   "why": "Keep every fee at ₹0 during the pilot: Gurley's point is that low fees win, and cash at the door makes high fees leak. But store plans per city and per stream (pickup fee, kabadiwala Pro, yard workspace, fee on business-to-business lots, society plan) and calculate what each would have earned. Investors see the model, users see no friction, and switching a fee on is a data change.",
+   "priority": "prototype-now",
+   "users": [
+    "admin",
+    "kabadiwalas",
+    "yards"
+   ]
+  },
+  {
+   "feature": "Trust norms: a public 'Luma Verified' badge plus a weighing standard in weigh-and-record",
+   "why": "Verification is already done by hand. Show the checks passed (ID and selfie, pollution-board consent PDF, GST if given, date verified) as a badge that can be withdrawn. For each weighing, require a photo of the scale, confirmation from both sides and a way to flag a dispute. This turns the pilot's 'estimated vs weighed kg' measure into evidence, and it is the start of a certification others can refer to.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "recyclers",
+    "manufacturers",
+    "Saathis",
+    "households"
+   ]
+  },
+  {
+   "feature": "Accounts for apartment societies and other bulk generators under the SWM Rules 2026",
+   "why": "Since 1 Apr 2026, anyone generating 100 kg or more of waste a day, including residential societies, must register on CPCB's portal, file returns by 30 June and buy EBWGR certificates. A society account would give scheduled dry-waste pickups by a verified kabadiwala, monthly weighed statements and a yearly summary for the return. That is recurring revenue driven by compliance (our guess: ₹500–2,000 a month) and it brings many households at once. Start with 3–5 Bengaluru societies as design partners.",
+   "priority": "pilot",
+   "users": [
+    "residential societies",
+    "offices",
+    "kabadiwalas",
+    "yards"
+   ]
+  },
+  {
+   "feature": "Yard workspace: a light software product for yards",
+   "why": "Yards need purchase receipts, a stock ledger, sale lots, GST invoice fields and a record of their Rule 9(1) registration with the local body. Small-business software keeps 60–80% of users after 6 months, which makes this the most predictable revenue. Free in the pilot; our guess is ₹1,500–5,000 a month later.",
+   "priority": "pilot",
+   "users": [
+    "yards",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Bengaluru price index: weekly median prices per material from receipts and yards' buying prices, shown next to the admin floor price",
+   "why": "Households already compare published rates (Scrapuncle lists ₹11–13/kg for newspaper and ₹7–8/kg for plastic). A neutral index built from real weighed receipts becomes a reference price and a public search-friendly page. It improves as more trades are recorded, and later it can be a paid data feed or report for recyclers and manufacturers.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "yards",
+    "recyclers",
+    "manufacturers"
+   ]
+  },
+  {
+   "feature": "Saathi payout ledger that includes Karnataka's welfare fee",
+   "why": "Karnataka's gig-worker law sets a welfare fee of 1–5% on each payout, requires aggregators to register within 45 days and to report payments. Record every Saathi payout and its fee from the first day, and keep paid Saathi jobs switched off until the fee rate for Luma.Green's category is known.",
+   "priority": "pilot",
+   "users": [
+    "Saathis",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Evidence packs for registered recyclers and PROs, covering EPR and recycled content",
+   "why": "Rigid packaging must contain 30% recycled plastic in FY2025-26 and 60% from FY2028-29. EPR certificates trade only on government platforms, at 30–100% of the non-compliance penalty. So sell verified chain-of-custody evidence priced per tonne, and never trade certificates. Add plastic-credit projects later through a partner registered with Verra.",
+   "priority": "scale",
+   "users": [
+    "recyclers",
+    "manufacturers",
+    "brands and PROs"
+   ]
+  },
+  {
+   "feature": "Working-capital loan referrals to an RBI-regulated lender, based on platform receipts",
+   "why": "Kabadiwalas pay households in cash, and yards wait to be paid by recyclers, so both need working capital. Their receipts are evidence a lender can use. Under RBI's digital lending rules the lender pays the referral fee and money moves only between lender and borrower, so Luma.Green earns without holding any funds.",
+   "priority": "scale",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "recyclers"
+   ]
+  },
+  {
+   "feature": "Rooftop solar leads under PM Surya Ghar, for households and yards",
+   "why": "The scheme has ₹75,021 crore for 1 crore homes, with subsidies up to ₹78,000, and households already trust the app after a paid pickup. Pass leads to approved vendors for a fee per installation. This is a low-effort add-on, not core business.",
+   "priority": "scale",
+   "users": [
+    "households",
+    "yards",
+    "recyclers"
+   ]
+  }
+ ],
+ "artifactMarkdown": "# Luma.Green: investor narrative (one-page outline)\n\n_Draft for the investor prototype, 29 Sep 2026. Figures marked (H) are our guesses, to be tested in the pilot. Every other figure comes from a source in the research notes._\n\n**In one line.** Luma.Green records India's informal recycling chain. Every hand-off from household to manufacturer is weighed, priced and traceable, in 12 languages, on a basic smartphone.\n\n## 1. Problem\n- India generates **1,85,195 tonnes a day** of municipal waste. **38,729 tonnes a day (21%)** is neither processed nor landfilled; nobody can say where it went (CPCB 2023-24).\n- Karnataka generates **12,140 tonnes a day**. Bengaluru separates only **53–55%** at source.\n- Recyclables do move, through kabadiwalas and yards, but on cash, guessed weights and phone calls. There are no published prices, no records and no proof of origin.\n\n## 2. Why now\n- **SWM Rules 2026, in force since 1 Apr 2026.** Anyone generating 100 kg or more a day, including residential societies, must register on a CPCB portal, file returns by 30 June and buy certificates for the waste they generate (EBWGR certificates). Every dry-waste sorter must register with the local body.\n- **Plastic EPR.** Rigid packaging must contain **30% recycled plastic in FY2025-26, rising to 60% from FY2028-29**. Certificates must match a recycler's real capacity and carry GST data.\n- **Regulated certificate markets.** E-waste EPR certificates trade on a government portal at **30–100%** of the penalty for non-compliance. What is scarce is proof, not certificates.\n- UPI payments, cheap photo-recognition AI and first-time smartphone users make a three-tap household flow possible.\n\n## 3. Product (working prototype)\n- **Household:** photo, then AI estimate, then pickup, then paid in cash or UPI.\n- **Kabadiwala:** booking requests, their own rate card above an admin floor price, weigh-and-record, stock.\n- **Yard, recycler, manufacturer:** lots to buy and sell, and a trace view.\n- **Saathi:** short paid jobs.\n- **Admin:** every business checked by hand.\n\n## 4. Business model: free at the door, paid further up the chain\n| Stage | Revenue stream | Who pays | Price (H) |\n|---|---|---|---|\n| Pilot (Oct–Dec 2026) | Nothing charged; \"shadow revenue\" (what fees would have earned) is measured | — | — |\n| After the pilot | Compliance plan for apartment societies and other bulk generators | Societies, offices | ₹500–2,000 a month |\n| After the pilot | Yard workspace: stock, receipts, GST fields, SWM records | Yards | ₹1,500–5,000 a month |\n| Scale | Fee on business-to-business lots (kabadiwala to yard to recycler to manufacturer) | Buyer | 0.5–2% of lot value |\n| Scale | Evidence packs for EPR and recycled content | Recyclers, PROs, brands | ₹ per tonne |\n| Scale | Price index and data feed | Recyclers, manufacturers | Subscription |\n| Scale | Referrals for working-capital loans and rooftop solar | Regulated lenders, solar vendors | Per loan or per installation |\n| Upside | Share of plastic-credit revenue through a registered partner | Credit buyers | % of each credit |\n\n- **Why no commission from households.** A 20 kg basket pays the household about ₹250 at Bengaluru rates. A 5% fee is about ₹12, less than the cost of a pickup that takes 45–60 minutes, and cash at the door makes it easy to skip the app.\n- **Example of a mature city (H).** 500 societies at ₹1,000 plus 50 yards at ₹3,000 plus 1% of 3,000 tonnes a month at ₹25/kg comes to about **₹14 lakh a month (about ₹1.7 crore a year)**, before EPR, data and referral income.\n\n## 5. Why we win\n- **Equip kabadiwalas, don't replace them.** Competitors in Bengaluru run their own pickup service. We give the city's existing kabadiwalas the tools and connect them to buyers further up the chain.\n- **Three effects that build on each other.** Busy local clusters come first. Every weighed receipt then sharpens the AI estimates and the price index. Finally, open material codes and a receipt format that others adopt make us the standard; ReMA's scrap specifications are the global example.\n- **Trust as a rule of the platform.** Participants are verified, weighing follows a set standard and the record of each lot is unbroken. Regulators, brands and lenders can accept that as evidence.\n\n## 6. Comparable companies\n| Company | Model | Numbers | Lesson |\n|---|---|---|---|\n| Recykal, Hyderabad | Marketplace (2017), then EPR compliance (2019) | Revenue ₹1.8 crore FY19, ₹21.2 crore FY20; $22M in 2022 with Morgan Stanley; ₹110 crore in 2024 (reported); 620+ brands, 675 recyclers | Revenue follows compliance |\n| Metycle, Europe | Metals trading with records for every batch | $120M traded in 12 months (+150%); $150M credit facility | Traceability unlocks loans |\n| The Kabadiwala, Bhopal | Own pickup service plus plastic EPR services | 15 cities including Bengaluru; 100,000+ customers; 81.1 million kg; about ₹3 crore raised | Household-first businesses stay small |\n| Scrapuncle, Delhi | Own pickup crews, published rate list | Delhi NCR and Bengaluru | Direct competitor in the pilot city |\n\n## 7. KPIs to show\n| KPI | Definition | Prototype | Pilot, by Dec 2026 (H) | Ready for seed round (H) |\n|---|---|---|---|---|\n| Kg traced | Weighed kg per month, by material | Demo data | 5 tonnes in total | 100+ tonnes a month |\n| Recorded value | ₹ on weighed receipts | Demo | ₹75,000+ in total | ₹20 lakh+ a month |\n| Completion | Pickups weighed ÷ pickups booked | Demo | 80% or more | 85% or more |\n| Time to accept | Median minutes from booking to acceptance | Demo | 15 min or less | 10 min or less |\n| Estimate accuracy | Median gap between the AI's kg estimate and the weighed kg | Demo | Within 30% | Within 20% |\n| Household repeat | Share of households booking again within 6 months | — | Track | 30% or more (50% is great) |\n| Business retention | Kabadiwalas and yards still active after 6 months | — | Track | 60% or more (80% is great) |\n| Receipt coverage | Completed pickups with a weighed receipt | Demo | 100% | 100% |\n| Business-to-business match rate | Share of kabadiwala stock posts collected within 7 days | Demo | First trades | 60% or more |\n| Cluster retention | Retention in the newest cluster compared with the first | — | — | Newer at least equal to older |\n| Verification time | Hours from application to decision | Live | 24 h or less | 24 h or less |\n| Shadow revenue and fee share | What each stream would earn if its fee were on | Demo | Track | Paying customers in 2 streams |\n| Impact | Tonnes diverted; CO2e avoided (method published, not sold as credits) | Demo | Track | Method checked by a third party |\n\nRetention bars come from public benchmarks for 6-month retention: 30% good and 50% great for consumer transaction apps; 60% good and 80% great for small-business software.\n\n## 8. How we expand\n- **The unit is a cluster:** 1 yard, 15–30 kabadiwalas within about 3 km, 2,000–5,000 households and 3–5 societies. A city is 5–10 clusters.\n- **A new city is data, not code:** floor and fallback price tables, local material names, pollution-board document types, local-body registration, one operations lead, one anchor recycler and one waste-picker organisation as a partner.\n- **Order**, based on CPCB tonnage and the languages already built:\n  1. Bengaluru\n  2. Mysuru and Hubballi (same language and pollution board)\n  3. Hyderabad, Chennai and Pune/Mumbai (state totals of 11,714, 17,843 and 24,299 tonnes a day)\n  4. Kolkata, Ahmedabad and Delhi NCR\n\n## 9. Making our rules the industry's rules\n- **Luma Material Codes and the hand-off receipt format**, published under the CC BY 4.0 licence. Each code has names in 12 languages, photos, and its matching ReMA grade, HSN tax code and CPCB category.\n- **Open to change:** anyone can propose changes and every version is numbered.\n- **Advisory group:** kabadiwalas, yards, recyclers and a waste-picker organisation. Once others use the codes, hand them to a neutral body to look after.\n- **Weighing standard:** a government-stamped scale, a photo of the reading and confirmation from both sides.\n- **Luma Verified badge:** shown on checked businesses and withdrawn if they break the rules.\n\n## 10. Risks and how we handle them\n- **Trading off the platform:** no commission on household pickups.\n- **Regulated certificate markets:** we sell evidence, never certificates.\n- **Carbon:** reported as an impact measure only, until an approved method covers recycling.\n- **Karnataka gig-worker law:** the 1–5% welfare fee is built into Saathi pricing.\n- **Lending rules:** referral fees paid by the lender, and we never hold loan money.\n- **Demo data:** always labelled as demo.\n\n**Ask:** ₹___ for ___ months to reach the seed-round column above in Bengaluru.",
+ "risks": [
+  "Trading off the platform: after one booking through the app, a household and kabadiwala can deal directly in cash, and any per-pickup fee speeds this up (Gurley).",
+  "Weak household unit economics: about ₹250 per 20 kg pickup, and 45–60 minutes of reverse logistics per order (Recykal). Pickups alone will never pay for the company.",
+  "Regulated certificate markets: EPR certificates are exchanged on government platforms at 30–100% of the non-compliance penalty, and processors who give false data are barred for a year. A partner's fraud would taint Luma.Green's records.",
+  "Carbon expectations: no Indian offset method covers dry recyclables, and voluntary plastic credits are small (40,000+ credits worldwide). Do not put carbon revenue in the base-case model shown to investors.",
+  "Gig-worker law: Karnataka's 1–5% welfare fee, registration within 45 days and duty to share data may apply to Saathi jobs.",
+  "Loan referrals need a regulated lending partner and strict compliance with RBI rules: the lender pays the fee, and no loan money passes through Luma.Green.",
+  "Competition in Bengaluru from companies that run their own pickup service (Scrapuncle, The Kabadiwala) and from EPR service providers.",
+  "Investor demo risk: the prototype runs on demo data, and unlabelled numbers could be read as real traction.",
+  "Changing rules: the plastic EPR rules have been amended several times since 2022, so re-check the recycled-content percentages before putting them in a deck.",
+  "Adoption of the standard: if the material codes look proprietary or change unpredictably, competitors and regulators will not adopt them."
+ ],
+ "openQuestions": [
+  "Under the SWM Rules 2026, who issues EBWGR certificates and at what price? Can a network of kabadiwalas and yards supply them to Bengaluru societies? (We need the text of the 27 Jan 2026 notification.)",
+  "What are kabadiwalas' real gross margins per material, and will they pay a monthly subscription or only per lead?",
+  "What are typical kabadiwala-to-yard lot sizes, how many days of credit are given, and who transports the material? This sizes both the business-to-business fee and the need for financing.",
+  "Has Karnataka's gig-worker Bill been passed and brought into force, and what fee rate would apply to Saathi jobs?",
+  "Will Luma.Green count as an e-commerce operator under GST (and so have to collect tax at source) once trades or escrow go live?",
+  "Do CPCB's EPR and SWM portals accept bulk uploads or API connections from outside record systems?",
+  "Which neutral body should look after the material codes in the long run: an industry association, a BIS committee, or a foundation?",
+  "What are the current recycled-content requirements after any 2024–2026 amendments to the plastic rules?"
+ ],
+ "sources": [
+  {
+   "title": "CPCB (Sep 2026): Guidelines for levy of fees for the Centralised Online Portal under the Solid Waste Management Rules, 2026",
+   "url": "https://cpcb.gov.in/openpdffile.php?id=TGF0ZXN0RmlsZS81MDRfMTc5MDE2MjE1NV9tZWRpYXBob3RvMzAyOTUucGRm"
+  },
+  {
+   "title": "CPCB: Annual Report on Solid Waste Management 2023-24",
+   "url": "https://cpcb.gov.in/uploads/MSW/MSW_AnnualReport_2023-24..pdf"
+  },
+  {
+   "title": "MoEFCC: Plastic Waste Management (Amendment) Rules 2022, EPR Guidelines (G.S.R. 133(E), 16 Feb 2022)",
+   "url": "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf"
+  },
+  {
+   "title": "MoEFCC: E-Waste (Management) Amendment Rules, 2024 (G.S.R. 164(E), 8 Mar 2024)",
+   "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/E-waste-Third-Amendment-Rules-2024.pdf"
+  },
+  {
+   "title": "Indian Carbon Market portal (BEE): approved offset methodologies",
+   "url": "https://indiancarbonmarket.gov.in/offset-mechanism/MzI="
+  },
+  {
+   "title": "Verra: Plastic Waste Reduction Program",
+   "url": "https://verra.org/programs/plastic/"
+  },
+  {
+   "title": "PRS Legislative Research: Karnataka Platform-based Gig Workers (Social Security and Welfare) Bill, 2025",
+   "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+  },
+  {
+   "title": "RBI: Guidelines on Digital Lending (2 Sep 2022)",
+   "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12382&Mode=0"
+  },
+  {
+   "title": "Wikipedia: Recykal",
+   "url": "https://en.wikipedia.org/wiki/Recykal"
+  },
+  {
+   "title": "Forbes India: How Recykal is cleaning up the mess",
+   "url": "https://www.forbesindia.com/article/take-one-big-story-of-the-day/how-recykal-is-cleaning-up-the-mess/70177/1"
+  },
+  {
+   "title": "Scrapuncle: scrap rate list (Delhi NCR, Bengaluru)",
+   "url": "https://www.scrapuncle.com/rates"
+  },
+  {
+   "title": "The Kabadiwala: homepage (cities, scale, services)",
+   "url": "https://www.thekabadiwala.com/"
+  },
+  {
+   "title": "Metycle: secondary metals trading with TrustTrack traceability",
+   "url": "https://www.metycle.com/"
+  },
+  {
+   "title": "a16z: 13 Metrics for Marketplace Companies",
+   "url": "https://a16z.com/13-metrics-for-marketplace-companies/"
+  },
+  {
+   "title": "Lenny's Newsletter: What is good retention",
+   "url": "https://www.lennysnewsletter.com/p/what-is-good-retention-issue-29"
+  },
+  {
+   "title": "Bill Gurley: A Rake Too Far: Optimal Platform Pricing Strategy",
+   "url": "https://abovethecrowd.com/2013/04/18/a-rake-too-far-optimal-platformpricing-strategy/"
+  },
+  {
+   "title": "NFX: The Network Effects Bible",
+   "url": "https://www.nfx.com/post/network-effects-bible"
+  },
+  {
+   "title": "ReMA (formerly ISRI): Scrap Specifications",
+   "url": "https://www.isrispecs.org/"
+  },
+  {
+   "title": "Beckn protocol: open networks (ONDC, UEI, UHI, Namma Yatri)",
+   "url": "https://beckn.io/"
+  },
+  {
+   "title": "Wikipedia: PM Surya Ghar Muft Bijli Yojana",
+   "url": "https://en.wikipedia.org/wiki/Pradhan_Mantri_Surya_Ghar_Muft_Bijli_Yojana"
+  }
+ ]
+}

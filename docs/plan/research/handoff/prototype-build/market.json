@@ -1,0 +1,47 @@
+{
+ "branch": "worktree-wf_21434ea1-012-3",
+ "worktreePath": "/Users/syedabdulmuqeeth/Developer/Luma.Green/.claude/worktrees/wf_21434ea1-012-3",
+ "commit": "825a1d563165dfcf93d35ac4dd7665422dc46a1a",
+ "summary": "I built the business-to-business market for the prototype: buying, selling, trades with simulated escrow, printable trade receipts, and the home screen for yards, recyclers and manufacturers. It is one commit (825a1d5) on top of the lead's latest commit, dfd8c19. The worktree started on main (1403f83), which doesn't have the foundation code, so I fast-forwarded it onto feat/prototype before writing anything. Typecheck, ESLint and Prettier are clean, and all 86 tests in this area pass (19 backend, 67 UI). I did not run the app or a browser, as instructed.\n\nBackend, `convex/market.ts`: every function starts with `requireOrg`.\n- **browse**: open lots from the business type below yours in the chain, in your city, never your own, newest first. Kabadiwalas get WRONG_ROLE, because they don't buy on the market.\n- **myListings** lists your lots, open ones first. **sellable** is a helper the task didn't list: it tells the Sell form how much of each material is free to sell.\n- **createListing** and **withdraw**: only for business types someone buys from. Weight and price must be whole numbers above zero, the weight must fit in free stock, and the note is at most 140 characters.\n- **requestTrade**: only the right buyer type, with 0 < grams ≤ what's left in the lot, at the asking price.\n- **trades**: a buying list and a selling list, each with the next actions, the other business, and escrow and e-way-bill flags.\n- **act** moves a trade one step:\n  - accept takes the weight off the lot and marks it sold at zero;\n  - pay gives the receipt number LG-yy-nnnn and holds the money in escrow;\n  - dispatch takes the seller's stock, and refuses if there isn't enough;\n  - confirm adds the buyer's stock and releases the escrow.\n  Every step adds a timeline entry and an audit-log row, and stock changes are logged too.\n- **receipt** is visible to either side of the trade and returns nothing for anyone else or for a bad link. It is labelled a \"Trade receipt\", not a GST invoice.\n\nChoices that go slightly beyond the task:\n- **Free stock**: a new listing is checked against stock minus open listings minus sold lots not yet dispatched, not just total stock, so the same kilos can't be sold twice.\n- **Closed lots**: withdrawing a lot, or selling it out, automatically declines the requests still waiting on it. While reviewing I caught and fixed a bug where selling a lot out also wrote a false \"declined\" log entry for the order that sold it; a test now covers this.\n- **Suggested price**: scrap uses today's market price × CHAIN_MARKUP. Recycled material (flakes, granules, kraft, ingots) is not marked up again, because its market price is already the price a factory pays.\n- **Receipt numbers**: finding the next number reads every trade. That's fine at pilot volume; a counter row would replace it later.\n- **Lint exception**: I added one justified line-level lint exception on `createListing`, because the task names it that way and the rule doesn't fit Convex functions.\n\nScreens, in `src/components/market`:\n- **Home**: a greeting and four numbers: money in escrow, trades waiting for you, lots on sale (recycled lots on offer for manufacturers), and trades done this month. Below them, a \"Waiting for you\" list with one-tap buttons, then the latest lots. Manufacturers see recycled material first.\n- **Buy**: material filter chips, lot cards, and a Buy dialog that shows the total as you type the weight.\n- **Sell**: a new-listing form showing free stock and the suggested price, plus your listings with a Withdraw button.\n- **Trades**: Buying and Selling tabs for yards and recyclers, and a single list for kabadiwalas and manufacturers. Each trade shows a five-step timeline, an escrow badge, the e-way-bill note, the next step as the main button, and a receipt link.\n- **Receipt**: printable, with print styles scoped to that page, so the app shell doesn't need changes.\n- Every screen has loading, empty and error states. English copy is under the `market` namespace in `messages/en.json`.\n\nTests:\n- **Full trade on demo data**: yard 102 buys from kabadiwala 101's lot through to delivery, and stock moves on both sides.\n- **Refusals**: signed out, wrong role, wrong buyer type, wrong side, someone else's trade, too much weight, not enough stock.\n- **Browse**: the right tier only, and only your city.\n- **UI**: unit tests for the pure logic, and component tests for the home, market and trades pages, the buy dialog, the listing form, the trade card and the receipt.",
+ "routes": [
+  "/app (BusinessHome for yards, recyclers, manufacturers)",
+  "/app/market",
+  "/app/sell",
+  "/app/trades",
+  "/app/trades/[id]/invoice"
+ ],
+ "convexFunctions": [
+  "market.browse (query)",
+  "market.requestTrade (mutation)",
+  "market.myListings (query)",
+  "market.sellable (query)",
+  "market.createListing (mutation)",
+  "market.withdraw (mutation)",
+  "market.trades (query)",
+  "market.act (mutation)",
+  "market.receipt (query)"
+ ],
+ "messageNamespaces": [
+  "market"
+ ],
+ "checks": {
+  "typecheck": "pass (pnpm typecheck)",
+  "lint": "pass (pnpm exec eslint convex/market.ts convex/market.test.ts src/components/market); one line-level disable of unicorn/no-non-function-verb-prefix on createListing, with a reason comment",
+  "tests": "pass: 86/86 across 10 files (convex/market.test.ts: 19; src/components/market/*: 67). Full suite: only src/i18n/messages.test.ts fails (22 cases, translation parity), as expected"
+ },
+ "unfinished": [
+  "Translations: the market namespace is English only. Until it is added to the other 11 locale files, src/i18n/messages.test.ts fails.",
+  "Not checked in a browser (pnpm dev, next build and Playwright were off-limits); no e2e spec added.",
+  "Escrow is simulated: pay and confirm only change the trade's status and write the audit log. No money moves."
+ ],
+ "mergeNotes": [
+  "The worktree started on main (1403f83), which lacks the foundation. I fast-forwarded it onto feat/prototype (dfd8c19) before any work, so the commit sits directly on your latest commit.",
+  "convex/_generated/api.d.ts only gains the `market` module line (from `npx convex codegen --typecheck disable`). Re-run codegen after merging all areas.",
+  "messages/en.json: I only added the `market` namespace at the end of the file. Expect a textual conflict if other areas also appended at the end; keep both sides.",
+  "Demo-data gap: Ramesh (101) has a paid 180 kg cardboard trade but only 95 kg of cardboard in stock, so 'Mark as dispatched' on it correctly fails with 'You don't have that much in stock'. To demo a kabadiwala dispatch, raise PAPER-CARTON for ramesh-kabadi-store in convex/lib/demo.ts to at least 180 kg (say 300) and re-seed. GreenLoop's 8,000 kg flake lot plus its paid 5,000 kg order also exceed its 9,000 kg of flakes, so flakes show 0 kg free to sell; the paid dispatch still works.",
+  "The seeded Sri Lakshmi → Peenya PET request points at a 0 kg 'sold' placeholder lot the seed created, so it can never be accepted. That seller has no login, so it only shows on the yard's side as waiting.",
+  "The Sell page's 'nothing to sell' empty state links to /app/stock, the stock area's page.",
+  "Printing the receipt hides everything except #trade-receipt using a <style> tag inside invoice-page.tsx; no shell change is needed.",
+  "Demo walk: sign in as 102 and buy on /app/market → sign in as 101 and accept on /app/trades → as 102, pay from the home screen or Trades → 101 dispatches (the new newspaper order works) → 102 confirms → open the receipt link. 103 can confirm a seeded dispatched PET delivery and dispatch the paid flake order right away."
+ ]
+}

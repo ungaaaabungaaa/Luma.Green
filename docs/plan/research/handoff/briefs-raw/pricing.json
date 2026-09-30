@@ -1,0 +1,328 @@
+{
+ "topic": "pricing",
+ "headline": "Bengaluru households get undated, round-number scrap prices: about half the mill price for newspaper (₹10/kg against roughly ₹20/kg) and about a sixth of the exchange price for aluminium cans (₹60/kg against MCX ₹347.50/kg on 28 Sep 2026). Exchange prices can't be republished without MCX or LME licences, so Luma.Green should build its price board from its own verified rate cards and trades.",
+ "findings": [
+  {
+   "point": "The prices households see are static round numbers with no date, while the materials underneath move daily (metals) or weekly (paper).",
+   "detail": "The Kabadiwala's Bangalore page lists newspaper at ₹10/kg, carton ₹3, PET ₹10, aluminium ₹150 and beverage cans ₹60/kg. No update date is shown, and each city has its own page. Kabadiwala Online (Delhi NCR) gives ranges (newspaper ₹12–18, aluminium ₹95–130), calls them indicative, says metal rates follow the exchanges every day, and has a ₹999 minimum pickup. scraprates.in quotes Bengaluru newspaper at a precise-looking ₹13.69/kg (28 Sep 2026), calls it a dealer 'wholesale baseline', does not explain how it is calculated, and says household pickup quotes run ₹5–7/kg lower. It also says free doorstep pickup usually needs 25–50 kg.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+    "https://kabadiwalaonline.in/price-list/",
+    "https://scraprates.in/bangalore/newspaper-scrap-price"
+   ]
+  },
+  {
+   "point": "Metal benchmarks move every trading day and are published to the rupee; this is where the gap to the household price is widest.",
+   "detail": "On 28 Sep 2026 MCX aluminium was ₹347.50/kg (−0.4% from ₹349.05) and LME aluminium was US$3,268/t (+0.6%). NALCO's list price for aluminium ingots was ₹367–379/kg on 19 Sep 2026. BigMint publishes daily Indian scrap assessments with the day's change, e.g. melting scrap delivered to Mandi Gobindgarh at ₹42,600/t, up ₹1,000 (+2.4%).",
+   "sourceUrls": [
+    "https://aluminiummagazine.com/mag/business/current-aluminium-price.html",
+    "https://www.bigmint.co/prices"
+   ]
+  },
+  {
+   "point": "Waste-paper prices move in weekly steps, with occasional double-digit swings inside two to three weeks.",
+   "detail": "Feb 2024: domestic waste paper fell about 20% in 9–10 days (₹19.50 to ₹15.50–16/kg) when kraft and duplex demand dried up. Jul 2023: it rose ₹1.5–2.5/kg in about 20 days, driven by import prices and monsoon disruption to collection. Jan 2025: corrugated waste (OCC) rose ₹2,000/t to ₹20,500/t in North India as collection fell 55–60%. Freight, mill demand, monsoon and festivals all move the price.",
+   "sourceUrls": [
+    "https://thepulpandpapertimes.com/news/india/domestic-waste-paper-prices-1003",
+    "https://thepulpandpapertimes.com/news/waste-paper-price-increased-by-10-to-15-in-july-898",
+    "https://thepulpandpapertimes.com/news/industry-news/kraft-paper-mills-2187"
+   ]
+  },
+  {
+   "point": "Bengaluru's own value-chain study prices every layer. For newspaper, the price rose about ₹1/kg per step, and households got roughly 67–71% of the mill price.",
+   "detail": "The BBMP study 'Extracting Value from Bengaluru's Dry Waste Chain' (Nov 2014) found: kabadiwala paid ₹10/kg, large aggregators ₹11 (transport about ₹1/kg extra), traders ₹12–13 (₹1 margin), paper mills in Hosur, Sivakasi, Coimbatore and Bengaluru ₹14–15 delivered. Bengaluru produced 8,000–9,000 t of newspaper a month. Jolly Mohalla (Cottonpet) was the wholesale hub. Cartons: kabadiwala ₹6–7, aggregator ₹8–8.50, traders +₹1–1.50. DWCC price lists (17 Sep 2013) paid ₹7–8 for newspaper and ₹15 for PET.",
+   "sourceUrls": [
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru's%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+   ]
+  },
+  {
+   "point": "For aluminium cans and PET the gap between household and factory is two to six times, and for cans it seems to have widened since 2014.",
+   "detail": "2014 Bengaluru can chain: DWCC ₹35, kabadiwala ₹45, aggregator ₹60, recycler ₹110, billets sold at ₹120/kg. The kabadiwala price was about 38% of the billet price. PET went from ₹15–18/kg at the kabadiwala to ₹45–50 at dispatch to recyclers in Gujarat and Mumbai. 2026: The Kabadiwala pays ₹60/kg for cans in Bengaluru, about 17% of MCX aluminium (₹347.50). Used-beverage-can (UBC) lots on IndiaMART (Delhi sellers' asking prices) are ₹120–290/kg, mostly ₹145–230. Bengaluru utensil aluminium is ₹215–220/kg and extrusion ₹225–310/kg. The 2014 and 2026 figures come from different kinds of sources, so the comparison shows direction, not a precise change.",
+   "sourceUrls": [
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru's%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf",
+    "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+    "https://dir.indiamart.com/delhi/aluminum-ubc-scrap.html",
+    "https://dir.indiamart.com/bengaluru/aluminium-scrap.html",
+    "https://aluminiummagazine.com/mag/business/current-aluminium-price.html"
+   ]
+  },
+  {
+   "point": "A 2026 snapshot for newspaper in Bengaluru shows households get roughly 35–50% of the price of mill-grade lots.",
+   "detail": "Households: ₹10/kg (The Kabadiwala), or about ₹7–9 if pickup quotes really run ₹5–7 below scraprates' ₹13.69 baseline. Bengaluru newspaper sellers on IndiaMART mostly ask ₹12–20/kg (outliers of ₹9 and ₹95 are special grades). Mixed ONP for paper mills is offered at ₹20/kg with a 5 t minimum (Mumbai seller). All marketplace figures are asking prices, not completed trades.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+    "https://scraprates.in/bangalore/newspaper-scrap-price",
+    "https://dir.indiamart.com/bengaluru/newspaper-waste.html",
+    "https://www.indiamart.com/proddetail/old-newspaper-onp-22982234462.html"
+   ]
+  },
+  {
+   "point": "Prices differ by city even on the same app, and southern paper mills pay less, so every price table must be per city.",
+   "detail": "The Kabadiwala pays less in Bengaluru than in Delhi: carton ₹3 vs ₹6, cans ₹60 vs ₹70, newspaper ₹10 vs ₹11, copper ₹500 vs ₹550, brass ₹400 vs ₹450. Aluminium (₹150) and PET (₹10) are the same in both cities. In Jul 2023 southern mills paid ₹13–13.5/kg for kraft waste against ₹15.8–16.5 in Meerut and Muzaffarnagar. Where material goes also varies by type: Bengaluru paper goes to mills in Karnataka and Tamil Nadu, aluminium is recycled locally (Nayandahalli, Kumbalgodu, Harohalli), and PET travels to Gujarat and Mumbai.",
+   "sourceUrls": [
+    "https://www.thekabadiwala.com/scrap-rates/Bangalore",
+    "https://www.thekabadiwala.com/scrap-rates/Delhi",
+    "https://thepulpandpapertimes.com/news/waste-paper-price-increased-by-10-to-15-in-july-898",
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru's%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+   ]
+  },
+  {
+   "point": "Licences limit what Luma.Green can show from exchanges: MCX allows only delayed data on public websites under an agreement, and LME needs a paid licence for any public website or app.",
+   "detail": "MCX: showing its data needs a real-time or delayed feed subscription and an MCX agreement. Public websites may show delayed data only. Resale in any form is banned. Public internet display needs explicit MCX permission. The internet feed costs ₹1,00,000 + tax a year before product charges. LME: showing LME data on a public website or app needs a distribution licence: US$25,000 a year for real-time or 30-minute-delayed data, or a one-off US$4,000 for next-day data. Prices calculated from LME data (LME calls these 'reference values') may also need a separate derived-data licence.",
+   "sourceUrls": [
+    "https://www.mcxindia.com/technology/datafeed",
+    "https://www.lme.com/en/market-data/market-data-licensing/data-distribution",
+    "https://www.lme.com/en/market-data/market-data-licensing/derived-data"
+   ]
+  },
+  {
+   "point": "Professional price reporters build trusted indices from confirmed trades with a public method. Luma.Green's board can copy that pattern at city level.",
+   "detail": "BigMint runs 800+ price assessments in 40+ countries. It builds them from confirmed transactions and market-checked deals, has its method externally audited against IOSCO standards (the international securities regulators' body), uses SEBI-certified analysts, invites firms to submit prices, and sells redistribution rights through data licences. It covers scrap, polymers and non-ferrous metals, but not household-level prices.",
+   "sourceUrls": [
+    "https://www.bigmint.co/prices"
+   ]
+  },
+  {
+   "point": "B2B marketplaces already sell 'one fair live price' to businesses; the household and city level is still open.",
+   "detail": "Recykal.Market claims 10K+ verified GST-registered businesses, 3M+ tonnes traded, ₹2,500 Cr+ in value across 28+ states and UTs. It promises one transparent rate with no brokers or haggling. It does not publish a household-level city price board.",
+   "sourceUrls": [
+    "https://recykal.market/"
+   ]
+  },
+  {
+   "point": "Indian regulators already use floor-and-ceiling price bands in recycling markets, which supports admin floors but also shows they get challenged.",
+   "detail": "The E-Waste (Management) Amendment Rules 2024 (notified 8 Mar 2024) make the Central Pollution Control Board (CPCB) set the highest and lowest prices for trading e-waste recycling certificates (EPR certificates) at 100% and 30% of the penalty for missing EPR targets. Experts raised concerns about oversight and possible manipulation of set prices.",
+   "sourceUrls": [
+    "https://www.theweek.in/news/india/2024/03/11/decoding-the-amended-e-waste-management-rules.html"
+   ]
+  },
+  {
+   "point": "Karnataka's scrap trade has recent large-scale fake-trade fraud, so prices built from trades must require proof that goods physically moved.",
+   "detail": "On 16 May 2026 Karnataka's Commercial Taxes Department exposed 127 bogus 'scrap' firms with ₹2,384 crore of fake turnover and about ₹420 crore of fraudulent GST input credit. The firms used circular invoices without warehouses, staff or transport records; one firm's reported turnover grew from ₹50 crore to ₹945 crore in three years.",
+   "sourceUrls": [
+    "https://newskarnataka.com/bengaluru/karnataka-uncovers-%E2%82%B92384-crore-fake-gst-credit-racket/16052026/"
+   ]
+  },
+  {
+   "point": "Shops learn prices from the next buyer up the chain, day by day, and traders earn their margin partly by providing credit.",
+   "detail": "The BBMP study found the local scrap dealer sets each day's price from market demand. Dealers with manual balers get better prices. Traders, many with direct tie-ups to processors, pay sellers in cash immediately but wait to be paid by processors, and take the largest margin in the chain. This makes the case for a public daily price and, later, faster settlement between businesses.",
+   "sourceUrls": [
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru's%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Public Bengaluru price board at /prices/bengaluru and /prices/bengaluru/{material}, in all 12 languages and indexed by search engines. Each material shows the price range households get, a typical price, the 7-day change, a Live or Guide status, how many shops and pickups it is based on, the update time, and a WhatsApp share image. Every number carries a visible 'Sample data' badge until real data flows.",
+   "why": "Nobody publishes a dated, sourced household price for Bengaluru: apps show undated round numbers and scraprates.in shows unexplained two-decimal figures. A board with honest ranges and freshness labels is the clearest thing to show investors, and 'scrap rate today' pages are something people already look for.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "investor"
+   ]
+  },
+  {
+   "feature": "A 'Where your rupee goes' chart for newspaper and aluminium cans (household → shop → yard → mill or recycler), each step labelled with its source and date.",
+   "why": "The gap is the investor story. In 2014 Bengaluru newspaper went ₹10 → ₹11 → ₹12–13 → ₹14–15. Today a household gets ₹60/kg for cans against MCX aluminium at ₹347.50/kg, about 17%.",
+   "priority": "prototype-now",
+   "users": [
+    "investor",
+    "household"
+   ]
+  },
+  {
+   "feature": "Admin price console (/admin/prices). Floors and fallbacks per city and material with effective dates, CSV paste for bulk edits, a plausible-price band per material, suggested values (fallback = 28-day median; floor = 75% of fallback, rounded down to ₹0.50; at most 10% change a week without a written reason), and every change in the audit log.",
+   "why": "Data has to be easy to change, and ADR 0008 already makes the admin own the floor and fallback tables. Suggested values and bands stop one-off mistakes like a stray ₹25/kg newspaper rate.",
+   "priority": "prototype-now",
+   "users": [
+    "admin"
+   ]
+  },
+  {
+   "feature": "A daily price calculation (06:00 IST) from an append-only log of every price input. It takes one value per business (completed trades weigh 1.0; rate cards and admin survey quotes weigh 0.5), merges related businesses into one, drops the obvious outliers, uses the weighted median, and marks a price Live only when at least 3 independent businesses report, at least one with a trade. Daily moves above ±10% (paper and plastic) or ±5% (metals) are held until the admin confirms.",
+   "why": "Price reporters like BigMint build on confirmed trades with a published method. With only a handful of pilot testers, the minimum count and the Guide fallback stop thin data being shown as 'live'.",
+   "priority": "pilot",
+   "users": [
+    "admin",
+    "household",
+    "kabadiwala"
+   ]
+  },
+  {
+   "feature": "Freshness rules and reminders. Paper and plastic rate cards count as fresh for 14 days, metal rate cards for 7. Kabadiwalas get a one-tap 'Are your prices still right?' SMS or WhatsApp before a card goes stale, and stale cards drop out of the board. The admin sees a banner if the floor and fallback tables go 10 days without review.",
+   "why": "Metals move every trading day and paper can swing 20% in 10 days (Feb 2024). Rate cards that never change would underpay households or cause losses for kabadiwalas.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Honour-rate and anti-manipulation checks. Compare each shop's posted rate with what its receipts actually paid. A trade counts only if it was weighed, confirmed by both sides (the household by SMS code) and has a payment method recorded; yard trades also need a weighbridge slip photo. Merge related accounts (same phone, GSTIN, PAN or UPI ID) and exclude self-trades and back-and-forth trades.",
+   "why": "Karnataka's ₹2,384 crore fake-invoice scrap case (May 2026) shows circular trading is common. Advertising high prices to win bookings is also a likely trick in the pilot.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Yard buy-price posts: each yard posts price per material, minimum lot, loose or baled, and collected or delivered. Posts expire after 7 days and are shown to verified kabadiwalas nearby on the 'My stock' screen. Until enough yards post, the admin phone-surveys at least 3 yards per material each week.",
+   "why": "No free source gives yard buying prices for Bengaluru, and the kabadiwala-to-yard hand-off is 'the most important part'. Marketplace listings are asking prices, not trades.",
+   "priority": "pilot",
+   "users": [
+    "yard",
+    "kabadiwala",
+    "admin"
+   ]
+  },
+  {
+   "feature": "No exchange data in the pilot: no automated feed, no exchange number on screen, and no price tied to an exchange by formula. Each table revision gets a 'market check' note giving the reason and what the admin looked at.",
+   "why": "MCX allows only delayed data on public websites, under an agreement, with no resale. LME needs a US$25,000-a-year licence (or US$4,000 one-off for next-day data), and prices calculated from LME data may need a separate licence.",
+   "priority": "pilot",
+   "users": [
+    "admin"
+   ]
+  },
+  {
+   "feature": "Area-level boards that fall back from area to city to state to national, with an admin city factor for launching new cities. Store each business's location (geohash) now so areas can be split later without a migration.",
+   "why": "The same app pays ₹3 vs ₹6/kg for carton in Bengaluru vs Delhi, and southern mills paid ₹13–13.5 vs ₹15.8–16.5/kg in the north (2023). A national rollout needs area and city pricing without rebuilding the design.",
+   "priority": "scale",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "admin"
+   ]
+  },
+  {
+   "feature": "A licensed metals reference, taken as a delayed or end-of-day MCX feed through an authorised vendor or under a BigMint data licence, for business dashboards and automatic 'market moved' alerts, after legal review.",
+   "why": "Yards, recyclers and manufacturers price aluminium, copper and brass against exchanges. A licence makes that legal and removes the admin's manual checks.",
+   "priority": "scale",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Publish the method, a complaints process and a monthly change log, so the board becomes a citable 'Luma.Green City Scrap Index'. Later, let escrow trades between businesses settle at the board price plus or minus an agreed premium.",
+   "why": "The founders want the industry to adopt the platform's norms. Recognised benchmarks win trust through a public, audited method (BigMint follows IOSCO standards), and a shared settlement price reduces haggling and dependence on traders' credit.",
+   "priority": "scale",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "investor"
+   ]
+  }
+ ],
+ "artifactMarkdown": "# Luma.Green price engine — spec v0.1 (29 Sep 2026)\n\n**Goal:** one dated, traceable price per city × material × level each day. It uses only data we own, keeps the admin in control, and follows the existing rules: integer paise per kg, integer grams, append-only history.\n\n## 1. Levels\n| Level | Who pays whom | When |\n|---|---|---|\n| L1 | Kabadiwala → household (doorstep or drop-off) | Pilot, public |\n| L2 | Yard → kabadiwala (sorted; loose or baled) | Pilot, signed-in kabadiwalas only |\n| L3 | Recycler → yard (baled, graded) | Scale |\n| L4 | Manufacturer → recycler (flakes, ingot, pulp) | Scale |\n\n## 2. Inputs → `priceObservations` (append-only)\n| Tier | Input | Weight | Counts only if |\n|---|---|---|---|\n| T1 | Pickup receipts (L1); completed yard collections (L2) | 1.0 (0.5 if under 1 kg in the window) | Weighed, confirmed by both sides (household by SMS code), payment method recorded; L2 also needs a weighbridge slip photo |\n| T2 | Kabadiwala rate cards (L1); yard buy posts (L2) | 0.5 | Business verified; card fresh (§5) |\n| T3 | Admin phone survey (≥3 businesses per material; name and time logged) | 0.5 | ≤7 days old |\n| T4 | MCX, LME, price reporters such as BigMint, IndiaMART asking prices | **0** | Admin reads them for judgment only (§8) |\n\nRow fields: `city`, `zone?` (geohash-5), `materialId`, `level`, `paisePerKg`, `grams?`, `source`, `orgId`, `observedAt`, `basis` (pickup or drop-off; loose or baled; ex-GST).\n\n## 3. Admin tables\n- Existing: `priceFloors` and `fallbackRates` (city × material, dated). New: `priceBands` — a plausible min and max per material, plus the largest allowed daily move (±10% paper and plastic, ±5% metals).\n- The console suggests values; the admin decides. Fallback = 28-day L1 median, rounded down to ₹0.50. Floor = 75% of fallback, rounded down to ₹0.50. Moves over 10% a week need a written reason. Bulk edit by CSV paste; every save writes new rows (`effectiveFrom`, author, reason) and an `auditLog` entry.\n\n## 4. Daily calculation (Convex cron, 06:00 IST; the admin can re-run it)\n1. Window: last 7 days, or 14 if fewer than 3 businesses report.\n2. Drop rows outside the band, from unverified businesses, self-trades, and back-and-forth trades (the same kg reversed within 48 h). Merge related businesses (same owner phone, GSTIN, PAN or UPI ID) into one.\n3. One value per business: the median of its T1 trades if it has any, otherwise its T2 or T3 price.\n4. With 4 or more businesses, drop values more than 30% from the median.\n5. Typical = weighted median. Range = lowest to highest remaining value. Round to ₹0.50 on screen; store paise.\n6. **Live** needs ≥3 independent businesses, at least one with a trade. Otherwise **Guide**: show the fallback price with its review date.\n7. Circuit breaker: a move bigger than the band's daily limit keeps yesterday's price until the admin confirms.\n8. L1 prices are never shown below the floor.\n\nOutput: a `priceBoards` row {city, material, level, lowPaise, typicalPaise, highPaise, nOrgs, nTrades, status, computedAt}.\n\n## 5. Freshness\n| Item | Fresh for | Then |\n|---|---|---|\n| Rate card (paper, plastic) | 14 days | Reminder at day 12; dropped after 30 days |\n| Rate card (metals) | 7 days | Reminder at day 6; dropped after 14 days |\n| Yard post | 7 days | Expires; one tap to renew |\n| Floors and fallbacks | Reviewed weekly | Admin banner at 10 days; the board shows \"reviewed on <date>\" |\n\n## 6. Anti-manipulation\nOne vote per business, with related businesses merged. Trades must be proven (§2). Rate cards can change at most 3 times a day. **Honour rate:** if more than 20% of a shop's pickups pay over 5% below its posted card, the card leaves the board and the shop drops in ranking. Admin overrides are logged and shown as \"adjusted by admin\". Individual shop prices appear only inside a household's booking, never on the public board.\n\n## 7. Regions\nBengaluru city-wide for now. Store each business's geohash. Fallback order: area (≥5 businesses) → city → state → national, and the board says which it used. A new city copies the nearest city's fallback × an admin city factor.\n\n## 8. Index data: licence limits (checked 29 Sep 2026)\n| Source | Show publicly? | Use in a formula? |\n|---|---|---|\n| MCX | Delayed data only, under an MCX agreement; no resale. Feed ₹1,00,000 + tax a year plus product charges | Needs explicit permission |\n| LME | Only with a distribution licence: US$25k a year for real-time or 30-min delay; US$4k one-off for next-day | Prices built from LME data may need a derived-data licence |\n| Price reporters (BigMint etc.) | Only under a data licence | Same |\n| IndiaMART and other apps | No; don't scrape | No; these are asking prices, not trades |\n| Our own rate cards, receipts and posts | Yes (our terms say so) | Yes |\n\n**Pilot rule:** no exchange feed, no exchange number on screen, no formula tied to an exchange.\n\n## 9. Public board\n`/prices/bengaluru` and `/prices/bengaluru/{material}`: indexed, in 12 languages, cached until the next daily calculation. Each line reads \"Households get ₹A–B/kg · typical ₹C · 7-day change · Live/Guide · N shops, N pickups · updated <time>\", with a \"How we calculate\" link and a WhatsApp share image. The prototype shows a **Sample data** badge on every number.\n\n## 10. Worked example: Bengaluru board for 29 Sep 2026\nThe input rows are **illustrative seed data**. The reference prices are real and dated.\n\n### Newspaper `PAPER-NEWS` (L1)\nAdmin: floor ₹7.50, fallback ₹10.00 (reference: The Kabadiwala Bangalore ₹10/kg), band ₹5–20, largest daily move ±10%.\n\n| Business | Input | ₹/kg | Weight | Result |\n|---|---|---|---|---|\n| K1 | Rate card | 10.00 | 0.5 | kept |\n| K2 | 6 receipts, 84 kg | 11.00 | 1.0 | kept |\n| K3 | 5 receipts, 61 kg | 12.00 | 1.0 | kept |\n| K4 | 3 receipts, 40 kg (card ₹12.00) | 11.50 | 1.0 | kept; honour rate 96%, not flagged |\n| K5 | Rate card | 25.00 | — | outside band → admin queue |\n\nWeighted median of 10.00 (0.5), 11.00 (1), 11.50 (1), 12.00 (1): total weight 3.5, halfway mark 1.75, reached at **₹11.50**. Range ₹10–12. 4 businesses, 3 with trades → **Live**. Last week ₹11.00 → +4.5%, within the 10% limit.\n**Board line:** Newspaper — households get ₹10–12/kg · typical ₹11.50 · ▲4.5% · 4 shops, 14 pickups · Live.\nL2: two yards post ₹13.00 (300 kg minimum, yard collects) and ₹13.50 (500 kg, delivered). With only 2 yards, kabadiwalas see them as offers, not as a board price.\nAdmin reference (not displayed): dealer \"baseline\" ₹13.69 (scraprates.in, 28 Sep); Bengaluru IndiaMART asking prices ₹12–20; mill-grade ONP ₹20/kg (5 t minimum, Mumbai). The 2014 Bengaluru chain ran ₹10 → ₹11 → ₹12–13 → ₹14–15 at the mill.\n\n### Aluminium cans `METAL-ALU-CAN` (L1)\nAdmin: floor ₹45, fallback ₹60 (reference: The Kabadiwala Bangalore ₹60/kg), band ₹30–150, largest daily move ±5%, rate cards fresh for 7 days.\n\n| Business | Input | ₹/kg | Weight |\n|---|---|---|---|\n| K1 | Rate card | 55 | 0.5 |\n| K2 | 3 receipts, 1.9 kg | 60 | 1.0 |\n| K3 | 1 receipt, 0.6 kg | 60 | 0.5 (under 1 kg) |\n| K5 | Rate card | 70 | 0.5 |\n\nWeighted median: total weight 2.5, halfway mark 1.25, reached at **₹60**. Range ₹55–70; every value is within 30% of the median. 4 businesses → **Live**.\n**Board line:** Aluminium cans — ₹55–70/kg · typical ₹60 · 4 shops · Live. Show \"≈ ₹ per can\" only after weighing 100 local cans to set a cans-per-kg factor.\nAdmin reference (not displayed): MCX aluminium ₹347.50/kg and LME US$3,268/t (28 Sep); NALCO ingot ₹367–379/kg (19 Sep); UBC lots ₹120–290/kg (IndiaMART Delhi asking prices); Bengaluru utensil scrap ₹215–220/kg. A household's ₹60 is about 17% of MCX. In 2014 the Bengaluru chain was ₹45 (shop) → ₹60 (aggregator) → ₹110 (recycler). Metals rule: if exchange prices have moved more than 5% since the last review, re-check the aluminium floor and fallback that week.\n",
+ "risks": [
+  "The prototype's sample prices could mislead investors if they look live. Put a 'Sample data' badge on every number and keep the seed data separate from real data.",
+  "The pilot has only a handful of testers, so most board lines will say 'Guide' for weeks. Plan a weekly admin phone survey of at least 3 yards and shops per material so the board has something to show.",
+  "Competition law: a platform-set floor or fallback that competing kabadiwalas all copy could look like coordinated buying prices (the Competition Act 2002, s.3, covers agreements that directly or indirectly fix purchase prices). Get Indian counsel's view. Present floors as household protection and let shops price freely above them.",
+  "Licence breach: if developers show MCX, LME or price-reporter numbers publicly, or tie a public price to them by formula, without a licence.",
+  "Floors set too high could make kabadiwalas drop materials or refuse pickups, which is the pilot's named failure mode ('pickups unprofitable'). Cap weekly floor changes and watch acceptance rates.",
+  "False precision (e.g. ₹13.69) and 'live' labels based on a few data points destroy trust. Round to ₹0.50 on screen and always show how many shops and pickups a price is based on.",
+  "Manipulation through related accounts, advertising high rates then paying less, and fake or circular trades, as in Karnataka's ₹2,384 crore scrap-invoice case.",
+  "Metals move daily while rate cards change slowly, so households get underpaid when prices rise and kabadiwalas lose when prices fall. Short freshness windows and the circuit breakers limit this but don't remove it.",
+  "Disputes at the door if a shop pays less than the board's 'typical' price. Show the range, say the final price depends on weight at the door, and track each shop's honour rate.",
+  "Marketplace listings (IndiaMART) are asking prices that mix grades. Never use them as inputs, only as a sanity check."
+ ],
+ "openQuestions": [
+  "Will Bengaluru yards post buy prices on the platform, and may we combine them into a public board line, even anonymously?",
+  "Cans: price per kg or per can? Households count cans; weigh a sample of local cans to set a factor.",
+  "Price basis above the household level: GST-inclusive or exclusive, and do reverse-charge or TDS rules apply when businesses buy metal scrap from unregistered kabadiwalas? This needs a tax adviser before yard prices are shown.",
+  "Doorstep vs drop-off: should drop-off pay a published premium, given that doorstep pickup usually needs 25–50 kg or a minimum value (e.g. ₹999 at Kabadiwala Online)?",
+  "Should households see named kabadiwalas' prices side by side (open question 3 in pricing.md), or only the city range plus their chosen shop's card?",
+  "Is one city-wide floor enough for Bengaluru (open question 2 in pricing.md)? The evidence supports city-wide for the pilot and areas later.",
+  "How far do WhatsApp groups and phone calls from the next buyer set daily rates for Bengaluru kabadiwalas and yards? No source opened here documents it; ask in pilot interviews.",
+  "At scale, which licensed metal reference (MCX delayed or end-of-day via a vendor, or BigMint), at what yearly cost, and who pays?",
+  "Housekeeping: while trying to open the IOSCO benchmark-principles PDF on iosco.org, the Browser pane showed a file-save dialog. The file isn't needed; cancel the dialog if it is still open."
+ ],
+ "sources": [
+  {
+   "title": "MCX — Data Feed (categories, who may display, charges, terms)",
+   "url": "https://www.mcxindia.com/technology/datafeed"
+  },
+  {
+   "title": "LME — Data distribution licence (fees, public website display)",
+   "url": "https://www.lme.com/en/market-data/market-data-licensing/data-distribution"
+  },
+  {
+   "title": "LME — Derived data licence categories (incl. reference values)",
+   "url": "https://www.lme.com/en/market-data/market-data-licensing/derived-data"
+  },
+  {
+   "title": "BBMP / SVP Bengaluru — Extracting Value from Bengaluru's Dry Waste Chain (Nov 2014)",
+   "url": "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru's%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+  },
+  {
+   "title": "The Kabadiwala — Scrap prices in Bangalore",
+   "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore"
+  },
+  {
+   "title": "The Kabadiwala — Scrap prices in Delhi",
+   "url": "https://www.thekabadiwala.com/scrap-rates/Delhi"
+  },
+  {
+   "title": "scraprates.in — Newspaper scrap rate today, Bangalore (28 Sep 2026)",
+   "url": "https://scraprates.in/bangalore/newspaper-scrap-price"
+  },
+  {
+   "title": "Kabadiwala Online — Scrap price list, Delhi NCR",
+   "url": "https://kabadiwalaonline.in/price-list/"
+  },
+  {
+   "title": "IndiaMART — Newspaper waste sellers in Bengaluru",
+   "url": "https://dir.indiamart.com/bengaluru/newspaper-waste.html"
+  },
+  {
+   "title": "IndiaMART — Aluminium scrap sellers in Bengaluru",
+   "url": "https://dir.indiamart.com/bengaluru/aluminium-scrap.html"
+  },
+  {
+   "title": "IndiaMART — Aluminium UBC scrap sellers in Delhi",
+   "url": "https://dir.indiamart.com/delhi/aluminum-ubc-scrap.html"
+  },
+  {
+   "title": "IndiaMART — White old newspaper (mixed ONP) for paper mills, Mumbai",
+   "url": "https://www.indiamart.com/proddetail/old-newspaper-onp-22982234462.html"
+  },
+  {
+   "title": "Aluminium Magazine — Current aluminium price (MCX, LME, NALCO), 28 Sep 2026",
+   "url": "https://aluminiummagazine.com/mag/business/current-aluminium-price.html"
+  },
+  {
+   "title": "The Pulp and Paper Times — Domestic waste paper prices fall sharply (Feb 2024)",
+   "url": "https://thepulpandpapertimes.com/news/india/domestic-waste-paper-prices-1003"
+  },
+  {
+   "title": "The Pulp and Paper Times — Waste paper prices up 10–15% in July (Jul 2023)",
+   "url": "https://thepulpandpapertimes.com/news/waste-paper-price-increased-by-10-to-15-in-july-898"
+  },
+  {
+   "title": "The Pulp and Paper Times — Kraft paper mills: shutdowns and price moves, January 2025",
+   "url": "https://thepulpandpapertimes.com/news/industry-news/kraft-paper-mills-2187"
+  },
+  {
+   "title": "BigMint — Commodity prices and indexes (methodology, IOSCO, data licensing)",
+   "url": "https://www.bigmint.co/prices"
+  },
+  {
+   "title": "Recykal.Market — B2B circular marketplace",
+   "url": "https://recykal.market/"
+  },
+  {
+   "title": "The Week — Decoding the amended e-waste management rules (Mar 2024)",
+   "url": "https://www.theweek.in/news/india/2024/03/11/decoding-the-amended-e-waste-management-rules.html"
+  },
+  {
+   "title": "News Karnataka — Karnataka uncovers ₹2,384 crore fake GST credit racket (16 May 2026)",
+   "url": "https://newskarnataka.com/bengaluru/karnataka-uncovers-%E2%82%B92384-crore-fake-gst-credit-racket/16052026/"
+  }
+ ]
+}

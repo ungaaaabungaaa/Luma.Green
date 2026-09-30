@@ -1,0 +1,38 @@
+{
+ "branch": "worktree-wf_21434ea1-012-7",
+ "worktreePath": "/Users/syedabdulmuqeeth/Developer/Luma.Green/.claude/worktrees/wf_21434ea1-012-7",
+ "commit": "b7018e257cdaa0e75eb06aea5d45fa31176edd6f",
+ "summary": "Built the help centre for every user, plus a set of 12 illustrations. It is public and indexed, and every page sets its metadata through pageMetadata.\n\nPages:\n- /help: search across all guides and questions in the browser, one-tap topic filters (12 topics), six role cards with pictures, and a call / WhatsApp / write strip.\n- /help/[role] (household, kabadiwala, yard, recycler, manufacturer, saathi): guides, questions as a native details/summary list, video slots marked \"Video coming soon\", and a training path. Search results that link to a question open it.\n- Training: 3–5 lessons per role, each marked done with a checkbox. Progress is kept in localStorage under luma.help.training.<role>; storage access is guarded and falls back to memory if blocked. Shows a progress bar and a completion badge.\n- /help/[role]/[guide]: numbered steps, each with a picture or icon (picture first on phones), related questions, the next guide, and a contact strip that pre-fills role and topic.\n- /help/contact: name, phone (+91), role, topic and message, sent to api.support.send. Role and topic are read from ?role= and ?topic=. Server refusals show on the right field, success moves focus to a confirmation, and 'Send another' keeps the name and number. Quick call / WhatsApp buttons, hours, 'we reply within one working day', and the placeholder number +91 80 0000 0000 marked with DemoNote.\n\nContent: typed data in src/components/help/content.ts (30 guides with 138 steps, 50 questions, 17 video slots, 20 lessons; guides and questions shared across roles where the flow is the same). Copy is short and plain, checked against docs/product and the lead's chain rules: floor price, 12–24 hour verification, SMS code valid 5 minutes with resend after 30 seconds, 1 point per ₹10, escrow steps, e-way bill over ₹50,000, masked Aadhaar only, and data kept for 12 months / 90 days / 30 days.\n\nIllustrations: src/components/illustrations holds 12 original flat SVGs on a shared 240×180 frame, coloured only with token classes (brand, stone, amber, orange, sky). They are hidden from screen readers unless given a title, and are exported by name plus an `illustrations` lookup and `IllustrationName` type for other areas.\n\nI checked the pages visually at 375px and 1280px by rendering them in jsdom with the compiled Tailwind CSS. As a result, role and video cards are now compact rows on phones, the training list is width-capped, and the message counter sits beside the error.",
+ "routes": [
+  "/help",
+  "/help/[role]",
+  "/help/[role]/[guide]",
+  "/help/contact"
+ ],
+ "convexFunctions": [],
+ "messageNamespaces": [
+  "help"
+ ],
+ "checks": {
+  "typecheck": "pass — pnpm typecheck (next typegen + tsc --noEmit), on base dfd8c19",
+  "lint": "pass — eslint on all my files, and repo-wide pnpm lint is clean",
+  "tests": "pass — 139 tests in 10 files (src/components/help, src/components/illustrations, src/app/[locale]/(site)/help). In the full suite only src/i18n/messages.test.ts fails, as expected until the 11 other locales are translated."
+ },
+ "unfinished": [
+  "The 'help' namespace (about 1,250 lines) needs translating into the 11 other locales; until then src/i18n/messages.test.ts fails.",
+  "The videos are placeholders; each card says 'Video coming soon' and shows the length.",
+  "The support phone and WhatsApp numbers are placeholders ('+91 80 0000 0000'), kept in one constant: SUPPORT_CONTACT in src/components/help/content.ts. The page marks them as sample numbers with DemoNote.",
+  "Only /help is in the sitemap. /help/contact, /help/[role] and /help/[role]/[guide] are indexable but not listed; adding them means editing src/i18n/paths.ts and src/app/sitemap.ts, which are outside my area.",
+  "The public site header and footer have no Help link (outside my area). The app shell already links to /help/{role}."
+ ],
+ "mergeNotes": [
+  "The worktree started at 1403f83, not the lead's dfd8c19. My own `git merge --ff-only dfd8c19` was denied by the permission classifier, so I did not retry it. Later, while I was working, another process stashed my changes, fast-forwarded this branch to dfd8c19 and restored them (the reflog shows 'reset: moving to HEAD' and 'merge dfd8c19: Fast-forward'). I confirmed nothing was lost and re-ran every check on dfd8c19. The commit sits directly on dfd8c19, so it merges cleanly into feat/prototype.",
+  "messages/en.json: 'help' is inserted between 'contact' and 'notFound' as a pure insertion. Other areas appending namespaces at the end of the file won't touch these lines.",
+  "The contact form calls api.support.send. Its role and topic types come from FunctionArgs<typeof api.support.send>, and a compile-time check fails the build if the server accepts a role or topic the form doesn't offer (src/components/help/support-api.ts).",
+  "Pages are pre-rendered: 6 role pages and 45 role/guide pairs, times 12 locales (612 static pages). Unknown roles or guides return 404 through notFound().",
+  "Reusable pieces for other areas: import { KabadiShop, SolarRoof, … } or { illustrations, type IllustrationName } from '@/components/illustrations'. SolarRoof is intended for the solar page. Size them with className, e.g. max-w-40.",
+  "Watch out: jsx-a11y/aria-role treats a literal role=\"household\" prop on a custom component as an ARIA role. Pass the role through a variable (the pages already do).",
+  "There is a page-render test at src/app/[locale]/(site)/help/help-pages.test.tsx. It follows the precedent of src/app/white-theme.test.ts, and mocks next-intl/server and next/navigation.",
+  "After merging, this worktree can be deleted. It holds only gitignored extras: a pnpm-linked node_modules, the next typegen output in .next/, and .env.local."
+ ]
+}

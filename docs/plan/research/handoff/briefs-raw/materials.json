@@ -1,0 +1,352 @@
+{
+ "topic": "materials",
+ "headline": "India's customs tariff already uses ISRI grade names for scrap: 10 copper grades under 7404 00 12 and about 40 aluminium grades under 7602 00 10. So Luma.Green can publish a 60-code, two-tier catalogue that links doorstep words like raddi, gatta, Teri and Panni to 8-digit HSN lines, ISRI and IS 2549 grades and EPR categories, rather than inventing new grades.",
+ "findings": [
+  {
+   "point": "India's customs tariff already uses ISRI grade names for metal scrap",
+   "detail": "Tariff item 7404 00 12 (copper scrap) is defined by 10 ISRI code words: Barley, Berry, Birch, Candy, Cliff, Clove, Cobra, Cocoa, Dream and Palms. Item 7404 00 22 (brass scrap) names 25 code words, including Honey, Drink and Ocean. Item 7602 00 10 (aluminium scrap) names about 40, including Taint/Tabor, Tense, Troma, Zorba and the four used-beverage-can grades. Everything else goes to the 'other' lines 7404 00 19, 7404 00 29 and 7602 00 90. India's organised metal trade already works in ISRI terms, so Luma should cite ISRI code words for trade grades and not write its own metal definitions.",
+   "sourceUrls": [
+    "https://www.eximguru.com/indian-customs-duty/7404-copper-waste-and-scrap.aspx",
+    "https://comercinate.com/hsn-code/76020010/",
+    "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+   ]
+  },
+  {
+   "point": "The ISRI 2024 circular gives measurable limits that can become catalogue defaults",
+   "detail": "No. 2 copper (Birch/Cliff) has a nominal 96% copper content, 94% minimum. Taint/Tabor sheet aluminium allows at most 1% oil and grease and up to 10% painted siding. Tense (mixed castings) allows at most 2% oil and grease. Baled cans (Taldon) must be 225–273 kg/m3, and any free lead is grounds for rejection. HMS 1 means steel at least 1/4 inch (6.35 mm) thick in pieces no larger than 60 x 24 inches. HMS 2 means steel at least 1/8 inch (3.2 mm) thick, black or galvanised. For lead batteries, Rains means drained whole intact batteries and Rink means wet ones. The circular is copyrighted (2024 ISRI), so Luma should cite code words and numbers but write its own definitions.",
+   "sourceUrls": [
+    "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+   ]
+  },
+  {
+   "point": "Ferrous scrap has an Indian standard, IS 2549:2023, and its HSN lines follow the grades traders use",
+   "detail": "The Bureau of Indian Standards (BIS) published its second revision of IS 2549, 'Processed ferrous scrap: code for classification', with effect from 26 Jan 2023. It classifies three kinds of scrap: prompt (from processing and manufacturing sites), obsolete (end of life) and home (from steel plants). It fixes definitions for HMS, shredded scrap and busheling. HSN 7204 splits into 7204 10 00 cast iron, 7204 21 90 stainless steel, 7204 30 00 tinned steel, 7204 41 00 turnings and stampings, and 7204 49 00 other (HMS and light melting scrap). Doorstep rate cards already split heavy from light iron: Rs 27 against Rs 22 per kg in Delhi.",
+   "sourceUrls": [
+    "https://www.services.bis.gov.in/tmp/compendium_2025-06-09-11-30-20.pdf",
+    "https://alephindia.in/bis-qco-for-standard-amendment-for-processed-ferrous-scrap.php",
+    "http://www.eximguru.com/hs-codes/7204-ferrous-waste-and-scrap-remelting.aspx",
+    "https://www.scrapbuddy.in/"
+   ]
+  },
+  {
+   "point": "Paper has four HSN lines, a large import gap and poor sorting at source",
+   "detail": "HSN 4707 has exactly four lines: 10 00 unbleached kraft and corrugated (OCC), 20 00 bleached chemical pulp (white record, notebooks), 30 00 mechanical pulp (newspapers, magazines) and 90 00 other, including unsorted paper. A 2023 IPPTA review by FRI Dehradun reports that about 80% of Indian pulp comes from recovered paper. Yet India recovers only 25–28% of the paper it consumes, according to IARPMA, against a 58% global rate. About 20 Mt of demand is met by roughly 13 Mt collected at home and 7 Mt imported. Recovery by grade is 6.18 of 10.31 Mt for packaging, 2.87 of 7.18 Mt for writing and printing paper, and 1.84 of 2.63 Mt for newsprint. The review blames improper segregation, soiling and unsystematic baling, which is a direct case for standard grades at the kabadiwala.",
+   "sourceUrls": [
+    "https://www.eximguru.com/hs-codes/4707-recovered-waste-and-scrap-paper.aspx",
+    "https://ippta.co/wp-content/uploads/2023/11/88-94.pdf"
+   ]
+  },
+  {
+   "point": "ISRI paper tolerances give ready-made quality defaults",
+   "detail": "Moisture: 12% is the maximum 'dry' limit, and the buyer can adjust the weight beyond it. In the limits below, 'prohibitives' are materials that make a bale unusable and 'outthrows' are papers that don't belong in the grade. OCC (#11): prohibitives at most 1%, outthrows plus prohibitives at most 5%. Double-sorted OCC (#12): 0.5% and 2%. Sorted office paper (#37): 1% and 5%. Mixed paper (#54): prohibitives at most 2%, outthrows at most 3%. Medical, food and hazardous waste are never tolerated. There is no weight adjustment when the two parties' scales differ by 1% or less on domestic loads. The EN 643 equivalents are OCC 1.05, double-sorted OCC 1.04 and sorted office paper 2.05.",
+   "sourceUrls": [
+    "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf",
+    "https://www.paperindex.com/pi-academy/waste-paper/comparison-of-waste-paper-grades"
+   ]
+  },
+  {
+   "point": "Every plastic has a street name, and colour and processing set the price",
+   "detail": "CSE's 2021 study of Delhi's informal market records these names: Teri for PET, Phugga for PP, Jhaap for HDPE, Kaala for black PP and HDPE, Kadak for PS and ABS, Panni for LDPE and PP film, and Jabla for HMPP sheets and bags. Scrap shops bought PET at Rs 22–32/kg, and its value rose from Rs 27 as bottles to Rs 39 as flakes, Rs 58 washed and Rs 65/kg as fibre. Colour does not change PET's price; the stream is 80% clear, 18% green and 2% blue. PP loses value in this order: transparent, white, coloured, mixed, black. HDPE ranks drum, transparent, crate, coloured, black. Multi-layer packets fetch only Rs 4–5/kg and end in waste-to-energy plants or cement kilns. So one PET code is enough, while PP and HDPE should be graded by colour at yard level.",
+   "sourceUrls": [
+    "https://www.cseindia.org/content/downloadreports/10885"
+   ]
+  },
+  {
+   "point": "Plastic codes need the polymer (for HSN) and the EPR category (for brand owners)",
+   "detail": "India's tariff splits heading 3915 by polymer: 3915 10 00 PE, 20 00 PS, 30 10 and 30 90 PVC, 90 10 PP, 90 42 PET bottles and 90 90 other. The Plastic Waste Management (Amendment) Rules 2026 (G.S.R. 237(E), 31 Mar 2026) require producers to use recycled content. For 2025-26 the targets are 30% for Category I (rigid), 10% for Category II (flexible) and 5% for Category III (multilayer). They rise to 60%, 20% and 10% by 2028-29, and the recycled plastic must conform to IS 14534:2023. Traceable post-consumer feedstock, tagged by EPR category, is therefore something brand owners will pay for.",
+   "sourceUrls": [
+    "https://www.eximguru.com/hs-codes/3915-waste-parings-and-scrap-of.aspx",
+    "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015",
+    "https://enterclimate.com/blog/plastic-waste-management-rules-2026-epr-updates/"
+   ]
+  },
+  {
+   "point": "The GST rate depends on the HSN code: 5% for paper, glass and textiles; 18% for plastics, metals, e-waste and batteries",
+   "detail": "Notification 9/2025-Central Tax (Rate) was issued on 17 Sep 2025 and took effect on 22 Sep 2025. At 5% it lists recovered paper (4707), glass cullet (7001), worn clothing and rags (6309/6310), cotton waste, man-made fibre waste (5505) and rubber waste (4004 00 00). At 18% it lists plastic scrap (3915), ferrous (7204), copper (7404), aluminium (7602), lead (7802), zinc (7902), nickel and tin scrap, e-waste (8549, plus appliances discarded as e-waste), batteries (8506/8507) and used tyres (4012). Precious-metal waste (7112) is at 3%. Plastic scrap moved from 5% to 18% on 1 Oct 2021 under Notification 8/2021. Because rates change, they belong in a dated table keyed by HSN, not in the catalogue row.",
+   "sourceUrls": [
+    "https://cdn.taxo.online/wp-content/uploads/2025/09/09_2025-CTR.pdf",
+    "https://taxguru.in/goods-and-service-tax/gst-rate-applicable-01-10-2021.html"
+   ]
+  },
+  {
+   "point": "Metal scrap has its own tax rules, and they affect unregistered kabadiwalas",
+   "detail": "Since 10 Oct 2024, when an unregistered seller supplies metal scrap (Customs Tariff chapters 72–81) to a registered buyer, the buyer pays the 18% GST under reverse charge (Notification 06/2024-CT(Rate), 8 Oct 2024). Supplies between two registered parties above Rs 2.5 lakh carry a 2% GST TDS: 1% CGST plus 1% SGST (Notification 25/2024-CT, 9 Oct 2024). Luma's onboarding already records 'not GST-registered' for this reason, so every ferrous and non-ferrous code should carry a chapter 72–81 flag.",
+   "sourceUrls": [
+    "https://www.vjmglobal.com/blog/tds-and-gst-under-rcm-on-supply-of-metal-scrap",
+    "https://taxguru.in/goods-and-service-tax/gst-tds-rcm-metal-scrap-notification-no-24-2024-central-tax.html"
+   ]
+  },
+  {
+   "point": "E-waste and batteries are regulated streams, mostly priced per piece",
+   "detail": "In a letter dated 13 May 2024, CPCB lists 106 electrical and electronic items under the E-Waste (Management) Rules 2022, in seven groups: ITEW 1–27, CEEW 1–19, LSEEW 1–34, EETW 1–8, TLSEW 1–6, MDW 1–10 and LIW 1–2. The GST notification defines taxable e-waste by reference to the rules' schedule. The battery EPR rules cover every chemistry, and recyclers and refurbishers must register with both CPCB and the state pollution board. Those rules were amended in 2023, on 14 Mar and 20 Jun 2024, and on 24 Feb 2025. Doorstep rate cards in Delhi price appliances per piece, with variants: fridges at Rs 1,000, 1,500 or 1,800 for 1, 2 or 3 doors, ACs at Rs 3,500–5,000 for 1–2 ton, and LCD screens at Rs 200. Batteries go by weight, at Rs 80/kg.",
+   "sourceUrls": [
+    "https://www.taxtmi.com/tmi_blog_details?id=753555",
+    "https://eprbattery.cpcb.gov.in/",
+    "https://www.scrapbuddy.in/",
+    "https://cdn.taxo.online/wp-content/uploads/2025/09/09_2025-CTR.pdf"
+   ]
+  },
+  {
+   "point": "GST's unit codes already cover every unit used in the chain",
+   "detail": "The GST e-invoice master list includes KGS, QTL (quintal), MTS (metric ton), TON, NOS, PCS, BAL (bale), BDL, BAG and DOZ. That covers kilograms at the door, bales and tonnes at yards and mills, pieces for appliances and dozens for reusable bottles. If mass is stored in grams and each code has a pricing unit mapped to a UQC, receipts, delivery challans and later e-invoices stay consistent.",
+   "sourceUrls": [
+    "https://einvoice1.gst.gov.in/Others/MasterCodes"
+   ]
+  },
+  {
+   "point": "Local names need care: dictionaries confirm some and contradict others",
+   "detail": "Dictionaries confirm these meanings: raddi means wastepaper or old newspapers (Marathi, and a Hindi synonym of kabaad); bhangar means scrap (Marathi); kabaad means junk or scrap (Hindi); gatta means cardboard (Hindi); aakri means scrap (Malayalam); attai means cardboard (Tamil). In Tamil, irumbu, cembu, eeyam and takaram are iron, copper, lead and tin. In Kannada, kabbina, tamra, hittale and gaaju are iron, copper, brass and glass. In Hindi, loha, peetal and seesa are iron, brass and lead. There are pitfalls. Hindi seesa (lead) sounds like sheesha (glass or mirror). The Kannada dictionary defines gujari as a small retail or evening market, not scrap, and rattu as book-cover board, not cardboard. Kannada raddi means refuse in general. Street usage has to be checked with Bengaluru kabadiwalas and stored as aliases, not as display names.",
+   "sourceUrls": [
+    "https://en.wiktionary.org/wiki/रद्दी",
+    "https://en.wiktionary.org/wiki/सीसा",
+    "https://en.wiktionary.org/wiki/அட்டை",
+    "https://alar.ink/dictionary/kannada/english/ಗುಜರಿ",
+    "https://alar.ink/dictionary/kannada/english/ರಟ್ಟು",
+    "https://alar.ink/dictionary/kannada/english/ಹಿತ್ತಾಳೆ"
+   ]
+  },
+  {
+   "point": "Bengaluru evidence suggests about 40–60 codes, in two tiers",
+   "detail": "Saahas Zero Waste, based in Bengaluru, sorts dry waste into more than 40 categories. A secondary glossary says a skilled kabadiwala prices 30–50 streams by sight. A Delhi doorstep app lists about 22 per-kg lines and about 16 per-piece lines for appliances and vehicles. A household layer of about 20–30 codes that rolls up from about 60 trade and industrial grades matches how material is re-sorted at each hand-off.",
+   "sourceUrls": [
+    "https://saahaszerowaste.com/",
+    "https://adhara-viveka.com/glossary/kabadiwala",
+    "https://www.scrapbuddy.in/"
+   ]
+  },
+  {
+   "point": "Grading is where the value is, as a Bengaluru example shows",
+   "detail": "Mongabay (May 2026) reports copper at Rs 1,000–1,200/kg in Padarayanapura, Bengaluru. A Delhi doorstep card pays Rs 550/kg for 'copper' and Rs 60/kg for copper cable. Chintan's formal channel raised the price of mixed small e-waste from Rs 40 to Rs 65/kg. A single 'copper' or 'e-waste' code hides that spread. Graded codes (bare bright, No. 2, insulated) let households and kabadiwalas see why prices differ.",
+   "sourceUrls": [
+    "https://india.mongabay.com/2026/05/how-ngos-are-bringing-indias-informal-waste-collectors-into-the-system/",
+    "https://www.scrapbuddy.in/"
+   ]
+  },
+  {
+   "point": "Glass is worth little unless it is colour-sorted or reused",
+   "detail": "Under ISRI, clear (flint) cullet must be 95–100% clear, with labels at most 0.2%, and no window glass, Pyrex, bulbs, mirrors or ceramics. Mixed glass from recovery facilities may contain at most 2% ceramics and 5% moisture, and no CRT glass at all. Glass bottles fetch only Rs 3/kg at the door in Delhi, and cullet (7001) is taxed at 5%. Whole bottles sold for refilling are a different product, sold per piece or per dozen.",
+   "sourceUrls": [
+    "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf",
+    "https://www.scrapbuddy.in/",
+    "https://cdn.taxo.online/wp-content/uploads/2025/09/09_2025-CTR.pdf"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Publish 'Luma Material Codes v0.1': the 60-code catalogue as a public page in 12 languages, with JSON and CSV downloads",
+   "why": "It gives investors a concrete standard-setting asset within weeks. Each code links doorstep words (raddi, gatta, Teri) to an 8-digit HSN line, ISRI or IS 2549 grades and an EPR category. It is data rather than a new user flow, so it is low-risk to build, and every later module (prices, stock, exchange, carbon) reuses it. Version it as 0.1.0, date every row, use an open licence (for example CC BY 4.0) and state that the tax columns are for information only.",
+   "priority": "prototype-now",
+   "users": [
+    "investors",
+    "yards",
+    "recyclers",
+    "manufacturers",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Two-tier catalogue with roll-up: household, trade and industrial codes linked by parentCode, with sorting entries that move kilograms between them",
+   "why": "The brief says names and prices change at each hand-off. Households and the AI need about 20–30 simple codes; yards buy ISRI and IS 2549 grades. The planned sorting entry then reads 'PAP-MIX 50 kg becomes PAP-ONP 30 + PAP-OCC 15 + reject 5', which makes a clear traceability demo.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "yards"
+   ]
+  },
+  {
+   "feature": "Catalogue schema in Convex: immutable ASCII codes (3-letter family plus grade, for example PAP-OCC), with GST rates and CO2e factors kept in separate dated tables",
+   "why": "The fields are: code, family, level, parentCode, messageKey, aliases per locale, hsn, unit and UQC, typicalGramsPerPiece, variants, and references (ISRI code words, IS 2549 grade, EN 643 grade, EPR category, resin code, e-waste schedule code, battery type). Add quality defaults (moisture, prohibitives, outthrows, metal content, oil), flags (shown to the AI, metal scrap under chapters 72–81, regulated e-waste or battery, low value), icon, colour, active, replacedBy and catalogue version. The families would be paper, plastic, ferrous, nonferrous, glass, ewaste, battery, textile and other. Splitting metal into ferrous and non-ferrous and adding battery matches how buyers, tax (reverse charge only for chapters 72–81) and rules differ. Dated rate and factor tables follow ADR 0008, so a rate change never rewrites a receipt. One seed JSON file in the repo, plus admin editing of names, aliases and active flags, keeps the data easy to change.",
+   "priority": "prototype-now",
+   "users": [
+    "admin",
+    "developers"
+   ]
+  },
+  {
+   "feature": "Limit the AI estimate to about 20 household codes it can recognise in a photo, and have it return a 'we don't buy / low value' list (thermocol, multi-layer packets, food-soiled paper)",
+   "why": "A smaller set of answers should score better on the labelled photo set. Multi-layer packets fetch only Rs 4–5/kg, and food or medical waste is never accepted in paper bales, so households should be told early.",
+   "priority": "prototype-now",
+   "users": [
+    "households",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Bengaluru name-collection sprint: record the words 10 pilot kabadiwalas actually use for each code, in Kannada, Tamil, Telugu, Urdu and Hindi, with short voice clips",
+   "why": "Dictionaries contradict street usage (gujari, rattu), Delhi plastic slang may not be used in Bengaluru, and sound-alikes such as seesa (lead) and sheesha (glass) are a real risk when the app reads requests aloud. The collected words become aliases for search and the speaker button; display names stay hand-translated.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwalas",
+    "households",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Per-piece e-waste and battery codes, with variants (fridge doors, AC tonnage, battery type) and a typical weight per piece measured during the pilot",
+   "why": "Appliances are priced per piece at the door (fridges Rs 1,000–1,800, ACs Rs 3,500–5,000), but stock, carbon and EPR reporting need kilograms. Recording both from day one avoids a later migration.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "yards"
+   ]
+  },
+  {
+   "feature": "Quality and deduction lines at the kabadiwala-to-yard hand-off (moisture %, contamination %, recovery %), pre-filled from catalogue defaults such as 12% moisture for paper and the ISRI limits for OCC",
+   "why": "Weight is the source of truth, and deductions are where disputes and trust are decided. Standard defaults make prices comparable across yards and later feed the escrow module.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "recyclers"
+   ]
+  },
+  {
+   "feature": "Tax-aware records: print the HSN code and unit code on receipts and delivery challans, and for ferrous and non-ferrous codes sold by an unregistered kabadiwala to a registered yard, show 'GST payable by buyer under reverse charge'",
+   "why": "Yards have needed these facts since 10 Oct 2024. Recording them without filing anything fits ADR 0009 (money off-platform first) and makes Luma useful to GST-registered buyers.",
+   "priority": "pilot",
+   "users": [
+    "yards",
+    "recyclers",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Route regulated streams: e-waste and battery codes can be offered only to businesses whose CPCB or state-board recycler or refurbisher registration the admin has verified",
+   "why": "The e-waste and battery rules require registered recyclers and refurbishers. Routing by code keeps Luma from facilitating illegal dismantling, and it becomes a trust feature.",
+   "priority": "pilot",
+   "users": [
+    "admin",
+    "kabadiwalas",
+    "recyclers"
+   ]
+  },
+  {
+   "feature": "EPR traceability export: tag each plastics lot with its EPR category, resin code and post-consumer origin, from household code to recycler output (for example PLA-PET to PLA-PET-FLAKE)",
+   "why": "Recycled-content targets reach 60% for Category I by 2028-29, so brand owners and processors need traceable feedstock. The same pattern later serves e-waste and battery EPR and carbon credits.",
+   "priority": "scale",
+   "users": [
+    "recyclers",
+    "manufacturers",
+    "yards"
+   ]
+  },
+  {
+   "feature": "Run the catalogue as an open standard: public change requests, semantic versioning, codes never reused, maintained crosswalks (HSN, ISRI, EN 643, IS 2549, e-waste schedule, battery categories), and an invitation to trade bodies such as IARPMA",
+   "why": "The industry will adopt the codes only if they are stable and neutral. Tariffs and rules keep changing (GST in 2021 and 2025, plastic rules 2022–2026), so the crosswalks need a scheduled review.",
+   "priority": "scale",
+   "users": [
+    "industry bodies",
+    "recyclers",
+    "manufacturers",
+    "admin"
+   ]
+  }
+ ],
+ "artifactMarkdown": "## Luma Material Codes (LMC): proposed v0.1 catalogue (60 codes)\n\n**How to read it**\n\n- **Code**: 3-letter family plus a grade token, in ASCII. Codes are never renamed or reused; a retired code points to its replacement (`replacedBy`).\n- **Level**: H = household (doorstep and AI photo estimate), T = trade (kabadiwala sorts for the yard), I = industrial (recycler output).\n- **HSN**: the Indian tariff item. It is 8-digit where checked against the ITC-HS schedule; where it wasn't checked, it is 4- or 6-digit and marked (tbc).\n- **Unit**: the pricing unit, with its GST unit code (kg = KGS, piece = NOS, dozen = DOZ, bale = BAL, tonne = MTS). Mass is always stored in grams.\n- **Trade names**: hi Hindi, mr Marathi, kn Kannada, ta Tamil, gu Gujarati. *Delhi* = names recorded by CSE (2021) in Delhi's informal plastics market. † = meaning checked in Wiktionary, the Alar dictionary or CSE; (tbc) = to confirm with the Bengaluru pilot kabadiwalas. Display names in all 12 languages come from `messages/*.json`; these trade names are search and voice aliases.\n- **ISRI** = code words and paper grade numbers from the ISRI (now ReMA) Scrap Specifications Circular 2024.\n\n**GST by family** (Notification 9/2025-CT(Rate), in force from 22 Sep 2025):\n\n- 5%: paper (4707), glass cullet (7001), rags and worn clothing (6309/6310).\n- 18%: plastics (3915), all metal scrap, e-waste (8549), batteries.\n- FER- and NFE- codes fall under chapters 72–81. When an unregistered seller supplies a registered buyer, the buyer pays GST under reverse charge. Supplies between registered parties above Rs 2.5 lakh carry a 2% GST TDS (both since 10 Oct 2024).\n- EWS- and BAT- codes can go only to CPCB or state-board registered recyclers and refurbishers.\n\nEach code also carries: messageKey, aliases, unit and unit code, typical grams per piece, references, quality defaults, flags (shown to AI, chapter 72–81 metal, regulated), icon and colour.\n\n| # | Code | Family · level | Grade | Trade names | HSN | Unit | References and quality defaults |\n|---|---|---|---|---|---|---|---|\n| 1 | PAP-ONP | paper · H | Old newspapers | hi/mr raddi†, akhbaar (tbc); kn raddi†; gu pasti (tbc) | 4707 30 00 | kg | ISRI 58 (SCN); moisture ≤12%; no food or medical waste |\n| 2 | PAP-BOOKS | paper · H | Books, notebooks, exam sheets | kitaab-copy (tbc) | 4707 20 00 | kg | Covers and bindings out; sorts to PAP-SOP |\n| 3 | PAP-OCC | paper · H | Cardboard boxes (old corrugated) | hi gatta†; ta attai†; kn rattu (tbc) | 4707 10 00 | kg | ISRI 11: prohibitives ≤1%, outthrows + prohibitives ≤5% |\n| 4 | PAP-MIX | paper · H | Mixed paper, unsorted | mix raddi (tbc) | 4707 90 00 | kg | ISRI 54: prohibitives ≤2%, outthrows ≤3% |\n| 5 | PAP-CARTON | paper · H | Beverage and aseptic cartons | 'Tetra Pak' (used generically) | 4707 90 00 (tbc) | kg | ISRI 52; plastics EPR Category III (multilayer) |\n| 6 | PAP-SOP | paper · T | Sorted office paper, white record | 'record' (tbc) | 4707 20 00 | kg, BAL | ISRI 37: ≤1% / ≤5% |\n| 7 | PAP-OCC-DS | paper · T | Double-sorted OCC, new corrugated cuttings | box cutting (tbc) | 4707 10 00 | BAL, MTS | ISRI 12/13: ≤0.5% / ≤2% |\n| 8 | PAP-DUPLEX | paper · T | Duplex, boxboard and mono-carton cuttings | 'duplex' | 4707 90 00 | BAL, MTS | ISRI 4: ≤0.5% / ≤2% |\n| 9 | PLA-PET | plastic · H | PET bottles, clear or coloured | Delhi Teri†; botal | 3915 90 42 | kg | Resin 1; EPR Cat I; colour does not change PET price |\n| 10 | PLA-HARD | plastic · H | Mixed hard plastic (buckets, tubs, toys) | 'hard plastic'; Delhi Phugga + Jhaap† | 3915 90 90 | kg | Yard sorts to PLA-PP-* and PLA-HDPE by polymer and colour |\n| 11 | PLA-FILM | plastic · H | Carry bags, films, wrappers | Delhi Panni†; thaili (tbc) | 3915 10 00 | kg | Resin 4; EPR Cat II; clean and dry |\n| 12 | PLA-MILK | plastic · H | Milk pouches, rinsed | kn haalina cover (tbc); hi doodh thaili (tbc) | 3915 10 00 | kg | Single-polymer film; confirm it is a separate stream in Bengaluru |\n| 13 | PLA-MLP | plastic · H | Multi-layer packets (chips, biscuits) | 'MLP', chips packet | 3915 90 90 | kg | EPR Cat III; Rs 4–5/kg or unpaid; goes to cement kilns |\n| 14 | PLA-PP-CLEAR | plastic · T | PP, transparent and white (milky) | Delhi Phugga† | 3915 90 10 | kg | Resin 5; transparent worth more than white |\n| 15 | PLA-PP-COLOUR | plastic · T | PP, coloured, mixed colour and black | Delhi Phugga; black = Kaala† | 3915 90 10 | kg | Value falls: coloured, then mixed, then black |\n| 16 | PLA-HDPE | plastic · T | HDPE drums, cans, crates, containers | Delhi Jhaap†; black = Kaala† | 3915 10 00 | kg | Resin 2; value falls: drum, transparent, crate, coloured, black |\n| 17 | PLA-PS-ABS | plastic · T | PS, HIPS and ABS (appliance bodies) | Delhi Kadak† | 3915 20 00 | kg | Resin 6 / 7; ABS bought separately |\n| 18 | PLA-PVC-HARD | plastic · T | Hard PVC (pipes, UPVC, casing) | 'PVC' | 3915 30 90 | kg | Resin 3; cleaned dry, never water-washed |\n| 19 | PLA-PVC-SOFT | plastic · T | Soft PVC, footwear, cable sheathing | chappal (tbc) | 3915 30 90 | kg | Footwear sorted by brand and colour |\n| 20 | PLA-WOVEN | plastic · T | Woven PP sacks, HMPP bags and sheets | Delhi Jabla†; bori (tbc) | 3915 90 10 | kg | EPR Cat II |\n| 21 | PLA-PET-FLAKE | plastic · I | PET bottle flakes, washed or unwashed | 'flakes' | 3915 90 42 | kg, MTS | Value rises Rs 27 (bottle) to 39 (flake) to 58 (washed) per kg |\n| 22 | FER-LIGHT | ferrous · H | Light iron and steel (sheet, cycles, almirahs) | hi loha†, halka loha (tbc); kn kabbina†; ta irumbu† | 7204 49 00 | kg | Delhi card: light Rs 22 vs heavy Rs 27/kg |\n| 23 | FER-TIN | ferrous · H | Tin cans and containers | ta takaram†; tin, dabba (tbc) | 7204 30 00 | kg | Empty and dry |\n| 24 | FER-SS | ferrous · H | Stainless-steel utensils, mixed grades | steel bartan (tbc) | 7204 21 90 | kg | Yard grades by alloy series (tbc) |\n| 25 | FER-HMS1 | ferrous · T | Heavy melting steel No. 1 | bhari loha (tbc) | 7204 49 00 | kg, MTS | ISRI 200–202: ≥6.35 mm thick, pieces ≤152 x 61 cm; IS 2549:2023 |\n| 26 | FER-HMS2 | ferrous · T | Heavy melting steel No. 2 (black and galvanised) | – | 7204 49 00 | MTS | ISRI 203–206: ≥3.2 mm thick; IS 2549:2023 |\n| 27 | FER-CAST | ferrous · T | Cast iron | 'CI' | 7204 10 00 | kg, MTS | IS 2549:2023 |\n| 28 | FER-TURN | ferrous · T | Turnings, borings, stampings | – | 7204 41 00 | MTS | Deduct oil and moisture (tbc) |\n| 29 | NFE-CU-MIX | nonferrous · H | Copper items, ungraded | tamba (tbc); kn tamra†; ta cembu† | 7404 00 12 / 19 | kg | Yard grades into codes 30–33 |\n| 30 | NFE-CU-BRIGHT | nonferrous · T | Bare bright copper wire | 'Barley' | 7404 00 12 | kg | Bare, uncoated, unalloyed |\n| 31 | NFE-CU-1 | nonferrous · T | No. 1 copper wire and heavy copper | 'Berry/Candy' | 7404 00 12 | kg | Clean, untinned, no burnt wire |\n| 32 | NFE-CU-2 | nonferrous · T | No. 2 copper wire and solids | 'Birch/Cliff' | 7404 00 12 | kg | Nominal 96%, minimum 94% copper |\n| 33 | NFE-CU-CABLE | nonferrous · H | Insulated copper wire and cable | 'cable' | 7404 00 19 | kg | ISRI Druid; priced on copper recovery % |\n| 34 | NFE-BRASS | nonferrous · H | Yellow brass (utensils, taps, fittings) | hi peetal†; kn hittale†; ta pittalai (tbc) | 7404 00 22 | kg | ISRI Honey: no bronzes, radiators or munitions |\n| 35 | NFE-AL-HH | nonferrous · H | Aluminium utensils and household items | aluminium bartan (tbc) | 7602 00 90 | kg | Remove iron handles and plastic |\n| 36 | NFE-AL-CAN | nonferrous · H | Aluminium beverage cans | 'cans' | 7602 00 10 | kg | ISRI Taldon/Talcred/Taldack/Taldork; free lead means rejection |\n| 37 | NFE-AL-SHEET | nonferrous · T | Clean mixed old sheet aluminium | 'Taint/Tabor' | 7602 00 10 | kg | Oil + grease ≤1%; up to 10% painted siding |\n| 38 | NFE-AL-CAST | nonferrous · T | Mixed aluminium castings | 'Tense' | 7602 00 10 | kg | Oil + grease ≤2%; no iron or brass |\n| 39 | NFE-AL-WIRE | nonferrous · T | Bare aluminium wire and cable | 'Tall/Talon/Taste/Tassel' | 7602 00 10 | kg | EC-grade chops ≥99.45% aluminium |\n| 40 | NFE-PB | nonferrous · T | Lead pipe and sheet (not batteries) | hi seesa† (not sheesha, which means glass); ta eeyam† | 7802 00 (tbc) | kg | ISRI Racks (soft lead); hazardous |\n| 41 | GLS-BOTTLE | glass · H | Whole bottles for reuse | botal; kn baatli (tbc) | 7010 (tbc) | NOS, DOZ | Reuse before crushing to cullet |\n| 42 | GLS-MIX | glass · H | Mixed or broken container glass | kn gaaju†; hi kaanch (tbc) | 7001 00 (tbc) | kg | Ceramics ≤2%, moisture ≤5%, no CRT glass |\n| 43 | GLS-FLINT | glass · T | Clear (flint) cullet | – | 7001 00 (tbc) | MTS | 95–100% clear; labels ≤0.2%; no window glass, Pyrex, bulbs or mirrors |\n| 44 | GLS-AMBER | glass · T | Amber (brown) cullet | – | 7001 00 (tbc) | MTS | Colour-separated |\n| 45 | EWS-PHONE | ewaste · H | Mobile phones and tablets | 'mobile' | 8549 (sub-line by content, tbc) | NOS | E-waste schedule group ITEW (item number tbc) |\n| 46 | EWS-LAPTOP | ewaste · H | Laptops | – | 8549 | NOS | ITEW |\n| 47 | EWS-DESKTOP | ewaste · H | Desktop computer (CPU or full set) | 'computer' | 8549 | NOS | ITEW |\n| 48 | EWS-SCREEN | ewaste · H | Flat TVs and monitors | 'LCD/LED' | 8549 | NOS | CEEW |\n| 49 | EWS-CRT | ewaste · H | CRT TVs and monitors | 'old TV' | 8549 | NOS | Leaded glass; hazardous handling |\n| 50 | EWS-FRIDGE | ewaste · H | Refrigerators | 'fridge' | 8549 | NOS | Variant: 1, 2 or 3 doors; refrigerant recovery |\n| 51 | EWS-WASHER | ewaste · H | Washing machines | – | 8549 | NOS | Variant: automatic or semi-automatic |\n| 52 | EWS-AC | ewaste · H | Air conditioners | 'AC' | 8549 | NOS | Variant: 1, 1.5 or 2 ton; refrigerant recovery |\n| 53 | EWS-SMALL | ewaste · H | Small appliances and accessories (fans, mixers, chargers) | – | 8549 | kg | Mixed small e-waste |\n| 54 | BAT-LEAD | battery · H | Lead-acid batteries (car, bike, inverter), whole | 'battery' | 8549 11 00 | kg or NOS | ISRI Rains (drained) or Rink (wet); cases intact |\n| 55 | BAT-LI | battery · H | Lithium-ion (phone, laptop, power bank, e-bike) | – | 8549 13 (tbc) | kg | Fire risk; keep separate |\n| 56 | BAT-CELL | battery · H | Dry cells (AA, AAA) | 'cell' | 8549 14 (tbc) | kg | Usually unpaid; collect separately as hazardous |\n| 57 | TEX-REUSE | textile · H | Wearable used clothing | purane kapde (tbc) | 6309 | kg or NOS | Sort for second-hand before rags |\n| 58 | TEX-RAG | textile · H | Rags, mixed or synthetic | – | 6310 90 | kg | Unsorted |\n| 59 | TEX-RAG-COT | textile · T | Cotton rags, white or coloured | chindi (tbc) | 6310 10 | kg | Sorted and dry |\n| 60 | TEX-CUT | textile · T | Garment-factory cuttings | katran (tbc) | 6310 10 (or 5202 / 5505 by fibre) | kg | Declare fibre content |",
+ "risks": [
+  "Publishing HSN and GST columns invites people to rely on them for tax filings. A wrong 8-digit line could cause misclassification, and the 7001, 7802 and 8549 sub-lines are not yet checked. Mark these columns as for information only, date every row and have the admin review them.",
+  "ISRI specifications are copyrighted (2024 ISRI). Reproducing their definitions in a public standard could draw objections, so cite the code words (which India's own tariff uses) and write original definitions.",
+  "E-waste and battery handling by unregistered kabadiwalas is restricted. A marketplace that lists these items without routing them to registered recyclers could be seen as facilitating illegal dismantling.",
+  "A wrong or offensive local name (seesa for lead vs sheesha for glass, or gujari) would erode trust with low-literacy users, and Delhi plastic slang may mislead in Bengaluru.",
+  "There is a granularity trade-off. Too many codes overwhelm kabadiwalas and the AI; too few hide price spreads (copper at Rs 550 vs over Rs 1,000/kg) and mislead households.",
+  "Rules keep changing: GST in 2021 and 2025, plastic rules from 2022 to 2026, battery rules from 2023 to 2025. Without dated tables and a review schedule, static data will go out of date.",
+  "Renaming or reusing codes would corrupt receipts, stock history and EPR or carbon claims, so codes must be immutable.",
+  "Showing reverse-charge and TDS facts may push informal traders to under-record transactions, or create an expectation that Luma gives tax advice."
+ ],
+ "openQuestions": [
+  "What are the exact 8-digit lines for glass (7001 00 xx), lead (7802 00 xx), the 8549 sub-headings (lithium-ion, dry cells, CRT glass, circuit boards), 6309/6310 and reusable bottles (7010)? Confirm against the CBIC tariff before publishing.",
+  "Which e-waste schedule item codes (the ITEW, CEEW and LSEEW numbers) match each appliance code? This needs the official schedule text.",
+  "What words do Bengaluru kabadiwalas use for plastics: Delhi's Teri, Phugga, Jhaap and Panni, English PET, PP, HD and LD, or Kannada terms? Are milk pouches (Nandini) a separate paid stream?",
+  "Is 'gujari' used for scrap shops in Bengaluru, given that the dictionary defines it as a small retail or evening market?",
+  "Should small appliances and fans be priced per kg (Delhi cards pay Rs 25/kg for fans) or per piece?",
+  "Will the pilot show tax facts at all, given that ADR 0009 keeps money off-platform first?",
+  "Did new national solid-waste rules (reported for 2026, not verified here) add a separate household stream for hazardous items that should own batteries and bulbs?",
+  "Who owns the standard in the long term (Luma alone or a group of industry partners), and under which licence?",
+  "Which source should supply the emission factor for each code? That is for the carbon module's research."
+ ],
+ "sources": [
+  {
+   "title": "ISRI Scrap Specifications Circular 2024 (ISRI, now ReMA)",
+   "url": "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+  },
+  {
+   "title": "ITC-HS 7404 Copper waste and scrap: 8-digit lines with ISRI code words (Eximguru)",
+   "url": "https://www.eximguru.com/indian-customs-duty/7404-copper-waste-and-scrap.aspx"
+  },
+  {
+   "title": "HSN 76020010 Aluminium scrap: official description with ISRI code words (Comercinate)",
+   "url": "https://comercinate.com/hsn-code/76020010/"
+  },
+  {
+   "title": "ITC-HS 4707 Recovered waste paper: 8-digit lines (Eximguru)",
+   "url": "https://www.eximguru.com/hs-codes/4707-recovered-waste-and-scrap-paper.aspx"
+  },
+  {
+   "title": "ITC-HS 3915 Waste, parings and scrap of plastics: 8-digit lines (Eximguru)",
+   "url": "https://www.eximguru.com/hs-codes/3915-waste-parings-and-scrap-of.aspx"
+  },
+  {
+   "title": "ITC-HS 7204 Ferrous waste and scrap: 8-digit lines (Eximguru)",
+   "url": "https://www.eximguru.com/hs-codes/7204-ferrous-waste-and-scrap-remelting.aspx"
+  },
+  {
+   "title": "Notification No. 9/2025-Central Tax (Rate), 17 Sep 2025, Gazette text (copy)",
+   "url": "https://cdn.taxo.online/wp-content/uploads/2025/09/09_2025-CTR.pdf"
+  },
+  {
+   "title": "TDS and GST under RCM on supply of metal scrap from 10.10.2024 (VJM Global)",
+   "url": "https://www.vjmglobal.com/blog/tds-and-gst-under-rcm-on-supply-of-metal-scrap"
+  },
+  {
+   "title": "BIS Compendium of Indian Standards on Stainless Steel, listing IS 2549:2023 Processed ferrous scrap",
+   "url": "https://www.services.bis.gov.in/tmp/compendium_2025-06-09-11-30-20.pdf"
+  },
+  {
+   "title": "Paper Waste Recycling in India: Current Scenario and Future Prospects (IPPTA, 2023)",
+   "url": "https://ippta.co/wp-content/uploads/2023/11/88-94.pdf"
+  },
+  {
+   "title": "Plastic Recycling Decoded (Centre for Science and Environment, July 2021)",
+   "url": "https://www.cseindia.org/content/downloadreports/10885"
+  },
+  {
+   "title": "Plastic Waste Management (Amendment) Rules, 2026 (LiveLaw)",
+   "url": "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015"
+  },
+  {
+   "title": "CPCB: 106 EEE items under E-Waste (Management) Rules 2022 (TaxTMI)",
+   "url": "https://www.taxtmi.com/tmi_blog_details?id=753555"
+  },
+  {
+   "title": "CPCB EPR Portal for Battery Waste Management",
+   "url": "https://eprbattery.cpcb.gov.in/"
+  },
+  {
+   "title": "GST e-Invoice master codes: Unit Quantity Codes",
+   "url": "https://einvoice1.gst.gov.in/Others/MasterCodes"
+  },
+  {
+   "title": "ScrapBuddy doorstep scrap rate list (Delhi)",
+   "url": "https://www.scrapbuddy.in/"
+  },
+  {
+   "title": "Saahas Zero Waste (Bengaluru): dry waste sorted into 40+ categories",
+   "url": "https://saahaszerowaste.com/"
+  },
+  {
+   "title": "How NGOs are bringing India's informal waste collectors into the system (Mongabay India, May 2026)",
+   "url": "https://india.mongabay.com/2026/05/how-ngos-are-bringing-indias-informal-waste-collectors-into-the-system/"
+  },
+  {
+   "title": "Wiktionary: raddi (रद्दी)",
+   "url": "https://en.wiktionary.org/wiki/रद्दी"
+  },
+  {
+   "title": "Alar Kannada-English dictionary: hittale (ಹಿತ್ತಾಳೆ, brass)",
+   "url": "https://alar.ink/dictionary/kannada/english/ಹಿತ್ತಾಳೆ"
+  }
+ ]
+}

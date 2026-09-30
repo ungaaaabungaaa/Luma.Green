@@ -1,0 +1,382 @@
+{
+ "topic": "design",
+ "headline": "About 1 in 5 Indian adults cannot read (78.2% adult literacy, 2024) and 88% of India's mobile browsing is Chrome on Android, so Luma.Green's field screens must lead with pictures, numbers and voice. Yet 34 of the app's 51 buttons are only 28–36 px tall against its own 44–56 px rule, and the same rupee amount appears in five different formats across its 12 languages.",
+ "findings": [
+  {
+   "point": "Low literacy is the main design case, and text-first screens fail these users",
+   "detail": "The World Bank (UNESCO data) puts India's adult literacy at 78.16% in 2024. That means about one adult in five cannot read, and many more read slowly. Microsoft Research India ran a study (Medhi Thies et al., ACM TOCHI, April 2011) in two parts: field research with 90 low-literacy people in India, Kenya, the Philippines and South Africa, then tests with 70+ Indian participants. Text interfaces could not be used by first-time low-literacy users, and literate beginners made many errors with them. A picture-based interface gave the best task completion for mobile banking, and a live phone operator was up to 10 times more accurate than text for data entry. VideoKheti (CHI 2013, 20 farmers) combined speech, pictures and touch, but success still depended on how much schooling users had. Screen design alone will not reach everyone, so a person who helps has to be part of the design.",
+   "sourceUrls": [
+    "https://api.worldbank.org/v2/country/IND/indicator/SE.ADT.LITR.ZS?format=json&date=2015:2025",
+    "https://www.microsoft.com/en-us/research/publication/designing-mobile-interfaces-for-novice-and-low-literacy-users/",
+    "https://www.microsoft.com/en-us/research/publication/videokheti-making-video-content-accessible-to-low-literate-and-novice-users/"
+   ]
+  },
+  {
+   "point": "In Bengaluru, people often use phones through a helper, and many phones are shared",
+   "detail": "Sambasivan, Cutrell, Toyama and Nardi (CHI 2010) studied two Bangalore slums and describe three ways a helper steps in: typing in the request, reading the answer aloud, or doing the whole task. Google researchers Sambasivan and Checkley (SOUPS 2018, winner of a privacy award) found that women in India, Pakistan and Bangladesh share phones with family. They protect their privacy with app locks, by deleting content, by avoiding some apps and by using private modes. This supports the current no-account household flow. It also argues for letting a kabadiwala or Saathi book on someone's behalf, keeping SMS tracking links low on personal detail, and not leaving personal data on screen.",
+   "sourceUrls": [
+    "https://www.microsoft.com/en-us/research/publication/intermediated-technology-use-in-developing-communities/",
+    "https://www.usenix.org/conference/soups2018/presentation/sambasivan"
+   ]
+  },
+  {
+   "point": "Use few words, keep labels visible, one column, and no scrolling before the main decision",
+   "detail": "NN/g's study of lower-literacy readers (2005) found they read word by word, look at a narrow area of the page, lose their place when they scroll, and take the first answer that seems right. Simpler pages raised their task completion by 135% and helped strong readers too. NN/g's advice: grade-6 reading level on key pages, one column, no moving text, and simple step-by-step navigation. NN/g's icon study (2014) found only a few icons are understood everywhere (home, print, search). Labels should always be visible, and if no icon comes to mind within 5 seconds, use a word. Google's Next Billion Users site now redirects to the Google blog (checked 29 Sep 2026). Its developer advice lives on as Android's Build for Billions guidelines, which ask for icons that low-literacy users understand, numbers and dates in local formats, and right-to-left support.",
+   "sourceUrls": [
+    "https://www.nngroup.com/articles/writing-for-lower-literacy-users/",
+    "https://www.nngroup.com/articles/icon-usability/",
+    "https://developer.android.com/topic/billions"
+   ]
+  },
+  {
+   "point": "The project's rule of 44 px buttons (48–56 px for main actions) is right, but most buttons don't meet it",
+   "detail": "The accessibility standard WCAG 2.2 sets 24x24 CSS px as the minimum at level AA and 44x44 at the stricter level AAA, pointing to users with shaky hands or on the move. Google recommends 48x48 dp (about 9 mm) with 8 dp gaps. The shadcn Button in the repo is 32 px tall by default, 36 px at size lg, 28 px at size sm and 36 px at size icon-lg. Of the 51 Button uses outside components/ui, 34 use those default sizes. Only 17 are set by hand to 44–48 px. In the phone-first areas (join, auth, app, public site), 18 of 35 buttons are 28–36 px.",
+   "sourceUrls": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+    "https://support.google.com/accessibility/android/answer/7101858"
+   ]
+  },
+  {
+   "point": "Two current colour settings fail accessibility contrast rules where the layout uses them",
+   "detail": "We computed contrast ratios from the colour values in src/app/globals.css using the standard WCAG formula. Grey helper text (--muted-foreground) on the grey page background (--muted) is 4.34:1, below the 4.5:1 minimum for text; on white cards it is 4.73:1, which passes. Input and card borders (--input, --border) are 1.26:1 on white. WCAG asks for 3:1 on the outline that shows where a control is, so input boxes almost disappear, and sunlight makes it worse. The two lightest chart greens are 1.68:1 and 2.35:1 on white; chart graphics need 3:1. The brand green passes (5.71:1 on white, 5.47:1 for white text on it). Darkening the helper grey to oklch(0.50 0 0) gives 5.5:1 on the grey page, and oklch(0.64 0 0) for input borders gives 3.36:1. WCAG also says colour must never be the only signal, so every material colour needs its icon and name.",
+   "sourceUrls": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html"
+   ]
+  },
+  {
+   "point": "The same rupee amount appears in five different formats across the 12 languages",
+   "detail": "The app's formatting helper (useFormat in src/components/app/format.ts) formats numbers in the page's language. We checked the output in Node 24, which uses the same locale data as Chrome. One lakh twenty-five thousand rupees shows as ₹125,000 in English, Kannada, Malayalam and Urdu, and as ₹1,25,000 in Hindi, Tamil, Telugu, Gujarati and Punjabi. Bengali shows ১,২৫,০০০₹ (Bengali digits, symbol after). Marathi shows ₹१२५,००० (Devanagari digits, Western grouping). Arabic shows 125,000 ₹. The English demo investors will see has no lakh grouping. Article 343(1) of the Constitution makes international numerals (1, 2, 3) the official form. Formatting every price, weight and payout with Indian (lakh) grouping and international digits gives one format everywhere while the words stay translated.",
+   "sourceUrls": [
+    "https://www.constitutionofindia.net/articles/article-343-official-language-of-the-union/"
+   ]
+  },
+  {
+   "point": "The typical user has Chrome on a 360-px-wide Android phone and an uneven network",
+   "detail": "StatCounter, India mobile, August 2026: Android 92.79%, iOS 7.15%. Chrome has 88.13% of browsing, then Opera 4.88%, Safari 3.97% and UC 1.67%. The most common screen is 360x800 (18.46%); 360-px-wide screens make up about 23% and 393-px-wide about 12.5%. Alex Russell's 2024 performance budget assumes a mid-range phone like a Galaxy A51 on a 7.2 Mbps connection. To be usable within 3 seconds, a JavaScript-heavy site can load about 365 KB of compressed JavaScript (730 KB in total); a mostly-HTML site can load about 75 KB of JavaScript. He notes India's average speeds are rising fast but vary enormously. Google's Build for Billions adds: work offline first, lower image quality on slow connections, use the WebP image format, let users control data use, and support phones with little memory (Android Go targets phones with 4 GB or less).",
+   "sourceUrls": [
+    "https://gs.statcounter.com/os-market-share/mobile/india",
+    "https://gs.statcounter.com/browser-market-share/mobile/india",
+    "https://gs.statcounter.com/screen-resolution-stats/mobile/india",
+    "https://infrequently.org/2024/01/performance-inequality-gap-2024/",
+    "https://developer.android.com/topic/billions"
+   ]
+  },
+  {
+   "point": "Next.js 16.3 has offline helpers, but the app manifest lacks the icons Chrome needs to install it",
+   "detail": "The Next.js guide to installable web apps (version 16.3.6, updated 30 Jul 2026) covers the manifest and push notifications, and says the install prompt does not need offline support. It points to a new useOffline hook, which detects loss of connection and retries failed page loads and form actions automatically. Next marks it experimental and not yet for production. For full offline caching it points to the Serwist library. Chrome offers to install an app only if the manifest has 192 px and 512 px icons, a name, a start page and a display mode, and only after the user taps once and stays 30 seconds. Screenshots and a description give a richer install screen. Luma.Green's manifest lists only /logo.svg. Background Sync, which sends saved work once the network returns, works only in Chrome and Edge: acceptable with 88% Chrome, but other browsers need a fallback.",
+   "sourceUrls": [
+    "https://nextjs.org/docs/app/guides/progressive-web-apps",
+    "https://nextjs.org/docs/app/api-reference/functions/use-offline",
+    "https://web.dev/articles/install-criteria",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Background_Synchronization_API"
+   ]
+  },
+  {
+   "point": "Sign-in codes can fill in automatically if the SMS template has one extra line",
+   "detail": "Chrome on Android reads the code from the SMS automatically (the WebOTP feature) when the last line is '@luma.green #123456'; it needs HTTPS and works only on that domain. Safari offers the code using the input's autocomplete='one-time-code' setting alone. The code inputs (src/components/auth/verify-flow.tsx) already have that setting. But the code template drafted in docs/operations/services.md has no domain line. Under the telecom DLT rules, every SMS must match its approved template exactly, per language. So the line has to be added before the founder's DLT registration is approved, or the templates will need approving again later.",
+   "sourceUrls": [
+    "https://developer.chrome.com/docs/identity/web-apis/web-otp"
+   ]
+  },
+  {
+   "point": "Spoken prompts are possible in all 12 languages today",
+   "detail": "Browsers can speak text and recognise speech through the Web Speech API. Chrome sends speech to a server for recognition by default, with an on-device option. But which voices a phone has varies. Recording the audio ahead of time avoids that. Google Cloud's Chirp 3 HD voices are fully released for Bengali, Gujarati, Hindi, Kannada, Malayalam, Marathi, Tamil, Telugu, Urdu, Indian English and Arabic, with Punjabi in preview. That covers every Luma.Green language. The free, open-source Indic Parler-TTS (AI4Bharat and Hugging Face, Apache 2.0 licence, 69 voices) officially supports 20 languages including Kannada, Tamil, Telugu, Urdu and Hindi, but not Punjabi or Arabic. Project Vaani (IISc Bengaluru, ARTPARK, Google) has released 31,278 hours of speech from 156,208 speakers in 105 languages under an open CC BY 4.0 licence, useful later for voice input that handles dialects. The kabadiwala spec already asks for a speaker button.",
+   "sourceUrls": [
+    "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API",
+    "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+    "https://huggingface.co/ai4bharat/indic-parler-tts",
+    "https://vaani.iisc.ac.in/"
+   ]
+  },
+  {
+   "point": "The Bengaluru pilot needs Tamil, Telugu and Urdu (right-to-left), not only Kannada, Hindi and English",
+   "detail": "Census 2011 mother tongues in Bengaluru: Kannada 42.05%, Tamil 16.34%, Telugu 13.73%, Urdu 13.00%, Hindi 4.64%. docs/product/vision.md names Kannada, Hindi and English as the pilot's main languages, which leaves the first language of about 43% of residents as secondary. Urdu reads right to left, so mirrored layouts, arrow icons and numbers inside Urdu text need testing before the pilot. Kannada and Malayalam also show amounts with Western digit grouping (see the finding on number formats).",
+   "sourceUrls": [
+    "https://en.wikipedia.org/wiki/Bengaluru"
+   ]
+  },
+  {
+   "point": "Only public-domain (CC0) kits come with no conditions; most free illustration libraries have strings attached",
+   "detail": "No credit needed and free to edit: Open Peeps (CC0, 584,688 mix-and-match combinations), Humaaans (CC0), Open Doodles (CC0), Healthicons (CC0, filled and outline icons at 24 and 48 px) and the older illlustrations set (CC0). Free but with limits: unDraw (no credit needed, but no redistributing, no competing service, no use to train AI), ManyPixels (20,000+ images, no credit needed, no redistributing), and DrawKit (no credit needed, but no redistributing, templates, merchandise or AI training). Credit required: Storyset on the free plan (a paid Flaticon Premium subscription removes it), free Noun Project icons (CC BY 3.0; a paid licence removes it), Twemoji (CC BY 4.0), and OpenMoji (CC BY-SA 4.0, so any edited emoji must be shared under the same licence). Icons: Lucide (ISC licence, already in the repo) and Google's Material Symbols (Apache 2.0, credit optional, adjustable fill and weight; includes recycling, scale, currency_rupee, water_bottle and forklift).",
+   "sourceUrls": [
+    "https://www.openpeeps.com/",
+    "https://www.humaaans.com/",
+    "https://undraw.co/license",
+    "https://storyset.com/terms",
+    "https://thenounproject.com/legal/terms-of-use/",
+    "https://openmoji.org/faq/",
+    "https://lucide.dev/license",
+    "https://github.com/google/material-design-icons"
+   ]
+  },
+  {
+   "point": "Open artwork that shows Indian life is scarce, and the obvious sources have licence traps",
+   "detail": "UX4G 3.0, the Government of India design system from NeGD (MeitY), says it is free for government departments and their websites, and gives no permission for private products. Figma Community files under Figma's Community Free Resource License cannot be edited into new work or used by third parties, so Indian illustration packs found there cannot simply be shipped. StoryWeaver (Pratham Books: about 34,000 openly licensed books in about 300 languages, Creative Commons 4.0) is the richest open source of Indian daily-life art, but styles vary and each image needs a credit. On Wikimedia Commons the licence varies per file, and photos of identifiable people need their consent. Unsplash and Pixabay need no credit but forbid building a competing image service and misusing photos of recognisable people. IconScout, Blush and Icons8 blocked our access (HTTP 403), so their terms are unverified.",
+   "sourceUrls": [
+    "https://www.ux4g.gov.in/",
+    "https://www.figma.com/legal/community-free-resource-license/",
+    "https://prathambooks.org/",
+    "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia",
+    "https://unsplash.com/license",
+    "https://pixabay.com/service/license-summary/"
+   ]
+  },
+  {
+   "point": "The shadcn/Tailwind setup is easy to extend, but the planned material colours aren't built yet",
+   "detail": "shadcn pairs each background colour with a text colour (the -foreground token), defines colours in the OKLCH format, and adds new ones in two short CSS steps (its example adds a warning colour). One radius setting drives all corner sizes. The shadcn registry can share components, hooks, settings and colours between projects, installed with one CLI command. docs/architecture/frontend.md plans colours for paper, cardboard, plastic, metal, glass and e-waste, but globals.css doesn't define them yet. Nothing in the code enforces the rule of one icon and one colour per material.",
+   "sourceUrls": [
+    "https://ui.shadcn.com/docs/theming",
+    "https://ui.shadcn.com/docs/registry"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Larger button sizes for phone screens",
+   "why": "34 of 51 buttons are 28–36 px, below the project's own 44/48–56 px rule and Google's 48 dp. Add three sizes to the shared Button: touch (48 px), action (56 px, larger text, icon plus label) and icon-touch (48 px square). Make them the default in the household, kabadiwala, Saathi and join screens. Admin can keep shadcn's defaults, which already meet the WCAG AA minimum of 24 px.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "One number format everywhere: lakh grouping with international digits",
+   "why": "Today one amount appears in five formats across the locales, and the English demo shows ₹125,000 instead of ₹1,25,000. Change useFormat() to format money, weights and counts with Indian (lakh) grouping and international digits, keeping the words translated. Mark amounts as left-to-right inside Urdu and Arabic text, and add a unit test per language. This matches Article 343's official numerals. Check the choice with Bengali and Marathi users in the pilot.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Fix failing colours, add material colours, and test contrast automatically",
+   "why": "Set the grey helper text to oklch(0.50 0 0) (5.5:1 on the grey page) and input borders to oklch(0.64 0 0) (3.36:1), and darken the lightest chart greens. Add a colour and matching text colour for each material (paper, cardboard, plastic, metal, glass, e-waste), plus success, warning and info colours. Add a unit test that fails if any text colour pair is below 4.5:1 or any icon or border pair is below 3:1. Materials should differ in lightness as well as hue, and always show an icon and a name.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "A small set of shared building blocks for low-literacy screens",
+   "why": "Build these from existing shadcn pieces: MaterialTile (photo or picture, colour, and a 1–2 word name), IconAction (icon with a label that is always visible), QuantityStepper (plus and minus in half-kilo steps, with a big number keypad instead of free typing), MoneyAmount (large, evenly spaced digits), ListenButton, and OfflineBanner (using Next's useOffline). Keep one fixed main button at the bottom of each screen. Store labels, icon names, colours, photo ids and audio per language in one data table, so the founders can change them without code.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi"
+   ]
+  },
+  {
+   "feature": "Illustration kit: Open Peeps plus commissioned Indian clothing and props",
+   "why": "Open Peeps is public domain (CC0): no credits, free to edit, and none of unDraw's or DrawKit's limits on redistribution or AI use. Commission about 20–30 extra pieces in the same line style: kurta, saree, salwar with dupatta, lungi or mundu, caps, turbans, hijab and a Saathi vest, plus a pushcart (thela), tricycle cart, platform scale, sacks, newspaper bundles, cardboard bales, PET bottles, a tempo or auto, and a warehouse shed. Recolour them with CSS variables, compress each SVG, and keep a credits file (source, licence, link, date checked). Use unDraw only on the public site. Keep Storyset (free plan), free Noun Project icons and OpenMoji out of the app.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "investors"
+   ]
+  },
+  {
+   "feature": "A 'Hear it' button with pre-recorded audio for the demo's key screens",
+   "why": "Text screens fail first-time low-literacy users; voice plus pictures helps. Generate 10–20 prompts (how to sell, photo tips, the estimate, booking, accept or reject, weigh and pay) in Kannada, Hindi and English, using Google's Chirp 3 HD voices or the free Indic Parler-TTS. Store them as small audio files per message and language, cached on the phone. Have native speakers check how trade words like raddi and bhangar are pronounced. For the pilot, cover every prompt in every pilot language, and speak live details (weights, times, areas) with text-to-speech on the fly.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "investors"
+   ]
+  },
+  {
+   "feature": "Automatic code fill-in for every code SMS",
+   "why": "Add '@luma.green #{#var#}' as the last line of the sign-in and booking code template in every language before DLT approval. On the verify screen, ask Chrome for Android to read the code, and keep the existing one-time-code setting for iPhones. This removes typing six digits, which is error-prone for new smartphone users. Check that the extra line does not push Kannada or Hindi templates into a second SMS segment.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "Installable app that copes with dropped connections",
+   "why": "Add 192 px and 512 px PNG icons, adaptive (maskable) icons, screenshots, a description and home-screen shortcuts ('Sell scrap', 'Today') to manifest.ts, and ask kabadiwalas to install once. Try Next's experimental offline detection and retries in preview first. Then add Serwist for offline screens and cached audio and pictures, plus a local queue for weigh-and-pay records: send in the background on Chrome, or on next open in other browsers. A weighing must never be lost.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "saathi",
+    "yard"
+   ]
+  },
+  {
+   "feature": "Assisted mode: 'Book for someone' and 'Call me'",
+   "why": "People in Bangalore slums often use phones through a helper (CHI 2010), and a live operator was up to 10 times more accurate than text (TOCHI 2011). Let a kabadiwala or Saathi book a pickup for a household, which the household confirms with its SMS code. Add a 'Call me' button that reaches the admin during the pilot.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Bengaluru language testing, including Urdu (right-to-left), plus a picture recognition test",
+   "why": "Bengaluru is 42% Kannada, 16% Tamil, 14% Telugu and 13% Urdu speakers. Test the core flows in all four plus Hindi and English with native speakers. Check that line spacing doesn't clip Indian scripts, that arrows mirror in Urdu, and how numbers sit inside Urdu text. Before fixing the material pictures, run a quick test with 5 users to check they recognise each one.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi"
+   ]
+  },
+  {
+   "feature": "Automatic accessibility and page-weight checks in CI",
+   "why": "Add automated accessibility checks (axe) to the Playwright end-to-end tests at 360x800, the most common Indian screen, and fail the build on contrast, button-size or missing-label errors. Keep household and kabadiwala pages under about 365 KB of compressed JavaScript, the 3-second budget on a mid-range phone, and serve images as WebP or AVIF.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Publish a Luma.Green design kit and an open set of material pictures",
+   "why": "Package the colours, the low-literacy building blocks and an openly licensed set of material pictures as a shadcn registry. Partner yards, recyclers, manufacturers and a future mobile app can then reuse the same icons, colours and words, which is the practical way for the industry to adopt Luma.Green's conventions. Add voice input later (on-device recognition where available, then dialect models trained on Vaani-style data).",
+   "priority": "scale",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "kabadiwala",
+    "household"
+   ]
+  }
+ ],
+ "artifactMarkdown": "## Illustration and icon sources for Luma.Green (licences checked 29 Sep 2026)\n\nRule of thumb: prefer public-domain (CC0) or credit-free licences for anything that ships inside the app, keep attribution-required art to the pitch deck or a credits page, and record every asset in a credits file (source, licence, link, date checked).\n\n| Source | What it is | Licence | Attribution rule | Fit for Indian context | Recommendation |\n|---|---|---|---|---|---|\n| [Open Peeps](https://www.openpeeps.com/) (Pablo Stanley) | Hand-drawn people kit, 584,688 mix-and-match combinations, recolourable | CC0 | None (credit appreciated) | Medium: neutral line style; no Indian clothing yet, but parts can be added | **Adopt** as the base people kit; commission Indian clothing and props in the same style |\n| [Humaaans](https://www.humaaans.com/) | Flat people kit (hair, tops, trousers swappable) | CC0 | None | Medium: same clothing gap | Backup base; never mix with Open Peeps on one screen |\n| [Open Doodles](https://www.opendoodles.com/) | Sketch scenes (SVG, PNG, GIF) | CC0 | None | Low | Empty-screen art that matches Open Peeps |\n| [illlustrations](https://illlustrations.co/license) (realvjy) | 120+ scenes | Older open set CC0; newer premium and builder assets under other terms | None for the CC0 set | Low–Medium | Optional; confirm each file is from the CC0 set |\n| [Healthicons](https://healthicons.org/) | Filled and outline pictograms, 24/48 px: people, jobs, money, phones, vehicles | CC0 | None | Medium: made for public-health messaging | **Use** for people and job pictures on tiles |\n| [unDraw](https://undraw.co/license) | Flat scenes with one recolourable accent | Own licence: free for commercial use and edits; no redistributing, competing services, scraping, or AI training | None | Low: office and tech scenes | Public site and empty screens only; never feed into AI image tools |\n| [ManyPixels](https://www.manypixels.co/gallery) | 20,000+ illustrations, 5 styles, colour filter | Free for commercial and non-commercial use; no redistributing or competing service | None | Low–Medium | Marketing pages only (styles may clash) |\n| [DrawKit](https://www.drawkit.com/license) | Free and premium illustration and icon packs | Commercial use allowed; no redistributing, sub-licensing, templates, merchandise or AI training | None (appreciated) | Low | Optional |\n| [Storyset](https://storyset.com/terms) (Freepik) | Editable and animated scenes, 5 styles | Free only with credit; Flaticon Premium removes the credit; no resale or logos | Credit Storyset wherever used (free plan) | Medium: large catalogue with some Indian scenes | Pitch deck only, or pay; keep out of the app on the free plan |\n| [Noun Project](https://thenounproject.com/legal/terms-of-use/) | Icons and photos | Free = CC BY 3.0; a paid royalty-free licence removes the credit | Credit each icon's creator (free use) | High for uncommon Indian objects (search one by one) | Buy the licence if any icon ships in the app |\n| [StoryWeaver / Pratham Books](https://prathambooks.org/) | Art from about 34,000 open picture books in about 300 languages | Creative Commons 4.0 (check each image) | Illustrator, licence and link for each image | **High**: Indian homes, streets and work, drawn by Indian illustrators | Best open art of Indian daily life for onboarding and stories; styles vary |\n| [UX4G 3.0](https://www.ux4g.gov.in/) (NeGD, MeitY) | Government of India design system, icons, Figma kit, npm package | Free for government departments and their websites; no permission for private products | n/a | High: Indian public-service patterns | Reference only; ask NeGD before reusing assets |\n| [Figma Community packs](https://www.figma.com/legal/community-free-resource-license/) | Indian illustration kits and more | Files under Figma's Community Free Resource License: no editing into new work, no use by third parties | Per file | Varies | Don't ship without the creator's written permission |\n| [Wikimedia Commons](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia) | Real photos of India's scrap trade | Per file: CC BY, CC BY-SA or public domain; consent needed for identifiable people | Author, licence and link; edited versions of CC BY-SA files must stay CC BY-SA | High | Research and reference; ship only CC BY or public-domain files, credited |\n| [Unsplash](https://unsplash.com/license) | Photos, many from India | Free for commercial use; no selling unedited copies; no competing service | Not required | Medium–High | Public site and onboarding; prefer your own photos for materials |\n| [Pixabay](https://pixabay.com/service/license-summary/) | Photos and vectors | Free; no reselling as-is; no trademark use; care with recognisable people | Not required | Medium | Same as Unsplash |\n| [Lucide](https://lucide.dev/license) (in repo, v1.48.0) | UI line icons, including indian-rupee, recycle, scale, weight, truck, newspaper, battery, forklift, mic, volume-2 | ISC; about 100 icons taken from Feather are MIT | Keep the licence text with the code; no on-screen credit | Low–Medium | **Keep** as the only UI icon set; always show a label |\n| [Material Symbols](https://github.com/google/material-design-icons) | Adjustable icons (fill, weight, grade, size); includes recycling, scale, currency_rupee, water_bottle, forklift, solar_power | Apache 2.0 | Optional (an About-screen credit is appreciated) | Medium | Only for filled tiles where Lucide has no icon; import individual SVGs, not the full font |\n| [Noto Emoji](https://github.com/googlefonts/noto-emoji) | Colour and monochrome emoji | Fonts OFL 1.1; images and tools Apache 2.0; flags public domain | Keep the licence notice | Medium–High: objects familiar from WhatsApp (newspaper, package, bottle, tin can, battery, phone, T-shirt) | Quick material pictures; bundle the SVGs so every phone looks the same |\n| [Fluent Emoji](https://github.com/microsoft/fluentui-emoji) (Microsoft) | 3D, colour and flat emoji | MIT | Keep the licence notice | Medium–High | Alternative to Noto (warmer 3D look) |\n| [Twemoji](https://github.com/jdecked/twemoji) (community fork) | Emoji up to Unicode 17 | Graphics CC BY 4.0; code MIT | Credit in the README, About screen or footer | Medium–High | Fine with a credits page |\n| [OpenMoji](https://openmoji.org/faq/) | Open emoji and extra icons | CC BY-SA 4.0 | Credit required; edited emoji must stay CC BY-SA | Medium | Avoid for pictures you will edit |\n| IconScout, Blush, Icons8 | Large marketplaces of icons and illustrations | Licence pages blocked us (HTTP 403): unverified | Unverified | Possibly high: unverified | Read the licence before any use |\n| Your own photos and commissioned art | Materials photographed in Bengaluru; 20–30 pieces of Indian clothing and props (thela, tricycle cart, platform scale, sacks, bales, tempo) | Written copyright transfer, plus signed consent from anyone photographed | None | **Highest** | Use for the material tiles and 5–10 main scenes |",
+ "risks": [
+  "Licence terms change over time. unDraw's terms were revised in 2026, and Storyset requires credit 'as stated from time to time'. Record the date each licence was checked and re-check before launch.",
+  "unDraw and DrawKit forbid using their art to train or feed AI tools. Generating 'Indian versions' of their illustrations with AI would breach the licence, and copyright in AI-generated art is unclear.",
+  "Share-alike licences (OpenMoji, CC BY-SA files on Wikimedia) could require Luma.Green's edited pictures to be released under the same licence. Scattered CC BY icons build up credits that are easy to forget.",
+  "Pictures of kabadiwalas and waste workers can slide into stereotypes (dirt, poverty). Depict them as skilled professionals, as the name Saathi intends, and review the art with pilot users.",
+  "Synthetic voices may mispronounce trade words (raddi, bhangar) or local place names, or use the wrong dialect, which erodes trust. Speaking live details adds cost and delay.",
+  "Next's offline detection is experimental and Next says not to use it in production yet. Offline caching can leave users stuck on an old version of the app, and Background Sync works only in Chrome and Edge.",
+  "Bigger buttons and fewer words mean more screens. If the order of steps isn't thought through, users end up scrolling, which NN/g found hurts low-literacy readers.",
+  "Switching to international digits may annoy some Bengali or Marathi users who expect their own script's digits. Test it before rolling it out.",
+  "Shared phones: family members can see code SMSs and tracking links, so tracking pages must show little personal data.",
+  "The extra auto-fill line makes each code SMS longer. In Kannada or Hindi, where one SMS holds only 70 characters, that may mean two SMSs per code and higher cost. Adding the line after DLT approval means approving the templates again."
+ ],
+ "openQuestions": [
+  "Which languages do the actual pilot kabadiwalas and households in Bengaluru read and speak, and how many can read numbers but not words? A 5-person check would settle it.",
+  "Do Bengali, Marathi and Urdu pilot users prefer international digits or their own script's digits for prices and weights?",
+  "Do users recognise materials faster from real photos or from drawn pictures? This needs a quick recognition test before the material tiles are fixed.",
+  "Do the bin colours in the new Solid Waste Management Rules (wet, dry, sanitary, special care) clash with the planned material colours? Not checked here.",
+  "Which text-to-speech service for the pilot: Google's Chirp 3 HD, the free Indic Parler-TTS, or Bhashini/Sarvam? Pricing and startup access to Bhashini were not checked.",
+  "Does the Convex client keep unsent changes after the app reloads offline, or does the weigh-and-pay queue need to be stored on the phone by us? Next's automatic retries cover its own form actions, not Convex updates.",
+  "What are the licence terms of IconScout, Blush and Icons8? Their pages blocked our access.",
+  "Which Indian accessibility rules (the RPwD Act 2016, the Indian standard IS 17802, the government's GIGW 3.0 guidelines) apply to a private platform like Luma.Green? Not checked here.",
+  "What budget and timeline are there for commissioning a custom set of Indian clothing and props for the illustrations?"
+ ],
+ "sources": [
+  {
+   "title": "Designing Mobile Interfaces for Novice and Low-Literacy Users (Medhi Thies et al., ACM TOCHI 2011) - Microsoft Research",
+   "url": "https://www.microsoft.com/en-us/research/publication/designing-mobile-interfaces-for-novice-and-low-literacy-users/"
+  },
+  {
+   "title": "Intermediated Technology Use in Developing Communities (Sambasivan et al., CHI 2010, Bangalore) - Microsoft Research",
+   "url": "https://www.microsoft.com/en-us/research/publication/intermediated-technology-use-in-developing-communities/"
+  },
+  {
+   "title": "Performative Privacy Practices on Mobile Phones by Women in South Asia (Sambasivan, Checkley et al., SOUPS 2018)",
+   "url": "https://www.usenix.org/conference/soups2018/presentation/sambasivan"
+  },
+  {
+   "title": "Lower-Literacy Users: Writing for a Broad Consumer Audience - Nielsen Norman Group",
+   "url": "https://www.nngroup.com/articles/writing-for-lower-literacy-users/"
+  },
+  {
+   "title": "Build for Billions guidelines - Android Developers (Google)",
+   "url": "https://developer.android.com/topic/billions"
+  },
+  {
+   "title": "Understanding SC 2.5.8 Target Size (Minimum) - W3C WCAG 2.2",
+   "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+  },
+  {
+   "title": "Understanding SC 1.4.11 Non-text Contrast - W3C WCAG 2.2",
+   "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+  },
+  {
+   "title": "Mobile Browser Market Share India, August 2026 - StatCounter",
+   "url": "https://gs.statcounter.com/browser-market-share/mobile/india"
+  },
+  {
+   "title": "Mobile Screen Resolution Stats India, August 2026 - StatCounter",
+   "url": "https://gs.statcounter.com/screen-resolution-stats/mobile/india"
+  },
+  {
+   "title": "The Performance Inequality Gap, 2024 - Alex Russell",
+   "url": "https://infrequently.org/2024/01/performance-inequality-gap-2024/"
+  },
+  {
+   "title": "How to build a Progressive Web Application with Next.js (v16.3.6) - Next.js docs",
+   "url": "https://nextjs.org/docs/app/guides/progressive-web-apps"
+  },
+  {
+   "title": "Verify phone numbers on the web with the WebOTP API - Chrome for Developers",
+   "url": "https://developer.chrome.com/docs/identity/web-apis/web-otp"
+  },
+  {
+   "title": "Chirp 3: HD voices - Google Cloud Text-to-Speech",
+   "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd"
+  },
+  {
+   "title": "Indic Parler-TTS model card - AI4Bharat / Hugging Face",
+   "url": "https://huggingface.co/ai4bharat/indic-parler-tts"
+  },
+  {
+   "title": "Article 343: Official language of the Union - Constitution of India",
+   "url": "https://www.constitutionofindia.net/articles/article-343-official-language-of-the-union/"
+  },
+  {
+   "title": "Literacy rate, adult total, India (SE.ADT.LITR.ZS) - World Bank API",
+   "url": "https://api.worldbank.org/v2/country/IND/indicator/SE.ADT.LITR.ZS?format=json&date=2015:2025"
+  },
+  {
+   "title": "Bengaluru: Demographics and languages (Census 2011) - Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bengaluru"
+  },
+  {
+   "title": "unDraw License",
+   "url": "https://undraw.co/license"
+  },
+  {
+   "title": "UX4G Design System 3.0 - NeGD, MeitY",
+   "url": "https://www.ux4g.gov.in/"
+  },
+  {
+   "title": "Theming - shadcn/ui",
+   "url": "https://ui.shadcn.com/docs/theming"
+  }
+ ]
+}

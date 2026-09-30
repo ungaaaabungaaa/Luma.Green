@@ -1,0 +1,338 @@
+{
+ "topic": "support-training",
+ "headline": "For low-literacy kabadiwalas and Saathis, the best-supported help model is a real person on WhatsApp or phone, backed by picture-and-voice step cards. Microsoft Research's India trials found text interfaces unusable by first-time low-literacy users and a live operator about 10x more accurate than text, and Meta charges nothing for WhatsApp support chats that the user starts.",
+ "findings": [
+  {
+   "point": "Text-only help fails first-time low-literacy users. Pictures, voice and a live person work.",
+   "detail": "Microsoft Research India (Medhi Thies et al., ACM ToCHI, April 2011) studied 90 low-literacy people in India, Kenya, the Philippines and South Africa, then ran trials with 70+ participants in India. Text forms, SMS and USSD were unusable for first-time low-literacy users and error-prone for literate beginners. A live operator was about 10x more accurate than text for health data and cost-effective in India. A graphical interface had the best task completion for mobile banking, and people already comfortable with speech finished tasks faster by voice. What this means for Luma.Green: every help item should be an icon and photo card with a play-audio button, and talking to a person must be one tap away. Text FAQs alone will miss many kabadiwalas and Saathis.",
+   "sourceUrls": [
+    "https://www.microsoft.com/en-us/research/publication/designing-mobile-interfaces-for-novice-and-low-literacy-users/"
+   ]
+  },
+  {
+   "point": "Short local videos shown by a person drive adoption far more than classroom training.",
+   "detail": "Digital Green (Gandhi, Veeraraghavan, Toyama, Ramprasad; ITID, March 2009) had facilitators screen community-made videos to their peers. The trial covered 16 villages and about 1,470 households over 13 months. Adoption of the practices shown was 7x higher than under the classical Training and Visit extension system, and the method was about 10x more effective per rupee spent. What this means for Luma.Green: film 30-60 second phone clips of real Bengaluru kabadiwalas doing each task in their own language, and play them during doorstep onboarding instead of writing manuals.",
+   "sourceUrls": [
+    "https://www.microsoft.com/en-us/research/publication/digital-green-participatory-video-for-agricultural-extension/"
+   ]
+  },
+  {
+   "point": "WhatsApp support is free when the user starts the chat.",
+   "detail": "Meta moved the WhatsApp Business Platform to per-message pricing on 1 July 2025. Service conversations have been free since November 2024. Every non-template message sent inside the 24-hour customer-service window (counted from the user's last message) is free, and so are utility templates sent inside that window. Charges apply to marketing templates at all times, and to utility and authentication templates sent outside the window. Indian businesses are billed in INR from 1 January 2026 and must migrate by 31 December 2026. What this means for Luma.Green: a Help button that opens WhatsApp with a prefilled message keeps support at Rs 0 as long as the team replies within 24 hours. Money is spent only on proactive notifications.",
+   "sourceUrls": [
+    "https://developers.facebook.com/docs/whatsapp/pricing/"
+   ]
+  },
+  {
+   "point": "The free WhatsApp Business app is enough for a pilot help desk, and MSG91 (already the SMS vendor) is the upgrade path.",
+   "detail": "The WhatsApp Business app is free. It offers greeting and away messages, quick replies, labels, a catalog and broadcasts, and up to 10 linked devices or agents on one number. MSG91 Hello adds a shared inbox (WhatsApp, web chat, email, Instagram), tickets with service-level tracking, multi-level IVR menus, AI chatbots and a knowledge base. MSG91 Hello plans (prices exclude 18% GST):\n- Live Chat: Rs 0, unlimited tickets, 1 inbox.\n- Free: Rs 0, 50 tickets a month, 2 inboxes.\n- Basic: Rs 1,500 a month, 1,000 tickets.\n- Premium: Rs 3,000 a month, 2,000 tickets, with text translation and AI replies.\nWhat this means for Luma.Green: run the pilot on the free app and move to Hello when volume or team size grows, without signing up a new vendor.",
+   "sourceUrls": [
+    "https://whatsappbusiness.com/products/business-app-features/",
+    "https://msg91.com/in/pricing/hello"
+   ]
+  },
+  {
+   "point": "Voice notes in Indian languages are now cheap to transcribe and answer.",
+   "detail": "Sarvam's speech-to-text API covers 22 Indian languages plus English, including Kannada, Tamil, Telugu and Urdu. It costs Rs 30 per audio hour, about Rs 0.25 for a 30-second voice note. It accepts OGG/Opus (the WhatsApp voice-note format) and WebM (browser recordings), and has a real-time endpoint for clips under 30 seconds. Its text-to-speech costs Rs 3 per 1,000 characters in 11 Indic languages. Jugalbandi (AI4Bharat, OpenNyAI and Microsoft, April-May 2023) already proved the pattern: villagers asked about 171 government schemes on WhatsApp by voice or text in 10 languages, using AI4Bharat speech models and Bhashini translation. What this means for Luma.Green: let people speak their problem, and turn it into English text for the admin automatically.",
+   "sourceUrls": [
+    "https://www.sarvam.ai/api-pricing",
+    "https://docs.sarvam.ai/api-reference-docs/speech-to-text/transcribe",
+    "https://news.microsoft.com/source/asia/features/with-help-from-next-generation-ai-indian-villagers-gain-easier-access-to-government-services/"
+   ]
+  },
+  {
+   "point": "Government helplines and competitors set the expectation: one number, several channels, many languages and stated hours.",
+   "detail": "The National Consumer Helpline takes complaints on:\n- toll-free 1915\n- WhatsApp and SMS on +91 88000 01915\n- its app, UMANG and a web portal\nIt works in 17 languages, with phone lines open 8 AM to 8 PM. ScrapUncle (1M+ users) offers WhatsApp support from 8:30 AM to 7:30 PM plus callback requests. What this means for Luma.Green: one support number for calls and WhatsApp, printed on every card, with hours stated in the user's language. Luma.Green should compete on speed and language, not on hours.",
+   "sourceUrls": [
+    "https://consumerhelpline.gov.in/",
+    "https://scrapuncle.com/"
+   ]
+  },
+  {
+   "point": "Phone voice menus (IVR) reach people who never type, but they are a scale feature, not a pilot one.",
+   "detail": "Gram Vaani's Mobile Vaani is an IVR voice line: people call a number to leave or hear voice messages about local issues and government schemes. It has 100,000+ monthly unique users in its flagship deployments, has reached 5 million+ people and covers 110+ districts, mainly in Jharkhand and Bihar. MSG91 Hello already bundles multi-level IVR menus on the vendor Luma.Green uses for SMS. What this means for Luma.Green: an IVR plus missed-call callback line is how to reach feature-phone helpers and older kabadiwalas across India. The Bengaluru pilot does not need it.",
+   "sourceUrls": [
+    "https://gramvaani.org/about-us/",
+    "https://msg91.com/hello"
+   ]
+  },
+  {
+   "point": "Bengaluru support needs Tamil, Telugu and Urdu as well as Kannada, Hindi and English.",
+   "detail": "Census 2011 mother tongues in Bengaluru (from a secondary source quoting the census):\n- Kannada 42.05%\n- Tamil 16.34%\n- Telugu 13.73%\n- Urdu 13.00%\n- Hindi 4.64%\n- others 10.24%\nAbout 43% of residents speak Tamil, Telugu or Urdu at home, yet the pilot plan leads with Kannada, Hindi and English. The app already ships all these locales. What this means for Luma.Green: record voice clips and WhatsApp quick replies in Kannada, Tamil, Hindi and Urdu before the pilot, and line up at least one Tamil-speaking and one Urdu/Hindi-speaking volunteer.",
+   "sourceUrls": [
+    "https://en.wikipedia.org/wiki/Bangalore"
+   ]
+  },
+  {
+   "point": "Bengaluru already trains waste workers through peers and community helpers, with certificates. Hasiru Dala and Saahas are natural partners.",
+   "detail": "Hasiru Dala reports:\n- 2,314 trainings for 61,114 participants.\n- 58 dry waste collection centres and 3 material recovery facilities supported, and 5,431 livelihoods.\n- Bengaluru was India's first city to issue occupational ID cards to waste pickers: 225 in August 2011 and 5,000 by 2012.\n- Some waste pickers are trained to teach financial literacy to others.\n- 61 Community Health Facilitators, youth from waste-picker families with better digital skills, work in 36 areas across all 8 zones; 43 of them are young women.\n- A certificate course for small recycling entrepreneurs is run with Waste Wise Trust and Jain University.\n- Its waste-worker training already covers traceability, data management and access to finance.\nSaahas (Bengaluru, since 2001) trains informal waste workers and links them to government schemes. It reports 226 livelihoods, and 19 of its 31 managers are women. What this means for Luma.Green: co-run onboarding with these groups instead of building a training arm, and copy the idea of a young family member as the kabadiwala's digital helper.",
+   "sourceUrls": [
+    "https://hasirudala.in/initiatives/training",
+    "https://hasirudala.in/",
+    "https://saahas.org/about-us/"
+   ]
+  },
+  {
+   "point": "ITC WOW in Bengaluru: a working collection service taught more than the awareness campaign did, and frontline workers were the best teachers.",
+   "detail": "ITC WOW's impact assessment (March 2025, covering 2022-23) reports for Bengaluru:\n- With BBMP it supported 52 dry waste collection centres. They processed 29,618 tonnes of dry waste, saving BBMP Rs 59.23 crore, and employed 628 workers: 52 operators, 336 sorters, 120 helpers and 120 drivers.\n- Its door-to-door drive reached 2,88,824 households in 25 wards.\n- In a survey of 470 households, 97.9% had seen the campaign and 90.6% got a pamphlet. But 71.9% credited their sorting to having a separate collection service, against 44.3% who credited the campaign. Residents valued collectors' on-the-spot reminders.\n- A centre operator earning Rs 25,000 a month valued help with record-keeping and with finding the best recycler for each material.\nIn Hyderabad, the 83 community resource persons ITC trained rated live field demonstrations as the most useful part. What this means for Luma.Green: the kabadiwala at the door is the household's trainer, and the app is best taught in the shop, not in a hall.",
+   "sourceUrls": [
+    "https://itcportal.com/content/dam/itc-corporate/pdfs/sustainability-corporate-social-responsibility/impact-assessment-07-08-2025.pdf"
+   ]
+  },
+  {
+   "point": "Gig platforms make training part of onboarding and pair it with safety and a way to appeal.",
+   "detail": "Swiggy (FY25):\n- About 500,000 delivery partners get practical training, and about 1.8 million have welfare or insurance cover.\n- Road-safety training is mandatory at onboarding, and first-responder training is run with traffic police.\n- Financial-literacy modules built with NSE sit inside the partner app, and Swiggy Skills Academy (2022) offers free courses.\n- Its SOS and ambulance response averages about 11 minutes.\nUrban Company signed an NSDC agreement in December 2022 to train and certify workers. Fairwork India 2024 scored Swiggy, Zomato, Urban Company and BigBasket 6 out of 10. Its 'Fair Management' principle asks for fair systems for data oversight, feedback, appeals and redress. In June 2024, Urban Company beauty workers protested in Bengaluru over ID blocking and costly grievance remedies. What this means for Luma.Green: a short mandatory module before a Saathi's first job, plus an SOS button and a clear appeal path.",
+   "sourceUrls": [
+    "https://www.swiggy.com/corporate/sustainability-overview/community/",
+    "https://en.wikipedia.org/wiki/Urban_Company",
+    "https://fairwork.oii.ox.ac.uk/en/ratings/india/",
+    "https://fair.work/"
+   ]
+  },
+  {
+   "point": "Karnataka will expect a formal complaints process for Saathis.",
+   "detail": "Karnataka's Platform-based Gig Workers (Social Security and Welfare) Bill 2025 was introduced on 12 August 2025 to replace a May 2025 ordinance. It requires platforms to:\n- register within 45 days\n- pay a welfare fee of 1-5% of each payout\n- give transparent contracts that state the right to refuse tasks\n- give 14 days' notice, with reasons, before ending a worker's engagement\n- run an internal dispute committee for pay, deduction and termination complaints\nIf that committee does not respond within 14 days, the case goes to the Welfare Board, and appeals must be filed within 90 days. What this means for Luma.Green: a paused-account screen must show the reason and a free one-tap appeal, and Saathi pay complaints need a 14-day clock in the admin inbox. The existing audit log already records who did what, when.",
+   "sourceUrls": [
+    "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+   ]
+  },
+  {
+   "point": "Luma.Green already has most of the plumbing for a help centre.",
+   "detail": "- The app shell (src/components/app/app-shell.tsx) links every signed-in role to /help/{role}, but that route does not exist yet.\n- convex/support.ts accepts help requests from anyone, including people who cannot sign in. Each request carries a role, one of 8 topics (account, pickup, prices, payments, documents, trade, solar, other) and an open/answered status for the admin.\n- site.ts already sets support@luma.green as the support email.\nThe Diataxis documentation framework separates task-focused how-to guides from lookup and explanation pages, which fits a per-role hub of step-card guides plus FAQs. What this means for Luma.Green: key help content by role, topic and language, and give every FAQ a 'still stuck?' button that files a request already tagged with role and topic.",
+   "sourceUrls": [
+    "https://diataxis.fr/"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "A Help button on every screen that opens WhatsApp with the context filled in",
+   "why": "The button offers three ways to get help:\n- WhatsApp: a wa.me link whose prefilled message includes the role, the screen, the booking or application code and the language.\n- Call: a tel: link.\n- Write to us: the existing form in convex/support.ts.\nIt needs no API and costs Rs 0, because chats the user starts are free. It is also one tap to a real person, the channel that worked best for low-literacy users in Microsoft Research's India trials. It is easy to show investors now.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "saathi"
+   ]
+  },
+  {
+   "feature": "Per-role help hubs at /help/{role}, built from picture-and-voice step cards and stored as data",
+   "why": "The app shell already links to these hubs. Each hub has 6-10 how-to cards and 8-12 FAQs (see the plan below). Each step shows an icon, a screenshot, one line of text and a human voice clip, using the same material icons and colours as the app. Content is keyed by role, topic, language and slug, with an English fallback marked 'translation coming'. A 'Did this help?' tap is logged to the pilot events (ADR 0012). This follows the founder's rule that data must be easy to change, and the evidence that pictures and voice beat text for these users.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "saathi",
+    "admin"
+   ]
+  },
+  {
+   "feature": "'Saathi Ready': a short first-job module with a picture quiz and a badge",
+   "why": "Five picture cards: safety and gloves, what never to pick up, weighing in front of the customer, behaviour inside homes, and how pay and SOS work. A 5-question picture quiz follows. Passing puts a 'Ready' badge on the Saathi's profile that kabadiwalas can see. Swiggy makes training mandatory at onboarding, and Urban Company certifies through NSDC. It tells investors a strong workforce-quality story and reuses the step-card component. It can be mapped to a skill-council certificate later.",
+   "priority": "prototype-now",
+   "users": [
+    "saathi",
+    "kabadiwala",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "A pilot help desk on the free WhatsApp Business app, with published service levels",
+   "why": "One number for calls and WhatsApp, open 8 AM to 8 PM every day during 13-20 October 2026:\n- Greeting and away messages, and quick replies in Kannada, Tamil, Hindi, Urdu and English.\n- Labels by role and status.\n- The founder and two testers on linked devices (the app allows up to 10).\n- Each chat also logged as a support request, so support volume shows up in the pilot numbers.\nTargets: first reply within 15 minutes during hours; pickup-day problems fixed the same day; everything else within 24 hours; safety call-back within 10 minutes. It costs nothing and beats the competitor norm of 'within 24 hours'.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "saathi",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Voice-first support: accept voice notes, answer with recorded voice, add transcription as volume grows",
+   "why": "WhatsApp voice notes work on day one at no cost. Add a hold-to-record button to the in-app help form, saving the recording as a private file. Keep pre-recorded voice answers for the top 20 questions in each pilot language. When a note arrives in a language the team doesn't speak, send it through Sarvam speech-to-text and translation, at about Rs 0.25 per 30-second note, across 22 Indian languages including Kannada, Tamil, Telugu and Urdu. Many kabadiwalas and Saathis cannot or will not type.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "saathi",
+    "household",
+    "admin"
+   ]
+  },
+  {
+   "feature": "A doorstep onboarding kit for every pilot kabadiwala and yard",
+   "why": "A 20-30 minute visit to the shop covering:\n- Installing the app to the home screen, signing in and setting prices.\n- One practice booking run end to end with a demo household, and auto-accept switched on if wanted.\n- Naming a 'digital buddy' (a family member or helper).\n- Leaving a laminated A5 picture card with the support number, a WhatsApp QR code and the 5 key steps in Kannada, Tamil, Urdu and Hindi.\nThis follows the models that worked: Hasiru Dala's youth facilitators and peer trainers, ITC WOW's field demonstrations and Digital Green's facilitators. The pilot plan already includes weekly check-in calls.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard"
+   ]
+  },
+  {
+   "feature": "'Show-me' videos with real Bengaluru kabadiwalas",
+   "why": "Five vertical clips of 30-60 seconds each: book a pickup, accept and reach, weigh and pay, set my prices, show stock to yards. Shoot them on a phone in Kannada, then dub or subtitle into Tamil, Hindi, Urdu and Telugu. Keep each file under 5 MB or host it as an unlisted video, and link each one from its matching step card. Digital Green saw 7x the adoption from peer-made local video. The clips double as investor material.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "household",
+    "saathi"
+   ]
+  },
+  {
+   "feature": "Complaints and appeals with visible clocks",
+   "why": "Give each request type a clock in the admin inbox, like the existing 18/24-hour verification clock. Types: pickup problem, weight or payment dispute, price complaint, account paused, Saathi pay or termination, safety. The 'account paused' screen always shows the reason and a one-tap Appeal. Saathi pay and termination complaints are tracked to 14 days, the Karnataka Bill's standard, and every step is written to the audit log. Karnataka's gig Bill, Fairwork's appeal-and-redress principle and the 2024 Urban Company protests in Bengaluru all point here.",
+   "priority": "pilot",
+   "users": [
+    "saathi",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "A household door card and a help link in the follow-up SMS",
+   "why": "At the first pickup, the kabadiwala or Saathi hands over a small picture card: what is taken and not taken, keep dry scrap apart, and how to rebook (a QR code to /sell and the WhatsApp number). The two-question follow-up SMS already in the pilot plan gains a 'Need help? WhatsApp us' link. In ITC WOW's Bengaluru survey, having a working collection service (71.9%) and collectors' reminders changed behaviour more than campaigns (44.3%).",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "saathi"
+   ]
+  },
+  {
+   "feature": "One number, many ways in: IVR, missed-call callback and a shared inbox",
+   "why": "Move to MSG91 Hello (Rs 1,500-3,000 a month plus GST) for a shared inbox with service-level tickets and a knowledge base. MSG91 is already the SMS vendor. Add an IVR language menu and missed-call-to-callback on the same number, plus spoken status checks such as 'press 1 for today's pickups'. This is the National Consumer Helpline's model and Gram Vaani's reach, and it serves helpers with feature phones.",
+   "priority": "scale",
+   "users": [
+    "kabadiwala",
+    "saathi",
+    "household",
+    "yard",
+    "admin"
+   ]
+  },
+  {
+   "feature": "A community trainer network and certification partners",
+   "why": "In each new city, contract community trainers, paid per active onboarded user. Candidates: waste-worker groups such as Hasiru Dala and Saahas, dry waste collection centre operators, and digitally skilled youth from waste-worker families. Give them a train-the-trainer kit (cards, videos, quiz, checklist) and record in Convex which trainer onboarded which user. Route Saathis to NSDC or skill-council certification and help them sign up for government schemes. Evidence: Hasiru Dala's 2,314 trainings for 61,114 people, ITC's 83 community resource persons, and Digital Green's 10x cost-effectiveness. This is how onboarding reaches all of India without a large staff.",
+   "priority": "scale",
+   "users": [
+    "kabadiwala",
+    "saathi",
+    "yard",
+    "admin"
+   ]
+  }
+ ],
+ "artifactMarkdown": "# Luma.Green help centre: first content plan\n\n**Where it lives:** `/help/{role}`, which the app shell already links to, plus a public `/help` index. Every guide and FAQ ends with **Still stuck? WhatsApp · Call · Write to us**. The form files a support request already tagged with role and topic. The topics come from `convex/support.ts`: account, pickup, prices, payments, documents, trade, solar, other.\n\n**How items are built**\n- **Guide:** 3-6 step cards. Each card has an icon, a real screenshot, one line of at most 12 words and a play button with a human voice. *(video)* means the guide also gets a 30-60 second phone-shot clip with a real Bengaluru user.\n- **FAQ:** a question and a one-line answer. The kabadiwala and Saathi hubs also get a voice clip for each answer.\n- **Languages for Bengaluru:** Kannada, Tamil, Hindi, Urdu, Telugu and English get text and voice first. The other six locales show English marked \"translation coming\".\n- **Data, not code:** each item is one record keyed by role, topic, language and slug, and the admin can edit it without a release. \"Did this help? Yes / No\" is logged to the pilot numbers.\n- **[decide]** marks an answer that needs a founder decision before it is published.\n\n## Channels and service levels (pilot, 13-20 Oct 2026)\n\n| Channel | Hours | First reply | Resolved within | Notes |\n|---|---|---|---|---|\n| WhatsApp (text or voice note), one support number | 8 AM-8 PM, every day | 15 min | Pickup-day issues: same day. Other issues: 24 h | Free when the user writes first. Away message after hours |\n| Phone call, same number | 8 AM-8 PM | Answer, or call back within 30 min | As above | Missed calls get a call back |\n| In-app help form | Any time | 2 h during hours | 24 h | Lands in the admin inbox with role and topic |\n| Application questions | - | - | Decision in 12-24 h | Existing clock: \"Due soon\" at 18 h, \"Overdue\" at 24 h |\n| Safety (harm, threat, theft, accident) | Any time (founder's phone during the pilot) | Call back within 10 min | Same day; pause the account if needed | Benchmark: Swiggy's SOS averages about 11 min |\n| Saathi pay or termination complaint | - | Acknowledge within 48 h | 14 days | Karnataka gig-worker Bill's standard |\n| Account paused, appeal | - | Reason shown at once | Review within 7 days [decide] | Written to the audit log |\n\n## Every hub (shown at the top)\n\n- **How do I change the language?** Tap the language button at the top and pick yours; 12 languages are available.\n- **The SMS code didn't come.** Wait 30 seconds and tap Resend, and check the number. If it still doesn't come, WhatsApp us.\n- **How do I put Luma.Green on my home screen?** Open luma.green in Chrome and tap Install or \"Add to Home screen\".\n- **Can I use it without reading?** Yes. Tap the speaker on any card to hear it, and send us voice notes.\n- **How do I reach a person?** WhatsApp or call our support number, 8 AM-8 PM every day, or write to support@luma.green.\n- **Where does Luma.Green work?** Pilot areas of Bengaluru first; more cities later.\n- **What do you do with my data?** We keep only what we need to check you and run bookings. Ask us any time to see or delete it.\n- **Is Luma.Green free?** Yes for households. For businesses: free during the pilot [decide what comes after].\n\n## Household (no account)\n\n**Guides**\n1. **Sell your scrap in 3 steps** *(video)*: snap photos → check the estimate → book → get paid at the door.\n2. **Take photos that estimate well:** use daylight → spread items out → one photo per pile → correct the kilos if you know them.\n3. **Book a home pickup:** choose Pickup → pick a shop and a time slot → confirm the address pin → enter your mobile → type the 6-digit SMS code.\n4. **Drop off at a shop:** choose \"I'll drop it off\" → pick an open shop → show your drop-off code at the counter.\n5. **Track your pickup:** open the SMS link → see when, who (with the verified badge) and how much → tap Call if needed.\n6. **Weighing and payment at the door** *(video)*: watch the scale → check the kilos for each material → take cash or UPI → see the amount paid on your tracking page.\n7. **Cancel or change a booking:** open the tracking link → Cancel (free until the kabadiwala is on the way) → book a new slot.\n8. **Your points and past pickups:** open any tracking link sent to the same number → see kilos, rupees and recycle points.\n\n**FAQs**\n- **Do I need an account?** No. You confirm your mobile once with an SMS code when you book.\n- **What do you take?** Paper, cardboard, plastic, metal, glass and e-waste. Not food, sanitary or medical waste.\n- **Why was I paid a different amount from the estimate?** The estimate comes from photos; you are paid for the weighed kilos at the shop's price.\n- **Who sets the price?** Each kabadiwala sets a price per kg, and Luma.Green never lets it go below our minimum.\n- **How am I paid?** Cash or UPI from the kabadiwala at your door. Luma.Green records the payment but never holds your money.\n- **Is there a pickup charge or a minimum amount?** [decide] Proposal: pickups are free during the pilot, and small loads are better dropped off.\n- **What if no shop accepts?** After 15 minutes we offer the booking to the next nearest shop and send you an SMS.\n- **Is the person who comes safe?** Only shops we have checked by hand get bookings. The tracking page shows their name, shop and a call button.\n- **Who sees my number and address?** Only the kabadiwala who accepts your booking, and only after they accept.\n- **What are recycle points worth?** [decide] You earn them for every kilo weighed; what they can be used for will be announced.\n- **What happens to my photos?** We use them for the estimate and delete them after 90 days.\n- **The weight looks wrong.** Ask for a re-weigh in front of you, then WhatsApp us your booking code.\n\n## Kabadiwala\n\n**Guides**\n1. **Join Luma.Green** *(video)*: pick your language → phone → SMS code → \"Kabadiwala\" → shop form → Send for verification.\n2. **After you apply:** you see \"Under review, 12-24 hours\" → answer our call → if it says \"Changes requested\", fix it and resubmit.\n3. **Set my prices** *(video)*: My prices → type Rs per kg for each material (the minimum shows beside each) → Save.\n4. **Accept or reject a pickup** *(video)*: Requests → tap the speaker to hear the request → Accept (the address and phone appear) or Reject.\n5. **Auto-accept:** switch it on at the top of Requests → every request in your area is accepted at once, even at night → switch it off when you are closed.\n6. **Today's pickups:** Today → Call → Directions → \"I'm on the way\".\n7. **Weigh and pay** *(video)*: weigh each material → use − / + in half-kilo steps → check the amount → Cash or UPI → Save.\n8. **Record sorting:** My stock → Sort → move kilos from mixed paper to newspaper, cardboard and reject → Save.\n9. **Show stock to yards:** My stock → turn on \"Show to yards\" → a yard books a collection or tells you it is coming.\n10. **Shop settings:** hours, weekly holiday, home pickups and vehicle, and up to two extra phone numbers (helper, partner).\n\n**FAQs**\n- **Do I need GST?** No, it is optional; just mark \"Not GST-registered\".\n- **How long does verification take?** Usually 12-24 hours. We call your login number to check the shop.\n- **Does Luma.Green take a commission?** [decide] No, not during the pilot.\n- **Who pays the household?** You do, in cash or UPI at the door. The app only records it.\n- **Why can't I set a lower price?** Luma.Green keeps a minimum for each material so households get a fair rate.\n- **Rates changed today?** Update My prices before you leave; the weighing screen uses your current rates.\n- **I have no vehicle.** Keep home pickups switched off. Households can still drop off at your shop.\n- **When do I see the address and phone?** Right after you accept. Before that you see only the area.\n- **What if I reject a request?** It goes to the next nearest shop, and the household is not told who said no.\n- **The customer isn't home.** Call them from Today. If they don't answer, WhatsApp us the booking code. [decide the no-show rule]\n- **I changed my phone.** Sign in with the same number and SMS code. If your number changed, call us.\n- **My account says \"paused\".** The screen shows why; tap Contact us to talk to the team.\n\n## Yard (preprocessor)\n\n**Guides**\n1. **Join as a yard:** business name → materials you handle → address pin and area tags → whether you collect from suppliers → hours.\n2. **Upload documents:** issuing board (KSPCB, or your state's board) → consent number → valid-until date → certificate PDF → 2 or more machine photos or videos → declaration.\n3. **\"My unit needs no consent\":** tick \"Not required for our unit\" → explain why (for example, paper baling only) → we check the claim.\n4. **Find stock near you:** browse the stock kabadiwalas have published, by material, kilos and distance.\n5. **Book a collection:** pick a lot → choose a day → tell the kabadiwala you are coming. (Details depend on how the kabadiwala-to-yard hand-off is designed.)\n6. **Team numbers and hours:** Settings → up to two more numbers, hours and weekly holiday.\n7. **Renew your consent:** we remind you 30 days before it expires → upload the renewed PDF.\n\n**FAQs**\n- **Which consent do I upload?** Your KSPCB consent in Karnataka, or your own state board's consent elsewhere.\n- **My file won't upload.** PDFs and photos can be up to 10 MB, and videos up to 20 MB (MP4 or MOV).\n- **Is GST required?** Optional now. It may become required once payments through Luma.Green start.\n- **Why do you want machine photos?** So we can see a working unit. Show the main machines and the yard.\n- **How do you check us?** We find your consent on KSPCB's public register, check your GST if you gave it, and call you.\n- **How long does it take?** 12-24 hours from when you submit.\n- **Who sees my documents?** Only you and the Luma.Green admin.\n- **Who sets the price with kabadiwalas?** [decide] For now you agree it with the kabadiwala; live yard prices come later.\n- **Who weighs and pays at collection?** [decide] This is being designed with the pilot yards.\n- **I run more than one yard.** One address per account for now. WhatsApp us and we will set up the others.\n\n## Recycler\n\n**Guides**\n1. **Join as a recycler:** business details → materials → address and area tags → hours.\n2. **Upload documents:** consent and certificate PDF. Plastic recyclers also add their Plastic Waste Processor registration.\n3. **Find sorted material:** browse yards' stock by material and distance *(when live)*.\n4. **Request material from a yard:** pick a lot → quantity → date → send *(when live)*.\n5. **Publish what you produce:** material, grade, monthly quantity and price → Publish *(when live)*.\n6. **Team numbers and hours:** Settings.\n\n**FAQs**\n- **Do plastic recyclers need anything extra?** Yes: your Plastic Waste Processor registration from CPCB's EPR portal.\n- **What can I do on Luma.Green today?** Get verified and list what you make. Buying and selling open after the Bengaluru pilot.\n- **Do payments go through Luma.Green?** Not yet; escrow payments between businesses are planned.\n- **Is GST required?** Optional now; it will probably be needed once escrow invoicing starts.\n- **How long is verification?** 12-24 hours. We check your consent on the board's register and call you.\n- **What are the file size limits?** PDFs and photos up to 10 MB; videos up to 20 MB.\n- **What do buyers see about us?** Your business name, area, materials and whatever you publish. Your documents stay private.\n- **Are yards checked?** Yes. Every yard's consent, or its \"not required\" claim, is checked by hand.\n- **What about carbon credits?** Planned for later; not in the pilot.\n\n## Manufacturer\n\n**Guides**\n1. **Join as a manufacturer:** business details → materials you buy → address → hours.\n2. **Upload your certificate:** one PDF, your pollution-board consent or certificate.\n3. **See what recyclers produce:** filter by material, grade and area *(when live)*.\n4. **Place an order:** pick a lot → quantity → delivery date → send *(when live)*.\n5. **Book Saathis for shifts:** choose the shift, number of people and date *(after the pilot)*.\n6. **Team numbers and hours:** Settings.\n\n**FAQs**\n- **What do I need to join?** Your business details and one PDF (your pollution-board certificate). GST is optional.\n- **How long is verification?** 12-24 hours.\n- **Are recyclers verified?** Yes. Every recycler's consent, and GST if given, is checked by hand.\n- **Can I pay through Luma.Green?** Not yet; escrow payments are planned.\n- **Can I get traceability or recycled-content papers?** Planned as part of documentation services; not in the pilot.\n- **I can't find the grade I need.** WhatsApp us the grade and monthly quantity, and we will ask recyclers.\n- **Can I hire Saathis?** After the pilot. You will pay them directly.\n- **Who sees my orders?** Only you, the seller and the Luma.Green admin.\n\n## Saathi\n\n**Guides**\n1. **Join as a Saathi** *(video)*: name as on your ID → area and radius → work you want → vehicle → when you can work.\n2. **Photo ID and selfie:** upload a voter ID, driving licence, PAN, DigiLocker document or masked Aadhaar → take a selfie.\n3. **After you apply:** status in 12-24 hours → answer our call → fix anything we ask for.\n4. **Saathi Ready** *(video)*: 5 picture cards (safety, what never to touch, honest weighing, behaviour at homes, SOS) → short picture quiz → badge.\n5. **Take a job** *(after the pilot)*: see jobs within your radius → Accept → call the shop → go.\n6. **Do a home pickup:** arrive → greet → weigh in front of the household → hand the scrap to the kabadiwala.\n7. **Get help fast:** tap Help → WhatsApp or call us. In danger, call 112 first.\n8. **Change your details:** area, radius, vehicle, working times.\n\n**FAQs**\n- **Which ID can I use?** Voter ID, driving licence, PAN, a DigiLocker document, or an Aadhaar showing only the last 4 digits.\n- **Why a selfie?** To match your face with your ID. Only the admin sees it.\n- **How long does verification take?** 12-24 hours. We call your number.\n- **When do jobs start?** After the Bengaluru pilot. We will SMS you when jobs open near you.\n- **Who pays me?** The kabadiwala or company you work for. [decide] Pay will be shown before you accept a job.\n- **Do I need a vehicle?** No. Choose \"None\"; shop and yard shifts need no vehicle.\n- **How far will I travel?** Only within the radius you chose: 2, 5 or 10 km.\n- **Can I say no to a job?** Yes, always.\n- **Do I need police verification?** [decide] Possibly, for home pickups.\n- **Is there insurance?** [decide] Not yet.\n- **I'm hurt or unsafe.** Call 112 in an emergency, then call us. We call back within 10 minutes.\n- **My account is paused.** We show you the reason. Tap Appeal and we reply within 14 days.\n\n## Admin and support team (internal playbook)\n\n**Guides**\n1. **Verify an application:** open the queue (\"Due soon\" at 18 h, \"Overdue\" at 24 h) → tick the checklist → call the login number → Approve.\n2. **Ask for changes or reject:** write one plain sentence in the applicant's language → send. It is shown to them and logged.\n3. **Answer a support request:** read the role and topic → reply on WhatsApp or by phone → mark it Answered.\n4. **Weight or payment dispute:** call both sides → compare weighed kilos × rate card → record the outcome.\n5. **Safety incident:** call back within 10 minutes → pause the account if needed → follow `docs/operations/incidents.md`.\n6. **Pause or restore an account:** choose a reason → the user sees it → the appeal clock starts.\n7. **Edit a help card:** change the text → mark the other languages \"translation coming\" → re-record the voice clip.\n\n**FAQs**\n- **Someone sent a full Aadhaar.** Delete it and ask for a masked copy.\n- **The applicant can't read our note.** Call them, then follow up with a voice note in their language.\n- **A household says they were underpaid.** Check weighed kilos × the shop's rate card. If the shop got it wrong, warn the shop.\n- **A kabadiwala keeps rejecting requests.** Check their prices against the minimum and call them. Unprofitable pickups trigger the pilot's stop rule.\n- **A night booking got no answer.** Dispatch moves it after 15 minutes. Call the household when support opens.\n- **A voice note came in a language we don't speak.** Transcribe and translate it, then reply with a recorded answer.\n- **What do we measure?** Requests by role and topic, time to first reply, time to resolve, and \"Did this help?\" rates.\n- **When is it an incident?** Safety, exposed personal data, or a money dispute not settled within a day: follow `incidents.md`.\n\n## Ship order\n\n- **Now (investor prototype):** the \"Every hub\" block; Household guides 1, 3, 5 and 6; Kabadiwala guides 1, 3, 4 and 7; Saathi guides 1 and 4; all FAQs as text in English, Kannada and Hindi; the Help button with WhatsApp, Call and the form.\n- **Before the pilot (by 12 Oct):** voice clips for every household and kabadiwala item in Kannada, Tamil, Hindi and Urdu; the 5 videos; the printed A5 shop card and household door card; the support number live on the WhatsApp Business app.\n- **During the pilot:** each week, add answers to the 10 most-asked real questions; settle every [decide].\n- **After the pilot:** the yard, recycler and manufacturer \"when live\" guides; Telugu voice; the other six languages; IVR and the shared inbox.",
+ "risks": [
+  "One WhatsApp number is a single point of failure. If users report it as spam or the account is restricted, support goes dark. Keep the phone line and the in-app form, and use only official WhatsApp apps and APIs.",
+  "The founder is both admin and support. With auto-accept, bookings arrive at night, so problems will too. Without published hours, an away message and a rota, response times will slip and burn the team out.",
+  "Machine translation and text-to-speech in lower-resource languages (Urdu, Tamil dialects) can get money and safety details wrong. Use human-recorded voice for prices, payments, safety and account actions.",
+  "Privacy: voice notes, screenshots and ID photos sent on WhatsApp land on staff phones. Use a dedicated work phone with linked devices, never ask for Aadhaar numbers in chat, and delete media after the case closes, following docs/operations/data-protection.md.",
+  "Content sprawl: 7 roles × about 18 items × 12 languages is about 1,500 strings and clips. Without one data model, one owner and 'translation coming' flags, help content will go stale. Keep five voice languages for Bengaluru first.",
+  "Kabadiwalas lose shop time in training. Classroom sessions and long modules will be skipped, so keep onboarding at the shop, under 30 minutes, and tied to real first bookings.",
+  "Most tickets will be disputes over estimate versus weighed payout. Without a 'weigh in front of the customer' rule and a clear FAQ, households will blame Luma.Green, not the shop.",
+  "Saathi suspensions without reasons or an appeal path risk a repeat of the 2024 Urban Company protests in Bengaluru, and non-compliance with Karnataka's gig-worker law.",
+  "Meta can change template prices at any time, and India billing must move to INR by 31 December 2026. Budget for proactive notifications separately from free support chats."
+ ],
+ "openQuestions": [
+  "Which number becomes the support line (a new SIM or a virtual number)? Can the same number move from the WhatsApp Business app to the Cloud API or MSG91 later without losing chat history?",
+  "Who answers after 8 PM when auto-accepted night bookings go wrong, and should auto-accept be limited to opening hours during the pilot?",
+  "Is Luma.Green an 'e-commerce entity' under the Consumer Protection (E-Commerce) Rules 2020? If so it needs a grievance officer, and (to be verified with counsel) must acknowledge complaints within 48 hours and resolve them within one month. What complaint response times do the DPDP Rules 2025 set?",
+  "Has Karnataka's Platform-based Gig Workers Bill 2025 been notified along with its rules, and does the internal dispute committee and 1-5% welfare fee apply to Saathis at pilot scale?",
+  "Would Hasiru Dala, Saahas or ITC WOW's dry waste collection centre operators co-run kabadiwala and Saathi onboarding in Bengaluru, and on what terms (fee per onboarding, data sharing)?",
+  "Who records the human voice clips in Kannada, Tamil, Hindi and Urdu before 13 October, and is Telugu needed for the pilot neighbourhoods?",
+  "Several FAQ answers need founder decisions: whether pickups carry a charge or minimum quantity, what recycle points are worth, fees for businesses after the pilot, the no-show rule, Saathi pay display, insurance and police verification.",
+  "Do outbound IVR or automated voice reminders need TRAI/DLT registration (for example the 140/160 number series) before they are used at scale?"
+ ],
+ "sources": [
+  {
+   "title": "Designing mobile interfaces for novice and low-literacy users (Microsoft Research, ACM ToCHI 2011)",
+   "url": "https://www.microsoft.com/en-us/research/publication/designing-mobile-interfaces-for-novice-and-low-literacy-users/"
+  },
+  {
+   "title": "Digital Green: Participatory Video for Agricultural Extension (Microsoft Research, ITID 2009)",
+   "url": "https://www.microsoft.com/en-us/research/publication/digital-green-participatory-video-for-agricultural-extension/"
+  },
+  {
+   "title": "WhatsApp Business Platform pricing (Meta for Developers)",
+   "url": "https://developers.facebook.com/docs/whatsapp/pricing/"
+  },
+  {
+   "title": "WhatsApp Business app features",
+   "url": "https://whatsappbusiness.com/products/business-app-features/"
+  },
+  {
+   "title": "MSG91 Hello pricing (India)",
+   "url": "https://msg91.com/in/pricing/hello"
+  },
+  {
+   "title": "Sarvam AI API pricing",
+   "url": "https://www.sarvam.ai/api-pricing"
+  },
+  {
+   "title": "Sarvam speech-to-text API: supported languages and formats",
+   "url": "https://docs.sarvam.ai/api-reference-docs/speech-to-text/transcribe"
+  },
+  {
+   "title": "With help from next-generation AI, Indian villagers gain easier access to government services (Microsoft, Jugalbandi, 2023)",
+   "url": "https://news.microsoft.com/source/asia/features/with-help-from-next-generation-ai-indian-villagers-gain-easier-access-to-government-services/"
+  },
+  {
+   "title": "National Consumer Helpline (Government of India)",
+   "url": "https://consumerhelpline.gov.in/"
+  },
+  {
+   "title": "Gram Vaani: About (Mobile Vaani IVR)",
+   "url": "https://gramvaani.org/about-us/"
+  },
+  {
+   "title": "Hasiru Dala: Training Programmes",
+   "url": "https://hasirudala.in/initiatives/training"
+  },
+  {
+   "title": "ITC WOW Integrated Impact Assessment: Delhi, Bengaluru, Hyderabad (March 2025)",
+   "url": "https://itcportal.com/content/dam/itc-corporate/pdfs/sustainability-corporate-social-responsibility/impact-assessment-07-08-2025.pdf"
+  },
+  {
+   "title": "Saahas: About us",
+   "url": "https://saahas.org/about-us/"
+  },
+  {
+   "title": "Swiggy: Community (delivery partner training and welfare)",
+   "url": "https://www.swiggy.com/corporate/sustainability-overview/community/"
+  },
+  {
+   "title": "Urban Company (Wikipedia: NSDC training agreement, 2024 Bengaluru protests)",
+   "url": "https://en.wikipedia.org/wiki/Urban_Company"
+  },
+  {
+   "title": "Fairwork India Ratings 2024",
+   "url": "https://fairwork.oii.ox.ac.uk/en/ratings/india/"
+  },
+  {
+   "title": "PRS: The Karnataka Platform-based Gig Workers (Social Security and Welfare) Bill, 2025",
+   "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+  },
+  {
+   "title": "Bangalore (Wikipedia: Census 2011 languages)",
+   "url": "https://en.wikipedia.org/wiki/Bangalore"
+  },
+  {
+   "title": "Diataxis documentation framework",
+   "url": "https://diataxis.fr/"
+  },
+  {
+   "title": "ScrapUncle (WhatsApp support hours)",
+   "url": "https://scrapuncle.com/"
+  }
+ ]
+}

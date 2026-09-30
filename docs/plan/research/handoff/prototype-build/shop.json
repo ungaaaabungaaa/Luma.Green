@@ -1,0 +1,49 @@
+{
+ "branch": "worktree-wf_21434ea1-012-2",
+ "worktreePath": "/Users/syedabdulmuqeeth/Developer/Luma.Green/.claude/worktrees/wf_21434ea1-012-2",
+ "commit": "360634d39288cabc6114d603c98c65c8c3437615",
+ "summary": "The kabadiwala's app is built: home, pickup requests, weigh and pay, stock and prices. It is one commit on top of the lead's dfd8c19. Typecheck and ESLint pass on every file I touched. The 79 tests for this area pass; the only failing test in the full suite is src/i18n/messages.test.ts, which waits on translations. I could not open the screens in a browser, because running the dev server was ruled out.\n\nBackend:\n- convex/shop.ts: every function starts with requireOrg(ctx, ['kabadiwala']).\n  - requests: new / active / done, with done capped at the latest 20.\n  - get: one booking plus the shop's rate for each item. It returns null for another shop's booking or a bad id.\n  - respond and startTrip: status moves checked with canMoveBooking, added to the timeline and written to auditLog. startTrip refuses drop-offs.\n  - complete: prices each line at the rate card, else the city fallback, with paiseFor. It saves the receipt with the rate used, sets points with pointsFor, marks the booking completed and adds the grams to inventory (upsert by_org_material).\n  - rateCard and setRate: setRate refuses a price under the floor with BELOW_FLOOR and writes an audit row.\n  - payouts (extra): paid today and over the last 7 days, for the home screen.\n- Privacy: until the shop accepts, it gets the first name, only the area and a masked phone. The tracking token is also blanked, because the tracking page shows the address.\n- convex/stock.ts: stock.mine works for any business kind. It returns stock with names, stage, grams, value at today's market price, totals and who the business sells to.\n\nScreens (src/components/shop), mobile first:\n- KabadiwalaHome: the five placeholders replaced by real screens with the same names and props.\n  - Greeting, a big count of new requests with a button to /app/requests.\n  - Today's pickups with the next one (time and area).\n  - Paid today and last 7 days, stock worth, a three-material price check against the market.\n  - Shortcuts to /app/sell and /app/prices.\n- RequestsPage: New / Today / Done tabs, kept in ?tab=.\n  - Cards show first name, area, slot, items with estimated kg, and the estimate.\n  - Accept is one tap; Decline asks for confirmation.\n- RequestDetail:\n  - Call and Directions appear once accepted; Start trip for pickups.\n  - Weigh and pay: kg rows prefilled with the estimate, half-kilo steps, add another material, a live total, Cash or UPI.\n  - After confirming, a receipt with a thank-you and the points earned, plus the booking history.\n- StockPage: every business kind, grouped into scrap and recycled when a business holds both. The Sell button appears when buyerKindFor gives someone to sell to.\n- RateCardPage: prices grouped by family, edited in place next to the minimum and market price, with a clear error below the minimum.\n- Every screen has loading, empty, error and not-for-this-role states, and one sample-data note.\n- All copy is in the \"shop\" namespace.\n\nTests:\n- convex-test: happy paths, privacy before and after accepting, blocked status moves, the floor, receipts that later price changes don't rewrite, stock totals, and refusals for signed-out users, other roles and another shop's booking.\n- Component tests with Testing Library, plus unit tests for the kg and rupee parsing.",
+ "routes": [
+  "/app (KabadiwalaHome, rendered by RoleHome for kabadiwalas)",
+  "/app/requests",
+  "/app/requests/[id]",
+  "/app/stock (every business kind)",
+  "/app/prices"
+ ],
+ "convexFunctions": [
+  "shop.requests",
+  "shop.get",
+  "shop.respond",
+  "shop.startTrip",
+  "shop.complete",
+  "shop.rateCard",
+  "shop.setRate",
+  "shop.payouts",
+  "stock.mine"
+ ],
+ "messageNamespaces": [
+  "shop"
+ ],
+ "checks": {
+  "typecheck": "pass (pnpm typecheck)",
+  "lint": "pass: pnpm exec eslint on convex/shop.ts, convex/stock.ts, both test files and src/components/shop. One disable, on a single line with a reason: unicorn/no-non-function-verb-prefix on `export const setRate = mutation(...)`, because the spec names it setRate and clients call it as a function. Prettier check passes.",
+  "tests": "pass: 79 tests in 11 files (convex/shop.test.ts, convex/stock.test.ts, src/components/shop/*.test.ts(x)). In the full suite the only failures are the 22 cases in src/i18n/messages.test.ts, which wait on translations."
+ },
+ "unfinished": [
+  "Not checked in a browser (the dev server was not allowed). Layouts at 375px were reviewed in code and by component tests only; please look at the five screens after merging.",
+  "The 11 other locale files have no \"shop\" keys yet, so src/i18n/messages.test.ts fails until they are translated.",
+  "Not built, as they were outside this task: auto-accept, the read-aloud button, and moving stock between materials after sorting (all from docs/product/kabadiwala.md)."
+ ],
+ "mergeNotes": [
+  "Base commit: my worktree was created at 1403f83 (main), not your latest commit dfd8c19 on feat/prototype. I fast-forwarded my branch to dfd8c19 before starting; nothing conflicted. The other worktrees (wf_21434ea1-012-1 and 3 to 8) were also created at 1403f83, so other agents may have worked on the old base.",
+  "convex/_generated/api.d.ts only adds the `shop` and `stock` modules. If it conflicts with other areas, re-run `npx convex codegen --typecheck disable` after merging. When I ran that command it printed \"Uploading functions to Convex...\" during its analysis step. I only ran codegen, never dev, deploy, run or import.",
+  "messages/en.json: the \"shop\" namespace is added after \"app\" at the end of the file, so it will likely conflict with other areas that append there. Keep all of them. Nothing else in the file changed.",
+  "convex/stock.ts also exports a plain helper, `marketPriceOn(ctx, city, materialCode, date)`, not a Convex function. It returns the latest market price on or before a date, and other areas can reuse it.",
+  "Links out of my area: the Stock page's Sell button and the home shortcut go to /app/sell. The empty stock state for non-kabadiwalas links to /app/market.",
+  "The Requests tabs switch with window.history.replaceState, which Next keeps in step with useSearchParams, so there is no server round-trip. The tab component is wrapped in Suspense. The home screen links to /app/requests?tab=today.",
+  "Directions on an accepted pickup opens a Google Maps search for the address. It is shown only after the shop accepts.",
+  "src/components/shop/test-helpers.tsx holds shared fixtures and a translation wrapper that fails the test on a missing message key; it is not a test file itself. The jsdom stubs Radix Select needs (scrollIntoView and pointer capture) live in weigh-and-pay.test.tsx because vitest.setup.ts isn't mine. You may want to move them there.",
+  "Receipts show the weight to the gram (\"19.25 kg\"); the other screens use the shared useFormat().weight rounding. Stock rows at 0 g are hidden.",
+  "This worktree has a commit, so it was kept for merging. Delete it after merging, as the user asked."
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "verdict": "The plan mostly holds up against the briefs. Most numbers trace to a cited source, it is right to keep money off the platform and to sell evidence rather than certificates, and treating the rules as data is the correct call. It is not ready to present or to build from yet, for four reasons. (1) The headline claim, tracing one recycler bale back to individual household pickups, cannot work physically: a 2,000 kg PET lot cannot come from 14 household receipts, and yards pool and re-sort material. The plan never says whether tracing uses mass balance or segregated lots. (2) Several investor-facing numbers compare unlike things or use old data presented as current: household cans against primary MCX aluminium, and the 2014 mill price for newspaper. (3) The plan drops legal risks the briefs raised: competition law on the admin price floors, the national Social Security Code rules for gig aggregators, enforcement under SWM r.17 against unregistered kabadiwalas who become visible, liability for abetting false EPR claims, DPDP's one-year retention rule against 90-day photo deletion, and the fact that the CPCB EPR exchange is not yet live. It also contradicts itself: it says exchange prices are never shown publicly, then puts MCX on the public price chart. It says a lawyer and CA review everything before real users arrive, but pilot users arrive 3 days after the prototype. It gates escrow on ₹40 lakh of Luma's own turnover while charging nothing until 2027. (4) The prototype scope is 13 features plus a UX overhaul and 13 demo scripts in about 9 working days (29 Sep–10 Oct). Cut it to about 6 core flows and make the rest static or seeded.",
+ "gaps": [
+  {
+   "issue": "The lot passport says it traces 'one bale back to the individual household pickups it came from', and the demo walks PET bale LOT-0412 back to 14 household receipts. A household sells about 1–3 kg of PET, and the demo trade is 2,000 kg. Yards also pool and sort material from many sources, most of it bought off the platform from waste pickers and walk-ins. So the claim is physically impossible, and a diligent investor or auditor will spot it. None of the briefs supports household-level physical identity. The ISCC PLUS finding separates mass balance from physical segregation.",
+   "fix": "Choose and state a tracing method: mass-balance allocation, or segregated lots only. Change the passport to show 'X kg (Y%) of this bale is linked to Luma receipts; the rest is declared supply from named off-platform sources'. Reseed LOT-0412 so the numbers add up, for example about 180 kg of PET from 2 kabadiwalas, of which 22 kg is from household receipts. Rewrite the lead line as 'every hand-off recorded', not 'traced to individual households'."
+  },
+  {
+   "issue": "The public price board's 'Where your rupee goes' chart and the market table put household cans (₹60) next to MCX primary aluminium (₹347.50) and call it about 17%. Cans are scrap, not ingot. The pricing brief itself gives UBC lots at ₹120–290 and Bengaluru utensil scrap at ₹215–220, which would make the share about 20–50%. The chart also uses newspaper 'mill ₹14–15', a 2014 BBMP figure, while the pricing brief puts current mill-grade ONP at about ₹20.",
+   "fix": "Compare cans with UBC scrap asking prices, labelled as asking prices with source and date. Label the ₹10→11→12–13→14–15 newspaper chain as 'Bengaluru 2014 (BBMP study)', and add a separate 2026 point (door ₹10, mill-grade ONP about ₹20, Mumbai listing). Apply the same fix to the market table row."
+  },
+  {
+   "issue": "The plan contradicts itself on exchange data. The pricing section says reference prices are for admin and investors only and nothing from an exchange is shown publicly. Yet the prototype scope puts the MCX-derived 17% cans share on the public /prices/bengaluru page. The pricing brief's pilot rule is 'no exchange number on screen', and MCX forbids public display without an agreement. The market brief warns that showing factory prices to households may turn kabadiwalas against the platform.",
+   "fix": "Take every MCX, LME or BigMint figure, and every ratio calculated from one, off public and household screens. Keep them in the admin view. In the investor view, show them only as 'sourced citations', typed in by hand, with no live feed. Build the public 'rupee' chart only from dated surveys and Luma's own chain data."
+  },
+  {
+   "issue": "Competition-law risk has been dropped. The pricing brief flags that a platform-set floor and fallback, if competing kabadiwalas all copy it, can look like fixing buying prices under Competition Act s.3. The plan's floors (75% of the 28-day median), suggested fallbacks and 'best price' ranking are exactly what that warning covers. No risk or open question mentions it.",
+   "fix": "Add this as a risk and an open question for counsel. Present the floor as a household-protection minimum. Never show the fallback to kabadiwalas as a suggested price. Let shops set any price above the floor, and record that they priced it themselves."
+  },
+  {
+   "issue": "The national Social Security Code is missing from the compliance section. The legal and personas briefs cover the Social Security (Central) Rules, in force 8 May 2026: aggregators register on Shram Suvidha, upload workers within 45 days, report joins and exits in real time, and pay 1–2% of turnover capped at 5% of payouts. The plan covers only Karnataka. Its mitigation, 'pay stays off-platform', does not remove the risk, because the Karnataka Act covers work booked through an app, and the demo has Saathis accepting job cards in the app.",
+   "fix": "Add a Code on Social Security row to the compliance table. In the pilot, do not dispatch Saathi jobs through the app until counsel gives an opinion on 'aggregator' status under both laws. Until then, Saathis are onboarded and trained only, with 'jobs coming soon'. Keep the payout ledger in the design."
+  },
+  {
+   "issue": "SWM Rules 2026, r.17 imposes environmental compensation on anyone collecting or sorting without registration. The public-systems brief warns that making informal kabadiwalas visible to officials could expose them before they register. The plan's ward dashboards, Swachhatam exports and waste-picker registry exports carry no such warning.",
+   "fix": "Add this as a risk. City exports carry totals only. Share any business-level data with a city only with that business's consent and once it holds a registration number. Add a 'help me register' task for kabadiwalas and yards in onboarding."
+  },
+  {
+   "issue": "The plan leaves out liability for abetting EPR violations. The EPR brief notes that the used-oil and battery rules reach anyone who aids or abets a violation, and that a partner's over-claim becomes that partner's legal problem. The plan's EPR risk covers only 'calling records certificates'.",
+   "fix": "Add this as a risk. Records must be tamper-evident, as the append-only design already intends. Evidence packs should state capacity against claimed volume. Contracts with recyclers and PROs should say that Luma's records are supporting evidence, not certification."
+  },
+  {
+   "issue": "The plan treats the EPR exchange as live. The carbon section says certificates are 'traded on CPCB's exchange, which bars brokers'. The EPR and B2B briefs say MSTC built the exchange but it was still unapproved in June 2026, and certificates currently move directly on the CPCB portals.",
+   "fix": "Reword: 'a CPCB-authorised exchange (built by MSTC, approval pending as of Jun 2026) will host trading and bars brokers; today certificates transfer on the portals.' Keep 'read exchange prices via API' at scale, conditional on launch."
+  },
+  {
+   "issue": "The number of approved offset methods conflicts across briefs. The plan says 'none of India's 8 approved offset methods credits recycling', citing IETA from March 2025. The business brief cites the ICM portal listing 12 approved methods.",
+   "fix": "Say 'none of the approved ICM methodologies (8 per IETA, Mar 2025; the ICM portal now lists 12) covers material recycling', and check the portal before the deck is final."
+  },
+  {
+   "issue": "The plan misses an additionality problem for plastic credits. The carbon brief notes that under PWRM0001 Step 1, collecting plastic already covered by mandatory EPR is not additional unless compliance is below 50%. Yet the plan pitches a Bengaluru grouped plastic-credit project and shows 'credit-ready tonnes' next to $106–804/t pricing.",
+   "fix": "Add this as a risk. Mark credit-readiness per material with an additionality flag. Keep plastic-credit revenue out of the base case in investor material, and take it out of the impact counter's implied value."
+  },
+  {
+   "issue": "The credit-rights clause in the pilot is under-specified and risky. Low-literacy kabadiwalas and Saathis would be asked to assign environmental attributes with no defined revenue share, no lawyer-reviewed text, and no chosen project start date. The Verra 2-year validation clock runs from the start of collection.",
+   "fix": "Keep the clause out of the pilot until a lawyer approves a plain-language version in the user's language. It should be revocable until project registration, and include a published minimum share. Record the baseline declaration now, since that is harmless. Pick the project start date deliberately."
+  },
+  {
+   "issue": "Photo deletion conflicts with DPDP retention. The plan deletes household photos after 90 days. The legal brief notes that DPDP Rules r.8(3) requires personal data, traffic data and logs to be kept for at least one year, and that IT Rules require registration data to be kept for 180 days after closure.",
+   "fix": "Have counsel reconcile the two. A likely approach: delete the image at 90 days but keep a hash and metadata log for a year, and state this in the notice. Add a row to the compliance table."
+  },
+  {
+   "issue": "Escrow eligibility does not add up. The Phase 2 gate needs a 'first escrow trade through Route once the ₹40 lakh eligibility is met'. That limit is Luma's own GST-3B turnover, not trade volume. Every revenue stream is ₹0 until 2027, and society and yard plans at ₹500–5,000 a month will not reach ₹40 lakh by June 2027. Luma also needs GST registration for that turnover to show at all.",
+   "fix": "Set the Phase 2 escrow route to a bank escrow with a trustee (RazorpayX Escrow+ or CastlerX), or onboard each yard as its own merchant. Keep Route as a later option. Add 'Luma GST registration' and 'TAN' to Phase 1 actions."
+  },
+  {
+   "issue": "The legal review cannot happen before real users arrive. The compliance section says a lawyer and CA review the Rulebook before real users arrive, but Phase 0 ends 10 Oct and the pilot starts 13 Oct. The roadmap lists the CA and lawyer review as a pilot goal.",
+   "fix": "Either start the pilot with household pickups only (recorded, no B2B trades, no Saathi jobs, no credit clause) and add B2B trades after the review, or book the review for 6–12 Oct and make it a gate for pilot start."
+  },
+  {
+   "issue": "The prototype is far too big for the time available. There are 13 features, including a map with a capacity bar for pooled collection, PDF document packs, a 12-language standards page, a brand evidence view, a solar card, a Saathi quiz, help hubs with voice, and an AI estimate. On top of that come the Phase 0 UX fixes (button sizes, lakh formatting, contrast, voice in 3 languages), 13 demo scripts at 360×800 and a written A-to-Z test guide, all in about 9 working days. Voice clips in Kannada and Hindi also need review by native speakers.",
+   "fix": "Must-demo: sell flow with proof of pickup, lot passport (fixed as above), simulated trade timeline, investor dashboard, and admin verification with the price console. Seeded or static: the stock board as a list with a capacity number instead of a map, a static sample PDF, the standards page in English and Kannada plus JSON, the brand view as a read-only passport link, the solar card as one static card, and one help hub with a single Kannada clip. Defer the Saathi quiz to the pilot. Cut the demo scripts to about 6."
+  },
+  {
+   "issue": "The pilot's language order ignores the plan's own census figures. Telugu (14%) comes after Hindi (4.6%) and Urdu (13%), and is left out of the Phase 1 list ('Kannada, Tamil, Urdu, Hindi and English') even though personas list Telugu speakers. Urdu RTL testing is not scheduled either.",
+   "fix": "Order the pilot languages Kannada, Tamil, Telugu, Urdu, then Hindi/English, matched to the pilot wards. Add a native-speaker check of Urdu RTL layout before 13 Oct."
+  },
+  {
+   "issue": "The PWA cannot currently be installed. The help centre tells users to 'tap Install', but the design brief found the manifest lists only /logo.svg. Chrome needs 192 px and 512 px PNG icons before it offers installation. This is missing from Phase 0.",
+   "fix": "Add PNG and maskable icons, screenshots and shortcuts to manifest.ts in Phase 0, and test the install prompt on Chrome for Android."
+  },
+  {
+   "issue": "Demo seed data rules are missing. The legal brief says investor demos must use fictitious GSTINs, consent numbers and business names, never ones copied from the public XGN register. The plan names 'GreenLoop Polymers' and a 'Peenya yard' with no check that these are not real businesses.",
+   "fix": "Add a seed rule: GSTINs, consent numbers and names that are obviously fictitious, checked against XGN, MCA and Google. Put a 'Sample data' badge on names as well as on numbers."
+  },
+  {
+   "issue": "The weighing records risk being passed off as certified. The market brief warns that weights recorded in the app are not certified under Legal Metrology law, and that receipts must never be marketed as certified weights. The lead says 'confirmed weight', and the gate screen and evidence packs are pitched as proof.",
+   "fix": "Add this as a risk. Label receipts 'recorded weight on scale #ID (stamp valid until <date>)'. The stamped scale or weighbridge slip remains the legal instrument."
+  },
+  {
+   "issue": "The market size includes material Luma cannot reach. The ₹1.8–2.1 lakh crore figure ('Luma.Green sits on') counts about 25% imported ferrous scrap and about 7 Mt of imported recovered paper (the materials brief puts domestic collection at about 13 Mt, against the plan's 17 Mt).",
+   "fix": "Show the domestic share separately: roughly ₹1.2–1.3 lakh crore for ferrous at 75%, and paper at about 13 Mt. Or say 'reaching Indian mills, including imports'. Keep the 'our bottom-up floor' label."
+  },
+  {
+   "issue": "A local competitor is treated only as a partner. Hasiru Dala Innovations sells fair-trade, blockchain-traceable plastic to brands (Unilever, H&M) and has 327 supplier clients. The plan casts HDI only as a partner that supplies DWCCs and Saathis, while Luma plans to sell the same brand evidence.",
+   "fix": "Add a competitor or conflict row for HDI's traceable-plastic line. In partnership talks, settle who owns the brand relationship and how the data is shared before building brand evidence packs."
+  },
+  {
+   "issue": "The pilot has no decision on e-waste and batteries. The catalogue marks EWASTE-* and BATTERY codes as household-level cash items the AI can estimate, while an open question asks whether to exclude them. The legal briefs say e-waste may be collected only by registered entities and that battery handling needs authorised transport.",
+   "fix": "Decide now: hide A and Hz codes from the pilot's AI estimate and kabadiwala rate cards. Show 'we'll connect you to an authorised collector or brand take-back' instead."
+  },
+  {
+   "issue": "Some legal duties are left out of the compliance table: CERT-In 6-hour incident reporting and 180-day log retention; the IT Rules point that Arabic is not an Eighth-Schedule language, so binding terms for Arabic users must be English or Urdu; an 18+ confirmation for households; and income-tax TCS on scrap (s.394, 1% proposed to rise to 2%) with the manufacturing-declaration exemption. The TCS line is also missing from the ₹89,680 trade demo breakdown.",
+   "fix": "Add these rows. Add a scrap-TCS line to the simulated breakdown showing 'declaration given → ₹0'."
+  },
+  {
+   "issue": "Two service levels cannot be met by one founder. The support levels (8 AM–8 PM every day, 15-minute first reply, 10-minute safety callback) and the 12–24 h verification promise all fall on one person, while auto-accept lets bookings arrive at night. The risk is noted only 'before the pilot expands'.",
+   "fix": "Name a rota of at least 2 people before 13 Oct. Limit auto-accept to shop hours during the pilot. Publish service levels the team can actually meet."
+  },
+  {
+   "issue": "EPR for non-ferrous metal scrap, in force from 1 Apr 2026 according to the B2B brief (the EPR brief says it needs verification), is missing. Metals dominate the value of kabadiwala trade, but the plan's EPR and brand evidence covers plastics only.",
+   "fix": "Add an open question to verify the rule. If it is confirmed, add copper, aluminium and brass lots to the evidence-pack roadmap."
+  },
+  {
+   "issue": "Integration costs mix two providers. Razorpay Route is listed at 'about ₹20 per payment' for the virtual account, but ₹20 is Cashfree's price. The WebOTP '@luma.green #code' line may also push Kannada and Hindi OTPs into a second SMS segment, a cost the design brief flagged.",
+   "fix": "Quote per-provider prices, or say 'one aggregator, about 0.3%'. Check the length of the Unicode OTP template before submitting it for DLT approval."
+  }
+ ],
+ "unsupportedClaims": [
+  "Lead: one bale can be traced back to 'the individual household pickups it came from'. No brief supports physical identity at household level after pooling and baling, and the demo figures (14 receipts in a 2,000 kg PET trade) do not add up.",
+  "Lead: Luma's receipts are 'the missing evidence behind' the ₹2,384 crore case. That case involved circular invoicing of tungsten-carbide scrap by shell firms, not the household-to-kabadiwala chain.",
+  "'Household gets about 17% of the aluminium price for cans'. This compares can scrap with primary MCX aluminium; against UBC scrap (₹120–290) the share is about 20–50%.",
+  "Newspaper 'mill ₹14–15' in the 'Where your rupee goes' demo. This is 2014 BBMP data; the pricing brief puts current mill-grade ONP at about ₹20/kg.",
+  "'None of India's 8 approved offset methods'. The business brief cites 12 approved methodologies on the ICM portal.",
+  "'EPR certificates ... traded on CPCB's exchange, which bars brokers', stated as current. The exchange was still awaiting approval in June 2026.",
+  "'Luma.Green sits on at least ₹1.8–2.1 lakh crore a year'. The figure includes imported ferrous scrap (about 25%) and about 7 Mt of imported recovered paper.",
+  "'Paper adds about 17 Mt of recovered fibre'. The materials brief (IPPTA) puts domestic collection at about 13 Mt plus 7 Mt imported.",
+  "'No competitor connects household bookings, kabadiwala tools and yard-to-factory trade'. This holds only for the 18 platforms reviewed; Kabadiwalla Connect (Chennai) comes close.",
+  "'A Kannada-first app' as a differentiator. The briefs checked only competitors' iOS listings; Android language support was not verified.",
+  "'Mills will pay for supply that is sorted and traceable'. This is the brief's inference ('should pay'), not evidence.",
+  "'80–85% of Bengaluru's dry waste passes through informal hands', presented as current. The source is a 2014 study.",
+  "'119 of 198 DWCCs are still operating', stated without noting the conflicting 164 figure (Nov 2025).",
+  "'Razorpay Route ... about ₹20 per payment'. The ₹20 figure is Cashfree's virtual-account price.",
+  "UPI 0.4% merchant fee from 15 Oct 2026. It rests on one secondary news source with no NPCI circular cited.",
+  "E-way bill threshold 'over ₹50,000 in Karnataka' for intra-state movement. The source is ClearTax, and the legal brief lists it as an open question.",
+  "Karnataka gig law 'Platform registers within 45 days', cited to the PRS Bill page rather than the enacted Act or notified rules.",
+  "The 'Consent valid till 2031' and 'scale stamp checked' demo details imply admin checks on e-Mapan and XGN that are not yet built or seeded."
+ ]
+}

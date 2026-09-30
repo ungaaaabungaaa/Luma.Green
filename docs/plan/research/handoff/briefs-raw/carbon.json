@@ -1,0 +1,356 @@
+{
+ "topic": "carbon",
+ "headline": "India's compliance carbon market (CCTS) is expected to see its first trades around October 2026, but none of its 8 approved offset methodologies credits recycling. That leaves voluntary plastic credits as Luma's realistic credit route: 1 credit = 1 tonne of plastic, selling for $106–$804 on PCX, against a 2024 voluntary carbon average of $6.34/tCO2e. Every route needs per-lot dry weights from calibrated scales, invoices and receiver GRNs, and an unbroken chain of custody recorded from day one.",
+ "findings": [
+  {
+   "point": "India's compliance carbon market exists on paper but has not traded yet. First CCC trades are expected around October 2026.",
+   "detail": "The Carbon Credit Trading Scheme was notified on 28 Jun 2023 (S.O. 2825(E)) and amended in Dec 2023 (S.O. 5369(E)) to add an offset mechanism. The roles: BEE is administrator, Grid Controller of India (Grid-India) runs the registry, and CERC regulates trading. 1 CCC = 1 tCO2e. CERC's CCC Regulations were notified 27 Feb 2026 (Gazette 3 Mar 2026). Their rules: trading only on power exchanges, in monthly sessions; a floor and forbearance price band that CERC approves on BEE's proposal; sale bids capped at registry holdings; and a six-month bar after more than 3 defaults in a quarter. Banking is unlimited and borrowing is not allowed. An obligated entity that falls short pays twice the average CCC price, imposed by CPCB. No CCC price has been discovered yet. Carbon Pulse reports first compliance trades expected in Oct 2026, and CLII says the registry was not fully operational as of Nov 2025.",
+   "sourceUrls": [
+    "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294",
+    "https://www.khaitanco.com/sites/default/files/2026-03/ERGO_Carbon%20Credit%20Enter%20the%20Market_20%20March%202026.pdf",
+    "https://www.ieta.org/uploads/wp-content/Resources/Busines-briefs/2025/IETA_Business_Brief-India_July_final-one.pdf",
+    "https://carbon-pulse.com/365604/",
+    "https://clii.in/2025/12/04/the-indian-carbon-market-roadmap/"
+   ]
+  },
+  {
+   "point": "The obligated sectors include several of Luma's future buyers: pulp & paper, aluminium (including secondary aluminium), textiles and petrochemicals. Traceable scrap therefore has indirect compliance value.",
+   "detail": "Final GHG emission-intensity targets were notified in two rounds. On 8 Oct 2025: aluminium, cement, chlor-alkali and pulp & paper (282 plants). On 16 Jan 2026: refineries, petrochemicals, textiles and secondary aluminium. Iron & steel and fertiliser were still pending at ICAP's update. About 740 entities across nine sectors are expected. Compliance years are FY2025-26 and FY2026-27 against a FY2023-24 baseline, with the reduction back-loaded 40%/60%. Pulp & paper cuts go up to 15% over two years. Offsets cannot be used for compliance. The scheme scores each plant's own gate-to-gate intensity, not its scrap supplier. Even so, more recovered fibre, secondary aluminium or recycled PET lowers a buyer's intensity. Documented, lot-level recycled input is therefore a selling point for Luma's yards and recyclers.",
+   "sourceUrls": [
+    "https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme",
+    "https://www.ieta.org/uploads/wp-content/Resources/Busines-briefs/2025/IETA_Business_Brief-India_July_final-one.pdf"
+   ]
+  },
+  {
+   "point": "None of the 8 approved Indian offset methodologies credits recycling or material recovery. The only waste-sector ones deal with landfill methane.",
+   "detail": "Under the offset mechanism, any non-obligated entity can register a project that started on or after 1 Jan 2025, in one of ten approved sectors. Phase I covers energy, industries, agriculture, waste handling and disposal, forestry and transport. Phase II adds fugitive emissions, construction, solvent use and CCUS. IETA lists the 8 methodologies approved in March 2025: grid renewable power, electrolytic hydrogen, industrial energy efficiency and fuel switching, hydrogen from biogas methane, landfill methane recovery, flaring or use of landfill gas, manure methane at households and small farms, and mangrove afforestation. Other summaries name RE with storage, offshore wind and compressed biogas instead. Either way, no methodology covers material recovery. A project may not be registered with another carbon market at the same time; India's Green Credit Programme is the only exception. I found no Karnataka-specific carbon rule. Karnataka matters through KSPCB consents and Bengaluru's informal collection chain.",
+   "sourceUrls": [
+    "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294",
+    "https://www.ieta.org/uploads/wp-content/Resources/Busines-briefs/2025/IETA_Business_Brief-India_July_final-one.pdf",
+    "https://clii.in/2025/12/04/the-indian-carbon-market-roadmap/"
+   ]
+  },
+  {
+   "point": "India does not currently authorise recycling credits for international transfer. Its Article 6.4 list (7 Jun 2024) has 14 activities, and none is recycling.",
+   "detail": "The MoEFCC office memorandum lists: renewable energy with storage, solar thermal, offshore wind, green hydrogen, compressed biogas, fuel-cell mobility, high-end energy efficiency, sustainable aviation fuel, best available technology in hard-to-abate sectors, ocean energy, HVDC with renewables, clean cooking (government or PPP only), green ammonia and CCUS. The list holds for an initial 3 years. According to IETA, CCCs from activities on India's Article 6.2 list can seek authorisation with a corresponding adjustment, and non-authorised credits may still be sold for voluntary use. Any recycling credit from India will therefore be a non-authorised voluntary credit for now. That works for corporate contribution claims but is weaker for buyers who need corresponding adjustments.",
+   "sourceUrls": [
+    "https://moef.gov.in/uploads/pdf/article_6.4.pdf",
+    "https://www.ieta.org/uploads/wp-content/Resources/Busines-briefs/2025/IETA_Business_Brief-India_July_final-one.pdf"
+   ]
+  },
+  {
+   "point": "Voluntary carbon methodologies for recycling exist but are narrow: Verra VMR0007 covers plastics, container glass, aluminium and steel; Gold Standard 448 covers metals, alloys and minerals. Neither covers paper.",
+   "detail": "VMR0007 v1.0 has been active since 4 Sep 2023. It is used together with CDM AMS-III.AJ and adds a discount factor for the uncertain displacement of virgin material. It covers HDPE, LDPE, PET, PVC, PP, container glass cullet, aluminium and steel. AMS-III.AJ on its own closed to new VCS projects on 4 Sep 2023. Gold Standard 448 v1.0 (2 May 2025, developed by South Pole) credits metals, alloys and minerals recovered from municipal solid waste. Its main terms: micro projects ≤10,000 tCO2e/yr and small ≤60,000; crediting for up to 15 years, starting at most 2 years before design certification; crediting stops once a legal mandate takes effect; a default baseline adjustment of 99% that falls 1 point a year; and only recovery that is above legal mandates and not common practice. It monitors weighed quantities cross-checked with invoices, electricity (meter or bills), fuel, and transport emissions per route. It also needs composition and quality evidence to set a substitution factor.",
+   "sourceUrls": [
+    "https://verra.org/methodologies/vmr0007-revision-to-ams-iii-aj-recovery-and-recycling-of-materials-from-solid-wastes-v1-0/",
+    "https://globalgoals.goldstandard.org/standards/448_V1.0_Recovery-and-recycling-of-material-from-solid-wastes.pdf"
+   ]
+  },
+  {
+   "point": "Plastic credits, priced per tonne of material, are the most relevant voluntary instrument (Verra WCC/WRC, PCX, Plastic Bank), but the market is small.",
+   "detail": "Verra's Plastic Program issues Waste Collection Credits and Waste Recycling Credits. Each equals 1 tonne collected or recycled above the baseline, under PWRM0001 v1.1 (30 Jun 2022) and PWRM0002 v1.1. Verra's page cites 40+ projects, 40,000+ credits and 25+ countries, including Project Hara Kal in Kerala; baselines are reset every 7 years. PCX's Plastic Pollution Reduction Standard v8 (5 Jun 2024) made third-party VVBs mandatory for both registration and issuance, dropped landfill activities, and paused 'net zero plastic' claims. PCX reported 29 projects in 7 markets and 87,842 t diverted as of 31 Mar 2024; its credits can be transferred once, then are retired. Plastic Bank defines a credit per traceable kilogram. It pays collectors the cash market rate plus a digital bonus and tiered social benefits, issues one claim ID per purchaser, and runs annual third-party audits.",
+   "sourceUrls": [
+    "https://verra.org/programs/plastic-waste-reduction-standard/",
+    "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
+    "https://www.pcxsolutions.org/post/pcx-solutions-releases-updated-plastic-credit-standard-mandates-third-party-verification",
+    "https://www.pcxsolutions.org/plastic-crediting-process",
+    "https://plasticbank.com/faq/"
+   ]
+  },
+  {
+   "point": "On prices, plastic credits pay far more per tonne of plastic than carbon credits do.",
+   "detail": "Ecosystem Marketplace (SOVCM 2025) reports that the 2024 voluntary carbon market traded 84.4 MtCO2e for $535.1M, an average of $6.34/tCO2e (2023: $6.71). By category: waste disposal $6.72 on 4.8 Mt (volume +226%, driven by landfill gas), renewable energy $2.67, energy efficiency and fuel switching $3.05, household devices $7.30. A retail listing for a PET-recycling carbon credit (Greentech, Romania, Gold Standard) asks $29/tCO2e. PCX plastic credits list at $106–$804 per tonne of plastic, about ₹9–70/kg at an assumed ₹87/US$. At $6.72/tCO2e, a material would have to avoid about 15.8 tCO2e per tonne just to match the lowest plastic-credit price. For plastics the plastic credit therefore dominates; carbon credits matter mostly for metals. CCC prices under CCTS have not been discovered yet.",
+   "sourceUrls": [
+    "https://3298623.fs1.hubspotusercontent-na1.net/hubfs/3298623/SOVCM%202025/Ecosystem%20Marketplace%20State%20of%20the%20Voluntary%20Carbon%20Market%202025.pdf",
+    "https://marketplace.goldstandard.org/products/plastic-recycling-romania-europe",
+    "https://www.pcxsolutions.org/post/pcx-solutions-releases-updated-plastic-credit-standard-mandates-third-party-verification"
+   ]
+  },
+  {
+   "point": "What verifiers check under Verra's plastic methodologies: dispatch-level dry weights on calibrated scales, cross-checked against invoices, payment receipts and the receiver's goods receipt note (GRN).",
+   "detail": "PWRM0001 Table 3: plastic sent to each destination is weighed dry at the collection facility before dispatch, at the end destination, or both. It is recorded every time material leaves and cross-checked with invoices, payment receipts and GRNs. Weighbridges are calibrated to the manufacturer's specification or at least every 3 years. Section 9.3 requires written procedures for each measurement task, electronic logging, version control, trained staff and data-integrity checks, with archives kept for at least 2 years after the crediting period. PWRM0002 adds: sorted output by material type for each batch (at least daily); a per-batch list of recycling inputs, aggregated monthly; recycled output weighed after the final stage, after drying if washed, and cross-checked with sales receipts; and removal of hazardous material. PCX chain-of-custody records need control IDs, weights with the weighing-equipment identifier (to trace calibration), feedstock type (flexibles, rigids, PET, LDPE…), entity names and signatures, and dates of receipt, pre-processing and end-of-waste completion. None of these texts explicitly requires GPS or photos; both are cheap supporting evidence.",
+   "sourceUrls": [
+    "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
+    "https://verra.org/wp-content/uploads/2022/01/PWRM0002_Plastic-Waste-Recycling-Methodology_Revision_Clean.pdf",
+    "https://www.pcxsolutions.org/plastic-crediting-process"
+   ]
+  },
+  {
+   "point": "India's mandatory plastic EPR can make collection non-additional, material by material. Every lot therefore needs a material type and a flag showing whether an EPR certificate was claimed.",
+   "detail": "PWRM0001 Step 1 (regulatory surplus) requires listing all relevant laws, including EPR schemes. Material types whose collection is mandatory are excluded unless enforcement is weak (compliance below 50%) or the project exceeds the mandated threshold. Its applicability conditions also require that: the sources are identifiable and would otherwise be dumped, openly burned or incinerated without energy recovery; and the output goes to an authorised destination that complies with local regulations. For Luma, that means checking the receiver's pollution-board consent. Khaitan notes that India's CCC rules say nothing about double counting with RECs. The same gap exists between CPCB EPR certificates, plastic credits and carbon credits on a single tonne.",
+   "sourceUrls": [
+    "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
+    "https://www.khaitanco.com/sites/default/files/2026-03/ERGO_Carbon%20Credit%20Enter%20the%20Market_20%20March%202026.pdf"
+   ]
+  },
+  {
+   "point": "Timing and ownership rules decide whether pilot data can ever earn credits. Credit rights must be signed from day one, and validation completed within 2 years of the declared project start.",
+   "detail": "Verra Plastic Standard v1.0 (10 Feb 2021) sets these rules. The project start date is the day collection or recycling began. Projects starting on or after 1 Jan 2022 must complete validation within 2 years (4 years if they use a brand-new methodology). The crediting period is 7 years, renewable twice (21 years in total), or 10 years fixed. A grouped project can add new instances later, for example each kabadiwala or yard. Each new instance must lie inside the designated geographic area, meet the eligibility criteria and have ownership evidence dating from its own start; it earns credits from the next verification period. Ownership evidence means enforceable, irrevocable agreements or a contractual alliance. Records must be kept for at least 2 years after the crediting period ends. ICM offset projects need a start on or after 1 Jan 2025. GS 448 crediting may start up to 2 years before certification. A mid-October 2026 Bengaluru pilot fits all of these windows only if the paperwork starts now.",
+   "sourceUrls": [
+    "https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf",
+    "https://clii.in/2025/12/04/the-indian-carbon-market-roadmap/",
+    "https://globalgoals.goldstandard.org/standards/448_V1.0_Recovery-and-recycling-of-material-from-solid-wastes.pdf"
+   ]
+  },
+  {
+   "point": "The standards reward visibly better pay for informal workers, which gives Luma a direct design brief for revenue sharing with kabadiwalas and Saathis.",
+   "detail": "Verra Plastic Standard §3.14 requires: at least the regionally prevailing industry wage, while striving for a living wage; no withholding of wages as discipline; paid overtime; efforts to exclude under-18s, with strict conditions where they do work; and health and safety measures including PPE. Where a project displaces informal income, it must create alternatives that pay the same or more. Verra's program also offers labels for increased wages and safe work. PCX's qualitative additionality looks for higher wages or income, social security beyond the legal minimum, and inclusion of vulnerable groups. Plastic Bank's two-tier pay (cash at market rate, plus a digital bonus and social benefits) maps directly onto Luma's cash/UPI weigh-and-pay flow. Bengaluru already has a traceable-plastic player: Hasiru Dala Innovations sells blockchain-enabled, fully traceable post-consumer plastic under WFTO Fair Trade, with 327 supplier clients. It is a potential pilot partner or competitor.",
+   "sourceUrls": [
+    "https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf",
+    "https://verra.org/programs/plastic-waste-reduction-standard/",
+    "https://www.pcxsolutions.org/post/pcx-solutions-releases-updated-plastic-credit-standard-mandates-third-party-verification",
+    "https://plasticbank.com/faq/",
+    "https://hasirudalainnovations.com/news-detail/2"
+   ]
+  },
+  {
+   "point": "The SWM Rules 2026 create a national waste-tracking portal that is due about now. Luma's ledger should feed it rather than duplicate it.",
+   "detail": "The SWM Rules 2026 took effect on 1 Apr 2026. CPCB must launch a centralised online platform within six months, around 1 Oct 2026. It will track generation, collection, transport, processing and landfilling down to district level, based on self-reporting, and operating without registration draws fines. CSTEP, a Bengaluru think tank, says the rules fail to institutionalise informal workers. It recommends GPS-linked tracking, cross-verification and third-party audits, which are the same controls credit verifiers want. If one lot ledger produces both the portal exports and the VVB data room, nobody has to enter data twice.",
+   "sourceUrls": [
+    "https://cstep.in/solid-waste-management-rules-2026-bridging-policy-design-and-system-readiness/"
+   ]
+  },
+  {
+   "point": "Internal gap: the v1 schema lets the platform mint carbon credits, and the privacy plan deletes photos after 90 days. Both clash with how credits actually work.",
+   "detail": "/Users/syedabdulmuqeeth/Developer/Luma.Green/convex/schema.ts defines carbonCredits minted from a settled trade, with statuses draft → pending_verification → issued → listed → transferred → retired, plus a creditTransfers table. Under every standard reviewed, only a registry issues credits, after third-party verification by a VVB or ACVA. The registries are Verra, Gold Standard, PCX, or BEE through the Grid-India registry. Luma can hold 'estimated' and 'credit-ready' quantities and mirror registry serial numbers, but it cannot create credits. /Users/syedabdulmuqeeth/Developer/Luma.Green/docs/operations/data-protection.md deletes household scrap photos after 90 days, while MRV records must survive at least 2 years after the crediting period. The fix is to make dispatch weigh slips, invoices and GRNs the evidence, and keep household data out of MRV. /Users/syedabdulmuqeeth/Developer/Luma.Green/docs/product/kabadiwala.md weighs household scrap in half-kilo steps. That is fine for payment, because PWRM0001 lets the credited weight be taken at dispatch.",
+   "sourceUrls": [
+    "https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf",
+    "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf",
+    "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Lot passport with a credit-readiness checklist (investor demo)",
+   "why": "Each seeded demo lot shows its journey household → kabadiwala → yard → recycler on a map. Alongside: weights, dates, weigh-slip photos, invoice and GRN, plus a checklist of the evidence each standard needs (Verra plastic, PCX, GS 448) and what is missing. This is what a verifier samples: PWRM0001 dispatch weights cross-checked with invoices and GRNs, and PCX chain-of-custody completeness. It makes 'credits later' a visible asset without claiming any credits now.",
+   "priority": "prototype-now",
+   "users": [
+    "investors",
+    "admin",
+    "recyclers",
+    "manufacturers"
+   ]
+  },
+  {
+   "feature": "Honest impact counter that separates estimated, credit-ready and issued",
+   "why": "Replace the v1 idea of platform-minted carbonCredits (convex/schema.ts) with three numbers. First, kg diverted by material. Second, indicative tCO2e from a dated, sourced, admin-editable factor table, frozen per lot the way prices are. Third, credit-ready tonnes, meaning lots with complete evidence. Only registry serials (Verra, GS, PCX, or BEE via Grid-India) are ever called credits. This keeps the investor story accurate and avoids exposure to greenwashing complaints.",
+   "priority": "prototype-now",
+   "users": [
+    "investors",
+    "admin",
+    "manufacturers"
+   ]
+  },
+  {
+   "feature": "Green-bonus preview for kabadiwalas and Saathis",
+   "why": "Show the revenue-share rule as an effective-dated admin table, like the price floors. It splits net credit revenue between kabadiwala, Saathi, household points and Luma. Add an illustrative per-kg bonus at low and high prices ($106–$804/t), clearly marked 'not yet earned'. Verra and PCX reward visibly higher collector income, and Plastic Bank's cash-plus-bonus model fits Luma's UPI flow. This preview is also how pilot users will be persuaded to assign their credit rights.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwalas",
+    "saathis",
+    "investors",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Append-only lots and movements with two-sided receipts and a sorting mass balance",
+   "why": "The sender records the weight at dispatch; the receiver confirms its own weight (GRN) and the invoice. Yard sorting runs record input lots → graded output lots plus reject weight. Differences above a tolerance go to the admin. This meets PWRM0001/0002 monitoring, reuses the planned inventoryMovements with sort_out/sort_in, and blocks double claims.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "recyclers",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Scale registry and weigh-slip capture at dispatch",
+   "why": "Each org lists its scales: ID, type, capacity, and Legal Metrology stamping or calibration date. Each dispatch picks a scale and attaches a photo of the display or weighbridge ticket, and lots weighed on out-of-date scales are marked not credit-ready. Verra requires calibration at least every 3 years, and PCX requires a weighing-equipment identifier. Because PWRM0001 allows measuring at dispatch, doorstep half-kilo weighing can stay as it is.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "recyclers"
+   ]
+  },
+  {
+   "feature": "Credit rights, revenue share and a baseline declaration in onboarding",
+   "why": "Add a versioned clause in which each kabadiwala, yard, recycler and Saathi assigns the environmental attributes of Luma-recorded volume to Luma for pooled registration, in return for the published share. Add a declaration of the last 12–36 months' volume by material. Verra needs enforceable ownership evidence held from each instance's start date, and sets the capacity-addition baseline from the prior 3 years. Without these at pilot start, the pilot volume is lost for crediting.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "recyclers",
+    "saathis",
+    "admin"
+   ]
+  },
+  {
+   "feature": "One claim per lot, locked across EPR certificates, plastic credits and carbon credits",
+   "why": "Give each lot a claim status: none, EPR certificate number, reserved for a program, registry serial, or retired. ICM forbids concurrent registration with another carbon market, PCX credits transfer only once, and PWRM0001 treats materials under mandatory EPR as non-additional. India's rules are silent on double counting across instruments, so Luma has to enforce it itself.",
+   "priority": "pilot",
+   "users": [
+    "recyclers",
+    "admin",
+    "manufacturers"
+   ]
+  },
+  {
+   "feature": "Privacy-safe MRV evidence store with long retention",
+   "why": "In any MRV record, keep households pseudonymous and their location at ward or geohash-6 level. Keep weigh slips, invoices, GRNs, bale photos and SOP versions for at least 2 years after the crediting period (up to about 23 years). Store them apart from household photos, which keep their 90-day deletion. This meets Verra's records rules and DPDP-style data minimisation.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Work and pay log for Saathis and kabadiwala staff",
+   "why": "For each job, record who worked, hours, kg handled, pay, age-18 confirmation, and PPE and training. This is the evidence for Verra §3.14 safeguards: regional prevailing wage, a living-wage aim, no withheld wages, paid overtime and under-18 limits. It also meets PCX's income criteria and gives the payout base for revenue sharing.",
+   "priority": "pilot",
+   "users": [
+    "saathis",
+    "kabadiwalas",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Bengaluru grouped plastic-credit project, alone or with a partner developer",
+   "why": "Register the kabadiwala and yard network as one Verra Plastic Program grouped project: PWRM0001 for collection, PWRM0002 at partner recyclers, with each org added as an instance. Choose the start date deliberately, since validation must follow within 2 years. Consider partnering with an experienced Bengaluru player such as Hasiru Dala Innovations, which already sells traceable plastic, to reach first issuance faster. For plastics, per-tonne plastic credits pay far more than carbon credits.",
+   "priority": "scale",
+   "users": [
+    "admin",
+    "recyclers",
+    "yards",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Carbon-credit track for metals and for CCTS buyers",
+   "why": "Use the captured transport, energy and quality data to quantify carbon under GS 448 (metals) or VMR0007 (plastics, glass, aluminium, steel). Give obligated buyers (pulp & paper, aluminium including secondary, textiles, petrochemicals) documentation packs for their recycled inputs. Watch BEE for a recycling methodology in the Phase I waste sector.",
+   "priority": "scale",
+   "users": [
+    "recyclers",
+    "manufacturers",
+    "yards",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Export to CPCB's SWM 2026 portal and the EPR portals from the same ledger",
+   "why": "The SWM Rules 2026 portal, due around 1 Oct 2026, tracks collection, transport and processing. Feeding both compliance reports and verifier data rooms from one ledger avoids double entry, and makes Luma hard for yards and recyclers to leave.",
+   "priority": "scale",
+   "users": [
+    "yards",
+    "recyclers",
+    "admin"
+   ]
+  }
+ ],
+ "artifactMarkdown": "### Credit-ready ledger: fields to capture per transaction\n\n**Transactions:**\n- **T1** household pickup or drop-off (household → kabadiwala)\n- **T2** dispatch between businesses (kabadiwala → yard → recycler → manufacturer)\n- **T3** sorting run at a yard\n- **T4** processing batch at a recycler\n- **M** master data, captured once per org or person and referenced by every transaction\n\n**Standards:**\n- **V-PC** Verra PWRM0001 v1.1 (plastic collection)\n- **V-PR** Verra PWRM0002 v1.1 (plastic recycling)\n- **V-PS** Verra Plastic Standard v1.0\n- **V-7** Verra VMR0007 with CDM AMS-III.AJ (carbon credits for HDPE, LDPE, PET, PVC, PP, container glass, aluminium, steel)\n- **GS448** Gold Standard 448 v1.0 (carbon credits for metals, alloys, minerals)\n- **PCX** PCX Plastic Pollution Reduction Standard v8\n- **ICM** India's CCTS offset mechanism\n- **SWM26** Solid Waste Management Rules 2026 (CPCB portal)\n\n| # | Field (how to store) | When | Needed by | Why it matters |\n|---|---|---|---|---|\n| 1 | Lot ID (immutable UUID) plus parent lot IDs | T1–T4 | PCX (control IDs; the verifier checks the full chain of custody) · V-PC (material reaches an end destination directly or through intermediaries) | Links every kilo from doorstep to recycler; one claim per lot |\n| 2 | Event timestamps: collected, weighed, dispatched, received, processed (server and device time) | T1–T4 | V-PC (record every dispatch) · V-PR (each batch, at least daily) · PCX (dates of receipt, pre-processing, end-of-waste) · V-PS (project start = first collection; validate within 2 years) · ICM (project start on or after 1 Jan 2025) | Crediting windows and deadlines are set by dates |\n| 3 | Material code mapped to a standard category: polymer (PET, HDPE, LDPE, PP, PVC, multilayer), form (rigid, flexible), paper grade, metal, glass cullet, EPR plastic category | T1–T4 | V-PC Step 1 (additionality tested per material type) · V-PR (material type i) · V-7 (eligible materials) · GS448 (material type i) · PCX (feedstock type) | Eligibility and additionality are decided material by material; paper has no active VCS or GS carbon methodology found |\n| 4 | Gross, tare, deduction for moisture and contamination, net dry weight (integer grams) | T2–T4 (T1 for payment only) | V-PC (dry weight = weight minus non-plastic matter) · V-PR (washed plastic weighed after drying) · PCX (kg or t claimed) | This is the credited quantity |\n| 5 | Scale ID, type (platform scale or weighbridge), capacity, Legal Metrology stamping or calibration date and certificate | M, used at T2–T4 | V-PC and V-PR (calibrate to the maker's specification or at least every 3 years) · PCX (weighing-equipment identifier to trace calibration) | Weights from an out-of-date scale cannot be credited |\n| 6 | Weigh-slip or weighbridge ticket number, plus a photo of the slip or scale display (stored with a file hash) | T2–T4 | V-PC (direct measurement cross-checked with records) · PCX (documents the verifier reviews); the photo is supporting evidence, not named in the texts | Lets a verifier sample-check remotely |\n| 7 | Sender org and receiver org (verified IDs); the receiver's goods receipt note (GRN) with its own weight and date | T2 | V-PC (weights cross-checked with invoices, payment receipts and GRNs from the end destination) · PCX (entity names, authorised signatures) | Two-sided confirmation is stronger than self-reporting and catches diversion or inflated weights |\n| 8 | Invoice or receipt number, rate per kg, total, payment method and UPI reference (or cash) | T1–T2 | V-PC (invoice records, receipts of payment) · GS448 (weighed mass cross-checked with invoices or receipts) | The money trail corroborates the weight trail |\n| 9 | Receiver's authorisations: pollution-board consent number, category and validity dates; SWM or CPCB registration; EPR processor registration | M, checked at each T2 | V-PC applicability 6–7 (authorised or licensed receiver that complies with local regulations) · SWM26 (registration; fines for operating without it) | Material sent to an unauthorised unit cannot be credited |\n| 10 | Source type: household doorstep, household drop-off, shop or office, bulk generator, street or dump collection by a Saathi | T1 | V-PC applicability 3 (sources identifiable and otherwise dumped, openly burned or incinerated without energy recovery) | The core of the additionality case |\n| 11 | Location: households at ward or geohash-6 only; org sites as exact lat/lng; device GPS and accuracy at each weighing | T1–T4 | V-PS (grouped-project instances inside a designated geographic area) · GS448 (transport distance per route) · SWM26 (district-level tracking); GPS itself is not mandated | Cheapest proof of where; coarse for household privacy |\n| 12 | Transport: vehicle type, fuel, distance (from GPS or maps), trip ID | T2 | GS448 (transport emissions of waste and recyclates, per route) | Subtracted from carbon credits |\n| 13 | Sorting run: input lot IDs and weights → output lots per grade, reject weight, hazardous items removed | T3 | V-PR (sorted output by material type, each batch, at least daily; hazardous material removed) · PCX (pre-processing date) | The mass balance proves what was actually recyclable |\n| 14 | Processing batch: input lots, output product (flakes, granules, bales, ingots), output weight after the final stage, sale invoice to the final buyer | T4 | V-PR (inputs listed per batch; output weighed after the final stage and cross-checked with sales receipts) · GS448 (recyclate used downstream; downstream processing for leakage) | Recycling credits count output, not input |\n| 15 | Quality: grade, contamination %, lab report if any | T3–T4 | GS448 (composition and quality set the substitution factor) · V-7 (discount for uncertain displacement of virgin material) | Decides how much virgin material counts as displaced |\n| 16 | Facility energy: monthly kWh from meter or bill; diesel litres | M, monthly (yards, recyclers) | GS448 (electricity and fuel consumption) | Project emissions are deducted |\n| 17 | Work record per job: Saathi or worker ID, role, hours, kg handled, pay, age-18 confirmation, PPE and training | T1–T3 | V-PS §3.14 (at least the regional prevailing wage, no withheld wages, overtime paid, limits under 18, health and safety) · PCX (higher wages, social security) | Safeguards evidence and the base for revenue-share payouts |\n| 18 | Credit-rights consent: terms version accepted, timestamp, revenue-share rule version | M, at onboarding | V-PS §3.4 (enforceable, irrevocable agreement or contractual alliance) · V-PS grouped projects (ownership held from each instance's start date) | Without it the volume cannot be registered later |\n| 19 | Claim status: none, EPR certificate number, reserved for a program, registry serial, retired | T2–T4 | ICM (no concurrent registration with another carbon market; Green Credit Programme excepted) · PCX (one transfer, then retired) · V-PC Step 1 (materials under mandatory EPR are not additional unless compliance is below 50%) | Blocks double counting across EPR, plastic and carbon credits |\n| 20 | Baseline: each kabadiwala's and yard's pre-Luma monthly volume by material, with any evidence | M, at onboarding | V-PC Table 2b (capacity-addition baseline = maximum collection in the 3 years before; at least 1 year of data) | Only volume above the baseline is credited |\n| 21 | Emission factor used (value, unit, source, version), frozen on the lot and shown as an estimate | T2–T4 | Luma's own rule (factors frozen like prices) · V-7 and GS448 recompute at verification (GS448 default baseline adjustment 99%, falling 1 point a year) | Honest investor numbers that never restate history |\n| 22 | Audit trail: append-only rows, edit log (who, when, before, after), app version, file hashes; retained at least 2 years after the crediting period | all | V-PC §9.3 (electronic records, version control, QA/QC, SOPs, trained staff) · V-PS §3.17 (keep records 2+ years after the crediting period, about 23 years for a 21-year Verra plastic project) | This is what a verifier audits |\n\n**Notes**\n- Credits are counted at dispatch (T2) on a calibrated scale. Doorstep weights (half-kilo steps today) pay households and do not need to meet MRV standards.\n- MRV exports never include a household's name, phone, exact address or photos. Household photos keep their 90-day deletion.\n- Nothing above is a credit until a registry issues a serial number. Until then, show \"estimated\" and \"credit-ready\" quantities only.",
+ "risks": [
+  "There is no Indian compliance route for recycling yet. None of the 8 ICM offset methodologies covers material recovery, offsets cannot be used for compliance, and CCC prices have not been discovered. Any 'Indian carbon credit' pitch for recycling is speculative until BEE adds a methodology.",
+  "Plastic-credit demand is thin and contested. Verra's program shows about 40,000 credits across 40+ projects worldwide, PCX prices span $106–$804/t, and PCX has paused 'net zero plastic' claims. Brand demand could stall.",
+  "Double counting: the same tonne could earn a CPCB EPR certificate, a plastic credit and a carbon credit. Under Verra, mandatory EPR can also make plastic collection non-additional.",
+  "Calling platform estimates 'credits', as the v1 carbonCredits table does, could mislead investors and buyers and draw misrepresentation or greenwashing complaints. This still needs checking against India's consumer-protection guidance on environmental claims.",
+  "Weight fraud would sink a verification: inflated weights, re-weighing the same bale, fake GRNs or uncalibrated scales. The defences are two-sided receipts, mass balance, calibration checks and anomaly alerts.",
+  "Privacy: keeping household GPS, addresses or photos for the long MRV retention period conflicts with DPDP minimisation and Luma's 90-day photo rule. Households have to stay out of MRV records.",
+  "Timing: Verra plastic projects must validate within 2 years of the declared start date, and ICM projects need a start on or after 1 Jan 2025. Choosing the wrong start date or missing the window forfeits early volume.",
+  "Social risk: if credit revenue stays with Luma or the yards instead of reaching kabadiwalas and Saathis, projects fail Verra's safeguards and the impact story collapses. SWM 2026 registration may also shut out unregistered informal collectors.",
+  "Cost: verifier audits and registry fees are largely fixed per verification. A handful of pilot testers will not produce enough tonnage to pay for them; quotes are needed."
+ ],
+ "openQuestions": [
+  "Will BEE add a material-recovery or recycling methodology to the ICM offset mechanism (waste is a Phase I sector), and when?",
+  "What floor and forbearance prices will CERC approve for CCCs, and will offset CCCs ever count toward compliance?",
+  "Should Luma be the project proponent of a Verra grouped plastic project, or partner with an existing developer such as Hasiru Dala Innovations in Bengaluru?",
+  "What share of net credit revenue will kabadiwalas, yards and Saathis accept for assigning their credit rights, and should it be paid per kg after issuance or advanced earlier?",
+  "Can a tonne that generated a CPCB EPR certificate also earn a Verra WRC or WCC? This needs a legal opinion and a verifier's view.",
+  "Is paper or cardboard creditable under any active methodology? VMR0007 and GS 448, as read here, do not cover it.",
+  "What does a verification cost in India, and how many tonnes a year does it take for plastic credits to pay?",
+  "What will CPCB's SWM 2026 portal require of informal aggregators such as kabadiwalas, and can Luma report on their behalf?",
+  "Will a verifier accept ward- or geohash-level household location as evidence of an identifiable source?"
+ ],
+ "sources": [
+  {
+   "title": "BEE: Carbon Credit Trading Scheme / Indian Carbon Market (notifications, offset sectors, ACVA)",
+   "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294"
+  },
+  {
+   "title": "ICAP: India notifies emission intensity targets for nine sectors under CCTS",
+   "url": "https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme"
+  },
+  {
+   "title": "IETA Business Brief: India's Carbon Credit Trading Scheme (July 2025)",
+   "url": "https://www.ieta.org/uploads/wp-content/Resources/Busines-briefs/2025/IETA_Business_Brief-India_July_final-one.pdf"
+  },
+  {
+   "title": "Khaitan & Co ERGO: Carbon Credits Enter the Market, CERC CCC Regulations 2026",
+   "url": "https://www.khaitanco.com/sites/default/files/2026-03/ERGO_Carbon%20Credit%20Enter%20the%20Market_20%20March%202026.pdf"
+  },
+  {
+   "title": "Carbon Pulse: India to begin trading compliance carbon credits by Oct 2026",
+   "url": "https://carbon-pulse.com/365604/"
+  },
+  {
+   "title": "Climate and Law Initiative India: The Indian Carbon Market Roadmap (Dec 2025)",
+   "url": "https://clii.in/2025/12/04/the-indian-carbon-market-roadmap/"
+  },
+  {
+   "title": "MoEFCC Office Memorandum: List of activities under Article 6.4 (7 Jun 2024)",
+   "url": "https://moef.gov.in/uploads/pdf/article_6.4.pdf"
+  },
+  {
+   "title": "Verra: Plastic Waste Reduction Standard (program page)",
+   "url": "https://verra.org/programs/plastic-waste-reduction-standard/"
+  },
+  {
+   "title": "Verra: Plastic Standard v1.0 (10 Feb 2021)",
+   "url": "https://verra.org/wp-content/uploads/2021/02/Plastic-Waste-Reduction-Standard-v1.0.pdf"
+  },
+  {
+   "title": "Verra: PWRM0001 Plastic Waste Collection Methodology v1.1",
+   "url": "https://verra.org/wp-content/uploads/2022/06/PWRM0001_Plastic-Waste-Collection-Methodology-v1.1.pdf"
+  },
+  {
+   "title": "Verra: PWRM0002 Plastic Waste Recycling Methodology v1.1",
+   "url": "https://verra.org/wp-content/uploads/2022/01/PWRM0002_Plastic-Waste-Recycling-Methodology_Revision_Clean.pdf"
+  },
+  {
+   "title": "Verra: VMR0007 Revision to AMS-III.AJ, Recovery and Recycling of Materials from Solid Wastes v1.0",
+   "url": "https://verra.org/methodologies/vmr0007-revision-to-ams-iii-aj-recovery-and-recycling-of-materials-from-solid-wastes-v1-0/"
+  },
+  {
+   "title": "Gold Standard: Methodology 448 Recovery and Recycling of Materials from Solid Wastes v1.0",
+   "url": "https://globalgoals.goldstandard.org/standards/448_V1.0_Recovery-and-recycling-of-material-from-solid-wastes.pdf"
+  },
+  {
+   "title": "PCX Solutions: Updated Plastic Credit Standard (PPRS v8) mandates third-party verification",
+   "url": "https://www.pcxsolutions.org/post/pcx-solutions-releases-updated-plastic-credit-standard-mandates-third-party-verification"
+  },
+  {
+   "title": "PCX Solutions: Plastic crediting process",
+   "url": "https://www.pcxsolutions.org/plastic-crediting-process"
+  },
+  {
+   "title": "Plastic Bank: FAQ (credit definition, collector bonuses, verification)",
+   "url": "https://plasticbank.com/faq/"
+  },
+  {
+   "title": "Ecosystem Marketplace: State of the Voluntary Carbon Market 2025",
+   "url": "https://3298623.fs1.hubspotusercontent-na1.net/hubfs/3298623/SOVCM%202025/Ecosystem%20Marketplace%20State%20of%20the%20Voluntary%20Carbon%20Market%202025.pdf"
+  },
+  {
+   "title": "Gold Standard Marketplace: Emissions Reductions from PET Recycling, Romania",
+   "url": "https://marketplace.goldstandard.org/products/plastic-recycling-romania-europe"
+  },
+  {
+   "title": "CSTEP: Solid Waste Management Rules, 2026, bridging policy design and system readiness",
+   "url": "https://cstep.in/solid-waste-management-rules-2026-bridging-policy-design-and-system-readiness/"
+  },
+  {
+   "title": "Hasiru Dala Innovations (Bengaluru): traceable plastics circularity",
+   "url": "https://hasirudalainnovations.com/news-detail/2"
+  }
+ ]
+}

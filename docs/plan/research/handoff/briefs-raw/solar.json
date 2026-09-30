@@ -1,0 +1,358 @@
+{
+ "topic": "solar",
+ "headline": "Karnataka has only 938 MW of rooftop solar, about 2.9% of India's 32.6 GW, even though KERC opened net metering to every consumer up to 1 MW in August 2026. Luma.Green's strongest solar offer is its own yards and recyclers (paybacks of about 2.5–5.5 years), not Bengaluru homes whose first 200 units are already free.",
+ "findings": [
+  {
+   "point": "PM Surya Ghar is now India's main rooftop solar channel. It reached 50.06 lakh households and 14.8 GW by 4 Aug 2026, and the whole process runs on one national portal.",
+   "detail": "PIB, 4 Aug 2026: installations rose from 5,038 a day (Oct 2025) to 16,328 a day (Jul 2026), with 5.06 lakh homes in July alone. Rs 28,024 crore of subsidy has been paid by DBT, released through PFMS in about 15 days. There are 34,219 registered vendors (29,469 active). Consumers can see vendor star ratings, and about 23,000 third-party quality inspections have been done. The portal has API links to 80+ DISCOMs, a digital net-metering agreement and DCR-portal checks. Systems up to 10 kW get deemed approval and a feasibility waiver, and 32 States/UTs dropped application and net-metering fees. On 9 Sep 2026 MNRE said the scheme was reaching 5.6 million beneficiaries, and that rooftop solar added 8.7 GW in the last year. The portal's public JS config shows its APIs sit behind consumer, vendor and DISCOM logins. A third party therefore adds value through leads and hand-holding, not through filing applications.",
+   "sourceUrls": [
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292647",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=294498"
+   ]
+  },
+  {
+   "point": "The household subsidy is a fixed amount per kW, capped at 3 kW. Cheap loans are available. Businesses get no subsidy.",
+   "detail": "Cabinet approval, Feb 2024 (outlay Rs 75,021 crore): the central subsidy (CFA) covers 60% of benchmark cost up to 2 kW and 40% for 2–3 kW. That works out to Rs 30,000 for 1 kW, Rs 60,000 for 2 kW and Rs 78,000 for 3 kW or more. A 3 kW system averages 300+ units a month. Rajya Sabha replies, 28 Jul 2026: nationalised banks lend at repo + 50 bps, which is 5.75%, for 10 years with no collateral. 21.87 lakh loans have been sanctioned and 17.5 lakh installations were loan-financed. The FY2026-27 budget is Rs 22,000 crore, of which Rs 10,392 crore was spent by 22 Jul. The CFA is for residential consumers only. Government and commercial buildings get none because rooftop solar already pays for itself there. 12 lakh households that export power earned Rs 421 crore in FY2024-25, about Rs 3,500 each.",
+   "sourceUrls": [
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2010130",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292054",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292051",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292647"
+   ]
+  },
+  {
+   "point": "Karnataka lags on rooftop solar: 938 MW of India's 32,596 MW, about 2.9%. Its regulator says small consumers have shown little interest.",
+   "detail": "MNRE state-wise data, 31 Aug 2026: Karnataka rooftop solar including PM Surya Ghar is 938.20 MW. Gujarat has 8,146.70 MW, Maharashtra 5,977.70 MW and Kerala 2,259.50 MW, even though Karnataka has 10,485 MW of ground-mounted solar. KERC, 25 Aug 2026: distributed solar is 920.74 MW of the state's 6,354.74 MW of solar sold under PPAs, and smaller consumers have shown little interest. BESCOM told KERC its area had 372.30 MW across 15,472 rooftop installations by Jan 2025. GESCOM reported 8,149 PM Surya Ghar applications but only 323 installed by Jan 2025, about 4% conversion. My inference on a likely cause: since Aug 2023 the state pays for 200 units a month for domestic consumers (Gruha Jyothi, noted in KERC Tariff Order 2025), so many homes have little bill left to save.",
+   "sourceUrls": [
+    "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/09/202609081073775955.pdf",
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf",
+    "https://kerc.karnataka.gov.in/uploads/96731743148968.pdf"
+   ]
+  },
+  {
+   "point": "New KERC rules for rooftop and other small solar plants (DSPV Regulations, in force 24 Aug 2026) let every consumer category use net metering up to its sanctioned load or 1,000 kW, whichever is lower. This lasts until the state reaches 3 GW, which leaves roughly 2 GW of headroom.",
+   "detail": "Allowed metering types:\n- Net metering.\n- Net billing.\n- Gross metering.\n- Group net metering: same owner, minimum 5 kW, 20% of output used at the site where the plant is.\n- Virtual net metering: homes, apartments, charities and government only.\n- Behind-the-meter.\n\nHybrid inverters with batteries are allowed. A third-party owner (RESCO) can supply the plant, with no three-way agreement needed. Surplus power is bought at the KERC tariff and settled monthly; fixed and demand charges are always payable. For LT plants up to 150 kW there is no separate power-purchase agreement: the online application counts as approval, and the consumer has 150 days to finish. The DISCOM must inspect within 5 working days or the officer pays Rs 1,000 a day. Consumers with unpaid dues are not eligible. Plants under 150 kW connect to the existing transformer, and total solar on it is capped at 80% of its rating. DISCOMs must publish lists of installers, standard agreements and monthly capacity; KREDL combines these for the state. Karnataka had about 900 MW of distributed solar in Mar 2026. The Forum of Regulators' Feb 2026 model rules suggest a tighter 500 kW cap, so other states may differ.",
+   "sourceUrls": [
+    "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf"
+   ]
+  },
+  {
+   "point": "KERC's export tariffs and cost norms, valid 25 Aug 2026 to 30 Jun 2029, give the calculator its Karnataka numbers.",
+   "detail": "All contracts run 25 years. Export tariffs:\n- Domestic 1–10 kW without subsidy: Rs 3.89/kWh.\n- PM Surya Ghar homes: Rs 1.96 for 1–2 kW, Rs 2.14 for >2–3 kW, Rs 2.58 above 3 kW.\n- All other consumers: Rs 3.11 with domestic-content (DCR) modules, Rs 2.34 without.\n- Virtual and group net metering: 75% of those rates.\n\nNorms:\n- CUF 19%, about 1,664 kWh per kW per year. Stakeholders argued for 13.5–17.5%.\n- 25-year plant life, no degradation.\n- Capital cost Rs 45,000/kW for homes (MNRE benchmark for 3 kW and above), Rs 27,090/kW non-DCR and Rs 36,015/kW DCR for everyone else. Module prices were Rs 13.8 vs Rs 22.3 per Wp in April 2026.\n- O&M 1% of capital cost, rising 5.72% a year.\n- Debt at 10.80% for 13 years.\n\nGST on solar goods fell from 12% to 5% on 22 Sep 2025, with contracts split 70% goods and 30% services. The regulations allow grid-support charges, but none have been set; KERC had deferred them for rooftop consumers.",
+   "sourceUrls": [
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf",
+    "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf",
+    "https://kerc.karnataka.gov.in/uploads/96731743148968.pdf"
+   ]
+  },
+  {
+   "point": "BESCOM's retail tariffs set how much solar saves, and business rates changed mid-cycle in 2026.",
+   "detail": "KERC Tariff Order 2025 covers FY26–FY28. Rates for FY2026-27:\n- LT-1 domestic: Rs 150/kW/month plus 580 paise/kWh.\n- LT-3(a) commercial: Rs 215/kW plus 680 paise.\n- LT-5 industrial, which explicitly covers MSMEs and solid-waste processing plants: Rs 150/HP plus 440 paise.\n- HT-2(a) industrial: Rs 350/kVA plus 660 paise. Time-of-day pricing applies to HT connections of 500 kVA and above: +100 paise 06–09 and 18–22, and −100 paise 22–06, from December to June. Solar hours are unaffected.\n\nDomestic rooftop owners up to 10 kW get Rs 25/kW/month off fixed charges. KERC's review order of 3 Mar 2026 raised FY2025-26 rates to fund farm subsidies: LT-5 Rs 165/HP plus 520 paise, HT-2(a) Rs 365/kVA plus 670 paise, LT-3(a) Rs 235/kW plus 710 paise. The FY2026-27 rate needs checking on a live bill. BESCOM also bills an FY25 true-up of 56 paise/unit from May 2026 to Apr 2027. It is based on FY2024-25 consumption, so solar cannot avoid it. The opt-in Discounted Energy Rate Scheme (DERS: 500 paise/unit for use above base) continues for FY27–FY28, which lowers the value of solar for large business users.",
+   "sourceUrls": [
+    "https://kerc.karnataka.gov.in/uploads/96731743148968.pdf",
+    "https://bescom.karnataka.gov.in/uploads/media_to_upload1775021662.pdf",
+    "https://kerc.karnataka.gov.in/uploads/18281772541323.pdf",
+    "https://kerc.karnataka.gov.in/uploads/17731776422105.pdf",
+    "https://kerc.karnataka.gov.in/uploads/media_to_upload1774956472.pdf"
+   ]
+  },
+  {
+   "point": "On these numbers, rooftop solar pays back in about 2–3 years for homes that pay their bill, 3–5.5 years for LT-5 yards and 2.5–3.5 years for HT recyclers. It pays back poorly for Gruha Jyothi homes on net metering.",
+   "detail": "Estimates use the method in the artifact, with output of 100–138.7 kWh per kW per month and O&M at 1%.\n\n(A) A household using 350 units a month, 3 kW system: net cost Rs 57,000 after the Rs 78,000 subsidy. Saves Rs 1,815–2,246 a month, so payback is 2.2–2.8 years; a loan EMI would be about Rs 626.\n\n(B) A Gruha Jyothi home using 150 free units, 2 kW system: net metering saves only Rs 148–300 a month, a payback of 11–34 years. Gross metering at Rs 1.96 saves Rs 442–594, a payback of 4.8–6.8 years, if BESCOM allows it.\n\n(C) An LT-5 yard, 15 kW non-DCR, costing Rs 4.06 lakh: payback 3.2–5.4 years (4.3–7.3 with DCR modules).\n\n(D) An HT-2(a) recycler, 200 kW non-DCR, costing Rs 54.2 lakh: payback 2.5–3.5 years, or 3.4–4.7 years on DERS.\n\nThese are estimates, not quotes. Real prices for small systems run above the benchmark.",
+   "sourceUrls": [
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf",
+    "https://kerc.karnataka.gov.in/uploads/96731743148968.pdf",
+    "https://kerc.karnataka.gov.in/uploads/18281772541323.pdf",
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2010130",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292054"
+   ]
+  },
+  {
+   "point": "Costs jump on 1 Jan 2027. From then, projects on net metering or open access must use solar cells from ALMM List-II, the government's approved list of domestic cell makers.",
+   "detail": "An MNRE order of 18 Jul 2026 extended the exemption from ALMM List-II for these projects from 31 May to 31 Dec 2026, and promised no further blanket extension. KERC therefore set separate tariffs for DCR and non-DCR modules; its DCR capital-cost benchmark is 33% higher (Rs 36,015 vs Rs 27,090 per kW). PM Surya Ghar already requires domestic content, checked through the DCR portal. For businesses considering solar, the next 3 months matter, and the calculator needs a DCR toggle.",
+   "sourceUrls": [
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=291400",
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf"
+   ]
+  },
+  {
+   "point": "PM-KUSUM is aimed at farms and helps Luma.Green only indirectly. Its next phase adds agrivoltaics.",
+   "detail": "National portal FAQ:\n- Component A: 500 kW–2 MW plants on barren land, or on stilts over farm land. 25-year power-purchase agreement. DISCOMs get 40 paise/unit or Rs 6.6 lakh/MW/yr, whichever is lower, for 5 years.\n- Component B: standalone solar pumps up to 7.5 HP.\n- Component C: solarising grid-connected pumps, with panels up to 2x the pump's kW and surplus sold to the DISCOM.\n\nFor B and C the centre pays 30%, the state 30% and the farmer 40%; in north-eastern and hill states the centre pays 50%. MNRE, 9 Sep 2026: about 29 lakh pumps have been solarised, PM-KUSUM added 7.6 GW of decentralised solar last year, and the next phase will have a dedicated agrivoltaics component. KERC also sets benchmark tariffs for feeder-level solarisation under KUSUM Component C in Karnataka.",
+   "sourceUrls": [
+    "https://pmkusum.mnre.gov.in/",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=294498",
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf"
+   ]
+  },
+  {
+   "point": "Solar panels count as e-waste, but there is no EPR recycling target for them until at least 2034-35. The obligation is storage and reporting only.",
+   "detail": "E-Waste (Management) Rules 2022, rule 12: makers and producers of PV modules, panels and cells must:\n- register on the CPCB portal;\n- store PV waste generated up to 2034-35 under CPCB guidelines;\n- file annual returns until then;\n- keep a separate inventory.\n\nPV recyclers must meet CPCB material-recovery norms. PV is listed as category CEEW14 in Schedule I, and Schedules III and IV say recycling targets do not apply to PV waste. So panels earn no EPR certificates today. The value lies in collection logistics, safe storage, reuse testing, hand-off to registered recyclers, and chain-of-custody records that producers can show. KERC assumes a 25-year plant life, so bulk end-of-life is years away; near-term volume comes from breakage, failures and repowering.",
+   "sourceUrls": [
+    "https://www.mppcb.mp.gov.in/proc/E-Waste-Management-Rules-2022-English.pdf",
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf"
+   ]
+  },
+  {
+   "point": "Batteries are the nearer-term recycling opportunity. The rules cover every chemistry, count storage batteries as industrial, and require collectors to hand over to registered recyclers.",
+   "detail": "The Battery Waste Management Rules 2022 apply to all batteries regardless of chemistry. They also apply to anyone who collects, sorts or transports waste batteries, and collectors must hand batteries to registered refurbishers or recyclers. Energy-storage batteries are classed as industrial batteries:\n- Producers must collect 70% of the quantity sold three years earlier (e.g. in FY2026-27, 70% of FY2023-24 sales).\n- From 2026-27, recyclers must recover 60% of material from industrial batteries and 90% from EV and portable batteries.\n- From 2026-27, new industrial batteries need 40% recycled content.\n\nEPR certificates are issued and traded on the CPCB portal. KERC's 2026 rules allow hybrid inverters with batteries, and KERC will review storage needs at 3 GW or after 2 years.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+    "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf"
+   ]
+  },
+  {
+   "point": "Finance exists but is scattered across schemes: priority-sector status for loans up to Rs 35 crore, 5.75% household loans, and SIDBI green loans for MSMEs.",
+   "detail": "RBI Priority Sector Lending Directions 2025 (updated 11 Sep 2026): bank loans up to Rs 35 crore per borrower for renewable-energy generation, and up to Rs 10 lakh for individual households, count as priority-sector lending. PM Surya Ghar loans are 5.75% for 10 years, need no collateral, and are processed paperlessly through Jan Samarth. KERC's normative cost of business debt is 10.80% (SBI 3-year MCLR of 8.80% plus 200 bps), a fair default for business EMIs. SIDBI offers a Green Finance Scheme and an End-to-End Energy Efficiency (4E) scheme. It also runs two sub-schemes under RAMP, a World-Bank-backed MSME programme: MSE-GIFT (cheaper loans for clean and green technology) and MSE-SPICE (circular-economy investment by micro and small enterprises), which fits recyclers directly. I could not verify detailed SIDBI terms because the brochures sit behind a bot check.",
+   "sourceUrls": [
+    "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292054",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292647",
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf",
+    "https://www.sidbi.in/en/pages/incentive-schemes-for-green-loans",
+    "https://www.sidbi.in/en/green-finance"
+   ]
+  },
+  {
+   "point": "Karnataka's installers are organised and easy to find, so onboarding them as a new provider role is practical.",
+   "detail": "The Karnataka Renewable Energy Association (KREA) and about 48 people from installers, developers and manufacturers attended KERC's 14 Jul 2026 tariff hearing. They included CleanMax, ORB Energy, Balark Solar, Canara Solar Systems, Goldi Solar and Adani Solar. One installer put home O&M at about Rs 1,000 per cleaning. Nationally, vendors are registered and star-rated on the PM Surya Ghar portal, and KERC now requires DISCOMs to publish lists of installers. Luma.Green can check installers against those lists instead of creating its own standard.",
+   "sourceUrls": [
+    "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf",
+    "https://pib.gov.in/newsite/erelcontent.aspx?relid=292647",
+    "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Solar savings calculator driven by editable tariff and subsidy tables",
+   "why": "Gives investors a working solar module within days, with no external APIs. The user enters their tariff category, sanctioned load and monthly units (or the rate on their bill). The calculator returns system size in kW, a generation range, savings, payback, loan EMI, and a comparison of net and gross metering. Store every constant as a Convex row: value in paise, unit, valid-from and valid-to dates, and source URL. When KERC changes rates, as it did twice in 2026, the admin edits one row. Seed the tables with the Karnataka numbers in the artifact.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "'Your yard could save Rs X a month' card on business dashboards",
+   "why": "Luma.Green's own verified businesses are the best first buyers: LT-5 and HT-2(a) paybacks are about 2.5–5.5 years with no subsidy paperwork. Add sanctioned load and tariff category to the business profile at onboarding, fill the card from that data, and let one tap create a quote request. It is a strong demo moment because the recycling chain becomes a clean-energy customer.",
+   "priority": "prototype-now",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "kabadiwala"
+   ]
+  },
+  {
+   "feature": "Solar quote requests in the planned services module",
+   "why": "Reuses the pattern the architecture already plans (providers, requests, statuses). A request moves through: admin triage, installer assigned, site survey, quote, applied (PM Surya Ghar portal or BESCOM), installed, commissioned, subsidy received. The statuses give investors visible funnel numbers. GESCOM's 4% application-to-install conversion shows where hand-holding is worth money.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Installers as a new verified provider role, with lead routing",
+   "why": "The admin verifies GST, PM Surya Ghar vendor registration in BESCOM's area and sample installations, the same way businesses are verified today. Start with a few KREA members in Bengaluru. Charge installers, not consumers, and show every eligible installer. Consumers pick their own vendor under PM Surya Ghar, so Luma.Green must not look like it is steering them.",
+   "priority": "pilot",
+   "users": [
+    "installer (new provider role)",
+    "admin",
+    "household",
+    "yard",
+    "recycler"
+   ]
+  },
+  {
+   "feature": "Plain-language application guide for each consumer type",
+   "why": "Homes: the PM Surya Ghar steps (register, pick a vendor, install, net meter, subsidy by DBT in about 15 days, 5.75% loan). Businesses: the KERC 2026 rules (no unpaid dues, automatic approval up to 150 kW, 150 days to finish, inspection within 5 days, size capped at sanctioned load or 1,000 kW). Add a banner for the 31 Dec 2026 DCR deadline and the open question on Gruha Jyothi and gross metering. It is static content in 12 languages: cheap to build and builds trust.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "Old solar panels, inverters and batteries as scrap categories, with routing rules",
+   "why": "Add catalogue items: PV modules as e-waste (category CEEW14), and lead-acid and lithium batteries under the battery rules. Apply one firm rule: kabadiwalas collect and weigh but never dismantle, and yards hand over only to CPCB- or KSPCB-registered recyclers. Keep a photo, weight and handover record for each item. This fits the existing pickup flow and creates the chain-of-custody data that EPR buyers need.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler"
+   ]
+  },
+  {
+   "feature": "Fill the calculator from a photo of the electricity bill",
+   "why": "Reuses the AI-estimate pipeline to read units, sanctioned load, tariff category and energy charge from a BESCOM bill photo. Keep only the derived numbers, never the account number or address, to stay within DPDP. Manual entry stays as a fallback. Test accuracy on real bills before users rely on it.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "Group business demand for third-party-owned or bulk installs, plus finance referrals",
+   "why": "Bundle verified yards and recyclers in one industrial area into a single tender, either for third-party (RESCO) developers, which KERC allows, or for a bulk installer. Show finance options as referrals only: priority-sector bank loans up to Rs 35 crore, SIDBI GFS, 4E, MSE-GIFT and MSE-SPICE, and PM Surya Ghar loans. No lending on the platform.",
+   "priority": "scale",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Installer take-back with records ready for EPR",
+   "why": "Installers and maintenance firms book business pickups for broken panels and replaced batteries. Each record holds serial number, weight, recycler and certificate ID. These records support producers' annual PV returns now, and any PV EPR scheme after 2034-35; battery EPR certificates already trade on the CPCB portal.",
+   "priority": "scale",
+   "users": [
+    "installer (new provider role)",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Solar gigs for Saathis",
+   "why": "Add panel-cleaning and old-panel pickup jobs for trained Saathis. One installer's figure is about Rs 1,000 per home cleaning. This links to MNRE's Surya Mitra training (about 70,000 trained) and gives Saathis recurring work.",
+   "priority": "scale",
+   "users": [
+    "saathi",
+    "household",
+    "yard",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Tariff tables for every state, plus a generation log that feeds the carbon module",
+   "why": "Extend the same config tables state by state: retail tariffs, export rates and net-metering caps (the Forum of Regulators' model uses 500 kW; Karnataka uses 1,000 kW up to 3 GW). Refresh them from MNRE's monthly state-wise capacity data. Log kWh from verified business rooftops, from meter photos, to feed the planned carbon-credit module.",
+   "priority": "scale",
+   "users": [
+    "admin",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "household"
+   ]
+  }
+ ],
+ "artifactMarkdown": "## Solar savings calculator: Karnataka (BESCOM) method v0, 29 Sep 2026\n\nThis gives an estimate, not a quote. Each constant is one editable config row: `key · value · unit · validFrom · validTo · sourceUrl`. Store money in paise, the unit KERC uses for energy charges.\n\n### 1. Ask the user\n| Input | Example | Why |\n|---|---|---|\n| Tariff category (on the bill) | LT-1 domestic · LT-3(a) commercial · LT-5 industrial · HT-2(a) industrial | Picks the tariff row |\n| Sanctioned load or contract demand | 4 kW · 25 HP · 300 kVA | Caps system size; 1 HP = 0.746 kW [S3] |\n| Units per month (average of recent bills) | 350 | Upper limit for units solar can offset |\n| Energy charge printed on the bill (optional) | 520 paise/kWh | Overrides the defaults below, because business rates moved in 2026 (see §5) |\n| Gruha Jyothi beneficiary? | yes / no | For these homes, savings come mostly from exported power |\n| Module type (businesses) | DCR / non-DCR | Non-DCR modules qualify for net metering only if commissioned by 31 Dec 2026 [S7] |\n\n### 2. Karnataka constants\n| Key | Value | Valid | Source |\n|---|---|---|---|\n| Generation per kW, conservative | 100 kWh/kW/month (3 kW gives about 300 units/month) | – | [S1] |\n| Generation per kW, KERC norm | 138.7 kWh/kW/month (CUF 19%) | 25.08.2026–30.06.2029 | [S5] |\n| PM Surya Ghar subsidy (homes only; none for businesses) | Rs 30,000 for 1 kW · Rs 60,000 for 2 kW · Rs 78,000 for 3 kW or more (cap) | scheme period | [S1][S10] |\n| Capital cost, homes 1–10 kW | Rs 45,000/kW (MNRE benchmark for 3 kW and above) | from 25.08.2026 | [S5] |\n| Capital cost, businesses | Rs 27,090/kW non-DCR · Rs 36,015/kW DCR (includes 5% GST) | from 25.08.2026 | [S5] |\n| Maintenance (O&M) | 1% of capital cost a year, rising 5.72% a year | same | [S5] |\n| LT-1 domestic | Rs 150/kW/month + 580 paise/kWh | FY2026-27 (FY28: Rs 160 + 575) | [S3][S11] |\n| LT-3(a) commercial | Rs 215/kW + 680 paise (multi-year order); FY26 reset to Rs 235 + 710 | FY27 / FY26 | [S3][S4] |\n| LT-5 industrial (covers MSMEs) | Rs 150/HP + 440 paise (multi-year order); FY26 reset to Rs 165/HP + 520 | FY27 / FY26 | [S3][S4] |\n| HT-2(a) industrial | Rs 350/kVA + 660 paise (multi-year order); FY26 reset to Rs 365/kVA + 670 | FY27 / FY26 | [S3][S4] |\n| Discounted Energy Rate Scheme (DERS, opt-in for business connections of 50 kW and above) | 500 paise/kWh for use above base consumption | FY27–FY28 | [S3][S9] |\n| Domestic rooftop rebate | Rs 25/kW/month off fixed charges (systems up to 10 kW) | FY26–FY28 | [S3] |\n| Export tariff, home 1–10 kW, no subsidy | Rs 3.89/kWh (25-year contract) | 25.08.2026–30.06.2029 | [S5] |\n| Export tariff, PM Surya Ghar home | Rs 1.96 (1–2 kW) · Rs 2.14 (>2–3 kW) · Rs 2.58 (>3 kW) | same | [S5] |\n| Export tariff, businesses | Rs 3.11 DCR · Rs 2.34 non-DCR; virtual and group net metering get 75% of these | same | [S5] |\n| Net-metering limit | Sanctioned load or 1,000 kW, whichever is lower, until the state reaches 3 GW. Systems up to 10 kW may have 10% more panel (DC) capacity | from 24.08.2026 | [S2] |\n| Loans | PM Surya Ghar: 5.75%, 10 years, no collateral (up to 3 kW) · Businesses (KERC norm): 10.80%, 13 years, 70% debt / 30% equity | 2026 | [S6][S5] |\n\n### 3. Steps\n1. `kWcap` = sanctioned load in kW (HP × 0.746), no more than 1,000 kW for net metering. For homes, the subsidy stops at 3 kW.\n2. `kW` = min(`kWcap`, units ÷ 100). This sizes the system to what the site can use. Round down to 0.5 kW.\n3. `E` = kW × generation per kW. Show two values: low (100) and high (138.7).\n4. Monthly saving:\n   - **Net metering.** Units net off within the monthly bill, and surplus is paid monthly [S2].\n     `min(E,U) × energyCharge + max(0,E−U) × exportTariff + rebate`\n   - **Gross metering.** All generation is sold and the bill is unchanged.\n     `E × exportTariff + rebate`\n   - `rebate` = Rs 25 × kW for LT-1 systems up to 10 kW. Fixed and demand charges are never avoided [S2][S3].\n5. `capex` = kW × benchmark (or the installer's quote). For homes, subtract the subsidy.\n6. `annual` = 12 × monthly saving − O&M (1% of capex).\n7. `payback` = net capex ÷ annual.\n   `EMI` = P·r(1+r)^n ÷ ((1+r)^n − 1), where r = rate/12 and n = months.\n8. Always show the net vs gross comparison and the low–high range, never a single promised figure.\n\n### 4. Worked examples (this method, Karnataka numbers)\n| Case | System | Net cost | Saving per month | Payback |\n|---|---|---|---|---|\n| A. Home that pays its bill, LT-1, 350 units/month, 4 kW load, net metering | 3 kW | Rs 1,35,000 − 78,000 = **Rs 57,000** | Rs 1,815–2,246 | **2.2–2.8 years**; loan EMI about Rs 626 (5.75%, 10 years) |\n| B. Gruha Jyothi home, 150 free units/month | 2 kW | Rs 90,000 − 60,000 = Rs 30,000 (the benchmark is for 3 kW and above; real 2 kW quotes run higher) | Net metering Rs 148–300 · gross metering Rs 442–594 | Net: 11–34 years · **gross: 4.8–6.8 years, if BESCOM allows it** |\n| C. Sorting yard, LT-5, 25 HP, 2,500 units/month | 15 kW non-DCR | Rs 4.06 lakh (no subsidy) | Rs 6,600–10,816 (at 440–520 paise) | **3.2–5.4 years** (DCR: 4.3–7.3) |\n| D. Plastic recycler, HT-2(a), 300 kVA, 60,000 units/month | 200 kW non-DCR | Rs 54.2 lakh | Rs 1.32–1.83 lakh (at 660 paise) | **2.5–3.5 years** (3.4–4.7 on DERS at 500 paise); EMI on 70% debt about Rs 45,300 (10.8%, 13 years) |\n\n### 5. What changes the answer\n- **Business tariffs changed mid-cycle.** KERC's review order of 3 Mar 2026 raised the FY2025-26 rates for LT-5, HT-2(a) and LT-3(a). Confirm the FY2026-27 rate from a live bill, and prefer the user's bill rate [S4].\n- **Charges solar cannot avoid.** BESCOM's FY25 true-up of 56 paise/unit (May 2026–Apr 2027) is billed on FY2024-25 consumption, so solar does not reduce it [S8]. Fixed and demand charges stay too [S2].\n- **Left out, so estimates are conservative.** Electricity tax and fuel/power-purchase cost adjustments scale with units used [S3]. Including them would raise savings slightly.\n- **DCR deadline.** Net-metered projects commissioned after 31 Dec 2026 must use cells from ALMM List-II, the approved list of domestic cell makers. KERC's DCR capital-cost benchmark is 33% higher [S5][S7].\n- **DERS.** A business on DERS pays 500 paise for extra use, so solar is worth less at the margin [S9].\n- **Gruha Jyothi.** It is not verified whether a beneficiary can take gross metering and keep the 200 free units. Ask BESCOM before showing case B.\n- **Site limits.** Plants under 150 kW connect to the existing transformer, and total solar on it is capped at 80% of its rating. Consumers with unpaid dues are not eligible [S2].\n\n**Sources:**\n- [S1] [PIB, Cabinet approves PM Surya Ghar (Feb 2024)](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2010130)\n- [S2] [KERC DSPV Regulations 2026](https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf)\n- [S3] [KERC Tariff Order 2025, Annexure-9](https://kerc.karnataka.gov.in/uploads/96731743148968.pdf)\n- [S4] [KERC review order RP 08/2025 (3 Mar 2026)](https://kerc.karnataka.gov.in/uploads/18281772541323.pdf)\n- [S5] [KERC DSPV generic tariff order (25 Aug 2026)](https://kerc.karnataka.gov.in/uploads/48561787653428.pdf)\n- [S6] [PIB, PM Surya Ghar subsidy and 5.75% loans (28 Jul 2026)](https://pib.gov.in/newsite/erelcontent.aspx?relid=292054)\n- [S7] [PIB, ALMM List-II window to 31 Dec 2026](https://pib.gov.in/newsite/erelcontent.aspx?relid=291400)\n- [S8] [KERC, BESCOM APR order (17 Apr 2026)](https://kerc.karnataka.gov.in/uploads/17731776422105.pdf)\n- [S9] [KERC DERS continuation (31 Mar 2026)](https://kerc.karnataka.gov.in/uploads/media_to_upload1774956472.pdf)\n- [S10] [PIB, no subsidy for commercial buildings (28 Jul 2026)](https://pib.gov.in/newsite/erelcontent.aspx?relid=292051)\n- [S11] [BESCOM Electricity Tariff 2026–2028](https://bescom.karnataka.gov.in/uploads/media_to_upload1775021662.pdf)",
+ "risks": [
+  "Tariffs and subsidies change often: KERC reset export tariffs on 25 Aug 2026, revised business tariffs on 3 Mar 2026, and the ALMM List-II rule starts on 1 Jan 2027. A hard-coded calculator will be wrong within months. Keep every constant as a dated, sourced config row and label outputs as estimates.",
+  "How Gruha Jyothi interacts with rooftop solar is not verified. Showing Bengaluru households a 2–3-year payback when their first 200 units are already free would mislead most of them.",
+  "Savings figures can be read as financial advice or a guarantee. Show ranges, cite sources, and state that an installer's site survey sets the real number.",
+  "Installer quality and lead fees are a risk. Bad installations damage Luma.Green's brand, and because consumers pick their own vendor under PM Surya Ghar, fees must not steer them. Charge installers, show every eligible one, and disclose any fee.",
+  "Privacy: electricity bills carry account numbers, names and addresses. Storing bill photos creates DPDP obligations, so keep only the derived numbers.",
+  "Rules may tighten. Karnataka's net metering is open only until the state reaches 3 GW; the Forum of Regulators' model rules use a 500 kW cap; and KERC may levy grid-support charges later. Any of these reduces business paybacks.",
+  "E-waste compliance: kabadiwalas dismantling panels or batteries informally would breach the E-Waste and Battery Waste rules. Storing old panels may need KSPCB authorisation, and broken modules and batteries carry safety and liability risk.",
+  "Grid and process limits can stall installs regardless of demand: the 80% transformer cap for plants under 150 kW, DISCOM delays, and unpaid dues that make consumers ineligible."
+ ],
+ "openQuestions": [
+  "Can a Gruha Jyothi household install rooftop solar under gross (or net) metering and keep its 200 free units? Ask BESCOM's DSM wing.",
+  "Which LT-5 and HT-2(a) rates apply in FY2026-27 after the 3 Mar 2026 review order, which names only FY2025-26? Check a current BESCOM bill.",
+  "What does a rooftop system actually generate in Bengaluru? KERC assumes 19% CUF (about 1,664 kWh/kW/yr) while installers argued for 13.5–17.5%. Check with 5–10 real generation-meter readings.",
+  "What do Bengaluru installers charge today for 1–3 kW DCR home systems and 10–200 kW business systems, compared with the Rs 45,000, Rs 27,090 and Rs 36,015 per kW benchmarks?",
+  "Does BESCOM publish its installer list (required by KERC regulation 14.1) in a usable format? How does an installer register for PM Surya Ghar in BESCOM's area?",
+  "When will CPCB publish the PV-waste storage guideline and recovery norms that rule 12 of the E-Waste Rules refers to? Will any PV EPR target come before 2034-35?",
+  "What are the terms of MSE-GIFT and MSE-SPICE (interest subvention, capital subsidy caps), and do scrap and recycling units qualify? Get these from SIDBI directly; the brochures were behind a bot check.",
+  "Is Bengaluru one of PM Surya Ghar's 46 City Accelerator Programme cities, and could Luma.Green partner with it?",
+  "Do yards on leased land need the landlord's consent for rooftop solar, and how many pilot yards fail KERC's no-unpaid-dues rule?"
+ ],
+ "sources": [
+  {
+   "title": "PIB: Cabinet approves PM-Surya Ghar: Muft Bijli Yojana (Feb 2024)",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2010130"
+  },
+  {
+   "title": "PIB: PM Surya Ghar crosses 50 lakh rooftop installations (4 Aug 2026)",
+   "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=292647"
+  },
+  {
+   "title": "PIB: PM Surya Ghar subsidy support and 5.75% loans; budget by year (28 Jul 2026)",
+   "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=292054"
+  },
+  {
+   "title": "PIB: Over 48 lakh households benefit; no CFA for government and commercial buildings (28 Jul 2026)",
+   "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=292051"
+  },
+  {
+   "title": "PIB: No change in ALMM policy; List-II exemption for net metering and open access until 31 Dec 2026 (18 Jul 2026)",
+   "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=291400"
+  },
+  {
+   "title": "PIB: Annadata becoming Urjadata, PM-KUSUM progress and agrivoltaics (9 Sep 2026)",
+   "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=294498"
+  },
+  {
+   "title": "MNRE: State-wise installed RE capacity as on 31.08.2026",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/09/202609081073775955.pdf"
+  },
+  {
+   "title": "KERC: Generic tariff for Distributed Solar PV plants, 25.08.2026 to 30.06.2029",
+   "url": "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf"
+  },
+  {
+   "title": "KERC (Grid Interactive Distributed Solar PV Plants) Regulations, 2026",
+   "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf"
+  },
+  {
+   "title": "KERC Tariff Order 2025 for ESCOMs, FY2025-26 to FY2027-28 (27.03.2025)",
+   "url": "https://kerc.karnataka.gov.in/uploads/96731743148968.pdf"
+  },
+  {
+   "title": "KERC review order RP 08/2025 revising LT-3a, LT-5, HT-2a and HT-2b tariffs (03.03.2026)",
+   "url": "https://kerc.karnataka.gov.in/uploads/18281772541323.pdf"
+  },
+  {
+   "title": "KERC: BESCOM APR FY2024-25 order with FY25 true-up of 56 paise/unit (17.04.2026)",
+   "url": "https://kerc.karnataka.gov.in/uploads/17731776422105.pdf"
+  },
+  {
+   "title": "KERC: Continuation of Discounted Energy Rate Scheme for FY2026-27 and FY2027-28 (31.03.2026)",
+   "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1774956472.pdf"
+  },
+  {
+   "title": "BESCOM: Electricity Tariff 2026 to 2028",
+   "url": "https://bescom.karnataka.gov.in/uploads/media_to_upload1775021662.pdf"
+  },
+  {
+   "title": "MNRE: PM-KUSUM national portal (FAQ on components and subsidy)",
+   "url": "https://pmkusum.mnre.gov.in/"
+  },
+  {
+   "title": "MoEFCC: E-Waste (Management) Rules, 2022 (G.S.R. 801(E))",
+   "url": "https://www.mppcb.mp.gov.in/proc/E-Waste-Management-Rules-2022-English.pdf"
+  },
+  {
+   "title": "CPCB: Battery Waste Management Rules, 2022",
+   "url": "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf"
+  },
+  {
+   "title": "RBI: Priority Sector Lending Directions, 2025 (updated 11 Sep 2026)",
+   "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+  },
+  {
+   "title": "SIDBI: Incentive schemes for green loans (MSE-GIFT, MSE-SPICE)",
+   "url": "https://www.sidbi.in/en/pages/incentive-schemes-for-green-loans"
+  },
+  {
+   "title": "SIDBI: Green finance (Green Finance Scheme, 4E scheme)",
+   "url": "https://www.sidbi.in/en/green-finance"
+  }
+ ]
+}

@@ -1,0 +1,359 @@
+{
+ "topic": "industry-integration",
+ "headline": "One yard-to-factory truckload already needs about six documents (purchase order, weighbridge slip, quality report, receipt note, GST invoice, e-way bill), kept across Tally, WhatsApp and paper. A CPCB audit also found a Karnataka recycler that issued recycling certificates for 3.48 lakh tonnes while its plant was not running. So Luma.Green should record each hand-off once, as evidence, and export it in Tally and CPCB formats, not try to replace factory software.",
+ "findings": [
+  {
+   "point": "Tally is the back office, and its purchase flow already matches a scrap hand-off",
+   "detail": "Tally says 2.7 million+ businesses use it, and it advertises built-in e-invoice, e-way bill and WhatsApp sharing. Its purchase cycle runs: Purchase Order, Receipt Note (goods received), Rejection Out, Purchase voucher, Debit Note. Tracking numbers link each receipt to its bill. A 'Purchase Bills Pending' report catches goods received but not billed, and the reverse. TallyPrime imports Excel (.xlsx/.xls, using mapping templates, with ready templates for Busy, Marg, QuickBooks, Odoo, Shopify, Sage and Amazon data), XML and JSON. Before committing it lists exceptions such as missing fields, wrong GST details and duplicates. So each Luma.Green trade can map one-to-one to Tally vouchers and be handed over as a file.",
+   "sourceUrls": [
+    "https://tallysolutions.com/",
+    "https://help.tallysolutions.com/import-data-in-tally/",
+    "https://help.tallysolutions.com/purchase-order-tally/"
+   ]
+  },
+  {
+   "point": "Tally runs on the customer's own PC, so exporting files is the easy integration and live sync is harder",
+   "detail": "TallyPrime answers XML requests only while it is running. It acts as an HTTP server on the local machine (default port 9000, switched on in its settings), and each request is an ENVELOPE/HEADER/BODY message with TALLYREQUEST set to Import or Export. A cloud app on Vercel and Convex cannot reach that port without a small local agent or add-on. Tally's own help also describes XML/JSON import mainly as a way to move data between Tally installations. For the pilot: download a file, then import it in Tally. A connector is a scale-stage feature.",
+   "sourceUrls": [
+    "https://help.tallysolutions.com/xml-integration/",
+    "https://help.tallysolutions.com/import-data-in-tally/"
+   ]
+  },
+  {
+   "point": "WhatsApp is how the trade already works; the paid API charges per message, and web sharing is free",
+   "detail": "Tally sells 'TallyPrime with WhatsApp Business' for sending invoices. Since 1 July 2025 Meta charges for each template message delivered. Service replies are free. Utility templates are free inside an open customer-service window (24 hours after the user's last message). India moved to INR billing on 1 Jan 2026, and every Indian WhatsApp Business account must switch to INR by 31 Dec 2026 or Meta stops delivering its messages. The browser's Web Share API lets an installed web app pass a PDF or CSV straight to WhatsApp on Chrome for Android and Safari on iOS. It is free and needs no template approval, but desktop support is limited.",
+   "sourceUrls": [
+    "https://tallysolutions.com/",
+    "https://developers.facebook.com/docs/whatsapp/pricing/",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
+   ]
+  },
+  {
+   "point": "Moving a load: the e-way bill rule puts the paperwork on the yard when it buys from an unregistered kabadiwala",
+   "detail": "Under CGST Rule 138, a registered person moving goods worth more than ₹50,000 must create an e-way bill before the truck leaves. Part B, the vehicle details, is needed for road movement. When an unregistered supplier sells to a registered buyer, the buyer counts as causing the movement if the buyer is known when the goods start moving. Most kabadiwalas are unregistered (GST is optional in Luma.Green's own onboarding), so the yard usually has to raise the e-way bill. A bill is valid one day per 200 km. The dispatch step should therefore record the e-way bill number and vehicle number together with the weighbridge slip.",
+   "sourceUrls": [
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter16/rule138_v1.00.html"
+   ]
+  },
+  {
+   "point": "Metal scrap has carried extra tax steps since October 2024, and each creates a task per trade",
+   "detail": "Four rules now apply to metal scrap. (1) From 10 Oct 2024, a registered buyer pays GST under reverse charge on metal scrap (Customs Tariff chapters 72 to 81) bought from an unregistered seller (Notification 06/2024-CT(Rate)). (2) The buyer must issue a self-invoice within 30 days of receiving the goods (Rule 47A, in force from 1 Nov 2024). (3) From 10 Oct 2024, a registered buyer of metal scrap from a registered seller must deduct GST TDS (Notification 25/2024-CT). Section 51 sets this at 1% CGST, plus the matching 1% state tax, on contracts above ₹2.5 lakh. (4) The Finance Bill 2026 memorandum proposed raising income-tax TCS on sale of scrap from 1% to 2% from 1 Apr 2026, under Section 394(1) of the new Income-tax Act. Accounts teams at yards and recyclers track all of this by hand today. A platform can flag these steps and pre-fill monthly registers, but it should not file anything.",
+   "sourceUrls": [
+    "https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf",
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter6/rule47a_v1.00.html",
+    "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-25-2024.pdf",
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section51_v1.00.html",
+    "https://www.indiabudget.gov.in/doc/memo.pdf"
+   ]
+  },
+  {
+   "point": "CPCB's EPR portal fixes the data a recycler's compliance person must key in",
+   "detail": "Every plastic-waste purchase needs: supplier name and address, EPR category (I to IV), quantity in kg or tonnes, date, and the supplier's GSTIN (or PAN/Aadhaar if unregistered), plus a copy of the invoice. Production entries use a conversion factor confirmed at physical verification. Certificates come in lots of 1, 10, 50, 100, 500 or 1,000 tonnes. A sale of recycled output counts only with a signed GST e-invoice (buyer and seller GSTIN, IRN, HSN, amount, QR code), which CPCB checks against GSTN. Processors file annual returns by 30 April. They cannot certify more than their installed capacity, and false data means a one-year debarment. Demand comes from brand owners, who must use recycled plastic in rigid (Category I) packaging: 30% in 2025-26, 40% in 2026-27, 50% in 2027-28 and 60% from 2028-29. Category II rises from 10% to 20% and Category III from 5% to 10%.",
+   "sourceUrls": [
+    "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
+    "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf",
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf"
+   ]
+  },
+  {
+   "point": "Karnataka is where weak chain-of-custody records turned into a scandal",
+   "detail": "A CPCB audit (reported 8 Nov 2023) found that Enviro Recyclean in Ramanagara, cleared by KSPCB to process 3.5 lakh tonnes a year, had transferred EPR certificates for 3.48 lakh tonnes while the plant was not yet running. The audit called the invoices it had uploaded 'fallacious'. The proposed penalty was ₹5,000 a tonne, more than ₹174 crore. The audit also noted the plant had received its consent to operate within seven working days of its consent to establish. KSPCB then put all 89 recyclers it had cleared under inspection, and about 140 units had applied. Buyers and brand owners will value evidence tied to each load: weighbridge slips, vehicle numbers, photos, and checks that output never exceeds input.",
+   "sourceUrls": [
+    "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fcentral-audit-reveals-plastic-recycling-scam-in-karnataka-2761182"
+   ]
+  },
+  {
+   "point": "Weight and quality disputes follow written trade rules, and Bengaluru's scales are actively policed",
+   "detail": "The ISRI scrap specifications (now published by ReMA) say, for paper, that the buyer's weight governs if taken on a certified scale. There is no adjustment when the gap is 1% or less for domestic loads (2% for export). Above that, the seller can ask for a review by producing a certified gross/tare/net ticket or a bale-by-bale tally. Paper should be at most 12% moisture unless buyer and seller agree otherwise before shipping, including how to test it. For old corrugated containers (OCC), prohibitive materials must not exceed 1%, and outthrows plus prohibitives must not exceed 5%. In Bengaluru Urban, Legal Metrology made 20,391 inspections in the 17 months to August 2024. It booked 5,375 cases and collected ₹1.79 crore in fines, and unrenewed stamping was among the most common violations. Luma.Green should record both parties' weights, the slip photo and the scale's stamping date, and should treat quality deductions as data.",
+   "sourceUrls": [
+    "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf",
+    "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+   ]
+  },
+  {
+   "point": "Recycled-content certificates certify each site along the chain; Luma.Green can supply the evidence but cannot issue them",
+   "detail": "GRS and RCS rely on third-party audits at each stage of the chain. GRS covers business-to-business claims from 20% recycled content, but a consumer-facing label needs 50%. Textile Exchange is merging them into its Materials Matter Standard, effective 31 Dec 2026 and mandatory from 31 Dec 2027. ISCC PLUS offers three tracking methods: mass balance, physical segregation and controlled blending. Each site holds its own certificate, valid for 12 months. Collecting points, processing units and traders that store material must be certified; transporters need not be. What helps a certified recycler pass its audit is lot-level data: lot IDs, input and output weights, supplier site and dates, which Luma.Green can hold. Luma.Green should not present its records as certificates.",
+   "sourceUrls": [
+    "https://textileexchange.org/recycled-claim-global-recycled-standard/",
+    "https://www.iscc-system.org/certification/iscc-certification-schemes/iscc-plus/"
+   ]
+  },
+  {
+   "point": "Karnataka's pollution-board consents can be checked in a public register",
+   "detail": "KSPCB's XGN consent register is public. For each unit it lists PCB ID, name, colour category (Red, Orange, Green or White), regional office, consent type (consent to establish, consent to operate, hazardous-waste authorisation, combined order), status (granted or rejected), consent number and validity date. The newest entries were dated 28 Sep 2026. The admin can check the number and validity on an uploaded consent PDF against this register. Luma.Green can then store the validity date and remind the compliance person before it expires.",
+   "sourceUrls": [
+    "https://xgn.karnataka.gov.in/CSHARP/ALLConsentOrder.aspx"
+   ]
+  },
+  {
+   "point": "Competitors already offer a document pack for every trade",
+   "detail": "Recykal Market advertises sellers checked against GST records, the invoice, e-way bill and weight certificate in one dashboard, an automated audit pack, a grade guarantee and payment protection. Attero's MetalMandi launched in 2025. By April 2026 it had 1.1 lakh registered users, 50,000+ monthly active users and about 15,000 tonnes a month of metal scrap, with live prices, AI grading from photos, document uploads, geo-tracking and shipment monitoring. Its main hubs are Delhi NCR, Chennai, Mumbai, Pune and Hyderabad; Bengaluru is not among them. A document pack is now expected by default. Luma.Green's advantage has to be origin back to the household and kabadiwala, a Kannada-first interface and trustworthy weighing in Bengaluru.",
+   "sourceUrls": [
+    "https://recykal.market/plastic/",
+    "https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp"
+   ]
+  },
+  {
+   "point": "Many of Bengaluru's own recyclers are informal and unregistered",
+   "detail": "In June 2025 the Deccan Herald reported that recyclers in Nayandahalli, Kumbalagodu and Bidadi are small, unorganised and unregistered. Only 20-30% of the city's plastic is recycled, and only about 40% of the plastic reaching dry-waste collection centres. A recycler who puts in ₹10 lakh to start cannot afford a ₹50 lakh effluent treatment plant. Luma.Green's rule that recyclers upload a pollution-board consent will screen many of these out. The first factory users are therefore likely to be the registered minority, and records must be captured on a phone at the moment of weighing, not in ERP-style forms.",
+   "sourceUrls": [
+    "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Finside-the-labyrinth-of-plastic-waste-handling-3575766"
+   ]
+  },
+  {
+   "point": "For finance teams, late payment is the main pain, and the law sets a 45-day limit",
+   "detail": "The MSMED Act requires buyers to pay micro and small suppliers within the agreed period, which cannot exceed 45 days. Late payment carries compound interest, with monthly rests, at three times the RBI bank rate. The government's MSME Samadhaan portal shows 2,56,892 delayed-payment cases filed, with ₹31,690 crore payable. Yards (as sellers) care about due dates, and buyers care about staying compliant. Storing the Udyam number and showing a due date and an overdue badge is cheap and valued by both sides.",
+   "sourceUrls": [
+    "https://samadhaan.msme.gov.in/"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Trade document pack: one timeline per trade (PO number, weigh-in and weigh-out slip photos, quality result, receipt/GRN number, invoice number and IRN, e-way bill number, payment reference) with a one-tap PDF in English plus the user's language. In the prototype, simulated escrow releases on the buyer's receipt (net weight after deductions).",
+   "why": "This is how factories already run a purchase (Tally: PO, then Receipt Note, then Purchase voucher), and competitors advertise the same 'invoice, e-way bill and weight certificate in one place'. It needs only optional fields on the existing trades table.",
+   "priority": "prototype-now",
+   "users": [
+    "yard owner",
+    "recycler procurement",
+    "manufacturer accounts",
+    "EHS officer"
+   ]
+  },
+  {
+   "feature": "Lot traceability with a mass-balance check: lot IDs from kabadiwala sorting runs to yard bales to recycler input, a trace view back to household pickups, and a warning when a business sells more than it received or more than its declared capacity.",
+   "why": "The Karnataka case (certificates for 3.48 lakh tonnes from a plant that was not running) and CPCB's installed-capacity cap make this the credibility story for investors. ISCC PLUS and GRS audits also need lot-level evidence.",
+   "priority": "prototype-now",
+   "users": [
+    "EHS officer",
+    "quality in-charge",
+    "brand buyer or auditor (read-only)",
+    "investors"
+   ]
+  },
+  {
+   "feature": "Factory team roles: the owner invites staff by phone number, and each gets a preset role (owner, purchase, gate/weighbridge, quality, accounts, compliance, plant) that opens on its own screen.",
+   "why": "A factory's work is spread across several people, but memberships currently only has owner and staff. A small enum change lets the demo show every role inside a factory.",
+   "priority": "prototype-now",
+   "users": [
+    "yard owner",
+    "recycler owner",
+    "manufacturer owner"
+   ]
+  },
+  {
+   "feature": "Export centre. Now: CSV and Excel downloads laid out like Tally's sample import files for Purchase, Receipt Note and Sales vouchers (material code, English name, HSN, kg, rate, amount, party GSTIN), plus a monthly 'EPR procurement register' CSV in CPCB portal field order. Pilot: add Tally XML after testing with 2-3 real accountants.",
+   "why": "Tally already imports Excel, XML and JSON and reports errors before committing, and the CPCB fields are fixed. Exports need no API and can be built client-side or through a Convex HTTP action.",
+   "priority": "prototype-now",
+   "users": [
+    "accounts/finance",
+    "EHS officer"
+   ]
+  },
+  {
+   "feature": "Share to WhatsApp and email: the Web Share API passes the slip or pack PDF and CSVs to WhatsApp on phones; on desktop, download plus a mailto link. wa.me text links for status updates.",
+   "why": "Free, no template approval, and it works in the installable web app today. WhatsApp is where yards and buyers already talk.",
+   "priority": "prototype-now",
+   "users": [
+    "gate/weighbridge operator",
+    "dispatch",
+    "yard owner",
+    "procurement"
+   ]
+  },
+  {
+   "feature": "Gate and weighbridge screen (phone, Kannada first): weigh-in and weigh-out against an order, with vehicle number, gross/tare/net, slip photo and the scale's stamping-valid-until date. It compares the seller's and buyer's net weights and flags gaps over 1%.",
+   "why": "The ISRI paper rules settle disputes on certified-scale weights with a 1% domestic tolerance, and Bengaluru Legal Metrology finds many unstamped or tampered scales. Recording both weights plus the photo is the cheapest fraud control.",
+   "priority": "pilot",
+   "users": [
+    "gate/weighbridge operator",
+    "yard owner",
+    "quality in-charge"
+   ]
+  },
+  {
+   "feature": "Quality check with deductions: parameters and default limits per material (paper moisture 12%; OCC prohibitives 1% and outthrows plus prohibitives 5%; plastics moisture, contamination and colour), with accept, deduct or reject. Deductions change the receipt weight or price, and the seller sees the reason and photos at once.",
+   "why": "Quality deductions are where money and trust are lost between yard and mill. Recording them as data also gives the investor story on grade quality.",
+   "priority": "pilot",
+   "users": [
+    "quality/lab in-charge",
+    "procurement",
+    "yard owner (seller)"
+   ]
+  },
+  {
+   "feature": "Add fields to the material catalogue (data only, no code change): HSN code, GST unit code (e.g. KGS), EPR plastic category I to IV, a reference grade (ISRI/ReMA name), and per-organisation alias names ('raddi', buyer grade names).",
+   "why": "Invoices and Tally imports need HSN codes and units, the CPCB register needs the category, and buyers use their own grade names. The catalogue is already seeded from convex/lib/catalogue.ts, so this stays easy to change.",
+   "priority": "pilot",
+   "users": [
+    "accounts/finance",
+    "EHS officer",
+    "quality in-charge",
+    "procurement"
+   ]
+  },
+  {
+   "feature": "Tax and paperwork flags on each trade, with no filing: e-way bill needed (over ₹50,000; the buyer raises it when the seller is unregistered); metal-scrap reverse charge, self-invoice due within 30 days; GST TDS on metal scrap between registered parties above ₹2.5 lakh; TCS on scrap at the current rate. Rates and thresholds sit in an admin-editable table with effective dates, like price floors.",
+   "why": "The rules changed in Oct-Nov 2024 and again from Apr 2026 (TCS 1% to 2%, as proposed). Keeping them as dated data follows the founders' 'easy to change' rule and avoids tax-filing liability.",
+   "priority": "pilot",
+   "users": [
+    "accounts/finance",
+    "yard owner"
+   ]
+  },
+  {
+   "feature": "Compliance vault and reminders: consent number, colour category and validity (checked by the admin against the public KSPCB XGN register), EPR/PWP registration, installed capacity, the 30 April annual-return date, and document expiry alerts. One click builds an audit pack (all documents for a period, zipped).",
+   "why": "Compliance staff juggle the XGN and CPCB portals and folders of PDFs. The consent-validity data is public in Karnataka, which makes verification cheap.",
+   "priority": "pilot",
+   "users": [
+    "EHS/compliance officer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Payables and receivables with the MSME 45-day clock: Udyam number on the organisation, due date set to the earlier of the agreed date and 45 days, overdue badges, and the payment reference recorded (money stays off-platform, per ADR 0009).",
+   "why": "Late payment is the MSME sector's largest dispute category (2.57 lakh cases, ₹31,690 crore). It matters to both yards and manufacturers and needs no payment licence.",
+   "priority": "pilot",
+   "users": [
+    "accounts/finance",
+    "yard owner",
+    "recycler owner"
+   ]
+  },
+  {
+   "feature": "Deeper integrations: a Tally connector (TDL add-on or local agent using Tally's XML/JSON HTTP interface), CSV over SFTP or an API for SAP/ERP plants, e-invoice and e-way bill generation through a GST Suvidha Provider (GSP), WhatsApp Business API utility templates billed in INR through a Meta partner, data exports for GRS and ISCC PLUS auditors, and a CPCB EPR portal feed if an API appears.",
+   "why": "Each needs credentials, local installs or vendor contracts. They pay off only once factories trade on the platform regularly.",
+   "priority": "scale",
+   "users": [
+    "large manufacturers",
+    "recycler accounts/IT",
+    "EHS officer"
+   ]
+  }
+ ],
+ "artifactMarkdown": "### Factory roles on Luma.Green (yards, recyclers, manufacturers)\n\nScreen paths are proposals under the existing `/app/{org}/...` area. \"When\" is prototype-now, pilot or scale.\n\n| Role | Found at | Works in today | Needs from Luma.Green | Screen that serves them | When |\n|---|---|---|---|---|---|\n| Owner / proprietor | All three | Phone calls, WhatsApp groups, the accountant's Tally | Today's buy and sell prices; tonnes in and out; money due in and out; approve large orders; add staff with limited access | Home dashboard `/app/{org}` + Team `/app/{org}/team` | prototype-now |\n| Purchase / procurement manager | Recycler, manufacturer (at a yard the owner does it) | WhatsApp groups, phone, Excel price sheets | Verified sellers nearby by grade; post a demand with spec (grade, tonnes, moisture/contamination limits, price, delivery window); a PO number that carries into Tally | Market `/app/{org}/market` + Orders `/app/{org}/orders` | prototype-now |\n| Gate / weighbridge operator | All three | Weighbridge printout or handwritten slip, register book | Weigh-in and weigh-out against an order in three taps: vehicle no., gross/tare/net, slip photo, scale stamping date; automatic flag when buyer and seller weights differ by more than 1%; Kannada/Hindi | Gate `/app/{org}/gate` (phone) | pilot |\n| Quality / lab in-charge | Recycler, manufacturer; sorting supervisor at yards | Lab register, photos on WhatsApp | Moisture %, prohibitives/outthrows %, contamination, photos; accept / deduct / reject with a reason the seller sees at once; limits per material | Quality check `/app/{org}/quality` | pilot |\n| Stores / yard supervisor | Yard, recycler | Stock register, Excel | Receipt (GRN) number; bale tally with IDs and weights; stock by grade; sorting runs (mixed in, grades out) | Stock & lots `/app/{org}/stock` | pilot (already in the prototype) |\n| Plant / production manager | Recycler, manufacturer | ERP or Excel production log | Input lots to output lots; yield %; capacity used against consent/EPR capacity; Saathi shifts | Production `/app/{org}/production` + Jobs `/app/{org}/jobs` | pilot |\n| EHS / compliance officer | Recycler, manufacturer, large yards | KSPCB XGN portal, CPCB EPR portal, PDF folders | Consents with validity and reminders; EPR procurement register in portal fields (supplier, category I-IV, kg, date, GSTIN or PAN, invoice); output within capacity; trace any lot to its pickups; one-click audit pack | Compliance `/app/{org}/compliance` + Trace `/app/{org}/trace/{lot}` + Exports | pilot (trace view: prototype-now) |\n| Accounts / finance | All three | Tally (or Busy/Marg), GST and e-way bill portals, bank | Tally-ready Purchase / Receipt Note / Sales files with HSN and kg; flags for e-way bill, metal-scrap reverse charge (self-invoice within 30 days), GST TDS and TCS; saved IRN and e-way bill numbers; due dates on the MSME 45-day clock | Money `/app/{org}/money` + Exports `/app/{org}/exports` | prototype-now (exports) / pilot (flags) |\n| Logistics / dispatch | Yard, recycler | Phone, WhatsApp, e-way bill portal | Vehicle, driver phone, e-way bill number; share the document pack to WhatsApp; arrival alerts | Order timeline, dispatch step (`/app/{org}/orders/{id}`) | pilot |\n| Sales (recycled output) | Recycler | WhatsApp broadcasts, calls, email | List output grades with lab report and certificates (GRS, ISCC PLUS, EPR); see manufacturer demand; share spec sheets | Market (sell) + Certificates in Compliance | pilot / scale |\n| Labour contractor / HR | Yard, recycler, factory | Contractor's WhatsApp, attendance book | Post shifts; check-in/out; work record for pay | Jobs `/app/{org}/jobs` | scale |\n| External auditor / brand buyer (read-only) | Outside the factory | Emailed PDFs | A read-only trace link for a lot or period: weights, photos, invoices, origin | Shared trace link `/trace/{token}` | prototype-now |",
+ "risks": [
+  "Tax rules change often: metal-scrap reverse charge and TDS arrived in Oct 2024, and TCS on scrap was proposed to double from 1 Apr 2026. Hard-coded logic or advice-like wording creates liability, so show flags with 'confirm with your CA' and keep rates as dated data.",
+  "A platform record can be faked just as EPR invoices were. Without photo evidence, both parties confirming the weight, and mass-balance alerts, Luma.Green could end up laundering bad data instead of proving good data.",
+  "Presenting Luma.Green's records as 'certificates' or trading EPR credits would clash with CPCB's authorisation of EPR trading platforms and with the GRS/ISCC certification bodies. Stay a data layer that certified parties draw on.",
+  "A live Tally sync means installing and supporting a local agent on customers' PCs, a security and support burden for a small team, and Tally versions vary across customers. Exporting files avoids this.",
+  "WhatsApp Business API adds per-message costs and template approvals, and Indian accounts must move to INR billing by 31 Dec 2026. WhatsApp groups themselves cannot be automated.",
+  "CPCB asks for PAN or Aadhaar of unregistered suppliers. Storing kabadiwalas' Aadhaar numbers raises data-protection (DPDP) risk: collect only when a recycler needs it for EPR, mask it, and limit access to the compliance role.",
+  "Requiring pollution-board consent screens out many of Bengaluru's small, unregistered recyclers, so early factory adoption may be thin. Start with registered yards and recyclers.",
+  "Recykal Market and MetalMandi already offer document dashboards at scale. Without upstream origin data and Kannada-first weighing, Luma.Green looks like a late copy.",
+  "Exports in Indian scripts can break matching against Tally masters, and Tally's document-reading AI (Docs by Ira) reads only English, non-handwritten documents. Always include material codes and English names in exports and PDFs."
+ ],
+ "openQuestions": [
+  "Which accounting software do the pilot yards and recyclers use (Tally, Busy, Marg, Excel), and which Tally release? This decides between Excel and XML exports.",
+  "Do pilot yards weigh on their own stamped weighbridge, a public weighbridge or platform scales, and does their slip carry a serial number?",
+  "What grade names, quality parameters and deduction rules do Bengaluru buyers write on POs today (ISRI names, mill specs, local names)?",
+  "For metal, do pilot yards buy from unregistered kabadiwalas, and do they issue reverse-charge self-invoices today?",
+  "Do pilot recyclers hold CPCB processor (PWP) registration, and does the portal accept bulk uploads from processors, or only the per-invoice 'Single Entry' form the manual shows?",
+  "Will buyers, GRS/ISCC auditors or CPCB physical verification accept Luma.Green's weight and photo record as supporting evidence?",
+  "What TCS rate on scrap did the Finance Act 2026 actually enact, what is Karnataka's intra-state e-way bill limit, and is the 45-day MSME payment rule kept under the Income-tax Act 2025?",
+  "Which factory roles will actually log in during the pilot: only the owner, or also gate, quality and accounts staff?",
+  "Should brand owners and auditors get read-only trace links in the investor demo, and who controls sharing them?"
+ ],
+ "sources": [
+  {
+   "title": "Tally Solutions - homepage (2.7M+ businesses; e-invoice, e-way bill, WhatsApp Business)",
+   "url": "https://tallysolutions.com/"
+  },
+  {
+   "title": "TallyHelp - Import data into TallyPrime (Excel, XML, JSON; mapping templates; exceptions)",
+   "url": "https://help.tallysolutions.com/import-data-in-tally/"
+  },
+  {
+   "title": "TallyHelp - XML integration (HTTP server, port 9000, ENVELOPE structure)",
+   "url": "https://help.tallysolutions.com/xml-integration/"
+  },
+  {
+   "title": "TallyHelp - Purchase orders, receipt notes and rejections",
+   "url": "https://help.tallysolutions.com/purchase-order-tally/"
+  },
+  {
+   "title": "Meta for Developers - WhatsApp Business Platform pricing",
+   "url": "https://developers.facebook.com/docs/whatsapp/pricing/"
+  },
+  {
+   "title": "MDN - Navigator.share() (Web Share API)",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
+  },
+  {
+   "title": "Notification 06/2024-Central Tax (Rate): reverse charge on metal scrap from unregistered persons",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf"
+  },
+  {
+   "title": "CGST Rules - Rule 47A (self-invoice within 30 days)",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter6/rule47a_v1.00.html"
+  },
+  {
+   "title": "Notification 25/2024-Central Tax: GST TDS on metal scrap",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-25-2024.pdf"
+  },
+  {
+   "title": "CGST Act - Section 51 (tax deduction at source)",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section51_v1.00.html"
+  },
+  {
+   "title": "CGST Rules - Rule 138 (e-way bill)",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter16/rule138_v1.00.html"
+  },
+  {
+   "title": "Finance Bill 2026 - Memorandum (TCS on sale of scrap 1% to 2%)",
+   "url": "https://www.indiabudget.gov.in/doc/memo.pdf"
+  },
+  {
+   "title": "MSME Samadhaan - Delayed Payment Monitoring System",
+   "url": "https://samadhaan.msme.gov.in/"
+  },
+  {
+   "title": "CPCB - Guidance Manual, Centralized EPR Portal for Plastic Packaging",
+   "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf"
+  },
+  {
+   "title": "CPCB - Instruction Sheet for PWPs (GST e-invoices for EPR certificates)",
+   "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf"
+  },
+  {
+   "title": "Plastic Waste Management (Amendment) Rules 2022 - EPR guidelines",
+   "url": "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf"
+  },
+  {
+   "title": "Deccan Herald - Central audit reveals plastic recycling scam in Karnataka (8 Nov 2023)",
+   "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fcentral-audit-reveals-plastic-recycling-scam-in-karnataka-2761182"
+  },
+  {
+   "title": "KSPCB XGN - Public consent register",
+   "url": "https://xgn.karnataka.gov.in/CSHARP/ALLConsentOrder.aspx"
+  },
+  {
+   "title": "News Karnataka - Fraud in weights and measurements continues in Bengaluru (6 Nov 2024)",
+   "url": "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+  },
+  {
+   "title": "Deccan Herald - Inside the labyrinth of plastic waste handling, Bengaluru (7 Jun 2025)",
+   "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Finside-the-labyrinth-of-plastic-waste-handling-3575766"
+  },
+  {
+   "title": "ReMA / ISRI Scrap Specifications Circular 2024",
+   "url": "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+  },
+  {
+   "title": "ISCC - ISCC PLUS certification scheme",
+   "url": "https://www.iscc-system.org/certification/iscc-certification-schemes/iscc-plus/"
+  },
+  {
+   "title": "Textile Exchange - Recycled Claim Standard and Global Recycled Standard",
+   "url": "https://textileexchange.org/recycled-claim-global-recycled-standard/"
+  },
+  {
+   "title": "Recykal Market - Plastic scrap trading",
+   "url": "https://recykal.market/plastic/"
+  },
+  {
+   "title": "The Tribune (ANI) - Attero's MetalMandi crosses 2 lakh downloads (7 Apr 2026)",
+   "url": "https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp"
+  }
+ ]
+}

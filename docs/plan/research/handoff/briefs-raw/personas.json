@@ -1,0 +1,348 @@
+{
+ "topic": "personas",
+ "headline": "About 80–85% of Bengaluru's dry waste passes through informal waste pickers and kabadiwalas, and the Solid Waste Management Rules 2026 (in force since 1 April 2026) now require bulk generators and sorting yards to register on a central portal and deal only with registered parties. Verifying informal players and keeping a weighed record of every hand-off is the one capability almost every persona needs.",
+ "findings": [
+  {
+   "point": "Most recyclables pass through informal hands, so informal micro-businesses are the core users.",
+   "detail": "India's informal recycling sector is about 4 million people. That includes an estimated 2.2 million waste pickers, 76.2% of them informally employed, who collect 15–20% of city waste (GRID-Arendal/IAWP 2024). A study hosted by BBMP (the former Bengaluru city corporation) put the informal share of Bengaluru's dry waste at 80–85%. Daily volumes by tier: 80–100 kg per waste picker, 250–300 kg for an average scrap dealer, 1–5 t for a medium aggregator, 10–20 t for a large one and 25–30 t for a very large one. Each of the 4–5 hand-offs is a separate small business, which matches the roles Luma.Green onboards.",
+   "sourceUrls": [
+    "https://wastepickersinternational.org/document/organising-and-integrating-the-informal-recycling-sector-in-the-solid-waste-management-sector-india/",
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru%27s%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+   ]
+  },
+  {
+   "point": "The SWM Rules 2026 make 'registered and on the portal' a condition of trading for bulk generators, sorting yards and cities.",
+   "detail": "Notified 27 Jan 2026 (S.O. 388(E)); in force since 1 Apr 2026. Households must separate waste into four streams (wet, dry, sanitary, special care) and hand it to authorised waste pickers or collectors. Gated communities and institutions over 5,000 m², all RWAs, hotels and restaurants have one year (to Jan 2027) to send recyclables only to authorised pickers or recyclers. A bulk waste generator is anyone with ≥20,000 m² floor area, ≥40,000 L of water a day or ≥100 kg of waste a day. It must register on the central portal, meet Extended Bulk Waste Generator Responsibility (EBWGR), file returns by 30 June and must not engage unregistered entities (r.6). Any entity sorting dry waste must register with the local body, report quarterly by the 15th and not deal with unregistered parties (r.9). Cities must keep a ward-wise database of waste pickers and informal collectors on the portal and set up a way to recognise them (r.39(53)–(54)). The rules' 'informal waste collector' explicitly includes waste traders who buy and sell recyclables, which covers kabadiwalas.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+   ]
+  },
+  {
+   "point": "Households are online and prefer Indian languages, but many share phones and fewer than half pay digitally.",
+   "detail": "IAMAI-Kantar ICUBE 2024 counts 886 million active internet users: 488 m rural, 397 m urban, 47% women. 98% used content in Indian languages, and 57% of urban users prefer them to English. 20% go online on someone else's phone (15% urban, 24% rural), and 59% of these shared-phone users are women. 140 million use voice commands. Only 405 million (about 46%) made digital payments. So the household flow should keep one SMS code per booking (no account), a tracking link that opens on any phone, read-aloud, and cash as a full payment option.",
+   "sourceUrls": [
+    "https://www.iamai.in/sites/default/files/research/Kantar_%20IAMAI%20report_2024_.pdf"
+   ]
+  },
+  {
+   "point": "Bengaluru speaks more than 'Kannada, Hindi, English'.",
+   "detail": "Census 2011 mother tongues for the city: Kannada 42.1% (3.57 m), Tamil 1.39 m, Telugu 1.17 m, Urdu 1.10 m, Hindi 0.48 m, Malayalam 0.27 m, Marathi 0.17 m. Tamil, Telugu and Urdu speakers each outnumber Hindi speakers more than two to one. In the waste trade, the BBMP-hosted study counted 50,000–60,000 Bengali-speaking migrant waste pickers (Marathahalli, Bellandur, Sarjapur Road, Bommanahalli) and a large community of Marwari traders. All these languages are already among Luma.Green's 12; the pilot should check them first.",
+   "sourceUrls": [
+    "https://en.wikipedia.org/wiki/Bengaluru",
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru%27s%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+   ]
+  },
+  {
+   "point": "Kabadiwalas run on relationships, advances and cash, and customers distrust their scales.",
+   "detail": "Scrap dealers pay waste pickers advances to lock in supply and have standing arrangements with a larger aggregator. Margins are around ₹2/kg on cartons, with 'no real accounting'. Large aggregators depend on immediate cash. Traders pay sellers at once but wait for processors to pay them. Many dealers in Jolly Mohalla (Bengaluru's scrap market) had no BBMP licence and were wary of outsiders. Weighing is disputed: in the 17 months to Aug 2024, Karnataka's weights-and-measures department (Legal Metrology) made 20,391 inspections in Bengaluru Urban, booked 5,375 cases and fined ₹1.79 crore. Scales whose official stamp was not renewed were a common violation. An itemised, weighed receipt builds trust on both sides.",
+   "sourceUrls": [
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru%27s%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf",
+    "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+   ]
+  },
+  {
+   "point": "GST rules on metal scrap change who files tax paperwork at the kabadiwala → yard hand-off.",
+   "detail": "The 54th GST Council (9 Sep 2024) made two changes. When an unregistered seller sells metal scrap to a registered buyer, the buyer now pays the GST (reverse charge), even if the seller is below the registration threshold. And B2B metal-scrap sales between registered businesses now carry 2% TDS (tax deducted by the buyer). GSTN's 22 Oct 2024 advisory tells metal-scrap buyers to register as tax deductors (GST REG-07, 'Metal Scrap Dealers', Notification 25/2024). So yards buying from mostly unregistered kabadiwalas carry this paperwork. Records need each seller's GST status (onboarding already captures 'not GST-registered') and the material type.",
+   "sourceUrls": [
+    "https://cbic-gst.gov.in/pdf/Press-Release-54-GSTC-090924.pdf",
+    "https://tutorial.gst.gov.in/downloads/news/advisory_on_gst_reg07_22_10_2024.pdf"
+   ]
+  },
+  {
+   "point": "Bengaluru's waste pickers are organised but short of documents; the city's ward-level Dry Waste Collection Centres (DWCCs) could serve as ready-made yards and Saathi pools.",
+   "detail": "BBMP opened 198 ward DWCCs in 2012–13. By Sep 2025, 141 remained and 119 were running, serving 127 wards; Hasiru Dala (a Bengaluru waste-picker NGO) supports 35. Waste-picker ID cards issued in 2013 were valid for ten years and have expired, and the 2020 DWCC agreements (MoUs) with BBMP have lapsed. Many migrant pickers lack documents and some cannot get Aadhaar. A DWCC usually has 20–25 pickers and can earn up to ₹1.5 lakh in a good month, split by hours worked, but only about 30% of incoming waste is good enough to earn from. Operators borrow informally or pledge gold to cover vehicle costs. A registered Karnataka waste-pickers' union has 2,300+ members. In Sep 2025 the Greater Bengaluru Authority (GBA) replaced BBMP and waste moved to Bengaluru Solid Waste Management Ltd (BSWML), leaving the DWCCs' future unclear. Pickers are wary of new apps (ecoSansar, NoKasa) that don't treat them as partners.",
+   "sourceUrls": [
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+   ]
+  },
+  {
+   "point": "Dispatching or paying Saathis through an app is now regulated 'aggregator' work, in Karnataka and nationally.",
+   "detail": "Karnataka's Platform-Based Gig Workers Act 2025 covers app-booked work, including home services and e-commerce. Platforms must register, pay a welfare fee (the state set 1% of the worker's payout, capped per transaction), and communicate in Kannada, English or a language the worker understands. In July 2026 the High Court refused to stay the act and ordered Swiggy, Zomato, Blinkit and Zepto to deposit their fees for the second quarter. Nationally, the Social Security (Central) Rules 2026 (in force 8 May 2026) require aggregators to register, report every new worker and every exit in real time, and contribute either a notified share of turnover or 5% of payouts. Workers qualify for benefits after 90 days with one aggregator, or 120 days across several. Keeping Saathi pay off-platform, as planned, limits exposure for now; the job-matching model needs a legal read before a Saathi pilot.",
+   "sourceUrls": [
+    "https://www.business-standard.com/india-news/karnataka-gig-workers-act-explained-benefits-high-court-platforms-126070800776_1.html",
+    "https://www.medianama.com/2026/05/223-social-security-central-rules-2026-gig-workers-90-days-work/"
+   ]
+  },
+  {
+   "point": "UPI stays free for households, but from 15 Oct 2026 business payments above ₹2,000 cost the receiving business 0.4%, unless it is a small merchant.",
+   "detail": "NPCI's new fee (MDR) is 0.4% on UPI payments to a business above ₹2,000, capped at ₹300 for payments of ₹75,000 or more. Free: person-to-person transfers, AutoPay, and small merchants (P2PM) receiving up to ₹1 lakh a month through UPI. Apps may not charge customers. Along the chain: kabadiwala → household payouts are person-to-person and free; yard → kabadiwala payments are free while the kabadiwala stays a small merchant; recycler → yard and bulk-generator vendor payments will often pay the fee. The fee starts during the pilot week (13–20 Oct), so recording the method (cash / UPI person-to-person / UPI merchant) will show whether it shifts trades back to cash.",
+   "sourceUrls": [
+    "https://www.business-standard.com/finance/news/npci-sets-0-4-fee-on-upi-merchant-payments-above-2-000-effective-oct-15-126091501061_1.html",
+    "https://www.iamai.in/sites/default/files/research/Kantar_%20IAMAI%20report_2024_.pdf"
+   ]
+  },
+  {
+   "point": "Bulk generators, RWAs and city officials pay for compliance and reporting, not for scrap prices.",
+   "detail": "Hasiru Dala Innovations (the NGO's commercial arm) sells to Bengaluru bulk generators on alignment with the SWM rules, 'pay for what you generate' pricing, GPS-tracked collection with 99% regularity, structured impact reports and brand partnerships (Unilever, H&M). A client housing society points to its BSWML empanelment. The national cleanliness ranking, Swachh Survekshan 2025-26, has 12,500 marks: 1,000 for segregation, collection and transport, and 150 for waste processing at bulk generators, scored partly on whether all third-party vendors are empanelled. With SWM returns due 30 June, these buyers need verified vendors and exportable records of kilograms by waste stream.",
+   "sourceUrls": [
+    "https://hasirudalainnovations.com/total-waste-management/",
+    "https://sbmurban.org/storage/app/media/pdf/Swachh-Survekshan-2025-26-Toolkit.pdf",
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+   ]
+  },
+  {
+   "point": "Brands with plastic-packaging obligations (EPR) and their auditors face a trust crisis that verified chain-of-custody data could help fix.",
+   "detail": "Under the central pollution board's (CPCB) EPR guidelines, producers, importers, brand owners (together, PIBOs) and plastic waste processors must register on the central portal and may not trade with unregistered entities (6.2–6.3). CPCB or state boards, directly or through a designated agency, verify them by inspection and periodic audit; processors file returns by 30 April. Rigid (Category I) packaging must contain 30% recycled plastic in 2025-26, rising to 40%, 50% and 60% by 2028-29. The Centre for Science and Environment (CSE) found 41,577 PIBO registrations and 700,000 fake certificates issued by plastic recyclers, 38 times their capacity. Fines totalled ₹355 crore, and informal collectors have no place in EPR. Brands and auditors value evidence from the source (photos, weights, GPS, counterparties), but Luma.Green should not issue certificates itself.",
+   "sourceUrls": [
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf",
+    "https://www.downtoearth.org.in/waste/70k-fake-certificates-major-polluters-missing-misuse-of-epr-legislation-worsening-indias-plastic-problem-shows-cse-report"
+   ]
+  },
+  {
+   "point": "Manufacturers want domestic feedstock that is graded, traceable and tax-compliant.",
+   "detail": "India used about 41 Mt of iron and steel scrap in FY2024-25 and imported roughly a quarter of it. Scrap feeds 23% of steel output against a 50% target for 2047, and by March 2025, 48 countries had restricted scrap exports. The Material Recycling Association of India (MRAI) says: the informal sector undercuts formal recyclers by avoiding 18% GST; India lacks uniform grading and certification; and nothing traces scrap from origin to end use. Steelmakers that ran their own collection could keep margins of up to 16% that now go to intermediaries (EY-Parthenon). The roadmap's recycler → manufacturer 'order ahead' view fits this persona.",
+   "sourceUrls": [
+    "https://dialogue.earth/en/business/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/"
+   ]
+  },
+  {
+   "point": "Investors, lenders and CSR teams each need a different proof from the same record of trades.",
+   "detail": "Investors compare against players like Recykal: FY26 gross revenue ₹1,498 crore (+53% year on year), operating losses cut from 6% to 4%, and a USD 23 m bridge round in June 2026 (Circulate Capital exited at 5x). Lenders face a cash trade: DWCC operators pledge gold or borrow informally, and traders pay sellers upfront but are paid late by processors. Verified trade histories could later support lending to cover that gap. CSR applies to companies with ≥₹500 crore net worth, ≥₹1,000 crore turnover or ≥₹5 crore net profit. They must spend 2% of average net profit, environmental sustainability is an eligible area (Schedule VII), and they need verified outcomes such as kilograms diverted and livelihoods supported.",
+   "sourceUrls": [
+    "https://thecsruniverse.com/articles/recykal-raises-usd-23-million-to-expand-circular-economy-technology-and-global-operations",
+    "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+    "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru%27s%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf",
+    "https://ca2013.com/135-corporate-social-responsibility/"
+   ]
+  },
+  {
+   "point": "The Luma.Green team's own roles are shaped by the data-protection rules and a growing verification checklist.",
+   "detail": "The Digital Personal Data Protection (DPDP) Rules were notified on 14 Nov 2025 with 18 months to comply (to about May 2027). They require: a separate plain-language consent notice; breach notices to the people affected; a published contact for data questions; and answers to access, correction and erasure requests within 90 days. Penalties reach ₹250 crore for weak security. Consequences by role: support needs a data-rights queue in 12 languages; verification must add SWM-portal/local-body registration, CPCB EPR or processor numbers and metal-scrap TDS status to today's GST and pollution-board checks; finance must track payment method and the UPI fee; compliance must track gig-law status. One admin does all of this in the pilot.",
+   "sourceUrls": [
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190655",
+    "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
+    "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Demo world: one login per persona, plus read-only observer logins",
+   "why": "Investors judge breadth by clicking through each persona, and the founder asked for test IDs. Put Bengaluru demo data in one editable seed file so numbers are easy to change: wards, 6 kabadiwalas, 2 yards, 1 DWCC, 1 recycler, 1 manufacturer, 3 Saathis, 1 bulk generator and 1 RWA. Read-only observer logins (city, brand/auditor, CSR, lender, investor) show the non-trading personas without building new flows.",
+   "priority": "prototype-now",
+   "users": [
+    "founders",
+    "investors",
+    "testers",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Material passport: trace one bale back to the household pickups it came from",
+   "why": "Brands and auditors are reeling from 700,000 fake EPR certificates, and MRAI names missing traceability as a core gap. One screen showing kilograms, price, date, place and verified badges at each hand-off (household → kabadiwala → yard → recycler → manufacturer) demonstrates the 'record every hand-off' principle.",
+   "priority": "prototype-now",
+   "users": [
+    "EPR brands",
+    "auditors",
+    "manufacturers",
+    "investors"
+   ]
+  },
+  {
+   "feature": "Pilot numbers page for investors",
+   "why": "Build it from the existing events table (ADR 0012): kilograms and rupees through the platform, completed pickups, time to accept, estimated vs weighed kilograms, verified organisations by role, repeat households. Investors compare against players at Recykal's scale and want traction, not a feature list.",
+   "priority": "prototype-now",
+   "users": [
+    "investors",
+    "founders"
+   ]
+  },
+  {
+   "feature": "Registrations stored as editable data on every organisation, plus an optional 'registered sellers only' switch per buyer",
+   "why": "SWM 2026 (r.6(g), r.9(5)) and the EPR guidelines (6.3) bar registered entities from dealing with unregistered ones. Store each organisation's registrations as rows: GSTIN, pollution-board consent with expiry, CPCB EPR/processor number, SWM-portal or local-body registration, recognised-collector status, metal-scrap tax-deductor registration, Udyam (MSME) number. Buyers who must comply can switch on the filter without the platform shutting out unregistered kabadiwalas.",
+   "priority": "pilot",
+   "users": [
+    "yards",
+    "recyclers",
+    "bulk generators",
+    "admin/verification",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Bengaluru language pack and read-aloud",
+   "why": "Tamil, Telugu and Urdu speakers each outnumber Hindi speakers more than two to one in Bengaluru, and 50–60k waste pickers speak Bengali. Hand-check Kannada, English, Tamil, Telugu, Urdu, Hindi and Bengali first, order the language grid to match, and add read-aloud to every kabadiwala and Saathi action (140 m Indian internet users already use voice).",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "Saathis"
+   ]
+  },
+  {
+   "feature": "Weigh-and-pay trust kit",
+   "why": "Scale disputes are common: 5,375 weights-and-measures cases in Bengaluru Urban in 17 months. Record the scale's official stamp expiry at onboarding, allow a photo of the scale display per weighing, send an itemised SMS receipt (kg × rate), and add a one-tap dispute that reaches support.",
+   "priority": "pilot",
+   "users": [
+    "households",
+    "kabadiwalas",
+    "support"
+   ]
+  },
+  {
+   "feature": "Payment method and UPI-fee type on every recorded payment",
+   "why": "From 15 Oct 2026, UPI business payments above ₹2,000 cost 0.4% unless the receiver is a small merchant, and fewer than half of internet users pay digitally. Record cash / UPI person-to-person / UPI merchant, keep money off-platform, and watch whether business-to-business hand-offs slide back to cash.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwalas",
+    "yards",
+    "finance"
+   ]
+  },
+  {
+   "feature": "Saathi onboarding built for real waste pickers, with an NGO partner",
+   "why": "Old BBMP picker IDs have expired and many migrants lack Aadhaar. Accept a voter ID, an expired picker card, or a letter from an NGO, DWCC or union, plus a selfie. Pilot with a Hasiru Dala-supported DWCC as the first yard and Saathi pool. Keep Saathi pay off-platform until lawyers confirm whether Luma.Green counts as an 'aggregator' under Karnataka's gig act and the national Social Security Code.",
+   "priority": "pilot",
+   "users": [
+    "Saathis",
+    "NGOs/DWCC operators",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Compliance module for bulk generators and RWAs",
+   "why": "SWM 2026 makes large offices, hotels, malls, hospitals and campuses register, use registered vendors and file returns by 30 June; RWAs have until Jan 2027. What these buyers pay for (as Hasiru Dala Innovations shows) is scheduled pickups by verified vendors, monthly kilograms by stream and proof of vendor registration.",
+   "priority": "scale",
+   "users": [
+    "bulk generators",
+    "RWAs",
+    "city officials"
+   ]
+  },
+  {
+   "feature": "Exports of the waste-picker and kabadiwala registry for cities and NGOs",
+   "why": "Local bodies must keep a ward-wise database of waste pickers and informal collectors on the central portal, updated by 30 June each year. With consent, Luma.Green's verified kabadiwala and Saathi records and DWCC volumes can feed it, which makes the city a partner.",
+   "priority": "scale",
+   "users": [
+    "city officials",
+    "NGOs",
+    "Saathis",
+    "kabadiwalas"
+   ]
+  },
+  {
+   "feature": "Evidence packs for brands and auditors, sold through registered processors",
+   "why": "A read-only audit login with the audit log, photos, GPS, timestamps, weights and each counterparty's registrations, offered to brands through registered plastic processors. Luma.Green should never issue EPR certificates itself, given the fraud history.",
+   "priority": "scale",
+   "users": [
+    "EPR brands",
+    "auditors",
+    "recyclers"
+   ]
+  },
+  {
+   "feature": "Consent-based sharing of trade history with lenders",
+   "why": "DWCCs and traders fund working capital informally (gold pledges, processors paying late). A consented export of verified trade history can later let banks and NBFCs lend to kabadiwalas and yards.",
+   "priority": "scale",
+   "users": [
+    "lenders",
+    "kabadiwalas",
+    "yards",
+    "DWCC operators"
+   ]
+  }
+ ],
+ "artifactMarkdown": "## Luma.Green personas (India, pilot in Bengaluru)\n\nTags: [now] = show investors in the prototype · [pilot] = needed for real users in Bengaluru · [scale] = India-wide later. (a) = working assumption, to check in the pilot.\n\n| Persona | Jobs to be done | Pains | Device | Languages and literacy | Pays / gets paid | How Luma.Green serves them |\n|---|---|---|---|---|---|---|\n| **Household — apartment / RWA resident** [now] | Clear paper, cartons, PET, e-waste; fair price; follow the building's sorting rules | No kabadiwala when needed; doubts about scale and rate; no receipt | Own smartphone; 15% of urban users go online on someone else's phone | Prefer Indian languages (57% of urban users); literate; English common | Paid at the door, cash or UPI person-to-person (free) | Photo → estimate → book with SMS code; tracking link; itemised receipt; points |\n| **Household — independent house, urban / peri-urban** [now] | Sell bulky metal, appliances, raddi a few times a year | Heavy items; hidden prices; timing | Family smartphone, often shared (a) | Kannada, Tamil, Telugu, Urdu, Hindi; mixed literacy | Mostly cash, some UPI | Pickup or drop-off code; call button; read-aloud |\n| **Household — rural** [scale] | Sell to door-to-door buyers or village collection | Few buyers; low prices; distance | 488 m rural internet users; 24% use someone else's phone | State language; lower literacy; voice | Cash | Later: self-help-group or village-council drop-off points; WhatsApp/voice booking |\n| **RWA / gated-community committee** [scale] | By Jan 2027, make residents sort waste and send recyclables only to authorised pickers or recyclers (SWM 2026) | Unreliable vendors; residents who don't sort; proof for the city | Phones + a laptop | English + local | Pays a monthly vendor fee (bank/UPI); may be paid for dry waste | Scheduled pickups by verified vendors; monthly kilograms by stream |\n| **Bulk generator — office, tech park, campus, hospital** [scale] | ≥20,000 m², ≥40 kL water or ≥100 kg waste a day: register on the SWM portal, meet EBWGR, file returns by 30 June, use registered vendors only; ESG reports | Paperwork; mixed waste; vendor churn; audit trail | Facility manager on desktop + phone | English; housekeeping staff in local languages | Pays vendor invoices with GST by bank transfer | Verified vendors, pickup logs, certificates and exports |\n| **Bulk generator — hotel, restaurant, mall** [scale] | Daily wet + dry removal; hygiene; compliance | Volume; timing; rejected loads | Ops managers on phone | English + local | Monthly contracts; sometimes paid for cartons/PET | Recurring pickups; kilograms by stream |\n| **Kabadiwala (small scrap shop)** [now] | Buy from households, pickers and municipal sweepers; sort; sell to a regular yard (about 250–300 kg a day for an average dealer) | Walking the streets for supply; price swings; space; advances to pickers; scale inspections; often unlicensed | Android phone, WhatsApp (a) | Own language; many with little formal schooling (founder) — icons, numbers, voice | Pays households and pickers cash/UPI; paid by yards cash/UPI; no UPI fee below ₹1 lakh a month | Requests + auto-accept, weigh and pay, stock, own rates above the minimum; later yard offers |\n| **Waste picker / Saathi** [pilot] | Daily income from collecting, sorting, short shifts, pickups for kabadiwalas without a vehicle | Stigma; expired BBMP IDs; migrants without Aadhaar; price swings; only ~30% of DWCC intake is sellable | Basic or shared phone (a) | Kannada, Tamil, Telugu; Bengali for 50–60k migrant pickers; low literacy | Daily cash from kabadiwala or DWCC; UPI where they have a bank account | Job cards showing pay before accepting; voice; alternatives to Aadhaar; NGO-backed verification; pay stays off-platform |\n| **DWCC operator / waste-picker cooperative** (DWCC = ward-level Dry Waste Collection Centre) [pilot] | Run the ward centre; collect twice a week; sell to aggregators; split income by hours (up to ₹1.5 lakh in a good month) | Agreements with the city lapsed; vehicle costs; gold pledges and informal loans; mixed waste | Phone + paper logbook | Local languages; mixed literacy | Paid by aggregators cash/UPI; pays workers by hours | Pilot yard and Saathi pool; post stock; see buyer prices; records usable for loans |\n| **Yard / aggregator / preprocessor** [pilot] | Handle 1–30 t a day: buy, sort, bale, sell to recyclers; register as a sorting entity (SWM r.9); deduct TDS on metal scrap | Space; working capital (pays cash now, paid late); quality; GST paperwork on metal; wary of outsiders | Phone + desktop; weighbridge | Local languages; English for documents (a) | Pays kabadiwalas cash/UPI; paid by recyclers by bank; 0.4% fee on UPI business payments above ₹2,000 | See nearby stock; book collections; record weighbridge weights; keep registrations; post buying prices |\n| **Recycler (plastic, paper, metal, e-waste)** [pilot→scale] | Secure sorted feedstock; register on CPCB portals; file returns (plastic processors by 30 April); issue EPR certificates | Uneven grades; fraud crackdown; tax on metal bought from unregistered sellers; late payments | Desktop + phone | English + Hindi/local | Bank transfers with GST invoices | Verified supply with grades and documents; publish output; take orders ahead |\n| **Manufacturer (paper mill, steel electric-arc furnace, packaging converter)** [scale] | Steady, graded recycled input; recycled-content targets; fewer imports (¼ of 41 Mt iron/steel scrap is imported) | No grading standards or traceability; informal sellers undercut on GST | Desktop, ERP | English | Bank transfer, credit terms | See recycler output; order ahead; trace lots |\n| **Brand with plastic-packaging obligations (EPR)** [scale] | Meet EPR targets; rigid packaging must be 40% recycled plastic in 2026-27 | 700,000 fake certificates; informal chain invisible | Desktop | English | Buys EPR certificates; funds collection programmes | Traceable sourcing evidence through registered processors; no self-issued certificates |\n| **NGO / self-help group / waste-picker union** [pilot] | Livelihoods, IDs, social security; run DWCCs; help cities count pickers (SWM 2026) | Lapsed agreements and IDs; apps that bypass pickers | Phones + laptop | Local languages; bilingual field staff | Grants, CSR, fees from bulk generators | Partner console; co-run Saathi onboarding; consented registry |\n| **City official (Greater Bengaluru Authority corporations, BSWML, village councils)** [scale] | SWM 2026: ward-wise waste-picker database, EBWGR certificates, returns; national cleanliness ranking (1,000 marks for sorting and collection, 150 for bulk-generator processing) | Informal flows invisible; BBMP → GBA reshuffle | Desktop dashboards | Kannada + English | Budgets and tenders; collects user fees | Read-only ward dashboard; consented exports |\n| **CSR team** [scale] | Spend 2% of average net profit (companies with ≥₹500 cr net worth, ≥₹1,000 cr turnover or ≥₹5 cr profit); environment is an eligible area | Proving outcomes; finding credible implementers | Desktop | English | Grants to implementing agencies | Sponsor Saathi kits, DWCC upgrades, household drives; impact dashboard |\n| **Auditor (EPR/ESG verifier, pollution-board inspector)** [scale] | Check registrations, quantities, chain of custody | Claimed volumes far above real capacity; fabricated records | Desktop | English | Paid by client or regulator | Read-only audit login; audit log; photo, GPS and weight evidence |\n| **Lender (bank, NBFC, microfinance)** [scale] | Lend to kabadiwalas, DWCCs, yards | Cash trade with no records; borrowers pledge gold | Desktop/API | English | Disburses loans; collects instalments | Consented export of verified trade history |\n| **Investor** [now] | Judge traction, unit economics, defensibility (benchmark: Recykal FY26, ₹1,498 cr gross revenue) | Informal-market and regulatory risk | Desktop/phone | English | Equity | Live pilot numbers; one demo login per persona |\n| **Luma.Green — operations** [now] | Recruit kabadiwalas and yards; dispatch; unstick bookings | Timeouts; no-shows; shops without vehicles | Desktop + phone | English + Kannada/Tamil/Telugu/Hindi | Salary | Admin console: live bookings, reassign, pilot numbers |\n| **Luma.Green — support** [pilot] | Handle calls and SMS, weight disputes, and data requests within 90 days | 12 languages; callers with low literacy | Desktop + phone | Multilingual staff | Salary | Case queue linked to bookings; dispute flags; data-rights log |\n| **Luma.Green — verification** [now] | Check every business and Saathi in 12–24 h: GST, pollution-board consent, SWM/EPR registrations, IDs | One admin; expired or missing documents | Desktop | English + Kannada | Salary | Checklist per role; expiry reminders; registrations stored as data |\n| **Luma.Green — finance** [pilot→scale] | Record money that moves off-platform now; escrow, GST and UPI fees later | Cash; unclear whether we are an 'e-commerce operator' for GST | Desktop | English | Salary | Payment method on every receipt; exports |\n| **Luma.Green — compliance / legal** [pilot] | Data protection (to ~May 2027), SWM 2026, EPR, gig laws, GST | Rules changing mid-pilot | Desktop | English | Salary | Audit log; consent notices; policy tables editable without code |\n| **Luma.Green — sales / partnerships** [scale] | Sign bulk generators, RWAs, brands, CSR teams, cities, NGOs | Each buyer needs a different proof | Desktop + phone | English + local | Salary + incentives | Observer demo logins; material passport; impact reports |",
+ "risks": [
+  "Luma.Green could count as an 'aggregator' under Karnataka's gig act or the national Social Security Code if it dispatches or pays Saathis. That brings registration, a 1% welfare fee, real-time worker reporting, contributions up to 5% of payouts, and a duty to communicate in Kannada.",
+  "'Registered-only' rules (SWM 2026 r.6(g) and r.9(5); EPR 6.3) could shut unregistered kabadiwalas out of bulk-generator and brand-linked trade. Ignoring the rules makes the platform unusable for business buyers; enforcing them too early loses the informal supply.",
+  "IDs, selfies and home locations of migrant waste pickers, who fear eviction and harassment, could harm them if leaked. Weak security can draw data-protection penalties up to ₹250 crore.",
+  "Recorded weights and prices can be gamed (inflated kilograms, fake pickups). If platform records ever feed credits, the 700,000 fake EPR certificates show how this can go wrong.",
+  "The UPI fee from 15 Oct 2026 (during the pilot week) and GST reverse charge/TDS on metal scrap may push business hand-offs back to cash and off the platform, thinning the data trail.",
+  "Bengaluru's institutions are in flux: BBMP gave way to the Greater Bengaluru Authority and five corporations, waste moved to BSWML, and DWCC agreements lapsed. City and DWCC partnerships are uncertain during the pilot.",
+  "The 12-language promise may miss the languages the Bengaluru pilot actually needs (Tamil, Telugu, Urdu, Bengali) if those are checked last; users with low literacy need voice, not just translation.",
+  "A single admin verifying every role within 12–24 hours will not scale once bulk generators, brands and auditors join."
+ ],
+ "openQuestions": [
+  "Does a scrap-pickup marketplace or Saathi job board fall under Karnataka's gig act ('home services' or 'e-marketplace') or the Social Security Code's definition of an aggregator?",
+  "Which SWM 2026 registration should pilot yards (and Luma.Green) hold with GBA/BSWML, and will GBA recognise kabadiwalas as 'authorised' informal waste collectors?",
+  "Will a Hasiru Dala-supported DWCC or the Karnataka waste-pickers' union co-run the pilot as a yard and Saathi pool?",
+  "How many pilot kabadiwalas accept UPI, and do they stay under the ₹1 lakh a month small-merchant limit that avoids the new UPI fee?",
+  "What evidence from informal collection would a brand's EPR auditor accept (photo, weight, GPS, counterparty registration), and would brands pay for it?",
+  "Do Bengaluru RWAs and tech parks expect to be paid for dry waste or to pay for compliant collection, and what report format does BSWML ask of them?",
+  "Which ID or attestation can undocumented migrant waste pickers provide, and will an NGO's attestation be enough for verification?",
+  "What are recycle points worth, and could CSR budgets fund them?"
+ ],
+ "sources": [
+  {
+   "title": "Solid Waste Management Rules, 2026 (MoEFCC S.O. 388(E), 27 Jan 2026) — CPCB",
+   "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf"
+  },
+  {
+   "title": "Extracting Value from Bengaluru's Dry Waste Chain (SVP, WUCU, BCCF; hosted by BBMP, Nov 2014)",
+   "url": "https://apps.bbmpgov.in/SWM/Home/Documents/ReportsandStudies/Extracting%20Value%20from%20Bengaluru%27s%20Dry%20Waste%20Chain_Full%20Report%20(Nov%202014).pdf"
+  },
+  {
+   "title": "Invisible workers, visible waste: Bengaluru's waste pickers struggle without recognition — Citizen Matters (Sep 2025)",
+   "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+  },
+  {
+   "title": "Internet in India 2024 (ICUBE) — IAMAI and Kantar",
+   "url": "https://www.iamai.in/sites/default/files/research/Kantar_%20IAMAI%20report_2024_.pdf"
+  },
+  {
+   "title": "Bengaluru — Wikipedia (languages section, citing Census 2011 Table C-16)",
+   "url": "https://en.wikipedia.org/wiki/Bengaluru"
+  },
+  {
+   "title": "0.4% MDR kicks in from October 15 for ₹2,000-plus UPI payments — Business Standard (Sep 2026)",
+   "url": "https://www.business-standard.com/finance/news/npci-sets-0-4-fee-on-upi-merchant-payments-above-2-000-effective-oct-15-126091501061_1.html"
+  },
+  {
+   "title": "Recommendations of the 54th GST Council meeting (press release, 9 Sep 2024) — CBIC",
+   "url": "https://cbic-gst.gov.in/pdf/Press-Release-54-GSTC-090924.pdf"
+  },
+  {
+   "title": "Advisory on GST REG-07 for metal scrap buyers (22 Oct 2024) — GSTN",
+   "url": "https://tutorial.gst.gov.in/downloads/news/advisory_on_gst_reg07_22_10_2024.pdf"
+  },
+  {
+   "title": "Fraud in weights and measurements continues despite digital advances in Bengaluru — News Karnataka (6 Nov 2024)",
+   "url": "https://newskarnataka.com/karnataka/bengaluru/fraud-in-weights-and-measurements-continues-despite-digital-advances-in-bengaluru/06112024"
+  },
+  {
+   "title": "Plastic Waste Management (Amendment) Rules, 2022 — EPR guidelines for plastic packaging — CPCB",
+   "url": "https://cpcb.gov.in/uploads/plasticwaste/PWM-Amendment-Rules-2022.pdf"
+  },
+  {
+   "title": "700k fake certificates, major polluters missing: CSE report on EPR — Down To Earth (Oct 2024)",
+   "url": "https://www.downtoearth.org.in/waste/70k-fake-certificates-major-polluters-missing-misuse-of-epr-legislation-worsening-indias-plastic-problem-shows-cse-report"
+  },
+  {
+   "title": "India needs more scrap to boost green steelmaking. Can it find it? — Dialogue Earth (May 2026)",
+   "url": "https://dialogue.earth/en/business/india-needs-more-scrap-to-boost-green-steelmaking-can-it-find-it/"
+  },
+  {
+   "title": "Total Waste Management for Bulk Waste Generators — Hasiru Dala Innovations",
+   "url": "https://hasirudalainnovations.com/total-waste-management/"
+  },
+  {
+   "title": "Swachh Survekshan 2025-26 Toolkit — MoHUA / SBM-Urban",
+   "url": "https://sbmurban.org/storage/app/media/pdf/Swachh-Survekshan-2025-26-Toolkit.pdf"
+  },
+  {
+   "title": "DPDP Rules, 2025 notified — PIB (Nov 2025)",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190655"
+  },
+  {
+   "title": "Swiggy, Zomato, Ola must report gig workers in real time under new social security rules — MediaNama (12 May 2026)",
+   "url": "https://www.medianama.com/2026/05/223-social-security-central-rules-2026-gig-workers-90-days-work/"
+  },
+  {
+   "title": "Karnataka Gig Workers Act: what the law says and why it's contested — Business Standard (Jul 2026)",
+   "url": "https://www.business-standard.com/india-news/karnataka-gig-workers-act-explained-benefits-high-court-platforms-126070800776_1.html"
+  },
+  {
+   "title": "Recykal raises USD 23 million — The CSR Universe (20 Jun 2026)",
+   "url": "https://thecsruniverse.com/articles/recykal-raises-usd-23-million-to-expand-circular-economy-technology-and-global-operations"
+  },
+  {
+   "title": "Companies Act 2013, Section 135: Corporate Social Responsibility — ca2013.com",
+   "url": "https://ca2013.com/135-corporate-social-responsibility/"
+  },
+  {
+   "title": "Organising and integrating the informal recycling sector in solid waste management — India (GRID-Arendal and IAWP, 2024)",
+   "url": "https://wastepickersinternational.org/document/organising-and-integrating-the-informal-recycling-sector-in-the-solid-waste-management-sector-india/"
+  }
+ ]
+}

@@ -1,0 +1,415 @@
+{
+ "topic": "legal",
+ "headline": "Keeping money off the platform (ADR 0009) keeps Luma.Green outside GST e-commerce TCS and RBI payment-aggregator licensing for the Bengaluru pilot. Escrow would switch both on: 0.5% TCS with a GSTR-8 due by the 10th of every month, and money could only be held by an RBI-authorised aggregator, which itself needs ₹15 crore net worth. The amended E-Commerce Rules add grievance, seller-disclosure and dark-pattern-audit duties from 1 Jan 2027 whether or not escrow ever starts.",
+ "findings": [
+  {
+   "point": "Metal scrap has its own GST paperwork since 10 Oct 2024, and the right document depends on whether the seller is GST-registered",
+   "detail": "Notification 06/2024-CT(Rate) (8 Oct 2024, in force 10 Oct 2024) put metal scrap of Customs Tariff chapters 72–81 under reverse charge when an unregistered person sells to a registered one. The buying yard pays the GST, and CGST s.24(iii) makes anyone liable under reverse charge register. New Rule 47A (Notification 20/2024-CT, from 1 Nov 2024) requires the buyer to issue that self-invoice within 30 days of receiving the goods. When both sides are registered, Notification 25/2024-CT with s.51 makes the buyer deduct GST TDS of 1% CGST plus 1% SGST (2% in all) once the contract value exceeds ₹2.5 lakh. No deduction applies where the supplier's location and place of supply are in another state. The buyer deposits the TDS and files GSTR-7 by the 10th, and registers as a deductor through form REG-07 as 'Metal Scrap Dealers' (GSTN advisory, 22 Oct 2024). Luma.Green's onboarding already records 'Not GST-registered' explicitly, and that flag is what decides which document applies. This also answers the docs' open question 3: a yard or recycler that buys metal from unregistered kabadiwalas has to be GST-registered.",
+   "sourceUrls": [
+    "https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf",
+    "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-20-2024.pdf",
+    "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-25-2024.pdf",
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section51_v1.00.html",
+    "https://tutorial.gst.gov.in/downloads/news/advisory_on_gst_reg07_22_10_2024.pdf",
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section24_v1.00.html"
+   ]
+  },
+  {
+   "point": "Households are outside GST, and most kabadiwalas are below the ₹40 lakh registration line",
+   "detail": "Under GST, a 'supply' is one made in the course or furtherance of business (CGST s.7). A family selling its own old newspapers therefore needs only a receipt, not a tax invoice. Suppliers of goods only must register once all-India aggregate turnover passes ₹40 lakh. The limit is ₹20 lakh in ten listed states, and Karnataka is not one of them. Suppliers of services or mixed supplies register above ₹20 lakh. The October 2024 reverse-charge entry names metal scrap only, so paper and plastic bought from unregistered kabadiwalas are not caught by it.",
+   "sourceUrls": [
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter3/section7_v1.00.html",
+    "https://gstcouncil.gov.in/sites/default/files/e-version-gst-flyers/Registration_under_GST_Law_new.pdf",
+    "https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf"
+   ]
+  },
+  {
+   "point": "Luma.Green only becomes a GST e-commerce operator that must collect 0.5% TCS once it collects the money",
+   "detail": "Anyone who runs a digital platform for e-commerce is an e-commerce operator (ECO) under s.2(45), as the CBIC FAQ explains. Section 52 TCS, however, applies only 'where the consideration … is to be collected by the operator'. The rate has been 0.25% CGST plus 0.25% SGST (0.5% IGST between states) since 10 Jul 2024 (Notification 15/2024-CT). Registration regardless of turnover applies only to an ECO required to collect TCS (s.24(x), since 1 Feb 2019). Such an ECO pays the TCS and files GSTR-8 within 10 days of each month-end, plus an annual statement before 31 December. Sellers supplying through a TCS-collecting ECO must register (s.24(ix)). The exception is intra-state goods sellers below the threshold who take a PAN-based enrolment number instead (Notification 34/2023-CT, from 1 Oct 2023). With ADR 0009 the pilot stays outside TCS, and escrow would switch all of this on.",
+   "sourceUrls": [
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section52_v1.00.html",
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section24_v1.00.html",
+    "https://gstcouncil.gov.in/sites/default/files/2024-02/faq-e-commerc.pdf",
+    "https://gstcouncil.gov.in/sites/default/files/2024-09/central-tax-15-2024-11072024.pdf",
+    "https://gstcouncil.gov.in/sites/default/files/2024-05/gst-ct-34-2023.pdf"
+   ]
+  },
+  {
+   "point": "E-invoicing starts at ₹5 crore turnover and e-way bills at ₹50,000 per load, but handcarts and cycles are exempt",
+   "detail": "E-invoices (an IRN for each invoice) are mandatory for businesses whose aggregate turnover exceeded ₹5 crore in any year since 2017-18 (Notification 10/2023-CT, from 1 Aug 2023). That affects large yards, recyclers and manufacturers. Rule 138 requires an e-way bill before goods worth more than ₹50,000 move. This includes a registered buyer's inward load from an unregistered seller, which the registered buyer must generate. Goods carried by non-motorised conveyance need no e-way bill (r.138(14)(b)), which covers the kabadiwala's handcart or cycle. An e-commerce operator may fill Part A on the consignor's authorisation. Part B can be skipped for moves of up to 50 km to a transporter. Validity is one day per 200 km and can be extended within 8 hours of expiry.",
+   "sourceUrls": [
+    "https://www.gstcouncil.gov.in/sites/default/files/2024-05/10ct_eng.pdf",
+    "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter16/rule138_v1.00.html"
+   ]
+  },
+  {
+   "point": "Income tax adds TCS on scrap sales (2% from 1 Apr 2026) and a 0.1% TDS on e-commerce operators",
+   "detail": "Budget 2026-27 proposed raising the TCS that a seller collects on scrap from 1% to 2% under s.394(1) of the Income-tax Act 2025, effective 1 April 2026 (Finance Bill memorandum, clause 73). Separately, s.194-O of the 1961 Act requires e-commerce operators to deduct TDS on sales they facilitate; the rate was cut from 1% to 0.1% from 1 Oct 2024. Whether this e-commerce TDS applies to Luma.Green while buyers pay sellers directly needs a tax adviser's answer before business-to-business trades go live.",
+   "sourceUrls": [
+    "https://www.indiabudget.gov.in/doc/memo.pdf",
+    "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf"
+   ]
+  },
+  {
+   "point": "The E-Commerce Rules were amended on 9 Sep 2026, and the new duties apply from 1 Jan 2027",
+   "detail": "G.S.R. 789(E) requires every e-commerce entity to show its legal name, headquarters and branch addresses, website, and customer-care and grievance-officer email, landline and mobile numbers. The grievance officer must acknowledge a complaint within 48 hours, give the complainant a copy as recorded and resolve it within one month. Joining the National Consumer Helpline's 'convergence' programme becomes mandatory. The amendment also requires:\n- labels on sponsored listings;\n- a 'prior price' (the lowest price in the previous 30 days) shown next to any discount;\n- the seller's name on invoices in the same font size as the platform's name;\n- a yearly dark-pattern self-audit, with the certificate displayed.\nMarketplaces must show each seller's business name 'whether registered or not', address, customer-care number and rating, and explain what drives their rankings. Sellers must disclose any central ID such as a GSTIN or Udyam (MSME) number. DoCA's Lok Sabha answer of 25 Mar 2026 confirms the 2020 baseline (48 hours and one month), the NCH's 1915 number and 17 languages including Kannada, and the 13 dark patterns in the 2023 Guidelines.",
+   "sourceUrls": [
+    "https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/whatsnews/E_Commerce_Amendment_Rules_2026_2026-09-11_18-12-39.pdf",
+    "https://fcainfoweb.nic.in/PMS/writereaddata/2026_LS_B_5415.pdf"
+   ]
+  },
+  {
+   "point": "Because it hosts listings, photos and reviews, Luma.Green is an intermediary with IT Rules 2021 duties",
+   "detail": "MeitY's consolidated text (to 6 Apr 2023) requires Luma.Green to:\n- publish rules, privacy policy and user agreement in English or an Eighth-Schedule language of the user's choice (Kannada, Hindi and Urdu are Eighth-Schedule languages; Arabic is not);\n- remind users every year that breaking the terms can end their access;\n- remove content within 36 hours of a court order or government notice;\n- preserve removed content for 180 days, and keep registration data for 180 days after an account is closed;\n- name a Grievance Officer who acknowledges complaints within 24 hours and resolves them within 15 days (72 hours for some removal requests).\nAmendments made after April 2023 should be checked before the legal pages are final.",
+   "sourceUrls": [
+    "https://www.meity.gov.in/static/uploads/2024/02/Information-Technology-Intermediary-Guidelines-and-Digital-Media-Ethics-Code-Rules-2021-updated-06.04.2023-.pdf"
+   ]
+  },
+  {
+   "point": "DPDP Rules 2025: the core duties start around 13 May 2027, and breaches must be reported to the Board within 72 hours",
+   "detail": "G.S.R. 846(E) of 13 Nov 2025 set three start dates: the Data Protection Board rules immediately, the consent-manager rule after one year (about 13 Nov 2026), and notices, security, breach, retention and rights (rules 3, 5–16, 22–23) after 18 months. Security safeguards include encryption or masking, access control and logs kept for one year. Personal data, traffic data and processing logs must be kept for at least one year (r.8(3)). A breach must be told to each affected person without delay and reported to the Board in detail within 72 hours. Rights requests must be answered within 90 days. Penalties reach ₹250 crore for security failures, ₹200 crore for missed breach notices or children's data, and ₹50 crore for anything else. The repo's data-protection page already plans to this standard, with a 30-day target for rights requests.",
+   "sourceUrls": [
+    "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf",
+    "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf"
+   ]
+  },
+  {
+   "point": "Holding trade money would make Luma.Green a payment aggregator, which needs RBI authorisation and ₹15 crore net worth",
+   "detail": "RBI's Master Direction of 15 Sep 2025 (RBI/DPSS/2025-26/141) sets these rules:\n- Anyone aggregating payments for merchants needs RBI authorisation, with ₹15 crore net worth at application and ₹25 crore by the end of its third year.\n- A payment aggregator may not run a marketplace itself.\n- Merchant money sits in an escrow account at a scheduled commercial bank, and that account may not be used for cash on delivery.\n- An aggregator must stop a marketplace from taking payments for sellers not onboarded on that marketplace.\n- Merchants with turnover up to ₹40 lakh can be onboarded with PAN or Form 60, a physical check of the shop and one officially valid ID document.\nThe practical route is a licensed aggregator's marketplace (split-payment) product, never Luma.Green's own bank or UPI account.",
+   "sourceUrls": [
+    "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896"
+   ]
+  },
+  {
+   "point": "Every scale used in trade must be verified by Legal Metrology, and electronic scales must be re-verified every 12 months",
+   "detail": "Rule 27 of the Legal Metrology (General) Rules 2011 says every weight or measure used in a transaction must be verified and stamped by the state's Legal Metrology officer. Re-verification is due every 24 months for weights and beam scales, and every 12 months for other instruments such as electronic platform scales and weighbridges. Using an unverified weight is punishable under s.33 with a first-offence fine of ₹2,000–₹10,000 and up to a year in jail for repeat offences, as listed by Invest Karnataka in Sep 2025. DoCA brought Jan Vishwas amendments to the Legal Metrology Act into force from 1 May 2026 (S.O. 2103(E)). The 2026 Jan Vishwas Bill, passed on 2 Apr 2026, adds improvement notices for first offences, so the current penalty should be re-checked.",
+   "sourceUrls": [
+    "https://indiankanoon.org/doc/67045693/",
+    "https://investkarnataka.co.in/wp-content/uploads/2025/09/Penalty-Details-Legal-Metrology.pdf",
+    "https://www.teamleaseregtech.com/updates/article/55280/doca-enforcement-of-jan-vishwas-amendments-relating-to-legal-metrology/",
+    "https://prsindia.org/billtrack/the-jan-vishwas-amendment-of-provisions-bill-2026"
+   ]
+  },
+  {
+   "point": "In Karnataka, a unit's pollution category decides whether it needs a KSPCB consent and for how long",
+   "detail": "KSPCB, the Karnataka pollution board, sorts units into Red, Orange, Green and White categories (list per its notification of 27 Jul 2020). Consents are valid 5 years for Red and Orange and 10 years for Green (notification 1425 of 15 Jun 2016). Entries relevant to scrap:\n- Orange: waste-plastic reprocessing; aluminium or copper recovery from scrap in oil-fired furnaces; end-of-life vehicle and scrap dismantling or shredding centres.\n- Red: recycling hazardous scrap such as lead-acid battery plates and e-waste components.\n- White ('not included in the consent mechanism'): hydraulic baling of waste paper.\nKSPCB's public XGN register lists every consent with the unit, category colour, consent number and validity date, so the admin can check each claim. In Bengaluru, trade licences are issued online by the Greater Bengaluru Authority. Its portal was down for migration from 21 to 24 Sep 2026.",
+   "sourceUrls": [
+    "https://kspcb.karnataka.gov.in/consent-management/categorisation-rog",
+    "https://xgn.karnataka.gov.in/CSHARP/ALLConsentOrder.aspx",
+    "https://trade.bbmpgov.in/"
+   ]
+  },
+  {
+   "point": "Saathi work probably makes Luma.Green an 'aggregator' under both the central Social Security Code and Karnataka's 2025 gig-workers law",
+   "detail": "The Code on Social Security came into force on 21 Nov 2025. Aggregators owe 1–2% of annual turnover, capped at 5% of what they pay workers, but no rate has been notified yet. The Social Security (Central) Rules of 8 May 2026 require aggregators to register on the Shram Suvidha portal, upload existing gig workers within 45 days and report joins and exits in real time. Workers qualify for benefits after 90 days with one aggregator or 120 days across several. Karnataka's Act requires aggregators to register with its welfare board within 45 days and pay a welfare fee of 1–5% of each payout. In Feb 2026 the fee was set at 1% with per-transaction caps; for e-marketplaces the caps are ₹0.50 for two-wheelers, ₹0.75 for three-wheelers and ₹1.00 for light commercial vehicles, declared quarterly. Contracts must state pay terms and the right to refuse tasks. Deactivation needs 14 days' notice with reasons, disputes go to an internal committee that must act within 14 days, and fines run from ₹5,000 to ₹1 lakh plus 12% a year interest on unpaid fees.",
+   "sourceUrls": [
+    "https://ddnews.gov.in/en/what-indias-new-labour-codes-mean-for-gig-and-platform-workers/",
+    "https://www.medianama.com/2026/05/223-social-security-central-rules-2026-gig-workers-90-days-work/",
+    "https://www.scconline.com/blog/post/2026/02/18/karnataka-government-notifies-gig-workers-welfare-fee-mandatory/",
+    "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+   ]
+  },
+  {
+   "point": "Buyers must pay micro and small suppliers within 45 days",
+   "detail": "Under the MSMED Act s.16, as summarised on the MSME Samadhaan portal, a buyer that pays a Udyam-registered micro or small supplier more than 45 days after accepting the goods owes compound interest with monthly rests at three times the RBI bank rate. Many recyclers are small enterprises, so invoice due dates and any future escrow release should respect the 45-day limit.",
+   "sourceUrls": [
+    "https://samadhaan.msme.gov.in/MyMsme/MSEFC/MSEFC_Welcome.aspx"
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "feature": "Rulebook: every legal threshold, rate and deadline stored as data the admin can edit, each with an effective-from date. This covers the ₹50,000 e-way bill limit, the ₹2.5 lakh limit and 2% rate for GST TDS, ₹5 crore for e-invoicing, ₹40 lakh for GST registration, 0.5% e-commerce TCS, 2% TCS on scrap, 12- or 24-month scale re-verification, 5- or 10-year consent validity and the gig-fee caps",
+   "why": "At least six of these numbers changed between Jul 2024 and Jan 2027:\n- e-commerce TCS rate (10 Jul 2024);\n- metal-scrap reverse charge and TDS (10 Oct 2024);\n- 30-day self-invoice deadline (1 Nov 2024);\n- TCS on scrap (1 Apr 2026);\n- Legal Metrology penalties (1 May 2026);\n- E-Commerce amendment (1 Jan 2027).\nKeeping them as data meets the founders' 'easy to modify' requirement, and every other compliance feature reads from the same table.",
+   "priority": "prototype-now",
+   "users": [
+    "admin"
+   ]
+  },
+  {
+   "feature": "Auto-invoices that pick the right document for each hand-off from the seller's GST flag and the material code: a household receipt, an RCM self-invoice with payment voucher, a tax invoice with a 2% TDS note, a TCS line, and later an IRN (e-invoice) through a GST provider",
+   "why": "The documents differ at each step:\n- Household to kabadiwala needs only a receipt, because it is not a business supply (CGST s.7).\n- An unregistered kabadiwala selling metal to a registered yard needs the yard's reverse-charge self-invoice within 30 days.\n- Metal between two registered parties above ₹2.5 lakh needs 2% GST TDS.\n- Scrap sales carry income-tax TCS, 2% from 1 Apr 2026.\n- From 1 Jan 2027 the seller's name must appear in the same font size as the platform's.\nGetting this right automatically removes a common scrap-trade tax error and makes a strong investor demo. It also settles the docs' open question: require a GSTIN from any yard, recycler or manufacturer that buys metal.",
+   "priority": "prototype-now",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "Weighing-scale records: for each scale, its type and capacity, Legal Metrology certificate number, stamp photo and next due date, with a reminder 30 days ahead, a 'Scale verified until …' badge on booking, and a photo of the reading on every weigh-and-pay",
+   "why": "Every scale used in trade must be verified and stamped. Electronic scales and weighbridges are re-verified every 12 months and beam scales every 24. An unverified scale drew a ₹2,000–₹10,000 fine on a first offence, and since 1 May 2026 improvement notices come first. A visible verified scale is the strongest proof of the fair price that households are promised.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "household",
+    "admin"
+   ]
+  },
+  {
+   "feature": "E-way bill helper: a yes/no checker (value, vehicle type, registration status, distance), then Part A pre-filled from the trade record for the portal, and later a GST-provider API",
+   "why": "Rule 138 requires an e-way bill for motor-vehicle loads over ₹50,000, including a registered buyer's inward load from an unregistered seller. Handcarts and cycles are exempt. An e-commerce operator may fill Part A on the consignor's authorisation, and each bill is valid for one day per 200 km, so the helper can also show a countdown.",
+   "priority": "prototype-now",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer"
+   ]
+  },
+  {
+   "feature": "Document vault and public compliance passport: the GSTIN (checked on the GST portal), KSPCB consent with colour, number and validity (checked on XGN), trade licence, Udyam, CPCB EPR registrations and PAN, shown as badges such as 'Consent valid till 2031' or 'GST verified'",
+   "why": "KSPCB consents run 5 years (Red and Orange) or 10 years (Green) and can be checked publicly on XGN. From 1 Jan 2027 sellers must disclose a GSTIN or Udyam number. RBI's small-merchant KYC for escrow needs PAN, a shop check and one ID. The vault turns the admin's manual checks into a visible trust signal for investors and buyers, and most of the data is already collected in onboarding.",
+   "priority": "prototype-now",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "kabadiwala",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Compliance calendar per organisation: GSTR-7 and GSTR-8 by the 10th, consent expiry 30 days ahead, scale re-verification, trade licence renewal, the quarterly Karnataka gig-welfare fee, 45-day payment deadlines to micro and small suppliers, and the yearly dark-pattern self-audit",
+   "why": "Most penalties in this sector come from missed dates rather than wrong rates. Examples: the TDS return by the 10th, consents lapsing after 5 or 10 years, 12-month scale re-verification, compound interest at three times the bank rate after 45 days, and quarterly gig fees. Reminders built on the Rulebook cost little once it exists.",
+   "priority": "pilot",
+   "users": [
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Grievance desk and a pack of legal pages: a named Grievance Officer, a ticket system with 24-hour and 48-hour acknowledgement timers, the legal name and address block, a ranking explanation, sponsored labels, the National Consumer Helpline convergence application, terms in English and Eighth-Schedule languages, and a yearly reminder to users",
+   "why": "The IT Rules require acknowledgement within 24 hours and resolution within 15 days. The E-Commerce Rules require acknowledgement within 48 hours, a copy of the complaint and redress within one month. The 2026 amendment makes the National Consumer Helpline convergence programme, address disclosure and the dark-pattern certificate mandatory from 1 Jan 2027. These pages need to exist before real users arrive.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "saathi",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Saathi work register and gig-law pack: days worked per engager, joins and exits, payouts recorded, export for Shram Suvidha and the Karnataka welfare board, a welfare-fee calculator (1%, capped per vehicle type), and a Saathi agreement covering pay basis, the right to refuse tasks, 14 days' notice and a dispute flow",
+   "why": "The central rules of 8 May 2026 require aggregators to register, upload workers within 45 days and report joins and exits in real time, with benefits after 90 or 120 days of work. Karnataka requires board registration within 45 days and a 1% fee capped at ₹0.50–₹1.00 per e-marketplace job, paid quarterly. Its fines run ₹5,000–₹1 lakh plus 12% interest.",
+   "priority": "pilot",
+   "users": [
+    "saathi",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Escrow only through an RBI-authorised payment aggregator's marketplace (split-payment) product, with an 'e-commerce operator switch' that turns on TCS collection, the GSTR-8 export and seller registration or enrolment checks",
+   "why": "Licensing itself as a payment aggregator needs ₹15 crore net worth, rising to ₹25 crore. Aggregators cannot run marketplaces, and a marketplace may only take payments for onboarded sellers. Escrow also makes Luma.Green a GST e-commerce operator: 0.5% TCS, GSTR-8 by the 10th and an annual statement by 31 Dec. Sellers would then need GST registration or a PAN-based enrolment number, which is limited to intra-state sales. The pilot should keep only recording payments, and households and small kabadiwalas should stay out of escrow.",
+   "priority": "scale",
+   "users": [
+    "yard",
+    "recycler",
+    "manufacturer",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Privacy centre ready for DPDP: a notice for each role, a consent log, rights requests (30-day target, 90-day legal limit), a breach runbook (CERT-In within 6 hours, the Board within 72 hours) and log retention of at least one year",
+   "why": "The core DPDP duties apply from about 13 May 2027 and penalties reach ₹250 crore. Building to the standard now, as the repo's data-protection page already plans, avoids a rebuild and reassures investors.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "recycler",
+    "manufacturer",
+    "saathi",
+    "admin"
+   ]
+  },
+  {
+   "feature": "Provenance and prohibited-items guard: a booking checklist and photo review that flags utility cables, manhole covers, lead-acid batteries and e-waste; hazardous categories sent only to authorised recyclers; the seller's phone, photos and weight kept for each purchase; matching terms in the user agreement",
+   "why": "The IT Rules require the user agreement to bar unlawful content. In Karnataka, recycling lead-acid battery plates and e-waste components is a Red-category activity. Stolen metal is the trade's best-known legal risk. A purchase trail protects honest kabadiwalas and the platform.",
+   "priority": "pilot",
+   "users": [
+    "household",
+    "kabadiwala",
+    "yard",
+    "admin"
+   ]
+  }
+ ],
+ "artifactMarkdown": "# Compliance checklists: Luma.Green and each user\n\n> **Draft, 29 Sep 2026. This is not legal advice.** Have a lawyer and a tax adviser review it before real money or real users are involved.\n\nEach row gives one duty, the number that triggers it, the law, the Luma.Green feature that does the work, and when to build it.\n\n- **Build column:** P = prototype-now, Pi = pilot, S = scale.\n- Every number in the Trigger column belongs in the admin-editable **Rulebook**, not in code.\n\n## A. Luma.Green (the platform company)\n\n| Duty | Trigger / number | Law | Feature that helps | Build |\n|---|---|---|---|---|\n| Never pool users' money in the company's bank or UPI account | Aggregating payments needs RBI authorisation (₹15 cr net worth, ₹25 cr by year 3) | RBI Payment Aggregator Directions, 15 Sep 2025 | Payments are recorded only (ADR 0009) | P |\n| Escrow only through an authorised aggregator's marketplace product. Pay only onboarded sellers. KYC for sellers up to ₹40 lakh turnover: PAN or Form 60, shop check, one ID | When business-to-business escrow starts | same | Payments module; KYC documents come from the Document vault | S |\n| Register as a GST e-commerce operator. Collect TCS of 0.25% CGST + 0.25% SGST (0.5% IGST between states). Pay it and file GSTR-8 by the 10th; annual statement before 31 Dec | Only once Luma.Green collects the money | CGST s.24(x), s.52; Notification 15/2024-CT | Auto-invoices with a TCS ledger; Compliance calendar | S |\n| Sellers must hold a GST registration, or a PAN-based enrolment number if they sell goods within one state only | When TCS applies | s.24(ix); Notification 34/2023-CT | Onboarding field; Document vault | S |\n| Get tax advice on e-commerce TDS (0.1% since 1 Oct 2024 under the old s.194-O) while payments stay off the platform | Before business-to-business trades | Income-tax | none yet (open question) | Pi |\n| Publish rules, privacy policy and user agreement in English or an Eighth-Schedule language the user picks. Remind users once a year | Luma.Green hosts listings, photos and reviews | IT Rules 2021 r.3(1)(a)–(c) | Legal pages per language. Arabic is not an Eighth-Schedule language, so Arabic users get English or Urdu binding text | Pi |\n| Remove content within 36 h of a court or government order. Keep removed content 180 days | Each order | IT Rules r.3(1)(d),(g) | Admin takedown action plus audit log | Pi |\n| Name a Grievance Officer. IT Rules: acknowledge in 24 h, resolve in 15 days. E-Commerce Rules: acknowledge in 48 h, give a copy of the complaint, redress within 1 month | Every complaint | IT Rules r.3(2); E-Commerce Rules r.4(5) | Grievance desk with timers | Pi |\n| Show legal name, headquarters and branch addresses, website, and customer-care and grievance email, landline and mobile | From 1 Jan 2027 | E-Commerce (Amendment) Rules 2026, G.S.R. 789(E) | Site footer and About page | Pi |\n| Join the National Consumer Helpline's convergence programme | Mandatory from 1 Jan 2027 | same, r.4(7) | Admin task | Pi |\n| Seller cards show business name \"registered or not\", address, customer-care number and rating. Explain what drives ranking. Label sponsored listings. Never manipulate search results | From 1 Jan 2027 | same, r.4(11) and new sub-rules, r.5(3) | Kabadiwala profile and a \"Why this shop?\" sheet | P |\n| Seller's name on each invoice in the same font size as Luma.Green's name | From 1 Jan 2027 | same | Auto-invoice template | P |\n| Yearly dark-pattern self-audit, with the certificate displayed. No pre-ticked consent, false urgency or drip pricing | Every year from 1 Jan 2027 | Dark Patterns Guidelines 2023; 2026 amendment | Compliance calendar and audit checklist | Pi |\n| DPDP: notice and consent for each role; users confirm 18+; answer rights requests within 90 days (our target: 30); report breaches to users without delay and to the Board within 72 h; keep logs at least 1 year | Core duties from about 13 May 2027 | DPDP Rules 2025, G.S.R. 846(E) | Privacy centre, consent log, breach runbook | Pi |\n| Report cyber incidents to CERT-In within 6 h; keep system logs 180 days | Now | CERT-In Directions 2022 (see docs/operations/data-protection.md) | Log export | Pi |\n| If Saathi work counts as platform work: register on Shram Suvidha, upload workers within 45 days, report joins and exits in real time. Karnataka: register with the welfare board within 45 days; pay a welfare fee of 1% of each payout, capped at ₹0.50 (two-wheeler), ₹0.75 (three-wheeler) or ₹1.00 (LCV) per e-marketplace job, quarterly | Once Saathi jobs run | Social Security (Central) Rules, 8 May 2026; Karnataka Platform Based Gig Workers Act 2025 and Feb 2026 notification | Saathi work register and fee calculator | Pi |\n| Every threshold, rate and date is editable, with an effective-from date | Always (six or more changes since Jul 2024) | — | Rulebook | P |\n\n## B. Household (never registers)\n\n| Duty or right | Number | Law | Feature that helps | Build |\n|---|---|---|---|---|\n| No GST: selling your own household scrap is not a business supply | — | CGST s.7 | Plain receipt showing weight × rate, method and time (not a tax invoice) | P |\n| Confirm you are 18 or older (otherwise a parent's verifiable consent is needed) | 18 | DPDP Act and Rules | Checkbox at booking | Pi |\n| Get weighed on a verified scale | Electronic scales re-verified every 12 months | Legal Metrology (General) Rules r.27 | \"Scale verified until …\" badge plus a photo of the reading on the receipt | P |\n| A way to complain | Acknowledge in 48 h, redress in 1 month; National Consumer Helpline 1915 | E-Commerce Rules | Grievance link on every receipt | Pi |\n| Don't sell prohibited items (utility cables, manhole covers, loose batteries or e-waste outside the authorised channel) | — | Terms of service; IT Rules r.3(1)(b) | Booking checklist and photo review | Pi |\n\n## C. Kabadiwala\n\n| Duty | Number | Law | Feature that helps | Build |\n|---|---|---|---|---|\n| Trade licence (in Bengaluru, from the Greater Bengaluru Authority, applied for online) | Renewal date | Municipal law | Document vault; Compliance calendar | Pi |\n| GST registration only above ₹40 lakh turnover when selling goods only (Karnataka). Record \"Not GST-registered\" explicitly | ₹40 lakh | CGST s.22; GST Council | Onboarding flag; Rulebook | P |\n| Metal scrap sold to a registered yard. If the kabadiwala is unregistered, the yard pays GST under reverse charge and self-invoices within 30 days. If registered, the yard deducts 2% GST TDS on contracts over ₹2.5 lakh, and the kabadiwala claims it in his cash ledger | 30 days; ₹2.5 lakh; 2% | Notifications 06/2024-CT(Rate), 25/2024-CT; Rule 47A | Auto-invoices choose the document | P |\n| Scale verified and stamped by Legal Metrology: electronic scales every 12 months, beam scales and weights every 24 | 12 / 24 months; first offence ₹2,000–₹10,000 (improvement notice first since 1 May 2026) | Legal Metrology Rules r.27; Legal Metrology Act s.33 | Weighing-scale records; reminder 30 days before | P |\n| E-way bill: none for a handcart or cycle. A motor-vehicle load over ₹50,000 needs one; when the seller is unregistered, the registered buyer generates it | ₹50,000 | CGST Rules r.138 | E-way bill helper | P |\n| Keep a record of every purchase: seller's phone, photo, weight, price | Every pickup | Provenance (stolen goods) | Weigh-and-pay screen | Pi |\n| For future escrow payouts: PAN, one ID, shop check | Simplified KYC up to ₹40 lakh turnover | RBI Payment Aggregator Directions | Document vault | S |\n| If he pays Saathis: written terms covering pay, the right to refuse tasks and 14 days' notice | 14 days | Karnataka Act 2025 | Saathi agreement template | Pi |\n\n## D. Yard / preprocessor\n\n| Duty | Number | Law | Feature that helps | Build |\n|---|---|---|---|---|\n| KSPCB consent to establish and to operate, or a White-category claim such as hydraulic baling of waste paper. Red and Orange consents last 5 years, Green 10. Check each one on XGN | 5 / 10 years | Water and Air Acts; KSPCB notifications of 2016 and 2020 | Document vault; reminder 30 days before expiry | Pi |\n| Waste-plastic reprocessing is Orange category and also needs registration on CPCB's plastic EPR portal as a processor | — | Plastic Waste Management Rules | Document vault | Pi |\n| GST registration, compulsory once liable under reverse charge (for example, buying metal from unregistered sellers) | — | CGST s.24(iii) | Document vault (GSTIN checked on the GST portal) | P |\n| Reverse-charge self-invoice for metal scrap from unregistered sellers within 30 days of receipt | 30 days | Rule 47A; Notification 06/2024-CT(Rate) | Auto-invoices (self-invoice and payment voucher) | P |\n| GST TDS on metal from registered sellers: register through REG-07 as \"Metal Scrap Dealers\"; deduct 2% on contracts over ₹2.5 lakh (same state); deposit and file GSTR-7 by the 10th | ₹2.5 lakh; 10th of the month | s.51; Notification 25/2024-CT; GSTN advisory | Auto-invoices; Compliance calendar | Pi |\n| E-way bill for any motor-vehicle load over ₹50,000, in or out; valid 1 day per 200 km | ₹50,000 | r.138 | E-way bill helper (Part A pre-filled, API later) | P→S |\n| E-invoice (IRN) once turnover has exceeded ₹5 crore in any year since 2017-18 | ₹5 crore | Notification 10/2023-CT | Auto-invoices through a GST provider | S |\n| Collect income-tax TCS when selling scrap: 2% from 1 Apr 2026 (was 1%)* | 2% | Income-tax Act 2025 s.394(1) | TCS line on the invoice | Pi |\n| Weighbridge and platform scales verified every 12 months | 12 months | Legal Metrology Rules r.27 | Weighing-scale records | P |\n| Saathi shifts: gig-worker records and welfare fee | as in section A | as in section A | Saathi work register | Pi |\n\n## E. Recycler\n\n| Duty | Number | Law | Feature that helps | Build |\n|---|---|---|---|---|\n| Consent category follows the process. Red: recycling battery plates or e-waste components. Orange: plastic reprocessing, or aluminium or copper recovery from scrap in an oil-fired furnace. Waste-rule authorisations through XGN; CPCB EPR registrations for plastic, battery or e-waste | 5 / 10-year validity | KSPCB; waste-management rules | Document vault; Compliance calendar | Pi |\n| GST, TDS on metal scrap, e-way bills, e-invoice above ₹5 crore, TCS on scrap sales | as in section D | as in section D | Auto-invoices; E-way bill helper | Pi/S |\n| Show a GSTIN or Udyam number on the listing | From 1 Jan 2027 | E-Commerce (Amendment) Rules 2026, r.6(5)(j) | Compliance passport | P |\n| If Udyam-registered micro or small: buyers must pay within 45 days | 45 days | MSMED Act s.16 | Due date on the invoice, plus reminder | Pi |\n\n## F. Manufacturer\n\n| Duty | Number | Law | Feature that helps | Build |\n|---|---|---|---|---|\n| Consent to operate for its own process | Validity depends on category | KSPCB | Document vault | Pi |\n| Pay micro and small suppliers within 45 days of accepting the goods; otherwise compound interest at 3× the RBI bank rate | 45 days | MSMED Act s.16 | Payables tracker in the Compliance calendar | Pi |\n| Deduct 2% GST TDS when buying metal scrap over ₹2.5 lakh from a registered seller; register through REG-07 | ₹2.5 lakh | Notification 25/2024-CT | Auto-invoices | Pi |\n| Pay the TCS that scrap sellers collect, and claim the credit | 2%* | Income-tax Act 2025 | Invoice line and ledger export | Pi |\n| E-way bills and e-invoices | ₹50,000 / ₹5 crore | r.138; Notification 10/2023-CT | E-way bill helper; Auto-invoices | S |\n\n## G. Saathi\n\n| Duty or right | Number | Law | Feature that helps | Build |\n|---|---|---|---|---|\n| 18 or older; photo ID, never a full Aadhaar number (masked copy only) | 18 | DPDP; Aadhaar rules (see docs) | Onboarding | P |\n| Self-register on e-Shram, which is linked to Aadhaar. Benefits start after 90 days with one aggregator or 120 days across several | 90 / 120 days | Social Security (Central) Rules 2026 | Days-worked counter and e-Shram link | Pi |\n| Written terms: pay basis, the right to refuse tasks, 14 days' notice with reasons before deactivation, an internal dispute committee that must act within 14 days | 14 days | Karnataka Act 2025 | Saathi agreement and dispute flow | Pi |\n| Police verification before home pickups | Open question | — | Item on the admin checklist | Pi |\n\n## H. Admin (the verification desk)\n\n| Duty | When | Feature that helps | Build |\n|---|---|---|---|\n| Check the GSTIN on the GST portal; the consent on XGN (unit, colour, number, validity); the scale certificate and stamp photo; that any Aadhaar is masked | Every application | Existing checklist plus a scale item | P |\n| Keep an audit log of approvals, takedowns and grievance timelines | Always | Audit log | P |\n| Use only obviously fictitious GSTINs, consent numbers and names in investor demos | Demo seed data | Seed fixtures | P |\n\n\\* Budget 2026-27 proposed raising TCS on scrap from 1% to 2% from 1 Apr 2026. Confirm the rate that was enacted and which sellers are covered.",
+ "risks": [
+  "Escrow switches on several regimes at once. Funds must go through an RBI-authorised aggregator. Luma.Green must register for GST as an e-commerce operator, collect 0.5% TCS and file GSTR-8 monthly. Sellers must be GST-registered or enrolled with their PAN. E-commerce TDS may also apply. Together these could push unregistered kabadiwalas off the platform, so households and small kabadiwalas should stay outside escrow.",
+  "Receiving any trade money into Luma.Green's own bank or UPI account, even briefly, looks like unauthorised payment aggregation, and authorisation needs ₹15 crore net worth.",
+  "A 'Verified scale' badge will show that many kabadiwala scales are unstamped. Making it a hard requirement in the pilot could empty the supply side, so treat it as a nudge with a deadline.",
+  "Stolen or hazardous scrap (utility cables, manhole covers, lead-acid batteries, e-waste) passing through the platform exposes users to charges of receiving stolen goods and to pollution law, and exposes Luma.Green to reputational damage.",
+  "Saathi classification is uncertain. If Luma.Green counts as an 'aggregator', central registration (within 45 days) and Karnataka welfare-fee duties apply even though kabadiwalas pay the Saathis. Misjudging this risks fines of ₹5,000–₹1 lakh plus 12% interest.",
+  "AI price estimates shown to households could be treated as misleading if the final weighed prices are routinely lower. Label estimates clearly and publish their accuracy.",
+  "Hard-coded thresholds will go out of date: at least six legal numbers changed between Jul 2024 and Jan 2027.",
+  "DPDP penalties reach ₹250 crore. Household photos sent to an overseas model provider and data hosted in the EU need named processors, contracts, and logs kept for one year. MeitY has also considered shortening deadlines for some companies.",
+  "Binding legal text in 12 languages invites translation errors. Arabic is not an Eighth-Schedule language, so the binding version should be English or an Eighth-Schedule language.",
+  "Investor demos must not use real GSTINs, consent numbers or business names copied from the public XGN register."
+ ],
+ "openQuestions": [
+  "Does e-commerce operator TDS (0.1%, the old s.194-O) apply to Luma.Green when buyers pay sellers directly, and which section of the Income-tax Act 2025 now carries it?",
+  "Are households 'consumers' under the Consumer Protection Act when they sell scrap and get a free pickup? That decides whether the E-Commerce Rules' grievance duties cover the household leg (assume yes).",
+  "Is Luma.Green an 'aggregator' for Saathi work under the Social Security Code's Seventh Schedule and the Karnataka Act if Saathis are paid by kabadiwalas, not by the platform? If so, what is the welfare fee calculated on?",
+  "What is the status of the reported 2026 Karnataka High Court challenge to the gig welfare fee?",
+  "After MeitY's January 2026 consultations, were the DPDP deadlines (about 13 May 2027) shortened for any class of company?",
+  "Have amendments to the IT Rules in 2025–26 changed the 36-hour takedown and the 24-hour / 15-day grievance timelines? The version checked was consolidated to April 2023.",
+  "Did the Finance Act 2026 enact 2% TCS on scrap? Which sellers are covered, and does the exemption for buyers who use scrap in manufacturing survive in the 2025 Act?",
+  "What penalty now applies to an unverified scale after the Jan Vishwas changes in force from 1 May 2026, and does Karnataka's enforcement rule require yearly re-verification for every instrument?",
+  "Do plain kabadiwala shops that only collect and store scrap need any KSPCB consent or authorisation under the waste rules? They are not in KSPCB's category lists.",
+  "Does Bengaluru police require scrap dealers to hold a licence or keep purchase registers?",
+  "Should the e-way bill helper use a Karnataka-specific intra-state limit, or is ₹50,000 correct for all intra-state movement? Confirm on the e-way bill portal."
+ ],
+ "sources": [
+  {
+   "title": "CBIC – CGST Act s.52, tax collection at source by e-commerce operators",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section52_v1.00.html"
+  },
+  {
+   "title": "CBIC – CGST Act s.24, compulsory registration",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section24_v1.00.html"
+  },
+  {
+   "title": "CBIC – CGST Act s.51, tax deduction at source",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section51_v1.00.html"
+  },
+  {
+   "title": "CBIC – CGST Act s.7, scope of supply",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter3/section7_v1.00.html"
+  },
+  {
+   "title": "CBIC – CGST Rules r.138, e-way bills",
+   "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter16/rule138_v1.00.html"
+  },
+  {
+   "title": "Notification 06/2024-Central Tax (Rate): reverse charge on metal scrap",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf"
+  },
+  {
+   "title": "Notification 25/2024-Central Tax: TDS on metal scrap",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-25-2024.pdf"
+  },
+  {
+   "title": "Notification 20/2024-Central Tax: Rule 47A self-invoice within 30 days",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-20-2024.pdf"
+  },
+  {
+   "title": "GSTN advisory on REG-07 for metal scrap buyers (22 Oct 2024)",
+   "url": "https://tutorial.gst.gov.in/downloads/news/advisory_on_gst_reg07_22_10_2024.pdf"
+  },
+  {
+   "title": "Notification 15/2024-Central Tax: e-commerce operator TCS rate",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-09/central-tax-15-2024-11072024.pdf"
+  },
+  {
+   "title": "Notification 34/2023-Central Tax: enrolment of unregistered sellers selling through e-commerce operators",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-05/gst-ct-34-2023.pdf"
+  },
+  {
+   "title": "Notification 10/2023-Central Tax: e-invoicing threshold of ₹5 crore",
+   "url": "https://www.gstcouncil.gov.in/sites/default/files/2024-05/10ct_eng.pdf"
+  },
+  {
+   "title": "GST Council flyer: registration under GST law (thresholds)",
+   "url": "https://gstcouncil.gov.in/sites/default/files/e-version-gst-flyers/Registration_under_GST_Law_new.pdf"
+  },
+  {
+   "title": "CBIC FAQ: E-Commerce",
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-02/faq-e-commerc.pdf"
+  },
+  {
+   "title": "Budget 2026-27 Finance Bill memorandum (TCS on scrap raised to 2%)",
+   "url": "https://www.indiabudget.gov.in/doc/memo.pdf"
+  },
+  {
+   "title": "Budget 2024-25 Finance Bill memorandum (s.194-O cut to 0.1%)",
+   "url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf"
+  },
+  {
+   "title": "DoCA – Consumer Protection (E-Commerce) (Amendment) Rules 2026, G.S.R. 789(E)",
+   "url": "https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/whatsnews/E_Commerce_Amendment_Rules_2026_2026-09-11_18-12-39.pdf"
+  },
+  {
+   "title": "DoCA – Lok Sabha unstarred question 5415 on complaints against e-commerce platforms (25 Mar 2026)",
+   "url": "https://fcainfoweb.nic.in/PMS/writereaddata/2026_LS_B_5415.pdf"
+  },
+  {
+   "title": "MeitY – IT (Intermediary Guidelines and Digital Media Ethics Code) Rules 2021, updated 6 Apr 2023",
+   "url": "https://www.meity.gov.in/static/uploads/2024/02/Information-Technology-Intermediary-Guidelines-and-Digital-Media-Ethics-Code-Rules-2021-updated-06.04.2023-.pdf"
+  },
+  {
+   "title": "Digital Personal Data Protection Rules 2025 (G.S.R. 846(E)), gazette text",
+   "url": "https://www.dpdpa.com/DPDP_Rules_2025_English_only.pdf"
+  },
+  {
+   "title": "PIB backgrounder: DPDP Rules 2025 notified",
+   "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf"
+  },
+  {
+   "title": "RBI – Master Direction on Regulation of Payment Aggregators (15 Sep 2025)",
+   "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896"
+  },
+  {
+   "title": "Legal Metrology (General) Rules 2011, rule 27",
+   "url": "https://indiankanoon.org/doc/67045693/"
+  },
+  {
+   "title": "Invest Karnataka – Legal Metrology penalty details",
+   "url": "https://investkarnataka.co.in/wp-content/uploads/2025/09/Penalty-Details-Legal-Metrology.pdf"
+  },
+  {
+   "title": "TeamLease RegTech – DoCA brings Jan Vishwas Legal Metrology amendments into force from 1 May 2026",
+   "url": "https://www.teamleaseregtech.com/updates/article/55280/doca-enforcement-of-jan-vishwas-amendments-relating-to-legal-metrology/"
+  },
+  {
+   "title": "PRS – Jan Vishwas (Amendment of Provisions) Bill 2026",
+   "url": "https://prsindia.org/billtrack/the-jan-vishwas-amendment-of-provisions-bill-2026"
+  },
+  {
+   "title": "KSPCB – categorisation into Red, Orange, Green and White",
+   "url": "https://kspcb.karnataka.gov.in/consent-management/categorisation-rog"
+  },
+  {
+   "title": "KSPCB XGN – public register of consent orders",
+   "url": "https://xgn.karnataka.gov.in/CSHARP/ALLConsentOrder.aspx"
+  },
+  {
+   "title": "Greater Bengaluru Authority – online trade licence service",
+   "url": "https://trade.bbmpgov.in/"
+  },
+  {
+   "title": "DD News – what the new labour codes mean for gig and platform workers",
+   "url": "https://ddnews.gov.in/en/what-indias-new-labour-codes-mean-for-gig-and-platform-workers/"
+  },
+  {
+   "title": "MediaNama – Social Security (Central) Rules 2026 and gig workers",
+   "url": "https://www.medianama.com/2026/05/223-social-security-central-rules-2026-gig-workers-90-days-work/"
+  },
+  {
+   "title": "SCC Online – Karnataka notifies gig workers' welfare fee (Feb 2026)",
+   "url": "https://www.scconline.com/blog/post/2026/02/18/karnataka-government-notifies-gig-workers-welfare-fee-mandatory/"
+  },
+  {
+   "title": "PRS – Karnataka Platform Based Gig Workers (Social Security and Welfare) Bill 2025",
+   "url": "https://prsindia.org/bills/states/the-karnataka-platform-based-gig-workers-social-security-and-welfare-bill-2025"
+  },
+  {
+   "title": "MSME Samadhaan – delayed payments to micro and small enterprises (45 days)",
+   "url": "https://samadhaan.msme.gov.in/MyMsme/MSEFC/MSEFC_Welcome.aspx"
+  }
+ ]
+}
