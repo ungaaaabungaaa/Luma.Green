@@ -269,7 +269,9 @@ async function seedPickupPayments(
       subjectId: booking._id,
       method: booking.receipt.method,
       reference:
-        booking.receipt.method === "upi" ? reference("upi", index + 101) : undefined,
+        booking.receipt.method === "upi"
+          ? reference("upi", index + 101)
+          : undefined,
       amountPaise: booking.receipt.totalPaise,
       paidAt: booking.receipt.paidAt,
       fromOrgId: booking.orgId,

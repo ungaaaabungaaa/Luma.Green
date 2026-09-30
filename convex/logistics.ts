@@ -436,7 +436,10 @@ export const vehicleFit = query({
     return {
       grams: fit.grams,
       litres: fit.litres,
-      fits: fit.fits.map((row) => ({ ...row, name: names.get(row.key) ?? row.key })),
+      fits: fit.fits.map((row) => ({
+        ...row,
+        name: names.get(row.key) ?? row.key,
+      })),
       smallest: fit.smallest,
     };
   },
@@ -552,7 +555,9 @@ export const routeToday = query({
       estimatePaise: booking.estimatePaise,
       status: booking.status,
       mapsUrl:
-        booking.address === undefined ? undefined : mapsSearchUrl(booking.address),
+        booking.address === undefined
+          ? undefined
+          : mapsSearchUrl(booking.address),
     }));
     const addresses = ordered
       .map((b) => b.address)
@@ -561,10 +566,15 @@ export const routeToday = query({
 
     return {
       date: today,
-      shop: { name: org.name, area: org.area, hasLocation: start !== undefined },
+      shop: {
+        name: org.name,
+        area: org.area,
+        hasLocation: start !== undefined,
+      },
       stops,
       totalEstGrams: ordered.reduce(
-        (sum, b) => sum + b.items.reduce((s, item) => s + kgToGrams(item.estKg), 0),
+        (sum, b) =>
+          sum + b.items.reduce((s, item) => s + kgToGrams(item.estKg), 0),
         0,
       ),
       directionsUrl: mapsDirectionsUrl(start ?? org.address, addresses),
@@ -632,7 +642,10 @@ export const setSlotLimit = mutation({
     let id: Id<"slotLimits">;
     if (existing) {
       id = existing._id;
-      await ctx.db.patch("slotLimits", id, { limit: args.limit, updatedAt: now });
+      await ctx.db.patch("slotLimits", id, {
+        limit: args.limit,
+        updatedAt: now,
+      });
     } else {
       id = await ctx.db.insert("slotLimits", {
         orgId: org._id,
@@ -831,7 +844,9 @@ export const myStops = query({
       );
     const views = [];
     for (const load of mine) {
-      views.push(await loadView(ctx, load, "seller", org._id, materials, lookup));
+      views.push(
+        await loadView(ctx, load, "seller", org._id, materials, lookup),
+      );
     }
     return views;
   },
@@ -1000,7 +1015,12 @@ async function checkedStop(
   if (stop.grams > listing.grams) throw new ConvexError("NOT_ENOUGH_LEFT");
   const seller = await ctx.db.get("orgs", listing.orgId);
   if (seller?.status !== "active") throw new ConvexError("NOT_FOUND");
-  return { listing, seller, grams: stop.grams, bulk: bulkFromNote(listing.note) };
+  return {
+    listing,
+    seller,
+    grams: stop.grams,
+    bulk: bulkFromNote(listing.note),
+  };
 }
 
 /** Every requested stop, checked; refuses none, too many, or a lot twice. */
@@ -1029,7 +1049,9 @@ function arrangeStops(
 ): CheckedStop[] {
   if (!order) {
     return buyerPoint
-      ? nearestNeighbourOrder(buyerPoint, stops, (stop) => orgPoint(stop.seller))
+      ? nearestNeighbourOrder(buyerPoint, stops, (stop) =>
+          orgPoint(stop.seller),
+        )
       : [...stops];
   }
   const byId = new Map(stops.map((stop) => [stop.listing._id, stop]));
@@ -1039,7 +1061,10 @@ function arrangeStops(
     if (!stop) throw new ConvexError("INVALID_ORDER");
     arranged.push(stop);
   }
-  if (arranged.length !== stops.length || new Set(order).size !== order.length) {
+  if (
+    arranged.length !== stops.length ||
+    new Set(order).size !== order.length
+  ) {
     throw new ConvexError("INVALID_ORDER");
   }
   return arranged;
@@ -1079,7 +1104,9 @@ function checkDriverPhone(phone: string | undefined): string | undefined {
  */
 export const planLoad = mutation({
   args: {
-    stops: v.array(v.object({ listingId: v.id("listings"), grams: v.number() })),
+    stops: v.array(
+      v.object({ listingId: v.id("listings"), grams: v.number() }),
+    ),
     vehicleType: vVehicleKey,
     paidBy: vPaidBy,
     date: v.string(),
@@ -1118,9 +1145,11 @@ export const planLoad = mutation({
       status: "pending" as const,
     }));
     const totalGrams = stops.reduce((sum, stop) => sum + stop.grams, 0);
-    if (totalGrams > vehicle.payloadKg * 1000) throw new ConvexError("OVER_PAYLOAD");
+    if (totalGrams > vehicle.payloadKg * 1000)
+      throw new ConvexError("OVER_PAYLOAD");
     const totalLitres = stops.reduce((sum, stop) => sum + stop.litres, 0);
-    if (totalLitres > vehicle.volumeLitres) throw new ConvexError("OVER_VOLUME");
+    if (totalLitres > vehicle.volumeLitres)
+      throw new ConvexError("OVER_VOLUME");
 
     const km = here
       ? routeKm(
@@ -1233,7 +1262,11 @@ export const load = query({
 });
 
 /** One of this buyer's loads, or NOT_FOUND — never another business's. */
-async function myLoad(ctx: QueryCtx, org: Org, loadId: Id<"loads">): Promise<Load> {
+async function myLoad(
+  ctx: QueryCtx,
+  org: Org,
+  loadId: Id<"loads">,
+): Promise<Load> {
   const load = await ctx.db.get("loads", loadId);
   if (load?.buyerOrgId !== org._id) throw new ConvexError("NOT_FOUND");
   return load;
@@ -1344,7 +1377,10 @@ export const setLoadVehicle = mutation({
       entityTable: "loads",
       entityId: load._id,
       metadata: {
-        from: { vehicleNo: load.vehicleNo ?? null, driverPhone: load.driverPhone ?? null },
+        from: {
+          vehicleNo: load.vehicleNo ?? null,
+          driverPhone: load.driverPhone ?? null,
+        },
         to: { vehicleNo: vehicleNo ?? null, driverPhone: driverPhone ?? null },
       },
     });
@@ -1365,7 +1401,8 @@ export const collectStop = mutation({
     }
     const stop = load.stops.find((row) => row.orgId === args.orgId);
     if (!stop) throw new ConvexError("NOT_FOUND");
-    if (!canMoveStop(stop.status, "collected")) throw new ConvexError("WRONG_STATUS");
+    if (!canMoveStop(stop.status, "collected"))
+      throw new ConvexError("WRONG_STATUS");
 
     const now = Date.now();
     const stops = load.stops.map((row) =>
@@ -1477,14 +1514,19 @@ async function adminActor(ctx: QueryCtx) {
 
 function checkVehicleSpec(spec: VehicleSpec & { name: string }) {
   const name = spec.name.trim();
-  if (name.length < 2 || name.length > 40) throw new ConvexError("INVALID_NAME");
+  if (name.length < 2 || name.length > 40)
+    throw new ConvexError("INVALID_NAME");
   if (!isPositiveInteger(spec.payloadKg) || spec.payloadKg > 50_000) {
     throw new ConvexError("INVALID_CAPACITY");
   }
   if (!isPositiveInteger(spec.volumeLitres) || spec.volumeLitres > 200_000) {
     throw new ConvexError("INVALID_CAPACITY");
   }
-  for (const paise of [spec.baseFarePaise, spec.perKmPaise, spec.loadingPaise]) {
+  for (const paise of [
+    spec.baseFarePaise,
+    spec.perKmPaise,
+    spec.loadingPaise,
+  ]) {
     if (!isWholeNumber(paise) || paise > 10_000_000) {
       throw new ConvexError("INVALID_FARE");
     }
@@ -1633,7 +1675,8 @@ function checkRestriction(args: {
   sourceUrl?: string;
 }) {
   const road = args.road.trim();
-  if (road.length < 3 || road.length > 80) throw new ConvexError("INVALID_ROAD");
+  if (road.length < 3 || road.length > 80)
+    throw new ConvexError("INVALID_ROAD");
   if (args.vehicleTypes.length === 0) throw new ConvexError("NO_VEHICLES");
   checkHours(args.hoursFrom, args.hoursTo);
   checkDateRange(args.from, args.to);
@@ -1674,7 +1717,10 @@ export const adminSaveRestriction = mutation({
       id = existing._id;
       await ctx.db.patch("roadRestrictions", id, { ...clean, updatedAt: now });
     } else {
-      id = await ctx.db.insert("roadRestrictions", { ...clean, updatedAt: now });
+      id = await ctx.db.insert("roadRestrictions", {
+        ...clean,
+        updatedAt: now,
+      });
     }
     await audit(ctx, {
       actorProfileId,

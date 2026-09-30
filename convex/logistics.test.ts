@@ -91,7 +91,9 @@ async function candidate(yard: Session, seller: string, code: string) {
 /** Plans the yard's usual load: newspaper from Ramesh and Sri Lakshmi. */
 async function planNewspaperLoad(
   yard: Session,
-  overrides: Partial<Parameters<typeof yard.mutation<typeof api.logistics.planLoad>>[1]> = {},
+  overrides: Partial<
+    Parameters<typeof yard.mutation<typeof api.logistics.planLoad>>[1]
+  > = {},
 ) {
   const ramesh = await candidate(yard, RAMESH, "PAPER-NEWS");
   const lakshmi = await candidate(yard, SRI_LAKSHMI, "PAPER-NEWS");
@@ -259,9 +261,9 @@ describe("today's route", () => {
     );
     expect(route.toStart).toBe(0);
     const meena = route.stops.find((stop) => stop.name === "Meena Iyer");
-    expect(
-      await auditActions(t, "bookings", meena?.bookingId ?? ""),
-    ).toContain("booking.on_the_way");
+    expect(await auditActions(t, "bookings", meena?.bookingId ?? "")).toContain(
+      "booking.on_the_way",
+    );
     // Nothing left to start: a second tap is harmless.
     expect(await shop.mutation(api.logistics.startRoute, {})).toEqual({
       started: 0,
@@ -338,12 +340,16 @@ describe("planning a load", () => {
     );
     expect(load.needsEwayBill).toBe(false);
 
-    const km = routeKm(
-      { lat: 13.0285, lng: 77.519 },
-      [ramesh.seller.location, lakshmi.seller.location],
-    );
+    const km = routeKm({ lat: 13.0285, lng: 77.519 }, [
+      ramesh.seller.location,
+      lakshmi.seller.location,
+    ]);
     expect(load.routeKm).toBe(km);
-    const auto = { baseFarePaise: 20_500, perKmPaise: 1300, loadingPaise: 5000 };
+    const auto = {
+      baseFarePaise: 20_500,
+      perKmPaise: 1300,
+      loadingPaise: 5000,
+    };
     expect(load.freight).toEqual(freightFor(auto, km, 2));
     expect(load.freightPerKgPaise).toBe(
       Math.round((load.freight.totalPaise * 1000) / load.totalGrams),
@@ -390,7 +396,11 @@ describe("planning a load", () => {
   it("refuses a load that doesn't fit by weight or by volume", async () => {
     const t = await demoWorld();
     const yard = await signInAs(t, YARD);
-    const iron = await candidate(yard, "Koramangala Scrap Traders", "METAL-IRON");
+    const iron = await candidate(
+      yard,
+      "Koramangala Scrap Traders",
+      "METAL-IRON",
+    );
     await expect(
       yard.mutation(api.logistics.planLoad, {
         stops: [{ listingId: iron.listingId, grams: iron.grams }],
@@ -403,7 +413,11 @@ describe("planning a load", () => {
 
     // 75 kg of loose PET bottles is 1,875 litres: light, but a cycle cart's
     // 600 litres are gone long before its payload is.
-    const pet = await candidate(yard, "Indiranagar Kabadi Point", "PLASTIC-PET");
+    const pet = await candidate(
+      yard,
+      "Indiranagar Kabadi Point",
+      "PLASTIC-PET",
+    );
     await expect(
       yard.mutation(api.logistics.planLoad, {
         stops: [{ listingId: pet.listingId, grams: pet.grams }],
@@ -686,7 +700,11 @@ describe("a load's status", () => {
       status: "delivered",
       leavingGrams: 260_000,
       arrivedGrams: 259_000,
-      weightGap: { gapGrams: 1000, allowedGrams: 2600, isWithinTolerance: true },
+      weightGap: {
+        gapGrams: 1000,
+        allowedGrams: 2600,
+        isWithinTolerance: true,
+      },
       actions: [],
       restrictions: [],
     });
@@ -727,7 +745,9 @@ describe("a load's status", () => {
         status: "cancelled",
       }),
     ).rejects.toThrow(/NOT_FOUND/);
-    expect(await recycler.query(api.logistics.load, { loadId: "nonsense" })).toBeNull();
+    expect(
+      await recycler.query(api.logistics.load, { loadId: "nonsense" }),
+    ).toBeNull();
 
     await yard.mutation(api.logistics.setLoadStatus, {
       loadId,
@@ -786,7 +806,9 @@ describe("road restrictions", () => {
       date: indiaToday(),
       window: "evening",
     });
-    expect(evening.map((row) => row.road)).toContain("BGS flyover (Mysuru Road)");
+    expect(evening.map((row) => row.road)).toContain(
+      "BGS flyover (Mysuru Road)",
+    );
     // Handcarts are never banned.
     expect(
       await yard.query(api.logistics.checkRestrictions, {
@@ -1028,7 +1050,10 @@ describe("the admin's tables", () => {
       }),
     ).rejects.toThrow(/NO_VEHICLES/);
     await expect(
-      admin.mutation(api.logistics.adminSaveRestriction, { ...base, road: "A" }),
+      admin.mutation(api.logistics.adminSaveRestriction, {
+        ...base,
+        road: "A",
+      }),
     ).rejects.toThrow(/INVALID_ROAD/);
     const yard = await signInAs(t, YARD);
     await expect(

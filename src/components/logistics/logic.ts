@@ -98,7 +98,8 @@ export function plannedStops(
     const rank = new Map(order.map((id, index) => [id, index]));
     return stops.toSorted(
       (a, b) =>
-        (rank.get(a.listingId) ?? Infinity) - (rank.get(b.listingId) ?? Infinity),
+        (rank.get(a.listingId) ?? Infinity) -
+        (rank.get(b.listingId) ?? Infinity),
     );
   }
   return buyer
@@ -173,7 +174,12 @@ export function moveStop<T>(
   direction: -1 | 1,
 ): T[] {
   const target = index + direction;
-  if (index < 0 || index >= order.length || target < 0 || target >= order.length) {
+  if (
+    index < 0 ||
+    index >= order.length ||
+    target < 0 ||
+    target >= order.length
+  ) {
     return [...order];
   }
   const next = [...order];
@@ -191,7 +197,8 @@ export function planDates(today: string): string[] {
 }
 
 /** The one thing stopping the plan from being sent, if any. */
-export type PlanProblem = "noStops" | "tooManyStops" | "overWeight" | "overVolume";
+export type PlanProblem =
+  "noStops" | "tooManyStops" | "overWeight" | "overVolume";
 
 export function planProblem(
   stops: readonly PlanStop[],

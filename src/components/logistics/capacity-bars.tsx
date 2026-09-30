@@ -35,7 +35,9 @@ function Bar({
         <span
           className={cn(
             "tabular-nums",
-            tone === "over" ? "font-medium text-destructive" : "text-muted-foreground",
+            tone === "over"
+              ? "font-medium text-destructive"
+              : "text-muted-foreground",
           )}
         >
           {t("of", { used, total })}

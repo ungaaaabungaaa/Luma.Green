@@ -261,7 +261,8 @@ function buyerSlip(load: Load, scaleId: Id<"scales"> | undefined) {
     return null;
   }
   const arrivedAt = (reachedAt(trade, "completed") ?? trade.updatedAt) - HOUR;
-  const perMille = short?.shortPerMille ?? (hashOf(trade._id) % 2 === 0 ? 3 : 6);
+  const perMille =
+    short?.shortPerMille ?? (hashOf(trade._id) % 2 === 0 ? 3 : 6);
   const weighed = trade.grams - Math.round((trade.grams * perMille) / 1000);
   const deductionGrams = short ? kgToGrams(short.deductionKg) : 0;
   const draft: SlipDraft = {
@@ -278,7 +279,12 @@ function buyerSlip(load: Load, scaleId: Id<"scales"> | undefined) {
     byProfileId: buyer.ownerProfileId,
     at: arrivedAt,
   };
-  const check: CheckDraft = { org: buyer, trade, at: arrivedAt + HOUR / 2, short };
+  const check: CheckDraft = {
+    org: buyer,
+    trade,
+    at: arrivedAt + HOUR / 2,
+    short,
+  };
   return { draft, check };
 }
 

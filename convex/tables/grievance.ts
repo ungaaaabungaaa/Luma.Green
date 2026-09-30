@@ -47,10 +47,7 @@ export const vDataRequestKind = v.union(
   v.literal("correct"),
 );
 
-export const vDataRequestStatus = v.union(
-  v.literal("open"),
-  v.literal("done"),
-);
+export const vDataRequestStatus = v.union(v.literal("open"), v.literal("done"));
 
 export const vConsentDocument = v.union(
   v.literal("terms"),

@@ -160,11 +160,11 @@ function isSameChange(
   row: Doc<"rules"> | undefined,
   change: { value: RuleValue; note?: string; sourceUrl?: string },
 ): boolean {
-  return row ? (
-    row.value === change.value &&
-    row.note === change.note &&
-    row.sourceUrl === change.sourceUrl
-  ) : false;
+  return row
+    ? row.value === change.value &&
+        row.note === change.note &&
+        row.sourceUrl === change.sourceUrl
+    : false;
 }
 
 /** Every rule with the value in force today, what's coming, and its history. */

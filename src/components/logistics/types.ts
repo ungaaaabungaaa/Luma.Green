@@ -7,7 +7,9 @@ import type { api } from "../../../convex/_generated/api";
 export type RouteView = FunctionReturnType<typeof api.logistics.routeToday>;
 export type RouteStop = RouteView["stops"][number];
 
-export type LoadView = NonNullable<FunctionReturnType<typeof api.logistics.load>>;
+export type LoadView = NonNullable<
+  FunctionReturnType<typeof api.logistics.load>
+>;
 export type LoadStopView = LoadView["stops"][number];
 export type LoadStatus = LoadView["status"];
 export type StopStatus = LoadStopView["status"];
@@ -15,7 +17,9 @@ export type LoadAction = LoadView["actions"][number];
 export type LoadSide = LoadView["side"];
 export type RestrictionView = LoadView["restrictions"][number];
 
-export type Candidates = FunctionReturnType<typeof api.logistics.loadCandidates>;
+export type Candidates = FunctionReturnType<
+  typeof api.logistics.loadCandidates
+>;
 export type Candidate = Candidates["listings"][number];
 export type PlanVehicle = Candidates["vehicles"][number];
 export type VehicleKey = PlanVehicle["key"];

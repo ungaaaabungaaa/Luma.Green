@@ -145,9 +145,13 @@ export function parseRuleInput(
 
   if (unit === "paise" || unit === "bp") {
     const scaled = Math.round(number * 100);
-    return unit === "bp" && scaled > 10_000 ? { ok: false, problem: "OVER_100" } : { ok: true, value: scaled };
+    return unit === "bp" && scaled > 10_000
+      ? { ok: false, problem: "OVER_100" }
+      : { ok: true, value: scaled };
   }
-  return Number.isInteger(number) ? { ok: true, value: number } : { ok: false, problem: "NOT_A_NUMBER" };
+  return Number.isInteger(number)
+    ? { ok: true, value: number }
+    : { ok: false, problem: "NOT_A_NUMBER" };
 }
 
 /** The character shown beside the input: ₹ before rupees, % after a rate. */

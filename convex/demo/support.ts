@@ -62,9 +62,24 @@ const FEEDBACK: readonly {
   locale: string;
   daysAgo: number;
 }[] = [
-  { path: "/help/kabadiwala/weigh-and-pay", helpful: true, locale: "kn", daysAgo: 0 },
-  { path: "/help/kabadiwala/weigh-and-pay", helpful: true, locale: "kn", daysAgo: 1 },
-  { path: "/help/kabadiwala/weigh-and-pay", helpful: true, locale: "hi", daysAgo: 3 },
+  {
+    path: "/help/kabadiwala/weigh-and-pay",
+    helpful: true,
+    locale: "kn",
+    daysAgo: 0,
+  },
+  {
+    path: "/help/kabadiwala/weigh-and-pay",
+    helpful: true,
+    locale: "kn",
+    daysAgo: 1,
+  },
+  {
+    path: "/help/kabadiwala/weigh-and-pay",
+    helpful: true,
+    locale: "hi",
+    daysAgo: 3,
+  },
   {
     path: "/help/kabadiwala/weigh-and-pay",
     helpful: false,
@@ -72,10 +87,30 @@ const FEEDBACK: readonly {
     locale: "en",
     daysAgo: 4,
   },
-  { path: "/help/kabadiwala/set-prices", helpful: true, locale: "ta", daysAgo: 2 },
-  { path: "/help/kabadiwala/set-prices", helpful: true, locale: "kn", daysAgo: 6 },
-  { path: "/help/household/first-pickup", helpful: true, locale: "en", daysAgo: 1 },
-  { path: "/help/household/first-pickup", helpful: true, locale: "te", daysAgo: 2 },
+  {
+    path: "/help/kabadiwala/set-prices",
+    helpful: true,
+    locale: "ta",
+    daysAgo: 2,
+  },
+  {
+    path: "/help/kabadiwala/set-prices",
+    helpful: true,
+    locale: "kn",
+    daysAgo: 6,
+  },
+  {
+    path: "/help/household/first-pickup",
+    helpful: true,
+    locale: "en",
+    daysAgo: 1,
+  },
+  {
+    path: "/help/household/first-pickup",
+    helpful: true,
+    locale: "te",
+    daysAgo: 2,
+  },
   {
     path: "/help/household/first-pickup",
     helpful: false,
@@ -83,10 +118,25 @@ const FEEDBACK: readonly {
     locale: "en",
     daysAgo: 5,
   },
-  { path: "/help/household#faq-no-code", helpful: false, locale: "ur", daysAgo: 1 },
-  { path: "/help/household#faq-no-code", helpful: true, locale: "hi", daysAgo: 7 },
+  {
+    path: "/help/household#faq-no-code",
+    helpful: false,
+    locale: "ur",
+    daysAgo: 1,
+  },
+  {
+    path: "/help/household#faq-no-code",
+    helpful: true,
+    locale: "hi",
+    daysAgo: 7,
+  },
   { path: "/help/saathi/home-pickup", helpful: true, locale: "kn", daysAgo: 2 },
-  { path: "/help/saathi#faq-who-pays-me", helpful: true, locale: "ta", daysAgo: 3 },
+  {
+    path: "/help/saathi#faq-who-pays-me",
+    helpful: true,
+    locale: "ta",
+    daysAgo: 3,
+  },
   { path: "/help/yard/escrow", helpful: true, locale: "en", daysAgo: 8 },
   {
     path: "/help/yard/escrow",

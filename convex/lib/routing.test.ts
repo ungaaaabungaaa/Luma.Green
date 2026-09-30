@@ -116,11 +116,7 @@ describe("nearest-neighbour order", () => {
       ...stops,
       { name: "Unknown B", at: undefined },
     ];
-    const order = nearestNeighbourOrder(
-      PEENYA,
-      withUnknown,
-      (stop) => stop.at,
-    );
+    const order = nearestNeighbourOrder(PEENYA, withUnknown, (stop) => stop.at);
     expect(order.map((stop) => stop.name)).toEqual([
       "Yeshwanthpur",
       "Malleshwaram",
@@ -143,7 +139,9 @@ describe("volume and vehicle fit", () => {
     expect(litresFor(150_000, "paper", "baled")).toBe(334);
     expect(litresFor(1, "metal", "loose")).toBe(1);
     expect(litresFor(0, "paper", "loose")).toBe(0);
-    for (const family of Object.keys(BULK_DENSITY) as (keyof typeof BULK_DENSITY)[]) {
+    for (const family of Object.keys(
+      BULK_DENSITY,
+    ) as (keyof typeof BULK_DENSITY)[]) {
       expect(BULK_DENSITY[family].baled).toBeGreaterThanOrEqual(
         BULK_DENSITY[family].loose,
       );
@@ -305,9 +303,9 @@ describe("road restrictions", () => {
     expect(
       restrictionsFor(rows, "auto", "2026-10-13", [8, 12]).map((r) => r.road),
     ).toEqual(["Peenya elevated corridor"]);
-    expect(
-      restrictionsFor(rows, "miniTruck", "2026-10-13", [12, 16]),
-    ).toEqual([]);
+    expect(restrictionsFor(rows, "miniTruck", "2026-10-13", [12, 16])).toEqual(
+      [],
+    );
     expect(
       restrictionsFor(rows, "miniTruck", "2026-10-13", [8, 12]).map(
         (r) => r.road,
@@ -357,9 +355,7 @@ describe("places", () => {
         "Bengaluru",
       ),
     ).toBe("Yeshwanthpur");
-    expect(areaOfAddress("Nandini Layout", "Bengaluru")).toBe(
-      "Nandini Layout",
-    );
+    expect(areaOfAddress("Nandini Layout", "Bengaluru")).toBe("Nandini Layout");
     expect(areaOfAddress("5, Sampige Road, Malleshwaram", "Bengaluru")).toBe(
       "Malleshwaram",
     );

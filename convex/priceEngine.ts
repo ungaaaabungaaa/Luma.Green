@@ -497,8 +497,7 @@ async function computeMaterial(run: MaterialRun): Promise<{
   const orgsInWeek = new Set(
     recent.map((row) => run.related.get(row.orgId) ?? row.orgId),
   ).size;
-  const inWindow =
-    windowDaysFor(orgsInWeek) === WINDOW_DAYS ? recent : usable;
+  const inWindow = windowDaysFor(orgsInWeek) === WINDOW_DAYS ? recent : usable;
 
   const inputs: PriceInput[] = inWindow.map((row) => ({
     orgId: run.related.get(row.orgId) ?? row.orgId,
@@ -537,8 +536,7 @@ async function computeMaterial(run: MaterialRun): Promise<{
     values: orgValues(inputs),
     floorPaise: reference?.floorPaise ?? null,
     fallbackPaise: reference?.fallbackPaise ?? null,
-    maxDailyMovePct:
-      band?.maxDailyMovePct ?? maxDailyMoveFor(material.family),
+    maxDailyMovePct: band?.maxDailyMovePct ?? maxDailyMoveFor(material.family),
     previousTypical: previous?.typicalPaise ?? null,
     isConfirmed: existing?.confirmedAt !== undefined,
   });
@@ -694,7 +692,11 @@ export const daily = internalMutation({
   args: {},
   returns: v.null(),
   handler: async (ctx) => {
-    await runEngine(ctx, { city: PILOT_CITY, now: Date.now(), trigger: "cron" });
+    await runEngine(ctx, {
+      city: PILOT_CITY,
+      now: Date.now(),
+      trigger: "cron",
+    });
     return null;
   },
 });
@@ -770,7 +772,10 @@ async function boardRowFor(
   };
 }
 
-function laterOf<T extends string | number>(a: T | null, b: T | null): T | null {
+function laterOf<T extends string | number>(
+  a: T | null,
+  b: T | null,
+): T | null {
   if (a === null) return b;
   if (b === null) return a;
   return b > a ? b : a;
@@ -1114,7 +1119,10 @@ export const survey = mutation({
   returns: v.id("priceObservations"),
   handler: async (ctx, args) => {
     const admin = await requireAdmin(ctx);
-    if (!isPositiveInteger(args.paisePerKg) || args.paisePerKg > MAX_RATE_PAISE) {
+    if (
+      !isPositiveInteger(args.paisePerKg) ||
+      args.paisePerKg > MAX_RATE_PAISE
+    ) {
       throw new ConvexError("INVALID_PRICE");
     }
     const material = await ctx.db
@@ -1258,7 +1266,10 @@ export const postYardPrice = mutation({
   returns: v.id("yardPosts"),
   handler: async (ctx, args) => {
     const { profile, org } = await requireOrg(ctx, ["yard"]);
-    if (!isPositiveInteger(args.paisePerKg) || args.paisePerKg > MAX_RATE_PAISE) {
+    if (
+      !isPositiveInteger(args.paisePerKg) ||
+      args.paisePerKg > MAX_RATE_PAISE
+    ) {
       throw new ConvexError("INVALID_PRICE");
     }
     if (!isPositiveInteger(args.minGrams) || args.minGrams > MAX_MIN_GRAMS) {

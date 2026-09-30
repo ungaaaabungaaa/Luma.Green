@@ -57,7 +57,10 @@ async function demoWorld() {
 
 type Test = Awaited<ReturnType<typeof demoWorld>>;
 
-async function tradeByReceipt(t: Test, receipt: string): Promise<Doc<"trades">> {
+async function tradeByReceipt(
+  t: Test,
+  receipt: string,
+): Promise<Doc<"trades">> {
   return t.run(async (ctx) => {
     const trades = await ctx.db.query("trades").collect();
     const trade = trades.find((candidate) => candidate.invoiceNo === receipt);
@@ -79,7 +82,8 @@ async function orgBySlug(t: Test, slug: string): Promise<Doc<"orgs">> {
 
 function stepAt(trade: Doc<"trades">, status: Doc<"trades">["status"]) {
   const at = trade.timeline.find((entry) => entry.status === status)?.at;
-  if (at === undefined) throw new Error(`${trade.invoiceNo ?? ""} never ${status}`);
+  if (at === undefined)
+    throw new Error(`${trade.invoiceNo ?? ""} never ${status}`);
   return at;
 }
 
@@ -96,11 +100,14 @@ function quarterOf(at: number): string {
   return `${String(fy)}-Q${String(quarter)}`;
 }
 
-function rowsOf(
-  report: { columns: string[]; rows: (string | number | null)[][] },
-): Record<string, string | number | null>[] {
+function rowsOf(report: {
+  columns: string[];
+  rows: (string | number | null)[][];
+}): Record<string, string | number | null>[] {
   return report.rows.map((row) =>
-    Object.fromEntries(report.columns.map((column, index) => [column, row[index]])),
+    Object.fromEntries(
+      report.columns.map((column, index) => [column, row[index]]),
+    ),
   );
 }
 
@@ -146,7 +153,9 @@ describe("periodRange", () => {
 
 describe("cleanDocument", () => {
   it("normalises what people type", () => {
-    expect(cleanDocument("ewayBillNo", " 1234-5678 9012 ")).toBe("123456789012");
+    expect(cleanDocument("ewayBillNo", " 1234-5678 9012 ")).toBe(
+      "123456789012",
+    );
     expect(cleanDocument("vehicleNo", "ka-05 mj 4477")).toBe("KA05MJ4477");
     expect(cleanDocument("vehicleNo", "22BH1234AB")).toBe("22BH1234AB");
     expect(cleanDocument("driverPhone", "98450 00301")).toBe("+919845000301");
@@ -162,19 +171,31 @@ describe("cleanDocument", () => {
   });
 
   it("refuses shapes the portals would reject", () => {
-    expect(() => cleanDocument("ewayBillNo", "12345")).toThrow(/INVALID_EWAY_BILL/);
+    expect(() => cleanDocument("ewayBillNo", "12345")).toThrow(
+      /INVALID_EWAY_BILL/,
+    );
     expect(() => cleanDocument("irn", "not-hex")).toThrow(/INVALID_IRN/);
     expect(() => cleanDocument("vehicleNo", "1234")).toThrow(/INVALID_VEHICLE/);
-    expect(() => cleanDocument("driverPhone", "12345")).toThrow(/INVALID_PHONE/);
+    expect(() => cleanDocument("driverPhone", "12345")).toThrow(
+      /INVALID_PHONE/,
+    );
     expect(() => cleanDocument("notes", "x".repeat(281))).toThrow(/TOO_LONG/);
-    expect(() => cleanDocument("grnNumber", "x".repeat(41))).toThrow(/TOO_LONG/);
+    expect(() => cleanDocument("grnNumber", "x".repeat(41))).toThrow(
+      /TOO_LONG/,
+    );
   });
 });
 
 describe("tax and EPR reference data", () => {
   it("knows the indicative heading and rate for each material", async () => {
-    expect(taxFor(undefined, "METAL-COPPER")).toEqual({ hsn: "7404", gstRate: 18 });
-    expect(taxFor(undefined, "PAPER-NEWS")).toEqual({ hsn: "6310", gstRate: 5 });
+    expect(taxFor(undefined, "METAL-COPPER")).toEqual({
+      hsn: "7404",
+      gstRate: 18,
+    });
+    expect(taxFor(undefined, "PAPER-NEWS")).toEqual({
+      hsn: "6310",
+      gstRate: 5,
+    });
     const t = await demoWorld();
     const newspaper = await t.run(async (ctx) => {
       const material = await ctx.db
@@ -184,16 +205,19 @@ describe("tax and EPR reference data", () => {
       if (!material) throw new Error("No newspaper");
       return material;
     });
-    expect(taxFor(newspaper, "PAPER-NEWS")).toEqual({ hsn: "4707", gstRate: 5 });
+    expect(taxFor(newspaper, "PAPER-NEWS")).toEqual({
+      hsn: "4707",
+      gstRate: 5,
+    });
     // A heading the catalogue supplies wins, and sets the rate by chapter.
     expect(taxFor({ ...newspaper, hsn: "39011010" }, "PAPER-NEWS")).toEqual({
       hsn: "39011010",
       gstRate: 18,
     });
     expect(eprFor(newspaper, "PAPER-NEWS").regime).toBe("Not an EPR stream");
-    expect(eprFor({ ...newspaper, eprCategory: "Cat III" }, "PAPER-NEWS")).toEqual(
-      { regime: "Not an EPR stream", category: "Cat III" },
-    );
+    expect(
+      eprFor({ ...newspaper, eprCategory: "Cat III" }, "PAPER-NEWS"),
+    ).toEqual({ regime: "Not an EPR stream", category: "Cat III" });
   });
 
   it("maps plastics to the packaging regime and e-waste to its own", () => {
@@ -201,7 +225,9 @@ describe("tax and EPR reference data", () => {
       regime: "Plastic packaging",
       category: "Cat I (rigid)",
     });
-    expect(eprFor(undefined, "PLASTIC-LDPE").category).toBe("Cat II (flexible)");
+    expect(eprFor(undefined, "PLASTIC-LDPE").category).toBe(
+      "Cat II (flexible)",
+    );
     expect(streamFor("ewaste")).toMatch(/Special care/);
     expect(streamFor("paper")).toBe("Dry");
   });
@@ -516,7 +542,11 @@ describe("evidencePack", () => {
     // Priya's newspaper pickup, nine days ago, is where the paper came from:
     // 18 kg estimated, weighed at 97%.
     expect(pack?.receipts.origin).toEqual([
-      { date: expect.stringMatching(/^\d{4}-\d\d-\d\d$/), pickups: 1, grams: 17_460 },
+      {
+        date: expect.stringMatching(/^\d{4}-\d\d-\d\d$/),
+        pickups: 1,
+        grams: 17_460,
+      },
     ]);
     expect(Array.isArray(pack?.audit)).toBe(true);
   });
@@ -731,7 +761,9 @@ describe("eprPurchaseRegister", () => {
       "Supplier Registration",
     ]);
     const rows = rowsOf(report);
-    const hdpe = rows.find((row) => row["Invoice / Receipt No."] === HDPE_TRADE);
+    const hdpe = rows.find(
+      (row) => row["Invoice / Receipt No."] === HDPE_TRADE,
+    );
     expect(hdpe).toMatchObject({
       "Date of Receipt": indiaToday(stepAt(trade, "completed")),
       "Supplier Name": PEENYA,
@@ -817,7 +849,8 @@ describe("monthlyRecyclables", () => {
       const bookings = await ctx.db.query("bookings").collect();
       const found = bookings.find(
         (candidate) =>
-          candidate.phone === "+919845000015" && candidate.receipt !== undefined,
+          candidate.phone === "+919845000015" &&
+          candidate.receipt !== undefined,
       );
       if (!found?.receipt) throw new Error("No completed pickup for Vikram");
       return { ...found, receipt: found.receipt };
@@ -827,7 +860,9 @@ describe("monthlyRecyclables", () => {
         period: monthOf(booking.receipt.paidAt),
       }),
     );
-    const books = fromHomes.find((row) => row["Material Code"] === "PAPER-BOOKS");
+    const books = fromHomes.find(
+      (row) => row["Material Code"] === "PAPER-BOOKS",
+    );
     // 25 kg estimated, weighed at 97%.
     expect(books).toMatchObject({
       Material: "Books and notebooks",

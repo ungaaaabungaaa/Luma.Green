@@ -272,10 +272,7 @@ async function readerFor(
   };
 }
 
-async function runOf(
-  ctx: QueryCtx,
-  originId: string,
-): Promise<Run | null> {
+async function runOf(ctx: QueryCtx, originId: string): Promise<Run | null> {
   const runId = ctx.db.normalizeId("sortingRuns", originId);
   return runId ? ctx.db.get("sortingRuns", runId) : null;
 }
@@ -298,7 +295,8 @@ async function runShareOf(reader: Reader, run: Run | null): Promise<number> {
   for (const input of run.inputs) {
     const parent = await reader.lotOf(input.lotId);
     total += input.grams;
-    if (parent) weighted += input.grams * (await receiptShareOf(reader, parent));
+    if (parent)
+      weighted += input.grams * (await receiptShareOf(reader, parent));
   }
   return total === 0 ? 0 : weighted / total;
 }
@@ -518,9 +516,7 @@ const vCheckItem = v.union(
   v.literal("receiver_consent"),
 );
 
-const vChecklist = v.array(
-  v.object({ id: vCheckItem, status: vCheckStatus }),
-);
+const vChecklist = v.array(v.object({ id: vCheckItem, status: vCheckStatus }));
 
 export type CheckStatus = Infer<typeof vCheckStatus>;
 export type Checklist = Infer<typeof vChecklist>;
@@ -624,17 +620,27 @@ function emptyGroup(material: MaterialRef): Grouping {
 }
 
 /** Who bought from a lot and how much, from its "sold" moves. */
-async function addBuyers(reader: Reader, lot: Lot, buyers: Map<Id<"orgs">, number>) {
+async function addBuyers(
+  reader: Reader,
+  lot: Lot,
+  buyers: Map<Id<"orgs">, number>,
+) {
   const moves = await movesOf(reader.ctx, lot._id);
   for (const move of moves) {
     if (move.kind !== "sold" || !move.tradeId) continue;
     const trade = await reader.ctx.db.get("trades", move.tradeId);
     if (!trade) continue;
-    buyers.set(trade.buyerOrgId, (buyers.get(trade.buyerOrgId) ?? 0) + move.grams);
+    buyers.set(
+      trade.buyerOrgId,
+      (buyers.get(trade.buyerOrgId) ?? 0) + move.grams,
+    );
   }
 }
 
-async function finishGroup(reader: Reader, group: Grouping): Promise<MaterialGroup> {
+async function finishGroup(
+  reader: Reader,
+  group: Grouping,
+): Promise<MaterialGroup> {
   const { buyers, ...rest } = group;
   const wentTo: Infer<typeof vWentTo>[] = [];
   for (const [buyerId, grams] of buyers) {
@@ -854,7 +860,9 @@ class BalanceSheet {
   async addSales() {
     const sales = await this.reader.ctx.db
       .query("trades")
-      .withIndex("by_seller", (q) => q.eq("sellerOrgId", this.reader.viewer._id))
+      .withIndex("by_seller", (q) =>
+        q.eq("sellerOrgId", this.reader.viewer._id),
+      )
       .order("desc")
       .take(MAX_ROWS);
     for (const trade of sales) {
@@ -1519,7 +1527,14 @@ async function takeInput(
     remainingGrams,
     status: lotStatusFor(remainingGrams, moves),
   });
-  await adjustStock(ctx, actor, parent.lot.materialCode, -parent.grams, runId, now);
+  await adjustStock(
+    ctx,
+    actor,
+    parent.lot.materialCode,
+    -parent.grams,
+    runId,
+    now,
+  );
 }
 
 async function addOutput(
@@ -1580,7 +1595,15 @@ async function recordRun(
   const lotIds: Id<"lots">[] = [];
   for (const output of outputs) {
     lotIds.push(
-      await addOutput(ctx, actor, materials, output, runId, parentLotIds, run.now),
+      await addOutput(
+        ctx,
+        actor,
+        materials,
+        output,
+        runId,
+        parentLotIds,
+        run.now,
+      ),
     );
   }
   await ctx.db.insert("auditLog", {
@@ -1609,9 +1632,7 @@ async function recordRun(
 export const recordSorting = mutation({
   args: {
     inputs: v.array(v.object({ lotId: v.id("lots"), grams: v.number() })),
-    outputs: v.array(
-      v.object({ materialCode: v.string(), grams: v.number() }),
-    ),
+    outputs: v.array(v.object({ materialCode: v.string(), grams: v.number() })),
     rejectGrams: v.number(),
     note: v.optional(v.string()),
   },
@@ -1860,7 +1881,12 @@ async function addOpeningStock(
   const codes = new Set([...book.keys(), ...sumBy(unmatched).keys()]);
   for (const materialCode of codes) {
     if (openedMaterials.has(materialCode)) continue;
-    await addOpeningLot(state, materialCode, book.get(materialCode) ?? 0, unmatched);
+    await addOpeningLot(
+      state,
+      materialCode,
+      book.get(materialCode) ?? 0,
+      unmatched,
+    );
   }
 }
 

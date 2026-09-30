@@ -390,14 +390,24 @@ describe("parsePriceCsv", () => {
     );
     expect(problems).toEqual([]);
     expect(rows).toEqual([
-      { line: 3, materialCode: "PAPER-NEWS", floorPaise: 750, fallbackPaise: 1000 },
+      {
+        line: 3,
+        materialCode: "PAPER-NEWS",
+        floorPaise: 750,
+        fallbackPaise: 1000,
+      },
       {
         line: 4,
         materialCode: "METAL-ALU-CAN",
         floorPaise: 4500,
         fallbackPaise: 6000,
       },
-      { line: 5, materialCode: "PLASTIC-PET", floorPaise: 1600, fallbackPaise: 2000 },
+      {
+        line: 5,
+        materialCode: "PLASTIC-PET",
+        floorPaise: 1600,
+        fallbackPaise: 2000,
+      },
     ]);
   });
 

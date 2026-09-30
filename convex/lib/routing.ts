@@ -150,7 +150,8 @@ export function litresFor(grams: number, family: Family, bulk: Bulk): number {
 
 /** "Baled", "bundled" or "flattened" in a lot's note means it's compacted. */
 export function bulkFromNote(note: string | undefined): Bulk {
-  return note !== undefined && /\b(baled?|bales?|bundled|flattened)\b/i.test(note)
+  return note !== undefined &&
+    /\b(baled?|bales?|bundled|flattened)\b/i.test(note)
     ? "baled"
     : "loose";
 }
@@ -183,7 +184,8 @@ export function totalGrams(items: readonly FitItem[]): number {
 
 export function totalLitres(items: readonly FitItem[]): number {
   return items.reduce(
-    (sum, item) => sum + litresFor(item.grams, item.family, item.bulk ?? "loose"),
+    (sum, item) =>
+      sum + litresFor(item.grams, item.family, item.bulk ?? "loose"),
     0,
   );
 }
@@ -196,7 +198,12 @@ export function totalLitres(items: readonly FitItem[]): number {
 export function vehicleFit(
   items: readonly FitItem[],
   vehicles: readonly VehicleSpec[],
-): { grams: number; litres: number; fits: VehicleFit[]; smallest: VehicleKey | null } {
+): {
+  grams: number;
+  litres: number;
+  fits: VehicleFit[];
+  smallest: VehicleKey | null;
+} {
   const grams = totalGrams(items);
   const litres = totalLitres(items);
   const fits = vehicles
@@ -332,7 +339,11 @@ export function weightGap(
 ): { gapGrams: number; allowedGrams: number; isWithinTolerance: boolean } {
   const gapGrams = Math.abs(leavingGrams - arrivedGrams);
   const allowedGrams = Math.floor((leavingGrams * tolerancePercent) / 100);
-  return { gapGrams, allowedGrams, isWithinTolerance: gapGrams <= allowedGrams };
+  return {
+    gapGrams,
+    allowedGrams,
+    isWithinTolerance: gapGrams <= allowedGrams,
+  };
 }
 
 // --- Road restrictions --------------------------------------------------------------

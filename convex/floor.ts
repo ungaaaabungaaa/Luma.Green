@@ -768,7 +768,8 @@ async function loadToWeigh(
   const side = trade ? sideOf(trade, orgId) : null;
   if (!trade || !side) throw new ConvexError("NOT_FOUND");
   if (!isWeighable(trade)) throw new ConvexError("WRONG_STEP");
-  if (directionFor(side) !== direction) throw new ConvexError("WRONG_DIRECTION");
+  if (directionFor(side) !== direction)
+    throw new ConvexError("WRONG_DIRECTION");
   return trade;
 }
 
@@ -970,7 +971,11 @@ function deductionFor(
 }
 
 /** The load I'm checking: mine, as the buyer, and already moving. */
-async function loadToCheck(ctx: QueryCtx, orgId: Id<"orgs">, tradeId: Id<"trades">) {
+async function loadToCheck(
+  ctx: QueryCtx,
+  orgId: Id<"orgs">,
+  tradeId: Id<"trades">,
+) {
   const trade = await ctx.db.get("trades", tradeId);
   const side = trade ? sideOf(trade, orgId) : null;
   if (!trade || !side) throw new ConvexError("NOT_FOUND");

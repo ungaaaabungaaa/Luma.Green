@@ -378,7 +378,8 @@ async function declarationsOf(
     const isNewer =
       !current ||
       row.validFrom > current.validFrom ||
-      (row.validFrom === current.validFrom && row.createdAt > current.createdAt);
+      (row.validFrom === current.validFrom &&
+        row.createdAt > current.createdAt);
     if (isNewer) newest.set(row.kind, row);
   }
   return newest;
@@ -402,7 +403,8 @@ function taxProfileOf(
   const gst = declarations.get("gstStatus")?.value;
   const msme = declarations.get("msme")?.value;
   return {
-    registered: gst === undefined ? org.gstin !== undefined : gst !== "unregistered",
+    registered:
+      gst === undefined ? org.gstin !== undefined : gst !== "unregistered",
     manufacturingUse: declarations.get("manufacturingUse")?.value === "yes",
     msme: msme !== undefined && isMsmeCategory(msme) ? msme : "none",
   };
@@ -618,8 +620,7 @@ async function entriesFor(
     // No khata row yet: the market hasn't opened one. Money paid into the
     // prototype's escrow still counts as paid, so the two screens agree.
     const paidPaise =
-      row?.paidPaise ??
-      (isEscrowFunded(trade.status) ? trade.totalPaise : 0);
+      row?.paidPaise ?? (isEscrowFunded(trade.status) ? trade.totalPaise : 0);
     const dueAt = row?.dueAt ?? defaultDueAt(acceptedAt(trade));
 
     let msme: EntryView["msme"] = null;
@@ -1032,7 +1033,11 @@ function partyOf(org: Doc<"orgs">, profile: TaxProfile) {
 }
 
 /** The parties, material and tax breakdown of one of the caller's trades. */
-async function tradeTax(ctx: QueryCtx, orgId: Id<"orgs">, tradeId: Id<"trades">) {
+async function tradeTax(
+  ctx: QueryCtx,
+  orgId: Id<"orgs">,
+  tradeId: Id<"trades">,
+) {
   const { trade, side } = await tradeFor(ctx, orgId, tradeId);
   const [sellerOrg, buyerOrg, materials] = await Promise.all([
     ctx.db.get("orgs", trade.sellerOrgId),
@@ -1288,17 +1293,27 @@ export const purchaseRegister = query({
       if (!date.startsWith(args.month)) continue;
       const sellerOrg = await lookupOrg(trade.sellerOrgId);
       if (!sellerOrg) continue;
-      const seller = { org: sellerOrg, profile: await lookupProfile(sellerOrg) };
-      const taxes = breakdownOf(trade, materials.get(trade.materialCode), seller, {
-        org,
-        profile: buyerProfile,
-      });
+      const seller = {
+        org: sellerOrg,
+        profile: await lookupProfile(sellerOrg),
+      };
+      const taxes = breakdownOf(
+        trade,
+        materials.get(trade.materialCode),
+        seller,
+        {
+          org,
+          profile: buyerProfile,
+        },
+      );
       rows.push({
         date,
         tradeId: trade._id,
         invoiceNo: trade.invoiceNo ?? null,
         supplier: sellerOrg.name,
-        supplierGstin: seller.profile.registered ? (sellerOrg.gstin ?? null) : null,
+        supplierGstin: seller.profile.registered
+          ? (sellerOrg.gstin ?? null)
+          : null,
         material: materialRef(materials, trade.materialCode),
         hsn: taxes.hsn,
         grams: trade.grams,
@@ -1350,7 +1365,10 @@ export const selfInvoices = query({
       if (received === null || trade.status === "declined") continue;
       const sellerOrg = await lookupOrg(trade.sellerOrgId);
       if (!sellerOrg) continue;
-      const seller = { org: sellerOrg, profile: await lookupProfile(sellerOrg) };
+      const seller = {
+        org: sellerOrg,
+        profile: await lookupProfile(sellerOrg),
+      };
       const taxes = breakdownOf(
         trade,
         materials.get(trade.materialCode),

@@ -36,10 +36,12 @@
  *   e-commerce GST TCS (0.5%) and income-tax TDS (0.1%) do not apply.
  */
 
-export type Family = "paper" | "plastic" | "metal" | "glass" | "ewaste" | "other";
+export type Family =
+  "paper" | "plastic" | "metal" | "glass" | "ewaste" | "other";
 export type Stage = "scrap" | "recycled";
 export type Vehicle = "handcart" | "cycle" | "auto" | "mini_truck" | "truck";
-export type PaymentMethod = "cash" | "upi" | "neft" | "imps" | "rtgs" | "escrow";
+export type PaymentMethod =
+  "cash" | "upi" | "neft" | "imps" | "rtgs" | "escrow";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -145,8 +147,20 @@ export function isMetalScrapHsn(hsn: string): boolean {
 /** GST rate in basis points, from the heading first and the family second. */
 export function gstRateBp(hsn: string, family: Family, stage: Stage): number {
   const heading = hsn.slice(0, 4);
-  if (heading === "4707" || heading === "7001" || heading === "6309" || heading === "6310") return 500;
-  if (heading === "3915" || heading === "8548" || heading === "8549" || isMetalScrapHsn(hsn)) return 1800;
+  if (
+    heading === "4707" ||
+    heading === "7001" ||
+    heading === "6309" ||
+    heading === "6310"
+  )
+    return 500;
+  if (
+    heading === "3915" ||
+    heading === "8548" ||
+    heading === "8549" ||
+    isMetalScrapHsn(hsn)
+  )
+    return 1800;
   return stage === "recycled"
     ? TAX_RULES.recycledGstBp
     : TAX_RULES.scrapGstBp[family];
@@ -330,7 +344,10 @@ export interface EwayBillCheck {
   validityDays: number | null;
   /** Part B (vehicle number) can wait for moves of up to 50 km to a transporter. */
   partBOptional: boolean;
-  note: Extract<TaxNote, "ewayBill" | "ewayBillNonMotor" | "ewayBillUnderLimit">;
+  note: Extract<
+    TaxNote,
+    "ewayBill" | "ewayBillNonMotor" | "ewayBillUnderLimit"
+  >;
 }
 
 export function isMotorised(vehicle: Vehicle): boolean {
@@ -375,16 +392,16 @@ export function distanceKm(
   const dLng = toRad(to.lng - from.lng);
   const a =
     Math.sin(dLat / 2) ** 2 +
-    Math.cos(toRad(from.lat)) * Math.cos(toRad(to.lat)) * Math.sin(dLng / 2) ** 2;
+    Math.cos(toRad(from.lat)) *
+      Math.cos(toRad(to.lat)) *
+      Math.sin(dLng / 2) ** 2;
   return Math.round(earthKm * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
 }
 
 // --- Recording a payment -----------------------------------------------------------
 
 export type PaymentWarning =
-  | "cashNotDeductible"
-  | "cashOverReceiptLimit"
-  | "upiOverLimit";
+  "cashNotDeductible" | "cashOverReceiptLimit" | "upiOverLimit";
 
 /** What to tell someone before they record this payment. */
 export function paymentWarnings(

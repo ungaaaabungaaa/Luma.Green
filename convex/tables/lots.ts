@@ -79,9 +79,7 @@ export const lotsTables = {
     /** YYYY-MM-DD, India time. */
     date: v.string(),
     inputs: v.array(v.object({ lotId: v.id("lots"), grams: v.number() })),
-    outputs: v.array(
-      v.object({ materialCode: v.string(), grams: v.number() }),
-    ),
+    outputs: v.array(v.object({ materialCode: v.string(), grams: v.number() })),
     rejectGrams: v.number(),
     note: v.optional(v.string()),
     createdAt: v.number(),

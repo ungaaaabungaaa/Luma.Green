@@ -7,7 +7,7 @@ import {
   type TrainingModuleId,
 } from "../src/components/help/training-keys";
 import type { Doc, Id } from "./_generated/dataModel";
-import { mutation, query,type QueryCtx } from "./_generated/server";
+import { mutation, query, type QueryCtx } from "./_generated/server";
 import { requireAdmin, requireUser } from "./lib/access";
 import { findProfile } from "./lib/applicationAccess";
 import { normalizeIndianMobile } from "./lib/phone";
@@ -459,7 +459,9 @@ export function readyStatus(
     ready: isReady,
     done,
     total: needed.length,
-    completedAt: isReady ? Math.max(...finished.map((row) => row.doneAt)) : null,
+    completedAt: isReady
+      ? Math.max(...finished.map((row) => row.doneAt))
+      : null,
   };
 }
 

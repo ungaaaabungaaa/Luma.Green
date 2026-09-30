@@ -51,9 +51,7 @@ describe("toCsv", () => {
       ["Voucher Date", "Quantity"],
       ["2026-09-23", 400],
     ]);
-    expect(csv).toBe(
-      `${CSV_BOM}Voucher Date,Quantity\r\n2026-09-23,400\r\n`,
-    );
+    expect(csv).toBe(`${CSV_BOM}Voucher Date,Quantity\r\n2026-09-23,400\r\n`);
   });
 
   it("can leave out the mark and use LF for other software", () => {

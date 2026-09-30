@@ -10,13 +10,15 @@ import type { ReportKind } from "./types";
 export type PeriodKind = "month" | "quarter";
 
 /** Which reports run by month and which by financial-year quarter. */
-export const PERIOD_KIND: Record<Exclude<ReportKind, "evidencePack">, PeriodKind> =
-  {
-    tally: "month",
-    eprPurchaseRegister: "month",
-    swmQuarterly: "quarter",
-    monthlyRecyclables: "month",
-  };
+export const PERIOD_KIND: Record<
+  Exclude<ReportKind, "evidencePack">,
+  PeriodKind
+> = {
+  tally: "month",
+  eprPurchaseRegister: "month",
+  swmQuarterly: "quarter",
+  monthlyRecyclables: "month",
+};
 
 /** How many periods the picker offers. */
 export const MONTHS_OFFERED = 12;
@@ -53,7 +55,7 @@ export function recentMonths(now: number, count = MONTHS_OFFERED): string[] {
     periods.push(
       monthPeriod({
         year: year + Math.floor(index / 12),
-        month: ((index % 12) + 12) % 12 + 1,
+        month: (((index % 12) + 12) % 12) + 1,
       }),
     );
   }
@@ -89,7 +91,7 @@ export function recentQuarters(
     periods.push(
       quarterPeriod({
         fy: fy + Math.floor(index / 4),
-        quarter: ((index % 4) + 4) % 4 + 1,
+        quarter: (((index % 4) + 4) % 4) + 1,
       }),
     );
   }

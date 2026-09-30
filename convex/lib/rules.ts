@@ -498,7 +498,9 @@ export function isValidRuleValue(value: RuleValue, unit: RuleUnit): boolean {
     case "number": {
       return typeof value !== "number" ||
         !Number.isSafeInteger(value) ||
-        value < 0 ? false : unit !== "bp" || value <= MAX_BP;
+        value < 0
+        ? false
+        : unit !== "bp" || value <= MAX_BP;
     }
   }
 }

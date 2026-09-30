@@ -175,7 +175,8 @@ export function isInBand(paisePerKg: number, band: Band | null): boolean {
   );
 }
 
-export type BandProblem = "INVALID_BAND" | "BAND_MIN_ABOVE_MAX" | "INVALID_MOVE";
+export type BandProblem =
+  "INVALID_BAND" | "BAND_MIN_ABOVE_MAX" | "INVALID_MOVE";
 
 /** Whole paise above zero, min under max, and a daily limit of 1–50%. */
 export function bandProblem(band: Band): BandProblem | null {
@@ -300,7 +301,8 @@ export function trimOutliers(values: readonly OrgValue[]): {
   kept: OrgValue[];
   dropped: OrgValue[];
 } {
-  if (values.length < OUTLIER_MIN_ORGS) return { kept: [...values], dropped: [] };
+  if (values.length < OUTLIER_MIN_ORGS)
+    return { kept: [...values], dropped: [] };
   const centre = weightedMedian(
     values.map((value) => ({ value: value.paisePerKg, weight: value.weight })),
   );
@@ -456,7 +458,12 @@ export function honourRate(lines: readonly PaidLine[]): HonourRate {
   let under = 0;
   for (const isUnder of pickups.values()) if (isUnder) under += 1;
   const underPct = total === 0 ? 0 : Math.round((under / total) * 1000) / 10;
-  return { pickups: total, under, underPct, flagged: underPct > HONOUR_FLAG_PCT };
+  return {
+    pickups: total,
+    under,
+    underPct,
+    flagged: underPct > HONOUR_FLAG_PCT,
+  };
 }
 
 // --- The admin's suggestions -------------------------------------------------------------
@@ -473,7 +480,10 @@ export function suggestedFloor(fallbackPaise: number): number {
 }
 
 /** A move over 10% needs a written reason. */
-export function requiresNote(fromPaise: number | null, toPaise: number): boolean {
+export function requiresNote(
+  fromPaise: number | null,
+  toPaise: number,
+): boolean {
   if (fromPaise === null) return false;
   const pct = movePct(fromPaise, toPaise);
   return pct !== null && Math.abs(pct) > WEEKLY_NOTE_PCT;

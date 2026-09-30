@@ -113,7 +113,12 @@ export const EMISSION_FACTORS: readonly EmissionFactor[] = [
     source: WARM,
     note: "mixed electronics ≈ 0.9–2.3 by device",
   },
-  { code: "EWASTE-PHONE", kgCo2ePerKg: 2, source: WARM, note: "as electronics" },
+  {
+    code: "EWASTE-PHONE",
+    kgCo2ePerKg: 2,
+    source: WARM,
+    note: "as electronics",
+  },
   {
     code: "EWASTE-CABLE",
     kgCo2ePerKg: 2,
@@ -132,7 +137,12 @@ export const EMISSION_FACTORS: readonly EmissionFactor[] = [
   },
   // Recycled output: the same factor as the scrap it came from, so a kilo
   // that went in as scrap and came out as granules isn't credited twice.
-  { code: "RECYCLED-PET-FLAKE", kgCo2ePerKg: 1.5, source: WARM, note: "as PET" },
+  {
+    code: "RECYCLED-PET-FLAKE",
+    kgCo2ePerKg: 1.5,
+    source: WARM,
+    note: "as PET",
+  },
   {
     code: "RECYCLED-HDPE-GRANULE",
     kgCo2ePerKg: 1,
@@ -200,8 +210,10 @@ export const LEG_KM: Record<"household" | OrgKind, number> = {
 
 /** grams CO2e from electricity and diesel, in whole grams. */
 export function energyCo2eGrams(kwh: number, dieselLitres: number): number {
-  return Math.round(kwh * GRID.kgCo2ePerKwh * 1000) +
-    Math.round(dieselLitres * DIESEL.kgCo2ePerLitre * 1000);
+  return (
+    Math.round(kwh * GRID.kgCo2ePerKwh * 1000) +
+    Math.round(dieselLitres * DIESEL.kgCo2ePerLitre * 1000)
+  );
 }
 
 /** grams CO2e to move `grams` of material `km` kilometres, in whole grams. */

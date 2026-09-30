@@ -241,8 +241,7 @@ async function seedSlotLimits(ctx: MutationCtx, world: DemoWorld) {
 async function seedRestrictions(ctx: MutationCtx, today: string, now: number) {
   const from = shiftDate(today, -10);
   const to = shiftDate(today, 21);
-  const source =
-    "https://btp.karnataka.gov.in/"; // the notices are published here, in Kannada
+  const source = "https://btp.karnataka.gov.in/"; // the notices are published here, in Kannada
   const rows = [
     {
       road: "Peenya elevated corridor (Tumkur Road)",
@@ -347,7 +346,9 @@ async function seededStop(
       order: 0,
       status: stop.status,
       collectedGrams:
-        stop.collectedKg === undefined ? undefined : kgToGrams(stop.collectedKg),
+        stop.collectedKg === undefined
+          ? undefined
+          : kgToGrams(stop.collectedKg),
       respondedAt: stop.status === "pending" ? undefined : world.now - HOUR,
     },
   };

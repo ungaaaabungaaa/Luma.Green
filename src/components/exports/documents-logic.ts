@@ -34,15 +34,17 @@ export const DOCUMENT_FIELDS = [
 ] as const satisfies readonly DocumentField[];
 
 /** Which step of the trade each paper belongs to. Notes stand apart. */
-export const STEP_OF_FIELD: Record<Exclude<DocumentField, "notes">, PackStep> =
-  {
-    poNumber: "requested",
-    irn: "paid_to_escrow",
-    ewayBillNo: "dispatched",
-    vehicleNo: "dispatched",
-    driverPhone: "dispatched",
-    grnNumber: "completed",
-  };
+export const STEP_OF_FIELD: Record<
+  Exclude<DocumentField, "notes">,
+  PackStep
+> = {
+  poNumber: "requested",
+  irn: "paid_to_escrow",
+  ewayBillNo: "dispatched",
+  vehicleNo: "dispatched",
+  driverPhone: "dispatched",
+  grnNumber: "completed",
+};
 
 /** The longest text the server keeps for each free-text field. */
 export const MAX_LENGTH: Record<DocumentField, number> = {

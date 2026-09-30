@@ -247,9 +247,9 @@ describe("khataSummary and khataEntries", () => {
       /NOT_SIGNED_IN/,
     );
     const saathi = await signInAs(t, SAATHI);
-    await expect(
-      saathi.query(api.payments.khataEntries, {}),
-    ).rejects.toThrow(/NO_BUSINESS/);
+    await expect(saathi.query(api.payments.khataEntries, {})).rejects.toThrow(
+      /NO_BUSINESS/,
+    );
   });
 });
 
@@ -337,7 +337,7 @@ describe("record", () => {
       yard.mutation(api.payments.record, {
         ...base,
         method: "upi",
-        reference: ' '.repeat(3),
+        reference: " ".repeat(3),
       }),
     ).rejects.toThrow(/REFERENCE_REQUIRED/);
     await expect(

@@ -56,9 +56,7 @@ describe("taxBreakdown", () => {
     expect(result.tcsPaise).toBe(179_360);
     expect(result.tcsWaived).toBe(false);
     expect(result.buyerPaysSellerPaise).toBe(89_680 * RUPEE + 179_360);
-    expect(result.sellerRemitsGovernmentPaise).toBe(
-      13_680 * RUPEE + 179_360,
-    );
+    expect(result.sellerRemitsGovernmentPaise).toBe(13_680 * RUPEE + 179_360);
     expect(result.buyerPaysGovernmentPaise).toBe(0);
   });
 
@@ -273,7 +271,8 @@ describe("ewayBillCheck", () => {
       ewayBillCheck({ ...load, vehicle: "truck", distanceKm: 200 }),
     ).toMatchObject({ validityDays: 1, partBOptional: false });
     expect(
-      ewayBillCheck({ ...load, vehicle: "truck", distanceKm: 201 }).validityDays,
+      ewayBillCheck({ ...load, vehicle: "truck", distanceKm: 201 })
+        .validityDays,
     ).toBe(2);
     expect(ewayBillCheck({ ...load, vehicle: "truck" }).validityDays).toBe(
       null,
