@@ -5,7 +5,7 @@ import type { CalendarEvent } from "./rule-types";
 /** The admin's narrowing of the month: whose, what kind, where it stands. */
 export interface CalendarFilters {
   /** `all`, `platform` (the platform's own duties) or a business id. */
-  who: string;
+  who: "all" | "platform" | Id<"orgs">;
   kind: "all" | CalendarKind;
   /** `all`, `open` (anything not done) or one state. */
   state: "all" | "open" | DeadlineState;
@@ -17,12 +17,12 @@ export const DEFAULT_FILTERS: CalendarFilters = {
   state: "open",
 };
 
-function matchesWho(event: CalendarEvent, who: string): boolean {
+function isForWho(event: CalendarEvent, who: CalendarFilters["who"]): boolean {
   if (who === "all") return true;
   return who === "platform" ? event.org === null : event.org?.id === who;
 }
 
-function matchesState(
+function isInState(
   event: CalendarEvent,
   state: CalendarFilters["state"],
 ): boolean {
@@ -37,9 +37,9 @@ export function filterEvents(
 ): CalendarEvent[] {
   return events.filter(
     (event) =>
-      matchesWho(event, filters.who) &&
+      isForWho(event, filters.who) &&
       (filters.kind === "all" || event.kind === filters.kind) &&
-      matchesState(event, filters.state),
+      isInState(event, filters.state),
   );
 }
 
@@ -50,31 +50,28 @@ export interface Tally {
   done: number;
 }
 
-/** How the month stands, before any filter. */
-export function tallyEvents(events: readonly CalendarEvent[]): Tally {
-  const tally: Tally = { open: 0, overdue: 0, dueSoon: 0, done: 0 };
-  for (const event of events) {
-    switch (event.state) {
-      case "done": {
-        tally.done += 1;
-        break;
-      }
-      case "overdue": {
-        tally.open += 1;
-        tally.overdue += 1;
-        break;
-      }
-      case "due_soon": {
-        tally.open += 1;
-        tally.dueSoon += 1;
-        break;
-      }
-      case "ok": {
-        tally.open += 1;
-        break;
-      }
+/** The tally after one more event in `state`. */
+function counted(tally: Tally, state: DeadlineState): Tally {
+  switch (state) {
+    case "done": {
+      return { ...tally, done: tally.done + 1 };
+    }
+    case "overdue": {
+      return { ...tally, open: tally.open + 1, overdue: tally.overdue + 1 };
+    }
+    case "due_soon": {
+      return { ...tally, open: tally.open + 1, dueSoon: tally.dueSoon + 1 };
+    }
+    case "ok": {
+      return { ...tally, open: tally.open + 1 };
     }
   }
+}
+
+/** How the month stands, before any filter. */
+export function tallyEvents(events: readonly CalendarEvent[]): Tally {
+  let tally: Tally = { open: 0, overdue: 0, dueSoon: 0, done: 0 };
+  for (const event of events) tally = counted(tally, event.state);
   return tally;
 }
 
@@ -109,7 +106,7 @@ export function groupByDate(
  */
 export function markDoneArgs(
   event: CalendarEvent,
-  done: boolean,
+  isDone: boolean,
 ):
   | { id: Id<"calendarEvents">; done: boolean }
   | {
@@ -123,7 +120,7 @@ export function markDoneArgs(
       };
       done: boolean;
     } {
-  if (event.id !== null) return { id: event.id, done };
+  if (event.id !== null) return { id: event.id, done: isDone };
   return {
     generated: {
       sourceKey: event.sourceKey ?? `${event.kind}:${event.dueAt}`,
@@ -133,6 +130,6 @@ export function markDoneArgs(
       orgId: event.org?.id,
       note: event.note,
     },
-    done,
+    done: isDone,
   };
 }

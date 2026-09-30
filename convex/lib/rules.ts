@@ -434,6 +434,16 @@ export const RULE_DEFAULTS = [
     note: "The most the fee can be for one job done with a mini-truck.",
     sourceUrl: GIG_FEE,
   },
+  {
+    key: "gig.platformPays",
+    group: "gig",
+    label: "Luma.Green pays Saathis itself",
+    value: false,
+    unit: "flag",
+    effectiveFrom: "2026-10-13",
+    note: "Off during the pilot: the shop or yard that books a Saathi pays them, so Luma.Green is not an aggregator under Karnataka's Act. Turning this on puts the quarterly welfare-fee declaration on the calendar and the 45-day board registration on the to-do list.",
+    sourceUrl: GIG_FEE,
+  },
   // --- Platform ---------------------------------------------------------------------------
   {
     key: "platform.darkPatternAudit.firstDue",
@@ -496,9 +506,12 @@ export function isValidRuleValue(value: RuleValue, unit: RuleUnit): boolean {
       );
     }
     case "number": {
-      return typeof value !== "number" ||
-        !Number.isSafeInteger(value) ||
-        value < 0 ? false : unit !== "bp" || value <= MAX_BP;
+      return (
+        typeof value === "number" &&
+        Number.isSafeInteger(value) &&
+        value >= 0 &&
+        (unit !== "bp" || value <= MAX_BP)
+      );
     }
   }
 }
@@ -787,11 +800,28 @@ export function yearlyFrom(anchor: string, range: DateRange): string[] {
   return yearlyOn(month, day, range).filter((date) => date >= anchor);
 }
 
+/**
+ * Which kinds of business owe which filing. Keyed by name rather than by
+ * `OrgKind` so the refined chain's kinds (ADR 0014: pre-processors,
+ * compounders, brands, dry-waste centres, authorised handlers) start
+ * getting their filings the day they exist, with no change here.
+ */
+export const FILING_KINDS = {
+  /** Registered buyers of metal scrap deduct GST TDS and file GSTR-7. */
+  gstr7: new Set<string>(["yard", "preprocessor", "recycler"]),
+  /** Registered plastic waste processors file the EPR annual return by 30 April. */
+  eprPlasticProcessor: new Set<string>(["recycler", "preprocessor"]),
+  /** Producers, importers and brand owners file by 30 June. */
+  eprBrand: new Set<string>(["manufacturer", "brand"]),
+  /** E-waste, battery, tyre and used-oil recyclers file every quarter. */
+  eprQuarterly: new Set<string>(["recycler", "preprocessor", "handler"]),
+} as const;
+
 /** Businesses that deduct GST TDS on metal scrap and file GSTR-7. */
-function mustFileGstr7(org: CalendarOrg): boolean {
+function isGstr7Filer(org: CalendarOrg): boolean {
   return (
     Boolean(org.gstin) &&
-    (org.kind === "yard" || org.kind === "recycler") &&
+    FILING_KINDS.gstr7.has(org.kind) &&
     org.families.includes("metal")
   );
 }
@@ -802,6 +832,8 @@ export interface CalendarRules {
   msmeDays: number;
   board: string;
   darkPatternFirstDue: string;
+  /** Luma.Green pays Saathis itself, so it owes the gig welfare fee. */
+  gigFeeLive: boolean;
 }
 
 /** A recurring filing for one business: the same text on every date. */
@@ -835,7 +867,7 @@ function orgDeadlines(org: CalendarOrg, range: DateRange): GeneratedEvent[] {
       note: `Consent ${consent.number}. Apply for renewal well ahead: it can take weeks.`,
     });
   }
-  if (mustFileGstr7(org)) {
+  if (isGstr7Filer(org)) {
     events.push(
       ...filings(org, "gstr7", monthlyOn(10, range), {
         title: "GSTR-7: deposit GST TDS on metal scrap",
@@ -843,8 +875,8 @@ function orgDeadlines(org: CalendarOrg, range: DateRange): GeneratedEvent[] {
       }),
     );
   }
-  const isHandlesPlastic = org.families.includes("plastic");
-  if (org.kind === "recycler" && isHandlesPlastic) {
+  const hasPlastic = org.families.includes("plastic");
+  if (hasPlastic && FILING_KINDS.eprPlasticProcessor.has(org.kind)) {
     events.push(
       ...filings(org, "eprReturn", yearlyOn(4, 30, range), {
         title: "EPR annual return (plastic processor)",
@@ -852,7 +884,7 @@ function orgDeadlines(org: CalendarOrg, range: DateRange): GeneratedEvent[] {
       }),
     );
   }
-  if (org.kind === "manufacturer" && isHandlesPlastic) {
+  if (hasPlastic && FILING_KINDS.eprBrand.has(org.kind)) {
     events.push(
       ...filings(org, "eprReturn", yearlyOn(6, 30, range), {
         title: "EPR annual return (brand owner)",
@@ -860,7 +892,10 @@ function orgDeadlines(org: CalendarOrg, range: DateRange): GeneratedEvent[] {
       }),
     );
   }
-  if (org.kind === "recycler" && org.families.includes("ewaste")) {
+  if (
+    org.families.includes("ewaste") &&
+    FILING_KINDS.eprQuarterly.has(org.kind)
+  ) {
     events.push(
       ...filings(org, "eprQuarterly", quarterlyReturnDates(range), {
         title: "EPR quarterly return (e-waste)",
@@ -893,7 +928,10 @@ function tradeDeadlines(
   return events;
 }
 
-/** The platform's own duties: GSTR-8 once escrow collects money, the yearly audit. */
+/**
+ * The platform's own duties: GSTR-8 once escrow collects money, the gig
+ * welfare fee once Luma.Green pays Saathis itself, the yearly audit.
+ */
 function platformDeadlines(
   range: DateRange,
   rules: CalendarRules,
@@ -907,6 +945,17 @@ function platformDeadlines(
         title: "GSTR-8: e-commerce TCS return",
         dueAt,
         note: "0.5% TCS collected on trades paid through the platform, deposited with the return by the 10th of the next month.",
+      });
+    }
+  }
+  if (rules.gigFeeLive) {
+    for (const dueAt of quarterlyReturnDates(range)) {
+      events.push({
+        sourceKey: `gigFee:${dueAt}`,
+        kind: "custom",
+        title: "Karnataka gig welfare fee: declare and pay the quarter",
+        dueAt,
+        note: "1% of every Saathi payout, capped per job by vehicle, declared quarterly to the gig-workers welfare board. The Act says quarterly; confirm the board's exact day before the first one.",
       });
     }
   }

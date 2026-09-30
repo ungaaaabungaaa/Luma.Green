@@ -43,7 +43,7 @@ export function RuleRow({
   onOpen: (rule: RuleItem) => void;
 }) {
   const { active } = rule;
-  const next = rule.upcoming[0];
+  const next = rule.upcoming.at(0);
   return (
     <div
       className={cn(

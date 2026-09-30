@@ -3,6 +3,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { cn } from "@/lib/utils";
 
 import type { RuleUnit } from "../../../../convex/lib/rules";
 import { inputAdornment } from "./rule-format";
@@ -17,7 +18,7 @@ export function RuleValueField({
   id,
   unit,
   text,
-  flag,
+  isOn,
   onText,
   onFlag,
   isInvalid,
@@ -26,19 +27,19 @@ export function RuleValueField({
   id: string;
   unit: RuleUnit;
   text: string;
-  flag: boolean;
+  isOn: boolean;
   onText: (text: string) => void;
-  onFlag: (flag: boolean) => void;
+  onFlag: (isOn: boolean) => void;
   isInvalid: boolean;
   describedBy: string | undefined;
 }) {
   if (unit === "flag") {
     return (
       <div className="flex items-center justify-between gap-3 rounded-lg border px-3 py-2.5">
-        <Label htmlFor={id}>{flag ? "On" : "Off"}</Label>
+        <Label htmlFor={id}>{isOn ? "On" : "Off"}</Label>
         <Switch
           id={id}
-          checked={flag}
+          checked={isOn}
           onCheckedChange={onFlag}
           aria-describedby={describedBy}
         />
@@ -47,6 +48,11 @@ export function RuleValueField({
   }
   const { prefix, suffix } = inputAdornment(unit);
   const isNumber = unit !== "text";
+  const numberClass = cn(
+    "tabular-nums",
+    prefix !== undefined && "ps-7",
+    suffix !== undefined && "pe-16",
+  );
   return (
     <div className="flex flex-col gap-1.5">
       <Label htmlFor={id}>New value</Label>
@@ -69,11 +75,7 @@ export function RuleValueField({
           }}
           aria-invalid={isInvalid || undefined}
           aria-describedby={describedBy}
-          className={
-            isNumber
-              ? `tabular-nums ${prefix ? "ps-7" : ""} ${suffix ? "pe-16" : ""}`
-              : undefined
-          }
+          className={isNumber ? numberClass : undefined}
         />
         {suffix ? (
           <span

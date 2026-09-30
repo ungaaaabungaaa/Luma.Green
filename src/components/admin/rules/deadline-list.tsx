@@ -20,7 +20,7 @@ export function DeadlineList({
   events: readonly CalendarEvent[];
   /** The event being saved right now, so its button waits. */
   busyKey: string | null;
-  onToggle: (event: CalendarEvent, done: boolean) => void;
+  onToggle: (event: CalendarEvent, isDone: boolean) => void;
 }) {
   return (
     <div className="flex flex-col gap-5">
@@ -61,7 +61,7 @@ function DeadlineRow({
 }: {
   event: CalendarEvent;
   isBusy: boolean;
-  onToggle: (event: CalendarEvent, done: boolean) => void;
+  onToggle: (event: CalendarEvent, isDone: boolean) => void;
 }) {
   const kind = KIND_LOOK[event.kind];
   const state = STATE_LOOK[event.state];

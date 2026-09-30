@@ -155,7 +155,7 @@ export function CalendarFilterFields({
         <Select
           value={filters.who}
           onValueChange={(who) => {
-            onChange({ ...filters, who });
+            onChange({ ...filters, who: who as CalendarFilters["who"] });
           }}
         >
           <SelectTrigger id={`${id}-who`} className="w-full sm:w-64">

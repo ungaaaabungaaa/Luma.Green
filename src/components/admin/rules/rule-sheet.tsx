@@ -117,6 +117,11 @@ function RuleSheetBody({
   );
 }
 
+/** Something stable to key a stored row by. */
+function rowKey(row: RuleRowData): string {
+  return `${row.effectiveFrom}-${String(row.updatedAt)}`;
+}
+
 function InForce({ rule }: { rule: RuleItem }) {
   const { active } = rule;
   return (
@@ -135,7 +140,7 @@ function InForce({ rule }: { rule: RuleItem }) {
       </p>
       {rule.upcoming.map((row) => (
         <p
-          key={row.id ?? row.effectiveFrom}
+          key={rowKey(row)}
           className="flex flex-wrap items-center gap-2 text-sm"
         >
           <StatusPill tone="warn">Coming</StatusPill>
@@ -262,7 +267,7 @@ function ChangeForm({
         id={`${id}-value`}
         unit={rule.unit}
         text={text}
-        flag={flag}
+        isOn={flag}
         onText={setText}
         onFlag={setFlag}
         isInvalid={!change.ok}
@@ -280,7 +285,7 @@ function ChangeForm({
           className="tabular-nums"
         />
         <p className="text-xs text-muted-foreground">
-          A future date waits its turn; today's applies at once.
+          A future date waits its turn; a change dated today applies at once.
         </p>
       </div>
       <div className="flex flex-col gap-1.5">
@@ -339,7 +344,7 @@ function History({ rule }: { rule: RuleItem }) {
   return (
     <ol className="flex flex-col divide-y">
       {rule.history.map((row) => (
-        <HistoryRow key={row.id ?? row.effectiveFrom} rule={rule} row={row} />
+        <HistoryRow key={rowKey(row)} rule={rule} row={row} />
       ))}
     </ol>
   );

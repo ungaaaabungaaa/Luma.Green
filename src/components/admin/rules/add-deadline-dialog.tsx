@@ -68,21 +68,21 @@ export function draftProblem(draft: DeadlineDraft): string | null {
  * a stamp booked, a licence renewal, anything with a date.
  */
 export function AddDeadlineDialog({
-  open,
+  isOpen,
   onOpenChange,
   orgs,
   defaultDate,
 }: {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
+  isOpen: boolean;
+  onOpenChange: (isOpen: boolean) => void;
   orgs: readonly CalendarOrgRef[];
   /** The day to start from: the one picked on the grid, else today. */
   defaultDate: string;
 }) {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
-        {open ? (
+        {isOpen ? (
           <DraftForm
             orgs={orgs}
             defaultDate={defaultDate}

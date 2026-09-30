@@ -17,6 +17,7 @@ import { shiftDate } from "./lib/dates";
 import {
   activeRule,
   deadlineState,
+  FILING_KINDS,
   generatedDeadlines,
   indiaDate,
   isValidRuleValue,
@@ -199,6 +200,7 @@ describe("generated deadlines", () => {
     msmeDays: 45,
     board: "KSPCB",
     darkPatternFirstDue: "2027-01-01",
+    gigFeeLive: false,
   };
   const year = { from: "2026-10-01", to: "2027-09-30" };
 
@@ -236,6 +238,42 @@ describe("generated deadlines", () => {
     });
     expect(events.filter((event) => event.kind === "gstr8")).toHaveLength(12);
     expect(events.every((event) => event.orgId === undefined)).toBe(true);
+  });
+
+  it("add the quarterly gig welfare fee only once the platform pays Saathis", () => {
+    const off = generatedDeadlines({
+      range: year,
+      orgs: [],
+      openTrades: [],
+      rules,
+    });
+    expect(off.some((event) => event.sourceKey.startsWith("gigFee:"))).toBe(
+      false,
+    );
+    const on = generatedDeadlines({
+      range: year,
+      orgs: [],
+      openTrades: [],
+      rules: { ...rules, gigFeeLive: true },
+    });
+    const fees = on.filter((event) => event.sourceKey.startsWith("gigFee:"));
+    expect(fees.map((event) => event.dueAt)).toEqual([
+      "2026-10-31",
+      "2027-01-31",
+      "2027-04-30",
+      "2027-07-31",
+    ]);
+    expect(fees[0]?.kind).toBe("custom");
+    expect(fees[0]?.orgId).toBeUndefined();
+  });
+
+  it("are ready for the refined chain's kinds without a rewrite", () => {
+    // ADR 0014: pre-processors sit between yards and recyclers.
+    expect(FILING_KINDS.gstr7.has("preprocessor")).toBe(true);
+    expect(FILING_KINDS.eprPlasticProcessor.has("preprocessor")).toBe(true);
+    expect(FILING_KINDS.eprBrand.has("brand")).toBe(true);
+    expect(FILING_KINDS.eprBrand.has("recycler")).toBe(false);
+    expect(FILING_KINDS.gstr7.has("kabadiwala")).toBe(false);
   });
 
   it("give a buyer 45 days from accepting the goods", () => {

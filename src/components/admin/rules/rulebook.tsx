@@ -20,7 +20,7 @@ import { RuleSheet } from "./rule-sheet";
 import type { RuleItem } from "./rule-types";
 
 /** Rules whose name, key or note mentions every word of the search. */
-export function matchesSearch(rule: RuleItem, search: string): boolean {
+export function isSearchMatch(rule: RuleItem, search: string): boolean {
   const words = search.toLowerCase().split(/\s+/).filter(Boolean);
   if (words.length === 0) return true;
   const haystack =
@@ -66,7 +66,7 @@ export function Rulebook() {
     );
   }
 
-  const shown = rules.filter((rule) => matchesSearch(rule, search));
+  const shown = rules.filter((rule) => isSearchMatch(rule, search));
   const openRule = rules.find((rule) => rule.key === openKey) ?? null;
 
   return (

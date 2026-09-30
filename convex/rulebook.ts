@@ -28,6 +28,7 @@ import {
   type OpenTrade,
   RULE_DEFAULTS,
   ruleChangeProblem,
+  type RuleDefault,
   ruleDefault,
   ruleNumber,
   ruleText,
@@ -160,11 +161,11 @@ function isSameChange(
   row: Doc<"rules"> | undefined,
   change: { value: RuleValue; note?: string; sourceUrl?: string },
 ): boolean {
-  return row ? (
-    row.value === change.value &&
-    row.note === change.note &&
-    row.sourceUrl === change.sourceUrl
-  ) : false;
+  return row
+    ? row.value === change.value &&
+        row.note === change.note &&
+        row.sourceUrl === change.sourceUrl
+    : false;
 }
 
 /** Every rule with the value in force today, what's coming, and its history. */
@@ -188,7 +189,9 @@ export const listRules = query({
     await requireAdmin(ctx);
     const today = indiaDate(Date.now());
     const result = [];
-    for (const rule of RULE_DEFAULTS) {
+    // Widened so the console sees `string`, not every default note as a literal.
+    const defaults: readonly RuleDefault[] = RULE_DEFAULTS;
+    for (const rule of defaults) {
       const rows = await rowsFor(ctx, rule.key);
       const active = activeRule(rows, today);
       const history = rows
@@ -407,6 +410,7 @@ async function calendarRules(
       "platform.darkPatternAudit.firstDue",
       today,
     ),
+    gigFeeLive: await isRuleOn(ctx, "gig.platformPays", today),
   };
 }
 
@@ -749,25 +753,25 @@ export interface ReminderRun {
   stampsReminded: number;
 }
 
+/** What one pass did about one consent. */
+type ConsentOutcome = "added" | "reminded" | "unchanged";
+
 /** A consent expiring within the window gets one row, and one reminder. */
 async function remindConsent(
   ctx: MutationCtx,
   org: Doc<"orgs">,
   consent: { board: string; number: string; validUntil: string },
   now: number,
-  run: ReminderRun,
-): Promise<void> {
+): Promise<ConsentOutcome> {
   const sourceKey = `consent:${org._id}:${consent.validUntil}`;
   const existing = await ctx.db
     .query("calendarEvents")
     .withIndex("by_sourceKey", (q) => q.eq("sourceKey", sourceKey))
     .first();
   if (existing) {
-    if (existing.remindedAt === undefined && !existing.done) {
-      await ctx.db.patch("calendarEvents", existing._id, { remindedAt: now });
-      run.consentsReminded += 1;
-    }
-    return;
+    if (existing.remindedAt !== undefined || existing.done) return "unchanged";
+    await ctx.db.patch("calendarEvents", existing._id, { remindedAt: now });
+    return "reminded";
   }
   await ctx.db.insert("calendarEvents", {
     orgId: org._id,
@@ -780,7 +784,7 @@ async function remindConsent(
     remindedAt: now,
     createdAt: now,
   });
-  run.consentsAdded += 1;
+  return "added";
 }
 
 /**
@@ -797,11 +801,9 @@ export async function runReminders(
   const today = indiaDate(now);
   const consentDays = await ruleNumber(ctx, "consent.reminder.days", today);
   const scaleDays = await ruleNumber(ctx, "scale.reminder.days", today);
-  const run: ReminderRun = {
-    consentsAdded: 0,
-    consentsReminded: 0,
-    stampsReminded: 0,
-  };
+  let consentsAdded = 0;
+  let consentsReminded = 0;
+  let stampsReminded = 0;
 
   const orgs = await activeOrgs(ctx);
   for (const org of orgs) {
@@ -813,7 +815,9 @@ export async function runReminders(
     ) {
       continue;
     }
-    await remindConsent(ctx, org, consent, now, run);
+    const outcome = await remindConsent(ctx, org, consent, now);
+    if (outcome === "added") consentsAdded += 1;
+    else if (outcome === "reminded") consentsReminded += 1;
   }
 
   const stamps = await ctx.db
@@ -829,9 +833,9 @@ export async function runReminders(
       continue;
     }
     await ctx.db.patch("calendarEvents", stamp._id, { remindedAt: now });
-    run.stampsReminded += 1;
+    stampsReminded += 1;
   }
-  return run;
+  return { consentsAdded, consentsReminded, stampsReminded };
 }
 
 /** Daily reminders from the compliance calendar (consents, scales, filings). */

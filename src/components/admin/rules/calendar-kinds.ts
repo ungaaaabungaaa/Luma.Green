@@ -86,7 +86,7 @@ export function monthOf(date: string): string {
 /** The month before or after `month` (`YYYY-MM`). */
 export function shiftMonth(month: string, by: number): string {
   const [year, index] = month.split("-").map(Number);
-  const date = new Date(Date.UTC(year ?? 0, (index ?? 1) - 1 + by, 1));
+  const date = new Date(Date.UTC(year, index - 1 + by, 1));
   return `${String(date.getUTCFullYear())}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
 }
 
@@ -136,8 +136,8 @@ export interface MonthCell {
  */
 export function monthGrid(month: string): MonthCell[][] {
   const [year, index] = month.split("-").map(Number);
-  const first = new Date(Date.UTC(year ?? 0, (index ?? 1) - 1, 1));
-  const days = new Date(Date.UTC(year ?? 0, index ?? 1, 0)).getUTCDate();
+  const first = new Date(Date.UTC(year, index - 1, 1));
+  const days = new Date(Date.UTC(year, index, 0)).getUTCDate();
   // getUTCDay: 0 = Sunday; we start weeks on Monday.
   const lead = (first.getUTCDay() + 6) % 7;
   const cells: MonthCell[] = Array.from({ length: lead }, () => ({

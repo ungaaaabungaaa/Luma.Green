@@ -65,9 +65,10 @@ const STATE_TABS: readonly {
  * behind the dates live on `/admin/rules`.
  */
 export function ComplianceCalendar() {
-  const [month, setMonth] = useState(() => monthOf(indiaDate(Date.now())));
+  const [openedOn] = useState(() => indiaDate(Date.now()));
+  const [month, setMonth] = useState(() => monthOf(openedOn));
   const data = useQuery(api.rulebook.listCalendar, { month });
-  const thisMonth = monthOf(data?.today ?? indiaDate(Date.now()));
+  const thisMonth = monthOf(data?.today ?? openedOn);
 
   const header = (
     <AppPageHeader
@@ -83,6 +84,11 @@ export function ComplianceCalendar() {
         Sample deadlines for the demo businesses. Consents and stamps come from
         their records; filings follow from what each one handles.
       </DemoNote>
+      <p className="text-sm text-muted-foreground">
+        The pilot is first-mile: kabadiwalas, yards, recyclers and
+        manufacturers. Pre-processors, dry-waste centres, compounders and brands
+        get their filings here the day those kinds switch on.
+      </p>
       <MonthNav month={month} thisMonth={thisMonth} onChange={setMonth} />
       {data === undefined ? (
         <ListSkeleton rows={4} />
@@ -108,11 +114,11 @@ function MonthBody({ month, data }: { month: string; data: CalendarData }) {
       ? filtered.filter((event) => event.dueAt === selectedDate)
       : filtered;
 
-  async function toggle(event: CalendarEvent, done: boolean) {
+  async function toggle(event: CalendarEvent, isDone: boolean) {
     setBusyKey(eventKey(event));
     try {
-      const { id } = await markDone(markDoneArgs(event, done));
-      if (done) {
+      const { id } = await markDone(markDoneArgs(event, isDone));
+      if (isDone) {
         toast.success(`Done: ${event.title}`, {
           action: {
             label: "Undo",
@@ -235,15 +241,15 @@ function MonthBody({ month, data }: { month: string; data: CalendarData }) {
           <DeadlineList
             events={listed}
             busyKey={busyKey}
-            onToggle={(event, done) => {
-              void toggle(event, done);
+            onToggle={(event, isDone) => {
+              void toggle(event, isDone);
             }}
           />
         )}
       </section>
 
       <AddDeadlineDialog
-        open={isAdding}
+        isOpen={isAdding}
         onOpenChange={setIsAdding}
         orgs={data.orgs}
         defaultDate={selectedDate ?? data.today}
