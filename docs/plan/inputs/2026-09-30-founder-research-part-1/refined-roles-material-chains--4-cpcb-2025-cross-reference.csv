@@ -1,0 +1,18 @@
+0
+Luma.Green — Refinement notes (Sep 2026)
+1. New role added: PRE-PROCESSOR — converts yard bales into factory-ready feedstock
+"    (PET flakes cold/hot-washed, granules, granulated copper, shredded steel, tyre chips/crumb, battery fractions,"
+"    dismantled e-waste fractions, C&D aggregates, reclaimed foundry sand, re-refined oil)."
+"    Maps to KSPCB list: Orange 1326 (PET flakes), 1366 (plastic reprocessing), 1405 (scrapping centres/ELV),"
+"    1414 (C&D processing), 1424 (tyre pyrolysis), 1337/1339/1340 (dross & oil recovery), 1587 (sand reclamation),"
+"    White 58 (UCO collection), White 3 (paper baling — the YARD step)."
+"2. CPCB New Category List (12.02.2025 directions): 419 sectors — Red 125, Orange 137, Green 94, White 54, Blue 9."
+    PI ranges: Red ≥80 | Orange 55–80 | Green 25–55 | White <25 | Blue = 9 Essential Environmental Services.
+"    White-category units are consent-exempt (G.S.R. 702(E), 12.11.2024) — self-declare + intimation to SPCB/PCC."
+"    Blue category (9): EES for domestic waste — STP, MSW facility, sanitary landfill, MRF, C&D facility,"
+"    bio-methanation, waste-to-energy, sewage/drainage networks, E-waste collection — 2 extra years CTO validity."
+3. ACTION for integration: re-verify each industry's 2025 category against Annexure-I of the CPCB report
+"    ('Classification of Sectors into Red, Orange, Green, White and Blue Categories', Jan 2025) before hard-coding"
+    consent validity in the rulebook — the 2025 list supersedes the 2016 KSPCB classification this sheet is built on.
+"4. Consent validity (per KSPCB Notification 1425, 15.06.2016 — pre-2025 regime): Red = 5 yrs, Orange = 5 yrs,"
+"    Green = 10 yrs, White = no consent. Under CPCB 2025: PI decides the category; check the new SOP."

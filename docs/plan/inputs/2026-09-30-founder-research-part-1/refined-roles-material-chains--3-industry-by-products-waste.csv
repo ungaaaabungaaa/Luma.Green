@@ -1,0 +1,400 @@
+KSPCB Category,Category Code,Industry / Organisation / Activity,By-products / waste generated,Suggested Luma material code,Who handles it (Luma chain),Flag
+Red,1100,Airports & commercial air strips,"Waste/used oil, de-icing fluids, food & packaging waste, WEEE, effluent sludge",FER-SCR / OIL-USED / E-WASTE,Yard → pre-processor (oil re-refiner; e-waste dismantler),Used oil & e-waste = EPR stream
+Red,1101,Aluminium smelter,"Spent pot lining (SPL — HW), aluminium dross, fluoridated dust, skimmings",ALU-DROSS / HW,Pre-processor (dross mill — Orange 1337) → secondary smelter,Hazardous waste
+Red,1102,Asbestos & asbestos-based industries,"Asbestos off-cuts, dust, contaminated packaging (HW)",HW,Authorised TSDF only,Hazardous — no open trading
+Red,1103,Automobile manufacturing (integrated),"Paint sludge, solvent waste, oil & grease, metal scrap, packaging, WEEE",FER-SCR / OIL-USED / PAINT-SLDG / E-WASTE,Yard → pre-processor; HW to TSDF,Mixed + HW
+Red,1104,"Basic chemicals & electro-chemicals, acid mfg","Spent acids, process residues, contaminated packaging (HW)",HW,Authorised recycler / TSDF,Hazardous
+Red,1105,Cement & clinker grinding,"Kiln/ESP dust, used oil, rejected tyres & waste-derived fuels, slag",FER-SCR / OIL-USED,Yard / oil re-refiner,Co-processing route (cement kilns take HW as fuel)
+Red,1106,Chlor-alkali,"Brine sludge, mercury-bearing wastes (legacy), chlorinated organics",HW,TSDF,Hazardous
+Red,1107,"Chlorates, per-chlorates & peroxides","Off-spec salts, contaminated packaging",HW,TSDF,Hazardous
+Red,1108,Chlorine/fluorine/bromine/iodine compounds,"Process residues, scrubber wastes",HW,TSDF,Hazardous
+Red,1109,Coke making / coal tar distillation,"Tar sludge, phenolic wastewater, benzole residues, coke breeze",OIL-USED / HW,Re-refiner / TSDF,Hazardous
+Red,1110,Copper smelter,"Granulated slag, dust (Cd/As/Pb-bearing, HW), spent electrolyte, anode slime (Ag/Au/Pt)",COP-GRAN / HW,Pre-processor (slag & dust recovery) / precious-metal refinery,Hazardous + valuable by-product
+Red,1111,DG set > 5 MVA,"Used lubricating oil, filters",OIL-USED,Re-refiner (EPR used-oil),EPR stream
+Red,1112,Distillery + press-mud composting,"Spent wash (effluent), yeast sludge, boiler ash, spent wash-based compost",ORG,Organic converter / manure maker (Green 1657 type),Organic by-products (compost sellable)
+Red,1113,Dyes & dye-intermediates,"Dye sludge (HW), mother liquors, contaminated packaging",HW,TSDF / authorised recovery,Hazardous
+Red,1114,Basic fertilizer,"Phosphogypsum, ammonia-bearing sludge, spent acids, contaminated bags",GYPSUM / HW,Gypsum user (cement/board); HW to TSDF,Bulk + HW
+Red,1115,Fibre glass production (excl. moulding),"Glass-fibre off-cuts, resin-contaminated waste, dust",GLS-CRUSH / HW,Glass crusher (non-contaminated) / TSDF,Mixed
+Red,1116,Fire crackers,"Paper & cardboard offcuts, chemical residues (HW), reject product",PAP-OCC / HW,Yard / TSDF,Mixed + HW
+Red,1117,Health-care establishment (BMW rules),"Biomedical waste (red/yellow/white/blue bags), expired drugs",BMW,CBMWTF only,Hazardous — captive stream
+Red,1118,Hotels ≥100 KLD wastewater,"Food waste, used cooking oil, glass & PET waste, grey-water sludge",ORG / UCO / PET-BTL / GLS-BTL,Organic converter; UCO aggregator; yard,UCO = EPR (used oil)
+Red,1119,"Industrial carbon (electrodes, carbon black)","Off-spec carbon, dust, reject electrodes",CARBON,Carbon re-processor (Red 1178 type),Saleable
+Red,1120,HW recycling — e-waste dismantler,"Dismantled fractions: boards, batteries, CRT glass, capacitors (HW)",E-WASTE fractions,Authorised dismantler → metal recovery,EPR e-waste; HW
+Red,1121,HW recycling — integrated recycling plant,E-waste & HW fractions as above + residues,E-WASTE / HW,Integrated authorised facility,EPR + HW
+Red,1122,HW recycling — lead acid battery scrap (RAINS/RAILS/RAKES),"Lead paste, grids, PP casing, acid",BAT-LA,Registered battery recycler (breaker → smelter),EPR battery; HW
+Red,1123,"HW recycling — spent catalysts (Ni, Cd, Zn, Cu, As, V, Co)","Spent catalyst masses, support media",CAT-SPD,Metal recovery smelter,Valuable — metal-bearing
+Red,1124,"HW recycling — spent metal catalysts (Cu/Zn), reconditioning","Spent catalysts, contaminated containers",CAT-SPD,Metal recovery,Valuable
+Red,1125,"Metal surface treatment (pickling, electroplating, phosphating, galvanising)","Chrome/Ni/Zn/Cu-bearing sludge (HW), spent baths, acids, stripping residues",SLDG-PLT / HW,Authorised recovery (Orange 1337 dross/sludge streams) / TSDF,Hazardous
+Red,1126,Iron & steel from ore / sponge iron / slag units,"Blast-furnace slag, steel slag, dust, sludge, mill scale, refractories",FER-SLAG / MILLSCALE,"Slag processors (cement, GGBS); mill scale to sinter",Large-volume by-products (sellable)
+Red,1127,Hazardous chemical storage (≥2.5 MMt crude),"Tank bottoms, contaminated soil, slop oil",OIL-SLOP / HW,Re-refiner / TSDF,Hazardous
+Red,1128,Lead-acid battery manufacturing (excl. micro assembly),"Lead dross & ash, scrap plates, paste, acid mist residues",BAT-LA / LEAD-DRS,Registered battery recycler,EPR battery; HW
+Red,1129,Explosives & detonators,"Chemical residues, reject product, contaminated packaging (HW)",HW,Authorised destruction,Hazardous — controlled
+Red,1130,Glue & gelatin,"Lime sludge, bone/hide offal, effluent sludge, fat",ORG,Organic converter / renderer,Organic
+Red,1131,"Lubricating oils, grease, petroleum products","Slop oil, spent filter clay, off-spec product",OIL-USED / OIL-SLOP,Re-refiner,EPR used oil
+Red,1132,"Paints, varnishes, pigments (mfg)","Solvent residues, paint sludge (HW), off-spec batches, pigment dust",PAINT-SLDG / HW,HW recycler (Orange 1338) / TSDF,Hazardous
+Red,1133,Milk processing & dairy (integrated),"Whey, curd/effluent sludge, butter oil residues, packaging",ORG-WHEY,Cattle feed / whey processing / manure,By-product has value (whey)
+Red,1134,Mining & ore beneficiation,"Overburden/waste rock, tailings, slime, topsoil",TAILINGS / AGG,"Backfill, aggregates (where permitted)",Bulk — site-managed
+Red,1135,Nuclear power plant,Radioactive wastes,RADW,Nuclear waste authority only,Excluded from platform
+Red,1136,Oil & gas extraction (incl. CBM),"Drilling muds, produced water, tank bottoms, VOC emissions",OIL-SLOP / DRILL-MUD,Authorised treatment,Hazardous
+Red,1137,Oil refinery,"Oily sludge (HW), spent catalysts, sour water, flare residues",OIL-SLOP / CAT-SPD,Re-refiner / catalyst metal recovery,Hazardous + valuable
+Red,1138,Organic chemicals manufacturing,"Distillation bottoms, solvent residues, off-spec batches (HW)",SOLVENT / HW,Solvent recovery / TSDF,Hazardous; solvent recoverable
+Red,1139,Pesticides (technical),"Off-spec product, contaminated packaging, process sludge (HW)",HW,TSDF / authorised destruction,Hazardous
+Red,1140,Petrochemicals,"Spent catalysts, polymer off-spec/waste, sludge",PLA-GRN / CAT-SPD,Polymer recycler; catalyst recovery,Mixed
+Red,1141,Pharma bulk drugs / API,"Process sludge (HW), solvent residues, expired/reject API",SOLVENT / HW,Solvent recovery / TSDF,Hazardous
+Red,1142,Phosphate rock processing,"Phosphogypsum, dust",GYPSUM,Cement / wallboard,Bulk by-product
+Red,1143,Phosphorus & compounds,"Residues, sludge",HW,TSDF,Hazardous
+Red,1144,Photographic film & chemicals,"Silver-bearing spent fixer, film/scrap (Ag-bearing)",AG-FIXER,Silver recovery (precious-metal refiner),Valuable — Ag recovery
+Red,1145,"Ports, harbours, dredging","Dredged sediment, bilge/oily wastes, cargo spillage (scrap metal, grain)",SEDIMENT / OIL-SLOP,Approved disposal / re-refiner,Mixed
+Red,1146,Power generation (excl. renewables),"Fly ash, bottom ash, FGD gypsum, used oil",FLY-ASH / GYPSUM / OIL-USED,"Ash merchants (cement, bricks — White 16), gypsum users, re-refiner",Large sellable by-products
+Red,1147,Chlorinated hydrocarbons processes,"Residues, contaminated packaging (HW)",HW,TSDF,Hazardous
+Red,1148,Pulp & paper — agro/wood & small agro,"Black liquor (recovered in-process), lime mud, pulp rejects, sludge",PAP-REJ / SLUDGE-PAPER,Rejects to reject-paper units; sludge to compost/brick,Partially self-consumed
+Red,1149,Waste-paper based paper WITH bleaching (writing & printing),"De-ink sludge, plastic rejects, fibre rejects, effluent sludge",SLUDGE-DEINK / PLA-REJ,Compost / RDF / TSDF as applicable,Key pre-processing (de-inking) inside plant
+Red,1150,Waste-paper based Kraft (no bleaching),"Rejects, sludge",PAP-REJ,Reject-paper units / RDF,—
+Red,1151,Railway loco workshop / transport workshop,"Used oil, metal scrap, paint sludge, WEEE, batteries",OIL-USED / FER-SCR / E-WASTE / BAT-LA,Yard streams + registered handlers,Mixed; several EPR streams
+Red,1152,Ship breaking / building & repairs,"Asbestos (HW), oil sludge, bilge water, PCBs, scrap steel, non-ferrous",FER-HMS / OIL-SLOP / HW,Yards + authorised HW handlers,Hazardous + large scrap volumes
+Red,1153,"Slaughterhouse & meat processing, bone mill, horn/hoof processing","Blood, bones, offal, hair/hooves, effluent, rendered fat & meat-cum-bone meal",ORG-BONE / MBM,Rendering / MBM / tallow; bone to gelatin/glue,By-products valuable
+Red,1154,Sugar (excl. khandsari),"Bagasse, press mud, molasses, boiler ash, filter cake",BAGASSE / PRESSMUD,"Paper/board, compost/manure, distilleries, fuel",Major by-products (sellable)
+Red,1155,"Synthetic fibres (rayon, tyre cord, PFY)","Polymer/fibre waste, spin finish oil, packaging",PLA-GRN / OIL-USED,Polymer recycler / re-refiner,—
+Red,1156,Tanneries,"Chrome-bearing sludge (HW), trimmings, fleshing, effluent, salt",SLDG-CR / LEATHER-TRIM,TSDF (sludge); trimmings to glue/gelatin (Red 1130),Hazardous sludge
+Red,1157,Thermal power plant,"Fly ash, bottom ash, gypsum",FLY-ASH,"Cement, bricks, roads",Sellable bulk
+Red,1158,"Yarn/textile processing (bleaching, dyeing, printing)","Dye & print-paste sludge, chemical containers, reject fabric, fibre lint",SLDG-DYE / FABRIC-REJ,TSDF / ragging (pre-processor),Hazardous sludge
+Red,1159,Zinc smelter,"Jarosite/goethite residues, slag, dust (HW, Cd-bearing)",ZINC-DRS / HW,Dross/slag recovery (Orange 1337) / TSDF,Hazardous
+Red,1160,"Synthetic detergents & soaps (mfg, >100 KLD)","Process sludge, chemical residues",SLDG,TSDF / brick,—
+Red,1161,Automobile servicing/painting (>100 KLD),"Used oil, paint sludge, thinner waste, effluent",OIL-USED / PAINT-SLDG,Re-refiner / HW recycler,EPR used oil
+Red,1162,"Building & construction >20,000 m² (>100 KLD)","C&D debris, concrete waste, steel offcuts, excavated soil",C&D / FER-SCR,C&D crusher (Orange 1414) / yard,Recyclable
+Red,1163,Ceramics & refractories (coal >12 MTPD),"Broken ware, glaze sludge, dust, refractory scrap",CER-REJ,Crusher / landfill,—
+Red,1164,Fermentation incl. alcohol distillation (>100 KLD),"Spent wash, yeast sludge, CO2 (recoverable), effluent",ORG,Compost/distillery-effluent treatment,—
+Red,1165,"Ferrous & non-ferrous metal extraction (melting, refining, casting; lead/induction furnace)","Slag, dross, dust, furnace linings, runner scrap",FER-SLAG / ALU-DROSS / LEAD-DRS,Dross mills / slag processors,Pre-processor customers
+Red,1166,Foundry ≥5 MT/hr (coal/coke >500 kg/hr),"Waste foundry sand, bag-house dust, slag, runners/risers",SAND-FS / FER-RUNNER,Sand reclamation (Green 1587 — pre-processor); runners back to melt,Circular by-product
+Red,1167,Glass with lead,"Lead-bearing cullet & dust (HW), sludge",GLS-LEAD / HW,Authorised glass/lead recovery,Hazardous
+Red,1168,Soft drinks & bottling (>100 KLD),"PET rejects & offcuts, used oil, reject product, glass breakage",PET-BTL / GLS-CRUSH,Yard → PET flaker; glass cullet,—
+Red,1169,Vegetable oil incl. solvent extraction (>100 KLD),"De-oiled cake (by-product), spent bleaching earth, hexane residues, gums",DOC / SBE,"Cattle feed (DOC), manure/briquettes (SBE)",By-product DOC is sellable
+Red,1170,Parboiled rice mills (>100 KLD or >12 MTD fuel),"Rice husk, bran, paddy straw, boiler ash, effluent",RICE-HUSK / BRAN,"Fuel (husk), bran oil/cattle feed, ash to bricks",By-products sellable
+Red,1171,CETP / CHWTSDF / incinerator / CBMWTF / solvent recovery / MSW facilities,"Treated sludge, ash, rejected HW, recovered solvents",SLDG / ASH / SOLVENT,Authorised disposal; solvents to industry,Pre-processor of effluents — their OUTPUTS feed industry
+Red,1172,Gold & silver smithy (>1 L acid/month),"Acid sludge (Ag/Au-bearing), cyanide residues, polishing waste (HW, precious)",AG-POLISH,Precious-metal refiner,Valuable + hazardous
+Red,1173,Industrial estates / parks / SEZs,"Mixed HW from member units, common effluent sludge",HW,Common TSDF (on-site),Aggregation point
+Red,1174,PCB manufacturing,"Copper etchant (HW), spent boards, developer/stripper solutions",HW / E-WASTE,Etchant recovery units / e-waste handlers,Hazardous
+Red,1175,Currency printing & note-paper mfg,"Ink sludge, solvent, security paper waste (destroyed under custody)",PAP-SCR,Controlled destruction,Controlled
+Red,1176,Marigold extraction,"Spent marigold pomace, solvent residues",ORG-FLWR,Compost / fuel (Orange 1410 dewatering feeds this),—
+Red,1177,Rare earth & nuclear fuel complex,Radioactive wastes,RADW,Nuclear authority,Excluded
+Red,1178,Reclaimed rubber incl. pyrolysis,"TPO (tyre pyrolysis oil), recovered carbon black, steel wire, devulcanised residues",TPO / RCB / FER-STEEL,Fuel users; steel to melt shop; RCB to rubber compounding,PRE-PROCESSOR output (see Orange 1424)
+Red,1179,Soft drinks/aerated >12 TPD fuel,"PET rejects, used oil",PET-BTL / OIL-USED,Yard streams,—
+Red,1180,Software/ITES/BPO (>100 KLD or >5 MVA DG),"Used oil, WEEE (computers, peripherals), batteries",OIL-USED / E-WASTE / BAT,Re-refiner / authorised dismantler,EPR streams
+Red,1181,STP at apartments/complexes >100 KLD,"Screenings, grit, treated sludge",SLDG-STP / ORG-STP,Compost/manure; refuse-derived fuel,Blue-category-adjacent EES
+Red,1182,Research & analytical labs (MSIHC chemicals/animals),"Chemical waste, contaminated glassware, animal waste (HW)",HW-LAB,TSDF,Hazardous
+Red,1183,"Industrial gas production (acetylene, Cl2, NH3, etc.)","Empty cylinders (returnable), residues",CYL,Cylinder requalifiers,Reusable asset
+Red,1184,Starch/sago mfg (>100 KLD),"Starch sludge, sago refuse, effluent",ORG-STARCH,Cattle feed / manure,—
+Red,1650,Township & residential development >10 acres (>100 KLD),"MSW, sewage sludge, C&D from construction, UCO",MSW / SLDG-STP / C&D,MSW facility; C&D crusher (pre-processor),Blue category EES
+Red,1185,Spacecraft & launch products,"Composite waste, solvent residues, WEEE",COMP / SOLVENT,Authorised handlers,—
+Red,1186,Railway stations ≥100 KLD,"Station waste (paper, PET, food), used oil from maintenance",PAP-OCC / PET-BTL,Yard streams,—
+Red,1187,Layouts (sewage >100 KLD),"C&D debris, MSW during development",C&D / MSW,C&D crusher / MSW facility,—
+Red,1188,CBG from MSW (>100 KLD),"Digestate, process effluent",DIGESTATE,Compost / manure maker,By-product to organics chain
+Red,1189,CBG from process waste (>100 KLD),"Digestate, spent press mud, effluent",DIGESTATE,Compost / manure maker,—
+Red,1190,Mining >5 ha / riverbed mining,"Overburden, sediment, topsoil",OVB / AGG,"Backfill, aggregates",Bulk
+Orange,1301,Almirah & grill mfg (dry mech.),"Steel offcuts, grinding dust, paint (if applied)",FER-SCR,Yard,—
+Orange,1302,"Al/Cu extraction from scrap (oil-fired furnace, dry)","Aluminium dross, copper dross, ash, dust",ALU-DROSS / COP-DRS,Dross recovery → secondary smelter,PRE-PROCESSOR (scrap-to-metal)
+Orange,1303,"Auto servicing, repairing, painting","Used oil, paint sludge, thinner, effluent, batteries, tyres, filters",OIL-USED / PAINT-SLDG / BAT / TYRE,"Re-refiner, HW recycler, registered handlers","EPR streams: oil, battery, tyre"
+Orange,1304,Ayurvedic & homeopathic medicine,"Boiler ash (if boiler), herb residues, packaging",ORG / PAP-OCC,Organic converter; yard,—
+Orange,1305,Bakery >1 TPD,"Food waste, packaging, used oil",ORG / UCO,Organic converter; UCO aggregator,—
+Orange,1306,Brickfields,"Ash, broken bricks, coal residues",BRK-REJ / ASH,Crusher / backfill,—
+Orange,1307,"Building & construction >20,000 m²","C&D debris, concrete waste, steel offcuts, wood",C&D / FER-SCR,C&D crusher (1414); yard,Recyclable
+Orange,1308,Cashew processing,"Cashew shells (CNSL-bearing), husk, dust",CNS-SHELL,Fuel / CNSL extraction (1390),By-product fuel
+Orange,1309,Ceramics & refractories,"Broken ware, glaze sludge, dust",CER-REJ,Crusher / landfill,—
+Orange,1310,Chanachur/muri (husk oven),"Husk ash, packaging",ASH / PAP-OCC,Ash users; yard,—
+Orange,1311,Coal washeries,"Coal fines, middlings, slurry",COAL-FINES,Power/cement (co-processing),—
+Orange,1312,Coated electrode mfg,"Flux dust, metal fines",FER-FINES,Yard,—
+Orange,1313,Coffee seed / instant coffee & tea,"Coffee husk, parchment, dust, spent tea",ORG-HUSK,Compost / fuel,—
+Orange,1314,CD/floppy/cassette mfg,"Plastic rejects, magnetic slurry",PLA-REJ,Plastic recycler,—
+Orange,1315,Cotton spinning & weaving (medium/large),"Cotton waste, dust, sizing effluent, sizing chemicals",COT-WASTE,Waste-cotton reprocessor (Green 1549),Pre-processor customer
+Orange,1316,Dairy (small),"Whey, sludge, packaging",ORG-WHEY,Cattle feed,—
+Orange,1317,DG set 1–5 MVA,"Used oil, filters",OIL-USED,Re-refiner,EPR used oil
+Orange,1318,Dismantling of rolling stock,"Scrap steel, copper wire, used oil, rubber, WEEE",FER-SCR / COP / TYRE / OIL-USED,Yard + registered handlers,Similar to ship-breaking-lite
+Orange,1319,Dry-cell battery (excl. electrodes); micro lead-acid assembly,"Battery scrap, lead dust",BAT / BAT-LA,Battery recycler,—
+Orange,1320,"Dry coal/mineral processing, sintering, pelletising","Fines, dust, slurry, reject ore",MIN-FINES,Aggregates / backfill,—
+Orange,1321,Fermentation incl. alcohol,"Spent wash, yeast, CO2",ORG / CO2,Compost; CO2 to beverage (recovery),—
+Orange,1322,Ferrous & non-ferrous melting/refining/casting,"Slag, dross, dust, furnace lining",FER-SLAG / DRS,Slag & dross processors,Pre-processor customers
+Orange,1323,Fertilizer granulation/formulation; pesticide formulation,"Off-spec batches, contaminated bags",FER-REJ,Re-blend or TSDF,—
+Orange,1324,Fish/poultry/cattle feed,"Bone & offal residues, dust, rancid oil",ORG,Renderer / organic converter,—
+Orange,1325,Fish processing,"Scales, offal, effluent",ORG-FISH,Fish meal / organic converter,—
+Orange,1326,Flakes from rejected PET bottle,"PRE-PROCESSOR: wash water, label/cap rejects (PP/PVC), sludge, fines",PLA-PET-FLK,"Up-chain (washing line, granulator)",THE flaker step — pre-processor
+Orange,1327,Foam manufacturing,"Chemical residues, offcuts, VOCs",PLA-REJ,Plastic recycler,—
+Orange,1328,Food & fruit/vegetable processing,"Peels, pits, rejected produce, effluent, packaging",ORG,Organic converter / cattle feed,—
+Orange,1329,Forging (oil/gas furnace),"Mill scale, furnace slag, die lubricant waste",FER-SCR / OIL,Yard / re-refiner,—
+Orange,1330,Camphor/naphthalene formulation,"Chemical residues, packaging",HW,TSDF,—
+Orange,1331,"Glass/ceramic kilns (oil/gas), glass coating","Broken ware, dust, glaze sludge",GLS-CRUSH / CER-REJ,Cullet crusher / landfill,—
+Orange,1332,Gravure/flex printing,"Solvent waste, ink sludge, film offcuts",SOLVENT / INK / PLA-FILM,Solvent recovery; yard,—
+Orange,1333,"Heat treatment (oil furnace, no cyaniding)","Spent quench oil, salt-bath residues",OIL-USED,Re-refiner,—
+Orange,1334,Hot-mix plants,"Dust, RAP (reclaimed asphalt pavement), fuel residues",RAP,Asphalt recycling (road re-laying),PRE-PROCESSOR material
+Orange,1335,Hotels 20–100 rooms (boiler),"Food waste, UCO, glass, PET",ORG / UCO / GLS,Yard + organic chain,—
+Orange,1336,Ice cream (pasteurised),"Packaging, whey",PAP-OCC,Yard,—
+Orange,1337,"HW recycling — brass/copper/zinc dross & skimmings, insulated wire","Processed metal dross, zinc ash, copper reverts",NFE-DRS / COP-DRS,Metal recovery (smelters),PRE-PROCESSOR (dross milling)
+Orange,1338,HW recycling — paint & ink sludge,"Residues, filter cake",HW-PAINT,Fuel blending / TSDF,—
+Orange,1339,HW recycling — used oil (recycling),"Re-refined oil; residues: acid sludge, spent clay",OIL-USED / SLDG-OIL,Lube blending / TSDF,PRE-PROCESSOR (re-refining)
+Orange,1340,HW recycling — waste oil,As above,OIL-WASTE,Re-refiner,—
+Orange,1341,Foundry operations,"Waste foundry sand, dust, slag, runners",SAND-FS / FER-RUNNER,Sand reclamation (1587); runners to melt,—
+Orange,1342,Jute processing (no dyeing),"Dust, short fibres, effluent",FIB-JUTE,Insulation / board,—
+Orange,1343,Lime kiln,"Lime dust, overburnt lime",LIME,Soil treatment / re-process,—
+Orange,1344,Liquid soap/phenyl mfg,"Chemical residues, drums",HW / DRM,Repackers (1623) / TSDF,—
+Orange,1345,Glass manufacturing,"Cullet, dust, sludge",GLS-CRUSH,Cullet crusher,In-house cullet loop
+Orange,1346,Iodized salt,"Chemical residues, packaging",PAP-REJ,Yard,—
+Orange,1347,Mirror mfg,"Silver-bearing sludge, glass offcuts, paint sludge",GLS-CRUSH / AG-SLDG,Cullet; silver recovery,—
+Orange,1348,Mosquito coil,"Dust, chemical residues, packaging",PAP-OCC,Yard,—
+Orange,1349,Silica gel,Spent/off-spec gel,SIL-GEL,Desiccant re-processing / TSDF,—
+Orange,1350,Starch/sago <100 KLD,"Starch sludge, effluent",ORG-STARCH,Cattle feed,—
+Orange,1351,Toothpaste/cosmetics/talcum,"Chemical residues, packaging",PAP-PLA-REJ,Yard,—
+Orange,1352,Mechanised laundry (oil boiler),"Lint, effluent, used oil",ORG / OIL-USED,Yard / re-refiner,—
+Orange,1353,Particle board/MDF with boiler,"Sawdust, board offcuts, boiler ash, resin waste",WOOD-SAWD / ASH,Board makers / briquettes / fuel,—
+Orange,1354,Highway construction,"Milled asphalt (RAP), C&D waste, overburden",RAP / C&D,Asphalt re-cycling; C&D crusher,PRE-PROCESSOR materials
+Orange,1355,Soft drinks & bottling,"PET rejects, used oil, glass breakage",PET / GLS / OIL,Yard streams,—
+Orange,1356,Paint blending (ball mill),"Solvent residues, sludge, off-spec",SOLVENT / PAINT-SLDG,Recovery / TSDF,—
+Orange,1357,"Paints mixing/blending, deodorant sprays",As above,SOLVENT / HW,Recovery / TSDF,—
+Orange,1358,Parboiled rice mills,"Husk, bran, ash, straw",RICE-HUSK / BRAN,Fuel / feed / bricks,—
+Orange,1359,Pharmaceutical formulation,"Expired/reject drugs, packaging, solvent",HW-DRUG / SOLVENT,TSDF / recovery,Hazardous (expired drugs)
+Orange,1360,"Ply-board mfg (boiler, no resin plant)","Veneer offcuts, sawdust, boiler ash",WOOD-SAWD / ASH,Fuel / board,—
+Orange,1361,IMFL blending & bottling,"Glass bottle rejects, used oil, effluent",GLS-CRUSH / OIL,Cullet; re-refiner,—
+Orange,1362,Printing ink mfg,"Solvent, sludge",SOLVENT / INK,Recovery,—
+Orange,1363,Glass etching (HF),"HF waste, sludge (HW)",HW-HF,TSDF,Hazardous
+Orange,1364,Printing press / screen printing,"Paper waste, ink sludge, plates/chemicals, film waste",PAP-OCC / INK,Yard / recovery,—
+Orange,1365,Producer gas plant,"Coal ash, tar sludge",ASH / TAR,Ash users; TSDF,—
+Orange,1366,Waste plastic reprocessing (incl. PVC),"PRE-PROCESSOR: wash water, sludge, rejects, PVC residues",PLA-GRN,Granulator → converter,THE plastic pre-processor step
+Orange,1367,Rolling mill (oil/coal) & cold rolling,"Mill scale, slag, rolling oil residues",FER-SCR / OIL,Yard / re-refiner,—
+Orange,1368,Silk screen/sari printing,"Dyed paste waste, effluent",SLDG-DYE / FABRIC,TSDF / ragging,—
+Orange,1369,Spray painting & baking,"Paint sludge, filters, thinner",PAINT-SLDG / SOLVENT,HW recovery,—
+Orange,1370,Steel via furnaces; engineering heat treatment,"Scale, slag, quench oil, shot-blast fines",FER-SCR / OIL-USED,Yard / re-refiner,—
+Orange,1371,Stone crushers / m-sand,"Dust, overburden, stone slimes",STONE-FINES,Fines to bricks/tiles; aggregates,—
+Orange,1372,Surgical & medical products (latex),"Latex waste, reject product, packaging",RUB-REJ,Rubber recycler,—
+Orange,1373,Synthetic detergents & soaps <100 KLD,"Sludge, chemical residues",SLDG,TSDF / brick,—
+Orange,1374,Synthetic resins,"Off-spec resin, monomer residues, solvents",SOLVENT / PLA-REJ,Recovery / recycler,—
+Orange,1375,Latex processing / synthetic rubber (excl. moulding),"Coagulum, effluent, chemicals",RUB-COAG,Rubber recycler,—
+Orange,1376,Teflon products,"PTFE waste, residues",PLA-REJ,Plastic recycler,—
+Orange,1377,Thermocol (boiler),"EPS offcuts, reject product",EPS,Agglomerator (pre-processor),Recyclable — low value
+Orange,1378,Thermometer mfg,Mercury-bearing waste (HW),HW-HG,TSDF,Hazardous
+Orange,1379,Tobacco products,"Tobacco dust, stems, foil/paper packaging",ORG-TOB / PAP-OCC,Yard,—
+Orange,1380,Transformer repair/mfg (dry),"Copper scrap, insulation waste, steel",COP / FER-SCR,Yard (dry units only; oil-filled units → used oil stream),—
+Orange,1381,"Tyre & tube mfg, vulcanising, retreading","Rubber scraps, buffings, steel wire, off-spec tyres",TYRE-SCRAP / RUB-BUFF,Tyre recycler (shred/pyrolysis),Feeds pre-processor
+Orange,1382,Vegetable oil incl. solvent extraction,"De-oiled cake, spent earth, hexane residues",DOC / SBE,Feed / fuel,—
+Orange,1383,Wire drawing & netting,"Drawing soap fines, metal fines, lubricant waste",FER-FINES / COP-FINES,Yard,—
+Orange,1384,Pasted veneers (coal/wood boiler),"Veneer offcuts, ash",WOOD-SAWD / ASH,Fuel / board,—
+Orange,1385,Tea processing (boiler) / spirulina,"Dust, spent leaves, ash",ORG,Compost,—
+Orange,1386,Health-care <100 KLD without incinerator,Biomedical waste,BMW,CBMWTF,Hazardous
+Orange,1387,Airports <100 KLD,"Used oil, packaging, WEEE",OIL-USED / E-WASTE,Registered handlers,—
+Orange,1388,Helmet/FRP with spray painting,"Resin offcuts, fibre, paint sludge",RUB-REJ / PAINT-SLDG,Rubber recycler / TSDF,—
+Orange,1389,Cement bulk storage + bagging,"Dust, spillage",CEMENT-RCM,Reclaimed in-process,—
+Orange,1390,CNS shell oil mfg,Shell residues,CNS-RES,Fuel / disposal,—
+Orange,1391,Desiccated coconut,"Husk, shell, effluent",ORG-HUSK,Coir / fuel,—
+Orange,1392,Gold/silver smithy <1 L acid,Polishing sludge (Ag/Au-bearing),AG-POLISH,Precious-metal refiner,Valuable
+Orange,1393,Chocolate & cocoa mfg,"Packaging, rejected product",ORG / PAP-OCC,Yard,—
+Orange,1394,Fluorescent lamps / LED / CFL,"Mercury-bearing lamp waste (HW for CFL/fluorescent), glass, electronics",LAMP-HW / E-WASTE,Authorised lamp recyclers / e-waste,Hazardous (Hg)
+Orange,1395,Pulping units incl. coffee fermenting,"Pulp rejects, effluent, husk",PAP-REJ / ORG,Reject-paper units; compost,—
+Orange,1396,Winery,"Grape pomace, lees, effluent, bottles",ORG-POMACE / GLS,Compost; cullet,—
+Orange,1397,Waste-to-energy plant,"Bottom ash (with ferrous & NF metals), fly ash, APC residues",ASH-METAL / FLY-ASH,Metal recovery (pre-processor on ash); ash to cement,PRE-PROCESSOR: ash metal recovery
+Orange,1398,Cardboard & paper products (boiler),"Paper offcuts, rejects, dust",PAP-OCC,Yard,—
+Orange,1399,Software/ITES 11–100 KLD / DG 1–5 MVA,"Used oil, WEEE",OIL-USED / E-WASTE,Registered handlers,—
+Orange,1400,STP 11–100 KLD,"Sludge, screenings",SLDG-STP,Compost / RDF,—
+Orange,1401,LPG cylinder repair/bottling (with painting),"Paint sludge, hydrotest water, scrap cylinders",PAINT-SLDG / FER-SCR,TSDF / yard,—
+Orange,1402,Storage terminals (non-MSIHC),"Residues, contaminated soil",HW / OIL-SLOP,TSDF / re-refiner,—
+Orange,1403,Optical lenses (large wastewater),"Glass offcuts, polishing sludge",GLS-CRUSH,Cullet,—
+Orange,1404,Fragrance/flavours (boiler),"Chemical residues, solvents",SOLVENT,Recovery,—
+Orange,1651,Khandsari sugar,"Bagasse, molasses, ash",BAGASSE,Fuel / paper,—
+Orange,1652,Township 11–100 KLD,"MSW, sludge",MSW / SLDG-STP,MSW facility; compost,—
+Orange,1653,Industrial heater mfg,"Metal offcuts, paint",FER-SCR,Yard,—
+Orange,1654,Delinting of seeds,"Lint waste, delinted seeds",COT-LINT,Cotton waste reprocessor,—
+Orange,1406,"Jaggery manufacturing (mechanised, with boiler)","Bagasse, ash",BAGASSE / ASH,Fuel users; brick making,—
+Orange,1405,Scrapping centres (ELV & plant/machinery),"PRE-PROCESSOR: depollution fluids (oil, coolant, brake fluid, refrigerant gas), batteries, tyres, wiring harness, catalytic converters, shredder residue (ASR)",ELV fractions,Registered handlers; metals to yards,THE ELV pre-processor
+Orange,1408,Railway stations 10–100 KLD,"Station waste, used oil",PAP-OCC / OIL,Yard / re-refiner,—
+Orange,1409,Dairy farm,"Manure, spent feed, effluent, reject milk",ORG-MANURE,Compost / biogas (CBG 1419/1664),—
+Orange,1410,Marigold silage dewatering,"Press liquor, spent flowers",ORG-FLWR,Compost / fuel,—
+Orange,1411,Sand washing,"Silt, clay slimes",SILT,Landfill / fill,—
+Orange,1412,Desalination plant,"Brine/reject stream, spent filters",BRINE,Deep-well disposal (managed),—
+Orange,1413,"B&C up to 20,000 m² (≥50 KLD)",C&D debris,C&D,C&D crusher,—
+Orange,1414,C&D waste processing plant,"PRE-PROCESSOR output: recycled aggregates, m-sand, recovered steel, rejects",AGG-RC / SAND-M,"RMC, road base, block makers",THE C&D pre-processor
+Orange,1415,Gold assessing & hallmarking,"Polishing waste (Au/Ag-bearing), acids",AG-POLISH,Precious-metal refiner,Valuable
+Orange,1416,CBG from MSW <100 KLD,Digestate,DIGESTATE,Compost,—
+Orange,1417,CBG from process waste <100 KLD,Digestate,DIGESTATE,Compost,—
+Orange,1418,CBG from crop residue >100 KLD,"Digestate, process water",DIGESTATE,Compost,—
+Orange,1419,CBG from animal waste >100 KLD,Digestate,DIGESTATE,Compost / manure,—
+Orange,1420,Moulding gift articles,Plastic runners/rejects,PLA-REJ,Plastic recycler,—
+Orange,1421,Electro-decomposition coating,Cr/Ni sludge (HW),HW-PLT,TSDF / recovery,Hazardous
+Orange,1422,Cement products (no asbestos),"Concrete waste, offcuts, reject units",C&D-RC,Crusher,—
+Orange,1423,Standalone mining ≤5 ha (not cluster),"Overburden, sediment",OVB,Backfill,—
+Orange,1424,Tyre pyrolysis oil industries,"PRE-PROCESSOR output: TPO, recovered carbon black, steel wire, pyro-gas",TPO / RCB / FER-STEEL,Fuel users; rubber compounders; steel yard,THE tyre pre-processor
+Green,1501,Aluminium utensils from circles (pressing),Clean aluminium offcuts & circles skeleton,ALU-SCR (clean),Yard → secondary smelter,High-value clean scrap
+Green,1502,Ayurvedic & homeo (no boiler),"Herb residues, packaging",ORG,Compost,—
+Green,1503,Bakery/confectionery <1 TPD (gas/electric),"Food waste, packaging",ORG / PAP,Yard / organic,—
+Green,1504,BOPP film + metallising,"Film edge trim, metallised rejects",PLA-FILM-REJ,Film recycler,—
+Green,1505,Biomass briquettes (sun drying),"Fines, dust",BIO-FINES,Re-press,—
+Green,1506,Pulverising / shell grit / resin blending,"Dust, fines",MIN-FINES,Fillers,—
+Green,1507,Brass & bell-metal utensils (mechanical),Clean brass/bronze offcuts,NFE-BRASS,Yard → smelter,High-value clean scrap
+Green,1508,Candy,"Packaging, rejects",ORG,Yard,—
+Green,1509,Cardboard/corrugated products (no boiler),"Paper offcuts, board rejects",PAP-OCC,Yard,—
+Green,1510,Carpentry & wooden furniture (motorised),"Sawdust, wood offcuts",WOOD-SAWD,Board/briquette/fuel,—
+Green,1511,Cement products (covered shed),"Concrete waste, reject units",C&D-RC,Crusher,—
+Green,1512,"Ceramic colour mixing (no boiler, recycling water)",Pigment residues,CER-RES,Landfill (small qty),—
+Green,1513/1514,Chilling plant / cold storage / ice,"Ammonia plant residues (used oil where DG), packaging",OIL-USED,Re-refiner,—
+Green,1515,CO2 recovery / biogas plant,"Spent media, digestate",DIGESTATE,Compost,—
+Green,1516,Coke briquetting (sun drying),Fines,COKE-FINES,Re-press,—
+Green,1517,Cotton spinning (small),"Cotton waste, dust",COT-WASTE,Waste-cotton reprocessor (1549),—
+Green,1518,Marble/granite cutting & polishing,"Stone slurry/sludge, offcuts",STONE-SLDG,Fines to tiles/bricks; aggregates,Bulk
+Green,1519,Dal mills,"Husk, broken pulses, dust",ORG-HUSK,Cattle feed / fuel,—
+Green,1520,Ceramic decoration (electric furnace),Colour residues,CER-RES,Landfill,—
+Green,1521,Digital printing on PVC,"Ink waste, film offcuts",PLA-REJ,Plastic recycler,—
+Green,1522,Distilled water (no boiler),"Spent filters, reject containers",PLA-REJ,Recycler,—
+Green,1523,Emery powder mfg,"Dust, fines",ABR-FINES,Fillers,—
+Green,1524,Food grain storage & handling,"Spoiled grain, packaging, fumigant residues",ORG-GRAIN,Cattle feed (if safe) / disposal,—
+Green,1525,Flour mills (dry),"Bran, chokar (by-product), dust",BRAN,Cattle feed,By-product
+Green,1526,Fly ash transport/disposal,Fly ash (moved as product),FLY-ASH,Cement/bricks (White 16),By-product logistics
+Green,1527,Pottery (electric kiln),Broken ware,CER-REJ,Crusher/fill,—
+Green,1528,Glue from starch (gas/electric),"Residues, containers",ORG,Yard,—
+Green,1529,Gold/silver smithy ≤1 L acid,Polishing sludge (Ag/Au-bearing),AG-POLISH,Precious-metal refiner,Valuable
+Green,1530,Heat treatment (new technology),Spent quench media (small),OIL-USED,Re-refiner,—
+Green,1532,Insulation/coated papers,Paper offcuts,PAP-OCC,Yard,—
+Green,1533,Leather footwear (excl. tanning),"Leather cuttings, thread, packaging",LEATHER-TRIM,Glue/gelatin (Red 1130),—
+Green,1534,Lube blending (cold only),"Slop oil, drums",OIL-SLOP / DRM,Re-refiner / drum reconditioners,—
+Green,1535,Optical lenses (electric furnace),"Glass offcuts, polishing sludge",GLS-CRUSH,Cullet,—
+Green,1536,Pasted veneers (gas boiler/sun drying),Veneer offcuts,WOOD-SAWD,Board/fuel,—
+Green,1537,Mineral stack yard / railway siding,"Spillage, fines (recovered)",MIN-FINES,Back to stock,—
+Green,1538,Mineral water,"PET rejects, spent filters",PET-BTL,Yard → flaker,—
+Green,1539,Oil/gas pipeline; LPG repair/bottling (no paint),"Scrap pipe, hydrotest water, cylinder caps",FER-SCR,Yard,—
+Green,1540,Oil mill ghani (no refining),"Oil cake (by-product), filter residue",DOC,Cattle feed,By-product
+Green,1541,Packing materials (fibre yarn),Fibre offcuts,FIB-REJ,Recycler,—
+Green,1542,Phenyl/toilet cleaner formulation,"Chemical residues, containers",HW-SMALL,TSDF (small),—
+Green,1543,Plastic products from virgin,"Runners, rejects, edge trim",PLA-REJ,Own regrind loop / recycler,—
+Green,1544,Poultry/hatchery >1 lakh birds,"Litter/manure, mortality, feathers",ORG-LITTER,Compost / manure (1660-type),Bulk
+Green,1545,Power looms (no dye/bleach),"Yarn waste, sizing effluent (small)",COT-WASTE / YARN,Waste-cotton reprocessor,—
+Green,1546,Puffed rice (gas/electric),Rice husk,RICE-HUSK,Fuel,—
+Green,1547,Bamboo/scrap wood pulverising,"Dust, fines",WOOD-DUST,Board/briquette,—
+Green,1548,Ready-mix concrete,"Returned concrete, wash-water sludge",C&D-RC,C&D crusher / blocks,—
+Green,1549,Waste cotton reprocessing,"PRE-PROCESSOR: opened/shredded cotton waste, dust",COT-REPROCESSED,Spinning (low-count yarn),Textile pre-processor
+Green,1550,Rice mills (hullers) <12 TPD,"Husk, bran, broken rice",RICE-HUSK / BRAN,Fuel / feed,By-products
+Green,1551,Rolling mill (gas) / cold rolling,"Mill scale, slag (small)",FER-SCR,Yard,—
+Green,1553,Saw mills,"Sawdust, offcuts",WOOD-SAWD,Board/fuel,—
+Green,1554,Wood seasoning (steam),"Condensate, offcuts",WOOD-SAWD,Fuel,—
+Green,1555,Handmade soap (no boiler),"Residues, packaging",ORG,Yard,—
+Green,1556/1557,Spice grinding,"Spice dust, spent spices",ORG-SPICE,Compost,—
+Green,1558,Steel furniture (no spray painting); boat/trawler body-building,"Steel offcuts, sheet scrap",FER-SCR,Yard,—
+Green,1559,Grain steeping/processing,"Spent grain, effluent",ORG-GRAIN,Cattle feed,—
+Green,1560,Synthetic detergent formulation,"Residues, containers",HW-SMALL,TSDF,—
+Green,1561,Tamarind powder,"Tamarind seeds, dust",ORG-SEED,Feed / disposal,—
+Green,1562,Tea processing (no boiler) / spirulina,"Dust, spent leaves",ORG,Compost,—
+Green,1563,Tyre retreading (no boiler),"PRE-PROCESSOR-adjacent: buffings, old tread rubber",RUB-BUFF / RUB-RETREAD,Rubber compounders / tyre recycler,Feeds 1424
+Green,1564,Modular furniture (no boiler),"Sawdust, board offcuts",WOOD-SAWD,Board/fuel,—
+Green,1565,Activated carbon,"Dust, spent/off-spec carbon",CARBON,Reactivation (energy recovery),—
+Green,1566,"Powder coating (3-in-1, no effluent)","Overspray powder (recoverable), filters",POWDER,In-line recovery,Recoverable
+Green,1567,Amusement theme park,"MSW, used oil (DG/ride maintenance), WEEE",MSW / OIL-USED / E-WASTE,City streams / re-refiner,—
+Green,1568,Aquaculture incl. prawn hatcheries,"Pond sludge, mortality, feed waste",ORG-AQUA,Compost (treated),—
+Green,1569,Tyre moulding / silicone mouldings,"Rubber runners, reject mouldings",RUB-REJ,Rubber recycler,—
+Green,1570,Block making for printing (no foundry),Dye/paste residues (small),HW-SMALL,TSDF,—
+Green,1572,"Coffee curing, roasting, grinding","Coffee husk, silver skin, chaff",ORG-HUSK,Compost/fuel,—
+Green,1574,Cotton ginning,"Cotton waste, cottonseed (by-product), dust",COT-WASTE / SEED-COTTON,Waste-cotton reprocessor; seed to oil (1581),By-product
+Green,1576,Dal mills (roasting/drying),"Husk, dust",ORG-HUSK,Feed/fuel,—
+Green,1577,DG sets 250 KVA–1 MVA,"Used oil, filters",OIL-USED,Re-refiner,EPR used oil
+Green,1578,Dry distempers (no kiln),"Residues, containers",HW-SMALL,TSDF,—
+Green,1581,Cotton seed oil expelling / soap removal,"Oil cake, soapstock",DOC,Feed,By-product
+Green,1582,FRP moulding,Resin/fibre offcuts (solidified),FRP-REJ,Cement kiln fuel (authorised) / TSDF,—
+Green,1583,Floriculture & horticulture,"Green waste, prunings",ORG-GREEN,Compost,—
+Green,1584,Bio-pesticide/herbicide formulation,"Residues, containers",HW-SMALL,TSDF,—
+Green,1585,Organic nutrient formulation (no spent wash),Residues,ORG,Compost,—
+Green,1587,Foundry sand reclamation,"PRE-PROCESSOR: reclaimed sand, dust, metal fines",SAND-RECL / FER-FINES,Foundries (reuse); fines to yard,Circular — sand loops back
+Green,1588,Fragrance/flavours (small),"Residues, solvents (small)",SOLVENT,Recovery,—
+Green,1589,Garment stitching / shoe uppers / knitting,"Fabric cuttings (rags), thread waste",FABRIC-REJ / RAGS,Ragging (pre-processor),Feeds textiles chain
+Green,1591,Golf club,"Green waste, used oil",ORG / OIL,Yard / re-refiner,—
+Green,1593,Hotels >20 rooms <10 KLD (no boiler/HW),"Food waste, UCO, glass/PET",ORG / UCO / GLS,Organic chain; yard,—
+Green,1594,Ice blocks / cold storage,"Used oil (refrigeration), packaging",OIL-USED,Re-refiner,—
+Green,1595,Ice cream (no boiler/oven pasteurisation),Packaging,PAP-PLA,Yard,—
+Green,1597,"Infrastructure/apartments <20,000 m²","C&D debris, MSW during operation",C&D / MSW,C&D crusher / city streams,—
+Green,1598,Interlock bricks / mosaic tiles / stoneware,"Dust, broken units",STONE-FINES / BRK-REJ,Crusher/fill,—
+Green,1599,Jaggery (no boiler),Bagasse,BAGASSE,Fuel,—
+Green,1600,Kalyanamantapas & community halls (DG),"Used oil, event waste",OIL-USED / MSW,Re-refiner; city streams,—
+Green,1603,Adhesives & adhesive tapes / labels,"Adhesive residues, liner waste",PAP-PLA-REJ,Yard,—
+Green,1604,Motor & pump mfg (no foundry),"Copper wire scrap, steel scrap, oil",COP / FER-SCR,Yard,—
+Green,1607,Cartoon boxes from ETP pulp sludge,Consumes paper-mill sludge — output is product; trim waste,PAP-OCC,Yard,Waste consumer
+Green,1608,Insulated conductors / wire drawing (no effluent),"Copper fines, PVC insulation offcuts",COP-FINES / PLA-PVC,Yard / PVC recycler,—
+Green,1609,Nuts & bolts (cold forging),"Metal fines, oil",FER-FINES,Yard,—
+Green,1610,Veneer / press board mfg,"Offcuts, sawdust, adhesive residues",WOOD-SAWD,Board/fuel,—
+Green,1612,Panel boards / switches (no electroplating),"Metal offcuts, cable scrap",FER-SCR / COP,Yard,—
+Green,1614,Plastic sacks/extrusion (virgin); plastic units under PWM rules,"Runners, rejects",PLA-REJ,Own loop / recycler,—
+Green,1616,PU foam extrusion (allied),"Foam offcuts, chemical residues",FOAM-REJ,Adhesive/binder use / TSDF,—
+Green,1618,Power press,"Metal offcuts, lubricant waste",FER-SCR,Yard,—
+Green,1621,RCC railway sleepers,"Concrete waste, steel offcuts",C&D-RC / FER-SCR,Crusher / yard,—
+Green,1623,Chemical refilling/repacking/blending,"Empty drums/containers (reusable after cleaning), residues",DRM / HW-SMALL,Drum reconditioners / TSDF,—
+Green,1624,Research labs (no chemicals/animals),Minor WEEE,E-WASTE,Authorised dismantler,—
+Green,1630,Shell moulding (no wastewater),Waste sand,SAND-FS,Reclamation (1587),—
+Green,1631,Shot blasting,"Dust, spent grit, metal fines",FER-FINES,Yard,Surface-prep pre-processor
+Green,1632,Snuff/beedi/chewing tobacco,"Tobacco dust, paper waste",ORG-TOB / PAP,Yard,—
+Green,1633,"Soft drinks (non-pulp, no boiler)","PET rejects, used oil",PET / OIL,Yard / re-refiner,—
+Green,1634,"Software/ITES <10 KLD, DG ≤1 MVA","WEEE, used oil",E-WASTE / OIL-USED,Registered handlers,—
+Green,1635,Mini hydel >25 MW,"Turbine oil, used lubricants",OIL-USED,Re-refiner,—
+Green,1638,STP <10 KLD,"Sludge, screenings",SLDG-STP,Compost,—
+Green,1641,Townships >10 acres,"MSW, sewage sludge",MSW / SLDG-STP,City streams / compost,—
+Green,1642,Transformer assembly (industrial),"Oil (initial fill/test), insulation scrap, copper offcuts",OIL / COP / FER,Re-refiner / yard,—
+Green,1643,Tread rubber incl. pre-cured,Rubber buffings,RUB-BUFF,Rubber compounder,—
+Green,1644,Umbrella/raincoat/tarpaulin stitching,Fabric offcuts,FABRIC-REJ,Ragging,—
+Green,1646,Natural rubber washing/drying,"Effluent, grit, latex fines",RUB-COAG,Rubber recycler,—
+Green,1655,Neera / coconut sugar,"Husk, shell, effluent",ORG-HUSK,Coir/fuel,—
+Green,1656,Edible copra,"Coconut husk, shell",ORG-HUSK,Coir/fuel,—
+Green,1657,Organic manure (organic converter),"Consumes food/market/garden waste → compost; rejects (stones, plastics)",ORG-COMPOST,Farmers / landscapers,PRE-PROCESSOR of organics
+Green,1658,Railway stations <10 KLD,Station waste,PAP-OCC,Yard,—
+Green,1659,Biomass briquettes (electric dryer),Fines,BIO-FINES,Re-press,—
+Green,1660,Gaushalas,"Cow dung manure, feed waste, reject fodder",ORG-MANURE,Compost / CBG feedstock (1664),—
+Green,1661,"Auto service station (no effluent, no air sources)","Used oil (drain), tyres, batteries from servicing, filters",OIL-USED / TYRE / BAT,Re-refiner; tyre/battery recyclers,EPR streams
+Green,1662,CBG from crop residue <100 KLD,Digestate,DIGESTATE,Compost,—
+Green,1663,"Poultry farms >5,000 birds","Litter, mortality",ORG-LITTER,Compost,—
+Green,1664,CBG from animal waste <100 KLD,Digestate,DIGESTATE,Compost / manure,—
+White,1,Assembly of air coolers/AC; servicing,"Metal/plastic offcuts from assembly, refrigerant-bearing units at end-of-life",FER-SCR / PLA / F-GAS units,Yard; refrigerant to authorised handlers,—
+White,2,Bicycles & small vehicle assembly,"Steel offcuts, packaging",FER-SCR,Yard,—
+White,3,Baling (hydraulic press) of waste paper,"YARD role: paper bales; strap wire, sweepings",PAP-BALE,Paper mills / pulpers,Core Luma yard function
+White,4,Bio-fertilizer & bio-pesticides (no inorganic chemicals),"Spent media, packaging",ORG,Compost,—
+White,5,Biscuit trays from PVC sheet (vacuum forming),PVC skeleton/offcuts,PLA-PVC-REJ,PVC recycler,—
+White,6,Tea blending & packing,"Packaging, tea dust",PAP / ORG,Yard / compost,—
+White,7,Block making for printing (no foundry),Minor residues,HW-SMALL,TSDF,—
+White,8,"Chalk making (casting, sun dry/electric)",Plaster residues,MIN,Fill,—
+White,9,Compressed oxygen/medical gases,"Returnable cylinders, no process waste",CYL,Cylinder requalifier,Reusable asset
+White,10,"Cotton/woollen hosiery (dry, no dyeing)",Fabric/yarn waste,FABRIC-REJ,Ragging,—
+White,11,Diesel pump repair (dry mechanical),"Metal parts, oil residues",FER-SCR / OIL,Yard / re-refiner,—
+White,12,Bulb & CFL assembly,Reject bulbs; CFL/fluorescent = mercury-bearing at end-of-life,LAMP / LAMP-HW,Bulb recyclers; Hg units authorised only,Hazardous at EoL (CFL)
+White,13,Electrical & electronic assembly (dry),Component offcuts; WEEE at end-of-line,E-WASTE,Authorised dismantler,—
+White,14,"Engineering & fabrication (dry, no paint/heat treatment)","Steel offcuts, filings",FER-SCR,Yard,—
+White,15,Flavoured betel nut grinding,"Betel waste, packaging",ORG,Compost,—
+White,16,Fly ash bricks/blocks,CONSUMER of fly ash (Red 1146 by-product); rejects,BRK-REJ,Crusher/fill,Waste consumer
+White,17,Fountain pen assembly,Plastic/metal offcuts (tiny),PLA / FER-SCR,Yard,—
+White,18,Glass ampoules/vials from tubes,Glass offcuts,GLS-CRUSH,Cullet,—
+White,19,Glass putty & sealant mixing,"Containers, residues",HW-SMALL,TSDF,—
+White,20,Groundnut decorticating,"Shells, husk",ORG-HUSK,Fuel/compost,—
+White,21,Handloom/carpet weaving (no dye/bleach),"Yarn waste, fabric offcuts",FABRIC-REJ,Ragging,—
+White,22,Leather cutting & stitching (>10 machines),Leather cuttings,LEATHER-TRIM,Glue/gelatin,—
+White,23,Coir products from husk,CONSUMER of husk; rejects (pith — by-product used as cocopeat),COIR-PITH,Potting media (value product),By-product
+White,24,Metal caps & containers,Metal offcuts,FER-SCR / ALU-SCR,Yard,—
+White,25,Shoe brush & wire brush mfg,Filament/wire offcuts,FER-SCR,Yard,—
+White,26,Medical oxygen,Returnable cylinders,CYL,Requalifier,—
+White,27,Organic & inorganic nutrients (physical mixing),"Residues, containers",ORG / DRM,Compost / reconditioners,—
+White,28,Organic manure (manual mixing),Feedstock rejects (stone/plastic),ORG,Compost,Waste consumer
+White,29,Powdered milk packing,Laminated packaging waste (MLP),MLP,Brand EPR stream / co-processing,EPR plastic (Cat IV)
+White,30,Paper pins & u-clips,Wire offcuts,FER-WIRE,Yard,—
+White,31,Motor & generator repair (dry),"Copper winding scrap, insulation",COP / FER-SCR,Yard,—
+White,32,Rope (plastic/cotton),Fibre offcuts,FIB-REJ,Recycler,—
+White,33,Scientific & mathematical instruments,Minor metal/plastic offcuts,FER / PLA,Yard,—
+White,34,Solar module mfg,"SOLAR WASTE at production (reject cells, broken glass, frames) — EPR e-waste from 2026",SOLAR-PANEL,Authorised PV dismantler,EPR e-waste stream
+White,35,"Solar PV plants, wind, hydel ≤25 MW","Used oil, end-of-life panels/blades",OIL-USED / SOLAR-PANEL / BLADE,Re-refiner; authorised recyclers,Solar → EPR e-waste
+White,36,Surgical products assembly only,Packaging,PAP-PLA,Yard,—
+White,37,Agarbathi mfg,"Bamboo stick waste, charcoal dust, fragrance residues",ORG / BAMBOO,Fuel/compost,—
+White,38,"Atta chakki, masala powdering","Bran, chokar, spice dust",BRAN / ORG-SPICE,Feed / compost,By-product
+White,39,Wooden boat & trawler body-building,"Wood offcuts, sawdust",WOOD-SAWD,Fuel,—
+White,40,Fish net mfg (no dyeing),Synthetic twine offcuts,FIB-REJ,Recycler,—
+White,41,Gutka packing,"Pouch waste (MLP), tobacco residues",MLP / ORG-TOB,EPR stream / disposal,EPR plastic
+White,42,Hair sizing,Organic residues,ORG,Compost,—
+White,43,Laboratory ware incl. glass blowing,Glass offcuts,GLS-CRUSH,Cullet,—
+White,44,Maize flakes & grits,"Bran, grits fines",BRAN / ORG,Feed,—
+White,45,Motor rewinding (industrial scale); turbine/engine overhaul,"Copper wire scrap, insulation, steel parts",COP / FER-SCR,Yard,—
+White,46,Optical frames (no electroplating),Acetate/metal offcuts,PLA / FER,Yard,—
+White,47,Re-packing of finished dry products,Packaging waste,PAP-PLA,Yard,—
+White,48,Safety match sticks,"Wood waste, chemicals (P/red phosphorus residues)",ORG / HW-SMALL,Fuel / TSDF,—
+White,49,Silk twisting (no dye/de-gum),Silk waste,FIB-SILK,Reeling/reclaim,—
+White,50,Sports goods,Leather/rubber/wood offcuts,LEATHER / RUB / WOOD,Yard streams,—
+White,51,Honey processing,"Beeswax (by-product), filter residues",WAX / ORG,Candles/cosmetics; compost,By-product
+White,52,DG sets 15–250 KVA,"Used oil, filters",OIL-USED,Re-refiner,EPR used oil
+White,53,Pickle manufacturing,"Fruit/vegetable waste, glass jars, caps",ORG / GLS,Compost; cullet,—
+White,54,Import & storage of edible oil only,Drums (reusable/reconditionable),DRM,Drum reconditioners,—
+White,55,"Broom sticks (artificial drying/bleaching, no effluent)",Grass/straw waste,ORG,Compost,—
+White,56,Wax candles,"Wax residues, wick waste",WAX,Re-melt / crayons,—
+White,57,Non-bedded HCEs; HCEs <30 beds,Biomedical waste (small quantities),BMW,CBMWTF (via authorised collection),Hazardous
+White,58,Used cooking oil (UCO) collection centres,"PRE-COLLECTOR of UCO (from hotels/food units — Red 1118, Green 1593); output: tested UCO drums",UCO,Registered re-refiners / co-processors (EPR used-oil),EPR used oil

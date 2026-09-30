@@ -1,0 +1,35 @@
+Material Lifecycle — Tradable Material States,,,,,,,
+Material Family,Material / Grade,State / Transformation,Typical Route,What is Sold,Next User,Key Trading / QC Attributes,Platform Product Need
+PET,PET bottles,Sorted/baled,Consumer → Yard,PET bale,PET flake pre-processor,"Grade, colour, contamination, bale density",Listing + lot traceability + grade/QC + buyer matching for PET bottles
+PET,Raw PET flakes,Shredded/ground,Yard → Flake Processor,Raw PET flakes,PET washer,"Polymer purity, colour, fines",Listing + lot traceability + grade/QC + buyer matching for Raw PET flakes
+PET,Cold-washed PET flakes,Washed,Washer → Recycler,Cold-washed flakes,rPET granulator,"Moisture, colour, IV/PIV, contamination",Listing + lot traceability + grade/QC + buyer matching for Cold-washed PET flakes
+PET,Hot-washed PET flakes,Hot washed,Washer → Recycler,Hot-washed flakes,rPET granulator,"Moisture, colour, cleanliness, IV/PIV",Listing + lot traceability + grade/QC + buyer matching for Hot-washed PET flakes
+PET,rPET pellets,Pelletised,Recycler → Polyester Processor,rPET granules/pellets,PSF/PFY manufacturer,"IV/PIV, colour, contamination, application",Listing + lot traceability + grade/QC + buyer matching for rPET pellets
+Polyester,PSF,Fiber,Polyester plant → Textile user,PSF,Yarn/nonwoven/textile manufacturer,"Denier, staple length, colour, strength",Listing + lot traceability + grade/QC + buyer matching for PSF
+Paper,OCC,Sorted/baled,Consumer/Yard → Paper mill,OCC bale,Pulp/paper mill,"Moisture, prohibitives, bale weight",Listing + lot traceability + grade/QC + buyer matching for OCC
+Paper,Recovered pulp,Pulp,Paper recycler → Paper mill,Recovered pulp,Paperboard manufacturer,"Brightness, ash, fibre quality",Listing + lot traceability + grade/QC + buyer matching for Recovered pulp
+Metal,Copper cable,Sorted,ELV/electronics/industrial → cable processor,Copper-bearing cable,Stripper/granulator,"Copper %, insulation type",Listing + lot traceability + grade/QC + buyer matching for Copper cable
+Metal,Stripped copper,Separated,Cable processor → Metal recycler,Copper scrap/granules,Copper processor,"Purity, size, contamination",Listing + lot traceability + grade/QC + buyer matching for Stripped copper
+Metal,Aluminium UBC,Baled,Consumer/Yard → Aluminium processor,UBC bale,Secondary aluminium plant,"Moisture, contamination, alloy mix",Listing + lot traceability + grade/QC + buyer matching for Aluminium UBC
+Metal,Aluminium dross,Recovery fraction,Aluminium processor → dross recovery,Dross,Dross recovery unit,"Metal content, salt content",Listing + lot traceability + grade/QC + buyer matching for Aluminium dross
+Glass,Glass cullet,Crushed/sorted,Collection/Yard → Glass recycler,Cullet,Glass furnace,"Colour, size, ceramic/metal contamination",Listing + lot traceability + grade/QC + buyer matching for Glass cullet
+Tyre,ELT tyre,Collected/baled,Consumer/garage → tyre processor,Tyre bale,Shredder,"Type, steel/fibre content",Listing + lot traceability + grade/QC + buyer matching for ELT tyre
+Tyre,Tyre chips,Shredded,Shredder → processor,Tyre chips,Crumb rubber / pyrolysis,"Size, steel/fibre content",Listing + lot traceability + grade/QC + buyer matching for Tyre chips
+Tyre,Crumb rubber,Granulated,Tyre processor → rubber user,Crumb rubber,Rubber products,"Mesh size, steel/fibre content",Listing + lot traceability + grade/QC + buyer matching for Crumb rubber
+Wood,Sawdust,Loose/baled,Saw mill → biomass/board user,Sawdust,Pellet/board manufacturer,"Moisture, particle size, wood type",Listing + lot traceability + grade/QC + buyer matching for Sawdust
+Wood,Wood chips,Chipped,Saw mill → biomass/board user,Wood chips,Board/pellet manufacturer,"Moisture, size, treated vs clean",Listing + lot traceability + grade/QC + buyer matching for Wood chips
+Agro,Rice husk,Agro by-product,Rice mill → biomass user,Rice husk,Boiler/pellet/silica processor,"Moisture, ash, contamination",Listing + lot traceability + grade/QC + buyer matching for Rice husk
+Agro,Rice bran,Agro by-product,Rice mill → feed/oil user,Rice bran,Feed/oil processor,"Moisture, FFA/stability",Listing + lot traceability + grade/QC + buyer matching for Rice bran
+Sugar,Bagasse,Agro by-product,Sugar mill → paper/energy user,Bagasse,Paper/board/boiler/CBG user,"Moisture, fibre, ash",Listing + lot traceability + grade/QC + buyer matching for Bagasse
+Sugar,Molasses,Co-product,Sugar mill → distillery,Molasses,Ethanol/CBG/chemical user,"Brix, fermentability, source",Listing + lot traceability + grade/QC + buyer matching for Molasses
+Sugar,Press mud,By-product,Sugar mill → soil/compost user,Press mud,Compost/bio-input user,"Moisture, organics",Listing + lot traceability + grade/QC + buyer matching for Press mud
+Food,Whey,Food by-product,Dairy → ingredient/feed user,Whey,Protein/food/feed processor,"Protein, solids, microbiological quality",Listing + lot traceability + grade/QC + buyer matching for Whey
+Cashew,Cashew shell,Agro by-product,Cashew processor → CNSL/energy user,Cashew shell,CNSL extractor / biomass user,"Moisture, shell quality",Listing + lot traceability + grade/QC + buyer matching for Cashew shell
+Cashew,CNSL,Recovered/process product,Shell processor → chemical user,CNSL,Cardanol/chemical processor,"Acid value, viscosity, moisture",Listing + lot traceability + grade/QC + buyer matching for CNSL
+Textile,Cotton fibre waste,Textile scrap,Spinning/weaving → fibre recycler,Cotton waste,Open-end spinning/nonwoven user,"Fibre length, blend, contamination",Listing + lot traceability + grade/QC + buyer matching for Cotton fibre waste
+Textile,Mixed textile waste,Sorted/reprocessed,Garment → textile recycler,Textile scrap,Fibre recovery/nonwoven,"Composition, colour, blend ratio",Listing + lot traceability + grade/QC + buyer matching for Mixed textile waste
+C&D,Concrete rubble,Sorted/crushed,Demolition → C&D recycler,Recycled aggregate feed,Aggregate processor,"Size, brick content, contamination",Listing + lot traceability + grade/QC + buyer matching for Concrete rubble
+C&D,Recycled aggregate,Crushed/screened,C&D recycler → construction user,Recycled aggregate,Concrete/road user,"Gradation, strength, fines",Listing + lot traceability + grade/QC + buyer matching for Recycled aggregate
+E-waste,PCB scrap,Dismantled,E-waste dismantler → refiner,PCB fraction,Metal recovery/refiner,Cu/precious metal profile,Listing + lot traceability + grade/QC + buyer matching for PCB scrap
+Battery,Black mass,Processed,Battery recycler → refiner,Black mass,Hydrometallurgical refiner,"Chemistry, Ni/Co/Li/Mn content",Listing + lot traceability + grade/QC + buyer matching for Black mass
+Battery,Lead alloy,Recovered metal,Battery recycler → battery/metal user,Secondary lead alloy,Battery manufacturer,"Purity, alloy specification",Listing + lot traceability + grade/QC + buyer matching for Lead alloy

@@ -40,6 +40,7 @@ const eslintConfig = defineConfig([
     "convex/*/_generated/**",
     // Verbatim agent outputs and scratch tools handed to the cloud session.
     "docs/plan/research/handoff/**",
+    "docs/plan/research/workflows/**",
     // Worktrees the Claude desktop app cuts for parallel agents: whole copies of the repo.
     ".claude/worktrees/**",
   ]),

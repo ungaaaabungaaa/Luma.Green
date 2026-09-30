@@ -30,5 +30,10 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "docs/plan/research/handoff", ".claude/worktrees"]
+  "exclude": [
+    "node_modules",
+    "docs/plan/research/handoff",
+    "docs/plan/research/workflows",
+    ".claude/worktrees"
+  ]
 }

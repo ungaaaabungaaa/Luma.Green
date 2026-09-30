@@ -52,10 +52,11 @@ private until shared from its Share menu.
 
 ## Delivery
 
-| Page                                | What's in it                                               |
-| ----------------------------------- | ---------------------------------------------------------- |
-| [roadmap.md](./delivery/roadmap.md) | Week by week to the pilot, the cut line, the critical path |
-| [pilot.md](./delivery/pilot.md)     | Who, what has to work, what we measure                     |
+| Page                                | What's in it                                                   |
+| ----------------------------------- | -------------------------------------------------------------- |
+| [roadmap.md](./delivery/roadmap.md) | Week by week to the pilot, the cut line, the critical path     |
+| [pilot.md](./delivery/pilot.md)     | Who, what has to work, what we measure                         |
+| [next.md](./delivery/next.md)       | The order of work from 30 Sep: research, plan doc, docs, build |
 
 ## Keeping these docs true
 
