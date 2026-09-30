@@ -1,0 +1,76 @@
+{
+  "verdicts": [
+    {
+      "question": "Can a Gruha Jyothi household install rooftop solar under gross or net metering and keep its 200 free units (BESCOM/KERC position)? Which LT-5 and HT-2(a) energy charges apply in FY2026-27 after KERC's 3 March 2026 review order? What do rooftop systems actually generate in Bengaluru (CUF), and what do installers charge today for 1–3 kW DCR home systems and 10–200 kW business systems?",
+      "holds": false,
+      "problems": "Verification limits first: on this machine the WebSearch quota was exhausted (200/200) and every page fetch was refused, so none of the 19 cited snippets could be re-found; every source below is 'not confirmed by snippet' this pass. The checks that follow use the repo's own 29 Sep 2026 brief (docs/plan/research/solar.md), which opened the KERC PDFs directly. (1) Wrong figure: the answer and its decision give LT-5 a fixed charge of Rs 235 per kW. In KERC's 3 Mar 2026 review order (RP 08/2025) Rs 235/kW plus 710 paise is the LT-3(a) commercial tariff; LT-5 is charged per HP, Rs 165/HP plus 520 paise after the review (Rs 150/HP plus 440 paise in the 2025 multi-year order). The researcher conflated two categories from a news snippet. (2) FY2026-27 applicability is asserted, not shown: the review order revised FY2025-26 rates, while the 27 Mar 2025 multi-year order lists FY2026-27 LT-5 at 440 paise and HT-2(a) at 660 paise; the news reports say 'from April 2026' and a calculator site says 540 paise. The answer notes the 5.20 vs 5.40 conflict but still models 5.20 for FY27 as settled. BESCOM's 'Electricity Tariff 2026 to 2028' PDF (uploaded about 1 Apr 2026) is the document that settles it and was not consulted. (3) 56 paise true-up: the repo's reading of KERC's 17 Apr 2026 APR order is that the surcharge recovers the FY2024-25 deficit and is not reduced by solar generation; adding Rs 0.56 to the solar-avoidable energy rate, as the decision does, is doubtful. Also 'the state bears the 56 paise on Gruha Jyothi free units' has no confirming snippet. (4) Newer official developments missed, all on kerc.karnataka.gov.in and pib.gov.in and dated after the researcher's sources: KERC (Grid Interactive Distributed Solar PV Plants) Regulations 2026 (24 Aug 2026: net metering up to sanctioned load or 1,000 kW, 80% transformer cap, unpaid-dues bar, automatic approval up to 150 kW); KERC generic DSPV tariff order (25 Aug 2026: CUF norm 19% = about 1,664 kWh/kW/yr, capital-cost benchmarks Rs 45,000/kW homes, Rs 27,090/kW non-DCR and Rs 36,015/kW DCR for businesses, export tariffs Rs 3.89 home without subsidy, Rs 1.96/2.14/2.58 for PM Surya Ghar homes, Rs 3.11 DCR / Rs 2.34 non-DCR for businesses, Rs 25/kW/month rebate for domestic systems up to 10 kW); PIB 18 Jul 2026 (net-metered projects commissioned after 31 Dec 2026 must use ALMM List-II cells, i.e. DCR, which KERC prices 33% higher); PIB 28 Jul 2026 (5.75% PM Surya Ghar loans, no subsidy for commercial buildings). The question explicitly asked for installer prices against these benchmarks and the answer gives no benchmark. (5) CUF: the answer's 16–17% (about 4 units/kW/day) comes from installer marketing pages; KERC's regulatory norm is 19% and installers argued 13.5–17.5% in the tariff proceedings; both should be shown as a range. (6) Arithmetic: 3 kW at Rs 2.05–2.35 lakh minus Rs 78,000 is Rs 1.27–1.57 lakh, not 1.25–1.55 (minor); 10 kW at Rs 4.5–7 lakh is Rs 45,000–70,000/kW, which contradicts the stated Rs 30,000–50,000/kW C&I range, and the answer does not say that small business systems cost more per kW; 1,500/8,760 = 17.1% is correct; 200 kW at 35–45k/kW = Rs 70–90 lakh is correct and correctly labelled an extrapolation. (7) Refined chain: a kabadiwala shop is a trading shop, normally on LT-3(a) commercial (Rs 235/kW plus 710 paise after review), not LT-5; LT-5 covers industrial MSMEs and solid-waste processing plants (yards with balers, DWCCs, MRFs). The new PRE-PROCESSOR role (PET wash lines, granulators, tyre shredders, cable granulators) is the electricity-intensive step and the natural first solar buyer; energy cost per tonne belongs on each processing record and feeds the L3 price. The Gruha Jyothi open item is correctly left open.",
+      "correction": "Gruha Jyothi: unchanged, still an open item for BESCOM's DSM/SRTPV wing; do not show a home case until BESCOM says in writing how free units net against solar import. Tariffs: use the KERC documents, not news. 3 Mar 2026 review order (RP 08/2025) reset FY2025-26 to LT-5 Rs 165/HP plus 520 paise, HT-2(a) Rs 365/kVA plus 670 paise, LT-3(a) Rs 235/kW plus 710 paise; the 2025 multi-year order's FY2026-27 rows are LT-5 Rs 150/HP plus 440 paise and HT-2(a) Rs 350/kVA plus 660 paise. Which of the two applies to FY2026-27 bills is settled only by BESCOM's Electricity Tariff 2026–2028 PDF or a live bill; model 520/670 as the high case and 440/660 as the low case, and treat the 56 paise true-up (May 2026–Apr 2027) as a pass-through that solar does not reduce. Put kabadiwala shops on LT-3(a), yards/DWCCs/MRFs on LT-5, pre-processors and recyclers on LT-5 or HT-2(a) by load. Generation: show a range of 100 kWh/kW/month (installer-conservative, about 16–17% CUF) to 138.7 kWh/kW/month (KERC's 19% norm), and collect 5–10 real meter readings from pilot yards. Prices: benchmarks are Rs 45,000/kW for homes of 3 kW and above, Rs 27,090/kW non-DCR and Rs 36,015/kW DCR for businesses (KERC, 25 Aug 2026, GST included); installer pages quoted (unopened) Rs 55,000–85,000/kW for homes and Rs 30,000–50,000/kW for C&I, with small 10 kW systems at Rs 45,000–70,000/kW; PM Surya Ghar subsidy Rs 30,000/60,000/78,000 for 1/2/3+ kW, homes only, plus 5.75% loans. Any business system commissioned after 31 Dec 2026 must use DCR cells (ALMM List-II), so quote 10–200 kW at the DCR benchmark. Live 1 kW, 2 kW and 200 kW quotes remain open items for three BESCOM-empanelled installers.",
+      "extraSources": [
+        {
+          "title": "KERC review order RP 08/2025 revising LT-3a, LT-5, HT-2a and HT-2b tariffs (03.03.2026), opened by the 29 Sep 2026 brief",
+          "url": "https://kerc.karnataka.gov.in/uploads/18281772541323.pdf"
+        },
+        {
+          "title": "KERC Tariff Order 2025 for ESCOMs, FY2025-26 to FY2027-28, Annexure-9 (27.03.2025)",
+          "url": "https://kerc.karnataka.gov.in/uploads/96731743148968.pdf"
+        },
+        {
+          "title": "BESCOM: Electricity Tariff 2026 to 2028 (settles the FY2026-27 rates)",
+          "url": "https://bescom.karnataka.gov.in/uploads/media_to_upload1775021662.pdf"
+        },
+        {
+          "title": "KERC: BESCOM APR FY2024-25 order with 56 paise/unit true-up (17.04.2026)",
+          "url": "https://kerc.karnataka.gov.in/uploads/17731776422105.pdf"
+        },
+        {
+          "title": "KERC generic tariff for Distributed Solar PV plants, CUF 19%, cost benchmarks, export tariffs (25.08.2026)",
+          "url": "https://kerc.karnataka.gov.in/uploads/48561787653428.pdf"
+        },
+        {
+          "title": "KERC (Grid Interactive Distributed Solar PV Plants) Regulations, 2026 (24.08.2026)",
+          "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf"
+        },
+        {
+          "title": "PIB: ALMM List-II exemption for net metering ends 31 Dec 2026 (18 Jul 2026)",
+          "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=291400"
+        },
+        {
+          "title": "PIB: PM Surya Ghar subsidy and 5.75% loans (28 Jul 2026)",
+          "url": "https://pib.gov.in/newsite/erelcontent.aspx?relid=292054"
+        },
+        {
+          "title": "KERC: Continuation of Discounted Energy Rate Scheme for FY2026-27 and FY2027-28 (31.03.2026)",
+          "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1774956472.pdf"
+        }
+      ]
+    },
+    {
+      "question": "Does BESCOM publish its empanelled installer list, and how does an installer register for PM Surya Ghar in BESCOM's area? Is Bengaluru one of PM Surya Ghar's City Accelerator Programme cities? When will CPCB publish PV-waste storage and recovery guidelines under rule 12 of the E-Waste Rules? What are the MSE-GIFT and MSE-SPICE scheme terms and do recycling units qualify? Do yards on leased land need the landlord's consent for rooftop solar, and what is KERC's no-unpaid-dues rule?",
+      "holds": false,
+      "problems": "Same verification limit: no search or fetch was possible this pass, so all 23 cited snippets are 'not confirmed by snippet'; checks below use the repo's 29 Sep 2026 brief, which opened the KERC 2026 regulations and SIDBI's SPICE FAQ. (1) No-unpaid-dues rule: the answer says no KERC or BESCOM source states it and leaves it open. It is in the KERC (Grid Interactive Distributed Solar PV Plants) Regulations, 2026 (24 Aug 2026): consumers with unpaid dues are not eligible; the same regulations require DISCOMs to publish installer lists, standard agreements and monthly capacity (regulation 14.1, the reason the founder asked), with KREDL combining them state-wide, and set automatic approval up to 150 kW, 150 days to commission and inspection within 5 working days. The answer misses these entirely, so its 'practical default' is an unnecessary guess. (2) Installer list counts (85 BESCOM, 15 MESCOM, 25 HESCOM, 98 GESCOM) come from an aggregator page; not confirmed. (3) Vendor registration: the Rs 25 lakh national bank guarantee (REC) and Rs 2.5 lakh DISCOM PBG are plausible but the DISCOM figure is cited from an Arunachal Pradesh DISCOM PDF, not BESCOM; BESCOM's own checklist is still unknown, as the answer admits. (4) City Accelerator: correctly left unconfirmed; the '30 cities, 10 states' and '46 cities' figures have no confirming snippet here. (5) CPCB PV-waste guideline: the June 2025 draft and March 2026 final (version 1.0) could not be confirmed; the storage specifics (20 layers, 2 m, 19.5 cubic metres per tonne) are very specific and unverified, so treat them as needs-check. The repo's reading of the E-Waste Rules 2022 confirms rule 12 covers PV (registration, storage to 2034-35, annual returns, separate inventory) and that PV recyclers must meet CPCB material-recovery norms, so a separate recovery guideline is genuinely pending; also Schedules III and IV exempt PV from recycling targets, so no EPR certificates exist for panels today, a point the answer should state. (6) MSE-SPICE terms (25% capital subsidy, cap Rs 12.5 lakh, Udyam, brownfield, EPR compliance) match SIDBI's SPICE FAQ opened on 29 Sep 2026; '3,400 MSMEs' and 'to 2026-27' are plausible (Rs 472.5 crore outlay) but not confirmed. MSE-GIFT terms (2% subvention, Rs 10 lakh to 2 crore, 75% guarantee, Rs 478 crore) are not confirmed by any snippet here and the scheme's post-March 2026 status is unknown, as the answer says. (7) Leased premises: the owner-NOC-on-Rs-10-stamp-paper requirement is cited from a silo.tips mirror of an old BESCOM Format-17 circular that predates the 2026 KERC regulations; plausible, but the current SRTPV checklist must be checked. (8) Refined chain: the decision 'registered e-waste recyclers only' is right for the handover but does not map to the founder's chain, where end-of-life panels move Installer/consumer to Yard as intact SOLAR PANEL LOTS (S1, cabling stripped to the copper stream, inverters to e-waste), then to an AUTHORISED PRE-PROCESSOR (PV dismantler) whose processing record has a main output (aluminium frames, glass cullet, Si/Ag cells), by-products (EVA/backsheet fraction) and residual waste (laminate fluff, hazardous-tagged) with a yield. CPCB's storage conditions then apply to the yard's S1 lots (covered, dry, no dismantling by kabadiwalas). SPICE fits the new pre-processor role directly (granulators, wash lines) and the answer should say so.",
+      "correction": "Installer list: BESCOM's SRTPV portal (srtpv.bescom.org) and the MNRE national vendor list are the working sources; KERC's 2026 DSPV regulations oblige every DISCOM to publish its installer list and standard agreements, so ask BESCOM for the regulation-14.1 list if the portal copy is stale. Vendor registration: national registration via REC with a Rs 25 lakh bank guarantee (five years), or DISCOM-level with a Rs 2.5 lakh PBG, both unconfirmed for BESCOM specifically; get BESCOM's checklist. City Accelerator: Bengaluru's inclusion unconfirmed; ask MNRE or Shakti. PV waste: the E-Waste Rules 2022 rule 12 duties are registration, storage to 2034-35 and annual returns, with no recycling target and no EPR certificate for panels; CPCB's storage-and-handling guideline (draft June 2025, final reported March 2026) is the current storage rule, and the recovery norms for recyclers are still pending with no date. Route: yard holds intact panel lots only (S1), under covered dry storage, cabling to the copper stream, inverters to e-waste; only a CPCB/KSPCB-registered dismantler (pre-processor role) breaks them, recording frames, glass and cells as main outputs, EVA/backsheet as by-product and laminate fluff as hazardous residual. Finance: SPICE gives existing Udyam micro and small units 25% of plant and machinery cost up to Rs 12.5 lakh (brownfield only, EPR compliance required) and fits pre-processors buying granulators, wash lines or solar; GIFT's terms and whether it continues past FY2025-26 must be confirmed with SIDBI. Leased sites: attach a notarised owner NOC and write ownership, insurance and removal into the lease; confirm the current BESCOM SRTPV checklist. No-dues rule: KERC's 2026 regulations bar consumers with unpaid dues from net metering; screen pilot yards' BESCOM accounts for arrears before any solar step.",
+      "extraSources": [
+        {
+          "title": "KERC (Grid Interactive Distributed Solar PV Plants) Regulations, 2026: unpaid-dues bar, installer list duty, 150 kW automatic approval (24.08.2026)",
+          "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1787642381.pdf"
+        },
+        {
+          "title": "MoEFCC: E-Waste (Management) Rules, 2022, G.S.R. 801(E), rule 12 and Schedule I code CEEW14",
+          "url": "https://www.mppcb.mp.gov.in/proc/E-Waste-Management-Rules-2022-English.pdf"
+        },
+        {
+          "title": "SIDBI: MSE-SPICE FAQs (25% subsidy, Rs 12.5 lakh cap, Udyam, brownfield), opened 29 Sep 2026",
+          "url": "https://www.sidbi.in/uploads/financialreport/FAQ-SPICE.pdf"
+        },
+        {
+          "title": "SIDBI: Incentive schemes for green loans (MSE-GIFT, MSE-SPICE)",
+          "url": "https://www.sidbi.in/en/pages/incentive-schemes-for-green-loans"
+        },
+        {
+          "title": "Founder input: refined roles and material process chains (Solar panels EoL rows)",
+          "url": "docs/plan/inputs/2026-09-30-founder-research-part-1/refined-roles-material-chains--2-material-process-chains.csv"
+        }
+      ]
+    }
+  ]
+}

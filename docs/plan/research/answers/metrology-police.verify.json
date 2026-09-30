@@ -1,0 +1,100 @@
+{
+  "verdicts": [
+    {
+      "question": "What penalty applies to an unverified or unstamped weighing scale after the Jan Vishwas amendments to the Legal Metrology Act in force from 1 May 2026, and does Karnataka require yearly re-verification of electronic scales? What does e-Mapan (Karnataka) offer traders online?",
+      "holds": true,
+      "problems": "Method note: WebSearch budget was exhausted and every direct fetch is policy-denied (403), so checking was done through GitHub code search over public mirrors of the gazette, the Act, the Rules and the PIB release; nothing else could be opened. Confirmed from mirrored text: (1) S.O. 2103(E) of 27 April 2026 appoints 1 May 2026 for 'serial number 66 ... relating to the Legal Metrology Act, 2009' (gazette page mirrored verbatim); (2) PIB release ID 2278745 of 29 June 2026 lists the improvement-notice sections as 25, 27, 28, 29, 31, 32, 34, 35, 36(1), 38, 39, 41(1)-(2), 45, 46, 47 — section 33 is absent, exactly as the answer says; (3) section 33 text: fine 'not less than two thousand rupees but which may extend to ten thousand rupees' and for a second offence imprisonment up to one year plus fine; (4) the new section 25 wording ('warned with an improvement notice ... second offence ... penalty which may extend to one lakh rupees ... subsequent offences ... not less than two lakhs rupees but may extend to five lakh rupees'); (5) Rule 27(2): 24 months for weights, capacity/length measures, beam scale and counter machine; 60 months for storage tanks; 12 months 'for all other weights or measures including dispensing pumps and weighbridges'; (6) the Act is 'Act 8 of 2026' and clause (ea) defining 'improvement notice' was inserted in section 2 w.e.f. 1-5-2026. Not confirmed by any snippet: the exact list of sections amended by Schedule entry 66 (26, 30, 36(2), 37, 48 are not in the PIB list, so 'amends 25 to 32, 34 to 39, 41 and 45 to 48' is plausible but unverified); the claim that the general improvement-notice and suspend/revoke power sits in a 'new section 15(6) and (7)' (the only 2026 insertion seen is s.2(ea); a compliance checklist mirror describes the mechanism through s.2(ea) and confirms the 10%-every-three-years escalation only as a general mechanism, not its scope); the Lok Sabha 1 April / Rajya Sabha 2 April / 8 April dates; the Karnataka Enforcement Rules rule 4(6)/4(9), the 3 December 2022 Schedule IX amendment and the Rs 5,000 fee cap (no snippet at all — this figure has no found source); the e-Mapan service list and its helplines (a mirror gives the Controller's office as No.1 Ali Asker Road, Vasanth Nagar, phone 080-22253494 and helpline 1800-425-9333, not 080 2225 3500 / 1800 599 1100); the KUM/investkarnataka routing. Arithmetic is fine. Refined-chain gap: Rule 27(2)(c) puts weighbridges on the same 12-month cycle, so the yard, pre-processor and compounder weighbridges that produce every S3-S8 mass and yield figure need the same VC-number-and-expiry field as kabadiwala scales; the answer only covers Saathi and kabadiwala scales.",
+      "correction": "",
+      "extraSources": [
+        {
+          "title": "snippet: Gazette of India, S.O. 2103(E) of 27 April 2026 (mirrored text: 1 May 2026 for serial 66, Legal Metrology Act)",
+          "url": "https://github.com/SrishtiYadav1904/compliance-rag-system/blob/608f997c045fc6b5e8e98a5ed67ced91e17310b4/data/extracted_docs/2026.4.27%20JV%20Act%202026%20for%20LM%20Act_1777348318.json"
+        },
+        {
+          "title": "snippet: PIB Release ID 2278745, 29 June 2026, Improvement Notice mechanism (full text mirrored, section list)",
+          "url": "https://github.com/Ankitbuilder/upsc-current-affairs-pipeline/blob/5613f326619bf746857e5f113bd20f1c32b5bd05/data/2026-06-29.json"
+        },
+        {
+          "title": "snippet: Legal Metrology Act 2009, section 33 text (nyaaya laws-of-india mirror)",
+          "url": "https://github.com/nyaayaIN/laws-of-india/blob/8a84a7fa62695c73211936464e4494f6fcdea4ef/consolidated/The%20Legal%20Metrology%20Act,%202009.xml"
+        },
+        {
+          "title": "snippet: Legal Metrology (General) Rules 2011, Rule 27(2) re-verification periods (mirror)",
+          "url": "https://github.com/vishalyadav-08/SIH26036/blob/5680a383b4fff4d314f5be88f234457e322909c2/ai-service/knowledge/legal/legal_metrology_rules.md"
+        },
+        {
+          "title": "snippet: Jan Vishwas 2026 amended section 25 wording and s.48 compounding entry (rules-engine mirror)",
+          "url": "https://github.com/pulkit-gupta-12/SIH-2026/blob/92e2752165d541d6df2b320dedc81125e2fef5d4/backend/apps/rules_engine/2026_rules.json"
+        },
+        {
+          "title": "snippet: Legal Metrology Act as amended by Act 8 of 2026, s.2(ea) inserted w.e.f. 01-05-2026 (bare-act mirror)",
+          "url": "https://github.com/Arnaw17/bare-act-india/blob/6f4761812f4aaf2d53050e600ea245b22a6be41d/backend/parsed_acts_json_major/the-legal-metrology-act.json"
+        },
+        {
+          "title": "snippet: METRIQ compliance checklist — S.O. 2103(E), 1 May 2026, s.2(ea), 10%/3-year escalation, rupee figures unverified",
+          "url": "https://github.com/IshritRai/METRIQ-AI-_-SIH/blob/71170ede1394d12db8dfb00f2eebff70e26e6070/rule_engine_ref/summarised_checklist.md"
+        },
+        {
+          "title": "snippet: Akashvani news transcript 29 June 2026 — Improvement Notice mechanism announced",
+          "url": "https://github.com/FrederickPi1969/xinwenlianbo-transcripts/blob/49d2ada1c1358a3f760d7a721d5d82294ef9cf54/transcripts/akashvani/2026/2026-06-29.md"
+        },
+        {
+          "title": "snippet: Karnataka Controller of Legal Metrology contact (Ali Asker Road, 080-22253494, 1800-425-9333) — third-party directory",
+          "url": "https://github.com/AlokXCreate/LegalMetrology-AI/blob/b56b8d6491193d6d392545d084c5ff625cc2b2b6/backend/app/db/authorities_data.py"
+        }
+      ]
+    },
+    {
+      "question": "Do plain kabadiwala shops that only collect and store scrap need any KSPCB consent or authorisation under the waste rules? Does Bengaluru police require scrap dealers to hold a licence or keep purchase registers (any Karnataka Police Act provision or city order)? Which materials are high theft risk in Bengaluru (BESCOM copper, BWSSB manhole covers, metro fittings), and is there a police or utility alert channel?",
+      "holds": false,
+      "problems": "Checked through GitHub mirrors only (search budget spent, fetches denied). Confirmed: 'Bailing (hydraulic press) of waste papers' is White (CPCB list); White units need no CTE/CTO, only an intimation (third-party compliance note, not the KSPCB page); the SWM Rules 2016 definition 'informal waste collector includes individuals, associations or waste traders'; BESCOM 1912 and WhatsApp 9449844640 (civic directory mirror). Three problems. (1) Superseded law: the answer rests on the SWM Rules 2016 (rule 15(c)), but the repo's own swm-2026 cluster records that S.O. 388(E) of 27 January 2026 replaced them from 1 April 2026; under the 2026 rules 'each entity involved in sorting of waste' must register with the local body, file quarterly returns and deal only with registered entities (rule 9), and rule 17(1)(a) levies environmental compensation on unregistered activity. A kabadiwala who sorts and bales (the founder's S1->S2->S3 steps) is therefore not free of registration duty; only a buy-and-resell shop is an 'informal waste collector' (rule 3(1)(zb)) with no duty. (2) The White entry 'Collection Centers (Without depollution, dismantling and shredding)' sits under 'Scraping facilities for recycling end-of-life vehicles, wagons and coaches', so it is an ELV entry, not a general scrap-collection entry; the general claim that collect-and-store is White is an inference, not a listing. (3) No snippet anywhere supports the Karnataka Police Act figures (section 99 'fine up to Rs 50 per article', section 98 'up to 3 months or Rs 100', section 100, section 31) or the wording quoted; these are unsourced as of this check. Also not confirmed: the KSPCB page wording 'not included in the consent mechanism'; the 12 February 2025 direction; the 11 June 2026 'Classification of Waste Battery Collection Centre' (only a third-party reference to CPCB battery-collection guidelines 'referencing the 2026 consent guidelines' was found); the Deccan Herald 2022, Hans India 2025 and Organiser 2026 theft reports; the BESCOM safety lines 9483191212/9483191222; the Namma 112 request of November 2025. Newer point missed: CPCB's e-waste environmental-compensation guidelines apply to 'any non-registered entities involved in collection, storage, transportation, sale' of e-waste, which strengthens the advice to keep e-waste out of the pilot. Refined chain: consent and registration must attach to the processing step, not the business — S1 buy/resell = none; S2/S3 sort and bale = SWM 2026 rule-9 local-body registration (White for paper baling); S4-S7 shred, wash, granulate, extract = Orange/Red KSPCB consent; batteries, used oil, e-waste = HOWM/BWM/E-waste authorisation; the 'authorisation_status' column in the founder's processing record should be filled per state transition.",
+      "correction": "KSPCB consent: a shop that only buys, stores and resells paper, plastic, metal and glass is not in the Red/Orange/Green consent lists (White units such as hydraulic baling of waste paper need only an intimation, not CTE/CTO), so no KSPCB consent is needed for the pilot's kabadiwalas; anything that shreds, washes, granulates or extracts metal (the S4-S7 steps done by pre-processors and recyclers) is Orange or Red and needs consent, and batteries, used oil and e-waste need separate authorisation, so keep those out of scope. Waste rules: the Solid Waste Management Rules 2026 (S.O. 388(E), 27 January 2026, in force 1 April 2026) replaced the 2016 rules. They still define 'informal waste collector' to include waste traders and put the duty to enumerate and recognise them on the city corporation (rules 3(1)(zb), 39(53), 39(54)), but rule 9 makes every 'entity involved in sorting of waste' register with the local body, report quarterly on the CPCB portal and deal only with registered entities, and rule 17 levies environmental compensation for unregistered activity. So: a kabadiwala who only buys and resells has no registration duty; a kabadiwala or yard that sorts and bales should be registered with its city corporation as a sorting entity, and the app should carry that registration number. Police: the Karnataka Police Act 1963 has no scrap-dealer licence; its provisions on dealers in second-hand property and workers in metals who receive police information about stolen goods (sections 98-100) exist, but their wording and fine amounts could not be confirmed from any open page in this check and must be read from the Act text before being quoted; no Bengaluru standing order on purchase registers or CCTV for scrap shops was found. A per-lot purchase register (seller name, address, ID, photo, weight, price) remains the right default because it is what a section-99-type duty and SWM rule 9(5) both point to. Theft risk: the three Bengaluru reports (BESCOM RMU batteries 2022, Namma Metro cable 2023-24, BSNL copper 2026) could not be re-verified here and stay as 'reported, unverified'; flag insulated copper cable, transformer/motor windings, batteries, cast-iron covers and rail/metro fittings as infrastructure metal needing provenance and a manager override. Alert channels: Police 112; BESCOM 1912 and WhatsApp 9449844640 (confirmed); BWSSB 1916 / WhatsApp 8762228888 (from the same civic directory); no public stolen-metal feed exists.",
+      "extraSources": [
+        {
+          "title": "snippet: CPCB 2025 categorisation list (mirror) — 'Collection Centers (Without depollution, dismantling and shredding)' White under ELV scrapping; 'Bailing (hydraulic press) of waste papers' White",
+          "url": "https://github.com/mirajrambhiya/frontend-current/blob/383b017a23f27a763b9e08355320b821fefb12a5/store/chatbot.json"
+        },
+        {
+          "title": "snippet: CPCB 2016 classification of industrial sectors (mirror) — White list incl. bailing of waste papers",
+          "url": "https://github.com/MadireddyAbhinavReddy/Deployed_code/blob/9a67ef0924510d586df4ac6a7430b2e54477aaa4/backend/storage/industry_classification_2016.md"
+        },
+        {
+          "title": "snippet: White category exemption — no CTE/CTO, intimation only (KSPCB named) — compliance note",
+          "url": "https://github.com/gorantlasadwik/NirmanSetu/blob/8adfb57588de7ba77617f4badbacbe104b16d168/compliance_rag_2/compliance_rag/data/markdown/central/environment/cpcb_spcb_pollution_categorization.md"
+        },
+        {
+          "title": "snippet: Solid Waste Management Rules 2016 text — definition 28 'informal waste collector'",
+          "url": "https://github.com/Krrish-vader/EcoStreamAI/blob/4e8ffff2488c3f2d958bc2c433d27901bd611d09/pdfs/SWM_Rules_2016.txt"
+        },
+        {
+          "title": "Gazette of India S.O. 388(E) — Solid Waste Management Rules 2026 (repo swm-2026 cluster source; rules 3(1)(zb), 9, 17, 39(53)-(54))",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf"
+        },
+        {
+          "title": "snippet: Bengaluru agency helplines — BESCOM 1912 / WhatsApp 9449844640, BWSSB 1916 / WhatsApp 8762228888 (civic directory)",
+          "url": "https://github.com/DoozieSoftware/cip/blob/95490837542aab987436ea519c921e7cbeb16f13/docs/department-routing-mapping.md"
+        },
+        {
+          "title": "snippet: E-waste intermediary legality note — CPCB EC guidelines cover non-registered collection/storage entities; ELV 'collection centres without depollution' entry",
+          "url": "https://github.com/bharani-01/Yesist/blob/b922f09553490393857c28efb387db3fb12b4fe0/docs/research/v2-deep/03-intermediary-legality.md"
+        }
+      ]
+    },
+    {
+      "question": "Can a Saathi apply for the Seva Sindhu Police Verification Certificate themselves, at what fee and turnaround, and should a kabadiwala's helpers who enter homes be verified too?",
+      "holds": false,
+      "problems": "Checked through a public mirror of the Karnataka State Police service pages on Seva Sindhu (search budget spent, fetches denied). Confirmed: 'PVC for Domestic servants/House Keeping' — eligibility 'Any citizen currently staying in Karnataka', documents photo/ID/address proof, fee Rs 375 (antecedents only) or Rs 750 (antecedents and address), delivery time 21 days, processed by the concerned police station; 'PVC for Institutions/Companies' Rs 1,500 for antecedents and address. Contradicted: the answer says 'Seva Sindhu has no generic private-sector individual PVC', but the Institutions/Companies service page lists 'Job Purpose to MNCs/Private/Corporate & Others — Antecedents Verification only Rs 450' and 'Antecedents & Address Verification Rs 1,500' alongside the institutional Rs 1,500, so a job-purpose route exists and is the natural fit for a gig worker entering homes. Conflict: the mirror shows a service charge of Rs 20 (domestic) and Rs 100 (institutions/job), 'free for online submission', not the Rs 35 stated; neither figure is dated, so treat the counter charge as unconfirmed. Not confirmed by any snippet: the Rs 375 government-employee and Rs 150 airport fees (only the service names appear in a KSP February 2026 crime-review dataset); the KSP FAQ on e-signed certificates; the Citizen Matters guide; the Deccan Herald 2 November 2025 and NewsFirst 8 November 2025 police statements; the two-year renewal practice; the Gig Workers Welfare Board portal. Arithmetic: 30 September plus 21 days is 21 October, not 'around 20 October' (minor). Refined chain: verification belongs to the person, not the business, and is needed only for the S0->S1 home hand-off; yard, pre-processor and compounder staff never enter homes and need none, but every kabadiwala helper who rides a Luma pickup does.",
+      "correction": "Yes, a Saathi can apply in their own name on Seva Sindhu. Two Karnataka State Police services fit: (a) 'PVC for Domestic servants/House Keeping' — Rs 375 for antecedents only or Rs 750 for antecedents plus address, open to 'any citizen currently staying in Karnataka', documents a passport photo, ID proof and address proof, stated delivery time 21 days, processed by the applicant's police station; (b) the 'Institutions/Companies' service, which also carries a 'Job Purpose to MNCs/Private/Corporate & Others' option at Rs 450 (antecedents only) or Rs 1,500 (antecedents and address), plus Rs 1,500 for an institutional application. Because a Saathi is a gig worker, not a domestic servant, the job-purpose route is the safer label for a non-domestic role; the domestic-help route is cheaper for the full antecedents-plus-address check (Rs 750 vs Rs 1,500). A small counter service charge applies at Grama One/Bangalore One/Karnataka One (the mirrored page shows Rs 20 for the domestic service and Rs 100 for the job/institution service; free online) — confirm the current amount at filing. Karnataka law does not make police verification of scrap collectors or helpers mandatory; the reported Bengaluru police push for delivery-worker checks (November 2025) could not be re-verified in this pass. Default: every person who enters a home on a Luma pickup — Saathi or a kabadiwala's helper — carries an antecedents-plus-address PVC before the first home visit, stored against the person with its date and a 24-month renewal reminder. Applications filed on 30 September land on or about 21 October at the stated 21-day service time, after the 13 October launch, so week one runs home pickups with already-verified people only. Ask the local police station whether a self-applied job-purpose PVC is accepted for a platform gig worker, and employment counsel on who counts as the employer.",
+      "extraSources": [
+        {
+          "title": "snippet: Karnataka State Police services on Seva Sindhu (mirror) — PVC Domestic servants/House Keeping Rs 375/750, 21 days, service charge Rs 20; PVC Institutions/Companies and Job Purpose Rs 450/1,500, service charge Rs 100",
+          "url": "https://github.com/SRINIDHI3628/kannada-pipeline/blob/6f1015114f0a41f01a52dddde6b77da4abb00b52/raw_data/Services/Karnataka%20State%20Police.txt"
+        },
+        {
+          "title": "snippet: Karnataka State Police crime review February 2026 — Sakala receipts/disposals for PVC services (service names)",
+          "url": "https://github.com/Ishitadas03/CrimeRakshak/blob/b9e40058b6b81c74f759e822d7c892252972b651/datasets/CRIME%20REVIEW%20-%20FEBRUARY%20-%202026.csv"
+        }
+      ]
+    }
+  ]
+}
