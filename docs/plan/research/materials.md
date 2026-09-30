@@ -7,7 +7,7 @@ _Research brief, 29 September 2026. Headline:_ India's customs tariff already us
 **How to read it**
 
 - **Code**: 3-letter family plus a grade token, in ASCII. Codes are never renamed or reused; a retired code points to its replacement (`replacedBy`).
-- **Level**: H = household (doorstep and AI photo estimate), T = trade (kabadiwala sorts for the yard), I = industrial (recycler output).
+- **Level**: H = household (doorstep and AI photo estimate), T = trade (kabadiwala sorts for the yard), I = industrial (recycler output). _Added 30 Sep 2026:_ the founder's material-state model ([ADR 0014](../../decisions/0014-material-states-and-processing-records.md)) refines this to states S0–S9 and five levels (H, T, P = pre-processed, I = industrial intermediate, F = final feedstock); v0.2 of the catalogue adds a code per intermediate state (PET bale, raw flakes, cold-washed flakes, hot-washed flakes, rPET pellets, and so on for each family) and for saleable by-products.
 - **HSN**: the Indian tariff item. It is 8-digit where checked against the ITC-HS schedule; where it wasn't checked, it is 4- or 6-digit and marked (tbc).
 - **Unit**: the pricing unit, with its GST unit code (kg = KGS, piece = NOS, dozen = DOZ, bale = BAL, tonne = MTS). Mass is always stored in grams.
 - **Trade names**: hi Hindi, mr Marathi, kn Kannada, ta Tamil, gu Gujarati. _Delhi_ = names recorded by CSE (2021) in Delhi's informal plastics market. † = meaning checked in Wiktionary, the Alar dictionary or CSE; (tbc) = to confirm with the Bengaluru pilot kabadiwalas. Display names in all 12 languages come from `messages/*.json`; these trade names are search and voice aliases.

@@ -1,21 +1,24 @@
 # Data model (planned v2)
 
-> **Status:** planned, 29 Sep 2026. The live schema is `convex/schema.ts` (v1,
+> **Status:** planned, 29 Sep 2026; material states, processing records and
+> the new kinds added 30 Sep 2026
+> ([ADR 0014](../decisions/0014-material-states-and-processing-records.md)). The live schema is `convex/schema.ts` (v1,
 > written before the product brief). Tables land with the feature that needs
 > them; each change follows [migrations](../migrations/README.md).
 
 ## What changes from v1
 
-| v1 (scaffold)                                                   | v2                                                                                  | Why                                                                                  |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `orgs.role`: collector, aggregator, recycler, factory, verifier | `orgs.kind`: kabadiwala, preprocessor, recycler, manufacturer                       | The founder's roles. Verifiers return with carbon credits                            |
-| `orgs.sector` — orgs only see their own sector                  | Visibility by **location and material**                                             | A kabadiwala handles paper, plastic and metal and sells to whichever yard is nearest |
-| `orgs.kycStatus`                                                | An `applications` table with a full state machine and history                       | Manual verification with notes, resubmissions and an audit trail                     |
-| No households                                                   | `households`, `bookings`, `bookingOffers`, `pickupReceipts`, `pointsLedger`         | The household flow                                                                   |
-| No gig workers                                                  | `saathiProfiles`                                                                    | Saathis are people, not businesses                                                   |
-| No platform staff                                               | `adminProfiles` (one row in the pilot)                                              | One admin now; team members later                                                    |
-| `materials.co2eFactorPerKg` only                                | Material catalogue with families, grades and codes; prices in separate dated tables | Prices change daily; the catalogue doesn't                                           |
-| `inventoryMovements.reason` has no sorting                      | Adds `sort_out` / `sort_in` with a shared `sortingRunId`                            | Sorting turns 50 kg of mixed paper into newspaper, cardboard and reject              |
+| v1 (scaffold)                                                   | v2                                                                                                               | Why                                                                                                           |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `orgs.role`: collector, aggregator, recycler, factory, verifier | `orgs.kind`: kabadiwala, dwcc, yard, preprocessor, recycler, compounder, manufacturer, brand, handler            | The founder's roles, with the industrial middle of the chain (ADR 0014). Verifiers return with carbon credits |
+| `orgs.sector` — orgs only see their own sector                  | Visibility by **location and material**                                                                          | A kabadiwala handles paper, plastic and metal and sells to whichever yard is nearest                          |
+| `orgs.kycStatus`                                                | An `applications` table with a full state machine and history                                                    | Manual verification with notes, resubmissions and an audit trail                                              |
+| No households                                                   | `households`, `bookings`, `bookingOffers`, `pickupReceipts`, `pointsLedger`                                      | The household flow                                                                                            |
+| No gig workers                                                  | `saathiProfiles`                                                                                                 | Saathis are people, not businesses                                                                            |
+| No platform staff                                               | `adminProfiles` (one row in the pilot)                                                                           | One admin now; team members later                                                                             |
+| `materials.co2eFactorPerKg` only                                | Material catalogue with families, grades, **states** and codes; prices in separate dated tables with a **level** | Prices change daily; the catalogue doesn't. A bale and a flake are different items                            |
+| No processing                                                   | `lots` with parent lineage and `processingRuns` with main, by-product and waste outputs                          | A process changes the material; by-products and waste are lots too                                            |
+| `inventoryMovements.reason` has no sorting                      | Adds `sort_out` / `sort_in` with a shared `sortingRunId`                                                         | Sorting turns 50 kg of mixed paper into newspaper, cardboard and reject                                       |
 
 No production data exists yet (29 Sep 2026), so v2 replaces v1 directly. From
 the first real row onwards, every change is widen → migrate → narrow.
@@ -65,12 +68,12 @@ queue.
 
 ### Catalogue and prices
 
-| Table           | Key fields                                                        | Indexes                 |
-| --------------- | ----------------------------------------------------------------- | ----------------------- |
-| `materials`     | `code` (`PAPER-NEWS`), `family`, `grade?`, `messageKey`, `active` | `by_code`, `by_family`  |
-| `priceFloors`   | `city`, `materialId`, `paisePerKg`, `effectiveFrom`               | `by_city_material_from` |
-| `fallbackRates` | `city`, `materialId`, `paisePerKg`, `effectiveFrom`               | `by_city_material_from` |
-| `rateCards`     | `orgId`, `materialId`, `paisePerKg`, `effectiveFrom`              | `by_org_material_from`  |
+| Table           | Key fields                                                                                                                                                                                                | Indexes                                   |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| `materials`     | `code` (`PAP-ONP`), `family`, `grade?`, `state` (`S0`…`S9`), `level` (`H` \| `T` \| `P` \| `I` \| `F`), `buyerGate` (`open` \| `verified` \| `authorised`), `hsn?`, `messageKey`, `active`, `replacedBy?` | `by_code`, `by_family`, `by_family_state` |
+| `priceFloors`   | `city`, `materialId`, `level` (`L1`…`L5`), `paisePerKg`, `effectiveFrom`                                                                                                                                  | `by_city_material_from`                   |
+| `fallbackRates` | `city`, `materialId`, `level`, `paisePerKg`, `effectiveFrom`                                                                                                                                              | `by_city_material_from`                   |
+| `rateCards`     | `orgId`, `materialId`, `level`, `grade? {…}`, `paisePerKg`, `effectiveFrom`                                                                                                                               | `by_org_material_from`                    |
 
 ### Household pickups
 
@@ -90,8 +93,31 @@ the rate used, so a later price change never rewrites a paid pickup.
 
 `inventory`, `inventoryMovements`, `listings` and `trades` stay as in v1 (movements
 append-only, inventory derived), with the new `sort_out` / `sort_in` reasons and
-`orgId` scoping. Their shape is revisited when the kabadiwala → yard hand-off is
+`orgId` scoping. A listing carries the lot's material code (so its state), its
+grade attributes and the catalogue's buyer gate, and is shown only to kinds the
+gate allows. Their shape is revisited when the kabadiwala → yard hand-off is
 designed.
+
+### Material states and processing
+
+Decided 30 Sep 2026
+([ADR 0014](../decisions/0014-material-states-and-processing-records.md)).
+Sorting at a kabadiwala or yard is the simplest processing run (`sort`, no
+by-products); the same record covers baling, shredding, washing, drying,
+granulation, remelting and compounding.
+
+| Table            | Key fields                                                                                                                                                                                                                                                                                                                                                                    | Indexes                                         |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `lots`           | `orgId`, `materialId` (implies the state), `grams`, `grade? {colour, moisture, contamination, iv, mfi, purity, mesh, …}`, `origin` (`household` \| `saathi` \| `business` \| `industrial`), `parentLotIds[]`, `processingRunId?`, `status` (`in_stock` \| `listed` \| `reserved` \| `traded` \| `consumed` \| `disposed`)                                                     | `by_org_status`, `by_material`, `by_processing` |
+| `processingRuns` | `orgId`, `siteId?`, `processType` (`sort` \| `bale` \| `shred` \| `strip` \| `wash` \| `dry` \| `granulate` \| `pulp` \| `remelt` \| `compound` \| `dismantle` \| `crush` \| `refine`), `inputs[{lotId, grams}]`, `outputs[{lotId, role: main \| byproduct \| waste, grams}]`, `yieldPermille`, `scaleId?`, `operatorProfileId?`, `photos[]`, `startedAt`, `endedAt`, `note?` | `by_org_endedAt`                                |
+| `wasteManifests` | `processingRunId`, `lotId`, `handlerOrgId`, `wasteCode`, `grams`, `manifestNumber?`, `status`                                                                                                                                                                                                                                                                                 | `by_lot`, `by_handler`                          |
+
+Rules: input grams equal main + by-product + waste grams within the tolerance
+the research sets per process (moisture and loss to air are recorded as a
+`loss` output); a `waste` output cannot be listed; a run never edits an earlier
+run, a correction is a new run that consumes the wrong lot. The material of an
+output lot must be a state the catalogue allows after `processType` for the
+input material's family. Every run writes `auditLog`.
 
 ### Operations
 

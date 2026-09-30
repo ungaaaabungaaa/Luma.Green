@@ -133,7 +133,11 @@ pointing `luma.green` at Vercel, the Convex production deploy key in Vercel,
 and an OpenRouter key with a spend limit.
 
 **After the pilot:** kabadiwala-to-yard collections, once the research is in
-([kabadiwala-to-yard](./kabadiwala-to-yard.md)); real trading between recyclers
+([kabadiwala-to-yard](./kabadiwala-to-yard.md)); the industrial middle of the
+chain: pre-processor accounts, material states on every lot, processing
+records with by-product and waste outputs, price levels L3 to L5 and by-product
+listings ([ADR 0014](../decisions/0014-material-states-and-processing-records.md));
+real trading between recyclers
 and manufacturers; escrow payments; carbon credits; solar, documentation and
 legal services; a machinery data bank; a WhatsApp channel; Saathi pay; native
 apps; PostHog and Sentry; team members for the admin.

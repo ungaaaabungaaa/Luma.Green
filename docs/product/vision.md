@@ -17,9 +17,12 @@ The infrastructure that connects the whole chain on one platform.
 - **Households** sell scrap in three taps: photo, booking, paid at the door.
 - **Kabadiwalas** get pickups without walking the streets, and see what yards
   pay today.
-- **Preprocessors (yards)** see what nearby kabadiwalas hold and book
+- **Yards** see what nearby kabadiwalas hold and book
   collections.
-- **Recyclers** source sorted feedstock; **manufacturers** see what recyclers
+- **Pre-processors** turn bales into flakes, granules and fractions and record
+  what each process made, including by-products (added 30 Sep 2026,
+  [ADR 0014](../decisions/0014-material-states-and-processing-records.md)).
+- **Recyclers** source prepared feedstock; **manufacturers** see what recyclers
   produce and order it.
 - **Saathis** — people who want quick work — do pickups, sorting and loading for
   any of them.
