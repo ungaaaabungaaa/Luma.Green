@@ -3240,5 +3240,33 @@
     "grievance": "Complaints and grievances",
     "install": "Install the app",
     "society": "Pickups for apartments and offices"
+  },
+  "rules": {
+    "deadlines": {
+      "title": "Deadlines",
+      "lead": "What the law asks of you next. Tick each one off when it's done.",
+      "open": "{count, plural, =0 {Nothing open} one {# open} other {# open}}",
+      "empty": "Nothing is due in the next four months. Reminders appear here as dates come near.",
+      "more": "{count, plural, one {# more deadline} other {# more deadlines}} on your compliance page.",
+      "done": "Done",
+      "doneFor": "Mark {title} done",
+      "saving": "Saving…",
+      "doneToast": "Marked done: {title}",
+      "error": "Couldn't save that. Try again.",
+      "in": "{days, plural, =0 {Today} =1 {Tomorrow} other {In # days}}",
+      "late": "{days, plural, one {# day late} other {# days late}}",
+      "kinds": {
+        "consent": "Pollution board consent",
+        "scale": "Weighing scale stamp",
+        "gstr7": "GST TDS return (GSTR-7)",
+        "gstr8": "E-commerce TCS return (GSTR-8)",
+        "eprReturn": "EPR annual return",
+        "eprQuarterly": "EPR quarterly return",
+        "msmeDue": "Payment due to a small supplier",
+        "darkPatternAudit": "Dark-pattern self-audit",
+        "tradeLicence": "Trade licence renewal",
+        "custom": "Reminder"
+      }
+    }
   }
 }
