@@ -1,6 +1,6 @@
 # Status and handoff for any agent
 
-> **Written 30 Sep 2026, evening UTC**, by the cloud Claude Code session, for
+> **Written 30 Sep 2026, evening UTC; closed 16:35 UTC when the founder's usage limit ran out**, by the cloud Claude Code session, for
 > whoever continues: a person, Claude Code, Codex, GPT or another agent. It
 > says what exists, where it is, what was decided and what is left, so nothing
 > depends on a chat transcript. Update it whenever a phase lands.
@@ -105,6 +105,12 @@ Not done: the synthesis (`synthesise-answers.js`), filling the plan doc's pendin
 Known on the base (see `pilot-build.js` STATE_NOTES for the full list): `pnpm typecheck` passes; lint has 81 findings in the merged WIP (payments 37, rulebook 33, priceEngine 3, lots 2, support 2, exports 2); tests fail in `convex/payments.test.ts` (3), `convex/review.test.ts` (2), `convex/adminPrices.test.ts` (1) and `src/i18n/messages.test.ts` (untranslated keys). Each is assigned to its area in the build script.
 
 Finished areas commit on branches named `worktree-<runId>-<n>` inside `.claude/worktrees/` (ignored by git); push them (`git push -u origin <branch>`) before a session ends, then merge them into `feat/pilot-qzkl7t` one at a time: `messages/*.json` through the json3 driver (`git config merge.json3.driver "python3 scripts/i18n/json3merge.py %O %A %B"`), `convex/_generated/*` regenerated with `node scripts/convex-api.mjs`, then `pnpm check`.
+
+## Where the session stopped (30 Sep, 16:35 UTC)
+
+- Research: all 31 clusters answered; 28 of 31 have a sceptic check (`*.verify.json`); the rest (see the table) were still running when the runs were stopped. Synthesis not run.
+- Build: the two permitted runs were stopped; area `rulebook` committed on branch `worktree-wf_2cd5a833-dd7-2` (pushed); floor, priceEngine and logistics were mid-work in worktrees that die with this container and left no commit. Restart those areas from the base.
+- Everything committed is on `feat/pilot-qzkl7t`; nothing else exists outside GitHub.
 
 ## Checklist: what is left, in order
 
