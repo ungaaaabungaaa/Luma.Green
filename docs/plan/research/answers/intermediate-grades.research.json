@@ -1,0 +1,328 @@
+{
+  "cluster": "Grades and specifications for intermediate materials",
+  "answers": [
+    {
+      "question": "What grade attributes and thresholds do Indian buyers actually use for the intermediate states the platform will list (PET flakes, rPET pellets incl. food-contact status, rHDPE/rPP/rLDPE granules, copper granules, shredded steel, crumb rubber, recycled aggregate, furnace-ready cullet, recovered pulp)? Which standards, and which are enforced in trade versus only on paper?",
+      "answer": "PET flakes: trade data sheets and Indian trade listings grade flakes by colour class (clear, clear/light-blue, green, mixed), wash (cold-washed vs hot-washed, the latter meaning a full caustic-plus-detergent wash quoted at 75–80 °C in one supplier sheet, so the founder's 85–95 °C is unconfirmed), intrinsic viscosity (typical 0.72–0.78 dl/g, some sheets accept 0.65–0.89; the founder's 0.60–0.64 for cold-washed flakes is below every sheet found and should be re-checked), PVC content (natural grade <300 ppm, green spec <200 ppm, premium <100 ppm, best hot-washed <30 ppm; the founder's ≤50 ppm sits in the premium band), moisture (≤1.5% natural grade, <0.5% hot-washed), plus polyolefin ppm, metal ppm, fines % and glue/label %. rPET pellets: bottle grade IV 0.80 ±0.02 dl/g (Chiripal's published spec) and fibre grade 0.70–0.78 dl/g (Polymer Circle, 27 Feb 2024); OfBusiness quotes PET at Rs 85–100/kg, bottle grade Rs 90–100 and fibre grade Rs 85–95 (undated page). Food-contact status is an FSSAI matter, not CPCB or BIS: FSSAI's Direction of 18 Jan 2022 and draft amendment of 17 May 2022 opened rPET for food contact, and its 'Guidelines for Acceptance of Recycled PET as Food Contact Material (FCM-rPET)' of 23 May 2025 require a recycling process with at least one validated decontamination step (super-clean, melt-in, paste-in or enhanced chemical recycling), a challenge test showing each surrogate below 220 µg/kg in the resin (US FDA route) or migration below 10 µg/kg in food simulant (EU route), input limited to post-consumer PET bottles originally used for food, an authorisation from the Food Authority for the recycler, a Declaration of Compliance and an EU/USFDA opinion letter. Two corrections to the question: IS 17899 T:2022 is 'Assessment of Biodegradability of Plastics in Varied Conditions', not a recycled-PET standard (a BIS draft PCD 21 (21921) WC2, Jan 2024, circulating as 'pet_food' may be the intended document but its title could not be confirmed); and no CPCB '2024-25 food-contact rPET guideline' was found in any snippet, so treat CPCB's role as processor registration, EPR recycled-content targets (Cat I rigid 40% for FY2026-27 per the repo's EPR brief) and IS 14534:2023 recycled-content labelling, and FSSAI's role as the food-contact gate. rHDPE and rPP: buyers ask polymer, natural vs coloured vs black, MFI and density, filler/ash content and application grade; supplier sheets show rHDPE density 930–970 kg/m³ (natural ~0.956 g/cc) with MFI options 0.5–3.5 g/10 min, and an Indian rPP listing (Gadarpur, IndiaMART) sells natural injection-grade rPP at MFI 8 ±2, density 0.99 ±0.02 g/cm³, 'no added fillers', at Rs 75/kg; an Indonesian sheet gives rPP extrusion MFI 2–7 and injection MFI 32–48. rLDPE: no snippet gave numbers; the founder's MFI 0.3–2.0 is plausible for film grade but unconfirmed, and Indian film reprocessors sell either agglomerate or pellets, so 'agglo vs dana' is itself a grade attribute. Copper: ISRI/ReMA code words are the grades Indian yards and customs use (India's tariff line 7404 00 12 lists them): Barley (bare bright No. 1 wire), Berry (No. 1 wire, clean, untinned, uncoated), Birch (No. 2 wire, nominal 96%, minimum 94% Cu by electrolytic assay), Candy (No. 1 heavy solids and tubing), Cliff (No. 2 solids, nominal 96%/min 94%), Druid (insulated wire, priced on recovery %); cable-granulator chops are sold on assayed Cu % and the founder's '≥99% Cu' could not be confirmed. Shredded steel: ISRI 210 is magnetically separated shred from autos and unprepared No. 1/No. 2 steel at average density 50 lb/ft³, ISRI 211 the same at 70 lb/ft³; India's own standard is IS 2549:2023 'Processed ferrous scrap' (BIS compendium) and HMS trades as ISRI 200–206; no source gives a '≤50 mm' size for shred. Crumb rubber: 30, 40 and 60 mesh are the sizes sold for CRMB and hot-mix plants, 80 mesh and finer for higher-property uses, under IS 15462 (polymer and rubber modified bitumen) and IRC:SP:53 (year editions could not be confirmed); CPCB's tyre-EPR guidance already fixes product conversion factors (crumb 1.333, reclaim 1.298, CRMB 0.2, recovered carbon black 3.676, pyrolysis oil/char 1.49), so 'end product type' must be a lot attribute. Recycled aggregate: IS 383:2016 defines recycled concrete aggregate (RCA) and recycled aggregate (RA) and caps RCA at 25% in plain concrete, 20% in reinforced concrete up to M25 and 100% in lean concrete below M15, allowing water absorption up to 10% with pre-wetting; the separate, lower limits for RA could not be read from a snippet. Cullet: buyers sort by colour (flint/amber/green) and cap ceramics-stones-porcelain (CSP) and metals; international specs range from <100 ppm CSP and <60 ppm non-ferrous metal (looser) to 5–25 ppm CSP and 1–5 ppm ferrous/non-ferrous (premium) and 10 ppm CSP for food-grade glass, with one spec at 25 g/t CSP and 100 g/t plastic; no Indian furnace spec was found, so the founder's '<25 ppm' is within range but must be taken from the buying plant. Recovered pulp: it is not a traded intermediate in India, since mills pulp bales in-house; paper trades on bale grades (ISRI 11 OCC, 12/13 double-sorted, 37 sorted office, 54 mixed, 58 sorted clean news; moisture ≤12%, prohibitives ≤1–2%), so list bales, and if pulp is ever listed use brightness (ISO), ash %, freeness and dirt count (from the founder's lifecycle sheet, unverified). Enforcement in practice: FSSAI authorisation is a hard gate for any food-contact claim; EPR recycled-content targets bite through the CPCB portal and GST e-invoices; ISRI names are binding for imports because the customs tariff uses them and for large domestic contracts, while kabadiwala-yard trades run on visual grade plus moisture and contamination deductions; IS 383 binds only when an RMC plant or public-works spec cites it; IV, MFI, PVC ppm and CSP ppm are enforced by the buyer's own incoming test or a COA, not by any regulator.",
+      "status": "partly",
+      "decision": "Model grade as a per-code attribute schema, not free text: PET flake (colour class, wash, IV, PVC ppm, moisture, PO ppm, metal ppm, fines %), rPET pellet (IV, colour, moisture, food-contact flag allowed only with an FSSAI authorisation number and DoC attached), polyolefin granule (polymer, colour, MFI, density, filler/ash %, form agglo/pellet), copper (ISRI word, assayed Cu %), ferrous (IS 2549/ISRI grade, density class), crumb (mesh, steel/fibre %, EPR product type), aggregate (RCA/RA, size, water absorption %, IS 383 use class), cullet (colour, CSP ppm, metal ppm, size), paper (ISRI grade, moisture, prohibitives). Seed thresholds from the data-sheet ranges above as editable defaults dated 30 Sep 2026, and store the buyer's acceptance test result on every lot; do not list food-grade rPET in the pilot.",
+      "whoToAsk": "Two Karnataka PET flake/granule units (KSPCB Orange 1326 'PET flakes' list) for the IV and PVC limits they actually test; one container-glass plant's cullet buying spec (AGI Glaspac or HNG); one Bengaluru RMC plant on whether it accepts IS 383 RCA; a food-law counsel before any 'food-contact' wording is shown; BIS for the real title of draft PCD 21 (21921).",
+      "sources": [
+        {
+          "title": "snippet: Reprocessed PET Flakes, Recycled PET Chips, PET Regrind — Plastemart",
+          "url": "https://www.plastemart.com/plastics-polymers/reprocessed-pet/905",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: What Are Recycled Plastic Flakes? Guide for Manufacturers & Buyers — JB Ecotex",
+          "url": "https://jbecotex.com/recycled-plastic-flakes",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Technical Data Sheet rPET flakes clear — Rekis",
+          "url": "https://rekis.hr/dokumenti/rPET%20flakes%20-%20clear.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: PET flakes clear mixed light blue, hot washed — 2lians",
+          "url": "https://2lians.com/blogs/plastic-recycling-news/pet-flakes-clear-mixed-light-blue-hot-washed",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: I.V. levels in the recycled PET (rPET) — Polymer Circle",
+          "url": "https://polymercircle.com/index.php/2024/02/27/i-v-levels-in-rpet/",
+          "date": "2024-02-27"
+        },
+        {
+          "title": "snippet: rPET bottle grade IV 0.80 ±0.02 — Chiripal Poly Films",
+          "url": "http://www.chiripalpolyfilms.in/product/rpet/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: PET Price Rs 85-100/kg bottle and fibre grade — OfBusiness",
+          "url": "https://www.ofbusiness.com/prices/polymers-packaging/pet",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: FSSAI draft Guidelines for recycling of post-consumer PET for food contact (Annexure 1)",
+          "url": "https://fssai.gov.in/upload/uploadfiles/files/Annexure1_Draft_Guidelines_PET_15_06_2022.pdf",
+          "date": "2022-06-15"
+        },
+        {
+          "title": "snippet: India amends regulations to allow the use of recycled PET in FCMs — PackagingLaw",
+          "url": "https://www.packaginglaw.com/news/india-amends-regulations-allow-use-recycled-pet-fcms",
+          "date": "2022"
+        },
+        {
+          "title": "snippet: FSSAI issues comprehensive guidelines for use of recycled PET in FCM (FCM-rPET, 23 May 2025) — Corporate Professionals",
+          "url": "https://www.corporateprofessionals.com/regulatoryupdate/fssai-issues-comprehensive-guidelines-for-use-of-recycled-pet-in-food-contact-materials-fcm-rpet/",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: FSSAI Guidelines for Recycled PET in Food Contact (220 µg/kg / 10 µg/kg) — TaxGuru",
+          "url": "https://taxguru.in/corporate-law/fssai-guidelines-recycled-pet-food-contact.html",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: IS 17899 T:2022 Assessment of Biodegradability of Plastics in Varied Conditions — BIS (Internet Archive)",
+          "url": "https://archive.org/details/gov.in.is.17899.t.2022",
+          "date": "2022"
+        },
+        {
+          "title": "snippet: BIS draft Doc. No. PCD 21 (21921) WC2 January 2024 (mirror)",
+          "url": "https://files.chemicalwatch.com/pet_food.pdf",
+          "date": "2024-01"
+        },
+        {
+          "title": "snippet: Reprocessed HDPE Granules — Plastemart",
+          "url": "https://www.plastemart.com/plastics-polymers/reprocessed-hdpe/891",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Natural reprocessed PP granules MFI 8, Rs 75/kg, Gadarpur — IndiaMART",
+          "url": "https://www.indiamart.com/proddetail/natural-reprocessed-polypropylene-rpp-granules-mfi-8-2851759826762.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Recycled HDPE granules (rHDPE) — Ribotl",
+          "url": "https://www.ribotl.com/rhdpe",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: rPP natural low and high MFI — Langgeng Jaya Group",
+          "url": "https://langgengjayagroup.co.id/product/rpp-natural-low-and-high-mfi",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Red Metals (copper grades) — ReMA/ISRI Specifications",
+          "url": "https://www.isrispecs.org/orpheus_resource_categories/copper/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: No. 1 Copper Wire — ReMA/ISRI Specifications",
+          "url": "https://www.isrispecs.org/orpheus_resource/no-1-copper-wire/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Shredded Steel Scrap ISRI 210-211 — Cleflavron",
+          "url": "https://www.cleflavron.com/item/49/shredded-steel-scrap-isri-210-211",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Shredded Steel Scrap (ISRI 211), Hisar — IndiaMART",
+          "url": "https://www.indiamart.com/proddetail/shredded-steel-scrap-isri-211-9432657348.html",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: BIS compendium listing IS 2549:2023 Processed ferrous scrap",
+          "url": "https://www.services.bis.gov.in/tmp/compendium_2025-06-09-11-30-20.pdf",
+          "date": "2025-06-09"
+        },
+        {
+          "title": "prior brief: ISRI Scrap Specifications Circular 2024 (ReMA)",
+          "url": "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf",
+          "date": "2024-04"
+        },
+        {
+          "title": "prior brief: ITC-HS 7404 copper scrap lines with ISRI code words — Eximguru",
+          "url": "https://www.eximguru.com/indian-customs-duty/7404-copper-waste-and-scrap.aspx",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Premium Crumb Rubber Modified Bitumen (IS 15462, IRC SP 53; 30/40/60 mesh) — Hincol",
+          "url": "https://hincol.in/crumb-rubber-modified-bitumen/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Crumb rubber for road construction in India — Fab Rubbers",
+          "url": "https://www.fabrubbers.com/crumb-rubber-for-road-construction",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Performance of CRMB by varying crumb rubber sizes — IJETT",
+          "url": "https://ijettjournal.org/archive/ijett-v14p211",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: Guidance document for generation and transfer of EPR certificates for waste tyres (conversion factors) — CPCB",
+          "url": "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IS 383:2016 Coarse and fine aggregate for concrete (PDF) — Internet Archive",
+          "url": "https://archive.org/download/gov.in.is.383.2016/is.383.2016.pdf",
+          "date": "2016"
+        },
+        {
+          "title": "snippet: IS 383:2016 maximum utilisation of recycled concrete aggregate — Zonetech",
+          "url": "https://zonetech.in/question-answer/as-per-is-383--2016-the-maximum-utilization-of-recycled-concrete-aggre-ad3fb5059dcc",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IS 383-2016 some important provisions — Dr K M Soni, LinkedIn",
+          "url": "https://www.linkedin.com/pulse/is383-2016-coarse-fine-aggregates-concrete-some-important-dr-k-m-soni",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Waste glass industry standards snapshot (MRA report) — DCCEEW Australia",
+          "url": "https://www.dcceew.gov.au/sites/default/files/documents/waste-glass-industry-standards-snapshot.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Cullet quality: the hidden key to efficient glass production — GMIC",
+          "url": "https://gmic.org/cullet-quality-the-hidden-key-to-efficient-glass-production/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Cullet sorting technologies — AIGMF",
+          "url": "https://www.aigmf.com/docs/105/Cullet%20Sorting%20Technologies.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: Paper waste recycling in India: current scenario — IPPTA",
+          "url": "https://ippta.co/wp-content/uploads/2023/11/88-94.pdf",
+          "date": "2023-11"
+        },
+        {
+          "title": "prior brief: Plastic Waste Management (Amendment) Rules 2026 explained (recycled-content targets) — LiveLaw",
+          "url": "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015",
+          "date": "2026"
+        }
+      ]
+    },
+    {
+      "question": "In the polyester chain, check the founder's technical note (rPET chips melt-spun to PSF with TiO2; are DMT, PTA and MEG used in mechanical rPET fibre production, or only in virgin polymerisation and chemical recycling?), describe the routes Indian PSF makers use, typical rPET share and what a manufacturer wants recorded about an rPET lot; then check the HDPE, LDPE film, PP, paper, ferrous, aluminium, copper, tyre, lead-acid, e-waste, used-oil, glass, C&D, textile and solar-panel chains in the process-chain sheet: what is wrong, missing or out of date, step by step.",
+      "answer": "Polyester: the founder's PET row 7 ('melt-spinning with additives: TiO2 (delustrant), DMT (repolymerisation), spin finish') is wrong on DMT. PTA (or DMT) and MEG are the monomers of virgin PET polymerisation (esterification/transesterification then polycondensation) and are consumed as reagents only in chemical recycling (glycolysis uses MEG to break PET into BHET, methanolysis yields DMT, hydrolysis yields PTA, each re-polymerised afterwards); mechanical rPET fibre production consumes none of them: flakes or pellets are dried, melt-filtered, extruded and spun, with TiO2 dosed as a masterbatch or slurry for semi-dull or full-dull fibre and spin finish applied at the spinneret; where a recycler must raise IV it uses solid-state polycondensation (SSP) or a chain-extender additive, not fresh monomer. The refinement note's instruction to hold DMT/PTA/MEG as separate virgin raw-material records is right, but scope them to virgin polymerisation and chemical-recycling records, and remove them from the mechanical PSF step. Indian rPSF routes, in order of volume as far as public information allows (none of this was confirmable by a snippet after the search budget ran out, so treat the plant-level detail as to-be-verified with one technologist): (1) direct flake-to-fibre, where hot-washed flakes are fed straight to the spinning extruder with melt filtration and the pellet step is skipped, used by the large rPSF makers (Ganesha Ecosphere, Reliance's Recron GreenGold, JB Ecotex, Pashupati/Polygenta type plants), running at or near 100% recycled input for coarse and mid deniers; (2) flake to pellet, with SSP for IV recovery, then spinning, for finer deniers, POY/FDY filament and sheet, which is the route where the fibre-grade pellet spec of IV 0.70–0.78 dl/g (Polymer Circle, 27 Feb 2024) matters; (3) chemical (glycolysis to BHET) recycling, announced at pilot or demonstration scale in India and not a pilot-relevant buyer. What a fibre maker wants recorded on an rPET lot: form (flake vs pellet), wash grade, IV (dl/g) with test method, moisture %, PVC ppm, polyolefin ppm, metal ppm, fines %, glue/label %, colour class or L*a*b*, bulk density, melting point/DSC, ash %, source (post-consumer bottle vs post-industrial; whether food-grade origin), recycled content %, the upstream lot lineage for EPR recycled-content certificates, and a COA per batch. Chain-by-chain checks of the process-chain sheet: HDPE: 'milk-bottle grade' is a Western descriptor; Indian HDPE arrives as jerry cans, lube-oil bottles, drums, crates and caps, so grade by drum/can natural, coloured, black and crate, with an oil-contamination deduction for lube bottles, and route pesticide containers out as hazardous waste; float-sink separates HDPE/PP from PET but not from each other, so add a manual or NIR PP/HDPE split step; 'IS 4984 for pipes' is out of place because IS 4984 (PE pipes for water supply) requires virgin compound, so rHDPE markets are non-pressure pipes, crates, dustbins, monofilament (dori) and drums for non-food use (check the standard text). LDPE film: Bengaluru trade splits HM (HDPE film bags) from LD (LDPE) and rinsed milk pouches from carry bags, so three bale codes are needed rather than one; multilayer packets go to cement co-processing or EPR end-of-life, not the agglomerator; compostable Nandini pouches (rolled out from July 2025) must be kept out; add 'agglomerate' as a saleable state before pellets. PP: add woven sacks/raffia (bori) as the largest Indian PP stream, declare filler/talc/CaCO3 and ash %, treat black PP as lowest grade, and keep BOPP film with films; battery casings correctly go only to registered battery recyclers (BWM Rules 2022). Paper: the ISRI grade numbers need care (11 is OCC, 58 is sorted clean news, 37 sorted office, 54 mixed, 12/13 double-sorted OCC; moisture ≤12%, prohibitives ≤1% for OCC); 'PRE-PROCESSOR (pulper) selling recycled pulp' is not a real Indian role, mills pulp bales themselves, so the paper pre-processor is the baler/sorter and the sheet's KSPCB codes (Red 1149/1150, White 3) are from the 2016 list that the founder's own cross-reference sheet says the 2025 CPCB list supersedes; add beverage cartons as a separate mill route and ETP sludge and plastic rejects (RDF) as by-products. Ferrous: HMS ISRI 200–206 and IS 2549:2023 are right; add re-rollable scrap (plates, rails) to re-rolling mills, stainless by series, cast iron and turnings with oil deduction; end-of-life vehicles must now go through Registered Vehicle Scrapping Facilities under the ELV Rules 2025 (S.O. 98(E), in force 1 Apr 2025), which are the legal pre-processor and the only source of ELV EPR certificates; auto shredders are rare in India, so shred 210/211 is mostly an import grade; GST reverse charge and 2% TDS apply on metal scrap since 10 Oct 2024. Aluminium: 'UBC <7% other metals' is not an ISRI condition (UBC code words Taldon/Talcred/Taldack/Taldork require freedom from lead, steel and plastic; free lead means rejection); UBC volumes are small in India and the real streams are utensils, extrusion offcuts, foil, wire (Tall/Talon) and castings (Tense); 'Al 98–99.7% ingot' is wrong for secondary smelters, whose main product is casting alloy ingot (ADC12/LM24 per IS 617, roughly 85% Al) plus de-oxidiser shots for steel plants; BIS's aluminium scrap standard was still pending on 8 Jul 2026 (Tribune). Copper: ISRI words are right; 'ISRI 2400-series' is not a known code family (India's tariff line is 7404 00 12); granulator chops trade on assayed Cu %, PVC insulation regrind is a saleable by-product, jelly-filled cable needs washing and armoured cable a steel fraction; add brass utensils to brass-ingot makers (Jamnagar cluster) as the dominant brass route; the reverse-charge rule applies. Tyres: waste tyres sit under HOWM Schedule IX (GSR 593(E), 21 Jul 2022) with EPR from 2024-25, and retreaders issue retreading certificates, so add a retread triage step; the founder's '1–4 mm crumb' is granulate for tiles/turf, while CRMB and reclaim buy 30/40/60 mesh powder, so keep chips (TDF to cement kilns), granulate and powder as three states; only 296 of 736 pyrolysis plants were registered (Reporters' Collective, Feb 2026), so gate pyrolysis buyers by CPCB registration; record the EPR product type because certificates use fixed conversion factors. Lead-acid: the Batteries (M&H) Rules 2001 are replaced by BWM Rules 2022 (S.O. 3984(E), 22 Aug 2022) with CPCB's July 2026 collection, handling, storage and transport guidelines; dealing with unregistered handlers is a violation, so kabadiwalas may collect and hand over but never break; ISRI words per the repo's tariff crosswalk are Rink (wet whole) and Rains (drained), 'Rails/Rakes' could not be verified; LME-grade lead is 99.97% not 99.9% (unconfirmed); recovery target automotive/industrial 60% and recycled-content 40%. E-waste: the E-Waste (Management) Rules 2022 (in force 1 Apr 2023) removed 'dismantler' as a registration class, so 'AUTHORISED dismantler (Red 1120/1121)' should read 'CPCB-registered recycler (dismantles in-house) or refurbisher'; collection is limited to registered producers, recyclers and refurbishers; certificates are kg of recovered Fe/Al/Cu/Au, with the Rs 22/kg floor in court; CRT glass is leaded hazardous glass; boards are valued on Cu and Au assay and often exported for precious-metal recovery. Used oil: no 'Category I–V' exists in the HOWM Rules; Schedule V specs apply (limits not confirmable here); EPR for used oil (GSR 677(E), 18 Sep 2023, in force 1 Apr 2024) allows only registered collection agents to collect, so yards and kabadiwalas should not buy it; acid-clay re-refining is a legacy route producing hazardous acid sludge and CPCB favours vacuum distillation/thin-film plus hydrofinishing; add transformer oil PCB screening. Glass: bottle reuse (beer, spirits) comes before cullet; exclude window, borosilicate, bulbs, mirrors and CRT; sizing '8–40 mm' and the '<25 ppm' limit are unconfirmed and should come from the buying furnace. C&D: the C&D facility is in the CPCB 2025 Blue category per the founder's own cross-reference, not Orange 1414; new C&D rules with EPR from 1 Apr 2026 are listed in the repo as 'to verify'; call the fine fraction 'recycled sand', not manufactured sand, and carry the IS 383 use classes and water absorption. Textiles: the sheet omits post-industrial garment cuttings (katran), Bengaluru's biggest textile stream, which go to open-end spinning and shoddy; sort by fibre and colour; Panipat is the shoddy hub. Solar: PV modules are in Schedule I of the E-Waste Rules 2022 (CEEW group), producers must store waste modules until 2034-35 and CPCB's storage guideline is pending, so the pilot should only record and route to registered recyclers; 'laminate fluff HW-tagged per e-waste rules' is wrong (hazard tagging would come under HOWM, not the e-waste rules); add a refurbisher/reuse step for working panels; module composition figures were not confirmable. Missing chains in the sheet: PVC (footwear, pipes), PS/ABS/EPS, MLP, lithium-ion black mass (present only in the lifecycle sheet), stainless steel and wood.",
+      "status": "partly",
+      "decision": "Correct the sheet now: delete DMT from the PSF step and keep monomers only on virgin and chemical-recycling records; add direct flake-to-fibre as the default Indian rPSF route; split film into HM/LD/milk pouch; replace 'authorised dismantler' with 'registered recycler/refurbisher'; add RVSF for vehicles, retreader for tyres, registered collection agent for used oil, refurbisher for panels; re-map every KSPCB 2016 code to the CPCB 2025 list before hard-coding; keep PVC, PS/ABS, MLP, Li-ion, stainless and wood as follow-on rows.",
+      "whoToAsk": "One rPSF plant technologist (Ganesha Ecosphere or Reliance Recron) for route, rPET share and lot COA fields; one Karnataka PET flaker for wash temperatures and IV; a KSPCB consent consultant for the 2016-to-2025 code mapping; an environmental lawyer for the e-waste, battery and used-oil role wording; the BIS text of IS 4984 and IS 617 to confirm the virgin-only and alloy points.",
+      "sources": [
+        {
+          "title": "snippet: I.V. levels in the recycled PET (rPET) — Polymer Circle",
+          "url": "https://polymercircle.com/index.php/2024/02/27/i-v-levels-in-rpet/",
+          "date": "2024-02-27"
+        },
+        {
+          "title": "snippet: FSSAI issues comprehensive guidelines for use of recycled PET in FCM (23 May 2025) — Corporate Professionals",
+          "url": "https://www.corporateprofessionals.com/regulatoryupdate/fssai-issues-comprehensive-guidelines-for-use-of-recycled-pet-in-food-contact-materials-fcm-rpet/",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: Reprocessed PET flakes, recycled PET chips — Plastemart",
+          "url": "https://www.plastemart.com/plastics-polymers/reprocessed-pet/905",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Reprocessed HDPE granules — Plastemart",
+          "url": "https://www.plastemart.com/plastics-polymers/reprocessed-hdpe/891",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: E-Waste (Management) Rules 2022, G.S.R. 801(E), Schedule I (CPCB copy)",
+          "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/e-waste_rules_2022.pdf",
+          "date": "2022-11-02"
+        },
+        {
+          "title": "prior brief: FAQs under E-Waste (Management) Rules 2022 — CPCB",
+          "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "2024-01-23"
+        },
+        {
+          "title": "prior brief: Battery Waste Management Rules 2022, S.O. 3984(E) — MoEFCC (CPCB copy)",
+          "url": "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+          "date": "2022-08-22"
+        },
+        {
+          "title": "prior brief: CPCB guidelines for collection, handling, storage and transportation of waste batteries",
+          "url": "https://eprbattery.cpcb.gov.in/upload/adminDoc/Guidelines%20for%20Collectio,%20Handling,%20Storage%20and%20Transportation%20of%20Waste%20Batteries.pdf",
+          "date": "2026-07"
+        },
+        {
+          "title": "prior brief: Hazardous and Other Wastes Amendment Rules 2022 (Schedule IX, waste-tyre EPR) — LegitQuest",
+          "url": "https://www.legitquest.com/act/hazardous-and-other-wastes-management-and-transboundary-movement-amendment-rules-2022/c345",
+          "date": "2022-07-21"
+        },
+        {
+          "title": "prior brief: Guidance document for EPR certificates for waste tyres (conversion factors) — CPCB",
+          "url": "https://eprtyres.cpcb.gov.in/assets/Guidance_Document_for_Generation_and_Transfer_of_EPR_Certificate_for_wastetyremanagement.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: India is becoming the world's waste tyre furnace (296 of 736 pyrolysis plants registered) — Reporters' Collective",
+          "url": "https://www.reporters-collective.in/trc/india-is-becoming-worlds-waste-tyre-furnace",
+          "date": "2026-02"
+        },
+        {
+          "title": "prior brief: Hazardous and Other Wastes Second Amendment Rules 2023 (EPR for used oil) — MoEFCC via CPCB",
+          "url": "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf",
+          "date": "2023-09-18"
+        },
+        {
+          "title": "prior brief: Used Oil EPR portal: collection agents and notices — CPCB",
+          "url": "https://eprusedoil.cpcb.gov.in/",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: Environment Protection (End-of-Life Vehicles) Rules 2025, S.O. 98(E) — MoEFCC",
+          "url": "https://eprelv.cpcb.gov.in/static/doc/ELV_Rules_2025.pdf",
+          "date": "2025-01-06"
+        },
+        {
+          "title": "prior brief: BIS compendium listing IS 2549:2023 Processed ferrous scrap",
+          "url": "https://www.services.bis.gov.in/tmp/compendium_2025-06-09-11-30-20.pdf",
+          "date": "2025-06-09"
+        },
+        {
+          "title": "prior brief: ISRI Scrap Specifications Circular 2024 (ReMA)",
+          "url": "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf",
+          "date": "2024-04"
+        },
+        {
+          "title": "prior brief: HSN 76020010 aluminium scrap with ISRI code words — Comercinate",
+          "url": "https://comercinate.com/hsn-code/76020010/",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: Aluminium Association of India urges Centre to notify BIS standard for aluminium scrap — The Tribune",
+          "url": "https://www.tribuneindia.com/news/aluminium-quality/aluminium-association-of-india-urges-centre-to-notify-bis-standards-for-aluminium-scrap",
+          "date": "2026-07-08"
+        },
+        {
+          "title": "prior brief: TDS and GST under RCM on supply of metal scrap from 10.10.2024 — VJM Global",
+          "url": "https://www.vjmglobal.com/blog/tds-and-gst-under-rcm-on-supply-of-metal-scrap",
+          "date": "2024"
+        },
+        {
+          "title": "prior brief: Paper waste recycling in India — IPPTA",
+          "url": "https://ippta.co/wp-content/uploads/2023/11/88-94.pdf",
+          "date": "2023-11"
+        },
+        {
+          "title": "prior brief: KMF rolls out biodegradable Nandini packets in Bengaluru — The Earth View",
+          "url": "https://theearthview.in/nandini-milk-goes-green-kmf-rolls-out-biodegradable-packets-in-bengaluru/",
+          "date": "2025-07-22"
+        },
+        {
+          "title": "snippet: Premium Crumb Rubber Modified Bitumen (30/40/60 mesh; IS 15462; IRC SP 53) — Hincol",
+          "url": "https://hincol.in/crumb-rubber-modified-bitumen/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IS 383:2016 maximum utilisation of recycled concrete aggregate — Zonetech",
+          "url": "https://zonetech.in/question-answer/as-per-is-383--2016-the-maximum-utilization-of-recycled-concrete-aggre-ad3fb5059dcc",
+          "date": "undated"
+        },
+        {
+          "title": "prior brief: Solid Waste Management Rules 2026, S.O. 388(E) (CPCB copy)",
+          "url": "https://cpcb.gov.in/uploads/MSW/SWM_2026.pdf",
+          "date": "2026-01-27"
+        },
+        {
+          "title": "founder input: refined-roles-material-chains sheets 2 and 4 (process chains; CPCB 2025 cross-reference incl. Blue-category C&D facility), repo path docs/plan/inputs/2026-09-30-founder-research-part-1/",
+          "url": "https://kspcb.karnataka.gov.in/consent-management/Notification_1425.pdf",
+          "date": "2016-06-15"
+        }
+      ]
+    }
+  ]
+}

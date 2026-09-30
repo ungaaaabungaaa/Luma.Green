@@ -1,0 +1,203 @@
+{
+  "cluster": "CPCB 2025 industry classification and consents",
+  "answers": [
+    {
+      "question": "What exactly did CPCB's January 2025 'Classification of Sectors into Red, Orange, Green, White and Blue Categories' change: how many sectors are in Annexure I (359 with 107/120/81/51 or 419 with 125/137/94/54/9), what pollution-index ranges define each colour, what the new Blue category means for consent validity, has KSPCB adopted the 2025 list in place of its 2016 Notification 1425 list, and what consent validity applies now to Red, Orange, Green and Blue units in Karnataka?",
+      "answer": "Both of the founder's numbers are right, they count different things: the report (published 22 January 2025, issued to every SPCB as a binding direction under s.18(1)(b) on 12 February 2025, replacing the 2016 directions) classifies 419 sectors in all — Red 125, Orange 137, Green 94, White 54, Blue 9 — and of these the 'Industrial Sectors' group is 359 (107 Red, 120 Orange, 81 Green, 51 White); the remaining 60 are 9 Blue 'essential environmental services' and 51 service/infrastructure sectors (18 Red, 17 Orange, 13 Green, 3 White), so use 419 as the master list and 359 only as the industrial subset. The pollution index still gives equal weight to water, air and hazardous-waste scores: Red PI 80 and above, Orange 55 to below 80, Green 25 to below 55, White below 25; Blue is not a PI band but a label on 9 domestic-waste services (MSW management facility incl. sanitary landfill/RDF, waste-to-energy plant, bio-mining of legacy waste, MSW bio-methanation 5 TPD or more, MSW composting 5 TPD or more, MSW material recovery facility 5 TPD or more, C&D waste processing plant, STP 5 MLD and above, STP below 5 MLD) — note that e-waste collection is NOT in the Blue list the state boards publish, contrary to the founder's note. Each Blue sector keeps its own PI, so consent fees and base validity follow the colour that PI would give, and CPCB directs that Blue units get two extra years of consent-to-operate validity on top of that base (widely reported as 5 + 2 = 7 years, but the base is whatever the state gives that PI band). On Karnataka: the 12 February 2025 direction binds KSPCB, KSPCB's own categorisation page follows the CPCB list and states that White units are 'not included in the consent mechanism' (checked 29 September 2026 in an earlier run), and the earlier research already treats the 2016 Notification 1425 list as superseded; however no Karnataka-specific adoption circular or date could be confirmed from any snippet — the '28 March 2025, effective 30 March 2025, circular KSPCB/258/2025-SEE-1' results that come up are the KERALA board's, not Karnataka's, so do not cite them for Bengaluru. Karnataka's consent-to-operate validity is longer than the founder's 2016-era note (5/5/10): KSPCB's notification of 3 June 2019 sets Red 5 years, Orange 10 years, Green 15 years for large, medium and small units, and for micro units (investment under Rs 25 lakh) Red 5, Orange 10 and Green a one-time permanent consent; the integrated Consent-cum-Authorisation (CCA) order carries the same 5/10/15 years. White needs no consent at all under G.S.R. 702(E)/703(E) of 12 November 2024 (amended 28 July 2025 to cover every sector with PI up to 25 per the 2025 list), only a written intimation/self-declaration to KSPCB. Whether KSPCB has actually started issuing Blue consents with the extra two years, and how it treats a DWCC below 5 TPD, is not visible on any public page found.",
+      "status": "partly",
+      "decision": "Hard-code 419 sectors (359 industrial + 9 Blue + 51 service) with the PI bands Red >=80, Orange 55-79, Green 25-54, White <25; store Karnataka validity as Red 5 / Orange 10 / Green 15 years (micro Green permanent), Blue = PI-band validity + 2 years, White = no consent; keep every value as dated rulebook data and drop 'e-waste collection' from the Blue list.",
+      "whoToAsk": "KSPCB head office (Church Street, Bengaluru) or the Bengaluru regional office: confirm the Karnataka circular adopting the 2025 list, that Blue units get the +2 years, and how a sub-5 TPD dry-waste centre is categorised; an environmental consultant who files on XGN can confirm current practice in a phone call.",
+      "sources": [
+        {
+          "title": "snippet: CPCB report – Classification of Sectors into Red, Orange, Green, White and Blue Categories (Assam PCB copy)",
+          "url": "https://www.pcbassam.org/Report_on_Classification_of_Sectors_2025_1737901761.pdf",
+          "date": "2025-01-26 (file timestamp)"
+        },
+        {
+          "title": "snippet: CPCB – Categorization of industrial sectors (directions of 12.02.2025)",
+          "url": "https://cpcb.nic.in/categorization-of-industrial-sectors/",
+          "date": "2025-02-12"
+        },
+        {
+          "title": "snippet: Vision IAS – CPCB revises classification of industries (419 = 125/137/94/54/9; PI bands)",
+          "url": "https://visionias.in/current-affairs/news-today/2025-04-08/environment/central-pollution-control-board-cpcb-revises-classification-of-industries",
+          "date": "2025-04-08"
+        },
+        {
+          "title": "snippet: Gokulam Seek IAS – 359 industrial sectors: 107 Red, 120 Orange, 81 Green, 51 White",
+          "url": "https://gokulamseekias.com/prelims-c-a/environment/pollution/cpcbs-revised-classification-of-industries/",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: TeamLease RegTech – CPCB directions on harmonisation of classification (Blue: +2 years CTO validity)",
+          "url": "https://www.teamleaseregtech.com/updates/article/41310/cpcb-issued-directions-regarding-the-harmonization-of-the-classificati/",
+          "date": "2025-02-12"
+        },
+        {
+          "title": "snippet: Khaitan & Co – CPCB introduces BLUE category (report published 22 Jan 2025; SPCBs may grant +2 years)",
+          "url": "https://www.khaitanco.com/thought-leadership/CPCB-introduces-BLUE-category-for-essential-environmental-services",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: HP PCB – List of Blue category sectors (9 sectors)",
+          "url": "https://hppcb.nic.in/pdf/pollution_Index/Blue_Categ.pdf",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: TeamLease RegTech – KSPCB prescribes CTO validity Red 5 / Orange 10 / Green 15 years (notification 3 June 2019)",
+          "url": "https://www.teamleaseregtech.com/updates/article/5774/kspcb-prescribes-the-validity-period-for-consent-to-operate-for-red-or/",
+          "date": "2019-06-03"
+        },
+        {
+          "title": "snippet: TeamLease RegTech – KSPCB integrated CCA order validity 5/10/15 years",
+          "url": "https://www.teamleaseregtech.com/updates/article/33231/kspcb-issued-a-notification-regarding-the-integration-of-consent-for-o/",
+          "date": "2024"
+        },
+        {
+          "title": "snippet: KSPCB – Validity and Periodicity of Consent / Authorization",
+          "url": "https://kspcb.karnataka.gov.in/validity-and-periodicity-consent-authorization",
+          "date": "accessed 2026-09-30 (not opened)"
+        },
+        {
+          "title": "snippet: KSPCB – Categorisation (R,O,G); White not in consent mechanism",
+          "url": "https://kspcb.karnataka.gov.in/consent-management/categorisation-rog",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "snippet: TeamLease RegTech – Kerala SPCB circular KSPCB/258/2025-SEE-1 adopting the 2025 list (Kerala, not Karnataka)",
+          "url": "https://www.teamleaseregtech.com/updates/article/45790/kspcb-notified-regarding-the-classification-of-sectors-under-red-orang/",
+          "date": "2025-03-28"
+        },
+        {
+          "title": "snippet: PIB – MoEFCC gazette notifications G.S.R. 702(E) and 703(E) exempt White units from CTE/CTO",
+          "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2073234",
+          "date": "2024-11-12"
+        },
+        {
+          "title": "snippet: TeamLease RegTech – MoEFCC amends the White-category notification (PI up to 25, Classification-2025 schedule)",
+          "url": "https://www.teamleaseregtech.com/updates/article/45081/moefcc-amends-water-act-notification-for-white-category-industries/",
+          "date": "2025-07-28"
+        },
+        {
+          "title": "snippet: Business Standard – White category industries no longer need SPCB approval (39 industries in the 2024 list)",
+          "url": "https://www.business-standard.com/industry/news/white-category-industries-no-longer-need-state-pollution-board-approval-124111302019_1.html",
+          "date": "2024-11-13"
+        },
+        {
+          "title": "snippet: Down To Earth – critique of the Blue category (waste-to-energy)",
+          "url": "https://www.downtoearth.org.in/waste/blue-washing-new-categorisation-by-cpcb-promotes-highly-polluting-incineration-industry",
+          "date": "2025"
+        }
+      ]
+    },
+    {
+      "question": "Under the 2025 classification and G.S.R. 702(E) of 12 November 2024, which of Luma.Green's roles need which consent: kabadiwala shop, baling yard, dry-waste centre or MRF, PET flake line, plastic granulator, cable granulator, tyre shredder, C&D crusher, e-waste dismantler, battery breaker, used-oil re-refiner, compounder? For each, the category, consent or authorisation, issuing body, what the public register shows, and the fee band.",
+      "answer": "The consent colour follows the process, not the material, and two separate layers apply to every role: (a) KSPCB consent under the Water and Air Acts (CTE then CTO, filed on XGN; White units file only a written self-declaration/intimation under G.S.R. 702(E)/703(E) as amended 28 July 2025), and (b) the waste-rule registration or authorisation for the stream handled (PWM, E-waste, Battery, HOWM/used oil, tyre EPR, C&D, SWM 2026), most of which are granted on CPCB's EPR portals with KSPCB as the state gate. Role by role, from the 2025 list as quoted in snippets: KABADIWALA (collect, sort, store) – White or not listed at all ('collection centres without depollution, dismantling and shredding' are White), so no KSPCB consent, only the self-declaration plus a GBA trade licence and, from 1 April 2026, local-body registration under SWM Rules 2026 rule 9 if it sorts; register shows nothing on XGN. BALING YARD – 'bailing (hydraulic press) of waste papers' is White (the founder's 'White 3'), same treatment; a yard that also shreds or regrinds plastic moves to Orange. DRY-WASTE CENTRE / MRF – 'MSW material recovery facility 5 TPD or more' is Blue (consent per its PI colour plus two extra years); a DWCC below 5 TPD is not in the Blue list and its colour could not be confirmed (default: White/self-declaration, confirm with KSPCB), while SWM 2026 registration with the city corporation applies either way. PET FLAKE/WASH LINE and PLASTIC GRANULATOR – plastic flakes/granules ('reprocessing of waste plastic') are Orange (KSPCB codes 1326/1366 in the old list), so CTE + CTO from KSPCB (10-year Orange validity) plus Plastic Waste Processor registration under PWM Rules (KSPCB plastics page; CPCB EPR-plastic portal lists registered PWPs and issues certificates only to them). CABLE GRANULATOR – if the cable is from e-waste it is 'e-waste dismantling/recycling (mechanical processing only)', Red, and needs E-Waste Rules 2022 registration on CPCB's eprewaste portal; a plain scrap-cable granulator is not confirmed from any snippet (earlier note: copper recovery from scrap is Orange; non-ferrous EPR under G.S.R. 438(E) applies from 1 April 2026 but the portal is not live). TYRE SHREDDER / CRUMB – colour not confirmed from any snippet (pyrolysis is Orange for advanced/continuous units since the 23 Oct 2023 committee, Red under the old KSPCB code 1424), and every tyre recycler must register on the CPCB waste-tyre EPR portal (HOWM Rules Sch. IX) plus the 2025 pyrolysis SOP. C&D CRUSHER – Blue (C&D waste processing plant), consent per PI plus two years, and recycler registration on cdwm.cpcb.gov.in under the C&D Rules 2025 (G.S.R. 219(E)). E-WASTE DISMANTLER – Red, CTE/CTO plus E-Waste Rules 2022 registration on eprewaste.cpcb.gov.in; only registered entities may collect or receive e-waste. BATTERY BREAKER – 'lead recycling (lead-acid batteries with acids)' is Red, needs CTE/CTO plus hazardous-waste authorisation and recycler registration on eprbattery.cpcb.gov.in under the Battery Waste Management Rules 2022, and dealing with unregistered entities is itself a violation. USED-OIL RE-REFINER – colour not confirmed from a snippet (it is a hazardous-waste recycler, historically Red), needs HOWM authorisation from KSPCB and recycler registration on eprusedoil.cpcb.gov.in (EPR live since 1 April 2024; collectors must register too). COMPOUNDER – not confirmed: compounding virgin pellets is a plastic-products activity (likely Green), compounding with recycled feed is plastic reprocessing (Orange); treat as Orange until the sub-sector row is read. Public register: KSPCB's XGN 'All Consent Orders' page shows unit name, category colour, order number and validity; the CPCB EPR portals show registered PWPs, e-waste, battery, tyre and used-oil recyclers; BSWML lists authorised processors. Fee band: KSPCB charges an annual consent fee by capital-investment slab, collected upfront for the validity period (a 2023 KSPCB notice lets zonal officers accept a shorter period); only the top slab is confirmed from the official page (above Rs 1,000 crore: Red Rs 2,00,000, Orange Rs 1,75,000, Green Rs 1,50,000 per year) and a 2009 press figure gives the floor as Rs 200/150/100 per year from Rs 1 lakh investment, so the current small-unit slabs (Rs 1 lakh to Rs 5 crore) are an open item to read off the KSPCB Consent Fee page; White is free, and Blue pays at its PI colour (confirmed for Kerala, assumed for Karnataka).",
+      "status": "partly",
+      "decision": "Onboarding checklist per role: kabadiwala and paper/plastic baling yard = trade licence + White self-declaration + SWM 2026 local-body registration, no KSPCB consent asked; DWCC/MRF and C&D plant = Blue consent (colour by PI) + city registration; PET flake, granulator, compounder = Orange CTO (10 years) + PWP registration; e-waste dismantler, battery breaker, used-oil re-refiner = Red CTO (5 years) + the CPCB portal registration for that stream, and the admin verifies the XGN order and portal ID before any lot can be routed; tyre shredder and cable granulator = consent colour to confirm, tyre/e-waste portal registration mandatory. Store colour, order number, validity and portal IDs as dated data.",
+      "whoToAsk": "KSPCB Bengaluru regional office for the colour of sub-5 TPD DWCCs, scrap-cable granulators, tyre shredders, used-oil re-refiners and compounders under the 2025 list and the current fee slabs; an XGN-filing environmental consultant for practice; ten pilot yards/recyclers to show their actual consent orders and portal certificates.",
+      "sources": [
+        {
+          "title": "snippet: CPCB report – Classification of Sectors 2025 (White: waste-paper baling, collection centres; Orange: plastic flakes/granules; Red: lead-acid battery recycling, e-waste)",
+          "url": "https://www.pcbassam.org/Report_on_Classification_of_Sectors_2025_1737901761.pdf",
+          "date": "2025-01-26 (file timestamp)"
+        },
+        {
+          "title": "snippet: Revised list of Red category industries (e-waste dismantling/recycling Red; lead recycling Red)",
+          "url": "http://www.bio360.in/wp-content/uploads/2025/05/Industries-Category-Norm.pdf",
+          "date": "2025-05"
+        },
+        {
+          "title": "snippet: HP PCB – Blue category list (MRF >= 5 TPD; C&D processing plant)",
+          "url": "https://hppcb.nic.in/pdf/pollution_Index/Blue_Categ.pdf",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: MPCB circular on White category (waste-paper bailing listed White; self-declaration)",
+          "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Circular_White_Category_MPCB_16062025.pdf",
+          "date": "2025-06-16"
+        },
+        {
+          "title": "snippet: PIB – G.S.R. 702(E)/703(E): White units exempt from CTE/CTO",
+          "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2073234",
+          "date": "2024-11-12"
+        },
+        {
+          "title": "snippet: TeamLease RegTech – MoEFCC amendment: White = PI up to 25, written intimation to SPCB",
+          "url": "https://www.teamleaseregtech.com/updates/article/45081/moefcc-amends-water-act-notification-for-white-category-industries/",
+          "date": "2025-07-28"
+        },
+        {
+          "title": "snippet: Legal Update QHSE – Tyre pyrolysis SOP mandatory from 2025; TPO Orange for advanced/continuous units (CPCB committee 23 Oct 2023)",
+          "url": "https://legalupdate.qhsealert.com/tyre-pyrolysis-sop-compliance-mandatory-from-2025/",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: KSPCB – Consent Fee (capital-investment slabs; top slab Red 2,00,000 / Orange 1,75,000 / Green 1,50,000)",
+          "url": "https://kspcb.karnataka.gov.in/consent-management/consent-fee",
+          "date": "accessed 2026-09-30 (not opened)"
+        },
+        {
+          "title": "snippet: Business Standard – KSPCB fee ranges Rs 100–1.5 lakh Green, 150–1.75 lakh Orange, 200–2 lakh Red by capital investment",
+          "url": "https://www.business-standard.com/article/sme/pollution-board-s-high-fees-hit-small-and-medium-industries-in-karnataka-109102700016_1.html",
+          "date": "2009-10-27"
+        },
+        {
+          "title": "snippet: TeamLease RegTech – KSPCB lets zonal SEOs accept consent fee for a shorter period than the mandatory period",
+          "url": "https://www.teamleaseregtech.com/updates/article/29931/kspcb-notified-regarding-authorizing-respective-zonal-senior-environme/",
+          "date": "2023"
+        },
+        {
+          "title": "snippet: KSPCB – XGN online consent and authorisation applications (CFE/CFO, HWM, PWM, EWM, BMW)",
+          "url": "https://kspcb.karnataka.gov.in/xgn-online-consent-applications-cfecfexp-cfo-authorisation-hwm-pwm-ewm-bmw-rogw-login-here",
+          "date": "accessed 2026-09-30"
+        },
+        {
+          "title": "KSPCB XGN – public register of consent orders",
+          "url": "https://xgn.karnataka.gov.in/CSHARP/ALLConsentOrder.aspx",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "KSPCB – Plastics Rules (registration of PIBOs and plastic waste processors)",
+          "url": "https://kspcb.karnataka.gov.in/waste-management/plastics-rules",
+          "date": "accessed 2026-09-29"
+        },
+        {
+          "title": "CPCB – FAQs under E-Waste (Management) Rules 2022 (only registered entities may collect/receive e-waste)",
+          "url": "https://cpcb.gov.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "2024-01-23"
+        },
+        {
+          "title": "CPCB – Battery Waste Management Rules 2022 (recycler registration; SPCB keeps the list)",
+          "url": "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+          "date": "2022-08-22"
+        },
+        {
+          "title": "CPCB Used Oil EPR portal – collection agents and recyclers must register (EPR from 1 Apr 2024)",
+          "url": "https://eprusedoil.cpcb.gov.in/aboutus",
+          "date": "2024-04-01"
+        },
+        {
+          "title": "CPCB Waste Tyre EPR portal (HOWM Amendment Rules 2022, Schedule IX)",
+          "url": "https://eprtyres.cpcb.gov.in/",
+          "date": "2022-07-21"
+        },
+        {
+          "title": "Gazette S.O. 388(E) – Solid Waste Management Rules 2026 (rule 9 registration of sorting entities with the local body)",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "snippet: SCC Online – HOWM Amendment Rules 2025 (G.S.R. 438(E)), non-ferrous EPR and CPCB portal from 1 Apr 2026",
+          "url": "https://www.scconline.com/blog/post/2025/07/04/hazardous-waste-management-rules-epr-amendment-2025/",
+          "date": "2025-07-04"
+        },
+        {
+          "title": "Greater Bengaluru Authority – online trade licence",
+          "url": "https://trade.bbmpgov.in/",
+          "date": "accessed 2026-09-29"
+        }
+      ]
+    }
+  ]
+}

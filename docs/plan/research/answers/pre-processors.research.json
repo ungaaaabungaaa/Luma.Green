@@ -1,0 +1,323 @@
+{
+  "cluster": "Pre-processors in Bengaluru and Karnataka",
+  "answers": [
+    {
+      "question": "Who are the pre-processors within about 150 km of Bengaluru that turn yard bales and lots into factory feedstock (PET flake/washing lines, plastic reprocessors, cable granulators, tyre shredders/crumb/pyrolysis, C&D plants, ELV/RVSFs, e-waste dismantlers, used-oil re-refiners, foundry-sand reclaimers)? Give counts, names, capacities and clusters.",
+      "answer": "Plastics (Orange 1326/1366): CPCB's Karnataka plastic-recycler list (as on 01-03-2022) names units and capacities, e.g. Keerthana Enterprises Unit-2, Peenya (1,320 MT/yr), Anwar Enterprises, Yeshwanthpura (600 MT/yr), RNZ Recycling, Kumbalagodu (1,560 MT/yr), Prem Industries, Peenya, and Ishvarya Traders, Jigani (3,000 MT/yr); a CPCB status snippet puts Karnataka at 143 recycling units with 2.10 lakh tonnes/yr capacity, and the 2020-21 CPCB annual report counted 239 plastic manufacturing/recycling units plus 128 unregistered ones, so a current count must come from the CPCB EPR plastic portal PWP list, which could not be opened. No named PET hot-wash flake line near Bengaluru was confirmed from any snippet; Bengaluru listings show PET-flake traders and washing-line machinery vendors (R Mech Machines sells lines into Karnataka), so PET-flake capacity within 150 km is an open item. E-waste (Red 1120): KSPCB has authorised 27 collection centres, 42 dismantlers, 24 recyclers and 14 recycler-cum-dismantlers (Deccan Herald, undated snippet); named units are E-Parisaraa (Dobaspet KIADB, about 50 km out on the Tumkur road, India's first authorised recycler), Ash Recyclers, Thimmaiah Road (52,722 MT/yr on a CPCB list), Cerebra Integrated Technologies (up to 90,000 t/yr), Eco-E-Waste Recyclers and Nobel Technology (300 MT/yr each on the older list), plus Attero/Ecobirdd collection presence. Tyres (Orange 1424): a Quint report says Karnataka had 34 tyre-pyrolysis units, of which 12 complied with the CPCB SOP, 3 shut and 19 were non-compliant, and KSPCB issued closure orders to 8; the CPCB waste-tyre EPR portal (eprtyres.cpcb.gov.in) holds the current recycler list by state but no Karnataka-specific names or crumb-rubber capacities appeared in snippets. C&D (Orange 1414): Bengaluru generates 2,000-2,500 t/day; Rock Crystals at Chikkajala is rated 1,000 TPD but ran at about 10% (around 200 t/day) for lack of demand, the Kannur plant is 750 TPD, a Jigani unit also receives debris, the two BBMP plants get only 100-200 t/day, and Chaitra Civil Ventures won a Rs 1,052-crore, 15-year contract to feed 1,750 t/day to Kannur and Chikkajala (Deccan Herald, undated snippet). ELV (Orange 1405): Karnataka's first RVSF is Mahindra MSTC Recycling (CERO) at Sy. No. 67, Haradiapura, Vijayapura/Devanahalli, Bengaluru Rural 562135, about 25,000 vehicles/yr with room to expand; Koratagere and Koppal RVSFs were announced but their status could not be confirmed. Used oil: the MoEF/CPCB registered re-refiner list includes Lube Tech Petrochemicals, Veerasandra (1,440 KL/yr), Balaji Refineries, Veerasandra (1,100 KL/yr), Arun Industries, Peenya 3rd Stage (360 KL/yr), Nakoda Petrochemical, Tumkur, and Century Refineries at Hoskote holds KSPCB consent and CPCB registration. Lead-acid batteries (a CPCB list, 672 units nationally, 32 in Karnataka with 419,056 MTA): Sri Ponni Industries, Bommasandra (5,000 MTA), Veera Narayana Metal Industries, Magadi taluk (36,000 MTA), Evershine Smelting, Attibele (3,200 MTA), Sri Saraswathi Industries, Veerasandra (3,200 MTA), Mekala Metal Works (3,000 MTA). Cable granulation and foundry-sand reclamation are mostly in-house or trader-run (Urban Eco Recyclers advertises automated cable granulation in Bengaluru; Belgaum Foundry Cluster runs a 10-tonne green-sand reclamation plant, but Belagavi is about 500 km away), so no standalone Bengaluru cable-granulator or sand-reclaimer count exists. Clusters confirmed by addresses: Peenya (plastics, used oil), Bommasandra-Attibele-Veerasandra-Jigani (batteries, used oil, plastics), Dobaspet/Nelamangala-Tumkur road (e-waste, hazardous-waste zone), Kumbalagodu-Kengeri (plastics), Devanahalli-Chikkajala-Kannur-Bagalur (ELV, C&D), Hoskote (used oil).",
+      "status": "partly",
+      "decision": "Seed the pre-processor role with the named units above (about 20) and treat capacity as a self-declared field; before the pilot, pull the CPCB EPR plastic-portal PWP list for Karnataka and the KSPCB e-waste list to fill the counts, and prioritise Peenya and Bommasandra-Jigani for onboarding since both have plastics, battery and oil processors within one trip of the south and north yards.",
+      "whoToAsk": "KSPCB regional offices (Peenya and Bommasandra) for the XGN consent register by category code; the CPCB EPR plastic and tyre portals for the current Karnataka PWP and tyre-recycler lists; BBMP SWM for the Kannur and Jigani operator names; a phone call to E-Parisaraa, Rock Crystals and Mahindra CERO for live capacities.",
+      "sources": [
+        {
+          "title": "snippet: CPCB Approved Plastic Recyclers List, Karnataka (as on 01-03-2022)",
+          "url": "https://www.scribd.com/document/705384336/Plastic-Recyclers-as-on-01-03-2022-KARNATAKA",
+          "date": "2022-03-01"
+        },
+        {
+          "title": "snippet: KSPCB Plastics Rules page",
+          "url": "https://kspcb.karnataka.gov.in/waste-management/plastics-rules",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: CPCB Annual Report 2020-21 on Plastic Waste Management Rules",
+          "url": "https://cpcb.nic.in/uploads/plasticwaste/Annual_Report_2020-21_PWM.pdf",
+          "date": "2021"
+        },
+        {
+          "title": "snippet: Plastic waste management in Karnataka (143 units, 2.10 lakh t/yr)",
+          "url": "https://www.nammakpsc.com/affairs/plastic-waste-management-in-karnataka/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: KSPCB e-waste page (list of dismantlers, recyclers, collection centres)",
+          "url": "https://kspcb.karnataka.gov.in/waste-management/e-waste",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Deccan Herald - KSPCB's final chance to stakeholders (27 collection centres, 42 dismantlers, 24 recyclers, 14 both)",
+          "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Fkspcbs-final-chance-stakeholders-follow-2009892",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: CPCB list of authorised e-waste dismantlers/recyclers (as on 27-06-2019)",
+          "url": "https://greene.gov.in/wp-content/uploads/2019/09/2019091881.pdf",
+          "date": "2019-06-27"
+        },
+        {
+          "title": "snippet: CPCB approved list of e-waste recyclers/dismantlers (as on 08-06-2023)",
+          "url": "https://ndmc.gov.in/pdf/cpcb_approved_list_of_e-waste_recyclers_dismantler.pdf",
+          "date": "2023-06-08"
+        },
+        {
+          "title": "snippet: E-Parisaraa Pvt Ltd company profile (Dobaspet, KIADB)",
+          "url": "https://www.industrialautomationindia.in/directory/e-parisaraa-pvt-ltd",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Top 7 e-waste recyclers in Bangalore (Cerebra 90,000 t/yr)",
+          "url": "https://www.recyclekaro.com/blogs/top-e-waste-recyclers-in-bangalore/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: The Quint - 19 tyre pyrolysis units continue polluting Karnataka (34 units, 12 compliant)",
+          "url": "https://www.thequint.com/south-india/3-years-after-closure-order-19-tyre-pyrolysis-factories-continue-polluting-karnataka",
+          "date": "undated (post Nov 2021)"
+        },
+        {
+          "title": "snippet: CPCB Waste Tyre EPR Portal",
+          "url": "https://eprtyres.cpcb.gov.in/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: KSPCB categorisation (Red/Orange/Green)",
+          "url": "https://kspcb.karnataka.gov.in/consent-management/categorisation-rog",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Deccan Herald - Trash talk: where is our construction debris going (2,000-2,500 t/day; Chikkajala, Jigani, Kannur)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/trash-talk-where-is-our-construction-debris-going-1146856.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Deccan Herald - Single firm awarded Rs 1,714-crore contract to handle debris (Chaitra Civil Ventures, 1,750 t/day, Kannur 750 TPD)",
+          "url": "https://www.deccanherald.com/amp/story/india/karnataka/bengaluru/single-firm-awarded-rs-1714-crore-contract-to-handle-debris-in-bengaluru-3865063",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Deccan Herald - Five plants, better monitoring: BBMP debris plan (plants receive 100-200 t/day)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/five-plants-better-monitoring-how-bbmp-plans-to-tackle-debris-crisis-1231211",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: ResearchGate - C&D waste utilisation for recycled products in Bengaluru (Rock Crystals 1,000 TPD at 10%)",
+          "url": "https://www.researchgate.net/publication/317715058_Construction_and_Demolition_Waste_Utilisation_for_Recycled_Products_in_Bengaluru_Challenges_and_Prospects",
+          "date": "2017"
+        },
+        {
+          "title": "snippet: Deccan Herald - Karnataka gets first registered vehicle scrapping facility (Mahindra CERO, Vijayapura)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/karnataka-gets-first-registered-vehicle-scrapping-facility-2687144",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: SIAM RVSF state-wise list (Haradiapura, Vijayapura, Bengaluru Rural 562135)",
+          "url": "https://www.siam.in/uploads/filemanager/428RVSF.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: SteelOrbis - Mahindra Cero to set up vehicle scrapping facility in Karnataka (25,000 vehicles/yr)",
+          "url": "https://www.steelorbis.com/steel-news/latest-news/indias-mahindra-cero-to-set-up-vehicle-scrapping-facility-in-karnataka-1307530.htm",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Autocar Professional - Mahindra CERO interview (1 million ELV capacity by 2026-27)",
+          "url": "https://www.autocarpro.in/interview/we-aim-to-expand-capacity-to-dismantle-a-million-end-of-life-vehicles-by-2026-27-cero-recyclings-sumit-issar-114423",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: CII Waste Exchange - list of MoEF/CPCB registered used/waste oil reprocessors (257 units)",
+          "url": "http://www.ciiwasteexchange.org/Data/Waste%20oil%20reprocessors.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Century Refineries infrastructure page (Hoskote, KSPCB consent, CPCB registration)",
+          "url": "https://centuryrefineries.com/infrastructure/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: CPCB list of registered used lead-acid battery recyclers (672 units; Karnataka 32 units, 419,056 MTA)",
+          "url": "https://cpcb.nic.in/uploads/hwmd/List_Used_LA_Batteries_Registered_Recyclers.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: CPCB state-wise list of used lead-acid battery recycling units",
+          "url": "https://cpcb.nic.in/uploads/Projects/Hadzardous-Waste/List_of_Registered_Recyclers.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Urban Eco Recyclers - cable scrap recycling in Bangalore",
+          "url": "https://urbanecorecyclers.com/cable-scrap-recycling/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Belgaum Foundry Cluster (green sand reclamation plant, 10 tonne)",
+          "url": "https://www.indiamart.com/belgaum-foundry-cluster/aboutus.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: R Mech Machines - PET bottle flakes washing plant in Karnataka",
+          "url": "https://rmechmachines.com/2025/03/04/pet-bottle-flakes-washing-plant-in-karnataka/",
+          "date": "2025-03-04"
+        }
+      ]
+    },
+    {
+      "question": "What do these pre-processors pay yards for bales and lots, what do they sell outputs for, and what lot sizes, payment terms, freight, quality deductions and sourcing rules apply?",
+      "answer": "Buy-side (L3, what a pre-processor pays a yard), from marketplace listings only, none Bengaluru-specific unless stated: PET bottle bales Rs 22-35/kg clear and Rs 15-25/kg mixed colour (Chennai bale listing Rs 29/kg; a Rs 30-35/kg minimum for natural bales), HDPE baled scrap about Rs 48/kg (a Challakere, Karnataka listing) with graded HDPE up to Rs 75-100/kg, LDPE film scrap Rs 40-75/kg (post-industrial bales Rs 65/kg), OCC Rs 12-16/kg baled to traders and Rs 14-18/kg mill-grade delivered to mills, HMS in Bengaluru Rs 28-55/kg across listings (Karnataka range Rs 36-49/kg; a July 2026 Bengaluru quote of Rs 55/kg), baled clean UBC Rs 95-120/kg (Delhi quotes Rs 194-238/kg on 29 Jan 2026 show how wide this swings), whole scrap tyres Rs 12-22/kg (Hyderabad Rs 12, Ahmedabad Rs 13, Delhi Rs 20), insulated copper cable Rs 340-520/kg (Delhi Rs 415/kg, Sep 2026). No India price for intact lead-acid batteries per kg was found in any snippet; it is an open item. Sell-side (L3/L4 outputs): hot-washed PET flakes Rs 55-65/kg typical with listings up to Rs 82/kg, cold-washed flakes about Rs 52/kg, rPET granules Rs 75-90/kg (and India rPET flake index USD 763/t in Q2 2026), reprocessed HDPE granules Rs 65-77/kg (R-HDPE index USD 1,238/t, June 2026), recycled PP granules Rs 55-82/kg, millberry/bare-bright copper Rs 680-800/kg (copper granules were not quoted separately; assume a small discount to millberry), crumb rubber Rs 22-35/kg, tyre pyrolysis oil Rs 25-50/litre (typical Rs 28-32), recycled aggregate from C&D about Rs 350-400/tonne against Rs 630-770/tonne crushed stone and Rs 1,250/tonne M-sand in Bengaluru (Aug 2026); Rock Crystals historically charged a Rs 134/tonne tipping fee including GST. No snippet gave LDPE agglomerate or shredded-steel prices, so both are open items. Terms: no Indian pre-processor publishes lot sizes, credit terms, freight or deduction rules; the only documented rules are the APR/ISRI model bale specs (truckload of roughly 16 t, moisture over 4% deducted at tested-percent minus 2%, no single contaminant above 2%), which Indian buyers apply informally as visual grading and a weight cut on delivery. Sourcing: Hasiru Dala Innovations states it aggregates PET from waste-picker entrepreneurs, dry-waste collection centres and scrap dealers, and the PET-flake trade in Bengaluru runs through traders, so pre-processors mostly buy from yards, traders and aggregators rather than from individual kabadiwalas; a DWCC with a baler can sell direct only if it can fill a truck.",
+      "status": "needs-pilot-or-counsel",
+      "decision": "Set L3 reference prices in the pilot from these ranges (PET bale Rs 25-32/kg, HDPE bale Rs 45-50/kg, OCC Rs 12-16/kg, HMS Rs 36-45/kg, UBC Rs 100-120/kg, tyres Rs 12-18/kg, cable Rs 350-450/kg) as editable defaults, record every lot with a moisture and contamination percentage and a buyer deduction field, default freight to buyer-arranged pickup for a minimum lot of one full truck (about 8-16 tonnes baled) and cash or UPI on weighbridge weight, and confirm all of it with ten phone quotes in Peenya and Bommasandra during the first fortnight.",
+      "whoToAsk": "Ten pre-processors (three plastics reprocessors in Peenya and Jigani, one PET flake buyer, one e-waste dismantler at Dobaspet, one battery smelter in Bommasandra, one used-oil re-refiner at Veerasandra or Hoskote, Rock Crystals, one tyre crumb unit, one cable granulator) for current buy and sell prices, minimum lots, credit days and deduction rules; Hasiru Dala Innovations and Saahas for what DWCCs actually receive for baled PET; a CA for GST and TCS treatment on the recorded prices.",
+      "sources": [
+        {
+          "title": "snippet: IndiaMART - Natural PET bottle scrap bale Rs 29/kg, Chennai",
+          "url": "https://www.indiamart.com/proddetail/plastic-pet-bottle-scrap-bale-11452501291.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Todaypricerates - Plastic scrap price in India (PET clear Rs 22-35, mixed Rs 15-25; city ranges 2025)",
+          "url": "https://resale.todaypricerates.com/plastic-scrap-price",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: Plastic4trade - HDPE baled scrap, Challakere, Karnataka (about Rs 48/kg)",
+          "url": "https://plastic4trade.com/supplier/hdpe-baled-scrap-hdpe-scrap-baled-blow-injection-molding-challakere-karnataka-india",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: TradeIndia - HDPE scrap prices (Rs 75-100/kg by grade)",
+          "url": "https://www.tradeindia.com/manufacturers/hdpe-scrap.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IndiaMART - LDPE film scrap in bales Rs 65/kg",
+          "url": "https://www.indiamart.com/proddetail/ldpe-film-scrap-in-bales-post-industrial-ldpe-film-scrap-ldpe-film-rolls-ldpe-scrap-2853416879388.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: JoinBin - Cardboard scrap rate in India 2026 (OCC Rs 10-14, baled Rs 12-16, mill grade Rs 14-18/kg)",
+          "url": "https://joinbin.com/scrap-rate-cardboard-india",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: IndiaMART - HMS scrap in Bengaluru (Rs 28-55/kg listings; Rs 55/kg July 2026)",
+          "url": "https://dir.indiamart.com/bengaluru/hms-scrap.html",
+          "date": "2026-07"
+        },
+        {
+          "title": "snippet: Todaypricerates - Industry iron and steel scrap rates 2025-26 (Karnataka HMS Rs 36-49/kg)",
+          "url": "https://resale.todaypricerates.com/industry-iron-steel-scrap-rates",
+          "date": "2025-2026"
+        },
+        {
+          "title": "snippet: National Recycling - Scrap metal rates India 2026 (HMS Rs 28-36; Bangalore mixed iron Rs 34-41/kg)",
+          "url": "https://www.nationalrecycling.in/blog/scrap-metal-rates-india-2026-guide/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: National Recycling - Aluminium scrap recycling India (baled clean UBC Rs 95-120/kg)",
+          "url": "https://www.nationalrecycling.in/blog/aluminum-scrap-recycling-india/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: IndiaMART - Aluminium UBC scrap in Delhi (Rs 194-238/kg, 29 Jan 2026)",
+          "url": "https://dir.indiamart.com/delhi/aluminum-ubc-scrap.html",
+          "date": "2026-01-29"
+        },
+        {
+          "title": "snippet: IndiaMART - Tyre scrap prices (Delhi Rs 20, Ahmedabad Rs 13, Hyderabad Rs 12/kg)",
+          "url": "https://dir.indiamart.com/impcat/tyre-scrap.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: TradeIndia - Tyre scrap in Bengaluru",
+          "url": "https://www.tradeindia.com/bengaluru/tyre-scrap-city-183339.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IndiaMART - Insulated copper cable scrap in Delhi (Rs 415/kg, Sep 2026)",
+          "url": "https://dir.indiamart.com/delhi/copper-cable-scrap.html",
+          "date": "2026-09"
+        },
+        {
+          "title": "snippet: National Recycling - Copper scrap price India 2026 (insulated Rs 340-480/kg; millberry Rs 760-790/kg)",
+          "url": "https://www.nationalrecycling.in/blog/copper-scrap-price-india-2026/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Gravita - Copper scrap recycling in India 2026 (millberry above Rs 800/kg)",
+          "url": "https://www.gravitaindia.com/blogs/copper-scrap-recycling-india-market-prices-2026",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: IndiaMART - Hot washed PET flakes (Rs 55-65/kg typical; listings Rs 62-82/kg)",
+          "url": "https://dir.indiamart.com/impcat/hot-washed-pet-flakes.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IndiaMART - PET bottle flake (cold washed Rs 52/kg)",
+          "url": "https://dir.indiamart.com/impcat/pet-bottle-flake.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IndiaMART - Natural PET granules rPET Rs 82/kg",
+          "url": "https://www.indiamart.com/proddetail/pet-granules-rpet-2853360922888.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IMARC - Recycled PET prices 2026 (India USD 763/t Q2 2026, USD 715/t Q1 2026)",
+          "url": "https://www.imarcgroup.com/recycled-pet-pricing-report",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: ChemAnalyst - Recycled HDPE prices (India USD 1,238/t June 2026)",
+          "url": "https://www.chemanalyst.com/Pricing-data/recycled-high-density-polyethylene-1264",
+          "date": "2026-06"
+        },
+        {
+          "title": "snippet: IndiaMART - Reprocessed HDPE granules (Rs 65-77/kg)",
+          "url": "https://dir.indiamart.com/impcat/reprocessed-hdpe-granules.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IndiaMART - Recycled PP granules Rs 58/kg, New Delhi",
+          "url": "https://www.indiamart.com/proddetail/recycled-pp-granules-10988134230.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IndiaMART - Crumb rubber (Rs 22-35/kg)",
+          "url": "https://dir.indiamart.com/impcat/crumb-rubber.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: IndiaMART - Tyre pyrolysis oil Rs 44/litre",
+          "url": "https://www.indiamart.com/proddetail/tyre-pyrolysis-oil-21965278097.html",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Advancebiofuel - Tyre pyrolysis plant India ROI guide 2026 (oil Rs 28-32/litre)",
+          "url": "https://advancebiofuel.in/tyre-pyrolysis-plant-india-roi-setup-guide/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: ResearchGate - C&D waste utilisation in Bengaluru (recycled aggregate Rs 350-400/t; Rs 134/t tipping fee)",
+          "url": "https://www.researchgate.net/publication/317715058_Construction_and_Demolition_Waste_Utilisation_for_Recycled_Products_in_Bengaluru_Challenges_and_Prospects",
+          "date": "2017"
+        },
+        {
+          "title": "snippet: Infralens - Sand and aggregates price in Bangalore, live rates August 2026 (M-sand Rs 1,250/t, 20mm Rs 1,388/t, crushed stone Rs 630-770/t)",
+          "url": "https://infralens.in/prices/aggregates/bangalore",
+          "date": "2026-08"
+        },
+        {
+          "title": "snippet: APR Model Bale Specification - PET bottles (moisture and contamination rules)",
+          "url": "https://plasticsrecycling.org/wp-content/uploads/2024/09/APR-BaleSpec-PETBottle-NoThermoforms.pdf",
+          "date": "2024-09"
+        },
+        {
+          "title": "snippet: ISRI specs - PET bottles (no thermoforms)",
+          "url": "https://www.isrispecs.org/orpheus_resource/pet-bottles-no-pet-thermoforms/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Hasiru Dala Innovations - world's first ethically traded plastic (sources PET from waste pickers, DWCCs and scrap dealers)",
+          "url": "https://hasirudalainnovations.com/blog-detail/3",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: TradeIndia - PET flakes in Bengaluru",
+          "url": "https://www.tradeindia.com/bengaluru/pet-flakes-city-183339.html",
+          "date": "undated"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "verdicts": [
+    {
+      "question": "For a pilot support line: SIM vs virtual number, and can the same number move from the WhatsApp Business app to the WhatsApp Cloud API or a provider such as MSG91 later without losing the number? Do outbound IVR or automated voice reminders need TRAI DLT registration (140/160 number series) before scale?",
+      "holds": false,
+      "problems": "Method note: this session's WebSearch budget was exhausted and every cited host (developers.facebook.com, msg91.com, trai.gov.in, pib.gov.in, airtel.in, acefone.com, plivo.com, exotel.com, myoperator.com, wati.io, aisensy.com, docs.360dialog.com) is egress-blocked, so I verified through public GitHub mirrors of the Meta docs (kapso-meta-docs, raoofalfah/somou-docs, 8x8Cloud), an RBI circular that annexes the TRAI guidelines, and third-party research notes. CONFIRMED by mirrors: coexistence needs Business app v2.24.17+, syncs up to 180 days of 1:1 history only if started within 24 h, is capped at a fixed 20 mps, disables broadcast-list creation, disappearing, view-once and live-location, has no group or calling support on the API, is disconnected under Settings > Account > Business Platform, and is open to Business app users in India; the delete route waits 'up to 3 minutes' and loses history unless you deregister; WABA-to-WABA migration keeps display name, quality rating, messaging limit and OBA status, copies only APPROVED + GREEN templates, resets template quality to UNKNOWN for 24 h, and needs two-step verification off plus a verified Meta Business Account; Embedded Signup v2 (and v3) are deprecated on 15 Oct 2026 (Meta note dated 5 Aug 2026). CONFIRMED on TRAI: the 'SMEs, big and small businesses, and any entity' DLT-registration wording, 140xx for promotional and 1600xx for service/transactional calls, the ban on 10-digit numbers and the up-to-two-year disconnection penalty all appear in RBI circular RBI/2024-25/105 of 17 Jan 2025, which annexes the TRAI guidelines; the Second Amendment 2025 is No. RG-25/(25)/2023-QoS dated 12 Feb 2025, commencing 30 days after gazette (Regs 8, 17 and parts of 20–21 after 60 days), defines a transactional message as 'within thirty minutes' of a customer-initiated transaction and lets service messages go without explicit consent; the auto-dialer/robo-call advance-notice clause is confirmed only as a paraphrase. Plivo's page exists (linked from plivo/plivo-cli) and its skill file says 160 = BFSI only, 7–14 business days; 140 = 'any business making promotional calls', 5–10 business days. SUBSTANTIVE MISS: Meta's coexistence documentation as reproduced by 8x8 (release note 7 Sep 2026) says 'Meta does not currently support migrating a number between BSPs' for a coexistence number, and a number previously on the Cloud API through another BSP errors during Embedded Signup; other partner docs add a minimum 7 days of active Business-app use before eligibility, the app must be opened at least every 14 days or the link drops, and a 1–2 month cooldown before re-onboarding a number that was on the API. So the decision ('onboard through a partner's coexistence flow... keep two-step verification off before any provider move') is internally inconsistent: once on coexistence with MSG91 you cannot WABA-migrate to another BSP; you must disconnect, wait, and onboard again. NOT CONFIRMED BY ANY SNIPPET OR MIRROR: MSG91 longcode 'cannot receive SMS, verify by call', MSG91's 'Connect WhatsApp Business App Number' option and its 'disable 2FA, no need to delete' guide; MyOperator ₹5,000/₹15,000 plans; Exotel's '1,000 numbers per operator per circle'; Acefone's '1601 for utilities, logistics, couriers' (two independent notes instead say 1600/1601 are reserved for BFSI regulators and government, so treat the 1601 claim as doubtful); the TRAI guideline date '18 June 2024' and the Airtel PDF; PIB 30 May 2024 and TRAI PR 58/2024 (plausible, not reachable); the 'first stage covers RBI/SEBI/IRDAI/PFRDA and government' wording. No evidence found of 160-series eligibility widening to non-BFSI entities as of the newest notes seen (Aug–Sep 2026). Refined material chain: the support line now serves pre-processors, compounders, MRFs/DWCCs, brands and TSDFs as well as kabadiwalas and yards; those are 'existing customers' once verified, so service calls to them need no explicit consent under the 2025 amendment, but every automated call still needs DLT registration and a 140/160 header, and WhatsApp utility templates must be written with variables for lot IDs, material states (S0–S9), yields and price levels (L1–L5) so one approved template covers all roles.",
+      "correction": "Number type: a dedicated SIM in the company's or a founder's name is still the right pilot choice; Meta's phone-number page says a number must be yours, have a country and area code, and receive an SMS or voice call, with mobile recommended and fixed-line/VoIP 'not recommended' for SMS OTP; a number already on WhatsApp must be deleted first. Moving to the API: two routes. (a) Coexistence: needs Business app v2.24.17+, at least 7 days of active Business-app use, up to 180 days of 1:1 history synced only if started within 24 hours, a fixed 20 messages/second, no broadcast-list creation, disappearing, view-once or live location, no groups or calling on the API, the app must be opened every 14 days, and India is supported. Crucially, Meta does not support migrating a coexistence number between BSPs: if you start coexistence with MSG91 and later want another provider or the direct Cloud API, you disconnect (Settings > Account > Business Platform > Disconnect Account), expect a 1–2 month cooldown, and onboard again. (b) Full migration: back up, delete the account in the app, wait up to 3 minutes, register on the Cloud API; history is lost and the number cannot return to the app unless deregistered. A number that is fully on the API can later be moved WABA-to-WABA keeping display name, quality rating, messaging limit and OBA status; only APPROVED + GREEN templates are copied and their quality resets to UNKNOWN for 24 hours; two-step verification must be off and Meta Business Verification done. Any partner flow you use from 13 Oct 2026 must be Embedded Signup v4 (v2 and v3 are deprecated on 15 Oct 2026). Decision: run the SIM in the WhatsApp Business app for the pilot; before choosing MSG91 (or anyone) for coexistence, treat that as a one-way door for the number and pick the provider you expect to keep for a year; if you want provider freedom, go the full-migration route instead. TRAI: yes. Every sender including SMEs must register on an operator DLT portal before any commercial voice or SMS; promotional voice only from 140xx, service/transactional only from 1600xx, ordinary 10-digit numbers prohibited, penalties up to two years' disconnection (TRAI guidelines as annexed in RBI circular RBI/2024-25/105, 17 Jan 2025). The Second Amendment (12 Feb 2025, in force 30 days after gazette, some clauses 60 days) defines a transactional communication as within 30 minutes of a customer-initiated transaction, lets service communications to existing customers go without explicit consent, and requires advance notice to the operator before using auto-dialers or robo-calls (clause confirmed only by paraphrase). Provider pages still show 160 as BFSI-only with 7–14 business days to provision, while 140 is open to any business making promotional calls in 5–10 business days. For the pilot: send reminders as WhatsApp utility templates and human calls from the support SIM; start DLT entity, header and template registration now; before scaling automated voice, buy a 140 number for promotional calls through your cloud-telephony provider and ask in writing whether a 160 number can be allotted to a non-BFSI Karnataka entity. Open items (no source found): MSG91/Exotel/MyOperator virtual-number prices, whether MSG91's onboarding really offers business-app (coexistence) onboarding for +91 numbers, whether any 1601 sub-series exists for utilities/logistics, and the exact date of the TRAI voice guidelines. Status stays 'partly'.",
+      "extraSources": [
+        {
+          "title": "mirror: Meta — Onboarding WhatsApp Business app users (coexistence: v2.24.17, 180-day history within 24 h, 20 mps, disabled features, disconnect path) — kapso-meta-docs mirror",
+          "url": "https://github.com/kapso-meta-docs/documentation/blob/main/documentation/whatsapp/embedded-signup/onboarding-business-app-users.mdx"
+        },
+        {
+          "title": "mirror: Meta — Business phone numbers (eligibility table, numbers on WhatsApp must be deleted first) — kapso-meta-docs mirror",
+          "url": "https://github.com/kapso-meta-docs/documentation/blob/main/documentation/whatsapp/business-phone-numbers/phone-numbers.mdx"
+        },
+        {
+          "title": "mirror: Meta — Migrate an existing WhatsApp number to a business account (delete, wait up to 3 minutes, history lost; partner onboarding preserves history) — somou-docs mirror",
+          "url": "https://github.com/raoofalfah/somou-docs/blob/e94c3dff31ff51095a27ad5ab85516f26e1365c7/whatsapp_docs/solution-providers/migrate-existing-whatsapp-number-to-a-business-account.md"
+        },
+        {
+          "title": "mirror: Meta — Migrating phone numbers among solution partners (preserved attributes, APPROVED+GREEN templates, quality reset, 2FA off, verified business) — somou-docs mirror",
+          "url": "https://github.com/raoofalfah/somou-docs/blob/e94c3dff31ff51095a27ad5ab85516f26e1365c7/whatsapp_docs/solution-providers/support/migrating-phone-numbers-among-solution-partners-via-embedded-signup.md"
+        },
+        {
+          "title": "mirror: Meta — Registering phone numbers (Embedded Signup v2 deprecated 15 Oct 2026) — somou-docs mirror",
+          "url": "https://github.com/raoofalfah/somou-docs/blob/e94c3dff31ff51095a27ad5ab85516f26e1365c7/whatsapp_docs/solution-providers/registering-phone-numbers.md"
+        },
+        {
+          "title": "8x8 developer docs — WhatsApp Business App coexistence ('Meta does not currently support migrating a number between BSPs'; India can onboard; 24 h sync; 20 mps)",
+          "url": "https://github.com/8x8Cloud/public-developer-docs/blob/ad0897d504eb216865cc70ff5859546888222fe8/docs/connect/docs/whatsapp/whatsapp-business-app-coexistence.md"
+        },
+        {
+          "title": "8x8 release note 7 Sep 2026 — coexistence launch (v2.24.17, 20 mps, disabled features)",
+          "url": "https://github.com/8x8Cloud/public-developer-docs/blob/ad0897d504eb216865cc70ff5859546888222fe8/docs/_release-notes/2026-09-07-whatsapp-business-app-coexistence.md"
+        },
+        {
+          "title": "vobase — coexistence reference (7-day account age, 14-day activity, 6-month sync, disconnect path, 1–2 month cooldown)",
+          "url": "https://github.com/vobase/vobase/blob/main/.claude/skills/whatsapp-cloud-api/references/coexistence.md"
+        },
+        {
+          "title": "Eazybe docs — Troubleshooting coexistence signup (delete old WABA, 1–2 month cooldown)",
+          "url": "https://github.com/EazybeCode/docs/blob/47398a0a67e0cbe36eee67727efba62c8022b6bc/en/waba/troubleshooting-whatsapp-coexistence-signup-common-issues-an.mdx"
+        },
+        {
+          "title": "mirror: RBI circular RBI/2024-25/105 of 17 Jan 2025 annexing TRAI guidelines ('SMEs, big and small businesses'; 140xx promotional, 1600xx service/transactional; 10-digit prohibited; 2-year disconnection)",
+          "url": "https://github.com/vishvaRam/Data-Prep-for-LLM-fine-tuning/blob/1ad657808eeab6248ee80ef923794bc5a41ed45d/Data/pdf-markdowns/2025/RBI_2024-2025_105CEPD.CO.OBD.No.S1270_50-01-001_2024-25_2025-01-17.md"
+        },
+        {
+          "title": "AEGIS research note (retrieved 11 Aug 2026) — TCCCPR Second Amendment 2025, No. RG-25/(25)/2023-QoS, 12 Feb 2025: 30/60-day commencement, 30-minute transactional definition, service messages without explicit consent",
+          "url": "https://github.com/callmerishi1508/AEGIS/blob/89e88b92480ef6dcb56157dc6e0380523021dd92/docs/research/dlt-dpdp.md"
+        },
+        {
+          "title": "Telecom-copilot — TRAI passage: advance notification to Originating Access Provider for auto-dialers/robo-calls (paraphrase)",
+          "url": "https://github.com/sahil-vasani/Telecom-copilot/blob/f4ab44c4ab193d3f26bcb3e17548ad8137d173a0/src/ingestion/data_source/TRAI_data_ingestion.py"
+        },
+        {
+          "title": "Plivo CLI skill — India prerequisites: 140 for any business (5–10 business days), 160 BFSI only (7–14 business days), Tata DLT; links plivo.com 160-series-provisioning page",
+          "url": "https://github.com/plivo/plivo-cli/blob/main/audio-streaming-skill/SKILL.md"
+        },
+        {
+          "title": "naaradh go-live note — 140 promotional-only, 1600/1601 BFSI/government, 10-digit prohibited, DLT PE/TM registration steps",
+          "url": "https://github.com/UjjwalCodes01/naaradh/blob/341f2bd20daf1b9d75475ec29681ef96be75af90/docs/go-live/02-phone-numbers-and-dlt.md"
+        }
+      ]
+    },
+    {
+      "question": "Which text-to-speech service fits a pilot in Kannada, Tamil, Telugu, Hindi and Urdu: Google Chirp 3 HD, AI4Bharat Indic Parler-TTS, Bhashini, Sarvam? Compare pricing, language coverage and startup access. Who could record human voice clips quickly and cheaply in Bengaluru?",
+      "holds": false,
+      "problems": "Method note: search budget exhausted and docs.cloud.google.com, sarvam.ai, huggingface.co, bhashini gitbook, karya.in, talentrack.in, indiamart.com, taperfox.com, peterabraham.in and cdomagazine.tech are all egress-blocked; verification is through GitHub mirrors and dated third-party notes. CONFIRMED: Chirp 3: HD lists hi-IN, kn-IN, ta-IN, te-IN and ur-IN (mirror of the Google page, last updated 8 Apr 2026; ur-IN-Chirp3-HD voice ids also appear in SubtitleEdit's voice list); the page's '24 Sep 2026' update date is not confirmed. Google pricing US$30 per 1M after 1M free for Chirp 3: HD, Standard/WaveNet US$4 after 4M free, Neural2 US$16, Studio US$160, instant custom voice US$60 (one mirror states it verified the pricing page on 24 Aug 2026). Google for Startups US$2,000 pre-funded and up to US$200,000 / US$350,000 AI-first confirmed; the US$300 trial is not confirmed by a mirror. Sarvam bulbul:v3 at ₹30 per 10,000 characters and ₹100 signup credits confirmed (one note dated Aug 2026; another repo records a conflict in Sarvam's own docs between ₹1,000 and ₹100 credits, and older mirrors show ₹15 per 10,000 for v2, so re-check the live page), 11 languages (hi, bn, kn, ml, mr, od, pa, ta, te, en, gu — no Urdu) confirmed, 30+ voices confirmed; the 2,500-character limit is confirmed by one integration but another mirror of Sarvam's error text says 'maximum length of 1500 characters for bulbul:v3', so the cap is unsettled. Sarvam startup page exists and '6–12 months of credits' is echoed by one note. Indic Parler-TTS Apache-2.0, 69 voices, Urdu supported and the Urdu native-speaker score 77.75 (± 3.82) confirmed; note the model card is gated on Hugging Face (access request needed), which the answer omits. IndicF5 MIT, 11 languages without Urdu, cloning from a reference clip and the consent terms confirmed via GitHub README and mirrors. Bhashini 'PoC only ... reach out to Bhashini team for the paid version' and the dashboard.bhashini.co.in registration confirmed; Urdu TTS only from IIT Madras confirmed; the 'Bodhan' provider and the CDO Magazine 18 Apr 2024 quote are not confirmed. Arithmetic checks: 1,000,000 / 150 ≈ 6,667 plays ('about 6,600' fine); 30 prompts × 5 languages × ₹400 = ₹60,000 correct; ₹3/1,000 chars ≈ ₹3,000/M vs US$30/M is the same order of magnitude. NOT CONFIRMED BY ANY SNIPPET OR MIRROR (the whole Bengaluru recording section): Karya's CMH Road address and sales@karya.in (only Karya's existence, Bengaluru/IISc partnership and Google.org grant appear in a May 2026 dataset), Talentrack's '30+ artists', Polite Productions ₹600/hour on IndiaMART, Taperfox, and the ₹400-per-prompt / 20-prompt-minimum rate card — so the ₹60,000 budget in the decision rests on an unverified figure. Refined material chain: prompts must now name new roles (pre-processor, compounder, MRF/DWCC, TSDF), material states S0–S9, by-product and residual lots, yields and the five price levels; Chirp 3: HD's custom-pronunciation control is available for all five pilot locales (excluded only for pa-IN among Indian languages), which matters for trade words like PET flake, granule, pyrolysis, bagasse and fly ash; test number, unit (kg, ₹, %) and lot-ID reading in each language before launch.",
+      "correction": "TTS choice stands: Google Chirp 3: HD is the only paid option covering hi-IN, kn-IN, ta-IN, te-IN and ur-IN (Google doc mirror, updated 8 Apr 2026), at US$30 per 1M characters after 1M free per month (mirrors verified Aug 2026; Standard/WaveNet US$4 after 4M free, Neural2 US$16, Studio US$160, instant custom voice US$60), with US$2,000 pre-funded and up to US$200,000/US$350,000 AI-first startup credits. Sarvam bulbul:v3 covers Hindi, Kannada, Tamil and Telugu (11 languages, no Urdu) at ₹30 per 10,000 characters with ₹100 signup credits (re-check: Sarvam's own pages have shown ₹1,000 and ₹15/10k in the past) and a per-request cap that mirrors give as 1,500 or 2,500 characters — design for 1,500. Indic Parler-TTS (Apache-2.0, 69 voices, 21 languages incl. Urdu at a 77.75 native-speaker score) needs a Hugging Face access request and your own GPU; IndicF5 (MIT, 11 languages, no Urdu) clones a voice from a consented reference clip. Bhashini is PoC-only until you contact the team for paid production terms; Urdu TTS there comes only from IIT Madras. Human clips in Bengaluru: no vendor, price or rate card in the answer could be verified. Treat Karya (Bengaluru, works with IISc; contact via karya.in), Talentrack's Bangalore directory, Taperfox and IndiaMART studio listings as leads to phone, not facts. Do not budget on ₹400 per prompt until you hold two written quotes; the cheapest verified path is a native-speaking team member or Saathi recording the fixed prompts on a phone or in a rented studio, with TTS for variable parts (weights, prices, lot IDs, material states). Add a pronunciation pass for trade and process terms using Chirp 3: HD custom pronunciations, which are supported for all five pilot locales. Open items: Urdu voice artist in Bengaluru, Bhashini production price and Startup Velocity terms, Sarvam startup-credit amount, Sarvam's current signup credit and character cap, and two written quotes for a 30-prompt, 5-language set. Status stays 'partly'.",
+      "extraSources": [
+        {
+          "title": "mirror: Google Cloud — Chirp 3: HD voices (supported locales incl. hi-IN, kn-IN, ta-IN, te-IN, ur-IN; custom-pronunciation locale exclusions; 'Last updated 2026-04-08')",
+          "url": "https://github.com/gvillarroel/gcp-radar/blob/4f5d546dcf4ce87d492604dcd568104a053a34c5/data/step-04/current/products/text-to-speech/corpus/site/site-docs-root/pages/docs.cloud.google.com_text-to-speech_docs_chirp3-hd.md"
+        },
+        {
+          "title": "SubtitleEdit GoogleVoices.json — ur-IN-Chirp3-HD voice ids exist",
+          "url": "https://github.com/SubtitleEdit/subtitleedit/blob/086c151498a4769ff40006793b6e1262ff0671db/src/ui/Assets/TextToSpeech/GoogleVoices.json"
+        },
+        {
+          "title": "bloombar/slide-machine — Google TTS pricing table (Chirp 3: HD US$30/1M, 1M free; Studio US$160; Instant custom US$60)",
+          "url": "https://github.com/bloombar/slide-machine/blob/43992d3af964611254a0ce11fb7972c0e30989ca/docs/BILLING_COST_MODEL.md"
+        },
+        {
+          "title": "antonnoe/navigation README — Google TTS prices verified 24 Aug 2026 (Standard/WaveNet US$4 after 4M free; Neural2 US$16; Studio US$160)",
+          "url": "https://github.com/antonnoe/navigation/blob/36bdecff7967449a5f8fad6fecc47d68b4400de5/README.md"
+        },
+        {
+          "title": "Ignite_Delhi grants table — Google for Startups US$2,000 pre-funded, US$200,000 / US$350,000 AI-first",
+          "url": "https://github.com/iayushsharmaIITM/Ignite_Delhi/blob/24a23083dc43481fe46d9ff6ff55cc82cf21ff20/GLOBAL_GRANTS_AND_CREDITS.md"
+        },
+        {
+          "title": "ai-calling-agent VERIFICATION.md (Aug 2026) — Sarvam Bulbul v3 ₹30 per 10,000 characters, ₹100 credits, 30+ voices, 11 languages",
+          "url": "https://github.com/manishneemrana-cpu/ai-calling-agent/blob/8082493e3cc84e70ba2731ea629231c478207047/docs/VERIFICATION.md"
+        },
+        {
+          "title": "Voice-Agent PRICING.md — Sarvam bulbul:v3 ₹30/10,000 chars, verified against docs.sarvam.ai pricing page",
+          "url": "https://github.com/sugatathawale/Voice-Agent/blob/85794579bb30ce26b7755db1403032b61b46586e/PRICING.md"
+        },
+        {
+          "title": "aadesh-ai MASTER_CONTEXT.md — conflict in Sarvam's own docs: ₹1,000 vs ₹100 signup credits",
+          "url": "https://github.com/srinivasenvcivilsurvey-sudo/aadesh-ai/blob/0d8be4ac5e58e71711a860cddd3d1f616b62caa2/docs/MASTER_CONTEXT.md"
+        },
+        {
+          "title": "mastra Sarvam voice integration — bulbul:v3 language list (hi, bn, kn, ml, mr, od, pa, ta, te, en, gu)",
+          "url": "https://github.com/mastra-ai/mastra/blob/4ea9e1f22f08df58e0babe3c620d49a9ba1474ab/docs/src/content/en/integrations/voice/sarvam.mdx"
+        },
+        {
+          "title": "MelloB1989/karma — 'bulbul:v3 accepts 2500 characters per request'",
+          "url": "https://github.com/MelloB1989/karma/blob/1b82fa77d3f51df368b77770009619d1b1b81d0e/ai/voice/provider_sarvam.go"
+        },
+        {
+          "title": "Sarvam-TTS-docs mirror — error text 'maximum length of 1500 characters for bulbul:v3' (cap unsettled)",
+          "url": "https://github.com/Ayushmaan06/AI-Powered-Indic-Language-Dubbing/blob/595ed8c2815a3832257cd05d686c7b58abbd2f5e/Sarvam-TTS-docs.md"
+        },
+        {
+          "title": "safework-sahayak proposal — Sarvam Startup Program '6–12 months credits (apply)'; Bhashini PoC free, production licensed",
+          "url": "https://github.com/mukul-tater/safeworkglobal/blob/5e4b2868a9bc46b10a94fbb96b8ba41f491b6b2c/docs/safework-sahayak-proposal.md"
+        },
+        {
+          "title": "mirror: Indic Parler-TTS model card (69 voices; Urdu 77.15 ± 3.47 / 77.75 ± 3.82)",
+          "url": "https://github.com/venkatr95/Sanskrit-TTS-Demo/blob/02c519b2c44106b0825d6825407835a0ec9e6281/server/readme_model.md"
+        },
+        {
+          "title": "mithivoices LICENSES.md — indic-parler-tts Apache-2.0, Urdu among available languages, 69 voices",
+          "url": "https://github.com/mithivoices/ai-voice-platform/blob/099942edaa52b130adf9374d78b9e22be68da692/voice_assets/indic/LICENSES.md"
+        },
+        {
+          "title": "AI-voice-agent TTS_EVALUATION.md — Indic Parler-TTS lists Urdu, requires gated model access, Apache-2.0",
+          "url": "https://github.com/armishiqbal/AI-voice-agent/blob/c3e1a4212b954703b98f0eb1a0110e1b487ea562/docs/TTS_EVALUATION.md"
+        },
+        {
+          "title": "AI4Bharat/IndicF5 README — 11 languages (no Urdu), reference-clip voice cloning",
+          "url": "https://github.com/AI4Bharat/IndicF5"
+        },
+        {
+          "title": "indic-f5-mlx README — IndicF5 licensed MIT; use cloning only with consent",
+          "url": "https://github.com/yogen-ghodke-113/indic-f5-mlx/blob/10d019a257a15ab6f4151dc644d07a642e55c25b/README.md"
+        },
+        {
+          "title": "Voice_clone notes — IndicF5 HF card lists license 'mit' with terms prohibiting unauthorised voice cloning",
+          "url": "https://github.com/ratanjyoti/Voice_clone/blob/e46090016c400cd4e8dd29004af44b0cd30ecc1b/docs/indicf5_hindi_installation_notes.md"
+        },
+        {
+          "title": "mirror: Bhashini developer documentation (TTS models per language incl. Urdu via IIT Madras only; 'PoC only' clause; dashboard.bhashini.co.in registration)",
+          "url": "https://github.com/Sricharansairi/Project-Samanvaya/blob/6a8d2ba7d062dae8830ca7648442d5d45dc5c8f2/Bhashini%20Developer%20Documentation.txt"
+        },
+        {
+          "title": "TechEquity AI data-work landscape (20 May 2026) — Karya: Google.org grant, IISc partner, karya.in",
+          "url": "https://github.com/techequitycollaborative/ai-data-work-landscape/blob/a2b7ec3ba69afa7c6163f53875f3308e2eca8a99/frontend/public/relationships_data.csv"
+        }
+      ]
+    }
+  ]
+}

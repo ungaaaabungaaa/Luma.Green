@@ -1,0 +1,88 @@
+{
+  "verdicts": [
+    {
+      "question": "How many kabadiwalas operate in Bengaluru, and what share of household dry waste reaches them rather than the city's collection or DWCCs? What gross margin does a kabadiwala keep per material after rent, transport, credit and losses (any published studies or interviews)?",
+      "holds": false,
+      "problems": "Verification blocked this run: WebSearch budget exhausted (200/200) and page fetches refused (proxy 403), so none of the 14 sources could be confirmed by snippet; the 3,000 enumeration-form figure (Hasiru Dala/SWMRT 2014), the WIEGO claim that the scrap-shop enumeration never went ahead, the 35,000 pickers (Mongabay), the 19,811 t / 6,231 t / 34-centre figures (Hasiru Dala Annual Report 2024-25) and the Circulate Initiative 70-80% / 800 kg-1 t figures are all 'not confirmed by snippet'. Concrete problems found: (1) the '164 DWCCs (Nov 2025)' figure conflicts with the sibling dwcc-partners research in this run, which searched the same ground and reports that 164 'could not be traced to any dated page' and that 166 is the May 2019 count; the only dated operating count is Citizen Matters 15 Sep 2025 (198 sanctioned, 141 remain, 119 operational, 127 wards, Hasiru Dala supports 35), so the 200-270 t/day scaling should use 119-141 centres (190-225 t/day), not 164. (2) The rate-card 'spread between buyers' (newspaper Rs 10-16, cardboard Rs 3-10, PET Rs 10-25...) is dispersion in L1 prices (kabadiwala/app to household) across three B2C sites, not the kabadiwala's margin, which is the L2-minus-L1 spread; no L2 (yard to kabadiwala) price is cited anywhere, so the answer offers no evidence at all on margin. (3) The decision hard-codes 'Rs 2-8/kg gross' from a source the answer itself calls an unsourced glossary (Adhara Viveka); an unsourced figure should not become the planning default. (4) Copper Rs 500-720/kg: the sibling market note read the same sites the same day and gives household copper Rs 500-590/kg, so 720 is unconfirmed; aluminium 150-180 is consistent with sibling readings (The Kabadiwala Rs 150, scraprates.in Rs 156.16). Arithmetic otherwise checks: 19,811/365 = 54 t/day, /34 = 1.6 t/day, 6,231/19,811 = 31%, 5,000-6,000 x 25-35% = 1,250-2,100 t/day. Refined chain: the answer treats 'DWCC' as outside the chain; in the refined model DWCCs/MRFs are a role (sell as yards), the Hasiru Dala 31% saleable / 69% MLP-and-rejects split is exactly a processing record (main output + residual-waste lot + yield) at state S2, and margins must be recorded per price level (L1, L2) rather than as one 'kabadiwala margin'.",
+      "correction": "Count: there is no census of Bengaluru scrap shops; the only official-order number is the ~3,000 enumeration forms BBMP printed for scrap dealers in 2011-12 (Hasiru Dala/SWMRT 2014, WIEGO 2013 - both unverified this run), so plan for about 3,000 shops and log the real count ward by ward from pilot onboarding. Share: Bengaluru makes 5,000-6,000 t/day (Citizen Matters, Apr 2026, cross-read by the market note) of which 25-35% is dry, i.e. 1,250-2,100 t/day; DWCCs number 119 operational of 141 remaining and 198 sanctioned (Citizen Matters, 15 Sep 2025; drop the untraceable '164'), and at Hasiru Dala's reported 1.6 t/day per centre they take roughly 190-225 t/day (9-18% of dry waste), of which only about a third is saleable; waste pickers handle about 800 t/day of recyclables (Hasiru Dala via The South First, Mar 2025) and nationally the informal chain moves 60-70% of urban recyclables (Down To Earth, 15 May 2026), so 60-80% through kabadiwalas and pickers remains the planning share, unmeasured. Margin: no Bengaluru study gives a per-material net margin, and the rate cards cited are L1 prices only, so they say nothing about margin; the only structural evidence is Circulate Initiative (Jan 2023, unverified this run) that recyclers keep 70-80% of trade value and collectors plus aggregators share 20-30%. Do not seed the product with the unsourced Rs 2-8/kg; instead record buy price (L1) and sell price (L2) per lot from day one and compute the spread, and treat the 2017 DWCC feasibility data (plastic Rs 15, white record Rs 11, cardboard Rs 8, 5-8 sorters per tonne, most centres at a loss) as the warning that margins are thin. Refined-chain mapping: kabadiwala margin = L2 minus L1 minus sorting labour, rent, freight and rejects; a DWCC is a yard-role account whose intake ledger is a processing record (S1 collected -> S2 sorted: saleable main output ~31%, residual MLP/rejects ~69% at Hasiru Dala centres) with yield; industrial by-products do not touch this question. Open items: re-verify every source once network is restored; ask Hasiru Dala for the 2011-12 enumeration and the annual-report DWCC table; get one month of L1/L2 ledgers from 10 pilot shops.",
+      "extraSources": [
+        {
+          "title": "Invisible workers, visible waste - 198 sanctioned, 141 remain, 119 operational, Hasiru Dala supports 35 (Citizen Matters; read by sibling dwcc-partners research 29 Sep 2026)",
+          "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/"
+        },
+        {
+          "title": "Down To Earth - India's waste economy runs on invisible workers (1.5-4 million pickers move 60-70% of urban recyclables; 15 May 2026, read by sibling market note)",
+          "url": "https://www.downtoearth.org.in/waste/indias-waste-economy-runs-on-invisible-workers-climate-policy-keeps-forgetting-them"
+        },
+        {
+          "title": "The Kabadiwala - Bangalore rate list (aluminium Rs 150/kg, cans Rs 60/kg; read by sibling reference-prices research 29 Sep 2026)",
+          "url": "https://www.thekabadiwala.com/scrap-rates/Bangalore"
+        },
+        {
+          "title": "scraprates.in - Bengaluru (aluminium Rs 156.16/kg; read by sibling reference-prices research 29 Sep 2026)",
+          "url": "https://scraprates.in/bengaluru"
+        }
+      ]
+    },
+    {
+      "question": "What minimum load (kg or Rs) makes a home pickup worthwhile for a kabadiwala, how often does a household have enough scrap to sell, and is there evidence on whether households pick the nearest shop or the best price?",
+      "holds": false,
+      "problems": "Verification blocked this run (search budget spent, fetches 403), so Kabadi Man/Newstrail (Rs 400-500/day, 15-20 km, 150+ dealers), Kumar et al. 2018 (51 g vs 8 g), IntechOpen composition and CSE 2021 are all 'not confirmed by snippet'; Newstrail India is a low-credibility PR outlet and its figures should not drive a decision. Concrete conflicts with pages sibling researchers read the same day (29 Sep 2026): scraprates.in's Bangalore newspaper page says free pickup starts at about 25-50 kg (walk-ins from 10-20 kg) and that pickup quotes run Rs 5-7/kg below wholesale, and its Bengaluru page lists 10-25 kg pickup minimums, so 'free doorstep pickup above usually 10-20 kg' understates the market floor; Kabadiwala Online's price list states a minimum pickup value of Rs 999 with a Rs 499 cancellation fee, not 'around Rs 800-1,000'; The Kabadiwala's Bengaluru app enforces a 15 kg minimum (founder plan, 30 Sep 2026). The decision's 10 kg / Rs 150 free-pickup default is therefore below every published minimum found, and the sibling logistics research shows why: Porter's cheapest Bengaluru mini-truck is Rs 205-230 a trip, i.e. over Rs 9/kg on a 25 kg lot when newspaper pays about Rs 10/kg. Arithmetic: 0.5 kg x 18% (paper 9 + plastic 7 + glass 1 + metal 1) x 4 people = 0.36 kg/day = 10.8 kg/month checks, but that counts all paper and plastic as saleable, so 10 kg/month is an upper bound and a typical home may need 6-8 weeks to reach 15 kg; the Rs 100-150 valuation is at the low end (5 kg newspaper at Rs 10-16 plus 4 kg plastic at Rs 10-25 gives Rs 90-185). The nearest-shop vs best-price conclusion is reasoning from indirect evidence and is fairly labelled. Refined chain: fine at L1; note that a household lot enters at S0 discarded/S1 collected and that the Saathi pickup is the S0->S1 transition, so the minimum should be expressed per lot and per trip in the pickup record.",
+      "correction": "Minimum load: published Bengaluru market floors are 15 kg (The Kabadiwala app), 10-25 kg at verified dealers with free pickup only from about 25-50 kg and doorstep quotes Rs 5-7/kg below wholesale (scraprates.in, 29 Sep 2026), and Rs 999 minimum with Rs 499 cancellation on Delhi's Kabadiwala Online; hired transport confirms the floor, since Porter's cheapest Bengaluru 3-wheeler or Tata Ace is Rs 205-230 a trip (over Rs 9/kg on a 25 kg lot). So default a free Saathi pickup to 15 kg or about Rs 250 (matching the incumbent's Bengaluru floor), allow kabadiwalas to set their own higher floor, and offer a drop-off nudge or a small pickup fee below it; test 10 kg only where a Saathi walks or cycles and stops are batched five or more per lane. Cadence: a four-person home yields at most about 10-11 kg/month of paper, plastic, glass and metal on the IntechOpen 2020 composition (unverified this run), so at a 15 kg floor the natural cadence is every 6-8 weeks, faster in high-income homes (Kumar et al. 2018, unverified); nudge at six weeks, not monthly, until pilot weights say otherwise. Buyer choice: no Indian study tests nearest-shop versus best-price; the indirect evidence (itinerant buyers at the door, DWCC door-to-door reversing to 80% non-saleable in 2017 because kabadiwalas had already bought the good material) supports convenience-first households; keep that as a design assumption to test with the first 30 pilot homes. Open items: re-verify all sources when network is restored; weigh the first three lots from 30 pilot households; log Saathi trip time per stop.",
+      "extraSources": [
+        {
+          "title": "scraprates.in - Bangalore newspaper scrap price (pickup quotes Rs 5-7/kg below wholesale; free pickup from 25-50 kg; read by sibling reference-prices research 29 Sep 2026)",
+          "url": "https://scraprates.in/bangalore/newspaper-scrap-price"
+        },
+        {
+          "title": "scraprates.in - Bengaluru scrap rates (10-25 kg pickup minimums; read by sibling research 29 Sep 2026)",
+          "url": "https://scraprates.in/bengaluru"
+        },
+        {
+          "title": "Kabadiwala Online - price list (minimum pickup value Rs 999, Rs 499 cancellation; read by sibling research 29 Sep 2026)",
+          "url": "https://kabadiwalaonline.in/price-list/"
+        },
+        {
+          "title": "Porter - mini truck booking in Bangalore (3-wheeler Rs 205, Tata Ace Rs 230, Pickup 8ft Rs 330; opened by sibling logistics research 29 Sep 2026)",
+          "url": "https://porter.in/trucks/bangalore"
+        },
+        {
+          "title": "Google Play - The Kabadiwala: Sell Scrap (Bengaluru partner-kabadiwala model; 15 kg minimum per founder plan)",
+          "url": "https://play.google.com/store/apps/details?id=com.thekabadiwala.userapp&hl=en&gl=IN"
+        }
+      ]
+    },
+    {
+      "question": "What are the usual payment terms from yard to kabadiwala (cash at pickup vs 7-30 days' credit), typical lot sizes per material, who transports and who pays freight, and the smallest load worth a yard collection?",
+      "holds": false,
+      "problems": "Verification blocked this run (search budget spent, fetches 403): the Circulate Initiative 2023 figures (800 kg-1 t/day scrap dealer, 1-10 t/day aggregator, credit-bridging layers), the Hasiru Dala demonetisation study (31 respondents, Rs 200 per Rs 10,000 cheque discount), CSE 2021 Mumbai prices (PET Rs 22-32, HDPE/PP Rs 12-14, LDPE Rs 6-15), the India Plastics Pact 'under 10%' margin and the TERI freight remark are all 'not confirmed by snippet'. Only the Recykal claim was cross-found: the sibling competitors research read recykal.market on 29 Sep 2026 and its Terms of Use state credit periods of '7, 15, 30 days, or as otherwise mutually agreed', negotiable MOQs, buyer-funded escrow before dispatch and QC debit notes, and its plastic page promises 'payment before the truck returns'. Substantive gaps: (1) the 7-15 day credit default is a guess, while Recykal's own 7/15/30-day menu is a citable industry default the answer missed; (2) the answer omits the GST reverse charge on metal scrap bought by a registered yard from an unregistered kabadiwala (Notification 06/2024-CT(Rate), from 10 Oct 2024; RCM self-invoice within 30 days under rule 47A from 1 Nov 2024) and 2% GST TDS on registered-supplier metal-scrap contracts above Rs 2.5 lakh (Notification 25/2024), which directly shape L2 payment records for metals; (3) the 'smallest load worth a yard collection' has no source; a floor can be derived from Porter's Bengaluru rates (Rs 205-330 per trip): at a Rs 2-8/kg spread a 100 kg lot spends Rs 2-3/kg on freight while 500 kg spends about Rs 0.5/kg, which supports the 500 kg-1 t default but this is derived, not observed. The 2017 DWCC prices are L3-ish sale prices (DWCC to buyer), and the CSE prices are Mumbai informal purchase prices; neither is a Bengaluru L2 yard-to-kabadiwala price. Refined chain: the answer only covers yard-to-kabadiwala (L2); the same fields (payment terms, freight payer, lot size) are needed at L3 (pre-processor or recycler to yard), where the pre-processor role the founder added is the party that actually buys bales, and where Recykal's escrow-before-dispatch and QC-debit-note terms apply.",
+      "correction": "Payment terms: cash daily at the bottom of the chain (Hasiru Dala demonetisation study, 2017, unverified this run) and credit flowing upward from the shop to its buyer; the only citable credit menu is Recykal.Market's Terms of Use, which set credit at 7, 15 or 30 days as agreed per order, with buyer-funded escrow before dispatch and QC deductions by debit note (read 29 Sep 2026), so give every L2 and L3 lot a payment-terms field of cash-at-pickup / 7 / 15 / 30 days with a due date, defaulting to cash-at-pickup for L2 and 15 days for L3. For metals add the tax fields: since 10 Oct 2024 a GST-registered yard buying metal scrap (chapters 72-81) from an unregistered kabadiwala pays 18% GST under reverse charge and must self-invoice within 30 days (rule 47A, from 1 Nov 2024), and 2% GST TDS applies on registered-supplier metal contracts above Rs 2.5 lakh; the L2 receipt should therefore record the seller's GST status and pick the right document. Lot sizes: Circulate Initiative (Jan 2023, unverified) puts a scrap dealer at 800 kg-1 t/day mixed and a single-material aggregator at 1-10 t/day; keep those as planning sizes. Freight: no source says who pays at L2; with Porter's Bengaluru mini-truck at Rs 205-330 a trip, freight is Rs 2-3/kg on a 100 kg lot but about Rs 0.5/kg at 500 kg, so the derived default is that a yard collects from about 500 kg-1 t per material and below that the shop delivers or pays freight; record a freight-payer flag on every lot and correct it in week one. Refined-chain mapping: the same three fields (terms, freight payer, lot size) must exist on L3 lots from yard to pre-processor or recycler, where bales (S3) are sold and the pre-processor's QC drives deductions; a DWCC selling as a yard uses the same L2/L3 records. Open items: re-verify Circulate Initiative, Hasiru Dala, CSE, IPP and TERI once network is restored; ask three to five Bengaluru yards for real credit days, lot minimums and freight practice.",
+      "extraSources": [
+        {
+          "title": "Recykal.Market Terms of Use (negotiated MOQs, 7/15/30-day credit, escrow before dispatch, QC debit notes; read by sibling competitors research 29 Sep 2026)",
+          "url": "https://recykal.market/terms-and-conditions"
+        },
+        {
+          "title": "Recykal.Market plastic marketplace ('payment before the truck returns'; read 29 Sep 2026)",
+          "url": "https://recykal.market/plastic/"
+        },
+        {
+          "title": "TaxGuru - Metal scrap supplied by unregistered suppliers brought under reverse charge (Notification 06/2024-CT(Rate), 9 Oct 2024)",
+          "url": "https://taxguru.in/goods-and-service-tax/metal-scrap-supplied-unregistered-suppliers-brought-reverse-charge.html"
+        },
+        {
+          "title": "TaxGuru - TDS under GST on metal scrap (Notification 25/2024-Central Tax, 2%, Rs 2.5 lakh threshold; 14 Oct 2024)",
+          "url": "https://taxguru.in/goods-and-service-tax/tds-gst-metal-scrap-notification-no-25-2024-central-tax.html"
+        },
+        {
+          "title": "TaxGuru - RCM self-invoicing within 30 days, rule 47A, effective 1 Nov 2024 (17 Oct 2024)",
+          "url": "https://taxguru.in/goods-and-service-tax/regulation-rcm-invoicing-effective-november-1-2024.html"
+        },
+        {
+          "title": "Porter - mini truck booking in Bangalore (3-wheeler Rs 205, Tata Ace Rs 230, Pickup 8ft Rs 330; opened 29 Sep 2026)",
+          "url": "https://porter.in/trucks/bangalore"
+        }
+      ]
+    }
+  ]
+}

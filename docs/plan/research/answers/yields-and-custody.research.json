@@ -1,0 +1,153 @@
+{
+  "cluster": "Process yields, mass balance and chain-of-custody evidence",
+  "answers": [
+    {
+      "question": "What are typical mass yields for the processes in the refined chain (PET bale to raw flakes, raw to washed flakes, washed flakes to pellets; HDPE/PP bale to granules; LDPE film to agglomerate; OCC and ONP to pulp with reject and sludge shares; HMS to shredded steel and shredder residue; UBC to secondary aluminium with melt loss and dross; insulated cable to copper granules; whole tyres to crumb, steel and fibre; lead-acid batteries to lead, PP and acid; e-waste dismantling fractions by device; C&D to recycled aggregate and manufactured sand; textiles to shoddy fibre; PV modules to glass, aluminium and cells)? Give a defensible default and range per process for the mass-balance checks, and say which are measured in Indian plants versus international literature.",
+      "answer": "Honest status first: in this run no yield figure could be confirmed from an opened page or a search snippet (every host is blocked by the network policy and the session's search budget is exhausted), and the repo's earlier research holds grade specifications but no yields, so every number below is a working default from general recycling literature that the founders must treat as unconfirmed until the pilot's own processing records or a cited source replaces it. The only India-specific, sourced anchor is that CPCB's plastic EPR regime already fixes a plant-level 'conversion factor' (input-to-output ratio) for every registered plastic waste processor at the SPCB's physical verification (CPCB SOP of 15 Mar 2022 and Guidance Manual of Feb 2023, held in the repo), so for PET, HDPE, PP and LDPE lines the platform should load each pre-processor's CPCB-verified conversion factor as that plant's default rather than a literature number; for paper, metals, tyres, batteries, e-waste, C&D, textiles and PV there is no published Indian per-plant yield register, so those defaults come from international literature and must be measured in the pilot. Working defaults (main output as % of input mass, with the range the platform should accept before review): PET bale to raw (unwashed) flakes 88-95% (losses are caps, labels, dirt and the non-PET bale fraction; the APR/ReMA bale spec carried in the July 2026 ReMA circular grades bales at 94%+ PET for grade A, 83-93% for B and 73-82% for C, so the flake yield of a grade C bale can legitimately fall to about 75%); raw flakes to washed flakes 85-92% (float-sink removes PP/PE caps and rings at roughly 3-6%, plus labels, fines and sludge); washed flakes to pellets 95-98% (filter residue and fines); the whole bale-to-pellet chain therefore lands around 70-80% for a grade A/B bale, which is the number to compare with the plant's CPCB conversion factor. HDPE or PP bale to granules 80-90%; LDPE film bale to agglomerate or granule 75-90% with clean dry film at the top and printed or wet film at the bottom (moisture and paper are the losses); OCC to recovered pulp 85-92% on a dry basis with 3-8% rejects (plastic, staples, grit) and 3-6% sludge, ONP with deinking 75-85% with deink sludge of 10-20%; HMS or ELV hulks through a shredder 70-80% shredded steel, 5-8% non-ferrous (zorba, zurik, copper meatballs) and 15-25% shredder residue (fluff), while clean No.1 HMS bundles that skip the shredder yield 95-98% at the furnace. UBC to secondary aluminium 85-92% metal after decoating and melting (decoating burns off roughly 3-5% lacquer and moisture; melt loss to dross and oxidation 5-10%; dross itself is 3-8% of charge and carries 30-60% metal, so it is a by-product lot, not waste); insulated copper cable to copper granules 40-70% depending on cable type (household flex about 40-50%, heavy power cable 60-75%, with the remainder PVC/PE granules and 1-3% fluff and dust); whole passenger tyres to crumb rubber 65-75%, steel 15-25%, textile fibre 5-10% and 1-3% dust; intact lead-acid batteries to lead (paste plus grids) 60-65%, polypropylene case 5-8%, acid or electrolyte 10-20% (recoverable as neutralised sodium sulphate) and separators plus other 4-8%. E-waste dismantling by device: a desktop PC is roughly 50-60% steel, 10-20% plastics, 5-10% printed circuit boards, 5-10% aluminium and copper, and 2-5% batteries and hazardous parts; a CRT TV or monitor is 50-65% glass; an LCD/LED TV is 25-35% steel and aluminium, 30-40% plastics, 15-20% glass, 5-8% PCBs; a refrigerator is 50-60% steel, 15-25% plastics and PU foam, 5-10% copper and aluminium, plus the compressor and refrigerant as controlled fractions, and a phone is 35-45% PCB and screen, 20-30% plastics, 15-20% battery; C&D rubble through a crusher yields 90-95% recycled aggregate and manufactured sand combined (about 60-70% coarse aggregate, 25-35% sand and 3-8% fines, wood, plastic and rebar); sorted textiles to shoddy fibre 80-90% by weight after removing buttons, zips and trims (5-10% dust and short-fibre loss); a crystalline-silicon PV module is about 70-76% glass, 8-10% aluminium frame, 3-5% silicon cells, 6-10% EVA and backsheet polymer, 1-2% copper and junction box and under 0.1% silver, with mechanical recovery of glass typically 90%+ of the glass mass and cells recoverable only by thermal or chemical delamination. Every one of these is a literature or trade rule of thumb, not an Indian plant measurement; treat them as the initial band for the yield_percent review rule in question 2 and tighten each band to the plant's own last-ten-runs mean once the pilot has data.",
+      "status": "partly",
+      "decision": "Ship the yield bands above as editable per-process defaults flagged 'unverified literature default', load each plastic pre-processor's CPCB-verified conversion factor as its plant-specific default, and replace every band with the plant's own rolling mean after ten recorded runs; do not present any of these numbers to buyers, brands or auditors until they are either cited from an opened source or measured in the pilot.",
+      "whoToAsk": "Each plastic pre-processor's CPCB/KSPCB physical-verification report (it states the plant's conversion factor); the pilot's first ten processing records per process type; for paper the mill's stock-prep engineer (IPPTA papers), for metals the melt-shop and shredder operators (IS 2549 and ReMA grade owners), for tyres, batteries, e-waste and PV the CPCB-authorised recycler's SPCB return, which reports input and output tonnage and can be back-calculated to a yield; a secondary-literature pass once fetches work (ETRMA for tyres, ILA/ILZDA for lead, APR and PRE for PET, ReMA for shredders, IEA-PVPS/IRENA for PV, Plastics Recyclers Europe for film).",
+      "sources": [
+        {
+          "title": "snippet (prior run): ReMA ISRI Specifications July 2026 – paper, plastics, ferrous and nonferrous grades, 1% weight-variance rule",
+          "url": "https://www.isrispecs.org/wp-content/uploads/2026/09/2026-July-ReMA_ISRI_Specifications.pdf",
+          "date": "Jul 2026"
+        },
+        {
+          "title": "snippet (prior run): APR Model Bale Specification: PET Bottles – grade A 94%+, B 83-93%, C 73-82% PET fraction",
+          "url": "https://plasticsrecycling.org/wp-content/uploads/2024/09/APR-BaleSpec-PETBottle-NoThermoforms.pdf",
+          "date": "Sep 2022"
+        },
+        {
+          "title": "snippet (prior run): India Plastics Pact – design guidance for food-contact PET bottles (83-88% of Indian bottles clear, 10-15% green)",
+          "url": "https://www.indiaplasticspact.org/uploads/1703753569document.pdf",
+          "date": "Nov 2022"
+        },
+        {
+          "title": "snippet (prior run): CPCB – SOP for registration of plastic waste processors (physical verification fixes a plant conversion factor)",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/SOP%20PWP_0001.pdf",
+          "date": "15 Mar 2022"
+        },
+        {
+          "title": "snippet (prior run): CPCB – Guidance Manual, Centralized EPR Portal for Plastic Packaging (physical verification checklist)",
+          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
+          "date": "Feb 2023"
+        },
+        {
+          "title": "snippet (prior run): IS 2549:2023 Processed ferrous scrap – code for classification (BIS)",
+          "url": "https://archive.org/details/gov.in.is.2549.2023",
+          "date": "17 Feb 2023"
+        },
+        {
+          "title": "snippet (prior run): IPPTA – Paper waste recycling in India: current scenario and future prospects",
+          "url": "https://ippta.co/wp-content/uploads/2023/11/88-94.pdf",
+          "date": "2023"
+        },
+        {
+          "title": "repo: founder's refined material process chains (by-product and waste streams per step, no yields)",
+          "url": "docs/plan/inputs/2026-09-30-founder-research-part-1/refined-roles-material-chains--2-material-process-chains.csv",
+          "date": "30 Sep 2026"
+        }
+      ]
+    },
+    {
+      "question": "What do the chain-of-custody and recycled-content standards Indian recyclers and brands actually use (ISCC PLUS, GRS and RCS, EN 15343, ISO 22095, UL 2809, the CPCB plastic EPR portal's PWP evidence rules, the FSSAI food-grade rPET traceability requirement) require a processing record to contain, how do they treat mass balance versus segregated custody, which of the founder's proposed transaction fields satisfy them, which are missing, and what yield tolerance should trigger a review?",
+      "answer": "What the sourced standards require (from the repo's earlier dated research; no page could be opened in this run): ISCC PLUS 203-1 Traceability v1.1 (13 Nov 2025) wants every incoming delivery documented by weighbridge tickets 'or similar documents' plus a sustainability declaration, records kept as hard copy or electronically for five years, plausibility checks on quantities at collecting points, signed self-declarations from each point of origin, and (in ISCC's mass-balance model) a bookkeeping period, usually three months, in which certified input credited to output cannot exceed certified input received after applying the process's conversion factor, with physically segregated custody as the stricter alternative; GRS 5.0 (published 1 Jul 2026, mandatory 31 Dec 2026) requires the first certified entity to hold a Reclaimed Material Supplier Agreement and a signed Reclaimed Material Declaration Form for every input (the form covers non-textile waste such as PET since 24 Jul 2025), to inspect and record incoming shipments, and has certification bodies verify 10% of collectors (2% on site), while household collection is exempt; RCS is Textile Exchange's lighter sibling with the same input-declaration and transaction-certificate mechanics but no social or chemical criteria; the CPCB plastic EPR portal makes each PWP record per purchase the supplier's name, address, category, quantity, date and GST (or PAN/Aadhaar if no GST) with an invoice copy, locks certificate generation to a GSTN-validated e-invoice with IRN and QR code on the output sale, fixes a plant conversion factor at physical verification, has auditors sample procurement records, e-way bills and site photos, and fines Rs 5,000 per tonne for misreported quantities (EC guidelines, Apr 2024), with the Mar 2026 amendment adding Registered Environment Auditors and a CPCB recycled-content verification guideline due by 30 Sep 2026 that had not appeared as of 29 Sep. From memory and not confirmed in this run: EN 15343:2007 asks the recycler to record for each batch the input source and type, quantities, the process, the output batch and the recycled-content calculation, and is the basis of EuCertPlast; ISO 22095:2020 defines the custody models the platform should name explicitly, identity preserved, segregated, controlled blending, mass balance and book-and-claim; UL 2809 validates a recycled-content percentage from the same input-output records and has a mass-balance variant (2809-2); FSSAI's recycled-plastics framework (packaging regulation amendment plus guidance, around 2022-2024) requires food-grade rPET to come from a CPCB-registered recycler running a validated decontamination process with traceability of the post-consumer food-contact PET input, so an rPET buyer will ask for source-lot evidence, not just weights. Fields that already satisfy the standards: input_lot_id (make it a list with a weight per lot), input_weight_kg, material_code, input_state, process_type, output_lot_id, output_material_code, output_weight_kg, byproduct and waste codes with weights, yield_percent, buyer_role, destination and authorisation_status all map onto the ISCC delivery record, the GRS incoming-shipment record and the CPCB procurement and sales entries. Missing fields the standards or the CPCB portal expect: run start and end timestamps, site_id (the GPS-verified plant, since CPCB ties capacity and the conversion factor to a site), operator_id, scale_id with its Legal Metrology stamp-valid-until date and the gross/tare/net reading, evidence photos or video of the weigh-in and the output lot, moisture or dry-basis flag (paper and washed flakes gain or lose water, which otherwise breaks the balance), by-product and waste output lot IDs (not just codes), a custody_model per lot (segregated or mass-balance, per ISO 22095), the supplier declaration reference (GRS RMDF or ISCC self-declaration and sustainability declaration), the invoice or e-invoice IRN and e-way bill for the linked trades, the plant's CPCB conversion factor and registration number, quality test results or lab certificate reference for the output grade, a mass-balance bookkeeping period ID for credit reconciliation, and a residual-waste manifest reference to the authorised handler. On tolerance: ReMA's paper rules apply no weight adjustment under 1% variance and the CPCB regime penalises per-tonne misreporting, so the recommended rule is a two-layer check: a hard closure check that outputs plus by-products plus waste must equal input within ±2% on a dry basis (±1% is the scale-to-scale tolerance already used at the gate; the extra 1% covers moisture and dust), where any run whose outputs exceed input by more than 1% is blocked pending admin review, and a soft yield check that flags for review any run whose yield_percent falls outside the per-process band from question 1 or more than 5 percentage points from the plant's own rolling mean of the last ten runs, and any plant whose monthly total output exceeds its CPCB conversion factor times input or its registered capacity, since that is exactly the pattern behind the Karnataka fake-certificate case.",
+      "status": "partly",
+      "decision": "Keep the founder's seventeen fields, make input_lot_id a list with per-lot weights and give every by-product and waste stream its own output lot ID; add timestamps, site_id, operator_id, scale_id with stamp validity and gross/tare/net, evidence photos, a moisture/dry-basis flag, a custody_model per lot, the supplier-declaration and e-invoice/e-way-bill references, and the plant's CPCB conversion factor; enforce mass closure within ±2% (block if outputs exceed input by over 1%) and flag yields outside the process band or 5 points off the plant's own ten-run mean.",
+      "whoToAsk": "A GRS/ISCC certification body operating in India (Control Union, SGS, Intertek or TUV) to confirm what a platform record can substitute for during an audit; a food-safety consultant or FSSAI's packaging division for the exact rPET traceability text; the KSPCB regional officer for the conversion-factor and capacity check; and the pilot's two or three recyclers on whether they will accept a ±2% closure rule with their present scales.",
+      "sources": [
+        {
+          "title": "snippet (prior run): ISCC PLUS 203-1 Traceability v1.1 (delivery documentation, five-year records, plausibility checks, self-declarations)",
+          "url": "https://www.iscc-system.org/wp-content/uploads/2025/11/ISCC_PLUS_203-1_Traceability_v1.1.pdf",
+          "date": "13 Nov 2025"
+        },
+        {
+          "title": "snippet (prior run): Textile Exchange – Global Recycled Standard 5.0 (GRS-101-V5.0)",
+          "url": "https://textileexchange.org/app/uploads/2020/08/GRS-101-V5.0-Global-Recycled-Standard.pdf",
+          "date": "1 Jul 2026"
+        },
+        {
+          "title": "snippet (prior run): Textile Exchange – GRS Implementation Manual 5.0 (GRS-201-V5.0)",
+          "url": "https://textileexchange.org/app/uploads/2020/08/GRS-201-V5.0-GRS-Implementation-Manual.pdf",
+          "date": "Jul 2026"
+        },
+        {
+          "title": "snippet (prior run): FashionUnited – Textile Exchange updates the Reclaimed Material Declaration Form to cover non-textile waste",
+          "url": "https://fashionunited.uk/news/business/textile-exchange-updates-form-for-better-tracing-of-textile-waste-across-supply-chain/2025072482982",
+          "date": "24 Jul 2025"
+        },
+        {
+          "title": "snippet (prior run): Textile Exchange – Recycled Claim Standard and Global Recycled Standard overview",
+          "url": "https://textileexchange.org/recycled-claim-global-recycled-standard/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet (prior run): CPCB – Guidance Manual, Centralized EPR Portal (procurement fields, PAN/Aadhaar if no GST, audit checklist, conversion factor)",
+          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
+          "date": "Feb 2023"
+        },
+        {
+          "title": "snippet (prior run): CPCB – Guidance document for Module IA, II and III (PWP procurement fields, single entries)",
+          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Instruction_Sheet.pdf",
+          "date": "Nov 2022"
+        },
+        {
+          "title": "snippet (prior run): CPCB – Instruction sheet for PWP sales: GST e-invoice with IRN and QR code required for certificate generation",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf",
+          "date": "Apr 2025"
+        },
+        {
+          "title": "snippet (prior run): CPCB – SOP for registration of plastic waste processors (physical verification, conversion factor)",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/SOP%20PWP_0001.pdf",
+          "date": "15 Mar 2022"
+        },
+        {
+          "title": "snippet (prior run): CPCB – Guidelines for assessment of Environment Compensation under PWM Rules (Rs 5,000 per tonne misreported)",
+          "url": "https://cpcb.nic.in/uploads/plasticwaste/EC_Regime_PWM_04-04-2024.pdf",
+          "date": "Apr 2024"
+        },
+        {
+          "title": "snippet (prior run): Gazette G.S.R. 237(E) – Plastic Waste Management (Amendment) Rules, 2026 (Registered Environment Auditors, recycled-content verification guideline, IS 14534:2023)",
+          "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Plastic_Waste_Management_2026.pdf",
+          "date": "31 Mar 2026"
+        },
+        {
+          "title": "snippet (prior run): Gazette S.O. 3973(E) – Environment Audit Rules, 2025",
+          "url": "https://egazette.gov.in/writeReadData/2025/265833.pdf",
+          "date": "29 Aug 2025"
+        },
+        {
+          "title": "snippet (prior run): CPCB – FAQs, Centralized EPR Portal for Plastic Packaging (who registers as a PWP)",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/FAQs.pdf",
+          "date": "undated"
+        },
+        {
+          "title": "snippet (prior run): ReMA ISRI Specifications July 2026 (no weight adjustment under 1% variance; buyer may test, adjust or reject)",
+          "url": "https://www.isrispecs.org/wp-content/uploads/2026/09/2026-July-ReMA_ISRI_Specifications.pdf",
+          "date": "Jul 2026"
+        },
+        {
+          "title": "snippet (prior run): CSE – Unpacking EPR for plastic packaging in India (2,499 PWPs, 6 lakh fraudulent certificates)",
+          "url": "https://www.breakfreefromplastic.org/wp-content/uploads/2024/11/http___cdn.cseindia.org_attachments_0.31282200_1730173267_unpacking-epr-for-plastic-packaging-in-india.pdf",
+          "date": "Oct 2024"
+        },
+        {
+          "title": "snippet (prior run): Legal Metrology (General) Rules 2011, rule 27 (verification and stamping of weighing instruments)",
+          "url": "https://indiankanoon.org/doc/67045693/",
+          "date": "2011"
+        },
+        {
+          "title": "repo: ADR 0014 – material states, processing records and the pre-processor (mass-balance tolerance left to this cluster)",
+          "url": "docs/decisions/0014-material-states-and-processing-records.md",
+          "date": "30 Sep 2026"
+        },
+        {
+          "title": "repo: founder's platform data fields for every processing transaction (section 7)",
+          "url": "docs/plan/inputs/2026-09-30-founder-research-part-1/material-chain-refinement.md",
+          "date": "30 Sep 2026"
+        }
+      ]
+    }
+  ]
+}

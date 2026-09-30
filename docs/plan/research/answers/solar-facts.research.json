@@ -1,0 +1,238 @@
+{
+  "cluster": "Rooftop solar facts for Karnataka",
+  "answers": [
+    {
+      "question": "Can a Gruha Jyothi household install rooftop solar under gross or net metering and keep its 200 free units (BESCOM/KERC position)? Which LT-5 and HT-2(a) energy charges apply in FY2026-27 after KERC's 3 March 2026 review order? What do rooftop systems actually generate in Bengaluru (CUF), and what do installers charge today for 1–3 kW DCR home systems and 10–200 kW business systems?",
+      "answer": "Gruha Jyothi and solar: no BESCOM or KERC page surfaced in search snippets that states whether a Gruha Jyothi beneficiary who installs net-metered solar keeps the free-unit entitlement, so this is not settled from public pages. What the snippets do establish: Gruha Jyothi (from 1 August 2023) gives a zero bill up to an entitlement equal to the household's FY2022-23 average plus 10 percent, capped at 200 units; if a month's consumption exceeds the entitlement the entire bill for that month is payable; and the state bears the 56-paise true-up charge on the free units. Industry reporting (Mercom; Deccan Herald quoting the Karnataka Renewable Energy Systems Manufacturers Association) says Gruha Jyothi is the main reason PM Surya Ghar uptake in Karnataka is slow: of about 2.23 lakh applications since February 2024 only 10,672 were installed by July 2025, because households already getting zero bills see no reason to invest. Nothing in the snippets says a beneficiary is barred from installing solar; the unresolved point is whether the free units are counted against net imported units or gross consumption, and BESCOM must confirm that in writing. Tariffs: ETV Bharat (4 March 2026) reports that KERC, on the ESCOMs' review petitions, raised industrial and commercial tariffs from April 2026: LT-5 (LT industrial) energy charge from Rs 4.50 to Rs 5.20 per unit with a fixed charge of Rs 235 per kW, and HT-2(a) from Rs 6.60 to Rs 6.70 per unit with a demand charge of Rs 365 per kVA (ThePrint gives the same HT-2(a) figures). Some calculator sites quote LT-5 at Rs 5.40 per unit, and one snippet quoted 440 paise, so the LT-5 figure should be checked against the KERC order PDF before it goes into any model. On top of that, KERC's Annual Performance Review order of 17 April 2026 lets BESCOM recover a Rs 2,068 crore FY2024-25 deficit through an extra 56 paise per unit on all categories for electricity consumed 1 May 2026 to 30 April 2027, and KERC extended the Discounted Energy Rate Scheme (DERS) to FY2026-27 and FY2027-28 for LT-5 and HT-2(a). FKCCI has challenged the review hike at the appellate tribunal, so the figures could move. Generation: Bengaluru yields roughly 4 units per kWp per day, about 1,450 to 1,550 units per kW per year (5.2 to 5.5 kWh/m2/day irradiance); Karnataka-wide 1,500 to 1,600 kWh/kWp; Indian rooftop CUF averages 16 to 17 percent, which matches 1,500 kWh per year divided by 8,760 hours. Prices (installer and aggregator pages, 2026, not opened): complete on-grid home systems run Rs 55,000 to 85,000 per kW; a 3 kW DCR system in Bengaluru is quoted at Rs 2.05 to 2.35 lakh (another source Rs 1.65 to 2.25 lakh) before the PM Surya Ghar subsidy of Rs 30,000 for 1 kW, Rs 60,000 for 2 kW and Rs 78,000 for 3 kW and above, so roughly Rs 1.25 to 1.55 lakh net for 3 kW. No snippet gave a Bengaluru-specific 1 kW or 2 kW quote; apply the per-kW range. Business (C&I) systems: Rs 30,000 to 50,000 per kW, typically Rs 35,000 to 45,000 per kW turnkey; 10 kW Rs 4.5 to 7 lakh, 50 kW Rs 22 to 35 lakh, 100 kW Rs 45 to 70 lakh (another source Rs 30 to 50 lakh). No snippet priced 200 kW; at Rs 35,000 to 45,000 per kW that is roughly Rs 70 to 90 lakh, an extrapolation, not a quote.",
+      "status": "partly",
+      "decision": "Model a yard or kabadiwala shop on LT-5 at Rs 5.20 per unit plus Rs 0.56 true-up and Rs 235 per kW fixed for FY2026-27 (pre-processors and recyclers on HT-2(a) at Rs 6.70 plus Rs 0.56 and Rs 365 per kVA), assume 4 units per kW per day in Bengaluru, and budget Rs 40,000 per kW for 10 to 200 kW business systems and Rs 65,000 per kW before subsidy for 1 to 3 kW homes. Do not pitch rooftop solar to Gruha Jyothi households whose use is within their entitlement until BESCOM confirms how net metering interacts with the free units.",
+      "whoToAsk": "BESCOM SRTPV cell (srtpv.bescom.org) or the local C,O&M sub-division AE for the Gruha Jyothi plus net-metering billing rule; a CA or the KERC order PDF on kerc.karnataka.gov.in to confirm LT-5 Rs 5.20 vs Rs 5.40; three BESCOM-empanelled installers for live 1 kW, 2 kW and 200 kW quotes.",
+      "sources": [
+        {
+          "title": "snippet: Karnataka's Free Electricity Program Slows Rooftop Solar Rollout Under PM Surya Ghar - Mercom India",
+          "url": "https://www.mercomindia.com/karnatakas-free-electricity-program-slows-rooftop-solar-rollout-under-pm-surya-ghar",
+          "date": "not shown (reports July 2025 figures)"
+        },
+        {
+          "title": "snippet: Karnataka's free power scheme takes the shine off rooftop solar - Deccan Herald",
+          "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fkarnatakas-free-power-scheme-takes-the-shine-off-rooftop-solar-2839152",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: Gruha Jyothi Karnataka 2026 - Check Status, Bill Zero Fix & Free 200 Units",
+          "url": "https://www.citizennest.com/guide/gruha-jyothi-karnataka-status-check-bill-zero",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: KERC Hikes Commercial, Industrial Power Tariffs From April; Prahlad Joshi Says Anti-Industry Govt - ETV Bharat",
+          "url": "https://www.etvbharat.com/en/state/kerc-hikes-commercial-industrial-power-tariffs-from-april-prahlad-joshi-says-anti-industry-govt-enn26030403888",
+          "date": "4 March 2026"
+        },
+        {
+          "title": "snippet: KERC increases electricity tariffs for commercial, industrial consumers - ThePrint",
+          "url": "https://theprint.in/india/kerc-increases-electricity-tariffs-for-commercial-industrial-consumers/2869823/",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: BESCOM, CESCOM Consumers To Pay More Bills As KERC Orders Recovery Of Revenue Deficit - ETV Bharat",
+          "url": "https://www.etvbharat.com/en/state/bescom-cescom-cosumers-to-pay-more-bills-as-kerc-orders-recovery-of-revenue-deficit-enn26041804681",
+          "date": "18 April 2026"
+        },
+        {
+          "title": "snippet: KERC Issues True-Up Tariff Order; BESCOM Consumers to Pay 56 Paise More per Unit - Asianet Newsable",
+          "url": "https://newsable.asianetnews.com/karnataka-news/kerc-issues-true-up-tariff-order-bescom-consumers-to-pay-56-paise-more-per-unit-articleshow-03ssvtv",
+          "date": "not shown (April 2026)"
+        },
+        {
+          "title": "snippet: KERC Extends Discounted Energy Rate Scheme Till FY28, Relaxes Open Access Norms - Saur Energy",
+          "url": "https://www.saurenergy.com/solar-energy-news/kerc-extends-discounted-energy-rate-scheme-till-fy28-relaxes-open-access-norms-11444909",
+          "date": "not shown (order dated 31 March 2026)"
+        },
+        {
+          "title": "snippet: Karnataka: Tribunal admits FKCCI plea, opposes tariff revision by KERC for industries - Deccan Herald",
+          "url": "https://www.deccanherald.com/india/karnataka/tariff-revision-by-kerc-for-industries-tribunal-admits-fkcci-plea-4017267",
+          "date": "not shown (2026)"
+        },
+        {
+          "title": "snippet: Karnataka Electricity Tariff 2026-27 - Slab Rates by DISCOM (LT-5 Rs 5.40 figure, conflicts)",
+          "url": "https://thediscombill.com/tariffs/karnataka/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: All you want to know about rooftop solar installation in Bengaluru - Citizen Matters",
+          "url": "https://citizenmatters.in/faq-on-rooftop-solar-installation-in-bengaluru/",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: Solar Generation Per kWp by Indian State 2026 - Heaven Green Energy",
+          "url": "https://www.heavengreenenergy.com/blog/solar-generation-by-state",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Power Output of Roof Top Solar - EAI",
+          "url": "https://www.eai.in/ref/ae/sol/rooftop/power_output",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: 3 kW Solar Panel Price in Bangalore With Subsidy (2026 Update) - Arkahub",
+          "url": "https://www.arkahub.in/learn/3kw-solar-price-bangalore-2026",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Solar Installation Cost Bengaluru 2026: 3kW 5kW 10kW Guide - Heaven Green Energy",
+          "url": "https://www.heavengreenenergy.com/blog/solar-cost-bengaluru",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Solar in Bangalore 2026 - BESCOM Net Metering, Rs 78,000 subsidy & prices",
+          "url": "https://solarcalculators.in/solar-in-bangalore/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: C&I Rooftop Solar Cost, ROI & Payback Period in India in 2026 - SolarSquare",
+          "url": "https://www.solarsquare.in/blog/commercial-and-industrial-rooftop-solar/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Commercial Solar Installation Cost in India 2026 - Fulminous",
+          "url": "https://fulminousge.com/commercial-solar-installation-cost-india/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Commercial Rooftop Solar System Guide 2026 - MV Solar",
+          "url": "https://mvsolar.co.in/commercial-rooftop-solar-system/",
+          "date": "2026"
+        }
+      ]
+    },
+    {
+      "question": "Does BESCOM publish its empanelled installer list, and how does an installer register for PM Surya Ghar in BESCOM's area? Is Bengaluru one of PM Surya Ghar's City Accelerator Programme cities? When will CPCB publish PV-waste storage and recovery guidelines under rule 12 of the E-Waste Rules? What are the MSE-GIFT and MSE-SPICE scheme terms and do recycling units qualify? Do yards on leased land need the landlord's consent for rooftop solar, and what is KERC's no-unpaid-dues rule?",
+      "answer": "Installer list: yes. BESCOM runs the SRTPV portal (srtpv.bescom.org) and a Solar Rooftop page on bescom.karnataka.gov.in, and the MNRE National Portal publishes a state-wise and DISCOM-wise vendor list (api.solarrooftop.gov.in/VendorList/statewiseVendor); an aggregator snippet counts 85 vendors empanelled with BESCOM (MESCOM 15, HESCOM 25, GESCOM 98) and names firms such as SolarSquare, Orb Energy, Nuetech and Ransun. A household must pick a listed vendor or the subsidy is blocked; the household registers on the national portal and then files on BESCOM's SRTPV portal. Registration for an installer: since 2024-25 there is a national registration with REC Limited as Registering Authority, requiring a Rs 25 lakh bank guarantee, valid five years and renewable once at no extra cost; the older state-level DISCOM route needs a performance bank guarantee of Rs 2.5 lakh valid five years, and vendors already registered under Grid-Connected Rooftop Phase II were auto-enrolled. The document checklist (GST, Udyam, electrical licence, net worth) was not confirmed in any snippet. City Accelerator: MNRE launched the City Accelerator Programme with Shakti Sustainable Energy Foundation for 30 cities in 10 states in phase one, scaling to 100; an August 2026 report says it runs in 46 cities. No snippet lists the cities, so Bengaluru's inclusion is unconfirmed; what is confirmed is that Karnataka ran PM Surya Ghar awareness campaigns (LED vans) in Bengaluru, Mysuru, Mangaluru, Hubballi-Dharwad and Kalaburagi and that the state is pushing SRTPV on government buildings. CPCB PV waste: the storage-and-handling guidelines already exist. CPCB issued draft Guidelines for Storage and Handling of Waste Solar Photo-Voltaic Modules or Panels or Cells in June 2025 (comments to 28 June 2025) and the final version 1.0 in March 2026 (reported 16 and 17 March 2026). They apply to producers, manufacturers and recyclers; solar PV is Schedule I code CEEW-14; manufacturers and producers must store PV waste generated up to 2034-35 as per CPCB guidance; storage must be covered, dry, ventilated, with impervious non-leachable floors, broken panels in labelled containers, stacks of at most 20 layers or 2 metres, at least 19.5 cubic metres per tonne; no open dumping or landfill; waste modules go only to registered e-waste recyclers, and producers must build take-back. A separate 'recovery' guideline (material-recovery standards or recycler SOPs) did not surface in any snippet and no publication date is known; the 'rule 12' reference could not be checked against the rule text. MSE-GIFT and MSE-SPICE (launched 20 December 2023 under RAMP, implemented by SIDBI): GIFT gives a 2 percent per annum interest subvention for up to five years on term loans of Rs 10 lakh to Rs 2 crore to Udyam-registered micro and small enterprises for green projects, backed by a risk-sharing fund giving 75 percent guarantee cover; outlay Rs 478 crore for 2023-24 to 2025-26, and 'waste management including recycling' and renewable energy such as solar are named eligible activities, so a recycling unit buying a solar system or a granulator qualifies if it is an MSE with a bank loan. Whether GIFT was extended past March 2026 is not confirmed in snippets. SPICE is a credit-linked capital subsidy of 25 percent of plant and machinery cost, on cost up to Rs 50 lakh, so a maximum of Rs 12.5 lakh; only brownfield (existing) Udyam MSEs investing in the 11 identified circular-economy sectors qualify, and the unit must comply with EPR and waste-recycling targets; it runs 2023-24 to 2026-27 for 3,400 MSMEs, and Indian Bank and Bank of Baroda offer it. Recycling and circular-economy projects are the scheme's core, so yards and pre-processors that are existing MSEs qualify; a brand-new greenfield yard does not. Leased premises: BESCOM's net-metering guidelines require a tenant applicant to submit the owner's no-objection certificate on Rs 10 non-judicial stamp paper, signed by the owner and notarised on every page, along with ownership proof, the latest bill, Form-1, single-line diagram and the net-metering agreement; the system, its ownership, insurance and removal at lease end should be written into the lease. No-unpaid-dues rule: no snippet from KERC or BESCOM stated a specific 'no arrears' condition for net metering, so its exact wording and source regulation are an open item; the practical default is that the applicant's account must be clear of arrears before BESCOM issues the work approval.",
+      "status": "partly",
+      "decision": "Point yards and pre-processors to the MNRE national vendor list filtered to BESCOM and to SPICE (25 percent capital subsidy, max Rs 12.5 lakh, existing Udyam MSEs only) plus a GIFT-linked bank loan for solar; require every leased-site listing to attach a notarised owner NOC before any solar or capex step; treat CPCB's March 2026 storage guideline as the current PV-waste rule and hold PV-waste listings to registered e-waste recyclers only.",
+      "whoToAsk": "BESCOM SRTPV cell for the current empanelment checklist and the no-dues condition; KERC (Implementation of Solar Rooftop PV) regulations text or counsel for the arrears rule; MNRE or Shakti Sustainable Energy Foundation for the City Accelerator city list; SIDBI's GIFT and SPICE desks or a CA for whether GIFT was extended beyond FY2025-26 and for the 11 circular-economy sectors list.",
+      "sources": [
+        {
+          "title": "snippet: BESCOM DSPV / SRTPV portal",
+          "url": "https://srtpv.bescom.org/",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: SOLAR ROOFTOP - Bangalore Electricity Supply Company Limited",
+          "url": "https://bescom.karnataka.gov.in/new-page/SOLAR%20ROOFTOP/en",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: National Portal for Rooftop Solar - state-wise vendor list (MNRE)",
+          "url": "https://api.solarrooftop.gov.in/VendorList/statewiseVendor",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: PM Surya Ghar Empanelled Vendor List 2026 (District-Wise Directory) - solarsavingshub",
+          "url": "https://solarsavingshub.org/india/pm-surya-ghar/vendor-list/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Vendors Required to Provide INR 25L Bank Guarantee for National Registration in PM Surya Ghar Scheme - Energetica India",
+          "url": "https://www.energetica-india.net/news/vendors-required-to-provide-inr-25l-bank-guarantee-for-national-registration-in-pm-surya-ghar-scheme",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: Invitation for Registration of Vendors under PM Surya Ghar (DISCOM PBG Rs 2.5 lakh)",
+          "url": "https://www.arpdop.gov.in/dopap-portal/doc/file/VendorRegistrationInvitation.pdf",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: City Accelerator Programme Launched To Boost Rooftop Solar - Construction World",
+          "url": "https://www.constructionworld.in/energy-infrastructure/power-and-renewable-energy/city-accelerator-programme-launched-to-boost-rooftop-solar/75301",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: Rooftop solar crosses 50 lakh homes as PM Surya Ghar ... (46 cities) - YourStory",
+          "url": "https://yourstory.com/2026/08/pm-surya-ghar-50-lakh-rooftop-solar-homes",
+          "date": "August 2026"
+        },
+        {
+          "title": "snippet: Karnataka government launches LED van campaign to promote PM Surya Ghar Rooftop Solar Scheme",
+          "url": "https://investmentguruindia.com/newsdetail/karnataka-government-launches-led-van-campaign-to-promote-pm-surya-ghar-rooftop-solar-scheme205988",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: CPCB issues guidelines for storage and handling solar PV waste - Renewable Watch",
+          "url": "https://renewablewatch.in/2026/03/16/cpcb-issues-guidelines-for-storage-and-handling-solar-pv-waste/",
+          "date": "16 March 2026"
+        },
+        {
+          "title": "snippet: Explained: What CPCB's New Solar E-Waste Guidelines Mean For India - ETV Bharat",
+          "url": "https://www.etvbharat.com/en/bharat/what-cpcbs-new-solar-e-waste-guidelines-mean-for-india-enn26031704450",
+          "date": "17 March 2026"
+        },
+        {
+          "title": "snippet: CPCB Releases Draft Guidelines For Safe Storage And Handling Of Solar Panel Waste In India - SolarQuarter",
+          "url": "https://solarquarter.com/2025/06/11/cpcb-releases-draft-guidelines-for-safe-storage-and-handling-of-solar-panel-waste-in-india/",
+          "date": "11 June 2025"
+        },
+        {
+          "title": "snippet: FAQs under E-Waste (Management) Rules, 2022 - CPCB",
+          "url": "https://cpcb.nic.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "23 January 2024"
+        },
+        {
+          "title": "snippet: Solar Waste Treatment under E-Waste (Management) Rules, 2022 - PIB",
+          "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1906920&reg=3&lang=2",
+          "date": "not shown (2023)"
+        },
+        {
+          "title": "snippet: FAQs under GIFT - SIDBI",
+          "url": "https://www.sidbi.in/assets/front/pdf/FAQ-GIFT.pdf",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: Scheme on MSE Green Investment and Financing for Transformation - SIDBI circular",
+          "url": "https://www.sidbi.in/assets/front/pdf/Circular_MSE_GIFT.pdf",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: GIFT - Interest Subvention - RAMP, Ministry of MSME",
+          "url": "https://ramp.msme.gov.in/ramp/index.php/RAMP-initiative/mse-gift/gift-interest-subvention",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: FAQs under SPICE - SIDBI",
+          "url": "https://www.sidbi.in/uploads/financialreport/FAQ-SPICE.pdf",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: MSE SPICE - RAMP, Ministry of MSME",
+          "url": "https://ramp.msme.gov.in/ramp/spice-scheme.php",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: IND MSE SPICE Scheme - Indian Bank",
+          "url": "https://indianbank.bank.in/en/ind-mse-spice-scheme",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: Ministry of MSME Launches MSE GIFT and SPICE Schemes - SMEStreet",
+          "url": "https://smestreet.in/infocus/msme-ministry-launches-mse-gift-and-spice-schemes-6594262",
+          "date": "not shown (launch 20 December 2023)"
+        },
+        {
+          "title": "snippet: Format-17 Guidelines for On-Grid Solar RTPV Programme (Net Metering) for BESCOM officers (owner NOC on Rs 10 stamp paper)",
+          "url": "https://silo.tips/download/format-17-guidelines-for-on-grid-solar-rtpv-programme-on-net-metering-basis-for",
+          "date": "not shown"
+        },
+        {
+          "title": "snippet: BESCOM Net Metering: Complete Application Guide for Bangalore - Eltron Energy",
+          "url": "https://eltronenergy.com/bescom-net-metering-bangalore-complete-application-process-guide-2026/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: BESCOM Net Metering Process: Step-by-Step Guide - Pratham Solar",
+          "url": "https://prathamsolar.com/blog/bescom-net-metering-process",
+          "date": "2025"
+        }
+      ]
+    }
+  ]
+}

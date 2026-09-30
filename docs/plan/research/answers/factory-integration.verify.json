@@ -1,0 +1,76 @@
+{
+  "verdicts": [
+    {
+      "question": "Which accounting software do small scrap yards and recyclers in India use (Tally, Busy, Marg, Excel), which Tally release is common, and does Tally accept Excel imports or only XML? Do yards weigh on their own stamped weighbridge, a public weighbridge or platform scales, and do slips carry serial numbers?",
+      "holds": true,
+      "problems": "Verification limits first: this session had no web search budget left (200/200 used before the first query) and page fetches are refused, so none of the 15 cited pages could be opened or searched; every check below is against sibling research files in the repository that were written with page access on 29 Sep 2026, and against arithmetic and internal consistency. Sources found elsewhere in the repo (independently cited by other clusters): indiankanoon Rule 27 (metrology-police cluster and docs/plan/sources.md), Complinity Karnataka 2021 amendment (metrology-police), tallysolutions.com and help.tallysolutions.com (industry-integration brief), the metal-scrap TDS/RCM rules (scrap-tax cluster: Notification 25/2024, Rs 2.5 lakh per contract ex-GST, registered-to-registered only; Notification 6/2024 RCM, no threshold), the Rs 5 crore e-invoice threshold (eway-gst-ops cluster). Those key claims hold. Not confirmed by any snippet or repo file: TallyPrime 7.1 release date 20 May 2026; JSON import 'from 7.0'; IMARC USD 698.87 million / 65% SME share; the 6 Jul 2026 Legal Metrology amendment cutting test weights from 50% to 20% (this is after my knowledge cutoff and appears nowhere else in the repo); the National Recycling '30-60 tonne platform scale at Rs 2.5-6 lakh'; the existence of a 'July 2026' ReMA specifications edition at a 2026/09 upload path. Discrepancies: (1) the answer says Tally's About page claims '2.5 million+' businesses while docs/plan/sources.md, compiled from the Tally homepage on 29 Sep, records '2.7M+' - both may be true on different pages, but pick one and cite it. (2) 'Section 44AD' is right only for AY 2026-27 (FY 2025-26); the scrap-tax cluster confirms the Income-tax Act 2025 is in force from 1 Apr 2026, so for the pilot year the presumptive provision is the corresponding section of the 2025 Act (section 58) with the same Rs 2 crore / Rs 3 crore (cash 5% or less) limits - the guide's numbers hold, the section label will not. (3) The ILO-SNDT Pune study is not 'undated': it is the 2001 Chikarmane-Deshpande-Narayan report for ILO; date it. (4) The Karnataka fee 'open item' is partly closed by the metrology-police cluster: Schedule IX (revised 3 Dec 2022) caps re-verification at Rs 5,000 per instrument, though the weighbridge line is still not on an open page. Arithmetic: nothing to check beyond the 44AD limits, which are correct. Refined material chain: the answer covers yards and recyclers only. Pre-processors and compounders are also GST-registered factories with weighbridges, so the 'buyer's certified scale governs, 1% tolerance' rule should be applied at every priced hand-off (L2 to L5), and the pre-processor-to-recycler sale (S4-S6 flake to S7 pellet) has no price level in the founder's L1-L5 list - add one or define levels per hand-off rather than per role pair. Processing records (input lot in, main output, by-products and residual waste out, yield) map to Tally's Stock Journal / Manufacturing Journal voucher, not to sales/purchase/receipt/payment, so the XML export must also emit stock-journal vouchers with co-product and scrap lines, and internal process weights (S4-S8) come from the processor's own stamped scale, so the serial-numbered weighment and scale-stamp record should cover process outputs, not only trades.",
+      "correction": "",
+      "extraSources": [
+        {
+          "title": "repo-cited (not opened): scrap-tax cluster - Notification 25/2024-Central Tax GST TDS on metal scrap, Rs 2.5 lakh per contract",
+          "url": "https://taxguru.in/goods-and-service-tax/tds-gst-metal-scrap-notification-no-25-2024-central-tax.html"
+        },
+        {
+          "title": "repo-cited (not opened): Finance Act 2026 gazette, Income-tax Act 2025 in force 1 Apr 2026",
+          "url": "https://egazette.gov.in/WriteReadData/2026/271439.pdf"
+        },
+        {
+          "title": "repo-cited (not opened): Karnataka Legal Metrology (Enforcement) Rules 2011, rule 4 (12-month re-verification)",
+          "url": "https://www.legitquest.com/act/karnataka-legal-metrology-enforcement-rules-2011/B29A"
+        },
+        {
+          "title": "repo-cited (not opened): TallyHelp - Import data into TallyPrime (Excel, XML, JSON)",
+          "url": "https://help.tallysolutions.com/import-data-in-tally/"
+        },
+        {
+          "title": "repo-cited (not opened): Tally Solutions homepage (2.7M+ businesses)",
+          "url": "https://tallysolutions.com/"
+        }
+      ]
+    },
+    {
+      "question": "What grade names, quality parameters and deduction rules do Bengaluru or South Indian buyers and paper mills apply to waste paper, PET and metal (ISRI names, mill specs, moisture and contamination deductions)? Do recyclers hold CPCB processor (PWP) registration, and does the plastic portal accept bulk uploads or only single-entry forms? Would GRS, ISCC PLUS auditors or CPCB physical verification accept a platform's weight and photo record as supporting evidence?",
+      "holds": false,
+      "problems": "Same verification limits as above: no search budget and no page fetches, so nothing was confirmed by a snippet; checks are against sibling repo clusters written with page access on 29 Sep 2026 and against my own knowledge. What is corroborated in the repo: the PWM (Amendment) Rules 2026 G.S.R. 237(E) of 31 Mar 2026 and the Registered Environment Auditor insertion (epr-portals cluster, MPCB gazette copy); the 'single entries' procurement rule, the one-counterparty bulk upload with two-year totals plus PDF, and the GST e-invoice/IRN requirement for PWP sales with the April 2025 CEPP app (epr-portals cluster, Guidance Manual and Instruction Sheet); the Rs 5 crore e-invoicing threshold from 1 Aug 2023 (eway-gst-ops, Notification 10/2023); the ReMA 1% weight tolerance and 12% moisture rule (industry-integration brief, from the 2024 circular); the pending aluminium-scrap BIS standard (materials cluster, same Tribune article). Four things do not hold or were missed. (1) Newer development missed: the epr-portals cluster (Karparivartan, 10 Aug 2026) records that CPCB switched off the standalone plastic portal on 28 June 2026 and migrated it to the common EPR portal epr.cpcb.gov.in, so 'register on eprplastic.cpcb.gov.in' is out of date and every portal-mechanics claim (single-entry procurement, bulk-upload shape, QR app) describes the old portal and must be re-checked on the common one; the CPCB 'guideline for audit and verification for use of recycled content' ordered by G.S.R. 237(E) was due by 30 Sep 2026 (today) and was not on CPCB's guidelines page on 29 Sep. (2) Attribution error: the requirement that recycled plastic conform to IS 14534:2023 comes from the 14 March 2024 PWM amendment (the repo's epr.md already ties IS 14534:2023 labelling to the 2024 rules); the epr-portals cluster, which read G.S.R. 237(E), lists only the REA insertion, the six-month guideline order and recycled-content tables - so 'the 2026 rules require conformity to IS 14534:2023' is not supported and probably wrong. (3) Internal inconsistency on fraud numbers: this answer says 6 lakh fraudulent certificates (CSE); epr.md says about 7 lakh (CPCB audit, 38 times capacity); pick one figure per source and say which. (4) Not confirmed anywhere: GRS 5.0 'published 1 Jul 2026, mandatory 31 Dec 2026' and its RMDF sampling rule (10% of collectors, 2% on site) - after my cutoff, and the cited PDF sits at a 2020/08 upload path, which is odd for a 2026 document; the RMDF non-textile extension of 24 Jul 2025; ISCC PLUS 203-1 v1.1 dated 13 Nov 2025 (the quoted 'weighbridge tickets' wording matches ISCC's traceability documents, so plausible); the PWP fee tiers (Rs 5,000 / 20,000 / 50,000 plus 25% a year) and the 30-day physical-verification clock and 'conversion factor' (fee tiers match my recollection of the EPR guidelines, the rest is unconfirmed); the ReMA paper thresholds for grades 36 and 37; the APR A/B/C PET-fraction bands; every IndiaMART Bengaluru price; IS 2066 (Part 1):2024 as an aluminium-scrap coding standard. Arithmetic: none to check. Refined material chain: the grade codes cover only S2 sorted and S3 baled material; for S4-S8 (flake, washed flake, dried flake, pellet, compound) buyers do not use ReMA names but spec-sheet parameters, so the catalogue needs a per-state parameter set (PET flake: IV dl/g, moisture, PVC ppm, bulk density, colour; PO pellet: MFI, density, ash; secondary aluminium/copper: alloy composition to the IS/ASTM grade, melt yield; recovered pulp: freeness, brightness, ash). By-product lots (caps/labels, fines, wash sludge, dross, slag) need their own codes plus a hazardous-waste schedule category where the residue goes to a TSDF. With a multi-stage chain (yard bale to flaker to washer to pelletiser) it becomes a pilot question which entity is the CPCB-registered PWP that issues the EPR certificate and how the portal treats flake sold on to a pelletiser, so lots must carry an 'EPR-claimed' flag to prevent double counting; recycled-content and GRS/ISCC claims through a compounder require every site in the chain to be certified and a mass-balance per state change, which the lot lineage and yield fields already support. The pre-processor-to-recycler hand-off has no level in the L1-L5 price list.",
+      "correction": "Grades (as before, pending snippet confirmation): use ReMA/ex-ISRI names as canonical codes with a local alias per grade for S2/S3 material - paper OCC (11), DS OCC (12), SOP (37), mixed, duplex, white cutting, record; PET clear/green/mixed with an APR-style bale-fraction field; ferrous HMS/cast/GI per IS 2549:2023; aluminium utensil/extrusion/wire and copper Millberry/Berry as trade names. Mill moisture and dirt deduction formulas are contract terms not on any open page: capture moisture % and contamination % per lot and a free-text deduction, and get three mills' written rules in the pilot. Add a per-state spec-parameter set for S4-S8 outputs and separate codes for by-product and residual-waste lots. CPCB: recyclers that convert plastic waste into flake or pellet must be registered Plastic Waste Processors; since 28 June 2026 registration and all entries live on the common EPR portal epr.cpcb.gov.in (the standalone eprplastic portal was switched off and its data migrated), so the portal's entry mechanics (single-entry procurement, one-counterparty bulk upload, e-invoice IRN/QR on every sale, CEPP QR app) must be re-verified there before the pilot; the recycled-content audit guideline ordered by G.S.R. 237(E) was due by 30 Sep 2026 and had not appeared on 29 Sep. The IS 14534:2023 conformity requirement dates from the March 2024 amendment, not the 2026 one. Because the 2026 rules bring in Registered Environment Auditors, build the lot record to the CPCB third-party audit checklist already in the Guidance Manual (procurement records from registered and unregistered suppliers, GST or PAN/Aadhaar, e-way bills, e-invoices, site photos). E-invoicing is mandatory only above Rs 5 crore turnover (Notification 10/2023, from 1 Aug 2023); a smaller recycler must self-enable on the IRP to sell into the EPR system. Auditors: treat the platform weight-and-photo record as delivery documentation that pre-fills, but never replaces, the signed GRS Reclaimed Material Declaration Form or ISCC PLUS self-declaration and the GST invoice; the GRS 5.0 dates and ISCC 203-1 v1.1 date were not confirmed this session and must be checked on textileexchange.org and iscc-system.org. In a multi-stage chain, fix in the pilot which entity issues the EPR certificate for a lot and mark lots 'EPR-claimed' to stop double counting; recycled-content claims through a compounder need every site certified and a mass balance per state change. Status stays needs-pilot-or-counsel.",
+      "extraSources": [
+        {
+          "title": "repo-cited (not opened): Karparivartan - CPCB migrates plastic packaging EPR to the Common EPR Portal, old portal off 28 June 2026",
+          "url": "https://www.karparivartan.com/cpcb-migrates-plastic-packaging-epr-to-the-common-epr-portal/"
+        },
+        {
+          "title": "repo-cited (not opened): Gazette G.S.R. 237(E) Plastic Waste Management (Amendment) Rules 2026, MPCB copy",
+          "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Plastic_Waste_Management_2026.pdf"
+        },
+        {
+          "title": "repo-cited (not opened): LiveLaw - Plastic Waste Management (Amendment) Rules 2026 explained",
+          "url": "https://www.livelaw.in/articles/plastic-waste-management-amendment-rules2026-india-plastic-pollution-530015"
+        },
+        {
+          "title": "repo-cited (not opened): CPCB Guidance Manual for Centralized EPR Portal (PAN/Aadhaar if no GST; bulk upload; audit checklist)",
+          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf"
+        },
+        {
+          "title": "repo-cited (not opened): CPCB Instruction Sheet for PWPs - GST e-invoice required for certificate generation",
+          "url": "https://eprplastic.cpcb.gov.in/plastic/downloads/Instruction_Sheet_PWP_Sales.pdf"
+        },
+        {
+          "title": "repo-cited (not opened): CPCB technical guidelines page - no recycled-content verification guideline listed on 29 Sep 2026",
+          "url": "https://cpcb.gov.in/technical-guidelines-3/"
+        },
+        {
+          "title": "repo-cited (not opened): SCC Online - NGT notice on 6 lakh fake EPR certificates incl. a Karnataka recycler",
+          "url": "https://www.scconline.com/blog/post/2024/07/31/ngt-issues-notice-cpcb-moefcc-recovery-of-6-lakh-fake-epr-certificates-from-plastic-recycling-companies/"
+        },
+        {
+          "title": "repo-cited (not opened): ReMA/ISRI Scrap Specifications Circular 2024 (1% weight tolerance, 12% moisture)",
+          "url": "https://www.isrispecs.org/wp-content/uploads/2024/04/isri-specs2024final.pdf"
+        },
+        {
+          "title": "repo-cited (not opened): Business Standard - non-ferrous scrap EPR regime faces portal gaps (common portal section not live, 20 Sep 2026)",
+          "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html"
+        }
+      ]
+    }
+  ]
+}

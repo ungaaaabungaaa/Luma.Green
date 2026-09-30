@@ -1,0 +1,218 @@
+{
+  "cluster": "When an industrial by-product may be sold, and when it is waste",
+  "answers": [
+    {
+      "question": "Under the HOWM Rules 2016 as amended to 2026 (Rule 9 utilisation, CPCB SOPs, Schedules I to IV, and any 2024-26 amendment defining 'by-product' or 'end of waste'), which of the founder's industrial by-product rows may be listed and sold on an ordinary marketplace by their generator, and which may move only to an authorised recycler, co-processor or TSDF with a Form 10 manifest and SPCB authorisation? Cite the schedule entry or SOP per family. What did the Fly Ash Notification (2021) and the 2024 amendments on utilisation change?",
+      "answer": "The legal test is not 'is it useful' but 'is it in Schedule I (128 wastes from 38 processes) or over a Schedule II concentration limit'; if yes it is hazardous waste and Rule 9(1) says its utilisation 'shall be carried out only after obtaining authorisation from the State Pollution Control Board ... on the basis of standard operating procedures or guidelines provided by CPCB', it may only go to an SPCB/CPCB-authorised recycler, co-processor or TSDF, and every movement needs the Form 10 manifest under rule 19(1) (sender, receiver, transporter, vehicle, waste description, signatures). CPCB's 'Framework on Identification of Materials Generated from Industrial Processes as Wastes or By-Products' (circulated to SPCBs on 23 Sep 2019) is the only 'end of waste' route: a by-product is 'a material that is not intended to be produced but gets produced in the production process of intended product and is used as such', judged against eight guiding factors (constituents and contaminant concentrations known, fits the rule 3(1) definition, etc.), and CPCB warns that a waste 'that escapes as by-product may get out of ambit of the regulations'; so the generator, not the platform, must hold the SPCB's by-product acceptance. FREE TO LIST AND SELL (not in Schedule I, non-hazardous by nature; ordinary GST invoice, no manifest): bagasse, press mud, molasses (sugar mills are Red category and press mud is a solid waste, not an effluent, but it is sold as manure/compost feedstock), rice husk and bran, sawdust, textile cuttings, PET caps and labels (plastic waste, buyer needs PWM registration as a processor), C&D concrete (goes to a registered C&D processor under the C&D rules and local-body permits), whey, fish offal, bones and hides (food or animal by-products under FSSAI/local-body rules; the Delhi High Court ruled in April 2026 that FSSAI cannot regulate animal feed), fly ash and bottom ash, steel slag (NITI Aayog/CSIR-CRRI 'Guidelines for Utilization and Processing of Steel Slag as Processed Steel Slag Aggregates in Road Construction', July 2024; CPCB draft 'Guidelines on Management of Pyro-metallurgical Slags (Iron & Steel Plants)', comments invited 8 Jun 2023, with IRC/BIS specifications for aggregates), mill scale (listed only in Schedule III Part B as an importable 'other waste', so domestic sales are ordinary ferrous scrap), and tyre steel wire once it leaves a registered tyre recycler's process. HAZARDOUS, MOVE ONLY WITH SPCB AUTHORISATION AND FORM 10: aluminium dross and its residues (Schedule I S.No. 11.5; CPCB SOP for captive utilisation of aluminium dross from refining, and SOPs under Rule 9 for dross generally), zinc dross/zinc-bearing wastes and copper/brass dross (Schedule IV non-ferrous recyclables; the KSPCB Orange 1337 'dross and skimmings' units in the founder's sheet are exactly the authorised recyclers), spent catalysts (SOPs list spent catalyst recovery of Pt, Ir, Os, Pd, Rh, Ru, Re, Au, Ag; a CPCB SOP places molybdenum spent catalyst at 18.1 and another cites entry 35.2, so the exact entry depends on the process), spent solvents (CPCB SOPs for recovery of solvents from spent solvents, e.g. SOP 87 for spent trifluoroacetic acid; entry numbers in category 20 not confirmed from snippets), used oil (Schedule IV recyclable, plus Chapter VII EPR from 1 Apr 2024 under G.S.R. 677(E) of 18 Sep 2023: only SPCB-authorised collection agents with a producer or recycler agreement may collect, handing to 'unregistered dealers, scrap merchants, or roadside oil recyclers is illegal', and liability stays with the generator), paint sludge and paint-process residues (Schedule I category 21, entry 21.1 'process wastes, residues and sludges'), ETP sludge from Schedule I processes (e.g. entry 9.2 sludge from paint and dye ETPs; generic 'chemical sludge from waste water treatment' entry number not confirmed), foundry sand and de-inking sludge are test-dependent: hazardous if Schedule II heavy-metal thresholds are exceeded (leaded brass/bronze foundry sands usually are), otherwise non-hazardous industrial solid waste that still needs the SPCB consent's disposal route (compost, RDF or landfill) rather than open sale. Fly ash: the 2021 notification made every coal and lignite plant 'responsible to utilise hundred percent fly ash generated during the year', with utilisation not below 80% in any year and 100% averaged over a three-year cycle, extended the free-supply obligation to 300 km with no bar on inter-state movement (non-complying plants give ash free to construction agencies within 300 km), and set an environmental compensation of Rs 1,000 per tonne of unutilised ash for missing 80% plus Rs 1,000 per tonne for missing the legacy-ash schedule (20% year 1, 35% year 2, 50% years 3-10); these figures come from the draft and a Dec 2021 critique, the final S.O. text was not opened. 2024-26 amendments: G.S.R. 177(E) of 12 Mar 2024 (TeamLease dates it 3 Mar 2024) changed tyre and used-oil EPR timelines, the 'Second Amendment Rules 2024' draft became the Hazardous and Other Wastes Amendment Rules 2025 (G.S.R. 438(E), 1 Jul 2025, in force 1 Apr 2026) adding Chapter VIII EPR for aluminium, copper, zinc and alloy scrap with registration of collection agents and recyclers and a bulk-consumer duty to hand scrap only to registered entities; the Rule 9(1) wording in the 2025 notification is unchanged and I found no 2024-26 amendment or draft that redefines 'by-product' or adds an 'end of waste' clause, so the 2019 CPCB framework still governs.",
+      "status": "partly",
+      "decision": "Split the by-product catalogue into two lists at import: an OPEN list (bagasse, press mud, molasses, husk, bran, sawdust, textile cuttings, PET caps/labels, C&D concrete, whey, fish offal, bones, hides, fly and bottom ash, steel slag, mill scale, tyre steel) that any verified business can list; and a HAZARDOUS list (used oil, spent solvents, spent catalysts, Al/Zn/Cu dross, paint sludge, ETP sludge, and foundry sand or de-inking sludge unless the generator uploads a Schedule II test report and SPCB by-product acceptance) that the pilot does not trade at all, only records as a 'send to authorised handler' request carrying the Form 10 fields.",
+      "whoToAsk": "An environmental counsel (or a KSPCB Hazardous Waste Cell officer) to confirm the Schedule I entry numbers for spent solvents, spent catalysts, ETP sludge and de-inking sludge and whether Karnataka accepts CPCB's 2019 by-product framework for press mud, foundry sand and slag; the final Fly Ash Notification text (31 Dec 2021) for the compensation figures.",
+      "sources": [
+        {
+          "title": "snippet: CPCB — SOP for processing proposals for utilisation of hazardous waste under Rule 9 (July 2019 revision)",
+          "url": "https://cpcb.nic.in/uploads/hwmd/SOP_Rule_9_July_2019.pdf",
+          "date": "2019-07"
+        },
+        {
+          "title": "snippet: CPCB — Procedure for processing proposals for utilisation of hazardous waste under Rule 9 (Dec 2021)",
+          "url": "https://cpcb.nic.in/uploads/hwmd/SOP_December_2021.pdf",
+          "date": "2021-12"
+        },
+        {
+          "title": "snippet: CPCB — Framework/Guidelines on identification of materials generated from industrial processes as wastes or by-products (circulated 23 Sep 2019)",
+          "url": "https://cpcb.nic.in/uploads/hwmd/Guidelines_HW_2.pdf",
+          "date": "2019-09-23"
+        },
+        {
+          "title": "snippet: CPCB — SOPs under Rule 9 (waste-specific list page)",
+          "url": "https://cpcb.nic.in/sop-for-hw-specific/",
+          "date": ""
+        },
+        {
+          "title": "snippet: CPCB — SOP 14a for utilisation of hazardous waste under Rule 9 (aluminium dross at Schedule I 11.5)",
+          "url": "https://cpcb.nic.in/uploads/hwmd/14_a_SOP.pdf",
+          "date": ""
+        },
+        {
+          "title": "snippet: CPCB — SOP 87, utilisation of spent trifluoroacetic acid (a spent solvent)",
+          "url": "https://cpcb.nic.in/uploads/hwmd/87_SOP.pdf",
+          "date": ""
+        },
+        {
+          "title": "snippet: CPCB — SOP gasifier slag / spent catalyst (27 May 2017)",
+          "url": "https://cpcb.gov.in/uploads/hwmd/SoP_Gasifier_Slag_Spent%20Catalyst_27052017.pdf",
+          "date": "2017-05-27"
+        },
+        {
+          "title": "snippet: DPCC — Schedule I list of hazardous wastes, HOWM Rules 2016",
+          "url": "https://www.dpcc.delhigovt.nic.in/uploads/pdf/schedulepdf-c0ecbcb4bc2474781f45ceb2d0b51ee6.pdf",
+          "date": ""
+        },
+        {
+          "title": "snippet: Gazette copy — Hazardous and Other Wastes (Management and Transboundary Movement) Rules 2016 (Schedule III Part B mill scale; Schedule IV registration)",
+          "url": "https://www.iwma.in/HWM%20Rules.pdf",
+          "date": "2016-04-04"
+        },
+        {
+          "title": "snippet: Form 10 [see rule 19(1)] Manifest for hazardous and other waste (SPCB copy)",
+          "url": "https://ddnocmms.nic.in/SPCB_DOCUMENTS/Foms%2010-%20HW.pdf",
+          "date": ""
+        },
+        {
+          "title": "snippet: TeamLease RegTech — Hazardous and Other Wastes Amendment Rules, 2024",
+          "url": "https://teamleaseregtech.com/updates/article/30650/hazardous-and-other-wastes-management-and-transboundary-movement-amend/",
+          "date": "2024-03"
+        },
+        {
+          "title": "snippet (via repo research): MoEFCC — Hazardous and Other Wastes Amendment Rules 2024, G.S.R. 177(E)",
+          "url": "https://eprtyres.cpcb.gov.in/rules/pdf/amendment-Rules-2024.pdf",
+          "date": "2024-03-12"
+        },
+        {
+          "title": "snippet: Lexplosion — HOWM Second Amendment Rules 2024 notified, effective 1 Apr 2026 (non-ferrous EPR)",
+          "url": "https://lexplosion.in/environment-ministry-notifies-the-hazardous-and-other-wastes-management-and-transboundary-movement-second-amendment-rules-2024-effective-01-04-2026/",
+          "date": "2025-07"
+        },
+        {
+          "title": "snippet: SCC Online — Digital portal to drive EPR in Hazardous Waste Rules 2025 amendment (G.S.R. 438(E), Rule 9 text)",
+          "url": "https://www.scconline.com/blog/post/2025/07/04/hazardous-waste-management-rules-epr-amendment-2025/",
+          "date": "2025-07-04"
+        },
+        {
+          "title": "snippet: Down To Earth — draft fly ash notification with polluter-pays (Rs 1,000/t, 300 km, legacy ash schedule)",
+          "url": "https://www.downtoearth.org.in/waste/environment-ministry-issues-new-draft-notification-on-fly-ash-with-polluter-pays-principle-75379",
+          "date": "2021"
+        },
+        {
+          "title": "snippet: CPR — Fly Ash Management in India: a critique of existing and proposed frameworks",
+          "url": "https://cprindia.org/wp-content/uploads/2021/12/Fly-Ash-Management-in-India_A-Critique-of-existing-and-proposed-frameworks-1.pdf",
+          "date": "2021-12"
+        },
+        {
+          "title": "snippet: QHSEalert — Notification on fly ash utilisation for coal and lignite power plants (100%, not below 80%, 3-year cycle)",
+          "url": "https://legalupdate.qhsealert.com/notification-on-fly-ash-utilization-for-coal-and-lignite-based-power-plants/",
+          "date": ""
+        },
+        {
+          "title": "snippet: Indian Infrastructure — NITI Aayog unveils guidelines for steel slag utilisation in road construction",
+          "url": "https://indianinfrastructure.com/2024/07/02/niti-aayog-unveils-guidelines-for-steel-slag-utilisation-in-road-construction/",
+          "date": "2024-07-02"
+        },
+        {
+          "title": "snippet: TeamLease RegTech — CPCB invites comments on draft Guidelines on Management of Pyro-metallurgical Slags (8 Jun 2023)",
+          "url": "https://www.teamleaseregtech.com/updates/article/24184/cpcb-invites-comments-suggestions-on-draft-guidelines-on-management-of/",
+          "date": "2023-06-08"
+        },
+        {
+          "title": "snippet: US EPA — spent foundry sands (leaded brass/bronze sands often hazardous)",
+          "url": "https://www.epa.gov/smm/frequent-questions-about-epas-risk-assessment-spent-foundry-sands-soil-related-applications",
+          "date": ""
+        },
+        {
+          "title": "snippet: Spans — CPCB effluent standards for sugar mills (press mud and bagasse are solid wastes, Red category)",
+          "url": "https://spans.co.in/knowledge/cpcb-effluent-standards-sugar-mills/",
+          "date": ""
+        },
+        {
+          "title": "snippet: Biocil — Hazardous Waste Rules 2016 and used oil: collection agents, unregistered dealers illegal, generator liability",
+          "url": "https://biocil.in/blog/hazardous-waste-rules-used-oil-india.html",
+          "date": ""
+        },
+        {
+          "title": "snippet (via repo research): MoEFCC — HOWM Second Amendment Rules 2023, EPR for used oil (G.S.R. 677(E))",
+          "url": "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf",
+          "date": "2023-09-18"
+        },
+        {
+          "title": "snippet: Bar and Bench — FSSAI cannot regulate animal feed, Delhi High Court",
+          "url": "https://www.barandbench.com/news/fssai-cant-regulate-animal-feed-delhi-high-court",
+          "date": "2026-04"
+        }
+      ]
+    },
+    {
+      "question": "What obligations fall on a platform that lists such materials: does hosting a listing for a Schedule I waste make Luma.Green an 'operator of a facility', a 'dealer' or otherwise liable under the HOWM Rules, the E-Waste Rules 2022 or the Battery Waste Management Rules 2022, and how do Recykal, Scrapcart, MetalMandi, Karo Sambhav and MSTC's e-auction handle it? Recommend the buyer-gate rules per material family.",
+      "answer": "The HOWM Rules put duties on the occupier who generates the waste (authorisation, Form 10 manifest, sending only to authorised users), the transporter and the 'operator of a disposal facility'; a website that hosts a listing, never takes title or custody, moves no money and runs no site is none of those on the text, and none of the snippets found any HOWM 'dealer' or marketplace category, but liability for a bad hand-off stays with the generator ('the legal liability for improper disposal remains with the generator, not the unauthorized dealer'), and an SPCB can still treat a platform that knowingly matches a Schedule I lot to an unauthorised buyer as an abettor under s.15 of the Environment (Protection) Act, so this is a counsel question rather than a settled one. The E-Waste (Management) Rules 2022 are stricter: authorisation was replaced by portal registration, 'no entity shall carry out any business without registration and also not deal with any unregistered entity', bulk consumers must hand e-waste only to registered producers, recyclers or refurbishers, and a recycler buying from the informal sector must upload a receipt with the seller's name and address (CPCB FAQ, 23 Jan 2024); the Battery Waste Management Rules 2022 apply to 'producers, dealers, consumers, and entities involved in the collection, segregation, transportation, refurbishment and recycling', require recyclers and refurbishers to register on the CPCB portal, and a refurbisher selling under its own brand becomes a producer with EPR targets; used oil has the same shape since 1 Apr 2024 (registered collection agents and re-refiners only), and non-ferrous scrap (Al, Cu, Zn and alloys) gets it from 1 Apr 2026 under G.S.R. 438(E). How platforms handle it: MSTC's e-auctions require bidders to be 'CPCB/SPCB approved/registered recyclers/reprocessor' with valid consents and hazardous-waste authorisation, notarised copies of the CPCB and SPCB certificates are filed at registration, MSTC records the certificate validity and admits the buyer to the live floor only while it is valid on the auction start date, and refineries must vet spent-catalyst buyers' eligibility under HOWM before auctioning; Recykal.Market checks every buyer and supplier ('GST validated, business registration confirmed, no shell accounts') and its EPR network 'only includes CPCB-authorised dismantlers and recyclers'; for Scrapcart, MetalMandi (Attero) and Karo Sambhav the searches returned only general profiles (Karo Sambhav runs an e-waste collection programme feeding registered recyclers; MetalMandi is Attero's metal-scrap app), so their gating rules are not confirmed. Recommended gate rules for Luma.Green, per family: Gate A 'open' (any admin-verified business with GSTIN): bagasse, press mud, molasses, rice husk and bran, sawdust, textile cuttings, fly and bottom ash, steel slag, mill scale, tyre steel, whey, fish offal, bones, hides, C&D concrete; Gate B 'registered processor for the stream' (buyer profile must carry the number, PDF and expiry, admin-checked, listing hidden from others): PET caps and labels and any plastic lot to a PWM-registered processor, e-waste only to a registered producer/recycler/refurbisher with the CPCB e-waste registration number, batteries only to a CPCB/KSPCB-registered battery recycler or refurbisher, used oil only to a registered collection agent or re-refiner, non-ferrous dross and scrap from 1 Apr 2026 only to a registered non-ferrous recycler; Gate C 'no trade in the pilot' (Schedule I wastes: spent solvents, spent catalysts, paint sludge, ETP sludge, aluminium, zinc and copper dross, foundry sand or de-inking sludge without a Schedule II test report and SPCB by-product acceptance): the generator may post a 'send to authorised handler' request, the app captures the Form 10 fields (waste name and Schedule I entry, quantity, sender authorisation number, receiver authorisation number, transporter, vehicle) and shows KSPCB-authorised recyclers, co-processors and TSDFs, but no price, no bidding and no Saathi pickup. Across all gates keep the platform on the data side: no title, no custody, no escrow for hazardous lots, a one-line notice that the generator remains the 'occupier' responsible for the manifest, and quarterly re-checks of certificate expiry.",
+      "status": "needs-pilot-or-counsel",
+      "decision": "Adopt three buyer gates (open; registered-for-the-stream; hazardous request-only with Form 10 fields captured and no trade), block every Schedule I family and e-waste, battery and used-oil lots from the household and kabadiwala flows, and have counsel confirm before 13 Oct 2026 that hosting request-only listings does not make Luma.Green an occupier, operator or abettor under HOWM.",
+      "whoToAsk": "Environmental counsel for the HOWM 'occupier/operator/abettor' reading and the IT Act intermediary position; KSPCB Hazardous Waste Cell for whether a request-only listing needs any platform registration; a phone call to Recykal, Attero (MetalMandi) and Scrapcart to confirm their buyer-gating and manifest practice.",
+      "sources": [
+        {
+          "title": "snippet: CPCB — FAQ, E-Waste (Management) Rules 2022 and amendments (registration, no dealing with unregistered entities, bulk consumers)",
+          "url": "https://eprewaste.cpcb.gov.in/assets/PDF/faqewaste.pdf",
+          "date": "2024-01-23"
+        },
+        {
+          "title": "snippet: Mondaq — E-Waste Management Rules 2022: an overview",
+          "url": "https://www.mondaq.com/india/waste-management/1303420/e-waste-management-rules-2022-an-overview",
+          "date": "2023"
+        },
+        {
+          "title": "snippet: CPCB — FAQs under Battery Waste Management Rules 2022 (General)",
+          "url": "https://eprbattery.cpcb.gov.in/upload/adminDoc/Frequently%20Asked%20Questions%20(General).pdf",
+          "date": "2023-03-21"
+        },
+        {
+          "title": "snippet: TeamLease RegTech — The Battery Waste Management Rules 2022 (applies to producers, dealers, consumers, collectors, recyclers)",
+          "url": "https://www.teamleaseregtech.com/updates/article/18865/the-battery-waste-management-rules-2022/",
+          "date": "2022-08"
+        },
+        {
+          "title": "snippet: MSTC — special terms and conditions for hazardous waste e-auction (CPCB/SPCB-registered bidders only)",
+          "url": "https://www.mstcecommerce.com/auctionhome/mstc/admin/upload/downAttachedFiles.jsp?FILE_ID=STC_4_36465_410138_1.pdf&doc_type=stc",
+          "date": ""
+        },
+        {
+          "title": "snippet: MSTC — registration procedure, notarised CPCB/SPCB certificates and validity check for hazardous items",
+          "url": "https://mstcindia.co.in/MSTC_Static_Pages/BANK_NPA/Registration%20procedure/NPA%20REGD%20PROC.htm",
+          "date": ""
+        },
+        {
+          "title": "snippet: NGT order on spent catalyst e-auction via MSTC and HOWM eligibility of recyclers",
+          "url": "https://www.greentribunal.gov.in/gen_pdf_test.php?filepath=L25ndF9kb2N1bWVudHMvbmd0L2Nhc2Vkb2MvanVkZ2VtZW50cy9ERUxISS8yMDIxLTA0LTA5LzE2MTgyMTc1NzkxNzYzODc4NDYwNzQwYTZiZDI2NTMucGRm",
+          "date": "2021-04-09"
+        },
+        {
+          "title": "snippet: Recykal.Market — AI-powered B2B circular marketplace (GST-validated buyers and suppliers)",
+          "url": "https://recykal.market/",
+          "date": ""
+        },
+        {
+          "title": "snippet: Recykal — EPR e-waste (network only of CPCB-authorised dismantlers and recyclers)",
+          "url": "https://www.recykal.com/epr-e-waste",
+          "date": ""
+        },
+        {
+          "title": "snippet: Perfect Pollucon — how to fill Form 10 hazardous waste manifest",
+          "url": "https://www.ppsthane.com/blog/form-10-hazardous-waste-manifest",
+          "date": ""
+        },
+        {
+          "title": "snippet: Biocil — used oil: collection agents need SPCB authorisation, generator liability",
+          "url": "https://biocil.in/blog/hazardous-waste-rules-used-oil-india.html",
+          "date": ""
+        },
+        {
+          "title": "snippet (via repo research): Business Standard — non-ferrous scrap EPR regime faces portal and target-calculation gaps",
+          "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html",
+          "date": "2026-09-20"
+        },
+        {
+          "title": "snippet (via repo research): Microsoft Source Asia — Karo Sambhav responsible e-waste recycling",
+          "url": "https://news.microsoft.com/source/asia/features/karo-sambhav-responsible-e-waste-recycling-india/",
+          "date": "2020-12-09"
+        },
+        {
+          "title": "snippet (via repo research): The Tribune — Attero's MetalMandi crosses 2 lakh downloads",
+          "url": "https://www.tribuneindia.com/news/business/atteros-metalmandi-crosses-2-lakh-downloads-targets-5x-growth-in-five-years/amp",
+          "date": "2026-04-07"
+        },
+        {
+          "title": "snippet (via repo research): ScrapCart industrial scrap marketplace",
+          "url": "https://scrapcart.com/",
+          "date": ""
+        }
+      ]
+    }
+  ]
+}

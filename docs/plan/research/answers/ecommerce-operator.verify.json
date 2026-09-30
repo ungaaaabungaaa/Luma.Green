@@ -1,0 +1,64 @@
+{
+  "verdicts": [
+    {
+      "question": "Is Luma.Green an 'e-commerce operator' under CGST s.52 (0.5% TCS) and under the Income-tax Act 2025 (the successor to s.194-O, 0.1% TDS) for bookings and trades where money never passes through it? What changes once escrow through a payment aggregator starts?",
+      "holds": true,
+      "problems": "VERIFICATION LIMIT: this pass could open no page and run no search (the session's WebSearch budget is exhausted at 200/200 and every CONNECT is refused with a gateway 403, including gstcouncil.gov.in, indiankanoon.org, rbi.org.in and wikipedia.org). Every remark below is therefore 'not confirmed by snippet'; it rests on (a) the law as known up to June 2026, (b) cross-checks against the sibling research files in the repo that cite official copies of the same instruments (docs/plan/research/legal.md, docs/plan/research/answers/scrap-tax.research.json, docs/plan/research/answers/escrow-payments.research.json) and (c) arithmetic. The answer's structure and headline decision are consistent with all of that, so it is kept as holding, with these flags. (1) Statutory numbering inside the Income-tax Act 2025 is unverified: 's.393(1) Table Sl. No. 8(v)', 's.393(4) Table Sl. No. 11', 's.397(2)(b)' and 's.402(13)-(14)' could not be confirmed from any snippet; the substance (0.1% of gross sales, nil threshold, deemed-payment rule for buyer-to-participant payments, Rs 5 lakh individual/HUF exemption conditional on PAN/Aadhaar, 5% no-PAN rate, wide operator/participant definitions) matches old s.194-O and s.206AA as re-enacted, but a CA should re-cite the exact table rows from incometaxindia.gov.in before the numbers go into platform terms. (2) The three CBDT circulars (17/2020 of 29 Sep 2020, 20/2021 of 25 Nov 2021, 20/2023 of 28 Dec 2023) are pre-2025-Act instruments; the answer assumes they survive under the new Act's repeal-and-savings clause. That is the usual reading but no 2026 CBDT re-issue or mapping circular was checked; add as an open item for the CA. (3) 'Income-tax: very likely yes from day one' is an interpretation, not a settled rule: no ruling covers a record-only platform, and the answer itself says so in whoToAsk; status 'partly' is right. (4) Sources: the Wikipedia entry dated 2026-09-01 and the eztax/TaxGuru/Indian Kanoon reproductions are secondary; the repo's own source list already carries official copies that should replace them (see extraSources). (5) No arithmetic errors: 0.25% CGST + 0.25% SGST = 0.5% is right; the other numbers are rates and thresholds, not computations. (6) REFINED-CHAIN CHANGES NEEDED: the answer names only 'kabadiwala to yard to recycler to manufacturer'. Under the 30 Sep 2026 model every additional resident seller the platform books is an e-commerce participant, so 0.1% TDS (and, once escrow starts, 0.5% GST TCS on registered sellers) applies to each facilitated leg at levels L2, L3, L4 and L5: yard to pre-processor, pre-processor to recycler, recycler to compounder, compounder to manufacturer, manufacturer to industrial buyer, plus DWCC/MRF sales and industrial by-product listings (bagasse, fly ash, slag, dross, foundry sand, husk, whey). Because every processing record yields separate lots (main output, saleable by-products, residual waste), each by-product lot sold through the platform is its own facilitated sale with its own gross amount; residual-waste movements to a TSDF or authorised handler are usually a paid disposal SERVICE supplied by the TSDF to the generator, which reverses who the 'participant' is (the TSDF) and what the 0.1% base is (the disposal fee), so the trade record needs a direction flag. Industrial by-product listings by large registered generators are the one place where the CBDT Circular 20/2021 price-discovery safe harbour could genuinely be engineered (listing and bid only, contract, delivery and payment off-platform, no visibility of payment quantum or schedule); treat that as a product-design choice rather than assuming 0.1% applies there. Saathi pickups and sorting are services: if Saathi fees are booked or paid through the platform, Saathis are participants (0.1% on services) or contractors (contractor TDS) depending on who pays them; the answer is silent on this. (7) Practical trap to add: for households without PAN/Aadhaar the 5% rate is uncollectable from money Luma never touches, so the real decision is to gate the household seller flow on PAN/Aadhaar capture (with the DPDP/Aadhaar-consent wording checked by counsel), not merely 'capture at sign-up'. (8) Cross-reference: the seller-side scrap TCS under s.394(1) (old 206C(1)) on metal scrap, covered in scrap-tax.research.json, is unaffected by the operator's 0.1% TDS; the sentence 'no other TDS applies' is correct but should say TCS by the seller still can.",
+      "correction": "",
+      "extraSources": [
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): CBIC tax repository - CGST Act s.52, collection of tax at source",
+          "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter10/section52_v1.00.html"
+        },
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): CBIC tax repository - CGST Act s.24, compulsory registration",
+          "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section24_v1.00.html"
+        },
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): Notification 15/2024-Central Tax, ECO TCS rate 0.25% (GST Council copy, dated 10 Jul 2024)",
+          "url": "https://gstcouncil.gov.in/sites/default/files/2024-09/central-tax-15-2024-11072024.pdf"
+        },
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): Notification 34/2023-Central Tax, enrolment of unregistered sellers through ECOs (GST Council copy, 31 Jul 2023)",
+          "url": "https://gstcouncil.gov.in/sites/default/files/2024-05/gst-ct-34-2023.pdf"
+        },
+        {
+          "title": "unopened (cited in docs/plan/research/payments-and-finance.md): Minutes of the 53rd GST Council meeting, 22 Jun 2024 (ECO TCS cut to 0.5%)",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/Minutes/53rd_minutes_converted.pdf"
+        },
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): Notification 06/2024-Central Tax (Rate), reverse charge on metal scrap (effective 10 Oct 2024)",
+          "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ctr-06-2024.pdf"
+        },
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): Notification 25/2024-Central Tax, 2% GST TDS on metal scrap (9 Oct 2024)",
+          "url": "https://gstcouncil.gov.in/sites/default/files/2024-10/ct-25-2024.pdf"
+        },
+        {
+          "title": "unopened (cited in escrow-payments.research.json): RBI (Regulation of Payment Aggregators) Directions 2025, Master Direction, 15 Sep 2025",
+          "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896"
+        },
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): CBIC FAQ on e-commerce under GST",
+          "url": "https://gstcouncil.gov.in/sites/default/files/2024-02/faq-e-commerc.pdf"
+        }
+      ]
+    },
+    {
+      "question": "Are households 'consumers' under the Consumer Protection Act when they sell scrap and get a free pickup, and do the Consumer Protection (E-Commerce) Rules 2020 as amended in 2026 apply to Luma.Green (grievance officer, 48-hour acknowledgement, seller disclosures)? Or should it adopt those norms voluntarily?",
+      "holds": true,
+      "problems": "VERIFICATION LIMIT: as with the first verdict, no page could be opened and no search run in this pass (search budget exhausted, gateway 403 on every host), so nothing below is confirmed by snippet; it rests on the law as known to June 2026, the sibling repo files (risk-guards.research.json, data-it-rules.research.json, docs/plan/research/legal.md, which cites the Department of Consumer Affairs PDF of G.S.R. 789(E) dated 11 Sep 2026) and the founder's own 30 Sep 2026 plan, which independently records G.S.R. 789(E) as in force from 1 Jan 2027. The statutory reasoning holds: s.2(7) 'for a consideration' and the resale/commercial-purpose exclusion with the self-employment livelihood Explanation, s.2(42) excluding free services, Indian Medical Association v V.P. Shantha (13 Nov 1995) keeping nominally free services in scope where paying users or a third party bear the cost, the 2020 Rules' scope (G.S.R. 462(E), 23 Jul 2020), the natural-person carve-out, Rule 4(1)'s company requirement and the 48-hour/one-month clock are all as stated. Flags: (1) Everything said about the content of the 2026 Amendment Rules (copy of complaint to complainant, mandatory NCH convergence, legal-name/HQ display, ranking disclosure, sponsored-listing labels, 30-day prior-price rule, annual dark-pattern self-audit with displayed certificate, seller GSTIN/MSME identifiers, express consent for data use, and the claim that scope was not narrowed and no small-platform threshold was added) post-dates the June 2026 knowledge horizon and is not confirmed by any snippet; the decision to adopt voluntarily is robust to whichever of these items turns out to differ, but the item list must be re-read from the DoCA PDF before it becomes a product checklist. (2) The specific figures '1,398 companies had converged with NCH by March 2026', 'Rs 3.00 crore of penalties across 477 class-action notices by 9 Mar 2026' and the Lok Sabha Unstarred Question No. 5415 of 25 Mar 2026 have no confirming snippet and no sibling file repeats them; either re-verify against the fcainfoweb.nic.in PDF or drop them, since they are colour, not load-bearing. (3) Internal inconsistency with the sibling answers: risk-guards.research.json and data-it-rules.research.json commit the platform to the IT Rules 2021 intermediary clock (acknowledge within 24 hours, resolve within 15 days), which is stricter than the 48-hour/30-day consumer clock this answer adopts; the platform should publish the stricter pair once and note that it satisfies both, rather than two different promises. (4) Omission: the answer analyses whether a kabadiwala is a consumer when BUYING scrap but not whether a kabadiwala, yard or Saathi becomes a consumer of Luma.Green's own SERVICE the moment the platform charges them a fee or subscription; under Explanation (a) to s.2(7) a self-employed kabadiwala or a Saathi earning a livelihood would be a consumer of that paid service, so the grievance mechanism must cover paying business users and gig workers, not only households. (5) REFINED-CHAIN CHANGES NEEDED: the B2B legs now run household to kabadiwala to yard to pre-processor to recycler to compounder to manufacturer to industrial buyer, plus DWCC/MRF operators, brands with EPR duties, authorised handlers and TSDFs, and industrial by-product sellers. None of these commercial buyers is a consumer, except sole-proprietor livelihood buyers (small kabadiwalas, possibly SHG-run DWCC operators) under Explanation (a); say so explicitly so the 'consumer' analysis is not re-run for every new role. The Rule 6 seller-disclosure duty (and the 2026 GSTIN/MSME identifiers, if confirmed) must be collected at admin verification for EVERY business role, not just 'kabadiwala/yard' as the answer says. The material-state model (S0-S9), grade, yield and by-product lot descriptors are 'descriptions of goods' for the accuracy duty, so the answer's advice to keep statements accurate about weights and rates must extend to states, grades and yields on every lot listing. (6) Status 'needs-pilot-or-counsel' and the decision are right; the LLP-vs-company point under Rule 4(1) stays genuinely open and is correctly routed to counsel.",
+      "correction": "",
+      "extraSources": [
+        {
+          "title": "unopened (cited in docs/plan/research/legal.md): Department of Consumer Affairs - Consumer Protection (E-Commerce) (Amendment) Rules 2026, G.S.R. 789(E) (PDF posted 11 Sep 2026)",
+          "url": "https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/whatsnews/E_Commerce_Amendment_Rules_2026_2026-09-11_18-12-39.pdf"
+        },
+        {
+          "title": "unopened (cited in risk-guards.research.json): Consumer Protection (E-Commerce) Rules 2020 text, rule 4(4)-(5) grievance officer 48 hours / one month (TaxTMI)",
+          "url": "https://www.taxtmi.com/article/detailed?id=9460"
+        }
+      ]
+    }
+  ]
+}

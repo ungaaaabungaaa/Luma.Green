@@ -1,0 +1,228 @@
+{
+  "cluster": "Verifying the new roles: pre-processor, compounder, brand, authorised handler",
+  "answers": [
+    {
+      "question": "For each role the refined chain adds - pre-processor (PET flaker, plastic reprocessor, cable granulator, tyre processor, C&D plant, e-waste dismantler, battery breaker, used-oil re-refiner, ELV scrapping centre), compounder or masterbatch maker, manufacturer using recycled input, brand with EPR duties, authorised waste handler, co-processor and TSDF, and a dry-waste centre or MRF run under a city agreement - what registrations, consents, authorisations and certificates does it hold in Karnataka, and which of those can be checked on a public register or portal without a login? Write the admin's verification checklist per role with the document, the check, and the online source.",
+      "answer": "Build the checklist as three layers. Layer 1, every business role: GSTIN, checked free and without login at gst.gov.in > Search Taxpayer > Search by GSTIN/UIN (returns legal name, trade name, status, registration date, constitution, principal place and returns filed); Udyam number, checked without login at udyamregistration.gov.in > Print/Verify > Verify Udyam Registration Number (enterprise name, address, MSME class, PAN linkage, registration date); PAN and bank proof go in the vault but have no public check. Layer 2, every processing role: KSPCB consent to establish (before construction) and consent to operate (before production) carrying the category code; KSPCB issues e-signed consent and authorisation orders (HWM, PWM, EWM, BMW modules) through XGN, whose applicant login needs an OTP, but signed orders are also published on the board's site and the repo's earlier research used the public consent-order register at xgn.karnataka.gov.in/CSHARP/ALLConsentOrder.aspx behind a CAPTCHA, so the admin reads unit name, colour, order number and validity there. Validity conflicts in public sources (a TeamLease note quotes KSPCB giving Orange CTOs 10 years; the founder's 2016-based sheet says Red/Orange 5, Green 10; CPCB's January 2025 re-classification of 419 sectors, Red 125/Orange 137/Green 94/White 54/Blue 9, supersedes the 2016 codes and makes MRFs and C&D facilities 'Blue'), so read validity off the order and treat codes 1326/1366/1405/1414/1424/1587 as labels to re-verify against the 2025 list, not as gates. Layer 3 per role: (a) plastic pre-processor or reprocessor (PET flake/wash, HDPE-PP regrind, LDPE agglomerate) and plastic recycler: Orange consent plus Plastic Waste Processor registration on CPCB's centralised EPR portal (recycling, waste-to-energy, waste-to-oil and industrial composting units all register; the standalone eprplastic portal was switched off on 28 June 2026 and data moved to the common portal epr.cpcb.gov.in); check the registration certificate PDF for number, PWP type, installed capacity and validity; a public state-wise PWP list could not be confirmed from any snippet (the portal has SPCB/CPCB dashboards), so that is an open item; if GRS is claimed, check the scope certificate in Textile Exchange's public 'Find Certified Companies' database (scope certificates run one year; transaction certificates are confirmed with the issuing certifier), and ISCC PLUS via the certifier (a public ISCC search was not confirmed today); for food-grade rPET, FSSAI's FCM-rPET guidelines (23 May 2025, gazette amendment 28 Mar 2025) accept only decontaminating technologies (super-clean, melt-in, paste-in, chemical) and 17 plants held approval at about 300,000 t/yr, so ask for the plant's FSSAI approval letter and check the FBO licence at foscos.fssai.gov.in > Verify Licence/Registration Certificate (14-digit number, no login). (b) Cable granulator or copper/aluminium pre-processor: KSPCB consent (metal recovery in oil-fired furnaces is Orange per the repo legal brief) plus GST with metal-scrap TDS/RCM; non-ferrous EPR (HOWM Chapter VIII, from 1 Apr 2026) will require collection-agent and recycler registration, but the CPCB portal was not live on 20 Sep 2026, so record the number when it exists and do not gate on it. (c) E-waste dismantler: under the E-Waste (Management) Rules 2022 (in force 1 Apr 2023) only manufacturers, producers, refurbishers and recyclers register at eprewaste.cpcb.gov.in; there is no separate dismantler category or Form 4 authorisation any more, so 'dismantler' means a registered recycler (5-year validity) with Red-category consent; the portal publishes lists of registered recyclers and refurbishers with number, categories and validity (381 recyclers nationally on 18 Jan 2025); the Karnataka count was not found. (d) Battery breaker or recycler: BWM Rules 2022 one-time registration with KSPCB through eprbattery.cpcb.gov.in (application Form 2A, certificate Form 2B, quarterly Form 4 returns) plus Red consent; a public list was not confirmed. (e) Tyre processor: registration on eprtyres.cpcb.gov.in (producers, recyclers, retreaders), which shows 'Registered Tyre Waste Recyclers' dashboards; pyrolysis is Red (founder codes 1178/1424); import of waste tyres for pyrolysis is banned. (f) Used-oil re-refiner: registration on eprusedoil.cpcb.gov.in (live 1 Apr 2024; producers, collection agents, recyclers, importers) plus HOWM authorisation via XGN; an early report counted only 77 producers and 33 recyclers applying nationally. (g) ELV scrapping centre: RVSF registration under the 2021 Motor Vehicles scrapping rules, listed publicly at vahan.parivahan.gov.in/vahan/scrappolicy > List of RVSF (filter by state), plus from 1 Apr 2025 registration on eprelv.cpcb.gov.in; Karnataka's first RVSF is Mahindra MSTC at Vijayapura, Devanahalli taluk, with Koratagere and Koppal announced. (h) C&D plant: Orange/Blue consent plus registration on cdwm.cpcb.gov.in (rules bind projects of 20,000 sq m or more from 1 Apr 2026; dashboard still at zero). (i) Compounder, masterbatch maker and manufacturer using recycled input: no waste-rule register exists; consent for their own process, GSTIN, Udyam; if they market recycled content, IS 14534:2023 marking and, from the 31 Mar 2026 PWM amendment, audits by Registered Environment Auditors under a CPCB guideline due by 30 Sep 2026 that had not appeared by 29 Sep. (j) Brand with EPR duties: PIBO registration on the common EPR portal (CPCB if operating in more than two states, otherwise KSPCB; micro and small brand owners exempt); check the registration certificate number and category targets; no public PIBO list was confirmed. (k) Authorised waste handler, co-processor, TSDF: HOWM authorisation through XGN's HWM module, Red consent, and CPCB registration as a co-processor under the plastic (end-of-life PWP) and used-oil regimes; Karnataka's common TSDF and its operator were not confirmed from any snippet today. (l) DWCC or MRF under a city agreement: the BBMP ward services agreement with its DWCC operating procedure (centre is BBMP property, at least five sort categories, daily weights on BBMP's portal, monthly report), SWM Rules 2026 rule 9 registration with the city corporation and quarterly portal returns (CPCB's swm.cpcb.gov.in had only the bulk-generator module on 29 Sep 2026), and Blue-category consent under the 2025 list; most 2020 MoUs had lapsed by Sep 2025, so ask for the agreement PDF and confirm the centre on the corporation's ward list rather than trusting a certificate.",
+      "status": "partly",
+      "decision": "Ship one admin checklist with the three layers above; make GSTIN, Udyam and XGN consent (number, colour, validity) mandatory for every processing role, add the stream-specific CPCB registration number and certificate PDF as a hard gate only for e-waste, battery, tyre, used-oil and ELV accounts, and store every check with the URL, date and screenshot so it can be re-run when the CPCB common portal or the non-ferrous portal changes.",
+      "whoToAsk": "KSPCB regional office (Bengaluru) to confirm the public XGN consent-order search still works without login and the current CTO validity per category; CPCB EPR helpdesk (or one registered PWP) for whether the common portal publishes a state-wise PWP and PIBO list; FSSAI's packaging division for the list of the 17 approved rPET plants; environmental counsel on whether an e-waste 'dismantler' needs its own recycler registration or can operate under another recycler's.",
+      "sources": [
+        {
+          "title": "snippet: GST tutorial - Search Taxpayers using GSTIN/UIN (no login)",
+          "url": "https://tutorial.gst.gov.in/userguide/taxpayersdashboard/Search_Taxpayer_manual.htm",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: Godrej Capital - MSME verification: verify a Udyam certificate without login",
+          "url": "https://www.godrejcapital.com/media-blog/knowledge-centre/msme-verification",
+          "date": "2026 (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: KSPCB - XGN online consent applications and authorisation (HWM, PWM, EWM, BMW)",
+          "url": "https://kspcb.karnataka.gov.in/xgn-online-consent-applications-cfecfexp-cfo-authorisation-hwm-pwm-ewm-bmw-rogw-login-here",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: TeamLease RegTech - KSPCB prescribes validity of consent to operate for Red, Orange and Green categories",
+          "url": "https://www.teamleaseregtech.com/updates/article/5774/kspcb-prescribes-the-validity-period-for-consent-to-operate-for-red-or/",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): KSPCB XGN public register of consent orders",
+          "url": "https://xgn.karnataka.gov.in/CSHARP/ALLConsentOrder.aspx",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "snippet: CPCB - EPR registration for plastic waste management (PIBO and PWP)",
+          "url": "https://cpcb.nic.in/registration-for-brand-owner/",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: CPCB - Guidance Manual for the Centralized EPR Portal for Plastic Packaging",
+          "url": "https://eprplastic.cpcb.gov.in/assets/pdfs/Guidance_Manual.pdf",
+          "date": "2023-02"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): Karparivartan - CPCB migrates plastic packaging EPR to the Common EPR Portal (old portal off 28 June 2026)",
+          "url": "https://www.karparivartan.com/cpcb-migrates-plastic-packaging-epr-to-the-common-epr-portal/",
+          "date": "2026-08-10"
+        },
+        {
+          "title": "snippet: CPCB - FAQs under E-Waste (Management) Rules, 2022 (entities that register; recycler validity 5 years)",
+          "url": "https://cpcb.nic.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "2024-01-23"
+        },
+        {
+          "title": "snippet: CPCB report to NGT - 381 registered e-waste recyclers as of 18 Jan 2025",
+          "url": "https://www.greentribunal.gov.in/sites/default/files/news_updates/Report%20by%20CPCB%20in%20EA%20No.%2004%20of%202024%20IN%20OA%20No.%20512%20of%202018%20(Shailesh%20Singh%20Vs.%20Govt%20of%20Uttar%20Pradesh%20and%20Ors.).pdf",
+          "date": "2025-01"
+        },
+        {
+          "title": "snippet: CPCB - Guidance document for recyclers under Battery Waste Management Rules (Form 2A/2B, Form 4)",
+          "url": "https://eprbattery.cpcb.gov.in/upload/adminDoc/GuidanceManuals/Guidance%20Manual%20Recyclers.pdf",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: CPCB Waste Tyre EPR Portal - FAQ (producers, recyclers, retreaders; pyrolysis import ban)",
+          "url": "https://eprtyres.cpcb.gov.in/rules/pdf/FAQ.pdf",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: F&L Asia - CPCB calls for urgent registration on used oil EPR portal (77 producers, 33 recyclers applied)",
+          "url": "https://www.fuelsandlubes.com/indias-cpcb-calls-for-urgent-registration-on-used-oil-epr-portal/",
+          "date": "2024 (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: Lexology - EPR for used oils (HOWM Second Amendment Rules 2023, in force 1 Apr 2024)",
+          "url": "https://www.lexology.com/library/detail.aspx?g=244cb546-dd6f-4fa8-a9e6-9168f640d7ab",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: Deccan Herald - Karnataka gets first registered vehicle scrapping facility (Mahindra MSTC, Vijayapura, Devanahalli)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/karnataka-gets-first-registered-vehicle-scrapping-facility-2687144",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: National Recycling - Vehicle scrapping policy 2026: RVSF list on vahan.parivahan.gov.in/vahan/scrappolicy",
+          "url": "https://www.nationalrecycling.in/blog/vehicle-scrapping-policy-2026-rvsf-incentives-deadlines/",
+          "date": "2026 (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: Legal500 - India notifies its End-of-Life Vehicles Rules (RVSF registration on eprelv.cpcb.gov.in, in force 1 Apr 2025)",
+          "url": "https://www.legal500.com/developments/thought-leadership/india-notifies-its-end-of-life-vehicles-rules/",
+          "date": "2025 (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: TeamLease RegTech - FSSAI guidelines for acceptance of recycled PET as food contact material",
+          "url": "https://teamleaseregtech.com/updates/article/42999/fssai-issued-guidelines-for-acceptance-of-recycled-polyethylene-tereph/",
+          "date": "2025-05-23"
+        },
+        {
+          "title": "snippet: IndiFoodBev - FSSAI nod to 17 r-PET plants (about 300,000 t/yr)",
+          "url": "https://indifoodbev.com/packaging/fssai-nod-to-17-r-pet-plants/",
+          "date": "2025 (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: FSSAI - About licence verification (public FBO search on FoSCoS)",
+          "url": "https://fssai.gov.in/citizen/about-license-verification",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: Fursone - GRS certificate validity and scope checks (Textile Exchange 'Find Certified Companies')",
+          "url": "https://fursone.com/grs-certificate/",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): Business Standard - Non-ferrous scrap EPR regime faces portal and target-calculation gaps",
+          "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html",
+          "date": "2026-09-20"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): CPCB Construction and Demolition Waste Management portal (dashboard at zero)",
+          "url": "https://cdwm.cpcb.gov.in/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): Gazette - Plastic Waste Management (Amendment) Rules 2026, G.S.R. 237(E) (Registered Environment Auditors)",
+          "url": "https://www.mpcb.gov.in/sites/default/files/standing_orders/Plastic_Waste_Management_2026.pdf",
+          "date": "2026-03-31"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): Gazette - Solid Waste Management Rules 2026, S.O. 388(E) (rule 9 MRF registration)",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026129773501.pdf",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): BBMP draft services agreement, Annex I - Operating procedure for Dry Waste Collection Centres (OpenCity)",
+          "url": "https://data.opencity.in/dataset/bbmp-operating-dry-waste-collection-centres",
+          "date": "2025-11-25"
+        },
+        {
+          "title": "founder input: refined-roles-material-chains, CPCB 2025 cross-reference (419 sectors; Blue category; 2016 KSPCB codes)",
+          "url": "https://kspcb.karnataka.gov.in/consent-management/Notification_1425.pdf",
+          "date": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "question": "Which of these roles should the Bengaluru pilot admit from 13 October 2026, which should wait, and why: for each, the count that exists locally, the supply the pilot's yards can offer them, the compliance risk of getting the gate wrong, and the cost of the checklist. Recommend the order in which the roles switch on and what a 'pre-processor' account should see first.",
+      "answer": "Admit on 13 October only the roles whose feedstock the pilot's two yards actually make and whose papers the admin can check in under an hour: dry-waste centres or MRFs as yard accounts (about 120 of 198 sanctioned centres operate in Bengaluru per the 15 Sep 2025 count, 35 supported by Hasiru Dala; they hold city agreements, their supply is the same loose and baled dry waste the yards trade, the risk of a wrong gate is low because they are sellers not regulated processors, and the check is the BBMP agreement PDF plus the corporation's ward list), plastic pre-processors and reprocessors (PET flakers, HDPE/PP regrinders, LDPE agglomerators: Orange consent on XGN plus a PWP registration certificate; yard PET, HDPE and LDPE bales are exactly their L3 input; the risk of a wrong gate is medium because only registered PWPs may generate certificates and a Karnataka recycler was among those named in the 2024 fake-certificate case, so an unregistered buyer taints the chain of custody but breaks no law for the yard), cable and non-ferrous pre-processors (consent plus GST with metal TDS/RCM; UBC and copper lots are small but real; the non-ferrous EPR portal is not live, so risk today is nil), and manufacturers or compounders that buy granules (no waste-rule register, consent for their own process plus GSTIN and Udyam; they are demand, not supply, and the only risk is a false recycled-content claim, which stays with them). Local counts for these plastic and metal pre-processors were not found on any public page and remain an open item. Switch on in November-December 2026, after the admin has run one real check on each portal, the regulated buyers whose registration the rules make a hard gate: e-waste recyclers (381 registered nationally on 18 Jan 2025, Karnataka count unknown; yards will hold only small itemised e-waste lots; dealing with an unregistered entity is a violation and the used-oil and battery rules let CPCB charge environmental compensation to anyone who aids a breach, so the gate must be right before the first lot moves), battery recyclers (Form 2B certificate; same abetment risk; supply is a few intact lead-acid lots), tyre recyclers and used-oil re-refiners (both need the CPCB stream portal number; only 33 used-oil recyclers had applied nationally in the early-2024 report; household tyres and oil barely reach a Bengaluru yard, so there is no supply to justify the checklist yet). Hold until 2027: RVSFs (one facility in Karnataka at Vijayapura, Devanahalli, its own EPR portal, and only steel counts), C&D plants (rules bind projects of 20,000 sq m or more, a builder-to-plant chain the household pilot never touches, portal dashboard still at zero), co-processors and TSDFs (hazardous manifests and Red consents with no pilot volume), and brands with EPR duties (the plan already puts them at scale; the evidence dashboard can be shown on demo data without admitting a brand, and admitting one before the CPCB recycled-content verification guideline exists invites a claim the platform cannot yet support). Checklist cost is admin time, not fees: about 5 minutes each for the GST and Udyam lookups, 10-15 minutes for an XGN consent read behind the CAPTCHA, and 15-30 minutes for a CPCB stream-portal check plus certificate PDF, so plan roughly 30 minutes per plastic pre-processor and about an hour per regulated buyer (these are working estimates, not published figures), against the plan's 12-24 hour verification promise. Order of switching on: 13 Oct, DWCC-as-yard, plastic pre-processor, metal pre-processor, manufacturer/compounder; Nov-Dec 2026, e-waste and battery recyclers as verified regulated buyers, then tyre and used-oil; 2027, RVSF, C&D, co-processor/TSDF, brand. A pre-processor's first screen should show, in this order: open buy requests for bales it can post (material code, state S3, grade such as PET bale A/B/C, tonnes, L3 price offered, pickup radius), the yards' lot listings filtered by state and grade with the lot passport (photos, weights, seller chain), and a 'new processing record' button that takes input lot IDs and a process (shred, wash, dry, granulate) and creates the main output lot, saleable by-product lots and a residual-waste lot with the yield, each carrying the new state (S4-S7); a compliance card (consent days left, PWP registration number, share of registered capacity used this year) sits beside it so the account sees its own gate.",
+      "status": "partly",
+      "decision": "Go live on 13 October with DWCCs, plastic and metal pre-processors and manufacturers/compounders behind the three-layer checklist; add e-waste, battery, tyre and used-oil recyclers as verified regulated buyers in November-December once the admin has completed one real check per portal; keep RVSF, C&D, co-processor/TSDF and brand accounts off until 2027 and show their screens on demo data only.",
+      "whoToAsk": "Ten Bengaluru plastic reprocessors and two e-waste recyclers (phone survey) for how many operate locally, what bale tonnage they take per load and which documents they ask yards for; KSPCB's Bengaluru regional office for the count of consented plastic-reprocessing and e-waste units in the city; Hasiru Dala for which of its 35 DWCCs will act as the pilot yard; environmental counsel on the abetment exposure if an unregistered buyer takes e-waste or batteries through the platform.",
+      "sources": [
+        {
+          "title": "repo-cited (opened 29 Sep 2026): Citizen Matters - Invisible workers, visible waste (119 of 198 DWCCs operational; Hasiru Dala supports 35)",
+          "url": "https://citizenmatters.in/invisible-workers-visible-waste-bengalurus-waste-pickers-struggle-without-recognition/",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): BBMP draft services agreement, Annex I - Operating procedure for Dry Waste Collection Centres (OpenCity)",
+          "url": "https://data.opencity.in/dataset/bbmp-operating-dry-waste-collection-centres",
+          "date": "2025-11-25"
+        },
+        {
+          "title": "snippet: CPCB report to NGT - 381 registered e-waste recyclers as of 18 Jan 2025",
+          "url": "https://www.greentribunal.gov.in/sites/default/files/news_updates/Report%20by%20CPCB%20in%20EA%20No.%2004%20of%202024%20IN%20OA%20No.%20512%20of%202018%20(Shailesh%20Singh%20Vs.%20Govt%20of%20Uttar%20Pradesh%20and%20Ors.).pdf",
+          "date": "2025-01"
+        },
+        {
+          "title": "snippet: F&L Asia - CPCB calls for urgent registration on used oil EPR portal (77 producers, 33 recyclers applied)",
+          "url": "https://www.fuelsandlubes.com/indias-cpcb-calls-for-urgent-registration-on-used-oil-epr-portal/",
+          "date": "2024 (search result 30 Sep 2026)"
+        },
+        {
+          "title": "snippet: Deccan Herald - Karnataka gets first registered vehicle scrapping facility (Vijayapura, Devanahalli; Koratagere and Koppal planned)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/karnataka-gets-first-registered-vehicle-scrapping-facility-2687144",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): SCC Online - NGT notice on 6 lakh fake EPR certificates including a Karnataka recycler",
+          "url": "https://www.scconline.com/blog/post/2024/07/31/ngt-issues-notice-cpcb-moefcc-recovery-of-6-lakh-fake-epr-certificates-from-plastic-recycling-companies/",
+          "date": "2024-07-31"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): Battery Waste Management Rules 2022, S.O. 3984(E) (dealing with unregistered entities; abetment)",
+          "url": "https://cpcb.gov.in/uploads/hwmd/Battery-WasteManagementRules-2022.pdf",
+          "date": "2022-08-22"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): HOWM Second Amendment Rules 2023 - EPR for used oil (environmental compensation for aiding a violation)",
+          "url": "https://eprusedoil.cpcb.gov.in/public/images/Annexure3.pdf",
+          "date": "2023-09-18"
+        },
+        {
+          "title": "snippet: CPCB - FAQs under E-Waste (Management) Rules 2022 (only registered entities may handle e-waste)",
+          "url": "https://cpcb.nic.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+          "date": "2024-01-23"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): Business Standard - Non-ferrous scrap EPR portal not operational",
+          "url": "https://www.business-standard.com/economy/news/economy-news-non-ferrous-scrap-epr-regime-faces-portal-target-calculation-gaps-126092000321_1.html",
+          "date": "2026-09-20"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): TeamLease RegTech - Environment (Construction and Demolition) Waste Management Rules 2025 (20,000 sq m threshold)",
+          "url": "https://www.teamleaseregtech.com/updates/article/41401/environment-construction-and-demolition-waste-management-rules-2025/",
+          "date": "2025-04-04"
+        },
+        {
+          "title": "repo-cited (opened 29 Sep 2026): CPCB - Plastic waste technical guidelines page (no recycled-content verification guideline listed)",
+          "url": "https://cpcb.gov.in/technical-guidelines-3/",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "snippet: TeamLease RegTech - KSPCB validity of consent to operate by category",
+          "url": "https://www.teamleaseregtech.com/updates/article/5774/kspcb-prescribes-the-validity-period-for-consent-to-operate-for-red-or/",
+          "date": "undated (search result 30 Sep 2026)"
+        },
+        {
+          "title": "founder input: refined-roles-material-chains, users and roles and material process chains (pre-processor inputs, outputs, by-products)",
+          "url": "https://kspcb.karnataka.gov.in/consent-management/Notification_1425.pdf",
+          "date": "2026-09-30"
+        }
+      ]
+    }
+  ]
+}

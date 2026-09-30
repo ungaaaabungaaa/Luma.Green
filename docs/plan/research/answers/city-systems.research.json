@@ -1,0 +1,233 @@
+{
+  "cluster": "City dashboards and national programmes",
+  "answers": [
+    {
+      "question": "Which of the Greater Bengaluru Authority's five corporations would be the natural host for a ward dashboard pilot, who is the SWM nodal officer (role, not personal data), and which fields does a city report monthly to MoHUA's Swachhatam portal? Is SBM-Urban extended beyond 2026, and how does the Swachh Survekshan 2026-27 toolkit change dry-waste and digital-monitoring indicators?",
+      "answer": "The GBA (established 15 May 2025) presides over five corporations constituted on 2 September 2025: Bengaluru Central, North, South, East and West, with 368 wards (369 after one was added to West). Door-to-door collection was taken back from BSWML after Bengaluru was ranked the fifth dirtiest million-plus city in Swachh Survekshan 2025; it went first to zonal commissioners and then to the five corporations, while BSWML now handles only processing and disposal and empanels bulk-generator vendors (it delisted about 90% of vendors, leaving four, and authorised a single firm, Ecosphere Waste Solutions, for bulk waste in North and East). Bengaluru East City Corporation (50 wards, 168 sq km, HQ Mahadevapura, covering the Whitefield/EPIP tech corridor) earmarked Rs 300 crore for SWM in its 2026-27 budget and mixes tech parks, large apartment bulk generators and households, which is the data mix a ward dashboard needs; Bengaluru South (whose Commissioner has held public meetings on waste) is the fallback. On the nodal officer: each corporation has an IAS Municipal Commissioner and the GBA sits above them with Special Commissioners; the BBMP-era post was Special Commissioner (SWM) with a Chief Engineer (SWM) and ward-level Health Inspectors, but no snippet confirmed the corporation-level SWM designation after the 2025 restructuring, so treat 'Commissioner's office, SWM wing (Joint Commissioner/Chief Engineer SWM)' plus BSWML's Managing Director for processing as the two doors, and confirm by phone. On Swachhatam: ULBs must submit a monthly MIS; the portal holds a city profile down to ward level, infrastructure and assets, and monthly sanitation and waste progress, and the indicators visible in the toolkit snippets are door-to-door coverage (vehicles, trips to transfer stations and processing sites), source segregation into dry/wet/sanitary with separate collection and unmixed transport, 'functional dry-waste processing capacity of the ULB' (100 marks) and 'percentage of dry waste processed vs generated and utilisation of forward linkages for recyclables and non-recyclables' (100 marks), inside a Solid Waste Processing section worth 1,500 marks (15%, 11 indicators, 32 sub-indicators); a full field list was not confirmed from any snippet, and MIS claims are penalised when a third-party field check disagrees. SBM-U 2.0 was approved by Cabinet for 1 October 2021 to 1 October 2026 (outlay Rs 1,41,600 crore, central share Rs 36,465 crore); Budget 2026-27 still funds it at Rs 2,500 crore (PRS: 25% above the 2025-26 revised estimate; other reporting: half of the Rs 5,000 crore 2025-26 budget estimate), and on 29-30 September 2026 MoHUA launched PRAGATI-50 (50 model cities across 24 states, technology-enabled monitoring) 'within the framework of SBM-U 2.0' and Special Campaign 6 for 2-31 October 2026, but no snippet showed a Cabinet extension beyond October 2026 or an 'SBM-U 3.0'. No Swachh Survekshan 2026-27 toolkit surfaced in any result; the current toolkit is 2025-26 (10th edition, released in Bhopal, field assessment mid-February to March 2026, ten indicator buckets, greater citizen weightage) and it already scores whether collectors use digital devices scanning door stickers and validates the monthly MIS against citizen feedback, so build to those indicators plus the SWM Rules 2026 central portal (four-stream segregation, mandatory registration of waste pickers, bulk generators, transporters and processors) and re-map when the 2026-27 toolkit is published.",
+      "status": "partly",
+      "decision": "Host the ward dashboard in Bengaluru East City Corporation (Mahadevapura/Whitefield wards), with Bengaluru South as the alternate; export ward totals in the Swachh Survekshan 2025-26 shape (kg dry waste collected, processed and where it went, segregation rate, digital-scan coverage) as a monthly CSV so the corporation can paste it into its Swachhatam MIS, and assume SBM-U continues under the 2026-27 budget line without a confirmed formal extension.",
+      "whoToAsk": "The Commissioner's office of Bengaluru East City Corporation (ask for the officer holding the SWM/Health portfolio) and BSWML's Managing Director's office to confirm the nodal role and the exact monthly MIS fields; Karnataka's SBM-U State Mission Directorate (Directorate of Municipal Administration) for the Swachhatam login and field list; MoHUA's SBM-U website for the 2026-27 toolkit when released.",
+      "sources": [
+        {
+          "title": "snippet: Greater Bengaluru Authority (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Greater_Bengaluru_Authority",
+          "date": "not shown in snippet (GBA established 15 May 2025)"
+        },
+        {
+          "title": "snippet: Bengaluru East City Corporation (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Bengaluru_East_City_Corporation",
+          "date": "not shown in snippet (constituted 2 September 2025)"
+        },
+        {
+          "title": "snippet: Bengaluru waste collection back to where it began as corporations regain control (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-waste-collection-back-to-where-it-began-as-corporations-regain-control-4095198",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Poor ranking: govt strips BSWML of garbage collection (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/poor-ranking-govt-strips-bswml-of-garbage-collection-3683325",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: BSWML authorises single private firm to collect bulk waste in Bengaluru North and East (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bswml-authorises-single-private-firm-to-collect-bulk-waste-in-bengaluru-north-and-east-3838916",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Rs 3,889 crore Bengaluru East budget, Rs 300 crore for SWM (NewsFirst Prime)",
+          "url": "https://newsfirstprime.com/bengaluru/3889-crore-bengaluru-east-budget-5-lakh-housing-aid-free-scooters-for-women-big-push-for-welfare-and-infrastructure-11363793",
+          "date": "not shown in snippet (2026-27 budget)"
+        },
+        {
+          "title": "snippet: With 369 municipal wards Bengaluru tops the chart (Deccan Herald)",
+          "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Fwith-369-municipal-wards-bengaluru-tops-the-chart-how-this-compares-withother-big-cities-in-india-3804415",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Bengaluru City Corporations commissioner contact details (nammaward.in)",
+          "url": "https://nammaward.in/wardpulse/bengaluru-city-corporations-commissioner-contact-details-dec-2025",
+          "date": "December 2025"
+        },
+        {
+          "title": "snippet: GBA official site, Special Commissioners (bbmp.gov.in)",
+          "url": "http://www.bbmp.gov.in/",
+          "date": "2026 (Earth Day 2026 event)"
+        },
+        {
+          "title": "snippet: SBM 2.0 Comprehensive Municipal Waste Management, program monitoring and evaluation system assessment (ADB) - Swachhatam portal description",
+          "url": "https://www.adb.org/sites/default/files/linked-documents/56286-001-ld-06.pdf",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Swachh Survekshan 2025-26 Toolkit (JK SBM mirror PDF)",
+          "url": "https://swachh.jk.gov.in/wp-content/uploads/2026/02/Swachh-Survekshan-2025-26-Toolkit.pdf",
+          "date": "uploaded February 2026"
+        },
+        {
+          "title": "snippet: Swachh Survekshan 2025-26 Toolkit - Revised (Scribd)",
+          "url": "https://www.scribd.com/document/997922983/Swachh-Survekshan-2025-26-Toolkit-Revised",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: MoHUA launches 10th Swachh Survekshan (PIB)",
+          "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2207000&reg=6&lang=1",
+          "date": "not shown in snippet (2025-26 edition)"
+        },
+        {
+          "title": "snippet: Cabinet approves continuation of SBM-U till 2025-26 (PIB)",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1763354&reg=3&lang=2",
+          "date": "not shown in snippet (October 2021 decision)"
+        },
+        {
+          "title": "snippet: Demand for Grants 2026-27 Analysis: Housing and Urban Affairs (PRS India)",
+          "url": "https://prsindia.org/files/budget/budget_parliament/2026/DfG_Analysis_2026-27-Housing.pdf",
+          "date": "2026 (Budget 2026-27)"
+        },
+        {
+          "title": "snippet: Budget 2026: Swachh Bharat allocation reduces by 26 per cent, urban sanitation hit hard (The Environment)",
+          "url": "https://www.theenvironment.in/2026/02/01/budget-2026-swachh-bharat-allocation-reduces-by-26-per-cent-urban-sanitation-hit-hard/",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "snippet: PRAGATI-50 Initiative: Model Cities for Urban Sanitation (Insights on India)",
+          "url": "https://www.insightsonindia.com/2026/09/30/the-pragati-50-initiative/",
+          "date": "2026-09-30"
+        },
+        {
+          "title": "snippet: MoHUA to launch Special Campaign 6 from Oct 2-31, 2026 (Plutus IAS)",
+          "url": "https://plutusias.com/mohua-to-launch-special-campaign-6-from-oct-2-31-2026-key-focus-areas/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: New Solid Waste Management Rules notified; in force from April 1, 2026 (PIB)",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676&reg=3&lang=1",
+          "date": "January 2026"
+        },
+        {
+          "title": "snippet: India's 2026 Waste Management Rules: digital traceability and compliance (Down To Earth)",
+          "url": "https://www.downtoearth.org.in/waste/navigating-indias-waste-management-transition-new-rules-move-towards-digital-traceability-and-stronger-compliance-systems",
+          "date": "2026"
+        }
+      ]
+    },
+    {
+      "question": "Do Bengaluru RWAs and tech parks expect to be paid for dry waste or to pay for compliant collection, what report format does BSWML ask of bulk generators, and how many kabadiwalas accept UPI and stay under the small-merchant limit? Which ID or attestation can undocumented migrant waste pickers provide?",
+      "answer": "Both expectations coexist, split by stream: clean recyclables are bought (Bengaluru vendor rates quoted at Rs 8-12/kg paper and cardboard, Rs 10-25/kg PET and HDPE, Rs 2-5/kg glass, Rs 30-80/kg metal; a 220-family complex earned about Rs 5,000 for 4,500 kg of segregated waste a month, roughly Rs 1.1/kg mixed), while compliant collection of the whole stream is paid for: 2,125 bulk generators were told to pay a service charge, the 2025-26 framework quotes Rs 12/kg wet and Rs 2/kg dry plus 18% GST, a residential bulk generator is 100+ units or 100 kg/day (commercial: over 5,000 sq m; SWM Rules 2026 use 20,000 sq m, 40,000 L/day water or 100 kg/day), self-managing generators that compost wet waste and route dry waste to authorised recyclers can claim an exemption, and residents are already protesting 'double payment' to a vendor and to GBA. BSWML has delisted roughly 90% of empanelled vendors (four passed) and named Ecosphere as the sole authorised bulk collector in North and East, with penalties, CPCB environmental compensation and action under the Greater Bengaluru Governance Act 2024 for using unauthorised vendors, so a tech park or RWA will only sign with a chain whose collector is authorised or whose own exemption is documented. No prescribed BSWML monthly template surfaced in any snippet; the minimum record described under SWM Rules 2026 is vendor agreements, the vendors' and linked facilities' authorisation proofs, and a monthly waste summary with wet, dry, sanitary and special-care quantities, feeding a central online portal on which processing facilities upload reports, with internal monthly stream-wise templates expected to be running by May 2026. No survey of kabadiwala UPI acceptance was found: the closest figures are 94% of small merchants having adopted UPI (BCG, 2025) and a scrap-trade vendor claim of 'nearly 90%' digital payments, which is not an independent source. The NPCI small-merchant (P2PM) ceiling (circular OC 192, 28 March 2024) is Rs 10,000 per transaction, Rs 25,000 per day and Rs 1,00,000 per month, and a merchant above Rs 1 lakh inward for three consecutive months must be onboarded as a P2M merchant with an MCC; under the MDR framework effective 15 October 2026, P2PM merchants up to Rs 1 lakh a month stay at zero MDR while some sectors pay a flat Rs 5 on eligible transactions above Rs 2,000. In practice a kabadiwala paying households is the payer (no limit issue), but a shop receiving yard payments over Rs 1 lakh a month will breach P2PM within weeks, so the share 'under the limit' is a pilot count, not a public number. For migrant waste pickers, e-Shram registration needs only Aadhaar, an Aadhaar-linked mobile and a bank account with no address proof, though Aadhaar address or mobile mismatches and a poor occupation list exclude some; Bengaluru's BBMP occupational ID cards (first 225 in August 2011, about 10,437 issued via Hasiru Dala, from a survey that identified about 30,000 resident non-migrant pickers) deliberately left migrants out and many cards have expired, and SWM Rules 2026 now oblige local bodies to register waste pickers on the central portal, which is the route to a fresh card.",
+      "status": "needs-pilot-or-counsel",
+      "decision": "Treat every bulk generator as a payer for the service and a seller of recyclables: show a monthly net statement (recyclable credit at L1/L2 prices minus collection fee) and a compliance pack (vendor authorisation, facility authorisation, kg per stream: wet, dry by sub-material, sanitary, special care, weigh slips) exportable as PDF and CSV. Record the payout mode for every trade and count UPI acceptance across the first 10 verified shops; flag any shop whose inbound UPI exceeds Rs 1 lakh a month for P2M onboarding. Accept Saathi identity in tiers: Aadhaar (any state), e-Shram UAN, a GBA/BBMP occupational ID (even expired), an NGO or DWCC letter, and, as the lowest tier, attestation by a verified kabadiwala plus phone OTP and photo, with trade limits until a higher tier is met.",
+      "whoToAsk": "BSWML's bulk-generator cell for the current monthly return format and the list of authorised collectors; 10 kabadiwala shops and 5 RWAs/tech-park facility managers during the pilot for UPI acceptance and payment expectations; Hasiru Dala for the current occupational ID card process; counsel on whether attested-only identity is acceptable once real money moves (KYC is not triggered while the pilot moves no money).",
+      "sources": [
+        {
+          "title": "snippet: Apartment Waste Management System in Bangalore (BizInfratech)",
+          "url": "https://bizinfratech.in/blogs/apartment-waste-management-system-bangalore-what-you-need-know",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: This apartment shows way (Deccan Herald) - Tungabhadra Apartments dry waste revenue",
+          "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Fthis-apartment-shows-way-2357492",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Bengaluru's 2,125 bulk generators to pay service charge for waste disposal (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-s-2-125-bulk-generators-to-pay-service-charge-for-waste-disposal-3288244",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Bulk Waste Generator Charges and Property Tax in Bangalore 2026-27 (Docupro)",
+          "url": "https://docupro.in/blog/bulk-waste-generator-charges-property-tax-in-bangalore-202627-what-apartment-owners-are-getting-wrong",
+          "date": "2026-27 framework"
+        },
+        {
+          "title": "snippet: BBMP exempts self-managing bulk waste generators from garbage tax (Deccan Herald)",
+          "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Fbbmp-exempts-self-managing-bulk-waste-generators-from-garbage-tax-3503537",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Bengaluru residents seek D K Shivakumar's intervention on 'discriminatory' waste fee (Deccan Herald)",
+          "url": "https://www.deccanherald.com/amp/story/india/karnataka/bengaluru/bengaluru-residents-seek-d-k-shivakumars-intervention-on-discriminatory-waste-fee-4025345",
+          "date": "not shown in snippet (2026)"
+        },
+        {
+          "title": "snippet: BSWML delists 90 vendors after scrutiny, apartments left with little leverage (Deccan Herald)",
+          "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Fbswml-delists-90-vendors-after-scrutiny-apartments-left-with-little-leverage-3674056",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: BSWML authorises single private firm to collect bulk waste in Bengaluru North and East (Deccan Herald)",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/bswml-authorises-single-private-firm-to-collect-bulk-waste-in-bengaluru-north-and-east-3838916",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: SWM Rules 2026: Is Your Factory a Bulk Waste Generator? (EHS Saral)",
+          "url": "https://ehssaral.com/blog/swm-rules-2026-bulk-waste-generator-factory",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Who is a 'Bulk Generator' of solid waste? (Citizen Matters)",
+          "url": "https://citizenmatters.in/who-is-a-bulk-generator-of-solid-waste/",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: NPCI UPI OC 192 FY23-24, maximum UPI inward credit limits for P2PM merchants (TaxGuru)",
+          "url": "https://taxguru.in/finance/implementation-maximum-upi-credit-limits-p2pm-merchants.html",
+          "date": "circular dated 2024-03-28"
+        },
+        {
+          "title": "snippet: FAQs - Merchant Discount Rate on select UPI P2M transactions (Department of Financial Services)",
+          "url": "https://financialservices.gov.in/sites/default/files/2026-09/FAQs---Merchant-Discount-Rate--MDR--on-Select-UPI--P2M--Transactions_0.pdf",
+          "date": "September 2026"
+        },
+        {
+          "title": "snippet: Small merchants will not come under UPI MDR even above Rs 2,000 if they meet this condition (Business Today)",
+          "url": "https://www.businesstoday.in/personal-finance/news/story/small-merchants-will-not-come-under-upi-mdr-even-above-rs2000-if-they-meet-this-condition-check-details-555727-2026-09-15",
+          "date": "2026-09-15"
+        },
+        {
+          "title": "snippet: UPI Rs 2,000 limit rule: what it means (Ujjivan SFB)",
+          "url": "https://www.ujjivansfb.bank.in/banking-blogs/personal-finance/new-upi-2000-rupees-charges-limit-rule",
+          "date": "2026 (MDR framework effective 15 October 2026)"
+        },
+        {
+          "title": "snippet: India UPI, the global benchmark for digital payments (BCG) - 94% small-merchant adoption",
+          "url": "https://www.bcg.com/publications/2025/india-upi-the-global-benchmark-for-digital-payments",
+          "date": "2025"
+        },
+        {
+          "title": "snippet: Documents required for e-Shram card (righttoinformation.wiki)",
+          "url": "https://righttoinformation.wiki/documents/eshram-card",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: e-Shram Portal 2026 - eligibility, documents, registration (Barristery)",
+          "url": "https://www.barristery.in/2026/08/e-shram-portal.html",
+          "date": "August 2026"
+        },
+        {
+          "title": "snippet: Registering informal workers in India: e-Shram, an opportunity lost? (WIEGO)",
+          "url": "https://www.wiego.org/blog/registering-informal-workers-india-e-shram-opportunity-lost/",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: How Bengaluru's Hasiru Dala gave identity and dignity to over 10,000 waste pickers (30 Stades)",
+          "url": "https://30stades.com/2021/05/19/how-bengaluru-hasiru-dala-gave-identity-dignity-to-over-10000-waste-pickers-management-recycling/",
+          "date": "2021-05-19"
+        },
+        {
+          "title": "snippet: Migrant Waste Pickers of Bengaluru - social exclusion (AICCTU)",
+          "url": "https://www.aicctu.org/workers-resistance/v1/workers-resistance-august-2021/migrant-waste-pickers-bengaluru-%E2%80%93-social-exclusion-and-deprivation-dignity-labor",
+          "date": "August 2021"
+        },
+        {
+          "title": "snippet: Aadhaar card camp organised for waste pickers in Bengaluru (Deccan Herald)",
+          "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Faadhar-card-camp-organised-for-waste-pickers-in-bengaluru-1058967.html",
+          "date": "not shown in snippet"
+        },
+        {
+          "title": "snippet: Solid Waste Management Rules 2026: mandatory changes (Lawrbit) - registration of waste pickers",
+          "url": "https://www.lawrbit.com/article/solid-waste-management-rules-2026/",
+          "date": "2026"
+        }
+      ]
+    }
+  ]
+}

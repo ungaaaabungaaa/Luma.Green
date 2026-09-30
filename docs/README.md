@@ -4,6 +4,8 @@ Everything we've decided about what to build, how it's built and how it's run.
 Code rules live in [AGENTS.md](../AGENTS.md) and the
 [skills](../.claude/skills); this folder holds the plan and the reasons.
 
+**Continuing the work?** Start at [docs/plan/status.md](./plan/status.md): what exists, where it is, what was decided, what is left.
+
 **New here?** Read in this order: [vision](./product/vision.md) →
 [roles](./product/roles.md) → [architecture overview](./architecture/overview.md)
 → [roadmap](./delivery/roadmap.md).

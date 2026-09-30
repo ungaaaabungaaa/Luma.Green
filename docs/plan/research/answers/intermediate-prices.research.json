@@ -1,0 +1,398 @@
+{
+  "cluster": "Reference prices above the yard: flakes, granules, fractions and by-products",
+  "answers": [
+    {
+      "question": "What are current Indian trade prices (Rs per kg or per tonne, with date and source) for the intermediate materials the refined chain adds at levels L3 to L5, which published sources exist for each, how often they move, and which may be shown on a public price board without a licence?",
+      "answer": "All figures below are from search-result snippets (pages could not be opened); marketplace listings (IndiaMART, TradeIndia, ExportersIndia) are undated asking prices, not traded prices, so treat them as a seed range to be checked by phone. PLASTICS (per kg): cold-washed PET flakes Rs 45-62 (most listings Rs 50-60; white cold-washed Rs 51-61); hot-washed clear PET flakes Rs 62-82 (Thane G3 clear Rs 75-82; a Mumbai lot at Rs 40); green PET flakes Rs 45-65 (bottle-grade green Rs 63); light-blue flakes Rs 40-70; rPET granules Rs 82 (Niwas, MP) and a 0.80 IV clear 'food-grade' listing Rs 95, with R-PET India assessed at USD 943/MT in June 2026 (about Rs 78-79/kg); rHDPE natural granules Rs 70-85 (blow Rs 71.50, injection Rs 85); rPP granules Rs 45-87 (natural Rs 64-67, natural white Rs 87, multicolour Rs 58); rLDPE granules Rs 65-95 (white Rs 70, natural Rs 95); LDPE colour agglomerate Rs 45-46 (Gandhidham) and LDPE lump Rs 30-36; PVC regrind Rs 30-55 (white Rs 53-55, grey pipe Rs 52-55); recycled PSF Rs 52-90 (white Rs 72 Surat), with virgin PSF at USD 1,182/MT in Dec 2025. METALS: MCX copper Rs 1,397.05/kg on 30 Sep 2026 (the benchmark for cathode; Hindustan Copper prices cathode as (LME + USD 120-150 premium) x 1.058 x TT rate + Rs 3,300/t handling); copper granule and millberry listings (Rs 470-700 and Rs 650-880/kg) are clearly stale against that benchmark and must not be seeded as-is; shredded steel Rs 36.50-40.50/kg (midpoint Rs 38,500/t, ex-GST, Steel Baba 22 Sep 2026), HMS 80:20 Rs 36,500/t DAP Mumbai and Rs 37,000/t ex-yard Alang (BigMint 23 Sep 2026), imported shredded USD 414/t CFR Nhava Sheva; secondary aluminium ADC12 Rs 201,000-203,000/t non-OEM and Rs 209,000-210,000/t OEM-approved (BigMint weekly via AlCircle, Sep 2026); NALCO primary ingot Rs 352-356/kg tender (2 Sep 2026) and Rs 367.35-379.05/kg (19 Sep 2026) per Nexizo, which sits oddly far above ADC12 and needs checking against NALCO's own circular; aluminium dross Rs 40-60/kg grey, Rs 55-100/kg at 90% Al, Rs 135/kg at 97% Al (Faridabad Rs 55/kg, Jun 2026); lead: refined spot Rs 169.45/kg (22 Sep 2026), remelted ingot listings about Rs 180/kg, producer refined Rs 188-230/kg. TYRES: crumb rubber 1-4 mm Rs 25-28/kg (Rs 25 in Bengaluru), 30 mesh Rs 19-28/kg (an average of Rs 26 is claimed); tyre pyrolysis oil Rs 28-32/litre in a 2026 plant-ROI guide, listings Rs 41-65/litre (Rs 60/litre tanker, Jabalpur), export USD 420-580/t; pyrolysis carbon black listing Rs 22/kg, against virgin carbon black USD 0.95-1.15/kg in Q1 2026 and recovered CB USD 445/t (2019) trending to USD 681/t by 2035. C&D: Bengaluru recycled aggregate sold at Rs 350-400/t (Rock Crystals, BBMP-empanelled, processing fee Rs 135/t, plant at 10% of 1,000 TPD - a 2017 paper, the only Bengaluru figure found); CPWD DSR 2023 rates recycled aggregate 20 mm at Rs 420/cum versus natural 20 mm stone aggregate Rs 1,400/cum (DSR 2021); M-sand Bengaluru Rs 1,100-1,400/t dealer-to-retail (infralens Aug 2026), crusher gate up from Rs 450 to Rs 800/t with delivered Rs 1,000-1,200/t (ETV Bharat, Aug 2026). GLASS: flint cullet Rs 20/kg (Palakkad), amber Rs 8/kg (Indore), one green listing at Rs 90/kg that is almost certainly a mis-listing - no furnace-gate price by colour was confirmed. PAPER: OCC Rs 10-14/kg at scrap level and Rs 14-18/kg mill-grade baled (2026), Delhi OCC listings Rs 12-18/kg, printed white newspaper Rs 25/kg; finished kraft USD 0.44/kg in Q1 2026 (+4.8% q-o-q) with waste-paper costs up Rs 0.70-2/kg; no recovered-pulp or deckle price found in any snippet. BY-PRODUCTS: bagasse Rs 2,500-4,500/t (a Kalyan listing Rs 3,000/t); fly ash Rs 500-4,075/t (Class F Rs 1,600-2,500/t; India average USD 82/MT in Q2 2026); rice husk Rs 2-4/kg loose (Rs 2.2/kg Bhabua), briquettes Rs 6-6.5/kg; sawdust products Rs 5-16/kg with briquettes Rs 7,000-8,200/t and pellets Rs 7,500-16,000/t; cotton waste Rs 27-33/kg Delhi (19 Jan 2026) and cotton yarn waste Rs 32-39/kg Bengaluru (9 Feb 2026). SOURCES AND CADENCE: MCX (copper, aluminium, lead, zinc) moves intraday and its Data Feed Policy (10 Jul 2026) requires a data-feed or redistributor agreement and explicit permission for public-internet display; BigMint publishes daily ferrous-scrap and weekly ADC12 assessments but its terms prohibit any redistribution without written permission; Polymerupdate publishes daily/weekly recycled-polymer prices (NEPRA Mumbai and Ahmedabad) and allows republishing to customers only through its API service if the contract permits; IndiaMART/TradeIndia terms prohibit republishing listings; Steel Baba, ScrapC, scraprates.in and infralens publish free city rates daily to monthly but are secondary compilations; NALCO and Hindalco list-price changes are press-released several times a month (alcircle reports them) and, as published facts with attribution, are safe to quote; CPWD DSR (2021, 2023, 2025 editions) and the KPWD SR (2025-26 volumes, 2026-27 Q1 issue rate effective 4 Apr 2026) are government publications and safe to cite; paper-mill purchase rates circulate by WhatsApp and move 10-20% month to month (Pulp and Paper Times), with no public circular found. Without a licence the board can safely show (a) Luma's own transaction medians, (b) government schedules (DSR, KPWD SR), (c) producer list prices with attribution, and (d) attributed single figures from dated news; it cannot mirror MCX ticks, BigMint or Polymerupdate series, or IndiaMART listings.",
+      "status": "partly",
+      "decision": "Seed the L3-L5 board from the ranges above marked 'listing' and replace each with Luma's own 28-day trade medians as soon as five trades exist per code; for metals show MCX/NALCO only as a hand-typed 'benchmark of the day' with a link, never as a mirrored feed, and buy a Polymerupdate API contract only when the plastics board needs daily movement.",
+      "whoToAsk": "Counsel (or MCX/Polymerupdate/BigMint sales) on the exact redistribution terms before showing any third-party series; NALCO/Hindalco circular to confirm the Rs 367-379/kg ingot figure; 3 Bengaluru PET flake makers, 2 granulators and Rock Crystals for a gate price this week; a paper-mill purchase manager for the OCC/deckle rate and any recovered-pulp price; a glass-furnace buyer (AGI/HNG) for cullet by colour.",
+      "sources": [
+        {
+          "title": "snippet: Hot Washed PET Flakes - Latest Price (IndiaMART)",
+          "url": "https://dir.indiamart.com/impcat/hot-washed-pet-flakes.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Cold Washed PET Flake at Rs 52/kg (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/cold-washed-pet-flake-15514501573.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Clear Hot Washed PET Flakes G3 (Kalpataru Polymer, Thane)",
+          "url": "https://www.kalpatarupolymer.com/hot-washed-pet-flakes.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Natural PET Granules (rPET) at Rs 82/kg (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/pet-granules-rpet-2853360922888.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Food Grade RPET Resins IV 0.84 (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/food-grade-rpet-resins-2858124141055.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: R-PET Prices, Trend, Index (ChemAnalyst) - India USD 943/MT June 2026",
+          "url": "https://www.chemanalyst.com/Pricing-data/r-pet-1233",
+          "date": "June 2026"
+        },
+        {
+          "title": "snippet: HDPE Reprocessed Granules at Rs 70/kg (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/hdpe-reprocessed-granules-20001619748.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Reprocessed PP Granules - Latest Price (IndiaMART)",
+          "url": "https://dir.indiamart.com/impcat/reprocessed-pp-granules.html?mTd=1",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Reprocessed LDPE Granule - Price (ExportersIndia)",
+          "url": "https://www.exportersindia.com/indian-suppliers/reprocessed-ldpe-granule.htm",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: LDPE Colour Agglomerate Scrap at Rs 45 (TradeIndia, Gandhidham)",
+          "url": "https://www.tradeindia.com/products/ldpe-colour-agglomerate-scrap-5109859.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: PVC Regrind - Latest Price (IndiaMART)",
+          "url": "https://dir.indiamart.com/impcat/pvc-regrind.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Polymer Price PP Rs 105-120 HDPE Rs 100-115/kg; recycled PP Rs 85-95, rHDPE Rs 80-90 (OfBusiness)",
+          "url": "https://www.ofbusiness.com/prices/polymers-packaging",
+          "date": "2026 (undated page)"
+        },
+        {
+          "title": "snippet: White Recycled Polyester Staple Fibre at Rs 72/kg, Surat (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/recycled-polyester-staple-fibre-17051214588.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: COPPER Price Today - MCX COPPER Rate Live (5paisa) Rs 1,397.05/kg",
+          "url": "https://www.5paisa.com/commodity-trading/mcx-copper-price",
+          "date": "30 Sep 2026"
+        },
+        {
+          "title": "snippet: Hindustan Copper Limited - Premium and pricing formula",
+          "url": "https://www.hindustancopper.com/Page/Premium",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Millberry Copper Scrap 99.9% at Rs 811/kg, New Delhi (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/millberry-copper-scrap-2857396400588.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Iron Scrap Rate Today 22 September 2026 (Steel Baba) - shredded Rs 36.50-40.50/kg",
+          "url": "https://steel-baba.com/",
+          "date": "22 Sep 2026"
+        },
+        {
+          "title": "snippet: India: Alang melting scrap prices decline amid weak steel demand (BigMint)",
+          "url": "https://www.bigmint.co/insights/detail/gujarat-scrap-prices-billet-rebar-weaken-september-2026-792208",
+          "date": "23 Sep 2026"
+        },
+        {
+          "title": "snippet: India: ADC12 aluminium alloyed ingot prices remain rangebound (AlCircle/BigMint)",
+          "url": "https://www.alcircle.com/press-release/india-adc12-aluminium-alloyed-ingot-prices-remain-rangebound-112726",
+          "date": "Sep 2026"
+        },
+        {
+          "title": "snippet: NALCO Aluminium Ingot (IE07) prices (Nexizo) Rs 367.35-379.05/kg",
+          "url": "https://nexizo.ai/non-ferrous-category/aluminium-ingots-grade-ie07-purity-99.70%25-brand-nalco",
+          "date": "19 Sep 2026"
+        },
+        {
+          "title": "snippet: India: NALCO raises primary aluminium ingot prices by INR 6,700/t; Hindalco, Balco up to INR 3,750/t (AlCircle)",
+          "url": "https://www.alcircle.com/press-release/india-nalco-raises-primary-aluminium-ingot-prices-by-inr-6-700-t-76-t-hindalco-balco-raise-aluminium-ingot-prices-by-up-to-inr-3-750-t-42-t-113256",
+          "date": "2026 (undated in snippet)"
+        },
+        {
+          "title": "snippet: Aluminium Dross in Faridabad - Rs 55/kg (IndiaMART)",
+          "url": "https://dir.indiamart.com/faridabad/aluminium-dross.html",
+          "date": "Jun 2026"
+        },
+        {
+          "title": "snippet: India Lead Price Today (metalscost) Rs 169.45/kg",
+          "url": "https://metalscost.com/todays-price/lead",
+          "date": "22 Sep 2026"
+        },
+        {
+          "title": "snippet: Remelted Lead Ingot at Best Price (IndiaMART)",
+          "url": "https://dir.indiamart.com/impcat/remelted-lead-ingot.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Tyre Crumb Rubber Granules infill 1 to 4 mm at Rs 25/kg, Bengaluru (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/tyre-crumb-rubber-granules-infill-1-to-4-mm-21885831091.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Crumb Rubber Powder - manufacturers and prices (TradeIndia)",
+          "url": "https://www.tradeindia.com/manufacturers/crumb-rubber.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Tyre Pyrolysis Plant in India: ROI & Setup Guide 2026 (Advancebiofuel) - oil Rs 28-32/litre",
+          "url": "https://advancebiofuel.in/tyre-pyrolysis-plant-india-roi-setup-guide/",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Tyre Pyrolysis Oil at Rs 60/litre, Jabalpur (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/tyre-pyrolysis-oil-13047149612.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Tyre Pyrolysis Carbon Black at Rs 22/kg (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/tyre-pyrolysis-carbon-black-2850012823691.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Carbon Black Price Trend 2026 (Expert Market Research) - India USD 0.95-1.15/kg Q1 2026",
+          "url": "https://www.expertmarketresearch.com/price-forecast/carbon-black-price-forecast",
+          "date": "Q1 2026"
+        },
+        {
+          "title": "snippet: Recovered Carbon Black (Purified) Price Trend (Procurement Resource)",
+          "url": "https://www.procurementresource.com/resource-center/recovered-carbon-black-purified-price-trends",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Construction and Demolition Waste Utilisation for Recycled Products in Bengaluru (ResearchGate) - RA Rs 350-400/t",
+          "url": "https://www.researchgate.net/publication/317715058_Construction_and_Demolition_Waste_Utilisation_for_Recycled_Products_in_Bengaluru_Challenges_and_Prospects",
+          "date": "2017"
+        },
+        {
+          "title": "snippet: Delhi Schedule of Rates (CPWD DSR) - recycled aggregate 20 mm Rs 420/cum (DSR 2023), stone aggregate 20 mm Rs 1,400/cum (DSR 2021)",
+          "url": "https://cpwd.gov.in/Publication/DSR_Vol1_UPDATED_DEC_2021.pdf",
+          "date": "DSR 2021 / DSR 2023"
+        },
+        {
+          "title": "snippet: Sand & Aggregates Price in Bangalore - Live Rates (infralens)",
+          "url": "https://infralens.in/prices/aggregates/bangalore",
+          "date": "Aug 2026"
+        },
+        {
+          "title": "snippet: Construction, GBA works slow down across Bengaluru amid surge in M-sand and aggregate prices (ETV Bharat)",
+          "url": "https://www.etvbharat.com/en/state/construction-gba-works-slow-down-across-bengaluru-amid-surge-in-m-sand-aggregate-prices-enn26081102906",
+          "date": "Aug 2026"
+        },
+        {
+          "title": "snippet: Karnataka KPWD SR 2026-27 Q1 - free PDF downloads (infralens)",
+          "url": "https://infralens.in/sor/karnataka",
+          "date": "eff. 4 Apr 2026"
+        },
+        {
+          "title": "snippet: Flint Glass Cullet at Rs 20/kg (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/flint-glass-cullet-23170176491.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Amber Glass Cullet at Rs 8/kg (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/amber-glass-cullet-20928963348.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Cardboard Scrap Rate in India 2026: OCC Price Per Kg (JoinBin)",
+          "url": "https://joinbin.com/scrap-rate-cardboard-india",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: Kraft Paper Price Trend 2026 (Expert Market Research) - India USD 0.440/kg Q1 2026",
+          "url": "https://www.expertmarketresearch.com/price-forecast/kraft-paper-price-trends",
+          "date": "Q1 2026"
+        },
+        {
+          "title": "snippet: Paper prices surge in India (PrintWeek) - waste paper up Rs 0.70-2/kg",
+          "url": "https://www.printweek.in/article/paper-prices-surge-in-india/4hvhqhynsrdk979d4dg1bmhs46",
+          "date": "2026 (undated in snippet)"
+        },
+        {
+          "title": "snippet: Domestic waste paper prices experience sharp decline (Pulp and Paper Times)",
+          "url": "https://thepulpandpapertimes.com/news/india/domestic-waste-paper-prices-1003",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: How Bagasse Price in India is Shaped by Key Market Forces (Buyofuel)",
+          "url": "https://buyofuel.com/blogs/bagasse-price-india-market-forces/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Fly Ash Prices, Trend, Index (ChemAnalyst) - USD 82/MT Q2 2026",
+          "url": "https://www.chemanalyst.com/Pricing-data/fly-ash-1459",
+          "date": "Q2 2026"
+        },
+        {
+          "title": "snippet: Rice Husk at Rs 2.2/kg, Bhabua (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/rice-husk-15762115388.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Biomass Pellet Prices India - Live Rates (pelletrates.com)",
+          "url": "https://www.pelletrates.com/",
+          "date": "early 2026"
+        },
+        {
+          "title": "snippet: Cotton Waste in Delhi (IndiaMART) Rs 27-33/kg",
+          "url": "https://dir.indiamart.com/delhi/cotton-waste.html",
+          "date": "19 Jan 2026"
+        },
+        {
+          "title": "snippet: Cotton Yarn Waste in Bengaluru (IndiaMART) Rs 32-39/kg",
+          "url": "https://dir.indiamart.com/bengaluru/cotton-yarn-waste.html",
+          "date": "9 Feb 2026"
+        },
+        {
+          "title": "snippet: Datafeed - MCX (Data Feed Policy, redistributor agreement)",
+          "url": "https://www.mcxindia.com/technology/datafeed",
+          "date": "policy updated 10 Jul 2026"
+        },
+        {
+          "title": "snippet: Polymerupdate Terms & Conditions",
+          "url": "https://www.polymerupdate.com/Home/TermsAndConditions",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Polymerupdate API Service (republish to customers if contract permits)",
+          "url": "https://www.polymerupdate.com/data-service-api.aspx",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Polymerupdate: Recycled Polymer Prices for Mumbai (NEPRA)",
+          "url": "https://www.polymerupdate.com/prices/recycled/polymers/mumbai",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: BigMint Terms and Conditions",
+          "url": "https://www.bigmint.co/terms-and-conditions",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: ScrapC - Buy and Sell Plastic, Metal, Paper",
+          "url": "https://scrapc.com/",
+          "date": "undated"
+        },
+        {
+          "title": "snippet: Plastic Scrap Price Today (scraprates.in)",
+          "url": "https://scraprates.in/scrap-materials/plastic",
+          "date": "May 2026"
+        }
+      ]
+    },
+    {
+      "question": "How do buyers price grade differences at L3-L5, and how should Luma.Green's price board and rate cards represent material state and grade so the same code is not quoted at two levels at once? Recommend the board's grade dimensions per family and the reference figures to seed with.",
+      "answer": "What the snippets show about grade premiums (listing prices, undated unless stated): hot-washed clear PET flakes Rs 62-82/kg against cold-washed Rs 45-62/kg, a premium of roughly Rs 20-30/kg; clear PET flakes Rs 70-88/kg against green Rs 45-65/kg and light blue Rs 40-70/kg, so clear carries about Rs 20-25/kg over green; standard rPET granules Rs 82/kg against a 0.80 IV 'food-grade' listing at Rs 95/kg (about Rs 13/kg, but no snippet confirmed a food-grade premium and only FSSAI-authorised plants - 17 approved, about 3 lakh t/yr, with 40% recycled content mandated in food packaging from 1 Apr 2026 - can sell it as food-grade); natural HDPE milk-bottle regrind Rs 70-79/kg against grey or mixed regrind Rs 56-60/kg, about Rs 15/kg; rPP natural Rs 64-87/kg against multicolour Rs 58/kg; crumb rubber 1-4 mm granules Rs 25-28/kg against 30/40 mesh powder Rs 19-28/kg, so no consistent size premium shows in listings - buyers pay for steel- and fibre-free, moisture and mesh consistency rather than size alone; ADC12 OEM-approved Rs 209,000-210,000/t against non-OEM Rs 201,000-203,000/t, an Rs 8/kg premium (BigMint, Sep 2026); shredded steel Rs 36.50-40.50/kg against HMS 80:20 Rs 36,500/t Mumbai, a premium of about Rs 2/kg (22-23 Sep 2026); aluminium dross Rs 40-60/kg grey, Rs 55-100/kg at 90% Al, Rs 135/kg at 97% Al; OCC Rs 10-14/kg loose against Rs 14-18/kg mill-grade baled (2026). The general pattern is that each processing step (S2 sorted to S3 baled to S4/S5 flake to S7 pellet) adds a step price and within a step three attributes drive most of the spread: colour or alloy, cleanliness (wash, contamination, purity) and a buyer-side qualification (OEM-approved, FSSAI-authorised, IV or MFI band). The current schema quotes one paisePerKg per (city, materialCode, date) and rate cards per (org, materialCode), and adminPrices already stores a level (L1) per observation, so the fix is structural rather than new tables: (1) make the material code encode family plus physical form, never just the polymer (PLA-PET-BOT for bottles, PLA-PET-BAL for bales, PLA-PET-FLK for flakes, PLA-PET-PEL for pellets; FER-SHRED and FER-HMS1; NFE-CU-MILL, NFE-CU-GRAN, NFE-CU-CATH; NFE-AL-ADC12; RUB-CRUMB; CND-RA20, CND-MSAND), so each code maps to exactly one state band (bottles S1-S2, bale S3, flake S4-S5, pellet S7) and to one allowed price-level set (bottles L1-L2, bales L2-L3, flakes L3, pellets L4, product L5); (2) store the level on every price row and derive it from the seller and buyer roles of the trade, not from a dropdown; (3) add a grade object per family whose keys are a short enum, and key marketPrices and referencePrices by (city, materialCode, gradeKey, level, date) with a unique constraint so one code-grade pair can carry only one price per level per day; (4) keep rate cards as L1 (shop to household) and, for yards, L2 only, with L3-L5 shown as reference medians and never as an offer. Recommended grade dimensions per family: PET flakes - colour {clear, light-blue, green, mixed}, wash {unwashed, cold, hot}, PVC contamination band {<50 ppm, <200 ppm, unknown}; rPET pellets - IV band {0.70-0.76, 0.76-0.80, 0.80-0.84}, food-contact {FSSAI-authorised plant, no}, colour {natural, tinted}; PE/PP granules and regrind - polymer {HDPE, LDPE, LLDPE, PP}, colour {natural, white, black, mixed}, MFI band {<1, 1-5, >5}, process {injection, blow, film}; PVC regrind - colour {white, grey, mixed}, source {pipe, profile, cable}; copper - form {millberry, granule, cathode}, purity {99.9, 99, <99} and a daily MCX benchmark link; ferrous - ISRI grade {HMS1, HMS 80:20, shredded, end-cutting, turnings}, density {bundled, loose}; aluminium - grade {ADC12 OEM, ADC12 non-OEM, primary ingot, dross by Al% band}; lead - form {remelted ingot, refined ingot, battery plates}, purity {99.97, 99.5, remelt}; crumb rubber - size {1-4 mm, 10 mesh, 30 mesh, 40 mesh}, steel-free and fibre-free flags; tyre oil - sulphur band and moisture; recovered carbon black - ash band; glass cullet - colour {flint, amber, green, mixed}, furnace-ready {yes, no}; paper - grade {OCC, ONP, white record, mixed}, baled {yes, no}, moisture band; C&D - product {RA 20 mm, RA 10 mm, recycled sand, M-sand}, wash {normal, double, triple}; bio by-products - moisture band and bulk form {loose, briquette, pellet}. Seed figures (mid of ranges above, per kg unless noted, marked 'listing, unverified' on the board): PET flake clear hot Rs 70, clear cold Rs 55, green Rs 55, light-blue Rs 50; rPET pellet standard Rs 82, food-grade Rs 95; rHDPE natural Rs 75, coloured Rs 60; rPP natural Rs 67, mixed Rs 58; rLDPE Rs 75; LDPE agglomerate Rs 45; PVC regrind white Rs 53, grey Rs 40; rPSF Rs 72; copper cathode = MCX spot (Rs 1,397 on 30 Sep 2026), millberry and granule = MCX minus a discount to be set from 10 yard quotes; shredded steel Rs 38.50, HMS 80:20 Rs 36.50; ADC12 non-OEM Rs 202, OEM Rs 209.50; dross 90% Rs 75; lead remelt Rs 180, refined Rs 170; crumb 1-4 mm Rs 26, 30 mesh Rs 24; tyre oil Rs 45/litre; rCB Rs 22; flint cullet Rs 20, amber Rs 8, green: open; RA 20 mm Rs 375/t, M-sand crusher Rs 800/t and retail Rs 1,250/t; OCC baled Rs 16, loose Rs 12; bagasse Rs 3,500/t; fly ash Class F Rs 2,000/t; rice husk Rs 3; sawdust loose Rs 5; cotton waste Rs 30. Not settled from snippets: the true food-grade rPET premium, hot-wash premium from an actual buyer, cullet by colour at a furnace gate, recovered pulp, and any copper granule figure consistent with the 2026 copper rally.",
+      "status": "partly",
+      "decision": "Ship the board with codes that include form, a per-family grade enum and a mandatory level on every price row; seed the mid figures above flagged as unverified listings and swap each to Luma's own 28-day trade median once five trades exist, with L3-L5 shown as reference only and rate cards limited to L1 and L2.",
+      "whoToAsk": "Three Bengaluru PET flake makers and one FSSAI-authorised rPET plant (for wash and food-grade premiums), two granulators or cable-scrap yards (copper granule versus MCX discount), Rock Crystals (RA and recycled sand gate price), a paper-mill purchase manager (OCC baled versus loose and pulp), a glass buyer (cullet by colour); counsel only for the third-party data-display question already noted in question 1.",
+      "sources": [
+        {
+          "title": "snippet: PET flakes hot washed vs cold washed listings (IndiaMART) - cold Rs 45-52, hot Rs 62-82",
+          "url": "https://www.indiamart.com/proddetail/hot-washed-pet-flakes-13286012562.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: PET Flakes Price Per KG - clear, green, light blue (TradeIndia)",
+          "url": "https://www.tradeindia.com/manufacturers/pet-flakes.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Food Grade RPET Resins IV 0.84 (IndiaMART) and clear 0.80 IV at Rs 95/kg",
+          "url": "https://www.indiamart.com/proddetail/food-grade-rpet-resins-2858124141055.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Natural PET Granules (rPET) at Rs 82/kg (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/pet-granules-rpet-2853360922888.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: FSSAI Authorises 17 r-PET Plants, 3 lakh tonne capacity (CSR Universe)",
+          "url": "https://thecsruniverse.com/articles/fssai-authorises-17-r-pet-plants-unlocking-3-lakh-tonne-capacity-for-circular-packaging",
+          "date": "Mar 2026"
+        },
+        {
+          "title": "snippet: Chemco receives FSSAI authorisation for food-grade rPET resin (Business Standard/ANI)",
+          "url": "https://www.business-standard.com/amp/content/press-releases-ani/chemco-receives-fssai-authorisation-to-manufacture-food-grade-rpet-resin-for-food-contact-applications-126060301085_1.html",
+          "date": "3 Jun 2026"
+        },
+        {
+          "title": "snippet: HDPE Blow Milk Bottle Natural Regrind at Rs 70/kg, Thane (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/hdpe-blow-milk-bottle-natural-regrind-26218022712.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: HDPE Scrap - grinding scrap grey Rs 56, mixed washed Rs 60, white Rs 79 (IndiaMART)",
+          "url": "https://dir.indiamart.com/impcat/hdpe-scrap.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Reprocessed PP Granules natural Rs 64-87, multicolour Rs 58 (IndiaMART)",
+          "url": "https://dir.indiamart.com/impcat/reprocessed-pp-granules.html?mTd=1",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Crumb Rubber Granules (1-4 MM) at Rs 28/kg, Vasai Virar (IndiaMART)",
+          "url": "https://www.indiamart.com/proddetail/rubber-granules-1-4-mm-2849491554191.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Rubber Granules 0.8-2.36 mm (10 mesh) Rs 23-24 (Reliable Rub Industries)",
+          "url": "https://www.reliablerubindustries.com/rubber-granules.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: India: ADC12 aluminium alloyed ingot prices remain rangebound - OEM Rs 209,000-210,000/t, non-OEM Rs 201,000-203,000/t (AlCircle/BigMint)",
+          "url": "https://www.alcircle.com/press-release/india-adc12-aluminium-alloyed-ingot-prices-remain-rangebound-112726",
+          "date": "Sep 2026"
+        },
+        {
+          "title": "snippet: Iron Scrap Rate Today - shredded Rs 36.50-40.50/kg (Steel Baba)",
+          "url": "https://steel-baba.com/",
+          "date": "22 Sep 2026"
+        },
+        {
+          "title": "snippet: India: Alang melting scrap prices decline - HMS 80:20 Rs 36,500/t Mumbai (BigMint)",
+          "url": "https://www.bigmint.co/insights/detail/gujarat-scrap-prices-billet-rebar-weaken-september-2026-792208",
+          "date": "23 Sep 2026"
+        },
+        {
+          "title": "snippet: Aluminium Dross - purity-banded prices (IndiaMART)",
+          "url": "https://dir.indiamart.com/impcat/aluminium-dross.html",
+          "date": "undated listing"
+        },
+        {
+          "title": "snippet: Cardboard Scrap Rate in India 2026 - loose Rs 10-14, mill-grade baled Rs 14-18 (JoinBin)",
+          "url": "https://joinbin.com/scrap-rate-cardboard-india",
+          "date": "2026"
+        },
+        {
+          "title": "snippet: MCX Copper Rate Live Rs 1,397.05/kg (5paisa)",
+          "url": "https://www.5paisa.com/commodity-trading/mcx-copper-price",
+          "date": "30 Sep 2026"
+        },
+        {
+          "title": "snippet: Best Plastic Scrap Prices in India - sorted scrap fetches 20-30% more than mixed (OpShuddhi)",
+          "url": "https://opshuddhi.org/best-plastic-scrap-prices-india/",
+          "date": "undated"
+        },
+        {
+          "title": "repo: docs/plan/inputs/2026-09-30-founder-research-part-1/material-chain-refinement.md (states S0-S9, levels L1-L5, listing must answer material/state/grade/buyer)",
+          "url": "https://github.com/imai-studio/Luma.Green/blob/main/docs/plan/inputs/2026-09-30-founder-research-part-1/material-chain-refinement.md",
+          "date": "30 Sep 2026"
+        },
+        {
+          "title": "repo: convex/schema.ts (materials, referencePrices, marketPrices, rateCards keyed by materialCode only)",
+          "url": "https://github.com/imai-studio/Luma.Green/blob/main/convex/schema.ts",
+          "date": "30 Sep 2026"
+        }
+      ]
+    }
+  ]
+}
