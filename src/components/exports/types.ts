@@ -1,11 +1,14 @@
 import type { FunctionReturnType } from "convex/server";
+import type { Infer } from "convex/values";
 
 import type { api } from "../../../convex/_generated/api";
+import type { vExportKind } from "../../../convex/tables/exports";
 
 /** Result shapes of the exports functions, as the screens use them. */
 
 export type ReportView = FunctionReturnType<typeof api.exports.tally>;
-export type ReportKind = ReportView["kind"];
+/** Every report kind, not only the one `tally` returns. */
+export type ReportKind = Infer<typeof vExportKind>;
 export type ReportCell = ReportView["rows"][number][number];
 
 export type PackView = NonNullable<

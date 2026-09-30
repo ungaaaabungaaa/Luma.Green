@@ -22,6 +22,12 @@ const newspaper: PriceRowData = {
   floorPaise: 1200,
   fallbackPaise: 1400,
   updatedAt: Date.UTC(2026, 8, 28, 6),
+  band: null,
+  suggestedFallbackPaise: null,
+  suggestedFloorPaise: null,
+  suggestionOrgs: 0,
+  boardStatus: null,
+  boardTypicalPaise: null,
 };
 
 function setup(row: PriceRowData = newspaper) {

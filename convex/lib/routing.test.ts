@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   areaOfAddress,
+  areHoursOverlapping,
   BULK_DENSITY,
   bulkFromNote,
   canMoveLoad,
@@ -10,7 +11,6 @@ import {
   freightFor,
   freightPerKgPaise,
   haversineKm,
-  areHoursOverlapping,
   isBelowMinimum,
   isOpenLoad,
   litresFor,
@@ -22,8 +22,8 @@ import {
   pointForAddress,
   restrictionsFor,
   ROAD_FACTOR,
-  routeKm,
   roundKm,
+  routeKm,
   SERVICE_RULE_KEYS,
   slotUsage,
   vehicleFit,

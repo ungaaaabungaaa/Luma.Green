@@ -159,7 +159,7 @@ function DeadlineItem({ event }: { event: Deadline }) {
         }}
       >
         <CheckIcon aria-hidden />
-        {isSaving ? t("saving") : t("done")}
+        {t(isSaving ? "saving" : "done")}
       </Button>
     </li>
   );

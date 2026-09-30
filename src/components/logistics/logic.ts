@@ -1,3 +1,4 @@
+import { paiseFor } from "../../../convex/lib/chain";
 import { shiftDate } from "../../../convex/lib/dates";
 import { SLOT_WINDOW_HOURS } from "../../../convex/lib/households";
 import {
@@ -10,7 +11,6 @@ import {
   restrictionsFor,
   routeKm,
 } from "../../../convex/lib/routing";
-import { paiseFor } from "../../../convex/lib/chain";
 import type {
   Candidate,
   LoadStatus,
@@ -200,8 +200,7 @@ export function planProblem(
   if (stops.length === 0) return "noStops";
   if (stops.length > MAX_STOPS) return "tooManyStops";
   if (!summary.fitsWeight) return "overWeight";
-  if (!summary.fitsVolume) return "overVolume";
-  return null;
+  return summary.fitsVolume ? null : "overVolume";
 }
 
 /**

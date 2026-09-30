@@ -107,8 +107,7 @@ export function ruleInputValue(value: RuleValue, unit: RuleUnit): string {
   if (unit === "paise") {
     return value % 100 === 0 ? String(value / 100) : (value / 100).toFixed(2);
   }
-  if (unit === "bp") return String(value / 100);
-  return String(value);
+  return String(unit === "bp" ? value / 100 : value);
 }
 
 export type RuleInputProblem =
@@ -146,13 +145,9 @@ export function parseRuleInput(
 
   if (unit === "paise" || unit === "bp") {
     const scaled = Math.round(number * 100);
-    if (unit === "bp" && scaled > 10_000) {
-      return { ok: false, problem: "OVER_100" };
-    }
-    return { ok: true, value: scaled };
+    return unit === "bp" && scaled > 10_000 ? { ok: false, problem: "OVER_100" } : { ok: true, value: scaled };
   }
-  if (!Number.isInteger(number)) return { ok: false, problem: "NOT_A_NUMBER" };
-  return { ok: true, value: number };
+  return Number.isInteger(number) ? { ok: true, value: number } : { ok: false, problem: "NOT_A_NUMBER" };
 }
 
 /** The character shown beside the input: ₹ before rupees, % after a rate. */

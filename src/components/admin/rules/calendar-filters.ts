@@ -19,8 +19,7 @@ export const DEFAULT_FILTERS: CalendarFilters = {
 
 function matchesWho(event: CalendarEvent, who: string): boolean {
   if (who === "all") return true;
-  if (who === "platform") return event.org === null;
-  return event.org?.id === who;
+  return who === "platform" ? event.org === null : event.org?.id === who;
 }
 
 function matchesState(
@@ -28,8 +27,7 @@ function matchesState(
   state: CalendarFilters["state"],
 ): boolean {
   if (state === "all") return true;
-  if (state === "open") return !event.done;
-  return event.state === state;
+  return state === "open" ? !event.done : event.state === state;
 }
 
 /** The events that pass every filter, in the order given. */
@@ -100,7 +98,7 @@ export function groupByDate(
     if (group) group.push(event);
     else byDate.set(event.dueAt, [event]);
   }
-  return [...byDate.entries()]
+  return [...byDate]
     .toSorted(([a], [b]) => a.localeCompare(b))
     .map(([date, group]) => ({ date, events: group }));
 }

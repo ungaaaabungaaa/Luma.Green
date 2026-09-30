@@ -41,6 +41,8 @@ export function useTimeFormat() {
   }
 
   return {
+    /** "8 am – 12 pm" from two HH:MM times; null if either is unreadable. */
+    range,
     /** A shop's opening hours, e.g. "8 am – 8 pm"; null if unreadable. */
     hours(hours: { opens: string; closes: string } | undefined) {
       return hours ? range(hours.opens, hours.closes) : null;
