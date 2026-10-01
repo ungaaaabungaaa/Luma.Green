@@ -1,6 +1,7 @@
 # Agent handoff — 1 October 2026
 
-**Status:** implementation and local verification complete through `2183515`.
+**Status:** implementation and local verification complete through `db62fb7`
+(premium visual refinement).
 This handoff is the next documentation commit on `feat/pilot-readiness-cleanup`.
 The branch is the continuation point; `main` has not received these changes.
 Check the live remote before making a merge or deployment claim.
@@ -11,8 +12,8 @@ Check the live remote before making a merge or deployment claim.
 2. Check `git status -sb`, `git log -15 --oneline`, `git remote -v` and
    `git worktree list`. Preserve new user changes. Fetch `origin` and compare the
    branch with its upstream before editing or pushing.
-3. Read the three implementation records below. Their test counts are historical
-   checkpoints; the latest source checkpoint is the cost pass.
+3. Read the four implementation records below. Their test counts are historical
+   checkpoints; the latest source checkpoint is the visual refinement.
 4. Pick a task from the ordered queue. Distinguish code implementation, local
    tests, hosted CI, deployment, provider execution and store approval in reports.
 5. Update this page as work progresses. Commit meaningful verified slices.
@@ -54,9 +55,12 @@ them again into that branch or restart from the old base.
 | `e6d0e3a` | Expo-compatible isolated mobile TypeScript version                           |
 | `e218556` | Native architecture, account setup and release evidence                      |
 | `2183515` | Image compression, compact queries, caches and self-hosted inference adapter |
+| `f94fa6b` | Agent handoff and continuation checkpoints                                   |
+| `db62fb7` | Premium public/app design, compressed art, parallax and motion checks        |
 
 Detailed records: [UI and pilot](cleanup-progress.md),
-[apps and motion](apps-and-motion.md), [cost optimization](cost-optimization.md).
+[apps and motion](apps-and-motion.md), [cost optimization](cost-optimization.md),
+[visual refinement](premium-ui.md).
 
 No unfinished agent edits, stashes or active secondary worktrees were present at
 handoff inspection. The five earlier managed worktrees are archived: UI,
@@ -92,14 +96,14 @@ Read [ADR 0014](../decisions/0014-shared-web-ui-in-native-shells.md),
 
 ## Verification checkpoint
 
-Latest implementation checks at `2183515`:
+Latest implementation checks at `db62fb7`:
 
 | Check                            | Evidence                                                                      |
 | -------------------------------- | ----------------------------------------------------------------------------- |
-| `pnpm check`                     | Lint/types; 1,059 web tests in 134 files; 23 mobile and 19 desktop unit tests |
+| `pnpm check`                     | Lint/types; 1,065 web tests in 136 files; 23 mobile and 19 desktop unit tests |
 | `pnpm format:check`              | Passed                                                                        |
 | `pnpm exec next build --webpack` | Passed; 925 generated pages                                                   |
-| `CI=1 PORT=3100 pnpm e2e`        | 45 Chromium tests passed against production build                             |
+| `CI=1 PORT=3100 pnpm e2e`        | 48 Chromium tests passed against production build                             |
 | Public image cache               | Content-hashed source, immutable headers, optimizer `MISS` then `HIT`         |
 | Upload fixture                   | 4,980,609 → 490,212 bytes; inspected synthetic scan remains legible           |
 | Compact prices                   | 832 → at most 52 documents; 50,832 → 1,113 response bytes in fixture          |
@@ -110,9 +114,14 @@ These do not prove mobile native compilation, Windows execution or signed update
 The default Turbopack build hit a host worker-port restriction; Webpack passed.
 Clean production builds need network access for configured Google fonts.
 
-For this documentation handoff, `pnpm check` and `pnpm format:check` were rerun
-successfully with the same test counts. All local handoff links resolve. No
-application source changed after the production build/browser checkpoint.
+The latest full checks cover the visual refinement. The last heading offset and
+browser-test selector fixes also passed focused ESLint and the production suite.
+The first incremental build emitted stale CSS; moving the compile cache aside and
+building again produced the correct styles. A computed hero-size smoke check now
+catches that failure. The production homepage was inspected and the two repository
+homepage screenshots were refreshed. The image-cache/upload/price fixture rows
+above are historical evidence from `2183515`; those paths were not changed by this
+visual pass. No application source changed after the final build/browser checks.
 
 The local preview was refreshed at `http://localhost:3004/`. Check its process on
 resume; it is not a deployed service. Use `PORT=3004 pnpm start` after a successful
@@ -122,16 +131,16 @@ Rebuild on a new machine. `/tmp` screenshots/logs are not required resume inputs
 
 ## Ordered next-work queue
 
-| Priority | Task                                                       | Completion evidence / dependency                                                                                                                                                                                                                                                                                    |
-| -------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1        | Open/review a PR for the branch; run hosted checks         | Review the full diff and obtain green required CI plus relevant browser/native jobs. A branch push alone does not run the current PR-only checks. No direct main push or red-check merge.                                                                                                                           |
-| 2        | Stage the connected pilot flows                            | Configure intended Convex/site environments. Deploy schema/functions before dependent frontend. Test real sign-in, private upload, dispatch, expiry, receipt and admin report with staging users. Accounts/keys are external prerequisites.                                                                         |
-| 3        | Complete signed native previews                            | Configure the dedicated trusted origin and signing/update credentials. Build Android/iOS and macOS/Windows artifacts. Test login, camera/gallery/location, private files, recovery and updates on each platform. Full Xcode, Android SDK/JDK or EAS builds are required; this host lacked mobile native toolchains. |
-| 4        | Activate and verify SMS                                    | Obtain MSG91/DLT/template approval. Check OTP and status events. Record API acceptance and handset delivery separately. No real send was made during implementation.                                                                                                                                                |
-| 5        | Validate optional self-hosted AI                           | Configure an authenticated HTTPS gateway, pin an evaluated vision model, and test cold/warm latency within eight seconds, accuracy and cost. Manual entry works without AI.                                                                                                                                         |
-| 6        | Run launch UX and cost acceptance                          | Native-speaker review of launch languages; low-end device/RTL checks; real scan legibility; staging usage measurements and restore drill. Local savings are fixture measurements, not a live bill.                                                                                                                  |
-| 7        | Implement remaining operational gaps if required for pilot | SMS delivery webhook/status handling and explicit resend policy; bounded SMS outbox retention; identify/exclude demo rows in pilot metrics. Define retention and idempotency first. Current adapters/reports do not implement these.                                                                                |
-| 8        | Continue later product work from its requirements          | Large-city spatial dispatch; consented photo conversion/accuracy instrumentation; real escrow/payments and regulated carbon work. Existing prototypes and sample figures are not live services.                                                                                                                     |
+| Priority | Task                                                       | Completion evidence / dependency                                                                                                                                                                                                                                                                                        |
+| -------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1        | Open/review a PR for the branch; run hosted checks         | Review the full diff and obtain green required CI plus relevant browser/native jobs. A branch push alone does not run the current PR-only checks. No direct main push or red-check merge.                                                                                                                               |
+| 2        | Stage the connected pilot flows                            | Configure intended Convex/site environments. Deploy schema/functions before dependent frontend. Test real sign-in, private upload, dispatch, expiry, receipt and admin report with staging users. Accounts/keys are external prerequisites.                                                                             |
+| 3        | Complete signed native previews                            | Configure the dedicated trusted origin and signing/update credentials. Build Android/iOS and macOS/Windows artifacts. Test login, camera/gallery/location, private files, recovery and updates on each platform. Full Xcode, Android SDK/JDK or EAS builds are required; this host lacked mobile native toolchains.     |
+| 4        | Activate and verify SMS                                    | Obtain MSG91/DLT/template approval. Check OTP and status events. Record API acceptance and handset delivery separately. No real send was made during implementation.                                                                                                                                                    |
+| 5        | Validate optional self-hosted AI                           | Configure an authenticated HTTPS gateway, pin an evaluated vision model, and test cold/warm latency within eight seconds, accuracy and cost. Manual entry works without AI.                                                                                                                                             |
+| 6        | Run launch UX and cost acceptance                          | Review populated app/admin screens with staging accounts; native-speaker review of launch languages; low-end device/RTL checks; real scan legibility; staging usage measurements and restore drill. Replace placeholder support contact details before launch. Local savings are fixture measurements, not a live bill. |
+| 7        | Implement remaining operational gaps if required for pilot | SMS delivery webhook/status handling and explicit resend policy; bounded SMS outbox retention; identify/exclude demo rows in pilot metrics. Define retention and idempotency first. Current adapters/reports do not implement these.                                                                                    |
+| 8        | Continue later product work from its requirements          | Large-city spatial dispatch; consented photo conversion/accuracy instrumentation; real escrow/payments and regulated carbon work. Existing prototypes and sample figures are not live services.                                                                                                                         |
 
 Setup checklists:
 
@@ -147,7 +156,8 @@ This checkpoint is prepared for a normal push of `feat/pilot-readiness-cleanup`
 to `origin` with upstream tracking. Verify equality after fetching with
 `git rev-list --left-right --count HEAD...@{upstream}`; expect `0 0` before claiming
 synchronization. Check clean status separately. Find this documentation checkpoint
-with `git log -1 --grep='agent handoff'`.
+with `git log -1 --grep='visual refinement handoff'`. The implementation is
+`db62fb7`; the next documentation-only commit records this checkpoint.
 
 No PR, hosted CI result, merge, deployment, provider execution or store release
 is claimed here. The current task ends after push verification. No background
