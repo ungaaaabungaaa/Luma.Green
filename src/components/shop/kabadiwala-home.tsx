@@ -10,6 +10,7 @@ import {
 import { useFormatter, useNow, useTranslations } from "next-intl";
 
 import { DemoNote } from "@/components/app/page-parts";
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
@@ -29,7 +30,15 @@ export function KabadiwalaHome() {
   if (!shop) return null;
   return (
     <div className="flex flex-col gap-6">
-      <Greeting name={shop.name} />
+      <div className="grid items-center gap-4 md:grid-cols-[minmax(0,1fr)_16rem]">
+        <Greeting name={shop.name} />
+        <RoleStoryImage
+          sizes="(min-width: 768px) 256px, 92vw"
+          scene="kabadiwala"
+          compact
+          frameClassName="aspect-auto h-24 md:h-32"
+        />
+      </div>
       <QueryBoundary>
         <HomeBody city={shop.city} />
         <DispatchSettings />

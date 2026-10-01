@@ -16,6 +16,7 @@ import {
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 import { MaterialCodes } from "@/components/standards/material-codes";
@@ -63,10 +64,22 @@ const sections = [
  */
 export default async function StandardsPage() {
   const t = await getTranslations("standards");
+  const imageRole = "manufacturer";
 
   return (
     <>
-      <PageHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageHeader
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        lead={t("lead")}
+        art={
+          <RoleStoryImage
+            scene={imageRole}
+            compact
+            frameClassName="h-40 aspect-auto sm:h-52 lg:h-64"
+          />
+        }
+      />
 
       <Container className="flex flex-col gap-12 py-12 sm:py-16">
         <nav aria-label={t("onThisPage")} className="flex flex-col gap-3">

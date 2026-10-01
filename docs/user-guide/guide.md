@@ -4,8 +4,8 @@
 
 From the first pickup to the admin console.
 
-Edition: 1 October 2026. Source baseline: 0f0ce43.
-Includes the analytics and SEO update committed with this edition.
+Edition: 1 October 2026. Source baseline: 6ca9391.
+Includes the role preview and generated imagery update committed with this edition.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
@@ -115,7 +115,7 @@ A completed receipt preserves its recorded weights and prices. A later price cha
 
 ## 06 / Join as a business or Saathi
 
-![Current public role selection. Choose the role that describes the work you do.](screenshots/public-join.png)
+![Current public role selection. Choose the role that describes the work you do. Each card includes an illustrative role image; select the card to start the real application.](screenshots/public-join.png)
 
 1. Open /join and read the role descriptions.
 2. Choose Kabadiwala, Yard, Recycler, Manufacturer or Saathi.
@@ -680,7 +680,29 @@ Google Search Console and Bing verification tags are optional ownership checks. 
 
 ---
 
-## 36 / Evidence and maintenance
+## 36 / Explore each role before you start
+
+The Participants and role-help pages show illustrative app previews. Home and Join cards use role images to help you find the right path. Phone frames explain household, kabadiwala and Saathi tasks. Browser frames explain yard, recycler, manufacturer and admin work. Each preview uses the selected language, including right-to-left layouts.
+
+![Current Participants page in the browser. The household app preview and generated scene are labelled illustrations, not a booking or real operation.](screenshots/showcase-household.png)
+
+The previews are not live controls. Use the page's normal Sell scrap, Join or guide links to open the real workflow. A preview does not sign you in, create records, approve an application or show a released native app. All account and release requirements in this guide still apply.
+
+![Current yard section on Participants. The browser frame is an illustrative overview of incoming material, sorting and stock.](screenshots/showcase-yard.png)
+
+The photos are generated editorial scenes. They explain the type of work; they are not evidence of actual staff, facilities, customers, safety certification or operational results. Working booking and admin screens remain separate from these public illustrations.
+
+![Current admin overview on Participants. It contains generic verification tasks and no private applications or account details.](screenshots/showcase-admin.png)
+
+![Current Arabic role-help preview captured at phone width. The interface text is translated HTML, not text embedded in an image.](screenshots/showcase-arabic.png)
+
+Illustrative images also appear on sign-in pages, the sell introduction, onboarding forms, public information pages and workspace home screens. They give context to each role. Tables, transactions and form controls remain the operational records; the images do not show live activity.
+
+On a role-help page, use the links at the top to jump to guides, questions or training. The preview is only an introduction. The actual instructions and permission rules remain in those sections.
+
+---
+
+## 37 / Evidence and maintenance
 
 The editable source is docs/user-guide/guide.md. The PDF is output/pdf/luma-green-user-guide.pdf. Screenshots and their capture manifests live with the source. The repository README in that folder gives capture and rebuild commands.
 

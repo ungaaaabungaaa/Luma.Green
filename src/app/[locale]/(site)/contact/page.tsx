@@ -2,6 +2,7 @@ import { MailIcon, ShieldAlertIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,10 +35,21 @@ const emailLink =
  */
 export default async function ContactPage() {
   const t = await getTranslations("contact");
+  const imageRole = "admin";
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} />
+      <PageHeader
+        title={t("title")}
+        lead={t("lead")}
+        art={
+          <RoleStoryImage
+            scene={imageRole}
+            compact
+            frameClassName="h-40 aspect-auto sm:h-52 lg:h-64"
+          />
+        }
+      />
 
       <Container className="grid gap-4 py-20 md:grid-cols-2">
         <Card>

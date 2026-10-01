@@ -3278,5 +3278,60 @@
     "saved": "Your choice is saved on this device.",
     "unavailable": "Your browser could not save this choice. Analytics will stay off.",
     "close": "Close"
+  },
+  "showcase": {
+    "scene": "Illustrative scene",
+    "context": {
+      "heading": "A look at your workspace",
+      "body": "Illustrative screens show how each role uses Luma.Green. Follow the guides below for the available steps."
+    },
+    "adminBody": "Review applications, manage access and check operational records.",
+    "preview": {
+      "label": "Illustrative app preview · no real records",
+      "roles": {
+        "household": {
+          "title": "Your household pickup",
+          "first": "Choose your materials",
+          "second": "Arrange a pickup",
+          "third": "Keep your receipt"
+        },
+        "kabadiwala": {
+          "title": "Your scrap shop",
+          "first": "Review pickup requests",
+          "second": "Record the weight",
+          "third": "Manage sorted stock"
+        },
+        "yard": {
+          "title": "Your sorting yard",
+          "first": "Receive materials",
+          "second": "Sort your inventory",
+          "third": "Prepare outgoing lots"
+        },
+        "recycler": {
+          "title": "Your recycling workspace",
+          "first": "Track incoming lots",
+          "second": "Record recycled output",
+          "third": "Keep material records"
+        },
+        "manufacturer": {
+          "title": "Your material sourcing",
+          "first": "Find recycled materials",
+          "second": "Review available listings",
+          "third": "Track your trades"
+        },
+        "saathi": {
+          "title": "Your workday",
+          "first": "Find nearby jobs",
+          "second": "Plan your schedule",
+          "third": "Record completed work"
+        },
+        "admin": {
+          "title": "Platform administration",
+          "first": "Review applications",
+          "second": "Check submitted documents",
+          "third": "Review operational records"
+        }
+      }
+    }
   }
 }

@@ -1,3 +1,7 @@
+import type { ReactNode } from "react";
+
+import { cn } from "@/lib/utils";
+
 import { Container } from "./container";
 
 /** Shared editorial opening for public inner pages. Decoration is never copy. */
@@ -5,12 +9,24 @@ export function PageHeader({
   title,
   lead,
   eyebrow,
+  art,
 }: {
   title: string;
   lead: string;
   /** A short label above the title — the city, or what kind of page it is. */
   eyebrow?: string;
+  /** Optional supporting scene. Keep page instructions before the image. */
+  art?: ReactNode;
 }) {
+  const description = (
+    <p
+      data-reveal
+      className="max-w-2xl border-s-2 border-brand-700/30 ps-5 text-lg leading-relaxed text-pretty text-brand-950/75 lg:mb-2 lg:ps-7"
+    >
+      {lead}
+    </p>
+  );
+
   return (
     <div
       data-parallax-scene
@@ -24,7 +40,12 @@ export function PageHeader({
         <div className="absolute inset-10 rounded-full border border-brand-800/15" />
         <div className="absolute end-8 bottom-4 size-14 rounded-full bg-brand-800/10" />
       </div>
-      <Container className="relative grid gap-8 py-16 sm:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-end lg:gap-16 lg:py-28">
+      <Container
+        className={cn(
+          "relative grid gap-8 py-16 sm:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-end lg:gap-16 lg:py-28",
+          art && "py-10 sm:py-16 lg:items-center lg:py-20",
+        )}
+      >
         <div data-reveal className="space-y-6">
           {eyebrow ? (
             <p className="inline-flex items-center gap-3 text-sm font-semibold text-brand-900">
@@ -40,13 +61,9 @@ export function PageHeader({
           <h1 className="max-w-4xl font-display text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
             {title}
           </h1>
+          {art ? description : null}
         </div>
-        <p
-          data-reveal
-          className="max-w-2xl border-s-2 border-brand-700/30 ps-5 text-lg leading-relaxed text-pretty text-brand-950/75 lg:mb-2 lg:ps-7"
-        >
-          {lead}
-        </p>
+        {art ? <div data-reveal>{art}</div> : description}
       </Container>
     </div>
   );

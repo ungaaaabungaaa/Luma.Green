@@ -294,7 +294,11 @@ for (const locale of ["en", "ar", "ur"] as const) {
   }) => {
     for (const width of [360, 768, 1024]) {
       await page.setViewportSize({ width, height: 700 });
-      await page.goto(locale === "en" ? "/" : `/${locale}`);
+      // Resizing can start responsive image requests on the previous page.
+      // The menu's observable state is this navigation test's readiness gate.
+      await page.goto(locale === "en" ? "/" : `/${locale}`, {
+        waitUntil: "domcontentloaded",
+      });
       const header = page.getByRole("banner");
       const menuButton = header.getByRole("button").last();
       const target = await menuButton.boundingBox();

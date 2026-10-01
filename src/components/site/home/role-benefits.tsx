@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -56,6 +57,7 @@ export async function RoleBenefits() {
                   : "border-brand-900/10 bg-card",
               )}
             >
+              <RoleStoryImage scene={key} compact />
               <div className="flex items-center gap-3">
                 <span
                   className={cn(

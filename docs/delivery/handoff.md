@@ -1,8 +1,8 @@
 # Agent handoff — 1 October 2026
 
-**Status:** the branch now includes optional PostHog/GA4, error-only Sentry,
-search ownership tags and the updated illustrated guide. The task started at
-`0f0ce43`; find this delivery with `git log -1 --grep="optional analytics"`.
+**Status:** the current visual pass adds seven role app previews and eight generated
+scenes across discovery, access and operational home pages. Its starting checkpoint is `6ca9391`.
+See [app showcases](app-showcases.md) for the scope and current verification.
 The continuation branch is `feat/pilot-readiness-cleanup`.
 The branch is the continuation point; `main` has not received these changes.
 Check the live remote before making a merge or deployment claim.
@@ -14,7 +14,7 @@ Check the live remote before making a merge or deployment claim.
    `git worktree list`. Preserve new user changes. Fetch `origin` and compare the
    branch with its upstream before editing or pushing.
 3. Read the implementation records below, especially the latest
-   [analytics and SEO delivery](observability.md). The earlier visual and guide
+   [app showcase delivery](app-showcases.md). The earlier visual and guide
    checkpoints are integrated; do not repeat them.
 4. Pick a task from the ordered queue. Distinguish code implementation, local
    tests, hosted CI, deployment, provider execution and store approval in reports.
@@ -61,11 +61,12 @@ them again into that branch or restart from the old base.
 | `f94fa6b` | Agent handoff and continuation checkpoints                                   |
 | `db62fb7` | Premium public/app design, compressed art, parallax and motion checks        |
 | `0f0ce43` | Illustrated platform guide and mandatory guide maintenance rules             |
+| `6ca9391` | Optional PostHog/GA4, error-only Sentry, search setup and updated guide      |
 
 Detailed records: [UI and pilot](cleanup-progress.md),
 [apps and motion](apps-and-motion.md), [cost optimization](cost-optimization.md),
 [visual refinement](premium-ui.md), [platform user guide](user-guide.md),
-[analytics and SEO](observability.md).
+[analytics and SEO](observability.md), [role app showcases](app-showcases.md).
 
 No unfinished agent edits, stashes or active secondary worktrees were present at
 handoff inspection. The five earlier managed worktrees are archived: UI,
@@ -101,7 +102,8 @@ Read [ADR 0014](../decisions/0014-shared-web-ui-in-native-shells.md),
 
 ## Verification checkpoint
 
-Current analytics/SEO checks are recorded in [observability.md](observability.md).
+Current role-preview checks are recorded in [app-showcases.md](app-showcases.md).
+Analytics/SEO checks are recorded in [observability.md](observability.md).
 That record includes configured and default builds, consent browser checks,
 regressions and the updated guide. Provider receipt, hosted CI and deployment
 remain separate gates.
@@ -154,8 +156,12 @@ Historical documentation checks at `0f0ce43`: `pnpm check` passed lint/types, 1,
 137 files, 23 mobile tests and 19 desktop tests. Three new tests enforce guide
 input, screenshot/component and PDF hashes. The PDF was rendered and every page
 inspected. No production source, dependencies or native runtime changed.
-The analytics edition adds English and Arabic consent captures and owner setup.
-These use test keys with external requests intercepted, not live provider accounts.
+The analytics edition added English and Arabic consent captures and owner setup.
+The current visual edition expands the guide to 50 pages, with 14 public captures,
+four clearly labelled public role previews and 26 synthetic protected-screen
+fixtures (including six phone layouts). Generated scenes are illustrations, not
+evidence of operations. Only the analytics captures use test keys; their external
+requests are intercepted. Shared image/adapter hashes now enforce recapture.
 Guide impact was assessed and its source, captures, build record and PDF updated
 in the same delivery. The guide tooling uses a separate local preview and Python
 build dependencies.
@@ -191,7 +197,7 @@ This checkpoint is prepared for a normal push of `feat/pilot-readiness-cleanup`
 to `origin` with upstream tracking. Verify equality after fetching with
 `git rev-list --left-right --count HEAD...@{upstream}`; expect `0 0` before claiming
 synchronization. Check clean status separately. Find the latest delivery with
-`git log -1 --grep='optional analytics'`. Preserve the pre-existing untracked
+`git log -1 --grep='role app previews'`. Preserve the pre-existing untracked
 root `luma-green-user-guide.pdf`; it is not the maintained `output/pdf` artifact.
 Do not stage or delete it. No main merge, hosted CI result or deployment is
 claimed by this handoff.

@@ -33,7 +33,7 @@ Capture outputs go to `docs/user-guide/screenshots`. The script checks the
 visible provenance label and each page heading, waits for fonts, rejects browser
 errors and external network requests, then writes full-page PNG files. It records
 routes, component paths and hashes, PNG hashes, production stylesheet hashes,
-viewport sizes, scroll targets, the fixture clock and capture time in `fixture-captures.json`.
+shared image/adapter source hashes, viewport sizes, scroll targets, the fixture clock and capture time in `fixture-captures.json`.
 `sourceCommit` records HEAD at capture; individual source hashes identify the
 component contents even when the working tree contains documentation changes.
 
@@ -56,6 +56,7 @@ harness fixture; it is not a production role-switching feature.
   cannot save a price, approve a business, send a message, or change an account.
 - `translations.ts` resolves the actual async `HouseholdLayout` translation call
   from the committed English catalogue. Its markup is imported unchanged.
+- `image.tsx` uses local Vite image URLs in place of the Next optimizer. It preserves image classes, sizing and fill positioning. This adapter does not test production image delivery; production browser checks cover that. Remove it when authenticated Next captures replace the fixture harness.
 - `navigation.tsx` adapts Next links, paths and initial query parameters to the standalone preview. This
   tests component rendering, not the Next router or server route guards.
 - `process.env` is an explicit empty configuration plus `NODE_ENV`. No application
@@ -69,6 +70,8 @@ The separate trades page shows one synthetic accepted purchase. The compliance
 page uses visibly fictional registration identifiers and report quantities.
 They remain prototypes: an “escrow” label in a screenshot does not establish
 real payment processing. The guide must explain this boundary in its text.
+
+Six role home screens also have a `-phone` capture at 390 × 844 pixels to check the compact image placement and mobile navigation.
 
 ## Current capture set
 

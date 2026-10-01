@@ -14,6 +14,7 @@ import {
 } from "@/components/app/page-parts";
 import { useWorkspace } from "@/components/app/use-workspace";
 import { QueryBoundary } from "@/components/insights/query-boundary";
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { api } from "../../../convex/_generated/api";
@@ -127,10 +128,19 @@ export function SaathiHome() {
 
   return (
     <>
-      <AppPageHeader
-        title={t("greeting", { name: saathi?.name ?? "" })}
-        lead={saathi ? t("lead", { area: saathi.area }) : undefined}
-      />
+      <div className="grid items-center gap-4 md:grid-cols-[minmax(0,1fr)_16rem]">
+        <AppPageHeader
+          title={t("greeting", { name: saathi?.name ?? "" })}
+          lead={saathi ? t("lead", { area: saathi.area }) : undefined}
+        />
+        <RoleStoryImage
+          sizes="(min-width: 768px) 256px, 92vw"
+          scene="saathi"
+          imageClassName="object-[center_25%]"
+          compact
+          frameClassName="aspect-auto h-24 md:h-32"
+        />
+      </div>
       <QueryBoundary>
         <SaathiBoard />
       </QueryBoundary>

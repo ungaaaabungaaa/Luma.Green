@@ -15,6 +15,7 @@ export function HelpHero({
   breadcrumbs,
   art,
   artOnPhones = false,
+  artLayout = "illustration",
   children,
 }: {
   eyebrow?: string;
@@ -25,6 +26,8 @@ export function HelpHero({
   art?: ReactNode;
   /** Also show `art` on phones, above the title. */
   artOnPhones?: boolean;
+  /** Photos keep the title first on phones and use a rectangular surface. */
+  artLayout?: "illustration" | "photo";
   children?: ReactNode;
 }) {
   return (
@@ -36,7 +39,12 @@ export function HelpHero({
         {breadcrumbs}
         <div
           data-reveal
-          className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-16"
+          className={cn(
+            "grid items-center gap-8 md:gap-16",
+            artLayout === "photo"
+              ? "md:grid-cols-[minmax(0,1fr)_minmax(0,24rem)]"
+              : "md:grid-cols-[1fr_auto]",
+          )}
         >
           <div className="flex min-w-0 flex-col gap-5">
             {eyebrow ? (
@@ -52,8 +60,13 @@ export function HelpHero({
           {art ? (
             <div
               className={cn(
-                "w-40 shrink-0 rounded-full border border-brand-900/10 bg-background/70 p-4 md:w-64 md:p-6",
-                artOnPhones ? "-order-1 md:order-none" : "hidden md:block",
+                artLayout === "photo"
+                  ? "w-full max-w-sm min-w-0 justify-self-center"
+                  : "w-40 shrink-0 rounded-full border border-brand-900/10 bg-background/70 p-4 md:w-64 md:p-6",
+                !artOnPhones && "hidden md:block",
+                artOnPhones &&
+                  artLayout === "illustration" &&
+                  "-order-1 md:order-none",
               )}
             >
               {art}

@@ -129,7 +129,47 @@ const screens = [
     heading: "Hello, Demo Saathi",
   },
 ];
+const roleHomeNames = new Set([
+  "admin-overview",
+  "kabadiwala-overview",
+  "yard-overview",
+  "recycler-overview",
+  "manufacturer-overview",
+  "saathi-overview",
+]);
+screens.push(
+  ...screens
+    .filter((screen) => roleHomeNames.has(screen.name))
+    .map((screen) => ({
+      ...screen,
+      name: `${screen.name}-phone`,
+      width: 390,
+      height: 844,
+    })),
+);
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
+const sharedSources = [
+  "src/components/showcase/role-story-image.tsx",
+  "scripts/guide-preview/image.tsx",
+  "scripts/guide-preview/vite.config.mts",
+  "messages/en.json",
+  "public/images/showcase/household-sorting.webp",
+  "public/images/showcase/collection-partners.webp",
+  "public/images/showcase/material-yard.webp",
+  "public/images/showcase/circular-workshop.webp",
+  "public/images/showcase/kabadiwala-weighing.webp",
+  "public/images/showcase/recycling-line.webp",
+  "public/images/showcase/operations-desk.webp",
+  "public/images/showcase/solar-rooftop.webp",
+];
+const sharedSourceHashes = Object.fromEntries(
+  await Promise.all(
+    sharedSources.map(async (file) => [
+      file,
+      hash(await readFile(path.resolve(repository, file))),
+    ]),
+  ),
+);
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch();
 const metadata = [];
@@ -172,6 +212,7 @@ try {
       .waitFor({ state: "visible" });
     await page.evaluate(async () => {
       await document.fonts.ready;
+      await Promise.all([...document.images].map((image) => image.decode()));
     });
     if (errors.length > 0 || blocked.length > 0)
       throw new Error(`${screen.name}: ${JSON.stringify({ errors, blocked })}`);
@@ -242,6 +283,7 @@ await writeFile(
       }).trim(),
       note: "Real browser renders of current application components. Synthetic data and isolated local query/auth/navigation adapters. Not evidence of sign-in, authorization, live records, provider calls or production deployment. Build styles and Noto fonts are reused without restyling the app. The visible provenance banner belongs only to this harness.",
       fixtureSha256: hash(fixtureSource),
+      sharedSourceHashes,
       styles,
       captures: metadata,
     },

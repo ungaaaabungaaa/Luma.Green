@@ -24,6 +24,7 @@ const shots = [
   ["public-standards", "/standards"],
   ["public-solar", "/solar"],
   ["public-contact", "/help/contact"],
+  ["public-contact-info", "/contact"],
   ["public-how-it-works", "/how-it-works"],
   ["public-arabic", "/ar"],
 ] as const;
@@ -45,6 +46,19 @@ try {
       locale: "en-IN",
       colorScheme: "light",
     });
+    const browserErrors: string[] = [];
+    const blockedRequests: string[] = [];
+    page.on("pageerror", (error) => {
+      browserErrors.push(error.message);
+    });
+    await page.route("**/*", async (route) => {
+      if (new URL(route.request().url()).origin === origin.origin) {
+        await route.continue();
+      } else {
+        blockedRequests.push(new URL(route.request().url()).origin);
+        await route.abort();
+      }
+    });
     try {
       const url = new URL(route, origin).href;
       const response = await page.goto(url);
@@ -53,18 +67,37 @@ try {
           `Cannot capture ${route}: ${String(response?.status() ?? "no response")}`,
         );
       await page.getByRole("heading", { level: 1 }).waitFor();
+      if (route === "/help/contact") {
+        // Wait for the disconnected client state, not its Suspense skeleton.
+        await page
+          .locator('section[aria-labelledby="contact-form-heading"]')
+          .getByRole("status")
+          .waitFor();
+      }
       await page.evaluate(async () => {
         await document.fonts.ready;
         await Promise.all(
           [...document.images].map(async (image) => {
-            if (image.loading !== "lazy" && image.currentSrc)
+            const bounds = image.getBoundingClientRect();
+            if (
+              image.currentSrc &&
+              bounds.top < window.innerHeight &&
+              bounds.bottom > 0
+            )
               await image.decode();
           }),
         );
       });
       const path = `${directory}/${name}.png`;
       await page.screenshot({ path, animations: "disabled", caret: "hide" });
+      if (browserErrors.length > 0 || blockedRequests.length > 0) {
+        throw new Error(
+          `Capture ${route} had browser errors or external traffic`,
+        );
+      }
       captures.push({
+        browserErrors,
+        blockedRequests,
         name,
         route,
         path,

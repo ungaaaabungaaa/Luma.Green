@@ -10,6 +10,7 @@ Code rules live in [AGENTS.md](../AGENTS.md) and the
 
 **Resuming implementation?** Start with the [agent handoff](./delivery/handoff.md).
 It lists the continuation branch, completed commits, tests and ordered next tasks.
+The latest visual pass is recorded in [role app showcases](./delivery/app-showcases.md).
 
 **Clickable prototype:**
 [Luma.Green Prototype](https://claude.ai/artifact/4hiq2r5tm5kWDBqTGEPD8C) —

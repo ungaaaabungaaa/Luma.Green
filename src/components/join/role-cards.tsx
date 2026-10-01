@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Link } from "@/i18n/navigation";
 
 import {
@@ -37,6 +38,7 @@ export function RoleCards() {
               href={`/join/${kind}`}
               className="group flex h-full flex-col gap-5 rounded-3xl border border-border/80 bg-card p-6 shadow-sm transition-[border-color,box-shadow,transform] duration-200 outline-none hover:border-brand-400 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 motion-safe:hover:-translate-y-1"
             >
+              <RoleStoryImage scene={kind} compact />
               <span className="flex items-start gap-4">
                 <span className="flex size-13 shrink-0 items-center justify-center rounded-2xl border border-brand-100 bg-brand-50 text-primary">
                   <Icon aria-hidden className="size-5" />

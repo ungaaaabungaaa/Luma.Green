@@ -1,6 +1,6 @@
 # Maintained platform user guide
 
-**Status:** current usage guide, 1 October 2026; source baseline `0f0ce43`, plus the analytics and SEO update.
+**Status:** current usage guide, 1 October 2026; source baseline `6ca9391`, plus the role previews and generated imagery update.
 
 - Editable content: [guide.md](guide.md).
 - Published PDF: [luma-green-user-guide.pdf](../../output/pdf/luma-green-user-guide.pdf).
@@ -19,9 +19,10 @@
 
    ```sh
    GUIDE_BASE_URL=http://localhost:3004 pnpm exec jiti scripts/capture-guide.mts
+   GUIDE_BASE_URL=http://localhost:3004 pnpm exec jiti scripts/capture-showcases.mts
    ```
 
-   The command accepts a local origin only. It visits the real pages; it does
+   The commands accept a local origin only and reject external requests. It visits the real pages; it does
    not sign in or submit forms. Use a disconnected or approved test environment
    with no real personal data. Inspect each resulting PNG.
 

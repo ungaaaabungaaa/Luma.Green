@@ -60,6 +60,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: [
+      { find: "next/image", replacement: path.resolve(directory, "image.tsx") },
       {
         find: "next-intl/server",
         replacement: path.resolve(directory, "translations.ts"),

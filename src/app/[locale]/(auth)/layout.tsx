@@ -7,7 +7,7 @@ import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { SkipLink } from "@/components/site/skip-link";
 import { Link } from "@/i18n/navigation";
 
-import materialStudy from "../../../../public/images/material-study.webp";
+import collectionPartners from "../../../../public/images/showcase/collection-partners.webp";
 
 /**
  * Shell for signing in: a focused form and a quiet brand panel. Pages
@@ -20,6 +20,7 @@ export default async function AuthLayout({
 }) {
   const t = await getTranslations("nav");
   const brand = await getTranslations("brand");
+  const showcase = await getTranslations("showcase");
 
   return (
     <div className="flex min-h-dvh flex-col bg-background">
@@ -35,26 +36,31 @@ export default async function AuthLayout({
         <LanguageSwitcher />
       </header>
       <div className="mx-auto grid w-full max-w-7xl flex-1 gap-6 p-4 sm:p-8 lg:grid-cols-2 lg:gap-10 lg:p-10">
-        <aside className="relative hidden min-h-160 flex-col justify-between overflow-hidden rounded-3xl bg-brand-950 p-10 text-brand-50 lg:flex">
-          <p className="relative z-10 max-w-sm font-display text-5xl leading-tight font-semibold tracking-tight text-balance">
+        <aside className="relative order-2 flex flex-col justify-between self-start overflow-hidden rounded-3xl bg-brand-950 p-3 text-brand-50 lg:order-1 lg:min-h-160 lg:self-stretch lg:p-10">
+          <p className="relative z-10 hidden max-w-sm font-display text-5xl leading-tight font-semibold tracking-tight text-balance lg:block">
             {brand("tagline")}
           </p>
-          <div className="mt-10 overflow-hidden rounded-2xl border border-brand-700/40 bg-brand-50">
-            <Image
-              src={materialStudy}
-              alt=""
-              sizes="(min-width: 1024px) 520px, 1px"
-              className="h-auto w-full object-cover"
-            />
-          </div>
-          <p className="mt-8 text-sm font-medium text-brand-200">
+          <figure className="lg:mt-10">
+            <div className="overflow-hidden rounded-2xl border border-brand-700/40 bg-brand-50">
+              <Image
+                src={collectionPartners}
+                alt=""
+                sizes="(min-width: 1024px) 520px, 92vw"
+                className="h-24 w-full object-cover object-[center_25%] lg:h-auto lg:object-center"
+              />
+            </div>
+            <figcaption className="mt-2 text-xs text-brand-100">
+              {showcase("scene")}
+            </figcaption>
+          </figure>
+          <p className="mt-8 hidden text-sm font-medium text-brand-200 lg:block">
             {brand("name")}
           </p>
         </aside>
         <main
           id="main"
           tabIndex={-1}
-          className="mx-auto flex w-full max-w-lg flex-col justify-center py-6 sm:py-10 lg:px-6"
+          className="order-1 mx-auto flex w-full max-w-lg flex-col justify-center py-6 sm:py-10 lg:order-2 lg:px-6"
         >
           {children}
         </main>

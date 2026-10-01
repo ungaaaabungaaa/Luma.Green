@@ -1,131 +1,169 @@
 [
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-home",
     "route": "/",
     "path": "docs/user-guide/screenshots/public-home.png",
     "url": "http://localhost:3004/",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:04.206Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:23.428Z",
     "kind": "current-local-disconnected",
     "sha256": "a96a6422a528808eb3ac11481bde2cc9c947e7a4c93ea2b1493032480ee79d5c"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-prices",
     "route": "/prices",
     "path": "docs/user-guide/screenshots/public-prices.png",
     "url": "http://localhost:3004/prices",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:04.366Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:23.599Z",
     "kind": "current-local-disconnected",
-    "sha256": "45fcd72cb241c5fd6f52623f5f6d5795029357e3bfdee759fe3c7baed30e85ac"
+    "sha256": "4e9088af42120391026960be46367023b04185a469817f61226e7386d2f0af31"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-sell",
     "route": "/sell",
     "path": "docs/user-guide/screenshots/public-sell.png",
     "url": "http://localhost:3004/sell",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:04.523Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:23.765Z",
     "kind": "current-local-disconnected",
-    "sha256": "6b748298d992011944e0c24c031d2377e8acaa06ddd8627107e3586ef8a9e7b7"
+    "sha256": "9158b93023c5d3d75065d547a8f30a19c979d4fa1d651378e74f5d6fbe345ce0"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-join",
     "route": "/join",
     "path": "docs/user-guide/screenshots/public-join.png",
     "url": "http://localhost:3004/join",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:04.683Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:23.943Z",
     "kind": "current-local-disconnected",
-    "sha256": "d5b8c0df56d6fa94d94c4735f784005bc189cbdd15423fad8d61695e66714ed8"
+    "sha256": "039e347ba3c97c473da60b4971fc12c1c1f27a76c8e8e01481be32b8651454fe"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-login",
     "route": "/login",
     "path": "docs/user-guide/screenshots/public-login.png",
     "url": "http://localhost:3004/login",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:04.853Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:24.112Z",
     "kind": "current-local-disconnected",
-    "sha256": "0f8b3eb329adfecdbecfeb2af72dd910e562cfd32cc04aa691b36937f69dfac3"
+    "sha256": "5242a1d6d69bdc3676250d2a20754db6ce77d3da955b1d0a6200e5b8e8f46a3c"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-admin-login",
     "route": "/admin/login",
     "path": "docs/user-guide/screenshots/public-admin-login.png",
     "url": "http://localhost:3004/admin/login",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:04.987Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:24.265Z",
     "kind": "current-local-disconnected",
-    "sha256": "61bac5c0edef7d6c9eecbc111845f992eaed5effcf0cff56d4adee724f94efca"
+    "sha256": "6f6205f5320031b9458f2f3890f935afd1f4763866dadd111d02aedeb2ea0f53"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-admin-setup",
     "route": "/admin/setup",
     "path": "docs/user-guide/screenshots/public-admin-setup.png",
     "url": "http://localhost:3004/admin/setup",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:05.117Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:24.482Z",
     "kind": "current-local-disconnected",
-    "sha256": "6ce239828e7c7b3b8c5f3326f7bcd60e88fb545bfa89906c964aa11d59275c9b"
+    "sha256": "b0a9dd0861d82d7e6fea6ddfaf2491bc4a37d8b88365149dbc8ff08c9f82b4b0"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-help",
     "route": "/help",
     "path": "docs/user-guide/screenshots/public-help.png",
     "url": "http://localhost:3004/help",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:05.294Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:24.652Z",
     "kind": "current-local-disconnected",
-    "sha256": "80438b7f1d9168dd108a1c9f4fcb41a46b69abdfaed885a1d7dd7d553d8212de"
+    "sha256": "cf8e45d1194749fc95f1560d6b9df4e3e8b8f84ed4b87b30ede613966af8d73d"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-standards",
     "route": "/standards",
     "path": "docs/user-guide/screenshots/public-standards.png",
     "url": "http://localhost:3004/standards",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:05.455Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:24.808Z",
     "kind": "current-local-disconnected",
-    "sha256": "984ee7a0d42ad289223ef9dccff56b3ffc16f8f2ba9fc4ef0b68d989d5f0eda1"
+    "sha256": "e7fd9d3cb9ea6c4c7b85c619ddb87230f770a2fea38f06f9134b4188b51b7814"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-solar",
     "route": "/solar",
     "path": "docs/user-guide/screenshots/public-solar.png",
     "url": "http://localhost:3004/solar",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:05.631Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:24.977Z",
     "kind": "current-local-disconnected",
-    "sha256": "7afe9b2990d4f6faaf2848b4816b25ca6cfd33f17bc12138f5dca7cd2a4c64aa"
+    "sha256": "f52dab5c3ea644d232d190fe3ba1c68be9ffbf9db072ea843339c29cfeb62b96"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-contact",
     "route": "/help/contact",
     "path": "docs/user-guide/screenshots/public-contact.png",
     "url": "http://localhost:3004/help/contact",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:05.792Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:25.116Z",
     "kind": "current-local-disconnected",
     "sha256": "301cf919e7e840068fcd83edb6e71df258db8751fef6d2957ed47f7e9a4b6b73"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
+    "name": "public-contact-info",
+    "route": "/contact",
+    "path": "docs/user-guide/screenshots/public-contact-info.png",
+    "url": "http://localhost:3004/contact",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:25.273Z",
+    "kind": "current-local-disconnected",
+    "sha256": "69cdb123a22e009b28fdf9454028954e3fe1ba888d8aeef4e28bb4ffe99a36c2"
+  },
+  {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-how-it-works",
     "route": "/how-it-works",
     "path": "docs/user-guide/screenshots/public-how-it-works.png",
     "url": "http://localhost:3004/how-it-works",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:05.953Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:25.440Z",
     "kind": "current-local-disconnected",
-    "sha256": "d9d5e3baa57d5adfe3b4db8ba241054d09264a1992813b7a58aee29bc983da6b"
+    "sha256": "5d0b5ab87f2aaee9d1bb235b43d6d68493e2688e68dd88dd5c1855aa49ff0b9d"
   },
   {
+    "browserErrors": [],
+    "blockedRequests": [],
     "name": "public-arabic",
     "route": "/ar",
     "path": "docs/user-guide/screenshots/public-arabic.png",
     "url": "http://localhost:3004/ar",
-    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
-    "capturedAt": "2026-10-01T15:48:06.123Z",
+    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+    "capturedAt": "2026-10-01T18:26:25.591Z",
     "kind": "current-local-disconnected",
     "sha256": "be0c7594c2d9c5b04ad8e9b2d65622ad42853b2c114ea6116debfa5377db0b74"
   }

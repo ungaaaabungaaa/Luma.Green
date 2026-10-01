@@ -2,6 +2,7 @@
 
 import { type ReactNode, useEffect } from "react";
 
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
@@ -46,10 +47,19 @@ export function JoinGate({
 
   if (mine === undefined || mine === null || isElsewhere)
     return <FormSkeleton />;
-  return application ? (
-    <>{children({ application, loginPhone: mine.loginPhone })}</>
-  ) : (
-    <ConsentCard kind={kind} />
+  return (
+    <div className="flex flex-col gap-6">
+      {application ? (
+        children({ application, loginPhone: mine.loginPhone })
+      ) : (
+        <ConsentCard kind={kind} />
+      )}
+      <RoleStoryImage
+        scene={kind}
+        compact
+        frameClassName="h-24 aspect-auto sm:h-36"
+      />
+    </div>
   );
 }
 

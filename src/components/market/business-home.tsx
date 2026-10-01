@@ -26,6 +26,7 @@ import {
   StatCard,
 } from "@/components/app/page-parts";
 import type { OrgWorkspace } from "@/components/app/use-workspace";
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "@/i18n/navigation";
@@ -66,11 +67,19 @@ function Home({ org }: { org: OrgWorkspace }) {
 
   return (
     <>
-      <AppPageHeader
-        title={t("greeting", { name: org.name })}
-        lead={t("lead", { kind: org.kind })}
-        actions={<QuickActions canSell={canSell} />}
-      />
+      <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1fr)_16rem]">
+        <AppPageHeader
+          title={t("greeting", { name: org.name })}
+          lead={t("lead", { kind: org.kind })}
+          actions={<QuickActions canSell={canSell} />}
+        />
+        <RoleStoryImage
+          sizes="(min-width: 1024px) 256px, 92vw"
+          scene={org.kind}
+          compact
+          frameClassName="aspect-auto h-24 lg:h-36"
+        />
+      </div>
       <Stats
         trades={trades}
         third={

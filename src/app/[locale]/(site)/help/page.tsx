@@ -5,10 +5,12 @@ import { ContactStrip } from "@/components/help/contact-strip";
 import { HelpHero } from "@/components/help/help-hero";
 import { HelpSearch } from "@/components/help/help-search";
 import { RoleCards } from "@/components/help/role-cards";
-import { Handshake } from "@/components/illustrations";
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata } from "@/lib/seo";
+
+const helpStoryRole = "saathi";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -36,7 +38,9 @@ export default async function HelpPage() {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        art={<Handshake />}
+        art={<RoleStoryImage scene={helpStoryRole} />}
+        artLayout="photo"
+        artOnPhones
       >
         <HelpSearch />
       </HelpHero>

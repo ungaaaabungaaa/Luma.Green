@@ -2,6 +2,7 @@ import { CheckIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { ClosingCta } from "@/components/site/closing-cta";
 import { Container } from "@/components/site/container";
 import { loopSteps } from "@/components/site/content";
@@ -26,6 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
+const storyRoles = {
+  sell: "household",
+  trade: "yard",
+  record: "manufacturer",
+} as const;
+
 const points = ["point1", "point2", "point3"] as const;
 
 export default async function HowItWorksPage() {
@@ -47,7 +54,7 @@ export default async function HowItWorksPage() {
               aria-labelledby={`step-${key}`}
               className="grid gap-8 rounded-2xl border border-brand-900/10 bg-brand-50/40 p-6 sm:p-10 md:grid-cols-[1fr_2fr] md:gap-16"
             >
-              <div className="space-y-5">
+              <div className="min-w-0 space-y-5">
                 <span className="inline-flex size-14 items-center justify-center rounded-full border border-brand-900/20 bg-card text-brand-900">
                   <Icon aria-hidden className="size-6" />
                 </span>
@@ -60,6 +67,7 @@ export default async function HowItWorksPage() {
                 >
                   {loop(`${key}.title`)}
                 </h2>
+                <RoleStoryImage scene={storyRoles[key]} className="w-full" />
               </div>
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-pretty text-muted-foreground">

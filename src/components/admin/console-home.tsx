@@ -9,6 +9,7 @@ import {
   type LucideIcon,
   ShieldCheckIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -31,6 +32,7 @@ import { isLocale, localeMeta } from "@/i18n/locales";
 import { cn } from "@/lib/utils";
 
 import { api } from "../../../convex/_generated/api";
+import operations from "../../../public/images/showcase/operations-desk.webp";
 import { formatPhone, formatWhen } from "./format";
 
 export function ConsoleHome() {
@@ -41,13 +43,29 @@ export function ConsoleHome() {
 
   return (
     <div className="flex max-w-5xl flex-col gap-8">
-      <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          {firstName ? `Welcome, ${firstName}` : "Welcome"}
-        </h1>
-        <p className="text-muted-foreground">
-          What needs you today, and the latest people to join the pilot.
-        </p>
+      <div className="grid items-center gap-4 md:grid-cols-[minmax(0,1fr)_16rem]">
+        <div className="flex min-w-0 flex-col gap-1">
+          <h1 className="text-2xl font-semibold tracking-tight">
+            {firstName ? `Welcome, ${firstName}` : "Welcome"}
+          </h1>
+          <p className="text-muted-foreground">
+            What needs you today, and the latest people to join the pilot.
+          </p>
+        </div>
+        <figure className="min-w-0 space-y-2">
+          <div className="relative h-24 overflow-hidden rounded-3xl bg-brand-100 md:h-32">
+            <Image
+              src={operations}
+              alt=""
+              fill
+              sizes="(min-width: 768px) 256px, 92vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="w-fit rounded-md bg-background px-2 py-1 text-xs text-muted-foreground">
+            Illustrative scene
+          </figcaption>
+        </figure>
       </div>
 
       <ul className="grid gap-4 sm:grid-cols-3" aria-busy={!summary}>

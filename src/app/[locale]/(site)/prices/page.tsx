@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import { PriceBoard } from "@/components/prices/price-board";
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 import { Button } from "@/components/ui/button";
@@ -29,10 +30,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /** The public price board for Bengaluru — docs/product/pricing.md. */
 export default async function PricesPage() {
   const t = await getTranslations("prices");
+  const imageRole = "kabadiwala";
 
   return (
     <>
-      <PageHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageHeader
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        lead={t("lead")}
+        art={
+          <RoleStoryImage
+            scene={imageRole}
+            compact
+            frameClassName="h-40 aspect-auto sm:h-52 lg:h-64"
+          />
+        }
+      />
 
       <Container className="flex flex-col gap-12 py-12 sm:py-16">
         <PriceBoard />
