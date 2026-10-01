@@ -6,7 +6,7 @@
   "description": "Luma.Green — Cleaner Tomorrow in Motion. Recycling inventory, sector trade and carbon credits in one place.",
   "packageManager": "pnpm@11.24.0",
   "engines": {
-    "node": ">=20.9.0",
+    "node": ">=24.0.0",
     "pnpm": ">=11"
   },
   "scripts": {
@@ -29,8 +29,13 @@
     "convex:deploy": "convex deploy",
     "auth:schema": "jiti scripts/generate-auth-schema.mts",
     "screenshots": "jiti scripts/screenshots.mts",
-    "check": "npm run lint && npm run typecheck && npm run test",
-    "prepare": "husky"
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm apps:check",
+    "prepare": "husky",
+    "mobile:dev": "pnpm --filter @luma/mobile dev",
+    "mobile:export": "pnpm --filter @luma/mobile export",
+    "desktop:dev": "pnpm --filter @luma/desktop dev",
+    "desktop:pack": "pnpm --filter @luma/desktop run pack",
+    "apps:check": "pnpm --filter \"./apps/*\" check"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs,cjs}": [
@@ -51,6 +56,7 @@
     "clsx": "^2.1.1",
     "cn": "^0.4.0",
     "convex": "^1.46.0",
+    "gsap": "3.15.0",
     "input-otp": "^1.5.0",
     "lucide-react": "^1.48.0",
     "next": "16.3.6",

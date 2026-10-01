@@ -3246,5 +3246,27 @@
       "ownerOnly": "Only the shop owner can change pickup settings.",
       "locationRequired": "Add your shop location and enable home pickups before using automatic acceptance."
     }
+  },
+  "native": {
+    "back": "Back",
+    "reload": "Reload",
+    "openBrowser": "Open in browser",
+    "offlineTitle": "Cannot connect",
+    "offlineBody": "Check your internet connection, then try again.",
+    "updates": "Check for app updates",
+    "updateReady": "An app update is ready.",
+    "restart": "Restart now",
+    "later": "Later",
+    "updateCurrent": "Your app is up to date.",
+    "updateUnavailable": "App updates are not available on this build.",
+    "updateFailed": "Could not check for updates. Try again later.",
+    "locationTitle": "Share your location?",
+    "locationBody": "Allow Luma.Green to use your location to find nearby scrap shops.",
+    "allow": "Allow",
+    "deny": "Not now",
+    "browserNotice": "This page opens in your browser. You may need to sign in again.",
+    "cameraPermission": "Use the camera to photograph scrap or verification documents.",
+    "photoPermission": "Select photos for scrap estimates and verification.",
+    "cameraTitle": "Camera"
   }
 }

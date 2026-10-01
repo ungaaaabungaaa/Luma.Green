@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+import { HomeMotion } from "@/components/motion/home-motion";
 import { ClosingCta } from "@/components/site/closing-cta";
 import { ChainDiagram } from "@/components/site/home/chain-diagram";
 import { HomeHero } from "@/components/site/home/hero";
@@ -56,12 +57,14 @@ export default async function HomePage() {
         // JSON-LD must be raw; serializeJsonLd escapes `<`.
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(organization) }}
       />
-      <HomeHero />
-      <ChainDiagram />
-      <RoleBenefits />
-      <TrustPoints />
-      <WhyNow />
-      <ClosingCta />
+      <HomeMotion>
+        <HomeHero />
+        <ChainDiagram />
+        <RoleBenefits />
+        <TrustPoints />
+        <WhyNow />
+        <ClosingCta />
+      </HomeMotion>
     </>
   );
 }

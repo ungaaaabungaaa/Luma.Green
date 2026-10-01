@@ -1,3 +1,7 @@
+# The web app stays at the root; platform shells have isolated dependencies.
+packages:
+  - apps/*
+
 # pnpm settings for this repo.
 #
 # `allowBuilds` is an explicit allowlist of packages permitted to run install
@@ -5,6 +9,10 @@
 # from a dependency, and the usual way a supply-chain attack lands. Only add a
 # package here when something actually breaks without it, and say why.
 allowBuilds:
+  # Downloads Electron's platform runtime for local and CI desktop builds.
+  electron: true
+  # Squirrel.Windows is unused; Windows installers use NSIS.
+  electron-winstaller: false
   # Downloads the esbuild binary. Vitest/Vite will not run without it.
   esbuild: true
   # Native bindings for the ESLint import resolver used by eslint-config-next.

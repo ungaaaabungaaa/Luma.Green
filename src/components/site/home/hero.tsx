@@ -4,6 +4,7 @@ import {
   PackageOpenIcon,
   StoreIcon,
 } from "lucide-react";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 import { Button } from "@/components/ui/button";
@@ -67,7 +68,17 @@ export async function HomeHero() {
             <ArrowRightIcon aria-hidden className="size-4 rtl:rotate-180" />
           </Link>
         </div>
-        <PriceTeaser />
+        <div className="flex min-w-0 flex-col gap-6">
+          <PriceTeaser />
+          <Image
+            src="/images/neighbourhood-collection.webp"
+            alt=""
+            width={960}
+            height={640}
+            sizes="(min-width: 1280px) 480px, (min-width: 1024px) 42vw, (min-width: 640px) 600px, 100vw"
+            className="h-auto w-full rounded-lg"
+          />
+        </div>
       </Container>
     </section>
   );

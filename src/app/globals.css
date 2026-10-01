@@ -124,3 +124,37 @@
     @apply font-sans;
   }
 }
+
+/* Keep button feedback short and preserve the 44px target and focus ring.
+   Individual translate leaves icon direction and layout transforms intact. */
+[data-slot="button"] {
+  transition-property:
+    background-color, border-color, color, box-shadow, translate;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  [data-slot="button"]:not(
+      :disabled,
+      [aria-disabled="true"],
+      [aria-haspopup]
+    ):hover {
+    translate: 0 -1px;
+  }
+
+  [data-slot="button"]:not(
+      :disabled,
+      [aria-disabled="true"],
+      [aria-haspopup]
+    ):active {
+    translate: 0 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="button"] {
+    transition: none;
+    translate: none;
+  }
+}

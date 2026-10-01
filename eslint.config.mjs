@@ -35,12 +35,24 @@ const eslintConfig = defineConfig([
     "playwright-report/**",
     "test-results/**",
     "next-env.d.ts",
+    "apps/*/dist/**",
+    "apps/*/release/**",
+    "apps/desktop/generated/**",
+    "apps/mobile/.expo/**",
+    "apps/mobile/ios/**",
+    "apps/mobile/android/**",
     // Written by `convex dev`. Committed so CI is hermetic, but never linted.
     "convex/_generated/**",
     "convex/*/_generated/**",
   ]),
 
-  ...nextVitals,
+  // Expo's config uses CommonJS. Next's base omits .cjs, so include it before
+  // applying the shared React/import/accessibility rules below.
+  ...nextVitals.map((config) =>
+    config.name === "next"
+      ? { ...config, files: ["**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}"] }
+      : config,
+  ),
   ...nextTs,
 
   // --- TypeScript, type-aware -------------------------------------------
@@ -308,6 +320,15 @@ const eslintConfig = defineConfig([
     // Plain JS config files have no type information to lint against.
     files: ["**/*.{js,mjs,cjs}"],
     extends: [tseslint.configs.disableTypeChecked],
+  },
+  {
+    // Expo loads its config before Metro; Node also runs the CJS config tests.
+    files: ["apps/mobile/app.config.js", "apps/mobile/**/*.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
+  {
+    files: ["apps/mobile/app.config.js"],
+    rules: { "unicorn/prefer-module": "off" },
   },
 
   // Must stay last: turns off every stylistic rule Prettier owns.

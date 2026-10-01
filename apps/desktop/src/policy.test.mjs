@@ -1,0 +1,142 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import {
+  isAppBlob,
+  isAppUrl,
+  isExternalUrl,
+  isPdfViewerFrame,
+  mayDownload,
+  mayRequestLocation,
+  secureWebPreferences,
+} from "./policy.mjs";
+const origin = "https://app.luma.green";
+
+test("only exact configured HTTP(S) origin stays inside the main window", () => {
+  for (const url of [`${origin}/ar/join`, `${origin}/admin`])
+    assert.equal(isAppUrl(url, origin), true);
+  for (const url of [
+    "https://app.luma.green.evil.test",
+    "https://evil.test/?https://app.luma.green",
+    // eslint-disable-next-line sonarjs/no-clear-text-protocols, unicorn/prefer-https -- Negative fixture proves insecure origins are rejected.
+    "http://app.luma.green",
+    "https://user@app.luma.green",
+    "https://app.luma.green:444/",
+    `blob:${origin}/abc`,
+    "javascript:alert(1)",
+    "file:///tmp/a",
+    "malformed",
+  ])
+    assert.equal(isAppUrl(url, origin), false, url);
+});
+test("only blobs created by the configured origin can open in a sandboxed document viewer", () => {
+  assert.equal(isAppBlob(`blob:${origin}/id`, origin), true);
+  for (const url of [
+    "blob:https://evil.test/id",
+    "blob:null/id",
+    origin,
+    `data:${origin}`,
+  ])
+    assert.equal(isAppBlob(url, origin), false);
+});
+test("OS navigation rejects executable and custom schemes, credentials and controls", () => {
+  for (const url of [
+    "https://example.com/a",
+    "mailto:hello@example.com",
+    "tel:+919876543210",
+  ])
+    assert.equal(isExternalUrl(url), true);
+  for (const url of [
+    // eslint-disable-next-line unicorn/prefer-https -- Negative fixture proves insecure URLs are rejected.
+    "http://example.com",
+    "file:///tmp",
+    "javascript:alert(1)",
+    "data:text/html,test",
+    "ms-settings:foo",
+    "blob:https://app.luma.green/id",
+    "https://user:pass@example.com",
+    "https://example.com\n",
+    "tel:hello",
+    "mailto:bad",
+    "mailto:a@example.com?bcc=b@example.com",
+    "mailto:a@example.com#subject",
+    "mailto:a%0d%0a@example.com",
+    "mailto://a@example.com",
+    "tel:....",
+    "tel:+91%0a123",
+    "tel:*123%23",
+    "tel://12345",
+    "https://example.com/%0d%0a",
+    "https://example.com/%zz",
+  ])
+    assert.equal(isExternalUrl(url), false, url);
+});
+test("location requires trusted requesting frame and trusted top-level page", () => {
+  assert.equal(
+    mayRequestLocation("geolocation", `${origin}/join`, origin, origin),
+    true,
+  );
+  for (const permission of [
+    "media",
+    "notifications",
+    "clipboard-read",
+    "display-capture",
+    "unknown",
+  ])
+    assert.equal(mayRequestLocation(permission, origin, origin, origin), false);
+  assert.equal(
+    mayRequestLocation("geolocation", "https://evil.test", origin, origin),
+    false,
+  );
+  assert.equal(
+    mayRequestLocation("geolocation", origin, "https://evil.test", origin),
+    false,
+  );
+  assert.equal(
+    mayRequestLocation("geolocation", `blob:${origin}/id`, origin, origin),
+    false,
+  );
+});
+test("private documents can download from trusted app or blob viewer only", () => {
+  assert.equal(
+    mayDownload(`blob:${origin}/id`, `${origin}/admin`, origin),
+    true,
+  );
+  assert.equal(
+    mayDownload(`blob:${origin}/id`, `blob:${origin}/id`, origin),
+    true,
+  );
+  assert.equal(
+    mayDownload("https://evil.test/file", `${origin}/admin`, origin),
+    false,
+  );
+  assert.equal(
+    mayDownload(`blob:${origin}/id`, "https://evil.test", origin),
+    false,
+  );
+});
+test("remote content has no Node or webview access and remains sandboxed", () => {
+  assert.equal(secureWebPreferences.nodeIntegration, false);
+  assert.equal(secureWebPreferences.contextIsolation, true);
+  assert.equal(secureWebPreferences.sandbox, true);
+  assert.equal(secureWebPreferences.webSecurity, true);
+  assert.equal(secureWebPreferences.webviewTag, false);
+});
+
+test("only built-in PDF extension frames inside trusted blob viewers are allowed", () => {
+  const viewer = "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/document";
+  assert.equal(isPdfViewerFrame(viewer, `blob:${origin}/id`, origin), true);
+  assert.equal(isPdfViewerFrame(viewer, origin, origin), false);
+  assert.equal(
+    isPdfViewerFrame(viewer, "blob:https://evil.test/id", origin),
+    false,
+  );
+  assert.equal(
+    isPdfViewerFrame(
+      "chrome-extension://other/id",
+      `blob:${origin}/id`,
+      origin,
+    ),
+    false,
+  );
+});

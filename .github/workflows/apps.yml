@@ -1,0 +1,79 @@
+name: App packages
+
+on:
+  pull_request:
+    paths:
+      - apps/**
+      - messages/**
+      - public/brand/**
+      - src/i18n/locales.ts
+      - scripts/generate-app-icons.mjs
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+      - .github/workflows/apps.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: apps-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  EXPO_NO_TELEMETRY: "1"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm apps:check
+      - run: pnpm --filter @luma/mobile exec expo install --check
+      - run: pnpm mobile:export
+      - uses: actions/upload-artifact@v7
+        with:
+          name: mobile-javascript-bundles
+          path: apps/mobile/dist
+          retention-days: 7
+
+  # Manual, unsigned packaging smoke checks. These do not publish an update or
+  # claim store/signature approval. Releases use each package's guarded scripts.
+  desktop-package:
+    if: github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @luma/desktop check
+      - run: pnpm --filter @luma/desktop prepare:app
+      - if: runner.os == 'Windows'
+        run: pnpm --filter @luma/desktop exec electron-builder --config electron-builder.mjs --win nsis --x64 --publish never
+      - if: runner.os == 'macOS'
+        run: pnpm --filter @luma/desktop exec electron-builder --config electron-builder.mjs --mac zip --arm64 --publish never
+      - uses: actions/upload-artifact@v7
+        with:
+          name: desktop-test-${{ runner.os }}
+          path: |
+            apps/desktop/release/*.exe
+            apps/desktop/release/*.zip
+          retention-days: 7
+          if-no-files-found: error
