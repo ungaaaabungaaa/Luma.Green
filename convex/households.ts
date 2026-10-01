@@ -5,6 +5,7 @@ import { mutation, query, type QueryCtx } from "./_generated/server";
 import { requireUser } from "./lib/access";
 import { findProfile } from "./lib/applicationAccess";
 import { bookingToken, canMoveBooking, kgToGrams } from "./lib/chain";
+import { beginDispatch } from "./lib/dispatch";
 import { vSaathiTime } from "./lib/drafts";
 import {
   basketError,
@@ -220,6 +221,11 @@ async function uniqueToken(ctx: QueryCtx): Promise<string> {
  * confirmed their phone with an SMS code, so the booking is theirs: it's
  * tied to their profile and phone, and they follow it at /t/{token}.
  */
+function checkLocation(location: { lat: number; lng: number } | undefined) {
+  if (location && !isValidPoint(location))
+    throw new ConvexError("INVALID_LOCATION");
+}
+
 export const book = mutation({
   args: {
     orgId: v.id("orgs"),
@@ -228,6 +234,7 @@ export const book = mutation({
     slotDate: v.string(),
     slotWindow: vSaathiTime,
     address: v.optional(v.string()),
+    location: v.optional(v.object({ lat: v.number(), lng: v.number() })),
     name: v.string(),
   },
   returns: v.string(),
@@ -239,6 +246,7 @@ export const book = mutation({
     if (!phone) throw new ConvexError("NO_PHONE");
 
     await checkedBasket(ctx, args.items);
+    checkLocation(args.location);
     const org = await ctx.db.get("orgs", args.orgId);
     if (org?.kind !== "kabadiwala" || org.status !== "active") {
       throw new ConvexError("SHOP_NOT_FOUND");
@@ -316,6 +324,9 @@ export const book = mutation({
       },
       createdAt: now,
     });
+    const booking = await ctx.db.get("bookings", bookingId);
+    if (!booking) throw new ConvexError("NOT_FOUND");
+    await beginDispatch(ctx, booking, org, now, args.location);
     return token;
   },
 });
@@ -376,6 +387,14 @@ const vTrackView = v.object({
   isMine: v.boolean(),
   /** Whether the booking can still be cancelled (by the household). */
   canCancel: v.boolean(),
+  dispatch: v.optional(
+    v.object({
+      attempt: v.number(),
+      offeredAt: v.number(),
+      expiresAt: v.optional(v.number()),
+      approximateLocation: v.boolean(),
+    }),
+  ),
   createdAt: v.number(),
 });
 
@@ -387,7 +406,7 @@ const vTrackView = v.object({
 export const track = query({
   args: { token: v.string() },
   returns: v.union(v.null(), vTrackView),
-  handler: async (ctx, args) => {
+  handler: async (ctx, args): Promise<Infer<typeof vTrackView> | null> => {
     const booking = await findBooking(ctx, args.token);
     if (!booking) return null;
     const org = await ctx.db.get("orgs", booking.orgId);
@@ -398,6 +417,12 @@ export const track = query({
 
     return {
       token: booking.token,
+      dispatch: booking.dispatch && {
+        attempt: booking.dispatch.attempt,
+        offeredAt: booking.dispatch.offeredAt,
+        expiresAt: booking.dispatch.expiresAt,
+        approximateLocation: booking.dispatch.approximateLocation,
+      },
       status: booking.status,
       mode: booking.mode,
       slotDate: booking.slotDate,
@@ -523,6 +548,10 @@ export const cancel = mutation({
     const now = Date.now();
     await ctx.db.patch("bookings", booking._id, {
       status: "cancelled",
+      dispatch: booking.dispatch && {
+        ...booking.dispatch,
+        expiresAt: undefined,
+      },
       timeline: [...booking.timeline, { status: "cancelled", at: now }],
       updatedAt: now,
     });

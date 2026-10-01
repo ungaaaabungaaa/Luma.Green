@@ -11,7 +11,8 @@ import authSchema from "./betterAuth/schema";
 import { adminSessionExpiry, isAdminEmail } from "./lib/admin";
 import { DEMO_CODE, isDemoPhone } from "./lib/demo";
 import { isIndianMobile, phoneEmail } from "./lib/phone";
-import { CODE_TTL_MINUTES } from "./lib/sms";
+import { CODE_TTL_MINUTES, codeDelivery } from "./lib/sms";
+import { smsPhoneHash } from "./lib/smsLimits";
 
 /**
  * Sign-in for Luma.Green — docs/architecture/auth.md.
@@ -35,6 +36,46 @@ function trustedOrigins(): string[] {
   ]
     .map((origin) => origin?.trim())
     .filter((origin): origin is string => Boolean(origin));
+}
+
+/** Runs before code creation, so a rejected resend cannot invalidate a code. */
+async function reserveCodeRequest(
+  ctx: GenericCtx<DataModel>,
+  requestBody: unknown,
+) {
+  const body = requestBody as { phoneNumber?: unknown } | undefined;
+  const phone = typeof body?.phoneNumber === "string" ? body.phoneNumber : "";
+  if (!isIndianMobile(phone)) return; // The plugin supplies its validation error.
+  if (isDemoPhone(phone, process.env.AUTH_DEV_MODE)) return;
+  const delivery = codeDelivery({
+    MSG91_AUTH_KEY: process.env.MSG91_AUTH_KEY,
+    MSG91_OTP_TEMPLATE_ID: process.env.MSG91_OTP_TEMPLATE_ID,
+    AUTH_DEV_MODE: process.env.AUTH_DEV_MODE,
+  });
+  if (delivery.kind === "off") {
+    throw new APIError("SERVICE_UNAVAILABLE", {
+      message: "SMS is not configured.",
+    });
+  }
+  const secret = process.env.BETTER_AUTH_SECRET;
+  if (!secret || !("runMutation" in ctx)) {
+    throw new APIError("SERVICE_UNAVAILABLE", {
+      message: "SMS limits are not configured.",
+    });
+  }
+  const phoneHash = await smsPhoneHash(phone, secret);
+  const allowance = await ctx.runMutation(internal.smsLimits.reserve, {
+    phoneHash,
+  });
+  if (!allowance.allowed) {
+    throw new APIError(
+      "TOO_MANY_REQUESTS",
+      {
+        message: "Wait before requesting another code.",
+      },
+      { "Retry-After": String(allowance.retryAfterSeconds) },
+    );
+  }
 }
 
 /**
@@ -81,10 +122,11 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) =>
       },
     },
     hooks: {
-      // Better Auth types middleware as returning a promise; this one only
-      // checks the request, so there's nothing to await.
-      // eslint-disable-next-line @typescript-eslint/require-await
       before: createAuthMiddleware(async (hookCtx) => {
+        if (hookCtx.path === "/phone-number/send-otp") {
+          await reserveCodeRequest(ctx, hookCtx.body);
+          return;
+        }
         if (hookCtx.path !== "/sign-up/email") return;
         const body = hookCtx.body as { email?: unknown } | undefined;
         const email = typeof body?.email === "string" ? body.email : "";

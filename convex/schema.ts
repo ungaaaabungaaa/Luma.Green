@@ -89,7 +89,8 @@ export default defineSchema({
     ...timestamps,
   })
     .index("by_profile", ["profileId"])
-    .index("by_status_submittedAt", ["status", "submittedAt"]),
+    .index("by_status_submittedAt", ["status", "submittedAt"])
+    .index("by_submittedAt", ["submittedAt"]),
 
   /** What was sent at each version, so the admin can see what changed. */
   applicationSnapshots: defineTable({
@@ -188,6 +189,8 @@ export default defineSchema({
     gstin: v.optional(v.string()),
     families: v.array(vFamily),
     offersPickup: v.boolean(),
+    autoAccept: v.optional(v.boolean()),
+    pickupRadiusKm: v.optional(v.number()),
     vehicle: v.optional(vShopVehicle),
     consent: v.optional(
       v.object({
@@ -200,7 +203,8 @@ export default defineSchema({
   })
     .index("by_slug", ["slug"])
     .index("by_owner", ["ownerProfileId"])
-    .index("by_kind_city", ["kind", "city", "status"]),
+    .index("by_kind_city", ["kind", "city", "status"])
+    .index("by_kind_city_pickup", ["kind", "city", "status", "offersPickup"]),
 
   /** Who can act for which business. */
   memberships: defineTable({
@@ -243,6 +247,16 @@ export default defineSchema({
     slotDate: v.string(), // YYYY-MM-DD
     slotWindow: vSaathiTime,
     address: v.optional(v.string()),
+    dispatch: v.optional(
+      v.object({
+        attempt: v.number(),
+        offeredAt: v.number(),
+        expiresAt: v.optional(v.number()),
+        attemptedOrgIds: v.array(v.id("orgs")),
+        origin: v.optional(v.object({ lat: v.number(), lng: v.number() })),
+        approximateLocation: v.boolean(),
+      }),
+    ),
     status: vBookingStatus,
     timeline: v.array(v.object({ status: vBookingStatus, at: v.number() })),
     receipt: v.optional(
@@ -265,7 +279,28 @@ export default defineSchema({
   })
     .index("by_token", ["token"])
     .index("by_org_status", ["orgId", "status"])
-    .index("by_household", ["householdProfileId"]),
+    .index("by_household", ["householdProfileId"])
+    .index("by_createdAt", ["createdAt"]),
+
+  /** Immutable offer events; a booking can pass through several shops. */
+  bookingOffers: defineTable({
+    bookingId: v.id("bookings"),
+    orgId: v.id("orgs"),
+    attempt: v.number(),
+    event: v.union(
+      v.literal("offered"),
+      v.literal("accepted"),
+      v.literal("declined"),
+      v.literal("timed_out"),
+    ),
+    createdAt: v.number(),
+  }).index("by_booking", ["bookingId"]),
+
+  /** Internal SMS send limits. Phone numbers are hashed before insertion. */
+  smsRateLimits: defineTable({
+    phoneHash: v.string(),
+    sentAt: v.array(v.number()),
+  }).index("by_phone_hash", ["phoneHash"]),
 
   // --- Stock and trade --------------------------------------------------------
 

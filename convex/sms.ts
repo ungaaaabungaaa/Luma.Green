@@ -23,10 +23,26 @@ export const sendCode = internalAction({
           authKey: delivery.authKey,
           templateId: delivery.templateId,
         });
-        const response = await fetch(url, init);
+        // Bound provider latency. Never retry a timed-out send automatically:
+        // it may already have reached the provider.
+        const response = await fetch(url, {
+          ...init,
+          signal: AbortSignal.timeout(8000),
+        });
         if (!response.ok) {
           throw new Error(
             `MSG91 refused the code for ${maskPhone(phone)} (${String(response.status)}).`,
+          );
+        }
+        const result: unknown = await response.json();
+        if (
+          !result ||
+          typeof result !== "object" ||
+          !("type" in result) ||
+          result.type !== "success"
+        ) {
+          throw new Error(
+            `MSG91 did not accept the code for ${maskPhone(phone)}.`,
           );
         }
         return null;
