@@ -34,7 +34,7 @@ export function groupByFamily(
 export function PriceTables() {
   const rows = useQuery(api.adminPrices.list, { city: PILOT_CITY });
   return (
-    <div className="flex max-w-5xl flex-col gap-6">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:gap-8">
       <AppPageHeader
         title="Prices"
         lead={`The minimum and fallback price per kilo in ${PILOT_CITY}, for every material.`}
@@ -65,7 +65,7 @@ function PriceRules() {
       {rules.map((rule) => (
         <li
           key={rule.title}
-          className="flex gap-3 rounded-xl bg-card p-4 ring-1 ring-foreground/10"
+          className="flex gap-3 rounded-xl border bg-card p-5"
         >
           <rule.icon
             aria-hidden
@@ -98,9 +98,9 @@ function PriceGroups({ rows }: { rows: readonly PriceRowData[] | undefined }) {
         <section
           key={family}
           aria-labelledby={`family-${family}`}
-          className="rounded-xl bg-card px-4 ring-1 ring-foreground/10"
+          className="rounded-xl border bg-card px-4 sm:px-6"
         >
-          <div className="flex items-baseline justify-between gap-2 border-b py-3">
+          <div className="flex items-baseline justify-between gap-2 border-b py-4">
             <h2 id={`family-${family}`} className="font-semibold">
               {FAMILY_LABELS[family]}
             </h2>
@@ -113,7 +113,7 @@ function PriceGroups({ rows }: { rows: readonly PriceRowData[] | undefined }) {
           <div
             aria-hidden
             className={cn(
-              "hidden gap-x-4 border-b py-2 text-xs font-medium text-muted-foreground md:grid",
+              "hidden gap-x-4 border-b py-2 text-xs font-medium text-muted-foreground xl:grid",
               PRICE_COLUMNS,
             )}
           >

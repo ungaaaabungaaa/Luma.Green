@@ -15,8 +15,8 @@ export async function SiteHeader() {
   const auth = await getTranslations("auth");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-xl supports-backdrop-filter:bg-background/85">
-      <Container className="flex min-h-20 flex-wrap items-center gap-2 py-3 sm:gap-4 lg:gap-x-5 lg:gap-y-1 lg:px-8 xl:flex-nowrap">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md supports-backdrop-filter:bg-background/90">
+      <Container className="flex min-h-18 flex-wrap items-center gap-2 py-3 sm:gap-4 lg:gap-x-5 lg:gap-y-1 lg:px-8 xl:flex-nowrap">
         <Link
           href="/"
           aria-label={t("home")}
@@ -31,7 +31,7 @@ export async function SiteHeader() {
           <Button
             asChild
             variant="ghost"
-            className="hidden rounded-full px-3 lg:inline-flex"
+            className="hidden rounded-lg px-3 lg:inline-flex"
           >
             <Link href="/login">{auth("metaTitle")}</Link>
           </Button>
@@ -39,7 +39,7 @@ export async function SiteHeader() {
           <Button
             asChild
             size="default"
-            className="ms-1 hidden rounded-full px-5 sm:inline-flex"
+            className="ms-1 hidden rounded-lg px-5 sm:inline-flex"
           >
             <Link href="/sell">{t("sellScrap")}</Link>
           </Button>

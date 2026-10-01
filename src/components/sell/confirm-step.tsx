@@ -225,7 +225,7 @@ export function ConfirmStep({
 
   return (
     <div className="flex flex-col gap-5">
-      <dl className="flex flex-col divide-y rounded-2xl border bg-card px-4">
+      <dl className="flex flex-col divide-y rounded-xl border bg-card px-4">
         <SummaryRow
           label={t("confirm.what")}
           onChange={() => {
@@ -312,7 +312,7 @@ export function ConfirmStep({
 
       <section
         aria-labelledby="phone-title"
-        className="flex flex-col gap-4 rounded-2xl border bg-card p-4"
+        className="flex flex-col gap-4 rounded-xl border bg-card p-4"
       >
         <h3 id="phone-title" className="text-lg font-semibold">
           {t("confirm.phoneTitle")}

@@ -58,7 +58,7 @@ export function PhoneForm() {
   const fieldError = errors.phone?.message ?? errors.root?.message;
 
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-3">
         <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
           {t("title")}
@@ -78,7 +78,7 @@ export function PhoneForm() {
             {t("mobileLabel")}
           </Label>
           <div className="flex gap-2" dir="ltr">
-            <span className="flex h-14 items-center rounded-xl border bg-muted px-4 text-lg font-medium tabular-nums">
+            <span className="flex h-12 items-center rounded-lg border border-input bg-muted px-4 text-base font-medium tabular-nums">
               +91
             </span>
             <Input
@@ -89,7 +89,7 @@ export function PhoneForm() {
               placeholder="98765 43210"
               aria-invalid={fieldError ? true : undefined}
               aria-describedby="phone-hint"
-              className="h-14 rounded-xl text-lg tracking-wide"
+              className="h-12 rounded-lg text-base tracking-wide"
               {...register("phone")}
             />
           </div>
@@ -115,14 +115,14 @@ export function PhoneForm() {
         <Button
           type="submit"
           size="lg"
-          className="h-14 text-base"
+          className="h-12 text-base"
           disabled={isSubmitting}
         >
           {t(isSubmitting ? "sending" : "sendCode")}
         </Button>
       </form>
 
-      <div className="flex flex-col gap-3 rounded-2xl border border-border bg-accent/60 p-5">
+      <div className="flex flex-col gap-2 border-y border-border py-4">
         <p className="flex items-start gap-2 font-medium">
           <HomeIcon aria-hidden className="mt-1 size-4 shrink-0 text-primary" />
           {t("homeTitle")}

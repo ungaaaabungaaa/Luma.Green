@@ -11,7 +11,7 @@ test("English root renders the brand and tagline", async ({ page }) => {
   await expect(page.getByRole("banner").getByText("Luma.Green")).toBeVisible();
   await expect(
     page
-      .getByRole("main")
+      .getByRole("contentinfo")
       .getByRole("paragraph")
       .filter({ hasText: "Cleaner Tomorrow in Motion" }),
   ).toBeVisible();
@@ -33,7 +33,7 @@ test("Tamil locale serves translated copy", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("lang", "ta-IN");
   await expect(
     page
-      .getByRole("main")
+      .getByRole("contentinfo")
       .getByRole("paragraph")
       .filter({ hasText: "தூய்மையான நாளை நோக்கி நகர்வு" }),
   ).toBeVisible();

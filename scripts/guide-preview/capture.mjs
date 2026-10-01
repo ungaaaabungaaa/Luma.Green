@@ -129,6 +129,37 @@ const screens = [
     heading: "Hello, Demo Saathi",
   },
 ];
+// Capture loaded charts at a readable viewport scale as well as the full report.
+for (const [name, heading] of [
+  ["admin-pilot-outcomes", "Booking outcomes"],
+  ["admin-pilot-materials", "Estimate and weighed material"],
+]) {
+  screens.push({
+    name,
+    route: "/admin/pilot",
+    component: "src/components/admin/pilot/pilot-charts.tsx",
+    heading: "Pilot numbers",
+    viewportOnly: true,
+    scrollTarget: `[data-slot="card"]:has(h2:text-is("${heading}"))`,
+  });
+}
+screens.push(
+  {
+    name: "admin-pilot-dark",
+    route: "/admin/pilot",
+    component: "src/components/admin/pilot/pilot-charts.tsx",
+    heading: "Pilot numbers",
+    theme: "dark",
+  },
+  {
+    name: "admin-pilot-phone",
+    route: "/admin/pilot",
+    component: "src/components/admin/pilot/pilot-charts.tsx",
+    heading: "Pilot numbers",
+    width: 390,
+    height: 844,
+  },
+);
 const roleHomeNames = new Set([
   "admin-overview",
   "kabadiwala-overview",
@@ -174,6 +205,9 @@ const sharedSources = [
   "src/components/app/app-shell.tsx",
   "src/components/admin/console-shell.tsx",
   "src/components/ui/button.tsx",
+  "src/components/ui/chart.tsx",
+  "src/components/admin/pilot/pilot-charts.tsx",
+  "src/lib/fonts.ts",
   "scripts/guide-preview/main.tsx",
   "scripts/guide-preview/image.tsx",
   "scripts/guide-preview/vite.config.mts",
@@ -249,6 +283,54 @@ try {
         "Build styles did not load. Restart the fixture server after each Next build.",
       );
     }
+    if (screen.route === "/admin/pilot") {
+      const charts = page.locator("[data-chart] .recharts-surface");
+      if ((await charts.count()) !== 2) {
+        throw new Error(
+          "The loaded pilot fixture must show both report charts.",
+        );
+      }
+      const renderedCharts = await charts.all();
+      for (const chart of renderedCharts) {
+        await chart.waitFor({ state: "visible" });
+        const bounds = await chart.boundingBox();
+        if (!bounds || bounds.width < 200 || bounds.height < 200) {
+          throw new Error("Pilot chart has no usable rendered dimensions.");
+        }
+      }
+      await page
+        .locator(".recharts-bar-rectangle")
+        .first()
+        .waitFor({ state: "visible" });
+      if (screen.theme === "dark") {
+        const tickColors = await page.evaluate(() => {
+          const probe = document.createElement("span");
+          probe.style.color = "var(--muted-foreground)";
+          document.body.append(probe);
+          const expected = getComputedStyle(probe).color;
+          probe.remove();
+          return {
+            expected,
+            actual: [
+              ...document.querySelectorAll(
+                ".recharts-cartesian-axis-tick-value",
+              ),
+            ].map((tick) => getComputedStyle(tick).fill),
+          };
+        });
+        if (
+          tickColors.actual.length === 0 ||
+          tickColors.actual.some(
+            (color) =>
+              color !== tickColors.expected || color === "rgb(102, 102, 102)",
+          )
+        ) {
+          throw new Error(
+            `Dark chart labels must use the semantic muted foreground: ${JSON.stringify(tickColors)}`,
+          );
+        }
+      }
+    }
     if (errors.length > 0 || blocked.length > 0)
       throw new Error(`${screen.name}: ${JSON.stringify({ errors, blocked })}`);
     if (screen.scrollTarget) {
@@ -316,7 +398,7 @@ await writeFile(
         cwd: repository,
         encoding: "utf8",
       }).trim(),
-      note: "Real browser renders of current application components. Synthetic data and isolated local query/auth/navigation adapters. Not evidence of sign-in, authorization, live records, provider calls or production deployment. Build styles and Noto fonts are reused without restyling the app. The visible provenance banner belongs only to this harness.",
+      note: "Real browser renders of current application components. Synthetic data and isolated local query/auth/navigation adapters. Not evidence of sign-in, authorization, live records, provider calls or production deployment. Build styles and Geist/Noto fonts are reused without restyling the app. The visible provenance banner belongs only to this harness.",
       fixtureSha256: hash(fixtureSource),
       sharedSourceHashes,
       styles,

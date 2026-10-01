@@ -50,7 +50,7 @@ export function AcceptDecline({ bookingId }: { bookingId: Id<"bookings"> }) {
         type="button"
         variant="outline"
         size="lg"
-        className="h-14 text-base"
+        className="h-12 text-base"
         disabled={pending !== null}
         onClick={() => {
           setIsAsking(true);
@@ -62,7 +62,7 @@ export function AcceptDecline({ bookingId }: { bookingId: Id<"bookings"> }) {
       <Button
         type="button"
         size="lg"
-        className="h-14 text-base"
+        className="h-12 text-base"
         disabled={pending !== null}
         onClick={() => void answer(true)}
       >
@@ -132,7 +132,7 @@ export function StartTripButton({
       type="button"
       variant="outline"
       size="lg"
-      className={className ?? "h-14 text-base"}
+      className={className ?? "h-12 text-base"}
       disabled={isBusy}
       onClick={() => void start()}
     >

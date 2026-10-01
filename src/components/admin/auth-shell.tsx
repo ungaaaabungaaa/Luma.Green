@@ -1,20 +1,11 @@
-import Image from "next/image";
+import { ShieldCheckIcon } from "lucide-react";
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { Logo } from "@/components/brand/logo";
 import { ThemeToggleControl } from "@/components/theme/theme-toggle";
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
-import operations from "../../../public/images/showcase/operations-desk.webp";
-
-/** A focused access form with a secondary, decorative operations scene. */
+/** A narrow, distraction-free form; setup and sign-in share the same frame. */
 export function AdminAuthShell({
   title,
   description,
@@ -25,49 +16,49 @@ export function AdminAuthShell({
   children: ReactNode;
 }) {
   return (
-    <main
-      id="main"
-      className="flex min-h-dvh items-start justify-center bg-muted/40 px-4 py-8 sm:items-center"
-    >
-      <div className="grid w-full max-w-5xl items-center gap-6 rounded-3xl border border-border/70 bg-card p-5 shadow-sm sm:p-8 lg:grid-cols-2 lg:gap-10">
-        <div className="mx-auto flex w-full max-w-md flex-col gap-6">
-          <div className="flex items-center justify-between">
-            <Logo />
-            <div className="flex items-center gap-2">
-              <Badge variant="outline">Admin</Badge>
-              <ThemeToggleControl
-                labels={{
-                  label: "Appearance",
-                  light: "Light",
-                  dark: "Dark",
-                  system: "System",
-                }}
-              />
-            </div>
+    <div className="flex min-h-dvh flex-col bg-muted/40">
+      <header className="flex min-h-20 items-center justify-between gap-4 border-b bg-background px-5 sm:px-8">
+        <Link
+          href="/"
+          aria-label="Luma.Green home"
+          className="inline-flex min-h-11 items-center rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+        >
+          <Logo />
+        </Link>
+        <ThemeToggleControl
+          labels={{
+            label: "Appearance",
+            light: "Light",
+            dark: "Dark",
+            system: "System",
+          }}
+        />
+      </header>
+      <main
+        id="main"
+        className="mx-auto flex w-full max-w-lg flex-1 flex-col justify-center px-4 py-8 sm:py-12"
+      >
+        <div className="rounded-xl border bg-card p-5 sm:p-8">
+          <div className="mb-6 flex items-center gap-2 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            <ShieldCheckIcon aria-hidden className="size-4" />
+            Administrator access
           </div>
-          <Card className="border-0 bg-transparent shadow-none">
-            <CardHeader className="px-0">
-              <CardTitle className="text-2xl tracking-tight">
-                <h1>{title}</h1>
-              </CardTitle>
-              {description ? (
-                <CardDescription>{description}</CardDescription>
-              ) : null}
-            </CardHeader>
-            <CardContent className="px-0">{children}</CardContent>
-          </Card>
+          <div className="mb-8 flex flex-col gap-3">
+            <h1 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+              {title}
+            </h1>
+            {description ? (
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {description}
+              </p>
+            ) : null}
+          </div>
+          {children}
         </div>
-        <figure className="mx-auto w-full max-w-md">
-          <div className="overflow-hidden rounded-2xl border border-border bg-muted">
-            <Image
-              src={operations}
-              alt=""
-              sizes="(min-width: 1024px) 448px, 92vw"
-              className="h-28 w-full object-cover lg:h-112"
-            />
-          </div>
-        </figure>
-      </div>
-    </main>
+        <p className="mt-5 text-center text-xs leading-relaxed text-muted-foreground">
+          Password and authenticator required for console access.
+        </p>
+      </main>
+    </div>
   );
 }

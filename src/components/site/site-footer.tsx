@@ -17,20 +17,19 @@ export async function SiteFooter() {
   ]);
 
   return (
-    <footer className="mt-auto border-t border-border/60 bg-card">
-      <Container className="grid gap-12 py-16 md:grid-cols-[3fr_2fr_2fr]">
-        <div className="space-y-5">
+    <footer className="mt-auto border-t border-border bg-card">
+      <Container className="grid gap-12 py-16 lg:grid-cols-[1fr_1fr]">
+        <div className="space-y-4">
           <Logo />
           <p className="text-sm font-medium">{brand("tagline")}</p>
           <p className="max-w-sm text-sm text-muted-foreground">{t("about")}</p>
         </div>
-        <nav
-          aria-label={t("navLabel")}
-          className="grid grid-cols-2 gap-8 md:col-span-2"
-        >
+        <nav aria-label={t("navLabel")} className="grid grid-cols-2 gap-8">
           {footerGroups.map((group) => (
-            <div key={group.heading} className="space-y-5">
-              <h2 className="eyebrow text-primary">{t(group.heading)}</h2>
+            <div key={group.heading} className="space-y-4">
+              <h2 className="text-sm font-semibold text-foreground">
+                {t(group.heading)}
+              </h2>
               <ul className="grid gap-1 text-sm">
                 {group.links.map((link) => (
                   <li key={link.href}>
@@ -44,7 +43,7 @@ export async function SiteFooter() {
           ))}
         </nav>
       </Container>
-      <div className="border-t border-border/60">
+      <div className="border-t border-border">
         <Container className="py-6 text-xs text-muted-foreground">
           {t("copyright")}
         </Container>

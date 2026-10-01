@@ -93,7 +93,7 @@ export function BoardView({ board }: { board: PriceBoardData }) {
   const selected = board.rows.find((row) => row.code === openCode);
 
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
           {board.date ? (
@@ -164,16 +164,16 @@ function RowsSection({
       <div className="flex flex-col gap-1">
         <h2
           id={id}
-          className="flex items-center gap-2.5 text-xl font-semibold tracking-tight"
+          className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight"
         >
-          <span className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-muted text-accent-foreground">
             <Icon aria-hidden className="size-5" />
           </span>
           {title}
         </h2>
         {intro ? <p className="text-muted-foreground">{intro}</p> : null}
       </div>
-      <div className="overflow-hidden rounded-2xl border bg-card shadow-sm">
+      <div className="overflow-hidden rounded-xl border bg-card">
         <BoardColumns />
         <ul className="divide-y">
           {rows.map((row) => (
@@ -194,13 +194,13 @@ function BoardSkeleton() {
       role="status"
       aria-busy="true"
       aria-label={t("loading")}
-      className="flex flex-col gap-7"
+      className="flex flex-col gap-8"
     >
       <Skeleton className="h-5 w-64" />
       {[4, 3].map((count, section) => (
         <div key={section} className="flex flex-col gap-3">
           <Skeleton className="h-8 w-40" />
-          <div className="flex flex-col gap-px overflow-hidden rounded-2xl border">
+          <div className="flex flex-col gap-px overflow-hidden rounded-xl border">
             {Array.from({ length: count }, (_, index) => (
               <Skeleton key={index} className="h-16 w-full rounded-none" />
             ))}

@@ -12,10 +12,10 @@ import { FaqHashOpener } from "./faq-hash-opener";
 export function FaqList({ faqs }: { faqs: readonly FaqKey[] }) {
   const t = useTranslations("help");
   return (
-    <div className="divide-y rounded-2xl border bg-card">
+    <div className="divide-y rounded-xl border bg-card">
       {faqs.map((key) => (
         <details key={key} id={faqAnchor(key)} className="group scroll-mt-20">
-          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-2xl px-4 py-3 text-start font-medium outline-none hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50 [&::-webkit-details-marker]:hidden">
+          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-xl px-4 py-3 text-start font-medium outline-none hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50 [&::-webkit-details-marker]:hidden">
             <span>{t(`faqs.${key}.q`)}</span>
             <ChevronDownIcon
               aria-hidden

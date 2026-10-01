@@ -29,7 +29,7 @@ export function LedgerExplainer() {
   return (
     <section
       aria-labelledby={headingId}
-      className="flex flex-col gap-4 rounded-2xl border border-primary/20 bg-primary/10 p-5"
+      className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6"
     >
       <div className="flex items-start gap-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-background text-primary">
@@ -44,10 +44,7 @@ export function LedgerExplainer() {
       </div>
       <dl className="grid gap-3 sm:grid-cols-2">
         {FACTS.map(({ key, icon: Icon }) => (
-          <div
-            key={key}
-            className="flex gap-3 rounded-xl border border-border/60 bg-background/80 p-3"
-          >
+          <div key={key} className="flex gap-3 border-t border-border py-4">
             <Icon aria-hidden className="mt-0.5 size-5 shrink-0 text-primary" />
             <div className="flex flex-col gap-0.5">
               <dt className="font-medium">{t(key)}</dt>

@@ -71,7 +71,7 @@ function LiveCodes() {
         className="flex flex-col gap-3"
       >
         <Skeleton className="h-11 w-full sm:w-64" />
-        <Skeleton className="h-80 w-full rounded-2xl" />
+        <Skeleton className="h-80 w-full rounded-xl" />
       </div>
     );
   }
@@ -96,8 +96,7 @@ export function CodesTable({ materials }: { materials: readonly Material[] }) {
         </p>
         <Button
           variant="outline"
-          size="lg"
-          className="h-11 px-4"
+          size="default"
           onClick={() => {
             downloadCsv(CSV_FILENAME, materialCodesCsv(materials));
           }}
@@ -106,7 +105,7 @@ export function CodesTable({ materials }: { materials: readonly Material[] }) {
           {t("download")}
         </Button>
       </div>
-      <div className="overflow-hidden rounded-2xl border bg-card">
+      <div className="overflow-hidden rounded-xl border bg-card">
         <Table>
           <caption className="sr-only">{t("caption")}</caption>
           <TableHeader className="bg-muted/40">

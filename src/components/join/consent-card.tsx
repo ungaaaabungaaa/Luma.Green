@@ -49,7 +49,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
   }
 
   return (
-    <Card className="rounded-2xl border-border/80 shadow-xs">
+    <Card className="rounded-xl border-border/80">
       <CardHeader className="gap-2">
         <p className="text-sm font-medium text-primary">
           {t(`roles.${kind}.title`)}

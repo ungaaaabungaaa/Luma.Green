@@ -73,7 +73,7 @@ test("participants show role photos without device mockups or illustration capti
   }
 });
 
-test("home role photos load on a 360px phone and the household action works", async ({
+test("home role directory keeps its household action on a 360px phone", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -82,7 +82,7 @@ test("home role photos load on a 360px phone and the household action works", as
   const roleSection = page.getByRole("region", {
     name: english.home.roles.heading,
   });
-  await expectStoryImages(roleSection, 6);
+  await expect(roleSection.locator("img:visible")).toHaveCount(0);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth - innerWidth,
@@ -176,37 +176,35 @@ test("public information scenes load without adding controls or overflowing a ph
   }
 });
 
-test("Arabic sign-in and household booking keep their content before the scene on phones", async ({
+test("Arabic sign-in and booking keep phone tasks free of decorative photos", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 390, height: 844 });
-  for (const [route, position] of [
-    ["login", "50% 25%"],
-    ["sell", "50% 50%"],
-  ] as const) {
+  for (const route of ["login", "sell"]) {
     await page.goto(`/ar/${route}`);
     await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
-    const heading = page.getByRole("heading", { level: 1 });
-    await expect(heading).toBeVisible();
-    const scene = page
-      .getByRole("figure")
-      .filter({ has: page.locator("img") })
-      .first();
-    await expectStoryImages(scene, 1);
-    // A fresh production stylesheet must retain the intended phone crop.
-    await expect(scene.locator("img")).toHaveCSS("object-position", position);
-    const headingBottom = await heading.evaluate(
-      (element) => element.getBoundingClientRect().bottom,
-    );
-    const sceneTop = await scene.evaluate(
-      (element) => element.getBoundingClientRect().top,
-    );
-    expect(headingBottom).toBeLessThanOrEqual(sceneTop);
+    await expect(page.getByRole("heading", { level: 1 })).toBeInViewport();
+    await expect(page.locator("figure:visible")).toHaveCount(0);
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth - innerWidth,
       ),
     ).toBeLessThanOrEqual(1);
   }
+});
+
+test("desktop role and sign-in scenes load with real task links", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/en");
+  await expectStoryImages(
+    page.getByRole("region", { name: english.home.roles.heading }),
+    6,
+  );
+  await page.goto("/en/login");
+  await expectStoryImages(page.getByRole("figure"), 1);
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 });

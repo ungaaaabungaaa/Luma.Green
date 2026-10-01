@@ -73,7 +73,7 @@ function SettingsForm({
   return (
     <section
       aria-labelledby="dispatch-settings-title"
-      className="rounded-2xl border bg-card p-4"
+      className="rounded-xl border bg-card p-4"
     >
       <form
         noValidate

@@ -22,7 +22,7 @@ export function TrackView({ booking }: { booking: TrackedBooking }) {
   const today = indiaToday(useNow());
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
       <StatusHero booking={booking} />
       <WhenCard booking={booking} today={today} />
       {booking.dispatch && booking.dispatch.attempt > 1 ? (

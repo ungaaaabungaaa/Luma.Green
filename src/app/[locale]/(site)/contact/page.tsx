@@ -51,12 +51,12 @@ export default async function ContactPage() {
         }
       />
 
-      <Container className="grid gap-4 py-20 md:grid-cols-2">
-        <Card>
+      <Container className="grid gap-6 py-16 md:grid-cols-2 lg:py-24">
+        <Card className="shadow-none">
           <CardHeader>
             <MailIcon aria-hidden className="size-6 text-primary" />
             <CardTitle>
-              <h2 className="text-lg">{t("emailHeading")}</h2>
+              <h2 className="text-2xl">{t("emailHeading")}</h2>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -65,14 +65,14 @@ export default async function ContactPage() {
             </a>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="shadow-none">
           <CardHeader>
             <ShieldAlertIcon aria-hidden className="size-6 text-primary" />
             <CardTitle>
-              <h2 className="text-lg">{t("securityHeading")}</h2>
+              <h2 className="text-2xl">{t("securityHeading")}</h2>
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent className="space-y-4">
             <p className="text-sm text-muted-foreground">{t("securityBody")}</p>
             <a href={`mailto:${site.securityEmail}`} className={emailLink}>
               {site.securityEmail}

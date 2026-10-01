@@ -36,11 +36,15 @@ export function RoleCards() {
           <li key={kind}>
             <Link
               href={`/join/${kind}`}
-              className="group flex h-full flex-col gap-4 rounded-2xl border border-border/80 bg-card p-4 shadow-xs transition-[border-color,box-shadow,transform] duration-200 outline-none hover:border-primary/40 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 motion-safe:hover:-translate-y-1 sm:p-5"
+              className="group flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-4 transition-colors outline-none hover:border-primary/50 focus-visible:ring-3 focus-visible:ring-ring/50 sm:p-6"
             >
-              <RoleStoryImage scene={kind} compact />
+              <RoleStoryImage
+                scene={kind}
+                compact
+                frameClassName="aspect-16/9 rounded-lg"
+              />
               <span className="flex items-start gap-4">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-primary/10 text-primary">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-muted text-primary">
                   <Icon aria-hidden className="size-5" />
                 </span>
                 <span className="pt-1 text-lg font-semibold tracking-tight">

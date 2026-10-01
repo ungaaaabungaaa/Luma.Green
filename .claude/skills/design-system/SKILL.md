@@ -1,6 +1,6 @@
 ---
 name: design-system
-description: The Luma.Green visual system — brand tokens, semantic colours, shadcn/ui usage, typography (Noto), light and dark themes, mobile-first layout, spacing and component patterns. Use when building or restyling any UI, adding a shadcn component, or picking a colour.
+description: The Luma.Green visual system — brand tokens, semantic colours, shadcn/ui usage, typography (Geist display and Noto body), light and dark themes, mobile-first layout, spacing and component patterns. Use when building or restyling any UI, adding a shadcn component, or picking a colour.
 ---
 
 # Design system
@@ -27,7 +27,7 @@ Primitives are vendored into `src/components/ui/`. Rules:
 
 Installed: alert, avatar, badge, button, card, checkbox, dialog, dropdown-menu,
 input, label, progress, select, separator, sheet, skeleton, sonner, switch,
-table, tabs, textarea, tooltip.
+table, tabs, textarea, tooltip, chart.
 
 ## Colour
 
@@ -53,18 +53,20 @@ recovered" states, charts.
 `--primary` is brand green, so a primary button is on brand without any extra
 class.
 
-Charts use `--chart-1` … `--chart-5`, a light→deep green ramp. Never pick chart
-colours ad hoc; sequential data reads wrong when hues jump.
+Charts use `--chart-1` … `--chart-5`: green, blue, amber, teal and neutral.
+Use these categorical colours consistently. Use one hue for sequential data.
+The shadcn chart primitive uses Recharts (MIT). Only chart consumers import it.
+Use recorded query values, disable decorative animation, and keep an accessible
+text or table equivalent. Format public values through next-intl.
 
 ## Typography
 
-**Noto Sans, everywhere** — it is the one family with consistent coverage of
-every script we ship, so the UI never changes texture when a user switches
-language.
+**Geist for Latin display; Noto Sans for body and script coverage.** Both are
+loaded in `src/lib/fonts.ts`. Non-Latin headings use Noto script fallbacks and
+normal letter spacing. Do not force Latin heading line counts on other scripts.
 
 - `font-sans` — all UI text (the default on `<html>`).
-- `font-display` — wordmark and large headings. Same family today; it exists so
-  a display face can be swapped in one place later.
+- `font-display` — Geist for Latin headings, Noto and script fallback otherwise.
 - `font-mono` — Noto Sans Mono, for serials, ids and quantities in tables.
 
 Never add a `next/font` call outside `src/lib/fonts.ts`, and never spread an
@@ -96,8 +98,14 @@ Layouts per area: `docs/architecture/frontend.md`.
 ## Spacing, radius, motion
 
 - Spacing: Tailwind's 4px scale. Prefer `gap-*` in flex/grid over margins.
-- Radius: driven by `--radius` (0.625rem). Use `rounded-md`/`rounded-lg`, not
-  arbitrary values.
+- Radius: base `--radius` is 0.5rem. Controls use 8px corners; feature cards
+  use 12px corners. Avoid pill overrides on ordinary action buttons.
+- Regular buttons are 44px tall; large actions are 48px. Use shared variants.
+- Public section padding is 64px on phones and 96px on desktop. Operational
+  sections use 24/32px spacing. Use fine dividers instead of nested cards.
+- Lucide is the single icon family: 1.75 stroke, 18/20px controls, 24px features.
+- Surfaces are neutral white or charcoal. Green marks actions and selected states;
+  avoid green washes and decorative photographs in operational dashboards.
 - Motion: `tw-animate-css` is available. Keep transitions under 200ms and
   respect `prefers-reduced-motion`.
 

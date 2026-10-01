@@ -46,7 +46,7 @@ export async function ChainDiagram() {
   ]);
 
   return (
-    <section aria-labelledby="chain-heading" className="py-12 sm:py-20">
+    <section aria-labelledby="chain-heading" className="py-16 lg:py-24">
       <Container className="flex flex-col gap-8 sm:gap-10">
         <SectionHeading
           id="chain-heading"
@@ -54,20 +54,20 @@ export async function ChainDiagram() {
           intro={t("intro")}
         />
         <div>
-          <ol className="grid gap-3 md:grid-cols-5">
+          <ol className="grid min-w-0 grid-flow-dense grid-cols-1 divide-y border-y xl:grid-cols-5 xl:divide-x xl:divide-y-0 rtl:xl:divide-x-reverse">
             {steps.map(({ key, icon: Icon }, index) => (
               <li
                 data-reveal
                 key={key}
-                className="relative grid grid-cols-[3.5rem_minmax(0,1fr)] gap-5 rounded-2xl border bg-card p-5 md:flex md:flex-col md:gap-5"
+                className="relative grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 py-6 xl:flex xl:flex-col xl:gap-8 xl:px-5 xl:py-8"
               >
-                <span className="font-display text-4xl leading-none font-medium tracking-tight text-primary/70 md:text-5xl">
+                <span className="font-display text-4xl leading-none font-medium tracking-tight text-muted-foreground/60 xl:text-5xl">
                   {format.number(index + 1, { minimumIntegerDigits: 2 })}
                 </span>
-                <div className="space-y-3">
+                <div className="min-w-0 space-y-3 wrap-anywhere">
                   <Icon
                     aria-hidden
-                    className="mb-4 size-7 text-primary"
+                    className="mb-4 size-6 text-primary"
                     strokeWidth={1.5}
                   />
                   <h3 className="text-lg font-semibold">
@@ -81,11 +81,11 @@ export async function ChainDiagram() {
                   <>
                     <ArrowDownIcon
                       aria-hidden
-                      className="absolute start-4 bottom-3 size-4 text-primary md:hidden"
+                      className="absolute start-4 bottom-3 size-4 text-primary xl:hidden"
                     />
                     <ArrowRightIcon
                       aria-hidden
-                      className="absolute end-4 top-10 hidden size-5 text-primary md:block rtl:rotate-180"
+                      className="absolute end-4 top-10 hidden size-5 text-primary xl:block rtl:rotate-180"
                     />
                   </>
                 ) : null}

@@ -62,7 +62,7 @@ function LocationControl({
   return (
     <Button
       variant="outline"
-      className="h-11 rounded-xl px-4"
+      className="h-11 rounded-lg px-4"
       disabled={isLocating}
       onClick={onLocate}
     >

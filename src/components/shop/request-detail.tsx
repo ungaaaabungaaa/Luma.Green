@@ -53,7 +53,7 @@ export function RequestDetail({ id }: { id: string }) {
     <div className="flex flex-col gap-6">
       <Link
         href="/app/requests"
-        className="inline-flex w-fit items-center gap-1 rounded-md text-sm font-medium text-primary outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="inline-flex min-h-11 w-fit items-center gap-1 rounded-md text-sm font-medium text-primary outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
       >
         <ChevronLeftIcon aria-hidden className="size-4 rtl:rotate-180" />
         {t("request.back")}
@@ -85,7 +85,7 @@ function RequestBody({ id }: { id: string }) {
   if (detail === null) {
     return (
       <>
-        <h1 className="text-2xl font-semibold tracking-tight">
+        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
           {t("requests.title")}
         </h1>
         <EmptyState
@@ -111,9 +111,9 @@ function RequestView({ detail }: { detail: BookingDetail }) {
 
   return (
     <>
-      <header className="flex flex-col gap-2">
+      <header className="flex flex-col gap-2 border-b border-border pb-6">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-2xl font-semibold tracking-tight">
+          <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
             {booking.name ?? t("household")}
           </h1>
           <BookingStatusPill status={booking.status} />
@@ -147,7 +147,7 @@ function RequestView({ detail }: { detail: BookingDetail }) {
       {canStartTrip ? (
         <StartTripButton
           bookingId={booking.id}
-          className="h-14 w-full text-base"
+          className="h-12 w-full text-base"
         />
       ) : null}
       {canWeigh ? (
@@ -200,7 +200,7 @@ function Fact({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
         <Icon aria-hidden className="size-5" />
       </span>
       <div className="flex min-w-0 flex-col">
@@ -228,7 +228,7 @@ function BookingFacts({
   return (
     <section
       aria-labelledby="facts-title"
-      className="flex flex-col gap-4 rounded-2xl border bg-card p-4"
+      className="flex flex-col gap-4 rounded-xl border bg-card p-4"
     >
       <h2 id="facts-title" className="sr-only">
         {t("request.details")}

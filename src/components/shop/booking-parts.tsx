@@ -97,7 +97,7 @@ export function ItemChips({ items }: { items: BookingView["items"] }) {
       {items.map((item, index) => (
         <li
           key={`${item.material.code}-${String(index)}`}
-          className="inline-flex items-center gap-2 rounded-full bg-muted py-1 ps-1 pe-3 text-sm"
+          className="inline-flex items-center gap-2 rounded-md bg-muted py-1 ps-1 pe-3 text-sm"
         >
           <MaterialIcon family={item.material.family} size="sm" />
           <span>

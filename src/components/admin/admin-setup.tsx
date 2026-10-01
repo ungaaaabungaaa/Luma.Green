@@ -189,7 +189,7 @@ function AccountForm({
   return (
     <form
       noValidate
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-5"
       onSubmit={(event) => {
         void handleSubmit(onSubmit)(event);
       }}
@@ -268,7 +268,7 @@ function ProfileForm({
   return (
     <form
       noValidate
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-5"
       onSubmit={(event) => {
         void handleSubmit(onSubmit)(event);
       }}
@@ -372,7 +372,7 @@ function PasswordToEnrol({
   return (
     <form
       noValidate
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-5"
       onSubmit={(event) => {
         void handleSubmit(onSubmit)(event);
       }}
@@ -438,7 +438,7 @@ function Field({
 
 function SignedInAsMember() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-5">
       <p className="text-sm text-muted-foreground">
         You&apos;re signed in with a phone number. Sign out to set up the admin
         account.
@@ -457,7 +457,7 @@ function SignedInAsMember() {
 
 function SetupClosed() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-5">
       <p className="text-sm text-muted-foreground">
         Setup is closed: either the admin account already exists, or ADMIN_EMAIL
         isn&apos;t set on this deployment.
@@ -471,7 +471,7 @@ function SetupClosed() {
 
 function SetupSkeleton() {
   return (
-    <div className="flex flex-col gap-4" aria-busy="true">
+    <div className="flex flex-col gap-5" aria-busy="true">
       <Skeleton className="h-5 w-2/3" />
       <Skeleton className="h-9 w-full" />
       <Skeleton className="h-9 w-full" />

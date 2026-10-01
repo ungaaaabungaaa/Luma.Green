@@ -45,17 +45,17 @@ export default async function HowItWorksPage() {
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
 
-      <Container className="py-20 sm:py-28">
-        <ol className="space-y-6">
+      <Container className="py-16 lg:py-24">
+        <ol className="divide-y border-y">
           {loopSteps.map(({ key, icon: Icon }, index) => (
             <li
               key={key}
               data-reveal
               aria-labelledby={`step-${key}`}
-              className="grid gap-8 rounded-2xl border border-border bg-card p-6 sm:p-10 md:grid-cols-[1fr_2fr] md:gap-16"
+              className="grid gap-8 py-10 md:grid-cols-[1fr_2fr] md:gap-16 lg:py-12"
             >
               <div className="min-w-0 space-y-5">
-                <span className="inline-flex size-14 items-center justify-center rounded-full border border-border bg-card text-primary">
+                <span className="inline-flex size-14 items-center justify-center rounded-lg border border-border bg-card text-primary">
                   <Icon aria-hidden className="size-6" />
                 </span>
                 <p className="text-sm font-medium text-primary">
@@ -94,7 +94,7 @@ export default async function HowItWorksPage() {
         <Principles />
       </div>
 
-      <div className="pt-20">
+      <div className="pt-16 lg:pt-24">
         <ClosingCta />
       </div>
     </>

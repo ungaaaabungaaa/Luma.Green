@@ -37,13 +37,13 @@ export function ShopOption({
     <Label
       htmlFor={id}
       className={cn(
-        "flex items-start gap-4 rounded-2xl border bg-card p-5 font-normal shadow-sm transition-[border-color,background-color,box-shadow] duration-200",
+        "flex items-start gap-4 rounded-xl border bg-card p-4 font-normal transition-colors duration-150 sm:p-5",
         isSelected
           ? "border-primary bg-accent ring-1 ring-primary"
-          : "border-border/80",
+          : "border-border",
         isDisabled
           ? "cursor-not-allowed bg-muted/50"
-          : "cursor-pointer hover:shadow-md",
+          : "cursor-pointer hover:border-primary/50",
       )}
     >
       <RadioGroupItem

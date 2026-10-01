@@ -42,7 +42,7 @@ export function TradeCard({
     area: trade.counterparty.area,
   };
   return (
-    <article className="flex flex-col gap-4 rounded-2xl border bg-card p-4 shadow-sm">
+    <article className="flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-5">
       <TradeHeading trade={trade} side={side} showSide={showSide} />
       {compact ? null : <TradeSteps status={trade.status} />}
       <DeclinedNote trade={trade} />
@@ -74,7 +74,7 @@ function TradeHeading({
   const format = useFormat();
   const material = format.material(trade.material.names, trade.material.code);
   return (
-    <div className="flex items-start gap-3">
+    <div className="flex flex-wrap items-start gap-3">
       <MaterialIcon family={trade.material.family} />
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <div className="flex flex-wrap items-center gap-2">
@@ -128,7 +128,7 @@ function TradeNotes({ trade }: { trade: TradeView }) {
   return (
     <div className="flex flex-col gap-2">
       {trade.inEscrow ? (
-        <p className="flex items-center gap-2 self-start rounded-full bg-accent px-3 py-1 text-sm font-medium text-accent-foreground">
+        <p className="flex items-center gap-2 self-start rounded-md bg-accent px-3 py-1 text-sm font-medium text-accent-foreground">
           <ShieldCheckIcon aria-hidden className="size-4 shrink-0" />
           {t("inEscrow", { amount: format.money(trade.totalPaise) })}
         </p>

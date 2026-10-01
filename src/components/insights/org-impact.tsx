@@ -153,9 +153,9 @@ function Flows({ impact }: { impact: OrgImpact }) {
         {rows.map(({ key, icon: Icon, flow, count }) => (
           <li
             key={key}
-            className="flex items-center gap-3 rounded-2xl border bg-card p-4"
+            className="flex items-center gap-3 rounded-xl border bg-card p-4"
           >
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-muted text-foreground">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground">
               <Icon aria-hidden className="size-5" />
             </span>
             <div className="flex min-w-0 flex-1 flex-col">
@@ -201,7 +201,7 @@ export function OrgImpactView({ impact }: { impact: OrgImpact }) {
       <div className="flex flex-col gap-2">
         <div
           className={cn(
-            "grid grid-cols-2 gap-3",
+            "grid grid-cols-2 gap-4",
             kpis.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3",
           )}
         >

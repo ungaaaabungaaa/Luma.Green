@@ -18,7 +18,7 @@ function PriceCheckItem({ row }: { row: RateCardRow }) {
   const mine = effectivePaise(row) ?? 0;
   const market = row.marketPaise ?? 0;
   return (
-    <li className="flex flex-col gap-3 rounded-2xl border bg-card p-4">
+    <li className="flex flex-col gap-3 rounded-xl border bg-card p-4">
       <div className="flex items-center gap-3">
         <MaterialIcon family={row.material.family} />
         <div className="flex min-w-0 flex-col">
@@ -85,7 +85,7 @@ export function PriceCheck({
       ) : (
         <div className="grid gap-3 sm:grid-cols-3">
           {[0, 1, 2].map((index) => (
-            <Skeleton key={index} className="h-36 rounded-2xl" />
+            <Skeleton key={index} className="h-36 rounded-xl" />
           ))}
         </div>
       )}

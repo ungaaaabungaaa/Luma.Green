@@ -67,7 +67,7 @@ function CardShell({
     <section
       aria-labelledby={id}
       className={cn(
-        "flex flex-col gap-4 rounded-2xl border bg-card p-5",
+        "flex flex-col gap-4 rounded-xl border bg-card p-5",
         isHot && "border-primary/40 ring-1 ring-primary/20",
       )}
     >
@@ -78,7 +78,7 @@ function CardShell({
           </h2>
           <BigCount count={count} isHot={isHot} />
         </div>
-        <span className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+        <span className="flex size-12 items-center justify-center rounded-lg bg-accent text-accent-foreground">
           <Icon aria-hidden className="size-6" />
         </span>
       </div>
@@ -110,7 +110,7 @@ export function NewRequestsCard({ count }: { count: number | undefined }) {
         asChild
         size="lg"
         variant={hasNew ? "default" : "outline"}
-        className="mt-auto h-14 text-base"
+        className="mt-auto h-12 text-base"
       >
         <Link href="/app/requests">
           {t("seeRequests")}
@@ -200,13 +200,13 @@ export function MoneyStats({
 }) {
   const t = useTranslations("shop.home");
   const format = useFormat();
-  const tile = "h-28 rounded-2xl";
+  const tile = "h-28 rounded-xl";
   return (
     <section aria-labelledby="home-money">
       <h2 id="home-money" className="sr-only">
         {t("moneyTitle")}
       </h2>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
         {payouts ? (
           <StatCard
             label={t("paidToday")}
@@ -229,7 +229,7 @@ export function MoneyStats({
         )}
         <Link
           href="/app/stock"
-          className="col-span-2 rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50 md:col-span-1"
+          className="col-span-2 rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50 md:col-span-1"
         >
           {stock ? (
             <StatCard

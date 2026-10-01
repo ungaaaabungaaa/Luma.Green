@@ -105,12 +105,21 @@ describe("the mandatory platform guide", () => {
       path: string;
       sha256: string;
       kind: string;
+      captureKind: "section" | "viewport";
+      sectionSelector?: string;
+      sourceHashes: Record<string, string>;
       browserErrors: string[];
       blockedRequests: string[];
     }[];
     expect(captures.map((capture) => capture.name)).toEqual(
       expect.arrayContaining([
         "public-home-dark",
+        "public-home-materials",
+        "public-home-pickup",
+        "public-home-shop",
+        "public-home-payment",
+        "public-home-records",
+        "public-home-questions",
         "public-participants-dark",
         "public-arabic-dark",
       ]),
@@ -118,6 +127,25 @@ describe("the mandatory platform guide", () => {
     for (const capture of captures) {
       expect(hash(capture.path), capture.path).toBe(capture.sha256);
       expect(capture.kind).toBe("current-local-disconnected");
+      if (capture.captureKind === "section") {
+        expect(capture.sectionSelector).toMatch(/^section\[aria-labelledby=/);
+      } else {
+        expect(capture.captureKind).toBe("viewport");
+      }
+      expect(Object.keys(capture.sourceHashes)).toEqual(
+        expect.arrayContaining([
+          "src/app/globals.css",
+          "src/lib/fonts.ts",
+          "src/components/site/home/hero.tsx",
+          "src/components/site/closing-cta.tsx",
+          "src/components/site/home/chain-diagram.tsx",
+          "src/components/site/home/role-benefits.tsx",
+          "public/images/materials-hall.webp",
+        ]),
+      );
+      for (const [file, expected] of Object.entries(capture.sourceHashes)) {
+        expect(hash(file), `${file}: recapture public pages`).toBe(expected);
+      }
       expect(capture.browserErrors).toEqual([]);
       expect(capture.blockedRequests).toEqual([]);
     }
@@ -152,6 +180,9 @@ describe("the mandatory platform guide", () => {
         "src/components/app/app-shell.tsx",
         "src/components/admin/console-shell.tsx",
         "src/components/ui/button.tsx",
+        "src/components/ui/chart.tsx",
+        "src/components/admin/pilot/pilot-charts.tsx",
+        "src/lib/fonts.ts",
         "scripts/guide-preview/main.tsx",
         "scripts/guide-preview/image.tsx",
         "scripts/guide-preview/vite.config.mts",
@@ -175,6 +206,10 @@ describe("the mandatory platform guide", () => {
     expect(evidence.captures.map((capture) => capture.file)).toEqual(
       expect.arrayContaining([
         "admin-overview-dark.png",
+        "admin-pilot-outcomes.png",
+        "admin-pilot-materials.png",
+        "admin-pilot-dark.png",
+        "admin-pilot-phone.png",
         "kabadiwala-overview-dark.png",
       ]),
     );

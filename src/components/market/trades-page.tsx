@@ -96,10 +96,10 @@ function Trades({ org }: { org: OrgWorkspace }) {
       >
         <TabsList
           aria-label={t("trades.tabsLabel")}
-          className="w-full group-data-horizontal/tabs:h-12 sm:w-fit"
+          className="w-full rounded-lg group-data-horizontal/tabs:h-12 sm:w-fit"
         >
           {(["buying", "selling"] as const).map((value) => (
-            <TabsTrigger key={value} value={value} className="px-4 text-base">
+            <TabsTrigger key={value} value={value} className="px-4 text-sm">
               {t(`trades.${value}`)}
               {waiting[value] > 0 ? (
                 <>
@@ -152,7 +152,7 @@ function TradeList({ tab, trades }: { tab: Tab; trades: TradeView[] }) {
       <h2 id={headingId} className="sr-only">
         {t(tab)}
       </h2>
-      <ul className="grid gap-3 lg:grid-cols-2">
+      <ul className="grid gap-4 xl:grid-cols-2">
         {trades.toSorted(byUrgency).map((trade) => (
           <li key={trade.id}>
             <TradeCard

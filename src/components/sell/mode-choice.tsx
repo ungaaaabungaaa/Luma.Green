@@ -43,8 +43,10 @@ export function ModeChoice({
               key={value}
               htmlFor={`mode-${value}`}
               className={cn(
-                "flex min-h-20 cursor-pointer flex-col items-start gap-2 rounded-2xl border-2 bg-card p-3 font-normal",
-                isSelected ? "border-primary bg-accent" : "border-border",
+                "flex min-h-20 cursor-pointer flex-col items-start gap-2 rounded-lg border bg-card p-4 font-normal",
+                isSelected
+                  ? "border-primary bg-accent ring-1 ring-primary ring-inset"
+                  : "border-border",
               )}
             >
               <span className="flex w-full items-center justify-between gap-2">

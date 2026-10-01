@@ -43,10 +43,10 @@ export function MaterialTile({
       disabled={!isAdded && isFull}
       onClick={onToggle}
       className={cn(
-        "group flex h-full min-h-40 w-full flex-col items-start gap-4 rounded-2xl border bg-card p-4 text-start shadow-sm transition-[border-color,background-color,box-shadow] duration-200 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50 sm:p-5",
+        "group flex h-full min-h-36 w-full flex-col items-start gap-4 rounded-xl border bg-card p-4 text-start transition-colors duration-150 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50 sm:p-5",
         isAdded
           ? "border-primary bg-accent ring-1 ring-primary"
-          : "border-border/80 hover:border-primary/50 hover:shadow-md",
+          : "border-border hover:border-primary/50 hover:bg-muted/40",
       )}
     >
       <span className="flex w-full items-start justify-between gap-2">
@@ -54,7 +54,7 @@ export function MaterialTile({
         <span
           aria-hidden
           className={cn(
-            "flex size-8 items-center justify-center rounded-full",
+            "flex size-8 items-center justify-center rounded-md",
             isAdded
               ? "bg-primary text-primary-foreground"
               : "border text-muted-foreground",

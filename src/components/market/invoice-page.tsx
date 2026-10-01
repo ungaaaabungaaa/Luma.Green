@@ -79,7 +79,7 @@ function Receipt({ id }: { id: string }) {
     return (
       <div className="flex flex-col gap-4" aria-busy="true">
         <Skeleton className="h-10 w-48" />
-        <Skeleton className="h-96 w-full rounded-2xl" />
+        <Skeleton className="h-96 w-full rounded-xl" />
       </div>
     );
   }
@@ -175,12 +175,12 @@ function ReceiptDocument({
 
       <article
         id="trade-receipt"
-        className="flex flex-col gap-6 rounded-2xl border bg-card p-4 sm:p-8 print:rounded-none print:border-0 print:p-0"
+        className="flex flex-col gap-6 rounded-xl border border-border bg-card p-5 sm:p-8 print:rounded-none print:border-0 print:p-0"
       >
         <div className="flex flex-wrap items-start justify-between gap-4 border-b pb-5">
           <div className="flex flex-col gap-3">
             <Logo idPrefix="lg-receipt" />
-            <h1 className="text-2xl font-semibold tracking-tight">
+            <h1 className="font-display text-3xl font-semibold tracking-tight">
               {t("receipt.title")}
             </h1>
           </div>

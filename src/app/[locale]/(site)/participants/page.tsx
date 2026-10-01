@@ -9,7 +9,6 @@ import { roles } from "@/components/site/content";
 import { PageHeader } from "@/components/site/page-header";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata } from "@/lib/seo";
-import { cn } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -61,22 +60,17 @@ export default async function ParticipantsPage() {
         art={<RoleStoryImage scene="kabadiwala" compact />}
       />
 
-      <Container className="py-10 sm:py-16">
-        <ul className="space-y-6 sm:space-y-8">
-          {participants.map(({ key, icon: Icon, title, body }, index) => (
+      <Container className="py-16 lg:py-24">
+        <ul className="divide-y border-y">
+          {participants.map(({ key, icon: Icon, title, body }) => (
             <li key={key}>
               <section
                 aria-labelledby={`participant-${key}`}
-                className="grid items-center gap-8 rounded-3xl border border-border bg-card p-5 sm:gap-10 sm:p-8 lg:grid-cols-2"
+                className="grid items-center gap-8 py-8 sm:gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:py-12"
               >
-                <div
-                  className={cn(
-                    "min-w-0 space-y-6",
-                    index % 2 === 1 && "lg:order-2",
-                  )}
-                >
+                <div className="min-w-0 space-y-6">
                   <div className="flex items-center gap-4">
-                    <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-border text-primary">
+                    <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-lg border border-border text-primary">
                       <Icon aria-hidden className="size-5" />
                     </span>
                     <h2
@@ -90,7 +84,11 @@ export default async function ParticipantsPage() {
                     {body}
                   </p>
                 </div>
-                <RoleStoryImage scene={key} className="w-full min-w-0" />
+                <RoleStoryImage
+                  scene={key}
+                  compact
+                  className="w-full min-w-0"
+                />
               </section>
             </li>
           ))}

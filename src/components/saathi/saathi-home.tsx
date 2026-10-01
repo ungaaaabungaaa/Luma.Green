@@ -14,7 +14,6 @@ import {
 } from "@/components/app/page-parts";
 import { useWorkspace } from "@/components/app/use-workspace";
 import { QueryBoundary } from "@/components/insights/query-boundary";
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { api } from "../../../convex/_generated/api";
@@ -24,13 +23,13 @@ import { splitByDay } from "./job-day";
 import { WeekEarnings } from "./week-earnings";
 
 function JobGrid({ children }: { children: ReactNode }) {
-  return <div className="grid gap-3 md:grid-cols-2">{children}</div>;
+  return <div className="grid gap-4 md:grid-cols-2">{children}</div>;
 }
 
 function BoardSkeleton() {
   return (
     <div className="flex flex-col gap-6" aria-busy="true">
-      <Skeleton className="h-40 w-full rounded-2xl" />
+      <Skeleton className="h-40 w-full rounded-xl" />
       <ListSkeleton rows={2} />
     </div>
   );
@@ -128,17 +127,10 @@ export function SaathiHome() {
 
   return (
     <>
-      <div className="grid items-center gap-5 rounded-2xl border border-border/80 bg-card p-5 lg:grid-cols-[minmax(0,1fr)_16rem] lg:p-6">
+      <div className="min-w-0">
         <AppPageHeader
           title={t("greeting", { name: saathi?.name ?? "" })}
           lead={saathi ? t("lead", { area: saathi.area }) : undefined}
-        />
-        <RoleStoryImage
-          sizes="(min-width: 1024px) 256px, 92vw"
-          scene="saathi"
-          imageClassName="object-[center_25%]"
-          compact
-          frameClassName="aspect-auto h-28 lg:h-36"
         />
       </div>
       <QueryBoundary>

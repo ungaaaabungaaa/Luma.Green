@@ -36,16 +36,19 @@ export function ChecklistCard({
           {done} of {items.length} checked
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-col gap-4">
+      <CardContent className="flex flex-col divide-y">
         <Progress
           value={items.length === 0 ? 100 : (done / items.length) * 100}
           aria-label="Checks done"
         />
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col divide-y">
           {items.map((item) => {
             const id = `check-${item.id}`;
             return (
-              <li key={item.id} className="flex items-start gap-3">
+              <li
+                key={item.id}
+                className="flex items-start gap-3 py-4 first:pt-0 last:pb-0"
+              >
                 <Checkbox
                   id={id}
                   checked={checked.has(item.id)}
@@ -56,7 +59,10 @@ export function ChecklistCard({
                   className="mt-0.5"
                 />
                 <div className="flex min-w-0 flex-col gap-1">
-                  <Label htmlFor={id} className="leading-snug font-normal">
+                  <Label
+                    htmlFor={id}
+                    className="min-h-11 leading-relaxed font-normal"
+                  >
                     {item.label}
                   </Label>
                   {item.hint ? (
@@ -72,7 +78,7 @@ export function ChecklistCard({
                       href={item.link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 self-start rounded-sm text-xs font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+                      className="inline-flex min-h-11 items-center gap-2 self-start rounded-lg text-xs font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
                     >
                       {item.link.label}
                       <ExternalLinkIcon aria-hidden className="size-3" />

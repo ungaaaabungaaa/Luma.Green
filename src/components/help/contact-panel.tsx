@@ -24,7 +24,7 @@ function Row({
 }) {
   return (
     <div className="flex gap-3">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent text-primary">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-primary">
         <Icon aria-hidden className="size-5" />
       </span>
       <div className="flex min-w-0 flex-col gap-0.5">
@@ -70,7 +70,7 @@ export function ContactPanel() {
   return (
     <aside
       aria-labelledby="contact-other-ways"
-      className="flex flex-col gap-5 self-start rounded-2xl border bg-card p-5"
+      className="flex flex-col gap-5 self-start rounded-xl border bg-card p-5"
     >
       <h2 id="contact-other-ways" className="text-lg font-semibold">
         {t("contact.otherWays")}

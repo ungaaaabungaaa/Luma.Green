@@ -59,7 +59,7 @@ function Progress({ booking }: { booking: TrackedBooking }) {
           <span
             aria-hidden
             className={cn(
-              "h-1.5 rounded-full",
+              "h-1 rounded-sm",
               index <= current ? "bg-primary" : "bg-border",
             )}
           />
@@ -93,12 +93,12 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
   return (
     <section
       aria-labelledby="track-title"
-      className="flex flex-col gap-4 rounded-3xl border bg-card p-5 shadow-sm sm:p-6"
+      className="flex flex-col gap-6 rounded-xl border border-border bg-card p-5 sm:p-6"
     >
       <div className="flex items-start gap-4">
         <span
           className={cn(
-            "flex size-12 shrink-0 items-center justify-center rounded-full",
+            "flex size-12 shrink-0 items-center justify-center rounded-lg",
             tone,
           )}
         >
@@ -110,7 +110,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
           </p>
           <h1
             id="track-title"
-            className="text-2xl leading-tight font-semibold tracking-tight text-balance"
+            className="font-display text-2xl leading-tight font-semibold tracking-tight text-balance"
           >
             {t(`hero.${booking.status}`, {
               shop,

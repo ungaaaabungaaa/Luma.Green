@@ -1,10 +1,24 @@
 {
-  "status": "pending-connection",
-  "document_id": null,
-  "document_url": null,
+  "status": "verified",
+  "document_id": "17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
+  "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
-  "source_docx_sha256": "545f9c52f016c4e1e40cd9160f49d1d8b018fbbefca8ca6043876c1763419db1",
-  "recorded_at": "2026-10-01T19:27:08Z",
-  "result": "Import requested authentication and reported it accepted. On retry, Google Drive tools were unavailable; plugin inventory reported installed=false. No document ID or successful import was returned.",
-  "next_action": "Reconnect Google Drive, import the reviewed sanitized DOCX once, verify native MIME/content, then record its actual document ID and URL. Update that same document on future guide revisions."
+  "source_docx_sha256": "d1a565e757f55012c9dcf542334f1ced509b31ab5fe568f632372d2c02fc12e6",
+  "recorded_at": "2026-10-01T21:13:39.142517+00:00",
+  "result": "Reviewed Word imported as a native Google Doc. Native readback verified all 37 chapters, six tables and 51 inline images. All Word body paragraphs and table cell text are present; precise dates use three native date fields. Sharing settings were not changed.",
+  "next_action": "Reuse this document ID for future accepted guide updates; preserve sharing settings and verify native content after each update.",
+  "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
+  "verification": {
+    "mime_type": "application/vnd.google-apps.document",
+    "chapter_count": 37,
+    "heading_1_count": 38,
+    "table_count": 6,
+    "inline_image_count": 51,
+    "date_element_count": 3,
+    "word_body_and_table_text": "matched; precise date displays normalized to native fields",
+    "local_visual_review_page_count": 56,
+    "native_revision_id": "ANLCKQlZDOlZhneiFQaLmwGVJxqbdMb2mDVoxZczW5NbXtViE7uz1txCL1hiZd0kQEyEP1_e56soLdklPWkvILhDoAISQqhz9kFFAcMj8yg",
+    "native_readback_sha256": "d0d70521e252ec83311ef8f23d7bee20e1c2920f2cbf2bbb7a0651a86990f2bd",
+    "sharing_changed": false
+  }
 }

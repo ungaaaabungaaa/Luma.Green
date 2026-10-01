@@ -17,22 +17,18 @@ export function MoneyCard({
   note?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-2 rounded-2xl border border-amber-200/60 bg-amber-50 p-5 text-amber-950 dark:border-amber-800/40 dark:bg-amber-950/40 dark:text-amber-100">
-      {label ? (
-        <p className="text-sm text-amber-900 dark:text-amber-200">{label}</p>
-      ) : null}
+    <div className="flex flex-col gap-3 rounded-xl border border-primary/25 bg-accent/50 p-5 text-foreground">
+      {label ? <p className="text-sm text-muted-foreground">{label}</p> : null}
       <p className="text-2xl leading-tight font-semibold tracking-tight tabular-nums">
         {amount}
       </p>
       {points ? (
-        <p className="flex items-center gap-1.5 self-start rounded-full bg-accent px-2.5 py-1 text-sm font-semibold text-accent-foreground">
+        <p className="flex items-center gap-1.5 self-start rounded-md bg-background px-3 py-1 text-sm font-semibold text-accent-foreground">
           <LeafIcon aria-hidden className="size-4" />
           {points}
         </p>
       ) : null}
-      {note ? (
-        <p className="text-sm text-amber-900 dark:text-amber-200">{note}</p>
-      ) : null}
+      {note ? <p className="text-sm text-muted-foreground">{note}</p> : null}
     </div>
   );
 }

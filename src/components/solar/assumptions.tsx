@@ -41,16 +41,16 @@ export function Assumptions() {
   return (
     <section
       aria-labelledby="solar-assumptions"
-      className="flex flex-col gap-3 rounded-2xl border bg-muted/40 p-5"
+      className="flex flex-col gap-3 rounded-xl border bg-muted/30 p-5"
     >
       <h3
         id="solar-assumptions"
         className="flex items-center gap-2 font-semibold"
       >
-        <CalculatorIcon aria-hidden className="size-5 text-primary" />
+        <CalculatorIcon aria-hidden className="size-5 text-muted-foreground" />
         {t("title")}
       </h3>
-      <ul className="flex list-disc flex-col gap-1.5 ps-5 text-sm text-muted-foreground">
+      <ul className="flex list-disc flex-col gap-2 ps-5 text-sm text-muted-foreground">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}

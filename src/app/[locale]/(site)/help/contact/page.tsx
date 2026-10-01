@@ -9,7 +9,6 @@ import {
 import { ContactPanel, QuickContact } from "@/components/help/contact-panel";
 import { HelpBreadcrumbs } from "@/components/help/help-breadcrumbs";
 import { HelpHero } from "@/components/help/help-hero";
-import { SmsCodePhone } from "@/components/illustrations";
 import { Container } from "@/components/site/container";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata } from "@/lib/seo";
@@ -47,12 +46,11 @@ export default async function HelpContactPage() {
         }
         title={t("contact.title")}
         lead={t("contact.lead")}
-        art={<SmsCodePhone />}
       >
         <QuickContact />
       </HelpHero>
 
-      <Container className="grid gap-10 py-12 sm:py-16 md:grid-cols-[minmax(0,1fr)_20rem]">
+      <Container className="grid gap-10 py-16 md:grid-cols-[minmax(0,1fr)_20rem] lg:py-24">
         <section
           aria-labelledby="contact-form-heading"
           className="flex flex-col gap-5"

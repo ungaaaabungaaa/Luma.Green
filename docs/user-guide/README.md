@@ -31,6 +31,10 @@ before the next build. This prevents later builds from losing your changes.
    GUIDE_BASE_URL=http://localhost:3004 pnpm exec jiti scripts/capture-showcases.mts
    ```
 
+   Home materials, pickup, shop, payment, records and questions are captured as
+   separate browser sections so they remain readable in Word. Section screenshots
+   are direct browser output, not cropped or composed after capture.
+
    The commands accept a local origin only and reject external requests. They
    visit real pages. They do not sign in or submit forms. Use a disconnected or
    approved test environment with no real personal data. Inspect every PNG.
@@ -110,10 +114,13 @@ before the next build. This prevents later builds from losing your changes.
 ## Google Docs copy
 
 Current publication state is recorded in [cloud.json](cloud.json). The reviewed
-51-page Word edition is ready. The first import accepted a sign-in request but
-returned no document ID; the plugin tools then disappeared and the plugin
-inventory reported it was not installed. Native Google Docs publication remains
-pending reconnection. No automatic cloud synchronization is currently configured.
+2 October 2026 edition is available as the native
+[Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY).
+Native readback verified all 37 chapters, six tables and 51 inline images against
+the reviewed Word file. All body paragraphs and table text are present. The
+edition date and two pilot date limits use native date fields. All 56 Word pages
+passed visual review before import. Sharing settings were not changed. No
+automatic cloud synchronization is configured.
 
 Import the sanitized and visually reviewed DOCX with the Google Drive plugin's
 `google_drive_import_document` action and `upload_mode: "native_google_docs"`.

@@ -33,7 +33,7 @@ export function NormSection({
       className="grid scroll-mt-24 gap-6 border-t pt-12 lg:grid-cols-[1fr_2fr] lg:gap-12"
     >
       <div className="flex flex-col gap-3">
-        <span className="flex size-11 items-center justify-center rounded-xl bg-brand-100 text-brand-900">
+        <span className="flex size-11 items-center justify-center rounded-lg border bg-muted text-primary">
           <Icon aria-hidden className="size-5" />
         </span>
         <h2
@@ -61,12 +61,9 @@ export function RuleCards({
   }[];
 }) {
   return (
-    <ul className="grid gap-3 sm:grid-cols-3">
+    <ul className="grid grid-flow-dense divide-y border-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 rtl:sm:divide-x-reverse">
       {rules.map(({ key, icon: Icon, title, body }) => (
-        <li
-          key={key}
-          className="flex flex-col gap-2 rounded-2xl border bg-card p-5"
-        >
+        <li key={key} className="flex flex-col gap-3 py-5 sm:px-5">
           <Icon aria-hidden className="size-6 text-primary" />
           <h3 className="font-semibold">{title}</h3>
           <p className="text-sm text-muted-foreground">{body}</p>
@@ -93,7 +90,7 @@ export async function ReceiptAnatomy() {
   return (
     <figure
       aria-labelledby="receipt-anatomy-title"
-      className="mx-auto w-full max-w-md rounded-2xl border bg-card p-5 shadow-sm lg:mx-0"
+      className="mx-auto w-full max-w-md rounded-xl border bg-card p-5 shadow-sm lg:mx-0"
     >
       <figcaption
         id="receipt-anatomy-title"
@@ -129,12 +126,9 @@ export async function VerificationList() {
     { key: "saathi", icon: HandHelpingIcon },
   ] as const;
   return (
-    <ul className="flex flex-col gap-3">
+    <ul className="flex flex-col divide-y border-y">
       {items.map(({ key, icon: Icon }) => (
-        <li
-          key={key}
-          className="flex items-start gap-3 rounded-2xl border bg-card p-4"
-        >
+        <li key={key} className="flex items-start gap-3 py-5">
           <Icon aria-hidden className="mt-0.5 size-5 shrink-0 text-primary" />
           <span>{t(key)}</span>
         </li>
@@ -160,7 +154,7 @@ export async function EscrowSteps() {
       {steps.map(({ key, icon: Icon }, index) => (
         <li
           key={key}
-          className="flex flex-col gap-3 rounded-2xl border bg-card p-4"
+          className="flex flex-col gap-3 rounded-xl border bg-card p-4"
         >
           <span className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">

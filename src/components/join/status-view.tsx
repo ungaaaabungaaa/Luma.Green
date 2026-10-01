@@ -48,9 +48,9 @@ function StatusCard({
     bad: "bg-destructive/10 text-destructive",
   }[tone];
   return (
-    <section className="flex flex-col gap-5 rounded-2xl border border-border/80 bg-card p-5 shadow-xs sm:p-7">
+    <section className="flex flex-col gap-6 rounded-xl border border-border bg-card p-6 sm:p-8">
       <span
-        className={`flex size-12 items-center justify-center rounded-2xl ${toneClass}`}
+        className={`flex size-12 items-center justify-center rounded-lg ${toneClass}`}
       >
         {icon}
       </span>
@@ -127,7 +127,7 @@ function ApplicationStatus({ application }: { application: Application }) {
           lead={t("status.draft.lead")}
         >
           {roleLine}
-          <Button asChild size="lg" className="h-14 text-base">
+          <Button asChild size="lg" className="h-12 text-base">
             <Link href={formPath(application.kind)}>
               {t("status.draft.continue")}
             </Link>
@@ -182,7 +182,7 @@ function ApplicationStatus({ application }: { application: Application }) {
           lead={t("status.changes_requested.lead")}
         >
           <Note text={application.note} />
-          <Button asChild size="lg" className="h-14 text-base">
+          <Button asChild size="lg" className="h-12 text-base">
             <Link href={formPath(application.kind)}>
               {t("status.changes_requested.fix")}
             </Link>
@@ -199,7 +199,7 @@ function ApplicationStatus({ application }: { application: Application }) {
           lead={t("status.approved.lead")}
         >
           {roleLine}
-          <Button asChild size="lg" className="h-14 text-base">
+          <Button asChild size="lg" className="h-12 text-base">
             <Link href="/app">{t("status.approved.open")}</Link>
           </Button>
         </StatusCard>

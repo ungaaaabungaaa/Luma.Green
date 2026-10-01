@@ -5,8 +5,14 @@ import { HomeMotion } from "@/components/motion/home-motion";
 import { ClosingCta } from "@/components/site/closing-cta";
 import { ChainDiagram } from "@/components/site/home/chain-diagram";
 import { HomeHero } from "@/components/site/home/hero";
+import { HomeQuestions } from "@/components/site/home/home-questions";
+import { MaterialDirectory } from "@/components/site/home/material-directory";
+import { MaterialRecords } from "@/components/site/home/material-records";
+import { PickupJourney } from "@/components/site/home/pickup-journey";
 import { RoleBenefits } from "@/components/site/home/role-benefits";
+import { ShopWorkday } from "@/components/site/home/shop-workday";
 import { TrustPoints } from "@/components/site/home/trust-points";
+import { WeightPayment } from "@/components/site/home/weight-payment";
 import { WhyNow } from "@/components/site/home/why-now";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata, serializeJsonLd } from "@/lib/seo";
@@ -59,10 +65,16 @@ export default async function HomePage() {
       />
       <HomeMotion>
         <HomeHero />
+        <MaterialDirectory />
+        <PickupJourney />
         <ChainDiagram />
+        <ShopWorkday />
+        <WeightPayment />
         <RoleBenefits />
+        <MaterialRecords />
         <TrustPoints />
         <WhyNow />
+        <HomeQuestions />
         <ClosingCta />
       </HomeMotion>
     </>

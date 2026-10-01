@@ -2,7 +2,7 @@
 
 This harness renders the existing Luma.Green React components in Chromium.
 It does not copy their markup or change their styles. It uses the current
-production build's CSS and Noto fonts. The yellow provenance banner is added
+production build's CSS and Geist/Noto fonts. The yellow provenance banner is added
 by the documentation harness outside the application shell.
 
 All displayed accounts, applications, bookings, prices and report totals are
@@ -97,3 +97,13 @@ Six role home screens also have a `-phone` capture at 390 × 844 pixels to check
 | `yard-market`                 | `MarketPage` inside `AppShell`, viewport capture             |
 | `yard-trades`                 | `TradesPage` inside `AppShell`, viewport capture             |
 | `manufacturer-compliance`     | `CompliancePage` inside `AppShell`                           |
+
+## Loaded report chart evidence
+
+The `pilot:summary` adapter returns a typed synthetic summary with eight bookings
+and two material rows. The same `PilotNumbers`, `BookingOutcomeChart` and
+`MaterialWeightChart` components used by the app render these records. The capture
+script requires both SVG charts to have usable dimensions and visible bars before
+it writes any pilot screenshot. It also captures the full report in dark mode and
+at phone width. Separate outcome and material viewport screenshots keep the guide
+charts readable. These values are examples, not measured pilot results.

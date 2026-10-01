@@ -62,13 +62,16 @@ export function SolarPlanner({ between }: { between?: ReactNode }) {
       : "";
 
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-16 lg:gap-24">
       <div className="grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start">
         <section
           aria-labelledby="solar-details"
-          className="flex flex-col gap-6 rounded-2xl border bg-card p-5 sm:p-6 lg:sticky lg:top-24"
+          className="flex flex-col gap-6 rounded-xl border bg-card p-5 sm:p-6 lg:sticky lg:top-24"
         >
-          <h2 id="solar-details" className="text-xl font-semibold">
+          <h2
+            id="solar-details"
+            className="font-display text-xl font-semibold tracking-tight"
+          >
             {t("form.heading")}
           </h2>
           <SolarInputs
@@ -91,7 +94,10 @@ export function SolarPlanner({ between }: { between?: ReactNode }) {
           aria-labelledby="solar-estimate"
           className="flex flex-col gap-6"
         >
-          <h2 id="solar-estimate" className="text-xl font-semibold">
+          <h2
+            id="solar-estimate"
+            className="font-display text-xl font-semibold tracking-tight"
+          >
             {t("result.heading")}
           </h2>
           <SolarResultView
@@ -116,7 +122,7 @@ export function SolarPlanner({ between }: { between?: ReactNode }) {
           <ol className="flex flex-col gap-5">
             {nextSteps.map(({ key, icon: Icon }, index) => (
               <li key={key} className="flex items-start gap-4">
-                <span className="relative flex size-11 shrink-0 items-center justify-center rounded-full bg-accent text-primary">
+                <span className="relative flex size-11 shrink-0 items-center justify-center rounded-lg border bg-card text-foreground">
                   <Icon aria-hidden className="size-5" />
                   <span className="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground">
                     {format.number(index + 1)}
@@ -136,10 +142,13 @@ export function SolarPlanner({ between }: { between?: ReactNode }) {
         <section
           id="talk-to-us"
           aria-labelledby="solar-contact"
-          className="flex scroll-mt-24 flex-col gap-5 rounded-2xl border bg-card p-5 sm:p-6"
+          className="flex scroll-mt-24 flex-col gap-5 rounded-xl border bg-card p-5 sm:p-6"
         >
           <div className="flex flex-col gap-1">
-            <h2 id="solar-contact" className="text-xl font-semibold">
+            <h2
+              id="solar-contact"
+              className="font-display text-xl font-semibold tracking-tight"
+            >
               {t("contact.title")}
             </h2>
             <p className="text-muted-foreground">{t("contact.lead")}</p>

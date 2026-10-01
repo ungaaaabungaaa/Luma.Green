@@ -20,21 +20,17 @@ export async function Principles() {
   const t = await getTranslations("principles");
 
   return (
-    <section aria-labelledby="principles-heading" className="py-20 sm:py-28">
+    <section aria-labelledby="principles-heading" className="py-16 lg:py-24">
       <Container className="space-y-12">
         <SectionHeading
           id="principles-heading"
           title={t("heading")}
           intro={t("intro")}
         />
-        <ul className="grid gap-5 md:grid-cols-3">
+        <ul className="grid grid-flow-dense divide-y border-y md:grid-cols-3 md:divide-x md:divide-y-0 rtl:md:divide-x-reverse">
           {principles.map(({ key, icon: Icon }) => (
-            <li
-              data-reveal
-              key={key}
-              className="space-y-5 rounded-2xl border border-border bg-accent/50 p-7"
-            >
-              <span className="inline-flex size-12 items-center justify-center rounded-full border border-border text-primary">
+            <li data-reveal key={key} className="space-y-5 py-7 md:px-7">
+              <span className="inline-flex size-12 items-center justify-center rounded-lg border border-border text-primary">
                 <Icon aria-hidden className="size-5" />
               </span>
               <h3 className="text-xl font-semibold tracking-tight">

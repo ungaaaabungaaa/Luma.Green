@@ -68,7 +68,7 @@ function StockBody() {
   if (stock === undefined) return <ListSkeleton rows={4} />;
   return (
     <>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-4">
         <StatCard
           label={t("totalWeight")}
           value={format.weight(stock.totalGrams)}
@@ -83,7 +83,7 @@ function StockBody() {
         />
       </div>
       {stock.buyerKind ? (
-        <Button asChild size="lg" className="h-14 text-base sm:w-fit sm:px-6">
+        <Button asChild size="lg" className="h-12 text-base sm:w-fit sm:px-6">
           <Link href="/app/sell">
             <TagIcon aria-hidden className="size-5" />
             {t(`sellTo.${stock.buyerKind}`)}
@@ -124,7 +124,7 @@ function StockList({ stock }: { stock: Stock }) {
     }))
     .filter((group) => group.rows.length > 0);
   const list = (rows: StockRow[]) => (
-    <ul className="flex flex-col gap-3">
+    <ul className="flex flex-col overflow-hidden rounded-xl border border-border">
       {rows.map((row) => (
         <StockItem
           key={row.material.code}
@@ -160,7 +160,7 @@ function StockItem({ row, totalGrams }: { row: StockRow; totalGrams: number }) {
   const format = useFormat();
   const share = totalGrams > 0 ? Math.round((row.grams / totalGrams) * 100) : 0;
   return (
-    <li className="flex flex-col gap-3 rounded-2xl border bg-card p-4 shadow-sm">
+    <li className="flex flex-col gap-4 border-b border-border bg-card p-4 last:border-b-0 sm:p-5">
       <div className="flex items-center gap-3">
         <MaterialIcon family={row.material.family} />
         <div className="flex min-w-0 flex-1 flex-col">

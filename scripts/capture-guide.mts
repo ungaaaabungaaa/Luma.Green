@@ -12,9 +12,31 @@ if (!["localhost", "127.0.0.1"].includes(origin.hostname)) {
   );
 }
 const directory = "docs/user-guide/screenshots";
-const shots = [
+const shots: readonly (readonly [string, string, string?])[] = [
   ["public-home", "/"],
   ["public-home-dark", "/"],
+  [
+    "public-home-materials",
+    "/",
+    'section[aria-labelledby="materials-heading"]',
+  ],
+  ["public-home-pickup", "/", 'section[aria-labelledby="pickup-heading"]'],
+  ["public-home-shop", "/", 'section[aria-labelledby="shop-workday-heading"]'],
+  [
+    "public-home-payment",
+    "/",
+    'section[aria-labelledby="weight-payment-heading"]',
+  ],
+  [
+    "public-home-records",
+    "/",
+    'section[aria-labelledby="material-records-heading"]',
+  ],
+  [
+    "public-home-questions",
+    "/",
+    'section[aria-labelledby="home-questions-heading"]',
+  ],
   ["public-participants", "/participants"],
   ["public-participants-dark", "/participants"],
   ["public-arabic-dark", "/ar"],
@@ -37,10 +59,39 @@ await mkdir(directory, { recursive: true });
 const revision = execFileSync("git", ["rev-parse", "HEAD"], {
   encoding: "utf8",
 }).trim();
+const sharedSources = [
+  "src/app/globals.css",
+  "src/lib/fonts.ts",
+  "src/components/site/site-header.tsx",
+  "src/components/site/page-header.tsx",
+  "src/components/site/closing-cta.tsx",
+  "src/components/site/home/chain-diagram.tsx",
+  "src/components/site/home/role-benefits.tsx",
+  "src/components/site/home/hero.tsx",
+  "src/components/site/home/material-directory.tsx",
+  "src/components/site/home/pickup-journey.tsx",
+  "src/components/site/home/shop-workday.tsx",
+  "src/components/site/home/weight-payment.tsx",
+  "src/components/site/home/material-records.tsx",
+  "src/components/site/home/home-questions.tsx",
+  "messages/en.json",
+  "src/components/ui/button.tsx",
+  "public/images/materials-hall.webp",
+] as const;
+const sourceHashes = Object.fromEntries<string>(
+  await Promise.all(
+    sharedSources.map(async (file): Promise<[string, string]> => [
+      file,
+      createHash("sha256")
+        .update(await readFile(file))
+        .digest("hex"),
+    ]),
+  ),
+);
 const browser = await chromium.launch();
 const captures = [];
 try {
-  for (const [name, route] of shots) {
+  for (const [name, route, sectionSelector] of shots) {
     const page = await browser.newPage({
       viewport: name.startsWith("public-arabic")
         ? { width: 390, height: 844 }
@@ -77,22 +128,59 @@ try {
           .getByRole("status")
           .waitFor();
       }
+      if (sectionSelector) {
+        const sectionBounds = await page.locator(sectionSelector).boundingBox();
+        if (!sectionBounds || sectionBounds.height > 1600) {
+          throw new Error(
+            "Home section must fit in a bounded documentation image.",
+          );
+        }
+        // Keep the whole section below the sticky header so locator capture does
+        // not scroll a tall target beneath it or include a partial header.
+        await page.setViewportSize({
+          width: 1280,
+          height: Math.ceil(sectionBounds.height) + 160,
+        });
+        await page.locator(sectionSelector).evaluate((section) => {
+          const header = document.querySelector("header");
+          const offset = (header?.getBoundingClientRect().height ?? 0) + 16;
+          window.scrollTo(
+            0,
+            section.getBoundingClientRect().top + window.scrollY - offset,
+          );
+        });
+      }
       await page.evaluate(async () => {
         await document.fonts.ready;
         await Promise.all(
           [...document.images].map(async (image) => {
             const bounds = image.getBoundingClientRect();
-            if (
-              image.currentSrc &&
+            if (!(
               bounds.top < window.innerHeight &&
-              bounds.bottom > 0
-            )
-              await image.decode();
+              bounds.bottom > 0 &&
+              bounds.width > 0 &&
+              bounds.height > 0
+            )) {
+              return;
+            }
+
+            // Lazy images receive currentSrc after the scroll reaches them.
+            // decode() waits for that image, including its first request.
+            await image.decode();
+            if (!image.complete || image.naturalWidth === 0) {
+              throw new Error("A visible guide image did not load.");
+            }
           }),
         );
       });
       const path = `${directory}/${name}.png`;
-      await page.screenshot({ path, animations: "disabled", caret: "hide" });
+      if (sectionSelector) {
+        await page
+          .locator(sectionSelector)
+          .screenshot({ path, animations: "disabled", caret: "hide" });
+      } else {
+        await page.screenshot({ path, animations: "disabled", caret: "hide" });
+      }
       if (browserErrors.length > 0 || blockedRequests.length > 0) {
         throw new Error(
           `Capture ${route} had browser errors or external traffic`,
@@ -101,8 +189,11 @@ try {
       captures.push({
         browserErrors,
         blockedRequests,
+        sourceHashes,
         name,
         route,
+        sectionSelector,
+        captureKind: sectionSelector ? "section" : "viewport",
         path,
         url,
         revision,

@@ -1,25 +1,7 @@
-import {
-  AnvilIcon,
-  CpuIcon,
-  type LucideIcon,
-  MilkIcon,
-  NewspaperIcon,
-  ShirtIcon,
-  WineIcon,
-} from "lucide-react";
-
+import { MATERIAL_FAMILY_ICONS } from "@/components/app/material-family";
 import { cn } from "@/lib/utils";
 
 import type { Family } from "../../../convex/lib/catalogue";
-
-const FAMILY_ICONS: Record<Family, LucideIcon> = {
-  paper: NewspaperIcon,
-  plastic: MilkIcon,
-  metal: AnvilIcon,
-  glass: WineIcon,
-  ewaste: CpuIcon,
-  other: ShirtIcon,
-};
 
 /** One icon per material family, so a lot is recognisable at a glance. */
 export function MaterialIcon({
@@ -29,12 +11,12 @@ export function MaterialIcon({
   family: Family;
   size?: "sm" | "md";
 }) {
-  const Icon = FAMILY_ICONS[family];
+  const Icon = MATERIAL_FAMILY_ICONS[family];
   return (
     <span
       aria-hidden
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground",
+        "flex shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground",
         size === "md" ? "size-11" : "size-9",
       )}
     >

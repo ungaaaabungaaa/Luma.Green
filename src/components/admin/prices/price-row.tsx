@@ -27,7 +27,7 @@ export type PriceRowData = FunctionReturnType<
 
 /** The grid every row and the column header share on wide screens. */
 export const PRICE_COLUMNS =
-  "md:grid-cols-[minmax(0,1fr)_8.5rem_8.5rem_8rem_9rem]";
+  "xl:grid-cols-[minmax(0,1fr)_8.5rem_8.5rem_8rem_9rem]";
 
 const SAVE_ERRORS: Readonly<Record<string, string>> = {
   ...PRICE_PROBLEM_MESSAGES,
@@ -55,7 +55,7 @@ function PriceField({
     <div className="flex flex-col gap-1.5">
       <Label
         htmlFor={id}
-        className="text-xs font-normal text-muted-foreground md:sr-only"
+        className="text-xs font-normal text-muted-foreground xl:sr-only"
       >
         {label} ₹/kg<span className="sr-only"> for {material}</span>
       </Label>
@@ -77,7 +77,7 @@ function PriceField({
           }}
           aria-invalid={isInvalid || undefined}
           aria-describedby={describedBy}
-          className="h-9 ps-6 tabular-nums"
+          className="h-11 ps-6 tabular-nums"
         />
       </div>
     </div>
@@ -136,7 +136,7 @@ export function PriceRow({ row, city }: { row: PriceRowData; city: string }) {
     <form
       noValidate
       aria-label={name}
-      className={cn("grid gap-x-4 gap-y-2 py-3 md:items-center", PRICE_COLUMNS)}
+      className={cn("grid gap-x-4 gap-y-3 py-4 xl:items-center", PRICE_COLUMNS)}
       onSubmit={(event) => {
         event.preventDefault();
         void save();
@@ -153,7 +153,7 @@ export function PriceRow({ row, city }: { row: PriceRowData; city: string }) {
           {row.code}
         </span>
       </div>
-      <div className="grid grid-cols-2 gap-3 md:contents">
+      <div className="grid grid-cols-2 gap-3 xl:contents">
         <PriceField
           id={`${id}-floor`}
           label="Minimum"
@@ -178,11 +178,11 @@ export function PriceRow({ row, city }: { row: PriceRowData; city: string }) {
           ? "Not set yet"
           : `Changed ${formatWhen(row.updatedAt)}`}
       </p>
-      <div className="flex gap-2 md:justify-end">
+      <div className="flex gap-2 xl:justify-end">
         <Button
           type="submit"
           size="sm"
-          className="h-9 md:h-7"
+          className="h-9 xl:h-7"
           disabled={!isDirty || problem !== null || isSaving}
         >
           {isSaving ? "Saving…" : "Save"}
@@ -192,7 +192,7 @@ export function PriceRow({ row, city }: { row: PriceRowData; city: string }) {
             type="button"
             variant="ghost"
             size="sm"
-            className="h-9 md:h-7"
+            className="h-9 xl:h-7"
             disabled={isSaving}
             onClick={() => {
               setFloor(rupeesInput(row.floorPaise));
@@ -204,7 +204,7 @@ export function PriceRow({ row, city }: { row: PriceRowData; city: string }) {
         ) : null}
       </div>
       {problem ? (
-        <p id={errorId} className="text-xs text-destructive md:col-span-5">
+        <p id={errorId} className="text-xs text-destructive xl:col-span-5">
           {PRICE_PROBLEM_MESSAGES[problem]}
         </p>
       ) : null}

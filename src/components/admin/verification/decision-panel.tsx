@@ -139,10 +139,10 @@ export function DecisionPanel({
           The applicant sees it on their status screen.
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-col gap-2">
+      <CardContent className="flex flex-col gap-3">
         <Button
           size="lg"
-          className="h-11"
+          className="min-h-12"
           disabled={!canApprove}
           onClick={() => {
             setDecision("approve");
@@ -159,7 +159,7 @@ export function DecisionPanel({
         <Button
           size="lg"
           variant="outline"
-          className="h-11"
+          className="min-h-12"
           onClick={() => {
             setDecision("changes");
           }}
@@ -170,7 +170,7 @@ export function DecisionPanel({
         <Button
           size="lg"
           variant="destructive"
-          className="h-11"
+          className="min-h-12"
           onClick={() => {
             setDecision("reject");
           }}
@@ -252,7 +252,7 @@ function DecisionDialog({
             <DialogDescription>{copy.description}</DialogDescription>
           </DialogHeader>
           {copy.noteLabel ? (
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               <Label htmlFor="decision-note">{copy.noteLabel}</Label>
               <Textarea
                 id="decision-note"

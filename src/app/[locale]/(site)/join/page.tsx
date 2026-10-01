@@ -31,9 +31,9 @@ export default async function JoinPage() {
   return (
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
-      <Container className="flex flex-col gap-8 py-12 sm:py-16">
+      <Container className="flex flex-col gap-8 py-16 lg:py-24">
         <RoleCards />
-        <aside className="flex flex-col gap-1 rounded-2xl border bg-muted/40 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <aside className="flex flex-col gap-1 rounded-xl border bg-muted/40 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">
             <HomeIcon
               aria-hidden

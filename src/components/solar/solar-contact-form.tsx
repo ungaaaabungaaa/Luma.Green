@@ -134,7 +134,7 @@ function LiveContactForm({
     return (
       <div
         role="status"
-        className="flex flex-col items-start gap-3 rounded-xl bg-accent p-5"
+        className="flex flex-col items-start gap-3 rounded-xl border bg-muted/40 p-5"
       >
         <CircleCheckIcon aria-hidden className="size-7 text-primary" />
         <p className="text-lg font-semibold">
@@ -198,7 +198,7 @@ function LiveContactForm({
             placeholder="98765 43210"
             aria-invalid={errorKey("phone") ? true : undefined}
             aria-describedby="solar-contact-phone-note"
-            className="h-12 text-lg tracking-wide"
+            className="h-12 min-w-0 text-lg tracking-wide"
             {...register("phone")}
           />
         </div>

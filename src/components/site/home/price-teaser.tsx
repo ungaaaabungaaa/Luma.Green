@@ -101,7 +101,7 @@ function TeaserRow({ row }: { row: PriceRow }) {
   const Icon = FAMILY_ICONS[row.family];
   return (
     <li className="flex items-center gap-3 py-3">
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent text-primary">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted text-primary">
         <Icon aria-hidden className="size-4" />
       </span>
       <span className="flex min-w-0 flex-1 flex-col">
@@ -141,15 +141,15 @@ function TeaserCard({
 }) {
   const t = useTranslations("home.teaser");
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-primary/15 bg-card p-6 shadow-sm sm:p-7">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+    <div className="grid gap-5 rounded-xl border bg-card p-5 sm:p-6 lg:grid-cols-[1fr_2fr] lg:gap-x-12">
+      <div className="flex flex-col items-start gap-1">
         <h2 className="text-xl font-semibold tracking-tight">{t("title")}</h2>
         <p className="text-sm text-muted-foreground">{meta ?? t("place")}</p>
       </div>
       {children}
       <Link
         href="/prices"
-        className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 lg:col-start-2"
       >
         {t("seeAll")}
         <ArrowRightIcon aria-hidden className="size-4 rtl:rotate-180" />

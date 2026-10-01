@@ -1,30 +1,47 @@
-import { ArrowRightIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  FactoryIcon,
+  HandHelpingIcon,
+  HouseIcon,
+  RecycleIcon,
+  StoreIcon,
+  WarehouseIcon,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 import { HELP_ROLES, type HelpRole, ROLE_HELP } from "./content";
-import { HelpArt } from "./help-art";
+import { IconTile } from "./help-art";
+
+const roleIcons = {
+  household: HouseIcon,
+  kabadiwala: StoreIcon,
+  yard: WarehouseIcon,
+  recycler: RecycleIcon,
+  manufacturer: FactoryIcon,
+  saathi: HandHelpingIcon,
+} as const;
 
 /**
- * One card per role, each with its picture, leading to its help page. A
+ * One card per role, each with its role icon, leading to its help page. A
  * compact row on phones, so all six fit in a couple of screens.
  */
 export function RoleCards() {
   const t = useTranslations("help");
   return (
-    <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+    <ul className="grid grid-flow-dense gap-4 md:grid-cols-2">
       {HELP_ROLES.map((role) => (
         <li
           key={role}
           data-reveal
-          className="group relative flex overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:flex-col"
+          className="group relative flex gap-4 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50"
         >
-          <div className="flex w-24 shrink-0 items-center justify-center border-e border-border bg-accent/70 p-2 sm:w-auto sm:border-e-0 sm:border-b sm:p-5">
-            <HelpArt name={ROLE_HELP[role].art} className="sm:max-w-44" />
+          <div className="ps-5 pt-5 sm:ps-6 sm:pt-6">
+            <IconTile icon={roleIcons[role]} size="sm" />
           </div>
-          <div className="flex min-w-0 flex-1 flex-col gap-3 p-4 sm:p-6">
+          <div className="flex min-w-0 flex-1 flex-col gap-3 p-5 ps-0 sm:p-6 sm:ps-0">
             <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
               <Link
                 href={`/help/${role}`}
@@ -60,7 +77,7 @@ export function OtherRoleLinks({ current }: { current: HelpRole }) {
           <Link
             href={`/help/${role}`}
             className={cn(
-              "inline-flex min-h-11 items-center rounded-full border bg-card px-4 text-sm font-medium outline-none",
+              "inline-flex min-h-11 items-center rounded-lg border bg-card px-4 text-sm font-medium outline-none",
               "hover:border-primary hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50",
             )}
           >

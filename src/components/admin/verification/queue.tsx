@@ -54,7 +54,7 @@ export function VerificationQueue() {
   );
   if (queue === undefined) {
     return (
-      <div className="flex max-w-6xl flex-col gap-6">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
         {header}
         <ListSkeleton rows={3} />
       </div>
@@ -66,11 +66,14 @@ export function VerificationQueue() {
     (item) => item.status === "changes_requested",
   );
   return (
-    <div className="flex max-w-6xl flex-col gap-8">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-8">
       {header}
       <section aria-labelledby="in-review" className="flex flex-col gap-3">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 id="in-review" className="text-lg font-semibold">
+          <h2
+            id="in-review"
+            className="font-display text-lg font-semibold tracking-tight"
+          >
             In review
           </h2>
           <ReviewTally items={inReview} now={now} />
@@ -91,7 +94,10 @@ export function VerificationQueue() {
           className="flex flex-col gap-3"
         >
           <div className="flex flex-col gap-1">
-            <h2 id="with-applicant" className="text-lg font-semibold">
+            <h2
+              id="with-applicant"
+              className="font-display text-lg font-semibold tracking-tight"
+            >
               With the applicant
             </h2>
             <p className="text-sm text-muted-foreground">
@@ -180,7 +186,7 @@ function QueueList({
 }) {
   return (
     <>
-      <div className="hidden overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 md:block">
+      <div className="hidden overflow-hidden rounded-xl border bg-card md:block">
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-transparent">
@@ -228,9 +234,9 @@ function QueueList({
         {items.map((item) => (
           <li
             key={item.id}
-            className="flex flex-col gap-3 rounded-xl bg-card p-4 ring-1 ring-foreground/10"
+            className="flex flex-col gap-4 rounded-xl border bg-card p-5"
           >
-            <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-medium text-primary">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-medium text-foreground">
               <RoleLabel item={item} />
               <WaitBadge item={item} now={now} />
             </div>

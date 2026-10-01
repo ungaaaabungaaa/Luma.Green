@@ -86,7 +86,7 @@ export function SavingsChart({
           {t("title", { years: bars.length })}
         </span>
         <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
-          <LegendItem swatch="bg-accent0" label={t("legendPaying")} />
+          <LegendItem swatch="bg-chart-3" label={t("legendPaying")} />
           <LegendItem swatch="bg-primary" label={t("legendPaid")} />
           <LegendItem
             swatch="border border-dashed border-muted-foreground bg-muted-foreground/10"
@@ -165,8 +165,8 @@ export function SavingsChart({
                 key={bar.year}
                 d={bar.path}
                 className={cn(
-                  "transition-opacity",
-                  bar.paidBack ? "fill-primary" : "fill-brand-500",
+                  "motion-safe:transition-opacity",
+                  bar.paidBack ? "fill-primary" : "fill-chart-3",
                   active !== null && active !== index && "opacity-50",
                 )}
               />
@@ -228,7 +228,7 @@ export function SavingsChart({
       </div>
 
       <details className="rounded-lg border px-3 py-2 text-sm">
-        <summary className="cursor-pointer font-medium outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
+        <summary className="min-h-11 cursor-pointer py-3 font-medium outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
           {t("table")}
         </summary>
         <Table className="mt-2">

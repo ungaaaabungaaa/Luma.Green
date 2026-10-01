@@ -14,6 +14,7 @@ describe("barPercent", () => {
     expect(barPercent(1, 100_000)).toBe(1);
     expect(barPercent(0, 400)).toBe(0);
     expect(barPercent(5, 0)).toBe(0);
+    expect(barPercent(500, 400)).toBe(100);
   });
 });
 

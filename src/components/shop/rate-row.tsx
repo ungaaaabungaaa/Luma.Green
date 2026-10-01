@@ -91,7 +91,7 @@ export function RateRow({ row }: { row: RateCardRow }) {
       <form
         noValidate
         onSubmit={(event) => void onSubmit(event)}
-        className="flex flex-col gap-3 rounded-2xl border bg-card p-4 shadow-sm"
+        className="flex flex-col gap-3 rounded-xl border bg-card p-4"
       >
         <div className="flex items-center gap-3">
           <MaterialIcon family={row.material.family} />

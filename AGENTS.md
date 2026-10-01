@@ -105,6 +105,13 @@ allows this there and nowhere else.
 or the `brand-*` scale. A raw hex in a component is a bug — see
 `.claude/skills/design-system`.
 
+The shared visual system is documented in [designer system](docs/design/designer-system.md).
+Use neutral light/dark surfaces, Geist display with Noto script coverage, shared
+Lucide icons and shared control sizes. Recharts is available through the vendored
+shadcn chart primitive; charts need real data and readable text/table equivalents.
+The installed `gpt-taste-skill` is design guidance, not permission to invent
+statistics, testimonials, user records or device mockups.
+
 Native shell controls use React Native primitives or OS menus and the shared
 message catalogues. Their config modules validate public app settings; backend
 secrets remain in Convex. See [native apps](docs/architecture/native-apps.md).

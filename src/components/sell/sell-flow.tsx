@@ -56,7 +56,7 @@ function LiveSellFlow() {
   const state = useSellState();
   if (!state.isLoaded) return <SellSkeleton />;
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-8">
       <StepIndicator step={state.step} />
       <CurrentStep state={state} />
       <StepActions state={state} />
@@ -168,7 +168,7 @@ function CurrentStep({ state }: { state: SellState }) {
               onEdit={state.moveTo}
             />
           ) : (
-            <Skeleton className="h-64 w-full rounded-2xl" />
+            <Skeleton className="h-64 w-full rounded-xl" />
           )}
         </StepFrame>
       );
@@ -234,7 +234,10 @@ function StepActions({ state }: { state: SellState }) {
               state.tryWhen();
               document
                 .querySelector(`[data-field="${CSS.escape(problems[0])}"]`)
-                ?.scrollIntoView({ behavior: "smooth", block: "center" });
+                ?.scrollIntoView({
+                  behavior: "instant",
+                  block: "center",
+                });
             }}
           />
         </ActionBar>
@@ -258,7 +261,7 @@ function NextButton({
   return (
     <Button
       size="lg"
-      className="h-12 shrink-0 px-5 text-base"
+      className="min-h-12 shrink-0 text-sm"
       disabled={isDisabled}
       onClick={onClick}
     >

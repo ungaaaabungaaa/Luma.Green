@@ -33,27 +33,29 @@ export function HelpHero({
   return (
     <div
       data-parallax-scene
-      className="relative isolate overflow-hidden border-b border-border bg-muted/60"
+      className="relative isolate overflow-hidden border-b border-border bg-background"
     >
-      <Container className="relative flex flex-col gap-8 py-10 sm:py-14">
+      <Container className="relative flex flex-col gap-8 py-16 lg:py-24">
         {breadcrumbs}
         <div
           data-reveal
           className={cn(
             "grid items-center gap-8 md:gap-10",
             artLayout === "photo"
-              ? "md:grid-cols-[minmax(0,1fr)_minmax(0,30rem)]"
+              ? "lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]"
               : "md:grid-cols-[1fr_auto]",
           )}
         >
           <div className="flex min-w-0 flex-col gap-5">
             {eyebrow ? (
-              <p className="text-sm font-semibold text-primary">{eyebrow}</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                {eyebrow}
+              </p>
             ) : null}
-            <h1 className="max-w-3xl font-display text-4xl leading-tight font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl font-display text-4xl leading-[1.12] font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
               {title}
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-pretty text-muted-foreground">
+            <p className="max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
               {lead}
             </p>
           </div>
@@ -61,8 +63,8 @@ export function HelpHero({
             <div
               className={cn(
                 artLayout === "photo"
-                  ? "w-full max-w-lg min-w-0 justify-self-center"
-                  : "w-40 shrink-0 rounded-full border border-border bg-background/70 p-4 md:w-64 md:p-6",
+                  ? "w-full max-w-lg min-w-0 justify-self-center [&>figure>div]:aspect-[2/1]"
+                  : "w-24 shrink-0 md:w-32",
                 !artOnPhones && "hidden md:block",
                 artOnPhones &&
                   artLayout === "illustration" &&
