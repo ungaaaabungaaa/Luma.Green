@@ -10,7 +10,7 @@ possible.
 
 ## The three steps
 
-1. **Snap.** Take one or more photos. The AI returns the materials it sees and
+1. **Snap (optional).** Take one photo, or select materials manually. The AI returns the materials it sees and
    a kilogram range for each (see
    [architecture/ai-estimation.md](../architecture/ai-estimation.md)). The
    household can correct the kilograms. A price range is shown from the fallback
@@ -57,12 +57,12 @@ Full routing and canonical rules: [architecture/urls.md](../architecture/urls.md
 
 ## What we keep, and for how long
 
-| Data                   | Why                               | Kept                                                              |
-| ---------------------- | --------------------------------- | ----------------------------------------------------------------- |
-| Phone number           | Confirm the booking, send updates | While the household has bookings in the last 12 months            |
-| Pickup address and pin | So the kabadiwala can find them   | 12 months after the booking                                       |
-| Photos                 | Estimate; improve the model       | 90 days, then deleted (**open**: keep for training with consent?) |
-| Estimate vs weighed kg | Measure and improve accuracy      | Kept, without the phone number, for analysis                      |
+| Data                          | Why                                       | Kept                                                                            |
+| ----------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------- |
+| Phone number                  | Confirm the booking, send updates         | While the household has bookings in the last 12 months                          |
+| Pickup address and pin        | So the kabadiwala can find them           | 12 months after the booking                                                     |
+| Photos                        | Optional AI estimate                      | Transient only; Luma.Green does not store the image                             |
+| Reviewed basket vs weighed kg | Compare submitted estimates with receipts | Saved through the normal booking; this does not measure original model accuracy |
 
 Only the assigned kabadiwala sees the phone number and address, and only after
 accepting.
@@ -77,5 +77,5 @@ accepting.
 ## Open
 
 1. What recycle points are worth and what they redeem for.
-2. Whether to keep household photos for model training (needs consent).
+2. Whether a separate consented study should retain photos and original model output for accuracy evaluation. The current photo flow stores neither.
 3. The dispatch timeout (15 minutes is a guess — measure it in the pilot).

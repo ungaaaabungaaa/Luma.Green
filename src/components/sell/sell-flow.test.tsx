@@ -99,6 +99,7 @@ const ANSWERS: Partial<Record<string, unknown>> = {
 };
 
 vi.mock("convex/react", () => ({
+  useAction: () => vi.fn(),
   useConvexAuth: () => ({
     isLoading: false,
     isAuthenticated: convex.isAuthenticated,

@@ -302,6 +302,18 @@ export default defineSchema({
     sentAt: v.array(v.number()),
   }).index("by_phone_hash", ["phoneHash"]),
 
+  /** Short-lived hashed request counters only. No photos or model responses. */
+  photoEstimateQuota: defineTable({
+    key: v.literal("global"),
+    reservations: v.array(
+      v.object({
+        at: v.number(),
+        deviceHash: v.string(),
+        phoneHash: v.optional(v.string()),
+      }),
+    ),
+  }).index("by_key", ["key"]),
+
   // --- Stock and trade --------------------------------------------------------
 
   /** Stock of one material at one business. */

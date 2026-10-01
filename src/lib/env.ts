@@ -25,7 +25,6 @@ const clientSchema = z.object({
   NEXT_PUBLIC_POSTHOG_KEY: z.string().optional(),
   NEXT_PUBLIC_POSTHOG_HOST: optionalUrl,
   NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
-  NEXT_PUBLIC_MAPBOX_TOKEN: z.string().optional(),
 });
 
 export const clientEnv = clientSchema.parse({
@@ -35,7 +34,6 @@ export const clientEnv = clientSchema.parse({
   NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
   NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
   NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
-  NEXT_PUBLIC_MAPBOX_TOKEN: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
 });
 
 export type ClientEnv = z.infer<typeof clientSchema>;
@@ -52,15 +50,10 @@ const serverSchema = z.object({
     z.string().min(32).optional(),
   ),
   BETTER_AUTH_URL: optionalUrl,
-  RESEND_API_KEY: z.string().optional(),
   OPENROUTER_API_KEY: z.string().optional(),
-  RAZORPAY_KEY_ID: z.string().optional(),
-  RAZORPAY_KEY_SECRET: z.string().optional(),
+  OPENROUTER_MODEL: z.string().optional(),
+  PHOTO_ESTIMATE_DAILY_LIMIT: z.string().optional(),
   MSG91_AUTH_KEY: z.string().optional(),
-  R2_ACCOUNT_ID: z.string().optional(),
-  R2_ACCESS_KEY_ID: z.string().optional(),
-  R2_SECRET_ACCESS_KEY: z.string().optional(),
-  R2_BUCKET: z.string().optional(),
   SENTRY_AUTH_TOKEN: z.string().optional(),
   SENTRY_ORG: z.string().optional(),
   SENTRY_PROJECT: z.string().optional(),
@@ -79,4 +72,21 @@ export function serverEnv(): ServerEnv {
   }
   memo.value ??= serverSchema.parse(process.env);
   return memo.value;
+}
+
+/** Convex action configuration, read on each request; blank or invalid means manual-only. */
+export function photoEstimateEnv() {
+  const quota = process.env.PHOTO_ESTIMATE_DAILY_LIMIT;
+  const parsed = z
+    .object({
+      apiKey: z.string().trim().min(1),
+      model: z.string().trim().min(1).max(200),
+      dailyLimit: z.coerce.number().int().min(1).max(1000),
+    })
+    .safeParse({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      model: process.env.OPENROUTER_MODEL,
+      dailyLimit: quota === undefined || quota.trim() === "" ? "100" : quota,
+    });
+  return parsed.success ? parsed.data : undefined;
 }

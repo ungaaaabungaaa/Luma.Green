@@ -14,6 +14,7 @@ import { ActionBar } from "./action-bar";
 import { BasketStep } from "./basket-step";
 import { ConfirmStep } from "./confirm-step";
 import { isComplete, previousStep, totalGrams, whenProblems } from "./draft";
+import { PhotoEstimate } from "./photo-estimate";
 import { ShopStep } from "./shop-step";
 import {
   ErrorBoundary,
@@ -85,6 +86,13 @@ function CurrentStep({ state }: { state: SellState }) {
           lead={t("basket.lead")}
           {...frame}
         >
+          <PhotoEstimate
+            materials={state.scrap}
+            prices={state.prices}
+            onApply={(items) => {
+              state.change({ items, shopId: undefined });
+            }}
+          />
           <BasketStep
             materials={state.scrap}
             prices={state.prices}

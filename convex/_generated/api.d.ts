@@ -8,6 +8,9 @@
  * @module
  */
 
+import type * as lib_photoProvider from "../lib/photoProvider.js";
+import type * as lib_photoEstimates from "../lib/photoEstimates.js";
+import type * as photoEstimates from "../photoEstimates.js";
 import type * as admin from "../admin.js";
 import type * as adminPrices from "../adminPrices.js";
 import type * as applicationFiles from "../applicationFiles.js";
@@ -60,6 +63,9 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  "lib/photoProvider": typeof lib_photoProvider;
+  "lib/photoEstimates": typeof lib_photoEstimates;
+  "photoEstimates": typeof photoEstimates;
   admin: typeof admin;
   adminPrices: typeof adminPrices;
   applicationFiles: typeof applicationFiles;
