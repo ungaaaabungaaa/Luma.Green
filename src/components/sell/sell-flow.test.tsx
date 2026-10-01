@@ -88,7 +88,12 @@ const SHOPS = [
 /** What each query returns, by function name; anything else is loading. */
 const ANSWERS: Partial<Record<string, unknown>> = {
   "catalogue:materials": MATERIALS,
-  "catalogue:priceBoard": BOARD,
+  "catalogue:priceQuotes": {
+    rows: BOARD.rows.map((row) => ({
+      code: row.code,
+      paisePerKg: row.fallbackPaise,
+    })),
+  },
   "households:shops": SHOPS,
   "identity:me": {
     kind: "member",

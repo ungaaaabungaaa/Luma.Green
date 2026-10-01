@@ -27,18 +27,18 @@ Legend: **✅ implemented** · **🟡 partly** · **🔑 needs a human** · **�
 
 ## Product services
 
-| Service                 | Status | Notes                                                                                                   |
-| ----------------------- | ------ | ------------------------------------------------------------------------------------------------------- |
-| Better Auth (on Convex) | 🟡     | Implemented with onboarding, per-number OTP limits and recovery paths ([auth](../architecture/auth.md)) |
-| MSG91 (SMS codes)       | 🔑     | OTP and status-message code implemented; account, sender and template approval remain external checks   |
-| OpenRouter (AI)         | 🔑     | Photo estimates implemented; needs key, evaluated vision model and a hard spending limit                |
-| Mapbox                  | ⬜     | Not used. Browser location and distance calculations need no map account                                |
-| PostHog                 | ⏸      | Deferred until the partner decision ([ADR 0012](../decisions/0012-pilot-analytics-in-convex.md))        |
-| Sentry                  | ⏸      | Same. Turn on first when the decision is made                                                           |
-| Resend (email)          | ⬜     | Not needed in the pilot                                                                                 |
-| Razorpay                | ⬜     | Escrow after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md))                      |
-| Cloudflare R2           | ⬜     | Only if files outgrow Convex storage or need expiring links                                             |
-| WhatsApp Business       | ⬜     | Household channel after the pilot                                                                       |
+| Service                 | Status | Notes                                                                                                                  |
+| ----------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
+| Better Auth (on Convex) | 🟡     | Implemented with onboarding, per-number OTP limits and recovery paths ([auth](../architecture/auth.md))                |
+| MSG91 (SMS codes)       | 🔑     | OTP and status-message code implemented; account, sender and template approval remain external checks                  |
+| OpenRouter (AI)         | 🔑     | Optional paid adapter; alternatively use the [self-hosted endpoint](low-cost-operation.md). Both need model evaluation |
+| Mapbox                  | ⬜     | Not used. Browser location and distance calculations need no map account                                               |
+| PostHog                 | ⏸      | Deferred until the partner decision ([ADR 0012](../decisions/0012-pilot-analytics-in-convex.md))                       |
+| Sentry                  | ⏸      | Same. Turn on first when the decision is made                                                                          |
+| Resend (email)          | ⬜     | Not needed in the pilot                                                                                                |
+| Razorpay                | ⬜     | Escrow after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md))                                     |
+| Cloudflare R2           | ⬜     | Only if files outgrow Convex storage or need expiring links                                                            |
+| WhatsApp Business       | ⬜     | Household channel after the pilot                                                                                      |
 
 ### SMS templates to register
 

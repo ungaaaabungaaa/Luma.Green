@@ -24,8 +24,8 @@ vi.mock("convex/react", () => ({
           city: "Bengaluru",
           date: "2026-10-02",
           rows: [
-            { code: "PLASTIC-PET", todayPaise: 2000 },
-            { code: "PAPER-NEWS", todayPaise: 1400 },
+            { code: "PLASTIC-PET", paisePerKg: 2000 },
+            { code: "PAPER-NEWS", paisePerKg: 1400 },
           ],
         },
 }));

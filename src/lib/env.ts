@@ -53,6 +53,10 @@ const serverSchema = z.object({
   OPENROUTER_API_KEY: z.string().optional(),
   OPENROUTER_MODEL: z.string().optional(),
   PHOTO_ESTIMATE_DAILY_LIMIT: z.string().optional(),
+  PHOTO_ESTIMATE_PROVIDER: z.string().optional(),
+  PHOTO_ESTIMATE_ENDPOINT: z.string().optional(),
+  PHOTO_ESTIMATE_API_KEY: z.string().optional(),
+  PHOTO_ESTIMATE_MODEL: z.string().optional(),
   MSG91_AUTH_KEY: z.string().optional(),
   SENTRY_AUTH_TOKEN: z.string().optional(),
   SENTRY_ORG: z.string().optional(),
@@ -74,18 +78,62 @@ export function serverEnv(): ServerEnv {
   return memo.value;
 }
 
+/** Operator-controlled HTTPS gateway. Never accept an endpoint from an action argument. */
+const photoEndpoint = z.url().refine((value) => {
+  let url: URL;
+  try {
+    url = new URL(value);
+  } catch {
+    return false;
+  }
+  return (
+    url.protocol === "https:" &&
+    !url.username &&
+    !url.password &&
+    !url.search &&
+    !url.hash &&
+    !value.includes("\\") &&
+    url.pathname.endsWith("/v1/chat/completions") &&
+    !url.hostname.startsWith("[") &&
+    !/^[\d.]+$/.test(url.hostname) &&
+    url.hostname.includes(".") &&
+    !/\.(localhost|local|internal)$/.test(url.hostname)
+  );
+});
+
 /** Convex action configuration, read on each request; blank or invalid means manual-only. */
 export function photoEstimateEnv() {
   const quota = process.env.PHOTO_ESTIMATE_DAILY_LIMIT;
+  const configuredProvider = process.env.PHOTO_ESTIMATE_PROVIDER?.trim();
+  const provider =
+    configuredProvider === ""
+      ? "openrouter"
+      : (configuredProvider ?? "openrouter");
+  const isSelfHosted = provider === "self-hosted";
   const parsed = z
     .object({
-      apiKey: z.string().trim().min(1),
+      provider: z.enum(["openrouter", "self-hosted"]),
+      endpoint: photoEndpoint,
+      apiKey: z
+        .string()
+        .trim()
+        .min(1)
+        .max(4096)
+        .regex(/^[^\r\n]+$/),
       model: z.string().trim().min(1).max(200),
       dailyLimit: z.coerce.number().int().min(1).max(1000),
     })
     .safeParse({
-      apiKey: process.env.OPENROUTER_API_KEY,
-      model: process.env.OPENROUTER_MODEL,
+      provider,
+      endpoint: isSelfHosted
+        ? process.env.PHOTO_ESTIMATE_ENDPOINT
+        : "https://openrouter.ai/api/v1/chat/completions",
+      apiKey: isSelfHosted
+        ? process.env.PHOTO_ESTIMATE_API_KEY
+        : process.env.OPENROUTER_API_KEY,
+      model: isSelfHosted
+        ? process.env.PHOTO_ESTIMATE_MODEL
+        : process.env.OPENROUTER_MODEL,
       dailyLimit: quota === undefined || quota.trim() === "" ? "100" : quota,
     });
   return parsed.success ? parsed.data : undefined;

@@ -10,6 +10,7 @@ import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
+import neighbourhoodCollection from "../../../../public/images/neighbourhood-collection.webp";
 import { Container } from "../container";
 import { PriceTeaser } from "./price-teaser";
 
@@ -71,7 +72,7 @@ export async function HomeHero() {
         <div className="flex min-w-0 flex-col gap-6">
           <PriceTeaser />
           <Image
-            src="/images/neighbourhood-collection.webp"
+            src={neighbourhoodCollection}
             alt=""
             width={960}
             height={640}

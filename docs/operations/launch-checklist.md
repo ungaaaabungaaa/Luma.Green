@@ -44,7 +44,11 @@ provider acceptance and handset delivery separately; there is no automatic retry
 
 ## Optional photo estimates
 
-Create an OpenRouter account only if you want the photo estimate feature.
+Choose either a self-hosted vision endpoint or OpenRouter. The
+[low-cost operation guide](low-cost-operation.md) has the self-hosted gateway
+and environment checklist; this route needs no OpenRouter account.
+
+For the OpenRouter route, create an account.
 Choose a vision model that supports structured output, test it on representative
 scrap photos, and set a hard spending limit on the API key.
 
@@ -55,7 +59,7 @@ Set these on the Convex deployment:
 - `PHOTO_ESTIMATE_DAILY_LIMIT`: an optional lower daily request ceiling.
 
 The account is not needed for manual material entry. Provider execution and
-model accuracy must be checked with your account before launch.
+model accuracy must be checked with the selected endpoint before launch.
 
 ## Services that are not required
 

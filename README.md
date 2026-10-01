@@ -282,18 +282,18 @@ features still need signed store releases. See the [architecture](docs/architect
 
 ## Tech stack
 
-| Layer     | Choice                                                                                                                                                               |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                              |
-| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                             |
-| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                           |
-| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                          |
-| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                        |
-| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                             |
-| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                      |
-| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                |
-| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                              |
-| Waiting   | MSG91 and OpenRouter: implementation ready for account setup and provider checks. PostHog and Sentry are optional. Maps use browser location. Payments remain a demo |
+| Layer     | Choice                                                                                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                        |
+| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                                       |
+| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                                     |
+| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                    |
+| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                  |
+| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                                       |
+| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                                |
+| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                          |
+| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                        |
+| Waiting   | MSG91 and optional AI endpoint: implementation ready for account setup and provider checks. PostHog and Sentry are optional. Maps use browser location. Payments remain a demo |
 
 ## Docs
 
@@ -342,9 +342,10 @@ of the Bengaluru pilot on 13–20 October 2026. See the
   businesses is simulated.
 - SMS requires approved MSG91 templates and Convex configuration. Only explicit
   development mode uses demo codes or log delivery. Local provider tests use mocks.
-- The optional AI photo estimate needs an OpenRouter key and an evaluated model;
+- The optional AI photo estimate uses an evaluated model through OpenRouter or a
+  self-hosted endpoint ([cost and setup guide](docs/operations/low-cost-operation.md));
   rupee amounts always come from the price tables
-  ([ADR 0011](docs/decisions/0011-ai-estimates-priced-by-our-tables.md)).
+  ([ADR 0015](docs/decisions/0015-bounded-photo-cache-and-selectable-inference.md)).
 - Documents in the demo applications are generated samples.
 
 **Next**: the [roadmap](docs/delivery/roadmap.md), and the list at the end of

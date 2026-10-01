@@ -52,9 +52,9 @@ export function NewListingForm({
 }) {
   const t = useTranslations("market.sell.form");
   const items = useQuery(api.market.sellable);
-  const board = useQuery(api.catalogue.priceBoard, { city });
+  const board = useQuery(api.catalogue.priceQuotes, { city, source: "market" });
   const todayPrices = useMemo(
-    () => new Map(board?.rows.map((row) => [row.code, row.todayPaise])),
+    () => new Map(board?.rows.map((row) => [row.code, row.paisePerKg])),
     [board],
   );
 

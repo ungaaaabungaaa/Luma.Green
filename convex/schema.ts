@@ -329,6 +329,7 @@ export default defineSchema({
   /** Short-lived hashed request counters only. No photos or model responses. */
   photoEstimateQuota: defineTable({
     key: v.literal("global"),
+    cleanupScheduledAt: v.optional(v.number()),
     reservations: v.array(
       v.object({
         at: v.number(),

@@ -79,6 +79,7 @@ async function attach(
 
 afterEach(() => {
   vi.unstubAllEnvs();
+  vi.restoreAllMocks();
 });
 
 describe("signed out", () => {
@@ -95,6 +96,39 @@ describe("signed out", () => {
 });
 
 describe("a kabadiwala's application", () => {
+  it("does not write unchanged drafts, including empty saves and reordered keys", async () => {
+    const t = setup();
+    const ramesh = await applicant(t);
+    const id = await ramesh.mutation(api.applications.start, {
+      kind: "kabadiwala",
+      ...consent,
+    });
+    const initial = await t.run((ctx) => ctx.db.get("applications", id));
+    vi.spyOn(Date, "now").mockReturnValue(initial!.updatedAt + 1000);
+    await ramesh.mutation(api.applications.saveDraft, {});
+    expect(await t.run((ctx) => ctx.db.get("applications", id))).toEqual(
+      initial,
+    );
+
+    await ramesh.mutation(api.applications.saveDraft, { kabadiwala: shop });
+    const saved = await t.run((ctx) => ctx.db.get("applications", id));
+    expect(saved!.updatedAt).toBe(initial!.updatedAt + 1000);
+    vi.spyOn(Date, "now").mockReturnValue(initial!.updatedAt + 2000);
+    const { shopName, ...otherFields } = shop;
+    await ramesh.mutation(api.applications.saveDraft, {
+      kabadiwala: { shopName, ...otherFields },
+    });
+    expect(await t.run((ctx) => ctx.db.get("applications", id))).toEqual(saved);
+
+    await ramesh.mutation(api.applications.saveDraft, {
+      kabadiwala: { ...shop, shopName: "New shop name" },
+    });
+    expect(await t.run((ctx) => ctx.db.get("applications", id))).toMatchObject({
+      updatedAt: initial!.updatedAt + 2000,
+      kabadiwala: { shopName: "New shop name", ownerName: shop.ownerName },
+    });
+  });
+
   it("goes from draft to submitted, keeping a copy of what was sent", async () => {
     const t = setup();
     const ramesh = await applicant(t);

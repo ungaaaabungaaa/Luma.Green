@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
+    // One output format avoids duplicate transforms. Static image imports use
+    // content-hashed URLs with immutable caching; private files bypass this.
+    formats: ["image/webp"],
+    maximumDiskCacheSize: 64 * 1024 * 1024,
   },
   async headers() {
     return [

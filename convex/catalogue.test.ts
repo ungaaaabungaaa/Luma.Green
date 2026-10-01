@@ -5,7 +5,8 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { api } from "./_generated/api";
 import { convexModules, registerAuth, signIn } from "./lib/auth.testing";
-import { catalogueEntry } from "./lib/catalogue";
+import { CATALOGUE, catalogueEntry } from "./lib/catalogue";
+import { shiftDate } from "./lib/dates";
 import { indiaToday } from "./lib/onboarding";
 import schema from "./schema";
 
@@ -193,5 +194,142 @@ describe("household preview prices", () => {
       city: "Chennai",
     });
     expect(missing.rows[0]?.fallbackPaise).toBeNull();
+  });
+});
+
+async function seedQuoteHistory(t: ReturnType<typeof world>) {
+  await t.run(async (ctx) => {
+    for (const [index, entry] of CATALOGUE.entries()) {
+      await ctx.db.insert("materials", {
+        code: entry.code,
+        family: entry.family,
+        stage: entry.stage,
+        names: entry.names,
+        co2eFactor: entry.co2eFactor,
+        active: true,
+        sortOrder: index,
+      });
+      await ctx.db.insert("referencePrices", {
+        city: "Bengaluru",
+        materialCode: entry.code,
+        floorPaise: 1000,
+        fallbackPaise: 1400,
+        updatedAt: Date.now(),
+      });
+      for (let day = -29; day <= 0; day += 1) {
+        await ctx.db.insert("marketPrices", {
+          city: "Bengaluru",
+          materialCode: entry.code,
+          date: shiftDate(indiaToday(), day),
+          paisePerKg: 2200 + day,
+        });
+      }
+    }
+  });
+}
+
+describe("compact form quotes", () => {
+  it("reads at most two documents per material even with a full month of history", async () => {
+    const t = convexTest({
+      schema,
+      modules,
+      transactionLimits: { documentsRead: CATALOGUE.length * 2 },
+    });
+    await seedQuoteHistory(t);
+    for (const source of ["fallback", "market"] as const) {
+      const result = await t.query(api.catalogue.priceQuotes, {
+        city: "Bengaluru",
+        source,
+      });
+      expect(result.rows).toHaveLength(CATALOGUE.length);
+      expect(result.rows[0]).toEqual({
+        code: CATALOGUE[0].code,
+        paisePerKg: source === "fallback" ? 1400 : 2200,
+      });
+    }
+    // A chart query needs the month; forms must stay within the lower budget.
+    await expect(
+      t.query(api.catalogue.priceBoard, { city: "Bengaluru" }),
+    ).rejects.toThrow("Scanned too many documents");
+  });
+
+  it("matches full-board values with under a tenth of its JSON payload", async () => {
+    const t = convexTest(schema, modules);
+    await seedQuoteHistory(t);
+    const board = await t.query(api.catalogue.priceBoard, {
+      city: "Bengaluru",
+    });
+    expect(board.rows.every((row) => row.series.length === 30)).toBe(true);
+    for (const source of ["fallback", "market"] as const) {
+      const compact = await t.query(api.catalogue.priceQuotes, {
+        city: "Bengaluru",
+        source,
+      });
+      expect(compact.rows).toEqual(
+        board.rows.map((row) => ({
+          code: row.code,
+          paisePerKg:
+            source === "fallback" ? row.fallbackPaise : row.todayPaise,
+        })),
+      );
+      expect(
+        new TextEncoder().encode(JSON.stringify(compact)).length,
+      ).toBeLessThan(
+        new TextEncoder().encode(JSON.stringify(board)).length / 10,
+      );
+    }
+  });
+
+  it("keeps missing and stale quotes null and reads fresh admin changes", async () => {
+    const t = convexTest(schema, modules);
+    const referenceId = await t.run(async (ctx) => {
+      for (const [code, active] of [
+        ["PAPER-NEWS", true],
+        ["CUSTOM-MATERIAL", true],
+        ["INACTIVE", false],
+      ] as const) {
+        await ctx.db.insert("materials", {
+          code,
+          family: "paper",
+          stage: "scrap",
+          names: { en: code },
+          co2eFactor: 1,
+          active,
+          sortOrder: 1,
+        });
+      }
+      await ctx.db.insert("marketPrices", {
+        city: "Bengaluru",
+        materialCode: "PAPER-NEWS",
+        date: shiftDate(indiaToday(), -30),
+        paisePerKg: 2200,
+      });
+      return ctx.db.insert("referencePrices", {
+        city: "Bengaluru",
+        materialCode: "PAPER-NEWS",
+        floorPaise: 1000,
+        fallbackPaise: 1400,
+        updatedAt: Date.now(),
+      });
+    });
+    const args = { city: "Bengaluru", source: "fallback" } as const;
+    const before = await t.query(api.catalogue.priceQuotes, args);
+    expect(before.rows).toEqual([
+      { code: "PAPER-NEWS", paisePerKg: 1400 },
+      { code: "CUSTOM-MATERIAL", paisePerKg: null },
+    ]);
+    await t.run((ctx) => ctx.db.patch(referenceId, { fallbackPaise: 1700 }));
+    const after = await t.query(api.catalogue.priceQuotes, args);
+    expect(after.rows[0]).toEqual({
+      code: "PAPER-NEWS",
+      paisePerKg: 1700,
+    });
+    for (const request of [
+      { city: "Bengaluru", source: "market" },
+      { city: "Chennai", source: "fallback" },
+    ] as const) {
+      const missing = await t.query(api.catalogue.priceQuotes, request);
+      expect(missing.rows.every((row) => row.paisePerKg === null)).toBe(true);
+    }
   });
 });

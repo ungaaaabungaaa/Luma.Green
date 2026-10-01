@@ -2,7 +2,12 @@ import { afterEach, expect, it, vi } from "vitest";
 
 import { requestPhotoEstimate } from "./photoProvider";
 
-const config = { apiKey: "test-key", model: "operator/chosen-model" };
+const config = {
+  apiKey: "test-key",
+  model: "operator/chosen-model",
+  provider: "openrouter" as const,
+  endpoint: "https://openrouter.ai/api/v1/chat/completions",
+};
 const catalogue = [{ code: "PAPER-NEWS", name: "Newspaper" }];
 const result = {
   items: [
@@ -101,4 +106,41 @@ it("aborts at eight seconds and does not retry", async () => {
   await vi.advanceTimersByTimeAsync(8000);
   await assertion;
   expect(fetcher).toHaveBeenCalledTimes(1);
+});
+
+it("uses only the fixed self-hosted endpoint with authentication and no OpenRouter-specific options", async () => {
+  const fetcher = vi.fn().mockResolvedValue(
+    Response.json({
+      choices: [{ message: { content: JSON.stringify(result) } }],
+    }),
+  );
+  vi.stubGlobal("fetch", fetcher);
+  await requestPhotoEstimate(
+    {
+      ...config,
+      provider: "self-hosted",
+      endpoint: "https://vision.example.com/v1/chat/completions",
+    },
+    "image",
+    catalogue,
+  );
+  expect(fetcher).toHaveBeenCalledTimes(1);
+  expect(fetcher).toHaveBeenCalledWith(
+    "https://vision.example.com/v1/chat/completions",
+    expect.objectContaining({
+      redirect: "error",
+      headers: {
+        Authorization: "Bearer test-key",
+        "Content-Type": "application/json",
+      },
+    }),
+  );
+  const options = fetcher.mock.calls[0][1] as RequestInit;
+  if (typeof options.body !== "string") throw new Error("Expected JSON body");
+  const body: unknown = JSON.parse(options.body);
+  expect(body).not.toHaveProperty("provider");
+  expect(body).toMatchObject({
+    response_format: { type: "json_schema" },
+    messages: expect.any(Array),
+  });
 });

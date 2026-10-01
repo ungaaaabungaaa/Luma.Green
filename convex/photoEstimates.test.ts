@@ -127,7 +127,7 @@ it("reserves atomically, caps rotatable devices globally, and expires hashes", a
   });
   expect(isFirst).toBe(true);
   expect(isSecond).toBe(false);
-  await vi.advanceTimersByTimeAsync(PHOTO_DAY_MS);
+  await vi.advanceTimersByTimeAsync(PHOTO_DAY_MS + 3_600_000);
   await t.finishInProgressScheduledFunctions();
   expect(
     await t.run((ctx) => ctx.db.query("photoEstimateQuota").collect()),
@@ -219,4 +219,43 @@ it("exposes only an availability boolean when valid provider configuration exist
   expect(await t.query(api.photoEstimates.available, {})).toBe(true);
   vi.stubEnv("PHOTO_ESTIMATE_DAILY_LIMIT", "1001");
   expect(await t.query(api.photoEstimates.available, {})).toBe(false);
+});
+
+it("coalesces cleanup jobs while enforcing the exact rolling day and retaining later reservations", async () => {
+  vi.useFakeTimers();
+  vi.setSystemTime(new Date("2026-10-01T00:10:00Z"));
+  const t = world();
+  const reserve = (deviceHash: string) =>
+    t.mutation(internal.photoEstimates.reserve, {
+      deviceHash: deviceHash.repeat(64),
+      dailyLimit: 2,
+    });
+  expect(await reserve("a")).toBe(true);
+  await vi.advanceTimersByTimeAsync(30 * 60_000);
+  expect(await reserve("b")).toBe(true);
+  const pending = await t.run((ctx) =>
+    ctx.db.system.query("_scheduled_functions").collect(),
+  );
+  expect(pending).toHaveLength(1);
+  // A legacy cleanup invocation before the owned job must not start another chain.
+  await t.mutation(internal.photoEstimates.expire, {});
+  expect(
+    await t.run((ctx) => ctx.db.system.query("_scheduled_functions").collect()),
+  ).toHaveLength(1);
+  await vi.advanceTimersByTimeAsync(PHOTO_DAY_MS - 30 * 60_000 - 1);
+  expect(await reserve("c")).toBe(false);
+  await vi.advanceTimersByTimeAsync(1);
+  expect(await reserve("c")).toBe(true);
+  // First expiry is 01:00; b has expired, c must remain with one successor job.
+  await vi.advanceTimersByTimeAsync(50 * 60_000);
+  await t.finishInProgressScheduledFunctions();
+  const row = await t.run((ctx) => ctx.db.query("photoEstimateQuota").unique());
+  expect(row?.reservations).toEqual([
+    { at: Date.parse("2026-10-02T00:10:00Z"), deviceHash: "c".repeat(64) },
+  ]);
+  expect(row?.cleanupScheduledAt).toBe(Date.parse("2026-10-03T01:00:00Z"));
+  await t.finishAllScheduledFunctions(vi.runAllTimers);
+  expect(
+    await t.run((ctx) => ctx.db.query("photoEstimateQuota").collect()),
+  ).toEqual([]);
 });

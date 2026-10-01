@@ -17,6 +17,11 @@ import {
 } from "./lib/photoEstimates";
 import { requestPhotoEstimate } from "./lib/photoProvider";
 
+const CLEANUP_BUCKET_MS = 60 * 60 * 1000;
+function cleanupTime(at: number) {
+  return Math.ceil((at + PHOTO_DAY_MS) / CLEANUP_BUCKET_MS) * CLEANUP_BUCKET_MS;
+}
+
 const itemValidator = v.object({
   materialCode: v.string(),
   gramsLow: v.number(),
@@ -149,17 +154,24 @@ export const reserve = internalMutation({
       ...allowance.recent,
       { at: now, deviceHash, ...(phoneHash && { phoneHash }) },
     ];
-    if (row) await ctx.db.patch(row._id, { reservations });
+    const cleanupScheduledAt =
+      row?.cleanupScheduledAt && row.cleanupScheduledAt > now
+        ? row.cleanupScheduledAt
+        : cleanupTime(reservations[0].at);
+    if (row) await ctx.db.patch(row._id, { reservations, cleanupScheduledAt });
     else
       await ctx.db.insert("photoEstimateQuota", {
         key: "global",
         reservations,
+        cleanupScheduledAt,
       });
-    await ctx.scheduler.runAfter(
-      PHOTO_DAY_MS,
-      internal.photoEstimates.expire,
-      {},
-    );
+    if (cleanupScheduledAt !== row?.cleanupScheduledAt) {
+      await ctx.scheduler.runAt(
+        cleanupScheduledAt,
+        internal.photoEstimates.expire,
+        {},
+      );
+    }
     return true;
   },
 });
@@ -172,12 +184,22 @@ export const expire = internalMutation({
       .query("photoEstimateQuota")
       .withIndex("by_key", (q) => q.eq("key", "global"))
       .unique();
-    if (row) {
+    const now = Date.now();
+    // An old queued job must not create another cleanup chain.
+    if (row && (!row.cleanupScheduledAt || row.cleanupScheduledAt <= now)) {
       const reservations = row.reservations.filter(
-        (entry) => entry.at > Date.now() - PHOTO_DAY_MS,
+        (entry) => entry.at > now - PHOTO_DAY_MS,
       );
       if (reservations.length === 0) await ctx.db.delete(row._id);
-      else await ctx.db.patch(row._id, { reservations });
+      else {
+        const cleanupScheduledAt = cleanupTime(reservations[0].at);
+        await ctx.db.patch(row._id, { reservations, cleanupScheduledAt });
+        await ctx.scheduler.runAt(
+          cleanupScheduledAt,
+          internal.photoEstimates.expire,
+          {},
+        );
+      }
     }
     return null;
   },

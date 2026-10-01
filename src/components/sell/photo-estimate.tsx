@@ -2,12 +2,13 @@
 
 import { useAction, useQuery } from "convex/react";
 import { useFormatter, useTranslations } from "next-intl";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useFormat } from "@/components/app/format";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { authClient } from "@/lib/auth-client";
 
 import { api } from "../../../convex/_generated/api";
 import { paiseFor } from "../../../convex/lib/chain";
@@ -17,6 +18,7 @@ import type {
   PhotoItem,
   PhotoResult,
 } from "../../../convex/lib/photoEstimates";
+import { createPhotoEstimateCache } from "./photo-estimate-cache";
 import { photoDeviceId, preparePhoto } from "./photo-image";
 import { ErrorBoundary } from "./states";
 import type { Material, PriceMap } from "./types";
@@ -41,7 +43,14 @@ export function PhotoEstimate(props: PhotoEstimateProps) {
 
 function AvailablePhotoEstimate(props: PhotoEstimateProps) {
   const isAvailable = useQuery(api.photoEstimates.available);
-  return isAvailable === true ? <PhotoEstimateForm {...props} /> : null;
+  return isAvailable === true ? <SessionPhotoEstimate {...props} /> : null;
+}
+
+function SessionPhotoEstimate(props: PhotoEstimateProps) {
+  const session = authClient.useSession();
+  return (
+    <PhotoEstimateForm key={session.data?.user.id ?? "anonymous"} {...props} />
+  );
 }
 
 /** A photo is optional. Suggestions are never applied without an explicit review. */
@@ -55,6 +64,13 @@ function PhotoEstimateForm({ materials, prices, onApply }: PhotoEstimateProps) {
   const sequence = useRef(0);
   const running = useRef(false);
   const input = useRef<HTMLInputElement>(null);
+  const [cache] = useState(createPhotoEstimateCache);
+  useEffect(
+    () => () => {
+      cache.clear();
+    },
+    [cache],
+  );
 
   function clear() {
     sequence.current += 1;
@@ -87,7 +103,11 @@ function PhotoEstimateForm({ materials, prices, onApply }: PhotoEstimateProps) {
     setBusy(true);
     setNotice(undefined);
     try {
-      const reply = await estimate({ image, deviceId: photoDeviceId() });
+      const reply = await cache.run(
+        image,
+        JSON.stringify(materials.map(({ code, names }) => ({ code, names }))),
+        () => estimate({ image, deviceId: photoDeviceId() }),
+      );
       if (id !== sequence.current) return;
       if (reply.status !== "ok") setNotice(reply.status);
       else if (reply.result.retake !== "none") setNotice("retake");

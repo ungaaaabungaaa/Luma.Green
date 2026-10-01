@@ -39,6 +39,65 @@ export const materials = query({
 });
 
 /**
+ * Small, reactive quotes for forms. Household estimates use only the admin's
+ * fallback; listing suggestions use the latest market quote in the board's
+ * 30-day window. Neither caller needs chart history or translated names.
+ */
+export const priceQuotes = query({
+  args: {
+    city: v.string(),
+    source: v.union(v.literal("fallback"), v.literal("market")),
+  },
+  returns: v.object({
+    rows: v.array(
+      v.object({
+        code: v.string(),
+        paisePerKg: v.union(v.number(), v.null()),
+      }),
+    ),
+  }),
+  handler: async (ctx, args) => {
+    const materials = await ctx.db
+      .query("materials")
+      .withIndex("by_sortOrder")
+      .collect();
+    const since = shiftDate(indiaToday(), -29);
+    const rows = [];
+    for (const material of materials) {
+      if (!material.active) continue;
+      if (args.source === "fallback") {
+        const reference = await ctx.db
+          .query("referencePrices")
+          .withIndex("by_city_material", (q) =>
+            q.eq("city", args.city).eq("materialCode", material.code),
+          )
+          .unique();
+        rows.push({
+          code: material.code,
+          paisePerKg: reference?.fallbackPaise ?? null,
+        });
+      } else {
+        const latest = await ctx.db
+          .query("marketPrices")
+          .withIndex("by_city_material_date", (q) =>
+            q
+              .eq("city", args.city)
+              .eq("materialCode", material.code)
+              .gte("date", since),
+          )
+          .order("desc")
+          .first();
+        rows.push({
+          code: material.code,
+          paisePerKg: latest?.paisePerKg ?? null,
+        });
+      }
+    }
+    return { rows };
+  },
+});
+
+/**
  * The public price board for a city: today's price per material, the change
  * over a week, the admin's floor, and 30 days of history for the chart.
  */

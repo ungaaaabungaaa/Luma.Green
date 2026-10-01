@@ -54,12 +54,15 @@ export function withFreshSlot(
 
 /** Household estimates use the city's fallback, never the market quote or floor. */
 function usePrices(): PriceMap | undefined {
-  const board = useQuery(api.catalogue.priceBoard, { city: PILOT_CITY });
+  const board = useQuery(api.catalogue.priceQuotes, {
+    city: PILOT_CITY,
+    source: "fallback",
+  });
   return useMemo(() => {
     if (!board) return;
     const prices = new Map<string, number>();
     for (const row of board.rows) {
-      const price = row.fallbackPaise;
+      const price = row.paisePerKg;
       if (price !== null) prices.set(row.code, price);
     }
     return prices;

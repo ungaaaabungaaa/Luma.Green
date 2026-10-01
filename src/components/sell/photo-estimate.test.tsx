@@ -1,10 +1,21 @@
+import { webcrypto } from "node:crypto";
+
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { NextIntlClientProvider } from "next-intl";
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 
 import messages from "../../../messages/en.json";
 import { PhotoEstimate } from "./photo-estimate";
+
+const session = vi.hoisted((): { userId?: string } => ({}));
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      data: session.userId ? { user: { id: session.userId } } : null,
+    }),
+  },
+}));
 
 const estimate = vi.hoisted(() => vi.fn());
 const availability = vi.hoisted(
@@ -45,9 +56,14 @@ const result = {
   retake: "none",
 };
 beforeEach(() => {
+  vi.stubGlobal("crypto", webcrypto);
+  session.userId = undefined;
   estimate.mockReset();
   availability.value = true;
   availability.fails = false;
+});
+afterEach(() => {
+  vi.unstubAllGlobals();
 });
 function show() {
   const apply = vi.fn();
@@ -181,3 +197,38 @@ it.each([
     expect(apply).toHaveBeenCalledWith([{ materialCode: "PAPER-NEWS", kg }]);
   },
 );
+
+it("reuses a successful estimate when the same image is selected again", async () => {
+  estimate.mockResolvedValue({ status: "ok", result });
+  show();
+  const user = await submit();
+  await screen.findByText("Newspaper");
+  await user.upload(
+    screen.getByLabelText("Choose another photo"),
+    new File(["image"], "again.jpg", { type: "image/jpeg" }),
+  );
+  await user.click(
+    await screen.findByRole("button", { name: "Estimate this photo" }),
+  );
+  await screen.findByText("Newspaper");
+  expect(estimate).toHaveBeenCalledTimes(1);
+});
+
+it("does not reuse a previous account's result", async () => {
+  estimate.mockResolvedValue({ status: "ok", result });
+  const apply = vi.fn();
+  const view = () => (
+    <NextIntlClientProvider locale="en" messages={messages}>
+      <PhotoEstimate materials={materials} prices={new Map()} onApply={apply} />
+    </NextIntlClientProvider>
+  );
+  const { rerender } = render(view());
+  await submit();
+  await screen.findByText("Newspaper");
+  session.userId = "another-user";
+  rerender(view());
+  expect(screen.queryByText("Newspaper")).not.toBeInTheDocument();
+  await submit();
+  await screen.findByText("Newspaper");
+  expect(estimate).toHaveBeenCalledTimes(2);
+});

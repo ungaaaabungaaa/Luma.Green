@@ -1,7 +1,7 @@
 # AI photo estimate
 
 > **Status:** implemented locally, 1 Oct 2026. Provider activation and measured accuracy remain launch gates.
-> [ADR 0011](../decisions/0011-ai-estimates-priced-by-our-tables.md).
+> [ADR 0015](../decisions/0015-bounded-photo-cache-and-selectable-inference.md).
 
 A household can choose one scrap photo on the basket step. They review the
 materials, estimated weight ranges and confidence before they apply the result.
@@ -23,10 +23,11 @@ guard prevents rapid duplicate clicks from starting two paid calls.
    action. It validates the encoded size, format, signature and dimensions.
    The action is public because the basket comes before phone verification.
 3. The server loads active scrap materials through the catalogue index and
-   reserves quota atomically. A single OpenRouter Chat Completions request uses
+   reserves quota atomically. A single Chat Completions request uses
    the operator's configured vision model and a strict JSON schema. Material
    codes are an enum of the current active scrap catalogue. Prompt version:
-   `scrap-grams-v1`.
+   `scrap-grams-v1`. The operator selects OpenRouter or a fixed authenticated HTTPS
+   self-hosted endpoint. No endpoint URL or credentials come from the browser.
 4. A request can return at most 12 distinct materials. Each weight is an integer
    from 100 to 200,000 grams; the upper bound cannot be below the lower bound.
    Confidence must be between 0 and 1. Unknown materials, extra fields, prices,
@@ -51,10 +52,15 @@ implementation sends one bounded data URL through an action instead. Luma.Green
 creates no image file, storage URL, public image endpoint, estimate record or
 estimate lookup token. It does not log the image, model output or provider error
 body. Browser image state is cleared after a response or manual reset; file
-bytes are not written to local or session storage. The rotatable device ID is
+bytes are not written to local or session storage. Up to three successful replies
+remain in form memory for five minutes, keyed by a SHA-256 hash of the image,
+catalogue and prompt. Concurrent identical requests share one call. Failures are
+not cached. Unmounting or changing account clears this cache. Prices stay live
+and are not part of the cached reply. The rotatable device ID is
 stored in local storage, separately from images.
 
-Requests require `data_collection: "deny"` and `zdr: true` provider routing.
+OpenRouter requests require `data_collection: "deny"` and `zdr: true` provider routing.
+The self-hosted gateway must disable request-body logging and photo retention.
 The operator must verify the account's logging settings and model endpoint's
 retention policy before activation. The UI states that an AI provider receives
 the image, and asks users to exclude faces, documents and number plates.
@@ -72,7 +78,10 @@ needs a separate consent, retention and secure attribution design.
 The internal `photoEstimateQuota` table contains one indexed row, with at most
 1000 reservations. Each reservation has a timestamp and keyed hashes of the
 device ID and, when authenticated, the verified phone. Old hashes are removed
-after 24 hours by scheduled cleanup and on subsequent reservations. They are
+on subsequent reservations and by hourly scheduled cleanup after expiry. Quota
+checks use the exact rolling 24-hour window; inactive hashes are removed within
+25 hours under normal scheduler operation. One pending cleanup chain replaces a
+new scheduled job per request. They are
 operational rate counters, not material-ledger events.
 
 - Five attempts per device in a rolling 24-hour window.
@@ -84,10 +93,15 @@ operational rate counters, not material-ledger events.
 - Device IDs can be rotated. They are an abuse signal, not a trusted identity.
   The global cap limits paid calls even when IDs rotate. An attacker can exhaust
   that quota and make AI unavailable; the manual flow remains available.
-- Request counts do not give a currency spend guarantee. The operator must set a
-  hard spend limit on the OpenRouter API key before activation.
+- Request counts do not give a currency spend guarantee. For OpenRouter, set a
+  hard spend limit on the API key before activation. Self-hosted mode never falls
+  back to a paid provider.
 
 ## Activation checklist
+
+For the self-hosted route, follow the exact environment and gateway checklist in
+[low-cost operation](../operations/low-cost-operation.md). No OpenRouter account
+is needed for that route. The checks below cover the OpenRouter route.
 
 - [ ] Deploy the additive `photoEstimateQuota` schema and functions.
 - [ ] Set a hard monthly spending limit on a dedicated OpenRouter key.
