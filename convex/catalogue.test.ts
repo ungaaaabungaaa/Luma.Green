@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { api } from "./_generated/api";
 import { convexModules, registerAuth, signIn } from "./lib/auth.testing";
 import { catalogueEntry } from "./lib/catalogue";
+import { indiaToday } from "./lib/onboarding";
 import schema from "./schema";
 
 const modules = convexModules(import.meta.glob("./**/*.*s"));
@@ -150,5 +151,47 @@ describe("fill missing material names", () => {
     expect(await t.run((ctx) => ctx.db.query("auditLog").collect())).toEqual(
       after.audit,
     );
+  });
+});
+
+describe("household preview prices", () => {
+  it("keeps the fallback distinct from today's market quote and the floor", async () => {
+    const t = convexTest(schema, modules);
+    await t.run(async (ctx) => {
+      await ctx.db.insert("materials", {
+        code: "PAPER-NEWS",
+        family: "paper",
+        stage: "scrap",
+        names: { en: "Newspaper" },
+        co2eFactor: 1,
+        active: true,
+        sortOrder: 1,
+      });
+      await ctx.db.insert("referencePrices", {
+        city: "Bengaluru",
+        materialCode: "PAPER-NEWS",
+        floorPaise: 1000,
+        fallbackPaise: 1400,
+        updatedAt: Date.now(),
+      });
+      await ctx.db.insert("marketPrices", {
+        city: "Bengaluru",
+        materialCode: "PAPER-NEWS",
+        date: indiaToday(),
+        paisePerKg: 2200,
+      });
+    });
+    const board = await t.query(api.catalogue.priceBoard, {
+      city: "Bengaluru",
+    });
+    expect(board.rows[0]).toMatchObject({
+      todayPaise: 2200,
+      floorPaise: 1000,
+      fallbackPaise: 1400,
+    });
+    const missing = await t.query(api.catalogue.priceBoard, {
+      city: "Chennai",
+    });
+    expect(missing.rows[0]?.fallbackPaise).toBeNull();
   });
 });

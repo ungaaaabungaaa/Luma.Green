@@ -15,6 +15,7 @@ import { api } from "../../../../convex/_generated/api";
 import type { Family } from "../../../../convex/lib/catalogue";
 import { PILOT_CITY } from "../../../../convex/lib/review";
 import { FAMILY_LABELS } from "../labels";
+import { CatalogueNames } from "./catalogue-names";
 import { PRICE_COLUMNS, PriceRow, type PriceRowData } from "./price-row";
 
 const FAMILY_ORDER = Object.keys(FAMILY_LABELS) as Family[];
@@ -41,6 +42,7 @@ export function PriceTables() {
       <DemoNote>Sample prices for the prototype, not market rates.</DemoNote>
       <PriceRules />
       <PriceGroups rows={rows} />
+      <CatalogueNames />
     </div>
   );
 }

@@ -276,4 +276,53 @@ test("the skip link jumps past the header", async ({ page }) => {
   await expect(skip).toBeFocused();
   await skip.press("Enter");
   await expect(page).toHaveURL(/#main$/);
+  await expect(page.getByRole("main")).toBeFocused();
+});
+
+test("language changes preserve a page query and help anchor", async ({
+  page,
+}) => {
+  await page.goto("/help?role=yard#contact");
+  await page.getByRole("button", { name: "Language" }).click();
+  await page.getByRole("menuitemradio", { name: "தமிழ்" }).click();
+  await expect(page).toHaveURL("/ta/help?role=yard#contact");
+});
+
+for (const locale of ["en", "ar", "ur"] as const) {
+  test(`${locale} navigation fits phones and tablets with accessible targets`, async ({
+    page,
+  }) => {
+    for (const width of [360, 768, 1024]) {
+      await page.setViewportSize({ width, height: 700 });
+      await page.goto(locale === "en" ? "/" : `/${locale}`);
+      const header = page.getByRole("banner");
+      const menuButton = header.getByRole("button").last();
+      const target = await menuButton.boundingBox();
+      expect(target?.width).toBeGreaterThanOrEqual(44);
+      expect(target?.height).toBeGreaterThanOrEqual(44);
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth),
+      ).toBeLessThanOrEqual(width);
+      await menuButton.click();
+      const menu = page.getByRole("dialog");
+      await expect(menu).toBeVisible();
+      await expect
+        .poll(async () => {
+          const box = await menu.boundingBox();
+          return box !== null && box.x >= 0 && box.x + box.width <= width;
+        })
+        .toBe(true);
+      await page.keyboard.press("Escape");
+      await expect(menu).toBeHidden();
+      await expect(menuButton).toBeFocused();
+    }
+  });
+}
+
+test("mobile overlays respect reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await expect(page.getByRole("dialog")).toHaveCSS("animation-name", "none");
 });

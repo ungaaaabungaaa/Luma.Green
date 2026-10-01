@@ -13,6 +13,7 @@ import { DemoNote } from "@/components/app/page-parts";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
+import { DispatchSettings } from "./dispatch-settings";
 import { QueryBoundary } from "./guards";
 import { MoneyStats, NewRequestsCard, TodayCard } from "./home-cards";
 import { PriceCheck } from "./price-check";
@@ -31,6 +32,7 @@ export function KabadiwalaHome() {
       <Greeting name={shop.name} />
       <QueryBoundary>
         <HomeBody city={shop.city} />
+        <DispatchSettings />
       </QueryBoundary>
       <QuickLinks />
       <DemoNote>{t("sampleNote")}</DemoNote>

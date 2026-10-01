@@ -52,14 +52,14 @@ export function withFreshSlot(
   };
 }
 
-/** Today's price per kg for each material, from the city's price board. */
+/** Household estimates use the city's fallback, never the market quote or floor. */
 function usePrices(): PriceMap | undefined {
   const board = useQuery(api.catalogue.priceBoard, { city: PILOT_CITY });
   return useMemo(() => {
     if (!board) return;
     const prices = new Map<string, number>();
     for (const row of board.rows) {
-      const price = row.todayPaise ?? row.floorPaise;
+      const price = row.fallbackPaise;
       if (price !== null) prices.set(row.code, price);
     }
     return prices;

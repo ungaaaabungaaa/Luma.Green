@@ -45,6 +45,7 @@ export function MobileNav({ className }: { className?: string }) {
       </SheetTrigger>
       <SheetContent
         side={side}
+        className="overflow-y-auto pb-[env(safe-area-inset-bottom)]"
         showCloseButton={false}
         aria-describedby={undefined}
       >

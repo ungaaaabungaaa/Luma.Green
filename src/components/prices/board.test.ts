@@ -21,6 +21,7 @@ function row(
     names: { en: code },
     todayPaise: 1000,
     weekChangePct: 0,
+    fallbackPaise: null,
     floorPaise: 800,
     series: [],
     ...overrides,

@@ -56,6 +56,7 @@ export const priceBoard = query({
         todayPaise: v.union(v.number(), v.null()),
         weekChangePct: v.union(v.number(), v.null()),
         floorPaise: v.union(v.number(), v.null()),
+        fallbackPaise: v.union(v.number(), v.null()),
         series: v.array(v.object({ date: v.string(), paisePerKg: v.number() })),
       }),
     ),
@@ -102,6 +103,7 @@ export const priceBoard = query({
               ) / 10
             : null,
         floorPaise: reference?.floorPaise ?? null,
+        fallbackPaise: reference?.fallbackPaise ?? null,
         series: series.map((point) => ({
           date: point.date,
           paisePerKg: point.paisePerKg,

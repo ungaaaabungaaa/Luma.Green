@@ -21,7 +21,7 @@ export function AppPageHeader({
         <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
         {lead ? <p className="text-muted-foreground">{lead}</p> : null}
       </div>
-      {actions ? <div className="flex gap-2">{actions}</div> : null}
+      {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
     </div>
   );
 }
@@ -41,7 +41,7 @@ export function StatCard({
 }) {
   return (
     <div className="flex flex-col gap-1 rounded-2xl border bg-card p-4">
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">{label}</p>
         {Icon ? (
           <Icon
@@ -55,7 +55,9 @@ export function StatCard({
           />
         ) : null}
       </div>
-      <p className="text-2xl font-semibold tracking-tight">{value}</p>
+      <p className="text-2xl font-semibold tracking-tight break-words tabular-nums">
+        {value}
+      </p>
       {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
     </div>
   );
@@ -72,7 +74,7 @@ export function Section({
 }) {
   return (
     <section className="flex flex-col gap-3">
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-semibold">{title}</h2>
         {action}
       </div>

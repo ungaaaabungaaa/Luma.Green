@@ -46,7 +46,7 @@
     },
     "trade": {
       "title": "Trade",
-      "summary": "Businesses trade material up the chain, with payments held in escrow until delivery."
+      "summary": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments."
     },
     "record": {
       "title": "Record",
@@ -113,7 +113,7 @@
           "body": "Make new products from recycled material."
         }
       },
-      "money": "Money flows back at every step: cash or UPI at the door, escrow between businesses.",
+      "money": "Households receive cash or UPI at the door. Escrow between businesses is planned.",
       "saathi": "Saathis help all along the chain with pickups, sorting and shifts."
     },
     "roles": {
@@ -137,7 +137,7 @@
         "title": "Yards",
         "one": "See what nearby shops have in stock.",
         "two": "Buy in bulk and sell bales to recyclers.",
-        "three": "Payment held in escrow until delivery.",
+        "three": "Planned: Payment held in escrow until delivery.",
         "cta": "Join as a yard"
       },
       "recycler": {
@@ -150,7 +150,7 @@
       "manufacturer": {
         "title": "Manufacturers",
         "one": "See what recyclers are producing.",
-        "two": "Order recycled material with escrow.",
+        "two": "Planned: Order recycled material with escrow.",
         "three": "Records for your EPR reports.",
         "cta": "Join as a manufacturer"
       },
@@ -174,8 +174,8 @@
         "body": "Shops set their own prices, but never below the minimum we publish for each material."
       },
       "escrow": {
-        "title": "Escrow for business trades",
-        "body": "The buyer's money is held safely and released when the goods arrive."
+        "title": "Planned: Escrow for business trades",
+        "body": "The demo shows payment steps but does not hold or transfer real money."
       },
       "receipts": {
         "title": "Digital receipts",
@@ -286,7 +286,7 @@
   },
   "standards": {
     "metaTitle": "The Luma.Green standard",
-    "metaDescription": "Open material codes and simple rules for fair scrap trade in India: grading, weighing, receipts, verification and escrow. Free for anyone to adopt.",
+    "metaDescription": "Planned: Open material codes and simple rules for fair scrap trade in India: grading, weighing, receipts, verification and escrow. Free for anyone to adopt.",
     "eyebrow": "Open standard",
     "title": "The Luma.Green standard",
     "lead": "Simple, open rules for trading scrap fairly: one code for every material, clear grading, honest weighing and a record at every hand-off. Anyone in the industry can adopt them.",
@@ -372,9 +372,9 @@
       "saathi": "Saathis: a photo ID and a selfie that matches it."
     },
     "escrow": {
-      "title": "Escrow between businesses",
+      "title": "Planned: Escrow between businesses",
       "nav": "Escrow",
-      "body": "In a trade between businesses, nobody ships or pays on trust alone. The money waits in escrow until the goods arrive.",
+      "body": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments.",
       "steps": {
         "accepted": "The seller accepts the order",
         "paid": "The buyer pays into escrow",
@@ -526,7 +526,7 @@
   },
   "howItWorks": {
     "metaTitle": "How it works",
-    "metaDescription": "How scrap moves on Luma.Green: sold from home at a fair price, traded up the chain with escrow, and recorded at every hand-off.",
+    "metaDescription": "Planned: How scrap moves on Luma.Green: sold from home at a fair price, traded up the chain with escrow, and recorded at every hand-off.",
     "title": "How Luma.Green works",
     "lead": "Scrap changes hands four times before it becomes something new. Here is what happens at each step, and what Luma.Green records.",
     "stepLabel": "Step {number}",
@@ -537,7 +537,7 @@
       "point3": "A tracking link, with no account needed"
     },
     "trade": {
-      "body": "Kabadiwalas sell sorted stock to yards, yards sell bales to recyclers, and recyclers sell flakes, granules and ingots to factories. The buyer's payment waits in escrow until the goods arrive.",
+      "body": "Demo: Kabadiwalas sell sorted stock to yards, yards sell bales to recyclers, and recyclers sell flakes, granules and ingots to factories. The buyer's payment waits in escrow until the goods arrive. The demo shows payment steps but does not hold or transfer real money.",
       "point1": "Only verified businesses can trade",
       "point2": "Stock moves when a load is dispatched and received",
       "point3": "A numbered trade receipt for every paid trade"
@@ -560,7 +560,7 @@
     },
     "yard": {
       "name": "Yards",
-      "body": "Buy from kabadiwalas, sort and bale, and sell graded lots to recyclers with payment held in escrow."
+      "body": "Planned: Buy from kabadiwalas, sort and bale, and sell graded lots to recyclers with payment held in escrow."
     },
     "recycler": {
       "name": "Recyclers",
@@ -645,7 +645,7 @@
         "name": "Yards",
         "who": "Buying from kabadiwalas and sorting further",
         "title": "Help for yards",
-        "lead": "Find stock near you, sell sorted bales to recyclers and trade safely with escrow."
+        "lead": "Demo: Find stock near you, sell sorted bales to recyclers and trade safely with escrow."
       },
       "recycler": {
         "name": "Recyclers",
@@ -851,8 +851,8 @@
         }
       },
       "escrow": {
-        "title": "How escrow keeps a trade safe",
-        "summary": "The buyer's money is held safely until the load arrives as agreed.",
+        "title": "Demo guide: How escrow keeps a trade safe",
+        "summary": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments.",
         "steps": {
           "request": {
             "title": "The buyer sends a request",
@@ -899,7 +899,7 @@
         }
       },
       "tradeDisputes": {
-        "title": "When a load doesn't match",
+        "title": "Demo guide: When a load doesn't match",
         "summary": "What to do if the weight or quality isn't what you agreed.",
         "steps": {
           "check": {
@@ -1217,7 +1217,7 @@
         }
       },
       "stockAndSell": {
-        "title": "Sort your stock and sell to yards",
+        "title": "Demo guide: Sort your stock and sell to yards",
         "summary": "From many small pickups to a load a yard wants.",
         "steps": {
           "grows": {
@@ -1261,7 +1261,7 @@
         }
       },
       "buyFromKabadiwalas": {
-        "title": "Buy stock from kabadiwalas",
+        "title": "Demo guide: Buy stock from kabadiwalas",
         "summary": "Find sorted scrap near you and book a collection.",
         "steps": {
           "browse": {
@@ -1287,7 +1287,7 @@
         }
       },
       "sellToRecyclers": {
-        "title": "Sell sorted bales to recyclers",
+        "title": "Demo guide: Sell sorted bales to recyclers",
         "summary": "List what you have once, and let recyclers come to you.",
         "steps": {
           "list": {
@@ -1313,7 +1313,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Buy sorted scrap from yards",
+        "title": "Demo guide: Buy sorted scrap from yards",
         "summary": "Steady, graded input for your line.",
         "steps": {
           "browse": {
@@ -1335,7 +1335,7 @@
         }
       },
       "sellRecycled": {
-        "title": "Sell recycled material to manufacturers",
+        "title": "Demo guide: Sell recycled material to manufacturers",
         "summary": "Show what your line makes, so factories can order.",
         "steps": {
           "list": {
@@ -1357,7 +1357,7 @@
         }
       },
       "orderRecycled": {
-        "title": "Order recycled material",
+        "title": "Demo guide: Order recycled material",
         "summary": "Find recycled input and order what you need.",
         "steps": {
           "browse": {
@@ -1383,7 +1383,7 @@
         }
       },
       "checkDelivery": {
-        "title": "Check a delivery",
+        "title": "Demo guide: Check a delivery",
         "summary": "A quick check before you confirm and release payment.",
         "steps": {
           "papers": {
@@ -1588,7 +1588,7 @@
       },
       "paidByYard": {
         "q": "How am I paid when I sell to a yard?",
-        "a": "The yard pays into escrow before collecting. When they confirm the load, the money is released to you."
+        "a": "For now, agree payment directly with the yard. Escrow is planned; the demo does not move money."
       },
       "whoSeesShop": {
         "q": "Who can see my shop?",
@@ -1616,7 +1616,7 @@
       },
       "whatIsEscrow": {
         "q": "What is escrow?",
-        "a": "A safe middle step: the buyer's money is held until the load arrives as agreed, then released to the seller."
+        "a": "A safe middle step: the buyer's money is held until the load arrives as agreed, then released to the seller. Business escrow is planned."
       },
       "whenSellerPaid": {
         "q": "When is the seller paid?",
@@ -1624,7 +1624,7 @@
       },
       "shortLoad": {
         "q": "What if a load is short?",
-        "a": "Don't confirm it. Report it with photos of the weighing slip. The money stays in escrow while we sort it out."
+        "a": "The demo shows proposed dispute steps. It cannot hold or protect real funds."
       },
       "ewayBill": {
         "q": "Do I need an e-way bill?",
@@ -1656,7 +1656,7 @@
       },
       "qualityWrong": {
         "q": "What if the quality isn't what I ordered?",
-        "a": "Don't confirm. Report it with photos. The money stays in escrow while we help you and the recycler agree."
+        "a": "The demo shows proposed dispute steps. It cannot hold or protect real funds."
       },
       "recycledContent": {
         "q": "Does buying recycled help with EPR?",
@@ -1712,7 +1712,7 @@
       "settingPrices": "Setting your prices",
       "buyingFromKabadiwalas": "Buying from kabadiwalas",
       "listingBales": "Listing bales for recyclers",
-      "escrowExplained": "Escrow in two minutes",
+      "escrowExplained": "Demo: Escrow in two minutes",
       "buyingFromYards": "Buying from yards",
       "sellingOutput": "Selling your output",
       "eprPlainWords": "EPR in plain words",
@@ -1772,7 +1772,7 @@
         "p3": "Pay before you leave, every time."
       },
       "sellingToYards": {
-        "title": "Selling to yards",
+        "title": "Demo: Selling to yards",
         "p1": "Record your sorting so your stock is right.",
         "p2": "Show your stock to yards near you.",
         "p3": "Load only after the payment is in escrow."
@@ -1784,7 +1784,7 @@
         "p3": "Weigh every load before you confirm."
       },
       "tradingWithEscrow": {
-        "title": "Trading with escrow",
+        "title": "Demo: Trading with escrow",
         "p1": "The buyer pays into escrow after the seller accepts.",
         "p2": "The seller loads only when the money is there.",
         "p3": "Confirming delivery releases the money."
@@ -1802,7 +1802,7 @@
         "p3": "First aid and clean water always on site."
       },
       "buyingInputs": {
-        "title": "Buying your input",
+        "title": "Demo: Buying your input",
         "p1": "Find graded bales from yards in Buy.",
         "p2": "Pay into escrow once the yard accepts.",
         "p3": "Check the grade before you confirm."
@@ -1814,7 +1814,7 @@
         "p3": "Clean trade records back up every claim."
       },
       "orderingRecycled": {
-        "title": "Ordering recycled material",
+        "title": "Demo: Ordering recycled material",
         "p1": "Compare listings by type, kilos and price.",
         "p2": "Send an order for the kilos you need.",
         "p3": "Pay into escrow once it's accepted."
@@ -1883,7 +1883,8 @@
     "errorExpired": "That code has expired. Ask for a new one.",
     "errorTooMany": "Too many tries. Ask for a new code.",
     "errorGeneric": "Something went wrong. Please try again.",
-    "signingIn": "Signing you in…"
+    "signingIn": "Signing you in…",
+    "sendRateLimited": "Too many code requests. Please try again later."
   },
   "join": {
     "metaTitle": "Join Luma.Green",
@@ -2631,6 +2632,30 @@
       "summary": "{items, plural, one {# item} other {# items}} · {weight}",
       "paid": "Paid {amount}",
       "estimate": "About {amount}"
+    },
+    "photo": {
+      "title": "Try a photo estimate",
+      "lead": "Optional: add one photo of your scrap, then check the suggested items.",
+      "privacy": "Do not include faces, documents, or number plates. The photo is sent to an AI provider for this estimate. Luma.Green does not save it.",
+      "choose": "Choose or take a photo",
+      "selected": "Photo ready",
+      "estimate": "Estimate this photo",
+      "busy": "Checking your photo…",
+      "manual": "Choose items manually",
+      "review": "Check these suggestions",
+      "reviewNote": "Photo weights are rough estimates. Use these items to replace your basket, then edit the materials and weights below.",
+      "apply": "Use these items",
+      "range": "{low}–{high}",
+      "confidence": "Confidence: {confidence}",
+      "value": "Estimated value: {low}–{high}",
+      "applied": "Suggestions added. Check the basket and edit any errors.",
+      "unavailable": "Photo estimates are unavailable. Choose your items below.",
+      "failed": "The photo could not be checked. Try another photo or choose your items below.",
+      "invalid": "Use a clear JPEG or PNG photo under 12 MB.",
+      "limited": "The photo limit has been reached. Choose your items below, or try again tomorrow.",
+      "retake": "The photo is unclear or does not show scrap. Try another photo or choose your items below.",
+      "empty": "No supported materials were found. Try another photo or choose your items below.",
+      "replace": "Choose another photo"
     }
   },
   "track": {

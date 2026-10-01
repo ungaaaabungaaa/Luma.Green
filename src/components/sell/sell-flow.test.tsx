@@ -64,9 +64,10 @@ const BOARD = {
   date: "2026-09-29",
   rows: MATERIALS.map((material) => ({
     ...material,
-    todayPaise: material.code === "PAPER-NEWS" ? 1400 : 2000,
+    todayPaise: material.code === "PAPER-NEWS" ? 2200 : 3000,
     weekChangePct: null,
     floorPaise: 1000,
+    fallbackPaise: material.code === "PAPER-NEWS" ? 1400 : 2000,
     series: [],
   })),
 };
@@ -137,6 +138,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  vi.unstubAllGlobals();
   vi.clearAllMocks();
 });
 
@@ -172,12 +174,24 @@ describe("SellFlow", () => {
 
   it("goes from the basket to a booking and opens its tracking page", async () => {
     convex.isAuthenticated = true;
+    vi.stubGlobal("navigator", {
+      geolocation: {
+        getCurrentPosition: (success: PositionCallback) => {
+          success({
+            coords: { latitude: 13.021234, longitude: 77.551789 },
+          } as GeolocationPosition);
+        },
+      },
+    });
     render(withIntl(<SellFlow />));
 
     await userEvent.click(screen.getByRole("button", { name: /^Newspaper/ }));
     await userEvent.click(screen.getByRole("button", { name: /Find buyers/ }));
     expect(window.location.search).toBe("?step=shop");
     expect(screen.getByRole("heading", { name: "Who buys it?" })).toHaveFocus();
+    await userEvent.click(
+      screen.getByRole("button", { name: "Use my location" }),
+    );
 
     await userEvent.click(
       screen.getByRole("radio", { name: /Ramesh Kabadi Store/ }),
@@ -217,6 +231,7 @@ describe("SellFlow", () => {
       screen.getByText("Booking as ⁦+91 90000 00109⁩"),
     ).toBeInTheDocument();
 
+    expect(screen.getByText(messages.sell.confirm.locationNote)).toBeVisible();
     await userEvent.click(screen.getByRole("button", { name: "Book pickup" }));
     await vi.waitFor(() => {
       expect(push).toHaveBeenCalledWith("/t/tok2345678");
@@ -230,6 +245,7 @@ describe("SellFlow", () => {
         slotWindow: "morning",
         address: "Flat 4B, Rose Apartments, Yeshwanthpur",
         name: "Priya",
+        location: { lat: 13.021, lng: 77.552 },
       }),
     );
     expect(push).toHaveBeenCalledWith("/t/tok2345678");

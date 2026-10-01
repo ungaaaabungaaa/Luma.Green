@@ -152,6 +152,7 @@ function CurrentStep({ state }: { state: SellState }) {
           {state.shop && isComplete(draft) ? (
             <ConfirmStep
               draft={draft}
+              location={state.location.point}
               items={state.items}
               materials={state.scrap}
               shop={state.shop}

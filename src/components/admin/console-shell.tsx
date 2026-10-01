@@ -2,6 +2,7 @@
 
 import { useQuery } from "convex/react";
 import {
+  ChartNoAxesCombinedIcon,
   HouseIcon,
   IndianRupeeIcon,
   LifeBuoyIcon,
@@ -41,6 +42,11 @@ const nav: readonly NavItem[] = [
     count: { key: "waiting", label: "waiting for review" },
   },
   { href: "/admin/prices", label: "Prices", icon: IndianRupeeIcon },
+  {
+    href: "/admin/pilot",
+    label: "Pilot numbers",
+    icon: ChartNoAxesCombinedIcon,
+  },
   {
     href: "/admin/support",
     label: "Support",

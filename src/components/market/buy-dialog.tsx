@@ -40,6 +40,7 @@ export function BuyButton({
   className?: string;
 }) {
   const t = useTranslations("market.buy");
+  const common = useTranslations("common");
   const format = useFormat();
   const [isOpen, setIsOpen] = useState(false);
   const material = format.material(
@@ -62,7 +63,10 @@ export function BuyButton({
           {t("button")}
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-md">
+      <DialogContent
+        closeLabel={common("close")}
+        className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-md"
+      >
         {isOpen ? (
           <BuyForm
             listing={listing}

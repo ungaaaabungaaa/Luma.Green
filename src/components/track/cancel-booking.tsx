@@ -51,7 +51,7 @@ export function CancelBooking({ booking }: { booking: TrackedBooking }) {
       </Button>
       <p className="text-sm text-muted-foreground">{t("free")}</p>
       <Dialog open={isOpen} onOpenChange={setOpen}>
-        <DialogContent className="max-w-md">
+        <DialogContent closeLabel={t("close")} className="max-w-md">
           <CancelDialogBody
             booking={booking}
             onDone={() => {

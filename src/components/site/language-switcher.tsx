@@ -27,7 +27,11 @@ export function LanguageSwitcher() {
   function onChange(next: string) {
     if (next === locale || !isLocale(next)) return;
     startTransition(() => {
-      router.replace(pathname, { locale: next });
+      // The query can hold a return path or filter, and the hash a help section.
+      router.replace(
+        `${pathname}${window.location.search}${window.location.hash}`,
+        { locale: next },
+      );
     });
   }
 
