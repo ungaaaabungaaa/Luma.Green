@@ -32,9 +32,9 @@ export async function Principles() {
             <li
               data-reveal
               key={key}
-              className="space-y-5 rounded-2xl border border-brand-900/10 bg-brand-50/50 p-7"
+              className="space-y-5 rounded-2xl border border-border bg-accent/50 p-7"
             >
-              <span className="inline-flex size-12 items-center justify-center rounded-full border border-brand-900/20 text-brand-900">
+              <span className="inline-flex size-12 items-center justify-center rounded-full border border-border text-primary">
                 <Icon aria-hidden className="size-5" />
               </span>
               <h3 className="text-xl font-semibold tracking-tight">

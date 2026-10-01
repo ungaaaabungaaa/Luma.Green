@@ -1,12 +1,19 @@
 {
-  "sourceCommit": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
+  "sourceCommit": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
   "note": "Real browser renders of current application components. Synthetic data and isolated local query/auth/navigation adapters. Not evidence of sign-in, authorization, live records, provider calls or production deployment. Build styles and Noto fonts are reused without restyling the app. The visible provenance banner belongs only to this harness.",
   "fixtureSha256": "32058d41e7ff9f5e2c9154df4e6a9cff6136eb0753757bb197a98e5f8685e9c3",
   "sharedSourceHashes": {
-    "src/components/showcase/role-story-image.tsx": "b45748c53d7b594791f8fa2080022f3eee3677e0cb4e28b32c49774be3e56b99",
+    "src/components/showcase/role-story-image.tsx": "c0f93201011f7d1cd910ebd263f89ad7117383f582f5fc0f7bd5093abbf737a2",
+    "src/app/globals.css": "126ac8e368ff1f57f450beb45b7a920d2364af10b0eb1ea088b7ed91ca0349fa",
+    "src/components/theme/theme-provider.tsx": "16099dee8a247ce40bb5d410fc0a6ae58de226e89071fea987cef5114e6842c0",
+    "src/components/theme/theme-toggle.tsx": "ebdfa7fa40d04e3bd6a49fbe3195ffc90dcf56737ac4a0971958c858d73fe925",
+    "src/components/app/app-shell.tsx": "d2a93dc8b56edc412e1ac2ab0fbceeec566b7a1772cd21030a41361024128d0a",
+    "src/components/admin/console-shell.tsx": "f2cbb69c3fc3b7fde767975600f8d789a039f973e05caf601e50be79a9dc166a",
+    "src/components/ui/button.tsx": "099d23d418d40381d6fdd21f5aa98188af78e729a57064c2ed65b38bc2192719",
+    "scripts/guide-preview/main.tsx": "ff282c0a437d281d8378f6120c41b04a4055316261367b58bca8721e713d8941",
     "scripts/guide-preview/image.tsx": "a1aac43e9a0256145a5a5fe58ca4f367bd15b4b46837b0d1302c054a83b3fa2d",
     "scripts/guide-preview/vite.config.mts": "ddf32276477c9e63c9bd3fde2e78761d3d37576e4d96abb8ce9efe726cb16ea3",
-    "messages/en.json": "1b47449fb9fbd0a8b1cee34a1cccffab46932ab4f0b7bc10a5b7d73e6dda4068",
+    "messages/en.json": "3cbaf6c0dda63fc2af44f87d58e2da597e7c28de396f8907fe426e2b0aa6ee6c",
     "public/images/showcase/household-sorting.webp": "c3dd81eb46dd919f68f91aa89511450ea1ba4eff0fce77c285ccd090a0c6380f",
     "public/images/showcase/collection-partners.webp": "430e3eba77371df632f35759001cfec09d81683b5455b80fad07d53e365df0b5",
     "public/images/showcase/material-yard.webp": "0ea4aebbd02335a2bbb8306532cb09d520b7f2f1e050dcb44174326fb3bed74d",
@@ -18,8 +25,8 @@
   },
   "styles": [
     {
-      "file": "18f79a1955250d5e.css",
-      "sha256": "8462f26f4fdd07e7f9bb629770abb078a9e2181d583dc3f7718a5690a9463076"
+      "file": "6568a8987a550e80.css",
+      "sha256": "547997db146ca7a916e2a014b663a00fe8ad0da0c4de7246962536ba612cfda8"
     },
     {
       "file": "cb832174ce8cdc3f.css",
@@ -35,7 +42,7 @@
       "file": "admin-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:53.605Z",
+      "capturedAt": "2026-10-01T19:15:22.244Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -44,8 +51,8 @@
       "fullPage": true,
       "applicationRoute": "/admin",
       "previewUrl": "http://127.0.0.1:3202/admin",
-      "componentSha256": "c70743b2a69c154e9f3ccb84cb250fda8fc7517f7f0b32aaa6c0b3902a5088b5",
-      "screenshotSha256": "d6348e832a9d31c458dc6a571e313e68b10436dd9983606d895d793791a73fab",
+      "componentSha256": "892cdbfe677bc7b8b5acc7793bd3dee8e0769d4fc2c36b2f48da9cfbf295804c",
+      "screenshotSha256": "8f514effb7fb0340032bc172646e15db5349bca9d2d8e7bba78c8c95f939f190",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -57,7 +64,7 @@
       "file": "admin-verification.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:53.932Z",
+      "capturedAt": "2026-10-01T19:15:22.533Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -67,7 +74,7 @@
       "applicationRoute": "/admin/verification",
       "previewUrl": "http://127.0.0.1:3202/admin/verification",
       "componentSha256": "2c83f2e3a97ea51b9d3c8ae14ebd0014c00ba01fe8dbbcc55c222b60872a7a61",
-      "screenshotSha256": "9034340a342bc00866f5a820b0738337adf226739c58ed466d902eef03404784",
+      "screenshotSha256": "bf413eea0a097e615d7e725cecd541c785c02717ac5394c9ae8a719053521324",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -79,7 +86,7 @@
       "file": "admin-review.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:54.264Z",
+      "capturedAt": "2026-10-01T19:15:22.842Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -89,7 +96,7 @@
       "applicationRoute": "/admin/verification/guide-shop",
       "previewUrl": "http://127.0.0.1:3202/admin/verification/guide-shop",
       "componentSha256": "a9b9b4f0e78ff4273816c9cd062d1b42d13cee1d9685c540d29920abb64746ed",
-      "screenshotSha256": "87c43a625b09456b2e9e0ffbed35fc872f5abf4b9f3f4cf1ee8d84db34e896fc",
+      "screenshotSha256": "ea634c7ff63382c761913c0728be4810eea42cd327f103646baa3c04305cb2b3",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -101,7 +108,7 @@
       "file": "admin-support.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:54.623Z",
+      "capturedAt": "2026-10-01T19:15:23.129Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -111,7 +118,7 @@
       "applicationRoute": "/admin/support",
       "previewUrl": "http://127.0.0.1:3202/admin/support",
       "componentSha256": "96934ed94946ca7c3501138d72d249a672673a51755687c5f9f9317319f3b135",
-      "screenshotSha256": "1e8827bede9f47c871fc307cb32728e3853d7c1465d58459a63727ed81116ab8",
+      "screenshotSha256": "8acee192d2cae60a91e755d01f580ec1f11f3ddbab70d8ff8caf333a9e79936d",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -123,7 +130,7 @@
       "file": "admin-prices.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:54.997Z",
+      "capturedAt": "2026-10-01T19:15:23.441Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -133,7 +140,7 @@
       "applicationRoute": "/admin/prices",
       "previewUrl": "http://127.0.0.1:3202/admin/prices",
       "componentSha256": "a19227f4ad1bfa2cdc55015fdc47878e36f4a4ac2d115d539c02caf75283e368",
-      "screenshotSha256": "331f8834d854e24905c402746e7be838010eeb4c3e36582cfbdfec52b9a71a3e",
+      "screenshotSha256": "aee74f4ccd18b7a8cccd1687d5cfda5b65e57a214fbcfb3c3f10b7d80a5cc3a8",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -145,7 +152,7 @@
       "file": "admin-pilot.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:55.371Z",
+      "capturedAt": "2026-10-01T19:15:23.744Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -155,7 +162,7 @@
       "applicationRoute": "/admin/pilot",
       "previewUrl": "http://127.0.0.1:3202/admin/pilot",
       "componentSha256": "7277b62d9839f9c6d190fe20361bb767091bcdc1666166482391d82adbc49163",
-      "screenshotSha256": "a80774199c5e8780922837b2f4c6bdeb4e1a5c8614dedb510922d788513facfd",
+      "screenshotSha256": "bd1e27e26f2ddea9e9a356286df8d9be9a3a2ecb53ee1163cd3a3f7537ad034c",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -167,7 +174,7 @@
       "file": "kabadiwala-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:55.806Z",
+      "capturedAt": "2026-10-01T19:15:24.098Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -176,8 +183,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app",
-      "componentSha256": "62c8f07928238de42335ee72c97084d678a8c29e3eeb8061a1ecde228d0b85b8",
-      "screenshotSha256": "f9fad2df604f8a7ad53c83ff1e4bf7e7178d137e459b3a7bf887044f84f4940f",
+      "componentSha256": "076f9b3dfb0cd84e88e896ee6787c4d1ef64f79182ed7bc0dbe973a5d84f5f35",
+      "screenshotSha256": "388762a81f34effd363ffbe7cbafa84b6a6bfdb695091b2c950dbfc43c31a33d",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -189,7 +196,7 @@
       "file": "kabadiwala-request.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:56.259Z",
+      "capturedAt": "2026-10-01T19:15:24.429Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -199,7 +206,7 @@
       "applicationRoute": "/en/app/requests/guide-booking",
       "previewUrl": "http://127.0.0.1:3202/en/app/requests/guide-booking",
       "componentSha256": "f8d517e76409fe759394cd5cd52bbea6a52f2d4fdfda3fa4c1edbc4d2f614551",
-      "screenshotSha256": "653ab4dd2ef51f2c4329dc569447052b9d396521b46a146c6b11ac5805b3ccab",
+      "screenshotSha256": "ce6c3fba01f26f7aecdeb5878091a6ba5e419e8639c0dee8a037f844b4ba6636",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -212,7 +219,7 @@
       "file": "kabadiwala-request-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:56.677Z",
+      "capturedAt": "2026-10-01T19:15:24.736Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -222,7 +229,7 @@
       "applicationRoute": "/en/app/requests/guide-booking",
       "previewUrl": "http://127.0.0.1:3202/en/app/requests/guide-booking",
       "componentSha256": "f8d517e76409fe759394cd5cd52bbea6a52f2d4fdfda3fa4c1edbc4d2f614551",
-      "screenshotSha256": "949a21f9688f6f2311b9c3ed9359c26fc2322c5d0987d575ebf4dc25af2eba20",
+      "screenshotSha256": "088bbe83be09c3dce1c73fddbcd268e172c8bdeba0996b3a7bcdefdfe15a8f65",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -236,7 +243,7 @@
       "file": "kabadiwala-weigh.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:57.119Z",
+      "capturedAt": "2026-10-01T19:15:25.058Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -245,8 +252,8 @@
       "fullPage": false,
       "applicationRoute": "/en/app/requests/guide-booking",
       "previewUrl": "http://127.0.0.1:3202/en/app/requests/guide-booking",
-      "componentSha256": "6b8fd91907dd8500a403df90634d0bf03c3e2284f3efebcfe5486ece4aa695fe",
-      "screenshotSha256": "bfb1b04379b5045036e5cffa9d9c52b59ef9a10803a43b3f179f74e17ff8df13",
+      "componentSha256": "7aab1198d16c8ecf4b5bfb056b02517b5421b8a400a3fe0a235994a1cd51cad0",
+      "screenshotSha256": "df23b4329df5a5e504a713db061db3a3ac4e3f3c3bc54d5bb4558174c2fa0c81",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -259,7 +266,7 @@
       "file": "kabadiwala-ratecard.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:57.492Z",
+      "capturedAt": "2026-10-01T19:15:25.347Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -269,7 +276,7 @@
       "applicationRoute": "/en/app/prices",
       "previewUrl": "http://127.0.0.1:3202/en/app/prices",
       "componentSha256": "c34954798223d414237e528fbed4e7bfeb512f383933337e734a7ffc23fe720e",
-      "screenshotSha256": "f239936471329d85b12afa322f6285ea426dbf67c1350e5f3cf7526cc616ea85",
+      "screenshotSha256": "12c7e41163e36ae1ddc1e27127c4feffda690d728b07927da9e6d7e1e1b6685c",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -283,7 +290,7 @@
       "file": "household-tracking.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:57.831Z",
+      "capturedAt": "2026-10-01T19:15:25.633Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 480,
@@ -292,8 +299,8 @@
       "fullPage": true,
       "applicationRoute": "/en/t/guide-demo-token",
       "previewUrl": "http://127.0.0.1:3202/en/t/guide-demo-token",
-      "componentSha256": "6dfc432f219b909b245ea5ff79fc7c372640b56357c3ff344720051c8d58e101",
-      "screenshotSha256": "dc080a910259ea56ff95398304cd000f5a8eedd379fd2f04be4ee292b6cf5f9a",
+      "componentSha256": "0d2f7e8287f591f7752ca6660559d6d61ad3cc49239e094e1ca1826cde2f0f0a",
+      "screenshotSha256": "2ddb396f953d29ba6e5f030fcc1272b793419931e1bf5b381286bad1208f8ace",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -306,7 +313,7 @@
       "file": "kabadiwala-requests.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:58.146Z",
+      "capturedAt": "2026-10-01T19:15:25.905Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -316,7 +323,7 @@
       "applicationRoute": "/en/app/requests",
       "previewUrl": "http://127.0.0.1:3202/en/app/requests",
       "componentSha256": "ad3824d9549bda16dcc02ce19d8e5a51ed8b21cdc061a99d5b4bc702ebc5904d",
-      "screenshotSha256": "3a9e5d7abe14ce43de390c9fd82de9f9ed41168454225c94e6e57e3b80d4f8a0",
+      "screenshotSha256": "5e85bc01344914c4f089d619e9c110985e439a0dfb8fcf1969b6c3335da8a0dd",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -329,7 +336,7 @@
       "file": "yard-market.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:58.512Z",
+      "capturedAt": "2026-10-01T19:15:26.173Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -339,7 +346,7 @@
       "applicationRoute": "/en/app/market",
       "previewUrl": "http://127.0.0.1:3202/en/app/market?role=yard",
       "componentSha256": "097f9bc24bd84bf18d7e548ebbac12a9dddf388a43824933662ab41365361090",
-      "screenshotSha256": "dc55c642416730678b8d9a69dfc14dae81d981ceddc9043d1f60bfc5ad926a7e",
+      "screenshotSha256": "03abfae2a7810c102528d136ce9e1de81b6b28057063950ed895c60a1aab322d",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -352,7 +359,7 @@
       "file": "yard-trades.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:58.852Z",
+      "capturedAt": "2026-10-01T19:15:26.446Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -362,7 +369,7 @@
       "applicationRoute": "/en/app/trades",
       "previewUrl": "http://127.0.0.1:3202/en/app/trades?role=yard",
       "componentSha256": "f8e2daaa86ab6146ea821e37624b8612209d5f57374338e10a52dd7ac5d77db9",
-      "screenshotSha256": "eaaf9ed12cb3db7dd8eff99395e2f6eb03873a04122834db29cda59609898aa1",
+      "screenshotSha256": "5ea9b0dd9ba2518af5f2774c53703298d6113bfc781051bd808cb7f9be20eeb5",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -374,7 +381,7 @@
       "file": "manufacturer-compliance.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:59.235Z",
+      "capturedAt": "2026-10-01T19:15:26.768Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -384,7 +391,7 @@
       "applicationRoute": "/en/app/compliance",
       "previewUrl": "http://127.0.0.1:3202/en/app/compliance?role=manufacturer",
       "componentSha256": "c23d87d9a4953063195cafd01d54fd74f5976872124fafa84c1b4b2a3b7216ed",
-      "screenshotSha256": "95ce93c6d0174ba3ae8e29991988d68ada8fae0ca9db1076bfadaaf443867568",
+      "screenshotSha256": "de801df63206a2abd3932c04427c62449f347cc22feebd2fbe8a4aa384c25051",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -396,7 +403,7 @@
       "file": "yard-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:59.613Z",
+      "capturedAt": "2026-10-01T19:15:27.099Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -405,8 +412,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=yard",
-      "componentSha256": "dab89cd4d3031d6a79b2964207b7d14339b5cb6ca1d733f60e8397203aa41412",
-      "screenshotSha256": "ebc1a7d4838806407c555ee8350dfdffa5c8d52bcdb8410ffa07e85a1b0d83e4",
+      "componentSha256": "26eef90f643fc0be6a61ce8fd401b6ba0c8bcdf1c27eb0a68073623de62d775f",
+      "screenshotSha256": "972ccd6e83267d34fc2998744f602f0ba8fe522eda62021c4850c63e581dac3a",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -418,7 +425,7 @@
       "file": "recycler-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:22:59.980Z",
+      "capturedAt": "2026-10-01T19:15:27.430Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -427,8 +434,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=recycler",
-      "componentSha256": "dab89cd4d3031d6a79b2964207b7d14339b5cb6ca1d733f60e8397203aa41412",
-      "screenshotSha256": "c3ab372df2cabdb56b6c1b918b493635436d433696402a15c475dbbb743cd859",
+      "componentSha256": "26eef90f643fc0be6a61ce8fd401b6ba0c8bcdf1c27eb0a68073623de62d775f",
+      "screenshotSha256": "0da0057653126e3089292ec72e48e935e914400e01640aace63a31aab14c83ce",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -440,7 +447,7 @@
       "file": "manufacturer-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:00.350Z",
+      "capturedAt": "2026-10-01T19:15:27.761Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -449,8 +456,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=manufacturer",
-      "componentSha256": "dab89cd4d3031d6a79b2964207b7d14339b5cb6ca1d733f60e8397203aa41412",
-      "screenshotSha256": "417cf021be4600c096a194ff00f059082d171c2d22c591fd9ab816647596c796",
+      "componentSha256": "26eef90f643fc0be6a61ce8fd401b6ba0c8bcdf1c27eb0a68073623de62d775f",
+      "screenshotSha256": "1a05d5b4fd1130af5c22830f9d8cfb84dd57cb31d47d852f0503258a79fe770c",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -462,7 +469,7 @@
       "file": "saathi-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:00.787Z",
+      "capturedAt": "2026-10-01T19:15:28.091Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -471,8 +478,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=saathi",
-      "componentSha256": "a13d1728eef8fc7d999dce02e1559cb31a844b04217e10f9730deab78956a7b3",
-      "screenshotSha256": "9458619aa6d2c15ff982fa96c8b9391aaf0609eb3c466ab6389cd208384be692",
+      "componentSha256": "6c7c3dbfacacc7579576c8e3f62c46d566d61330d1101564beec5f11183535d9",
+      "screenshotSha256": "11b9f45bae91654036156cf7d4ad81b8c4c643928007ec04d1c9d020452b2483",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -486,7 +493,7 @@
       "file": "admin-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:01.127Z",
+      "capturedAt": "2026-10-01T19:15:28.378Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -495,8 +502,8 @@
       "fullPage": true,
       "applicationRoute": "/admin",
       "previewUrl": "http://127.0.0.1:3202/admin",
-      "componentSha256": "c70743b2a69c154e9f3ccb84cb250fda8fc7517f7f0b32aaa6c0b3902a5088b5",
-      "screenshotSha256": "04ca555c907e38e0c956a535223c38634cffd37882e3ca37ec7d317be43c2727",
+      "componentSha256": "892cdbfe677bc7b8b5acc7793bd3dee8e0769d4fc2c36b2f48da9cfbf295804c",
+      "screenshotSha256": "79156cd1991ee90c85fe715a0299818ae85d4b0317b9aed40fa34dd27da02041",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -510,7 +517,7 @@
       "file": "kabadiwala-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:01.512Z",
+      "capturedAt": "2026-10-01T19:15:28.706Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -519,8 +526,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app",
-      "componentSha256": "62c8f07928238de42335ee72c97084d678a8c29e3eeb8061a1ecde228d0b85b8",
-      "screenshotSha256": "5d13b48fb40ff4ca207507a6a43b5e8bd13ec1188b0d024145f4068c3eee778a",
+      "componentSha256": "076f9b3dfb0cd84e88e896ee6787c4d1ef64f79182ed7bc0dbe973a5d84f5f35",
+      "screenshotSha256": "e9d674c0a6587d5d0b45e674fa1e8f3092a2525504d22ee28c22b1b0a07462d9",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -534,7 +541,7 @@
       "file": "yard-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:01.888Z",
+      "capturedAt": "2026-10-01T19:15:29.012Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -543,8 +550,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=yard",
-      "componentSha256": "dab89cd4d3031d6a79b2964207b7d14339b5cb6ca1d733f60e8397203aa41412",
-      "screenshotSha256": "01a75633b8b1e1e4dc73ea958199a796f0abb2171c391b21bcdd0651bd197553",
+      "componentSha256": "26eef90f643fc0be6a61ce8fd401b6ba0c8bcdf1c27eb0a68073623de62d775f",
+      "screenshotSha256": "7b7d132bce5397713eec9501f00fd713cb1d4aaea3af00fbbc85a4edc9e3d753",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -558,7 +565,7 @@
       "file": "recycler-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:02.248Z",
+      "capturedAt": "2026-10-01T19:15:29.335Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -567,8 +574,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=recycler",
-      "componentSha256": "dab89cd4d3031d6a79b2964207b7d14339b5cb6ca1d733f60e8397203aa41412",
-      "screenshotSha256": "b0fbafeaea06af1b0711cd1efd698a320ae6036b36ff24b262700c6944b97d2d",
+      "componentSha256": "26eef90f643fc0be6a61ce8fd401b6ba0c8bcdf1c27eb0a68073623de62d775f",
+      "screenshotSha256": "99ac15337b137b5cfcccaab184c313c42adcb370793e36b3a2345c6128c5ddfa",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -582,7 +589,7 @@
       "file": "manufacturer-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:02.623Z",
+      "capturedAt": "2026-10-01T19:15:29.641Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -591,8 +598,8 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=manufacturer",
-      "componentSha256": "dab89cd4d3031d6a79b2964207b7d14339b5cb6ca1d733f60e8397203aa41412",
-      "screenshotSha256": "b679de2318c917459ce336987e418e884183ff1aa1c50187f85b78b802a64562",
+      "componentSha256": "26eef90f643fc0be6a61ce8fd401b6ba0c8bcdf1c27eb0a68073623de62d775f",
+      "screenshotSha256": "6f51e3cbd3327af5be1d62ae910177bbff3dc59e9e24e40c633160f008a1fe9a",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -606,7 +613,7 @@
       "file": "saathi-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-01T18:23:03.032Z",
+      "capturedAt": "2026-10-01T19:15:29.946Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -615,8 +622,58 @@
       "fullPage": true,
       "applicationRoute": "/en/app",
       "previewUrl": "http://127.0.0.1:3202/en/app?role=saathi",
-      "componentSha256": "a13d1728eef8fc7d999dce02e1559cb31a844b04217e10f9730deab78956a7b3",
-      "screenshotSha256": "d8f7ecd86610f9f7165631b6047f6cfd11f7806d18d7ed7cb7e2a4b086dcacf4",
+      "componentSha256": "6c7c3dbfacacc7579576c8e3f62c46d566d61330d1101564beec5f11183535d9",
+      "screenshotSha256": "2e671398e076a504c857890bcf90cfaf19cd93936ba4e1a81d3fa8599cd3af27",
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "admin-overview-dark",
+      "route": "/admin",
+      "component": "src/components/admin/console-home.tsx",
+      "heading": "Welcome, Demo",
+      "theme": "dark",
+      "viewportOnly": true,
+      "file": "admin-overview-dark.png",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "capturedAt": "2026-10-01T19:15:30.237Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "applicationRoute": "/admin",
+      "previewUrl": "http://127.0.0.1:3202/admin",
+      "componentSha256": "892cdbfe677bc7b8b5acc7793bd3dee8e0769d4fc2c36b2f48da9cfbf295804c",
+      "screenshotSha256": "9ddfe04929587676b88ea932bec9e5906685ac6955a319710dade67a021d3782",
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "kabadiwala-overview-dark",
+      "route": "/en/app",
+      "component": "src/components/shop/kabadiwala-home.tsx",
+      "heading": "Demo neighbourhood shop",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "viewportOnly": true,
+      "file": "kabadiwala-overview-dark.png",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "capturedAt": "2026-10-01T19:15:30.552Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "applicationRoute": "/en/app",
+      "previewUrl": "http://127.0.0.1:3202/en/app",
+      "componentSha256": "076f9b3dfb0cd84e88e896ee6787c4d1ef64f79182ed7bc0dbe973a5d84f5f35",
+      "screenshotSha256": "7b09df767699656219c2b7d01d3286f4b686f72a758585dedecd5e283065c463",
       "browserErrors": [],
       "blockedExternalRequests": []
     }

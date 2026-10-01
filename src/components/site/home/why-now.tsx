@@ -22,8 +22,8 @@ export async function WhyNow() {
   const t = await getTranslations("home.whyNow");
 
   return (
-    <section aria-labelledby="why-now-heading" className="py-20 sm:py-28">
-      <Container className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
+    <section aria-labelledby="why-now-heading" className="py-12 sm:py-20">
+      <Container className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
         <div className="flex flex-col gap-8">
           <SectionHeading
             id="why-now-heading"
@@ -41,7 +41,7 @@ export async function WhyNow() {
               width={1440}
               height={960}
               sizes="(min-width: 1024px) 480px, 100vw"
-              className="h-auto w-full scale-110"
+              className="h-auto w-full"
             />
           </div>
         </div>
@@ -50,9 +50,9 @@ export async function WhyNow() {
             <li
               key={key}
               data-reveal
-              className="grid grid-cols-[2.75rem_minmax(0,1fr)] gap-x-5 gap-y-3 border-t border-brand-900/15 py-7"
+              className="grid grid-cols-[2.75rem_minmax(0,1fr)] gap-x-5 gap-y-3 border-t border-border py-7"
             >
-              <span className="row-span-2 flex size-11 items-center justify-center rounded-full bg-brand-50 text-primary">
+              <span className="row-span-2 flex size-11 items-center justify-center rounded-full bg-accent text-primary">
                 <Icon aria-hidden className="size-5" />
               </span>
               <h3 className="text-xl font-semibold tracking-tight">

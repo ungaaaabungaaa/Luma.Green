@@ -91,7 +91,7 @@ export function RateRow({ row }: { row: RateCardRow }) {
       <form
         noValidate
         onSubmit={(event) => void onSubmit(event)}
-        className="flex flex-col gap-3 rounded-2xl border bg-card p-4"
+        className="flex flex-col gap-3 rounded-2xl border bg-card p-4 shadow-sm"
       >
         <div className="flex items-center gap-3">
           <MaterialIcon family={row.material.family} />
@@ -178,7 +178,7 @@ export function RateRow({ row }: { row: RateCardRow }) {
           )}
         </p>
         {saved === null && row.fallbackPaise !== null ? (
-          <p className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+          <p className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:bg-amber-950/50 dark:text-amber-200">
             {t("prices.notSet", { price: format.perKg(row.fallbackPaise) })}
           </p>
         ) : null}

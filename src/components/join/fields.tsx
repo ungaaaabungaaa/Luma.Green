@@ -163,7 +163,7 @@ export function OptionCards<T extends string>({
             htmlFor={id}
             className={cn(
               "flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border-2 bg-card px-3 py-2 text-base font-normal",
-              isSelected ? "border-primary bg-brand-50" : "border-border",
+              isSelected ? "border-primary bg-primary/10" : "border-border",
             )}
           >
             <RadioGroupItem
@@ -244,7 +244,7 @@ export function ToggleChips<T extends string>({
             className={cn(
               "inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 px-4 text-base outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
               isPressed
-                ? "border-primary bg-brand-50 font-medium text-primary"
+                ? "border-primary bg-primary/10 font-medium text-primary"
                 : "border-border bg-card",
             )}
           >

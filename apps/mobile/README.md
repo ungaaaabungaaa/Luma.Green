@@ -48,6 +48,61 @@ emulator/device. At implementation time this Mac had only Apple's Command Line
 Tools, with no Xcode app, working Java runtime or Android SDK. None were installed
 by this change. EAS Build is an alternative after account setup.
 
+## Demo commands
+
+Start the web preview in another terminal first (`PORT=3004 pnpm start`, after
+building the root app). Then use one of these commands from the repository root:
+
+```sh
+pnpm --filter @luma/mobile demo:ios --check
+pnpm --filter @luma/mobile demo:android --check
+pnpm --filter @luma/mobile demo:ios
+pnpm --filter @luma/mobile demo:android
+```
+
+The `--check` option tests that the web origin responds, then exits. The full
+command starts Metro for an **already installed development build**. Use `i`
+for an available iOS simulator or `a` for an Android emulator in Metro. The
+commands do not compile or install a native app. Build the development app with
+`ios` or `android` above once the local native tools are available. Use the same
+origin environment when building it.
+
+```sh
+# First native build, after installing the required local toolchain:
+EXPO_PUBLIC_APP_URL=http://localhost:3004 EXPO_PUBLIC_ALLOW_LOCAL_HTTP=1 pnpm --filter @luma/mobile ios
+EXPO_PUBLIC_APP_URL=http://10.0.2.2:3004 EXPO_PUBLIC_ALLOW_LOCAL_HTTP=1 pnpm --filter @luma/mobile android
+```
+
+The default web origin is `http://localhost:3004` on iOS and
+`http://10.0.2.2:3004` on the Android emulator. Set `EXPO_PUBLIC_APP_URL` before
+the command to choose another validated origin. The readiness check translates
+the Android emulator alias to localhost on the host computer. It rejects server
+errors and redirects to another origin, but does not prove sign-in or API health.
+
+For a physical phone, deploy a tested HTTPS app origin with the correct Convex
+auth configuration. Use an installed development build and connect the phone
+and computer to the same trusted Wi-Fi for Metro:
+
+```sh
+EXPO_PUBLIC_APP_URL=https://your-tested-app.example pnpm --filter @luma/mobile demo:device
+```
+
+Replace the example origin with your own deployment. Scan Metro's code with
+the installed development client. A phone cannot use the computer's localhost;
+plain LAN HTTP remains blocked. Metro's local transport and the WebView's
+trusted app origin are separate connections. This launcher does not create a
+public tunnel, register an account or send OTPs. Without a configured backend,
+show the public pages and role guides; protected operational screens still need
+normal sign-in and approved test accounts.
+
+Expo Go can be used only if its SDK/runtime is compatible. It does not apply
+this app's native configuration and cannot prove production permissions or OTA.
+These demo commands deliberately select the development client instead of
+assuming that an Expo Go installation supports SDK 57.
+
+See [mobile demo evidence](../../docs/delivery/mobile-demo.md) for what was
+actually tested and what this machine still needs.
+
 ## Configuration
 
 All values are optional for local checks. Set values before building or exporting.

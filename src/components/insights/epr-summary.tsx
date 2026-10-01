@@ -54,7 +54,7 @@ export function EprSummary({ epr }: { epr: Epr }) {
                 className="flex flex-col gap-3 rounded-2xl border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div className="flex items-start gap-3">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <Icon aria-hidden className="size-5" />
                   </span>
                   <div className="flex flex-col gap-0.5">
@@ -66,7 +66,7 @@ export function EprSummary({ epr }: { epr: Epr }) {
                     </p>
                   </div>
                 </div>
-                <dl className="flex gap-6 ps-13 sm:ps-0">
+                <dl className="flex flex-wrap gap-x-6 gap-y-2 ps-13 sm:ps-0">
                   <div className="flex flex-col">
                     <dt className="text-xs text-muted-foreground">
                       {t(isRecycler ? "received" : "bought")}

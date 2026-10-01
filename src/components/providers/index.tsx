@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 
-import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider, ThemeToaster } from "@/components/theme/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { AnalyticsProvider } from "./analytics-provider";
@@ -14,12 +14,14 @@ import { ConvexClientProvider } from "./convex-provider";
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <NextIntlClientProvider>
-      <ConvexClientProvider>
-        <AnalyticsProvider>
-          <TooltipProvider>{children}</TooltipProvider>
-          <Toaster richColors closeButton />
-        </AnalyticsProvider>
-      </ConvexClientProvider>
+      <ThemeProvider>
+        <ConvexClientProvider>
+          <AnalyticsProvider>
+            <TooltipProvider>{children}</TooltipProvider>
+            <ThemeToaster />
+          </AnalyticsProvider>
+        </ConvexClientProvider>
+      </ThemeProvider>
     </NextIntlClientProvider>
   );
 }

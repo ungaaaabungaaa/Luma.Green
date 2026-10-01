@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 import { AdminProviders } from "@/components/admin/admin-providers";
+import { themeBootstrap } from "@/components/theme/theme";
 import { fontClassName } from "@/lib/fonts";
 import { site } from "@/lib/site";
 
@@ -18,13 +19,20 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
-  colorScheme: "light",
+  colorScheme: "light dark",
 };
 
 export default function AdminRootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" dir="ltr" className={`${fontClassName("en")} h-full`}>
+    <html
+      suppressHydrationWarning
+      lang="en"
+      dir="ltr"
+      className={`${fontClassName("en")} h-full`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+      </head>
       <body className="flex min-h-full flex-col bg-muted/50 text-foreground">
         <AdminProviders>{children}</AdminProviders>
       </body>

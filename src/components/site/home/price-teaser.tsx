@@ -101,7 +101,7 @@ function TeaserRow({ row }: { row: PriceRow }) {
   const Icon = FAMILY_ICONS[row.family];
   return (
     <li className="flex items-center gap-3 py-3">
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent text-primary">
         <Icon aria-hidden className="size-4" />
       </span>
       <span className="flex min-w-0 flex-1 flex-col">

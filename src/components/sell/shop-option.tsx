@@ -39,7 +39,7 @@ export function ShopOption({
       className={cn(
         "flex items-start gap-4 rounded-2xl border bg-card p-5 font-normal shadow-sm transition-[border-color,background-color,box-shadow] duration-200",
         isSelected
-          ? "border-primary bg-brand-50 ring-1 ring-primary"
+          ? "border-primary bg-accent ring-1 ring-primary"
           : "border-border/80",
         isDisabled
           ? "cursor-not-allowed bg-muted/50"
@@ -53,12 +53,12 @@ export function ShopOption({
         className="mt-1 size-5"
       />
       <span className="flex min-w-0 flex-1 flex-col gap-3">
-        <span className="flex items-start justify-between gap-3">
+        <span className="flex flex-wrap items-start justify-between gap-3">
           <span className="text-base leading-snug font-semibold">
             {shop.name}
           </span>
           <span className="flex shrink-0 flex-col items-end">
-            <span className="text-2xl leading-tight font-semibold tracking-tight text-brand-900 tabular-nums">
+            <span className="text-2xl leading-tight font-semibold tracking-tight text-foreground tabular-nums">
               {format.money(shop.estimatePaise)}
             </span>
             <span className="text-xs text-muted-foreground">
@@ -103,7 +103,9 @@ export function ShopOption({
           </span>
         ) : null}
         {isDisabled ? (
-          <span className="text-sm text-amber-800">{t("noPickupHere")}</span>
+          <span className="text-sm text-amber-800 dark:text-amber-200">
+            {t("noPickupHere")}
+          </span>
         ) : null}
       </span>
     </Label>

@@ -7,6 +7,12 @@
     "title": "Luma.Green — Cleaner Tomorrow in Motion",
     "description": "Luma.Green puts India's scrap chain on one platform: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, weighed pickups and a record of every hand-off."
   },
+  "theme": {
+    "label": "Appearance",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
   "common": {
     "loading": "Loading…",
     "error": "Something went wrong",

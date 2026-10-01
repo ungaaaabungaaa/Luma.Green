@@ -52,10 +52,10 @@ export default async function HowItWorksPage() {
               key={key}
               data-reveal
               aria-labelledby={`step-${key}`}
-              className="grid gap-8 rounded-2xl border border-brand-900/10 bg-brand-50/40 p-6 sm:p-10 md:grid-cols-[1fr_2fr] md:gap-16"
+              className="grid gap-8 rounded-2xl border border-border bg-card p-6 sm:p-10 md:grid-cols-[1fr_2fr] md:gap-16"
             >
               <div className="min-w-0 space-y-5">
-                <span className="inline-flex size-14 items-center justify-center rounded-full border border-brand-900/20 bg-card text-brand-900">
+                <span className="inline-flex size-14 items-center justify-center rounded-full border border-border bg-card text-primary">
                   <Icon aria-hidden className="size-6" />
                 </span>
                 <p className="text-sm font-medium text-primary">
@@ -73,7 +73,7 @@ export default async function HowItWorksPage() {
                 <p className="text-lg leading-relaxed text-pretty text-muted-foreground">
                   {t(`${key}.body`)}
                 </p>
-                <ul className="grid gap-4 border-t border-brand-900/10 pt-6">
+                <ul className="grid gap-4 border-t border-border pt-6">
                   {points.map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <CheckIcon
@@ -90,7 +90,7 @@ export default async function HowItWorksPage() {
         </ol>
       </Container>
 
-      <div className="border-y border-brand-900/10">
+      <div className="border-y border-border">
         <Principles />
       </div>
 

@@ -12,7 +12,10 @@
     "test": "node --test test/*.test.cjs test/*.test.ts",
     "check": "pnpm typecheck && pnpm test",
     "export": "expo export --platform all",
-    "messages:generate": "node scripts/generate-messages.cjs"
+    "messages:generate": "node scripts/generate-messages.cjs",
+    "demo:ios": "node scripts/demo.cjs ios",
+    "demo:android": "node scripts/demo.cjs android",
+    "demo:device": "node scripts/demo.cjs device"
   },
   "dependencies": {
     "expo": "57.0.26",

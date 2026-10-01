@@ -32,7 +32,7 @@ function Figure({
     <div
       className={cn(
         "flex flex-col gap-1 rounded-xl px-4 py-3",
-        emphasis ? "bg-brand-50" : "bg-muted/50",
+        emphasis ? "bg-accent" : "bg-muted/50",
         className,
       )}
     >
@@ -40,7 +40,7 @@ function Figure({
       <dd
         className={cn(
           "font-semibold",
-          emphasis ? "text-xl text-brand-900" : "text-lg",
+          emphasis ? "text-xl text-primary" : "text-lg",
         )}
       >
         {value}
@@ -65,7 +65,7 @@ export function SolarResultView({
   if (!result || result.status === "noUsage") {
     return (
       <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed bg-card px-6 py-12 text-center">
-        <span className="flex size-12 items-center justify-center rounded-full bg-brand-50 text-primary">
+        <span className="flex size-12 items-center justify-center rounded-full bg-accent text-primary">
           <SunIcon aria-hidden className="size-6" />
         </span>
         <p className="max-w-xs text-muted-foreground">{t("prompt")}</p>
@@ -81,7 +81,7 @@ export function SolarResultView({
 
   if (result.status === "roofTooSmall") {
     return (
-      <div className="flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 p-5 text-amber-900">
+      <div className="flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 p-5 text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
         <TriangleAlertIcon aria-hidden className="mt-0.5 size-5 shrink-0" />
         <div className="flex flex-col gap-1">
           <p className="font-semibold">{t("roofTooSmallTitle")}</p>
@@ -142,7 +142,7 @@ function Estimate({
           </p>
         ) : null}
         {estimate.limitedByRoof ? (
-          <p className="mt-1 flex items-start gap-2 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+          <p className="mt-1 flex items-start gap-2 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:bg-amber-950/30 dark:text-amber-100">
             <InfoIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
             {t("limitedByRoof")}
           </p>

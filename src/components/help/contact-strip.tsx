@@ -67,7 +67,7 @@ export function ContactStrip({
           asChild
           size="lg"
           variant="outline"
-          className="h-auto min-h-12 rounded-full border-primary-foreground/40 bg-transparent px-5 py-3 whitespace-normal text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+          className="h-auto min-h-12 rounded-full border-brand-50/40 bg-transparent px-5 py-3 whitespace-normal text-brand-50 hover:bg-brand-50/10 hover:text-brand-50"
         >
           <Link href={contactHref(role, topic)}>
             <PencilLineIcon aria-hidden />

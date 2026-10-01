@@ -37,24 +37,24 @@ export async function RoleBenefits() {
   return (
     <section
       aria-labelledby="roles-heading"
-      className="bg-brand-50/50 py-20 sm:py-28"
+      className="bg-muted/50 py-12 sm:py-20"
     >
-      <Container className="flex flex-col gap-12 sm:gap-16">
+      <Container className="flex flex-col gap-8 sm:gap-10">
         <SectionHeading
           id="roles-heading"
           title={t("heading")}
           intro={t("intro")}
         />
-        <ul className="grid gap-4 md:grid-cols-2 lg:gap-6">
+        <ul className="grid gap-4 md:grid-cols-2 lg:gap-5 xl:grid-cols-3">
           {roles.map(({ key, icon: Icon, href }, index) => (
             <li
               key={key}
               data-reveal
               className={cn(
-                "group relative flex flex-col gap-6 rounded-2xl border p-6 sm:p-8 lg:p-10",
+                "group relative flex flex-col gap-5 rounded-2xl border p-5 sm:p-6",
                 index === 0
                   ? "border-brand-950 bg-brand-950 text-brand-50"
-                  : "border-brand-900/10 bg-card",
+                  : "border-border bg-card",
               )}
             >
               <RoleStoryImage scene={key} compact />
@@ -64,7 +64,7 @@ export async function RoleBenefits() {
                     "flex size-12 shrink-0 items-center justify-center rounded-full border",
                     index === 0
                       ? "border-brand-100/25 text-brand-200"
-                      : "border-brand-900/15 text-brand-800",
+                      : "border-border text-primary",
                   )}
                 >
                   <Icon aria-hidden className="size-5" />
@@ -80,7 +80,7 @@ export async function RoleBenefits() {
                       aria-hidden
                       className={cn(
                         "mt-0.5 size-4 shrink-0",
-                        index === 0 ? "text-brand-300" : "text-brand-800",
+                        index === 0 ? "text-brand-300" : "text-primary",
                       )}
                     />
                     <span
@@ -102,7 +102,7 @@ export async function RoleBenefits() {
                   "mt-auto inline-flex min-h-11 w-full items-center justify-between gap-4 border-t pt-5 font-semibold underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50",
                   index === 0
                     ? "border-brand-100/20 text-brand-100"
-                    : "border-brand-900/10 text-brand-900",
+                    : "border-border text-primary",
                 )}
               >
                 {t(`${key}.cta`)}

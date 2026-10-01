@@ -1,7 +1,7 @@
 # Frontend and UI plan
 
 > **Status:** decided, 29 Sep 2026 —
-> [ADR 0010](../decisions/0010-white-theme-mobile-first-shadcn.md). Rules for
+> [ADR 0017](../decisions/0017-light-dark-theme.md). Rules for
 > writing UI code live in [`.claude/skills/design-system`](../../.claude/skills/design-system/SKILL.md).
 
 ## The rules
@@ -10,7 +10,7 @@
    field, dialog, sheet, tab and toast comes from shadcn (`pnpm dlx
 shadcn@latest add …`). Next.js's own `next/image` and `next/font` for images
    and fonts. No second component library.
-2. **White theme only.** No dark mode, no theme switch, no `.dark` tokens.
+2. **Light, dark and system appearance.** Shared semantic tokens and a local preference apply to public pages, admin and workspaces.
 3. **Mobile first.** Every screen is designed at 360–390 px first. Household
    and kabadiwala screens are phone-only; yard, recycler, manufacturer and
    admin screens also get a desktop layout.
@@ -39,7 +39,7 @@ The founder requested a richer public site and more polished app screens. This
 refinement supersedes the earlier compact public heading and radius guidance.
 See [visual delivery evidence](../delivery/premium-ui.md).
 
-- Keep the light theme. Use forest-green feature panels and navigation with
+- Support light and dark themes. Use forest-green feature panels with
   explicit light text; these do not depend on the device theme.
 - Public content uses `max-w-7xl`, editorial headings, larger section spacing,
   and compressed sculptural imagery. Noto still supplies all twelve scripts.

@@ -146,10 +146,35 @@ screens.push(
       width: 390,
       height: 844,
     })),
+  {
+    name: "admin-overview-dark",
+    route: "/admin",
+    component: "src/components/admin/console-home.tsx",
+    heading: "Welcome, Demo",
+    theme: "dark",
+    viewportOnly: true,
+  },
+  {
+    name: "kabadiwala-overview-dark",
+    route: "/en/app",
+    component: "src/components/shop/kabadiwala-home.tsx",
+    heading: "Demo neighbourhood shop",
+    theme: "dark",
+    width: 390,
+    height: 844,
+    viewportOnly: true,
+  },
 );
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const sharedSources = [
   "src/components/showcase/role-story-image.tsx",
+  "src/app/globals.css",
+  "src/components/theme/theme-provider.tsx",
+  "src/components/theme/theme-toggle.tsx",
+  "src/components/app/app-shell.tsx",
+  "src/components/admin/console-shell.tsx",
+  "src/components/ui/button.tsx",
+  "scripts/guide-preview/main.tsx",
   "scripts/guide-preview/image.tsx",
   "scripts/guide-preview/vite.config.mts",
   "messages/en.json",
@@ -183,6 +208,7 @@ try {
       viewport,
       deviceScaleFactor: 1,
       reducedMotion: "reduce",
+      colorScheme: screen.theme ?? "light",
     });
     const errors = [];
     const blocked = [];
@@ -214,6 +240,15 @@ try {
       await document.fonts.ready;
       await Promise.all([...document.images].map((image) => image.decode()));
     });
+    if (
+      await page.evaluate(
+        () => getComputedStyle(document.body).margin !== "0px",
+      )
+    ) {
+      throw new Error(
+        "Build styles did not load. Restart the fixture server after each Next build.",
+      );
+    }
     if (errors.length > 0 || blocked.length > 0)
       throw new Error(`${screen.name}: ${JSON.stringify({ errors, blocked })}`);
     if (screen.scrollTarget) {

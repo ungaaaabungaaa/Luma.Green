@@ -61,7 +61,7 @@ export function MaterialChoice({
               htmlFor={id}
               className={cn(
                 "flex min-h-14 cursor-pointer items-center gap-3 rounded-xl border-2 bg-card p-3 text-base leading-normal font-normal",
-                code === value ? "border-primary bg-brand-50" : "border-border",
+                code === value ? "border-primary bg-accent" : "border-border",
                 isAllPromised && "cursor-not-allowed opacity-60",
               )}
             >
@@ -235,7 +235,7 @@ export function PriceField({
         </div>
       </Field>
       {isFarFromSuggestion(paise, suggestion) ? (
-        <p className="flex gap-2 rounded-lg bg-amber-50 p-2.5 text-sm text-amber-900">
+        <p className="flex gap-2 rounded-lg bg-amber-50 p-2.5 text-sm text-amber-900 dark:bg-amber-950/50 dark:text-amber-200">
           <TriangleAlertIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
           {t("sell.form.farFromMarket")}
         </p>

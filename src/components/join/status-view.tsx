@@ -43,14 +43,14 @@ function StatusCard({
   children?: ReactNode;
 }) {
   const toneClass = {
-    neutral: "bg-brand-50 text-primary",
-    good: "bg-brand-50 text-primary",
+    neutral: "bg-primary/10 text-primary",
+    good: "bg-primary/10 text-primary",
     bad: "bg-destructive/10 text-destructive",
   }[tone];
   return (
-    <section className="flex flex-col gap-6 rounded-3xl border border-border/80 bg-card p-6 shadow-sm sm:p-8">
+    <section className="flex flex-col gap-5 rounded-2xl border border-border/80 bg-card p-5 shadow-xs sm:p-7">
       <span
-        className={`flex size-16 items-center justify-center rounded-2xl ${toneClass}`}
+        className={`flex size-12 items-center justify-center rounded-2xl ${toneClass}`}
       >
         {icon}
       </span>

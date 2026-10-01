@@ -2,9 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* White theme only (docs/decisions/0010). shadcn components ship `dark:`
-   utilities; this keeps them inert by matching a `.dark` class we never set.
-   Delete it and Tailwind would apply them from the phone's own dark setting. */
+/* A stored preference controls the class; system mode follows the device. */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -58,6 +56,30 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
+    alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+    0% {
+      transform: translateZ(0) rotate(0);
+    }
+    15%,
+    35% {
+      transform: translateZ(0) rotate(90deg);
+    }
+    65%,
+    85% {
+      transform: translateZ(0) rotate(270deg);
+    }
+    100% {
+      transform: translateZ(0) rotate(360deg);
+    }
+  }
 }
 
 /* Luma.Green brand scale, sampled from the mark. Use `brand-*` utilities for
@@ -79,7 +101,7 @@
 }
 
 :root {
-  --background: oklch(0.985 0.006 110);
+  --background: oklch(0.982 0.008 95);
   --foreground: oklch(0.23 0.035 160);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.23 0.035 160);
@@ -102,7 +124,7 @@
   --chart-3: oklch(0.62 0.12 158);
   --chart-4: oklch(0.5 0.095 162);
   --chart-5: oklch(0.38 0.07 165);
-  --radius: 0.875rem;
+  --radius: 1rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.5 0.095 162);
@@ -111,6 +133,35 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.16 0.012 160);
+  --foreground: oklch(0.95 0.008 110);
+  --card: oklch(0.205 0.013 160);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.225 0.014 160);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.88 0.16 125);
+  --primary-foreground: oklch(0.18 0.03 160);
+  --secondary: oklch(0.27 0.024 160);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.245 0.013 160);
+  --muted-foreground: oklch(0.73 0.017 140);
+  --accent: oklch(0.3 0.037 155);
+  --accent-foreground: oklch(0.94 0.045 130);
+  --destructive: oklch(0.73 0.17 25);
+  --border: oklch(0.34 0.018 160);
+  --input: oklch(0.4 0.02 160);
+  --ring: oklch(0.79 0.13 130);
+  --sidebar: oklch(0.18 0.013 160);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 @layer base {
@@ -220,4 +271,9 @@ html:is(
       border-color 150ms ease,
       box-shadow 150ms ease;
   }
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
 }

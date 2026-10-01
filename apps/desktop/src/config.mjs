@@ -86,9 +86,37 @@ export function buildConfig(env, releasePlatform) {
   };
 }
 
+/** Demo packages have a separate identity and can only load local loopback HTTP.
+ * @param {NodeJS.ProcessEnv} env */
+export function buildDemoConfig(env) {
+  const appOrigin = validateOrigin(
+    env.DESKTOP_DEMO_ORIGIN || "http://localhost:3004",
+    true,
+  );
+  const url = new URL(appOrigin);
+  if (
+    url.protocol !== "http:" ||
+    !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname)
+  )
+    throw new Error("Desktop demo requires an HTTP loopback origin.");
+  return {
+    appOrigin,
+    updateUrl: null,
+    release: false,
+    releasePlatform: null,
+    windowsPublisher: null,
+    demo: true,
+  };
+}
+
 /** Runtime overrides cannot change a packaged app's origin.
- * @param {{appOrigin: string}} config @param {boolean} packaged @param {NodeJS.ProcessEnv} env */
+ * @param {{appOrigin: string, demo?: boolean, release?: boolean, updateUrl?: string | null}} config @param {boolean} packaged @param {NodeJS.ProcessEnv} env */
 export function runtimeOrigin(config, packaged, env) {
+  if (config.demo) {
+    if (config.release || config.updateUrl)
+      throw new Error("Demo packages cannot enable releases or updates.");
+    return buildDemoConfig({ DESKTOP_DEMO_ORIGIN: config.appOrigin }).appOrigin;
+  }
   return !packaged && env.DESKTOP_DEV_ORIGIN
     ? validateOrigin(env.DESKTOP_DEV_ORIGIN, true)
     : validateOrigin(config.appOrigin);

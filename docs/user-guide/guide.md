@@ -1,11 +1,9 @@
-# Luma.Green
+# Luma Green platform user guide
 
-# Platform user guide
+How to use the recycling platform and its admin console
 
-From the first pickup to the admin console.
-
-Edition: 1 October 2026. Source baseline: 6ca9391.
-Includes the role preview and generated imagery update committed with this edition.
+Edition: 2 October 2026. Source baseline: 9fb82cd.
+Includes the shared interface redesign, appearance controls and native demo setup.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
@@ -480,7 +478,7 @@ The inbox includes help and solar enquiries and reads the newest 200 records. Ma
 
 Use the application's image/PDF preview. Select Load the video before a video is fetched. Open or Download only when necessary. A valid session and permission are required on each file request. If the session has ended, sign in again. For a network error, use Try again.
 
-Store downloaded identity documents only in an approved secure location. Do not add them to Git, this PDF, a public support thread or a screenshot set. Temporary browser preview caching is not a document archive.
+Store downloaded identity documents only in an approved secure location. Do not add them to Git, this guide, a public support thread or a screenshot set. Temporary browser preview caching is not a document archive.
 
 ---
 
@@ -531,6 +529,38 @@ Hosted website changes can update the shared UI. Compatible signed JavaScript up
 
 There is no offline write queue, background location service or independent native ledger. A mobile JavaScript export is not an APK or IPA installer.
 
+### Local desktop demonstration
+
+The separate Luma.Green Demo app is available as an unsigned Apple Silicon Mac
+build and a Windows x64 folder. Windows execution still needs a Windows test.
+Start the built website on the same computer with `pnpm exec next start --port
+3004`, then open the demo app. Copy the entire Windows folder, not only its EXE.
+The app loads localhost:3004; it does not contain an offline copy of the website.
+
+Rebuild with `pnpm --filter @luma/desktop demo:pack:mac` or
+`pnpm --filter @luma/desktop demo:pack:win`. Demo cookies are separate from the
+production app. Updates are disabled in the demo profile. It does not bypass
+sign-in or make a disconnected backend work. Show public pages first; use only
+an approved test backend and test account for protected workflows.
+
+### Android and iOS demonstration
+
+Run `pnpm --filter @luma/mobile demo:ios --check` or
+`pnpm --filter @luma/mobile demo:android --check` to check the local web origin.
+Omit `--check` to start Metro for an installed development build. iOS simulator
+uses localhost; Android emulator uses 10.0.2.2 to reach the computer.
+
+A real device needs a tested HTTPS origin, the matching development build and
+native tools or an approved EAS build. Set EXPO_PUBLIC_APP_ORIGIN before building
+and launching; then use `pnpm --filter @luma/mobile demo:device`. The app cannot
+assume that any Expo Go installation contains its native modules. Full Xcode is
+required for local iOS builds; Android needs the supported JDK and Android SDK.
+
+This machine exported both JavaScript bundles and tested the launcher. It did
+not produce an APK or IPA, and no phone or simulator acceptance was completed.
+See apps/mobile/README.md and docs/operations/app-releases.md for build, signing
+and device checks.
+
 ---
 
 ## 27 / Troubleshooting
@@ -573,7 +603,7 @@ This is an owner/developer checklist, not a list of admin console buttons. The e
 | Support and prices  | Real contact details; verified pilot prices; staffed review/support process                          |
 | Operations          | Measured backups and restore drill, provider cost limits and incident procedure                      |
 
-Use docs/operations/launch-checklist.md, app-releases.md, low-cost-operation.md and sms-notifications.md. Keep secrets outside Git and the PDF. AUTH_DEV_MODE belongs only to a development or preview environment.
+Use docs/operations/launch-checklist.md, app-releases.md, low-cost-operation.md and sms-notifications.md. Keep secrets outside Git and the guide. AUTH_DEV_MODE belongs only to a development or preview environment.
 
 A branch push is not deployment. A build is not provider approval. A provider accepting a message is not proof that a handset received it. Test each boundary before opening the pilot.
 
@@ -680,31 +710,50 @@ Google Search Console and Bing verification tags are optional ownership checks. 
 
 ---
 
-## 36 / Explore each role before you start
+## 36 / Appearance and role pages
 
-The Participants and role-help pages show illustrative app previews. Home and Join cards use role images to help you find the right path. Phone frames explain household, kabadiwala and Saathi tasks. Browser frames explain yard, recycler, manufacturer and admin work. Each preview uses the selected language, including right-to-left layouts.
+Use Appearance in the header or workspace controls to select Light, Dark or
+System. System follows the device setting. Your selection stays in this browser
+when browser storage is available. It does not change another person's account
+or device. Admin and public pages use the same local preference.
 
-![Current Participants page in the browser. The household app preview and generated scene are labelled illustrations, not a booking or real operation.](screenshots/showcase-household.png)
+![Current homepage in dark mode. Actual local browser capture, with no backend connection.](screenshots/public-home-dark.png)
 
-The previews are not live controls. Use the page's normal Sell scrap, Join or guide links to open the real workflow. A preview does not sign you in, create records, approve an application or show a released native app. All account and release requirements in this guide still apply.
+The desktop header shows the main navigation links. On a phone, open the menu
+for links and sign-in. The language and appearance controls remain in the header.
+Use the page's Sell scrap, Join and help links to open a workflow.
 
-![Current yard section on Participants. The browser frame is an illustrative overview of incoming material, sorting and stock.](screenshots/showcase-yard.png)
+![Current Participants page in dark mode. Role descriptions and work scenes replace device mockups.](screenshots/public-participants-dark.png)
 
-The photos are generated editorial scenes. They explain the type of work; they are not evidence of actual staff, facilities, customers, safety certification or operational results. Working booking and admin screens remain separate from these public illustrations.
+The Participants and role-help pages explain each role with work scenes and
+written guidance. There are no phone or laptop mockups. The generated photos
+provide context; they are not evidence of actual staff, facilities, customers,
+safety certification or operational results. Tables and transaction records
+remain the source for operational activity.
 
-![Current admin overview on Participants. It contains generic verification tasks and no private applications or account details.](screenshots/showcase-admin.png)
+![Current household section on Participants. The work scene supports the role description.](screenshots/showcase-household.png)
 
-![Current Arabic role-help preview captured at phone width. The interface text is translated HTML, not text embedded in an image.](screenshots/showcase-arabic.png)
+![Current yard section on Participants.](screenshots/showcase-yard.png)
 
-Illustrative images also appear on sign-in pages, the sell introduction, onboarding forms, public information pages and workspace home screens. They give context to each role. Tables, transactions and form controls remain the operational records; the images do not show live activity.
+![Current admin section on Participants. Access still requires the admin sign-in and authenticator.](screenshots/showcase-admin.png)
 
-On a role-help page, use the links at the top to jump to guides, questions or training. The preview is only an introduction. The actual instructions and permission rules remain in those sections.
+![Current Arabic role-help image. The page uses right-to-left navigation and text.](screenshots/showcase-arabic.png)
+
+On a role-help page, use the links at the top to jump to guides, questions or
+training. Decorative images do not sign you in or create a record. Reduced
+motion settings stop the decorative shimmer and scroll effects.
+
+![Current Arabic homepage in dark mode on a phone.](screenshots/public-arabic-dark.png)
+
+![Current admin workspace in dark mode with synthetic documentation records. This is not authenticated access.](screenshots/admin-overview-dark.png)
+
+![Current kabadiwala workspace in dark mode with synthetic documentation records.](screenshots/kabadiwala-overview-dark.png)
 
 ---
 
 ## 37 / Evidence and maintenance
 
-The editable source is docs/user-guide/guide.md. The PDF is output/pdf/luma-green-user-guide.pdf. Screenshots and their capture manifests live with the source. The repository README in that folder gives capture and rebuild commands.
+The editable repository source is docs/user-guide/guide.md. The maintained Word document is output/docx/luma-green-user-guide.docx. The old PDF is an archived edition. Screenshots and their capture manifests live with the source. The repository README in that folder gives capture and rebuild commands.
 
 The guide is based on the current route files, operational components, Convex functions and the native release runbooks. Primary owners include src/components/sell, app, market, saathi, join and admin; convex/households.ts, review.ts, adminPrices.ts, pilot.ts and support.ts; and docs/operations/app-releases.md.
 
@@ -712,6 +761,6 @@ Screenshots are retained as browser-produced PNG files. Public capture metadata 
 
 ### Required update procedure
 
-When a route, role, permission, workflow, visible control, setup requirement or app update behavior changes, update the matching chapter. Re-capture changed screens with synthetic or approved test data. Update the capture metadata. Rebuild the PDF, check every rendered page, and commit source, screenshots and PDF together.
+When a route, role, permission, workflow, visible control, setup requirement or app update behavior changes, update the matching chapter. Re-capture changed screens with synthetic or approved test data. Update the capture metadata. Rebuild the Word document, check every rendered page, and commit source, screenshots, build record and Word document together. Once the Google Drive connection and document import are set up, update the same Google Docs document and retain its existing sharing settings and link. A UI commit alone does not automatically update an external document.
 
 Do not silently substitute a mock for an authenticated screenshot. Do not claim provider delivery or account approval from a fixture. Keep the chapter's current limitations until a real verification record replaces them.

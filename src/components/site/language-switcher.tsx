@@ -40,11 +40,12 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          size="icon-lg"
+          size="icon"
+          className="rounded-full"
           aria-label={t("language")}
           disabled={isPending}
         >
-          <LanguagesIcon />
+          <LanguagesIcon aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-44">

@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   buildConfig,
+  buildDemoConfig,
   runtimeOrigin,
   validateFeed,
   validateOrigin,
@@ -96,4 +97,36 @@ test("release rejects missing origin, feed, signing and notarization inputs", ()
     ).release,
     true,
   );
+});
+
+test("demo packages are loopback-only, isolated from releases and cannot check updates", () => {
+  const config = buildDemoConfig({
+    DESKTOP_UPDATE_URL: "https://example.com/updates",
+  });
+  assert.equal(config.appOrigin, "http://localhost:3004");
+  assert.equal(config.updateUrl, null);
+  assert.equal(config.release, false);
+  assert.equal(
+    runtimeOrigin(config, true, {
+      DESKTOP_DEV_ORIGIN: "http://localhost:8888",
+    }),
+    config.appOrigin,
+  );
+  for (const origin of [
+    "https://app.luma.green",
+    // eslint-disable-next-line sonarjs/no-clear-text-protocols -- Negative fixture rejects LAN HTTP origins.
+    "http://192.168.1.2:3004",
+    "http://localhost:3004/path",
+  ]) {
+    assert.throws(() => buildDemoConfig({ DESKTOP_DEMO_ORIGIN: origin }));
+  }
+  assert.throws(() => runtimeOrigin({ ...config, release: true }, true, {}));
+  assert.throws(() =>
+    runtimeOrigin(
+      { ...config, updateUrl: "https://example.com/updates" },
+      true,
+      {},
+    ),
+  );
+  assert.throws(() => runtimeOrigin({ appOrigin: config.appOrigin }, true, {}));
 });

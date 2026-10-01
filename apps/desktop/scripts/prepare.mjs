@@ -7,13 +7,17 @@ import {
 } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-import { buildConfig } from "../src/config.mjs";
+import { buildConfig, buildDemoConfig } from "../src/config.mjs";
 
 const index = process.argv.indexOf("--release");
-const config = buildConfig(
-  process.env,
-  index === -1 ? undefined : process.argv[index + 1] || "invalid",
-);
+const demo = process.argv.includes("--demo");
+if (demo && index !== -1)
+  throw new Error("Choose demo or release, never both.");
+const releasePlatform =
+  index === -1 ? undefined : process.argv[index + 1] || "invalid";
+const config = demo
+  ? buildDemoConfig(process.env)
+  : buildConfig(process.env, releasePlatform);
 const generated = new URL("../generated/", import.meta.url);
 await mkdir(generated, { recursive: true });
 const messagesPath = new URL("../../../messages/", import.meta.url);

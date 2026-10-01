@@ -253,7 +253,7 @@ function BuyForm({
         {t("buy.escrow", { seller: listing.seller.name })}
       </p>
       {total !== null && requiresEwayBill(total) ? (
-        <p className="flex gap-2 rounded-lg bg-sky-50 p-3 text-sm text-sky-900">
+        <p className="flex gap-2 rounded-lg bg-sky-50 p-3 text-sm text-sky-900 dark:bg-sky-950/50 dark:text-sky-200">
           <FileTextIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
           {t("buy.ewayBill")}
         </p>

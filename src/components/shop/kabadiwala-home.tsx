@@ -30,13 +30,13 @@ export function KabadiwalaHome() {
   if (!shop) return null;
   return (
     <div className="flex flex-col gap-6">
-      <div className="grid items-center gap-4 md:grid-cols-[minmax(0,1fr)_16rem]">
+      <div className="grid items-center gap-5 rounded-2xl border border-border/80 bg-card p-5 lg:grid-cols-[minmax(0,1fr)_16rem] lg:p-6">
         <Greeting name={shop.name} />
         <RoleStoryImage
-          sizes="(min-width: 768px) 256px, 92vw"
+          sizes="(min-width: 1024px) 256px, 92vw"
           scene="kabadiwala"
           compact
-          frameClassName="aspect-auto h-24 md:h-32"
+          frameClassName="aspect-auto h-28 lg:h-36"
         />
       </div>
       <QueryBoundary>
@@ -100,9 +100,9 @@ function QuickLink({
   return (
     <Link
       href={href}
-      className="flex min-h-16 items-center gap-4 rounded-2xl border bg-card p-4 outline-none hover:border-primary/40 hover:bg-brand-50/50 focus-visible:ring-3 focus-visible:ring-ring/50"
+      className="flex min-h-16 items-center gap-4 rounded-2xl border bg-card p-4 outline-none hover:border-primary/40 hover:bg-primary/5 focus-visible:ring-3 focus-visible:ring-ring/50"
     >
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-primary">
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
         <Icon aria-hidden className="size-6" />
       </span>
       <span className="flex min-w-0 flex-1 flex-col">

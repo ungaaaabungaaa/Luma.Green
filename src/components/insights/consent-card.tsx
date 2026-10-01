@@ -21,12 +21,12 @@ type Tone = "good" | "warn" | "bad";
 const LOOK: Record<Tone, { card: string; badge: string; icon: LucideIcon }> = {
   good: {
     card: "border-border bg-card",
-    badge: "bg-brand-50 text-primary",
+    badge: "bg-primary/10 text-primary",
     icon: ShieldCheckIcon,
   },
   warn: {
-    card: "border-amber-300 bg-amber-50",
-    badge: "bg-background text-amber-700",
+    card: "border-amber-500/30 bg-amber-500/10",
+    badge: "bg-background text-amber-800 dark:text-amber-300",
     icon: ShieldAlertIcon,
   },
   bad: {
@@ -58,7 +58,7 @@ function Frame({
       <div className="flex items-start gap-3">
         <span
           className={cn(
-            "flex size-10 shrink-0 items-center justify-center rounded-full",
+            "flex size-10 shrink-0 items-center justify-center rounded-xl",
             badge,
           )}
         >

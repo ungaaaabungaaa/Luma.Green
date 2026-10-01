@@ -19,10 +19,22 @@ import { progressIndex, progressSteps } from "./status";
 import type { TrackedBooking } from "./types";
 
 const HERO: Record<BookingStatus, { icon: LucideIcon; tone: string }> = {
-  requested: { icon: HourglassIcon, tone: "bg-amber-50 text-amber-800" },
-  accepted: { icon: CircleCheckBigIcon, tone: "bg-brand-50 text-primary" },
-  on_the_way: { icon: TruckIcon, tone: "bg-sky-50 text-sky-800" },
-  completed: { icon: PartyPopperIcon, tone: "bg-brand-50 text-primary" },
+  requested: {
+    icon: HourglassIcon,
+    tone: "bg-amber-50 text-amber-800 dark:bg-amber-950/50 dark:text-amber-200",
+  },
+  accepted: {
+    icon: CircleCheckBigIcon,
+    tone: "bg-accent text-accent-foreground",
+  },
+  on_the_way: {
+    icon: TruckIcon,
+    tone: "bg-sky-50 text-sky-800 dark:bg-sky-950/50 dark:text-sky-200",
+  },
+  completed: {
+    icon: PartyPopperIcon,
+    tone: "bg-accent text-accent-foreground",
+  },
   declined: { icon: CircleXIcon, tone: "bg-destructive/10 text-destructive" },
   cancelled: { icon: BanIcon, tone: "bg-muted text-muted-foreground" },
 };
@@ -81,7 +93,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
   return (
     <section
       aria-labelledby="track-title"
-      className="flex flex-col gap-4 rounded-2xl border bg-card p-5"
+      className="flex flex-col gap-4 rounded-3xl border bg-card p-5 shadow-sm sm:p-6"
     >
       <div className="flex items-start gap-4">
         <span

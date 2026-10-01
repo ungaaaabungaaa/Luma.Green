@@ -23,9 +23,9 @@ function Chip({
       aria-pressed={isPressed}
       onClick={onPress}
       className={cn(
-        "inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full border-2 px-4 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+        "inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-xl border px-4 text-sm whitespace-nowrap transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
         isPressed
-          ? "border-primary bg-brand-50 font-medium text-primary"
+          ? "border-primary bg-accent font-medium text-accent-foreground"
           : "border-border bg-card hover:bg-muted",
       )}
     >

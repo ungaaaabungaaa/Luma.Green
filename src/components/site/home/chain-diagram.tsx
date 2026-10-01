@@ -28,9 +28,9 @@ function Lane({ icon: Icon, text }: { icon: LucideIcon; text: string }) {
   return (
     <p
       data-reveal
-      className="flex items-start gap-4 border-t border-brand-900/15 py-6"
+      className="flex items-start gap-4 border-t border-border py-6"
     >
-      <Icon aria-hidden className="mt-0.5 size-5 shrink-0 text-brand-800" />
+      <Icon aria-hidden className="mt-0.5 size-5 shrink-0 text-primary" />
       <span className="text-sm leading-relaxed text-muted-foreground">
         {text}
       </span>
@@ -46,28 +46,28 @@ export async function ChainDiagram() {
   ]);
 
   return (
-    <section aria-labelledby="chain-heading" className="py-20 sm:py-28">
-      <Container className="flex flex-col gap-12 sm:gap-16">
+    <section aria-labelledby="chain-heading" className="py-12 sm:py-20">
+      <Container className="flex flex-col gap-8 sm:gap-10">
         <SectionHeading
           id="chain-heading"
           title={t("heading")}
           intro={t("intro")}
         />
         <div>
-          <ol className="grid gap-0 md:grid-cols-5">
+          <ol className="grid gap-3 md:grid-cols-5">
             {steps.map(({ key, icon: Icon }, index) => (
               <li
                 data-reveal
                 key={key}
-                className="relative grid grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-brand-900/15 py-7 md:flex md:flex-col md:gap-7 md:border-t-2 md:py-8 md:pe-5 lg:pe-8"
+                className="relative grid grid-cols-[3.5rem_minmax(0,1fr)] gap-5 rounded-2xl border bg-card p-5 md:flex md:flex-col md:gap-5"
               >
-                <span className="font-display text-4xl leading-none font-medium tracking-tight text-brand-800/60 md:text-5xl">
+                <span className="font-display text-4xl leading-none font-medium tracking-tight text-primary/70 md:text-5xl">
                   {format.number(index + 1, { minimumIntegerDigits: 2 })}
                 </span>
                 <div className="space-y-3">
                   <Icon
                     aria-hidden
-                    className="mb-4 size-7 text-brand-800"
+                    className="mb-4 size-7 text-primary"
                     strokeWidth={1.5}
                   />
                   <h3 className="text-lg font-semibold">
@@ -81,11 +81,11 @@ export async function ChainDiagram() {
                   <>
                     <ArrowDownIcon
                       aria-hidden
-                      className="absolute start-4 bottom-3 size-4 text-brand-700 md:hidden"
+                      className="absolute start-4 bottom-3 size-4 text-primary md:hidden"
                     />
                     <ArrowRightIcon
                       aria-hidden
-                      className="absolute end-4 top-10 hidden size-5 text-brand-700 md:block rtl:rotate-180"
+                      className="absolute end-4 top-10 hidden size-5 text-primary md:block rtl:rotate-180"
                     />
                   </>
                 ) : null}

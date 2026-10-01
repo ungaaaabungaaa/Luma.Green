@@ -122,7 +122,7 @@ export function PhoneForm() {
         </Button>
       </form>
 
-      <div className="flex flex-col gap-3 rounded-2xl border border-brand-100 bg-brand-50/60 p-5">
+      <div className="flex flex-col gap-3 rounded-2xl border border-border bg-accent/60 p-5">
         <p className="flex items-start gap-2 font-medium">
           <HomeIcon aria-hidden className="mt-1 size-4 shrink-0 text-primary" />
           {t("homeTitle")}

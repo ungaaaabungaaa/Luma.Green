@@ -50,7 +50,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 function choiceClass(isSelected: boolean, isDisabled: boolean) {
   return cn(
     "rounded-2xl border-2 bg-card font-normal",
-    isSelected ? "border-primary bg-brand-50" : "border-border",
+    isSelected ? "border-primary bg-accent" : "border-border",
     isDisabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
   );
 }

@@ -1,11 +1,23 @@
-# Agent handoff — 1 October 2026
+# Agent handoff — 2 October 2026
 
-**Status:** the current visual pass adds seven role app previews and eight generated
-scenes across discovery, access and operational home pages. Its starting checkpoint is `6ca9391`.
-See [app showcases](app-showcases.md) for the scope and current verification.
-The continuation branch is `feat/pilot-readiness-cleanup`.
-The branch is the continuation point; `main` has not received these changes.
-Check the live remote before making a merge or deployment claim.
+**Status:** shared UI redesign, native demo setup and Word/Google Docs guide
+migration are the current delivery slice, based on `9fb82cd`. Device mockups and
+visible illustration captions are removed. Light, dark and system themes now
+apply to the public site, admin and workspaces. See [UI redesign](ui-redesign.md),
+[desktop demo](desktop-demo.md) and [mobile demo](mobile-demo.md).
+
+Local verification passed: `pnpm check` (1,151 web, 27 mobile and 20 desktop
+tests), production build, 60 Chromium checks, 29 final motion/site checks and
+five configured analytics checks. The 51-page Word guide and its six freshness
+tests pass. Google Docs publication remains pending: authentication was accepted,
+then the plugin tools disappeared before an import result. Read
+[cloud publication state](../user-guide/cloud.json); no cloud URL is claimed.
+
+The continuation branch is `feat/pilot-readiness-cleanup`; `main` has not received
+these changes. Check the live remote before claiming merge or deployment.
+[Future enhancements](../product/enhancement-proposal.md) are a research proposal
+and still require user approval. Do not implement them just because they are in
+the repo. The user approved the UI, demo and guide work separately.
 
 ## Resume procedure
 
@@ -14,13 +26,13 @@ Check the live remote before making a merge or deployment claim.
    `git worktree list`. Preserve new user changes. Fetch `origin` and compare the
    branch with its upstream before editing or pushing.
 3. Read the implementation records below, especially the latest
-   [app showcase delivery](app-showcases.md). The earlier visual and guide
+   [UI redesign](ui-redesign.md). The earlier visual and guide
    checkpoints are integrated; do not repeat them.
 4. Pick a task from the ordered queue. Distinguish code implementation, local
    tests, hosted CI, deployment, provider execution and store approval in reports.
 5. Update this page as work progresses. Commit meaningful verified slices.
    Keep secrets, local environments and temporary output out of Git. The
-   maintained user-guide PDF and browser captures are required tracked artifacts.
+   maintained Word user guide and browser captures are required tracked artifacts.
 
 Repository: `https://github.com/ungaaaabungaaa/Luma.Green.git`.
 Branch: `feat/pilot-readiness-cleanup`.
@@ -44,24 +56,25 @@ existing checkout. No app secret is needed for local build/tests.
 These commits are reachable from the continuation branch. Do not cherry-pick
 them again into that branch or restart from the old base.
 
-| Commit    | Completed work                                                               |
-| --------- | ---------------------------------------------------------------------------- |
-| `bb3eb1b` | Deferred analytics and removed unused service packages                       |
-| `cfcad80` | Twelve-locale material names and message-contract validation                 |
-| `e949586` | Pickup dispatch, expiry/reassignment and pilot safeguards                    |
-| `af9a027` | Accessible UI cleanup and admin pilot reports                                |
-| `c6b51a0` | Auth recovery after failed sends and delayed sessions                        |
-| `caf87bf` | Optional bounded photo estimates; manual entry preserved                     |
-| `85b9d73` | Booking/application status-message outbox and adapter                        |
-| `acd549e` | Pilot setup and implementation evidence                                      |
-| `9ec96ce` | Expo and Electron shells, guarded updates, GSAP and imagery                  |
-| `e6d0e3a` | Expo-compatible isolated mobile TypeScript version                           |
-| `e218556` | Native architecture, account setup and release evidence                      |
-| `2183515` | Image compression, compact queries, caches and self-hosted inference adapter |
-| `f94fa6b` | Agent handoff and continuation checkpoints                                   |
-| `db62fb7` | Premium public/app design, compressed art, parallax and motion checks        |
-| `0f0ce43` | Illustrated platform guide and mandatory guide maintenance rules             |
-| `6ca9391` | Optional PostHog/GA4, error-only Sentry, search setup and updated guide      |
+| Commit    | Completed work                                                                 |
+| --------- | ------------------------------------------------------------------------------ |
+| `bb3eb1b` | Deferred analytics and removed unused service packages                         |
+| `cfcad80` | Twelve-locale material names and message-contract validation                   |
+| `e949586` | Pickup dispatch, expiry/reassignment and pilot safeguards                      |
+| `af9a027` | Accessible UI cleanup and admin pilot reports                                  |
+| `c6b51a0` | Auth recovery after failed sends and delayed sessions                          |
+| `caf87bf` | Optional bounded photo estimates; manual entry preserved                       |
+| `85b9d73` | Booking/application status-message outbox and adapter                          |
+| `acd549e` | Pilot setup and implementation evidence                                        |
+| `9ec96ce` | Expo and Electron shells, guarded updates, GSAP and imagery                    |
+| `e6d0e3a` | Expo-compatible isolated mobile TypeScript version                             |
+| `e218556` | Native architecture, account setup and release evidence                        |
+| `2183515` | Image compression, compact queries, caches and self-hosted inference adapter   |
+| `f94fa6b` | Agent handoff and continuation checkpoints                                     |
+| `db62fb7` | Premium public/app design, compressed art, parallax and motion checks          |
+| `0f0ce43` | Illustrated platform guide and mandatory guide maintenance rules               |
+| `6ca9391` | Optional PostHog/GA4, error-only Sentry, search setup and updated guide        |
+| `9fb82cd` | Role images and earlier app previews; previews removed in the current redesign |
 
 Detailed records: [UI and pilot](cleanup-progress.md),
 [apps and motion](apps-and-motion.md), [cost optimization](cost-optimization.md),
@@ -147,8 +160,8 @@ The guide now covers every role, access, the admin console, household pickups,
 business trades, native updates and owner setup. Read
 [the editable guide](../user-guide/guide.md) and
 [its update workflow](../user-guide/README.md). `AGENTS.md` requires a guide-impact
-assessment for each user-facing change and updated source/captures/PDF in the
-same commit when affected. The PDF uses current browser captures; protected
+assessment for each user-facing change and updated source/captures/DOCX in the
+same commit when affected. The Word guide uses current browser captures; protected
 screens use clearly labelled synthetic records in actual application components.
 No connected authentication or live provider result is established by those figures.
 
@@ -157,12 +170,12 @@ Historical documentation checks at `0f0ce43`: `pnpm check` passed lint/types, 1,
 input, screenshot/component and PDF hashes. The PDF was rendered and every page
 inspected. No production source, dependencies or native runtime changed.
 The analytics edition added English and Arabic consent captures and owner setup.
-The current visual edition expands the guide to 50 pages, with 14 public captures,
-four clearly labelled public role previews and 26 synthetic protected-screen
-fixtures (including six phone layouts). Generated scenes are illustrations, not
+The earlier PDF visual edition had 50 pages. The current Word edition uses 18 public captures,
+four public role photograph captures and 28 synthetic protected-screen
+fixtures (including six phone layouts and two dark views). Generated scenes are illustrations, not
 evidence of operations. Only the analytics captures use test keys; their external
 requests are intercepted. Shared image/adapter hashes now enforce recapture.
-Guide impact was assessed and its source, captures, build record and PDF updated
+Guide impact was assessed and its source, captures, build record and DOCX updated
 in the same delivery. The guide tooling uses a separate local preview and Python
 build dependencies.
 See the [delivery record](user-guide.md) for capture coverage and remaining limits.
@@ -197,8 +210,8 @@ This checkpoint is prepared for a normal push of `feat/pilot-readiness-cleanup`
 to `origin` with upstream tracking. Verify equality after fetching with
 `git rev-list --left-right --count HEAD...@{upstream}`; expect `0 0` before claiming
 synchronization. Check clean status separately. Find the latest delivery with
-`git log -1 --grep='role app previews'`. Preserve the pre-existing untracked
-root `luma-green-user-guide.pdf`; it is not the maintained `output/pdf` artifact.
+`git log -1 --grep='redesign themes'`. Preserve the pre-existing untracked
+root `luma-green-user-guide.pdf`; the maintained artifact is now under `output/docx`.
 Do not stage or delete it. No main merge, hosted CI result or deployment is
 claimed by this handoff.
 
@@ -206,3 +219,27 @@ No PR, hosted CI result, merge, deployment, provider execution or store release
 is claimed here. The current task ends after push verification. No background
 agent or scheduled monitor is left running. Resume with the ordered queue and
 update this record.
+
+## Current guide and demo boundary
+
+The Word guide replaces the former PDF maintenance requirement. The current
+source remains `docs/user-guide/guide.md`; output is
+`output/docx/luma-green-user-guide.docx`. Retain actual browser captures and
+provenance, rebuild, render and inspect every page after screen changes. The old
+PDF is archived. Preserve the unrelated root `luma-green-user-guide.pdf`.
+The Google Docs link and synchronization evidence belong in the guide directory
+after verified import. Update that same document for future changes; creating a
+new document on every run breaks the shared link. UI commits alone do not sync a
+cloud document. AGENTS.md requires the cloud update or an explicit pending gate.
+
+Local desktop demo artifacts are ignored build outputs under
+`apps/desktop/release/demo`. Mac ARM64 runs locally; Windows x64 was cross-built
+but still needs execution on Windows. Both load a local website on port 3004.
+The demo origin is immutable and loopback-only, with separate cookies and no
+update feed. Production HTTPS/signing guards remain.
+
+Mobile launchers and Android/iOS JavaScript bundles are verified locally. This
+host has no full Xcode, simulator, JDK or Android SDK; no mobile installer or
+real-device acceptance is claimed. Follow the mobile demo record rather than
+assuming Expo Go is compatible. Signed releases and provider execution remain
+separate launch gates.

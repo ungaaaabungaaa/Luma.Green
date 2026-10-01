@@ -45,7 +45,7 @@ export function MaterialTile({
       className={cn(
         "group flex h-full min-h-40 w-full flex-col items-start gap-4 rounded-2xl border bg-card p-4 text-start shadow-sm transition-[border-color,background-color,box-shadow] duration-200 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50 sm:p-5",
         isAdded
-          ? "border-primary bg-brand-50 ring-1 ring-primary"
+          ? "border-primary bg-accent ring-1 ring-primary"
           : "border-border/80 hover:border-primary/50 hover:shadow-md",
       )}
     >

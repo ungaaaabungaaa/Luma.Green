@@ -34,10 +34,14 @@ export const FAMILY_STYLE: Record<
 > = {
   paper: {
     icon: NewspaperIcon,
-    chip: "bg-amber-50 text-amber-800",
+    chip: "bg-amber-50 text-amber-800 dark:bg-amber-950/50 dark:text-amber-200",
     defaultKg: 5,
   },
-  plastic: { icon: MilkIcon, chip: "bg-sky-50 text-sky-800", defaultKg: 2 },
+  plastic: {
+    icon: MilkIcon,
+    chip: "bg-sky-50 text-sky-800 dark:bg-sky-950/50 dark:text-sky-200",
+    defaultKg: 2,
+  },
   metal: {
     icon: CookingPotIcon,
     chip: "bg-muted text-foreground",
@@ -45,12 +49,12 @@ export const FAMILY_STYLE: Record<
   },
   ewaste: {
     icon: CpuIcon,
-    chip: "bg-brand-100 text-brand-900",
+    chip: "bg-accent text-accent-foreground",
     defaultKg: 1,
   },
   glass: {
     icon: WineIcon,
-    chip: "bg-card text-sky-700 ring-1 ring-sky-200 ring-inset",
+    chip: "bg-card text-sky-700 ring-1 ring-sky-200 ring-inset dark:text-sky-300 dark:ring-sky-800",
     defaultKg: 2,
   },
   other: {

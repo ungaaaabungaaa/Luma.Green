@@ -1,6 +1,5 @@
 import { expect, type Locator, type Page, test } from "@playwright/test";
 
-import arabic from "../messages/ar.json";
 import english from "../messages/en.json";
 import urdu from "../messages/ur.json";
 
@@ -42,72 +41,35 @@ async function expectStoryImages(region: Locator, count: number) {
   }
 }
 
-async function expectReadablePreviews(
-  page: Page,
-  count: number,
-  label = english.showcase.preview.label,
-) {
-  const previews = page
-    .getByRole("main")
-    .getByRole("figure")
-    .filter({ has: page.getByText(label, { exact: true }) });
-  await expect(previews).toHaveCount(count);
+async function expectNoDevicePreviews(page: Page) {
+  await expect(
+    page.getByRole("main").locator("figure[aria-label]"),
+  ).toHaveCount(0);
   await page.evaluate(async () => document.fonts.ready);
   expect(
     await page.evaluate(
-      () => document.documentElement.scrollWidth - window.innerWidth,
+      () => document.documentElement.scrollWidth - innerWidth,
     ),
   ).toBeLessThanOrEqual(1);
-  const previewElements = await previews.all();
-  for (const preview of previewElements) {
-    await expect(preview).toBeVisible();
-    // Illustrations must not add fake form controls or extra keyboard stops.
-    await expect(
-      preview.locator("button, input, select, textarea, a, [tabindex]"),
-    ).toHaveCount(0);
-    const bounds = await preview.boundingBox();
-    expect(bounds).not.toBeNull();
-    if (!bounds) throw new Error("A preview must have visible bounds");
-    expect(bounds.x).toBeGreaterThanOrEqual(0);
-    expect(bounds.x + bounds.width).toBeLessThanOrEqual(
-      (page.viewportSize()?.width ?? 0) + 1,
-    );
-    expect(
-      await preview.evaluate(
-        (element) => element.scrollWidth - element.clientWidth,
-      ),
-    ).toBeLessThanOrEqual(1);
-  }
 }
 
-test("each participant has a labelled app preview and its own material story", async ({
+test("participants show role photos without device mockups or illustration captions", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/en/participants");
-  await expectReadablePreviews(page, 7);
+  await expectNoDevicePreviews(page);
+  await expect(
+    page.getByText(english.showcase.preview.label, { exact: true }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByText(english.showcase.scene, { exact: true }),
+  ).toHaveCount(0);
   for (const role of roles) {
-    await expect(
-      page.getByRole("figure", {
-        name: english.showcase.preview.roles[role].title,
-        exact: true,
-      }),
-    ).toBeVisible();
-    const section = page.getByRole("region", {
-      name: participantTitles[role],
-      exact: true,
-    });
-    const image = section.locator("img");
-    await image.scrollIntoViewIfNeeded();
-    await expect
-      .poll(async () =>
-        image.evaluate(
-          (element: HTMLImageElement) =>
-            element.complete && element.naturalWidth > 0,
-        ),
-      )
-      .toBe(true);
+    await expectStoryImages(
+      page.getByRole("region", { name: participantTitles[role], exact: true }),
+      1,
+    );
   }
 });
 
@@ -132,21 +94,14 @@ test("home role photos load on a 360px phone and the household action works", as
   await expect(page).toHaveURL(/\/sell$/u);
 });
 
-test("Arabic participant previews fit a phone and retain clear illustration labels", async ({
+test("Arabic participant sections fit a phone without device mockups", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/ar/participants");
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
-  await expectReadablePreviews(page, 7, arabic.showcase.preview.label);
-  for (const role of roles) {
-    const preview = page.getByRole("figure", {
-      name: arabic.showcase.preview.roles[role].title,
-      exact: true,
-    });
-    await expect(preview).toContainText(arabic.showcase.preview.label);
-  }
+  await expectNoDevicePreviews(page);
 });
 
 test("Urdu join photos fit a phone and cards lead to the selected role", async ({
@@ -174,7 +129,7 @@ test("Urdu join photos fit a phone and cards lead to the selected role", async (
   await expect(page).toHaveURL(/\/ur\/join\/kabadiwala$/u);
 });
 
-test("each role help page keeps guides reachable past the workspace preview", async ({
+test("each role help page keeps guides reachable without device previews", async ({
   page,
 }) => {
   test.setTimeout(60_000);
@@ -182,7 +137,7 @@ test("each role help page keeps guides reachable past the workspace preview", as
   await page.setViewportSize({ width: 390, height: 844 });
   for (const role of helpRoles) {
     await page.goto(`/en/help/${role}`);
-    await expectReadablePreviews(page, 1);
+    await expectNoDevicePreviews(page);
     await page
       .getByRole("link", { name: english.help.role.guidesHeading, exact: true })
       .click();
@@ -208,7 +163,7 @@ test("public information scenes load without adding controls or overflowing a ph
     const scene = page
       .getByRole("main")
       .getByRole("figure")
-      .filter({ has: page.getByText(english.showcase.scene, { exact: true }) })
+      .filter({ has: page.locator("img") })
       .first();
     await expectStoryImages(scene, 1);
     await expect(scene.locator("img")).toHaveAttribute("alt", "");
@@ -236,7 +191,7 @@ test("Arabic sign-in and household booking keep their content before the scene o
     await expect(heading).toBeVisible();
     const scene = page
       .getByRole("figure")
-      .filter({ has: page.getByText(arabic.showcase.scene, { exact: true }) })
+      .filter({ has: page.locator("img") })
       .first();
     await expectStoryImages(scene, 1);
     // A fresh production stylesheet must retain the intended phone crop.

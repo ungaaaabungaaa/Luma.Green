@@ -6,6 +6,7 @@ import { Logo } from "@/components/brand/logo";
 import { SignOutButton } from "@/components/join/sign-out-button";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { SkipLink } from "@/components/site/skip-link";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link } from "@/i18n/navigation";
 
 /** Fallback for new applicant pages; public /join uses the site layout. */
@@ -30,7 +31,7 @@ export default async function JoinLayout({
   return (
     <div className="flex min-h-dvh flex-col bg-muted/40">
       <SkipLink />
-      <header className="sticky top-0 z-30 flex h-20 items-center justify-between gap-2 border-b border-border/60 bg-background/95 px-4 backdrop-blur sm:px-8">
+      <header className="sticky top-0 z-30 flex min-h-18 flex-wrap items-center justify-between gap-2 border-b border-border/60 bg-background/95 px-4 py-2 backdrop-blur sm:px-8">
         <Link
           href="/"
           aria-label={t("home")}
@@ -39,6 +40,7 @@ export default async function JoinLayout({
           <Logo />
         </Link>
         <div className="flex items-center gap-1">
+          <ThemeToggle />
           <LanguageSwitcher />
           <SignOutButton />
         </div>
@@ -46,7 +48,7 @@ export default async function JoinLayout({
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto my-6 flex w-full max-w-2xl flex-1 flex-col px-4 py-3 sm:my-10 sm:rounded-3xl sm:border sm:bg-card sm:p-10 sm:shadow-sm"
+        className="mx-auto my-5 flex w-full max-w-3xl flex-1 flex-col px-4 py-3 sm:my-8 sm:rounded-2xl sm:border sm:border-border/80 sm:bg-card sm:p-8 sm:shadow-xs"
       >
         {children}
       </main>

@@ -1,18 +1,15 @@
-/** Actual browser captures of public, explicitly illustrative role previews. */
+/** Actual browser captures of public role sections. */
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 
 import { chromium } from "@playwright/test";
 
-import ar from "../messages/ar.json";
-
 const origin = new URL(process.env.GUIDE_BASE_URL ?? "http://localhost:3004");
 if (!["localhost", "127.0.0.1"].includes(origin.hostname)) {
   throw new Error("Capture only a local preview with no real customer data.");
 }
 const sources = [
-  "src/components/showcase/role-app-preview.tsx",
   "src/components/showcase/role-story-image.tsx",
   "src/app/[locale]/(site)/participants/page.tsx",
   "src/app/[locale]/(site)/help/[role]/page.tsx",
@@ -71,10 +68,7 @@ try {
       const response = await page.goto(url);
       if (!response?.ok()) throw new Error(`Cannot capture ${url}`);
       const target = isPhone
-        ? page.getByRole("figure", {
-            name: ar.showcase.preview.roles.kabadiwala.title,
-            exact: true,
-          })
+        ? page.getByRole("main").getByRole("figure").first()
         : page.locator(`section[aria-labelledby="participant-${role}"]`);
       await target.scrollIntoViewIfNeeded();
       await page.evaluate(async () => document.fonts.ready);
@@ -101,11 +95,11 @@ try {
         viewport,
         capturedAt: new Date().toISOString(),
         actualBrowserUI: true,
-        kind: "current-public-illustrative-preview",
+        kind: "current-public-role-section",
         productionAuthenticationTested: false,
         browserErrors,
         blockedRequests,
-        note: "Unmodified browser element screenshot. Public translated HTML mock-up and generated decorative imagery; not authenticated operations or a native release.",
+        note: "Unmodified browser element screenshot. Public role information and generated decorative imagery; not authenticated operations or a native release.",
       });
       process.stdout.write(`Captured showcase ${role}\n`);
     } finally {

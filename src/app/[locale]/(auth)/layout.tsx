@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { SkipLink } from "@/components/site/skip-link";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link } from "@/i18n/navigation";
 
 import collectionPartners from "../../../../public/images/showcase/collection-partners.webp";
@@ -20,12 +21,11 @@ export default async function AuthLayout({
 }) {
   const t = await getTranslations("nav");
   const brand = await getTranslations("brand");
-  const showcase = await getTranslations("showcase");
 
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <SkipLink />
-      <header className="flex h-20 items-center justify-between gap-2 border-b border-border/60 bg-background px-5 sm:px-8">
+      <header className="flex min-h-18 flex-wrap items-center justify-between gap-2 border-b border-border/60 bg-background px-4 py-2 sm:px-8">
         <Link
           href="/"
           aria-label={t("home")}
@@ -33,15 +33,18 @@ export default async function AuthLayout({
         >
           <Logo />
         </Link>
-        <LanguageSwitcher />
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <LanguageSwitcher />
+        </div>
       </header>
-      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-6 p-4 sm:p-8 lg:grid-cols-2 lg:gap-10 lg:p-10">
-        <aside className="relative order-2 flex flex-col justify-between self-start overflow-hidden rounded-3xl bg-brand-950 p-3 text-brand-50 lg:order-1 lg:min-h-160 lg:self-stretch lg:p-10">
-          <p className="relative z-10 hidden max-w-sm font-display text-5xl leading-tight font-semibold tracking-tight text-balance lg:block">
+      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-6 p-4 sm:p-6 lg:grid-cols-[1.1fr_1fr] lg:gap-8 lg:p-8">
+        <aside className="relative order-2 flex flex-col justify-between self-start overflow-hidden rounded-3xl border border-border bg-muted p-3 text-foreground lg:order-1 lg:min-h-140 lg:self-stretch lg:p-8">
+          <p className="relative z-10 hidden max-w-md font-display text-5xl leading-tight font-semibold tracking-tight text-balance lg:block">
             {brand("tagline")}
           </p>
           <figure className="lg:mt-10">
-            <div className="overflow-hidden rounded-2xl border border-brand-700/40 bg-brand-50">
+            <div className="overflow-hidden rounded-2xl border border-border bg-background">
               <Image
                 src={collectionPartners}
                 alt=""
@@ -49,18 +52,15 @@ export default async function AuthLayout({
                 className="h-24 w-full object-cover object-[center_25%] lg:h-auto lg:object-center"
               />
             </div>
-            <figcaption className="mt-2 text-xs text-brand-100">
-              {showcase("scene")}
-            </figcaption>
           </figure>
-          <p className="mt-8 hidden text-sm font-medium text-brand-200 lg:block">
+          <p className="mt-8 hidden text-sm font-medium text-muted-foreground lg:block">
             {brand("name")}
           </p>
         </aside>
         <main
           id="main"
           tabIndex={-1}
-          className="order-1 mx-auto flex w-full max-w-lg flex-col justify-center py-6 sm:py-10 lg:order-2 lg:px-6"
+          className="order-1 mx-auto flex w-full max-w-lg flex-col justify-center py-4 sm:py-8 lg:order-2 lg:px-4"
         >
           {children}
         </main>

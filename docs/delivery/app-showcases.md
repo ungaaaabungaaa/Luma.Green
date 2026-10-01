@@ -1,3 +1,5 @@
+> Historical visual pass. The 2 October redesign removes device previews and visible illustration captions; see [UI redesign](ui-redesign.md).
+
 # Platform imagery and role app previews — 1 October 2026
 
 Task baseline: `6ca9391`, branch `feat/pilot-readiness-cleanup`. The existing

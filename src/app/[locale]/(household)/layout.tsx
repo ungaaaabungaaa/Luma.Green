@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { SkipLink } from "@/components/site/skip-link";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -27,7 +28,7 @@ export default async function HouseholdLayout({
   return (
     <div className="flex min-h-dvh flex-col bg-muted/50">
       <SkipLink />
-      <header className="flex h-14 items-center justify-between gap-2 border-b border-border/60 bg-background px-4">
+      <header className="flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-border/60 bg-background px-4 py-2">
         <Link
           href="/"
           aria-label={t("home")}
@@ -35,12 +36,15 @@ export default async function HouseholdLayout({
         >
           <Logo />
         </Link>
-        <LanguageSwitcher />
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <LanguageSwitcher />
+        </div>
       </header>
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 py-6 sm:py-10"
+        className="mx-auto flex w-full max-w-lg flex-1 flex-col px-4 py-6 sm:py-8"
       >
         {children}
       </main>

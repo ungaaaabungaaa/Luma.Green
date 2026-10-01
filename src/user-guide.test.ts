@@ -1,12 +1,14 @@
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
+import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
 interface GuideBuild {
-  pages: number;
-  pdf: string;
-  pdf_sha256: string;
+  format: string;
+  docx: string;
+  docx_sha256: string;
+  visual_review: { status: string; pages: number; docx_sha256: string };
   inputs: Record<string, string>;
 }
 
@@ -17,7 +19,7 @@ const hash = (file: string) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
 
 describe("the mandatory platform guide", () => {
-  it("keeps public role preview captures aligned with the displayed source", () => {
+  it("keeps public role photograph captures aligned with the displayed source", () => {
     const evidence = JSON.parse(
       readFileSync("docs/user-guide/showcase-captures.json", "utf8"),
     ) as {
@@ -35,10 +37,12 @@ describe("the mandatory platform guide", () => {
     for (const capture of evidence.captures) {
       expect(hash(capture.path), capture.path).toBe(capture.sha256);
       expect(Object.keys(capture.sourceHashes)).toContain(
-        "src/components/showcase/role-app-preview.tsx",
+        "src/components/showcase/role-story-image.tsx",
       );
       for (const [file, expected] of Object.entries(capture.sourceHashes)) {
-        expect(hash(file), `${file}: recapture role previews`).toBe(expected);
+        expect(hash(file), `${file}: recapture role photographs`).toBe(
+          expected,
+        );
       }
       expect(capture.actualBrowserUI).toBe(true);
       expect(capture.productionAuthenticationTested).toBe(false);
@@ -47,20 +51,75 @@ describe("the mandatory platform guide", () => {
     }
   });
 
-  it("publishes the PDF that was built and checked", () => {
-    expect(build.pdf).toBe("output/pdf/luma-green-user-guide.pdf");
-    expect(build.pages).toBeGreaterThan(20);
-    expect(readFileSync(build.pdf).subarray(0, 5).toString()).toBe("%PDF-");
-    expect(hash(build.pdf)).toBe(build.pdf_sha256);
+  it("publishes the editable Word guide that was built and visually checked", () => {
+    expect(build.format).toBe("docx");
+    expect(build.docx).toBe("output/docx/luma-green-user-guide.docx");
+    const archive = readFileSync(build.docx);
+    expect(archive.subarray(0, 4)).toEqual(Buffer.from([0x50, 0x4b, 3, 4]));
+    for (const part of [
+      "[Content_Types].xml",
+      "word/document.xml",
+      "word/styles.xml",
+    ]) {
+      expect(archive.includes(Buffer.from(part)), part).toBe(true);
+    }
+    expect(hash(build.docx)).toBe(build.docx_sha256);
+    expect(build.visual_review.status).toBe("passed");
+    expect(build.visual_review.pages).toBeGreaterThan(20);
+    expect(build.visual_review.docx_sha256).toBe(build.docx_sha256);
   });
 
-  it("keeps the PDF aligned with every source and screenshot input", () => {
-    expect(Object.keys(build.inputs)).toContain("docs/user-guide/guide.md");
-    expect(Object.keys(build.inputs)).toContain("scripts/build-user-guide.py");
-    for (const [file, expected] of Object.entries(build.inputs)) {
+  it("keeps Word aligned with the complete source and screenshot input set", () => {
+    const directory = "docs/user-guide";
+    const source = readFileSync(`${directory}/guide.md`, "utf8");
+    const images = Array.from(
+      source.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g),
+      (match) => path.posix.normalize(`${directory}/${match[1]}`),
+    );
+    const manifests = readdirSync(directory, {
+      recursive: true,
+      encoding: "utf8",
+    })
+      .filter((name) => name.endsWith("captures.json"))
+      .map((name) => `${directory}/${name}`);
+    const expected = new Set([
+      `${directory}/guide.md`,
+      "scripts/build-user-guide.py",
+      "scripts/user-guide-requirements.txt",
+      ...images,
+      ...manifests,
+    ]);
+    expect(new Set(Object.keys(build.inputs))).toEqual(expected);
+    for (const [file, value] of Object.entries(build.inputs)) {
       expect(hash(file), `${file}: review and rebuild the user guide`).toBe(
-        expected,
+        value,
       );
+    }
+  });
+
+  it("keeps public appearance captures aligned with their browser evidence", () => {
+    const captures = JSON.parse(
+      readFileSync("docs/user-guide/public-captures.json", "utf8"),
+    ) as {
+      name: string;
+      path: string;
+      sha256: string;
+      kind: string;
+      browserErrors: string[];
+      blockedRequests: string[];
+    }[];
+    expect(captures.map((capture) => capture.name)).toEqual(
+      expect.arrayContaining([
+        "public-home-dark",
+        "public-participants-dark",
+        "public-arabic-dark",
+      ]),
+    );
+    for (const capture of captures) {
+      expect(hash(capture.path), capture.path).toBe(capture.sha256);
+      expect(capture.kind).toBe("current-local-disconnected");
+      expect(capture.browserErrors).toEqual([]);
+      expect(capture.blockedRequests).toEqual([]);
     }
   });
 
@@ -87,6 +146,13 @@ describe("the mandatory platform guide", () => {
     ).toEqual(
       [
         "src/components/showcase/role-story-image.tsx",
+        "src/app/globals.css",
+        "src/components/theme/theme-provider.tsx",
+        "src/components/theme/theme-toggle.tsx",
+        "src/components/app/app-shell.tsx",
+        "src/components/admin/console-shell.tsx",
+        "src/components/ui/button.tsx",
+        "scripts/guide-preview/main.tsx",
         "scripts/guide-preview/image.tsx",
         "scripts/guide-preview/vite.config.mts",
         "messages/en.json",
@@ -105,7 +171,13 @@ describe("the mandatory platform guide", () => {
     )) {
       expect(hash(file), `${file}: recapture protected screens`).toBe(expected);
     }
-    expect(evidence.captures.length).toBeGreaterThanOrEqual(12);
+    expect(evidence.captures.length).toBeGreaterThanOrEqual(28);
+    expect(evidence.captures.map((capture) => capture.file)).toEqual(
+      expect.arrayContaining([
+        "admin-overview-dark.png",
+        "kabadiwala-overview-dark.png",
+      ]),
+    );
     for (const capture of evidence.captures) {
       expect(hash(capture.component), capture.component).toBe(
         capture.componentSha256,

@@ -14,6 +14,10 @@ if (!["localhost", "127.0.0.1"].includes(origin.hostname)) {
 const directory = "docs/user-guide/screenshots";
 const shots = [
   ["public-home", "/"],
+  ["public-home-dark", "/"],
+  ["public-participants", "/participants"],
+  ["public-participants-dark", "/participants"],
+  ["public-arabic-dark", "/ar"],
   ["public-prices", "/prices"],
   ["public-sell", "/sell"],
   ["public-join", "/join"],
@@ -38,13 +42,12 @@ const captures = [];
 try {
   for (const [name, route] of shots) {
     const page = await browser.newPage({
-      viewport:
-        name === "public-arabic"
-          ? { width: 390, height: 844 }
-          : { width: 1280, height: 900 },
+      viewport: name.startsWith("public-arabic")
+        ? { width: 390, height: 844 }
+        : { width: 1280, height: 900 },
       reducedMotion: "reduce",
       locale: "en-IN",
-      colorScheme: "light",
+      colorScheme: name.endsWith("-dark") ? "dark" : "light",
     });
     const browserErrors: string[] = [];
     const blockedRequests: string[] = [];

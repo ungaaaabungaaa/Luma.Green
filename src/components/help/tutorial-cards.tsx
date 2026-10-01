@@ -17,7 +17,7 @@ export function TutorialCards({ role }: { role: HelpRole }) {
           key={key}
           className="flex overflow-hidden rounded-2xl border bg-card sm:flex-col"
         >
-          <div className="flex aspect-video w-32 shrink-0 items-center justify-center bg-brand-50 sm:w-full">
+          <div className="flex aspect-video w-32 shrink-0 items-center justify-center bg-accent sm:w-full">
             <span className="flex size-10 items-center justify-center rounded-full bg-background/90 text-primary shadow-sm sm:size-14">
               <PlayIcon
                 aria-hidden

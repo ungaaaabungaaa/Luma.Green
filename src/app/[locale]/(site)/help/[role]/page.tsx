@@ -17,7 +17,6 @@ import { HelpSection, JumpLinks } from "@/components/help/help-section";
 import { OtherRoleLinks } from "@/components/help/role-cards";
 import { TrainingPath } from "@/components/help/training-path";
 import { TutorialCards } from "@/components/help/tutorial-cards";
-import { RoleAppPreview } from "@/components/showcase/role-app-preview";
 import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { localeFromParams } from "@/i18n/paths";
@@ -56,10 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /** `/help/<role>`: guides, questions, videos and training for one role. */
 export default async function RoleHelpPage({ params }: Props) {
   const role = await roleFromParams(params);
-  const [t, showcase] = await Promise.all([
-    getTranslations("help"),
-    getTranslations("showcase"),
-  ]);
+  const t = await getTranslations("help");
   const help = ROLE_HELP[role];
 
   const sections = [
@@ -90,23 +86,6 @@ export default async function RoleHelpPage({ params }: Props) {
       </HelpHero>
 
       <Container className="flex flex-col gap-14 py-12 sm:py-16">
-        <section
-          aria-labelledby="workspace-preview-heading"
-          className="grid items-center gap-8 rounded-2xl border border-brand-900/10 bg-brand-50/40 p-6 sm:p-8 md:grid-cols-2"
-        >
-          <div className="min-w-0 space-y-4">
-            <h2
-              id="workspace-preview-heading"
-              className="text-2xl font-semibold tracking-tight"
-            >
-              {showcase("context.heading")}
-            </h2>
-            <p className="max-w-prose leading-relaxed text-muted-foreground">
-              {showcase("context.body")}
-            </p>
-          </div>
-          <RoleAppPreview role={role} compact />
-        </section>
         <HelpSection
           id="guides"
           title={t("role.guidesHeading")}

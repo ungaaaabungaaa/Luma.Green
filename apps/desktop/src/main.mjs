@@ -253,7 +253,9 @@ function setMenu() {
 }
 
 function configureSession() {
-  const browserSession = session.fromPartition("persist:luma-green");
+  const browserSession = session.fromPartition(
+    config.demo ? "persist:luma-green-demo" : "persist:luma-green",
+  );
   browserSession.setPermissionCheckHandler(
     (contents, permission, requestingOrigin, details) => {
       return (
@@ -314,7 +316,9 @@ function configureSession() {
 }
 
 function createWindow() {
-  const browserSession = session.fromPartition("persist:luma-green");
+  const browserSession = session.fromPartition(
+    config.demo ? "persist:luma-green-demo" : "persist:luma-green",
+  );
   state.mainWindow = new BrowserWindow({
     width: 1280,
     height: 860,

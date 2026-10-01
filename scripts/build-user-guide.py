@@ -1,45 +1,32 @@
 #!/usr/bin/env python3
-"""Build the maintained PDF from Markdown and unchanged browser PNG captures.
+"""Build the editable Word guide from Markdown and unchanged browser captures.
 
 Install scripts/user-guide-requirements.txt. Run from the repository root.
-The output uses embedded ReportLab Vera fonts and needs no network or app secrets.
+After rendering and inspecting every page, record review with --record-review N.
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
-import html
 import json
 import re
+import zipfile
 from pathlib import Path
+from xml.etree import ElementTree
 
-from PIL import Image as PILImage
-import reportlab
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import (
-    BaseDocTemplate, Frame, Image, PageBreak, PageTemplate, Paragraph,
-    Spacer, Table, TableStyle,
-)
-from reportlab.platypus.tableofcontents import TableOfContents
+from docx import Document
+from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Inches, Pt, RGBColor
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'docs/user-guide/guide.md'
-OUTPUT = ROOT / 'output/pdf/luma-green-user-guide.pdf'
+OUTPUT = ROOT / 'output/docx/luma-green-user-guide.docx'
 LOCK = ROOT / 'docs/user-guide/build.json'
-WIDTH, HEIGHT = A4
-MARGIN = 43
-BODY = WIDTH - 2 * MARGIN
-INK = colors.HexColor('#163f31')
-MUTED = colors.HexColor('#506258')
-metadata = re.search(r'Edition: ([^.]+)\. Source baseline: ([a-f0-9]+)\.', SOURCE.read_text())
-if metadata is None:
-    raise ValueError('The guide must declare its edition date and source baseline.')
-EDITION, CHECKPOINT = metadata.groups()
-PALE = colors.HexColor('#edf3e9')
+BODY_WIDTH = 6.85
 
 
 def digest(path: Path) -> str:
@@ -57,165 +44,284 @@ def input_paths() -> list[Path]:
     return list(dict.fromkeys(paths))
 
 
+def inputs() -> dict[str, str]:
+    return {str(path.relative_to(ROOT)): digest(path) for path in input_paths()}
+
+
+def check_document() -> None:
+    with zipfile.ZipFile(OUTPUT) as archive:
+        document = ElementTree.fromstring(archive.read('word/document.xml'))
+        text = ' '.join(document.itertext())
+        for required in ['Kabadiwala', 'Admin', 'Synthetic documentation fixture', 'not a GST', 'Evidence and maintenance']:
+            if required not in text:
+                raise SystemExit(f'Missing required Word content: {required}')
+        namespace = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+        if not document.findall('.//w:pStyle[@w:val="Title"]', namespace):
+            raise SystemExit('The Word guide requires an editable Title style.')
+        if len(document.findall('.//w:drawing', namespace)) != len(image_paths()):
+            raise SystemExit('The Word guide must include every screenshot use.')
+        if archive.testzip() is not None:
+            raise SystemExit('The Word document archive is damaged.')
+
+
+def verify_inputs(record: dict) -> None:
+    if record['inputs'] != inputs():
+        raise SystemExit('Guide inputs changed. Review, rebuild and inspect the Word guide.')
+
+
 def verify() -> None:
     record = json.loads(LOCK.read_text())
-    for name, expected in record['inputs'].items():
-        path = ROOT / name
-        if not path.exists() or digest(path) != expected:
-            raise SystemExit(f'Guide input changed: {name}. Review, rebuild and inspect the PDF.')
-    current = {str(path.relative_to(ROOT)) for path in input_paths()}
-    if current != set(record['inputs']):
-        raise SystemExit('Guide input set changed. Rebuild and inspect the PDF.')
-    if digest(OUTPUT) != record['pdf_sha256']:
-        raise SystemExit('PDF does not match its build record.')
-    print(f'Guide source, {len(image_paths())} image uses and PDF match the build record.')
+    verify_inputs(record)
+    check_document()
+    if record['docx'] != str(OUTPUT.relative_to(ROOT)) or digest(OUTPUT) != record['docx_sha256']:
+        raise SystemExit('Word guide does not match its build record.')
+    review = record['visual_review']
+    if review['status'] != 'passed' or review['docx_sha256'] != digest(OUTPUT) or review['pages'] < 1:
+        raise SystemExit('Render and inspect all pages, then record review with --record-review N.')
+    print(f'Guide source, {len(image_paths())} image uses and reviewed Word guide match the build record.')
 
 
-def inline(value: str) -> str:
-    value = html.escape(value)
-    value = re.sub(r'`([^`]+)`', r'<font name="Courier">\1</font>', value)
-    value = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', value)
-    value = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<link href="\2" color="#1c654d">\1</link>', value)
-    return value
+def record_review(pages: int) -> None:
+    if pages < 1:
+        raise SystemExit('The reviewed page count must be positive.')
+    record = json.loads(LOCK.read_text())
+    verify_inputs(record)
+    check_document()
+    if digest(OUTPUT) != record['docx_sha256']:
+        raise SystemExit('The document changed after building. Rebuild and inspect before recording review.')
+    record['visual_review'] = {'status': 'passed', 'pages': pages, 'docx_sha256': digest(OUTPUT)}
+    LOCK.write_text(json.dumps(record, indent=2) + '\n')
+    print(f'Recorded inspection of all {pages} rendered pages.')
 
 
-def page_chrome(canvas, doc):
-    canvas.saveState()
-    canvas.setStrokeColor(colors.HexColor('#d5dfd2'))
-    canvas.line(MARGIN, HEIGHT - 32, WIDTH - MARGIN, HEIGHT - 32)
-    canvas.setFont('GuideBold', 8)
-    canvas.setFillColor(INK)
-    canvas.drawString(MARGIN, HEIGHT - 24, 'LUMA.GREEN  /  PLATFORM USER GUIDE')
-    canvas.setFont('Guide', 8)
-    canvas.setFillColor(MUTED)
-    canvas.drawString(MARGIN, 23, f'{EDITION.upper()}  |  Source baseline {CHECKPOINT}  |  See screenshot evidence labels')
-    canvas.drawRightString(WIDTH - MARGIN, 23, str(doc.page))
-    canvas.restoreState()
+def inline(paragraph, value: str, bold: bool = False) -> None:
+    """Keep ordinary text, emphasis, inline code and links editable."""
+    pattern = r'(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))'
+    for token in re.split(pattern, value):
+        if not token:
+            continue
+        if token.startswith('**') and token.endswith('**'):
+            run = paragraph.add_run(token[2:-2])
+            run.bold = True
+        elif token.startswith('`') and token.endswith('`'):
+            run = paragraph.add_run(token[1:-1])
+            run.font.name = 'DejaVu Sans Mono'
+            run.font.size = Pt(9)
+        elif match := re.fullmatch(r'\[([^\]]+)\]\(([^)]+)\)', token):
+            label, url = match.groups()
+            # Visible URLs survive Word and Google Docs import without hidden destinations.
+            run = paragraph.add_run(f'{label} ({url})' if label != url else label)
+        else:
+            run = paragraph.add_run(token)
+        if bold:
+            run.bold = True
 
 
-class GuideDocument(BaseDocTemplate):
-    def afterFlowable(self, flowable):
-        if isinstance(flowable, Paragraph) and flowable.style.name == 'Chapter':
-            title = flowable.getPlainText()
-            key = f'chapter-{self.seq.nextf("chapter")}'
-            self.canv.bookmarkPage(key)
-            self.canv.addOutlineEntry(title, key, 0, False)
-            self.notify('TOCEntry', (0, title, self.page, key))
+def heading_text(value: str) -> str:
+    # Simple heading wording makes Word navigation and Docs imports easier to scan.
+    return re.sub(r'\s+', ' ', re.sub(r'[^\w\s]', ' ', value)).strip()
 
 
-def build():
-    font_dir = Path(reportlab.__file__).parent / 'fonts'
-    for name, filename in [('Guide', 'Vera.ttf'), ('GuideBold', 'VeraBd.ttf'), ('GuideItalic', 'VeraIt.ttf')]:
-        pdfmetrics.registerFont(TTFont(name, str(font_dir / filename)))
-    pdfmetrics.registerFontFamily('Guide', normal='Guide', bold='GuideBold', italic='GuideItalic', boldItalic='GuideBold')
-    styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle('GuideBody', fontName='Guide', fontSize=10, leading=14.5, textColor=INK, spaceAfter=8, splitLongWords=True))
-    styles.add(ParagraphStyle('Cover', parent=styles['GuideBody'], fontName='GuideBold', fontSize=33, leading=40, spaceAfter=12))
-    styles.add(ParagraphStyle('Chapter', parent=styles['GuideBody'], fontName='GuideBold', fontSize=21, leading=27, spaceAfter=14, keepWithNext=True))
-    styles.add(ParagraphStyle('Subhead', parent=styles['GuideBody'], fontName='GuideBold', fontSize=12, leading=17, spaceBefore=10, spaceAfter=7, keepWithNext=True))
-    styles.add(ParagraphStyle('Caption', parent=styles['GuideBody'], fontName='GuideItalic', fontSize=8, leading=11, textColor=MUTED, spaceAfter=13))
-    styles.add(ParagraphStyle('Cell', parent=styles['GuideBody'], fontSize=8.5, leading=12, spaceAfter=0))
-    styles.add(ParagraphStyle('ListItem', parent=styles['GuideBody'], leftIndent=15, firstLineIndent=-12, spaceAfter=5))
-    story = []
-    lines = SOURCE.read_text().splitlines()
-    i = 0
+def configure(document) -> None:
+    section = document.sections[0]
+    section.page_width = Inches(8.27)
+    section.page_height = Inches(11.69)
+    section.top_margin = section.bottom_margin = Inches(.65)
+    section.left_margin = section.right_margin = Inches(.71)
+    for name in ['Normal', 'Title', 'Subtitle', 'Heading 1', 'Heading 2', 'Heading 3', 'Caption', 'List Bullet', 'List Number']:
+        style = document.styles[name]
+        style.font.name = 'DejaVu Sans'
+        style.font.color.rgb = RGBColor(0, 0, 0)
+        style.font.underline = None
+        style.paragraph_format.widow_control = True
+        for border in list(style.element.xpath('./w:pPr/w:pBdr')):
+            border.getparent().remove(border)
+    normal = document.styles['Normal']
+    normal.font.size = Pt(10)
+    normal.paragraph_format.line_spacing = 1.12
+    normal.paragraph_format.space_after = Pt(7)
+    for name, size in [('Title', 28), ('Heading 1', 20), ('Heading 2', 12), ('Heading 3', 11)]:
+        style = document.styles[name]
+        style.font.size = Pt(size)
+        style.font.bold = True
+        style.paragraph_format.space_before = Pt(9)
+        style.paragraph_format.space_after = Pt(9)
+        style.paragraph_format.keep_with_next = True
+    document.styles['Caption'].font.size = Pt(8)
+    document.styles['Caption'].paragraph_format.space_after = Pt(9)
+    # Page numbers help readers use this long operational manual.
+    paragraph = section.footer.paragraphs[0]
+    paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    run = paragraph.add_run()
+    field = OxmlElement('w:fldSimple')
+    field.set(qn('w:instr'), 'PAGE')
+    run._r.addnext(field)
+    document.core_properties.title = 'Luma Green platform user guide'
+    document.core_properties.author = 'Luma.Green'
+    document.core_properties.subject = 'Platform workflows and browser screenshot evidence'
+
+
+def add_table(document, rows: list[list[str]]) -> None:
+    count = len(rows[0])
+    if any(len(row) != count for row in rows):
+        raise ValueError('A guide table has inconsistent column counts.')
+    proportions = [.29, .71] if count == 2 else [.23, .30, .47] if count == 3 else [1 / count] * count
+    table = document.add_table(rows=0, cols=count)
+    table.autofit = False
+    for column, proportion in zip(table.columns, proportions):
+        column.width = Inches(BODY_WIDTH * proportion)
+    props = table._tbl.tblPr
+    borders = OxmlElement('w:tblBorders')
+    for edge in ['top', 'left', 'bottom', 'right', 'insideH', 'insideV']:
+        border = OxmlElement(f'w:{edge}')
+        for name, value in [('val', 'single'), ('sz', '4'), ('color', 'D9D9D9')]:
+            border.set(qn(f'w:{name}'), value)
+        borders.append(border)
+    props.append(borders)
+    margins = OxmlElement('w:tblCellMar')
+    for edge in ['top', 'left', 'bottom', 'right']:
+        margin = OxmlElement(f'w:{edge}')
+        margin.set(qn('w:w'), '100')
+        margin.set(qn('w:type'), 'dxa')
+        margins.append(margin)
+    props.append(margins)
+    for row_index, values in enumerate(rows):
+        row = table.add_row()
+        if row_index == 0:
+            row._tr.get_or_add_trPr().append(OxmlElement('w:tblHeader'))
+        for cell, value, proportion in zip(row.cells, values, proportions):
+            cell.width = Inches(BODY_WIDTH * proportion)
+            cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
+            paragraph = cell.paragraphs[0]
+            paragraph.paragraph_format.space_after = Pt(1)
+            paragraph.paragraph_format.line_spacing = 1.05
+            inline(paragraph, value, bold=row_index == 0)
+            for run in paragraph.runs:
+                run.font.size = Pt(8.5)
+            shade = OxmlElement('w:shd')
+            shade.set(qn('w:fill'), 'E8EEF2' if row_index == 0 else 'FFFFFF')
+            cell._tc.get_or_add_tcPr().append(shade)
+    document.add_paragraph().paragraph_format.space_after = Pt(1)
+
+
+def build() -> None:
+    source = SOURCE.read_text()
+    metadata = re.search(r'Edition: ([^.]+)\. Source baseline: ([a-f0-9]+)\.', source)
+    if metadata is None:
+        raise ValueError('The guide must declare its edition date and source baseline.')
+    edition, checkpoint = metadata.groups()
+    document = Document()
+    configure(document)
+    lines = source.splitlines()
+    index = 0
     first_break = True
-    while i < len(lines):
-        line = lines[i].strip()
-        i += 1
+    next_page = False
+    while index < len(lines):
+        line = lines[index].strip()
+        index += 1
         if not line:
             continue
         if line == '---':
-            story.append(PageBreak())
+            next_page = True
             if first_break:
-                story.append(Paragraph('Contents', styles['Cover']))
-                toc = TableOfContents()
-                toc.levelStyles = [ParagraphStyle('Toc', fontName='Guide', fontSize=8.5, leading=12, spaceBefore=1, textColor=INK)]
-                story.extend([toc, PageBreak()])
+                document.add_heading('Contents', level=1).paragraph_format.page_break_before = True
+                for item in re.findall(r'^## (.+)$', source, re.MULTILINE):
+                    paragraph = document.add_paragraph(heading_text(item))
+                    paragraph.paragraph_format.space_after = Pt(2)
+                    paragraph.paragraph_format.line_spacing = 1
+                    for run in paragraph.runs:
+                        run.font.size = Pt(9)
                 first_break = False
             continue
-        match = re.fullmatch(r'!\[([^\]]*)\]\(([^)]+)\)', line)
-        if match:
+        if match := re.fullmatch(r'!\[([^\]]*)\]\(([^)]+)\)', line):
             caption, relative = match.groups()
             path = (SOURCE.parent / relative).resolve()
-            with PILImage.open(path) as img:
-                width, height = img.size
-            compact = {'admin-review.png', 'yard-trades.png'}
-            max_height = 265 if path.name in compact else 325
+            with Image.open(path) as picture:
+                width, height = picture.size
+            max_height = 6.5 if height > width * 1.3 else 4.4
+            # These reference captures need a different balance of image and prose.
             if path.name == 'household-tracking.png':
-                max_height = 600
-            elif path.name in {'manufacturer-compliance.png', 'analytics-choice-arabic.png'}:
-                max_height = 520
-            scale = min(BODY / width, max_height / height)
-            picture = Image(str(path), width * scale, height * scale)
-            picture.hAlign = 'LEFT'
-            picture.keepWithNext = True
-            story.extend([Spacer(1, 4), picture, Spacer(1, 5), Paragraph(inline(caption), styles['Caption'])])
+                max_height = 8.4
+            elif path.name == 'manufacturer-compliance.png':
+                max_height = 8.0
+            elif path.name == 'yard-trades.png':
+                max_height = 3.8
+            # Keep small mobile captures sharp instead of enlarging them to desktop width.
+            image_width = min(BODY_WIDTH, max_height * width / height, width / 110)
+            paragraph = document.add_paragraph()
+            paragraph.paragraph_format.keep_with_next = True
+            paragraph.paragraph_format.page_break_before = next_page
+            next_page = False
+            if image_width < 3.8:
+                paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            paragraph.paragraph_format.space_after = Pt(4)
+            shape = paragraph.add_run().add_picture(str(path), width=Inches(image_width))
+            shape._inline.docPr.set('descr', caption)
+            inline(document.add_paragraph(style='Caption'), caption)
+            if path.name == 'household-tracking.png':
+                next_page = True
             continue
         if line.startswith('|'):
             rows = [line]
-            while i < len(lines) and lines[i].strip().startswith('|'):
-                rows.append(lines[i].strip())
-                i += 1
+            while index < len(lines) and lines[index].strip().startswith('|'):
+                rows.append(lines[index].strip())
+                index += 1
             values = []
             for row in rows:
                 cells = [cell.strip() for cell in row.strip('|').split('|')]
-                if all(re.fullmatch(r':?-+:?', cell) for cell in cells):
-                    continue
-                values.append([Paragraph(inline(cell), styles['Cell']) for cell in cells])
-            count = len(values[0])
-            widths = [BODY * .29, BODY * .71] if count == 2 else [BODY * .23, BODY * .30, BODY * .47]
-            table = Table(values, colWidths=widths, repeatRows=1, hAlign='LEFT')
-            table.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, 0), PALE),
-                ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f8faf6')]),
-                ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-                ('LEFTPADDING', (0, 0), (-1, -1), 8), ('RIGHTPADDING', (0, 0), (-1, -1), 8),
-                ('TOPPADDING', (0, 0), (-1, -1), 7), ('BOTTOMPADDING', (0, 0), (-1, -1), 7),
-                ('LINEBELOW', (0, 0), (-1, 0), .7, colors.HexColor('#b9cfba')),
-            ]))
-            story.extend([table, Spacer(1, 12)])
+                if not all(re.fullmatch(r':?-+:?', cell) for cell in cells):
+                    values.append(cells)
+            add_table(document, values)
             continue
-        if line.startswith('# '):
-            story.append(Paragraph(inline(line[2:]), styles['Cover']))
-        elif line.startswith('## '):
-            story.append(Paragraph(inline(line[3:]), styles['Chapter']))
-        elif line.startswith('### '):
-            story.append(Paragraph(inline(line[4:]), styles['Subhead']))
+        if match := re.match(r'^(#{1,4}) (.+)$', line):
+            level, title = match.groups()
+            paragraph = document.add_paragraph(heading_text(title), style='Title' if len(level) == 1 else f'Heading {len(level) - 1}')
+            paragraph.paragraph_format.page_break_before = next_page or title == 'Error reports and owner settings'
+            next_page = False
         elif re.match(r'^(?:\d+\.|-) ', line):
-            story.append(Paragraph(inline(line), styles['ListItem']))
+            # Preserve procedure step numbers exactly; each procedure restarts in source.
+            paragraph = document.add_paragraph(style='List Bullet' if line.startswith('- ') else 'Normal')
+            if line.startswith('- '):
+                line = line[2:]
+            else:
+                paragraph.paragraph_format.left_indent = Inches(.17)
+                paragraph.paragraph_format.first_line_indent = Inches(-.17)
+            inline(paragraph, line)
         else:
-            paragraph = [line]
-            while i < len(lines) and lines[i].strip() and not re.match(r'^(?:#|\||!\[|---|\d+\. |- )', lines[i].strip()):
-                paragraph.append(lines[i].strip())
-                i += 1
-            story.append(Paragraph(inline(' '.join(paragraph)), styles['GuideBody']))
+            parts = [line]
+            while index < len(lines) and lines[index].strip() and not re.match(r'^(?:#|\||!\[|---|\d+\. |- )', lines[index].strip()):
+                parts.append(lines[index].strip())
+                index += 1
+            paragraph = document.add_paragraph()
+            paragraph.paragraph_format.page_break_before = next_page
+            next_page = False
+            inline(paragraph, ' '.join(parts))
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    doc = GuideDocument(str(OUTPUT), pagesize=A4, leftMargin=MARGIN, rightMargin=MARGIN,
-                        topMargin=49, bottomMargin=43, title='Luma.Green - Platform user guide',
-                        author='Luma.Green', subject='Current workflows, access and browser screenshot evidence',
-                        pageCompression=1)
-    doc.addPageTemplates(PageTemplate(id='guide', frames=[Frame(MARGIN, 43, BODY, HEIGHT - 92, leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)], onPage=page_chrome))
-    doc.multiBuild(story)
-    from pypdf import PdfReader
-    reader = PdfReader(OUTPUT)
-    text = '\n'.join(page.extract_text() for page in reader.pages)
-    for required in ['Kabadiwala', 'Admin', 'Synthetic documentation fixture', 'not a GST', 'Evidence and maintenance']:
-        if required not in text:
-            raise SystemExit(f'Missing required PDF content: {required}')
+    document.save(OUTPUT)
+    check_document()
     record = {
-        'application_checkpoint': CHECKPOINT,
-        'pages': len(reader.pages),
-        'pdf': str(OUTPUT.relative_to(ROOT)),
-        'pdf_sha256': digest(OUTPUT),
-        'inputs': {str(path.relative_to(ROOT)): digest(path) for path in input_paths()},
+        'format': 'docx',
+        'edition': edition,
+        'application_checkpoint': checkpoint,
+        'docx': str(OUTPUT.relative_to(ROOT)),
+        'docx_sha256': digest(OUTPUT),
+        'visual_review': {'status': 'pending', 'pages': None, 'docx_sha256': None},
+        'inputs': inputs(),
     }
     LOCK.write_text(json.dumps(record, indent=2) + '\n')
-    print(f'Built {len(reader.pages)} pages, {OUTPUT.stat().st_size:,} bytes: {OUTPUT}')
+    print(f'Built editable Word guide with {len(image_paths())} image uses: {OUTPUT}')
+    print('Render and inspect every page before recording visual review.')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--check', action='store_true', help='Verify source/image/PDF hashes without rebuilding')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--check', action='store_true', help='Verify inputs, DOCX and recorded visual review')
+    mode.add_argument('--record-review', type=int, metavar='PAGES', help='Record completed inspection of every rendered page')
     args = parser.parse_args()
-    verify() if args.check else build()
+    if args.check:
+        verify()
+    elif args.record_review is not None:
+        record_review(args.record_review)
+    else:
+        build()

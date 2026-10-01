@@ -16,13 +16,13 @@ export function AppPageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="flex flex-wrap items-end justify-between gap-5 border-b border-border/70 pb-7">
-      <div className="flex min-w-0 flex-col gap-3">
-        <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+    <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border/70 pb-5">
+      <div className="flex min-w-0 flex-col gap-2">
+        <h1 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
           {title}
         </h1>
         {lead ? (
-          <p className="max-w-2xl leading-relaxed text-muted-foreground">
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             {lead}
           </p>
         ) : null}
@@ -46,7 +46,7 @@ export function StatCard({
   tone?: "neutral" | "good" | "warn";
 }) {
   return (
-    <div className="relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-border/80 bg-card p-5 shadow-sm sm:p-6">
+    <div className="relative flex min-w-0 flex-col gap-3 overflow-hidden rounded-2xl border border-border/80 bg-card p-4 shadow-xs sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">{label}</p>
         {Icon ? (
@@ -55,13 +55,13 @@ export function StatCard({
             className={cn(
               "size-5",
               tone === "good" && "text-primary",
-              tone === "warn" && "text-amber-600",
+              tone === "warn" && "text-amber-700 dark:text-amber-300",
               tone === "neutral" && "text-muted-foreground",
             )}
           />
         ) : null}
       </div>
-      <p className="font-display text-3xl font-semibold tracking-tight break-words tabular-nums sm:text-4xl">
+      <p className="font-display text-2xl font-semibold tracking-tight break-words tabular-nums sm:text-3xl">
         {value}
       </p>
       {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
@@ -81,7 +81,7 @@ export function Section({
   return (
     <section className="flex flex-col gap-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
+        <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
         {action}
       </div>
       {children}
@@ -101,8 +101,8 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-4 rounded-3xl border border-border/80 bg-card px-6 py-14 text-center shadow-sm">
-      <span className="flex size-16 items-center justify-center rounded-2xl border border-brand-100 bg-brand-50 text-primary">
+    <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border bg-card px-6 py-9 text-center">
+      <span className="flex size-12 items-center justify-center rounded-xl border border-primary/15 bg-primary/10 text-primary">
         <Icon aria-hidden className="size-6" />
       </span>
       <p className="text-lg font-semibold tracking-tight">{title}</p>
@@ -139,9 +139,9 @@ export function StatusPill({
       className={cn(
         "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap",
         tone === "neutral" && "bg-muted text-muted-foreground",
-        tone === "info" && "bg-sky-50 text-sky-800",
-        tone === "good" && "bg-brand-50 text-primary",
-        tone === "warn" && "bg-amber-50 text-amber-800",
+        tone === "info" && "bg-sky-500/10 text-sky-800 dark:text-sky-300",
+        tone === "good" && "bg-primary/10 text-primary",
+        tone === "warn" && "bg-amber-500/10 text-amber-800 dark:text-amber-300",
         tone === "bad" && "bg-destructive/10 text-destructive",
       )}
     >
@@ -153,7 +153,7 @@ export function StatusPill({
 /** "Sample data" ribbon for prototype-only numbers. */
 export function DemoNote({ children }: { children: ReactNode }) {
   return (
-    <p className="rounded-lg border border-dashed border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+    <p className="rounded-lg border border-dashed border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-900 dark:text-amber-200">
       {children}
     </p>
   );

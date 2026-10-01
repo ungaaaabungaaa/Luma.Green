@@ -30,7 +30,7 @@ export function WhenCard({
       className="flex flex-col gap-3 rounded-2xl border bg-card p-4"
     >
       <div className="flex items-start gap-3">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-primary">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
           <CalendarDaysIcon aria-hidden className="size-5" />
         </span>
         <div className="flex flex-col">

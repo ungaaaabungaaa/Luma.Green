@@ -15,7 +15,7 @@ export function GuideCards({ role }: { role: HelpRole }) {
         <li
           key={key}
           data-reveal
-          className="group relative flex gap-4 rounded-2xl border border-brand-900/10 bg-card p-5 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:p-7"
+          className="group relative flex gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:p-7"
         >
           <IconTile icon={icon} size="sm" />
           <div className="flex min-w-0 flex-1 flex-col gap-3">
@@ -30,7 +30,7 @@ export function GuideCards({ role }: { role: HelpRole }) {
             <p className="text-sm leading-relaxed text-muted-foreground">
               {t(`guides.${key}.summary`)}
             </p>
-            <p className="mt-auto flex items-center justify-between gap-3 border-t border-brand-900/10 pt-4 text-sm font-semibold text-brand-900">
+            <p className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4 text-sm font-semibold text-primary">
               {t("role.steps", { count: steps.length })}
               <ArrowRightIcon
                 aria-hidden

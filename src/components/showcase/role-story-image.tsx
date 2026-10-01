@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
@@ -11,9 +10,16 @@ import yard from "../../../public/images/showcase/material-yard.webp";
 import operations from "../../../public/images/showcase/operations-desk.webp";
 import recycling from "../../../public/images/showcase/recycling-line.webp";
 import solar from "../../../public/images/showcase/solar-rooftop.webp";
-import type { PreviewRole } from "./role-app-preview";
 
-export type StoryRole = PreviewRole | "solar";
+export type StoryRole =
+  | "household"
+  | "kabadiwala"
+  | "yard"
+  | "recycler"
+  | "manufacturer"
+  | "saathi"
+  | "admin"
+  | "solar";
 const scenes = {
   household,
   kabadiwala: weighing,
@@ -41,12 +47,11 @@ export function RoleStoryImage({
   imageClassName?: string;
   sizes?: string;
 }) {
-  const t = useTranslations("showcase");
   return (
-    <figure className={cn("min-w-0 space-y-2", className)}>
+    <figure className={cn("min-w-0", className)}>
       <div
         className={cn(
-          "relative overflow-hidden rounded-3xl bg-brand-100",
+          "relative overflow-hidden rounded-2xl bg-muted",
           compact ? "aspect-[2/1]" : "aspect-[4/3]",
           frameClassName,
         )}
@@ -59,9 +64,6 @@ export function RoleStoryImage({
           className={cn("object-cover", imageClassName)}
         />
       </div>
-      <figcaption className="w-fit rounded-md bg-background px-2 py-1 text-xs text-muted-foreground">
-        {t("scene")}
-      </figcaption>
     </figure>
   );
 }

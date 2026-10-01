@@ -34,8 +34,8 @@ const TONES: Record<CheckItem["status"], Tone> = {
 };
 
 const BADGES: Record<Tone, string> = {
-  good: "bg-brand-50 text-primary",
-  warn: "bg-amber-50 text-amber-700",
+  good: "bg-primary/10 text-primary",
+  warn: "bg-amber-500/10 text-amber-800 dark:text-amber-300",
   bad: "bg-destructive/10 text-destructive",
   neutral: "bg-muted text-muted-foreground",
 };
@@ -91,7 +91,7 @@ export function Checklist({ record }: { record: ComplianceRecord }) {
             >
               <span
                 className={cn(
-                  "flex size-10 shrink-0 items-center justify-center rounded-full",
+                  "flex size-10 shrink-0 items-center justify-center rounded-xl",
                   BADGES[tone],
                 )}
               >

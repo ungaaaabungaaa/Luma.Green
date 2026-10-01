@@ -8,10 +8,10 @@ const messages = JSON.parse(
 );
 /** @type {import('electron-builder').Configuration} */
 const builder = {
-  appId: "green.luma.desktop",
-  productName: "Luma.Green",
+  appId: config.demo ? "green.luma.desktop.demo" : "green.luma.desktop",
+  productName: config.demo ? "Luma.Green Demo" : "Luma.Green",
   asar: true,
-  directories: { output: "release" },
+  directories: { output: config.demo ? "release/demo" : "release" },
   icon: "generated/app-icon.png",
   files: [
     "src/**/*.mjs",

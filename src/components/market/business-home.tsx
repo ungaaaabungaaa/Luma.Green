@@ -67,7 +67,7 @@ function Home({ org }: { org: OrgWorkspace }) {
 
   return (
     <>
-      <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1fr)_16rem]">
+      <div className="grid items-center gap-5 rounded-2xl border border-border/80 bg-card p-5 lg:grid-cols-[minmax(0,1fr)_16rem] lg:p-6">
         <AppPageHeader
           title={t("greeting", { name: org.name })}
           lead={t("lead", { kind: org.kind })}
@@ -77,7 +77,7 @@ function Home({ org }: { org: OrgWorkspace }) {
           sizes="(min-width: 1024px) 256px, 92vw"
           scene={org.kind}
           compact
-          frameClassName="aspect-auto h-24 lg:h-36"
+          frameClassName="aspect-auto h-28 lg:h-40"
         />
       </div>
       <Stats
@@ -294,7 +294,7 @@ function LatestOffers({
       action={<SeeAll href="/app/market" label={t("seeAll")} />}
     >
       {isMaker ? (
-        <p className="flex gap-3 rounded-2xl bg-brand-50 p-4 text-sm text-brand-900">
+        <p className="flex gap-3 rounded-2xl bg-primary/10 p-4 text-sm text-foreground">
           <RecycleIcon aria-hidden className="mt-0.5 size-5 shrink-0" />
           {t("recycledBody")}
         </p>

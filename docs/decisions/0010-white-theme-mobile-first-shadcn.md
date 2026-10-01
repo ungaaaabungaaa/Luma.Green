@@ -1,7 +1,7 @@
 # 0010. White theme, mobile first, shadcn/ui
 
-- **Status:** Decided — supersedes the dark-mode rule in the first design
-  system
+- **Status:** Theme policy superseded by [0017](0017-light-dark-theme.md).
+  The mobile-first and shadcn decisions remain in force.
 - **Date:** 29 Sep 2026
 - **Deciders:** founder, Claude
 

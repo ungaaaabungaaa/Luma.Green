@@ -28,21 +28,21 @@ export async function TrustPoints() {
   return (
     <section
       aria-labelledby="trust-heading"
-      className="relative overflow-hidden bg-brand-950 py-20 text-brand-50 sm:py-28"
+      className="relative overflow-hidden bg-brand-950 py-14 text-brand-50 sm:py-20"
     >
-      <Container className="relative grid gap-12 lg:grid-cols-[2fr_3fr] lg:gap-24">
+      <Container className="relative grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-14">
         <SectionHeading
           inverse
           id="trust-heading"
           title={t("heading")}
           intro={t("intro")}
         />
-        <ul className="grid gap-x-10 sm:grid-cols-2">
+        <ul className="grid gap-4 sm:grid-cols-2">
           {points.map(({ key, icon: Icon }) => (
             <li
               data-reveal
               key={key}
-              className="flex flex-col items-start gap-5 border-t border-brand-100/20 py-7"
+              className="flex flex-col items-start gap-4 rounded-2xl border border-brand-100/20 bg-brand-50/5 p-6"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-brand-100/30 text-brand-200">
                 <Icon aria-hidden className="size-5" />

@@ -33,7 +33,9 @@ test("reduced motion keeps Arabic content still and controls usable", async ({
   await action.focus();
   await expect(action).toBeFocused();
   await expect(action).toHaveCSS("transition-duration", "0s");
-  await expect(action).toHaveCSS("min-height", "44px");
+  expect(
+    await action.evaluate((element) => element.getBoundingClientRect().height),
+  ).toBeGreaterThanOrEqual(44);
 });
 
 test("motion leaves no hidden content after navigation and preference changes", async ({

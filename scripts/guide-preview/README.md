@@ -41,7 +41,7 @@ The harness does not copy compiled CSS or fonts into Git. Rebuild them when
 source styles change. Most screenshots are at 1440 × 1000 viewport pixels, with
 reduced motion enabled. Household tracking uses a 480 × 1200 phone-width viewport. Most captures include the full page. The request overview,
 weighing form and rate card use the unmodified 1440 × 1000 browser viewport so
-the controls remain readable in the PDF. The weighing capture scrolls to the
+the controls remain readable in the Word guide. The weighing capture scrolls to the
 actual `#weigh` section; the documentation banner remains visible above it. No
 image is cropped, repainted or composed after capture. `?role=` selects only the
 harness fixture; it is not a production role-switching feature.

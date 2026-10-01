@@ -34,6 +34,53 @@ for the host platform in `apps/desktop/release`. It does not prove release signi
 or notarization. It has no automatic update checks, even if a feed was supplied.
 Do not distribute this directory as a production release.
 
+## Local demo packages
+
+The demo build has its own `Luma.Green Demo` name, app ID and cookie partition.
+It loads only the loopback origin embedded at build time (default
+`http://localhost:3004`). It never checks or installs updates. Production builds
+still require HTTPS and the signed release settings described below.
+
+Start the root web app on the same computer before opening the demo:
+
+```sh
+# After a successful root production build:
+pnpm exec next start --port 3004
+```
+
+Then build the desktop app in another terminal:
+
+```sh
+pnpm --filter @luma/desktop demo:pack:mac
+pnpm --filter @luma/desktop demo:pack:win
+```
+
+The macOS command makes a host-architecture unsigned app under
+`apps/desktop/release/demo/mac-arm64/Luma.Green Demo.app` on Apple Silicon
+(`mac/` on Intel). Open it with Finder. The Windows command makes an x64 folder
+at `apps/desktop/release/demo/win-unpacked`; copy the **whole folder** to Windows
+and open `Luma.Green Demo.exe`. It needs the web server running on that Windows
+computer at the same port. Copying only the EXE will not work. These packages
+are for local demonstration, not public distribution. Unsigned OS prompts and
+Windows execution must be assessed on the target machine.
+
+Use `DESKTOP_DEMO_ORIGIN=http://127.0.0.1:3004` at build time if the web server
+uses that host. LAN, remote HTTP, HTTPS, credentials and route paths are rejected
+by the demo profile. `DESKTOP_DEV_ORIGIN` cannot redirect a packaged demo. Do not
+run prepare/build commands concurrently: they share the generated resources.
+
+`pnpm --filter @luma/desktop demo:smoke` launches the packaged host app with a
+fresh profile. It checks public participant pages, Arabic direction, blocked
+local-file popups and the absence of Node APIs in the renderer. It writes local
+screenshots and a result record to `release/demo/evidence/`. This requires the
+web server above. The existing `smoke` command separately tests an isolated
+fixture, private blob PDF rendering, offline retry and sandbox behavior.
+
+Public pages, price browsing, calculators, role introductions and sign-in
+screens can be shown without account keys. Authenticated operations still need
+the real configured backend and permitted test accounts. This profile does not
+add an authentication bypass, fake operational records or offline transactions.
+
 ## Security and user flows
 
 - The renderer has no Node integration, preload, IPC bridge or webview access.

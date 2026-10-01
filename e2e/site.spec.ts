@@ -169,6 +169,7 @@ test("the standard lays out every norm, with a jump list", async ({ page }) => {
 test("the solar calculator estimates a home system and cites the scheme", async ({
   page,
 }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
   await page.goto("/solar");
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
@@ -185,7 +186,14 @@ test("the solar calculator estimates a home system and cites the scheme", async 
     page.getByRole("link", { name: /pmsuryaghar\.gov\.in/ }),
   ).toHaveAttribute("href", "https://pmsuryaghar.gov.in");
 
-  await page.getByRole("radio", { name: "My business" }).click();
+  const business = page.getByRole("radio", { name: "My business" });
+  expect(
+    await business.evaluate((element) => {
+      const label = element.closest("label");
+      return label ? label.scrollWidth <= label.clientWidth : false;
+    }),
+  ).toBe(true);
+  await business.click();
   await expect(page.getByText("Not for businesses")).toBeVisible();
 });
 
@@ -292,7 +300,7 @@ for (const locale of ["en", "ar", "ur"] as const) {
   test(`${locale} navigation fits phones and tablets with accessible targets`, async ({
     page,
   }) => {
-    for (const width of [360, 768, 1024]) {
+    for (const width of [360, 768, 1023]) {
       await page.setViewportSize({ width, height: 700 });
       // Resizing can start responsive image requests on the previous page.
       // The menu's observable state is this navigation test's readiness gate.

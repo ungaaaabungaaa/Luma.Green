@@ -1,3 +1,5 @@
+> Historical PDF delivery record. Word/Google Docs superseded this artifact on 2 October 2026; see `docs/user-guide/README.md`.
+
 # Illustrated platform guide — 1 October 2026
 
 ## Delivered

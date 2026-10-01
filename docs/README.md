@@ -10,7 +10,9 @@ Code rules live in [AGENTS.md](../AGENTS.md) and the
 
 **Resuming implementation?** Start with the [agent handoff](./delivery/handoff.md).
 It lists the continuation branch, completed commits, tests and ordered next tasks.
-The latest visual pass is recorded in [role app showcases](./delivery/app-showcases.md).
+The current redesign is recorded in [shared UI redesign](./delivery/ui-redesign.md).
+Demo setup: [desktop](./delivery/desktop-demo.md), [mobile](./delivery/mobile-demo.md).
+The [enhancement proposal](./product/enhancement-proposal.md) is research awaiting approval.
 
 **Clickable prototype:**
 [Luma.Green Prototype](https://claude.ai/artifact/4hiq2r5tm5kWDBqTGEPD8C) —
@@ -79,9 +81,9 @@ For caching, compression, self-hosted AI and cost measurements, use
 ## Platform user guide
 
 Use the [A-to-Z user guide](user-guide/guide.md) for role workflows and admin
-access, or open the [PDF](../output/pdf/luma-green-user-guide.pdf).
+access, or open the [Word guide](../output/docx/luma-green-user-guide.docx).
 [Capture and rebuild instructions](user-guide/README.md) explain the screenshot
-evidence labels and the mandatory update process. Source, screenshots and PDF
+evidence labels and the mandatory update process. Source, screenshots and Word document
 must be updated together when the user experience changes.
 
 ## Keeping these docs true

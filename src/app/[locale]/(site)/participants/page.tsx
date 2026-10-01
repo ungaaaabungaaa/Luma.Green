@@ -2,7 +2,6 @@ import { HouseIcon, ShieldCheckIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { RoleAppPreview } from "@/components/showcase/role-app-preview";
 import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { ClosingCta } from "@/components/site/closing-cta";
 import { Container } from "@/components/site/container";
@@ -56,15 +55,19 @@ export default async function ParticipantsPage() {
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} />
+      <PageHeader
+        title={t("title")}
+        lead={t("lead")}
+        art={<RoleStoryImage scene="kabadiwala" compact />}
+      />
 
-      <Container className="py-16 sm:py-24">
-        <ul className="space-y-14 sm:space-y-24">
+      <Container className="py-10 sm:py-16">
+        <ul className="space-y-6 sm:space-y-8">
           {participants.map(({ key, icon: Icon, title, body }, index) => (
             <li key={key}>
               <section
                 aria-labelledby={`participant-${key}`}
-                className="grid items-center gap-8 rounded-2xl border border-brand-900/10 bg-brand-50/40 p-5 sm:gap-12 sm:p-10 lg:grid-cols-2"
+                className="grid items-center gap-8 rounded-3xl border border-border bg-card p-5 sm:gap-10 sm:p-8 lg:grid-cols-2"
               >
                 <div
                   className={cn(
@@ -73,7 +76,7 @@ export default async function ParticipantsPage() {
                   )}
                 >
                   <div className="flex items-center gap-4">
-                    <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-brand-900/20 text-brand-900">
+                    <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-border text-primary">
                       <Icon aria-hidden className="size-5" />
                     </span>
                     <h2
@@ -86,9 +89,8 @@ export default async function ParticipantsPage() {
                   <p className="max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg">
                     {body}
                   </p>
-                  <RoleStoryImage scene={key} className="w-full" />
                 </div>
-                <RoleAppPreview role={key} className="min-w-0" />
+                <RoleStoryImage scene={key} className="w-full min-w-0" />
               </section>
             </li>
           ))}

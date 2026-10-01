@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
 import { Providers } from "@/components/providers";
+import { themeBootstrap } from "@/components/theme/theme";
 import { localeMeta } from "@/i18n/locales";
 import { localeFromParams } from "@/i18n/paths";
 import { routing } from "@/i18n/routing";
@@ -58,11 +59,8 @@ export async function generateMetadata({
   };
 }
 
-// White theme only (docs/decisions/0010): tell the browser not to darken
-// form controls or scrollbars when the phone is in dark mode.
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
-  colorScheme: "light",
+  colorScheme: "light dark",
 };
 
 export default async function LocaleLayout({
@@ -73,10 +71,14 @@ export default async function LocaleLayout({
 
   return (
     <html
+      suppressHydrationWarning
       lang={localeMeta[locale].hreflang}
       dir={localeMeta[locale].dir}
       className={`${fontClassName(locale)} h-full`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+      </head>
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <Providers>{children}</Providers>
       </body>

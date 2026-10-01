@@ -19,9 +19,9 @@ export function RoleCards() {
         <li
           key={role}
           data-reveal
-          className="group relative flex overflow-hidden rounded-2xl border border-brand-900/10 bg-card transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:flex-col"
+          className="group relative flex overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:flex-col"
         >
-          <div className="flex w-24 shrink-0 items-center justify-center border-e border-brand-900/10 bg-brand-50/70 p-2 sm:w-auto sm:border-e-0 sm:border-b sm:p-5">
+          <div className="flex w-24 shrink-0 items-center justify-center border-e border-border bg-accent/70 p-2 sm:w-auto sm:border-e-0 sm:border-b sm:p-5">
             <HelpArt name={ROLE_HELP[role].art} className="sm:max-w-44" />
           </div>
           <div className="flex min-w-0 flex-1 flex-col gap-3 p-4 sm:p-6">
@@ -36,7 +36,7 @@ export function RoleCards() {
             <p className="text-sm leading-relaxed text-muted-foreground">
               {t(`roles.${role}.who`)}
             </p>
-            <p className="mt-auto flex items-center justify-between gap-3 border-t border-brand-900/10 pt-4 text-sm font-semibold text-brand-900">
+            <p className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4 text-sm font-semibold text-primary">
               {t("guideCount", { count: ROLE_HELP[role].guides.length })}
               <ArrowRightIcon
                 aria-hidden

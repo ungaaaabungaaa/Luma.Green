@@ -7,7 +7,7 @@
 **Continue development:** [Agent handoff](docs/delivery/handoff.md) — branch and
 commit checkpoints, completed work, verification, setup gates and next tasks.
 
-**Learn the platform:** [A-to-Z PDF guide](output/pdf/luma-green-user-guide.pdf)
+**Learn the platform:** [A-to-Z Word guide guide](output/docx/luma-green-user-guide.docx)
 and [editable guide with screenshot evidence](docs/user-guide/README.md).
 
 <p align="center"><strong>Cleaner Tomorrow in Motion</strong></p>
@@ -295,7 +295,7 @@ features still need signed store releases. See the [architecture](docs/architect
 | Layer     | Choice                                                                                                                                                                                                                                  |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                                                                                 |
-| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                                                                                                |
+| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; light/dark/system themes, mobile first                                                                                                                                   |
 | Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                                                                                              |
 | Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                                                                             |
 | Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                                                                           |

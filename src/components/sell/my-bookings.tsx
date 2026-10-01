@@ -89,7 +89,7 @@ function BookingRow({ booking }: { booking: MyBooking }) {
       href={`/t/${booking.token}`}
       className="flex items-center gap-3 rounded-xl px-2 py-3 outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
     >
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-primary">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
         <ModeIcon aria-hidden className="size-5" />
       </span>
       <span className="flex min-w-0 flex-1 flex-col gap-0.5">

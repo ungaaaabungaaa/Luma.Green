@@ -45,10 +45,10 @@ export function JobCard({
   return (
     <article
       aria-labelledby={jobLabelledBy(job)}
-      className="flex flex-col gap-4 rounded-2xl border bg-card p-4"
+      className="flex flex-col gap-4 rounded-2xl border bg-card p-4 shadow-sm"
     >
       <div className="flex items-start gap-3">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
           <KindIcon aria-hidden className="size-6" />
         </span>
         <div className="flex min-w-0 flex-1 flex-col gap-0.5">
@@ -56,7 +56,7 @@ export function JobCard({
             <h3 id={ids.kind} className="text-base leading-snug font-semibold">
               {t(`work.${job.kind}`)}
             </h3>
-            <p className="shrink-0 text-lg leading-snug font-semibold">
+            <p className="shrink-0 text-lg leading-snug font-semibold tabular-nums">
               <span className="sr-only">{t("pay")} </span>
               {format.money(job.payPaise)}
             </p>

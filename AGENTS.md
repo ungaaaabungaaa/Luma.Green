@@ -124,12 +124,17 @@ flow gets an e2e test. See `.claude/skills/testing`.
 `.claude/skills/ci-checks`.
 
 **The platform user guide is mandatory.** The editable source is
-`docs/user-guide/guide.md`; the published repository artifact is
-`output/pdf/luma-green-user-guide.pdf`. Read `docs/user-guide/README.md` before
+`docs/user-guide/guide.md`; the maintained editable Word artifact is
+`output/docx/luma-green-user-guide.docx`. Read `docs/user-guide/README.md` before
 changing a user-facing route, screen, role, permission, workflow, account setup
 or native update behavior. Update the affected guide sections and recapture
-changed screens from the browser. Rebuild the PDF, render and inspect its pages,
-and commit the source, screenshot evidence, build record and PDF together.
+changed screens from the browser. Rebuild the Word document, render and inspect every page,
+and commit the source, screenshot evidence, build record and DOCX together.
+Google Docs copies are imported from the reviewed DOCX and must be updated with
+the same source. Read `docs/user-guide/cloud.json` for publication state. After
+the first verified import, reuse that document ID and preserve its sharing
+settings; record verified updates or an explicit pending connection gate.
+Earlier PDFs are archived snapshots, not maintained outputs.
 Record the guide impact in the delivery handoff even when no guide change is
 needed. This is a required completion step, not optional follow-up work.
 
@@ -138,7 +143,7 @@ synthetic component fixtures and older seeded captures explicitly labelled;
 never claim they prove authenticated access or provider execution. Do not
 capture passwords, authenticator QR/keys, backup codes, live IDs or customer
 contact details. Never replace browser screenshots with generated interface
-images. `src/user-guide.test.ts` checks that the committed PDF matches its
+images. `src/user-guide.test.ts` checks that the committed DOCX matches its
 source and screenshot inputs; fix stale documentation instead of bypassing it.
 
 ## 5. Commands
@@ -279,7 +284,7 @@ where `String.raw` would break Next's static analysis of the matcher.
 | `.claude/skills/testing`       | Writing or changing any code — what to test and how  |
 | `.claude/skills/ci-checks`     | A check is red, or you're adding a new one           |
 | `.claude/skills/i18n`          | Any user-facing string, or adding a locale           |
-| `.claude/skills/design-system` | Building UI — tokens, shadcn, white theme, RTL       |
+| `.claude/skills/design-system` | Building UI — tokens, shadcn, light/dark themes, RTL |
 | `.claude/skills/seo`           | Adding a route, metadata, sitemap or structured data |
 | `.claude/skills/convex-data`   | Schema changes, queries, mutations, migrations       |
 | `.claude/skills/ship-pr`       | Opening a PR or preparing a deployment               |

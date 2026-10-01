@@ -117,7 +117,7 @@ export function HelpSearch() {
                   className={cn(
                     "inline-flex min-h-11 items-center gap-2 rounded-full border-2 px-4 text-sm font-medium outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
                     isPressed
-                      ? "border-primary bg-brand-50 text-primary"
+                      ? "border-primary bg-accent text-primary"
                       : "border-border bg-background hover:border-primary/50",
                   )}
                 >
@@ -211,7 +211,7 @@ function NoResults() {
   const t = useTranslations("help");
   return (
     <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
-      <span className="flex size-12 items-center justify-center rounded-full bg-brand-50 text-primary">
+      <span className="flex size-12 items-center justify-center rounded-full bg-accent text-primary">
         <MessageCircleQuestionIcon aria-hidden className="size-6" />
       </span>
       <p className="font-medium">{t("search.emptyTitle")}</p>

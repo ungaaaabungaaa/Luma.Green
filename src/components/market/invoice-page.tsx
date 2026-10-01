@@ -280,7 +280,7 @@ function ReceiptDocument({
             <p className="flex gap-2">
               <FileTextIcon
                 aria-hidden
-                className="mt-0.5 size-4 shrink-0 text-sky-700"
+                className="mt-0.5 size-4 shrink-0 text-sky-700 dark:text-sky-300"
               />
               {t("receipt.ewayBill")}
             </p>

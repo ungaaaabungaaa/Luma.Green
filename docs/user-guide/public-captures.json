@@ -6,10 +6,58 @@
     "route": "/",
     "path": "docs/user-guide/screenshots/public-home.png",
     "url": "http://localhost:3004/",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:23.428Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:18.401Z",
     "kind": "current-local-disconnected",
-    "sha256": "a96a6422a528808eb3ac11481bde2cc9c947e7a4c93ea2b1493032480ee79d5c"
+    "sha256": "ff2910b2cb2f7b397a4579fc7fd4264b40ced9e25f3d221c0280536801dd3224"
+  },
+  {
+    "browserErrors": [],
+    "blockedRequests": [],
+    "name": "public-home-dark",
+    "route": "/",
+    "path": "docs/user-guide/screenshots/public-home-dark.png",
+    "url": "http://localhost:3004/",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:18.733Z",
+    "kind": "current-local-disconnected",
+    "sha256": "d5f1d7d50ab444695f268499ba2f5d743b902d9ea8aefc5adaaa6cb7f74625a8"
+  },
+  {
+    "browserErrors": [],
+    "blockedRequests": [],
+    "name": "public-participants",
+    "route": "/participants",
+    "path": "docs/user-guide/screenshots/public-participants.png",
+    "url": "http://localhost:3004/participants",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:18.928Z",
+    "kind": "current-local-disconnected",
+    "sha256": "f95ba5307d87bde705ec6c29274944cfad6ec07b7498f75006f5043015ad69e5"
+  },
+  {
+    "browserErrors": [],
+    "blockedRequests": [],
+    "name": "public-participants-dark",
+    "route": "/participants",
+    "path": "docs/user-guide/screenshots/public-participants-dark.png",
+    "url": "http://localhost:3004/participants",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:19.132Z",
+    "kind": "current-local-disconnected",
+    "sha256": "aa03f3ec7a81565632ab6858eb618782ee901b5fd00fba3e52f49bfad2a3812f"
+  },
+  {
+    "browserErrors": [],
+    "blockedRequests": [],
+    "name": "public-arabic-dark",
+    "route": "/ar",
+    "path": "docs/user-guide/screenshots/public-arabic-dark.png",
+    "url": "http://localhost:3004/ar",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:19.322Z",
+    "kind": "current-local-disconnected",
+    "sha256": "68d7575f3f801d2bc5d0e625632b75a9242a5205ff77bb5dc27681e9b67326ca"
   },
   {
     "browserErrors": [],
@@ -18,10 +66,10 @@
     "route": "/prices",
     "path": "docs/user-guide/screenshots/public-prices.png",
     "url": "http://localhost:3004/prices",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:23.599Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:19.476Z",
     "kind": "current-local-disconnected",
-    "sha256": "4e9088af42120391026960be46367023b04185a469817f61226e7386d2f0af31"
+    "sha256": "95f76c64bcb63391a6cc8364c2aef3f97089ceb958e599237279043fdba2ae43"
   },
   {
     "browserErrors": [],
@@ -30,10 +78,10 @@
     "route": "/sell",
     "path": "docs/user-guide/screenshots/public-sell.png",
     "url": "http://localhost:3004/sell",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:23.765Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:19.634Z",
     "kind": "current-local-disconnected",
-    "sha256": "9158b93023c5d3d75065d547a8f30a19c979d4fa1d651378e74f5d6fbe345ce0"
+    "sha256": "0c211ee228772634aec6a1a56f85cdbb153f12d452acec372c513ec9c89b2cb9"
   },
   {
     "browserErrors": [],
@@ -42,10 +90,10 @@
     "route": "/join",
     "path": "docs/user-guide/screenshots/public-join.png",
     "url": "http://localhost:3004/join",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:23.943Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:19.808Z",
     "kind": "current-local-disconnected",
-    "sha256": "039e347ba3c97c473da60b4971fc12c1c1f27a76c8e8e01481be32b8651454fe"
+    "sha256": "45ee4d13bc82ed78e2dd353ec1c41f1b413e53bbf04cb7d987806e268866d33f"
   },
   {
     "browserErrors": [],
@@ -54,10 +102,10 @@
     "route": "/login",
     "path": "docs/user-guide/screenshots/public-login.png",
     "url": "http://localhost:3004/login",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:24.112Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:19.966Z",
     "kind": "current-local-disconnected",
-    "sha256": "5242a1d6d69bdc3676250d2a20754db6ce77d3da955b1d0a6200e5b8e8f46a3c"
+    "sha256": "49751205484fd32d526d5149ddfa47f29efcf7b2a1b07d495d24dca3433d98b8"
   },
   {
     "browserErrors": [],
@@ -66,10 +114,10 @@
     "route": "/admin/login",
     "path": "docs/user-guide/screenshots/public-admin-login.png",
     "url": "http://localhost:3004/admin/login",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:24.265Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:20.118Z",
     "kind": "current-local-disconnected",
-    "sha256": "6f6205f5320031b9458f2f3890f935afd1f4763866dadd111d02aedeb2ea0f53"
+    "sha256": "067f366872f380905d3c2531769254848e67128b93e3fd1ab39e776d3064e6c8"
   },
   {
     "browserErrors": [],
@@ -78,10 +126,10 @@
     "route": "/admin/setup",
     "path": "docs/user-guide/screenshots/public-admin-setup.png",
     "url": "http://localhost:3004/admin/setup",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:24.482Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:20.269Z",
     "kind": "current-local-disconnected",
-    "sha256": "b0a9dd0861d82d7e6fea6ddfaf2491bc4a37d8b88365149dbc8ff08c9f82b4b0"
+    "sha256": "79a4f7cbf7a32db329598d5dc9dcadcf9d5b7d5b85df78c5a8b4d844d9f42fed"
   },
   {
     "browserErrors": [],
@@ -90,10 +138,10 @@
     "route": "/help",
     "path": "docs/user-guide/screenshots/public-help.png",
     "url": "http://localhost:3004/help",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:24.652Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:20.441Z",
     "kind": "current-local-disconnected",
-    "sha256": "cf8e45d1194749fc95f1560d6b9df4e3e8b8f84ed4b87b30ede613966af8d73d"
+    "sha256": "7b4dd3e2454c4d51a1e98a8f020ba50071dda91a7f96ac0c601fb039311a26f5"
   },
   {
     "browserErrors": [],
@@ -102,10 +150,10 @@
     "route": "/standards",
     "path": "docs/user-guide/screenshots/public-standards.png",
     "url": "http://localhost:3004/standards",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:24.808Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:20.611Z",
     "kind": "current-local-disconnected",
-    "sha256": "e7fd9d3cb9ea6c4c7b85c619ddb87230f770a2fea38f06f9134b4188b51b7814"
+    "sha256": "aa86e9ae9acd93ff490484d0a68f3457d96c695c74faf9448d6a6063055c715f"
   },
   {
     "browserErrors": [],
@@ -114,10 +162,10 @@
     "route": "/solar",
     "path": "docs/user-guide/screenshots/public-solar.png",
     "url": "http://localhost:3004/solar",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:24.977Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:20.801Z",
     "kind": "current-local-disconnected",
-    "sha256": "f52dab5c3ea644d232d190fe3ba1c68be9ffbf9db072ea843339c29cfeb62b96"
+    "sha256": "7605e2eeabe07e088765ed884276a8e58f98a374972f04442d24fd33053756aa"
   },
   {
     "browserErrors": [],
@@ -126,10 +174,10 @@
     "route": "/help/contact",
     "path": "docs/user-guide/screenshots/public-contact.png",
     "url": "http://localhost:3004/help/contact",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:25.116Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:20.956Z",
     "kind": "current-local-disconnected",
-    "sha256": "301cf919e7e840068fcd83edb6e71df258db8751fef6d2957ed47f7e9a4b6b73"
+    "sha256": "23ebfff5176e8edc9e38d7af4ceb769535e5de2ec4f513af7ccfa8cb3f80d77e"
   },
   {
     "browserErrors": [],
@@ -138,10 +186,10 @@
     "route": "/contact",
     "path": "docs/user-guide/screenshots/public-contact-info.png",
     "url": "http://localhost:3004/contact",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:25.273Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:21.108Z",
     "kind": "current-local-disconnected",
-    "sha256": "69cdb123a22e009b28fdf9454028954e3fe1ba888d8aeef4e28bb4ffe99a36c2"
+    "sha256": "c57f768fb29ccfc66fb3d17d2a2c91c55d0a57629fa509b7e127af9b2e3fd586"
   },
   {
     "browserErrors": [],
@@ -150,10 +198,10 @@
     "route": "/how-it-works",
     "path": "docs/user-guide/screenshots/public-how-it-works.png",
     "url": "http://localhost:3004/how-it-works",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:25.440Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:21.252Z",
     "kind": "current-local-disconnected",
-    "sha256": "5d0b5ab87f2aaee9d1bb235b43d6d68493e2688e68dd88dd5c1855aa49ff0b9d"
+    "sha256": "a6ce17cec91cc4bbcd641db86ea5f8ba3b549df70caaff6da04ada642f1ebd32"
   },
   {
     "browserErrors": [],
@@ -162,9 +210,9 @@
     "route": "/ar",
     "path": "docs/user-guide/screenshots/public-arabic.png",
     "url": "http://localhost:3004/ar",
-    "revision": "6ca93913fc2e51c68601db62409ea62b8fc2104a",
-    "capturedAt": "2026-10-01T18:26:25.591Z",
+    "revision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+    "capturedAt": "2026-10-01T19:15:21.440Z",
     "kind": "current-local-disconnected",
-    "sha256": "be0c7594c2d9c5b04ad8e9b2d65622ad42853b2c114ea6116debfa5377db0b74"
+    "sha256": "95b397864c22217a3a137d9f61d6a0ff1dddd8e3a007cabc4f923b5b2e4f6b23"
   }
 ]

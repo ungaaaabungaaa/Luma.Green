@@ -57,7 +57,7 @@ export function JoinGate({
       <RoleStoryImage
         scene={kind}
         compact
-        frameClassName="h-24 aspect-auto sm:h-36"
+        frameClassName="h-24 aspect-auto sm:h-32"
       />
     </div>
   );

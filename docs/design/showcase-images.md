@@ -2,7 +2,7 @@
 
 Generated on 1 October 2026 with the built-in `image_gen` tool. Each image used one independent generation call, with no reference image and `transparent_background: false`. No external provider account or API key was used.
 
-These are illustrative generated scenes. They do not show actual Luma.Green customers, staff, facilities or operations. Do not present them as endorsements, capacity claims, certification evidence or browser screenshots. App mock-ups must use the implemented interface or clearly labelled sample previews, not these generated scenes.
+These are illustrative generated scenes. They do not show actual Luma.Green customers, staff, facilities or operations. Do not present them as endorsements, capacity claims, certification evidence or browser screenshots. Generated device art is decorative and must not be used as screenshot evidence. The guide identifies conceptual imagery separately from current browser captures. Visible illustration captions were removed at the founder's request.
 
 ## Production assets
 
@@ -73,3 +73,19 @@ The interrupted generation handoff retained the following scene briefs, but not 
 | recycling-line.webp      | `exec-0c17b5e2-603b-4d10-8ff4-2fe57aea5d44.png` | A clean, plausible industrial plastic recycling line, with no people near machinery.                                        |
 | operations-desk.webp     | `exec-d36ef356-679c-4879-b5bd-982458f0b446.png` | An administrative desk with paper folders and a laptop showing an abstract green screen. No identities or readable records. |
 | solar-rooftop.webp       | `exec-37c6551a-341e-4bca-9287-8f116016f43b.png` | Rooftop photovoltaic panels in a Bengaluru residential setting.                                                             |
+
+## 2 October redesign asset
+
+The built-in image tool generated `public/images/circular-courtyard.webp` with
+no reference image, transparency or external account. The original and WebP
+were visually reviewed. Sharp encoded quality 78, effort 6 without enlargement:
+1672 × 941 pixels, 216062 bytes. It is the full-bleed home hero.
+
+The scene is a fictional material recovery courtyard. Generation brief: warm
+cinematic Bengaluru setting, deep shade on the left for title text, people
+reviewing a clipboard on the right, no readable words or logos. This is a brief,
+not the verbatim prompt. Original: `exec-18d961bd-ebd8-4c9d-a48d-109a1e9da660.png`.
+
+The founder subsequently rejected device artwork. The generated device image
+was not retained in the project. HTML phone/laptop previews were also removed.
+Role pages now use work scenes and real links, without illustrative captions.
