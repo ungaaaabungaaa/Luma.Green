@@ -1,0 +1,154 @@
+/// <reference types="vite/client" />
+// @vitest-environment edge-runtime
+import { convexTest } from "convex-test";
+import { afterEach, describe, expect, it, vi } from "vitest";
+
+import { api } from "./_generated/api";
+import { convexModules, registerAuth, signIn } from "./lib/auth.testing";
+import { catalogueEntry } from "./lib/catalogue";
+import schema from "./schema";
+
+const modules = convexModules(import.meta.glob("./**/*.*s"));
+const ADMIN_EMAIL = "admin@luma.test";
+
+afterEach(() => vi.unstubAllEnvs());
+
+function world() {
+  vi.stubEnv("ADMIN_EMAIL", ADMIN_EMAIL);
+  const t = convexTest(schema, modules);
+  registerAuth(t);
+  return t;
+}
+
+describe("fill missing material names", () => {
+  it("requires an authenticated admin with two-factor authentication", async () => {
+    const t = world();
+    await expect(
+      t.mutation(api.catalogue.fillMissingNames, {}),
+    ).rejects.toThrow("NOT_SIGNED_IN");
+    const member = await signIn(t, {
+      email: "member@luma.test",
+      twoFactorEnabled: true,
+    });
+    await expect(
+      member.mutation(api.catalogue.fillMissingNames, {}),
+    ).rejects.toThrow("NOT_ADMIN");
+    const unenrolled = await signIn(t, { email: ADMIN_EMAIL });
+    await expect(
+      unenrolled.mutation(api.catalogue.fillMissingNames, {}),
+    ).rejects.toThrow("TWO_FACTOR_REQUIRED");
+    expect(await t.run((ctx) => ctx.db.query("auditLog").collect())).toEqual(
+      [],
+    );
+  });
+
+  it("fills only missing names and audits each changed material once", async () => {
+    const t = world();
+    const admin = await signIn(t, {
+      email: ADMIN_EMAIL,
+      twoFactorEnabled: true,
+    });
+    await admin.mutation(api.identity.ensureProfile, { locale: "en" });
+    const ids = await t.run(async (ctx) => {
+      const first = await ctx.db.insert("materials", {
+        code: "PAPER-NEWS",
+        family: "paper",
+        stage: "scrap",
+        names: {
+          en: "Custom newspaper",
+          hi: "रद्दी",
+          ta: "என் பெயர்",
+          fr: "Journal",
+        },
+        co2eFactor: 7.125,
+        sortOrder: 99,
+        active: false,
+      });
+      const second = await ctx.db.insert("materials", {
+        code: "METAL-COPPER",
+        family: "metal",
+        stage: "scrap",
+        names: { en: "Copper" },
+        co2eFactor: 3,
+        sortOrder: 2,
+        active: true,
+      });
+      const custom = await ctx.db.insert("materials", {
+        code: "CUSTOM-MATERIAL",
+        family: "other",
+        stage: "scrap",
+        names: { en: "Custom" },
+        co2eFactor: 0.25,
+        sortOrder: 100,
+        active: true,
+      });
+      const price = await ctx.db.insert("referencePrices", {
+        city: "Bengaluru",
+        materialCode: "PAPER-NEWS",
+        floorPaise: 1234,
+        fallbackPaise: 5678,
+        updatedAt: 1,
+      });
+      const market = await ctx.db.insert("marketPrices", {
+        city: "Bengaluru",
+        materialCode: "PAPER-NEWS",
+        date: "2026-10-01",
+        paisePerKg: 2345,
+      });
+      return { first, second, custom, price, market };
+    });
+    const before = await t.run(async (ctx) => ({
+      material: await ctx.db.get(ids.first),
+      custom: await ctx.db.get(ids.custom),
+      price: await ctx.db.get(ids.price),
+      market: await ctx.db.get(ids.market),
+    }));
+    expect(await admin.mutation(api.catalogue.fillMissingNames, {})).toEqual({
+      updated: 2,
+    });
+    const after = await t.run(async (ctx) => ({
+      material: await ctx.db.get(ids.first),
+      custom: await ctx.db.get(ids.custom),
+      price: await ctx.db.get(ids.price),
+      market: await ctx.db.get(ids.market),
+      audit: await ctx.db.query("auditLog").collect(),
+      materials: await ctx.db.query("materials").collect(),
+    }));
+    expect(after.material).toEqual({
+      ...before.material,
+      names: {
+        ...catalogueEntry("PAPER-NEWS")?.names,
+        ...before.material?.names,
+      },
+    });
+    expect(after.custom).toEqual(before.custom);
+    expect(after.price).toEqual(before.price);
+    expect(after.market).toEqual(before.market);
+    expect(after.materials).toHaveLength(3);
+    const audit = after.audit.filter(
+      (entry) => entry.action === "material.namesFilled",
+    );
+    expect(audit).toHaveLength(2);
+    expect(audit[0]).toMatchObject({
+      entityTable: "materials",
+      entityId: ids.first,
+      actorProfileId: expect.any(String),
+      metadata: {
+        code: "PAPER-NEWS",
+        from: before.material?.names,
+        to: after.material?.names,
+      },
+    });
+    expect(audit[0]?.metadata.addedLocales).not.toContain("ta");
+    expect(audit[0]?.metadata.addedLocales).toContain("ar");
+    expect(await admin.mutation(api.catalogue.fillMissingNames, {})).toEqual({
+      updated: 0,
+    });
+    expect(await t.run((ctx) => ctx.db.query("materials").collect())).toEqual(
+      after.materials,
+    );
+    expect(await t.run((ctx) => ctx.db.query("auditLog").collect())).toEqual(
+      after.audit,
+    );
+  });
+});

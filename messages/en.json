@@ -14,7 +14,8 @@
     "save": "Save",
     "cancel": "Cancel",
     "search": "Search",
-    "language": "Language"
+    "language": "Language",
+    "close": "Close"
   },
   "nav": {
     "label": "Main",
@@ -2579,7 +2580,8 @@
       "confirmAndBook": "Confirm and book",
       "booking": "Booking…",
       "booked": "Booked! Opening your booking…",
-      "fixIt": "Fix it"
+      "fixIt": "Fix it",
+      "locationNote": "Your approximate location will be saved with this pickup so we can find another nearby shop if needed."
     },
     "phone": {
       "label": "Mobile number",
@@ -2727,7 +2729,8 @@
     },
     "saved": "No account needed. Keep this link to check your booking on any phone.",
     "sellMore": "Sell more scrap",
-    "tryAnother": "Try another shop"
+    "tryAnother": "Try another shop",
+    "dispatchChanged": "Your request has moved to another nearby shop. The current shop is shown below."
   },
   "market": {
     "sampleData": "Prices and amounts on this screen are sample data for the prototype.",
@@ -3205,6 +3208,18 @@
       "belowFloorUnknown": "Too low. This is under the minimum price.",
       "emptyTitle": "No materials yet",
       "emptyBody": "The materials you buy are set when your shop is approved."
+    },
+    "dispatch": {
+      "title": "Pickup settings",
+      "autoAccept": "Accept nearby pickups automatically",
+      "autoAcceptHint": "Pickups within your radius can be accepted without a manual reply. Keep this off when you cannot collect.",
+      "radius": "Pickup radius (km)",
+      "radiusHint": "Choose a whole number from 1 to 50.",
+      "saved": "Pickup settings saved",
+      "error": "We could not save these settings. Try again.",
+      "saving": "Saving…",
+      "ownerOnly": "Only the shop owner can change pickup settings.",
+      "locationRequired": "Add your shop location and enable home pickups before using automatic acceptance."
     }
   }
 }

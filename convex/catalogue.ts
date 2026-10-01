@@ -1,6 +1,9 @@
 import { v } from "convex/values";
 
-import { query } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
+import { requireAdmin } from "./lib/access";
+import { findProfile } from "./lib/applicationAccess";
+import { CATALOGUE } from "./lib/catalogue";
 import { shiftDate } from "./lib/dates";
 import { indiaToday } from "./lib/onboarding";
 import { vFamily } from "./lib/validators";
@@ -106,5 +109,47 @@ export const priceBoard = query({
       });
     }
     return { city: args.city, date: latest, rows };
+  },
+});
+
+/** Fill missing translations without changing existing names or material data. */
+export const fillMissingNames = mutation({
+  args: {},
+  returns: v.object({ updated: v.number() }),
+  handler: async (ctx) => {
+    const admin = await requireAdmin(ctx);
+    const profile = await findProfile(ctx, admin._id);
+    let updated = 0;
+    // This is bounded by the 26 canonical codes, with one indexed lookup each.
+    // Unknown codes and absent materials are deliberately left untouched.
+    for (const entry of CATALOGUE) {
+      const material = await ctx.db
+        .query("materials")
+        .withIndex("by_code", (q) => q.eq("code", entry.code))
+        .unique();
+      if (!material) continue;
+      const missing = Object.entries(entry.names).filter(
+        ([locale]) => !Object.hasOwn(material.names, locale),
+      );
+      if (missing.length === 0) continue;
+      const names = { ...Object.fromEntries(missing), ...material.names };
+      await ctx.db.patch(material._id, { names });
+      await ctx.db.insert("auditLog", {
+        actorProfileId: profile?._id,
+        action: "material.namesFilled",
+        entityTable: "materials",
+        entityId: material._id,
+        metadata: {
+          adminUserId: admin._id,
+          code: material.code,
+          addedLocales: missing.map(([locale]) => locale),
+          from: material.names,
+          to: names,
+        },
+        createdAt: Date.now(),
+      });
+      updated += 1;
+    }
+    return { updated };
   },
 });
