@@ -29,3 +29,4 @@ list top to bottom to see how the platform got its shape.
 | 0011 | [AI estimates materials; our tables set prices](./0011-ai-estimates-priced-by-our-tables.md)             | Decided | 29 Sep 2026 |
 | 0012 | [Pilot analytics in Convex; PostHog and Sentry later](./0012-pilot-analytics-in-convex.md)               | Decided | 29 Sep 2026 |
 | 0013 | [Backups: Convex plus a daily local export](./0013-backups-convex-plus-daily-local.md)                   | Decided | 29 Sep 2026 |
+| 0014 | [Shared web UI in native shells](./0014-shared-web-ui-in-native-shells.md)                               | Decided | 1 Oct 2026  |

@@ -1,6 +1,6 @@
 # Architecture overview
 
-> **Status:** decided, 29 Sep 2026. Each decision has an
+> **Status:** updated for native shells, 1 Oct 2026. Each decision has an
 > [ADR](../decisions/README.md); this page is the map. Product context:
 > [product/vision.md](../product/vision.md).
 
@@ -13,6 +13,11 @@ storage, scheduled jobs and HTTP endpoints in one place, so a team of one to
 three people can run the whole chain — onboarding, pickups, prices, stock and
 verification — without operating servers. Outside services (SMS, AI, maps) are
 called only from Convex actions. Everything else is code in this repository.
+
+Native shells in `apps/mobile` (Expo) and `apps/desktop` (Electron) load the
+shared hosted UI. They own native controls and update delivery, while Next.js
+and Convex remain the screen and data owners. See [native apps](native-apps.md)
+and [ADR 0014](../decisions/0014-shared-web-ui-in-native-shells.md).
 
 ## Context
 
@@ -132,6 +137,5 @@ deployment). Details: [operations/environments.md](../operations/environments.md
 | Solar, documentation and legal services | A `services` module: providers, requests, statuses — the onboarding pattern again                               |
 | Machinery data bank                     | `catalogue` gains machines; yards link the machines they own                                                    |
 | WhatsApp for households                 | A channel adapter in `notifications` plus an HTTP-action webhook into `bookings`                                |
-| Native apps                             | An Expo client on the same Convex API and message catalogue                                                     |
 | Team members for the admin              | Staff roles in `identity` — [auth.md](./auth.md#later-team-members)                                             |
 | PostHog, Sentry                         | Providers already stubbed in `src/components/providers`; switched on by their keys                              |

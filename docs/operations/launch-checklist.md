@@ -67,7 +67,8 @@ model accuracy must be checked with your account before launch.
   application documents use Convex storage.
 - PostHog and Sentry: remain optional and disabled without keys. Do not add them
   just to make the pilot work.
-- Mobile app stores: this pass changes the web application, not native apps.
+- Native app distribution: follow the separate [app release checklist](app-releases.md)
+  for Expo, Apple, Google, signing certificates, environment values and update feeds.
 
 ## Enable and verify
 
@@ -96,6 +97,7 @@ model accuracy must be checked with your account before launch.
 10. Have native speakers check Kannada, Hindi and the other launch languages.
     Review long material names and mobile/RTL layouts.
 
-Real escrow, native applications and other work outside this pass are not
-enabled by adding keys. Check
+Native shells are implemented, but signing, store approval and device acceptance
+remain release steps. Real escrow and other deferred work are not enabled by
+adding keys. Check
 [features.md](../product/features.md) for the current implementation boundary.

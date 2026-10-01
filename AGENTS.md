@@ -57,7 +57,8 @@ Three properties follow from that and are non-negotiable:
 | Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                       |
 | Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift    |
 | Lint        | ESLint flat config, type-aware       | See §10                                            |
-| Mobile      | Expo / React Native (planned)        | `ios/` and `android/` are placeholders             |
+| Mobile      | Expo 57 / React Native WebView       | `apps/mobile`; shared hosted operational UI        |
+| Desktop     | Electron                             | `apps/desktop`; macOS and Windows signed updates   |
 
 ## 3. Layout
 
@@ -72,7 +73,9 @@ src/
   lib/               env, fonts, site constants, utils
   proxy.ts           locale negotiation (Next 16's middleware convention)
 convex/              schema and server functions
-messages/            one JSON file per locale
+apps/mobile/         Expo iOS/Android shell; generated native projects ignored
+apps/desktop/        Electron macOS/Windows shell
+messages/            one JSON file per locale, including native controls
 e2e/                 Playwright specs
 docs/                product, architecture, decisions (ADRs), operations,
                      migrations, delivery — start at docs/README.md
@@ -99,7 +102,11 @@ allows this there and nowhere else.
 or the `brand-*` scale. A raw hex in a component is a bug — see
 `.claude/skills/design-system`.
 
-**Never add a component by hand that shadcn already ships.** Run
+Native shell controls use React Native primitives or OS menus and the shared
+message catalogues. Their config modules validate public app settings; backend
+secrets remain in Convex. See [native apps](docs/architecture/native-apps.md).
+
+**Never add a web component by hand that shadcn already ships.** Run
 `pnpm dlx shadcn@latest add <name>`.
 
 **Never commit a secret.** All config goes through `src/lib/env.ts`. Every var
@@ -117,7 +124,10 @@ flow gets an e2e test. See `.claude/skills/testing`.
 
 ```bash
 pnpm dev            # dev server
-pnpm check          # lint + typecheck + unit — run before every push
+pnpm check          # lint + types + web/native unit tests before every push
+pnpm apps:check     # mobile + desktop policy tests and types
+pnpm mobile:export # iOS/Android JavaScript bundles (not installers)
+pnpm desktop:pack  # unsigned host desktop app
 pnpm test           # unit tests
 pnpm test:watch     # unit tests, watch mode
 pnpm e2e            # Playwright (needs `pnpm build` first when CI=1)
@@ -194,7 +204,9 @@ there, never in a component.
   prices. See `docs/architecture/ai-estimation.md`.
 - **Razorpay, Resend, R2, Mapbox** — not required for the pilot. No payment
   processing is implemented. Documents use Convex storage; location uses the browser.
-- **Expo / React Native** — `ios/` and `android/` are empty placeholders.
+- **Expo / React Native and Electron** — native shells are in `apps/`. Signed
+  builds, native device tests, store review and update delivery remain release
+  gates. Follow [app releases](docs/operations/app-releases.md).
 
 ## 10. Lint
 

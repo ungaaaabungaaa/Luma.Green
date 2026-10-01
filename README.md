@@ -261,12 +261,32 @@ pnpm build          # production build
 pnpm screenshots    # the "See it" pictures, from a running app
 ```
 
+## Android, iOS, macOS and Windows
+
+The native apps reuse the hosted operational screens and the same Convex backend.
+`apps/mobile` contains the Expo / React Native shell for Android and iOS.
+`apps/desktop` contains the Electron shell for macOS and Windows.
+They include native navigation, offline recovery and update configuration.
+
+```sh
+pnpm apps:check
+pnpm mobile:export  # JavaScript bundles, not APK/IPA installers
+pnpm desktop:pack   # unsigned desktop app for the host platform
+```
+
+Routine hosted content updates need no new installer. Compatible mobile shell
+updates use EAS; desktop binaries use signed update feeds. New mobile native
+features still need signed store releases. See the [architecture](docs/architecture/native-apps.md),
+[account and release checklist](docs/operations/app-releases.md), and
+[local verification record](docs/delivery/apps-and-motion.md).
+
 ## Tech stack
 
 | Layer     | Choice                                                                                                                                                               |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                              |
 | Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                             |
+| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                           |
 | Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                          |
 | Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                        |
 | Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                             |

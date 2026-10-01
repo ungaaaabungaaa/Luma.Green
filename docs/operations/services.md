@@ -63,12 +63,16 @@ placeholder and URL against the actual template before enabling sends:
 | Kabadiwala assigned     | `{#var#} from {#var#} will collect your scrap on {#var#}. Track: {#var#}`                 |
 | New pickup (kabadiwala) | `New pickup request near you: {#var#}. Open Luma.Green to accept.`                        |
 
-## Mobile
+## Mobile and desktop
 
-| Item                | Status | Notes                                                         |
-| ------------------- | ------ | ------------------------------------------------------------- |
-| Installable web app | 🟡     | Manifest exists; install prompt comes with the kabadiwala app |
-| Expo / React Native | ⬜     | After the pilot; `ios/` and `android/` are placeholders       |
+| Item                | Status | Notes                                                                                                                 |
+| ------------------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
+| Installable web app | 🟡     | Manifest exists; install prompt comes with the kabadiwala app                                                         |
+| Expo / React Native | 🟡     | Android/iOS shell in `apps/mobile`; signed builds, device checks and store approval remain                            |
+| Electron            | 🟡     | macOS/Windows shell in `apps/desktop`; local macOS smoke/unsigned pack pass; Windows and signed release checks remain |
+
+See [app releases](app-releases.md) for accounts, exact environment values and
+the three update paths. Source implementation does not establish store readiness.
 
 ## Operations
 

@@ -127,6 +127,14 @@ Everything below is there to show the idea. None of it is market data.
 | Documents in the demo applications                                   | A generated PDF and pictures ([convex/lib/demoFiles.ts](../../convex/lib/demoFiles.ts))                                                    | Applicants' own uploads                                                                         |
 | Recycle points                                                       | One for every ₹10 paid                                                                                                                     | What they're worth is an [open question](./open-questions.md)                                   |
 
+## Native app packages
+
+Android and iOS use the Expo shell in `apps/mobile`; macOS and Windows use
+Electron in `apps/desktop`. They share the hosted screens and message catalogues.
+Local checks do not establish signed release or store readiness. See
+[native app behavior](../architecture/native-apps.md) and the
+[release checklist](../operations/app-releases.md).
+
 ## Next
 
 From the [roadmap](../delivery/roadmap.md). Several items after the pilot
@@ -157,5 +165,4 @@ and an OpenRouter key with a spend limit.
 **After the pilot:** kabadiwala-to-yard collections, once the research is in
 ([kabadiwala-to-yard](./kabadiwala-to-yard.md)); real trading between recyclers
 and manufacturers; escrow payments; carbon credits; solar, documentation and
-legal services; a machinery data bank; a WhatsApp channel; Saathi pay; native
-apps; PostHog and Sentry; team members for the admin.
+legal services; a machinery data bank; a WhatsApp channel; Saathi pay; PostHog and Sentry; team members for the admin.

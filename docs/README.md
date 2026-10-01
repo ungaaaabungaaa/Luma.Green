@@ -37,26 +37,29 @@ private until shared from its Share menu.
 | [auth.md](./architecture/auth.md)                   | Sign-in for each role, the admin, permissions, private files    |
 | [data-model.md](./architecture/data-model.md)       | Planned tables and state machines                               |
 | [ai-estimation.md](./architecture/ai-estimation.md) | Photo → estimate, model choice, cost controls                   |
+| [native-apps.md](./architecture/native-apps.md)     | Mobile and desktop ownership, navigation and update boundaries  |
 | [decisions/](./decisions/README.md)                 | Architecture decision records, one per decision                 |
 
 ## Operations — how it's run
 
-| Page                                                      | What's in it                                                    |
-| --------------------------------------------------------- | --------------------------------------------------------------- |
-| [environments.md](./operations/environments.md)           | Local, preview, production; releases; where each variable lives |
-| [launch-checklist.md](./operations/launch-checklist.md)   | Accounts, exact environment variables and launch verification   |
-| [sms-notifications.md](./operations/sms-notifications.md) | Status-message templates, outbox behavior and provider checks   |
-| [services.md](./operations/services.md)                   | Every outside service, its status, SMS templates to register    |
-| [backups.md](./operations/backups.md)                     | Daily local backups, restores, drills                           |
-| [data-protection.md](./operations/data-protection.md)     | What personal data we hold, why, for how long; breach steps     |
-| [incidents.md](./operations/incidents.md)                 | When something breaks                                           |
-| [migrations/](./migrations/README.md)                     | Changing the schema safely, and the log                         |
+| Page                                                      | What's in it                                                     |
+| --------------------------------------------------------- | ---------------------------------------------------------------- |
+| [environments.md](./operations/environments.md)           | Local, preview, production; releases; where each variable lives  |
+| [launch-checklist.md](./operations/launch-checklist.md)   | Accounts, exact environment variables and launch verification    |
+| [app-releases.md](./operations/app-releases.md)           | App accounts, environment values, signing and release acceptance |
+| [sms-notifications.md](./operations/sms-notifications.md) | Status-message templates, outbox behavior and provider checks    |
+| [services.md](./operations/services.md)                   | Every outside service, its status, SMS templates to register     |
+| [backups.md](./operations/backups.md)                     | Daily local backups, restores, drills                            |
+| [data-protection.md](./operations/data-protection.md)     | What personal data we hold, why, for how long; breach steps      |
+| [incidents.md](./operations/incidents.md)                 | When something breaks                                            |
+| [migrations/](./migrations/README.md)                     | Changing the schema safely, and the log                          |
 
 ## Delivery
 
 | Page                                                  | What's in it                                               |
 | ----------------------------------------------------- | ---------------------------------------------------------- |
 | [cleanup-progress.md](./delivery/cleanup-progress.md) | UI and pilot implementation evidence from 1 October        |
+| [apps-and-motion.md](./delivery/apps-and-motion.md)   | Native app and interface implementation evidence           |
 | [roadmap.md](./delivery/roadmap.md)                   | Week by week to the pilot, the cut line, the critical path |
 | [pilot.md](./delivery/pilot.md)                       | Who, what has to work, what we measure                     |
 
