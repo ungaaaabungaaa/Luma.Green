@@ -67,7 +67,13 @@ export async function acceptOffer(
   now: number,
   actorProfileId?: Id<"profiles">,
 ): Promise<void> {
-  if (booking.status !== "requested") throw new ConvexError("WRONG_STATUS");
+  // A queued expiry can run late. The deadline must also hold at acceptance.
+  if (
+    booking.status !== "requested" ||
+    (booking.dispatch?.expiresAt !== undefined &&
+      booking.dispatch.expiresAt <= now)
+  )
+    throw new ConvexError("WRONG_STATUS");
   await ctx.db.patch("bookings", booking._id, {
     status: "accepted",
     dispatch: booking.dispatch && { ...booking.dispatch, expiresAt: undefined },

@@ -356,7 +356,7 @@ if (app.requestSingleInstanceLock()) {
       );
       timer.unref();
       app.on("activate", () => {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow();
+        if (!state.mainWindow || state.mainWindow.isDestroyed()) createWindow();
       });
     })
     .catch((error) => {

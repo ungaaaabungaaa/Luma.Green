@@ -13,8 +13,10 @@ tests pass. Google Docs publication remains pending: authentication was accepted
 then the plugin tools disappeared before an import result. Read
 [cloud publication state](../user-guide/cloud.json); no cloud URL is claimed.
 
-The continuation branch is `feat/pilot-readiness-cleanup`; `main` has not received
-these changes. Check the live remote before claiming merge or deployment.
+Integration is tracked in [PR #26](https://github.com/ungaaaabungaaa/Luma.Green/pull/26),
+from `feat/pilot-readiness-cleanup` into `main`. Once that PR is merged, continue
+from `main`; do not restart from the old feature branch. Check the live PR and
+remote before claiming merge or deployment.
 [Future enhancements](../product/enhancement-proposal.md) are a research proposal
 and still require user approval. Do not implement them just because they are in
 the repo. The user approved the UI, demo and guide work separately.
@@ -42,7 +44,7 @@ Local checkout: `/Users/syedabdulmuqeeth/Developer/SandBox/luma.green`.
 For a new machine only:
 
 ```sh
-git clone --branch feat/pilot-readiness-cleanup https://github.com/ungaaaabungaaa/Luma.Green.git
+git clone https://github.com/ungaaaabungaaa/Luma.Green.git
 cd Luma.Green
 pnpm install --frozen-lockfile
 pnpm check
@@ -206,8 +208,7 @@ Setup checklists:
 
 ## Publication and next-agent instruction
 
-This checkpoint is prepared for a normal push of `feat/pilot-readiness-cleanup`
-to `origin` with upstream tracking. Verify equality after fetching with
+This checkpoint is integrated through PR #26. Verify equality after fetching with
 `git rev-list --left-right --count HEAD...@{upstream}`; expect `0 0` before claiming
 synchronization. Check clean status separately. Find the latest delivery with
 `git log -1 --grep='redesign themes'`. Preserve the pre-existing untracked
@@ -215,8 +216,9 @@ root `luma-green-user-guide.pdf`; the maintained artifact is now under `output/d
 Do not stage or delete it. No main merge, hosted CI result or deployment is
 claimed by this handoff.
 
-No PR, hosted CI result, merge, deployment, provider execution or store release
-is claimed here. The current task ends after push verification. No background
+PR #26 runs the required hosted checks before squash merge. Read its current
+head, checks and merge metadata for the exact integration result. Deployment,
+provider execution and store release require separate evidence. No background
 agent or scheduled monitor is left running. Resume with the ordered queue and
 update this record.
 
@@ -243,3 +245,18 @@ host has no full Xcode, simulator, JDK or Android SDK; no mobile installer or
 real-device acceptance is claimed. Follow the mobile demo record rather than
 assuming Expo Go is compatible. Signed releases and provider execution remain
 separate launch gates.
+
+## Merge review follow-up
+
+Independent review of the full branch found and fixed two edge cases. Pickup
+acceptance now rejects an offer at or after its deadline, even when the scheduled
+expiry job runs late. Tests cover that boundary, unchanged records on rejection,
+later audited reassignment and legacy bookings without deadlines. The desktop
+app now recreates its main window on activation when a document window is still
+present; the Electron lifecycle regression failed before the fix and passed after.
+
+Guide impact: the fixes enforce behavior already described in the guide. No
+screen, copy, access rule or setup instruction changes; current screenshots and
+the reviewed Word artifact remain valid. Google Docs publication is still pending.
+The Vercel preview reports deployment success but is sign-in protected; public
+HTTP inspection confirms the login boundary and `noindex`, not the hosted app UI.

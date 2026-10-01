@@ -323,6 +323,76 @@ describe("pickup dispatch", () => {
     }
   });
 
+  it.each([0, 1])(
+    "rejects acceptance %i ms after the deadline before the expiry job runs",
+    async (delay) => {
+      const w = await world();
+      const next = await candidate(w, "next");
+      const token = await w.household.mutation(api.households.book, w.args);
+      const original = await read(w, token);
+      const originalEvents = await events(w, original);
+      const originalAudit = await w.t.run((ctx) =>
+        ctx.db.query("auditLog").collect(),
+      );
+      vi.setSystemTime(original.createdAt + OFFER_TIMEOUT_MS + delay);
+
+      await expect(
+        w.shop.mutation(api.shop.respond, {
+          bookingId: original._id,
+          accept: true,
+        }),
+      ).rejects.toThrow(/WRONG_STATUS/);
+      expect(await read(w, token)).toEqual(original);
+      expect(await events(w, original)).toEqual(originalEvents);
+      expect(
+        await w.t.run((ctx) => ctx.db.query("auditLog").collect()),
+      ).toEqual(originalAudit);
+
+      await w.t.mutation(internal.dispatch.expireOffer, {
+        bookingId: original._id,
+        attempt: 1,
+      });
+      const reassigned = await read(w, token);
+      expect(reassigned.orgId).toBe(next);
+      expect(reassigned.status).toBe("requested");
+      const reassignedEvents = await events(w, reassigned);
+      expect(reassignedEvents.map((row) => row.event)).toEqual([
+        "offered",
+        "timed_out",
+        "offered",
+      ]);
+    },
+  );
+
+  it("accepts just before the deadline", async () => {
+    const w = await world();
+    const token = await w.household.mutation(api.households.book, w.args);
+    const original = await read(w, token);
+    vi.setSystemTime(original.createdAt + OFFER_TIMEOUT_MS - 1);
+    await w.shop.mutation(api.shop.respond, {
+      bookingId: original._id,
+      accept: true,
+    });
+    const accepted = await read(w, token);
+    expect(accepted.status).toBe("accepted");
+  });
+
+  it("preserves acceptance of legacy pickups without a dispatch deadline", async () => {
+    const w = await world();
+    const token = await w.household.mutation(api.households.book, w.args);
+    const original = await read(w, token);
+    await w.t.run((ctx) =>
+      ctx.db.patch("bookings", original._id, { dispatch: undefined }),
+    );
+    vi.setSystemTime(original.createdAt + OFFER_TIMEOUT_MS);
+    await w.shop.mutation(api.shop.respond, {
+      bookingId: original._id,
+      accept: true,
+    });
+    const accepted = await read(w, token);
+    expect(accepted.status).toBe("accepted");
+  });
+
   it("leaves drop-offs at the selected shop and preserves old booking behaviour", async () => {
     const w = await world();
     await candidate(w, "next");

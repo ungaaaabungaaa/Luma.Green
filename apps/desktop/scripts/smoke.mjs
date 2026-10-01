@@ -33,7 +33,7 @@ try {
     await application.evaluate(({ app }) => app.getPath("userData")),
     await realpath(userData),
   );
-  const page = await application.firstWindow();
+  let page = await application.firstWindow();
   page.on("pageerror", (error) => {
     console.error(error);
   });
@@ -68,7 +68,13 @@ try {
     await popup.evaluate(() => typeof Reflect.get(window, "require")),
     "undefined",
   );
-  await popup.close();
+  await page.close();
+  assert.equal(popup.isClosed(), false);
+  const reopenedPromise = application.waitForEvent("window", { timeout: 5000 });
+  await application.evaluate(({ app }) => app.emit("activate"));
+  page = await reopenedPromise;
+  await page.getByRole("heading", { name: "Desktop fixture" }).waitFor();
+  if (!popup.isClosed()) await popup.close();
   await page.getByRole("link", { name: "Arabic" }).click();
   await page.waitForURL(`${origin}/ar`);
   await new Promise((resolve, reject) => {
@@ -92,7 +98,7 @@ try {
   await page.getByRole("heading", { name: "Desktop fixture" }).waitFor();
   assert.equal(page.url(), `${origin}/ar`);
   console.warn(
-    "Desktop smoke passed: sandbox, blocked popup, blob preview, Arabic offline screen and retry.",
+    "Desktop smoke passed: sandbox, blocked popup, blob preview, main-window restoration, Arabic offline screen and retry.",
   );
 } finally {
   await application.close();
