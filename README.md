@@ -4,6 +4,9 @@
 
 <h1 align="center">Luma.Green</h1>
 
+**Continue development:** [Agent handoff](docs/delivery/handoff.md) — branch and
+commit checkpoints, completed work, verification, setup gates and next tasks.
+
 <p align="center"><strong>Cleaner Tomorrow in Motion</strong></p>
 
 <p align="center">

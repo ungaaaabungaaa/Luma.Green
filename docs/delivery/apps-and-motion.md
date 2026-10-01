@@ -1,5 +1,7 @@
 # Apps, motion and imagery
 
+> Subsequent cost changes and the next-work queue are in the [agent handoff](handoff.md).
+
 > Implementation record, 1 October 2026. Start: `acd549e`, clean checkout on
 > `feat/pilot-readiness-cleanup`. The previous pilot checks passed: 1,026 unit
 > tests, 39 browser tests, lint/types/format and Webpack production build.

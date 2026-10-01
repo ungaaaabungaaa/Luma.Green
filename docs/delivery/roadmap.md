@@ -1,5 +1,8 @@
 # Roadmap to the pilot
 
+> **Current implementation checkpoint:** [agent handoff](handoff.md). Use its
+> ordered queue to resume work; the dated schedule below is the original plan.
+
 > Implementation update, 1 Oct 2026: dispatch, photo estimates, status-message
 > adapters and the pilot report are implemented in the current branch. External
 > account approval and live provider checks remain. See the
@@ -58,4 +61,5 @@ services · machinery data bank · WhatsApp channel · Saathi jobs and pay · Po
 2. **Pointing `luma.green`** at Vercel.
 3. **Convex production deploy key** in Vercel — without it, merges don't reach
    the production backend.
-4. **An OpenRouter key with a spend limit.**
+4. **Optional AI activation:** configure either a self-hosted endpoint or an
+   OpenRouter key with a spend limit. Manual material entry needs neither.

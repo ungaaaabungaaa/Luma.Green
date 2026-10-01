@@ -6,6 +6,9 @@ This file is the single source of truth for how code gets written in this repo.
 Every agent (Claude Code, CodeRabbit, Copilot, a human on their first day) reads
 this first. `CLAUDE.md` just points here.
 
+**Continuing the current work?** Read [the agent handoff](docs/delivery/handoff.md)
+first for branch/commit checkpoints, verification, setup gates and next tasks.
+
 Detailed, task-specific playbooks live in `.claude/skills/*/SKILL.md`. This file
 tells you what the project is and the rules that always apply; a skill tells you
 how to do one job well.
@@ -200,7 +203,7 @@ there, never in a component.
 
 - **MSG91** — OTP sending and per-number limits are implemented. Status
   notifications use a separate outbox and approved Flow templates.
-- **OpenRouter** — optional transient photo estimates; server quotas and table
+- **OpenRouter or self-hosted vision** — optional transient photo estimates; server quotas and table
   prices. See `docs/architecture/ai-estimation.md`.
 - **Razorpay, Resend, R2, Mapbox** — not required for the pilot. No payment
   processing is implemented. Documents use Convex storage; location uses the browser.

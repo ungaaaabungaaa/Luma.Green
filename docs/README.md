@@ -8,6 +8,9 @@ Code rules live in [AGENTS.md](../AGENTS.md) and the
 [roles](./product/roles.md) → [architecture overview](./architecture/overview.md)
 → [roadmap](./delivery/roadmap.md).
 
+**Resuming implementation?** Start with the [agent handoff](./delivery/handoff.md).
+It lists the continuation branch, completed commits, tests and ordered next tasks.
+
 **Clickable prototype:**
 [Luma.Green Prototype](https://claude.ai/artifact/4hiq2r5tm5kWDBqTGEPD8C) —
 private until shared from its Share menu.
@@ -41,6 +44,10 @@ private until shared from its Share menu.
 | [decisions/](./decisions/README.md)                 | Architecture decision records, one per decision                 |
 
 ## Operations — how it's run
+
+For caching, compression, self-hosted AI and cost measurements, use
+[low-cost operation](./operations/low-cost-operation.md) and its
+[verification record](./delivery/cost-optimization.md).
 
 | Page                                                      | What's in it                                                     |
 | --------------------------------------------------------- | ---------------------------------------------------------------- |

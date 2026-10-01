@@ -1,7 +1,8 @@
 # UI and pilot readiness pass
 
 > Implementation pass, 1 October 2026. Starting commit: `3d1e720`.
-> Branch: `feat/pilot-readiness-cleanup`. Local work only; no push or deployment.
+> Branch: `feat/pilot-readiness-cleanup`. This is the historical local checkpoint.
+> For subsequent app/cost work and publication status, use the [agent handoff](handoff.md).
 
 ## Scope and baseline
 
@@ -87,5 +88,6 @@ manual/drop-off acceptance coverage.
   Device IDs can rotate; the global AI quota and provider spending limit bound
   paid calls, while manual entry stays available.
 - Business escrow is a demonstration. Households receive cash/UPI directly;
-  the application records payment. Native apps, live payment processing and
+  the application records payment. Native shells were added in the subsequent
+  [app pass](apps-and-motion.md); native releases, live payment processing and
   later roadmap services remain separate work.
