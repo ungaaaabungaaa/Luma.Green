@@ -123,6 +123,24 @@ flow gets an e2e test. See `.claude/skills/testing`.
 **Always keep CI green.** `pnpm check` before you push. See
 `.claude/skills/ci-checks`.
 
+**The platform user guide is mandatory.** The editable source is
+`docs/user-guide/guide.md`; the published repository artifact is
+`output/pdf/luma-green-user-guide.pdf`. Read `docs/user-guide/README.md` before
+changing a user-facing route, screen, role, permission, workflow, account setup
+or native update behavior. Update the affected guide sections and recapture
+changed screens from the browser. Rebuild the PDF, render and inspect its pages,
+and commit the source, screenshot evidence, build record and PDF together.
+Record the guide impact in the delivery handoff even when no guide change is
+needed. This is a required completion step, not optional follow-up work.
+
+Screenshots must show the actual current UI with approved test data. Keep
+synthetic component fixtures and older seeded captures explicitly labelled;
+never claim they prove authenticated access or provider execution. Do not
+capture passwords, authenticator QR/keys, backup codes, live IDs or customer
+contact details. Never replace browser screenshots with generated interface
+images. `src/user-guide.test.ts` checks that the committed PDF matches its
+source and screenshot inputs; fix stale documentation instead of bypassing it.
+
 ## 5. Commands
 
 ```bash

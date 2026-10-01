@@ -70,6 +70,14 @@ For caching, compression, self-hosted AI and cost measurements, use
 | [roadmap.md](./delivery/roadmap.md)                   | Week by week to the pilot, the cut line, the critical path |
 | [pilot.md](./delivery/pilot.md)                       | Who, what has to work, what we measure                     |
 
+## Platform user guide
+
+Use the [A-to-Z user guide](user-guide/guide.md) for role workflows and admin
+access, or open the [PDF](../output/pdf/luma-green-user-guide.pdf).
+[Capture and rebuild instructions](user-guide/README.md) explain the screenshot
+evidence labels and the mandatory update process. Source, screenshots and PDF
+must be updated together when the user experience changes.
+
 ## Keeping these docs true
 
 - A pull request that changes behaviour updates the page that describes it.

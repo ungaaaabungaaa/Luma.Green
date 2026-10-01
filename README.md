@@ -7,6 +7,9 @@
 **Continue development:** [Agent handoff](docs/delivery/handoff.md) — branch and
 commit checkpoints, completed work, verification, setup gates and next tasks.
 
+**Learn the platform:** [A-to-Z PDF guide](output/pdf/luma-green-user-guide.pdf)
+and [editable guide with screenshot evidence](docs/user-guide/README.md).
+
 <p align="center"><strong>Cleaner Tomorrow in Motion</strong></p>
 
 <p align="center">
@@ -24,8 +27,9 @@ commit checkpoints, completed work, verification, setup gates and next tasks.
   <a href="docs/README.md">Docs</a>
 </p>
 
-> **This is the investor prototype.** Every screen runs against a live backend
-> filled with a demo world of sample Bengaluru businesses, prices and trades.
+> **This is the investor prototype.** A configured development backend can serve
+> sample Bengaluru businesses, prices and trades. Without that connection, the
+> app shows setup states. Live launch and provider execution remain separate gates.
 > What's real and what's sample: [Status](#status).
 
 ## What Luma.Green is
@@ -34,7 +38,8 @@ Recyclable material in an Indian city passes through many hands, and every
 hand-off is informal: prices are opaque, weights are guessed and nothing is
 written down. Luma.Green connects the whole chain on one platform, where
 everyone sees the latest prices, trades material with the next step up and,
-between businesses, pays through escrow.
+between businesses, demonstrates the planned escrow steps. It does not hold or
+transfer real business payments.
 
 ```
 Household ──► Kabadiwala ──► Yard ──────► Recycler ──────► Manufacturer

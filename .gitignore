@@ -21,6 +21,7 @@
 
 # production
 /build
+/tmp/pdfs/
 
 # misc
 .DS_Store
@@ -89,3 +90,6 @@ apps/desktop/generated/
 
 # os
 Thumbs.db
+
+# Local guide tooling
+/.venv-guide/

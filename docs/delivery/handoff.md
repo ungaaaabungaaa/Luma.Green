@@ -2,7 +2,7 @@
 
 **Status:** implementation and local verification complete through `db62fb7`
 (premium visual refinement).
-This handoff is the next documentation commit on `feat/pilot-readiness-cleanup`.
+The maintained user guide is now included on `feat/pilot-readiness-cleanup`.
 The branch is the continuation point; `main` has not received these changes.
 Check the live remote before making a merge or deployment claim.
 
@@ -12,12 +12,14 @@ Check the live remote before making a merge or deployment claim.
 2. Check `git status -sb`, `git log -15 --oneline`, `git remote -v` and
    `git worktree list`. Preserve new user changes. Fetch `origin` and compare the
    branch with its upstream before editing or pushing.
-3. Read the four implementation records below. Their test counts are historical
-   checkpoints; the latest source checkpoint is the visual refinement.
+3. Read the implementation records below and the user-guide delivery record.
+   The latest application checkpoint is the visual refinement; the next
+   documentation checkpoint adds the illustrated user guide.
 4. Pick a task from the ordered queue. Distinguish code implementation, local
    tests, hosted CI, deployment, provider execution and store approval in reports.
 5. Update this page as work progresses. Commit meaningful verified slices.
-   Keep secrets, local environments and generated output out of Git.
+   Keep secrets, local environments and temporary output out of Git. The
+   maintained user-guide PDF and browser captures are required tracked artifacts.
 
 Repository: `https://github.com/ungaaaabungaaa/Luma.Green.git`.
 Branch: `feat/pilot-readiness-cleanup`.
@@ -60,7 +62,7 @@ them again into that branch or restart from the old base.
 
 Detailed records: [UI and pilot](cleanup-progress.md),
 [apps and motion](apps-and-motion.md), [cost optimization](cost-optimization.md),
-[visual refinement](premium-ui.md).
+[visual refinement](premium-ui.md), [platform user guide](user-guide.md).
 
 No unfinished agent edits, stashes or active secondary worktrees were present at
 handoff inspection. The five earlier managed worktrees are archived: UI,
@@ -129,6 +131,24 @@ build if needed. Generated artifacts are ignored: `apps/mobile/dist`, generated
 mobile Android/iOS projects and `apps/desktop/release/mac-arm64/Luma.Green.app`.
 Rebuild on a new machine. `/tmp` screenshots/logs are not required resume inputs.
 
+## Maintained user guide
+
+The guide now covers every role, access, the admin console, household pickups,
+business trades, native updates and owner setup. Read
+[the editable guide](../user-guide/guide.md) and
+[its update workflow](../user-guide/README.md). `AGENTS.md` requires a guide-impact
+assessment for each user-facing change and updated source/captures/PDF in the
+same commit when affected. The PDF uses current browser captures; protected
+screens use clearly labelled synthetic records in actual application components.
+No connected authentication or live provider result is established by those figures.
+
+Latest documentation checks: `pnpm check` passed lint/types, 1,068 web tests in
+137 files, 23 mobile tests and 19 desktop tests. Three new tests enforce guide
+input, screenshot/component and PDF hashes. The PDF was rendered and every page
+inspected. No production source, dependencies or native runtime changed.
+The guide tooling uses a separate local preview and Python build dependencies.
+See the [delivery record](user-guide.md) for capture coverage and remaining limits.
+
 ## Ordered next-work queue
 
 | Priority | Task                                                       | Completion evidence / dependency                                                                                                                                                                                                                                                                                        |
@@ -156,8 +176,8 @@ This checkpoint is prepared for a normal push of `feat/pilot-readiness-cleanup`
 to `origin` with upstream tracking. Verify equality after fetching with
 `git rev-list --left-right --count HEAD...@{upstream}`; expect `0 0` before claiming
 synchronization. Check clean status separately. Find this documentation checkpoint
-with `git log -1 --grep='visual refinement handoff'`. The implementation is
-`db62fb7`; the next documentation-only commit records this checkpoint.
+with `git log -1 --grep='illustrated platform guide'`. The application
+implementation remains `db62fb7`; the guide delivery commit records this checkpoint.
 
 No PR, hosted CI result, merge, deployment, provider execution or store release
 is claimed here. The current task ends after push verification. No background

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "public-home",
+    "route": "/",
+    "path": "docs/user-guide/screenshots/public-home.png",
+    "url": "http://localhost:3004/",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:04.206Z",
+    "kind": "current-local-disconnected",
+    "sha256": "a96a6422a528808eb3ac11481bde2cc9c947e7a4c93ea2b1493032480ee79d5c"
+  },
+  {
+    "name": "public-prices",
+    "route": "/prices",
+    "path": "docs/user-guide/screenshots/public-prices.png",
+    "url": "http://localhost:3004/prices",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:04.366Z",
+    "kind": "current-local-disconnected",
+    "sha256": "45fcd72cb241c5fd6f52623f5f6d5795029357e3bfdee759fe3c7baed30e85ac"
+  },
+  {
+    "name": "public-sell",
+    "route": "/sell",
+    "path": "docs/user-guide/screenshots/public-sell.png",
+    "url": "http://localhost:3004/sell",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:04.523Z",
+    "kind": "current-local-disconnected",
+    "sha256": "6b748298d992011944e0c24c031d2377e8acaa06ddd8627107e3586ef8a9e7b7"
+  },
+  {
+    "name": "public-join",
+    "route": "/join",
+    "path": "docs/user-guide/screenshots/public-join.png",
+    "url": "http://localhost:3004/join",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:04.683Z",
+    "kind": "current-local-disconnected",
+    "sha256": "d5b8c0df56d6fa94d94c4735f784005bc189cbdd15423fad8d61695e66714ed8"
+  },
+  {
+    "name": "public-login",
+    "route": "/login",
+    "path": "docs/user-guide/screenshots/public-login.png",
+    "url": "http://localhost:3004/login",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:04.853Z",
+    "kind": "current-local-disconnected",
+    "sha256": "0f8b3eb329adfecdbecfeb2af72dd910e562cfd32cc04aa691b36937f69dfac3"
+  },
+  {
+    "name": "public-admin-login",
+    "route": "/admin/login",
+    "path": "docs/user-guide/screenshots/public-admin-login.png",
+    "url": "http://localhost:3004/admin/login",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:04.987Z",
+    "kind": "current-local-disconnected",
+    "sha256": "61bac5c0edef7d6c9eecbc111845f992eaed5effcf0cff56d4adee724f94efca"
+  },
+  {
+    "name": "public-admin-setup",
+    "route": "/admin/setup",
+    "path": "docs/user-guide/screenshots/public-admin-setup.png",
+    "url": "http://localhost:3004/admin/setup",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:05.117Z",
+    "kind": "current-local-disconnected",
+    "sha256": "6ce239828e7c7b3b8c5f3326f7bcd60e88fb545bfa89906c964aa11d59275c9b"
+  },
+  {
+    "name": "public-help",
+    "route": "/help",
+    "path": "docs/user-guide/screenshots/public-help.png",
+    "url": "http://localhost:3004/help",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:05.294Z",
+    "kind": "current-local-disconnected",
+    "sha256": "80438b7f1d9168dd108a1c9f4fcb41a46b69abdfaed885a1d7dd7d553d8212de"
+  },
+  {
+    "name": "public-standards",
+    "route": "/standards",
+    "path": "docs/user-guide/screenshots/public-standards.png",
+    "url": "http://localhost:3004/standards",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:05.455Z",
+    "kind": "current-local-disconnected",
+    "sha256": "984ee7a0d42ad289223ef9dccff56b3ffc16f8f2ba9fc4ef0b68d989d5f0eda1"
+  },
+  {
+    "name": "public-solar",
+    "route": "/solar",
+    "path": "docs/user-guide/screenshots/public-solar.png",
+    "url": "http://localhost:3004/solar",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:05.631Z",
+    "kind": "current-local-disconnected",
+    "sha256": "7afe9b2990d4f6faaf2848b4816b25ca6cfd33f17bc12138f5dca7cd2a4c64aa"
+  },
+  {
+    "name": "public-contact",
+    "route": "/help/contact",
+    "path": "docs/user-guide/screenshots/public-contact.png",
+    "url": "http://localhost:3004/help/contact",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:05.792Z",
+    "kind": "current-local-disconnected",
+    "sha256": "301cf919e7e840068fcd83edb6e71df258db8751fef6d2957ed47f7e9a4b6b73"
+  },
+  {
+    "name": "public-how-it-works",
+    "route": "/how-it-works",
+    "path": "docs/user-guide/screenshots/public-how-it-works.png",
+    "url": "http://localhost:3004/how-it-works",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:05.953Z",
+    "kind": "current-local-disconnected",
+    "sha256": "d9d5e3baa57d5adfe3b4db8ba241054d09264a1992813b7a58aee29bc983da6b"
+  },
+  {
+    "name": "public-arabic",
+    "route": "/ar",
+    "path": "docs/user-guide/screenshots/public-arabic.png",
+    "url": "http://localhost:3004/ar",
+    "revision": "639e205533a3409e21247d01e3d6797090c0345f",
+    "capturedAt": "2026-10-01T15:48:06.123Z",
+    "kind": "current-local-disconnected",
+    "sha256": "be0c7594c2d9c5b04ad8e9b2d65622ad42853b2c114ea6116debfa5377db0b74"
+  }
+]
