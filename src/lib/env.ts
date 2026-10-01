@@ -46,7 +46,11 @@ const serverSchema = z.object({
     .default("development"),
   CONVEX_DEPLOYMENT: z.string().optional(),
   CONVEX_DEPLOY_KEY: z.string().optional(),
-  BETTER_AUTH_SECRET: z.string().min(32).optional(),
+  BETTER_AUTH_SECRET: z.preprocess(
+    (value) =>
+      typeof value === "string" && value.trim() === "" ? undefined : value,
+    z.string().min(32).optional(),
+  ),
   BETTER_AUTH_URL: optionalUrl,
   RESEND_API_KEY: z.string().optional(),
   OPENROUTER_API_KEY: z.string().optional(),
