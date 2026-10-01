@@ -26,32 +26,24 @@ export async function TrustPoints() {
   const t = await getTranslations("home.trust");
 
   return (
-    <section
-      aria-labelledby="trust-heading"
-      className="relative overflow-hidden bg-brand-950 py-14 text-brand-50 sm:py-20"
-    >
+    <section aria-labelledby="trust-heading" className="py-16 lg:py-24">
       <Container className="relative grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-14">
         <SectionHeading
-          inverse
           id="trust-heading"
           title={t("heading")}
           intro={t("intro")}
         />
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="divide-y border-y">
           {points.map(({ key, icon: Icon }) => (
-            <li
-              data-reveal
-              key={key}
-              className="flex flex-col items-start gap-4 rounded-2xl border border-brand-100/20 bg-brand-50/5 p-6"
-            >
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-brand-100/30 text-brand-200">
+            <li data-reveal key={key} className="flex items-start gap-5 py-6">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border bg-card text-primary">
                 <Icon aria-hidden className="size-5" />
               </span>
               <div className="flex flex-col gap-3">
                 <h3 className="text-lg font-semibold">
                   {t(`${key}.title`, { count: locales.length })}
                 </h3>
-                <p className="text-sm leading-relaxed text-brand-100">
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {t(`${key}.body`)}
                 </p>
               </div>

@@ -25,7 +25,7 @@ export function BoardColumns() {
       aria-hidden
       className={cn(
         BOARD_GRID,
-        "hidden border-b bg-muted/60 px-4 py-3 text-xs font-medium text-muted-foreground md:grid",
+        "hidden border-b bg-muted/60 px-5 py-3 text-xs font-medium text-muted-foreground md:grid",
       )}
     >
       <span>{t("material")}</span>
@@ -61,7 +61,7 @@ export function PriceRowButton({
       }}
       className={cn(
         BOARD_GRID,
-        "min-h-16 w-full px-4 py-3 text-start transition-colors outline-none hover:bg-muted/60 focus-visible:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-inset",
+        "min-h-20 w-full px-5 py-4 text-start transition-colors outline-none hover:bg-muted/60 focus-visible:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-inset",
       )}
     >
       <span className="flex min-w-0 flex-col md:order-1">

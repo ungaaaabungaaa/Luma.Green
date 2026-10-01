@@ -25,7 +25,7 @@ export function AuditTrail({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <ol className="flex flex-col gap-4 border-s ps-5">
+        <ol className="flex flex-col gap-6 border-s ps-5">
           {entries.map((entry) => (
             <li key={entry.id} className="relative flex flex-col gap-1">
               <span
@@ -42,7 +42,7 @@ export function AuditTrail({
                 {formatWhen(entry.at)} · {BY_LABELS[entry.by]}
               </p>
               {entry.note ? (
-                <blockquote className="mt-1 rounded-lg border-s-4 border-primary bg-muted/60 px-3 py-2 text-sm whitespace-pre-line">
+                <blockquote className="mt-1 rounded-lg border-s-2 border-border bg-muted/60 px-3 py-2 text-sm whitespace-pre-line">
                   {entry.note}
                 </blockquote>
               ) : null}

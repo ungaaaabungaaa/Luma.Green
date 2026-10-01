@@ -26,7 +26,6 @@ import {
   StatCard,
 } from "@/components/app/page-parts";
 import type { OrgWorkspace } from "@/components/app/use-workspace";
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "@/i18n/navigation";
@@ -67,17 +66,11 @@ function Home({ org }: { org: OrgWorkspace }) {
 
   return (
     <>
-      <div className="grid items-center gap-5 rounded-2xl border border-border/80 bg-card p-5 lg:grid-cols-[minmax(0,1fr)_16rem] lg:p-6">
+      <div className="min-w-0">
         <AppPageHeader
           title={t("greeting", { name: org.name })}
           lead={t("lead", { kind: org.kind })}
           actions={<QuickActions canSell={canSell} />}
-        />
-        <RoleStoryImage
-          sizes="(min-width: 1024px) 256px, 92vw"
-          scene={org.kind}
-          compact
-          frameClassName="aspect-auto h-28 lg:h-40"
         />
       </div>
       <Stats
@@ -103,18 +96,13 @@ function QuickActions({ canSell }: { canSell: boolean }) {
   const t = useTranslations("market.home");
   return (
     <>
-      <Button asChild size="lg" className="h-11 px-4 text-base">
+      <Button asChild size="lg" className="text-sm">
         <Link href="/app/market">
           <ShoppingCartIcon aria-hidden />
           {t("buy")}
         </Link>
       </Button>
-      <Button
-        asChild
-        variant="outline"
-        size="lg"
-        className="h-11 px-4 text-base"
-      >
+      <Button asChild variant="outline" size="lg" className="text-sm">
         {canSell ? (
           <Link href="/app/sell">
             <TagIcon aria-hidden />
@@ -156,9 +144,9 @@ function Stats({
     (third.kind === "listings" ? third.listings : third.count) === undefined;
   if (trades === undefined || isThirdLoading) {
     return (
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-busy="true">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4" aria-busy="true">
         {[0, 1, 2, 3].map((index) => (
-          <Skeleton key={index} className="h-28 rounded-2xl" />
+          <Skeleton key={index} className="h-28 rounded-xl" />
         ))}
       </div>
     );
@@ -170,7 +158,7 @@ function Stats({
       <h2 id="home-stats" className="sr-only">
         {t("home.statsTitle")}
       </h2>
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <StatCard
           label={t("home.stats.escrow")}
           value={format.money(totals.escrowPaise)}
@@ -257,7 +245,7 @@ function WaitingForYou({
         />
       ) : null}
       {waiting.length > 0 ? (
-        <ul className="grid gap-3 lg:grid-cols-2">
+        <ul className="grid gap-4 lg:grid-cols-2">
           {waiting.slice(0, HOME_LIMIT).map(({ trade, side }) => (
             <li key={trade.id}>
               <TradeCard
@@ -294,7 +282,7 @@ function LatestOffers({
       action={<SeeAll href="/app/market" label={t("seeAll")} />}
     >
       {isMaker ? (
-        <p className="flex gap-3 rounded-2xl bg-primary/10 p-4 text-sm text-foreground">
+        <p className="flex gap-3 rounded-xl bg-primary/10 p-4 text-sm text-foreground">
           <RecycleIcon aria-hidden className="mt-0.5 size-5 shrink-0" />
           {t("recycledBody")}
         </p>
@@ -308,7 +296,7 @@ function LatestOffers({
         />
       ) : null}
       {shown.length > 0 ? (
-        <ul className="grid gap-3 lg:grid-cols-2">
+        <ul className="grid gap-4 lg:grid-cols-2">
           {shown.map((listing) => (
             <li key={listing.id}>
               <ListingCard

@@ -88,11 +88,11 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
   if (me.kind !== "admin") return <NotAdmin />;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background lg:flex-row">
+    <div className="flex min-h-dvh flex-col bg-muted/30 lg:flex-row">
       <Sidebar name={me.adminName ?? "Admin"} />
       <main
         id="main"
-        className="min-w-0 flex-1 px-4 py-6 sm:px-6 lg:px-9 lg:py-8"
+        className="min-w-0 flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-8"
       >
         <QueryProvider>{children}</QueryProvider>
       </main>
@@ -111,7 +111,7 @@ function Sidebar({ name }: { name: string }) {
   }
 
   return (
-    <aside className="flex flex-col gap-5 border-b border-sidebar-border bg-sidebar p-4 text-sidebar-foreground lg:sticky lg:top-0 lg:h-dvh lg:w-64 lg:shrink-0 lg:overflow-y-auto lg:border-e lg:border-b-0">
+    <aside className="flex flex-col gap-4 border-b border-sidebar-border bg-sidebar p-4 text-sidebar-foreground lg:sticky lg:top-0 lg:h-dvh lg:w-60 lg:shrink-0 lg:gap-6 lg:overflow-y-auto lg:border-e lg:border-b-0 lg:p-5">
       <div className="flex items-center justify-between gap-2">
         <Link
           href="/admin"
@@ -122,9 +122,9 @@ function Sidebar({ name }: { name: string }) {
         </Link>
         <Badge variant="outline">Admin</Badge>
       </div>
-      <div className="flex items-center justify-between gap-3 rounded-lg border border-sidebar-border bg-background/60 px-3 py-2">
+      <div className="flex items-center justify-between gap-3 border-y border-sidebar-border py-2">
         <span className="text-xs font-medium text-muted-foreground">
-          Workspace
+          Admin console
         </span>
         <ThemeToggleControl
           labels={{
@@ -148,7 +148,7 @@ function Sidebar({ name }: { name: string }) {
                   className={cn(
                     "flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm whitespace-nowrap transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
                     isActive
-                      ? "bg-sidebar-accent font-semibold text-sidebar-accent-foreground shadow-xs"
+                      ? "bg-sidebar-accent font-semibold text-sidebar-accent-foreground"
                       : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
                   )}
                 >
@@ -183,7 +183,7 @@ function Sidebar({ name }: { name: string }) {
       <Button
         variant="ghost"
         size="sm"
-        className="min-h-11 self-start lg:hidden"
+        className="min-h-11 max-w-full self-start whitespace-normal lg:hidden"
         onClick={() => {
           void signOut();
         }}
@@ -222,7 +222,7 @@ function NotAdmin() {
 function ConsoleSkeleton() {
   return (
     <div
-      className="flex min-h-dvh flex-col bg-background lg:flex-row"
+      className="flex min-h-dvh flex-col bg-muted/30 lg:flex-row"
       aria-busy="true"
     >
       <div className="border-b bg-background p-4 lg:w-64 lg:border-e lg:border-b-0">

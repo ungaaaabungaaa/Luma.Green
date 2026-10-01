@@ -9,7 +9,6 @@ import {
   type LucideIcon,
   ShieldCheckIcon,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -32,7 +31,6 @@ import { isLocale, localeMeta } from "@/i18n/locales";
 import { cn } from "@/lib/utils";
 
 import { api } from "../../../convex/_generated/api";
-import operations from "../../../public/images/showcase/operations-desk.webp";
 import { formatPhone, formatWhen } from "./format";
 
 export function ConsoleHome() {
@@ -42,30 +40,28 @@ export function ConsoleHome() {
   const firstName = me?.adminName?.split(" ", 1)[0];
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-6">
-      <div className="grid items-center gap-5 overflow-hidden rounded-2xl border border-border/80 bg-card p-5 md:grid-cols-[minmax(0,1fr)_16rem] md:p-6">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:gap-8">
+      <div className="flex flex-wrap items-end justify-between gap-4 border-b pb-6">
         <div className="flex min-w-0 flex-col gap-2">
-          <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <p className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            Administration
+          </p>
+          <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
             {firstName ? `Welcome, ${firstName}` : "Welcome"}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
             What needs you today, and the latest people to join the pilot.
           </p>
         </div>
-        <figure className="min-w-0">
-          <div className="relative h-28 overflow-hidden rounded-xl bg-muted md:h-36">
-            <Image
-              src={operations}
-              alt=""
-              fill
-              sizes="(min-width: 768px) 256px, 92vw"
-              className="object-cover"
-            />
-          </div>
-        </figure>
+        <Link
+          href="/admin/pilot"
+          className="inline-flex min-h-11 items-center gap-2 rounded-lg border bg-card px-4 text-sm font-medium outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
+        >
+          View pilot report <ArrowRightIcon aria-hidden className="size-4" />
+        </Link>
       </div>
 
-      <ul className="grid gap-3 sm:grid-cols-3" aria-busy={!summary}>
+      <ul className="grid gap-4 sm:grid-cols-3" aria-busy={!summary}>
         <li>
           <StatLink
             href="/admin/verification"
@@ -102,9 +98,9 @@ export function ConsoleHome() {
 
       <Link
         href="/admin/prices"
-        className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors outline-none hover:border-primary/40 hover:bg-accent/50 focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="group flex items-center gap-4 rounded-xl border border-border bg-card p-6 transition-colors outline-none hover:border-primary/40 hover:bg-accent/50 focus-visible:ring-3 focus-visible:ring-ring/50"
       >
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground">
           <IndianRupeeIcon aria-hidden className="size-5" />
         </span>
         <span className="flex min-w-0 flex-1 flex-col">
@@ -119,7 +115,7 @@ export function ConsoleHome() {
         />
       </Link>
 
-      <Card className="rounded-2xl border-border/80 shadow-xs">
+      <Card className="rounded-xl border-border shadow-none">
         <CardHeader>
           <CardTitle>
             <h2>Latest sign-ins</h2>
@@ -156,7 +152,7 @@ function StatLink({
     <Link
       href={href}
       className={cn(
-        "flex h-full flex-col gap-3 rounded-2xl border border-border bg-card p-5 shadow-xs transition-colors outline-none hover:border-primary/40 hover:bg-accent/30 focus-visible:ring-3 focus-visible:ring-ring/50",
+        "flex h-full flex-col gap-3 rounded-xl border border-border bg-card p-6 shadow-xs transition-colors outline-none hover:border-primary/40 hover:bg-accent/30 focus-visible:ring-3 focus-visible:ring-ring/50",
         isUrgent && "border-destructive/40",
       )}
     >

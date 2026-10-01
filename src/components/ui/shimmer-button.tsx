@@ -90,7 +90,7 @@ export function ShimmerButton({
     <Button
       asChild={asChild}
       className={cn(
-        "relative isolate overflow-hidden rounded-full border-primary/20 px-6 text-primary-foreground [background:var(--bg)] motion-reduce:transform-none motion-reduce:transition-none",
+        "relative isolate overflow-hidden rounded-md border-primary/20 px-6 text-primary-foreground [background:var(--bg)] motion-reduce:transform-none motion-reduce:transition-none",
         className,
       )}
       style={

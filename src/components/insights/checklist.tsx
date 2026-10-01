@@ -87,7 +87,7 @@ export function Checklist({ record }: { record: ComplianceRecord }) {
           return (
             <li
               key={item.id}
-              className="flex gap-3 rounded-2xl border bg-card p-4"
+              className="flex gap-3 rounded-xl border bg-card p-4"
             >
               <span
                 className={cn(

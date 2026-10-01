@@ -51,7 +51,7 @@ export function MyListings() {
       </Section>
       {past.length > 0 ? (
         <Section title={t("past")}>
-          <ul className="divide-y rounded-2xl border bg-card">
+          <ul className="divide-y rounded-xl border bg-card">
             {past.map((listing) => (
               <li key={listing.id}>
                 <PastListing listing={listing} />

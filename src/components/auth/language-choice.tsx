@@ -48,7 +48,7 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
       <div className="flex flex-col gap-1">
         <h1
           id="choose-language"
-          className="text-2xl font-semibold tracking-tight"
+          className="font-display text-3xl leading-tight font-semibold tracking-tight"
         >
           {t("chooseLanguage")}
         </h1>
@@ -69,7 +69,7 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
                 lang={localeMeta[code].hreflang}
                 dir={localeMeta[code].dir}
                 className={cn(
-                  "flex min-h-16 w-full items-center justify-between gap-2 rounded-xl border-2 bg-card px-4 text-start transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-60",
+                  "flex min-h-16 w-full items-center justify-between gap-2 rounded-lg border bg-card px-4 text-start transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-60",
                   isSelected ? "border-primary bg-accent" : "border-border",
                 )}
               >

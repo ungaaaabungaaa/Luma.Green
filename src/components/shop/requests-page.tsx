@@ -78,9 +78,13 @@ function RequestTabs({ city }: { city: string }) {
 
   return (
     <Tabs value={tab} onValueChange={showTab} className="gap-4">
-      <TabsList className="grid w-full grid-cols-3 group-data-horizontal/tabs:h-12">
+      <TabsList className="grid w-full grid-cols-3 rounded-lg group-data-horizontal/tabs:h-12">
         {TABS.map((value) => (
-          <TabsTrigger key={value} value={value} className="gap-2 text-base">
+          <TabsTrigger
+            key={value}
+            value={value}
+            className="gap-2 px-2 text-sm sm:px-4"
+          >
             {t(`tabs.${value}`)}
             <TabCount count={countFor(requests, value)} />
           </TabsTrigger>

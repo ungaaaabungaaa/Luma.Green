@@ -22,7 +22,10 @@ export async function WhyNow() {
   const t = await getTranslations("home.whyNow");
 
   return (
-    <section aria-labelledby="why-now-heading" className="py-12 sm:py-20">
+    <section
+      aria-labelledby="why-now-heading"
+      className="border-t py-16 lg:py-24"
+    >
       <Container className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
         <div className="flex flex-col gap-8">
           <SectionHeading
@@ -32,7 +35,7 @@ export async function WhyNow() {
           />
           <div
             data-parallax-scene
-            className="relative overflow-hidden rounded-3xl bg-muted"
+            className="relative overflow-hidden rounded-xl bg-muted"
           >
             <Image
               data-parallax="-24"
@@ -52,7 +55,7 @@ export async function WhyNow() {
               data-reveal
               className="grid grid-cols-[2.75rem_minmax(0,1fr)] gap-x-5 gap-y-3 border-t border-border py-7"
             >
-              <span className="row-span-2 flex size-11 items-center justify-center rounded-full bg-accent text-primary">
+              <span className="row-span-2 flex size-11 items-center justify-center rounded-lg bg-muted text-primary">
                 <Icon aria-hidden className="size-5" />
               </span>
               <h3 className="text-xl font-semibold tracking-tight">

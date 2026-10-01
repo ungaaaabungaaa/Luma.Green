@@ -128,7 +128,7 @@ function PhotoEstimateForm({ materials, prices, onApply }: PhotoEstimateProps) {
   return (
     <section
       aria-labelledby="photo-title"
-      className="flex flex-col gap-3 rounded-2xl border bg-card p-4"
+      className="flex flex-col gap-3 rounded-xl border bg-card p-4"
     >
       <h3 id="photo-title" className="font-semibold">
         {t("title")}

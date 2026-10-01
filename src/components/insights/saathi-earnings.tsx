@@ -45,7 +45,7 @@ export function SaathiEarnings({ impact }: { impact: SaathiImpact }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-4">
         <StatCard
           label={t("total")}
           value={format.money(impact.totalPaise)}

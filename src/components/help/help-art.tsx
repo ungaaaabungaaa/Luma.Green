@@ -18,7 +18,7 @@ export function HelpArt({
   return <Art className={className} />;
 }
 
-/** An icon on a soft green tile: the fallback where a step has no picture. */
+/** An icon on a neutral tile: the fallback where a step has no picture. */
 export function IconTile({
   icon: Icon,
   className,
@@ -31,10 +31,10 @@ export function IconTile({
   return (
     <span
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-2xl bg-accent text-primary",
-        size === "sm" && "size-11 rounded-xl",
-        size === "md" && "size-14",
-        size === "lg" && "size-24 rounded-3xl",
+        "flex shrink-0 items-center justify-center rounded-lg bg-muted text-primary",
+        size === "sm" && "size-11",
+        size === "md" && "size-12",
+        size === "lg" && "size-24 rounded-xl",
         className,
       )}
     >
@@ -42,8 +42,8 @@ export function IconTile({
         aria-hidden
         className={cn(
           size === "sm" && "size-5",
-          size === "md" && "size-7",
-          size === "lg" && "size-12",
+          size === "md" && "size-6",
+          size === "lg" && "size-8",
         )}
       />
     </span>

@@ -79,7 +79,7 @@ The interrupted generation handoff retained the following scene briefs, but not 
 The built-in image tool generated `public/images/circular-courtyard.webp` with
 no reference image, transparency or external account. The original and WebP
 were visually reviewed. Sharp encoded quality 78, effort 6 without enlargement:
-1672 × 941 pixels, 216062 bytes. It is the full-bleed home hero.
+1672 × 941 pixels, 216062 bytes. It was the earlier home hero; the materials hall replaces it in the next pass.
 
 The scene is a fictional material recovery courtyard. Generation brief: warm
 cinematic Bengaluru setting, deep shade on the left for title text, people
@@ -89,3 +89,16 @@ not the verbatim prompt. Original: `exec-18d961bd-ebd8-4c9d-a48d-109a1e9da660.pn
 The founder subsequently rejected device artwork. The generated device image
 was not retained in the project. HTML phone/laptop previews were also removed.
 Role pages now use work scenes and real links, without illustrative captions.
+
+## Designer system materials hall
+
+Generated on 2 October 2026 with the built-in image tool, no reference image or
+external account. `public/images/materials-hall.webp` is 1672 × 941 pixels and
+254,338 bytes, encoded by Sharp at quality 80, effort 6. Original:
+`exec-3ca7d9f7-42a2-4a61-967e-d3c7706753a5.png`.
+
+Generation brief: editorial Bengaluru materials recovery hall, organised aluminium
+bales, copper coils and paper bales, charcoal concrete and warm clerestory light.
+No people, readable words, logos or devices. This is a recovered brief, not the
+verbatim prompt. The generated image and browser crop were inspected. It is a
+fictional scene, not proof of a facility or operating capacity.

@@ -33,10 +33,10 @@ function LiveTrack({ token }: { token: string }) {
 export function TrackSkeleton() {
   return (
     <div className="flex flex-col gap-4" aria-busy="true">
-      <Skeleton className="h-40 w-full rounded-2xl" />
-      <Skeleton className="h-24 w-full rounded-2xl" />
-      <Skeleton className="h-32 w-full rounded-2xl" />
-      <Skeleton className="h-28 w-full rounded-2xl" />
+      <Skeleton className="h-40 w-full rounded-xl" />
+      <Skeleton className="h-24 w-full rounded-xl" />
+      <Skeleton className="h-32 w-full rounded-xl" />
+      <Skeleton className="h-28 w-full rounded-xl" />
     </div>
   );
 }

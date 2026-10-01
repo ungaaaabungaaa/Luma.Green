@@ -81,7 +81,7 @@ export function SolarInputs({
       });
 
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col gap-6">
       <fieldset className="flex min-w-0 flex-col gap-3">
         <legend id="solar-kind-legend" className="mb-3 text-base font-medium">
           {t("kind")}
@@ -123,7 +123,7 @@ export function SolarInputs({
           ]}
         />
         <div className="flex flex-col gap-2">
-          <Label htmlFor="solar-amount" className="text-base">
+          <Label htmlFor="solar-amount" className="flex flex-wrap text-sm">
             {t(isBill ? "bill" : "units")}
           </Label>
           <div className="relative" dir="ltr">
@@ -168,13 +168,13 @@ export function SolarInputs({
       </fieldset>
 
       <div className="flex flex-col gap-2">
-        <Label htmlFor="solar-roof" className="text-base">
+        <Label htmlFor="solar-roof" className="flex flex-wrap text-sm">
           {t("roof")}
           <span className="font-normal text-muted-foreground">
             ({t("optional")})
           </span>
         </Label>
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2">
+        <div className="grid grid-cols-1 gap-2 min-[400px]:grid-cols-[minmax(0,1fr)_auto]">
           <Input
             id="solar-roof"
             inputMode="decimal"

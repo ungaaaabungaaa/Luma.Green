@@ -15,7 +15,7 @@ export interface BarListRow {
 export function barPercent(value: number, max: number): number {
   return max <= 0 || value <= 0
     ? 0
-    : Math.max(1, Math.round((value / max) * 100));
+    : Math.min(100, Math.max(1, Math.round((value / max) * 100)));
 }
 
 /**
@@ -33,19 +33,19 @@ export function BarList({
   return (
     <ul
       aria-label={label}
-      className="flex flex-col gap-4 rounded-2xl border bg-card p-4"
+      className="flex flex-col divide-y rounded-xl border bg-card px-5"
     >
       {rows.map((row) => {
         const Icon = row.icon;
         return (
-          <li key={row.key} className="flex flex-col gap-1.5">
-            <div className="flex items-center justify-between gap-3">
+          <li key={row.key} className="flex flex-col gap-3 py-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="flex min-w-0 items-center gap-2 font-medium">
                 <Icon
                   aria-hidden
                   className="size-4 shrink-0 text-muted-foreground"
                 />
-                <span className="truncate">{row.label}</span>
+                <span className="break-words">{row.label}</span>
               </span>
               <span className="shrink-0 text-sm font-semibold tabular-nums">
                 {row.display}
@@ -54,7 +54,7 @@ export function BarList({
             <div
               aria-hidden
               data-testid="bar"
-              className="h-3 min-w-1 rounded-e-sm bg-chart-3"
+              className="h-1.5 rounded-e-sm bg-chart-1"
               style={{ width: `${String(barPercent(row.value, max))}%` }}
             />
             {row.detail ? (

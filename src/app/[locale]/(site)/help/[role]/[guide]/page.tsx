@@ -18,7 +18,7 @@ import {
 } from "@/components/help/content";
 import { FaqList } from "@/components/help/faq-list";
 import { GuideSteps } from "@/components/help/guide-steps";
-import { HelpArt, IconTile } from "@/components/help/help-art";
+import { IconTile } from "@/components/help/help-art";
 import { HelpBreadcrumbs } from "@/components/help/help-breadcrumbs";
 import { HelpHero } from "@/components/help/help-hero";
 import { HelpSection } from "@/components/help/help-section";
@@ -93,26 +93,20 @@ export default async function GuidePage({ params }: Props) {
         }
         title={t(`guides.${guide.key}.title`)}
         lead={t(`guides.${guide.key}.summary`)}
-        art={
-          guide.art ? (
-            <HelpArt name={guide.art} />
-          ) : (
-            <IconTile icon={guide.icon} size="lg" className="mx-auto" />
-          )
-        }
+        art={<IconTile icon={guide.icon} size="lg" className="mx-auto" />}
       >
         <p className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-background px-3 py-1 font-medium">
+          <span className="inline-flex items-center gap-1.5 rounded-md bg-muted px-3 py-1 font-medium">
             <TopicIcon aria-hidden className="size-4 text-primary" />
             {t(`topics.${guide.topic}`)}
           </span>
-          <span className="rounded-full bg-background px-3 py-1 text-muted-foreground">
+          <span className="rounded-md bg-muted px-3 py-1 text-muted-foreground">
             {t("role.steps", { count: guide.steps.length })}
           </span>
         </p>
       </HelpHero>
 
-      <Container className="grid gap-12 py-12 sm:py-16 lg:grid-cols-[minmax(0,1fr)_22rem]">
+      <Container className="grid gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_22rem] lg:py-24">
         <section aria-labelledby="guide-steps">
           <h2 id="guide-steps" className="sr-only">
             {t("guide.stepsHeading")}
@@ -128,7 +122,7 @@ export default async function GuidePage({ params }: Props) {
           ) : null}
 
           <HelpSection id="next" title={t("guide.nextHeading")}>
-            <div className="group relative flex gap-4 rounded-2xl border bg-card p-4 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50">
+            <div className="group relative flex gap-4 rounded-xl border bg-card p-4 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50">
               <IconTile icon={next.icon} size="sm" />
               <div className="flex min-w-0 flex-col gap-1">
                 <h3 className="font-semibold">
@@ -152,7 +146,7 @@ export default async function GuidePage({ params }: Props) {
 
           <Link
             href={`/help/${role}`}
-            className="inline-flex items-center gap-2 self-start rounded-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="inline-flex min-h-11 items-center gap-2 self-start rounded-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <ArrowLeftIcon aria-hidden className="size-4 rtl:rotate-180" />
             {t(`roles.${role}.title`)}

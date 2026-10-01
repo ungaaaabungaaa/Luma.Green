@@ -14,7 +14,7 @@ export default async function NotFound() {
         {t("title")}
       </h1>
       <p className="max-w-xl text-lg text-muted-foreground">{t("body")}</p>
-      <Button asChild size="lg" className="mt-2 h-11 px-5">
+      <Button asChild size="lg" className="mt-2">
         <Link href="/">{t("backHome")}</Link>
       </Button>
     </Container>

@@ -16,6 +16,7 @@ const convex = vi.hoisted(() => ({
   ensureProfile: vi.fn(),
 }));
 const push = vi.hoisted(() => vi.fn());
+const scrollIntoView = vi.hoisted(() => vi.fn());
 
 vi.mock("@/components/providers/convex-provider", () => ({
   isConvexConfigured: true,
@@ -134,7 +135,8 @@ function withIntl(children: ReactNode) {
 
 beforeEach(() => {
   // jsdom has no layout, so no scrolling either.
-  Element.prototype.scrollIntoView = vi.fn();
+  scrollIntoView.mockClear();
+  Element.prototype.scrollIntoView = scrollIntoView;
   sessionStorage.clear();
   window.history.replaceState(null, "", "/sell");
   convex.isAuthenticated = false;
@@ -214,6 +216,10 @@ describe("SellFlow", () => {
       screen.getByRole("button", { name: /Check and book/ }),
     );
     expect(screen.getByText(messages.sell.when.errors.day)).toBeInTheDocument();
+    expect(scrollIntoView).toHaveBeenCalledWith({
+      behavior: "instant",
+      block: "center",
+    });
 
     await userEvent.click(screen.getByText("Tomorrow"));
     await userEvent.click(screen.getByRole("radio", { name: /Morning/ }));

@@ -25,7 +25,7 @@ export default async function AuthLayout({
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <SkipLink />
-      <header className="flex min-h-18 flex-wrap items-center justify-between gap-2 border-b border-border/60 bg-background px-4 py-2 sm:px-8">
+      <header className="flex min-h-18 flex-wrap items-center justify-between gap-2 border-b border-border bg-background px-4 py-2 sm:px-8">
         <Link
           href="/"
           aria-label={t("home")}
@@ -38,18 +38,18 @@ export default async function AuthLayout({
           <LanguageSwitcher />
         </div>
       </header>
-      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-6 p-4 sm:p-6 lg:grid-cols-[1.1fr_1fr] lg:gap-8 lg:p-8">
-        <aside className="relative order-2 flex flex-col justify-between self-start overflow-hidden rounded-3xl border border-border bg-muted p-3 text-foreground lg:order-1 lg:min-h-140 lg:self-stretch lg:p-8">
-          <p className="relative z-10 hidden max-w-md font-display text-5xl leading-tight font-semibold tracking-tight text-balance lg:block">
+      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-8 px-4 py-8 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-12">
+        <aside className="relative hidden flex-col justify-between overflow-hidden rounded-xl border border-border bg-muted p-8 text-foreground lg:flex">
+          <p className="max-w-md font-display text-5xl leading-tight font-semibold tracking-tight text-balance">
             {brand("tagline")}
           </p>
           <figure className="lg:mt-10">
-            <div className="overflow-hidden rounded-2xl border border-border bg-background">
+            <div className="overflow-hidden rounded-lg">
               <Image
                 src={collectionPartners}
                 alt=""
                 sizes="(min-width: 1024px) 520px, 92vw"
-                className="h-24 w-full object-cover object-[center_25%] lg:h-auto lg:object-center"
+                className="aspect-4/3 w-full object-cover"
               />
             </div>
           </figure>
@@ -60,7 +60,7 @@ export default async function AuthLayout({
         <main
           id="main"
           tabIndex={-1}
-          className="order-1 mx-auto flex w-full max-w-lg flex-col justify-center py-4 sm:py-8 lg:order-2 lg:px-4"
+          className="mx-auto flex w-full max-w-md flex-col justify-center py-4 sm:py-8"
         >
           {children}
         </main>

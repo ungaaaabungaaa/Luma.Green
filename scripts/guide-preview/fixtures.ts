@@ -152,7 +152,8 @@ const queue: FunctionReturnType<typeof api.review.queue> = [
     version: 2,
   },
 ];
-const pilot: FunctionReturnType<typeof api.pilot.summary> = {
+/** Populated report for real chart components; every value is synthetic. */
+const pilotSummaryFixture: FunctionReturnType<typeof api.pilot.summary> = {
   from: NOW - 7 * 24 * HOUR,
   to: NOW,
   sampleLimit: 1000,
@@ -371,7 +372,7 @@ export const fixtures: Record<string, unknown> = {
     fallbackPaise: row.fallbackPaise,
     updatedAt: NOW - HOUR,
   })),
-  "pilot:summary": pilot,
+  "pilot:summary": pilotSummaryFixture,
   "shop:requests": requests,
   "shop:get": detail,
   "shop:payouts": {

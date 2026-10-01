@@ -1,4 +1,5 @@
 import {
+  Geist,
   Noto_Sans,
   Noto_Sans_Arabic,
   Noto_Sans_Bengali,
@@ -14,7 +15,7 @@ import {
 import type { Locale } from "@/i18n/locales";
 
 /**
- * Typography = Noto, everywhere.
+ * Noto supplies body copy and all script fallbacks; Geist supplies display type.
  *
  * Noto is the only widely available family with full, visually consistent
  * coverage of every script we ship, so the wordmark and the UI never fall back
@@ -28,6 +29,13 @@ import type { Locale } from "@/i18n/locales";
  * Every call below must pass a literal object: `next/font` reads these at build
  * time and rejects spreads or computed values.
  */
+
+export const fontDisplay = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+});
 
 export const fontSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -125,6 +133,7 @@ const scriptFontByLocale: Partial<Record<Locale, { variable: string }>> = {
 /** Class names to put on `<html>` for a given locale. */
 export function fontClassName(locale: Locale): string {
   return [
+    fontDisplay.variable,
     fontSans.variable,
     fontMono.variable,
     scriptFontByLocale[locale]?.variable,

@@ -53,7 +53,7 @@ export function WeighRow({
   };
 
   return (
-    <li className="flex flex-col gap-3 rounded-2xl border bg-card p-4">
+    <li className="flex flex-col gap-3 rounded-xl border bg-card p-4">
       <div className="flex items-center gap-3">
         <MaterialIcon family={row.material.family} />
         <div className="flex min-w-0 flex-1 flex-col gap-0.5">

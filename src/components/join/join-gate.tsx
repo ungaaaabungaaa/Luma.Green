@@ -54,11 +54,13 @@ export function JoinGate({
       ) : (
         <ConsentCard kind={kind} />
       )}
-      <RoleStoryImage
-        scene={kind}
-        compact
-        frameClassName="h-24 aspect-auto sm:h-32"
-      />
+      {application ? null : (
+        <RoleStoryImage
+          scene={kind}
+          compact
+          frameClassName="aspect-16/9 rounded-lg"
+        />
+      )}
     </div>
   );
 }

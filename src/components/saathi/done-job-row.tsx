@@ -15,8 +15,8 @@ export function DoneJobRow({ job }: { job: Job }) {
   const Icon = WORK_ICONS[job.kind];
 
   return (
-    <li className="flex items-center gap-3 rounded-2xl border bg-card p-3">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+    <li className="flex items-center gap-3 rounded-xl border bg-card p-3">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
         <Icon aria-hidden className="size-5" />
       </span>
       <div className="flex min-w-0 flex-1 flex-col">

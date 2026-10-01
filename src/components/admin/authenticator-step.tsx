@@ -64,7 +64,7 @@ export function AuthenticatorStep({
 
   return (
     <div className="flex flex-col gap-5">
-      <ol className="list-decimal space-y-1 ps-5 text-sm text-muted-foreground">
+      <ol className="list-decimal space-y-3 ps-5 text-sm leading-relaxed text-muted-foreground">
         <li>
           Open an authenticator app — Google Authenticator, Microsoft
           Authenticator or 1Password.
@@ -72,7 +72,7 @@ export function AuthenticatorStep({
         <li>Scan this QR code, or type the key under it.</li>
         <li>Enter the 6-digit code the app shows.</li>
       </ol>
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-4 rounded-lg border bg-muted/30 p-4">
         {qr ? (
           <Image
             src={qr}
@@ -91,7 +91,7 @@ export function AuthenticatorStep({
         {secret ? (
           <p className="text-center text-xs text-muted-foreground">
             Key:{" "}
-            <code className="font-mono text-sm text-foreground select-all">
+            <code className="font-mono text-sm break-all text-foreground select-all">
               {groupSecret(secret)}
             </code>
           </p>

@@ -16,9 +16,9 @@ export function AppPageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border/70 pb-5">
-      <div className="flex min-w-0 flex-col gap-2">
-        <h1 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+    <div className="flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-start sm:justify-between">
+      <div className="flex min-w-0 flex-1 flex-col gap-2">
+        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
           {title}
         </h1>
         {lead ? (
@@ -27,7 +27,11 @@ export function AppPageHeader({
           </p>
         ) : null}
       </div>
-      {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
+      {actions ? (
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
+          {actions}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -46,9 +50,9 @@ export function StatCard({
   tone?: "neutral" | "good" | "warn";
 }) {
   return (
-    <div className="relative flex min-w-0 flex-col gap-3 overflow-hidden rounded-2xl border border-border/80 bg-card p-4 shadow-xs sm:p-5">
+    <div className="relative flex min-w-0 flex-col gap-4 rounded-xl border border-border bg-card p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-sm text-muted-foreground">{label}</p>
+        <p className="text-sm font-medium text-muted-foreground">{label}</p>
         {Icon ? (
           <Icon
             aria-hidden
@@ -79,7 +83,7 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="flex flex-col gap-3">
+    <section className="flex min-w-0 flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
         {action}
@@ -101,8 +105,8 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border bg-card px-6 py-9 text-center">
-      <span className="flex size-12 items-center justify-center rounded-xl border border-primary/15 bg-primary/10 text-primary">
+    <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-card px-6 py-10 text-center">
+      <span className="flex size-12 items-center justify-center rounded-lg bg-muted text-muted-foreground">
         <Icon aria-hidden className="size-6" />
       </span>
       <p className="text-lg font-semibold tracking-tight">{title}</p>
@@ -120,7 +124,7 @@ export function ListSkeleton({ rows = 3 }: { rows?: number }) {
   return (
     <div className="flex flex-col gap-3" aria-busy="true">
       {Array.from({ length: rows }, (_, index) => (
-        <Skeleton key={index} className="h-20 w-full rounded-2xl" />
+        <Skeleton key={index} className="h-20 w-full rounded-xl" />
       ))}
     </div>
   );
@@ -137,7 +141,7 @@ export function StatusPill({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap",
+        "inline-flex max-w-full items-center rounded-md px-2 py-1 text-xs leading-5 font-medium",
         tone === "neutral" && "bg-muted text-muted-foreground",
         tone === "info" && "bg-sky-500/10 text-sky-800 dark:text-sky-300",
         tone === "good" && "bg-primary/10 text-primary",

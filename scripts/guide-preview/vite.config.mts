@@ -21,7 +21,8 @@ const fontClasses = styles
       .filter(
         (rule) =>
           rule.startsWith(".") &&
-          (rule.includes("{--font-noto-sans:") ||
+          (rule.includes("{--font-geist:") ||
+            rule.includes("{--font-noto-sans:") ||
             rule.includes("{--font-noto-mono:")),
       )
       .map((rule) => rule.slice(1, rule.indexOf("{")));

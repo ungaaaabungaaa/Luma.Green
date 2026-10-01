@@ -180,7 +180,7 @@ function VerifyForm() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold tracking-tight">
+        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
           {t("verifyTitle")}
         </h1>
         <p className="text-muted-foreground">
@@ -188,7 +188,7 @@ function VerifyForm() {
         </p>
         <Link
           href="/login"
-          className="self-start text-sm font-medium text-primary underline-offset-4 hover:underline"
+          className="inline-flex min-h-11 items-center self-start text-sm font-medium text-primary underline-offset-4 hover:underline"
         >
           {t("changeNumber")}
         </Link>

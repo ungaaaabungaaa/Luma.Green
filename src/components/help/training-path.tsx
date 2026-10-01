@@ -40,7 +40,7 @@ export function TrainingPath({ role }: { role: HelpRole }) {
 
   return (
     <div className="flex max-w-3xl flex-col gap-4">
-      <div className="flex flex-col gap-3 rounded-2xl border bg-card p-4">
+      <div className="flex flex-col gap-3 rounded-xl border bg-card p-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <p id={`training-${role}-label`} className="font-medium">
             {t("training.progressLabel")}
@@ -61,7 +61,7 @@ export function TrainingPath({ role }: { role: HelpRole }) {
 
       <div aria-live="polite">
         {progress.isComplete ? (
-          <div className="flex items-center gap-4 rounded-2xl border border-primary/30 bg-accent p-4">
+          <div className="flex items-center gap-4 rounded-xl border border-primary/30 bg-accent p-4">
             <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <AwardIcon aria-hidden className="size-7" />
             </span>
@@ -99,7 +99,7 @@ export function TrainingPath({ role }: { role: HelpRole }) {
           <Button
             type="button"
             variant="ghost"
-            className="h-10"
+            className="h-11"
             onClick={progress.reset}
           >
             <RotateCcwIcon aria-hidden />
@@ -134,7 +134,7 @@ function LessonCard({
     <article
       aria-labelledby={titleId}
       className={cn(
-        "flex flex-col gap-4 rounded-2xl border bg-card p-4 transition-colors",
+        "flex flex-col gap-4 rounded-xl border bg-card p-4 transition-colors",
         isDone && "border-primary/40 bg-accent/50",
       )}
     >

@@ -26,9 +26,9 @@ export default async function HouseholdLayout({
   const t = await getTranslations("nav");
 
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/50">
+    <div className="flex min-h-dvh flex-col bg-muted/35">
       <SkipLink />
-      <header className="flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-border/60 bg-background px-4 py-2">
+      <header className="flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-border bg-background px-4 py-2">
         <Link
           href="/"
           aria-label={t("home")}
@@ -44,7 +44,7 @@ export default async function HouseholdLayout({
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-lg flex-1 flex-col px-4 py-6 sm:py-8"
+        className="mx-auto flex w-full max-w-2xl flex-1 flex-col px-4 py-6 sm:py-8"
       >
         {children}
       </main>

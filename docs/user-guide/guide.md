@@ -2,8 +2,8 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026. Source baseline: 9fb82cd.
-Includes the shared interface redesign, appearance controls and native demo setup.
+Edition: 2 October 2026. Source baseline: e403503.
+Includes the current design-system-polish changes: public and workspace redesign, appearance controls, admin report charts and native demo setup.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
@@ -23,6 +23,35 @@ Luma.Green records scrap collection and movement through the recycling chain. A 
 - Synthetic documentation fixture: an unchanged browser screenshot of real application components supplied with sample records in a separate documentation server. It is not an authenticated session or proof of a working integration.
 
 No screenshot is an AI-generated interface. The homepage contains generated decorative artwork, but the page screenshot itself comes from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
+
+### Explore the home page
+
+The home page explains the service before you enter a workflow. The materials
+section shows the main scrap groups. Use Sell scrap to select your own materials
+and quantities. The pickup section explains the steps and links to the first
+pickup guide.
+
+![Current materials section on the home page. This is an unchanged browser capture of the section.](screenshots/public-home-materials.png)
+
+![Current pickup guide on the home page. Use the links to start a booking or read the household guide.](screenshots/public-home-pickup.png)
+
+The shop section explains how a kabadiwala receives requests and records work.
+Use its join link to start an application, or open the shop help page. The weighing
+section explains how estimates become a final record. Payment takes place outside
+the platform; the shop records the agreed amount after payment.
+
+![Current shop section on the home page. Its links open application and help routes.](screenshots/public-home-shop.png)
+
+![Current weighing and payment explanation. The illustration is context, not proof of a payment.](screenshots/public-home-payment.png)
+
+The records section explains the information kept as materials move through the
+chain. Read Standards for material codes and trading rules. The questions section
+opens short answers and links to role-specific help. Reading these sections does
+not create an account, submit an application or book a pickup.
+
+![Current material records explanation on the home page.](screenshots/public-home-records.png)
+
+![Current home page questions and help links.](screenshots/public-home-questions.png)
 
 ### Three limits to remember
 
@@ -450,6 +479,22 @@ Open /admin/pilot. Choose Today, 7 days, 30 days or the fixed 13-20 October 2026
 4. Compare estimated and weighed kilograms for completed bookings with receipts.
 5. Review booking outcomes and application decisions.
 
+### Read the charts
+
+The Booking outcomes chart compares the six current booking states. Read the
+counts beside the chart for exact values. A zero count has no visible bar.
+The Estimate and weighed material chart compares the two weights for each
+material code. The table below gives the same values in kilograms.
+
+Hover a bar to read its tooltip. The written counts and table are also available
+without a mouse. The charts use records from the selected report period. They do
+not create a price history or show a trend over time. If a report has no bookings
+or material rows, the related chart is not shown.
+
+![Current booking outcome chart with synthetic counts. The written counts remain available beside it.](screenshots/admin-pilot-outcomes.png)
+
+![Current estimated and weighed material chart with synthetic weights. The table gives the same values in kilograms.](screenshots/admin-pilot-materials.png)
+
 ### What these numbers mean
 
 Bookings are selected by date booked. Applications are selected by their latest submission date. Outcomes are the current record state, not a historical snapshot at the selected end date. The report reads at most 1,000 bookings and 1,000 applications; the backend accepts a maximum 31-day range.
@@ -704,6 +749,8 @@ Only the home, how-it-works, participants, prices, standards, solar and help lan
 
 Sentry error reports are separate from optional visit analytics. When the owner configures Sentry, it receives error types and scrubbed code locations. Reports remove error messages, request details, user data and breadcrumbs. Performance tracing and replay are off. If the application shows its general failure screen, use the retry control; it does not submit the failed operation again automatically.
 
+The general failure screen uses the same appearance and translated retry control. Its safe retry and accessibility behavior are covered by tests. This guide does not include a forced-failure browser capture.
+
 The owner supplies the telemetry switch and each service key in the web deployment, then rebuilds it. GA4 Enhanced Measurement must be switched off in the property settings. Do not install a second tag through Google Tag Manager. Use docs/operations/observability.md for exact settings, tests, and spend controls. Empty keys keep services disabled. Browser/Next.js Sentry setup does not capture Convex backend or native-shell errors.
 
 Google Search Console and Bing verification tags are optional ownership checks. Configure their tokens, deploy, verify ownership and submit sitemap.xml. These tags do not collect visit analytics and do not prove search indexing. See docs/operations/seo.md. Existing language alternates, canonical URLs and private-page noindex rules remain in place.
@@ -711,6 +758,15 @@ Google Search Console and Bing verification tags are optional ownership checks. 
 ---
 
 ## 36 / Appearance and role pages
+
+The interface uses neutral light surfaces and charcoal dark surfaces. Green marks
+the main action and selected states. Public pages have wider spacing; workspaces
+keep records and controls closer together. Buttons, form fields and panels use
+consistent shapes across roles. Read the text label before selecting an icon.
+
+Geist supplies the large display headings. Noto supplies body text and the script
+fallbacks for all twelve languages. The language control changes text, direction
+and number formatting; it does not change access or stored records.
 
 Use Appearance in the header or workspace controls to select Light, Dark or
 System. System follows the device setting. Your selection stays in this browser
@@ -741,7 +797,7 @@ remain the source for operational activity.
 
 On a role-help page, use the links at the top to jump to guides, questions or
 training. Decorative images do not sign you in or create a record. Reduced
-motion settings stop the decorative shimmer and scroll effects.
+motion settings stop the decorative scroll effects.
 
 ![Current Arabic homepage in dark mode on a phone.](screenshots/public-arabic-dark.png)
 

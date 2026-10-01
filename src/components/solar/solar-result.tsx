@@ -31,16 +31,16 @@ function Figure({
   return (
     <div
       className={cn(
-        "flex flex-col gap-1 rounded-xl px-4 py-3",
-        emphasis ? "bg-accent" : "bg-muted/50",
+        "flex min-w-0 flex-col gap-2 border-s-2 px-4 py-3",
+        emphasis ? "border-primary" : "border-border",
         className,
       )}
     >
       <dt className="text-sm text-muted-foreground">{label}</dt>
       <dd
         className={cn(
-          "font-semibold",
-          emphasis ? "text-xl text-primary" : "text-lg",
+          "font-semibold break-words tabular-nums",
+          emphasis ? "text-xl text-foreground" : "text-lg",
         )}
       >
         {value}
@@ -64,8 +64,8 @@ export function SolarResultView({
 
   if (!result || result.status === "noUsage") {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed bg-card px-6 py-12 text-center">
-        <span className="flex size-12 items-center justify-center rounded-full bg-accent text-primary">
+      <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed bg-card px-6 py-12 text-center">
+        <span className="flex size-12 items-center justify-center rounded-lg border bg-muted text-foreground">
           <SunIcon aria-hidden className="size-6" />
         </span>
         <p className="max-w-xs text-muted-foreground">{t("prompt")}</p>
@@ -81,7 +81,7 @@ export function SolarResultView({
 
   if (result.status === "roofTooSmall") {
     return (
-      <div className="flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 p-5 text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
+      <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-5 text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
         <TriangleAlertIcon aria-hidden className="mt-0.5 size-5 shrink-0" />
         <div className="flex flex-col gap-1">
           <p className="font-semibold">{t("roofTooSmallTitle")}</p>
@@ -124,10 +124,10 @@ function Estimate({
   }
 
   return (
-    <div className="flex flex-col gap-6 rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
+    <div className="flex flex-col gap-6 rounded-xl border bg-card p-5 sm:p-6">
       <div className="flex flex-col gap-2">
         <p className="text-sm font-medium text-muted-foreground">{t("size")}</p>
-        <p className="text-5xl font-semibold tracking-tight">
+        <p className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
           {t("kw", { kw: format.number(estimate.kw, 1) })}
         </p>
         <p className="text-muted-foreground">

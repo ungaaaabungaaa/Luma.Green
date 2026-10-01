@@ -34,7 +34,7 @@ export function ListingCard({
   const name = format.material(listing.material.names, listing.material.code);
 
   return (
-    <article className="flex h-full flex-col gap-4 rounded-2xl border bg-card p-4 shadow-sm">
+    <article className="flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-5">
       <div className="flex flex-wrap items-start gap-3">
         <MaterialIcon family={listing.material.family} />
         <div className="flex min-w-32 flex-1 flex-col gap-1">
@@ -62,7 +62,7 @@ export function ListingCard({
         </p>
       </div>
 
-      <dl className="grid grid-cols-2 gap-3 rounded-xl border bg-muted/40 p-3 text-sm">
+      <dl className="grid grid-cols-2 gap-4 border-y border-border py-4 text-sm">
         <div className="flex flex-col gap-0.5">
           <dt className="text-muted-foreground">{t("listing.available")}</dt>
           <dd className="font-medium tabular-nums">
@@ -83,7 +83,9 @@ export function ListingCard({
         </p>
       ) : null}
 
-      {action ? <div className="mt-auto flex flex-col">{action}</div> : null}
+      {action ? (
+        <div className="mt-auto flex flex-col pt-1">{action}</div>
+      ) : null}
     </article>
   );
 }

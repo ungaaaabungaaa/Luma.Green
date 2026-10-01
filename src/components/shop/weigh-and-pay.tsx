@@ -200,7 +200,7 @@ export function WeighAndPay({
           </Select>
         ) : null}
 
-        <div className="flex flex-col gap-4 rounded-2xl border border-primary/30 bg-accent/60 p-4">
+        <div className="flex flex-col gap-4 rounded-xl border border-primary/30 bg-accent/60 p-4">
           <div className="flex items-baseline justify-between gap-3">
             <span className="text-base font-medium">{t("weigh.total")}</span>
             <output
@@ -219,7 +219,7 @@ export function WeighAndPay({
           <Button
             type="submit"
             size="lg"
-            className="h-14 text-base"
+            className="h-12 text-base"
             disabled={isSaving}
           >
             <CheckIcon aria-hidden className="size-5" />

@@ -51,7 +51,7 @@ export function SupportInbox() {
   const openCount = requests?.filter((item) => item.status === "open").length;
 
   return (
-    <div className="flex max-w-4xl flex-col gap-6">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:gap-8">
       <AppPageHeader
         title="Support"
         lead="Messages from the help centre and the solar page, newest first. Call back, then mark them answered."
@@ -62,7 +62,7 @@ export function SupportInbox() {
           if (isFilter(value)) setFilter(value);
         }}
       >
-        <TabsList>
+        <TabsList className="h-auto min-h-12 w-full justify-start rounded-lg border bg-card p-1 sm:w-fit">
           <TabsTrigger value="open" className="tabular-nums">
             {openCount === undefined ? "Open" : `Open (${String(openCount)})`}
           </TabsTrigger>
@@ -70,7 +70,7 @@ export function SupportInbox() {
           <TabsTrigger value="all">All</TabsTrigger>
         </TabsList>
         {FILTERS.map((value) => (
-          <TabsContent key={value} value={value} className="mt-4">
+          <TabsContent key={value} value={value} className="mt-6">
             <RequestList
               filter={value}
               requests={requests?.filter(
@@ -137,11 +137,11 @@ function RequestCard({ request }: { request: SupportRequest }) {
   return (
     <article
       aria-labelledby={headingId}
-      className="flex flex-col gap-3 rounded-xl bg-card p-4 ring-1 ring-foreground/10"
+      className="flex flex-col gap-4 rounded-xl border bg-card p-5 sm:p-6"
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="flex min-w-0 flex-col gap-0.5">
-          <h2 id={headingId} className="font-medium">
+          <h2 id={headingId} className="font-semibold">
             {request.name}
           </h2>
           <p className="text-sm text-muted-foreground">
@@ -158,9 +158,11 @@ function RequestCard({ request }: { request: SupportRequest }) {
           </StatusPill>
         </div>
       </div>
-      <p className="text-sm whitespace-pre-line">{request.message}</p>
+      <p className="border-y py-4 text-sm leading-relaxed break-words whitespace-pre-line">
+        {request.message}
+      </p>
       <div className="flex flex-wrap gap-2">
-        <Button asChild variant="outline" size="sm" className="h-9 md:h-7">
+        <Button asChild variant="outline" size="sm" className="min-h-11">
           <a href={`tel:${request.phone}`}>
             <PhoneIcon aria-hidden />
             Call {formatPhone(request.phone)}
@@ -169,7 +171,7 @@ function RequestCard({ request }: { request: SupportRequest }) {
         {isOpen ? (
           <Button
             size="sm"
-            className="h-9 md:h-7"
+            className="min-h-11"
             disabled={isBusy}
             onClick={() => {
               void answer();

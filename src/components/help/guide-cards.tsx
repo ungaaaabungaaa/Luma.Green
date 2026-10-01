@@ -10,12 +10,12 @@ import { IconTile } from "./help-art";
 export function GuideCards({ role }: { role: HelpRole }) {
   const t = useTranslations("help");
   return (
-    <ul className="grid gap-4 md:grid-cols-2">
+    <ul className="grid grid-flow-dense gap-4 md:grid-cols-2">
       {guidesFor(role).map(({ key, slug, icon, steps }) => (
         <li
           key={key}
           data-reveal
-          className="group relative flex gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:p-7"
+          className="group relative flex gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:p-6"
         >
           <IconTile icon={icon} size="sm" />
           <div className="flex min-w-0 flex-1 flex-col gap-3">

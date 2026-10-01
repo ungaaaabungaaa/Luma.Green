@@ -7,7 +7,6 @@ import { useId, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
 
 import { HELP_TOPICS, type HelpTopic, TOPIC_ICONS } from "./content";
 import { IconTile } from "./help-art";
@@ -78,7 +77,7 @@ export function HelpSearch() {
             setQuery(event.target.value);
             setShowAll(false);
           }}
-          className="h-14 rounded-xl bg-background ps-12 pe-12 text-base shadow-sm md:text-base [&::-webkit-search-cancel-button]:hidden"
+          className="h-14 rounded-lg bg-background ps-12 pe-12 text-base shadow-sm md:text-base [&::-webkit-search-cancel-button]:hidden"
         />
         {query ? (
           <Button
@@ -107,23 +106,18 @@ export function HelpSearch() {
             const isPressed = topic === key;
             return (
               <li key={key}>
-                <button
+                <Button
                   type="button"
+                  variant={isPressed ? "default" : "outline"}
                   aria-pressed={isPressed}
                   onClick={() => {
                     setTopic(isPressed ? null : key);
                     setShowAll(false);
                   }}
-                  className={cn(
-                    "inline-flex min-h-11 items-center gap-2 rounded-full border-2 px-4 text-sm font-medium outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-                    isPressed
-                      ? "border-primary bg-accent text-primary"
-                      : "border-border bg-background hover:border-primary/50",
-                  )}
                 >
                   <Icon aria-hidden className="size-4" />
                   {t(`topics.${key}`)}
-                </button>
+                </Button>
               </li>
             );
           })}
@@ -137,7 +131,7 @@ export function HelpSearch() {
       {isActive ? (
         <section
           aria-label={summary}
-          className="flex flex-col gap-2 rounded-2xl border bg-card p-3 shadow-sm sm:p-4"
+          className="flex flex-col gap-2 rounded-xl border bg-card p-3 shadow-sm sm:p-4"
         >
           <p aria-hidden className="px-2 text-sm font-medium">
             {summary}

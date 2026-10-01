@@ -23,7 +23,7 @@ export function ContactStrip({
     <section
       data-reveal
       aria-labelledby="contact-strip-heading"
-      className="flex flex-col gap-8 rounded-3xl bg-brand-950 px-6 py-10 text-brand-50 sm:px-10 lg:flex-row lg:items-center lg:justify-between"
+      className="flex flex-col gap-8 rounded-xl border border-border bg-muted px-6 py-10 text-foreground sm:px-10 lg:flex-row lg:items-center lg:justify-between"
     >
       <div className="flex max-w-md flex-col gap-3">
         <h2
@@ -32,17 +32,17 @@ export function ContactStrip({
         >
           {t("contactStrip.title")}
         </h2>
-        <p className="leading-relaxed text-brand-100">
+        <p className="leading-relaxed text-muted-foreground">
           {t("contactStrip.body")}
         </p>
-        <p className="text-sm text-brand-100">{t("hours")}</p>
+        <p className="text-sm text-muted-foreground">{t("hours")}</p>
       </div>
       <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
         <Button
           asChild
           size="lg"
           variant="secondary"
-          className="h-auto min-h-12 rounded-full px-5 py-3 whitespace-normal"
+          className="h-auto min-h-12 rounded-lg px-5 py-3 whitespace-normal"
         >
           <a href={`tel:${SUPPORT_CONTACT.tel}`}>
             <PhoneIcon aria-hidden />
@@ -56,7 +56,7 @@ export function ContactStrip({
           asChild
           size="lg"
           variant="secondary"
-          className="h-auto min-h-12 rounded-full px-5 py-3 whitespace-normal"
+          className="h-auto min-h-12 rounded-lg px-5 py-3 whitespace-normal"
         >
           <a href={SUPPORT_CONTACT.whatsapp} target="_blank" rel="noreferrer">
             <MessageCircleIcon aria-hidden />
@@ -67,7 +67,7 @@ export function ContactStrip({
           asChild
           size="lg"
           variant="outline"
-          className="h-auto min-h-12 rounded-full border-brand-50/40 bg-transparent px-5 py-3 whitespace-normal text-brand-50 hover:bg-brand-50/10 hover:text-brand-50"
+          className="h-auto min-h-12 rounded-lg border-border bg-transparent px-5 py-3 whitespace-normal text-foreground hover:bg-accent hover:text-accent-foreground"
         >
           <Link href={contactHref(role, topic)}>
             <PencilLineIcon aria-hidden />

@@ -33,22 +33,23 @@ shadcn@latest add …`). Next.js's own `next/image` and `next/font` for images
 
 ## Look and feel
 
-### Current visual direction — 1 October 2026
+### Current visual direction — 2 October 2026
 
 The founder requested a richer public site and more polished app screens. This
 refinement supersedes the earlier compact public heading and radius guidance.
-See [visual delivery evidence](../delivery/premium-ui.md).
+See [designer system plan](../design/designer-system.md).
 
-- Support light and dark themes. Use forest-green feature panels with
-  explicit light text; these do not depend on the device theme.
+- Support light and dark themes with neutral white and charcoal surfaces.
+  Forest green marks actions and selected states, not every section background.
 - Public content uses `max-w-7xl`, editorial headings, larger section spacing,
-  and compressed sculptural imagery. Noto still supplies all twelve scripts.
+  and compressed materials photography. Geist supplies Latin display type;
+  Noto supplies body text and all twelve scripts.
   Hero tracking and line-height are reset for non-Latin scripts.
-- The base radius is `0.875rem`. Feature panels use larger standard Tailwind
-  radii. Controls retain the shared shadcn primitives and minimum touch targets.
+- Base radius is `0.5rem`: 8px control corners, 12px cards. Shared shadcn
+  buttons are 44px regular and 48px large, with stable focus and disabled states.
 - Desktop sign-in has an image panel beside the form. Phone sign-in keeps the
-  form first. Operational shells use stronger headers, forest navigation and
-  clearer status/metric cards. Transaction content does not animate on updates.
+  form first. Operational shells use compact headers, neutral navigation and
+  clearer status/metric rows. Transaction content does not animate on updates.
 - Homepage GSAP parallax follows native scrolling and is bounded to 64 px,
   halved on phones. Secondary-page reveals use native browser animation.
   Entrances may exceed 200 ms; control transitions stay short. Reduced motion
@@ -62,7 +63,7 @@ The following baseline still applies to functional controls and data presentatio
 - **Surfaces:** a light grey page (`bg-muted`) with white cards (`bg-card`) and
   hairline borders — as in the prototype. Primary actions in brand green
   (`bg-primary`).
-- **Type:** Noto Sans for every script. Body 16 px; 17–18 px in the kabadiwala
+- **Type:** Geist display with Noto Sans for body and every script. Body 16 px; 17–18 px in the kabadiwala
   app; headings 24–28 px; numbers `tabular-nums`.
 - **Targets:** 44 px minimum everywhere; 48–56 px for the main actions in the
   household and kabadiwala apps.
@@ -71,7 +72,12 @@ The following baseline still applies to functional controls and data presentatio
   (`--material-paper`, `--material-cardboard`, `--material-plastic`,
   `--material-metal`, `--material-glass`, `--material-ewaste`, each with a
   `-foreground`), never picked per screen.
-- **Icons:** lucide-react. Direction icons flip in right-to-left layouts.
+- **Icons:** lucide-react, 1.75 stroke; 18/20px controls and 24px features.
+  Material family icons share `components/app/material-family.ts`.
+  Direction icons flip in right-to-left layouts.
+- **Charts:** Recharts through the vendored shadcn primitive. Real query data,
+  semantic categorical colours, readable text/table equivalents and no decorative
+  animation. Only pages with charts import the library.
 - **States:** skeletons while loading; an empty state with one next action; a
   toast for a failed action plus an inline message where it happened; an
   offline banner when the connection drops.
@@ -80,7 +86,7 @@ The following baseline still applies to functional controls and data presentatio
 
 Already vendored: alert, avatar, badge, button, card, checkbox, dialog,
 dropdown-menu, input, label, progress, select, separator, sheet, skeleton,
-sonner, switch, table, tabs, textarea, tooltip.
+sonner, switch, table, tabs, textarea, tooltip, chart.
 
 To add as screens need them: `form` (React Hook Form + Zod), `radio-group`,
 `toggle-group`, `input-otp`, `alert-dialog`, `scroll-area`, `popover`,

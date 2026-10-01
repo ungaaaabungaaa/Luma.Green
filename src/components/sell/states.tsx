@@ -17,7 +17,7 @@ export function SellSkeleton() {
       <Skeleton className="h-8 w-2/3" />
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
         {Array.from({ length: 6 }, (_, index) => (
-          <Skeleton key={index} className="h-28 rounded-2xl" />
+          <Skeleton key={index} className="h-28 rounded-xl" />
         ))}
       </div>
     </div>

@@ -51,7 +51,7 @@ export function JumpLinks({
           <li key={link.id}>
             <a
               href={`#${link.id}`}
-              className="inline-flex min-h-11 items-center rounded-full border bg-background px-4 text-sm font-medium outline-none hover:border-primary hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50"
+              className="inline-flex min-h-11 items-center rounded-lg border bg-background px-4 text-sm font-medium outline-none hover:border-primary hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {link.label}
             </a>

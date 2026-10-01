@@ -47,7 +47,7 @@ export default async function SolarPage() {
           />
         }
       />
-      <Container className="py-12 sm:py-16">
+      <Container className="py-16 lg:py-24">
         <SolarPlanner between={<SubsidyExplainer />} />
       </Container>
     </>

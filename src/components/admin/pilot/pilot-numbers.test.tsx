@@ -67,6 +67,27 @@ describe("pilot numbers", () => {
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });
 
+  it("keeps exact gram differences visible beside the material chart", () => {
+    mocks.query.mockReturnValue({
+      ...summary,
+      bookings: {
+        ...summary.bookings,
+        materials: [
+          { code: "PAPER-NEWS", estimatedGrams: 1000, weighedGrams: 1001 },
+        ],
+      },
+    });
+    render(<PilotNumbers />);
+    const table = screen.getByRole("table");
+    const cells = within(table).getAllByRole("cell");
+    expect(cells.map((cell) => cell.textContent)).toEqual([
+      "PAPER-NEWS",
+      "1",
+      "1.001",
+      "0.001",
+    ]);
+  });
+
   it("lets the admin choose the pilot dates with the keyboard", async () => {
     const user = userEvent.setup();
     render(<PilotNumbers />);

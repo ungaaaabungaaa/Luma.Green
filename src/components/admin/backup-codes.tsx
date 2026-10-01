@@ -50,10 +50,10 @@ export function BackupCodes({
       </p>
       <ul
         aria-label="Backup codes"
-        className="grid grid-cols-2 gap-2 rounded-lg border bg-muted/50 p-4 font-mono text-sm"
+        className="grid grid-cols-1 gap-3 rounded-lg border bg-muted/50 p-4 font-mono text-sm min-[400px]:grid-cols-2"
       >
         {codes.map((code) => (
-          <li key={code} className="select-all">
+          <li key={code} className="break-all select-all">
             {code}
           </li>
         ))}
@@ -74,7 +74,7 @@ export function BackupCodes({
           Download
         </Button>
       </div>
-      <div className="flex items-start gap-3">
+      <div className="flex min-h-11 items-center gap-3 rounded-lg border p-3">
         <Checkbox
           id="codes-saved"
           checked={saved}

@@ -107,7 +107,7 @@ function PasswordStep({
   return (
     <form
       noValidate
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-5"
       onSubmit={(event) => {
         void handleSubmit(onSubmit)(event);
       }}
@@ -190,7 +190,7 @@ function CodeStep({
 
   return (
     <form
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-5"
       onSubmit={(event) => {
         event.preventDefault();
         void check(mode === "totp" ? code : backupCode.trim());
@@ -248,7 +248,7 @@ function CodeStep({
       >
         {busy ? "Checking…" : "Sign in"}
       </Button>
-      <div className="flex flex-wrap justify-between gap-2">
+      <div className="flex flex-wrap justify-between gap-2 border-t pt-4">
         <Button
           type="button"
           variant="link"

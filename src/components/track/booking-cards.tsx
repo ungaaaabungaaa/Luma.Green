@@ -27,7 +27,7 @@ export function WhenCard({
   return (
     <section
       aria-labelledby="when-title"
-      className="flex flex-col gap-3 rounded-2xl border bg-card p-4"
+      className="flex flex-col gap-3 rounded-xl border bg-card p-4"
     >
       <div className="flex items-start gap-3">
         <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
@@ -67,7 +67,7 @@ export function ItemsCard({ booking }: { booking: TrackedBooking }) {
   return (
     <section
       aria-labelledby="items-title"
-      className="flex flex-col rounded-2xl border bg-card"
+      className="flex flex-col rounded-xl border bg-card"
     >
       <h2 id="items-title" className="px-4 pt-4 text-lg font-semibold">
         {t("title")}

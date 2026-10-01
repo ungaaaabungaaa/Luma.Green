@@ -45,7 +45,7 @@ export default async function HelpPage() {
         <HelpSearch />
       </HelpHero>
 
-      <Container className="flex flex-col gap-14 py-12 sm:py-16">
+      <Container className="flex flex-col gap-14 py-16 lg:py-24">
         <section aria-labelledby="help-roles" className="flex flex-col gap-5">
           <div className="flex flex-col gap-1">
             <h2

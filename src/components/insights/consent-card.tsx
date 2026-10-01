@@ -53,7 +53,7 @@ function Frame({
     <section
       aria-labelledby={headingId}
       role={tone === "good" ? undefined : "alert"}
-      className={cn("flex flex-col gap-3 rounded-2xl border p-4", card)}
+      className={cn("flex flex-col gap-3 rounded-xl border p-4", card)}
     >
       <div className="flex items-start gap-3">
         <span

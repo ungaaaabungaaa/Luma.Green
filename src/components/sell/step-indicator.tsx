@@ -16,7 +16,10 @@ export function StepIndicator({ step }: { step: SellStep }) {
   const t = useTranslations("sell.steps");
   const current = SELL_STEPS.indexOf(step);
   return (
-    <nav aria-label={t("label")}>
+    <nav
+      aria-label={t("label")}
+      className="rounded-xl border border-border bg-card p-4"
+    >
       <p className="sr-only" aria-live="polite">
         {t("progress", { current: current + 1, total: SELL_STEPS.length })}
       </p>
@@ -30,11 +33,16 @@ export function StepIndicator({ step }: { step: SellStep }) {
             <span
               aria-hidden
               className={cn(
-                "h-1.5 rounded-full transition-colors",
+                "h-1 rounded-sm transition-colors motion-reduce:transition-none",
                 index <= current ? "bg-primary" : "bg-border",
               )}
             />
-            <span className={cn("text-xs", labelTone(index, current))}>
+            <span
+              className={cn(
+                "text-xs leading-relaxed",
+                labelTone(index, current),
+              )}
+            >
               {t(name)}
             </span>
           </li>

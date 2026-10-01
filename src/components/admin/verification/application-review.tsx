@@ -73,11 +73,11 @@ export function ApplicationReview({
   };
 
   return (
-    <div className="flex max-w-6xl flex-col gap-6">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
       <BackLink />
       <ReviewHeader application={application} now={now} />
       <ResubmissionNote application={application} />
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
         <div className="flex min-w-0 flex-col gap-6">
           <ApplicationDetails
             application={application}
@@ -94,7 +94,7 @@ export function ApplicationReview({
         </div>
         <aside
           aria-label="Checks and decision"
-          className="flex flex-col gap-4 lg:sticky lg:top-6 lg:row-span-2 lg:self-start"
+          className="flex flex-col gap-4 xl:sticky xl:top-6 xl:row-span-2 xl:self-start"
         >
           {application.status === "submitted" ? (
             <>
@@ -116,7 +116,7 @@ export function ApplicationReview({
             <DecisionStatus application={application} />
           )}
         </aside>
-        <div className="min-w-0 lg:col-start-1">
+        <div className="min-w-0 xl:col-start-1">
           <AuditTrail entries={application.audit} />
         </div>
       </div>
@@ -128,7 +128,7 @@ function BackLink() {
   return (
     <Link
       href="/admin/verification"
-      className="inline-flex items-center gap-1.5 self-start rounded-sm text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+      className="inline-flex min-h-11 items-center gap-2 self-start rounded-lg text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
     >
       <ArrowLeftIcon aria-hidden className="size-4" />
       Verification queue
@@ -151,7 +151,7 @@ function ReviewHeader({
     ? localeMeta[application.locale].english
     : application.locale;
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4 border-b pb-6">
       <div className="flex flex-wrap items-center gap-2">
         <StatusPill tone="neutral">{KIND_LABELS[application.kind]}</StatusPill>
         <StatusPill tone={STATUS_TONES[application.status]}>
@@ -161,7 +161,7 @@ function ReviewHeader({
           <StatusPill tone="info">Version {application.version}</StatusPill>
         ) : null}
       </div>
-      <h1 className="text-2xl font-semibold tracking-tight break-words">
+      <h1 className="font-display text-3xl font-semibold tracking-tight break-words">
         {application.name}
       </h1>
       <dl className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
@@ -185,7 +185,7 @@ function ReviewHeader({
             {application.phone ? (
               <a
                 href={`tel:${application.phone}`}
-                className="rounded-sm font-mono text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="inline-flex min-h-11 items-center rounded-lg font-mono text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
               >
                 {formatPhone(application.phone)}
               </a>
@@ -298,14 +298,17 @@ function NotFound() {
 
 function ReviewSkeleton() {
   return (
-    <div className="flex max-w-6xl flex-col gap-6" aria-busy="true">
+    <div
+      className="mx-auto flex w-full max-w-6xl flex-col gap-6"
+      aria-busy="true"
+    >
       <Skeleton className="h-4 w-40" />
       <div className="flex flex-col gap-3">
         <Skeleton className="h-5 w-48" />
         <Skeleton className="h-8 w-72" />
         <Skeleton className="h-4 w-96 max-w-full" />
       </div>
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
         <Skeleton className="h-96 w-full rounded-xl" />
         <Skeleton className="h-72 w-full rounded-xl" />
       </div>

@@ -64,7 +64,7 @@ export function FormField({
   const t = useTranslations("join.form");
   return (
     <div className="flex flex-col gap-2">
-      <Label htmlFor={id} className="text-base">
+      <Label htmlFor={id} className="text-sm font-medium">
         {label}
         {optional ? (
           <span className="font-normal text-muted-foreground">
@@ -102,7 +102,7 @@ export function FieldSet({
       className="flex min-w-0 flex-col gap-3"
       aria-describedby={describedBy(id, error, hint)}
     >
-      <legend id={`${id}-legend`} className="mb-1 text-base font-medium">
+      <legend id={`${id}-legend`} className="mb-2 text-sm font-medium">
         {legend}
         {optional ? (
           <span className="font-normal text-muted-foreground">
@@ -162,8 +162,10 @@ export function OptionCards<T extends string>({
             key={option.value}
             htmlFor={id}
             className={cn(
-              "flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border-2 bg-card px-3 py-2 text-base font-normal",
-              isSelected ? "border-primary bg-primary/10" : "border-border",
+              "flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border bg-card px-4 py-3 text-sm font-normal",
+              isSelected
+                ? "border-primary bg-accent ring-1 ring-primary ring-inset"
+                : "border-border",
             )}
           >
             <RadioGroupItem
@@ -242,9 +244,9 @@ export function ToggleChips<T extends string>({
               );
             }}
             className={cn(
-              "inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 px-4 text-base outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+              "inline-flex min-h-11 items-center gap-2 rounded-lg border px-4 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
               isPressed
-                ? "border-primary bg-primary/10 font-medium text-primary"
+                ? "border-primary bg-accent font-medium text-primary ring-1 ring-primary ring-inset"
                 : "border-border bg-card",
             )}
           >
@@ -494,7 +496,10 @@ export function LocationButton({
         onClick={locate}
       >
         {state === "locating" ? (
-          <LoaderIcon aria-hidden className="animate-spin" />
+          <LoaderIcon
+            aria-hidden
+            className="animate-spin motion-reduce:animate-none"
+          />
         ) : (
           <LocateFixedIcon aria-hidden />
         )}
@@ -575,13 +580,13 @@ export function TagInput({
           {value.map((tag) => (
             <li
               key={tag}
-              className="inline-flex items-center gap-1 rounded-full bg-muted py-1 ps-3 pe-1 text-sm"
+              className="inline-flex items-center gap-1 rounded-lg bg-muted ps-3 text-sm"
             >
               {tag}
               <button
                 type="button"
                 aria-label={`${t("remove")}: ${tag}`}
-                className="rounded-full p-1 outline-none hover:bg-background focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="inline-flex size-11 items-center justify-center rounded-lg outline-none hover:bg-background focus-visible:ring-3 focus-visible:ring-ring/50"
                 onClick={() => {
                   onChange(value.filter((item) => item !== tag));
                 }}
@@ -609,7 +614,10 @@ export function SaveIndicator({ state }: { state: SaveState }) {
       )}
     >
       {state === "saving" ? (
-        <LoaderIcon aria-hidden className="size-4 animate-spin" />
+        <LoaderIcon
+          aria-hidden
+          className="size-4 animate-spin motion-reduce:animate-none"
+        />
       ) : null}
       {state === "saved" ? <CheckIcon aria-hidden className="size-4" /> : null}
       {state === "error" ? (

@@ -60,7 +60,7 @@ export function MobileNav({ className }: { className?: string }) {
           </SheetClose>
         </SheetHeader>
         <SiteNav
-          className="flex flex-col gap-2 px-4 [&>a]:rounded-xl [&>a]:px-4 [&>a]:py-4 [&>a]:text-base"
+          className="flex flex-col gap-1 px-4 [&>a]:rounded-lg [&>a]:px-4 [&>a]:py-4 [&>a]:text-base"
           onNavigate={close}
         />
         <div className="mt-auto grid gap-3 border-t p-4">

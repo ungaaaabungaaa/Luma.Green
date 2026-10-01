@@ -28,8 +28,8 @@ export default function ConsoleError({
   const code = convexErrorCode(error);
   const isSessionOver = code !== undefined && SESSION_CODES.has(code);
   return (
-    <div className="flex max-w-md flex-col items-start gap-4 py-10">
-      <span className="flex size-12 items-center justify-center rounded-full bg-destructive/10 text-destructive">
+    <div className="mx-auto my-8 flex max-w-lg flex-col items-start gap-4 rounded-xl border bg-card p-6 sm:p-8">
+      <span className="flex size-12 items-center justify-center rounded-lg bg-destructive/10 text-destructive">
         <TriangleAlertIcon aria-hidden className="size-6" />
       </span>
       <h1 className="text-2xl font-semibold tracking-tight">

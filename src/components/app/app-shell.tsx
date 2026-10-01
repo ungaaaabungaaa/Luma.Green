@@ -81,7 +81,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         className={cn(
           className,
           isCurrent &&
-            "bg-sidebar-accent font-semibold text-sidebar-accent-foreground shadow-xs",
+            "bg-sidebar-accent font-semibold text-sidebar-accent-foreground ring-1 ring-sidebar-border ring-inset",
         )}
       >
         <Icon aria-hidden className="size-5 shrink-0" />
@@ -91,7 +91,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   };
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background md:flex-row">
+    <div className="flex min-h-dvh flex-col bg-muted/35 md:flex-row">
       <SkipLink />
       <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-6 overflow-y-auto border-e border-sidebar-border bg-sidebar p-4 text-sidebar-foreground md:flex lg:w-64">
         <Link
@@ -100,19 +100,29 @@ export function AppShell({ children }: { children: ReactNode }) {
         >
           <Logo />
         </Link>
-        <div className="rounded-xl border border-sidebar-border bg-background/70 p-3">
+        <div className="border-y border-sidebar-border px-3 py-4">
           <p className="truncate text-sm font-semibold">{name}</p>
           <p className="mt-1 text-xs text-muted-foreground">
             {t(`roles.${role}`)}
           </p>
         </div>
         <nav aria-label={t("navLabel")} className="flex flex-col gap-1">
-          {[...primary, ...more].map((item) =>
+          {primary.map((item) =>
             link(
               item,
               "flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
             ),
           )}
+          {more.length > 0 ? (
+            <div className="mt-3 flex flex-col gap-1 border-t border-sidebar-border pt-3">
+              {more.map((item) =>
+                link(
+                  item,
+                  "flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm text-muted-foreground outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+                ),
+              )}
+            </div>
+          ) : null}
           <Link
             href={help}
             className="mt-4 flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
@@ -138,7 +148,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </aside>
 
-      <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-2 border-b border-border/70 bg-background/95 px-4 backdrop-blur md:hidden">
+      <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-2 border-b border-border bg-card/95 px-4 backdrop-blur md:hidden">
         <Link
           href="/"
           aria-label={t("homeLink")}
@@ -160,7 +170,12 @@ export function AppShell({ children }: { children: ReactNode }) {
               <DropdownMenuSeparator />
               {more.map((item) => (
                 <DropdownMenuItem key={item.href} asChild>
-                  <Link href={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={
+                      isActive(pathname, item.href) ? "page" : undefined
+                    }
+                  >
                     <item.icon aria-hidden />
                     {t(`nav.${item.label}`)}
                   </Link>
@@ -185,14 +200,14 @@ export function AppShell({ children }: { children: ReactNode }) {
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-6 px-4 pt-6 pb-28 sm:px-6 md:px-7 md:pt-7 md:pb-10 lg:px-9"
+        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-6 px-4 pt-6 pb-28 sm:px-6 md:gap-8 md:px-8 md:pt-8 md:pb-12 lg:px-10"
       >
         {children}
       </main>
 
       <nav
         aria-label={t("navLabel")}
-        className="fixed inset-x-0 bottom-0 z-30 grid border-t border-border/70 bg-background/95 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-lg backdrop-blur md:hidden"
+        className="fixed inset-x-0 bottom-0 z-30 grid border-t border-border bg-card/95 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden"
         style={{
           gridTemplateColumns: `repeat(${String(primary.length)}, minmax(0, 1fr))`,
         }}
@@ -200,7 +215,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         {primary.map((item) =>
           link(
             item,
-            "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-center text-xs font-medium text-muted-foreground outline-none focus-visible:bg-muted",
+            "flex min-h-14 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-center text-xs font-medium text-muted-foreground outline-none focus-visible:bg-muted",
           ),
         )}
       </nav>

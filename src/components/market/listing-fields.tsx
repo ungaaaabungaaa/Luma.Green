@@ -60,8 +60,10 @@ export function MaterialChoice({
               key={code}
               htmlFor={id}
               className={cn(
-                "flex min-h-14 cursor-pointer items-center gap-3 rounded-xl border-2 bg-card p-3 text-base leading-normal font-normal",
-                code === value ? "border-primary bg-accent" : "border-border",
+                "flex min-h-14 cursor-pointer items-center gap-3 rounded-lg border bg-card p-3 text-base leading-normal font-normal",
+                code === value
+                  ? "border-primary bg-accent ring-1 ring-primary ring-inset"
+                  : "border-border",
                 isAllPromised && "cursor-not-allowed opacity-60",
               )}
             >

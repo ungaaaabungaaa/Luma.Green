@@ -12,7 +12,6 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
 
 import { parseTheme } from "./theme";
 import { useTheme } from "./theme-provider";
@@ -40,7 +39,7 @@ export function ThemeToggleControl({
         <Button
           variant="ghost"
           size="icon"
-          className={cn("rounded-full", className)}
+          className={className}
           aria-label={labels.label}
         >
           <Icon aria-hidden="true" />

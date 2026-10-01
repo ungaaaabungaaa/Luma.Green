@@ -27,6 +27,7 @@ import { api } from "../../../../convex/_generated/api";
 import { shiftDate } from "../../../../convex/lib/dates";
 import { indiaToday } from "../../../../convex/lib/onboarding";
 import { formatDay, formatRupees } from "../format";
+import { BookingOutcomeChart, MaterialWeightChart } from "./pilot-charts";
 
 type Summary = FunctionReturnType<typeof api.pilot.summary>;
 const PERIODS = [
@@ -53,13 +54,13 @@ export function PilotNumbers() {
     to: Date.parse(`${shiftDate(end, 1)}T00:00:00+05:30`),
   });
   return (
-    <div className="flex max-w-5xl flex-col gap-6">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:gap-8">
       <AppPageHeader
         title="Pilot numbers"
         lead="Bookings and applications recorded on the platform. Payments are recorded at the door; the platform does not transfer money."
       />
       <div
-        className="flex flex-wrap items-center gap-2"
+        className="flex flex-wrap items-center gap-2 rounded-xl border bg-card p-2"
         role="group"
         aria-label="Report period"
       >
@@ -109,6 +110,14 @@ function Report({ summary }: { summary: Summary }) {
   const { bookings, applications } = summary;
   const isTruncated =
     summary.bookingsTruncated || summary.applicationsTruncated;
+  const outcomeRows = [
+    { label: "Waiting", count: bookings.outcomes.requested },
+    { label: "Accepted", count: bookings.outcomes.accepted },
+    { label: "On the way", count: bookings.outcomes.on_the_way },
+    { label: "Completed", count: bookings.outcomes.completed },
+    { label: "Declined", count: bookings.outcomes.declined },
+    { label: "Cancelled", count: bookings.outcomes.cancelled },
+  ];
   return (
     <>
       {isTruncated ? (
@@ -162,8 +171,11 @@ function Report({ summary }: { summary: Summary }) {
             the booking ends as declined.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <CardContent className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
+          {bookings.count > 0 ? (
+            <BookingOutcomeChart rows={outcomeRows} />
+          ) : null}
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-6">
             <Metric
               label="Waiting for a shop"
               value={number.format(bookings.outcomes.requested)}
@@ -207,34 +219,50 @@ function Report({ summary }: { summary: Summary }) {
               No completed receipts in this period.
             </p>
           ) : (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Material code</TableHead>
-                  <TableHead className="text-end">Estimated kg</TableHead>
-                  <TableHead className="text-end">Weighed kg</TableHead>
-                  <TableHead className="text-end">Difference kg</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {bookings.materials.map((row) => (
-                  <TableRow key={row.code}>
-                    <TableCell className="font-mono">{row.code}</TableCell>
-                    <TableCell className="text-end tabular-nums">
-                      {number.format(row.estimatedGrams / 1000)}
-                    </TableCell>
-                    <TableCell className="text-end tabular-nums">
-                      {number.format(row.weighedGrams / 1000)}
-                    </TableCell>
-                    <TableCell className="text-end tabular-nums">
-                      {number.format(
-                        (row.weighedGrams - row.estimatedGrams) / 1000,
-                      )}
-                    </TableCell>
+            <div className="flex min-w-0 flex-col gap-6">
+              <div
+                className="flex flex-wrap gap-4 text-xs text-muted-foreground"
+                aria-hidden="true"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <span className="size-2.5 rounded-sm bg-chart-3" />
+                  Estimated kg
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="size-2.5 rounded-sm bg-chart-1" />
+                  Weighed kg
+                </span>
+              </div>
+              <MaterialWeightChart rows={bookings.materials} />
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Material code</TableHead>
+                    <TableHead className="text-end">Estimated kg</TableHead>
+                    <TableHead className="text-end">Weighed kg</TableHead>
+                    <TableHead className="text-end">Difference kg</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHeader>
+                <TableBody>
+                  {bookings.materials.map((row) => (
+                    <TableRow key={row.code}>
+                      <TableCell className="font-mono">{row.code}</TableCell>
+                      <TableCell className="text-end tabular-nums">
+                        {number.format(row.estimatedGrams / 1000)}
+                      </TableCell>
+                      <TableCell className="text-end tabular-nums">
+                        {number.format(row.weighedGrams / 1000)}
+                      </TableCell>
+                      <TableCell className="text-end tabular-nums">
+                        {number.format(
+                          (row.weighedGrams - row.estimatedGrams) / 1000,
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           )}
         </CardContent>
       </Card>
@@ -284,9 +312,11 @@ function Metric({
   hint?: string;
 }) {
   return (
-    <div className="rounded-lg bg-muted/40 p-4">
+    <div className="min-w-0 border-s-2 border-border py-1 ps-4">
       <dt className="text-sm text-muted-foreground">{label}</dt>
-      <dd className="mt-1 text-2xl font-semibold tabular-nums">{value}</dd>
+      <dd className="mt-2 font-display text-2xl font-semibold tracking-tight break-words tabular-nums">
+        {value}
+      </dd>
       {hint ? (
         <dd className="mt-1 text-xs text-muted-foreground">{hint}</dd>
       ) : null}

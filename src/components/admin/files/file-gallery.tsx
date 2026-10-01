@@ -161,14 +161,14 @@ function PrivateFileCard({ file }: { file: FileSummary }) {
   }
 
   return (
-    <figure className="flex h-full flex-col gap-3 rounded-lg border p-3">
+    <figure className="flex h-full min-w-0 flex-col gap-4 rounded-lg border bg-muted/20 p-3">
       {body}
       <figcaption className="flex flex-wrap items-end justify-between gap-2">
         <span className="flex min-w-0 flex-col">
-          <span className="text-xs font-medium text-primary">
+          <span className="text-xs font-medium text-muted-foreground">
             {FILE_TYPE_LABELS[file.type]}
           </span>
-          <span className="truncate text-sm font-medium" title={file.name}>
+          <span className="text-sm font-medium break-all" title={file.name}>
             {file.name}
           </span>
           <span className="text-xs text-muted-foreground">
@@ -249,7 +249,7 @@ function FileActions({
     (preview === "pdf" || preview === "image") &&
     file.contentType !== "image/svg+xml";
   return (
-    <span className="flex gap-1">
+    <span className="flex flex-wrap gap-1">
       {canOpen ? (
         <Button
           size="sm"

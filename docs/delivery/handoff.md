@@ -1,25 +1,36 @@
 # Agent handoff — 2 October 2026
 
-**Status:** shared UI redesign, native demo setup and Word/Google Docs guide
-migration are the current delivery slice, based on `9fb82cd`. Device mockups and
-visible illustration captions are removed. Light, dark and system themes now
-apply to the public site, admin and workspaces. See [UI redesign](ui-redesign.md),
-[desktop demo](desktop-demo.md) and [mobile demo](mobile-demo.md).
+**Current slice:** designer system polish and an expanded homepage on
+`feat/design-system-polish`, based on main `e403503`. The founder rejected the
+previous theme and approved a full public, role and admin redesign. Read
+[the design plan](../design/designer-system.md) and the
+[route review](designer-review.md). The source pass uses neutral light/dark
+surfaces, Geist display with Noto scripts, shared Lucide icons and consistent
+controls. Six new home sections explain the existing product. Admin pilot charts
+use actual query values through Recharts; text/table equivalents remain visible.
 
-Local verification passed: `pnpm check` (1,151 web, 27 mobile and 20 desktop
-tests), production build, 60 Chromium checks, 29 final motion/site checks and
-five configured analytics checks. The 51-page Word guide and its six freshness
-tests pass. Google Docs publication remains pending: authentication was accepted,
-then the plugin tools disappeared before an import result. Read
-[cloud publication state](../user-guide/cloud.json); no cloud URL is claimed.
+PR #26 was merged into main as `e403503` before this slice. Do not resume the old
+`feat/pilot-readiness-cleanup` branch. The root `luma-green-user-guide.pdf` is an
+unrelated user file and must remain untouched and unstaged.
 
-Integration is tracked in [PR #26](https://github.com/ungaaaabungaaa/Luma.Green/pull/26),
-from `feat/pilot-readiness-cleanup` into `main`. Once that PR is merged, continue
-from `main`; do not restart from the old feature branch. Check the live PR and
-remote before claiming merge or deployment.
-[Future enhancements](../product/enhancement-proposal.md) are a research proposal
-and still require user approval. Do not implement them just because they are in
-the repo. The user approved the UI, demo and guide work separately.
+Local verification passed: `pnpm check` (1,171 web, 27 mobile, 20 desktop
+unit tests), formatting, clean production build, all 107 Chromium checks with the
+CI worker setting and five configured analytics checks. Independent review found
+and closed translated-layout and dark chart-label defects. The maintained Word
+guide has 56 reviewed pages and 51 screenshot placements; all six guide freshness
+tests pass. Public screenshots are actual disconnected pages. Protected screens
+remain explicitly labelled synthetic fixtures, not live account acceptance.
+
+The reviewed guide was imported into native Google Docs. Read
+[`cloud.json`](../user-guide/cloud.json) for its verification state and stable
+document URL. Preserve that document ID on future updates. Git integration and
+hosted checks must be verified separately; do not infer production or provider
+readiness from local results.
+
+[Future enhancements](../product/enhancement-proposal.md) remain an unapproved
+research proposal. Native signing, real device testing, store approval and live
+provider acceptance remain separate release gates. This work changes presentation,
+not ledger, authentication or provider contracts.
 
 ## Resume procedure
 
@@ -37,8 +48,8 @@ the repo. The user approved the UI, demo and guide work separately.
    maintained Word user guide and browser captures are required tracked artifacts.
 
 Repository: `https://github.com/ungaaaabungaaa/Luma.Green.git`.
-Branch: `feat/pilot-readiness-cleanup`.
-Starting base: `3d1e720`, also remote main when checked for this handoff.
+Branch: `feat/design-system-polish`.
+Starting base for this slice: `e403503`, merged main at task start.
 Local checkout: `/Users/syedabdulmuqeeth/Developer/SandBox/luma.green`.
 
 For a new machine only:

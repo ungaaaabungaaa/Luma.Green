@@ -36,10 +36,10 @@ export async function SubsidyExplainer() {
   return (
     <section
       aria-labelledby="solar-subsidy"
-      className="grid gap-8 rounded-2xl border bg-muted/40 p-6 sm:p-8 lg:grid-cols-[3fr_2fr] lg:gap-12"
+      className="grid gap-8 rounded-xl border bg-muted/30 p-6 sm:p-8 lg:grid-cols-[3fr_2fr] lg:gap-12"
     >
       <div className="flex flex-col gap-3">
-        <span className="flex size-11 items-center justify-center rounded-xl bg-brand-100 text-brand-900">
+        <span className="flex size-11 items-center justify-center rounded-lg border bg-card text-foreground">
           <LandmarkIcon aria-hidden className="size-5" />
         </span>
         <h2
@@ -56,7 +56,7 @@ export async function SubsidyExplainer() {
             href={PM_SURYA_GHAR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             {t("link")}
             <ExternalLinkIcon aria-hidden className="size-3.5" />

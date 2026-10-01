@@ -49,8 +49,10 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 
 function choiceClass(isSelected: boolean, isDisabled: boolean) {
   return cn(
-    "rounded-2xl border-2 bg-card font-normal",
-    isSelected ? "border-primary bg-accent" : "border-border",
+    "rounded-lg border bg-card font-normal",
+    isSelected
+      ? "border-primary bg-accent ring-1 ring-primary ring-inset"
+      : "border-border",
     isDisabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
   );
 }
@@ -244,7 +246,7 @@ export function WhenStep({
           </p>
         </div>
       ) : (
-        <div className="flex flex-col gap-1 rounded-2xl border bg-card p-4">
+        <div className="flex flex-col gap-1 rounded-xl border bg-card p-4">
           <p className="text-sm text-muted-foreground">{t("when.dropoffAt")}</p>
           <p className="font-semibold">{shop?.name}</p>
           <p className="flex gap-2 text-sm">

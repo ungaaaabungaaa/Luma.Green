@@ -32,8 +32,8 @@ export function StepFrame({
   }, [shouldFocus]);
 
   return (
-    <section aria-labelledby="sell-step-title" className="flex flex-col gap-5">
-      <div className="flex flex-col gap-1">
+    <section aria-labelledby="sell-step-title" className="flex flex-col gap-6">
+      <div className="flex flex-col gap-2">
         {onBack ? (
           <Button
             variant="ghost"

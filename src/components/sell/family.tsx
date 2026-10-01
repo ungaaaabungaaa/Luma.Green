@@ -1,13 +1,6 @@
-import {
-  CookingPotIcon,
-  CpuIcon,
-  type LucideIcon,
-  MilkIcon,
-  NewspaperIcon,
-  ShirtIcon,
-  WineIcon,
-} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
+import { MATERIAL_FAMILY_ICONS } from "@/components/app/material-family";
 import { cn } from "@/lib/utils";
 
 import type { Family } from "../../../convex/lib/catalogue";
@@ -25,41 +18,40 @@ export const FAMILIES: readonly Family[] = [
 /**
  * One colour and one icon per material family, the same everywhere a
  * material appears (docs/architecture/frontend.md, "Material colours").
- * Built only from the palette the design system allows — amber, sky, the
- * brand scale and neutrals — until the `--material-*` tokens land.
+ * Neutral icon surfaces keep selection and status colours distinct.
  */
 export const FAMILY_STYLE: Record<
   Family,
   { icon: LucideIcon; chip: string; defaultKg: number }
 > = {
   paper: {
-    icon: NewspaperIcon,
-    chip: "bg-amber-50 text-amber-800 dark:bg-amber-950/50 dark:text-amber-200",
+    icon: MATERIAL_FAMILY_ICONS.paper,
+    chip: "bg-muted text-muted-foreground",
     defaultKg: 5,
   },
   plastic: {
-    icon: MilkIcon,
-    chip: "bg-sky-50 text-sky-800 dark:bg-sky-950/50 dark:text-sky-200",
+    icon: MATERIAL_FAMILY_ICONS.plastic,
+    chip: "bg-muted text-muted-foreground",
     defaultKg: 2,
   },
   metal: {
-    icon: CookingPotIcon,
-    chip: "bg-muted text-foreground",
+    icon: MATERIAL_FAMILY_ICONS.metal,
+    chip: "bg-muted text-muted-foreground",
     defaultKg: 2,
   },
   ewaste: {
-    icon: CpuIcon,
-    chip: "bg-accent text-accent-foreground",
+    icon: MATERIAL_FAMILY_ICONS.ewaste,
+    chip: "bg-muted text-muted-foreground",
     defaultKg: 1,
   },
   glass: {
-    icon: WineIcon,
-    chip: "bg-card text-sky-700 ring-1 ring-sky-200 ring-inset dark:text-sky-300 dark:ring-sky-800",
+    icon: MATERIAL_FAMILY_ICONS.glass,
+    chip: "bg-muted text-muted-foreground",
     defaultKg: 2,
   },
   other: {
-    icon: ShirtIcon,
-    chip: "bg-card text-muted-foreground ring-1 ring-border ring-inset",
+    icon: MATERIAL_FAMILY_ICONS.other,
+    chip: "bg-muted text-muted-foreground",
     defaultKg: 2,
   },
 };
@@ -77,7 +69,7 @@ export function FamilyIcon({
     <span
       aria-hidden
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-xl",
+        "flex shrink-0 items-center justify-center rounded-lg",
         size === "md" ? "size-11" : "size-9",
         chip,
       )}
