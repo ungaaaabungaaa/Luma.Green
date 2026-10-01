@@ -1,6 +1,8 @@
 # Feature inventory
 
-> **Status:** the investor prototype, 29 Sep 2026. A pull request that adds,
+> **Status:** pilot implementation pass, 1 Oct 2026. Local verification is
+> recorded in [the delivery log](../delivery/cleanup-progress.md); provider and
+> deployment checks remain in [the launch checklist](../operations/launch-checklist.md). A pull request that adds,
 > changes or removes a feature updates this page. How to try each one, step by
 > step: [the A-to-Z test plan](../testing/README.md).
 
@@ -18,13 +20,28 @@ paths; every localized page also lives under a language code, such as
 | Sell scrap in four steps: what you have and about how many kilos; which shop, from each verified shop's offer for your scrap; when, for a pickup from home or a drop-off; then book with a code sent to your number | `/sell`     | Offers come from each shop's own prices, never from AI ([ADR 0011](../decisions/0011-ai-estimates-priced-by-our-tables.md)). Nearest shops first with your location, best price first without it |
 | Track a booking: when, which shop, what's collected, what to expect; afterwards what was weighed, what was paid and the recycle points earned. Cancel for free until the shop is on the way                         | `/t/{code}` | A 10-character code that can't be guessed, and the page updates live. Demo: `/t/priyademo1` (booked), `/t/priyademo2` (paid)                                                                     |
 
+Pickup dispatch now supports a shop's service radius and optional auto-accept.
+A manual offer expires after 15 minutes. A declined or expired offer moves to
+an eligible nearby shop with an equal or higher quote. The tracking page shows
+a reassignment. Existing bookings without dispatch metadata remain manual.
+
+The optional photo estimate is implemented behind OpenRouter configuration.
+The household reviews suggested materials and weight ranges before applying
+them. Prices come from the fallback table and then the selected shop's rates.
+The image is transient. See [AI estimation](../architecture/ai-estimation.md).
+
 ### Signing in and joining
 
-| Feature                                                                                               | URL                                                                                                                | Notes                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| Language first, then phone number and a 6-digit code                                                  | `/login`, `/login/verify`                                                                                          | 5 tries a code, a new code after 30 seconds, 10 requests a minute per address ([auth](../architecture/auth.md))                   |
-| What each role is and needs                                                                           | `/join`                                                                                                            | Public                                                                                                                            |
-| The application: role, consent, the form for the role, drafts saved as you type, then where it stands | `/join/status`, `/join/kabadiwala`, `/join/{yard,recycler,manufacturer}`, `/join/{kind}/documents`, `/join/saathi` | One per person. Uploads are checked by their real file type; each submission is kept as a version ([onboarding](./onboarding.md)) |
+| Feature                                                                                               | URL                                                                                                                | Notes                                                                                                                                                        |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Language first, then phone number and a 6-digit code                                                  | `/login`, `/login/verify`                                                                                          | 5 tries a code; SMS send limits: 30-second cooldown, 3 per 15 minutes and 10 per day per number; address limits also apply ([auth](../architecture/auth.md)) |
+| What each role is and needs                                                                           | `/join`                                                                                                            | Public                                                                                                                                                       |
+| The application: role, consent, the form for the role, drafts saved as you type, then where it stands | `/join/status`, `/join/kabadiwala`, `/join/{yard,recycler,manufacturer}`, `/join/{kind}/documents`, `/join/saathi` | One per person. Uploads are checked by their real file type; each submission is kept as a version ([onboarding](./onboarding.md))                            |
+
+Booking and application status SMS use an optional MSG91 Flow outbox. The eight
+events include confirmation, manual pickup offer, acceptance, reassignment and
+application outcomes. Each event is sent at most once; provider acceptance is
+separate from delivery. See [SMS operations](../operations/sms-notifications.md).
 
 ### Kabadiwala app
 
@@ -65,6 +82,13 @@ paths; every localized page also lives under a language code, such as
 | Prices: Bengaluru's minimum and fallback price for every material                                                                                         | `/admin/prices`                |                                                                                                 |
 | Support: messages from the help centre and the solar page, marked answered once dealt with                                                                | `/admin/support`               |                                                                                                 |
 
+The admin also has `/admin/pilot`: bounded date/cohort reports for booking
+outcomes, acceptance time, weighed amounts, payments and application review
+time. Warnings identify truncated reports. These totals include demo records
+if they fall in the chosen range. Photo accuracy and abandoned flows are not
+measured. `/admin/prices` can fill missing material translations without
+replacing an existing name.
+
 ### Public site
 
 | Feature                                                                                                                                                      | URL                                                              | Notes                                       |
@@ -90,18 +114,18 @@ paths; every localized page also lives under a language code, such as
 
 Everything below is there to show the idea. None of it is market data.
 
-| What                                                                 | Where it comes from                                                                                                                   | Once it's real                                                                                  |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Businesses, people, pickups, lots, trades, jobs and support messages | [convex/lib/demo.ts](../../convex/lib/demo.ts), loaded by `demo:seed`                                                                 | Real applicants, verified by the admin                                                          |
-| The material list and its names                                      | [convex/lib/catalogue.ts](../../convex/lib/catalogue.ts): 26 materials, named in English, Hindi and Kannada, and in English elsewhere | The admin keeps it                                                                              |
-| Prices: minimum, fallback and 30 days of market prices               | Sample Bengaluru figures in the catalogue                                                                                             | The admin's tables ([pricing](./pricing.md)); a source for market prices is still open          |
-| CO₂e factors                                                         | Indicative, rounded from published averages                                                                                           | Sourced factors before any public claim                                                         |
-| Solar estimates                                                      | Indicative assumptions, shown on the page                                                                                             | A site visit by a verified installer                                                            |
-| Escrow between businesses                                            | Simulated: no money moves                                                                                                             | A payment provider, after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md)) |
-| Paying households                                                    | Recorded, not processed: cash or UPI at the door                                                                                      | The same for the pilot                                                                          |
-| Sign-in codes                                                        | 123456 for demo numbers; other numbers' codes go to the Convex log                                                                    | SMS through MSG91 once DLT registration is approved                                             |
-| Documents in the demo applications                                   | A generated PDF and pictures ([convex/lib/demoFiles.ts](../../convex/lib/demoFiles.ts))                                               | Applicants' own uploads                                                                         |
-| Recycle points                                                       | One for every ₹10 paid                                                                                                                | What they're worth is an [open question](./open-questions.md)                                   |
+| What                                                                 | Where it comes from                                                                                                                        | Once it's real                                                                                  |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Businesses, people, pickups, lots, trades, jobs and support messages | [convex/lib/demo.ts](../../convex/lib/demo.ts), loaded by `demo:seed`                                                                      | Real applicants, verified by the admin                                                          |
+| The material list and its names                                      | [convex/lib/catalogue.ts](../../convex/lib/catalogue.ts): 26 materials, named in all 12 supported languages; native-speaker review remains | The admin keeps it                                                                              |
+| Prices: minimum, fallback and 30 days of market prices               | Sample Bengaluru figures in the catalogue                                                                                                  | The admin's tables ([pricing](./pricing.md)); a source for market prices is still open          |
+| CO₂e factors                                                         | Indicative, rounded from published averages                                                                                                | Sourced factors before any public claim                                                         |
+| Solar estimates                                                      | Indicative assumptions, shown on the page                                                                                                  | A site visit by a verified installer                                                            |
+| Escrow between businesses                                            | Simulated: no money moves                                                                                                                  | A payment provider, after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md)) |
+| Paying households                                                    | Recorded, not processed: cash or UPI at the door                                                                                           | The same for the pilot                                                                          |
+| Sign-in codes                                                        | With explicit development mode only: 123456 for demo numbers; other codes go to the Convex log                                             | SMS through MSG91 once DLT registration is approved                                             |
+| Documents in the demo applications                                   | A generated PDF and pictures ([convex/lib/demoFiles.ts](../../convex/lib/demoFiles.ts))                                                    | Applicants' own uploads                                                                         |
+| Recycle points                                                       | One for every ₹10 paid                                                                                                                     | What they're worth is an [open question](./open-questions.md)                                   |
 
 ## Next
 
@@ -111,19 +135,17 @@ businesses, escrow, solar, Saathi jobs); the work is to make them real.
 
 **Before the pilot** (6 to 12 October):
 
-- SMS through MSG91 once the DLT templates are approved: sign-in codes, booking
-  confirmations with the tracking link, and application decisions.
-- The AI photo estimate on OpenRouter, with a spend limit and a labelled set of
-  Bengaluru photos ([AI estimation](../architecture/ai-estimation.md)).
-- Kabadiwala auto-accept, and the rest of the dispatch rules: a booking moves
-  to the next nearest kabadiwala after a decline or no answer
-  ([household](./household.md#rules)).
+- Activate and verify MSG91 with approved templates and real handsets. The OTP
+  and status-message implementations use separate provider configuration.
+- Select and evaluate an OpenRouter vision model on labelled Bengaluru photos,
+  set a hard key spending limit, and check failure/manual-entry paths.
+- Verify dispatch with actual pilot shop locations and service radii.
 - Real minimum and fallback prices for Bengaluru, and the pilot kabadiwalas
   onboarded through the real flow (founder).
 
 **During the pilot** (13 to 20 October):
 
-- A pilot numbers page in the admin console
+- Use the admin pilot report against real pilot data
   ([ADR 0012](../decisions/0012-pilot-analytics-in-convex.md),
   [pilot plan](../delivery/pilot.md)).
 - Fixing what the pilot breaks, daily.

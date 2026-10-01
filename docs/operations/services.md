@@ -1,59 +1,56 @@
 # Services and accounts
 
 What is wired in code and what still needs a human with a login. Keep this
-file current — it answers "is X set up?". Last reviewed 29 Sep 2026.
+file current. Code was reviewed on 1 Oct 2026. Account and deployment notes
+from 29 Sep are historical and have not been re-verified. Use the
+[launch checklist](launch-checklist.md) for the current setup steps.
 
-Legend: **✅ live** · **🟡 partly** · **🔑 needs a human** · **⏸ deferred** ·
+Legend: **✅ implemented** · **🟡 partly** · **🔑 needs a human** · **⏸ deferred** ·
 **⬜ later**
 
 ## Core platform
 
-| Service             | Status | Notes                                                                                                                                               |
-| ------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Next.js 16          | ✅     | App Router, Turbopack, server components by default                                                                                                 |
-| Tailwind v4         | ✅     | Tokens in `src/app/globals.css`; white theme only ([ADR 0010](../decisions/0010-white-theme-mobile-first-shadcn.md))                                |
-| shadcn/ui           | ✅     | Vendored in `src/components/ui`; add more with the shadcn CLI                                                                                       |
-| next-intl           | ✅     | 12 locales, hreflang, RTL                                                                                                                           |
-| Convex              | 🟡     | Dev deployment live (`glorious-rooster-470`, EU West). Prod deploys need the deploy key — [switch-on](./environments.md#one-time-switch-on-founder) |
-| Vercel              | 🟡     | Project `luma_green`; production at `lumagreen.vercel.app`, previews per PR. Build command not yet running `convex deploy`                          |
-| Domain `luma.green` | 🔑     | Not resolving yet. Add it in Vercel and point DNS; `www` → apex                                                                                     |
-| GitHub              | ✅     | Actions, Dependabot, branch protection, templates                                                                                                   |
-| CodeRabbit          | 🔑     | `.coderabbit.yaml` committed; install the GitHub app                                                                                                |
+| Service             | Status | Notes                                                                                                                                                                    |
+| ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Next.js 16          | ✅     | App Router, Turbopack, server components by default                                                                                                                      |
+| Tailwind v4         | ✅     | Tokens in `src/app/globals.css`; white theme only ([ADR 0010](../decisions/0010-white-theme-mobile-first-shadcn.md))                                                     |
+| shadcn/ui           | ✅     | Vendored in `src/components/ui`; add more with the shadcn CLI                                                                                                            |
+| next-intl           | ✅     | 12 locales, hreflang, RTL                                                                                                                                                |
+| Convex              | 🟡     | Historical dev deployment: `glorious-rooster-470`, EU West. Verify the target; production needs a deploy key — [switch-on](./environments.md#one-time-switch-on-founder) |
+| Vercel              | 🟡     | Project `luma_green`; production at `lumagreen.vercel.app`, previews per PR. Build command not yet running `convex deploy`                                               |
+| Domain `luma.green` | 🔑     | Verify DNS and the Vercel domain binding; route `www` to apex                                                                                                            |
+| GitHub              | ✅     | Actions, Dependabot, branch protection, templates                                                                                                                        |
+| CodeRabbit          | 🔑     | `.coderabbit.yaml` committed; install the GitHub app                                                                                                                     |
 
-> **Vercel plan.** Vercel's free Hobby plan is for personal, non-commercial
-> projects. Check the current terms and move the project to Pro before the
-> pilot takes real business.
+> **Vercel plan.** Check the current terms and choose a plan that permits
+> the pilot's business use.
 
 ## Product services
 
-| Service                 | Status | Notes                                                                                               |
-| ----------------------- | ------ | --------------------------------------------------------------------------------------------------- |
-| Better Auth (on Convex) | 🟡     | Decided ([ADR 0004](../decisions/0004-auth-phone-otp-and-admin-totp.md)); built with onboarding     |
-| MSG91 (SMS codes)       | 🔑     | Founder is registering on DLT. Needs: principal entity, sender ID, and the templates below approved |
-| OpenRouter (AI)         | 🔑     | Set a **hard spend limit** on each key before it leaves local                                       |
-| Mapbox                  | 🔑     | Token must be URL-restricted before shipping                                                        |
-| PostHog                 | ⏸      | Deferred until the partner decision ([ADR 0012](../decisions/0012-pilot-analytics-in-convex.md))    |
-| Sentry                  | ⏸      | Same. Turn on first when the decision is made                                                       |
-| Resend (email)          | ⬜     | Not needed in the pilot                                                                             |
-| Razorpay                | ⬜     | Escrow after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md))                  |
-| Cloudflare R2           | ⬜     | Only if files outgrow Convex storage or need expiring links                                         |
-| WhatsApp Business       | ⬜     | Household channel after the pilot                                                                   |
+| Service                 | Status | Notes                                                                                                   |
+| ----------------------- | ------ | ------------------------------------------------------------------------------------------------------- |
+| Better Auth (on Convex) | 🟡     | Implemented with onboarding, per-number OTP limits and recovery paths ([auth](../architecture/auth.md)) |
+| MSG91 (SMS codes)       | 🔑     | OTP and status-message code implemented; account, sender and template approval remain external checks   |
+| OpenRouter (AI)         | 🔑     | Photo estimates implemented; needs key, evaluated vision model and a hard spending limit                |
+| Mapbox                  | ⬜     | Not used. Browser location and distance calculations need no map account                                |
+| PostHog                 | ⏸      | Deferred until the partner decision ([ADR 0012](../decisions/0012-pilot-analytics-in-convex.md))        |
+| Sentry                  | ⏸      | Same. Turn on first when the decision is made                                                           |
+| Resend (email)          | ⬜     | Not needed in the pilot                                                                                 |
+| Razorpay                | ⬜     | Escrow after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md))                      |
+| Cloudflare R2           | ⬜     | Only if files outgrow Convex storage or need expiring links                                             |
+| WhatsApp Business       | ⬜     | Household channel after the pilot                                                                       |
 
 ### SMS templates to register
 
-**DLT in short** (TRAI rules as amended Feb 2025; MSG91's guides): register
-Luma.Green as a _principal entity_ on a telecom operator's DLT portal (PAN,
-GST, identity and address proof, an authorisation letter; ₹5,000 + GST), then a
-6-letter **sender ID** that matches the brand, then link it to MSG91's
-telemarketer ID ("chain binding"). Each template names the brand, marks
-variables as `{#var#}` and takes 2–4 working days to approve; allow **about a
-week** end to end. A sign-in code sent within 30 minutes of the user asking is
-_transactional_ — no consent template needed. In MSG91, an OTP template uses
-`##OTP##` and is sent with `POST https://control.msg91.com/api/v5/otp`.
+Use [MSG91's current setup documentation](https://docs.msg91.com/) and the
+account dashboard to confirm registration, sender IDs, template category,
+languages, fees and approval status. These requirements are external to the
+application. The OTP adapter uses `POST /api/v5/otp`; status messages use Flow
+and their own approved templates. Local tests do not send messages.
 
-Every SMS must match a DLT-approved template exactly, per language (Unicode
-templates for Kannada and Hindi). Register at least these, in English, Kannada
-and Hindi, with `{#var#}` placeholders:
+Prepare approved templates for the enabled launch languages. The examples
+below describe intended content, not approved provider text. Confirm each
+placeholder and URL against the actual template before enabling sends:
 
 | Template                | Example (English)                                                                         |
 | ----------------------- | ----------------------------------------------------------------------------------------- |

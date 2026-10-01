@@ -199,7 +199,7 @@ describe("/help/[role]/[guide]", () => {
     const next = screen.getByRole("region", { name: "Next guide" });
     expect(
       within(next).getByRole("link", {
-        name: "Sort your stock and sell to yards",
+        name: "Demo guide: Sort your stock and sell to yards",
       }),
     ).toHaveAttribute("href", "/help/kabadiwala/stock-and-sell");
     expect(screen.getByRole("link", { name: /Write to us/ })).toHaveAttribute(

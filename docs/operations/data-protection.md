@@ -17,18 +17,20 @@ We build to the DPDP standard now, so nothing has to change in 2027.
 
 ## What we hold, why, and for how long
 
-| Data                                                                     | Whose        | Why                               | Who can see it                                                | Kept                                                          |
-| ------------------------------------------------------------------------ | ------------ | --------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| Phone number                                                             | Everyone     | Sign-in codes, pickups, updates   | The person, the admin; a kabadiwala after accepting a booking | While active, then 12 months                                  |
-| Pickup address and map pin                                               | Households   | So the kabadiwala can find them   | The assigned kabadiwala, the admin                            | 12 months after the booking                                   |
-| Photos of scrap                                                          | Households   | Estimate; measure accuracy        | The system, the admin                                         | 90 days — longer only with a separate opt-in for training     |
-| Business address and location                                            | Businesses   | So nearby users can find them     | Public once approved                                          | While active                                                  |
-| GSTIN, pollution-board consent and certificate                           | Businesses   | Verification                      | The business, the admin                                       | While active                                                  |
-| Machine photos and videos                                                | Businesses   | Verification                      | The business, the admin                                       | While active                                                  |
-| Photo ID (never a full Aadhaar) and selfie                               | Saathis      | Verification and household safety | The Saathi, the admin                                         | While active; 90 days after a rejection                       |
-| Receipts — weights, amounts, method                                      | Both parties | A record of each trade            | Both parties, the admin                                       | 72 months (tax-record period)                                 |
-| Admin profile — name, email, phone, date of birth, last 4 Aadhaar digits | The admin    | The operator's identity record    | The admin                                                     | While in the role                                             |
-| Audit log and events                                                     | —            | Security, disputes, pilot numbers | The admin                                                     | At least 1 year (processing logs); the audit log is permanent |
+| Data                                                                     | Whose                     | Why                                     | Who can see it                                                                         | Kept                                                                                             |
+| ------------------------------------------------------------------------ | ------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Phone number                                                             | Everyone                  | Sign-in codes, pickups, updates         | The person, the admin; a kabadiwala after accepting a booking                          | While active, then 12 months                                                                     |
+| Pickup address and map pin                                               | Households                | So the kabadiwala can find them         | The assigned kabadiwala, the admin                                                     | 12 months after the booking                                                                      |
+| Photos of scrap                                                          | Households                | Optional estimate                       | Transient processing by Convex, OpenRouter and the selected provider; no admin gallery | Not stored in application storage or tables; provider routing requires zero data retention       |
+| Hashed SMS/photo request counters                                        | Sign-in and photo users   | Limit paid requests                     | Internal server functions                                                              | Rolling 24 hours; scheduled expiry                                                               |
+| SMS event and attempt metadata                                           | Booking/application users | Deduplication and operational diagnosis | Internal functions and admin data access                                               | Retained; no automatic outbox purge yet. Phone and message bodies are not copied into the outbox |
+| Business address and location                                            | Businesses                | So nearby users can find them           | Public once approved                                                                   | While active                                                                                     |
+| GSTIN, pollution-board consent and certificate                           | Businesses                | Verification                            | The business, the admin                                                                | While active                                                                                     |
+| Machine photos and videos                                                | Businesses                | Verification                            | The business, the admin                                                                | While active                                                                                     |
+| Photo ID (never a full Aadhaar) and selfie                               | Saathis                   | Verification and household safety       | The Saathi, the admin                                                                  | While active; 90 days after a rejection                                                          |
+| Receipts — weights, amounts, method                                      | Both parties              | A record of each trade                  | Both parties, the admin                                                                | 72 months (tax-record period)                                                                    |
+| Admin profile — name, email, phone, date of birth, last 4 Aadhaar digits | The admin                 | The operator's identity record          | The admin                                                                              | While in the role                                                                                |
+| Audit log and events                                                     | —                         | Security, disputes, pilot numbers       | The admin                                                                              | At least 1 year (processing logs); the audit log is permanent                                    |
 
 Nothing is collected "just in case". A new field needs a line in this table.
 
@@ -52,8 +54,9 @@ Nothing is collected "just in case". A new field needs a line in this table.
   to withdraw consent and how to complain. In the user's language — English,
   Kannada and Hindi first (the DPDP Act allows English or any Eighth-Schedule
   language).
-- **Consent is specific.** Using household photos to train the model is a
-  separate opt-in, off by default.
+- **Consent is specific.** Photo estimation requires an explicit action. No
+  training collection or opt-in is implemented. Adding one needs its own notice
+  and storage/retention design.
 - **18 and over.** Everyone who registers confirms they are 18+; households
   confirm it when booking. The DPDP Act needs verifiable parental consent for
   anyone younger, and we don't serve minors.
@@ -110,7 +113,8 @@ launch. The privacy notice names every processor.
 - [ ] Privacy notice per role in English, Kannada and Hindi, reviewed by a lawyer
 - [ ] 18+ confirmation in onboarding and at booking
 - [ ] "Unmasked Aadhaar → reject and delete" on the Saathi checklist
-- [ ] Scheduled clean-up jobs: photos after 90 days, rejected applications after 90 days
+- [ ] Verify transient photo behavior and provider retention terms; no photo storage is implemented
+- [ ] Define outbox retention and scheduled cleanup for rejected applications
 - [ ] A way to handle "my data" requests
 - [ ] The processor list and each provider's data processing terms checked
 - [ ] Tax advice on whether Luma.Green is an e-commerce operator under GST

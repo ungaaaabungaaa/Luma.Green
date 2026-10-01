@@ -263,17 +263,17 @@ pnpm screenshots    # the "See it" pictures, from a running app
 
 ## Tech stack
 
-| Layer     | Choice                                                                                                                                                                        |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                       |
-| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                                      |
-| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                   |
-| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                 |
-| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                                      |
-| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                               |
-| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                         |
-| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                       |
-| Waiting   | MSG91 (SMS, pending DLT approval), OpenRouter (AI photo estimates), Razorpay, Resend, Cloudflare R2, Mapbox, PostHog, Sentry: installed, switched off until their keys arrive |
+| Layer     | Choice                                                                                                                                                               |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                              |
+| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                             |
+| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                          |
+| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                        |
+| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                             |
+| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                      |
+| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                |
+| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                              |
+| Waiting   | MSG91 and OpenRouter: implementation ready for account setup and provider checks. PostHog and Sentry are optional. Maps use browser location. Payments remain a demo |
 
 ## Docs
 
@@ -292,10 +292,12 @@ pnpm screenshots    # the "See it" pictures, from a running app
 
 ## Status
 
-A prototype, as of 29 September 2026, ahead of the Bengaluru pilot on 13–20
-October 2026.
+A prototype with a local pilot implementation pass on 1 October 2026, ahead
+of the Bengaluru pilot on 13–20 October 2026. See the
+[delivery log](docs/delivery/cleanup-progress.md) and the exact
+[account and environment checklist](docs/operations/launch-checklist.md).
 
-**Real**, working end to end on the dev deployment:
+**Existing development flows** (deployment status must be checked before launch):
 
 - Sign-in with phone codes, and the admin's password and authenticator, with
   fixed-length sessions and rate limits.
@@ -318,10 +320,10 @@ October 2026.
 - No money moves. Households are paid at the door and the amount is recorded
   ([ADR 0009](docs/decisions/0009-money-off-platform-first.md)); escrow between
   businesses is simulated.
-- No SMS is sent until MSG91's DLT registration is approved: demo numbers use
-  123456, and other numbers' codes go to the Convex log.
-- The AI photo estimate isn't switched on yet (no OpenRouter key); rupee
-  amounts always come from the price tables
+- SMS requires approved MSG91 templates and Convex configuration. Only explicit
+  development mode uses demo codes or log delivery. Local provider tests use mocks.
+- The optional AI photo estimate needs an OpenRouter key and an evaluated model;
+  rupee amounts always come from the price tables
   ([ADR 0011](docs/decisions/0011-ai-estimates-priced-by-our-tables.md)).
 - Documents in the demo applications are generated samples.
 

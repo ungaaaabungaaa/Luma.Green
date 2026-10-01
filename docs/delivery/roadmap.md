@@ -1,5 +1,10 @@
 # Roadmap to the pilot
 
+> Implementation update, 1 Oct 2026: dispatch, photo estimates, status-message
+> adapters and the pilot report are implemented in the current branch. External
+> account approval and live provider checks remain. See the
+> [delivery log](cleanup-progress.md) and [launch checklist](../operations/launch-checklist.md).
+
 > **Status:** plan as of Tue 29 Sep 2026. Goal: real users in Bengaluru between
 > **13 and 20 October 2026**. Every change ships straight to production once its
 > checks pass.

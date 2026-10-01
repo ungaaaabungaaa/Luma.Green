@@ -168,10 +168,11 @@ Every feature must work in `/ar` and `/ur`. Use logical properties
 Every interactive element needs an accessible name. Test keyboard navigation
 before calling a flow done.
 
-## 9. Not wired yet (deliberate)
+## 9. Integration boundaries
 
-These are installed and configured but intentionally inert until someone owns
-them. Don't assume they work; wire them in a focused PR.
+Optional services must remain disabled without configuration. Local mock tests
+do not prove account approval, provider execution or production deployment.
+See `docs/operations/launch-checklist.md` before enabling a service.
 
 Convex **is** wired: the schema is deployed and `convex/_generated` is committed,
 so `api` and `Doc`/`Id` types are safe to import today.
@@ -187,10 +188,12 @@ Every field rule lives once in `convex/lib/onboarding.ts` — the forms validate
 with those schemas and `applications.submit` runs them again; change a rule
 there, never in a component.
 
-- **MSG91** — sending code is in place (`convex/sms.ts`); keys wait for DLT
-  approval, and the per-number cap in `docs/architecture/auth.md` comes first.
-- **Razorpay, Resend, R2, Mapbox, OpenRouter** — packages installed, keys
-  absent. Each needs its own PR with its own tests.
+- **MSG91** — OTP sending and per-number limits are implemented. Status
+  notifications use a separate outbox and approved Flow templates.
+- **OpenRouter** — optional transient photo estimates; server quotas and table
+  prices. See `docs/architecture/ai-estimation.md`.
+- **Razorpay, Resend, R2, Mapbox** — not required for the pilot. No payment
+  processing is implemented. Documents use Convex storage; location uses the browser.
 - **Expo / React Native** — `ios/` and `android/` are empty placeholders.
 
 ## 10. Lint

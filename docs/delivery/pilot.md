@@ -1,5 +1,11 @@
 # Pilot plan
 
+> Implementation note, 1 Oct 2026: `/admin/pilot` measures stored bookings and
+> application reviews. It does not measure abandoned flows, photo usage or
+> original AI accuracy. Submitted basket weights can include manual changes.
+> Reports include all records in the period, including demo records, and show
+> truncation warnings. See the [delivery log](cleanup-progress.md).
+
 > **Status:** draft, 29 Sep 2026. Pilot window: 13–20 October 2026, Bengaluru.
 
 ## Who

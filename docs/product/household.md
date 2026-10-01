@@ -17,9 +17,11 @@ possible.
    table ([pricing.md](./pricing.md)).
 2. **Book.** Choose _pickup from home_ or _I'll drop it off_. See verified
    kabadiwalas nearby, nearest first, with their hours and whether they pick up.
-   For a pickup choose a time slot and confirm the address and map pin. Enter a
+   For a pickup choose a time slot and confirm the address. Sharing a coarse
+   location is optional. Enter a
    mobile number and **confirm it with an SMS code** (MSG91). Book.
-3. **Track and get paid.** A tracking link arrives by SMS. The page shows **when**
+3. **Track and get paid.** The booking opens its tracking page. A tracking link also arrives by SMS
+   when the approved status template is configured. The page shows **when**
    the appointment is, **who** is coming (name, shop, verified badge, call
    button) and **how much** money and how many recycle points to expect. After
    the pickup it shows what was actually paid and the points earned.
@@ -30,9 +32,13 @@ under the confirmed phone number, so the tracking link works on any device.
 ## Rules
 
 - **Dispatch.** The booking is offered to the chosen kabadiwala. A kabadiwala
-  with auto-accept on accepts instantly. Otherwise, if there's no answer in
-  **15 minutes** (proposed) or they reject, it is offered to the next nearest
-  kabadiwala that picks up, and the household is told.
+  with auto-accept on accepts instantly only when the household shares a
+  location within that shop's service radius. Otherwise, after **15 minutes**
+  or a rejection, dispatch looks for an eligible active pickup shop in the same
+  city. It preserves or increases the quote and never repeats an attempted
+  shop. Without a shared pin, the chosen shop is an approximate search origin;
+  auto-accept stays off. The tracking page shows reassignments. Existing bookings
+  without dispatch metadata and drop-offs retain manual acceptance.
 - **Kabadiwalas without a vehicle** stay visible for drop-offs. Home pickups for
   them through Saathis come after the pilot.
 - **Payment happens at the door**, in cash or UPI, between the household and the
@@ -40,18 +46,17 @@ under the confirmed phone number, so the tracking link works on any device.
   in the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md)).
 - **Drop-offs** get a short code to show at the shop, so the kabadiwala can
   record the visit and we can count the business we generated.
-- **Recycle points** accrue per kilogram actually weighed, to the confirmed
-  phone number. What points are worth is **open**.
+- **Recycle points** accrue at one point per ₹10 recorded as paid, to the
+  confirmed phone number. What points are worth is **open**.
 - **Cancelling** is free until the kabadiwala is on the way.
 
 ## Screens and URLs
 
-| Screen   | URL              | Indexed |
-| -------- | ---------------- | ------- |
-| Snap     | `/sell`          | Yes     |
-| Estimate | `/sell/estimate` | No      |
-| Book     | `/sell/book`     | No      |
-| Track    | `/b/{code}`      | No      |
+| Screen                             | URL                                              | Indexed   |
+| ---------------------------------- | ------------------------------------------------ | --------- |
+| Basket and optional photo estimate | `/sell`                                          | Yes       |
+| Shop, time and confirmation        | `/sell?step=shop`, `?step=when`, `?step=confirm` | Same page |
+| Track                              | `/t/{code}`                                      | No        |
 
 Full routing and canonical rules: [architecture/urls.md](../architecture/urls.md).
 
