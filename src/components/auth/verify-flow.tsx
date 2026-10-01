@@ -15,12 +15,16 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { Link, useRouter } from "@/i18n/navigation";
-import { authClient } from "@/lib/auth-client";
+import {
+  requestPhoneCode,
+  type SendCodeErrorKey,
+  verifyPhoneCode,
+} from "@/lib/phone-auth";
 import { safeNextPath } from "@/lib/safe-next";
 
 import { api } from "../../../convex/_generated/api";
 import { formatIndianMobile } from "../../../convex/lib/phone";
-import { type CodeErrorKey, codeErrorKey } from "./errors";
+import type { CodeErrorKey } from "./errors";
 import { LoginSkeleton } from "./login-flow";
 import { SignInUnavailable } from "./sign-in-unavailable";
 import { readPhone, useStoredValue } from "./storage";
@@ -35,6 +39,7 @@ function ltr(text: string): string {
 
 const RESEND_AFTER_SECONDS = 30;
 const CODE_LENGTH = 6;
+const SESSION_WAIT_MS = 20_000;
 /**
  * Where a sign-in lands when no `?next=` was given: the app, which sends
  * anyone without an approved business on to their application.
@@ -48,6 +53,7 @@ export function VerifyFlow() {
 
 function VerifyForm() {
   const t = useTranslations("auth");
+  const common = useTranslations("common");
   const locale = useLocale();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -58,18 +64,22 @@ function VerifyForm() {
   // The number lives in this tab's session storage, never in the URL.
   const phone = useStoredValue(readPhone);
   const [code, setCode] = useState("");
-  const [status, setStatus] = useState<"idle" | "checking" | "verified">(
-    "idle",
+  const [status, setStatus] = useState<
+    "idle" | "checking" | "verified" | "session-timeout" | "profile-error"
+  >("idle");
+  const [error, setError] = useState<CodeErrorKey | SendCodeErrorKey | null>(
+    null,
   );
-  const [error, setError] = useState<CodeErrorKey | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(RESEND_AFTER_SECONDS);
   const isFinishing = useRef(false);
+  const requestPending = useRef(false);
+  const [isResending, setResending] = useState(false);
   const codeInput = useRef<HTMLInputElement>(null);
 
   // After a wrong code the boxes are cleared; put the cursor back in them.
   useEffect(() => {
-    if (error) codeInput.current?.focus();
-  }, [error]);
+    if (error && status === "idle") codeInput.current?.focus();
+  }, [error, status]);
 
   // No number means no code was sent from this tab: start again.
   useEffect(() => {
@@ -86,50 +96,76 @@ function VerifyForm() {
     };
   }, [secondsLeft]);
 
+  // An accepted code must never be submitted again. If the session takes too
+  // long, offer another bounded wait and still accept a late session.
+  useEffect(() => {
+    if (status !== "verified" || isAuthenticated) return;
+    const timer = setTimeout(() => {
+      setStatus("session-timeout");
+      setError("errorGeneric");
+    }, SESSION_WAIT_MS);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [status, isAuthenticated]);
+
   // Convex picks up the new session a moment after the code is accepted; wait
   // for it before creating the profile.
   useEffect(() => {
-    if (status !== "verified" || !isAuthenticated || isFinishing.current) {
+    if (
+      !isAuthenticated ||
+      isFinishing.current ||
+      (status !== "verified" && status !== "session-timeout")
+    ) {
       return;
     }
     isFinishing.current = true;
+    setStatus("verified");
+    setError(null);
     void (async () => {
       try {
         await ensureProfile({ locale });
         router.replace(next);
       } catch {
         isFinishing.current = false;
-        setStatus("idle");
+        setStatus("profile-error");
         setError("errorGeneric");
       }
     })();
   }, [status, isAuthenticated, ensureProfile, locale, next, router]);
 
   async function verify(value: string) {
-    if (!phone || value.length !== CODE_LENGTH) return;
+    if (
+      !phone ||
+      status !== "idle" ||
+      requestPending.current ||
+      value.length !== CODE_LENGTH
+    )
+      return;
+    requestPending.current = true;
     setStatus("checking");
     setError(null);
-    const { error: authError } = await authClient.phoneNumber.verify({
-      phoneNumber: phone,
-      code: value,
-    });
+    const authError = await verifyPhoneCode(phone, value);
+    requestPending.current = false;
     if (authError) {
       setStatus("idle");
       setCode("");
-      setError(codeErrorKey(authError));
+      setError(authError);
       return;
     }
     setStatus("verified");
   }
 
   async function resend() {
-    if (!phone) return;
+    if (!phone || status !== "idle" || requestPending.current) return;
+    requestPending.current = true;
+    setResending(true);
     setError(null);
-    const { error: sendError } = await authClient.phoneNumber.sendOtp({
-      phoneNumber: phone,
-    });
+    const sendError = await requestPhoneCode(phone);
+    requestPending.current = false;
+    setResending(false);
     if (sendError) {
-      setError("errorGeneric");
+      setError(sendError);
       return;
     }
     setSecondsLeft(RESEND_AFTER_SECONDS);
@@ -138,7 +174,8 @@ function VerifyForm() {
 
   if (phone === undefined || phone === null) return <LoginSkeleton />;
 
-  const isBusy = status !== "idle";
+  const isBusy = status !== "idle" || isResending;
+  const canRetry = status === "session-timeout" || status === "profile-error";
 
   return (
     <div className="flex flex-col gap-6">
@@ -161,7 +198,12 @@ function VerifyForm() {
         className="flex flex-col gap-4"
         onSubmit={(event) => {
           event.preventDefault();
-          void verify(code);
+          if (canRetry) {
+            setError(null);
+            setStatus("verified");
+          } else {
+            void verify(code);
+          }
         }}
       >
         <label htmlFor="code" className="text-base font-medium">
@@ -205,8 +247,9 @@ function VerifyForm() {
           type="submit"
           size="lg"
           className="h-12 text-base"
-          disabled={isBusy || code.length !== CODE_LENGTH}
+          disabled={!canRetry && (isBusy || code.length !== CODE_LENGTH)}
         >
+          {canRetry ? common("retry") : null}
           {status === "idle" ? t("verify") : null}
           {status === "checking" ? t("verifying") : null}
           {status === "verified" ? t("signingIn") : null}
@@ -221,6 +264,7 @@ function VerifyForm() {
         ) : (
           <Button
             variant="ghost"
+            disabled={isBusy}
             onClick={() => {
               void resend();
             }}

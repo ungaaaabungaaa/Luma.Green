@@ -31,3 +31,12 @@ vi.stubGlobal(
     disconnect = vi.fn();
   },
 );
+
+// input-otp checks whether a password-manager badge covers the code field.
+// jsdom has no layout or hit testing.
+if (typeof document !== "undefined") {
+  Object.defineProperty(document, "elementFromPoint", {
+    configurable: true,
+    value: () => null,
+  });
+}

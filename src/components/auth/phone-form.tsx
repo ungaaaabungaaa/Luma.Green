@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link, useRouter } from "@/i18n/navigation";
-import { authClient } from "@/lib/auth-client";
+import { requestPhoneCode } from "@/lib/phone-auth";
 
 import { normalizeIndianMobile } from "../../../convex/lib/phone";
 import { rememberPhone } from "./storage";
@@ -42,11 +42,9 @@ export function PhoneForm() {
   async function onSubmit(values: Values) {
     const phone = normalizeIndianMobile(values.phone);
     if (!phone) return;
-    const { error } = await authClient.phoneNumber.sendOtp({
-      phoneNumber: phone,
-    });
+    const error = await requestPhoneCode(phone);
     if (error) {
-      setError("root", { message: "sendFailed" });
+      setError("root", { message: error });
       return;
     }
     rememberPhone(phone);
@@ -103,7 +101,10 @@ export function PhoneForm() {
             }
           >
             {t(
-              fieldError === "mobileInvalid" || fieldError === "sendFailed"
+              fieldError &&
+                ["mobileInvalid", "sendFailed", "sendRateLimited"].includes(
+                  fieldError,
+                )
                 ? fieldError
                 : "mobileHint",
             )}
