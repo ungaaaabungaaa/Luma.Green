@@ -189,6 +189,17 @@ describe("pickup dispatch", () => {
     });
     const next = await read(w, token);
     expect(next.orgId).toBe(nearest);
+    const notifications = await w.t.run(async (ctx) =>
+      ctx.db.query("smsNotifications").collect(),
+    );
+    expect(
+      notifications.some(
+        (row) =>
+          row.event === "booking_reassigned" &&
+          row.bookingId === next._id &&
+          row.revision === 2,
+      ),
+    ).toBe(true);
     expect(next.estimatePaise).toBeGreaterThanOrEqual(original.estimatePaise);
     expect(next.status).toBe("requested");
     expect(next.dispatch?.attempt).toBe(2);

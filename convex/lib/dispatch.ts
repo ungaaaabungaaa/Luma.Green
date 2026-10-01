@@ -5,6 +5,7 @@ import type { Doc, Id } from "../_generated/dataModel";
 import type { MutationCtx, QueryCtx } from "../_generated/server";
 import { kgToGrams, paiseFor } from "./chain";
 import { distanceKm, isWindowOpen } from "./households";
+import { queueBookingNotification } from "./notifications";
 import { indiaToday } from "./onboarding";
 
 export const OFFER_TIMEOUT_MS = 15 * 60 * 1000;
@@ -74,6 +75,7 @@ export async function acceptOffer(
     updatedAt: now,
   });
   await offerEvent(ctx, booking, "accepted", now);
+  await queueBookingNotification(ctx, booking, "booking_accepted");
   await audit(
     ctx,
     booking,
@@ -107,6 +109,13 @@ async function openOffer(
   now: number,
 ): Promise<void> {
   await offerEvent(ctx, booking, "offered", now);
+  if (org.ownerProfileId)
+    await queueBookingNotification(
+      ctx,
+      booking,
+      "booking_offer",
+      org.ownerProfileId,
+    );
   if (canAutoAccept(booking, org)) {
     await acceptOffer(ctx, booking, now);
   } else if (booking.dispatch?.expiresAt !== undefined) {
@@ -306,5 +315,6 @@ export async function advanceOffer(
     estimatePaise,
     approximateLocation: dispatch.approximateLocation,
   });
+  await queueBookingNotification(ctx, reassigned, "booking_reassigned");
   await openOffer(ctx, reassigned, org, now);
 }

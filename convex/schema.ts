@@ -14,6 +14,10 @@ import {
   vWeekday,
 } from "./lib/drafts";
 import {
+  vNotificationEvent,
+  vNotificationStatus,
+} from "./lib/notificationConfig";
+import {
   vBookingStatus,
   vFamily,
   vOrgKind,
@@ -37,6 +41,26 @@ const timestamps = {
 };
 
 export default defineSchema({
+  /** Transactional SMS events. No phone, tracking token, OTP or provider body. */
+  smsNotifications: defineTable({
+    dedupKey: v.string(),
+    attemptedAt: v.optional(v.number()),
+    event: vNotificationEvent,
+    status: vNotificationStatus,
+    profileId: v.id("profiles"),
+    locale: v.string(),
+    revision: v.number(),
+    bookingId: v.optional(v.id("bookings")),
+    applicationId: v.optional(v.id("applications")),
+    orgId: v.optional(v.id("orgs")),
+    templateId: v.optional(v.string()),
+    templateLocale: v.optional(v.string()),
+    ...timestamps,
+  })
+    .index("by_dedupKey", ["dedupKey"])
+    .index("by_profile_attemptedAt", ["profileId", "attemptedAt"])
+    .index("by_status_updatedAt", ["status", "updatedAt"]),
+
   /**
    * One row per signed-in person, linked to their Better Auth user (which
    * lives inside the auth component). `kind` separates platform staff from

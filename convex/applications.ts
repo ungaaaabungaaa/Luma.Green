@@ -18,6 +18,7 @@ import {
   vFileType,
 } from "./lib/drafts";
 import { canMove } from "./lib/lifecycle";
+import { queueNotification } from "./lib/notifications";
 import {
   applicationIssues,
   indiaToday,
@@ -234,6 +235,14 @@ export const submit = mutation({
       actorProfileId: profile._id,
       metadata: { from: application.status, to: "submitted", version },
       createdAt: now,
+    });
+    await queueNotification(ctx, {
+      event: "application_received",
+      dedupKey: `application_received:${application._id}:${String(version)}`,
+      profileId: profile._id,
+      applicationId: application._id,
+      locale: application.locale,
+      revision: version,
     });
     return null;
   },

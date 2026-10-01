@@ -134,6 +134,7 @@ describe("a kabadiwala's application", () => {
       "profile.created",
       "application.started",
       "application.submitted",
+      "notification.disabled",
     ]);
   });
 

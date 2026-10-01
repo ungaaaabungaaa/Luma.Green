@@ -24,6 +24,7 @@ import {
   MAX_OPEN_BOOKINGS,
   PILOT_CITY,
 } from "./lib/households";
+import { queueBookingNotification } from "./lib/notifications";
 import { indiaToday } from "./lib/onboarding";
 import { vBookingStatus } from "./lib/validators";
 import { vMaterialRef, vReceipt } from "./lib/views";
@@ -326,6 +327,7 @@ export const book = mutation({
     });
     const booking = await ctx.db.get("bookings", bookingId);
     if (!booking) throw new ConvexError("NOT_FOUND");
+    await queueBookingNotification(ctx, booking, "booking_confirmed");
     await beginDispatch(ctx, booking, org, now, args.location);
     return token;
   },

@@ -19,6 +19,7 @@ import {
   advanceOffer,
   dispatchSettings as settingsFor,
 } from "./lib/dispatch";
+import { queueBookingNotification } from "./lib/notifications";
 import { indiaToday } from "./lib/onboarding";
 import { maskPhone } from "./lib/phone";
 import { vBookingStatus } from "./lib/validators";
@@ -478,6 +479,8 @@ export const respond = mutation({
         actorProfileId: profile._id,
         now: Date.now(),
       });
+      if (args.accept)
+        await queueBookingNotification(ctx, booking, "booking_accepted");
     }
     return null;
   },
