@@ -13,8 +13,8 @@ export async function SiteHeader() {
   const t = await getTranslations("nav");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur supports-backdrop-filter:bg-background/75">
-      <Container className="flex h-16 items-center gap-3 md:gap-6">
+    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-xl supports-backdrop-filter:bg-background/85">
+      <Container className="flex h-20 items-center gap-3 md:gap-6">
         <Link
           href="/"
           aria-label={t("home")}
@@ -26,7 +26,11 @@ export async function SiteHeader() {
         <div className="ms-auto flex items-center gap-1">
           <LanguageSwitcher />
           {/* On phones the menu carries this: the header has no room. */}
-          <Button asChild size="lg" className="ms-2 hidden px-4 sm:inline-flex">
+          <Button
+            asChild
+            size="lg"
+            className="ms-3 hidden rounded-full px-6 sm:inline-flex"
+          >
             <Link href="/sell">{t("sellScrap")}</Link>
           </Button>
           <MobileNav className="xl:hidden" />

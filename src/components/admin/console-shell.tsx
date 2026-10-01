@@ -87,9 +87,12 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
   if (me.kind !== "admin") return <NotAdmin />;
 
   return (
-    <div className="flex min-h-dvh flex-col lg:flex-row">
+    <div className="flex min-h-dvh flex-col bg-muted/40 lg:flex-row">
       <Sidebar name={me.adminName ?? "Admin"} />
-      <main id="main" className="min-w-0 flex-1 px-4 py-6 lg:px-10 lg:py-10">
+      <main
+        id="main"
+        className="min-w-0 flex-1 px-4 py-7 sm:px-6 lg:px-12 lg:py-12"
+      >
         <QueryProvider>{children}</QueryProvider>
       </main>
     </div>
@@ -107,7 +110,7 @@ function Sidebar({ name }: { name: string }) {
   }
 
   return (
-    <aside className="flex flex-col gap-4 border-b bg-background px-4 py-3 lg:sticky lg:top-0 lg:h-dvh lg:w-64 lg:shrink-0 lg:border-e lg:border-b-0 lg:px-4 lg:py-6">
+    <aside className="flex flex-col gap-6 bg-brand-950 px-4 py-5 text-brand-50 lg:sticky lg:top-0 lg:h-dvh lg:w-72 lg:shrink-0 lg:overflow-y-auto lg:px-6 lg:py-8">
       <div className="flex items-center justify-between gap-2">
         <Link
           href="/admin"
@@ -119,7 +122,7 @@ function Sidebar({ name }: { name: string }) {
         <Badge variant="secondary">Admin</Badge>
       </div>
       <nav aria-label="Admin">
-        <ul className="flex flex-wrap gap-1 lg:flex-col">
+        <ul className="flex flex-wrap gap-2 lg:flex-col">
           {nav.map((item) => {
             const isActive = isCurrent(pathname, item.href);
             const count = item.count ? summary?.[item.count.key] : undefined;
@@ -129,10 +132,10 @@ function Sidebar({ name }: { name: string }) {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    "flex h-9 items-center gap-2 rounded-md px-3 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                    "flex min-h-12 items-center gap-3 rounded-xl px-4 text-sm whitespace-nowrap transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
                     isActive
                       ? "bg-brand-50 font-medium text-primary"
-                      : "hover:bg-muted",
+                      : "text-brand-100 hover:bg-brand-800",
                   )}
                 >
                   <item.icon aria-hidden className="size-4 shrink-0" />
@@ -149,11 +152,12 @@ function Sidebar({ name }: { name: string }) {
           })}
         </ul>
       </nav>
-      <div className="mt-auto hidden flex-col gap-2 border-t pt-4 lg:flex">
+      <div className="mt-auto hidden flex-col gap-4 border-t border-brand-800 pt-6 lg:flex">
         <p className="truncate text-sm font-medium">{name}</p>
         <Button
           variant="outline"
           size="sm"
+          className="min-h-11 text-foreground"
           onClick={() => {
             void signOut();
           }}
@@ -165,7 +169,7 @@ function Sidebar({ name }: { name: string }) {
       <Button
         variant="ghost"
         size="sm"
-        className="self-start lg:hidden"
+        className="min-h-11 self-start hover:bg-brand-800 hover:text-brand-50 lg:hidden"
         onClick={() => {
           void signOut();
         }}
@@ -203,7 +207,10 @@ function NotAdmin() {
 
 function ConsoleSkeleton() {
   return (
-    <div className="flex min-h-dvh flex-col lg:flex-row" aria-busy="true">
+    <div
+      className="flex min-h-dvh flex-col bg-muted/40 lg:flex-row"
+      aria-busy="true"
+    >
       <div className="border-b bg-background p-4 lg:w-64 lg:border-e lg:border-b-0">
         <Skeleton className="h-8 w-40" />
       </div>

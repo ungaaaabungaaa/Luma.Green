@@ -17,9 +17,9 @@ export async function SiteFooter() {
   ]);
 
   return (
-    <footer className="mt-auto border-t border-border/60">
-      <Container className="grid gap-10 py-12 md:grid-cols-[3fr_2fr_2fr]">
-        <div className="space-y-3">
+    <footer className="mt-auto border-t border-border/60 bg-card">
+      <Container className="grid gap-12 py-16 md:grid-cols-[3fr_2fr_2fr]">
+        <div className="space-y-5">
           <Logo />
           <p className="text-sm font-medium">{brand("tagline")}</p>
           <p className="max-w-sm text-sm text-muted-foreground">{t("about")}</p>
@@ -29,8 +29,8 @@ export async function SiteFooter() {
           className="grid grid-cols-2 gap-8 md:col-span-2"
         >
           {footerGroups.map((group) => (
-            <div key={group.heading} className="space-y-3">
-              <h2 className="text-sm font-semibold">{t(group.heading)}</h2>
+            <div key={group.heading} className="space-y-5">
+              <h2 className="eyebrow text-primary">{t(group.heading)}</h2>
               <ul className="grid gap-1 text-sm">
                 {group.links.map((link) => (
                   <li key={link.href}>

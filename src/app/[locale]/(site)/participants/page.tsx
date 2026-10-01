@@ -37,19 +37,21 @@ export default async function ParticipantsPage() {
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
 
-      <Container className="space-y-16 py-20">
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <Container className="space-y-16 py-20 sm:py-28">
+        <ul className="grid gap-5 md:grid-cols-2">
           {roles.map(({ key, icon: Icon }) => (
-            <li key={key}>
-              <Card className="h-full">
-                <CardHeader className="gap-3">
-                  <span className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-100 text-brand-900">
+            <li data-reveal key={key}>
+              <Card className="h-full border-brand-900/10 bg-brand-50/40 py-8 shadow-none">
+                <CardHeader className="gap-5 px-7 sm:px-9">
+                  <span className="inline-flex size-12 items-center justify-center rounded-full border border-brand-900/20 text-brand-900">
                     <Icon aria-hidden className="size-5" />
                   </span>
                   <CardTitle>
-                    <h2 className="text-lg">{t(`${key}.name`)}</h2>
+                    <h2 className="text-2xl tracking-tight">
+                      {t(`${key}.name`)}
+                    </h2>
                   </CardTitle>
-                  <CardDescription className="text-sm">
+                  <CardDescription className="text-base leading-relaxed">
                     {t(`${key}.body`)}
                   </CardDescription>
                 </CardHeader>
@@ -60,7 +62,8 @@ export default async function ParticipantsPage() {
 
         <section
           aria-labelledby="household-heading"
-          className="max-w-3xl space-y-3 border-s-4 border-primary ps-6"
+          data-reveal
+          className="space-y-4 rounded-2xl bg-brand-950 p-7 text-brand-50 sm:p-10"
         >
           <h2
             id="household-heading"
@@ -68,7 +71,9 @@ export default async function ParticipantsPage() {
           >
             {t("householdHeading")}
           </h2>
-          <p className="text-muted-foreground">{t("householdBody")}</p>
+          <p className="max-w-3xl leading-relaxed text-brand-100">
+            {t("householdBody")}
+          </p>
         </section>
       </Container>
 

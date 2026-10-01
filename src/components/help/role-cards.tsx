@@ -18,13 +18,14 @@ export function RoleCards() {
       {HELP_ROLES.map((role) => (
         <li
           key={role}
-          className="group relative flex overflow-hidden rounded-2xl border bg-card transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:flex-col"
+          data-reveal
+          className="group relative flex overflow-hidden rounded-2xl border border-brand-900/10 bg-card transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:flex-col"
         >
-          <div className="flex w-32 shrink-0 items-center justify-center bg-brand-50/60 p-2 sm:w-auto sm:px-6 sm:pt-4 sm:pb-0">
+          <div className="flex w-24 shrink-0 items-center justify-center border-e border-brand-900/10 bg-brand-50/70 p-2 sm:w-auto sm:border-e-0 sm:border-b sm:p-5">
             <HelpArt name={ROLE_HELP[role].art} className="sm:max-w-44" />
           </div>
-          <div className="flex min-w-0 flex-1 flex-col gap-1 p-4 sm:p-5">
-            <h3 className="text-lg font-semibold">
+          <div className="flex min-w-0 flex-1 flex-col gap-3 p-4 sm:p-6">
+            <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
               <Link
                 href={`/help/${role}`}
                 className="outline-none after:absolute after:inset-0"
@@ -32,8 +33,10 @@ export function RoleCards() {
                 {t(`roles.${role}.name`)}
               </Link>
             </h3>
-            <p className="text-muted-foreground">{t(`roles.${role}.who`)}</p>
-            <p className="mt-auto flex items-center gap-1 pt-2 text-sm font-medium text-primary sm:pt-3">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t(`roles.${role}.who`)}
+            </p>
+            <p className="mt-auto flex items-center justify-between gap-3 border-t border-brand-900/10 pt-4 text-sm font-semibold text-brand-900">
               {t("guideCount", { count: ROLE_HELP[role].guides.length })}
               <ArrowRightIcon
                 aria-hidden

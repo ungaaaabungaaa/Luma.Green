@@ -38,16 +38,17 @@ export default async function HowItWorksPage() {
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
 
-      <Container className="py-20">
-        <ol className="space-y-16">
+      <Container className="py-20 sm:py-28">
+        <ol className="space-y-6">
           {loopSteps.map(({ key, icon: Icon }, index) => (
             <li
               key={key}
+              data-reveal
               aria-labelledby={`step-${key}`}
-              className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-12"
+              className="grid gap-8 rounded-2xl border border-brand-900/10 bg-brand-50/40 p-6 sm:p-10 md:grid-cols-[1fr_2fr] md:gap-16"
             >
-              <div className="space-y-3">
-                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-900">
+              <div className="space-y-5">
+                <span className="inline-flex size-14 items-center justify-center rounded-full border border-brand-900/20 bg-card text-brand-900">
                   <Icon aria-hidden className="size-6" />
                 </span>
                 <p className="text-sm font-medium text-primary">
@@ -55,16 +56,16 @@ export default async function HowItWorksPage() {
                 </p>
                 <h2
                   id={`step-${key}`}
-                  className="font-display text-3xl font-semibold tracking-tight"
+                  className="font-display text-3xl font-semibold tracking-tight sm:text-4xl"
                 >
                   {loop(`${key}.title`)}
                 </h2>
               </div>
               <div className="space-y-6">
-                <p className="text-lg text-pretty text-muted-foreground">
+                <p className="text-lg leading-relaxed text-pretty text-muted-foreground">
                   {t(`${key}.body`)}
                 </p>
-                <ul className="grid gap-3">
+                <ul className="grid gap-4 border-t border-brand-900/10 pt-6">
                   {points.map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <CheckIcon
@@ -81,7 +82,7 @@ export default async function HowItWorksPage() {
         </ol>
       </Container>
 
-      <div className="border-y border-border/60 bg-muted/40">
+      <div className="border-y border-brand-900/10">
         <Principles />
       </div>
 

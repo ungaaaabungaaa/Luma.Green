@@ -16,10 +16,16 @@ export function AppPageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="flex flex-wrap items-end justify-between gap-3">
-      <div className="flex min-w-0 flex-col gap-1">
-        <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-        {lead ? <p className="text-muted-foreground">{lead}</p> : null}
+    <div className="flex flex-wrap items-end justify-between gap-5 border-b border-border/70 pb-7">
+      <div className="flex min-w-0 flex-col gap-3">
+        <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          {title}
+        </h1>
+        {lead ? (
+          <p className="max-w-2xl leading-relaxed text-muted-foreground">
+            {lead}
+          </p>
+        ) : null}
       </div>
       {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
     </div>
@@ -40,14 +46,14 @@ export function StatCard({
   tone?: "neutral" | "good" | "warn";
 }) {
   return (
-    <div className="flex flex-col gap-1 rounded-2xl border bg-card p-4">
+    <div className="relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-border/80 bg-card p-5 shadow-sm sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">{label}</p>
         {Icon ? (
           <Icon
             aria-hidden
             className={cn(
-              "size-4",
+              "size-5",
               tone === "good" && "text-primary",
               tone === "warn" && "text-amber-600",
               tone === "neutral" && "text-muted-foreground",
@@ -55,7 +61,7 @@ export function StatCard({
           />
         ) : null}
       </div>
-      <p className="text-2xl font-semibold tracking-tight break-words tabular-nums">
+      <p className="font-display text-3xl font-semibold tracking-tight break-words tabular-nums sm:text-4xl">
         {value}
       </p>
       {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
@@ -75,7 +81,7 @@ export function Section({
   return (
     <section className="flex flex-col gap-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-lg font-semibold">{title}</h2>
+        <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
         {action}
       </div>
       {children}
@@ -95,13 +101,15 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed bg-card px-6 py-10 text-center">
-      <span className="flex size-12 items-center justify-center rounded-full bg-brand-50 text-primary">
+    <div className="flex flex-col items-center gap-4 rounded-3xl border border-border/80 bg-card px-6 py-14 text-center shadow-sm">
+      <span className="flex size-16 items-center justify-center rounded-2xl border border-brand-100 bg-brand-50 text-primary">
         <Icon aria-hidden className="size-6" />
       </span>
-      <p className="font-medium">{title}</p>
+      <p className="text-lg font-semibold tracking-tight">{title}</p>
       {body ? (
-        <p className="max-w-sm text-sm text-muted-foreground">{body}</p>
+        <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+          {body}
+        </p>
       ) : null}
       {action}
     </div>
@@ -129,7 +137,7 @@ export function StatusPill({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium whitespace-nowrap",
+        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap",
         tone === "neutral" && "bg-muted text-muted-foreground",
         tone === "info" && "bg-sky-50 text-sky-800",
         tone === "good" && "bg-brand-50 text-primary",

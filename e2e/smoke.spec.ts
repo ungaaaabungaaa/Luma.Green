@@ -9,7 +9,20 @@ test("English root renders the brand and tagline", async ({ page }) => {
   await page.goto("/");
 
   await expect(page.getByRole("banner").getByText("Luma.Green")).toBeVisible();
-  await expect(page.getByText("Cleaner Tomorrow in Motion")).toBeVisible();
+  await expect(
+    page
+      .getByRole("main")
+      .getByRole("paragraph")
+      .filter({ hasText: "Cleaner Tomorrow in Motion" }),
+  ).toBeVisible();
+  const hero = page.getByRole("heading", { level: 1 });
+  await expect
+    .poll(() =>
+      hero.evaluate((node) =>
+        Number(getComputedStyle(node).fontSize.replace("px", "")),
+      ),
+    )
+    .toBeGreaterThan(32);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
 });
@@ -18,7 +31,12 @@ test("Tamil locale serves translated copy", async ({ page }) => {
   await page.goto("/ta");
 
   await expect(page.locator("html")).toHaveAttribute("lang", "ta-IN");
-  await expect(page.getByText("தூய்மையான நாளை நோக்கி நகர்வு")).toBeVisible();
+  await expect(
+    page
+      .getByRole("main")
+      .getByRole("paragraph")
+      .filter({ hasText: "தூய்மையான நாளை நோக்கி நகர்வு" }),
+  ).toBeVisible();
 });
 
 test("Arabic locale renders right-to-left", async ({ page }) => {

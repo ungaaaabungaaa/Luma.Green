@@ -28,25 +28,32 @@ export async function TrustPoints() {
   return (
     <section
       aria-labelledby="trust-heading"
-      className="border-y border-border/60 bg-muted/40 py-20"
+      className="relative overflow-hidden bg-brand-950 py-20 text-brand-50 sm:py-28"
     >
-      <Container className="grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
+      <Container className="relative grid gap-12 lg:grid-cols-[2fr_3fr] lg:gap-24">
         <SectionHeading
+          inverse
           id="trust-heading"
           title={t("heading")}
           intro={t("intro")}
         />
-        <ul className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+        <ul className="grid gap-x-10 sm:grid-cols-2">
           {points.map(({ key, icon: Icon }) => (
-            <li key={key} className="flex items-start gap-4">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-900">
+            <li
+              data-reveal
+              key={key}
+              className="flex flex-col items-start gap-5 border-t border-brand-100/20 py-7"
+            >
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-brand-100/30 text-brand-200">
                 <Icon aria-hidden className="size-5" />
               </span>
-              <div className="flex flex-col gap-1">
-                <h3 className="font-semibold">
+              <div className="flex flex-col gap-3">
+                <h3 className="text-lg font-semibold">
                   {t(`${key}.title`, { count: locales.length })}
                 </h3>
-                <p className="text-muted-foreground">{t(`${key}.body`)}</p>
+                <p className="text-sm leading-relaxed text-brand-100">
+                  {t(`${key}.body`)}
+                </p>
               </div>
             </li>
           ))}

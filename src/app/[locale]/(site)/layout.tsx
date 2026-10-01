@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { SectionMotion } from "@/components/motion/section-motion";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { SkipLink } from "@/components/site/skip-link";
@@ -11,7 +12,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       <SkipLink />
       <SiteHeader />
       <main id="main" tabIndex={-1} className="flex flex-1 flex-col">
-        {children}
+        <SectionMotion>{children}</SectionMotion>
       </main>
       <SiteFooter />
     </>

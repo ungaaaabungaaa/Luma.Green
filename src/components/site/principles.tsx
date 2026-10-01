@@ -7,6 +7,7 @@ import {
 import { getTranslations } from "next-intl/server";
 
 import { Container } from "./container";
+import { SectionHeading } from "./section-heading";
 
 const principles = [
   { key: "auditable", icon: ScrollTextIcon },
@@ -19,25 +20,27 @@ export async function Principles() {
   const t = await getTranslations("principles");
 
   return (
-    <section aria-labelledby="principles-heading" className="py-20">
-      <Container className="space-y-10">
-        <div className="max-w-2xl space-y-3">
-          <h2
-            id="principles-heading"
-            className="font-display text-3xl font-semibold tracking-tight text-balance"
-          >
-            {t("heading")}
-          </h2>
-          <p className="text-muted-foreground">{t("intro")}</p>
-        </div>
-        <ul className="grid gap-8 md:grid-cols-3">
+    <section aria-labelledby="principles-heading" className="py-20 sm:py-28">
+      <Container className="space-y-12">
+        <SectionHeading
+          id="principles-heading"
+          title={t("heading")}
+          intro={t("intro")}
+        />
+        <ul className="grid gap-5 md:grid-cols-3">
           {principles.map(({ key, icon: Icon }) => (
-            <li key={key} className="space-y-3">
-              <span className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-100 text-brand-900">
+            <li
+              data-reveal
+              key={key}
+              className="space-y-5 rounded-2xl border border-brand-900/10 bg-brand-50/50 p-7"
+            >
+              <span className="inline-flex size-12 items-center justify-center rounded-full border border-brand-900/20 text-brand-900">
                 <Icon aria-hidden className="size-5" />
               </span>
-              <h3 className="font-semibold">{t(`${key}.title`)}</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="text-xl font-semibold tracking-tight">
+                {t(`${key}.title`)}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {t(`${key}.body`)}
               </p>
             </li>

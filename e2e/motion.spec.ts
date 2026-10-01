@@ -79,3 +79,95 @@ test("motion leaves no hidden content after navigation and preference changes", 
   await expect(heading).toBeVisible();
   await expect(heading).toHaveCSS("transform", "none");
 });
+
+test("hero artwork follows scroll within a bounded distance and stops on request", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/en");
+  const artwork = page.locator("[data-parallax]").first();
+  await expect(artwork).toHaveAttribute("style", /transform/u);
+  const start = await artwork.evaluate(
+    (element) => new DOMMatrixReadOnly(getComputedStyle(element).transform).m42,
+  );
+  await page.evaluate(() => {
+    window.scrollTo(0, 450);
+  });
+  await expect
+    .poll(async () =>
+      artwork.evaluate(
+        (element) =>
+          new DOMMatrixReadOnly(getComputedStyle(element).transform).m42,
+      ),
+    )
+    .not.toBe(start);
+  const end = await artwork.evaluate(
+    (element) => new DOMMatrixReadOnly(getComputedStyle(element).transform).m42,
+  );
+  expect(Math.abs(end - start)).toBeGreaterThan(2);
+  expect(Math.abs(end)).toBeLessThanOrEqual(64);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  // Preserve the artwork's static CSS crop scale; only scroll motion is removed.
+  await expect
+    .poll(async () =>
+      artwork.evaluate(
+        (element) =>
+          new DOMMatrixReadOnly(getComputedStyle(element).transform).m42,
+      ),
+    )
+    .toBe(0);
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+  });
+  await expect
+    .poll(async () =>
+      artwork.evaluate(
+        (element) =>
+          new DOMMatrixReadOnly(getComputedStyle(element).transform).m42,
+      ),
+    )
+    .toBe(0);
+
+  await page.locator('a[href="#chain-heading"]').click();
+  await expect(page).toHaveURL(/#chain-heading$/u);
+  const chainHeading = page.locator("#chain-heading");
+  await expect(chainHeading).toBeInViewport({ ratio: 1 });
+  // Anchor navigation must leave the full title below the sticky site header.
+  await expect
+    .poll(async () => {
+      const headingBounds = await chainHeading.boundingBox();
+      const headerBounds = await page.getByRole("banner").boundingBox();
+      return !headingBounds || !headerBounds
+        ? -1
+        : headingBounds.y - (headerBounds.y + headerBounds.height);
+    })
+    .toBeGreaterThanOrEqual(0);
+});
+
+for (const locale of ["en", "ar"]) {
+  test(`small-screen artwork and public pages stay within the ${locale} viewport`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 360, height: 800 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    for (const route of [
+      "",
+      "/how-it-works",
+      "/participants",
+      "/prices",
+      "/sell",
+      "/join",
+    ]) {
+      await page.goto(`/${locale}${route}`);
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - window.innerWidth,
+      );
+      expect(
+        overflow,
+        `${locale}${route} must not scroll horizontally`,
+      ).toBeLessThanOrEqual(1);
+    }
+  });
+}

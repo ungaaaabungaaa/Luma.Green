@@ -28,25 +28,31 @@ export function HelpHero({
   children?: ReactNode;
 }) {
   return (
-    <div className="border-b border-border/60 bg-muted/40">
-      <Container className="flex flex-col gap-6 py-10 sm:py-14">
+    <div
+      data-parallax-scene
+      className="relative isolate overflow-hidden border-b border-brand-900/10 bg-brand-50/60"
+    >
+      <Container className="relative flex flex-col gap-8 py-12 sm:py-20">
         {breadcrumbs}
-        <div className="grid items-center gap-6 md:grid-cols-[1fr_auto] md:gap-10">
-          <div className="flex min-w-0 flex-col gap-3">
+        <div
+          data-reveal
+          className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-16"
+        >
+          <div className="flex min-w-0 flex-col gap-5">
             {eyebrow ? (
-              <p className="text-sm font-medium text-primary">{eyebrow}</p>
+              <p className="text-sm font-semibold text-brand-900">{eyebrow}</p>
             ) : null}
-            <h1 className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+            <h1 className="max-w-3xl font-display text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               {title}
             </h1>
-            <p className="max-w-2xl text-lg text-pretty text-muted-foreground">
+            <p className="max-w-2xl text-lg leading-relaxed text-pretty text-muted-foreground">
               {lead}
             </p>
           </div>
           {art ? (
             <div
               className={cn(
-                "w-40 shrink-0 md:w-60",
+                "w-40 shrink-0 rounded-full border border-brand-900/10 bg-background/70 p-4 md:w-64 md:p-6",
                 artOnPhones ? "-order-1 md:order-none" : "hidden md:block",
               )}
             >
