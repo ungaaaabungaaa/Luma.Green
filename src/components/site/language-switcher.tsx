@@ -27,7 +27,11 @@ export function LanguageSwitcher() {
   function onChange(next: string) {
     if (next === locale || !isLocale(next)) return;
     startTransition(() => {
-      router.replace(pathname, { locale: next });
+      // The query can hold a return path or filter, and the hash a help section.
+      router.replace(
+        `${pathname}${window.location.search}${window.location.hash}`,
+        { locale: next },
+      );
     });
   }
 
@@ -36,11 +40,12 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          size="icon-lg"
+          size="icon"
+          className="rounded-full"
           aria-label={t("language")}
           disabled={isPending}
         >
-          <LanguagesIcon />
+          <LanguagesIcon aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-44">

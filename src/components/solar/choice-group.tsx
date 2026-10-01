@@ -37,8 +37,10 @@ export function ChoiceGroup<T extends string>({
         if (option) onChange(option.value);
       }}
       className={cn(
-        "grid grid-cols-2",
-        compact ? "gap-1 rounded-xl bg-muted p-1" : "gap-2",
+        "grid",
+        compact
+          ? "grid-cols-2 gap-1 rounded-xl bg-muted p-1"
+          : "grid-cols-1 gap-2 min-[400px]:grid-cols-2",
       )}
     >
       {options.map((option) =>
@@ -78,7 +80,7 @@ function ChoiceCard({
       htmlFor={id}
       className={cn(
         "flex min-h-14 cursor-pointer items-center gap-3 rounded-xl border-2 bg-card px-3 py-2 text-base font-normal",
-        isSelected ? "border-primary bg-brand-50" : "border-border",
+        isSelected ? "border-primary bg-accent" : "border-border",
       )}
     >
       <RadioGroupItem id={id} value={option.value} />

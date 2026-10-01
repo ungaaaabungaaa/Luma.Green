@@ -116,7 +116,7 @@ export function SolarPlanner({ between }: { between?: ReactNode }) {
           <ol className="flex flex-col gap-5">
             {nextSteps.map(({ key, icon: Icon }, index) => (
               <li key={key} className="flex items-start gap-4">
-                <span className="relative flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary">
+                <span className="relative flex size-11 shrink-0 items-center justify-center rounded-full bg-accent text-primary">
                   <Icon aria-hidden className="size-5" />
                   <span className="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground">
                     {format.number(index + 1)}

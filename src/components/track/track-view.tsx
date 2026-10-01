@@ -25,6 +25,14 @@ export function TrackView({ booking }: { booking: TrackedBooking }) {
     <div className="flex flex-col gap-4">
       <StatusHero booking={booking} />
       <WhenCard booking={booking} today={today} />
+      {booking.dispatch && booking.dispatch.attempt > 1 ? (
+        <p
+          role="status"
+          className="rounded-xl border border-primary/20 bg-accent p-4 text-sm text-accent-foreground"
+        >
+          {t("dispatchChanged")}
+        </p>
+      ) : null}
       <ShopCard shop={booking.shop} />
       <MoneySection booking={booking} />
       <ItemsCard booking={booking} />

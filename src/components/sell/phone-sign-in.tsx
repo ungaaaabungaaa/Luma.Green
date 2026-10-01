@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { type SyntheticEvent, useEffect, useId, useRef, useState } from "react";
 import { toast } from "sonner";
 
-import { type CodeErrorKey, codeErrorKey } from "@/components/auth/errors";
+import type { CodeErrorKey } from "@/components/auth/errors";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -15,7 +15,11 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { Label } from "@/components/ui/label";
-import { authClient } from "@/lib/auth-client";
+import {
+  requestPhoneCode,
+  type SendCodeErrorKey,
+  verifyPhoneCode,
+} from "@/lib/phone-auth";
 
 import {
   formatIndianMobile,
@@ -24,34 +28,6 @@ import {
 
 const CODE_LENGTH = 6;
 const RESEND_AFTER_SECONDS = 30;
-
-/** Sends a code; "failed" if it couldn't be sent (refused or no network). */
-async function sendCode(phone: string): Promise<"failed" | null> {
-  try {
-    const { error } = await authClient.phoneNumber.sendOtp({
-      phoneNumber: phone,
-    });
-    return error ? "failed" : null;
-  } catch {
-    return "failed";
-  }
-}
-
-/** Checks a code; what went wrong, or null when it was right. */
-async function checkCode(
-  phone: string,
-  code: string,
-): Promise<CodeErrorKey | null> {
-  try {
-    const { error } = await authClient.phoneNumber.verify({
-      phoneNumber: phone,
-      code,
-    });
-    return error ? codeErrorKey(error) : null;
-  } catch {
-    return "errorGeneric";
-  }
-}
 
 /** Keeps a number reading left to right inside RTL sentences. */
 function ltr(text: string): string {
@@ -89,9 +65,10 @@ export function PhoneSignIn({
 
 function NumberForm({ onSent }: { onSent: (phone: string) => void }) {
   const t = useTranslations("sell.phone");
+  const auth = useTranslations("auth");
   const id = useId();
   const [value, setValue] = useState("");
-  const [error, setError] = useState<"invalid" | "sendFailed" | null>(null);
+  const [error, setError] = useState<"invalid" | SendCodeErrorKey | null>(null);
   const [isSending, setSending] = useState(false);
 
   async function send(event: SyntheticEvent) {
@@ -103,10 +80,10 @@ function NumberForm({ onSent }: { onSent: (phone: string) => void }) {
     }
     setError(null);
     setSending(true);
-    const failure = await sendCode(phone);
+    const failure = await requestPhoneCode(phone);
     setSending(false);
     if (failure) {
-      setError("sendFailed");
+      setError(failure);
       return;
     }
     onSent(phone);
@@ -149,7 +126,7 @@ function NumberForm({ onSent }: { onSent: (phone: string) => void }) {
           error ? "text-sm text-destructive" : "text-sm text-muted-foreground"
         }
       >
-        {t(error ?? "hint")}
+        {error === "sendRateLimited" ? auth(error) : t(error ?? "hint")}
       </p>
       <Button
         type="submit"
@@ -179,12 +156,17 @@ function CodeForm({
   onVerified: () => void;
 }) {
   const t = useTranslations("sell.phone");
+  const auth = useTranslations("auth");
   const id = useId();
   const [code, setCode] = useState("");
   const [isChecking, setChecking] = useState(false);
-  const [error, setError] = useState<CodeErrorKey | null>(null);
+  const [error, setError] = useState<CodeErrorKey | SendCodeErrorKey | null>(
+    null,
+  );
   const [secondsLeft, setSecondsLeft] = useState(RESEND_AFTER_SECONDS);
   const codeInput = useRef<HTMLInputElement>(null);
+  const requestPending = useRef(false);
+  const [isResending, setResending] = useState(false);
 
   // After a wrong code the boxes are cleared; put the cursor back in them.
   useEffect(() => {
@@ -202,10 +184,13 @@ function CodeForm({
   }, [secondsLeft]);
 
   async function verify(value: string) {
-    if (isChecking || value.length !== CODE_LENGTH) return;
+    if (isChecking || requestPending.current || value.length !== CODE_LENGTH)
+      return;
+    requestPending.current = true;
     setChecking(true);
     setError(null);
-    const failure = await checkCode(phone, value);
+    const failure = await verifyPhoneCode(phone, value);
+    requestPending.current = false;
     if (failure) {
       setChecking(false);
       setCode("");
@@ -216,10 +201,15 @@ function CodeForm({
   }
 
   async function resend() {
+    if (isChecking || requestPending.current) return;
+    requestPending.current = true;
+    setResending(true);
     setError(null);
-    const failure = await sendCode(phone);
+    const failure = await requestPhoneCode(phone);
+    requestPending.current = false;
+    setResending(false);
     if (failure) {
-      setError("errorGeneric");
+      setError(failure);
       return;
     }
     setSecondsLeft(RESEND_AFTER_SECONDS);
@@ -264,7 +254,7 @@ function CodeForm({
 
             autoFocus
             value={code}
-            disabled={isChecking}
+            disabled={isChecking || isResending}
             aria-invalid={error ? true : undefined}
             aria-describedby={error ? `${id}-error` : undefined}
             onChange={(value) => {
@@ -289,14 +279,14 @@ function CodeForm({
             role="alert"
             className="text-sm text-destructive"
           >
-            {t(error)}
+            {error === "sendRateLimited" ? auth(error) : t(error)}
           </p>
         ) : null}
         <Button
           type="submit"
           size="lg"
           className="h-12 text-base"
-          disabled={isChecking || code.length !== CODE_LENGTH}
+          disabled={isChecking || isResending || code.length !== CODE_LENGTH}
         >
           {isChecking ? t("verifying") : verifyLabel}
         </Button>
@@ -310,6 +300,7 @@ function CodeForm({
           <Button
             type="button"
             variant="ghost"
+            disabled={isChecking || isResending}
             onClick={() => {
               void resend();
             }}

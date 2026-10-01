@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { SkipLink } from "@/components/site/skip-link";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -25,25 +27,24 @@ export default async function HouseholdLayout({
 
   return (
     <div className="flex min-h-dvh flex-col bg-muted/50">
-      <a
-        href="#main"
-        className="sr-only rounded-md bg-background px-4 py-2 font-medium shadow focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50"
-      >
-        {t("skipToContent")}
-      </a>
-      <header className="flex h-14 items-center justify-between gap-2 border-b border-border/60 bg-background px-4">
+      <SkipLink />
+      <header className="flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-border/60 bg-background px-4 py-2">
         <Link
           href="/"
           aria-label={t("home")}
-          className="rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="inline-flex min-h-11 shrink-0 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <Logo />
         </Link>
-        <LanguageSwitcher />
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <LanguageSwitcher />
+        </div>
       </header>
       <main
         id="main"
-        className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 py-6 sm:py-10"
+        tabIndex={-1}
+        className="mx-auto flex w-full max-w-lg flex-1 flex-col px-4 py-6 sm:py-8"
       >
         {children}
       </main>

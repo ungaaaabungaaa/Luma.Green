@@ -11,13 +11,13 @@ import {
 } from "@/components/help/content";
 import { FaqList } from "@/components/help/faq-list";
 import { GuideCards } from "@/components/help/guide-cards";
-import { HelpArt } from "@/components/help/help-art";
 import { HelpBreadcrumbs } from "@/components/help/help-breadcrumbs";
 import { HelpHero } from "@/components/help/help-hero";
 import { HelpSection, JumpLinks } from "@/components/help/help-section";
 import { OtherRoleLinks } from "@/components/help/role-cards";
 import { TrainingPath } from "@/components/help/training-path";
 import { TutorialCards } from "@/components/help/tutorial-cards";
+import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata } from "@/lib/seo";
@@ -78,7 +78,8 @@ export default async function RoleHelpPage({ params }: Props) {
         }
         title={t(`roles.${role}.title`)}
         lead={t(`roles.${role}.lead`)}
-        art={<HelpArt name={help.art} />}
+        art={<RoleStoryImage scene={role} />}
+        artLayout="photo"
         artOnPhones
       >
         <JumpLinks label={t("role.onThisPage")} links={sections} />

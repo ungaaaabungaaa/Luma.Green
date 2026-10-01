@@ -409,6 +409,7 @@ describe("approving", () => {
           orgId: result.org._id,
         }) as unknown,
       },
+      { action: "notification.disabled", metadata: undefined },
     ]);
 
     // And the new shop owner's app opens on their business.

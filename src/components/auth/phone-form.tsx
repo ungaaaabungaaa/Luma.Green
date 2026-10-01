@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link, useRouter } from "@/i18n/navigation";
-import { authClient } from "@/lib/auth-client";
+import { requestPhoneCode } from "@/lib/phone-auth";
 
 import { normalizeIndianMobile } from "../../../convex/lib/phone";
 import { rememberPhone } from "./storage";
@@ -42,11 +42,9 @@ export function PhoneForm() {
   async function onSubmit(values: Values) {
     const phone = normalizeIndianMobile(values.phone);
     if (!phone) return;
-    const { error } = await authClient.phoneNumber.sendOtp({
-      phoneNumber: phone,
-    });
+    const error = await requestPhoneCode(phone);
     if (error) {
-      setError("root", { message: "sendFailed" });
+      setError("root", { message: error });
       return;
     }
     rememberPhone(phone);
@@ -60,10 +58,12 @@ export function PhoneForm() {
   const fieldError = errors.phone?.message ?? errors.root?.message;
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold tracking-tight">{t("title")}</h1>
-        <p className="text-muted-foreground">{t("lead")}</p>
+    <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-3">
+        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+          {t("title")}
+        </h1>
+        <p className="leading-relaxed text-muted-foreground">{t("lead")}</p>
       </div>
 
       <form
@@ -78,7 +78,7 @@ export function PhoneForm() {
             {t("mobileLabel")}
           </Label>
           <div className="flex gap-2" dir="ltr">
-            <span className="flex h-12 items-center rounded-md border bg-muted px-3 text-lg font-medium">
+            <span className="flex h-14 items-center rounded-xl border bg-muted px-4 text-lg font-medium tabular-nums">
               +91
             </span>
             <Input
@@ -89,7 +89,7 @@ export function PhoneForm() {
               placeholder="98765 43210"
               aria-invalid={fieldError ? true : undefined}
               aria-describedby="phone-hint"
-              className="h-12 text-lg tracking-wide"
+              className="h-14 rounded-xl text-lg tracking-wide"
               {...register("phone")}
             />
           </div>
@@ -103,7 +103,10 @@ export function PhoneForm() {
             }
           >
             {t(
-              fieldError === "mobileInvalid" || fieldError === "sendFailed"
+              fieldError &&
+                ["mobileInvalid", "sendFailed", "sendRateLimited"].includes(
+                  fieldError,
+                )
                 ? fieldError
                 : "mobileHint",
             )}
@@ -112,21 +115,21 @@ export function PhoneForm() {
         <Button
           type="submit"
           size="lg"
-          className="h-12 text-base"
+          className="h-14 text-base"
           disabled={isSubmitting}
         >
           {t(isSubmitting ? "sending" : "sendCode")}
         </Button>
       </form>
 
-      <div className="flex flex-col gap-1 rounded-xl border bg-card p-4">
+      <div className="flex flex-col gap-3 rounded-2xl border border-border bg-accent/60 p-5">
         <p className="flex items-start gap-2 font-medium">
           <HomeIcon aria-hidden className="mt-1 size-4 shrink-0 text-primary" />
           {t("homeTitle")}
         </p>
         <Link
           href="/how-it-works"
-          className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+          className="inline-flex min-h-11 items-center text-sm font-medium text-primary underline-offset-4 hover:underline"
         >
           {t("homeLink")}
         </Link>

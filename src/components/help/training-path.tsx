@@ -61,7 +61,7 @@ export function TrainingPath({ role }: { role: HelpRole }) {
 
       <div aria-live="polite">
         {progress.isComplete ? (
-          <div className="flex items-center gap-4 rounded-2xl border border-primary/30 bg-brand-50 p-4">
+          <div className="flex items-center gap-4 rounded-2xl border border-primary/30 bg-accent p-4">
             <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <AwardIcon aria-hidden className="size-7" />
             </span>
@@ -135,7 +135,7 @@ function LessonCard({
       aria-labelledby={titleId}
       className={cn(
         "flex flex-col gap-4 rounded-2xl border bg-card p-4 transition-colors",
-        isDone && "border-primary/40 bg-brand-50/50",
+        isDone && "border-primary/40 bg-accent/50",
       )}
     >
       <div className="flex gap-4">
@@ -144,7 +144,7 @@ function LessonCard({
             "relative flex size-12 shrink-0 items-center justify-center rounded-xl",
             isDone
               ? "bg-primary text-primary-foreground"
-              : "bg-brand-50 text-primary",
+              : "bg-accent text-primary",
           )}
         >
           {isDone ? (

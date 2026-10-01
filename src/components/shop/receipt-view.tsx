@@ -43,7 +43,7 @@ export function ReceiptView({
       className="flex flex-col gap-5 rounded-2xl border bg-card p-5"
     >
       <div className="flex flex-col items-center gap-2 text-center">
-        <span className="flex size-16 items-center justify-center rounded-full bg-brand-50 text-primary">
+        <span className="flex size-16 items-center justify-center rounded-full bg-accent text-accent-foreground">
           <CircleCheckBigIcon aria-hidden className="size-8" />
         </span>
         <p className="font-medium text-primary">
@@ -65,7 +65,7 @@ export function ReceiptView({
         </p>
         {points === null ? null : (
           <div className="mt-2 flex flex-col items-center gap-1">
-            <p className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-2 font-medium text-brand-900">
+            <p className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-medium text-accent-foreground">
               <StarIcon aria-hidden className="size-4" />
               {t("receipt.points", {
                 name: first ?? t("household"),

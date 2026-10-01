@@ -17,7 +17,8 @@ function coarse(value: number): number {
 
 /**
  * "Use my location", only when the household asks. The point stays in this
- * page — it is sent with the shop list for distances and never stored.
+ * page until booking. Pickup confirmation explains that the approximate
+ * point is saved with the booking for nearby-shop dispatch.
  */
 export function useLocation() {
   const [state, setState] = useState<LocationState>({ status: "off" });

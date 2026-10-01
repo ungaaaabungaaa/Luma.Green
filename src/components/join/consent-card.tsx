@@ -49,7 +49,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
   }
 
   return (
-    <Card>
+    <Card className="rounded-2xl border-border/80 shadow-xs">
       <CardHeader className="gap-2">
         <p className="text-sm font-medium text-primary">
           {t(`roles.${kind}.title`)}
@@ -62,7 +62,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
-        <div className="flex flex-col gap-2 rounded-xl bg-muted/60 p-4">
+        <div className="flex flex-col gap-2 rounded-xl border border-border/70 bg-muted/50 p-4">
           <p className="font-medium">{t("youNeed")}</p>
           <p>{t(`roles.${kind}.needs`)}</p>
           <p className="text-muted-foreground">{t(`consent.why.${why}`)}</p>
@@ -75,7 +75,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
           {t("consent.privacy")}
         </p>
         <div className="flex flex-col gap-3">
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-3 rounded-xl border border-border/70 p-3">
             <Checkbox
               id="consent-age"
               className="mt-0.5 size-5"
@@ -88,7 +88,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
               {t("consent.age")}
             </Label>
           </div>
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-3 rounded-xl border border-border/70 p-3">
             <Checkbox
               id="consent-read"
               className="mt-0.5 size-5"

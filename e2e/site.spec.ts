@@ -169,6 +169,7 @@ test("the standard lays out every norm, with a jump list", async ({ page }) => {
 test("the solar calculator estimates a home system and cites the scheme", async ({
   page,
 }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
   await page.goto("/solar");
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
@@ -185,7 +186,14 @@ test("the solar calculator estimates a home system and cites the scheme", async 
     page.getByRole("link", { name: /pmsuryaghar\.gov\.in/ }),
   ).toHaveAttribute("href", "https://pmsuryaghar.gov.in");
 
-  await page.getByRole("radio", { name: "My business" }).click();
+  const business = page.getByRole("radio", { name: "My business" });
+  expect(
+    await business.evaluate((element) => {
+      const label = element.closest("label");
+      return label ? label.scrollWidth <= label.clientWidth : false;
+    }),
+  ).toBe(true);
+  await business.click();
   await expect(page.getByText("Not for businesses")).toBeVisible();
 });
 
@@ -276,4 +284,57 @@ test("the skip link jumps past the header", async ({ page }) => {
   await expect(skip).toBeFocused();
   await skip.press("Enter");
   await expect(page).toHaveURL(/#main$/);
+  await expect(page.getByRole("main")).toBeFocused();
+});
+
+test("language changes preserve a page query and help anchor", async ({
+  page,
+}) => {
+  await page.goto("/help?role=yard#contact");
+  await page.getByRole("button", { name: "Language" }).click();
+  await page.getByRole("menuitemradio", { name: "தமிழ்" }).click();
+  await expect(page).toHaveURL("/ta/help?role=yard#contact");
+});
+
+for (const locale of ["en", "ar", "ur"] as const) {
+  test(`${locale} navigation fits phones and tablets with accessible targets`, async ({
+    page,
+  }) => {
+    for (const width of [360, 768, 1023]) {
+      await page.setViewportSize({ width, height: 700 });
+      // Resizing can start responsive image requests on the previous page.
+      // The menu's observable state is this navigation test's readiness gate.
+      await page.goto(locale === "en" ? "/" : `/${locale}`, {
+        waitUntil: "domcontentloaded",
+      });
+      const header = page.getByRole("banner");
+      const menuButton = header.getByRole("button").last();
+      const target = await menuButton.boundingBox();
+      expect(target?.width).toBeGreaterThanOrEqual(44);
+      expect(target?.height).toBeGreaterThanOrEqual(44);
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth),
+      ).toBeLessThanOrEqual(width);
+      await menuButton.click();
+      const menu = page.getByRole("dialog");
+      await expect(menu).toBeVisible();
+      await expect
+        .poll(async () => {
+          const box = await menu.boundingBox();
+          return box !== null && box.x >= 0 && box.x + box.width <= width;
+        })
+        .toBe(true);
+      await page.keyboard.press("Escape");
+      await expect(menu).toBeHidden();
+      await expect(menuButton).toBeFocused();
+    }
+  });
+}
+
+test("mobile overlays respect reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await expect(page.getByRole("dialog")).toHaveCSS("animation-name", "none");
 });

@@ -1,0 +1,371 @@
+import { readFileSync } from "node:fs";
+
+import { app, BrowserWindow, dialog, Menu, session, shell } from "electron";
+import electronUpdater from "electron-updater";
+
+import { runtimeOrigin, validateFeed } from "./config.mjs";
+import { offlineHtml, pageLocale, selectLocale } from "./localization.mjs";
+import {
+  isAppBlob,
+  isAppUrl,
+  isExternalUrl,
+  isPdfViewerFrame,
+  mayDownload,
+  mayRequestLocation,
+  secureWebPreferences,
+} from "./policy.mjs";
+import { setupUpdates } from "./updates.mjs";
+
+const config = JSON.parse(
+  readFileSync(new URL("../generated/config.json", import.meta.url), "utf8"),
+);
+/** @type {Record<string, import('./localization.mjs').Messages>} */
+const catalogues = JSON.parse(
+  readFileSync(new URL("../generated/messages.json", import.meta.url), "utf8"),
+);
+const origin = runtimeOrigin(config, app.isPackaged, process.env);
+/** @type {{mainWindow: BrowserWindow | null, locale: string, home: string}} */
+const state = { mainWindow: null, locale: "en", home: origin };
+const offlineWindows = new WeakSet();
+/** Grants last only for this process and this trusted webContents. */
+const locationGrants = new Set();
+/** @returns {import('./localization.mjs').Messages} */
+const messages = () => catalogues[state.locale] ?? catalogues.en;
+
+/** @param {string} url */
+async function openExternal(url) {
+  if (!isExternalUrl(url)) return;
+  try {
+    await shell.openExternal(url);
+  } catch (error) {
+    console.error("Could not open external URL", error);
+  }
+}
+
+/** @param {BrowserWindow} window @param {string} url */
+async function loadApp(window, url) {
+  if (!isAppUrl(url, origin)) return;
+  try {
+    offlineWindows.delete(window);
+    await window.loadURL(url);
+  } catch {
+    await showOffline(window);
+  }
+}
+/** @param {BrowserWindow} window */
+async function showOffline(window) {
+  if (
+    window.isDestroyed() ||
+    window.webContents.isDestroyed() ||
+    offlineWindows.has(window)
+  )
+    return;
+  offlineWindows.add(window);
+  try {
+    const html = offlineHtml(messages(), state.locale, state.home);
+    await window.loadURL(
+      `data:text/html;charset=utf-8,${encodeURIComponent(html)}`,
+    );
+  } catch (error) {
+    console.error("Could not display offline screen", error);
+  }
+}
+
+/** @param {BrowserWindow} window @param {boolean} [isDocumentViewer] */
+function attachGuards(window, isDocumentViewer = false) {
+  const contents = window.webContents;
+  contents.on("will-attach-webview", (event) => event.preventDefault());
+  contents.on("will-navigate", (event, url) => {
+    if (isDocumentViewer ? isAppBlob(url, origin) : isAppUrl(url, origin)) {
+      if (!isDocumentViewer && offlineWindows.has(window)) {
+        event.preventDefault();
+        void loadApp(window, url);
+      }
+      return;
+    }
+    event.preventDefault();
+    if (state.mainWindow && isAppUrl(url, origin))
+      void loadApp(state.mainWindow, url);
+    else if (isExternalUrl(url)) void openExternal(url);
+  });
+  contents.on("will-redirect", (event, url) => {
+    if (!(isDocumentViewer ? isAppBlob(url, origin) : isAppUrl(url, origin)))
+      event.preventDefault();
+  });
+  contents.on("will-frame-navigate", (event) => {
+    if (event.isMainFrame) return;
+    if (
+      isDocumentViewer &&
+      isPdfViewerFrame(event.url, contents.getURL(), origin)
+    )
+      return;
+    if (!isAppUrl(event.url, origin) && !isAppBlob(event.url, origin))
+      event.preventDefault();
+  });
+  contents.setWindowOpenHandler(({ url }) => {
+    // The authenticated app fetches private PDFs into same-origin blobs.
+    if (
+      !isDocumentViewer &&
+      isAppUrl(contents.getURL(), origin) &&
+      isAppBlob(url, origin)
+    ) {
+      return {
+        action: "allow",
+        overrideBrowserWindowOptions: {
+          width: 900,
+          height: 720,
+          autoHideMenuBar: true,
+          webPreferences: {
+            ...secureWebPreferences,
+            // Chromium's built-in PDF viewer requires plugins in this document window.
+            plugins: true,
+            session: contents.session,
+          },
+        },
+      };
+    }
+    if (state.mainWindow && isAppUrl(url, origin))
+      void loadApp(state.mainWindow, url);
+    else if (isExternalUrl(url)) void openExternal(url);
+    return { action: "deny" };
+  });
+  contents.on("did-create-window", (child) => {
+    child.setMenu(null);
+    attachGuards(child, true);
+  });
+  contents.on("destroyed", () => locationGrants.delete(contents.id));
+  if (isDocumentViewer) {
+    return;
+  }
+
+  contents.on(
+    "did-fail-load",
+    (_event, code, _description, _url, isMainFrame) => {
+      if (isMainFrame && code !== -3) void showOffline(window);
+    },
+  );
+  contents.on("render-process-gone", () => {
+    void showOffline(window);
+  });
+  contents.on("did-navigate", (_event, url) => updateLocale(url));
+  contents.on("did-navigate-in-page", (_event, url) => updateLocale(url));
+}
+
+/** @param {string} url */
+function updateLocale(url) {
+  if (!isAppUrl(url, origin)) return;
+  state.locale = pageLocale(url, catalogues, state.locale);
+  state.home = `${origin}/${state.locale === "en" ? "" : state.locale}`;
+  setMenu();
+}
+
+const updates = setupUpdates(
+  electronUpdater.autoUpdater,
+  validateFeed(config.updateUrl ?? undefined),
+  app.isPackaged && config.release,
+  async (state) => {
+    const m = messages();
+    const keys = {
+      ready: "updateReady",
+      current: "updateCurrent",
+      unavailable: "updateUnavailable",
+      failed: "updateFailed",
+    };
+    const result = await dialog.showMessageBox({
+      type: state === "failed" ? "warning" : "info",
+      title: m.native.updates,
+      message: m.native[keys[state]],
+      buttons:
+        state === "ready"
+          ? [m.native.restart, m.native.later]
+          : [m.common.close],
+      defaultId: state === "ready" ? 1 : 0,
+      cancelId: state === "ready" ? 1 : 0,
+    });
+    return state === "ready" && result.response === 0;
+  },
+);
+
+function setMenu() {
+  const m = messages();
+  /** @type {import('electron').MenuItemConstructorOptions[]} */
+  const template = [
+    ...(process.platform === "darwin"
+      ? [{ role: /** @type {const} */ ("appMenu") }]
+      : []),
+    {
+      label: m.brand.name,
+      submenu: [
+        {
+          label: m.nav.home,
+          accelerator: "CmdOrCtrl+Home",
+          click: () => {
+            if (state.mainWindow) void loadApp(state.mainWindow, state.home);
+          },
+        },
+        {
+          label: m.native.back,
+          accelerator: "Alt+Left",
+          click: () => {
+            if (state.mainWindow?.webContents.navigationHistory.canGoBack())
+              state.mainWindow.webContents.navigationHistory.goBack();
+          },
+        },
+        {
+          label: m.native.reload,
+          accelerator: "CmdOrCtrl+R",
+          click: () => {
+            if (state.mainWindow)
+              void loadApp(
+                state.mainWindow,
+                isAppUrl(state.mainWindow.webContents.getURL(), origin)
+                  ? state.mainWindow.webContents.getURL()
+                  : state.home,
+              );
+          },
+        },
+        {
+          label: m.native.openBrowser,
+          click: () => {
+            void openExternal(
+              state.mainWindow &&
+                isAppUrl(state.mainWindow.webContents.getURL(), origin)
+                ? state.mainWindow.webContents.getURL()
+                : state.home,
+            );
+          },
+        },
+        {
+          label: m.native.updates,
+          click: () => {
+            void updates.check(true);
+          },
+        },
+        { type: "separator" },
+        { role: "quit" },
+      ],
+    },
+    { role: "editMenu" },
+    { role: "viewMenu" },
+    { role: "windowMenu" },
+  ];
+  Menu.setApplicationMenu(Menu.buildFromTemplate(template));
+}
+
+function configureSession() {
+  const browserSession = session.fromPartition(
+    config.demo ? "persist:luma-green-demo" : "persist:luma-green",
+  );
+  browserSession.setPermissionCheckHandler(
+    (contents, permission, requestingOrigin, details) => {
+      return (
+        contents !== null &&
+        locationGrants.has(contents.id) &&
+        mayRequestLocation(
+          permission,
+          details.requestingUrl || requestingOrigin,
+          contents.getURL(),
+          origin,
+        )
+      );
+    },
+  );
+  browserSession.setPermissionRequestHandler(
+    (contents, permission, callback, details) => {
+      if (
+        !mayRequestLocation(
+          permission,
+          details.requestingUrl,
+          contents.getURL(),
+          origin,
+        )
+      ) {
+        callback(false);
+        return;
+      }
+      if (locationGrants.has(contents.id)) {
+        callback(true);
+        return;
+      }
+      const m = messages();
+      void dialog
+        .showMessageBox({
+          type: "question",
+          title: m.native.locationTitle,
+          message: m.native.locationBody,
+          buttons: [m.native.deny, m.native.allow],
+          defaultId: 0,
+          cancelId: 0,
+        })
+        .then(({ response }) => {
+          const allowed =
+            response === 1 &&
+            !contents.isDestroyed() &&
+            isAppUrl(contents.getURL(), origin);
+          if (allowed) locationGrants.add(contents.id);
+          callback(allowed);
+        })
+        .catch(() => callback(false));
+    },
+  );
+  browserSession.on("will-download", (event, item, contents) => {
+    if (!contents || !mayDownload(item.getURL(), contents.getURL(), origin))
+      event.preventDefault();
+    // Allowed items retain Electron's native save dialog; no forced filesystem path.
+  });
+}
+
+function createWindow() {
+  const browserSession = session.fromPartition(
+    config.demo ? "persist:luma-green-demo" : "persist:luma-green",
+  );
+  state.mainWindow = new BrowserWindow({
+    width: 1280,
+    height: 860,
+    minWidth: 360,
+    minHeight: 540,
+    title: messages().brand.name,
+    webPreferences: { ...secureWebPreferences, session: browserSession },
+  });
+  attachGuards(state.mainWindow);
+  state.mainWindow.on("closed", () => {
+    state.mainWindow = null;
+  });
+  setMenu();
+  void loadApp(state.mainWindow, state.home);
+}
+
+if (app.requestSingleInstanceLock()) {
+  app.on("second-instance", () => {
+    state.mainWindow?.restore();
+    state.mainWindow?.focus();
+  });
+  void app
+    .whenReady()
+    .then(() => {
+      state.locale = selectLocale(app.getLocale(), catalogues);
+      state.home = `${origin}/${state.locale === "en" ? "" : state.locale}`;
+      configureSession();
+      createWindow();
+      void updates.check();
+      const timer = setInterval(
+        () => {
+          void updates.check();
+        },
+        6 * 60 * 60 * 1000,
+      );
+      timer.unref();
+      app.on("activate", () => {
+        if (!state.mainWindow || state.mainWindow.isDestroyed()) createWindow();
+      });
+    })
+    .catch((error) => {
+      console.error("Desktop startup failed", error);
+      app.quit();
+    });
+  app.on("window-all-closed", () => {
+    if (process.platform !== "darwin") app.quit();
+  });
+} else {
+  app.quit();
+}

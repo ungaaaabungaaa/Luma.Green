@@ -254,7 +254,7 @@ export function KabadiwalaForm({
           )}
         />
         {values.offersPickup === false ? (
-          <p className="rounded-lg bg-brand-50 px-3 py-2 text-sm">
+          <p className="rounded-lg bg-primary/10 px-3 py-2 text-sm">
             {t("kabadiwala.noPickupHint")}
           </p>
         ) : null}

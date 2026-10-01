@@ -1,16 +1,15 @@
-# ios/
+# iOS
 
-Placeholder for the iOS app. Intentionally empty.
+The shared Android/iOS app now lives in [`apps/mobile`](../apps/mobile/README.md).
+It uses Expo managed configuration and Continuous Native Generation. The web
+view keeps the existing Next.js/Convex flows and their authenticated app origin.
 
-The plan is one Expo / React Native codebase that shares the Convex backend, the
-Zod schemas and the `messages/` catalogue with the web app. Business logic stays
-in Convex so both clients stay thin.
+Run `pnpm --filter @luma/mobile ios` from the repository root after installing
+full Xcode and its simulator. Expo generates `apps/mobile/ios/`; do not create
+or commit a second native project here. Generated Pods, builds and IPA files
+remain ignored.
 
-Before scaffolding anything here, decide:
-
-- Expo managed vs. bare workflow (managed unless a native module forces bare)
-- Whether ios/ and android/ hold one shared Expo project or two native shells
-- EAS Build for CI, and who owns the Apple Developer account
-
-Nothing generated (`Pods/`, `build/`, `*.ipa`) is ever committed — see
-`.gitignore`.
+JavaScript export is not a signed iOS build or App Store approval. Developer
+account ownership, signing, real-device permissions and update delivery remain
+release checks in the mobile runbook. Compatible shell JS can use EAS Update;
+native changes still need a new signed binary.

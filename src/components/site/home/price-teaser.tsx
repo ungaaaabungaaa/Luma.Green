@@ -101,7 +101,7 @@ function TeaserRow({ row }: { row: PriceRow }) {
   const Icon = FAMILY_ICONS[row.family];
   return (
     <li className="flex items-center gap-3 py-3">
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent text-primary">
         <Icon aria-hidden className="size-4" />
       </span>
       <span className="flex min-w-0 flex-1 flex-col">
@@ -141,9 +141,9 @@ function TeaserCard({
 }) {
   const t = useTranslations("home.teaser");
   return (
-    <div className="flex flex-col gap-5 rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
+    <div className="flex flex-col gap-4 rounded-2xl border border-primary/15 bg-card p-6 shadow-sm sm:p-7">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <h2 className="text-lg font-semibold">{t("title")}</h2>
+        <h2 className="text-xl font-semibold tracking-tight">{t("title")}</h2>
         <p className="text-sm text-muted-foreground">{meta ?? t("place")}</p>
       </div>
       {children}

@@ -1,5 +1,15 @@
 # Roadmap to the pilot
 
+> **Current implementation checkpoint:** [agent handoff](handoff.md). Use its
+> ordered queue to resume work; the dated schedule below is the original plan.
+
+> Implementation update, 1 Oct 2026: dispatch, photo estimates, status-message
+> adapters and the pilot report are implemented in the current branch. External
+> account approval and live provider checks remain. See the
+> [delivery log](cleanup-progress.md) and [launch checklist](../operations/launch-checklist.md).
+> Native shells and motion were added at the founder's request on 1 October;
+> [source and release evidence](apps-and-motion.md) are tracked separately from store approval.
+
 > **Status:** plan as of Tue 29 Sep 2026. Goal: real users in Bengaluru between
 > **13 and 20 October 2026**. Every change ships straight to production once its
 > checks pass.
@@ -42,8 +52,7 @@
 
 Kabadiwala → yard collections (until the research is in) · recycler and
 manufacturer trading · escrow · carbon credits · solar, documentation and legal
-services · machinery data bank · WhatsApp channel · Saathi jobs and pay · native
-apps · PostHog and Sentry · team members for the admin.
+services · machinery data bank · WhatsApp channel · Saathi jobs and pay · PostHog and Sentry · team members for the admin.
 
 ## Critical path — things that take days no matter how fast we build
 
@@ -52,4 +61,5 @@ apps · PostHog and Sentry · team members for the admin.
 2. **Pointing `luma.green`** at Vercel.
 3. **Convex production deploy key** in Vercel — without it, merges don't reach
    the production backend.
-4. **An OpenRouter key with a spend limit.**
+4. **Optional AI activation:** configure either a self-hosted endpoint or an
+   OpenRouter key with a spend limit. Manual material entry needs neither.

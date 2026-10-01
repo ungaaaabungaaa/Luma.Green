@@ -86,7 +86,7 @@ export function SavingsChart({
           {t("title", { years: bars.length })}
         </span>
         <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
-          <LegendItem swatch="bg-brand-500" label={t("legendPaying")} />
+          <LegendItem swatch="bg-accent0" label={t("legendPaying")} />
           <LegendItem swatch="bg-primary" label={t("legendPaid")} />
           <LegendItem
             swatch="border border-dashed border-muted-foreground bg-muted-foreground/10"

@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+**/node_modules/
+/.pnpm-store
 /.pnp
 .pnp.*
 .yarn/*
@@ -19,6 +21,7 @@
 
 # production
 /build
+/tmp/pdfs/
 
 # misc
 .DS_Store
@@ -62,7 +65,7 @@ next-env.d.ts
 !.vscode/extensions.json
 !.vscode/settings.json
 
-# mobile build output (the apps themselves live in ios/ and android/)
+# Mobile build output (source lives in apps/mobile).
 ios/build/
 ios/Pods/
 android/build/
@@ -71,5 +74,22 @@ android/.gradle/
 *.apk
 *.aab
 
+# Native shells: generated projects, app bundles and release credentials.
+apps/mobile/.expo/
+apps/mobile/dist/
+apps/mobile/ios/
+apps/mobile/android/
+apps/desktop/dist/
+apps/desktop/release/
+apps/desktop/generated/
+*.p12
+*.pfx
+*.keystore
+*.jks
+*.mobileprovision
+
 # os
 Thumbs.db
+
+# Local guide tooling
+/.venv-guide/

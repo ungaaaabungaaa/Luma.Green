@@ -114,6 +114,28 @@ describe("TrackView", () => {
     expect(screen.getByText("About 12 kg")).toBeInTheDocument();
   });
 
+  it("explains reassignment without losing the current shop details", () => {
+    render(
+      withIntl(
+        <TrackView
+          booking={booking({
+            dispatch: {
+              attempt: 2,
+              offeredAt: Date.now(),
+              approximateLocation: true,
+            },
+          })}
+        />,
+      ),
+    );
+    expect(
+      screen.getByText(/Your request has moved to another nearby shop/),
+    ).toHaveAttribute("role", "status");
+    expect(
+      screen.getByRole("link", { name: "Call Ramesh Kabadi Store" }),
+    ).toBeInTheDocument();
+  });
+
   it("lets the household that booked cancel, after asking", async () => {
     auth.isAuthenticated = true;
     render(withIntl(<TrackView booking={booking({ isMine: true })} />));

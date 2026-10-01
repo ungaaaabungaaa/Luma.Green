@@ -2,9 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* White theme only (docs/decisions/0010). shadcn components ship `dark:`
-   utilities; this keeps them inert by matching a `.dark` class we never set.
-   Delete it and Tailwind would apply them from the phone's own dark setting. */
+/* A stored preference controls the class; system mode follows the device. */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -58,6 +56,30 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
+    alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+    0% {
+      transform: translateZ(0) rotate(0);
+    }
+    15%,
+    35% {
+      transform: translateZ(0) rotate(90deg);
+    }
+    65%,
+    85% {
+      transform: translateZ(0) rotate(270deg);
+    }
+    100% {
+      transform: translateZ(0) rotate(360deg);
+    }
+  }
 }
 
 /* Luma.Green brand scale, sampled from the mark. Use `brand-*` utilities for
@@ -79,30 +101,30 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(0.982 0.008 95);
+  --foreground: oklch(0.23 0.035 160);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.23 0.035 160);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.5 0.095 162);
+  --primary: oklch(0.36 0.07 162);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.95 0.025 135);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --muted: oklch(0.96 0.01 130);
+  --muted-foreground: oklch(0.47 0.018 160);
+  --accent: oklch(0.94 0.025 135);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: oklch(0.89 0.014 140);
+  --input: oklch(0.86 0.018 140);
   --ring: oklch(0.62 0.1 162);
   --chart-1: oklch(0.82 0.14 133);
   --chart-2: oklch(0.72 0.14 148);
   --chart-3: oklch(0.62 0.12 158);
   --chart-4: oklch(0.5 0.095 162);
   --chart-5: oklch(0.38 0.07 165);
-  --radius: 0.625rem;
+  --radius: 1rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.5 0.095 162);
@@ -111,6 +133,35 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.16 0.012 160);
+  --foreground: oklch(0.95 0.008 110);
+  --card: oklch(0.205 0.013 160);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.225 0.014 160);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.88 0.16 125);
+  --primary-foreground: oklch(0.18 0.03 160);
+  --secondary: oklch(0.27 0.024 160);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.245 0.013 160);
+  --muted-foreground: oklch(0.73 0.017 140);
+  --accent: oklch(0.3 0.037 155);
+  --accent-foreground: oklch(0.94 0.045 130);
+  --destructive: oklch(0.73 0.17 25);
+  --border: oklch(0.34 0.018 160);
+  --input: oklch(0.4 0.02 160);
+  --ring: oklch(0.79 0.13 130);
+  --sidebar: oklch(0.18 0.013 160);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 @layer base {
@@ -123,4 +174,106 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Keep button feedback short and preserve the 44px target and focus ring.
+   Individual translate leaves icon direction and layout transforms intact. */
+[data-slot="button"] {
+  transition-property:
+    background-color, border-color, color, box-shadow, translate;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  [data-slot="button"]:not(
+      :disabled,
+      [aria-disabled="true"],
+      [aria-haspopup]
+    ):hover {
+    translate: 0 -1px;
+  }
+
+  [data-slot="button"]:not(
+      :disabled,
+      [aria-disabled="true"],
+      [aria-haspopup]
+    ):active {
+    translate: 0 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="button"] {
+    transition: none;
+    translate: none;
+  }
+}
+
+/* Editorial surfaces use the existing palette; no image or filter work on scroll. */
+.surface-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklch, var(--border), transparent 55%) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--border), transparent 55%) 1px,
+      transparent 1px
+    );
+  background-size: 4rem 4rem;
+}
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-size: clamp(2.6rem, 5.6vw, 5.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  overflow-wrap: anywhere;
+}
+html:is(
+    [lang="ar"],
+    [lang="ur"],
+    [lang="kn"],
+    [lang="ta"],
+    [lang="te"],
+    [lang="ml"],
+    [lang="bn"],
+    [lang="gu"],
+    [lang="pa"],
+    [lang="hi"],
+    [lang="mr"]
+  )
+  .hero-title {
+  line-height: 1.3;
+  letter-spacing: normal;
+}
+[data-slot="card"] {
+  box-shadow: 0 4px 24px -16px
+    color-mix(in oklch, var(--foreground), transparent 76%);
+}
+[data-slot="input"],
+[data-slot="textarea"],
+[data-slot="select-trigger"] {
+  background-color: var(--card);
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-slot="input"],
+  [data-slot="textarea"],
+  [data-slot="select-trigger"] {
+    transition:
+      border-color 150ms ease,
+      box-shadow 150ms ease;
+  }
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
 }

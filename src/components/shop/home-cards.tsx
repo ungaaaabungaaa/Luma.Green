@@ -78,7 +78,7 @@ function CardShell({
           </h2>
           <BigCount count={count} isHot={isHot} />
         </div>
-        <span className="flex size-12 items-center justify-center rounded-full bg-brand-50 text-primary">
+        <span className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
           <Icon aria-hidden className="size-6" />
         </span>
       </div>

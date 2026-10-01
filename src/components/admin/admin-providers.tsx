@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
-import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider, ThemeToaster } from "@/components/theme/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 /**
@@ -10,9 +10,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
  */
 export function AdminProviders({ children }: { children: ReactNode }) {
   return (
-    <ConvexClientProvider>
-      <TooltipProvider>{children}</TooltipProvider>
-      <Toaster richColors closeButton />
-    </ConvexClientProvider>
+    <ThemeProvider>
+      <ConvexClientProvider>
+        <TooltipProvider>{children}</TooltipProvider>
+        <ThemeToaster />
+      </ConvexClientProvider>
+    </ThemeProvider>
   );
 }

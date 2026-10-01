@@ -16,6 +16,7 @@ import {
   vFileType,
 } from "./lib/drafts";
 import { canMove } from "./lib/lifecycle";
+import { queueNotification } from "./lib/notifications";
 import {
   areaFrom,
   changedFields,
@@ -582,6 +583,14 @@ export const decide = mutation({
         ...created,
       },
       createdAt: now,
+    });
+    await queueNotification(ctx, {
+      event: `application_${to}`,
+      dedupKey: `application_${to}:${application._id}:${String(application.version)}`,
+      profileId: application.profileId,
+      applicationId: application._id,
+      locale: application.locale,
+      revision: application.version,
     });
     return null;
   },

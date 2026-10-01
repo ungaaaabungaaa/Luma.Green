@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 
-import { pageMetadata, serializeJsonLd } from "./seo";
+import {
+  pageMetadata,
+  privateMetadata,
+  searchVerificationMetadata,
+  serializeJsonLd,
+} from "./seo";
 
 const input = {
   path: "/how-it-works",
@@ -36,5 +41,42 @@ describe("serializeJsonLd", () => {
 
     expect(json).not.toContain("</script>");
     expect(JSON.parse(json)).toEqual({ name: "</script><script>alert(1)" });
+  });
+});
+
+describe("searchVerificationMetadata", () => {
+  it("emits no ownership tags until configured", () => {
+    expect(searchVerificationMetadata({})).toBeUndefined();
+    expect(
+      searchVerificationMetadata({ google: " ", bing: "" }),
+    ).toBeUndefined();
+  });
+
+  it("supports independent Google and Bing ownership tokens", () => {
+    expect(searchVerificationMetadata({ google: " google-token " })).toEqual({
+      google: "google-token",
+    });
+    expect(searchVerificationMetadata({ bing: "bing-token" })).toEqual({
+      other: { "msvalidate.01": "bing-token" },
+    });
+    expect(
+      searchVerificationMetadata({
+        google: "google-token",
+        bing: "bing-token",
+      }),
+    ).toEqual({
+      google: "google-token",
+      other: { "msvalidate.01": "bing-token" },
+    });
+  });
+});
+
+it("private pages clear inherited discovery metadata and prevent indexing", () => {
+  expect(privateMetadata("My booking")).toEqual({
+    title: "My booking",
+    robots: { index: false, follow: false },
+    alternates: {},
+    openGraph: null,
+    twitter: null,
   });
 });

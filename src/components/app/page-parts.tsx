@@ -16,12 +16,18 @@ export function AppPageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="flex flex-wrap items-end justify-between gap-3">
-      <div className="flex min-w-0 flex-col gap-1">
-        <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-        {lead ? <p className="text-muted-foreground">{lead}</p> : null}
+    <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border/70 pb-5">
+      <div className="flex min-w-0 flex-col gap-2">
+        <h1 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+          {title}
+        </h1>
+        {lead ? (
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            {lead}
+          </p>
+        ) : null}
       </div>
-      {actions ? <div className="flex gap-2">{actions}</div> : null}
+      {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
     </div>
   );
 }
@@ -40,22 +46,24 @@ export function StatCard({
   tone?: "neutral" | "good" | "warn";
 }) {
   return (
-    <div className="flex flex-col gap-1 rounded-2xl border bg-card p-4">
-      <div className="flex items-center justify-between gap-2">
+    <div className="relative flex min-w-0 flex-col gap-3 overflow-hidden rounded-2xl border border-border/80 bg-card p-4 shadow-xs sm:p-5">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">{label}</p>
         {Icon ? (
           <Icon
             aria-hidden
             className={cn(
-              "size-4",
+              "size-5",
               tone === "good" && "text-primary",
-              tone === "warn" && "text-amber-600",
+              tone === "warn" && "text-amber-700 dark:text-amber-300",
               tone === "neutral" && "text-muted-foreground",
             )}
           />
         ) : null}
       </div>
-      <p className="text-2xl font-semibold tracking-tight">{value}</p>
+      <p className="font-display text-2xl font-semibold tracking-tight break-words tabular-nums sm:text-3xl">
+        {value}
+      </p>
       {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
     </div>
   );
@@ -72,8 +80,8 @@ export function Section({
 }) {
   return (
     <section className="flex flex-col gap-3">
-      <div className="flex items-center justify-between gap-2">
-        <h2 className="text-lg font-semibold">{title}</h2>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
         {action}
       </div>
       {children}
@@ -93,13 +101,15 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed bg-card px-6 py-10 text-center">
-      <span className="flex size-12 items-center justify-center rounded-full bg-brand-50 text-primary">
+    <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border bg-card px-6 py-9 text-center">
+      <span className="flex size-12 items-center justify-center rounded-xl border border-primary/15 bg-primary/10 text-primary">
         <Icon aria-hidden className="size-6" />
       </span>
-      <p className="font-medium">{title}</p>
+      <p className="text-lg font-semibold tracking-tight">{title}</p>
       {body ? (
-        <p className="max-w-sm text-sm text-muted-foreground">{body}</p>
+        <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+          {body}
+        </p>
       ) : null}
       {action}
     </div>
@@ -127,11 +137,11 @@ export function StatusPill({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium whitespace-nowrap",
+        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap",
         tone === "neutral" && "bg-muted text-muted-foreground",
-        tone === "info" && "bg-sky-50 text-sky-800",
-        tone === "good" && "bg-brand-50 text-primary",
-        tone === "warn" && "bg-amber-50 text-amber-800",
+        tone === "info" && "bg-sky-500/10 text-sky-800 dark:text-sky-300",
+        tone === "good" && "bg-primary/10 text-primary",
+        tone === "warn" && "bg-amber-500/10 text-amber-800 dark:text-amber-300",
         tone === "bad" && "bg-destructive/10 text-destructive",
       )}
     >
@@ -143,7 +153,7 @@ export function StatusPill({
 /** "Sample data" ribbon for prototype-only numbers. */
 export function DemoNote({ children }: { children: ReactNode }) {
   return (
-    <p className="rounded-lg border border-dashed border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+    <p className="rounded-lg border border-dashed border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-900 dark:text-amber-200">
       {children}
     </p>
   );

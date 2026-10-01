@@ -52,7 +52,7 @@ export function NewRequestCard({ booking, today, city }: CardProps) {
   return (
     <article
       aria-labelledby={`request-${booking.id}`}
-      className="flex flex-col gap-4 rounded-2xl border bg-card p-4"
+      className="flex flex-col gap-4 rounded-2xl border bg-card p-4 shadow-sm"
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="flex min-w-0 flex-col gap-1">
@@ -88,7 +88,7 @@ export function ActiveRequestCard({ booking, today, city }: CardProps) {
   return (
     <article
       aria-labelledby={`request-${booking.id}`}
-      className="flex flex-col gap-4 rounded-2xl border bg-card p-4"
+      className="flex flex-col gap-4 rounded-2xl border bg-card p-4 shadow-sm"
     >
       <div className="flex items-start justify-between gap-2">
         <div className="flex min-w-0 flex-col gap-1">
@@ -131,14 +131,14 @@ export function DoneRequestCard({ booking }: { booking: BookingView }) {
   return (
     <article
       aria-labelledby={`request-${booking.id}`}
-      className="flex items-center gap-3 rounded-2xl border bg-card p-4"
+      className="flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-sm"
     >
       <span
         aria-hidden
         className={cn(
           "flex size-11 shrink-0 items-center justify-center rounded-full",
           receipt
-            ? "bg-brand-50 text-primary"
+            ? "bg-accent text-accent-foreground"
             : "bg-muted text-muted-foreground",
         )}
       >

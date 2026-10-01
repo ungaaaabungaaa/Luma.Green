@@ -16,12 +16,15 @@ export function SignInUnavailable() {
   const t = useTranslations("auth");
 
   return (
-    <Card role="status">
-      <CardHeader className="gap-3">
-        <span className="flex size-12 items-center justify-center rounded-full bg-brand-50 text-primary">
+    <Card
+      role="status"
+      className="rounded-2xl border-border/80 bg-card shadow-xs"
+    >
+      <CardHeader className="gap-4 p-6 sm:p-8">
+        <span className="flex size-12 items-center justify-center rounded-xl border border-primary/15 bg-primary/10 text-primary">
           <ClockIcon aria-hidden className="size-6" />
         </span>
-        <CardTitle className="text-xl">
+        <CardTitle className="font-display text-3xl leading-tight tracking-tight">
           <h1>{t("unavailableTitle")}</h1>
         </CardTitle>
         <CardDescription className="text-base leading-relaxed">

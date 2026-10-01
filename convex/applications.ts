@@ -18,6 +18,7 @@ import {
   vFileType,
 } from "./lib/drafts";
 import { canMove } from "./lib/lifecycle";
+import { queueNotification } from "./lib/notifications";
 import {
   applicationIssues,
   indiaToday,
@@ -27,6 +28,17 @@ import {
 
 /** Drafts are small; anything bigger than this is not a form. */
 const MAX_DRAFT_CHARS = 20_000;
+
+/** Drafts contain plain JSON. Object key order does not change their meaning. */
+function draftJson(value: unknown): string | undefined {
+  return JSON.stringify(value, (_key, entry: unknown) =>
+    entry !== null && typeof entry === "object" && !Array.isArray(entry)
+      ? Object.fromEntries(
+          Object.entries(entry).toSorted(([a], [b]) => a.localeCompare(b)),
+        )
+      : entry,
+  );
+}
 
 const vFileSummary = v.object({
   id: v.id("applicationFiles"),
@@ -156,9 +168,19 @@ export const saveDraft = mutation({
     for (const section of Object.keys(args) as Section[]) {
       if (!allowed.includes(section)) throw new ConvexError("WRONG_SECTION");
     }
-    // `args` holds only the sections sent, each checked by its validator.
+    // Repeat saves must still pass access and section checks. Skip unchanged
+    // sections so they do not write data or invalidate live query caches.
+    const changed = Object.fromEntries(
+      (Object.keys(args) as Section[])
+        .filter(
+          (section) =>
+            draftJson(args[section]) !== draftJson(application[section]),
+        )
+        .map((section) => [section, args[section]]),
+    );
+    if (Object.keys(changed).length === 0) return null;
     await ctx.db.patch("applications", application._id, {
-      ...args,
+      ...changed,
       updatedAt: Date.now(),
     });
     return null;
@@ -234,6 +256,14 @@ export const submit = mutation({
       actorProfileId: profile._id,
       metadata: { from: application.status, to: "submitted", version },
       createdAt: now,
+    });
+    await queueNotification(ctx, {
+      event: "application_received",
+      dedupKey: `application_received:${application._id}:${String(version)}`,
+      profileId: profile._id,
+      applicationId: application._id,
+      locale: application.locale,
+      revision: version,
     });
     return null;
   },

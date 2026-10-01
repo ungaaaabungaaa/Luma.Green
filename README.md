@@ -4,6 +4,12 @@
 
 <h1 align="center">Luma.Green</h1>
 
+**Continue development:** [Agent handoff](docs/delivery/handoff.md) — branch and
+commit checkpoints, completed work, verification, setup gates and next tasks.
+
+**Learn the platform:** [A-to-Z Word guide guide](output/docx/luma-green-user-guide.docx)
+and [editable guide with screenshot evidence](docs/user-guide/README.md).
+
 <p align="center"><strong>Cleaner Tomorrow in Motion</strong></p>
 
 <p align="center">
@@ -21,8 +27,9 @@
   <a href="docs/README.md">Docs</a>
 </p>
 
-> **This is the investor prototype.** Every screen runs against a live backend
-> filled with a demo world of sample Bengaluru businesses, prices and trades.
+> **This is the investor prototype.** A configured development backend can serve
+> sample Bengaluru businesses, prices and trades. Without that connection, the
+> app shows setup states. Live launch and provider execution remain separate gates.
 > What's real and what's sample: [Status](#status).
 
 ## What Luma.Green is
@@ -31,7 +38,8 @@ Recyclable material in an Indian city passes through many hands, and every
 hand-off is informal: prices are opaque, weights are guessed and nothing is
 written down. Luma.Green connects the whole chain on one platform, where
 everyone sees the latest prices, trades material with the next step up and,
-between businesses, pays through escrow.
+between businesses, demonstrates the planned escrow steps. It does not hold or
+transfer real business payments.
 
 ```
 Household ──► Kabadiwala ──► Yard ──────► Recycler ──────► Manufacturer
@@ -249,9 +257,11 @@ Then sign in at `http://localhost:3000/login` with a demo login.
   `AUTH_DEV_MODE=true`, so production is never touched.
 - **Another port:** sign-in trusts `SITE_URL` only. Add more with
   `npx convex env set EXTRA_TRUSTED_ORIGINS http://localhost:3100`.
-- **Everything else** (SMS, AI, payments, maps, analytics) switches itself on
-  when its key appears in `.env.local` or on the deployment; see
-  [docs/operations/environments.md](docs/operations/environments.md).
+- **Optional services:** configure SMS and AI in their documented deployment
+  environments. PostHog, GA4 and Sentry also require an explicit telemetry switch;
+  visit analytics wait for the visitor choice. See
+  [observability setup](docs/operations/observability.md). Payments remain a demo;
+  browser location requires no map-service key.
 
 ```bash
 pnpm check          # lint + typecheck + unit tests: run before every push
@@ -261,19 +271,39 @@ pnpm build          # production build
 pnpm screenshots    # the "See it" pictures, from a running app
 ```
 
+## Android, iOS, macOS and Windows
+
+The native apps reuse the hosted operational screens and the same Convex backend.
+`apps/mobile` contains the Expo / React Native shell for Android and iOS.
+`apps/desktop` contains the Electron shell for macOS and Windows.
+They include native navigation, offline recovery and update configuration.
+
+```sh
+pnpm apps:check
+pnpm mobile:export  # JavaScript bundles, not APK/IPA installers
+pnpm desktop:pack   # unsigned desktop app for the host platform
+```
+
+Routine hosted content updates need no new installer. Compatible mobile shell
+updates use EAS; desktop binaries use signed update feeds. New mobile native
+features still need signed store releases. See the [architecture](docs/architecture/native-apps.md),
+[account and release checklist](docs/operations/app-releases.md), and
+[local verification record](docs/delivery/apps-and-motion.md).
+
 ## Tech stack
 
-| Layer     | Choice                                                                                                                                                                        |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                       |
-| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                                      |
-| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                   |
-| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                 |
-| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                                      |
-| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                               |
-| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                         |
-| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                       |
-| Waiting   | MSG91 (SMS, pending DLT approval), OpenRouter (AI photo estimates), Razorpay, Resend, Cloudflare R2, Mapbox, PostHog, Sentry: installed, switched off until their keys arrive |
+| Layer     | Choice                                                                                                                                                                                                                                  |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                                                                                 |
+| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; light/dark/system themes, mobile first                                                                                                                                   |
+| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                                                                                              |
+| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                                                                             |
+| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                                                                           |
+| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                                                                                                |
+| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                                                                                         |
+| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                                                                                   |
+| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                                                                                 |
+| Waiting   | MSG91 and optional AI endpoint: implementation ready for account setup and provider checks. PostHog, GA4 and Sentry are implemented but need configured projects and delivery checks. Maps use browser location. Payments remain a demo |
 
 ## Docs
 
@@ -292,10 +322,12 @@ pnpm screenshots    # the "See it" pictures, from a running app
 
 ## Status
 
-A prototype, as of 29 September 2026, ahead of the Bengaluru pilot on 13–20
-October 2026.
+A prototype with a local pilot implementation pass on 1 October 2026, ahead
+of the Bengaluru pilot on 13–20 October 2026. See the
+[delivery log](docs/delivery/cleanup-progress.md) and the exact
+[account and environment checklist](docs/operations/launch-checklist.md).
 
-**Real**, working end to end on the dev deployment:
+**Existing development flows** (deployment status must be checked before launch):
 
 - Sign-in with phone codes, and the admin's password and authenticator, with
   fixed-length sessions and rate limits.
@@ -318,11 +350,12 @@ October 2026.
 - No money moves. Households are paid at the door and the amount is recorded
   ([ADR 0009](docs/decisions/0009-money-off-platform-first.md)); escrow between
   businesses is simulated.
-- No SMS is sent until MSG91's DLT registration is approved: demo numbers use
-  123456, and other numbers' codes go to the Convex log.
-- The AI photo estimate isn't switched on yet (no OpenRouter key); rupee
-  amounts always come from the price tables
-  ([ADR 0011](docs/decisions/0011-ai-estimates-priced-by-our-tables.md)).
+- SMS requires approved MSG91 templates and Convex configuration. Only explicit
+  development mode uses demo codes or log delivery. Local provider tests use mocks.
+- The optional AI photo estimate uses an evaluated model through OpenRouter or a
+  self-hosted endpoint ([cost and setup guide](docs/operations/low-cost-operation.md));
+  rupee amounts always come from the price tables
+  ([ADR 0015](docs/decisions/0015-bounded-photo-cache-and-selectable-inference.md)).
 - Documents in the demo applications are generated samples.
 
 **Next**: the [roadmap](docs/delivery/roadmap.md), and the list at the end of

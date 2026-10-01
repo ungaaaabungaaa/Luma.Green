@@ -8,7 +8,8 @@ export default function robots(): MetadataRoute.Robots {
 
   return {
     rules: isProduction
-      ? { userAgent: "*", allow: "/", disallow: ["/api/", "/admin/"] }
+      ? // Private pages must be crawlable for their noindex tags to be read.
+        { userAgent: "*", allow: "/", disallow: ["/api/"] }
       : { userAgent: "*", disallow: "/" },
     sitemap: `${site.url}/sitemap.xml`,
     host: site.url,

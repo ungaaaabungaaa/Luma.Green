@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
+    // One output format avoids duplicate transforms. Static image imports use
+    // content-hashed URLs with immutable caching; private files bypass this.
+    formats: ["image/webp"],
+    maximumDiskCacheSize: 64 * 1024 * 1024,
   },
   async headers() {
     return [
@@ -40,15 +43,17 @@ const config = withNextIntl(nextConfig);
  * Sentry only wraps the build when it is actually configured. Without a DSN the
  * plugin is skipped entirely, so local builds and CI stay fast and silent.
  */
-export default process.env.NEXT_PUBLIC_SENTRY_DSN
+export default process.env.NEXT_PUBLIC_TELEMETRY_ENABLED === "true" &&
+process.env.NEXT_PUBLIC_SENTRY_DSN?.trim()
   ? withSentryConfig(config, {
       org: process.env.SENTRY_ORG,
       project: process.env.SENTRY_PROJECT,
       silent: !process.env.CI,
-      widenClientFileUpload: true,
-      // Proxies Sentry through our own domain so ad blockers don't drop errors.
-      tunnelRoute: "/monitoring",
-      disableLogger: true,
-      sourcemaps: { deleteSourcemapsAfterUpload: true },
+      webpack: { treeshake: { removeDebugLogging: true, removeTracing: true } },
+      telemetry: false,
+      sourcemaps: {
+        disable: !process.env.SENTRY_AUTH_TOKEN,
+        deleteSourcemapsAfterUpload: true,
+      },
     })
   : config;

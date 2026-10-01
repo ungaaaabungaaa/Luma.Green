@@ -25,7 +25,7 @@ export function BoardColumns() {
       aria-hidden
       className={cn(
         BOARD_GRID,
-        "hidden border-b bg-muted/40 px-4 py-2 text-xs font-medium text-muted-foreground md:grid",
+        "hidden border-b bg-muted/60 px-4 py-3 text-xs font-medium text-muted-foreground md:grid",
       )}
     >
       <span>{t("material")}</span>

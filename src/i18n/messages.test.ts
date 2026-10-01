@@ -4,6 +4,12 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { defaultLocale, localeMeta, locales } from "./locales";
+import {
+  flattenMessages,
+  hasSameMessageContract,
+  hasUntranslatedCopy,
+  messageContract,
+} from "./message-validation";
 
 const messagesDir = path.join(process.cwd(), "messages");
 
@@ -15,16 +21,8 @@ function load(locale: string): Record<string, unknown> {
   ) as Record<string, unknown>;
 }
 
-function flatKeys(object: Record<string, unknown>, prefix = ""): string[] {
-  return Object.entries(object).flatMap(([key, value]) => {
-    const keyPath = prefix ? `${prefix}.${key}` : key;
-    return value !== null && typeof value === "object" && !Array.isArray(value)
-      ? flatKeys(value as Record<string, unknown>, keyPath)
-      : [keyPath];
-  });
-}
-
-const baseline = flatKeys(load(defaultLocale)).toSorted(byName);
+const english = flattenMessages(load(defaultLocale));
+const baseline = Object.keys(english).toSorted(byName);
 
 describe("locale registry", () => {
   it("has metadata for every locale", () => {
@@ -49,21 +47,27 @@ describe.each(locales)("messages/%s.json", (locale) => {
 
   it("matches the English key set exactly", () => {
     // Catches both missing translations and keys left behind after a rename.
-    expect(flatKeys(messages).toSorted(byName)).toEqual(baseline);
+    expect(Object.keys(flattenMessages(messages)).toSorted(byName)).toEqual(
+      baseline,
+    );
   });
 
-  it("has no empty or untranslated-looking values", () => {
+  it("has valid translated values with the same ICU contract as English", () => {
+    const flattened = flattenMessages(messages);
     for (const key of baseline) {
-      const value = key
-        .split(".")
-        .reduce<unknown>(
-          (accumulator, part) => (accumulator as Record<string, unknown>)[part],
-          messages,
-        );
-
-      expect(typeof value, `${locale}.${key}`).toBe("string");
-      expect((value as string).trim(), `${locale}.${key}`).not.toBe("");
-      expect(value as string, `${locale}.${key}`).not.toMatch(/^TODO/i);
+      const value = flattened[key];
+      const source = english[key];
+      const label = `${locale}.${key}`;
+      expect(typeof value, label).toBe("string");
+      expect(typeof source, label).toBe("string");
+      if (typeof value !== "string" || typeof source !== "string") continue;
+      expect(value.trim(), label).not.toBe("");
+      expect(value, label).not.toMatch(/^TODO/i);
+      expect(() => messageContract(value), label).not.toThrow();
+      expect(hasSameMessageContract(source, value), label).toBe(true);
+      if (locale !== defaultLocale) {
+        expect(hasUntranslatedCopy(source, value), label).toBe(false);
+      }
     }
   });
 

@@ -1,7 +1,7 @@
 # Frontend and UI plan
 
 > **Status:** decided, 29 Sep 2026 —
-> [ADR 0010](../decisions/0010-white-theme-mobile-first-shadcn.md). Rules for
+> [ADR 0017](../decisions/0017-light-dark-theme.md). Rules for
 > writing UI code live in [`.claude/skills/design-system`](../../.claude/skills/design-system/SKILL.md).
 
 ## The rules
@@ -10,7 +10,7 @@
    field, dialog, sheet, tab and toast comes from shadcn (`pnpm dlx
 shadcn@latest add …`). Next.js's own `next/image` and `next/font` for images
    and fonts. No second component library.
-2. **White theme only.** No dark mode, no theme switch, no `.dark` tokens.
+2. **Light, dark and system appearance.** Shared semantic tokens and a local preference apply to public pages, admin and workspaces.
 3. **Mobile first.** Every screen is designed at 360–390 px first. Household
    and kabadiwala screens are phone-only; yard, recycler, manufacturer and
    admin screens also get a desktop layout.
@@ -32,6 +32,32 @@ shadcn@latest add …`). Next.js's own `next/image` and `next/font` for images
 | Admin `admin/`                            | Desktop           | Left sidebar · list and detail side by side from `lg`, stacked below                 | Fluid                                 |
 
 ## Look and feel
+
+### Current visual direction — 1 October 2026
+
+The founder requested a richer public site and more polished app screens. This
+refinement supersedes the earlier compact public heading and radius guidance.
+See [visual delivery evidence](../delivery/premium-ui.md).
+
+- Support light and dark themes. Use forest-green feature panels with
+  explicit light text; these do not depend on the device theme.
+- Public content uses `max-w-7xl`, editorial headings, larger section spacing,
+  and compressed sculptural imagery. Noto still supplies all twelve scripts.
+  Hero tracking and line-height are reset for non-Latin scripts.
+- The base radius is `0.875rem`. Feature panels use larger standard Tailwind
+  radii. Controls retain the shared shadcn primitives and minimum touch targets.
+- Desktop sign-in has an image panel beside the form. Phone sign-in keeps the
+  form first. Operational shells use stronger headers, forest navigation and
+  clearer status/metric cards. Transaction content does not animate on updates.
+- Homepage GSAP parallax follows native scrolling and is bounded to 64 px,
+  halved on phones. Secondary-page reveals use native browser animation.
+  Entrances may exceed 200 ms; control transitions stay short. Reduced motion
+  stops running movement and restores content. Server content is visible before
+  animation starts, and each route cleans up its observers/listeners.
+- Use `SectionHeading` offsets for in-page links under the fixed header. Keep
+  translated copy, logical RTL spacing, prices and permission checks unchanged.
+
+The following baseline still applies to functional controls and data presentation.
 
 - **Surfaces:** a light grey page (`bg-muted`) with white cards (`bg-card`) and
   hairline borders — as in the prototype. Primary actions in brand green

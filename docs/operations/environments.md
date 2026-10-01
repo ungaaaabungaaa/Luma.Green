@@ -1,17 +1,17 @@
 # Environments
 
-> **Status:** decided, 29 Sep 2026 —
+> **Status:** setup guide updated 1 Oct 2026; account state is unverified —
 > [ADR 0002](../decisions/0002-convex-as-the-backend.md). Facts about Convex
 > checked against docs.convex.dev on the same day.
 
 Three environments, three sets of credentials. A key from one never appears in
 another.
 
-| Environment    | Frontend                                                              | Backend (Convex)                                                                                          | Data               | Deployed by                                                        |
-| -------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------ |
-| **Local**      | `pnpm dev` on your machine (`localhost:3000`)                         | The **dev** deployment `glorious-rooster-470` (EU West), via `pnpm convex:dev`                            | Test data          | You                                                                |
-| **Preview**    | A Vercel URL per pull request                                         | A Convex **preview** deployment per branch — free, beta, deleted after 5 days, starts empty and is seeded | Seeded sample data | The Vercel build, automatically                                    |
-| **Production** | `lumagreen.vercel.app` today; `luma.green` once the domain is pointed | The Convex **prod** deployment                                                                            | Real data          | Merging to `main` (Vercel runs `convex deploy`, then `next build`) |
+| Environment    | Frontend                                                              | Backend (Convex)                                                                                          | Data               | Deployed by                                                  |
+| -------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------ |
+| **Local**      | `pnpm dev` on your machine (`localhost:3000`)                         | The **dev** deployment `glorious-rooster-470` (EU West), via `pnpm convex:dev`                            | Test data          | You                                                          |
+| **Preview**    | A Vercel URL per pull request                                         | A Convex **preview** deployment per branch — free, beta, deleted after 5 days, starts empty and is seeded | Seeded sample data | The Vercel build, once configured                            |
+| **Production** | `lumagreen.vercel.app` today; `luma.green` once the domain is pointed | The Convex **prod** deployment                                                                            | Real data          | Merging to `main`, after configuring the build command below |
 
 ## Rules
 
@@ -46,14 +46,25 @@ talk to a third party.
    instruction: straight to production).
 3. Vercel's production build runs `npx convex deploy --cmd 'pnpm build'`:
    Convex checks the new schema against existing data, pushes the functions,
-   then runs `next build` with `NEXT_PUBLIC_CONVEX_URL` injected.
+   then runs `next build` with `NEXT_PUBLIC_CONVEX_URL` injected. This is
+   the required Vercel project setting, not an existing repository script.
 4. If the schema check fails, the build fails and production stays on the
    previous version — fix forward with a widen → migrate → narrow change
    ([migrations](../migrations/README.md)).
 5. Open the production URL and walk the changed flow once.
 
-The build command lives in the repo (`vercel.json` → `scripts/vercel-build.sh`)
-and falls back to a plain `pnpm build` when no deploy key is set.
+This repository has no `vercel.json` or deployment wrapper script. The default
+`pnpm build` builds the frontend only. Once the environment-specific deploy keys
+are ready, set Vercel's **Build Command** to:
+
+```sh
+pnpm exec convex deploy --cmd 'pnpm build' --cmd-url-env-var-name NEXT_PUBLIC_CONVEX_URL
+```
+
+The command follows the official [Convex Vercel guide](https://docs.convex.dev/production/hosting/vercel).
+It changes the backend; do not run it as a local verification command. Keep the
+default frontend build until account setup is complete. No deployment was made
+in the 1 October implementation pass.
 
 ## One-time switch-on (founder)
 
@@ -69,7 +80,8 @@ variables in Vercel are placeholders. To switch on:
    (The CLI refuses to deploy a production key from a non-production build, so
    a mix-up fails safely — but fails the build.)
 3. **Remove from Vercel** `NEXT_PUBLIC_CONVEX_URL` and `CONVEX_DEPLOYMENT`; the
-   build injects the URL itself.
+   configured build command injects the URL itself. Remove any static
+   `NEXT_PUBLIC_CONVEX_SITE_URL` too; the app derives it from the injected URL.
 4. **Convex prod variables** (dashboard or `npx convex env set --prod …`):
    `SITE_URL`, `BETTER_AUTH_SECRET` (a fresh `openssl rand -base64 32`), and the
    MSG91 values once DLT templates are approved — after the checklist in
@@ -85,24 +97,35 @@ variables in Vercel are placeholders. To switch on:
 
 ## Where each variable lives
 
-| Variable                                                      | Next.js on Vercel                                   | Convex deployment          | Notes                                                      |
-| ------------------------------------------------------------- | --------------------------------------------------- | -------------------------- | ---------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`                                        | Production: `https://luma.green`                    | —                          | Canonical URLs                                             |
-| `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`       | URL injected by `convex deploy`; local `.env.local` | —                          | Don't set by hand on Vercel; the site URL is derived       |
-| `CONVEX_DEPLOY_KEY`                                           | Production key → Production; preview key → Preview  | —                          | Never in `.env.local`                                      |
-| `CONVEX_DEPLOYMENT`                                           | —                                                   | —                          | Local `.env.local` only                                    |
-| `SITE_URL`                                                    | —                                                   | Every deployment           | The site origin Better Auth trusts                         |
-| `EXTRA_TRUSTED_ORIGINS`                                       | —                                                   | Dev only, if needed        | Comma-separated extra origins, e.g. a second local port    |
-| `ADMIN_EMAIL`                                                 | —                                                   | Every deployment           | The one admin; set right before `/admin/setup`             |
-| `BETTER_AUTH_SECRET`                                          | —                                                   | Every deployment           | Different per deployment                                   |
-| `MSG91_AUTH_KEY`, `MSG91_OTP_TEMPLATE_ID`, other template ids | —                                                   | Prod (and dev for testing) | DLT-approved ids only                                      |
-| `AUTH_DEV_MODE`                                               | —                                                   | Dev and preview only       | `true` writes sign-in codes to the Convex log; never prod  |
-| `OPENROUTER_API_KEY`                                          | —                                                   | Every deployment           | Hard spend limit on each key                               |
-| `NEXT_PUBLIC_MAPBOX_TOKEN`                                    | Production and Preview                              | —                          | Restricted to our URLs in the Mapbox dashboard             |
-| PostHog, Sentry                                               | Empty until the partner decision                    | —                          | [ADR 0012](../decisions/0012-pilot-analytics-in-convex.md) |
-| Razorpay, Resend, R2                                          | Later                                               | Later                      | Not used in the pilot                                      |
+| Variable                                                                               | Next.js on Vercel                                               | Convex deployment          | Notes                                                             |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------- | -------------------------- | ----------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`                                                                 | Production: `https://luma.green`                                | —                          | Canonical URLs                                                    |
+| `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`                                | URL injected by `convex deploy`; local `.env.local`             | —                          | Don't set by hand on Vercel; the site URL is derived              |
+| `CONVEX_DEPLOY_KEY`                                                                    | Production key → Production; preview key → Preview              | —                          | Never in `.env.local`                                             |
+| `CONVEX_DEPLOYMENT`                                                                    | —                                                               | —                          | Local `.env.local` only                                           |
+| `SITE_URL`                                                                             | —                                                               | Every deployment           | The site origin Better Auth trusts                                |
+| `EXTRA_TRUSTED_ORIGINS`                                                                | —                                                               | Dev only, if needed        | Comma-separated extra origins, e.g. a second local port           |
+| `ADMIN_EMAIL`                                                                          | —                                                               | Every deployment           | The one admin; set right before `/admin/setup`                    |
+| `BETTER_AUTH_SECRET`                                                                   | —                                                               | Every deployment           | Different per deployment                                          |
+| `MSG91_AUTH_KEY`, `MSG91_OTP_TEMPLATE_ID`, other template ids                          | —                                                               | Prod (and dev for testing) | DLT-approved ids only                                             |
+| `AUTH_DEV_MODE`                                                                        | —                                                               | Dev and preview only       | `true` writes sign-in codes to the Convex log; never prod         |
+| `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `PHOTO_ESTIMATE_DAILY_LIMIT`                 | —                                                               | Every deployment           | Hard spend limit on each key                                      |
+| `NEXT_PUBLIC_TELEMETRY_ENABLED`                                                        | `true` only in explicitly enabled builds; otherwise blank/false | —                          | Master gate for PostHog, GA4 and Sentry                           |
+| `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`, `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Intended Next.js environment only                               | —                          | Analytics also requires visitor opt-in; [setup](observability.md) |
+| `NEXT_PUBLIC_SENTRY_DSN`                                                               | Intended Next.js environment only                               | —                          | Error capture, independent of analytics choice                    |
+| `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT`                                    | Trusted build environment only                                  | —                          | Optional private source-map upload credentials                    |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION`           | Public ownership tokens in intended build                       | —                          | [Search setup](seo.md); separate from telemetry                   |
+| Razorpay, Resend, R2                                                                   | Later                                                           | Later                      | Not used in the pilot                                             |
 
-Values live in the password manager, never in chat, email or the repo.
+For exact status-message variables and per-language template maps, see
+[sms-notifications.md](sms-notifications.md). Values live in the password
+manager, never in chat, email or the repo.
+
+Telemetry is implemented under [ADR 0016](../decisions/0016-optional-analytics-and-error-monitoring.md),
+which supersedes the earlier deferral. Rebuild and redeploy after public telemetry
+or verification values change. Do not copy enabled production analytics into
+ordinary previews. Keys alone do not activate telemetry, and local tests do not
+prove provider receipt.
 
 ## Backups and incidents
 

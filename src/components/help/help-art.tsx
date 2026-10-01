@@ -31,7 +31,7 @@ export function IconTile({
   return (
     <span
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-primary",
+        "flex shrink-0 items-center justify-center rounded-2xl bg-accent text-primary",
         size === "sm" && "size-11 rounded-xl",
         size === "md" && "size-14",
         size === "lg" && "size-24 rounded-3xl",

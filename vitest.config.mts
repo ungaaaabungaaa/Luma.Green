@@ -14,7 +14,7 @@ export default defineConfig({
     // `@vitest-environment` comment, as the Convex runtime isn't Node.
     include: ["src/**/*.{test,spec}.{ts,tsx}", "convex/**/*.test.ts"],
     // Playwright owns `e2e/` — Vitest must never try to run those.
-    exclude: ["e2e/**", "node_modules/**", ".next/**"],
+    exclude: ["e2e/**", "e2e-analytics/**", "node_modules/**", ".next/**"],
     server: { deps: { inline: ["convex-test"] } },
     coverage: {
       provider: "v8",

@@ -114,15 +114,21 @@ production only `/api/`.
 - [ ] Links built with `@/i18n/navigation`, never `next/link`.
 - [ ] Checked at `/kn/…` and `/ar/…` (right-to-left).
 
-## Known drift to fix (from the review on 29 Sep 2026)
+## SEO implementation checkpoint — 1 October 2026
 
-1. `src/app/sitemap.ts` builds alternates inline **without** `x-default`, and
-   stamps `lastModified: new Date()` on every build. Build from
-   `languageAlternates()` and a stable date.
-2. `src/app/[locale]/layout.tsx` spreads the home page's `alternates` into
-   every child — remove it from the layout.
-3. `src/proxy.ts` sends the `Link` alternates header — set
-   `alternateLinks: false` in `src/i18n/routing.ts`.
-4. The SEO skill names a `routes` array in `sitemap.ts` and a `pathFor` helper;
-   the real names are `publicRoutes` and `localizedPath` in `src/i18n/paths.ts`,
-   and `x-default` points at the page's English URL, not `/`.
+The sitemap uses `languageAlternates()` with `x-default`. It omits `lastModified`
+until an authoritative per-page content update time exists; build time is not
+content modification time. The locale root no longer passes the home canonical
+to child pages. Routing sets `alternateLinks: false`, and the SEO skill uses the
+current `publicRoutes` and `localizedPath` names.
+
+Production robots rules block `/api/`, while private HTML pages remain crawlable
+so their noindex tags can be read. Optional Google Search Console and Bing
+ownership tags are configured through public environment values. See
+[search setup](../operations/seo.md) for the live verification checklist.
+
+The route table above records the original design. The current household wizard
+uses `/sell?step=...`, and business workflows live at `/app/...` without an org
+slug. The current guide's [route reference](../user-guide/guide.md) is the
+operational route inventory; the public entry/private workflow distinction here
+still applies.

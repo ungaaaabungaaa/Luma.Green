@@ -43,19 +43,21 @@ function StatusCard({
   children?: ReactNode;
 }) {
   const toneClass = {
-    neutral: "bg-brand-50 text-primary",
-    good: "bg-brand-50 text-primary",
+    neutral: "bg-primary/10 text-primary",
+    good: "bg-primary/10 text-primary",
     bad: "bg-destructive/10 text-destructive",
   }[tone];
   return (
-    <section className="flex flex-col gap-4 rounded-2xl border bg-card p-5">
+    <section className="flex flex-col gap-5 rounded-2xl border border-border/80 bg-card p-5 shadow-xs sm:p-7">
       <span
-        className={`flex size-12 items-center justify-center rounded-full ${toneClass}`}
+        className={`flex size-12 items-center justify-center rounded-2xl ${toneClass}`}
       >
         {icon}
       </span>
       <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
+        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+          {title}
+        </h1>
         <p className="text-muted-foreground">{lead}</p>
       </div>
       {children}
@@ -94,7 +96,7 @@ export function StatusView() {
     return (
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-semibold tracking-tight">
+          <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
             {t("none.title")}
           </h1>
           <p className="text-muted-foreground">{t("none.lead")}</p>
@@ -125,7 +127,7 @@ function ApplicationStatus({ application }: { application: Application }) {
           lead={t("status.draft.lead")}
         >
           {roleLine}
-          <Button asChild size="lg" className="h-12 text-base">
+          <Button asChild size="lg" className="h-14 text-base">
             <Link href={formPath(application.kind)}>
               {t("status.draft.continue")}
             </Link>
@@ -180,7 +182,7 @@ function ApplicationStatus({ application }: { application: Application }) {
           lead={t("status.changes_requested.lead")}
         >
           <Note text={application.note} />
-          <Button asChild size="lg" className="h-12 text-base">
+          <Button asChild size="lg" className="h-14 text-base">
             <Link href={formPath(application.kind)}>
               {t("status.changes_requested.fix")}
             </Link>
@@ -197,7 +199,7 @@ function ApplicationStatus({ application }: { application: Application }) {
           lead={t("status.approved.lead")}
         >
           {roleLine}
-          <Button asChild size="lg" className="h-12 text-base">
+          <Button asChild size="lg" className="h-14 text-base">
             <Link href="/app">{t("status.approved.open")}</Link>
           </Button>
         </StatusCard>

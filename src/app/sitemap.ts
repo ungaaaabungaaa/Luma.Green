@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
-import { localeMeta, locales } from "@/i18n/locales";
-import { localizedPath, publicRoutes } from "@/i18n/paths";
+import { locales } from "@/i18n/locales";
+import { languageAlternates, localizedPath, publicRoutes } from "@/i18n/paths";
 import { site } from "@/lib/site";
 
 /**
@@ -14,14 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return publicRoutes.flatMap((path) =>
     locales.map((locale) => ({
       url: `${site.url}${localizedPath(locale, path)}`,
-      lastModified: new Date(),
+      // No reliable content-modified timestamp exists. A build is not an edit.
       changeFrequency: "weekly" as const,
       priority: path === "/" ? 1 : 0.7,
       alternates: {
         languages: Object.fromEntries(
-          locales.map((l) => [
-            localeMeta[l].hreflang,
-            `${site.url}${localizedPath(l, path)}`,
+          Object.entries(languageAlternates(path)).map(([language, route]) => [
+            language,
+            `${site.url}${route}`,
           ]),
         ),
       },

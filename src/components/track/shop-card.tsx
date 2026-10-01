@@ -29,7 +29,7 @@ export function ShopCard({ shop }: { shop: TrackedBooking["shop"] }) {
         {t("title")}
       </h2>
       <div className="flex items-start gap-3">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-800">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-800 dark:bg-amber-950/50 dark:text-amber-200">
           <StoreIcon aria-hidden className="size-5" />
         </span>
         <div className="flex min-w-0 flex-1 flex-col gap-1">

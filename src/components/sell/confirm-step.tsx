@@ -16,7 +16,11 @@ import { authClient } from "@/lib/auth-client";
 
 import { api } from "../../../convex/_generated/api";
 import { kgToGrams, pointsFor } from "../../../convex/lib/chain";
-import { type BasketItem, cleanAddress } from "../../../convex/lib/households";
+import {
+  type BasketItem,
+  cleanAddress,
+  type Point,
+} from "../../../convex/lib/households";
 import { formatIndianMobile } from "../../../convex/lib/phone";
 import type { CompleteDraft, SellStep } from "./draft";
 import { type SellErrorKey, sellErrorKey, stepToFix } from "./errors";
@@ -69,6 +73,7 @@ function SummaryRow({
  */
 export function ConfirmStep({
   draft,
+  location,
   items,
   materials,
   shop,
@@ -76,6 +81,7 @@ export function ConfirmStep({
   onEdit,
 }: {
   draft: CompleteDraft;
+  location?: Point;
   items: readonly BasketItem[];
   materials: readonly Material[];
   shop: ShopOffer;
@@ -124,6 +130,7 @@ export function ConfirmStep({
         address:
           draft.mode === "pickup" ? cleanAddress(draft.address) : undefined,
         name: draft.name,
+        location: draft.mode === "pickup" ? location : undefined,
       });
       isBooked.current = true;
       setStatus("booked");
@@ -296,6 +303,11 @@ export function ConfirmStep({
         points={t("basket.points", { points: pointsFor(shop.estimatePaise) })}
         note={t("confirm.payNote")}
       />
+      {location && draft.mode === "pickup" ? (
+        <p className="rounded-xl border bg-card p-4 text-sm text-muted-foreground">
+          {t("confirm.locationNote")}
+        </p>
+      ) : null}
       <DemoNote>{t("demoNote")}</DemoNote>
 
       <section

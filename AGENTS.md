@@ -6,6 +6,9 @@ This file is the single source of truth for how code gets written in this repo.
 Every agent (Claude Code, CodeRabbit, Copilot, a human on their first day) reads
 this first. `CLAUDE.md` just points here.
 
+**Continuing the current work?** Read [the agent handoff](docs/delivery/handoff.md)
+first for branch/commit checkpoints, verification, setup gates and next tasks.
+
 Detailed, task-specific playbooks live in `.claude/skills/*/SKILL.md`. This file
 tells you what the project is and the rules that always apply; a skill tells you
 how to do one job well.
@@ -42,22 +45,23 @@ Three properties follow from that and are non-negotiable:
 
 ## 2. Stack
 
-| Layer       | Choice                               | Notes                                              |
-| ----------- | ------------------------------------ | -------------------------------------------------- |
-| Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in           |
-| Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment |
-| UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`     |
-| Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1       |
-| i18n        | next-intl, 12 locales, RTL-ready     | `messages/*.json`                                  |
-| Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server   |
-| Server sync | TanStack Query                       | For non-Convex async work                          |
-| Auth        | Better Auth on Convex                | Phone codes; admin password + TOTP — see §9        |
-| Analytics   | PostHog                              | Deferred — keys stay empty (docs ADR 0012)         |
-| Errors      | Sentry                               | Deferred — build only wraps when a DSN exists      |
-| Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                       |
-| Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift    |
-| Lint        | ESLint flat config, type-aware       | See §10                                            |
-| Mobile      | Expo / React Native (planned)        | `ios/` and `android/` are placeholders             |
+| Layer       | Choice                               | Notes                                                       |
+| ----------- | ------------------------------------ | ----------------------------------------------------------- |
+| Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in                    |
+| Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment          |
+| UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`              |
+| Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1                |
+| i18n        | next-intl, 12 locales, RTL-ready     | `messages/*.json`                                           |
+| Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server            |
+| Server sync | TanStack Query                       | For non-Convex async work                                   |
+| Auth        | Better Auth on Convex                | Phone codes; admin password + TOTP — see §9                 |
+| Analytics   | PostHog / Google Analytics 4         | Optional, visitor opt-in, public page views only (ADR 0016) |
+| Errors      | Sentry                               | Optional error-only capture; explicit deployment flag + DSN |
+| Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                                |
+| Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift             |
+| Lint        | ESLint flat config, type-aware       | See §10                                                     |
+| Mobile      | Expo 57 / React Native WebView       | `apps/mobile`; shared hosted operational UI                 |
+| Desktop     | Electron                             | `apps/desktop`; macOS and Windows signed updates            |
 
 ## 3. Layout
 
@@ -72,7 +76,9 @@ src/
   lib/               env, fonts, site constants, utils
   proxy.ts           locale negotiation (Next 16's middleware convention)
 convex/              schema and server functions
-messages/            one JSON file per locale
+apps/mobile/         Expo iOS/Android shell; generated native projects ignored
+apps/desktop/        Electron macOS/Windows shell
+messages/            one JSON file per locale, including native controls
 e2e/                 Playwright specs
 docs/                product, architecture, decisions (ADRs), operations,
                      migrations, delivery — start at docs/README.md
@@ -99,7 +105,11 @@ allows this there and nowhere else.
 or the `brand-*` scale. A raw hex in a component is a bug — see
 `.claude/skills/design-system`.
 
-**Never add a component by hand that shadcn already ships.** Run
+Native shell controls use React Native primitives or OS menus and the shared
+message catalogues. Their config modules validate public app settings; backend
+secrets remain in Convex. See [native apps](docs/architecture/native-apps.md).
+
+**Never add a web component by hand that shadcn already ships.** Run
 `pnpm dlx shadcn@latest add <name>`.
 
 **Never commit a secret.** All config goes through `src/lib/env.ts`. Every var
@@ -113,11 +123,37 @@ flow gets an e2e test. See `.claude/skills/testing`.
 **Always keep CI green.** `pnpm check` before you push. See
 `.claude/skills/ci-checks`.
 
+**The platform user guide is mandatory.** The editable source is
+`docs/user-guide/guide.md`; the maintained editable Word artifact is
+`output/docx/luma-green-user-guide.docx`. Read `docs/user-guide/README.md` before
+changing a user-facing route, screen, role, permission, workflow, account setup
+or native update behavior. Update the affected guide sections and recapture
+changed screens from the browser. Rebuild the Word document, render and inspect every page,
+and commit the source, screenshot evidence, build record and DOCX together.
+Google Docs copies are imported from the reviewed DOCX and must be updated with
+the same source. Read `docs/user-guide/cloud.json` for publication state. After
+the first verified import, reuse that document ID and preserve its sharing
+settings; record verified updates or an explicit pending connection gate.
+Earlier PDFs are archived snapshots, not maintained outputs.
+Record the guide impact in the delivery handoff even when no guide change is
+needed. This is a required completion step, not optional follow-up work.
+
+Screenshots must show the actual current UI with approved test data. Keep
+synthetic component fixtures and older seeded captures explicitly labelled;
+never claim they prove authenticated access or provider execution. Do not
+capture passwords, authenticator QR/keys, backup codes, live IDs or customer
+contact details. Never replace browser screenshots with generated interface
+images. `src/user-guide.test.ts` checks that the committed DOCX matches its
+source and screenshot inputs; fix stale documentation instead of bypassing it.
+
 ## 5. Commands
 
 ```bash
 pnpm dev            # dev server
-pnpm check          # lint + typecheck + unit — run before every push
+pnpm check          # lint + types + web/native unit tests before every push
+pnpm apps:check     # mobile + desktop policy tests and types
+pnpm mobile:export # iOS/Android JavaScript bundles (not installers)
+pnpm desktop:pack  # unsigned host desktop app
 pnpm test           # unit tests
 pnpm test:watch     # unit tests, watch mode
 pnpm e2e            # Playwright (needs `pnpm build` first when CI=1)
@@ -168,10 +204,11 @@ Every feature must work in `/ar` and `/ur`. Use logical properties
 Every interactive element needs an accessible name. Test keyboard navigation
 before calling a flow done.
 
-## 9. Not wired yet (deliberate)
+## 9. Integration boundaries
 
-These are installed and configured but intentionally inert until someone owns
-them. Don't assume they work; wire them in a focused PR.
+Optional services must remain disabled without configuration. Local mock tests
+do not prove account approval, provider execution or production deployment.
+See `docs/operations/launch-checklist.md` before enabling a service.
 
 Convex **is** wired: the schema is deployed and `convex/_generated` is committed,
 so `api` and `Doc`/`Id` types are safe to import today.
@@ -187,11 +224,25 @@ Every field rule lives once in `convex/lib/onboarding.ts` — the forms validate
 with those schemas and `applications.submit` runs them again; change a rule
 there, never in a component.
 
-- **MSG91** — sending code is in place (`convex/sms.ts`); keys wait for DLT
-  approval, and the per-number cap in `docs/architecture/auth.md` comes first.
-- **Razorpay, Resend, R2, Mapbox, OpenRouter** — packages installed, keys
-  absent. Each needs its own PR with its own tests.
-- **Expo / React Native** — `ios/` and `android/` are empty placeholders.
+- **MSG91** — OTP sending and per-number limits are implemented. Status
+  notifications use a separate outbox and approved Flow templates.
+- **OpenRouter or self-hosted vision** — optional transient photo estimates; server quotas and table
+  prices. See `docs/architecture/ai-estimation.md`.
+- **PostHog, Google Analytics 4 and Sentry** — implemented, optional, off by
+  default. `NEXT_PUBLIC_TELEMETRY_ENABLED=true` and each provider's settings are
+  required. Analytics also requires the visitor's choice and measures only the
+  explicit marketing-route allowlist; never add private forms, booking tokens,
+  identities or record contents to events. Sentry error reporting is separate
+  from that choice and uses an allowlist that removes identifying context.
+  Read [observability](docs/operations/observability.md) before changing capture.
+- **Search ownership** — optional Google Search Console and Bing metadata
+  tokens. Follow [search setup](docs/operations/seo.md); tags do not prove live
+  verification or indexing.
+- **Razorpay, Resend, R2, Mapbox** — not required for the pilot. No payment
+  processing is implemented. Documents use Convex storage; location uses the browser.
+- **Expo / React Native and Electron** — native shells are in `apps/`. Signed
+  builds, native device tests, store review and update delivery remain release
+  gates. Follow [app releases](docs/operations/app-releases.md).
 
 ## 10. Lint
 
@@ -233,7 +284,17 @@ where `String.raw` would break Next's static analysis of the matcher.
 | `.claude/skills/testing`       | Writing or changing any code — what to test and how  |
 | `.claude/skills/ci-checks`     | A check is red, or you're adding a new one           |
 | `.claude/skills/i18n`          | Any user-facing string, or adding a locale           |
-| `.claude/skills/design-system` | Building UI — tokens, shadcn, white theme, RTL       |
+| `.claude/skills/design-system` | Building UI — tokens, shadcn, light/dark themes, RTL |
 | `.claude/skills/seo`           | Adding a route, metadata, sitemap or structured data |
 | `.claude/skills/convex-data`   | Schema changes, queries, mutations, migrations       |
 | `.claude/skills/ship-pr`       | Opening a PR or preparing a deployment               |
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

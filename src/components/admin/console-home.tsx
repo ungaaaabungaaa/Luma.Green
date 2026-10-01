@@ -9,6 +9,7 @@ import {
   type LucideIcon,
   ShieldCheckIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -31,6 +32,7 @@ import { isLocale, localeMeta } from "@/i18n/locales";
 import { cn } from "@/lib/utils";
 
 import { api } from "../../../convex/_generated/api";
+import operations from "../../../public/images/showcase/operations-desk.webp";
 import { formatPhone, formatWhen } from "./format";
 
 export function ConsoleHome() {
@@ -40,17 +42,30 @@ export function ConsoleHome() {
   const firstName = me?.adminName?.split(" ", 1)[0];
 
   return (
-    <div className="flex max-w-5xl flex-col gap-8">
-      <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          {firstName ? `Welcome, ${firstName}` : "Welcome"}
-        </h1>
-        <p className="text-muted-foreground">
-          What needs you today, and the latest people to join the pilot.
-        </p>
+    <div className="mx-auto flex max-w-6xl flex-col gap-6">
+      <div className="grid items-center gap-5 overflow-hidden rounded-2xl border border-border/80 bg-card p-5 md:grid-cols-[minmax(0,1fr)_16rem] md:p-6">
+        <div className="flex min-w-0 flex-col gap-2">
+          <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            {firstName ? `Welcome, ${firstName}` : "Welcome"}
+          </h1>
+          <p className="text-muted-foreground">
+            What needs you today, and the latest people to join the pilot.
+          </p>
+        </div>
+        <figure className="min-w-0">
+          <div className="relative h-28 overflow-hidden rounded-xl bg-muted md:h-36">
+            <Image
+              src={operations}
+              alt=""
+              fill
+              sizes="(min-width: 768px) 256px, 92vw"
+              className="object-cover"
+            />
+          </div>
+        </figure>
       </div>
 
-      <ul className="grid gap-4 sm:grid-cols-3" aria-busy={!summary}>
+      <ul className="grid gap-3 sm:grid-cols-3" aria-busy={!summary}>
         <li>
           <StatLink
             href="/admin/verification"
@@ -87,9 +102,9 @@ export function ConsoleHome() {
 
       <Link
         href="/admin/prices"
-        className="group flex items-center gap-4 rounded-xl bg-card p-4 ring-1 ring-foreground/10 outline-none hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors outline-none hover:border-primary/40 hover:bg-accent/50 focus-visible:ring-3 focus-visible:ring-ring/50"
       >
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
           <IndianRupeeIcon aria-hidden className="size-5" />
         </span>
         <span className="flex min-w-0 flex-1 flex-col">
@@ -100,11 +115,11 @@ export function ConsoleHome() {
         </span>
         <ArrowRightIcon
           aria-hidden
-          className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5"
+          className="size-4 text-muted-foreground transition-transform motion-safe:group-hover:translate-x-0.5"
         />
       </Link>
 
-      <Card>
+      <Card className="rounded-2xl border-border/80 shadow-xs">
         <CardHeader>
           <CardTitle>
             <h2>Latest sign-ins</h2>
@@ -141,8 +156,8 @@ function StatLink({
     <Link
       href={href}
       className={cn(
-        "flex h-full flex-col gap-1 rounded-xl bg-card p-4 ring-1 ring-foreground/10 outline-none hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50",
-        isUrgent && "ring-destructive/40",
+        "flex h-full flex-col gap-3 rounded-2xl border border-border bg-card p-5 shadow-xs transition-colors outline-none hover:border-primary/40 hover:bg-accent/30 focus-visible:ring-3 focus-visible:ring-ring/50",
+        isUrgent && "border-destructive/40",
       )}
     >
       <span className="flex items-center justify-between gap-2 text-sm text-muted-foreground">

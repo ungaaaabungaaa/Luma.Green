@@ -1,0 +1,10 @@
+{
+  "status": "pending-connection",
+  "document_id": null,
+  "document_url": null,
+  "source_docx": "output/docx/luma-green-user-guide.docx",
+  "source_docx_sha256": "545f9c52f016c4e1e40cd9160f49d1d8b018fbbefca8ca6043876c1763419db1",
+  "recorded_at": "2026-10-01T19:27:08Z",
+  "result": "Import requested authentication and reported it accepted. On retry, Google Drive tools were unavailable; plugin inventory reported installed=false. No document ID or successful import was returned.",
+  "next_action": "Reconnect Google Drive, import the reviewed sanitized DOCX once, verify native MIME/content, then record its actual document ID and URL. Update that same document on future guide revisions."
+}

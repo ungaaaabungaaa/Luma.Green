@@ -1,0 +1,34 @@
+{
+  "name": "@luma/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Luma.Green desktop client",
+  "author": "Luma.Green",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "src/main.mjs",
+  "scripts": {
+    "prepare:app": "node scripts/prepare.mjs",
+    "dev": "node scripts/prepare.mjs && electron .",
+    "test": "node --test src/*.test.mjs",
+    "typecheck": "tsc --project tsconfig.json",
+    "check": "pnpm test && pnpm typecheck",
+    "pack": "node scripts/prepare.mjs && electron-builder --config electron-builder.mjs --dir --publish never",
+    "dist:mac": "node scripts/prepare.mjs --release mac && electron-builder --config electron-builder.mjs --mac --publish never",
+    "dist:win": "node scripts/prepare.mjs --release win && electron-builder --config electron-builder.mjs --win --publish never",
+    "smoke": "node scripts/prepare.mjs && node scripts/smoke.mjs",
+    "demo:pack:mac": "node scripts/prepare.mjs --demo && electron-builder --config electron-builder.mjs --mac --dir --publish never",
+    "demo:pack:win": "node scripts/prepare.mjs --demo && electron-builder --config electron-builder.mjs --win --x64 --dir --publish never",
+    "demo:smoke": "node scripts/demo-smoke.mjs"
+  },
+  "dependencies": {
+    "electron-updater": "6.8.9"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3",
+    "typescript": "^5",
+    "@types/node": "^24.13.6",
+    "@playwright/test": "^1.63.0"
+  }
+}

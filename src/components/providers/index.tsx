@@ -1,28 +1,27 @@
 import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 
-import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider, ThemeToaster } from "@/components/theme/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { AnalyticsProvider } from "./analytics-provider";
 import { ConvexClientProvider } from "./convex-provider";
-import { QueryProvider } from "./query-provider";
 
 /**
  * The single provider stack for the app. Order matters:
- * intl → convex → query → analytics → UI primitives.
+ * intl → convex → optional analytics → UI primitives.
  */
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <NextIntlClientProvider>
-      <ConvexClientProvider>
-        <QueryProvider>
+      <ThemeProvider>
+        <ConvexClientProvider>
           <AnalyticsProvider>
             <TooltipProvider>{children}</TooltipProvider>
-            <Toaster richColors closeButton />
+            <ThemeToaster />
           </AnalyticsProvider>
-        </QueryProvider>
-      </ConvexClientProvider>
+        </ConvexClientProvider>
+      </ThemeProvider>
     </NextIntlClientProvider>
   );
 }

@@ -93,7 +93,7 @@ export function BoardView({ board }: { board: PriceBoardData }) {
   const selected = board.rows.find((row) => row.code === openCode);
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-7">
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
           {board.date ? (
@@ -166,14 +166,14 @@ function RowsSection({
           id={id}
           className="flex items-center gap-2.5 text-xl font-semibold tracking-tight"
         >
-          <span className="flex size-9 items-center justify-center rounded-full bg-brand-50 text-primary">
+          <span className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
             <Icon aria-hidden className="size-5" />
           </span>
           {title}
         </h2>
         {intro ? <p className="text-muted-foreground">{intro}</p> : null}
       </div>
-      <div className="overflow-hidden rounded-2xl border bg-card">
+      <div className="overflow-hidden rounded-2xl border bg-card shadow-sm">
         <BoardColumns />
         <ul className="divide-y">
           {rows.map((row) => (
@@ -194,7 +194,7 @@ function BoardSkeleton() {
       role="status"
       aria-busy="true"
       aria-label={t("loading")}
-      className="flex flex-col gap-10"
+      className="flex flex-col gap-7"
     >
       <Skeleton className="h-5 w-64" />
       {[4, 3].map((count, section) => (

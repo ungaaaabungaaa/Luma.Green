@@ -6,6 +6,9 @@ import { type ReactNode, useEffect } from "react";
 
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { isCurrentSection } from "@/components/site/site-nav";
+import { SkipLink } from "@/components/site/skip-link";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -23,7 +26,9 @@ import { ListSkeleton } from "./page-parts";
 import { useWorkspace } from "./use-workspace";
 
 function isActive(pathname: string, href: string) {
-  return href === "/app" ? pathname === "/app" : pathname.startsWith(href);
+  return href === "/app"
+    ? pathname === "/app"
+    : isCurrentSection(pathname, href);
 }
 
 /**
@@ -73,56 +78,76 @@ export function AppShell({ children }: { children: ReactNode }) {
         key={item.href + item.label}
         href={item.href}
         aria-current={isCurrent ? "page" : undefined}
-        className={cn(className, isCurrent && "text-primary")}
+        className={cn(
+          className,
+          isCurrent &&
+            "bg-sidebar-accent font-semibold text-sidebar-accent-foreground shadow-xs",
+        )}
       >
         <Icon aria-hidden className="size-5 shrink-0" />
-        <span>{t(`nav.${item.label}`)}</span>
+        <span className="break-words">{t(`nav.${item.label}`)}</span>
       </Link>
     );
   };
 
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/50 md:flex-row">
-      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-4 border-e bg-background p-4 md:flex">
+    <div className="flex min-h-dvh flex-col bg-background md:flex-row">
+      <SkipLink />
+      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-6 overflow-y-auto border-e border-sidebar-border bg-sidebar p-4 text-sidebar-foreground md:flex lg:w-64">
         <Link
           href="/"
-          className="rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <Logo />
         </Link>
-        <div className="rounded-xl bg-brand-50 px-3 py-2">
-          <p className="truncate text-sm font-medium">{name}</p>
-          <p className="text-xs text-muted-foreground">{t(`roles.${role}`)}</p>
+        <div className="rounded-xl border border-sidebar-border bg-background/70 p-3">
+          <p className="truncate text-sm font-semibold">{name}</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {t(`roles.${role}`)}
+          </p>
         </div>
         <nav aria-label={t("navLabel")} className="flex flex-col gap-1">
           {[...primary, ...more].map((item) =>
             link(
               item,
-              "flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50",
+              "flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
             ),
           )}
           <Link
             href={help}
-            className="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="mt-4 flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <LifeBuoyIcon aria-hidden className="size-5" />
             {t("nav.help")}
           </Link>
         </nav>
-        <div className="mt-auto flex flex-col gap-2">
-          <LanguageSwitcher />
-          <Button variant="outline" size="sm" onClick={() => void signOut()}>
+        <div className="mt-auto flex flex-col gap-3 border-t border-sidebar-border pt-4">
+          <div className="flex items-center justify-between gap-2">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="min-h-11 text-foreground"
+            onClick={() => void signOut()}
+          >
             <LogOutIcon aria-hidden />
             {t("signOut")}
           </Button>
         </div>
       </aside>
 
-      <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-2 border-b bg-background px-4 md:hidden">
-        <Link href="/" aria-label={t("homeLink")}>
+      <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-2 border-b border-border/70 bg-background/95 px-4 backdrop-blur md:hidden">
+        <Link
+          href="/"
+          aria-label={t("homeLink")}
+          className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+        >
           <Logo idPrefix="lg-bar" />
         </Link>
         <div className="flex items-center gap-1">
+          <ThemeToggle />
           <LanguageSwitcher />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -159,14 +184,15 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       <main
         id="main"
-        className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-4 pt-6 pb-28 md:pb-10"
+        tabIndex={-1}
+        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-6 px-4 pt-6 pb-28 sm:px-6 md:px-7 md:pt-7 md:pb-10 lg:px-9"
       >
         {children}
       </main>
 
       <nav
         aria-label={t("navLabel")}
-        className="fixed inset-x-0 bottom-0 z-30 grid border-t bg-background pb-[env(safe-area-inset-bottom)] md:hidden"
+        className="fixed inset-x-0 bottom-0 z-30 grid border-t border-border/70 bg-background/95 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-lg backdrop-blur md:hidden"
         style={{
           gridTemplateColumns: `repeat(${String(primary.length)}, minmax(0, 1fr))`,
         }}
@@ -174,7 +200,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         {primary.map((item) =>
           link(
             item,
-            "flex h-16 flex-col items-center justify-center gap-1 text-xs font-medium text-muted-foreground outline-none focus-visible:bg-muted",
+            "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-center text-xs font-medium text-muted-foreground outline-none focus-visible:bg-muted",
           ),
         )}
       </nav>

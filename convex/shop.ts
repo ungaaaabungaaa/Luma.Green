@@ -14,6 +14,12 @@ import {
   pointsFor,
 } from "./lib/chain";
 import { shiftDate } from "./lib/dates";
+import {
+  acceptOffer,
+  advanceOffer,
+  dispatchSettings as settingsFor,
+} from "./lib/dispatch";
+import { queueBookingNotification } from "./lib/notifications";
 import { indiaToday } from "./lib/onboarding";
 import { maskPhone } from "./lib/phone";
 import { vBookingStatus } from "./lib/validators";
@@ -462,12 +468,20 @@ export const respond = mutation({
   handler: async (ctx, args) => {
     const { profile, org } = await requireOrg(ctx, SHOP);
     const booking = await myBooking(ctx, org, args.bookingId);
-    await moveBooking(ctx, {
-      booking,
-      to: args.accept ? "accepted" : "declined",
-      actorProfileId: profile._id,
-      now: Date.now(),
-    });
+    if (booking.dispatch) {
+      if (args.accept) await acceptOffer(ctx, booking, Date.now(), profile._id);
+      else
+        await advanceOffer(ctx, booking, "declined", Date.now(), profile._id);
+    } else {
+      await moveBooking(ctx, {
+        booking,
+        to: args.accept ? "accepted" : "declined",
+        actorProfileId: profile._id,
+        now: Date.now(),
+      });
+      if (args.accept)
+        await queueBookingNotification(ctx, booking, "booking_accepted");
+    }
     return null;
   },
 });
@@ -610,6 +624,63 @@ export const setRate = mutation({
         fromPaise: existing?.paisePerKg ?? null,
         toPaise: paisePerKg,
       },
+      createdAt: now,
+    });
+    return null;
+  },
+});
+
+/** Current dispatch preferences. Existing shops default to manual acceptance. */
+export const dispatchSettings = query({
+  args: {},
+  returns: v.object({
+    autoAccept: v.boolean(),
+    pickupRadiusKm: v.number(),
+    canManage: v.boolean(),
+    canAutoAccept: v.boolean(),
+  }),
+  handler: async (ctx) => {
+    const { org, profile } = await requireOrg(ctx, SHOP);
+    return {
+      ...settingsFor(org),
+      canManage: org.ownerProfileId === profile._id,
+      canAutoAccept: org.offersPickup && org.location !== undefined,
+    };
+  },
+});
+
+/** Only the owner can authorise automatic acceptance for future pickup offers. */
+export const configureDispatch = mutation({
+  args: { autoAccept: v.boolean(), pickupRadiusKm: v.number() },
+  returns: v.null(),
+  handler: async (ctx, args) => {
+    const { profile, org } = await requireOrg(ctx, SHOP);
+    if (org.ownerProfileId !== profile._id)
+      throw new ConvexError("OWNER_REQUIRED");
+    if (
+      !Number.isSafeInteger(args.pickupRadiusKm) ||
+      args.pickupRadiusKm < 1 ||
+      args.pickupRadiusKm > 50
+    ) {
+      throw new ConvexError("INVALID_RADIUS");
+    }
+    if (args.autoAccept && (!org.offersPickup || !org.location))
+      throw new ConvexError("PICKUP_LOCATION_REQUIRED");
+    const before = settingsFor(org);
+    if (
+      before.autoAccept === args.autoAccept &&
+      before.pickupRadiusKm === args.pickupRadiusKm
+    )
+      return null;
+    const now = Date.now();
+    await ctx.db.patch("orgs", org._id, { ...args, updatedAt: now });
+    await ctx.db.insert("auditLog", {
+      orgId: org._id,
+      actorProfileId: profile._id,
+      action: "shop.dispatch_configured",
+      entityTable: "orgs",
+      entityId: org._id,
+      metadata: { before, after: args },
       createdAt: now,
     });
     return null;

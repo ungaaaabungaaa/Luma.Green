@@ -1,6 +1,6 @@
 # 0011. AI estimates materials; our tables set prices
 
-- **Status:** Decided
+- **Status:** Superseded by [0015](0015-bounded-photo-cache-and-selectable-inference.md)
 - **Date:** 29 Sep 2026
 - **Deciders:** founder, Claude
 

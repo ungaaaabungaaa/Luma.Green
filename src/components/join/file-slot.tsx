@@ -12,6 +12,7 @@ import { useFormatter, useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { prepareUpload } from "@/lib/upload-image";
 
 import { api } from "../../../convex/_generated/api";
 import type { Id } from "../../../convex/_generated/dataModel";
@@ -46,17 +47,18 @@ function useUploader(type: FileType) {
     });
     if (early) return early;
     try {
+      const prepared = await prepareUpload(file, type);
       const url = await generateUploadUrl({});
       const response = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": file.type },
-        body: file,
+        headers: { "Content-Type": prepared.type },
+        body: prepared,
       });
       if (!response.ok) return "uploadFailed";
       const { storageId } = (await response.json()) as {
         storageId: Id<"_storage">;
       };
-      const result = await attach({ storageId, type, name: file.name });
+      const result = await attach({ storageId, type, name: prepared.name });
       if (result.ok) return null;
       return SHOWN_ERRORS.has(result.error) ? result.error : "uploadFailed";
     } catch {

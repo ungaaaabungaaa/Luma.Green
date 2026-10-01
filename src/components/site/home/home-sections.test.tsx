@@ -81,7 +81,9 @@ describe("home page", () => {
     expect(
       within(chain).getByText(/Saathis help all along the chain/),
     ).toBeInTheDocument();
-    expect(within(chain).getByText(/Money flows back/)).toBeInTheDocument();
+    expect(
+      within(chain).getByText(/Escrow between businesses is planned/),
+    ).toBeInTheDocument();
   });
 
   it("gives every role a way in: households sell, the rest join", async () => {

@@ -26,11 +26,11 @@ const ICONS: Record<Family, LucideIcon> = {
 };
 
 const TINTS: Record<Family, string> = {
-  paper: "bg-brand-50 text-brand-800",
-  plastic: "bg-brand-100 text-brand-900",
+  paper: "bg-accent text-accent-foreground",
+  plastic: "bg-primary/10 text-primary",
   metal: "bg-muted text-foreground",
-  glass: "bg-brand-50 text-brand-700",
-  ewaste: "bg-brand-200 text-brand-950",
+  glass: "bg-accent text-accent-foreground",
+  ewaste: "bg-primary/20 text-foreground",
   other: "bg-muted text-muted-foreground",
 };
 

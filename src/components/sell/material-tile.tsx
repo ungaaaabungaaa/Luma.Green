@@ -43,10 +43,10 @@ export function MaterialTile({
       disabled={!isAdded && isFull}
       onClick={onToggle}
       className={cn(
-        "flex h-full w-full flex-col items-start gap-2 rounded-2xl border-2 bg-card p-3 text-start transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50",
+        "group flex h-full min-h-40 w-full flex-col items-start gap-4 rounded-2xl border bg-card p-4 text-start shadow-sm transition-[border-color,background-color,box-shadow] duration-200 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50 sm:p-5",
         isAdded
-          ? "border-primary bg-brand-50"
-          : "border-border hover:border-primary/40",
+          ? "border-primary bg-accent ring-1 ring-primary"
+          : "border-border/80 hover:border-primary/50 hover:shadow-md",
       )}
     >
       <span className="flex w-full items-start justify-between gap-2">
@@ -54,7 +54,7 @@ export function MaterialTile({
         <span
           aria-hidden
           className={cn(
-            "flex size-7 items-center justify-center rounded-full",
+            "flex size-8 items-center justify-center rounded-full",
             isAdded
               ? "bg-primary text-primary-foreground"
               : "border text-muted-foreground",
@@ -67,13 +67,13 @@ export function MaterialTile({
           )}
         </span>
       </span>
-      <span className="leading-snug font-semibold">
+      <span className="text-base leading-snug font-semibold tracking-tight">
         {format.material(material.names, material.code)}
       </span>
       <span className="mt-auto flex w-full flex-wrap items-center justify-between gap-x-2 gap-y-1 text-sm">
         {pricePaise === undefined ? <Skeleton className="h-4 w-14" /> : null}
         {typeof pricePaise === "number" ? (
-          <span className="text-muted-foreground tabular-nums">
+          <span className="text-sm text-muted-foreground tabular-nums">
             {t("perKg", { price: format.perKg(pricePaise) })}
           </span>
         ) : null}

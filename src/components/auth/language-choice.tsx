@@ -70,7 +70,7 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
                 dir={localeMeta[code].dir}
                 className={cn(
                   "flex min-h-16 w-full items-center justify-between gap-2 rounded-xl border-2 bg-card px-4 text-start transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-60",
-                  isSelected ? "border-primary bg-brand-50" : "border-border",
+                  isSelected ? "border-primary bg-accent" : "border-border",
                 )}
               >
                 <span className="flex flex-col">

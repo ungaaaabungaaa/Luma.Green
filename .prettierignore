@@ -10,3 +10,9 @@ package-lock.json
 # formatting it only turns every dependency PR's Format check red.
 pnpm-lock.yaml
 *.min.*
+apps/*/dist
+apps/*/release
+apps/mobile/.expo
+apps/mobile/ios
+apps/mobile/android
+apps/desktop/generated

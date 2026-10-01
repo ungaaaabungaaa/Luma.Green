@@ -34,7 +34,7 @@ export function MaterialIcon({
     <span
       aria-hidden
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-800",
+        "flex shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground",
         size === "md" ? "size-11" : "size-9",
       )}
     >

@@ -160,7 +160,7 @@ function StockItem({ row, totalGrams }: { row: StockRow; totalGrams: number }) {
   const format = useFormat();
   const share = totalGrams > 0 ? Math.round((row.grams / totalGrams) * 100) : 0;
   return (
-    <li className="flex flex-col gap-3 rounded-2xl border bg-card p-4">
+    <li className="flex flex-col gap-3 rounded-2xl border bg-card p-4 shadow-sm">
       <div className="flex items-center gap-3">
         <MaterialIcon family={row.material.family} />
         <div className="flex min-w-0 flex-1 flex-col">

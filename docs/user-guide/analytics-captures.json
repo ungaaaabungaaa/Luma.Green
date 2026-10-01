@@ -1,0 +1,64 @@
+{
+  "captures": [
+    {
+      "sourceHashes": {
+        "src/components/providers/analytics-controls.tsx": "97f36f9e9745c2eb36b3e10b1e0101c3dad93c64213a76451d8c835311e6ab1f",
+        "src/components/providers/analytics-enabled.tsx": "99cc65c65b774e0850124ece590377dd790eecf936e0f50206c13aa31ab9111b",
+        "src/components/providers/analytics-provider.tsx": "40fa6181daaf8db6fa965af05ae5d4ea1aa2d3da2b78f4a69df6b73f50b96791",
+        "src/lib/analytics-runtime.ts": "226f67a4dfec4bf09f3155064f90c7b8287617e46d3bba203f29f883d01d65d4",
+        "src/lib/analytics.ts": "12d9dc95b7cf7a7901e7fc5f0d1f789c44918cdc09f83fba1ff288c9336e0b5c",
+        "messages/en.json": "3cbaf6c0dda63fc2af44f87d58e2da597e7c28de396f8907fe426e2b0aa6ee6c",
+        "messages/ar.json": "6ccf3bbe717b42ded6eedfc3fe4c9a3779d157504e2f6aa3c509268633679476"
+      },
+      "browserErrors": [],
+      "path": "docs/user-guide/screenshots/analytics-choice.png",
+      "sha256": "990edfdbc535f8635d7cf89105f3f31a5d04fc73a82528cf8a92d1c0bca69c5f",
+      "sourceRevision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+      "url": "http://localhost:3106/",
+      "capturedAt": "2026-10-01T18:57:51.216Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "browserVersion": "153.0.8010.12",
+      "fullPage": false,
+      "sourceKind": "current-local-configured-fake-keys",
+      "actualBrowserUI": true,
+      "syntheticRecords": false,
+      "externalRequestsIntercepted": true,
+      "productionProviderExecutionTested": false,
+      "note": "Actual application UI. Fake analytics keys enable controls. Every external browser request is intercepted, including any monitoring request from a compiled fake Sentry DSN; no vendor receives data. Convex is disabled."
+    },
+    {
+      "sourceHashes": {
+        "src/components/providers/analytics-controls.tsx": "97f36f9e9745c2eb36b3e10b1e0101c3dad93c64213a76451d8c835311e6ab1f",
+        "src/components/providers/analytics-enabled.tsx": "99cc65c65b774e0850124ece590377dd790eecf936e0f50206c13aa31ab9111b",
+        "src/components/providers/analytics-provider.tsx": "40fa6181daaf8db6fa965af05ae5d4ea1aa2d3da2b78f4a69df6b73f50b96791",
+        "src/lib/analytics-runtime.ts": "226f67a4dfec4bf09f3155064f90c7b8287617e46d3bba203f29f883d01d65d4",
+        "src/lib/analytics.ts": "12d9dc95b7cf7a7901e7fc5f0d1f789c44918cdc09f83fba1ff288c9336e0b5c",
+        "messages/en.json": "3cbaf6c0dda63fc2af44f87d58e2da597e7c28de396f8907fe426e2b0aa6ee6c",
+        "messages/ar.json": "6ccf3bbe717b42ded6eedfc3fe4c9a3779d157504e2f6aa3c509268633679476"
+      },
+      "browserErrors": [],
+      "path": "docs/user-guide/screenshots/analytics-choice-arabic.png",
+      "sha256": "a33df86f47325cceb53ce68f1b5c83be9e0ab82c22d33e4b37095967c57c87f6",
+      "sourceRevision": "9fb82cd568068c8ad3b6163378f2c1d9a7f78059",
+      "url": "http://localhost:3106/ar",
+      "capturedAt": "2026-10-01T18:57:55.908Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "browserVersion": "153.0.8010.12",
+      "fullPage": false,
+      "sourceKind": "current-local-configured-fake-keys",
+      "actualBrowserUI": true,
+      "syntheticRecords": false,
+      "externalRequestsIntercepted": true,
+      "productionProviderExecutionTested": false,
+      "note": "Actual application UI. Fake analytics keys enable controls. Every external browser request is intercepted, including any monitoring request from a compiled fake Sentry DSN; no vendor receives data. Convex is disabled."
+    }
+  ]
+}

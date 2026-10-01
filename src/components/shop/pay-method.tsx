@@ -43,7 +43,7 @@ export function PayMethodChoice({
             htmlFor={`pay-${method}`}
             className={cn(
               "flex h-14 cursor-pointer items-center gap-3 rounded-xl border-2 bg-card px-4 text-base font-medium",
-              value === method ? "border-primary bg-brand-50" : "border-border",
+              value === method ? "border-primary bg-accent" : "border-border",
             )}
           >
             <RadioGroupItem id={`pay-${method}`} value={method} />

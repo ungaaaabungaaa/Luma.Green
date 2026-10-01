@@ -1,6 +1,6 @@
 ---
 name: design-system
-description: The Luma.Green visual system — brand tokens, semantic colours, shadcn/ui usage, typography (Noto), the white-only theme, mobile-first layout, spacing and component patterns. Use when building or restyling any UI, adding a shadcn component, or picking a colour.
+description: The Luma.Green visual system — brand tokens, semantic colours, shadcn/ui usage, typography (Noto), light and dark themes, mobile-first layout, spacing and component patterns. Use when building or restyling any UI, adding a shadcn component, or picking a colour.
 ---
 
 # Design system
@@ -74,14 +74,17 @@ Scale: `text-sm` for dense operational tables, `text-base` for body,
 `text-2xl`/`text-4xl` with `tracking-tight` for headings. Numbers in tables get
 `tabular-nums`.
 
-## One theme: white
+## Light, dark and system appearance
 
-There is no dark mode and no theme switch
-(`docs/decisions/0010-white-theme-mobile-first-shadcn.md`). Don't write `dark:`
-utilities. Components added with the shadcn CLI still contain them; they stay
-inert because `globals.css` defines the `dark` variant as "inside a `.dark`
-class", which we never set. **Keep that `@custom-variant dark` line** — without
-it Tailwind would apply those styles whenever the phone itself is in dark mode.
+The founder requested light and dark mode on 2 October 2026. ADR 0017 supersedes
+ADR 0010's white-only rule. Use semantic surfaces and text so each screen works
+in both modes. Theme preference is local to the device and can follow its system
+setting. Keep the explicit `.dark` variant and first-paint bootstrap.
+
+Fixed inverse brand panels must pair `bg-brand-950` with `text-brand-50`, not
+`text-primary-foreground`, which changes in dark mode. Do not pair pale brand
+backgrounds with theme-dependent light text. Test forms, menus and tables in
+both themes, including Arabic and narrow screens.
 
 ## Mobile first
 

@@ -40,8 +40,9 @@ export function PriceChange({
     <span
       className={cn(
         "inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap tabular-nums",
-        trend === "up" && "bg-brand-50 text-brand-900",
-        trend === "down" && "bg-amber-50 text-amber-900",
+        trend === "up" && "bg-accent text-accent-foreground",
+        trend === "down" &&
+          "bg-amber-50 text-amber-900 dark:bg-amber-950/50 dark:text-amber-200",
         (trend === "flat" || trend === "unknown") &&
           "bg-muted text-muted-foreground",
         className,

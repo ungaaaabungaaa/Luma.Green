@@ -21,6 +21,7 @@ import { SiteNav } from "./site-nav";
 
 export function MobileNav({ className }: { className?: string }) {
   const t = useTranslations("nav");
+  const auth = useTranslations("auth");
   const locale = useLocale();
   const [open, setOpen] = useState(false);
 
@@ -45,12 +46,13 @@ export function MobileNav({ className }: { className?: string }) {
       </SheetTrigger>
       <SheetContent
         side={side}
+        className="w-[min(24rem,100%)] gap-6 overflow-y-auto pb-[env(safe-area-inset-bottom)]"
         showCloseButton={false}
         aria-describedby={undefined}
       >
         <SheetHeader className="flex-row items-center justify-between">
           <SheetTitle className="sr-only">{t("label")}</SheetTitle>
-          <Logo />
+          <Logo idPrefix="mobile-menu" />
           <SheetClose asChild>
             <Button variant="ghost" size="icon-lg" aria-label={t("closeMenu")}>
               <XIcon />
@@ -58,10 +60,20 @@ export function MobileNav({ className }: { className?: string }) {
           </SheetClose>
         </SheetHeader>
         <SiteNav
-          className="flex flex-col px-2 [&>a]:py-3 [&>a]:text-base"
+          className="flex flex-col gap-2 px-4 [&>a]:rounded-xl [&>a]:px-4 [&>a]:py-4 [&>a]:text-base"
           onNavigate={close}
         />
-        <div className="mt-auto p-4">
+        <div className="mt-auto grid gap-3 border-t p-4">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="h-12 w-full text-base"
+          >
+            <Link href="/login" onClick={close}>
+              {auth("metaTitle")}
+            </Link>
+          </Button>
           <Button asChild size="lg" className="h-12 w-full text-base">
             <Link href="/sell" onClick={close}>
               {t("sellScrap")}

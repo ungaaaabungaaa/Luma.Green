@@ -1,6 +1,9 @@
 import { v } from "convex/values";
 
-import { query } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
+import { requireAdmin } from "./lib/access";
+import { findProfile } from "./lib/applicationAccess";
+import { CATALOGUE } from "./lib/catalogue";
 import { shiftDate } from "./lib/dates";
 import { indiaToday } from "./lib/onboarding";
 import { vFamily } from "./lib/validators";
@@ -36,6 +39,65 @@ export const materials = query({
 });
 
 /**
+ * Small, reactive quotes for forms. Household estimates use only the admin's
+ * fallback; listing suggestions use the latest market quote in the board's
+ * 30-day window. Neither caller needs chart history or translated names.
+ */
+export const priceQuotes = query({
+  args: {
+    city: v.string(),
+    source: v.union(v.literal("fallback"), v.literal("market")),
+  },
+  returns: v.object({
+    rows: v.array(
+      v.object({
+        code: v.string(),
+        paisePerKg: v.union(v.number(), v.null()),
+      }),
+    ),
+  }),
+  handler: async (ctx, args) => {
+    const materials = await ctx.db
+      .query("materials")
+      .withIndex("by_sortOrder")
+      .collect();
+    const since = shiftDate(indiaToday(), -29);
+    const rows = [];
+    for (const material of materials) {
+      if (!material.active) continue;
+      if (args.source === "fallback") {
+        const reference = await ctx.db
+          .query("referencePrices")
+          .withIndex("by_city_material", (q) =>
+            q.eq("city", args.city).eq("materialCode", material.code),
+          )
+          .unique();
+        rows.push({
+          code: material.code,
+          paisePerKg: reference?.fallbackPaise ?? null,
+        });
+      } else {
+        const latest = await ctx.db
+          .query("marketPrices")
+          .withIndex("by_city_material_date", (q) =>
+            q
+              .eq("city", args.city)
+              .eq("materialCode", material.code)
+              .gte("date", since),
+          )
+          .order("desc")
+          .first();
+        rows.push({
+          code: material.code,
+          paisePerKg: latest?.paisePerKg ?? null,
+        });
+      }
+    }
+    return { rows };
+  },
+});
+
+/**
  * The public price board for a city: today's price per material, the change
  * over a week, the admin's floor, and 30 days of history for the chart.
  */
@@ -53,6 +115,7 @@ export const priceBoard = query({
         todayPaise: v.union(v.number(), v.null()),
         weekChangePct: v.union(v.number(), v.null()),
         floorPaise: v.union(v.number(), v.null()),
+        fallbackPaise: v.union(v.number(), v.null()),
         series: v.array(v.object({ date: v.string(), paisePerKg: v.number() })),
       }),
     ),
@@ -99,6 +162,7 @@ export const priceBoard = query({
               ) / 10
             : null,
         floorPaise: reference?.floorPaise ?? null,
+        fallbackPaise: reference?.fallbackPaise ?? null,
         series: series.map((point) => ({
           date: point.date,
           paisePerKg: point.paisePerKg,
@@ -106,5 +170,47 @@ export const priceBoard = query({
       });
     }
     return { city: args.city, date: latest, rows };
+  },
+});
+
+/** Fill missing translations without changing existing names or material data. */
+export const fillMissingNames = mutation({
+  args: {},
+  returns: v.object({ updated: v.number() }),
+  handler: async (ctx) => {
+    const admin = await requireAdmin(ctx);
+    const profile = await findProfile(ctx, admin._id);
+    let updated = 0;
+    // This is bounded by the 26 canonical codes, with one indexed lookup each.
+    // Unknown codes and absent materials are deliberately left untouched.
+    for (const entry of CATALOGUE) {
+      const material = await ctx.db
+        .query("materials")
+        .withIndex("by_code", (q) => q.eq("code", entry.code))
+        .unique();
+      if (!material) continue;
+      const missing = Object.entries(entry.names).filter(
+        ([locale]) => !Object.hasOwn(material.names, locale),
+      );
+      if (missing.length === 0) continue;
+      const names = { ...Object.fromEntries(missing), ...material.names };
+      await ctx.db.patch(material._id, { names });
+      await ctx.db.insert("auditLog", {
+        actorProfileId: profile?._id,
+        action: "material.namesFilled",
+        entityTable: "materials",
+        entityId: material._id,
+        metadata: {
+          adminUserId: admin._id,
+          code: material.code,
+          addedLocales: missing.map(([locale]) => locale),
+          from: material.names,
+          to: names,
+        },
+        createdAt: Date.now(),
+      });
+      updated += 1;
+    }
+    return { updated };
   },
 });

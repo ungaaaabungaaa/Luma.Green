@@ -56,15 +56,21 @@ component. Built and tested on 29 Sep 2026.
 - 6 digits, valid 5 minutes, 5 attempts per code, resend after 30 seconds.
 - **Sending:** Better Auth's `sendOTP` schedules an internal action
   (`convex/sms.ts`), which calls MSG91's OTP API with our code and DLT
-  template. Nothing is left as an un-awaited promise, which Convex may drop.
+  template. The action has an 8-second timeout and checks the provider's
+  success payload as well as its HTTP status. It does not automatically retry
+  a timed-out send, which might already have reached the provider. Nothing is
+  left as an un-awaited promise, which Convex may drop.
 - **Without MSG91 keys** (every variable is optional): with `AUTH_DEV_MODE=true`
   (dev and preview only) the code is written to the Convex log, number masked;
   otherwise `/login` says phone sign-in opens soon instead of pretending to
   send.
 - **Before switching MSG91 on** — SMS costs money, and code endpoints attract
   SMS pumping:
-  1. Cap codes per number (planned: 3 per 15 minutes, 10 a day) on the path
-     to `sms.sendCode`. Not built yet.
+  1. The server now enforces a 30-second resend delay, 3 requests per rolling
+     15 minutes and 10 per rolling day before it creates a code. The quota
+     uses a keyed phone digest, is shared across IP addresses, and expires
+     after a day of inactivity. Failed or ambiguous sends still consume quota.
+     Keep `BETTER_AUTH_SECRET` stable: rotating it resets these identifiers.
   2. Set MSG91's own per-number OTP limits in its dashboard.
   3. Anyone can call the Convex site URL directly and fake `x-forwarded-for`,
      which weakens the per-IP limit. Consider requiring a shared secret header
