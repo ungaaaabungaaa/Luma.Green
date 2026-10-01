@@ -35,9 +35,9 @@ MARGIN = 43
 BODY = WIDTH - 2 * MARGIN
 INK = colors.HexColor('#163f31')
 MUTED = colors.HexColor('#506258')
-metadata = re.search(r'Edition: ([^.]+)\. Application checkpoint: ([a-f0-9]+)\.', SOURCE.read_text())
+metadata = re.search(r'Edition: ([^.]+)\. Source baseline: ([a-f0-9]+)\.', SOURCE.read_text())
 if metadata is None:
-    raise ValueError('The guide must declare its edition date and application checkpoint.')
+    raise ValueError('The guide must declare its edition date and source baseline.')
 EDITION, CHECKPOINT = metadata.groups()
 PALE = colors.HexColor('#edf3e9')
 
@@ -88,7 +88,7 @@ def page_chrome(canvas, doc):
     canvas.drawString(MARGIN, HEIGHT - 24, 'LUMA.GREEN  /  PLATFORM USER GUIDE')
     canvas.setFont('Guide', 8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(MARGIN, 23, f'{EDITION.upper()}  |  Application {CHECKPOINT}  |  See screenshot evidence labels')
+    canvas.drawString(MARGIN, 23, f'{EDITION.upper()}  |  Source baseline {CHECKPOINT}  |  See screenshot evidence labels')
     canvas.drawRightString(WIDTH - MARGIN, 23, str(doc.page))
     canvas.restoreState()
 
@@ -144,7 +144,7 @@ def build():
             max_height = 265 if path.name in compact else 325
             if path.name == 'household-tracking.png':
                 max_height = 600
-            elif path.name == 'manufacturer-compliance.png':
+            elif path.name in {'manufacturer-compliance.png', 'analytics-choice-arabic.png'}:
                 max_height = 520
             scale = min(BODY / width, max_height / height)
             picture = Image(str(path), width * scale, height * scale)

@@ -4,7 +4,8 @@
 
 From the first pickup to the admin console.
 
-Edition: 1 October 2026. Application checkpoint: db62fb7.
+Edition: 1 October 2026. Source baseline: 0f0ce43.
+Includes the analytics and SEO update committed with this edition.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
@@ -20,6 +21,7 @@ Luma.Green records scrap collection and movement through the recycling chain. A 
 ### Read the screenshot labels
 
 - Current local capture: an unchanged browser screenshot of the current app without a backend connection. Setup messages are real states, not errors added to the picture.
+- Current configured local capture: the real app with test analytics keys. External browser requests are intercepted; no provider receives data.
 - Synthetic documentation fixture: an unchanged browser screenshot of real application components supplied with sample records in a separate documentation server. It is not an authenticated session or proof of a working integration.
 
 No screenshot is an AI-generated interface. The homepage contains generated decorative artwork, but the page screenshot itself comes from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
@@ -563,6 +565,8 @@ This is an owner/developer checklist, not a list of admin console buttons. The e
 | Authentication      | SITE_URL, BETTER_AUTH_SECRET and ADMIN_EMAIL in the intended backend; immediate admin setup          |
 | Phone SMS           | MSG91 account, DLT/template approval and OTP limits; configured OTP values                           |
 | Optional status SMS | Separate approved Flow templates and outbox configuration; verify handset delivery                   |
+| Analytics/errors    | Optional PostHog, GA4 and Sentry projects; telemetry switch, service keys and provider settings      |
+| Search ownership    | Optional Google Search Console and Bing ownership tokens; deployed sitemap submission                |
 | Optional AI         | OpenRouter credentials or authenticated HTTPS model gateway; quotas and evaluated model              |
 | Android/iOS         | Expo/EAS project, Apple/Google developer accounts, signing credentials and physical-device checks    |
 | macOS/Windows       | Stable signing identities, notarization where required and signed update feeds                       |
@@ -650,7 +654,33 @@ The queue is an example of the current interface. It does not establish that a r
 
 ---
 
-## 34 / Evidence and maintenance
+## 34 / Optional analytics and error reports
+
+![Current local browser capture with test configuration. No real analytics account receives data.](screenshots/analytics-choice.png)
+
+When the owner enables analytics, public information pages show Optional analytics. Select Allow analytics to enable PostHog and Google Analytics page-visit measurements, or Keep analytics off to continue without them. Both choices keep the platform available. Use Analytics settings to change the choice later. A successful change from allow to off reloads the page to remove loaded analytics scripts.
+
+The choice stays on this browser/device. A blocked storage message means the choice could not be saved and analytics stay off in the current visit. Retry when storage is available. A different device or cleared browser storage needs a new choice.
+
+---
+
+## 35 / Analytics privacy, errors and owner setup
+
+![Current Arabic analytics controls at phone width with test configuration. This is an actual browser screenshot.](screenshots/analytics-choice-arabic.png)
+
+Only the home, how-it-works, participants, prices, standards, solar and help landing pages are measured. Sign-in, booking, tracking, onboarding forms, the business app and admin pages are excluded. Events omit query strings, tracking tokens, customer records, form text and full referrers. Session replay, autocapture and user profiles are off. These limited page counts do not replace the admin pilot report.
+
+### Error reports and owner settings
+
+Sentry error reports are separate from optional visit analytics. When the owner configures Sentry, it receives error types and scrubbed code locations. Reports remove error messages, request details, user data and breadcrumbs. Performance tracing and replay are off. If the application shows its general failure screen, use the retry control; it does not submit the failed operation again automatically.
+
+The owner supplies the telemetry switch and each service key in the web deployment, then rebuilds it. GA4 Enhanced Measurement must be switched off in the property settings. Do not install a second tag through Google Tag Manager. Use docs/operations/observability.md for exact settings, tests, and spend controls. Empty keys keep services disabled. Browser/Next.js Sentry setup does not capture Convex backend or native-shell errors.
+
+Google Search Console and Bing verification tags are optional ownership checks. Configure their tokens, deploy, verify ownership and submit sitemap.xml. These tags do not collect visit analytics and do not prove search indexing. See docs/operations/seo.md. Existing language alternates, canonical URLs and private-page noindex rules remain in place.
+
+---
+
+## 36 / Evidence and maintenance
 
 The editable source is docs/user-guide/guide.md. The PDF is output/pdf/luma-green-user-guide.pdf. Screenshots and their capture manifests live with the source. The repository README in that folder gives capture and rebuild commands.
 

@@ -3268,5 +3268,15 @@
     "cameraPermission": "Use the camera to photograph scrap or verification documents.",
     "photoPermission": "Select photos for scrap estimates and verification.",
     "cameraTitle": "Camera"
+  },
+  "analytics": {
+    "title": "Optional analytics",
+    "description": "Allow PostHog and Google Analytics to measure visits to public pages. We do not record forms, private pages or session replays. Your choice does not change access to the platform.",
+    "accept": "Allow analytics",
+    "decline": "Keep analytics off",
+    "settings": "Analytics settings",
+    "saved": "Your choice is saved on this device.",
+    "unavailable": "Your browser could not save this choice. Analytics will stay off.",
+    "close": "Close"
   }
 }

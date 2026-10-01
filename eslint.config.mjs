@@ -291,7 +291,7 @@ const eslintConfig = defineConfig([
 
   // --- Playwright ---------------------------------------------------------
   {
-    files: ["e2e/**/*.ts"],
+    files: ["e2e/**/*.ts", "e2e-analytics/**/*.ts"],
     ...playwright.configs["flat/recommended"],
     rules: {
       ...playwright.configs["flat/recommended"].rules,

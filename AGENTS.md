@@ -45,23 +45,23 @@ Three properties follow from that and are non-negotiable:
 
 ## 2. Stack
 
-| Layer       | Choice                               | Notes                                              |
-| ----------- | ------------------------------------ | -------------------------------------------------- |
-| Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in           |
-| Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment |
-| UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`     |
-| Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1       |
-| i18n        | next-intl, 12 locales, RTL-ready     | `messages/*.json`                                  |
-| Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server   |
-| Server sync | TanStack Query                       | For non-Convex async work                          |
-| Auth        | Better Auth on Convex                | Phone codes; admin password + TOTP — see §9        |
-| Analytics   | PostHog                              | Deferred — keys stay empty (docs ADR 0012)         |
-| Errors      | Sentry                               | Deferred — build only wraps when a DSN exists      |
-| Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                       |
-| Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift    |
-| Lint        | ESLint flat config, type-aware       | See §10                                            |
-| Mobile      | Expo 57 / React Native WebView       | `apps/mobile`; shared hosted operational UI        |
-| Desktop     | Electron                             | `apps/desktop`; macOS and Windows signed updates   |
+| Layer       | Choice                               | Notes                                                       |
+| ----------- | ------------------------------------ | ----------------------------------------------------------- |
+| Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in                    |
+| Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment          |
+| UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`              |
+| Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1                |
+| i18n        | next-intl, 12 locales, RTL-ready     | `messages/*.json`                                           |
+| Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server            |
+| Server sync | TanStack Query                       | For non-Convex async work                                   |
+| Auth        | Better Auth on Convex                | Phone codes; admin password + TOTP — see §9                 |
+| Analytics   | PostHog / Google Analytics 4         | Optional, visitor opt-in, public page views only (ADR 0016) |
+| Errors      | Sentry                               | Optional error-only capture; explicit deployment flag + DSN |
+| Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                                |
+| Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift             |
+| Lint        | ESLint flat config, type-aware       | See §10                                                     |
+| Mobile      | Expo 57 / React Native WebView       | `apps/mobile`; shared hosted operational UI                 |
+| Desktop     | Electron                             | `apps/desktop`; macOS and Windows signed updates            |
 
 ## 3. Layout
 
@@ -223,6 +223,16 @@ there, never in a component.
   notifications use a separate outbox and approved Flow templates.
 - **OpenRouter or self-hosted vision** — optional transient photo estimates; server quotas and table
   prices. See `docs/architecture/ai-estimation.md`.
+- **PostHog, Google Analytics 4 and Sentry** — implemented, optional, off by
+  default. `NEXT_PUBLIC_TELEMETRY_ENABLED=true` and each provider's settings are
+  required. Analytics also requires the visitor's choice and measures only the
+  explicit marketing-route allowlist; never add private forms, booking tokens,
+  identities or record contents to events. Sentry error reporting is separate
+  from that choice and uses an allowlist that removes identifying context.
+  Read [observability](docs/operations/observability.md) before changing capture.
+- **Search ownership** — optional Google Search Console and Bing metadata
+  tokens. Follow [search setup](docs/operations/seo.md); tags do not prove live
+  verification or indexing.
 - **Razorpay, Resend, R2, Mapbox** — not required for the pilot. No payment
   processing is implemented. Documents use Convex storage; location uses the browser.
 - **Expo / React Native and Electron** — native shells are in `apps/`. Signed
@@ -273,3 +283,13 @@ where `String.raw` would break Next's static analysis of the matcher.
 | `.claude/skills/seo`           | Adding a route, metadata, sitemap or structured data |
 | `.claude/skills/convex-data`   | Schema changes, queries, mutations, migrations       |
 | `.claude/skills/ship-pr`       | Opening a PR or preparing a deployment               |
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

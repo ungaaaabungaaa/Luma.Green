@@ -61,7 +61,32 @@ Set these on the Convex deployment:
 The account is not needed for manual material entry. Provider execution and
 model accuracy must be checked with the selected endpoint before launch.
 
-## Services that are not required
+## Optional analytics, errors and search tools
+
+These integrations are now implemented; the earlier deferral is superseded.
+They do not need to be enabled for booking and trade operations to work.
+
+| Account               | Configuration                                                                                        | Acceptance gate                                                                       |
+| --------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| PostHog               | `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`                                                | Region, retention and quota reviewed; consented public page view received             |
+| Google Analytics 4    | `NEXT_PUBLIC_GA_MEASUREMENT_ID`                                                                      | Enhanced Measurement and automatic page views off; one manual safe page view received |
+| Sentry                | `NEXT_PUBLIC_SENTRY_DSN`; optional private build `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT` | Browser and Next.js server errors received with identifying fields removed            |
+| Google Search Console | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` for HTML tag verification, or DNS verification                | Ownership accepted; sitemap fetched                                                   |
+| Bing Webmaster Tools  | `NEXT_PUBLIC_BING_SITE_VERIFICATION` for HTML meta verification, or supported account/DNS method     | Ownership accepted; sitemap fetched                                                   |
+
+Telemetry requires `NEXT_PUBLIC_TELEMETRY_ENABLED=true` in the intended Next.js
+deployment, plus the individual service configuration. Analytics additionally
+requires the visitor's saved choice. Sentry is separate from that choice.
+Rebuild after changing public values. Keep ordinary preview deployments off.
+Search verification does not depend on telemetry and loads no tracking script.
+
+Follow [observability.md](observability.md) for provider settings, privacy,
+route exclusions, shutdown and acceptance tests. Do not add duplicate GA/GTM
+tags. Follow [seo.md](seo.md) for domain, indexing and sitemap checks. Set
+budgets and retention before activation. Do not mark provider delivery complete
+from a local test or from the presence of keys alone.
+
+## Other services that are not required
 
 - Maps: browser location and distance calculations work without a Mapbox account.
 - Payments: households are paid directly by cash or UPI. Business escrow remains
@@ -69,8 +94,6 @@ model accuracy must be checked with the selected endpoint before launch.
   keys expecting this prototype to process money.
 - Email and storage: Resend and Cloudflare R2 are not required. Existing private
   application documents use Convex storage.
-- PostHog and Sentry: remain optional and disabled without keys. Do not add them
-  just to make the pilot work.
 - Native app distribution: follow the separate [app release checklist](app-releases.md)
   for Expo, Apple, Google, signing certificates, environment values and update feeds.
 

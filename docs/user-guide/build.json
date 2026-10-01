@@ -1,11 +1,11 @@
 {
-  "application_checkpoint": "db62fb7",
-  "pages": 44,
+  "application_checkpoint": "0f0ce43",
+  "pages": 47,
   "pdf": "output/pdf/luma-green-user-guide.pdf",
-  "pdf_sha256": "2ed5b8f566a275b350c887949bbe2cca448f4f8d7f5d695c5e36dc2543671617",
+  "pdf_sha256": "5c2b6f1106095ce48ef023cbd0b14487a8b4dff0755a4538a4f7ba5f742aaf5f",
   "inputs": {
-    "docs/user-guide/guide.md": "977e9cefa7150c20d346d6ec0edb2f2a3c2ae62d6b659860a5b0285680c00e20",
-    "scripts/build-user-guide.py": "bc8c6f575e8e4f91ee1a5ba259aeaa039da9d4b7e21e44fb58540e0a83fd24a0",
+    "docs/user-guide/guide.md": "9e93d9737b68ee67fa9c5dfa2584c644db3d2326bf530798ea6998caac171864",
+    "scripts/build-user-guide.py": "15b8d1992d18b1014fffd09668233b27b3d8770595cb96c631587b4c6e89afeb",
     "scripts/user-guide-requirements.txt": "b802c7c849c8ab94480294fd74811081f858702fb07c74797e7d36ea255c2e70",
     "docs/user-guide/screenshots/public-home.png": "a96a6422a528808eb3ac11481bde2cc9c947e7a4c93ea2b1493032480ee79d5c",
     "docs/user-guide/screenshots/public-login.png": "0f8b3eb329adfecdbecfeb2af72dd910e562cfd32cc04aa691b36937f69dfac3",
@@ -39,6 +39,9 @@
     "docs/user-guide/screenshots/public-contact.png": "301cf919e7e840068fcd83edb6e71df258db8751fef6d2957ed47f7e9a4b6b73",
     "docs/user-guide/screenshots/public-how-it-works.png": "d9d5e3baa57d5adfe3b4db8ba241054d09264a1992813b7a58aee29bc983da6b",
     "docs/user-guide/screenshots/admin-verification.png": "9034340a342bc00866f5a820b0738337adf226739c58ed466d902eef03404784",
+    "docs/user-guide/screenshots/analytics-choice.png": "d7fd8461b2f8401258c35683b492cfe9ca05b6b7ecab78180369d06553169ef9",
+    "docs/user-guide/screenshots/analytics-choice-arabic.png": "c6dc2c4cff9fc624d656f56c672cea4485b7010ec4e68f86da61d13685180639",
+    "docs/user-guide/analytics-captures.json": "27abceea9cae9dac225a15cd1a3c4aa6744206c2c66352407aa9d96c9b255d84",
     "docs/user-guide/public-captures.json": "a5c1eb9d8e818b7aa7ae5ac6bbc69f928c0ad5319cef2d9d39f6b097b45a71d9",
     "docs/user-guide/screenshots/fixture-captures.json": "337a0de8aa7e3cd1e02d0133f16142b062ba7d9610e1424670a4812810c8a3bf"
   }

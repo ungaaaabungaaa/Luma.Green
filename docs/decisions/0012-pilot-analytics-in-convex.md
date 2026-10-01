@@ -1,8 +1,12 @@
 # 0012. Pilot analytics in Convex; PostHog and Sentry later
 
-- **Status:** Decided
+- **Status:** Superseded by [0016](0016-optional-analytics-and-error-monitoring.md)
 - **Date:** 29 Sep 2026
 - **Deciders:** founder, Claude
+
+The founder requested PostHog, Sentry and Google Analytics on 1 October 2026.
+Record 0016 replaces the deferral below. This record preserves the earlier
+decision; it is not the current setup guide.
 
 ## Context
 

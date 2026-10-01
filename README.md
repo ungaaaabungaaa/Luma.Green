@@ -257,9 +257,11 @@ Then sign in at `http://localhost:3000/login` with a demo login.
   `AUTH_DEV_MODE=true`, so production is never touched.
 - **Another port:** sign-in trusts `SITE_URL` only. Add more with
   `npx convex env set EXTRA_TRUSTED_ORIGINS http://localhost:3100`.
-- **Everything else** (SMS, AI, payments, maps, analytics) switches itself on
-  when its key appears in `.env.local` or on the deployment; see
-  [docs/operations/environments.md](docs/operations/environments.md).
+- **Optional services:** configure SMS and AI in their documented deployment
+  environments. PostHog, GA4 and Sentry also require an explicit telemetry switch;
+  visit analytics wait for the visitor choice. See
+  [observability setup](docs/operations/observability.md). Payments remain a demo;
+  browser location requires no map-service key.
 
 ```bash
 pnpm check          # lint + typecheck + unit tests: run before every push
@@ -290,18 +292,18 @@ features still need signed store releases. See the [architecture](docs/architect
 
 ## Tech stack
 
-| Layer     | Choice                                                                                                                                                                         |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                        |
-| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                                       |
-| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                                     |
-| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                    |
-| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                  |
-| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                                       |
-| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                                |
-| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                          |
-| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                        |
-| Waiting   | MSG91 and optional AI endpoint: implementation ready for account setup and provider checks. PostHog and Sentry are optional. Maps use browser location. Payments remain a demo |
+| Layer     | Choice                                                                                                                                                                                                                                  |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                                                                                 |
+| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; white theme, mobile first                                                                                                                                                |
+| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                                                                                              |
+| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                                                                             |
+| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                                                                           |
+| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                                                                                                |
+| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                                                                                         |
+| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                                                                                   |
+| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                                                                                 |
+| Waiting   | MSG91 and optional AI endpoint: implementation ready for account setup and provider checks. PostHog, GA4 and Sentry are implemented but need configured projects and delivery checks. Maps use browser location. Payments remain a demo |
 
 ## Docs
 

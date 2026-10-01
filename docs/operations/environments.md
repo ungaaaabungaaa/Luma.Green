@@ -97,25 +97,35 @@ variables in Vercel are placeholders. To switch on:
 
 ## Where each variable lives
 
-| Variable                                                               | Next.js on Vercel                                   | Convex deployment          | Notes                                                      |
-| ---------------------------------------------------------------------- | --------------------------------------------------- | -------------------------- | ---------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`                                                 | Production: `https://luma.green`                    | —                          | Canonical URLs                                             |
-| `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`                | URL injected by `convex deploy`; local `.env.local` | —                          | Don't set by hand on Vercel; the site URL is derived       |
-| `CONVEX_DEPLOY_KEY`                                                    | Production key → Production; preview key → Preview  | —                          | Never in `.env.local`                                      |
-| `CONVEX_DEPLOYMENT`                                                    | —                                                   | —                          | Local `.env.local` only                                    |
-| `SITE_URL`                                                             | —                                                   | Every deployment           | The site origin Better Auth trusts                         |
-| `EXTRA_TRUSTED_ORIGINS`                                                | —                                                   | Dev only, if needed        | Comma-separated extra origins, e.g. a second local port    |
-| `ADMIN_EMAIL`                                                          | —                                                   | Every deployment           | The one admin; set right before `/admin/setup`             |
-| `BETTER_AUTH_SECRET`                                                   | —                                                   | Every deployment           | Different per deployment                                   |
-| `MSG91_AUTH_KEY`, `MSG91_OTP_TEMPLATE_ID`, other template ids          | —                                                   | Prod (and dev for testing) | DLT-approved ids only                                      |
-| `AUTH_DEV_MODE`                                                        | —                                                   | Dev and preview only       | `true` writes sign-in codes to the Convex log; never prod  |
-| `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `PHOTO_ESTIMATE_DAILY_LIMIT` | —                                                   | Every deployment           | Hard spend limit on each key                               |
-| PostHog, Sentry                                                        | Empty until the partner decision                    | —                          | [ADR 0012](../decisions/0012-pilot-analytics-in-convex.md) |
-| Razorpay, Resend, R2                                                   | Later                                               | Later                      | Not used in the pilot                                      |
+| Variable                                                                               | Next.js on Vercel                                               | Convex deployment          | Notes                                                             |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------- | -------------------------- | ----------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`                                                                 | Production: `https://luma.green`                                | —                          | Canonical URLs                                                    |
+| `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`                                | URL injected by `convex deploy`; local `.env.local`             | —                          | Don't set by hand on Vercel; the site URL is derived              |
+| `CONVEX_DEPLOY_KEY`                                                                    | Production key → Production; preview key → Preview              | —                          | Never in `.env.local`                                             |
+| `CONVEX_DEPLOYMENT`                                                                    | —                                                               | —                          | Local `.env.local` only                                           |
+| `SITE_URL`                                                                             | —                                                               | Every deployment           | The site origin Better Auth trusts                                |
+| `EXTRA_TRUSTED_ORIGINS`                                                                | —                                                               | Dev only, if needed        | Comma-separated extra origins, e.g. a second local port           |
+| `ADMIN_EMAIL`                                                                          | —                                                               | Every deployment           | The one admin; set right before `/admin/setup`                    |
+| `BETTER_AUTH_SECRET`                                                                   | —                                                               | Every deployment           | Different per deployment                                          |
+| `MSG91_AUTH_KEY`, `MSG91_OTP_TEMPLATE_ID`, other template ids                          | —                                                               | Prod (and dev for testing) | DLT-approved ids only                                             |
+| `AUTH_DEV_MODE`                                                                        | —                                                               | Dev and preview only       | `true` writes sign-in codes to the Convex log; never prod         |
+| `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `PHOTO_ESTIMATE_DAILY_LIMIT`                 | —                                                               | Every deployment           | Hard spend limit on each key                                      |
+| `NEXT_PUBLIC_TELEMETRY_ENABLED`                                                        | `true` only in explicitly enabled builds; otherwise blank/false | —                          | Master gate for PostHog, GA4 and Sentry                           |
+| `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`, `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Intended Next.js environment only                               | —                          | Analytics also requires visitor opt-in; [setup](observability.md) |
+| `NEXT_PUBLIC_SENTRY_DSN`                                                               | Intended Next.js environment only                               | —                          | Error capture, independent of analytics choice                    |
+| `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT`                                    | Trusted build environment only                                  | —                          | Optional private source-map upload credentials                    |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION`           | Public ownership tokens in intended build                       | —                          | [Search setup](seo.md); separate from telemetry                   |
+| Razorpay, Resend, R2                                                                   | Later                                                           | Later                      | Not used in the pilot                                             |
 
 For exact status-message variables and per-language template maps, see
 [sms-notifications.md](sms-notifications.md). Values live in the password
 manager, never in chat, email or the repo.
+
+Telemetry is implemented under [ADR 0016](../decisions/0016-optional-analytics-and-error-monitoring.md),
+which supersedes the earlier deferral. Rebuild and redeploy after public telemetry
+or verification values change. Do not copy enabled production analytics into
+ordinary previews. Keys alone do not activate telemetry, and local tests do not
+prove provider receipt.
 
 ## Backups and incidents
 

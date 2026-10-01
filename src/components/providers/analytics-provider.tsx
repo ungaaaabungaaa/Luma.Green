@@ -5,16 +5,23 @@ import type { ReactNode } from "react";
 
 import { clientEnv } from "@/lib/env";
 
-// Keep the analytics SDK out of the initial bundle until a key is supplied.
-const AnalyticsEnabled = dynamic(async () => {
-  const module_ = await import("./analytics-enabled");
-  return module_.AnalyticsEnabled;
-});
+const AnalyticsControls = dynamic(
+  async () => {
+    const module_ = await import("./analytics-controls");
+    return module_.AnalyticsControls;
+  },
+  { ssr: false },
+);
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
-  return clientEnv.NEXT_PUBLIC_POSTHOG_KEY ? (
-    <AnalyticsEnabled>{children}</AnalyticsEnabled>
-  ) : (
-    <>{children}</>
+  const isConfigured =
+    clientEnv.NEXT_PUBLIC_TELEMETRY_ENABLED &&
+    (Boolean(clientEnv.NEXT_PUBLIC_POSTHOG_KEY) ||
+      Boolean(clientEnv.NEXT_PUBLIC_GA_MEASUREMENT_ID));
+  return (
+    <>
+      {children}
+      {isConfigured ? <AnalyticsControls /> : null}
+    </>
   );
 }

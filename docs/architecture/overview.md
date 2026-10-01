@@ -127,6 +127,18 @@ pull request + a Convex preview deployment per branch) and Production
 (`lumagreen.vercel.app`, later `luma.green`, + the Convex production
 deployment). Details: [operations/environments.md](../operations/environments.md).
 
+## Optional observability
+
+PostHog and Google Analytics 4 are implemented for consented manual public-page
+views. Sentry captures filtered browser and Next.js server exceptions. All need
+the explicit deployment telemetry flag plus their own configuration; analytics
+also needs the visitor's saved opt-in. Private workflows are excluded from
+analytics, and no session replay, profiling or performance tracing is enabled.
+Convex and native shell crashes are not instrumented by these web integrations.
+See [ADR 0016](../decisions/0016-optional-analytics-and-error-monitoring.md) and
+the [observability runbook](../operations/observability.md). Convex pilot reports
+remain the source of operational totals.
+
 ## How later features plug in
 
 | Later feature                           | Plugs in as                                                                                                     |
@@ -138,4 +150,3 @@ deployment). Details: [operations/environments.md](../operations/environments.md
 | Machinery data bank                     | `catalogue` gains machines; yards link the machines they own                                                    |
 | WhatsApp for households                 | A channel adapter in `notifications` plus an HTTP-action webhook into `bookings`                                |
 | Team members for the admin              | Staff roles in `identity` — [auth.md](./auth.md#later-team-members)                                             |
-| PostHog, Sentry                         | Providers already stubbed in `src/components/providers`; switched on by their keys                              |

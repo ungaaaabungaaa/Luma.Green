@@ -5,6 +5,23 @@ import { languageAlternates, localizedPath } from "@/i18n/paths";
 
 import { site } from "./site";
 
+/** Public ownership tokens only; these tags do not load a tracking script. */
+export function searchVerificationMetadata({
+  google,
+  bing,
+}: {
+  google?: string;
+  bing?: string;
+}): Metadata["verification"] {
+  const googleToken = google?.trim();
+  const bingToken = bing?.trim();
+  if (!googleToken && !bingToken) return undefined;
+  return {
+    ...(googleToken && { google: googleToken }),
+    ...(bingToken && { other: { "msvalidate.01": bingToken } }),
+  };
+}
+
 interface PageMetadataInput {
   locale: Locale;
   path: string;

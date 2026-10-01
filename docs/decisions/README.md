@@ -27,7 +27,8 @@ list top to bottom to see how the platform got its shape.
 | 0009 | [Money stays off the platform in the pilot](./0009-money-off-platform-first.md)                          | Decided            | 29 Sep 2026 |
 | 0010 | [White theme, mobile first, shadcn/ui](./0010-white-theme-mobile-first-shadcn.md)                        | Decided            | 29 Sep 2026 |
 | 0011 | [AI estimates materials; our tables set prices](./0011-ai-estimates-priced-by-our-tables.md)             | Superseded by 0015 | 29 Sep 2026 |
-| 0012 | [Pilot analytics in Convex; PostHog and Sentry later](./0012-pilot-analytics-in-convex.md)               | Decided            | 29 Sep 2026 |
+| 0012 | [Pilot analytics in Convex; PostHog and Sentry later](./0012-pilot-analytics-in-convex.md)               | Superseded by 0016 | 29 Sep 2026 |
 | 0013 | [Backups: Convex plus a daily local export](./0013-backups-convex-plus-daily-local.md)                   | Decided            | 29 Sep 2026 |
 | 0014 | [Shared web UI in native shells](./0014-shared-web-ui-in-native-shells.md)                               | Decided            | 1 Oct 2026  |
 | 0015 | [Bounded photo cache and selectable inference](./0015-bounded-photo-cache-and-selectable-inference.md)   | Decided            | 1 Oct 2026  |
+| 0016 | [Optional analytics and error monitoring](./0016-optional-analytics-and-error-monitoring.md)             | Decided            | 1 Oct 2026  |

@@ -62,4 +62,42 @@ describe("the mandatory platform guide", () => {
       expect(capture.blockedExternalRequests).toEqual([]);
     }
   });
+
+  it("keeps configured analytics captures aligned with their source", () => {
+    const evidence = JSON.parse(
+      readFileSync("docs/user-guide/analytics-captures.json", "utf8"),
+    ) as {
+      captures: {
+        path: string;
+        sha256: string;
+        sourceHashes: Record<string, string>;
+        browserErrors: string[];
+        actualBrowserUI: boolean;
+        externalRequestsIntercepted: boolean;
+        productionProviderExecutionTested: boolean;
+      }[];
+    };
+    expect(evidence.captures).toHaveLength(2);
+    expect(evidence.captures.map((capture) => capture.path)).toEqual(
+      expect.arrayContaining([
+        "docs/user-guide/screenshots/analytics-choice-arabic.png",
+        "docs/user-guide/screenshots/analytics-choice.png",
+      ]),
+    );
+    for (const capture of evidence.captures) {
+      expect(hash(capture.path), capture.path).toBe(capture.sha256);
+      expect(Object.keys(capture.sourceHashes)).toContain(
+        "src/components/providers/analytics-controls.tsx",
+      );
+      for (const [file, expected] of Object.entries(capture.sourceHashes)) {
+        expect(hash(file), `${file}: recapture analytics controls`).toBe(
+          expected,
+        );
+      }
+      expect(capture.browserErrors).toEqual([]);
+      expect(capture.actualBrowserUI).toBe(true);
+      expect(capture.externalRequestsIntercepted).toBe(true);
+      expect(capture.productionProviderExecutionTested).toBe(false);
+    }
+  });
 });

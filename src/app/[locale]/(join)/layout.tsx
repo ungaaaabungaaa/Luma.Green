@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
@@ -6,6 +7,14 @@ import { SignOutButton } from "@/components/join/sign-out-button";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { SkipLink } from "@/components/site/skip-link";
 import { Link } from "@/i18n/navigation";
+
+/** Fallback for new applicant pages; public /join uses the site layout. */
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+  alternates: {},
+  openGraph: null,
+  twitter: null,
+};
 
 /**
  * Shell for applicants: one phone-width column, the language switcher and a

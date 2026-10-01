@@ -1,6 +1,6 @@
 # Maintained platform user guide
 
-**Status:** current usage guide, 1 October 2026; app checkpoint `db62fb7`.
+**Status:** current usage guide, 1 October 2026; source baseline `0f0ce43`, plus the analytics and SEO update.
 
 - Editable content: [guide.md](guide.md).
 - Published PDF: [luma-green-user-guide.pdf](../../output/pdf/luma-green-user-guide.pdf).
@@ -13,7 +13,7 @@
 
 1. Assess guide impact whenever a user-facing route, role, permission, workflow,
    control, setup requirement or native update behavior changes. Update the
-   affected chapter and its edition/application checkpoint in `guide.md`. The PDF
+   affected chapter and its edition/source baseline in `guide.md`. The PDF
    footer uses that same metadata. Record this assessment in the delivery handoff.
 2. Build the current app and run a local preview. Capture changed public pages:
 
@@ -30,9 +30,21 @@
    illustrate current components with synthetic records. Follow its README;
    keep its visible fixture banner and metadata. It is not part of the app and
    does not prove live access, server permissions or provider behavior.
-4. All figures use current browser captures. Replace protected-screen fixtures
+4. Capture analytics controls with fake keys and all external requests intercepted:
+
+   ```sh
+   NEXT_PUBLIC_TELEMETRY_ENABLED=true NEXT_PUBLIC_GA_MEASUREMENT_ID=G-LUMATEST NEXT_PUBLIC_POSTHOG_KEY=phc_luma_test NEXT_PUBLIC_SENTRY_DSN=https://public@example.invalid/1 SENTRY_AUTH_TOKEN= pnpm exec next build --webpack
+   GUIDE_CAPTURE=true pnpm exec playwright test --config playwright.analytics.config.ts
+   ```
+
+   The dedicated production server uses port 3106. Rebuild with normal deployment
+   settings after this test; the test keys belong only in this local build. It writes English/Arabic browser PNGs
+   and `analytics-captures.json`. No live analytics account is used.
+
+   All figures use current browser captures. Replace protected-screen fixtures
    with authenticated staging captures when access is available. Preserve the
    evidence distinction until then. Never silently relabel a fixture as live.
+
 5. Install the PDF dependencies in a Python virtual environment:
 
    ```sh

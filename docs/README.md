@@ -70,6 +70,11 @@ For caching, compression, self-hosted AI and cost measurements, use
 | [roadmap.md](./delivery/roadmap.md)                   | Week by week to the pilot, the cut line, the critical path |
 | [pilot.md](./delivery/pilot.md)                       | Who, what has to work, what we measure                     |
 
+## Analytics, monitoring and search
+
+- [PostHog, GA4 and Sentry setup](operations/observability.md): optional keys, visitor choice, cost controls and delivery checks.
+- [Search setup](operations/seo.md): Google/Bing verification, sitemap and indexing checks.
+
 ## Platform user guide
 
 Use the [A-to-Z user guide](user-guide/guide.md) for role workflows and admin

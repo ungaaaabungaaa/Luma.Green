@@ -1,8 +1,9 @@
 # Agent handoff — 1 October 2026
 
-**Status:** implementation and local verification complete through `db62fb7`
-(premium visual refinement).
-The maintained user guide is now included on `feat/pilot-readiness-cleanup`.
+**Status:** the branch now includes optional PostHog/GA4, error-only Sentry,
+search ownership tags and the updated illustrated guide. The task started at
+`0f0ce43`; find this delivery with `git log -1 --grep="optional analytics"`.
+The continuation branch is `feat/pilot-readiness-cleanup`.
 The branch is the continuation point; `main` has not received these changes.
 Check the live remote before making a merge or deployment claim.
 
@@ -12,9 +13,9 @@ Check the live remote before making a merge or deployment claim.
 2. Check `git status -sb`, `git log -15 --oneline`, `git remote -v` and
    `git worktree list`. Preserve new user changes. Fetch `origin` and compare the
    branch with its upstream before editing or pushing.
-3. Read the implementation records below and the user-guide delivery record.
-   The latest application checkpoint is the visual refinement; the next
-   documentation checkpoint adds the illustrated user guide.
+3. Read the implementation records below, especially the latest
+   [analytics and SEO delivery](observability.md). The earlier visual and guide
+   checkpoints are integrated; do not repeat them.
 4. Pick a task from the ordered queue. Distinguish code implementation, local
    tests, hosted CI, deployment, provider execution and store approval in reports.
 5. Update this page as work progresses. Commit meaningful verified slices.
@@ -59,10 +60,12 @@ them again into that branch or restart from the old base.
 | `2183515` | Image compression, compact queries, caches and self-hosted inference adapter |
 | `f94fa6b` | Agent handoff and continuation checkpoints                                   |
 | `db62fb7` | Premium public/app design, compressed art, parallax and motion checks        |
+| `0f0ce43` | Illustrated platform guide and mandatory guide maintenance rules             |
 
 Detailed records: [UI and pilot](cleanup-progress.md),
 [apps and motion](apps-and-motion.md), [cost optimization](cost-optimization.md),
-[visual refinement](premium-ui.md), [platform user guide](user-guide.md).
+[visual refinement](premium-ui.md), [platform user guide](user-guide.md),
+[analytics and SEO](observability.md).
 
 No unfinished agent edits, stashes or active secondary worktrees were present at
 handoff inspection. The five earlier managed worktrees are archived: UI,
@@ -98,7 +101,12 @@ Read [ADR 0014](../decisions/0014-shared-web-ui-in-native-shells.md),
 
 ## Verification checkpoint
 
-Latest implementation checks at `db62fb7`:
+Current analytics/SEO checks are recorded in [observability.md](observability.md).
+That record includes configured and default builds, consent browser checks,
+regressions and the updated guide. Provider receipt, hosted CI and deployment
+remain separate gates.
+
+Historical implementation checks at `db62fb7`:
 
 | Check                            | Evidence                                                                      |
 | -------------------------------- | ----------------------------------------------------------------------------- |
@@ -116,7 +124,7 @@ These do not prove mobile native compilation, Windows execution or signed update
 The default Turbopack build hit a host worker-port restriction; Webpack passed.
 Clean production builds need network access for configured Google fonts.
 
-The latest full checks cover the visual refinement. The last heading offset and
+The historical checks above cover the visual refinement. Its last heading offset and
 browser-test selector fixes also passed focused ESLint and the production suite.
 The first incremental build emitted stale CSS; moving the compile cache aside and
 building again produced the correct styles. A computed hero-size smoke check now
@@ -142,11 +150,15 @@ same commit when affected. The PDF uses current browser captures; protected
 screens use clearly labelled synthetic records in actual application components.
 No connected authentication or live provider result is established by those figures.
 
-Latest documentation checks: `pnpm check` passed lint/types, 1,068 web tests in
+Historical documentation checks at `0f0ce43`: `pnpm check` passed lint/types, 1,068 web tests in
 137 files, 23 mobile tests and 19 desktop tests. Three new tests enforce guide
 input, screenshot/component and PDF hashes. The PDF was rendered and every page
 inspected. No production source, dependencies or native runtime changed.
-The guide tooling uses a separate local preview and Python build dependencies.
+The analytics edition adds English and Arabic consent captures and owner setup.
+These use test keys with external requests intercepted, not live provider accounts.
+Guide impact was assessed and its source, captures, build record and PDF updated
+in the same delivery. The guide tooling uses a separate local preview and Python
+build dependencies.
 See the [delivery record](user-guide.md) for capture coverage and remaining limits.
 
 ## Ordered next-work queue
@@ -160,7 +172,8 @@ See the [delivery record](user-guide.md) for capture coverage and remaining limi
 | 5        | Validate optional self-hosted AI                           | Configure an authenticated HTTPS gateway, pin an evaluated vision model, and test cold/warm latency within eight seconds, accuracy and cost. Manual entry works without AI.                                                                                                                                             |
 | 6        | Run launch UX and cost acceptance                          | Review populated app/admin screens with staging accounts; native-speaker review of launch languages; low-end device/RTL checks; real scan legibility; staging usage measurements and restore drill. Replace placeholder support contact details before launch. Local savings are fixture measurements, not a live bill. |
 | 7        | Implement remaining operational gaps if required for pilot | SMS delivery webhook/status handling and explicit resend policy; bounded SMS outbox retention; identify/exclude demo rows in pilot metrics. Define retention and idempotency first. Current adapters/reports do not implement these.                                                                                    |
-| 8        | Continue later product work from its requirements          | Large-city spatial dispatch; consented photo conversion/accuracy instrumentation; real escrow/payments and regulated carbon work. Existing prototypes and sample figures are not live services.                                                                                                                         |
+| 8        | Activate analytics and search only when ready              | Create selected PostHog/GA4/Sentry projects, set explicit deployment flag and keys, disable GA4 Enhanced Measurement, set quotas and verify received events/errors. Verify Search Console/Bing ownership and submit the deployed sitemap. No accounts or production services were activated in this pass.               |
+| 9        | Continue later product work from its requirements          | Large-city spatial dispatch; consented photo conversion/accuracy instrumentation; real escrow/payments and regulated carbon work. Existing prototypes and sample figures are not live services.                                                                                                                         |
 
 Setup checklists:
 
@@ -169,15 +182,19 @@ Setup checklists:
 - [Low-cost operation](../operations/low-cost-operation.md): exact self-hosted AI variables, gateway, licenses and measurements.
 - [SMS](../operations/sms-notifications.md): template/event contracts.
 - [Backups](../operations/backups.md): exports and restore checks.
+- [Observability](../operations/observability.md): PostHog, GA4, Sentry, consent and quotas.
+- [Search](../operations/seo.md): canonical host, ownership tags, sitemap and indexing.
 
 ## Publication and next-agent instruction
 
 This checkpoint is prepared for a normal push of `feat/pilot-readiness-cleanup`
 to `origin` with upstream tracking. Verify equality after fetching with
 `git rev-list --left-right --count HEAD...@{upstream}`; expect `0 0` before claiming
-synchronization. Check clean status separately. Find this documentation checkpoint
-with `git log -1 --grep='illustrated platform guide'`. The application
-implementation remains `db62fb7`; the guide delivery commit records this checkpoint.
+synchronization. Check clean status separately. Find the latest delivery with
+`git log -1 --grep='optional analytics'`. Preserve the pre-existing untracked
+root `luma-green-user-guide.pdf`; it is not the maintained `output/pdf` artifact.
+Do not stage or delete it. No main merge, hosted CI result or deployment is
+claimed by this handoff.
 
 No PR, hosted CI result, merge, deployment, provider execution or store release
 is claimed here. The current task ends after push verification. No background
