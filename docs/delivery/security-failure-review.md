@@ -139,6 +139,42 @@ The final combined source preserves PR #30 (`af2e295`) and has these results:
 - Independent code reviews found no remaining blocking regression in the repair set or newly merged industry API access boundaries. A final limited common-secret-signature scan of 115 changed text files found no matches. This is not a full secret-scan certificate.
 - The approved registry audit retains the one unpatched native tooling advisory described above. No advisory is suppressed.
 
-The source, screenshots, capture manifests, Word guide and build record are committed together. The Google Docs copy retains its existing ID and sharing, with the new local revision recorded as pending. Hosted CI, preview status and protected squash merge must be read from the associated PR; local results alone do not establish them. Main is never pushed directly.
+The original repair source, screenshots, capture manifests, Word guide and build record were committed together and merged through PR #31 at `2ba8246`. The follow-up verified an in-place Google Docs update for that reviewed guide; see `docs/user-guide/cloud.json`. Its existing ID, folder and sharing remain unchanged. Hosted CI, preview status and protected squash merge are separate from local results. Main is never pushed directly.
 
-Live SMS receipt, authenticated staging acceptance, production deployment, native signing and real-device tests are separate gates. The existing Google Docs guide keeps its document ID and sharing. Its in-place update remains a recorded connection gate; this work must not create a replacement document.
+Live SMS receipt, authenticated staging acceptance, native signing and real-device tests are separate gates. The current Google Docs API cannot set native image alt-text attributes; all 72 descriptions remain visible editable captions. The publication record states this limit and does not claim identical accessibility semantics. The newer guide from parallel PR #29 requires its own verified synchronization after that revision merges.
+
+## Combined backend rollout checks
+
+Production `outstanding-buzzard-942` and development `glorious-rooster-470` were
+inspected through read-only Convex queries that returned counts and flags only.
+Both had zero active admin sessions. Development had one unique configured admin,
+one password credential, an enabled authenticator with one factor record, and
+consistent root profile records. Production had no auth users or admin profiles,
+and no `ADMIN_EMAIL`, `BETTER_AUTH_SECRET` or `SITE_URL` configuration. Production
+`AUTH_DEV_MODE` and both bootstrap-token settings were absent. No session or
+account records were changed; no global secret rotation was needed. Production
+admin provisioning and a real password/TOTP sign-in are not proved by this count
+check.
+
+The first production dry run from main would have removed 15 indexes belonging
+to the ecosystem backend deployed separately from `dc41665`. It was not applied.
+The follow-up retains that backend's source, schema, generated API and operations
+runbook alongside PR #30, PR #31 and the new exact-stock repair. Independent merge
+review confirmed that existing security guards and both membership index orders
+remain. Nine focused suites passed 154 tests, full types passed, and guide
+freshness passed nine tests.
+
+The combined production dry run passed schema validation and explicitly reported
+no index deletions. Its seven additions are the industry API indexes, the second
+membership index order and `supportRequests.by_phone_createdAt`. The final
+account/inbox/push schema from PR #29 must also be present before deployment.
+Read-only job inspection found no city-backfill work: production had zero jobs;
+development had seven, all with city data and no missing business owners. No
+migration, restore, seed, provider send or deployment was performed by these
+checks.
+
+The combined source also passed the full local `pnpm check`: 1,437 web/backend,
+36 mobile and 21 desktop tests, lint and types. The production build and complete
+format check passed. These results cover the existing security repairs, the
+exact-stock follow-up and the retained ecosystem backend; the final account/UI
+merge will be checked again at its final commit.
