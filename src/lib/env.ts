@@ -155,3 +155,24 @@ export function photoEstimateEnv() {
     });
   return parsed.success ? parsed.data : undefined;
 }
+
+/** News is optional, server-side and off unless explicitly enabled by the operator. */
+export function industryNewsEnv() {
+  if (process.env.INDUSTRY_NEWS_ENABLED !== "true") return null;
+  const dailyLimit = process.env.INDUSTRY_NEWS_DAILY_LIMIT?.trim();
+  const parsed = z
+    .object({
+      apiKey: z
+        .string()
+        .trim()
+        .min(1)
+        .max(256)
+        .regex(/^[a-zA-Z0-9_-]+$/),
+      dailyLimit: z.coerce.number().int().min(1).max(1000),
+    })
+    .safeParse({
+      apiKey: process.env.INDUSTRY_NEWS_API_KEY,
+      dailyLimit: dailyLimit === "" ? "100" : (dailyLimit ?? "100"),
+    });
+  return parsed.success ? parsed.data : null;
+}

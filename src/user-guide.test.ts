@@ -4,6 +4,8 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
+import { localeMeta, locales } from "./i18n/locales";
+
 interface GuideBuild {
   format: string;
   docx: string;
@@ -244,6 +246,130 @@ describe("the mandatory platform guide", () => {
       expect(capture.productionAuthenticationTested).toBe(false);
       expect(capture.browserErrors).toEqual([]);
       expect(capture.blockedExternalRequests).toEqual([]);
+    }
+  });
+
+  it("keeps industry API captures current across the registered script matrix", () => {
+    const directory = "docs/user-guide/screenshots";
+    const evidence = JSON.parse(
+      readFileSync(`${directory}/industry-api-captures.json`, "utf8"),
+    ) as {
+      sourceHashes: Record<string, string>;
+      captures: {
+        name: string;
+        file: string;
+        locale: (typeof locales)[number];
+        theme: "light" | "dark";
+        viewport: { width: number; height: number };
+        screenshotSha256: string;
+        productionAuthenticationTested: boolean;
+        providerExecutionTested: boolean;
+        writesDisabled: boolean;
+        realCredentialCaptured: boolean;
+        keyboardFieldTab: boolean;
+        layout: {
+          width: number;
+          scrollWidth: number;
+          direction: string;
+          lang: string;
+          loadedFonts: string[];
+          dark: boolean;
+        };
+        browserErrors: string[];
+        blockedExternalRequests: string[];
+      }[];
+    };
+    const expectedNames = locales.flatMap((locale) =>
+      (locale === "en" || locale === "ar"
+        ? [360, 390, 768, 1024, 1440]
+        : [390]
+      ).flatMap((width) =>
+        ["light", "dark"].map(
+          (theme) => `api-access-${locale}-${String(width)}-${theme}`,
+        ),
+      ),
+    );
+    expect(evidence.captures.map((capture) => capture.name)).toEqual(
+      expectedNames,
+    );
+    expect(Object.keys(evidence.sourceHashes)).toEqual(
+      expect.arrayContaining([
+        "src/components/integrations/api-access.tsx",
+        "src/app/globals.css",
+        "src/lib/fonts.ts",
+        "scripts/guide-preview/api-main.tsx",
+        "scripts/guide-preview/api-capture.mjs",
+        ...locales.map((locale) => `messages/${locale}.json`),
+      ]),
+    );
+    for (const [file, expected] of Object.entries(evidence.sourceHashes))
+      expect(hash(file), `${file}: recapture API screen`).toBe(expected);
+    for (const capture of evidence.captures) {
+      expect(hash(`${directory}/${capture.file}`), capture.file).toBe(
+        capture.screenshotSha256,
+      );
+      expect(capture.layout.scrollWidth).toBeLessThanOrEqual(
+        capture.layout.width,
+      );
+      expect(capture.layout.width).toBe(capture.viewport.width);
+      expect(capture.layout.direction).toBe(localeMeta[capture.locale].dir);
+      expect(capture.layout.lang).toBe(capture.locale);
+      expect(capture.layout.loadedFonts.length).toBeGreaterThan(0);
+      expect(capture.layout.dark).toBe(capture.theme === "dark");
+      expect(capture.productionAuthenticationTested).toBe(false);
+      expect(capture.providerExecutionTested).toBe(false);
+      expect(capture.writesDisabled).toBe(true);
+      expect(capture.realCredentialCaptured).toBe(false);
+      expect(capture.keyboardFieldTab).toBe(true);
+      expect(capture.browserErrors).toEqual([]);
+      expect(capture.blockedExternalRequests).toEqual([]);
+    }
+  });
+
+  it("retains the scrolled phone controls and keyboard revoke-dialog evidence", () => {
+    const directory = "docs/user-guide/screenshots";
+    const evidence = JSON.parse(
+      readFileSync(`${directory}/industry-api-captures.json`, "utf8"),
+    ) as {
+      controlCaptures: {
+        file: string;
+        kind: "lower-controls" | "revoke-dialog";
+        screenshotSha256: string;
+        writesDisabled: boolean;
+        realCredentialCaptured: boolean;
+        keyboardFocusOrder?: string[];
+        createFocused?: boolean;
+        revokeVisibleAboveNavigation?: boolean;
+        revokeFocused?: boolean;
+        escapeClosesDialog?: boolean;
+        escapeReturnsFocus?: boolean;
+      }[];
+    };
+    expect(evidence.controlCaptures.map((capture) => capture.file)).toEqual(
+      locales
+        .filter((locale) => locale === "en" || locale === "ar")
+        .flatMap((locale) =>
+          ["light", "dark"].flatMap((theme) => [
+            `api-controls-${locale}-390-${theme}.png`,
+            `api-revoke-${locale}-390-${theme}.png`,
+          ]),
+        ),
+    );
+    for (const capture of evidence.controlCaptures) {
+      expect(hash(`${directory}/${capture.file}`), capture.file).toBe(
+        capture.screenshotSha256,
+      );
+      expect(capture.writesDisabled).toBe(true);
+      expect(capture.realCredentialCaptured).toBe(false);
+      if (capture.kind === "lower-controls") {
+        expect(capture.keyboardFocusOrder?.length).toBe(6);
+        expect(capture.createFocused).toBe(true);
+        expect(capture.revokeVisibleAboveNavigation).toBe(true);
+      } else {
+        expect(capture.revokeFocused).toBe(true);
+        expect(capture.escapeClosesDialog).toBe(true);
+        expect(capture.escapeReturnsFocus).toBe(true);
+      }
     }
   });
 

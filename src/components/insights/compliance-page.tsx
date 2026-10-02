@@ -62,10 +62,21 @@ function NotForSaathis() {
 export function CompliancePage() {
   const t = useTranslations("compliance");
   const workspace = useWorkspace();
+  const integrations = useTranslations("integrations");
 
   return (
     <>
-      <AppPageHeader title={t("title")} lead={t("lead")} />
+      <AppPageHeader
+        title={t("title")}
+        lead={t("lead")}
+        actions={
+          workspace?.kind === "org" ? (
+            <Button asChild variant="outline">
+              <Link href="/app/integrations">{integrations("title")}</Link>
+            </Button>
+          ) : undefined
+        }
+      />
       {workspace?.kind === "org" ? (
         <QueryBoundary>
           <ComplianceBody />

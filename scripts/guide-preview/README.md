@@ -156,3 +156,29 @@ payment. The impact totals, including 100 kg of CO₂e, are synthetic. They must
 be described as measured recovery, verified emissions reductions or issued
 credits. Add these screenshots to the stock, business sale, trade receipt, impact
 and onboarding guide chapters only after browser capture and visual review.
+
+## Industry API capture matrix
+
+The API page uses `api-main.tsx` with the actual `ApiAccess` and `AppShell`
+components. Its single key row is synthetic metadata; no raw key is created or
+displayed. Creation and revocation callbacks always reject. Start it separately:
+
+```sh
+pnpm exec vite --config scripts/guide-preview/api-vite.config.mts
+node scripts/guide-preview/api-capture.mjs
+```
+
+The default origin is `http://127.0.0.1:3213`. Override the local origin with
+`GUIDE_API_FIXTURE_ORIGIN` if needed. The capture script reads the authoritative
+locale registry. It captures English and Arabic at 360, 390, 768, 1024 and 1440
+pixels in light and dark mode, plus every other registered language at 390 pixels
+in both themes. Phone captures retain the viewport so the fixed navigation stays
+at the bottom. Larger captures include the page.
+
+`industry-api-captures.json` records source and image hashes, layout dimensions,
+font loading, browser errors and the explicit fixture boundary. English and Arabic also have scrolled phone controls and revoke-dialog captures
+in both themes. Their keyboard checks reach expiry, each scope, Create key and
+Revoke, then close the dialog with Escape without confirming a write. A successful
+script is not a visual review: inspect the images before recording completion.
+It does not prove key issuance, revocation, provider execution, authentication or
+production deployment. Do not click Create key during a guide capture.

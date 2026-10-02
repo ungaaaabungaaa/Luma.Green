@@ -217,10 +217,21 @@ describe("CompliancePage", () => {
     ).not.toBeInTheDocument();
   });
 
+  it("links business records to owner API access", () => {
+    renderPage();
+    expect(screen.getByRole("link", { name: "API access" })).toHaveAttribute(
+      "href",
+      "/app/integrations",
+    );
+  });
+
   it("sends a Saathi back to their jobs", () => {
     workspace.current = { kind: "saathi", saathi: { name: "Lakshmi" } };
     renderPage();
     expect(screen.getByText("For businesses")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: "API access" }),
+    ).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Go to my jobs" })).toHaveAttribute(
       "href",
       "/app",
