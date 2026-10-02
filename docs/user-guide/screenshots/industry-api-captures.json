@@ -1,0 +1,1806 @@
+{
+  "sourceCommit": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+  "note": "Actual application components in the isolated documentation harness. Synthetic key metadata only; no raw key. This proves visual rendering, not authorization, provider access or a deployed API. All write adapters reject.",
+  "sourceHashes": {
+    "src/components/integrations/api-access.tsx": "c21eabb44264a1124d92a8021455798bb77e5bb8f15b5e99f32c39355826bb7a",
+    "src/components/app/app-shell.tsx": "1f2d7d6b9af7cb42d05b3babc1839ca7567bd5506149271cb1a5aab07fcc3b3c",
+    "src/components/app/page-parts.tsx": "d070dd172ce301c89295f1ac8b1fa5ae0f14041f7bc1bb55ed4c65410b978fa2",
+    "src/components/theme/theme-provider.tsx": "16099dee8a247ce40bb5d410fc0a6ae58de226e89071fea987cef5114e6842c0",
+    "src/components/theme/theme-toggle.tsx": "b2340a73c1abcdf0552ecd40f4d8d6e0a03e2bca9ae25d2c55deb6853ebd1684",
+    "src/components/site/language-switcher.tsx": "605c2aa7c55d4dafe0031fd72d36991c3a2cf854abc1b64126f674c66ade7224",
+    "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
+    "src/components/ui/input.tsx": "3417db3d25a5fbc95792c2f8d49cfce5190b51640da196f74246f5cae5c4f7ea",
+    "src/components/ui/select.tsx": "beab7e40b384a19e47f04e2bd1f0bb7f283128307521284994debb6c052223b8",
+    "src/components/ui/dialog.tsx": "9cee303ad5afb2d5b5e22c2219d972b54f656e66c4ac2157f9e1b6d126b53f12",
+    "src/components/ui/checkbox.tsx": "a90c9633def82f754c4182f0bf62215a03476bb479acf0689a3d86726d9580ff",
+    "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
+    "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
+    "src/i18n/locales.ts": "a35b388d1dcb77e810f8808e668cb0a9eac0a6c63116b47d5bf36e52c69077b8",
+    "scripts/guide-preview/api-main.tsx": "f615d1d5313deaa9ced76e4c6ee4dfbba8f9cecede080061081c32f0cf05671d",
+    "scripts/guide-preview/api-vite.config.mts": "e1814f8e734589c7d02a03673a8254977b5d578e534434e0101dbd59c9926dad",
+    "scripts/guide-preview/api-capture.mjs": "912dc220a6cf40c080ca452d4a3efc2d9ef5c465a65dfc071db49a8e6c8c1a69",
+    "scripts/guide-preview/vite.config.mts": "42eeb4c19e18c2dfc2fa39ee18a7c1e21cd3e11ca339e4fe13b39a44d67fd045",
+    "scripts/guide-preview/queries.ts": "85e78c647ca85bdaf4aa7669f0d18a5d1370d14101f6015a39c126b50eb5f346",
+    "scripts/guide-preview/fixtures.ts": "38978b1dfc4f6a08f8ed3892eab186f8057f4fdcced0e8da1e3cbe07e0a6dab9",
+    "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
+    "messages/hi.json": "4e48af55435d83d4ca7ede8b4b5d96208805c27ff073858617fca61f6a407904",
+    "messages/bn.json": "1c0a958ac54cae00e9b24d998ae08cd045644904d540821aa23753a1b704a97f",
+    "messages/mr.json": "9b1c6639924ac79f9f797fbb54354df042958d1e8e16048204ae75a60cd9c17c",
+    "messages/ta.json": "3be18f6f572a63a63e7e669b1858230194c1703c779021631f31d60ffae4c0e2",
+    "messages/te.json": "0bbdefc02d8f61a6d062b74ce915c095cdfae684b2528c8fe2d86f0bba625637",
+    "messages/kn.json": "8ba5ee305f8ae0ead1d8ba5960746c911ed4083f1fe58f08869f4504f08b2864",
+    "messages/ml.json": "44c56e74443aff9d740cca8da69bc535ab0651b0e1ee6dffd4b18ec37861f848",
+    "messages/gu.json": "7ec3822f02c236ca517a1751555beee05de6d2fd591fd351955dc073282ba913",
+    "messages/pa.json": "f65b699b06f53db289b5654e304f5f49ecfb6060a25b54fbeb78cf519960e8b8",
+    "messages/ur.json": "2852c69b1855c3c04bcec1144214ee0966d3cd2c934ee4222ff8f15bc147d369",
+    "messages/ar.json": "316d26fe1b86060e6f703be0254512ae6734353a2b1be0d789df79e164857ec5"
+  },
+  "captures": [
+    {
+      "name": "api-access-en-360-light",
+      "file": "api-access-en-360-light.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:36.945Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "b23e8fffb09d841b036d157f9e8ef9ccafae1b1fb9af25e9d2db06e5010cc5e5",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-360-dark",
+      "file": "api-access-en-360-dark.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:37.213Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "b8c9e471874add2f5b43826a3d3ab4e181a58c371edbee62a66420f87d3dbe29",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-390-light",
+      "file": "api-access-en-390-light.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:37.462Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "2409e61bcf0cbb4f8c9678e4025fca9376f57c7f739c487544e1d383f3003bad",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-390-dark",
+      "file": "api-access-en-390-dark.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:37.866Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "5e8c3619501e38b2315e9c3dca14fb809a1c6b94c7673c48fce184774a0c7138",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-768-light",
+      "file": "api-access-en-768-light.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "theme": "light",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:38.264Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "37ce78eeff03121d25e7941f87068391b6c92bb2aac1f81da29487314122461a",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-768-dark",
+      "file": "api-access-en-768-dark.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "theme": "dark",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:38.537Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "2d147ab386b6cf31c25acecf597f4cc559bcfd3f14f014937126c12ff64b46ee",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-1024-light",
+      "file": "api-access-en-1024-light.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1024,
+        "height": 1000
+      },
+      "theme": "light",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:38.812Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "564deff54957a8957039cc98e1e2529896dde05d4ee5eb5a7f19ebc74aecad5b",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-1024-dark",
+      "file": "api-access-en-1024-dark.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1024,
+        "height": 1000
+      },
+      "theme": "dark",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:39.088Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "71f883b9bea6f4742d0eb31c9751e33afee182614c6da666c57ddda99c69661c",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-1440-light",
+      "file": "api-access-en-1440-light.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "theme": "light",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:39.367Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "9006aa685d65641704101629c897aff90e8156e3e4f9f201ab9c08222ecb3368",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-en-1440-dark",
+      "file": "api-access-en-1440-dark.png",
+      "route": "/en/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "theme": "dark",
+      "locale": "en",
+      "capturedAt": "2026-10-02T08:33:39.647Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "e9a5f09058cd82cd0e33f112a426e5161f35d2f80477845be12ca78d70c530a5",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "direction": "ltr",
+        "lang": "en",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-hi-390-light",
+      "file": "api-access-hi-390-light.png",
+      "route": "/hi/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "hi",
+      "capturedAt": "2026-10-02T08:33:39.945Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "e50520de370c83d9e85c3564c898a4024310e04b6bb3660e826859f0028d9111",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "hi",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-hi-390-dark",
+      "file": "api-access-hi-390-dark.png",
+      "route": "/hi/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "hi",
+      "capturedAt": "2026-10-02T08:33:40.247Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "4bbca312cf306c1614929d76d96b202363af8799ff42c98ba5adef35a1211f2e",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "hi",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-bn-390-light",
+      "file": "api-access-bn-390-light.png",
+      "route": "/bn/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "bn",
+      "capturedAt": "2026-10-02T08:33:40.531Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "f9cd981b6cddf84c531b18808b0aa981fea9e4e15b5efd9ab3a20bf009f37d55",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "bn",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-bn-390-dark",
+      "file": "api-access-bn-390-dark.png",
+      "route": "/bn/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "bn",
+      "capturedAt": "2026-10-02T08:33:40.830Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "279922ab9ee527ed3c6f31fb2ac58d51a0183991ef705ae66612263b49c817f5",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "bn",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-mr-390-light",
+      "file": "api-access-mr-390-light.png",
+      "route": "/mr/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "mr",
+      "capturedAt": "2026-10-02T08:33:41.129Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "0c43f4176038b92dc0d67414383a78a78bcb0ca29c26703e30f0e5ee403162e3",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "mr",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-mr-390-dark",
+      "file": "api-access-mr-390-dark.png",
+      "route": "/mr/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "mr",
+      "capturedAt": "2026-10-02T08:33:41.409Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "6e666b591084128131787b9c8e1ea04015e411fdfe5da631137b77cde88c8bbf",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "mr",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ta-390-light",
+      "file": "api-access-ta-390-light.png",
+      "route": "/ta/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "ta",
+      "capturedAt": "2026-10-02T08:33:41.692Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "637f7507adcc5e90b946339620c814097c52c6dd87dd41c27339c448dd62a377",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "ta",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ta-390-dark",
+      "file": "api-access-ta-390-dark.png",
+      "route": "/ta/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "ta",
+      "capturedAt": "2026-10-02T08:33:41.991Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "dd650883c19a659a62fc23da0b71e4c608316eac44001a59ef39dffeeab40aec",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "ta",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-te-390-light",
+      "file": "api-access-te-390-light.png",
+      "route": "/te/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "te",
+      "capturedAt": "2026-10-02T08:33:42.275Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "be2ed84f3df7dd12066641a41cbcc0af9ad2d3478bf5f99e9c7e7e713c8b7e63",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "te",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-te-390-dark",
+      "file": "api-access-te-390-dark.png",
+      "route": "/te/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "te",
+      "capturedAt": "2026-10-02T08:33:42.575Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "ba1a47a31d79493fd1dcfb091a3d924590871a9e714ad305cc21bdabcd0fe8ff",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "te",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-kn-390-light",
+      "file": "api-access-kn-390-light.png",
+      "route": "/kn/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "kn",
+      "capturedAt": "2026-10-02T08:33:42.859Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "347a44cd06ade463fe560d4444a6c6bb477874666d1e9256c1be319426cba0df",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "kn",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-kn-390-dark",
+      "file": "api-access-kn-390-dark.png",
+      "route": "/kn/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "kn",
+      "capturedAt": "2026-10-02T08:33:43.161Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "d39ea78e7ef6efe8d29560b9efe0b06633e7d35555e4ccd1e9d20529559daa8c",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "kn",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ml-390-light",
+      "file": "api-access-ml-390-light.png",
+      "route": "/ml/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "ml",
+      "capturedAt": "2026-10-02T08:33:43.446Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "3f3902fb16c0717d003a758a85dc3dd284ee1eef76c5cb315ad9203eaa657e9a",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "ml",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ml-390-dark",
+      "file": "api-access-ml-390-dark.png",
+      "route": "/ml/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "ml",
+      "capturedAt": "2026-10-02T08:33:43.748Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "07e25cd5fab77293b8c1f9937690d528a466ed6dd9cb00d61467ab74d0818336",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "ml",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-gu-390-light",
+      "file": "api-access-gu-390-light.png",
+      "route": "/gu/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "gu",
+      "capturedAt": "2026-10-02T08:33:44.049Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "0d5ac71b8a0c32446900ab289e6dfbb7b236c97498a9407772a3773218c55877",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "gu",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-gu-390-dark",
+      "file": "api-access-gu-390-dark.png",
+      "route": "/gu/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "gu",
+      "capturedAt": "2026-10-02T08:33:44.350Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "21a474af3a30968d25863f2b57c49f576880db3a4b007c654ed78ba5d875cb3e",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "gu",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-pa-390-light",
+      "file": "api-access-pa-390-light.png",
+      "route": "/pa/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "pa",
+      "capturedAt": "2026-10-02T08:33:44.634Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "330d6f02f19eb76ae051cc353e5d00b0c473d177408ea9c1f52a778f5d0dbea4",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "pa",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-pa-390-dark",
+      "file": "api-access-pa-390-dark.png",
+      "route": "/pa/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "pa",
+      "capturedAt": "2026-10-02T08:33:44.934Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "a4a4ba4d6ecef94a8484dcb7d24d6f607285aa3a482e1522816ff358a161651a",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "ltr",
+        "lang": "pa",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ur-390-light",
+      "file": "api-access-ur-390-light.png",
+      "route": "/ur/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "ur",
+      "capturedAt": "2026-10-02T08:33:45.198Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "5c4f06a35ff643a5b20bc6c28e8e6cfb34570473a137dddfcad5b423730b53ef",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "rtl",
+        "lang": "ur",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ur-390-dark",
+      "file": "api-access-ur-390-dark.png",
+      "route": "/ur/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "ur",
+      "capturedAt": "2026-10-02T08:33:45.465Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "0ff96afdbc6dd7bdd01fa60fa0df0d223b2fc66c807fd4196b8cdab7966ea433",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "rtl",
+        "lang": "ur",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-360-light",
+      "file": "api-access-ar-360-light.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:45.731Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "005f4891eed21c3b781181bca19e783619a358ecd852cc6825465b1ef3f71a9e",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-360-dark",
+      "file": "api-access-ar-360-dark.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:45.997Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "74fa9cee22c45ceefa70182331f4e3474603cf7e4e475b24c2e9311be9f41eee",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-390-light",
+      "file": "api-access-ar-390-light.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:46.246Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "e294d6e415ef7808db9b347fb84e0b5ab7035aad9f964e87670b9b8df86d6c11",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-390-dark",
+      "file": "api-access-ar-390-dark.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:46.634Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": false,
+      "screenshotSha256": "6ebfff28c107a558e558dffe1a3037cdcf82cfdb1856b55872341ce9f25d6732",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-768-light",
+      "file": "api-access-ar-768-light.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "theme": "light",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:47.032Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "a39573851bae89ffcc0216abe35ecaff0f2ad161bb321905465dfc98df95b3f0",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-768-dark",
+      "file": "api-access-ar-768-dark.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "theme": "dark",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:47.306Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "8214c1ebdb04102c107ec0bd79577c944d4b9bf66ab45ee0e945ad97ff07edd1",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-1024-light",
+      "file": "api-access-ar-1024-light.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1024,
+        "height": 1000
+      },
+      "theme": "light",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:47.581Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "dfbeb1e02bdd6d7e74257d9ba2e9b94c9b731cfd82d9c3c6b09f841512bb90c8",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-1024-dark",
+      "file": "api-access-ar-1024-dark.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1024,
+        "height": 1000
+      },
+      "theme": "dark",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:47.856Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "9c71c0b4b5d0176cfd3627a6961211b6a963600b66e42bf2d0425f680ef6480d",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-1440-light",
+      "file": "api-access-ar-1440-light.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "theme": "light",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:48.135Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "c8b1e66b8e34b2f6974238776fc902944f5dff9e5054b3d7837bd043138a979a",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": false,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "api-access-ar-1440-dark",
+      "file": "api-access-ar-1440-dark.png",
+      "route": "/ar/app/integrations?role=manufacturer",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "theme": "dark",
+      "locale": "ar",
+      "capturedAt": "2026-10-02T08:33:48.431Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "providerExecutionTested": false,
+      "writesDisabled": true,
+      "realCredentialCaptured": false,
+      "fullPage": true,
+      "screenshotSha256": "0edaef10dc807b2a7d1598fb08d0da6c4af35a6022f2e1d16d404179fad97ce3",
+      "keyboardFieldTab": true,
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "direction": "rtl",
+        "lang": "ar",
+        "bodyFont": "\"Noto Sans\", \"Noto Sans Fallback\", system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif, sans-serif, system-ui, \"Segoe UI\", sans-serif",
+        "loadedFonts": [
+          "Geist",
+          "Geist Fallback",
+          "Noto Sans",
+          "Noto Sans Fallback",
+          "Noto Sans Mono",
+          "Noto Sans Mono Fallback"
+        ],
+        "dark": true,
+        "margin": "0px"
+      },
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    }
+  ],
+  "controlCaptures": [
+    {
+      "file": "api-controls-en-390-light.png",
+      "locale": "en",
+      "theme": "light",
+      "kind": "lower-controls",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "2d2889264ab38729b950295d22617a1d624c65eb6d0233fdaf7ff7630fa10ae2",
+      "keyboardFocusOrder": [
+        "api-key-expiry",
+        "api-scope-organization",
+        "api-scope-materials",
+        "api-scope-inventory",
+        "api-scope-trades",
+        "api-scope-news"
+      ],
+      "createFocused": true,
+      "revokeVisibleAboveNavigation": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    },
+    {
+      "file": "api-revoke-en-390-light.png",
+      "locale": "en",
+      "theme": "light",
+      "kind": "revoke-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "e82a1b4b383bb5fd5529bb3ad4bca98c5c0127126951b5fb7b15c4a287fedf5a",
+      "revokeFocused": true,
+      "escapeClosesDialog": true,
+      "escapeReturnsFocus": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    },
+    {
+      "file": "api-controls-en-390-dark.png",
+      "locale": "en",
+      "theme": "dark",
+      "kind": "lower-controls",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "0a63dd88e721de6c19e79da620fa8bdfdd93190709a19c375eade9a7630c5fd5",
+      "keyboardFocusOrder": [
+        "api-key-expiry",
+        "api-scope-organization",
+        "api-scope-materials",
+        "api-scope-inventory",
+        "api-scope-trades",
+        "api-scope-news"
+      ],
+      "createFocused": true,
+      "revokeVisibleAboveNavigation": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    },
+    {
+      "file": "api-revoke-en-390-dark.png",
+      "locale": "en",
+      "theme": "dark",
+      "kind": "revoke-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "7ad16ac2c57d87d05ddd254e3cde984757b11783c678857f557d005179c73c3e",
+      "revokeFocused": true,
+      "escapeClosesDialog": true,
+      "escapeReturnsFocus": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    },
+    {
+      "file": "api-controls-ar-390-light.png",
+      "locale": "ar",
+      "theme": "light",
+      "kind": "lower-controls",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "9ce356c4f9e9adec2a147e28adf7ce0005f3979d8de40433e7a279f4aa39be0d",
+      "keyboardFocusOrder": [
+        "api-key-expiry",
+        "api-scope-organization",
+        "api-scope-materials",
+        "api-scope-inventory",
+        "api-scope-trades",
+        "api-scope-news"
+      ],
+      "createFocused": true,
+      "revokeVisibleAboveNavigation": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    },
+    {
+      "file": "api-revoke-ar-390-light.png",
+      "locale": "ar",
+      "theme": "light",
+      "kind": "revoke-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "daeca22b3d3a0757735286fa488049f7877f3e512d275fc0bafdc251a540940f",
+      "revokeFocused": true,
+      "escapeClosesDialog": true,
+      "escapeReturnsFocus": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    },
+    {
+      "file": "api-controls-ar-390-dark.png",
+      "locale": "ar",
+      "theme": "dark",
+      "kind": "lower-controls",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "1707bfb5a829038a405a332ab47c6d88219792121a7ecc4169c414e76a04e99c",
+      "keyboardFocusOrder": [
+        "api-key-expiry",
+        "api-scope-organization",
+        "api-scope-materials",
+        "api-scope-inventory",
+        "api-scope-trades",
+        "api-scope-news"
+      ],
+      "createFocused": true,
+      "revokeVisibleAboveNavigation": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    },
+    {
+      "file": "api-revoke-ar-390-dark.png",
+      "locale": "ar",
+      "theme": "dark",
+      "kind": "revoke-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotSha256": "99fb8048c77cee1ffd6ce5d855b30374ffa0bfe709229f5c4aebc6125ae7084d",
+      "revokeFocused": true,
+      "escapeClosesDialog": true,
+      "escapeReturnsFocus": true,
+      "writesDisabled": true,
+      "realCredentialCaptured": false
+    }
+  ]
+}

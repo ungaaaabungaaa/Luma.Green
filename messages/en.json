@@ -3366,5 +3366,55 @@
         }
       }
     }
+  },
+  "integrations": {
+    "title": "API access",
+    "lead": "Connect your business systems to your Luma.Green records.",
+    "connection": "Connect a system",
+    "readOnly": "REST v1 reads business details, materials, stock and trades. It cannot change records or process payments.",
+    "baseUrl": "Base path on this website:",
+    "openApi": "Open API specification",
+    "ownerOnly": "Only an active business owner can manage API keys.",
+    "tokenTitle": "Save your API key",
+    "tokenHint": "This key is shown once. Save it in your system’s secret store. Do not put it in a browser app, URL or message. Closing this screen removes it from view.",
+    "tokenLabel": "New API key",
+    "expiresOn": "Expires {date}",
+    "copy": "Copy key",
+    "dismiss": "Done",
+    "copyError": "Copy failed. Select and copy the key manually.",
+    "copied": "Key copied.",
+    "createTitle": "Create a key",
+    "keyHint": "Use one key for each system. Select only the permissions it needs. You can have up to five active keys.",
+    "label": "System name",
+    "expiry": "Valid for",
+    "days": "{count, plural, one {# day} other {# days}}",
+    "permissions": "Read permissions",
+    "limit": "Five keys are active. Revoke an unused key before you create another.",
+    "createError": "The key could not be created. Check your access and try again.",
+    "creating": "Creating…",
+    "create": "Create key",
+    "keysTitle": "Your keys",
+    "empty": "No keys yet. Create a key to connect your first system.",
+    "neverUsed": "Not used yet",
+    "lastUsed": "Last used {date}",
+    "revokeLabel": "Revoke {label}",
+    "revoke": "Revoke",
+    "revokeTitle": "Revoke this key?",
+    "revokeHint": "Systems using “{label}” will lose access immediately. You cannot restore this key.",
+    "revokeError": "The key could not be revoked. Try again.",
+    "revoking": "Revoking…",
+    "newsHint": "Industry news provides source-linked updates for your material families when the news service is configured.",
+    "scopes": {
+      "organization": "Business details",
+      "materials": "Material catalogue",
+      "inventory": "Business stock",
+      "trades": "Business trades",
+      "news": "Industry news"
+    },
+    "status": {
+      "active": "Active",
+      "expired": "Expired",
+      "revoked": "Revoked"
+    }
   }
 }

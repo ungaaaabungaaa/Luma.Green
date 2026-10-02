@@ -35,16 +35,17 @@ private until shared from its Share menu.
 
 ## Architecture — how it's built
 
-| Page                                                | What's in it                                                    |
-| --------------------------------------------------- | --------------------------------------------------------------- |
-| [overview.md](./architecture/overview.md)           | Containers, modules, key flows, failure modes, what comes later |
-| [urls.md](./architecture/urls.md)                   | Route map, canonical and hreflang rules, indexing               |
-| [frontend.md](./architecture/frontend.md)           | Layouts per area, look and feel, components, every screen       |
-| [auth.md](./architecture/auth.md)                   | Sign-in for each role, the admin, permissions, private files    |
-| [data-model.md](./architecture/data-model.md)       | Planned tables and state machines                               |
-| [ai-estimation.md](./architecture/ai-estimation.md) | Photo → estimate, model choice, cost controls                   |
-| [native-apps.md](./architecture/native-apps.md)     | Mobile and desktop ownership, navigation and update boundaries  |
-| [decisions/](./decisions/README.md)                 | Architecture decision records, one per decision                 |
+| Page                                                | What's in it                                                         |
+| --------------------------------------------------- | -------------------------------------------------------------------- |
+| [overview.md](./architecture/overview.md)           | Containers, modules, key flows, failure modes, what comes later      |
+| [urls.md](./architecture/urls.md)                   | Route map, canonical and hreflang rules, indexing                    |
+| [frontend.md](./architecture/frontend.md)           | Layouts per area, look and feel, components, every screen            |
+| [auth.md](./architecture/auth.md)                   | Sign-in for each role, the admin, permissions, private files         |
+| [data-model.md](./architecture/data-model.md)       | Planned tables and state machines                                    |
+| [ai-estimation.md](./architecture/ai-estimation.md) | Photo → estimate, model choice, cost controls                        |
+| [industry-api.md](./architecture/industry-api.md)   | Factory and industry connections, REST setup, key access and roadmap |
+| [native-apps.md](./architecture/native-apps.md)     | Mobile and desktop ownership, navigation and update boundaries       |
+| [decisions/](./decisions/README.md)                 | Architecture decision records, one per decision                      |
 
 ## Operations — how it's run
 

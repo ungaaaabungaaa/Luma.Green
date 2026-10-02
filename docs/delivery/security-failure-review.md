@@ -1,6 +1,6 @@
 # Security and failure review — 2 October 2026
 
-Status: repairs verified locally; integration with the concurrent industry API merge is in progress. This is a source review with local tests, not a penetration-test certificate or proof of provider or device acceptance.
+Status: local review and repair complete. Hosted checks and protected merge are recorded by the PR associated with this change. This is a source review with local tests, not a penetration-test certificate or proof of provider or device acceptance.
 
 ## Scope and starting point
 
@@ -24,6 +24,7 @@ The coordinator owns integration and worktree cleanup after a verified merge. Re
 | File removal, draft discard and sign-out can fail without safe feedback          | Medium         | Keep the current file, draft or page, show a safe error and allow retry; shared sign-out logic also handles returned errors.                                                                |
 | Global recovery resets the boundary without refreshing server data               | Medium         | Use the installed Next.js 16.3 retry contract; contain optional monitoring failures.                                                                                                        |
 | Optional Sentry failure can break startup or error handling                      | Medium         | Contain initialization/reporting failures and log fixed nonprivate diagnostics; disabled-service and rejection tests.                                                                       |
+| Phone menu accepts clicks before its handler is ready                            | Medium         | Keep the trigger disabled during hydration; slow-script regression checks that the first enabled click opens the menu.                                                                      |
 | Failed PostHog initialization stays cached                                       | Low            | Clear the rejected initialization promise so a later valid page view can recover.                                                                                                           |
 | Cancelled Electron navigation can replace the new page with offline UI           | Medium         | Ignore cancellation failures; test with the real Home menu during a slow navigation.                                                                                                        |
 | Mobile rejected navigation can leave an untrusted page displayed                 | Medium         | Restore the trusted page for all rejected routes; ignore native blank/error callbacks without weakening request policy.                                                                     |
@@ -72,15 +73,16 @@ References checked for this review: [Next.js error handling](https://nextjs.org/
 
 ## Verification and delivery
 
-Local checks on the original c1ed004-based repair set:
+The final combined source preserves PR #30 (`af2e295`) and has these results:
 
-- `VITEST_MAX_WORKERS=2 pnpm check` passed: lint, types, 1,264 web/backend tests, 30 mobile tests and 21 desktop tests.
-- Normal production build passed with 925 routes. A separate fake-key analytics build and its five browser tests passed without provider calls.
-- The 149-test production browser run completed: 146 passed first time; three navigation checks passed on retry. The first failures are under investigation before integration.
-- Real Electron navigation and PDF smoke passed. Native package types and policy tests passed.
-- Browser evidence includes 27 public, four showcase, 40 normal fixture and 78 failure captures. All failure captures and all 71 rendered guide pages were visually inspected. Fixtures are labelled and do not prove authenticated access.
-- Independent reviews found no remaining blocking regression in the repair set. The registry audit retains the one unpatched tooling advisory described above.
+- `VITEST_MAX_WORKERS=2 pnpm check` passed: lint, types, 1,345 web/backend tests, 30 mobile tests and 21 desktop tests. Whole-project formatting and `git diff --check` passed.
+- Normal Turbopack and webpack production builds passed with 937 routes. A separate fake-key analytics build and five browser tests passed with external provider requests intercepted.
+- All 158 production browser tests passed with retries disabled. A preceding run exposed a lost first click before mobile-menu hydration. A controlled script delay reproduced it; the repair now has a server-render/hydration unit test and three slow-script browser tests. Twelve focused menu checks also passed without retries.
+- Real Electron navigation and PDF smoke passed. Native package types and policy tests passed. Signed installers and real devices remain separate gates.
+- Browser evidence includes 27 public, four showcase, 40 normal fixture, 78 failure and 48 API captures, plus two configured analytics captures. New or changed captures were visually inspected; byte-identical previously reviewed captures retain that evidence. All 76 rendered guide pages are reviewed (37 changed pages re-inspected, 39 byte-identical to the prior reviewed render). The Word guide has 72 screenshot placements. All source/image freshness tests passed.
+- Independent code reviews found no remaining blocking regression in the repair set or newly merged industry API access boundaries. A final limited common-secret-signature scan of 115 changed text files found no matches. This is not a full secret-scan certificate.
+- The approved registry audit retains the one unpatched native tooling advisory described above. No advisory is suppressed.
 
-PR #30 subsequently merged the industry API into main at af2e295. Preserve that change, combine both guide revisions, repeat source freshness and required checks, then inspect hosted checks and merge through the protected PR path. Main is never pushed directly.
+The source, screenshots, capture manifests, Word guide and build record are committed together. The Google Docs copy retains its existing ID and sharing, with the new local revision recorded as pending. Hosted CI, preview status and protected squash merge must be read from the associated PR; local results alone do not establish them. Main is never pushed directly.
 
 Live SMS receipt, authenticated staging acceptance, production deployment, native signing and real-device tests are separate gates. The existing Google Docs guide keeps its document ID and sharing. Its in-place update remains a recorded connection gate; this work must not create a replacement document.

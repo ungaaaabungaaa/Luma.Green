@@ -1,9 +1,9 @@
 {
-  "capturedAt": "2026-10-02T07:41:40.072Z",
-  "sourceCommit": "c1ed004745af737694fcd6b3ae4df631adc83c27",
+  "capturedAt": "2026-10-02T09:03:06.568Z",
+  "sourceCommit": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
   "sourceHashes": {
-    "messages/en.json": "9a08659dbe75b4b54857238240ec7b7763a9a0e4f2191c83210820333102a118",
-    "messages/ar.json": "72ac38f37b2c8d4f444f47dffa93d50b36b775ea0ab2c6fda36c30d206aaab42",
+    "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
+    "messages/ar.json": "316d26fe1b86060e6f703be0254512ae6734353a2b1be0d789df79e164857ec5",
     "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
     "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
     "src/components/admin/errors.ts": "1f03c871bd52ab67b1743c25b9249484ae8a8e4dfb715b78912aa5174399d5f4",
@@ -1226,7 +1226,7 @@
         "width": 1440,
         "height": 1000
       },
-      "sha256": "0c1b42009cae704609cfa2c6ea4f11a66c5864bbce870b04e220ba175a2fd5e5",
+      "sha256": "68244c00a640d6dc5d9c4c95ff4e5d36038f89f739865938bc45b8aacfc2e187",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1268,7 +1268,7 @@
         "width": 768,
         "height": 1024
       },
-      "sha256": "3bada096ac399510c53cab298df1b9256f2fc9236b0d8ad6157a12f852018889",
+      "sha256": "9f523cf1bb98a0fef8a50315e1e0eee29c238bd95cb74e23d2cc7a85c1234720",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1289,7 +1289,7 @@
         "width": 1440,
         "height": 1000
       },
-      "sha256": "1defdd000f95ff167f1e3f3206073286184165164e424d686c2be3fad8aa6503",
+      "sha256": "b8de8815a057b6785940a438c882e5998129e3cd594988582ae08cf9b854e869",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1394,7 +1394,7 @@
         "width": 768,
         "height": 1024
       },
-      "sha256": "cc4f390c3e56a148888851352a6fd227562e369ad1b939107f71f1f5accbae56",
+      "sha256": "1c08f5493bddd1747423c99e3b8861e094fb9c4073bdde92887a03259088fb05",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1415,7 +1415,7 @@
         "width": 1440,
         "height": 1000
       },
-      "sha256": "75873d368862736e7e5c441e126773063ec581cb75cf55c8517c4f4a8a5cfb4b",
+      "sha256": "e59a9552bd51d73fb9417e3d20cd3d87501caaa1413eef9ceb2cea8617f21bd7",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1436,7 +1436,7 @@
         "width": 390,
         "height": 844
       },
-      "sha256": "b17557f7a17f73fe99d18ea75dc0b2d2ddd29c51139937b74fb412ec48378e95",
+      "sha256": "26b0382e6a67ef012e753dabc90ec48f1b7da79f4bc0962ce872ebf116f9d921",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1457,7 +1457,7 @@
         "width": 768,
         "height": 1024
       },
-      "sha256": "1b73a16978b1212df8c417d88a314035fe06a961eed1c142234c3dc0b82c544e",
+      "sha256": "0022d0611f7292a03aabb79cc2b474e988afc3977a7a7e19b18adf5b57f842fe",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1562,7 +1562,7 @@
         "width": 390,
         "height": 844
       },
-      "sha256": "4f8f95cbad70eb93d3f3d14b56b47d438676a4ac884c80ae842370f1dfe9d440",
+      "sha256": "28fd38ef8ddf8ba7b1e3783540c7ef09780a0c9dab053d8f7f0dd926241f6951",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1625,7 +1625,7 @@
         "width": 390,
         "height": 844
       },
-      "sha256": "8188e71f61019845ead81f04e96fd40e2c0c11c08119dac1ae2b751f2e736e7e",
+      "sha256": "25a6dce4b8d8855cd05e78ce8b0f2b14636b248eb170881bf569290a681183b7",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1646,7 +1646,7 @@
         "width": 768,
         "height": 1024
       },
-      "sha256": "e40a50eabe0540b103aae7bf002306015465dbd2b537112a90221eac53d78dbf",
+      "sha256": "2b4bda125c90a3238336c0aff5bcbc70d525c6d2e7446697fc6a9c5733fd964e",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",

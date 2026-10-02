@@ -1,5 +1,34 @@
 # Agent handoff — 2 October 2026
 
+**Industry API work:** `feat/industry-api` adds REST v1 for an approved business's
+organization, material catalogue, stock, buying/selling trades and optional
+material-family news. Owners can create scoped, expiring keys and revoke them
+from Compliance → API access. Convex owns current membership checks, key
+hashes, business isolation, accepted-read limits and audit writes. The API exports
+integer grams/paise; trade payments remain simulated. There are no ledger writes,
+GraphQL or MCP endpoints in this release. The industry plan records those later
+contracts and their release gates.
+
+Local proof: the full check passed with two Vitest workers: lint, types, 1,267 web
+unit tests, 27 mobile tests and 20 desktop tests. Formatting, production builds,
+155 Chromium checks with zero retries and five isolated analytics checks passed.
+The maintained Word guide has 71 visually reviewed pages and eight passing
+freshness tests. See the PR for hosted checks and merge state.
+
+See [industry API delivery](industry-api.md) for current verification and
+[the API contract](../architecture/industry-api.md) for setup and examples.
+The schema change is additive; deploy its tables, indexes and functions before
+the web release. News remains off until an operator configures an appropriate
+provider plan and explicitly enables it in Convex. Local tests do not prove
+provider execution or a deployed integration.
+
+Guide impact: a new API setup and key-management section, current Compliance
+capture and API screen captures in every registered language, light/dark themes,
+phone/tablet/desktop sizes and RTL. Protected examples have synthetic data and
+writes disabled. The maintained Word document, visual review record and source
+hashes travel with this change. The existing Google Docs copy retains its stable
+ID and sharing; its in-place update remains a separate connection gate.
+
 **Logo motion follow-up:** after `8975575`, the founder requested an eased logo
 spin on hover. The shared SVG mark makes one 900ms turn on fine-pointer hover
 and home-link keyboard focus. The wordmark stays still. Reduced motion disables
@@ -379,3 +408,7 @@ the frontend. Remove the bootstrap token after setup. Review/revoke existing adm
 sessions if the vulnerable phone/setup endpoints were exposed. The open node-forge
 advisory, real-device acceptance, live authentication/provider tests and production
 deployment remain separate gates. This report does not claim launch readiness.
+
+The security repair branch preserves the industry API feature merged through PR #30 at `af2e295`. Its additive schema and API guide chapter are retained. The combined source was reviewed for access boundaries and checked again. A slow-loading phone menu also keeps its trigger disabled until interactive, preventing lost first clicks. The current guide includes both revisions.
+
+Final local evidence: `pnpm check` passed (1,345 web/backend, 30 mobile and 21 desktop tests), formatting passed, both production build formats passed, and all 158 browser tests passed without retries. The reviewed Word guide has 76 pages and 72 screenshot placements. Capture hashes match the combined source. Hosted checks and protected squash-merge evidence belong to the associated security repair PR; production backend deployment and the cloud guide update are not implied.
