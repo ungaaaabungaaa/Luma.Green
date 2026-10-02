@@ -7,6 +7,41 @@ import {
 export type NavigationDecision =
   "internal" | "browser" | "external" | "blocked";
 
+interface NavigationState {
+  url: string;
+  canGoBack: boolean;
+}
+
+/** Recover even when a navigation bypassed the native request callback. */
+export function handleNavigationChange(
+  state: NavigationState,
+  origin: string,
+  handlers: {
+    trackTrusted: (state: NavigationState) => void;
+    stopLoading: () => void;
+    openExternal: (url: string) => void;
+    restoreTrusted: () => void;
+  },
+) {
+  // Native startup/error documents do not replace the last trusted URL. A
+  // remount here would repeat the same callback forever. The request policy
+  // still rejects these URLs when page content tries to navigate to them.
+  if (
+    !state.url ||
+    state.url === "about:blank" ||
+    state.url === "chrome-error://chromewebdata/"
+  )
+    return;
+  const decision = classifyNavigation(state.url, origin);
+  if (decision === "internal") {
+    handlers.trackTrusted(state);
+    return;
+  }
+  handlers.stopLoading();
+  if (decision !== "blocked") handlers.openExternal(state.url);
+  handlers.restoreTrusted();
+}
+
 /** Only an exact app origin owns the authenticated web view. */
 export function classifyNavigation(
   value: string,

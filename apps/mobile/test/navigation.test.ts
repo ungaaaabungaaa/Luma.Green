@@ -3,6 +3,7 @@ import { test } from "node:test";
 
 import {
   classifyNavigation,
+  handleNavigationChange,
   localeFromLanguage,
   localeFromUrl,
 } from "../src/navigation.ts";
@@ -15,6 +16,67 @@ import {
 } from "../src/update-policy.ts";
 
 const origin = "https://app.luma.green";
+
+void test("native startup and error documents do not trigger repeated WebView remounts", () => {
+  for (const url of ["", "about:blank", "chrome-error://chromewebdata/"]) {
+    handleNavigationChange({ url, canGoBack: false }, origin, {
+      trackTrusted: () =>
+        assert.fail("native placeholder must not become trusted"),
+      stopLoading: () => assert.fail("native startup must not be interrupted"),
+      openExternal: () =>
+        assert.fail("native placeholder must not reach the OS"),
+      restoreTrusted: () =>
+        assert.fail("native startup must not cause a remount loop"),
+    });
+    assert.equal(classifyNavigation(url, origin), "blocked");
+  }
+});
+
+void test("navigation callbacks restore the trusted page after every disallowed destination", () => {
+  for (const [url, handoff] of [
+    [`${origin}/admin/login`, true],
+    ["https://outside.example", true],
+    ["tel:+919876543210", true],
+    [`blob:${origin}/private-document`, false],
+    ["data:text/html,untrusted", false],
+    ["file:///tmp/private.pdf", false],
+  ] as const) {
+    const actions: string[] = [];
+    handleNavigationChange({ url, canGoBack: true }, origin, {
+      trackTrusted: () => {
+        actions.push("trust-rejected-page");
+      },
+      stopLoading: () => {
+        actions.push("stop");
+      },
+      openExternal: (destination) => {
+        actions.push(`confirm:${destination}`);
+      },
+      restoreTrusted: () => {
+        actions.push("restore");
+      },
+    });
+    assert.deepEqual(
+      actions,
+      handoff ? ["stop", `confirm:${url}`, "restore"] : ["stop", "restore"],
+      url,
+    );
+  }
+});
+
+void test("trusted navigation updates the current page without a remount or browser handoff", () => {
+  const state = { url: `${origin}/ar/sell`, canGoBack: true };
+  const tracked: (typeof state)[] = [];
+  handleNavigationChange(state, origin, {
+    trackTrusted: (navigation) => {
+      tracked.push(navigation);
+    },
+    stopLoading: () => assert.fail("trusted navigation must continue"),
+    openExternal: () => assert.fail("trusted navigation stays inside the app"),
+    restoreTrusted: () => assert.fail("trusted navigation retains its history"),
+  });
+  assert.deepEqual(tracked, [state]);
+});
 
 void test("auth, all locales and normal app routes keep the web-view session", () => {
   for (const path of [
