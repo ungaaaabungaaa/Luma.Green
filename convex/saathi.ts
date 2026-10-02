@@ -155,9 +155,16 @@ function isOnOffer(
   saathi: Doc<"saathiProfiles">,
   today: string,
 ): boolean {
-  if (job.status !== "open" || job.date < today) return false;
+  if (
+    job.status !== "open" ||
+    job.cancelledAt !== undefined ||
+    job.date < today
+  )
+    return false;
   if (!job.orgId) return true; // posted by the team, city-wide
-  return poster?.status === "active" && poster.city === saathi.city;
+  return (
+    poster?.status === "active" && (job.city ?? poster.city) === saathi.city
+  );
 }
 
 /**
@@ -178,10 +185,33 @@ export const board = query({
     const { saathi } = await requireSaathi(ctx);
     const today = indiaToday();
 
-    const openRows = await ctx.db
-      .query("jobs")
-      .withIndex("by_status", (q) => q.eq("status", "open"))
-      .take(MAX_JOBS);
+    const [cityJobs, teamJobs] = await Promise.all([
+      ctx.db
+        .query("jobs")
+        .withIndex("by_city_status_cancelledAt_date", (q) =>
+          q
+            .eq("city", saathi.city)
+            .eq("status", "open")
+            .eq("cancelledAt", undefined)
+            .gte("date", today),
+        )
+        .take(MAX_JOBS),
+      ctx.db
+        .query("jobs")
+        .withIndex("by_org_status_cancelledAt_date", (q) =>
+          q
+            .eq("orgId", undefined)
+            .eq("status", "open")
+            .eq("cancelledAt", undefined)
+            .gte("date", today),
+        )
+        .take(MAX_JOBS),
+    ]);
+    const openRows = new Map(
+      [...cityJobs, ...teamJobs].map((job) => [job._id, job]),
+    )
+      .values()
+      .toArray();
     const posters = await postersOf(ctx, openRows);
     const open = openRows
       .flatMap((job) => {

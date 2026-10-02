@@ -190,12 +190,23 @@ export const summary = query({
       .query("supportRequests")
       .withIndex("by_status", (q) => q.eq("status", "open"))
       .take(MAX_COUNTED);
+    // Both support channels share the existing count and total read bound.
+    const remaining = MAX_COUNTED - openSupport.length;
+    const openConversations =
+      remaining > 0
+        ? await ctx.db
+            .query("conversations")
+            .withIndex("by_kind_status_updatedAt", (q) =>
+              q.eq("kind", "support").eq("status", "open"),
+            )
+            .take(remaining)
+        : [];
     return {
       waiting: inReview.length,
       dueSoon,
       overdue,
       withApplicant: withApplicant.length,
-      openSupport: openSupport.length,
+      openSupport: openSupport.length + openConversations.length,
     };
   },
 });

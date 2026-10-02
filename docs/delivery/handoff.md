@@ -438,3 +438,20 @@ or account records were changed. A production dry run found 15 indexes belonging
 to the separately deployed ecosystem backend that current main would delete.
 That deployment was not applied. Complete the combined schema integration with
 PR #29 and ecosystem backend commit `dc41665` before either environment is pushed.
+
+The isolated follow-up now includes the already-deployed ecosystem backend from
+`dc41665`, without its unmerged frontend. This preserves the live messaging,
+workforce, material-demand, public-data and isolated-demo owners during the
+security rollout. Both membership index orders, the industry API schema and all
+PR #31 guards remain. Independent merge review passed; 154 tests in nine focused
+suites and TypeScript pass. Live job inspection found zero business jobs needing
+the optional city backfill (production has zero jobs; development has seven and
+all have cities), so no migration was run. The public-data runbook is retained.
+
+The stock overflow follow-up has 32 new regressions and one shared stock-balance
+check. Trade receipts and multi-line pickup completion now reject unsafe or
+invalid legacy quantities atomically. Existing valid boundaries and error codes
+are preserved. Guide impact: these are backend invariant and compatibility
+repairs; no new user-facing screen or copy is introduced. The ecosystem frontend
+remains separate. Guide freshness tests remain required after the final PR #29
+integration.

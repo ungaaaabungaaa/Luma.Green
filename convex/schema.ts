@@ -14,10 +14,12 @@ import {
   vWeekday,
 } from "./lib/drafts";
 import { vIntegrationScope } from "./lib/integrations";
+import { vConversationKind, vConversationStatus } from "./lib/messaging";
 import {
   vNotificationEvent,
   vNotificationStatus,
 } from "./lib/notificationConfig";
+import { publicDataFields } from "./lib/publicData";
 import {
   vBookingStatus,
   vFamily,
@@ -42,6 +44,21 @@ const timestamps = {
 };
 
 export default defineSchema({
+  /** Isolated demonstration records. Never used as operational platform records. */
+  demoWorkspaces: defineTable({
+    key: v.string(),
+    version: v.number(),
+    label: v.string(),
+    payload: v.string(),
+    checksum: v.string(),
+    ...timestamps,
+  }).index("by_key", ["key"]),
+
+  publicDataSnapshots: defineTable(publicDataFields).index("by_provider_city", [
+    "provider",
+    "city",
+  ]),
+
   /** Transactional SMS events. No phone, tracking token, OTP or provider body. */
   smsNotifications: defineTable({
     dedupKey: v.string(),
@@ -239,6 +256,7 @@ export default defineSchema({
     createdAt: v.number(),
   })
     .index("by_profile", ["profileId"])
+    .index("by_profile_org", ["profileId", "orgId"])
     .index("by_org", ["orgId"])
     .index("by_org_profile", ["orgId", "profileId"]),
 
@@ -428,9 +446,35 @@ export default defineSchema({
 
   // --- Saathi work --------------------------------------------------------------
 
+  /** A business's material requirement, with an explicit quantity and due date. */
+  materialDemands: defineTable({
+    orgId: v.id("orgs"),
+    buyerKind: vOrgKind,
+    family: vFamily,
+    createdBy: v.id("profiles"),
+    materialCode: v.string(),
+    quantityGrams: v.number(),
+    city: v.string(),
+    area: v.string(),
+    specification: v.string(),
+    neededBy: v.string(),
+    status: v.union(v.literal("open"), v.literal("closed")),
+    ...timestamps,
+  })
+    .index("by_org", ["orgId"])
+    .index("by_city_status_buyerKind_family_neededBy", [
+      "city",
+      "status",
+      "buyerKind",
+      "family",
+      "neededBy",
+    ]),
+
   /** Paid work a business posts for Saathis. */
   jobs: defineTable({
     orgId: v.optional(v.id("orgs")),
+    // Optional while workforce.backfillJobCities migrates existing business jobs.
+    city: v.optional(v.string()),
     kind: vSaathiWork,
     title: v.string(),
     area: v.string(),
@@ -443,12 +487,57 @@ export default defineSchema({
       v.literal("done"),
     ),
     saathiProfileId: v.optional(v.id("saathiProfiles")),
+    cancelledAt: v.optional(v.number()),
+    createdBy: v.optional(v.id("profiles")),
+    updatedAt: v.optional(v.number()),
     createdAt: v.number(),
   })
+    .index("by_org", ["orgId"])
     .index("by_status", ["status"])
+    .index("by_city_status_cancelledAt_date", [
+      "city",
+      "status",
+      "cancelledAt",
+      "date",
+    ])
+    .index("by_org_status_cancelledAt_date", [
+      "orgId",
+      "status",
+      "cancelledAt",
+      "date",
+    ])
     .index("by_saathi", ["saathiProfileId"]),
 
   // --- Help -----------------------------------------------------------------------
+
+  /** One support thread per profile, or one private thread per existing trade. */
+  conversations: defineTable({
+    kind: vConversationKind,
+    status: vConversationStatus,
+    subject: v.string(),
+    supportProfileId: v.optional(v.id("profiles")),
+    tradeId: v.optional(v.id("trades")),
+    sellerOrgId: v.optional(v.id("orgs")),
+    buyerOrgId: v.optional(v.id("orgs")),
+    ...timestamps,
+  })
+    .index("by_supportProfile", ["supportProfileId"])
+    .index("by_trade", ["tradeId"])
+    .index("by_seller_updatedAt", ["sellerOrgId", "updatedAt"])
+    .index("by_buyer_updatedAt", ["buyerOrgId", "updatedAt"])
+    .index("by_kind_status_updatedAt", ["kind", "status", "updatedAt"]),
+
+  /** Append-only message bodies, accessible only through conversation permissions. */
+  conversationMessages: defineTable({
+    conversationId: v.id("conversations"),
+    senderProfileId: v.id("profiles"),
+    senderRole: v.union(v.literal("member"), v.literal("admin")),
+    senderOrgId: v.optional(v.id("orgs")),
+    body: v.string(),
+    createdAt: v.number(),
+  })
+    .index("by_conversation_createdAt", ["conversationId", "createdAt"])
+    .index("by_sender_createdAt", ["senderProfileId", "createdAt"]),
 
   /** Messages from the help centre and the solar page, for the team to answer. */
   supportRequests: defineTable({

@@ -80,6 +80,10 @@ const serverSchema = z.object({
   PHOTO_ESTIMATE_API_KEY: z.string().optional(),
   PHOTO_ESTIMATE_MODEL: z.string().optional(),
   MSG91_AUTH_KEY: z.string().optional(),
+  PUBLIC_DATA_ENABLED: z.string().optional(),
+  MET_NORWAY_USER_AGENT: z.string().optional(),
+  DATA_GOV_IN_API_KEY: z.string().optional(),
+  DATA_GOV_IN_AIR_RESOURCE_ID: z.string().optional(),
   SENTRY_AUTH_TOKEN: z.string().optional(),
   SENTRY_ORG: z.string().optional(),
   SENTRY_PROJECT: z.string().optional(),
@@ -98,6 +102,45 @@ export function serverEnv(): ServerEnv {
   }
   memo.value ??= serverSchema.parse(process.env);
   return memo.value;
+}
+
+/** Optional Convex scheduled sources. Credentials are never sent to the client. */
+export function publicDataEnv() {
+  const isEnabled = process.env.PUBLIC_DATA_ENABLED === "true";
+  const userAgent = z
+    .string()
+    .trim()
+    .min(12)
+    .max(240)
+    .regex(/^[^\r\n]+$/)
+    .refine((value) =>
+      value
+        .split(" ")
+        .some(
+          (part) =>
+            z.url({ protocol: /^https$/ }).safeParse(part).success ||
+            z.email().safeParse(part).success,
+        ),
+    )
+    .safeParse(process.env.MET_NORWAY_USER_AGENT);
+  const apiKey = z
+    .string()
+    .trim()
+    .min(1)
+    .max(512)
+    .regex(/^[\w-]+$/)
+    .safeParse(process.env.DATA_GOV_IN_API_KEY);
+  const resourceId = z
+    .uuid()
+    .safeParse(process.env.DATA_GOV_IN_AIR_RESOURCE_ID);
+  return {
+    weather:
+      isEnabled && userAgent.success ? { userAgent: userAgent.data } : null,
+    air:
+      isEnabled && apiKey.success && resourceId.success
+        ? { apiKey: apiKey.data, resourceId: resourceId.data }
+        : null,
+  };
 }
 
 /** Operator-controlled HTTPS gateway. Never accept an endpoint from an action argument. */
