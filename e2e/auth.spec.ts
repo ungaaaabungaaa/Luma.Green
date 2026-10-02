@@ -1,15 +1,19 @@
 import { expect, test } from "@playwright/test";
 
+import ar from "../messages/ar.json" with { type: "json" };
+import en from "../messages/en.json" with { type: "json" };
 import kn from "../messages/kn.json" with { type: "json" };
+import ml from "../messages/ml.json" with { type: "json" };
+import ta from "../messages/ta.json" with { type: "json" };
 
 /**
  * Sign-in as it ships before a Convex deployment is connected (see the
- * webServer env in playwright.config.ts): private pages that say plainly that
- * sign-in isn't open yet. The signed-in flows need a deployment and are
+ * webServer env in playwright.config.ts): a labelled code preview with no
+ * provider requests or authenticated access. The signed-in flows need a deployment and are
  * checked against the dev one — docs/architecture/auth.md#testing.
  */
 
-test("/login is private and says phone sign-in opens soon", async ({
+test("/login is private and starts with a language choice", async ({
   page,
 }) => {
   await page.goto("/login");
@@ -21,7 +25,7 @@ test("/login is private and says phone sign-in opens soon", async ({
   );
   await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Phone sign-in opens soon",
+    en.auth.chooseLanguage,
   );
 });
 
@@ -30,9 +34,78 @@ test("sign-in speaks the visitor's language", async ({ page }) => {
 
   await expect(page.locator("html")).toHaveAttribute("lang", "kn-IN");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    kn.auth.unavailableTitle,
+    kn.auth.chooseLanguage,
   );
 });
+
+for (const { locale, messages, width } of [
+  { locale: "en", messages: en, width: 360 },
+  { locale: "ar", messages: ar, width: 360 },
+  { locale: "ta", messages: ta, width: 320 },
+  { locale: "ml", messages: ml, width: 320 },
+]) {
+  test(`${locale} mobile sign-in reaches the code preview without sending SMS`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.addInitScript(() => {
+      localStorage.setItem("lg.languageChosen", "1");
+    });
+    const authRequests: string[] = [];
+    page.on("request", (request) => {
+      if (request.url().includes("/api/auth/"))
+        authRequests.push(request.url());
+    });
+    await page.goto(`/${locale}/login?next=%2Fjoin%2Fsaathi`);
+    const phone = page.getByLabel(messages.auth.mobileLabel, { exact: true });
+    const previewAction = page.getByRole("button", {
+      name: messages.auth.previewAction,
+    });
+    await expect(previewAction).toBeVisible();
+    expect(
+      await previewAction.evaluate(
+        (button) => button.scrollWidth <= button.clientWidth,
+      ),
+    ).toBe(true);
+    await expect(
+      page.getByText(messages.auth.mobileHint, { exact: true }),
+    ).toHaveCount(0);
+    await phone.fill("123");
+    await page
+      .getByRole("button", { name: messages.auth.previewAction })
+      .click();
+    await expect(page.getByRole("main").getByRole("alert")).toHaveText(
+      messages.auth.mobileInvalid,
+    );
+    await phone.fill("9876543210");
+    await page
+      .getByRole("button", { name: messages.auth.previewAction })
+      .click();
+    await expect(page).toHaveURL(/\/login\/verify\?next=%2Fjoin%2Fsaathi$/);
+    expect(page.url()).not.toContain("9876543210");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      messages.auth.previewTitle,
+    );
+    await expect(page.getByText(messages.auth.previewBody)).toBeVisible();
+    await page
+      .getByLabel(messages.auth.codeLabel, { exact: true })
+      .fill("123456");
+    await expect(
+      page.getByRole("button", { name: messages.auth.verify, exact: true }),
+    ).toBeDisabled();
+    await expect(
+      page.getByRole("button", { name: messages.auth.resend, exact: true }),
+    ).toBeDisabled();
+    expect(authRequests).toEqual([]);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true);
+    await page.getByRole("link", { name: messages.auth.changeNumber }).click();
+    await expect(page).toHaveURL(/\/login\?next=%2Fjoin%2Fsaathi$/);
+  });
+}
 
 test("admin sign-in is English, never indexed, and off without Convex", async ({
   page,

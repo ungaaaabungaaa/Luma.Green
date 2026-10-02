@@ -14,7 +14,8 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { requestPhoneCode } from "@/lib/phone-auth";
 
 import { normalizeIndianMobile } from "../../../convex/lib/phone";
-import { rememberPhone } from "./storage";
+import { AuthProgress } from "./auth-progress";
+import { rememberPhone, rememberPreviewPhone } from "./storage";
 
 const schema = z.object({
   phone: z
@@ -25,7 +26,7 @@ const schema = z.object({
 type Values = z.infer<typeof schema>;
 
 /** Step one of signing in: a mobile number, then an SMS code is sent. */
-export function PhoneForm() {
+export function PhoneForm({ canSend = true }: { canSend?: boolean }) {
   const t = useTranslations("auth");
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -42,12 +43,16 @@ export function PhoneForm() {
   async function onSubmit(values: Values) {
     const phone = normalizeIndianMobile(values.phone);
     if (!phone) return;
-    const error = await requestPhoneCode(phone);
-    if (error) {
-      setError("root", { message: error });
-      return;
+    if (canSend) {
+      const error = await requestPhoneCode(phone);
+      if (error) {
+        setError("root", { message: error });
+        return;
+      }
+      rememberPhone(phone);
+    } else {
+      rememberPreviewPhone(phone);
     }
-    rememberPhone(phone);
     const next = searchParams.get("next");
     router.push({
       pathname: "/login/verify",
@@ -56,14 +61,19 @@ export function PhoneForm() {
   }
 
   const fieldError = errors.phone?.message ?? errors.root?.message;
+  const hasHint = canSend || Boolean(fieldError);
+  const readyLabel = canSend ? "sendCode" : "previewAction";
 
   return (
     <div className="flex flex-col gap-8">
+      <AuthProgress step="phone" />
       <div className="flex flex-col gap-3">
         <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
           {t("title")}
         </h1>
-        <p className="leading-relaxed text-muted-foreground">{t("lead")}</p>
+        <p className="leading-relaxed text-muted-foreground">
+          {t(canSend ? "lead" : "previewPhoneHint")}
+        </p>
       </div>
 
       <form
@@ -88,37 +98,39 @@ export function PhoneForm() {
               autoComplete="tel-national"
               placeholder="98765 43210"
               aria-invalid={fieldError ? true : undefined}
-              aria-describedby="phone-hint"
+              aria-describedby={hasHint ? "phone-hint" : undefined}
               className="h-12 rounded-lg text-base tracking-wide"
               {...register("phone")}
             />
           </div>
-          <p
-            id="phone-hint"
-            role={fieldError ? "alert" : undefined}
-            className={
-              fieldError
-                ? "text-sm text-destructive"
-                : "text-sm text-muted-foreground"
-            }
-          >
-            {t(
-              fieldError &&
-                ["mobileInvalid", "sendFailed", "sendRateLimited"].includes(
-                  fieldError,
-                )
-                ? fieldError
-                : "mobileHint",
-            )}
-          </p>
+          {hasHint ? (
+            <p
+              id="phone-hint"
+              role={fieldError ? "alert" : undefined}
+              className={
+                fieldError
+                  ? "text-sm text-destructive"
+                  : "text-sm text-muted-foreground"
+              }
+            >
+              {t(
+                fieldError &&
+                  ["mobileInvalid", "sendFailed", "sendRateLimited"].includes(
+                    fieldError,
+                  )
+                  ? fieldError
+                  : "mobileHint",
+              )}
+            </p>
+          ) : null}
         </div>
         <Button
           type="submit"
           size="lg"
-          className="h-12 text-base"
+          className="h-auto min-h-12 py-3 text-base text-wrap whitespace-normal"
           disabled={isSubmitting}
         >
-          {t(isSubmitting ? "sending" : "sendCode")}
+          {t(isSubmitting ? "sending" : readyLabel)}
         </Button>
       </form>
 

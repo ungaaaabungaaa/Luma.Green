@@ -2,8 +2,8 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026. Source baseline: e403503.
-Includes the current design-system-polish changes: public and workspace redesign, appearance controls, admin report charts and native demo setup.
+Edition: 2 October 2026, logo motion revision. Source baseline: 8975575.
+Includes the UI detail pass and wide artwork banners on the main public pages, with taller image crops on phones.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
@@ -22,7 +22,7 @@ Luma.Green records scrap collection and movement through the recycling chain. A 
 - Current configured local capture: the real app with test analytics keys. External browser requests are intercepted; no provider receives data.
 - Synthetic documentation fixture: an unchanged browser screenshot of real application components supplied with sample records in a separate documentation server. It is not an authenticated session or proof of a working integration.
 
-No screenshot is an AI-generated interface. The homepage contains generated decorative artwork, but the page screenshot itself comes from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
+No screenshot is an AI-generated interface. Public pages contain generated decorative artwork, but the page screenshots themselves come from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
 
 ### Explore the home page
 
@@ -52,6 +52,12 @@ not create an account, submit an application or book a pickup.
 ![Current material records explanation on the home page.](screenshots/public-home-records.png)
 
 ![Current home page questions and help links.](screenshots/public-home-questions.png)
+
+The moving material line names material groups; it is not a list of partners. Use its pause control to stop movement. Reduced-motion settings show the names without movement.
+
+The testimonial section is labelled **Demo testimonials**. Its role-based quotes are sample content, not reviews from real customers.
+
+![Clearly labelled demo testimonials. These quotes illustrate the layout and are not customer reviews.](screenshots/public-demo-testimonials.png)
 
 ### Three limits to remember
 
@@ -85,19 +91,25 @@ Connect the frontend to the intended Convex backend. Configure authentication. E
 
 ## 03 / Phone sign-in and languages
 
-![Phone sign-in in the disconnected local build. The setup notice is expected until authentication is configured.](screenshots/public-login.png)
+![Language selection in the disconnected local build. This screen remains available before SMS is configured.](screenshots/public-login.png)
 
 1. Open /login. If the language chooser appears, choose your language.
 2. Enter your Indian mobile number. The form supplies the +91 country code.
-3. Request the SMS code. Enter the six digits from the message.
+3. When SMS is connected, request the code and enter the six digits from the message.
 4. Wait for the session to finish loading before opening a protected page.
 5. Continue to your approved role or application status.
 
-Codes last five minutes and allow five attempts. The resend control has a 30-second delay. Repeated requests also have server limits. Do not repeatedly request codes when delivery is slow. If a send fails, follow the displayed retry state.
+If SMS is not configured, select Preview code screen after entering a valid mobile number. The next screen is labelled as a preview. You can inspect and enter the six code digits, but Verify and Resend are disabled. No SMS is sent, no account is created and no private page is opened. Use Change number to go back. The phone number stays in this browser tab, not in the address.
+
+![The phone-entry screen at mobile width, with SMS unavailable. Actual browser capture.](screenshots/public-login-phone.png)
+
+![The code-entry preview with a synthetic test phone number. Actual browser capture; no SMS was sent and no authentication occurred.](screenshots/public-login-otp-phone.png)
+
+With SMS connected, codes last five minutes and allow five attempts. The resend control has a 30-second delay. Repeated requests also have server limits. Do not repeatedly request codes when delivery is slow. If a send fails, follow the displayed retry state.
 
 Regular sessions last up to 30 days. Sign in again after expiry. Sign out on shared devices. Your identity follows your phone number; the browser language does not change your role.
 
-The twelve languages are English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Urdu and Arabic. Use the language control in the header. Arabic and Urdu use right-to-left layouts. The admin console is English-only.
+The twelve languages are English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Urdu and Arabic. The header language control shows the current language in its own script, for example English or العربية. Open it to choose another language. On phones, the brand appears as its icon; the full name appears on wider screens. Arabic and Urdu use right-to-left layouts. The admin console is English-only.
 
 ---
 
@@ -142,7 +154,7 @@ A completed receipt preserves its recorded weights and prices. A later price cha
 
 ## 06 / Join as a business or Saathi
 
-![Current public role selection. Choose the role that describes the work you do. Each card includes an illustrative role image; select the card to start the real application.](screenshots/public-join.png)
+![Current public role selection. Choose the role that describes the work you do. Each role row includes an illustrative image; select the row to start the real application.](screenshots/public-join.png)
 
 1. Open /join and read the role descriptions.
 2. Choose Kabadiwala, Yard, Recycler, Manufacturer or Saathi.
@@ -156,6 +168,10 @@ Households do not need to join as a business. They use /sell.
 
 Kabadiwala forms ask about the shop, area, opening hours and collection options. Bulk businesses use /join/yard, /join/recycler or /join/manufacturer and then the documents step. Saathis use /join/saathi with an identity document and selfie.
 
+![Top of the current kabadiwala application at phone width with a synthetic draft. Scroll for the remaining fields. This isolated component capture does not prove sign-in, draft saving or submission.](screenshots/join-kabadiwala-phone.png)
+
+![Top of the current yard application with synthetic business details. Scroll for the remaining fields. All writes are disabled in this documentation preview.](screenshots/join-yard.png)
+
 The interface describes review as usually taking 12-24 hours. This is an operational target, not a guaranteed response time.
 
 ---
@@ -165,6 +181,8 @@ The interface describes review as usually taking 12-24 hours. This is an operati
 Upload clear, readable files. For bulk businesses, supply the consent documents or exemption information requested by the form and photographs of the equipment. Supply GST information when applicable. For Saathi identity documents, mask an Aadhaar number except its last four digits.
 
 Certificate PDFs, ID files, selfies and machine images are capped at 10 MiB each. Machine MP4/MOV videos are capped at 20 MiB, with at most ten machine files. JPEG/PNG preparation reduces large uploads automatically. The form remains the final authority for accepted file types.
+
+![Current application status with a synthetic submitted shop application. No live review or SMS notification occurred.](screenshots/join-status-phone.png)
 
 ### Follow the status page
 
@@ -257,6 +275,8 @@ A fallback price applies where the shop has no custom rate. If the admin raises 
 
 ### Check stock
 
+![Current stock page at phone width with synthetic newspaper quantities and value. This is not a live inventory balance.](screenshots/kabadiwala-stock-phone.png)
+
 Open /app/stock to see recorded on-hand quantities and value. Completed pickups and trade movements update the records. Open the material chooser at /app/sell to see the quantity available to list. Reserved stock is not free stock; do not promise more than the available quantity.
 
 To offer material onward, use /app/sell or the Sell action available to the role. To buy from a permitted supplier, use /app/market. The next chapter explains the common trade sequence.
@@ -276,6 +296,8 @@ To offer material onward, use /app/sell or the Sell action available to the role
 7. Buyer: check the delivered material and select Confirm delivery when the page offers it.
 8. Both parties: inspect the completed trade and its receipt.
 
+![Current business sale page with a synthetic open lot and available stock. No listing was created or withdrawn.](screenshots/yard-sell.png)
+
 For an active listing you no longer want to offer, select Withdraw and confirm. Read the resulting listing state.
 
 The sequence is state-driven. Only a permitted participant can use a transition. Stock is reserved and moved according to those transitions. Do not use screenshots as authority to skip an action in the current interface.
@@ -285,6 +307,8 @@ The sequence is state-driven. Only a permitted participant can use a transition.
 There is no live escrow or provider payment transfer. Adding payment keys does not turn the demonstration into a live payment service. Arrange real commercial terms outside this prototype until a reviewed payment implementation is released.
 
 /app/trades/[id]/invoice is a printable trade receipt. It is not a GST tax invoice. It does not replace the supplier's required tax or transport documents.
+
+![Current trade receipt with synthetic businesses and quantities. The displayed escrow state is a prototype example; no funds were transferred or held.](screenshots/yard-invoice.png)
 
 ---
 
@@ -551,6 +575,10 @@ Use /standards for information about the material chain and industry schemes. Ch
 
 Use /app/impact for the summary available to your role. Keep recorded collection quantities, estimated impact and verified carbon credits separate. Carbon-credit issuance, trading and retirement are later product work.
 
+![Current recycler impact screen with synthetic quantities, money and CO₂e estimates. These values are not measured recovery or verified emissions reductions.](screenshots/recycler-impact.png)
+
+![The same synthetic impact example at phone width. The visible fixture banner identifies this as a documentation preview. Scroll to read the remaining sections.](screenshots/recycler-impact-phone.png)
+
 Use /solar to explore the rooftop-solar information and estimator. Treat estimates as planning inputs, not an installation quote or guaranteed return. Send an enquiry through the form if enabled. It enters the support workflow; no installer booking, finance approval or electricity connection is completed by that form.
 
 The platform does not replace business compliance advice, physical inspection, product testing or a supplier's official documents.
@@ -612,7 +640,7 @@ and device checks.
 
 | What you see                      | What to do                                                                                                          |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Phone sign-in opens soon          | Owner must connect auth/SMS. Do not keep requesting codes.                                                          |
+| Code-entry preview                | You can inspect the phone and code screens. The owner must connect auth/SMS before verification works.              |
 | Admin console is not switched on  | Check the frontend/backend setup; no admin action can fix a missing connection from this screen.                    |
 | SMS code is late                  | Check the number and resend timer. Avoid repeated sends. Check provider acceptance and handset delivery separately. |
 | Code expired or attempts used     | Follow the screen to request a new code after the permitted delay.                                                  |
@@ -705,7 +733,7 @@ Check the material, unit, quantity and price before you confirm an action. Keep 
 
 Open /prices before comparing a shop offer. When data is available, choose a material to inspect its price detail and history. Check the city, unit and sample-data notice. This board is not independent market-price advice.
 
-![Current rooftop-solar information and estimator. Estimates require a real site survey.](screenshots/public-solar.png)
+![Current rooftop-solar page header and banner. Scroll to reach the estimator. Estimates require a real site survey.](screenshots/public-solar.png)
 
 ---
 
@@ -715,7 +743,7 @@ Open /prices before comparing a shop offer. When data is available, choose a mat
 
 Use the header language control to change language. The same workflows remain available; text direction and number formatting follow the locale. The admin console stays English-only.
 
-![Current help-contact form. Submission needs a connected backend; no message was sent to create this screenshot.](screenshots/public-contact.png)
+![Current help-contact page header and banner. Scroll to reach the message form. Submission needs a connected backend; no message was sent to create this screenshot.](screenshots/public-contact.png)
 
 ---
 
@@ -759,6 +787,12 @@ Google Search Console and Bing verification tags are optional ownership checks. 
 
 ## 36 / Appearance and role pages
 
+The main public pages place a wide artwork banner below the title and introduction.
+This includes How it works, Participants, Prices, Standards, Solar, Join and the
+help pages. Each banner uses a material or work scene. On phones, the image uses
+a taller crop so the scene remains clear. The artwork does not show a live
+customer, business or platform record.
+
 The interface uses neutral light surfaces and charcoal dark surfaces. Green marks
 the main action and selected states. Public pages have wider spacing; workspaces
 keep records and controls closer together. Buttons, form fields and panels use
@@ -778,6 +812,9 @@ or device. Admin and public pages use the same local preference.
 The desktop header shows the main navigation links. On a phone, open the menu
 for links and sign-in. The language and appearance controls remain in the header.
 Use the page's Sell scrap, Join and help links to open a workflow.
+
+The logo mark turns once when you hover over it or use the keyboard to focus its
+link. The name stays still. Reduced motion in your device settings disables the turn.
 
 ![Current Participants page in dark mode. Role descriptions and work scenes replace device mockups.](screenshots/public-participants-dark.png)
 

@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 
 import messages from "../../../messages/en.json";
-import { rememberPhone } from "./storage";
+import { rememberPhone, rememberPreviewPhone } from "./storage";
 import { VerifyFlow } from "./verify-flow";
 
 const calls = vi.hoisted(() => ({
@@ -193,4 +193,27 @@ it("blocks resend and duplicate submission while verification is in progress", a
   expect(
     screen.getByRole("button", { name: messages.auth.signingIn }),
   ).toBeDisabled();
+});
+
+it("keeps a preview inert even when the deployment has Convex", async () => {
+  rememberPreviewPhone("+919876543210");
+  render(form());
+  expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+    messages.auth.previewTitle,
+  );
+  expect(screen.getByRole("status")).toHaveTextContent(
+    messages.auth.previewBody,
+  );
+  await enterCode();
+  expect(screen.getByLabelText(messages.auth.codeLabel)).toHaveValue("123456");
+  expect(
+    screen.getByRole("button", { name: messages.auth.verify }),
+  ).toBeDisabled();
+  expect(
+    screen.getByRole("button", { name: messages.auth.resend }),
+  ).toBeDisabled();
+  expect(calls.verify).not.toHaveBeenCalled();
+  expect(calls.sendOtp).not.toHaveBeenCalled();
+  expect(calls.ensureProfile).not.toHaveBeenCalled();
+  expect(calls.replace).not.toHaveBeenCalled();
 });

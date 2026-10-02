@@ -43,7 +43,7 @@ function LiveMyBookings() {
   return (
     <section
       aria-labelledby="my-bookings-title"
-      className="flex flex-col gap-2 rounded-xl border bg-card p-4"
+      className="flex flex-col gap-2 border-b border-border py-4"
     >
       <h2 id="my-bookings-title" className="text-lg font-semibold">
         {t("title")}

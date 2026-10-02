@@ -66,7 +66,7 @@ export function SolarPlanner({ between }: { between?: ReactNode }) {
       <div className="grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start">
         <section
           aria-labelledby="solar-details"
-          className="flex flex-col gap-6 rounded-xl border bg-card p-5 sm:p-6 lg:sticky lg:top-24"
+          className="flex flex-col gap-6 border-t border-border py-5 lg:sticky lg:top-24"
         >
           <h2
             id="solar-details"
@@ -142,7 +142,7 @@ export function SolarPlanner({ between }: { between?: ReactNode }) {
         <section
           id="talk-to-us"
           aria-labelledby="solar-contact"
-          className="flex scroll-mt-24 flex-col gap-5 rounded-xl border bg-card p-5 sm:p-6"
+          className="flex scroll-mt-24 flex-col gap-5 border-t border-border py-5"
         >
           <div className="flex flex-col gap-1">
             <h2

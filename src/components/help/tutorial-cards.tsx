@@ -7,11 +7,11 @@ import { type HelpRole, tutorialsFor } from "./content";
 export function TutorialCards({ role }: { role: HelpRole }) {
   const t = useTranslations("help");
   return (
-    <ul className="divide-y rounded-xl border bg-card">
+    <ul className="divide-y border-y">
       {tutorialsFor(role).map(({ key, minutes }) => (
         <li
           key={key}
-          className="flex items-start gap-4 p-5 sm:items-center sm:p-6"
+          className="flex items-start gap-4 py-5 sm:items-center sm:py-6"
         >
           <VideoIcon
             aria-hidden

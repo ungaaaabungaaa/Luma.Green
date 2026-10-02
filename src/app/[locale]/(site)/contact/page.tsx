@@ -2,10 +2,8 @@ import { MailIcon, ShieldAlertIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -27,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const emailLink =
-  "font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 rounded-sm";
+  "inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 rounded-sm";
 
 /**
  * Email only for now: a form needs Resend wired (AGENTS.md §9), and a form that
@@ -39,46 +37,34 @@ export default async function ContactPage() {
 
   return (
     <>
-      <PageHeader
-        title={t("title")}
-        lead={t("lead")}
-        art={
-          <RoleStoryImage
-            scene={imageRole}
-            compact
-            frameClassName="h-40 aspect-auto sm:h-52 lg:h-64"
-          />
-        }
-      />
+      <PageHeader title={t("title")} lead={t("lead")} scene={imageRole} />
 
-      <Container className="grid gap-6 py-16 md:grid-cols-2 lg:py-24">
-        <Card className="shadow-none">
-          <CardHeader>
+      <Container className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-12 lg:py-16">
+        <section className="space-y-5 border-t pt-6">
+          <div className="flex items-center gap-3">
             <MailIcon aria-hidden className="size-6 text-primary" />
-            <CardTitle>
-              <h2 className="text-2xl">{t("emailHeading")}</h2>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+
+            <h2 className="text-2xl">{t("emailHeading")}</h2>
+          </div>
+          <div>
             <a href={`mailto:${site.supportEmail}`} className={emailLink}>
               {site.supportEmail}
             </a>
-          </CardContent>
-        </Card>
-        <Card className="shadow-none">
-          <CardHeader>
+          </div>
+        </section>
+        <section className="space-y-5 border-t pt-6">
+          <div className="flex items-center gap-3">
             <ShieldAlertIcon aria-hidden className="size-6 text-primary" />
-            <CardTitle>
-              <h2 className="text-2xl">{t("securityHeading")}</h2>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
+
+            <h2 className="text-2xl">{t("securityHeading")}</h2>
+          </div>
+          <div className="space-y-4">
             <p className="text-sm text-muted-foreground">{t("securityBody")}</p>
             <a href={`mailto:${site.securityEmail}`} className={emailLink}>
               {site.securityEmail}
             </a>
-          </CardContent>
-        </Card>
+          </div>
+        </section>
       </Container>
     </>
   );

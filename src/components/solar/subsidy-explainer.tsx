@@ -36,7 +36,7 @@ export async function SubsidyExplainer() {
   return (
     <section
       aria-labelledby="solar-subsidy"
-      className="grid gap-8 rounded-xl border bg-muted/30 p-6 sm:p-8 lg:grid-cols-[3fr_2fr] lg:gap-12"
+      className="grid gap-8 border-y border-border py-8 lg:grid-cols-[3fr_2fr] lg:gap-12"
     >
       <div className="flex flex-col gap-3">
         <span className="flex size-11 items-center justify-center rounded-lg border bg-card text-foreground">
@@ -64,7 +64,7 @@ export async function SubsidyExplainer() {
           </a>
         </p>
       </div>
-      <div className="self-start overflow-hidden rounded-xl border bg-card">
+      <div className="self-start overflow-hidden border-y border-border">
         <Table>
           <caption className="caption-bottom border-t px-4 py-2 text-start text-xs text-muted-foreground">
             {t("caption")}

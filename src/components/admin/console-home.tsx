@@ -11,13 +11,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
@@ -43,9 +36,6 @@ export function ConsoleHome() {
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:gap-8">
       <div className="flex flex-wrap items-end justify-between gap-4 border-b pb-6">
         <div className="flex min-w-0 flex-col gap-2">
-          <p className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
-            Administration
-          </p>
           <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
             {firstName ? `Welcome, ${firstName}` : "Welcome"}
           </h1>
@@ -61,7 +51,10 @@ export function ConsoleHome() {
         </Link>
       </div>
 
-      <ul className="grid gap-4 sm:grid-cols-3" aria-busy={!summary}>
+      <ul
+        className="grid divide-y border-b sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+        aria-busy={!summary}
+      >
         <li>
           <StatLink
             href="/admin/verification"
@@ -98,9 +91,9 @@ export function ConsoleHome() {
 
       <Link
         href="/admin/prices"
-        className="group flex items-center gap-4 rounded-xl border border-border bg-card p-6 transition-colors outline-none hover:border-primary/40 hover:bg-accent/50 focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="group flex items-center gap-4 py-2 transition-colors outline-none hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50"
       >
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground">
+        <span className="flex size-10 shrink-0 items-center justify-center text-muted-foreground">
           <IndianRupeeIcon aria-hidden className="size-5" />
         </span>
         <span className="flex min-w-0 flex-1 flex-col">
@@ -115,19 +108,19 @@ export function ConsoleHome() {
         />
       </Link>
 
-      <Card className="rounded-xl border-border shadow-none">
-        <CardHeader>
-          <CardTitle>
-            <h2>Latest sign-ins</h2>
-          </CardTitle>
-          <CardDescription>
+      <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+        <header className="flex flex-col gap-1.5">
+          <h2 className="font-display text-lg font-semibold tracking-tight">
+            Latest sign-ins
+          </h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
             People who confirmed their phone number, newest first.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+          </p>
+        </header>
+        <div>
           <RecentSignIns people={overview?.recentSignIns} />
-        </CardContent>
-      </Card>
+        </div>
+      </section>
     </div>
   );
 }
@@ -151,10 +144,7 @@ function StatLink({
   return (
     <Link
       href={href}
-      className={cn(
-        "flex h-full flex-col gap-3 rounded-xl border border-border bg-card p-6 shadow-xs transition-colors outline-none hover:border-primary/40 hover:bg-accent/30 focus-visible:ring-3 focus-visible:ring-ring/50",
-        isUrgent && "border-destructive/40",
-      )}
+      className="grid h-full grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 px-2 py-5 transition-colors outline-none hover:bg-accent/30 focus-visible:ring-3 focus-visible:ring-ring/50 sm:flex sm:flex-col sm:items-stretch sm:px-5"
     >
       <span className="flex items-center justify-between gap-2 text-sm text-muted-foreground">
         {label}
@@ -178,7 +168,7 @@ function StatLink({
           {value}
         </span>
       )}
-      <span className="text-xs text-muted-foreground">{hint}</span>
+      <span className="col-span-2 text-xs text-muted-foreground">{hint}</span>
     </Link>
   );
 }
@@ -200,9 +190,12 @@ function RecentSignIns({
   }
   if (people.length === 0) {
     return (
-      <p className="text-sm text-muted-foreground">
-        Nobody yet. Sign in at /login with a phone to see it here.
-      </p>
+      <div className="border-b py-6">
+        <p className="text-sm font-medium">No verified phone sign-ins yet.</p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          People appear here after they confirm their phone number.
+        </p>
+      </div>
     );
   }
   return (

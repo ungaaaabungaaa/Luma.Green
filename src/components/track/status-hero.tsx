@@ -93,7 +93,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
   return (
     <section
       aria-labelledby="track-title"
-      className="flex flex-col gap-6 rounded-xl border border-border bg-card p-5 sm:p-6"
+      className="flex flex-col gap-6 border-b border-border py-6"
     >
       <div className="flex items-start gap-4">
         <span

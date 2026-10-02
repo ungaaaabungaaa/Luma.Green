@@ -245,7 +245,7 @@ function WaitingForYou({
         />
       ) : null}
       {waiting.length > 0 ? (
-        <ul className="grid gap-4 lg:grid-cols-2">
+        <ul className="flex flex-col">
           {waiting.slice(0, HOME_LIMIT).map(({ trade, side }) => (
             <li key={trade.id}>
               <TradeCard
@@ -282,7 +282,7 @@ function LatestOffers({
       action={<SeeAll href="/app/market" label={t("seeAll")} />}
     >
       {isMaker ? (
-        <p className="flex gap-3 rounded-xl bg-primary/10 p-4 text-sm text-foreground">
+        <p className="flex gap-3 border-s-2 border-primary ps-4 text-sm text-muted-foreground">
           <RecycleIcon aria-hidden className="mt-0.5 size-5 shrink-0" />
           {t("recycledBody")}
         </p>
@@ -296,7 +296,7 @@ function LatestOffers({
         />
       ) : null}
       {shown.length > 0 ? (
-        <ul className="grid gap-4 lg:grid-cols-2">
+        <ul className="flex flex-col">
           {shown.map((listing) => (
             <li key={listing.id}>
               <ListingCard

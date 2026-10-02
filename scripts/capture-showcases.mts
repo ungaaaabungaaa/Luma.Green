@@ -11,6 +11,8 @@ if (!["localhost", "127.0.0.1"].includes(origin.hostname)) {
 }
 const sources = [
   "src/components/showcase/role-story-image.tsx",
+  "src/components/site/page-banner.tsx",
+  "src/components/help/help-hero.tsx",
   "src/app/[locale]/(site)/participants/page.tsx",
   "src/app/[locale]/(site)/help/[role]/page.tsx",
   "messages/en.json",

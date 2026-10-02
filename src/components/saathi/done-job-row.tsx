@@ -15,17 +15,17 @@ export function DoneJobRow({ job }: { job: Job }) {
   const Icon = WORK_ICONS[job.kind];
 
   return (
-    <li className="flex items-center gap-3 rounded-xl border bg-card p-3">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+    <li className="flex flex-wrap items-center gap-3 border-b border-border py-4">
+      <span className="flex size-10 shrink-0 items-center justify-center text-primary">
         <Icon aria-hidden className="size-5" />
       </span>
       <div className="flex min-w-0 flex-1 flex-col">
-        <p className="truncate font-medium">{t(`work.${job.kind}`)}</p>
-        <p className="truncate text-sm text-muted-foreground">
+        <p className="font-medium">{t(`work.${job.kind}`)}</p>
+        <p className="text-sm text-muted-foreground">
           {t("whenWhere", { when: when(job), area: job.area })}
         </p>
         {job.postedBy ? (
-          <p className="truncate text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             {t("postedBy", { name: job.postedBy.name })}
           </p>
         ) : null}

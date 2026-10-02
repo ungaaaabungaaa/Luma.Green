@@ -50,7 +50,7 @@ export function StatCard({
   tone?: "neutral" | "good" | "warn";
 }) {
   return (
-    <div className="relative flex min-w-0 flex-col gap-4 rounded-xl border border-border bg-card p-4 sm:p-6">
+    <div className="relative flex min-w-0 flex-col gap-3 border-t border-border py-4 pe-4 sm:py-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm font-medium text-muted-foreground">{label}</p>
         {Icon ? (
@@ -105,13 +105,13 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-card px-6 py-10 text-center">
-      <span className="flex size-12 items-center justify-center rounded-lg bg-muted text-muted-foreground">
-        <Icon aria-hidden className="size-6" />
+    <div className="flex flex-col items-start gap-3 border-y border-dashed border-border py-8 sm:py-10">
+      <span className="mb-1 text-muted-foreground">
+        <Icon aria-hidden className="size-9" strokeWidth={1.25} />
       </span>
       <p className="text-lg font-semibold tracking-tight">{title}</p>
       {body ? (
-        <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+        <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">
           {body}
         </p>
       ) : null}
@@ -124,7 +124,7 @@ export function ListSkeleton({ rows = 3 }: { rows?: number }) {
   return (
     <div className="flex flex-col gap-3" aria-busy="true">
       {Array.from({ length: rows }, (_, index) => (
-        <Skeleton key={index} className="h-20 w-full rounded-xl" />
+        <Skeleton key={index} className="h-16 w-full rounded-none" />
       ))}
     </div>
   );
@@ -157,7 +157,7 @@ export function StatusPill({
 /** "Sample data" ribbon for prototype-only numbers. */
 export function DemoNote({ children }: { children: ReactNode }) {
   return (
-    <p className="rounded-lg border border-dashed border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-900 dark:text-amber-200">
+    <p className="border-s-2 border-amber-500/50 ps-3 text-xs leading-relaxed text-muted-foreground">
       {children}
     </p>
   );

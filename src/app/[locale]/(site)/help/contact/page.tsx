@@ -36,6 +36,7 @@ export default async function HelpContactPage() {
   return (
     <>
       <HelpHero
+        banner="admin"
         breadcrumbs={
           <HelpBreadcrumbs
             items={[
@@ -50,7 +51,7 @@ export default async function HelpContactPage() {
         <QuickContact />
       </HelpHero>
 
-      <Container className="grid gap-10 py-16 md:grid-cols-[minmax(0,1fr)_20rem] lg:py-24">
+      <Container className="grid gap-10 py-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:py-16">
         <section
           aria-labelledby="contact-form-heading"
           className="flex flex-col gap-5"

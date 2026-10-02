@@ -165,7 +165,7 @@ function CardList({
 }) {
   if (bookings.length === 0) return <>{empty}</>;
   return (
-    <ul className="flex flex-col gap-3">
+    <ul className="flex flex-col">
       {bookings.map((booking) => (
         <li key={booking.id}>{card(booking)}</li>
       ))}
@@ -208,7 +208,7 @@ function TodayList({
       ]
         .filter((group) => group.list.length > 0)
         .map((group) => (
-          <section key={group.key} className="flex flex-col gap-3">
+          <section key={group.key} className="flex flex-col">
             <h2 className="text-base font-semibold text-muted-foreground">
               {group.title}
             </h2>

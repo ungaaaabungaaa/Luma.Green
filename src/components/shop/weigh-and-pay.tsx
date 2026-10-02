@@ -200,7 +200,7 @@ export function WeighAndPay({
           </Select>
         ) : null}
 
-        <div className="flex flex-col gap-4 rounded-xl border border-primary/30 bg-accent/60 p-4">
+        <div className="flex flex-col gap-5 border-t-2 border-primary pt-5">
           <div className="flex items-baseline justify-between gap-3">
             <span className="text-base font-medium">{t("weigh.total")}</span>
             <output

@@ -10,13 +10,6 @@ import {
 import { type ReactNode, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
@@ -67,16 +60,16 @@ export function FileGallery({
     (a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type),
   );
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
-          <h2>Documents and photos</h2>
-        </CardTitle>
-        <CardDescription>
+    <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+      <header className="flex flex-col gap-1.5">
+        <h2 className="font-display text-lg font-semibold tracking-tight">
+          Documents and photos
+        </h2>
+        <p className="text-sm leading-relaxed text-muted-foreground">
           Private files: only the applicant and you can open them.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+        </p>
+      </header>
+      <div>
         {sorted.length === 0 ? (
           <p className="text-sm text-muted-foreground">{emptyText}</p>
         ) : (
@@ -88,17 +81,17 @@ export function FileGallery({
                   previewFor(file.contentType) === "pdf" && "sm:col-span-2",
                 )}
               >
-                <PrivateFileCard file={file} />
+                <PrivateFilePreview file={file} />
               </li>
             ))}
           </ul>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }
 
-function PrivateFileCard({ file }: { file: FileSummary }) {
+function PrivateFilePreview({ file }: { file: FileSummary }) {
   const preview = previewFor(file.contentType);
   // Videos can be 20 MB: load one only when asked.
   const [isWanted, setIsWanted] = useState(preview !== "video");
@@ -161,7 +154,7 @@ function PrivateFileCard({ file }: { file: FileSummary }) {
   }
 
   return (
-    <figure className="flex h-full min-w-0 flex-col gap-4 rounded-lg border bg-muted/20 p-3">
+    <figure className="flex h-full min-w-0 flex-col gap-3 border-b pb-4">
       {body}
       <figcaption className="flex flex-wrap items-end justify-between gap-2">
         <span className="flex min-w-0 flex-col">
@@ -201,7 +194,7 @@ function BlobPreview({
         <img
           ref={source}
           alt={label}
-          className="max-h-96 w-full rounded-md bg-muted object-contain"
+          className="aspect-4/3 max-h-96 w-full bg-muted object-contain"
         />
       );
     }
@@ -210,7 +203,7 @@ function BlobPreview({
         <iframe
           ref={source}
           title={label}
-          className="h-112 w-full rounded-md border bg-muted"
+          className="h-112 w-full border bg-muted"
         />
       );
     }
@@ -221,7 +214,7 @@ function BlobPreview({
           controls
           preload="metadata"
           aria-label={label}
-          className="max-h-96 w-full rounded-md bg-foreground"
+          className="aspect-video max-h-96 w-full bg-foreground"
         />
       );
     }

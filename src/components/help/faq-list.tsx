@@ -12,17 +12,17 @@ import { FaqHashOpener } from "./faq-hash-opener";
 export function FaqList({ faqs }: { faqs: readonly FaqKey[] }) {
   const t = useTranslations("help");
   return (
-    <div className="divide-y rounded-xl border bg-card">
+    <div className="divide-y border-y">
       {faqs.map((key) => (
         <details key={key} id={faqAnchor(key)} className="group scroll-mt-20">
-          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-xl px-4 py-3 text-start font-medium outline-none hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50 [&::-webkit-details-marker]:hidden">
+          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-start font-medium outline-none hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50 [&::-webkit-details-marker]:hidden">
             <span>{t(`faqs.${key}.q`)}</span>
             <ChevronDownIcon
               aria-hidden
               className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180 motion-reduce:transition-none"
             />
           </summary>
-          <p className="px-4 pb-4 text-pretty text-muted-foreground">
+          <p className="max-w-prose pe-8 pb-5 text-pretty text-muted-foreground">
             {t(`faqs.${key}.a`)}
           </p>
         </details>

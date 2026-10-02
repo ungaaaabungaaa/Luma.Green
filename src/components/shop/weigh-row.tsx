@@ -53,7 +53,7 @@ export function WeighRow({
   };
 
   return (
-    <li className="flex flex-col gap-3 rounded-xl border bg-card p-4">
+    <li className="grid items-center gap-4 border-b border-border py-5 lg:grid-cols-[minmax(0,1fr)_16rem]">
       <div className="flex items-center gap-3">
         <MaterialIcon family={row.material.family} />
         <div className="flex min-w-0 flex-1 flex-col gap-0.5">
@@ -137,7 +137,11 @@ export function WeighRow({
         </Button>
       </div>
       {isInvalid ? (
-        <p id={`${id}-error`} role="alert" className="text-sm text-destructive">
+        <p
+          id={`${id}-error`}
+          role="alert"
+          className="text-sm text-destructive lg:col-span-2"
+        >
           {t("weigh.invalidKg")}
         </p>
       ) : null}

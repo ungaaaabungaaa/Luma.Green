@@ -5,6 +5,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 import { chromium } from "@playwright/test";
 
+import en from "../messages/en.json";
+
 const origin = new URL(process.env.GUIDE_BASE_URL ?? "http://localhost:3004");
 if (!["localhost", "127.0.0.1"].includes(origin.hostname)) {
   throw new Error(
@@ -44,6 +46,13 @@ const shots: readonly (readonly [string, string, string?])[] = [
   ["public-sell", "/sell"],
   ["public-join", "/join"],
   ["public-login", "/login"],
+  ["public-login-phone", "/login"],
+  ["public-login-otp-phone", "/login"],
+  [
+    "public-demo-testimonials",
+    "/",
+    'section[aria-labelledby="demo-testimonials-heading"]',
+  ],
   ["public-admin-login", "/admin/login"],
   ["public-admin-setup", "/admin/setup"],
   ["public-help", "/help"],
@@ -64,6 +73,8 @@ const sharedSources = [
   "src/lib/fonts.ts",
   "src/components/site/site-header.tsx",
   "src/components/site/page-header.tsx",
+  "src/components/site/page-banner.tsx",
+  "src/components/help/help-hero.tsx",
   "src/components/site/closing-cta.tsx",
   "src/components/site/home/chain-diagram.tsx",
   "src/components/site/home/role-benefits.tsx",
@@ -74,6 +85,14 @@ const sharedSources = [
   "src/components/site/home/weight-payment.tsx",
   "src/components/site/home/material-records.tsx",
   "src/components/site/home/home-questions.tsx",
+  "src/components/site/home/material-marquee.tsx",
+  "src/components/site/home/material-marquee.module.css",
+  "src/components/site/home/demo-testimonials.tsx",
+  "src/components/site/language-switcher.tsx",
+  "src/components/brand/logo.tsx",
+  "src/components/brand/logo.module.css",
+  "src/components/auth/phone-form.tsx",
+  "src/components/auth/verify-preview.tsx",
   "messages/en.json",
   "src/components/ui/button.tsx",
   "public/images/materials-hall.webp",
@@ -93,9 +112,10 @@ const captures = [];
 try {
   for (const [name, route, sectionSelector] of shots) {
     const page = await browser.newPage({
-      viewport: name.startsWith("public-arabic")
-        ? { width: 390, height: 844 }
-        : { width: 1280, height: 900 },
+      viewport:
+        name.startsWith("public-arabic") || name.endsWith("-phone")
+          ? { width: 390, height: 844 }
+          : { width: 1280, height: 900 },
       reducedMotion: "reduce",
       locale: "en-IN",
       colorScheme: name.endsWith("-dark") ? "dark" : "light",
@@ -105,6 +125,11 @@ try {
     page.on("pageerror", (error) => {
       browserErrors.push(error.message);
     });
+    if (name.startsWith("public-login-") && name.endsWith("-phone")) {
+      await page.addInitScript(() => {
+        localStorage.setItem("lg.languageChosen", "1");
+      });
+    }
     await page.route("**/*", async (route) => {
       if (new URL(route.request().url()).origin === origin.origin) {
         await route.continue();
@@ -121,6 +146,18 @@ try {
           `Cannot capture ${route}: ${String(response?.status() ?? "no response")}`,
         );
       await page.getByRole("heading", { level: 1 }).waitFor();
+      if (name.startsWith("public-login-") && name.endsWith("-phone")) {
+        await page.getByLabel(en.auth.mobileLabel, { exact: true }).waitFor();
+      }
+      if (name === "public-login-otp-phone") {
+        await page
+          .getByLabel(en.auth.mobileLabel, { exact: true })
+          .fill("9000000000");
+        await page.getByRole("button", { name: en.auth.previewAction }).click();
+        await page
+          .getByRole("heading", { name: en.auth.previewTitle })
+          .waitFor();
+      }
       if (route === "/help/contact") {
         // Wait for the disconnected client state, not its Suspense skeleton.
         await page
@@ -195,7 +232,7 @@ try {
         sectionSelector,
         captureKind: sectionSelector ? "section" : "viewport",
         path,
-        url,
+        url: page.url(),
         revision,
         capturedAt: new Date().toISOString(),
         kind: "current-local-disconnected",

@@ -73,7 +73,7 @@ export function TradeActions({ trade }: { trade: TradeView }) {
         <div
           role="alertdialog"
           aria-labelledby={questionId}
-          className="flex flex-col gap-3 rounded-xl border border-destructive/30 p-3"
+          className="flex flex-col gap-3 border-s-2 border-destructive ps-4"
         >
           <p id={questionId}>
             {t("trades.declineConfirm", { name: trade.counterparty.name })}

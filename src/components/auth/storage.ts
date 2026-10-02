@@ -7,20 +7,42 @@ import { useSyncExternalStore } from "react";
  */
 
 const PHONE_KEY = "lg.signInPhone";
+const PREVIEW_KEY = "lg.signInPreview";
 const LANGUAGE_KEY = "lg.languageChosen";
 
 /** The number a code was just sent to — kept out of the URL on purpose. */
 export function rememberPhone(e164: string): void {
   try {
     sessionStorage.setItem(PHONE_KEY, e164);
+    sessionStorage.removeItem(PREVIEW_KEY);
   } catch {
     // Without storage the verify screen sends the user back to enter it again.
   }
 }
 
+/** A preview never means a code was sent or a session was created. */
+export function rememberPreviewPhone(e164: string): void {
+  try {
+    sessionStorage.removeItem(PHONE_KEY);
+    sessionStorage.setItem(PREVIEW_KEY, e164);
+  } catch {
+    // With blocked storage the next screen returns to phone entry.
+  }
+}
+
+export function isPhonePreview(): boolean {
+  try {
+    return sessionStorage.getItem(PREVIEW_KEY) !== null;
+  } catch {
+    return false;
+  }
+}
+
 export function readPhone(): string | null {
   try {
-    return sessionStorage.getItem(PHONE_KEY);
+    return (
+      sessionStorage.getItem(PREVIEW_KEY) ?? sessionStorage.getItem(PHONE_KEY)
+    );
   } catch {
     return null;
   }

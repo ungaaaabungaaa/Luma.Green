@@ -69,7 +69,7 @@ function RateCardBody() {
             <MaterialIcon family={family} size="sm" />
             {t(`families.${family}`)}
           </h2>
-          <ul className="grid gap-4 xl:grid-cols-2">
+          <ul className="flex flex-col">
             {rows.map((row) => (
               <RateRow key={row.material.code} row={row} />
             ))}

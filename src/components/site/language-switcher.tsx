@@ -1,6 +1,6 @@
 "use client";
 
-import { LanguagesIcon } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
 
@@ -23,6 +23,7 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const current = localeMeta[isLocale(locale) ? locale : "en"];
 
   function onChange(next: string) {
     if (next === locale || !isLocale(next)) return;
@@ -40,15 +41,24 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          size="icon"
-          className="rounded-lg"
-          aria-label={t("language")}
+          size="sm"
+          className="min-h-11 gap-1.5 px-2 text-sm font-medium"
+          aria-label={`${t("language")}: ${current.label}`}
           disabled={isPending}
         >
-          <LanguagesIcon aria-hidden="true" />
+          <span lang={current.hreflang} dir={current.dir}>
+            {current.label}
+          </span>
+          <ChevronDownIcon
+            aria-hidden="true"
+            className="size-3.5 text-muted-foreground"
+          />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-44">
+      <DropdownMenuContent
+        align="end"
+        className="max-h-[min(32rem,70dvh)] min-w-48 overflow-y-auto"
+      >
         <DropdownMenuLabel>{t("language")}</DropdownMenuLabel>
         <DropdownMenuRadioGroup value={locale} onValueChange={onChange}>
           {locales.map((code) => (
@@ -57,6 +67,7 @@ export function LanguageSwitcher() {
               value={code}
               lang={localeMeta[code].hreflang}
               dir={localeMeta[code].dir}
+              className="min-h-11"
             >
               {localeMeta[code].label}
             </DropdownMenuRadioItem>

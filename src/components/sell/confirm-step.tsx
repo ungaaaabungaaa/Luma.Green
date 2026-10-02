@@ -225,7 +225,7 @@ export function ConfirmStep({
 
   return (
     <div className="flex flex-col gap-5">
-      <dl className="flex flex-col divide-y rounded-xl border bg-card px-4">
+      <dl className="flex flex-col divide-y border-y border-border">
         <SummaryRow
           label={t("confirm.what")}
           onChange={() => {
@@ -304,7 +304,7 @@ export function ConfirmStep({
         note={t("confirm.payNote")}
       />
       {location && draft.mode === "pickup" ? (
-        <p className="rounded-xl border bg-card p-4 text-sm text-muted-foreground">
+        <p className="border-t border-border py-4 text-sm text-muted-foreground">
           {t("confirm.locationNote")}
         </p>
       ) : null}
@@ -312,7 +312,7 @@ export function ConfirmStep({
 
       <section
         aria-labelledby="phone-title"
-        className="flex flex-col gap-4 rounded-xl border bg-card p-4"
+        className="flex flex-col gap-4 border-t border-border py-4"
       >
         <h3 id="phone-title" className="text-lg font-semibold">
           {t("confirm.phoneTitle")}

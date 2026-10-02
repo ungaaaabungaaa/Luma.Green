@@ -42,7 +42,7 @@ export function TradeCard({
     area: trade.counterparty.area,
   };
   return (
-    <article className="flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-5">
+    <article className="flex h-full flex-col gap-4 border-b border-border py-5">
       <TradeHeading trade={trade} side={side} showSide={showSide} />
       {compact ? null : <TradeSteps status={trade.status} />}
       <DeclinedNote trade={trade} />
@@ -128,13 +128,13 @@ function TradeNotes({ trade }: { trade: TradeView }) {
   return (
     <div className="flex flex-col gap-2">
       {trade.inEscrow ? (
-        <p className="flex items-center gap-2 self-start rounded-md bg-accent px-3 py-1 text-sm font-medium text-accent-foreground">
+        <p className="flex items-center gap-2 self-start text-sm font-medium text-primary">
           <ShieldCheckIcon aria-hidden className="size-4 shrink-0" />
           {t("inEscrow", { amount: format.money(trade.totalPaise) })}
         </p>
       ) : null}
       {shouldShowEwayBill ? (
-        <p className="flex gap-2 rounded-lg bg-sky-50 p-2.5 text-sm text-sky-900 dark:bg-sky-950/50 dark:text-sky-200">
+        <p className="flex gap-2 border-s-2 border-primary ps-3 text-sm text-muted-foreground">
           <FileTextIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
           {t("ewayBill")}
         </p>

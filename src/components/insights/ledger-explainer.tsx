@@ -29,7 +29,7 @@ export function LedgerExplainer() {
   return (
     <section
       aria-labelledby={headingId}
-      className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6"
+      className="flex flex-col gap-4 border-t border-border py-6"
     >
       <div className="flex items-start gap-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-background text-primary">

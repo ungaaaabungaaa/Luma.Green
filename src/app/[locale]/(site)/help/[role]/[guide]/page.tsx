@@ -106,7 +106,7 @@ export default async function GuidePage({ params }: Props) {
         </p>
       </HelpHero>
 
-      <Container className="grid gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_22rem] lg:py-24">
+      <Container className="grid gap-10 py-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-12 lg:py-16">
         <section aria-labelledby="guide-steps">
           <h2 id="guide-steps" className="sr-only">
             {t("guide.stepsHeading")}
@@ -122,7 +122,7 @@ export default async function GuidePage({ params }: Props) {
           ) : null}
 
           <HelpSection id="next" title={t("guide.nextHeading")}>
-            <div className="group relative flex gap-4 rounded-xl border bg-card p-4 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50">
+            <div className="group relative flex gap-4 border-y py-5 transition-colors hover:bg-muted/30 has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50">
               <IconTile icon={next.icon} size="sm" />
               <div className="flex min-w-0 flex-col gap-1">
                 <h3 className="font-semibold">

@@ -40,7 +40,7 @@ export function MyListings() {
             body={t("emptyBody")}
           />
         ) : (
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col">
             {open.map((listing) => (
               <li key={listing.id}>
                 <OpenListing listing={listing} />
@@ -51,7 +51,7 @@ export function MyListings() {
       </Section>
       {past.length > 0 ? (
         <Section title={t("past")}>
-          <ul className="divide-y rounded-xl border bg-card">
+          <ul className="divide-y divide-border border-y border-border">
             {past.map((listing) => (
               <li key={listing.id}>
                 <PastListing listing={listing} />
@@ -86,7 +86,7 @@ function PastListing({ listing }: { listing: ListingView }) {
   const t = useTranslations("market");
   const format = useFormat();
   return (
-    <div className="flex items-center gap-3 p-3">
+    <div className="flex flex-wrap items-center gap-3 py-4">
       <MaterialIcon family={listing.material.family} size="sm" />
       <div className="flex min-w-0 flex-1 flex-col">
         <span className="font-medium">
@@ -153,7 +153,7 @@ function WithdrawButton({ listing }: { listing: ListingView }) {
     <div
       role="alertdialog"
       aria-labelledby={questionId}
-      className="flex flex-col gap-3 rounded-xl border border-destructive/30 p-3"
+      className="flex flex-col gap-3 border-s-2 border-destructive ps-4"
     >
       <p id={questionId} className="text-sm">
         {t("sell.mine.withdrawConfirm")}

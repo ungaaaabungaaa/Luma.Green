@@ -200,7 +200,7 @@ function Fact({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+      <span className="flex size-8 shrink-0 items-center justify-center text-muted-foreground">
         <Icon aria-hidden className="size-5" />
       </span>
       <div className="flex min-w-0 flex-col">
@@ -228,7 +228,7 @@ function BookingFacts({
   return (
     <section
       aria-labelledby="facts-title"
-      className="flex flex-col gap-4 rounded-xl border bg-card p-4"
+      className="flex flex-col gap-5 border-y border-border py-5"
     >
       <h2 id="facts-title" className="sr-only">
         {t("request.details")}
@@ -278,7 +278,7 @@ function BookingFacts({
           ) : null}
         </div>
       ) : (
-        <p className="flex items-start gap-2 rounded-xl bg-muted/60 p-3 text-sm text-muted-foreground">
+        <p className="flex items-start gap-2 border-s-2 border-border ps-3 text-sm text-muted-foreground">
           <LockIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
           {t("request.hidden")}
         </p>
@@ -331,7 +331,7 @@ function ClosedNote({ status }: { status: BookingStatus }) {
   const t = useTranslations("shop.request");
   if (status !== "declined" && status !== "cancelled") return null;
   return (
-    <p className="flex items-start gap-2 rounded-xl border bg-card p-4 text-muted-foreground">
+    <p className="flex items-start gap-2 border-s-2 border-border ps-4 text-muted-foreground">
       <InfoIcon aria-hidden className="mt-0.5 size-5 shrink-0" />
       {t(status)}
     </p>

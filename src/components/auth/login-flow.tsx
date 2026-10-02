@@ -9,23 +9,33 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "../../../convex/_generated/api";
 import { LanguageChoice } from "./language-choice";
 import { PhoneForm } from "./phone-form";
-import { SignInUnavailable } from "./sign-in-unavailable";
 import { isLanguageChosen, useStoredValue } from "./storage";
 
 /** `/login`: language first (once per browser), then the phone number. */
 export function LoginFlow() {
-  return isConvexConfigured ? <ConfiguredLogin /> : <SignInUnavailable />;
+  return isConvexConfigured ? (
+    <ConfiguredLogin />
+  ) : (
+    <LoginSteps canSend={false} />
+  );
 }
 
 function ConfiguredLogin() {
   const options = useQuery(api.identity.signInOptions);
+  return options === undefined ? (
+    <LoginSkeleton />
+  ) : (
+    <LoginSteps canSend={options.phone} />
+  );
+}
+
+function LoginSteps({ canSend }: { canSend: boolean }) {
   const storedChoice = useStoredValue(isLanguageChosen);
   const [choseJustNow, setChoseJustNow] = useState(false);
 
-  if (options === undefined || storedChoice === undefined) {
+  if (storedChoice === undefined) {
     return <LoginSkeleton />;
   }
-  if (!options.phone) return <SignInUnavailable />;
   if (!storedChoice && !choseJustNow) {
     return (
       <LanguageChoice
@@ -35,7 +45,7 @@ function ConfiguredLogin() {
       />
     );
   }
-  return <PhoneForm />;
+  return <PhoneForm canSend={canSend} />;
 }
 
 export function LoginSkeleton() {

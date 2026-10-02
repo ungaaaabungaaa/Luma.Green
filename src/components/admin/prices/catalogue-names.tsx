@@ -5,13 +5,6 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 import { api } from "../../../../convex/_generated/api";
 import { adminErrorMessage } from "../convex-error";
@@ -42,17 +35,17 @@ export function CatalogueNames() {
     }
   }
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
-          <h2>Material translations</h2>
-        </CardTitle>
-        <CardDescription>
+    <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+      <header className="flex flex-col gap-1.5">
+        <h2 className="font-display text-lg font-semibold tracking-tight">
+          Material translations
+        </h2>
+        <p className="text-sm leading-relaxed text-muted-foreground">
           Add missing material names from the current catalogue. Existing names
           and all prices are kept.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-col items-start gap-3">
+        </p>
+      </header>
+      <div className="flex flex-col items-start gap-3">
         <Button
           variant="outline"
           disabled={isBusy}
@@ -72,7 +65,7 @@ export function CatalogueNames() {
             {error}
           </p>
         ) : null}
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }

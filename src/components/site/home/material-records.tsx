@@ -48,7 +48,7 @@ export async function MaterialRecords() {
             {how("body")}
           </p>
         </div>
-        <div className="grid min-w-0 grid-flow-dense grid-cols-1 overflow-hidden rounded-xl border border-background/20 lg:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <div
             data-parallax-scene
             className="relative min-h-72 overflow-hidden sm:min-h-96"
@@ -62,16 +62,16 @@ export async function MaterialRecords() {
               className="scale-110 object-cover"
             />
           </div>
-          <dl className="grid grid-cols-2 gap-px bg-background/20">
+          <dl className="divide-y divide-background/20 border-y border-background/20">
             {facts.map(({ key, icon: Icon }) => (
               <div
                 key={key}
                 data-reveal
-                className="flex min-w-0 flex-col gap-4 bg-foreground p-5 sm:p-8"
+                className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] items-start gap-x-4 gap-y-1 py-5"
               >
-                <Icon aria-hidden className="size-6" />
+                <Icon aria-hidden className="row-span-2 mt-1 size-5" />
                 <dt className="text-lg font-semibold">{ledger(key)}</dt>
-                <dd className="text-sm leading-relaxed text-background/70">
+                <dd className="col-start-2 text-sm leading-relaxed text-background/70">
                   {ledger(`${key}Body`)}
                 </dd>
               </div>

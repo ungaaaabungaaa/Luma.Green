@@ -45,10 +45,10 @@ export function JobCard({
   return (
     <article
       aria-labelledby={jobLabelledBy(job)}
-      className="flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-5"
+      className="grid gap-4 border-b border-border py-5 md:grid-cols-[minmax(0,1fr)_14rem]"
     >
-      <div className="flex items-start gap-3">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted text-accent-foreground">
+      <div className="flex items-start gap-3 md:col-span-2">
+        <span className="flex size-10 shrink-0 items-center justify-center text-primary">
           <KindIcon aria-hidden className="size-6" />
         </span>
         <div className="flex min-w-0 flex-1 flex-col gap-0.5">
@@ -97,7 +97,9 @@ export function JobCard({
         ) : null}
       </ul>
 
-      {action}
+      {action ? (
+        <div className="flex flex-col justify-end">{action}</div>
+      ) : null}
     </article>
   );
 }

@@ -2,7 +2,6 @@ import { ExternalLinkIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { StatusPill } from "@/components/app/page-parts";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { formatDay, formatPhone } from "../format";
 import {
@@ -115,7 +114,7 @@ export function ApplicationDetails({
   );
 }
 
-function DetailsCard({
+function DetailsSection({
   title,
   children,
 }: {
@@ -123,16 +122,16 @@ function DetailsCard({
   children: ReactNode;
 }) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
-          <h2>{title}</h2>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
+    <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+      <header className="flex flex-col gap-1.5">
+        <h2 className="font-display text-lg font-semibold tracking-tight">
+          {title}
+        </h2>
+      </header>
+      <div>
         <dl className="flex flex-col divide-y">{children}</dl>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }
 
@@ -267,7 +266,7 @@ function ShopDetails({
       ? `Yes, by ${SHOP_VEHICLE_LABELS[shop.vehicle].toLowerCase()}`
       : yesNo(shop.offersPickup);
   return (
-    <DetailsCard title="The shop">
+    <DetailsSection title="The shop">
       <Field label="Owner's name" isChanged={isChanged}>
         {shop.ownerName ?? "—"}
       </Field>
@@ -292,7 +291,7 @@ function ShopDetails({
       <Field label="Weekly holiday" isChanged={isChanged}>
         {weekdaysLabel(shop.weeklyOff)}
       </Field>
-    </DetailsCard>
+    </DetailsSection>
   );
 }
 
@@ -304,7 +303,7 @@ function BusinessDetails({
   isChanged: Changed;
 }) {
   return (
-    <DetailsCard title="The business">
+    <DetailsSection title="The business">
       <Field label="Business name" isChanged={isChanged}>
         {business.businessName ?? "—"}
       </Field>
@@ -339,7 +338,7 @@ function BusinessDetails({
       <Field label="Weekly holiday" isChanged={isChanged}>
         {weekdaysLabel(business.weeklyOff)}
       </Field>
-    </DetailsCard>
+    </DetailsSection>
   );
 }
 
@@ -365,7 +364,7 @@ function DocumentDetails({
 }) {
   const expiry = expiryNote(documents.validUntil, today);
   return (
-    <DetailsCard title="Pollution-control papers">
+    <DetailsSection title="Pollution-control papers">
       {documents.pcbNotRequired ? (
         <Field label="Consent needed" isChanged={isChanged}>
           <span className="flex flex-col gap-1">
@@ -400,7 +399,7 @@ function DocumentDetails({
           ? "Ticked: the documents are genuine and belong to this business"
           : "Not ticked"}
       </Field>
-    </DetailsCard>
+    </DetailsSection>
   );
 }
 
@@ -412,7 +411,7 @@ function SaathiDetails({
   isChanged: Changed;
 }) {
   return (
-    <DetailsCard title="The Saathi">
+    <DetailsSection title="The Saathi">
       <Field label="Name" isChanged={isChanged}>
         {saathi.name ?? "—"}
       </Field>
@@ -440,6 +439,6 @@ function SaathiDetails({
       <Field label="Days" isChanged={isChanged}>
         {weekdaysLabel(saathi.days)}
       </Field>
-    </DetailsCard>
+    </DetailsSection>
   );
 }

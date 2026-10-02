@@ -246,7 +246,7 @@ export function WhenStep({
           </p>
         </div>
       ) : (
-        <div className="flex flex-col gap-1 rounded-xl border bg-card p-4">
+        <div className="flex flex-col gap-1 border-y border-border py-4">
           <p className="text-sm text-muted-foreground">{t("when.dropoffAt")}</p>
           <p className="font-semibold">{shop?.name}</p>
           <p className="flex gap-2 text-sm">

@@ -90,7 +90,7 @@ function Lots({ org }: { org: OrgWorkspace }) {
         onChange={setMaterial}
       />
       <Section title={t("browse.count", { count: shown.length })}>
-        <ul className="grid gap-4 lg:grid-cols-2">
+        <ul className="flex flex-col">
           {shown.map((listing) => (
             <li key={listing.id}>
               <ListingCard

@@ -67,8 +67,8 @@ function CardShell({
     <section
       aria-labelledby={id}
       className={cn(
-        "flex flex-col gap-4 rounded-xl border bg-card p-5",
-        isHot && "border-primary/40 ring-1 ring-primary/20",
+        "flex flex-col gap-4 border-t border-border py-5",
+        isHot && "border-primary",
       )}
     >
       <div className="flex items-start justify-between gap-3">
@@ -78,7 +78,7 @@ function CardShell({
           </h2>
           <BigCount count={count} isHot={isHot} />
         </div>
-        <span className="flex size-12 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+        <span className="flex size-10 items-center justify-center text-primary">
           <Icon aria-hidden className="size-6" />
         </span>
       </div>
@@ -145,7 +145,7 @@ export function TodayCard({
       {next ? (
         <Link
           href={requestHref(next.id)}
-          className="flex items-center gap-3 rounded-xl bg-muted/60 p-3 outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="flex items-center gap-3 border-s-2 border-primary py-2 ps-4 outline-none hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <div className="flex min-w-0 flex-1 flex-col gap-0.5">
             <span className="text-xs font-medium text-muted-foreground">
@@ -229,7 +229,7 @@ export function MoneyStats({
         )}
         <Link
           href="/app/stock"
-          className="col-span-2 rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50 md:col-span-1"
+          className="col-span-2 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 md:col-span-1"
         >
           {stock ? (
             <StatCard

@@ -1,0 +1,53 @@
+.track {
+  display: flex;
+  width: max-content;
+  animation: material-flow 36s linear infinite;
+}
+
+.track[data-active="false"],
+.track[data-paused="true"],
+.viewport:hover .track,
+.viewport:focus-within .track {
+  animation-play-state: paused;
+}
+
+@keyframes material-flow {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+:global([dir="rtl"]) .track {
+  animation-name: material-flow-rtl;
+}
+
+@keyframes material-flow-rtl {
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    width: auto;
+    animation: none;
+  }
+
+  .list {
+    width: 100%;
+    min-width: 0;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    padding-inline-end: 0;
+  }
+
+  .list li {
+    gap: 1.5rem;
+  }
+
+  .duplicate,
+  .control {
+    display: none;
+  }
+}

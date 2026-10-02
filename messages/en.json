@@ -221,6 +221,18 @@
       "recordsTitle": "A record that follows the material",
       "paymentTitle": "Clear weights. Clear payments.",
       "questionsTitle": "Before you start"
+    },
+    "marquee": {
+      "label": "Materials in the catalogue",
+      "pause": "Pause movement",
+      "resume": "Resume movement"
+    },
+    "testimonials": {
+      "title": "Demo testimonials",
+      "note": "Illustrative quotes, not customer reviews.",
+      "household": "I can check the rate before I choose a pickup.",
+      "kabadiwala": "The weight, rate and receipt stay together. Each pickup is easier to check.",
+      "manufacturer": "Material codes make it easier to ask for the grade I need."
     }
   },
   "prices": {
@@ -1898,7 +1910,12 @@
     "errorTooMany": "Too many tries. Ask for a new code.",
     "errorGeneric": "Something went wrong. Please try again.",
     "signingIn": "Signing you in…",
-    "sendRateLimited": "Too many code requests. Please try again later."
+    "sendRateLimited": "Too many code requests. Please try again later.",
+    "previewAction": "Preview code screen",
+    "previewTitle": "Code preview",
+    "previewNumber": "Mobile number: {phone}",
+    "previewBody": "SMS is not connected yet. No code was sent. You can check this screen, but you cannot sign in.",
+    "previewPhoneHint": "Enter your mobile number to preview the next step. No SMS will be sent."
   },
   "join": {
     "metaTitle": "Join Luma.Green",

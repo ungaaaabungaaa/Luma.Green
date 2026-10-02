@@ -62,8 +62,11 @@ component. Built and tested on 29 Sep 2026.
   left as an un-awaited promise, which Convex may drop.
 - **Without MSG91 keys** (every variable is optional): with `AUTH_DEV_MODE=true`
   (dev and preview only) the code is written to the Convex log, number masked;
-  otherwise `/login` says phone sign-in opens soon instead of pretending to
-  send.
+  otherwise `/login` keeps the language and phone steps available and opens
+  a labelled code-entry preview. Preview never calls the provider, creates a
+  session or grants private access. Verify and Resend are disabled. A tab-only
+  preview flag separates this state from a real sent-code flow; starting a real
+  request clears that flag.
 - **Before switching MSG91 on** — SMS costs money, and code endpoints attract
   SMS pumping:
   1. The server now enforces a 30-second resend delay, 3 requests per rolling

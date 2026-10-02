@@ -16,10 +16,7 @@ export function StepIndicator({ step }: { step: SellStep }) {
   const t = useTranslations("sell.steps");
   const current = SELL_STEPS.indexOf(step);
   return (
-    <nav
-      aria-label={t("label")}
-      className="rounded-xl border border-border bg-card p-4"
-    >
+    <nav aria-label={t("label")} className="border-b border-border py-4">
       <p className="sr-only" aria-live="polite">
         {t("progress", { current: current + 1, total: SELL_STEPS.length })}
       </p>

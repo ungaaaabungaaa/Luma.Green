@@ -34,7 +34,7 @@ export function ListingCard({
   const name = format.material(listing.material.names, listing.material.code);
 
   return (
-    <article className="flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-5">
+    <article className="flex h-full flex-col gap-3 border-b border-border py-5">
       <div className="flex flex-wrap items-start gap-3">
         <MaterialIcon family={listing.material.family} />
         <div className="flex min-w-32 flex-1 flex-col gap-1">
@@ -62,29 +62,28 @@ export function ListingCard({
         </p>
       </div>
 
-      <dl className="grid grid-cols-2 gap-4 border-y border-border py-4 text-sm">
-        <div className="flex flex-col gap-0.5">
-          <dt className="text-muted-foreground">{t("listing.available")}</dt>
-          <dd className="font-medium tabular-nums">
-            {format.weight(listing.grams)}
-          </dd>
-        </div>
-        <div className="flex flex-col gap-0.5">
-          <dt className="text-muted-foreground">{t("listing.lotValue")}</dt>
-          <dd className="font-medium tabular-nums">
-            {format.money(paiseFor(listing.grams, listing.askPaisePerKg))}
-          </dd>
-        </div>
-      </dl>
+      <div className="grid items-end gap-4 sm:grid-cols-[minmax(0,1fr)_auto]">
+        <dl className="grid grid-cols-2 gap-4 text-sm sm:max-w-md">
+          <div className="flex flex-col gap-0.5">
+            <dt className="text-muted-foreground">{t("listing.available")}</dt>
+            <dd className="font-medium tabular-nums">
+              {format.weight(listing.grams)}
+            </dd>
+          </div>
+          <div className="flex flex-col gap-0.5">
+            <dt className="text-muted-foreground">{t("listing.lotValue")}</dt>
+            <dd className="font-medium tabular-nums">
+              {format.money(paiseFor(listing.grams, listing.askPaisePerKg))}
+            </dd>
+          </div>
+        </dl>
+        {action ? <div className="flex flex-col">{action}</div> : null}
+      </div>
 
       {listing.note ? (
         <p className="text-sm break-words text-muted-foreground">
           {listing.note}
         </p>
-      ) : null}
-
-      {action ? (
-        <div className="mt-auto flex flex-col pt-1">{action}</div>
       ) : null}
     </article>
   );

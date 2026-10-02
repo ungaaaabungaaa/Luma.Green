@@ -119,7 +119,7 @@ export function FieldSet({
 }
 
 /**
- * One choice from a few, as big tappable cards. Named by the legend of the
+ * One choice from a few, as large labelled radio controls. Named by the legend of the
  * `FieldSet` whose id matches `name`.
  */
 export function OptionCards<T extends string>({
@@ -162,10 +162,8 @@ export function OptionCards<T extends string>({
             key={option.value}
             htmlFor={id}
             className={cn(
-              "flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border bg-card px-4 py-3 text-sm font-normal",
-              isSelected
-                ? "border-primary bg-accent ring-1 ring-primary ring-inset"
-                : "border-border",
+              "flex min-h-12 cursor-pointer items-center gap-3 border-b px-2 py-3 text-sm font-normal",
+              isSelected ? "border-primary text-primary" : "border-border",
             )}
           >
             <RadioGroupItem
@@ -361,7 +359,7 @@ export function PhoneList({
   return (
     <div className="flex flex-col gap-3">
       {loginPhone ? (
-        <p className="rounded-lg bg-muted px-3 py-2 text-sm">
+        <p className="border-s-2 border-primary py-2 ps-3 text-sm">
           {t("loginPhone")}:{" "}
           <span className="font-medium" dir="ltr">
             {formatIndianMobile(loginPhone)}
@@ -375,7 +373,7 @@ export function PhoneList({
             // Rows have no id of their own; position is their identity here.
 
             key={index}
-            className="flex flex-col gap-2 rounded-xl border bg-card p-3"
+            className="flex flex-col gap-3 border-b border-border pb-4"
           >
             <div className="grid grid-cols-[1fr_auto] items-end gap-2">
               <div className="flex flex-col gap-1">

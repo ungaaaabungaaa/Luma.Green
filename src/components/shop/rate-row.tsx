@@ -91,7 +91,7 @@ export function RateRow({ row }: { row: RateCardRow }) {
       <form
         noValidate
         onSubmit={(event) => void onSubmit(event)}
-        className="flex flex-col gap-3 rounded-xl border bg-card p-4"
+        className="grid items-center gap-3 border-b border-border py-5 sm:grid-cols-[minmax(0,1fr)_minmax(15rem,1fr)]"
       >
         <div className="flex items-center gap-3">
           <MaterialIcon family={row.material.family} />
@@ -154,14 +154,14 @@ export function RateRow({ row }: { row: RateCardRow }) {
           <p
             id={`${id}-error`}
             role="alert"
-            className="text-sm font-medium text-destructive"
+            className="text-sm font-medium text-destructive sm:col-span-2"
           >
             {messages[problem]}
           </p>
         ) : null}
         <p
           id={`${id}-hint`}
-          className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground"
+          className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground sm:col-span-2"
         >
           {row.floorPaise === null ? null : (
             <span>
@@ -178,7 +178,7 @@ export function RateRow({ row }: { row: RateCardRow }) {
           )}
         </p>
         {saved === null && row.fallbackPaise !== null ? (
-          <p className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:bg-amber-950/50 dark:text-amber-200">
+          <p className="border-s-2 border-border ps-3 text-sm text-muted-foreground sm:col-span-2">
             {t("prices.notSet", { price: format.perKg(row.fallbackPaise) })}
           </p>
         ) : null}

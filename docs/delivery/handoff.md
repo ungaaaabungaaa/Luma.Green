@@ -1,5 +1,80 @@
 # Agent handoff — 2 October 2026
 
+**Logo motion follow-up:** after `8975575`, the founder requested an eased logo
+spin on hover. The shared SVG mark makes one 900ms turn on fine-pointer hover
+and home-link keyboard focus. The wordmark stays still. Reduced motion disables
+the effect, including a turn already in progress. This is CSS only; no client
+boundary or dependency was added. The brand playbook records this approved
+exception to the previous rotation rule.
+
+Production build, scoped lint, three logo unit tests and all eight motion browser
+checks passed. The browser tests cover hover, keyboard focus, the still wordmark,
+return to rest and preference changes. Refreshed public captures match the previous
+PNG files exactly. The guide remains 66 pages: 64 rendered pages match the reviewed
+banner edition pixel for pixel; the changed cover and appearance page passed a
+new visual review. The local Word guide and build record are current. Its existing
+Google Docs copy remains pending an in-place update under the recorded connection
+gate. The local preview on port 3009 serves this revision.
+
+**Banner follow-up:** on `feat/ui-detail-pass`, after `ff7bb64`, the founder
+requested banner images on How it works and every main public page. Public
+headers now require a scene and display a full-width image below the title.
+Join and Help Contact gained images; the main Help and role-help pages use the
+same banner treatment. Mobile crops are taller. Existing compressed artwork is
+reused; there are no new image downloads, dependencies or card containers. The
+home hero, article layouts, sign-in forms and operational workspaces are unchanged.
+
+The production build, scoped lint, 143 affected component tests and six guide
+freshness tests passed. All 113 affected public browser
+checks passed, including 32 new banner cases at 390px and 1440px with Arabic
+coverage. Public and role-image screenshots were refreshed. The guide remains
+66 pages with 62 image placements; 54 rendered pages have identical pixels to the
+previously reviewed edition, and the 12 changed pages received a new visual review.
+Use `docs/user-guide/build.json` for the exact reviewed document hash. The same
+Google Docs update gate remains; no cloud document or sharing setting was changed.
+
+**Active refinement:** `feat/ui-detail-pass`, based on merged main `3b29ea7`
+(PR #27). The founder requested detail across all screens while keeping the
+current identity, with no content-card grids. Source work covers all 41 route
+wrappers through public, auth/join, household, operator and admin components.
+The mobile wordmark is hidden; language uses its native name. Public material
+marquee and clearly labelled demo testimonials are included. The founder approved
+sample quotes explicitly; these are not customer reviews.
+
+Phone and code screens remain visible before SMS setup. The code screen is an
+explicit preview: no send, verification, session or private access is simulated.
+This changes presentation and navigation only; backend authentication and ledger
+contracts remain intact. New translations remain machine drafts for native review.
+
+Local verification passed: normal webpack production build, lint, types, 1,181
+web component/logic tests plus six guide freshness tests, 27 mobile tests and 20
+desktop tests. All 115 Chromium checks and five isolated configured analytics
+checks passed. The browser checks include 320px Tamil/Malayalam button text,
+mobile endonym controls, RTL, reduced motion and the inert phone/code preview.
+Independent review found and fixed a preview hint that promised an SMS and a
+long translated action label that exceeded its button.
+
+Guide impact: refreshed 27 public captures, four role-image captures, two
+analytics captures and 40 protected-component fixtures. Added phone and OTP
+preview, demo testimonials, onboarding forms/status, stock, sale, invoice and
+impact figures. The Word guide has 62 image placements and 66 rendered pages;
+all pages passed visual review. The exact DOCX and input hashes are recorded in
+`docs/user-guide/build.json`.
+Public captures use the actual disconnected build. Protected captures show
+synthetic records with a visible banner; all writes reject.
+
+The existing native Google Docs copy is explicitly pending this revision. The
+connector can create a new import but cannot replace the same native document
+from this DOCX. Its ID, URL, sharing and last verified revision are preserved in
+`docs/user-guide/cloud.json`. Local checks do not prove hosted CI, deployment,
+live authentication, provider execution, native signing or real-device acceptance.
+
+Preserve the unrelated root PDF and pre-existing previews on ports 3004 and 3202. The task's final production preview uses port 3009. Work is on the local
+feature branch; no production deployment was made by this pass.
+
+The earlier checkpoint below is history for the integrated PR #27, not the active
+branch. Use the verification record above for this refinement.
+
 **Current slice:** designer system polish and an expanded homepage on
 `feat/design-system-polish`, based on main `e403503`. The founder rejected the
 previous theme and approved a full public, role and admin redesign. Read
@@ -271,3 +346,16 @@ screen, copy, access rule or setup instruction changes; current screenshots and
 the reviewed Word artifact remain valid. Google Docs publication is still pending.
 The Vercel preview reports deployment success but is sign-in protected; public
 HTTP inspection confirms the login boundary and `noindex`, not the hosted app UI.
+
+## Offline demo checkpoint — 2 October 2026
+
+The versioned [demo manifest](../product/demo-seed-manifest.md) and
+[import plan](../product/demo-seed-plan.md) are ready for review. They describe
+48 business plans, 82 synthetic identities and all 26 material codes. The
+manifest records six explicit coverage/import gaps. Its 35 offline regression
+checks, strict script types, lint and formatting pass. No database, provider,
+authentication or production change was made. Import isolation is still pending.
+
+Guide impact: these offline files change no route, screen, role, permission or
+workflow. They need no new guide screenshot. The parallel responsive/language
+and visual-polish pass remains uncommitted while its matching guide is refreshed.

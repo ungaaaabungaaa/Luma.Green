@@ -213,7 +213,7 @@ test("each page canonicalises to its own locale", async ({ page }) => {
 test("switching language keeps the current page", async ({ page }) => {
   await page.goto("/prices");
 
-  await page.getByRole("button", { name: "Language" }).click();
+  await page.getByRole("button", { name: "Language: English" }).click();
   await page.getByRole("menuitemradio", { name: "தமிழ்" }).click();
 
   await expect(page).toHaveURL("/ta/prices");
@@ -291,7 +291,7 @@ test("language changes preserve a page query and help anchor", async ({
   page,
 }) => {
   await page.goto("/help?role=yard#contact");
-  await page.getByRole("button", { name: "Language" }).click();
+  await page.getByRole("button", { name: "Language: English" }).click();
   await page.getByRole("menuitemradio", { name: "தமிழ்" }).click();
   await expect(page).toHaveURL("/ta/help?role=yard#contact");
 });

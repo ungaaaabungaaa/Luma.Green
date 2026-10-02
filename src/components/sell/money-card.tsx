@@ -17,9 +17,9 @@ export function MoneyCard({
   note?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-3 rounded-xl border border-primary/25 bg-accent/50 p-5 text-foreground">
+    <div className="flex flex-col gap-3 border-y border-primary/25 py-5 text-foreground">
       {label ? <p className="text-sm text-muted-foreground">{label}</p> : null}
-      <p className="text-2xl leading-tight font-semibold tracking-tight tabular-nums">
+      <p className="text-3xl leading-tight font-semibold tracking-tight tabular-nums">
         {amount}
       </p>
       {points ? (

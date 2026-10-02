@@ -19,7 +19,7 @@ import type { SellableItem } from "./types";
 
 /** The sell form's fields, one question each. */
 
-/** What to sell: big cards, one per material in stock, with what's free. */
+/** What to sell: a radio list of materials in stock, with what's free. */
 export function MaterialChoice({
   items,
   value,
@@ -49,7 +49,7 @@ export function MaterialChoice({
         aria-labelledby="listing-material-legend"
         value={value}
         onValueChange={onChange}
-        className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1"
+        className="flex flex-col"
       >
         {items.map((item) => {
           const code = item.material.code;
@@ -60,9 +60,9 @@ export function MaterialChoice({
               key={code}
               htmlFor={id}
               className={cn(
-                "flex min-h-14 cursor-pointer items-center gap-3 rounded-lg border bg-card p-3 text-base leading-normal font-normal",
+                "flex min-h-14 cursor-pointer items-center gap-3 border-b py-3 text-base leading-normal font-normal",
                 code === value
-                  ? "border-primary bg-accent ring-1 ring-primary ring-inset"
+                  ? "border-primary text-primary"
                   : "border-border",
                 isAllPromised && "cursor-not-allowed opacity-60",
               )}
@@ -237,7 +237,7 @@ export function PriceField({
         </div>
       </Field>
       {isFarFromSuggestion(paise, suggestion) ? (
-        <p className="flex gap-2 rounded-lg bg-amber-50 p-2.5 text-sm text-amber-900 dark:bg-amber-950/50 dark:text-amber-200">
+        <p className="flex gap-2 border-s-2 border-border ps-3 text-sm text-muted-foreground">
           <TriangleAlertIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
           {t("sell.form.farFromMarket")}
         </p>

@@ -9,7 +9,21 @@ import { chromium } from "@playwright/test";
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const repository = path.resolve(directory, "../..");
 const output = path.resolve(repository, "docs/user-guide/screenshots");
-const origin = "http://127.0.0.1:3202";
+const origin = process.env.GUIDE_FIXTURE_ORIGIN ?? "http://127.0.0.1:3202";
+const previewUrl = new URL(origin);
+if (
+  previewUrl.protocol !== "http:" ||
+  previewUrl.hostname !== "127.0.0.1" ||
+  previewUrl.pathname !== "/" ||
+  previewUrl.search ||
+  previewUrl.hash ||
+  previewUrl.username ||
+  previewUrl.password
+) {
+  throw new Error(
+    "Documentation preview must use a loopback HTTP origin only.",
+  );
+}
 const screens = [
   {
     name: "admin-overview",
@@ -128,7 +142,69 @@ const screens = [
     component: "src/components/saathi/saathi-home.tsx",
     heading: "Hello, Demo Saathi",
   },
+
+  {
+    name: "kabadiwala-stock-phone",
+    viewportOnly: true,
+    route: "/en/app/stock",
+    component: "src/components/shop/stock-page.tsx",
+    heading: "Stock",
+    width: 390,
+    height: 844,
+  },
+  {
+    name: "yard-sell",
+    route: "/en/app/sell?role=yard",
+    component: "src/components/market/sell-page.tsx",
+    heading: "Sell",
+  },
+  {
+    name: "yard-invoice",
+    route: "/en/app/trades/guide-receipt/invoice?role=yard",
+    component: "src/components/market/invoice-page.tsx",
+    heading: "Trade receipt",
+  },
+  {
+    name: "recycler-impact",
+    route: "/en/app/impact?role=recycler",
+    component: "src/components/insights/impact-page.tsx",
+    heading: "Your impact",
+  },
+  {
+    name: "recycler-impact-phone",
+    viewportOnly: true,
+    route: "/en/app/impact?role=recycler",
+    component: "src/components/insights/impact-page.tsx",
+    heading: "Your impact",
+    width: 390,
+    height: 844,
+  },
+  {
+    name: "join-kabadiwala-phone",
+    viewportOnly: true,
+    route: "/en/join/kabadiwala",
+    component: "src/components/join/kabadiwala-form.tsx",
+    heading: "Your shop",
+    width: 390,
+    height: 844,
+  },
+  {
+    name: "join-yard",
+    viewportOnly: true,
+    route: "/en/join/yard",
+    component: "src/components/join/business-form.tsx",
+    heading: "Your yard",
+  },
+  {
+    name: "join-status-phone",
+    route: "/en/join/status",
+    component: "src/components/join/status-view.tsx",
+    heading: "Under review",
+    width: 390,
+    height: 844,
+  },
 ];
+// Additional changed screens, using current components and isolated fixture adapters.
 // Capture loaded charts at a readable viewport scale as well as the full report.
 for (const [name, heading] of [
   ["admin-pilot-outcomes", "Booking outcomes"],
@@ -140,7 +216,7 @@ for (const [name, heading] of [
     component: "src/components/admin/pilot/pilot-charts.tsx",
     heading: "Pilot numbers",
     viewportOnly: true,
-    scrollTarget: `[data-slot="card"]:has(h2:text-is("${heading}"))`,
+    scrollTarget: `section:has(> header > h2:text-is("${heading}"))`,
   });
 }
 screens.push(
@@ -174,6 +250,7 @@ screens.push(
     .map((screen) => ({
       ...screen,
       name: `${screen.name}-phone`,
+      viewportOnly: screen.name !== "admin-overview",
       width: 390,
       height: 844,
     })),
@@ -209,6 +286,19 @@ const sharedSources = [
   "src/components/admin/pilot/pilot-charts.tsx",
   "src/lib/fonts.ts",
   "scripts/guide-preview/main.tsx",
+  "scripts/guide-preview/queries.ts",
+  "src/app/[locale]/(join)/layout.tsx",
+  "src/components/join/join-pages.tsx",
+  "src/components/join/join-gate.tsx",
+  "src/components/join/fields.tsx",
+  "src/components/join/form-parts.tsx",
+  "src/components/join/use-autosave.ts",
+  "src/components/market/new-listing-form.tsx",
+  "src/components/market/listing-fields.tsx",
+  "src/components/market/my-listings.tsx",
+  "src/components/insights/org-impact.tsx",
+  "src/components/insights/bar-list.tsx",
+  "src/components/insights/ledger-explainer.tsx",
   "scripts/guide-preview/image.tsx",
   "scripts/guide-preview/vite.config.mts",
   "messages/en.json",

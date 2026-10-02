@@ -1,8 +1,13 @@
 import type { FunctionReturnType } from "convex/server";
 
 import type { ReviewedApplication } from "@/components/admin/verification/checklist";
-import type { ComplianceRecord } from "@/components/insights/types";
-import type { TradeView } from "@/components/market/types";
+import type { ComplianceRecord, OrgImpact } from "@/components/insights/types";
+import type { Mine } from "@/components/join/use-mine";
+import type {
+  SellableItem,
+  TradeReceipt,
+  TradeView,
+} from "@/components/market/types";
 import type { Board } from "@/components/saathi/job-meta";
 import type {
   BookingDetail,
@@ -504,3 +509,120 @@ export const complianceFixture: ComplianceRecord = {
     ],
   },
 };
+
+/** Additional examples for changed screens. These do not represent a live ledger. */
+export const sellableFixture: SellableItem[] = [
+  {
+    material: paper,
+    stage: "scrap",
+    stockGrams: 260_000,
+    availableGrams: 200_000,
+  },
+];
+export const priceQuotesFixture: FunctionReturnType<
+  typeof api.catalogue.priceQuotes
+> = {
+  rows: [{ code: paper.code, paisePerKg: 1500 }],
+};
+export const myListingsFixture: FunctionReturnType<
+  typeof api.market.myListings
+> = [
+  {
+    id: "guide-own-listing" as Id<"listings">,
+    seller: { name: "Demo sorting yard", kind: "yard", area: "Peenya" },
+    material: paper,
+    grams: 60_000,
+    askPaisePerKg: 1800,
+    note: "Synthetic lot: sorted, dry newspaper for documentation.",
+    status: "open",
+    isMine: true,
+    createdAt: NOW - HOUR,
+  },
+];
+export const invoiceFixture: TradeReceipt = {
+  id: "guide-receipt" as Id<"trades">,
+  number: "DEMO-LG-002",
+  status: "paid_to_escrow",
+  side: "buyer",
+  issuedAt: NOW - HOUR,
+  releasedAt: null,
+  seller: {
+    name: "Demo neighbourhood shop",
+    kind: "kabadiwala",
+    address: "Sample shop address, Yeshwanthpur, Bengaluru",
+    gstin: undefined,
+  },
+  buyer: {
+    name: "Demo sorting yard",
+    kind: "yard",
+    address: "Sample yard address, Peenya, Bengaluru",
+    gstin: undefined,
+  },
+  line: { material: paper, grams: 100_000, paisePerKg: 1500, paise: 150_000 },
+  totalPaise: 150_000,
+  inEscrow: true,
+  needsEwayBill: false,
+};
+export const impactFixture: OrgImpact = {
+  kind: "org",
+  orgKind: "recycler",
+  households: { grams: 0, paise: 0, count: 0 },
+  bought: { grams: 160_000, paise: 240_000, count: 2 },
+  sold: { grams: 100_000, paise: 180_000, count: 1 },
+  recycledGrams: 100_000,
+  co2eKg: 100,
+  families: [{ family: "paper", grams: 100_000, co2eKg: 100 }],
+  since: NOW - 7 * 24 * HOUR,
+};
+
+/** Draft values are already present on mount; captures never change or save them. */
+export function onboardingFixture(): Mine {
+  const path = window.location.pathname;
+  const kind = path.endsWith("/yard") ? "yard" : "kabadiwala";
+  const isSubmitted = path.endsWith("/status");
+  return {
+    loginPhone: undefined,
+    application: {
+      id: "guide-onboarding" as Id<"applications">,
+      kind,
+      status: isSubmitted ? "submitted" : "draft",
+      version: isSubmitted ? 1 : 0,
+      submittedAt: isSubmitted ? NOW - HOUR : undefined,
+      decidedAt: undefined,
+      note: undefined,
+      kabadiwala:
+        kind === "kabadiwala"
+          ? {
+              ownerName: "Demo shop owner",
+              shopName: "Demo neighbourhood shop",
+              gstRegistered: false,
+              address: "Sample shop address, Yeshwanthpur, Bengaluru",
+              offersPickup: true,
+              vehicle: "handcart",
+              phones: [],
+              opens: "09:00",
+              closes: "18:00",
+              weeklyOff: ["sun"],
+            }
+          : undefined,
+      business:
+        kind === "yard"
+          ? {
+              businessName: "Demo sorting yard",
+              gstRegistered: false,
+              materials: ["paper", "plastic"],
+              address: "Sample yard address, Peenya, Bengaluru",
+              locationTags: ["Peenya"],
+              collectsFromSuppliers: true,
+              phones: [],
+              opens: "09:00",
+              closes: "18:00",
+              weeklyOff: ["sun"],
+            }
+          : undefined,
+      documents: undefined,
+      saathi: undefined,
+      files: [],
+    },
+  };
+}

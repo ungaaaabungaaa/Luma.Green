@@ -64,7 +64,7 @@ export function SolarResultView({
 
   if (!result || result.status === "noUsage") {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed bg-card px-6 py-12 text-center">
+      <div className="flex flex-col items-start gap-3 border-y border-dashed border-border py-10">
         <span className="flex size-12 items-center justify-center rounded-lg border bg-muted text-foreground">
           <SunIcon aria-hidden className="size-6" />
         </span>
@@ -81,7 +81,7 @@ export function SolarResultView({
 
   if (result.status === "roofTooSmall") {
     return (
-      <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-5 text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
+      <div className="flex items-start gap-3 border-s-2 border-amber-300 bg-amber-50 p-5 text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
         <TriangleAlertIcon aria-hidden className="mt-0.5 size-5 shrink-0" />
         <div className="flex flex-col gap-1">
           <p className="font-semibold">{t("roofTooSmallTitle")}</p>
@@ -124,7 +124,7 @@ function Estimate({
   }
 
   return (
-    <div className="flex flex-col gap-6 rounded-xl border bg-card p-5 sm:p-6">
+    <div className="flex flex-col gap-6 border-t border-border py-5">
       <div className="flex flex-col gap-2">
         <p className="text-sm font-medium text-muted-foreground">{t("size")}</p>
         <p className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">

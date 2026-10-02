@@ -6,13 +6,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
@@ -49,20 +42,23 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
   }
 
   return (
-    <Card className="rounded-xl border-border/80">
-      <CardHeader className="gap-2">
+    <section className="flex flex-col gap-6" aria-labelledby="consent-title">
+      <header className="flex flex-col gap-3 border-b border-border pb-6">
         <p className="text-sm font-medium text-primary">
           {t(`roles.${kind}.title`)}
         </p>
-        <CardTitle className="text-2xl">
-          <h1>{t("consent.title")}</h1>
-        </CardTitle>
-        <CardDescription className="text-base">
+        <h1
+          id="consent-title"
+          className="font-display text-3xl font-semibold tracking-tight"
+        >
+          {t("consent.title")}
+        </h1>
+        <p className="text-base leading-relaxed text-muted-foreground">
           {t("consent.lead")}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-5">
-        <div className="flex flex-col gap-2 rounded-xl border border-border/70 bg-muted/50 p-4">
+        </p>
+      </header>
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-2 border-s-2 border-primary ps-4">
           <p className="font-medium">{t("youNeed")}</p>
           <p>{t(`roles.${kind}.needs`)}</p>
           <p className="text-muted-foreground">{t(`consent.why.${why}`)}</p>
@@ -74,8 +70,8 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
           />
           {t("consent.privacy")}
         </p>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-start gap-3 rounded-xl border border-border/70 p-3">
+        <div className="flex flex-col divide-y divide-border border-y border-border">
+          <div className="flex items-start gap-3 py-4">
             <Checkbox
               id="consent-age"
               className="mt-0.5 size-5"
@@ -88,7 +84,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
               {t("consent.age")}
             </Label>
           </div>
-          <div className="flex items-start gap-3 rounded-xl border border-border/70 p-3">
+          <div className="flex items-start gap-3 py-4">
             <Checkbox
               id="consent-read"
               className="mt-0.5 size-5"
@@ -117,7 +113,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
         >
           {t(isStarting ? "consent.starting" : "consent.startButton")}
         </Button>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }

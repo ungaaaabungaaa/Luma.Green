@@ -116,3 +116,77 @@ signed native, live provider and staging acceptance gates separately.
 - Evidence strength: local implementation and regression coverage passed. Live
   authenticated acceptance, hosted CI/deployment and signed device releases are
   separate gates; this pass does not claim those have completed.
+
+## Detail pass — 2 October 2026
+
+The founder approved refinement of the current identity across all screens. Base
+`3b29ea7` is merged main; the working branch is `feat/ui-detail-pass`. Preserve
+Geist/Noto, the neutral themes, the green action colour and existing workflows.
+This direction supersedes the earlier permission for content cards: use open
+sections, divided lists, compact metric rows and tables. Controls, dialogs and
+small status badges retain their functional borders. No replacement theme,
+extra dashboard figures or backend schema changes are in scope.
+
+The mobile wordmark is hidden while the accessible brand mark remains. The
+language selector shows its current endonym and a chevron, with the same names
+in its menu. Public material names form a pausable marquee; reduced-motion mode
+shows a static list. The founder explicitly approved **demo testimonials** in
+this conversation. Label each section as illustrative content, not customer
+reviews; use role names without fictional customer identities or partner logos.
+
+The founder also approved one 900ms ease-out turn of the shared logo mark on
+fine-pointer hover and keyboard focus of its link. Keep the wordmark still and
+the resting mark upright. Reduced motion disables and cancels the effect.
+Use the shared CSS module; no JavaScript animation or extra focus target is needed.
+
+Phone sign-in remains navigable through the code-entry screen with no SMS
+configuration. This is a labelled interface preview. It sends no code, accepts
+no successful verification, creates no session and preserves private-route guards.
+The configured authentication flow keeps its existing server contract.
+
+Installed UI/UX Pro Max (`09170eec67ee`, MIT), Vercel Web Design Guidelines
+(`063bee94c3f4`), Baseline UI (`ebf5f26cd275`, MIT) and Impeccable (`4adabaf2c2bd`,
+Apache-2.0). GPT Taste was already installed. Official sources:
+[nextlevelbuilder](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill),
+[Vercel](https://github.com/vercel-labs/agent-skills),
+[ibelick](https://github.com/ibelick/ui-skills),
+[Impeccable](https://github.com/pbakaus/impeccable).
+Skills are guidance, not permission to replace the stack, fonts, colour tokens,
+accessibility, or the founder's no-card instruction. Impeccable's context launcher
+lacked execute permission; its written guidance and current repository context
+were read instead. No hooks or optional binary were activated.
+
+[Mobbin onboarding](https://mobbin.com/explore/mobile/flows/onboarding) and
+[verification](https://mobbin.com/explore/mobile/screens/verification) public
+listings informed progressive entry, back/edit controls and verification states.
+Full signed-in screen flows were not accessible. No copied app assets were used.
+
+Verification: production build, lint and types passed. All 115 browser checks
+and five isolated analytics checks passed, including 320px Tamil/Malayalam
+action labels, mobile endonym navigation, RTL and reduced-motion marquee states.
+The 1,181 web component/logic tests, six guide freshness tests, 27
+mobile tests and 20 desktop tests passed. Public and labelled protected-fixture
+screenshots were refreshed. The guide now has 62 image placements over 66 pages;
+every page passed visual review. The freshness record is in
+`docs/user-guide/build.json`.
+The stable Google Docs copy is pending an in-place update. No provider execution
+or production deployment is implied by this local pass.
+
+## Public banner follow-up — 2 October 2026
+
+The founder requested banners on the main public pages, especially How it works.
+Base `ff7bb64` contains the completed detail pass. This follow-up keeps its themes,
+typography and open sections. A shared `PageBanner` places existing material and
+work-scene artwork across the content width below each page's title and introduction.
+Desktop uses a wide crop; phones use a taller crop. Text remains outside the image.
+
+Scope: How it works, Participants, Prices, Standards, Solar, Join, public Contact,
+and the help landing, role and contact pages. The homepage keeps its existing hero.
+Help articles retain their reading layout. Do not add cards, change authentication
+or change operational screens. Refresh affected browser evidence and the Word guide;
+record the current Google Docs revision as pending without replacing its document ID.
+
+Verification passed: production build, scoped lint, 143 component tests, six guide
+freshness tests and 113 public browser checks. The browser suite includes 32
+banner cases at phone and desktop widths, with Arabic coverage. The 66-page guide
+was rendered and reviewed; unchanged pages were checked against the prior render.

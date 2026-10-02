@@ -43,45 +43,45 @@ export function MaterialTile({
       disabled={!isAdded && isFull}
       onClick={onToggle}
       className={cn(
-        "group flex h-full min-h-36 w-full flex-col items-start gap-4 rounded-xl border bg-card p-4 text-start transition-colors duration-150 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50 sm:p-5",
+        "group flex min-h-20 w-full items-center gap-3 border-b px-2 py-4 text-start transition-colors duration-150 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50",
         isAdded
-          ? "border-primary bg-accent ring-1 ring-primary"
-          : "border-border hover:border-primary/50 hover:bg-muted/40",
+          ? "border-primary bg-accent/50"
+          : "border-border hover:bg-muted/40",
       )}
     >
-      <span className="flex w-full items-start justify-between gap-2">
-        <FamilyIcon family={material.family} />
-        <span
-          aria-hidden
-          className={cn(
-            "flex size-8 items-center justify-center rounded-md",
-            isAdded
-              ? "bg-primary text-primary-foreground"
-              : "border text-muted-foreground",
-          )}
-        >
+      <FamilyIcon family={material.family} />
+      <span className="flex min-w-0 flex-1 flex-col gap-1">
+        <span className="text-base leading-snug font-semibold">
+          {format.material(material.names, material.code)}
+        </span>
+        <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+          {pricePaise === undefined ? <Skeleton className="h-4 w-14" /> : null}
+          {typeof pricePaise === "number" ? (
+            <span className="text-muted-foreground tabular-nums">
+              {t("perKg", { price: format.perKg(pricePaise) })}
+            </span>
+          ) : null}
           {isAdded ? (
-            <CheckIcon className="size-4" />
-          ) : (
-            <PlusIcon className="size-4" />
-          )}
+            <span className="font-semibold text-primary tabular-nums">
+              {format.weight(kgToGrams(kg))}
+            </span>
+          ) : null}
         </span>
       </span>
-      <span className="text-base leading-snug font-semibold tracking-tight">
-        {format.material(material.names, material.code)}
-      </span>
-      <span className="mt-auto flex w-full flex-wrap items-center justify-between gap-x-2 gap-y-1 text-sm">
-        {pricePaise === undefined ? <Skeleton className="h-4 w-14" /> : null}
-        {typeof pricePaise === "number" ? (
-          <span className="text-sm text-muted-foreground tabular-nums">
-            {t("perKg", { price: format.perKg(pricePaise) })}
-          </span>
-        ) : null}
+      <span
+        aria-hidden
+        className={cn(
+          "flex size-8 shrink-0 items-center justify-center rounded-md",
+          isAdded
+            ? "bg-primary text-primary-foreground"
+            : "border text-muted-foreground",
+        )}
+      >
         {isAdded ? (
-          <span className="font-semibold text-primary tabular-nums">
-            {format.weight(kgToGrams(kg))}
-          </span>
-        ) : null}
+          <CheckIcon className="size-4" />
+        ) : (
+          <PlusIcon className="size-4" />
+        )}
       </span>
     </button>
   );

@@ -23,7 +23,7 @@ export function ContactStrip({
     <section
       data-reveal
       aria-labelledby="contact-strip-heading"
-      className="flex flex-col gap-8 rounded-xl border border-border bg-muted px-6 py-10 text-foreground sm:px-10 lg:flex-row lg:items-center lg:justify-between"
+      className="flex flex-col gap-6 border-y py-8 text-foreground lg:flex-row lg:items-center lg:justify-between lg:gap-10"
     >
       <div className="flex max-w-md flex-col gap-3">
         <h2

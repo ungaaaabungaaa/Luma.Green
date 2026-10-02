@@ -50,7 +50,7 @@ export function BackupCodes({
       </p>
       <ul
         aria-label="Backup codes"
-        className="grid grid-cols-1 gap-3 rounded-lg border bg-muted/50 p-4 font-mono text-sm min-[400px]:grid-cols-2"
+        className="grid grid-cols-1 gap-3 border-y py-4 font-mono text-sm min-[400px]:grid-cols-2"
       >
         {codes.map((code) => (
           <li key={code} className="break-all select-all">
@@ -74,7 +74,7 @@ export function BackupCodes({
           Download
         </Button>
       </div>
-      <div className="flex min-h-11 items-center gap-3 rounded-lg border p-3">
+      <div className="flex min-h-11 items-center gap-3">
         <Checkbox
           id="codes-saved"
           checked={saved}
@@ -82,7 +82,10 @@ export function BackupCodes({
             setSaved(checked === true);
           }}
         />
-        <Label htmlFor="codes-saved" className="leading-snug font-normal">
+        <Label
+          htmlFor="codes-saved"
+          className="min-h-11 leading-snug font-normal"
+        >
           I&apos;ve stored these codes somewhere safe.
         </Label>
       </div>

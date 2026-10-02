@@ -33,7 +33,7 @@ export async function WeightPayment() {
       className="border-b py-16 lg:py-24"
     >
       <Container className="grid min-w-0 grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
-        <div className="relative aspect-square overflow-hidden rounded-xl bg-muted sm:aspect-[4/3] lg:aspect-4/5">
+        <div className="relative aspect-[4/3] overflow-hidden bg-muted lg:aspect-4/5">
           <Image
             src={weighing}
             alt=""

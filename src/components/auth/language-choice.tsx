@@ -54,13 +54,14 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
         </h1>
         <p className="text-muted-foreground">{t("chooseLanguageHint")}</p>
       </div>
-      <ul className="grid grid-cols-2 gap-2">
+      <ul className="grid grid-cols-2 gap-x-4">
         {ordered.map((code) => {
           const isSelected = code === current;
           return (
             <li key={code}>
-              <button
+              <Button
                 type="button"
+                variant="ghost"
                 onClick={() => {
                   choose(code);
                 }}
@@ -69,8 +70,8 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
                 lang={localeMeta[code].hreflang}
                 dir={localeMeta[code].dir}
                 className={cn(
-                  "flex min-h-16 w-full items-center justify-between gap-2 rounded-lg border bg-card px-4 text-start transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-60",
-                  isSelected ? "border-primary bg-accent" : "border-border",
+                  "h-auto min-h-16 w-full justify-between gap-2 rounded-none border-b px-1 py-3 text-start whitespace-normal disabled:opacity-60",
+                  isSelected ? "border-primary text-primary" : "border-border",
                 )}
               >
                 <span className="flex flex-col">
@@ -84,7 +85,7 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
                 {isSelected ? (
                   <CheckIcon aria-hidden className="size-5 text-primary" />
                 ) : null}
-              </button>
+              </Button>
             </li>
           );
         })}

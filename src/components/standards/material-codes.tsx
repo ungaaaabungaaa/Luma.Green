@@ -105,7 +105,7 @@ export function CodesTable({ materials }: { materials: readonly Material[] }) {
           {t("download")}
         </Button>
       </div>
-      <div className="overflow-hidden rounded-xl border bg-card">
+      <div className="overflow-hidden border-y">
         <Table>
           <caption className="sr-only">{t("caption")}</caption>
           <TableHeader className="bg-muted/40">

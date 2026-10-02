@@ -40,7 +40,7 @@ export function TrainingPath({ role }: { role: HelpRole }) {
 
   return (
     <div className="flex max-w-3xl flex-col gap-4">
-      <div className="flex flex-col gap-3 rounded-xl border bg-card p-4">
+      <div className="flex flex-col gap-3 border-y py-5">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <p id={`training-${role}-label`} className="font-medium">
             {t("training.progressLabel")}
@@ -61,7 +61,7 @@ export function TrainingPath({ role }: { role: HelpRole }) {
 
       <div aria-live="polite">
         {progress.isComplete ? (
-          <div className="flex items-center gap-4 rounded-xl border border-primary/30 bg-accent p-4">
+          <div className="flex items-center gap-4 border-s-2 border-primary py-3 ps-4">
             <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <AwardIcon aria-hidden className="size-7" />
             </span>
@@ -75,7 +75,7 @@ export function TrainingPath({ role }: { role: HelpRole }) {
         ) : null}
       </div>
 
-      <ol className="flex flex-col gap-3">
+      <ol className="divide-y border-y">
         {lessons.map((lesson, index) => (
           <li key={lesson.key}>
             <LessonCard
@@ -134,17 +134,15 @@ function LessonCard({
     <article
       aria-labelledby={titleId}
       className={cn(
-        "flex flex-col gap-4 rounded-xl border bg-card p-4 transition-colors",
-        isDone && "border-primary/40 bg-accent/50",
+        "flex flex-col gap-4 py-6 transition-colors",
+        isDone && "bg-muted/25",
       )}
     >
       <div className="flex gap-4">
         <span
           className={cn(
-            "relative flex size-12 shrink-0 items-center justify-center rounded-xl",
-            isDone
-              ? "bg-primary text-primary-foreground"
-              : "bg-accent text-primary",
+            "relative flex size-10 shrink-0 items-center justify-center",
+            isDone ? "text-primary" : "text-muted-foreground",
           )}
         >
           {isDone ? (
@@ -179,7 +177,7 @@ function LessonCard({
           </ul>
           <Link
             href={`/help/${role}/${guide(lesson.guide).slug}`}
-            className="inline-flex items-center gap-1 self-start rounded-sm text-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="inline-flex min-h-11 items-center gap-1 self-start rounded-sm text-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             {t("training.openGuide")}
             <ArrowRightIcon aria-hidden className="size-4 rtl:rotate-180" />

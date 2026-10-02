@@ -18,7 +18,7 @@ export function WeekEarnings({ earnings }: { earnings: Board["earnings"] }) {
   return (
     <section
       aria-labelledby={headingId}
-      className="flex flex-col gap-3 rounded-xl border border-border bg-card p-6 text-card-foreground"
+      className="flex flex-col gap-3 border-b border-border py-5"
     >
       <div className="flex items-center justify-between gap-2">
         <h2 id={headingId} className="text-sm font-medium">

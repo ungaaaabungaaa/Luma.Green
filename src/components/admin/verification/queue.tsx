@@ -176,7 +176,7 @@ function ReviewLink({
   );
 }
 
-/** A table on wide screens, cards on a phone. */
+/** A table on wide screens, divided rows on a phone. */
 function QueueList({
   items,
   now,
@@ -186,7 +186,7 @@ function QueueList({
 }) {
   return (
     <>
-      <div className="hidden overflow-hidden rounded-xl border bg-card md:block">
+      <div className="hidden border-y md:block">
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-transparent">
@@ -230,19 +230,18 @@ function QueueList({
           </TableBody>
         </Table>
       </div>
-      <ul className="flex flex-col gap-3 md:hidden">
+      <ul className="flex flex-col divide-y border-y md:hidden">
         {items.map((item) => (
-          <li
-            key={item.id}
-            className="flex flex-col gap-4 rounded-xl border bg-card p-5"
-          >
+          <li key={item.id} className="flex min-w-0 flex-col gap-3 py-5">
             <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-medium text-foreground">
               <RoleLabel item={item} />
               <WaitBadge item={item} now={now} />
             </div>
             <div className="flex flex-col gap-0.5">
-              <p className="font-medium">{item.name}</p>
-              <p className="text-sm text-muted-foreground">{details(item)}</p>
+              <p className="font-medium break-words">{item.name}</p>
+              <p className="text-sm break-words text-muted-foreground">
+                {details(item)}
+              </p>
               <p className="text-xs text-muted-foreground">
                 Sent {formatWhen(item.submittedAt)} ·{" "}
                 {item.fileCount === 1

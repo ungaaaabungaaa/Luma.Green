@@ -28,7 +28,7 @@ export function TrackView({ booking }: { booking: TrackedBooking }) {
       {booking.dispatch && booking.dispatch.attempt > 1 ? (
         <p
           role="status"
-          className="rounded-xl border border-primary/20 bg-accent p-4 text-sm text-accent-foreground"
+          className="border-s-2 border-primary py-2 ps-4 text-sm text-accent-foreground"
         >
           {t("dispatchChanged")}
         </p>

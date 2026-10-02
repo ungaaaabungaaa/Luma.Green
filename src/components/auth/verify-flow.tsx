@@ -24,10 +24,11 @@ import { safeNextPath } from "@/lib/safe-next";
 
 import { api } from "../../../convex/_generated/api";
 import { formatIndianMobile } from "../../../convex/lib/phone";
+import { AuthProgress } from "./auth-progress";
 import type { CodeErrorKey } from "./errors";
 import { LoginSkeleton } from "./login-flow";
-import { SignInUnavailable } from "./sign-in-unavailable";
-import { readPhone, useStoredValue } from "./storage";
+import { isPhonePreview, readPhone, useStoredValue } from "./storage";
+import { VerifyPreview } from "./verify-preview";
 
 /**
  * Keeps a number reading left to right inside Urdu and Arabic sentences
@@ -48,7 +49,9 @@ const AFTER_SIGN_IN = "/app";
 
 /** `/login/verify`: the 6-digit code, then into the app. */
 export function VerifyFlow() {
-  return isConvexConfigured ? <VerifyForm /> : <SignInUnavailable />;
+  const isPreview = useStoredValue(isPhonePreview);
+  if (isPreview === undefined) return <LoginSkeleton />;
+  return !isConvexConfigured || isPreview ? <VerifyPreview /> : <VerifyForm />;
 }
 
 function VerifyForm() {
@@ -179,6 +182,7 @@ function VerifyForm() {
 
   return (
     <div className="flex flex-col gap-6">
+      <AuthProgress step="code" />
       <div className="flex flex-col gap-2">
         <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
           {t("verifyTitle")}
@@ -187,8 +191,8 @@ function VerifyForm() {
           {t("sentTo", { phone: ltr(formatIndianMobile(phone)) })}
         </p>
         <Link
-          href="/login"
-          className="inline-flex min-h-11 items-center self-start text-sm font-medium text-primary underline-offset-4 hover:underline"
+          href={{ pathname: "/login", query: { next } }}
+          className="inline-flex min-h-11 max-w-full items-center self-start py-2 text-sm font-medium text-wrap text-primary underline-offset-4 hover:underline"
         >
           {t("changeNumber")}
         </Link>
@@ -232,7 +236,7 @@ function VerifyForm() {
                 <InputOTPSlot
                   key={index}
                   index={index}
-                  className="size-12 text-xl"
+                  className="h-14 w-11 text-xl sm:w-12"
                 />
               ))}
             </InputOTPGroup>
@@ -246,7 +250,7 @@ function VerifyForm() {
         <Button
           type="submit"
           size="lg"
-          className="h-12 text-base"
+          className="h-auto min-h-12 py-3 text-base text-wrap whitespace-normal"
           disabled={!canRetry && (isBusy || code.length !== CODE_LENGTH)}
         >
           {canRetry ? common("retry") : null}
@@ -264,6 +268,7 @@ function VerifyForm() {
         ) : (
           <Button
             variant="ghost"
+            className="h-auto min-h-11 py-3 text-wrap whitespace-normal"
             disabled={isBusy}
             onClick={() => {
               void resend();

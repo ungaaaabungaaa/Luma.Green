@@ -173,7 +173,7 @@ function RowsSection({
         </h2>
         {intro ? <p className="text-muted-foreground">{intro}</p> : null}
       </div>
-      <div className="overflow-hidden rounded-xl border bg-card">
+      <div className="overflow-hidden border-y border-border">
         <BoardColumns />
         <ul className="divide-y">
           {rows.map((row) => (
@@ -200,7 +200,7 @@ function BoardSkeleton() {
       {[4, 3].map((count, section) => (
         <div key={section} className="flex flex-col gap-3">
           <Skeleton className="h-8 w-40" />
-          <div className="flex flex-col gap-px overflow-hidden rounded-xl border">
+          <div className="flex flex-col gap-px overflow-hidden border-y border-border">
             {Array.from({ length: count }, (_, index) => (
               <Skeleton key={index} className="h-16 w-full rounded-none" />
             ))}

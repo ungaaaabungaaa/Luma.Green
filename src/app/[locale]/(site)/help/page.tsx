@@ -5,7 +5,6 @@ import { ContactStrip } from "@/components/help/contact-strip";
 import { HelpHero } from "@/components/help/help-hero";
 import { HelpSearch } from "@/components/help/help-search";
 import { RoleCards } from "@/components/help/role-cards";
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata } from "@/lib/seo";
@@ -38,14 +37,12 @@ export default async function HelpPage() {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        art={<RoleStoryImage scene={helpStoryRole} />}
-        artLayout="photo"
-        artOnPhones
+        banner={helpStoryRole}
       >
         <HelpSearch />
       </HelpHero>
 
-      <Container className="flex flex-col gap-14 py-16 lg:py-24">
+      <Container className="flex flex-col gap-10 py-10 lg:gap-12 lg:py-16">
         <section aria-labelledby="help-roles" className="flex flex-col gap-5">
           <div className="flex flex-col gap-1">
             <h2

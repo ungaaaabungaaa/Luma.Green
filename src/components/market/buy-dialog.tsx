@@ -227,7 +227,7 @@ function BuyForm({
       </div>
 
       <div
-        className="flex items-end justify-between gap-3 rounded-xl bg-muted/60 p-3"
+        className="flex flex-wrap items-end justify-between gap-3 border-y border-border py-4"
         aria-live="polite"
       >
         <div className="flex flex-col gap-0.5">
@@ -253,7 +253,7 @@ function BuyForm({
         {t("buy.escrow", { seller: listing.seller.name })}
       </p>
       {total !== null && requiresEwayBill(total) ? (
-        <p className="flex gap-2 rounded-lg bg-sky-50 p-3 text-sm text-sky-900 dark:bg-sky-950/50 dark:text-sky-200">
+        <p className="flex gap-2 border-s-2 border-primary ps-3 text-sm text-muted-foreground">
           <FileTextIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
           {t("buy.ewayBill")}
         </p>

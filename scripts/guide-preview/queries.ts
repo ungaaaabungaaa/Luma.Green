@@ -3,7 +3,13 @@ import { type FunctionReference, getFunctionName } from "convex/server";
 import {
   complianceFixture,
   fixtures,
+  impactFixture,
+  invoiceFixture,
+  myListingsFixture,
   offersFixture,
+  onboardingFixture,
+  priceQuotesFixture,
+  sellableFixture,
   tradesFixture,
   workspaceFixture,
 } from "./fixtures";
@@ -23,6 +29,16 @@ export function useQuery(
   )
     return tradesFixture;
   if (name === "insights:compliance") return complianceFixture;
+  if (name === "insights:impact") return impactFixture;
+  if (name === "market:receipt") return invoiceFixture;
+  if (name === "market:sellable") return sellableFixture;
+  if (name === "catalogue:priceQuotes") return priceQuotesFixture;
+  if (name === "applications:mine") return onboardingFixture();
+  if (
+    name === "market:myListings" &&
+    window.location.pathname.endsWith("/app/sell")
+  )
+    return myListingsFixture;
   if (!Object.hasOwn(fixtures, name))
     throw new Error(`Missing documentation fixture: ${name}`);
   return fixtures[name];

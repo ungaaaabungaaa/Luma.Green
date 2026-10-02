@@ -133,7 +133,7 @@ export function FileSlot({
           {files.map((file) => (
             <li
               key={file.id}
-              className="flex items-center gap-3 rounded-xl border bg-card p-3"
+              className="flex items-center gap-3 border-b border-border py-3"
             >
               <FileIcon aria-hidden className="size-5 shrink-0 text-primary" />
               <span className="min-w-0 flex-1">

@@ -18,7 +18,7 @@ export function HelpArt({
   return <Art className={className} />;
 }
 
-/** An icon on a neutral tile: the fallback where a step has no picture. */
+/** A plain icon where a guide or directory entry does not need a picture. */
 export function IconTile({
   icon: Icon,
   className,
@@ -31,10 +31,10 @@ export function IconTile({
   return (
     <span
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-lg bg-muted text-primary",
+        "flex shrink-0 items-center justify-center text-primary",
         size === "sm" && "size-11",
         size === "md" && "size-12",
-        size === "lg" && "size-24 rounded-xl",
+        size === "lg" && "size-24",
         className,
       )}
     >

@@ -253,7 +253,7 @@ function ListingForm({
       />
 
       <div
-        className="flex items-center justify-between gap-3 rounded-xl bg-muted/60 p-3"
+        className="flex flex-wrap items-center justify-between gap-3 border-y border-border py-4"
         aria-live="polite"
       >
         <span className="text-sm text-muted-foreground">

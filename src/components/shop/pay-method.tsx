@@ -14,7 +14,7 @@ const METHODS: readonly { value: PayMethod; icon: LucideIcon }[] = [
   { value: "upi", icon: SmartphoneIcon },
 ];
 
-/** Cash or UPI, as two big cards. Payment is recorded, not processed. */
+/** Cash or UPI, as two labelled radio options. Payment is recorded, not processed. */
 export function PayMethodChoice({
   value,
   onChange,
@@ -42,9 +42,9 @@ export function PayMethodChoice({
             key={method}
             htmlFor={`pay-${method}`}
             className={cn(
-              "flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border bg-card px-4 text-base font-medium",
+              "flex min-h-12 cursor-pointer items-center gap-3 border-b px-2 text-base font-medium",
               value === method
-                ? "border-primary bg-accent ring-1 ring-primary ring-inset"
+                ? "border-primary text-primary"
                 : "border-border",
             )}
           >

@@ -38,13 +38,13 @@ export default async function AuthLayout({
           <LanguageSwitcher />
         </div>
       </header>
-      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-8 px-4 py-8 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-12">
-        <aside className="relative hidden flex-col justify-between overflow-hidden rounded-xl border border-border bg-muted p-8 text-foreground lg:flex">
+      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-8 px-5 py-6 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-12">
+        <aside className="relative hidden flex-col justify-between border-e border-border pe-12 text-foreground lg:flex">
           <p className="max-w-md font-display text-5xl leading-tight font-semibold tracking-tight text-balance">
             {brand("tagline")}
           </p>
           <figure className="lg:mt-10">
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden">
               <Image
                 src={collectionPartners}
                 alt=""
@@ -60,7 +60,7 @@ export default async function AuthLayout({
         <main
           id="main"
           tabIndex={-1}
-          className="mx-auto flex w-full max-w-md flex-col justify-center py-4 sm:py-8"
+          className="mx-auto flex w-full max-w-md min-w-0 flex-col justify-start py-2 sm:py-8 lg:justify-center"
         >
           {children}
         </main>
