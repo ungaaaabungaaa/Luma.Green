@@ -34,7 +34,7 @@
     "prices": "Preise",
     "help": "Hilfe",
     "join": "Mitmachen",
-    "sellScrap": "Altmaterial verkaufen"
+    "sellScrap": "Abholung buchen"
   },
   "footer": {
     "about": "Indiens Recyclingkette auf einer Plattform, vom Haushalt bis zur Fabrik. Jede Übergabe wird gewogen, bewertet und erfasst.",
@@ -48,7 +48,7 @@
   "loop": {
     "sell": {
       "title": "Verkaufen",
-      "summary": "Haushalte verkaufen Altmaterial zu einem fairen Preis. Es wird an der Haustür gewogen und bezahlt."
+      "summary": "Haushalte verkaufen Recyclingmaterial zu einem fairen Preis. Es wird an der Haustür gewogen und bezahlt."
     },
     "trade": {
       "title": "Handeln",
@@ -79,11 +79,11 @@
     "metaDescription": "Luma.Green verbindet Indiens Recyclingkette auf einer Plattform: Haushalte, Kabadiwalas, Sortierhöfe, Recycler und Hersteller. Mit fairen Preisen, geprüften Betrieben und einem Beleg bei jedem Schritt.",
     "hero": {
       "eyebrow": "Start in Bengaluru",
-      "title": "Indiens Recyclingkette auf einer Plattform",
-      "lead": "Verkaufen Sie Altmaterial von zu Hause zu einem fairen Preis. Handeln Sie entlang der Kette mit geprüften Betrieben. Jede Übergabe wird gewogen, bewertet und erfasst.",
-      "sell": "Ihr Altmaterial verkaufen",
-      "join": "Als Betrieb registrieren",
-      "prices": "Heutige Preise ansehen"
+      "title": "Geben Sie Ihren Wertstoffen einen neuen Anfang.",
+      "lead": "Buchen Sie eine Abholung für Papier, Kunststoff, Metall und mehr. Vergleichen Sie Angebote und behalten Sie den Überblick.",
+      "sell": "Abholung buchen",
+      "join": "Für Unternehmen",
+      "prices": "Materialpreise ansehen"
     },
     "teaser": {
       "title": "Heutige Preise",
@@ -95,8 +95,8 @@
       "error": "Die Preise konnten gerade nicht geladen werden."
     },
     "chain": {
-      "heading": "Der Weg des Altmaterials",
-      "intro": "Altmaterial wechselt viermal den Besitzer, bevor daraus etwas Neues entsteht. Bei jedem Schritt wird es genauer sortiert. Luma.Green erfasst jede Übergabe.",
+      "heading": "Der Weg des Recyclingmaterials",
+      "intro": "Materialien gelangen von Haushalten zu Sammelstellen, Sortierhöfen und Recyclern, bevor daraus etwas Neues entsteht. Luma.Green erfasst jede Übergabe.",
       "steps": {
         "household": {
           "name": "Haushalte",
@@ -127,10 +127,10 @@
       "intro": "Sechs Gruppen halten den Materialkreislauf in Bewegung. So unterstützt Luma.Green jede davon.",
       "household": {
         "title": "Haushalte",
-        "one": "Sehen Sie vor der Buchung, was Ihr Altmaterial wert ist.",
+        "one": "Sehen Sie vor der Buchung, was Ihr Recyclingmaterial wert ist.",
         "two": "Abholung an der Haustür oder Abgabe im Laden.",
         "three": "Bezahlung bar oder per UPI, mit Beleg.",
-        "cta": "Ihr Altmaterial verkaufen"
+        "cta": "Abholung buchen"
       },
       "kabadiwala": {
         "title": "Kabadiwala-Betriebe",
@@ -170,7 +170,7 @@
     },
     "trust": {
       "heading": "Auf Vertrauen aufgebaut",
-      "intro": "Im Altmaterialhandel waren Bargeld und Schätzungen lange üblich. Diese Regeln schaffen Klarheit.",
+      "intro": "Klare Preise, gemessene Gewichte und Belege helfen allen, eine Abholung zu prüfen.",
       "verified": {
         "title": "Geprüfte Betriebe",
         "body": "Ein Mensch prüft jeden Betrieb und jeden Saathi vor der Teilnahme."
@@ -211,13 +211,13 @@
     "closing": {
       "title": "Beginnen Sie mit dem, was Sie haben",
       "body": "Eine Tüte alter Zeitungen oder eine Lkw-Ladung Ballen: Auf Luma.Green findet beides seinen Platz.",
-      "sell": "Ihr Altmaterial verkaufen",
+      "sell": "Abholung buchen",
       "join": "Als Betrieb registrieren"
     },
     "expansion": {
-      "materialsTitle": "Beginnen Sie mit Ihren vorhandenen Materialien",
+      "materialsTitle": "Was möchten Sie recyceln?",
       "pickupTitle": "Eine Abholung, Schritt für Schritt",
-      "shopTitle": "Ihr Altmaterialladen, vernetzt",
+      "shopTitle": "Ihre Sammelstelle, vernetzt",
       "recordsTitle": "Ein Nachweis, der das Material begleitet",
       "paymentTitle": "Klare Gewichte. Klare Zahlungen.",
       "questionsTitle": "Bevor Sie beginnen"
@@ -236,10 +236,10 @@
     }
   },
   "prices": {
-    "metaTitle": "Heutige Altmaterialpreise in Bengaluru",
-    "metaDescription": "Heutige Altmaterialpreise in Bengaluru je kg: Papier, Kunststoff, Metall, Glas und Elektroschrott. Mit Wochenänderung, 30-Tage-Diagramm und Mindestankaufspreis.",
+    "metaTitle": "Heutige Recyclingmaterialpreise in Bengaluru",
+    "metaDescription": "Heutige Recyclingmaterialpreise in Bengaluru je kg: Papier, Kunststoff, Metall, Glas und Elektroschrott. Mit Wochenänderung, 30-Tage-Diagramm und Mindestankaufspreis.",
     "eyebrow": "Bengaluru",
-    "title": "Heutige Altmaterialpreise",
+    "title": "Materialpreise",
     "lead": "Der heutige Preis je Kilogramm. Läden legen eigene Preise fest, mindestens zum Mindestpreis. Wählen Sie ein Material für den Verlauf der letzten 30 Tage.",
     "demoNote": "Beispielpreise für den Prototyp, keine aktuellen Marktpreise.",
     "date": "Preise vom {date}",
@@ -305,22 +305,22 @@
       "retry": "Erneut versuchen"
     },
     "sellCta": {
-      "title": "Altmaterial zu Hause?",
+      "title": "Recyclingmaterial zu Hause?",
       "body": "Buchen Sie eine Abholung und erhalten Sie Ihr Geld an der Haustür.",
-      "action": "Ihr Altmaterial verkaufen"
+      "action": "Abholung buchen"
     }
   },
   "standards": {
     "metaTitle": "Der Luma.Green-Standard",
-    "metaDescription": "Geplant: Offene Materialcodes und einfache Regeln für fairen Altmaterialhandel in Indien — Qualität, Wiegen, Belege, Prüfung und Treuhandzahlungen. Frei nutzbar.",
+    "metaDescription": "Geplant: Offene Materialcodes und einfache Regeln für fairen Recyclingmaterialhandel in Indien — Qualität, Wiegen, Belege, Prüfung und Treuhandzahlungen. Frei nutzbar.",
     "eyebrow": "Offener Standard",
     "title": "Der Luma.Green-Standard",
-    "lead": "Einfache, offene Regeln für fairen Altmaterialhandel: ein Code je Material, klare Qualitätsstufen, ehrliches Wiegen und ein Nachweis bei jeder Übergabe. Alle in der Branche können sie übernehmen.",
+    "lead": "Einfache, offene Regeln für fairen Recyclingmaterialhandel: ein Code je Material, klare Qualitätsstufen, ehrliches Wiegen und ein Nachweis bei jeder Übergabe. Alle in der Branche können sie übernehmen.",
     "onThisPage": "Auf dieser Seite",
     "codes": {
       "title": "Ein Code für jedes Material",
       "nav": "Materialcodes",
-      "body": "Dasselbe Altmaterial hat viele lokale Namen. Ein offener Code schafft eine gemeinsame Bezeichnung. So bedeutet ein Kilogramm Zeitung im Laden, auf dem Sortierhof und in der Fabrik dasselbe.",
+      "body": "Dasselbe Recyclingmaterial hat viele lokale Namen. Ein offener Code schafft eine gemeinsame Bezeichnung. So bedeutet ein Kilogramm Zeitung im Laden, auf dem Sortierhof und in der Fabrik dasselbe.",
       "caption": "Luma.Green-Materialcodes",
       "count": "{count, plural, one {# Materialart} other {# Materialarten}}",
       "download": "Codes herunterladen (CSV)",
@@ -331,7 +331,7 @@
         "stage": "Verarbeitungsstufe"
       },
       "stages": {
-        "scrap": "Altmaterial",
+        "scrap": "Gesammelte Materialien",
         "recycled": "Recycelt"
       },
       "unavailable": "Die Codeliste ist gerade nicht verfügbar. Bitte sehen Sie später wieder nach.",
@@ -345,7 +345,7 @@
       "body": "Ein fairer Preis braucht eine klare Qualitätsstufe. Vor dem Wiegen stehen drei Prüfungen.",
       "dry": {
         "title": "Trocken",
-        "body": "Wasser ist kein Altmaterial. Nasses Papier und Karton werden vor dem Wiegen getrocknet."
+        "body": "Wasser ist kein Recyclingmaterial. Nasses Papier und Karton werden vor dem Wiegen getrocknet."
       },
       "sorted": {
         "title": "Sortiert",
@@ -359,7 +359,7 @@
     "weighing": {
       "title": "Faires Wiegen",
       "nav": "Wiegen",
-      "body": "Die meisten Streitfälle im Altmaterialhandel betreffen das Gewicht. Diese Regeln machen das Wiegen nachvollziehbar.",
+      "body": "Die meisten Streitfälle im Recyclingmaterialhandel betreffen das Gewicht. Diese Regeln machen das Wiegen nachvollziehbar.",
       "stamped": {
         "title": "Geeichte Waagen",
         "body": "Verwenden Sie nur eine von der zuständigen Eichbehörde geprüfte und gekennzeichnete Waage."
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "So funktioniert es",
-    "metaDescription": "Geplant: So bewegt sich Altmaterial auf Luma.Green — fairer Verkauf aus dem Haushalt, Handel entlang der Kette mit Treuhandzahlung und eine Aufzeichnung bei jeder Übergabe.",
+    "metaDescription": "Geplant: So bewegt sich Recyclingmaterial auf Luma.Green — fairer Verkauf aus dem Haushalt, Handel entlang der Kette mit Treuhandzahlung und eine Aufzeichnung bei jeder Übergabe.",
     "title": "So funktioniert Luma.Green",
-    "lead": "Altmaterial wechselt viermal den Besitzer, bevor daraus etwas Neues entsteht. Hier sehen Sie die einzelnen Schritte und was Luma.Green erfasst.",
+    "lead": "Materialien gelangen von Haushalten zu Sammelstellen, Sortierhöfen und Recyclern, bevor daraus etwas Neues entsteht. Luma.Green erfasst jede Übergabe.",
     "stepLabel": "Schritt {number}",
     "sell": {
       "body": "Ein Haushalt wählt sein Material, sieht die Angebote naher Läden und bucht Abholung oder Abgabe. Der Kabadiwala wiegt jedes Material und zahlt bar oder per UPI. Beide erhalten einen Beleg.",
@@ -577,9 +577,9 @@
   },
   "participants": {
     "metaTitle": "Für wen ist es gedacht?",
-    "metaDescription": "Luma.Green ist für Haushalte, Kabadiwalas, Sortierhöfe, Recycler, Hersteller und Saathis gedacht — alle, die Altmaterial vom Haushalt zur Fabrik bewegen.",
+    "metaDescription": "Luma.Green ist für Haushalte, Kabadiwalas, Sortierhöfe, Recycler, Hersteller und Saathis gedacht — alle, die Recyclingmaterial vom Haushalt zur Fabrik bewegen.",
     "title": "Für wen Luma.Green gedacht ist",
-    "lead": "Für alle, die Altmaterial vom Haushalt zur Fabrik bewegen, und die Menschen, die dazwischen die Arbeit erledigen.",
+    "lead": "Für alle, die Recyclingmaterial vom Haushalt zur Fabrik bewegen, und die Menschen, die dazwischen die Arbeit erledigen.",
     "kabadiwala": {
       "name": "Kabadiwala-Betriebe",
       "body": "Nehmen Sie Abholanfragen naher Haushalte an, wiegen und bezahlen Sie fair und verkaufen Sie sortierte Bestände an Sortierhöfe."
@@ -601,7 +601,7 @@
       "body": "Übernehmen Sie bezahlte Abholungen, Sortierarbeit und Schichten in Ihrer Nähe und sehen Sie Ihren Verdienst."
     },
     "householdHeading": "Und für jeden Haushalt",
-    "householdBody": "Alle können ohne Konto Altmaterial von zu Hause verkaufen: Material auswählen, Angebote der Läden ansehen und bar oder per UPI mit Beleg bezahlt werden."
+    "householdBody": "Alle können ohne Konto Recyclingmaterial von zu Hause verkaufen: Material auswählen, Angebote der Läden ansehen und bar oder per UPI mit Beleg bezahlt werden."
   },
   "contact": {
     "metaTitle": "Kontakt",
@@ -657,13 +657,13 @@
     "roles": {
       "household": {
         "name": "Haushalte",
-        "who": "Altmaterial von zu Hause verkaufen",
+        "who": "Recyclingmaterial von zu Hause verkaufen",
         "title": "Hilfe für Haushalte",
         "lead": "Buchen Sie eine Abholung, lassen Sie fair wiegen und erhalten Sie Ihr Geld an der Haustür. Kein Konto nötig."
       },
       "kabadiwala": {
         "name": "Kabadiwala-Betriebe",
-        "who": "Einen Altmaterialladen führen",
+        "who": "Eine Sammelstelle führen",
         "title": "Hilfe für Kabadiwalas",
         "lead": "Nehmen Sie Abholungen an, wiegen und bezahlen Sie schnell, legen Sie Preise fest und verkaufen Sie an Sortierhöfe."
       },
@@ -675,9 +675,9 @@
       },
       "recycler": {
         "name": "Recyclingbetriebe",
-        "who": "Altmaterial zu Rohstoffen verarbeiten",
+        "who": "Recyclingmaterial zu Rohstoffen verarbeiten",
         "title": "Hilfe für Recycler",
-        "lead": "Kaufen Sie sortiertes Altmaterial bei Höfen, verkaufen Sie Erzeugnisse an Fabriken und führen Sie klare EPR-Aufzeichnungen."
+        "lead": "Kaufen Sie sortiertes Recyclingmaterial bei Höfen, verkaufen Sie Erzeugnisse an Fabriken und führen Sie klare EPR-Aufzeichnungen."
       },
       "manufacturer": {
         "name": "Hersteller",
@@ -835,7 +835,7 @@
           },
           "batteries": {
             "title": "Batterien und Elektroschrott getrennt halten",
-            "body": "Lagern Sie beides trocken und kühl, getrennt von anderem Altmaterial. Verbrennen Sie keine Kabel und öffnen Sie keine Batterien oder Bildschirme gewaltsam."
+            "body": "Lagern Sie beides trocken und kühl, getrennt von anderem Recyclingmaterial. Verbrennen Sie keine Kabel und öffnen Sie keine Batterien oder Bildschirme gewaltsam."
           },
           "machines": {
             "title": "Vor dem Beseitigen einer Blockade ausschalten",
@@ -978,8 +978,8 @@
         "summary": "Vom Foto zur gebuchten Abholung in etwa zwei Minuten. Kein Konto nötig.",
         "steps": {
           "photo": {
-            "title": "Altmaterial fotografieren",
-            "body": "Freiwillig: Fügen Sie ein Foto Ihres Altmaterials hinzu und prüfen Sie die vorgeschlagenen Positionen."
+            "title": "Recyclingmaterial fotografieren",
+            "body": "Freiwillig: Fügen Sie ein Foto Ihres Recyclingmaterials hinzu und prüfen Sie die vorgeschlagenen Positionen."
           },
           "estimate": {
             "title": "Schätzung prüfen",
@@ -1004,7 +1004,7 @@
         }
       },
       "getReady": {
-        "title": "Altmaterial vorbereiten",
+        "title": "Recyclingmaterial vorbereiten",
         "summary": "Sortiertes, trockenes Material lässt sich schneller wiegen und erzielt bessere Preise.",
         "steps": {
           "paper": {
@@ -1253,7 +1253,7 @@
           },
           "sort": {
             "title": "Sortierung erfassen",
-            "body": "Teilen Sie gemischtes Altmaterial in seine tatsächlichen Bestandteile auf, zum Beispiel Mischpapier in Zeitungen, Karton und Abfall."
+            "body": "Teilen Sie gemischtes Recyclingmaterial in seine tatsächlichen Bestandteile auf, zum Beispiel Mischpapier in Zeitungen, Karton und Abfall."
           },
           "show": {
             "title": "Bestand für Sortierhöfe anzeigen",
@@ -1289,7 +1289,7 @@
       },
       "buyFromKabadiwalas": {
         "title": "Demo-Anleitung: Bestände bei Kabadiwalas kaufen",
-        "summary": "Sortiertes Altmaterial in der Nähe finden und eine Abholung buchen.",
+        "summary": "Sortiertes Recyclingmaterial in der Nähe finden und eine Abholung buchen.",
         "steps": {
           "browse": {
             "title": "„Kaufen“ öffnen",
@@ -1340,7 +1340,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Demo-Anleitung: Sortiertes Altmaterial bei Höfen kaufen",
+        "title": "Demo-Anleitung: Sortiertes Recyclingmaterial bei Höfen kaufen",
         "summary": "Verlässlicher, nach Qualität sortierter Rohstoff für Ihre Anlage.",
         "steps": {
           "browse": {
@@ -1501,7 +1501,7 @@
           },
           "deliver": {
             "title": "Zum Laden bringen",
-            "body": "Bringen Sie das Altmaterial direkt zum Laden und übergeben Sie es dort."
+            "body": "Bringen Sie das Recyclingmaterial direkt zum Laden und übergeben Sie es dort."
           }
         }
       },
@@ -1732,7 +1732,7 @@
     },
     "tutorials": {
       "bookInTwoMinutes": "Eine Abholung in zwei Minuten buchen",
-      "sortAtHome": "Altmaterial zu Hause sortieren",
+      "sortAtHome": "Recyclingmaterial zu Hause sortieren",
       "batterySafety": "Alte Batterien sicher handhaben",
       "firstDay": "Ihr erster Tag auf Luma.Green",
       "weighAndPayVideo": "In einer Minute wiegen und bezahlen",
@@ -1760,7 +1760,7 @@
         "title": "Einmal richtig sortieren",
         "p1": "Je ein Sack für Papier, Kunststoff und Metall.",
         "p2": "Alles trocken und sauber halten.",
-        "p3": "Sortiertes Altmaterial wird schneller gewogen und besser bezahlt."
+        "p3": "Sortiertes Recyclingmaterial wird schneller gewogen und besser bezahlt."
       },
       "batteriesSafe": {
         "title": "Batterien sicher handhaben",
@@ -1787,7 +1787,7 @@
         "p3": "Vor dem Bezahlen den Gesamtbetrag zeigen."
       },
       "safeHandling": {
-        "title": "Altmaterial sicher handhaben",
+        "title": "Recyclingmaterial sicher handhaben",
         "p1": "Immer Handschuhe und geschlossene Schuhe tragen.",
         "p2": "Aus den Beinen heben und über 25 kg Hilfe holen.",
         "p3": "Batterien und Elektroschrott getrennt halten."
@@ -1892,7 +1892,7 @@
     "sendCode": "Code senden",
     "sending": "Wird gesendet…",
     "sendFailed": "Der Code konnte nicht gesendet werden. Bitte versuchen Sie es in einer Minute erneut.",
-    "homeTitle": "Altmaterial von zu Hause verkaufen? Sie benötigen kein Konto.",
+    "homeTitle": "Recycling von zu Hause? Sie benötigen kein Konto.",
     "homeLink": "So funktioniert es ansehen",
     "privacy": "Wir verwenden Ihre Nummer nur zur Anmeldung und für Mitteilungen zu Ihrer Arbeit auf Luma.Green.",
     "unavailableTitle": "Anmeldung per Handy folgt bald",
@@ -1934,13 +1934,13 @@
     "lead": "Sagen Sie uns, was Sie tun. Ein Mensch prüft jeden Antrag, meist innerhalb von 12–24 Stunden.",
     "start": "Beginnen",
     "youNeed": "Das benötigen Sie",
-    "homeTitle": "Altmaterial von zu Hause verkaufen?",
+    "homeTitle": "Recycling von zu Hause?",
     "homeBody": "Sie müssen sich nicht registrieren. Buchen Sie eine Abholung, sobald Sie etwas verkaufen möchten.",
     "homeLink": "So funktioniert es ansehen",
     "roles": {
       "kabadiwala": {
         "title": "Kabadiwala-Betrieb",
-        "body": "Sie führen einen Altmaterialladen und kaufen bei Haushalten in der Nähe ein.",
+        "body": "Sie führen eine Sammelstelle und kaufen Materialien bei Haushalten in der Nähe ein.",
         "needs": "Adresse und Öffnungszeiten Ihres Ladens. Ihre GST-Nummer, falls vorhanden."
       },
       "yard": {
@@ -1950,7 +1950,7 @@
       },
       "recycler": {
         "title": "Recyclingbetrieb",
-        "body": "Sie verarbeiten Altmaterial wieder zu Rohstoffen.",
+        "body": "Sie verarbeiten Recyclingmaterial wieder zu Rohstoffen.",
         "needs": "Ihre GST-Nummer, falls vorhanden, die Umweltgenehmigung als PDF und Fotos Ihrer Maschinen."
       },
       "manufacturer": {
@@ -2407,7 +2407,7 @@
         "detail": "{board} · {number}",
         "missing": "Keine Genehmigung hinterlegt",
         "note": "Die Betriebsgenehmigung der staatlichen Umweltschutzbehörde erlaubt den rechtmäßigen Betrieb einer Sortier- oder Recyclinganlage. Recycler und Fabriken verlangen sie vor dem Einkauf.",
-        "noteShop": "Ein kleiner Laden, der nur Altmaterial kauft und sortiert, benötigt meist keine. Beim Pressen, Zerkleinern oder Verarbeiten kann sie erforderlich werden."
+        "noteShop": "Ein kleiner Laden, der nur Recyclingmaterial kauft und sortiert, benötigt meist keine. Beim Pressen, Zerkleinern oder Verarbeiten kann sie erforderlich werden."
       },
       "scale": {
         "title": "Waage geeicht",
@@ -2489,10 +2489,10 @@
     }
   },
   "sell": {
-    "metaTitle": "Ihr Altmaterial verkaufen",
+    "metaTitle": "Abholung buchen",
     "metaDescription": "Verkaufen Sie Zeitungen, Kunststoff, Metall und alte Elektronik von zu Hause in Bengaluru. Vergleichen Sie Ladenpreise, buchen Sie eine Abholung und werden Sie an der Haustür bezahlt.",
     "eyebrow": "Für Haushalte in Bengaluru",
-    "title": "Altmaterial von zu Hause verkaufen",
+    "title": "Abholung von zu Hause buchen",
     "lead": "Wählen Sie Ihr Material und einen Laden in der Nähe. Nach dem Wiegen erhalten Sie Bargeld oder eine UPI-Zahlung.",
     "promises": {
       "label": "Warum hier verkaufen",
@@ -2510,10 +2510,10 @@
     "steps": {
       "label": "Schritte",
       "progress": "Schritt {current} von {total}",
-      "basket": "Was",
-      "shop": "Wer",
-      "when": "Wann",
-      "confirm": "Buchen"
+      "basket": "Materialien",
+      "shop": "Abholer",
+      "when": "Termin",
+      "confirm": "Prüfen"
     },
     "back": "Zurück",
     "families": {
@@ -2531,9 +2531,9 @@
     },
     "perKg": "{price}/kg",
     "basket": {
-      "title": "Was haben Sie?",
+      "title": "Was geben Sie zum Recycling ab?",
       "lead": "Wählen Sie Ihr Altmaterial und geben Sie das ungefähre Gewicht an.",
-      "yours": "Ihr Altmaterial",
+      "yours": "Ihr Recyclingmaterial",
       "empty": "Noch nichts hinzugefügt. Wählen Sie oben ein Material.",
       "kilos": "Kilogramm {material}",
       "less": "Weniger {material}",
@@ -2564,7 +2564,7 @@
       "byPrice": "Stattdessen nach Preis sortieren",
       "locationFailed": "Ihr Standort konnte nicht ermittelt werden. Die Läden sind nach dem besten Preis sortiert.",
       "listLabel": "Läden",
-      "offerFor": "für Ihr Altmaterial",
+      "offerFor": "für Ihr Recyclingmaterial",
       "distance": "{km} km",
       "hours": "Geöffnet {hours}",
       "picksUp": "Bietet Abholung",
@@ -2676,7 +2676,7 @@
     },
     "photo": {
       "title": "Fotoschätzung ausprobieren",
-      "lead": "Freiwillig: Fügen Sie ein Foto Ihres Altmaterials hinzu und prüfen Sie die vorgeschlagenen Positionen.",
+      "lead": "Freiwillig: Fügen Sie ein Foto Ihres Recyclingmaterials hinzu und prüfen Sie die vorgeschlagenen Positionen.",
       "privacy": "Keine Gesichter, Dokumente oder Kennzeichen aufnehmen. Das Foto wird für diese Schätzung an einen KI-Anbieter gesendet. Luma.Green speichert es nicht.",
       "choose": "Foto auswählen oder aufnehmen",
       "selected": "Foto bereit",
@@ -2694,7 +2694,7 @@
       "failed": "Das Foto konnte nicht geprüft werden. Versuchen Sie ein anderes oder wählen Sie unten Ihre Materialien.",
       "invalid": "Verwenden Sie ein klares JPEG- oder PNG-Foto unter 12 MB.",
       "limited": "Das Fotolimit ist erreicht. Wählen Sie unten Ihre Materialien oder versuchen Sie es morgen erneut.",
-      "retake": "Das Foto ist unklar oder zeigt kein Altmaterial. Versuchen Sie ein anderes oder wählen Sie unten Ihre Materialien.",
+      "retake": "Das Foto ist unklar oder zeigt kein Recyclingmaterial. Versuchen Sie ein anderes oder wählen Sie unten Ihre Materialien.",
       "empty": "Keine unterstützten Materialien erkannt. Versuchen Sie ein anderes Foto oder wählen Sie unten Ihre Materialien.",
       "replace": "Anderes Foto wählen"
     }
@@ -2704,7 +2704,7 @@
     "notFound": {
       "title": "Buchung nicht gefunden",
       "body": "Prüfen Sie den Link in Ihrer SMS. Falls Sie gerade erst gebucht haben, warten Sie kurz und versuchen Sie es erneut.",
-      "sell": "Altmaterial verkaufen"
+      "sell": "Abholung buchen"
     },
     "reference": "Buchung {token}",
     "status": {
@@ -2794,7 +2794,7 @@
       "otherNumber": "Andere Nummer verwenden"
     },
     "saved": "Kein Konto nötig. Bewahren Sie diesen Link auf, um Ihre Buchung auf jedem Handy zu prüfen.",
-    "sellMore": "Weiteres Altmaterial verkaufen",
+    "sellMore": "Weitere Abholung buchen",
     "tryAnother": "Anderen Laden versuchen",
     "dispatchChanged": "Ihre Anfrage wurde an einen anderen nahen Laden weitergegeben. Der aktuelle Laden wird unten angezeigt."
   },
@@ -2852,7 +2852,7 @@
     },
     "browse": {
       "title": "Kaufen",
-      "lead": "{kind, select, yard {Sortiertes Altmaterial von Kabadiwalas in Ihrer Nähe.} recycler {Sortiertes, gepresstes Material von Höfen.} manufacturer {Recyceltes Material von geprüften Recyclern.} other {Materialangebote in Ihrer Nähe.}}",
+      "lead": "{kind, select, yard {Sortiertes Recyclingmaterial von Kabadiwalas in Ihrer Nähe.} recycler {Sortiertes, gepresstes Material von Höfen.} manufacturer {Recyceltes Material von geprüften Recyclern.} other {Materialangebote in Ihrer Nähe.}}",
       "filterLabel": "Nach Material filtern",
       "all": "Alle",
       "count": "{count, plural, =0 {Keine Lose} one {# Los im Verkauf} other {# Lose im Verkauf}}",
@@ -3148,7 +3148,7 @@
     },
     "requests": {
       "title": "Anfragen",
-      "lead": "Haushalte in Ihrer Nähe, die Altmaterial verkaufen möchten.",
+      "lead": "Haushalte in Ihrer Nähe, die Recyclingmaterial verkaufen möchten.",
       "tabs": {
         "new": "Neu",
         "today": "Heute",
@@ -3242,7 +3242,7 @@
       "totalWeight": "Gesamtgewicht",
       "worth": "Heutiger Wert",
       "worthHint": "Zu heutigen Marktpreisen",
-      "scrap": "Altmaterial",
+      "scrap": "Gesammelte Materialien",
       "recycled": "Recyclingmaterial",
       "atPrice": "Marktpreis {price}/kg",
       "noPrice": "Heute kein Marktpreis",
@@ -3303,11 +3303,11 @@
     "updateUnavailable": "Für diese Version sind keine App-Updates verfügbar.",
     "updateFailed": "Updates konnten nicht geprüft werden. Versuchen Sie es später erneut.",
     "locationTitle": "Standort teilen?",
-    "locationBody": "Erlauben Sie Luma.Green, Ihren Standort für die Suche nach Altmaterialläden in der Nähe zu verwenden.",
+    "locationBody": "Erlauben Sie Luma.Green, Ihren Standort für die Suche nach Sammelstellen in der Nähe zu verwenden.",
     "allow": "Erlauben",
     "deny": "Jetzt nicht",
     "browserNotice": "Diese Seite öffnet sich im Browser. Möglicherweise müssen Sie sich erneut anmelden.",
-    "cameraPermission": "Verwenden Sie die Kamera für Fotos von Altmaterial oder Prüfunterlagen.",
+    "cameraPermission": "Verwenden Sie die Kamera für Fotos von Recyclingmaterial oder Prüfunterlagen.",
     "photoPermission": "Wählen Sie Fotos für Materialschätzungen und die Prüfung aus.",
     "cameraTitle": "Kamera"
   },
@@ -3338,7 +3338,7 @@
           "third": "Beleg aufbewahren"
         },
         "kabadiwala": {
-          "title": "Ihr Altmaterialladen",
+          "title": "Ihre Sammelstelle",
           "first": "Abholanfragen prüfen",
           "second": "Gewicht erfassen",
           "third": "Sortierten Bestand verwalten"

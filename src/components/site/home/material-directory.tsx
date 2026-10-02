@@ -24,10 +24,9 @@ const families = [
 
 /** Examples come from the product catalogue, never from an invented price list. */
 export async function MaterialDirectory() {
-  const [home, prices, sell, help, locale] = await Promise.all([
+  const [home, prices, help, locale] = await Promise.all([
     getTranslations("home"),
     getTranslations("prices.families"),
-    getTranslations("sell"),
     getTranslations("help.modules.sortOnce"),
     getLocale(),
   ]);
@@ -42,7 +41,7 @@ export async function MaterialDirectory() {
           <SectionHeading
             id="materials-heading"
             title={home("expansion.materialsTitle")}
-            intro={sell("shop.lead")}
+            intro={home("closing.body")}
           />
           <Button
             asChild
@@ -50,42 +49,44 @@ export async function MaterialDirectory() {
             className="h-auto min-h-11 max-w-full min-w-0 self-start py-3 text-start whitespace-nowrap lg:shrink-0"
           >
             <Link href="/sell">
-              {sell("basket.next")}
+              {home("hero.sell")}
               <ArrowRightIcon aria-hidden className="rtl:rotate-180" />
             </Link>
           </Button>
         </div>
-        <ul className="divide-y border-y">
+        <ul className="grid border-t md:grid-cols-2 md:gap-x-12">
           {families.map((family) => {
             const Icon = MATERIAL_FAMILY_ICONS[family];
             const examples = CATALOGUE.filter(
               (item) => item.stage === "scrap" && item.family === family,
             ).slice(0, 3);
             return (
-              <li
-                key={family}
-                data-reveal
-                className="grid min-w-0 grid-cols-[2rem_minmax(0,1fr)] items-start gap-4 py-5 sm:grid-cols-[3rem_minmax(0,1fr)] sm:gap-6 sm:py-6"
-              >
-                <Icon aria-hidden className="mt-1 size-6 text-primary" />
-                <div className="grid min-w-0 gap-3 md:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] md:items-baseline md:gap-8">
-                  <h3 className="font-display text-xl font-semibold tracking-tight">
-                    {prices(family)}
-                  </h3>
-                  <ul className="flex min-w-0 flex-wrap gap-x-6 gap-y-2 text-sm leading-relaxed text-muted-foreground">
-                    {examples.map((item) => (
-                      <li key={item.code} className="flex items-baseline gap-2">
-                        {materialName(item.names, locale, item.code)}
-                        <span
-                          className="hidden font-mono text-[0.65rem] text-muted-foreground/80 lg:inline"
-                          dir="ltr"
+              <li key={family} data-reveal className="min-w-0 border-b">
+                <Link
+                  href="/sell"
+                  className="group grid min-h-28 grid-cols-[2rem_minmax(0,1fr)_1.25rem] items-center gap-4 py-5 transition-colors outline-none hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50 sm:py-6"
+                >
+                  <Icon aria-hidden className="size-6 text-primary" />
+                  <div className="min-w-0 space-y-2">
+                    <h3 className="font-display text-xl font-semibold tracking-tight">
+                      {prices(family)}
+                    </h3>
+                    <ul className="flex min-w-0 flex-wrap gap-x-4 gap-y-1 text-sm leading-relaxed text-muted-foreground">
+                      {examples.map((item) => (
+                        <li
+                          key={item.code}
+                          className="flex items-baseline gap-2"
                         >
-                          {item.code}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                          {materialName(item.names, locale, item.code)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <ArrowRightIcon
+                    aria-hidden
+                    className="size-4 text-muted-foreground rtl:rotate-180"
+                  />
+                </Link>
               </li>
             );
           })}

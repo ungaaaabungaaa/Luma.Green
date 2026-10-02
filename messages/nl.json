@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Een schonere toekomst in beweging",
-    "description": "Luma.Green brengt de Indiase schrootketen samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, gewogen inzamelingen en een registratie van elke overdracht."
+    "description": "Luma.Green brengt de Indiase recyclingnetwerk samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, gewogen inzamelingen en een registratie van elke overdracht."
   },
   "theme": {
     "label": "Weergave",
@@ -34,10 +34,10 @@
     "prices": "Prijzen",
     "help": "Hulp",
     "join": "Aanmelden",
-    "sellScrap": "Schroot verkopen"
+    "sellScrap": "Inzameling boeken"
   },
   "footer": {
-    "about": "De Indiase schrootketen op één platform, van huis tot fabriek. Elke overdracht wordt gewogen, geprijsd en geregistreerd.",
+    "about": "De Indiase recyclingnetwerk op één platform, van huis tot fabriek. Elke overdracht wordt gewogen, geprijsd en geregistreerd.",
     "navLabel": "Voettekst",
     "useHeading": "Gebruik Luma.Green",
     "learnHeading": "Meer informatie",
@@ -48,7 +48,7 @@
   "loop": {
     "sell": {
       "title": "Verkopen",
-      "summary": "Huishoudens verkopen schroot vanuit huis voor een eerlijke prijs, gewogen en betaald aan de deur."
+      "summary": "Huishoudens verkopen recyclebaar materiaal vanuit huis voor een eerlijke prijs, gewogen en betaald aan de deur."
     },
     "trade": {
       "title": "Handelen",
@@ -76,14 +76,14 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green brengt de Indiase schrootketen samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, geverifieerde bedrijven en een bon bij elke stap.",
+    "metaDescription": "Luma.Green brengt de Indiase recyclingnetwerk samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, geverifieerde bedrijven en een bon bij elke stap.",
     "hero": {
       "eyebrow": "We beginnen in Bengaluru",
-      "title": "De Indiase schrootketen op één platform",
-      "lead": "Verkoop schroot vanuit huis voor een eerlijke prijs. Handel verder in de keten met geverifieerde bedrijven. Elke overdracht wordt gewogen, geprijsd en geregistreerd.",
-      "sell": "Verkoop uw schroot",
-      "join": "Aanmelden als bedrijf",
-      "prices": "Bekijk de prijzen van vandaag"
+      "title": "Geef uw materialen een nieuw begin.",
+      "lead": "Boek een inzameling voor papier, kunststof, metaal en meer. Vergelijk aanbiedingen en houd een duidelijk overzicht.",
+      "sell": "Inzameling boeken",
+      "join": "Voor bedrijven",
+      "prices": "Materiaalprijzen bekijken"
     },
     "teaser": {
       "title": "Prijzen van vandaag",
@@ -95,8 +95,8 @@
       "error": "De prijzen konden nu niet worden geladen."
     },
     "chain": {
-      "heading": "De route van schroot",
-      "intro": "Schroot gaat vier keer over in andere handen voordat het iets nieuws wordt. Bij elke stap wordt het verder gesorteerd en Luma.Green registreert elke overdracht.",
+      "heading": "De route van recyclebaar materiaal",
+      "intro": "Materialen gaan van huishoudens naar inzamelpunten, sorteerterreinen en recyclers voordat ze iets nieuws worden. Luma.Green registreert elke overdracht.",
       "steps": {
         "household": {
           "name": "Huishoudens",
@@ -124,13 +124,13 @@
     },
     "roles": {
       "heading": "Voor iedereen in de keten",
-      "intro": "Zes groepen mensen houden schroot in beweging. Dit doet Luma.Green voor elk van hen.",
+      "intro": "Zes groepen mensen houden recyclebaar materiaal in beweging. Dit doet Luma.Green voor elk van hen.",
       "household": {
         "title": "Huishoudens",
-        "one": "Bekijk de waarde van uw schroot voordat u boekt.",
+        "one": "Bekijk de waarde van uw recyclebare materiaal voordat u boekt.",
         "two": "Ophalen aan de deur of inleveren bij een winkel.",
         "three": "Contant of via UPI betaald, met een bon.",
-        "cta": "Verkoop uw schroot"
+        "cta": "Inzameling boeken"
       },
       "kabadiwala": {
         "title": "Kabadiwala's",
@@ -170,7 +170,7 @@
     },
     "trust": {
       "heading": "Gebouwd op vertrouwen",
-      "intro": "De schrootsector werkte altijd met contant geld en schattingen. Deze regels veranderen dat.",
+      "intro": "Duidelijke prijzen, gemeten gewichten en registraties helpen iedereen een inzameling te controleren.",
       "verified": {
         "title": "Geverifieerde bedrijven",
         "body": "Een persoon controleert elk bedrijf en elke Saathi voordat zij kunnen handelen."
@@ -194,7 +194,7 @@
     },
     "whyNow": {
       "heading": "Waarom nu",
-      "intro": "Drie veranderingen maken dit het moment om de Indiase schrootketen vast te leggen.",
+      "intro": "Drie veranderingen maken dit het moment om de Indiase recyclingnetwerk vast te leggen.",
       "epr": {
         "title": "EPR-regels",
         "body": "Regels voor uitgebreide producentenverantwoordelijkheid voor plastic verpakkingen, elektronica en batterijen vragen bewijs dat materiaal echt is ingezameld en gerecycled. Dat bewijs begint bij de eerste overdracht."
@@ -211,13 +211,13 @@
     "closing": {
       "title": "Begin met wat u heeft",
       "body": "Een zak oude kranten of een vrachtwagen vol balen: er is plaats voor op Luma.Green.",
-      "sell": "Verkoop uw schroot",
+      "sell": "Inzameling boeken",
       "join": "Aanmelden als bedrijf"
     },
     "expansion": {
-      "materialsTitle": "Begin met de materialen die u al heeft",
+      "materialsTitle": "Wat wilt u recyclen?",
       "pickupTitle": "Een inzameling, stap voor stap",
-      "shopTitle": "Uw schrootwinkel, verbonden",
+      "shopTitle": "Uw inzamelpunt, verbonden",
       "recordsTitle": "Een registratie die het materiaal volgt",
       "paymentTitle": "Duidelijke gewichten. Duidelijke betalingen.",
       "questionsTitle": "Voordat u begint"
@@ -236,11 +236,11 @@
     }
   },
   "prices": {
-    "metaTitle": "Schrootprijzen in Bengaluru vandaag",
-    "metaDescription": "De schrootprijzen in Bengaluru vandaag per kg: papier, plastic, metaal, glas en elektronica, met weekverschil, een grafiek van 30 dagen en het minimum dat een winkel mag betalen.",
+    "metaTitle": "Recyclebaar materiaalprijzen in Bengaluru vandaag",
+    "metaDescription": "De recyclebaar materiaalprijzen in Bengaluru vandaag per kg: papier, plastic, metaal, glas en elektronica, met weekverschil, een grafiek van 30 dagen en het minimum dat een winkel mag betalen.",
     "eyebrow": "Bengaluru",
-    "title": "Schrootprijzen van vandaag",
-    "lead": "Wat schroot vandaag per kilo opbrengt. Winkels bepalen hun prijzen, nooit onder het minimum. Tik op een materiaal voor de afgelopen 30 dagen.",
+    "title": "Materiaalprijzen",
+    "lead": "Wat recyclebaar materiaal vandaag per kilo opbrengt. Winkels bepalen hun prijzen, nooit onder het minimum. Tik op een materiaal voor de afgelopen 30 dagen.",
     "demoNote": "Voorbeeldprijzen voor het prototype, geen actuele marktprijzen.",
     "date": "Prijzen voor {date}",
     "floorHelp": "Minimum: het laagste bedrag dat een geverifieerde winkel u per kilo mag betalen.",
@@ -305,22 +305,22 @@
       "retry": "Opnieuw proberen"
     },
     "sellCta": {
-      "title": "Heeft u schroot thuis?",
+      "title": "Heeft u recyclebaar materiaal thuis?",
       "body": "Boek een inzameling en krijg betaald aan de deur.",
-      "action": "Verkoop uw schroot"
+      "action": "Inzameling boeken"
     }
   },
   "standards": {
     "metaTitle": "De Luma.Green-standaard",
-    "metaDescription": "Gepland: open materiaalcodes en eenvoudige regels voor eerlijke schroothandel in India: kwaliteitsindeling, wegen, bonnen, verificatie en escrow. Vrij te gebruiken.",
+    "metaDescription": "Gepland: open materiaalcodes en eenvoudige regels voor eerlijke recyclebaar materiaalhandel in India: kwaliteitsindeling, wegen, bonnen, verificatie en escrow. Vrij te gebruiken.",
     "eyebrow": "Open standaard",
     "title": "De Luma.Green-standaard",
-    "lead": "Eenvoudige, open regels voor eerlijke schroothandel: één code per materiaal, duidelijke kwaliteitsindeling, eerlijk wegen en een registratie bij elke overdracht. Iedereen in de sector kan ze gebruiken.",
+    "lead": "Eenvoudige, open regels voor eerlijke recyclebaar materiaalhandel: één code per materiaal, duidelijke kwaliteitsindeling, eerlijk wegen en een registratie bij elke overdracht. Iedereen in de sector kan ze gebruiken.",
     "onThisPage": "Op deze pagina",
     "codes": {
       "title": "Eén code per materiaal",
       "nav": "Materiaalcodes",
-      "body": "Hetzelfde schroot heeft veel lokale namen. Een open code geeft elk materiaal één gemeenschappelijke naam, zodat een kilo kranten in winkel, sorteerterrein en fabriek hetzelfde betekent.",
+      "body": "Hetzelfde recyclebaar materiaal heeft veel lokale namen. Een open code geeft elk materiaal één gemeenschappelijke naam, zodat een kilo kranten in winkel, sorteerterrein en fabriek hetzelfde betekent.",
       "caption": "Luma.Green-materiaalcodes",
       "count": "{count, plural, one {# materiaal} other {# materialen}}",
       "download": "Codes downloaden (CSV)",
@@ -331,7 +331,7 @@
         "stage": "Fase"
       },
       "stages": {
-        "scrap": "Schroot",
+        "scrap": "Ingezamelde materialen",
         "recycled": "Gerecycled"
       },
       "unavailable": "De codelijst is nu niet beschikbaar. Kijk binnenkort opnieuw.",
@@ -345,7 +345,7 @@
       "body": "Een eerlijke prijs vraagt om een duidelijke kwaliteitsklasse. Vóór het wegen volgen drie controles.",
       "dry": {
         "title": "Droog",
-        "body": "Water is geen schroot. Nat papier en karton worden gedroogd voordat ze worden gewogen."
+        "body": "Water is geen recyclebaar materiaal. Nat papier en karton worden gedroogd voordat ze worden gewogen."
       },
       "sorted": {
         "title": "Gesorteerd",
@@ -359,7 +359,7 @@
     "weighing": {
       "title": "Eerlijk wegen",
       "nav": "Wegen",
-      "body": "De meeste meningsverschillen in schroothandel gaan over gewicht. Deze regels houden de weegschaal eerlijk.",
+      "body": "De meeste meningsverschillen in recyclebaar materiaalhandel gaan over gewicht. Deze regels houden de weegschaal eerlijk.",
       "stamped": {
         "title": "Geijkte weegschalen",
         "body": "Weeg alleen op een weegschaal die door de afdeling wettelijke metrologie is gecontroleerd en gestempeld."
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "Hoe het werkt",
-    "metaDescription": "Gepland: hoe schroot via Luma.Green beweegt, thuis verkocht voor een eerlijke prijs, verder verhandeld met escrow en bij elke overdracht geregistreerd.",
+    "metaDescription": "Gepland: hoe recyclebaar materiaal via Luma.Green beweegt, thuis verkocht voor een eerlijke prijs, verder verhandeld met escrow en bij elke overdracht geregistreerd.",
     "title": "Hoe Luma.Green werkt",
-    "lead": "Schroot gaat vier keer over in andere handen voordat het iets nieuws wordt. Dit gebeurt bij elke stap en dit legt Luma.Green vast.",
+    "lead": "Materialen gaan van huishoudens naar inzamelpunten, sorteerterreinen en recyclers voordat ze iets nieuws worden. Luma.Green registreert elke overdracht.",
     "stepLabel": "Stap {number}",
     "sell": {
       "body": "Een huishouden kiest de materialen, bekijkt het aanbod van winkels in de buurt en boekt ophalen of inleveren. De kabadiwala weegt elk materiaal en betaalt contant of via UPI. Beiden krijgen een bon.",
@@ -577,9 +577,9 @@
   },
   "participants": {
     "metaTitle": "Voor wie het is",
-    "metaDescription": "Luma.Green is er voor huishoudens, kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's: iedereen die schroot van huis naar fabriek brengt.",
+    "metaDescription": "Luma.Green is er voor huishoudens, kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's: iedereen die recyclebaar materiaal van huis naar fabriek brengt.",
     "title": "Voor wie Luma.Green is",
-    "lead": "Iedereen die schroot van huis naar fabriek brengt en de mensen die daartussen werken.",
+    "lead": "Iedereen die recyclebaar materiaal van huis naar fabriek brengt en de mensen die daartussen werken.",
     "kabadiwala": {
       "name": "Kabadiwala's",
       "body": "Neem ophaalverzoeken van huishoudens aan, weeg en betaal eerlijk en verkoop gesorteerde voorraad aan sorteerterreinen."
@@ -601,7 +601,7 @@
       "body": "Doe betaalde inzamelingen, sorteerwerk en diensten dicht bij huis en bekijk uw verdiensten."
     },
     "householdHeading": "En elk huishouden",
-    "householdBody": "Iedereen kan zonder account schroot vanuit huis verkopen: kies de materialen, bekijk winkelaanbiedingen en ontvang contant geld of UPI met een bon."
+    "householdBody": "Iedereen kan zonder account recyclebaar materiaal vanuit huis verkopen: kies de materialen, bekijk winkelaanbiedingen en ontvang contant geld of UPI met een bon."
   },
   "contact": {
     "metaTitle": "Contact",
@@ -657,13 +657,13 @@
     "roles": {
       "household": {
         "name": "Huishoudens",
-        "who": "Schroot vanuit huis verkopen",
+        "who": "Recyclebaar materiaal vanuit huis verkopen",
         "title": "Hulp voor huishoudens",
         "lead": "Boek een inzameling, laat eerlijk wegen en ontvang geld aan de deur. Geen account nodig."
       },
       "kabadiwala": {
         "name": "Kabadiwala's",
-        "who": "Een schrootwinkel beheren",
+        "who": "Een inzamelpunt beheren",
         "title": "Hulp voor kabadiwala's",
         "lead": "Neem inzamelingen aan, weeg en betaal in een minuut, stel prijzen in en verkoop aan sorteerterreinen."
       },
@@ -675,9 +675,9 @@
       },
       "recycler": {
         "name": "Recyclers",
-        "who": "Schroot omzetten in grondstoffen",
+        "who": "Recyclebaar materiaal omzetten in grondstoffen",
         "title": "Hulp voor recyclers",
-        "lead": "Koop ingedeeld schroot van sorteerterreinen, verkoop productie aan fabrieken en houd EPR-registraties op orde."
+        "lead": "Koop ingedeeld recyclebaar materiaal van sorteerterreinen, verkoop productie aan fabrieken en houd EPR-registraties op orde."
       },
       "manufacturer": {
         "name": "Fabrikanten",
@@ -819,7 +819,7 @@
       },
       "safetyAtWork": {
         "title": "Veilig blijven op het werk",
-        "summary": "Bescherming, tillen, scherp schroot, batterijen en machines: basisregels die letsel voorkomen.",
+        "summary": "Bescherming, tillen, scherp recyclebaar materiaal, batterijen en machines: basisregels die letsel voorkomen.",
         "steps": {
           "gear": {
             "title": "Draag uw persoonlijke beschermingsmiddelen",
@@ -835,7 +835,7 @@
           },
           "batteries": {
             "title": "Houd batterijen en elektronisch afval apart",
-            "body": "Bewaar ze droog en koel, weg van ander schroot. Verbrand nooit kabels en breek batterijen of schermen niet open."
+            "body": "Bewaar ze droog en koel, weg van ander recyclebaar materiaal. Verbrand nooit kabels en breek batterijen of schermen niet open."
           },
           "machines": {
             "title": "Schakel uit voordat u een blokkade verwijdert",
@@ -978,8 +978,8 @@
         "summary": "Van foto tot geboekte inzameling in ongeveer twee minuten. Geen account nodig.",
         "steps": {
           "photo": {
-            "title": "Maak een foto van uw schroot",
-            "body": "Optioneel: voeg één foto van uw schroot toe en controleer de voorgestelde artikelen."
+            "title": "Maak een foto van uw recyclebare materiaal",
+            "body": "Optioneel: voeg één foto van uw recyclebare materiaal toe en controleer de voorgestelde artikelen."
           },
           "estimate": {
             "title": "Controleer de schatting",
@@ -1004,8 +1004,8 @@
         }
       },
       "getReady": {
-        "title": "Zet uw schroot klaar",
-        "summary": "Gesorteerd, droog schroot wordt sneller gewogen en brengt meer op.",
+        "title": "Zet uw recyclebare materiaal klaar",
+        "summary": "Gesorteerd, droog recyclebaar materiaal wordt sneller gewogen en brengt meer op.",
         "steps": {
           "paper": {
             "title": "Houd papier droog en plat",
@@ -1253,7 +1253,7 @@
           },
           "sort": {
             "title": "Registreer uw sortering",
-            "body": "Splits gemengd schroot op in de echte materialen. Bijvoorbeeld gemengd papier in kranten, karton en afval."
+            "body": "Splits gemengd recyclebaar materiaal op in de echte materialen. Bijvoorbeeld gemengd papier in kranten, karton en afval."
           },
           "show": {
             "title": "Toon uw voorraad aan sorteerterreinen",
@@ -1289,7 +1289,7 @@
       },
       "buyFromKabadiwalas": {
         "title": "Demogids: koop voorraad van kabadiwala's",
-        "summary": "Vind gesorteerd schroot in de buurt en boek een ophaling.",
+        "summary": "Vind gesorteerd recyclebaar materiaal in de buurt en boek een ophaling.",
         "steps": {
           "browse": {
             "title": "Open Kopen",
@@ -1340,7 +1340,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Demogids: koop gesorteerd schroot van terreinen",
+        "title": "Demogids: koop gesorteerd recyclebaar materiaal van terreinen",
         "summary": "Een regelmatige, ingedeelde toevoer voor uw productielijn.",
         "steps": {
           "browse": {
@@ -1501,7 +1501,7 @@
           },
           "deliver": {
             "title": "Breng het naar de winkel",
-            "body": "Breng het schroot rechtstreeks naar de winkel en draag het over."
+            "body": "Breng het recyclebare materiaal rechtstreeks naar de winkel en draag het over."
           }
         }
       },
@@ -1599,7 +1599,7 @@
       },
       "noVehicle": {
         "q": "Ik heb geen voertuig. Kan ik me aanmelden?",
-        "a": "Ja. Huishoudens kunnen schroot naar uw winkel brengen. Saathi-inzameling voor winkels zonder voertuig komt later."
+        "a": "Ja. Huishoudens kunnen recyclebaar materiaal naar uw winkel brengen. Saathi-inzameling voor winkels zonder voertuig komt later."
       },
       "autoAccept": {
         "q": "Wat is automatisch accepteren?",
@@ -1732,7 +1732,7 @@
     },
     "tutorials": {
       "bookInTwoMinutes": "Boek een inzameling in twee minuten",
-      "sortAtHome": "Schroot thuis sorteren",
+      "sortAtHome": "Recyclebaar materiaal thuis sorteren",
       "batterySafety": "Oude batterijen veilig behandelen",
       "firstDay": "Uw eerste dag op Luma.Green",
       "weighAndPayVideo": "Wegen en betalen in een minuut",
@@ -1760,7 +1760,7 @@
         "title": "Sorteer het één keer",
         "p1": "Een aparte zak voor papier, plastic en metaal.",
         "p2": "Houd alles droog en schoon.",
-        "p3": "Gesorteerd schroot wordt sneller gewogen en beter betaald."
+        "p3": "Gesorteerd recyclebaar materiaal wordt sneller gewogen en beter betaald."
       },
       "batteriesSafe": {
         "title": "Batterijen, veilig",
@@ -1787,7 +1787,7 @@
         "p3": "Toon het totaal voordat u betaalt."
       },
       "safeHandling": {
-        "title": "Schroot veilig behandelen",
+        "title": "Recyclebaar materiaal veilig behandelen",
         "p1": "Altijd handschoenen en dichte schoenen.",
         "p2": "Til met uw benen en vraag hulp boven 25 kg.",
         "p3": "Houd batterijen en elektronisch afval apart."
@@ -1892,7 +1892,7 @@
     "sendCode": "Code sturen",
     "sending": "Versturen…",
     "sendFailed": "We konden de code niet sturen. Probeer het over een minuut opnieuw.",
-    "homeTitle": "Verkoopt u schroot vanuit huis? U heeft geen account nodig.",
+    "homeTitle": "Recyclen vanuit huis? U hebt geen account nodig.",
     "homeLink": "Bekijk hoe het werkt",
     "privacy": "We gebruiken uw nummer alleen om in te loggen en updates over uw werk op Luma.Green te sturen.",
     "unavailableTitle": "Inloggen via telefoon komt binnenkort",
@@ -1934,23 +1934,23 @@
     "lead": "Vertel wat u doet. Een persoon beoordeelt elke aanvraag, meestal binnen 12–24 uur.",
     "start": "Beginnen",
     "youNeed": "U heeft nodig",
-    "homeTitle": "Verkoopt u schroot vanuit huis?",
+    "homeTitle": "Recyclen vanuit huis?",
     "homeBody": "U hoeft zich niet aan te melden. Boek een inzameling wanneer u iets wilt verkopen.",
     "homeLink": "Bekijk hoe het werkt",
     "roles": {
       "kabadiwala": {
         "title": "Kabadiwala",
-        "body": "U heeft een schrootwinkel en koopt van huishoudens in de buurt.",
+        "body": "U heeft een inzamelpunt en koopt van huishoudens in de buurt.",
         "needs": "Het adres en de openingstijden van uw winkel. Uw GST-nummer indien aanwezig."
       },
       "yard": {
         "title": "Sorteerterrein",
-        "body": "U sorteert en perst grote hoeveelheden schroot tot balen en verkoopt deze door.",
+        "body": "U sorteert en perst grote hoeveelheden recyclebaar materiaal tot balen en verkoopt deze door.",
         "needs": "Uw GST-nummer indien aanwezig, milieuvergunning als PDF en foto's van uw machines."
       },
       "recycler": {
         "title": "Recycler",
-        "body": "U maakt van schroot weer grondstoffen.",
+        "body": "U maakt van recyclebaar materiaal weer grondstoffen.",
         "needs": "Uw GST-nummer indien aanwezig, milieuvergunning als PDF en foto's van uw machines."
       },
       "manufacturer": {
@@ -2407,7 +2407,7 @@
         "detail": "{board} · {number}",
         "missing": "Geen vergunning geregistreerd",
         "note": "Een exploitatievergunning van de milieuraad van de deelstaat staat een sorteer- of recyclinginstallatie wettelijk toe. Recyclers en fabrieken vragen ernaar voordat ze kopen.",
-        "noteShop": "Een kleine winkel die alleen schroot koopt en sorteert, heeft deze meestal niet nodig. Dat verandert als u gaat persen, versnipperen of verwerken."
+        "noteShop": "Een kleine winkel die alleen recyclebaar materiaal koopt en sorteert, heeft deze meestal niet nodig. Dat verandert als u gaat persen, versnipperen of verwerken."
       },
       "scale": {
         "title": "Weegschaal geijkt",
@@ -2489,10 +2489,10 @@
     }
   },
   "sell": {
-    "metaTitle": "Verkoop uw schroot",
+    "metaTitle": "Inzameling boeken",
     "metaDescription": "Verkoop kranten, plastic, metaal en oude elektronica vanuit huis in Bengaluru. Bekijk wat winkels in de buurt betalen, boek een inzameling en ontvang geld aan de deur.",
     "eyebrow": "Voor huishoudens in Bengaluru",
-    "title": "Verkoop uw schroot vanuit huis",
+    "title": "Inzameling aan huis boeken",
     "lead": "Kies wat u heeft en een winkel in de buurt. U wordt na het wegen contant of via UPI betaald.",
     "promises": {
       "label": "Waarom hier verkopen",
@@ -2510,10 +2510,10 @@
     "steps": {
       "label": "Stappen",
       "progress": "Stap {current} van {total}",
-      "basket": "Wat",
-      "shop": "Wie",
-      "when": "Wanneer",
-      "confirm": "Boeken"
+      "basket": "Materialen",
+      "shop": "Inzamelaar",
+      "when": "Tijd",
+      "confirm": "Controleren"
     },
     "back": "Terug",
     "families": {
@@ -2531,9 +2531,9 @@
     },
     "perKg": "{price}/kg",
     "basket": {
-      "title": "Wat heeft u?",
+      "title": "Wat gaat u recyclen?",
       "lead": "Tik op wat u wilt verkopen en geef het geschatte aantal kilo's aan.",
-      "yours": "Uw schroot",
+      "yours": "Uw recyclebare materiaal",
       "empty": "Nog niets toegevoegd. Tik hierboven op een materiaal.",
       "kilos": "Kilo's {material}",
       "less": "Minder {material}",
@@ -2552,7 +2552,7 @@
     },
     "shop": {
       "title": "Wie koopt het?",
-      "lead": "Het aanbod van elke winkel voor uw schroot, op basis van eigen prijzen.",
+      "lead": "Het aanbod van elke winkel voor uw recyclebare materiaal, op basis van eigen prijzen.",
       "modeLabel": "Hoe wilt u het overdragen?",
       "pickup": "Thuis ophalen",
       "pickupHint": "De winkel komt naar u toe",
@@ -2564,7 +2564,7 @@
       "byPrice": "In plaats daarvan op prijs sorteren",
       "locationFailed": "Uw locatie kon niet worden gevonden. Winkels zijn daarom op beste prijs gesorteerd.",
       "listLabel": "Winkels",
-      "offerFor": "voor uw schroot",
+      "offerFor": "voor uw recyclebare materiaal",
       "distance": "{km} km",
       "hours": "Geopend {hours}",
       "picksUp": "Haalt op",
@@ -2612,7 +2612,7 @@
       "dropoff": "U levert in bij de winkel",
       "whenValue": "{day} · {window}, {time}",
       "youGet": "U ontvangt ongeveer {amount}",
-      "payNote": "De winkel weegt uw schroot en betaalt contant of via UPI.",
+      "payNote": "De winkel weegt uw recyclebare materiaal en betaalt contant of via UPI.",
       "phoneTitle": "Bevestig uw mobiele nummer",
       "phoneLead": "We sturen per sms een code van 6 cijfers. Uw boeking wordt bij dit nummer opgeslagen, zodat u deze op elke telefoon kunt volgen.",
       "bookingAs": "Boeken met {phone}",
@@ -2676,7 +2676,7 @@
     },
     "photo": {
       "title": "Probeer een fotoschatting",
-      "lead": "Optioneel: voeg één foto van uw schroot toe en controleer de voorgestelde artikelen.",
+      "lead": "Optioneel: voeg één foto van uw recyclebare materiaal toe en controleer de voorgestelde artikelen.",
       "privacy": "Neem geen gezichten, documenten of kentekens op. De foto wordt voor deze schatting naar een AI-aanbieder gestuurd. Luma.Green slaat hem niet op.",
       "choose": "Foto kiezen of maken",
       "selected": "Foto klaar",
@@ -2694,7 +2694,7 @@
       "failed": "De foto kon niet worden gecontroleerd. Probeer een andere of kies uw artikelen hieronder.",
       "invalid": "Gebruik een duidelijke JPEG- of PNG-foto kleiner dan 12 MB.",
       "limited": "De fotolimiet is bereikt. Kies uw artikelen hieronder of probeer het morgen opnieuw.",
-      "retake": "De foto is onduidelijk of toont geen schroot. Probeer een andere of kies uw artikelen hieronder.",
+      "retake": "De foto is onduidelijk of toont geen recyclebaar materiaal. Probeer een andere of kies uw artikelen hieronder.",
       "empty": "Geen ondersteunde materialen gevonden. Probeer een andere foto of kies uw artikelen hieronder.",
       "replace": "Andere foto kiezen"
     }
@@ -2704,7 +2704,7 @@
     "notFound": {
       "title": "We konden deze boeking niet vinden",
       "body": "Controleer de link in uw sms. Heeft u net geboekt? Wacht even en probeer het opnieuw.",
-      "sell": "Schroot verkopen"
+      "sell": "Inzameling boeken"
     },
     "reference": "Boeking {token}",
     "status": {
@@ -2719,9 +2719,9 @@
       "requested": "{mode, select, pickup {Wachten op acceptatie door {shop}} other {Wachten op bevestiging door {shop}}}",
       "requestedBody": "Uw verzoek is verstuurd. Deze pagina wordt bijgewerkt zodra de winkel antwoordt.",
       "accepted": "{mode, select, pickup {{shop} heeft uw inzameling geaccepteerd} other {{shop} verwacht u}}",
-      "acceptedBody": "Zet uw schroot klaar. Het wordt gewogen en daarna wordt u contant of via UPI betaald.",
+      "acceptedBody": "Zet uw recyclebare materiaal klaar. Het wordt gewogen en daarna wordt u contant of via UPI betaald.",
       "on_the_way": "{shop} is onderweg",
-      "on_the_wayBody": "Zet uw schroot klaar bij de deur.",
+      "on_the_wayBody": "Zet uw recyclebare materiaal klaar bij de deur.",
       "completed": "Klaar! U ontving {amount}",
       "completedBody": "Bedankt voor het recyclen. Uw punten zijn aan uw nummer toegevoegd.",
       "declined": "{shop} kon deze boeking niet aannemen",
@@ -2760,7 +2760,7 @@
     "money": {
       "title": "Uw geld en punten",
       "estimate": "U ontvangt ongeveer {amount}",
-      "estimateNote": "De winkel weegt uw schroot en betaalt contant of via UPI.",
+      "estimateNote": "De winkel weegt uw recyclebare materiaal en betaalt contant of via UPI.",
       "paid": "U ontving {amount}",
       "paidBy": "Betaald met {method, select, upi {UPI} other {contant geld}} · {date}",
       "estimateWas": "De schatting was {amount}",
@@ -2794,7 +2794,7 @@
       "otherNumber": "Ander nummer gebruiken"
     },
     "saved": "Geen account nodig. Bewaar deze link om uw boeking op elke telefoon te bekijken.",
-    "sellMore": "Meer schroot verkopen",
+    "sellMore": "Nog een inzameling boeken",
     "tryAnother": "Andere winkel proberen",
     "dispatchChanged": "Uw verzoek is naar een andere winkel in de buurt gegaan. De huidige winkel staat hieronder."
   },
@@ -2852,7 +2852,7 @@
     },
     "browse": {
       "title": "Kopen",
-      "lead": "{kind, select, yard {Gesorteerd schroot van kabadiwala's in de buurt.} recycler {Gesorteerd materiaal in balen van sorteerterreinen.} manufacturer {Gerecycled materiaal van geverifieerde recyclers.} other {Materiaal te koop in de buurt.}}",
+      "lead": "{kind, select, yard {Gesorteerd recyclebaar materiaal van kabadiwala's in de buurt.} recycler {Gesorteerd materiaal in balen van sorteerterreinen.} manufacturer {Gerecycled materiaal van geverifieerde recyclers.} other {Materiaal te koop in de buurt.}}",
       "filterLabel": "Filteren op materiaal",
       "all": "Alles",
       "count": "{count, plural, =0 {Geen loten} one {# lot te koop} other {# loten te koop}}",
@@ -3035,7 +3035,7 @@
     },
     "home": {
       "greeting": "Namasté, {name}",
-      "lead": "{kind, select, yard {Koop van kabadiwala's en verkoop gesorteerde balen aan recyclers.} recycler {Koop gesorteerd schroot van terreinen en verkoop gerecycled materiaal aan fabrikanten.} manufacturer {Koop gerecycled materiaal van geverifieerde recyclers.} other {Uw transacties in één oogopslag.}}",
+      "lead": "{kind, select, yard {Koop van kabadiwala's en verkoop gesorteerde balen aan recyclers.} recycler {Koop gesorteerd recyclebaar materiaal van terreinen en verkoop gerecycled materiaal aan fabrikanten.} manufacturer {Koop gerecycled materiaal van geverifieerde recyclers.} other {Uw transacties in één oogopslag.}}",
       "buy": "Kopen",
       "sell": "Verkopen",
       "trades": "Transacties",
@@ -3148,7 +3148,7 @@
     },
     "requests": {
       "title": "Verzoeken",
-      "lead": "Huishoudens in de buurt die hun schroot willen verkopen.",
+      "lead": "Huishoudens in de buurt die hun recyclebaar materiaal willen verkopen.",
       "tabs": {
         "new": "Nieuw",
         "today": "Vandaag",
@@ -3242,7 +3242,7 @@
       "totalWeight": "Totaalgewicht",
       "worth": "Waarde vandaag",
       "worthHint": "Tegen de marktprijzen van vandaag",
-      "scrap": "Schroot",
+      "scrap": "Ingezamelde materialen",
       "recycled": "Gerecycled materiaal",
       "atPrice": "Markt {price}/kg",
       "noPrice": "Vandaag geen marktprijs",
@@ -3303,12 +3303,12 @@
     "updateUnavailable": "App-updates zijn niet beschikbaar voor deze versie.",
     "updateFailed": "Zoeken naar updates is mislukt. Probeer het later opnieuw.",
     "locationTitle": "Uw locatie delen?",
-    "locationBody": "Sta Luma.Green toe uw locatie te gebruiken om schrootwinkels in de buurt te vinden.",
+    "locationBody": "Sta Luma.Green toe uw locatie te gebruiken om inzamelpunten in de buurt te vinden.",
     "allow": "Toestaan",
     "deny": "Niet nu",
     "browserNotice": "Deze pagina opent in uw browser. Mogelijk moet u opnieuw inloggen.",
-    "cameraPermission": "Gebruik de camera om schroot of verificatiedocumenten te fotograferen.",
-    "photoPermission": "Selecteer foto's voor schrootschattingen en verificatie.",
+    "cameraPermission": "Gebruik de camera om recyclebaar materiaal of verificatiedocumenten te fotograferen.",
+    "photoPermission": "Selecteer foto's voor recyclebaar materiaalschattingen en verificatie.",
     "cameraTitle": "Camera"
   },
   "analytics": {
@@ -3338,7 +3338,7 @@
           "third": "Bewaar uw bon"
         },
         "kabadiwala": {
-          "title": "Uw schrootwinkel",
+          "title": "Uw inzamelpunt",
           "first": "Bekijk ophaalverzoeken",
           "second": "Registreer het gewicht",
           "third": "Beheer gesorteerde voorraad"

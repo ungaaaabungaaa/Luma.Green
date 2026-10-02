@@ -24,12 +24,12 @@ export function FormHeader({
   step?: string;
 }) {
   return (
-    <div className="flex flex-col gap-3 border-b border-border pb-6">
-      <p className="text-sm font-medium text-primary">
+    <div className="flex flex-col gap-4 border-b border-border pb-7">
+      <p className="border-s-2 border-primary ps-3 text-sm font-medium text-primary">
         {eyebrow}
         {step ? <span className="text-muted-foreground"> · {step}</span> : null}
       </p>
-      <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
+      <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
         {title}
       </h1>
       <SaveIndicator state={saveState} />

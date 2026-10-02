@@ -35,12 +35,12 @@ export function ListingCard({
   const name = format.material(listing.material.names, listing.material.code);
 
   return (
-    <article className="flex h-full flex-col gap-3 border-b border-border py-5">
-      <div className="flex flex-wrap items-start gap-3">
+    <article className="flex h-full flex-col gap-4 border-b border-border py-6">
+      <div className="flex flex-wrap items-start gap-4">
         <MaterialIcon family={listing.material.family} />
         <div className="flex min-w-32 flex-1 flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
-            <h3 className="font-semibold">{name}</h3>
+            <h3 className="font-display text-lg font-semibold">{name}</h3>
             {isRecycled ? (
               <StatusPill tone="good">{t("recycled")}</StatusPill>
             ) : null}
@@ -64,7 +64,7 @@ export function ListingCard({
       </div>
 
       <div className="grid items-end gap-4 sm:grid-cols-[minmax(0,1fr)_auto]">
-        <dl className="grid grid-cols-2 gap-4 text-sm sm:max-w-md">
+        <dl className="grid grid-cols-2 gap-6 border-s border-border ps-4 text-sm sm:max-w-md">
           <div className="flex flex-col gap-0.5">
             <dt className="text-muted-foreground">{t("listing.available")}</dt>
             <dd className="font-medium tabular-nums">

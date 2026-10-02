@@ -93,12 +93,12 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
   return (
     <section
       aria-labelledby="track-title"
-      className="flex flex-col gap-6 border-b border-border py-6"
+      className="flex flex-col gap-8 border-b border-border py-6 sm:py-8"
     >
       <div className="flex items-start gap-4">
         <span
           className={cn(
-            "flex size-12 shrink-0 items-center justify-center rounded-lg",
+            "flex size-11 shrink-0 items-center justify-center rounded-lg",
             tone,
           )}
         >
@@ -110,7 +110,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
           </p>
           <h1
             id="track-title"
-            className="font-display text-2xl leading-tight font-semibold tracking-tight text-balance wrap-anywhere"
+            className="font-display text-3xl leading-tight font-semibold tracking-tight text-balance wrap-anywhere"
           >
             {t(`hero.${booking.status}`, {
               shop,

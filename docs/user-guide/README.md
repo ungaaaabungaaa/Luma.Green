@@ -71,7 +71,8 @@ before the next build. This prevents later builds from losing your changes.
    First build the local app with the approved `glorious-rooster-470` development
    endpoint. The script uses a fresh anonymous browser, permits that backend
    only, opens the public board and one history dialog, and checks for 26 material
-   rows and 30 history points. It writes `price-captures.json`. The guide labels
+   rows, keyboard navigation and matching chart/table sample counts within the
+   rolling 30-day window. It records the available count in `price-captures.json`. The guide labels
    these as connected development demo captures, not hosted production UI or
    verified market quotes. It does not submit forms or change data. Keep the
    disconnected screenshots as separate loading/unavailable-state evidence.
@@ -145,12 +146,13 @@ before the next build. This prevents later builds from losing your changes.
 
 ## Google Docs copy
 
-Current publication state is recorded in [cloud.json](cloud.json). The combined
-public detail, account security, failure recovery, notifications and industry API
-guide is **published** to the existing native
-[Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY).
-The reviewed source is commit `593dfa2`, merged to main by PR29 at `53dae4d`.
-Its document ID, folder and sharing settings are unchanged.
+Current publication state is recorded in [cloud.json](cloud.json). The existing
+native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
+is verified through reviewed source commit `593dfa2`, merged by PR29 at `53dae4d`.
+Its document ID, folder and sharing settings are unchanged. The founder approved
+the recycling design release and the update of this same document. Publication
+of the approved revision is in progress; retain the previous verified record
+until native readback and rendered export checks pass.
 
 The native copy has 40 chapters, six tables, 659 body paragraphs and 99 image
 placements. Readback checked every paragraph, table cell, image source URL,

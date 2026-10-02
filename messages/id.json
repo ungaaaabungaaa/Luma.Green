@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Bergerak Menuju Esok yang Lebih Bersih",
-    "description": "Luma.Green menyatukan rantai barang bekas India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, penjemputan yang ditimbang, serta catatan setiap serah terima."
+    "description": "Luma.Green menyatukan jaringan daur ulang India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, penjemputan yang ditimbang, serta catatan setiap serah terima."
   },
   "theme": {
     "label": "Tampilan",
@@ -34,10 +34,10 @@
     "prices": "Harga",
     "help": "Bantuan",
     "join": "Gabung",
-    "sellScrap": "Jual barang bekas"
+    "sellScrap": "Pesan penjemputan"
   },
   "footer": {
-    "about": "Rantai barang bekas India dalam satu platform, dari rumah hingga pabrik. Setiap serah terima ditimbang, dihargai, dan dicatat.",
+    "about": "Jaringan daur ulang India dalam satu platform, dari rumah hingga pabrik. Setiap serah terima ditimbang, dihargai, dan dicatat.",
     "navLabel": "Bagian bawah",
     "useHeading": "Gunakan Luma.Green",
     "learnHeading": "Pelajari lebih lanjut",
@@ -48,7 +48,7 @@
   "loop": {
     "sell": {
       "title": "Jual",
-      "summary": "Rumah tangga menjual barang bekas dari rumah dengan harga adil, ditimbang dan dibayar di depan pintu."
+      "summary": "Rumah tangga menjual bahan daur ulang dari rumah dengan harga adil, ditimbang dan dibayar di depan pintu."
     },
     "trade": {
       "title": "Dagang",
@@ -91,11 +91,11 @@
       "title": "Harga gagal dimuat",
       "body": "Periksa koneksi Anda dan coba lagi."
     },
-    "metaTitle": "Harga barang bekas di Bengaluru hari ini",
-    "metaDescription": "Harga barang bekas di Bengaluru hari ini per kg: kertas, plastik, logam, kaca, dan limbah elektronik, disertai perubahan mingguan, grafik 30 hari, dan pembayaran minimum toko.",
+    "metaTitle": "Harga bahan daur ulang di Bengaluru hari ini",
+    "metaDescription": "Harga bahan daur ulang di Bengaluru hari ini per kg: kertas, plastik, logam, kaca, dan limbah elektronik, disertai perubahan mingguan, grafik 30 hari, dan pembayaran minimum toko.",
     "eyebrow": "Bengaluru",
-    "title": "Harga barang bekas hari ini",
-    "lead": "Harga jual barang bekas hari ini per kilo. Toko menentukan harga sendiri, tetapi tidak di bawah batas minimum. Ketuk bahan untuk melihat riwayat 30 hari.",
+    "title": "Harga bahan",
+    "lead": "Harga jual bahan daur ulang hari ini per kilo. Toko menentukan harga sendiri, tetapi tidak di bawah batas minimum. Ketuk bahan untuk melihat riwayat 30 hari.",
     "demoNote": "Contoh harga prototipe, bukan harga pasar langsung.",
     "date": "Harga untuk {date}",
     "floorHelp": "Batas minimum: harga terendah per kilo yang boleh dibayarkan toko terverifikasi.",
@@ -145,9 +145,9 @@
       "body": "Harga hari ini tampil di sini setelah diterbitkan."
     },
     "sellCta": {
-      "title": "Punya barang bekas di rumah?",
+      "title": "Punya bahan daur ulang di rumah?",
       "body": "Pesan penjemputan dan terima pembayaran di depan pintu.",
-      "action": "Jual barang bekas Anda"
+      "action": "Pesan penjemputan"
     }
   },
   "standards": {
@@ -161,12 +161,12 @@
       },
       "title": "Satu kode untuk setiap bahan",
       "nav": "Kode bahan",
-      "body": "Barang bekas yang sama memiliki banyak nama lokal. Kode terbuka memberi setiap bahan satu nama bersama, sehingga sekilo koran berarti sama di toko, tempat pemilahan, dan pabrik.",
+      "body": "Bahan daur ulang yang sama memiliki banyak nama lokal. Kode terbuka memberi setiap bahan satu nama bersama, sehingga sekilo koran berarti sama di toko, tempat pemilahan, dan pabrik.",
       "caption": "Kode bahan Luma.Green",
       "count": "{count, plural, one {# bahan} other {# bahan}}",
       "download": "Unduh kode (CSV)",
       "stages": {
-        "scrap": "Barang bekas",
+        "scrap": "Bahan terkumpul",
         "recycled": "Hasil daur ulang"
       },
       "unavailable": "Daftar kode belum tersedia. Periksa kembali nanti.",
@@ -198,10 +198,10 @@
       "body": "Kode dan aturan bersifat terbuka dan gratis. Gunakan di toko, tempat pemilahan, atau pabrik Anda, di dalam maupun di luar Luma.Green, dan sampaikan cara memperbaikinya."
     },
     "metaTitle": "Standar Luma.Green",
-    "metaDescription": "Direncanakan: Kode bahan terbuka dan aturan sederhana untuk perdagangan barang bekas yang adil di India: mutu, penimbangan, tanda terima, verifikasi, dan rekening penampungan. Bebas diterapkan siapa pun.",
+    "metaDescription": "Direncanakan: Kode bahan terbuka dan aturan sederhana untuk perdagangan bahan daur ulang yang adil di India: mutu, penimbangan, tanda terima, verifikasi, dan rekening penampungan. Bebas diterapkan siapa pun.",
     "eyebrow": "Standar terbuka",
     "title": "Standar Luma.Green",
-    "lead": "Aturan sederhana dan terbuka untuk perdagangan barang bekas yang adil: satu kode tiap bahan, mutu jelas, penimbangan jujur, dan catatan setiap serah terima. Siapa pun di industri ini dapat menerapkannya.",
+    "lead": "Aturan sederhana dan terbuka untuk perdagangan bahan daur ulang yang adil: satu kode tiap bahan, mutu jelas, penimbangan jujur, dan catatan setiap serah terima. Siapa pun di industri ini dapat menerapkannya.",
     "onThisPage": "Di halaman ini",
     "grading": {
       "title": "Mutu: kering, terpilah, bersih",
@@ -209,7 +209,7 @@
       "body": "Harga adil membutuhkan mutu yang jelas. Tiga pemeriksaan dilakukan sebelum menimbang.",
       "dry": {
         "title": "Kering",
-        "body": "Air bukan barang bekas. Kertas dan karton basah dikeringkan sebelum ditimbang."
+        "body": "Air bukan bahan daur ulang. Kertas dan karton basah dikeringkan sebelum ditimbang."
       },
       "sorted": {
         "title": "Terpilah",
@@ -223,7 +223,7 @@
     "weighing": {
       "title": "Penimbangan adil",
       "nav": "Penimbangan",
-      "body": "Sebagian besar perselisihan barang bekas menyangkut berat. Aturan ini menjaga kejujuran timbangan.",
+      "body": "Sebagian besar perselisihan bahan daur ulang menyangkut berat. Aturan ini menjaga kejujuran timbangan.",
       "stamped": {
         "title": "Timbangan bertanda tera",
         "body": "Timbang hanya dengan timbangan yang diverifikasi dan ditera oleh departemen Metrologi Legal."
@@ -256,9 +256,9 @@
   },
   "howItWorks": {
     "metaTitle": "Cara kerja",
-    "metaDescription": "Direncanakan: Alur barang bekas di Luma.Green: dijual dari rumah dengan harga adil, diperdagangkan sepanjang rantai dengan rekening penampungan, dan dicatat setiap serah terima.",
+    "metaDescription": "Direncanakan: Alur bahan daur ulang di Luma.Green: dijual dari rumah dengan harga adil, diperdagangkan sepanjang rantai dengan rekening penampungan, dan dicatat setiap serah terima.",
     "title": "Cara kerja Luma.Green",
-    "lead": "Barang bekas berpindah tangan empat kali sebelum menjadi sesuatu yang baru. Berikut proses di setiap tahap dan hal yang dicatat Luma.Green.",
+    "lead": "Bahan berpindah dari rumah ke toko pengumpulan, tempat pemilahan, dan pendaur ulang sebelum menjadi sesuatu yang baru. Luma.Green mencatat setiap serah terima.",
     "stepLabel": "Langkah {number}",
     "sell": {
       "body": "Rumah tangga memilih bahan yang dimiliki, melihat penawaran toko sekitar, dan memesan penjemputan atau pengantaran. Pengepul menimbang tiap bahan dan membayar tunai atau UPI; kedua pihak mendapat tanda terima.",
@@ -483,7 +483,7 @@
           },
           "batteries": {
             "title": "Pisahkan baterai dan limbah elektronik",
-            "body": "Simpan kering dan sejuk, jauh dari barang bekas lain. Jangan bakar kabel atau membongkar baterai maupun layar."
+            "body": "Simpan kering dan sejuk, jauh dari bahan daur ulang lain. Jangan bakar kabel atau membongkar baterai maupun layar."
           },
           "machines": {
             "title": "Matikan sebelum mengatasi kemacetan",
@@ -600,8 +600,8 @@
         "summary": "Dari foto hingga penjemputan dipesan dalam sekitar dua menit. Tidak perlu akun.",
         "steps": {
           "photo": {
-            "title": "Ambil foto barang bekas",
-            "body": "Opsional: tambahkan satu foto barang bekas, lalu periksa saran barangnya."
+            "title": "Ambil foto bahan daur ulang",
+            "body": "Opsional: tambahkan satu foto bahan daur ulang, lalu periksa saran barangnya."
           },
           "estimate": {
             "title": "Periksa perkiraan",
@@ -626,8 +626,8 @@
         }
       },
       "getReady": {
-        "title": "Siapkan barang bekas",
-        "summary": "Barang bekas terpilah dan kering lebih cepat ditimbang serta bernilai lebih tinggi.",
+        "title": "Siapkan bahan daur ulang",
+        "summary": "Bahan daur ulang terpilah dan kering lebih cepat ditimbang serta bernilai lebih tinggi.",
         "steps": {
           "paper": {
             "title": "Jaga kertas kering dan rata",
@@ -885,7 +885,7 @@
       },
       "buyFromKabadiwalas": {
         "title": "Panduan demo: Membeli stok dari pengepul",
-        "summary": "Cari barang bekas terpilah di sekitar dan pesan pengambilan.",
+        "summary": "Cari bahan daur ulang terpilah di sekitar dan pesan pengambilan.",
         "steps": {
           "browse": {
             "title": "Buka Beli",
@@ -936,7 +936,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Panduan demo: Membeli barang bekas terpilah dari tempat pemilahan",
+        "title": "Panduan demo: Membeli bahan daur ulang terpilah dari tempat pemilahan",
         "summary": "Pasokan rutin bermutu untuk lini produksi.",
         "steps": {
           "browse": {
@@ -1071,7 +1071,7 @@
           },
           "deliver": {
             "title": "Bawa ke toko",
-            "body": "Bawa barang bekas langsung ke toko dan serahkan."
+            "body": "Bawa bahan daur ulang langsung ke toko dan serahkan."
           }
         }
       },
@@ -1101,13 +1101,13 @@
     "roles": {
       "household": {
         "name": "Rumah tangga",
-        "who": "Menjual barang bekas dari rumah",
+        "who": "Menjual bahan daur ulang dari rumah",
         "title": "Bantuan rumah tangga",
         "lead": "Pesan penjemputan, dapatkan penimbangan adil, dan terima pembayaran di depan pintu. Tidak perlu akun."
       },
       "kabadiwala": {
         "name": "Pengepul",
-        "who": "Mengelola toko barang bekas",
+        "who": "Mengelola toko pengumpulan",
         "title": "Bantuan pengepul",
         "lead": "Terima penjemputan, timbang dan bayar dalam satu menit, tentukan harga, lalu jual ke tempat pemilahan."
       },
@@ -1119,9 +1119,9 @@
       },
       "recycler": {
         "name": "Pendaur ulang",
-        "who": "Mengubah barang bekas menjadi bahan baku",
+        "who": "Mengubah bahan daur ulang menjadi bahan baku",
         "title": "Bantuan pendaur ulang",
-        "lead": "Beli barang bekas bermutu dari tempat pemilahan, jual hasil ke pabrik, dan jaga catatan EPR tetap rapi."
+        "lead": "Beli bahan daur ulang bermutu dari tempat pemilahan, jual hasil ke pabrik, dan jaga catatan EPR tetap rapi."
       },
       "manufacturer": {
         "name": "Produsen",
@@ -1408,7 +1408,7 @@
     },
     "tutorials": {
       "bookInTwoMinutes": "Pesan penjemputan dalam dua menit",
-      "sortAtHome": "Memilah barang bekas di rumah",
+      "sortAtHome": "Memilah bahan daur ulang di rumah",
       "batterySafety": "Menangani baterai lama dengan aman",
       "firstDay": "Hari pertama di Luma.Green",
       "weighAndPayVideo": "Timbang dan bayar dalam satu menit",
@@ -1436,7 +1436,7 @@
         "title": "Pilah sekali",
         "p1": "Gunakan kantong terpisah untuk kertas, plastik, dan logam.",
         "p2": "Jaga semuanya kering dan bersih.",
-        "p3": "Barang bekas terpilah lebih cepat ditimbang dan dihargai lebih baik."
+        "p3": "Bahan daur ulang terpilah lebih cepat ditimbang dan dihargai lebih baik."
       },
       "batteriesSafe": {
         "title": "Baterai yang aman",
@@ -1463,7 +1463,7 @@
         "p3": "Tampilkan total sebelum membayar."
       },
       "safeHandling": {
-        "title": "Menangani barang bekas dengan aman",
+        "title": "Menangani bahan daur ulang dengan aman",
         "p1": "Selalu gunakan sarung tangan dan sepatu tertutup.",
         "p2": "Angkat dengan kekuatan kaki, dan minta bantuan untuk lebih dari 25 kg.",
         "p3": "Pisahkan baterai dan limbah elektronik."
@@ -1577,7 +1577,7 @@
   },
   "sell": {
     "retry": "Coba lagi",
-    "metaTitle": "Jual barang bekas Anda",
+    "metaTitle": "Pesan penjemputan",
     "families": {
       "paper": "Kertas",
       "plastic": "Plastik",
@@ -1673,7 +1673,7 @@
       "byPrice": "Urutkan berdasarkan harga",
       "locationFailed": "Lokasi Anda gagal diperoleh, jadi toko diurutkan menurut harga terbaik.",
       "listLabel": "Toko",
-      "offerFor": "untuk barang bekas Anda",
+      "offerFor": "untuk bahan daur ulang Anda",
       "picksUp": "Melayani penjemputan",
       "dropOnly": "Hanya pengantaran",
       "best": "Harga terbaik",
@@ -1685,18 +1685,18 @@
       "pickOne": "Pilih toko untuk melanjutkan."
     },
     "steps": {
-      "basket": "Apa",
-      "shop": "Siapa",
-      "when": "Kapan",
+      "basket": "Bahan",
+      "shop": "Mitra",
+      "when": "Waktu",
       "label": "Langkah",
       "progress": "Langkah {current} dari {total}",
-      "confirm": "Pesan"
+      "confirm": "Tinjau"
     },
     "basket": {
       "points": "+{points, plural, one {# poin daur ulang} other {# poin daur ulang}}",
-      "title": "Apa yang Anda miliki?",
+      "title": "Apa yang Anda daur ulang?",
       "lead": "Ketuk barang yang ingin dijual, lalu tentukan perkiraan kilogramnya.",
-      "yours": "Barang bekas Anda",
+      "yours": "Bahan daur ulang Anda",
       "empty": "Belum ada yang ditambahkan. Ketuk bahan di atas.",
       "kilos": "Kilogram {material}",
       "less": "Kurangi {material}",
@@ -1721,7 +1721,7 @@
       "dropoff": "Anda mengantar ke toko",
       "whenValue": "{day} · {window}, {time}",
       "youGet": "Anda menerima sekitar {amount}",
-      "payNote": "Toko menimbang barang bekas dan membayar tunai atau melalui UPI.",
+      "payNote": "Toko menimbang bahan daur ulang dan membayar tunai atau melalui UPI.",
       "notYou": "Gunakan nomor lain",
       "title": "Periksa dan pesan",
       "change": "Ubah",
@@ -1739,7 +1739,7 @@
     },
     "metaDescription": "Jual koran, plastik, logam, dan elektronik lama dari rumah di Bengaluru. Lihat harga toko sekitar, pesan penjemputan, dan terima pembayaran di depan pintu.",
     "eyebrow": "Untuk rumah di Bengaluru",
-    "title": "Jual barang bekas dari rumah",
+    "title": "Pesan penjemputan dari rumah",
     "lead": "Pilih barang, pilih toko terdekat, dan terima pembayaran tunai atau UPI setelah ditimbang.",
     "promises": {
       "label": "Mengapa menjual di sini",
@@ -1763,7 +1763,7 @@
     },
     "photo": {
       "title": "Coba perkiraan dari foto",
-      "lead": "Opsional: tambahkan satu foto barang bekas, lalu periksa saran barangnya.",
+      "lead": "Opsional: tambahkan satu foto bahan daur ulang, lalu periksa saran barangnya.",
       "privacy": "Jangan sertakan wajah, dokumen, atau pelat nomor. Foto dikirim ke penyedia AI untuk perkiraan ini. Luma.Green tidak menyimpannya.",
       "choose": "Pilih atau ambil foto",
       "selected": "Foto siap",
@@ -1781,14 +1781,14 @@
       "failed": "Foto gagal diperiksa. Coba foto lain atau pilih barang di bawah.",
       "invalid": "Gunakan foto JPEG atau PNG yang jelas, kurang dari 12 MB.",
       "limited": "Batas foto tercapai. Pilih barang di bawah atau coba lagi besok.",
-      "retake": "Foto kurang jelas atau tidak menampilkan barang bekas. Coba foto lain atau pilih barang di bawah.",
+      "retake": "Foto kurang jelas atau tidak menampilkan bahan daur ulang. Coba foto lain atau pilih barang di bawah.",
       "empty": "Tidak ditemukan bahan yang didukung. Coba foto lain atau pilih barang di bawah.",
       "replace": "Pilih foto lain"
     }
   },
   "track": {
     "notFound": {
-      "sell": "Jual barang bekas",
+      "sell": "Pesan penjemputan",
       "title": "Pemesanan ini tidak ditemukan",
       "body": "Periksa tautan dalam SMS. Jika baru memesan, tunggu sebentar lalu coba lagi."
     },
@@ -1832,9 +1832,9 @@
       "requested": "{mode, select, pickup {Menunggu {shop} menerima} other {Menunggu {shop} mengonfirmasi}}",
       "requestedBody": "Permintaan Anda telah dikirim. Halaman ini diperbarui segera setelah mereka menjawab.",
       "accepted": "{mode, select, pickup {{shop} menerima penjemputan Anda} other {{shop} menunggu kedatangan Anda}}",
-      "acceptedBody": "Siapkan barang bekas. Barang ditimbang, lalu Anda dibayar tunai atau melalui UPI.",
+      "acceptedBody": "Siapkan bahan daur ulang. Barang ditimbang, lalu Anda dibayar tunai atau melalui UPI.",
       "on_the_way": "{shop} dalam perjalanan",
-      "on_the_wayBody": "Siapkan barang bekas di dekat pintu.",
+      "on_the_wayBody": "Siapkan bahan daur ulang di dekat pintu.",
       "completed": "Selesai! Anda menerima {amount}",
       "completedBody": "Terima kasih telah mendaur ulang. Poin ditambahkan ke nomor Anda.",
       "declined": "{shop} tidak dapat mengambil pemesanan ini",
@@ -1864,7 +1864,7 @@
     "money": {
       "title": "Uang dan poin Anda",
       "estimate": "Anda menerima sekitar {amount}",
-      "estimateNote": "Toko menimbang barang bekas dan membayar tunai atau melalui UPI.",
+      "estimateNote": "Toko menimbang bahan daur ulang dan membayar tunai atau melalui UPI.",
       "paid": "Anda menerima {amount}",
       "paidBy": "Dibayar melalui {method, select, upi {UPI} other {tunai}} · {date}",
       "estimateWas": "Perkiraan sebelumnya {amount}",
@@ -1881,7 +1881,7 @@
       "cancelled": "Dibatalkan"
     },
     "saved": "Tidak perlu akun. Simpan tautan ini untuk memeriksa pemesanan dari ponsel mana pun.",
-    "sellMore": "Jual barang bekas lagi",
+    "sellMore": "Pesan penjemputan lagi",
     "tryAnother": "Coba toko lain",
     "dispatchChanged": "Permintaan Anda dialihkan ke toko terdekat lainnya. Toko saat ini ditampilkan di bawah."
   },
@@ -1968,7 +1968,7 @@
       "buy": "Beli",
       "trades": "Transaksi",
       "greeting": "Salam, {name}",
-      "lead": "{kind, select, yard {Beli dari pengepul, jual bal terpilah ke pendaur ulang.} recycler {Beli barang bekas terpilah dari tempat pemilahan, jual bahan daur ulang ke produsen.} manufacturer {Beli bahan daur ulang dari pendaur ulang terverifikasi.} other {Sekilas transaksi Anda.}}",
+      "lead": "{kind, select, yard {Beli dari pengepul, jual bal terpilah ke pendaur ulang.} recycler {Beli bahan daur ulang terpilah dari tempat pemilahan, jual bahan daur ulang ke produsen.} manufacturer {Beli bahan daur ulang dari pendaur ulang terverifikasi.} other {Sekilas transaksi Anda.}}",
       "statsTitle": "Sekilas",
       "stats": {
         "escrow": "Di rekening penampungan",
@@ -2126,7 +2126,7 @@
     },
     "browse": {
       "title": "Beli",
-      "lead": "{kind, select, yard {Barang bekas terpilah dari pengepul sekitar.} recycler {Bahan terpilah dan dibal dari tempat pemilahan.} manufacturer {Bahan daur ulang dari pendaur ulang terverifikasi.} other {Bahan yang dijual di sekitar Anda.}}",
+      "lead": "{kind, select, yard {Bahan daur ulang terpilah dari pengepul sekitar.} recycler {Bahan terpilah dan dibal dari tempat pemilahan.} manufacturer {Bahan daur ulang dari pendaur ulang terverifikasi.} other {Bahan yang dijual di sekitar Anda.}}",
       "filterLabel": "Saring menurut bahan",
       "all": "Semua",
       "count": "{count, plural, =0 {Tidak ada lot} one {# lot dijual} other {# lot dijual}}",
@@ -2208,7 +2208,7 @@
         "body": "Tindakan ini tidak dapat dibatalkan."
       },
       "decline": "Tolak",
-      "lead": "Rumah tangga sekitar yang ingin menjual barang bekas.",
+      "lead": "Rumah tangga sekitar yang ingin menjual bahan daur ulang.",
       "empty": {
         "newTitle": "Belum ada permintaan baru",
         "newBody": "Pemesanan penjemputan rumah tangga kepada Anda muncul di sini.",
@@ -2255,7 +2255,7 @@
     },
     "stock": {
       "title": "Persediaan",
-      "scrap": "Barang bekas",
+      "scrap": "Bahan terkumpul",
       "buy": "Beli bahan",
       "lead": "Stok Anda sekarang dan nilainya hari ini.",
       "totalWeight": "Berat total",
@@ -2387,14 +2387,14 @@
     "unavailable": "Peramban gagal menyimpan pilihan ini. Analitik akan tetap nonaktif."
   },
   "home": {
-    "metaDescription": "Luma.Green menyatukan rantai barang bekas India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, usaha terverifikasi, dan tanda terima di setiap tahap.",
+    "metaDescription": "Luma.Green menyatukan jaringan daur ulang India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, usaha terverifikasi, dan tanda terima di setiap tahap.",
     "hero": {
       "eyebrow": "Dimulai di Bengaluru",
-      "title": "Rantai barang bekas India dalam satu platform",
-      "lead": "Jual barang bekas dari rumah dengan harga adil. Dagangkan sepanjang rantai bersama usaha terverifikasi. Setiap serah terima ditimbang, dihargai, dan dicatat.",
-      "sell": "Jual barang bekas Anda",
-      "join": "Gabung sebagai usaha",
-      "prices": "Lihat harga hari ini"
+      "title": "Beri bahan Anda awal yang baru.",
+      "lead": "Pesan penjemputan kertas, plastik, logam, dan lainnya. Bandingkan penawaran dan simpan catatan yang jelas.",
+      "sell": "Pesan penjemputan",
+      "join": "Untuk usaha",
+      "prices": "Lihat harga bahan"
     },
     "teaser": {
       "title": "Harga hari ini",
@@ -2406,8 +2406,8 @@
       "error": "Harga belum dapat dimuat."
     },
     "chain": {
-      "heading": "Alur barang bekas",
-      "intro": "Barang bekas berpindah tangan empat kali sebelum menjadi sesuatu yang baru. Pemilahannya makin baik di setiap tahap, dan Luma.Green mencatat setiap serah terima.",
+      "heading": "Alur bahan daur ulang",
+      "intro": "Bahan berpindah dari rumah ke toko pengumpulan, tempat pemilahan, dan pendaur ulang sebelum menjadi sesuatu yang baru. Luma.Green mencatat setiap serah terima.",
       "steps": {
         "household": {
           "name": "Rumah tangga",
@@ -2435,13 +2435,13 @@
     },
     "roles": {
       "heading": "Manfaat bagi setiap pelaku dalam rantai",
-      "intro": "Enam kelompok menjaga barang bekas terus bergerak. Inilah manfaat Luma.Green bagi masing-masing kelompok.",
+      "intro": "Enam kelompok menjaga bahan daur ulang terus bergerak. Inilah manfaat Luma.Green bagi masing-masing kelompok.",
       "household": {
         "title": "Rumah tangga",
-        "one": "Lihat nilai barang bekas sebelum memesan.",
+        "one": "Lihat nilai bahan daur ulang sebelum memesan.",
         "two": "Dijemput di depan pintu atau diantar ke toko.",
         "three": "Dibayar tunai atau melalui UPI, disertai tanda terima.",
-        "cta": "Jual barang bekas Anda"
+        "cta": "Pesan penjemputan"
       },
       "kabadiwala": {
         "title": "Pengepul",
@@ -2481,7 +2481,7 @@
     },
     "trust": {
       "heading": "Dibangun di atas kepercayaan",
-      "intro": "Perdagangan barang bekas selama ini mengandalkan uang tunai dan perkiraan. Aturan ini mengubahnya.",
+      "intro": "Harga yang jelas, berat yang ditimbang, dan catatan membantu semua pihak memeriksa penjemputan.",
       "verified": {
         "title": "Usaha terverifikasi",
         "body": "Petugas memeriksa setiap usaha dan Saathi sebelum mereka dapat berdagang."
@@ -2505,7 +2505,7 @@
     },
     "whyNow": {
       "heading": "Mengapa sekarang",
-      "intro": "Tiga perubahan menjadikan saat ini tepat untuk mencatat rantai barang bekas India.",
+      "intro": "Tiga perubahan menjadikan saat ini tepat untuk mencatat jaringan daur ulang India.",
       "epr": {
         "title": "Aturan EPR",
         "body": "Aturan Tanggung Jawab Produsen yang Diperluas untuk kemasan plastik, limbah elektronik, dan baterai meminta produsen membuktikan bahwa bahan benar-benar dikumpulkan dan didaur ulang. Bukti itu harus dimulai dari serah terima pertama."
@@ -2522,13 +2522,13 @@
     "closing": {
       "title": "Mulai dari yang Anda miliki",
       "body": "Sekantong koran lama atau satu truk bal: semuanya punya tempat di Luma.Green.",
-      "sell": "Jual barang bekas Anda",
+      "sell": "Pesan penjemputan",
       "join": "Gabung sebagai usaha"
     },
     "expansion": {
-      "materialsTitle": "Mulai dari bahan yang sudah Anda miliki",
+      "materialsTitle": "Apa yang ingin Anda daur ulang?",
       "pickupTitle": "Penjemputan, langkah demi langkah",
-      "shopTitle": "Toko barang bekas Anda, terhubung",
+      "shopTitle": "Toko pengumpulan Anda, terhubung",
       "recordsTitle": "Catatan yang mengikuti bahan",
       "paymentTitle": "Berat jelas. Pembayaran jelas.",
       "questionsTitle": "Sebelum memulai"
@@ -2710,11 +2710,11 @@
       "body": "Ambil pekerjaan penjemputan, pemilahan, dan sif berbayar di dekat rumah, lalu lihat penghasilan Anda."
     },
     "metaTitle": "Untuk siapa",
-    "metaDescription": "Luma.Green dibuat untuk rumah tangga, pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi: semua yang memindahkan barang bekas dari rumah ke pabrik.",
+    "metaDescription": "Luma.Green dibuat untuk rumah tangga, pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi: semua yang memindahkan bahan daur ulang dari rumah ke pabrik.",
     "title": "Untuk siapa Luma.Green dibuat",
-    "lead": "Semua yang memindahkan barang bekas dari rumah ke pabrik, serta orang yang bekerja di antaranya.",
+    "lead": "Semua yang memindahkan bahan daur ulang dari rumah ke pabrik, serta orang yang bekerja di antaranya.",
     "householdHeading": "Serta setiap rumah tangga",
-    "householdBody": "Siapa pun dapat menjual barang bekas dari rumah tanpa akun: pilih bahan, lihat penawaran tiap toko, lalu terima pembayaran tunai atau UPI dengan tanda terima."
+    "householdBody": "Siapa pun dapat menjual bahan daur ulang dari rumah tanpa akun: pilih bahan, lihat penawaran tiap toko, lalu terima pembayaran tunai atau UPI dengan tanda terima."
   },
   "join": {
     "consent": {
@@ -2794,17 +2794,17 @@
     "roles": {
       "kabadiwala": {
         "title": "Pengepul",
-        "body": "Anda mengelola toko barang bekas dan membeli dari rumah sekitar.",
+        "body": "Anda mengelola toko pengumpulan dan membeli dari rumah sekitar.",
         "needs": "Alamat dan jam buka toko. Nomor GST jika ada."
       },
       "yard": {
         "title": "Tempat pemilahan",
-        "body": "Anda memilah dan mengepres barang bekas dalam jumlah besar, lalu menjualnya kembali.",
+        "body": "Anda memilah dan mengepres bahan daur ulang dalam jumlah besar, lalu menjualnya kembali.",
         "needs": "Nomor GST jika ada, izin pengendalian pencemaran (PDF), dan foto mesin Anda."
       },
       "recycler": {
         "title": "Pendaur ulang",
-        "body": "Anda mengolah barang bekas menjadi bahan baku kembali.",
+        "body": "Anda mengolah bahan daur ulang menjadi bahan baku kembali.",
         "needs": "Nomor GST jika ada, izin pengendalian pencemaran (PDF), dan foto mesin Anda."
       },
       "manufacturer": {
@@ -2945,7 +2945,7 @@
     "lead": "Ceritakan pekerjaan Anda. Petugas memeriksa setiap pendaftaran, biasanya dalam 12–24 jam.",
     "start": "Mulai",
     "youNeed": "Yang diperlukan",
-    "homeTitle": "Menjual barang bekas dari rumah?",
+    "homeTitle": "Mendaur ulang dari rumah?",
     "homeBody": "Anda tidak perlu bergabung. Pesan penjemputan saat ada barang yang ingin dijual.",
     "documents": {
       "title": "Dokumen dan foto",
@@ -3218,7 +3218,7 @@
         "detail": "{board} · {number}",
         "missing": "Belum ada izin tersimpan",
         "note": "Izin operasi dari badan pengendalian pencemaran negara bagian memungkinkan unit pemilahan atau daur ulang beroperasi secara legal. Pendaur ulang dan pabrik memintanya sebelum membeli.",
-        "noteShop": "Toko kecil yang hanya membeli dan memilah barang bekas biasanya tidak memerlukannya. Izin diperlukan jika mulai mengepres, mencacah, atau mengolah bahan."
+        "noteShop": "Toko kecil yang hanya membeli dan memilah bahan daur ulang biasanya tidak memerlukannya. Izin diperlukan jika mulai mengepres, mencacah, atau mengolah bahan."
       },
       "scale": {
         "title": "Timbangan ditera",
@@ -3264,7 +3264,7 @@
     "sendCode": "Kirim kode",
     "sending": "Mengirim…",
     "sendFailed": "Kode gagal dikirim. Coba lagi dalam satu menit.",
-    "homeTitle": "Menjual barang bekas dari rumah? Anda tidak memerlukan akun.",
+    "homeTitle": "Mendaur ulang dari rumah? Tidak perlu akun.",
     "homeLink": "Lihat cara kerjanya",
     "privacy": "Kami hanya menggunakan nomor Anda untuk masuk dan mengirim kabar tentang pekerjaan Anda di Luma.Green.",
     "unavailableTitle": "Masuk melalui ponsel segera tersedia",
@@ -3313,12 +3313,12 @@
     "updateUnavailable": "Pembaruan aplikasi tidak tersedia pada versi ini.",
     "updateFailed": "Pembaruan gagal diperiksa. Coba lagi nanti.",
     "locationTitle": "Bagikan lokasi Anda?",
-    "locationBody": "Izinkan Luma.Green menggunakan lokasi Anda untuk mencari toko barang bekas terdekat.",
+    "locationBody": "Izinkan Luma.Green menggunakan lokasi Anda untuk mencari toko pengumpulan terdekat.",
     "allow": "Izinkan",
     "deny": "Jangan sekarang",
     "browserNotice": "Halaman ini dibuka di peramban. Anda mungkin perlu masuk lagi.",
-    "cameraPermission": "Gunakan kamera untuk memotret barang bekas atau dokumen verifikasi.",
-    "photoPermission": "Pilih foto untuk perkiraan barang bekas dan verifikasi.",
+    "cameraPermission": "Gunakan kamera untuk memotret bahan daur ulang atau dokumen verifikasi.",
+    "photoPermission": "Pilih foto untuk perkiraan bahan daur ulang dan verifikasi.",
     "cameraTitle": "Kamera"
   },
   "showcase": {
@@ -3338,7 +3338,7 @@
           "third": "Simpan tanda terima"
         },
         "kabadiwala": {
-          "title": "Toko barang bekas Anda",
+          "title": "Toko pengumpulan Anda",
           "first": "Tinjau permintaan penjemputan",
           "second": "Catat berat",
           "third": "Kelola stok terpilah"

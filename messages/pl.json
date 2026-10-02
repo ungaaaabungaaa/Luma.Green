@@ -34,7 +34,7 @@
     "prices": "Ceny",
     "help": "Pomoc",
     "join": "Dołącz",
-    "sellScrap": "Sprzedaj surowce"
+    "sellScrap": "Zamów odbiór"
   },
   "footer": {
     "about": "Indyjski łańcuch recyklingu na jednej platformie, od domu po fabrykę. Każde przekazanie jest ważone, wyceniane i zapisywane.",
@@ -79,11 +79,11 @@
     "metaDescription": "Luma.Green łączy indyjski łańcuch recyklingu na jednej platformie: gospodarstwa domowe, kabadiwalów, sortownie, recyklerów i producentów. Uczciwe ceny, zweryfikowane firmy i potwierdzenie na każdym etapie.",
     "hero": {
       "eyebrow": "Zaczynamy w Bengaluru",
-      "title": "Indyjski łańcuch recyklingu na jednej platformie",
-      "lead": "Sprzedawaj surowce z domu po uczciwej cenie. Handluj ze zweryfikowanymi firmami w całym łańcuchu. Każde przekazanie jest ważone, wyceniane i zapisywane.",
-      "sell": "Sprzedaj swoje surowce",
-      "join": "Dołącz jako firma",
-      "prices": "Zobacz dzisiejsze ceny"
+      "title": "Daj swoim surowcom nowy początek.",
+      "lead": "Zamów odbiór papieru, plastiku, metalu i innych surowców. Porównaj oferty i zachowaj przejrzystą dokumentację.",
+      "sell": "Zamów odbiór",
+      "join": "Dla firm",
+      "prices": "Zobacz ceny surowców"
     },
     "teaser": {
       "title": "Dzisiejsze ceny",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "Droga surowców",
-      "intro": "Surowce zmieniają właściciela cztery razy, zanim powstanie z nich coś nowego. Na każdym etapie są dokładniej sortowane, a Luma.Green zapisuje każde przekazanie.",
+      "intro": "Surowce trafiają z domów do punktów zbiórki, sortowni i zakładów recyklingu, zanim powstanie z nich coś nowego. Luma.Green zapisuje każde przekazanie.",
       "steps": {
         "household": {
           "name": "Gospodarstwa domowe",
@@ -130,7 +130,7 @@
         "one": "Sprawdź wartość surowców przed rezerwacją.",
         "two": "Odbiór przy drzwiach lub dostawa do punktu.",
         "three": "Zapłata gotówką lub UPI, z potwierdzeniem.",
-        "cta": "Sprzedaj swoje surowce"
+        "cta": "Zamów odbiór"
       },
       "kabadiwala": {
         "title": "Kabadiwalowie",
@@ -170,7 +170,7 @@
     },
     "trust": {
       "heading": "Oparte na zaufaniu",
-      "intro": "W handlu surowcami długo dominowały gotówka i szacunki. Te zasady to zmieniają.",
+      "intro": "Jasne ceny, zmierzona masa i dokumentacja pozwalają każdemu sprawdzić odbiór.",
       "verified": {
         "title": "Zweryfikowane firmy",
         "body": "Człowiek sprawdza każdą firmę i każdego Saathi przed dopuszczeniem do pracy."
@@ -211,11 +211,11 @@
     "closing": {
       "title": "Zacznij od tego, co masz",
       "body": "Torba gazet czy ciężarówka bel — na Luma.Green znajdzie się miejsce dla obu.",
-      "sell": "Sprzedaj swoje surowce",
+      "sell": "Zamów odbiór",
       "join": "Dołącz jako firma"
     },
     "expansion": {
-      "materialsTitle": "Zacznij od materiałów, które już masz",
+      "materialsTitle": "Co chcesz oddać do recyklingu?",
       "pickupTitle": "Odbiór krok po kroku",
       "shopTitle": "Twój punkt surowców w sieci",
       "recordsTitle": "Zapis, który podąża za materiałem",
@@ -239,7 +239,7 @@
     "metaTitle": "Dzisiejsze ceny surowców w Bengaluru",
     "metaDescription": "Dzisiejsze ceny surowców w Bengaluru za kg: papier, plastik, metal, szkło i elektroodpady. Z tygodniową zmianą, wykresem 30 dni i minimalną ceną skupu.",
     "eyebrow": "Bengaluru",
-    "title": "Dzisiejsze ceny surowców",
+    "title": "Ceny surowców",
     "lead": "Dzisiejsze ceny za kilogram. Punkty ustalają własne stawki, nie niższe od minimum. Wybierz materiał, aby zobaczyć ostatnie 30 dni.",
     "demoNote": "Przykładowe ceny w prototypie, nie bieżące stawki rynkowe.",
     "date": "Ceny z dnia {date}",
@@ -307,7 +307,7 @@
     "sellCta": {
       "title": "Masz surowce w domu?",
       "body": "Zarezerwuj odbiór i otrzymaj zapłatę przy drzwiach.",
-      "action": "Sprzedaj swoje surowce"
+      "action": "Zamów odbiór"
     }
   },
   "standards": {
@@ -331,7 +331,7 @@
         "stage": "Etap"
       },
       "stages": {
-        "scrap": "Surowiec odpadowy",
+        "scrap": "Zebrane surowce",
         "recycled": "Po recyklingu"
       },
       "unavailable": "Lista kodów jest teraz niedostępna. Sprawdź ponownie później.",
@@ -554,7 +554,7 @@
     "metaTitle": "Jak to działa",
     "metaDescription": "Planowane: droga surowców w Luma.Green — uczciwy zakup z domu, handel w łańcuchu z depozytem i zapis każdego przekazania.",
     "title": "Jak działa Luma.Green",
-    "lead": "Surowce zmieniają właściciela cztery razy, zanim powstanie z nich coś nowego. Oto etapy i informacje zapisywane przez Luma.Green.",
+    "lead": "Surowce trafiają z domów do punktów zbiórki, sortowni i zakładów recyklingu, zanim powstanie z nich coś nowego. Luma.Green zapisuje każde przekazanie.",
     "stepLabel": "Krok {number}",
     "sell": {
       "body": "Gospodarstwo wybiera materiały, porównuje oferty pobliskich punktów i rezerwuje odbiór lub dostawę. Kabadiwala waży każdy materiał i płaci gotówką lub UPI. Obie strony otrzymują potwierdzenie.",
@@ -1892,7 +1892,7 @@
     "sendCode": "Wyślij kod",
     "sending": "Wysyłanie…",
     "sendFailed": "Nie udało się wysłać kodu. Spróbuj ponownie za minutę.",
-    "homeTitle": "Sprzedajesz surowce z domu? Nie potrzebujesz konta.",
+    "homeTitle": "Oddajesz surowce z domu? Nie potrzebujesz konta.",
     "homeLink": "Zobacz, jak to działa",
     "privacy": "Używamy numeru tylko do logowania i wysyłania informacji o Twojej pracy w Luma.Green.",
     "unavailableTitle": "Logowanie telefonem będzie wkrótce dostępne",
@@ -1934,7 +1934,7 @@
     "lead": "Powiedz nam, czym się zajmujesz. Każdy wniosek sprawdza człowiek, zwykle w ciągu 12–24 godzin.",
     "start": "Rozpocznij",
     "youNeed": "Potrzebujesz",
-    "homeTitle": "Sprzedajesz surowce z domu?",
+    "homeTitle": "Oddajesz surowce z domu?",
     "homeBody": "Nie musisz dołączać. Rezerwuj odbiór zawsze, gdy masz coś do sprzedania.",
     "homeLink": "Zobacz, jak to działa",
     "roles": {
@@ -2489,10 +2489,10 @@
     }
   },
   "sell": {
-    "metaTitle": "Sprzedaj swoje surowce",
+    "metaTitle": "Zamów odbiór",
     "metaDescription": "Sprzedaj z domu w Bengaluru gazety, plastik, metal i starą elektronikę. Sprawdź ceny pobliskich punktów, zarezerwuj odbiór i otrzymaj zapłatę przy drzwiach.",
     "eyebrow": "Dla mieszkańców Bengaluru",
-    "title": "Sprzedaj surowce z domu",
+    "title": "Zamów odbiór z domu",
     "lead": "Wybierz materiały i pobliski punkt. Po ważeniu otrzymasz gotówkę lub płatność UPI.",
     "promises": {
       "label": "Dlaczego warto tu sprzedawać",
@@ -2510,10 +2510,10 @@
     "steps": {
       "label": "Kroki",
       "progress": "Krok {current} z {total}",
-      "basket": "Co",
-      "shop": "Kto",
-      "when": "Kiedy",
-      "confirm": "Rezerwuj"
+      "basket": "Surowce",
+      "shop": "Odbiorca",
+      "when": "Termin",
+      "confirm": "Podsumowanie"
     },
     "back": "Wstecz",
     "families": {
@@ -2531,7 +2531,7 @@
     },
     "perKg": "{price}/kg",
     "basket": {
-      "title": "Co masz do sprzedania?",
+      "title": "Co oddajesz do recyklingu?",
       "lead": "Wybierz materiały, a potem podaj przybliżoną liczbę kilogramów.",
       "yours": "Twoje surowce",
       "empty": "Nic jeszcze nie dodano. Wybierz materiał powyżej.",
@@ -2704,7 +2704,7 @@
     "notFound": {
       "title": "Nie znaleziono tej rezerwacji",
       "body": "Sprawdź link z SMS-a. Jeśli rezerwacja powstała przed chwilą, poczekaj moment i spróbuj ponownie.",
-      "sell": "Sprzedaj surowce"
+      "sell": "Zamów odbiór"
     },
     "reference": "Rezerwacja {token}",
     "status": {
@@ -2794,7 +2794,7 @@
       "otherNumber": "Użyj innego numeru"
     },
     "saved": "Konto nie jest potrzebne. Zachowaj link, aby sprawdzać rezerwację na dowolnym telefonie.",
-    "sellMore": "Sprzedaj więcej surowców",
+    "sellMore": "Zamów kolejny odbiór",
     "tryAnother": "Wybierz inny punkt",
     "dispatchChanged": "Zlecenie przeniesiono do innego pobliskiego punktu. Aktualny punkt jest widoczny poniżej."
   },
@@ -3242,7 +3242,7 @@
       "totalWeight": "Łączna masa",
       "worth": "Dzisiejsza wartość",
       "worthHint": "Według dzisiejszych cen rynkowych",
-      "scrap": "Surowiec odpadowy",
+      "scrap": "Zebrane surowce",
       "recycled": "Surowiec wtórny",
       "atPrice": "Cena rynkowa {price}/kg",
       "noPrice": "Brak dzisiejszej ceny rynkowej",
@@ -3338,7 +3338,7 @@
           "third": "Zachowaj potwierdzenie"
         },
         "kabadiwala": {
-          "title": "Twój punkt skupu",
+          "title": "Twój punkt zbiórki",
           "first": "Sprawdzaj zlecenia odbioru",
           "second": "Zapisz masę",
           "third": "Zarządzaj posortowanymi zapasami"

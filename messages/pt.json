@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Um amanhã mais limpo em movimento",
-    "description": "A Luma.Green reúne a cadeia de sucata da Índia em uma plataforma: famílias, kabadiwalas, pátios, recicladores e fabricantes, com preços justos, coletas pesadas e registro de cada entrega."
+    "description": "A Luma.Green reúne a rede de reciclagem da Índia em uma plataforma: famílias, kabadiwalas, pátios, recicladores e fabricantes, com preços justos, coletas pesadas e registro de cada entrega."
   },
   "theme": {
     "label": "Aparência",
@@ -34,10 +34,10 @@
     "prices": "Preços",
     "help": "Ajuda",
     "join": "Cadastre-se",
-    "sellScrap": "Vender sucata"
+    "sellScrap": "Agendar coleta"
   },
   "footer": {
-    "about": "A cadeia de sucata da Índia em uma plataforma, da casa à fábrica. Cada entrega é pesada, precificada e registrada.",
+    "about": "A rede de reciclagem da Índia em uma plataforma, da casa à fábrica. Cada entrega é pesada, precificada e registrada.",
     "navLabel": "Rodapé",
     "useHeading": "Use a Luma.Green",
     "learnHeading": "Saiba mais",
@@ -48,7 +48,7 @@
   "loop": {
     "sell": {
       "title": "Vender",
-      "summary": "Famílias vendem sucata de casa por um preço justo, com pesagem e pagamento na porta."
+      "summary": "Famílias vendem matéria reciclável de casa por um preço justo, com pesagem e pagamento na porta."
     },
     "trade": {
       "title": "Negociar",
@@ -76,14 +76,14 @@
     }
   },
   "home": {
-    "metaDescription": "A Luma.Green reúne a cadeia de sucata da Índia em uma plataforma: famílias, kabadiwalas, pátios, recicladores e fabricantes, com preços justos, empresas verificadas e recibo em cada etapa.",
+    "metaDescription": "A Luma.Green reúne a rede de reciclagem da Índia em uma plataforma: famílias, kabadiwalas, pátios, recicladores e fabricantes, com preços justos, empresas verificadas e recibo em cada etapa.",
     "hero": {
       "eyebrow": "Começando em Bengaluru",
-      "title": "A cadeia de sucata da Índia em uma plataforma",
-      "lead": "Venda sucata de casa por um preço justo. Negocie ao longo da cadeia com empresas verificadas. Cada entrega é pesada, precificada e registrada.",
-      "sell": "Venda sua sucata",
-      "join": "Cadastre sua empresa",
-      "prices": "Veja os preços de hoje"
+      "title": "Dê um novo começo aos seus materiais.",
+      "lead": "Agende a coleta de papel, plástico, metal e mais. Compare ofertas e mantenha um registro claro.",
+      "sell": "Agendar coleta",
+      "join": "Para empresas",
+      "prices": "Ver preços de materiais"
     },
     "teaser": {
       "title": "Preços de hoje",
@@ -95,8 +95,8 @@
       "error": "Não foi possível carregar os preços agora."
     },
     "chain": {
-      "heading": "O caminho da sucata",
-      "intro": "A sucata muda de mãos quatro vezes antes de virar algo novo. A separação melhora em cada etapa, e a Luma.Green registra cada entrega.",
+      "heading": "O caminho da matéria reciclável",
+      "intro": "Os materiais passam das casas às lojas de coleta, aos pátios de triagem e aos recicladores antes de se tornarem algo novo. A Luma.Green registra cada entrega.",
       "steps": {
         "household": {
           "name": "Famílias",
@@ -124,13 +124,13 @@
     },
     "roles": {
       "heading": "Algo para cada participante da cadeia",
-      "intro": "Seis grupos de pessoas mantêm a sucata em movimento. Veja o que a Luma.Green faz por cada um.",
+      "intro": "Seis grupos de pessoas mantêm a matéria reciclável em movimento. Veja o que a Luma.Green faz por cada um.",
       "household": {
         "title": "Famílias",
-        "one": "Saiba quanto vale sua sucata antes de agendar.",
+        "one": "Saiba quanto vale sua matéria reciclável antes de agendar.",
         "two": "Coleta na porta ou entrega na loja.",
         "three": "Pagamento em dinheiro ou UPI, com recibo.",
-        "cta": "Venda sua sucata"
+        "cta": "Agendar coleta"
       },
       "kabadiwala": {
         "title": "Kabadiwalas",
@@ -170,7 +170,7 @@
     },
     "trust": {
       "heading": "Feita com base na confiança",
-      "intro": "A sucata sempre dependeu de dinheiro e estimativas. Estas regras mudam isso.",
+      "intro": "Preços claros, pesos medidos e registros ajudam todos a conferir uma coleta.",
       "verified": {
         "title": "Empresas verificadas",
         "body": "Uma pessoa verifica cada empresa e cada Saathi antes que possam operar."
@@ -194,7 +194,7 @@
     },
     "whyNow": {
       "heading": "Por que agora",
-      "intro": "Três mudanças tornam este o momento de registrar a cadeia de sucata da Índia.",
+      "intro": "Três mudanças tornam este o momento de registrar a rede de reciclagem da Índia.",
       "epr": {
         "title": "Regras EPR",
         "body": "As regras de responsabilidade estendida do produtor para embalagens plásticas, eletrônicos e baterias exigem prova de que o material foi coletado e reciclado. Essa prova começa na primeira entrega."
@@ -211,13 +211,13 @@
     "closing": {
       "title": "Comece com o que você tem",
       "body": "Um saco de jornais velhos ou um caminhão de fardos: há lugar para isso na Luma.Green.",
-      "sell": "Venda sua sucata",
+      "sell": "Agendar coleta",
       "join": "Cadastre sua empresa"
     },
     "expansion": {
-      "materialsTitle": "Comece com os materiais que você já tem",
+      "materialsTitle": "O que você gostaria de reciclar?",
       "pickupTitle": "Uma coleta, passo a passo",
-      "shopTitle": "Sua loja de sucata, conectada",
+      "shopTitle": "Sua loja de coleta, conectada",
       "recordsTitle": "Um registro que acompanha o material",
       "paymentTitle": "Pesos claros. Pagamentos claros.",
       "questionsTitle": "Antes de começar"
@@ -236,11 +236,11 @@
     }
   },
   "prices": {
-    "metaTitle": "Preços da sucata em Bengaluru hoje",
-    "metaDescription": "Preços da sucata em Bengaluru hoje, por kg: papel, plástico, metal, vidro e eletrônicos, com variação semanal, gráfico de 30 dias e o mínimo que uma loja pode pagar.",
+    "metaTitle": "Preços da matéria reciclável em Bengaluru hoje",
+    "metaDescription": "Preços da matéria reciclável em Bengaluru hoje, por kg: papel, plástico, metal, vidro e eletrônicos, com variação semanal, gráfico de 30 dias e o mínimo que uma loja pode pagar.",
     "eyebrow": "Bengaluru",
-    "title": "Preços da sucata hoje",
-    "lead": "O valor da sucata hoje, por quilo. As lojas definem seus preços, nunca abaixo do mínimo. Toque em um material para ver os últimos 30 dias.",
+    "title": "Preços de materiais",
+    "lead": "O valor da matéria reciclável hoje, por quilo. As lojas definem seus preços, nunca abaixo do mínimo. Toque em um material para ver os últimos 30 dias.",
     "demoNote": "Preços de exemplo do protótipo, não cotações de mercado ao vivo.",
     "date": "Preços de {date}",
     "floorHelp": "Mínimo: o menor valor que uma loja verificada pode pagar por um quilo.",
@@ -305,22 +305,22 @@
       "retry": "Tentar novamente"
     },
     "sellCta": {
-      "title": "Tem sucata em casa?",
+      "title": "Tem matéria reciclável em casa?",
       "body": "Agende uma coleta e receba na porta.",
-      "action": "Venda sua sucata"
+      "action": "Agendar coleta"
     }
   },
   "standards": {
     "metaTitle": "O padrão Luma.Green",
-    "metaDescription": "Planejado: códigos abertos de materiais e regras simples para negociar sucata com justiça na Índia: classificação, pesagem, recibos, verificação e depósito em garantia. Adoção livre.",
+    "metaDescription": "Planejado: códigos abertos de materiais e regras simples para negociar matéria reciclável com justiça na Índia: classificação, pesagem, recibos, verificação e depósito em garantia. Adoção livre.",
     "eyebrow": "Padrão aberto",
     "title": "O padrão Luma.Green",
-    "lead": "Regras simples e abertas para negociar sucata com justiça: um código por material, classificação clara, pesagem honesta e registro em cada entrega. Qualquer participante do setor pode adotá-las.",
+    "lead": "Regras simples e abertas para negociar matéria reciclável com justiça: um código por material, classificação clara, pesagem honesta e registro em cada entrega. Qualquer participante do setor pode adotá-las.",
     "onThisPage": "Nesta página",
     "codes": {
       "title": "Um código para cada material",
       "nav": "Códigos dos materiais",
-      "body": "A mesma sucata tem muitos nomes locais. Um código aberto dá a cada material um nome comum, para que um quilo de jornal signifique a mesma coisa na loja, no pátio e na fábrica.",
+      "body": "A mesma matéria reciclável tem muitos nomes locais. Um código aberto dá a cada material um nome comum, para que um quilo de jornal signifique a mesma coisa na loja, no pátio e na fábrica.",
       "caption": "Códigos de materiais Luma.Green",
       "count": "{count, plural, one {# material} other {# materiais}}",
       "download": "Baixar os códigos (CSV)",
@@ -331,7 +331,7 @@
         "stage": "Etapa"
       },
       "stages": {
-        "scrap": "Sucata",
+        "scrap": "Materiais coletados",
         "recycled": "Reciclado"
       },
       "unavailable": "A lista de códigos está indisponível no momento. Volte em breve.",
@@ -345,7 +345,7 @@
       "body": "Um preço justo precisa de uma classificação clara. Três verificações vêm antes da pesagem.",
       "dry": {
         "title": "Seco",
-        "body": "Água não é sucata. Papel e papelão molhados são secos antes da pesagem."
+        "body": "Água não é matéria reciclável. Papel e papelão molhados são secos antes da pesagem."
       },
       "sorted": {
         "title": "Separado",
@@ -359,7 +359,7 @@
     "weighing": {
       "title": "Pesagem justa",
       "nav": "Pesagem",
-      "body": "A maioria das discussões na sucata é sobre peso. Estas regras mantêm a balança honesta.",
+      "body": "A maioria das discussões na matéria reciclável é sobre peso. Estas regras mantêm a balança honesta.",
       "stamped": {
         "title": "Balanças aferidas",
         "body": "Pese apenas em uma balança verificada e marcada pelo departamento de metrologia legal."
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "Como funciona",
-    "metaDescription": "Planejado: como a sucata circula na Luma.Green, vendida de casa a preço justo, negociada na cadeia com depósito em garantia e registrada em cada entrega.",
+    "metaDescription": "Planejado: como a matéria reciclável circula na Luma.Green, vendida de casa a preço justo, negociada na cadeia com depósito em garantia e registrada em cada entrega.",
     "title": "Como a Luma.Green funciona",
-    "lead": "A sucata muda de mãos quatro vezes antes de virar algo novo. Veja o que acontece em cada etapa e o que a Luma.Green registra.",
+    "lead": "Os materiais passam das casas às lojas de coleta, aos pátios de triagem e aos recicladores antes de se tornarem algo novo. A Luma.Green registra cada entrega.",
     "stepLabel": "Etapa {number}",
     "sell": {
       "body": "Uma família escolhe o que tem, vê a oferta de cada loja próxima e agenda coleta ou entrega. O kabadiwala pesa cada material e paga em dinheiro ou UPI. Ambos recebem um recibo.",
@@ -577,9 +577,9 @@
   },
   "participants": {
     "metaTitle": "Para quem é",
-    "metaDescription": "A Luma.Green é feita para famílias, kabadiwalas, pátios, recicladores, fabricantes e Saathis: todos que levam a sucata da casa à fábrica.",
+    "metaDescription": "A Luma.Green é feita para famílias, kabadiwalas, pátios, recicladores, fabricantes e Saathis: todos que levam a matéria reciclável da casa à fábrica.",
     "title": "Para quem a Luma.Green é feita",
-    "lead": "Todos que levam a sucata da casa à fábrica e quem faz o trabalho entre essas etapas.",
+    "lead": "Todos que levam a matéria reciclável da casa à fábrica e quem faz o trabalho entre essas etapas.",
     "kabadiwala": {
       "name": "Kabadiwalas",
       "body": "Receba pedidos de coleta de casas próximas, pese e pague com justiça e venda estoque separado para pátios."
@@ -601,7 +601,7 @@
       "body": "Aceite coletas, separação e turnos remunerados perto de casa e acompanhe seus ganhos."
     },
     "householdHeading": "E todas as famílias",
-    "householdBody": "Qualquer pessoa pode vender sucata de casa sem conta: escolha os materiais, veja as ofertas das lojas e receba dinheiro ou UPI com recibo."
+    "householdBody": "Qualquer pessoa pode vender matéria reciclável de casa sem conta: escolha os materiais, veja as ofertas das lojas e receba dinheiro ou UPI com recibo."
   },
   "contact": {
     "metaTitle": "Contato",
@@ -657,13 +657,13 @@
     "roles": {
       "household": {
         "name": "Famílias",
-        "who": "Vendendo sucata de casa",
+        "who": "Vendendo matéria reciclável de casa",
         "title": "Ajuda para famílias",
         "lead": "Agende uma coleta, tenha uma pesagem justa e receba na porta. Não precisa de conta."
       },
       "kabadiwala": {
         "name": "Kabadiwalas",
-        "who": "Administrando uma loja de sucata",
+        "who": "Administrando uma loja de coleta",
         "title": "Ajuda para kabadiwalas",
         "lead": "Aceite coletas, pese e pague em um minuto, defina preços e venda a pátios."
       },
@@ -675,9 +675,9 @@
       },
       "recycler": {
         "name": "Recicladores",
-        "who": "Transformando sucata em matéria-prima",
+        "who": "Transformando matéria reciclável em matéria-prima",
         "title": "Ajuda para recicladores",
-        "lead": "Compre sucata classificada de pátios, venda sua produção a fábricas e mantenha os registros EPR em ordem."
+        "lead": "Compre matéria reciclável classificada de pátios, venda sua produção a fábricas e mantenha os registros EPR em ordem."
       },
       "manufacturer": {
         "name": "Fabricantes",
@@ -819,7 +819,7 @@
       },
       "safetyAtWork": {
         "title": "Trabalhe com segurança",
-        "summary": "Proteção, levantamento de peso, sucata cortante, baterias e máquinas: cuidados básicos que evitam lesões.",
+        "summary": "Proteção, levantamento de peso, matéria reciclável cortante, baterias e máquinas: cuidados básicos que evitam lesões.",
         "steps": {
           "gear": {
             "title": "Use seus equipamentos de proteção (EPI)",
@@ -835,7 +835,7 @@
           },
           "batteries": {
             "title": "Separe baterias e resíduos eletrônicos",
-            "body": "Guarde secos e frescos, longe de outras sucatas. Nunca queime fios nem abra baterias ou telas."
+            "body": "Guarde secos e frescos, longe de outras matérias recicláveis. Nunca queime fios nem abra baterias ou telas."
           },
           "machines": {
             "title": "Desligue antes de desobstruir",
@@ -978,8 +978,8 @@
         "summary": "Da foto à coleta agendada em cerca de dois minutos. Não precisa de conta.",
         "steps": {
           "photo": {
-            "title": "Tire uma foto da sucata",
-            "body": "Opcional: adicione uma foto da sucata e confira os itens sugeridos."
+            "title": "Tire uma foto da matéria reciclável",
+            "body": "Opcional: adicione uma foto da matéria reciclável e confira os itens sugeridos."
           },
           "estimate": {
             "title": "Confira a estimativa",
@@ -1004,8 +1004,8 @@
         }
       },
       "getReady": {
-        "title": "Prepare a sucata",
-        "summary": "Sucata seca e separada é pesada mais rápido e vale mais.",
+        "title": "Prepare a matéria reciclável",
+        "summary": "Matéria reciclável seca e separada é pesada mais rápido e vale mais.",
         "steps": {
           "paper": {
             "title": "Mantenha o papel seco e plano",
@@ -1253,7 +1253,7 @@
           },
           "sort": {
             "title": "Registre a separação",
-            "body": "Separe sucata mista nos materiais reais. Por exemplo, papel misto em jornal, papelão e rejeitos."
+            "body": "Separe matéria reciclável mista nos materiais reais. Por exemplo, papel misto em jornal, papelão e rejeitos."
           },
           "show": {
             "title": "Mostre o estoque aos pátios",
@@ -1289,7 +1289,7 @@
       },
       "buyFromKabadiwalas": {
         "title": "Guia de demonstração: compre estoque de kabadiwalas",
-        "summary": "Encontre sucata separada perto de você e agende a retirada.",
+        "summary": "Encontre matéria reciclável separada perto de você e agende a retirada.",
         "steps": {
           "browse": {
             "title": "Abra Comprar",
@@ -1340,7 +1340,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Guia de demonstração: compre sucata separada de pátios",
+        "title": "Guia de demonstração: compre matéria reciclável separada de pátios",
         "summary": "Insumos regulares e classificados para sua produção.",
         "steps": {
           "browse": {
@@ -1501,7 +1501,7 @@
           },
           "deliver": {
             "title": "Leve para a loja",
-            "body": "Leve a sucata direto à loja e entregue."
+            "body": "Leve a matéria reciclável direto à loja e entregue."
           }
         }
       },
@@ -1599,7 +1599,7 @@
       },
       "noVehicle": {
         "q": "Não tenho veículo. Posso me cadastrar?",
-        "a": "Sim. As famílias podem levar sucata à loja. Coletas por Saathis para lojas sem veículo chegarão depois."
+        "a": "Sim. As famílias podem levar matéria reciclável à loja. Coletas por Saathis para lojas sem veículo chegarão depois."
       },
       "autoAccept": {
         "q": "O que é aceitação automática?",
@@ -1732,7 +1732,7 @@
     },
     "tutorials": {
       "bookInTwoMinutes": "Agende uma coleta em dois minutos",
-      "sortAtHome": "Separando sucata em casa",
+      "sortAtHome": "Separando matéria reciclável em casa",
       "batterySafety": "Baterias usadas, manuseadas com segurança",
       "firstDay": "Seu primeiro dia na Luma.Green",
       "weighAndPayVideo": "Pese e pague em um minuto",
@@ -1760,7 +1760,7 @@
         "title": "Separe uma vez",
         "p1": "Um saco para papel, um para plástico e um para metal.",
         "p2": "Mantenha tudo seco e limpo.",
-        "p3": "Sucata separada é pesada mais rápido e paga melhor."
+        "p3": "Matéria reciclável separada é pesada mais rápido e paga melhor."
       },
       "batteriesSafe": {
         "title": "Baterias com segurança",
@@ -1787,7 +1787,7 @@
         "p3": "Mostre o total antes de pagar."
       },
       "safeHandling": {
-        "title": "Manuseando sucata com segurança",
+        "title": "Manuseando matéria reciclável com segurança",
         "p1": "Luvas e calçados fechados, sempre.",
         "p2": "Use as pernas ao levantar e peça ajuda acima de 25 kg.",
         "p3": "Mantenha baterias e eletrônicos separados."
@@ -1892,7 +1892,7 @@
     "sendCode": "Enviar código",
     "sending": "Enviando…",
     "sendFailed": "Não foi possível enviar o código. Tente novamente em um minuto.",
-    "homeTitle": "Vai vender sucata de casa? Não precisa de conta.",
+    "homeTitle": "Vai reciclar de casa? Não precisa de conta.",
     "homeLink": "Veja como funciona",
     "privacy": "Usamos seu número só para entrar e enviar atualizações sobre seu trabalho na Luma.Green.",
     "unavailableTitle": "O acesso por telefone estará disponível em breve",
@@ -1934,23 +1934,23 @@
     "lead": "Conte o que você faz. Uma pessoa analisa cada inscrição, geralmente em 12–24 horas.",
     "start": "Começar",
     "youNeed": "Você vai precisar de",
-    "homeTitle": "Vai vender sucata de casa?",
+    "homeTitle": "Vai reciclar de casa?",
     "homeBody": "Não precisa se cadastrar. Agende uma coleta sempre que tiver algo para vender.",
     "homeLink": "Veja como funciona",
     "roles": {
       "kabadiwala": {
         "title": "Kabadiwala",
-        "body": "Você administra uma loja de sucata e compra de casas próximas.",
+        "body": "Você administra uma loja de coleta e compra de casas próximas.",
         "needs": "Endereço e horário da loja. Número GST, se tiver."
       },
       "yard": {
         "title": "Pátio",
-        "body": "Você separa e enfarda sucata em volume para revender.",
+        "body": "Você separa e enfarda matéria reciclável em volume para revender.",
         "needs": "Número GST, se tiver, autorização de controle da poluição em PDF e fotos das máquinas."
       },
       "recycler": {
         "title": "Reciclador",
-        "body": "Você transforma sucata em matéria-prima.",
+        "body": "Você transforma matéria reciclável em matéria-prima.",
         "needs": "Número GST, se tiver, autorização de controle da poluição em PDF e fotos das máquinas."
       },
       "manufacturer": {
@@ -2407,7 +2407,7 @@
         "detail": "{board} · {number}",
         "missing": "Nenhuma autorização registrada",
         "note": "A autorização de operação do órgão estadual de controle da poluição permite operar legalmente uma unidade de separação ou reciclagem. Recicladores e fábricas a pedem antes de comprar.",
-        "noteShop": "Uma pequena loja que só compra e separa sucata geralmente não precisa dela. Será necessária se começar a enfardar, triturar ou processar material."
+        "noteShop": "Uma pequena loja que só compra e separa matéria reciclável geralmente não precisa dela. Será necessária se começar a enfardar, triturar ou processar material."
       },
       "scale": {
         "title": "Balança aferida",
@@ -2489,10 +2489,10 @@
     }
   },
   "sell": {
-    "metaTitle": "Venda sua sucata",
+    "metaTitle": "Agendar coleta",
     "metaDescription": "Venda jornais, plástico, metal e eletrônicos usados de casa em Bengaluru. Veja quanto as lojas próximas pagam, agende uma coleta e receba na porta.",
     "eyebrow": "Para casas em Bengaluru",
-    "title": "Venda sua sucata de casa",
+    "title": "Agende uma coleta em casa",
     "lead": "Escolha o que tem e uma loja próxima. Receba em dinheiro ou UPI após a pesagem.",
     "promises": {
       "label": "Por que vender aqui",
@@ -2510,10 +2510,10 @@
     "steps": {
       "label": "Etapas",
       "progress": "Etapa {current} de {total}",
-      "basket": "O quê",
-      "shop": "Quem",
-      "when": "Quando",
-      "confirm": "Agendar"
+      "basket": "Materiais",
+      "shop": "Parceiro",
+      "when": "Horário",
+      "confirm": "Revisão"
     },
     "back": "Voltar",
     "families": {
@@ -2531,9 +2531,9 @@
     },
     "perKg": "{price}/kg",
     "basket": {
-      "title": "O que você tem?",
+      "title": "O que você vai reciclar?",
       "lead": "Toque no que quer vender e informe os quilos aproximados.",
-      "yours": "Sua sucata",
+      "yours": "Sua matéria reciclável",
       "empty": "Nada adicionado ainda. Toque em um material acima.",
       "kilos": "Quilos de {material}",
       "less": "Menos {material}",
@@ -2552,7 +2552,7 @@
     },
     "shop": {
       "title": "Quem compra?",
-      "lead": "A oferta de cada loja para sua sucata, com os próprios preços.",
+      "lead": "A oferta de cada loja para sua matéria reciclável, com os próprios preços.",
       "modeLabel": "Como deseja entregar?",
       "pickup": "Coleta em casa",
       "pickupHint": "A loja vai até você",
@@ -2564,7 +2564,7 @@
       "byPrice": "Ordenar por preço",
       "locationFailed": "Não conseguimos sua localização, então as lojas estão por melhor preço.",
       "listLabel": "Lojas",
-      "offerFor": "pela sua sucata",
+      "offerFor": "pela sua matéria reciclável",
       "distance": "{km} km",
       "hours": "Aberta {hours}",
       "picksUp": "Faz coleta",
@@ -2612,7 +2612,7 @@
       "dropoff": "Você leva à loja",
       "whenValue": "{day} · {window}, {time}",
       "youGet": "Você receberá cerca de {amount}",
-      "payNote": "A loja pesa sua sucata e paga em dinheiro ou UPI.",
+      "payNote": "A loja pesa sua matéria reciclável e paga em dinheiro ou UPI.",
       "phoneTitle": "Confirme seu celular",
       "phoneLead": "Enviaremos um código de 6 dígitos por SMS. O agendamento fica salvo neste número para você acompanhar de qualquer telefone.",
       "bookingAs": "Agendando como {phone}",
@@ -2649,9 +2649,9 @@
       "generic": "Algo deu errado. Tente novamente.",
       "EMPTY_BASKET": "Adicione pelo menos um material para vender.",
       "TOO_MANY_ITEMS": "São muitos materiais para um agendamento.",
-      "DUPLICATE_ITEM": "Um material aparece duas vezes. Confira sua sucata.",
+      "DUPLICATE_ITEM": "Um material aparece duas vezes. Confira sua matéria reciclável.",
       "INVALID_KG": "Confira os quilos: cada quantidade deve ser maior que 0 e no máximo 500.",
-      "UNKNOWN_MATERIAL": "Um dos materiais não pode mais ser vendido aqui. Confira sua sucata.",
+      "UNKNOWN_MATERIAL": "Um dos materiais não pode mais ser vendido aqui. Confira sua matéria reciclável.",
       "SHOP_NOT_FOUND": "Essa loja não aceita agendamentos agora. Escolha outra.",
       "SHOP_NO_PICKUP": "Essa loja não coleta. Escolha outra ou leve os materiais.",
       "INVALID_DATE": "Não é mais possível agendar esse dia. Escolha outro.",
@@ -2676,7 +2676,7 @@
     },
     "photo": {
       "title": "Experimente uma estimativa por foto",
-      "lead": "Opcional: adicione uma foto da sucata e confira os itens sugeridos.",
+      "lead": "Opcional: adicione uma foto da matéria reciclável e confira os itens sugeridos.",
       "privacy": "Não inclua rostos, documentos ou placas. A foto é enviada a um provedor de IA para esta estimativa. A Luma.Green não a salva.",
       "choose": "Escolher ou tirar foto",
       "selected": "Foto pronta",
@@ -2694,7 +2694,7 @@
       "failed": "Não foi possível analisar a foto. Tente outra ou escolha os itens abaixo.",
       "invalid": "Use uma foto JPEG ou PNG nítida, com menos de 12 MB.",
       "limited": "O limite de fotos foi atingido. Escolha os itens abaixo ou tente amanhã.",
-      "retake": "A foto está pouco clara ou não mostra sucata. Tente outra ou escolha os itens abaixo.",
+      "retake": "A foto está pouco clara ou não mostra matéria reciclável. Tente outra ou escolha os itens abaixo.",
       "empty": "Nenhum material compatível foi encontrado. Tente outra foto ou escolha os itens abaixo.",
       "replace": "Escolher outra foto"
     }
@@ -2704,7 +2704,7 @@
     "notFound": {
       "title": "Não encontramos este agendamento",
       "body": "Confira o link no SMS. Se acabou de agendar, aguarde um momento e tente novamente.",
-      "sell": "Vender sucata"
+      "sell": "Agendar coleta"
     },
     "reference": "Agendamento {token}",
     "status": {
@@ -2719,13 +2719,13 @@
       "requested": "{mode, select, pickup {Aguardando {shop} aceitar} other {Aguardando {shop} confirmar}}",
       "requestedBody": "Enviamos seu pedido. Esta página atualiza assim que responderem.",
       "accepted": "{mode, select, pickup {{shop} aceitou sua coleta} other {{shop} está esperando você}}",
-      "acceptedBody": "Deixe a sucata pronta. Ela será pesada, e você receberá dinheiro ou UPI.",
+      "acceptedBody": "Deixe a matéria reciclável pronta. Ela será pesada, e você receberá dinheiro ou UPI.",
       "on_the_way": "{shop} está a caminho",
-      "on_the_wayBody": "Deixe a sucata pronta perto da porta.",
+      "on_the_wayBody": "Deixe a matéria reciclável pronta perto da porta.",
       "completed": "Pronto! Você recebeu {amount}",
       "completedBody": "Obrigado por reciclar. Seus pontos foram adicionados ao seu número.",
       "declined": "{shop} não pôde aceitar este agendamento",
-      "declinedBody": "Nada foi coletado. Tente outra loja: sua lista de sucata está salva.",
+      "declinedBody": "Nada foi coletado. Tente outra loja: sua lista de matéria reciclável está salva.",
       "cancelled": "Este agendamento foi cancelado",
       "cancelledBody": "Nada foi coletado. Você pode agendar novamente a qualquer momento."
     },
@@ -2760,7 +2760,7 @@
     "money": {
       "title": "Seu dinheiro e seus pontos",
       "estimate": "Você receberá cerca de {amount}",
-      "estimateNote": "A loja pesa sua sucata e paga em dinheiro ou UPI.",
+      "estimateNote": "A loja pesa sua matéria reciclável e paga em dinheiro ou UPI.",
       "paid": "Você recebeu {amount}",
       "paidBy": "Pago por {method, select, upi {UPI} other {dinheiro}} · {date}",
       "estimateWas": "A estimativa era {amount}",
@@ -2794,7 +2794,7 @@
       "otherNumber": "Usar outro número"
     },
     "saved": "Não precisa de conta. Guarde este link para conferir o agendamento em qualquer telefone.",
-    "sellMore": "Vender mais sucata",
+    "sellMore": "Agendar outra coleta",
     "tryAnother": "Tentar outra loja",
     "dispatchChanged": "Seu pedido foi transferido para outra loja próxima. A loja atual aparece abaixo."
   },
@@ -2852,7 +2852,7 @@
     },
     "browse": {
       "title": "Comprar",
-      "lead": "{kind, select, yard {Sucata separada de kabadiwalas próximos.} recycler {Material separado e enfardado de pátios.} manufacturer {Material reciclado de recicladores verificados.} other {Material à venda perto de você.}}",
+      "lead": "{kind, select, yard {Matéria reciclável separada de kabadiwalas próximos.} recycler {Material separado e enfardado de pátios.} manufacturer {Material reciclado de recicladores verificados.} other {Material à venda perto de você.}}",
       "filterLabel": "Filtrar por material",
       "all": "Todos",
       "count": "{count, plural, =0 {Nenhum lote} one {# lote à venda} other {# lotes à venda}}",
@@ -3035,7 +3035,7 @@
     },
     "home": {
       "greeting": "Namastê, {name}",
-      "lead": "{kind, select, yard {Compre de kabadiwalas e venda fardos separados a recicladores.} recycler {Compre sucata separada de pátios e venda material reciclado a fabricantes.} manufacturer {Compre material reciclado de recicladores verificados.} other {Suas negociações em resumo.}}",
+      "lead": "{kind, select, yard {Compre de kabadiwalas e venda fardos separados a recicladores.} recycler {Compre matéria reciclável separada de pátios e venda material reciclado a fabricantes.} manufacturer {Compre material reciclado de recicladores verificados.} other {Suas negociações em resumo.}}",
       "buy": "Comprar",
       "sell": "Vender",
       "trades": "Negociações",
@@ -3148,7 +3148,7 @@
     },
     "requests": {
       "title": "Pedidos",
-      "lead": "Famílias próximas que querem vender sucata.",
+      "lead": "Famílias próximas que querem vender matéria reciclável.",
       "tabs": {
         "new": "Novos",
         "today": "Hoje",
@@ -3242,7 +3242,7 @@
       "totalWeight": "Peso total",
       "worth": "Valor hoje",
       "worthHint": "Aos preços de mercado de hoje",
-      "scrap": "Sucata",
+      "scrap": "Materiais coletados",
       "recycled": "Material reciclado",
       "atPrice": "Mercado {price}/kg",
       "noPrice": "Sem preço de mercado hoje",
@@ -3303,12 +3303,12 @@
     "updateUnavailable": "Atualizações não estão disponíveis nesta versão.",
     "updateFailed": "Não foi possível buscar atualizações. Tente mais tarde.",
     "locationTitle": "Compartilhar sua localização?",
-    "locationBody": "Permita que a Luma.Green use sua localização para encontrar lojas de sucata próximas.",
+    "locationBody": "Permita que a Luma.Green use sua localização para encontrar lojas de coleta próximas.",
     "allow": "Permitir",
     "deny": "Agora não",
     "browserNotice": "Esta página abre no navegador. Talvez seja necessário entrar novamente.",
-    "cameraPermission": "Use a câmera para fotografar sucata ou documentos de verificação.",
-    "photoPermission": "Selecione fotos para estimativas de sucata e verificação.",
+    "cameraPermission": "Use a câmera para fotografar matéria reciclável ou documentos de verificação.",
+    "photoPermission": "Selecione fotos para estimativas de matéria reciclável e verificação.",
     "cameraTitle": "Câmera"
   },
   "analytics": {
@@ -3338,7 +3338,7 @@
           "third": "Guarde o recibo"
         },
         "kabadiwala": {
-          "title": "Sua loja de sucata",
+          "title": "Sua loja de coleta",
           "first": "Analise pedidos de coleta",
           "second": "Registre o peso",
           "third": "Gerencie o estoque separado"

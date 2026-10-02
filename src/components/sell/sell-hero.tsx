@@ -15,11 +15,13 @@ const PROMISES = [
 export async function SellHero() {
   const t = await getTranslations("sell");
   return (
-    <header className="flex flex-col gap-6 border-b border-border pb-8 text-foreground">
+    <header className="flex flex-col gap-5 border-b border-border pb-7 text-foreground">
       <div className="min-w-0">
         <div className="flex min-w-0 flex-col gap-3">
-          <p className="text-sm font-medium text-primary">{t("eyebrow")}</p>
-          <h1 className="max-w-xl font-display text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl">
+          <p className="border-s-2 border-primary ps-3 text-sm font-medium text-primary">
+            {t("eyebrow")}
+          </p>
+          <h1 className="max-w-xl font-display text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
             {t("title")}
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">

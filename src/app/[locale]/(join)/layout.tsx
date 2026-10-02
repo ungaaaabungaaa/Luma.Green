@@ -48,7 +48,7 @@ export default async function JoinLayout({
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto my-6 flex w-full max-w-3xl min-w-0 flex-1 flex-col px-5 py-2 sm:my-10 sm:px-8"
+        className="mx-auto my-8 flex w-full max-w-3xl min-w-0 flex-1 flex-col px-5 py-2 sm:my-12 sm:px-10"
       >
         {children}
       </main>

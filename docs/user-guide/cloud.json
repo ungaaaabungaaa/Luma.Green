@@ -4,10 +4,10 @@
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": null,
-  "result": "The combined reviewed guide from source commit 593dfa2, merged to main by PR29 at 53dae4d, is synchronized to the existing Google Doc. All 40 chapters, six tables, 659 body paragraphs, 99 image placements and three native dates were verified. The 104-page native PDF passed visual review after an orphan-page repair. Document identity, folder and sharing are unchanged. All 99 images have visible captions but no native alt-text descriptions; this semantic accessibility limitation remains explicit.",
+  "pending_revision": "3 October 2026 approved recycling design, collection language and shared workspace revision",
+  "result": "The previous publication remains verified. The user approved the recycling design release and the in-place Google Docs update. Publication of this reviewed revision is in progress.",
   "connection_gate": null,
-  "next_action": "Keep this same document for each reviewed guide update. Compare its current revision with the last verified revision, reconcile later human edits, apply bounded revision-guarded changes, and verify the native export. Preserve unchanged image objects. Native replaceImage removes image descriptions even when it preserves the object ID, size and aspect ratio. Restore descriptions only through a supported editor workflow when it can be used without interrupting the user; do not treat visible captions as equivalent semantic accessibility.",
+  "next_action": "Update the existing Google Doc from the reviewed approved Word source with revision-guarded native edits. Preserve its ID, tab tree, tables, folder and sharing. Verify text, images and native export, then record the result here.",
   "last_verified_revision": {
     "source_commit": "593dfa2de2a2cf31b358ce4e7af3f8a517da17e1",
     "merged_main_commit": "53dae4db62432119505bd06d7d9ac85284c0c386",
@@ -87,11 +87,11 @@
     }
   },
   "local_reviewed_revision": {
-    "source_docx_sha256": "a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3",
+    "source_docx_sha256": "1a08206a45ebd9a01f12a0fad60a9a6ac85d9d325d536a9ca5a68edc26157502",
     "visual_review_pages": 103,
     "image_placements": 99,
-    "recorded_at": "2026-10-02T19:17:50.622083+00:00",
-    "result": "All 103 rendered pages of the combined guide passed local visual review. The same reviewed source, including API routes and sign-out/session delivery limits, is now synchronized to the existing Google Doc; see last_verified_revision for native verification and accessibility limits."
+    "recorded_at": "2026-10-02T23:33:26.231088+00:00",
+    "result": "The approved recycling guide has 103 reviewed pages and 99 labelled screenshot placements. The source wording is being updated for release, after which the Word artifact will be rebuilt and checked."
   },
   "previous_verified_revision": {
     "source_commit": "2ba8246640fe5773e5dd3b7863c7726ee29d6fb6",

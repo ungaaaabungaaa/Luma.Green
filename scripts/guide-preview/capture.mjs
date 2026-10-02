@@ -31,7 +31,7 @@ const screens = [
     name: "household-basket-phone",
     route: "/en/sell/basket",
     component: "src/components/sell/basket-step.tsx",
-    heading: "What do you have?",
+    heading: "What are you recycling?",
     headingLevel: 2,
     width: 390,
     height: 844,

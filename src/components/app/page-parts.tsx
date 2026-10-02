@@ -16,9 +16,9 @@ export function AppPageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-start sm:justify-between">
+    <div className="flex min-w-0 flex-col gap-5 border-b border-border pb-7 lg:flex-row lg:items-end lg:justify-between">
       <div className="flex min-w-0 flex-1 flex-col gap-2">
-        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+        <h1 className="font-display text-3xl leading-[1.15] font-semibold tracking-tight sm:text-4xl">
           {title}
         </h1>
         {lead ? (
@@ -28,7 +28,7 @@ export function AppPageHeader({
         ) : null}
       </div>
       {actions ? (
-        <div className="flex shrink-0 flex-wrap items-center gap-2">
+        <div className="flex min-w-0 flex-wrap items-center gap-2 lg:max-w-[50%]">
           {actions}
         </div>
       ) : null}
@@ -50,14 +50,16 @@ export function StatCard({
   tone?: "neutral" | "good" | "warn";
 }) {
   return (
-    <div className="relative flex min-w-0 flex-col gap-3 border-t border-border py-4 pe-4 sm:py-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-sm font-medium text-muted-foreground">{label}</p>
+    <div className="relative flex min-w-0 flex-col gap-3 border-s-2 border-border py-2 ps-4 pe-2 sm:ps-5">
+      <div className="flex items-start justify-between gap-2">
+        <p className="min-w-0 flex-1 text-sm font-medium wrap-anywhere text-muted-foreground">
+          {label}
+        </p>
         {Icon ? (
           <Icon
             aria-hidden
             className={cn(
-              "size-5",
+              "size-5 shrink-0",
               tone === "good" && "text-primary",
               tone === "warn" && "text-amber-700 dark:text-amber-300",
               tone === "neutral" && "text-muted-foreground",
@@ -83,9 +85,11 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="flex min-w-0 flex-col gap-4">
+    <section className="flex min-w-0 flex-col gap-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
+        <h2 className="font-display text-xl font-semibold tracking-tight">
+          {title}
+        </h2>
         {action}
       </div>
       {children}
@@ -105,11 +109,13 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-start gap-3 border-y border-dashed border-border py-8 sm:py-10">
+    <div className="flex flex-col items-start gap-3 border-y border-border py-8 sm:py-10">
       <span className="mb-1 text-muted-foreground">
         <Icon aria-hidden className="size-9" strokeWidth={1.25} />
       </span>
-      <p className="text-lg font-semibold tracking-tight">{title}</p>
+      <p className="font-display text-xl font-semibold tracking-tight">
+        {title}
+      </p>
       {body ? (
         <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">
           {body}

@@ -48,11 +48,15 @@ export function StepFrame({
           id="sell-step-title"
           ref={heading}
           tabIndex={-1}
-          className="scroll-mt-24 text-2xl font-semibold tracking-tight outline-none"
+          className="scroll-mt-24 font-display text-3xl leading-tight font-semibold tracking-tight outline-none sm:text-4xl"
         >
           {title}
         </h2>
-        {lead ? <p className="text-muted-foreground">{lead}</p> : null}
+        {lead ? (
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            {lead}
+          </p>
+        ) : null}
       </div>
       {children}
     </section>

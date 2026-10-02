@@ -17,11 +17,11 @@ export function SectionHeading({
   return (
     <div
       data-reveal
-      className={cn("max-w-4xl space-y-3 lg:space-y-4", className)}
+      className={cn("max-w-3xl space-y-3 lg:space-y-4", className)}
     >
       <h2
         id={id}
-        className="scroll-mt-24 font-display text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl lg:text-5xl"
+        className="scroll-mt-24 font-display text-3xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-4xl lg:text-[2.75rem]"
       >
         {title}
       </h2>

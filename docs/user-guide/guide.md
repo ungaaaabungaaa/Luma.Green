@@ -2,9 +2,9 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, account security, failure recovery, notifications, fuller public pages, industry API and 33 languages. Source baseline: bc986f4.
+Edition: 3 October 2026, local recycling service redesign, account security, notifications, industry API and 33 languages. Source baseline: f82df3c.
 
-This edition combines the account checkpoint with industry API main af2e295. It also includes the security and failure-recovery changes from main 2ba8246. The capture manifests record the exact source hashes for the combined revision.
+This edition includes uncommitted design changes on a local review branch. Its revised public pages, collection steps and business layouts await design approval. The capture manifests record the exact source hashes. This edition has not been committed, deployed or published to Google Docs.
 Includes the UI detail pass, distinct work scenes and practical guides on the main public pages, plus safe account, recovery and business API examples.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
@@ -16,7 +16,7 @@ This guide explains the current application. It does not claim that the service 
 
 ## 01 / Start here
 
-Luma.Green records scrap collection and movement through the recycling chain. A household sells scrap. A kabadiwala collects and sorts it. A yard buys and prepares bulk material. A recycler supplies recovered material. A manufacturer buys it. A Saathi takes local jobs.
+Luma.Green records material collection and movement through the recycling chain. A household sells recyclable materials. A kabadiwala collects and sorts it. A yard buys and prepares bulk material. A recycler supplies recovered material. A manufacturer buys it. A Saathi takes local jobs.
 
 ### Read the screenshot labels
 
@@ -29,9 +29,9 @@ No screenshot is an AI-generated interface. Public pages contain generated decor
 
 ### Explore the home page
 
-The home page explains the service before you enter a workflow. The materials
-section shows the main scrap groups. Use Sell scrap to select your own materials
-and quantities. The pickup section explains the steps and links to the first
+The home page starts with Book a collection, View material prices and For businesses. The materials
+section shows the main recyclable material groups. Each material row opens the collection entry page.
+Choose your exact materials and quantities in the booking flow; the home page does not save a selection. The pickup section explains the steps and links to the first
 pickup guide.
 
 ![Current materials section on the home page. This is an unchanged browser capture of the section.](screenshots/public-home-materials.png)
@@ -68,7 +68,7 @@ The testimonial section is labelled **Demo testimonials**. Its role-based quotes
 2. Business escrow and payment steps are demonstrations. No real funds are held or transferred.
 3. EPR and impact records are supporting records, not issued certificates or verified carbon credits.
 
-All paths in this guide are relative to the correct deployment address. Use the address supplied by the platform owner. Local demonstrations use http://localhost:3004. Capture manifests record the review origins. Do not assume a domain is live because it appears in source code.
+All paths in this guide are relative to the correct deployment address. Use the address supplied by the platform owner. This local design review uses http://localhost:3107. Protected component examples use a separate local fixture server and remain labelled. Capture manifests record the review origins. Do not assume a domain is live because it appears in source code.
 
 ---
 
@@ -116,19 +116,19 @@ If SMS is not configured, select Preview code screen after entering a valid mobi
 
 ![The code-entry preview with a synthetic test phone number. Actual browser capture; no SMS was sent and no authentication occurred.](screenshots/public-login-otp-phone.png)
 
-With SMS connected, codes last five minutes and allow five attempts. The resend control has a 30-second delay. Repeated requests also have server limits. Do not repeatedly request codes when delivery is slow. If a send fails, follow the displayed retry state.
+SMS codes expire after five minutes and allow five attempts. Wait 30 seconds before resending. Per-number limits also apply. Use the displayed retry control if delivery fails.
 
-Phone sign-in does not use a password. Optional authenticator setup, recovery codes and account settings are explained in chapter 37. Regular sessions last up to 30 days. Sign in again after expiry. Sign out on shared devices. Your identity follows your phone number; the browser language does not change your role.
+Phone sign-in is passwordless. See chapter 37 for authenticators, recovery codes and account settings. Sessions last up to 30 days. Sign in again after expiry, and sign out on shared devices. Your phone number identifies your account; language does not change your role.
 
 The 33 languages are English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Urdu, Arabic, Assamese, Odia, Nepali, Sinhala, Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian, Ukrainian, Turkish, Indonesian, Malay, Vietnamese, Thai, Japanese, Korean and Simplified Chinese. The language control shows the current language in its own script, for example English or العربية. On public pages and operational screens, phones and tablets keep it in the menu. Sign-in screens keep it in the header, as do wider desktop screens. Open the control to choose another language. On phones, the brand appears as its icon; the full name appears on wider screens. Arabic and Urdu use right-to-left layouts. The admin console is English-only. All translated catalogues have automated coverage checks; native-speaker review is still required before launch. Adding a language does not change the pilot region, Indian mobile-number requirement or rupee currency.
 
 ---
 
-## 04 / Household: sell scrap
+## 04 / Household: book a collection
 
 ![The current household entry page without a connected booking backend.](screenshots/public-sell.png)
 
-The household flow stays at /sell. Its address uses a step query parameter; there are no separate /sell/estimate or /sell/book pages.
+The collection flow shows four progress labels: Materials, Partner, Time and Review. A filled circle marks the current step. A check marks a completed step. Material rows show their selection with a check; enter the estimated weight after you select a row. The household flow stays at /sell. Its address uses a step query parameter; there are no separate /sell/estimate or /sell/book pages.
 
 1. Select the materials you have. Enter estimated quantities.
 2. If photo estimates are enabled, take or select a photo. Check each suggested material and weight. Correct them before continuing. Manual entry remains available.
@@ -229,7 +229,7 @@ Files are not general attachments for customer conversations. Upload only what t
 
 ![Current kabadiwala home components with synthetic documentation data. This is not a live session.](screenshots/kabadiwala-overview.png)
 
-A kabadiwala is a local scrap shop. The approved shop uses /app to manage household requests, current stock, its rate card and onward trade.
+A kabadiwala runs a local collection shop. The approved shop uses /app to manage household requests, current stock, its rate card and onward trade.
 
 1. Sign in with the phone number that owns the approved shop.
 2. Open Home. Read the request and stock summary.
@@ -368,9 +368,9 @@ Keep documentary evidence required by the business outside the demo payment flow
 ![Current recycler home components with synthetic documentation data.](screenshots/recycler-overview.png)
 
 1. Open Home to see the role's summary.
-2. Use Market to inspect available material from yards.
+2. Use Buy to inspect available material from yards.
 3. Use Trades to accept, dispatch or receive orders when the state allows it.
-4. Use Stock to inspect recorded scrap and recycled-material groups.
+4. Use Stock to inspect collected materials and recycled-material groups.
 5. Use Sell to offer available output to manufacturers.
 6. Open /app/compliance and /app/impact where the role menu provides them.
 
@@ -386,7 +386,7 @@ Compliance totals depend on the recorded transactions. They are supporting infor
 
 ![Current manufacturer home components with synthetic documentation data.](screenshots/manufacturer-overview.png)
 
-1. Open Market to inspect permitted recycled-material suppliers.
+1. Open Buy to inspect permitted recycled-material suppliers.
 2. Check material, grade, quantity and price before placing an order.
 3. Follow the trade state and receive the delivery only after the business checks it.
 4. Open the printable trade receipt for the recorded transaction.
@@ -546,7 +546,7 @@ Add missing names fills missing catalogue names from the bundled translations. I
 
 ## 22 / Admin: pilot numbers
 
-![Current pilot-report components with synthetic totals. These are not measured pilot results.](screenshots/admin-pilot.png)
+![Pilot report overview with synthetic totals, not measured results. Larger chart views follow.](screenshots/admin-pilot.png)
 
 Open /admin/pilot. Choose Today, 7 days, 30 days or the fixed 13-20 October 2026 pilot period. Read the displayed date range in India time.
 
@@ -779,7 +779,7 @@ App routes have no organisation slug. In particular, do not use /app/[org]/stock
 
 | Term           | Meaning in this platform                                                 |
 | -------------- | ------------------------------------------------------------------------ |
-| Kabadiwala     | A local scrap shop that buys from households                             |
+| Kabadiwala     | A local collection shop that buys from households                        |
 | Yard           | A bulk sorting/preprocessing business                                    |
 | Saathi         | An approved worker who takes local jobs                                  |
 | Minimum        | Lowest permitted shop price for a material                               |
@@ -806,7 +806,7 @@ Open /prices before comparing a shop offer. A connected demo deployment can show
 
 ![Current local material-history dialog in dark mode, using the same development demo data. The chart supports keyboard navigation; the daily values also appear in a scrollable table. No price is edited.](screenshots/public-price-history-demo-dark.png)
 
-The 2 October demo contains 26 materials and 30 daily price points for each material. Select a row to open its history. Use the arrow keys on the chart to read another date. Select Show the numbers to open the daily values below it. Close the dialog to return to the board. These sample values must be validated or replaced before operational use.
+The demo contains 26 materials. The 3 October capture shows 29 available daily samples in the rolling 30-day window; no new sample is added for the capture. Select a row to open its history. Use the arrow keys on the chart to read another date. Select Show the numbers to open the daily values below it. Close the dialog to return to the board. These sample values must be validated or replaced before operational use.
 
 The weighing guide below the board explains the final amount: zero the scale, weigh each material separately, agree the amount and check the receipt. A reference price does not replace measured weight. Use Open guide to read the full household weighing instructions.
 
@@ -898,7 +898,7 @@ or device. Admin and public pages use the same local preference.
 
 The wide desktop header keeps its links and controls on one row. The phone menu button stays disabled until the page controls are ready. On phones and
 tablets, the header shows the logo and menu control. Open the menu for navigation,
-appearance, language, sign-in and Sell scrap. The menu scrolls on short screens.
+appearance, language, sign-in and Book a collection. The menu scrolls on short screens.
 Press Escape to close it and return keyboard focus to the menu control.
 
 ![Current phone menu. Navigation, appearance, language and actions are grouped inside the menu.](screenshots/public-navigation-phone.png)

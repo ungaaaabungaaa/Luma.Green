@@ -240,7 +240,7 @@ def build() -> None:
                 width, height = picture.size
             max_height = 6.5 if height > width * 1.3 else 4.4
             # These reference captures need a different balance of image and prose.
-            if path.name == 'household-tracking.png':
+            if path.name in {'household-tracking.png', 'kabadiwala-overview.png'}:
                 max_height = 8.4
             elif path.name == 'manufacturer-compliance.png':
                 max_height = 8.0
@@ -258,7 +258,7 @@ def build() -> None:
             shape = paragraph.add_run().add_picture(str(path), width=Inches(image_width))
             shape._inline.docPr.set('descr', caption)
             inline(document.add_paragraph(style='Caption'), caption)
-            if path.name == 'household-tracking.png':
+            if path.name in {'household-tracking.png', 'kabadiwala-overview.png'}:
                 next_page = True
             continue
         if line.startswith('|'):
@@ -276,7 +276,7 @@ def build() -> None:
         if match := re.match(r'^(#{1,4}) (.+)$', line):
             level, title = match.groups()
             paragraph = document.add_paragraph(heading_text(title), style='Title' if len(level) == 1 else f'Heading {len(level) - 1}')
-            paragraph.paragraph_format.page_break_before = next_page or title == 'Error reports and owner settings'
+            paragraph.paragraph_format.page_break_before = next_page or title in {'Error reports and owner settings', 'Local desktop demonstration'}
             next_page = False
         elif re.match(r'^(?:\d+\.|-) ', line):
             # Preserve procedure step numbers exactly; each procedure restarts in source.

@@ -7,7 +7,7 @@
         "src/components/providers/analytics-provider.tsx": "40fa6181daaf8db6fa965af05ae5d4ea1aa2d3da2b78f4a69df6b73f50b96791",
         "src/lib/analytics-runtime.ts": "055c4aee8a18f34ce569b46298978028952117f4eb56bccd0e4b2dd0e53477da",
         "src/lib/analytics.ts": "12d9dc95b7cf7a7901e7fc5f0d1f789c44918cdc09f83fba1ff288c9336e0b5c",
-        "src/components/site/home/hero.tsx": "3e8d4ea6b18b8d2a5f1a1bb14a6cd7fab8d76873cb743cb80ce3270fb860951a",
+        "src/components/site/home/hero.tsx": "a5c1d4709fef67a50103577e49c7785d35f5e9a7f9a421a84c33359bf86cccad",
         "src/components/site/action-name.ts": "3e669342f3a69c8c7e2f71332d39f9c5d0a2eaf211994a456506e6ee91401ceb",
         "src/components/site/public-effects.module.css": "a1e2d678f59a1a0accc5c66fb36e5489ad88e52173b4eaa5ee62a1ecb988fc82",
         "src/components/site/site-header.tsx": "b6759891fafbb73fe5571b9bceecc9bdca96e2d2f64384e84bfac830fd743159",
@@ -22,15 +22,15 @@
         "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
         "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
         "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f",
-        "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f",
-        "messages/ar.json": "59058e21c58ffe4b1a29eab80087ef210eb675244654aab612bf866459c8cff6"
+        "messages/en.json": "ffede6185ab4b962f50b010b7438b56b966e53488207ea4dea758dac5cc7661c",
+        "messages/ar.json": "36f15efa61ff7ca5bf053471e870c84c968717748196430e00705773b20de7f4"
       },
       "browserErrors": [],
       "path": "docs/user-guide/screenshots/analytics-choice.png",
-      "sha256": "265d340cb096cc1380298f4b3cf32080aadaca2398861d972bc72f45f133451f",
-      "sourceRevision": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
+      "sha256": "7b04ba5be7c7402ad38bcc3d68aed59cc5f8260ff822b10753a9a9febd75efcb",
+      "sourceRevision": "f82df3c341bcfa1f976af67919162fef1f88e191",
       "url": "http://localhost:3106/",
-      "capturedAt": "2026-10-02T17:09:25.095Z",
+      "capturedAt": "2026-10-02T23:14:20.581Z",
       "viewport": {
         "width": 1280,
         "height": 900
@@ -52,7 +52,7 @@
         "src/components/providers/analytics-provider.tsx": "40fa6181daaf8db6fa965af05ae5d4ea1aa2d3da2b78f4a69df6b73f50b96791",
         "src/lib/analytics-runtime.ts": "055c4aee8a18f34ce569b46298978028952117f4eb56bccd0e4b2dd0e53477da",
         "src/lib/analytics.ts": "12d9dc95b7cf7a7901e7fc5f0d1f789c44918cdc09f83fba1ff288c9336e0b5c",
-        "src/components/site/home/hero.tsx": "3e8d4ea6b18b8d2a5f1a1bb14a6cd7fab8d76873cb743cb80ce3270fb860951a",
+        "src/components/site/home/hero.tsx": "a5c1d4709fef67a50103577e49c7785d35f5e9a7f9a421a84c33359bf86cccad",
         "src/components/site/action-name.ts": "3e669342f3a69c8c7e2f71332d39f9c5d0a2eaf211994a456506e6ee91401ceb",
         "src/components/site/public-effects.module.css": "a1e2d678f59a1a0accc5c66fb36e5489ad88e52173b4eaa5ee62a1ecb988fc82",
         "src/components/site/site-header.tsx": "b6759891fafbb73fe5571b9bceecc9bdca96e2d2f64384e84bfac830fd743159",
@@ -67,15 +67,15 @@
         "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
         "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
         "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f",
-        "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f",
-        "messages/ar.json": "59058e21c58ffe4b1a29eab80087ef210eb675244654aab612bf866459c8cff6"
+        "messages/en.json": "ffede6185ab4b962f50b010b7438b56b966e53488207ea4dea758dac5cc7661c",
+        "messages/ar.json": "36f15efa61ff7ca5bf053471e870c84c968717748196430e00705773b20de7f4"
       },
       "browserErrors": [],
       "path": "docs/user-guide/screenshots/analytics-choice-arabic.png",
-      "sha256": "9e29f434603c5e93df169123cae3b295b18b141ee7a9bc9ef500b4d9fb453ec6",
-      "sourceRevision": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
+      "sha256": "c04694c9543d36555668406e845676688c29eda1d6f3ba433285b3e00db4bda6",
+      "sourceRevision": "f82df3c341bcfa1f976af67919162fef1f88e191",
       "url": "http://localhost:3106/ar",
-      "capturedAt": "2026-10-02T17:09:32.460Z",
+      "capturedAt": "2026-10-02T23:14:25.577Z",
       "viewport": {
         "width": 390,
         "height": 844

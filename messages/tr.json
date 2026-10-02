@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Daha temiz yarınlar için harekette",
-    "description": "Luma.Green, Hindistan’ın hurda zincirini tek platformda birleştirir: haneler, hurdacılar, ayrıştırma sahaları, geri dönüşümcüler ve üreticiler. Adil fiyatlar, tartılı alımlar ve her teslimatın kaydı."
+    "description": "Luma.Green, Hindistan’ın geri dönüşüm ağını tek platformda birleştirir: haneler, toplama işletmeleri, ayrıştırma sahaları, geri dönüşümcüler ve üreticiler. Adil fiyatlar, tartılı alımlar ve her teslimatın kaydı."
   },
   "theme": {
     "label": "Görünüm",
@@ -34,10 +34,10 @@
     "prices": "Fiyatlar",
     "help": "Yardım",
     "join": "Katıl",
-    "sellScrap": "Hurda sat"
+    "sellScrap": "Toplama planla"
   },
   "footer": {
-    "about": "Hindistan’ın hurda zinciri, evden fabrikaya tek platformda. Her teslimat tartılır, fiyatlandırılır ve kaydedilir.",
+    "about": "Hindistan’ın geri dönüşüm ağı, evden fabrikaya tek platformda. Her teslimat tartılır, fiyatlandırılır ve kaydedilir.",
     "navLabel": "Alt bilgi",
     "useHeading": "Luma.Green kullanın",
     "learnHeading": "Daha fazla bilgi",
@@ -48,7 +48,7 @@
   "loop": {
     "sell": {
       "title": "Satış",
-      "summary": "Haneler hurdalarını evden adil fiyatla satar; kapıda tartılır ve ödenir."
+      "summary": "Haneler malzemelerini evden adil fiyatla satar; kapıda tartılır ve ödenir."
     },
     "trade": {
       "title": "Ticaret",
@@ -91,11 +91,11 @@
       "title": "Fiyatlar yüklenemedi",
       "body": "Bağlantınızı kontrol edip tekrar deneyin."
     },
-    "metaTitle": "Bengaluru’da bugünkü hurda fiyatları",
-    "metaDescription": "Bengaluru’da kg başına hurda fiyatları: kâğıt, plastik, metal, cam ve elektronik atık. Haftalık değişim, 30 günlük grafik ve dükkânın ödeyebileceği minimum tutar.",
+    "metaTitle": "Bengaluru’da bugünkü malzeme fiyatları",
+    "metaDescription": "Bengaluru’da kg başına malzeme fiyatları: kâğıt, plastik, metal, cam ve elektronik atık. Haftalık değişim, 30 günlük grafik ve dükkânın ödeyebileceği minimum tutar.",
     "eyebrow": "Bengaluru",
-    "title": "Bugünün hurda fiyatları",
-    "lead": "Hurdanın bugünkü kilo fiyatı. Dükkânlar tabanın altına düşmeden fiyat belirler. Son 30 günü görmek için malzemeye dokunun.",
+    "title": "Malzeme fiyatları",
+    "lead": "Malzemenin bugünkü kilo fiyatı. Dükkânlar tabanın altına düşmeden fiyat belirler. Son 30 günü görmek için malzemeye dokunun.",
     "demoNote": "Prototip için örnek fiyatlar; canlı piyasa oranları değildir.",
     "date": "{date} fiyatları",
     "floorHelp": "Taban: doğrulanmış dükkânın bir kilo için ödeyebileceği en düşük tutar.",
@@ -145,9 +145,9 @@
       "body": "Bugünün fiyatları yayımlandığında burada görünür."
     },
     "sellCta": {
-      "title": "Evde hurdanız var mı?",
+      "title": "Evde malzemeniz var mı?",
       "body": "Alım ayarlayın, kapıda ödeme alın.",
-      "action": "Hurdanızı satın"
+      "action": "Toplama planla"
     }
   },
   "standards": {
@@ -161,12 +161,12 @@
       },
       "title": "Her malzemeye tek kod",
       "nav": "Malzeme kodları",
-      "body": "Aynı hurdanın birçok yerel adı vardır. Açık kod, her malzemeye ortak bir ad verir. Böylece bir kilo gazete dükkânda, sahada ve fabrikada aynı şeyi ifade eder.",
+      "body": "Aynı malzemenin birçok yerel adı vardır. Açık kod, her malzemeye ortak bir ad verir. Böylece bir kilo gazete dükkânda, sahada ve fabrikada aynı şeyi ifade eder.",
       "caption": "Luma.Green malzeme kodları",
       "count": "{count, plural, one {# malzeme} other {# malzeme}}",
       "download": "Kodları indir (CSV)",
       "stages": {
-        "scrap": "Hurda",
+        "scrap": "Toplanan malzemeler",
         "recycled": "Geri dönüştürülmüş"
       },
       "unavailable": "Kod listesi şu anda kullanılamıyor. Yakında tekrar bakın.",
@@ -198,10 +198,10 @@
       "body": "Kodlar ve kurallar açık ve ücretsizdir. Luma.Green’de veya dışında dükkânınızda, sahanızda ya da fabrikanızda kullanın; nasıl iyileştirebileceğimizi söyleyin."
     },
     "metaTitle": "Luma.Green standardı",
-    "metaDescription": "Planlanıyor: Hindistan’da adil hurda ticareti için açık malzeme kodları ve basit kurallar: sınıflandırma, tartım, makbuz, doğrulama ve emanet ödeme. Herkes ücretsiz kullanabilir.",
+    "metaDescription": "Planlanıyor: Hindistan’da adil malzeme ticareti için açık malzeme kodları ve basit kurallar: sınıflandırma, tartım, makbuz, doğrulama ve emanet ödeme. Herkes ücretsiz kullanabilir.",
     "eyebrow": "Açık standart",
     "title": "Luma.Green standardı",
-    "lead": "Adil hurda ticareti için basit ve açık kurallar: her malzemeye tek kod, net sınıflandırma, dürüst tartım ve her teslimatta kayıt. Sektördeki herkes kullanabilir.",
+    "lead": "Adil malzeme ticareti için basit ve açık kurallar: her malzemeye tek kod, net sınıflandırma, dürüst tartım ve her teslimatta kayıt. Sektördeki herkes kullanabilir.",
     "onThisPage": "Bu sayfada",
     "grading": {
       "title": "Sınıflandırma: kuru, ayrılmış, temiz",
@@ -209,7 +209,7 @@
       "body": "Adil fiyat için sınıf net olmalı. Tartımdan önce üç kontrol yapılır.",
       "dry": {
         "title": "Kuru",
-        "body": "Su hurda değildir. Islak kâğıt ve karton tartılmadan önce kurutulur."
+        "body": "Su malzeme değildir. Islak kâğıt ve karton tartılmadan önce kurutulur."
       },
       "sorted": {
         "title": "Ayrılmış",
@@ -223,7 +223,7 @@
     "weighing": {
       "title": "Adil tartım",
       "nav": "Tartım",
-      "body": "Hurda anlaşmazlıklarının çoğu ağırlıkla ilgilidir. Bu kurallar doğru tartım sağlar.",
+      "body": "Malzeme anlaşmazlıklarının çoğu ağırlıkla ilgilidir. Bu kurallar doğru tartım sağlar.",
       "stamped": {
         "title": "Damgalı teraziler",
         "body": "Yalnızca Yasal Metroloji birimince doğrulanmış ve damgalanmış terazide tartın."
@@ -256,9 +256,9 @@
   },
   "howItWorks": {
     "metaTitle": "Nasıl çalışır",
-    "metaDescription": "Planlanıyor: Luma.Green’de hurdanın yolu; evden adil fiyatla satış, emanet ödemeyle zincir boyunca ticaret ve her teslimatın kaydı.",
+    "metaDescription": "Planlanıyor: Luma.Green’de malzemenin yolu; evden adil fiyatla satış, emanet ödemeyle zincir boyunca ticaret ve her teslimatın kaydı.",
     "title": "Luma.Green nasıl çalışır",
-    "lead": "Hurda yeni bir ürüne dönüşmeden önce dört kez el değiştirir. Her adımda ne olduğunu ve Luma.Green’in ne kaydettiğini görün.",
+    "lead": "Malzemeler yeni bir ürüne dönüşmeden önce evlerden toplama dükkânlarına, ayrıştırma sahalarına ve geri dönüşümcülere gider. Luma.Green her teslimatı kaydeder.",
     "stepLabel": "Adım {number}",
     "sell": {
       "body": "Hane malzemelerini seçer, yakın dükkânların tekliflerini görür ve alım veya teslim ayarlar. Hurdacı her malzemeyi tartıp nakit veya UPI ile öder; iki taraf da makbuz alır.",
@@ -467,7 +467,7 @@
       },
       "safetyAtWork": {
         "title": "İşte güvende kalın",
-        "summary": "Koruyucu ekipman, kaldırma, keskin hurda, bataryalar ve makineler: yaralanmaları önleyen temel bilgiler.",
+        "summary": "Koruyucu ekipman, kaldırma, keskin malzeme, bataryalar ve makineler: yaralanmaları önleyen temel bilgiler.",
         "steps": {
           "gear": {
             "title": "Koruyucu ekipmanınızı giyin",
@@ -483,7 +483,7 @@
           },
           "batteries": {
             "title": "Batarya ve elektronik atığı ayırın",
-            "body": "Diğer hurdadan uzakta kuru ve serin tutun. Tel yakmayın, batarya veya ekran kırmayın."
+            "body": "Diğer malzemeden uzakta kuru ve serin tutun. Tel yakmayın, batarya veya ekran kırmayın."
           },
           "machines": {
             "title": "Sıkışıklığı açmadan kapatın",
@@ -600,8 +600,8 @@
         "summary": "Fotoğraftan rezervasyona yaklaşık iki dakika. Hesap gerekmez.",
         "steps": {
           "photo": {
-            "title": "Hurdanın fotoğrafını çekin",
-            "body": "İsteğe bağlı: hurdanızın bir fotoğrafını ekleyin, önerilen kalemleri kontrol edin."
+            "title": "Malzemenin fotoğrafını çekin",
+            "body": "İsteğe bağlı: malzemenizin bir fotoğrafını ekleyin, önerilen kalemleri kontrol edin."
           },
           "estimate": {
             "title": "Tahmini kontrol edin",
@@ -626,8 +626,8 @@
         }
       },
       "getReady": {
-        "title": "Hurdanızı hazırlayın",
-        "summary": "Ayrılmış kuru hurda daha hızlı tartılır ve daha değerli satılır.",
+        "title": "Malzemenizi hazırlayın",
+        "summary": "Ayrılmış kuru malzeme daha hızlı tartılır ve daha değerli satılır.",
         "steps": {
           "paper": {
             "title": "Kâğıdı kuru ve düz tutun",
@@ -849,7 +849,7 @@
           },
           "sort": {
             "title": "Ayrıştırmayı kaydedin",
-            "body": "Karışık hurdayı gerçek malzemelerine ayırın. Örneğin karışık kâğıdı gazete, karton ve atığa."
+            "body": "Karışık malzemeyi gerçek malzemelerine ayırın. Örneğin karışık kâğıdı gazete, karton ve atığa."
           },
           "show": {
             "title": "Stoku sahalara gösterin",
@@ -885,7 +885,7 @@
       },
       "buyFromKabadiwalas": {
         "title": "Demo kılavuzu: Hurdacılardan stok satın alma",
-        "summary": "Yakınınızdaki ayrıştırılmış hurdaları bulun ve teslim alma rezervasyonu yapın.",
+        "summary": "Yakınınızdaki ayrıştırılmış malzemeleri bulun ve teslim alma rezervasyonu yapın.",
         "steps": {
           "browse": {
             "title": "Satın Al bölümünü açın",
@@ -936,7 +936,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Demo kılavuzu: Sahalardan ayrıştırılmış hurda satın alma",
+        "title": "Demo kılavuzu: Sahalardan ayrıştırılmış malzeme satın alma",
         "summary": "Üretim hattınız için düzenli, sınıflandırılmış girdi.",
         "steps": {
           "browse": {
@@ -1071,7 +1071,7 @@
           },
           "deliver": {
             "title": "Dükkâna getirin",
-            "body": "Hurdayı doğrudan dükkâna götürüp teslim edin."
+            "body": "Malzemeyi doğrudan dükkâna götürüp teslim edin."
           }
         }
       },
@@ -1101,13 +1101,13 @@
     "roles": {
       "household": {
         "name": "Haneler",
-        "who": "Evden hurda satmak",
+        "who": "Evden malzeme satmak",
         "title": "Haneler için yardım",
         "lead": "Alım ayarlayın, adil tartım ve kapıda ödeme alın. Hesap gerekmez."
       },
       "kabadiwala": {
         "name": "Hurdacılar",
-        "who": "Hurda dükkânı işletmek",
+        "who": "Toplama dükkânı işletmek",
         "title": "Hurdacılar için yardım",
         "lead": "Alım alın, bir dakikada tartıp ödeyin, fiyat belirleyin ve sahalara satın."
       },
@@ -1119,9 +1119,9 @@
       },
       "recycler": {
         "name": "Geri dönüşümcüler",
-        "who": "Hurdayı ham maddeye dönüştürmek",
+        "who": "Malzemeyi ham maddeye dönüştürmek",
         "title": "Geri dönüşümcüler için yardım",
-        "lead": "Sahalardan sınıflandırılmış hurda alın, ürününüzü fabrikalara satın ve EPR kayıtlarını düzenli tutun."
+        "lead": "Sahalardan sınıflandırılmış malzeme alın, ürününüzü fabrikalara satın ve EPR kayıtlarını düzenli tutun."
       },
       "manufacturer": {
         "name": "Üreticiler",
@@ -1275,7 +1275,7 @@
       },
       "noVehicle": {
         "q": "Aracım yok. Yine de katılabilir miyim?",
-        "a": "Evet. Haneler hurdalarını dükkânınıza getirebilir. Aracı olmayan dükkânlar için Saathi alımları ileride sunulacak."
+        "a": "Evet. Haneler malzemelerini dükkânınıza getirebilir. Aracı olmayan dükkânlar için Saathi alımları ileride sunulacak."
       },
       "autoAccept": {
         "q": "Otomatik kabul nedir?",
@@ -1408,7 +1408,7 @@
     },
     "tutorials": {
       "bookInTwoMinutes": "İki dakikada alım rezervasyonu",
-      "sortAtHome": "Evde hurda ayrıştırma",
+      "sortAtHome": "Evde malzeme ayrıştırma",
       "batterySafety": "Eski pilleri güvenle işleme",
       "firstDay": "Luma.Green’de ilk gününüz",
       "weighAndPayVideo": "Bir dakikada tartım ve ödeme",
@@ -1436,7 +1436,7 @@
         "title": "Bir kez ayrıştırın",
         "p1": "Kâğıt, plastik ve metal için ayrı birer torba kullanın.",
         "p2": "Her şeyi kuru ve temiz tutun.",
-        "p3": "Ayrıştırılmış hurda daha hızlı tartılır ve daha iyi fiyatla alınır."
+        "p3": "Ayrıştırılmış malzeme daha hızlı tartılır ve daha iyi fiyatla alınır."
       },
       "batteriesSafe": {
         "title": "Pilleri güvenle saklayın",
@@ -1463,7 +1463,7 @@
         "p3": "Ödemeden önce toplamı gösterin."
       },
       "safeHandling": {
-        "title": "Hurdayı güvenle işleme",
+        "title": "Malzemeyi güvenle işleme",
         "p1": "Her zaman eldiven ve kapalı ayakkabı kullanın.",
         "p2": "Kaldırırken bacaklarınızı kullanın; 25 kg üzeri için yardım alın.",
         "p3": "Pilleri ve elektronik atıkları ayrı tutun."
@@ -1577,7 +1577,7 @@
   },
   "sell": {
     "retry": "Tekrar dene",
-    "metaTitle": "Hurdanızı satın",
+    "metaTitle": "Toplama planla",
     "families": {
       "paper": "Kâğıt",
       "plastic": "Plastik",
@@ -1663,7 +1663,7 @@
       "hours": "Açık: {hours}",
       "verified": "Doğrulandı",
       "title": "Kim alır?",
-      "lead": "Her dükkânın kendi fiyatıyla hurdanıza teklifi.",
+      "lead": "Her dükkânın kendi fiyatıyla malzemenize teklifi.",
       "modeLabel": "Nasıl teslim etmek istersiniz?",
       "pickup": "Evden alım",
       "pickupHint": "Dükkân size gelir",
@@ -1673,7 +1673,7 @@
       "byPrice": "Fiyata göre sırala",
       "locationFailed": "Konum alınamadığı için dükkânlar en iyi fiyata göre sıralandı.",
       "listLabel": "Dükkânlar",
-      "offerFor": "hurdanız için",
+      "offerFor": "malzemeniz için",
       "picksUp": "Alım yapar",
       "dropOnly": "Yalnızca teslim",
       "best": "En iyi fiyat",
@@ -1685,18 +1685,18 @@
       "pickOne": "Devam etmek için dükkân seçin."
     },
     "steps": {
-      "basket": "Ne",
-      "shop": "Kim",
-      "when": "Ne zaman",
+      "basket": "Malzemeler",
+      "shop": "İş ortağı",
+      "when": "Zaman",
       "label": "Adımlar",
       "progress": "{total} adımdan {current}.",
-      "confirm": "Ayırt"
+      "confirm": "İnceleme"
     },
     "basket": {
       "points": "+{points, plural, one {# geri dönüşüm puanı} other {# geri dönüşüm puanı}}",
-      "title": "Neleriniz var?",
+      "title": "Neleri geri dönüştürüyorsunuz?",
       "lead": "Satmak istediğinize dokunun, yaklaşık kiloyu belirleyin.",
-      "yours": "Hurdanız",
+      "yours": "Malzemeniz",
       "empty": "Henüz eklenmedi. Yukarıdan malzemeye dokunun.",
       "kilos": "{material} kilosu",
       "less": "Daha az {material}",
@@ -1710,7 +1710,7 @@
       "summary": "{items, plural, one {# kalem} other {# kalem}} · {weight}",
       "next": "Alıcı bul",
       "full": "Bir rezervasyonda en fazla {max} malzeme olabilir.",
-      "weighNote": "Son tutar hurdanız tartıldığında belirlenir."
+      "weighNote": "Son tutar malzemeniz tartıldığında belirlenir."
     },
     "confirm": {
       "what": "Ne",
@@ -1721,7 +1721,7 @@
       "dropoff": "Dükkâna siz götürürsünüz",
       "whenValue": "{day} · {window}, {time}",
       "youGet": "Yaklaşık {amount} alırsınız",
-      "payNote": "Dükkân hurdanızı tartar ve nakit veya UPI ile öder.",
+      "payNote": "Dükkân malzemenizi tartar ve nakit veya UPI ile öder.",
       "notYou": "Başka numara kullan",
       "title": "Kontrol et ve ayırt",
       "change": "Değiştir",
@@ -1739,7 +1739,7 @@
     },
     "metaDescription": "Bengaluru’da evden gazete, plastik, metal ve eski elektronik satın. Yakındaki dükkân fiyatlarını görün, alım ayarlayın ve kapıda ödeme alın.",
     "eyebrow": "Bengaluru’daki evler için",
-    "title": "Hurdanızı evden satın",
+    "title": "Evden toplama planlayın",
     "lead": "Malzemelerinizi ve yakındaki dükkânı seçin; tartıldığında nakit veya UPI alın.",
     "promises": {
       "label": "Neden burada satmalı",
@@ -1763,7 +1763,7 @@
     },
     "photo": {
       "title": "Fotoğraf tahmini deneyin",
-      "lead": "İsteğe bağlı: hurdanızın bir fotoğrafını ekleyin, önerilen kalemleri kontrol edin.",
+      "lead": "İsteğe bağlı: malzemenizin bir fotoğrafını ekleyin, önerilen kalemleri kontrol edin.",
       "privacy": "Yüz, belge veya plaka eklemeyin. Fotoğraf bu tahmin için yapay zekâ sağlayıcısına gönderilir. Luma.Green kaydetmez.",
       "choose": "Fotoğraf seç veya çek",
       "selected": "Fotoğraf hazır",
@@ -1781,14 +1781,14 @@
       "failed": "Fotoğraf kontrol edilemedi. Başka fotoğraf deneyin veya aşağıdan seçin.",
       "invalid": "12 MB’tan küçük, net JPEG veya PNG kullanın.",
       "limited": "Fotoğraf sınırına ulaşıldı. Aşağıdan seçin veya yarın deneyin.",
-      "retake": "Fotoğraf net değil veya hurda göstermiyor. Başkasını deneyin veya aşağıdan seçin.",
+      "retake": "Fotoğraf net değil veya malzeme göstermiyor. Başkasını deneyin veya aşağıdan seçin.",
       "empty": "Desteklenen malzeme bulunamadı. Başka fotoğraf deneyin veya aşağıdan seçin.",
       "replace": "Başka fotoğraf seç"
     }
   },
   "track": {
     "notFound": {
-      "sell": "Hurda sat",
+      "sell": "Toplama planla",
       "title": "Bu rezervasyonu bulamadık",
       "body": "SMS bağlantısını kontrol edin. Yeni ayarladıysanız biraz bekleyip tekrar deneyin."
     },
@@ -1832,13 +1832,13 @@
       "requested": "{mode, select, pickup {{shop} kabulü bekleniyor} other {{shop} onayı bekleniyor}}",
       "requestedBody": "Talebiniz gönderildi. Yanıt verdiklerinde sayfa güncellenir.",
       "accepted": "{mode, select, pickup {{shop} alımınızı kabul etti} other {{shop} sizi bekliyor}}",
-      "acceptedBody": "Hurdanızı hazır tutun. Tartılır, ardından nakit veya UPI ile ödenir.",
+      "acceptedBody": "Malzemenizi hazır tutun. Tartılır, ardından nakit veya UPI ile ödenir.",
       "on_the_way": "{shop} yolda",
-      "on_the_wayBody": "Hurdanızı kapı yakınında hazır tutun.",
+      "on_the_wayBody": "Malzemenizi kapı yakınında hazır tutun.",
       "completed": "Tamamlandı! {amount} aldınız",
       "completedBody": "Geri dönüştürdüğünüz için teşekkürler. Puanlar numaranıza eklendi.",
       "declined": "{shop} bu rezervasyonu alamadı",
-      "declinedBody": "Hiçbir şey alınmadı. Başka dükkân deneyin; hurda listeniz kayıtlı.",
+      "declinedBody": "Hiçbir şey alınmadı. Başka dükkân deneyin; malzeme listeniz kayıtlı.",
       "cancelled": "Bu rezervasyon iptal edildi",
       "cancelledBody": "Hiçbir şey alınmadı. İstediğiniz zaman yeniden ayarlayabilirsiniz."
     },
@@ -1864,7 +1864,7 @@
     "money": {
       "title": "Paranız ve puanlarınız",
       "estimate": "Yaklaşık {amount} alırsınız",
-      "estimateNote": "Dükkân hurdanızı tartar ve nakit veya UPI ile öder.",
+      "estimateNote": "Dükkân malzemenizi tartar ve nakit veya UPI ile öder.",
       "paid": "{amount} aldınız",
       "paidBy": "{method, select, upi {UPI} other {Nakit}} ile ödendi · {date}",
       "estimateWas": "Tahmin {amount} idi",
@@ -1881,7 +1881,7 @@
       "cancelled": "İptal edildi"
     },
     "saved": "Hesap gerekmez. Herhangi bir telefondan kontrol için bu bağlantıyı saklayın.",
-    "sellMore": "Daha fazla hurda sat",
+    "sellMore": "Yeniden toplama planla",
     "tryAnother": "Başka dükkân dene",
     "dispatchChanged": "Talebiniz yakındaki başka dükkâna geçti. Güncel dükkân aşağıda gösteriliyor."
   },
@@ -1968,7 +1968,7 @@
       "buy": "Satın al",
       "trades": "Ticaretler",
       "greeting": "Merhaba, {name}",
-      "lead": "{kind, select, yard {Hurdacılardan alın, ayrıştırılmış balyaları geri dönüşümcülere satın.} recycler {Sahalardan ayrıştırılmış hurda alın, geri dönüştürülmüş malzemeyi üreticilere satın.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme alın.} other {Ticaretlerinize genel bakış.}}",
+      "lead": "{kind, select, yard {Toplama işletmelerinden alın, ayrıştırılmış balyaları geri dönüşümcülere satın.} recycler {Sahalardan ayrıştırılmış malzeme alın, geri dönüştürülmüş malzemeyi üreticilere satın.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme alın.} other {Ticaretlerinize genel bakış.}}",
       "statsTitle": "Genel bakış",
       "stats": {
         "escrow": "Emanette",
@@ -2126,7 +2126,7 @@
     },
     "browse": {
       "title": "Satın al",
-      "lead": "{kind, select, yard {Yakındaki hurdacılardan ayrıştırılmış hurda.} recycler {Sahalardan ayrıştırılıp balyalanmış malzeme.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme.} other {Yakında satılık malzeme.}}",
+      "lead": "{kind, select, yard {Yakındaki toplama işletmelerinden ayrıştırılmış malzeme.} recycler {Sahalardan ayrıştırılıp balyalanmış malzeme.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme.} other {Yakında satılık malzeme.}}",
       "filterLabel": "Malzemeye göre filtrele",
       "all": "Tümü",
       "count": "{count, plural, =0 {Parti yok} one {# parti satılık} other {# parti satılık}}",
@@ -2208,7 +2208,7 @@
         "body": "Geri alamazsınız."
       },
       "decline": "Reddet",
-      "lead": "Hurda satmak isteyen yakındaki haneler.",
+      "lead": "Malzeme satmak isteyen yakındaki haneler.",
       "empty": {
         "newTitle": "Yeni talep yok",
         "newBody": "Hane sizden alım ayarladığında burada görünür.",
@@ -2255,7 +2255,7 @@
     },
     "stock": {
       "title": "Stok",
-      "scrap": "Hurda",
+      "scrap": "Toplanan malzemeler",
       "buy": "Malzeme al",
       "lead": "Elinizdekiler ve bugünkü değerleri.",
       "totalWeight": "Toplam ağırlık",
@@ -2387,14 +2387,14 @@
     "unavailable": "Tarayıcı seçiminizi kaydedemedi. Analiz kapalı kalacak."
   },
   "home": {
-    "metaDescription": "Luma.Green, Hindistan’ın hurda zincirini tek platformda birleştirir: haneler, hurdacılar, sahalar, geri dönüşümcüler ve üreticiler. Adil fiyatlar, doğrulanmış işletmeler ve her adımda makbuz.",
+    "metaDescription": "Luma.Green, Hindistan’ın geri dönüşüm ağını tek platformda birleştirir: haneler, toplama işletmeleri, sahalar, geri dönüşümcüler ve üreticiler. Adil fiyatlar, doğrulanmış işletmeler ve her adımda makbuz.",
     "hero": {
       "eyebrow": "Bengaluru’da başlıyoruz",
-      "title": "Hindistan’ın hurda zinciri tek platformda",
-      "lead": "Evden adil fiyatla hurda satın. Doğrulanmış işletmelerle zincir boyunca ticaret yapın. Her teslimat tartılır, fiyatlandırılır ve kaydedilir.",
-      "sell": "Hurdanızı satın",
-      "join": "İşletme olarak katılın",
-      "prices": "Bugünün fiyatlarını görün"
+      "title": "Malzemelerinize yeni bir başlangıç verin.",
+      "lead": "Kâğıt, plastik, metal ve daha fazlası için toplama planlayın. Teklifleri karşılaştırın ve açık kayıtlar tutun.",
+      "sell": "Toplama planla",
+      "join": "İşletmeler için",
+      "prices": "Malzeme fiyatları"
     },
     "teaser": {
       "title": "Bugünün fiyatları",
@@ -2406,8 +2406,8 @@
       "error": "Fiyatlar şu anda yüklenemedi."
     },
     "chain": {
-      "heading": "Hurda nasıl ilerler",
-      "intro": "Hurda, yeni bir ürüne dönüşmeden önce dört kez el değiştirir. Her adımda daha iyi ayrıştırılır ve Luma.Green her teslimatı kaydeder.",
+      "heading": "Malzeme nasıl ilerler",
+      "intro": "Malzemeler yeni bir ürüne dönüşmeden önce evlerden toplama dükkânlarına, ayrıştırma sahalarına ve geri dönüşümcülere gider. Luma.Green her teslimatı kaydeder.",
       "steps": {
         "household": {
           "name": "Haneler",
@@ -2435,13 +2435,13 @@
     },
     "roles": {
       "heading": "Zincirdeki herkes için",
-      "intro": "Altı katılımcı grubu hurdaların ilerlemesini sağlar. Luma.Green’in her biri için sundukları burada.",
+      "intro": "Altı katılımcı grubu malzemelerin ilerlemesini sağlar. Luma.Green’in her biri için sundukları burada.",
       "household": {
         "title": "Haneler",
-        "one": "Rezervasyondan önce hurdanızın değerini görün.",
+        "one": "Rezervasyondan önce malzemenizin değerini görün.",
         "two": "Kapıdan alım veya dükkâna teslim.",
         "three": "Makbuzla nakit veya UPI ödemesi.",
-        "cta": "Hurdanızı satın"
+        "cta": "Toplama planla"
       },
       "kabadiwala": {
         "title": "Hurdacılar",
@@ -2481,7 +2481,7 @@
     },
     "trust": {
       "heading": "Güven üzerine kurulu",
-      "intro": "Hurda ticareti uzun süredir nakit ve tahminlerle yürür. Bu kurallar bunu değiştirir.",
+      "intro": "Açık fiyatlar, ölçülen ağırlıklar ve kayıtlar herkesin bir toplama işlemini kontrol etmesine yardımcı olur.",
       "verified": {
         "title": "Doğrulanmış işletmeler",
         "body": "Ticarete başlamadan önce her işletmeyi ve Saathi çalışanını bir kişi inceler."
@@ -2505,7 +2505,7 @@
     },
     "whyNow": {
       "heading": "Neden şimdi",
-      "intro": "Üç değişiklik, Hindistan’ın hurda zincirini kayda almak için doğru zamanı oluşturuyor.",
+      "intro": "Üç değişiklik, Hindistan’ın geri dönüşüm ağını kayda almak için doğru zamanı oluşturuyor.",
       "epr": {
         "title": "EPR kuralları",
         "body": "Plastik ambalaj, elektronik atık ve bataryalar için Genişletilmiş Üretici Sorumluluğu kuralları, malzemenin gerçekten toplanıp geri dönüştürüldüğünün kanıtını ister. Kanıt ilk teslimattan başlamalıdır."
@@ -2522,13 +2522,13 @@
     "closing": {
       "title": "Elinizdekiyle başlayın",
       "body": "Bir torba eski gazete veya bir kamyon balya: Luma.Green’de hepsine yer var.",
-      "sell": "Hurdanızı satın",
+      "sell": "Toplama planla",
       "join": "İşletme olarak katılın"
     },
     "expansion": {
-      "materialsTitle": "Elinizdeki malzemelerle başlayın",
+      "materialsTitle": "Neleri geri dönüştürmek istersiniz?",
       "pickupTitle": "Adım adım bir alım",
-      "shopTitle": "Hurda dükkânınız bağlantıda",
+      "shopTitle": "Toplama dükkânınız bağlantıda",
       "recordsTitle": "Malzemeyi izleyen bir kayıt",
       "paymentTitle": "Net ağırlıklar. Net ödemeler.",
       "questionsTitle": "Başlamadan önce"
@@ -2710,11 +2710,11 @@
       "body": "Eve yakın ücretli alım, ayrıştırma ve vardiya işleri alın; kazancınızı görün."
     },
     "metaTitle": "Kimler için",
-    "metaDescription": "Luma.Green; haneler, hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için, yani hurdayı evden fabrikaya taşıyan herkes için tasarlandı.",
+    "metaDescription": "Luma.Green; haneler, toplama işletmeleri, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için, yani malzemeyi evden fabrikaya taşıyan herkes için tasarlandı.",
     "title": "Luma.Green kimler için",
-    "lead": "Hurdayı evden fabrikaya taşıyan herkes ve aradaki işleri yapan kişiler.",
+    "lead": "Malzemeyi evden fabrikaya taşıyan herkes ve aradaki işleri yapan kişiler.",
     "householdHeading": "Ve her hane için",
-    "householdBody": "Herkes hesap açmadan evden hurda satabilir: malzemelerini seçer, dükkân tekliflerini görür ve makbuzla nakit veya UPI alır."
+    "householdBody": "Herkes hesap açmadan evden malzeme satabilir: malzemelerini seçer, dükkân tekliflerini görür ve makbuzla nakit veya UPI alır."
   },
   "join": {
     "consent": {
@@ -2794,17 +2794,17 @@
     "roles": {
       "kabadiwala": {
         "title": "Hurdacı",
-        "body": "Hurda dükkânı işletiyor ve yakındaki evlerden satın alıyorsunuz.",
+        "body": "Toplama dükkânı işletiyor ve yakındaki evlerden satın alıyorsunuz.",
         "needs": "Dükkân adresi ve çalışma saatleri. Varsa GST numaranız."
       },
       "yard": {
         "title": "Ayrıştırma sahası",
-        "body": "Hurdayı toplu ayrıştırıp balyalıyor, ardından satıyorsunuz.",
+        "body": "Malzemeyi toplu ayrıştırıp balyalıyor, ardından satıyorsunuz.",
         "needs": "Varsa GST numarası, kirlilik kontrol izni (PDF) ve makine fotoğrafları."
       },
       "recycler": {
         "title": "Geri dönüşümcü",
-        "body": "Hurdayı tekrar ham maddeye dönüştürüyorsunuz.",
+        "body": "Malzemeyi tekrar ham maddeye dönüştürüyorsunuz.",
         "needs": "Varsa GST numarası, kirlilik kontrol izni (PDF) ve makine fotoğrafları."
       },
       "manufacturer": {
@@ -2945,7 +2945,7 @@
     "lead": "Ne yaptığınızı anlatın. Her başvuruyu bir kişi genellikle 12–24 saatte inceler.",
     "start": "Başla",
     "youNeed": "Gerekenler",
-    "homeTitle": "Evden hurda mı satıyorsunuz?",
+    "homeTitle": "Evden geri dönüşüme mi veriyorsunuz?",
     "homeBody": "Katılmanız gerekmez. Satacak malzemeniz olduğunda alım ayarlayın.",
     "documents": {
       "title": "Belgeler ve fotoğraflar",
@@ -3218,7 +3218,7 @@
         "detail": "{board} · {number}",
         "missing": "Kayıtlı izin yok",
         "note": "Eyalet kirlilik kontrol kurulunun işletme izni, ayrıştırma veya geri dönüşüm tesisini yasal çalıştırmanızı sağlar. Geri dönüşümcü ve fabrikalar almadan önce ister.",
-        "noteShop": "Yalnızca hurda alıp ayıran küçük dükkânlar genellikle izin istemez. Balyalama, parçalama veya işleme başlarsanız gerekir."
+        "noteShop": "Yalnızca malzeme alıp ayıran küçük dükkânlar genellikle izin istemez. Balyalama, parçalama veya işleme başlarsanız gerekir."
       },
       "scale": {
         "title": "Terazi damgalı",
@@ -3264,7 +3264,7 @@
     "sendCode": "Kod gönder",
     "sending": "Gönderiliyor…",
     "sendFailed": "Kod gönderilemedi. Bir dakika sonra tekrar deneyin.",
-    "homeTitle": "Evden hurda mı satıyorsunuz? Hesap gerekmez.",
+    "homeTitle": "Evden geri dönüşüme mi veriyorsunuz? Hesap gerekmez.",
     "homeLink": "Nasıl çalıştığını görün",
     "privacy": "Numaranızı yalnızca giriş yapmanız ve Luma.Green’deki işiniz hakkında bilgi göndermek için kullanırız.",
     "unavailableTitle": "Telefonla giriş yakında açılacak",
@@ -3313,12 +3313,12 @@
     "updateUnavailable": "Bu sürümde uygulama güncellemeleri kullanılamıyor.",
     "updateFailed": "Güncellemeler kontrol edilemedi. Daha sonra tekrar deneyin.",
     "locationTitle": "Konumunuz paylaşılsın mı?",
-    "locationBody": "Yakındaki hurda dükkânlarını bulmak için Luma.Green’in konumunuzu kullanmasına izin verin.",
+    "locationBody": "Yakındaki toplama dükkânlarını bulmak için Luma.Green’in konumunuzu kullanmasına izin verin.",
     "allow": "İzin ver",
     "deny": "Şimdi değil",
     "browserNotice": "Bu sayfa tarayıcıda açılır. Yeniden giriş yapmanız gerekebilir.",
-    "cameraPermission": "Hurda veya doğrulama belgelerini fotoğraflamak için kamerayı kullanın.",
-    "photoPermission": "Hurda tahmini ve doğrulama için fotoğraf seçin.",
+    "cameraPermission": "Malzeme veya doğrulama belgelerini fotoğraflamak için kamerayı kullanın.",
+    "photoPermission": "Malzeme tahmini ve doğrulama için fotoğraf seçin.",
     "cameraTitle": "Kamera"
   },
   "showcase": {
@@ -3338,7 +3338,7 @@
           "third": "Makbuzunuzu saklayın"
         },
         "kabadiwala": {
-          "title": "Hurda dükkânınız",
+          "title": "Toplama dükkânınız",
           "first": "Alım taleplerini inceleyin",
           "second": "Ağırlığı kaydedin",
           "third": "Ayrıştırılmış stoku yönetin"

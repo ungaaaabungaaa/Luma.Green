@@ -249,9 +249,8 @@ describe("TrackNotFound", () => {
         name: "We couldn't find this booking",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Sell scrap" })).toHaveAttribute(
-      "href",
-      "/sell",
-    );
+    expect(
+      screen.getByRole("link", { name: "Book a collection" }),
+    ).toHaveAttribute("href", "/sell");
   });
 });

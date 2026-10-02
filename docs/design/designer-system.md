@@ -2,6 +2,86 @@
 
 Status: approved implementation scope from the founder request, 2 October 2026.
 
+## Approved recycling service redesign — 3 October 2026
+
+The founder approved the Mobbin-informed design proposal and asked to continue.
+The goal is a friendly collection service for households and clear, compact
+workspaces for collection shops, yards, recyclers, manufacturers, Saathis and
+admin. This changes presentation and language across the existing routes.
+
+Use “recyclable materials”, “material prices”, “recycling network” and “local
+collection shop” in user-facing copy. The public primary action is “Book a
+collection”. Keep the familiar kabadiwala name where it identifies a role;
+explain that role as a local collection shop. Internal `scrap` stages, API
+fields and catalogue codes retain their existing meaning and identifiers.
+
+The homepage uses an editorial split between an action-led heading and material
+photography. Material choices and the collection journey follow immediately.
+Secondary public pages use a shared split heading and wide image, short reading
+blocks and clear links. Collection screens use connected progress markers,
+open material rows and a clear next action. Auth and onboarding use the same
+type and spacing hierarchy. Workspaces use compact navigation, strong page
+headings, divided task lists and aligned quantities. Admin follows the same
+system with its existing English-only boundary.
+
+Preserve the current contract below: neutral light/dark themes, green actions,
+the real logo, Geist/Noto, control corners, all locales, exact amounts,
+accessibility, honest data and existing protected workflows. The generated
+proposal is a visual concept, not app evidence. Do not implement its incidental
+sample records or implied unimplemented approval states.
+
+### Research used
+
+- [OLIO nearby reuse](https://mobbin.com/screens/8977c3ce-813b-4231-9233-7824a6b230e8): clear categories and local context; no new map dependency.
+- [Amazon recycling choices](https://mobbin.com/screens/a90de4c0-c58f-4d93-af78-fa6ada7a6cc7): short, concrete material and service descriptions.
+- [Square inventory](https://mobbin.com/screens/14883fb0-c276-42d3-8e23-957ffdd15a67): compact filters, aligned rows and clear active navigation.
+- [Bower](https://getbower.com/): explain sorting through direct actions.
+- [ScrapUncle](https://scrapuncle.com/): make material categories and collection steps visible. Do not copy payment promises or service claims.
+
+### Implementation and verification plan
+
+Architecture: edit the existing Next.js/React layouts and feature components;
+reuse Tailwind semantic tokens, shadcn controls and next-intl catalogues. No new
+schema, service, routing owner, authentication path or payment behavior.
+Baseline refs: AGENTS.md, this current UI contract, frontend architecture,
+i18n/testing playbooks, user-guide README and delivery handoff.
+
+Task start: clean task-owned managed worktree at f82df3c on
+`codex/recycling-ui`. The primary `feat/production-prototype` checkout contains
+unrelated catalogue and prototype edits and stays intact. Cleanup belongs to
+this chat after the reviewed change is integrated or explicitly discarded.
+The native worktree tool attaches the new checkout to this chat and requires
+commands to use its returned directory; it does not change the default cwd.
+
+TDD route: off; use proportional post-change checks. Styling uses actual browser
+captures. Existing behavioral tests remain, with focused regressions for changed
+accessible names, collection progress, material navigation and content structure.
+
+1. Copy owner: `messages/*.json`, generated native messages and root copy.
+   Rewrite the English wording; translate changed primary labels and headlines
+   in every registered locale. Keep keys and ICU arguments stable. Verify
+   locale parity, ICU contracts and generated-copy freshness.
+2. Public owner: `src/components/site`, public route composition and related
+   tests. Implement the split hero, useful material directory and secondary
+   page hierarchy. Retain live-price state, illustration notices and functional
+   navigation. Verify public content and full locale navigation bounds.
+3. Flow/workspace owner: existing app, sell, household, auth, onboarding,
+   account, help and admin components. Apply shared hierarchy, progress and
+   density. Keep data calls, access checks, state transitions and draft recovery.
+   Verify focused tests, keyboard/RTL behavior and fixture captures.
+4. Evidence owner: user guide source, screenshots/manifests, Word build/review,
+   cloud pending state and delivery handoff. Run the full local check, build,
+   responsive/locale browser checks, and inspect each changed screen and every
+   rendered guide page. Record fixtures and disconnected pages accurately.
+
+Checkpoint: the local implementation and guide refresh are complete for founder
+review. The final design still needs the founder's approval before any commit,
+push, Vercel deployment or Google Docs publication. The same existing Google
+Doc must receive the reviewed guide after approval. The public preview is
+`http://localhost:3107`; protected component examples remain labelled fixtures.
+The delivery handoff owns the current verification results and remaining gates.
+No deployment, provider acceptance or hosted CI is claimed by this record.
+
 ## Current UI contract
 
 This section is the canonical design rule set for future agents and teammates.

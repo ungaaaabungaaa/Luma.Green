@@ -84,7 +84,9 @@ guide freshness test checks all 78 views. Each browser test verifies error
 feedback, retained data or setup controls, retry availability where applicable,
 document direction, no horizontal overflow and no page error. Desktop sign-out
 uses a full-page frame to show the retry button below the provenance banner;
-phone and tablet retain the viewport so their fixed navigation stays in place. The captures
+phone and tablet use a 1100 px-tall viewport so their fixed navigation stays in
+place. For those sign-out views, the harness note moves above the lower navigation
+to leave the unchanged menu header and error controls visible. The captures
 are fixture evidence, not authentication, permission or provider proof.
 
 - `main.tsx` imports actual `ConsoleShell`, `AppShell`, `JoinLayout` and page components.
