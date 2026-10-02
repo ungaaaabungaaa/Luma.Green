@@ -66,6 +66,7 @@ async function postJob(
       .unique();
     return ctx.db.insert("jobs", {
       orgId: shop?._id,
+      city: shop?.city,
       kind: "home_pickups",
       title: `Extra pickups, ${date} ${window}`,
       area: "Yeshwanthpur",

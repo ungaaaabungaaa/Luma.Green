@@ -170,9 +170,13 @@ placements after writing. Export the native PDF and inspect every page before
 recording the new source hash, native revision and publication status.
 
 One accessibility limit remains: the current Google Docs batch-update API does
-not expose a setter for embedded image title/description alt text. The published
-image descriptions remain editable visible captions. Do not claim that native
-image-alt semantics match the Word source. See the [request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
+not expose a setter for embedded image title/description alt text. The
+native editor restored one image description, verified by connector readback.
+The remaining 71 published images retain editable visible captions but lack native
+descriptions. Native editor work stopped when the user changed browser focus.
+Preserve unchanged image objects and native descriptions during supported
+replacement, and verify their size, aspect ratio and description after writing.
+Do not claim that native image-alt semantics match the Word source. See the [request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
 
 The connected `google_drive_import_document` action creates a new document and
 is only for the first import. `update_file` cannot replace a native Google Doc

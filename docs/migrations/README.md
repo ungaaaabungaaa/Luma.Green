@@ -58,7 +58,7 @@ One file per migration: `docs/migrations/YYYY-MM-DD-short-name.md`, with what
 changed, why, the three steps and when each ran, and how to verify. Newest at
 the bottom:
 
-| Date       | Migration                                                       | Status                                     |
-| ---------- | --------------------------------------------------------------- | ------------------------------------------ |
-| 2 Oct 2026 | [Industry API credential storage](./2026-10-02-industry-api.md) | Additive source change; deployment pending |
-| 3 Oct 2026 | [Push session binding](./2026-10-03-push-session-binding.md)    | Additive source change; deployment pending |
+| Date       | Migration                                                       | Status                                             |
+| ---------- | --------------------------------------------------------------- | -------------------------------------------------- |
+| 2 Oct 2026 | [Industry API credential storage](./2026-10-02-industry-api.md) | Deployed to dev and prod; live acceptance separate |
+| 3 Oct 2026 | [Push session binding](./2026-10-03-push-session-binding.md)    | Deployed to dev and prod; live acceptance separate |

@@ -19,6 +19,7 @@ import {
   advanceOffer,
   dispatchSettings as settingsFor,
 } from "./lib/dispatch";
+import { stockGramsAfter } from "./lib/inventory";
 import { queueBookingNotification } from "./lib/notifications";
 import { indiaToday } from "./lib/onboarding";
 import { maskPhone } from "./lib/phone";
@@ -265,16 +266,17 @@ async function addStock(
       q.eq("orgId", orgId).eq("materialCode", line.materialCode),
     )
     .first();
+  const grams = stockGramsAfter(row?.grams ?? 0, line.grams);
   if (row) {
     await ctx.db.patch("inventory", row._id, {
-      grams: row.grams + line.grams,
+      grams,
       updatedAt: now,
     });
   } else {
     await ctx.db.insert("inventory", {
       orgId,
       materialCode: line.materialCode,
-      grams: line.grams,
+      grams,
       updatedAt: now,
     });
   }

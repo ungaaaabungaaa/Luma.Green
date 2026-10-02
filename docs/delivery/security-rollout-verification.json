@@ -1,0 +1,44 @@
+{
+  "source_commit": "e1fc1389ddd047cc1db192fa33e782814b5c8a45",
+  "frontend_main_merge": "53dae4db62432119505bd06d7d9ac85284c0c386",
+  "runtime_reconciliation_commit": "b0db178",
+  "production_index_additions": 16,
+  "production_index_deletions": 0,
+  "migration_backfill_executed": false,
+  "account_or_session_changes": false,
+  "provider_settings_changed": false,
+  "targets": [
+    {
+      "target": "dev",
+      "deployment": "glorious-rooster-470",
+      "recorded_at": "2026-10-02T19:51:09.064886+00:00",
+      "schema_index_count": 75,
+      "all_indexes_available": true,
+      "function_count": 137,
+      "unauthenticated_identity": null,
+      "protected_queries": {
+        "review:queue": "NOT_SIGNED_IN",
+        "integrations:listKeys": "NOT_SIGNED_IN",
+        "inbox:unreadCount": "NOT_SIGNED_IN"
+      },
+      "active_admin_sessions": 0,
+      "admin_provisioning": "password and TOTP records verified; real sign-in not performed"
+    },
+    {
+      "target": "prod",
+      "deployment": "outstanding-buzzard-942",
+      "recorded_at": "2026-10-02T19:52:21.700710+00:00",
+      "schema_index_count": 75,
+      "all_indexes_available": true,
+      "function_count": 137,
+      "unauthenticated_identity": null,
+      "protected_queries": {
+        "review:queue": "NOT_SIGNED_IN",
+        "integrations:listKeys": "NOT_SIGNED_IN",
+        "inbox:unreadCount": "NOT_SIGNED_IN"
+      },
+      "active_admin_sessions": 0,
+      "admin_provisioning": "not configured; no auth users or admin profiles"
+    }
+  ]
+}

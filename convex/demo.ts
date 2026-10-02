@@ -707,6 +707,7 @@ async function seedJobs(
   for (const job of DEMO_JOBS) {
     await ctx.db.insert("jobs", {
       orgId: job.poster ? orgs.get(job.poster) : undefined,
+      city: job.poster ? DEMO_CITY : undefined,
       kind: job.kind,
       title: job.title,
       area: job.area,

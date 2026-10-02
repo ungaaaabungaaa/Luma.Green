@@ -613,3 +613,82 @@ deployment remain separate gates. This report does not claim launch readiness.
 The security repair branch preserves the industry API feature merged through PR #30 at `af2e295`. Its additive schema and API guide chapter are retained. The combined source was reviewed for access boundaries and checked again. A slow-loading phone menu also keeps its trigger disabled until interactive, preventing lost first clicks. The current guide includes both revisions.
 
 Final local evidence: `pnpm check` passed (1,345 web/backend, 30 mobile and 21 desktop tests), formatting passed, both production build formats passed, and all 158 browser tests passed without retries. The reviewed Word guide has 76 pages and 72 screenshot placements. Capture hashes match the combined source. Hosted checks and protected squash-merge evidence belong to the associated security repair PR; production backend deployment and the cloud guide update are not implied.
+
+## Security rollout follow-up — 2 October 2026
+
+The follow-up branch `fix/security-rollout-followup` starts at merged PR #31
+(`2ba8246`) and keeps the concurrent PR #29 checkout separate. The node-forge
+advisory now has a reviewed local backport of upstream commit
+`ceba34402e329f0365134f23fe19898756527d65`. All three Expo consumer paths reject
+the upstream forgery vector; valid signing controls pass. The registry still
+reports one high advisory because no patched version has been published. See
+[patch provenance](../../patches/README.md); separate EAS installations remain
+gated for signing.
+
+Local verification passed: `pnpm check` (1,345 web/backend, 36 mobile and 21
+desktop tests), production build, complete formatting, and an independent patch
+review. Guide impact: the dependency patch changes no user-facing route, screen,
+copy, role or native update behavior. The reviewed source/DOCX/screenshots remain
+valid. Operator release instructions now identify the separate EAS dependency
+boundary. Cloud synchronization and backend rollout are being verified separately.
+
+Read-only session inspection found no active admin sessions in development or
+production. Development has one configured password/TOTP admin with consistent
+profile records; production has no auth users and no configured admin. No session
+or account records were changed. A production dry run found 15 indexes belonging
+to the separately deployed ecosystem backend that current main would delete.
+That deployment was not applied. Complete the combined schema integration with
+PR #29 and ecosystem backend commit `dc41665` before either environment is pushed.
+
+The isolated follow-up now includes the already-deployed ecosystem backend from
+`dc41665`, without its unmerged frontend. This preserves the live messaging,
+workforce, material-demand, public-data and isolated-demo owners during the
+security rollout. Both membership index orders, the industry API schema and all
+PR #31 guards remain. Independent merge review passed; 154 tests in nine focused
+suites and TypeScript pass. Live job inspection found zero business jobs needing
+the optional city backfill (production has zero jobs; development has seven and
+all have cities), so no migration was run. The public-data runbook is retained.
+
+The stock overflow follow-up has 32 new regressions and one shared stock-balance
+check. Trade receipts and multi-line pickup completion now reject unsafe or
+invalid legacy quantities atomically. Existing valid boundaries and error codes
+are preserved. Guide impact: these are backend invariant and compatibility
+repairs; no new user-facing screen or copy is introduced. The ecosystem frontend
+remains separate. Guide freshness tests remain required after the final PR #29
+integration.
+
+### Final combined security source — 3 October 2026
+
+The isolated follow-up integrates final PR #29 head `593dfa2` with the retained
+ecosystem backend and all security repairs. Independent review found and fixed
+malformed auth-flag bypasses and notification registration during sign-out,
+including a real second-client HTTP logout case. The authoritative push session
+binding is additive; legacy unbound devices stay inactive until authenticated
+renewal. The reviewed guide includes these rules and the in-flight delivery limit.
+
+The combined full check passed 1,695 web/backend, 49 mobile and 22 desktop tests,
+lint and types. Build passed 2,622 static pages; formatting passed. The final
+production dry run validates existing data, adds 16 indexes and deletes none.
+Deployment will run before PR #29's frontend merge, because Vercel currently
+builds the frontend without deploying Convex. Actual rollout proof follows.
+The 103-page Word guide has 99 images and SHA-256
+`a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3`.
+Its existing Google Doc awaits the verified in-place update after the source
+merges; the latest published record and native description are preserved.
+
+### Verified rollout and protected account merge
+
+Source `e1fc138` deployed to development `glorious-rooster-470` and production
+`outstanding-buzzard-942` before the frontend merge. Both post-deployment checks
+prove 75 indexes, 137 functions, null anonymous identity and `NOT_SIGNED_IN`
+for private review, integration-key and inbox queries. Production added 16
+indexes and deleted none. Both environments have zero active admin sessions;
+production has no auth users or configured admin. No account/session changes,
+secret rotation, provider enablement or inferred data backfill was needed.
+
+PR #29 then merged at `53dae4db62432119505bd06d7d9ac85284c0c386` with all required
+checks, 737 browser tests, five analytics checks and native validation/export
+green. Reconciliation commit `b0db178` preserves all tested runtime source bytes.
+The reviewed 103-page platform guide can now be synchronized in place. The
+separate team Word artifact is preserved. Production admin provisioning, live
+password/TOTP acceptance, SMS and signed device delivery remain separate gates.

@@ -902,3 +902,94 @@ describe("complete stock reservations", () => {
     ).rejects.toThrow(/TOO_MANY_RESERVATIONS/);
   });
 });
+
+describe("inventory mass boundary", () => {
+  it.each([Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER + 1, -1, 0.5])(
+    "refuses an unsafe receipt without changing the trade, stock or audit (stock %s)",
+    async (grams) => {
+      const t = await demoWorld();
+      const recycler = await signInAs(t, RECYCLER);
+      const { buying } = await recycler.query(api.market.trades, {});
+      const delivery = buying.find((trade) => trade.status === "dispatched");
+      if (!delivery) throw new Error("Missing dispatched trade");
+      await setStock(t, "greenloop-polymers", delivery.material.code, grams);
+      const snapshot = () =>
+        t.run(async (ctx) => ({
+          trade: await ctx.db.get("trades", delivery.id),
+          inventory: await ctx.db.query("inventory").collect(),
+          audit: await ctx.db.query("auditLog").collect(),
+        }));
+      const before = await snapshot();
+      await expect(
+        recycler.mutation(api.market.act, {
+          tradeId: delivery.id,
+          action: "confirm",
+        }),
+      ).rejects.toThrow(/INVALID_WEIGHT/);
+      expect(await snapshot()).toEqual(before);
+    },
+  );
+});
+
+describe("stored trade mass validation", () => {
+  it.each([
+    ["confirm", Number.MAX_SAFE_INTEGER + 1],
+    ["confirm", 0.5],
+    ["confirm", -1],
+    ["confirm", 0],
+    ["dispatch", Number.MAX_SAFE_INTEGER + 1],
+    ["dispatch", 0.5],
+    ["dispatch", -1],
+    ["dispatch", 0],
+  ] as const)(
+    "refuses %s for invalid stored grams %s atomically",
+    async (action, grams) => {
+      const t = await demoWorld();
+      const recycler = await signInAs(t, RECYCLER);
+      const { buying, selling } = await recycler.query(api.market.trades, {});
+      const trade =
+        action === "confirm"
+          ? buying.find((row) => row.status === "dispatched")
+          : selling.find((row) => row.status === "paid_to_escrow");
+      if (!trade) throw new Error("Missing pending trade");
+      await t.run((ctx) => ctx.db.patch("trades", trade.id, { grams }));
+      const snapshot = () =>
+        t.run(async (ctx) => ({
+          trade: await ctx.db.get("trades", trade.id),
+          inventory: await ctx.db.query("inventory").collect(),
+          audit: await ctx.db.query("auditLog").collect(),
+        }));
+      const before = await snapshot();
+      await expect(
+        recycler.mutation(api.market.act, { tradeId: trade.id, action }),
+      ).rejects.toThrow(/INVALID_WEIGHT/);
+      expect(await snapshot()).toEqual(before);
+    },
+  );
+
+  it("receives stock exactly at the safe-integer boundary", async () => {
+    const t = await demoWorld();
+    const recycler = await signInAs(t, RECYCLER);
+    const { buying } = await recycler.query(api.market.trades, {});
+    const delivery = buying.find((trade) => trade.status === "dispatched");
+    if (!delivery) throw new Error("Missing dispatched trade");
+    await setStock(
+      t,
+      "greenloop-polymers",
+      delivery.material.code,
+      Number.MAX_SAFE_INTEGER - delivery.grams,
+    );
+    await recycler.mutation(api.market.act, {
+      tradeId: delivery.id,
+      action: "confirm",
+    });
+    expect(await stockOf(t, "greenloop-polymers", delivery.material.code)).toBe(
+      Number.MAX_SAFE_INTEGER,
+    );
+    const completed = await tradeOf(recycler, "buying", delivery.id);
+    expect(completed.status).toBe("completed");
+    expect(await auditActions(t, "trades", delivery.id)).toContain(
+      "trade.completed",
+    );
+  });
+});

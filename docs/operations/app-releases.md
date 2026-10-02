@@ -51,6 +51,15 @@ stable across updates.
 
 ## Build, test, then release
 
+**Mobile signing gate:** the workspace's node-forge security patch does not
+apply to a globally installed EAS CLI or `pnpm dlx eas-cli`; each uses a separate
+dependency tree. Before running the mobile guide's signed build or update
+commands, verify that the actual release toolchain uses a published fixed
+version or the reviewed patch with passing signature regression tests. Keep
+signed releases blocked until that proof is recorded. See the
+[patch provenance and checks](../../patches/README.md). A local JavaScript
+export does not clear this gate.
+
 1. Deploy and test the chosen HTTPS app origin with its correct backend and auth
    allowlist. A hostname default in source code does not provision that service.
 2. Follow the [mobile release guide](../../apps/mobile/README.md#updates-and-releases)

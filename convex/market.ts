@@ -18,6 +18,7 @@ import {
   tradeActionsFor,
   tradeStep,
 } from "./lib/chain";
+import { stockGramsAfter } from "./lib/inventory";
 import { indiaToday } from "./lib/onboarding";
 import { vOrgKind, vTradeStatus } from "./lib/validators";
 import {
@@ -291,8 +292,8 @@ async function moveStock(
       q.eq("orgId", actor.orgId).eq("materialCode", trade.materialCode),
     )
     .first();
-  const grams = (row?.grams ?? 0) + deltaGrams;
-  if (grams < 0) throw new ConvexError("NOT_ENOUGH_STOCK");
+  if (!isPositiveInteger(trade.grams)) throw new ConvexError("INVALID_WEIGHT");
+  const grams = stockGramsAfter(row?.grams ?? 0, deltaGrams);
   let inventoryId: Id<"inventory">;
   if (row) {
     inventoryId = row._id;

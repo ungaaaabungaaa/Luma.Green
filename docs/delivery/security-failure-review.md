@@ -30,6 +30,76 @@ The coordinator owns integration and worktree cleanup after a verified merge. Re
 | Mobile rejected navigation can leave an untrusted page displayed                 | Medium         | Restore the trusted page for all rejected routes; ignore native blank/error callbacks without weakening request policy.                                                                     |
 | Two transitive dependency advisories have published patches                      | Moderate / low | Scoped xcode > uuid 11.1.1 and posthog-js > DOMPurify 3.4.16 overrides. Audit clears both; xcode CommonJS v4 compatibility smoke passes.                                                    |
 
+## Follow-up check of the confirmed repairs
+
+An independent second pass checked each row above against the actual source and
+regression tests. The focused backend pass ran 105 tests across eight suites;
+the focused UI pass ran 36 tests across eight suites plus 21 native policy tests.
+No new blocking defect was found in those reported repairs. The full baseline
+check also passed 1,345 web/backend, 36 mobile and 21 desktop tests, lint, types,
+formatting and the production build. These are local checks; deployment proof is
+recorded separately.
+
+- `convex/auth-admin.test.ts` exercises the real Better Auth handlers for setup
+  tokens, admin phone rejection and ordinary member phone sign-in.
+- `convex/files.test.ts` covers attachment ownership and both cleanup orders.
+- `convex/market.test.ts`, `convex/lib/chain.test.ts`, household and Saathi tests
+  cover reservation bounds, exact per-trade prices, waiting requests and active
+  work hidden behind historical records.
+- `convex/support.test.ts` covers the rolling quota, permission checks and audit
+  events without storing submitted content in audit metadata.
+- Admin auth, file-slot, status-view and sign-out tests cover rejected promises,
+  safe feedback and controls that can be retried.
+- Global error, instrumentation and analytics-runtime tests cover Next's retry
+  contract, optional Sentry failures and PostHog initialization retry.
+- Menu hydration tests include delayed scripts in English, Arabic and Urdu.
+  Native tests cover cancelled navigation and rejected destinations; real device
+  behavior remains a separate acceptance gate.
+
+The second pass found an additional stock-balance boundary issue: receiving grams
+could overflow an otherwise valid integer inventory balance. Trade and pickup
+writers now share a checked addition function, reject invalid legacy quantities,
+and leave the whole transaction unchanged on failure. Eight original regression
+cases failed before the repair. The expanded 32 regressions cover invalid values,
+exact-boundary success, existing insufficient-stock errors, and rollback of
+inventory, receipts, points, workflow state and audit writes. A multi-line pickup
+fails after its first material write, proving that earlier writes also roll back.
+This enforces the existing exact-grams contract and changes no user-facing copy
+or screen.
+
+## Parallel account and notification review
+
+The final feature source at `593dfa2` retains the original confirmed repairs.
+Independent checks of its earlier immutable source passed 217 backend tests,
+101 web tests and 33 native policy tests. That review found and repaired two
+additional boundaries before merge:
+
+- Joint parsing of `updatePhoneNumber` and `trustDevice` let a malformed unrelated
+  flag disable the other guard. Real HTTP tests returned 200 for forbidden phone
+  changes and trusted-device login. The repair checks each flag independently;
+  both requests now return typed 403 errors without changing the phone number or
+  issuing a session. An independent run passed all 23 real-handler tests.
+- Device cleanup finished before auth sign-out, allowing notifications to be
+  enabled again during the remaining wait. One shared session lock now covers
+  member, admin and security reauthentication flows. It blocks controls, direct
+  registration, restoration and late results through successful sign-out and
+  remounts, and releases for retry after failure.
+
+A second client sharing the session could still register during that wait. A
+real HTTP sign-out deleted the session and denied private requests, yet a new
+notification still obtained a delivery target. The server now derives device
+bindings from validated sessions and checks ownership and expiry again at
+claim. Unbound legacy records stay inactive until authenticated renewal; a new
+session refreshes an unchanged token. Inactive-owner cleanup writes audit events
+and preserves tokens reassigned to another account. The final frozen server
+patch passed 62 independent tests and the original second-client reproduction
+without changing its assertion. No provider request was made by these tests.
+
+The claim is the server authorization boundary. An already-claimed delivery or
+provider request in transit cannot be recalled. Its payload remains generic and
+contains no private record data. The reviewed guide and migration explain this
+limit and the additive optional session field.
+
 ## Review coverage and rollout
 
 The review covered the web route/component tree, shared validation and environment
@@ -53,9 +123,28 @@ attacker rotating numbers; ingress anti-abuse and operator review remain launch
 gates. Historical reservation scans fail closed on resource limits rather than
 promise stock from truncated history; high-volume latency remains unmeasured.
 
-## Open dependency risk
+## Dependency mitigation
 
-The approved registry audit found three advisories. After the two published fixes, it reports one high-severity issue: `node-forge` 1.4.0 through Expo CLI and `@expo/code-signing-certificates`. [GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv) has no published patched version as checked on 2 October 2026. It concerns RSA PKCS#1 v1.5 signature validation. The affected package is in native build/signing tooling; the Next.js application does not import it. This distinction does not clear the advisory. Do not accept untrusted certificates or signatures through this toolchain. Signed mobile release acceptance remains open until an upstream fix or reviewed replacement is verified. No unreviewed cryptography patch or blanket audit suppression is used.
+The approved registry audit originally found three advisories. The two published
+fixes remain installed. On 2 October 2026, the follow-up applied the exact
+`lib/rsa.js` validation change from [upstream PR 1152](https://github.com/digitalbazaar/forge/pull/1152),
+commit `ceba34402e329f0365134f23fe19898756527d65`, to all workspace copies of
+`node-forge` 1.4.0 through pnpm's locked patch mechanism.
+
+The malformed nested DigestAlgorithm signature was accepted before the patch
+and rejected after it through all three Expo consumer paths. Valid signing and
+certificate controls pass. Independent review confirmed that the patched file
+matches the upstream commit byte for byte. Six new regressions, all 36 mobile
+tests and types, both mobile exports, and the upstream Node suite (829 passed,
+four existing conditional skips) pass. See [patch provenance and removal rules](../../patches/README.md).
+
+[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv) still has
+no published patched version. The package keeps its real version, so `pnpm audit`
+still reports one high advisory. This is a tested local backport, not a clean
+registry audit or an upstream release. No advisory is suppressed. Separate
+`pnpm dlx eas-cli` or global installations do not inherit this patch and remain
+blocked for release signing until their own verifier is fixed and tested. Signed
+native delivery and real-device acceptance remain separate release gates.
 
 The other source advisories are [uuid buffer bounds](https://github.com/advisories/GHSA-w5hq-g745-h8pq) and [DOMPurify detached event handlers](https://github.com/advisories/GHSA-p98j-92pf-mc4p). The xcode consumer uses the retained CommonJS v4 API; compatibility is checked separately.
 
@@ -83,6 +172,87 @@ The final combined source preserves PR #30 (`af2e295`) and has these results:
 - Independent code reviews found no remaining blocking regression in the repair set or newly merged industry API access boundaries. A final limited common-secret-signature scan of 115 changed text files found no matches. This is not a full secret-scan certificate.
 - The approved registry audit retains the one unpatched native tooling advisory described above. No advisory is suppressed.
 
-The source, screenshots, capture manifests, Word guide and build record are committed together. The Google Docs copy retains its existing ID and sharing, with the new local revision recorded as pending. Hosted CI, preview status and protected squash merge must be read from the associated PR; local results alone do not establish them. Main is never pushed directly.
+The original repair source, screenshots, capture manifests, Word guide and build record were committed together and merged through PR #31 at `2ba8246`. The follow-up verified an in-place Google Docs update for that reviewed guide; see `docs/user-guide/cloud.json`. Its existing ID, folder and sharing remain unchanged. Hosted CI, preview status and protected squash merge are separate from local results. Main is never pushed directly.
 
-Live SMS receipt, authenticated staging acceptance, production deployment, native signing and real-device tests are separate gates. The existing Google Docs guide keeps its document ID and sharing. Its in-place update remains a recorded connection gate; this work must not create a replacement document.
+Live SMS receipt, authenticated staging acceptance, native signing and real-device tests are separate gates. The current Google Docs API cannot set native image alt-text attributes. One native description was restored and verified; the other 71 published images retain visible editable captions. The publication record states this limit and does not claim identical accessibility semantics. The newer guide from parallel PR #29 requires its own verified synchronization after that revision merges.
+
+## Combined backend rollout checks
+
+Production `outstanding-buzzard-942` and development `glorious-rooster-470` were
+inspected through read-only Convex queries that returned counts and flags only.
+Both had zero active admin sessions. Development had one unique configured admin,
+one password credential, an enabled authenticator with one factor record, and
+consistent root profile records. Production had no auth users or admin profiles,
+and no `ADMIN_EMAIL`, `BETTER_AUTH_SECRET` or `SITE_URL` configuration. Production
+`AUTH_DEV_MODE` and both bootstrap-token settings were absent. No session or
+account records were changed; no global secret rotation was needed. Production
+admin provisioning and a real password/TOTP sign-in are not proved by this count
+check.
+
+The first production dry run from main would have removed 15 indexes belonging
+to the ecosystem backend deployed separately from `dc41665`. It was not applied.
+The follow-up retains that backend's source, schema, generated API and operations
+runbook alongside PR #30, PR #31 and the new exact-stock repair. Independent merge
+review confirmed that existing security guards and both membership index orders
+remain. Nine focused suites passed 154 tests, full types passed, and guide
+freshness passed nine tests.
+
+The combined production dry run passed schema validation and explicitly reported
+no index deletions. Its seven additions are the industry API indexes, the second
+membership index order and `supportRequests.by_phone_createdAt`. The final
+account/inbox/push schema from PR #29 must also be present before deployment.
+Read-only job inspection found no city-backfill work: production had zero jobs;
+development had seven, all with city data and no missing business owners. No
+migration, restore, seed, provider send or deployment was performed by these
+checks.
+
+The combined source also passed the full local `pnpm check`: 1,437 web/backend,
+36 mobile and 21 desktop tests, lint and types. The production build and complete
+format check passed. These results cover the existing security repairs, the
+exact-stock follow-up and the retained ecosystem backend; the final account/UI
+merge will be checked again at its final commit.
+
+## Final combined source check — 3 October 2026
+
+The integrated source includes the final account/notification repair commit
+`593dfa2`, all existing ecosystem backend definitions and the stock overflow
+repair. `pnpm check` passed 1,695 web/backend, 49 mobile and 22 desktop tests,
+lint and types. The production build passed with 2,622 static pages, and the
+whole-project format check passed. Regenerating the Better Auth schema produced
+no drift. The frozen lockfile install preserves all three patched Expo consumers;
+their rejected-signature and valid-signing tests passed in this combined run.
+
+The final production dry run passed schema validation with zero index deletions
+and 16 additive indexes, including all nine account/inbox/push indexes. The
+registry audit still reports only the known high node-forge advisory. GitHub's
+advisory still lists no published patched version; the exact upstream backport
+remains installed and tested. Backend deployment and post-deployment checks are recorded below. The final
+protected follow-up merge and newer cloud guide publication are recorded after
+they occur.
+
+## Verified backend rollout — 3 October 2026
+
+The exact tested source `e1fc1389ddd047cc1db192fa33e782814b5c8a45` was deployed
+to development `glorious-rooster-470` and production `outstanding-buzzard-942`
+before the dependent frontend merged. The development push completed at
+19:43 UTC on 2 October; production and its read-only checks completed by
+19:52 UTC (3 October in Bengaluru). The production push explicitly deleted
+zero indexes and added all 16 expected indexes. Post-push queries prove all 75
+indexes available and 137 deployed functions in both environments. A repeat
+production dry run found no schema or function changes. Its CLI still reports
+a Node action-version config line; this is not an index or function deletion.
+
+In each deployment, unauthenticated identity returns null. Private review, API
+key management and inbox queries return `NOT_SIGNED_IN`. The support quota
+index is available. Read-only counts again show zero active admin sessions.
+Development has one consistent password/TOTP admin; production has zero auth
+users and admin profiles, with admin/auth settings still absent. No sessions,
+accounts, provider settings or secrets were changed. No guessed session binding
+or job-city backfill was performed. Production provisioning and a real
+password/TOTP sign-in remain separate acceptance gates.
+
+The frontend PR #29 merged only after this rollout and all hosted checks passed:
+737 browser tests, five analytics-consent tests, the five required checks and
+native validation/export. Its main merge is `53dae4db62432119505bd06d7d9ac85284c0c386`.
+The follow-up reconciles that main commit while preserving every tested runtime
+file from the deployed source. See [safe rollout evidence](security-rollout-verification.json).

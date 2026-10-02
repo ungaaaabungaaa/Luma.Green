@@ -190,6 +190,86 @@ describe("the queue", () => {
     });
   });
 
+  it("counts an open support chat when no callback requests exist", async () => {
+    const t = setup();
+    const admin = await signInAdmin(t);
+    const member = await signIn(t, { email: "support-member@luma.test" });
+    await member.mutation(api.identity.ensureProfile, { locale: "en" });
+    expect(await admin.query(api.review.summary, {})).toMatchObject({
+      openSupport: 0,
+    });
+
+    const conversationId = await member.mutation(api.messaging.openSupport, {
+      subject: "Collection help",
+    });
+    expect(await admin.query(api.review.summary, {})).toMatchObject({
+      openSupport: 1,
+    });
+
+    await admin.mutation(api.messaging.setSupportStatus, {
+      conversationId,
+      status: "closed",
+    });
+    expect(await admin.query(api.review.summary, {})).toMatchObject({
+      openSupport: 0,
+    });
+  });
+
+  it("combines callback requests and open support chats without counting private trades", async () => {
+    const t = await demoWorld();
+    const admin = await signInAdmin(t);
+    const member = await signInAs(t, SHOP_APPLICANT);
+    await member.mutation(api.messaging.openSupport, {
+      subject: "Application help",
+    });
+    await t.run(async (ctx) => {
+      const trade = await ctx.db.query("trades").first();
+      if (!trade) throw new Error("No seeded trade");
+      await ctx.db.insert("conversations", {
+        kind: "trade",
+        status: "open",
+        subject: trade.materialCode,
+        tradeId: trade._id,
+        sellerOrgId: trade.sellerOrgId,
+        buyerOrgId: trade.buyerOrgId,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+      });
+    });
+    expect(await admin.query(api.review.summary, {})).toMatchObject({
+      openSupport: 3,
+    });
+  });
+
+  it("keeps the combined support count within the existing 1000-record bound", async () => {
+    const t = setup();
+    const admin = await signInAdmin(t);
+    await t.run(async (ctx) => {
+      const now = Date.now();
+      await ctx.db.insert("supportRequests", {
+        name: "Support example",
+        phone: "+919000000001",
+        role: "household",
+        topic: "pickup",
+        message: "Call back about collection",
+        status: "open",
+        createdAt: now,
+      });
+      for (let index = 0; index < 1000; index += 1) {
+        await ctx.db.insert("conversations", {
+          kind: "support",
+          status: "open",
+          subject: `Support example ${String(index)}`,
+          createdAt: now,
+          updatedAt: now,
+        });
+      }
+    });
+    expect(await admin.query(api.review.summary, {})).toMatchObject({
+      openSupport: 1000,
+    });
+  });
+
   it("counts what's waiting for the console home", async () => {
     const t = await demoWorld();
     await insertApplication(t, {
