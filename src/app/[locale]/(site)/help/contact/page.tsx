@@ -36,6 +36,7 @@ export default async function HelpContactPage() {
   return (
     <>
       <HelpHero
+        banner="admin"
         breadcrumbs={
           <HelpBreadcrumbs
             items={[

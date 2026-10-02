@@ -166,3 +166,22 @@ every page passed visual review. The freshness record is in
 `docs/user-guide/build.json`.
 The stable Google Docs copy is pending an in-place update. No provider execution
 or production deployment is implied by this local pass.
+
+## Public banner follow-up — 2 October 2026
+
+The founder requested banners on the main public pages, especially How it works.
+Base `ff7bb64` contains the completed detail pass. This follow-up keeps its themes,
+typography and open sections. A shared `PageBanner` places existing material and
+work-scene artwork across the content width below each page's title and introduction.
+Desktop uses a wide crop; phones use a taller crop. Text remains outside the image.
+
+Scope: How it works, Participants, Prices, Standards, Solar, Join, public Contact,
+and the help landing, role and contact pages. The homepage keeps its existing hero.
+Help articles retain their reading layout. Do not add cards, change authentication
+or change operational screens. Refresh affected browser evidence and the Word guide;
+record the current Google Docs revision as pending without replacing its document ID.
+
+Verification passed: production build, scoped lint, 143 component tests, six guide
+freshness tests and 113 public browser checks. The browser suite includes 32
+banner cases at phone and desktop widths, with Arabic coverage. The 66-page guide
+was rendered and reviewed; unchanged pages were checked against the prior render.

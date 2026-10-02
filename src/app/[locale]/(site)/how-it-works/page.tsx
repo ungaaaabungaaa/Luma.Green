@@ -43,11 +43,7 @@ export default async function HowItWorksPage() {
 
   return (
     <>
-      <PageHeader
-        title={t("title")}
-        lead={t("lead")}
-        art={<RoleStoryImage scene="household" compact />}
-      />
+      <PageHeader title={t("title")} lead={t("lead")} scene="recycler" />
 
       <Container className="py-16 lg:py-24">
         <ol className="divide-y border-y">

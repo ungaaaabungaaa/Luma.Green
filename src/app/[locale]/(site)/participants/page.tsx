@@ -63,11 +63,7 @@ export default async function ParticipantsPage() {
 
   return (
     <>
-      <PageHeader
-        title={t("title")}
-        lead={t("lead")}
-        art={<RoleStoryImage scene="kabadiwala" compact />}
-      />
+      <PageHeader title={t("title")} lead={t("lead")} scene="saathi" />
 
       <Container className="py-8 lg:py-12">
         <ul className="divide-y border-y">

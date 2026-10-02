@@ -14,6 +14,19 @@ const roles = [
 ] as const;
 
 const helpRoles = roles.filter((role) => role !== "admin");
+const bannerRoutes = [
+  "/en/how-it-works",
+  "/en/participants",
+  "/en/prices",
+  "/en/standards",
+  "/en/solar",
+  "/en/join",
+  "/en/contact",
+  "/en/help",
+  "/en/help/contact",
+  ...helpRoles.map((role) => `/en/help/${role}`),
+  "/ar/how-it-works",
+];
 const participantTitles = {
   household: english.participants.householdHeading,
   kabadiwala: english.participants.kabadiwala.name,
@@ -51,6 +64,51 @@ async function expectNoDevicePreviews(page: Page) {
       () => document.documentElement.scrollWidth - innerWidth,
     ),
   ).toBeLessThanOrEqual(1);
+}
+
+for (const width of [390, 1440]) {
+  for (const route of bannerRoutes) {
+    test(`${route} has a loaded wide page banner at ${String(width)}px`, async ({
+      page,
+    }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await page.goto(route);
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      const banner = page.getByRole("main").locator("[data-page-banner]");
+      await expect(banner).toHaveCount(1);
+      await banner.scrollIntoViewIfNeeded();
+      await expect(banner).toBeInViewport();
+      await expectStoryImages(banner, 1);
+      await expect(banner.locator("img")).toBeVisible();
+      await page.evaluate(async () => document.fonts.ready);
+      const bounds = await banner.evaluate((element) => {
+        const rect = element.getBoundingClientRect();
+        return {
+          width: rect.width,
+          height: rect.height,
+          left: rect.left,
+          right: rect.right,
+        };
+      });
+      expect(
+        bounds.width,
+        "The banner must span the main reading area",
+      ).toBeGreaterThanOrEqual(width * 0.7);
+      expect(
+        bounds.width / bounds.height,
+        "The banner must have a wide shape",
+      ).toBeGreaterThanOrEqual(1.6);
+      expect(bounds.left).toBeGreaterThanOrEqual(-1);
+      expect(bounds.right).toBeLessThanOrEqual(width + 1);
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth - innerWidth,
+        ),
+        "The page must fit without horizontal scrolling",
+      ).toBeLessThanOrEqual(1);
+    });
+  }
 }
 
 test("participants show role photos without device mockups or illustration captions", async ({
@@ -160,11 +218,7 @@ test("public information scenes load without adding controls or overflowing a ph
   for (const route of ["solar", "prices", "standards", "contact"]) {
     await page.goto(`/en/${route}`);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    const scene = page
-      .getByRole("main")
-      .getByRole("figure")
-      .filter({ has: page.locator("img") })
-      .first();
+    const scene = page.getByRole("main").locator("[data-page-banner]");
     await expectStoryImages(scene, 1);
     await expect(scene.locator("img")).toHaveAttribute("alt", "");
     await expect(scene.locator("button, a, input, [tabindex]")).toHaveCount(0);

@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
+import type { StoryRole } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
+import { PageBanner } from "@/components/site/page-banner";
 import { cn } from "@/lib/utils";
 
 /**
@@ -14,8 +16,7 @@ export function HelpHero({
   lead,
   breadcrumbs,
   art,
-  artOnPhones = false,
-  artLayout = "illustration",
+  banner,
   children,
 }: {
   eyebrow?: string;
@@ -24,10 +25,8 @@ export function HelpHero({
   breadcrumbs?: ReactNode;
   /** A spot illustration, shown beside the title from tablet width up. */
   art?: ReactNode;
-  /** Also show `art` on phones, above the title. */
-  artOnPhones?: boolean;
-  /** Photos keep the title first on phones and use a rectangular surface. */
-  artLayout?: "illustration" | "photo";
+  /** Public directories show a full-width image after their main controls. */
+  banner?: StoryRole;
   children?: ReactNode;
 }) {
   return (
@@ -41,9 +40,7 @@ export function HelpHero({
           data-reveal
           className={cn(
             "grid items-center gap-6 md:gap-10",
-            artLayout === "photo"
-              ? "lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]"
-              : "md:grid-cols-[1fr_auto]",
+            art && "md:grid-cols-[1fr_auto]",
           )}
         >
           <div className="flex min-w-0 flex-col gap-5">
@@ -60,22 +57,11 @@ export function HelpHero({
             </p>
           </div>
           {art ? (
-            <div
-              className={cn(
-                artLayout === "photo"
-                  ? "w-full max-w-lg min-w-0 justify-self-center [&>figure>div]:aspect-[3/1] lg:[&>figure>div]:aspect-[2/1]"
-                  : "w-24 shrink-0 md:w-32",
-                !artOnPhones && "hidden md:block",
-                artOnPhones &&
-                  artLayout === "illustration" &&
-                  "-order-1 md:order-none",
-              )}
-            >
-              {art}
-            </div>
+            <div className="hidden w-24 shrink-0 md:block md:w-32">{art}</div>
           ) : null}
         </div>
         {children}
+        {banner ? <PageBanner scene={banner} /> : null}
       </Container>
     </div>
   );

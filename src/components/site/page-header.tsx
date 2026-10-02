@@ -1,29 +1,23 @@
-import type { ReactNode } from "react";
-
-import { cn } from "@/lib/utils";
+import type { StoryRole } from "@/components/showcase/role-story-image";
 
 import { Container } from "./container";
+import { PageBanner } from "./page-banner";
 
 /** A restrained title and a clear reading order shared by public routes. */
 export function PageHeader({
   title,
   lead,
   eyebrow,
-  art,
+  scene,
 }: {
   title: string;
   lead: string;
   eyebrow?: string;
-  art?: ReactNode;
+  scene: StoryRole;
 }) {
   return (
     <div className="overflow-hidden border-b bg-background">
-      <Container
-        className={cn(
-          "grid items-center gap-7 py-10 sm:py-12 lg:gap-14 lg:py-16",
-          art && "lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]",
-        )}
-      >
+      <Container className="flex flex-col gap-8 py-8 sm:py-10 lg:gap-10 lg:py-12">
         <div className="min-w-0 space-y-4">
           {eyebrow ? (
             <p className="text-sm font-medium text-muted-foreground">
@@ -37,7 +31,7 @@ export function PageHeader({
             {lead}
           </p>
         </div>
-        {art ? <div className="min-w-0">{art}</div> : null}
+        <PageBanner scene={scene} />
       </Container>
     </div>
   );

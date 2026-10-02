@@ -30,7 +30,7 @@ export default async function JoinPage() {
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} />
+      <PageHeader title={t("title")} lead={t("lead")} scene="saathi" />
       <Container className="flex flex-col gap-8 py-8 lg:py-12">
         <RoleCards />
         <aside className="flex flex-col gap-3 border-y py-6 sm:flex-row sm:items-center sm:justify-between">

@@ -1,5 +1,22 @@
 # Agent handoff — 2 October 2026
 
+**Banner follow-up:** on `feat/ui-detail-pass`, after `ff7bb64`, the founder
+requested banner images on How it works and every main public page. Public
+headers now require a scene and display a full-width image below the title.
+Join and Help Contact gained images; the main Help and role-help pages use the
+same banner treatment. Mobile crops are taller. Existing compressed artwork is
+reused; there are no new image downloads, dependencies or card containers. The
+home hero, article layouts, sign-in forms and operational workspaces are unchanged.
+
+The production build, scoped lint, 143 affected component tests and six guide
+freshness tests passed. All 113 affected public browser
+checks passed, including 32 new banner cases at 390px and 1440px with Arabic
+coverage. Public and role-image screenshots were refreshed. The guide remains
+66 pages with 62 image placements; 54 rendered pages have identical pixels to the
+previously reviewed edition, and the 12 changed pages received a new visual review.
+Use `docs/user-guide/build.json` for the exact reviewed document hash. The same
+Google Docs update gate remains; no cloud document or sharing setting was changed.
+
 **Active refinement:** `feat/ui-detail-pass`, based on merged main `3b29ea7`
 (PR #27). The founder requested detail across all screens while keeping the
 current identity, with no content-card grids. Source work covers all 41 route

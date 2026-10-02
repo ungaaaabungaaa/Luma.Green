@@ -2,7 +2,6 @@ import { MailIcon, ShieldAlertIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 import { localeFromParams } from "@/i18n/paths";
@@ -38,17 +37,7 @@ export default async function ContactPage() {
 
   return (
     <>
-      <PageHeader
-        title={t("title")}
-        lead={t("lead")}
-        art={
-          <RoleStoryImage
-            scene={imageRole}
-            compact
-            frameClassName="h-40 aspect-auto sm:h-52 lg:h-64"
-          />
-        }
-      />
+      <PageHeader title={t("title")} lead={t("lead")} scene={imageRole} />
 
       <Container className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-12 lg:py-16">
         <section className="space-y-5 border-t pt-6">

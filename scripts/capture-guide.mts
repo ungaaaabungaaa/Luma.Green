@@ -73,6 +73,8 @@ const sharedSources = [
   "src/lib/fonts.ts",
   "src/components/site/site-header.tsx",
   "src/components/site/page-header.tsx",
+  "src/components/site/page-banner.tsx",
+  "src/components/help/help-hero.tsx",
   "src/components/site/closing-cta.tsx",
   "src/components/site/home/chain-diagram.tsx",
   "src/components/site/home/role-benefits.tsx",

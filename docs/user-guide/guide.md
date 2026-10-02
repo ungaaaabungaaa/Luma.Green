@@ -2,8 +2,8 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, UI detail revision. Source baseline: 3b29ea7.
-Includes the UI detail pass: divided page layouts, compact mobile controls, a material marquee, labelled demo testimonials and the phone-to-code preview.
+Edition: 2 October 2026, public banner revision. Source baseline: ff7bb64.
+Includes the UI detail pass and wide artwork banners on the main public pages, with taller image crops on phones.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
@@ -22,7 +22,7 @@ Luma.Green records scrap collection and movement through the recycling chain. A 
 - Current configured local capture: the real app with test analytics keys. External browser requests are intercepted; no provider receives data.
 - Synthetic documentation fixture: an unchanged browser screenshot of real application components supplied with sample records in a separate documentation server. It is not an authenticated session or proof of a working integration.
 
-No screenshot is an AI-generated interface. The homepage contains generated decorative artwork, but the page screenshot itself comes from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
+No screenshot is an AI-generated interface. Public pages contain generated decorative artwork, but the page screenshots themselves come from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
 
 ### Explore the home page
 
@@ -733,7 +733,7 @@ Check the material, unit, quantity and price before you confirm an action. Keep 
 
 Open /prices before comparing a shop offer. When data is available, choose a material to inspect its price detail and history. Check the city, unit and sample-data notice. This board is not independent market-price advice.
 
-![Current rooftop-solar information and estimator. Estimates require a real site survey.](screenshots/public-solar.png)
+![Current rooftop-solar page header and banner. Scroll to reach the estimator. Estimates require a real site survey.](screenshots/public-solar.png)
 
 ---
 
@@ -743,7 +743,7 @@ Open /prices before comparing a shop offer. When data is available, choose a mat
 
 Use the header language control to change language. The same workflows remain available; text direction and number formatting follow the locale. The admin console stays English-only.
 
-![Current help-contact form. Submission needs a connected backend; no message was sent to create this screenshot.](screenshots/public-contact.png)
+![Current help-contact page header and banner. Scroll to reach the message form. Submission needs a connected backend; no message was sent to create this screenshot.](screenshots/public-contact.png)
 
 ---
 
@@ -786,6 +786,12 @@ Google Search Console and Bing verification tags are optional ownership checks. 
 ---
 
 ## 36 / Appearance and role pages
+
+The main public pages place a wide artwork banner below the title and introduction.
+This includes How it works, Participants, Prices, Standards, Solar, Join and the
+help pages. Each banner uses a material or work scene. On phones, the image uses
+a taller crop so the scene remains clear. The artwork does not show a live
+customer, business or platform record.
 
 The interface uses neutral light surfaces and charcoal dark surfaces. Green marks
 the main action and selected states. Public pages have wider spacing; workspaces

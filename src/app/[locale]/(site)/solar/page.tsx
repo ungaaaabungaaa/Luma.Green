@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 import { SolarPlanner } from "@/components/solar/solar-planner";
@@ -39,13 +38,7 @@ export default async function SolarPage() {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        art={
-          <RoleStoryImage
-            scene={imageRole}
-            compact
-            frameClassName="h-40 aspect-auto sm:h-52 lg:h-64"
-          />
-        }
+        scene={imageRole}
       />
       <Container className="py-8 lg:py-12">
         <SolarPlanner between={<SubsidyExplainer />} />

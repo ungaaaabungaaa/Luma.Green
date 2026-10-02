@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import { PriceBoard } from "@/components/prices/price-board";
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 import { Button } from "@/components/ui/button";
@@ -38,13 +37,7 @@ export default async function PricesPage() {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        art={
-          <RoleStoryImage
-            scene={imageRole}
-            compact
-            frameClassName="h-40 aspect-auto sm:h-52 lg:h-64"
-          />
-        }
+        scene={imageRole}
       />
 
       <Container className="flex flex-col gap-8 py-8 lg:py-12">
