@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+  "sourceCommit": "762e57953eadd9b30bd0b9413a03c62e47e4da45",
   "note": "Real browser renders of current application components. Synthetic data and isolated local query/auth/navigation adapters. Not evidence of sign-in, authorization, live records, provider calls or production deployment. Build styles and Geist/Noto fonts are reused without restyling the app. The visible provenance banner belongs only to this harness.",
   "fixtureSha256": "c96cf240328b563f6ebed44a028bfd14237ac4d94eb7b209983deadc120f3ec7",
   "sharedSourceHashes": {
@@ -15,21 +15,37 @@
     "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
     "src/components/ui/chart.tsx": "00dd499033b0322b72730cef0abd15fa6fc53e37150c3d193f255b0bb1b0458b",
     "src/components/ui/switch.tsx": "cd2feaf670ae4fd2406d3a52106471efbac0ce3539f6ded6342a8545cce35c5d",
+    "src/components/ui/input.tsx": "3417db3d25a5fbc95792c2f8d49cfce5190b51640da196f74246f5cae5c4f7ea",
+    "src/components/ui/label.tsx": "aa863e67bad8eac1d75ebb56151645e1231c9f6688238cb1dc1b09f1e62b7f27",
+    "src/components/ui/checkbox.tsx": "a90c9633def82f754c4182f0bf62215a03476bb479acf0689a3d86726d9580ff",
+    "src/components/ui/radio-group.tsx": "6148a9d8435723239ea538486451a4c99eba060018c59b1197e5d25ff13a424f",
     "src/components/admin/pilot/pilot-charts.tsx": "3f55ab6660fcf1c21ae963e3e90f034beb07f287efad7b57f7618a6a8db61e96",
     "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
     "src/lib/number-input.ts": "c516f503a1e7133f698d3d697ac8b56a1c919636c718c55a7ac6c690fa0e8053",
     "src/components/market/logic.ts": "16561efefa45414b120100892643f2055333ff973efcb65ac609c68bada7878a",
+    "src/components/market/material-filter.tsx": "7b0f79e9ffc8d916fd0d1413cbd852b559652f46732e5b3a5c83bf4fb1f159e2",
     "src/components/shop/weigh.ts": "c41d821af68a6531ecdf004e1fb40e6c29923c1315779b6a301d48db8ce07140",
-    "scripts/guide-preview/main.tsx": "5a3b743cfeb3c78bb90b12d457b3078ca469a475a13cba0e5c4d849b5589ddb2",
+    "scripts/guide-preview/main.tsx": "d0f61e5763ae2c0faeacdff586328d2af87f12bfb73177acf556ad7024904168",
     "scripts/guide-preview/navigation.tsx": "a12cb1376a173a320eae3a0848efe1c8ba8f522e47c5d86e3f48226c28a2af04",
     "scripts/guide-preview/translations.ts": "00133fbd6143b55d9ef774349cb2877dd10c3f0bd178e15165b0de27b6c5f959",
     "scripts/guide-preview/locale.ts": "3e8b2a2b4c51576857cc210b742e146c0157bfd3db64f78119b675d9adfdb75a",
     "convex/lib/catalogue.ts": "556f284936b958876156cae5aaac7cd3efada116da3470e228a1e630c08665dd",
     "scripts/guide-preview/queries.ts": "995fa00a8e00dba79e6d4a7255d9b07c1171cf91351e0c75104d2dd24374fa44",
+    "scripts/guide-preview/selection-fixtures.tsx": "6613ab3a3e88ad4d3589bcd9c01688bd7618f259f9713ea1bf900434865fae2f",
+    "src/components/sell/basket-step.tsx": "a646389a4954545ae01cae0bbaa72fd691cf73ed962514f433445d30ce27107e",
+    "src/components/sell/shop-step.tsx": "e167f6508c490d0322b80ceb41fd43b83003d1fda0a86643b1c3c8bf388423c6",
+    "src/components/sell/material-tile.tsx": "83f65b1672c860b65ec2501f84eda0e6135e15965a794375fdf7af726ab23a4b",
+    "src/components/sell/kg-stepper.tsx": "f05ac4c104d378bd26b3541e59fc933773e98a5a2a2fbbf10807e3eb47d285c7",
+    "src/components/sell/mode-choice.tsx": "cb8adf575f920e8aa3ddf350e164c24d14888e0492170cb212ecaeeab92cfedf",
+    "src/components/sell/when-step.tsx": "8c6b3e8613c2a60375f19f3bbbffa467edb217eac40624f0e6af8c1a063dbb4e",
+    "src/components/sell/draft.ts": "bfe0f067d0c04f002139baf33dab941841e09b07a5908d4890e909dc420bf504",
+    "src/components/sell/step-frame.tsx": "f14d20c6568042c056a08eb09fba339c107baccd0ad1f2292780fbc9f48f6ea8",
+    "src/components/sell/step-indicator.tsx": "db6df2d4932aaddbb6e2ee9ed6c8072354bfff3eac850c8334b1026428921139",
+    "src/app/[locale]/(household)/layout.tsx": "11eef354ef4ede0877dd456353aade18449c82005c662b4d6536c5b0935b71dc",
     "src/app/[locale]/(join)/layout.tsx": "d3328ed35ecfdbaaac1e487fc52d37f2cf460813bbb9f49b103d6936099a966a",
     "src/components/join/join-pages.tsx": "edede08262e4809a5e01577c1db596cb802d43ba4d11e3e8ffb907dfb619d1d5",
     "src/components/join/join-gate.tsx": "aa5726be2cc6550eac1102337a1b9e0f3545fc87888d58eac50bea4ca4c96d99",
-    "src/components/join/fields.tsx": "b60a48a484e6af0bf60ca927502e8735aa371f69dd5e67b930b77ec6be972c19",
+    "src/components/join/fields.tsx": "338ae74dc83c03d228752141dc4aed48f88d5b2d16f4be7a064cdee9055f6b3a",
     "src/components/join/form-parts.tsx": "08dd0b0d101e01a40130d9684e7bcbf113ccc4519b6e4875c6e57f027f33ab73",
     "src/components/join/use-autosave.ts": "48b6ad76ccc26dcf1579c88577e0ede6bfe45b33bee2efb50f611818933ad1ad",
     "src/components/market/new-listing-form.tsx": "e02b2a9ed87eb7a1c222dbaf5acab48727b1de1b9cd01892bd56cccd92038278",
@@ -61,16 +77,16 @@
       "sha256": "0b16f8638a7ef938759cb278d132478d0638ba3f7db728f0c0a670c1e7531e42"
     },
     {
-      "file": "70cc9f9600d4d091.css",
-      "sha256": "364aceca1dabf2cec2a7ad6088d926bdc235ad4fb39708f959185728729c942c"
-    },
-    {
       "file": "72a325fa2d18861e.css",
       "sha256": "b63fa86668a0f99bcd4fa01d9597bc80a7f575041d0de7aece02964241f30d81"
     },
     {
       "file": "905840386963a59a.css",
       "sha256": "3bf8bb4dbed3468f68bc1eab081729db4a4d9dcfe5bd8f4345ffc362333fd386"
+    },
+    {
+      "file": "9b3ea6697b842755.css",
+      "sha256": "f254063229438bfab4bc720abd48ef15e21b2f141b22383a3f9716a950952278"
     },
     {
       "file": "aa3081e675310d43.css",
@@ -83,6 +99,84 @@
   ],
   "captures": [
     {
+      "name": "household-basket-phone",
+      "route": "/en/sell/basket",
+      "component": "src/components/sell/basket-step.tsx",
+      "heading": "What do you have?",
+      "headingLevel": 2,
+      "width": 390,
+      "height": 844,
+      "viewportOnly": true,
+      "file": "household-basket-phone.png",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "capturedAt": "2026-10-02T06:31:35.277Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "applicationRoute": "/en/sell/basket",
+      "previewUrl": "http://127.0.0.1:3203/en/sell/basket",
+      "componentSha256": "a646389a4954545ae01cae0bbaa72fd691cf73ed962514f433445d30ce27107e",
+      "screenshotSha256": "4e6896a640c7784a3cc7741f068727945d9ad55dd82c3dc18e48b243bb52a94c",
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "household-mode-phone",
+      "route": "/en/sell/shop",
+      "component": "src/components/sell/mode-choice.tsx",
+      "heading": "Who buys it?",
+      "headingLevel": 2,
+      "width": 390,
+      "height": 844,
+      "viewportOnly": true,
+      "file": "household-mode-phone.png",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "capturedAt": "2026-10-02T06:31:35.979Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "applicationRoute": "/en/sell/shop",
+      "previewUrl": "http://127.0.0.1:3203/en/sell/shop",
+      "componentSha256": "cb8adf575f920e8aa3ddf350e164c24d14888e0492170cb212ecaeeab92cfedf",
+      "screenshotSha256": "22437ccc0dbd324b8b4df6069996dff786359bf2a48c2e55970c3d070650bb1d",
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
+      "name": "household-when-phone",
+      "route": "/en/sell/when",
+      "component": "src/components/sell/when-step.tsx",
+      "heading": "When should they come?",
+      "headingLevel": 2,
+      "width": 390,
+      "height": 844,
+      "viewportOnly": true,
+      "file": "household-when-phone.png",
+      "sourceKind": "isolated-current-components-synthetic-fixtures",
+      "productionAuthenticationTested": false,
+      "capturedAt": "2026-10-02T06:31:36.737Z",
+      "fixtureClock": "2026-10-14T06:00:00Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "applicationRoute": "/en/sell/when",
+      "previewUrl": "http://127.0.0.1:3203/en/sell/when",
+      "componentSha256": "8c6b3e8613c2a60375f19f3bbbffa467edb217eac40624f0e6af8c1a063dbb4e",
+      "screenshotSha256": "9830ea24636cdfe2653fd5071f92610999062a31655bb42da4d7dc3bed1a2ab8",
+      "browserErrors": [],
+      "blockedExternalRequests": []
+    },
+    {
       "name": "admin-overview",
       "route": "/admin",
       "component": "src/components/admin/console-home.tsx",
@@ -90,7 +184,7 @@
       "file": "admin-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:46.488Z",
+      "capturedAt": "2026-10-02T06:31:37.558Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -112,7 +206,7 @@
       "file": "admin-verification.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:46.851Z",
+      "capturedAt": "2026-10-02T06:31:38.257Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -134,7 +228,7 @@
       "file": "admin-review.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:47.210Z",
+      "capturedAt": "2026-10-02T06:31:38.920Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -144,7 +238,7 @@
       "applicationRoute": "/admin/verification/guide-shop",
       "previewUrl": "http://127.0.0.1:3203/admin/verification/guide-shop",
       "componentSha256": "ebae9351865f42571906c904d3b922b9eec178c3d41c8a0a2ea62890130f0452",
-      "screenshotSha256": "e828b8b872b0a2f5a4191e4a615111f7ef3504db052cd91b72b5e332e4f59919",
+      "screenshotSha256": "de6057847513aa0c647bf88a0b47d0c494038bbacb6e763174ce44ada7fb1e5f",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -156,7 +250,7 @@
       "file": "admin-support.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:47.568Z",
+      "capturedAt": "2026-10-02T06:31:39.534Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -178,7 +272,7 @@
       "file": "admin-prices.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:47.929Z",
+      "capturedAt": "2026-10-02T06:31:40.158Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -200,7 +294,7 @@
       "file": "admin-pilot.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:48.367Z",
+      "capturedAt": "2026-10-02T06:31:40.938Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -222,7 +316,7 @@
       "file": "kabadiwala-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:48.769Z",
+      "capturedAt": "2026-10-02T06:31:41.626Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -244,7 +338,7 @@
       "file": "kabadiwala-request.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:49.167Z",
+      "capturedAt": "2026-10-02T06:31:42.331Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -267,7 +361,7 @@
       "file": "kabadiwala-request-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:49.558Z",
+      "capturedAt": "2026-10-02T06:31:43.060Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -291,7 +385,7 @@
       "file": "kabadiwala-weigh.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:49.934Z",
+      "capturedAt": "2026-10-02T06:31:43.821Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -314,7 +408,7 @@
       "file": "kabadiwala-ratecard.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:50.289Z",
+      "capturedAt": "2026-10-02T06:31:44.478Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -338,7 +432,7 @@
       "file": "household-tracking.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:50.648Z",
+      "capturedAt": "2026-10-02T06:31:45.168Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 480,
@@ -361,7 +455,7 @@
       "file": "kabadiwala-requests.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:50.989Z",
+      "capturedAt": "2026-10-02T06:31:45.841Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -384,7 +478,7 @@
       "file": "yard-market.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:51.326Z",
+      "capturedAt": "2026-10-02T06:31:46.473Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -394,7 +488,7 @@
       "applicationRoute": "/en/app/market",
       "previewUrl": "http://127.0.0.1:3203/en/app/market?role=yard",
       "componentSha256": "30a6fa6ad71536d5381ca2698e318372b574863ce5526e00d4c8cbdaf9fb90ce",
-      "screenshotSha256": "fea2fcec3b1bdfc4f8a1a19e533c6c326bf7446477c573d65d1b62588348c29f",
+      "screenshotSha256": "fab9b7a8b7e9c8fffd9d4fb73c7b7efa40384f02beb680c01e3b8ad542cd41f7",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -407,7 +501,7 @@
       "file": "yard-trades.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:51.697Z",
+      "capturedAt": "2026-10-02T06:31:47.027Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -429,7 +523,7 @@
       "file": "manufacturer-compliance.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:52.069Z",
+      "capturedAt": "2026-10-02T06:31:47.620Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -451,7 +545,7 @@
       "file": "yard-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:52.447Z",
+      "capturedAt": "2026-10-02T06:31:48.141Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -473,7 +567,7 @@
       "file": "recycler-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:52.823Z",
+      "capturedAt": "2026-10-02T06:31:48.662Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -495,7 +589,7 @@
       "file": "manufacturer-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:53.182Z",
+      "capturedAt": "2026-10-02T06:31:49.195Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -517,7 +611,7 @@
       "file": "saathi-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:53.592Z",
+      "capturedAt": "2026-10-02T06:31:49.732Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -542,7 +636,7 @@
       "file": "kabadiwala-stock-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:53.979Z",
+      "capturedAt": "2026-10-02T06:31:50.217Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -564,7 +658,7 @@
       "file": "yard-sell.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:54.540Z",
+      "capturedAt": "2026-10-02T06:31:50.836Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -586,7 +680,7 @@
       "file": "yard-invoice.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:54.967Z",
+      "capturedAt": "2026-10-02T06:31:51.504Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -608,7 +702,7 @@
       "file": "recycler-impact.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:55.349Z",
+      "capturedAt": "2026-10-02T06:31:52.163Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -633,7 +727,7 @@
       "file": "recycler-impact-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:55.681Z",
+      "capturedAt": "2026-10-02T06:31:52.707Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -658,7 +752,7 @@
       "file": "join-kabadiwala-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:56.046Z",
+      "capturedAt": "2026-10-02T06:31:53.246Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -681,7 +775,7 @@
       "file": "join-yard.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:56.419Z",
+      "capturedAt": "2026-10-02T06:31:53.813Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -691,7 +785,7 @@
       "applicationRoute": "/en/join/yard",
       "previewUrl": "http://127.0.0.1:3203/en/join/yard",
       "componentSha256": "80672873e9f8b6d94c0fa2c9a14d410b36a2e063d2da6447ab379a4caccdcf4c",
-      "screenshotSha256": "0aaf88af1624c01ddf5b175ada9c91fed86aa0bd0ff62d630bbfb2d27a4ab84e",
+      "screenshotSha256": "581b0cad2b4b2d617fd07f8b2ee8698b385e8bc00a6ee4c9374f3710134c4f67",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -705,7 +799,7 @@
       "file": "join-status-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:56.750Z",
+      "capturedAt": "2026-10-02T06:31:54.314Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -729,7 +823,7 @@
       "file": "admin-pilot-outcomes.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:57.140Z",
+      "capturedAt": "2026-10-02T06:31:54.894Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -753,7 +847,7 @@
       "file": "admin-pilot-materials.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:57.547Z",
+      "capturedAt": "2026-10-02T06:31:55.478Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -776,7 +870,7 @@
       "file": "admin-pilot-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:58.002Z",
+      "capturedAt": "2026-10-02T06:31:56.273Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -786,7 +880,7 @@
       "applicationRoute": "/admin/pilot",
       "previewUrl": "http://127.0.0.1:3203/admin/pilot",
       "componentSha256": "3f55ab6660fcf1c21ae963e3e90f034beb07f287efad7b57f7618a6a8db61e96",
-      "screenshotSha256": "982328c78ed896befbd34fd554796cf1ff036c5b93aa59909e53ed9ce9df6517",
+      "screenshotSha256": "f03e1173ab052ff5809dd295fb6b2f7fd18848de356c7ba9377abdbacc2c4d0a",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -800,7 +894,7 @@
       "file": "admin-pilot-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:58.464Z",
+      "capturedAt": "2026-10-02T06:31:56.969Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -825,7 +919,7 @@
       "file": "admin-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:58.798Z",
+      "capturedAt": "2026-10-02T06:31:57.512Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -850,7 +944,7 @@
       "file": "kabadiwala-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:59.177Z",
+      "capturedAt": "2026-10-02T06:31:58.174Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -875,7 +969,7 @@
       "file": "yard-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:59.529Z",
+      "capturedAt": "2026-10-02T06:31:58.799Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -900,7 +994,7 @@
       "file": "recycler-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:40:59.881Z",
+      "capturedAt": "2026-10-02T06:31:59.363Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -925,7 +1019,7 @@
       "file": "manufacturer-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:41:00.338Z",
+      "capturedAt": "2026-10-02T06:31:59.898Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -950,7 +1044,7 @@
       "file": "saathi-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:41:00.793Z",
+      "capturedAt": "2026-10-02T06:32:00.385Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -974,7 +1068,7 @@
       "file": "admin-overview-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:41:01.175Z",
+      "capturedAt": "2026-10-02T06:32:00.882Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -984,7 +1078,7 @@
       "applicationRoute": "/admin",
       "previewUrl": "http://127.0.0.1:3203/admin",
       "componentSha256": "145aa0135c65301355adc080978346e46607788bb5bcc59d671be35264543732",
-      "screenshotSha256": "219bd40739b478408fd8129bc06da9b45493e472bdbed105b3f255e0cbf21b3d",
+      "screenshotSha256": "7c71525c9d0a82f81728b6513cc27e459fe091c5401ffca374f6a168b201641d",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -1000,7 +1094,7 @@
       "file": "kabadiwala-overview-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T04:41:01.593Z",
+      "capturedAt": "2026-10-02T06:32:01.401Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,

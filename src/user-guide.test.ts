@@ -106,6 +106,8 @@ describe("the mandatory platform guide", () => {
       sha256: string;
       kind: string;
       captureKind: "section" | "viewport";
+      viewport: { width: number; height: number };
+      theme: "light" | "dark";
       sectionSelector?: string;
       sourceHashes: Record<string, string>;
       browserErrors: string[];
@@ -125,11 +127,20 @@ describe("the mandatory platform guide", () => {
         "public-navigation-phone",
         "public-navigation-tablet",
         "public-navigation-arabic-phone",
+        "public-login-languages-phone",
+        "public-login-languages-phone-dark",
+        "public-solar-details",
       ]),
     );
     for (const capture of captures) {
       expect(hash(capture.path), capture.path).toBe(capture.sha256);
       expect(capture.kind).toBe("current-local-disconnected");
+      if (capture.name.startsWith("public-login-languages-")) {
+        expect(capture.viewport).toEqual({ width: 390, height: 844 });
+        expect(capture.theme).toBe(
+          capture.name.endsWith("-dark") ? "dark" : "light",
+        );
+      }
       if (capture.captureKind === "section") {
         expect(capture.sectionSelector).toMatch(/^section\[aria-labelledby=/);
       } else {
@@ -142,6 +153,7 @@ describe("the mandatory platform guide", () => {
           "src/lib/number-input.ts",
           "src/components/solar/calc.ts",
           "src/components/solar/solar-planner.tsx",
+          "src/components/solar/choice-group.tsx",
           "src/components/sell/draft.ts",
           "src/components/site/home/hero.tsx",
           "src/components/site/closing-cta.tsx",
@@ -151,6 +163,14 @@ describe("the mandatory platform guide", () => {
           "src/components/site/mobile-nav.tsx",
           "src/components/site/site-nav.tsx",
           "src/components/prices/price-placeholder.tsx",
+          "src/components/auth/language-choice.tsx",
+          "src/components/auth/login-flow.tsx",
+          "src/components/auth/storage.ts",
+          "src/app/[locale]/(auth)/layout.tsx",
+          "src/i18n/locales.ts",
+          "src/components/ui/input.tsx",
+          "src/components/ui/label.tsx",
+          "src/components/ui/radio-group.tsx",
           "public/images/materials-hall.webp",
         ]),
       );
@@ -159,6 +179,41 @@ describe("the mandatory platform guide", () => {
       }
       expect(capture.browserErrors).toEqual([]);
       expect(capture.blockedRequests).toEqual([]);
+    }
+  });
+
+  it("labels connected demo-price captures and keeps their evidence current", () => {
+    const captures = JSON.parse(
+      readFileSync("docs/user-guide/price-captures.json", "utf8"),
+    ) as {
+      path: string;
+      sha256: string;
+      kind: string;
+      sampleData: boolean;
+      productionFrontendTested: boolean;
+      authenticationTested: boolean;
+      mutationsPerformed: boolean;
+      rows: number;
+      sourceHashes: Record<string, string>;
+      browserErrors: string[];
+      blockedRequests: string[];
+    }[];
+    expect(captures).toHaveLength(2);
+    for (const capture of captures) {
+      expect(hash(capture.path), capture.path).toBe(capture.sha256);
+      expect(capture.kind).toBe("current-local-connected-demo");
+      expect(capture.sampleData).toBe(true);
+      expect(capture.productionFrontendTested).toBe(false);
+      expect(capture.authenticationTested).toBe(false);
+      expect(capture.mutationsPerformed).toBe(false);
+      expect(capture.rows).toBe(26);
+      expect(capture.browserErrors).toEqual([]);
+      expect(capture.blockedRequests).toEqual([]);
+      for (const [file, expected] of Object.entries(capture.sourceHashes)) {
+        expect(hash(file), `${file}: recapture connected demo prices`).toBe(
+          expected,
+        );
+      }
     }
   });
 
@@ -196,10 +251,15 @@ describe("the mandatory platform guide", () => {
         "src/components/ui/button.tsx",
         "src/components/ui/chart.tsx",
         "src/components/ui/switch.tsx",
+        "src/components/ui/input.tsx",
+        "src/components/ui/label.tsx",
+        "src/components/ui/checkbox.tsx",
+        "src/components/ui/radio-group.tsx",
         "src/components/admin/pilot/pilot-charts.tsx",
         "src/lib/fonts.ts",
         "src/lib/number-input.ts",
         "src/components/market/logic.ts",
+        "src/components/market/material-filter.tsx",
         "src/components/shop/weigh.ts",
         "scripts/guide-preview/main.tsx",
         "scripts/guide-preview/navigation.tsx",
@@ -207,6 +267,17 @@ describe("the mandatory platform guide", () => {
         "scripts/guide-preview/locale.ts",
         "convex/lib/catalogue.ts",
         "scripts/guide-preview/queries.ts",
+        "scripts/guide-preview/selection-fixtures.tsx",
+        "src/components/sell/basket-step.tsx",
+        "src/components/sell/shop-step.tsx",
+        "src/components/sell/material-tile.tsx",
+        "src/components/sell/kg-stepper.tsx",
+        "src/components/sell/mode-choice.tsx",
+        "src/components/sell/when-step.tsx",
+        "src/components/sell/draft.ts",
+        "src/components/sell/step-frame.tsx",
+        "src/components/sell/step-indicator.tsx",
+        "src/app/[locale]/(household)/layout.tsx",
         "src/app/[locale]/(join)/layout.tsx",
         "src/components/join/join-pages.tsx",
         "src/components/join/join-gate.tsx",
@@ -238,9 +309,12 @@ describe("the mandatory platform guide", () => {
     )) {
       expect(hash(file), `${file}: recapture protected screens`).toBe(expected);
     }
-    expect(evidence.captures.length).toBeGreaterThanOrEqual(40);
+    expect(evidence.captures.length).toBeGreaterThanOrEqual(43);
     expect(evidence.captures.map((capture) => capture.file)).toEqual(
       expect.arrayContaining([
+        "household-basket-phone.png",
+        "household-mode-phone.png",
+        "household-when-phone.png",
         "admin-overview-dark.png",
         "admin-pilot-outcomes.png",
         "admin-pilot-materials.png",

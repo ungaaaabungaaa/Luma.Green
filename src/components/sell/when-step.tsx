@@ -9,13 +9,14 @@ import {
   SunriseIcon,
   SunsetIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
+import { isLocale, localeMeta } from "@/i18n/locales";
 import { cn } from "@/lib/utils";
 
 import { shiftDate } from "../../../convex/lib/dates";
@@ -49,11 +50,11 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 
 function choiceClass(isSelected: boolean, isDisabled: boolean) {
   return cn(
-    "rounded-lg border bg-card font-normal",
-    isSelected
-      ? "border-primary bg-accent ring-1 ring-primary ring-inset"
-      : "border-border",
-    isDisabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
+    "border-b font-normal",
+    isSelected ? "border-primary text-primary" : "border-border",
+    isDisabled
+      ? "cursor-not-allowed opacity-50"
+      : "cursor-pointer hover:bg-muted/40",
   );
 }
 
@@ -105,6 +106,7 @@ export function WhenStep({
   onChange: (change: Partial<SellDraft>) => void;
 }) {
   const t = useTranslations("sell");
+  const locale = useLocale();
   const time = useTimeFormat();
   const errorFor = (field: WhenField) =>
     problems.includes(field) ? t(`when.errors.${field}`) : undefined;
@@ -125,6 +127,7 @@ export function WhenStep({
     <div className="flex flex-col gap-6">
       <Question id="day" legend={t("when.dayLabel")} error={errorFor("day")}>
         <RadioGroup
+          dir={localeMeta[isLocale(locale) ? locale : "en"].dir}
           aria-labelledby="day-legend"
           value={draft.slotDate ?? ""}
           onValueChange={(slotDate) => {
@@ -136,7 +139,7 @@ export function WhenStep({
               slotWindow: isStillOpen ? draft.slotWindow : undefined,
             });
           }}
-          className="grid grid-cols-4 gap-2"
+          className="flex flex-wrap gap-x-4 gap-y-1"
         >
           {days.map((date) => {
             const parts = time.dayParts(date);
@@ -146,7 +149,7 @@ export function WhenStep({
                 htmlFor={`day-${date}`}
                 className={cn(
                   choiceClass(draft.slotDate === date, false),
-                  "relative flex min-h-16 flex-col items-center justify-center gap-0.5 px-1 py-2 text-center has-[:focus-visible]:ring-3 has-[:focus-visible]:ring-ring/50",
+                  "relative flex min-h-14 min-w-14 flex-col items-center justify-center gap-0.5 px-2 py-2 text-center has-[:focus-visible]:ring-3 has-[:focus-visible]:ring-ring/50",
                 )}
               >
                 <RadioGroupItem
@@ -170,13 +173,14 @@ export function WhenStep({
         error={errorFor("window")}
       >
         <RadioGroup
+          dir={localeMeta[isLocale(locale) ? locale : "en"].dir}
           aria-labelledby="window-legend"
           value={draft.slotWindow ?? ""}
           onValueChange={(value) => {
             const slotWindow = SLOT_WINDOWS.find((window) => window === value);
             if (slotWindow) onChange({ slotWindow });
           }}
-          className="grid gap-2 sm:grid-cols-3"
+          className="grid gap-x-5 gap-y-0 sm:grid-cols-3"
         >
           {SLOT_WINDOWS.map((window) => {
             const Icon = WINDOW_ICONS[window];
@@ -188,7 +192,7 @@ export function WhenStep({
                 htmlFor={`window-${window}`}
                 className={cn(
                   choiceClass(draft.slotWindow === window, isDisabled),
-                  "flex min-h-14 items-center gap-3 px-3 py-2",
+                  "flex min-h-14 items-center gap-3 py-3",
                 )}
               >
                 <RadioGroupItem

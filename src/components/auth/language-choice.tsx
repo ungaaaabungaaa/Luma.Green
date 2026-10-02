@@ -1,12 +1,21 @@
 "use client";
 
-import { CheckIcon } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { useTransition } from "react";
+import { useState, useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
-import { isLocale, type Locale, localeMeta, locales } from "@/i18n/locales";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  defaultLocale,
+  isLocale,
+  type Locale,
+  localeMeta,
+  locales,
+} from "@/i18n/locales";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -20,16 +29,27 @@ const ordered: readonly Locale[] = [
 ];
 
 /**
- * The first screen for anyone signing in: every language in its own script,
- * big enough to tap. Picking one reloads the page in that language.
+ * Search in either script, select a language, then continue in that language.
+ * Keep selection separate from navigation so keyboard users can browse safely.
  */
 export function LanguageChoice({ onDone }: { onDone: () => void }) {
   const t = useTranslations("auth");
-  const current = useLocale();
+  const common = useTranslations("common");
+  const help = useTranslations("help.search");
+  const locale = useLocale();
+  const current = isLocale(locale) ? locale : defaultLocale;
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
+  const [selected, setSelected] = useState<Locale>(current);
+  const [search, setSearch] = useState("");
+  const query = search.trim().toLowerCase();
+  const matches = ordered.filter((code) =>
+    `${localeMeta[code].label} ${localeMeta[code].english}`
+      .toLowerCase()
+      .includes(query),
+  );
 
   function choose(code: Locale) {
     markLanguageChosen();
@@ -44,7 +64,14 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
   }
 
   return (
-    <section aria-labelledby="choose-language" className="flex flex-col gap-5">
+    <form
+      aria-labelledby="choose-language"
+      className="flex flex-col gap-4"
+      onSubmit={(event) => {
+        event.preventDefault();
+        choose(selected);
+      }}
+    >
       <div className="flex flex-col gap-1">
         <h1
           id="choose-language"
@@ -54,51 +81,99 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
         </h1>
         <p className="text-muted-foreground">{t("chooseLanguageHint")}</p>
       </div>
-      <ul className="grid grid-cols-2 gap-x-4">
-        {ordered.map((code) => {
-          const isSelected = code === current;
+      <div className="relative">
+        <SearchIcon
+          aria-hidden
+          className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+        />
+        <Input
+          type="search"
+          aria-label={common("search")}
+          placeholder={common("search")}
+          value={search}
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+          disabled={isPending}
+          className="ps-10"
+        />
+      </div>
+      <RadioGroup
+        value={selected}
+        onValueChange={(value) => {
+          if (isLocale(value)) setSelected(value);
+        }}
+        aria-label={common("language")}
+        dir={localeMeta[current].dir}
+        disabled={isPending}
+        className="max-h-56 gap-0 overflow-y-auto overscroll-contain border-y border-border"
+      >
+        {matches.map((code) => {
+          const isSelected = code === selected;
           return (
-            <li key={code}>
-              <Button
-                type="button"
-                variant="ghost"
-                onClick={() => {
-                  choose(code);
-                }}
-                disabled={isPending}
-                aria-pressed={isSelected}
+            <Label
+              key={code}
+              htmlFor={`language-${code}`}
+              className={cn(
+                "relative min-h-12 cursor-pointer gap-3 border-b border-border px-2 py-2 last:border-b-0 focus-within:bg-accent hover:bg-accent",
+                isSelected && "bg-accent text-primary",
+              )}
+            >
+              <RadioGroupItem
+                id={`language-${code}`}
+                value={code}
+                aria-labelledby={
+                  localeMeta[code].english === localeMeta[code].label
+                    ? `language-${code}-native`
+                    : `language-${code}-native language-${code}-english`
+                }
+              />
+              <span
+                id={`language-${code}-native`}
                 lang={localeMeta[code].hreflang}
                 dir={localeMeta[code].dir}
-                className={cn(
-                  "h-auto min-h-16 w-full justify-between gap-2 rounded-none border-b px-1 py-3 text-start whitespace-normal disabled:opacity-60",
-                  isSelected ? "border-primary text-primary" : "border-border",
-                )}
+                className="text-base font-medium"
               >
-                <span className="flex flex-col">
-                  <span className="text-lg font-semibold">
-                    {localeMeta[code].label}
-                  </span>
-                  <span className="text-xs text-muted-foreground" lang="en">
-                    {localeMeta[code].english}
-                  </span>
+                {localeMeta[code].label}
+              </span>
+              {localeMeta[code].english === localeMeta[code].label ? null : (
+                <span
+                  id={`language-${code}-english`}
+                  className="ms-auto text-xs text-muted-foreground"
+                  lang="en"
+                  dir="ltr"
+                >
+                  {localeMeta[code].english}
                 </span>
-                {isSelected ? (
-                  <CheckIcon aria-hidden className="size-5 text-primary" />
-                ) : null}
-              </Button>
-            </li>
+              )}
+            </Label>
           );
         })}
-      </ul>
-      <Button
-        size="lg"
-        className="h-12 text-base"
-        onClick={() => {
-          if (isLocale(current)) choose(current);
-        }}
-      >
-        {t("continue")}
-      </Button>
-    </section>
+        {matches.length === 0 ? (
+          <p role="status" className="px-2 py-4 text-sm text-muted-foreground">
+            {help("emptyTitle")}
+          </p>
+        ) : null}
+      </RadioGroup>
+      <div className="flex flex-col gap-3">
+        <p
+          role="status"
+          className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-sm"
+        >
+          <span className="text-muted-foreground">{common("language")}</span>{" "}
+          <bdi lang={localeMeta[selected].hreflang} className="font-medium">
+            {localeMeta[selected].label}
+          </bdi>
+        </p>
+        <Button
+          type="submit"
+          size="lg"
+          className="h-12 w-full text-base"
+          disabled={isPending}
+        >
+          {t("continue")}
+        </Button>
+      </div>
+    </form>
   );
 }

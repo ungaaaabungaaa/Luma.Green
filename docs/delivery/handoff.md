@@ -1,5 +1,41 @@
 # Agent handoff — 2 October 2026
 
+## Selection and production demo-price checkpoint
+
+The follow-up on `feat/responsive-locales-review` replaces large selection
+blocks with a searchable first-login language picker and compact form controls.
+It fixes the remaining narrow Tamil labels, basket alignment and explicit RTL
+direction. All 36 targeted phone/tablet/desktop selection scenes passed, with
+each browser capture visually inspected. All 15 auth browser cases passed.
+The normal disconnected build and a separate connected development build passed.
+Final `pnpm check` passed with 1,296 web tests, 27 mobile tests and 20 desktop
+tests, plus lint and TypeScript. Formatting passed. Hosted checks must be read
+again for the new commit before merge.
+
+At the founder's request, `demoPrices:seed` was deployed and run on both Convex
+environments. Production now has 26 materials, 26 reference prices and 780
+sample daily prices. Development and production price-board values match for
+all 26 materials and 30 dates. Existing records were preserved. This is a
+price-only import, not the full platform demo seed. Read
+[the import and cleanup record](selection-prices-and-account-ux.md).
+
+Guide impact: the editable platform guide now has 75 reviewed pages and 73
+image placements. Fresh public and protected captures include the new picker,
+selection controls and two read-only connected development price views.
+The team document has 38 reviewed pages and 12 image placements. Their exact
+hashes and capture provenance are in the respective build records. The stable
+Google Docs copy remains pending an in-place update; its ID and sharing remain
+unchanged. The connected development captures do not prove a production page
+load, authentication or provider delivery.
+
+The next authorised slice is more page-specific imagery and descriptions,
+optional authenticator protection after phone sign-in, in-app/browser push,
+and Expo/Electron integration. Apple, Google Play and Expo/EAS accounts are not
+set up: finish code and local checks, then document account, credential,
+signing, store and real-device gates. Do not claim those gates are complete.
+The founder excluded frontend deployment monitoring. Use the protected PR path
+for integration into main, and keep the unrelated root PDF untracked.
+
 ## Release snapshot
 
 This snapshot records the local release evidence for

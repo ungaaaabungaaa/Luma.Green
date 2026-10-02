@@ -26,6 +26,36 @@ if (
 }
 const screens = [
   {
+    name: "household-basket-phone",
+    route: "/en/sell/basket",
+    component: "src/components/sell/basket-step.tsx",
+    heading: "What do you have?",
+    headingLevel: 2,
+    width: 390,
+    height: 844,
+    viewportOnly: true,
+  },
+  {
+    name: "household-mode-phone",
+    route: "/en/sell/shop",
+    component: "src/components/sell/mode-choice.tsx",
+    heading: "Who buys it?",
+    headingLevel: 2,
+    width: 390,
+    height: 844,
+    viewportOnly: true,
+  },
+  {
+    name: "household-when-phone",
+    route: "/en/sell/when",
+    component: "src/components/sell/when-step.tsx",
+    heading: "When should they come?",
+    headingLevel: 2,
+    width: 390,
+    height: 844,
+    viewportOnly: true,
+  },
+  {
     name: "admin-overview",
     route: "/admin",
     component: "src/components/admin/console-home.tsx",
@@ -287,10 +317,15 @@ const sharedSources = [
   "src/components/ui/button.tsx",
   "src/components/ui/chart.tsx",
   "src/components/ui/switch.tsx",
+  "src/components/ui/input.tsx",
+  "src/components/ui/label.tsx",
+  "src/components/ui/checkbox.tsx",
+  "src/components/ui/radio-group.tsx",
   "src/components/admin/pilot/pilot-charts.tsx",
   "src/lib/fonts.ts",
   "src/lib/number-input.ts",
   "src/components/market/logic.ts",
+  "src/components/market/material-filter.tsx",
   "src/components/shop/weigh.ts",
   "scripts/guide-preview/main.tsx",
   "scripts/guide-preview/navigation.tsx",
@@ -298,6 +333,17 @@ const sharedSources = [
   "scripts/guide-preview/locale.ts",
   "convex/lib/catalogue.ts",
   "scripts/guide-preview/queries.ts",
+  "scripts/guide-preview/selection-fixtures.tsx",
+  "src/components/sell/basket-step.tsx",
+  "src/components/sell/shop-step.tsx",
+  "src/components/sell/material-tile.tsx",
+  "src/components/sell/kg-stepper.tsx",
+  "src/components/sell/mode-choice.tsx",
+  "src/components/sell/when-step.tsx",
+  "src/components/sell/draft.ts",
+  "src/components/sell/step-frame.tsx",
+  "src/components/sell/step-indicator.tsx",
+  "src/app/[locale]/(household)/layout.tsx",
   "src/app/[locale]/(join)/layout.tsx",
   "src/components/join/join-pages.tsx",
   "src/components/join/join-gate.tsx",
@@ -370,7 +416,10 @@ try {
       .getByRole("note", { name: "Screenshot provenance" })
       .waitFor({ state: "visible" });
     await page
-      .getByRole("heading", { level: 1, name: screen.heading })
+      .getByRole("heading", {
+        level: screen.headingLevel ?? 1,
+        name: screen.heading,
+      })
       .waitFor({ state: "visible" });
     await page.evaluate(async () => {
       await document.fonts.ready;

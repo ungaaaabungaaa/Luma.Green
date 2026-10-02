@@ -1,10 +1,11 @@
 "use client";
 
 import { StoreIcon, TruckIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { isLocale, localeMeta } from "@/i18n/locales";
 import { cn } from "@/lib/utils";
 
 import type { Mode } from "./draft";
@@ -14,7 +15,7 @@ const OPTIONS = [
   { value: "dropoff", icon: StoreIcon, hint: "dropoffHint" },
 ] as const;
 
-/** Pickup from home, or drop it off at the shop: two big cards. */
+/** Pickup from home or drop-off, as two labelled radio rows. */
 export function ModeChoice({
   mode,
   onChange,
@@ -23,18 +24,20 @@ export function ModeChoice({
   onChange: (mode: Mode) => void;
 }) {
   const t = useTranslations("sell.shop");
+  const locale = useLocale();
   return (
     <fieldset className="flex min-w-0 flex-col gap-2">
       <legend id="mode-legend" className="mb-2 font-semibold">
         {t("modeLabel")}
       </legend>
       <RadioGroup
+        dir={localeMeta[isLocale(locale) ? locale : "en"].dir}
         aria-labelledby="mode-legend"
         value={mode}
         onValueChange={(value) => {
           onChange(value === "dropoff" ? "dropoff" : "pickup");
         }}
-        className="grid grid-cols-2 gap-2"
+        className="grid gap-x-5 gap-y-0 sm:grid-cols-2"
       >
         {OPTIONS.map(({ value, icon: Icon, hint }) => {
           const isSelected = value === mode;
@@ -43,18 +46,23 @@ export function ModeChoice({
               key={value}
               htmlFor={`mode-${value}`}
               className={cn(
-                "flex min-h-20 cursor-pointer flex-col items-start gap-2 rounded-lg border bg-card p-4 font-normal",
-                isSelected
-                  ? "border-primary bg-accent ring-1 ring-primary ring-inset"
-                  : "border-border",
+                "flex min-h-14 cursor-pointer items-center gap-3 border-b py-3 font-normal hover:bg-muted/40",
+                isSelected ? "border-primary" : "border-border",
               )}
             >
-              <span className="flex w-full items-center justify-between gap-2">
-                <Icon aria-hidden className="size-6 text-primary" />
-                <RadioGroupItem id={`mode-${value}`} value={value} />
+              <RadioGroupItem id={`mode-${value}`} value={value} />
+              <Icon
+                aria-hidden
+                className="size-5 shrink-0 text-muted-foreground"
+              />
+              <span className="flex min-w-0 flex-col gap-1">
+                <span className="text-base leading-normal font-medium">
+                  {t(value)}
+                </span>
+                <span className="text-sm leading-normal text-muted-foreground">
+                  {t(hint)}
+                </span>
               </span>
-              <span className="text-base font-semibold">{t(value)}</span>
-              <span className="text-sm text-muted-foreground">{t(hint)}</span>
             </Label>
           );
         })}

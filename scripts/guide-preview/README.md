@@ -149,6 +149,23 @@ or run autosave. No login number or customer contact details are supplied.
 All mutations and actions still reject through the same write-disabled adapter.
 Production session checks and application code are unchanged.
 
+## Household selection coverage
+
+Three further phone captures use `HouseholdLayout` and the actual selection
+components at 390 × 844. Their visible fixture banner identifies the isolated
+preview. These routes are documentation harness paths, not application routes.
+
+| File stem                | Harness route     | Actual component                                               | Heading                |
+| ------------------------ | ----------------- | -------------------------------------------------------------- | ---------------------- |
+| `household-basket-phone` | `/en/sell/basket` | `BasketStep`, three canonical materials and local draft state  | What do you have?      |
+| `household-mode-phone`   | `/en/sell/shop`   | `ModeChoice` only, without a live shop-offer list              | Who buys it?           |
+| `household-when-phone`   | `/en/sell/when`   | `WhenStep`, sample shop hours and a fixed 14 October 2026 date | When should they come? |
+
+The sample prices come from the canonical catalogue. These components keep
+changes in local React state only. They do not submit bookings, authenticate a
+user, reserve a time, send a message or write to a backend. The complete capture
+set now contains 43 images.
+
 ## Responsive fixture audit
 
 The isolated preview also accepts `/ar`, `/ta` and `/ml` paths. It renders the

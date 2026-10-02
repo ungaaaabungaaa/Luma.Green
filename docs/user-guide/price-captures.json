@@ -1,0 +1,76 @@
+[
+  {
+    "name": "public-prices-demo",
+    "path": "docs/user-guide/screenshots/public-prices-demo.png",
+    "route": "/prices",
+    "theme": "light",
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "revision": "762e57953eadd9b30bd0b9413a03c62e47e4da45",
+    "sourceHashes": {
+      "scripts/capture-price-guide.mts": "440686f1e5657ddea5f63e3d419bf0775b7764e574cab8057ffbb0abbc0f6b11",
+      "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
+      "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
+      "src/components/prices/price-board.tsx": "3d207aa0b27141a019d77362fec639c70e30d6dc511df96ac3e2547f6d2d3311",
+      "src/components/prices/price-row.tsx": "7b55cca43c0b60caa6c07f92037ed7ac7b548918ee93ab2398cd5e64fca0ced0",
+      "src/components/prices/price-detail.tsx": "4e6f592873bf5eeaea5d0ca8b039714d9ce001119d35f635189b3d29d9b359f9",
+      "src/components/prices/price-chart.tsx": "68a076ed1404b06e04aeba782349a4becaab209b4123a2dcfab318d32a3de234",
+      "src/components/prices/price-change.tsx": "eff54d05a46349713a73c94700e19e306ede4342e6ef593ea19003095e1227e7",
+      "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
+      "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
+      "src/components/app/format.ts": "296b38b7f24f086aa817ee194b14ca7964f71cc2ee15aa956523a4dff1758613",
+      "src/components/app/page-parts.tsx": "d070dd172ce301c89295f1ac8b1fa5ae0f14041f7bc1bb55ed4c65410b978fa2",
+      "messages/en.json": "c85b40af63d0c2d093d3937d6b64dca3c6c469c0ddfaf4abe9fe656979d3e7b2"
+    },
+    "capturedAt": "2026-10-02T06:39:20.721Z",
+    "kind": "current-local-connected-demo",
+    "backendDeployment": "glorious-rooster-470",
+    "sampleData": true,
+    "productionFrontendTested": false,
+    "authenticationTested": false,
+    "mutationsPerformed": false,
+    "rows": 26,
+    "browserErrors": [],
+    "blockedRequests": [],
+    "sha256": "6ce3e20b5d33e1214f05b9f5aabe4d7d50d8120e6a7350f4dde81647655a1d16"
+  },
+  {
+    "name": "public-price-history-demo-dark",
+    "path": "docs/user-guide/screenshots/public-price-history-demo-dark.png",
+    "route": "/prices",
+    "theme": "dark",
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "revision": "762e57953eadd9b30bd0b9413a03c62e47e4da45",
+    "sourceHashes": {
+      "scripts/capture-price-guide.mts": "440686f1e5657ddea5f63e3d419bf0775b7764e574cab8057ffbb0abbc0f6b11",
+      "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
+      "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
+      "src/components/prices/price-board.tsx": "3d207aa0b27141a019d77362fec639c70e30d6dc511df96ac3e2547f6d2d3311",
+      "src/components/prices/price-row.tsx": "7b55cca43c0b60caa6c07f92037ed7ac7b548918ee93ab2398cd5e64fca0ced0",
+      "src/components/prices/price-detail.tsx": "4e6f592873bf5eeaea5d0ca8b039714d9ce001119d35f635189b3d29d9b359f9",
+      "src/components/prices/price-chart.tsx": "68a076ed1404b06e04aeba782349a4becaab209b4123a2dcfab318d32a3de234",
+      "src/components/prices/price-change.tsx": "eff54d05a46349713a73c94700e19e306ede4342e6ef593ea19003095e1227e7",
+      "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
+      "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
+      "src/components/app/format.ts": "296b38b7f24f086aa817ee194b14ca7964f71cc2ee15aa956523a4dff1758613",
+      "src/components/app/page-parts.tsx": "d070dd172ce301c89295f1ac8b1fa5ae0f14041f7bc1bb55ed4c65410b978fa2",
+      "messages/en.json": "c85b40af63d0c2d093d3937d6b64dca3c6c469c0ddfaf4abe9fe656979d3e7b2"
+    },
+    "capturedAt": "2026-10-02T06:39:21.990Z",
+    "kind": "current-local-connected-demo",
+    "backendDeployment": "glorious-rooster-470",
+    "sampleData": true,
+    "productionFrontendTested": false,
+    "authenticationTested": false,
+    "mutationsPerformed": false,
+    "rows": 26,
+    "browserErrors": [],
+    "blockedRequests": [],
+    "sha256": "1a2ab3b8410338e108d0a465375d1a33cbd361bb739739b67877586813366b1d"
+  }
+]

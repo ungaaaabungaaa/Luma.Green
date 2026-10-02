@@ -31,6 +31,7 @@ import { localeMeta } from "@/i18n/locales";
 
 import { NOW, trackedBooking } from "./fixtures";
 import { locale, messages } from "./locale";
+import { SellSelectionFixture } from "./selection-fixtures";
 
 const path = window.location.pathname.replace(`/${locale}/`, "/en/");
 document.documentElement.lang = locale;
@@ -71,6 +72,15 @@ const operationalPages: Record<string, ReactNode | undefined> = {
 const appPage = operationalPages[path] ?? defaultAppPage;
 const trackingPage = path.startsWith("/en/t/")
   ? await HouseholdLayout({ children: <TrackView booking={trackedBooking} /> })
+  : null;
+const sellSelectionPages: Record<string, ReactNode | undefined> = {
+  "/en/sell/basket": <SellSelectionFixture step="basket" />,
+  "/en/sell/shop": <SellSelectionFixture step="shop" />,
+  "/en/sell/when": <SellSelectionFixture step="when" />,
+};
+const sellSelectionContent = sellSelectionPages[path];
+const sellSelectionPage = sellSelectionContent
+  ? await HouseholdLayout({ children: sellSelectionContent })
   : null;
 const onboardingPages: Record<string, ReactNode | undefined> = {
   "/en/join/kabadiwala": <KabadiwalaJoin />,
@@ -113,7 +123,7 @@ createRoot(root).render(
         SYNTHETIC DOCUMENTATION FIXTURE — actual Luma.Green components; no live
         account or records. All writes disabled.
       </div>
-      {trackingPage ?? onboardingPage ?? content}
+      {trackingPage ?? sellSelectionPage ?? onboardingPage ?? content}
     </ThemeProvider>
   </NextIntlClientProvider>,
 );

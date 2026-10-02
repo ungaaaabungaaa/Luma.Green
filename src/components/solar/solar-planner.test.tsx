@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useMutation } from "convex/react";
 import { NextIntlClientProvider } from "next-intl";
@@ -80,6 +80,29 @@ describe("SolarPlanner", () => {
 
     expect(screen.getByText("Not for businesses")).toBeInTheDocument();
     expect(screen.getByText("3 kW")).toBeInTheDocument();
+  });
+
+  it("changes compact usage choices with the keyboard and clears the old amount", async () => {
+    const user = userEvent.setup();
+    renderPlanner();
+    await user.type(
+      screen.getByRole("textbox", { name: "Monthly electricity bill" }),
+      "3000",
+    );
+    await user.tab({ shift: true });
+    expect(
+      screen.getByRole("radio", { name: messages.solar.form.modes.bill }),
+    ).toHaveFocus();
+    await user.keyboard("{ArrowRight>}");
+    await waitFor(() => {
+      expect(
+        screen.getByRole("radio", { name: "Units a month" }),
+      ).toBeChecked();
+    });
+    await user.keyboard("{/ArrowRight}");
+    expect(
+      screen.getByRole("textbox", { name: "Units used a month" }),
+    ).toHaveValue("");
   });
 
   it("carries the estimate into the message, until they edit it", async () => {

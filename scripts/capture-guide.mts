@@ -47,6 +47,8 @@ const shots: readonly (readonly [string, string, string?])[] = [
   ["public-sell", "/sell"],
   ["public-join", "/join"],
   ["public-login", "/login"],
+  ["public-login-languages-phone", "/login"],
+  ["public-login-languages-phone-dark", "/login"],
   ["public-login-phone", "/login"],
   ["public-login-otp-phone", "/login"],
   [
@@ -59,6 +61,11 @@ const shots: readonly (readonly [string, string, string?])[] = [
   ["public-help", "/help"],
   ["public-standards", "/standards"],
   ["public-solar", "/solar"],
+  [
+    "public-solar-details",
+    "/solar",
+    'section[aria-labelledby="solar-details"]',
+  ],
   ["public-contact", "/help/contact"],
   ["public-contact-info", "/contact"],
   ["public-how-it-works", "/how-it-works"],
@@ -78,6 +85,7 @@ const sharedSources = [
   "src/lib/number-input.ts",
   "src/components/solar/calc.ts",
   "src/components/solar/solar-planner.tsx",
+  "src/components/solar/choice-group.tsx",
   "src/components/sell/draft.ts",
   "src/components/site/site-header.tsx",
   "src/components/site/mobile-nav.tsx",
@@ -113,10 +121,18 @@ const sharedSources = [
   "src/components/brand/logo.tsx",
   "src/components/brand/logo.module.css",
   "src/components/auth/phone-form.tsx",
+  "src/components/auth/language-choice.tsx",
+  "src/components/auth/login-flow.tsx",
+  "src/components/auth/storage.ts",
+  "src/app/[locale]/(auth)/layout.tsx",
+  "src/i18n/locales.ts",
   "src/components/auth/verify-preview.tsx",
   "messages/en.json",
   "messages/ar.json",
   "src/components/ui/button.tsx",
+  "src/components/ui/input.tsx",
+  "src/components/ui/label.tsx",
+  "src/components/ui/radio-group.tsx",
   "public/images/materials-hall.webp",
 ] as const;
 const sourceHashes = Object.fromEntries<string>(
@@ -133,10 +149,13 @@ const browser = await chromium.launch();
 const captures = [];
 try {
   for (const [name, route, sectionSelector] of shots) {
+    const isLanguagePicker = name.startsWith("public-login-languages-");
+    const isPhoneEntry =
+      name === "public-login-phone" || name === "public-login-otp-phone";
     let viewport = { width: 1280, height: 900 };
     if (name.endsWith("-tablet")) {
       viewport = { width: 1024, height: 768 };
-    } else if (name.startsWith("public-arabic") || name.endsWith("-phone")) {
+    } else if (name.startsWith("public-arabic") || name.includes("-phone")) {
       viewport = { width: 390, height: 844 };
     }
     const page = await browser.newPage({
@@ -150,7 +169,7 @@ try {
     page.on("pageerror", (error) => {
       browserErrors.push(error.message);
     });
-    if (name.startsWith("public-login-") && name.endsWith("-phone")) {
+    if (isPhoneEntry) {
       await page.addInitScript(() => {
         localStorage.setItem("lg.languageChosen", "1");
       });
@@ -171,8 +190,16 @@ try {
           `Cannot capture ${route}: ${String(response?.status() ?? "no response")}`,
         );
       await page.getByRole("heading", { level: 1 }).waitFor();
-      if (name.startsWith("public-login-") && name.endsWith("-phone")) {
+      if (isPhoneEntry) {
         await page.getByLabel(en.auth.mobileLabel, { exact: true }).waitFor();
+      }
+      if (isLanguagePicker) {
+        await page
+          .getByRole("searchbox", { name: en.common.search, exact: true })
+          .waitFor();
+        await page
+          .getByRole("radiogroup", { name: en.common.language, exact: true })
+          .waitFor();
       }
       if (name === "public-login-otp-phone") {
         await page
@@ -245,6 +272,24 @@ try {
           }),
         );
       });
+      if (isLanguagePicker) {
+        const list = await page
+          .getByRole("radiogroup", { name: en.common.language, exact: true })
+          .boundingBox();
+        const continueAction = await page
+          .getByRole("button", { name: en.auth.continue, exact: true })
+          .boundingBox();
+        if (
+          !list ||
+          !continueAction ||
+          list.height > viewport.height * 0.4 ||
+          continueAction.y + continueAction.height > viewport.height
+        ) {
+          throw new Error(
+            "The language list must stay bounded and Continue must remain visible on the captured phone viewport.",
+          );
+        }
+      }
       const path = `${directory}/${name}.png`;
       if (sectionSelector) {
         await page
@@ -266,6 +311,8 @@ try {
         route,
         sectionSelector,
         captureKind: sectionSelector ? "section" : "viewport",
+        viewport: page.viewportSize(),
+        theme: name.endsWith("-dark") ? "dark" : "light",
         path,
         url: page.url(),
         revision,

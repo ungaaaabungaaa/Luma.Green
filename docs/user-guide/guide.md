@@ -2,7 +2,7 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, responsive navigation and 33 language revision. Source baseline: c1ed004.
+Edition: 2 October 2026, compact selections, demo prices and 33 languages. Source baseline: c1ed004.
 Includes the UI detail pass and wide artwork banners on the main public pages, with taller image crops on phones.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
@@ -20,6 +20,7 @@ Luma.Green records scrap collection and movement through the recycling chain. A 
 
 - Current local capture: an unchanged browser screenshot of the current app without a backend connection. Setup messages are real states, not errors added to the picture.
 - Current configured local capture: the real app with test analytics keys. External browser requests are intercepted; no provider receives data.
+- Current connected demo capture: the local app reads approved sample prices from the development backend. It proves that view can read the demo records, not production frontend deployment or verified market prices. No account is signed in and no record is changed.
 - Synthetic documentation fixture: an unchanged browser screenshot of real application components supplied with sample records in a separate documentation server. It is not an authenticated session or proof of a working integration.
 
 No screenshot is an AI-generated interface. Public pages contain generated decorative artwork, but the page screenshots themselves come from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
@@ -91,13 +92,21 @@ Connect the frontend to the intended Convex backend. Configure authentication. E
 
 ## 03 / Phone sign-in and languages
 
-![Language selection in the disconnected local build. This screen remains available before SMS is configured.](screenshots/public-login.png)
+![Compact language selection in the disconnected local build. This screen remains available before SMS is configured.](screenshots/public-login.png)
 
-1. Open /login. If the language chooser appears, choose your language.
+1. Open /login. If the language chooser appears, use Search or scroll the list. Select a language, check the current choice below the list, then select Continue.
 2. Enter your Indian mobile number. The form supplies the +91 country code.
 3. When SMS is connected, request the code and enter the six digits from the message.
 4. Wait for the session to finish loading before opening a protected page.
 5. Continue to your approved role or application status.
+
+The language list uses each language's own name and its English name. Search
+filters the list. Selecting a row sets the choice; Continue applies it and opens
+phone entry. You can use the language control in the header later.
+
+![First-run language picker at phone width in light mode. Search, the current choice and Continue remain visible around the scrolling list. Actual browser capture; no sign-in occurs.](screenshots/public-login-languages-phone.png)
+
+![The same first-run language picker at phone width in dark mode. Actual browser capture; no backend connection or SMS is needed.](screenshots/public-login-languages-phone-dark.png)
 
 If SMS is not configured, select Preview code screen after entering a valid mobile number. The next screen is labelled as a preview. You can inspect and enter the six code digits, but Verify and Resend are disabled. No SMS is sent, no account is created and no private page is opened. Use Change number to go back. The phone number stays in this browser tab, not in the address.
 
@@ -131,6 +140,12 @@ The estimate is not the final payment. The shop records the actual weight and th
 
 The draft is kept in this browser tab during the flow. A closed tab or reset can remove the draft. A submitted booking is a backend record. Do not treat a draft as a confirmed booking.
 
+![Current household material rows with a synthetic three-material catalogue and sample prices. The isolated component has local draft state only; no booking is submitted.](screenshots/household-basket-phone.png)
+
+![Current pickup and drop-off radio rows. This isolated control fixture does not show a live shop offer or a complete shop-selection screen.](screenshots/household-mode-phone.png)
+
+![Current date and time rows with a fixed synthetic date and sample shop hours. Scroll for the remaining address fields. This component fixture does not reserve a pickup.](screenshots/household-when-phone.png)
+
 ---
 
 ## 05 / Household: track, cancel and receive payment
@@ -163,6 +178,9 @@ A completed receipt preserves its recorded weights and prices. A later price cha
 5. Upload the documents requested by that role.
 6. Review the form and submit it for a person to check.
 7. Open /join/status to follow the decision.
+
+Forms use compact option rows. Radio controls choose one option; checkbox rows
+allow more than one. Check the selected state before you continue.
 
 Households do not need to join as a business. They use /sell.
 
@@ -733,9 +751,17 @@ Check the material, unit, quantity and price before you confirm an action. Keep 
 
 ![Current public price page in the disconnected build. Live values require a configured backend.](screenshots/public-prices.png)
 
-Open /prices before comparing a shop offer. Until real data is available, the price board shows placeholder rows and a status message. It does not invent prices or chart lines. Placeholders move only while a request is loading; reduced-motion settings stop that motion. When data is available, choose a material to inspect its price detail and history. Check the city, unit and sample-data notice. This board is not independent market-price advice.
+Open /prices before comparing a shop offer. A connected demo deployment can show seeded sample prices with a visible sample-data notice. These values demonstrate the interface; they are not verified market quotes. Choose a material to inspect its price detail and any available history. Check the city, date, unit and sample-data notice. An unconfigured or empty backend shows placeholder rows and a status message. Placeholders move only while a request is loading; reduced-motion settings stop that motion. The interface does not create replacement prices when a request fails. This board is not independent market-price advice.
+
+![Current local price board reads the approved development demo data. The sample-price notice remains visible. These are demonstration rates, not verified market quotes or proof of the hosted production frontend.](screenshots/public-prices-demo.png)
+
+![Current local material-history dialog in dark mode, using the same development demo data. The chart supports keyboard navigation; the daily values also appear in a scrollable table. No price is edited.](screenshots/public-price-history-demo-dark.png)
+
+The 2 October demo contains 26 materials and 30 daily price points for each material. Select a row to open its history. Use the arrow keys on the chart to read another date. Select Show the numbers to open the daily values below it. Close the dialog to return to the board. These sample values must be validated or replaced before operational use.
 
 ![Current rooftop-solar page header and banner. Scroll to reach the estimator. Estimates require a real site survey.](screenshots/public-solar.png)
+
+![Current solar details with compact single-choice rows. Choose the property, monthly bill and available area before reading the estimate. This is a disconnected local browser capture, not a site survey or quote.](screenshots/public-solar-details.png)
 
 ---
 

@@ -48,6 +48,11 @@ contract. Make routine fixes within it without adding another approval step.
 - Show the current language in its own name, and use the same endonyms in the
   selector. Use a chevron; do not restore the rejected translate icon. Localise
   settings labels and accessible names. Keep theme choice visible and reversible.
+- Do not use large bordered selection tiles for language, role, material or
+  delivery choices. Use compact rows or radio controls for short lists and a
+  searchable picker for long lists. Show the current choice clearly. Keep the
+  list within the available screen height, preserve keyboard selection and focus,
+  and keep targets large enough to use without turning each option into a panel.
 - Ordinary action-button labels stay on **one line** with no clipping or overlap.
   Let an action group wrap or stack, use the available width, or shorten the
   translated action while preserving its meaning. Do not wrap text inside a
@@ -109,7 +114,8 @@ contract. Make routine fixes within it without adding another approval step.
 
 - Use recorded values for live charts, activity, balances and claims. Missing
   live prices show loading/unavailable placeholders, never sample quotes passed
-  off as current prices. Approved demo testimonials remain visibly illustrative,
+  off as current prices. Owner-authorised seeded demo prices may appear with a
+  clear sample-price notice; they are not verified market quotes. Approved demo testimonials remain visibly illustrative,
   use role descriptions and do not claim real customer identities or validation.
 - Offline demo records remain labelled and isolated. Approval to draft demo data
   does not approve database import, production identities, an OTP bypass or

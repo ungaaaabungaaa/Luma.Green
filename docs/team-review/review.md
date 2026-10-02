@@ -63,8 +63,9 @@ demonstrate appearance, not authentication or provider delivery.
 
 ## 4. Home in light and dark
 
-The material story leads. Primary actions remain visible; a missing price feed
-shows a loading placeholder rather than invented chart values.
+The material story leads. Primary actions remain visible. A connected demo
+deployment can show seeded prices with a clear sample-price notice. An
+unconfigured, empty or loading feed shows its corresponding placeholder state.
 
 <!-- pair -->
 
@@ -156,7 +157,7 @@ case is a task to run, not a result that has already passed.
 
 ## 10. A seven-minute team demonstration
 
-1. Open Home on a phone-sized viewport. Show the material story, loading prices,
+1. Open Home on a phone-sized viewport. Show the material story, labelled demo prices or the disconnected price state,
    labelled demo quotes and primary actions.
 2. Open How it works. Explain household, shop, yard, recycler and manufacturer
    hand-offs. State which information is recorded at each step.
@@ -215,8 +216,11 @@ industry outputs and deployment isolation still need decisions. The same
 reviewed manifest can later drive both approved targets; copying live user
 records is not part of that plan. Do not use the legacy whole-table reset.
 
-Keep price loading placeholders until a real feed is available, as requested.
-Do not turn the sample history into an unlabelled public market chart. The
+The owner has authorised a separate additive price-only seed for demonstration.
+Show those values with the sample-price notice when the backend is connected;
+keep unavailable/loading states for missing connections and pending reads.
+Do not present sample prices or history as verified market quotes. This limited
+price seed does not authorise importing the wider demo identity and trade data. The
 gentle stress plan must run on disposable staging, with bounded concurrency,
 stop limits and scoped cleanup. It does not authorise stress tests against
 production. See the [demo plan](../product/demo-seed-plan.md).

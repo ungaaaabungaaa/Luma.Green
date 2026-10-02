@@ -7,6 +7,12 @@ plus public visitors and applicants. Read the [user guide](../user-guide/guide.m
 for screen instructions and the [launch checklist](../operations/launch-checklist.md)
 for account gates. This manual does not authorise deployment, import or real sends.
 
+Source checks: `convex/lib/{chain,lifecycle,households,review}.ts`,
+`convex/{households,shop,dispatch,market,saathi,review,applicationFiles,files,adminPrices,support,pilot,insights}.ts`,
+`src/lib/number-input.ts`, the locale registry, provider runbooks and native update
+modules. If code changes a status or limit, update the affected case and user guide
+together; do not silently follow older prototype reset/login instructions.
+
 ## 1. Choose the evidence lane
 
 | Lane | Environment                                                                 | What a pass proves                                                    |
@@ -59,6 +65,11 @@ promise a universal replay/idempotency key.
 
 ## 3. Access and signup
 
+For the first sign-in screen, search by a language's native or English name,
+select its row, check the current-choice label, then select Continue. Check light
+and dark mode, keyboard selection, an empty search result and a narrow phone.
+Selecting a row alone must not navigate or mark the language step complete.
+
 | ID      | Role / lane                                              | Setup                                       | Steps                                                                                                          | Expected result                                                                                                              | Evidence          |
 | ------- | -------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | ACC-01  | Visitor / L                                              | SMS and backend off                         | Open login; choose language; enter valid-format input; continue; edit number                                   | Labelled OTP preview opens; Verify/Resend cannot send or authenticate; private app remains guarded                           | UI, NET           |
@@ -75,6 +86,12 @@ promise a universal replay/idempotency key.
 | JOIN-06 | Suspended applicant / F; approved guarded test state / S | Pre-approved test-state setup               | Inspect status and attempt workspace access                                                                    | Suspension view gives next step; operational access denied. No console suspend/reinstate button exists; do not fabricate one | UI, NET           |
 
 ## 4. Household recovery and shop operations
+
+On a connected deployment with the approved price-only seed, verify that public
+prices and home price summaries show the stored values with a visible sample-price
+notice. They must not claim to be verified market quotes. With no connection or
+no stored prices, verify the unavailable or empty state; during a read, verify
+the loading state. A failed read must not substitute sample prices in the browser.
 
 For calculation cases use synthetic rates of 1,200 paise/kg and 1,000 paise/kg.
 Weigh 2,125 g and 3,500 g: total **6,050 paise**, **six points**. These are test
@@ -194,9 +211,3 @@ Real escrow, credit issuance, textile completion, processing batches, admin
 suspension/staff tools and report exports are unimplemented scope, not tests to
 “pass” by adding keys. See the launch and native release checklists before
 unblocking. Do not borrow production secrets for convenience.
-
-Source checks: `convex/lib/{chain,lifecycle,households,review}.ts`,
-`convex/{households,shop,dispatch,market,saathi,review,applicationFiles,files,adminPrices,support,pilot,insights}.ts`,
-`src/lib/number-input.ts`, the locale registry, provider runbooks and native update
-modules. If code changes a status or limit, update the affected case and user guide
-together; do not silently follow older prototype reset/login instructions.

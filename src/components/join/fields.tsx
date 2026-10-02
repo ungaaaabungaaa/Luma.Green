@@ -8,13 +8,15 @@ import {
   PlusIcon,
   XIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { type ReactNode, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { type ReactNode, useId, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { isLocale, localeMeta } from "@/i18n/locales";
 import { cn } from "@/lib/utils";
 
 import { MAX_EXTRA_PHONES, WEEKDAYS } from "../../../convex/lib/onboarding";
@@ -137,8 +139,10 @@ export function OptionCards<T extends string>({
   invalid?: boolean;
   columns?: 1 | 2 | 3 | 4;
 }) {
+  const locale = useLocale();
   return (
     <RadioGroup
+      dir={localeMeta[isLocale(locale) ? locale : "en"].dir}
       name={name}
       aria-labelledby={`${name}-legend`}
       value={value ?? ""}
@@ -211,7 +215,7 @@ export function YesNo({
   );
 }
 
-/** Any number of choices, as toggle chips. */
+/** Independent choices with compact, fully labelled checkbox targets. */
 export function ToggleChips<T extends string>({
   options,
   value,
@@ -221,36 +225,39 @@ export function ToggleChips<T extends string>({
   value: readonly T[];
   onChange: (value: T[]) => void;
 }) {
+  const groupId = useId();
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-x-5 gap-y-1">
       {options.map((option) => {
-        const isPressed = value.includes(option.value);
+        const isChecked = value.includes(option.value);
+        const id = `${groupId}-${option.value}`;
         return (
-          <button
+          <Label
             key={option.value}
-            type="button"
-            aria-pressed={isPressed}
-            onClick={() => {
-              onChange(
-                isPressed
-                  ? value.filter((item) => item !== option.value)
-                  : options
-                      .map((candidate) => candidate.value)
-                      .filter(
-                        (item) => item === option.value || value.includes(item),
-                      ),
-              );
-            }}
+            htmlFor={id}
             className={cn(
-              "inline-flex min-h-11 items-center gap-2 rounded-lg border px-4 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-              isPressed
-                ? "border-primary bg-accent font-medium text-primary ring-1 ring-primary ring-inset"
-                : "border-border bg-card",
+              "flex min-h-11 max-w-full cursor-pointer items-center gap-2.5 py-2 text-sm leading-normal font-normal",
+              isChecked && "text-primary",
             )}
           >
-            {isPressed ? <CheckIcon aria-hidden className="size-4" /> : null}
-            {option.label}
-          </button>
+            <Checkbox
+              id={id}
+              checked={isChecked}
+              onCheckedChange={() => {
+                onChange(
+                  isChecked
+                    ? value.filter((item) => item !== option.value)
+                    : options
+                        .map((candidate) => candidate.value)
+                        .filter(
+                          (item) =>
+                            item === option.value || value.includes(item),
+                        ),
+                );
+              }}
+            />
+            <span className="min-w-0 break-words">{option.label}</span>
+          </Label>
         );
       })}
     </div>

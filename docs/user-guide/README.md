@@ -36,7 +36,9 @@ before the next build. This prevents later builds from losing your changes.
    are direct browser output, not cropped or composed after capture.
 
    The commands accept a local origin only and reject external requests. They
-   visit real pages. The phone-preview capture enters the synthetic number
+   visit real pages. Separate light and dark phone captures show the first-run
+   language picker with no saved language choice. The phone-preview capture
+   enters the synthetic number
    `9000000000` and submits the local preview form to show the OTP screen. No
    backend call, SMS delivery, account creation or sign-in occurs. Other forms
    are not submitted. Use a disconnected or approved test environment with no
@@ -47,6 +49,21 @@ before the next build. This prevents later builds from losing your changes.
    show current components with synthetic records. Follow its README. Keep its
    visible fixture banner and metadata. It does not prove live access, server
    permissions or provider behavior.
+
+   Approved sample prices have a separate read-only capture command:
+
+   ```sh
+   GUIDE_BASE_URL=http://localhost:3009 pnpm exec jiti scripts/capture-price-guide.mts
+   ```
+
+   First build the local app with the approved `glorious-rooster-470` development
+   endpoint. The script uses a fresh anonymous browser, permits that backend
+   only, opens the public board and one history dialog, and checks for 26 material
+   rows and 30 history points. It writes `price-captures.json`. The guide labels
+   these as connected development demo captures, not hosted production UI or
+   verified market quotes. It does not submit forms or change data. Keep the
+   disconnected screenshots as separate loading/unavailable-state evidence.
+
 4. Capture analytics controls with fake keys and external requests intercepted:
 
    ```sh

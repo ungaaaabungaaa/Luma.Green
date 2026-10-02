@@ -8,7 +8,6 @@
  * @module
  */
 
-
 import type * as admin from "../admin.js";
 import type * as adminPrices from "../adminPrices.js";
 import type * as applicationFiles from "../applicationFiles.js";
@@ -16,6 +15,7 @@ import type * as applications from "../applications.js";
 import type * as auth from "../auth.js";
 import type * as catalogue from "../catalogue.js";
 import type * as demo from "../demo.js";
+import type * as demoPrices from "../demoPrices.js";
 import type * as dispatch from "../dispatch.js";
 import type * as files from "../files.js";
 import type * as households from "../households.js";
@@ -30,6 +30,7 @@ import type * as lib_chain from "../lib/chain.js";
 import type * as lib_dates from "../lib/dates.js";
 import type * as lib_demo from "../lib/demo.js";
 import type * as lib_demoFiles from "../lib/demoFiles.js";
+import type * as lib_demoPrices from "../lib/demoPrices.js";
 import type * as lib_dispatch from "../lib/dispatch.js";
 import type * as lib_drafts from "../lib/drafts.js";
 import type * as lib_households from "../lib/households.js";
@@ -59,6 +60,7 @@ import type * as smsLimits from "../smsLimits.js";
 import type * as stock from "../stock.js";
 import type * as support from "../support.js";
 import type * as workspace from "../workspace.js";
+
 import type {
   ApiFromModules,
   FilterApi,
@@ -73,6 +75,7 @@ declare const fullApi: ApiFromModules<{
   auth: typeof auth;
   catalogue: typeof catalogue;
   demo: typeof demo;
+  demoPrices: typeof demoPrices;
   dispatch: typeof dispatch;
   files: typeof files;
   households: typeof households;
@@ -87,6 +90,7 @@ declare const fullApi: ApiFromModules<{
   "lib/dates": typeof lib_dates;
   "lib/demo": typeof lib_demo;
   "lib/demoFiles": typeof lib_demoFiles;
+  "lib/demoPrices": typeof lib_demoPrices;
   "lib/dispatch": typeof lib_dispatch;
   "lib/drafts": typeof lib_drafts;
   "lib/households": typeof lib_households;
@@ -105,8 +109,8 @@ declare const fullApi: ApiFromModules<{
   "lib/views": typeof lib_views;
   "lib/workspace": typeof lib_workspace;
   market: typeof market;
-  "notifications": typeof notifications;
-  "photoEstimates": typeof photoEstimates;
+  notifications: typeof notifications;
+  photoEstimates: typeof photoEstimates;
   pilot: typeof pilot;
   review: typeof review;
   saathi: typeof saathi;
