@@ -87,6 +87,8 @@ apps/desktop/generated/
 *.keystore
 *.jks
 *.mobileprovision
+apps/mobile/google-services.json
+apps/mobile/*service-account*.json
 
 # os
 Thumbs.db

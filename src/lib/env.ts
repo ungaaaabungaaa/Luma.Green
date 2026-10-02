@@ -82,6 +82,30 @@ const serverSchema = z.object({
 
 export type ServerEnv = z.infer<typeof serverSchema>;
 
+/** Optional Convex admin-recovery email settings, validated on each request. */
+export function adminRecoveryEnv() {
+  const parsed = z
+    .object({
+      apiKey: z
+        .string()
+        .trim()
+        .min(1)
+        .max(4096)
+        .regex(/^[^\r\n]+$/),
+      from: z.email(),
+      siteUrl: z.url().refine((value) => {
+        const url = new URL(value);
+        return url.protocol === "https:" && !url.username && !url.password;
+      }),
+    })
+    .safeParse({
+      apiKey: process.env.RESEND_API_KEY,
+      from: process.env.ADMIN_RESET_FROM_EMAIL,
+      siteUrl: process.env.SITE_URL,
+    });
+  return parsed.success ? parsed.data : null;
+}
+
 // Held on an object rather than a bare `let` so the memo write is a property
 // assignment, not a reassignment of module state from inside a function.
 const memo: { value?: ServerEnv } = {};
@@ -154,4 +178,36 @@ export function photoEstimateEnv() {
       dailyLimit: quota === undefined || quota.trim() === "" ? "100" : quota,
     });
   return parsed.success ? parsed.data : undefined;
+}
+
+/** Optional push channels. Convex owns these secrets; no public build flag is needed. */
+export function pushEnv() {
+  const parsed = z
+    .object({
+      subject: z
+        .string()
+        .max(300)
+        .refine((value) =>
+          value.startsWith("mailto:")
+            ? z.email().safeParse(value.slice(7)).success
+            : z.url({ protocol: /^https$/ }).safeParse(value).success,
+        ),
+      publicKey: z.string().regex(/^[A-Za-z0-9_-]{87}$/),
+      privateKey: z.string().regex(/^[A-Za-z0-9_-]{43}$/),
+    })
+    .safeParse({
+      subject: process.env.WEB_PUSH_SUBJECT,
+      publicKey: process.env.WEB_PUSH_PUBLIC_KEY,
+      privateKey: process.env.WEB_PUSH_PRIVATE_KEY,
+    });
+  return {
+    web:
+      process.env.WEB_PUSH_ENABLED === "true" && parsed.success
+        ? parsed.data
+        : null,
+    expo:
+      process.env.EXPO_PUSH_ENABLED === "true" &&
+      Boolean(process.env.EXPO_PUSH_ACCESS_TOKEN?.trim()),
+    expoAccessToken: process.env.EXPO_PUSH_ACCESS_TOKEN?.trim(),
+  };
 }

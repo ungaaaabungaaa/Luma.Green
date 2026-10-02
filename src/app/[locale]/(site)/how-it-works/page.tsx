@@ -8,6 +8,7 @@ import { Container } from "@/components/site/container";
 import { loopSteps } from "@/components/site/content";
 import { PageHeader } from "@/components/site/page-header";
 import { Principles } from "@/components/site/principles";
+import { SortingGuide } from "@/components/site/sorting-guide";
 import { localeFromParams } from "@/i18n/paths";
 import { pageMetadata } from "@/lib/seo";
 
@@ -28,9 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const storyRoles = {
-  sell: "household",
-  trade: "yard",
-  record: "manufacturer",
+  sell: "preparation",
+  trade: "dispatch",
+  record: "pellets",
 } as const;
 
 const points = ["point1", "point2", "point3"] as const;
@@ -46,7 +47,7 @@ export default async function HowItWorksPage() {
       <PageHeader
         title={t("title")}
         lead={t("lead")}
-        scene="recycler"
+        scene="sorting"
         atmosphere
       />
 
@@ -94,6 +95,8 @@ export default async function HowItWorksPage() {
           ))}
         </ol>
       </Container>
+
+      <SortingGuide />
 
       <div className="border-y border-border">
         <Principles />

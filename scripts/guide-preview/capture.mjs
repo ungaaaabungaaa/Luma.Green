@@ -6,6 +6,8 @@ import { fileURLToPath } from "node:url";
 
 import { chromium } from "@playwright/test";
 
+import { accountScreens } from "./account-screens.mjs";
+
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const repository = path.resolve(directory, "../..");
 const output = path.resolve(repository, "docs/user-guide/screenshots");
@@ -304,7 +306,26 @@ screens.push(
   },
 );
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
+screens.push(...accountScreens());
 const sharedSources = [
+  "scripts/guide-preview/account-screens.mjs",
+  "scripts/guide-preview/account-fixtures.ts",
+  "scripts/guide-preview/auth.ts",
+  "scripts/guide-preview/provider.tsx",
+  "src/app/[locale]/(account)/account/layout.tsx",
+  "src/components/account/account-security.tsx",
+  "src/components/account/account-menu.tsx",
+  "src/components/account/account-links.tsx",
+  "src/components/account/use-sign-out.ts",
+  "src/components/auth/factor-challenge.tsx",
+  "src/components/admin/auth-shell.tsx",
+  "src/components/admin/password-recovery.tsx",
+  "src/components/admin/password-input.tsx",
+  "src/app/admin/forgot-password/page.tsx",
+  "src/app/admin/reset-password/page.tsx",
+  "src/components/notifications/notifications-page.tsx",
+  "src/components/notifications/notification-error-boundary.tsx",
+  "src/components/notifications/device-provider.tsx",
   "src/components/showcase/role-story-image.tsx",
   "src/app/globals.css",
   "src/components/theme/theme-provider.tsx",
@@ -360,6 +381,8 @@ const sharedSources = [
   "scripts/guide-preview/image.tsx",
   "scripts/guide-preview/vite.config.mts",
   "messages/en.json",
+  "messages/ar.json",
+  "messages/ta.json",
   "public/images/showcase/household-sorting.webp",
   "public/images/showcase/collection-partners.webp",
   "public/images/showcase/material-yard.webp",
@@ -413,7 +436,7 @@ try {
       waitUntil: "domcontentloaded",
     });
     await page
-      .getByRole("note", { name: "Screenshot provenance" })
+      .getByRole("note", { name: "Screenshot provenance", includeHidden: true })
       .waitFor({ state: "visible" });
     await page
       .getByRole("heading", {
@@ -425,6 +448,61 @@ try {
       await document.fonts.ready;
       await Promise.all([...document.images].map((image) => image.decode()));
     });
+    if (screen.openMenuLabel) {
+      await page
+        .getByRole("button", { name: screen.openMenuLabel, exact: true })
+        .first()
+        .click();
+      await page.getByRole("dialog").waitFor({ state: "visible" });
+      // Only the harness note moves. The application's sheet and controls keep
+      // their real styles and geometry, and the menu header stays visible.
+      await page
+        .getByRole("note", {
+          name: "Screenshot provenance",
+          includeHidden: true,
+        })
+        .evaluate((note) => {
+          Object.assign(note.style, {
+            position: "fixed",
+            top: "auto",
+            bottom: "0",
+            left: "0",
+            right: "0",
+          });
+        });
+      const note = await page
+        .getByRole("note", {
+          name: "Screenshot provenance",
+          includeHidden: true,
+        })
+        .boundingBox();
+      const controls = await page
+        .getByRole("dialog")
+        .locator("a, button")
+        .all();
+      for (const control of controls) {
+        const box = await control.boundingBox();
+        if (
+          box &&
+          note &&
+          box.y + box.height > note.y &&
+          box.y < viewport.height
+        )
+          throw new Error(
+            `${screen.name}: the fixture note overlaps a menu control.`,
+          );
+      }
+    }
+    if (screen.rejectedActionLabel) {
+      await page
+        .getByRole("button", { name: screen.rejectedActionLabel, exact: true })
+        .click();
+      await page.getByRole("alert").waitFor({ state: "visible" });
+    }
+    if (screen.switchModeLabel)
+      await page
+        .getByRole("button", { name: screen.switchModeLabel, exact: true })
+        .click();
     if (
       await page.evaluate(
         () => getComputedStyle(document.body).margin !== "0px",
@@ -497,7 +575,7 @@ try {
       });
     }
     const bannerBounds = await page
-      .getByRole("note", { name: "Screenshot provenance" })
+      .getByRole("note", { name: "Screenshot provenance", includeHidden: true })
       .boundingBox();
     if (!bannerBounds || bannerBounds.y < 0)
       throw new Error("Screenshot provenance must remain inside the viewport.");

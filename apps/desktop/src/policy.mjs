@@ -56,6 +56,24 @@ export function mayRequestLocation(permission, frameUrl, topUrl, origin) {
   );
 }
 
+/** Notifications never come from subframes, document viewers or service workers.
+ * @param {string} frameUrl @param {string} topUrl @param {string} origin
+ * @param {boolean} isMainFrame @param {boolean} isMainWindow */
+export function mayRequestNotifications(
+  frameUrl,
+  topUrl,
+  origin,
+  isMainFrame,
+  isMainWindow,
+) {
+  return (
+    isMainFrame &&
+    isMainWindow &&
+    isAppUrl(frameUrl, origin) &&
+    isAppUrl(topUrl, origin)
+  );
+}
+
 /** @param {string} url @param {string} ownerUrl @param {string} origin */
 export function mayDownload(url, ownerUrl, origin) {
   return (

@@ -1915,7 +1915,16 @@
     "previewTitle": "Aperçu du code",
     "previewNumber": "Numéro de portable : {phone}",
     "previewBody": "Le service SMS n’est pas encore connecté. Aucun code n’a été envoyé. Vous pouvez consulter cet écran, mais pas vous connecter.",
-    "previewPhoneHint": "Saisissez votre portable pour voir l’étape suivante. Aucun SMS ne sera envoyé."
+    "previewPhoneHint": "Saisissez votre portable pour voir l’étape suivante. Aucun SMS ne sera envoyé.",
+    "twoFactorTitle": "Consultez votre application",
+    "twoFactorDescription": "Saisissez le code à 6 chiffres de votre application d’authentification pour terminer la connexion.",
+    "twoFactorUseBackup": "Code de secours",
+    "twoFactorUseApp": "Utiliser l’application",
+    "twoFactorBackupTitle": "Utilisez un code de secours",
+    "twoFactorBackupDescription": "Saisissez un code de secours enregistré. Chaque code ne fonctionne qu’une fois.",
+    "twoFactorBackupLabel": "Code de secours",
+    "twoFactorExpired": "Votre connexion a expiré. Recommencez avec un nouveau code du téléphone.",
+    "twoFactorRestart": "Recommencer"
   },
   "join": {
     "metaTitle": "Rejoindre Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Examinez les registres opérationnels"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Sécurité du compte",
+    "description": "Ajoutez un code d’authentification après le code reçu sur votre téléphone.",
+    "enabled": "Activée",
+    "disabled": "Désactivée",
+    "enable": "Configurer",
+    "disable": "Désactiver",
+    "recentSignIn": "Reconnectez-vous avant de modifier les paramètres de sécurité.",
+    "signInAgain": "Se reconnecter",
+    "setupTitle": "Connectez votre application",
+    "setupDescription": "Scannez ce code QR avec une application d’authentification ou saisissez la clé. Gardez-la privée.",
+    "setupKey": "Clé de configuration",
+    "backupTitle": "Enregistrez vos codes de secours",
+    "backupDescription": "Gardez ces codes privés. Chacun fonctionne une seule fois après le code reçu sur votre téléphone.",
+    "savedCodes": "Codes enregistrés",
+    "regenerate": "Nouveaux codes",
+    "regenerateDescription": "Les anciens codes de secours ne fonctionneront plus. Enregistrez les nouveaux avant de quitter cette page.",
+    "disableDescription": "La connexion utilisera uniquement les codes du téléphone. L’application d’authentification et les codes de secours ne fonctionneront plus.",
+    "errorCode": "Ce code n’a pas fonctionné. Réessayez.",
+    "errorRateLimited": "Trop de tentatives. Patientez avant de réessayer.",
+    "recoveryHelp": "Vous avez perdu votre application et vos codes de secours ? Contactez l’assistance. Un code du téléphone ne suffit pas pour désactiver la double authentification."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "permissionBody": "Recevez les nouvelles de vos collectes et demandes sur cet appareil.",
+    "enable": "Activer",
+    "denied": "Les notifications sont bloquées. Modifiez ce réglage dans les paramètres de votre appareil ou navigateur.",
+    "unavailable": "Les notifications ne sont pas encore disponibles ici.",
+    "error": "Impossible d’activer les notifications. Réessayez.",
+    "lockscreenTitle": "Nouvelle de Luma.Green",
+    "lockscreenBody": "Ouvrez Luma.Green pour consulter la nouvelle.",
+    "emptyTitle": "Aucune nouvelle pour le moment",
+    "emptyBody": "Les nouvelles concernant vos collectes et vos candidatures apparaîtront ici.",
+    "markRead": "Marquer comme lu",
+    "markAllRead": "Tout marquer lu",
+    "unread": "Non lu",
+    "enabled": "Activées sur cet appareil",
+    "disable": "Désactiver",
+    "disabled": "Désactivées sur cet appareil",
+    "deviceTitle": "Cet appareil",
+    "inboxTitle": "Vos nouvelles",
+    "loadMore": "Afficher plus",
+    "events": {
+      "booking_confirmed": "Réservation confirmée",
+      "booking_offer": "Nouvelle demande de collecte",
+      "booking_accepted": "Collecte acceptée",
+      "booking_reassigned": "Collecteur modifié",
+      "application_received": "Candidature reçue",
+      "application_approved": "Candidature approuvée",
+      "application_changes_requested": "Candidature à modifier",
+      "application_rejected": "Candidature non approuvée"
     }
   }
 }

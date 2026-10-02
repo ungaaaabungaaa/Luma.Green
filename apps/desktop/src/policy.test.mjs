@@ -8,6 +8,7 @@ import {
   isPdfViewerFrame,
   mayDownload,
   mayRequestLocation,
+  mayRequestNotifications,
   secureWebPreferences,
 } from "./policy.mjs";
 const origin = "https://app.luma.green";
@@ -139,4 +140,41 @@ test("only built-in PDF extension frames inside trusted blob viewers are allowed
     ),
     false,
   );
+});
+
+test("desktop notifications require the trusted main window and requesting main frame", () => {
+  assert.equal(
+    mayRequestNotifications(
+      `${origin}/account/notifications`,
+      origin,
+      origin,
+      true,
+      true,
+    ),
+    true,
+  );
+  assert.equal(
+    mayRequestNotifications(origin, origin, origin, false, true),
+    false,
+  );
+  assert.equal(
+    mayRequestNotifications(origin, origin, origin, true, false),
+    false,
+  );
+  for (const untrusted of [
+    "https://evil.test",
+    `${origin}.evil.test`,
+    `blob:${origin}/id`,
+    "file:///tmp/page",
+    "data:text/html,hello",
+  ]) {
+    assert.equal(
+      mayRequestNotifications(untrusted, origin, origin, true, true),
+      false,
+    );
+    assert.equal(
+      mayRequestNotifications(origin, untrusted, origin, true, true),
+      false,
+    );
+  }
 });

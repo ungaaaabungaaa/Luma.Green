@@ -130,6 +130,10 @@ describe("the mandatory platform guide", () => {
         "public-login-languages-phone",
         "public-login-languages-phone-dark",
         "public-solar-details",
+        "public-sorting-guide",
+        "public-price-guide-dark",
+        "public-join-preparation",
+        "public-help-topics",
       ]),
     );
     for (const capture of captures) {
@@ -239,6 +243,26 @@ describe("the mandatory platform guide", () => {
       ),
     ).toEqual(
       [
+        "scripts/guide-preview/account-screens.mjs",
+        "scripts/guide-preview/account-fixtures.ts",
+        "scripts/guide-preview/auth.ts",
+        "scripts/guide-preview/provider.tsx",
+        "src/app/[locale]/(account)/account/layout.tsx",
+        "src/components/account/account-security.tsx",
+        "src/components/account/account-menu.tsx",
+        "src/components/account/account-links.tsx",
+        "src/components/account/use-sign-out.ts",
+        "src/components/auth/factor-challenge.tsx",
+        "src/components/admin/auth-shell.tsx",
+        "src/components/admin/password-recovery.tsx",
+        "src/components/admin/password-input.tsx",
+        "src/app/admin/forgot-password/page.tsx",
+        "src/app/admin/reset-password/page.tsx",
+        "src/components/notifications/notifications-page.tsx",
+        "src/components/notifications/notification-error-boundary.tsx",
+        "src/components/notifications/device-provider.tsx",
+        "messages/ar.json",
+        "messages/ta.json",
         "src/components/showcase/role-story-image.tsx",
         "src/app/globals.css",
         "src/components/theme/theme-provider.tsx",
@@ -309,9 +333,31 @@ describe("the mandatory platform guide", () => {
     )) {
       expect(hash(file), `${file}: recapture protected screens`).toBe(expected);
     }
-    expect(evidence.captures.length).toBeGreaterThanOrEqual(43);
+    expect(evidence.captures.length).toBeGreaterThanOrEqual(72);
     expect(evidence.captures.map((capture) => capture.file)).toEqual(
       expect.arrayContaining([
+        "account-inbox-en-light.png",
+        "account-inbox-en-dark.png",
+        "account-menu-en-light.png",
+        "account-menu-ar-dark.png",
+        "account-menu-ta-light.png",
+        "operator-menu-en.png",
+        "operator-menu-ar.png",
+        "operator-menu-ta.png",
+        "account-security-en.png",
+        "account-security-enabled.png",
+        "account-security-ar.png",
+        "account-security-ta.png",
+        "account-challenge-en.png",
+        "account-challenge-ar.png",
+        "account-challenge-ta.png",
+        "account-inbox-empty.png",
+        "account-inbox-error.png",
+        "account-recovery-challenge.png",
+        "admin-password-recovery-light.png",
+        "admin-password-recovery-dark.png",
+        "admin-password-reset-missing-light.png",
+        "admin-password-reset-missing-dark.png",
         "household-basket-phone.png",
         "household-mode-phone.png",
         "household-when-phone.png",

@@ -1,4 +1,4 @@
-import type { StoryRole } from "@/components/showcase/role-story-image";
+import type { StoryScene } from "@/components/showcase/role-story-image";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
@@ -16,7 +16,7 @@ export function PageHeader({
   title: string;
   lead: string;
   eyebrow?: string;
-  scene: StoryRole;
+  scene: StoryScene;
   atmosphere?: boolean;
 }) {
   return (

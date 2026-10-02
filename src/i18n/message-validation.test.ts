@@ -110,6 +110,15 @@ describe("message validation", () => {
   it("allows reviewed exact shared words only in their languages", () => {
     expect(hasUntranslatedCopy("No", "No", "es")).toBe(false);
     expect(hasUntranslatedCopy("No", "No", "it")).toBe(false);
+    expect(hasUntranslatedCopy("Notifications", "Notifications", "fr")).toBe(
+      false,
+    );
+    expect(hasUntranslatedCopy("Notifications", "Notifications", "hi")).toBe(
+      true,
+    );
+    expect(
+      hasUntranslatedCopy("Enable notifications", "Enable notifications", "fr"),
+    ).toBe(true);
     expect(hasUntranslatedCopy("Material", "Material", "pt")).toBe(false);
     expect(hasUntranslatedCopy("Material", "Material", "hi")).toBe(true);
     expect(hasUntranslatedCopy("Metal prices", "Metal prices", "pt")).toBe(

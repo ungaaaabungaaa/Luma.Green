@@ -7,18 +7,18 @@
     "docs/operations/india-entity-trademark-and-legal.md"
   ],
   "docx": "output/docx/luma-green-team-review.docx",
-  "docx_sha256": "c975d873664b495e7df4bfd9650d45c96c1ffba60e862f272ec278c1fe670f9b",
+  "docx_sha256": "7090b0a6622c86bbf2d6c2d538fecc555674799cc2fea53bb5673a81bea20b8e",
   "screenshot_uses": 12,
   "visual_review": {
-    "status": "passed",
-    "pages": 38,
-    "docx_sha256": "c975d873664b495e7df4bfd9650d45c96c1ffba60e862f272ec278c1fe670f9b"
+    "status": "pending",
+    "pages": null,
+    "docx_sha256": null
   },
   "inputs": {
     "docs/operations/india-entity-trademark-and-legal.md": "b25332486a9295818d12342d348cac829d97fd53b0e2110d0a7283c9a8af1fd1",
     "docs/product/six-month-execution-plan.md": "b0ff6181f77c8dd8ea2ec8ebffedfbfd12b090bb67d60a0a5fe9a92ab63be820",
     "docs/team-review/README.md": "c485bf3a692de76e20ff6853072e083d511f6a838c23153119d6d7fe9d1de3c9",
-    "docs/team-review/review.md": "2b7fa87b101987c3e3bcc864ef29d4cef633b2958a357ca4af736013538d8718",
+    "docs/team-review/review.md": "53e5c60abf6575096d9910f5dbd39085e64092b7726ee0bbf56e9032b7627ab4",
     "docs/team-review/screenshots/arabic-menu.png": "a5519588cd4e040ee43885c478b09525fc4080f5cf6ba2694c1734b4d91c784e",
     "docs/team-review/screenshots/french-join.png": "5c4708bf7eb78e5010ea1a79df5ce60a6136abd73dc5de6b511c2c08bbfba7a0",
     "docs/team-review/screenshots/home-dark.png": "35e1695f5205079f179aa792db4a468daff34b5e6d8353ce3364821a2bea00b7",
@@ -32,7 +32,7 @@
     "docs/team-review/screenshots/manifest.json": "1b4a08744a013dc18a6845cd7e1c5d9f2fdafd30aeecef32088be73dd49d28e4",
     "docs/team-review/screenshots/menu-dark.png": "330e678fa6e04348d2dca6bbe031031e00bc7fc03f24b9b84c2522a809a9de60",
     "docs/team-review/screenshots/menu-light.png": "4e0f27d45fb031673b4de69934c58c2f4827c6b578a7334f6b7408b0dea4f7c2",
-    "docs/testing/team-end-to-end-manual.md": "6372c5d694fdf7b69706ae2dcb1fb3e7e671429462e5866a11c8566818d637b0",
+    "docs/testing/team-end-to-end-manual.md": "23da16902c4b416763b149f59db7ad3d6c6d7450282218dad13f7c3e70bf4fa4",
     "scripts/build-team-review.py": "51df2f17d11525f34f83755337a217b5ce7f4a33f80cff540e2d7fb3e71f80e1",
     "scripts/build-user-guide.py": "f90efab617d12c255a51a45f72710a28b5a9352573ff666f30ccfe4eb09e30a6",
     "scripts/demo-seed/coverage.json": "59827e6d177da3fd46a30aa6024eb5d27a5b4bad5bfafc0b2fd655d66309c961",

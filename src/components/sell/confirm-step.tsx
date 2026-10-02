@@ -6,13 +6,13 @@ import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
+import { useSignOut } from "@/components/account/use-sign-out";
 import { useFormat } from "@/components/app/format";
 import { DemoNote } from "@/components/app/page-parts";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useRouter } from "@/i18n/navigation";
-import { authClient } from "@/lib/auth-client";
 
 import { api } from "../../../convex/_generated/api";
 import { kgToGrams, pointsFor } from "../../../convex/lib/chain";
@@ -144,10 +144,9 @@ export function ConfirmStep({
     }
   }
 
-  async function switchNumber() {
+  const { signOut: switchNumber } = useSignOut(() => {
     setError(null);
-    await authClient.signOut();
-  }
+  });
 
   const byCode = new Map(
     materials.map((material) => [material.code, material]),

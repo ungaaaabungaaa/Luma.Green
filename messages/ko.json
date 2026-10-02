@@ -1915,7 +1915,16 @@
     "previewTitle": "코드 미리 보기",
     "previewNumber": "휴대전화 번호: {phone}",
     "previewBody": "아직 SMS가 연결되지 않았고 코드는 전송되지 않았습니다. 이 화면은 볼 수 있지만 로그인할 수는 없습니다.",
-    "previewPhoneHint": "다음 단계를 미리 보려면 휴대전화 번호를 입력하세요. SMS는 전송되지 않습니다."
+    "previewPhoneHint": "다음 단계를 미리 보려면 휴대전화 번호를 입력하세요. SMS는 전송되지 않습니다.",
+    "twoFactorTitle": "인증 앱 확인",
+    "twoFactorDescription": "인증 앱의 6자리 코드를 입력해 로그인을 완료하세요.",
+    "twoFactorUseBackup": "복구 코드 사용",
+    "twoFactorUseApp": "인증 앱 사용",
+    "twoFactorBackupTitle": "복구 코드 사용",
+    "twoFactorBackupDescription": "저장한 복구 코드를 입력하세요. 각 코드는 한 번만 사용할 수 있습니다.",
+    "twoFactorBackupLabel": "복구 코드",
+    "twoFactorExpired": "로그인이 만료되었습니다. 새 휴대폰 코드로 다시 시작하세요.",
+    "twoFactorRestart": "다시 시작"
   },
   "join": {
     "metaTitle": "Luma.Green 참여",
@@ -3363,6 +3372,59 @@
           "third": "운영 기록 검토"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "계정 보안",
+    "description": "휴대폰 코드 다음에 인증 앱 코드를 추가하세요.",
+    "enabled": "켜짐",
+    "disabled": "꺼짐",
+    "enable": "설정",
+    "disable": "끄기",
+    "recentSignIn": "보안 설정을 변경하기 전에 다시 로그인하세요.",
+    "signInAgain": "다시 로그인",
+    "setupTitle": "인증 앱 연결",
+    "setupDescription": "인증 앱으로 이 QR 코드를 스캔하거나 키를 입력하세요. 키는 비밀로 보관하세요.",
+    "setupKey": "설정 키",
+    "backupTitle": "복구 코드 저장",
+    "backupDescription": "코드를 안전하게 보관하세요. 각 코드는 휴대폰 코드 입력 후 한 번만 사용할 수 있습니다.",
+    "savedCodes": "코드를 저장했어요",
+    "regenerate": "새 코드 받기",
+    "regenerateDescription": "기존 복구 코드는 사용할 수 없게 됩니다. 이 페이지를 떠나기 전에 새 코드를 저장하세요.",
+    "disableDescription": "휴대폰 코드만으로 로그인하게 됩니다. 인증 앱과 복구 코드는 더 이상 사용할 수 없습니다.",
+    "errorCode": "코드가 올바르지 않습니다. 다시 시도하세요.",
+    "errorRateLimited": "시도 횟수가 너무 많습니다. 잠시 후 다시 시도하세요.",
+    "recoveryHelp": "인증 앱과 복구 코드를 잃어버리셨나요? 지원팀에 문의하세요. 휴대폰 코드만으로는 2단계 인증을 끌 수 없습니다."
+  },
+  "notifications": {
+    "title": "알림",
+    "permissionBody": "이 기기에서 수거 및 신청에 관한 새 소식을 받아보세요.",
+    "enable": "켜기",
+    "denied": "알림이 차단되어 있습니다. 기기 또는 브라우저 설정에서 변경하세요.",
+    "unavailable": "여기에서는 아직 알림을 사용할 수 없습니다.",
+    "error": "알림을 켤 수 없습니다. 다시 시도해 주세요.",
+    "lockscreenTitle": "Luma.Green 새 소식",
+    "lockscreenBody": "Luma.Green을 열어 새 소식을 확인하세요.",
+    "emptyTitle": "아직 새 소식이 없습니다",
+    "emptyBody": "수거 및 신청 관련 소식이 여기에 표시됩니다.",
+    "markRead": "읽음 표시",
+    "markAllRead": "모두 읽음",
+    "unread": "읽지 않음",
+    "enabled": "이 기기에서 켜짐",
+    "disable": "끄기",
+    "disabled": "이 기기에서 꺼짐",
+    "deviceTitle": "이 기기",
+    "inboxTitle": "내 소식",
+    "loadMore": "더 보기",
+    "events": {
+      "booking_confirmed": "예약 확정",
+      "booking_offer": "새 수거 요청",
+      "booking_accepted": "수거 수락",
+      "booking_reassigned": "수거 담당자 변경",
+      "application_received": "신청 접수",
+      "application_approved": "신청 승인",
+      "application_changes_requested": "신청 수정 필요",
+      "application_rejected": "신청 미승인"
     }
   }
 }

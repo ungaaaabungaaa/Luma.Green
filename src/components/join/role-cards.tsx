@@ -1,7 +1,10 @@
 import { ArrowRightIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
+import {
+  roleProcessScenes,
+  RoleStoryImage,
+} from "@/components/showcase/role-story-image";
 import { Link } from "@/i18n/navigation";
 
 import { APPLICATION_KINDS } from "../../../convex/lib/onboarding";
@@ -19,7 +22,7 @@ export function RoleCards() {
               className="group grid grid-cols-[5rem_minmax(0,1fr)] items-start gap-x-4 gap-y-2 py-5 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-x-6 sm:py-6"
             >
               <RoleStoryImage
-                scene={kind}
+                scene={roleProcessScenes[kind]}
                 compact
                 frameClassName="aspect-square rounded-none sm:aspect-4/3"
               />

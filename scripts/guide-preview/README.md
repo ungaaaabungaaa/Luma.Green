@@ -163,8 +163,35 @@ preview. These routes are documentation harness paths, not application routes.
 
 The sample prices come from the canonical catalogue. These components keep
 changes in local React state only. They do not submit bookings, authenticate a
-user, reserve a time, send a message or write to a backend. The complete capture
-set now contains 43 images.
+user, reserve a time, send a message or write to a backend. These three images
+extend the original 40-view capture set.
+
+## Account and notification evidence
+
+The account set adds 29 captures of the actual account layout, menu, inbox,
+security settings, empty authenticator/recovery challenge and admin password
+recovery components. Together the capture script registers 72 images. English,
+Arabic and Tamil examples cover phone/tablet widths and both themes. Operator
+menus show the new account links.
+
+The provider adapter selects the data branch without constructing a client or
+loading a backend URL. The auth adapter supplies only a truthy fixture marker;
+it is not a session. It has no phone number, token, session ID or private user ID.
+The paginated inbox contains three synthetic event rows, with separate empty and
+loading variants. The error example clicks Read all and captures the real error
+from the rejecting mutation adapter. Device permission is unavailable because
+no notification provider is mounted. No permission request or delivery occurs.
+
+Security captures show on/off states only. Authenticator and recovery challenge
+fields remain empty. Every auth method rejects, including enrollment, reset and
+sign-out; no QR code, setup key, backup code, password or reset token is supplied.
+Admin reset images show the missing-token error. These fixtures cannot prove
+authentication, authorization, a successful reset or provider execution.
+
+When a sheet opens, the capture script moves only the harness provenance note to
+the bottom of the viewport and checks that it does not cover menu controls. It
+does not alter the application's sheet geometry or styles. Longer operator
+menus use a 1,100-pixel viewport height so all controls and the note are visible.
 
 ## Responsive fixture audit
 

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import type { StoryRole } from "@/components/showcase/role-story-image";
+import type { StoryScene } from "@/components/showcase/role-story-image";
 import { Container } from "@/components/site/container";
 import { PageBanner } from "@/components/site/page-banner";
 import { cn } from "@/lib/utils";
@@ -26,7 +26,7 @@ export function HelpHero({
   /** A spot illustration, shown beside the title from tablet width up. */
   art?: ReactNode;
   /** Public directories show a full-width image after their main controls. */
-  banner?: StoryRole;
+  banner?: StoryScene;
   children?: ReactNode;
 }) {
   return (

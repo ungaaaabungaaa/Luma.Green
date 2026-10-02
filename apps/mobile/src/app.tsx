@@ -26,6 +26,7 @@ import {
 import { recoveryPlan } from "./recovery";
 import { runtimeOrigin } from "./runtime-config";
 import { theme } from "./theme";
+import { usePushNotifications } from "./use-push-notifications";
 import { useShellUpdates } from "./use-updates";
 
 const origin = runtimeOrigin(Constants.expoConfig?.extra, __DEV__);
@@ -90,6 +91,24 @@ function Shell({
   const rendererCrashed = useRef(false);
   const updates = useShellUpdates();
   const direction = localeDirection(locale);
+  const openInbox = useCallback((url: string) => {
+    if (classifyNavigation(url, origin) !== "internal") return;
+    // A repeated notification may target the same source prop after in-page
+    // navigation. Remount on the explicit tap so it always reaches the inbox.
+    rendererCrashed.current = false;
+    currentUrl.current = url;
+    setFailed(false);
+    setLoading(true);
+    setSourceUrl(url);
+    setWebViewKey((key) => key + 1);
+  }, []);
+  const push = usePushNotifications({
+    origin,
+    locale,
+    currentUrl,
+    webView,
+    onOpenInbox: openInbox,
+  });
 
   useEffect(() => {
     const listener = BackHandler.addEventListener("hardwareBackPress", () => {
@@ -150,6 +169,7 @@ function Shell({
       }
       return;
     }
+    if (currentUrl.current !== state.url) push.invalidate();
     currentUrl.current = state.url;
     setCanGoBack(state.canGoBack);
     onLocale(localeFromUrl(state.url, locale));
@@ -257,6 +277,12 @@ function Shell({
             isNavigationAllowed(request.url)
           }
           onNavigationStateChange={trackNavigation}
+          onMessage={({ nativeEvent }) => {
+            void push.receive(nativeEvent.data, nativeEvent.url);
+          }}
+          onLoadStart={() => {
+            push.invalidate();
+          }}
           onOpenWindow={({ nativeEvent }) => {
             if (isNavigationAllowed(nativeEvent.targetUrl))
               setSourceUrl(nativeEvent.targetUrl);
@@ -266,6 +292,7 @@ function Shell({
           }}
           onLoadEnd={() => {
             setLoading(false);
+            push.ready();
           }}
           onError={() => {
             setFailed(true);

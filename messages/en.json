@@ -1915,7 +1915,16 @@
     "previewTitle": "Code preview",
     "previewNumber": "Mobile number: {phone}",
     "previewBody": "SMS is not connected yet. No code was sent. You can check this screen, but you cannot sign in.",
-    "previewPhoneHint": "Enter your mobile number to preview the next step. No SMS will be sent."
+    "previewPhoneHint": "Enter your mobile number to preview the next step. No SMS will be sent.",
+    "twoFactorTitle": "Check your authenticator",
+    "twoFactorDescription": "Enter the 6-digit code from your authenticator app to finish signing in.",
+    "twoFactorUseBackup": "Use a recovery code",
+    "twoFactorUseApp": "Use authenticator",
+    "twoFactorBackupTitle": "Use a recovery code",
+    "twoFactorBackupDescription": "Enter one saved recovery code. Each code works once.",
+    "twoFactorBackupLabel": "Recovery code",
+    "twoFactorExpired": "Your sign-in has expired. Start again with a new phone code.",
+    "twoFactorRestart": "Start again"
   },
   "join": {
     "metaTitle": "Join Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Review operational records"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Account security",
+    "description": "Add an authenticator code after your phone code.",
+    "enabled": "On",
+    "disabled": "Off",
+    "enable": "Set up",
+    "disable": "Turn off",
+    "recentSignIn": "Sign in again before changing security settings.",
+    "signInAgain": "Sign in again",
+    "setupTitle": "Connect your authenticator",
+    "setupDescription": "Scan this QR code with an authenticator app, or enter the key. Keep it private.",
+    "setupKey": "Setup key",
+    "backupTitle": "Save your recovery codes",
+    "backupDescription": "Save these codes privately. Each works once after your phone code.",
+    "savedCodes": "I saved my codes",
+    "regenerate": "Get new codes",
+    "regenerateDescription": "Your old recovery codes will stop working. Save the new codes before you leave.",
+    "disableDescription": "Sign-in will use phone codes only. Your authenticator and recovery codes will stop working.",
+    "errorCode": "That code did not work. Please try again.",
+    "errorRateLimited": "Too many attempts. Wait before trying again.",
+    "recoveryHelp": "Lost your authenticator and recovery codes? Contact support. A phone code alone cannot turn off 2FA."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "permissionBody": "Get updates about your pickups and applications on this device.",
+    "enable": "Enable",
+    "denied": "Notifications are blocked. Change this in your device or browser settings.",
+    "unavailable": "Notifications are not available here yet.",
+    "error": "Could not enable notifications. Try again.",
+    "lockscreenTitle": "Luma.Green update",
+    "lockscreenBody": "Open Luma.Green to view your update.",
+    "emptyTitle": "No updates yet",
+    "emptyBody": "Pickup and application updates will appear here.",
+    "markRead": "Mark read",
+    "markAllRead": "Read all",
+    "unread": "Unread",
+    "enabled": "Enabled on this device",
+    "disable": "Turn off",
+    "disabled": "Off on this device",
+    "deviceTitle": "This device",
+    "inboxTitle": "Your updates",
+    "loadMore": "Show more",
+    "events": {
+      "booking_confirmed": "Booking confirmed",
+      "booking_offer": "New pickup request",
+      "booking_accepted": "Pickup accepted",
+      "booking_reassigned": "Collector changed",
+      "application_received": "Application received",
+      "application_approved": "Application approved",
+      "application_changes_requested": "Application needs changes",
+      "application_rejected": "Application not approved"
     }
   }
 }

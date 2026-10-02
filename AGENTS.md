@@ -54,7 +54,7 @@ Three properties follow from that and are non-negotiable:
 | i18n        | next-intl, 33 locales, RTL-ready     | `messages/*.json`                                           |
 | Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server            |
 | Server sync | TanStack Query                       | For non-Convex async work                                   |
-| Auth        | Better Auth on Convex                | Phone codes; admin password + TOTP — see §9                 |
+| Auth        | Better Auth on Convex                | Phone codes + optional TOTP; admin password + TOTP — see §9 |
 | Analytics   | PostHog / Google Analytics 4         | Optional, visitor opt-in, public page views only (ADR 0016) |
 | Errors      | Sentry                               | Optional error-only capture; explicit deployment flag + DSN |
 | Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                                |
@@ -246,7 +246,12 @@ Better Auth **is** wired too: phone codes at `/login`, the admin at
 `/admin/login` (set up once at `/admin/setup`). Guard every Convex function
 with `requireUser` / `requireAdmin` from `convex/lib/access.ts`, and run
 `pnpm auth:schema` after changing a Better Auth plugin. Read
-`docs/architecture/auth.md` before touching auth.
+`docs/architecture/auth.md` before touching auth. Account security and inbox
+routes must work for households and applicants as well as approved operators.
+Keep phone-only users passwordless; admin email recovery must remain confined
+to the configured existing admin identity. Never bypass a factor with a preview
+screen or restore a session before the full challenge succeeds. Test the real
+Better Auth HTTP handler and Convex adapter for changes to this boundary.
 
 Onboarding **is** wired: `/join` (public) → `/join/{kind}` → `/join/status`.
 Every field rule lives once in `convex/lib/onboarding.ts` — the forms validate
@@ -267,7 +272,16 @@ there, never in a component.
 - **Search ownership** — optional Google Search Console and Bing metadata
   tokens. Follow [search setup](docs/operations/seo.md); tags do not prove live
   verification or indexing.
-- **Razorpay, Resend, R2, Mapbox** — not required for the pilot. No payment
+- **Account inbox and optional push** — reuse the booking/application event
+  owner. Browser and Expo delivery are off until configured. Obtain explicit
+  device permission; keep lock-screen copy generic, validate trusted native
+  documents, revoke installation bindings before sign-out and test late results.
+  Electron notices work while the process runs. See
+  [push notifications](docs/operations/push-notifications.md) before changes.
+- **Resend** — optional admin password recovery only. Keep its key on Convex;
+  missing settings must show an honest unavailable state. A provider acceptance
+  response is not proof of inbox delivery. Reset preserves required TOTP.
+- **Razorpay, R2, Mapbox** — not required for the pilot. No payment
   processing is implemented. Documents use Convex storage; location uses the browser.
 - **Expo / React Native and Electron** — native shells are in `apps/`. Signed
   builds, native device tests, store review and update delivery remain release

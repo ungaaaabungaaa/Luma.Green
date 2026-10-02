@@ -1915,7 +1915,16 @@
     "previewTitle": "कोड का पूर्वावलोकन",
     "previewNumber": "मोबाइल नंबर: {phone}",
     "previewBody": "SMS सेवा अभी जुड़ी नहीं है। कोई कोड नहीं भेजा गया। आप यह स्क्रीन देख सकते हैं, लेकिन साइन इन नहीं कर सकते।",
-    "previewPhoneHint": "अगला चरण देखने के लिए अपना मोबाइल नंबर दर्ज करें। कोई SMS नहीं भेजा जाएगा।"
+    "previewPhoneHint": "अगला चरण देखने के लिए अपना मोबाइल नंबर दर्ज करें। कोई SMS नहीं भेजा जाएगा।",
+    "twoFactorTitle": "प्रमाणक ऐप देखें",
+    "twoFactorDescription": "लॉग इन पूरा करने के लिए प्रमाणक ऐप का 6 अंकों का कोड डालें।",
+    "twoFactorUseBackup": "रिकवरी कोड लें",
+    "twoFactorUseApp": "प्रमाणक ऐप लें",
+    "twoFactorBackupTitle": "रिकवरी कोड इस्तेमाल करें",
+    "twoFactorBackupDescription": "सहेजा हुआ रिकवरी कोड डालें। हर कोड एक बार काम करता है।",
+    "twoFactorBackupLabel": "रिकवरी कोड",
+    "twoFactorExpired": "लॉग इन का समय समाप्त हुआ। नए फ़ोन कोड से फिर शुरू करें।",
+    "twoFactorRestart": "फिर शुरू करें"
   },
   "join": {
     "metaTitle": "Luma.Green से जुड़ें",
@@ -3363,6 +3372,59 @@
           "third": "संचालन के रिकॉर्ड देखें"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "खाते की सुरक्षा",
+    "description": "फ़ोन कोड के बाद प्रमाणक ऐप का कोड जोड़ें।",
+    "enabled": "चालू",
+    "disabled": "बंद",
+    "enable": "सेट अप करें",
+    "disable": "बंद करें",
+    "recentSignIn": "सुरक्षा सेटिंग बदलने से पहले फिर से लॉग इन करें।",
+    "signInAgain": "फिर लॉग इन करें",
+    "setupTitle": "प्रमाणक ऐप जोड़ें",
+    "setupDescription": "प्रमाणक ऐप से यह QR कोड स्कैन करें या कुंजी डालें। इसे गुप्त रखें।",
+    "setupKey": "सेटअप कुंजी",
+    "backupTitle": "रिकवरी कोड सहेजें",
+    "backupDescription": "इन कोड को सुरक्षित और गुप्त रखें। हर कोड फ़ोन कोड के बाद एक बार काम करता है।",
+    "savedCodes": "कोड सहेज लिए",
+    "regenerate": "नए कोड लें",
+    "regenerateDescription": "पुराने रिकवरी कोड काम नहीं करेंगे। जाने से पहले नए कोड सहेजें।",
+    "disableDescription": "लॉग इन के लिए केवल फ़ोन कोड लगेंगे। प्रमाणक ऐप और रिकवरी कोड काम नहीं करेंगे।",
+    "errorCode": "यह कोड काम नहीं किया। फिर कोशिश करें।",
+    "errorRateLimited": "बहुत बार कोशिश की गई है। दोबारा कोशिश करने से पहले रुकें।",
+    "recoveryHelp": "प्रमाणक ऐप और रिकवरी कोड खो गए? सहायता से संपर्क करें। केवल फ़ोन कोड से दो-चरणीय सत्यापन बंद नहीं हो सकता।"
+  },
+  "notifications": {
+    "title": "सूचनाएँ",
+    "permissionBody": "इस डिवाइस पर अपने पिकअप और आवेदनों की जानकारी पाएँ।",
+    "enable": "चालू करें",
+    "denied": "सूचनाएँ बंद हैं। इसे डिवाइस या ब्राउज़र की सेटिंग में बदलें।",
+    "unavailable": "यहाँ सूचनाएँ अभी उपलब्ध नहीं हैं।",
+    "error": "सूचनाएँ चालू नहीं हो सकीं। फिर कोशिश करें।",
+    "lockscreenTitle": "Luma.Green की सूचना",
+    "lockscreenBody": "नई जानकारी देखने के लिए Luma.Green खोलें।",
+    "emptyTitle": "अभी कोई अपडेट नहीं",
+    "emptyBody": "पिकअप और आवेदन की जानकारी यहाँ दिखाई देगी।",
+    "markRead": "पढ़ा चिह्नित करें",
+    "markAllRead": "सब पढ़ा चिह्नित करें",
+    "unread": "अपठित",
+    "enabled": "इस डिवाइस पर चालू है",
+    "disable": "बंद करें",
+    "disabled": "इस डिवाइस पर बंद है",
+    "deviceTitle": "यह डिवाइस",
+    "inboxTitle": "आपके अपडेट",
+    "loadMore": "और दिखाएँ",
+    "events": {
+      "booking_confirmed": "बुकिंग पक्की हुई",
+      "booking_offer": "पिकअप का नया अनुरोध",
+      "booking_accepted": "पिकअप स्वीकार हुआ",
+      "booking_reassigned": "संग्रहकर्ता बदला",
+      "application_received": "आवेदन मिला",
+      "application_approved": "आवेदन स्वीकृत",
+      "application_changes_requested": "आवेदन में बदलाव चाहिए",
+      "application_rejected": "आवेदन स्वीकृत नहीं हुआ"
     }
   }
 }

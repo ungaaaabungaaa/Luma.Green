@@ -1915,7 +1915,16 @@
     "previewTitle": "Prévia do código",
     "previewNumber": "Número de celular: {phone}",
     "previewBody": "O SMS ainda não está conectado. Nenhum código foi enviado. Você pode conferir esta tela, mas não pode entrar.",
-    "previewPhoneHint": "Informe o celular para ver a próxima etapa. Nenhum SMS será enviado."
+    "previewPhoneHint": "Informe o celular para ver a próxima etapa. Nenhum SMS será enviado.",
+    "twoFactorTitle": "Consulte o autenticador",
+    "twoFactorDescription": "Introduza o código de 6 dígitos da aplicação de autenticação para concluir o início de sessão.",
+    "twoFactorUseBackup": "Código de recuperação",
+    "twoFactorUseApp": "Usar autenticador",
+    "twoFactorBackupTitle": "Use um código de recuperação",
+    "twoFactorBackupDescription": "Introduza um código de recuperação guardado. Cada código funciona uma vez.",
+    "twoFactorBackupLabel": "Código de recuperação",
+    "twoFactorExpired": "O início de sessão expirou. Comece de novo com outro código do telefone.",
+    "twoFactorRestart": "Recomeçar"
   },
   "join": {
     "metaTitle": "Cadastre-se na Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Analise registros operacionais"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Segurança da conta",
+    "description": "Adicione um código do autenticador após o código do telefone.",
+    "enabled": "Ativada",
+    "disabled": "Desativada",
+    "enable": "Configurar",
+    "disable": "Desativar",
+    "recentSignIn": "Inicie sessão novamente antes de alterar a segurança.",
+    "signInAgain": "Iniciar sessão",
+    "setupTitle": "Ligue o seu autenticador",
+    "setupDescription": "Leia este código QR com uma aplicação de autenticação ou introduza a chave. Mantenha-a privada.",
+    "setupKey": "Chave de configuração",
+    "backupTitle": "Guarde os códigos de recuperação",
+    "backupDescription": "Guarde estes códigos em privado. Cada um funciona uma vez após o código do telefone.",
+    "savedCodes": "Códigos guardados",
+    "regenerate": "Novos códigos",
+    "regenerateDescription": "Os códigos de recuperação antigos deixarão de funcionar. Guarde os novos antes de sair.",
+    "disableDescription": "O início de sessão usará apenas códigos do telefone. O autenticador e os códigos de recuperação deixarão de funcionar.",
+    "errorCode": "Este código não funcionou. Tente novamente.",
+    "errorRateLimited": "Demasiadas tentativas. Aguarde antes de tentar novamente.",
+    "recoveryHelp": "Perdeu o autenticador e os códigos de recuperação? Contacte o suporte. Um código do telefone não basta para desativar a autenticação de dois fatores."
+  },
+  "notifications": {
+    "title": "Notificações",
+    "permissionBody": "Receba novidades sobre as suas recolhas e candidaturas neste dispositivo.",
+    "enable": "Ativar",
+    "denied": "As notificações estão bloqueadas. Altere esta opção nas definições do dispositivo ou do navegador.",
+    "unavailable": "As notificações ainda não estão disponíveis aqui.",
+    "error": "Não foi possível ativar as notificações. Tente novamente.",
+    "lockscreenTitle": "Novidade da Luma.Green",
+    "lockscreenBody": "Abra a Luma.Green para ver a novidade.",
+    "emptyTitle": "Ainda não há atualizações",
+    "emptyBody": "As atualizações de coletas e candidaturas aparecerão aqui.",
+    "markRead": "Marcar como lida",
+    "markAllRead": "Marcar todas lidas",
+    "unread": "Não lida",
+    "enabled": "Ativadas neste dispositivo",
+    "disable": "Desativar",
+    "disabled": "Desativadas neste dispositivo",
+    "deviceTitle": "Este dispositivo",
+    "inboxTitle": "Suas atualizações",
+    "loadMore": "Mostrar mais",
+    "events": {
+      "booking_confirmed": "Reserva confirmada",
+      "booking_offer": "Novo pedido de recolha",
+      "booking_accepted": "Recolha aceite",
+      "booking_reassigned": "Responsável pela recolha alterado",
+      "application_received": "Candidatura recebida",
+      "application_approved": "Candidatura aprovada",
+      "application_changes_requested": "Candidatura precisa de alterações",
+      "application_rejected": "Candidatura não aprovada"
     }
   }
 }

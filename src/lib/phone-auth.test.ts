@@ -23,13 +23,29 @@ describe("phone authentication failures", () => {
     calls.verify
       .mockRejectedValueOnce(new TypeError("offline"))
       .mockResolvedValueOnce({ error: { code: "OTP_EXPIRED" } })
+      .mockResolvedValueOnce({ error: null, data: { token: "test-session" } });
+    expect(await verifyPhoneCode("+919876543210", "123456")).toEqual({
+      kind: "error",
+      error: "errorGeneric",
+    });
+    expect(await verifyPhoneCode("+919876543210", "123456")).toEqual({
+      kind: "error",
+      error: "errorExpired",
+    });
+    expect(await verifyPhoneCode("+919876543210", "123456")).toEqual({
+      kind: "authenticated",
+    });
+  });
+  it("distinguishes an authenticator challenge from authentication and fails closed on a missing response", async () => {
+    calls.verify
+      .mockResolvedValueOnce({ error: null, data: { twoFactorRedirect: true } })
       .mockResolvedValueOnce({ error: null });
-    expect(await verifyPhoneCode("+919876543210", "123456")).toBe(
-      "errorGeneric",
-    );
-    expect(await verifyPhoneCode("+919876543210", "123456")).toBe(
-      "errorExpired",
-    );
-    expect(await verifyPhoneCode("+919876543210", "123456")).toBeNull();
+    expect(await verifyPhoneCode("+919876543210", "123456")).toEqual({
+      kind: "second-factor",
+    });
+    expect(await verifyPhoneCode("+919876543210", "123456")).toEqual({
+      kind: "error",
+      error: "errorGeneric",
+    });
   });
 });

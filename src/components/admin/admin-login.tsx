@@ -17,6 +17,7 @@ import { api } from "../../../convex/_generated/api";
 import { AdminUnavailable } from "./admin-unavailable";
 import { CODE_LENGTH, CodeInput } from "./code-input";
 import { codeErrorMessage, signInErrorMessage } from "./errors";
+import { PasswordInput } from "./password-input";
 import { adminSignInSchema, type AdminSignInValues } from "./schemas";
 
 /** `/admin/login`: email and password, then the authenticator code. */
@@ -129,9 +130,8 @@ function PasswordStep({
       </div>
       <div className="flex flex-col gap-2">
         <Label htmlFor="password">Password</Label>
-        <Input
+        <PasswordInput
           id="password"
-          type="password"
           autoComplete="current-password"
           aria-invalid={errors.password ? true : undefined}
           {...register("password")}
@@ -150,6 +150,12 @@ function PasswordStep({
       <Button type="submit" size="lg" disabled={isSubmitting}>
         {isSubmitting ? "Checking…" : "Continue"}
       </Button>
+      <Link
+        href="/admin/forgot-password"
+        className="inline-flex min-h-11 items-center self-start text-sm font-medium text-primary underline underline-offset-4"
+      >
+        Forgot password?
+      </Link>
     </form>
   );
 }

@@ -1915,7 +1915,16 @@
     "previewTitle": "કોડ પૂર્વદર્શન",
     "previewNumber": "મોબાઇલ નંબર: {phone}",
     "previewBody": "SMS સેવા હજી જોડાયેલી નથી. કોઈ કોડ મોકલાયો નથી. તમે આ સ્ક્રીન જોઈ શકો છો, પરંતુ સાઇન ઇન કરી શકતા નથી.",
-    "previewPhoneHint": "આગલું પગલું જોવા તમારો મોબાઇલ નંબર દાખલ કરો. કોઈ SMS મોકલવામાં આવશે નહીં."
+    "previewPhoneHint": "આગલું પગલું જોવા તમારો મોબાઇલ નંબર દાખલ કરો. કોઈ SMS મોકલવામાં આવશે નહીં.",
+    "twoFactorTitle": "પ્રમાણક ઍપ જુઓ",
+    "twoFactorDescription": "લૉગ ઇન પૂરું કરવા પ્રમાણક ઍપનો 6 અંકનો કોડ દાખલ કરો.",
+    "twoFactorUseBackup": "પુનઃપ્રાપ્તિ કોડ",
+    "twoFactorUseApp": "પ્રમાણક વાપરો",
+    "twoFactorBackupTitle": "પુનઃપ્રાપ્તિ કોડ વાપરો",
+    "twoFactorBackupDescription": "સાચવેલો પુનઃપ્રાપ્તિ કોડ દાખલ કરો. દરેક કોડ એક જ વાર કામ કરે છે.",
+    "twoFactorBackupLabel": "પુનઃપ્રાપ્તિ કોડ",
+    "twoFactorExpired": "લૉગ ઇનનો સમય પૂરો થયો. નવા ફોન કોડથી ફરી શરૂ કરો.",
+    "twoFactorRestart": "ફરી શરૂ કરો"
   },
   "join": {
     "metaTitle": "Luma.Green સાથે જોડાઓ",
@@ -3363,6 +3372,59 @@
           "third": "કામગીરીની નોંધો જુઓ"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "ખાતાની સુરક્ષા",
+    "description": "ફોન કોડ પછી પ્રમાણક ઍપનો કોડ ઉમેરો.",
+    "enabled": "ચાલુ",
+    "disabled": "બંધ",
+    "enable": "સેટ અપ કરો",
+    "disable": "બંધ કરો",
+    "recentSignIn": "સુરક્ષા સેટિંગ બદલતાં પહેલાં ફરી લૉગ ઇન કરો.",
+    "signInAgain": "ફરી લૉગ ઇન",
+    "setupTitle": "પ્રમાણક ઍપ જોડો",
+    "setupDescription": "પ્રમાણક ઍપથી આ QR કોડ સ્કૅન કરો અથવા ચાવી દાખલ કરો. તેને ગુપ્ત રાખો.",
+    "setupKey": "સેટઅપ ચાવી",
+    "backupTitle": "પુનઃપ્રાપ્તિ કોડ સાચવો",
+    "backupDescription": "આ કોડ ગુપ્ત રાખો. દરેક કોડ ફોન કોડ પછી એક જ વાર કામ કરે છે.",
+    "savedCodes": "કોડ સાચવ્યા",
+    "regenerate": "નવા કોડ મેળવો",
+    "regenerateDescription": "જૂના પુનઃપ્રાપ્તિ કોડ કામ નહીં કરે. બહાર નીકળતાં પહેલાં નવા કોડ સાચવો.",
+    "disableDescription": "લૉગ ઇન માટે માત્ર ફોન કોડ લાગશે. પ્રમાણક ઍપ અને પુનઃપ્રાપ્તિ કોડ કામ નહીં કરે.",
+    "errorCode": "આ કોડ કામ ન કર્યો. ફરી પ્રયાસ કરો.",
+    "errorRateLimited": "ઘણા પ્રયાસો થયા છે. ફરી પ્રયાસ કરતાં પહેલાં રાહ જુઓ.",
+    "recoveryHelp": "પ્રમાણક ઍપ અને પુનઃપ્રાપ્તિ કોડ ખોવાઈ ગયા? સહાયનો સંપર્ક કરો. માત્ર ફોન કોડથી બે-પગલાંની ચકાસણી બંધ કરી શકાતી નથી."
+  },
+  "notifications": {
+    "title": "સૂચનાઓ",
+    "permissionBody": "આ ઉપકરણ પર તમારા પિકઅપ અને અરજીઓની માહિતી મેળવો.",
+    "enable": "ચાલુ કરો",
+    "denied": "સૂચનાઓ અવરોધિત છે. ઉપકરણ અથવા બ્રાઉઝરની સેટિંગ્સમાં આ બદલો.",
+    "unavailable": "અહીં સૂચનાઓ હજી ઉપલબ્ધ નથી.",
+    "error": "સૂચનાઓ ચાલુ કરી શકાઈ નથી. ફરી પ્રયાસ કરો.",
+    "lockscreenTitle": "Luma.Greenની માહિતી",
+    "lockscreenBody": "નવી માહિતી જોવા માટે Luma.Green ખોલો.",
+    "emptyTitle": "હજુ કોઈ અપડેટ નથી",
+    "emptyBody": "સંગ્રહ અને અરજીના અપડેટ અહીં દેખાશે.",
+    "markRead": "વાંચેલું ચિહ્નિત કરો",
+    "markAllRead": "બધાં વાંચેલાં કરો",
+    "unread": "ન વાંચેલું",
+    "enabled": "આ ઉપકરણ પર ચાલુ છે",
+    "disable": "બંધ કરો",
+    "disabled": "આ ઉપકરણ પર બંધ છે",
+    "deviceTitle": "આ ઉપકરણ",
+    "inboxTitle": "તમારા અપડેટ",
+    "loadMore": "વધુ બતાવો",
+    "events": {
+      "booking_confirmed": "બુકિંગની પુષ્ટિ થઈ",
+      "booking_offer": "સંગ્રહની નવી વિનંતી",
+      "booking_accepted": "સંગ્રહ સ્વીકારાયો",
+      "booking_reassigned": "સંગ્રહકર્તા બદલાયા",
+      "application_received": "અરજી મળી",
+      "application_approved": "અરજી મંજૂર થઈ",
+      "application_changes_requested": "અરજીમાં ફેરફાર જરૂરી",
+      "application_rejected": "અરજી મંજૂર થઈ નથી"
     }
   }
 }

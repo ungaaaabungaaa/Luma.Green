@@ -13,6 +13,15 @@ const assets = [
   "solar-rooftop.webp",
 ];
 
+const processAssets = [
+  "material-sorting.webp",
+  "fair-weighing.webp",
+  "recycled-pellets.webp",
+  "electronics-sorting.webp",
+  "household-preparation.webp",
+  "yard-dispatch.webp",
+];
+
 describe("public showcase image budget", () => {
   it("keeps all eight additional sources below 1.44 MB combined", () => {
     let total = 0;
@@ -24,5 +33,17 @@ describe("public showcase image budget", () => {
       total += bytes.byteLength;
     }
     expect(total).toBeLessThanOrEqual(1_440_000);
+  });
+
+  it("keeps the six process images within the responsive image source budget", () => {
+    let total = 0;
+    for (const name of processAssets) {
+      const bytes = readFileSync(`public/images/showcase/${name}`);
+      expect(bytes.byteLength, name).toBeLessThanOrEqual(180_000);
+      expect(bytes.subarray(0, 4).toString(), name).toBe("RIFF");
+      expect(bytes.subarray(8, 12).toString(), name).toBe("WEBP");
+      total += bytes.byteLength;
+    }
+    expect(total).toBeLessThanOrEqual(1_080_000);
   });
 });

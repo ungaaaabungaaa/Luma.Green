@@ -1915,7 +1915,16 @@
     "previewTitle": "Anteprima del codice",
     "previewNumber": "Numero di cellulare: {phone}",
     "previewBody": "Gli SMS non sono ancora collegati. Nessun codice è stato inviato. Puoi esaminare questa schermata, ma non accedere.",
-    "previewPhoneHint": "Inserisci il numero di cellulare per vedere l'anteprima della prossima fase. Non verrà inviato alcun SMS."
+    "previewPhoneHint": "Inserisci il numero di cellulare per vedere l'anteprima della prossima fase. Non verrà inviato alcun SMS.",
+    "twoFactorTitle": "Controlla l’app di autenticazione",
+    "twoFactorDescription": "Inserisci il codice di 6 cifre dell’app di autenticazione per completare l’accesso.",
+    "twoFactorUseBackup": "Codice di recupero",
+    "twoFactorUseApp": "Usa l’app",
+    "twoFactorBackupTitle": "Usa un codice di recupero",
+    "twoFactorBackupDescription": "Inserisci un codice di recupero salvato. Ogni codice funziona una sola volta.",
+    "twoFactorBackupLabel": "Codice di recupero",
+    "twoFactorExpired": "L’accesso è scaduto. Ricomincia con un nuovo codice del telefono.",
+    "twoFactorRestart": "Ricomincia"
   },
   "join": {
     "metaTitle": "Iscriviti a Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Esamina i registri operativi"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Sicurezza dell’account",
+    "description": "Aggiungi un codice dell’app di autenticazione dopo il codice del telefono.",
+    "enabled": "Attiva",
+    "disabled": "Disattiva",
+    "enable": "Configura",
+    "disable": "Disattiva",
+    "recentSignIn": "Accedi di nuovo prima di modificare la sicurezza.",
+    "signInAgain": "Accedi di nuovo",
+    "setupTitle": "Collega l’app di autenticazione",
+    "setupDescription": "Scansiona questo codice QR con un’app di autenticazione oppure inserisci la chiave. Tienila privata.",
+    "setupKey": "Chiave di configurazione",
+    "backupTitle": "Salva i codici di recupero",
+    "backupDescription": "Conserva questi codici in privato. Ognuno funziona una sola volta dopo il codice del telefono.",
+    "savedCodes": "Codici salvati",
+    "regenerate": "Nuovi codici",
+    "regenerateDescription": "I vecchi codici di recupero non funzioneranno più. Salva quelli nuovi prima di uscire.",
+    "disableDescription": "L’accesso userà solo i codici del telefono. L’app di autenticazione e i codici di recupero non funzioneranno più.",
+    "errorCode": "Questo codice non ha funzionato. Riprova.",
+    "errorRateLimited": "Troppi tentativi. Attendi prima di riprovare.",
+    "recoveryHelp": "Hai perso l’app di autenticazione e i codici di recupero? Contatta l’assistenza. Un codice del telefono non basta per disattivare l’autenticazione a due fattori."
+  },
+  "notifications": {
+    "title": "Notifiche",
+    "permissionBody": "Ricevi aggiornamenti sui tuoi ritiri e sulle tue richieste su questo dispositivo.",
+    "enable": "Attiva",
+    "denied": "Le notifiche sono bloccate. Modifica questa opzione nelle impostazioni del dispositivo o del browser.",
+    "unavailable": "Le notifiche non sono ancora disponibili qui.",
+    "error": "Impossibile attivare le notifiche. Riprova.",
+    "lockscreenTitle": "Novità da Luma.Green",
+    "lockscreenBody": "Apri Luma.Green per vedere la novità.",
+    "emptyTitle": "Ancora nessun aggiornamento",
+    "emptyBody": "Qui appariranno gli aggiornamenti su ritiri e domande.",
+    "markRead": "Segna come letto",
+    "markAllRead": "Segna tutti letti",
+    "unread": "Non letto",
+    "enabled": "Attivate su questo dispositivo",
+    "disable": "Disattiva",
+    "disabled": "Disattivate su questo dispositivo",
+    "deviceTitle": "Questo dispositivo",
+    "inboxTitle": "I tuoi aggiornamenti",
+    "loadMore": "Mostra altro",
+    "events": {
+      "booking_confirmed": "Prenotazione confermata",
+      "booking_offer": "Nuova richiesta di ritiro",
+      "booking_accepted": "Ritiro accettato",
+      "booking_reassigned": "Incaricato del ritiro cambiato",
+      "application_received": "Domanda ricevuta",
+      "application_approved": "Domanda approvata",
+      "application_changes_requested": "Domanda da modificare",
+      "application_rejected": "Domanda non approvata"
     }
   }
 }

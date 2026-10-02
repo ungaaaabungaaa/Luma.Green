@@ -118,6 +118,7 @@ const identicalTranslations: Readonly<
   Partial<Record<string, readonly string[]>>
 > = {
   es: ["No"],
+  fr: ["Notifications"],
   it: ["No"],
   pt: ["Material", "Metal", "Total", "Kabadiwalas", "Saathis"],
   nl: [

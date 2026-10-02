@@ -1915,7 +1915,16 @@
     "previewTitle": "Vista previa del código",
     "previewNumber": "Número de móvil: {phone}",
     "previewBody": "El SMS todavía no está conectado. No se ha enviado ningún código. Puedes revisar esta pantalla, pero no iniciar sesión.",
-    "previewPhoneHint": "Introduce tu móvil para ver el siguiente paso. No se enviará ningún SMS."
+    "previewPhoneHint": "Introduce tu móvil para ver el siguiente paso. No se enviará ningún SMS.",
+    "twoFactorTitle": "Revisa tu autenticador",
+    "twoFactorDescription": "Introduce el código de 6 dígitos de tu app de autenticación para terminar de iniciar sesión.",
+    "twoFactorUseBackup": "Usar recuperación",
+    "twoFactorUseApp": "Usar autenticador",
+    "twoFactorBackupTitle": "Usa un código de recuperación",
+    "twoFactorBackupDescription": "Introduce un código de recuperación guardado. Cada código sirve una vez.",
+    "twoFactorBackupLabel": "Código de recuperación",
+    "twoFactorExpired": "El inicio de sesión ha caducado. Empieza de nuevo con otro código del móvil.",
+    "twoFactorRestart": "Empezar de nuevo"
   },
   "join": {
     "metaTitle": "Únete a Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Revisa los registros operativos"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Seguridad de la cuenta",
+    "description": "Añade un código de autenticación después del código del móvil.",
+    "enabled": "Activada",
+    "disabled": "Desactivada",
+    "enable": "Configurar",
+    "disable": "Desactivar",
+    "recentSignIn": "Vuelve a iniciar sesión antes de cambiar la seguridad.",
+    "signInAgain": "Iniciar sesión",
+    "setupTitle": "Conecta tu autenticador",
+    "setupDescription": "Escanea este código QR con una app de autenticación o introduce la clave. Mantenla en privado.",
+    "setupKey": "Clave de configuración",
+    "backupTitle": "Guarda tus códigos de recuperación",
+    "backupDescription": "Guarda estos códigos en privado. Cada uno sirve una vez después del código del móvil.",
+    "savedCodes": "He guardado los códigos",
+    "regenerate": "Obtener códigos",
+    "regenerateDescription": "Los códigos anteriores dejarán de funcionar. Guarda los nuevos antes de salir.",
+    "disableDescription": "Solo usarás códigos del móvil para iniciar sesión. El autenticador y los códigos de recuperación dejarán de funcionar.",
+    "errorCode": "Ese código no ha funcionado. Inténtalo de nuevo.",
+    "errorRateLimited": "Demasiados intentos. Espera antes de volver a intentarlo.",
+    "recoveryHelp": "¿Has perdido el autenticador y los códigos de recuperación? Contacta con soporte. Un código del móvil no basta para desactivar la verificación en dos pasos."
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "permissionBody": "Recibe novedades sobre tus recogidas y solicitudes en este dispositivo.",
+    "enable": "Activar",
+    "denied": "Las notificaciones están bloqueadas. Cámbialo en los ajustes del dispositivo o del navegador.",
+    "unavailable": "Las notificaciones aún no están disponibles aquí.",
+    "error": "No se pudieron activar las notificaciones. Inténtalo de nuevo.",
+    "lockscreenTitle": "Novedad de Luma.Green",
+    "lockscreenBody": "Abre Luma.Green para ver la novedad.",
+    "emptyTitle": "Aún no hay novedades",
+    "emptyBody": "Aquí aparecerán las novedades sobre recogidas y solicitudes.",
+    "markRead": "Marcar leído",
+    "markAllRead": "Leer todo",
+    "unread": "Sin leer",
+    "enabled": "Activadas en este dispositivo",
+    "disable": "Desactivar",
+    "disabled": "Desactivadas en este dispositivo",
+    "deviceTitle": "Este dispositivo",
+    "inboxTitle": "Tus novedades",
+    "loadMore": "Mostrar más",
+    "events": {
+      "booking_confirmed": "Reserva confirmada",
+      "booking_offer": "Nueva solicitud de recogida",
+      "booking_accepted": "Recogida aceptada",
+      "booking_reassigned": "Recolector cambiado",
+      "application_received": "Solicitud recibida",
+      "application_approved": "Solicitud aprobada",
+      "application_changes_requested": "La solicitud necesita cambios",
+      "application_rejected": "Solicitud no aprobada"
     }
   }
 }

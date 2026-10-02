@@ -30,6 +30,9 @@ const state = vi.hoisted(
   }),
 );
 
+vi.mock("@/components/notifications/device-provider", () => ({
+  revokeCurrentDevice: vi.fn().mockResolvedValue(undefined),
+}));
 vi.mock("./use-workspace", () => ({ useWorkspace: () => state.workspace }));
 vi.mock("@/lib/auth-client", () => ({
   authClient: { signOut: state.signOut },
@@ -71,7 +74,7 @@ beforeEach(() => {
     org: { kind: "kabadiwala", name: "Test collection shop" },
   };
   state.replace.mockReset();
-  state.signOut.mockReset();
+  state.signOut.mockReset().mockResolvedValue({ error: null });
 });
 
 describe("workspace navigation", () => {

@@ -2422,7 +2422,16 @@
     "previewTitle": "Pratonton kod",
     "previewNumber": "Nombor telefon bimbit: {phone}",
     "previewBody": "SMS belum disambungkan. Tiada kod dihantar. Anda boleh menyemak skrin ini tetapi tidak boleh log masuk.",
-    "previewPhoneHint": "Masukkan nombor telefon bimbit untuk pratonton langkah seterusnya. Tiada SMS akan dihantar."
+    "previewPhoneHint": "Masukkan nombor telefon bimbit untuk pratonton langkah seterusnya. Tiada SMS akan dihantar.",
+    "twoFactorTitle": "Semak pengesah",
+    "twoFactorDescription": "Masukkan kod 6 digit daripada aplikasi pengesah untuk melengkapkan log masuk.",
+    "twoFactorUseBackup": "Kod pemulihan",
+    "twoFactorUseApp": "Guna pengesah",
+    "twoFactorBackupTitle": "Gunakan kod pemulihan",
+    "twoFactorBackupDescription": "Masukkan satu kod pemulihan yang disimpan. Setiap kod hanya boleh digunakan sekali.",
+    "twoFactorBackupLabel": "Kod pemulihan",
+    "twoFactorExpired": "Log masuk telah tamat tempoh. Mulakan semula dengan kod telefon baharu.",
+    "twoFactorRestart": "Mulakan semula"
   },
   "native": {
     "back": "Kembali",
@@ -3363,6 +3372,59 @@
     "empty": {
       "title": "Belum ada rekod",
       "body": "Angka anda muncul selepas kutipan atau urus niaga pertama selesai."
+    }
+  },
+  "accountSecurity": {
+    "title": "Keselamatan akaun",
+    "description": "Tambah kod pengesah selepas kod telefon.",
+    "enabled": "Aktif",
+    "disabled": "Tidak aktif",
+    "enable": "Sediakan",
+    "disable": "Matikan",
+    "recentSignIn": "Log masuk semula sebelum menukar tetapan keselamatan.",
+    "signInAgain": "Log masuk semula",
+    "setupTitle": "Sambungkan pengesah",
+    "setupDescription": "Imbas kod QR ini dengan aplikasi pengesah, atau masukkan kunci. Rahsiakan kunci ini.",
+    "setupKey": "Kunci persediaan",
+    "backupTitle": "Simpan kod pemulihan",
+    "backupDescription": "Simpan kod ini secara sulit. Setiap kod boleh digunakan sekali selepas kod telefon.",
+    "savedCodes": "Kod telah disimpan",
+    "regenerate": "Dapatkan kod baharu",
+    "regenerateDescription": "Kod pemulihan lama tidak akan berfungsi lagi. Simpan kod baharu sebelum meninggalkan halaman ini.",
+    "disableDescription": "Log masuk hanya akan menggunakan kod telefon. Pengesah dan kod pemulihan tidak akan berfungsi lagi.",
+    "errorCode": "Kod ini tidak berjaya. Cuba lagi.",
+    "errorRateLimited": "Terlalu banyak percubaan. Tunggu sebelum mencuba lagi.",
+    "recoveryHelp": "Kehilangan pengesah dan kod pemulihan? Hubungi sokongan. Kod telefon sahaja tidak boleh mematikan pengesahan dua faktor."
+  },
+  "notifications": {
+    "title": "Pemberitahuan",
+    "permissionBody": "Terima perkembangan kutipan dan permohonan anda pada peranti ini.",
+    "enable": "Aktifkan",
+    "denied": "Pemberitahuan disekat. Ubah perkara ini dalam tetapan peranti atau pelayar anda.",
+    "unavailable": "Pemberitahuan belum tersedia di sini.",
+    "error": "Pemberitahuan tidak dapat diaktifkan. Cuba lagi.",
+    "lockscreenTitle": "Berita daripada Luma.Green",
+    "lockscreenBody": "Buka Luma.Green untuk melihat perkembangan terkini.",
+    "emptyTitle": "Belum ada kemas kini",
+    "emptyBody": "Kemas kini kutipan dan permohonan akan dipaparkan di sini.",
+    "markRead": "Tanda sudah dibaca",
+    "markAllRead": "Semua sudah dibaca",
+    "unread": "Belum dibaca",
+    "enabled": "Diaktifkan pada peranti ini",
+    "disable": "Matikan",
+    "disabled": "Dimatikan pada peranti ini",
+    "deviceTitle": "Peranti ini",
+    "inboxTitle": "Kemas kini anda",
+    "loadMore": "Papar lagi",
+    "events": {
+      "booking_confirmed": "Tempahan disahkan",
+      "booking_offer": "Permintaan kutipan baharu",
+      "booking_accepted": "Kutipan diterima",
+      "booking_reassigned": "Pengumpul ditukar",
+      "application_received": "Permohonan diterima",
+      "application_approved": "Permohonan diluluskan",
+      "application_changes_requested": "Permohonan perlu diubah",
+      "application_rejected": "Permohonan tidak diluluskan"
     }
   }
 }

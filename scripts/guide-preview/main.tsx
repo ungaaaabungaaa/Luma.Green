@@ -2,8 +2,13 @@ import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 
+import AccountLayout from "@/app/[locale]/(account)/account/layout";
+import AuthLayout from "@/app/[locale]/(auth)/layout";
 import HouseholdLayout from "@/app/[locale]/(household)/layout";
 import JoinLayout from "@/app/[locale]/(join)/layout";
+import ForgotPasswordPage from "@/app/admin/forgot-password/page";
+import ResetPasswordPage from "@/app/admin/reset-password/page";
+import { AccountSecurity } from "@/components/account/account-security";
 import { ConsoleHome } from "@/components/admin/console-home";
 import { ConsoleShell } from "@/components/admin/console-shell";
 import { PilotNumbers } from "@/components/admin/pilot/pilot-numbers";
@@ -13,6 +18,7 @@ import { ApplicationReview } from "@/components/admin/verification/application-r
 import { VerificationQueue } from "@/components/admin/verification/queue";
 import { AppShell } from "@/components/app/app-shell";
 import { RoleHome } from "@/components/app/role-home";
+import { FactorChallenge } from "@/components/auth/factor-challenge";
 import { CompliancePage } from "@/components/insights/compliance-page";
 import { ImpactPage } from "@/components/insights/impact-page";
 import { BusinessJoin, KabadiwalaJoin } from "@/components/join/join-pages";
@@ -21,6 +27,7 @@ import { InvoicePage } from "@/components/market/invoice-page";
 import { MarketPage } from "@/components/market/market-page";
 import { SellPage } from "@/components/market/sell-page";
 import { TradesPage } from "@/components/market/trades-page";
+import { NotificationsPage } from "@/components/notifications/notifications-page";
 import { RateCardPage } from "@/components/shop/rate-card-page";
 import { RequestDetail } from "@/components/shop/request-detail";
 import { RequestsPage } from "@/components/shop/requests-page";
@@ -53,6 +60,11 @@ const adminPages: Record<string, ReactNode | undefined> = {
   "/admin/pilot": <PilotNumbers />,
 };
 const adminPage = adminPages[path];
+const recoveryPages: Record<string, ReactNode | undefined> = {
+  "/admin/forgot-password": <ForgotPasswordPage />,
+  "/admin/reset-password": <ResetPasswordPage />,
+};
+const recoveryPage = recoveryPages[path];
 const defaultAppPage = path.includes("/requests/") ? (
   <RequestDetail id="guide-booking" />
 ) : (
@@ -91,6 +103,29 @@ const onboardingContent = onboardingPages[path];
 const onboardingPage = onboardingContent
   ? await JoinLayout({ children: onboardingContent })
   : null;
+const accountPages: Record<string, ReactNode | undefined> = {
+  "/en/account/notifications": <NotificationsPage />,
+  "/en/account/security": <AccountSecurity />,
+};
+const accountContent = accountPages[path];
+const accountPage = accountContent
+  ? await AccountLayout({ children: accountContent })
+  : null;
+const challengePage =
+  path === "/en/login/factor"
+    ? await AuthLayout({
+        children: (
+          <FactorChallenge
+            onVerified={() => {
+              throw new Error("Documentation fixtures cannot authenticate.");
+            }}
+            onRestart={() => {
+              window.location.reload();
+            }}
+          />
+        ),
+      })
+    : null;
 const content = adminPage ? (
   <ConsoleShell>{adminPage}</ConsoleShell>
 ) : (
@@ -123,7 +158,13 @@ createRoot(root).render(
         SYNTHETIC DOCUMENTATION FIXTURE — actual Luma.Green components; no live
         account or records. All writes disabled.
       </div>
-      {trackingPage ?? sellSelectionPage ?? onboardingPage ?? content}
+      {recoveryPage ??
+        accountPage ??
+        challengePage ??
+        trackingPage ??
+        sellSelectionPage ??
+        onboardingPage ??
+        content}
     </ThemeProvider>
   </NextIntlClientProvider>,
 );

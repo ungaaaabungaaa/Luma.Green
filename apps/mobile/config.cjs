@@ -21,7 +21,42 @@ function resolveSettings(env, directory = __dirname) {
     throw new Error("EXPO_PUBLIC_EAS_PROJECT_ID must be a valid UUID.");
   }
   const signing = resolveSigning(env, directory, projectId);
-  return { origin, allowLocalHttp: isAllowLocalHttp, projectId, signing };
+  if (![undefined, "", "true", "false"].includes(env.EXPO_PUBLIC_PUSH_ENABLED))
+    throw new Error("EXPO_PUBLIC_PUSH_ENABLED must be true or false.");
+  const isPushEnabled = env.EXPO_PUBLIC_PUSH_ENABLED === "true";
+  if (isPushEnabled && !projectId)
+    throw new Error("Mobile push requires EXPO_PUBLIC_EAS_PROJECT_ID.");
+  return {
+    origin,
+    allowLocalHttp: isAllowLocalHttp,
+    projectId,
+    signing,
+    pushEnabled: isPushEnabled,
+    googleServicesFile: resolveGoogleServices(env, directory),
+  };
+}
+
+function resolveGoogleServices(env, directory) {
+  const filename = env.LUMA_ANDROID_GOOGLE_SERVICES_FILE;
+  if (!filename) return;
+  const filepath = path.resolve(directory, filename);
+  const config = JSON.parse(readFileSync(filepath, "utf8"));
+  if (config?.private_key || config?.type === "service_account")
+    throw new Error(
+      "Use the public google-services.json, never a service-account key.",
+    );
+  if (
+    !Array.isArray(config?.client) ||
+    config.client.every(
+      (client) =>
+        client?.client_info?.android_client_info?.package_name !==
+        "green.luma.app",
+    )
+  )
+    throw new Error(
+      "Firebase client must match the green.luma.app Android package.",
+    );
+  return filepath;
 }
 
 function resolveSigning(env, directory, projectId) {

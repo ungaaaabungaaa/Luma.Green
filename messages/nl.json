@@ -1915,7 +1915,16 @@
     "previewTitle": "Voorbeeld van codescherm",
     "previewNumber": "Mobiel nummer: {phone}",
     "previewBody": "Sms is nog niet aangesloten. Er is geen code verstuurd. U kunt dit scherm bekijken, maar niet inloggen.",
-    "previewPhoneHint": "Voer uw mobiele nummer in om de volgende stap te bekijken. Er wordt geen sms verstuurd."
+    "previewPhoneHint": "Voer uw mobiele nummer in om de volgende stap te bekijken. Er wordt geen sms verstuurd.",
+    "twoFactorTitle": "Controleer je authenticator",
+    "twoFactorDescription": "Voer de 6-cijferige code uit je authenticator-app in om het inloggen af te ronden.",
+    "twoFactorUseBackup": "Herstelcode gebruiken",
+    "twoFactorUseApp": "Authenticator gebruiken",
+    "twoFactorBackupTitle": "Gebruik een herstelcode",
+    "twoFactorBackupDescription": "Voer een bewaarde herstelcode in. Elke code werkt één keer.",
+    "twoFactorBackupLabel": "Herstelcode",
+    "twoFactorExpired": "Je aanmelding is verlopen. Begin opnieuw met een nieuwe telefooncode.",
+    "twoFactorRestart": "Opnieuw beginnen"
   },
   "join": {
     "metaTitle": "Aanmelden bij Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Bekijk operationele registraties"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Accountbeveiliging",
+    "description": "Voeg na je telefooncode een code uit een authenticator-app toe.",
+    "enabled": "Aan",
+    "disabled": "Uit",
+    "enable": "Instellen",
+    "disable": "Uitschakelen",
+    "recentSignIn": "Log opnieuw in voordat je de beveiliging wijzigt.",
+    "signInAgain": "Opnieuw inloggen",
+    "setupTitle": "Koppel je authenticator",
+    "setupDescription": "Scan deze QR-code met een authenticator-app of voer de sleutel in. Houd deze privé.",
+    "setupKey": "Instelsleutel",
+    "backupTitle": "Bewaar je herstelcodes",
+    "backupDescription": "Bewaar deze codes op een veilige plek. Elke code werkt één keer na je telefooncode.",
+    "savedCodes": "Codes bewaard",
+    "regenerate": "Nieuwe codes",
+    "regenerateDescription": "Je oude herstelcodes werken straks niet meer. Bewaar de nieuwe codes voordat je vertrekt.",
+    "disableDescription": "Je logt voortaan alleen in met telefooncodes. Je authenticator en herstelcodes werken dan niet meer.",
+    "errorCode": "Deze code werkte niet. Probeer het opnieuw.",
+    "errorRateLimited": "Te veel pogingen. Wacht voordat je het opnieuw probeert.",
+    "recoveryHelp": "Authenticator en herstelcodes kwijt? Neem contact op met ondersteuning. Een telefooncode alleen kan tweestapsverificatie niet uitschakelen."
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "permissionBody": "Ontvang op dit apparaat nieuws over je ophalingen en aanvragen.",
+    "enable": "Inschakelen",
+    "denied": "Meldingen zijn geblokkeerd. Wijzig dit in de instellingen van je apparaat of browser.",
+    "unavailable": "Meldingen zijn hier nog niet beschikbaar.",
+    "error": "Meldingen konden niet worden ingeschakeld. Probeer het opnieuw.",
+    "lockscreenTitle": "Nieuws van Luma.Green",
+    "lockscreenBody": "Open Luma.Green om het nieuws te bekijken.",
+    "emptyTitle": "Nog geen nieuws",
+    "emptyBody": "Nieuws over ophaalafspraken en aanvragen verschijnt hier.",
+    "markRead": "Als gelezen markeren",
+    "markAllRead": "Alles als gelezen",
+    "unread": "Ongelezen",
+    "enabled": "Ingeschakeld op dit apparaat",
+    "disable": "Uitschakelen",
+    "disabled": "Uitgeschakeld op dit apparaat",
+    "deviceTitle": "Dit apparaat",
+    "inboxTitle": "Jouw nieuws",
+    "loadMore": "Meer tonen",
+    "events": {
+      "booking_confirmed": "Boeking bevestigd",
+      "booking_offer": "Nieuw ophaalverzoek",
+      "booking_accepted": "Ophaling geaccepteerd",
+      "booking_reassigned": "Ophaler gewijzigd",
+      "application_received": "Aanvraag ontvangen",
+      "application_approved": "Aanvraag goedgekeurd",
+      "application_changes_requested": "Aanvraag moet worden aangepast",
+      "application_rejected": "Aanvraag niet goedgekeurd"
     }
   }
 }

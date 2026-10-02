@@ -1915,7 +1915,16 @@
     "previewTitle": "Code-Vorschau",
     "previewNumber": "Mobilnummer: {phone}",
     "previewBody": "SMS ist noch nicht angebunden. Es wurde kein Code gesendet. Sie können diesen Bildschirm ansehen, sich aber nicht anmelden.",
-    "previewPhoneHint": "Geben Sie Ihre Mobilnummer ein, um den nächsten Schritt anzusehen. Es wird keine SMS gesendet."
+    "previewPhoneHint": "Geben Sie Ihre Mobilnummer ein, um den nächsten Schritt anzusehen. Es wird keine SMS gesendet.",
+    "twoFactorTitle": "Authenticator prüfen",
+    "twoFactorDescription": "Gib den 6-stelligen Code aus deiner Authenticator-App ein, um die Anmeldung abzuschließen.",
+    "twoFactorUseBackup": "Wiederherstellung",
+    "twoFactorUseApp": "Authenticator nutzen",
+    "twoFactorBackupTitle": "Wiederherstellungscode nutzen",
+    "twoFactorBackupDescription": "Gib einen gespeicherten Wiederherstellungscode ein. Jeder Code funktioniert einmal.",
+    "twoFactorBackupLabel": "Wiederherstellungscode",
+    "twoFactorExpired": "Deine Anmeldung ist abgelaufen. Beginne mit einem neuen Telefoncode.",
+    "twoFactorRestart": "Neu beginnen"
   },
   "join": {
     "metaTitle": "Bei Luma.Green mitmachen",
@@ -3363,6 +3372,59 @@
           "third": "Betriebsaufzeichnungen prüfen"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Kontosicherheit",
+    "description": "Ergänze den Telefoncode um einen Code aus einer Authenticator-App.",
+    "enabled": "Ein",
+    "disabled": "Aus",
+    "enable": "Einrichten",
+    "disable": "Ausschalten",
+    "recentSignIn": "Melde dich erneut an, bevor du die Sicherheitseinstellungen änderst.",
+    "signInAgain": "Erneut anmelden",
+    "setupTitle": "Authenticator verbinden",
+    "setupDescription": "Scanne diesen QR-Code mit einer Authenticator-App oder gib den Schlüssel ein. Halte ihn geheim.",
+    "setupKey": "Einrichtungsschlüssel",
+    "backupTitle": "Wiederherstellungscodes speichern",
+    "backupDescription": "Bewahre diese Codes sicher auf. Jeder funktioniert einmal nach deinem Telefoncode.",
+    "savedCodes": "Codes gespeichert",
+    "regenerate": "Neue Codes",
+    "regenerateDescription": "Deine alten Wiederherstellungscodes werden ungültig. Speichere die neuen, bevor du diese Seite verlässt.",
+    "disableDescription": "Die Anmeldung erfolgt nur noch per Telefoncode. Dein Authenticator und deine Wiederherstellungscodes werden ungültig.",
+    "errorCode": "Dieser Code hat nicht funktioniert. Versuche es erneut.",
+    "errorRateLimited": "Zu viele Versuche. Warte, bevor du es erneut versuchst.",
+    "recoveryHelp": "Authenticator und Wiederherstellungscodes verloren? Kontaktiere den Support. Ein Telefoncode allein kann die Zwei-Faktor-Authentifizierung nicht ausschalten."
+  },
+  "notifications": {
+    "title": "Mitteilungen",
+    "permissionBody": "Erhalte auf diesem Gerät Neues zu deinen Abholungen und Anträgen.",
+    "enable": "Aktivieren",
+    "denied": "Mitteilungen sind blockiert. Ändere dies in den Geräte- oder Browsereinstellungen.",
+    "unavailable": "Mitteilungen sind hier noch nicht verfügbar.",
+    "error": "Mitteilungen konnten nicht aktiviert werden. Versuche es erneut.",
+    "lockscreenTitle": "Neues von Luma.Green",
+    "lockscreenBody": "Öffne Luma.Green, um die Neuigkeit anzusehen.",
+    "emptyTitle": "Noch keine Neuigkeiten",
+    "emptyBody": "Neuigkeiten zu Abholungen und Anträgen erscheinen hier.",
+    "markRead": "Als gelesen markieren",
+    "markAllRead": "Alle als gelesen",
+    "unread": "Ungelesen",
+    "enabled": "Auf diesem Gerät aktiviert",
+    "disable": "Ausschalten",
+    "disabled": "Auf diesem Gerät ausgeschaltet",
+    "deviceTitle": "Dieses Gerät",
+    "inboxTitle": "Deine Neuigkeiten",
+    "loadMore": "Mehr anzeigen",
+    "events": {
+      "booking_confirmed": "Buchung bestätigt",
+      "booking_offer": "Neue Abholanfrage",
+      "booking_accepted": "Abholung angenommen",
+      "booking_reassigned": "Abholer geändert",
+      "application_received": "Antrag eingegangen",
+      "application_approved": "Antrag genehmigt",
+      "application_changes_requested": "Antrag muss geändert werden",
+      "application_rejected": "Antrag nicht genehmigt"
     }
   }
 }

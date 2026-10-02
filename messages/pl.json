@@ -1915,7 +1915,16 @@
     "previewTitle": "Podgląd kodu",
     "previewNumber": "Numer telefonu: {phone}",
     "previewBody": "SMS nie jest jeszcze podłączony. Nie wysłano kodu. Możesz obejrzeć ten ekran, ale nie możesz się zalogować.",
-    "previewPhoneHint": "Wpisz numer telefonu, aby zobaczyć kolejny krok. SMS nie zostanie wysłany."
+    "previewPhoneHint": "Wpisz numer telefonu, aby zobaczyć kolejny krok. SMS nie zostanie wysłany.",
+    "twoFactorTitle": "Sprawdź aplikację",
+    "twoFactorDescription": "Wpisz 6-cyfrowy kod z aplikacji uwierzytelniającej, aby dokończyć logowanie.",
+    "twoFactorUseBackup": "Kod odzyskiwania",
+    "twoFactorUseApp": "Użyj aplikacji",
+    "twoFactorBackupTitle": "Użyj kodu odzyskiwania",
+    "twoFactorBackupDescription": "Wpisz zapisany kod odzyskiwania. Każdy kod działa raz.",
+    "twoFactorBackupLabel": "Kod odzyskiwania",
+    "twoFactorExpired": "Logowanie wygasło. Zacznij ponownie z nowym kodem z telefonu.",
+    "twoFactorRestart": "Zacznij ponownie"
   },
   "join": {
     "metaTitle": "Dołącz do Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Sprawdzaj zapisy operacyjne"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Bezpieczeństwo konta",
+    "description": "Dodaj kod z aplikacji uwierzytelniającej po kodzie z telefonu.",
+    "enabled": "Włączone",
+    "disabled": "Wyłączone",
+    "enable": "Skonfiguruj",
+    "disable": "Wyłącz",
+    "recentSignIn": "Zaloguj się ponownie przed zmianą ustawień bezpieczeństwa.",
+    "signInAgain": "Zaloguj ponownie",
+    "setupTitle": "Połącz aplikację uwierzytelniającą",
+    "setupDescription": "Zeskanuj ten kod QR w aplikacji uwierzytelniającej lub wpisz klucz. Zachowaj go w tajemnicy.",
+    "setupKey": "Klucz konfiguracji",
+    "backupTitle": "Zapisz kody odzyskiwania",
+    "backupDescription": "Przechowuj te kody bezpiecznie. Każdy działa raz, po kodzie z telefonu.",
+    "savedCodes": "Kody zapisane",
+    "regenerate": "Nowe kody",
+    "regenerateDescription": "Stare kody odzyskiwania przestaną działać. Zapisz nowe przed opuszczeniem tej strony.",
+    "disableDescription": "Logowanie będzie wymagać tylko kodów z telefonu. Aplikacja uwierzytelniająca i kody odzyskiwania przestaną działać.",
+    "errorCode": "Ten kod nie zadziałał. Spróbuj ponownie.",
+    "errorRateLimited": "Zbyt wiele prób. Poczekaj przed kolejną próbą.",
+    "recoveryHelp": "Nie masz aplikacji ani kodów odzyskiwania? Skontaktuj się z pomocą. Sam kod z telefonu nie wystarczy do wyłączenia uwierzytelniania dwuskładnikowego."
+  },
+  "notifications": {
+    "title": "Powiadomienia",
+    "permissionBody": "Otrzymuj na tym urządzeniu informacje o odbiorach i swoich wnioskach.",
+    "enable": "Włącz",
+    "denied": "Powiadomienia są zablokowane. Zmień to w ustawieniach urządzenia lub przeglądarki.",
+    "unavailable": "Powiadomienia nie są tu jeszcze dostępne.",
+    "error": "Nie udało się włączyć powiadomień. Spróbuj ponownie.",
+    "lockscreenTitle": "Nowość od Luma.Green",
+    "lockscreenBody": "Otwórz Luma.Green, aby zobaczyć nową informację.",
+    "emptyTitle": "Nie ma jeszcze aktualizacji",
+    "emptyBody": "Tutaj pojawią się informacje o odbiorach i wnioskach.",
+    "markRead": "Oznacz jako przeczytane",
+    "markAllRead": "Wszystkie przeczytane",
+    "unread": "Nieprzeczytane",
+    "enabled": "Włączone na tym urządzeniu",
+    "disable": "Wyłącz",
+    "disabled": "Wyłączone na tym urządzeniu",
+    "deviceTitle": "To urządzenie",
+    "inboxTitle": "Twoje aktualizacje",
+    "loadMore": "Pokaż więcej",
+    "events": {
+      "booking_confirmed": "Rezerwacja potwierdzona",
+      "booking_offer": "Nowe zgłoszenie odbioru",
+      "booking_accepted": "Odbiór zaakceptowany",
+      "booking_reassigned": "Zmieniono odbierającego",
+      "application_received": "Wniosek otrzymany",
+      "application_approved": "Wniosek zatwierdzony",
+      "application_changes_requested": "Wniosek wymaga zmian",
+      "application_rejected": "Wniosek niezatwierdzony"
     }
   }
 }

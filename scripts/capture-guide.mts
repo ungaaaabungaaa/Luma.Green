@@ -69,6 +69,26 @@ const shots: readonly (readonly [string, string, string?])[] = [
   ["public-contact", "/help/contact"],
   ["public-contact-info", "/contact"],
   ["public-how-it-works", "/how-it-works"],
+  [
+    "public-sorting-guide",
+    "/how-it-works",
+    'section[aria-labelledby="sorting-guide-heading"]',
+  ],
+  [
+    "public-price-guide-dark",
+    "/prices",
+    'section[aria-labelledby="price-guide-heading"]',
+  ],
+  [
+    "public-join-preparation",
+    "/join",
+    'section[aria-labelledby="join-preparation-heading"]',
+  ],
+  [
+    "public-help-topics",
+    "/help",
+    'section[aria-labelledby="help-topic-stories"]',
+  ],
   ["public-arabic", "/ar"],
   ["public-navigation-phone", "/how-it-works"],
   ["public-navigation-tablet", "/how-it-works"],
@@ -80,6 +100,25 @@ const revision = execFileSync("git", ["rev-parse", "HEAD"], {
   encoding: "utf8",
 }).trim();
 const sharedSources = [
+  "src/components/showcase/role-story-image.tsx",
+  "src/components/site/sorting-guide.tsx",
+  "src/components/prices/price-guide.tsx",
+  "src/components/join/join-preparation.tsx",
+  "src/components/help/topic-stories.tsx",
+  "src/components/standards/norms.tsx",
+  "src/app/[locale]/(site)/how-it-works/page.tsx",
+  "src/app/[locale]/(site)/prices/page.tsx",
+  "src/app/[locale]/(site)/join/page.tsx",
+  "src/app/[locale]/(site)/help/page.tsx",
+  "src/app/[locale]/(site)/standards/page.tsx",
+  ...[
+    "material-sorting",
+    "fair-weighing",
+    "recycled-pellets",
+    "electronics-sorting",
+    "household-preparation",
+    "yard-dispatch",
+  ].map((name) => `public/images/showcase/${name}.webp`),
   "src/app/globals.css",
   "src/lib/fonts.ts",
   "src/lib/number-input.ts",
@@ -249,29 +288,21 @@ try {
           );
         });
       }
-      await page.evaluate(async () => {
-        await document.fonts.ready;
-        await Promise.all(
-          [...document.images].map(async (image) => {
+      await page.evaluate(() => document.fonts.ready);
+      // Keep capture readiness bounded if an optimizer response stalls.
+      await page.waitForFunction(() =>
+        [...document.images]
+          .filter((image) => {
             const bounds = image.getBoundingClientRect();
-            if (!(
+            return (
               bounds.top < window.innerHeight &&
               bounds.bottom > 0 &&
               bounds.width > 0 &&
               bounds.height > 0
-            )) {
-              return;
-            }
-
-            // Lazy images receive currentSrc after the scroll reaches them.
-            // decode() waits for that image, including its first request.
-            await image.decode();
-            if (!image.complete || image.naturalWidth === 0) {
-              throw new Error("A visible guide image did not load.");
-            }
-          }),
-        );
-      });
+            );
+          })
+          .every((image) => image.complete && image.naturalWidth > 0),
+      );
       if (isLanguagePicker) {
         const list = await page
           .getByRole("radiogroup", { name: en.common.language, exact: true })

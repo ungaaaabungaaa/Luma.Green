@@ -3286,7 +3286,16 @@
     "previewTitle": "Pratinjau kode",
     "previewNumber": "Nomor ponsel: {phone}",
     "previewBody": "SMS belum terhubung. Tidak ada kode yang dikirim. Anda dapat memeriksa layar ini, tetapi tidak dapat masuk.",
-    "previewPhoneHint": "Masukkan nomor ponsel untuk melihat pratinjau tahap berikutnya. SMS tidak akan dikirim."
+    "previewPhoneHint": "Masukkan nomor ponsel untuk melihat pratinjau tahap berikutnya. SMS tidak akan dikirim.",
+    "twoFactorTitle": "Periksa autentikator",
+    "twoFactorDescription": "Masukkan kode 6 digit dari aplikasi autentikator untuk menyelesaikan proses masuk.",
+    "twoFactorUseBackup": "Kode pemulihan",
+    "twoFactorUseApp": "Pakai autentikator",
+    "twoFactorBackupTitle": "Gunakan kode pemulihan",
+    "twoFactorBackupDescription": "Masukkan satu kode pemulihan yang disimpan. Tiap kode hanya berlaku sekali.",
+    "twoFactorBackupLabel": "Kode pemulihan",
+    "twoFactorExpired": "Proses masuk telah kedaluwarsa. Mulai lagi dengan kode telepon baru.",
+    "twoFactorRestart": "Mulai lagi"
   },
   "native": {
     "back": "Kembali",
@@ -3363,6 +3372,59 @@
           "third": "Tinjau catatan operasional"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Keamanan akun",
+    "description": "Tambahkan kode autentikator setelah kode telepon.",
+    "enabled": "Aktif",
+    "disabled": "Nonaktif",
+    "enable": "Siapkan",
+    "disable": "Nonaktifkan",
+    "recentSignIn": "Masuk lagi sebelum mengubah pengaturan keamanan.",
+    "signInAgain": "Masuk lagi",
+    "setupTitle": "Hubungkan autentikator",
+    "setupDescription": "Pindai kode QR ini dengan aplikasi autentikator, atau masukkan kuncinya. Rahasiakan kunci ini.",
+    "setupKey": "Kunci pengaturan",
+    "backupTitle": "Simpan kode pemulihan",
+    "backupDescription": "Simpan kode ini secara pribadi. Tiap kode berlaku sekali setelah kode telepon.",
+    "savedCodes": "Kode sudah disimpan",
+    "regenerate": "Dapatkan kode baru",
+    "regenerateDescription": "Kode pemulihan lama akan tidak berlaku. Simpan kode baru sebelum meninggalkan halaman ini.",
+    "disableDescription": "Anda hanya akan memakai kode telepon untuk masuk. Autentikator dan kode pemulihan akan tidak berlaku.",
+    "errorCode": "Kode ini tidak berhasil. Coba lagi.",
+    "errorRateLimited": "Terlalu banyak percobaan. Tunggu sebelum mencoba lagi.",
+    "recoveryHelp": "Kehilangan autentikator dan kode pemulihan? Hubungi dukungan. Kode telepon saja tidak dapat menonaktifkan autentikasi dua faktor."
+  },
+  "notifications": {
+    "title": "Notifikasi",
+    "permissionBody": "Dapatkan kabar tentang penjemputan dan pengajuan Anda di perangkat ini.",
+    "enable": "Aktifkan",
+    "denied": "Notifikasi diblokir. Ubah di pengaturan perangkat atau browser Anda.",
+    "unavailable": "Notifikasi belum tersedia di sini.",
+    "error": "Tidak dapat mengaktifkan notifikasi. Coba lagi.",
+    "lockscreenTitle": "Kabar dari Luma.Green",
+    "lockscreenBody": "Buka Luma.Green untuk melihat kabar terbaru.",
+    "emptyTitle": "Belum ada pembaruan",
+    "emptyBody": "Pembaruan penjemputan dan pengajuan akan muncul di sini.",
+    "markRead": "Tandai dibaca",
+    "markAllRead": "Baca semua",
+    "unread": "Belum dibaca",
+    "enabled": "Aktif di perangkat ini",
+    "disable": "Matikan",
+    "disabled": "Nonaktif di perangkat ini",
+    "deviceTitle": "Perangkat ini",
+    "inboxTitle": "Pembaruan Anda",
+    "loadMore": "Tampilkan lagi",
+    "events": {
+      "booking_confirmed": "Pemesanan dikonfirmasi",
+      "booking_offer": "Permintaan penjemputan baru",
+      "booking_accepted": "Penjemputan diterima",
+      "booking_reassigned": "Pengumpul diganti",
+      "application_received": "Pendaftaran diterima",
+      "application_approved": "Pendaftaran disetujui",
+      "application_changes_requested": "Pendaftaran perlu diperbaiki",
+      "application_rejected": "Pendaftaran tidak disetujui"
     }
   }
 }

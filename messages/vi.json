@@ -1915,7 +1915,16 @@
     "previewTitle": "Xem trước mã",
     "previewNumber": "Số di động: {phone}",
     "previewBody": "SMS chưa được kết nối. Không có mã nào được gửi. Bạn có thể xem màn hình này nhưng không thể đăng nhập.",
-    "previewPhoneHint": "Nhập số di động để xem trước bước tiếp theo. Không gửi SMS."
+    "previewPhoneHint": "Nhập số di động để xem trước bước tiếp theo. Không gửi SMS.",
+    "twoFactorTitle": "Kiểm tra ứng dụng xác thực",
+    "twoFactorDescription": "Nhập mã 6 chữ số trong ứng dụng xác thực để hoàn tất đăng nhập.",
+    "twoFactorUseBackup": "Dùng mã khôi phục",
+    "twoFactorUseApp": "Dùng ứng dụng",
+    "twoFactorBackupTitle": "Dùng mã khôi phục",
+    "twoFactorBackupDescription": "Nhập một mã khôi phục đã lưu. Mỗi mã chỉ dùng một lần.",
+    "twoFactorBackupLabel": "Mã khôi phục",
+    "twoFactorExpired": "Lần đăng nhập đã hết hạn. Bắt đầu lại với mã điện thoại mới.",
+    "twoFactorRestart": "Bắt đầu lại"
   },
   "join": {
     "metaTitle": "Tham gia Luma.Green",
@@ -3363,6 +3372,59 @@
           "third": "Xem hồ sơ hoạt động"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Bảo mật tài khoản",
+    "description": "Thêm mã ứng dụng xác thực sau mã điện thoại.",
+    "enabled": "Bật",
+    "disabled": "Tắt",
+    "enable": "Thiết lập",
+    "disable": "Tắt",
+    "recentSignIn": "Đăng nhập lại trước khi thay đổi cài đặt bảo mật.",
+    "signInAgain": "Đăng nhập lại",
+    "setupTitle": "Kết nối ứng dụng xác thực",
+    "setupDescription": "Quét mã QR này bằng ứng dụng xác thực hoặc nhập khóa. Giữ bí mật khóa này.",
+    "setupKey": "Khóa thiết lập",
+    "backupTitle": "Lưu mã khôi phục",
+    "backupDescription": "Giữ kín các mã này. Mỗi mã dùng một lần sau mã điện thoại.",
+    "savedCodes": "Đã lưu mã",
+    "regenerate": "Lấy mã mới",
+    "regenerateDescription": "Các mã khôi phục cũ sẽ hết hiệu lực. Lưu mã mới trước khi rời trang.",
+    "disableDescription": "Bạn sẽ chỉ dùng mã điện thoại để đăng nhập. Ứng dụng xác thực và mã khôi phục sẽ hết hiệu lực.",
+    "errorCode": "Mã này không hợp lệ. Vui lòng thử lại.",
+    "errorRateLimited": "Quá nhiều lần thử. Hãy chờ trước khi thử lại.",
+    "recoveryHelp": "Bạn mất ứng dụng xác thực và mã khôi phục? Hãy liên hệ hỗ trợ. Chỉ có mã điện thoại không thể tắt xác thực hai yếu tố."
+  },
+  "notifications": {
+    "title": "Thông báo",
+    "permissionBody": "Nhận cập nhật về các lần thu gom và đơn đăng ký trên thiết bị này.",
+    "enable": "Bật",
+    "denied": "Thông báo đã bị chặn. Hãy đổi trong phần cài đặt của thiết bị hoặc trình duyệt.",
+    "unavailable": "Thông báo chưa khả dụng tại đây.",
+    "error": "Không thể bật thông báo. Hãy thử lại.",
+    "lockscreenTitle": "Cập nhật từ Luma.Green",
+    "lockscreenBody": "Mở Luma.Green để xem cập nhật.",
+    "emptyTitle": "Chưa có cập nhật",
+    "emptyBody": "Thông tin cập nhật về lịch thu gom và đơn đăng ký sẽ xuất hiện tại đây.",
+    "markRead": "Đánh dấu đã đọc",
+    "markAllRead": "Đọc tất cả",
+    "unread": "Chưa đọc",
+    "enabled": "Đã bật trên thiết bị này",
+    "disable": "Tắt",
+    "disabled": "Đã tắt trên thiết bị này",
+    "deviceTitle": "Thiết bị này",
+    "inboxTitle": "Cập nhật của bạn",
+    "loadMore": "Xem thêm",
+    "events": {
+      "booking_confirmed": "Đã xác nhận đặt lịch",
+      "booking_offer": "Yêu cầu thu gom mới",
+      "booking_accepted": "Đã chấp nhận thu gom",
+      "booking_reassigned": "Đã đổi người thu gom",
+      "application_received": "Đã nhận đơn",
+      "application_approved": "Đơn đã được duyệt",
+      "application_changes_requested": "Đơn cần chỉnh sửa",
+      "application_rejected": "Đơn chưa được duyệt"
     }
   }
 }

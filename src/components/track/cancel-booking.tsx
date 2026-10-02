@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import { useSignOut } from "@/components/account/use-sign-out";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,7 +16,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { authClient } from "@/lib/auth-client";
 
 import { api } from "../../../convex/_generated/api";
 import { sellErrorKey } from "../sell/errors";
@@ -76,6 +76,7 @@ function CancelDialogBody({
   const locale = useLocale();
   const { isAuthenticated } = useConvexAuth();
   const cancel = useMutation(api.households.cancel);
+  const { signOut, busy: signingOut } = useSignOut();
   const ensureProfile = useMutation(api.identity.ensureProfile);
   const waitForAuth = useAuthReady();
   const [status, setStatus] = useState<"idle" | "signingIn" | "cancelling">(
@@ -155,8 +156,9 @@ function CancelDialogBody({
           <Button
             variant="outline"
             className="h-11"
+            disabled={signingOut}
             onClick={() => {
-              void authClient.signOut();
+              void signOut();
             }}
           >
             {t("otherNumber")}

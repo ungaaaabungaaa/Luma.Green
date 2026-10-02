@@ -85,15 +85,6 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
               }
             | {
                 data: {
-                  createdAt: number;
-                  expiresAt?: null | number;
-                  privateKey: string;
-                  publicKey: string;
-                };
-                model: "jwks";
-              }
-            | {
-                data: {
                   backupCodes: string;
                   failedVerificationCount?: null | number;
                   lockedUntil?: null | number;
@@ -102,6 +93,15 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                   verified?: null | boolean;
                 };
                 model: "twoFactor";
+              }
+            | {
+                data: {
+                  createdAt: number;
+                  expiresAt?: null | number;
+                  privateKey: string;
+                  publicKey: string;
+                };
+                model: "jwks";
               }
             | {
                 data: { count: number; key: string; lastRequest: number };
@@ -129,10 +129,10 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                     | "image"
                     | "createdAt"
                     | "updatedAt"
+                    | "twoFactorEnabled"
                     | "userId"
                     | "phoneNumber"
                     | "phoneNumberVerified"
-                    | "twoFactorEnabled"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -265,14 +265,16 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "jwks";
+                model: "twoFactor";
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "publicKey"
-                    | "privateKey"
-                    | "createdAt"
-                    | "expiresAt"
+                    | "secret"
+                    | "backupCodes"
+                    | "userId"
+                    | "verified"
+                    | "failedVerificationCount"
+                    | "lockedUntil"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -297,16 +299,14 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "twoFactor";
+                model: "jwks";
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "secret"
-                    | "backupCodes"
-                    | "userId"
-                    | "verified"
-                    | "failedVerificationCount"
-                    | "lockedUntil"
+                    | "publicKey"
+                    | "privateKey"
+                    | "createdAt"
+                    | "expiresAt"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -386,10 +386,10 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                     | "image"
                     | "createdAt"
                     | "updatedAt"
+                    | "twoFactorEnabled"
                     | "userId"
                     | "phoneNumber"
                     | "phoneNumberVerified"
-                    | "twoFactorEnabled"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -522,14 +522,16 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "jwks";
+                model: "twoFactor";
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "publicKey"
-                    | "privateKey"
-                    | "createdAt"
-                    | "expiresAt"
+                    | "secret"
+                    | "backupCodes"
+                    | "userId"
+                    | "verified"
+                    | "failedVerificationCount"
+                    | "lockedUntil"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -554,16 +556,14 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "twoFactor";
+                model: "jwks";
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "secret"
-                    | "backupCodes"
-                    | "userId"
-                    | "verified"
-                    | "failedVerificationCount"
-                    | "lockedUntil"
+                    | "publicKey"
+                    | "privateKey"
+                    | "createdAt"
+                    | "expiresAt"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -630,8 +630,8 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
             | "session"
             | "account"
             | "verification"
-            | "jwks"
             | "twoFactor"
+            | "jwks"
             | "rateLimit";
           offset?: number;
           paginationOpts: {
@@ -677,8 +677,8 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
             | "session"
             | "account"
             | "verification"
-            | "jwks"
             | "twoFactor"
+            | "jwks"
             | "rateLimit";
           select?: Array<string>;
           where?: Array<{
@@ -732,10 +732,10 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                     | "image"
                     | "createdAt"
                     | "updatedAt"
+                    | "twoFactorEnabled"
                     | "userId"
                     | "phoneNumber"
                     | "phoneNumberVerified"
-                    | "twoFactorEnabled"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -898,20 +898,24 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "jwks";
+                model: "twoFactor";
                 update: {
-                  createdAt?: number;
-                  expiresAt?: null | number;
-                  privateKey?: string;
-                  publicKey?: string;
+                  backupCodes?: string;
+                  failedVerificationCount?: null | number;
+                  lockedUntil?: null | number;
+                  secret?: string;
+                  userId?: string;
+                  verified?: null | boolean;
                 };
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "publicKey"
-                    | "privateKey"
-                    | "createdAt"
-                    | "expiresAt"
+                    | "secret"
+                    | "backupCodes"
+                    | "userId"
+                    | "verified"
+                    | "failedVerificationCount"
+                    | "lockedUntil"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -936,24 +940,20 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "twoFactor";
+                model: "jwks";
                 update: {
-                  backupCodes?: string;
-                  failedVerificationCount?: null | number;
-                  lockedUntil?: null | number;
-                  secret?: string;
-                  userId?: string;
-                  verified?: null | boolean;
+                  createdAt?: number;
+                  expiresAt?: null | number;
+                  privateKey?: string;
+                  publicKey?: string;
                 };
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "secret"
-                    | "backupCodes"
-                    | "userId"
-                    | "verified"
-                    | "failedVerificationCount"
-                    | "lockedUntil"
+                    | "publicKey"
+                    | "privateKey"
+                    | "createdAt"
+                    | "expiresAt"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -1046,10 +1046,10 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                     | "image"
                     | "createdAt"
                     | "updatedAt"
+                    | "twoFactorEnabled"
                     | "userId"
                     | "phoneNumber"
                     | "phoneNumberVerified"
-                    | "twoFactorEnabled"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -1212,20 +1212,24 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "jwks";
+                model: "twoFactor";
                 update: {
-                  createdAt?: number;
-                  expiresAt?: null | number;
-                  privateKey?: string;
-                  publicKey?: string;
+                  backupCodes?: string;
+                  failedVerificationCount?: null | number;
+                  lockedUntil?: null | number;
+                  secret?: string;
+                  userId?: string;
+                  verified?: null | boolean;
                 };
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "publicKey"
-                    | "privateKey"
-                    | "createdAt"
-                    | "expiresAt"
+                    | "secret"
+                    | "backupCodes"
+                    | "userId"
+                    | "verified"
+                    | "failedVerificationCount"
+                    | "lockedUntil"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:
@@ -1250,24 +1254,20 @@ export type ComponentApi<Name extends string | undefined = string | undefined> =
                 }>;
               }
             | {
-                model: "twoFactor";
+                model: "jwks";
                 update: {
-                  backupCodes?: string;
-                  failedVerificationCount?: null | number;
-                  lockedUntil?: null | number;
-                  secret?: string;
-                  userId?: string;
-                  verified?: null | boolean;
+                  createdAt?: number;
+                  expiresAt?: null | number;
+                  privateKey?: string;
+                  publicKey?: string;
                 };
                 where?: Array<{
                   connector?: "AND" | "OR";
                   field:
-                    | "secret"
-                    | "backupCodes"
-                    | "userId"
-                    | "verified"
-                    | "failedVerificationCount"
-                    | "lockedUntil"
+                    | "publicKey"
+                    | "privateKey"
+                    | "createdAt"
+                    | "expiresAt"
                     | "_id";
                   mode?: "sensitive" | "insensitive";
                   operator?:

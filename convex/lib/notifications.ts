@@ -5,6 +5,7 @@ import {
   notificationConfig,
   type NotificationEvent,
 } from "./notificationConfig";
+import { queueInbox } from "./push";
 
 export async function notificationAudit(
   ctx: MutationCtx,
@@ -33,6 +34,11 @@ export async function queueNotification(
     revision: number;
   },
 ) {
+  await queueInbox(ctx, {
+    profileId: input.profileId,
+    event: input.event,
+    dedupKey: input.dedupKey,
+  });
   const existing = await ctx.db
     .query("smsNotifications")
     .withIndex("by_dedupKey", (q) => q.eq("dedupKey", input.dedupKey))

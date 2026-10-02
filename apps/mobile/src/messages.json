@@ -35,6 +35,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Cleaner Tomorrow in Motion"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "permissionBody": "Get updates about your pickups and applications on this device.",
+      "enable": "Enable",
+      "denied": "Notifications are blocked. Change this in your device or browser settings.",
+      "unavailable": "Notifications are not available here yet.",
+      "error": "Could not enable notifications. Try again.",
+      "lockscreenTitle": "Luma.Green update",
+      "lockscreenBody": "Open Luma.Green to view your update.",
+      "emptyTitle": "No updates yet",
+      "emptyBody": "Pickup and application updates will appear here.",
+      "markRead": "Mark read",
+      "markAllRead": "Read all",
+      "unread": "Unread",
+      "enabled": "Enabled on this device",
+      "disable": "Turn off",
+      "disabled": "Off on this device",
+      "deviceTitle": "This device",
+      "inboxTitle": "Your updates",
+      "loadMore": "Show more",
+      "events": {
+        "booking_confirmed": "Booking confirmed",
+        "booking_offer": "New pickup request",
+        "booking_accepted": "Pickup accepted",
+        "booking_reassigned": "Collector changed",
+        "application_received": "Application received",
+        "application_approved": "Application approved",
+        "application_changes_requested": "Application needs changes",
+        "application_rejected": "Application not approved"
+      }
     }
   },
   "hi": {
@@ -73,6 +104,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "स्वच्छ कल की ओर गतिमान"
+    },
+    "notifications": {
+      "title": "सूचनाएँ",
+      "permissionBody": "इस डिवाइस पर अपने पिकअप और आवेदनों की जानकारी पाएँ।",
+      "enable": "चालू करें",
+      "denied": "सूचनाएँ बंद हैं। इसे डिवाइस या ब्राउज़र की सेटिंग में बदलें।",
+      "unavailable": "यहाँ सूचनाएँ अभी उपलब्ध नहीं हैं।",
+      "error": "सूचनाएँ चालू नहीं हो सकीं। फिर कोशिश करें।",
+      "lockscreenTitle": "Luma.Green की सूचना",
+      "lockscreenBody": "नई जानकारी देखने के लिए Luma.Green खोलें।",
+      "emptyTitle": "अभी कोई अपडेट नहीं",
+      "emptyBody": "पिकअप और आवेदन की जानकारी यहाँ दिखाई देगी।",
+      "markRead": "पढ़ा चिह्नित करें",
+      "markAllRead": "सब पढ़ा चिह्नित करें",
+      "unread": "अपठित",
+      "enabled": "इस डिवाइस पर चालू है",
+      "disable": "बंद करें",
+      "disabled": "इस डिवाइस पर बंद है",
+      "deviceTitle": "यह डिवाइस",
+      "inboxTitle": "आपके अपडेट",
+      "loadMore": "और दिखाएँ",
+      "events": {
+        "booking_confirmed": "बुकिंग पक्की हुई",
+        "booking_offer": "पिकअप का नया अनुरोध",
+        "booking_accepted": "पिकअप स्वीकार हुआ",
+        "booking_reassigned": "संग्रहकर्ता बदला",
+        "application_received": "आवेदन मिला",
+        "application_approved": "आवेदन स्वीकृत",
+        "application_changes_requested": "आवेदन में बदलाव चाहिए",
+        "application_rejected": "आवेदन स्वीकृत नहीं हुआ"
+      }
     }
   },
   "bn": {
@@ -111,6 +173,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "পরিচ্ছন্ন আগামীর পথে এগিয়ে"
+    },
+    "notifications": {
+      "title": "বিজ্ঞপ্তি",
+      "permissionBody": "এই ডিভাইসে আপনার সংগ্রহ ও আবেদনের আপডেট পান।",
+      "enable": "চালু করুন",
+      "denied": "বিজ্ঞপ্তি বন্ধ আছে। ডিভাইস বা ব্রাউজারের সেটিংসে এটি বদলান।",
+      "unavailable": "এখানে বিজ্ঞপ্তি এখনও উপলব্ধ নয়।",
+      "error": "বিজ্ঞপ্তি চালু করা যায়নি। আবার চেষ্টা করুন।",
+      "lockscreenTitle": "Luma.Green-এর আপডেট",
+      "lockscreenBody": "আপডেট দেখতে Luma.Green খুলুন।",
+      "emptyTitle": "এখনও কোনো আপডেট নেই",
+      "emptyBody": "সংগ্রহ ও আবেদনের আপডেট এখানে দেখা যাবে।",
+      "markRead": "পড়া হয়েছে",
+      "markAllRead": "সব পড়া হয়েছে",
+      "unread": "অপঠিত",
+      "enabled": "এই ডিভাইসে চালু আছে",
+      "disable": "বন্ধ করুন",
+      "disabled": "এই ডিভাইসে বন্ধ আছে",
+      "deviceTitle": "এই ডিভাইস",
+      "inboxTitle": "আপনার আপডেট",
+      "loadMore": "আরও দেখুন",
+      "events": {
+        "booking_confirmed": "বুকিং নিশ্চিত হয়েছে",
+        "booking_offer": "নতুন সংগ্রহের অনুরোধ",
+        "booking_accepted": "সংগ্রহের অনুরোধ গৃহীত",
+        "booking_reassigned": "সংগ্রাহক পরিবর্তিত হয়েছে",
+        "application_received": "আবেদন পাওয়া গেছে",
+        "application_approved": "আবেদন অনুমোদিত",
+        "application_changes_requested": "আবেদনে পরিবর্তন দরকার",
+        "application_rejected": "আবেদন অনুমোদিত হয়নি"
+      }
     }
   },
   "mr": {
@@ -149,6 +242,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "स्वच्छ उद्याच्या दिशेने गतिमान"
+    },
+    "notifications": {
+      "title": "सूचना",
+      "permissionBody": "या उपकरणावर तुमच्या उचल सेवा आणि अर्जांची अद्यतने मिळवा.",
+      "enable": "सुरू करा",
+      "denied": "सूचना बंद आहेत. उपकरण किंवा ब्राउझरच्या सेटिंग्जमध्ये हे बदला.",
+      "unavailable": "येथे सूचना अद्याप उपलब्ध नाहीत.",
+      "error": "सूचना सुरू करता आल्या नाहीत. पुन्हा प्रयत्न करा.",
+      "lockscreenTitle": "Luma.Green कडून अद्यतन",
+      "lockscreenBody": "अद्यतन पाहण्यासाठी Luma.Green उघडा.",
+      "emptyTitle": "अद्याप कोणतेही अपडेट नाहीत",
+      "emptyBody": "पिकअप आणि अर्जाबद्दलचे अपडेट येथे दिसतील.",
+      "markRead": "वाचले म्हणून नोंदवा",
+      "markAllRead": "सर्व वाचले नोंदवा",
+      "unread": "न वाचलेले",
+      "enabled": "या डिव्हाइसवर सुरू आहे",
+      "disable": "बंद करा",
+      "disabled": "या डिव्हाइसवर बंद आहे",
+      "deviceTitle": "हे डिव्हाइस",
+      "inboxTitle": "तुमचे अपडेट",
+      "loadMore": "आणखी दाखवा",
+      "events": {
+        "booking_confirmed": "बुकिंग निश्चित झाले",
+        "booking_offer": "उचलण्याची नवीन विनंती",
+        "booking_accepted": "उचलण्याची विनंती स्वीकारली",
+        "booking_reassigned": "संकलक बदलला",
+        "application_received": "अर्ज मिळाला",
+        "application_approved": "अर्ज मंजूर",
+        "application_changes_requested": "अर्जात बदल आवश्यक",
+        "application_rejected": "अर्ज मंजूर झाला नाही"
+      }
     }
   },
   "ta": {
@@ -187,6 +311,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "தூய்மையான நாளை நோக்கி நகர்வு"
+    },
+    "notifications": {
+      "title": "அறிவிப்புகள்",
+      "permissionBody": "உங்கள் சேகரிப்புகள் மற்றும் விண்ணப்பங்கள் குறித்த தகவல்களை இந்தச் சாதனத்தில் பெறுங்கள்.",
+      "enable": "இயக்கு",
+      "denied": "அறிவிப்புகள் தடுக்கப்பட்டுள்ளன. சாதனம் அல்லது உலாவி அமைப்புகளில் இதை மாற்றுங்கள்.",
+      "unavailable": "இங்கு அறிவிப்புகள் இன்னும் கிடைக்கவில்லை.",
+      "error": "அறிவிப்புகளை இயக்க முடியவில்லை. மீண்டும் முயலுங்கள்.",
+      "lockscreenTitle": "Luma.Green தகவல்",
+      "lockscreenBody": "புதிய தகவலைப் பார்க்க Luma.Green திறக்கவும்.",
+      "emptyTitle": "இன்னும் புதுப்பிப்புகள் இல்லை",
+      "emptyBody": "சேகரிப்பு மற்றும் விண்ணப்பப் புதுப்பிப்புகள் இங்கே தோன்றும்.",
+      "markRead": "படித்ததாகக் குறி",
+      "markAllRead": "அனைத்தும் படித்தது",
+      "unread": "படிக்காதது",
+      "enabled": "இந்தச் சாதனத்தில் இயக்கப்பட்டது",
+      "disable": "முடக்கு",
+      "disabled": "இந்தச் சாதனத்தில் முடக்கப்பட்டது",
+      "deviceTitle": "இந்தச் சாதனம்",
+      "inboxTitle": "உங்கள் புதுப்பிப்புகள்",
+      "loadMore": "மேலும் காட்டு",
+      "events": {
+        "booking_confirmed": "முன்பதிவு உறுதியானது",
+        "booking_offer": "புதிய சேகரிப்புக் கோரிக்கை",
+        "booking_accepted": "சேகரிப்பு ஏற்கப்பட்டது",
+        "booking_reassigned": "சேகரிப்பவர் மாற்றப்பட்டார்",
+        "application_received": "விண்ணப்பம் பெறப்பட்டது",
+        "application_approved": "விண்ணப்பம் அங்கீகரிக்கப்பட்டது",
+        "application_changes_requested": "விண்ணப்பத்தில் மாற்றங்கள் தேவை",
+        "application_rejected": "விண்ணப்பம் அங்கீகரிக்கப்படவில்லை"
+      }
     }
   },
   "te": {
@@ -225,6 +380,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "స్వచ్ఛమైన రేపటి వైపు పయనం"
+    },
+    "notifications": {
+      "title": "నోటిఫికేషన్‌లు",
+      "permissionBody": "మీ పికప్‌లు, దరఖాస్తుల సమాచారం ఈ పరికరంలో పొందండి.",
+      "enable": "ఆన్ చేయండి",
+      "denied": "నోటిఫికేషన్‌లు నిరోధించబడ్డాయి. పరికరం లేదా బ్రౌజర్ సెట్టింగ్‌లలో దీన్ని మార్చండి.",
+      "unavailable": "ఇక్కడ నోటిఫికేషన్‌లు ఇంకా అందుబాటులో లేవు.",
+      "error": "నోటిఫికేషన్‌లను ఆన్ చేయలేకపోయాం. మళ్లీ ప్రయత్నించండి.",
+      "lockscreenTitle": "Luma.Green సమాచారం",
+      "lockscreenBody": "కొత్త సమాచారం కోసం Luma.Green తెరవండి.",
+      "emptyTitle": "ఇంకా అప్‌డేట్‌లు లేవు",
+      "emptyBody": "సేకరణ, దరఖాస్తు అప్‌డేట్‌లు ఇక్కడ కనిపిస్తాయి.",
+      "markRead": "చదివినట్లు గుర్తించు",
+      "markAllRead": "అన్నీ చదివినట్లు",
+      "unread": "చదవనివి",
+      "enabled": "ఈ పరికరంలో ప్రారంభించబడింది",
+      "disable": "ఆపివేయి",
+      "disabled": "ఈ పరికరంలో ఆపివేయబడింది",
+      "deviceTitle": "ఈ పరికరం",
+      "inboxTitle": "మీ అప్‌డేట్‌లు",
+      "loadMore": "మరిన్ని చూపించు",
+      "events": {
+        "booking_confirmed": "బుకింగ్ నిర్ధారించబడింది",
+        "booking_offer": "కొత్త సేకరణ అభ్యర్థన",
+        "booking_accepted": "సేకరణ అంగీకరించబడింది",
+        "booking_reassigned": "సేకరణదారు మారారు",
+        "application_received": "దరఖాస్తు అందింది",
+        "application_approved": "దరఖాస్తు ఆమోదించబడింది",
+        "application_changes_requested": "దరఖాస్తులో మార్పులు అవసరం",
+        "application_rejected": "దరఖాస్తు ఆమోదించబడలేదు"
+      }
     }
   },
   "kn": {
@@ -263,6 +449,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "ಸ್ವಚ್ಛ ನಾಳೆಯತ್ತ ಚಲನೆ"
+    },
+    "notifications": {
+      "title": "ಅಧಿಸೂಚನೆಗಳು",
+      "permissionBody": "ನಿಮ್ಮ ಸಂಗ್ರಹಣೆಗಳು ಮತ್ತು ಅರ್ಜಿಗಳ ಮಾಹಿತಿ ಈ ಸಾಧನದಲ್ಲಿ ಪಡೆಯಿರಿ.",
+      "enable": "ಸಕ್ರಿಯಗೊಳಿಸಿ",
+      "denied": "ಅಧಿಸೂಚನೆಗಳನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ. ಸಾಧನ ಅಥವಾ ಬ್ರೌಸರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಇದನ್ನು ಬದಲಿಸಿ.",
+      "unavailable": "ಇಲ್ಲಿ ಅಧಿಸೂಚನೆಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.",
+      "error": "ಅಧಿಸೂಚನೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+      "lockscreenTitle": "Luma.Green ಮಾಹಿತಿ",
+      "lockscreenBody": "ಹೊಸ ಮಾಹಿತಿ ನೋಡಲು Luma.Green ತೆರೆಯಿರಿ.",
+      "emptyTitle": "ಇನ್ನೂ ಯಾವುದೇ ಅಪ್‌ಡೇಟ್‌ಗಳಿಲ್ಲ",
+      "emptyBody": "ಸಂಗ್ರಹಣೆ ಮತ್ತು ಅರ್ಜಿಯ ಅಪ್‌ಡೇಟ್‌ಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.",
+      "markRead": "ಓದಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಿ",
+      "markAllRead": "ಎಲ್ಲವೂ ಓದಲಾಗಿದೆ",
+      "unread": "ಓದದಿರುವುದು",
+      "enabled": "ಈ ಸಾಧನದಲ್ಲಿ ಸಕ್ರಿಯವಾಗಿದೆ",
+      "disable": "ಆಫ್ ಮಾಡಿ",
+      "disabled": "ಈ ಸಾಧನದಲ್ಲಿ ಆಫ್ ಆಗಿದೆ",
+      "deviceTitle": "ಈ ಸಾಧನ",
+      "inboxTitle": "ನಿಮ್ಮ ಅಪ್‌ಡೇಟ್‌ಗಳು",
+      "loadMore": "ಇನ್ನಷ್ಟು ತೋರಿಸಿ",
+      "events": {
+        "booking_confirmed": "ಬುಕಿಂಗ್ ದೃಢಪಟ್ಟಿದೆ",
+        "booking_offer": "ಹೊಸ ಸಂಗ್ರಹಣೆ ವಿನಂತಿ",
+        "booking_accepted": "ಸಂಗ್ರಹಣೆ ಒಪ್ಪಲಾಗಿದೆ",
+        "booking_reassigned": "ಸಂಗ್ರಾಹಕರು ಬದಲಾಗಿದ್ದಾರೆ",
+        "application_received": "ಅರ್ಜಿ ಸ್ವೀಕರಿಸಲಾಗಿದೆ",
+        "application_approved": "ಅರ್ಜಿ ಅನುಮೋದಿಸಲಾಗಿದೆ",
+        "application_changes_requested": "ಅರ್ಜಿಯಲ್ಲಿ ಬದಲಾವಣೆ ಬೇಕು",
+        "application_rejected": "ಅರ್ಜಿ ಅನುಮೋದನೆಯಾಗಿಲ್ಲ"
+      }
     }
   },
   "ml": {
@@ -301,6 +518,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "ശുദ്ധമായ നാളെയിലേക്ക് ചലനം"
+    },
+    "notifications": {
+      "title": "അറിയിപ്പുകൾ",
+      "permissionBody": "നിങ്ങളുടെ ശേഖരണങ്ങളുടെയും അപേക്ഷകളുടെയും വിവരങ്ങൾ ഈ ഉപകരണത്തിൽ ലഭിക്കും.",
+      "enable": "ഓണാക്കുക",
+      "denied": "അറിയിപ്പുകൾ തടഞ്ഞിരിക്കുന്നു. ഉപകരണത്തിന്റെയോ ബ്രൗസറിന്റെയോ ക്രമീകരണങ്ങളിൽ ഇത് മാറ്റുക.",
+      "unavailable": "ഇവിടെ അറിയിപ്പുകൾ ഇതുവരെ ലഭ്യമല്ല.",
+      "error": "അറിയിപ്പുകൾ ഓണാക്കാനായില്ല. വീണ്ടും ശ്രമിക്കുക.",
+      "lockscreenTitle": "Luma.Green അറിയിപ്പ്",
+      "lockscreenBody": "പുതിയ വിവരം കാണാൻ Luma.Green തുറക്കുക.",
+      "emptyTitle": "ഇതുവരെ അപ്‌ഡേറ്റുകളില്ല",
+      "emptyBody": "ശേഖരണവും അപേക്ഷയും സംബന്ധിച്ച അപ്‌ഡേറ്റുകൾ ഇവിടെ കാണാം.",
+      "markRead": "വായിച്ചതായി അടയാളപ്പെടുത്തുക",
+      "markAllRead": "എല്ലാം വായിച്ചതായി",
+      "unread": "വായിക്കാത്തത്",
+      "enabled": "ഈ ഉപകരണത്തിൽ പ്രവർത്തിക്കുന്നു",
+      "disable": "ഓഫ് ചെയ്യുക",
+      "disabled": "ഈ ഉപകരണത്തിൽ ഓഫ് ആണ്",
+      "deviceTitle": "ഈ ഉപകരണം",
+      "inboxTitle": "നിങ്ങളുടെ അപ്‌ഡേറ്റുകൾ",
+      "loadMore": "കൂടുതൽ കാണിക്കുക",
+      "events": {
+        "booking_confirmed": "ബുക്കിംഗ് സ്ഥിരീകരിച്ചു",
+        "booking_offer": "പുതിയ ശേഖരണ അഭ്യർഥന",
+        "booking_accepted": "ശേഖരണം സ്വീകരിച്ചു",
+        "booking_reassigned": "ശേഖരിക്കുന്നയാൾ മാറി",
+        "application_received": "അപേക്ഷ ലഭിച്ചു",
+        "application_approved": "അപേക്ഷ അംഗീകരിച്ചു",
+        "application_changes_requested": "അപേക്ഷയിൽ മാറ്റങ്ങൾ വേണം",
+        "application_rejected": "അപേക്ഷ അംഗീകരിച്ചില്ല"
+      }
     }
   },
   "gu": {
@@ -339,6 +587,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "સ્વચ્છ આવતીકાલ તરફ ગતિમાન"
+    },
+    "notifications": {
+      "title": "સૂચનાઓ",
+      "permissionBody": "આ ઉપકરણ પર તમારા પિકઅપ અને અરજીઓની માહિતી મેળવો.",
+      "enable": "ચાલુ કરો",
+      "denied": "સૂચનાઓ અવરોધિત છે. ઉપકરણ અથવા બ્રાઉઝરની સેટિંગ્સમાં આ બદલો.",
+      "unavailable": "અહીં સૂચનાઓ હજી ઉપલબ્ધ નથી.",
+      "error": "સૂચનાઓ ચાલુ કરી શકાઈ નથી. ફરી પ્રયાસ કરો.",
+      "lockscreenTitle": "Luma.Greenની માહિતી",
+      "lockscreenBody": "નવી માહિતી જોવા માટે Luma.Green ખોલો.",
+      "emptyTitle": "હજુ કોઈ અપડેટ નથી",
+      "emptyBody": "સંગ્રહ અને અરજીના અપડેટ અહીં દેખાશે.",
+      "markRead": "વાંચેલું ચિહ્નિત કરો",
+      "markAllRead": "બધાં વાંચેલાં કરો",
+      "unread": "ન વાંચેલું",
+      "enabled": "આ ઉપકરણ પર ચાલુ છે",
+      "disable": "બંધ કરો",
+      "disabled": "આ ઉપકરણ પર બંધ છે",
+      "deviceTitle": "આ ઉપકરણ",
+      "inboxTitle": "તમારા અપડેટ",
+      "loadMore": "વધુ બતાવો",
+      "events": {
+        "booking_confirmed": "બુકિંગની પુષ્ટિ થઈ",
+        "booking_offer": "સંગ્રહની નવી વિનંતી",
+        "booking_accepted": "સંગ્રહ સ્વીકારાયો",
+        "booking_reassigned": "સંગ્રહકર્તા બદલાયા",
+        "application_received": "અરજી મળી",
+        "application_approved": "અરજી મંજૂર થઈ",
+        "application_changes_requested": "અરજીમાં ફેરફાર જરૂરી",
+        "application_rejected": "અરજી મંજૂર થઈ નથી"
+      }
     }
   },
   "pa": {
@@ -377,6 +656,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "ਸਾਫ਼ ਕੱਲ੍ਹ ਵੱਲ ਗਤੀਸ਼ੀਲ"
+    },
+    "notifications": {
+      "title": "ਸੂਚਨਾਵਾਂ",
+      "permissionBody": "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਆਪਣੇ ਪਿਕਅੱਪ ਅਤੇ ਅਰਜ਼ੀਆਂ ਦੀ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕਰੋ।",
+      "enable": "ਚਾਲੂ ਕਰੋ",
+      "denied": "ਸੂਚਨਾਵਾਂ ਰੋਕੀਆਂ ਹੋਈਆਂ ਹਨ। ਡਿਵਾਈਸ ਜਾਂ ਬ੍ਰਾਊਜ਼ਰ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇਸ ਨੂੰ ਬਦਲੋ।",
+      "unavailable": "ਇੱਥੇ ਸੂਚਨਾਵਾਂ ਅਜੇ ਉਪਲਬਧ ਨਹੀਂ ਹਨ।",
+      "error": "ਸੂਚਨਾਵਾਂ ਚਾਲੂ ਨਹੀਂ ਹੋ ਸਕੀਆਂ। ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+      "lockscreenTitle": "Luma.Green ਦੀ ਸੂਚਨਾ",
+      "lockscreenBody": "ਨਵੀਂ ਜਾਣਕਾਰੀ ਦੇਖਣ ਲਈ Luma.Green ਖੋਲ੍ਹੋ।",
+      "emptyTitle": "ਅਜੇ ਕੋਈ ਅੱਪਡੇਟ ਨਹੀਂ",
+      "emptyBody": "ਸਾਮਾਨ ਚੁੱਕਣ ਅਤੇ ਅਰਜ਼ੀ ਦੇ ਅੱਪਡੇਟ ਇੱਥੇ ਦਿਖਣਗੇ।",
+      "markRead": "ਪੜ੍ਹਿਆ ਚਿੰਨ੍ਹਿਤ ਕਰੋ",
+      "markAllRead": "ਸਭ ਪੜ੍ਹੇ ਚਿੰਨ੍ਹਿਤ ਕਰੋ",
+      "unread": "ਨਾ ਪੜ੍ਹਿਆ",
+      "enabled": "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਚਾਲੂ ਹੈ",
+      "disable": "ਬੰਦ ਕਰੋ",
+      "disabled": "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਬੰਦ ਹੈ",
+      "deviceTitle": "ਇਹ ਡਿਵਾਈਸ",
+      "inboxTitle": "ਤੁਹਾਡੇ ਅੱਪਡੇਟ",
+      "loadMore": "ਹੋਰ ਦਿਖਾਓ",
+      "events": {
+        "booking_confirmed": "ਬੁਕਿੰਗ ਪੱਕੀ ਹੋਈ",
+        "booking_offer": "ਚੁੱਕਣ ਦੀ ਨਵੀਂ ਬੇਨਤੀ",
+        "booking_accepted": "ਚੁੱਕਣ ਦੀ ਬੇਨਤੀ ਮਨਜ਼ੂਰ",
+        "booking_reassigned": "ਇਕੱਠਾ ਕਰਨ ਵਾਲਾ ਬਦਲਿਆ",
+        "application_received": "ਅਰਜ਼ੀ ਮਿਲੀ",
+        "application_approved": "ਅਰਜ਼ੀ ਮਨਜ਼ੂਰ ਹੋਈ",
+        "application_changes_requested": "ਅਰਜ਼ੀ ਵਿੱਚ ਬਦਲਾਅ ਚਾਹੀਦੇ ਹਨ",
+        "application_rejected": "ਅਰਜ਼ੀ ਮਨਜ਼ੂਰ ਨਹੀਂ ਹੋਈ"
+      }
     }
   },
   "ur": {
@@ -415,6 +725,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "صاف ستھرے کل کی جانب رواں"
+    },
+    "notifications": {
+      "title": "اطلاعات",
+      "permissionBody": "اس آلے پر اپنی پک اپ سروس اور درخواستوں کی تازہ معلومات حاصل کریں۔",
+      "enable": "فعال کریں",
+      "denied": "اطلاعات بند ہیں۔ آلے یا براؤزر کی ترتیبات میں اسے تبدیل کریں۔",
+      "unavailable": "یہاں اطلاعات ابھی دستیاب نہیں ہیں۔",
+      "error": "اطلاعات فعال نہیں ہو سکیں۔ دوبارہ کوشش کریں۔",
+      "lockscreenTitle": "Luma.Green کی اطلاع",
+      "lockscreenBody": "تازہ معلومات دیکھنے کے لیے Luma.Green کھولیں۔",
+      "emptyTitle": "ابھی کوئی نئی اطلاع نہیں",
+      "emptyBody": "سامان کی وصولی اور شمولیت کی درخواست کی تازہ معلومات یہاں نظر آئیں گی۔",
+      "markRead": "پڑھا ہوا نشان لگائیں",
+      "markAllRead": "سب پڑھا ہوا کریں",
+      "unread": "بغیر پڑھا",
+      "enabled": "اس آلے پر فعال ہے",
+      "disable": "بند کریں",
+      "disabled": "اس آلے پر بند ہے",
+      "deviceTitle": "یہ آلہ",
+      "inboxTitle": "آپ کی تازہ اطلاعات",
+      "loadMore": "مزید دکھائیں",
+      "events": {
+        "booking_confirmed": "بکنگ کی تصدیق ہوگئی",
+        "booking_offer": "اٹھانے کی نئی درخواست",
+        "booking_accepted": "اٹھانے کی درخواست قبول ہوگئی",
+        "booking_reassigned": "جمع کرنے والا تبدیل ہوگیا",
+        "application_received": "درخواست موصول ہوگئی",
+        "application_approved": "درخواست منظور ہوگئی",
+        "application_changes_requested": "درخواست میں تبدیلی درکار ہے",
+        "application_rejected": "درخواست منظور نہیں ہوئی"
+      }
     }
   },
   "ar": {
@@ -453,6 +794,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "نحو غدٍ أنظف، في حركة دائمة"
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "permissionBody": "تلقَّ تحديثات حول عمليات الاستلام وطلبات الانضمام على هذا الجهاز.",
+      "enable": "تفعيل",
+      "denied": "الإشعارات محظورة. غيّر ذلك في إعدادات الجهاز أو المتصفح.",
+      "unavailable": "الإشعارات غير متاحة هنا بعد.",
+      "error": "تعذّر تفعيل الإشعارات. حاول مرة أخرى.",
+      "lockscreenTitle": "تحديث من Luma.Green",
+      "lockscreenBody": "افتح Luma.Green للاطلاع على التحديث.",
+      "emptyTitle": "لا توجد تحديثات بعد",
+      "emptyBody": "ستظهر هنا تحديثات الاستلام وطلبات الانضمام.",
+      "markRead": "تحديد كمقروء",
+      "markAllRead": "تحديد الكل كمقروء",
+      "unread": "غير مقروء",
+      "enabled": "مفعّلة على هذا الجهاز",
+      "disable": "إيقاف",
+      "disabled": "متوقفة على هذا الجهاز",
+      "deviceTitle": "هذا الجهاز",
+      "inboxTitle": "تحديثاتك",
+      "loadMore": "عرض المزيد",
+      "events": {
+        "booking_confirmed": "تم تأكيد الحجز",
+        "booking_offer": "طلب استلام جديد",
+        "booking_accepted": "تم قبول الاستلام",
+        "booking_reassigned": "تم تغيير جامع المواد",
+        "application_received": "تم استلام الطلب",
+        "application_approved": "تمت الموافقة على الطلب",
+        "application_changes_requested": "الطلب يحتاج إلى تعديلات",
+        "application_rejected": "لم تتم الموافقة على الطلب"
+      }
     }
   },
   "as": {
@@ -491,6 +863,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "স্বচ্ছ ভৱিষ্যতৰ দিশে আগবাঢ়ি"
+    },
+    "notifications": {
+      "title": "জাননী",
+      "permissionBody": "এই ডিভাইচত আপোনাৰ সংগ্ৰহ আৰু আবেদনৰ নতুন তথ্য পাওক।",
+      "enable": "চালু কৰক",
+      "denied": "জাননী বন্ধ কৰা আছে। ডিভাইচ বা ব্ৰাউজাৰৰ ছেটিংছত ইয়াক সলনি কৰক।",
+      "unavailable": "ইয়াত জাননী এতিয়াও উপলব্ধ নহয়।",
+      "error": "জাননী চালু কৰিব পৰা নগ'ল। আকৌ চেষ্টা কৰক।",
+      "lockscreenTitle": "Luma.Greenৰ নতুন তথ্য",
+      "lockscreenBody": "নতুন তথ্য চাবলৈ Luma.Green খোলক।",
+      "emptyTitle": "এতিয়ালৈ কোনো আপডেট নাই",
+      "emptyBody": "সংগ্ৰহ আৰু আবেদনৰ আপডেট ইয়াত দেখা যাব।",
+      "markRead": "পঢ়া বুলি চিহ্নিত কৰক",
+      "markAllRead": "সকলো পঢ়া বুলি কৰক",
+      "unread": "নপঢ়া",
+      "enabled": "এই ডিভাইচত চালু আছে",
+      "disable": "বন্ধ কৰক",
+      "disabled": "এই ডিভাইচত বন্ধ আছে",
+      "deviceTitle": "এই ডিভাইচ",
+      "inboxTitle": "আপোনাৰ আপডেট",
+      "loadMore": "আৰু দেখুৱাওক",
+      "events": {
+        "booking_confirmed": "বুকিং নিশ্চিত হৈছে",
+        "booking_offer": "সংগ্ৰহৰ নতুন অনুৰোধ",
+        "booking_accepted": "সংগ্ৰহৰ অনুৰোধ গ্ৰহণ কৰা হৈছে",
+        "booking_reassigned": "সংগ্ৰাহক সলনি হৈছে",
+        "application_received": "আবেদন পোৱা গৈছে",
+        "application_approved": "আবেদন অনুমোদিত হৈছে",
+        "application_changes_requested": "আবেদনত সালসলনি লাগে",
+        "application_rejected": "আবেদন অনুমোদিত হোৱা নাই"
+      }
     }
   },
   "ne": {
@@ -529,6 +932,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "स्वच्छ भोलिका लागि अघि बढ्दै"
+    },
+    "notifications": {
+      "title": "सूचनाहरू",
+      "permissionBody": "यस उपकरणमा आफ्नो सङ्कलन सेवा र आवेदनका अद्यावधिकहरू पाउनुहोस्।",
+      "enable": "खोल्नुहोस्",
+      "denied": "सूचनाहरू रोकिएका छन्। उपकरण वा ब्राउजरका सेटिङमा यसलाई बदल्नुहोस्।",
+      "unavailable": "यहाँ सूचनाहरू अझै उपलब्ध छैनन्।",
+      "error": "सूचनाहरू सक्रिय गर्न सकिएन। फेरि प्रयास गर्नुहोस्।",
+      "lockscreenTitle": "Luma.Green को अद्यावधिक",
+      "lockscreenBody": "नयाँ जानकारी हेर्न Luma.Green खोल्नुहोस्।",
+      "emptyTitle": "अहिलेसम्म कुनै अपडेट छैन",
+      "emptyBody": "सङ्कलन र आवेदनका अपडेटहरू यहाँ देखिनेछन्।",
+      "markRead": "पढेको चिन्ह लगाउनुहोस्",
+      "markAllRead": "सबै पढेको बनाउनुहोस्",
+      "unread": "नपढेको",
+      "enabled": "यो उपकरणमा सक्रिय छ",
+      "disable": "बन्द गर्नुहोस्",
+      "disabled": "यो उपकरणमा बन्द छ",
+      "deviceTitle": "यो उपकरण",
+      "inboxTitle": "तपाईंका अपडेटहरू",
+      "loadMore": "थप देखाउनुहोस्",
+      "events": {
+        "booking_confirmed": "बुकिङ पुष्टि भयो",
+        "booking_offer": "सङ्कलनको नयाँ अनुरोध",
+        "booking_accepted": "सङ्कलन स्वीकार भयो",
+        "booking_reassigned": "सङ्कलक परिवर्तन भयो",
+        "application_received": "आवेदन प्राप्त भयो",
+        "application_approved": "आवेदन स्वीकृत भयो",
+        "application_changes_requested": "आवेदनमा परिवर्तन चाहिन्छ",
+        "application_rejected": "आवेदन स्वीकृत भएन"
+      }
     }
   },
   "es": {
@@ -567,6 +1001,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Un mañana más limpio en marcha"
+    },
+    "notifications": {
+      "title": "Notificaciones",
+      "permissionBody": "Recibe novedades sobre tus recogidas y solicitudes en este dispositivo.",
+      "enable": "Activar",
+      "denied": "Las notificaciones están bloqueadas. Cámbialo en los ajustes del dispositivo o del navegador.",
+      "unavailable": "Las notificaciones aún no están disponibles aquí.",
+      "error": "No se pudieron activar las notificaciones. Inténtalo de nuevo.",
+      "lockscreenTitle": "Novedad de Luma.Green",
+      "lockscreenBody": "Abre Luma.Green para ver la novedad.",
+      "emptyTitle": "Aún no hay novedades",
+      "emptyBody": "Aquí aparecerán las novedades sobre recogidas y solicitudes.",
+      "markRead": "Marcar leído",
+      "markAllRead": "Leer todo",
+      "unread": "Sin leer",
+      "enabled": "Activadas en este dispositivo",
+      "disable": "Desactivar",
+      "disabled": "Desactivadas en este dispositivo",
+      "deviceTitle": "Este dispositivo",
+      "inboxTitle": "Tus novedades",
+      "loadMore": "Mostrar más",
+      "events": {
+        "booking_confirmed": "Reserva confirmada",
+        "booking_offer": "Nueva solicitud de recogida",
+        "booking_accepted": "Recogida aceptada",
+        "booking_reassigned": "Recolector cambiado",
+        "application_received": "Solicitud recibida",
+        "application_approved": "Solicitud aprobada",
+        "application_changes_requested": "La solicitud necesita cambios",
+        "application_rejected": "Solicitud no aprobada"
+      }
     }
   },
   "fr": {
@@ -605,6 +1070,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Un avenir plus propre en mouvement"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "permissionBody": "Recevez les nouvelles de vos collectes et demandes sur cet appareil.",
+      "enable": "Activer",
+      "denied": "Les notifications sont bloquées. Modifiez ce réglage dans les paramètres de votre appareil ou navigateur.",
+      "unavailable": "Les notifications ne sont pas encore disponibles ici.",
+      "error": "Impossible d’activer les notifications. Réessayez.",
+      "lockscreenTitle": "Nouvelle de Luma.Green",
+      "lockscreenBody": "Ouvrez Luma.Green pour consulter la nouvelle.",
+      "emptyTitle": "Aucune nouvelle pour le moment",
+      "emptyBody": "Les nouvelles concernant vos collectes et vos candidatures apparaîtront ici.",
+      "markRead": "Marquer comme lu",
+      "markAllRead": "Tout marquer lu",
+      "unread": "Non lu",
+      "enabled": "Activées sur cet appareil",
+      "disable": "Désactiver",
+      "disabled": "Désactivées sur cet appareil",
+      "deviceTitle": "Cet appareil",
+      "inboxTitle": "Vos nouvelles",
+      "loadMore": "Afficher plus",
+      "events": {
+        "booking_confirmed": "Réservation confirmée",
+        "booking_offer": "Nouvelle demande de collecte",
+        "booking_accepted": "Collecte acceptée",
+        "booking_reassigned": "Collecteur modifié",
+        "application_received": "Candidature reçue",
+        "application_approved": "Candidature approuvée",
+        "application_changes_requested": "Candidature à modifier",
+        "application_rejected": "Candidature non approuvée"
+      }
     }
   },
   "vi": {
@@ -643,6 +1139,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Cùng hướng tới ngày mai xanh sạch hơn"
+    },
+    "notifications": {
+      "title": "Thông báo",
+      "permissionBody": "Nhận cập nhật về các lần thu gom và đơn đăng ký trên thiết bị này.",
+      "enable": "Bật",
+      "denied": "Thông báo đã bị chặn. Hãy đổi trong phần cài đặt của thiết bị hoặc trình duyệt.",
+      "unavailable": "Thông báo chưa khả dụng tại đây.",
+      "error": "Không thể bật thông báo. Hãy thử lại.",
+      "lockscreenTitle": "Cập nhật từ Luma.Green",
+      "lockscreenBody": "Mở Luma.Green để xem cập nhật.",
+      "emptyTitle": "Chưa có cập nhật",
+      "emptyBody": "Thông tin cập nhật về lịch thu gom và đơn đăng ký sẽ xuất hiện tại đây.",
+      "markRead": "Đánh dấu đã đọc",
+      "markAllRead": "Đọc tất cả",
+      "unread": "Chưa đọc",
+      "enabled": "Đã bật trên thiết bị này",
+      "disable": "Tắt",
+      "disabled": "Đã tắt trên thiết bị này",
+      "deviceTitle": "Thiết bị này",
+      "inboxTitle": "Cập nhật của bạn",
+      "loadMore": "Xem thêm",
+      "events": {
+        "booking_confirmed": "Đã xác nhận đặt lịch",
+        "booking_offer": "Yêu cầu thu gom mới",
+        "booking_accepted": "Đã chấp nhận thu gom",
+        "booking_reassigned": "Đã đổi người thu gom",
+        "application_received": "Đã nhận đơn",
+        "application_approved": "Đơn đã được duyệt",
+        "application_changes_requested": "Đơn cần chỉnh sửa",
+        "application_rejected": "Đơn chưa được duyệt"
+      }
     }
   },
   "si": {
@@ -681,6 +1208,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "පිරිසිදු හෙටක් කරා ඉදිරියට"
+    },
+    "notifications": {
+      "title": "දැනුම්දීම්",
+      "permissionBody": "ඔබේ එකතු කිරීම් සහ අයදුම්පත් පිළිබඳ අලුත් තොරතුරු මෙම උපාංගයෙන් ලබා ගන්න.",
+      "enable": "සක්‍රිය කරන්න",
+      "denied": "දැනුම්දීම් අවහිර කර ඇත. උපාංගයේ හෝ බ්‍රවුසරයේ සැකසුම් තුළ මෙය වෙනස් කරන්න.",
+      "unavailable": "මෙහි දැනුම්දීම් තවම ලබා ගත නොහැක.",
+      "error": "දැනුම්දීම් සක්‍රිය කළ නොහැකි විය. නැවත උත්සාහ කරන්න.",
+      "lockscreenTitle": "Luma.Green වෙතින් තොරතුරක්",
+      "lockscreenBody": "අලුත් තොරතුරු බැලීමට Luma.Green විවෘත කරන්න.",
+      "emptyTitle": "තවම යාවත්කාලීන නැත",
+      "emptyBody": "එකතු කිරීම් සහ අයදුම්පත් පිළිබඳ යාවත්කාලීන මෙහි දිස් වේ.",
+      "markRead": "කියවූ ලෙස ලකුණු කරන්න",
+      "markAllRead": "සියල්ල කියවූ ලෙස",
+      "unread": "නොකියවූ",
+      "enabled": "මෙම උපාංගයේ සක්‍රියයි",
+      "disable": "අක්‍රිය කරන්න",
+      "disabled": "මෙම උපාංගයේ අක්‍රියයි",
+      "deviceTitle": "මෙම උපාංගය",
+      "inboxTitle": "ඔබේ යාවත්කාලීන",
+      "loadMore": "තවත් පෙන්වන්න",
+      "events": {
+        "booking_confirmed": "වෙන්කිරීම තහවුරු විය",
+        "booking_offer": "නව එකතු කිරීමේ ඉල්ලීමක්",
+        "booking_accepted": "එකතු කිරීම පිළිගන්නා ලදී",
+        "booking_reassigned": "එකතු කරන්නා වෙනස් විය",
+        "application_received": "අයදුම්පත ලැබුණි",
+        "application_approved": "අයදුම්පත අනුමත විය",
+        "application_changes_requested": "අයදුම්පතේ වෙනස්කම් අවශ්‍යයි",
+        "application_rejected": "අයදුම්පත අනුමත නොවීය"
+      }
     }
   },
   "th": {
@@ -719,6 +1277,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "ขับเคลื่อนสู่วันพรุ่งนี้ที่สะอาดกว่า"
+    },
+    "notifications": {
+      "title": "การแจ้งเตือน",
+      "permissionBody": "รับข้อมูลอัปเดตเกี่ยวกับการรับวัสดุและใบสมัครของคุณบนอุปกรณ์นี้",
+      "enable": "เปิดใช้",
+      "denied": "การแจ้งเตือนถูกบล็อก โปรดเปลี่ยนในการตั้งค่าอุปกรณ์หรือเบราว์เซอร์",
+      "unavailable": "ยังไม่สามารถใช้การแจ้งเตือนได้ที่นี่",
+      "error": "เปิดใช้การแจ้งเตือนไม่สำเร็จ โปรดลองอีกครั้ง",
+      "lockscreenTitle": "อัปเดตจาก Luma.Green",
+      "lockscreenBody": "เปิด Luma.Green เพื่อดูข้อมูลอัปเดต",
+      "emptyTitle": "ยังไม่มีข้อมูลอัปเดต",
+      "emptyBody": "ข้อมูลอัปเดตการรับวัสดุและใบสมัครจะแสดงที่นี่",
+      "markRead": "ทำเครื่องหมายว่าอ่านแล้ว",
+      "markAllRead": "อ่านแล้วทั้งหมด",
+      "unread": "ยังไม่อ่าน",
+      "enabled": "เปิดใช้งานบนอุปกรณ์นี้",
+      "disable": "ปิด",
+      "disabled": "ปิดใช้งานบนอุปกรณ์นี้",
+      "deviceTitle": "อุปกรณ์นี้",
+      "inboxTitle": "ข้อมูลอัปเดตของคุณ",
+      "loadMore": "แสดงเพิ่มเติม",
+      "events": {
+        "booking_confirmed": "ยืนยันการจองแล้ว",
+        "booking_offer": "คำขอรับวัสดุใหม่",
+        "booking_accepted": "ยอมรับการรับวัสดุแล้ว",
+        "booking_reassigned": "เปลี่ยนผู้รับวัสดุแล้ว",
+        "application_received": "ได้รับใบสมัครแล้ว",
+        "application_approved": "อนุมัติใบสมัครแล้ว",
+        "application_changes_requested": "ใบสมัครต้องแก้ไข",
+        "application_rejected": "ใบสมัครไม่ได้รับอนุมัติ"
+      }
     }
   },
   "ru": {
@@ -757,6 +1346,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "В движении к чистому завтра"
+    },
+    "notifications": {
+      "title": "Уведомления",
+      "permissionBody": "Получайте новости о вывозе сырья и ваших заявках на этом устройстве.",
+      "enable": "Включить",
+      "denied": "Уведомления заблокированы. Измените это в настройках устройства или браузера.",
+      "unavailable": "Уведомления здесь пока недоступны.",
+      "error": "Не удалось включить уведомления. Попробуйте ещё раз.",
+      "lockscreenTitle": "Новость от Luma.Green",
+      "lockscreenBody": "Откройте Luma.Green, чтобы посмотреть обновление.",
+      "emptyTitle": "Обновлений пока нет",
+      "emptyBody": "Здесь появятся обновления по вывозу и заявкам.",
+      "markRead": "Прочитано",
+      "markAllRead": "Прочитать всё",
+      "unread": "Не прочитано",
+      "enabled": "Включены на этом устройстве",
+      "disable": "Выключить",
+      "disabled": "Выключены на этом устройстве",
+      "deviceTitle": "Это устройство",
+      "inboxTitle": "Ваши обновления",
+      "loadMore": "Показать ещё",
+      "events": {
+        "booking_confirmed": "Бронирование подтверждено",
+        "booking_offer": "Новая заявка на вывоз",
+        "booking_accepted": "Вывоз принят",
+        "booking_reassigned": "Сборщик изменён",
+        "application_received": "Заявка получена",
+        "application_approved": "Заявка одобрена",
+        "application_changes_requested": "Заявка требует изменений",
+        "application_rejected": "Заявка не одобрена"
+      }
     }
   },
   "de": {
@@ -795,6 +1415,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Eine sauberere Zukunft in Bewegung"
+    },
+    "notifications": {
+      "title": "Mitteilungen",
+      "permissionBody": "Erhalte auf diesem Gerät Neues zu deinen Abholungen und Anträgen.",
+      "enable": "Aktivieren",
+      "denied": "Mitteilungen sind blockiert. Ändere dies in den Geräte- oder Browsereinstellungen.",
+      "unavailable": "Mitteilungen sind hier noch nicht verfügbar.",
+      "error": "Mitteilungen konnten nicht aktiviert werden. Versuche es erneut.",
+      "lockscreenTitle": "Neues von Luma.Green",
+      "lockscreenBody": "Öffne Luma.Green, um die Neuigkeit anzusehen.",
+      "emptyTitle": "Noch keine Neuigkeiten",
+      "emptyBody": "Neuigkeiten zu Abholungen und Anträgen erscheinen hier.",
+      "markRead": "Als gelesen markieren",
+      "markAllRead": "Alle als gelesen",
+      "unread": "Ungelesen",
+      "enabled": "Auf diesem Gerät aktiviert",
+      "disable": "Ausschalten",
+      "disabled": "Auf diesem Gerät ausgeschaltet",
+      "deviceTitle": "Dieses Gerät",
+      "inboxTitle": "Deine Neuigkeiten",
+      "loadMore": "Mehr anzeigen",
+      "events": {
+        "booking_confirmed": "Buchung bestätigt",
+        "booking_offer": "Neue Abholanfrage",
+        "booking_accepted": "Abholung angenommen",
+        "booking_reassigned": "Abholer geändert",
+        "application_received": "Antrag eingegangen",
+        "application_approved": "Antrag genehmigt",
+        "application_changes_requested": "Antrag muss geändert werden",
+        "application_rejected": "Antrag nicht genehmigt"
+      }
     }
   },
   "or": {
@@ -833,6 +1484,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "ସ୍ୱଚ୍ଛ ଆଗାମୀ ପାଇଁ ଆଗକୁ"
+    },
+    "notifications": {
+      "title": "ବିଜ୍ଞପ୍ତି",
+      "permissionBody": "ଏହି ଡିଭାଇସ୍‌ରେ ଆପଣଙ୍କ ସଂଗ୍ରହ ଓ ଆବେଦନ ବିଷୟରେ ନୂଆ ସୂଚନା ପାଆନ୍ତୁ।",
+      "enable": "ଚାଲୁ କରନ୍ତୁ",
+      "denied": "ବିଜ୍ଞପ୍ତି ବନ୍ଦ ଅଛି। ଡିଭାଇସ୍ କିମ୍ବା ବ୍ରାଉଜର୍ ସେଟିଂରେ ଏହା ବଦଳାନ୍ତୁ।",
+      "unavailable": "ଏଠାରେ ବିଜ୍ଞପ୍ତି ଏପର୍ଯ୍ୟନ୍ତ ଉପଲବ୍ଧ ନାହିଁ।",
+      "error": "ବିଜ୍ଞପ୍ତି ଚାଲୁ ହୋଇପାରିଲା ନାହିଁ। ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।",
+      "lockscreenTitle": "Luma.Greenର ନୂଆ ସୂଚନା",
+      "lockscreenBody": "ନୂଆ ସୂଚନା ଦେଖିବାକୁ Luma.Green ଖୋଲନ୍ତୁ।",
+      "emptyTitle": "ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଅପଡେଟ୍ ନାହିଁ",
+      "emptyBody": "ସଂଗ୍ରହ ଓ ଆବେଦନର ଅପଡେଟ୍ ଏଠାରେ ଦେଖାଯିବ।",
+      "markRead": "ପଢ଼ା ଭାବେ ଚିହ୍ନଟ କରନ୍ତୁ",
+      "markAllRead": "ସବୁ ପଢ଼ା ଭାବେ କରନ୍ତୁ",
+      "unread": "ପଢ଼ାଯାଇନି",
+      "enabled": "ଏହି ଡିଭାଇସରେ ଚାଲୁ ଅଛି",
+      "disable": "ବନ୍ଦ କରନ୍ତୁ",
+      "disabled": "ଏହି ଡିଭାଇସରେ ବନ୍ଦ ଅଛି",
+      "deviceTitle": "ଏହି ଡିଭାଇସ",
+      "inboxTitle": "ଆପଣଙ୍କ ଅପଡେଟ୍",
+      "loadMore": "ଆହୁରି ଦେଖାନ୍ତୁ",
+      "events": {
+        "booking_confirmed": "ବୁକିଂ ନିଶ୍ଚିତ ହୋଇଛି",
+        "booking_offer": "ନୂଆ ସଂଗ୍ରହ ଅନୁରୋଧ",
+        "booking_accepted": "ସଂଗ୍ରହ ଗ୍ରହଣ କରାଗଲା",
+        "booking_reassigned": "ସଂଗ୍ରହକାରୀ ବଦଳିଛନ୍ତି",
+        "application_received": "ଆବେଦନ ମିଳିଛି",
+        "application_approved": "ଆବେଦନ ଅନୁମୋଦିତ",
+        "application_changes_requested": "ଆବେଦନରେ ପରିବର୍ତ୍ତନ ଆବଶ୍ୟକ",
+        "application_rejected": "ଆବେଦନ ଅନୁମୋଦିତ ହୋଇନାହିଁ"
+      }
     }
   },
   "ja": {
@@ -871,6 +1553,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "よりクリーンな明日へ、動き出そう"
+    },
+    "notifications": {
+      "title": "通知",
+      "permissionBody": "回収や申請の最新情報をこの端末で受け取れます。",
+      "enable": "有効にする",
+      "denied": "通知がブロックされています。端末またはブラウザの設定で変更してください。",
+      "unavailable": "ここではまだ通知を利用できません。",
+      "error": "通知を有効にできませんでした。もう一度お試しください。",
+      "lockscreenTitle": "Luma.Greenからのお知らせ",
+      "lockscreenBody": "Luma.Greenを開いて最新情報をご確認ください。",
+      "emptyTitle": "まだ更新はありません",
+      "emptyBody": "回収と申請に関する更新がここに表示されます。",
+      "markRead": "既読にする",
+      "markAllRead": "すべて既読",
+      "unread": "未読",
+      "enabled": "この端末で有効",
+      "disable": "オフにする",
+      "disabled": "この端末でオフ",
+      "deviceTitle": "この端末",
+      "inboxTitle": "更新情報",
+      "loadMore": "もっと見る",
+      "events": {
+        "booking_confirmed": "予約が確定しました",
+        "booking_offer": "新しい回収依頼",
+        "booking_accepted": "回収を受け付けました",
+        "booking_reassigned": "回収担当者が変更されました",
+        "application_received": "申請を受け付けました",
+        "application_approved": "申請が承認されました",
+        "application_changes_requested": "申請の修正が必要です",
+        "application_rejected": "申請は承認されませんでした"
+      }
     }
   },
   "uk": {
@@ -909,6 +1622,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Рух до чистішого завтра"
+    },
+    "notifications": {
+      "title": "Сповіщення",
+      "permissionBody": "Отримуйте новини про вивезення сировини та свої заявки на цьому пристрої.",
+      "enable": "Увімкнути",
+      "denied": "Сповіщення заблоковано. Змініть це в налаштуваннях пристрою або браузера.",
+      "unavailable": "Сповіщення тут поки недоступні.",
+      "error": "Не вдалося ввімкнути сповіщення. Спробуйте ще раз.",
+      "lockscreenTitle": "Новина від Luma.Green",
+      "lockscreenBody": "Відкрийте Luma.Green, щоб переглянути оновлення.",
+      "emptyTitle": "Оновлень ще немає",
+      "emptyBody": "Тут з’являться оновлення щодо вивезення та заявок.",
+      "markRead": "Прочитано",
+      "markAllRead": "Прочитати все",
+      "unread": "Не прочитано",
+      "enabled": "Увімкнено на цьому пристрої",
+      "disable": "Вимкнути",
+      "disabled": "Вимкнено на цьому пристрої",
+      "deviceTitle": "Цей пристрій",
+      "inboxTitle": "Ваші оновлення",
+      "loadMore": "Показати ще",
+      "events": {
+        "booking_confirmed": "Бронювання підтверджено",
+        "booking_offer": "Нова заявка на вивезення",
+        "booking_accepted": "Вивезення прийнято",
+        "booking_reassigned": "Збирача змінено",
+        "application_received": "Заявку отримано",
+        "application_approved": "Заявку схвалено",
+        "application_changes_requested": "Заявка потребує змін",
+        "application_rejected": "Заявку не схвалено"
+      }
     }
   },
   "ko": {
@@ -947,6 +1691,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "더 깨끗한 내일을 향한 움직임"
+    },
+    "notifications": {
+      "title": "알림",
+      "permissionBody": "이 기기에서 수거 및 신청에 관한 새 소식을 받아보세요.",
+      "enable": "켜기",
+      "denied": "알림이 차단되어 있습니다. 기기 또는 브라우저 설정에서 변경하세요.",
+      "unavailable": "여기에서는 아직 알림을 사용할 수 없습니다.",
+      "error": "알림을 켤 수 없습니다. 다시 시도해 주세요.",
+      "lockscreenTitle": "Luma.Green 새 소식",
+      "lockscreenBody": "Luma.Green을 열어 새 소식을 확인하세요.",
+      "emptyTitle": "아직 새 소식이 없습니다",
+      "emptyBody": "수거 및 신청 관련 소식이 여기에 표시됩니다.",
+      "markRead": "읽음 표시",
+      "markAllRead": "모두 읽음",
+      "unread": "읽지 않음",
+      "enabled": "이 기기에서 켜짐",
+      "disable": "끄기",
+      "disabled": "이 기기에서 꺼짐",
+      "deviceTitle": "이 기기",
+      "inboxTitle": "내 소식",
+      "loadMore": "더 보기",
+      "events": {
+        "booking_confirmed": "예약 확정",
+        "booking_offer": "새 수거 요청",
+        "booking_accepted": "수거 수락",
+        "booking_reassigned": "수거 담당자 변경",
+        "application_received": "신청 접수",
+        "application_approved": "신청 승인",
+        "application_changes_requested": "신청 수정 필요",
+        "application_rejected": "신청 미승인"
+      }
     }
   },
   "it": {
@@ -985,6 +1760,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "In movimento per un domani più pulito"
+    },
+    "notifications": {
+      "title": "Notifiche",
+      "permissionBody": "Ricevi aggiornamenti sui tuoi ritiri e sulle tue richieste su questo dispositivo.",
+      "enable": "Attiva",
+      "denied": "Le notifiche sono bloccate. Modifica questa opzione nelle impostazioni del dispositivo o del browser.",
+      "unavailable": "Le notifiche non sono ancora disponibili qui.",
+      "error": "Impossibile attivare le notifiche. Riprova.",
+      "lockscreenTitle": "Novità da Luma.Green",
+      "lockscreenBody": "Apri Luma.Green per vedere la novità.",
+      "emptyTitle": "Ancora nessun aggiornamento",
+      "emptyBody": "Qui appariranno gli aggiornamenti su ritiri e domande.",
+      "markRead": "Segna come letto",
+      "markAllRead": "Segna tutti letti",
+      "unread": "Non letto",
+      "enabled": "Attivate su questo dispositivo",
+      "disable": "Disattiva",
+      "disabled": "Disattivate su questo dispositivo",
+      "deviceTitle": "Questo dispositivo",
+      "inboxTitle": "I tuoi aggiornamenti",
+      "loadMore": "Mostra altro",
+      "events": {
+        "booking_confirmed": "Prenotazione confermata",
+        "booking_offer": "Nuova richiesta di ritiro",
+        "booking_accepted": "Ritiro accettato",
+        "booking_reassigned": "Incaricato del ritiro cambiato",
+        "application_received": "Domanda ricevuta",
+        "application_approved": "Domanda approvata",
+        "application_changes_requested": "Domanda da modificare",
+        "application_rejected": "Domanda non approvata"
+      }
     }
   },
   "pl": {
@@ -1023,6 +1829,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Czystsze jutro w ruchu"
+    },
+    "notifications": {
+      "title": "Powiadomienia",
+      "permissionBody": "Otrzymuj na tym urządzeniu informacje o odbiorach i swoich wnioskach.",
+      "enable": "Włącz",
+      "denied": "Powiadomienia są zablokowane. Zmień to w ustawieniach urządzenia lub przeglądarki.",
+      "unavailable": "Powiadomienia nie są tu jeszcze dostępne.",
+      "error": "Nie udało się włączyć powiadomień. Spróbuj ponownie.",
+      "lockscreenTitle": "Nowość od Luma.Green",
+      "lockscreenBody": "Otwórz Luma.Green, aby zobaczyć nową informację.",
+      "emptyTitle": "Nie ma jeszcze aktualizacji",
+      "emptyBody": "Tutaj pojawią się informacje o odbiorach i wnioskach.",
+      "markRead": "Oznacz jako przeczytane",
+      "markAllRead": "Wszystkie przeczytane",
+      "unread": "Nieprzeczytane",
+      "enabled": "Włączone na tym urządzeniu",
+      "disable": "Wyłącz",
+      "disabled": "Wyłączone na tym urządzeniu",
+      "deviceTitle": "To urządzenie",
+      "inboxTitle": "Twoje aktualizacje",
+      "loadMore": "Pokaż więcej",
+      "events": {
+        "booking_confirmed": "Rezerwacja potwierdzona",
+        "booking_offer": "Nowe zgłoszenie odbioru",
+        "booking_accepted": "Odbiór zaakceptowany",
+        "booking_reassigned": "Zmieniono odbierającego",
+        "application_received": "Wniosek otrzymany",
+        "application_approved": "Wniosek zatwierdzony",
+        "application_changes_requested": "Wniosek wymaga zmian",
+        "application_rejected": "Wniosek niezatwierdzony"
+      }
     }
   },
   "tr": {
@@ -1061,6 +1898,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Daha temiz yarınlar için harekette"
+    },
+    "notifications": {
+      "title": "Bildirimler",
+      "permissionBody": "Toplama işlemleriniz ve başvurularınız hakkında bu cihazda bilgi alın.",
+      "enable": "Etkinleştir",
+      "denied": "Bildirimler engellenmiş. Cihaz veya tarayıcı ayarlarınızdan bunu değiştirin.",
+      "unavailable": "Bildirimler burada henüz kullanılamıyor.",
+      "error": "Bildirimler etkinleştirilemedi. Tekrar deneyin.",
+      "lockscreenTitle": "Luma.Green’den haber",
+      "lockscreenBody": "Yeni bilgiyi görmek için Luma.Green’i açın.",
+      "emptyTitle": "Henüz güncelleme yok",
+      "emptyBody": "Teslim alma ve başvuru güncellemeleri burada görünecek.",
+      "markRead": "Okundu işaretle",
+      "markAllRead": "Tümü okundu",
+      "unread": "Okunmadı",
+      "enabled": "Bu cihazda etkin",
+      "disable": "Kapat",
+      "disabled": "Bu cihazda kapalı",
+      "deviceTitle": "Bu cihaz",
+      "inboxTitle": "Güncellemeleriniz",
+      "loadMore": "Daha fazla göster",
+      "events": {
+        "booking_confirmed": "Rezervasyon onaylandı",
+        "booking_offer": "Yeni toplama talebi",
+        "booking_accepted": "Toplama kabul edildi",
+        "booking_reassigned": "Toplayıcı değişti",
+        "application_received": "Başvuru alındı",
+        "application_approved": "Başvuru onaylandı",
+        "application_changes_requested": "Başvuruda değişiklik gerekiyor",
+        "application_rejected": "Başvuru onaylanmadı"
+      }
     }
   },
   "zh": {
@@ -1099,6 +1967,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "行动起来，共创更洁净的明天"
+    },
+    "notifications": {
+      "title": "通知",
+      "permissionBody": "在此设备上接收上门回收和申请的最新消息。",
+      "enable": "启用",
+      "denied": "通知已被阻止。请在设备或浏览器设置中更改。",
+      "unavailable": "此处暂不支持通知。",
+      "error": "无法启用通知，请重试。",
+      "lockscreenTitle": "Luma.Green 最新消息",
+      "lockscreenBody": "打开 Luma.Green 查看最新消息。",
+      "emptyTitle": "暂无更新",
+      "emptyBody": "回收预约和入驻申请的更新将在此显示。",
+      "markRead": "标为已读",
+      "markAllRead": "全部已读",
+      "unread": "未读",
+      "enabled": "已在此设备启用",
+      "disable": "关闭",
+      "disabled": "已在此设备关闭",
+      "deviceTitle": "此设备",
+      "inboxTitle": "我的更新",
+      "loadMore": "显示更多",
+      "events": {
+        "booking_confirmed": "预约已确认",
+        "booking_offer": "新的回收请求",
+        "booking_accepted": "回收请求已接受",
+        "booking_reassigned": "回收员已更换",
+        "application_received": "申请已收到",
+        "application_approved": "申请已批准",
+        "application_changes_requested": "申请需要修改",
+        "application_rejected": "申请未获批准"
+      }
     }
   },
   "pt": {
@@ -1137,6 +2036,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Um amanhã mais limpo em movimento"
+    },
+    "notifications": {
+      "title": "Notificações",
+      "permissionBody": "Receba novidades sobre as suas recolhas e candidaturas neste dispositivo.",
+      "enable": "Ativar",
+      "denied": "As notificações estão bloqueadas. Altere esta opção nas definições do dispositivo ou do navegador.",
+      "unavailable": "As notificações ainda não estão disponíveis aqui.",
+      "error": "Não foi possível ativar as notificações. Tente novamente.",
+      "lockscreenTitle": "Novidade da Luma.Green",
+      "lockscreenBody": "Abra a Luma.Green para ver a novidade.",
+      "emptyTitle": "Ainda não há atualizações",
+      "emptyBody": "As atualizações de coletas e candidaturas aparecerão aqui.",
+      "markRead": "Marcar como lida",
+      "markAllRead": "Marcar todas lidas",
+      "unread": "Não lida",
+      "enabled": "Ativadas neste dispositivo",
+      "disable": "Desativar",
+      "disabled": "Desativadas neste dispositivo",
+      "deviceTitle": "Este dispositivo",
+      "inboxTitle": "Suas atualizações",
+      "loadMore": "Mostrar mais",
+      "events": {
+        "booking_confirmed": "Reserva confirmada",
+        "booking_offer": "Novo pedido de recolha",
+        "booking_accepted": "Recolha aceite",
+        "booking_reassigned": "Responsável pela recolha alterado",
+        "application_received": "Candidatura recebida",
+        "application_approved": "Candidatura aprovada",
+        "application_changes_requested": "Candidatura precisa de alterações",
+        "application_rejected": "Candidatura não aprovada"
+      }
     }
   },
   "id": {
@@ -1175,6 +2105,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Bergerak Menuju Esok yang Lebih Bersih"
+    },
+    "notifications": {
+      "title": "Notifikasi",
+      "permissionBody": "Dapatkan kabar tentang penjemputan dan pengajuan Anda di perangkat ini.",
+      "enable": "Aktifkan",
+      "denied": "Notifikasi diblokir. Ubah di pengaturan perangkat atau browser Anda.",
+      "unavailable": "Notifikasi belum tersedia di sini.",
+      "error": "Tidak dapat mengaktifkan notifikasi. Coba lagi.",
+      "lockscreenTitle": "Kabar dari Luma.Green",
+      "lockscreenBody": "Buka Luma.Green untuk melihat kabar terbaru.",
+      "emptyTitle": "Belum ada pembaruan",
+      "emptyBody": "Pembaruan penjemputan dan pengajuan akan muncul di sini.",
+      "markRead": "Tandai dibaca",
+      "markAllRead": "Baca semua",
+      "unread": "Belum dibaca",
+      "enabled": "Aktif di perangkat ini",
+      "disable": "Matikan",
+      "disabled": "Nonaktif di perangkat ini",
+      "deviceTitle": "Perangkat ini",
+      "inboxTitle": "Pembaruan Anda",
+      "loadMore": "Tampilkan lagi",
+      "events": {
+        "booking_confirmed": "Pemesanan dikonfirmasi",
+        "booking_offer": "Permintaan penjemputan baru",
+        "booking_accepted": "Penjemputan diterima",
+        "booking_reassigned": "Pengumpul diganti",
+        "application_received": "Pendaftaran diterima",
+        "application_approved": "Pendaftaran disetujui",
+        "application_changes_requested": "Pendaftaran perlu diperbaiki",
+        "application_rejected": "Pendaftaran tidak disetujui"
+      }
     }
   },
   "nl": {
@@ -1213,6 +2174,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Een schonere toekomst in beweging"
+    },
+    "notifications": {
+      "title": "Meldingen",
+      "permissionBody": "Ontvang op dit apparaat nieuws over je ophalingen en aanvragen.",
+      "enable": "Inschakelen",
+      "denied": "Meldingen zijn geblokkeerd. Wijzig dit in de instellingen van je apparaat of browser.",
+      "unavailable": "Meldingen zijn hier nog niet beschikbaar.",
+      "error": "Meldingen konden niet worden ingeschakeld. Probeer het opnieuw.",
+      "lockscreenTitle": "Nieuws van Luma.Green",
+      "lockscreenBody": "Open Luma.Green om het nieuws te bekijken.",
+      "emptyTitle": "Nog geen nieuws",
+      "emptyBody": "Nieuws over ophaalafspraken en aanvragen verschijnt hier.",
+      "markRead": "Als gelezen markeren",
+      "markAllRead": "Alles als gelezen",
+      "unread": "Ongelezen",
+      "enabled": "Ingeschakeld op dit apparaat",
+      "disable": "Uitschakelen",
+      "disabled": "Uitgeschakeld op dit apparaat",
+      "deviceTitle": "Dit apparaat",
+      "inboxTitle": "Jouw nieuws",
+      "loadMore": "Meer tonen",
+      "events": {
+        "booking_confirmed": "Boeking bevestigd",
+        "booking_offer": "Nieuw ophaalverzoek",
+        "booking_accepted": "Ophaling geaccepteerd",
+        "booking_reassigned": "Ophaler gewijzigd",
+        "application_received": "Aanvraag ontvangen",
+        "application_approved": "Aanvraag goedgekeurd",
+        "application_changes_requested": "Aanvraag moet worden aangepast",
+        "application_rejected": "Aanvraag niet goedgekeurd"
+      }
     }
   },
   "ms": {
@@ -1251,6 +2243,37 @@
     "brand": {
       "name": "Luma.Green",
       "tagline": "Bergerak ke Arah Hari Esok yang Lebih Bersih"
+    },
+    "notifications": {
+      "title": "Pemberitahuan",
+      "permissionBody": "Terima perkembangan kutipan dan permohonan anda pada peranti ini.",
+      "enable": "Aktifkan",
+      "denied": "Pemberitahuan disekat. Ubah perkara ini dalam tetapan peranti atau pelayar anda.",
+      "unavailable": "Pemberitahuan belum tersedia di sini.",
+      "error": "Pemberitahuan tidak dapat diaktifkan. Cuba lagi.",
+      "lockscreenTitle": "Berita daripada Luma.Green",
+      "lockscreenBody": "Buka Luma.Green untuk melihat perkembangan terkini.",
+      "emptyTitle": "Belum ada kemas kini",
+      "emptyBody": "Kemas kini kutipan dan permohonan akan dipaparkan di sini.",
+      "markRead": "Tanda sudah dibaca",
+      "markAllRead": "Semua sudah dibaca",
+      "unread": "Belum dibaca",
+      "enabled": "Diaktifkan pada peranti ini",
+      "disable": "Matikan",
+      "disabled": "Dimatikan pada peranti ini",
+      "deviceTitle": "Peranti ini",
+      "inboxTitle": "Kemas kini anda",
+      "loadMore": "Papar lagi",
+      "events": {
+        "booking_confirmed": "Tempahan disahkan",
+        "booking_offer": "Permintaan kutipan baharu",
+        "booking_accepted": "Kutipan diterima",
+        "booking_reassigned": "Pengumpul ditukar",
+        "application_received": "Permohonan diterima",
+        "application_approved": "Permohonan diluluskan",
+        "application_changes_requested": "Permohonan perlu diubah",
+        "application_rejected": "Permohonan tidak diluluskan"
+      }
     }
   }
 }

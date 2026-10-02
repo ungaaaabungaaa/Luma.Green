@@ -4,6 +4,8 @@ import { EllipsisIcon, LifeBuoyIcon, LogOutIcon, XIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 
+import { AccountLinks } from "@/components/account/account-links";
+import { useSignOut } from "@/components/account/use-sign-out";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { isCurrentSection } from "@/components/site/site-nav";
@@ -20,7 +22,6 @@ import {
 } from "@/components/ui/sheet";
 import { isLocale, localeDirection } from "@/i18n/locales";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 
 import { type AppRole, NAV, type NavItem } from "./nav";
@@ -49,6 +50,9 @@ export function AppShell({ children }: { children: ReactNode }) {
   const workspace = useWorkspace();
   const router = useRouter();
   const pathname = usePathname();
+  const { signOut, busy: signingOut } = useSignOut(() => {
+    router.replace("/login");
+  });
 
   useEffect(() => {
     if (workspace === null) {
@@ -92,11 +96,6 @@ export function AppShell({ children }: { children: ReactNode }) {
     setMenuOpen(false);
   };
   const help = `/help/${role}`;
-
-  const signOut = async () => {
-    await authClient.signOut();
-    router.replace("/login");
-  };
 
   const link = (item: NavItem, className: string, isCompact = false) => {
     const Icon = item.icon;
@@ -162,6 +161,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <LifeBuoyIcon aria-hidden className="size-5" />
             {t("nav.help")}
           </Link>
+          <AccountLinks className="rounded-lg px-3 hover:bg-sidebar-accent" />
         </nav>
         <div className="mt-auto flex flex-col gap-3 border-t border-sidebar-border pt-4">
           <div className="flex items-center justify-between gap-2">
@@ -172,6 +172,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             variant="outline"
             size="sm"
             className="min-h-11 text-foreground"
+            disabled={signingOut}
             onClick={() => void signOut()}
           >
             <LogOutIcon aria-hidden />
@@ -265,6 +266,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <LifeBuoyIcon aria-hidden className="size-5 shrink-0" />
               {t("nav.help")}
             </Link>
+            <AccountLinks onNavigate={closeMenu} />
           </nav>
           <div className="mx-5 grid shrink-0 border-t py-2">
             <div className="flex min-h-11 items-center justify-between gap-3">
@@ -284,6 +286,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Button
               variant="outline"
               className="min-h-12 w-full text-sm"
+              disabled={signingOut}
               onClick={() => void signOut()}
             >
               <LogOutIcon aria-hidden />

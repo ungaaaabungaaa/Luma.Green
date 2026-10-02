@@ -52,17 +52,18 @@ For caching, compression, self-hosted AI and cost measurements, use
 [low-cost operation](./operations/low-cost-operation.md) and its
 [verification record](./delivery/cost-optimization.md).
 
-| Page                                                      | What's in it                                                     |
-| --------------------------------------------------------- | ---------------------------------------------------------------- |
-| [environments.md](./operations/environments.md)           | Local, preview, production; releases; where each variable lives  |
-| [launch-checklist.md](./operations/launch-checklist.md)   | Accounts, exact environment variables and launch verification    |
-| [app-releases.md](./operations/app-releases.md)           | App accounts, environment values, signing and release acceptance |
-| [sms-notifications.md](./operations/sms-notifications.md) | Status-message templates, outbox behavior and provider checks    |
-| [services.md](./operations/services.md)                   | Every outside service, its status, SMS templates to register     |
-| [backups.md](./operations/backups.md)                     | Daily local backups, restores, drills                            |
-| [data-protection.md](./operations/data-protection.md)     | What personal data we hold, why, for how long; breach steps      |
-| [incidents.md](./operations/incidents.md)                 | When something breaks                                            |
-| [migrations/](./migrations/README.md)                     | Changing the schema safely, and the log                          |
+| Page                                                        | What's in it                                                       |
+| ----------------------------------------------------------- | ------------------------------------------------------------------ |
+| [environments.md](./operations/environments.md)             | Local, preview, production; releases; where each variable lives    |
+| [launch-checklist.md](./operations/launch-checklist.md)     | Accounts, exact environment variables and launch verification      |
+| [app-releases.md](./operations/app-releases.md)             | App accounts, environment values, signing and release acceptance   |
+| [sms-notifications.md](./operations/sms-notifications.md)   | Status-message templates, outbox behavior and provider checks      |
+| [push-notifications.md](./operations/push-notifications.md) | Private inbox, optional browser/Expo delivery, consent and cleanup |
+| [services.md](./operations/services.md)                     | Every outside service, its status, SMS templates to register       |
+| [backups.md](./operations/backups.md)                       | Daily local backups, restores, drills                              |
+| [data-protection.md](./operations/data-protection.md)       | What personal data we hold, why, for how long; breach steps        |
+| [incidents.md](./operations/incidents.md)                   | When something breaks                                              |
+| [migrations/](./migrations/README.md)                       | Changing the schema safely, and the log                            |
 
 ## Delivery
 

@@ -10,6 +10,7 @@ const mocks = vi.hoisted(() => ({
   pathname: vi.fn(),
   replace: vi.fn(),
   signOut: vi.fn(),
+  revoke: vi.fn(),
 }));
 
 vi.mock("@/components/providers/use-signed-in-query", () => ({
@@ -21,6 +22,9 @@ vi.mock("convex/react", () => ({
 vi.mock("next/navigation", () => ({
   usePathname: mocks.pathname,
   useRouter: () => ({ replace: mocks.replace }),
+}));
+vi.mock("@/components/notifications/device-provider", () => ({
+  revokeCurrentDevice: mocks.revoke,
 }));
 vi.mock("@/lib/auth-client", () => ({
   authClient: { signOut: mocks.signOut },
@@ -40,7 +44,8 @@ beforeEach(() => {
     twoFactorEnabled: true,
   });
   mocks.pathname.mockReturnValue("/admin/verification/application");
-  mocks.signOut.mockResolvedValue(undefined);
+  mocks.signOut.mockResolvedValue({ error: null });
+  mocks.revoke.mockResolvedValue(undefined);
 });
 
 describe("admin navigation", () => {
@@ -84,4 +89,26 @@ describe("admin navigation", () => {
       screen.getByRole("heading", { name: "This area is for the admin" }),
     ).toBeInTheDocument();
   });
+});
+
+it("keeps the session when push revocation fails and allows a safe retry", async () => {
+  const user = userEvent.setup();
+  mocks.revoke.mockRejectedValueOnce(new Error("fixture offline"));
+  render(<ConsoleShell>Review workspace</ConsoleShell>);
+  await user.click(screen.getByRole("button", { name: "Sign out Asha" }));
+  expect(screen.getByRole("alert")).toHaveTextContent("Could not sign out");
+  expect(mocks.signOut).not.toHaveBeenCalled();
+  expect(mocks.replace).not.toHaveBeenCalled();
+  await user.click(screen.getByRole("button", { name: "Sign out Asha" }));
+  expect(mocks.signOut).toHaveBeenCalledOnce();
+  expect(mocks.replace).toHaveBeenCalledWith("/admin/login");
+});
+
+it("keeps the console visible on a failed auth sign-out response", async () => {
+  const user = userEvent.setup();
+  mocks.signOut.mockResolvedValueOnce({ error: { status: 503 } });
+  render(<ConsoleShell>Review workspace</ConsoleShell>);
+  await user.click(screen.getByRole("button", { name: "Sign out Asha" }));
+  expect(screen.getByRole("alert")).toHaveTextContent("Could not sign out");
+  expect(mocks.replace).not.toHaveBeenCalled();
 });

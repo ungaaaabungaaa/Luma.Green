@@ -16,14 +16,14 @@ release schedule from `luma.green`. Authentication must trust the selected origi
 through `SITE_URL` or `EXTRA_TRUSTED_ORIGINS` on the matching Convex deployment.
 No native package gets a backend admin key or copies a login token to the browser.
 
-| Owner             | Responsibility                                                                        |
-| ----------------- | ------------------------------------------------------------------------------------- |
-| Root Next.js app  | All role screens, browser forms, auth proxy, client-side validation                   |
-| Convex            | Authentication, authorization, private files, durable records and business rules      |
-| `messages/*.json` | All 12 web and native control languages; admin remains English                        |
-| `apps/mobile`     | Safe areas, navigation, permission controls, offline recovery, EAS updates            |
-| `apps/desktop`    | Sandboxed windows, local menus, safe downloads, offline recovery, signed updates      |
-| `public/brand`    | Shared app icons, generated from the existing SVG by `scripts/generate-app-icons.mjs` |
+| Owner             | Responsibility                                                                                       |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| Root Next.js app  | All role screens, browser forms, auth proxy, client-side validation                                  |
+| Convex            | Authentication, authorization, private files, durable records and business rules                     |
+| `messages/*.json` | All 33 web and native control languages; admin remains English                                       |
+| `apps/mobile`     | Safe areas, navigation, permission controls, optional Expo push, offline recovery, EAS updates       |
+| `apps/desktop`    | Sandboxed windows, local menus, safe downloads, foreground notices, offline recovery, signed updates |
+| `public/brand`    | Shared app icons, generated from the existing SVG by `scripts/generate-app-icons.mjs`                |
 
 ## Update behavior
 
@@ -51,7 +51,8 @@ WebView's cookie store but does not allow offline transactions.
 Electron does not expose Node, a preload bridge or arbitrary native IPC to hosted
 pages. Context isolation and sandboxing stay on. Only app-origin navigation and
 restricted private blob windows stay inside the app. Geolocation requires an
-explicit grant; other native permissions are denied by default.
+explicit grant. Foreground notifications require a separate main-window grant;
+other native permissions are denied by default.
 
 Native packages have their own TypeScript checks and dependency versions. Expo's
 React version stays isolated from Next.js. Generated platform projects, app
@@ -61,11 +62,27 @@ The mobile package also uses the TypeScript version required by Expo, independen
 of the web compiler; run both package checks before changing compiler versions.
 Mobile runtime copy is a compact generated catalogue; its test rejects stale
 output. Regenerate it with `pnpm --filter @luma/mobile messages:generate` after
-editing the shared native/common/brand copy. Desktop extracts the same required
+editing the shared native/common/brand/notifications copy. Desktop extracts the same required
 namespaces during `prepare:app`.
 
 See the [mobile guide](../../apps/mobile/README.md) and
 [desktop guide](../../apps/desktop/README.md) for platform behavior and tests.
+
+## Notification boundary
+
+The web inbox owns records and read state. Convex binds optional browser or Expo
+subscriptions to an authenticated profile and random installation ID. The mobile
+shell exposes only enable/status requests from its exact current trusted
+document; it does not accept user IDs, arbitrary URLs or backend commands.
+Replies are discarded on navigation. Notification taps use a fixed localised
+inbox route with normal session checks. Expo credentials stay in EAS and Convex.
+Push is disabled until explicit configuration and user permission exist.
+
+Electron uses the authenticated inbox for generic notices while running; it
+has no closed-process push service. All lock-screen messages omit private record
+contents. Sign-out must revoke the installation before it clears the session.
+Actual APNs, FCM, browser-provider and OS display remain acceptance gates; local
+unit checks and bundle exports do not prove them.
 
 ## Official references checked
 

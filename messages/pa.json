@@ -1915,7 +1915,16 @@
     "previewTitle": "ਕੋਡ ਦੀ ਝਲਕ",
     "previewNumber": "ਮੋਬਾਈਲ ਨੰਬਰ: {phone}",
     "previewBody": "SMS ਸੇਵਾ ਅਜੇ ਜੁੜੀ ਨਹੀਂ ਹੈ। ਕੋਈ ਕੋਡ ਨਹੀਂ ਭੇਜਿਆ ਗਿਆ। ਤੁਸੀਂ ਇਹ ਸਕ੍ਰੀਨ ਵੇਖ ਸਕਦੇ ਹੋ, ਪਰ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰ ਸਕਦੇ।",
-    "previewPhoneHint": "ਅਗਲਾ ਕਦਮ ਵੇਖਣ ਲਈ ਆਪਣਾ ਮੋਬਾਈਲ ਨੰਬਰ ਭਰੋ। ਕੋਈ SMS ਨਹੀਂ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
+    "previewPhoneHint": "ਅਗਲਾ ਕਦਮ ਵੇਖਣ ਲਈ ਆਪਣਾ ਮੋਬਾਈਲ ਨੰਬਰ ਭਰੋ। ਕੋਈ SMS ਨਹੀਂ ਭੇਜਿਆ ਜਾਵੇਗਾ।",
+    "twoFactorTitle": "ਪ੍ਰਮਾਣਕ ਐਪ ਵੇਖੋ",
+    "twoFactorDescription": "ਲੌਗ ਇਨ ਪੂਰਾ ਕਰਨ ਲਈ ਪ੍ਰਮਾਣਕ ਐਪ ਦਾ 6 ਅੰਕਾਂ ਦਾ ਕੋਡ ਭਰੋ।",
+    "twoFactorUseBackup": "ਰਿਕਵਰੀ ਕੋਡ ਵਰਤੋ",
+    "twoFactorUseApp": "ਪ੍ਰਮਾਣਕ ਵਰਤੋ",
+    "twoFactorBackupTitle": "ਰਿਕਵਰੀ ਕੋਡ ਵਰਤੋ",
+    "twoFactorBackupDescription": "ਸੰਭਾਲਿਆ ਹੋਇਆ ਰਿਕਵਰੀ ਕੋਡ ਭਰੋ। ਹਰ ਕੋਡ ਇੱਕ ਵਾਰ ਕੰਮ ਕਰਦਾ ਹੈ।",
+    "twoFactorBackupLabel": "ਰਿਕਵਰੀ ਕੋਡ",
+    "twoFactorExpired": "ਲੌਗ ਇਨ ਦਾ ਸਮਾਂ ਮੁੱਕ ਗਿਆ। ਨਵੇਂ ਫ਼ੋਨ ਕੋਡ ਨਾਲ ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ।",
+    "twoFactorRestart": "ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ"
   },
   "join": {
     "metaTitle": "Luma.Green ਨਾਲ ਜੁੜੋ",
@@ -3363,6 +3372,59 @@
           "third": "ਕਾਰਵਾਈਆਂ ਦੇ ਰਿਕਾਰਡ ਵੇਖੋ"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "ਖਾਤੇ ਦੀ ਸੁਰੱਖਿਆ",
+    "description": "ਫ਼ੋਨ ਕੋਡ ਤੋਂ ਬਾਅਦ ਪ੍ਰਮਾਣਕ ਐਪ ਦਾ ਕੋਡ ਜੋੜੋ।",
+    "enabled": "ਚਾਲੂ",
+    "disabled": "ਬੰਦ",
+    "enable": "ਸੈੱਟ ਅੱਪ ਕਰੋ",
+    "disable": "ਬੰਦ ਕਰੋ",
+    "recentSignIn": "ਸੁਰੱਖਿਆ ਸੈਟਿੰਗਾਂ ਬਦਲਣ ਤੋਂ ਪਹਿਲਾਂ ਮੁੜ ਲੌਗ ਇਨ ਕਰੋ।",
+    "signInAgain": "ਮੁੜ ਲੌਗ ਇਨ",
+    "setupTitle": "ਪ੍ਰਮਾਣਕ ਐਪ ਜੋੜੋ",
+    "setupDescription": "ਪ੍ਰਮਾਣਕ ਐਪ ਨਾਲ ਇਹ QR ਕੋਡ ਸਕੈਨ ਕਰੋ ਜਾਂ ਕੁੰਜੀ ਭਰੋ। ਇਸ ਨੂੰ ਗੁਪਤ ਰੱਖੋ।",
+    "setupKey": "ਸੈੱਟਅੱਪ ਕੁੰਜੀ",
+    "backupTitle": "ਰਿਕਵਰੀ ਕੋਡ ਸੰਭਾਲੋ",
+    "backupDescription": "ਇਹ ਕੋਡ ਗੁਪਤ ਰੱਖੋ। ਹਰ ਕੋਡ ਫ਼ੋਨ ਕੋਡ ਤੋਂ ਬਾਅਦ ਇੱਕ ਵਾਰ ਕੰਮ ਕਰਦਾ ਹੈ।",
+    "savedCodes": "ਕੋਡ ਸੰਭਾਲ ਲਏ",
+    "regenerate": "ਨਵੇਂ ਕੋਡ ਲਵੋ",
+    "regenerateDescription": "ਪੁਰਾਣੇ ਰਿਕਵਰੀ ਕੋਡ ਕੰਮ ਨਹੀਂ ਕਰਨਗੇ। ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ ਨਵੇਂ ਕੋਡ ਸੰਭਾਲੋ।",
+    "disableDescription": "ਲੌਗ ਇਨ ਲਈ ਸਿਰਫ਼ ਫ਼ੋਨ ਕੋਡ ਲੱਗਣਗੇ। ਪ੍ਰਮਾਣਕ ਐਪ ਅਤੇ ਰਿਕਵਰੀ ਕੋਡ ਕੰਮ ਨਹੀਂ ਕਰਨਗੇ।",
+    "errorCode": "ਇਹ ਕੋਡ ਕੰਮ ਨਹੀਂ ਕੀਤਾ। ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "errorRateLimited": "ਬਹੁਤ ਵਾਰ ਕੋਸ਼ਿਸ਼ ਹੋਈ ਹੈ। ਮੁੜ ਕੋਸ਼ਿਸ਼ ਤੋਂ ਪਹਿਲਾਂ ਉਡੀਕ ਕਰੋ।",
+    "recoveryHelp": "ਪ੍ਰਮਾਣਕ ਐਪ ਅਤੇ ਰਿਕਵਰੀ ਕੋਡ ਗੁਆ ਲਏ ਹਨ? ਸਹਾਇਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ। ਸਿਰਫ਼ ਫ਼ੋਨ ਕੋਡ ਨਾਲ ਦੋ-ਪੜਾਵੀ ਤਸਦੀਕ ਬੰਦ ਨਹੀਂ ਹੋ ਸਕਦੀ।"
+  },
+  "notifications": {
+    "title": "ਸੂਚਨਾਵਾਂ",
+    "permissionBody": "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਆਪਣੇ ਪਿਕਅੱਪ ਅਤੇ ਅਰਜ਼ੀਆਂ ਦੀ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕਰੋ।",
+    "enable": "ਚਾਲੂ ਕਰੋ",
+    "denied": "ਸੂਚਨਾਵਾਂ ਰੋਕੀਆਂ ਹੋਈਆਂ ਹਨ। ਡਿਵਾਈਸ ਜਾਂ ਬ੍ਰਾਊਜ਼ਰ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇਸ ਨੂੰ ਬਦਲੋ।",
+    "unavailable": "ਇੱਥੇ ਸੂਚਨਾਵਾਂ ਅਜੇ ਉਪਲਬਧ ਨਹੀਂ ਹਨ।",
+    "error": "ਸੂਚਨਾਵਾਂ ਚਾਲੂ ਨਹੀਂ ਹੋ ਸਕੀਆਂ। ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "lockscreenTitle": "Luma.Green ਦੀ ਸੂਚਨਾ",
+    "lockscreenBody": "ਨਵੀਂ ਜਾਣਕਾਰੀ ਦੇਖਣ ਲਈ Luma.Green ਖੋਲ੍ਹੋ।",
+    "emptyTitle": "ਅਜੇ ਕੋਈ ਅੱਪਡੇਟ ਨਹੀਂ",
+    "emptyBody": "ਸਾਮਾਨ ਚੁੱਕਣ ਅਤੇ ਅਰਜ਼ੀ ਦੇ ਅੱਪਡੇਟ ਇੱਥੇ ਦਿਖਣਗੇ।",
+    "markRead": "ਪੜ੍ਹਿਆ ਚਿੰਨ੍ਹਿਤ ਕਰੋ",
+    "markAllRead": "ਸਭ ਪੜ੍ਹੇ ਚਿੰਨ੍ਹਿਤ ਕਰੋ",
+    "unread": "ਨਾ ਪੜ੍ਹਿਆ",
+    "enabled": "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਚਾਲੂ ਹੈ",
+    "disable": "ਬੰਦ ਕਰੋ",
+    "disabled": "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਬੰਦ ਹੈ",
+    "deviceTitle": "ਇਹ ਡਿਵਾਈਸ",
+    "inboxTitle": "ਤੁਹਾਡੇ ਅੱਪਡੇਟ",
+    "loadMore": "ਹੋਰ ਦਿਖਾਓ",
+    "events": {
+      "booking_confirmed": "ਬੁਕਿੰਗ ਪੱਕੀ ਹੋਈ",
+      "booking_offer": "ਚੁੱਕਣ ਦੀ ਨਵੀਂ ਬੇਨਤੀ",
+      "booking_accepted": "ਚੁੱਕਣ ਦੀ ਬੇਨਤੀ ਮਨਜ਼ੂਰ",
+      "booking_reassigned": "ਇਕੱਠਾ ਕਰਨ ਵਾਲਾ ਬਦਲਿਆ",
+      "application_received": "ਅਰਜ਼ੀ ਮਿਲੀ",
+      "application_approved": "ਅਰਜ਼ੀ ਮਨਜ਼ੂਰ ਹੋਈ",
+      "application_changes_requested": "ਅਰਜ਼ੀ ਵਿੱਚ ਬਦਲਾਅ ਚਾਹੀਦੇ ਹਨ",
+      "application_rejected": "ਅਰਜ਼ੀ ਮਨਜ਼ੂਰ ਨਹੀਂ ਹੋਈ"
     }
   }
 }

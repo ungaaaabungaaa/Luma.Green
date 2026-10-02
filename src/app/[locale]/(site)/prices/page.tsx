@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import { PriceBoard } from "@/components/prices/price-board";
+import { PriceGuide } from "@/components/prices/price-guide";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 import { Button } from "@/components/ui/button";
@@ -29,7 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /** The public price board for Bengaluru — docs/product/pricing.md. */
 export default async function PricesPage() {
   const t = await getTranslations("prices");
-  const imageRole = "kabadiwala";
 
   return (
     <>
@@ -37,11 +37,13 @@ export default async function PricesPage() {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        scene={imageRole}
+        scene="fairWeighing"
       />
 
       <Container className="flex flex-col gap-8 py-8 lg:py-12">
         <PriceBoard />
+
+        <PriceGuide />
 
         <aside className="flex flex-col gap-4 border-y py-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">

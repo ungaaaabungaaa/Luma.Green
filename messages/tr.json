@@ -3286,7 +3286,16 @@
     "previewTitle": "Kod önizlemesi",
     "previewNumber": "Cep telefonu: {phone}",
     "previewBody": "SMS henüz bağlı değil. Kod gönderilmedi. Bu ekranı inceleyebilirsiniz ancak giriş yapamazsınız.",
-    "previewPhoneHint": "Sonraki adımı önizlemek için numaranızı girin. SMS gönderilmeyecek."
+    "previewPhoneHint": "Sonraki adımı önizlemek için numaranızı girin. SMS gönderilmeyecek.",
+    "twoFactorTitle": "Doğrulayıcınızı kontrol edin",
+    "twoFactorDescription": "Girişi tamamlamak için doğrulayıcı uygulamanızdaki 6 haneli kodu girin.",
+    "twoFactorUseBackup": "Kurtarma kodu kullan",
+    "twoFactorUseApp": "Doğrulayıcı kullan",
+    "twoFactorBackupTitle": "Kurtarma kodu kullanın",
+    "twoFactorBackupDescription": "Kaydettiğiniz bir kurtarma kodunu girin. Her kod bir kez kullanılabilir.",
+    "twoFactorBackupLabel": "Kurtarma kodu",
+    "twoFactorExpired": "Giriş süresi doldu. Yeni bir telefon koduyla yeniden başlayın.",
+    "twoFactorRestart": "Yeniden başla"
   },
   "native": {
     "back": "Geri",
@@ -3363,6 +3372,59 @@
           "third": "İşlem kayıtlarını inceleyin"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "Hesap güvenliği",
+    "description": "Telefon kodundan sonra bir doğrulayıcı kodu ekleyin.",
+    "enabled": "Açık",
+    "disabled": "Kapalı",
+    "enable": "Kur",
+    "disable": "Kapat",
+    "recentSignIn": "Güvenlik ayarlarını değiştirmeden önce yeniden giriş yapın.",
+    "signInAgain": "Yeniden giriş",
+    "setupTitle": "Doğrulayıcınızı bağlayın",
+    "setupDescription": "Bu QR kodunu bir doğrulayıcı uygulamasıyla tarayın veya anahtarı girin. Anahtarı gizli tutun.",
+    "setupKey": "Kurulum anahtarı",
+    "backupTitle": "Kurtarma kodlarını kaydedin",
+    "backupDescription": "Bu kodları gizli saklayın. Her kod, telefon kodundan sonra bir kez kullanılabilir.",
+    "savedCodes": "Kodları kaydettim",
+    "regenerate": "Yeni kodlar",
+    "regenerateDescription": "Eski kurtarma kodları geçersiz olacak. Ayrılmadan önce yeni kodları kaydedin.",
+    "disableDescription": "Giriş için yalnızca telefon kodları kullanılacak. Doğrulayıcınız ve kurtarma kodlarınız geçersiz olacak.",
+    "errorCode": "Bu kod çalışmadı. Lütfen yeniden deneyin.",
+    "errorRateLimited": "Çok fazla deneme yapıldı. Yeniden denemeden önce bekleyin.",
+    "recoveryHelp": "Doğrulayıcınızı ve kurtarma kodlarınızı mı kaybettiniz? Destekle iletişime geçin. Telefon kodu tek başına iki faktörlü doğrulamayı kapatamaz."
+  },
+  "notifications": {
+    "title": "Bildirimler",
+    "permissionBody": "Toplama işlemleriniz ve başvurularınız hakkında bu cihazda bilgi alın.",
+    "enable": "Etkinleştir",
+    "denied": "Bildirimler engellenmiş. Cihaz veya tarayıcı ayarlarınızdan bunu değiştirin.",
+    "unavailable": "Bildirimler burada henüz kullanılamıyor.",
+    "error": "Bildirimler etkinleştirilemedi. Tekrar deneyin.",
+    "lockscreenTitle": "Luma.Green’den haber",
+    "lockscreenBody": "Yeni bilgiyi görmek için Luma.Green’i açın.",
+    "emptyTitle": "Henüz güncelleme yok",
+    "emptyBody": "Teslim alma ve başvuru güncellemeleri burada görünecek.",
+    "markRead": "Okundu işaretle",
+    "markAllRead": "Tümü okundu",
+    "unread": "Okunmadı",
+    "enabled": "Bu cihazda etkin",
+    "disable": "Kapat",
+    "disabled": "Bu cihazda kapalı",
+    "deviceTitle": "Bu cihaz",
+    "inboxTitle": "Güncellemeleriniz",
+    "loadMore": "Daha fazla göster",
+    "events": {
+      "booking_confirmed": "Rezervasyon onaylandı",
+      "booking_offer": "Yeni toplama talebi",
+      "booking_accepted": "Toplama kabul edildi",
+      "booking_reassigned": "Toplayıcı değişti",
+      "application_received": "Başvuru alındı",
+      "application_approved": "Başvuru onaylandı",
+      "application_changes_requested": "Başvuruda değişiklik gerekiyor",
+      "application_rejected": "Başvuru onaylanmadı"
     }
   }
 }

@@ -1,5 +1,21 @@
 # Agent handoff — 2 October 2026
 
+## Current work in progress: account and notification detail
+
+Continue on `feat/account-notifications-detail`, based on checkpoint `0f052c0`.
+The auth, inbox/push, native, account-menu and public-content source is being
+completed and checked in parallel. Read [the current pass record](account-notifications-and-content.md)
+for ownership, collected proof and remaining checks. The guide artifacts below
+still describe the last checkpoint until their next complete capture/rebuild.
+Do not stage the unrelated root `luma-green-user-guide.pdf`.
+
+PR 29 contains the prior checkpoint. Its new-head hosted unit job timed out in
+full-catalogue demo seed tests, although build/lint/types/format passed. A scoped
+seed-test timeout correction is present locally; nine tests now pass under
+coverage. It must be committed, pushed and verified before that PR can merge.
+No frontend deployment monitoring is requested. Native account setup is pending
+as confirmed by the founder; finish code and keep external release gates clear.
+
 ## Selection and production demo-price checkpoint
 
 The follow-up on `feat/responsive-locales-review` replaces large selection

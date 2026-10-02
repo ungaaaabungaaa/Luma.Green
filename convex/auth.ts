@@ -2,15 +2,22 @@ import { createClient, type GenericCtx } from "@convex-dev/better-auth";
 import { convex } from "@convex-dev/better-auth/plugins";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { betterAuth, type BetterAuthOptions } from "better-auth/minimal";
-import { phoneNumber, twoFactor } from "better-auth/plugins";
+import { phoneNumber } from "better-auth/plugins";
 
 import { components, internal } from "./_generated/api";
 import type { DataModel } from "./_generated/dataModel";
 import authConfig from "./auth.config";
 import authSchema from "./betterAuth/schema";
 import { adminSessionExpiry, isAdminEmail } from "./lib/admin";
+import {
+  clearPasswordResetProofs,
+  guardAdminRecovery,
+  sendAdminReset,
+} from "./lib/adminRecovery";
 import { DEMO_CODE, isDemoPhone } from "./lib/demo";
 import { isIndianMobile, phoneEmail } from "./lib/phone";
+import { phoneTwoFactor } from "./lib/phoneTwoFactor";
+import { securityAudit } from "./lib/securityAudit";
 import { CODE_TTL_MINUTES, codeDelivery } from "./lib/sms";
 import { smsPhoneHash } from "./lib/smsLimits";
 
@@ -21,11 +28,17 @@ import { smsPhoneHash } from "./lib/smsLimits";
  * - The one admin: email + password, then an authenticator-app code. Email
  *   sign-up is closed to every address except `ADMIN_EMAIL`.
  */
-export const authComponent = createClient<DataModel, typeof authSchema>(
+export const authComponent: ReturnType<
+  typeof createClient<DataModel, typeof authSchema>
+> = createClient<DataModel, typeof authSchema>(
   components.betterAuth,
   // Our own copy of the component, with tables generated from the plugins
   // below (`pnpm auth:schema`) — the packaged default lags better-auth.
-  { local: { schema: authSchema } },
+  {
+    local: { schema: authSchema },
+    authFunctions: internal.authEvents,
+    triggers: securityAudit,
+  },
 );
 
 /** Origins Better Auth accepts requests from: the site plus any extras. */
@@ -87,12 +100,31 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) =>
     appName: "Luma.Green",
     baseURL: process.env.SITE_URL,
     trustedOrigins: trustedOrigins(),
+    // Keep the same origin/CSRF boundary in tests and production.
+    advanced: { disableOriginCheck: false, disableCSRFCheck: false },
     database: authComponent.adapter(ctx),
-    emailAndPassword: { enabled: true, minPasswordLength: 12 },
+    emailAndPassword: {
+      enabled: true,
+      minPasswordLength: 12,
+      maxPasswordLength: 128,
+      sendResetPassword: sendAdminReset,
+      onPasswordReset: async ({ user }) => {
+        await clearPasswordResetProofs(ctx, user.id);
+      },
+      resetPasswordTokenExpiresIn: 15 * 60,
+      revokeSessionsOnPasswordReset: true,
+    },
     // Kept in the database: in memory, each Convex request could start with a
     // clean slate. The plugins set the limits (phone: 10 a minute; two-factor:
     // 3 per 10 seconds), per client IP.
-    rateLimit: { enabled: true, storage: "database" },
+    rateLimit: {
+      enabled: true,
+      storage: "database",
+      customRules: {
+        "/request-password-reset": { window: 15 * 60, max: 3 },
+        "/reset-password": { window: 15 * 60, max: 5 },
+      },
+    },
     session: {
       expiresIn: 60 * 60 * 24 * 30,
       // A session lasts a fixed time from sign-in and is never extended.
@@ -136,12 +168,35 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) =>
       }),
     },
     plugins: [
+      {
+        id: "admin-recovery-guard",
+        hooks: {
+          before: [
+            {
+              matcher: (hookCtx) =>
+                hookCtx.path === "/request-password-reset" ||
+                hookCtx.path === "/reset-password",
+              handler: guardAdminRecovery,
+            },
+          ],
+        },
+      },
+      phoneTwoFactor(),
       convex({ authConfig }),
       phoneNumber({
         otpLength: 6,
         expiresIn: CODE_TTL_MINUTES * 60,
         allowedAttempts: 5,
         phoneNumberValidator: isIndianMobile,
+        callbackOnVerification: ({ user }) => {
+          if (isAdminEmail(user.email)) {
+            throw new APIError("FORBIDDEN", {
+              code: "ADMIN_PASSWORD_REQUIRED",
+              message: "Use admin sign-in.",
+            });
+          }
+          return Promise.resolve();
+        },
         // Hand the code to an action through the scheduler: the request
         // returns at once, and nothing is left as a dangling promise that
         // Convex could drop.
@@ -171,7 +226,6 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) =>
           getTempName: (phone) => phone,
         },
       }),
-      twoFactor({ issuer: "Luma.Green" }),
     ],
   }) satisfies BetterAuthOptions;
 

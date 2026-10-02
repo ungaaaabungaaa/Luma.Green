@@ -43,6 +43,9 @@ module.exports = function buildConfig() {
     },
     android: {
       package: "green.luma.app",
+      ...(settings.googleServicesFile && {
+        googleServicesFile: settings.googleServicesFile,
+      }),
       allowBackup: false,
       adaptiveIcon: {
         foregroundImage: "../../public/brand/app-icon-foreground.png",
@@ -59,6 +62,13 @@ module.exports = function buildConfig() {
     },
     plugins: [
       "./plugins/with-camera-capture.cjs",
+      [
+        "expo-notifications",
+        {
+          defaultChannel: "account-updates",
+          enableBackgroundRemoteNotifications: false,
+        },
+      ],
       [
         "expo-localization",
         { supportedLocales: { ios: locales, android: locales } },
@@ -80,6 +90,7 @@ module.exports = function buildConfig() {
     extra: {
       appOrigin: settings.origin,
       allowLocalHttp: settings.allowLocalHttp,
+      pushEnabled: settings.pushEnabled,
       ...(settings.projectId && { eas: { projectId: settings.projectId } }),
     },
   };

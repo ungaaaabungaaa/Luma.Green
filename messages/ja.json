@@ -1915,7 +1915,16 @@
     "previewTitle": "コード入力のプレビュー",
     "previewNumber": "携帯電話番号：{phone}",
     "previewBody": "SMSはまだ接続されていません。コードは送信されていません。この画面を確認できますが、ログインはできません。",
-    "previewPhoneHint": "携帯電話番号を入力すると、次の手順をプレビューできます。SMSは送信しません。"
+    "previewPhoneHint": "携帯電話番号を入力すると、次の手順をプレビューできます。SMSは送信しません。",
+    "twoFactorTitle": "認証アプリを確認",
+    "twoFactorDescription": "認証アプリの6桁のコードを入力して、ログインを完了してください。",
+    "twoFactorUseBackup": "復旧コードを使う",
+    "twoFactorUseApp": "認証アプリを使う",
+    "twoFactorBackupTitle": "復旧コードを使う",
+    "twoFactorBackupDescription": "保存した復旧コードを入力してください。各コードは1回だけ使えます。",
+    "twoFactorBackupLabel": "復旧コード",
+    "twoFactorExpired": "ログインの有効期限が切れました。新しい電話のコードでやり直してください。",
+    "twoFactorRestart": "やり直す"
   },
   "join": {
     "metaTitle": "Luma.Greenに参加",
@@ -3363,6 +3372,59 @@
           "third": "業務記録を確認"
         }
       }
+    }
+  },
+  "accountSecurity": {
+    "title": "アカウントのセキュリティ",
+    "description": "電話のコードに加えて認証アプリのコードを使います。",
+    "enabled": "オン",
+    "disabled": "オフ",
+    "enable": "設定",
+    "disable": "オフにする",
+    "recentSignIn": "セキュリティ設定を変更する前に、もう一度ログインしてください。",
+    "signInAgain": "再ログイン",
+    "setupTitle": "認証アプリを接続",
+    "setupDescription": "認証アプリでこのQRコードを読み取るか、キーを入力してください。キーは他人に見せないでください。",
+    "setupKey": "設定キー",
+    "backupTitle": "復旧コードを保存",
+    "backupDescription": "コードは安全に保管してください。各コードは電話のコードの後に1回だけ使えます。",
+    "savedCodes": "コードを保存した",
+    "regenerate": "新しいコード",
+    "regenerateDescription": "古い復旧コードは使えなくなります。このページを離れる前に新しいコードを保存してください。",
+    "disableDescription": "電話のコードだけでログインするようになります。認証アプリと復旧コードは使えなくなります。",
+    "errorCode": "コードを確認できませんでした。もう一度お試しください。",
+    "errorRateLimited": "試行回数が多すぎます。しばらく待ってから再試行してください。",
+    "recoveryHelp": "認証アプリと復旧コードをなくしましたか？サポートにご連絡ください。電話のコードだけでは2段階認証をオフにできません。"
+  },
+  "notifications": {
+    "title": "通知",
+    "permissionBody": "回収や申請の最新情報をこの端末で受け取れます。",
+    "enable": "有効にする",
+    "denied": "通知がブロックされています。端末またはブラウザの設定で変更してください。",
+    "unavailable": "ここではまだ通知を利用できません。",
+    "error": "通知を有効にできませんでした。もう一度お試しください。",
+    "lockscreenTitle": "Luma.Greenからのお知らせ",
+    "lockscreenBody": "Luma.Greenを開いて最新情報をご確認ください。",
+    "emptyTitle": "まだ更新はありません",
+    "emptyBody": "回収と申請に関する更新がここに表示されます。",
+    "markRead": "既読にする",
+    "markAllRead": "すべて既読",
+    "unread": "未読",
+    "enabled": "この端末で有効",
+    "disable": "オフにする",
+    "disabled": "この端末でオフ",
+    "deviceTitle": "この端末",
+    "inboxTitle": "更新情報",
+    "loadMore": "もっと見る",
+    "events": {
+      "booking_confirmed": "予約が確定しました",
+      "booking_offer": "新しい回収依頼",
+      "booking_accepted": "回収を受け付けました",
+      "booking_reassigned": "回収担当者が変更されました",
+      "application_received": "申請を受け付けました",
+      "application_approved": "申請が承認されました",
+      "application_changes_requested": "申請の修正が必要です",
+      "application_rejected": "申請は承認されませんでした"
     }
   }
 }
