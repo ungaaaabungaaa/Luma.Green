@@ -346,3 +346,16 @@ screen, copy, access rule or setup instruction changes; current screenshots and
 the reviewed Word artifact remain valid. Google Docs publication is still pending.
 The Vercel preview reports deployment success but is sign-in protected; public
 HTTP inspection confirms the login boundary and `noindex`, not the hosted app UI.
+
+## Offline demo checkpoint — 2 October 2026
+
+The versioned [demo manifest](../product/demo-seed-manifest.md) and
+[import plan](../product/demo-seed-plan.md) are ready for review. They describe
+48 business plans, 82 synthetic identities and all 26 material codes. The
+manifest records six explicit coverage/import gaps. Its 35 offline regression
+checks, strict script types, lint and formatting pass. No database, provider,
+authentication or production change was made. Import isolation is still pending.
+
+Guide impact: these offline files change no route, screen, role, permission or
+workflow. They need no new guide screenshot. The parallel responsive/language
+and visual-polish pass remains uncommitted while its matching guide is refreshed.

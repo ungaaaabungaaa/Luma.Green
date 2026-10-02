@@ -1,0 +1,438 @@
+{
+  "businessCoverage": [
+    {
+      "family": "paper",
+      "kind": "kabadiwala",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "plastic",
+      "kind": "kabadiwala",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "metal",
+      "kind": "kabadiwala",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "glass",
+      "kind": "kabadiwala",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "ewaste",
+      "kind": "kabadiwala",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "other",
+      "kind": "kabadiwala",
+      "pendingSchema": 2,
+      "planned": 2
+    },
+    {
+      "family": "paper",
+      "kind": "yard",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "plastic",
+      "kind": "yard",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "metal",
+      "kind": "yard",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "glass",
+      "kind": "yard",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "ewaste",
+      "kind": "yard",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "other",
+      "kind": "yard",
+      "pendingSchema": 2,
+      "planned": 2
+    },
+    {
+      "family": "paper",
+      "kind": "recycler",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "plastic",
+      "kind": "recycler",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "metal",
+      "kind": "recycler",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "glass",
+      "kind": "recycler",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "ewaste",
+      "kind": "recycler",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "other",
+      "kind": "recycler",
+      "pendingSchema": 2,
+      "planned": 2
+    },
+    {
+      "family": "paper",
+      "kind": "manufacturer",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "plastic",
+      "kind": "manufacturer",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "metal",
+      "kind": "manufacturer",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "glass",
+      "kind": "manufacturer",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "ewaste",
+      "kind": "manufacturer",
+      "pendingSchema": 0,
+      "planned": 2
+    },
+    {
+      "family": "other",
+      "kind": "manufacturer",
+      "pendingSchema": 2,
+      "planned": 2
+    }
+  ],
+  "completedJobPaise": 150000,
+  "completedTradePaise": 701400,
+  "counts": {
+    "applications": 10,
+    "balances": 75,
+    "bookings": 12,
+    "businesses": 48,
+    "documentPlans": 19,
+    "gaps": 6,
+    "jobs": 12,
+    "listings": 81,
+    "materials": 26,
+    "movements": 118,
+    "prices": 780,
+    "snapshots": 8,
+    "support": 2,
+    "trades": 78,
+    "users": 82
+  },
+  "errors": [],
+  "gaps": [
+    {
+      "detail": "No deployment selected. Namespace/query isolation and controlled access must be designed before any import.",
+      "id": "deployment-isolation",
+      "materialCodes": [],
+      "orgIds": []
+    },
+    {
+      "detail": "The other family is absent from onboarding validators. Eight planned businesses have no operational records; OTHER-CLOTHES appears only in catalogue and synthetic price history.",
+      "id": "textile-onboarding",
+      "materialCodes": ["OTHER-CLOTHES"],
+      "orgIds": [
+        "demo:org:kabadiwala:other:01",
+        "demo:org:kabadiwala:other:02",
+        "demo:org:yard:other:01",
+        "demo:org:yard:other:02",
+        "demo:org:recycler:other:01",
+        "demo:org:recycler:other:02",
+        "demo:org:manufacturer:other:01",
+        "demo:org:manufacturer:other:02"
+      ]
+    },
+    {
+      "detail": "No recycled output codes for glass, e-waste or textiles. Do not fabricate recycler-to-manufacturer trades or conversion records.",
+      "id": "missing-recycled-outputs",
+      "materialCodes": [
+        "GLASS-BOTTLE",
+        "EWASTE-SMALL",
+        "EWASTE-PHONE",
+        "EWASTE-CABLE",
+        "EWASTE-BATTERY",
+        "OTHER-CLOTHES"
+      ],
+      "orgIds": [
+        "demo:org:manufacturer:glass:01",
+        "demo:org:manufacturer:glass:02",
+        "demo:org:manufacturer:ewaste:01",
+        "demo:org:manufacturer:ewaste:02",
+        "demo:org:manufacturer:other:01",
+        "demo:org:manufacturer:other:02"
+      ]
+    },
+    {
+      "detail": "Synthetic identities are non-routable labels, not auth users. All application states and snapshots are review examples. Controlled identity mapping, a real authorised admin, schema-valid submissions and generated watermarked files are pending.",
+      "id": "identity-documents-admin",
+      "materialCodes": [],
+      "orgIds": []
+    },
+    {
+      "detail": "The shared booking validator permits on_the_way for drop-off; its public meaning needs review before including that scenario in an imported dataset.",
+      "id": "dropoff-travel-state",
+      "materialCodes": [],
+      "orgIds": []
+    },
+    {
+      "detail": "No credit issuance, real escrow, notifications, provider calls or processing conversion records. Opening balances are explicit fictional starting stock, not claimed output production.",
+      "id": "unimplemented-services",
+      "materialCodes": [],
+      "orgIds": []
+    }
+  ],
+  "imported": false,
+  "inTransitGrams": 169000,
+  "manifestSha256": "87de2132933b2e2c01b505841b80f78167926c07dc844283d04aea14b3d6f5ff",
+  "massBalance": {
+    "inTransitGrams": 169000,
+    "inventoryGrams": 71354000,
+    "isBalanced": true,
+    "openingGrams": 71502000,
+    "pickupGrams": 21000
+  },
+  "materials": [
+    {
+      "code": "PAPER-NEWS",
+      "prices": 30,
+      "stockExamples": 6,
+      "tradeExamples": 12
+    },
+    {
+      "code": "PAPER-CARTON",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "PAPER-BOOKS",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "PAPER-OFFICE",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "PAPER-MIXED",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "PLASTIC-PET",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 12
+    },
+    {
+      "code": "PLASTIC-HDPE",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "PLASTIC-PP",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "PLASTIC-LDPE",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "PLASTIC-MIXED",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "METAL-IRON",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 12
+    },
+    {
+      "code": "METAL-SS",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "METAL-ALU-CAN",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "METAL-ALU",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "METAL-COPPER",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "METAL-BRASS",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "GLASS-BOTTLE",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 12
+    },
+    {
+      "code": "EWASTE-SMALL",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 12
+    },
+    {
+      "code": "EWASTE-PHONE",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "EWASTE-CABLE",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "EWASTE-BATTERY",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 0
+    },
+    {
+      "code": "OTHER-CLOTHES",
+      "prices": 30,
+      "stockExamples": 0,
+      "tradeExamples": 0
+    },
+    {
+      "code": "RECYCLED-PET-FLAKE",
+      "prices": 30,
+      "stockExamples": 2,
+      "tradeExamples": 6
+    },
+    {
+      "code": "RECYCLED-HDPE-GRANULE",
+      "prices": 30,
+      "stockExamples": 2,
+      "tradeExamples": 0
+    },
+    {
+      "code": "RECYCLED-KRAFT",
+      "prices": 30,
+      "stockExamples": 3,
+      "tradeExamples": 6
+    },
+    {
+      "code": "RECYCLED-ALU-INGOT",
+      "prices": 30,
+      "stockExamples": 2,
+      "tradeExamples": 6
+    }
+  ],
+  "productionReady": false,
+  "randomSeed": 20261002,
+  "referenceDate": "2026-10-15",
+  "sideEffects": {
+    "analytics": false,
+    "authentication": false,
+    "database": false,
+    "email": false,
+    "payments": false,
+    "sms": false,
+    "webhooks": false
+  },
+  "simulatedEscrowPaise": 1252500,
+  "status": "offline-checks-pass",
+  "version": "demo-v2-offline-1",
+  "workflowCoverage": {
+    "applications": {
+      "approved": 2,
+      "changes_requested": 2,
+      "draft": 2,
+      "rejected": 1,
+      "submitted": 2,
+      "suspended": 1
+    },
+    "bookings": {
+      "accepted": 2,
+      "cancelled": 2,
+      "completed": 2,
+      "declined": 2,
+      "on_the_way": 2,
+      "requested": 2
+    },
+    "trades": {
+      "accepted": 13,
+      "completed": 13,
+      "declined": 13,
+      "dispatched": 13,
+      "paid_to_escrow": 13,
+      "requested": 13
+    }
+  }
+}
