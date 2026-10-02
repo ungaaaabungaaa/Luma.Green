@@ -1,7 +1,8 @@
 # Bind push registrations to authenticated sessions
 
-Status: additive source change; deployment pending. No provider credentials or
-live delivery are required to verify the change locally.
+Status: deployed to development and production on 3 October 2026 from tested
+combined source `e1fc138`. No provider credentials were enabled. Live physical-device
+delivery remains a separate release gate.
 
 ## Reason
 
@@ -49,3 +50,10 @@ channels first if the session-aware functions must be removed.
 These tests do not contact providers. Deployment and physical-device delivery
 remain separate release gates. A delivery already claimed before logout may
 already be dispatched; payloads remain generic and the inbox requires sign-in.
+
+## Execution record
+
+The schema and session-aware functions deployed together to
+`glorious-rooster-470` and `outstanding-buzzard-942` before PR #29 frontend merge.
+All 75 indexes are available; production deleted none. No inferred session
+backfill was performed. See [rollout evidence](../delivery/security-rollout-verification.json).

@@ -226,6 +226,33 @@ The final production dry run passed schema validation with zero index deletions
 and 16 additive indexes, including all nine account/inbox/push indexes. The
 registry audit still reports only the known high node-forge advisory. GitHub's
 advisory still lists no published patched version; the exact upstream backport
-remains installed and tested. Backend deployment, post-deployment session/index
-checks, the final protected merges and the newer cloud guide publication are
-recorded separately after they occur.
+remains installed and tested. Backend deployment and post-deployment checks are recorded below. The final
+protected follow-up merge and newer cloud guide publication are recorded after
+they occur.
+
+## Verified backend rollout — 3 October 2026
+
+The exact tested source `e1fc1389ddd047cc1db192fa33e782814b5c8a45` was deployed
+to development `glorious-rooster-470` and production `outstanding-buzzard-942`
+before the dependent frontend merged. The development push completed at
+19:43 UTC on 2 October; production and its read-only checks completed by
+19:52 UTC (3 October in Bengaluru). The production push explicitly deleted
+zero indexes and added all 16 expected indexes. Post-push queries prove all 75
+indexes available and 137 deployed functions in both environments. A repeat
+production dry run found no schema or function changes. Its CLI still reports
+a Node action-version config line; this is not an index or function deletion.
+
+In each deployment, unauthenticated identity returns null. Private review, API
+key management and inbox queries return `NOT_SIGNED_IN`. The support quota
+index is available. Read-only counts again show zero active admin sessions.
+Development has one consistent password/TOTP admin; production has zero auth
+users and admin profiles, with admin/auth settings still absent. No sessions,
+accounts, provider settings or secrets were changed. No guessed session binding
+or job-city backfill was performed. Production provisioning and a real
+password/TOTP sign-in remain separate acceptance gates.
+
+The frontend PR #29 merged only after this rollout and all hosted checks passed:
+737 browser tests, five analytics-consent tests, the five required checks and
+native validation/export. Its main merge is `53dae4db62432119505bd06d7d9ac85284c0c386`.
+The follow-up reconciles that main commit while preserving every tested runtime
+file from the deployed source. See [safe rollout evidence](security-rollout-verification.json).

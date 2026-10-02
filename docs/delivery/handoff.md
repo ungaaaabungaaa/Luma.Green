@@ -675,3 +675,20 @@ The 103-page Word guide has 99 images and SHA-256
 `a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3`.
 Its existing Google Doc awaits the verified in-place update after the source
 merges; the latest published record and native description are preserved.
+
+### Verified rollout and protected account merge
+
+Source `e1fc138` deployed to development `glorious-rooster-470` and production
+`outstanding-buzzard-942` before the frontend merge. Both post-deployment checks
+prove 75 indexes, 137 functions, null anonymous identity and `NOT_SIGNED_IN`
+for private review, integration-key and inbox queries. Production added 16
+indexes and deleted none. Both environments have zero active admin sessions;
+production has no auth users or configured admin. No account/session changes,
+secret rotation, provider enablement or inferred data backfill was needed.
+
+PR #29 then merged at `53dae4db62432119505bd06d7d9ac85284c0c386` with all required
+checks, 737 browser tests, five analytics checks and native validation/export
+green. Reconciliation commit `b0db178` preserves all tested runtime source bytes.
+The reviewed 103-page platform guide can now be synchronized in place. The
+separate team Word artifact is preserved. Production admin provisioning, live
+password/TOTP acceptance, SMS and signed device delivery remain separate gates.

@@ -1,7 +1,8 @@
 # Industry API credential storage
 
-> **Status:** additive schema change prepared on 2 October 2026. No production
-> deployment or migration execution is claimed by this note.
+> **Status:** deployed to development and production on 3 October 2026 from
+> tested combined source `e1fc138`. Existing rows need no migration. Live
+> authenticated key issuance/provider execution remains a separate acceptance gate.
 
 ## Change and purpose
 
@@ -39,10 +40,14 @@ as part of an application rollback. Plan any later data deletion separately.
 
 ## Execution record
 
-| Stage                             | State                           |
-| --------------------------------- | ------------------------------- |
-| Additive schema prepared          | Source change only              |
-| Development or preview deployment | Pending deployment verification |
-| Production deployment             | Pending                         |
-| Existing-row backfill             | Not required                    |
-| Field narrowing                   | Not required                    |
+| Stage                             | State                             |
+| --------------------------------- | --------------------------------- |
+| Additive schema prepared          | Source change only                |
+| Development or preview deployment | Verified: glorious-rooster-470    |
+| Production deployment             | Verified: outstanding-buzzard-942 |
+| Existing-row backfill             | Not required                      |
+| Field narrowing                   | Not required                      |
+
+The combined rollout added 16 indexes and deleted none. All 75 schema indexes
+are available in both deployments. Anonymous credential-management queries
+reject access. See [rollout evidence](../delivery/security-rollout-verification.json).
