@@ -226,7 +226,13 @@ Before the first production release:
 6. Publish only compatible, policy-compliant OTA updates. Treat a material change
    to the reviewed app's function as a store-review decision, not an OTA loophole.
 
-These are operator commands after setup, not commands run by this change:
+These are operator commands after setup, not commands run by this change.
+**Do not run them for signed releases until the
+[mobile signing gate](../../docs/operations/app-releases.md#build-test-then-release)
+is cleared.** `pnpm dlx eas-cli` and global EAS installations do not inherit the
+workspace's node-forge patch. Verify the actual release toolchain's fixed or
+patched dependency and signature tests first; see the
+[patch provenance](../../patches/README.md).
 
 ```sh
 # Run in apps/mobile with the approved EAS CLI and actual account configuration.

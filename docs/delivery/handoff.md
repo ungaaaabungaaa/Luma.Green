@@ -412,3 +412,29 @@ deployment remain separate gates. This report does not claim launch readiness.
 The security repair branch preserves the industry API feature merged through PR #30 at `af2e295`. Its additive schema and API guide chapter are retained. The combined source was reviewed for access boundaries and checked again. A slow-loading phone menu also keeps its trigger disabled until interactive, preventing lost first clicks. The current guide includes both revisions.
 
 Final local evidence: `pnpm check` passed (1,345 web/backend, 30 mobile and 21 desktop tests), formatting passed, both production build formats passed, and all 158 browser tests passed without retries. The reviewed Word guide has 76 pages and 72 screenshot placements. Capture hashes match the combined source. Hosted checks and protected squash-merge evidence belong to the associated security repair PR; production backend deployment and the cloud guide update are not implied.
+
+## Security rollout follow-up — 2 October 2026
+
+The follow-up branch `fix/security-rollout-followup` starts at merged PR #31
+(`2ba8246`) and keeps the concurrent PR #29 checkout separate. The node-forge
+advisory now has a reviewed local backport of upstream commit
+`ceba34402e329f0365134f23fe19898756527d65`. All three Expo consumer paths reject
+the upstream forgery vector; valid signing controls pass. The registry still
+reports one high advisory because no patched version has been published. See
+[patch provenance](../../patches/README.md); separate EAS installations remain
+gated for signing.
+
+Local verification passed: `pnpm check` (1,345 web/backend, 36 mobile and 21
+desktop tests), production build, complete formatting, and an independent patch
+review. Guide impact: the dependency patch changes no user-facing route, screen,
+copy, role or native update behavior. The reviewed source/DOCX/screenshots remain
+valid. Operator release instructions now identify the separate EAS dependency
+boundary. Cloud synchronization and backend rollout are being verified separately.
+
+Read-only session inspection found no active admin sessions in development or
+production. Development has one configured password/TOTP admin with consistent
+profile records; production has no auth users and no configured admin. No session
+or account records were changed. A production dry run found 15 indexes belonging
+to the separately deployed ecosystem backend that current main would delete.
+That deployment was not applied. Complete the combined schema integration with
+PR #29 and ecosystem backend commit `dc41665` before either environment is pushed.

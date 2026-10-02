@@ -53,9 +53,28 @@ attacker rotating numbers; ingress anti-abuse and operator review remain launch
 gates. Historical reservation scans fail closed on resource limits rather than
 promise stock from truncated history; high-volume latency remains unmeasured.
 
-## Open dependency risk
+## Dependency mitigation
 
-The approved registry audit found three advisories. After the two published fixes, it reports one high-severity issue: `node-forge` 1.4.0 through Expo CLI and `@expo/code-signing-certificates`. [GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv) has no published patched version as checked on 2 October 2026. It concerns RSA PKCS#1 v1.5 signature validation. The affected package is in native build/signing tooling; the Next.js application does not import it. This distinction does not clear the advisory. Do not accept untrusted certificates or signatures through this toolchain. Signed mobile release acceptance remains open until an upstream fix or reviewed replacement is verified. No unreviewed cryptography patch or blanket audit suppression is used.
+The approved registry audit originally found three advisories. The two published
+fixes remain installed. On 2 October 2026, the follow-up applied the exact
+`lib/rsa.js` validation change from [upstream PR 1152](https://github.com/digitalbazaar/forge/pull/1152),
+commit `ceba34402e329f0365134f23fe19898756527d65`, to all workspace copies of
+`node-forge` 1.4.0 through pnpm's locked patch mechanism.
+
+The malformed nested DigestAlgorithm signature was accepted before the patch
+and rejected after it through all three Expo consumer paths. Valid signing and
+certificate controls pass. Independent review confirmed that the patched file
+matches the upstream commit byte for byte. Six new regressions, all 36 mobile
+tests and types, both mobile exports, and the upstream Node suite (829 passed,
+four existing conditional skips) pass. See [patch provenance and removal rules](../../patches/README.md).
+
+[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv) still has
+no published patched version. The package keeps its real version, so `pnpm audit`
+still reports one high advisory. This is a tested local backport, not a clean
+registry audit or an upstream release. No advisory is suppressed. Separate
+`pnpm dlx eas-cli` or global installations do not inherit this patch and remain
+blocked for release signing until their own verifier is fixed and tested. Signed
+native delivery and real-device acceptance remain separate release gates.
 
 The other source advisories are [uuid buffer bounds](https://github.com/advisories/GHSA-w5hq-g745-h8pq) and [DOMPurify detached event handlers](https://github.com/advisories/GHSA-p98j-92pf-mc4p). The xcode consumer uses the retained CommonJS v4 API; compatibility is checked separately.
 
