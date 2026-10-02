@@ -1,6 +1,7 @@
 import { type FunctionReference, getFunctionName } from "convex/server";
 import { ConvexError } from "convex/values";
 
+import { inboxFixture, securityFixture } from "./account-fixtures";
 import {
   complianceFixture,
   fixtures,
@@ -47,6 +48,14 @@ export function useQuery(
   const name = getFunctionName(query);
   const failure = failureQuery(name);
   if (failure.matched) return failure.value;
+  if (name === "inbox:unreadCount")
+    return inboxFixture(window.location.search).unreadCount;
+  return name === "identity:me" &&
+    window.location.pathname.endsWith("/account/security")
+    ? securityFixture(window.location.search)
+    : readFixture(name);
+}
+function readFixture(name: string): unknown {
   if (name === "workspace:mine") return workspaceFixture();
   if (name === "market:browse") return offersFixture();
   if (
@@ -72,9 +81,22 @@ export function useQuery(
 export function useConvexAuth() {
   return { isLoading: false, isAuthenticated: true };
 }
+export function usePaginatedQuery(query: FunctionReference<"query">) {
+  const name = getFunctionName(query);
+  if (name !== "inbox:list")
+    throw new Error(`Missing paginated documentation fixture: ${name}`);
+  const fixture = inboxFixture(window.location.search);
+  return {
+    results: fixture.results,
+    status: fixture.status,
+    loadMore: () => {
+      throw new Error("Documentation fixture: pagination is exhausted.");
+    },
+  };
+}
 function rejectWrite() {
-  return new URLSearchParams(window.location.search).get("scenario") ===
-    "support"
+  return window.location.pathname.endsWith("/failure.html") &&
+    new URLSearchParams(window.location.search).get("scenario") === "support"
     ? Promise.reject(new ConvexError("SUPPORT_RATE_LIMITED"))
     : Promise.reject(new Error("Documentation fixture: writes are disabled."));
 }

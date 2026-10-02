@@ -36,7 +36,9 @@ before the next build. This prevents later builds from losing your changes.
    are direct browser output, not cropped or composed after capture.
 
    The commands accept a local origin only and reject external requests. They
-   visit real pages. The phone-preview capture enters the synthetic number
+   visit real pages. Separate light and dark phone captures show the first-run
+   language picker with no saved language choice. The phone-preview capture
+   enters the synthetic number
    `9000000000` and submits the local preview form to show the OTP screen. No
    backend call, SMS delivery, account creation or sign-in occurs. Other forms
    are not submitted. Use a disconnected or approved test environment with no
@@ -47,6 +49,33 @@ before the next build. This prevents later builds from losing your changes.
    show current components with synthetic records. Follow its README. Keep its
    visible fixture banner and metadata. It does not prove live access, server
    permissions or provider behavior.
+
+   The separate failure matrix uses the same isolated preview and rejects local
+   requests. It captures 78 English/Arabic phone, tablet and desktop views:
+
+   ```sh
+   GUIDE_FIXTURE_ORIGIN=http://127.0.0.1:3203 node scripts/guide-preview/capture-failures.mjs
+   ```
+
+   This matrix covers retained files and drafts, sign-out retry, invalid totals,
+   support limits and admin authentication errors. Setup images show empty
+   password and token fields. They do not prove account creation or live failure
+   recovery. Inspect each original PNG and retain `failure-captures.json`.
+
+   Approved sample prices have a separate read-only capture command:
+
+   ```sh
+   GUIDE_BASE_URL=http://localhost:3009 pnpm exec jiti scripts/capture-price-guide.mts
+   ```
+
+   First build the local app with the approved `glorious-rooster-470` development
+   endpoint. The script uses a fresh anonymous browser, permits that backend
+   only, opens the public board and one history dialog, and checks for 26 material
+   rows and 30 history points. It writes `price-captures.json`. The guide labels
+   these as connected development demo captures, not hosted production UI or
+   verified market quotes. It does not submit forms or change data. Keep the
+   disconnected screenshots as separate loading/unavailable-state evidence.
+
 4. Capture analytics controls with fake keys and external requests intercepted:
 
    ```sh
@@ -116,45 +145,43 @@ before the next build. This prevents later builds from losing your changes.
 
 ## Google Docs copy
 
-Current publication state is recorded in [cloud.json](cloud.json). The reviewed
-security and industry API revision from main commit `2ba8246` is **published** to
-the existing native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY).
-Its document ID, folder and sharing settings are unchanged.
+Current publication state is recorded in [cloud.json](cloud.json). The existing
+native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
+is verified through the security and industry API revision from main `2ba8246`.
+Its document ID, folder and sharing settings are unchanged. The newer combined
+public detail, account security, notifications and failure-recovery revision in
+this branch is **pending publication** after its reviewed source lands on main.
+The security followup owns the coordinated in-place update after PR29 merges.
 
-The native copy contains all 38 chapters, six tables, 548 body paragraphs and 72
-image placements from the reviewed Word source. Readback checked every paragraph,
-table cell, image source URL and image dimension. Three exact dates remain native
-date fields. The Word source has 76 reviewed pages; the native Google Docs PDF has
-78 reviewed pages because native typography and pagination differ. Every native
-PDF page was inspected. Native page breaks keep the mobile demonstration and
-verification-queue explanation with their related content.
+The last verified native copy has 38 chapters, six tables, 548 body paragraphs
+and 72 image placements. Readback checked all paragraphs, table cells, image
+source URLs and dimensions. Three exact dates remain native date fields. Its
+Word source had 76 reviewed pages; the native PDF had 78 reviewed pages because
+native typography and pagination differ. These counts describe the published
+revision, not the newer local Word guide. The exact proof remains under
+`last_verified_revision` in `cloud.json`.
 
-One accessibility difference remains explicit: the Google Docs batch-update API
-does not expose a setter for embedded image title/description alt text. The native
-editor restored one description, and connector readback verified it. The remaining
-71 images retain visible editable captions but lack native descriptions. Native
-editor work stopped when the user changed browser focus. Readback confirmed that
-body text, tables, dates, styles, image objects and sharing remained unchanged.
-Do not claim that native image-alt semantics match the Word source. See the
-[current request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
+The supported update uses revision-guarded Google Docs batch requests. Compare
+the current native revision with the last verified record first, and preserve or
+reconcile later human edits. Keep the tab and table structures, apply the reviewed
+changes in bounded batches, and use committed screenshot bytes or immutable
+source URLs. Verify all body text, table cells, dates, headings and image
+placements after writing. Export the native PDF and inspect every page before
+recording the new source hash, native revision and publication status.
 
-For each later revision, update this same native document through the dedicated
-Google Docs batch-update action. First compare its current revision with the last
-verified record; preserve or reconcile any later human edits. Use revision guards,
-retain the tab and table structures, and apply the reviewed source changes in
-bounded batches. Preserve unchanged image objects and their native descriptions.
-For changed images, use supported replacement that preserves the reviewed size,
-aspect ratio and description; verify these fields after writing. Use the committed
-screenshot bytes or immutable source URLs.
-Verify all body and table text, native dates, headings and image placements after
-writing. Export the native PDF, inspect every page, repair layout issues, then
-record the exact source hash, native revision and verification in `cloud.json`.
-Keep any unmerged or unreviewed revision pending.
+One accessibility limit remains: the current Google Docs batch-update API does
+not expose a setter for embedded image title/description alt text. The
+native editor restored one image description, verified by connector readback.
+The remaining 71 published images retain editable visible captions but lack native
+descriptions. Native editor work stopped when the user changed browser focus.
+Preserve unchanged image objects and native descriptions during supported
+replacement, and verify their size, aspect ratio and description after writing.
+Do not claim that native image-alt semantics match the Word source. See the [request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
 
 The connected `google_drive_import_document` action creates a new document and
-is only for the first import. The connected `update_file` action cannot replace a
-native Google Doc with raw DOCX bytes. Neither action is the in-place update path.
-Do not create a replacement document or change the link or sharing settings.
+is only for the first import. `update_file` cannot replace a native Google Doc
+with raw DOCX bytes. Neither is the in-place update path. Do not create a
+replacement document or change the existing link or sharing settings.
 
 For the first import only, use the sanitized and visually reviewed DOCX with
 `google_drive_import_document` and `upload_mode: "native_google_docs"`. A manually

@@ -36,7 +36,7 @@ const nothingOnFile: Consent = {
 };
 
 describe("ConsentCard", () => {
-  it("shows a valid consent calmly, with the reminder date", () => {
+  it("shows a valid consent with a review date, without promising a notification", () => {
     const consent: Consent = {
       ...onFile,
       status: "ok",
@@ -50,10 +50,9 @@ describe("ConsentCard", () => {
     expect(screen.getByText("KSPCB · KSPCB/CFO/2025/1187")).toBeInTheDocument();
     expect(screen.getByText("274 days left")).toBeInTheDocument();
     expect(
-      screen.getByText(
-        /We'll remind you on .*2026, 90 days before it runs out/,
-      ),
+      screen.getByText(/Renewal review date: .*2026, 90 days before expiry/),
     ).toBeInTheDocument();
+    expect(screen.queryByText(/We'll remind you/)).not.toBeInTheDocument();
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });
 

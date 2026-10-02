@@ -43,7 +43,7 @@ See [designer system plan](../design/designer-system.md).
   Forest green marks actions and selected states, not every section background.
 - Public content uses `max-w-7xl`, editorial headings, larger section spacing,
   and compressed materials photography. Geist supplies Latin display type;
-  Noto supplies body text and all twelve scripts.
+  Noto supplies body text and all supported scripts.
   Hero tracking and line-height are reset for non-Latin scripts.
 - Base radius is `0.5rem`: 8px control corners; open sections and divided rows for content. Shared shadcn
   buttons are 44px regular and 48px large, with stable focus and disabled states.

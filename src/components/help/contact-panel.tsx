@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
 import { DemoNote } from "@/components/app/page-parts";
+import { actionName } from "@/components/site/action-name";
 import { Button } from "@/components/ui/button";
 
 import { SUPPORT_CONTACT } from "./content";
@@ -39,27 +40,48 @@ function Row({
 export function QuickContact() {
   const t = useTranslations("help");
   return (
-    <div className="flex flex-col gap-2 sm:flex-row">
-      <Button asChild size="lg" className="h-12 px-5 text-base">
-        <a href={`tel:${SUPPORT_CONTACT.tel}`}>
-          <PhoneIcon aria-hidden />
-          {t("contact.callTitle")}
-          <span dir="ltr" className="font-normal">
-            {SUPPORT_CONTACT.display}
-          </span>
-        </a>
-      </Button>
-      <Button
-        asChild
-        size="lg"
-        variant="outline"
-        className="h-12 px-5 text-base"
-      >
-        <a href={SUPPORT_CONTACT.whatsapp} target="_blank" rel="noreferrer">
-          <MessageCircleIcon aria-hidden />
-          {t("contact.whatsappTitle")}
-        </a>
-      </Button>
+    <div className="space-y-3">
+      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+        <Button asChild size="lg" className="h-12 max-w-full px-5 text-base">
+          <a
+            href={`tel:${SUPPORT_CONTACT.tel}`}
+            aria-label={actionName(
+              t("contactStrip.call"),
+              t("contact.callTitle"),
+            )}
+          >
+            <PhoneIcon aria-hidden />
+            <span className="sm:hidden">{t("contactStrip.call")}</span>
+            <span className="hidden sm:inline">{t("contact.callTitle")}</span>
+          </a>
+        </Button>
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          className="h-12 max-w-full px-5 text-base"
+        >
+          <a
+            href={SUPPORT_CONTACT.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={actionName(
+              t("contactStrip.whatsapp"),
+              t("contact.whatsappTitle"),
+            )}
+          >
+            <MessageCircleIcon aria-hidden />
+            <span className="sm:hidden">{t("contactStrip.whatsapp")}</span>
+            <span className="hidden sm:inline">
+              {t("contact.whatsappTitle")}
+            </span>
+          </a>
+        </Button>
+      </div>
+      <p dir="ltr" className="w-fit text-sm font-medium tabular-nums">
+        {SUPPORT_CONTACT.display}
+      </p>
+      <DemoNote>{t("contact.sampleNumbers")}</DemoNote>
     </div>
   );
 }

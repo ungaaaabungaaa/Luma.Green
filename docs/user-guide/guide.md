@@ -2,10 +2,11 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, security and industry API revision. Source baseline: af2e295.
-This edition includes industry API access and the security fixes listed in docs/delivery/security-failure-review.md.
-Includes the UI detail pass and wide artwork banners on the main public pages, with taller image crops on phones.
-Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis, integration operators and the platform owner.
+Edition: 2 October 2026, account security, failure recovery, notifications, fuller public pages, industry API and 33 languages. Source baseline: bc986f4.
+
+This edition combines the account checkpoint with industry API main af2e295. It also includes the security and failure-recovery changes from main 2ba8246. The capture manifests record the exact source hashes for the combined revision.
+Includes the UI detail pass, distinct work scenes and practical guides on the main public pages, plus safe account, recovery and business API examples.
+Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
 
@@ -21,6 +22,7 @@ Luma.Green records scrap collection and movement through the recycling chain. A 
 
 - Current local capture: an unchanged browser screenshot of the current app without a backend connection. Setup messages are real states, not errors added to the picture.
 - Current configured local capture: the real app with test analytics keys. External browser requests are intercepted; no provider receives data.
+- Current connected demo capture: the local app reads approved sample prices from the development backend. It proves that view can read the demo records, not production frontend deployment or verified market prices. No account is signed in and no record is changed.
 - Synthetic documentation fixture: an unchanged browser screenshot of real application components supplied with sample records in a separate documentation server. It is not an authenticated session or proof of a working integration.
 
 No screenshot is an AI-generated interface. Public pages contain generated decorative artwork, but the page screenshots themselves come from the browser. Text in the guide explains the controls; it does not paint controls over a screenshot.
@@ -92,13 +94,21 @@ Connect the frontend to the intended Convex backend. Configure authentication. E
 
 ## 03 / Phone sign-in and languages
 
-![Language selection in the disconnected local build. This screen remains available before SMS is configured.](screenshots/public-login.png)
+![Compact language selection in the disconnected local build. This screen remains available before SMS is configured.](screenshots/public-login.png)
 
-1. Open /login. If the language chooser appears, choose your language.
+1. Open /login. If the language chooser appears, use Search or scroll the list. Select a language, check the current choice below the list, then select Continue.
 2. Enter your Indian mobile number. The form supplies the +91 country code.
 3. When SMS is connected, request the code and enter the six digits from the message.
-4. Wait for the session to finish loading before opening a protected page.
+4. If an authenticator is on, complete that second check with its current code or an unused recovery code. Wait for the session to finish loading before opening a protected page.
 5. Continue to your approved role or application status.
+
+The language list uses each language's own name and its English name. Search
+filters the list. Selecting a row sets the choice; Continue applies it and opens
+phone entry. You can use the language control in the header later.
+
+![First-run language picker at phone width in light mode. Search, the current choice and Continue remain visible around the scrolling list. Actual browser capture; no sign-in occurs.](screenshots/public-login-languages-phone.png)
+
+![The same first-run language picker at phone width in dark mode. Actual browser capture; no backend connection or SMS is needed.](screenshots/public-login-languages-phone-dark.png)
 
 If SMS is not configured, select Preview code screen after entering a valid mobile number. The next screen is labelled as a preview. You can inspect and enter the six code digits, but Verify and Resend are disabled. No SMS is sent, no account is created and no private page is opened. Use Change number to go back. The phone number stays in this browser tab, not in the address.
 
@@ -108,9 +118,9 @@ If SMS is not configured, select Preview code screen after entering a valid mobi
 
 With SMS connected, codes last five minutes and allow five attempts. The resend control has a 30-second delay. Repeated requests also have server limits. Do not repeatedly request codes when delivery is slow. If a send fails, follow the displayed retry state.
 
-Regular sessions last up to 30 days. Sign in again after expiry. Sign out on shared devices. Your identity follows your phone number; the browser language does not change your role.
+Phone sign-in does not use a password. Optional authenticator setup, recovery codes and account settings are explained in chapter 37. Regular sessions last up to 30 days. Sign in again after expiry. Sign out on shared devices. Your identity follows your phone number; the browser language does not change your role.
 
-The twelve languages are English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Urdu and Arabic. The header language control shows the current language in its own script, for example English or العربية. Open it to choose another language. On phones, the brand appears as its icon; the full name appears on wider screens. Arabic and Urdu use right-to-left layouts. The admin console is English-only.
+The 33 languages are English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Urdu, Arabic, Assamese, Odia, Nepali, Sinhala, Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian, Ukrainian, Turkish, Indonesian, Malay, Vietnamese, Thai, Japanese, Korean and Simplified Chinese. The language control shows the current language in its own script, for example English or العربية. On public pages and operational screens, phones and tablets keep it in the menu. Sign-in screens keep it in the header, as do wider desktop screens. Open the control to choose another language. On phones, the brand appears as its icon; the full name appears on wider screens. Arabic and Urdu use right-to-left layouts. The admin console is English-only. All translated catalogues have automated coverage checks; native-speaker review is still required before launch. Adding a language does not change the pilot region, Indian mobile-number requirement or rupee currency.
 
 ---
 
@@ -125,12 +135,18 @@ The household flow stays at /sell. Its address uses a step query parameter; ther
 3. Choose a nearby shop. Compare its material prices and whether it offers pickup or drop-off.
 4. Choose pickup or drop-off and the offered time. Supply the location and address required by the form.
 5. Review the material list, estimate, shop and time.
-6. Use Confirm and book with the SMS code. Successful verification submits the booking automatically. If already signed in, use the booking button once.
+6. Use Confirm and book with the SMS code. If protection is on, also complete the authenticator or recovery-code check. Successful full verification submits the booking automatically. If already signed in, use the booking button once.
 7. Save the tracking link shown after booking.
 
-The estimate is not the final payment. The shop records the actual weight and the agreed material rate at collection. A photo estimate does not set a price and is not a certified measurement.
+The estimate is not the final payment. The shop records the actual weight and the agreed material rate at collection. A photo estimate does not set a price and is not a certified measurement. It accepts one optional photo. Keep faces, documents and number plates out of the image. The photo goes to the configured AI provider for the estimate; Luma.Green does not save it.
 
 The draft is kept in this browser tab during the flow. A closed tab or reset can remove the draft. A submitted booking is a backend record. Do not treat a draft as a confirmed booking.
+
+![Current household material rows with a synthetic three-material catalogue and sample prices. The isolated component has local draft state only; no booking is submitted.](screenshots/household-basket-phone.png)
+
+![Current pickup and drop-off radio rows. This isolated control fixture does not show a live shop offer or a complete shop-selection screen.](screenshots/household-mode-phone.png)
+
+![Current date and time rows with a fixed synthetic date and sample shop hours. Scroll for the remaining address fields. This component fixture does not reserve a pickup.](screenshots/household-when-phone.png)
 
 ---
 
@@ -164,6 +180,9 @@ A completed receipt preserves its recorded weights and prices. A later price cha
 5. Upload the documents requested by that role.
 6. Review the form and submit it for a person to check.
 7. Open /join/status to follow the decision.
+
+Forms use compact option rows. Radio controls choose one option; checkbox rows
+allow more than one. Check the selected state before you continue.
 
 Households do not need to join as a business. They use /sell.
 
@@ -219,7 +238,7 @@ A kabadiwala is a local scrap shop. The approved shop uses /app to manage househ
 5. Check Prices before accepting new work. A shop rate cannot be below the platform minimum.
 6. Check Stock before offering material to another business.
 
-Use the bottom navigation on a phone. Use More for the role's additional pages. On wider screens the same app can show side navigation. The available destinations follow the approved role; typing a route does not change permission.
+Use the bottom navigation on a phone or tablet. Two frequent destinations stay visible. Open More for the role's additional pages, language, appearance and sign-out. On wider desktop screens the same app shows side navigation. The available destinations follow the approved role; typing a route does not change permission.
 
 Auto-accept can accept suitable bookings without a separate manual tap. Check the radius and location before enabling it. There is no separate Taking pickups availability switch. Changing auto-accept does not cancel bookings already accepted.
 
@@ -260,7 +279,7 @@ Avoid repeated taps while a request is being submitted. An offline screen does n
 
 Luma.Green records the result. It does not make the cash or UPI transfer. A button labelled as a payment step must not be treated as bank confirmation.
 
-The backend stores money in whole paise and mass in whole grams. The screen formats those values for the selected language. Review the displayed units before entering a number.
+The backend stores money in whole paise and mass in whole grams. The screen formats those values for the selected language. Review the displayed units before entering a number. Weight and price fields accept digits used by supported scripts. Enter quantities without thousands separators. Use at most three decimal places for weighed kilograms and two for rupees. A decimal comma is accepted where the selected language uses it; an ASCII decimal point also works.
 
 The final receipt is the record of that transaction. If a correction is needed after completion, contact the owner; do not silently alter another record to hide the difference.
 
@@ -357,6 +376,8 @@ Keep documentary evidence required by the business outside the demo payment flow
 
 There is no standalone Convert batch or Record processing run screen in this version. The guide does not infer one from the recycler role or from the fact that stock has several material groups.
 
+Compliance shows a renewal warning when a consent has fewer than 90 days left. The renewal review date is 90 days before expiry; it is not a promise of an SMS reminder. Renew with the issuing board and contact support to update the certificate.
+
 Compliance totals depend on the recorded transactions. They are supporting information. Check the date range, categories and underlying receipts before using them in an external report. No automated regulatory filing is performed.
 
 ---
@@ -392,7 +413,7 @@ A Saathi is an approved worker who can take pickup, sorting or shift work offere
 2. Open /app to view the job board.
 3. Read the job's location, work, time and offered amount.
 4. Accept only work you can attend.
-5. Use the current job's action when the work is complete.
+5. Select Mark done on the current job when the work is complete, then confirm completion.
 6. Open /app/impact to inspect the earnings record shown for the role.
 
 Finish marks the job done and records that action. It does not call a payout provider. Confirm actual payment through the agreed payment method outside the platform.
@@ -439,13 +460,26 @@ If setup cannot connect, read the safe error message and try again after the con
 
 If a password, authenticator or backup-code request fails, the form shows an error and allows another attempt. A failed sign-out keeps the current page open. It does not confirm that your session ended; retry before you leave a shared device. Phone codes cannot grant an admin session.
 
+![Synthetic documentation fixture: an authenticator request failed, and the form allows another attempt. No real code or account is shown.](screenshots/failure-totp-en-dark-phone.png)
+
 Admin sessions last at most 12 hours. Activity does not extend that limit. The console is English-only and has no locale prefix.
 
 If setup was interrupted, reopen /admin/setup and complete the remaining profile or authenticator step. If signed in as a phone member, sign out before starting admin setup.
 
-No password-reset screen, recovery-email workflow, staff invitation or backup-code management screen is implemented. If the password is lost, or neither an authenticator nor an unused backup code is available, arrange owner-led recovery. A backup code replaces the authenticator step, not the password. Changing ADMIN_EMAIL is not a safe way to invite another operator.
+### Reset a lost admin password
 
-![Synthetic documentation fixture: an authenticator request failed, and the form allows another attempt. No real code or account is shown.](screenshots/failure-totp-en-dark-phone.png)
+1. On Admin sign-in, select Forgot password, or open /admin/forgot-password.
+2. Enter the configured admin email and select Send reset link. Recovery needs the owner to configure the verified Resend sender. If configuration or delivery is unavailable, follow the displayed error.
+3. Open the received link within 15 minutes. Use a unique password of 12–128 characters and enter it again. The visibility control helps check entry; the length hint is not a guarantee of password strength.
+4. Select Update password once. After success, sign in with the new password and your authenticator or an unused recovery code.
+
+A link works once. Missing, expired or previously used links cannot reset the account. Request a new link when needed. A successful reset ends existing sessions and invalidates earlier pending sign-in proofs and reset links. It keeps the authenticator and recovery codes. Unknown or non-admin addresses receive a neutral response and no email.
+
+![Admin password recovery form with no address entered. Actual components in the isolated fixture; it sends no email.](screenshots/admin-password-recovery-light.png)
+
+![Admin reset page in dark mode with a missing-token error. No password or reset token is supplied; this is an isolated fixture.](screenshots/admin-password-reset-missing-dark.png)
+
+If neither an authenticator nor an unused recovery code is available, arrange owner-led recovery. A password reset does not bypass the second factor. There is no staff invitation screen. Changing ADMIN_EMAIL is not a safe way to invite another operator.
 
 ---
 
@@ -538,8 +572,6 @@ or material rows, the related chart is not shown.
 
 ![Current estimated and weighed material chart with synthetic weights. The table gives the same values in kilograms.](screenshots/admin-pilot-materials.png)
 
----
-
 ### What these numbers mean
 
 Bookings are selected by date booked. Applications are selected by their latest submission date. Outcomes are the current record state, not a historical snapshot at the selected end date. The report reads at most 1,000 bookings and 1,000 applications; the backend accepts a maximum 31-day range.
@@ -582,6 +614,10 @@ Store downloaded identity documents only in an approved secure location. Do not 
 4. Use /help/contact if the guide does not solve the problem.
 5. Enter the requested contact information and a clear message. Submit once and read the result.
 
+The illustrated topic links open the complete preparation, weighing/payment and business-verification guides. They keep the selected language. Use them when you know the task but not which role directory to open.
+
+![Illustrated help topics in the current disconnected build. Each item opens an existing full guide.](screenshots/public-help-topics.png)
+
 Training completion is stored in this browser's local storage. It is not a certificate and does not automatically follow the account to another device. Clearing browser data can remove the mark.
 
 The current Call and WhatsApp number is a placeholder: +91 80 0000 0000. It is not an active support number. The owner must replace it before launch. When connected, the contact form creates a support request; it does not prove that a person has replied or that an SMS/email was delivered.
@@ -604,9 +640,9 @@ Use /app/impact for the summary available to your role. Keep recorded collection
 
 ![The same synthetic impact example at phone width. The visible fixture banner identifies this as a documentation preview. Scroll to read the remaining sections.](screenshots/recycler-impact-phone.png)
 
-Use /solar to explore the rooftop-solar information and estimator. Treat estimates as planning inputs, not an installation quote or guaranteed return. Send an enquiry through the form if enabled. It enters the support workflow; no installer booking, finance approval or electricity connection is completed by that form.
+Use /solar to explore the rooftop-solar information and estimator. The input reads local digits and decimal separators, such as 3000,50 in French or ٣٠٠٠٫٥٠ in Arabic. Check the displayed estimate after editing; malformed numbers show a field error. Treat estimates as planning inputs, not an installation quote or guaranteed return. Send an enquiry through the form if enabled. It enters the support workflow; no installer booking, finance approval or electricity connection is completed by that form.
 
-The platform does not replace business compliance advice, physical inspection, product testing or a supplier's official documents.
+The grading, weighing and custody sections now include relevant work scenes beside their rules. The images do not certify the work or show measured platform activity. The platform does not replace business compliance advice, physical inspection, product testing or a supplier's official documents.
 
 ---
 
@@ -624,6 +660,8 @@ The repository contains an Expo/React Native shell for Android and iOS and an El
 6. If disconnected, restore the connection and inspect the current record before repeating an action.
 
 Hosted website changes can update the shared UI. Compatible signed JavaScript updates and desktop updates have separate release paths. Mobile shell updates can apply at a later cold start; an immediate restart requires a choice. Desktop updates can install on normal quit or through the offered restart action. Select Later while a form is in progress. New native capabilities can still require a binary or store update; permanent freedom from updates is not promised.
+
+Account notifications and device permission are explained in chapter 38. Android/iOS push requires EAS, APNs/FCM setup and controlled signed-device tests. Desktop notifications require the application process to remain open. Apple Developer, Google Play and Expo/EAS accounts are not yet set up.
 
 There is no offline write queue, background location service or independent native ledger. A mobile JavaScript export is not an APK or IPA installer.
 
@@ -686,22 +724,26 @@ For an uncertain submit, reconnect and inspect the record first. Do not repeated
 
 This is an owner/developer checklist, not a list of admin console buttons. The exact environment names and release commands live in the repository runbooks.
 
-| Service or task     | Required setup                                                                                          |
-| ------------------- | ------------------------------------------------------------------------------------------------------- |
-| Hosting and domain  | Intended HTTPS origin; frontend deployment; NEXT_PUBLIC_SITE_URL                                        |
-| Convex              | Correct deployment and URLs; deployment-specific keys; schema/functions deployed before dependent UI    |
-| Authentication      | SITE_URL, BETTER_AUTH_SECRET and ADMIN_EMAIL; private ADMIN_SETUP_TOKEN for first setup, then remove it |
-| Phone SMS           | MSG91 account, DLT/template approval and OTP limits; configured OTP values                              |
-| Optional status SMS | Separate approved Flow templates and outbox configuration; verify handset delivery                      |
-| Analytics/errors    | Optional PostHog, GA4 and Sentry projects; telemetry switch, service keys and provider settings         |
-| Search ownership    | Optional Google Search Console and Bing ownership tokens; deployed sitemap submission                   |
-| Optional AI         | OpenRouter credentials or authenticated HTTPS model gateway; quotas and evaluated model                 |
-| Android/iOS         | Expo/EAS project, Apple/Google developer accounts, signing credentials and physical-device checks       |
-| macOS/Windows       | Stable signing identities, notarization where required and signed update feeds                          |
-| Support and prices  | Real contact details; verified pilot prices; staffed review/support process                             |
-| Operations          | Measured backups and restore drill, provider cost limits and incident procedure                         |
+| Service or task      | Required setup                                                                                                                                        |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hosting and domain   | Intended HTTPS origin; frontend deployment; NEXT_PUBLIC_SITE_URL                                                                                      |
+| Convex               | Correct deployment and URLs; deployment-specific keys; schema/functions deployed before dependent UI                                                  |
+| Authentication       | SITE_URL, BETTER_AUTH_SECRET and ADMIN_EMAIL; private ADMIN_SETUP_TOKEN for first setup, then remove it                                               |
+| Phone SMS            | MSG91 account, DLT/template approval and OTP limits; configured OTP values                                                                            |
+| Admin email recovery | Optional Resend account, verified sender, RESEND_API_KEY and ADMIN_RESET_FROM_EMAIL; HTTPS SITE_URL; test delivery and single-use reset               |
+| Device notifications | VAPID keys for browsers; Expo/EAS and APNs/FCM for mobile; signed desktop/device acceptance. Inbox persistence and alert delivery are separate checks |
+| Optional status SMS  | Separate approved Flow templates and outbox configuration; verify handset delivery                                                                    |
+| Analytics/errors     | Optional PostHog, GA4 and Sentry projects; telemetry switch, service keys and provider settings                                                       |
+| Search ownership     | Optional Google Search Console and Bing ownership tokens; deployed sitemap submission                                                                 |
+| Optional AI          | OpenRouter credentials or authenticated HTTPS model gateway; quotas and evaluated model                                                               |
+| Android/iOS          | Expo/EAS project, Apple/Google developer accounts, signing credentials and physical-device checks                                                     |
+| macOS/Windows        | Stable signing identities, notarization where required and signed update feeds                                                                        |
+| Support and prices   | Real contact details; verified pilot prices; staffed review/support process                                                                           |
+| Operations           | Measured backups and restore drill, provider cost limits and incident procedure                                                                       |
 
-Use docs/operations/launch-checklist.md, app-releases.md, low-cost-operation.md and sms-notifications.md. Keep secrets outside Git and the guide. AUTH_DEV_MODE belongs only to a development or preview environment.
+Before the next Convex release, merge and review the backend changes from this work together with the parallel ecosystem branch. Preserve its current production schema and functions. Do not deploy this branch over those additions from an older checkout. Release the checked additive backend before merging the frontend update into main. No backend release of the new account-security or notification work is claimed by this guide.
+
+Use docs/operations/launch-checklist.md, app-releases.md, push-notifications.md, low-cost-operation.md and sms-notifications.md. Keep secrets outside Git and the guide. AUTH_DEV_MODE belongs only to a development or preview environment.
 
 A branch push is not deployment. A build is not provider approval. A provider accepting a message is not proof that a handset received it. Test each boundary before opening the pilot.
 
@@ -714,6 +756,7 @@ A branch push is not deployment. A build is not provider approval. A provider ac
 | Public                 | /, /how-it-works, /participants, /prices, /contact                                                 |
 | Household              | /sell; /t/[token]                                                                                  |
 | Sign-in                | /login; /login/verify                                                                              |
+| Account settings       | /account/security; /account/notifications                                                          |
 | Onboarding             | /join; /join/kabadiwala; /join/yard; /join/recycler; /join/manufacturer; /join/saathi              |
 | Onboarding documents   | /join/[business]/documents; /join/status                                                           |
 | Role home and requests | /app; /app/requests; /app/requests/[id]                                                            |
@@ -723,7 +766,7 @@ A branch push is not deployment. A build is not provider approval. A provider ac
 | Reporting              | /app/impact; /app/compliance                                                                       |
 | Help                   | /help; /help/[role]; /help/[role]/[guide]; /help/contact                                           |
 | Reference/enquiry      | /standards; /solar                                                                                 |
-| Admin access           | /admin/setup; /admin/login                                                                         |
+| Admin access           | /admin/setup; /admin/login; /admin/forgot-password; /admin/reset-password                          |
 | Admin work             | /admin; /admin/verification; /admin/verification/[id]; /admin/prices; /admin/pilot; /admin/support |
 
 Replace bracketed parts with the real record, role or guide value. They are not literal links. User-facing routes support locale prefixes such as /kn, /hi and /ar. English normally uses no prefix. Admin routes never use a locale prefix. Unknown routes show a not-found page.
@@ -757,9 +800,21 @@ Check the material, unit, quantity and price before you confirm an action. Keep 
 
 ![Current public price page in the disconnected build. Live values require a configured backend.](screenshots/public-prices.png)
 
-Open /prices before comparing a shop offer. When data is available, choose a material to inspect its price detail and history. Check the city, unit and sample-data notice. This board is not independent market-price advice.
+Open /prices before comparing a shop offer. A connected demo deployment can show seeded sample prices with a visible sample-data notice. These values demonstrate the interface; they are not verified market quotes. Choose a material to inspect its price detail and any available history. Check the city, date, unit and sample-data notice. An unconfigured or empty backend shows placeholder rows and a status message. Placeholders move only while a request is loading; reduced-motion settings stop that motion. The interface does not create replacement prices when a request fails. This board is not independent market-price advice.
+
+![Current local price board reads the approved development demo data. The sample-price notice remains visible. These are demonstration rates, not verified market quotes or proof of the hosted production frontend.](screenshots/public-prices-demo.png)
+
+![Current local material-history dialog in dark mode, using the same development demo data. The chart supports keyboard navigation; the daily values also appear in a scrollable table. No price is edited.](screenshots/public-price-history-demo-dark.png)
+
+The 2 October demo contains 26 materials and 30 daily price points for each material. Select a row to open its history. Use the arrow keys on the chart to read another date. Select Show the numbers to open the daily values below it. Close the dialog to return to the board. These sample values must be validated or replaced before operational use.
+
+The weighing guide below the board explains the final amount: zero the scale, weigh each material separately, agree the amount and check the receipt. A reference price does not replace measured weight. Use Open guide to read the full household weighing instructions.
+
+![Current price explanation in dark mode. The work scene is decorative; the text explains how weight and the agreed rate form the receipt.](screenshots/public-price-guide-dark.png)
 
 ![Current rooftop-solar page header and banner. Scroll to reach the estimator. Estimates require a real site survey.](screenshots/public-solar.png)
+
+![Current solar details with compact single-choice rows. Choose the property, monthly bill and available area before reading the estimate. This is a disconnected local browser capture, not a site survey or quote.](screenshots/public-solar-details.png)
 
 ---
 
@@ -767,7 +822,7 @@ Open /prices before comparing a shop offer. When data is available, choose a mat
 
 ![Current Arabic homepage at phone width. This is an actual browser capture, not a translated image.](screenshots/public-arabic.png)
 
-Use the header language control to change language. The same workflows remain available; text direction and number formatting follow the locale. The admin console stays English-only.
+Use the language control to change language. On public pages and operational screens, phones and tablets keep it in the menu. Sign-in screens keep it in the header. The same workflows remain available; text direction and number formatting follow the locale. The admin console stays English-only.
 
 ![Current help-contact page header and banner. Scroll to reach the message form. Submission needs a connected backend; no message was sent to create this screenshot.](screenshots/public-contact.png)
 
@@ -819,25 +874,38 @@ help pages. Each banner uses a material or work scene. On phones, the image uses
 a taller crop so the scene remains clear. The artwork does not show a live
 customer, business or platform record.
 
+How it works now includes a practical preparation section for paper, bottles, metal and e-waste. Join adds the checks used for business review and the explanation of why document files are needed. These links open complete help guides; they do not submit an application or approve a business.
+
+![Current preparation section below How it works. The image gives context; the text explains what to do before collection.](screenshots/public-sorting-guide.png)
+
+![Current business-review explanation below the Join role list. It links to the full verification guide.](screenshots/public-join-preparation.png)
+
 The interface uses neutral light surfaces and charcoal dark surfaces. Green marks
 the main action and selected states. Public pages have wider spacing; workspaces
 keep records and controls closer together. Buttons, form fields and panels use
 consistent shapes across roles. Read the text label before selecting an icon.
 
 Geist supplies the large display headings. Noto supplies body text and the script
-fallbacks for all twelve languages. The language control changes text, direction
+fallbacks for all 33 languages. The language control changes text, direction
 and number formatting; it does not change access or stored records.
 
-Use Appearance in the header or workspace controls to select Light, Dark or
-System. System follows the device setting. Your selection stays in this browser
+Use Appearance in the desktop header, phone or tablet menu, or workspace controls
+to select Light, Dark or System. System follows the device setting. Your selection stays in this browser
 when browser storage is available. It does not change another person's account
 or device. Admin and public pages use the same local preference.
 
 ![Current homepage in dark mode. Actual local browser capture, with no backend connection.](screenshots/public-home-dark.png)
 
-The desktop header shows the main navigation links. The phone menu button stays disabled until the page controls are ready. On a phone, open the menu
-for links and sign-in. The language and appearance controls remain in the header.
-Use the page's Sell scrap, Join and help links to open a workflow.
+The wide desktop header keeps its links and controls on one row. The phone menu button stays disabled until the page controls are ready. On phones and
+tablets, the header shows the logo and menu control. Open the menu for navigation,
+appearance, language, sign-in and Sell scrap. The menu scrolls on short screens.
+Press Escape to close it and return keyboard focus to the menu control.
+
+![Current phone menu. Navigation, appearance, language and actions are grouped inside the menu.](screenshots/public-navigation-phone.png)
+
+![Current tablet menu. The header remains compact and the menu uses the side of the screen.](screenshots/public-navigation-tablet.png)
+
+![Current Arabic phone menu. Labels and layout follow right-to-left direction.](screenshots/public-navigation-arabic-phone.png)
 
 The logo mark turns once when you hover over it or use the keyboard to focus its
 link. The name stays still. Reduced motion in your device settings disables the turn.
@@ -870,7 +938,95 @@ motion settings stop the decorative scroll effects.
 
 ---
 
-## 37 / Connect your business systems
+## 37 / Optional account security
+
+Phone users keep phone-code sign-in. They do not need a password, and there is no phone-account password-reset form. An authenticator is an optional second check after the phone code. The admin still requires a password and an authenticator.
+
+### Turn on an authenticator
+
+1. Sign in with your phone code. Open the menu, then Account security.
+2. Check that the authenticator status is Off. Select Set up.
+3. If the page asks you to sign in again, use that action and complete sign-in. Security changes require a recent sign-in within five minutes. With protection already enabled, that sign-in must also pass the second check.
+4. On your own device, scan the setup QR code with an authenticator app, or enter the setup key there.
+5. Enter the current six-digit code to confirm setup.
+6. Save the recovery codes in your private password manager or another secure place. Confirm that you saved them before leaving the page.
+7. Check that the status is On. Sign out and complete one controlled sign-in to check your authenticator.
+
+Never share or include a setup QR code, key or recovery code in a screenshot, chat, support request or team document. The screenshots below show only the status screen. They do not prove enrollment or sign-in.
+
+![Account security with the authenticator off. Actual components, synthetic identity and disabled writes. No setup secret is present.](screenshots/account-security-en.png)
+
+![Account security with the authenticator on in dark mode. This is a synthetic status fixture, not an enrolled account.](screenshots/account-security-enabled.png)
+
+### Sign in when protection is on
+
+After the SMS code, enter the current code from your authenticator. If the app is unavailable, select Use a recovery code and enter one unused recovery code. A recovery code works once. If the challenge expires, start sign-in again. Repeated invalid attempts can cause a temporary limit. Keep the device clock accurate for time-based codes.
+
+The same second check appears during a household booking. The booking must wait until both sign-in steps finish. Closing a challenge does not confirm a booking.
+
+![Empty authenticator challenge at phone width. This isolated screen does not contain or verify a real code.](screenshots/account-challenge-en.png)
+
+![Empty recovery-code challenge. The field remains blank; no recovery credential is supplied.](screenshots/account-recovery-challenge.png)
+
+### Replace codes or turn protection off
+
+Open Account security after a recent full sign-in. Select Get new codes to replace the set. Read the confirmation: replacement invalidates the previous set. Store the new set securely. To turn off the optional authenticator, use its separate confirmation action. This option does not apply to the required admin authenticator.
+
+If both the authenticator and all unused recovery codes are lost, contact the platform owner. There is no instant support bypass or self-service phone-number change. Never treat a screenshot or possession of an old tracking link as proof of account ownership.
+
+---
+
+## 38 / Inbox and device notifications
+
+Open the account menu and select Notifications. Approved businesses also have account links in their workspace menu. The inbox belongs to the signed-in user. The device setting applies only to the current installation.
+
+![Account menu at phone width. The synthetic session marker displays signed-in controls; all account changes are disabled.](screenshots/account-menu-en-light.png)
+
+### Read an update
+
+1. Open Notifications after sign-in.
+2. Read Your updates. Pickup and application events appear with their date and time.
+3. Select Mark read for one unread row. Read all changes at most 100 unread entries per press; use it again if unread entries remain.
+4. Use Show more for older updates. The first read loads 20 rows.
+5. If an action fails, check the error and retry after the connection returns. A failed action must not be treated as a saved read state.
+
+An empty inbox means that no update is available in the loaded account view. A loading placeholder means that the read has not finished. These states do not mean that a notification reached a device.
+
+![Notification inbox in light mode, with three synthetic events and no device provider. No provider request or delivery occurs.](screenshots/account-inbox-en-light.png)
+
+![The same notification inbox in dark mode. Dates and event labels come from the real components and message catalogue.](screenshots/account-inbox-en-dark.png)
+
+![Empty inbox example at phone width. The device setting is unavailable in this isolated fixture.](screenshots/account-inbox-empty.png)
+
+### Enable alerts on this device
+
+1. Read the status under This device. If delivery is unavailable, the connected inbox can still work.
+2. Select Enable when the device and service support it. In the mobile app, read the app explanation, then choose whether to permit notifications in the operating-system prompt.
+3. If permission is denied, the app remains usable. If the operating system blocks another prompt, change its notification setting before trying again.
+4. When enabled, alerts use general Luma.Green text. Private pickup and application details remain in the signed-in application.
+5. Open an alert to reach the inbox in the active language. If the session has ended, sign in before reading private updates.
+6. Select Turn off to stop alerts for this installation. Inbox history stays available. Sign-out revokes this installation's registration before clearing the session. The notification control stays disabled while sign-out is pending. If sign-out reports an error, retry; do not assume that access or delivery has already ended.
+
+Each explicit mobile alert tap opens the inbox, including a second tap after you visited another page. A notification does not grant account access. There is no action in the user interface to send an arbitrary notification to another person.
+
+The server checks that the linked sign-in session is still active before starting each delivery. A notification already in transit can still arrive.
+
+If device cleanup fails, its pending state remains after a reload. Retry sign-out
+on that device; a reload alone does not prove that cleanup or sign-out finished.
+If the matching backend has not been released yet, notification controls show
+an unavailable state. Other pages and their unsaved forms remain usable.
+
+Browser push needs HTTPS, browser support and backend VAPID settings. Mobile push needs an EAS project, APNs/FCM credentials and a suitable signed build. Desktop alerts work only while the Electron process is running. There is no claim of delivery after the desktop app quits.
+
+Apple Developer, Google Play and Expo/EAS accounts are not yet set up. Use the release runbook before attempting a real device test. A local fixture, permission test, JavaScript export or provider acceptance receipt is not proof that a physical device received the alert.
+
+![Arabic account menu in dark mode. The menu follows right-to-left layout; the visible note marks this as a synthetic documentation fixture.](screenshots/account-menu-ar-dark.png)
+
+![Tamil inbox after a rejected Read all action. The real error state is shown; no stored record is changed.](screenshots/account-inbox-error.png)
+
+---
+
+## 39 / Connect your business systems
 
 An approved business can give its ERP, stock or reporting system read access to
 Luma.Green. This applies to kabadiwalas, yards, recyclers and manufacturers. The
@@ -965,7 +1121,7 @@ is REST and read-only. Treat future stages as plans.
 
 ---
 
-## 38 / Evidence and maintenance
+## 40 / Evidence and maintenance
 
 The editable repository source is docs/user-guide/guide.md. The maintained Word document is output/docx/luma-green-user-guide.docx. The old PDF is an archived edition. Screenshots and their capture manifests live with the source. The repository README in that folder gives capture and rebuild commands.
 

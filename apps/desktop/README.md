@@ -98,16 +98,35 @@ add an authentication bypass, fake operational records or offline transactions.
 - Browser cookies persist in `persist:luma-green`. Normal web sign-out removes
   the session through the existing auth flow. The shell never copies tokens.
   The system browser has a separate cookie store and may need a separate sign-in.
-- All permissions are denied by default. Only geolocation from the trusted
+- All permissions are denied by default. Geolocation from the trusted
   requesting frame and top-level page can request a native confirmation. Both
   permission check and request handlers enforce the same origin rule. A grant
   lasts for the current window/process. OS location permission may still deny it.
+  Notifications use a separate native confirmation and grant, limited to the
+  trusted main window and its top-level document; document windows and frames
+  cannot request them.
   File inputs use the native file picker. Camera/microphone capture is denied;
   select an existing photo instead.
 - Offline recovery has local translated text, RTL direction and a keyboard link
   back to the trusted app. It has no script or remote dependencies. The menu has
   home, back, reload, open in browser and update actions. Standard editing and
   window menus use Electron's OS roles. Native copy comes from root `messages/`.
+
+## Account notifications
+
+Account → Notifications can enable generic desktop notices while the app is
+running. The renderer watches the authenticated inbox, then uses the standard
+Notification API after native permission. Tapping a notice focuses the app and
+opens its localised protected inbox. It does not reveal booking details on the
+lock screen. Sign-out clears the app's consent; a later sign-in requires its own
+choice. The desktop client does not register a browser Web Push subscription.
+It has no remote delivery while the app process is closed.
+
+Test permission allow/deny and account switching on signed macOS and installed
+Windows packages. macOS notification behavior requires signing. Windows needs
+a matching Start Menu shortcut and app identity; the main process sets the
+configured desktop AppUserModelID. An unsigned local pack or a JavaScript unit
+test does not prove OS display. See [Electron notifications](https://www.electronjs.org/docs/latest/tutorial/notifications).
 
 ## Signed releases and automatic updates
 

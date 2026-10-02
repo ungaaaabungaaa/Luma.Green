@@ -34,10 +34,10 @@ export async function MaterialRecords() {
   return (
     <section
       aria-labelledby="material-records-heading"
-      className="overflow-hidden bg-foreground py-16 text-background lg:py-24"
+      className="overflow-hidden bg-foreground py-10 text-background sm:py-12 lg:py-24"
     >
       <Container className="space-y-10 lg:space-y-14">
-        <div className="grid min-w-0 grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+        <div className="grid min-w-0 grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
           <h2
             id="material-records-heading"
             className="max-w-3xl font-display text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl lg:text-5xl"
@@ -98,7 +98,7 @@ export async function MaterialRecords() {
           asChild
           variant="outline"
           size="lg"
-          className="h-auto min-h-12 max-w-full min-w-0 border-background/30 bg-transparent py-3 text-start wrap-anywhere whitespace-normal text-background hover:bg-background hover:text-foreground dark:bg-transparent dark:hover:bg-background"
+          className="min-h-12 max-w-full min-w-0 border-background/30 bg-transparent py-3 text-start whitespace-nowrap text-background hover:bg-background hover:text-foreground dark:bg-transparent dark:hover:bg-background"
         >
           <Link href="/standards">
             <span className="min-w-0">{footer("standards")}</span>

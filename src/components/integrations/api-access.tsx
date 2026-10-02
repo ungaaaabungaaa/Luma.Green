@@ -2,7 +2,7 @@
 
 import type { FunctionArgs, FunctionReturnType } from "convex/server";
 import { CopyIcon, KeyRoundIcon } from "lucide-react";
-import { useFormatter, useNow, useTranslations } from "next-intl";
+import { useFormatter, useLocale, useNow, useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -27,6 +27,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { isLocale, localeMeta } from "@/i18n/locales";
 
 import type { api } from "../../../convex/_generated/api";
 
@@ -109,6 +110,7 @@ function OwnerAccess({
   onCreate,
   onRevoke,
 }: Props & { data: AccessData }) {
+  const locale = useLocale();
   const t = useTranslations("integrations");
   const common = useTranslations("common");
   const now = useNow({ updateInterval: 60_000 }).getTime();
@@ -208,6 +210,7 @@ function OwnerAccess({
             <div className="flex min-w-0 flex-col gap-2">
               <Label htmlFor="api-key-expiry">{t("expiry")}</Label>
               <Select
+                dir={localeMeta[isLocale(locale) ? locale : "en"].dir}
                 value={String(expiresInDays)}
                 onValueChange={(value) => {
                   setExpiresInDays(Number(value));

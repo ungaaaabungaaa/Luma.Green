@@ -1,4 +1,4 @@
-/** @typedef {{brand: {name: string}, common: {retry: string, error: string, close: string}, nav: {home: string}, native: Record<string, string>}} Messages */
+/** @typedef {{brand: {name: string}, common: {retry: string, error: string, close: string}, nav: {home: string}, native: Record<string, string>, notifications: Record<string, string>}} Messages */
 /** @param {string} language @param {Record<string, Messages>} catalogues */
 export function selectLocale(language, catalogues) {
   const short = language.toLowerCase().split("-", 1)[0];

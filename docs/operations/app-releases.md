@@ -1,6 +1,7 @@
 # App release and account checklist
 
-> Status: implementation runbook, 1 October 2026. No account, paid build, store
+> Status: implementation runbook, 2 October 2026. Apple, Google Play and Expo/EAS
+> accounts are not yet set up, as confirmed by the founder. No account, paid build, store
 > submission, signing identity or update feed was created by this change.
 
 ## Run checks without accounts
@@ -78,5 +79,54 @@ export does not clear this gate.
    by successful compilation. Reassess minimum functionality before submission.
 
 Use the [delivery record](../delivery/apps-and-motion.md) for local evidence.
-Operational work needs an internet connection. No background location, push
-service, offline write queue or independent native ledger is included.
+Operational work needs an internet connection. There is no background location,
+offline write queue or independent native ledger. Push is optional and remains
+disabled until the setup and device checks below pass.
+
+## Notification setup
+
+These steps are for the team after account approval. No paid account, credential,
+provider message, native release or store submission was created in this pass.
+Keep development and production projects and credentials separate.
+
+1. **Expo/EAS:** create the team account and app project. Record its actual UUID
+   as `EXPO_PUBLIC_EAS_PROJECT_ID`, plus the exact HTTPS app origin. Enable Expo
+   push access-token security. Store its token only as `EXPO_PUSH_ACCESS_TOKEN`
+   in the matching Convex deployment; set `EXPO_PUSH_ENABLED=true` only after
+   credentials and testing are ready. Set `EXPO_PUBLIC_PUSH_ENABLED=true` in the
+   matching mobile build environment. Leave both flags absent to keep push off.
+2. **Apple:** choose the enrollment identity before registration. The entity is
+   not registered yet; do not claim an organisation enrollment or legal owner.
+   Review [Apple enrollment](https://developer.apple.com/programs/enroll/), then
+   register the approved app ID and APNs signing key through EAS credentials.
+   Keep the key outside Git. Build and install the signed development app.
+3. **Android:** create a Firebase project with the matching `green.luma.app`
+   Android client. Supply its public `google-services.json` via the build file
+   variable `LUMA_ANDROID_GOOGLE_SERVICES_FILE`. Upload the separate FCM v1
+   service-account credential to EAS; never embed that private JSON in the app.
+   Follow [Expo's FCM guide](https://docs.expo.dev/push-notifications/fcm-credentials/).
+   Google Play Console setup, signing and a test track are still required for
+   store distribution; Firebase setup alone does not create them.
+4. **Browser Web Push:** generate a VAPID key pair in a trusted local tool.
+   Store `WEB_PUSH_PUBLIC_KEY`, `WEB_PUSH_PRIVATE_KEY` and `WEB_PUSH_SUBJECT`
+   (`mailto:` support address or HTTPS contact URL) on Convex. Enable with
+   `WEB_PUSH_ENABLED=true`. Only the public key reaches the browser. Serve the
+   app and `/push-sw.js` over HTTPS. Inbox records remain available without
+   push credentials. On iOS, assess the installed web app and OS requirements
+   separately from the native Expo application.
+5. **Device acceptance:** follow [Expo's setup guide](https://docs.expo.dev/push-notifications/push-notifications-setup/).
+   Use approved test users and builds. Enable from Account → Notifications;
+   check slow approval, deny, OS-disabled permission, app reopen, token renewal,
+   inbox ownership, sign-out, account switch and delivery failure. Test generic
+   lock-screen copy and taps in foreground, background and cold start. Tap twice
+   with another page visit between taps. Do not use a public endpoint to send
+   arbitrary notifications or log tokens in evidence.
+6. **Desktop:** test signed macOS and installed Windows builds. Notices are
+   available only while the app process is running. Keep the Windows shortcut
+   and AppUserModelID aligned. Confirm OS notification controls and denied
+   permission behavior; unsigned smoke tests cannot establish this result.
+
+Record the deployment, app build, device/OS, event, expected recipient, send
+receipt and observed result. A provider ticket or successful registration is not
+proof that a notification reached the device. Do not mark the channel live until
+its acceptance record is complete. Revoke test device bindings after testing.

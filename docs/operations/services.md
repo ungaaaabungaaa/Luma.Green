@@ -13,9 +13,9 @@ Legend: **✅ implemented** · **🟡 partly** · **🔑 needs a human** · **�
 | Service             | Status | Notes                                                                                                                                                                    |
 | ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Next.js 16          | ✅     | App Router, Turbopack, server components by default                                                                                                                      |
-| Tailwind v4         | ✅     | Tokens in `src/app/globals.css`; white theme only ([ADR 0010](../decisions/0010-white-theme-mobile-first-shadcn.md))                                                     |
+| Tailwind v4         | ✅     | Tokens in `src/app/globals.css`; light, dark and system appearance; see the [current UI contract](../design/designer-system.md#current-ui-contract)                      |
 | shadcn/ui           | ✅     | Vendored in `src/components/ui`; add more with the shadcn CLI                                                                                                            |
-| next-intl           | ✅     | 12 locales, hreflang, RTL                                                                                                                                                |
+| next-intl           | ✅     | 33 locales, hreflang, RTL                                                                                                                                                |
 | Convex              | 🟡     | Historical dev deployment: `glorious-rooster-470`, EU West. Verify the target; production needs a deploy key — [switch-on](./environments.md#one-time-switch-on-founder) |
 | Vercel              | 🟡     | Project `luma_green`; production at `lumagreen.vercel.app`, previews per PR. Build command not yet running `convex deploy`                                               |
 | Domain `luma.green` | 🔑     | Verify DNS and the Vercel domain binding; route `www` to apex                                                                                                            |
@@ -27,18 +27,18 @@ Legend: **✅ implemented** · **🟡 partly** · **🔑 needs a human** · **�
 
 ## Product services
 
-| Service                 | Status | Notes                                                                                                                  |
-| ----------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| Better Auth (on Convex) | 🟡     | Implemented with onboarding, per-number OTP limits and recovery paths ([auth](../architecture/auth.md))                |
-| MSG91 (SMS codes)       | 🔑     | OTP and status-message code implemented; account, sender and template approval remain external checks                  |
-| OpenRouter (AI)         | 🔑     | Optional paid adapter; alternatively use the [self-hosted endpoint](low-cost-operation.md). Both need model evaluation |
-| Mapbox                  | ⬜     | Not used. Browser location and distance calculations need no map account                                               |
-| PostHog                 | ⏸      | Deferred until the partner decision ([ADR 0012](../decisions/0012-pilot-analytics-in-convex.md))                       |
-| Sentry                  | ⏸      | Same. Turn on first when the decision is made                                                                          |
-| Resend (email)          | ⬜     | Not needed in the pilot                                                                                                |
-| Razorpay                | ⬜     | Escrow after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md))                                     |
-| Cloudflare R2           | ⬜     | Only if files outgrow Convex storage or need expiring links                                                            |
-| WhatsApp Business       | ⬜     | Household channel after the pilot                                                                                      |
+| Service                 | Status | Notes                                                                                                                                                                 |
+| ----------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Better Auth (on Convex) | 🟡     | Implemented with onboarding, per-number OTP limits and recovery paths ([auth](../architecture/auth.md))                                                               |
+| MSG91 (SMS codes)       | 🔑     | OTP and status-message code implemented; account, sender and template approval remain external checks                                                                 |
+| OpenRouter (AI)         | 🔑     | Optional paid adapter; alternatively use the [self-hosted endpoint](low-cost-operation.md). Both need model evaluation                                                |
+| Mapbox                  | ⬜     | Not used. Browser location and distance calculations need no map account                                                                                              |
+| PostHog                 | ✅     | Optional consent-based public page analytics; provider setup and receipt remain unverified ([ADR 0016](../decisions/0016-optional-analytics-and-error-monitoring.md)) |
+| Sentry                  | ✅     | Optional error capture; deployment flag, DSN and scrubbed event receipt remain external gates                                                                         |
+| Resend (email)          | ⬜     | Not needed in the pilot                                                                                                                                               |
+| Razorpay                | ⬜     | Escrow after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md))                                                                                    |
+| Cloudflare R2           | ⬜     | Only if files outgrow Convex storage or need expiring links                                                                                                           |
+| WhatsApp Business       | ⬜     | Household channel after the pilot                                                                                                                                     |
 
 ### SMS templates to register
 

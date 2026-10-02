@@ -14,9 +14,9 @@ import {
 } from "@/components/prices/board";
 import { FAMILY_ICONS } from "@/components/prices/family-icon";
 import { PriceChange } from "@/components/prices/price-change";
+import { PricePlaceholder } from "@/components/prices/price-placeholder";
 import { Sparkline } from "@/components/prices/sparkline";
 import { isConvexConfigured } from "@/components/providers/convex-provider";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../../convex/_generated/api";
@@ -28,7 +28,7 @@ export function PriceTeaser() {
   if (!isConvexConfigured) {
     return (
       <TeaserCard>
-        <p className="text-muted-foreground">{t("unavailable")}</p>
+        <PricePlaceholder state="unavailable" compact />
       </TeaserCard>
     );
   }
@@ -47,23 +47,13 @@ export function PriceTeaser() {
 
 function LiveTeaser() {
   const t = useTranslations("home.teaser");
-  const common = useTranslations("common");
   const format = useFormat();
   const board = useQuery(api.catalogue.priceBoard, { city: PRICE_CITY });
 
   if (board === undefined) {
     return (
       <TeaserCard>
-        <div
-          role="status"
-          aria-busy="true"
-          aria-label={common("loading")}
-          className="flex flex-col gap-3"
-        >
-          {Array.from({ length: 4 }, (_, index) => (
-            <Skeleton key={index} className="h-12 w-full" />
-          ))}
-        </div>
+        <PricePlaceholder state="loading" compact />
       </TeaserCard>
     );
   }
@@ -72,7 +62,7 @@ function LiveTeaser() {
   if (rows.length === 0) {
     return (
       <TeaserCard>
-        <p className="text-muted-foreground">{t("unavailable")}</p>
+        <PricePlaceholder state="empty" compact />
       </TeaserCard>
     );
   }

@@ -5,7 +5,7 @@ description: How translation works in Luma.Green — adding strings, adding a lo
 
 # i18n
 
-We ship **12 locales** on day one: `en hi bn mr ta te kn ml gu pa ur ar`.
+We ship **33 locales**: `en hi bn mr ta te kn ml gu pa ur ar as or ne si es fr de it pt nl pl ru uk tr id ms vi th ja ko zh`.
 `ur` and `ar` are right-to-left. Treat every one as a first-class user.
 
 The registry is `src/i18n/locales.ts` — locale list, endonyms, direction and
@@ -36,7 +36,7 @@ fails, which is the point.
 
 Namespace by feature, not by page: `inventory.emptyState`, not
 `dashboardPage.section2.text`. Keep keys stable — renaming a key means editing
-12 files.
+every locale file.
 
 ## Interpolation and plurals
 
@@ -101,9 +101,10 @@ Check any layout change at `/ar` before calling it done.
 3. If the script is not Latin, Cyrillic, Greek or Devanagari, add a Noto face
    for it in `src/lib/fonts.ts` using the shared `--font-noto-script` variable,
    and map the locale in `scriptFontByLocale`.
-4. Run `pnpm test` — parity and registry tests must pass.
-5. Run `pnpm build` — the new locale should appear in the prerender list.
-6. `sitemap.ts` and hreflang alternates pick it up automatically.
+4. Add all material names in `convex/lib/catalogue.ts`. Run `pnpm i18n:generate` for native controls and root error copy, then `pnpm exec jiti scripts/audit-locales.mts`. The audit must report no missing or copied-English messages.
+5. Run `pnpm test` — key, ICU contract, native message and registry tests must pass.
+6. Run `pnpm build` — the new locale should appear in the prerender list.
+7. `sitemap.ts` and hreflang alternates pick it up automatically.
 
 ## Translation quality
 
@@ -111,3 +112,5 @@ The non-English copy currently in `messages/` was **machine-drafted** and needs
 native-speaker review before launch. Flag any string you are unsure about in
 the PR rather than guessing — a wrong word in a compliance flow costs more than
 a slow review.
+
+For decimal input, use the shared digit normalizer and the field parser. Market amounts accept the locale decimal separator and an ASCII dot; grouping is not allowed. Keep integer grams and paise after parsing. Audit and native review status live in `docs/i18n/`. Existing database material rows require the audited `catalogue.fillMissingNames` repair after deployment; source edits alone do not change stored rows.

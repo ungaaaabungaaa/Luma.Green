@@ -104,7 +104,7 @@ replacing an existing name.
 
 | Feature                                                                            | Where                                                           |
 | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| 12 languages, with Kannada, Hindi and English first; Urdu and Arabic right to left | Every page, at `/{code}/…`                                      |
+| 33 languages, with Kannada, Hindi and English first; Urdu and Arabic right to left | Every page, at `/{code}/…`                                      |
 | Search engines: canonical URLs, links between languages, sitemap, robots           | `/sitemap.xml`, `/robots.txt` ([URLs](../architecture/urls.md)) |
 | Installable on a phone's home screen                                               | `/manifest.webmanifest`                                         |
 | The demo world, and resetting it                                                   | `npx convex run demo:seed`, `demo:reset` (dev only)             |
@@ -117,7 +117,7 @@ Everything below is there to show the idea. None of it is market data.
 | What                                                                 | Where it comes from                                                                                                                        | Once it's real                                                                                  |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Businesses, people, pickups, lots, trades, jobs and support messages | [convex/lib/demo.ts](../../convex/lib/demo.ts), loaded by `demo:seed`                                                                      | Real applicants, verified by the admin                                                          |
-| The material list and its names                                      | [convex/lib/catalogue.ts](../../convex/lib/catalogue.ts): 26 materials, named in all 12 supported languages; native-speaker review remains | The admin keeps it                                                                              |
+| The material list and its names                                      | [convex/lib/catalogue.ts](../../convex/lib/catalogue.ts): 26 materials, named in all 33 supported languages; native-speaker review remains | The admin keeps it                                                                              |
 | Prices: minimum, fallback and 30 days of market prices               | Sample Bengaluru figures in the catalogue                                                                                                  | The admin's tables ([pricing](./pricing.md)); a source for market prices is still open          |
 | CO₂e factors                                                         | Indicative, rounded from published averages                                                                                                | Sourced factors before any public claim                                                         |
 | Solar estimates                                                      | Indicative assumptions, shown on the page                                                                                                  | A site visit by a verified installer                                                            |
@@ -165,4 +165,7 @@ and an OpenRouter key with a spend limit.
 **After the pilot:** kabadiwala-to-yard collections, once the research is in
 ([kabadiwala-to-yard](./kabadiwala-to-yard.md)); real trading between recyclers
 and manufacturers; escrow payments; carbon credits; solar, documentation and
-legal services; a machinery data bank; a WhatsApp channel; Saathi pay; PostHog and Sentry; team members for the admin.
+legal services; a machinery data bank; a WhatsApp channel; Saathi pay; and team
+members for the admin. Optional PostHog, Google Analytics 4 and Sentry are
+implemented. Account setup, consent checks and scrubbed provider receipt remain
+separate release gates; see [observability](../operations/observability.md).

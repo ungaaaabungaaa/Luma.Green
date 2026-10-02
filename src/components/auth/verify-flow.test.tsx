@@ -35,7 +35,10 @@ beforeEach(() => {
   vi.resetAllMocks();
   vi.useFakeTimers();
   calls.auth.isAuthenticated = false;
-  calls.verify.mockResolvedValue({ error: null });
+  calls.verify.mockResolvedValue({
+    error: null,
+    data: { token: "test-session" },
+  });
   calls.sendOtp.mockResolvedValue({ error: null });
   calls.ensureProfile.mockResolvedValue(null);
   rememberPhone("+919876543210");
@@ -175,7 +178,10 @@ it("blocks code verification while a resend is in progress and restores it after
 });
 
 it("blocks resend and duplicate submission while verification is in progress", async () => {
-  const request = Promise.withResolvers<{ error: null }>();
+  const request = Promise.withResolvers<{
+    error: null;
+    data: { token: string };
+  }>();
   calls.verify.mockReturnValueOnce(request.promise);
   render(form());
   for (let second = 0; second < 30; second++) await tick(1000);
@@ -188,7 +194,7 @@ it("blocks resend and duplicate submission while verification is in progress", a
   expect(calls.sendOtp).not.toHaveBeenCalled();
   await act(async () => {
     await Promise.resolve();
-    request.resolve({ error: null });
+    request.resolve({ error: null, data: { token: "test-session" } });
   });
   expect(
     screen.getByRole("button", { name: messages.auth.signingIn }),

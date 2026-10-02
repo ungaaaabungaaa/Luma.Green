@@ -24,7 +24,7 @@ systems.
 | 3        | Shop cost estimate                       | Owners can compare a potential load with transport and handling costs.      | An optional local calculator using integer paise and grams. Label the result an estimate, not profit or accounting advice. Do not add a paid pricing feed.                                                                                                |
 
 Approve priorities 1 first. Add priority 2 only after pilot use shows demand.
-Each approved feature needs twelve-locale copy, RTL and keyboard checks, bounded
+Each approved feature needs complete locale copy, RTL and keyboard checks, bounded
 queries, access tests, current browser captures and a rebuilt Word user guide.
 
 ## Support: build on the current inbox first

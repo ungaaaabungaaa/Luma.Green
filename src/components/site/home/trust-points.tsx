@@ -26,7 +26,10 @@ export async function TrustPoints() {
   const t = await getTranslations("home.trust");
 
   return (
-    <section aria-labelledby="trust-heading" className="py-16 lg:py-24">
+    <section
+      aria-labelledby="trust-heading"
+      className="py-10 sm:py-12 lg:py-24"
+    >
       <Container className="relative grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-14">
         <SectionHeading
           id="trust-heading"

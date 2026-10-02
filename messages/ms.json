@@ -1,0 +1,3482 @@
+{
+  "brand": {
+    "name": "Luma.Green",
+    "tagline": "Bergerak ke Arah Hari Esok yang Lebih Bersih"
+  },
+  "meta": {
+    "title": "Luma.Green — Bergerak ke Arah Hari Esok yang Lebih Bersih",
+    "description": "Luma.Green menyatukan rantaian barang lusuh India dalam satu platform: isi rumah, peniaga barang lusuh, kawasan pengasingan, pengitar semula dan pengilang, dengan harga adil, kutipan yang ditimbang serta rekod setiap serahan."
+  },
+  "theme": {
+    "label": "Penampilan",
+    "light": "Cerah",
+    "dark": "Gelap",
+    "system": "Sistem"
+  },
+  "common": {
+    "loading": "Memuatkan…",
+    "error": "Ralat berlaku",
+    "retry": "Cuba lagi",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "search": "Cari",
+    "language": "Bahasa",
+    "close": "Tutup"
+  },
+  "nav": {
+    "label": "Utama",
+    "home": "Laman utama",
+    "howItWorks": "Cara berfungsi",
+    "contact": "Hubungi",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "skipToContent": "Langkau ke kandungan",
+    "prices": "Harga",
+    "help": "Bantuan",
+    "join": "Sertai",
+    "sellScrap": "Jual barang lusuh"
+  },
+  "footer": {
+    "about": "Rantaian barang lusuh India dalam satu platform, dari rumah ke kilang. Setiap serahan ditimbang, dinilai dan direkodkan.",
+    "navLabel": "Pengaki",
+    "useHeading": "Gunakan Luma.Green",
+    "learnHeading": "Ketahui lebih lanjut",
+    "standards": "Piawaian industri",
+    "solar": "Solar bumbung",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "sell": {
+      "title": "Jual",
+      "summary": "Isi rumah menjual barang lusuh dari rumah pada harga adil, ditimbang dan dibayar di depan pintu."
+    },
+    "trade": {
+      "title": "Niaga",
+      "summary": "Perkhidmatan eskrow yang dicadangkan akan menahan bayaran sehingga penghantaran selesai. Demo semasa hanya merekodkan bayaran simulasi."
+    },
+    "record": {
+      "title": "Rekod",
+      "summary": "Setiap serahan direkodkan untuk pematuhan, impak dan bukti kitar semula."
+    }
+  },
+  "principles": {
+    "heading": "Dibina untuk diaudit",
+    "intro": "Pembeli, pengawal selia atau juruaudit boleh bertanya dari mana bahan berasal. Rekod direka supaya jawapannya sentiasa tersedia.",
+    "auditable": {
+      "title": "Setiap perubahan direkodkan",
+      "body": "Setiap langkah (kutipan ditimbang, urus niaga dibayar, muatan dihantar) menambah entri dalam log audit yang tidak pernah diubah pada tempatnya."
+    },
+    "exact": {
+      "title": "Angka yang kekal tepat",
+      "body": "Wang disimpan dalam paise bulat dan jisim dalam gram bulat. Ralat pembundaran tidak terkumpul antara jambatan timbang dengan penyelesaian bayaran."
+    },
+    "frozen": {
+      "title": "Sejarah kekal seperti asal",
+      "body": "Setiap resit mengekalkan harga dan berat pada hari tersebut. Perubahan harga kemudian tidak mengubah resit yang telah wujud."
+    }
+  },
+  "prices": {
+    "detail": {
+      "close": "Tutup",
+      "description": "{code} · {family} · Bengaluru",
+      "today": "Hari ini",
+      "low": "Terendah 30 hari",
+      "high": "Tertinggi 30 hari",
+      "floor": "Had minimum",
+      "noFloor": "Tiada",
+      "noHistory": "Belum ada sejarah harga."
+    },
+    "error": {
+      "retry": "Cuba lagi",
+      "title": "Harga gagal dimuatkan",
+      "body": "Semak sambungan anda dan cuba lagi."
+    },
+    "metaTitle": "Harga barang lusuh Bengaluru hari ini",
+    "metaDescription": "Harga barang lusuh Bengaluru hari ini per kg: kertas, plastik, logam, kaca dan e-sisa, dengan perubahan minggu ini, carta 30 hari dan bayaran minimum kedai.",
+    "eyebrow": "Bengaluru",
+    "title": "Harga barang lusuh hari ini",
+    "lead": "Harga jual barang lusuh hari ini sekilo. Kedai menetapkan harga sendiri, tetapi tidak di bawah had minimum. Ketik bahan untuk melihat 30 hari lalu.",
+    "demoNote": "Harga contoh untuk prototaip, bukan kadar pasaran langsung.",
+    "date": "Harga untuk {date}",
+    "floorHelp": "Had minimum: bayaran terendah sekilo yang dibenarkan bagi kedai disahkan.",
+    "perKg": "{price}/kg",
+    "floor": "Had minimum {price}",
+    "noPrice": "Belum ada harga",
+    "columns": {
+      "material": "Bahan",
+      "today": "Hari ini",
+      "week": "Minggu ini",
+      "month": "30 hari",
+      "floor": "Had minimum"
+    },
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "E-sisa",
+      "other": "Lain-lain"
+    },
+    "factoryGate": {
+      "title": "Pintu kilang",
+      "body": "Bahan kitar semula yang dijual pengitar semula kepada pengilang."
+    },
+    "change": {
+      "up": "Naik {pct} minggu ini",
+      "down": "Turun {pct} minggu ini",
+      "flat": "Tiada perubahan minggu ini",
+      "unknown": "Sejarah belum mencukupi"
+    },
+    "chart": {
+      "label": "{material}: harga sekilo mengikut hari. Gunakan kekunci anak panah untuk beralih antara hari.",
+      "point": "{date}: {price}",
+      "floor": "Had minimum {price}",
+      "table": "Tunjukkan angka",
+      "tableCaption": "{material}, harga sekilo mengikut hari",
+      "date": "Tarikh",
+      "price": "Harga per kg"
+    },
+    "unavailable": {
+      "title": "Harga belum tersedia sekarang",
+      "body": "Papan harga sedang disambungkan. Sila semak semula nanti."
+    },
+    "empty": {
+      "title": "Belum ada harga",
+      "body": "Harga hari ini dipaparkan di sini selepas diterbitkan."
+    },
+    "sellCta": {
+      "title": "Ada barang lusuh di rumah?",
+      "body": "Tempah kutipan dan terima bayaran di depan pintu.",
+      "action": "Jual barang lusuh anda"
+    }
+  },
+  "standards": {
+    "codes": {
+      "retry": "Cuba lagi",
+      "columns": {
+        "name": "Bahan",
+        "code": "Kod",
+        "family": "Kumpulan",
+        "stage": "Peringkat"
+      },
+      "title": "Satu kod untuk setiap bahan",
+      "nav": "Kod bahan",
+      "body": "Barang lusuh yang sama mempunyai banyak nama tempatan. Kod terbuka memberikan satu nama bersama bagi setiap bahan, supaya sekilo surat khabar membawa maksud sama di kedai, kawasan pengasingan dan kilang.",
+      "caption": "Kod bahan Luma.Green",
+      "count": "{count, plural, one {# bahan} other {# bahan}}",
+      "download": "Muat turun kod (CSV)",
+      "stages": {
+        "scrap": "Barang lusuh",
+        "recycled": "Dikitar semula"
+      },
+      "unavailable": "Senarai kod tidak tersedia sekarang. Sila semak semula nanti.",
+      "empty": "Belum ada kod bahan.",
+      "error": "Senarai kod gagal dimuatkan."
+    },
+    "escrow": {
+      "body": "Perkhidmatan eskrow yang dicadangkan akan menahan bayaran sehingga penghantaran selesai. Demo semasa hanya merekodkan bayaran simulasi.",
+      "title": "Dirancang: Eskrow antara perniagaan",
+      "nav": "Perkhidmatan eskrow",
+      "steps": {
+        "accepted": "Penjual menerima pesanan",
+        "paid": "Pembeli membayar ke eskrow",
+        "dispatched": "Penjual menghantar barang",
+        "released": "Pembeli mengesahkan dan wang dilepaskan"
+      }
+    },
+    "verification": {
+      "body": "Petugas memeriksa setiap perniagaan dan Saathi sebelum mereka boleh berniaga.",
+      "title": "Pengesahan",
+      "nav": "Pengesahan",
+      "business": "Perniagaan: nombor GST jika ada, foto kedai atau unit dan panggilan telefon.",
+      "consent": "Kawasan pengasingan, pengitar semula dan kilang: kebenaran sah daripada lembaga kawalan pencemaran negeri.",
+      "saathi": "Saathi: pengenalan bergambar dan swafoto yang sepadan."
+    },
+    "adopt": {
+      "cta": "Bercakap dengan kami",
+      "title": "Gunakan piawaian",
+      "body": "Kod dan peraturan terbuka serta percuma. Gunakan di kedai, kawasan pengasingan atau kilang anda, di dalam atau di luar Luma.Green, dan beritahu cara memperbaikinya."
+    },
+    "metaTitle": "Piawaian Luma.Green",
+    "metaDescription": "Dirancang: Kod bahan terbuka dan peraturan mudah untuk perdagangan barang lusuh yang adil di India: penggredan, penimbangan, resit, pengesahan dan eskrow. Percuma untuk digunakan sesiapa sahaja.",
+    "eyebrow": "Piawaian terbuka",
+    "title": "Piawaian Luma.Green",
+    "lead": "Peraturan mudah dan terbuka untuk memperdagangkan barang lusuh dengan adil: satu kod setiap bahan, gred jelas, penimbangan jujur dan rekod setiap serahan. Sesiapa dalam industri boleh menggunakannya.",
+    "onThisPage": "Pada halaman ini",
+    "grading": {
+      "title": "Penggredan: kering, diasingkan, bersih",
+      "nav": "Penggredan",
+      "body": "Harga adil memerlukan gred jelas. Tiga pemeriksaan dibuat sebelum penimbangan.",
+      "dry": {
+        "title": "Kering",
+        "body": "Air bukan barang lusuh. Kertas dan kadbod basah dikeringkan sebelum ditimbang."
+      },
+      "sorted": {
+        "title": "Diasingkan",
+        "body": "Satu bahan dalam setiap beg atau bal, di bawah satu kod. Muatan bercampur menggunakan kod MIXED."
+      },
+      "clean": {
+        "title": "Tiada pencemaran",
+        "body": "Tiada makanan, minyak, tanah atau batu. Apa-apa yang bukan bahan tersebut dikeluarkan dahulu."
+      }
+    },
+    "weighing": {
+      "title": "Penimbangan adil",
+      "nav": "Penimbangan",
+      "body": "Kebanyakan pertikaian barang lusuh melibatkan berat. Peraturan ini memastikan penimbang jujur.",
+      "stamped": {
+        "title": "Penimbang bercap",
+        "body": "Gunakan hanya penimbang yang disahkan dan dicap oleh jabatan Metrologi Undang-Undang."
+      },
+      "shown": {
+        "title": "Penjual melihat berat",
+        "body": "Paparan menghadap penjual dan berat disebut sebelum harga dipersetujui."
+      },
+      "receipt": {
+        "title": "Resit digital",
+        "body": "Berat direkodkan pada resit hingga ke gram, tidak dibundarkan untuk menguntungkan sesiapa."
+      }
+    },
+    "custody": {
+      "title": "Resit dan rantaian jagaan",
+      "nav": "Resit",
+      "body": "Setiap serahan mendapat resit. Resit dipautkan antara peringkat supaya bal di pengitar semula boleh dijejak kembali ke kedai asal.",
+      "receiptTitle": "Kandungan setiap resit",
+      "fields": {
+        "number": "Nombor resit",
+        "time": "Tarikh dan masa",
+        "seller": "Penjual",
+        "buyer": "Pembeli",
+        "code": "Kod bahan",
+        "weight": "Berat hingga ke gram",
+        "rate": "Kadar per kg",
+        "total": "Jumlah dan cara bayaran"
+      }
+    }
+  },
+  "howItWorks": {
+    "metaTitle": "Cara berfungsi",
+    "metaDescription": "Dirancang: Pergerakan barang lusuh di Luma.Green: dijual dari rumah pada harga adil, diniagakan sepanjang rantaian dengan eskrow dan direkodkan pada setiap serahan.",
+    "title": "Cara Luma.Green berfungsi",
+    "lead": "Barang lusuh bertukar tangan empat kali sebelum menjadi sesuatu yang baharu. Inilah proses pada setiap langkah dan perkara yang direkodkan Luma.Green.",
+    "stepLabel": "Langkah {number}",
+    "sell": {
+      "body": "Isi rumah memilih bahan, melihat tawaran setiap kedai berhampiran dan menempah kutipan atau penghantaran sendiri. Peniaga menimbang setiap bahan dan membayar tunai atau UPI; kedua-duanya mendapat resit.",
+      "point1": "Setiap kedai menetapkan harga sendiri, tidak di bawah had minimum diterbitkan",
+      "point2": "Berat direkodkan dalam gram daripada penimbang kedai",
+      "point3": "Pautan penjejakan tanpa memerlukan akaun"
+    },
+    "trade": {
+      "body": "Demo: Peniaga barang lusuh menjual stok diasingkan ke kawasan pengasingan, kawasan pengasingan menjual bal kepada pengitar semula, dan pengitar semula menjual serpihan, butiran serta jongkong kepada kilang. Bayaran pembeli menunggu dalam eskrow sehingga barang tiba. Demo menunjukkan langkah bayaran tetapi tidak menyimpan atau memindahkan wang sebenar.",
+      "point1": "Hanya perniagaan disahkan boleh berniaga",
+      "point2": "Stok bergerak apabila muatan dihantar dan diterima",
+      "point3": "Resit urus niaga bernombor bagi setiap urus niaga berbayar"
+    },
+    "record": {
+      "body": "Setiap serahan direkodkan: siapa, apa, berapa, bila dan di mana. Rekod itu menyokong papan harga, stok, pematuhan dan angka impak, serta menjadi bukti yang diminta EPR dan piawaian kitar semula.",
+      "point1": "Satu rekod dari pintu rumah ke kilang",
+      "point2": "Jumlah EPR mengikut tahun kewangan untuk pengitar semula dan kilang",
+      "point3": "Bukti sokongan kredit, tidak pernah dikira dua kali"
+    }
+  },
+  "contact": {
+    "metaTitle": "Hubungi",
+    "metaDescription": "Hubungi pasukan Luma.Green tentang menyertai rintis Bengaluru.",
+    "title": "Bercakap dengan kami",
+    "lead": "Kami bermula di Bengaluru dengan sekumpulan kecil peniaga barang lusuh, kawasan pengasingan, pengitar semula dan kilang. Beritahu siapa anda, bahan yang diniagakan dan anggaran jumlah yang melalui anda setiap bulan.",
+    "emailHeading": "Akses awal dan soalan umum",
+    "securityHeading": "Laporan keselamatan",
+    "securityBody": "Menemui kelemahan keselamatan? Sila laporkan secara peribadi, bukan secara terbuka."
+  },
+  "help": {
+    "metaTitle": "Pusat bantuan",
+    "metaDescription": "Panduan ringkas, jawapan dan latihan untuk isi rumah, kabadiwala, kawasan pengasingan, pengitar semula, pengilang dan Saathi di Luma.Green.",
+    "eyebrow": "Pusat bantuan",
+    "title": "Bagaimanakah kami boleh membantu?",
+    "lead": "Panduan pendek, jawapan jelas dan latihan ringkas untuk semua pengguna Luma.Green.",
+    "home": "Bantuan",
+    "breadcrumb": "Anda di sini",
+    "hours": "Isnin hingga Sabtu, 9 pagi hingga 7 malam",
+    "replyTime": "Kami membalas dalam satu hari bekerja.",
+    "search": {
+      "label": "Cari bantuan",
+      "placeholder": "Cuba: kod SMS atau eskrow",
+      "clear": "Kosongkan carian",
+      "summary": "{count, plural, =0 {Tiada jawapan} other {# jawapan}} untuk “{query}”",
+      "topicSummary": "{count, plural, =0 {Tiada jawapan} other {# jawapan}} tentang {topic}",
+      "emptyTitle": "Tiada hasil ditemui",
+      "emptyBody": "Cuba satu perkataan ringkas, pilih topik atau tanya kami terus.",
+      "ask": "Tanya kami",
+      "guide": "Panduan",
+      "question": "Soalan",
+      "forRoles": "Untuk {roles}",
+      "showMore": "Lihat semua {count} jawapan"
+    },
+    "topicsHeading": "Semak mengikut topik",
+    "topics": {
+      "start": "Bermula",
+      "signIn": "Log masuk",
+      "pickups": "Kutipan",
+      "prices": "Harga",
+      "weighing": "Penimbangan dan resit",
+      "payments": "Bayaran",
+      "trading": "Jual beli",
+      "documents": "Dokumen dan semakan",
+      "safety": "Keselamatan",
+      "carbon": "Karbon dan EPR",
+      "disputes": "Masalah dan pertikaian",
+      "privacy": "Privasi"
+    },
+    "rolesHeading": "Bantuan untuk anda",
+    "rolesLead": "Pilih peranan anda untuk melihat panduan, soalan dan latihan.",
+    "guideCount": "{count, plural, other {# panduan}}",
+    "roles": {
+      "household": {
+        "name": "Isi rumah",
+        "who": "Menjual barang lusuh dari rumah",
+        "title": "Bantuan untuk isi rumah",
+        "lead": "Tempah kutipan, dapatkan timbangan adil dan terima bayaran di rumah. Akaun tidak diperlukan."
+      },
+      "kabadiwala": {
+        "name": "Kabadiwala",
+        "who": "Mengurus kedai barang lusuh",
+        "title": "Bantuan untuk kabadiwala",
+        "lead": "Terima kutipan, timbang dan bayar dalam seminit, tetapkan harga dan jual kepada kawasan pengasingan."
+      },
+      "yard": {
+        "name": "Kawasan pengasingan",
+        "who": "Membeli daripada kabadiwala dan mengasingkan lagi",
+        "title": "Bantuan untuk kawasan pengasingan",
+        "lead": "Demo: Cari stok berdekatan, jual bal yang diasingkan kepada pengitar semula dan berdagang dengan selamat melalui eskrow."
+      },
+      "recycler": {
+        "name": "Pengitar semula",
+        "who": "Menukar barang lusuh menjadi bahan mentah",
+        "title": "Bantuan untuk pengitar semula",
+        "lead": "Beli barang lusuh bergred daripada kawasan pengasingan, jual keluaran kepada kilang dan simpan rekod EPR yang teratur."
+      },
+      "manufacturer": {
+        "name": "Pengilang",
+        "who": "Membuat produk daripada bahan kitar semula",
+        "title": "Bantuan untuk pengilang",
+        "lead": "Pesan bahan kitar semula, periksa penghantaran dan simpan rekod yang diperlukan oleh EPR."
+      },
+      "saathi": {
+        "name": "Saathi",
+        "who": "Mengambil tugas kutipan dan syif pendek",
+        "title": "Bantuan untuk Saathi",
+        "lead": "Sertai dengan pengenalan bergambar, cari kerja berdekatan, bekerja dengan selamat dan terima bayaran."
+      }
+    },
+    "role": {
+      "onThisPage": "Pada halaman ini",
+      "guidesHeading": "Panduan",
+      "guidesLead": "Langkah demi langkah, dengan gambar.",
+      "steps": "{count, plural, other {# langkah}}",
+      "faqsHeading": "Soalan lazim",
+      "faqsLead": "Ketik soalan untuk melihat jawapan.",
+      "tutorialsHeading": "Video",
+      "tutorialsLead": "Video pendek dalam bahasa anda.",
+      "trainingHeading": "Latihan",
+      "trainingLead": "Pelajaran pendek. Tandakan setiap satu sebagai selesai apabila siap.",
+      "otherRoles": "Bantuan untuk orang lain"
+    },
+    "guide": {
+      "metaTitle": "{guide} · {role}",
+      "stepsHeading": "Langkah",
+      "stepLabel": "Langkah {number} daripada {total}",
+      "relatedHeading": "Soalan berkaitan",
+      "nextHeading": "Panduan seterusnya"
+    },
+    "tutorial": {
+      "comingSoon": "Video akan datang",
+      "minutes": "{minutes} min"
+    },
+    "training": {
+      "progressLabel": "Latihan anda",
+      "progress": "{done} daripada {total} selesai",
+      "minutes": "{minutes} min",
+      "markDone": "Tandakan selesai",
+      "openGuide": "Buka panduan",
+      "badgeTitle": "Latihan selesai",
+      "badgeBody": "Syabas! Anda telah menamatkan semua pelajaran. Kembali bila-bila masa untuk mengulang kaji.",
+      "reset": "Mula semula",
+      "savedHere": "Kemajuan anda disimpan pada peranti ini."
+    },
+    "contactStrip": {
+      "title": "Masih perlukan bantuan?",
+      "body": "Bercakap dengan petugas kami. Kami membalas dalam satu hari bekerja.",
+      "call": "Telefon",
+      "whatsapp": "WhatsApp",
+      "write": "Tulis kepada kami"
+    },
+    "contact": {
+      "metaTitle": "Hubungi sokongan",
+      "metaDescription": "Tanya pasukan Luma.Green melalui telefon, WhatsApp atau mesej ringkas. Kami membalas dalam satu hari bekerja.",
+      "title": "Hubungi kami",
+      "lead": "Petugas membaca setiap mesej. Tanya dengan kata-kata anda sendiri.",
+      "formHeading": "Hantar mesej",
+      "name": "Nama anda",
+      "phone": "Nombor telefon bimbit",
+      "phoneHint": "Kami akan menelefon atau menghantar SMS ke nombor ini.",
+      "role": "Anda ialah",
+      "topic": "Tentang apa?",
+      "choose": "Pilih satu",
+      "message": "Mesej anda",
+      "messageHint": "Apa yang berlaku dan bila? Sertakan nombor tempahan atau dagangan jika ada.",
+      "messageCount": "{count, number} daripada {max, number}",
+      "roles": {
+        "household": "Isi rumah",
+        "kabadiwala": "Kabadiwala",
+        "yard": "Kawasan pengasingan",
+        "recycler": "Pengitar semula",
+        "manufacturer": "Pengilang",
+        "saathi": "Saathi",
+        "other": "Orang lain"
+      },
+      "topics": {
+        "account": "Log masuk atau akaun saya",
+        "pickup": "Kutipan",
+        "prices": "Harga",
+        "payments": "Bayaran",
+        "documents": "Dokumen dan semakan",
+        "trade": "Dagangan antara perniagaan",
+        "solar": "Solar bumbung",
+        "other": "Perkara lain"
+      },
+      "submit": "Hantar mesej",
+      "sending": "Sedang menghantar…",
+      "privacy": "Kami menggunakan nombor anda hanya untuk membalas.",
+      "sentTitle": "Mesej dihantar",
+      "sentBody": "Terima kasih. Kami akan menelefon atau menghantar SMS dalam satu hari bekerja.",
+      "sendAnother": "Hantar mesej lain",
+      "backToHelp": "Kembali ke bantuan",
+      "errors": {
+        "nameInvalid": "Tulis nama anda (2 hingga 80 huruf).",
+        "phoneInvalid": "Masukkan nombor telefon bimbit India 10 digit.",
+        "roleMissing": "Pilih peranan anda.",
+        "topicMissing": "Pilih topik mesej.",
+        "messageShort": "Tulis sedikit lagi: sekurang-kurangnya 5 huruf.",
+        "messageLong": "Gunakan kurang daripada 1,000 huruf.",
+        "generic": "Mesej tidak dapat dihantar. Periksa sambungan dan cuba lagi.",
+        "rateLimited": "Terlalu banyak mesej daripada nombor ini. Sila cuba lagi dalam masa satu jam."
+      },
+      "unavailableTitle": "Mesej dinyahaktifkan di sini",
+      "unavailableBody": "Telefon atau WhatsApp kami. Kami sedia membantu.",
+      "otherWays": "Cara lain untuk menghubungi kami",
+      "callTitle": "Telefon kami",
+      "whatsappTitle": "WhatsApp kami",
+      "hoursTitle": "Waktu operasi",
+      "replyTitle": "Masa balasan",
+      "sampleNumbers": "Prototaip: ini ialah nombor contoh."
+    },
+    "guides": {
+      "signIn": {
+        "title": "Log masuk dengan kod SMS",
+        "summary": "Tiada kata laluan. Anda hanya perlukan nombor telefon bimbit dan kod 6 digit.",
+        "steps": {
+          "open": {
+            "title": "Buka halaman log masuk",
+            "body": "Pergi ke luma.green/login dan pilih bahasa anda."
+          },
+          "number": {
+            "title": "Masukkan nombor telefon bimbit",
+            "body": "Taip nombor 10 digit yang digunakan semasa mendaftar."
+          },
+          "code": {
+            "title": "Taip kod 6 digit",
+            "body": "Kami menghantarnya melalui SMS. Kod sah selama 5 minit. Tiada SMS selepas 30 saat? Ketik Hantar semula."
+          },
+          "stay": {
+            "title": "Kekal log masuk",
+            "body": "Anda kekal log masuk pada telefon itu selama 30 hari. Jangan kongsi kod: pasukan kami tidak akan memintanya."
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "Kekal selamat di tempat kerja",
+        "summary": "Peralatan keselamatan, mengangkat beban, barang lusuh tajam, bateri dan mesin: asas untuk mencegah kecederaan.",
+        "steps": {
+          "gear": {
+            "title": "Pakai peralatan pelindung diri (PPE)",
+            "body": "Sentiasa pakai sarung tangan dan kasut bertutup. Tambah pelitup muka untuk muatan berdebu dan gogal semasa memotong atau menghancurkan."
+          },
+          "lift": {
+            "title": "Angkat dengan kekuatan kaki",
+            "body": "Bengkokkan lutut, rapatkan beban ke badan dan jangan memulas badan. Dapatkan bantuan untuk beban melebihi 25 kg."
+          },
+          "sharp": {
+            "title": "Berhati-hati dengan tepi tajam",
+            "body": "Kaca, tin dan wayar mudah melukakan. Bawa kaca dalam kotak, jangan biarkan longgar dalam guni."
+          },
+          "batteries": {
+            "title": "Asingkan bateri dan e-sisa",
+            "body": "Simpan di tempat kering dan sejuk, jauh daripada barang lusuh lain. Jangan bakar wayar atau pecahkan bateri atau skrin."
+          },
+          "machines": {
+            "title": "Matikan mesin sebelum mengeluarkan benda tersekat",
+            "body": "Hentikan mesin pembal atau pencincang dan cabut palam dahulu. Jangan masukkan tangan ketika mesin berjalan."
+          },
+          "firstAid": {
+            "title": "Sediakan pertolongan cemas berdekatan",
+            "body": "Simpan peti pertolongan cemas dan air bersih di tapak. Untuk luka dalam atau melecur, dapatkan rawatan segera."
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "Sertai dan dapatkan pengesahan",
+        "summary": "Perkara yang perlu disediakan dan semakan pasukan kami sebelum perniagaan anda diaktifkan.",
+        "steps": {
+          "start": {
+            "title": "Mula di luma.green/join",
+            "body": "Log masuk dengan nombor telefon bimbit dan pilih Kawasan pengasingan, Pengitar semula atau Pengilang."
+          },
+          "details": {
+            "title": "Tambah butiran perniagaan",
+            "body": "Nama, alamat dan pin peta, bahan yang dikendalikan serta waktu kerja. GST adalah pilihan."
+          },
+          "consent": {
+            "title": "Tambah kebenaran lembaga kawalan pencemaran",
+            "body": "Kebenaran KSPCB atau lembaga negeri anda: nombor, tarikh tamat sah dan sijil dalam PDF."
+          },
+          "photos": {
+            "title": "Tambah foto mesin",
+            "body": "Sekurang-kurangnya dua foto atau video pendek mesin utama dan tapak anda."
+          },
+          "review": {
+            "title": "Kami menyemak dalam 12–24 jam",
+            "body": "Petugas menyemak setiap dokumen. Jika ada yang kurang, kami nyatakan perkara yang perlu diperbaiki."
+          },
+          "live": {
+            "title": "Mula berdagang",
+            "body": "Selepas diluluskan, papan pemuka dibuka dan pembeli serta penjual berdekatan boleh menemui anda."
+          }
+        }
+      },
+      "escrow": {
+        "title": "Panduan demo: Cara eskrow melindungi dagangan",
+        "summary": "Perkhidmatan eskrow yang dicadangkan akan menahan bayaran hingga penghantaran. Demo semasa hanya merekodkan bayaran simulasi.",
+        "steps": {
+          "request": {
+            "title": "Pembeli menghantar permintaan",
+            "body": "Permintaan menunjukkan bahan, berat dalam kilo dan harga setiap kg."
+          },
+          "accept": {
+            "title": "Penjual menerima",
+            "body": "Belum ada bayaran. Hubungi satu sama lain jika perlu bersetuju tentang butiran."
+          },
+          "pay": {
+            "title": "Pembeli membayar ke eskrow",
+            "body": "Wang disimpan dengan selamat dan belum diserahkan kepada penjual. Penjual boleh melihat wang tersedia sebelum memuatkan barang."
+          },
+          "dispatch": {
+            "title": "Penjual menghantar muatan",
+            "body": "Tandakan sebagai dihantar. Invois disertakan bersama muatan, serta bil e-way apabila diperlukan."
+          },
+          "confirm": {
+            "title": "Pembeli mengesahkan penghantaran",
+            "body": "Periksa berat dan mutu, kemudian sahkan. Wang dilepaskan kepada penjual."
+          }
+        }
+      },
+      "paperwork": {
+        "title": "Invois dan bil e-way",
+        "summary": "Dokumen yang mengiringi setiap muatan.",
+        "steps": {
+          "invoice": {
+            "title": "Dapatkan invois daripada dagangan",
+            "body": "Setiap dagangan mempunyai invois yang boleh dibuka, dicetak atau dikongsi."
+          },
+          "ewayBill": {
+            "title": "Bil e-way untuk nilai melebihi ₹50,000",
+            "body": "Peraturan GST memerlukan bil e-way untuk membawa barang bernilai lebih ₹50,000. Sesetengah negeri menetapkan had berbeza."
+          },
+          "vehicle": {
+            "title": "Dokumen dibawa bersama kenderaan",
+            "body": "Bawa invois dan bil e-way dalam kenderaan serta pastikan nombor kenderaan sepadan."
+          },
+          "keep": {
+            "title": "Simpan rekod anda",
+            "body": "Resit dan invois kekal dalam aplikasi selama 6 tahun, tempoh yang dikehendaki undang-undang cukai."
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "Panduan demo: Apabila muatan tidak sepadan",
+        "summary": "Tindakan jika berat atau mutu berbeza daripada persetujuan.",
+        "steps": {
+          "check": {
+            "title": "Periksa sebelum mengesahkan",
+            "body": "Timbang muatan dan periksa mutunya semasa tiba, ketika pemandu masih berada di situ."
+          },
+          "hold": {
+            "title": "Jangan sahkan muatan yang kurang",
+            "body": "Pengesahan melepaskan wang. Wang kekal dalam eskrow sehingga anda mengesahkan."
+          },
+          "report": {
+            "title": "Laporkan dengan foto",
+            "body": "Telefon kami atau tulis melalui Bantuan, Hubungi kami. Sertakan foto slip timbangan dan bahan."
+          },
+          "settle": {
+            "title": "Kami membantu kedua-dua pihak mencapai persetujuan",
+            "body": "Kami menyemak berat, foto dan mesej daripada kedua-dua pihak. Wang kekal selamat sehingga perkara diselesaikan."
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "Kredit karbon dan EPR secara ringkas",
+        "summary": "Mengapa rekod kitar semula penting dan perkara yang perlu diketahui oleh jenama dan pengitar semula.",
+        "steps": {
+          "record": {
+            "title": "Setiap kilo direkodkan",
+            "body": "Setiap penimbangan dan dagangan di Luma.Green dicatatkan bersama bahan, berat, tarikh dan tempat."
+          },
+          "carbon": {
+            "title": "Kitar semula mengurangkan karbon",
+            "body": "Membuat produk daripada bahan kitar semula menggunakan kurang tenaga berbanding bahan baharu. Penjimatan itu boleh menjadi kredit karbon kemudian."
+          },
+          "epr": {
+            "title": "EPR: pengeluar mesti mengambil semula",
+            "body": "Tanggungjawab Pengeluar Diperluas bermakna jenama yang menjual pembungkusan, elektronik atau bateri perlu memastikan sebahagian sisa itu dikitar semula."
+          },
+          "certificates": {
+            "title": "Pengitar semula mengeluarkan sijil EPR",
+            "body": "Pengitar semula berdaftar mengeluarkan sijil di portal CPCB untuk bahan yang dikitar semula. Jenama membelinya untuk memenuhi sasaran."
+          },
+          "proof": {
+            "title": "Rekod teratur menjadi bukti anda",
+            "body": "Jejak dari rumah ke kilang menunjukkan asal bahan. Kredit karbon di Luma.Green akan datang kemudian."
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "Tempah kutipan pertama anda",
+        "summary": "Daripada foto hingga tempahan kutipan dalam kira-kira dua minit. Akaun tidak diperlukan.",
+        "steps": {
+          "photo": {
+            "title": "Ambil foto barang lusuh",
+            "body": "Pilihan: tambah satu foto barang lusuh, kemudian semak barang yang dicadangkan."
+          },
+          "estimate": {
+            "title": "Periksa anggaran",
+            "body": "Kami menunjukkan bahan yang dilihat dan anggaran berat. Ubah berat jika tidak tepat."
+          },
+          "choose": {
+            "title": "Pilih kutipan atau penghantaran sendiri",
+            "body": "Lihat kabadiwala disahkan berdekatan, yang terdekat dahulu, bersama waktu operasi."
+          },
+          "slot": {
+            "title": "Pilih masa",
+            "body": "Pilih slot masa, kemudian periksa alamat dan pin peta."
+          },
+          "code": {
+            "title": "Sahkan nombor anda",
+            "body": "Taip kod 6 digit yang dihantar melalui SMS. Itu sahaja: tiada kata laluan."
+          },
+          "track": {
+            "title": "Dapatkan pautan penjejakan",
+            "body": "Kami menghantar pautan melalui SMS untuk menjejaki kutipan."
+          }
+        }
+      },
+      "getReady": {
+        "title": "Sediakan barang lusuh anda",
+        "summary": "Barang lusuh kering dan diasingkan lebih cepat ditimbang serta mendapat harga lebih baik.",
+        "steps": {
+          "paper": {
+            "title": "Pastikan kertas kering dan rata",
+            "body": "Susun surat khabar dan ratakan kotak. Kertas basah kurang nilainya."
+          },
+          "bottles": {
+            "title": "Kosongkan dan kemekkan botol",
+            "body": "Buang cecair dan leperkan botol plastik untuk menjimatkan ruang."
+          },
+          "metal": {
+            "title": "Asingkan logam",
+            "body": "Masukkan tin, keluli dan aluminium ke dalam beg tersendiri."
+          },
+          "ewaste": {
+            "title": "Asingkan peranti dan bateri",
+            "body": "Simpan telefon lama, pengecas dan bateri dalam kotak berasingan, jauh daripada haba."
+          },
+          "door": {
+            "title": "Letakkan beg berhampiran pintu",
+            "body": "Ini mempercepatkan kutipan. Pastikan beg berada di tempat kering."
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "Jejaki kutipan anda",
+        "summary": "Bila, siapa dan berapa banyak, semuanya pada satu halaman.",
+        "steps": {
+          "open": {
+            "title": "Buka pautan dalam SMS",
+            "body": "Pautan berfungsi pada mana-mana telefon. Anda tidak perlu log masuk."
+          },
+          "when": {
+            "title": "Lihat masa",
+            "body": "Tarikh dan slot masa anda. Kami memaklumkan jika ada perubahan."
+          },
+          "who": {
+            "title": "Lihat siapa yang datang",
+            "body": "Nama, kedai dan lencana pengesahan mereka. Ketik Telefon untuk bercakap dengan mereka."
+          },
+          "after": {
+            "title": "Lihat bayaran yang diterima",
+            "body": "Selepas kutipan, halaman menunjukkan bayaran dan mata kitar semula anda."
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "Penimbangan dan bayaran di rumah",
+        "summary": "Cara memastikan setiap kilo dikira.",
+        "steps": {
+          "zero": {
+            "title": "Pastikan penimbang menunjukkan sifar",
+            "body": "Sebelum meletakkan barang, penimbang kosong perlu menunjukkan 0."
+          },
+          "each": {
+            "title": "Setiap bahan ditimbang berasingan",
+            "body": "Kertas, plastik dan logam mempunyai harga berbeza, jadi ditimbang berasingan."
+          },
+          "amount": {
+            "title": "Aplikasi mengira jumlah",
+            "body": "Berat dalam kilo didarab harga setiap kg kabadiwala. Anda melihat jumlah sebelum menerima bayaran."
+          },
+          "pay": {
+            "title": "Terima bayaran serta-merta",
+            "body": "Secara tunai atau UPI, sebelum mereka pergi. Luma.Green tidak pernah memegang wang anda."
+          },
+          "receipt": {
+            "title": "Periksa resit",
+            "body": "Halaman penjejakan menunjukkan setiap bahan, berat, harga dan jumlah."
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "Cara harga ditetapkan",
+        "summary": "Mengapa anggaran berupa julat dan cara jumlah akhir dikira.",
+        "steps": {
+          "estimate": {
+            "title": "Anggaran menggunakan harga bandar",
+            "body": "Sebelum anda memilih kabadiwala, kami menggunakan harga standard Bengaluru untuk menunjukkan julat."
+          },
+          "own": {
+            "title": "Setiap kabadiwala menetapkan harga",
+            "body": "Selepas memilih kabadiwala, anda melihat harga mereka bagi setiap bahan."
+          },
+          "floor": {
+            "title": "Tidak boleh kurang daripada harga minimum",
+            "body": "Luma.Green menetapkan harga minimum bagi setiap bahan. Kabadiwala tidak boleh membayar kurang daripada itu."
+          },
+          "final": {
+            "title": "Berat menentukan jumlah",
+            "body": "Anda dibayar untuk berat yang ditimbang di rumah, pada harga kabadiwala tersebut."
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "Batalkan atau ubah tempahan",
+        "summary": "Rancangan boleh berubah. Ini tindakan yang boleh diambil.",
+        "steps": {
+          "open": {
+            "title": "Buka pautan penjejakan",
+            "body": "Semua butiran tempahan ada di situ."
+          },
+          "cancel": {
+            "title": "Batalkan secara percuma",
+            "body": "Anda boleh membatalkan sebelum kabadiwala dalam perjalanan. Tiada caj."
+          },
+          "declined": {
+            "title": "Jika kabadiwala tidak dapat datang",
+            "body": "Kami menawarkan kutipan kepada kabadiwala terdekat seterusnya dan memaklumkan anda melalui SMS."
+          },
+          "help": {
+            "title": "Perlukan masa lain?",
+            "body": "Batalkan dan tempah semula, atau telefon kami untuk bantuan."
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "Telefon lama, bateri dan e-sisa",
+        "summary": "Selamat disimpan di rumah dan selamat diserahkan.",
+        "steps": {
+          "apart": {
+            "title": "Simpan dalam satu kotak kering",
+            "body": "Jauh daripada dapur, air dan cahaya matahari serta di luar capaian kanak-kanak."
+          },
+          "tape": {
+            "title": "Lekatkan pita pada hujung bateri",
+            "body": "Tutup hujung logam dengan pita supaya tidak menghasilkan percikan."
+          },
+          "swollen": {
+            "title": "Jangan tekan bateri kembung",
+            "body": "Bateri kembung boleh terbakar. Asingkan dalam bekas logam dan maklumkan kepada kabadiwala."
+          },
+          "handover": {
+            "title": "Serahkan peranti dalam keadaan lengkap",
+            "body": "Jangan pecahkan telefon atau keluarkan komponennya. Nyatakan e-sisa semasa menempah."
+          }
+        }
+      },
+      "registerShop": {
+        "title": "Daftarkan kedai anda",
+        "summary": "Butiran yang perlu diisi dan tempoh semakan.",
+        "steps": {
+          "start": {
+            "title": "Mula di luma.green/join",
+            "body": "Log masuk dengan nombor telefon bimbit dan pilih Kabadiwala."
+          },
+          "shop": {
+            "title": "Tambah kedai anda",
+            "body": "Nama anda, nama kedai, alamat dengan pin peta serta waktu operasi."
+          },
+          "pickups": {
+            "title": "Nyatakan jika anda menyediakan kutipan",
+            "body": "Pilih kenderaan: kereta sorong, basikal, auto atau lori kecil. Tiada kenderaan? Isi rumah masih boleh menghantar sendiri."
+          },
+          "gst": {
+            "title": "GST adalah pilihan",
+            "body": "Tambah nombor GST jika ada. Jika tiada, nyatakan sahaja."
+          },
+          "review": {
+            "title": "Kami menyemak dalam 12–24 jam",
+            "body": "Petugas menyemak butiran anda. Papan pemuka dibuka selepas diluluskan."
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "Jawab permintaan kutipan",
+        "summary": "Kutipan baharu daripada isi rumah berdekatan dan cara menguruskannya.",
+        "steps": {
+          "see": {
+            "title": "Lihat permintaan baharu",
+            "body": "Setiap permintaan menunjukkan kawasan, slot masa, bahan, anggaran berat dan bayaran."
+          },
+          "answer": {
+            "title": "Terima atau tolak",
+            "body": "Terima untuk mengambil tugas. Jika ditolak, permintaan pergi kepada kabadiwala terdekat seterusnya dan identiti penolak tidak diberitahu kepada isi rumah."
+          },
+          "auto": {
+            "title": "Aktifkan penerimaan automatik",
+            "body": "Apabila aktif, setiap permintaan dalam kawasan anda diterima serta-merta, termasuk pada waktu malam."
+          },
+          "go": {
+            "title": "Telefon dan pergi",
+            "body": "Selepas menerima, anda melihat nombor telefon dan alamat tepat. Telefon untuk memaklumkan anda dalam perjalanan."
+          }
+        }
+      },
+      "weighAndPay": {
+        "title": "Timbang dan bayar",
+        "summary": "Rekodkan kutipan dalam masa kurang seminit.",
+        "steps": {
+          "zero": {
+            "title": "Sifarkan penimbang",
+            "body": "Mulakan pada 0 tanpa barang, di tempat yang boleh dilihat oleh isi rumah."
+          },
+          "weigh": {
+            "title": "Timbang setiap bahan",
+            "body": "Masukkan berat setiap bahan dalam kilo. Gunakan + dan − untuk perubahan setengah kilo."
+          },
+          "total": {
+            "title": "Tunjukkan jumlah",
+            "body": "Aplikasi mengira berdasarkan harga anda. Tunjukkan skrin kepada isi rumah."
+          },
+          "pay": {
+            "title": "Bayar secara tunai atau UPI",
+            "body": "Bayar sebelum pergi dan pilih cara bayaran."
+          },
+          "save": {
+            "title": "Simpan",
+            "body": "Isi rumah melihat resit pada halaman penjejakan dan stok anda bertambah mengikut berat yang ditimbang."
+          }
+        }
+      },
+      "setPrices": {
+        "title": "Tetapkan harga anda",
+        "summary": "Anda memilih bayaran yang melebihi harga minimum.",
+        "steps": {
+          "open": {
+            "title": "Buka Harga saya",
+            "body": "Anda melihat setiap bahan bersama harga minimum."
+          },
+          "enter": {
+            "title": "Masukkan harga setiap kg",
+            "body": "Taip harga yang mahu dibayar kepada isi rumah bagi setiap bahan."
+          },
+          "floor": {
+            "title": "Kekalkan harga melebihi minimum",
+            "body": "Harga di bawah minimum tidak disimpan. Jika minimum meningkat, harga anda juga meningkat dan kami memaklumkan anda."
+          },
+          "blank": {
+            "title": "Biarkan harga bahan kosong",
+            "body": "Jika tiada harga ditetapkan, harga standard bandar digunakan."
+          },
+          "history": {
+            "title": "Resit lama tidak berubah",
+            "body": "Harga baharu hanya digunakan untuk kutipan baharu. Resit lama mengekalkan harga yang telah dibayar."
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "Panduan demo: Asingkan stok dan jual ke kawasan pengasingan",
+        "summary": "Daripada banyak kutipan kecil menjadi muatan yang dikehendaki kawasan pengasingan.",
+        "steps": {
+          "grows": {
+            "title": "Stok anda bertambah sendiri",
+            "body": "Setiap kutipan yang ditimbang ditambah pada Stok Saya."
+          },
+          "sort": {
+            "title": "Rekodkan pengasingan anda",
+            "body": "Asingkan barang lusuh bercampur mengikut bahan sebenar. Contohnya, kertas bercampur menjadi surat khabar, kadbod dan sisa."
+          },
+          "show": {
+            "title": "Tunjukkan stok kepada kawasan pengasingan",
+            "body": "Aktifkan Tunjukkan kepada Kawasan Pengasingan supaya kawasan berhampiran boleh melihat stok anda."
+          },
+          "sell": {
+            "title": "Terima permintaan kawasan pengasingan",
+            "body": "Semak kilo dan harga, kemudian terima. Kawasan pengasingan membayar ke eskrow sebelum mengambil."
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "Apabila isi rumah tidak bersetuju",
+        "summary": "Bertenang, beri penjelasan dan kekalkan keadilan.",
+        "steps": {
+          "reweigh": {
+            "title": "Timbang semula bersama",
+            "body": "Sifarkan penimbang dan timbang semula barang di tempat yang boleh mereka lihat."
+          },
+          "show": {
+            "title": "Tunjukkan harga anda",
+            "body": "Tunjukkan harga per kg dan jumlah pada telefon anda."
+          },
+          "noForce": {
+            "title": "Jangan paksa jualan",
+            "body": "Jika mereka masih tidak bersetuju, mereka tidak perlu menjual bahan itu. Jangan masukkannya dalam resit."
+          },
+          "call": {
+            "title": "Telefon kami jika belum selesai",
+            "body": "Kami boleh bercakap dengan kedua-dua pihak. Setiap resit menunjukkan berat dan harga."
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "Panduan demo: Beli stok daripada peniaga barang lusuh",
+        "summary": "Cari barang lusuh diasingkan berhampiran anda dan tempah pengambilan.",
+        "steps": {
+          "browse": {
+            "title": "Buka Beli",
+            "body": "Lihat stok berhampiran mengikut bahan dan jarak, berserta kilo dan harga."
+          },
+          "request": {
+            "title": "Hantar permintaan",
+            "body": "Pilih jumlah kilo yang diingini. Harga per kg ditunjukkan sebelum dihantar."
+          },
+          "pay": {
+            "title": "Bayar ke eskrow",
+            "body": "Apabila peniaga menerima, bayar. Wang ditahan sehingga anda mengesahkan."
+          },
+          "collect": {
+            "title": "Ambil dan timbang",
+            "body": "Ambil muatan dan timbang di kawasan anda."
+          },
+          "confirm": {
+            "title": "Sahkan untuk melepaskan bayaran",
+            "body": "Jika berat dan kualiti betul, sahkan. Peniaga barang lusuh dibayar."
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "Panduan demo: Jual bal diasingkan kepada pengitar semula",
+        "summary": "Senaraikan stok sekali dan biarkan pengitar semula menghubungi anda.",
+        "steps": {
+          "list": {
+            "title": "Senaraikan stok anda",
+            "body": "Dalam Jual, tambah bahan, kilo dan harga per kg anda."
+          },
+          "requests": {
+            "title": "Terima permintaan",
+            "body": "Pengitar semula yang membeli bahan itu boleh melihat penyenaraian dan menghantar permintaan."
+          },
+          "accept": {
+            "title": "Terima, kemudian tunggu bayaran",
+            "body": "Muatkan hanya selepas wang pembeli berada dalam eskrow."
+          },
+          "dispatch": {
+            "title": "Hantar muatan",
+            "body": "Tandakan dihantar bersama invois dan bil e-way untuk muatan melebihi ₹50,000."
+          },
+          "paid": {
+            "title": "Terima bayaran",
+            "body": "Apabila pengitar semula mengesahkan penghantaran, wang dilepaskan kepada anda."
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "Panduan demo: Beli barang lusuh diasingkan daripada kawasan pengasingan",
+        "summary": "Bekalan bergred yang tetap untuk barisan pengeluaran anda.",
+        "steps": {
+          "browse": {
+            "title": "Cari bal berhampiran",
+            "body": "Buka Beli untuk melihat penyenaraian kawasan pengasingan mengikut bahan dan jarak."
+          },
+          "request": {
+            "title": "Minta muatan",
+            "body": "Pilih kilo. Harga per kg ditunjukkan sebelum dihantar."
+          },
+          "pay": {
+            "title": "Bayar ke eskrow",
+            "body": "Selepas kawasan pengasingan menerima, bayar. Wang ditahan sehingga anda mengesahkan penghantaran."
+          },
+          "confirm": {
+            "title": "Timbang, semak, sahkan",
+            "body": "Timbang muatan di pintu masuk dan semak gred sebelum mengesahkan."
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "Panduan demo: Jual bahan kitar semula kepada pengilang",
+        "summary": "Tunjukkan keluaran barisan anda supaya kilang boleh membuat pesanan.",
+        "steps": {
+          "list": {
+            "title": "Senaraikan keluaran anda",
+            "body": "Tambah serpihan, butiran, bal atau jongkong dengan kilo tersedia dan harga per kg."
+          },
+          "orders": {
+            "title": "Terima pesanan",
+            "body": "Pengilang melihat penyenaraian dan meminta kilo yang diperlukan."
+          },
+          "load": {
+            "title": "Muatkan selepas bayaran",
+            "body": "Terima, kemudian hantar muatan selepas bayaran masuk ke eskrow."
+          },
+          "paid": {
+            "title": "Terima bayaran selepas penghantaran",
+            "body": "Wang dilepaskan apabila pengilang mengesahkan."
+          }
+        }
+      },
+      "orderRecycled": {
+        "title": "Panduan demo: Pesan bahan kitar semula",
+        "summary": "Cari bahan input kitar semula dan pesan yang diperlukan.",
+        "steps": {
+          "browse": {
+            "title": "Lihat stok pengitar semula",
+            "body": "Buka Beli untuk melihat bahan kitar semula mengikut jenis, kilo tersedia dan harga."
+          },
+          "order": {
+            "title": "Hantar pesanan",
+            "body": "Pilih kilo dan hantar. Pengitar semula menerima atau menolak."
+          },
+          "pay": {
+            "title": "Bayar ke eskrow",
+            "body": "Bayar selepas mereka menerima. Wang ditahan sehingga anda mengesahkan penghantaran."
+          },
+          "receive": {
+            "title": "Terima muatan",
+            "body": "Timbang dan semak gred di pintu masuk anda."
+          },
+          "confirm": {
+            "title": "Sahkan penghantaran",
+            "body": "Sahkan untuk melepaskan bayaran kepada pengitar semula."
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "Panduan demo: Semak penghantaran",
+        "summary": "Pemeriksaan ringkas sebelum mengesahkan dan melepaskan bayaran.",
+        "steps": {
+          "papers": {
+            "title": "Padankan dokumen",
+            "body": "Invois dan bil e-way mesti sepadan dengan pesanan dan kenderaan."
+          },
+          "weigh": {
+            "title": "Timbang sendiri",
+            "body": "Timbang lori penuh dan kosong. Perbezaannya ialah berat yang diterima."
+          },
+          "look": {
+            "title": "Periksa bahan",
+            "body": "Semak warna, kelembapan dan kotoran berbanding pesanan."
+          },
+          "decide": {
+            "title": "Sahkan atau laporkan",
+            "body": "Semuanya betul? Sahkan. Tidak betul? Laporkan dengan foto, dan wang kekal dalam eskrow."
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "Menjadi Saathi",
+        "summary": "Sertai dengan pengenalan bergambar dan swafoto, kemudian mula mengambil kerja berhampiran.",
+        "steps": {
+          "start": {
+            "title": "Mulakan di luma.green/join",
+            "body": "Log masuk dengan nombor telefon bimbit dan pilih Saathi."
+          },
+          "work": {
+            "title": "Pilih kerja anda",
+            "body": "Kutipan rumah, bantuan di kedai barang lusuh, pengasingan di kawasan pengasingan atau syif di pengitar semula atau kilang."
+          },
+          "area": {
+            "title": "Tetapkan kawasan dan waktu",
+            "body": "Tempat tinggal, jarak perjalanan (2, 5 atau 10 km) dan waktu lapang anda."
+          },
+          "id": {
+            "title": "Tambah pengenalan bergambar dan swafoto",
+            "body": "Kad pengundi, lesen memandu, PAN atau Aadhaar terlindung. Jangan berikan nombor Aadhaar penuh."
+          },
+          "review": {
+            "title": "Kami menyemak dalam 12–24 jam",
+            "body": "Petugas memadankan swafoto dengan pengenalan anda. Kemudian anda boleh mengambil kerja."
+          }
+        }
+      },
+      "findJobs": {
+        "title": "Cari dan ambil kerja",
+        "summary": "Bekerja berhampiran anda pada waktu yang diingini.",
+        "steps": {
+          "home": {
+            "title": "Lihat kerja di Laman Utama",
+            "body": "Setiap kerja menunjukkan tempat, hari, masa dan bayaran."
+          },
+          "accept": {
+            "title": "Terima kerja",
+            "body": "Ketik Terima. Perniagaan boleh melihat anda akan datang."
+          },
+          "arrive": {
+            "title": "Tepati masa",
+            "body": "Telefon awal jika lewat. Menepati masa membantu anda mendapat lebih banyak kerja."
+          },
+          "done": {
+            "title": "Tandakan selesai",
+            "body": "Selepas kerja, tandakan selesai supaya muncul dalam pendapatan."
+          }
+        }
+      },
+      "homePickup": {
+        "title": "Lakukan kutipan rumah",
+        "summary": "Mesra, cepat dan adil di setiap pintu.",
+        "steps": {
+          "call": {
+            "title": "Telefon sebelum pergi",
+            "body": "Nyatakan nama, kedai asal dan waktu ketibaan anda."
+          },
+          "greet": {
+            "title": "Perkenalkan diri",
+            "body": "Di pintu, nyatakan nama anda dan kedai. Tunggu sehingga dijemput masuk."
+          },
+          "weigh": {
+            "title": "Timbang di tempat yang boleh dilihat",
+            "body": "Sifarkan penimbang dan timbang setiap bahan di hadapan mereka."
+          },
+          "record": {
+            "title": "Bayar dan rekodkan",
+            "body": "Bayar seperti yang diarahkan kedai dan simpan bayaran sebelum pergi."
+          },
+          "deliver": {
+            "title": "Bawa ke kedai",
+            "body": "Bawa barang lusuh terus ke kedai dan serahkan."
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "Cara anda dibayar",
+        "summary": "Persetujui bayaran dahulu, kemudian semak dalam Pendapatan.",
+        "steps": {
+          "agree": {
+            "title": "Persetujui bayaran dahulu",
+            "body": "Kedai atau perniagaan tempat anda bekerja membayar anda. Persetujui amaun sebelum kerja bermula."
+          },
+          "earnings": {
+            "title": "Semak Pendapatan",
+            "body": "Lihat kerja yang selesai dan bayaran setiap satu."
+          },
+          "upi": {
+            "title": "Minta UPI",
+            "body": "UPI meninggalkan rekod supaya tiada keraguan tentang jumlah diterima."
+          },
+          "problem": {
+            "title": "Belum dibayar?",
+            "body": "Bercakap dengan perniagaan dahulu. Masih belum selesai? Telefon kami."
+          }
+        }
+      }
+    },
+    "faqs": {
+      "noCode": {
+        "q": "Saya tidak menerima kod SMS",
+        "a": "Tunggu 30 saat dan ketik Hantar Semula. Semak nombor betul dan telefon mempunyai isyarat. Kod sah selama 5 minit."
+      },
+      "newPhone": {
+        "q": "Saya mempunyai telefon atau nombor baharu",
+        "a": "Telefon baharu, nombor sama: log masuk semula. Nombor baharu: telefon kami dan kami akan memindahkan akaun selepas mengesahkan identiti anda."
+      },
+      "deleteData": {
+        "q": "Bolehkah saya melihat atau memadamkan data saya?",
+        "a": "Ya. Tulis melalui Hubungi dan kami akan melakukannya dalam 30 hari. Kami hanya menyimpan perkara diwajibkan undang-undang, seperti resit."
+      },
+      "verifyTime": {
+        "q": "Berapa lama semakan mengambil masa?",
+        "a": "Biasanya 12 hingga 24 jam selepas permohonan dihantar. Jika perlu perkara lain, kami akan menjelaskannya dengan tepat."
+      },
+      "noAccount": {
+        "q": "Adakah saya memerlukan akaun?",
+        "a": "Tidak. Anda mengesahkan nombor telefon bimbit dengan kod SMS semasa menempah. Tiada kata laluan untuk diingat."
+      },
+      "whatCanISell": {
+        "q": "Apa yang boleh saya jual?",
+        "a": "Kertas dan kadbod, botol dan bekas plastik, logam, kaca serta elektronik lama. Tidak pasti? Ambil foto dan anggaran akan memberitahu anda."
+      },
+      "howPriceWorks": {
+        "q": "Bagaimana bayaran saya dikira?",
+        "a": "Berat setiap bahan didarab harga per kg peniaga. Harga mereka tidak boleh di bawah minimum Luma.Green."
+      },
+      "howPaid": {
+        "q": "Bagaimana saya dibayar?",
+        "a": "Di depan pintu, tunai atau UPI, sebelum peniaga pergi. Luma.Green merekodkan bayaran tetapi tidak pernah menahan wang anda."
+      },
+      "recyclePoints": {
+        "q": "Apakah mata kitar semula?",
+        "a": "Tanda terima kasih kerana mengitar semula: 1 mata bagi setiap ₹10 diterima. Kegunaan mata akan tersedia tidak lama lagi."
+      },
+      "weightWrong": {
+        "q": "Bagaimana jika berat nampak salah?",
+        "a": "Minta mereka menimbang semula di hadapan anda, bermula dari sifar. Masih salah? Telefon kami: resit menunjukkan setiap berat."
+      },
+      "canCancel": {
+        "q": "Bolehkah saya membatalkan?",
+        "a": "Ya, percuma sehingga peniaga dalam perjalanan. Buka pautan penjejakan dan ketik Batal."
+      },
+      "kabadiwalasChecked": {
+        "q": "Adakah peniaga barang lusuh disemak?",
+        "a": "Ya. Pasukan kami menyemak setiap kedai sebelum ia menerima tempahan. Cari lencana disahkan."
+      },
+      "whoSeesAddress": {
+        "q": "Siapa melihat nombor dan alamat saya?",
+        "a": "Hanya peniaga yang menerima kutipan dan pasukan kami. Kami menyimpannya selama 12 bulan selepas tempahan terakhir."
+      },
+      "photosKept": {
+        "q": "Apa yang berlaku kepada foto saya?",
+        "a": "Jangan sertakan wajah, dokumen atau nombor plat. Foto dihantar kepada penyedia AI untuk anggaran ini. Luma.Green tidak menyimpannya."
+      },
+      "whyVerify": {
+        "q": "Mengapa saya perlu disahkan?",
+        "a": "Isi rumah mempercayai anda di pintu mereka. Semakan setiap kedai menjaga keselamatan dan menjadikan lencana disahkan bermakna."
+      },
+      "gstNeeded": {
+        "q": "Adakah saya memerlukan nombor GST?",
+        "a": "Tidak, ia pilihan. Tambahkan jika ada."
+      },
+      "ownPrices": {
+        "q": "Bolehkah saya menetapkan harga sendiri?",
+        "a": "Ya, bagi setiap bahan, selagi tidak di bawah harga minimum Luma.Green."
+      },
+      "noVehicle": {
+        "q": "Saya tidak mempunyai kenderaan. Masih boleh menyertai?",
+        "a": "Ya. Isi rumah boleh membawa barang lusuh ke kedai anda. Kutipan Saathi bagi kedai tanpa kenderaan akan tersedia kemudian."
+      },
+      "autoAccept": {
+        "q": "Apakah penerimaan automatik?",
+        "a": "Apabila aktif, setiap permintaan baharu di kawasan anda diterima serta-merta, walaupun pada waktu malam. Matikan apabila anda tidak boleh pergi."
+      },
+      "rejectRequest": {
+        "q": "Apa berlaku jika saya menolak permintaan?",
+        "a": "Ia dihantar kepada peniaga terdekat seterusnya. Isi rumah tidak diberitahu siapa yang menolak."
+      },
+      "payHousehold": {
+        "q": "Adakah Luma.Green membayar isi rumah bagi pihak saya?",
+        "a": "Tidak. Anda membayar tunai atau UPI di depan pintu. Aplikasi merekodkan amaun dan caranya."
+      },
+      "paidByYard": {
+        "q": "Bagaimana saya dibayar apabila menjual ke kawasan pengasingan?",
+        "a": "Buat masa ini, persetujui bayaran terus dengan kawasan pengasingan. Eskrow dirancang; demo tidak memindahkan wang."
+      },
+      "whoSeesShop": {
+        "q": "Siapa boleh melihat kedai saya?",
+        "a": "Selepas diluluskan, nama, kawasan dan waktu kedai dipaparkan kepada umum supaya isi rumah boleh menemui anda. Dokumen kekal peribadi."
+      },
+      "consentDocs": {
+        "q": "Dokumen apa yang diperlukan?",
+        "a": "Kebenaran lembaga pencemaran (KSPCB di Karnataka) bersama nombor, tarikh sah sehingga dan sijil PDF, serta foto mesin. GST ialah pilihan."
+      },
+      "noConsentNeeded": {
+        "q": "Unit saya tidak memerlukan kebenaran. Masih boleh menyertai?",
+        "a": "Ya. Tandakan kotak yang menyatakan unit tidak memerlukan kebenaran dan jelaskan sebab, contohnya pemampatan kertas sahaja. Kami akan menyemak."
+      },
+      "consentExpiry": {
+        "q": "Apa berlaku apabila kebenaran saya tamat tempoh?",
+        "a": "Semak tarikh tamat tempoh dalam Pematuhan. Ia menandakan kebenaran yang berbaki kurang daripada 90 hari. Perbaharui dengan lembaga kawalan pencemaran anda dan hubungi sokongan untuk mengemas kini sijil."
+      },
+      "findStock": {
+        "q": "Bagaimana saya mencari stok berhampiran?",
+        "a": "Buka Beli. Stok daripada peniaga barang lusuh disahkan dipaparkan mengikut bahan, yang terdekat dahulu."
+      },
+      "whoSetsPrice": {
+        "q": "Siapa menetapkan harga?",
+        "a": "Penjual menyenaraikan harga per kg. Anda melihatnya sebelum menghantar permintaan dan boleh menelefon untuk mempersetujui butiran."
+      },
+      "whatIsEscrow": {
+        "q": "Apakah eskrow?",
+        "a": "Langkah perantara yang selamat: wang pembeli ditahan sehingga muatan tiba seperti dipersetujui, kemudian dilepaskan kepada penjual. Eskrow perniagaan masih dirancang."
+      },
+      "whenSellerPaid": {
+        "q": "Bila penjual dibayar?",
+        "a": "Sebaik sahaja pembeli mengesahkan penghantaran."
+      },
+      "shortLoad": {
+        "q": "Bagaimana jika muatan kurang?",
+        "a": "Demo menunjukkan langkah pertikaian yang dicadangkan. Ia tidak boleh menahan atau melindungi dana sebenar."
+      },
+      "ewayBill": {
+        "q": "Adakah saya memerlukan bil e-way?",
+        "a": "Ya, untuk memindahkan barang bernilai melebihi ₹50,000, dan skrin urus niaga mengingatkannya. Sesetengah negeri menetapkan had berbeza."
+      },
+      "whoSeesBusiness": {
+        "q": "Siapa boleh melihat perniagaan saya?",
+        "a": "Pembeli dan penjual disahkan melihat nama, kawasan dan bahan yang anda kendalikan. Hanya anda dan pasukan kami melihat dokumen anda."
+      },
+      "pwpRegistration": {
+        "q": "Saya mengitar semula plastik. Perlu perkara lain?",
+        "a": "Sediakan pendaftaran Pemproses Sisa Plastik CPCB anda. Jenama memintanya dan ia membolehkan anda mengeluarkan sijil EPR."
+      },
+      "buyFromAnyYard": {
+        "q": "Bolehkah saya membeli daripada lebih satu kawasan pengasingan?",
+        "a": "Ya. Beli daripada mana-mana kawasan pengasingan disahkan yang menyenaraikan keperluan anda, sekerap yang diingini."
+      },
+      "eprRecords": {
+        "q": "Adakah rekod Luma.Green membantu EPR?",
+        "a": "Ya. Setiap urus niaga merekodkan bahan, berat, tarikh dan penjual untuk menyokong pemfailan EPR. Anda masih memfailkan pada portal CPCB."
+      },
+      "carbonCredits": {
+        "q": "Adakah saya akan mendapat kredit karbon?",
+        "a": "Belum. Kami merekodkan setiap kilo sekarang supaya kredit boleh dikeluarkan kemudian, selepas kaedah disahkan."
+      },
+      "whatCanIBuy": {
+        "q": "Apa yang boleh saya beli?",
+        "a": "Bahan kitar semula daripada pengitar semula disahkan, seperti serpihan PET, butiran HDPE, kertas kraft dan jongkong aluminium."
+      },
+      "qualityWrong": {
+        "q": "Bagaimana jika kualiti tidak seperti pesanan saya?",
+        "a": "Demo menunjukkan langkah pertikaian yang dicadangkan. Ia tidak boleh menahan atau melindungi dana sebenar."
+      },
+      "recycledContent": {
+        "q": "Adakah pembelian bahan kitar semula membantu EPR?",
+        "a": "Ya. Peraturan EPR plastik menetapkan sasaran kandungan kitar semula untuk pembungkusan, dan rekod urus niaga menunjukkan jumlah bahan kitar semula yang dibeli."
+      },
+      "carbonClaims": {
+        "q": "Bolehkah saya menuntut penjimatan karbon?",
+        "a": "Skrin Impak menganggarkan karbon dijimatkan. Anggap angka ini sebagai petunjuk sehingga disahkan secara bebas."
+      },
+      "whoCanJoin": {
+        "q": "Siapa boleh menjadi Saathi?",
+        "a": "Sesiapa berumur 18 tahun atau lebih yang mahu memperoleh pendapatan daripada kerja singkat berhampiran rumah."
+      },
+      "whichId": {
+        "q": "Pengenalan mana boleh digunakan?",
+        "a": "Kad pengundi, lesen memandu, PAN, dokumen DigiLocker atau Aadhaar yang hanya menunjukkan 4 digit terakhir."
+      },
+      "fullAadhaar": {
+        "q": "Mengapa bukan Aadhaar penuh saya?",
+        "a": "Kami tidak pernah menyimpan nombor Aadhaar. Jika anda tersilap memuat naik yang penuh, kami meminta salinan terlindung dan memadamkan yang pertama."
+      },
+      "needVehicle": {
+        "q": "Adakah saya memerlukan kenderaan?",
+        "a": "Tidak. Bantuan kedai dan syif tidak memerlukannya. Untuk kutipan rumah, basikal, motosikal atau beca bermotor membantu."
+      },
+      "whoPaysMe": {
+        "q": "Siapa membayar saya?",
+        "a": "Peniaga barang lusuh atau perniagaan tempat anda bekerja. Persetujui amaun sebelum bermula."
+      },
+      "chooseHours": {
+        "q": "Bolehkah saya memilih waktu bekerja?",
+        "a": "Ya. Beritahu masa dan hari lapang anda, dan ambil hanya kerja yang diingini."
+      },
+      "safetyGear": {
+        "q": "Peralatan keselamatan apa yang diperlukan?",
+        "a": "Sarung tangan dan kasut bertutup untuk setiap kerja, serta pelitup muka bagi kerja berdebu. Tanya perniagaan jika memerlukan perkara lain."
+      },
+      "whoSeesId": {
+        "q": "Siapa melihat pengenalan dan swafoto saya?",
+        "a": "Hanya anda dan pasukan kami untuk mengesahkan identiti anda."
+      },
+      "jobWentWrong": {
+        "q": "Masalah berlaku semasa bekerja. Apa perlu saya lakukan?",
+        "a": "Utamakan keselamatan. Beritahu perniagaan, kemudian telefon kami. Kami mendengar kedua-dua pihak."
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "Tempah kutipan dalam dua minit",
+      "sortAtHome": "Mengasingkan barang lusuh di rumah",
+      "batterySafety": "Bateri lama dikendalikan dengan selamat",
+      "firstDay": "Hari pertama anda di Luma.Green",
+      "weighAndPayVideo": "Timbang dan bayar dalam seminit",
+      "settingPrices": "Menetapkan harga anda",
+      "buyingFromKabadiwalas": "Membeli daripada peniaga barang lusuh",
+      "listingBales": "Menyenaraikan bal untuk pengitar semula",
+      "escrowExplained": "Demo: Eskrow dalam dua minit",
+      "buyingFromYards": "Membeli daripada kawasan pengasingan",
+      "sellingOutput": "Menjual keluaran anda",
+      "eprPlainWords": "EPR dalam bahasa mudah",
+      "firstOrder": "Membuat pesanan pertama",
+      "checkingDelivery": "Menyemak penghantaran",
+      "becomingSaathi": "Menjadi Saathi",
+      "goodPickup": "Kutipan rumah yang baik",
+      "liftingSafely": "Mengangkat dan membawa dengan selamat"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "Bahan yang boleh dikitar semula",
+        "p1": "Kertas, kadbod, kebanyakan plastik, logam dan kaca semuanya bernilai.",
+        "p2": "Telefon lama, pengecas dan bateri ialah e-sisa: asingkannya.",
+        "p3": "Sisa makanan dan lampin kotor tidak boleh dikitar semula."
+      },
+      "sortOnce": {
+        "title": "Asingkan sekali",
+        "p1": "Satu beg setiap satu untuk kertas, plastik dan logam.",
+        "p2": "Pastikan semuanya kering dan bersih.",
+        "p3": "Barang lusuh diasingkan lebih cepat ditimbang dan dibayar lebih baik."
+      },
+      "batteriesSafe": {
+        "title": "Bateri dengan selamat",
+        "p1": "Lekatkan pita pada hujung logam.",
+        "p2": "Simpan kering, sejuk dan jauh daripada kanak-kanak.",
+        "p3": "Jangan buang ke dalam tong sampah atau api."
+      },
+      "fairWeigh": {
+        "title": "Dapatkan timbangan adil",
+        "p1": "Semak penimbang bermula pada sifar.",
+        "p2": "Perhatikan setiap bahan ditimbang.",
+        "p3": "Semak jumlah pada resit."
+      },
+      "usingTheApp": {
+        "title": "Menggunakan aplikasi",
+        "p1": "Log masuk dengan nombor anda dan kod SMS.",
+        "p2": "Terima atau tolak permintaan baharu dengan cepat.",
+        "p3": "Aktifkan penerimaan automatik hanya apabila anda boleh pergi."
+      },
+      "weighingFairly": {
+        "title": "Menimbang dengan adil",
+        "p1": "Sifarkan penimbang di hadapan isi rumah.",
+        "p2": "Timbang setiap bahan secara berasingan.",
+        "p3": "Tunjukkan jumlah sebelum membayar."
+      },
+      "safeHandling": {
+        "title": "Mengendalikan barang lusuh dengan selamat",
+        "p1": "Sentiasa gunakan sarung tangan dan kasut bertutup.",
+        "p2": "Angkat dengan kekuatan kaki dan minta bantuan untuk beban melebihi 25 kg.",
+        "p3": "Asingkan bateri dan e-sisa."
+      },
+      "servingHouseholds": {
+        "title": "Melayani isi rumah dengan baik",
+        "p1": "Telefon sebelum pergi dan tiba dalam slot anda.",
+        "p2": "Bersopan dan timbang di tempat yang boleh mereka lihat.",
+        "p3": "Sentiasa bayar sebelum pergi."
+      },
+      "sellingToYards": {
+        "title": "Demo: Menjual ke kawasan pengasingan",
+        "p1": "Rekodkan pengasingan supaya stok tepat.",
+        "p2": "Tunjukkan stok kepada kawasan pengasingan berhampiran.",
+        "p3": "Muatkan hanya selepas bayaran berada dalam eskrow."
+      },
+      "buyingStock": {
+        "title": "Membeli stok",
+        "p1": "Cari stok berhampiran dalam Beli.",
+        "p2": "Semak harga per kg sebelum menghantar permintaan.",
+        "p3": "Timbang setiap muatan sebelum mengesahkan."
+      },
+      "tradingWithEscrow": {
+        "title": "Demo: Berniaga dengan eskrow",
+        "p1": "Pembeli membayar ke eskrow selepas penjual menerima.",
+        "p2": "Penjual hanya memuatkan apabila wang tersedia.",
+        "p3": "Pengesahan penghantaran melepaskan wang."
+      },
+      "papersForLoads": {
+        "title": "Dokumen bagi setiap muatan",
+        "p1": "Invois bagi setiap urus niaga.",
+        "p2": "Bil e-way untuk muatan melebihi ₹50,000.",
+        "p3": "Dokumen dibawa dalam kenderaan."
+      },
+      "siteSafety": {
+        "title": "Keselamatan di tapak",
+        "p1": "Sarung tangan, kasut bertutup dan pelitup muka di tempat berdebu.",
+        "p2": "Matikan dan cabut plag mesin sebelum membersihkan sekatan.",
+        "p3": "Sentiasa sediakan pertolongan cemas dan air bersih di tapak."
+      },
+      "buyingInputs": {
+        "title": "Demo: Membeli bahan input",
+        "p1": "Cari bal bergred daripada kawasan pengasingan dalam Beli.",
+        "p2": "Bayar ke eskrow selepas kawasan pengasingan menerima.",
+        "p3": "Semak gred sebelum mengesahkan."
+      },
+      "eprBasics": {
+        "title": "Asas EPR",
+        "p1": "Jenama mesti memastikan sebahagian sisa mereka dikitar semula.",
+        "p2": "Pengitar semula berdaftar mengeluarkan sijil pada portal CPCB.",
+        "p3": "Rekod urus niaga yang kemas menyokong setiap tuntutan."
+      },
+      "orderingRecycled": {
+        "title": "Demo: Memesan bahan kitar semula",
+        "p1": "Bandingkan penyenaraian mengikut jenis, kilo dan harga.",
+        "p2": "Hantar pesanan bagi kilo yang diperlukan.",
+        "p3": "Bayar ke eskrow selepas diterima."
+      },
+      "checkingDeliveries": {
+        "title": "Menyemak penghantaran",
+        "p1": "Padankan invois dan bil e-way dengan pesanan.",
+        "p2": "Timbang lori penuh dan kosong.",
+        "p3": "Sahkan hanya apabila berat dan kualiti betul."
+      },
+      "firstJob": {
+        "title": "Kerja pertama anda",
+        "p1": "Semak tempat, masa dan bayaran sebelum menerima.",
+        "p2": "Telefon awal dan tiba tepat pada masa.",
+        "p3": "Tandakan kerja selesai selepas menyiapkannya."
+      },
+      "inPeoplesHomes": {
+        "title": "Bekerja di rumah orang",
+        "p1": "Nyatakan identiti anda dan kedai asal.",
+        "p2": "Tunggu sehingga dijemput masuk.",
+        "p3": "Timbang di tempat yang boleh dilihat dan bersopan."
+      },
+      "gettingPaid": {
+        "title": "Menerima bayaran",
+        "p1": "Persetujui bayaran sebelum kerja bermula.",
+        "p2": "Minta UPI supaya ada rekod.",
+        "p3": "Semak setiap kerja dalam Pendapatan."
+      }
+    }
+  },
+  "app": {
+    "nav": {
+      "home": "Laman utama",
+      "sell": "Jual",
+      "help": "Bantuan",
+      "requests": "Permintaan",
+      "stock": "Stok tersedia",
+      "prices": "Harga saya",
+      "buy": "Beli",
+      "trades": "Urus niaga",
+      "impact": "Impak",
+      "compliance": "Pematuhan",
+      "earnings": "Pendapatan"
+    },
+    "navLabel": "Aplikasi",
+    "homeLink": "Laman utama Luma.Green",
+    "signOut": "Log keluar",
+    "more": "Lagi",
+    "comingSoon": "Skrin ini sedang dibina.",
+    "roles": {
+      "kabadiwala": "Peniaga barang lusuh",
+      "yard": "Kawasan pengasingan",
+      "recycler": "Pengitar semula",
+      "manufacturer": "Pengilang",
+      "saathi": "Pekerja Saathi"
+    }
+  },
+  "sell": {
+    "retry": "Cuba lagi",
+    "back": "Kembali",
+    "phone": {
+      "label": "Nombor telefon bimbit",
+      "hint": "Kami akan menghantar kod 6 digit ke nombor ini.",
+      "invalid": "Masukkan nombor telefon bimbit India 10 digit.",
+      "sendCode": "Hantar kod",
+      "sending": "Menghantar…",
+      "sendFailed": "Kod tidak dapat dihantar. Cuba lagi dalam seminit.",
+      "codeLabel": "Kod 6 digit",
+      "sentTo": "Dihantar melalui SMS ke {phone}",
+      "changeNumber": "Tukar nombor",
+      "verifying": "Menyemak…",
+      "resendIn": "Anda boleh meminta kod baharu dalam {seconds, plural, one {# saat} other {# saat}}",
+      "resend": "Hantar kod baharu",
+      "resent": "Kod baharu telah dihantar.",
+      "errorInvalid": "Kod itu salah. Semak SMS dan cuba lagi.",
+      "errorExpired": "Kod itu telah tamat tempoh. Minta kod baharu.",
+      "errorTooMany": "Terlalu banyak percubaan. Minta kod baharu.",
+      "errorGeneric": "Ralat berlaku. Sila cuba lagi.",
+      "privacy": "Kami menggunakan nombor anda hanya untuk tempahan dan perkembangan berkaitan."
+    },
+    "errors": {
+      "generic": "Ralat berlaku. Sila cuba lagi.",
+      "NOT_YOURS": "Tempahan ini dibuat dengan nombor lain.",
+      "EMPTY_BASKET": "Tambah sekurang-kurangnya satu barang untuk dijual.",
+      "TOO_MANY_ITEMS": "Terlalu banyak bahan untuk satu tempahan.",
+      "DUPLICATE_ITEM": "Satu bahan disenaraikan dua kali. Sila semak barang lusuh anda.",
+      "INVALID_KG": "Semak kilo: setiap satu mesti melebihi 0 dan paling banyak 500.",
+      "UNKNOWN_MATERIAL": "Salah satu bahan tidak boleh dijual di sini lagi. Sila semak barang lusuh anda.",
+      "SHOP_NOT_FOUND": "Kedai itu tidak menerima tempahan sekarang. Sila pilih yang lain.",
+      "SHOP_NO_PICKUP": "Kedai itu tidak membuat kutipan. Pilih kedai lain atau hantar sendiri.",
+      "INVALID_DATE": "Hari itu tidak boleh ditempah lagi. Sila pilih yang lain.",
+      "SLOT_PASSED": "Masa itu telah berlalu. Sila pilih masa kemudian.",
+      "INVALID_NAME": "Sila semak nama anda.",
+      "ADDRESS_REQUIRED": "Sila tambah alamat kutipan.",
+      "INVALID_ADDRESS": "Sila tulis alamat penuh.",
+      "TOO_MANY_OPEN": "Anda sudah mempunyai 5 tempahan menunggu. Tunggu satu selesai atau batalkan satu.",
+      "NO_PHONE": "Sila sahkan nombor telefon bimbit untuk menempah.",
+      "NOT_SIGNED_IN": "Sila sahkan nombor telefon bimbit dahulu.",
+      "CANNOT_CANCEL": "Tempahan ini tidak boleh dibatalkan lagi.",
+      "NOT_FOUND": "Tempahan ini tidak ditemui."
+    },
+    "metaTitle": "Jual barang lusuh anda",
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "E-sisa",
+      "other": "Lain-lain"
+    },
+    "perKg": "{price}/kg",
+    "when": {
+      "today": "Hari ini",
+      "nameLabel": "Nama anda",
+      "tomorrow": "Esok",
+      "titlePickup": "Bila mereka patut datang?",
+      "titleDropoff": "Bila anda akan menghantar?",
+      "dayLabel": "Hari",
+      "windowLabel": "Masa",
+      "passed": "Terlambat untuk hari ini",
+      "addressLabel": "Alamat kutipan",
+      "addressHint": "Nombor rumah atau pangsapuri, jalan, kawasan dan mercu tanda.",
+      "dropoffAt": "Hantar ke",
+      "nameHint": "Supaya kedai tahu siapa yang perlu dicari.",
+      "privacy": "Hanya kedai yang ditempah melihat alamat anda, selepas menerima permintaan.",
+      "next": "Semak dan tempah",
+      "errors": {
+        "day": "Pilih hari.",
+        "window": "Pilih masa.",
+        "address": "Tulis alamat penuh dengan nombor rumah dan kawasan.",
+        "name": "Tulis nama anda (sekurang-kurangnya 2 huruf)."
+      }
+    },
+    "windows": {
+      "morning": "Pagi",
+      "afternoon": "Petang",
+      "evening": "Malam"
+    },
+    "shop": {
+      "useLocation": "Gunakan lokasi saya",
+      "locating": "Mencari lokasi anda…",
+      "distance": "{km} km",
+      "hours": "Dibuka {hours}",
+      "verified": "Disahkan",
+      "title": "Siapa membelinya?",
+      "lead": "Tawaran setiap kedai untuk barang lusuh anda berdasarkan harga mereka sendiri.",
+      "modeLabel": "Bagaimana anda mahu menyerahkannya?",
+      "pickup": "Kutipan dari rumah",
+      "pickupHint": "Kedai datang kepada anda",
+      "dropoff": "Saya hantar sendiri",
+      "dropoffHint": "Anda membawa ke kedai",
+      "nearestFirst": "Kedai terdekat dahulu",
+      "byPrice": "Susun mengikut harga",
+      "locationFailed": "Lokasi tidak dapat diperoleh, jadi kedai disusun mengikut harga terbaik.",
+      "listLabel": "Kedai",
+      "offerFor": "untuk barang lusuh anda",
+      "picksUp": "Membuat kutipan",
+      "dropOnly": "Hantar sendiri sahaja",
+      "best": "Harga terbaik",
+      "nearest": "Terdekat",
+      "cityPrice": "{count, plural, one {Harga bandar digunakan untuk # barang} other {Harga bandar digunakan untuk # barang}}",
+      "noPickupHere": "Kedai ini tidak membuat kutipan. Pilih “Saya hantar sendiri” untuk menjual di sini.",
+      "empty": "Belum ada kedai menerima tempahan. Sila semak semula nanti.",
+      "next": "Pilih masa",
+      "pickOne": "Pilih kedai untuk meneruskan."
+    },
+    "steps": {
+      "basket": "Apa",
+      "shop": "Siapa",
+      "when": "Bila",
+      "label": "Langkah",
+      "progress": "Langkah {current} daripada {total}",
+      "confirm": "Tempah"
+    },
+    "basket": {
+      "points": "+{points, plural, one {# mata kitar semula} other {# mata kitar semula}}",
+      "title": "Apa yang anda ada?",
+      "lead": "Ketik barang untuk dijual, kemudian tetapkan anggaran kilo.",
+      "yours": "Barang lusuh anda",
+      "empty": "Belum ada barang ditambah. Ketik bahan di atas.",
+      "kilos": "Kilo {material}",
+      "less": "Kurangkan {material}",
+      "more": "Tambah {material}",
+      "remove": "Buang {material}",
+      "presets": "Jumlah pantas untuk {material}",
+      "preset": "{kg} kg",
+      "kgUnit": "kg",
+      "lineValue": "Kira-kira {amount}",
+      "worth": "Anggaran nilai",
+      "summary": "{items, plural, one {# barang} other {# barang}} · {weight}",
+      "next": "Cari pembeli",
+      "full": "Had satu tempahan: {max} bahan.",
+      "weighNote": "Amaun akhir ditentukan apabila barang lusuh ditimbang."
+    },
+    "confirm": {
+      "what": "Apa",
+      "who": "Siapa",
+      "when": "Bila",
+      "where": "Di mana",
+      "pickup": "Kutipan dari rumah anda",
+      "dropoff": "Anda menghantar ke kedai",
+      "whenValue": "{day} · {window}, {time}",
+      "youGet": "Anda menerima kira-kira {amount}",
+      "payNote": "Kedai menimbang barang lusuh dan membayar tunai atau melalui UPI.",
+      "notYou": "Gunakan nombor lain",
+      "title": "Semak dan tempah",
+      "change": "Tukar",
+      "changeLabel": "Tukar {section}",
+      "phoneTitle": "Sahkan nombor telefon bimbit",
+      "phoneLead": "Kami akan menghantar kod 6 digit melalui SMS. Tempahan disimpan pada nombor ini supaya boleh dijejak pada mana-mana telefon.",
+      "bookingAs": "Menempah sebagai {phone}",
+      "bookPickup": "Tempah kutipan",
+      "bookDropoff": "Tempah penghantaran sendiri",
+      "confirmAndBook": "Sahkan dan tempah",
+      "booking": "Menempah…",
+      "booked": "Ditempah! Membuka tempahan anda…",
+      "fixIt": "Baiki",
+      "locationNote": "Anggaran lokasi anda disimpan bersama kutipan ini supaya kami boleh mencari kedai lain berhampiran jika perlu."
+    },
+    "metaDescription": "Jual surat khabar, plastik, logam dan elektronik lama dari rumah di Bengaluru. Lihat bayaran kedai berhampiran, tempah kutipan dan terima bayaran di depan pintu.",
+    "eyebrow": "Untuk rumah di Bengaluru",
+    "title": "Jual barang lusuh dari rumah",
+    "lead": "Pilih barang anda, pilih kedai berhampiran dan terima tunai atau UPI selepas ditimbang.",
+    "promises": {
+      "label": "Mengapa jual di sini",
+      "noAccount": "Tiada akaun diperlukan",
+      "payAtDoor": "Dibayar selepas ditimbang",
+      "verified": "Kedai disahkan"
+    },
+    "unavailable": {
+      "title": "Tempahan dibuka tidak lama lagi",
+      "body": "Kami sedang menyediakan tempahan untuk rumah. Sila semak semula sebentar lagi."
+    },
+    "demoNote": "Harga dan kedai contoh untuk rintis Bengaluru.",
+    "loadError": "Tidak dapat memuatkan. Semak sambungan anda dan cuba lagi.",
+    "mine": {
+      "title": "Tempahan anda",
+      "showAll": "Tunjukkan semua {count}",
+      "showFewer": "Tunjukkan lebih sedikit",
+      "summary": "{items, plural, one {# barang} other {# barang}} · {weight}",
+      "paid": "Dibayar {amount}",
+      "estimate": "Kira-kira {amount}"
+    },
+    "photo": {
+      "title": "Cuba anggaran foto",
+      "lead": "Pilihan: tambah satu foto barang lusuh, kemudian semak barang yang dicadangkan.",
+      "privacy": "Jangan sertakan wajah, dokumen atau nombor plat. Foto dihantar kepada penyedia AI untuk anggaran ini. Luma.Green tidak menyimpannya.",
+      "choose": "Pilih atau ambil foto",
+      "selected": "Foto sedia",
+      "estimate": "Anggarkan foto ini",
+      "busy": "Menyemak foto anda…",
+      "manual": "Pilih barang secara manual",
+      "review": "Semak cadangan ini",
+      "reviewNote": "Berat daripada foto ialah anggaran kasar. Gunakan barang ini untuk menggantikan bakul, kemudian sunting bahan dan berat di bawah.",
+      "apply": "Gunakan barang ini",
+      "range": "{low}–{high}",
+      "confidence": "Tahap keyakinan: {confidence}",
+      "value": "Anggaran nilai: {low}–{high}",
+      "applied": "Cadangan ditambah. Semak bakul dan betulkan sebarang kesilapan.",
+      "unavailable": "Anggaran foto tidak tersedia. Pilih barang di bawah.",
+      "failed": "Foto tidak dapat disemak. Cuba foto lain atau pilih barang di bawah.",
+      "invalid": "Gunakan foto JPEG atau PNG yang jelas di bawah 12 MB.",
+      "limited": "Had foto telah dicapai. Pilih barang di bawah atau cuba lagi esok.",
+      "retake": "Foto tidak jelas atau tidak menunjukkan barang lusuh. Cuba foto lain atau pilih barang di bawah.",
+      "empty": "Tiada bahan disokong ditemui. Cuba foto lain atau pilih barang di bawah.",
+      "replace": "Pilih foto lain"
+    }
+  },
+  "track": {
+    "notFound": {
+      "sell": "Jual barang lusuh",
+      "title": "Tempahan ini tidak ditemui",
+      "body": "Semak pautan dalam SMS. Jika baru menempah, tunggu sebentar dan cuba lagi."
+    },
+    "cancel": {
+      "close": "Tutup",
+      "button": "Batalkan tempahan",
+      "title": "Batalkan tempahan ini?",
+      "body": "Kedai akan melihat pembatalannya. Anda boleh menempah lagi bila-bila masa.",
+      "confirm": "Ya, batalkan",
+      "keep": "Kekalkan",
+      "cancelling": "Membatalkan…",
+      "checking": "Menyemak nombor anda…",
+      "done": "Tempahan anda dibatalkan.",
+      "free": "Percuma untuk dibatalkan sehingga kedai dalam perjalanan.",
+      "signInTitle": "Sahkan identiti anda",
+      "signInBody": "Masukkan nombor telefon bimbit yang digunakan untuk menempah. Kami akan menghantar kod.",
+      "confirmNumber": "Sahkan nombor saya",
+      "notYours": "Tempahan ini dibuat dengan nombor lain.",
+      "otherNumber": "Gunakan nombor lain"
+    },
+    "today": "Hari ini",
+    "tomorrow": "Esok",
+    "shop": {
+      "title": "Kedai anda",
+      "verified": "Disahkan",
+      "call": "Telefon",
+      "callLabel": "Telefon {shop}",
+      "hours": "Dibuka {hours}"
+    },
+    "metaTitle": "Tempahan anda",
+    "reference": "Tempahan {token}",
+    "status": {
+      "requested": "Menunggu",
+      "accepted": "Diterima",
+      "on_the_way": "Dalam perjalanan",
+      "completed": "Selesai",
+      "declined": "Ditolak",
+      "cancelled": "Dibatalkan"
+    },
+    "hero": {
+      "requested": "{mode, select, pickup {Menunggu {shop} menerima} other {Menunggu {shop} mengesahkan}}",
+      "requestedBody": "Permintaan anda telah dihantar. Halaman ini dikemas kini sebaik sahaja mereka menjawab.",
+      "accepted": "{mode, select, pickup {{shop} menerima kutipan anda} other {{shop} menunggu anda}}",
+      "acceptedBody": "Sediakan barang lusuh. Ia ditimbang, kemudian anda dibayar tunai atau melalui UPI.",
+      "on_the_way": "{shop} dalam perjalanan",
+      "on_the_wayBody": "Sediakan barang lusuh berhampiran pintu.",
+      "completed": "Selesai! Anda menerima {amount}",
+      "completedBody": "Terima kasih kerana mengitar semula. Mata ditambah pada nombor anda.",
+      "declined": "{shop} tidak dapat menerima tempahan ini",
+      "declinedBody": "Tiada barang dikutip. Cuba kedai lain — senarai barang lusuh anda disimpan.",
+      "cancelled": "Tempahan ini dibatalkan",
+      "cancelledBody": "Tiada barang dikutip. Anda boleh menempah lagi bila-bila masa."
+    },
+    "progress": {
+      "label": "Kemajuan",
+      "booked": "Ditempah",
+      "accepted": "Diterima",
+      "confirmed": "Disahkan",
+      "onTheWay": "Dalam perjalanan",
+      "done": "Selesai"
+    },
+    "when": "Bila",
+    "whenValue": "{day} · {window}, {time}",
+    "mode": {
+      "pickup": "Kutipan dari rumah anda",
+      "dropoff": "Anda menghantar ke kedai"
+    },
+    "items": {
+      "title": "Barang yang dikutip",
+      "estimated": "Kira-kira {weight}",
+      "weighed": "{weight} pada {price}/kg"
+    },
+    "money": {
+      "title": "Wang dan mata anda",
+      "estimate": "Anda menerima kira-kira {amount}",
+      "estimateNote": "Kedai menimbang barang lusuh dan membayar tunai atau melalui UPI.",
+      "paid": "Anda menerima {amount}",
+      "paidBy": "Dibayar melalui {method, select, upi {UPI} other {tunai}} · {date}",
+      "estimateWas": "Anggaran asal {amount}",
+      "points": "+{points, plural, one {# mata kitar semula} other {# mata kitar semula}}",
+      "pointsAfter": "Kira-kira +{points, plural, one {# mata kitar semula} other {# mata kitar semula}} selepas ditimbang"
+    },
+    "timeline": {
+      "title": "Sejarah",
+      "requested": "Ditempah",
+      "accepted": "Diterima oleh kedai",
+      "on_the_way": "Kedai dalam perjalanan",
+      "completed": "Ditimbang dan dibayar",
+      "declined": "Ditolak oleh kedai",
+      "cancelled": "Dibatalkan"
+    },
+    "saved": "Tiada akaun diperlukan. Simpan pautan ini untuk menyemak tempahan pada mana-mana telefon.",
+    "sellMore": "Jual lagi barang lusuh",
+    "tryAnother": "Cuba kedai lain",
+    "dispatchChanged": "Permintaan anda dialihkan ke kedai berhampiran lain. Kedai semasa ditunjukkan di bawah."
+  },
+  "market": {
+    "buy": {
+      "cancel": "Batal",
+      "button": "Beli",
+      "sending": "Menghantar…",
+      "buttonLabel": "Beli {material} daripada {seller}",
+      "title": "Beli {material}",
+      "from": "Daripada {seller}, {area}. {weight} tersedia pada {price}/kg.",
+      "kgLabel": "Berapa kg?",
+      "kgHint": "Sehingga {weight}.",
+      "all": "Semua {weight}",
+      "kgInvalid": "Masukkan berat dalam kg, seperti 50 atau 12.5.",
+      "kgTooMuch": "Hanya {weight} tersedia.",
+      "total": "Jumlah keseluruhan",
+      "totalLine": "{weight} × {price}/kg",
+      "escrow": "Anda membayar ke eskrow selepas {seller} menerima. Wang diserahkan kepada mereka apabila anda mengesahkan penghantaran.",
+      "ewayBill": "Melebihi ₹50,000: bil e-way mesti mengiringi muatan ini.",
+      "submit": "Hantar permintaan",
+      "sent": "Permintaan dihantar kepada {seller}",
+      "sentNext": "Anda membayar ke eskrow selepas mereka menerima.",
+      "seeTrades": "Lihat urus niaga"
+    },
+    "sell": {
+      "title": "Jual",
+      "lead": "{buyer, select, yard {Tawarkan stok diasingkan kepada kawasan pengasingan.} recycler {Tawarkan bal kepada pengitar semula.} manufacturer {Tawarkan bahan kepada pengilang.} other {Tawarkan stok kepada pembeli.}}",
+      "notForYouTitle": "Pengilang membeli di Luma.Green",
+      "notForYouBody": "Cari bahan kitar semula daripada pengitar semula disahkan.",
+      "goBuy": "Beli bahan",
+      "form": {
+        "title": "Penyenaraian baharu",
+        "material": "Apa yang anda jual?",
+        "free": "{weight} tersedia untuk dijual",
+        "allPromised": "Semua disenaraikan atau dijual",
+        "kg": "Berapa kg?",
+        "kgHint": "Sehingga {weight}.",
+        "all": "Semua {weight}",
+        "price": "Harga anda, ₹ per kg",
+        "market": "Pasaran hari ini {price}/kg",
+        "suggested": "Dicadangkan {price}/kg",
+        "useSuggested": "Gunakan {price}",
+        "farFromMarket": "Ini jauh daripada harga hari ini. Sila semak.",
+        "note": "Nota untuk pembeli",
+        "optional": "(pilihan)",
+        "notePlaceholder": "Contohnya: kering, diikat, bal 50 kg",
+        "noteCount": "{count}/{max}",
+        "value": "Nilai lot",
+        "submit": "Senaraikan untuk dijual",
+        "submitting": "Menyenaraikan untuk dijual…",
+        "listed": "Dijual. {buyer, select, yard {Kawasan pengasingan} recycler {Pengitar semula} manufacturer {Pengilang} other {Pembeli}} kini boleh melihatnya.",
+        "nothingTitle": "Belum ada barang untuk dijual",
+        "nothingBody": "Stok yang direkodkan muncul di sini. Stok yang sudah disenaraikan atau dijual tidak dikira dua kali.",
+        "goStock": "Pergi ke stok",
+        "errors": {
+          "pickMaterial": "Pilih bahan.",
+          "kgInvalid": "Masukkan berat dalam kg, seperti 50 atau 12.5.",
+          "kgTooMuch": "Anda mempunyai {weight} untuk dijual.",
+          "priceInvalid": "Masukkan harga dalam rupee, seperti 18 atau 17.50.",
+          "noteTooLong": "Hadkan nota kepada 140 aksara atau kurang."
+        }
+      },
+      "mine": {
+        "title": "Dijual sekarang",
+        "emptyTitle": "Belum ada penyenaraian jualan",
+        "emptyBody": "Senaraikan lot pertama menggunakan borang.",
+        "past": "Penyenaraian terdahulu",
+        "onSale": "Untuk dijual",
+        "listedOn": "Disenaraikan {date}",
+        "pastLine": "Disenaraikan {date} · {price}/kg",
+        "sold": "Habis dijual",
+        "withdrawn": "Ditarik balik",
+        "withdraw": "Tarik balik",
+        "withdrawLabel": "Tarik balik {material}",
+        "withdrawConfirm": "Keluarkan lot ini daripada pasaran? Pembeli tidak dapat melihatnya lagi dan permintaan menunggu ditolak.",
+        "withdrawYes": "Ya, tarik balik",
+        "withdrawNo": "Teruskan jualan",
+        "withdrawnToast": "{material} dikeluarkan daripada pasaran"
+      }
+    },
+    "home": {
+      "sell": "Jual",
+      "buy": "Beli",
+      "trades": "Urus niaga",
+      "greeting": "Salam, {name}",
+      "lead": "{kind, select, yard {Beli daripada peniaga barang lusuh, jual bal diasingkan kepada pengitar semula.} recycler {Beli barang lusuh diasingkan daripada kawasan pengasingan, jual bahan kitar semula kepada pengilang.} manufacturer {Beli bahan kitar semula daripada pengitar semula disahkan.} other {Urus niaga anda sepintas lalu.}}",
+      "statsTitle": "Sepintas lalu",
+      "stats": {
+        "escrow": "Dalam eskrow",
+        "escrowHint": "Dilepaskan apabila penghantaran disahkan",
+        "waiting": "Menunggu anda",
+        "waitingHint": "{count, plural, =0 {Semua selesai} one {# urus niaga memerlukan tindakan} other {# urus niaga memerlukan tindakan}}",
+        "listings": "Untuk dijual",
+        "listingsHint": "{weight} disenaraikan",
+        "offers": "Lot kitar semula",
+        "offersHint": "Dijual oleh pengitar semula",
+        "completed": "Selesai bulan ini",
+        "completedHint": "{amount} diniagakan"
+      },
+      "waitingTitle": "Menunggu anda",
+      "allTrades": "Semua urus niaga",
+      "caughtUpTitle": "Tiada tindakan diperlukan sekarang",
+      "caughtUpBody": "Pesanan, bayaran dan penghantaran baharu muncul di sini.",
+      "offersTitle": "Lot terkini untuk anda",
+      "recycledTitle": "Bahan kitar semula untuk anda",
+      "recycledBody": "Serpihan, butiran, kraft dan jongkong daripada pengitar semula disahkan, sedia untuk barisan pengeluaran anda.",
+      "seeAll": "Lihat semua",
+      "noOffersTitle": "Tiada lot dijual sekarang",
+      "noOffersBody": "Lot baharu muncul sebaik sahaja disenaraikan."
+    },
+    "errors": {
+      "generic": "Ralat berlaku. Sila cuba lagi.",
+      "NOT_SIGNED_IN": "Anda telah dilog keluar. Sila log masuk semula.",
+      "WRONG_ROLE": "Perniagaan anda tidak boleh melakukan ini.",
+      "NOT_FOUND": "Ini tidak ditemui. Ia mungkin telah dibuang.",
+      "OWN_LISTING": "Ini lot anda sendiri.",
+      "LISTING_NOT_OPEN": "Lot ini tidak lagi dijual.",
+      "NOT_ENOUGH_LEFT": "Baki lot ini tidak sebanyak itu.",
+      "NOT_ENOUGH_STOCK": "Stok anda tidak sebanyak itu. Semak stok dahulu.",
+      "INVALID_WEIGHT": "Masukkan berat melebihi 0 kg.",
+      "INVALID_PRICE": "Masukkan harga melebihi ₹0.",
+      "NOTE_TOO_LONG": "Hadkan nota kepada 140 aksara atau kurang.",
+      "UNKNOWN_MATERIAL": "Pilih bahan daripada senarai.",
+      "WRONG_STEP": "Urus niaga ini telah bergerak ke hadapan. Semak langkah terkini."
+    },
+    "browse": {
+      "title": "Beli",
+      "lead": "{kind, select, yard {Barang lusuh diasingkan daripada peniaga berhampiran.} recycler {Bahan diasingkan dan dibal daripada kawasan pengasingan.} manufacturer {Bahan kitar semula daripada pengitar semula disahkan.} other {Bahan dijual berhampiran anda.}}",
+      "filterLabel": "Tapis mengikut bahan",
+      "all": "Semua",
+      "count": "{count, plural, =0 {Tiada lot} one {# lot dijual} other {# lot dijual}}",
+      "emptyTitle": "Tiada jualan sekarang",
+      "emptyBody": "Lot baharu muncul sebaik sahaja disenaraikan.",
+      "notForYouTitle": "Peniaga barang lusuh membeli daripada isi rumah",
+      "notForYouBody": "Di pasaran anda menjual: tawarkan stok diasingkan kepada kawasan pengasingan.",
+      "goSell": "Jual ke kawasan pengasingan"
+    },
+    "trades": {
+      "title": "Urus niaga",
+      "card": {
+        "rate": "{price}/kg",
+        "title": "{material} · {weight}",
+        "from": "Daripada {name} · {area}",
+        "to": "Kepada {name} · {area}",
+        "inEscrow": "{amount} ditahan dalam eskrow",
+        "ewayBill": "Melebihi ₹50,000: bil e-way mesti mengiringi muatan ini.",
+        "updated": "Dikemas kini {when}",
+        "receipt": "Resit {number}",
+        "buying": "Pembelian",
+        "selling": "Penjualan"
+      },
+      "busy": "Menyimpan…",
+      "steps": {
+        "accepted": "Diterima",
+        "label": "Kemajuan urus niaga",
+        "requested": "Diminta",
+        "paid_to_escrow": "Dalam eskrow",
+        "dispatched": "Dihantar",
+        "completed": "Telah sampai",
+        "srStep": "{step}: {state}",
+        "state": {
+          "done": "selesai",
+          "current": "seterusnya",
+          "todo": "belum"
+        }
+      },
+      "declineNo": "Kekalkan",
+      "lead": "Setiap urus niaga, langkah demi langkah. Wang kekal dalam eskrow sehingga pembeli mengesahkan penghantaran.",
+      "buying": "Pembelian",
+      "selling": "Penjualan",
+      "tabsLabel": "Pembelian atau penjualan",
+      "waitingBadge": "{count, plural, one {# memerlukan anda} other {# memerlukan anda}}",
+      "emptyBuyingTitle": "Belum ada pembelian",
+      "emptyBuyingBody": "Lot yang anda minta untuk dibeli muncul di sini.",
+      "emptySellingTitle": "Belum ada jualan",
+      "emptySellingBody": "Apabila seseorang meminta membeli lot anda, ia muncul di sini.",
+      "goBuy": "Cari bahan",
+      "goSell": "Senaraikan stok untuk dijual",
+      "declined": "Ditolak pada {date}",
+      "hint": {
+        "requested": {
+          "buyer": "Menunggu {name} menerima.",
+          "seller": "{name} mahu membeli ini. Terima untuk menyimpannya bagi mereka."
+        },
+        "accepted": {
+          "buyer": "Diterima. Bayar ke eskrow untuk meneruskan: wang ditahan sehingga anda mengesahkan penghantaran.",
+          "seller": "Menunggu {name} membayar ke eskrow."
+        },
+        "paid_to_escrow": {
+          "buyer": "Wang anda selamat dalam eskrow. Menunggu {name} menghantar.",
+          "seller": "Wang selamat dalam eskrow. Hantar muatan, kemudian tandakan dihantar."
+        },
+        "dispatched": {
+          "buyer": "Dalam perjalanan. Semak muatan, kemudian sahkan penghantaran untuk melepaskan wang.",
+          "seller": "Dalam perjalanan. Wang dilepaskan kepada anda apabila {name} mengesahkan penghantaran."
+        },
+        "completed": {
+          "buyer": "Telah sampai. Wang dilepaskan kepada {name}.",
+          "seller": "Telah sampai. Wang dilepaskan kepada anda."
+        },
+        "declined": {
+          "buyer": "{name} menolak pesanan ini atau lot habis dijual.",
+          "seller": "Anda menolak pesanan ini atau lot ditutup."
+        }
+      },
+      "action": {
+        "accept": "Terima pesanan",
+        "decline": "Tolak",
+        "pay": "Bayar {amount} ke eskrow",
+        "dispatch": "Tandakan sebagai dihantar",
+        "confirm": "Sahkan penghantaran"
+      },
+      "done": {
+        "accept": "Pesanan diterima",
+        "decline": "Pesanan ditolak",
+        "pay": "Dibayar ke eskrow. Resit {number}",
+        "dispatch": "Ditandakan sebagai dihantar",
+        "confirm": "Penghantaran disahkan. Wang dilepaskan kepada penjual."
+      },
+      "declineConfirm": "Tolak pesanan daripada {name}? Tindakan ini tidak boleh dibatalkan.",
+      "declineYes": "Ya, tolak"
+    },
+    "perKg": "{price}/kg",
+    "receipt": {
+      "dateLabel": "Tarikh",
+      "material": "Bahan",
+      "seller": "Penjual",
+      "buyer": "Pembeli",
+      "gstin": "GSTIN {gstin}",
+      "amount": "Amaun",
+      "title": "Resit urus niaga",
+      "numberLabel": "No. resit",
+      "statusLabel": "Pembayaran",
+      "inEscrow": "Dalam eskrow",
+      "settled": "Dilepaskan",
+      "noGstin": "Tidak berdaftar GST",
+      "quantity": "Kuantiti",
+      "rate": "Kadar",
+      "total": "Jumlah keseluruhan",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "Dibayar ke eskrow Luma.Green pada {date}.",
+      "held": "Ditahan dalam eskrow sehingga pembeli mengesahkan penghantaran.",
+      "released": "Dilepaskan kepada penjual pada {date}.",
+      "ewayBill": "Barang bernilai melebihi ₹50,000: bil e-way mesti mengiringi muatan ini.",
+      "notTaxInvoice": "Ini resit urus niaga, bukan invois cukai GST. Invois cukai disertakan dengan bayaran sebenar.",
+      "print": "Cetak",
+      "back": "Kembali ke urus niaga",
+      "missingTitle": "Resit tidak ditemui",
+      "missingBody": "Urus niaga ini bukan milik anda atau pautannya salah.",
+      "pendingTitle": "Belum ada resit",
+      "pendingBody": "Resit dibuat apabila pembeli membayar ke eskrow.",
+      "declinedBody": "Urus niaga ini ditolak, jadi tiada resit."
+    },
+    "recycled": "Dikitar semula",
+    "units": {
+      "kg": "kg",
+      "rupee": "₹"
+    },
+    "sampleData": "Harga dan amaun pada skrin ini ialah data contoh untuk prototaip.",
+    "simulated": "Data contoh. Bayaran disimulasikan dalam prototaip: tiada wang sebenar dipindahkan.",
+    "forBusinessesTitle": "Skrin ini untuk perniagaan",
+    "forBusinessesBody": "Peniaga barang lusuh, kawasan pengasingan, pengitar semula dan pengilang berniaga di sini.",
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "Tersedia",
+      "lotValue": "Seluruh lot"
+    },
+    "totalInvalid": "Jumlah ini terlalu besar. Kurangkan kuantiti atau harga."
+  },
+  "shop": {
+    "errors": {
+      "retry": "Cuba lagi",
+      "generic": "Ralat berlaku. Cuba lagi.",
+      "changed": "Permintaan ini telah berubah. Semak semula.",
+      "loadTitle": "Gagal dimuatkan",
+      "loadBody": "Semak sambungan internet dan cuba lagi."
+    },
+    "prices": {
+      "save": "Simpan",
+      "title": "Harga saya",
+      "saving": "Menyimpan…",
+      "prefix": "₹",
+      "lead": "Bayaran anda kepada isi rumah bagi setiap kg. Tidak boleh di bawah minimum.",
+      "label": "Harga anda untuk {material}, dalam rupee per kg",
+      "suffix": "/kg",
+      "minimum": "Had minimum {price}/kg",
+      "market": "Pasaran {price}/kg",
+      "notSet": "Belum ditetapkan. Isi rumah mendapat harga bandar, {price}/kg.",
+      "saved": "{material}: {price}/kg disimpan.",
+      "invalid": "Masukkan harga, seperti 14 atau 14.50.",
+      "belowFloor": "Terlalu rendah. Minimum ialah {price}/kg.",
+      "belowFloorUnknown": "Terlalu rendah. Ini di bawah harga minimum.",
+      "emptyTitle": "Belum ada bahan",
+      "emptyBody": "Bahan yang anda beli ditetapkan apabila kedai diluluskan."
+    },
+    "home": {
+      "prices": "Harga saya",
+      "greeting": "Salam",
+      "newTitle": "Permintaan baharu",
+      "newNone": "Tiada permintaan baharu sekarang.",
+      "newSome": "{count, plural, one {# isi rumah mahu kutipan.} other {# isi rumah mahu kutipan.}}",
+      "seeRequests": "Lihat permintaan",
+      "todayTitle": "Kutipan hari ini",
+      "next": "Seterusnya",
+      "todayNone": "Tiada lagi kutipan hari ini.",
+      "seeToday": "Lihat kutipan hari ini",
+      "moneyTitle": "Wang dan stok",
+      "paidToday": "Dibayar hari ini",
+      "paidWeek": "7 hari lalu",
+      "pickups": "{count, plural, =0 {Tiada kutipan} one {# kutipan} other {# kutipan}}",
+      "stockWorth": "Nilai stok",
+      "stockWeight": "{weight} dalam stok",
+      "priceCheck": "Semakan harga",
+      "allPrices": "Semua harga saya",
+      "perKg": "setiap kg",
+      "you": "Anda membayar",
+      "market": "Pasaran",
+      "quickLinks": "Pintasan",
+      "sell": "Jual ke kawasan pengasingan",
+      "sellHint": "Tawarkan stok kepada kawasan pengasingan berhampiran",
+      "pricesHint": "Bayaran anda kepada isi rumah bagi setiap kg"
+    },
+    "requests": {
+      "title": "Permintaan",
+      "tabs": {
+        "today": "Hari ini",
+        "done": "Selesai",
+        "new": "Baharu"
+      },
+      "dueNow": "Hari ini",
+      "later": "Akan datang",
+      "confirmDecline": {
+        "cancel": "Kekalkan",
+        "confirm": "Ya, tolak",
+        "title": "Tolak permintaan ini?",
+        "body": "Tindakan ini tidak boleh dibatalkan."
+      },
+      "decline": "Tolak",
+      "lead": "Isi rumah berhampiran yang mahu menjual barang lusuh.",
+      "empty": {
+        "newTitle": "Tiada permintaan baharu",
+        "newBody": "Apabila isi rumah menempah kutipan dengan anda, ia muncul di sini.",
+        "todayTitle": "Tiada barang untuk dikutip",
+        "todayBody": "Kutipan yang diterima muncul di sini.",
+        "doneTitle": "Belum ada yang selesai",
+        "doneBody": "Kutipan berbayar dan ditolak muncul di sini."
+      },
+      "estimate": "Anggaran",
+      "doneLine": "{when} · {materials}",
+      "accept": "Terima",
+      "startTrip": "Mulakan perjalanan",
+      "weigh": "Timbang dan bayar",
+      "accepted": "Diterima. Anda kini boleh melihat alamat dan nombor telefon.",
+      "declined": "Permintaan ditolak.",
+      "onTheWay": "Isi rumah boleh melihat anda dalam perjalanan."
+    },
+    "stock": {
+      "title": "Stok tersedia",
+      "scrap": "Barang lusuh",
+      "buy": "Beli bahan",
+      "lead": "Stok anda sekarang dan nilainya hari ini.",
+      "totalWeight": "Jumlah berat",
+      "worth": "Nilai hari ini",
+      "worthHint": "Pada harga pasaran hari ini",
+      "recycled": "Bahan kitar semula",
+      "atPrice": "Pasaran {price}/kg",
+      "noPrice": "Tiada harga pasaran hari ini",
+      "sellTo": {
+        "yard": "Jual ke kawasan pengasingan",
+        "recycler": "Jual kepada pengitar semula",
+        "manufacturer": "Jual kepada pengilang"
+      },
+      "emptyTitle": "Belum ada stok",
+      "emptyShop": "Timbang dan bayar kutipan, kemudian stok muncul di sini.",
+      "emptyBusiness": "Beli di pasaran, kemudian stok muncul di sini.",
+      "notBusinessTitle": "Hanya untuk perniagaan",
+      "notBusinessBody": "Stok disimpan oleh kedai, kawasan pengasingan, pengitar semula dan kilang."
+    },
+    "perKg": "{price}/kg",
+    "days": {
+      "today": "Hari ini",
+      "tomorrow": "Esok",
+      "yesterday": "Semalam"
+    },
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "E-sisa",
+      "other": "Lain-lain"
+    },
+    "slot": "{day}, {window}",
+    "windows": {
+      "morning": "Pagi",
+      "afternoon": "Petang",
+      "evening": "Malam"
+    },
+    "weigh": {
+      "saving": "Menyimpan…",
+      "kg": "kg",
+      "remove": "Buang {material}",
+      "title": "Timbang dan bayar",
+      "lead": "Timbang setiap bahan. Amaun menggunakan harga anda.",
+      "inputLabel": "{material}, dalam kg",
+      "less": "Kurangkan setengah kilo {material}",
+      "more": "Tambah setengah kilo {material}",
+      "estimated": "Anggaran: {weight}",
+      "noRate": "Tiada harga ditetapkan",
+      "add": "Tambah bahan lain",
+      "total": "Untuk dibayar",
+      "method": "Dibayar melalui",
+      "confirm": "Sahkan {amount} dibayar",
+      "invalidKg": "Masukkan kilogram, seperti 12 atau 12.5.",
+      "nothing": "Timbang sekurang-kurangnya satu bahan.",
+      "done": "Bayaran disimpan."
+    },
+    "dispatch": {
+      "saving": "Menyimpan…",
+      "title": "Tetapan kutipan",
+      "autoAccept": "Terima kutipan berhampiran secara automatik",
+      "autoAcceptHint": "Kutipan dalam radius anda boleh diterima tanpa jawapan manual. Matikan apabila anda tidak dapat mengutip.",
+      "radius": "Radius kutipan (km)",
+      "radiusHint": "Pilih nombor bulat antara 1 dengan 50.",
+      "saved": "Tetapan kutipan disimpan",
+      "error": "Tetapan ini tidak dapat disimpan. Cuba lagi.",
+      "ownerOnly": "Hanya pemilik kedai boleh mengubah tetapan kutipan.",
+      "locationRequired": "Tambahkan lokasi kedai dan aktifkan kutipan rumah sebelum menggunakan penerimaan automatik."
+    },
+    "request": {
+      "where": "Alamat",
+      "call": "Telefon",
+      "history": "Sejarah",
+      "steps": {
+        "accepted": "Diterima",
+        "on_the_way": "Dalam perjalanan",
+        "completed": "Ditimbang dan dibayar",
+        "declined": "Ditolak",
+        "cancelled": "Dibatalkan",
+        "requested": "Diminta"
+      },
+      "back": "Semua permintaan",
+      "details": "Butiran kutipan",
+      "phone": "Telefon",
+      "directions": "Arah perjalanan",
+      "hidden": "Alamat penuh dan nombor telefon dipaparkan selepas anda menerima.",
+      "items": "Barang yang mereka ada",
+      "estimate": "Anggaran",
+      "declined": "Anda menolak permintaan ini.",
+      "cancelled": "Isi rumah membatalkan kutipan ini.",
+      "notFoundTitle": "Permintaan tidak ditemui",
+      "notFoundBody": "Ia mungkin permintaan kedai lain atau pautannya salah."
+    },
+    "status": {
+      "accepted": "Diterima",
+      "on_the_way": "Dalam perjalanan",
+      "declined": "Ditolak",
+      "cancelled": "Dibatalkan",
+      "requested": "Baharu",
+      "completed": "Dibayar"
+    },
+    "receipt": {
+      "line": "{weight} pada {price}/kg",
+      "title": "Dibayar {amount}",
+      "kg": "{kg} kg",
+      "total": "Jumlah keseluruhan",
+      "thanks": "Terima kasih kerana mengitar semula!",
+      "thanksNamed": "Terima kasih kerana mengitar semula, {name}!",
+      "method": "{method}, {when}",
+      "points": "{name} mendapat {points, plural, one {# mata} other {# mata}}",
+      "pointsHint": "Satu mata bagi setiap ₹10.",
+      "stock": "Ditambah pada stok anda.",
+      "back": "Kembali ke permintaan"
+    },
+    "about": "Kira-kira {amount}",
+    "sampleNote": "Harga, kadar pasaran dan nilai pada skrin ini ialah angka contoh untuk prototaip.",
+    "household": "Isi rumah",
+    "dropoff": "Membawa ke kedai anda",
+    "methods": {
+      "cash": "Tunai",
+      "upi": "UPI"
+    },
+    "compare": {
+      "above": "Melebihi pasaran",
+      "below": "Di bawah pasaran",
+      "same": "Sama seperti pasaran"
+    },
+    "notShop": {
+      "title": "Hanya untuk kedai barang lusuh",
+      "body": "Permintaan kutipan dan harga isi rumah milik kedai barang lusuh.",
+      "home": "Pergi ke laman utama"
+    }
+  },
+  "analytics": {
+    "close": "Tutup",
+    "title": "Analitik pilihan",
+    "description": "Benarkan PostHog dan Google Analytics mengukur lawatan ke halaman awam. Kami tidak merekodkan borang, halaman peribadi atau ulang tayang sesi. Pilihan anda tidak mengubah akses kepada platform.",
+    "accept": "Benarkan analitik",
+    "decline": "Kekalkan analitik dimatikan",
+    "settings": "Tetapan analitik",
+    "saved": "Pilihan anda disimpan pada peranti ini.",
+    "unavailable": "Pelayar tidak dapat menyimpan pilihan ini. Analitik akan kekal dimatikan."
+  },
+  "auth": {
+    "metaTitle": "Log masuk",
+    "verifyMetaTitle": "Masukkan kod anda",
+    "chooseLanguage": "Pilih bahasa anda",
+    "chooseLanguageHint": "Anda boleh menukarnya bila-bila masa di bahagian atas skrin.",
+    "continue": "Teruskan",
+    "title": "Log masuk dengan nombor telefon bimbit",
+    "lead": "Untuk peniaga barang lusuh, kawasan pengasingan, pengitar semula, pengilang dan Saathi.",
+    "mobileLabel": "Nombor telefon bimbit",
+    "mobileHint": "Kami akan menghantar kod 6 digit ke nombor ini.",
+    "mobileInvalid": "Masukkan nombor telefon bimbit India 10 digit.",
+    "sendCode": "Hantar kod",
+    "sending": "Menghantar…",
+    "sendFailed": "Kod tidak dapat dihantar. Cuba lagi dalam seminit.",
+    "homeTitle": "Menjual barang lusuh dari rumah? Anda tidak memerlukan akaun.",
+    "homeLink": "Lihat cara ia berfungsi",
+    "privacy": "Kami menggunakan nombor anda hanya untuk log masuk dan menghantar perkembangan kerja anda di Luma.Green.",
+    "unavailableTitle": "Log masuk telefon dibuka tidak lama lagi",
+    "unavailableBody": "Kami sedang melengkapkan persediaan SMS untuk kod log masuk. Sila semak semula sebentar lagi.",
+    "verifyTitle": "Masukkan kod 6 digit",
+    "sentTo": "Dihantar melalui SMS ke {phone}",
+    "codeLabel": "Kod 6 digit",
+    "verify": "Sahkan",
+    "verifying": "Menyemak…",
+    "resendIn": "Anda boleh meminta kod baharu dalam {seconds, plural, one {# saat} other {# saat}}",
+    "resend": "Hantar kod baharu",
+    "resent": "Kod baharu telah dihantar.",
+    "changeNumber": "Tukar nombor",
+    "errorInvalid": "Kod itu salah. Semak SMS dan cuba lagi.",
+    "errorExpired": "Kod itu telah tamat tempoh. Minta kod baharu.",
+    "errorTooMany": "Terlalu banyak percubaan. Minta kod baharu.",
+    "errorGeneric": "Ralat berlaku. Sila cuba lagi.",
+    "signingIn": "Melog masuk…",
+    "sendRateLimited": "Terlalu banyak permintaan kod. Cuba lagi kemudian.",
+    "previewAction": "Pratonton skrin kod",
+    "previewTitle": "Pratonton kod",
+    "previewNumber": "Nombor telefon bimbit: {phone}",
+    "previewBody": "SMS belum disambungkan. Tiada kod dihantar. Anda boleh menyemak skrin ini tetapi tidak boleh log masuk.",
+    "previewPhoneHint": "Masukkan nombor telefon bimbit untuk pratonton langkah seterusnya. Tiada SMS akan dihantar.",
+    "twoFactorTitle": "Semak pengesah",
+    "twoFactorDescription": "Masukkan kod 6 digit daripada aplikasi pengesah untuk melengkapkan log masuk.",
+    "twoFactorUseBackup": "Kod pemulihan",
+    "twoFactorUseApp": "Guna pengesah",
+    "twoFactorBackupTitle": "Gunakan kod pemulihan",
+    "twoFactorBackupDescription": "Masukkan satu kod pemulihan yang disimpan. Setiap kod hanya boleh digunakan sekali.",
+    "twoFactorBackupLabel": "Kod pemulihan",
+    "twoFactorExpired": "Log masuk telah tamat tempoh. Mulakan semula dengan kod telefon baharu.",
+    "twoFactorRestart": "Mulakan semula"
+  },
+  "native": {
+    "back": "Kembali",
+    "reload": "Muat semula",
+    "openBrowser": "Buka dalam pelayar",
+    "offlineTitle": "Tidak dapat bersambung",
+    "offlineBody": "Semak sambungan internet anda, kemudian cuba lagi.",
+    "updates": "Semak kemas kini aplikasi",
+    "updateReady": "Kemas kini aplikasi sedia digunakan.",
+    "restart": "Mulakan semula sekarang",
+    "later": "Kemudian",
+    "updateCurrent": "Aplikasi anda terkini.",
+    "updateUnavailable": "Kemas kini aplikasi tidak tersedia untuk binaan ini.",
+    "updateFailed": "Tidak dapat menyemak kemas kini. Cuba lagi kemudian.",
+    "locationTitle": "Kongsi lokasi anda?",
+    "locationBody": "Benarkan Luma.Green menggunakan lokasi anda untuk mencari kedai barang lusuh berhampiran.",
+    "allow": "Benarkan",
+    "deny": "Bukan sekarang",
+    "browserNotice": "Halaman ini dibuka dalam pelayar. Anda mungkin perlu log masuk semula.",
+    "cameraPermission": "Gunakan kamera untuk mengambil gambar barang lusuh atau dokumen pengesahan.",
+    "photoPermission": "Pilih foto untuk anggaran barang lusuh dan pengesahan.",
+    "cameraTitle": "Kamera"
+  },
+  "showcase": {
+    "scene": "Adegan ilustrasi",
+    "context": {
+      "heading": "Sekilas ruang kerja anda",
+      "body": "Skrin ilustrasi menunjukkan cara setiap peranan menggunakan Luma.Green. Ikuti panduan di bawah untuk langkah yang tersedia."
+    },
+    "adminBody": "Semak permohonan, urus akses dan periksa rekod operasi.",
+    "preview": {
+      "label": "Pratonton aplikasi ilustrasi · tiada rekod sebenar",
+      "roles": {
+        "household": {
+          "title": "Kutipan isi rumah anda",
+          "first": "Pilih bahan anda",
+          "second": "Atur kutipan",
+          "third": "Simpan resit"
+        },
+        "kabadiwala": {
+          "title": "Kedai barang lusuh anda",
+          "first": "Semak permintaan kutipan",
+          "second": "Rekodkan berat",
+          "third": "Urus stok diasingkan"
+        },
+        "yard": {
+          "title": "Kawasan pengasingan anda",
+          "first": "Terima bahan",
+          "second": "Asingkan inventori",
+          "third": "Sediakan lot keluar"
+        },
+        "recycler": {
+          "title": "Ruang kerja kitar semula anda",
+          "first": "Jejak lot masuk",
+          "second": "Rekodkan keluaran kitar semula",
+          "third": "Simpan rekod bahan"
+        },
+        "manufacturer": {
+          "title": "Pemerolehan bahan anda",
+          "first": "Cari bahan kitar semula",
+          "second": "Semak penyenaraian tersedia",
+          "third": "Jejak urus niaga anda"
+        },
+        "saathi": {
+          "title": "Hari kerja anda",
+          "first": "Cari kerja berhampiran",
+          "second": "Rancang jadual",
+          "third": "Rekodkan kerja selesai"
+        },
+        "admin": {
+          "title": "Pentadbiran platform",
+          "first": "Semak permohonan",
+          "second": "Periksa dokumen dihantar",
+          "third": "Semak rekod operasi"
+        }
+      }
+    }
+  },
+  "solar": {
+    "contact": {
+      "phone": "Nombor telefon bimbit",
+      "sending": "Menghantar…",
+      "errors": {
+        "phone": "Masukkan nombor telefon bimbit India 10 digit.",
+        "name": "Masukkan nama anda.",
+        "message": "Tulis beberapa perkataan, sehingga 1,000 aksara.",
+        "generic": "Mesej tidak dapat dihantar. Sila cuba lagi."
+      },
+      "title": "Bercakap dengan kami",
+      "lead": "Beritahu cara menghubungi anda. Kami akan menelefon semula.",
+      "name": "Nama anda",
+      "phoneHint": "Kami akan menelefon nombor ini.",
+      "message": "Ada perkara yang perlu kami tahu?",
+      "messageHint": "Anggaran anda telah diisi. Tambahkan apa-apa yang diperlukan.",
+      "prefill": "{kind, select, home {Untuk rumah saya} other {Untuk perniagaan saya}}: sistem {kw} kW daripada anggaran di halaman ini.",
+      "send": "Hantar",
+      "sentTitle": "Terima kasih, {name}",
+      "sentBody": "Kami telah menerima mesej anda dan akan menelefon tidak lama lagi.",
+      "another": "Hantar mesej lain",
+      "privacy": "Kami menggunakan nombor anda hanya untuk menghubungi anda tentang solar.",
+      "unavailable": "Mesej belum boleh dihantar dari halaman ini. E-mel kami di <link>{email}</link>."
+    },
+    "chart": {
+      "table": "Tunjukkan angka",
+      "title": "Penjimatan sepanjang {years, number} tahun",
+      "legendPaying": "Belum pulang modal",
+      "legendPaid": "Sudah pulang modal",
+      "legendCost": "Kos anda",
+      "label": "Penjimatan mengikut tahun. Gunakan kekunci anak panah untuk beralih antara tahun.",
+      "point": "Tahun {year, number}: {amount} dijimatkan",
+      "yearLabel": "Tahun {year, number}",
+      "tableCaption": "Penjimatan mengikut tahun",
+      "year": "Tahun",
+      "saved": "Dijimatkan setakat ini"
+    },
+    "metaTitle": "Kalkulator solar bumbung untuk Karnataka",
+    "metaDescription": "Anggarkan sistem solar bumbung yang diperlukan rumah atau perniagaan anda di Karnataka, kos selepas subsidi PM Surya Ghar dan tempoh pulang modal.",
+    "eyebrow": "Karnataka",
+    "title": "Solar bumbung untuk rumah atau perniagaan anda",
+    "lead": "Cari saiz sesuai untuk bumbung, kos selepas subsidi kerajaan dan tempoh pulang modal. Setiap angka di sini ialah anggaran.",
+    "form": {
+      "heading": "Butiran anda",
+      "kind": "Untuk siapa?",
+      "kinds": {
+        "home": "Rumah saya",
+        "business": "Perniagaan saya"
+      },
+      "mode": "Penggunaan elektrik anda",
+      "modes": {
+        "bill": "Bil bulanan",
+        "units": "Unit sebulan"
+      },
+      "bill": "Bil elektrik bulanan",
+      "billHint": "Dalam rupee, seperti 2500",
+      "units": "Unit digunakan sebulan",
+      "unitsHint": "Tertera pada bil, seperti 300",
+      "unitsSuffix": "unit elektrik",
+      "roof": "Ruang bumbung tanpa teduhan",
+      "roofHint": "Biarkan kosong jika tidak pasti.",
+      "roofUnit": "Unit keluasan bumbung",
+      "areaUnits": {
+        "sqft": "kaki persegi",
+        "m2": "m²"
+      },
+      "optional": "pilihan",
+      "errors": {
+        "bill": "Masukkan bil antara {min} dengan {max}.",
+        "units": "Masukkan antara {min} dengan {max} unit.",
+        "roof": "Masukkan saiz bumbung melebihi sifar atau biarkan kosong."
+      }
+    },
+    "result": {
+      "heading": "Anggaran anda",
+      "prompt": "Masukkan bil atau unit untuk melihat anggaran.",
+      "size": "Sistem dicadangkan",
+      "kw": "{kw} kW",
+      "sizeHint": "Menghasilkan kira-kira {units} unit sebulan dan memerlukan bumbung sekitar {area}.",
+      "areaIn": "{value} {unit, select, sqft {kaki persegi} other {m²}}",
+      "fromBill": "Bil anda bersamaan kira-kira {units} unit sebulan.",
+      "limitedByRoof": "Saiz disesuaikan dengan bumbung. Ruang bumbung lebih besar boleh menampung lebih banyak bil anda.",
+      "roofTooSmallTitle": "Bumbung anda nampaknya terlalu kecil",
+      "roofTooSmallBody": "Sistem terkecil, 1 kW, memerlukan kira-kira {area} bumbung tanpa teduhan. Hubungi kami: mungkin ada cara lain.",
+      "cost": "Kos sebelum subsidi",
+      "subsidy": "Subsidi PM Surya Ghar",
+      "noSubsidy": "Bukan untuk perniagaan",
+      "netCost": "Kos anda",
+      "savings": "Anggaran penjimatan",
+      "perMonth": "{amount} sebulan",
+      "payback": "Pulang modal dalam",
+      "yearsRange": "{low}–{high} tahun",
+      "years": "{count, plural, one {# tahun} other {# tahun}}",
+      "range": "{low} – {high}",
+      "minus": "− {amount}",
+      "noPayback": "Bukan daripada penjimatan ini",
+      "demoNote": "Anggaran sahaja berdasarkan andaian di bawah. Lawatan tapak memberikan angka sebenar."
+    },
+    "assumptions": {
+      "title": "Cara kami menganggar",
+      "production": "Panel 1 kW menghasilkan kira-kira {units} unit sebulan di Karnataka.",
+      "roof": "Setiap kW memerlukan kira-kira {m2} m² ({sqft} kaki persegi) bumbung tanpa teduhan.",
+      "cost": "Kos pemasangan kira-kira {low}–{high} per kW.",
+      "tariff": "Bil ditukar kepada unit pada kira-kira {home} seunit untuk rumah dan {business} untuk perniagaan.",
+      "subsidy": "Rumah menerima {first} per kW untuk 2 kW pertama dan {third} untuk kW ketiga, sehingga {cap}. Perniagaan tidak menerima subsidi.",
+      "savings": "Penjimatan hanya mengira elektrik yang digunakan sendiri pada kadar hari ini."
+    },
+    "subsidy": {
+      "title": "Subsidi PM Surya Ghar",
+      "body": "PM Surya Ghar: Muft Bijli Yojana ialah skim Kerajaan India untuk solar bumbung rumah. Subsidi dibayar ke akaun bank selepas sistem dipasang dan diperiksa.",
+      "caption": "Subsidi mengikut saiz sistem untuk rumah",
+      "size": "Saiz sistem",
+      "amount": "Subsidi",
+      "atLeast": "{kw} kW atau lebih",
+      "kw": "{kw} kW",
+      "source": "Peraturan dan permohonan:",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "(dibuka dalam tab baharu)",
+      "business": "Perniagaan tidak menerima subsidi ini tetapi sering menjimatkan lebih banyak kerana kadar elektrik seunit lebih tinggi."
+    },
+    "next": {
+      "title": "Langkah seterusnya",
+      "one": {
+        "title": "Kami menelefon anda",
+        "body": "Kami bertanya tentang bumbung, bil dan bila anda mahu bermula."
+      },
+      "two": {
+        "title": "Lawatan tapak",
+        "body": "Pemasang disahkan memeriksa bumbung dan memberikan sebut harga tetap."
+      },
+      "three": {
+        "title": "Subsidi dan pemeteran bersih",
+        "body": "Kami membantu anda memohon subsidi dan pemeteran bersih dengan syarikat elektrik."
+      }
+    }
+  },
+  "join": {
+    "homeLink": "Lihat cara ia berfungsi",
+    "roles": {
+      "kabadiwala": {
+        "title": "Peniaga barang lusuh",
+        "body": "Anda mengendalikan kedai barang lusuh dan membeli daripada rumah berhampiran.",
+        "needs": "Alamat dan waktu operasi kedai. Nombor GST jika ada."
+      },
+      "yard": {
+        "title": "Kawasan pengasingan",
+        "body": "Anda mengasing dan memampatkan barang lusuh secara pukal, kemudian menjualnya.",
+        "needs": "Nombor GST jika ada, kebenaran kawalan pencemaran (PDF) dan foto mesin anda."
+      },
+      "recycler": {
+        "title": "Pengitar semula",
+        "body": "Anda mengubah barang lusuh kembali menjadi bahan mentah.",
+        "needs": "Nombor GST jika ada, kebenaran kawalan pencemaran (PDF) dan foto mesin anda."
+      },
+      "manufacturer": {
+        "title": "Pengilang",
+        "body": "Anda membeli bahan kitar semula untuk kilang.",
+        "needs": "Nombor GST jika ada, kebenaran kawalan pencemaran (PDF) dan foto mesin anda."
+      },
+      "saathi": {
+        "title": "Pekerja Saathi",
+        "body": "Anda mencari kerja berbayar: kutipan rumah, pengasingan atau syif kilang.",
+        "needs": "Pengenalan bergambar dan swafoto."
+      }
+    },
+    "shell": {
+      "signOut": "Log keluar"
+    },
+    "form": {
+      "submitting": "Menghantar…",
+      "back": "Kembali",
+      "optional": "pilihan",
+      "saving": "Menyimpan…",
+      "saved": "Disimpan",
+      "notSaved": "Tidak disimpan. Semak sambungan anda.",
+      "submit": "Hantar untuk pengesahan",
+      "next": "Seterusnya: dokumen",
+      "fixErrors": "Beberapa jawapan perlu disemak. Ia ditandakan di bawah.",
+      "yes": "Ya",
+      "no": "Tidak",
+      "gstQuestion": "Adakah anda mempunyai nombor GST?",
+      "gstin": "Nombor GST",
+      "gstinHint": "15 aksara, seperti 29ABCDE1234F1Z5",
+      "useLocation": "Gunakan lokasi saya",
+      "locating": "Mencari lokasi anda…",
+      "locationSaved": "Lokasi disimpan",
+      "locationFailed": "Lokasi tidak dapat diperoleh. Benarkan lokasi untuk laman ini atau taip alamat. Kami akan mengesahkannya semasa menelefon.",
+      "locationWhy": "Supaya rumah dan pembeli berhampiran boleh menemui anda.",
+      "loginPhone": "Nombor log masuk anda",
+      "otherPhones": "Nombor lain",
+      "otherPhonesHint": "Sehingga dua nombor tambahan, seperti pembantu atau rakan kongsi. Kami hanya menghubungi mereka tentang kerja anda.",
+      "addPhone": "Tambah nombor",
+      "remove": "Buang",
+      "phoneNumber": "Nombor",
+      "phoneLabel": "Pemilik nombor",
+      "phoneLabelPlaceholder": "Pembantu, rakan kongsi…",
+      "hours": "Waktu operasi",
+      "opens": "Dibuka",
+      "closes": "Ditutup",
+      "weeklyOff": "Cuti mingguan",
+      "weeklyOffHint": "Biarkan kosong jika dibuka setiap hari.",
+      "weekdays": {
+        "mon": "Isn",
+        "tue": "Sel",
+        "wed": "Rab",
+        "thu": "Kha",
+        "fri": "Jum",
+        "sat": "Sab",
+        "sun": "Ahd"
+      },
+      "changesTitle": "Perkara untuk diperbaiki"
+    },
+    "status": {
+      "draft": {
+        "continue": "Teruskan",
+        "title": "Permohonan anda belum dihantar",
+        "lead": "Semua maklumat yang diisi telah disimpan.",
+        "changeRole": "Mula semula dengan peranan lain",
+        "confirmChange": "Ini memadamkan maklumat yang telah diisi. Mula semula?"
+      },
+      "rejected": {
+        "contact": "Bercakap dengan kami",
+        "title": "Kami tidak dapat mengesahkan anda",
+        "lead": "Sebab daripada pasukan kami:"
+      },
+      "suspended": {
+        "contact": "Bercakap dengan kami",
+        "title": "Akaun anda dijeda",
+        "lead": "Sila hubungi kami supaya kami boleh menyelesaikannya."
+      },
+      "metaTitle": "Permohonan anda",
+      "none": {
+        "title": "Beritahu pekerjaan anda",
+        "lead": "Pilih peranan untuk memulakan permohonan."
+      },
+      "submitted": {
+        "title": "Sedang disemak",
+        "lead": "Biasanya 12–24 jam. Kami menghantar SMS selepas selesai.",
+        "sentAt": "Dihantar {when}",
+        "whatWeCheck": "Perkara yang kami semak"
+      },
+      "changes_requested": {
+        "title": "Beberapa perubahan diperlukan",
+        "lead": "Pasukan kami meminta ini:",
+        "fix": "Baiki dan hantar semula"
+      },
+      "approved": {
+        "title": "Anda telah disahkan",
+        "lead": "Perniagaan anda kini aktif di Luma.Green.",
+        "open": "Buka papan pemuka"
+      },
+      "roleLabel": "Memohon sebagai: {role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "Kedai anda berada di lokasi yang ditunjukkan pada peta",
+          "two": "Kami menelefon nombor log masuk anda",
+          "three": "Nombor GST anda aktif, jika diberikan"
+        },
+        "business": {
+          "one": "Nombor GST anda aktif dan sepadan dengan perniagaan, jika diberikan",
+          "two": "Kebenaran anda ada dalam daftar lembaga, masih sah dan meliputi kerja anda",
+          "three": "Foto menunjukkan unit beroperasi dan kami menelefon anda"
+        },
+        "saathi": {
+          "one": "Pengenalan boleh dibaca dan namanya sepadan",
+          "two": "Swafoto sepadan dengan pengenalan",
+          "three": "Kami menelefon nombor anda"
+        }
+      }
+    },
+    "consent": {
+      "title": "Sebelum anda bermula",
+      "lead": "Perkara yang kami minta dan sebabnya.",
+      "why": {
+        "kabadiwala": "Butiran kedai membolehkan rumah berhampiran menempah anda dan membantu kami menyemak kedai itu benar-benar wujud. Kami menelefon sekali untuk mengesahkan.",
+        "business": "Sijil kebenaran dan foto mesin menunjukkan kepada pembeli dan penjual bahawa anda berlesen dan beroperasi. Kami menyemaknya dengan daftar awam lembaga kawalan pencemaran.",
+        "saathi": "Pengenalan bergambar dan swafoto membolehkan kami mengesahkan identiti anda sebelum sesiapa membenarkan anda masuk rumah atau kawasan mereka."
+      },
+      "privacy": "Hanya anda dan pasukan Luma.Green boleh melihat butiran dan fail anda. Kami menggunakannya untuk pengesahan dan menghubungkan anda dengan pengguna Luma.Green, tidak pernah menjualnya. Anda boleh meminta kami memadamkannya.",
+      "age": "Saya berumur 18 tahun atau lebih",
+      "accept": "Saya telah membaca perkara yang dikumpul dan sebabnya",
+      "startButton": "Mulakan permohonan saya",
+      "starting": "Memulakan…"
+    },
+    "business": {
+      "materialNames": {
+        "paper": "Kertas",
+        "plastic": "Plastik",
+        "metal": "Logam",
+        "glass": "Kaca",
+        "ewaste": "E-sisa"
+      },
+      "titles": {
+        "yard": "Kawasan pengasingan anda",
+        "recycler": "Unit kitar semula anda",
+        "manufacturer": "Kilang anda"
+      },
+      "step": "Langkah {step} daripada 2",
+      "businessName": "Nama perniagaan",
+      "materials": "Bahan yang dikendalikan",
+      "materialsHint": "Supaya kami boleh menghubungkan anda dengan penjual dan pembeli yang sesuai.",
+      "address": "Alamat",
+      "addressHint": "Lot, jalan dan kawasan",
+      "locationTags": "Nama kawasan",
+      "locationTagsHint": "Bantu orang mencari anda, seperti Kawasan Perindustrian Peenya. Sehingga lima.",
+      "addTag": "Tambah",
+      "collects": "Adakah anda mengambil daripada pembekal?",
+      "hours": "Waktu kerja"
+    },
+    "saathi": {
+      "vehicles": {
+        "none": "Tiada",
+        "cycle": "Basikal",
+        "two_wheeler": "Motosikal atau skuter",
+        "auto": "Beca bermotor"
+      },
+      "name": "Nama anda",
+      "work": {
+        "home_pickups": "Kutipan dari rumah",
+        "yard_sorting": "Pengasingan di kawasan pengasingan",
+        "shop_help": "Bantuan di kedai barang lusuh",
+        "factory_shifts": "Syif di pengitar semula atau kilang"
+      },
+      "timeNames": {
+        "morning": "Pagi",
+        "afternoon": "Petang",
+        "evening": "Malam"
+      },
+      "title": "Tentang anda",
+      "nameHint": "Seperti pada pengenalan",
+      "area": "Tempat tinggal anda",
+      "areaHint": "Kawasan anda, seperti Malleshwaram",
+      "radius": "Sejauh mana anda boleh bergerak?",
+      "radiusOption": "{km} km",
+      "workTypes": "Kerja yang diingini",
+      "vehicle": "Kenderaan anda",
+      "times": "Bila anda boleh bekerja?",
+      "days": "Hari apa?",
+      "idProof": "Pengenalan bergambar",
+      "idProofHint": "Kad pengundi, lesen memandu, PAN atau Aadhaar terlindung yang hanya menunjukkan empat digit terakhir. Foto atau PDF, sehingga 10 MB.",
+      "selfie": "Swafoto",
+      "selfieHint": "Kami memadankannya dengan pengenalan anda."
+    },
+    "kabadiwala": {
+      "ownerName": "Nama anda",
+      "title": "Kedai anda",
+      "shopName": "Nama kedai",
+      "address": "Alamat kedai",
+      "addressHint": "Jalan, kawasan dan mercu tanda",
+      "offersPickup": "Adakah anda membuat kutipan rumah?",
+      "noPickupHint": "Tiada masalah. Saathi berhampiran boleh membuat kutipan rumah untuk kedai anda.",
+      "vehicle": "Kenderaan anda",
+      "vehicles": {
+        "handcart": "Kereta sorong",
+        "cycle": "Basikal",
+        "auto": "Beca bermotor",
+        "mini_truck": "Lori kecil"
+      }
+    },
+    "metaTitle": "Sertai Luma.Green",
+    "metaDescription": "Peniaga barang lusuh, kawasan pengasingan, pengitar semula, pengilang dan Saathi di Bengaluru: mohon menyertai Luma.Green. Petugas menyemak setiap permohonan, biasanya dalam 12–24 jam.",
+    "title": "Sertai Luma.Green",
+    "lead": "Beritahu pekerjaan anda. Petugas menyemak setiap permohonan, biasanya dalam 12–24 jam.",
+    "start": "Mula",
+    "youNeed": "Anda perlukan",
+    "homeTitle": "Menjual barang lusuh dari rumah?",
+    "homeBody": "Anda tidak perlu menyertai. Tempah kutipan apabila ada barang untuk dijual.",
+    "documents": {
+      "title": "Dokumen dan foto",
+      "lead": "Kami menyemak kebenaran anda dalam daftar awam lembaga kawalan pencemaran.",
+      "notRequired": "Unit kami tidak memerlukan kebenaran",
+      "notRequiredHint": "Sesetengah unit, seperti pemampatan kertas sahaja, dikecualikan. Beritahu sebabnya dan kami akan menyemak.",
+      "reason": "Sebab tidak diperlukan",
+      "board": "Lembaga mana yang mengeluarkannya?",
+      "boards": {
+        "kspcb": "Karnataka (KSPCB)",
+        "other": "Lembaga negeri lain"
+      },
+      "boardState": "Negeri mana?",
+      "consentNumber": "Nombor kebenaran atau pendaftaran",
+      "consentNumberHint": "Seperti tercetak pada sijil",
+      "validUntil": "Sah sehingga",
+      "certificate": "Sijil kebenaran",
+      "certificateHint": "Satu PDF, sehingga 10 MB.",
+      "machineMedia": "Foto atau video mesin anda",
+      "machineMediaHint": "Sekurang-kurangnya dua. Tunjukkan mesin utama dan kawasan anda. Foto sehingga 10 MB, video sehingga 20 MB.",
+      "declaration": "Dokumen ini tulen dan milik perniagaan ini."
+    },
+    "files": {
+      "choose": "Pilih fail",
+      "addMore": "Tambah lagi",
+      "takePhoto": "Ambil foto",
+      "uploading": "Memuat naik…",
+      "remove": "Buang",
+      "size": "{size} MB",
+      "sizeKb": "{size} KB"
+    },
+    "errors": {
+      "required": "Ini diperlukan",
+      "tooShort": "Sila tambah sedikit lagi",
+      "tooLong": "Terlalu panjang",
+      "chooseOne": "Pilih satu",
+      "pickAtLeastOne": "Pilih sekurang-kurangnya satu",
+      "gstin": "Semak nombor GST: 15 aksara, seperti 29ABCDE1234F1Z5",
+      "phone": "Masukkan nombor telefon bimbit 10 digit",
+      "duplicatePhone": "Nombor ini sudah disenaraikan",
+      "maxPhones": "Sehingga dua nombor tambahan",
+      "maxTags": "Sehingga lima nama kawasan",
+      "time": "Masukkan masa",
+      "closesBeforeOpens": "Waktu tutup mesti selepas waktu buka",
+      "date": "Masukkan tarikh",
+      "expired": "Kebenaran ini tamat tempoh. Muat naik yang diperbaharui.",
+      "explainMore": "Beritahu sedikit lagi",
+      "declaration": "Sila sahkan ini",
+      "fileMissing": "Sila tambahkan ini",
+      "fileType": "Jenis fail ini tidak boleh digunakan di sini",
+      "fileTooBig": "Fail ini terlalu besar",
+      "uploadFailed": "Muat naik gagal. Cuba lagi.",
+      "generic": "Ralat berlaku. Cuba lagi."
+    }
+  },
+  "compliance": {
+    "title": "Pematuhan",
+    "receipts": {
+      "date": "Tarikh",
+      "title": "Resit urus niaga",
+      "lead": "Resit urus niaga Luma.Green anda, yang terbaru dahulu. Invois cukai GST disertakan dengan bayaran sebenar.",
+      "number": "Resit",
+      "with": "Dengan",
+      "what": "Apa",
+      "amount": "Amaun",
+      "eway": "Bil e-way",
+      "sale": "Jualan",
+      "purchase": "Pembelian",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "Diperlukan",
+      "ewayNotNeeded": "Tidak diperlukan",
+      "ewayNeededLong": "Bil e-way diperlukan",
+      "ewayNotNeededLong": "Bil e-way tidak diperlukan",
+      "ewayNote": "Bil e-way diperlukan untuk memindahkan barang bernilai lebih daripada ₹50,000.",
+      "view": "Lihat resit {number}",
+      "unknown": "Perniagaan yang tidak lagi berada di Luma.Green",
+      "empty": "Belum ada resit",
+      "emptyBody": "Resit dibuat apabila pembeli membayar ke eskrow."
+    },
+    "epr": {
+      "streams": {
+        "plastic": "Plastik",
+        "ewaste": "E-sisa",
+        "paper": "Kertas",
+        "metal": "Logam",
+        "glass": "Kaca",
+        "other": "Lain-lain",
+        "battery": "Bateri"
+      },
+      "recycled": "Dikitar semula",
+      "title": "Rekod EPR, tahun kewangan {from}–{to}",
+      "lead": "Bahan diterima dan dikitar semula tahun kewangan ini (April hingga Mac).",
+      "leadManufacturer": "Bahan kitar semula dibeli tahun kewangan ini (April hingga Mac).",
+      "received": "Diterima",
+      "bought": "Dibeli",
+      "regimes": {
+        "pwm_2016": "Peraturan Pengurusan Sisa Plastik, 2016",
+        "ewaste_2022": "Peraturan Pengurusan E-Sisa, 2022",
+        "bwm_2022": "Peraturan Pengurusan Sisa Bateri, 2022",
+        "none": "Belum ada peraturan EPR untuk bahan ini"
+      },
+      "note": "Sijil EPR dijana pada portal EPR CPCB, bukan di sini. Jumlah ini daripada urus niaga selesai anda, sedia untuk pemfailan.",
+      "empty": "Belum ada rekod tahun ini",
+      "emptyBody": "Urus niaga selesai sejak 1 April dikira di sini."
+    },
+    "lead": "Lesen dan rekod anda di satu tempat.",
+    "demoNote": "Data contoh: dokumen, resit dan jumlah di sini ialah contoh untuk prototaip.",
+    "checklist": {
+      "title": "Senarai semak",
+      "whatThisMeans": "Maksudnya:"
+    },
+    "status": {
+      "done": "Selesai",
+      "due_soon": "Perbaharui segera",
+      "overdue": "Tamat tempoh",
+      "missing": "Tiada",
+      "optional": "Pilihan",
+      "not_needed": "Tidak diperlukan",
+      "self_declared": "Belum disemak"
+    },
+    "items": {
+      "gst": {
+        "title": "Pendaftaran GST",
+        "registered": "GSTIN {gstin}",
+        "notRegistered": "Belum berdaftar",
+        "note": "Nombor GST membolehkan anda mengeluarkan invois cukai dan menuntut semula cukai pembelian. Di Karnataka, anda mesti berdaftar apabila jualan melebihi ₹40 lakh setahun atau untuk menjual ke negeri lain."
+      },
+      "consent": {
+        "title": "Kebenaran lembaga pencemaran",
+        "detail": "{board} · {number}",
+        "missing": "Tiada kebenaran dalam rekod",
+        "note": "Kebenaran operasi daripada lembaga kawalan pencemaran negeri membolehkan anda mengendalikan unit pengasingan atau kitar semula secara sah. Pengitar semula dan kilang memintanya sebelum membeli.",
+        "noteShop": "Kedai kecil yang hanya membeli dan mengasingkan barang lusuh biasanya tidak memerlukannya. Anda memerlukannya jika mula memampat, mencarik atau memproses bahan."
+      },
+      "scale": {
+        "title": "Penimbang dicap",
+        "detail": "Pengisytiharan sendiri. Pengesahan di sini akan tersedia nanti.",
+        "note": "Penimbang jual beli mesti diperiksa dan dicap oleh jabatan Metrologi Undang-Undang, biasanya setahun sekali. Cap menunjukkan timbangan anda adil."
+      },
+      "safety": {
+        "title": "Kit keselamatan pekerja",
+        "detail": "Pengisytiharan sendiri. Pengesahan di sini akan tersedia nanti.",
+        "note": "Sarung tangan, pelitup muka dan kasut bertutup untuk semua yang mengasing atau mengangkat, serta peti pertolongan cemas di tapak. Saathi yang bekerja untuk anda juga memerlukannya."
+      }
+    },
+    "consent": {
+      "title": "Kesahan kebenaran",
+      "validUntil": "Sah sehingga {date}",
+      "daysLeft": "{days, plural, =0 {Hari terakhir hari ini} one {# hari lagi} other {# hari lagi}}",
+      "ranOut": "{days, plural, one {Tamat # hari lalu} other {Tamat # hari lalu}}",
+      "reminder": "Tarikh semakan pembaharuan: {date}, 90 hari sebelum tamat tempoh.",
+      "expiringTitle": "Perbaharui kebenaran sekarang",
+      "expiringBody": "Ia tamat pada {date}. Mohon pembaharuan daripada {board} sekarang — proses boleh mengambil masa beberapa minggu.",
+      "expiredTitle": "Kebenaran anda telah tamat",
+      "expiredBody": "Ia tamat pada {date}. Perbaharui dengan {board} sebelum membeli atau menjual bahan lagi.",
+      "missingTitle": "Tiada kebenaran dalam rekod",
+      "missingBody": "Pengitar semula dan kilang meminta kebenaran sah. Hantar melalui Bantuan dan kami akan menambahkannya."
+    },
+    "saathi": {
+      "title": "Untuk perniagaan",
+      "body": "Pematuhan untuk kedai, kawasan pengasingan, pengitar semula dan kilang. Kerja serta bayaran anda ada di skrin utama.",
+      "home": "Pergi ke kerja saya"
+    }
+  },
+  "home": {
+    "metaDescription": "Luma.Green menyatukan rantaian barang lusuh India dalam satu platform: isi rumah, peniaga barang lusuh, kawasan pengasingan, pengitar semula dan pengilang, dengan harga adil, perniagaan disahkan dan resit pada setiap langkah.",
+    "hero": {
+      "eyebrow": "Bermula di Bengaluru",
+      "title": "Rantaian barang lusuh India dalam satu platform",
+      "lead": "Jual barang lusuh dari rumah pada harga adil. Niagakannya sepanjang rantaian dengan perniagaan disahkan. Setiap serahan ditimbang, dinilai dan direkodkan.",
+      "sell": "Jual barang lusuh anda",
+      "join": "Sertai sebagai perniagaan",
+      "prices": "Lihat harga hari ini"
+    },
+    "teaser": {
+      "title": "Harga hari ini",
+      "placeAndDate": "Bengaluru · {date}",
+      "place": "Bengaluru",
+      "seeAll": "Lihat semua harga",
+      "demoNote": "Harga contoh untuk prototaip.",
+      "unavailable": "Harga hari ini akan dipaparkan di sini tidak lama lagi.",
+      "error": "Harga tidak dapat dimuatkan sekarang."
+    },
+    "chain": {
+      "heading": "Pergerakan barang lusuh",
+      "intro": "Barang lusuh bertukar tangan empat kali sebelum menjadi sesuatu yang baharu. Pengasingan bertambah baik pada setiap langkah dan Luma.Green merekodkan setiap serahan.",
+      "steps": {
+        "household": {
+          "name": "Isi rumah",
+          "body": "Jual kertas lama, plastik, logam dan e-sisa."
+        },
+        "kabadiwala": {
+          "name": "Peniaga barang lusuh",
+          "body": "Membeli, menimbang dan mengasingkannya mengikut bahan."
+        },
+        "yard": {
+          "name": "Kawasan pengasingan",
+          "body": "Menggred dan memampatkannya menjadi bal."
+        },
+        "recycler": {
+          "name": "Pengitar semula",
+          "body": "Mengubah bal menjadi serpihan, butiran dan jongkong."
+        },
+        "manufacturer": {
+          "name": "Pengilang",
+          "body": "Membuat produk baharu daripada bahan kitar semula."
+        }
+      },
+      "money": "Isi rumah menerima tunai atau UPI di depan pintu. Eskrow antara perniagaan masih dirancang.",
+      "saathi": "Saathi membantu sepanjang rantaian melalui kutipan, pengasingan dan kerja syif."
+    },
+    "roles": {
+      "heading": "Manfaat untuk semua dalam rantaian",
+      "intro": "Enam kumpulan memastikan barang lusuh terus bergerak. Inilah manfaat Luma.Green bagi setiap kumpulan.",
+      "household": {
+        "title": "Isi rumah",
+        "one": "Lihat nilai barang lusuh sebelum membuat tempahan.",
+        "two": "Dikutip di depan pintu atau dihantar ke kedai.",
+        "three": "Dibayar tunai atau melalui UPI, berserta resit.",
+        "cta": "Jual barang lusuh anda"
+      },
+      "kabadiwala": {
+        "title": "Peniaga barang lusuh",
+        "one": "Permintaan kutipan daripada rumah berhampiran.",
+        "two": "Tetapkan harga sendiri, tidak di bawah harga minimum.",
+        "three": "Jual stok yang diasingkan ke kawasan pengasingan.",
+        "cta": "Sertai sebagai peniaga barang lusuh"
+      },
+      "yard": {
+        "title": "Kawasan pengasingan",
+        "one": "Lihat stok kedai berhampiran.",
+        "two": "Beli secara pukal dan jual bal kepada pengitar semula.",
+        "three": "Dirancang: Bayaran ditahan dalam eskrow sehingga penghantaran selesai.",
+        "cta": "Sertai sebagai kawasan pengasingan"
+      },
+      "recycler": {
+        "title": "Pengitar semula",
+        "one": "Bal bergred daripada kawasan pengasingan disahkan.",
+        "two": "Setiap lot disertai rantaian jagaan.",
+        "three": "Jual keluaran anda kepada kilang.",
+        "cta": "Sertai sebagai pengitar semula"
+      },
+      "manufacturer": {
+        "title": "Pengilang",
+        "one": "Lihat keluaran pengitar semula.",
+        "two": "Dirancang: Pesan bahan kitar semula dengan eskrow.",
+        "three": "Rekod untuk laporan EPR anda.",
+        "cta": "Sertai sebagai pengilang"
+      },
+      "saathi": {
+        "title": "Pekerja Saathi",
+        "one": "Kerja berbayar berhampiran: kutipan, pengasingan dan syif.",
+        "two": "Pilih kawasan dan waktu anda.",
+        "three": "Disahkan agar rumah dan perniagaan mempercayai anda.",
+        "cta": "Sertai sebagai Saathi"
+      }
+    },
+    "trust": {
+      "heading": "Dibina atas kepercayaan",
+      "intro": "Urusan barang lusuh selama ini bergantung pada tunai dan anggaran. Peraturan ini mengubahnya.",
+      "verified": {
+        "title": "Perniagaan disahkan",
+        "body": "Petugas memeriksa setiap perniagaan dan Saathi sebelum mereka boleh berniaga."
+      },
+      "floor": {
+        "title": "Harga adil dengan had minimum",
+        "body": "Kedai menetapkan harga sendiri, tetapi tidak di bawah harga minimum yang kami terbitkan bagi setiap bahan."
+      },
+      "escrow": {
+        "title": "Dirancang: Eskrow untuk urus niaga perniagaan",
+        "body": "Demo menunjukkan langkah bayaran tetapi tidak menyimpan atau memindahkan wang sebenar."
+      },
+      "receipts": {
+        "title": "Resit digital",
+        "body": "Setiap kutipan dan urus niaga mendapat resit: bahan, jumlah dan harganya."
+      },
+      "languages": {
+        "title": "{count, number} bahasa",
+        "body": "Kannada, Hindi, Tamil, Inggeris dan banyak lagi, dengan butang besar dan teks ringkas."
+      }
+    },
+    "whyNow": {
+      "heading": "Mengapa sekarang",
+      "intro": "Tiga perubahan menjadikan ini masa yang sesuai untuk merekodkan rantaian barang lusuh India.",
+      "epr": {
+        "title": "Peraturan EPR",
+        "body": "Peraturan Tanggungjawab Pengeluar Diperluas untuk pembungkusan plastik, e-sisa dan bateri meminta pengeluar membuktikan bahan benar-benar dikumpul dan dikitar semula. Bukti itu mesti bermula pada serahan pertama."
+      },
+      "informal": {
+        "title": "Sektor tidak formal",
+        "body": "Peniaga barang lusuh dan pekerja tidak formal sudah mengendalikan sebahagian besar kitar semula India, dengan akses terhad kepada harga adil, rekod atau pengiktirafan. Luma.Green bekerjasama dengan mereka."
+      },
+      "upi": {
+        "title": "UPI di mana-mana",
+        "body": "Bayaran melalui telefon kini biasa, walaupun di kedai terkecil. Setiap bayaran boleh meninggalkan rekod."
+      }
+    },
+    "closing": {
+      "title": "Mulakan dengan apa yang anda ada",
+      "body": "Sebeg surat khabar lama atau satu lori bal: semuanya mempunyai tempat di Luma.Green.",
+      "sell": "Jual barang lusuh anda",
+      "join": "Sertai sebagai perniagaan"
+    },
+    "expansion": {
+      "materialsTitle": "Mulakan dengan bahan yang anda ada",
+      "pickupTitle": "Kutipan, langkah demi langkah",
+      "shopTitle": "Kedai barang lusuh anda, berhubung",
+      "recordsTitle": "Rekod yang mengikut bahan",
+      "paymentTitle": "Berat jelas. Bayaran jelas.",
+      "questionsTitle": "Sebelum anda bermula"
+    },
+    "marquee": {
+      "label": "Bahan dalam katalog",
+      "pause": "Jeda pergerakan",
+      "resume": "Sambung pergerakan"
+    },
+    "testimonials": {
+      "title": "Testimoni demo",
+      "note": "Petikan ilustrasi, bukan ulasan pelanggan.",
+      "household": "Saya boleh menyemak harga sebelum memilih kutipan.",
+      "kabadiwala": "Berat, harga dan resit disimpan bersama. Setiap kutipan lebih mudah disemak.",
+      "manufacturer": "Kod bahan memudahkan saya meminta gred yang diperlukan."
+    }
+  },
+  "notFound": {
+    "metaTitle": "Halaman tidak ditemui",
+    "title": "Halaman tidak ditemui",
+    "body": "Halaman yang anda cari tidak wujud atau telah dipindahkan.",
+    "backHome": "Kembali ke laman utama"
+  },
+  "participants": {
+    "kabadiwala": {
+      "name": "Peniaga barang lusuh",
+      "body": "Terima permintaan kutipan daripada rumah berhampiran, timbang dan bayar dengan adil, serta jual stok diasingkan ke kawasan pengasingan."
+    },
+    "yard": {
+      "name": "Kawasan pengasingan",
+      "body": "Dirancang: Beli daripada peniaga barang lusuh, asing dan mampatkan menjadi bal, kemudian jual lot bergred kepada pengitar semula dengan bayaran ditahan dalam eskrow."
+    },
+    "recycler": {
+      "name": "Pengitar semula",
+      "body": "Beli bal bergred daripada kawasan pengasingan disahkan dan jual serpihan, butiran serta jongkong kepada kilang."
+    },
+    "manufacturer": {
+      "name": "Pengilang",
+      "body": "Pesan bahan kitar semula daripada pengitar semula disahkan, berserta rekod yang diperlukan untuk laporan EPR."
+    },
+    "saathi": {
+      "name": "Pekerja Saathi",
+      "body": "Ambil kerja kutipan, pengasingan dan syif berbayar berhampiran rumah, serta lihat pendapatan anda."
+    },
+    "metaTitle": "Untuk siapa",
+    "metaDescription": "Luma.Green dibina untuk isi rumah, peniaga barang lusuh, kawasan pengasingan, pengitar semula, pengilang dan Saathi: semua yang memindahkan barang lusuh dari rumah ke kilang.",
+    "title": "Untuk siapa Luma.Green dibina",
+    "lead": "Semua yang memindahkan barang lusuh dari rumah ke kilang, serta orang yang melakukan kerja di antaranya.",
+    "householdHeading": "Serta setiap isi rumah",
+    "householdBody": "Sesiapa sahaja boleh menjual barang lusuh dari rumah tanpa akaun: pilih bahan, lihat tawaran setiap kedai dan terima tunai atau UPI berserta resit."
+  },
+  "saathi": {
+    "days": {
+      "today": "Hari ini",
+      "tomorrow": "Esok",
+      "yesterday": "Semalam"
+    },
+    "greeting": "Helo, {name}",
+    "lead": "Kerja berbayar sekitar {area}. Ambil kerja, lakukan dan tandakan selesai.",
+    "demoNote": "Data contoh: kerja, perniagaan dan bayaran di sini ialah contoh untuk prototaip.",
+    "week": {
+      "label": "Pendapatan minggu ini",
+      "hint": "7 hari lalu · {count, plural, =0 {belum ada kerja} one {# kerja} other {# kerja}}",
+      "all": "Lihat semua pendapatan"
+    },
+    "today": {
+      "title": "Kerja anda hari ini",
+      "empty": "Tiada kerja hari ini",
+      "emptyBody": "Ambil kerja terbuka di bawah. Ia muncul di sini pada harinya."
+    },
+    "upcoming": {
+      "title": "Akan datang",
+      "hint": "Anda boleh menandakannya selesai pada hari kerja."
+    },
+    "open": {
+      "title": "Kerja terbuka",
+      "lead": "Kerja di kawasan anda diutamakan.",
+      "empty": "Tiada kerja terbuka sekarang",
+      "emptyBody": "Kerja baharu daripada kedai, kawasan pengasingan dan kilang muncul di sini."
+    },
+    "work": {
+      "home_pickups": "Kutipan dari rumah",
+      "shop_help": "Bantuan di kedai",
+      "yard_sorting": "Pengasingan di kawasan pengasingan",
+      "factory_shifts": "Syif kilang"
+    },
+    "windows": {
+      "morning": "Pagi",
+      "afternoon": "Petang",
+      "evening": "Malam"
+    },
+    "when": "{day}, {window}",
+    "whenWhere": "{when} · {area}",
+    "late": "Belum ditandakan selesai",
+    "nearYou": "Kawasan anda",
+    "postedBy": "Untuk {name}",
+    "pay": "Bayaran",
+    "take": "Ambil kerja ini",
+    "taking": "Mengambil…",
+    "taken": "Kerja diambil. Kini ada dalam senarai anda.",
+    "markDone": "Tandakan selesai",
+    "saving": "Menyimpan…",
+    "doneToast": "Syabas! {pay} ditambah pada pendapatan anda.",
+    "confirm": {
+      "title": "Sudah selesaikan kerja ini?",
+      "body": "{title} di {area}. {pay} akan ditambah pada pendapatan anda.",
+      "yes": "Ya, sudah selesai",
+      "no": "Belum"
+    },
+    "errors": {
+      "JOB_TAKEN": "Orang lain telah mengambil kerja ini. Cuba kerja lain.",
+      "JOB_EXPIRED": "Hari kerja ini telah berlalu.",
+      "SLOT_BUSY": "Anda sudah mempunyai kerja pada waktu itu.",
+      "NOT_YOUR_JOB": "Kerja ini bukan milik anda.",
+      "ALREADY_DONE": "Kerja ini sudah ditandakan selesai.",
+      "TOO_EARLY": "Anda boleh menandakan selesai pada hari kerja tersebut.",
+      "JOB_NOT_FOUND": "Kerja ini tidak tersedia lagi.",
+      "generic": "Tidak berjaya. Semak internet anda dan cuba lagi."
+    }
+  },
+  "impact": {
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "E-sisa",
+      "other": "Lain-lain"
+    },
+    "saathi": {
+      "week": "Pendapatan minggu ini",
+      "title": "Pendapatan anda",
+      "lead": "Bayaran daripada kerja yang telah diselesaikan.",
+      "total": "Pendapatan setakat ini",
+      "jobsDone": "{count, plural, one {# kerja selesai} other {# kerja selesai}}",
+      "weekHint": "7 hari lalu · {count, plural, =0 {tiada kerja} one {# kerja} other {# kerja}}",
+      "byKind": "Mengikut jenis kerja",
+      "jobs": "{count, plural, one {# kerja} other {# kerja}}",
+      "history": "Kerja selesai",
+      "empty": "Belum ada kerja selesai",
+      "emptyBody": "Ambil kerja di skrin utama. Apabila ditandakan selesai, bayaran dipaparkan di sini.",
+      "findJob": "Cari kerja",
+      "demoNote": "Data contoh: kerja dan bayaran di sini ialah contoh untuk prototaip."
+    },
+    "title": "Impak anda",
+    "lead": "Bahan yang dikekalkan oleh perniagaan anda dalam kitaran kitar semula.",
+    "demoNote": "Data contoh: jumlah ialah contoh dan CO₂e menggunakan faktor indikatif — kg CO₂e yang dielakkan bagi setiap kg dikitar semula berbanding dibuat baharu.",
+    "since": "Daripada kutipan dan urus niaga selesai sejak {date}.",
+    "kpi": {
+      "recycled": "Kilo dikitar semula",
+      "recycledHint": "Setiap kilo dikira sekali",
+      "recycledContent": "Bahan kitar semula dibeli",
+      "co2e": "CO₂e dielakkan",
+      "co2eHint": "Berbanding membuat baharu",
+      "earned": "Pendapatan jualan",
+      "spent": "Dibelanjakan untuk bahan",
+      "paidHouseholds": "Dibayar kepada isi rumah",
+      "sales": "{count, plural, =0 {Belum ada jualan} one {# jualan} other {# jualan}}",
+      "purchases": "{count, plural, =0 {Belum ada pembelian} one {# pembelian} other {# pembelian}}",
+      "pickups": "{count, plural, =0 {Belum ada kutipan} one {# kutipan} other {# kutipan}}"
+    },
+    "byFamily": {
+      "title": "Mengikut bahan",
+      "lead": "Kilo dikitar semula dan CO₂e yang dielakkan oleh setiap bahan.",
+      "co2e": "{amount} CO₂e dielakkan"
+    },
+    "flows": {
+      "title": "Masuk dan keluar",
+      "lead": "Bahan yang masuk ke perniagaan anda dan yang diteruskan.",
+      "households": "Dibeli daripada isi rumah",
+      "bought": "Dibeli daripada perniagaan",
+      "sold": "Dijual ke peringkat seterusnya"
+    },
+    "ledger": {
+      "title": "Lejar sedia untuk kredit",
+      "lead": "Setiap kilo direkodkan bersama siapa, bila dan di mana — bukti yang diminta piawaian kredit karbon dan plastik.",
+      "who": "Siapa",
+      "whoBody": "Perniagaan dan isi rumah disahkan, masing-masing dengan nombor telefon.",
+      "when": "Bila",
+      "whenBody": "Setiap langkah dicap masa, dari kutipan hingga penghantaran.",
+      "where": "Di mana",
+      "whereBody": "Kedai, kawasan pengasingan atau kilang yang dilalui bahan.",
+      "what": "Apa",
+      "whatBody": "Bahan dan beratnya pada resit atau invois."
+    },
+    "empty": {
+      "title": "Belum ada rekod",
+      "body": "Angka anda muncul selepas kutipan atau urus niaga pertama selesai."
+    }
+  },
+  "accountSecurity": {
+    "title": "Keselamatan akaun",
+    "description": "Tambah kod pengesah selepas kod telefon.",
+    "enabled": "Aktif",
+    "disabled": "Tidak aktif",
+    "enable": "Sediakan",
+    "disable": "Matikan",
+    "recentSignIn": "Log masuk semula sebelum menukar tetapan keselamatan.",
+    "signInAgain": "Log masuk semula",
+    "setupTitle": "Sambungkan pengesah",
+    "setupDescription": "Imbas kod QR ini dengan aplikasi pengesah, atau masukkan kunci. Rahsiakan kunci ini.",
+    "setupKey": "Kunci persediaan",
+    "backupTitle": "Simpan kod pemulihan",
+    "backupDescription": "Simpan kod ini secara sulit. Setiap kod boleh digunakan sekali selepas kod telefon.",
+    "savedCodes": "Kod telah disimpan",
+    "regenerate": "Dapatkan kod baharu",
+    "regenerateDescription": "Kod pemulihan lama tidak akan berfungsi lagi. Simpan kod baharu sebelum meninggalkan halaman ini.",
+    "disableDescription": "Log masuk hanya akan menggunakan kod telefon. Pengesah dan kod pemulihan tidak akan berfungsi lagi.",
+    "errorCode": "Kod ini tidak berjaya. Cuba lagi.",
+    "errorRateLimited": "Terlalu banyak percubaan. Tunggu sebelum mencuba lagi.",
+    "recoveryHelp": "Kehilangan pengesah dan kod pemulihan? Hubungi sokongan. Kod telefon sahaja tidak boleh mematikan pengesahan dua faktor."
+  },
+  "notifications": {
+    "title": "Pemberitahuan",
+    "permissionBody": "Terima perkembangan kutipan dan permohonan anda pada peranti ini.",
+    "enable": "Aktifkan",
+    "denied": "Pemberitahuan disekat. Ubah perkara ini dalam tetapan peranti atau pelayar anda.",
+    "unavailable": "Pemberitahuan belum tersedia di sini.",
+    "error": "Pemberitahuan tidak dapat diaktifkan. Cuba lagi.",
+    "lockscreenTitle": "Berita daripada Luma.Green",
+    "lockscreenBody": "Buka Luma.Green untuk melihat perkembangan terkini.",
+    "emptyTitle": "Belum ada kemas kini",
+    "emptyBody": "Kemas kini kutipan dan permohonan akan dipaparkan di sini.",
+    "markRead": "Tanda sudah dibaca",
+    "markAllRead": "Semua sudah dibaca",
+    "unread": "Belum dibaca",
+    "enabled": "Diaktifkan pada peranti ini",
+    "disable": "Matikan",
+    "disabled": "Dimatikan pada peranti ini",
+    "deviceTitle": "Peranti ini",
+    "inboxTitle": "Kemas kini anda",
+    "loadMore": "Papar lagi",
+    "events": {
+      "booking_confirmed": "Tempahan disahkan",
+      "booking_offer": "Permintaan kutipan baharu",
+      "booking_accepted": "Kutipan diterima",
+      "booking_reassigned": "Pengumpul ditukar",
+      "application_received": "Permohonan diterima",
+      "application_approved": "Permohonan diluluskan",
+      "application_changes_requested": "Permohonan perlu diubah",
+      "application_rejected": "Permohonan tidak diluluskan"
+    }
+  },
+  "integrations": {
+    "title": "Akses API",
+    "lead": "Hubungkan sistem perniagaan anda dengan rekod anda di Luma.Green.",
+    "connection": "Hubungkan sistem",
+    "readOnly": "REST v1 membaca butiran perniagaan, bahan, stok dan urus niaga. API ini tidak boleh mengubah rekod atau memproses pembayaran.",
+    "baseUrl": "Laluan asas di laman web ini:",
+    "openApi": "Buka spesifikasi API",
+    "ownerOnly": "Hanya pemilik perniagaan yang aktif boleh mengurus kunci API.",
+    "tokenTitle": "Simpan kunci API anda",
+    "tokenHint": "Kunci ini dipaparkan sekali sahaja. Simpannya dalam stor rahsia sistem anda. Jangan letakkannya dalam aplikasi pelayar, URL atau mesej. Selepas skrin ini ditutup, kunci tidak lagi kelihatan.",
+    "tokenLabel": "Kunci API baharu",
+    "expiresOn": "Tamat tempoh pada {date}",
+    "copy": "Salin kunci",
+    "dismiss": "Selesai",
+    "copyError": "Gagal menyalin. Pilih dan salin kunci secara manual.",
+    "copied": "Kunci disalin.",
+    "createTitle": "Cipta kunci",
+    "keyHint": "Gunakan satu kunci bagi setiap sistem. Pilih kebenaran yang diperlukan sahaja. Anda boleh mempunyai sehingga lima kunci aktif.",
+    "label": "Nama sistem",
+    "expiry": "Tempoh sah",
+    "days": "{count, plural, one {# hari} other {# hari}}",
+    "permissions": "Kebenaran membaca",
+    "limit": "Lima kunci sedang aktif. Batalkan kunci yang tidak digunakan sebelum mencipta kunci lain.",
+    "createError": "Kunci tidak dapat dicipta. Semak akses anda dan cuba lagi.",
+    "creating": "Sedang mencipta…",
+    "create": "Cipta kunci",
+    "keysTitle": "Kunci anda",
+    "empty": "Belum ada kunci. Cipta kunci untuk menghubungkan sistem pertama anda.",
+    "neverUsed": "Belum digunakan",
+    "lastUsed": "Terakhir digunakan pada {date}",
+    "revokeLabel": "Batalkan {label}",
+    "revoke": "Batalkan",
+    "revokeTitle": "Batalkan kunci ini?",
+    "revokeHint": "Sistem yang menggunakan “{label}” akan kehilangan akses serta-merta. Kunci ini tidak boleh dipulihkan.",
+    "revokeError": "Kunci tidak dapat dibatalkan. Cuba lagi.",
+    "revoking": "Sedang membatalkan…",
+    "newsHint": "Apabila perkhidmatan berita dikonfigurasikan, berita industri menyediakan perkembangan untuk kumpulan bahan anda berserta pautan sumber.",
+    "scopes": {
+      "organization": "Butiran perniagaan",
+      "materials": "Katalog bahan",
+      "inventory": "Stok perniagaan",
+      "trades": "Urus niaga perniagaan",
+      "news": "Berita industri"
+    },
+    "status": {
+      "active": "Aktif",
+      "expired": "Tamat tempoh",
+      "revoked": "Dibatalkan"
+    }
+  }
+}

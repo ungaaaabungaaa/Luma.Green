@@ -25,6 +25,12 @@ const { default: messages } = (await loadMessages()) as {
 };
 document.documentElement.lang = locale;
 document.documentElement.dir = localeMeta[locale].dir;
+const fontClasses = JSON.parse(
+  document.documentElement.dataset.localeFonts ?? "{}",
+) as Partial<Record<string, string>>;
+const localeFonts = fontClasses[locale];
+if (!localeFonts) throw new Error(`Build the ${locale} locale before capture.`);
+document.documentElement.className = localeFonts;
 
 const sample: AccessData = {
   canManage: true,

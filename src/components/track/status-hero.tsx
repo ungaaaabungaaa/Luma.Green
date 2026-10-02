@@ -110,7 +110,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
           </p>
           <h1
             id="track-title"
-            className="font-display text-2xl leading-tight font-semibold tracking-tight text-balance"
+            className="font-display text-2xl leading-tight font-semibold tracking-tight text-balance wrap-anywhere"
           >
             {t(`hero.${booking.status}`, {
               shop,

@@ -2,6 +2,10 @@ import { type CodeErrorKey, codeErrorKey } from "@/components/auth/errors";
 import { authClient } from "@/lib/auth-client";
 
 export type SendCodeErrorKey = "sendFailed" | "sendRateLimited";
+export type VerifyPhoneResult =
+  | { kind: "authenticated" }
+  | { kind: "second-factor" }
+  | { kind: "error"; error: CodeErrorKey };
 
 /** A lost connection must leave the form ready for another attempt. */
 export async function requestPhoneCode(
@@ -21,14 +25,20 @@ export async function requestPhoneCode(
 export async function verifyPhoneCode(
   phone: string,
   code: string,
-): Promise<CodeErrorKey | null> {
+): Promise<VerifyPhoneResult> {
   try {
-    const { error } = await authClient.phoneNumber.verify({
+    const { data, error } = await authClient.phoneNumber.verify({
       phoneNumber: phone,
       code,
     });
-    return error ? codeErrorKey(error) : null;
+    if (error) return { kind: "error", error: codeErrorKey(error) };
+    if ("twoFactorRedirect" in data && data.twoFactorRedirect === true) {
+      return { kind: "second-factor" };
+    }
+    return "token" in data && typeof data.token === "string" && data.token
+      ? { kind: "authenticated" }
+      : { kind: "error", error: "errorGeneric" };
   } catch {
-    return "errorGeneric";
+    return { kind: "error", error: "errorGeneric" };
   }
 }

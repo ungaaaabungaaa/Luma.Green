@@ -13,6 +13,7 @@ import {
   isPdfViewerFrame,
   mayDownload,
   mayRequestLocation,
+  mayRequestNotifications,
   secureWebPreferences,
 } from "./policy.mjs";
 import { setupUpdates } from "./updates.mjs";
@@ -30,6 +31,9 @@ const state = { mainWindow: null, locale: "en", home: origin };
 const offlineWindows = new WeakSet();
 /** Grants last only for this process and this trusted webContents. */
 const locationGrants = new Set();
+/** Desktop alerts are opt-in, process-local and distinct from location access. */
+const notificationGrants = new Set();
+const notificationPrompts = new Set();
 /** @returns {import('./localization.mjs').Messages} */
 const messages = () => catalogues[state.locale] ?? catalogues.en;
 
@@ -134,7 +138,11 @@ function attachGuards(window, isDocumentViewer = false) {
     child.setMenu(null);
     attachGuards(child, true);
   });
-  contents.on("destroyed", () => locationGrants.delete(contents.id));
+  contents.on("destroyed", () => {
+    locationGrants.delete(contents.id);
+    notificationGrants.delete(contents.id);
+    notificationPrompts.delete(contents.id);
+  });
   if (isDocumentViewer) {
     return;
   }
@@ -253,26 +261,82 @@ function setMenu() {
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 }
 
+/** @param {import('electron').WebContents} contents
+ * @param {import('electron').PermissionRequest} details
+ * @param {(granted: boolean) => void} callback */
+function requestNotifications(contents, details, callback) {
+  const allowed = mayRequestNotifications(
+    details.requestingUrl,
+    contents.getURL(),
+    origin,
+    details.isMainFrame,
+    contents === state.mainWindow?.webContents,
+  );
+  if (!allowed || notificationPrompts.has(contents.id)) {
+    callback(false);
+    return;
+  }
+  if (notificationGrants.has(contents.id)) {
+    callback(true);
+    return;
+  }
+  const requestedUrl = contents.getURL();
+  const m = messages();
+  notificationPrompts.add(contents.id);
+  void dialog
+    .showMessageBox({
+      type: "question",
+      title: m.notifications.title,
+      message: m.notifications.permissionBody,
+      buttons: [m.native.deny, m.native.allow],
+      defaultId: 0,
+      cancelId: 0,
+    })
+    .then(({ response }) => {
+      const isGrant =
+        response === 1 &&
+        !contents.isDestroyed() &&
+        contents.getURL() === requestedUrl &&
+        contents === state.mainWindow?.webContents;
+      if (isGrant) notificationGrants.add(contents.id);
+      callback(isGrant);
+    })
+    .catch(() => callback(false))
+    .finally(() => notificationPrompts.delete(contents.id));
+}
+
 function configureSession() {
   const browserSession = session.fromPartition(
     config.demo ? "persist:luma-green-demo" : "persist:luma-green",
   );
   browserSession.setPermissionCheckHandler(
     (contents, permission, requestingOrigin, details) => {
-      return (
-        contents !== null &&
-        locationGrants.has(contents.id) &&
-        mayRequestLocation(
-          permission,
-          details.requestingUrl || requestingOrigin,
-          contents.getURL(),
-          origin,
-        )
-      );
+      return permission === "notifications"
+        ? contents !== null &&
+            notificationGrants.has(contents.id) &&
+            mayRequestNotifications(
+              details.requestingUrl || requestingOrigin,
+              contents.getURL(),
+              origin,
+              details.isMainFrame,
+              contents === state.mainWindow?.webContents,
+            )
+        : contents !== null &&
+            locationGrants.has(contents.id) &&
+            mayRequestLocation(
+              permission,
+              details.requestingUrl || requestingOrigin,
+              contents.getURL(),
+              origin,
+            );
     },
   );
   browserSession.setPermissionRequestHandler(
     (contents, permission, callback, details) => {
+      if (permission === "notifications") {
+        requestNotifications(contents, details, callback);
+        return;
+      }
       if (
         !mayRequestLocation(
           permission,
@@ -344,6 +408,10 @@ if (app.requestSingleInstanceLock()) {
   void app
     .whenReady()
     .then(() => {
+      if (process.platform === "win32")
+        app.setAppUserModelId(
+          config.demo ? "green.luma.desktop.demo" : "green.luma.desktop",
+        );
       state.locale = selectLocale(app.getLocale(), catalogues);
       state.home = `${origin}/${state.locale === "en" ? "" : state.locale}`;
       configureSession();

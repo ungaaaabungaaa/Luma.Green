@@ -11,7 +11,8 @@
 
   /* Noto body and script coverage; Geist for Latin display. `--font-noto-script` is attached to <html> only for
      locales whose script Noto Sans itself does not cover (Tamil, Arabic, …),
-     so the stack stays one declaration for all 12 locales. */
+     so the stack stays one declaration for all supported locales. System
+     fallbacks must stay after the script face, never inside the earlier variables. */
   --font-sans:
     var(--font-noto-sans, "Noto Sans"), var(--font-noto-script, sans-serif),
     system-ui, "Segoe UI", sans-serif;
@@ -178,6 +179,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: anywhere;
+  }
   html {
     @apply font-sans;
     scroll-padding-block: 5rem 7rem;
@@ -261,6 +267,14 @@ html:is(
     [lang|="te"],
     [lang|="ml"],
     [lang|="bn"],
+    [lang|="as"],
+    [lang|="ne"],
+    [lang|="si"],
+    [lang|="th"],
+    [lang|="or"],
+    [lang|="ja"],
+    [lang|="ko"],
+    [lang|="zh"],
     [lang|="gu"],
     [lang|="pa"],
     [lang|="hi"],

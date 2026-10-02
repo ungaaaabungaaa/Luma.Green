@@ -26,6 +26,7 @@ import { api } from "../../../convex/_generated/api";
 import { formatIndianMobile } from "../../../convex/lib/phone";
 import { AuthProgress } from "./auth-progress";
 import type { CodeErrorKey } from "./errors";
+import { FactorChallenge } from "./factor-challenge";
 import { LoginSkeleton } from "./login-flow";
 import { isPhonePreview, readPhone, useStoredValue } from "./storage";
 import { VerifyPreview } from "./verify-preview";
@@ -68,7 +69,12 @@ function VerifyForm() {
   const phone = useStoredValue(readPhone);
   const [code, setCode] = useState("");
   const [status, setStatus] = useState<
-    "idle" | "checking" | "verified" | "session-timeout" | "profile-error"
+    | "idle"
+    | "checking"
+    | "second-factor"
+    | "verified"
+    | "session-timeout"
+    | "profile-error"
   >("idle");
   const [error, setError] = useState<CodeErrorKey | SendCodeErrorKey | null>(
     null,
@@ -148,15 +154,15 @@ function VerifyForm() {
     requestPending.current = true;
     setStatus("checking");
     setError(null);
-    const authError = await verifyPhoneCode(phone, value);
+    const result = await verifyPhoneCode(phone, value);
     requestPending.current = false;
-    if (authError) {
+    if (result.kind === "error") {
       setStatus("idle");
       setCode("");
-      setError(authError);
+      setError(result.error);
       return;
     }
-    setStatus("verified");
+    setStatus(result.kind === "second-factor" ? "second-factor" : "verified");
   }
 
   async function resend() {
@@ -176,6 +182,17 @@ function VerifyForm() {
   }
 
   if (phone === undefined || phone === null) return <LoginSkeleton />;
+  if (status === "second-factor")
+    return (
+      <FactorChallenge
+        onVerified={() => {
+          setStatus("verified");
+        }}
+        onRestart={() => {
+          router.replace({ pathname: "/login", query: { next } });
+        }}
+      />
+    );
 
   const isBusy = status !== "idle" || isResending;
   const canRetry = status === "session-timeout" || status === "profile-error";

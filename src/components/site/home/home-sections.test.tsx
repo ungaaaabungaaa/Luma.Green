@@ -3,6 +3,8 @@ import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
 
+import { locales } from "@/i18n/locales";
+
 import messages from "../../../../messages/en.json";
 import { ClosingCta } from "../closing-cta";
 import { ChainDiagram } from "./chain-diagram";
@@ -49,10 +51,10 @@ describe("home page", () => {
       "India's scrap chain, on one platform",
     );
     expect(
-      screen.getByRole("link", { name: "Sell your scrap" }),
+      screen.getByRole("link", { name: "Sell scrap: Sell your scrap" }),
     ).toHaveAttribute("href", "/sell");
     expect(
-      screen.getByRole("link", { name: "Join as a business" }),
+      screen.getByRole("link", { name: "Join: Join as a business" }),
     ).toHaveAttribute("href", "/join");
     expect(
       screen.getByRole("link", { name: "See today's prices" }),
@@ -107,7 +109,9 @@ describe("home page", () => {
     await renderSection(TrustPoints());
 
     expect(
-      screen.getByRole("heading", { name: "12 languages" }),
+      screen.getByRole("heading", {
+        name: `${String(locales.length)} languages`,
+      }),
     ).toBeInTheDocument();
     expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(5);
   });
@@ -124,10 +128,10 @@ describe("home page", () => {
     await renderSection(ClosingCta());
 
     expect(
-      screen.getByRole("link", { name: "Sell your scrap" }),
+      screen.getByRole("link", { name: "Sell scrap: Sell your scrap" }),
     ).toHaveAttribute("href", "/sell");
     expect(
-      screen.getByRole("link", { name: "Join as a business" }),
+      screen.getByRole("link", { name: "Join: Join as a business" }),
     ).toHaveAttribute("href", "/join");
   });
 });

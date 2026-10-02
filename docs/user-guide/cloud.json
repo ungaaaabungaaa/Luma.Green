@@ -1,13 +1,13 @@
 {
-  "status": "published",
+  "status": "update_pending",
   "document_id": "17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": null,
-  "result": "The reviewed security and industry API guide from main commit 2ba8246 is synchronized to the existing native Google Doc. Content, tables, images, dates and all 78 exported PDF pages were verified. The document ID, folder and sharing settings are unchanged. One native image description was restored and verified; the remaining 71 images retain their visible editable captions but lack native alt-text descriptions.",
+  "pending_revision": "2 October 2026 public detail, account security, failure recovery, notifications, industry API and 33 language revision",
+  "result": "The existing native Google Doc is verified through main 2ba8246. This newer combined local guide revision remains pending its coordinated in-place update after PR29 merges. The document ID, folder and sharing settings remain unchanged. One native image description is verified; the other 71 published images retain captions but lack native descriptions.",
   "connection_gate": null,
-  "next_action": "Repeat the in-place, revision-guarded native update after the next reviewed guide revision lands on main. Preserve the document ID, sharing settings and unchanged image objects. Preserve native descriptions during supported image replacements. Complete the remaining 71 native descriptions only through a reliable supported editor workflow; do not interrupt active user browser work or treat captions as identical semantic accessibility.",
+  "next_action": "After the combined reviewed guide lands on main, coordinate its in-place, revision-guarded native update through the security followup. Preserve later human edits, the existing document ID, tab/table structures, folder and sharing. Verify all text, dates and image placements, export and inspect every native page, then record the result. Keep the native image-alt-text API limitation explicit; visible captions are not identical semantic accessibility. Preserve unchanged image objects and verified descriptions during supported replacements; do not interrupt active user browser work.",
   "last_verified_revision": {
     "source_commit": "2ba8246640fe5773e5dd3b7863c7726ee29d6fb6",
     "source_docx_sha256": "69bb80cf805fcdc64e9675b2645186e79d4181250d49525041ad793eaa94bcc7",
@@ -64,10 +64,11 @@
     }
   },
   "local_reviewed_revision": {
-    "source_docx_sha256": "69bb80cf805fcdc64e9675b2645186e79d4181250d49525041ad793eaa94bcc7",
-    "visual_review_pages": 76,
-    "image_placements": 72,
-    "recorded_at": "2026-10-02T09:09:50.507027+00:00"
+    "source_docx_sha256": "a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3",
+    "visual_review_pages": 103,
+    "image_placements": 99,
+    "recorded_at": "2026-10-02T19:17:50.622083+00:00",
+    "result": "All 103 rendered pages of the combined public detail, account security, failure recovery, notification and industry API guide passed visual review. Current screenshots and sign-out/session delivery limits are included; changed pages were inspected and other page images match their reviewed versions exactly. All capture inputs are current. This newer local revision awaits its coordinated in-place Google Docs update after PR29 merges."
   },
   "previous_verified_revision": {
     "source_docx_sha256": "d1a565e757f55012c9dcf542334f1ced509b31ab5fe568f632372d2c02fc12e6",

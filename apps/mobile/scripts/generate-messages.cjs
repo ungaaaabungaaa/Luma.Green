@@ -4,7 +4,7 @@ const path = require("node:path");
 const { locales } = require("../../../src/i18n/locales.ts");
 
 const outputPath = path.resolve(__dirname, "../src/messages.json");
-const namespaces = ["native", "common", "brand"];
+const namespaces = ["native", "common", "brand", "notifications"];
 
 /** The root catalogues remain the sole editable source of translated copy. */
 function createShellCatalogue() {

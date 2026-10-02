@@ -5,6 +5,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 import { chromium } from "@playwright/test";
 
+import ar from "../messages/ar.json";
 import en from "../messages/en.json";
 
 const origin = new URL(process.env.GUIDE_BASE_URL ?? "http://localhost:3004");
@@ -46,6 +47,8 @@ const shots: readonly (readonly [string, string, string?])[] = [
   ["public-sell", "/sell"],
   ["public-join", "/join"],
   ["public-login", "/login"],
+  ["public-login-languages-phone", "/login"],
+  ["public-login-languages-phone-dark", "/login"],
   ["public-login-phone", "/login"],
   ["public-login-otp-phone", "/login"],
   [
@@ -58,10 +61,38 @@ const shots: readonly (readonly [string, string, string?])[] = [
   ["public-help", "/help"],
   ["public-standards", "/standards"],
   ["public-solar", "/solar"],
+  [
+    "public-solar-details",
+    "/solar",
+    'section[aria-labelledby="solar-details"]',
+  ],
   ["public-contact", "/help/contact"],
   ["public-contact-info", "/contact"],
   ["public-how-it-works", "/how-it-works"],
+  [
+    "public-sorting-guide",
+    "/how-it-works",
+    'section[aria-labelledby="sorting-guide-heading"]',
+  ],
+  [
+    "public-price-guide-dark",
+    "/prices",
+    'section[aria-labelledby="price-guide-heading"]',
+  ],
+  [
+    "public-join-preparation",
+    "/join",
+    'section[aria-labelledby="join-preparation-heading"]',
+  ],
+  [
+    "public-help-topics",
+    "/help",
+    'section[aria-labelledby="help-topic-stories"]',
+  ],
   ["public-arabic", "/ar"],
+  ["public-navigation-phone", "/how-it-works"],
+  ["public-navigation-tablet", "/how-it-works"],
+  ["public-navigation-arabic-phone", "/ar/help"],
 ] as const;
 await mkdir(directory, { recursive: true });
 // eslint-disable-next-line sonarjs/no-os-command-from-path -- invoke the developer-installed Git only for read-only capture provenance.
@@ -69,14 +100,46 @@ const revision = execFileSync("git", ["rev-parse", "HEAD"], {
   encoding: "utf8",
 }).trim();
 const sharedSources = [
+  "src/components/showcase/role-story-image.tsx",
+  "src/components/site/sorting-guide.tsx",
+  "src/components/prices/price-guide.tsx",
+  "src/components/join/join-preparation.tsx",
+  "src/components/help/topic-stories.tsx",
+  "src/components/standards/norms.tsx",
+  "src/app/[locale]/(site)/how-it-works/page.tsx",
+  "src/app/[locale]/(site)/prices/page.tsx",
+  "src/app/[locale]/(site)/join/page.tsx",
+  "src/app/[locale]/(site)/help/page.tsx",
+  "src/app/[locale]/(site)/standards/page.tsx",
+  ...[
+    "material-sorting",
+    "fair-weighing",
+    "recycled-pellets",
+    "electronics-sorting",
+    "household-preparation",
+    "yard-dispatch",
+  ].map((name) => `public/images/showcase/${name}.webp`),
   "src/app/globals.css",
   "src/lib/fonts.ts",
+  "src/lib/number-input.ts",
+  "src/components/solar/calc.ts",
+  "src/components/solar/solar-planner.tsx",
+  "src/components/solar/choice-group.tsx",
+  "src/components/sell/draft.ts",
   "src/components/site/site-header.tsx",
   "src/components/site/mobile-nav.tsx",
+  "src/components/site/site-nav.tsx",
+  "src/components/site/section-heading.tsx",
   "src/components/site/page-header.tsx",
   "src/components/site/page-banner.tsx",
   "src/components/help/help-hero.tsx",
+  "src/components/help/contact-panel.tsx",
+  "src/components/help/contact-strip.tsx",
+  "src/components/motion/reveal-targets.ts",
+  "src/app/[locale]/(site)/participants/page.tsx",
   "src/components/site/closing-cta.tsx",
+  "src/components/site/public-effects.module.css",
+  "src/components/site/action-name.ts",
   "src/components/site/home/chain-diagram.tsx",
   "src/components/site/home/role-benefits.tsx",
   "src/components/site/home/hero.tsx",
@@ -89,13 +152,26 @@ const sharedSources = [
   "src/components/site/home/material-marquee.tsx",
   "src/components/site/home/material-marquee.module.css",
   "src/components/site/home/demo-testimonials.tsx",
+  "src/components/site/home/price-teaser.tsx",
+  "src/components/prices/price-board.tsx",
+  "src/components/prices/price-placeholder.tsx",
+  "src/components/join/role-cards.tsx",
   "src/components/site/language-switcher.tsx",
   "src/components/brand/logo.tsx",
   "src/components/brand/logo.module.css",
   "src/components/auth/phone-form.tsx",
+  "src/components/auth/language-choice.tsx",
+  "src/components/auth/login-flow.tsx",
+  "src/components/auth/storage.ts",
+  "src/app/[locale]/(auth)/layout.tsx",
+  "src/i18n/locales.ts",
   "src/components/auth/verify-preview.tsx",
   "messages/en.json",
+  "messages/ar.json",
   "src/components/ui/button.tsx",
+  "src/components/ui/input.tsx",
+  "src/components/ui/label.tsx",
+  "src/components/ui/radio-group.tsx",
   "public/images/materials-hall.webp",
 ] as const;
 const sourceHashes = Object.fromEntries<string>(
@@ -112,11 +188,17 @@ const browser = await chromium.launch();
 const captures = [];
 try {
   for (const [name, route, sectionSelector] of shots) {
+    const isLanguagePicker = name.startsWith("public-login-languages-");
+    const isPhoneEntry =
+      name === "public-login-phone" || name === "public-login-otp-phone";
+    let viewport = { width: 1280, height: 900 };
+    if (name.endsWith("-tablet")) {
+      viewport = { width: 1024, height: 768 };
+    } else if (name.startsWith("public-arabic") || name.includes("-phone")) {
+      viewport = { width: 390, height: 844 };
+    }
     const page = await browser.newPage({
-      viewport:
-        name.startsWith("public-arabic") || name.endsWith("-phone")
-          ? { width: 390, height: 844 }
-          : { width: 1280, height: 900 },
+      viewport,
       reducedMotion: "reduce",
       locale: "en-IN",
       colorScheme: name.endsWith("-dark") ? "dark" : "light",
@@ -126,7 +208,7 @@ try {
     page.on("pageerror", (error) => {
       browserErrors.push(error.message);
     });
-    if (name.startsWith("public-login-") && name.endsWith("-phone")) {
+    if (isPhoneEntry) {
       await page.addInitScript(() => {
         localStorage.setItem("lg.languageChosen", "1");
       });
@@ -147,8 +229,16 @@ try {
           `Cannot capture ${route}: ${String(response?.status() ?? "no response")}`,
         );
       await page.getByRole("heading", { level: 1 }).waitFor();
-      if (name.startsWith("public-login-") && name.endsWith("-phone")) {
+      if (isPhoneEntry) {
         await page.getByLabel(en.auth.mobileLabel, { exact: true }).waitFor();
+      }
+      if (isLanguagePicker) {
+        await page
+          .getByRole("searchbox", { name: en.common.search, exact: true })
+          .waitFor();
+        await page
+          .getByRole("radiogroup", { name: en.common.language, exact: true })
+          .waitFor();
       }
       if (name === "public-login-otp-phone") {
         await page
@@ -164,6 +254,16 @@ try {
         await page
           .locator('section[aria-labelledby="contact-form-heading"]')
           .getByRole("status")
+          .waitFor();
+      }
+      if (name.startsWith("public-navigation-")) {
+        const labels = route.startsWith("/ar") ? ar : en;
+        await page
+          .getByRole("button", { name: labels.nav.openMenu, exact: true })
+          .click();
+        await page
+          .getByRole("dialog")
+          .getByRole("button", { name: labels.theme.label, exact: true })
           .waitFor();
       }
       if (sectionSelector) {
@@ -188,29 +288,39 @@ try {
           );
         });
       }
-      await page.evaluate(async () => {
-        await document.fonts.ready;
-        await Promise.all(
-          [...document.images].map(async (image) => {
+      await page.evaluate(() => document.fonts.ready);
+      // Keep capture readiness bounded if an optimizer response stalls.
+      await page.waitForFunction(() =>
+        [...document.images]
+          .filter((image) => {
             const bounds = image.getBoundingClientRect();
-            if (!(
+            return (
               bounds.top < window.innerHeight &&
               bounds.bottom > 0 &&
               bounds.width > 0 &&
               bounds.height > 0
-            )) {
-              return;
-            }
-
-            // Lazy images receive currentSrc after the scroll reaches them.
-            // decode() waits for that image, including its first request.
-            await image.decode();
-            if (!image.complete || image.naturalWidth === 0) {
-              throw new Error("A visible guide image did not load.");
-            }
-          }),
-        );
-      });
+            );
+          })
+          .every((image) => image.complete && image.naturalWidth > 0),
+      );
+      if (isLanguagePicker) {
+        const list = await page
+          .getByRole("radiogroup", { name: en.common.language, exact: true })
+          .boundingBox();
+        const continueAction = await page
+          .getByRole("button", { name: en.auth.continue, exact: true })
+          .boundingBox();
+        if (
+          !list ||
+          !continueAction ||
+          list.height > viewport.height * 0.4 ||
+          continueAction.y + continueAction.height > viewport.height
+        ) {
+          throw new Error(
+            "The language list must stay bounded and Continue must remain visible on the captured phone viewport.",
+          );
+        }
+      }
       const path = `${directory}/${name}.png`;
       if (sectionSelector) {
         await page
@@ -232,6 +342,8 @@ try {
         route,
         sectionSelector,
         captureKind: sectionSelector ? "section" : "viewport",
+        viewport: page.viewportSize(),
+        theme: name.endsWith("-dark") ? "dark" : "light",
         path,
         url: page.url(),
         revision,

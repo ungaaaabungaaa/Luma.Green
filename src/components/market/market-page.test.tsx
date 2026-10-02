@@ -88,6 +88,16 @@ describe("MarketPage", () => {
     expect(
       screen.queryByRole("heading", { level: 3, name: "Newspaper" }),
     ).not.toBeInTheDocument();
+
+    within(filter).getByRole("button", { name: "All" }).focus();
+    await userEvent.keyboard("{Enter}");
+    expect(
+      screen.getByRole("heading", { name: "3 lots on sale" }),
+    ).toBeInTheDocument();
+    expect(within(filter).getByRole("button", { name: "All" })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
   });
 
   it("marks recycled material for manufacturers and lists it first", () => {

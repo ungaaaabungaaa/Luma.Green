@@ -55,7 +55,9 @@ const sources = [
   "src/components/admin/admin-setup.tsx",
   "src/components/admin/authenticator-step.tsx",
   "src/components/admin/auth-shell.tsx",
-  "src/components/auth/use-sign-out.ts",
+  "src/components/account/use-sign-out.ts",
+  "src/components/admin/use-admin-sign-out.ts",
+  "src/lib/sign-out.ts",
   "src/components/join/status-view.tsx",
   "src/components/join/file-slot.tsx",
   "src/components/app/app-shell.tsx",
@@ -67,6 +69,9 @@ const sources = [
   "convex/lib/chain.ts",
   "src/components/market/logic.ts",
   "scripts/guide-preview/failure.tsx",
+  "scripts/guide-preview/failure.html",
+  "src/components/account/account-links.tsx",
+  "src/components/notifications/device-provider.tsx",
   "scripts/guide-preview/auth.ts",
   "scripts/guide-preview/provider.tsx",
   "scripts/guide-preview/queries.ts",
@@ -226,13 +231,15 @@ try {
                 if (await direct.isVisible()) await direct.click();
                 else {
                   await page
+                    .locator("header")
                     .getByRole("button", {
                       name: messages.app.more,
                       exact: true,
                     })
                     .click();
                   await page
-                    .getByRole("menuitem", {
+                    .getByRole("dialog")
+                    .getByRole("button", {
                       name: messages.app.signOut,
                       exact: true,
                     })
@@ -313,7 +320,7 @@ try {
             const name = `failure-${scenario}-${locale}-${theme}-${size}.png`;
             const image = await page.screenshot({
               path: path.join(output, name),
-              fullPage: scenario !== "signout",
+              fullPage: scenario !== "signout" || size === "desktop",
               animations: "disabled",
             });
             screenshots.push({

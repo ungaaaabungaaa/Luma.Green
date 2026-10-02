@@ -35,6 +35,7 @@ for (const name of messageFiles) {
     common: messages.common,
     nav: messages.nav,
     native: messages.native,
+    notifications: messages.notifications,
   };
 }
 await writeFile(

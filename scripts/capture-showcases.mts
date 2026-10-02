@@ -20,6 +20,8 @@ const sources = [
   "public/images/showcase/household-sorting.webp",
   "public/images/showcase/material-yard.webp",
   "public/images/showcase/operations-desk.webp",
+  "public/images/showcase/household-preparation.webp",
+  "public/images/showcase/yard-dispatch.webp",
 ];
 const hash = (bytes: Uint8Array) =>
   createHash("sha256").update(bytes).digest("hex");

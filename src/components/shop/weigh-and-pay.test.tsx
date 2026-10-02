@@ -1,7 +1,8 @@
-import { screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useMutation } from "convex/react";
 import { ConvexError } from "convex/values";
+import { NextIntlClientProvider } from "next-intl";
 import {
   afterAll,
   beforeAll,
@@ -13,6 +14,10 @@ import {
 } from "vitest";
 
 import type { Id } from "../../../convex/_generated/dataModel";
+import arabic from "../../../messages/ar.json";
+import italian from "../../../messages/it.json";
+import tamil from "../../../messages/ta.json";
+import urdu from "../../../messages/ur.json";
 import { IRON, NEWSPAPER, PET, renderWithIntl } from "./test-helpers";
 import { WeighAndPay } from "./weigh-and-pay";
 
@@ -71,6 +76,81 @@ const newspaperKg = () =>
   screen.getByRole("textbox", { name: "Newspaper, in kg" });
 
 describe("WeighAndPay", () => {
+  it.each([
+    { locale: "ar", messages: arabic },
+    { locale: "ur", messages: urdu },
+  ])(
+    "keeps the $locale material picker and menu right to left",
+    async ({ locale, messages }) => {
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+          timeZone="Asia/Kolkata"
+        >
+          <WeighAndPay
+            bookingId={BOOKING_ID}
+            items={[]}
+            rates={RATES}
+            choices={[IRON]}
+          />
+        </NextIntlClientProvider>,
+      );
+      const picker = screen.getByRole("combobox", {
+        name: messages.shop.weigh.add,
+      });
+      expect(picker).toHaveAttribute("dir", "rtl");
+      await userEvent.click(picker);
+      expect(screen.getByRole("listbox")).toHaveAttribute("dir", "rtl");
+      await userEvent.click(screen.getByRole("option"));
+      expect(screen.getByRole("textbox")).toHaveFocus();
+      expect(screen.queryByRole("combobox")).not.toBeInTheDocument();
+      expect(complete).not.toHaveBeenCalled();
+    },
+  );
+
+  it.each([
+    { locale: "ta", messages: tamil, confirmation: /^₹237 கொடுத்தேன்$/ },
+    {
+      locale: "it",
+      messages: italian,
+      confirmation: /^Conferma 237\sINR pagati$/,
+    },
+  ])(
+    "keeps the amount and payment action explicit in $locale",
+    async ({ locale, messages, confirmation }) => {
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+          timeZone="Asia/Kolkata"
+        >
+          <WeighAndPay
+            bookingId={BOOKING_ID}
+            items={[
+              { material: NEWSPAPER, estKg: 12 },
+              { material: PET, estKg: 3 },
+            ]}
+            rates={RATES}
+            choices={[NEWSPAPER, PET, IRON]}
+          />
+        </NextIntlClientProvider>,
+      );
+      expect(
+        screen.getByRole("combobox", { name: messages.shop.weigh.add }),
+      ).toBeInTheDocument();
+      await userEvent.click(screen.getByRole("button", { name: confirmation }));
+      expect(complete).toHaveBeenCalledWith({
+        bookingId: BOOKING_ID,
+        lines: [
+          { materialCode: "PAPER-NEWS", grams: 12_000 },
+          { materialCode: "PLASTIC-PET", grams: 3000 },
+        ],
+        method: "cash",
+      });
+    },
+  );
+
   it("starts from the household's guess and totals at the shop's prices", () => {
     renderScale();
     expect(newspaperKg()).toHaveValue("12");

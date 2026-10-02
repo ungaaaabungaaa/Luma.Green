@@ -5,6 +5,8 @@ export function resolveSettings(
   origin: string;
   allowLocalHttp: boolean;
   projectId: string | undefined;
+  pushEnabled: boolean;
+  googleServicesFile: string | undefined;
   signing:
     | {
         codeSigningCertificate: string;

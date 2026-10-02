@@ -14,7 +14,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { type ReactNode, useEffect } from "react";
 
-import { useSignOut } from "@/components/auth/use-sign-out";
 import { Logo } from "@/components/brand/logo";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { useSignedInQuery } from "@/components/providers/use-signed-in-query";
@@ -25,6 +24,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
 import { api } from "../../../convex/_generated/api";
+import { useAdminSignOut } from "./use-admin-sign-out";
 
 interface NavItem {
   href: string;
@@ -106,15 +106,8 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
 
 function Sidebar({ name }: { name: string }) {
   const pathname = usePathname();
-  const router = useRouter();
   const summary = useQuery(api.review.summary);
-
-  const { signOut, isSigningOut } = useSignOut(
-    "Something went wrong. Try again.",
-    () => {
-      router.replace("/admin/login");
-    },
-  );
+  const { signOut, busy, error } = useAdminSignOut();
 
   return (
     <aside className="flex flex-col gap-3 border-b border-sidebar-border bg-sidebar px-3 pt-3 pb-2 text-sidebar-foreground lg:sticky lg:top-0 lg:h-dvh lg:w-60 lg:shrink-0 lg:gap-6 lg:overflow-y-auto lg:border-e lg:border-b-0 lg:p-5">
@@ -141,7 +134,7 @@ function Sidebar({ name }: { name: string }) {
               variant="ghost"
               size="icon"
               aria-label={`Sign out ${name}`}
-              disabled={isSigningOut}
+              disabled={busy}
               onClick={() => {
                 void signOut();
               }}
@@ -151,6 +144,11 @@ function Sidebar({ name }: { name: string }) {
           </div>
         </div>
       </div>
+      {error ? (
+        <p role="alert" className="text-sm text-destructive">
+          {error}
+        </p>
+      ) : null}
       <div className="hidden items-center justify-between gap-3 border-y border-sidebar-border py-2 lg:flex">
         <span className="text-xs font-medium text-muted-foreground">
           Admin console
@@ -211,7 +209,7 @@ function Sidebar({ name }: { name: string }) {
           variant="outline"
           size="sm"
           className="min-h-11 text-foreground"
-          disabled={isSigningOut}
+          disabled={busy}
           onClick={() => {
             void signOut();
           }}
@@ -225,9 +223,7 @@ function Sidebar({ name }: { name: string }) {
 }
 
 function NotAdmin() {
-  const { signOut, isSigningOut } = useSignOut(
-    "Something went wrong. Try again.",
-  );
+  const { signOut, busy, error } = useAdminSignOut();
   return (
     <main
       id="main"
@@ -242,13 +238,18 @@ function NotAdmin() {
       <Button
         variant="outline"
         className="self-start"
-        disabled={isSigningOut}
         onClick={() => {
           void signOut();
         }}
+        disabled={busy}
       >
         Sign out
       </Button>
+      {error ? (
+        <p role="alert" className="text-sm text-destructive">
+          {error}
+        </p>
+      ) : null}
     </main>
   );
 }

@@ -20,10 +20,10 @@ export const tables = {
     image: v.optional(v.union(v.null(), v.string())),
     createdAt: v.number(),
     updatedAt: v.number(),
+    twoFactorEnabled: v.optional(v.union(v.null(), v.boolean())),
     userId: v.optional(v.union(v.null(), v.string())),
     phoneNumber: v.optional(v.union(v.null(), v.string())),
     phoneNumberVerified: v.optional(v.union(v.null(), v.boolean())),
-    twoFactorEnabled: v.optional(v.union(v.null(), v.boolean())),
   })
     .index("email_name", ["email", "name"])
     .index("name", ["name"])
@@ -69,12 +69,6 @@ export const tables = {
   })
     .index("expiresAt", ["expiresAt"])
     .index("identifier", ["identifier"]),
-  jwks: defineTable({
-    publicKey: v.string(),
-    privateKey: v.string(),
-    createdAt: v.number(),
-    expiresAt: v.optional(v.union(v.null(), v.number())),
-  }),
   twoFactor: defineTable({
     secret: v.string(),
     backupCodes: v.string(),
@@ -83,6 +77,12 @@ export const tables = {
     failedVerificationCount: v.optional(v.union(v.null(), v.number())),
     lockedUntil: v.optional(v.union(v.null(), v.number())),
   }).index("userId", ["userId"]),
+  jwks: defineTable({
+    publicKey: v.string(),
+    privateKey: v.string(),
+    createdAt: v.number(),
+    expiresAt: v.optional(v.union(v.null(), v.number())),
+  }),
   rateLimit: defineTable({
     key: v.string(),
     count: v.number(),

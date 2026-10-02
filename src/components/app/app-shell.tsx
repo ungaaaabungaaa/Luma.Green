@@ -1,10 +1,11 @@
 "use client";
 
-import { EllipsisIcon, LifeBuoyIcon, LogOutIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { type ReactNode, useEffect } from "react";
+import { EllipsisIcon, LifeBuoyIcon, LogOutIcon, XIcon } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 
-import { useSignOut } from "@/components/auth/use-sign-out";
+import { AccountLinks } from "@/components/account/account-links";
+import { useSignOut } from "@/components/account/use-sign-out";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { isCurrentSection } from "@/components/site/site-nav";
@@ -12,12 +13,14 @@ import { SkipLink } from "@/components/site/skip-link";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { isLocale, localeDirection } from "@/i18n/locales";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -38,11 +41,16 @@ function isActive(pathname: string, href: string) {
  */
 export function AppShell({ children }: { children: ReactNode }) {
   const t = useTranslations("app");
+  const common = useTranslations("common");
+  const theme = useTranslations("theme");
+  const navigation = useTranslations("nav");
+  const locale = useLocale();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuOpener = useRef<HTMLButtonElement | null>(null);
   const workspace = useWorkspace();
   const router = useRouter();
   const pathname = usePathname();
-  const common = useTranslations("common");
-  const { signOut, isSigningOut } = useSignOut(common("error"), () => {
+  const { signOut, busy: signingOut } = useSignOut(() => {
     router.replace("/login");
   });
 
@@ -53,6 +61,17 @@ export function AppShell({ children }: { children: ReactNode }) {
       router.replace("/join/status");
     }
   }, [workspace, router, pathname]);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const onResize = (event: MediaQueryListEvent) => {
+      if (event.matches) setMenuOpen(false);
+    };
+    desktop.addEventListener("change", onResize);
+    return () => {
+      desktop.removeEventListener("change", onResize);
+    };
+  }, []);
 
   if (!workspace || workspace.kind === "none") {
     return (
@@ -67,9 +86,18 @@ export function AppShell({ children }: { children: ReactNode }) {
   const name =
     workspace.kind === "org" ? workspace.org.name : workspace.saathi.name;
   const { primary, more } = NAV[role];
+  // Keep the two daily destinations visible. The menu holds the rest at
+  // full text width, so translated labels never need ellipses or tiny type.
+  const mobilePrimary = primary.slice(0, 2);
+  const mobileMore = [...primary.slice(2), ...more];
+  const side =
+    isLocale(locale) && localeDirection(locale) === "rtl" ? "left" : "right";
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
   const help = `/help/${role}`;
 
-  const link = (item: NavItem, className: string) => {
+  const link = (item: NavItem, className: string, isCompact = false) => {
     const Icon = item.icon;
     const isCurrent = isActive(pathname, item.href);
     return (
@@ -84,15 +112,19 @@ export function AppShell({ children }: { children: ReactNode }) {
         )}
       >
         <Icon aria-hidden className="size-5 shrink-0" />
-        <span className="break-words">{t(`nav.${item.label}`)}</span>
+        <span
+          className={isCompact ? "whitespace-nowrap" : "min-w-0 break-words"}
+        >
+          {t(`nav.${item.label}`)}
+        </span>
       </Link>
     );
   };
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background md:flex-row">
+    <div className="flex min-h-dvh flex-col bg-background xl:flex-row">
       <SkipLink />
-      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-6 overflow-y-auto border-e border-sidebar-border bg-sidebar p-4 text-sidebar-foreground md:flex lg:w-64">
+      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-6 overflow-y-auto border-e border-sidebar-border bg-sidebar p-4 text-sidebar-foreground xl:flex xl:w-64">
         <Link
           href="/"
           className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
@@ -129,6 +161,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <LifeBuoyIcon aria-hidden className="size-5" />
             {t("nav.help")}
           </Link>
+          <AccountLinks className="rounded-lg px-3 hover:bg-sidebar-accent" />
         </nav>
         <div className="mt-auto flex flex-col gap-3 border-t border-sidebar-border pt-4">
           <div className="flex items-center justify-between gap-2">
@@ -139,7 +172,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             variant="outline"
             size="sm"
             className="min-h-11 text-foreground"
-            disabled={isSigningOut}
+            disabled={signingOut}
             onClick={() => void signOut()}
           >
             <LogOutIcon aria-hidden />
@@ -148,80 +181,159 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </aside>
 
-      <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-2 border-b border-border bg-card/95 px-4 backdrop-blur md:hidden">
-        <Link
-          href="/"
-          aria-label={t("homeLink")}
-          className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+      <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+        <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-2 border-b border-border bg-card/95 px-4 backdrop-blur xl:hidden">
+          <Link
+            href="/"
+            aria-label={t("homeLink")}
+            className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          >
+            <Logo idPrefix="lg-bar" className="[&>svg]:size-7" />
+          </Link>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon-lg"
+              aria-label={t("more")}
+              onClick={(event) => {
+                menuOpener.current = event.currentTarget;
+              }}
+            >
+              <EllipsisIcon aria-hidden />
+            </Button>
+          </SheetTrigger>
+        </header>
+        <SheetContent
+          side={side}
+          className="gap-0 overflow-y-auto pb-[env(safe-area-inset-bottom)] data-[side=left]:w-full data-[side=right]:w-full"
+          showCloseButton={false}
+          aria-describedby={undefined}
+          onCloseAutoFocus={(event) => {
+            // The header and bottom bar share a sheet. Return focus to the
+            // actual opener, rather than Radix's last registered trigger.
+            event.preventDefault();
+            menuOpener.current?.focus();
+          }}
         >
-          <Logo idPrefix="lg-bar" />
-        </Link>
-        <div className="flex items-center gap-1">
-          <ThemeToggle />
-          <LanguageSwitcher />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon-lg" aria-label={t("more")}>
-                <EllipsisIcon aria-hidden />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="min-w-52">
-              <p className="px-2 py-1.5 text-sm font-medium">{name}</p>
-              <DropdownMenuSeparator />
-              {more.map((item) => (
-                <DropdownMenuItem key={item.href} asChild>
-                  <Link
-                    href={item.href}
-                    aria-current={
-                      isActive(pathname, item.href) ? "page" : undefined
-                    }
-                  >
-                    <item.icon aria-hidden />
-                    {t(`nav.${item.label}`)}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-              <DropdownMenuItem asChild>
-                <Link href={help}>
-                  <LifeBuoyIcon aria-hidden />
-                  {t("nav.help")}
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem
-                disabled={isSigningOut}
-                onSelect={() => void signOut()}
+          <SheetHeader className="min-h-16 shrink-0 flex-row items-center justify-between px-5 py-2">
+            <SheetTitle className="sr-only">{t("navLabel")}</SheetTitle>
+            <Logo
+              idPrefix="app-menu"
+              className="gap-2 [&>span]:text-lg [&>svg]:size-7"
+            />
+            <SheetClose asChild>
+              <Button
+                variant="ghost"
+                size="icon-lg"
+                aria-label={navigation("closeMenu")}
               >
-                <LogOutIcon aria-hidden />
-                {t("signOut")}
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </header>
+                <XIcon aria-hidden />
+              </Button>
+            </SheetClose>
+          </SheetHeader>
+          <div className="mx-5 border-b py-3">
+            <p className="text-sm font-semibold break-words">{name}</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t(`roles.${role}`)}
+            </p>
+          </div>
+          <nav
+            aria-label={t("navLabel")}
+            className="mx-5 flex shrink-0 flex-col divide-y"
+          >
+            {mobileMore.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                aria-current={
+                  isActive(pathname, item.href) ? "page" : undefined
+                }
+                className={cn(
+                  "flex min-h-12 items-center gap-3 py-3 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                  isActive(pathname, item.href) && "font-semibold text-primary",
+                )}
+              >
+                <item.icon aria-hidden className="size-5 shrink-0" />
+                {t(`nav.${item.label}`)}
+              </Link>
+            ))}
+            <Link
+              href={help}
+              onClick={closeMenu}
+              className="flex min-h-12 items-center gap-3 py-3 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              <LifeBuoyIcon aria-hidden className="size-5 shrink-0" />
+              {t("nav.help")}
+            </Link>
+            <AccountLinks onNavigate={closeMenu} />
+          </nav>
+          <div className="mx-5 grid shrink-0 border-t py-2">
+            <div className="flex min-h-11 items-center justify-between gap-3">
+              <span className="text-sm text-muted-foreground">
+                {common("language")}
+              </span>
+              <LanguageSwitcher />
+            </div>
+            <div className="flex min-h-11 items-center justify-between gap-3">
+              <span className="text-sm text-muted-foreground">
+                {theme("label")}
+              </span>
+              <ThemeToggle />
+            </div>
+          </div>
+          <div className="mx-5 shrink-0 border-t py-4">
+            <Button
+              variant="outline"
+              className="min-h-12 w-full text-sm"
+              disabled={signingOut}
+              onClick={() => void signOut()}
+            >
+              <LogOutIcon aria-hidden />
+              {t("signOut")}
+            </Button>
+          </div>
+        </SheetContent>
+        <nav
+          aria-label={t("navLabel")}
+          className="fixed inset-x-0 bottom-0 z-30 grid border-t border-border bg-card/95 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur xl:hidden"
+          style={{
+            gridTemplateColumns: `repeat(${String(mobilePrimary.length + 1)}, minmax(max-content, 1fr))`,
+          }}
+        >
+          {mobilePrimary.map((item) =>
+            link(
+              item,
+              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-center text-sm font-medium text-muted-foreground outline-none focus-visible:bg-muted",
+              true,
+            ),
+          )}
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              onClick={(event) => {
+                menuOpener.current = event.currentTarget;
+              }}
+              className={cn(
+                "h-auto min-h-14 flex-col gap-1 rounded-lg px-1 py-2 text-sm font-medium text-muted-foreground",
+                mobileMore.some((item) => isActive(pathname, item.href)) &&
+                  "bg-sidebar-accent text-sidebar-accent-foreground",
+              )}
+            >
+              <EllipsisIcon aria-hidden className="size-5" />
+              {t("more")}
+            </Button>
+          </SheetTrigger>
+        </nav>
+      </Sheet>
 
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-6 px-4 pt-6 pb-28 sm:px-6 md:gap-8 md:px-8 md:pt-8 md:pb-12 lg:px-10"
+        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-6 px-4 pt-6 pb-28 sm:px-6 md:gap-8 md:px-8 md:pt-8 lg:px-10 xl:pb-12"
       >
         {children}
       </main>
-
-      <nav
-        aria-label={t("navLabel")}
-        className="fixed inset-x-0 bottom-0 z-30 grid border-t border-border bg-card/95 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden"
-        style={{
-          gridTemplateColumns: `repeat(${String(primary.length)}, minmax(0, 1fr))`,
-        }}
-      >
-        {primary.map((item) =>
-          link(
-            item,
-            "flex min-h-14 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-center text-xs font-medium text-muted-foreground outline-none focus-visible:bg-muted",
-          ),
-        )}
-      </nav>
     </div>
   );
 }

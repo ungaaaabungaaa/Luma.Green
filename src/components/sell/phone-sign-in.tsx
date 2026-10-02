@@ -7,6 +7,7 @@ import { type SyntheticEvent, useEffect, useId, useRef, useState } from "react";
 import { toast } from "sonner";
 
 import type { CodeErrorKey } from "@/components/auth/errors";
+import { FactorChallenge } from "@/components/auth/factor-challenge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -160,6 +161,7 @@ function CodeForm({
   const id = useId();
   const [code, setCode] = useState("");
   const [isChecking, setChecking] = useState(false);
+  const [needsFactor, setNeedsFactor] = useState(false);
   const [error, setError] = useState<CodeErrorKey | SendCodeErrorKey | null>(
     null,
   );
@@ -189,12 +191,16 @@ function CodeForm({
     requestPending.current = true;
     setChecking(true);
     setError(null);
-    const failure = await verifyPhoneCode(phone, value);
+    const result = await verifyPhoneCode(phone, value);
     requestPending.current = false;
-    if (failure) {
+    if (result.kind === "error") {
       setChecking(false);
       setCode("");
-      setError(failure);
+      setError(result.error);
+      return;
+    }
+    if (result.kind === "second-factor") {
+      setNeedsFactor(true);
       return;
     }
     onVerified();
@@ -215,6 +221,11 @@ function CodeForm({
     setSecondsLeft(RESEND_AFTER_SECONDS);
     toast.success(t("resent"));
   }
+
+  if (needsFactor)
+    return (
+      <FactorChallenge onVerified={onVerified} onRestart={onChangeNumber} />
+    );
 
   return (
     <div className="flex flex-col gap-4">

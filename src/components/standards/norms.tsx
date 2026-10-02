@@ -12,18 +12,25 @@ import {
 import { getFormatter, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import {
+  RoleStoryImage,
+  type StoryScene,
+} from "@/components/showcase/role-story-image";
+
 /** One norm of the standard: what it is on the left, how on the right. */
 export function NormSection({
   id,
   icon: Icon,
   title,
   body,
+  scene,
   children,
 }: {
   id: string;
   icon: LucideIcon;
   title: string;
   body: string;
+  scene?: StoryScene;
   children: ReactNode;
 }) {
   return (
@@ -43,6 +50,13 @@ export function NormSection({
           {title}
         </h2>
         <p className="text-muted-foreground">{body}</p>
+        {scene ? (
+          <RoleStoryImage
+            scene={scene}
+            frameClassName="aspect-[3/2]"
+            sizes="(min-width: 1280px) 360px, (min-width: 1024px) 30vw, 92vw"
+          />
+        ) : null}
       </div>
       <div className="min-w-0">{children}</div>
     </section>

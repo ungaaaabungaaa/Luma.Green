@@ -1,3 +1,5 @@
+import { asciiDigits } from "@/lib/number-input";
+
 import { paiseFor } from "../../../convex/lib/chain";
 
 /**
@@ -19,7 +21,7 @@ const RUPEES_PATTERN = /^(\d{0,5})(?:[.,](\d{0,2}))?$/;
  * (not weighed); anything else that isn't a weight is null.
  */
 export function parseKg(input: string): number | null {
-  const text = input.trim();
+  const text = asciiDigits(input.trim()).replaceAll("٫", ".");
   if (text === "") return 0;
   const match = KG_PATTERN.exec(text);
   if (!match) return null;
@@ -51,7 +53,9 @@ export function stepGrams(grams: number, direction: 1 | -1): number {
 
 /** Rupees as typed — "14", "14.5", "14.50" — to paise; null if it isn't one. */
 export function parseRupees(input: string): number | null {
-  const match = RUPEES_PATTERN.exec(input.trim());
+  const match = RUPEES_PATTERN.exec(
+    asciiDigits(input.trim()).replaceAll("٫", "."),
+  );
   if (!match) return null;
   const [, whole = "", fraction = ""] = match;
   return whole === "" && fraction === ""

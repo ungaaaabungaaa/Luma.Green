@@ -67,7 +67,7 @@ function CardShell({
     <section
       aria-labelledby={id}
       className={cn(
-        "flex flex-col gap-4 border-t border-border py-5",
+        "flex min-w-0 flex-col gap-4 border-t border-border py-5",
         isHot && "border-primary",
       )}
     >
@@ -90,6 +90,7 @@ function CardShell({
 /** How many households are waiting for an answer, and the way to them. */
 export function NewRequestsCard({ count }: { count: number | undefined }) {
   const t = useTranslations("shop.home");
+  const navigation = useTranslations("app.nav");
   const hasNew = count !== undefined && count > 0;
   return (
     <CardShell
@@ -112,8 +113,11 @@ export function NewRequestsCard({ count }: { count: number | undefined }) {
         variant={hasNew ? "default" : "outline"}
         className="mt-auto h-12 text-base"
       >
-        <Link href="/app/requests">
-          {t("seeRequests")}
+        <Link
+          href="/app/requests"
+          aria-label={`${navigation("requests")}: ${t("seeRequests")}`}
+        >
+          {navigation("requests")}
           <ArrowRightIcon aria-hidden className="size-5 rtl:rotate-180" />
         </Link>
       </Button>
@@ -182,8 +186,11 @@ export function TodayCard({
         variant="outline"
         className="mt-auto h-12 text-base"
       >
-        <Link href={{ pathname: "/app/requests", query: { tab: "today" } }}>
-          {t("home.seeToday")}
+        <Link
+          href={{ pathname: "/app/requests", query: { tab: "today" } }}
+          aria-label={`${t("days.today")}: ${t("home.seeToday")}`}
+        >
+          {t("days.today")}
         </Link>
       </Button>
     </CardShell>

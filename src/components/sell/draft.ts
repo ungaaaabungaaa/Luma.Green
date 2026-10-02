@@ -82,7 +82,7 @@ export function stepDown(kg: number): number | null {
  * 0.1 kg and kept within the limits. Null when it isn't a number at all.
  */
 export function parseKg(text: string): number | null {
-  const clean = text.trim().replace(",", ".");
+  const clean = asciiDigits(text.trim()).replace(",", ".").replace("٫", ".");
   const hasDigit = /\d/.test(clean);
   if (!hasDigit || !/^\d{0,4}(\.\d*)?$/.test(clean)) return null;
   const kg = Math.round(Number(clean) * 10) / 10;
@@ -249,3 +249,4 @@ export function parseDraft(raw: string | null): SellDraft {
     name: text(value.name),
   };
 }
+import { asciiDigits } from "@/lib/number-input";

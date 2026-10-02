@@ -2,7 +2,7 @@
 
 This harness renders the existing Luma.Green React components in Chromium.
 It does not copy their markup or change their styles. It uses the current
-production build's CSS and Geist/Noto fonts. The yellow provenance banner is added
+production build's CSS and exact per-locale Geist/Noto font classes, read from its generated HTML. The yellow provenance banner is added
 by the documentation harness outside the application shell.
 
 All displayed accounts, applications, bookings, prices and report totals are
@@ -82,7 +82,9 @@ backup code, real contact detail or customer file is used.
 the hashes of the original `screenshots/failure-*.png` browser output. The
 guide freshness test checks all 78 views. Each browser test verifies error
 feedback, retained data or setup controls, retry availability where applicable,
-document direction, no horizontal overflow and no page error. The captures
+document direction, no horizontal overflow and no page error. Desktop sign-out
+uses a full-page frame to show the retry button below the provenance banner;
+phone and tablet retain the viewport so their fixed navigation stays in place. The captures
 are fixture evidence, not authentication, permission or provider proof.
 
 - `main.tsx` imports actual `ConsoleShell`, `AppShell`, `JoinLayout` and page components.
@@ -91,8 +93,7 @@ are fixture evidence, not authentication, permission or provider proof.
   no client, session, WebSocket or database connection. Unknown queries fail.
 - Mutation and action adapters always reject. Sign-out also rejects. The harness
   cannot save a price, approve a business, send a message, or change an account.
-- `translations.ts` resolves the actual async `HouseholdLayout` translation call
-  from the committed English catalogue. Its markup is imported unchanged.
+- `locale.ts` loads the active route language from the real message catalogue. `translations.ts` resolves the actual async `HouseholdLayout` translation call from that same catalogue. Its markup is imported unchanged. All registered locales are supported by the harness.
 - `image.tsx` uses local Vite image URLs in place of the Next optimizer. It preserves image classes, sizing and fill positioning. This adapter does not test production image delivery; production browser checks cover that. Remove it when authenticated Next captures replace the fixture harness.
 - `navigation.tsx` adapts Next links, paths and initial query parameters to the standalone preview. This
   tests component rendering, not the Next router or server route guards.
@@ -172,6 +173,78 @@ capture script does not edit fields, submit a form, request location, upload fil
 or run autosave. No login number or customer contact details are supplied.
 All mutations and actions still reject through the same write-disabled adapter.
 Production session checks and application code are unchanged.
+
+## Household selection coverage
+
+Three further phone captures use `HouseholdLayout` and the actual selection
+components at 390 × 844. Their visible fixture banner identifies the isolated
+preview. These routes are documentation harness paths, not application routes.
+
+| File stem                | Harness route     | Actual component                                               | Heading                |
+| ------------------------ | ----------------- | -------------------------------------------------------------- | ---------------------- |
+| `household-basket-phone` | `/en/sell/basket` | `BasketStep`, three canonical materials and local draft state  | What do you have?      |
+| `household-mode-phone`   | `/en/sell/shop`   | `ModeChoice` only, without a live shop-offer list              | Who buys it?           |
+| `household-when-phone`   | `/en/sell/when`   | `WhenStep`, sample shop hours and a fixed 14 October 2026 date | When should they come? |
+
+The sample prices come from the canonical catalogue. These components keep
+changes in local React state only. They do not submit bookings, authenticate a
+user, reserve a time, send a message or write to a backend. These three images
+extend the original 40-view capture set.
+
+## Account and notification evidence
+
+The account set adds 29 captures of the actual account layout, menu, inbox,
+security settings, empty authenticator/recovery challenge and admin password
+recovery components. Together the capture script registers 72 images. English,
+Arabic and Tamil examples cover phone/tablet widths and both themes. Operator
+menus show the new account links.
+
+The provider adapter selects the data branch without constructing a client or
+loading a backend URL. The auth adapter supplies only a truthy fixture marker;
+it is not a session. It has no phone number, token, session ID or private user ID.
+The paginated inbox contains three synthetic event rows, with separate empty and
+loading variants. The error example clicks Read all and captures the real error
+from the rejecting mutation adapter. Device permission is unavailable because
+no notification provider is mounted. No permission request or delivery occurs.
+
+Security captures show on/off states only. Authenticator and recovery challenge
+fields remain empty. Every auth method rejects, including enrollment, reset and
+sign-out; no QR code, setup key, backup code, password or reset token is supplied.
+Admin reset images show the missing-token error. These fixtures cannot prove
+authentication, authorization, a successful reset or provider execution.
+
+When a sheet opens, the capture script moves only the harness provenance note to
+the bottom of the viewport and checks that it does not cover menu controls. It
+does not alter the application's sheet geometry or styles. Longer operator
+menus use a 1,100-pixel viewport height so all controls and the note are visible.
+
+## Responsive fixture audit
+
+The isolated preview also accepts `/ar`, `/ta` and `/ml` paths. It renders the
+committed locale catalogues and sets the corresponding document direction.
+Admin pages remain English. These adapters do not change application routing or
+authentication.
+
+Run the repeatable layout audit after rebuilding the application CSS and
+restarting the task-owned preview:
+
+```sh
+GUIDE_FIXTURE_ORIGIN=http://127.0.0.1:3203 node scripts/guide-preview/responsive-audit.mjs
+```
+
+It checks all 40 registered fixture views at 320, 390, 640, 768, 1024 and 1440 px,
+plus eight representative Arabic workspace views at the same widths. It checks
+page overflow, clipped text controls and heading/label text bounds. Intentional
+table scroll regions are reported separately. Larger invisible Radix hit areas
+and progress fills inside clipped tracks are not text-layout faults. External
+requests are blocked and no write actions are performed.
+
+Results and unchanged browser PNGs for failures go to a unique
+`luma-responsive-fixtures-*` directory under the OS temporary directory,
+separate from the maintained guide evidence. The script prints the full path.
+`GUIDE_AUDIT_OUTPUT` can select another output directory. `GUIDE_AUDIT_SCREEN`
+filters view names for a targeted follow-up. Inspect every reported failure;
+geometry checks do not replace visual or keyboard review.
 
 The sale example has 260 kg of stock, a 60 kg open listing and 200 kg available.
 The separate receipt example is an illustrative prototype state, not proof of

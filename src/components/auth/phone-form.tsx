@@ -68,7 +68,7 @@ export function PhoneForm({ canSend = true }: { canSend?: boolean }) {
     <div className="flex flex-col gap-8">
       <AuthProgress step="phone" />
       <div className="flex flex-col gap-3">
-        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight wrap-anywhere sm:text-4xl">
           {t("title")}
         </h1>
         <p className="leading-relaxed text-muted-foreground">

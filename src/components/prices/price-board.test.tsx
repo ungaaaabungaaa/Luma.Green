@@ -151,6 +151,12 @@ describe("PriceBoard", () => {
     renderBoard();
 
     expect(screen.getByText("No prices yet")).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", { name: "No prices yet" }),
+    ).toHaveAttribute("aria-busy", "false");
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(screen.queryByRole("slider")).not.toBeInTheDocument();
+    expect(screen.queryByText(/₹/)).not.toBeInTheDocument();
   });
 
   it("explains itself kindly when Convex isn't connected", () => {
@@ -160,7 +166,32 @@ describe("PriceBoard", () => {
     expect(
       screen.getByText("Prices aren't available right now"),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", { name: messages.prices.unavailable.title }),
+    ).toHaveAttribute("aria-busy", "false");
+    expect(screen.queryByText(messages.common.loading)).not.toBeInTheDocument();
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(screen.queryByRole("slider")).not.toBeInTheDocument();
+    expect(screen.queryByText(/₹/)).not.toBeInTheDocument();
     expect(useQuery).not.toHaveBeenCalled();
+  });
+
+  it("keeps placeholders when materials exist without market quotes", () => {
+    vi.mocked(useQuery).mockReturnValue({
+      ...sampleBoard,
+      date: null,
+      rows: sampleBoard.rows.map((row) => ({
+        ...row,
+        todayPaise: null,
+        weekChangePct: null,
+        series: [],
+      })),
+    });
+    renderBoard();
+
+    expect(screen.getByRole("status", { name: "No prices yet" })).toBeVisible();
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(screen.queryByText(/₹/)).not.toBeInTheDocument();
   });
 
   it("offers a retry when the live query fails", async () => {

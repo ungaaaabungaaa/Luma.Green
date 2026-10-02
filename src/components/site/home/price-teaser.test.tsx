@@ -86,9 +86,10 @@ describe("PriceTeaser", () => {
     vi.mocked(useQuery).mockReturnValue(undefined);
     renderTeaser();
 
-    expect(
-      screen.getByRole("status", { name: "Loading…" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("status", { name: "Loading…" })).toHaveAttribute(
+      "aria-busy",
+      "true",
+    );
     expect(
       screen.getByRole("heading", { name: "Today's prices" }),
     ).toBeInTheDocument();
@@ -102,6 +103,30 @@ describe("PriceTeaser", () => {
       screen.getByText("Today's prices will show here soon."),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "See all prices" })).toBeVisible();
+    expect(
+      screen.getByRole("status", { name: messages.home.teaser.unavailable }),
+    ).toHaveAttribute("aria-busy", "false");
+    expect(screen.queryByText(messages.common.loading)).not.toBeInTheDocument();
+    expect(screen.queryByRole("listitem")).not.toBeInTheDocument();
+    expect(screen.queryByText(/₹/)).not.toBeInTheDocument();
     expect(useQuery).not.toHaveBeenCalled();
+  });
+
+  it("keeps the empty price layout without suggesting that a fetch is still pending", () => {
+    vi.mocked(useQuery).mockReturnValue({
+      ...sampleBoard,
+      rows: [],
+      date: null,
+    });
+    renderTeaser();
+
+    expect(
+      screen.getByRole("status", { name: messages.home.teaser.unavailable }),
+    ).toHaveAttribute("aria-busy", "false");
+    expect(screen.queryByRole("listitem")).not.toBeInTheDocument();
+    expect(screen.queryByText(/₹/)).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "See all prices" }),
+    ).toHaveAttribute("href", "/prices");
   });
 });

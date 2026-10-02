@@ -71,6 +71,15 @@ describe("parseRupees", () => {
   });
 });
 
+describe("translated market input", () => {
+  it("reads the selected language without changing integer units", () => {
+    expect(parseKg("12,345", "fr")).toBe(12_345);
+    expect(parseRupees("17,50", "de")).toBe(1750);
+    expect(parseKg("๑๒.๕", "th")).toBe(12_500);
+    expect(parseRupees("١٧٫٥٠", "ar")).toBe(1750);
+  });
+});
+
 describe("field values", () => {
   it("round-trips grams and paise through what a field holds", () => {
     expect(kgFieldValue(12_500)).toBe("12.5");

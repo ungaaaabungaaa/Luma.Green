@@ -70,11 +70,19 @@ describe("message validation", () => {
   it("allows shared names, acronyms, units and placeholder-only formats", () => {
     for (const value of [
       "Luma.Green",
+      "Bengaluru",
+      "Bengaluru · {date}",
+      "Karnataka",
+      "Karnataka (KSPCB)",
+      "Kabadiwala",
+      "Saathi",
       "© Luma.Green",
       "GSTIN {gstin}",
       "UPI",
       "WhatsApp",
       "{price}/kg",
+      "{km} km",
+      "{minutes} min",
       "{kw} kW",
       "{a} · {b}",
     ]) {
@@ -97,5 +105,36 @@ describe("message validation", () => {
       ),
     ).toBe(true);
     expect(hasUntranslatedCopy("Close", "बंद करें")).toBe(false);
+  });
+
+  it("allows reviewed exact shared words only in their languages", () => {
+    expect(hasUntranslatedCopy("No", "No", "es")).toBe(false);
+    expect(hasUntranslatedCopy("No", "No", "it")).toBe(false);
+    expect(hasUntranslatedCopy("Notifications", "Notifications", "fr")).toBe(
+      false,
+    );
+    expect(hasUntranslatedCopy("Notifications", "Notifications", "hi")).toBe(
+      true,
+    );
+    expect(
+      hasUntranslatedCopy("Enable notifications", "Enable notifications", "fr"),
+    ).toBe(true);
+    expect(hasUntranslatedCopy("Material", "Material", "pt")).toBe(false);
+    expect(hasUntranslatedCopy("Material", "Material", "hi")).toBe(true);
+    expect(hasUntranslatedCopy("Metal prices", "Metal prices", "pt")).toBe(
+      true,
+    );
+    expect(hasUntranslatedCopy("No", "No", "hi")).toBe(true);
+    expect(hasUntranslatedCopy("No", "No")).toBe(true);
+    expect(
+      hasUntranslatedCopy("No results found", "No results found", "es"),
+    ).toBe(true);
+    expect(
+      hasUntranslatedCopy(
+        "Bengaluru prices today",
+        "Bengaluru prices today",
+        "es",
+      ),
+    ).toBe(true);
   });
 });

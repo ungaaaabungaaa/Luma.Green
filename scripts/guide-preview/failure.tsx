@@ -22,6 +22,12 @@ const scenario = params.get("scenario");
 const locale = params.get("locale") === "ar" ? "ar" : "en";
 document.documentElement.lang = locale;
 document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
+const fontClasses = JSON.parse(
+  document.documentElement.dataset.localeFonts ?? "{}",
+) as Partial<Record<string, string>>;
+const localeFonts = fontClasses[locale];
+if (!localeFonts) throw new Error(`Build the ${locale} locale before capture.`);
+document.documentElement.className = localeFonts;
 const catalogue = locale === "ar" ? ar : en;
 const extremeListing: ListingView = {
   id: "fixture-extreme-listing" as Id<"listings">,
@@ -112,7 +118,9 @@ createRoot(root).render(
       {["signout", "login", "setup", "totp"].includes(scenario ?? "") ? (
         content
       ) : (
-        <main className="mx-auto flex max-w-md flex-col gap-5 px-5 py-8">
+        <main
+          className={`mx-auto flex flex-col gap-5 px-5 py-8 ${scenario === "support" ? "max-w-2xl" : "max-w-md"}`}
+        >
           {content}
         </main>
       )}

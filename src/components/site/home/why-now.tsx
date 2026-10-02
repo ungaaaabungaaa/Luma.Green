@@ -24,7 +24,7 @@ export async function WhyNow() {
   return (
     <section
       aria-labelledby="why-now-heading"
-      className="border-t py-16 lg:py-24"
+      className="border-t py-10 sm:py-12 lg:py-24"
     >
       <Container className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
         <div className="flex flex-col gap-8">

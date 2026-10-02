@@ -6,6 +6,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { Id } from "../../../convex/_generated/dataModel";
 import arabic from "../../../messages/ar.json";
 import english from "../../../messages/en.json";
+import urdu from "../../../messages/ur.json";
 import { type AccessData, ApiAccess } from "./api-access";
 
 const now = new Date("2026-10-02T08:00:00.000Z");
@@ -25,18 +26,21 @@ const key: AccessData["keys"][number] = {
 };
 const empty = { canManage: true, keys: [] } satisfies AccessData;
 
-function content(data: AccessData | undefined, locale: "en" | "ar" = "en") {
+function content(
+  data: AccessData | undefined,
+  locale: "en" | "ar" | "ur" = "en",
+) {
   return (
     <NextIntlClientProvider
       locale={locale}
-      messages={locale === "ar" ? arabic : english}
+      messages={{ en: english, ar: arabic, ur: urdu }[locale]}
       now={now}
       timeZone="Asia/Kolkata"
       onError={(error) => {
         throw error;
       }}
     >
-      <div dir={locale === "ar" ? "rtl" : "ltr"}>
+      <div dir={locale === "en" ? "ltr" : "rtl"}>
         <ApiAccess data={data} onCreate={create} onRevoke={revoke} />
       </div>
     </NextIntlClientProvider>
@@ -60,6 +64,18 @@ beforeEach(() => {
 });
 
 describe("business API key controls", () => {
+  it.each(["ar", "ur"] as const)(
+    "keeps the expiry selector aligned with its %s form",
+    (locale) => {
+      const messages = locale === "ar" ? arabic : urdu;
+      render(content(empty, locale));
+      const expiry = screen.getByRole("combobox", {
+        name: messages.integrations.expiry,
+      });
+      expect(expiry).toHaveAttribute("dir", "rtl");
+      expect(expiry).toHaveTextContent(locale === "ar" ? "30 أيام" : "30 دن");
+    },
+  );
   it("creates only selected permissions and shows the secret once without storing it", async () => {
     const storage = vi.spyOn(Storage.prototype, "setItem");
     render(content(empty));

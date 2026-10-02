@@ -2,7 +2,7 @@
 
 import { useMutation } from "convex/react";
 import { CheckIcon, PlusIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { type SubmitEvent, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -15,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { defaultLocale, isLocale, localeDirection } from "@/i18n/locales";
 
 import { api } from "../../../convex/_generated/api";
 import type { Id } from "../../../convex/_generated/dataModel";
@@ -54,6 +55,8 @@ export function WeighAndPay({
   choices: readonly MaterialRef[];
 }) {
   const t = useTranslations("shop");
+  const locale = useLocale();
+  const direction = localeDirection(isLocale(locale) ? locale : defaultLocale);
   const format = useFormat();
   const complete = useMutation(api.shop.complete);
   const [rows, setRows] = useState<WeighRowValue[]>(() =>
@@ -177,7 +180,7 @@ export function WeighAndPay({
         </ul>
 
         {addable.length > 0 ? (
-          <Select value="" onValueChange={add}>
+          <Select dir={direction} value="" onValueChange={add}>
             <SelectTrigger
               aria-label={t("weigh.add")}
               className="h-12 w-full border-dashed text-base data-[size=default]:h-12"

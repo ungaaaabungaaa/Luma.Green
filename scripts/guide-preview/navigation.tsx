@@ -1,5 +1,7 @@
 import type { AnchorHTMLAttributes } from "react";
 
+import { isLocale } from "@/i18n/locales";
+
 type Destination =
   string | { pathname: string; query?: Record<string, string> };
 function hrefOf(value: Destination) {
@@ -34,7 +36,11 @@ export function useRouter() {
   return router;
 }
 export function usePathname() {
-  return window.location.pathname.replace(/^\/en/u, "") || "/";
+  const pathname = window.location.pathname;
+  const segment = pathname.split("/", 3)[1] ?? "";
+  return (
+    (isLocale(segment) ? pathname.slice(segment.length + 1) : pathname) || "/"
+  );
 }
 export function useSearchParams() {
   return new URLSearchParams(window.location.search);

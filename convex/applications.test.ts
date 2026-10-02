@@ -168,8 +168,23 @@ describe("a kabadiwala's application", () => {
       "profile.created",
       "application.started",
       "application.submitted",
+      "inbox.created",
       "notification.disabled",
     ]);
+    const inbox = await ramesh.query(api.inbox.list, {
+      paginationOpts: { numItems: 10, cursor: null },
+    });
+    expect(inbox.page).toHaveLength(1);
+    expect(inbox.page[0]).toMatchObject({
+      event: "application_received",
+      read: false,
+    });
+    expect(
+      trail.audit.find((row) => row.action === "inbox.created"),
+    ).toMatchObject({
+      entityTable: "inbox",
+      entityId: inbox.page[0]?.id,
+    });
   });
 
   it("is locked while in review", async () => {

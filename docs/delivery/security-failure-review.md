@@ -67,6 +67,39 @@ fails after its first material write, proving that earlier writes also roll back
 This enforces the existing exact-grams contract and changes no user-facing copy
 or screen.
 
+## Parallel account and notification review
+
+The final feature source at `593dfa2` retains the original confirmed repairs.
+Independent checks of its earlier immutable source passed 217 backend tests,
+101 web tests and 33 native policy tests. That review found and repaired two
+additional boundaries before merge:
+
+- Joint parsing of `updatePhoneNumber` and `trustDevice` let a malformed unrelated
+  flag disable the other guard. Real HTTP tests returned 200 for forbidden phone
+  changes and trusted-device login. The repair checks each flag independently;
+  both requests now return typed 403 errors without changing the phone number or
+  issuing a session. An independent run passed all 23 real-handler tests.
+- Device cleanup finished before auth sign-out, allowing notifications to be
+  enabled again during the remaining wait. One shared session lock now covers
+  member, admin and security reauthentication flows. It blocks controls, direct
+  registration, restoration and late results through successful sign-out and
+  remounts, and releases for retry after failure.
+
+A second client sharing the session could still register during that wait. A
+real HTTP sign-out deleted the session and denied private requests, yet a new
+notification still obtained a delivery target. The server now derives device
+bindings from validated sessions and checks ownership and expiry again at
+claim. Unbound legacy records stay inactive until authenticated renewal; a new
+session refreshes an unchanged token. Inactive-owner cleanup writes audit events
+and preserves tokens reassigned to another account. The final frozen server
+patch passed 62 independent tests and the original second-client reproduction
+without changing its assertion. No provider request was made by these tests.
+
+The claim is the server authorization boundary. An already-claimed delivery or
+provider request in transit cannot be recalled. Its payload remains generic and
+contains no private record data. The reviewed guide and migration explain this
+limit and the additive optional session field.
+
 ## Review coverage and rollout
 
 The review covered the web route/component tree, shared validation and environment
@@ -141,7 +174,7 @@ The final combined source preserves PR #30 (`af2e295`) and has these results:
 
 The original repair source, screenshots, capture manifests, Word guide and build record were committed together and merged through PR #31 at `2ba8246`. The follow-up verified an in-place Google Docs update for that reviewed guide; see `docs/user-guide/cloud.json`. Its existing ID, folder and sharing remain unchanged. Hosted CI, preview status and protected squash merge are separate from local results. Main is never pushed directly.
 
-Live SMS receipt, authenticated staging acceptance, native signing and real-device tests are separate gates. The current Google Docs API cannot set native image alt-text attributes; all 72 descriptions remain visible editable captions. The publication record states this limit and does not claim identical accessibility semantics. The newer guide from parallel PR #29 requires its own verified synchronization after that revision merges.
+Live SMS receipt, authenticated staging acceptance, native signing and real-device tests are separate gates. The current Google Docs API cannot set native image alt-text attributes. One native description was restored and verified; the other 71 published images retain visible editable captions. The publication record states this limit and does not claim identical accessibility semantics. The newer guide from parallel PR #29 requires its own verified synchronization after that revision merges.
 
 ## Combined backend rollout checks
 
@@ -178,3 +211,21 @@ The combined source also passed the full local `pnpm check`: 1,437 web/backend,
 format check passed. These results cover the existing security repairs, the
 exact-stock follow-up and the retained ecosystem backend; the final account/UI
 merge will be checked again at its final commit.
+
+## Final combined source check — 3 October 2026
+
+The integrated source includes the final account/notification repair commit
+`593dfa2`, all existing ecosystem backend definitions and the stock overflow
+repair. `pnpm check` passed 1,695 web/backend, 49 mobile and 22 desktop tests,
+lint and types. The production build passed with 2,622 static pages, and the
+whole-project format check passed. Regenerating the Better Auth schema produced
+no drift. The frozen lockfile install preserves all three patched Expo consumers;
+their rejected-signature and valid-signing tests passed in this combined run.
+
+The final production dry run passed schema validation with zero index deletions
+and 16 additive indexes, including all nine account/inbox/push indexes. The
+registry audit still reports only the known high node-forge advisory. GitHub's
+advisory still lists no published patched version; the exact upstream backport
+remains installed and tested. Backend deployment, post-deployment session/index
+checks, the final protected merges and the newer cloud guide publication are
+recorded separately after they occur.

@@ -11,23 +11,20 @@ const staticDirectory = path.resolve(repository, ".next/static");
 const styles = readdirSync(path.resolve(staticDirectory, "css")).filter(
   (file) => file.endsWith(".css"),
 );
-const fontClasses = styles
-  .flatMap((file) => {
-    const rules = readFileSync(
-      path.resolve(staticDirectory, "css", file),
-      "utf8",
-    ).split("}");
-    return rules
-      .filter(
-        (rule) =>
-          rule.startsWith(".") &&
-          (rule.includes("{--font-geist:") ||
-            rule.includes("{--font-noto-sans:") ||
-            rule.includes("{--font-noto-mono:")),
-      )
-      .map((rule) => rule.slice(1, rule.indexOf("{")));
-  })
-  .join(" ");
+// Reuse the exact font classes emitted for each locale by this build.
+// This includes its script face, rather than relying on the host OS fallback.
+const builtPages = path.resolve(repository, ".next/server/app");
+const fontClasses = Object.fromEntries(
+  readdirSync(builtPages)
+    .filter((file) => /^[a-z]{2}\.html$/u.test(file))
+    .map((file) => {
+      const html = readFileSync(path.join(builtPages, file), "utf8");
+      const classes = /<html[^>]* class="([^"]+)"/u.exec(html)?.[1];
+      if (!classes)
+        throw new Error(`Built locale has no font classes: ${file}`);
+      return [file.slice(0, -5), classes];
+    }),
+);
 
 export default defineConfig({
   root: directory,
@@ -45,7 +42,9 @@ export default defineConfig({
               .map((file) => `<link rel="stylesheet" href="/css/${file}">`)
               .join("\n"),
           )
-          .replace("APP_FONT_CLASSES", () => fontClasses);
+          .replace("APP_LOCALE_FONTS", () =>
+            JSON.stringify(fontClasses).replaceAll('"', "&quot;"),
+          );
       },
       configureServer(server) {
         server.middlewares.use((request, _response, next) => {

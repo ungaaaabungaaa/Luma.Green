@@ -1,9 +1,9 @@
 "use client";
 
-import { CheckIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import type { MaterialOption } from "./logic";
@@ -18,25 +18,25 @@ function Chip({
   children: ReactNode;
 }) {
   return (
-    <button
+    <Button
       type="button"
+      variant="ghost"
       aria-pressed={isPressed}
       onClick={onPress}
       className={cn(
-        "inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border px-4 text-sm whitespace-nowrap transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+        "min-h-11 shrink-0 gap-2 rounded-none border-0 border-b-2 px-3 text-sm whitespace-nowrap",
         isPressed
-          ? "border-primary bg-accent font-medium text-accent-foreground ring-1 ring-primary ring-inset"
-          : "border-border bg-card hover:bg-muted",
+          ? "border-b-primary text-primary"
+          : "border-transparent text-muted-foreground",
       )}
     >
-      {isPressed ? <CheckIcon aria-hidden className="size-4" /> : null}
       {children}
-    </button>
+    </Button>
   );
 }
 
 /**
- * Material chips above the lots: "All", then each material on sale with how
+ * Material filters above the lots: "All", then each material on sale with how
  * many lots it has. Scrolls sideways on a phone; wraps on wider screens.
  */
 export function MaterialFilter({

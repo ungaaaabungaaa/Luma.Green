@@ -1,11 +1,12 @@
 "use client";
 
 import { LoaderCircleIcon, LocateFixedIcon, StoreIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { EmptyState, ListSkeleton } from "@/components/app/page-parts";
 import { Button } from "@/components/ui/button";
 import { RadioGroup } from "@/components/ui/radio-group";
+import { isLocale, localeMeta } from "@/i18n/locales";
 
 import type { Mode } from "./draft";
 import { ModeChoice } from "./mode-choice";
@@ -102,6 +103,7 @@ export function ShopStep({
 }) {
   const t = useTranslations("sell.shop");
   const { bestId, nearestId } = highlights(shops ?? [], mode);
+  const locale = useLocale();
 
   return (
     <div className="flex flex-col gap-6">
@@ -130,6 +132,7 @@ export function ShopStep({
         ) : null}
         {shops && shops.length > 0 ? (
           <RadioGroup
+            dir={localeMeta[isLocale(locale) ? locale : "en"].dir}
             aria-labelledby="shops-title"
             value={shopId ?? ""}
             onValueChange={onShop}

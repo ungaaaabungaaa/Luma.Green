@@ -108,13 +108,15 @@ actually tested and what this machine still needs.
 All values are optional for local checks. Set values before building or exporting.
 They are public app configuration, not places to put secrets.
 
-| Variable                       | Purpose                                                                                        |
-| ------------------------------ | ---------------------------------------------------------------------------------------------- |
-| `EXPO_PUBLIC_APP_URL`          | Exact HTTPS origin, default `https://app.luma.green`. No path, credentials, query or fragment. |
-| `EXPO_PUBLIC_ALLOW_LOCAL_HTTP` | `1` enables loopback HTTP only in explicit development. Release runtimes reject it.            |
-| `EXPO_PUBLIC_EAS_PROJECT_ID`   | Actual EAS project UUID. When absent, OTA is disabled.                                         |
-| `LUMA_UPDATE_CERTIFICATE`      | Path to the public RSA update-signing certificate, relative to this package or absolute.       |
-| `LUMA_UPDATE_KEY_ID`           | Signing key ID that matches the published update metadata.                                     |
+| Variable                            | Purpose                                                                                                                  |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `EXPO_PUBLIC_APP_URL`               | Exact HTTPS origin, default `https://app.luma.green`. No path, credentials, query or fragment.                           |
+| `EXPO_PUBLIC_ALLOW_LOCAL_HTTP`      | `1` enables loopback HTTP only in explicit development. Release runtimes reject it.                                      |
+| `EXPO_PUBLIC_PUSH_ENABLED`          | `true` enables optional push registration; default is off. Requires a real EAS project.                                  |
+| `LUMA_ANDROID_GOOGLE_SERVICES_FILE` | Build-time path to Firebase public `google-services.json` for `green.luma.app`. Never use a service-account private key. |
+| `EXPO_PUBLIC_EAS_PROJECT_ID`        | Actual EAS project UUID. When absent, OTA is disabled.                                                                   |
+| `LUMA_UPDATE_CERTIFICATE`           | Path to the public RSA update-signing certificate, relative to this package or absolute.                                 |
+| `LUMA_UPDATE_KEY_ID`                | Signing key ID that matches the published update metadata.                                                               |
 
 For simulator development against the root Next dev server:
 
@@ -131,7 +133,7 @@ instead of letting the WebView library automatically open unknown schemes.
 
 `app.config.js` sets the proposed app IDs to `green.luma.app`. Confirm ownership
 before the first signed build; no account or app ID has been registered. It uses
-the repository's branded PNG icons. Permission purpose strings are generated from all 12 root catalogues for iOS
+the repository's branded PNG icons. Permission purpose strings are generated from all 33 root catalogues for iOS
 system dialogs. Supported locales also configure Android language settings; its
 OS owns the standard permission text. Native-speaker/device review is still required.
 The native control strip uses system script fonts; the web app keeps its Noto
@@ -140,13 +142,13 @@ fonts. React Native primitives replace DOM-only shadcn components in this strip.
 ## Shared shell translations
 
 Edit the root `messages/*.json` catalogues. After changing the `native`, `common`
-or `brand` namespace, regenerate the compact committed shell catalogue:
+`brand` or `notifications` namespace, regenerate the compact committed shell catalogue:
 
 ```sh
 pnpm --filter @luma/mobile messages:generate
 ```
 
-`src/messages.json` contains only these three namespaces for every registered
+`src/messages.json` contains only these four namespaces for every registered
 locale. Do not edit it by hand. The mobile tests compare it with the root
 catalogues and fail on stale output. The native bundle imports this compact
 file; its English catalogue import is type-only.
@@ -176,9 +178,35 @@ file; its English catalogue import is type-only.
   the shell language from the locale path. An unprefixed app path means English,
   matching the web router's `as-needed` locale prefix. Test client-side Next navigation on
   both OS versions: Android WebView history events can differ from iOS. There
-  is no injected navigation script or general web-to-native message bridge.
-- There is no push service, universal-link association, custom file-sharing
-  bridge or native account/token store in this package.
+  is no general web-to-native command bridge.
+- Optional push uses a narrow trusted-document bridge. There is no universal-link
+  association, custom file-sharing bridge or native account/token store.
+
+## Optional account notifications
+
+Open Account → Notifications in the hosted app and choose Enable. The native
+shell first explains the choice, then asks for OS permission. Nothing prompts at
+startup. With permission already granted and this installation opted in, a later
+load can refresh its token without another prompt. The web app binds the token
+to the current authenticated profile; sign-out revokes that installation first.
+A failed revoke keeps the session open so the person can retry.
+
+The bridge accepts only `luma.push.enable` and `luma.push.status` from the exact
+trusted document. It returns a result to that document only; navigation and
+unmount discard stale work. Tokens are never logged or put in browser storage.
+A separate random installation ID contains no identity or token. Provider keys
+remain on Convex. The lock-screen notice contains generic translated copy;
+its tap always opens the protected localised inbox. Remote payloads cannot pick
+a URL or private record. Repeated taps reopen the inbox even after navigating
+elsewhere. Foreground mobile banners are suppressed while the inbox is active.
+
+The module and config plugin are included, but push stays off without
+`EXPO_PUBLIC_PUSH_ENABLED=true`, a valid EAS project and configured backend.
+Android also needs the matching public Firebase client file at the path supplied
+through `LUMA_ANDROID_GOOGLE_SERVICES_FILE`. APNs/FCM credentials are held by EAS;
+they are not that public file. Adding this module requires a new native build,
+not an update to an older binary. Use a development build to test it, not Expo Go.
+See the [account and push setup steps](../../docs/operations/app-releases.md#notification-setup).
 
 ## Updates and releases
 
@@ -253,7 +281,11 @@ release config, malformed signing inputs and the explicit update-restart rule.
 Typecheck and both JS exports are local proof only. The existing web E2E suite
 covers shared browser flows; it does not replace these checks in native binaries:
 
-- Phone login, app close/reopen, expired session, sign-out, and network loss.
+- Phone login, optional authenticator/recovery code, app close/reopen, expired session, sign-out, and network loss.
+- Notification allow, deny, slow approval, disabled OS settings, token renewal,
+  sign-out/re-login and account switching. Test foreground/background/cold-start
+  taps and two taps separated by normal page navigation. Check generic lock-screen
+  text, inbox authorisation and network failure during revoke.
 - File picker, camera allow/deny, JPEG/PNG preparation and iPhone HEIC rejection.
 - Location allow/deny, approximate location, and disabled OS location services.
 - Admin handoff with a fresh browser login; private document viewing there.
