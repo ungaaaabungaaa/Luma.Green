@@ -116,37 +116,45 @@ before the next build. This prevents later builds from losing your changes.
 
 ## Google Docs copy
 
-Current publication state is recorded in [cloud.json](cloud.json). The current
-security and industry API revision is **pending publication**. The existing native
-[Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
-remains at its last verified revision. Its document ID and sharing settings are
-unchanged. No cloud update was performed for this local revision.
+Current publication state is recorded in [cloud.json](cloud.json). The reviewed
+security and industry API revision from main commit `2ba8246` is **published** to
+the existing native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY).
+Its document ID, folder and sharing settings are unchanged.
 
-The last verified import contained all 37 chapters, six tables and 51 inline
-images. Native readback matched the reviewed Word body and table text, with three
-native date fields. The corresponding Word file had 56 visually reviewed pages.
-Its DOCX hash, native readback hash, revision ID and verification details remain
-under `last_verified_revision` in `cloud.json`. They describe that earlier
-publication, not the current local source or Word rebuild.
+The native copy contains all 38 chapters, six tables, 548 body paragraphs and 72
+image placements from the reviewed Word source. Readback checked every paragraph,
+table cell, image source URL and image dimension. Three exact dates remain native
+date fields. The Word source has 76 reviewed pages; the native Google Docs PDF has
+78 reviewed pages because native typography and pagination differ. Every native
+PDF page was inspected. Native page breaks keep the mobile demonstration and
+verification-queue explanation with their related content.
 
-The connected `google_drive_import_document` action creates a new document.
-The connected `update_file` action does not accept raw DOCX replacement of an
-existing native Google Doc. These actions therefore cannot complete the required
-in-place update while preserving this document ID. Do not create a replacement
-document or change the link. Keep the reviewed local DOCX and report this update
-as pending until a supported in-place native document workflow is available.
+One accessibility difference remains explicit: the Google Docs batch-update API
+does not expose a setter for embedded image title/description alt text. The 72
+image descriptions remain as visible editable captions. Do not claim that native
+image-alt semantics match the Word source. See the [current request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
 
-For the first import only, the sanitized and visually reviewed DOCX can use
-`google_drive_import_document` with `upload_mode: "native_google_docs"`. After
-that import, every revision must reuse the recorded native document ID and
-preserve its sharing settings. Do not reconstruct the guide in an empty Google
-Doc. Verify native text, structure and images after any supported update before
-marking the current revision as published.
+For each later revision, update this same native document through the dedicated
+Google Docs batch-update action. First compare its current revision with the last
+verified record; preserve or reconcile any later human edits. Use revision guards,
+retain the tab and table structures, and apply the reviewed source changes in
+bounded batches. Use the committed screenshot bytes or immutable source URLs.
+Verify all body and table text, native dates, headings and image placements after
+writing. Export the native PDF, inspect every page, repair layout issues, then
+record the exact source hash, native revision and verification in `cloud.json`.
+Keep any unmerged or unreviewed revision pending.
 
-A manually uploaded Word document can also be opened in Google Docs by its
-owner, but a new copy does not update the existing guide. Any edits made in the
-native document must return to `guide.md` before the next local rebuild. No
-automatic cloud synchronization is configured.
+The connected `google_drive_import_document` action creates a new document and
+is only for the first import. The connected `update_file` action cannot replace a
+native Google Doc with raw DOCX bytes. Neither action is the in-place update path.
+Do not create a replacement document or change the link or sharing settings.
+
+For the first import only, use the sanitized and visually reviewed DOCX with
+`google_drive_import_document` and `upload_mode: "native_google_docs"`. A manually
+uploaded Word document opened in Google Docs creates a different copy; it does
+not update this guide. Any edits made in the native document must return to
+`guide.md` before the next local rebuild. No automatic cloud synchronization is
+configured.
 
 ## Screenshot and privacy rules
 
