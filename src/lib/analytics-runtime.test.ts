@@ -278,3 +278,23 @@ describe("PostHog data minimization", () => {
     },
   );
 });
+
+// The provider can fail to initialize even when the module was downloaded.
+it("retries a failed PostHog initialization on the next permitted visit", async () => {
+  const vendor = fakePosthog();
+  vendor.client.init.mockImplementationOnce(() => {
+    throw new Error("Provider initialization unavailable");
+  });
+  vi.doMock("posthog-js", () => ({ default: vendor.client }));
+  granted();
+  const { recordPageView } = await import("./analytics-runtime");
+  await expect(recordPageView("/prices", "en")).rejects.toThrow(
+    "Provider initialization unavailable",
+  );
+  expect(vendor.client.capture).not.toHaveBeenCalled();
+  await recordPageView("/prices", "en");
+  expect(vendor.client.capture).toHaveBeenCalledExactlyOnceWith("$pageview", {
+    page: "/prices",
+    locale: "en",
+  });
+});

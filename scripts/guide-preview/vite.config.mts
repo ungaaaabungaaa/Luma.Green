@@ -61,6 +61,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: [
+      {
+        find: "@/components/providers/convex-provider",
+        replacement: path.resolve(directory, "provider.tsx"),
+      },
       { find: "next/image", replacement: path.resolve(directory, "image.tsx") },
       {
         find: "next-intl/server",

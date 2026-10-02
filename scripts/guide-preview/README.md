@@ -62,6 +62,29 @@ page.
 
 ## Isolation and adapters
 
+### Failure recovery matrix
+
+Run `GUIDE_FIXTURE_ORIGIN=http://127.0.0.1:3217 node scripts/guide-preview/capture-failures.mjs`
+against this isolated Vite server. Each named browser test uses the actual
+component and local adapters. Requests reject without a backend, except the
+synthetic transition from password entry to the authenticator input. This
+transition creates no session. External requests are blocked.
+
+The matrix captures phone (390 px), tablet (768 px) and desktop (1440 px), in
+light and dark themes. Login, authenticator and setup remain English only.
+File deletion, draft deletion, sign-out, support limits and unsafe trade totals
+also run in Arabic. The setup captures show the empty token field and form
+layout only; they do not show a failed or successful account creation.
+Password and token fields are empty in every retained capture. No QR key,
+backup code, real contact detail or customer file is used.
+
+`docs/user-guide/failure-captures.json` records component/adapter hashes and
+the hashes of the original `screenshots/failure-*.png` browser output. The
+guide freshness test checks all 78 views. Each browser test verifies error
+feedback, retained data or setup controls, retry availability where applicable,
+document direction, no horizontal overflow and no page error. The captures
+are fixture evidence, not authentication, permission or provider proof.
+
 - `main.tsx` imports actual `ConsoleShell`, `AppShell`, `JoinLayout` and page components.
 - `fixtures.ts` contains sample data, with typed contracts for the main records.
 - `queries.ts` replaces Convex hooks only in this Vite configuration. It creates

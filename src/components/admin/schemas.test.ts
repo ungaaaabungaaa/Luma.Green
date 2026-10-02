@@ -11,6 +11,7 @@ const profile = {
 
 const account = {
   ...profile,
+  setupToken: "test-only-setup-token-at-least-32-characters",
   email: "admin@luma.test",
   password: "correct horse battery",
   confirmPassword: "correct horse battery",

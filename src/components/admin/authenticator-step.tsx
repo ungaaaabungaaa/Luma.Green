@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import QRCode from "qrcode";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -47,19 +47,30 @@ export function AuthenticatorStep({
     };
   }, [totpURI]);
 
+  const checking = useRef(false);
+
   async function verify(value: string) {
+    if (checking.current) return;
+    checking.current = true;
     setBusy(true);
     setError(null);
-    const { error: authError } = await authClient.twoFactor.verifyTotp({
-      code: value,
-    });
-    if (!authError) {
-      onVerified();
-      return;
+    try {
+      const { error: authError } = await authClient.twoFactor.verifyTotp({
+        code: value,
+      });
+      if (!authError) {
+        onVerified();
+        return;
+      }
+      setCode("");
+      setError(codeErrorMessage(authError).message);
+    } catch {
+      setCode("");
+      setError(codeErrorMessage({}).message);
+    } finally {
+      checking.current = false;
+      setBusy(false);
     }
-    setBusy(false);
-    setCode("");
-    setError(codeErrorMessage(authError).message);
   }
 
   return (

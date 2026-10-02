@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
 import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { prepareUpload } from "@/lib/upload-image";
@@ -112,6 +113,23 @@ export function FileSlot({
   const t = useTranslations("join.files");
   const format = useFormatter();
   const remove = useMutation(api.applicationFiles.remove);
+  const common = useTranslations("common");
+  const removing = useRef(false);
+  const [isRemoving, setIsRemoving] = useState(false);
+
+  async function removeFile(fileId: Id<"applicationFiles">) {
+    if (removing.current) return;
+    removing.current = true;
+    setIsRemoving(true);
+    try {
+      await remove({ fileId });
+    } catch {
+      toast.error(common("error"));
+    } finally {
+      removing.current = false;
+      setIsRemoving(false);
+    }
+  }
   const input = useRef<HTMLInputElement>(null);
   const { upload, uploading, problem } = useUploader(type);
 
@@ -159,8 +177,9 @@ export function FileSlot({
                 variant="ghost"
                 size="icon-lg"
                 aria-label={`${t("remove")}: ${file.name}`}
+                disabled={isRemoving || uploading > 0}
                 onClick={() => {
-                  void remove({ fileId: file.id });
+                  void removeFile(file.id);
                 }}
               >
                 <XIcon aria-hidden />
@@ -191,7 +210,7 @@ export function FileSlot({
             type="button"
             variant="outline"
             className="h-12"
-            disabled={uploading > 0}
+            disabled={uploading > 0 || isRemoving}
             onClick={() => input.current?.click()}
           >
             <PickIcon isUploading={uploading > 0} isCamera={Boolean(capture)} />

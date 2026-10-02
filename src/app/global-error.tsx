@@ -22,19 +22,24 @@ const serverPath = () => "/";
 /** Root-layout failures cannot rely on the normal translation/provider tree. */
 export default function GlobalError({
   error,
-  reset,
+  retry,
 }: {
   error: Error & { digest?: string };
-  reset: () => void;
+  retry: () => void;
 }) {
   const pathname = useSyncExternalStore(subscribe, clientPath, serverPath);
   const copy = monitoringErrorCopy(pathname);
 
   useEffect(() => {
     if (!isMonitoringEnabled()) return;
-    void import("@sentry/nextjs").then((Sentry) => {
-      Sentry.captureException(error);
-    });
+    void import("@sentry/nextjs")
+      .then((Sentry) => {
+        Sentry.captureException(error);
+      })
+      .catch(() => {
+        // Optional reporting must never disable the recovery screen.
+        console.error("Error reporting is unavailable.");
+      });
   }, [error]);
 
   return (
@@ -54,7 +59,7 @@ export default function GlobalError({
           <h1 className="text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
             {copy.error}
           </h1>
-          <Button size="lg" onClick={reset}>
+          <Button size="lg" onClick={retry}>
             <RotateCwIcon aria-hidden />
             {copy.retry}
           </Button>

@@ -26,7 +26,7 @@ import { useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 import { api } from "../../../convex/_generated/api";
-import { paiseFor, requiresEwayBill } from "../../../convex/lib/chain";
+import { requiresEwayBill, safePaiseFor } from "../../../convex/lib/chain";
 import { type MarketErrorKey, marketErrorKey } from "./errors";
 import { kgFieldValue, parseKg } from "./logic";
 import type { ListingView } from "./types";
@@ -81,6 +81,23 @@ export function BuyButton({
   );
 }
 
+function fieldMessageKey(error: string | undefined) {
+  switch (error ?? "") {
+    case "kgInvalid": {
+      return "buy.kgInvalid";
+    }
+    case "kgTooMuch": {
+      return "buy.kgTooMuch";
+    }
+    case "totalInvalid": {
+      return "totalInvalid";
+    }
+    default: {
+      return "buy.kgHint";
+    }
+  }
+}
+
 function BuyForm({
   listing,
   material,
@@ -105,9 +122,17 @@ function BuyForm({
           .refine(
             (value) => (parseKg(value) ?? 0) <= listing.grams,
             "kgTooMuch",
-          ),
+          )
+          .refine((value) => {
+            const grams = parseKg(value);
+            return (
+              grams === null ||
+              grams > listing.grams ||
+              safePaiseFor(grams, listing.askPaisePerKg) !== null
+            );
+          }, "totalInvalid"),
       }),
-    [listing.grams],
+    [listing.grams, listing.askPaisePerKg],
   );
   const {
     control,
@@ -123,7 +148,7 @@ function BuyForm({
   const grams = parseKg(useWatch({ control, name: "kg" }));
   const total =
     grams !== null && grams <= listing.grams
-      ? paiseFor(grams, listing.askPaisePerKg)
+      ? safePaiseFor(grams, listing.askPaisePerKg)
       : null;
   const available = format.weight(listing.grams);
   const price = format.perKg(listing.askPaisePerKg);
@@ -217,12 +242,7 @@ function BuyForm({
             fieldError ? "text-destructive" : "text-muted-foreground",
           )}
         >
-          {t(
-            fieldError === "kgInvalid" || fieldError === "kgTooMuch"
-              ? `buy.${fieldError}`
-              : "buy.kgHint",
-            { weight: available },
-          )}
+          {t(fieldMessageKey(fieldError), { weight: available })}
         </p>
       </div>
 
@@ -241,7 +261,9 @@ function BuyForm({
           </span>
         </div>
         <span className="text-2xl font-semibold tracking-tight tabular-nums">
-          {format.money(total ?? 0)}
+          {total === null && grams !== null && grams <= listing.grams
+            ? t("totalInvalid")
+            : format.money(total ?? 0)}
         </span>
       </div>
 

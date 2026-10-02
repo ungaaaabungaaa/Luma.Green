@@ -19,6 +19,95 @@ const hash = (file: string) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
 
 describe("the mandatory platform guide", () => {
+  it("keeps the synthetic failure matrix aligned with its source and original browser pixels", () => {
+    const evidence = JSON.parse(
+      readFileSync("docs/user-guide/failure-captures.json", "utf8"),
+    ) as {
+      sourceHashes: Record<string, string>;
+      screenshots: {
+        file: string;
+        sha256: string;
+        scenario: string;
+        locale: string;
+        theme: string;
+        viewport: { width: number; height: number };
+        provenance: string;
+        checks: string[];
+      }[];
+    };
+    expect(Object.keys(evidence.sourceHashes)).toEqual(
+      expect.arrayContaining([
+        "src/components/admin/admin-setup.tsx",
+        "src/components/admin/admin-login.tsx",
+        "src/components/auth/use-sign-out.ts",
+        "src/components/join/file-slot.tsx",
+        "src/components/join/status-view.tsx",
+        "src/components/help/contact-schema.ts",
+        "src/components/market/listing-card.tsx",
+        "src/components/market/buy-dialog.tsx",
+        "convex/lib/chain.ts",
+        "src/components/market/logic.ts",
+        "messages/en.json",
+        "messages/ar.json",
+        "src/components/app/format.ts",
+        "src/components/admin/format.ts",
+        "src/lib/money-format.ts",
+        "scripts/guide-preview/auth.ts",
+        "scripts/guide-preview/provider.tsx",
+        "scripts/guide-preview/queries.ts",
+      ]),
+    );
+    for (const [file, expected] of Object.entries(evidence.sourceHashes)) {
+      expect(hash(file), `${file}: recapture the failure matrix`).toBe(
+        expected,
+      );
+    }
+    const expectedNames = new Set<string>();
+    for (const scenario of [
+      "login",
+      "totp",
+      "setup",
+      "file",
+      "discard",
+      "signout",
+      "support",
+      "market",
+    ]) {
+      const locales = ["login", "totp", "setup"].includes(scenario)
+        ? ["en"]
+        : ["en", "ar"];
+      for (const locale of locales)
+        for (const theme of ["light", "dark"])
+          for (const size of ["phone", "tablet", "desktop"])
+            expectedNames.add(
+              `screenshots/failure-${scenario}-${locale}-${theme}-${size}.png`,
+            );
+    }
+    expect(
+      new Set(evidence.screenshots.map((capture) => capture.file)),
+    ).toEqual(expectedNames);
+    expect(evidence.screenshots).toHaveLength(expectedNames.size);
+    for (const capture of evidence.screenshots) {
+      expect(hash(`docs/user-guide/${capture.file}`), capture.file).toBe(
+        capture.sha256,
+      );
+      expect(capture.provenance).toContain("synthetic local failure fixture");
+      expect(capture.provenance).toContain(
+        "no live authentication, writes or provider execution",
+      );
+      expect(capture.checks).toEqual(
+        expect.arrayContaining([
+          "no page error",
+          "no horizontal overflow",
+          "empty password and token fields",
+          "document direction",
+          "loaded fonts",
+        ]),
+      );
+      expect([390, 768, 1440]).toContain(capture.viewport.width);
+    }
+  });
+
   it("keeps public role photograph captures aligned with the displayed source", () => {
     const evidence = JSON.parse(
       readFileSync("docs/user-guide/showcase-captures.json", "utf8"),
@@ -183,6 +272,9 @@ describe("the mandatory platform guide", () => {
         "src/components/ui/chart.tsx",
         "src/components/admin/pilot/pilot-charts.tsx",
         "src/lib/fonts.ts",
+        "src/lib/money-format.ts",
+        "src/components/app/format.ts",
+        "src/components/admin/format.ts",
         "scripts/guide-preview/main.tsx",
         "scripts/guide-preview/queries.ts",
         "src/app/[locale]/(join)/layout.tsx",

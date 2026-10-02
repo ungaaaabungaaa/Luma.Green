@@ -1,9 +1,12 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
+import { toast } from "sonner";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import type { Id } from "../../../convex/_generated/dataModel";
 import messages from "../../../messages/en.json";
 import { FileSlot } from "./file-slot";
+import type { FileSummary } from "./use-mine";
 
 const { prepare, generateUrl, attach } = vi.hoisted(() => ({
   prepare: vi.fn(),
@@ -11,6 +14,7 @@ const { prepare, generateUrl, attach } = vi.hoisted(() => ({
   attach: vi.fn(),
 }));
 vi.mock("@/lib/upload-image", () => ({ prepareUpload: prepare }));
+vi.mock("sonner", () => ({ toast: { error: vi.fn() } }));
 vi.mock("convex/react", () => ({
   useMutation: () => generateUrl,
   useAction: () => attach,
@@ -21,12 +25,12 @@ afterEach(() => {
   vi.clearAllMocks();
 });
 
-function renderSlot() {
+function renderSlot(files: FileSummary[] = []) {
   render(
     <NextIntlClientProvider locale="en" messages={messages}>
       <FileSlot
         type="id_proof"
-        files={[]}
+        files={files}
         label="Photo ID"
         hint="Choose your ID"
       />
@@ -36,6 +40,29 @@ function renderSlot() {
 }
 
 describe("document uploads", () => {
+  it("keeps an attachment visible and restores remove after a failed deletion", async () => {
+    generateUrl.mockRejectedValueOnce(new Error("Private storage failure"));
+    renderSlot([
+      {
+        id: "fixture-file" as Id<"applicationFiles">,
+        type: "id_proof",
+        name: "fixture.pdf",
+        size: 123,
+        contentType: "application/pdf",
+      },
+    ]);
+    const remove = screen.getByRole("button", {
+      name: `${messages.join.files.remove}: fixture.pdf`,
+    });
+    fireEvent.click(remove);
+    await waitFor(() => {
+      expect(toast.error).toHaveBeenCalledExactlyOnceWith(
+        messages.common.error,
+      );
+    });
+    expect(screen.getByText("fixture.pdf")).toBeVisible();
+    expect(remove).toBeEnabled();
+  });
   it("uploads the prepared bytes and correct content type and name", async () => {
     const original = new File(["original"], "id.png", { type: "image/png" });
     const smaller = new File(["small"], "id.jpg", { type: "image/jpeg" });

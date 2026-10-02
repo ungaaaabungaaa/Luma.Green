@@ -1,0 +1,1682 @@
+{
+  "capturedAt": "2026-10-02T07:41:40.072Z",
+  "sourceCommit": "c1ed004745af737694fcd6b3ae4df631adc83c27",
+  "sourceHashes": {
+    "messages/en.json": "9a08659dbe75b4b54857238240ec7b7763a9a0e4f2191c83210820333102a118",
+    "messages/ar.json": "72ac38f37b2c8d4f444f47dffa93d50b36b775ea0ab2c6fda36c30d206aaab42",
+    "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
+    "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
+    "src/components/admin/errors.ts": "1f03c871bd52ab67b1743c25b9249484ae8a8e4dfb715b78912aa5174399d5f4",
+    "src/components/admin/schemas.ts": "189983590a9c558bfdfd02fcb440544f01a7af040e7c1afda60eccf95c41745f",
+    "src/components/admin/code-input.tsx": "0bf7328272f132648b7d4976c48bebb69993d538d5fcde05ce544d6f5a195bae",
+    "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
+    "src/components/admin/format.ts": "84cc6603eb2d483603a8b816ee5d303cbacd846cf54151b90cd848f51c3feb02",
+    "src/lib/money-format.ts": "f3cf7e5ade380ef829757b8dced8419143f545372df6af1e7515f970242ee2f4",
+    "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
+    "src/components/ui/input.tsx": "3417db3d25a5fbc95792c2f8d49cfce5190b51640da196f74246f5cae5c4f7ea",
+    "src/components/ui/dialog.tsx": "9cee303ad5afb2d5b5e22c2219d972b54f656e66c4ac2157f9e1b6d126b53f12",
+    "src/components/ui/sonner.tsx": "4256466d8850445be4b7da50702fdb3f0ca3931c54f391f8671c4142bf4e6a24",
+    "scripts/guide-preview/capture-failures.mjs": "57d2f2f5a2fd4c63b6634533654f04573de091a347f78124772a2a4e03954de1",
+    "src/components/admin/admin-login.tsx": "a723970b423a3e51c47b28962eeeeb78f6ce9687d1597b77e286263731d97446",
+    "src/components/admin/admin-setup.tsx": "5d90fa3815019e017a1b874c6256aee9a23d5182241fc744bbaa854ee7df8cec",
+    "src/components/admin/authenticator-step.tsx": "157e073701eebf0f38f3b5e9d7586b7b5bf7cc7773accb6c97c1399e8114bd41",
+    "src/components/admin/auth-shell.tsx": "5bea6f074ce9879f9c85d920e12a328343bb4e983f9025bffa77ae838be69699",
+    "src/components/auth/use-sign-out.ts": "1a3502714aa58427be17bf6285ee927fac905c91596f5a51e64ae3e4ceae0111",
+    "src/components/join/status-view.tsx": "a9e2c89cb041f9c50de61a64437a4242f5f6804e7e10f6c1dbe960eab86c76ea",
+    "src/components/join/file-slot.tsx": "589ad966f51293f545a4913cffb63132ea2a3de60ef329cfb94b4d99081e5bce",
+    "src/components/app/app-shell.tsx": "1f2d7d6b9af7cb42d05b3babc1839ca7567bd5506149271cb1a5aab07fcc3b3c",
+    "src/components/help/contact-form.tsx": "5560f74f7a1fe7d402293406978d4a9eae1b360e434cd6fa9538d6f90f4874e1",
+    "src/components/help/contact-schema.ts": "b6ff7ad0260b769ff07720f4814a5407b93c8d49750252cbcdda319a999ed5d2",
+    "src/components/theme/theme-provider.tsx": "16099dee8a247ce40bb5d410fc0a6ae58de226e89071fea987cef5114e6842c0",
+    "src/components/market/listing-card.tsx": "828036f53b4fdf46cb1fddadf0b5907cb9213f673a0b091e945ec86edfb6b979",
+    "src/components/market/buy-dialog.tsx": "86d7ba147175539cd4b693e434a3278bd4890678ce786119239fc24e9e0aae70",
+    "convex/lib/chain.ts": "b76b7b92c7fe49d7b2abd2782b466dc3c389e6923291b5cf48bfbcb31f461485",
+    "src/components/market/logic.ts": "80413392068ebc916460ab8a32cf2f3f7ca17e85b1973c1a056d0d9eadac2b4b",
+    "scripts/guide-preview/failure.tsx": "65e0a0339be26e730697a4ecbdab623b4e5fe696fa26e0df7103d582dd600a3d",
+    "scripts/guide-preview/auth.ts": "b38dd6203ec24111705b2f999cd67f49d2db266c5b2aea2169ab0f99f35b24a3",
+    "scripts/guide-preview/provider.tsx": "5618d0bea1ee899410422bcffb87c5373c95b59b52c03b6789933ec96260536d",
+    "scripts/guide-preview/queries.ts": "85e78c647ca85bdaf4aa7669f0d18a5d1370d14101f6015a39c126b50eb5f346",
+    "scripts/guide-preview/vite.config.mts": "42eeb4c19e18c2dfc2fa39ee18a7c1e21cd3e11ca339e4fe13b39a44d67fd045"
+  },
+  "origin": "http://127.0.0.1:3217",
+  "screenshots": [
+    {
+      "file": "screenshots/failure-login-en-light-phone.png",
+      "route": "/failure.html?scenario=login&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "login",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "0a2f39372d4c6e8a3ca12f53d61fa9d9a7d545475a2ea69c205cf2e747d6d17a",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-login-en-light-tablet.png",
+      "route": "/failure.html?scenario=login&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "login",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "5923695f18a83eae09bdf91576da5fc527337adff5e314e418dbf2b19b82704c",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-login-en-light-desktop.png",
+      "route": "/failure.html?scenario=login&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "login",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "9ccc77a7b730e3eaca83c5bb7e4e3b3892c6a9207dcf74958093941f7fb93580",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-login-en-dark-phone.png",
+      "route": "/failure.html?scenario=login&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "login",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "4fe8ddd6720a184961068387447861536b08832519ef7de124f3c7d2670deaa7",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-login-en-dark-tablet.png",
+      "route": "/failure.html?scenario=login&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "login",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "27edf9c5f028a6dc46105b1f42150354f24e4aded5ced8d7e7c6fbdfe8713cea",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-login-en-dark-desktop.png",
+      "route": "/failure.html?scenario=login&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "login",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "75f5e9646a02eae4cc79009c9732ea77562ee7006ff190491269b73396f08f69",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-totp-en-light-phone.png",
+      "route": "/failure.html?scenario=totp&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "totp",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "343949559204c1d292b368bf61b922bbc7fd3fb662c36be182101505b6d3cab4",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-totp-en-light-tablet.png",
+      "route": "/failure.html?scenario=totp&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "totp",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "c89579415f400f070943186d567a7749c9c0072b7ad4a3079b658b492ded51b5",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-totp-en-light-desktop.png",
+      "route": "/failure.html?scenario=totp&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "totp",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "74d283f7ddd25c61140bbeb3feba6b557a211e3d67b8f6454c4c81b6e86ea42b",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-totp-en-dark-phone.png",
+      "route": "/failure.html?scenario=totp&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "totp",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "fd12d20494227d0f94c00b86e1726bc15a418c3c567998627b8a64f864ad92f1",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-totp-en-dark-tablet.png",
+      "route": "/failure.html?scenario=totp&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "totp",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "5033d0b9548a6580f77cd9e531593c713fcd93f7e787a3680f3c71424937521d",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-totp-en-dark-desktop.png",
+      "route": "/failure.html?scenario=totp&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "totp",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "8e48946851b12e90af8eb4a9c8277eecf15eeb49f19afcb5db3765fc66d4caac",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-setup-en-light-phone.png",
+      "route": "/failure.html?scenario=setup&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "setup",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "99637d88a62f295d3967a5ca15535f1ac08f30416b3789200605c0d0be9a0698",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-setup-en-light-tablet.png",
+      "route": "/failure.html?scenario=setup&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "setup",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "119a31e1b5308951a393e871a0773a130c0de5308d8f502aa11bce0c61ec8318",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-setup-en-light-desktop.png",
+      "route": "/failure.html?scenario=setup&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "setup",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "004c860b5934a1cb0089c3a165cdb299f3eb368d489e0a500428b96faa8c4777",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-setup-en-dark-phone.png",
+      "route": "/failure.html?scenario=setup&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "setup",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "59eb556e74f78c0b74f9b89a64a541fa074574bb5a49e9989ff099d87678996b",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-setup-en-dark-tablet.png",
+      "route": "/failure.html?scenario=setup&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "setup",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "8d4cc9968b7a6ed6fb3bbb47b7d0a3aff023e1a828b292880090a3b70f738101",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-setup-en-dark-desktop.png",
+      "route": "/failure.html?scenario=setup&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "setup",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "5342176561c2086e85b84f76ecaa999a9fc8a5256d3ec08250c3728de4f6379d",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-en-light-phone.png",
+      "route": "/failure.html?scenario=file&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "2fb7fd7789c411e879faa505c8b5caf5338b8996207516576ec9ec3f3d3db350",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-en-light-tablet.png",
+      "route": "/failure.html?scenario=file&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "ebe51d076d8ab767447392347fdd3e30fc12dce8cdb97ae923be134a1077bd3c",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-en-light-desktop.png",
+      "route": "/failure.html?scenario=file&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "842e4fc3913724e549b0fe009f5108a91e8e70ca40bf2be8c6d936184532b357",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-en-dark-phone.png",
+      "route": "/failure.html?scenario=file&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "19205f37b68a196379508e6d5befa3965a99d73e90c7dee1d806fe0623244ec4",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-en-dark-tablet.png",
+      "route": "/failure.html?scenario=file&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "a40ec6854fb53a1a85e9105abcc90c437925ad606f1c0b98c4276570d670a68e",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-en-dark-desktop.png",
+      "route": "/failure.html?scenario=file&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "1fb490b9e9b01d97ee5e07f8f2898a17eb22c03d4d9e7b02baa1a718496ef356",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-ar-light-phone.png",
+      "route": "/failure.html?scenario=file&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "84da669a0deb0f8f94713b5b3fe2768b7795de79af46bc49b2ecef115c04be54",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-ar-light-tablet.png",
+      "route": "/failure.html?scenario=file&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "a1ae93a37862c9825bb45de551fdfefdbad74d15fc1490faec748a62a9ca9648",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-ar-light-desktop.png",
+      "route": "/failure.html?scenario=file&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "7b6a599f3b366f6de989ecab9bfd961d03bc02713d2d70c1d4f296108096bb02",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-ar-dark-phone.png",
+      "route": "/failure.html?scenario=file&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "8697e97ddab78d36237a9f628dcf6578678498b5b3f5eb15a1ac0a5a811d88f7",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-ar-dark-tablet.png",
+      "route": "/failure.html?scenario=file&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "3fb811d2cf5a1c64d1471b2867073ecd837d7cc4762dfff09f2bd2234ff58f12",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-file-ar-dark-desktop.png",
+      "route": "/failure.html?scenario=file&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "file",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "22d334b5d409ac1d0793ffb0177280e116b8fb5f9868f82b5a2bfbe8bdb91545",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-en-light-phone.png",
+      "route": "/failure.html?scenario=discard&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "7e4c2ff9b7293f5fb5b789b6f93c259d84d62a2d34a8e76c6fcf21f541a0e077",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-en-light-tablet.png",
+      "route": "/failure.html?scenario=discard&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "f392dcc4242c5d69bbb0c19384403704611977103d6c9bc2a2bd3e80f80912bb",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-en-light-desktop.png",
+      "route": "/failure.html?scenario=discard&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "b6da2718eac7833d8161d715ee91678cf891a6c9197a0aba63c10265bf6e9478",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-en-dark-phone.png",
+      "route": "/failure.html?scenario=discard&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "6b7afc7721e3c39195e5e08570f6ba52382cbe49fd1100ceeea3850c9f228a35",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-en-dark-tablet.png",
+      "route": "/failure.html?scenario=discard&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "24888db241c8543cdde52e672c4a36c4b50d669c77a79103dac3ff7bc932c3b8",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-en-dark-desktop.png",
+      "route": "/failure.html?scenario=discard&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "3d5d43b9dc3c694e09bb14c53616e97311368be3c30ff28872a972299e0bd853",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-ar-light-phone.png",
+      "route": "/failure.html?scenario=discard&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "0af4d677033226fe712d1f56d1c5bbf5db50dd32ad61b5cb0274b1d35a2df089",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-ar-light-tablet.png",
+      "route": "/failure.html?scenario=discard&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "00c6e115a51c9d8af4e22cb800c1cd4e6e7e7d1ec5e0efe25c66d565ac24fdbb",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-ar-light-desktop.png",
+      "route": "/failure.html?scenario=discard&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "71e9390f64e310e1f8eeedcd2dd696a5e44e14f3992c63e9863488e346a45b2a",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-ar-dark-phone.png",
+      "route": "/failure.html?scenario=discard&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "2398a7e69820d530d789818094a3b13ea0d6fa2b9761a9a9a121f2d91337136a",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-ar-dark-tablet.png",
+      "route": "/failure.html?scenario=discard&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "24f19f64603932b479dc4cb89c6c8e07dcffaf849b7fa24df9d3f4e9300c1782",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-discard-ar-dark-desktop.png",
+      "route": "/failure.html?scenario=discard&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "discard",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "abb1b26f13632957ee5c885b39c7ffdde772bc0ec087880ff53a10d9e5d73d66",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-en-light-phone.png",
+      "route": "/failure.html?scenario=signout&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "7e45b8c541a5da9c1b82716e726f0cd241226fd8736fc3677c4ec72aa490d017",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-en-light-tablet.png",
+      "route": "/failure.html?scenario=signout&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "de94756204c90e3bba6b65b39895309925ed340bf2557defb97271fdfffd385f",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-en-light-desktop.png",
+      "route": "/failure.html?scenario=signout&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "8a480d205a236e68b625597e171e39b68df1d40ed616aa8332bb526720a640f9",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-en-dark-phone.png",
+      "route": "/failure.html?scenario=signout&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "141ac7e9b6b6c97107e965735e18e3590bdc41df43fa5b7f777329b4056dd8ae",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-en-dark-tablet.png",
+      "route": "/failure.html?scenario=signout&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "d4dd8e2c617e6dcde585d0ab6f2317f800ccf1d9f83a36e8a3017b108c154d81",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-en-dark-desktop.png",
+      "route": "/failure.html?scenario=signout&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "189f4fdfebc4add185021056680f6f8e8caa4f7c9c2ee584d2ce2e4c23e5ea00",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-ar-light-phone.png",
+      "route": "/failure.html?scenario=signout&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "c395277fe3982d5c7cd600c892c963780640111f97b0c4acd5d393d9c364c177",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-ar-light-tablet.png",
+      "route": "/failure.html?scenario=signout&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "a11df08c1ba4f29cf405df7cf9d6cbcaf6ab0a244465bdd5fd2980a60610c351",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-ar-light-desktop.png",
+      "route": "/failure.html?scenario=signout&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "0b446965809eacc939ee3025bbc73b26a7a78417141a545105b54f424b346833",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-ar-dark-phone.png",
+      "route": "/failure.html?scenario=signout&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "86b7851d21c7d534ad9f4ca65e9b17f049728d29b169008b0016ce79d5f4ada9",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-ar-dark-tablet.png",
+      "route": "/failure.html?scenario=signout&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "1d0034ab5d912d91257deee3dd93534c5b6f81c9af5b53f34d67d32621b3c4a5",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-signout-ar-dark-desktop.png",
+      "route": "/failure.html?scenario=signout&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "signout",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "4ab5a509d6b35c246cd55ffd8e8dea4cb6f18de22278bf45b1102eb43cb3ac1b",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-en-light-phone.png",
+      "route": "/failure.html?scenario=support&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "400536cf09a9363b44cb6e56ccbb10f94711c80675d9583b5168278b2957cff9",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-en-light-tablet.png",
+      "route": "/failure.html?scenario=support&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "0af6a4dd582a9fdf4c26d0e178f2097c3794583f4fa50ffae79a61a88e74f7d8",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-en-light-desktop.png",
+      "route": "/failure.html?scenario=support&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "0c1b42009cae704609cfa2c6ea4f11a66c5864bbce870b04e220ba175a2fd5e5",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-en-dark-phone.png",
+      "route": "/failure.html?scenario=support&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "5dd9676daff19d6fba23462a786b47da0b42fba839c1d3e6927d6eeba38c2705",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-en-dark-tablet.png",
+      "route": "/failure.html?scenario=support&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "3bada096ac399510c53cab298df1b9256f2fc9236b0d8ad6157a12f852018889",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-en-dark-desktop.png",
+      "route": "/failure.html?scenario=support&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "1defdd000f95ff167f1e3f3206073286184165164e424d686c2be3fad8aa6503",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-ar-light-phone.png",
+      "route": "/failure.html?scenario=support&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "f66add17e6c1395db10dafdb935f711768525d373ed6de520c65fe0ca2febf74",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-ar-light-tablet.png",
+      "route": "/failure.html?scenario=support&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "a0e04e895d635a1595b46ee360ffc3f79a01f34f712b46367b97d174b5a86985",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-ar-light-desktop.png",
+      "route": "/failure.html?scenario=support&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "dc0fcaca80158edb51615fe4d82a921991da13693ed54a92ebbf741b7b6017eb",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-ar-dark-phone.png",
+      "route": "/failure.html?scenario=support&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "9068d1f9b6bb24e9b4f8045494e822e6c02d12ad7807374acf0e4368463eb1eb",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-ar-dark-tablet.png",
+      "route": "/failure.html?scenario=support&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "cc4f390c3e56a148888851352a6fd227562e369ad1b939107f71f1f5accbae56",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-support-ar-dark-desktop.png",
+      "route": "/failure.html?scenario=support&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "support",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "75873d368862736e7e5c441e126773063ec581cb75cf55c8517c4f4a8a5cfb4b",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-en-light-phone.png",
+      "route": "/failure.html?scenario=market&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "b17557f7a17f73fe99d18ea75dc0b2d2ddd29c51139937b74fb412ec48378e95",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-en-light-tablet.png",
+      "route": "/failure.html?scenario=market&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "1b73a16978b1212df8c417d88a314035fe06a961eed1c142234c3dc0b82c544e",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-en-light-desktop.png",
+      "route": "/failure.html?scenario=market&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "en",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "2ea2a49c7d85e3ddff93e96fcd225f1a24807eaa3de25e143acdd01258b19a32",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-en-dark-phone.png",
+      "route": "/failure.html?scenario=market&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "2bce589a0fc919476bba33d56848dc9b09ce937bdbf5365281c2cd1b04d58c1d",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-en-dark-tablet.png",
+      "route": "/failure.html?scenario=market&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "9ecb89a64f9ecd9915f14116b5b9b36f354bb8fd15809c2829fa78cecb3d41ad",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-en-dark-desktop.png",
+      "route": "/failure.html?scenario=market&locale=en&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "en",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "283e73422ed338b66a2e743dc5f4d739e4880e5c656529014bcbdabd91ccf37c",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-ar-light-phone.png",
+      "route": "/failure.html?scenario=market&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "4f8f95cbad70eb93d3f3d14b56b47d438676a4ac884c80ae842370f1dfe9d440",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-ar-light-tablet.png",
+      "route": "/failure.html?scenario=market&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "47532afcb128d7dd844c2158a4aa6dc51015e06f1df284575c0afae6be5c8265",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-ar-light-desktop.png",
+      "route": "/failure.html?scenario=market&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "ar",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "de94c819d7631c517e64294359ca27295bfe2047a77099281889524f194a360c",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-ar-dark-phone.png",
+      "route": "/failure.html?scenario=market&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sha256": "8188e71f61019845ead81f04e96fd40e2c0c11c08119dac1ae2b751f2e736e7e",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-ar-dark-tablet.png",
+      "route": "/failure.html?scenario=market&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "sha256": "e40a50eabe0540b103aae7bf002306015465dbd2b537112a90221eac53d78dbf",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    },
+    {
+      "file": "screenshots/failure-market-ar-dark-desktop.png",
+      "route": "/failure.html?scenario=market&locale=ar&role=kabadiwala&topic=trade",
+      "scenario": "market",
+      "locale": "ar",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sha256": "c80f3b60fdbde4bbe572ae3c1ac88817edd421ffc67467f7c8b8d32719edf4df",
+      "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
+      "checks": [
+        "failure feedback and retry or setup control",
+        "no page error",
+        "no horizontal overflow",
+        "empty password and token fields",
+        "document direction",
+        "loaded fonts"
+      ]
+    }
+  ]
+}

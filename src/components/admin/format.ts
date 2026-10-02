@@ -1,3 +1,5 @@
+import { formatPaise } from "@/lib/money-format";
+
 import { formatIndianMobile, isIndianMobile } from "../../../convex/lib/phone";
 
 /**
@@ -23,19 +25,6 @@ const dayFormat = new Intl.DateTimeFormat("en-IN", {
   timeZone: TIME_ZONE,
 });
 
-const wholeRupees = new Intl.NumberFormat("en-IN", {
-  style: "currency",
-  currency: "INR",
-  maximumFractionDigits: 0,
-});
-
-const rupeesAndPaise = new Intl.NumberFormat("en-IN", {
-  style: "currency",
-  currency: "INR",
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
-});
-
 const decimal = new Intl.NumberFormat("en-IN", { maximumFractionDigits: 1 });
 
 /** `29 Sept, 2:05 pm` */
@@ -51,7 +40,7 @@ export function formatDay(isoDate: string): string {
 
 /** `₹14`, or `₹14.50` when there are paise. */
 export function formatRupees(paise: number): string {
-  return (paise % 100 === 0 ? wholeRupees : rupeesAndPaise).format(paise / 100);
+  return formatPaise(paise, "en-IN");
 }
 
 /** `340 KB`, `2.4 MB` */

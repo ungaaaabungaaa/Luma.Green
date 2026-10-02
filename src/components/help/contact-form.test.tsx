@@ -158,4 +158,19 @@ describe("ContactMessageForm", () => {
       "We couldn't send that. Check your connection and try again.",
     );
   });
+
+  it("explains when to retry a rate-limited message and preserves the text", async () => {
+    send.mockRejectedValue(new ConvexError("SUPPORT_RATE_LIMITED"));
+    const user = userEvent.setup();
+    renderForm();
+    await fillIn(user);
+    await user.click(screen.getByRole("button", { name: "Send message" }));
+    expect(
+      await screen.findByText(messages.help.contact.errors.rateLimited),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText("Your message")).toHaveValue(
+      "The yard has not collected my load.",
+    );
+    expect(screen.getByRole("button", { name: "Send message" })).toBeEnabled();
+  });
 });

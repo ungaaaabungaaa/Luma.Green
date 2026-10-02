@@ -40,7 +40,7 @@ beforeEach(() => {
     twoFactorEnabled: true,
   });
   mocks.pathname.mockReturnValue("/admin/verification/application");
-  mocks.signOut.mockResolvedValue(undefined);
+  mocks.signOut.mockResolvedValue({ error: null });
 });
 
 describe("admin navigation", () => {
