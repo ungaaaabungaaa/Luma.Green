@@ -145,38 +145,40 @@ before the next build. This prevents later builds from losing your changes.
 
 ## Google Docs copy
 
-Current publication state is recorded in [cloud.json](cloud.json). The existing
-native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
-is verified through the security and industry API revision from main `2ba8246`.
-Its document ID, folder and sharing settings are unchanged. The newer combined
-public detail, account security, notifications and failure-recovery revision in
-this branch is **pending publication** after its reviewed source lands on main.
-The security followup owns the coordinated in-place update after PR29 merges.
+Current publication state is recorded in [cloud.json](cloud.json). The combined
+public detail, account security, failure recovery, notifications and industry API
+guide is **published** to the existing native
+[Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY).
+The reviewed source is commit `593dfa2`, merged to main by PR29 at `53dae4d`.
+Its document ID, folder and sharing settings are unchanged.
 
-The last verified native copy has 38 chapters, six tables, 548 body paragraphs
-and 72 image placements. Readback checked all paragraphs, table cells, image
-source URLs and dimensions. Three exact dates remain native date fields. Its
-Word source had 76 reviewed pages; the native PDF had 78 reviewed pages because
-native typography and pagination differ. These counts describe the published
-revision, not the newer local Word guide. The exact proof remains under
-`last_verified_revision` in `cloud.json`.
+The native copy has 40 chapters, six tables, 659 body paragraphs and 99 image
+placements. Readback checked every paragraph, table cell, image source URL,
+image dimension and mapped style. Three exact dates retain their original native
+date fields. The Word source has 103 reviewed pages; the native PDF has 104 because
+native fonts and pagination differ. Every native page is covered by visual review.
+A small caption and paragraph spacing adjustment removed an orphan continuation
+without changing text or image size. The record lists these native layout
+exceptions and the unchanged page-body comparison used after the repair.
 
 The supported update uses revision-guarded Google Docs batch requests. Compare
 the current native revision with the last verified record first, and preserve or
-reconcile later human edits. Keep the tab and table structures, apply the reviewed
-changes in bounded batches, and use committed screenshot bytes or immutable
-source URLs. Verify all body text, table cells, dates, headings and image
-placements after writing. Export the native PDF and inspect every page before
-recording the new source hash, native revision and publication status.
+reconcile later human edits. Keep the tab, footer and table structures, apply the
+reviewed changes in bounded batches, and use committed screenshot bytes or
+immutable source URLs. Preserve unchanged image objects. Verify all body text,
+table cells, dates, headings, styles and image placements after writing. Export
+the native PDF and inspect every page before recording the new source hash,
+native revision and publication status.
 
-One accessibility limit remains: the current Google Docs batch-update API does
-not expose a setter for embedded image title/description alt text. The
-native editor restored one image description, verified by connector readback.
-The remaining 71 published images retain editable visible captions but lack native
-descriptions. Native editor work stopped when the user changed browser focus.
-Preserve unchanged image objects and native descriptions during supported
-replacement, and verify their size, aspect ratio and description after writing.
-Do not claim that native image-alt semantics match the Word source. See the [request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
+Native image accessibility remains incomplete. All 99 images have visible editable
+captions but lack native alt-text descriptions. The current batch-update API has
+no description setter. A checked `replaceImage` request kept the existing object
+ID, size and uncropped bounds, but removed the one description previously restored
+through the native editor. Its exact text is saved in `cloud.json` for a later
+supported editor repair. Native browser editing stayed stopped to avoid interrupting
+the user. Verify descriptions after any replacement; do not assume they survive
+or claim that captions provide identical image-alt semantics. See the
+[request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
 
 The connected `google_drive_import_document` action creates a new document and
 is only for the first import. `update_file` cannot replace a native Google Doc

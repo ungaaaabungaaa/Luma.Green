@@ -692,3 +692,25 @@ green. Reconciliation commit `b0db178` preserves all tested runtime source bytes
 The reviewed 103-page platform guide can now be synchronized in place. The
 separate team Word artifact is preserved. Production admin provisioning, live
 password/TOTP acceptance, SMS and signed device delivery remain separate gates.
+
+### Final security delivery and Google publication
+
+PR #32 merged at `7f584854896b991ea3970d91e0a20d43ed1cca2f` with all five
+required checks, 737 browser tests, five analytics tests, native validation/export
+and Vercel green. Remote main runtime matches tested/deployed `e1fc138`.
+The existing Google Doc now matches the reviewed 103-page Word source: 40
+chapters, 659 body paragraphs, six tables, 99 images and three original native
+dates. All 104 final native export pages are verified after a spacing repair.
+Document identity, folder and sharing remain unchanged. `cloud.json` records
+the exact source hash, readback revision, export hash and visual coverage.
+
+Google's image replacement removed the previous sole native description and
+has no description setter. All 99 images retain captions but lack native alt
+semantics; the original description text is saved for a supported editor repair.
+Native UI work stayed stopped to preserve user focus. This limitation,
+production admin/provider setup and separately installed release-signing tools
+remain explicit; they do not invalidate the tested source repairs.
+
+Guide impact: no source, screenshot or DOCX content changed after PR #29's
+reviewed build. This final documentation-only delivery records cloud publication
+and rollout evidence. The separate team-review Word artifact is preserved.
