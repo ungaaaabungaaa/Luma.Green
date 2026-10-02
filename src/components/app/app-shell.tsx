@@ -4,6 +4,7 @@ import { EllipsisIcon, LifeBuoyIcon, LogOutIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect } from "react";
 
+import { useSignOut } from "@/components/auth/use-sign-out";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { isCurrentSection } from "@/components/site/site-nav";
@@ -18,7 +19,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 
 import { type AppRole, NAV, type NavItem } from "./nav";
@@ -41,6 +41,10 @@ export function AppShell({ children }: { children: ReactNode }) {
   const workspace = useWorkspace();
   const router = useRouter();
   const pathname = usePathname();
+  const common = useTranslations("common");
+  const { signOut, isSigningOut } = useSignOut(common("error"), () => {
+    router.replace("/login");
+  });
 
   useEffect(() => {
     if (workspace === null) {
@@ -64,11 +68,6 @@ export function AppShell({ children }: { children: ReactNode }) {
     workspace.kind === "org" ? workspace.org.name : workspace.saathi.name;
   const { primary, more } = NAV[role];
   const help = `/help/${role}`;
-
-  const signOut = async () => {
-    await authClient.signOut();
-    router.replace("/login");
-  };
 
   const link = (item: NavItem, className: string) => {
     const Icon = item.icon;
@@ -140,6 +139,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             variant="outline"
             size="sm"
             className="min-h-11 text-foreground"
+            disabled={isSigningOut}
             onClick={() => void signOut()}
           >
             <LogOutIcon aria-hidden />
@@ -188,7 +188,10 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onSelect={() => void signOut()}>
+              <DropdownMenuItem
+                disabled={isSigningOut}
+                onSelect={() => void signOut()}
+              >
                 <LogOutIcon aria-hidden />
                 {t("signOut")}
               </DropdownMenuItem>

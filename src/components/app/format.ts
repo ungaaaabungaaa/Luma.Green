@@ -2,6 +2,8 @@
 
 import { useFormatter, useLocale } from "next-intl";
 
+import { formatPaise } from "@/lib/money-format";
+
 /**
  * The locale numbers are written in. English readers here are in India, so
  * amounts group in lakhs and crores (₹4,01,000), as they do in every Indian
@@ -20,12 +22,7 @@ export function useFormat() {
   const locale = useLocale();
   const numbers = (value: number, options: Intl.NumberFormatOptions) =>
     new Intl.NumberFormat(numberLocale(locale), options).format(value);
-  const rupees = (paise: number) =>
-    numbers(paise / 100, {
-      style: "currency",
-      currency: "INR",
-      maximumFractionDigits: paise % 100 === 0 ? 0 : 2,
-    });
+  const rupees = (paise: number) => formatPaise(paise, numberLocale(locale));
   return {
     /** ₹1,234 — whole rupees unless there are paise to show. */
     money: rupees,

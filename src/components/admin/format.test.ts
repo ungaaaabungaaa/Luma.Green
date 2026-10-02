@@ -14,6 +14,10 @@ describe("admin formatting", () => {
     expect(formatRupees(1400)).toBe("₹14");
     expect(formatRupees(1450)).toBe("₹14.50");
     expect(formatRupees(2_100_000)).toBe("₹21,000");
+    expect(formatRupees(Number.MAX_SAFE_INTEGER)).toBe(
+      "₹9,00,71,99,25,47,409.91",
+    );
+    expect(formatRupees(-1)).toBe("-₹0.01");
   });
 
   it("says how long something has waited, in hours then days", () => {

@@ -7,6 +7,17 @@ export function parseUrl(value) {
   }
 }
 
+/** A newer navigation can cancel loadURL without a connection failure.
+ * @param {unknown} error */
+export function isCancelledLoad(error) {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    (("code" in error && error.code === "ERR_ABORTED") ||
+      ("errno" in error && error.errno === -3))
+  );
+}
+
 /** @param {string} value @param {string} origin */
 export function isAppUrl(value, origin) {
   const url = parseUrl(value);

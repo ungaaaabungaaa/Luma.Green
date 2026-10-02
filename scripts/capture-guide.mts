@@ -72,6 +72,7 @@ const sharedSources = [
   "src/app/globals.css",
   "src/lib/fonts.ts",
   "src/components/site/site-header.tsx",
+  "src/components/site/mobile-nav.tsx",
   "src/components/site/page-header.tsx",
   "src/components/site/page-banner.tsx",
   "src/components/help/help-hero.tsx",

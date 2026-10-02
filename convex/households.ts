@@ -16,12 +16,12 @@ import {
   cleanText,
   distanceKm,
   isBookableDate,
-  isOpenBooking,
   isValidAddress,
   isValidName,
   isValidPoint,
   isWindowOpen,
   MAX_OPEN_BOOKINGS,
+  OPEN_BOOKING_STATUSES,
   PILOT_CITY,
 } from "./lib/households";
 import { queueBookingNotification } from "./lib/notifications";
@@ -273,13 +273,19 @@ export const book = mutation({
       throw new ConvexError("INVALID_ADDRESS");
     }
 
-    const recent = await ctx.db
+    const open = await ctx.db
       .query("bookings")
       .withIndex("by_household", (q) => q.eq("householdProfileId", profile._id))
-      .order("desc")
-      .take(50);
-    const openCount = recent.filter((row) => isOpenBooking(row.status)).length;
-    if (openCount >= MAX_OPEN_BOOKINGS) throw new ConvexError("TOO_MANY_OPEN");
+      .filter((q) =>
+        q.or(
+          ...OPEN_BOOKING_STATUSES.map((status) =>
+            q.eq(q.field("status"), status),
+          ),
+        ),
+      )
+      .take(MAX_OPEN_BOOKINGS);
+    if (open.length >= MAX_OPEN_BOOKINGS)
+      throw new ConvexError("TOO_MANY_OPEN");
 
     const fallback = await fallbackPrices(
       ctx,

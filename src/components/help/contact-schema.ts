@@ -39,6 +39,7 @@ export type ContactValues = z.output<typeof contactSchema>;
 export type ContactErrorKey =
   | "nameInvalid"
   | "phoneInvalid"
+  | "rateLimited"
   | "roleMissing"
   | "topicMissing"
   | "messageShort"
@@ -56,6 +57,8 @@ export function serverFieldError(
   const data: unknown = error.data;
   if (data === "INVALID_NAME") return { field: "name", key: "nameInvalid" };
   if (data === "INVALID_PHONE") return { field: "phone", key: "phoneInvalid" };
+  if (data === "SUPPORT_RATE_LIMITED")
+    return { field: "phone", key: "rateLimited" };
   return data === "INVALID_MESSAGE"
     ? { field: "message", key: "messageShort" }
     : null;

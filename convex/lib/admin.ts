@@ -1,7 +1,7 @@
 import { normalizeIndianMobile } from "./phone";
 
 /**
- * The single admin is whoever signs up with `ADMIN_EMAIL`, a Convex
+ * The single admin must match `ADMIN_EMAIL`, a Convex
  * environment variable — see docs/architecture/auth.md#the-admin.
  */
 export function isAdminEmail(
@@ -10,6 +10,17 @@ export function isAdminEmail(
 ): boolean {
   const expected = adminEmail?.trim().toLowerCase();
   return Boolean(expected) && email?.trim().toLowerCase() === expected;
+}
+
+/** Operator-only bootstrap secret. Never return this from a public query. */
+export function getAdminSetupToken(): string | undefined {
+  const token = process.env.ADMIN_SETUP_TOKEN;
+  return token &&
+    token.length >= 32 &&
+    token.length <= 512 &&
+    token.trim().length > 0
+    ? token
+    : undefined;
 }
 
 /** The admin signs in again after this long — docs/architecture/auth.md. */

@@ -8,11 +8,11 @@ import { toast } from "sonner";
 
 import { useFormat } from "@/components/app/format";
 import { DemoNote } from "@/components/app/page-parts";
+import { useSignOut } from "@/components/auth/use-sign-out";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useRouter } from "@/i18n/navigation";
-import { authClient } from "@/lib/auth-client";
 
 import { api } from "../../../convex/_generated/api";
 import { kgToGrams, pointsFor } from "../../../convex/lib/chain";
@@ -89,6 +89,8 @@ export function ConfirmStep({
   onEdit: (step: SellStep) => void;
 }) {
   const t = useTranslations("sell");
+  const common = useTranslations("common");
+  const { signOut } = useSignOut(common("error"));
   const format = useFormat();
   const time = useTimeFormat();
   const locale = useLocale();
@@ -146,7 +148,7 @@ export function ConfirmStep({
 
   async function switchNumber() {
     setError(null);
-    await authClient.signOut();
+    await signOut();
   }
 
   const byCode = new Map(

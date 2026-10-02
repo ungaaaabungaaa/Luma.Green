@@ -388,3 +388,27 @@ authentication or production change was made. Import isolation is still pending.
 Guide impact: these offline files change no route, screen, role, permission or
 workflow. They need no new guide screenshot. The parallel responsive/language
 and visual-polish pass remains uncommitted while its matching guide is refreshed.
+
+## Security and failure review — 2 October 2026
+
+Work is isolated on `fix/security-failure-review`, based on `c1ed004`, in the
+managed `security-failure-review` worktree. The concurrent responsive/locales
+checkout is preserved. See [the review record](security-failure-review.md) for
+findings, fixes, remaining risks, current checks and delivery evidence.
+
+Guide impact: account setup now requires a private operator token; failed admin
+login, file removal, draft discard, sign-out, invalid money totals and support
+quota feedback have explicit recovery behavior. The guide source, labelled
+browser fixtures, capture manifests, reviewed Word artifact and build record are
+updated together. Native navigation fixes change no screen or control. Google
+Docs publication remains pending at the existing document ID; sharing is unchanged.
+
+Deployment must apply the support phone/time index and server functions before
+the frontend. Remove the bootstrap token after setup. Review/revoke existing admin
+sessions if the vulnerable phone/setup endpoints were exposed. The open node-forge
+advisory, real-device acceptance, live authentication/provider tests and production
+deployment remain separate gates. This report does not claim launch readiness.
+
+The security repair branch preserves the industry API feature merged through PR #30 at `af2e295`. Its additive schema and API guide chapter are retained. The combined source was reviewed for access boundaries and checked again. A slow-loading phone menu also keeps its trigger disabled until interactive, preventing lost first clicks. The current guide includes both revisions.
+
+Final local evidence: `pnpm check` passed (1,345 web/backend, 30 mobile and 21 desktop tests), formatting passed, both production build formats passed, and all 158 browser tests passed without retries. The reviewed Word guide has 76 pages and 72 screenshot placements. Capture hashes match the combined source. Hosted checks and protected squash-merge evidence belong to the associated security repair PR; production backend deployment and the cloud guide update are not implied.

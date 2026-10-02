@@ -114,3 +114,20 @@ describe("NewListingForm", () => {
     expect(screen.getByLabelText("How many kg?")).toHaveValue("");
   });
 });
+
+it("rejects a total outside exact money range without crashing the preview", async () => {
+  renderForm();
+  await userEvent.click(screen.getByRole("radio", { name: /PET bottles/ }));
+  await userEvent.type(screen.getByLabelText("How many kg?"), "42");
+  await userEvent.clear(screen.getByLabelText("Your price, ₹ per kg"));
+  await userEvent.type(
+    screen.getByLabelText("Your price, ₹ per kg"),
+    "90071992547409.91",
+  );
+  await userEvent.click(screen.getByRole("button", { name: "Put on sale" }));
+  const errors = await screen.findAllByText(
+    "This total is too large. Reduce the quantity or price.",
+  );
+  expect(errors[0]).toBeInTheDocument();
+  expect(createListing).not.toHaveBeenCalled();
+});

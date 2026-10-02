@@ -20,6 +20,30 @@ describe("optional server environment", () => {
   });
 });
 
+describe("admin setup secret", () => {
+  it("permits an unconfigured deployment but rejects a weak setup token", async () => {
+    vi.stubEnv("ADMIN_SETUP_TOKEN", "");
+    let env = await import("./env");
+    expect(env.serverEnv().ADMIN_SETUP_TOKEN).toBeUndefined();
+    vi.resetModules();
+    vi.stubEnv("ADMIN_SETUP_TOKEN", "short-token");
+    env = await import("./env");
+    expect(() => env.serverEnv()).toThrow();
+  });
+
+  it("does not expose the setup token through client settings", async () => {
+    vi.stubEnv(
+      "ADMIN_SETUP_TOKEN",
+      "test-only-setup-token-01234567890123456789",
+    );
+    const { clientEnv, serverEnv } = await import("./env");
+    expect(serverEnv().ADMIN_SETUP_TOKEN).toBe(
+      "test-only-setup-token-01234567890123456789",
+    );
+    expect(clientEnv).not.toHaveProperty("ADMIN_SETUP_TOKEN");
+  });
+});
+
 describe("optional observability configuration", () => {
   it("keeps telemetry off with empty template values", async () => {
     vi.stubEnv("NEXT_PUBLIC_TELEMETRY_ENABLED", "");

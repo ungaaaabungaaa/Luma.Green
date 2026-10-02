@@ -19,6 +19,9 @@ export function signInErrorMessage(error: AuthError): string {
 }
 
 export function signUpErrorMessage(error: AuthError): string {
+  if (error.code === "ADMIN_SETUP_REQUIRED") {
+    return "Check the setup token with the deployment owner, then try again.";
+  }
   if (error.status === 429) return TOO_MANY;
   if (error.status === 403) {
     return "That isn't the admin email set for this deployment (ADMIN_EMAIL).";

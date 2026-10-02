@@ -3,7 +3,7 @@
 import { convexTest } from "convex-test";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { api } from "./_generated/api";
+import { api, internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
 import { convexModules, registerAuth, signIn } from "./lib/auth.testing";
 import schema from "./schema";
@@ -393,5 +393,63 @@ describe("uploads", () => {
     expect(stored.map((file) => file?.firstSubmittedVersion)).toEqual([
       1, 1, 1,
     ]);
+  });
+});
+
+describe("attachment cleanup races", () => {
+  it("keeps a stored file when another request attached it before cleanup", async () => {
+    const t = setup();
+    const yard = await applicant(t);
+    await yard.mutation(api.applications.start, { kind: "yard", ...consent });
+    const storageId = await upload(t, "pdf");
+    const request = { storageId, type: "pcb_certificate" as const };
+    await yard.query(internal.applicationFiles.checkAttach, request);
+    await yard.query(internal.applicationFiles.checkAttach, request);
+    const saved = await yard.mutation(internal.applicationFiles.record, {
+      ...request,
+      name: "certificate.pdf",
+      contentType: "application/pdf",
+      size: SIGNATURES.pdf.length + 1024,
+    });
+    await expect(
+      yard.mutation(internal.applicationFiles.record, {
+        ...request,
+        name: "duplicate.pdf",
+        contentType: "application/pdf",
+        size: SIGNATURES.pdf.length + 1024,
+      }),
+    ).rejects.toThrow(/FILE_IN_USE/);
+    await yard.mutation(internal.applicationFiles.discardUnattached, {
+      storageId,
+    });
+    expect(
+      await t.run(async (ctx) => (await ctx.storage.get(storageId)) !== null),
+    ).toBe(true);
+    expect(
+      await t.run((ctx) => ctx.db.get("applicationFiles", saved)),
+    ).not.toBeNull();
+  });
+
+  it("does not attach a file that cleanup deleted after the first check", async () => {
+    const t = setup();
+    const yard = await applicant(t);
+    await yard.mutation(api.applications.start, { kind: "yard", ...consent });
+    const storageId = await upload(t, "pdf");
+    const request = { storageId, type: "pcb_certificate" as const };
+    await yard.query(internal.applicationFiles.checkAttach, request);
+    await yard.mutation(internal.applicationFiles.discardUnattached, {
+      storageId,
+    });
+    await expect(
+      yard.mutation(internal.applicationFiles.record, {
+        ...request,
+        name: "certificate.pdf",
+        contentType: "application/pdf",
+        size: SIGNATURES.pdf.length + 1024,
+      }),
+    ).rejects.toThrow(/FILE_NOT_FOUND/);
+    expect(
+      await t.run((ctx) => ctx.db.query("applicationFiles").collect()),
+    ).toEqual([]);
   });
 });

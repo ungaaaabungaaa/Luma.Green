@@ -4,8 +4,8 @@
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": "2 October 2026 industry API access revision",
-  "result": "The existing native Google Doc remains at its last verified revision. The local industry API guide revision has not been published to it. No cloud content or sharing settings were changed.",
+  "pending_revision": "2 October 2026 security and industry API revision",
+  "result": "The existing native Google Doc remains at its last verified revision. The current local guide revision has not been published to it. No cloud content or sharing settings were changed.",
   "connection_gate": "The connected import_document action creates a new document. update_file does not support replacing a native Google Doc with raw DOCX bytes. Neither provides a verified in-place DOCX import to the existing document ID.",
   "next_action": "Update the existing native document through a supported in-place document workflow using the reviewed local revision, then verify its contents. Preserve this document ID, URL and sharing settings; do not create a replacement document.",
   "last_verified_revision": {
@@ -27,13 +27,9 @@
     }
   },
   "local_reviewed_revision": {
-    "source_docx_sha256": "ff1d73475b3c786ae667de44c12da6e642f7f203c08a97ff6c6d4bf4c81c6547",
-    "recorded_at": "2026-10-02T07:19:43.156192+00:00",
-    "result": "The editable industry API guide was rebuilt, sanitized with zero title changes, rendered with bundled LibreOffice and visually inspected on all 71 pages. All 66 image placements retain original browser pixels. Publication to the existing native Google Doc remains pending.",
-    "visual_review_page_count": 71,
-    "inline_image_count": 66,
-    "sanitized_docx_sha256": "ff1d73475b3c786ae667de44c12da6e642f7f203c08a97ff6c6d4bf4c81c6547",
-    "title_sanitizer_changes": 0,
-    "sharing_changed": false
+    "source_docx_sha256": "69bb80cf805fcdc64e9675b2645186e79d4181250d49525041ad793eaa94bcc7",
+    "visual_review_pages": 76,
+    "image_placements": 72,
+    "recorded_at": "2026-10-02T09:09:50.507027+00:00"
   }
 }

@@ -45,3 +45,8 @@ minimumReleaseAgeExclude:
   - posthog-js@1.433.5
   - prettier@3.9.7
   - resend@6.28.1
+
+# Security fixes for transitive packages. xcode only uses the CommonJS v4 API.
+overrides:
+  "xcode>uuid": 11.1.1
+  "posthog-js>dompurify": 3.4.16

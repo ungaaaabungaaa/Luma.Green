@@ -2,7 +2,7 @@
 
 import { MenuIcon, XIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 import { Logo } from "@/components/brand/logo";
 import { Button } from "@/components/ui/button";
@@ -19,11 +19,21 @@ import { Link } from "@/i18n/navigation";
 
 import { SiteNav } from "./site-nav";
 
+function unsubscribeFromHydration() {
+  // The server/client snapshots are static; no external updates are needed.
+}
+const subscribeToHydration = () => unsubscribeFromHydration;
+
 export function MobileNav({ className }: { className?: string }) {
   const t = useTranslations("nav");
   const auth = useTranslations("auth");
   const locale = useLocale();
   const [open, setOpen] = useState(false);
+  const isHydrated = useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
 
   // The sheet only knows physical sides; open it from the inline end.
   const side =
@@ -40,6 +50,7 @@ export function MobileNav({ className }: { className?: string }) {
           size="icon-lg"
           className={className}
           aria-label={t("openMenu")}
+          disabled={!isHydrated}
         >
           <MenuIcon />
         </Button>

@@ -6,6 +6,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -27,7 +28,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -35,11 +36,11 @@
     "route": "/",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-home.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:00:49.503Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:15.796Z",
     "kind": "current-local-disconnected",
-    "sha256": "2fd162fb5237ebce9aeea5f249b41d853536d6c152216e4dcd90b8bbb6133b0f"
+    "sha256": "71257e5d8752382b95627e0e4488aab91c7f07e251f8ba8c518d8dd58c670239"
   },
   {
     "browserErrors": [],
@@ -48,6 +49,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -69,7 +71,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -77,9 +79,9 @@
     "route": "/",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-home-dark.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:00:51.129Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:16.067Z",
     "kind": "current-local-disconnected",
     "sha256": "712eeb9c1d61cf38f6eabc7d9d22271c79f5f1463e8e23a4019a689543ea011a"
   },
@@ -90,6 +92,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -111,7 +114,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -120,11 +123,11 @@
     "sectionSelector": "section[aria-labelledby=\"materials-heading\"]",
     "captureKind": "section",
     "path": "docs/user-guide/screenshots/public-home-materials.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:00:52.191Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:16.356Z",
     "kind": "current-local-disconnected",
-    "sha256": "b70304073908530c509cf2afb5afafdd8677c41b0bf95b961c57c68e70ed353f"
+    "sha256": "7cfc444e9243e979cea47fcd7d4c6a6a90b2865cd7451c18b48b56805095a4a4"
   },
   {
     "browserErrors": [],
@@ -133,6 +136,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -154,7 +158,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -163,11 +167,11 @@
     "sectionSelector": "section[aria-labelledby=\"pickup-heading\"]",
     "captureKind": "section",
     "path": "docs/user-guide/screenshots/public-home-pickup.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:00:53.174Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:16.672Z",
     "kind": "current-local-disconnected",
-    "sha256": "0f39fa0c50625c129163b90418b4f1f699cd2e6ece24727ce0f5234877af566e"
+    "sha256": "ff78fab90ca616cf969cf0ca3c4c3841e7b0601318affa5ee38c131c1b7c5ce8"
   },
   {
     "browserErrors": [],
@@ -176,6 +180,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -197,7 +202,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -206,11 +211,11 @@
     "sectionSelector": "section[aria-labelledby=\"shop-workday-heading\"]",
     "captureKind": "section",
     "path": "docs/user-guide/screenshots/public-home-shop.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:00:55.046Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:17.008Z",
     "kind": "current-local-disconnected",
-    "sha256": "b5c83e35529172c15ccd7aee0e07c717e1a663adc3110c3bc01aaec8d00e7785"
+    "sha256": "a0753dc4be9dd4adf16934c4ee52962ed59bb2772eae20fe76a04b4ed0949db0"
   },
   {
     "browserErrors": [],
@@ -219,6 +224,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -240,7 +246,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -249,11 +255,11 @@
     "sectionSelector": "section[aria-labelledby=\"weight-payment-heading\"]",
     "captureKind": "section",
     "path": "docs/user-guide/screenshots/public-home-payment.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:00:57.053Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:17.309Z",
     "kind": "current-local-disconnected",
-    "sha256": "24a0b41cd2b788e9a21f6137f78fe0091ddbb3d118599e9fcc2880c644695996"
+    "sha256": "a1c7aabcdc80baf408f7637618c238feddb276e2df61da363e9080df482d35ae"
   },
   {
     "browserErrors": [],
@@ -262,6 +268,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -283,7 +290,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -292,11 +299,11 @@
     "sectionSelector": "section[aria-labelledby=\"material-records-heading\"]",
     "captureKind": "section",
     "path": "docs/user-guide/screenshots/public-home-records.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:00:59.262Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:17.638Z",
     "kind": "current-local-disconnected",
-    "sha256": "6a2a6cd3b49f521a64a1494d101da830fde459fefc7e959ff09ccbff28cb6da3"
+    "sha256": "c691f06e282ad19235d8a56c404684bf20b64abe1116cd518a7301fe86a03138"
   },
   {
     "browserErrors": [],
@@ -305,6 +312,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -326,7 +334,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -335,11 +343,11 @@
     "sectionSelector": "section[aria-labelledby=\"home-questions-heading\"]",
     "captureKind": "section",
     "path": "docs/user-guide/screenshots/public-home-questions.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:00.473Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:17.903Z",
     "kind": "current-local-disconnected",
-    "sha256": "f1866ca097d6215e3020675f6a1e8a5e9a2838da86c1472afcf7dd3fbc3e71ed"
+    "sha256": "4c899d2e8f232eb74990da8ecb2e6d8d5318aa536a4b761d80cd395473be901b"
   },
   {
     "browserErrors": [],
@@ -348,6 +356,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -369,7 +378,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -377,11 +386,11 @@
     "route": "/participants",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-participants.png",
-    "url": "http://localhost:3133/participants",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:01.534Z",
+    "url": "http://localhost:3117/participants",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:18.147Z",
     "kind": "current-local-disconnected",
-    "sha256": "8f92245926a884b4759e5c4318d31accba791703bf7d72efc820c6dcbf7716a0"
+    "sha256": "93e2f8e5833fb01ec29ee38a6a22dd4cb9ddc6e03a5de4da9d1ed403b3fc7941"
   },
   {
     "browserErrors": [],
@@ -390,6 +399,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -411,7 +421,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -419,9 +429,9 @@
     "route": "/participants",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-participants-dark.png",
-    "url": "http://localhost:3133/participants",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:02.893Z",
+    "url": "http://localhost:3117/participants",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:18.388Z",
     "kind": "current-local-disconnected",
     "sha256": "e84441e12ae76f42c9ace4e98d469cf18ed8b2eae621c689aebb10c9bcf8d8f1"
   },
@@ -432,6 +442,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -453,7 +464,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -461,11 +472,11 @@
     "route": "/ar",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-arabic-dark.png",
-    "url": "http://localhost:3133/ar",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:04.046Z",
+    "url": "http://localhost:3117/ar",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:18.594Z",
     "kind": "current-local-disconnected",
-    "sha256": "93139fed65f1ec882dce2aa0d168f45cb6fb4423e9f52a86417d65e5aacd6f7f"
+    "sha256": "d452e052d73793913967ab46bfebc4d3b92aa040af58696bffe73fa120b2a0ab"
   },
   {
     "browserErrors": [],
@@ -474,6 +485,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -495,7 +507,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -503,11 +515,11 @@
     "route": "/prices",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-prices.png",
-    "url": "http://localhost:3133/prices",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:05.683Z",
+    "url": "http://localhost:3117/prices",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:18.826Z",
     "kind": "current-local-disconnected",
-    "sha256": "d052500756b4131dacd0c96af0e5790a2c73f96fa4fd305acb1b4f32b17082cd"
+    "sha256": "b14685f9905b681ff3231b5950fd534ef3fb42406036a1ab68ae92305fe89808"
   },
   {
     "browserErrors": [],
@@ -516,6 +528,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -537,7 +550,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -545,11 +558,11 @@
     "route": "/sell",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-sell.png",
-    "url": "http://localhost:3133/sell",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:06.511Z",
+    "url": "http://localhost:3117/sell",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:19.013Z",
     "kind": "current-local-disconnected",
-    "sha256": "4df457d8b2545c373a89ef37d017e36ea72e2ea8660522efc3efc3997b9a1475"
+    "sha256": "9fc81a9f9af594fdb46dda7220e6df77c2ac320202d402e320e3ffac3d153983"
   },
   {
     "browserErrors": [],
@@ -558,6 +571,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -579,7 +593,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -587,11 +601,11 @@
     "route": "/join",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-join.png",
-    "url": "http://localhost:3133/join",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:07.639Z",
+    "url": "http://localhost:3117/join",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:19.246Z",
     "kind": "current-local-disconnected",
-    "sha256": "15580ee08b5d0d9140207bf8a4cf2080ef774a573a44dbce3512c5df7df65eb3"
+    "sha256": "bf046821a19298b7f3511ba3569738310f8fb5c2a3468598a816187ee907e05b"
   },
   {
     "browserErrors": [],
@@ -600,6 +614,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -621,7 +636,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -629,11 +644,11 @@
     "route": "/login",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-login.png",
-    "url": "http://localhost:3133/login",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:09.136Z",
+    "url": "http://localhost:3117/login",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:19.490Z",
     "kind": "current-local-disconnected",
-    "sha256": "c4c848669379d87357b33a8396ef5ec1a4f3b2328b13288f8cbb3a69711f84a3"
+    "sha256": "8cefcd2d5aa328f0492dd9011b26dfaba1aaa5f01fdbca8db49849d63e1ca40d"
   },
   {
     "browserErrors": [],
@@ -642,6 +657,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -663,7 +679,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -671,11 +687,11 @@
     "route": "/login",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-login-phone.png",
-    "url": "http://localhost:3133/login",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:09.851Z",
+    "url": "http://localhost:3117/login",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:19.669Z",
     "kind": "current-local-disconnected",
-    "sha256": "4a490cd3db0886d93bb9a800a0f924f52e4639976a2292277b2ea5da640b9bd6"
+    "sha256": "936625714a78794e6c70a8c9dbac186ff3b18d89c0004e2a5fdea09d4f2b8438"
   },
   {
     "browserErrors": [],
@@ -684,6 +700,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -705,7 +722,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -713,11 +730,11 @@
     "route": "/login",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-login-otp-phone.png",
-    "url": "http://localhost:3133/login/verify",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:11.748Z",
+    "url": "http://localhost:3117/login/verify",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:19.978Z",
     "kind": "current-local-disconnected",
-    "sha256": "05afe6a0aa80865c9155bb8870c3e253655c5fb109c32475321ebc0a28eb0f78"
+    "sha256": "f1493b418dc9b7449fa068c83bf072aa9978aca0f6f7cef916ecb1392fff7189"
   },
   {
     "browserErrors": [],
@@ -726,6 +743,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -747,7 +765,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -756,11 +774,11 @@
     "sectionSelector": "section[aria-labelledby=\"demo-testimonials-heading\"]",
     "captureKind": "section",
     "path": "docs/user-guide/screenshots/public-demo-testimonials.png",
-    "url": "http://localhost:3133/",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:13.657Z",
+    "url": "http://localhost:3117/",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:20.241Z",
     "kind": "current-local-disconnected",
-    "sha256": "b0c8ad3e794420e2f3013cbcf528579442acf2c149675717e5e14615d9fed7f1"
+    "sha256": "200d3e138a82f665ee3d4e51dce111b0bdc5391255b87c729bc731084f94856b"
   },
   {
     "browserErrors": [],
@@ -769,6 +787,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -790,7 +809,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -798,11 +817,11 @@
     "route": "/admin/login",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-admin-login.png",
-    "url": "http://localhost:3133/admin/login",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:15.310Z",
+    "url": "http://localhost:3117/admin/login",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:20.407Z",
     "kind": "current-local-disconnected",
-    "sha256": "25c129e8209d9d3f00c562e66c9cdd065a8bccd14d2964e0d42ef6d784fba0bb"
+    "sha256": "ac4dcf2ba7eca8248dd3d1efae2c0e718b9fcac02d78d77f143c1dc59d7c2687"
   },
   {
     "browserErrors": [],
@@ -811,6 +830,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -832,7 +852,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -840,11 +860,11 @@
     "route": "/admin/setup",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-admin-setup.png",
-    "url": "http://localhost:3133/admin/setup",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:16.372Z",
+    "url": "http://localhost:3117/admin/setup",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:20.587Z",
     "kind": "current-local-disconnected",
-    "sha256": "e9a196d8b31e6ace04913284bb1da6c3ecfa55c7acedac64a064106f39910798"
+    "sha256": "18be48ddeba205512a95d6218c0df8a3283c1604f8255a7bcee0838d2f3ee58f"
   },
   {
     "browserErrors": [],
@@ -853,6 +873,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -874,7 +895,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -882,11 +903,11 @@
     "route": "/help",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-help.png",
-    "url": "http://localhost:3133/help",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:17.187Z",
+    "url": "http://localhost:3117/help",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:20.819Z",
     "kind": "current-local-disconnected",
-    "sha256": "658c34df03c1a8cd9e3691e42f5d0cf9a20371710c7de5d52406065ba8b8394a"
+    "sha256": "bdb1d433ddd125b3a4bad4b12bdf333ca99ddf4fcff9036189c72bc532946433"
   },
   {
     "browserErrors": [],
@@ -895,6 +916,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -916,7 +938,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -924,11 +946,11 @@
     "route": "/standards",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-standards.png",
-    "url": "http://localhost:3133/standards",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:18.817Z",
+    "url": "http://localhost:3117/standards",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:21.055Z",
     "kind": "current-local-disconnected",
-    "sha256": "f77aba0fabd1886e4e0ccb669319d6fa8617b95791108c24439143486a476f18"
+    "sha256": "d65e9f6576ab16d6b48173572be87d2d3b2b9ff8d69bd34d7c896050e2ce3741"
   },
   {
     "browserErrors": [],
@@ -937,6 +959,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -958,7 +981,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -966,11 +989,11 @@
     "route": "/solar",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-solar.png",
-    "url": "http://localhost:3133/solar",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:20.367Z",
+    "url": "http://localhost:3117/solar",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:21.305Z",
     "kind": "current-local-disconnected",
-    "sha256": "8b16b32b16032ee4427c8e5424ab2d0cdec013c50b2a9bb5d9bedf058cb2290f"
+    "sha256": "b9ade6a51f769722aa586820c6d924138dbcb45c64faedcd8d37eb04f0da23d8"
   },
   {
     "browserErrors": [],
@@ -979,6 +1002,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -1000,7 +1024,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -1008,11 +1032,11 @@
     "route": "/help/contact",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-contact.png",
-    "url": "http://localhost:3133/help/contact",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:21.562Z",
+    "url": "http://localhost:3117/help/contact",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:21.546Z",
     "kind": "current-local-disconnected",
-    "sha256": "ec9014e471975910170b7a8a15e4109d7334a122ffac866d2c85d98577255abb"
+    "sha256": "e943280f7b44d4101f9692ce957f32712a42cc5bffbbae0bf6a28a6eef76d499"
   },
   {
     "browserErrors": [],
@@ -1021,6 +1045,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -1042,7 +1067,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -1050,11 +1075,11 @@
     "route": "/contact",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-contact-info.png",
-    "url": "http://localhost:3133/contact",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:23.103Z",
+    "url": "http://localhost:3117/contact",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:21.773Z",
     "kind": "current-local-disconnected",
-    "sha256": "9057879a509d8d8cc22067f6b60adeb21edb02697d5bfe69ac262037683bfa63"
+    "sha256": "f4e4e51e90a3968c68d3fc90e8f836ffc113bb1d44ceca8c409d9ecfbbe465ac"
   },
   {
     "browserErrors": [],
@@ -1063,6 +1088,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -1084,7 +1110,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -1092,11 +1118,11 @@
     "route": "/how-it-works",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-how-it-works.png",
-    "url": "http://localhost:3133/how-it-works",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:23.873Z",
+    "url": "http://localhost:3117/how-it-works",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:22.009Z",
     "kind": "current-local-disconnected",
-    "sha256": "8ccd29be61ed357885334c1806a272e7cbd9c9edc789e62c6206f49502954a27"
+    "sha256": "4c8615ef451b9aaf5f96d3b5e45b89d52c23b1e40e86f7dcdc25cf41348dcad7"
   },
   {
     "browserErrors": [],
@@ -1105,6 +1131,7 @@
       "src/app/globals.css": "2a088fb8d2e0b0e178df846f4ff16558c1c86bb871a469ff663cd086966e9c0c",
       "src/lib/fonts.ts": "2e5961c59bb91faf66103637da8d73ed52a58b3a96a596bc35454294bbad9e49",
       "src/components/site/site-header.tsx": "f46d0073a3c6f614580ddbd767c736f339a9789c74215ce6b9b71bd03c4b91e6",
+      "src/components/site/mobile-nav.tsx": "8e6c22dd1ce6ada609371ff42a7616e5d3a1f1534d906a47c0d3f94f8cc56d7c",
       "src/components/site/page-header.tsx": "c3d3a67ececd3c8f5648db846d120293dc84c64b6aad67b9321d5e86f6f515f3",
       "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
       "src/components/help/help-hero.tsx": "7ef8331c21d2e517d4b1f1c6391af9696595d2c567003e5c66f2e8569bfb462c",
@@ -1126,7 +1153,7 @@
       "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
       "src/components/auth/phone-form.tsx": "6273ff095dd708310b1c0d5b546da6006479b2b2115d5d147541b634fdb2efe0",
       "src/components/auth/verify-preview.tsx": "dd26da49a585091b37e154a79e1e2d8fe3a54a2dd31d1d51992379b12d8c4604",
-      "messages/en.json": "48f5cac6ed274ad7f891c45860819484dd989f25ae433b435bab790b6ae5f8aa",
+      "messages/en.json": "14c4e8614a3a28b7ff1f1a64e6b12234c458afd75e9c2715ef7d9101dbe947cb",
       "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
       "public/images/materials-hall.webp": "3340f9e261c1daf2e5990af601f2a6f4e3b9b3b5991330cc594c7d687eebeb1f"
     },
@@ -1134,10 +1161,10 @@
     "route": "/ar",
     "captureKind": "viewport",
     "path": "docs/user-guide/screenshots/public-arabic.png",
-    "url": "http://localhost:3133/ar",
-    "revision": "c1ed004745af737694fcd6b3ae4df631adc83c27",
-    "capturedAt": "2026-10-02T07:01:25.124Z",
+    "url": "http://localhost:3117/ar",
+    "revision": "c58dc57e8bb53470e5bd3ec2a5da50403f1da80b",
+    "capturedAt": "2026-10-02T08:47:22.256Z",
     "kind": "current-local-disconnected",
-    "sha256": "1fc8fa6a523d81c46ef59133d7235e624e07d946386df68eb10f0a3c6319eb74"
+    "sha256": "01d03faee5397e6c7aedeae400b5a591c07562a198d1d92ea52fb82b72c360cd"
   }
 ]

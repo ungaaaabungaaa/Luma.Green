@@ -19,7 +19,7 @@ import { api } from "../../../convex/_generated/api";
 import {
   buyerKindFor,
   type OrgKind,
-  paiseFor,
+  safePaiseFor,
 } from "../../../convex/lib/chain";
 import { type MarketErrorKey, marketErrorKey } from "./errors";
 import {
@@ -98,7 +98,12 @@ interface Values {
 }
 
 type FormErrorKey =
-  "pickMaterial" | "kgInvalid" | "kgTooMuch" | "priceInvalid" | "noteTooLong";
+  | "pickMaterial"
+  | "kgInvalid"
+  | "kgTooMuch"
+  | "priceInvalid"
+  | "noteTooLong"
+  | "totalInvalid";
 
 const EMPTY: Values = { materialCode: "", kg: "", price: "", note: "" };
 
@@ -116,6 +121,18 @@ function listingSchema(byCode: ReadonlyMap<string, SellableItem>) {
     .superRefine((values, context) => {
       const grams = parseKg(values.kg);
       const available = byCode.get(values.materialCode)?.availableGrams;
+      const price = parseRupees(values.price);
+      if (
+        grams !== null &&
+        price !== null &&
+        safePaiseFor(grams, price) === null
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["price"],
+          message: "totalInvalid",
+        });
+      }
       if (grams === null) {
         context.addIssue({
           code: "custom",
@@ -172,9 +189,12 @@ function ListingForm({
   const item = byCode.get(materialCode);
   const grams = parseKg(kg);
   const paise = parseRupees(price);
+  const total =
+    grams !== null && paise !== null ? safePaiseFor(grams, paise) : 0;
 
   const errorText = (field: keyof Values) => {
     const key = errors[field]?.message as FormErrorKey | undefined;
+    if (key === "totalInvalid") return t("totalInvalid");
     const weight = item ? format.weight(item.availableGrams) : "";
     return key ? t(`sell.form.errors.${key}`, { weight }) : undefined;
   };
@@ -260,9 +280,7 @@ function ListingForm({
           {t("sell.form.value")}
         </span>
         <span className="text-xl font-semibold tracking-tight tabular-nums">
-          {format.money(
-            grams !== null && paise !== null ? paiseFor(grams, paise) : 0,
-          )}
+          {total === null ? t("totalInvalid") : format.money(total)}
         </span>
       </div>
 

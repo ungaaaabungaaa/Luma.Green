@@ -1,4 +1,5 @@
 import { type FunctionReference, getFunctionName } from "convex/server";
+import { ConvexError } from "convex/values";
 
 import {
   complianceFixture,
@@ -14,6 +15,29 @@ import {
   workspaceFixture,
 } from "./fixtures";
 
+function failureQuery(name: string): { matched: boolean; value?: unknown } {
+  if (window.location.pathname.endsWith("/failure.html")) {
+    const scenario = new URLSearchParams(window.location.search).get(
+      "scenario",
+    );
+    if (
+      name === "identity:me" &&
+      ["login", "totp", "setup"].includes(scenario ?? "")
+    )
+      return { matched: true, value: null };
+    if (name === "identity:signInOptions")
+      return { matched: true, value: { adminSetup: true } };
+    if (name === "applications:mine")
+      return {
+        matched: true,
+        value: {
+          application: { kind: "kabadiwala", status: "draft", version: 0 },
+        },
+      };
+  }
+  return { matched: false };
+}
+
 /** No Convex client or connection is created in this documentation-only process. */
 export function useQuery(
   query: FunctionReference<"query">,
@@ -21,6 +45,8 @@ export function useQuery(
 ): unknown {
   if (args === "skip") return undefined;
   const name = getFunctionName(query);
+  const failure = failureQuery(name);
+  if (failure.matched) return failure.value;
   if (name === "workspace:mine") return workspaceFixture();
   if (name === "market:browse") return offersFixture();
   if (
@@ -47,9 +73,10 @@ export function useConvexAuth() {
   return { isLoading: false, isAuthenticated: true };
 }
 function rejectWrite() {
-  return Promise.reject(
-    new Error("Documentation fixture: writes are disabled."),
-  );
+  return new URLSearchParams(window.location.search).get("scenario") ===
+    "support"
+    ? Promise.reject(new ConvexError("SUPPORT_RATE_LIMITED"))
+    : Promise.reject(new Error("Documentation fixture: writes are disabled."));
 }
 export function useMutation() {
   return rejectWrite;

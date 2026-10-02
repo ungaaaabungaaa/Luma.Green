@@ -39,6 +39,10 @@ export type AdminProfileValues = z.infer<typeof adminProfileSchema>;
 
 export const adminAccountSchema = adminProfileSchema
   .extend({
+    setupToken: z
+      .string()
+      .min(32, "Enter the setup token from the deployment owner.")
+      .max(512, "Check the setup token with the deployment owner."),
     email: z.email("Enter an email address."),
     password: z
       .string()

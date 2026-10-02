@@ -1,5 +1,5 @@
 import { CHAIN_MARKUP } from "../../../convex/lib/catalogue";
-import { kgToGrams, type OrgKind } from "../../../convex/lib/chain";
+import type { OrgKind } from "../../../convex/lib/chain";
 import { indiaToday } from "../../../convex/lib/onboarding";
 import type { ListingView, TradeStatus, TradeView } from "./types";
 
@@ -25,30 +25,43 @@ export const TRADE_STEPS = [
 const KG_PATTERN = /^(?:\d+(?:\.\d{0,3})?|\.\d{1,3})$/;
 const RUPEE_PATTERN = /^(?:\d+(?:\.\d{0,2})?|\.\d{1,2})$/;
 
-/** "12.5" kg → 12500 grams; null unless it's a weight above zero. */
+/** Parse decimal digits directly, without rounding through a binary fraction. */
+function parseUnits(text: string, places: number): number | null {
+  const [whole, fraction = ""] = text.split(".", 2);
+  const units = Number(`${whole}${fraction.padEnd(places, "0")}`);
+  return Number.isSafeInteger(units) && units > 0 ? units : null;
+}
+
+/** "12.5" kg → 12500 grams; null unless it's a safe weight above zero. */
 export function parseKg(input: string): number | null {
   const text = input.trim();
-  if (!KG_PATTERN.test(text)) return null;
-  const grams = kgToGrams(Number(text));
-  return grams > 0 ? grams : null;
+  return KG_PATTERN.test(text) ? parseUnits(text, 3) : null;
 }
 
 /** "17.5" rupees → 1750 paise; null unless it's a price above zero. */
 export function parseRupees(input: string): number | null {
   const text = input.trim();
-  if (!RUPEE_PATTERN.test(text)) return null;
-  const paise = Math.round(Number(text) * 100);
-  return paise > 0 ? paise : null;
+  return RUPEE_PATTERN.test(text) ? parseUnits(text, 2) : null;
+}
+
+/** Format integer digits without rounding at the safe-integer boundary. */
+function scaledFieldValue(value: number, places: number): string {
+  const sign = value < 0 ? "-" : "";
+  const digits = String(Math.abs(value)).padStart(places + 1, "0");
+  let fraction = digits.slice(-places);
+  while (fraction.endsWith("0")) fraction = fraction.slice(0, -1);
+  const suffix = fraction ? "." + fraction : "";
+  return `${sign}${digits.slice(0, -places)}${suffix}`;
 }
 
 /** Grams as the plain number a kg field holds: 12500 → "12.5". */
 export function kgFieldValue(grams: number): string {
-  return String(grams / 1000);
+  return scaledFieldValue(grams, 3);
 }
 
 /** Paise as the plain number a rupee field holds: 1750 → "17.5". */
 export function rupeeFieldValue(paise: number): string {
-  return String(paise / 100);
+  return scaledFieldValue(paise, 2);
 }
 
 // --- Prices -------------------------------------------------------------------

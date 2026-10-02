@@ -10,7 +10,8 @@ import {
   XCircleIcon,
 } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
-import { type ReactNode, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -237,6 +238,8 @@ function ApplicationStatus({ application }: { application: Application }) {
 function ChangeRole() {
   const t = useTranslations("join");
   const discard = useMutation(api.applications.discard);
+  const common = useTranslations("common");
+  const working = useRef(false);
   const [isConfirming, setIsConfirming] = useState(false);
   const [isWorking, setIsWorking] = useState(false);
 
@@ -255,25 +258,36 @@ function ChangeRole() {
   return (
     <div
       role="alertdialog"
+      aria-labelledby="discard-draft-confirmation"
       className="flex flex-col gap-3 border-y border-border py-4"
     >
-      <p>{t("status.draft.confirmChange")}</p>
+      <p id="discard-draft-confirmation">{t("status.draft.confirmChange")}</p>
       <div className="flex gap-2">
         <Button
           variant="destructive"
           disabled={isWorking}
           onClick={() => {
+            if (working.current) return;
+            working.current = true;
             setIsWorking(true);
-            void discard({}).finally(() => {
-              setIsWorking(false);
-              setIsConfirming(false);
-            });
+            void discard({})
+              .then(() => {
+                setIsConfirming(false);
+              })
+              .catch(() => {
+                toast.error(common("error"));
+              })
+              .finally(() => {
+                working.current = false;
+                setIsWorking(false);
+              });
           }}
         >
           {t("form.yes")}
         </Button>
         <Button
           variant="outline"
+          disabled={isWorking}
           onClick={() => {
             setIsConfirming(false);
           }}

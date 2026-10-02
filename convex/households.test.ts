@@ -330,6 +330,35 @@ describe("households.book", () => {
     await expect(attempt({ name: " A " })).rejects.toThrow(/INVALID_NAME/);
   });
 
+  it("counts older open bookings even after fifty newer cancellations", async () => {
+    const t = await demoWorld();
+    const arjun = await newHousehold(t);
+    const booking = await pickupAt(t);
+    const tokens = [];
+    for (let index = 0; index < 5; index += 1) {
+      tokens.push(await arjun.mutation(api.households.book, booking));
+    }
+    const original = await bookingByToken(t, tokens[0]);
+    if (!original) throw new Error("Missing booking");
+    await t.run(async (ctx) => {
+      const { _id, _creationTime, ...data } = original;
+      for (let index = 0; index < 50; index += 1) {
+        await ctx.db.insert("bookings", {
+          ...data,
+          token: `closed-${String(index)}`,
+          status: "cancelled",
+        });
+      }
+    });
+    const before = await t.run((ctx) => ctx.db.query("bookings").collect());
+    await expect(arjun.mutation(api.households.book, booking)).rejects.toThrow(
+      /TOO_MANY_OPEN/,
+    );
+    expect(await t.run((ctx) => ctx.db.query("bookings").collect())).toEqual(
+      before,
+    );
+  });
+
   it("keeps a household to five open bookings at once", async () => {
     const t = await demoWorld();
     const arjun = await newHousehold(t);
