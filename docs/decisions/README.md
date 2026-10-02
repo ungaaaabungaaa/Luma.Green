@@ -33,3 +33,4 @@ list top to bottom to see how the platform got its shape.
 | 0015 | [Bounded photo cache and selectable inference](./0015-bounded-photo-cache-and-selectable-inference.md)   | Decided                  | 1 Oct 2026  |
 | 0016 | [Optional analytics and error monitoring](./0016-optional-analytics-and-error-monitoring.md)             | Decided                  | 1 Oct 2026  |
 | 0017 | [Light, dark and system appearance](./0017-light-dark-theme.md)                                          | Decided                  | 2 Oct 2026  |
+| 0018 | [Scoped industry REST API](./0018-scoped-industry-rest-api.md)                                           | Decided                  | 2 Oct 2026  |

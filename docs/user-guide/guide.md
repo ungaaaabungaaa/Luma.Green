@@ -2,9 +2,10 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, logo motion revision. Source baseline: 8975575.
+Edition: 2 October 2026, industry API access revision. Source baseline: c1ed004.
+Includes the industry API access revision in this change.
 Includes the UI detail pass and wide artwork banners on the main public pages, with taller image crops on phones.
-Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
+Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis, integration operators and the platform owner.
 
 ![The current public homepage. Actual local browser capture; backend not connected.](screenshots/public-home.png)
 
@@ -694,6 +695,7 @@ A branch push is not deployment. A build is not provider approval. A provider ac
 | Role home and requests | /app; /app/requests; /app/requests/[id]                                                            |
 | Stock and prices       | /app/stock; /app/prices                                                                            |
 | Business trade         | /app/market; /app/sell; /app/trades; /app/trades/[id]/invoice                                      |
+| API connections        | /app/integrations; /api/v1/openapi.json                                                            |
 | Reporting              | /app/impact; /app/compliance                                                                       |
 | Help                   | /help; /help/[role]; /help/[role]/[guide]; /help/contact                                           |
 | Reference/enquiry      | /standards; /solar                                                                                 |
@@ -844,7 +846,102 @@ motion settings stop the decorative scroll effects.
 
 ---
 
-## 37 / Evidence and maintenance
+## 37 / Connect your business systems
+
+An approved business can give its ERP, stock or reporting system read access to
+Luma.Green. This applies to kabadiwalas, yards, recyclers and manufacturers. The
+first API version reads the business profile, material catalogue, recorded stock
+and trade records. It can also supply optional industry news when the platform
+operator has enabled the news provider. It cannot change stock, place orders,
+transfer money or certify carbon credits.
+
+### Create an API key
+
+1. Sign in as the approved business owner. Open Compliance, then API access.
+2. Enter a short key name that identifies the receiving system.
+3. Select its read permissions. Select only the records the system needs.
+4. Choose 1, 7, 30 or 90 days before expiry. The default is 30 days.
+5. Select Create key. Copy the key into the receiving system's protected secret
+   settings before you close the result. The full key is shown only once.
+6. Give your integration operator the website address followed by /api/v1.
+   Use OpenAPI specification for the exact request and response contract.
+7. Test a request for a permission you selected. To confirm the business first,
+   select Business details (`organization:read`) and test the organization request.
+
+Staff and Saathis cannot manage keys. Each business can have up to five active,
+unexpired keys. A key belongs to one business and one deployment. Development
+and production credentials are separate. The API does not use a language prefix.
+
+![API access with synthetic key metadata and no real secret. Actual application component in the isolated documentation preview; all writes are disabled.](screenshots/api-access-en-1440-light.png)
+
+### Protect and replace a key
+
+Keep the key in the server's secret store. Do not put it in a spreadsheet cell,
+browser code, source repository, URL or support message. Give each system a
+separate key. The screen shows the key name, safe prefix, permissions, expiry and
+last-used date and time. It does not reveal the full secret again.
+
+To replace a key, create another key, install it in the receiving system, test a
+request, then revoke the old key. Revoke an unused key first if all five slots are
+occupied. To stop access, select Revoke beside the key and confirm the action.
+If the key is lost, revoke it and create a replacement. Removing its issuer's
+owner membership or suspending the business also stops the connection.
+
+![The API key list and actions at phone width after scrolling, with synthetic records. This capture checks layout; it does not prove authentication or an ERP connection.](screenshots/api-controls-en-390-light.png)
+
+### Read the data correctly
+
+The API uses integer grams for mass and integer paise for money. Keep Luma.Green
+material codes beside your system's item codes. Material labels can be translated;
+they are not stable identifiers. A factory can import its recorded purchases and
+compare its stock with the ERP. A recycler can import its recorded sales.
+
+Read all pages when importing inventory, materials or trades. List pages contain
+up to 100 records; the default is 50. Trades have separate buyer and seller lists.
+Records can change between requests, so a set of pages is not a guaranteed change
+feed. Stage a full import and reconcile it before changing local records. An
+incomplete scan does not prove that a record was removed.
+
+A key permits 60 accepted requests per minute; the business total is 180 across
+its keys. On a rate-limit response, wait for the stated retry period. An expired
+or revoked key needs replacement. A denied permission needs an owner to issue a
+key with the required scope. Never send the key when reporting an error; send the
+request ID, route, time and response status.
+
+Business payment states are still simulated. A trade record is not proof of bank
+payment or a GST tax invoice. API access does not approve specialised or hazardous
+waste handling. Material-specific evidence and workflows remain separate work.
+
+### Optional industry news
+
+The news permission reads English headlines selected from the business's recorded
+material families. Each item includes its publisher, date and original article
+link. Show those details when displaying a headline and open the publisher's link
+for the article. The platform does not provide full article text or a news feed
+screen in this release.
+
+The platform operator must configure an approved NewsAPI plan and a daily quota.
+News stays unavailable when it is disabled, the quota is used, or the provider
+fails. The API does not substitute invented headlines. Provider access and a
+successful live request must be checked separately from local tests.
+
+### Language and appearance
+
+The API access controls follow your selected app language and appearance.
+Technical paths and key prefixes remain left-to-right. The examples below show
+Arabic and Tamil with the same synthetic records.
+
+![API access in Arabic and dark mode. This synthetic component capture checks right-to-left layout and does not show a live key.](screenshots/api-access-ar-390-dark.png)
+
+![API access in Tamil at phone width. The translated labels wrap within their controls. Synthetic fixture, with all writes disabled.](screenshots/api-access-ta-390-light.png)
+
+For developer examples, field definitions, setup and the planned webhook, write,
+MCP and GraphQL stages, read docs/architecture/industry-api.md. The current release
+is REST and read-only. Treat future stages as plans.
+
+---
+
+## 38 / Evidence and maintenance
 
 The editable repository source is docs/user-guide/guide.md. The maintained Word document is output/docx/luma-green-user-guide.docx. The old PDF is an archived edition. Screenshots and their capture manifests live with the source. The repository README in that folder gives capture and rebuild commands.
 

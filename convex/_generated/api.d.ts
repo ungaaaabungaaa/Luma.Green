@@ -8,7 +8,6 @@
  * @module
  */
 
-
 import type * as admin from "../admin.js";
 import type * as adminPrices from "../adminPrices.js";
 import type * as applicationFiles from "../applicationFiles.js";
@@ -21,7 +20,10 @@ import type * as files from "../files.js";
 import type * as households from "../households.js";
 import type * as http from "../http.js";
 import type * as identity from "../identity.js";
+import type * as industryNews from "../industryNews.js";
 import type * as insights from "../insights.js";
+import type * as integrationHttp from "../integrationHttp.js";
+import type * as integrations from "../integrations.js";
 import type * as lib_access from "../lib/access.js";
 import type * as lib_admin from "../lib/admin.js";
 import type * as lib_applicationAccess from "../lib/applicationAccess.js";
@@ -33,6 +35,10 @@ import type * as lib_demoFiles from "../lib/demoFiles.js";
 import type * as lib_dispatch from "../lib/dispatch.js";
 import type * as lib_drafts from "../lib/drafts.js";
 import type * as lib_households from "../lib/households.js";
+import type * as lib_industryNews from "../lib/industryNews.js";
+import type * as lib_integrationHttp from "../lib/integrationHttp.js";
+import type * as lib_integrationOpenapi from "../lib/integrationOpenapi.js";
+import type * as lib_integrations from "../lib/integrations.js";
 import type * as lib_lifecycle from "../lib/lifecycle.js";
 import type * as lib_notificationConfig from "../lib/notificationConfig.js";
 import type * as lib_notifications from "../lib/notifications.js";
@@ -59,6 +65,7 @@ import type * as smsLimits from "../smsLimits.js";
 import type * as stock from "../stock.js";
 import type * as support from "../support.js";
 import type * as workspace from "../workspace.js";
+
 import type {
   ApiFromModules,
   FilterApi,
@@ -78,7 +85,10 @@ declare const fullApi: ApiFromModules<{
   households: typeof households;
   http: typeof http;
   identity: typeof identity;
+  industryNews: typeof industryNews;
   insights: typeof insights;
+  integrationHttp: typeof integrationHttp;
+  integrations: typeof integrations;
   "lib/access": typeof lib_access;
   "lib/admin": typeof lib_admin;
   "lib/applicationAccess": typeof lib_applicationAccess;
@@ -90,6 +100,10 @@ declare const fullApi: ApiFromModules<{
   "lib/dispatch": typeof lib_dispatch;
   "lib/drafts": typeof lib_drafts;
   "lib/households": typeof lib_households;
+  "lib/industryNews": typeof lib_industryNews;
+  "lib/integrationHttp": typeof lib_integrationHttp;
+  "lib/integrationOpenapi": typeof lib_integrationOpenapi;
+  "lib/integrations": typeof lib_integrations;
   "lib/lifecycle": typeof lib_lifecycle;
   "lib/notificationConfig": typeof lib_notificationConfig;
   "lib/notifications": typeof lib_notifications;
@@ -105,8 +119,8 @@ declare const fullApi: ApiFromModules<{
   "lib/views": typeof lib_views;
   "lib/workspace": typeof lib_workspace;
   market: typeof market;
-  "notifications": typeof notifications;
-  "photoEstimates": typeof photoEstimates;
+  notifications: typeof notifications;
+  photoEstimates: typeof photoEstimates;
   pilot: typeof pilot;
   review: typeof review;
   saathi: typeof saathi;
