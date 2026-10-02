@@ -41,7 +41,7 @@ export function Assumptions() {
   return (
     <section
       aria-labelledby="solar-assumptions"
-      className="flex flex-col gap-3 rounded-xl border bg-muted/30 p-5"
+      className="flex flex-col gap-3 border-t border-border py-5"
     >
       <h3
         id="solar-assumptions"

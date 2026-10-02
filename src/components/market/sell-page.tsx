@@ -50,10 +50,10 @@ export function SellPage() {
     <>
       <AppPageHeader title={t("sell.title")} lead={t("sell.lead", { buyer })} />
       <DemoNote>{t("sampleData")}</DemoNote>
-      <div className="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_24rem]">
+      <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1fr)_24rem]">
         <section
           aria-labelledby="new-listing-title"
-          className="flex flex-col gap-4 rounded-xl border bg-card p-5 sm:p-6 xl:order-2"
+          className="flex flex-col gap-5 border-t border-border pt-5 xl:order-2 xl:border-s xl:border-t-0 xl:ps-8 xl:pt-0"
         >
           <h2 id="new-listing-title" className="text-lg font-semibold">
             {t("sell.form.title")}

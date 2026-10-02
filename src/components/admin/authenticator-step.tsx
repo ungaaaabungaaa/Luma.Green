@@ -72,7 +72,7 @@ export function AuthenticatorStep({
         <li>Scan this QR code, or type the key under it.</li>
         <li>Enter the 6-digit code the app shows.</li>
       </ol>
-      <div className="flex flex-col items-center gap-4 rounded-lg border bg-muted/30 p-4">
+      <div className="flex flex-col items-center gap-4 border-y py-5">
         {qr ? (
           <Image
             src={qr}

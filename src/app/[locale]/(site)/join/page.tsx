@@ -31,9 +31,9 @@ export default async function JoinPage() {
   return (
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
-      <Container className="flex flex-col gap-8 py-16 lg:py-24">
+      <Container className="flex flex-col gap-8 py-8 lg:py-12">
         <RoleCards />
-        <aside className="flex flex-col gap-1 rounded-xl border bg-muted/40 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <aside className="flex flex-col gap-3 border-y py-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">
             <HomeIcon
               aria-hidden
@@ -46,7 +46,7 @@ export default async function JoinPage() {
           </div>
           <Link
             href="/how-it-works"
-            className="ms-8 font-medium text-primary underline-offset-4 hover:underline sm:ms-0"
+            className="ms-8 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline sm:ms-0"
           >
             {t("homeLink")}
           </Link>

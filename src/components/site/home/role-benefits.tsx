@@ -47,14 +47,14 @@ export async function RoleBenefits() {
             <li
               key={key}
               data-reveal
-              className="group grid min-w-0 grid-cols-1 items-center gap-6 py-7 md:grid-cols-2 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)_minmax(0,11rem)] xl:gap-10"
+              className="group grid min-w-0 grid-cols-1 items-center gap-4 py-6 md:grid-cols-2 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)_minmax(0,11rem)] xl:gap-10"
             >
               <div className="flex min-w-0 items-center gap-4">
                 <RoleStoryImage
                   scene={key}
                   compact
-                  className="hidden w-20 shrink-0 sm:block"
-                  frameClassName="aspect-square rounded-lg"
+                  className="w-16 shrink-0 sm:w-20"
+                  frameClassName="aspect-square"
                 />
                 <div className="min-w-0 space-y-2 wrap-anywhere">
                   <Icon aria-hidden className="size-5 text-primary" />

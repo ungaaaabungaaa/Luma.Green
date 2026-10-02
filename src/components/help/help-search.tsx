@@ -77,7 +77,7 @@ export function HelpSearch() {
             setQuery(event.target.value);
             setShowAll(false);
           }}
-          className="h-14 rounded-lg bg-background ps-12 pe-12 text-base shadow-sm md:text-base [&::-webkit-search-cancel-button]:hidden"
+          className="h-14 rounded-lg bg-background ps-12 pe-12 text-base shadow-none md:text-base [&::-webkit-search-cancel-button]:hidden"
         />
         {query ? (
           <Button
@@ -131,7 +131,7 @@ export function HelpSearch() {
       {isActive ? (
         <section
           aria-label={summary}
-          className="flex flex-col gap-2 rounded-xl border bg-card p-3 shadow-sm sm:p-4"
+          className="flex flex-col gap-2 border-y py-4"
         >
           <p aria-hidden className="px-2 text-sm font-medium">
             {summary}
@@ -173,11 +173,11 @@ function ResultItem({ entry }: { entry: HelpEntry }) {
     { type: "conjunction" },
   );
   return (
-    <li className="relative flex gap-3 rounded-xl px-2 py-3 hover:bg-muted/60 has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50">
+    <li className="relative flex gap-3 border-b px-2 py-4 last:border-b-0 hover:bg-muted/60 has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50">
       <IconTile icon={TOPIC_ICONS[entry.topic]} size="sm" />
       <div className="flex min-w-0 flex-col gap-1">
         <p className="flex flex-wrap items-center gap-2 text-xs font-medium text-muted-foreground">
-          <span className="rounded-full bg-muted px-2 py-0.5 text-foreground">
+          <span className="font-semibold text-foreground">
             {t(entry.kind === "guide" ? "search.guide" : "search.question")}
           </span>
           {t(`topics.${entry.topic}`)}

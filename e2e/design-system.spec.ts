@@ -1,4 +1,8 @@
-import { expect, test } from "@playwright/test";
+import { expect, type Locator, test } from "@playwright/test";
+
+import english from "../messages/en.json";
+import malayalam from "../messages/ml.json";
+import tamil from "../messages/ta.json";
 
 const routes = [
   "/",
@@ -17,6 +21,125 @@ const routes = [
   "/admin/login",
   "/admin/setup",
 ] as const;
+
+async function expectActionTextToFit(action: Locator) {
+  await expect(action).toBeVisible();
+  const overflow = await action.evaluate((element) => {
+    const button = element.getBoundingClientRect();
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+    const outside: string[] = [];
+    let node = walker.nextNode();
+    while (node) {
+      if (node.textContent?.trim()) {
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        for (const rect of range.getClientRects()) {
+          if (
+            rect.left < button.left - 1 ||
+            rect.right > button.right + 1 ||
+            rect.top < button.top - 1 ||
+            rect.bottom > button.bottom + 1
+          ) {
+            outside.push(node.textContent);
+          }
+        }
+      }
+      node = walker.nextNode();
+    }
+    return {
+      outside,
+      fitsViewport: button.left >= -1 && button.right <= innerWidth + 1,
+    };
+  });
+  expect(
+    overflow,
+    "Action labels must remain inside their visible buttons",
+  ).toEqual({
+    outside: [],
+    fitsViewport: true,
+  });
+}
+
+for (const { locale, copy } of [
+  { locale: "ta", copy: tamil },
+  { locale: "ml", copy: malayalam },
+]) {
+  test(`${locale} action labels fit their buttons at 320px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 740 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto(`/${locale}`);
+    await expect(
+      page.getByRole("heading", { level: 1, name: copy.home.hero.title }),
+    ).toBeVisible();
+    await page.evaluate(async () => document.fonts.ready);
+    for (const content of [copy.home.hero, copy.home.closing]) {
+      const section = page.getByRole("region", {
+        name: content.title,
+        exact: true,
+      });
+      for (const label of [content.sell, content.join]) {
+        await expectActionTextToFit(
+          section.getByRole("link", { name: label, exact: true }),
+        );
+      }
+    }
+
+    await page.goto(`/${locale}/login`);
+    await page
+      .getByRole("button", { name: copy.auth.continue, exact: true })
+      .click();
+    await page.evaluate(async () => document.fonts.ready);
+    await expectActionTextToFit(
+      page.getByRole("button", { name: copy.auth.previewAction, exact: true }),
+    );
+  });
+}
+
+test("material motion can pause and respects reduced motion", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+  const region = page.getByRole("region", { name: english.home.marquee.label });
+  const track = region.locator("[data-paused]");
+  await region.scrollIntoViewIfNeeded();
+  await region
+    .getByRole("button", { name: english.home.marquee.pause })
+    .click();
+  await expect(track).toHaveCSS("animation-play-state", "paused");
+  await region
+    .getByRole("button", { name: english.home.marquee.resume })
+    .click();
+  await expect(track).toHaveAttribute("data-paused", "false");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(track).toHaveCSS("animation-name", "none");
+  await expect(region.getByRole("button")).toBeHidden();
+  await expect(region.getByRole("listitem")).toHaveCount(6);
+  for (const material of Object.values(english.prices.families)) {
+    await expect(
+      region.getByRole("list").getByText(material, { exact: true }),
+    ).toBeVisible();
+  }
+});
+
+test("mobile navigation shows the brand mark and the current language", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/kn");
+  const header = page.locator("header").first();
+  await expect(header.getByRole("img", { name: "Luma.Green" })).toBeVisible();
+  await expect(header.getByText("Luma.Green", { exact: true })).toBeHidden();
+  await expect(header.getByRole("button", { name: /ಕನ್ನಡ/ })).toBeVisible();
+  await header.getByRole("button", { name: /ಕನ್ನಡ/ }).click();
+  await expect(
+    page.getByRole("menuitemradio", { name: "العربية" }),
+  ).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(header.getByRole("button", { name: /ಕನ್ನಡ/ })).toBeFocused();
+});
 
 for (const mode of [
   { width: 360, colorScheme: "dark" },

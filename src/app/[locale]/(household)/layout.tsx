@@ -26,7 +26,7 @@ export default async function HouseholdLayout({
   const t = await getTranslations("nav");
 
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/35">
+    <div className="flex min-h-dvh flex-col bg-background">
       <SkipLink />
       <header className="flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-border bg-background px-4 py-2">
         <Link

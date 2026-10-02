@@ -36,8 +36,11 @@ before the next build. This prevents later builds from losing your changes.
    are direct browser output, not cropped or composed after capture.
 
    The commands accept a local origin only and reject external requests. They
-   visit real pages. They do not sign in or submit forms. Use a disconnected or
-   approved test environment with no real personal data. Inspect every PNG.
+   visit real pages. The phone-preview capture enters the synthetic number
+   `9000000000` and submits the local preview form to show the OTP screen. No
+   backend call, SMS delivery, account creation or sign-in occurs. Other forms
+   are not submitted. Use a disconnected or approved test environment with no
+   real personal data. Inspect every PNG.
 
 3. For protected screens, use an approved staging account when available. Do
    not bypass authentication. The isolated `scripts/guide-preview` harness can
@@ -113,28 +116,37 @@ before the next build. This prevents later builds from losing your changes.
 
 ## Google Docs copy
 
-Current publication state is recorded in [cloud.json](cloud.json). The reviewed
-2 October 2026 edition is available as the native
-[Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY).
-Native readback verified all 37 chapters, six tables and 51 inline images against
-the reviewed Word file. All body paragraphs and table text are present. The
-edition date and two pilot date limits use native date fields. All 56 Word pages
-passed visual review before import. Sharing settings were not changed. No
-automatic cloud synchronization is configured.
+Current publication state is recorded in [cloud.json](cloud.json). The current
+UI and UX detail revision is **pending publication**. The existing native
+[Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
+remains at its last verified revision. Its document ID and sharing settings are
+unchanged. No cloud update was performed for this local revision.
 
-Import the sanitized and visually reviewed DOCX with the Google Drive plugin's
-`google_drive_import_document` action and `upload_mode: "native_google_docs"`.
-Do not create an empty Google Doc and reconstruct the guide with write calls.
-If the plugin is unavailable, retain the local DOCX and report that native
-Google Docs import is pending. Do not invent a Google Docs link or claim that a
-local file is already stored in the user's Google account.
+The last verified import contained all 37 chapters, six tables and 51 inline
+images. Native readback matched the reviewed Word body and table text, with three
+native date fields. The corresponding Word file had 56 visually reviewed pages.
+Its DOCX hash, native readback hash, revision ID and verification details remain
+under `last_verified_revision` in `cloud.json`. They describe that earlier
+publication, not the current local source or Word rebuild.
+
+The connected `google_drive_import_document` action creates a new document.
+The connected `update_file` action does not accept raw DOCX replacement of an
+existing native Google Doc. These actions therefore cannot complete the required
+in-place update while preserving this document ID. Do not create a replacement
+document or change the link. Keep the reviewed local DOCX and report this update
+as pending until a supported in-place native document workflow is available.
+
+For the first import only, the sanitized and visually reviewed DOCX can use
+`google_drive_import_document` with `upload_mode: "native_google_docs"`. After
+that import, every revision must reuse the recorded native document ID and
+preserve its sharing settings. Do not reconstruct the guide in an empty Google
+Doc. Verify native text, structure and images after any supported update before
+marking the current revision as published.
 
 A manually uploaded Word document can also be opened in Google Docs by its
-owner. Edits made there must return to the Markdown source before a later
-repository build. After the first verified import, record its document ID and
-actual URL in `cloud.json`. Update that same document after each accepted guide
-revision; preserve its sharing settings. Do not create a replacement link on each
-run. Verify the cloud content after writing, or record publication as pending.
+owner, but a new copy does not update the existing guide. Any edits made in the
+native document must return to `guide.md` before the next local rebuild. No
+automatic cloud synchronization is configured.
 
 ## Screenshot and privacy rules
 

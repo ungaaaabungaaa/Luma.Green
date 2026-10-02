@@ -26,8 +26,17 @@ In another terminal:
 node scripts/guide-preview/capture.mjs
 ```
 
-The preview listens only on `127.0.0.1:3202`. It does not use port 3004 or alter
-its running production preview. Stop the preview with Ctrl+C after capture.
+The preview listens only on `127.0.0.1:3202`. If that port is already in use,
+leave the existing process running and start a separate preview:
+
+```sh
+pnpm exec vite --config scripts/guide-preview/vite.config.mts --port 3203
+GUIDE_FIXTURE_ORIGIN=http://127.0.0.1:3203 node scripts/guide-preview/capture.mjs
+```
+
+The origin override accepts only loopback HTTP origins. The harness does not use
+port 3004 or alter its running production preview. Stop only the preview started
+for the current capture after the work is complete.
 
 Capture outputs go to `docs/user-guide/screenshots`. The script checks the
 visible provenance label and each page heading, waits for fonts, rejects browser
@@ -46,9 +55,14 @@ actual `#weigh` section; the documentation banner remains visible above it. No
 image is cropped, repainted or composed after capture. `?role=` selects only the
 harness fixture; it is not a production role-switching feature.
 
+The shop and yard application captures show the upper form in the browser
+viewport. The guide explains how to reach the remaining fields by scrolling.
+This keeps field text readable in Word instead of shrinking a long form to one
+page.
+
 ## Isolation and adapters
 
-- `main.tsx` imports actual `ConsoleShell`, `AppShell` and page components.
+- `main.tsx` imports actual `ConsoleShell`, `AppShell`, `JoinLayout` and page components.
 - `fixtures.ts` contains sample data, with typed contracts for the main records.
 - `queries.ts` replaces Convex hooks only in this Vite configuration. It creates
   no client, session, WebSocket or database connection. Unknown queries fail.
@@ -71,7 +85,11 @@ page uses visibly fictional registration identifiers and report quantities.
 They remain prototypes: an “escrow” label in a screenshot does not establish
 real payment processing. The guide must explain this boundary in its text.
 
-Six role home screens also have a `-phone` capture at 390 × 844 pixels to check the compact image placement and mobile navigation.
+Six role home screens also have a `-phone` capture at 390 × 844 pixels to check
+mobile navigation. Operational phone screenshots use the actual viewport only,
+so fixed bottom navigation remains at the bottom of the image. This also applies
+to the stock and impact phone examples. Full-page screenshots of these screens
+would place the fixed navigation over content in the middle of the long image.
 
 ## Current capture set
 
@@ -107,3 +125,34 @@ script requires both SVG charts to have usable dimensions and visible bars befor
 it writes any pilot screenshot. It also captures the full report in dark mode and
 at phone width. Separate outcome and material viewport screenshots keep the guide
 charts readable. These values are examples, not measured pilot results.
+
+## Added protected-screen coverage
+
+The capture script also registers the following eight outputs. Capture and visual
+review must finish before these are used as guide evidence. Existing capture
+names, routes and provenance rules remain unchanged.
+
+| File stem                | Actual component and state                                    | Heading       | Viewport    |
+| ------------------------ | ------------------------------------------------------------- | ------------- | ----------- |
+| `kabadiwala-stock-phone` | `StockPage`, one synthetic newspaper stock row                | Stock         | 390 × 844   |
+| `yard-sell`              | `SellPage`, one synthetic open listing and available stock    | Sell          | 1440 × 1000 |
+| `yard-invoice`           | `InvoicePage`, synthetic prototype escrow receipt             | Trade receipt | 1440 × 1000 |
+| `recycler-impact`        | `ImpactPage` / `OrgImpactView`, synthetic material totals     | Your impact   | 1440 × 1000 |
+| `recycler-impact-phone`  | Same impact example at phone width                            | Your impact   | 390 × 844   |
+| `join-kabadiwala-phone`  | `KabadiwalaJoin` / `KabadiwalaForm`, existing synthetic draft | Your shop     | 390 × 844   |
+| `join-yard`              | `BusinessJoin` / `BusinessForm`, existing synthetic draft     | Your yard     | 1440 × 1000 |
+| `join-status-phone`      | `StatusView`, submitted synthetic shop application            | Under review  | 390 × 844   |
+
+The three onboarding views use the current `JoinLayout` and query the isolated
+`applications:mine` adapter. The forms start with synthetic draft values. The
+capture script does not edit fields, submit a form, request location, upload files
+or run autosave. No login number or customer contact details are supplied.
+All mutations and actions still reject through the same write-disabled adapter.
+Production session checks and application code are unchanged.
+
+The sale example has 260 kg of stock, a 60 kg open listing and 200 kg available.
+The separate receipt example is an illustrative prototype state, not proof of
+payment. The impact totals, including 100 kg of CO₂e, are synthetic. They must not
+be described as measured recovery, verified emissions reductions or issued
+credits. Add these screenshots to the stock, business sale, trade receipt, impact
+and onboarding guide chapters only after browser capture and visual review.

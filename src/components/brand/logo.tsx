@@ -142,7 +142,10 @@ export function Logo({
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <LogoMark className="size-8 shrink-0" idPrefix={idPrefix} />
-      <span className="font-display text-xl font-semibold tracking-tight">
+      <span
+        aria-hidden="true"
+        className="hidden font-display text-xl font-semibold tracking-tight sm:inline"
+      >
         {site.name}
       </span>
     </span>

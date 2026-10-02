@@ -8,13 +8,6 @@ import { useState } from "react";
 import { StatusPill } from "@/components/app/page-parts";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { isLocale, localeMeta } from "@/i18n/locales";
 
@@ -94,7 +87,7 @@ export function ApplicationReview({
         </div>
         <aside
           aria-label="Checks and decision"
-          className="flex flex-col gap-4 xl:sticky xl:top-6 xl:row-span-2 xl:self-start"
+          className="flex min-w-0 flex-col gap-6 xl:row-span-2 xl:self-start xl:border-s xl:ps-6"
         >
           {application.status === "submitted" ? (
             <>
@@ -256,29 +249,29 @@ const DECIDED_COPY: Record<ApplicationStatus, { title: string; body: string }> =
 function DecisionStatus({ application }: { application: ReviewedApplication }) {
   const copy = DECIDED_COPY[application.status];
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
-          <h2>{copy.title}</h2>
-        </CardTitle>
+    <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+      <header className="flex flex-col gap-1.5">
+        <h2 className="font-display text-lg font-semibold tracking-tight">
+          {copy.title}
+        </h2>
         {application.decidedAt === undefined ? null : (
-          <CardDescription>
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Decided {formatWhen(application.decidedAt)}
-          </CardDescription>
+          </p>
         )}
-      </CardHeader>
-      <CardContent className="flex flex-col gap-3 text-sm">
+      </header>
+      <div className="flex flex-col gap-3 text-sm">
         <p>{copy.body}</p>
         {application.note ? (
-          <blockquote className="rounded-lg border-s-4 border-primary bg-muted/60 px-3 py-2 whitespace-pre-line">
+          <blockquote className="border-s border-border ps-3 break-words whitespace-pre-line">
             {application.note}
           </blockquote>
         ) : null}
         <Button asChild variant="outline">
           <Link href="/admin/verification">Back to the queue</Link>
         </Button>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }
 

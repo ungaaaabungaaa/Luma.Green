@@ -383,7 +383,7 @@ function SentPanel({ onSendAnother }: { onSendAnother: () => void }) {
   return (
     <div
       role="status"
-      className="flex flex-col items-start gap-3 rounded-xl border border-primary/30 bg-accent p-6"
+      className="flex flex-col items-start gap-3 border-y border-primary/30 py-6"
     >
       <span className="flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
         <CircleCheckIcon aria-hidden className="size-6" />
@@ -419,7 +419,7 @@ function ContactUnavailable() {
   return (
     <div
       role="status"
-      className="flex flex-col items-start gap-2 rounded-xl border bg-card p-6"
+      className="flex flex-col items-start gap-3 border-y py-6"
     >
       <span className="flex size-12 items-center justify-center rounded-full bg-accent text-primary">
         <MessageSquareOffIcon aria-hidden className="size-6" />

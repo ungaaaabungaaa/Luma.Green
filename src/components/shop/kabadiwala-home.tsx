@@ -71,7 +71,7 @@ function HomeBody({ city }: { city: string }) {
   const today = useIndiaToday();
   return (
     <>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 md:gap-10">
         <NewRequestsCard count={requests?.new.length} />
         <TodayCard active={requests?.active} today={today} city={city} />
       </div>
@@ -95,9 +95,9 @@ function QuickLink({
   return (
     <Link
       href={href}
-      className="flex min-h-16 items-center gap-4 rounded-xl border border-border bg-card p-4 outline-none hover:border-primary/40 hover:bg-primary/5 focus-visible:ring-3 focus-visible:ring-ring/50"
+      className="flex min-h-20 items-center gap-4 border-b border-border py-4 outline-none hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring/50"
     >
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted text-primary">
+      <span className="flex size-10 shrink-0 items-center justify-center text-primary">
         <Icon aria-hidden className="size-6" />
       </span>
       <span className="flex min-w-0 flex-1 flex-col">
@@ -115,7 +115,10 @@ function QuickLink({
 function QuickLinks() {
   const t = useTranslations("shop.home");
   return (
-    <nav aria-label={t("quickLinks")} className="grid gap-4 sm:grid-cols-2">
+    <nav
+      aria-label={t("quickLinks")}
+      className="flex flex-col border-t border-border"
+    >
       <QuickLink
         href="/app/sell"
         icon={TagIcon}

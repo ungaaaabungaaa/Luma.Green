@@ -152,7 +152,7 @@ function TradeList({ tab, trades }: { tab: Tab; trades: TradeView[] }) {
       <h2 id={headingId} className="sr-only">
         {t(tab)}
       </h2>
-      <ul className="grid gap-4 xl:grid-cols-2">
+      <ul className="flex flex-col">
         {trades.toSorted(byUrgency).map((trade) => (
           <li key={trade.id}>
             <TradeCard

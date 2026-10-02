@@ -33,7 +33,7 @@ export function NormSection({
       className="grid scroll-mt-24 gap-6 border-t pt-12 lg:grid-cols-[1fr_2fr] lg:gap-12"
     >
       <div className="flex flex-col gap-3">
-        <span className="flex size-11 items-center justify-center rounded-lg border bg-muted text-primary">
+        <span className="flex size-8 items-center text-primary">
           <Icon aria-hidden className="size-5" />
         </span>
         <h2
@@ -90,7 +90,7 @@ export async function ReceiptAnatomy() {
   return (
     <figure
       aria-labelledby="receipt-anatomy-title"
-      className="mx-auto w-full max-w-md rounded-xl border bg-card p-5 shadow-sm lg:mx-0"
+      className="mx-auto w-full max-w-md border-y-2 border-dashed bg-muted/20 px-5 py-6 lg:mx-0"
     >
       <figcaption
         id="receipt-anatomy-title"
@@ -150,12 +150,9 @@ export async function EscrowSteps() {
     { key: "released", icon: BadgeCheckIcon },
   ] as const;
   return (
-    <ol className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+    <ol className="divide-y border-y">
       {steps.map(({ key, icon: Icon }, index) => (
-        <li
-          key={key}
-          className="flex flex-col gap-3 rounded-xl border bg-card p-4"
-        >
+        <li key={key} className="flex items-start gap-4 py-4">
           <span className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
               {format.number(index + 1)}

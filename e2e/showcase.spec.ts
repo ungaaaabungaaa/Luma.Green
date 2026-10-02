@@ -82,7 +82,7 @@ test("home role directory keeps its household action on a 360px phone", async ({
   const roleSection = page.getByRole("region", {
     name: english.home.roles.heading,
   });
-  await expect(roleSection.locator("img:visible")).toHaveCount(0);
+  await expectStoryImages(roleSection, 6);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth - innerWidth,

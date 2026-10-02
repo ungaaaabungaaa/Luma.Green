@@ -6,7 +6,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
  */
 export function AdminUnavailable() {
   return (
-    <Alert className="rounded-xl border-border bg-muted/50 p-5">
+    <Alert className="rounded-none border-x-0 border-border bg-transparent px-0 py-5">
       <AlertTitle>The admin console isn&apos;t switched on here</AlertTitle>
       <AlertDescription>
         This deployment isn&apos;t connected to Convex yet. The steps are in

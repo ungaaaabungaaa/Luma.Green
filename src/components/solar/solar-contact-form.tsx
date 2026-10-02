@@ -134,7 +134,7 @@ function LiveContactForm({
     return (
       <div
         role="status"
-        className="flex flex-col items-start gap-3 rounded-xl border bg-muted/40 p-5"
+        className="flex flex-col items-start gap-3 border-y border-border py-5"
       >
         <CircleCheckIcon aria-hidden className="size-7 text-primary" />
         <p className="text-lg font-semibold">

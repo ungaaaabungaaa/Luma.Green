@@ -1,5 +1,47 @@
 # Agent handoff — 2 October 2026
 
+**Active refinement:** `feat/ui-detail-pass`, based on merged main `3b29ea7`
+(PR #27). The founder requested detail across all screens while keeping the
+current identity, with no content-card grids. Source work covers all 41 route
+wrappers through public, auth/join, household, operator and admin components.
+The mobile wordmark is hidden; language uses its native name. Public material
+marquee and clearly labelled demo testimonials are included. The founder approved
+sample quotes explicitly; these are not customer reviews.
+
+Phone and code screens remain visible before SMS setup. The code screen is an
+explicit preview: no send, verification, session or private access is simulated.
+This changes presentation and navigation only; backend authentication and ledger
+contracts remain intact. New translations remain machine drafts for native review.
+
+Local verification passed: normal webpack production build, lint, types, 1,181
+web component/logic tests plus six guide freshness tests, 27 mobile tests and 20
+desktop tests. All 115 Chromium checks and five isolated configured analytics
+checks passed. The browser checks include 320px Tamil/Malayalam button text,
+mobile endonym controls, RTL, reduced motion and the inert phone/code preview.
+Independent review found and fixed a preview hint that promised an SMS and a
+long translated action label that exceeded its button.
+
+Guide impact: refreshed 27 public captures, four role-image captures, two
+analytics captures and 40 protected-component fixtures. Added phone and OTP
+preview, demo testimonials, onboarding forms/status, stock, sale, invoice and
+impact figures. The Word guide has 62 image placements and 66 rendered pages;
+all pages passed visual review. The exact DOCX and input hashes are recorded in
+`docs/user-guide/build.json`.
+Public captures use the actual disconnected build. Protected captures show
+synthetic records with a visible banner; all writes reject.
+
+The existing native Google Docs copy is explicitly pending this revision. The
+connector can create a new import but cannot replace the same native document
+from this DOCX. Its ID, URL, sharing and last verified revision are preserved in
+`docs/user-guide/cloud.json`. Local checks do not prove hosted CI, deployment,
+live authentication, provider execution, native signing or real-device acceptance.
+
+Preserve the unrelated root PDF and pre-existing previews on ports 3004 and 3202. The task's final production preview uses port 3009. Work is on the local
+feature branch; no production deployment was made by this pass.
+
+The earlier checkpoint below is history for the integrated PR #27, not the active
+branch. Use the verification record above for this refinement.
+
 **Current slice:** designer system polish and an expanded homepage on
 `feat/design-system-polish`, based on main `e403503`. The founder rejected the
 previous theme and approved a full public, role and admin redesign. Read

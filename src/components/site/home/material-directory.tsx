@@ -55,7 +55,7 @@ export async function MaterialDirectory() {
             </Link>
           </Button>
         </div>
-        <ul className="grid min-w-0 grid-flow-dense grid-cols-1 gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="divide-y border-y">
           {families.map((family) => {
             const Icon = MATERIAL_FAMILY_ICONS[family];
             const examples = CATALOGUE.filter(
@@ -65,17 +65,23 @@ export async function MaterialDirectory() {
               <li
                 key={family}
                 data-reveal
-                className="flex min-w-0 flex-col gap-5 bg-card p-6 sm:p-8"
+                className="grid min-w-0 grid-cols-[2rem_minmax(0,1fr)] items-start gap-4 py-5 sm:grid-cols-[3rem_minmax(0,1fr)] sm:gap-6 sm:py-6"
               >
-                <Icon aria-hidden className="size-7 text-primary" />
-                <div className="space-y-2">
+                <Icon aria-hidden className="mt-1 size-6 text-primary" />
+                <div className="grid min-w-0 gap-3 md:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] md:items-baseline md:gap-8">
                   <h3 className="font-display text-xl font-semibold tracking-tight">
                     {prices(family)}
                   </h3>
-                  <ul className="space-y-1 text-sm leading-relaxed text-muted-foreground">
+                  <ul className="flex min-w-0 flex-wrap gap-x-6 gap-y-2 text-sm leading-relaxed text-muted-foreground">
                     {examples.map((item) => (
-                      <li key={item.code}>
+                      <li key={item.code} className="flex items-baseline gap-2">
                         {materialName(item.names, locale, item.code)}
+                        <span
+                          className="hidden font-mono text-[0.65rem] text-muted-foreground/80 lg:inline"
+                          dir="ltr"
+                        >
+                          {item.code}
+                        </span>
                       </li>
                     ))}
                   </ul>

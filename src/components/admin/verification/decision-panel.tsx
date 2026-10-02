@@ -8,13 +8,6 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Dialog,
   DialogClose,
   DialogContent,
@@ -130,16 +123,16 @@ export function DecisionPanel({
 }) {
   const [decision, setDecision] = useState<Decision | null>(null);
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
-          <h2>Decision</h2>
-        </CardTitle>
-        <CardDescription>
+    <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+      <header className="flex flex-col gap-1.5">
+        <h2 className="font-display text-lg font-semibold tracking-tight">
+          Decision
+        </h2>
+        <p className="text-sm leading-relaxed text-muted-foreground">
           The applicant sees it on their status screen.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-3">
+        </p>
+      </header>
+      <div className="flex flex-col gap-3">
         <Button
           size="lg"
           className="min-h-12"
@@ -178,7 +171,7 @@ export function DecisionPanel({
           <XCircleIcon aria-hidden />
           Reject
         </Button>
-      </CardContent>
+      </div>
       {decision ? (
         <DecisionDialog
           key={decision}
@@ -189,7 +182,7 @@ export function DecisionPanel({
           }}
         />
       ) : null}
-    </Card>
+    </section>
   );
 }
 

@@ -1,69 +1,48 @@
-import {
-  ArrowRightIcon,
-  FactoryIcon,
-  HandHelpingIcon,
-  type LucideIcon,
-  RecycleIcon,
-  StoreIcon,
-  WarehouseIcon,
-} from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { RoleStoryImage } from "@/components/showcase/role-story-image";
 import { Link } from "@/i18n/navigation";
 
-import {
-  APPLICATION_KINDS,
-  type ApplicationKind,
-} from "../../../convex/lib/onboarding";
-
-const icons: Record<ApplicationKind, LucideIcon> = {
-  kabadiwala: StoreIcon,
-  yard: WarehouseIcon,
-  recycler: RecycleIcon,
-  manufacturer: FactoryIcon,
-  saathi: HandHelpingIcon,
-};
+import { APPLICATION_KINDS } from "../../../convex/lib/onboarding";
 
 /** Every role someone can join as, each with what it needs and a way in. */
 export function RoleCards() {
   const t = useTranslations("join");
   return (
-    <ul className="grid gap-4 sm:grid-cols-2">
+    <ul className="divide-y divide-border border-y border-border">
       {APPLICATION_KINDS.map((kind) => {
-        const Icon = icons[kind];
         return (
           <li key={kind}>
             <Link
               href={`/join/${kind}`}
-              className="group flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-4 transition-colors outline-none hover:border-primary/50 focus-visible:ring-3 focus-visible:ring-ring/50 sm:p-6"
+              className="group grid grid-cols-[5rem_minmax(0,1fr)] items-start gap-x-4 gap-y-3 py-6 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-x-6 sm:py-8"
             >
               <RoleStoryImage
                 scene={kind}
                 compact
-                frameClassName="aspect-16/9 rounded-lg"
+                frameClassName="aspect-square rounded-none sm:aspect-4/3"
               />
-              <span className="flex items-start gap-4">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-muted text-primary">
-                  <Icon aria-hidden className="size-5" />
+              <span className="flex min-w-0 flex-col gap-2">
+                <span className="flex items-start justify-between gap-3">
+                  <span className="font-display text-xl font-semibold tracking-tight group-hover:text-primary sm:text-2xl">
+                    {t(`roles.${kind}.title`)}
+                  </span>
+                  <ArrowRightIcon
+                    aria-hidden
+                    className="mt-1 size-5 shrink-0 text-primary rtl:rotate-180"
+                  />
                 </span>
-                <span className="pt-1 text-lg font-semibold tracking-tight">
-                  {t(`roles.${kind}.title`)}
+                <span className="text-sm leading-relaxed text-muted-foreground">
+                  {t(`roles.${kind}.body`)}
                 </span>
               </span>
-              <span className="text-sm leading-relaxed text-muted-foreground">
-                {t(`roles.${kind}.body`)}
-              </span>
-              <span className="border-t border-border/70 pt-4 text-sm leading-relaxed">
+              <span className="col-span-2 text-sm leading-relaxed sm:col-span-1 sm:col-start-2">
                 <span className="font-medium">{t("youNeed")}: </span>
                 {t(`roles.${kind}.needs`)}
               </span>
-              <span className="mt-auto inline-flex min-h-11 items-center justify-between gap-3 font-semibold text-primary">
+              <span className="col-span-2 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 group-hover:underline sm:col-span-1 sm:col-start-2">
                 {t("start")}
-                <ArrowRightIcon
-                  aria-hidden
-                  className="size-5 transition-transform motion-safe:group-hover:translate-x-0.5 rtl:rotate-180 rtl:motion-safe:group-hover:-translate-x-0.5"
-                />
               </span>
             </Link>
           </li>

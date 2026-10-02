@@ -29,6 +29,7 @@ import { api } from "../../../convex/_generated/api";
 interface NavItem {
   href: string;
   label: string;
+  mobileLabel?: string;
   icon: LucideIcon;
   /** A number from `review.summary` to show beside the label. */
   count?: { key: "waiting" | "openSupport"; label: string };
@@ -39,6 +40,7 @@ const nav: readonly NavItem[] = [
   {
     href: "/admin/verification",
     label: "Verification",
+    mobileLabel: "Review",
     icon: ShieldCheckIcon,
     count: { key: "waiting", label: "waiting for review" },
   },
@@ -46,6 +48,7 @@ const nav: readonly NavItem[] = [
   {
     href: "/admin/pilot",
     label: "Pilot numbers",
+    mobileLabel: "Pilot",
     icon: ChartNoAxesCombinedIcon,
   },
   {
@@ -88,10 +91,11 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
   if (me.kind !== "admin") return <NotAdmin />;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/30 lg:flex-row">
+    <div className="flex min-h-dvh flex-col bg-background lg:flex-row">
       <Sidebar name={me.adminName ?? "Admin"} />
       <main
         id="main"
+        tabIndex={-1}
         className="min-w-0 flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-8"
       >
         <QueryProvider>{children}</QueryProvider>
@@ -111,18 +115,40 @@ function Sidebar({ name }: { name: string }) {
   }
 
   return (
-    <aside className="flex flex-col gap-4 border-b border-sidebar-border bg-sidebar p-4 text-sidebar-foreground lg:sticky lg:top-0 lg:h-dvh lg:w-60 lg:shrink-0 lg:gap-6 lg:overflow-y-auto lg:border-e lg:border-b-0 lg:p-5">
+    <aside className="flex flex-col gap-3 border-b border-sidebar-border bg-sidebar px-3 pt-3 pb-2 text-sidebar-foreground lg:sticky lg:top-0 lg:h-dvh lg:w-60 lg:shrink-0 lg:gap-6 lg:overflow-y-auto lg:border-e lg:border-b-0 lg:p-5">
       <div className="flex items-center justify-between gap-2">
         <Link
           href="/admin"
           aria-label="Admin home"
-          className="rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <Logo />
         </Link>
-        <Badge variant="outline">Admin</Badge>
+        <div className="flex items-center gap-2">
+          <Badge variant="outline">Admin</Badge>
+          <div className="flex items-center gap-1 lg:hidden">
+            <ThemeToggleControl
+              labels={{
+                label: "Appearance",
+                light: "Light",
+                dark: "Dark",
+                system: "System",
+              }}
+            />
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label={`Sign out ${name}`}
+              onClick={() => {
+                void signOut();
+              }}
+            >
+              <LogOutIcon aria-hidden />
+            </Button>
+          </div>
+        </div>
       </div>
-      <div className="flex items-center justify-between gap-3 border-y border-sidebar-border py-2">
+      <div className="hidden items-center justify-between gap-3 border-y border-sidebar-border py-2 lg:flex">
         <span className="text-xs font-medium text-muted-foreground">
           Admin console
         </span>
@@ -136,7 +162,7 @@ function Sidebar({ name }: { name: string }) {
         />
       </div>
       <nav aria-label="Admin">
-        <ul className="flex flex-wrap gap-1 lg:flex-col">
+        <ul className="grid grid-cols-5 gap-1 lg:flex lg:flex-col">
           {nav.map((item) => {
             const isActive = isCurrent(pathname, item.href);
             const count = item.count ? summary?.[item.count.key] : undefined;
@@ -146,16 +172,26 @@ function Sidebar({ name }: { name: string }) {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    "flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm whitespace-nowrap transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                    "relative flex min-h-14 min-w-0 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-xs transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 lg:min-h-11 lg:flex-row lg:justify-start lg:gap-3 lg:px-3 lg:text-sm",
                     isActive
                       ? "bg-sidebar-accent font-semibold text-sidebar-accent-foreground"
                       : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
                   )}
                 >
-                  <item.icon aria-hidden className="size-4 shrink-0" />
-                  <span>{item.label}</span>
+                  <item.icon
+                    aria-hidden
+                    className="size-5 shrink-0 lg:size-4"
+                  />
+                  {item.mobileLabel ? (
+                    <>
+                      <span className="lg:hidden">{item.mobileLabel}</span>
+                      <span className="hidden lg:inline">{item.label}</span>
+                    </>
+                  ) : (
+                    <span>{item.label}</span>
+                  )}
                   {count && item.count ? (
-                    <span className="ms-auto rounded-full bg-primary px-1.5 text-xs leading-5 font-medium text-primary-foreground tabular-nums">
+                    <span className="absolute end-0 top-0 min-w-4 rounded-full bg-primary px-1 text-center text-xs leading-4 font-medium text-primary-foreground tabular-nums lg:static lg:ms-auto lg:px-1.5 lg:leading-5">
                       {count}
                       <span className="sr-only"> {item.count.label}</span>
                     </span>
@@ -180,17 +216,6 @@ function Sidebar({ name }: { name: string }) {
           Sign out
         </Button>
       </div>
-      <Button
-        variant="ghost"
-        size="sm"
-        className="min-h-11 max-w-full self-start whitespace-normal lg:hidden"
-        onClick={() => {
-          void signOut();
-        }}
-      >
-        <LogOutIcon aria-hidden />
-        Sign out {name}
-      </Button>
     </aside>
   );
 }
@@ -199,6 +224,7 @@ function NotAdmin() {
   return (
     <main
       id="main"
+      tabIndex={-1}
       className="mx-auto flex max-w-md flex-1 flex-col justify-center gap-4 px-4 py-10"
     >
       <h1 className="text-xl font-semibold">This area is for the admin</h1>
@@ -222,7 +248,7 @@ function NotAdmin() {
 function ConsoleSkeleton() {
   return (
     <div
-      className="flex min-h-dvh flex-col bg-muted/30 lg:flex-row"
+      className="flex min-h-dvh flex-col bg-background lg:flex-row"
       aria-busy="true"
     >
       <div className="border-b bg-background p-4 lg:w-64 lg:border-e lg:border-b-0">

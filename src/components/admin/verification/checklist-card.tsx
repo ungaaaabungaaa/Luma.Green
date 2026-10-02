@@ -2,13 +2,6 @@
 
 import { ExternalLinkIcon } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
@@ -27,16 +20,19 @@ export function ChecklistCard({
 }) {
   const done = items.filter((item) => checked.has(item.id)).length;
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
-          <h2>Before you approve</h2>
-        </CardTitle>
-        <CardDescription aria-live="polite">
+    <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+      <header className="flex flex-col gap-1.5">
+        <h2 className="font-display text-lg font-semibold tracking-tight">
+          Before you approve
+        </h2>
+        <p
+          className="text-sm leading-relaxed text-muted-foreground"
+          aria-live="polite"
+        >
           {done} of {items.length} checked
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-col divide-y">
+        </p>
+      </header>
+      <div className="flex flex-col gap-4">
         <Progress
           value={items.length === 0 ? 100 : (done / items.length) * 100}
           aria-label="Checks done"
@@ -47,7 +43,7 @@ export function ChecklistCard({
             return (
               <li
                 key={item.id}
-                className="flex items-start gap-3 py-4 first:pt-0 last:pb-0"
+                className="flex items-start gap-3 py-3 first:pt-0 last:pb-0"
               >
                 <Checkbox
                   id={id}
@@ -90,7 +86,7 @@ export function ChecklistCard({
             );
           })}
         </ul>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }

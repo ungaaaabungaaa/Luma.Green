@@ -76,12 +76,12 @@ function ReceiptCards({ receipts }: { receipts: Receipt[] }) {
       {receipts.map((receipt) => (
         <li
           key={receipt.tradeId}
-          className="relative flex flex-col gap-2 rounded-xl border bg-card p-4"
+          className="relative flex flex-col gap-2 border-b border-border py-4"
         >
           <div className="flex items-start justify-between gap-3">
             <InvoiceLink
               receipt={receipt}
-              className="after:absolute after:inset-0 after:rounded-xl focus-visible:ring-0 focus-visible:after:ring-3 focus-visible:after:ring-ring/50"
+              className="after:absolute after:inset-0 focus-visible:ring-0 focus-visible:after:ring-3 focus-visible:after:ring-ring/50"
             />
             <p className="font-semibold tabular-nums">
               {format.money(receipt.totalPaise)}
@@ -114,7 +114,7 @@ function ReceiptTable({ receipts }: { receipts: Receipt[] }) {
   const longDate = useLongDate();
   const party = useParty();
   return (
-    <div className="hidden rounded-xl border bg-card px-2 lg:block">
+    <div className="hidden border-y border-border lg:block">
       <Table>
         <TableHeader>
           <TableRow>

@@ -16,8 +16,8 @@ export function AdminAuthShell({
   children: ReactNode;
 }) {
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/40">
-      <header className="flex min-h-20 items-center justify-between gap-4 border-b bg-background px-5 sm:px-8">
+    <div className="flex min-h-dvh flex-col bg-background">
+      <header className="flex min-h-16 items-center justify-between gap-4 border-b px-5 sm:min-h-20 sm:px-8">
         <Link
           href="/"
           aria-label="Luma.Green home"
@@ -36,14 +36,11 @@ export function AdminAuthShell({
       </header>
       <main
         id="main"
-        className="mx-auto flex w-full max-w-lg flex-1 flex-col justify-center px-4 py-8 sm:py-12"
+        tabIndex={-1}
+        className="mx-auto flex w-full max-w-md flex-1 flex-col px-5 py-8 sm:justify-center sm:py-12"
       >
-        <div className="rounded-xl border bg-card p-5 sm:p-8">
-          <div className="mb-6 flex items-center gap-2 text-xs font-medium tracking-widest text-muted-foreground uppercase">
-            <ShieldCheckIcon aria-hidden className="size-4" />
-            Administrator access
-          </div>
-          <div className="mb-8 flex flex-col gap-3">
+        <div>
+          <div className="mb-7 flex flex-col gap-3">
             <h1 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
               {title}
             </h1>
@@ -55,7 +52,8 @@ export function AdminAuthShell({
           </div>
           {children}
         </div>
-        <p className="mt-5 text-center text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-8 flex items-start gap-2 border-t pt-4 text-xs leading-relaxed text-muted-foreground">
+          <ShieldCheckIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
           Password and authenticator required for console access.
         </p>
       </main>

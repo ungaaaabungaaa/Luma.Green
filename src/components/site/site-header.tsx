@@ -16,7 +16,7 @@ export async function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md supports-backdrop-filter:bg-background/90">
-      <Container className="flex min-h-18 flex-wrap items-center gap-2 py-3 sm:gap-4 lg:gap-x-5 lg:gap-y-1 lg:px-8 xl:flex-nowrap">
+      <Container className="flex min-h-16 flex-wrap items-center gap-2 py-2 sm:gap-4 lg:gap-x-5 lg:gap-y-1 lg:px-8 xl:flex-nowrap">
         <Link
           href="/"
           aria-label={t("home")}

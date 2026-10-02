@@ -33,7 +33,13 @@ export default function AdminRootLayout({ children }: { children: ReactNode }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
       </head>
-      <body className="flex min-h-full flex-col bg-muted/50 text-foreground">
+      <body className="flex min-h-full flex-col bg-background text-foreground">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:start-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-foreground focus:ring-3 focus:ring-ring focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <AdminProviders>{children}</AdminProviders>
       </body>
     </html>

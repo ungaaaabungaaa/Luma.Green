@@ -29,7 +29,7 @@ function formPath(kind: ApplicationKind): string {
   return `/join/${kind}`;
 }
 
-function StatusCard({
+function StatusSection({
   icon,
   tone = "neutral",
   title,
@@ -43,17 +43,13 @@ function StatusCard({
   children?: ReactNode;
 }) {
   const toneClass = {
-    neutral: "bg-primary/10 text-primary",
-    good: "bg-primary/10 text-primary",
-    bad: "bg-destructive/10 text-destructive",
+    neutral: "text-primary",
+    good: "text-primary",
+    bad: "text-destructive",
   }[tone];
   return (
-    <section className="flex flex-col gap-6 rounded-xl border border-border bg-card p-6 sm:p-8">
-      <span
-        className={`flex size-12 items-center justify-center rounded-lg ${toneClass}`}
-      >
-        {icon}
-      </span>
+    <section className="flex flex-col gap-6 border-t border-border py-6 sm:py-8">
+      <span className={`flex size-10 items-center ${toneClass}`}>{icon}</span>
       <div className="flex flex-col gap-1">
         <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
           {title}
@@ -68,7 +64,7 @@ function StatusCard({
 function Note({ text }: { text: string | undefined }) {
   if (!text) return null;
   return (
-    <blockquote className="rounded-xl border-s-4 border-primary bg-muted/60 p-4 whitespace-pre-line">
+    <blockquote className="border-s-2 border-primary ps-4 whitespace-pre-line">
       {text}
     </blockquote>
   );
@@ -121,7 +117,7 @@ function ApplicationStatus({ application }: { application: Application }) {
   switch (application.status) {
     case "draft": {
       return (
-        <StatusCard
+        <StatusSection
           icon={<FilePenLineIcon aria-hidden className="size-6" />}
           title={t("status.draft.title")}
           lead={t("status.draft.lead")}
@@ -133,7 +129,7 @@ function ApplicationStatus({ application }: { application: Application }) {
             </Link>
           </Button>
           {application.version === 0 ? <ChangeRole /> : null}
-        </StatusCard>
+        </StatusSection>
       );
     }
     case "submitted": {
@@ -141,7 +137,7 @@ function ApplicationStatus({ application }: { application: Application }) {
         ? "business"
         : application.kind;
       return (
-        <StatusCard
+        <StatusSection
           icon={<ClockIcon aria-hidden className="size-6" />}
           title={t("status.submitted.title")}
           lead={t("status.submitted.lead")}
@@ -171,12 +167,12 @@ function ApplicationStatus({ application }: { application: Application }) {
               ))}
             </ul>
           </div>
-        </StatusCard>
+        </StatusSection>
       );
     }
     case "changes_requested": {
       return (
-        <StatusCard
+        <StatusSection
           icon={<FilePenLineIcon aria-hidden className="size-6" />}
           title={t("status.changes_requested.title")}
           lead={t("status.changes_requested.lead")}
@@ -187,12 +183,12 @@ function ApplicationStatus({ application }: { application: Application }) {
               {t("status.changes_requested.fix")}
             </Link>
           </Button>
-        </StatusCard>
+        </StatusSection>
       );
     }
     case "approved": {
       return (
-        <StatusCard
+        <StatusSection
           tone="good"
           icon={<BadgeCheckIcon aria-hidden className="size-6" />}
           title={t("status.approved.title")}
@@ -202,12 +198,12 @@ function ApplicationStatus({ application }: { application: Application }) {
           <Button asChild size="lg" className="h-12 text-base">
             <Link href="/app">{t("status.approved.open")}</Link>
           </Button>
-        </StatusCard>
+        </StatusSection>
       );
     }
     case "rejected": {
       return (
-        <StatusCard
+        <StatusSection
           tone="bad"
           icon={<XCircleIcon aria-hidden className="size-6" />}
           title={t("status.rejected.title")}
@@ -217,12 +213,12 @@ function ApplicationStatus({ application }: { application: Application }) {
           <Button asChild variant="outline" size="lg" className="h-12">
             <Link href="/contact">{t("status.rejected.contact")}</Link>
           </Button>
-        </StatusCard>
+        </StatusSection>
       );
     }
     case "suspended": {
       return (
-        <StatusCard
+        <StatusSection
           tone="bad"
           icon={<PauseCircleIcon aria-hidden className="size-6" />}
           title={t("status.suspended.title")}
@@ -231,7 +227,7 @@ function ApplicationStatus({ application }: { application: Application }) {
           <Button asChild variant="outline" size="lg" className="h-12">
             <Link href="/contact">{t("status.suspended.contact")}</Link>
           </Button>
-        </StatusCard>
+        </StatusSection>
       );
     }
   }
@@ -259,7 +255,7 @@ function ChangeRole() {
   return (
     <div
       role="alertdialog"
-      className="flex flex-col gap-3 rounded-xl border p-4"
+      className="flex flex-col gap-3 border-y border-border py-4"
     >
       <p>{t("status.draft.confirmChange")}</p>
       <div className="flex gap-2">

@@ -2,8 +2,8 @@ import { expect, test } from "@playwright/test";
 
 /**
  * Joining: `/join` is a public, indexed page; everything under it is private
- * and needs a sign-in (in these builds without Convex, that's the "opens
- * soon" screen). The forms themselves are checked against the dev deployment
+ * and needs a sign-in (builds without Convex allow a labelled OTP preview).
+ * The forms themselves are checked against the dev deployment
  * — docs/architecture/auth.md#testing.
  */
 
@@ -58,7 +58,7 @@ for (const path of [
 
     await expect(page).toHaveURL(`/login?next=${encodeURIComponent(path)}`);
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "Phone sign-in opens soon",
+      "Choose your language",
     );
   });
 }

@@ -91,7 +91,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   };
 
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/35 md:flex-row">
+    <div className="flex min-h-dvh flex-col bg-background md:flex-row">
       <SkipLink />
       <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-6 overflow-y-auto border-e border-sidebar-border bg-sidebar p-4 text-sidebar-foreground md:flex lg:w-64">
         <Link

@@ -51,7 +51,7 @@ export function RoleStoryImage({
     <figure className={cn("min-w-0", className)}>
       <div
         className={cn(
-          "relative overflow-hidden rounded-xl bg-muted",
+          "relative overflow-hidden bg-muted",
           compact ? "aspect-[2/1]" : "aspect-[4/3]",
           frameClassName,
         )}

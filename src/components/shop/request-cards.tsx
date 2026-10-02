@@ -52,14 +52,14 @@ export function NewRequestCard({ booking, today, city }: CardProps) {
   return (
     <article
       aria-labelledby={`request-${booking.id}`}
-      className="flex flex-col gap-4 rounded-xl border bg-card p-4"
+      className="flex flex-col gap-4 border-b border-border py-5"
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="flex min-w-0 flex-col gap-1">
           <CardName booking={booking} />
           <PlaceLine booking={booking} city={city} />
         </div>
-        <span className="rounded-md bg-muted px-3 py-1 text-sm font-medium">
+        <span className="text-sm font-medium text-muted-foreground">
           <SlotLabel
             date={booking.slotDate}
             window={booking.slotWindow}
@@ -88,9 +88,9 @@ export function ActiveRequestCard({ booking, today, city }: CardProps) {
   return (
     <article
       aria-labelledby={`request-${booking.id}`}
-      className="flex flex-col gap-4 rounded-xl border bg-card p-4"
+      className="flex flex-col gap-4 border-b border-border py-5"
     >
-      <div className="flex items-start justify-between gap-2">
+      <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="flex min-w-0 flex-col gap-1">
           <CardName booking={booking} />
           <p className="text-sm font-medium">
@@ -131,7 +131,7 @@ export function DoneRequestCard({ booking }: { booking: BookingView }) {
   return (
     <article
       aria-labelledby={`request-${booking.id}`}
-      className="flex items-center gap-3 rounded-xl border bg-card p-4"
+      className="flex flex-wrap items-center gap-3 border-b border-border py-4"
     >
       <span
         aria-hidden

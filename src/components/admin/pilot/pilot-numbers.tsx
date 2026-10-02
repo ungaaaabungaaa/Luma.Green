@@ -6,13 +6,6 @@ import { useState } from "react";
 
 import { AppPageHeader } from "@/components/app/page-parts";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
@@ -60,7 +53,7 @@ export function PilotNumbers() {
         lead="Bookings and applications recorded on the platform. Payments are recorded at the door; the platform does not transfer money."
       />
       <div
-        className="flex flex-wrap items-center gap-2 rounded-xl border bg-card p-2"
+        className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center"
         role="group"
         aria-label="Report period"
       >
@@ -78,7 +71,7 @@ export function PilotNumbers() {
           </Button>
         ))}
       </div>
-      <p className="text-sm text-muted-foreground">
+      <p className="-mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
         {formatDay(start)} to {formatDay(end)}, India time. Booking counts use
         the date booked. Application counts use the latest submission date.
         Outcomes show their current state.
@@ -90,18 +83,18 @@ export function PilotNumbers() {
       ) : (
         <Report summary={summary} />
       )}
-      <Card>
-        <CardHeader>
-          <CardTitle>
-            <h2>Not measured yet</h2>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">
+      <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+        <header className="flex flex-col gap-1.5">
+          <h2 className="font-display text-lg font-semibold tracking-tight">
+            Not measured yet
+          </h2>
+        </header>
+        <div className="text-sm text-muted-foreground">
           Photo-to-booking conversion and onboarding form drop-offs need event
           recording. They are not zero and are not included in this report.
           Sample bookings, if present in this deployment, are included.
-        </CardContent>
-      </Card>
+        </div>
+      </section>
     </div>
   );
 }
@@ -135,7 +128,7 @@ function Report({ summary }: { summary: Summary }) {
           No bookings or submitted applications in this period.
         </p>
       ) : null}
-      <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="grid grid-cols-2 gap-x-5 gap-y-6 lg:grid-cols-4">
         <Metric
           label="Bookings"
           value={number.format(bookings.count)}
@@ -161,17 +154,17 @@ function Report({ summary }: { summary: Summary }) {
           hint={`Estimate for the same receipts: ${formatRupees(bookings.estimatedPaise)}`}
         />
       </dl>
-      <Card>
-        <CardHeader>
-          <CardTitle>
-            <h2>Booking outcomes</h2>
-          </CardTitle>
-          <CardDescription>
+      <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+        <header className="flex flex-col gap-1.5">
+          <h2 className="font-display text-lg font-semibold tracking-tight">
+            Booking outcomes
+          </h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Unanswered offers move to another shop. If no eligible shop remains,
             the booking ends as declined.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
+          </p>
+        </header>
+        <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
           {bookings.count > 0 ? (
             <BookingOutcomeChart rows={outcomeRows} />
           ) : null}
@@ -201,19 +194,19 @@ function Report({ summary }: { summary: Summary }) {
               value={number.format(bookings.outcomes.cancelled)}
             />
           </dl>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>
-            <h2>Estimate and weighed material</h2>
-          </CardTitle>
-          <CardDescription>
-            Only completed bookings with receipts. These are household
-            estimates; an AI photo estimate is not connected yet.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+        </div>
+      </section>
+      <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+        <header className="flex flex-col gap-1.5">
+          <h2 className="font-display text-lg font-semibold tracking-tight">
+            Estimate and weighed material
+          </h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Household estimates compared with receipt weights. Only completed
+            bookings with receipts are included.
+          </p>
+        </header>
+        <div>
           {bookings.materials.length === 0 ? (
             <p className="text-sm text-muted-foreground">
               No completed receipts in this period.
@@ -264,19 +257,19 @@ function Report({ summary }: { summary: Summary }) {
               </Table>
             </div>
           )}
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>
-            <h2>Application decisions</h2>
-          </CardTitle>
-          <CardDescription>
+        </div>
+      </section>
+      <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
+        <header className="flex flex-col gap-1.5">
+          <h2 className="font-display text-lg font-semibold tracking-tight">
+            Application decisions
+          </h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Latest submission for each application. Historical review rounds and
             drafts are not included.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+          </p>
+        </header>
+        <div>
           <dl className="grid gap-4 sm:grid-cols-3">
             <Metric
               label="Applications submitted"
@@ -296,8 +289,8 @@ function Report({ summary }: { summary: Summary }) {
               }
             />
           </dl>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
     </>
   );
 }
@@ -312,7 +305,7 @@ function Metric({
   hint?: string;
 }) {
   return (
-    <div className="min-w-0 border-s-2 border-border py-1 ps-4">
+    <div className="min-w-0 py-1">
       <dt className="text-sm text-muted-foreground">{label}</dt>
       <dd className="mt-2 font-display text-2xl font-semibold tracking-tight break-words tabular-nums">
         {value}

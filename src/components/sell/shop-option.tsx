@@ -37,10 +37,8 @@ export function ShopOption({
     <Label
       htmlFor={id}
       className={cn(
-        "flex items-start gap-4 rounded-xl border bg-card p-4 font-normal transition-colors duration-150 sm:p-5",
-        isSelected
-          ? "border-primary bg-accent ring-1 ring-primary"
-          : "border-border",
+        "flex items-start gap-4 border-b px-2 py-5 font-normal transition-colors duration-150",
+        isSelected ? "border-primary bg-accent/50" : "border-border",
         isDisabled
           ? "cursor-not-allowed bg-muted/50"
           : "cursor-pointer hover:border-primary/50",

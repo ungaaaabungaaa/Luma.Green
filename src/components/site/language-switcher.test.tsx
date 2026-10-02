@@ -18,6 +18,17 @@ afterEach(() => {
 });
 
 describe("LanguageSwitcher", () => {
+  it("shows the current language in its own script", () => {
+    render(
+      <NextIntlClientProvider locale="kn" messages={messages}>
+        <LanguageSwitcher />
+      </NextIntlClientProvider>,
+    );
+    expect(
+      screen.getByRole("button", { name: "Language: ಕನ್ನಡ" }),
+    ).toHaveTextContent("ಕನ್ನಡ");
+  });
+
   it("keeps the query and anchor when the language changes", async () => {
     window.history.replaceState(
       null,
@@ -29,7 +40,9 @@ describe("LanguageSwitcher", () => {
         <LanguageSwitcher />
       </NextIntlClientProvider>,
     );
-    await userEvent.click(screen.getByRole("button", { name: "Language" }));
+    await userEvent.click(
+      screen.getByRole("button", { name: "Language: English" }),
+    );
     await userEvent.click(screen.getByRole("menuitemradio", { name: "தமிழ்" }));
     expect(replace).toHaveBeenCalledWith(
       "/help?role=yard&next=%2Fapp#contact",
@@ -43,7 +56,7 @@ describe("LanguageSwitcher", () => {
         <LanguageSwitcher />
       </NextIntlClientProvider>,
     );
-    const trigger = screen.getByRole("button", { name: "Language" });
+    const trigger = screen.getByRole("button", { name: "Language: English" });
     await userEvent.click(trigger);
     await userEvent.keyboard("{Escape}");
     expect(trigger).toHaveFocus();

@@ -4,9 +4,11 @@ import { getTranslations } from "next-intl/server";
 import { HomeMotion } from "@/components/motion/home-motion";
 import { ClosingCta } from "@/components/site/closing-cta";
 import { ChainDiagram } from "@/components/site/home/chain-diagram";
+import { DemoTestimonials } from "@/components/site/home/demo-testimonials";
 import { HomeHero } from "@/components/site/home/hero";
 import { HomeQuestions } from "@/components/site/home/home-questions";
 import { MaterialDirectory } from "@/components/site/home/material-directory";
+import { MaterialMarquee } from "@/components/site/home/material-marquee";
 import { MaterialRecords } from "@/components/site/home/material-records";
 import { PickupJourney } from "@/components/site/home/pickup-journey";
 import { RoleBenefits } from "@/components/site/home/role-benefits";
@@ -65,6 +67,7 @@ export default async function HomePage() {
       />
       <HomeMotion>
         <HomeHero />
+        <MaterialMarquee />
         <MaterialDirectory />
         <PickupJourney />
         <ChainDiagram />
@@ -73,6 +76,7 @@ export default async function HomePage() {
         <RoleBenefits />
         <MaterialRecords />
         <TrustPoints />
+        <DemoTestimonials />
         <WhyNow />
         <HomeQuestions />
         <ClosingCta />

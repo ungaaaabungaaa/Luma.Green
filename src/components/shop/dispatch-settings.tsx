@@ -73,7 +73,7 @@ function SettingsForm({
   return (
     <section
       aria-labelledby="dispatch-settings-title"
-      className="rounded-xl border bg-card p-4"
+      className="border-t border-border pt-6"
     >
       <form
         noValidate
@@ -125,7 +125,7 @@ function SettingsForm({
             />
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex max-w-sm flex-col gap-2">
           <Label htmlFor="dispatch-radius">{t("radius")}</Label>
           <Input
             id="dispatch-radius"

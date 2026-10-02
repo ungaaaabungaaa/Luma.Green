@@ -33,7 +33,7 @@ export function BarList({
   return (
     <ul
       aria-label={label}
-      className="flex flex-col divide-y rounded-xl border bg-card px-5"
+      className="flex flex-col divide-y border-y border-border"
     >
       {rows.map((row) => {
         const Icon = row.icon;

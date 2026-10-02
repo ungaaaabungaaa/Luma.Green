@@ -81,7 +81,7 @@ export default async function StandardsPage() {
         }
       />
 
-      <Container className="flex flex-col gap-12 py-16 lg:py-24">
+      <Container className="flex flex-col gap-10 py-8 lg:py-12">
         <nav aria-label={t("onThisPage")} className="flex flex-col gap-3">
           <p className="text-sm font-medium text-muted-foreground">
             {t("onThisPage")}
@@ -91,7 +91,7 @@ export default async function StandardsPage() {
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  className="inline-flex min-h-11 items-center rounded-lg border bg-card px-4 text-sm font-medium outline-none hover:border-primary hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50"
+                  className="inline-flex min-h-11 items-center border-b px-3 text-sm font-medium outline-none hover:border-primary hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50"
                 >
                   {t(`${id}.nav`)}
                 </a>
@@ -198,7 +198,7 @@ export default async function StandardsPage() {
 
         <section
           aria-labelledby="adopt-heading"
-          className="flex flex-col items-start gap-5 rounded-xl border bg-muted px-6 py-10 text-foreground sm:px-10 md:flex-row md:items-center md:justify-between"
+          className="flex flex-col items-start gap-5 border-y py-8 text-foreground md:flex-row md:items-center md:justify-between"
         >
           <div className="flex max-w-2xl items-start gap-4">
             <BookOpenCheckIcon aria-hidden className="mt-1 size-7 shrink-0" />

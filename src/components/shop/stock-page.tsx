@@ -124,7 +124,7 @@ function StockList({ stock }: { stock: Stock }) {
     }))
     .filter((group) => group.rows.length > 0);
   const list = (rows: StockRow[]) => (
-    <ul className="flex flex-col overflow-hidden rounded-xl border border-border">
+    <ul className="flex flex-col border-y border-border">
       {rows.map((row) => (
         <StockItem
           key={row.material.code}
@@ -160,7 +160,7 @@ function StockItem({ row, totalGrams }: { row: StockRow; totalGrams: number }) {
   const format = useFormat();
   const share = totalGrams > 0 ? Math.round((row.grams / totalGrams) * 100) : 0;
   return (
-    <li className="flex flex-col gap-4 border-b border-border bg-card p-4 last:border-b-0 sm:p-5">
+    <li className="flex flex-col gap-4 border-b border-border py-5 last:border-b-0">
       <div className="flex items-center gap-3">
         <MaterialIcon family={row.material.family} />
         <div className="flex min-w-0 flex-1 flex-col">

@@ -182,7 +182,7 @@ export function PriceRow({ row, city }: { row: PriceRowData; city: string }) {
         <Button
           type="submit"
           size="sm"
-          className="h-9 xl:h-7"
+          className="min-h-11"
           disabled={!isDirty || problem !== null || isSaving}
         >
           {isSaving ? "Saving…" : "Save"}
@@ -192,7 +192,7 @@ export function PriceRow({ row, city }: { row: PriceRowData; city: string }) {
             type="button"
             variant="ghost"
             size="sm"
-            className="h-9 xl:h-7"
+            className="min-h-11"
             disabled={isSaving}
             onClick={() => {
               setFloor(rupeesInput(row.floorPaise));

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 
 import HouseholdLayout from "@/app/[locale]/(household)/layout";
+import JoinLayout from "@/app/[locale]/(join)/layout";
 import { ConsoleHome } from "@/components/admin/console-home";
 import { ConsoleShell } from "@/components/admin/console-shell";
 import { PilotNumbers } from "@/components/admin/pilot/pilot-numbers";
@@ -13,11 +14,17 @@ import { VerificationQueue } from "@/components/admin/verification/queue";
 import { AppShell } from "@/components/app/app-shell";
 import { RoleHome } from "@/components/app/role-home";
 import { CompliancePage } from "@/components/insights/compliance-page";
+import { ImpactPage } from "@/components/insights/impact-page";
+import { BusinessJoin, KabadiwalaJoin } from "@/components/join/join-pages";
+import { StatusView } from "@/components/join/status-view";
+import { InvoicePage } from "@/components/market/invoice-page";
 import { MarketPage } from "@/components/market/market-page";
+import { SellPage } from "@/components/market/sell-page";
 import { TradesPage } from "@/components/market/trades-page";
 import { RateCardPage } from "@/components/shop/rate-card-page";
 import { RequestDetail } from "@/components/shop/request-detail";
 import { RequestsPage } from "@/components/shop/requests-page";
+import { StockPage } from "@/components/shop/stock-page";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { TrackView } from "@/components/track/track-view";
 
@@ -43,6 +50,10 @@ const defaultAppPage = path.includes("/requests/") ? (
 );
 const operationalPages: Record<string, ReactNode | undefined> = {
   "/en/app/prices": <RateCardPage />,
+  "/en/app/stock": <StockPage />,
+  "/en/app/sell": <SellPage />,
+  "/en/app/impact": <ImpactPage />,
+  "/en/app/trades/guide-receipt/invoice": <InvoicePage id="guide-receipt" />,
   "/en/app/requests": <RequestsPage />,
   "/en/app/market": <MarketPage />,
   "/en/app/trades": <TradesPage />,
@@ -51,6 +62,15 @@ const operationalPages: Record<string, ReactNode | undefined> = {
 const appPage = operationalPages[path] ?? defaultAppPage;
 const trackingPage = path.startsWith("/en/t/")
   ? await HouseholdLayout({ children: <TrackView booking={trackedBooking} /> })
+  : null;
+const onboardingPages: Record<string, ReactNode | undefined> = {
+  "/en/join/kabadiwala": <KabadiwalaJoin />,
+  "/en/join/yard": <BusinessJoin kind="yard" />,
+  "/en/join/status": <StatusView />,
+};
+const onboardingContent = onboardingPages[path];
+const onboardingPage = onboardingContent
+  ? await JoinLayout({ children: onboardingContent })
   : null;
 const content = adminPage ? (
   <ConsoleShell>{adminPage}</ConsoleShell>
@@ -84,7 +104,7 @@ createRoot(root).render(
         SYNTHETIC DOCUMENTATION FIXTURE — actual Luma.Green components; no live
         account or records. All writes disabled.
       </div>
-      {trackingPage ?? content}
+      {trackingPage ?? onboardingPage ?? content}
     </ThemeProvider>
   </NextIntlClientProvider>,
 );

@@ -58,7 +58,7 @@ export function JoinGate({
         <RoleStoryImage
           scene={kind}
           compact
-          frameClassName="aspect-16/9 rounded-lg"
+          frameClassName="aspect-16/9 rounded-none"
         />
       )}
     </div>

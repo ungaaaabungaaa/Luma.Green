@@ -29,7 +29,7 @@ export default async function JoinLayout({
   const t = await getTranslations("nav");
 
   return (
-    <div className="flex min-h-dvh flex-col bg-muted/35">
+    <div className="flex min-h-dvh flex-col bg-background">
       <SkipLink />
       <header className="sticky top-0 z-30 flex min-h-18 flex-wrap items-center justify-between gap-2 border-b border-border bg-background/95 px-4 py-2 backdrop-blur sm:px-8">
         <Link
@@ -48,7 +48,7 @@ export default async function JoinLayout({
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto my-6 flex w-full max-w-3xl flex-1 flex-col px-4 py-2 sm:my-8 sm:rounded-xl sm:border sm:border-border sm:bg-card sm:p-8"
+        className="mx-auto my-6 flex w-full max-w-3xl min-w-0 flex-1 flex-col px-5 py-2 sm:my-10 sm:px-8"
       >
         {children}
       </main>

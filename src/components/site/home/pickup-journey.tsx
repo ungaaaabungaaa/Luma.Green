@@ -82,7 +82,7 @@ export async function PickupJourney() {
         <div className="flex min-w-0 flex-col gap-6 lg:pt-3">
           <div
             data-parallax-scene
-            className="relative aspect-4/5 overflow-hidden rounded-xl bg-muted sm:aspect-4/3 lg:aspect-4/5"
+            className="relative aspect-[4/3] overflow-hidden bg-muted lg:aspect-4/5"
           >
             <Image
               data-parallax="16"

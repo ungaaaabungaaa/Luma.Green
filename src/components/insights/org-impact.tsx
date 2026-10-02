@@ -153,7 +153,7 @@ function Flows({ impact }: { impact: OrgImpact }) {
         {rows.map(({ key, icon: Icon, flow, count }) => (
           <li
             key={key}
-            className="flex items-center gap-3 rounded-xl border bg-card p-4"
+            className="flex items-center gap-3 border-b border-border py-4"
           >
             <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground">
               <Icon aria-hidden className="size-5" />

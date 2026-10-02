@@ -25,23 +25,22 @@ const roleIcons = {
 } as const;
 
 /**
- * One card per role, each with its role icon, leading to its help page. A
- * compact row on phones, so all six fit in a couple of screens.
+ * One divided row per role, with its guide count and a clear destination.
  */
 export function RoleCards() {
   const t = useTranslations("help");
   return (
-    <ul className="grid grid-flow-dense gap-4 md:grid-cols-2">
+    <ul className="divide-y border-y">
       {HELP_ROLES.map((role) => (
         <li
           key={role}
           data-reveal
-          className="group relative flex gap-4 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50"
+          className="group relative flex gap-3 py-5 transition-colors hover:bg-muted/30 has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:gap-5 sm:py-6"
         >
-          <div className="ps-5 pt-5 sm:ps-6 sm:pt-6">
+          <div className="pt-0.5">
             <IconTile icon={roleIcons[role]} size="sm" />
           </div>
-          <div className="flex min-w-0 flex-1 flex-col gap-3 p-5 ps-0 sm:p-6 sm:ps-0">
+          <div className="grid min-w-0 flex-1 gap-2 md:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)_auto] md:items-center md:gap-6">
             <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
               <Link
                 href={`/help/${role}`}
@@ -53,7 +52,7 @@ export function RoleCards() {
             <p className="text-sm leading-relaxed text-muted-foreground">
               {t(`roles.${role}.who`)}
             </p>
-            <p className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4 text-sm font-semibold text-primary">
+            <p className="flex items-center justify-between gap-5 text-sm font-medium text-primary">
               {t("guideCount", { count: ROLE_HELP[role].guides.length })}
               <ArrowRightIcon
                 aria-hidden
@@ -77,7 +76,7 @@ export function OtherRoleLinks({ current }: { current: HelpRole }) {
           <Link
             href={`/help/${role}`}
             className={cn(
-              "inline-flex min-h-11 items-center rounded-lg border bg-card px-4 text-sm font-medium outline-none",
+              "inline-flex min-h-11 items-center border-b px-2 text-sm font-medium outline-none",
               "hover:border-primary hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50",
             )}
           >

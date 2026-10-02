@@ -1,24 +1,35 @@
 {
-  "status": "verified",
+  "status": "update_pending",
   "document_id": "17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
-  "source_docx_sha256": "d1a565e757f55012c9dcf542334f1ced509b31ab5fe568f632372d2c02fc12e6",
-  "recorded_at": "2026-10-01T21:13:39.142517+00:00",
-  "result": "Reviewed Word imported as a native Google Doc. Native readback verified all 37 chapters, six tables and 51 inline images. All Word body paragraphs and table cell text are present; precise dates use three native date fields. Sharing settings were not changed.",
-  "next_action": "Reuse this document ID for future accepted guide updates; preserve sharing settings and verify native content after each update.",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "verification": {
-    "mime_type": "application/vnd.google-apps.document",
-    "chapter_count": 37,
-    "heading_1_count": 38,
-    "table_count": 6,
-    "inline_image_count": 51,
-    "date_element_count": 3,
-    "word_body_and_table_text": "matched; precise date displays normalized to native fields",
-    "local_visual_review_page_count": 56,
-    "native_revision_id": "ANLCKQlZDOlZhneiFQaLmwGVJxqbdMb2mDVoxZczW5NbXtViE7uz1txCL1hiZd0kQEyEP1_e56soLdklPWkvILhDoAISQqhz9kFFAcMj8yg",
-    "native_readback_sha256": "d0d70521e252ec83311ef8f23d7bee20e1c2920f2cbf2bbb7a0651a86990f2bd",
-    "sharing_changed": false
+  "pending_revision": "2 October 2026 UI and UX detail pass",
+  "result": "The existing native Google Doc remains at its last verified revision. The current local guide revision has not been published to it. No cloud content or sharing settings were changed.",
+  "connection_gate": "The connected import_document action creates a new document. update_file does not support replacing a native Google Doc with raw DOCX bytes. Neither provides a verified in-place DOCX import to the existing document ID.",
+  "next_action": "Update the existing native document through a supported in-place document workflow using the reviewed local revision, then verify its contents. Preserve this document ID, URL and sharing settings; do not create a replacement document.",
+  "last_verified_revision": {
+    "source_docx_sha256": "d1a565e757f55012c9dcf542334f1ced509b31ab5fe568f632372d2c02fc12e6",
+    "recorded_at": "2026-10-01T21:13:39.142517+00:00",
+    "result": "Reviewed Word imported as a native Google Doc. Native readback verified all 37 chapters, six tables and 51 inline images. All Word body paragraphs and table cell text are present; precise dates use three native date fields. Sharing settings were not changed.",
+    "verification": {
+      "mime_type": "application/vnd.google-apps.document",
+      "chapter_count": 37,
+      "heading_1_count": 38,
+      "table_count": 6,
+      "inline_image_count": 51,
+      "date_element_count": 3,
+      "word_body_and_table_text": "matched; precise date displays normalized to native fields",
+      "local_visual_review_page_count": 56,
+      "native_revision_id": "ANLCKQlZDOlZhneiFQaLmwGVJxqbdMb2mDVoxZczW5NbXtViE7uz1txCL1hiZd0kQEyEP1_e56soLdklPWkvILhDoAISQqhz9kFFAcMj8yg",
+      "native_readback_sha256": "d0d70521e252ec83311ef8f23d7bee20e1c2920f2cbf2bbb7a0651a86990f2bd",
+      "sharing_changed": false
+    }
+  },
+  "local_reviewed_revision": {
+    "source_docx_sha256": "54cb248f3c5291e5180b4502cec6ee0ff778bcfc2627a3a305b68f1e6671ffca",
+    "visual_review_pages": 66,
+    "image_placements": 62,
+    "recorded_at": "2026-10-02T00:00:42.332792+00:00"
   }
 }

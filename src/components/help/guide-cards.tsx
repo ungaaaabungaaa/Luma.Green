@@ -6,19 +6,19 @@ import { Link } from "@/i18n/navigation";
 import { guidesFor, type HelpRole } from "./content";
 import { IconTile } from "./help-art";
 
-/** A role's guides as cards: icon, title, what it covers, how many steps. */
+/** A role's guides as a divided reading list with a step count. */
 export function GuideCards({ role }: { role: HelpRole }) {
   const t = useTranslations("help");
   return (
-    <ul className="grid grid-flow-dense gap-4 md:grid-cols-2">
+    <ul className="divide-y border-y">
       {guidesFor(role).map(({ key, slug, icon, steps }) => (
         <li
           key={key}
           data-reveal
-          className="group relative flex gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:p-6"
+          className="group relative flex gap-3 py-5 transition-colors hover:bg-muted/30 has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:gap-5 sm:py-6"
         >
           <IconTile icon={icon} size="sm" />
-          <div className="flex min-w-0 flex-1 flex-col gap-3">
+          <div className="grid min-w-0 flex-1 gap-2 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)_auto] md:items-center md:gap-6">
             <h3 className="text-lg font-semibold tracking-tight">
               <Link
                 href={`/help/${role}/${slug}`}
@@ -30,7 +30,7 @@ export function GuideCards({ role }: { role: HelpRole }) {
             <p className="text-sm leading-relaxed text-muted-foreground">
               {t(`guides.${key}.summary`)}
             </p>
-            <p className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4 text-sm font-semibold text-primary">
+            <p className="flex items-center justify-between gap-5 text-sm font-medium text-primary">
               {t("role.steps", { count: steps.length })}
               <ArrowRightIcon
                 aria-hidden

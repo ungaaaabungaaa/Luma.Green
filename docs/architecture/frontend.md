@@ -21,15 +21,15 @@ shadcn@latest add …`). Next.js's own `next/image` and `next/font` for images
 
 ## Areas and layouts
 
-| Area                                      | Main device       | Shell                                                                                | Content width                         |
-| ----------------------------------------- | ----------------- | ------------------------------------------------------------------------------------ | ------------------------------------- |
-| Public site `(site)`                      | Both              | The existing header and footer                                                       | `max-w-6xl`                           |
-| Household `(household)`                   | Phone             | Top bar (mark + language) · single column · sticky bottom action                     | `max-w-md`, centred on larger screens |
-| Sign-in and onboarding `(auth)`, `(join)` | Phone             | Top bar (back + language) · step indicator · single column · sticky bottom action    | `max-w-md`; a centred card on desktop |
-| Kabadiwala app `(app)`                    | Phone             | Green top bar (name, "taking pickups") · bottom tabs: Requests, Today, Stock, Prices | `max-w-md`; no desktop design         |
-| Yard, recycler, manufacturer `(app)`      | Phone and desktop | Bottom tabs below `md`; left sidebar from `md`                                       | Fluid, `max-w-7xl`                    |
-| Saathi app `(app)`                        | Phone             | Bottom tabs                                                                          | `max-w-md`                            |
-| Admin `admin/`                            | Desktop           | Left sidebar · list and detail side by side from `lg`, stacked below                 | Fluid                                 |
+| Area                                      | Main device       | Shell                                                                                | Content width                                       |
+| ----------------------------------------- | ----------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------- |
+| Public site `(site)`                      | Both              | The existing header and footer                                                       | `max-w-6xl`                                         |
+| Household `(household)`                   | Phone             | Top bar (mark + language) · single column · sticky bottom action                     | `max-w-md`, centred on larger screens               |
+| Sign-in and onboarding `(auth)`, `(join)` | Phone             | Top bar (back + language) · step indicator · single column · sticky bottom action    | `max-w-md`; an open form beside an image on desktop |
+| Kabadiwala app `(app)`                    | Phone             | Green top bar (name, "taking pickups") · bottom tabs: Requests, Today, Stock, Prices | `max-w-md`; no desktop design                       |
+| Yard, recycler, manufacturer `(app)`      | Phone and desktop | Bottom tabs below `md`; left sidebar from `md`                                       | Fluid, `max-w-7xl`                                  |
+| Saathi app `(app)`                        | Phone             | Bottom tabs                                                                          | `max-w-md`                                          |
+| Admin `admin/`                            | Desktop           | Left sidebar · list and detail side by side from `lg`, stacked below                 | Fluid                                               |
 
 ## Look and feel
 
@@ -45,7 +45,7 @@ See [designer system plan](../design/designer-system.md).
   and compressed materials photography. Geist supplies Latin display type;
   Noto supplies body text and all twelve scripts.
   Hero tracking and line-height are reset for non-Latin scripts.
-- Base radius is `0.5rem`: 8px control corners, 12px cards. Shared shadcn
+- Base radius is `0.5rem`: 8px control corners; open sections and divided rows for content. Shared shadcn
   buttons are 44px regular and 48px large, with stable focus and disabled states.
 - Desktop sign-in has an image panel beside the form. Phone sign-in keeps the
   form first. Operational shells use compact headers, neutral navigation and
@@ -60,8 +60,8 @@ See [designer system plan](../design/designer-system.md).
 
 The following baseline still applies to functional controls and data presentation.
 
-- **Surfaces:** a light grey page (`bg-muted`) with white cards (`bg-card`) and
-  hairline borders — as in the prototype. Primary actions in brand green
+- **Surfaces:** neutral page backgrounds with open sections, metric rows and
+  hairline separators. No decorative content cards. Primary actions in brand green
   (`bg-primary`).
 - **Type:** Geist display with Noto Sans for body and every script. Body 16 px; 17–18 px in the kabadiwala
   app; headings 24–28 px; numbers `tabular-nums`.

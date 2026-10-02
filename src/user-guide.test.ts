@@ -184,6 +184,19 @@ describe("the mandatory platform guide", () => {
         "src/components/admin/pilot/pilot-charts.tsx",
         "src/lib/fonts.ts",
         "scripts/guide-preview/main.tsx",
+        "scripts/guide-preview/queries.ts",
+        "src/app/[locale]/(join)/layout.tsx",
+        "src/components/join/join-pages.tsx",
+        "src/components/join/join-gate.tsx",
+        "src/components/join/fields.tsx",
+        "src/components/join/form-parts.tsx",
+        "src/components/join/use-autosave.ts",
+        "src/components/market/new-listing-form.tsx",
+        "src/components/market/listing-fields.tsx",
+        "src/components/market/my-listings.tsx",
+        "src/components/insights/org-impact.tsx",
+        "src/components/insights/bar-list.tsx",
+        "src/components/insights/ledger-explainer.tsx",
         "scripts/guide-preview/image.tsx",
         "scripts/guide-preview/vite.config.mts",
         "messages/en.json",
@@ -202,7 +215,7 @@ describe("the mandatory platform guide", () => {
     )) {
       expect(hash(file), `${file}: recapture protected screens`).toBe(expected);
     }
-    expect(evidence.captures.length).toBeGreaterThanOrEqual(28);
+    expect(evidence.captures.length).toBeGreaterThanOrEqual(40);
     expect(evidence.captures.map((capture) => capture.file)).toEqual(
       expect.arrayContaining([
         "admin-overview-dark.png",
@@ -211,6 +224,14 @@ describe("the mandatory platform guide", () => {
         "admin-pilot-dark.png",
         "admin-pilot-phone.png",
         "kabadiwala-overview-dark.png",
+        "kabadiwala-stock-phone.png",
+        "yard-sell.png",
+        "yard-invoice.png",
+        "recycler-impact.png",
+        "recycler-impact-phone.png",
+        "join-kabadiwala-phone.png",
+        "join-yard.png",
+        "join-status-phone.png",
       ]),
     );
     for (const capture of evidence.captures) {

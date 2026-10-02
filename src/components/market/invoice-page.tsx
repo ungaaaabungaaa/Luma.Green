@@ -175,7 +175,7 @@ function ReceiptDocument({
 
       <article
         id="trade-receipt"
-        className="flex flex-col gap-6 rounded-xl border border-border bg-card p-5 sm:p-8 print:rounded-none print:border-0 print:p-0"
+        className="flex flex-col gap-6 border-y border-border py-6 print:border-0 print:p-0"
       >
         <div className="flex flex-wrap items-start justify-between gap-4 border-b pb-5">
           <div className="flex flex-col gap-3">
@@ -306,7 +306,7 @@ function Party({
   const t = useTranslations("market.receipt");
   const roles = useTranslations("app.roles");
   return (
-    <section className="flex flex-col gap-1 rounded-xl bg-muted/60 p-4 print:bg-transparent print:p-0">
+    <section className="flex flex-col gap-1 border-s-2 border-border ps-4 print:border-0 print:p-0">
       <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
         {title}
       </h2>

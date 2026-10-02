@@ -47,10 +47,10 @@ export default async function PricesPage() {
         }
       />
 
-      <Container className="flex flex-col gap-12 py-16 lg:py-24">
+      <Container className="flex flex-col gap-8 py-8 lg:py-12">
         <PriceBoard />
 
-        <aside className="flex flex-col gap-4 rounded-xl border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+        <aside className="flex flex-col gap-4 border-y py-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">
             <PackageOpenIcon
               aria-hidden

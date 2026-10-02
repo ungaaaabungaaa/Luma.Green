@@ -20,7 +20,7 @@ type Tone = "good" | "warn" | "bad";
 
 const LOOK: Record<Tone, { card: string; badge: string; icon: LucideIcon }> = {
   good: {
-    card: "border-border bg-card",
+    card: "border-primary bg-transparent",
     badge: "bg-primary/10 text-primary",
     icon: ShieldCheckIcon,
   },
@@ -53,7 +53,7 @@ function Frame({
     <section
       aria-labelledby={headingId}
       role={tone === "good" ? undefined : "alert"}
-      className={cn("flex flex-col gap-3 rounded-xl border p-4", card)}
+      className={cn("flex flex-col gap-3 border-s-2 p-4", card)}
     >
       <div className="flex items-start gap-3">
         <span

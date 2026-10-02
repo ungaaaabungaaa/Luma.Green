@@ -62,7 +62,7 @@ export function SupportInbox() {
           if (isFilter(value)) setFilter(value);
         }}
       >
-        <TabsList className="h-auto min-h-12 w-full justify-start rounded-lg border bg-card p-1 sm:w-fit">
+        <TabsList className="h-auto min-h-12 w-full justify-start rounded-none border-b bg-transparent p-0 sm:w-fit">
           <TabsTrigger value="open" className="tabular-nums">
             {openCount === undefined ? "Open" : `Open (${String(openCount)})`}
           </TabsTrigger>
@@ -102,17 +102,17 @@ function RequestList({
     );
   }
   return (
-    <ul className="flex flex-col gap-3">
+    <ul className="flex flex-col divide-y border-b">
       {requests.map((request) => (
         <li key={request.id}>
-          <RequestCard request={request} />
+          <RequestRow request={request} />
         </li>
       ))}
     </ul>
   );
 }
 
-function RequestCard({ request }: { request: SupportRequest }) {
+function RequestRow({ request }: { request: SupportRequest }) {
   const markAnswered = useMutation(api.support.markAnswered);
   const [isBusy, setIsBusy] = useState(false);
   const isOpen = request.status === "open";
@@ -137,11 +137,11 @@ function RequestCard({ request }: { request: SupportRequest }) {
   return (
     <article
       aria-labelledby={headingId}
-      className="flex flex-col gap-4 rounded-xl border bg-card p-5 sm:p-6"
+      className="flex min-w-0 flex-col gap-4 py-5 sm:py-6"
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="flex min-w-0 flex-col gap-0.5">
-          <h2 id={headingId} className="font-semibold">
+          <h2 id={headingId} className="font-semibold break-words">
             {request.name}
           </h2>
           <p className="text-sm text-muted-foreground">
@@ -158,7 +158,7 @@ function RequestCard({ request }: { request: SupportRequest }) {
           </StatusPill>
         </div>
       </div>
-      <p className="border-y py-4 text-sm leading-relaxed break-words whitespace-pre-line">
+      <p className="max-w-3xl text-sm leading-relaxed break-words whitespace-pre-line">
         {request.message}
       </p>
       <div className="flex flex-wrap gap-2">

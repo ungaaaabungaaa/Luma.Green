@@ -43,7 +43,11 @@ export default async function HowItWorksPage() {
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} />
+      <PageHeader
+        title={t("title")}
+        lead={t("lead")}
+        art={<RoleStoryImage scene="household" compact />}
+      />
 
       <Container className="py-16 lg:py-24">
         <ol className="divide-y border-y">
@@ -52,10 +56,10 @@ export default async function HowItWorksPage() {
               key={key}
               data-reveal
               aria-labelledby={`step-${key}`}
-              className="grid gap-8 py-10 md:grid-cols-[1fr_2fr] md:gap-16 lg:py-12"
+              className="grid gap-6 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:items-center md:gap-12 lg:py-10"
             >
               <div className="min-w-0 space-y-5">
-                <span className="inline-flex size-14 items-center justify-center rounded-lg border border-border bg-card text-primary">
+                <span className="inline-flex size-8 items-center text-primary">
                   <Icon aria-hidden className="size-6" />
                 </span>
                 <p className="text-sm font-medium text-primary">
@@ -94,7 +98,7 @@ export default async function HowItWorksPage() {
         <Principles />
       </div>
 
-      <div className="pt-16 lg:pt-24">
+      <div>
         <ClosingCta />
       </div>
     </>
