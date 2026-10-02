@@ -42,6 +42,62 @@ const timestamps = {
 };
 
 export default defineSchema({
+  /** Private account inbox. Event labels are translated when displayed. */
+  inbox: defineTable({
+    profileId: v.id("profiles"),
+    dedupKey: v.string(),
+    event: vNotificationEvent,
+    read: v.boolean(),
+    createdAt: v.number(),
+  })
+    .index("by_dedupKey", ["dedupKey"])
+    .index("by_profile_created", ["profileId", "createdAt"])
+    .index("by_profile_read", ["profileId", "read"]),
+
+  /** Secrets are only returned to an internal delivery action, never a client. */
+  pushDevices: defineTable({
+    profileId: v.id("profiles"),
+    // Legacy unbound registrations stay inactive until authenticated renewal.
+    sessionId: v.optional(v.string()),
+    installationId: v.string(),
+    fingerprint: v.string(),
+    channel: v.union(v.literal("web"), v.literal("expo")),
+    endpoint: v.string(),
+    keys: v.optional(v.object({ p256dh: v.string(), auth: v.string() })),
+    locale: v.string(),
+    expiresAt: v.number(),
+    ...timestamps,
+  })
+    .index("by_fingerprint", ["fingerprint"])
+    .index("by_profile", ["profileId"])
+    .index("by_profile_installation", ["profileId", "installationId"]),
+
+  pushLimits: defineTable({
+    profileId: v.id("profiles"),
+    windowStart: v.number(),
+    registrations: v.number(),
+  }).index("by_profile", ["profileId"]),
+
+  /** A send is claimed once. Unknown delivery is never automatically retried. */
+  pushDeliveries: defineTable({
+    inboxId: v.id("inbox"),
+    deviceId: v.id("pushDevices"),
+    profileId: v.id("profiles"),
+    status: v.union(
+      v.literal("pending"),
+      v.literal("sending"),
+      v.literal("accepted"),
+      v.literal("failed"),
+      v.literal("unknown"),
+      v.literal("cancelled"),
+    ),
+    attemptedAt: v.optional(v.number()),
+    receiptId: v.optional(v.string()),
+    ...timestamps,
+  })
+    .index("by_inbox_device", ["inboxId", "deviceId"])
+    .index("by_profile_attemptedAt", ["profileId", "attemptedAt"]),
+
   /** Transactional SMS events. No phone, tracking token, OTP or provider body. */
   smsNotifications: defineTable({
     dedupKey: v.string(),

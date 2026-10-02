@@ -79,6 +79,43 @@ component. Built and tested on 29 Sep 2026.
      which weakens the per-IP limit. Consider requiring a shared secret header
      that only our Next.js proxy sends.
 
+### Optional authenticator for phone accounts
+
+Any signed-in household, applicant or business user can open
+`/account/security`. Organisation approval is not required for account settings.
+Phone codes remain the primary sign-in method. Normal users do not have a password.
+
+- A complete sign-in grants five minutes to enable protection, replace recovery
+  codes or disable protection. If protection is already enabled, both the SMS
+  code and an authenticator/recovery code must have passed. The proof is bound to
+  the user and the current server session; client flags cannot grant it.
+- Setup shows a local QR image and a manual key. Protection starts only after a
+  valid authenticator code. Existing sessions are revoked at that point. The ten
+  recovery codes are shown in the current screen only; they are not stored in
+  browser storage, logs or screenshots. Cancelling setup leaves protection off.
+- Subsequent SMS verification creates a ten-minute signed challenge. It creates
+  no usable session or Convex JWT until the second factor passes. This also
+  applies to the household booking sign-in form.
+- Better Auth 1.6.33 does not challenge SMS verification by default. The small
+  `phoneTwoFactor` plugin extends its existing challenge hook to that route and
+  runs before the Convex JWT hook. It retains the library's one-use challenge,
+  atomic recovery-code update and account attempt limits. Trusted-device bypass
+  is disabled, including previously issued trust cookies.
+- A challenge permits five failed attempts; the account lockout also spans
+  separate challenges. Expired or exhausted challenges require a new phone code.
+  Regenerating recovery codes invalidates the previous set. A recovery code does
+  not disable protection.
+- Lost authenticator and no recovery code means the account cannot pass the
+  second factor. There is no automatic SMS-only reset. Support must follow a
+  separately approved identity recovery process; one is not enabled by this UI.
+- Direct phone-password, phone-password-reset and number-change endpoints are
+  disabled. Changing the registered number needs a separate verified workflow.
+  The server checks forbidden number-change and trusted-device flags independently;
+  a malformed unrelated option cannot disable either guard.
+- Authenticator setup, enable/disable, recovery-code changes and password changes
+  write audit events without secrets. Every private Convex operation still checks
+  the stored session through `requireUser` / `requireAdmin`.
+
 ### The admin
 
 - **One admin account:** first sign-up requires `ADMIN_EMAIL` and a separate
@@ -107,13 +144,44 @@ component. Built and tested on 29 Sep 2026.
   `requireAdmin`, which also requires the authenticator to be on.
 - The console (`/admin`) is **English only** and outside the locale segment.
 
+### Admin password recovery
+
+The admin login and setup fields include password visibility and length guidance.
+The server requires 12–128 characters. Guidance is not an entropy estimate.
+Admin phone-code verification is rejected even if a phone number is attached to
+the admin identity; the admin must use the password and authenticator route.
+
+`/admin/forgot-password` and `/admin/reset-password` are implemented. Delivery is
+optional: set `RESEND_API_KEY`, `ADMIN_RESET_FROM_EMAIL` (a verified sender address)
+and an HTTPS `SITE_URL` in the Convex environment. No provider account or live
+email execution is implied by the local tests. Without this configuration the
+screen states that recovery is unavailable.
+
+Only the configured `ADMIN_EMAIL` with an existing password credential can request
+or redeem a reset. Other addresses receive the same neutral success response and
+no email. The link is fixed to the site's admin reset route, expires after 15
+minutes and works once. The provider request has an eight-second timeout, does not
+follow redirects and does not retry an uncertain send. The handler awaits delivery
+confirmation because Better Auth's default background helper hides provider errors.
+
+A successful reset revokes active sessions and earlier pending sign-in proofs,
+trust records and other reset links. It preserves the authenticator and recovery
+codes. The new password still leads to the second-factor check. The reset page
+removes its token from the address bar after reading it and uses a no-referrer
+policy. Never capture reset tokens, passwords, QR keys or recovery codes for docs.
+
 ### Testing
 
 - **Unit:** the rules live in pure functions (`convex/lib/*.test.ts`,
   `src/components/{auth,admin}/*.test.ts`); `convex/identity.test.ts` uses
   convex-test to check signed-out callers get nothing.
-- **E2E** (`e2e/auth.spec.ts`) runs against a build without Convex — the
-  state production is in until it's switched on.
+- **Handler integration:** `convex/auth-two-factor.test.ts` calls the actual
+  Better Auth HTTP handlers and Convex component. It covers pending-session/JWT
+  denial, old-session revocation, expiry, attempt limits, concurrent redemption,
+  recovery replacement, admin-phone rejection and password-reset boundaries.
+- **E2E** (`e2e/auth.spec.ts` and `e2e/account-settings.spec.ts`) also checks the
+  disconnected preview and protected route return paths. Fixtures do not prove
+  live SMS/email delivery or an authenticated production walkthrough.
 - **By hand, against the dev deployment:** `AUTH_DEV_MODE=true` is set there,
   so codes appear in `npx convex logs`. The dev admin test account's details
   are in your `.env.local` (`DEV_ADMIN_*`, never committed); add the key to

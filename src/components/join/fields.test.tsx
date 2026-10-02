@@ -54,11 +54,8 @@ describe("ToggleChips", () => {
     render(
       <ToggleChips options={options} value={["metal"]} onChange={onChange} />,
     );
-    expect(screen.getByRole("button", { name: "Metal" })).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
-    await userEvent.click(screen.getByRole("button", { name: "Paper" }));
+    expect(screen.getByRole("checkbox", { name: "Metal" })).toBeChecked();
+    await userEvent.click(screen.getByText("Paper"));
     expect(onChange).toHaveBeenLastCalledWith(["paper", "metal"]);
   });
 
@@ -71,18 +68,31 @@ describe("ToggleChips", () => {
         onChange={onChange}
       />,
     );
-    await userEvent.click(screen.getByRole("button", { name: "Paper" }));
+    await userEvent.click(screen.getByRole("checkbox", { name: "Paper" }));
     expect(onChange).toHaveBeenLastCalledWith(["metal"]);
+  });
+
+  it("keeps independent choices reachable and toggleable by keyboard", async () => {
+    const onChange = vi.fn();
+    render(
+      <ToggleChips options={options} value={["metal"]} onChange={onChange} />,
+    );
+    await userEvent.tab();
+    expect(screen.getByRole("checkbox", { name: "Paper" })).toHaveFocus();
+    await userEvent.keyboard(" ");
+    expect(onChange).toHaveBeenLastCalledWith(["paper", "metal"]);
+    await userEvent.tab();
+    expect(screen.getByRole("checkbox", { name: "Plastic" })).toHaveFocus();
+    await userEvent.tab();
+    await userEvent.keyboard(" ");
+    expect(onChange).toHaveBeenLastCalledWith([]);
   });
 });
 
 describe("WeekdayChips", () => {
   it("labels days from the translations", () => {
     render(withIntl(<WeekdayChips value={["sun"]} onChange={vi.fn()} />));
-    expect(screen.getAllByRole("button")).toHaveLength(7);
-    expect(screen.getByRole("button", { name: "Sun" })).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
+    expect(screen.getAllByRole("checkbox")).toHaveLength(7);
+    expect(screen.getByRole("checkbox", { name: "Sun" })).toBeChecked();
   });
 });

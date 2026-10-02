@@ -11,7 +11,6 @@ import {
   type UseFormRegisterReturn,
 } from "react-hook-form";
 
-import { useSignOut } from "@/components/auth/use-sign-out";
 import { isConvexConfigured } from "@/components/providers/convex-provider";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -26,12 +25,14 @@ import { AdminUnavailable } from "./admin-unavailable";
 import { AuthenticatorStep } from "./authenticator-step";
 import { BackupCodes } from "./backup-codes";
 import { passwordErrorMessage, signUpErrorMessage } from "./errors";
+import { PasswordInput } from "./password-input";
 import {
   adminAccountSchema,
   type AdminAccountValues,
   adminProfileSchema,
   type AdminProfileValues,
 } from "./schemas";
+import { useAdminSignOut } from "./use-admin-sign-out";
 
 interface Enrolment {
   totpURI: string;
@@ -436,14 +437,20 @@ function Field({
   let describedBy: string | undefined;
   if (error) describedBy = `${id}-error`;
   else if (hint) describedBy = `${id}-hint`;
+  const Control = input.type === "password" ? PasswordInput : Input;
   return (
     <div className="flex flex-col gap-2">
       <Label htmlFor={id}>{label}</Label>
-      <Input
+      <Control
         id={id}
         aria-invalid={error ? true : undefined}
         aria-describedby={describedBy}
         className={className}
+        {...(id === "password" &&
+        input.type === "password" &&
+        input.autoComplete === "new-password"
+          ? { showStrength: true }
+          : {})}
         {...input}
       />
       {error ? (
@@ -461,9 +468,7 @@ function Field({
 }
 
 function SignedInAsMember() {
-  const { signOut, isSigningOut } = useSignOut(
-    "Something went wrong. Try again.",
-  );
+  const { signOut, busy, error } = useAdminSignOut();
   return (
     <div className="flex flex-col gap-5">
       <p className="text-sm text-muted-foreground">
@@ -472,13 +477,18 @@ function SignedInAsMember() {
       </p>
       <Button
         variant="outline"
-        disabled={isSigningOut}
+        disabled={busy}
         onClick={() => {
           void signOut();
         }}
       >
         Sign out
       </Button>
+      {error ? (
+        <p role="alert" className="text-sm text-destructive">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }

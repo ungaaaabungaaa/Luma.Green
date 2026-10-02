@@ -1,3 +1,5 @@
+import { fixedDecimalInput } from "@/lib/number-input";
+
 import { CHAIN_MARKUP } from "../../../convex/lib/catalogue";
 import type { OrgKind } from "../../../convex/lib/chain";
 import { indiaToday } from "../../../convex/lib/onboarding";
@@ -22,26 +24,16 @@ export const TRADE_STEPS = [
 
 // --- Reading what people type ---------------------------------------------------
 
-const KG_PATTERN = /^(?:\d+(?:\.\d{0,3})?|\.\d{1,3})$/;
-const RUPEE_PATTERN = /^(?:\d+(?:\.\d{0,2})?|\.\d{1,2})$/;
-
-/** Parse decimal digits directly, without rounding through a binary fraction. */
-function parseUnits(text: string, places: number): number | null {
-  const [whole, fraction = ""] = text.split(".", 2);
-  const units = Number(`${whole}${fraction.padEnd(places, "0")}`);
-  return Number.isSafeInteger(units) && units > 0 ? units : null;
+/** Kilograms in the selected language to exact grams, above zero. */
+export function parseKg(input: string, locale = "en"): number | null {
+  const grams = fixedDecimalInput(input, 3, locale);
+  return grams !== null && grams > 0 ? grams : null;
 }
 
-/** "12.5" kg → 12500 grams; null unless it's a safe weight above zero. */
-export function parseKg(input: string): number | null {
-  const text = input.trim();
-  return KG_PATTERN.test(text) ? parseUnits(text, 3) : null;
-}
-
-/** "17.5" rupees → 1750 paise; null unless it's a price above zero. */
-export function parseRupees(input: string): number | null {
-  const text = input.trim();
-  return RUPEE_PATTERN.test(text) ? parseUnits(text, 2) : null;
+/** Rupees in the selected language to exact paise, above zero. */
+export function parseRupees(input: string, locale = "en"): number | null {
+  const paise = fixedDecimalInput(input, 2, locale);
+  return paise !== null && paise > 0 ? paise : null;
 }
 
 /** Format integer digits without rounding at the safe-integer boundary. */

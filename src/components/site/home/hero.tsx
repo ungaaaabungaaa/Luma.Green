@@ -2,23 +2,27 @@ import { ArrowDownIcon, ArrowRightIcon, MoveUpRightIcon } from "lucide-react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
+import { actionName } from "@/components/site/action-name";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 
 import materialsHall from "../../../../public/images/materials-hall.webp";
 import { Container } from "../container";
+import effects from "../public-effects.module.css";
 import { PriceTeaser } from "./price-teaser";
 
 /** The material story leads; actions and prices remain real localized links. */
 export async function HomeHero() {
-  const [t, chain] = await Promise.all([
+  const [t, chain, nav] = await Promise.all([
     getTranslations("home.hero"),
     getTranslations("home.chain"),
+    getTranslations("nav"),
   ]);
   return (
     <section
       aria-labelledby="hero-heading"
-      className="overflow-hidden border-b"
+      className={cn("overflow-hidden border-b", effects.mesh)}
     >
       <Container className="pt-9 sm:pt-14 lg:pt-20">
         <p className="mb-4 text-sm font-medium text-muted-foreground">
@@ -26,7 +30,11 @@ export async function HomeHero() {
         </p>
         <h1
           id="hero-heading"
-          className="max-w-5xl font-display text-[clamp(2.25rem,5.7vw,5.25rem)] leading-[1.06] font-medium tracking-tight text-balance"
+          data-text-entrance
+          className={cn(
+            "max-w-5xl font-display text-[clamp(2.25rem,5.7vw,5.25rem)] leading-[1.06] font-medium tracking-tight text-balance",
+            effects.heading,
+          )}
         >
           {t("title")}
         </h1>
@@ -38,10 +46,17 @@ export async function HomeHero() {
             <Button
               asChild
               size="lg"
-              className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal"
+              className={cn(
+                "min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap",
+                effects.action,
+              )}
             >
-              <Link href="/sell">
-                <span className="min-w-0">{t("sell")}</span>
+              <Link
+                href="/sell"
+                aria-label={actionName(nav("sellScrap"), t("sell"))}
+              >
+                <span className="sm:hidden">{nav("sellScrap")}</span>
+                <span className="hidden sm:inline">{t("sell")}</span>
                 <ArrowRightIcon aria-hidden className="size-5 rtl:rotate-180" />
               </Link>
             </Button>
@@ -49,10 +64,14 @@ export async function HomeHero() {
               asChild
               size="lg"
               variant="outline"
-              className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal"
+              className="min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap"
             >
-              <Link href="/join">
-                <span className="min-w-0">{t("join")}</span>
+              <Link
+                href="/join"
+                aria-label={actionName(nav("join"), t("join"))}
+              >
+                <span className="sm:hidden">{nav("join")}</span>
+                <span className="hidden sm:inline">{t("join")}</span>
               </Link>
             </Button>
           </div>

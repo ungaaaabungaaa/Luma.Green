@@ -4,11 +4,17 @@ import type { ReactNode } from "react";
 import messages from "../../../messages/en.json";
 import type { ListingView, TradeView } from "./types";
 
-/** Renders market screens the way the app does: English, India time. */
-export function WithIntl({ children }: { children: ReactNode }) {
+/** English test labels with the active locale's number rules and India time. */
+export function WithIntl({
+  children,
+  locale = "en",
+}: {
+  children: ReactNode;
+  locale?: string;
+}) {
   return (
     <NextIntlClientProvider
-      locale="en"
+      locale={locale}
       messages={messages}
       timeZone="Asia/Kolkata"
     >

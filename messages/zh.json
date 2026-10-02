@@ -1,0 +1,3482 @@
+{
+  "brand": {
+    "name": "Luma.Green",
+    "tagline": "行动起来，共创更洁净的明天"
+  },
+  "meta": {
+    "title": "Luma.Green — 行动起来，共创更洁净的明天",
+    "description": "Luma.Green将印度的废品回收链连接在一个平台上：家庭、废品回收店、分拣场、再生企业和制造商，共享公平价格、称重回收和每次交接的记录。"
+  },
+  "theme": {
+    "label": "外观",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统"
+  },
+  "common": {
+    "loading": "正在加载…",
+    "error": "出了点问题",
+    "retry": "重试",
+    "save": "保存",
+    "cancel": "取消",
+    "search": "搜索",
+    "language": "语言",
+    "close": "关闭"
+  },
+  "nav": {
+    "label": "主导航",
+    "home": "首页",
+    "howItWorks": "使用流程",
+    "contact": "联系我们",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "skipToContent": "跳至正文",
+    "prices": "价格",
+    "help": "帮助",
+    "join": "加入",
+    "sellScrap": "卖废品"
+  },
+  "footer": {
+    "about": "从家庭到工厂，将印度的废品回收链连接在一个平台上。每次交接都称重、定价并记录。",
+    "navLabel": "页脚",
+    "useHeading": "使用Luma.Green",
+    "learnHeading": "了解更多",
+    "standards": "行业标准",
+    "solar": "屋顶光伏",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "sell": {
+      "title": "出售",
+      "summary": "家庭可在家中以公平价格出售废品，在门口称重并收款。"
+    },
+    "trade": {
+      "title": "交易",
+      "summary": "计划中的资金托管服务将保管货款，直到交货完成。目前的演示仅记录模拟付款。"
+    },
+    "record": {
+      "title": "记录",
+      "summary": "记录每次交接，为合规、环境效益核算和回收证明提供依据。"
+    }
+  },
+  "principles": {
+    "heading": "经得起审计的记录",
+    "intro": "买方、监管机构或审计人员可能会问材料来自哪里。我们设计这些记录，让答案始终可查。",
+    "auditable": {
+      "title": "每次变更都有记录",
+      "body": "每个步骤，例如回收称重、交易付款、货物送达，都会向审计日志追加记录，已有记录不会被覆盖。"
+    },
+    "exact": {
+      "title": "数值不会累积偏差",
+      "body": "金额以整数派萨保存，质量以整数克保存。从地磅到结算，舍入误差不会累积。"
+    },
+    "frozen": {
+      "title": "历史保持原样",
+      "body": "每张收据都保留当天的价格和重量。以后调整价格，不会改写已存在的收据。"
+    }
+  },
+  "home": {
+    "metaDescription": "Luma.Green将印度的废品回收链连接在一个平台上：家庭、废品回收店、分拣场、再生企业和制造商，共享公平价格、经过核验的企业和每一步的收据。",
+    "hero": {
+      "eyebrow": "从班加罗尔开始",
+      "title": "印度废品回收链，一个平台相连",
+      "lead": "在家以公平价格出售废品，与经过核验的企业逐级交易。每次交接都称重、定价并记录。",
+      "sell": "出售我的废品",
+      "join": "以企业身份加入",
+      "prices": "查看今日价格"
+    },
+    "teaser": {
+      "title": "今日价格",
+      "placeAndDate": "班加罗尔 · {date}",
+      "place": "班加罗尔",
+      "seeAll": "查看全部价格",
+      "demoNote": "原型演示的示例价格。",
+      "unavailable": "今日价格即将显示在这里。",
+      "error": "暂时无法加载价格。"
+    },
+    "chain": {
+      "heading": "废品如何流转",
+      "intro": "废品变成新产品前，会经历四次交接。每个阶段都进一步分拣，Luma.Green记录每次交接。",
+      "steps": {
+        "household": {
+          "name": "家庭",
+          "body": "出售废纸、塑料、金属和电子废弃物。"
+        },
+        "kabadiwala": {
+          "name": "废品回收店",
+          "body": "收购、称重，并按材料分类。"
+        },
+        "yard": {
+          "name": "分拣场",
+          "body": "分级并压成包块。"
+        },
+        "recycler": {
+          "name": "再生企业",
+          "body": "将包块加工成碎片、颗粒和锭。"
+        },
+        "manufacturer": {
+          "name": "制造商",
+          "body": "用再生材料制造新产品。"
+        }
+      },
+      "money": "家庭在门口通过现金或UPI收款。企业间资金托管正在规划中。",
+      "saathi": "Saathi在回收链各环节提供收取、分拣和轮班支持。"
+    },
+    "roles": {
+      "heading": "为回收链上的每个人服务",
+      "intro": "六类参与者让废品持续流转。看看Luma.Green为各类参与者提供什么。",
+      "household": {
+        "title": "家庭",
+        "one": "预约前先了解废品价值。",
+        "two": "上门收取，或送到回收店。",
+        "three": "通过现金或UPI收款，并获得收据。",
+        "cta": "出售我的废品"
+      },
+      "kabadiwala": {
+        "title": "废品回收店",
+        "one": "接收附近家庭的回收请求。",
+        "two": "自行定价，但不得低于最低价。",
+        "three": "将分拣好的库存卖给分拣场。",
+        "cta": "以废品回收店身份加入"
+      },
+      "yard": {
+        "title": "分拣场",
+        "one": "查看附近回收店的库存。",
+        "two": "批量采购，将包块卖给再生企业。",
+        "three": "计划功能：交货前将货款存入托管。",
+        "cta": "以分拣场身份加入"
+      },
+      "recycler": {
+        "title": "再生企业",
+        "one": "从经过核验的分拣场采购分级包块。",
+        "two": "每批货物都有完整交接记录。",
+        "three": "将产出卖给工厂。",
+        "cta": "以再生企业身份加入"
+      },
+      "manufacturer": {
+        "title": "制造商",
+        "one": "查看再生企业的产出。",
+        "two": "计划功能：通过资金托管订购再生材料。",
+        "three": "保留EPR报告所需记录。",
+        "cta": "以制造商身份加入"
+      },
+      "saathi": {
+        "title": "Saathi工作者",
+        "one": "附近的有偿工作：收取、分拣和轮班。",
+        "two": "选择工作区域和时间。",
+        "three": "完成身份核验，让家庭和企业放心。",
+        "cta": "以Saathi身份加入"
+      }
+    },
+    "trust": {
+      "heading": "以信任为基础",
+      "intro": "废品交易长期依靠现金和估算。这些规则将改变这一点。",
+      "verified": {
+        "title": "经过核验的企业",
+        "body": "开始交易前，工作人员会核验每家企业和每位Saathi。"
+      },
+      "floor": {
+        "title": "有底线的公平价格",
+        "body": "回收店可以自行定价，但不得低于我们为每种材料公布的最低价。"
+      },
+      "escrow": {
+        "title": "计划功能：企业交易资金托管",
+        "body": "演示展示付款步骤，但不会保管或转移真实资金。"
+      },
+      "receipts": {
+        "title": "电子收据",
+        "body": "每次回收和交易都会生成收据，列明材料、数量和价格。"
+      },
+      "languages": {
+        "title": "{count, number}种语言",
+        "body": "支持卡纳达语、印地语、泰米尔语、英语等语言，按钮大，文字简洁。"
+      }
+    },
+    "whyNow": {
+      "heading": "为什么是现在",
+      "intro": "三项变化让现在成为记录印度废品回收链的时机。",
+      "epr": {
+        "title": "EPR规则",
+        "body": "塑料包装、电子废弃物和电池的生产者责任延伸制度（EPR）要求生产者证明材料确实被收集和再生。这份证据必须从第一次交接开始。"
+      },
+      "informal": {
+        "title": "非正规部门",
+        "body": "废品回收店和非正规劳动者已经承担印度大量回收工作，却很少获得公平价格、记录或认可。Luma.Green与他们合作，共同推进。"
+      },
+      "upi": {
+        "title": "普及的UPI",
+        "body": "即使在小店，手机付款也已常见。每笔付款都可以留下记录。"
+      }
+    },
+    "closing": {
+      "title": "从手头的材料开始",
+      "body": "一袋旧报纸，或一卡车包块，都能在Luma.Green找到去处。",
+      "sell": "出售我的废品",
+      "join": "以企业身份加入"
+    },
+    "expansion": {
+      "materialsTitle": "从已有的材料开始",
+      "pickupTitle": "回收，一步一步来",
+      "shopTitle": "连接你的废品回收店",
+      "recordsTitle": "跟随材料流转的记录",
+      "paymentTitle": "重量清楚，付款清楚。",
+      "questionsTitle": "开始之前"
+    },
+    "marquee": {
+      "label": "目录中的材料",
+      "pause": "暂停滚动",
+      "resume": "继续滚动"
+    },
+    "testimonials": {
+      "title": "演示评价",
+      "note": "以下为示例引语，并非客户评价。",
+      "household": "选择回收服务前，我能先查看单价。",
+      "kabadiwala": "重量、单价和收据放在一起，每次回收都更容易核对。",
+      "manufacturer": "有了材料代码，更容易说明我需要的等级。"
+    }
+  },
+  "prices": {
+    "metaTitle": "班加罗尔今日废品价格",
+    "metaDescription": "班加罗尔今日每公斤废品价格：纸、塑料、金属、玻璃和电子废弃物，附本周变化、30天图表和回收店最低收购价。",
+    "eyebrow": "班加罗尔",
+    "title": "今日废品价格",
+    "lead": "今天每公斤的售价。回收店可自行定价，但不得低于最低价。点击材料可查看过去30天的价格。",
+    "demoNote": "这是原型演示的示例价格，并非实时市场价。",
+    "date": "{date}的价格",
+    "floorHelp": "最低价：经过核验的回收店每公斤至少应支付的金额。",
+    "perKg": "{price}/公斤",
+    "floor": "最低价{price}",
+    "noPrice": "暂无价格",
+    "columns": {
+      "material": "材料",
+      "today": "今天",
+      "week": "本周",
+      "month": "30天",
+      "floor": "最低价"
+    },
+    "families": {
+      "paper": "纸",
+      "plastic": "塑料",
+      "metal": "金属",
+      "glass": "玻璃",
+      "ewaste": "电子废弃物",
+      "other": "其他"
+    },
+    "factoryGate": {
+      "title": "出厂价",
+      "body": "再生企业向制造商出售的再生材料。"
+    },
+    "change": {
+      "up": "本周上涨{pct}",
+      "down": "本周下跌{pct}",
+      "flat": "本周无变化",
+      "unknown": "历史数据还不足"
+    },
+    "detail": {
+      "description": "{code} · {family} · 班加罗尔",
+      "today": "今天",
+      "low": "30天最低价",
+      "high": "30天最高价",
+      "floor": "最低价",
+      "noFloor": "无",
+      "close": "关闭",
+      "noHistory": "暂无价格历史。"
+    },
+    "chart": {
+      "label": "{material}：每日每公斤价格。使用方向键切换日期。",
+      "point": "{date}：{price}",
+      "floor": "最低价{price}",
+      "table": "显示数值",
+      "tableCaption": "{material}的每日每公斤价格",
+      "date": "日期",
+      "price": "每公斤价格"
+    },
+    "unavailable": {
+      "title": "暂时无法查看价格",
+      "body": "价格表正在连接中，请稍后查看。"
+    },
+    "empty": {
+      "title": "还没有价格",
+      "body": "今日价格发布后会显示在这里。"
+    },
+    "error": {
+      "title": "无法加载价格",
+      "body": "请检查连接后重试。",
+      "retry": "重试"
+    },
+    "sellCta": {
+      "title": "家里有废品吗？",
+      "body": "预约回收，在门口收款。",
+      "action": "出售我的废品"
+    }
+  },
+  "standards": {
+    "metaTitle": "Luma.Green标准",
+    "metaDescription": "计划功能：面向印度公平废品交易的公开材料代码和简明规则，涵盖分级、称重、收据、核验和资金托管。任何人都可免费采用。",
+    "eyebrow": "开放标准",
+    "title": "Luma.Green标准",
+    "lead": "公平交易废品的简明开放规则：每种材料一个代码，明确分级，准确称重，每次交接都有记录。行业内任何人都可采用。",
+    "onThisPage": "本页内容",
+    "codes": {
+      "title": "每种材料一个代码",
+      "nav": "材料代码",
+      "body": "同一种废品在不同地方有不同名称。公开代码为材料提供通用名称，让一公斤报纸在回收店、分拣场和工厂都表示同一件事。",
+      "caption": "Luma.Green材料代码",
+      "count": "{count, plural, one {#种材料} other {#种材料}}",
+      "download": "下载代码（CSV）",
+      "columns": {
+        "code": "代码",
+        "name": "材料",
+        "family": "类别",
+        "stage": "阶段"
+      },
+      "stages": {
+        "scrap": "废料",
+        "recycled": "再生料"
+      },
+      "unavailable": "暂时无法查看代码列表，请稍后查看。",
+      "empty": "暂无材料代码。",
+      "error": "无法加载代码列表。",
+      "retry": "重试"
+    },
+    "grading": {
+      "title": "分级：干燥、分类、洁净",
+      "nav": "分级",
+      "body": "公平价格需要明确等级。称重前先做三项检查。",
+      "dry": {
+        "title": "干燥",
+        "body": "水不是废品。湿纸和纸箱要先晾干再称重。"
+      },
+      "sorted": {
+        "title": "已分类",
+        "body": "每袋或每个包块只放一种材料，使用一个代码。混合货物使用MIXED代码。"
+      },
+      "clean": {
+        "title": "无杂质",
+        "body": "不含食物、油、泥土或石块。先去除所有非目标材料。"
+      }
+    },
+    "weighing": {
+      "title": "公平称重",
+      "nav": "称重",
+      "body": "废品交易的争议大多与重量有关。这些规则保证准确称重。",
+      "stamped": {
+        "title": "经检定的秤",
+        "body": "仅使用经过法定计量部门核验并盖章的秤。"
+      },
+      "shown": {
+        "title": "卖方看得见重量",
+        "body": "显示屏朝向卖方，商定价格前先读出重量。"
+      },
+      "receipt": {
+        "title": "电子收据",
+        "body": "重量精确到克写入收据，不向任何一方有利的方向取整。"
+      }
+    },
+    "custody": {
+      "title": "收据与交接记录",
+      "nav": "收据",
+      "body": "每次交接都有收据。各步骤的收据相互连接，使再生企业的包块可以追溯到来源回收店。",
+      "receiptTitle": "每张收据显示的内容",
+      "fields": {
+        "number": "收据编号",
+        "time": "日期和时间",
+        "seller": "卖方",
+        "buyer": "买方",
+        "code": "材料代码",
+        "weight": "精确到克的重量",
+        "rate": "每公斤单价",
+        "total": "总额及付款方式"
+      }
+    },
+    "verification": {
+      "title": "核验",
+      "nav": "核验",
+      "body": "开始交易前，工作人员会核验每家企业和每位Saathi。",
+      "business": "企业：GST号码（如有）、店铺或设施照片，以及电话确认。",
+      "consent": "分拣场、再生企业和工厂：州污染控制委员会签发的有效许可。",
+      "saathi": "Saathi：带照片的身份证件和相符的自拍照。"
+    },
+    "escrow": {
+      "title": "计划功能：企业间资金托管",
+      "nav": "资金托管",
+      "body": "计划中的资金托管服务将保管货款，直到交货完成。目前的演示仅记录模拟付款。",
+      "steps": {
+        "accepted": "卖方接受订单",
+        "paid": "买方将货款存入托管",
+        "dispatched": "卖方发货",
+        "released": "买方确认后，货款支付给卖方"
+      }
+    },
+    "adopt": {
+      "title": "采用标准",
+      "body": "代码和规则公开且免费。无论是否使用Luma.Green，都可在店铺、分拣场或工厂采用，并告诉我们如何改进。",
+      "cta": "与我们交流"
+    }
+  },
+  "solar": {
+    "metaTitle": "卡纳塔克邦屋顶光伏计算器",
+    "metaDescription": "估算卡纳塔克邦住宅或企业需要的屋顶光伏规模、PM Surya Ghar补贴后的成本，以及回本时间。",
+    "eyebrow": "卡纳塔克邦",
+    "title": "适合住宅或企业的屋顶光伏",
+    "lead": "了解适合屋顶的规模、政府补贴后的成本和回本时间。这里的所有数字均为估算。",
+    "form": {
+      "heading": "你的信息",
+      "kind": "用于哪里？",
+      "kinds": {
+        "home": "我家",
+        "business": "我的企业"
+      },
+      "mode": "用电情况",
+      "modes": {
+        "bill": "每月电费",
+        "units": "每月用电量"
+      },
+      "bill": "每月电费账单",
+      "billHint": "以卢比填写，例如2500",
+      "units": "每月用电度数",
+      "unitsHint": "账单上有显示，例如300",
+      "unitsSuffix": "度",
+      "roof": "无遮挡屋顶面积",
+      "roofHint": "不确定时可留空。",
+      "roofUnit": "屋顶面积单位",
+      "areaUnits": {
+        "sqft": "平方英尺",
+        "m2": "m²"
+      },
+      "optional": "选填",
+      "errors": {
+        "bill": "请输入{min}至{max}之间的电费。",
+        "units": "请输入{min}至{max}之间的用电量。",
+        "roof": "请输入大于零的屋顶面积，或留空。"
+      }
+    },
+    "result": {
+      "heading": "估算结果",
+      "prompt": "输入电费或用电量，查看估算结果。",
+      "size": "建议系统规模",
+      "kw": "{kw}千瓦",
+      "sizeHint": "每月约发电{units}度，需要约{area}的屋顶。",
+      "areaIn": "{value}{unit, select, sqft {平方英尺} other {m²}}",
+      "fromBill": "根据电费估算，你每月用电约{units}度。",
+      "limitedByRoof": "已按屋顶面积调整规模。更大的屋顶可能覆盖更多电费。",
+      "roofTooSmallTitle": "屋顶可能太小",
+      "roofTooSmallBody": "即使最小的1千瓦系统，也需要约{area}的无遮挡屋顶。请与我们联系，可能还有其他方案。",
+      "cost": "补贴前费用",
+      "subsidy": "PM Surya Ghar补贴",
+      "noSubsidy": "不适用于企业",
+      "netCost": "你的费用",
+      "savings": "预计节省",
+      "perMonth": "每月{amount}",
+      "payback": "回本时间",
+      "yearsRange": "{low}至{high}年",
+      "years": "{count, plural, one {#年} other {#年}}",
+      "range": "{low}至{high}",
+      "minus": "− {amount}",
+      "noPayback": "无法靠这部分节省回本",
+      "demoNote": "仅根据以下假设估算。实际数字需现场勘察确认。"
+    },
+    "chart": {
+      "title": "{years, number}年节省金额",
+      "legendPaying": "尚未回本",
+      "legendPaid": "已回本",
+      "legendCost": "你的费用",
+      "label": "按年显示节省金额。使用方向键切换年份。",
+      "point": "第{year, number}年：节省{amount}",
+      "yearLabel": "第{year, number}年",
+      "table": "显示数值",
+      "tableCaption": "每年节省金额",
+      "year": "年份",
+      "saved": "累计节省"
+    },
+    "assumptions": {
+      "title": "估算方法",
+      "production": "在卡纳塔克邦，1千瓦光伏板每月约发电{units}度。",
+      "roof": "每千瓦需要约{m2}m²（{sqft}平方英尺）的无遮挡屋顶。",
+      "cost": "每千瓦安装费约为{low}至{high}。",
+      "tariff": "将电费换算为用电量时，住宅按每度约{home}，企业按每度约{business}计算。",
+      "subsidy": "住宅前2千瓦每千瓦补贴{first}，第3千瓦补贴{third}，上限为{cap}。企业无此补贴。",
+      "savings": "节省金额仅按当前电价计算自用电量。"
+    },
+    "subsidy": {
+      "title": "PM Surya Ghar补贴说明",
+      "body": "PM Surya Ghar: Muft Bijli Yojana是印度政府的住宅屋顶光伏计划。系统安装并验收后，补贴将汇入你的银行账户。",
+      "caption": "住宅按系统规模提供的补贴",
+      "size": "系统规模",
+      "amount": "补贴",
+      "atLeast": "{kw}千瓦或以上",
+      "kw": "{kw}千瓦",
+      "source": "规则与申请：",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "（在新标签页中打开）",
+      "business": "企业无法获得这项补贴，但由于每度电费更高，往往能节省更多。"
+    },
+    "next": {
+      "title": "接下来会怎样",
+      "one": {
+        "title": "我们致电联系",
+        "body": "了解你的屋顶、电费和希望开始的时间。"
+      },
+      "two": {
+        "title": "现场勘察",
+        "body": "经过核验的安装商检查屋顶并提供正式报价。"
+      },
+      "three": {
+        "title": "补贴与净计量",
+        "body": "我们协助申请补贴，并向电力公司申请净计量。"
+      }
+    },
+    "contact": {
+      "title": "与我们交流",
+      "lead": "请留下联系方式，我们会回电。",
+      "name": "姓名",
+      "phone": "手机号码",
+      "phoneHint": "我们会拨打此号码。",
+      "message": "还有什么需要我们了解？",
+      "messageHint": "估算结果已填入，可补充其他内容。",
+      "prefill": "{kind, select, home {住宅用途} other {企业用途}}：根据本页估算，需要{kw}千瓦系统。",
+      "send": "发送",
+      "sending": "正在发送…",
+      "sentTitle": "谢谢，{name}",
+      "sentBody": "我们已收到消息，会尽快致电。",
+      "another": "发送另一条消息",
+      "privacy": "手机号码仅用于光伏相关联系。",
+      "unavailable": "此页面暂时无法发送消息。请发邮件至<link>{email}</link>。",
+      "errors": {
+        "name": "请输入姓名。",
+        "phone": "请输入10位印度手机号码。",
+        "message": "请填写简短内容，不超过1,000字。",
+        "generic": "发送失败，请重试。"
+      }
+    }
+  },
+  "howItWorks": {
+    "metaTitle": "使用流程",
+    "metaDescription": "计划功能：Luma.Green让家庭以公平价格出售废品，通过资金托管逐级交易，并记录每次交接。",
+    "title": "Luma.Green如何运作",
+    "lead": "废品变成新产品前，会经历四次交接。这里介绍每个步骤及Luma.Green记录的内容。",
+    "stepLabel": "第{number}步",
+    "sell": {
+      "body": "家庭选择已有材料，查看附近各店报价，预约上门回收或送店。回收店逐项称重，通过现金或UPI付款，双方都获得收据。",
+      "point1": "各店自行定价，不得低于公布的最低价",
+      "point2": "使用店铺的秤称重，并以克记录",
+      "point3": "无需账户的追踪链接"
+    },
+    "trade": {
+      "body": "演示：回收店将分拣后的库存卖给分拣场，分拣场将包块卖给再生企业，再生企业将碎片、颗粒和锭卖给工厂。买方货款在货物送达前存入托管。演示展示付款步骤，但不会保管或转移真实资金。",
+      "point1": "仅经过核验的企业可以交易",
+      "point2": "发货和收货时更新库存流转",
+      "point3": "每笔已付款交易都有带编号的收据"
+    },
+    "record": {
+      "body": "每次交接都记录谁、什么材料、多少、何时、何地。这些记录支撑价格表、库存、合规和环境效益数据，也是EPR和回收标准所需的证据。",
+      "point1": "从家门口到工厂的一套记录",
+      "point2": "供再生企业和工厂使用的财年EPR汇总",
+      "point3": "为信用额度提供证据，避免重复计算"
+    }
+  },
+  "participants": {
+    "metaTitle": "适用人群",
+    "metaDescription": "Luma.Green面向家庭、废品回收店、分拣场、再生企业、制造商和Saathi，即所有让废品从家庭流向工厂的人。",
+    "title": "谁适合使用Luma.Green",
+    "lead": "所有将废品从家庭送到工厂的人，以及在各环节工作的人员。",
+    "kabadiwala": {
+      "name": "废品回收店",
+      "body": "接收附近家庭的回收请求，公平称重付款，将分拣后的库存卖给分拣场。"
+    },
+    "yard": {
+      "name": "分拣场",
+      "body": "计划功能：从回收店采购，分拣打包，将分级批次卖给再生企业，货款存入托管。"
+    },
+    "recycler": {
+      "name": "再生企业",
+      "body": "从经过核验的分拣场采购分级包块，将碎片、颗粒和锭卖给工厂。"
+    },
+    "manufacturer": {
+      "name": "制造商",
+      "body": "从经过核验的再生企业订购再生材料，并保留EPR报告所需记录。"
+    },
+    "saathi": {
+      "name": "Saathi工作者",
+      "body": "承接家附近有偿的收取、分拣和轮班工作，查看收入。"
+    },
+    "householdHeading": "也面向每个家庭",
+    "householdBody": "无需账户即可在家卖废品：选择材料，查看各店报价，通过现金或UPI收款并获得收据。"
+  },
+  "contact": {
+    "metaTitle": "联系我们",
+    "metaDescription": "如需参加班加罗尔试点，请联系Luma.Green团队。",
+    "title": "与我们交流",
+    "lead": "我们先在班加罗尔与少量回收店、分拣场、再生企业和工厂合作。请介绍你的身份、交易材料和每月大致处理量。",
+    "emailHeading": "抢先体验与一般问题",
+    "securityHeading": "安全问题报告",
+    "securityBody": "发现漏洞？请私下报告，不要公开发布。"
+  },
+  "help": {
+    "metaTitle": "帮助中心",
+    "metaDescription": "为Luma.Green上的家庭、回收店、分拣场、再生企业、制造商和Saathi提供简明指南、解答和培训。",
+    "eyebrow": "帮助中心",
+    "title": "需要什么帮助？",
+    "lead": "为所有Luma.Green用户提供简短指南、清晰解答和快速培训。",
+    "home": "帮助",
+    "breadcrumb": "当前位置",
+    "hours": "周一至周六，上午9点至晚上7点",
+    "replyTime": "我们会在一个工作日内回复。",
+    "search": {
+      "label": "搜索帮助",
+      "placeholder": "例如：短信验证码或资金托管",
+      "clear": "清空搜索",
+      "summary": "“{query}”的结果：{count, plural, =0 {无解答} one {#条解答} other {#条解答}}",
+      "topicSummary": "关于{topic}：{count, plural, =0 {无解答} one {#条解答} other {#条解答}}",
+      "emptyTitle": "未找到结果",
+      "emptyBody": "试试一个简短词语、选择主题，或直接询问我们。",
+      "ask": "向我们提问",
+      "guide": "指南",
+      "question": "问题",
+      "forRoles": "适用于{roles}",
+      "showMore": "显示全部{count}条解答"
+    },
+    "topicsHeading": "按主题浏览",
+    "topics": {
+      "start": "开始使用",
+      "signIn": "登录",
+      "pickups": "回收",
+      "prices": "价格",
+      "weighing": "称重与收据",
+      "payments": "付款",
+      "trading": "买卖",
+      "documents": "文件与核验",
+      "safety": "安全",
+      "carbon": "碳与EPR",
+      "disputes": "问题与争议",
+      "privacy": "隐私"
+    },
+    "rolesHeading": "适合你的帮助",
+    "rolesLead": "选择你的角色，查看相关指南、问题和培训。",
+    "guideCount": "{count, plural, one {#篇指南} other {#篇指南}}",
+    "roles": {
+      "household": {
+        "name": "家庭",
+        "who": "在家卖废品",
+        "title": "家庭帮助",
+        "lead": "预约回收，公平称重，在门口收款。无需账户。"
+      },
+      "kabadiwala": {
+        "name": "废品回收店",
+        "who": "经营废品回收店",
+        "title": "回收店帮助",
+        "lead": "承接回收，快速称重付款，设置价格并向分拣场销售。"
+      },
+      "yard": {
+        "name": "分拣场",
+        "who": "从回收店采购并进一步分拣",
+        "title": "分拣场帮助",
+        "lead": "演示：寻找附近库存，将分拣包块卖给再生企业，通过资金托管安全交易。"
+      },
+      "recycler": {
+        "name": "再生企业",
+        "who": "将废品变成原材料",
+        "title": "再生企业帮助",
+        "lead": "从分拣场采购分级废料，向工厂销售产出，整理EPR记录。"
+      },
+      "manufacturer": {
+        "name": "制造商",
+        "who": "用再生材料制造产品",
+        "title": "制造商帮助",
+        "lead": "订购再生材料，核查交货，保存EPR所需记录。"
+      },
+      "saathi": {
+        "name": "Saathi工作者",
+        "who": "承接回收与短时轮班",
+        "title": "Saathi帮助",
+        "lead": "凭带照片的身份证件加入，寻找附近工作，安全工作并获得报酬。"
+      }
+    },
+    "role": {
+      "onThisPage": "本页内容",
+      "guidesHeading": "指南列表",
+      "guidesLead": "配图分步说明。",
+      "steps": "{count, plural, one {#个步骤} other {#个步骤}}",
+      "faqsHeading": "常见问题",
+      "faqsLead": "点击问题查看解答。",
+      "tutorialsHeading": "视频",
+      "tutorialsLead": "使用你的语言的简短视频。",
+      "trainingHeading": "培训",
+      "trainingLead": "简短课程。学完一节就标记完成。",
+      "otherRoles": "其他角色的帮助"
+    },
+    "guide": {
+      "metaTitle": "{guide} · {role}",
+      "stepsHeading": "步骤",
+      "stepLabel": "第{number}步，共{total}步",
+      "relatedHeading": "相关问题",
+      "nextHeading": "下一篇指南"
+    },
+    "tutorial": {
+      "comingSoon": "视频即将上线",
+      "minutes": "{minutes}分钟"
+    },
+    "training": {
+      "progressLabel": "你的培训",
+      "progress": "已完成{done}项，共{total}项",
+      "minutes": "{minutes}分钟",
+      "markDone": "标记完成",
+      "openGuide": "打开指南",
+      "badgeTitle": "培训完成",
+      "badgeBody": "你已完成所有课程！随时可以回来复习。",
+      "reset": "重新开始",
+      "savedHere": "进度保存在此设备上。"
+    },
+    "contactStrip": {
+      "title": "还需要帮助？",
+      "body": "联系工作人员。我们会在一个工作日内回复。",
+      "call": "拨打电话",
+      "whatsapp": "WhatsApp",
+      "write": "给我们留言"
+    },
+    "contact": {
+      "metaTitle": "联系支持",
+      "metaDescription": "通过电话、WhatsApp或简短消息向Luma.Green团队咨询。我们会在一个工作日内回复。",
+      "title": "联系我们",
+      "lead": "工作人员会阅读每条消息。请用自己的话说明问题。",
+      "formHeading": "发送消息",
+      "name": "姓名",
+      "phone": "手机号码",
+      "phoneHint": "我们会通过此号码致电或发送短信。",
+      "role": "你的身份",
+      "topic": "咨询主题",
+      "choose": "请选择",
+      "message": "你的消息",
+      "messageHint": "发生了什么，何时发生？如有预约号或交易号，请一并填写。",
+      "messageCount": "{count, number}/{max, number}字",
+      "roles": {
+        "household": "家庭用户",
+        "kabadiwala": "废品回收店",
+        "yard": "分拣场",
+        "recycler": "再生企业",
+        "manufacturer": "制造商",
+        "saathi": "Saathi工作者",
+        "other": "其他人员"
+      },
+      "topics": {
+        "account": "登录或我的账户",
+        "pickup": "回收事项",
+        "prices": "价格",
+        "payments": "付款",
+        "documents": "文件与核验",
+        "trade": "企业间交易",
+        "solar": "光伏",
+        "other": "其他事项"
+      },
+      "submit": "发送留言",
+      "sending": "正在发送…",
+      "privacy": "手机号码仅用于回复你。",
+      "sentTitle": "消息已发送",
+      "sentBody": "谢谢。我们会在一个工作日内致电或发送短信。",
+      "sendAnother": "发送另一条消息",
+      "backToHelp": "返回帮助",
+      "errors": {
+        "nameInvalid": "请输入姓名，2至80字。",
+        "phoneInvalid": "请输入10位印度手机号码。",
+        "roleMissing": "请选择你的身份。",
+        "topicMissing": "请选择咨询主题。",
+        "messageShort": "请再详细一些，至少5字。",
+        "messageLong": "请控制在1,000字以内。",
+        "generic": "发送失败。请检查连接后重试。",
+        "rateLimited": "此号码发送的消息过多。请一小时后重试。"
+      },
+      "unavailableTitle": "此处暂不支持发送消息",
+      "unavailableBody": "请改用电话或WhatsApp联系我们，我们会提供帮助。",
+      "otherWays": "其他联系方式",
+      "callTitle": "致电我们",
+      "whatsappTitle": "通过WhatsApp联系",
+      "hoursTitle": "服务时间",
+      "replyTitle": "回复时间",
+      "sampleNumbers": "原型演示：这些是示例号码。"
+    },
+    "guides": {
+      "signIn": {
+        "title": "通过短信验证码登录",
+        "summary": "无需密码，只需手机号码和6位验证码。",
+        "steps": {
+          "open": {
+            "title": "打开登录页面",
+            "body": "访问luma.green/login并选择语言。"
+          },
+          "number": {
+            "title": "输入手机号码",
+            "body": "输入加入时使用的10位号码。"
+          },
+          "code": {
+            "title": "输入6位验证码",
+            "body": "验证码通过短信发送，5分钟内有效。30秒后还未收到？点击重发。"
+          },
+          "stay": {
+            "title": "保持登录",
+            "body": "此手机上的登录状态会保持30天。不要分享验证码，我们的团队不会索要验证码。"
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "工作时注意安全",
+        "summary": "防护装备、搬抬、尖锐废料、电池和机器：预防受伤的基础知识。",
+        "steps": {
+          "gear": {
+            "title": "穿戴个人防护装备（PPE）",
+            "body": "始终戴手套并穿包脚鞋。处理多尘货物时加戴口罩，切割或破碎时加戴护目镜。"
+          },
+          "lift": {
+            "title": "用腿部力量搬抬",
+            "body": "弯曲膝盖，让货物靠近身体，不要扭转身体。超过25公斤时请他人协助。"
+          },
+          "sharp": {
+            "title": "注意尖锐边缘",
+            "body": "玻璃、铁皮和金属线容易割伤皮肤。玻璃应装箱搬运，不要散装在袋中。"
+          },
+          "batteries": {
+            "title": "分开存放电池与电子废弃物",
+            "body": "放在干燥阴凉处，远离其他废料。不要焚烧电线，也不要拆破电池或屏幕。"
+          },
+          "machines": {
+            "title": "清理卡堵前关闭电源",
+            "body": "先停下打包机或破碎机并拔掉插头。运行时切勿伸手进入。"
+          },
+          "firstAid": {
+            "title": "急救用品放在附近",
+            "body": "现场备好急救箱和清洁水。遇到深伤口或烧伤，立即寻求医疗帮助。"
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "加入并完成核验",
+        "summary": "准备哪些资料，以及企业上线前团队会检查什么。",
+        "steps": {
+          "start": {
+            "title": "从luma.green/join开始",
+            "body": "用手机号码登录，选择分拣场、再生企业或制造商。"
+          },
+          "details": {
+            "title": "添加企业信息",
+            "body": "填写名称、地址、地图位置、处理材料和工作时间。GST为选填。"
+          },
+          "consent": {
+            "title": "添加污染控制许可",
+            "body": "提供KSPCB或所在邦委员会签发的许可编号、有效期及PDF证书。"
+          },
+          "photos": {
+            "title": "添加机器照片",
+            "body": "至少提供两张照片或短视频，展示主要机器和场地。"
+          },
+          "review": {
+            "title": "12至24小时内检查",
+            "body": "工作人员会检查每份文件。如有缺失，会明确告知需要修改的内容。"
+          },
+          "live": {
+            "title": "开始交易",
+            "body": "获批后，控制台会开放，附近买卖双方可以找到你。"
+          }
+        }
+      },
+      "escrow": {
+        "title": "演示指南：资金托管如何保障交易",
+        "summary": "计划中的资金托管服务将保管货款，直到交货完成。目前的演示仅记录模拟付款。",
+        "steps": {
+          "request": {
+            "title": "买方发送请求",
+            "body": "请求列明材料、公斤数和每公斤价格。"
+          },
+          "accept": {
+            "title": "卖方接受",
+            "body": "此时尚未付款。如需商定细节，可互相致电。"
+          },
+          "pay": {
+            "title": "买方将货款存入托管",
+            "body": "货款安全保管，尚未支付给卖方。卖方可在装货前确认资金已到位。"
+          },
+          "dispatch": {
+            "title": "卖方发货",
+            "body": "标记为已发货。随货携带发票，必要时还需电子运单。"
+          },
+          "confirm": {
+            "title": "买方确认收货",
+            "body": "检查重量和质量后确认，货款将支付给卖方。"
+          }
+        }
+      },
+      "paperwork": {
+        "title": "发票与电子运单",
+        "summary": "每批货物随附的文件。",
+        "steps": {
+          "invoice": {
+            "title": "从交易中获取发票",
+            "body": "每笔交易都有可打开、打印或分享的发票。"
+          },
+          "ewayBill": {
+            "title": "超过₹50,000需电子运单",
+            "body": "GST规则要求，运输价值超过₹50,000的货物需电子运单。部分邦的限额不同。"
+          },
+          "vehicle": {
+            "title": "文件随车携带",
+            "body": "在车内携带发票和电子运单，并核对车牌号码。"
+          },
+          "keep": {
+            "title": "保留记录",
+            "body": "收据和发票在应用内保留6年，符合税法要求的期限。"
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "演示指南：货物与约定不符",
+        "summary": "重量或质量与约定不符时如何处理。",
+        "steps": {
+          "check": {
+            "title": "确认前先检查",
+            "body": "货物到达后，趁司机还在，称重并检查质量。"
+          },
+          "hold": {
+            "title": "货物短缺时不要确认",
+            "body": "确认后会付款。确认前，资金仍在托管中。"
+          },
+          "report": {
+            "title": "附照片报告",
+            "body": "致电我们，或从帮助中的联系我们留言。附上称重单和材料照片。"
+          },
+          "settle": {
+            "title": "协助双方达成一致",
+            "body": "我们会查看双方的重量、照片和消息。解决前，资金保持安全托管。"
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "简明了解碳信用与EPR",
+        "summary": "记录回收为何重要，以及品牌和再生企业需要了解的内容。",
+        "steps": {
+          "record": {
+            "title": "每一公斤都有记录",
+            "body": "Luma.Green的每次称重和交易都会记录材料、重量、日期和地点。"
+          },
+          "carbon": {
+            "title": "回收减少碳排放",
+            "body": "使用再生材料制造产品，比使用新原料更节能。这些节省将来可能转化为碳信用。"
+          },
+          "epr": {
+            "title": "EPR：生产者承担回收责任",
+            "body": "生产者责任延伸制度要求，销售包装、电子产品或电池的品牌回收利用一定比例的相关废弃物。"
+          },
+          "certificates": {
+            "title": "再生企业签发EPR证书",
+            "body": "注册再生企业通过CPCB门户，为其回收量签发证书。品牌购买证书以完成目标。"
+          },
+          "proof": {
+            "title": "准确记录就是证据",
+            "body": "从家庭到工厂的轨迹说明材料来源。Luma.Green的碳信用功能将在后续提供。"
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "预约首次回收",
+        "summary": "从拍照到预约约两分钟，无需账户。",
+        "steps": {
+          "photo": {
+            "title": "拍摄废品照片",
+            "body": "可选：添加一张废品照片，再核对建议品项。"
+          },
+          "estimate": {
+            "title": "核对估算",
+            "body": "我们显示识别的材料和大致公斤数。如果重量看起来不对，请修改。"
+          },
+          "choose": {
+            "title": "选择上门或送店",
+            "body": "查看附近经过核验的回收店，按距离排序并显示营业时间。"
+          },
+          "slot": {
+            "title": "选择时间",
+            "body": "选择时间段，然后检查地址和地图位置。"
+          },
+          "code": {
+            "title": "验证手机号码",
+            "body": "输入短信发送的6位验证码即可，无需密码。"
+          },
+          "track": {
+            "title": "获取追踪链接",
+            "body": "我们通过短信发送可追踪回收进度的链接。"
+          }
+        }
+      },
+      "getReady": {
+        "title": "准备废品",
+        "summary": "分好类、保持干燥的废品称重更快，也能卖得更好。",
+        "steps": {
+          "paper": {
+            "title": "纸张保持干燥平整",
+            "body": "叠好报纸，压平纸箱。湿纸价值较低。"
+          },
+          "bottles": {
+            "title": "倒空并压扁瓶子",
+            "body": "倒出液体，压扁塑料瓶以节省空间。"
+          },
+          "metal": {
+            "title": "金属分开",
+            "body": "铁皮、钢铁和铝分别装袋。"
+          },
+          "ewaste": {
+            "title": "将设备和电池单独放置",
+            "body": "旧手机、充电器和电池放在单独箱中，远离热源。"
+          },
+          "door": {
+            "title": "把袋子放在门边",
+            "body": "这样回收更快。请放在干燥处。"
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "追踪回收",
+        "summary": "时间、人员、金额，在一个页面查看。",
+        "steps": {
+          "open": {
+            "title": "打开短信链接",
+            "body": "任何手机都能使用，无需登录。"
+          },
+          "when": {
+            "title": "查看时间",
+            "body": "查看日期和预约时段。如有变化，我们会通知你。"
+          },
+          "who": {
+            "title": "查看谁来收取",
+            "body": "显示姓名、店铺和核验标记。点击电话即可联系。"
+          },
+          "after": {
+            "title": "查看所得",
+            "body": "回收完成后，页面会显示收款金额和回收积分。"
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "门口称重与付款",
+        "summary": "确保每一公斤都算清楚。",
+        "steps": {
+          "zero": {
+            "title": "检查秤是否归零",
+            "body": "放东西前，空秤应显示0。"
+          },
+          "each": {
+            "title": "每种材料分别称重",
+            "body": "纸、塑料和金属价格不同，因此分别称重。"
+          },
+          "amount": {
+            "title": "应用计算金额",
+            "body": "公斤数乘以回收店的每公斤价格。付款前可看到总额。"
+          },
+          "pay": {
+            "title": "当场收款",
+            "body": "在对方离开前，以现金或UPI收款。Luma.Green不会保管你的钱。"
+          },
+          "receipt": {
+            "title": "检查收据",
+            "body": "追踪页面列出每种材料、重量、价格和总额。"
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "价格如何确定",
+        "summary": "估算为什么是一个范围，以及最终金额如何计算。",
+        "steps": {
+          "estimate": {
+            "title": "估算使用城市价格",
+            "body": "选择回收店前，我们使用班加罗尔标准价格，因此显示金额范围。"
+          },
+          "own": {
+            "title": "每家回收店自行定价",
+            "body": "选定后，你会看到该店每种材料的价格。"
+          },
+          "floor": {
+            "title": "不得低于最低价",
+            "body": "Luma.Green为每种材料设置最低价。任何回收店都不能支付得更少。"
+          },
+          "final": {
+            "title": "重量决定金额",
+            "body": "按门口实际称重和该回收店的价格支付。"
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "取消或更改预约",
+        "summary": "计划改变时，可按以下方式处理。",
+        "steps": {
+          "open": {
+            "title": "打开追踪链接",
+            "body": "所有预约信息都在那里。"
+          },
+          "cancel": {
+            "title": "免费取消",
+            "body": "回收店出发前可免费取消。"
+          },
+          "declined": {
+            "title": "回收店无法前来时",
+            "body": "我们会把回收请求转给下一家最近的店，并通过短信通知你。"
+          },
+          "help": {
+            "title": "需要换个时间？",
+            "body": "取消后重新预约，或致电我们寻求帮助。"
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "旧手机、电池和电子废弃物",
+        "summary": "安全存放，安全交接。",
+        "steps": {
+          "apart": {
+            "title": "放入一个干燥箱子",
+            "body": "远离炉灶、水和阳光，并放在儿童接触不到的地方。"
+          },
+          "tape": {
+            "title": "用胶带覆盖电池两端",
+            "body": "盖住金属端子，防止产生火花。"
+          },
+          "swollen": {
+            "title": "不要挤压鼓包电池",
+            "body": "鼓包电池可能起火。单独放在金属容器中，并告知回收店。"
+          },
+          "handover": {
+            "title": "完整交出设备",
+            "body": "不要砸坏手机或拆出零件。预约时注明是电子废弃物。"
+          }
+        }
+      },
+      "registerShop": {
+        "title": "注册店铺",
+        "summary": "需要填写什么，以及核验需要多久。",
+        "steps": {
+          "start": {
+            "title": "从luma.green/join开始",
+            "body": "用手机号码登录，选择废品回收店。"
+          },
+          "shop": {
+            "title": "添加店铺",
+            "body": "填写姓名、店名、带地图位置的地址和营业时间。"
+          },
+          "pickups": {
+            "title": "说明是否上门回收",
+            "body": "选择车辆：手推车、自行车、三轮出租车或小货车。没有车辆？家庭仍可送到店里。"
+          },
+          "gst": {
+            "title": "GST为选填",
+            "body": "如有GST号码，请填写；没有则注明即可。"
+          },
+          "review": {
+            "title": "12至24小时内检查",
+            "body": "工作人员会核对资料，获批后控制台会开放。"
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "回应回收请求",
+        "summary": "附近家庭的新回收请求及处理方法。",
+        "steps": {
+          "see": {
+            "title": "查看新请求",
+            "body": "每条请求显示区域、时间段、材料、大致公斤数和需支付金额。"
+          },
+          "answer": {
+            "title": "接受或拒绝",
+            "body": "愿意承接就接受。拒绝后会转给下一家最近的回收店，家庭不会知道是谁拒绝。"
+          },
+          "auto": {
+            "title": "开启自动接受",
+            "body": "开启后，所在区域的每条请求都会立即接受，包括夜间。"
+          },
+          "go": {
+            "title": "致电后出发",
+            "body": "接受后可看到电话号码和准确地址。请致电告知即将前往。"
+          }
+        }
+      },
+      "weighAndPay": {
+        "title": "称重并付款",
+        "summary": "一分钟内记录一次回收。",
+        "steps": {
+          "zero": {
+            "title": "秤归零",
+            "body": "在家庭用户看得见的地方，空秤从0开始。"
+          },
+          "weigh": {
+            "title": "逐项称重",
+            "body": "输入每项公斤数。使用+和−按半公斤调整。"
+          },
+          "total": {
+            "title": "展示总额",
+            "body": "应用按你的价格计算。向家庭用户展示屏幕。"
+          },
+          "pay": {
+            "title": "以现金或UPI付款",
+            "body": "离开前付款，并选择付款方式。"
+          },
+          "save": {
+            "title": "保存",
+            "body": "家庭可在追踪页面查看收据，你的库存会增加实际称重数量。"
+          }
+        }
+      },
+      "setPrices": {
+        "title": "设置价格",
+        "summary": "在最低价以上，自行选择收购价。",
+        "steps": {
+          "open": {
+            "title": "打开我的价格",
+            "body": "查看所有材料及旁边的最低价。"
+          },
+          "enter": {
+            "title": "输入每公斤价格",
+            "body": "为每种材料输入你愿意支付给家庭的价格。"
+          },
+          "floor": {
+            "title": "不低于最低价",
+            "body": "低于最低价的价格无法保存。若最低价上涨，你的价格也会提高，我们会通知你。"
+          },
+          "blank": {
+            "title": "某种材料不填价格",
+            "body": "未设置时使用城市标准价格。"
+          },
+          "history": {
+            "title": "旧收据不会改变",
+            "body": "新价格仅适用于新回收。以往收据保留当时支付的价格。"
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "演示指南：分拣库存并卖给分拣场",
+        "summary": "将多次小量回收汇成分拣场需要的一批货。",
+        "steps": {
+          "grows": {
+            "title": "库存自动增加",
+            "body": "每次称重回收都会加入我的库存。"
+          },
+          "sort": {
+            "title": "记录分拣",
+            "body": "将混合废料分成实际材料，例如把混合纸分成报纸、纸板和废弃物。"
+          },
+          "show": {
+            "title": "向分拣场展示库存",
+            "body": "开启向分拣场展示，附近分拣场即可查看你有的材料。"
+          },
+          "sell": {
+            "title": "接受分拣场请求",
+            "body": "检查重量和价格后接受。分拣场会在提货前将款项存入托管。"
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "家庭用户有异议时",
+        "summary": "保持冷静，说明清楚，公平处理。",
+        "steps": {
+          "reweigh": {
+            "title": "一起重新称重",
+            "body": "将秤归零，在对方看得见的地方重新称重。"
+          },
+          "show": {
+            "title": "展示你的价格",
+            "body": "在手机上展示每公斤价格和总额。"
+          },
+          "noForce": {
+            "title": "不要强迫出售",
+            "body": "如果仍不同意，对方无需出售该材料。请从收据中去掉。"
+          },
+          "call": {
+            "title": "无法解决时致电我们",
+            "body": "我们可以与双方沟通。每张收据都显示重量和价格。"
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "演示指南：从回收店采购库存",
+        "summary": "寻找附近分拣好的废料，并预约提货。",
+        "steps": {
+          "browse": {
+            "title": "打开购买",
+            "body": "按材料和距离查看附近库存，包括重量和价格。"
+          },
+          "request": {
+            "title": "发送请求",
+            "body": "选择所需公斤数，发送前会显示每公斤价格。"
+          },
+          "pay": {
+            "title": "存入资金托管",
+            "body": "回收店接受后付款。确认前资金会保持托管。"
+          },
+          "collect": {
+            "title": "提货并称重",
+            "body": "提取货物，在你的分拣场称重。"
+          },
+          "confirm": {
+            "title": "确认以支付货款",
+            "body": "重量和质量正确时确认，回收店即可收款。"
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "演示指南：向再生企业出售分拣包块",
+        "summary": "发布一次库存，让再生企业来采购。",
+        "steps": {
+          "list": {
+            "title": "发布库存",
+            "body": "在出售页面添加材料、公斤数和每公斤价格。"
+          },
+          "requests": {
+            "title": "接收请求",
+            "body": "采购该材料的再生企业可查看你的信息并发送请求。"
+          },
+          "accept": {
+            "title": "接受后等待付款",
+            "body": "买方货款进入托管后才能装货。"
+          },
+          "dispatch": {
+            "title": "发出货物",
+            "body": "标记已发货，随附发票；超过₹50,000还需电子运单。"
+          },
+          "paid": {
+            "title": "收款",
+            "body": "再生企业确认收货后，货款会支付给你。"
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "演示指南：从分拣场采购分拣废料",
+        "summary": "为生产线提供稳定的分级原料。",
+        "steps": {
+          "browse": {
+            "title": "寻找附近包块",
+            "body": "打开购买，按材料和距离查看分拣场的供货信息。"
+          },
+          "request": {
+            "title": "请求一批货",
+            "body": "选择公斤数，发送前会显示每公斤价格。"
+          },
+          "pay": {
+            "title": "存入资金托管",
+            "body": "分拣场接受后付款。确认收货前，货款会保持托管。"
+          },
+          "confirm": {
+            "title": "称重、检查、确认",
+            "body": "在入口称重并核对等级后，再确认收货。"
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "演示指南：向制造商出售再生材料",
+        "summary": "展示生产线产出，便于工厂下单。",
+        "steps": {
+          "list": {
+            "title": "发布产出",
+            "body": "添加碎片、颗粒、包块或锭，填写库存公斤数和每公斤价格。"
+          },
+          "orders": {
+            "title": "接收订单",
+            "body": "制造商查看供货信息，按所需公斤数发送请求。"
+          },
+          "load": {
+            "title": "付款后装货",
+            "body": "接受后，等款项进入托管再发货。"
+          },
+          "paid": {
+            "title": "交货后收款",
+            "body": "制造商确认后，货款会支付给你。"
+          }
+        }
+      },
+      "orderRecycled": {
+        "title": "演示指南：订购再生材料",
+        "summary": "寻找再生原料，订购所需数量。",
+        "steps": {
+          "browse": {
+            "title": "查看再生企业库存",
+            "body": "打开购买，按类型、可用公斤数和价格查看再生材料。"
+          },
+          "order": {
+            "title": "发送订单",
+            "body": "选择公斤数并发送。再生企业会接受或拒绝。"
+          },
+          "pay": {
+            "title": "存入资金托管",
+            "body": "接受后付款。确认收货前，货款会保持托管。"
+          },
+          "receive": {
+            "title": "接收货物",
+            "body": "在入口称重并检查等级。"
+          },
+          "confirm": {
+            "title": "确认收货",
+            "body": "确认后向再生企业支付货款。"
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "演示指南：检查到货",
+        "summary": "确认并付款前，先做快速检查。",
+        "steps": {
+          "papers": {
+            "title": "核对文件",
+            "body": "发票和电子运单应与订单及车辆相符。"
+          },
+          "weigh": {
+            "title": "自行称重",
+            "body": "分别称满载和空载卡车。差值即收到的重量。"
+          },
+          "look": {
+            "title": "查看材料",
+            "body": "核对颜色、水分和杂质是否符合订单。"
+          },
+          "decide": {
+            "title": "确认或报告",
+            "body": "没有问题就确认。不符则附照片报告，货款会留在托管中。"
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "成为Saathi",
+        "summary": "凭照片身份证件和自拍照加入，开始承接附近工作。",
+        "steps": {
+          "start": {
+            "title": "从luma.green/join开始",
+            "body": "用手机号码登录并选择Saathi。"
+          },
+          "work": {
+            "title": "选择工作",
+            "body": "家庭回收、回收店帮工、分拣场分拣，或再生企业及工厂轮班。"
+          },
+          "area": {
+            "title": "设置区域与时间",
+            "body": "填写居住地点、可出行距离（2、5或10公里）和空闲时间。"
+          },
+          "id": {
+            "title": "添加照片身份证件和自拍照",
+            "body": "可用选民证、驾照、PAN或遮蔽号码的Aadhaar。切勿提交完整Aadhaar号码。"
+          },
+          "review": {
+            "title": "12至24小时内检查",
+            "body": "工作人员会核对自拍照与证件，之后即可接工作。"
+          }
+        }
+      },
+      "findJobs": {
+        "title": "寻找并承接工作",
+        "summary": "在你希望的时间，在附近工作。",
+        "steps": {
+          "home": {
+            "title": "在首页查看工作",
+            "body": "每项工作显示地点、日期、时间和报酬。"
+          },
+          "accept": {
+            "title": "接受工作",
+            "body": "点击接受，企业会知道你将前来。"
+          },
+          "arrive": {
+            "title": "准时到达",
+            "body": "如会迟到，请提前致电。守时能带来更多工作机会。"
+          },
+          "done": {
+            "title": "标记完成",
+            "body": "工作结束后标记完成，收入中即可显示。"
+          }
+        }
+      },
+      "homePickup": {
+        "title": "进行上门回收",
+        "summary": "到每个家庭都友善、迅速、公平。",
+        "steps": {
+          "call": {
+            "title": "出发前致电",
+            "body": "说明姓名、所属店铺和预计到达时间。"
+          },
+          "greet": {
+            "title": "自我介绍",
+            "body": "在门口说明姓名和店名，等对方邀请再进入。"
+          },
+          "weigh": {
+            "title": "在对方看得见的地方称重",
+            "body": "秤归零，在对方面前逐项称重。"
+          },
+          "record": {
+            "title": "付款并记录",
+            "body": "按店铺要求付款，离开前保存付款记录。"
+          },
+          "deliver": {
+            "title": "带回店铺",
+            "body": "将废品直接送到店铺并交接。"
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "如何获得报酬",
+        "summary": "先谈好报酬，再到收入页面查看。",
+        "steps": {
+          "agree": {
+            "title": "先约定报酬",
+            "body": "雇用你的店铺或企业支付报酬。工作开始前先商定金额。"
+          },
+          "earnings": {
+            "title": "查看收入",
+            "body": "查看已完成工作和每项报酬。"
+          },
+          "upi": {
+            "title": "请求使用UPI",
+            "body": "UPI会留下记录，收款金额清楚可查。"
+          },
+          "problem": {
+            "title": "还没收到报酬？",
+            "body": "先与企业沟通。仍未解决，请致电我们。"
+          }
+        }
+      }
+    },
+    "faqs": {
+      "noCode": {
+        "q": "没收到短信验证码",
+        "a": "等待30秒后点击重发。检查号码是否正确、手机是否有信号。验证码5分钟内有效。"
+      },
+      "newPhone": {
+        "q": "我换了手机或号码",
+        "a": "换手机但号码不变：重新登录即可。号码变了：请致电我们，核验身份后会迁移账户。"
+      },
+      "deleteData": {
+        "q": "能查看或删除我的数据吗？",
+        "a": "可以。通过联系我们留言，我们会在30天内处理。仅保留法律要求的内容，例如收据。"
+      },
+      "verifyTime": {
+        "q": "核验需要多久？",
+        "a": "通常是提交申请后12至24小时。如需补充资料，我们会明确告知。"
+      },
+      "noAccount": {
+        "q": "需要账户吗？",
+        "a": "不需要。预约时通过短信验证码验证手机号，无需记密码。"
+      },
+      "whatCanISell": {
+        "q": "可以卖什么？",
+        "a": "纸和纸板、塑料瓶和容器、金属、玻璃及旧电子设备。不确定？拍照后可从估算结果了解。"
+      },
+      "howPriceWorks": {
+        "q": "我的金额如何计算？",
+        "a": "每种材料的重量乘以回收店的每公斤价格。价格不能低于Luma.Green设置的最低价。"
+      },
+      "howPaid": {
+        "q": "如何收款？",
+        "a": "回收店人员离开前，在门口通过现金或UPI收款。Luma.Green记录付款，但不会保管你的钱。"
+      },
+      "recyclePoints": {
+        "q": "什么是回收积分？",
+        "a": "感谢你参与回收：每收到₹10可获1分。积分用途即将公布。"
+      },
+      "weightWrong": {
+        "q": "重量看起来不对怎么办？",
+        "a": "请对方在你面前从零重新称重。仍有问题，请致电我们，收据中记录了每项重量。"
+      },
+      "canCancel": {
+        "q": "可以取消吗？",
+        "a": "可以，回收店出发前免费。打开追踪链接并点击取消。"
+      },
+      "kabadiwalasChecked": {
+        "q": "回收店经过核验吗？",
+        "a": "是的。开始接预约前，团队会检查每家店。请认准核验标记。"
+      },
+      "whoSeesAddress": {
+        "q": "谁能看到我的号码和地址？",
+        "a": "只有接受回收的店铺和我们的团队。最后一次预约后保留12个月。"
+      },
+      "photosKept": {
+        "q": "我的照片会怎样处理？",
+        "a": "请勿包含人脸、文件或车牌。照片会发送给AI服务商进行本次估算，Luma.Green不会保存。"
+      },
+      "whyVerify": {
+        "q": "为什么需要核验？",
+        "a": "家庭在门口信任你。核验每家店能保障安全，也让核验标记有实际意义。"
+      },
+      "gstNeeded": {
+        "q": "需要GST号码吗？",
+        "a": "不需要，这是选填项。如有请添加。"
+      },
+      "ownPrices": {
+        "q": "可以自行设置价格吗？",
+        "a": "可以，每种材料都能设置，但不能低于Luma.Green规定的最低价。"
+      },
+      "noVehicle": {
+        "q": "没有车辆，还能加入吗？",
+        "a": "可以，家庭能把废品送到店里。面向无车店铺的Saathi回收服务将在后续提供。"
+      },
+      "autoAccept": {
+        "q": "什么是自动接受？",
+        "a": "开启后，区域内每个新请求会立即接受，包括夜间。无法前往时请关闭。"
+      },
+      "rejectRequest": {
+        "q": "拒绝请求后会怎样？",
+        "a": "会转给下一家最近的回收店。家庭不会知道是谁拒绝。"
+      },
+      "payHousehold": {
+        "q": "Luma.Green会代我给家庭付款吗？",
+        "a": "不会。你需在门口以现金或UPI付款。应用记录金额和方式。"
+      },
+      "paidByYard": {
+        "q": "卖给分拣场后如何收款？",
+        "a": "目前请与分拣场直接约定付款。资金托管正在规划中，演示不会转移资金。"
+      },
+      "whoSeesShop": {
+        "q": "谁能看到我的店铺？",
+        "a": "获批后，店名、区域和营业时间会公开，便于家庭找到你。文件仍为私密。"
+      },
+      "consentDocs": {
+        "q": "需要哪些文件？",
+        "a": "污染控制委员会的许可（卡纳塔克邦为KSPCB），包括编号、有效期、PDF证书，以及机器照片。GST为选填。"
+      },
+      "noConsentNeeded": {
+        "q": "设施不需要许可，还能加入吗？",
+        "a": "可以。勾选不需要许可，并说明理由，例如仅进行废纸打包。我们会核验。"
+      },
+      "consentExpiry": {
+        "q": "许可到期会怎样？",
+        "a": "请在“合规”中查看到期日期。剩余有效期不足90天的许可会被标记。请向污染控制委员会申请续期，并联系支持团队更新证书。"
+      },
+      "findStock": {
+        "q": "如何寻找附近库存？",
+        "a": "打开购买。经过核验的回收店库存会按材料分类，距离近的优先显示。"
+      },
+      "whoSetsPrice": {
+        "q": "谁决定价格？",
+        "a": "卖方发布每公斤价格。发送请求前可查看，也可致电商定细节。"
+      },
+      "whatIsEscrow": {
+        "q": "什么是资金托管？",
+        "a": "一种安全的中间步骤：买方货款保管至约定货物到达，再支付给卖方。企业资金托管正在规划中。"
+      },
+      "whenSellerPaid": {
+        "q": "卖方何时收款？",
+        "a": "买方确认收货后立即收款。"
+      },
+      "shortLoad": {
+        "q": "货物短缺怎么办？",
+        "a": "演示展示拟议的争议处理步骤，无法保管或保护真实资金。"
+      },
+      "ewayBill": {
+        "q": "需要电子运单吗？",
+        "a": "需要，运输价值超过₹50,000的货物时适用，交易页面会提醒。部分邦的限额不同。"
+      },
+      "whoSeesBusiness": {
+        "q": "谁能看到我的企业？",
+        "a": "经过核验的买卖双方能看到名称、区域和处理材料。只有你和我们的团队能查看文件。"
+      },
+      "pwpRegistration": {
+        "q": "回收塑料还需要其他资料吗？",
+        "a": "请备好CPCB塑料废弃物处理者注册资料。品牌会要求查看，这也是签发EPR证书的条件。"
+      },
+      "buyFromAnyYard": {
+        "q": "可以从多家分拣场购买吗？",
+        "a": "可以。任何经过核验且发布所需材料的分拣场都可购买，次数不限。"
+      },
+      "eprRecords": {
+        "q": "Luma.Green记录有助于EPR吗？",
+        "a": "有。每笔交易记录材料、重量、日期和卖方，为EPR申报提供依据。你仍需在CPCB门户申报。"
+      },
+      "carbonCredits": {
+        "q": "我会获得碳信用吗？",
+        "a": "暂时不会。我们现在记录每一公斤，以便方法通过核验后再签发。"
+      },
+      "whatCanIBuy": {
+        "q": "可以购买什么？",
+        "a": "经过核验的再生企业提供的再生材料，例如PET碎片、HDPE颗粒、牛皮纸和铝锭。"
+      },
+      "qualityWrong": {
+        "q": "质量与订单不符怎么办？",
+        "a": "演示展示拟议的争议处理步骤，无法保管或保护真实资金。"
+      },
+      "recycledContent": {
+        "q": "购买再生材料有助于EPR吗？",
+        "a": "有。塑料EPR规则设置包装的再生料含量目标，交易记录能证明你购买的再生材料数量。"
+      },
+      "carbonClaims": {
+        "q": "可以申报碳减排吗？",
+        "a": "环境效益页面会估算碳减排量。经过独立核验前，请将这些数字视为参考值。"
+      },
+      "whoCanJoin": {
+        "q": "谁能成为Saathi？",
+        "a": "年满18岁，希望通过家附近短期工作获得收入的人。"
+      },
+      "whichId": {
+        "q": "可以用哪些身份证件？",
+        "a": "选民证、驾照、PAN、DigiLocker文件，或仅显示末4位的Aadhaar。"
+      },
+      "fullAadhaar": {
+        "q": "为什么不能提交完整Aadhaar？",
+        "a": "我们不保存Aadhaar号码。若误传完整证件，会要求提供遮蔽副本，并删除原文件。"
+      },
+      "needVehicle": {
+        "q": "需要车辆吗？",
+        "a": "不需要。店内帮工和轮班无需车辆。家庭回收有自行车、摩托车或三轮出租车会更方便。"
+      },
+      "whoPaysMe": {
+        "q": "谁支付报酬？",
+        "a": "雇用你的回收店或企业。开始前先商定金额。"
+      },
+      "chooseHours": {
+        "q": "可以选择工作时间吗？",
+        "a": "可以。告诉我们空闲的日期和时间，只接你想做的工作。"
+      },
+      "safetyGear": {
+        "q": "需要哪些防护装备？",
+        "a": "每项工作都需手套和包脚鞋，多尘工作还需口罩。向企业询问是否需要其他装备。"
+      },
+      "whoSeesId": {
+        "q": "谁能看我的证件和自拍？",
+        "a": "只有你和我们的团队，用于核验身份。"
+      },
+      "jobWentWrong": {
+        "q": "工作中出了问题怎么办？",
+        "a": "先确保安全。告知企业，再致电我们。我们会听取双方说明。"
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "两分钟预约回收",
+      "sortAtHome": "在家分类废品",
+      "batterySafety": "安全处理旧电池",
+      "firstDay": "使用Luma.Green的第一天",
+      "weighAndPayVideo": "一分钟称重付款",
+      "settingPrices": "设置你的价格",
+      "buyingFromKabadiwalas": "从回收店采购",
+      "listingBales": "向再生企业发布包块",
+      "escrowExplained": "演示：两分钟了解资金托管",
+      "buyingFromYards": "从分拣场采购",
+      "sellingOutput": "出售产出",
+      "eprPlainWords": "通俗理解EPR",
+      "firstOrder": "下第一笔订单",
+      "checkingDelivery": "检查交货",
+      "becomingSaathi": "成为Saathi",
+      "goodPickup": "做好上门回收",
+      "liftingSafely": "安全搬抬和运输"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "哪些可以回收",
+        "p1": "纸、纸板、大多数塑料、金属和玻璃都有价值。",
+        "p2": "旧手机、充电器和电池属于电子废弃物，请分开存放。",
+        "p3": "厨余和脏尿布不能回收。"
+      },
+      "sortOnce": {
+        "title": "先分类一次",
+        "p1": "纸、塑料和金属各用一个袋子。",
+        "p2": "所有物品保持干燥洁净。",
+        "p3": "分类后的废品称重更快，收购价也更好。"
+      },
+      "batteriesSafe": {
+        "title": "安全处理电池",
+        "p1": "用胶带覆盖金属端子。",
+        "p2": "保持干燥阴凉，远离儿童。",
+        "p3": "切勿扔进垃圾桶或火中。"
+      },
+      "fairWeigh": {
+        "title": "确保公平称重",
+        "p1": "检查秤从零开始。",
+        "p2": "看着每种材料称重。",
+        "p3": "核对收据总额。"
+      },
+      "usingTheApp": {
+        "title": "使用应用",
+        "p1": "通过号码和短信验证码登录。",
+        "p2": "及时接受或拒绝新请求。",
+        "p3": "只有能前往时才开启自动接受。"
+      },
+      "weighingFairly": {
+        "title": "公平称重",
+        "p1": "在家庭用户面前将秤归零。",
+        "p2": "每种材料单独称重。",
+        "p3": "付款前展示总额。"
+      },
+      "safeHandling": {
+        "title": "安全处理废品",
+        "p1": "每次都戴手套、穿包脚鞋。",
+        "p2": "用腿部力量搬抬，超过25公斤请人协助。",
+        "p3": "电池和电子废弃物分开存放。"
+      },
+      "servingHouseholds": {
+        "title": "做好家庭服务",
+        "p1": "出发前致电，在预约时段内到达。",
+        "p2": "礼貌沟通，在对方看得见的地方称重。",
+        "p3": "每次都在离开前付款。"
+      },
+      "sellingToYards": {
+        "title": "演示：卖给分拣场",
+        "p1": "记录分拣，确保库存准确。",
+        "p2": "向附近分拣场展示库存。",
+        "p3": "款项进入托管后才能装货。"
+      },
+      "buyingStock": {
+        "title": "采购库存",
+        "p1": "在购买页面寻找附近库存。",
+        "p2": "发送请求前检查每公斤价格。",
+        "p3": "确认前称量每批货物。"
+      },
+      "tradingWithEscrow": {
+        "title": "演示：使用资金托管交易",
+        "p1": "卖方接受后，买方将款项存入托管。",
+        "p2": "卖方收到入款确认后才装货。",
+        "p3": "确认交货后支付货款。"
+      },
+      "papersForLoads": {
+        "title": "每批货物的文件",
+        "p1": "每笔交易都有发票。",
+        "p2": "超过₹50,000的货物需电子运单。",
+        "p3": "文件随车携带。"
+      },
+      "siteSafety": {
+        "title": "现场安全",
+        "p1": "戴手套、穿包脚鞋，多尘时戴口罩。",
+        "p2": "清理卡堵前关机并拔掉插头。",
+        "p3": "现场始终备有急救用品和清洁水。"
+      },
+      "buyingInputs": {
+        "title": "演示：采购原料",
+        "p1": "在购买页面寻找分拣场的分级包块。",
+        "p2": "分拣场接受后将款项存入托管。",
+        "p3": "确认前检查等级。"
+      },
+      "eprBasics": {
+        "title": "EPR基础",
+        "p1": "品牌必须让一定比例的自家废弃物得到回收利用。",
+        "p2": "注册再生企业在CPCB门户签发证书。",
+        "p3": "准确交易记录为每项申报提供依据。"
+      },
+      "orderingRecycled": {
+        "title": "演示：订购再生材料",
+        "p1": "按类型、公斤数和价格比较供货信息。",
+        "p2": "按所需公斤数发送订单。",
+        "p3": "接受后将款项存入托管。"
+      },
+      "checkingDeliveries": {
+        "title": "检查到货",
+        "p1": "将发票和电子运单与订单核对。",
+        "p2": "分别称量满载和空载卡车。",
+        "p3": "仅在重量和质量正确时确认。"
+      },
+      "firstJob": {
+        "title": "第一项工作",
+        "p1": "接受前检查地点、时间和报酬。",
+        "p2": "提前致电，准时到达。",
+        "p3": "做完后标记工作完成。"
+      },
+      "inPeoplesHomes": {
+        "title": "在别人家中工作",
+        "p1": "说明身份和所属店铺。",
+        "p2": "等对方邀请再进入。",
+        "p3": "礼貌沟通，在对方看得见的地方称重。"
+      },
+      "gettingPaid": {
+        "title": "获得报酬",
+        "p1": "工作开始前商定报酬。",
+        "p2": "请对方用UPI付款以留下记录。",
+        "p3": "在收入页面核对每项工作。"
+      }
+    }
+  },
+  "notFound": {
+    "metaTitle": "找不到页面",
+    "title": "找不到页面",
+    "body": "你查找的页面不存在或已移动。",
+    "backHome": "返回首页"
+  },
+  "auth": {
+    "metaTitle": "登录",
+    "verifyMetaTitle": "输入验证码",
+    "chooseLanguage": "选择语言",
+    "chooseLanguageHint": "随时可在屏幕顶部更改。",
+    "continue": "继续",
+    "title": "用手机号码登录",
+    "lead": "适用于回收店、分拣场、再生企业、制造商和Saathi。",
+    "mobileLabel": "手机号码",
+    "mobileHint": "我们会向此号码发送6位验证码。",
+    "mobileInvalid": "请输入10位印度手机号码。",
+    "sendCode": "发送验证码",
+    "sending": "正在发送…",
+    "sendFailed": "无法发送验证码，请一分钟后重试。",
+    "homeTitle": "在家卖废品？无需账户。",
+    "homeLink": "了解使用流程",
+    "privacy": "手机号码仅用于登录及发送Luma.Green工作相关通知。",
+    "unavailableTitle": "手机号登录即将开放",
+    "unavailableBody": "我们正在完成登录验证码的短信设置，请稍后查看。",
+    "verifyTitle": "输入6位验证码",
+    "sentTo": "已通过短信发送至{phone}",
+    "codeLabel": "6位验证码",
+    "verify": "验证",
+    "verifying": "正在验证…",
+    "resendIn": "{seconds, plural, one {#秒} other {#秒}}后可请求新验证码",
+    "resend": "发送新验证码",
+    "resent": "已发送新验证码。",
+    "changeNumber": "更换号码",
+    "errorInvalid": "验证码不正确，请核对短信后重试。",
+    "errorExpired": "验证码已过期，请请求新的验证码。",
+    "errorTooMany": "尝试次数过多，请请求新验证码。",
+    "errorGeneric": "出了点问题，请重试。",
+    "signingIn": "正在登录…",
+    "sendRateLimited": "验证码请求过多，请稍后重试。",
+    "previewAction": "预览验证码页面",
+    "previewTitle": "验证码预览",
+    "previewNumber": "手机号码：{phone}",
+    "previewBody": "短信尚未连接，未发送验证码。你可以查看此页面，但无法登录。",
+    "previewPhoneHint": "输入手机号以预览下一步，不会发送短信。",
+    "twoFactorTitle": "查看身份验证器",
+    "twoFactorDescription": "输入身份验证器应用中的6位验证码，完成登录。",
+    "twoFactorUseBackup": "使用恢复代码",
+    "twoFactorUseApp": "使用身份验证器",
+    "twoFactorBackupTitle": "使用恢复代码",
+    "twoFactorBackupDescription": "输入一个已保存的恢复代码。每个代码仅可使用一次。",
+    "twoFactorBackupLabel": "恢复代码",
+    "twoFactorExpired": "登录已过期。请使用新的手机验证码重新开始。",
+    "twoFactorRestart": "重新开始"
+  },
+  "join": {
+    "metaTitle": "加入Luma.Green",
+    "metaDescription": "班加罗尔的回收店、分拣场、再生企业、制造商和Saathi可申请加入Luma.Green。工作人员会核验每份申请，通常需12至24小时。",
+    "title": "加入Luma.Green",
+    "lead": "请介绍你的工作。工作人员会核验每份申请，通常需12至24小时。",
+    "start": "开始",
+    "youNeed": "需要准备",
+    "homeTitle": "想在家卖废品？",
+    "homeBody": "无需加入。随时有废品要卖，就可预约回收。",
+    "homeLink": "了解使用流程",
+    "roles": {
+      "kabadiwala": {
+        "title": "废品回收店",
+        "body": "你经营回收店，从附近家庭收购废品。",
+        "needs": "店铺地址和营业时间，以及GST号码（如有）。"
+      },
+      "yard": {
+        "title": "分拣场",
+        "body": "你批量分拣、打包废料，再向下游销售。",
+        "needs": "GST号码（如有）、污染控制许可（PDF）和机器照片。"
+      },
+      "recycler": {
+        "title": "再生企业",
+        "body": "你将废料转化为原材料。",
+        "needs": "GST号码（如有）、污染控制许可（PDF）和机器照片。"
+      },
+      "manufacturer": {
+        "title": "制造商",
+        "body": "你为工厂采购再生材料。",
+        "needs": "GST号码（如有）、污染控制许可（PDF）和机器照片。"
+      },
+      "saathi": {
+        "title": "萨蒂（Saathi）",
+        "body": "你希望从事有偿工作：上门回收、分拣或工厂轮班。",
+        "needs": "带照片的身份证件和自拍照。"
+      }
+    },
+    "shell": {
+      "signOut": "退出登录"
+    },
+    "consent": {
+      "title": "开始之前",
+      "lead": "我们会索取哪些资料，以及原因。",
+      "why": {
+        "kabadiwala": "店铺信息方便附近家庭预约，也让我们确认店铺真实存在。我们会拨打你的号码确认一次。",
+        "business": "许可证明和机器照片向买卖双方证明你持证运营。我们会与污染控制委员会的公开登记册核对。",
+        "saathi": "在他人允许你进入家庭或场地前，我们会通过照片身份证件和自拍照确认身份。"
+      },
+      "privacy": "只有你和Luma.Green团队能查看资料和文件。我们将其用于核验和联系平台上的其他用户，绝不出售。你可以申请删除。",
+      "age": "我已年满18岁",
+      "accept": "我已阅读收集内容及用途",
+      "startButton": "开始申请",
+      "starting": "正在开始…"
+    },
+    "form": {
+      "saving": "正在保存…",
+      "saved": "已保存",
+      "notSaved": "未保存，请检查连接。",
+      "submit": "提交核验",
+      "submitting": "正在发送…",
+      "next": "下一步：文件",
+      "back": "返回",
+      "fixErrors": "部分回答需要检查，已在下方标出。",
+      "yes": "是",
+      "no": "否",
+      "optional": "选填",
+      "gstQuestion": "有GST号码吗？",
+      "gstin": "GST号码",
+      "gstinHint": "15个字符，例如29ABCDE1234F1Z5",
+      "useLocation": "使用我的位置",
+      "locating": "正在定位…",
+      "locationSaved": "位置已保存",
+      "locationFailed": "无法获取位置。请允许本网站定位，或直接输入地址。我们会在电话中确认。",
+      "locationWhy": "方便附近家庭和买家找到你。",
+      "loginPhone": "登录号码",
+      "otherPhones": "其他号码",
+      "otherPhonesHint": "最多添加两个，例如助手或合伙人的号码。仅用于工作联系。",
+      "addPhone": "添加号码",
+      "remove": "移除",
+      "phoneNumber": "号码",
+      "phoneLabel": "号码所属人",
+      "phoneLabelPlaceholder": "助手、合伙人等",
+      "hours": "服务时间",
+      "opens": "开门时间",
+      "closes": "关门时间",
+      "weeklyOff": "每周休息日",
+      "weeklyOffHint": "每天营业可留空。",
+      "weekdays": {
+        "mon": "周一",
+        "tue": "周二",
+        "wed": "周三",
+        "thu": "周四",
+        "fri": "周五",
+        "sat": "周六",
+        "sun": "周日"
+      },
+      "changesTitle": "需要修改"
+    },
+    "kabadiwala": {
+      "title": "你的店铺",
+      "ownerName": "姓名",
+      "shopName": "店铺名称",
+      "address": "店铺地址",
+      "addressHint": "街道、区域和地标",
+      "offersPickup": "提供上门回收吗？",
+      "noPickupHint": "没关系，附近的Saathi可为店铺执行上门回收。",
+      "vehicle": "你的车辆",
+      "vehicles": {
+        "handcart": "手推车",
+        "cycle": "自行车",
+        "auto": "三轮出租车",
+        "mini_truck": "小货车"
+      }
+    },
+    "business": {
+      "titles": {
+        "yard": "你的分拣场",
+        "recycler": "你的再生设施",
+        "manufacturer": "你的工厂"
+      },
+      "step": "第{step}步，共2步",
+      "businessName": "企业名称",
+      "materials": "处理的材料",
+      "materialsHint": "方便我们为你匹配合适的买卖双方。",
+      "materialNames": {
+        "paper": "纸",
+        "plastic": "塑料",
+        "metal": "金属",
+        "glass": "玻璃",
+        "ewaste": "电子废弃物"
+      },
+      "address": "地址",
+      "addressHint": "地块、街道和区域",
+      "locationTags": "区域名称",
+      "locationTagsHint": "填写如皮尼亚工业区等名称，方便他人寻找，最多五个。",
+      "addTag": "添加",
+      "collects": "会到供应商处提货吗？",
+      "hours": "工作时间"
+    },
+    "documents": {
+      "title": "文件和照片",
+      "lead": "我们会在污染控制委员会的公开登记册核验许可。",
+      "notRequired": "本设施不需要许可",
+      "notRequiredHint": "部分设施可豁免，例如仅进行废纸打包。请说明原因，我们会核验。",
+      "reason": "不需要的原因",
+      "board": "签发机构",
+      "boards": {
+        "kspcb": "卡纳塔克邦（KSPCB）",
+        "other": "其他邦的委员会"
+      },
+      "boardState": "哪个邦？",
+      "consentNumber": "许可或注册编号",
+      "consentNumberHint": "按证书上的内容填写",
+      "validUntil": "有效期至",
+      "certificate": "许可证书",
+      "certificateHint": "一份PDF，最大10MB。",
+      "machineMedia": "机器照片或视频",
+      "machineMediaHint": "至少两份，展示主要机器和场地。照片最大10MB，视频最大20MB。",
+      "declaration": "这些文件真实且属于本企业。"
+    },
+    "saathi": {
+      "title": "关于你",
+      "name": "姓名",
+      "nameHint": "与身份证件一致",
+      "area": "居住地点",
+      "areaHint": "所在区域，例如马勒斯瓦拉姆",
+      "radius": "可出行多远？",
+      "radiusOption": "{km}公里",
+      "workTypes": "希望从事的工作",
+      "work": {
+        "home_pickups": "上门回收",
+        "shop_help": "回收店帮工",
+        "yard_sorting": "分拣场分拣",
+        "factory_shifts": "再生企业或工厂轮班"
+      },
+      "vehicle": "你的车辆",
+      "vehicles": {
+        "none": "无",
+        "cycle": "自行车",
+        "two_wheeler": "摩托车或踏板车",
+        "auto": "三轮出租车"
+      },
+      "times": "可以何时工作？",
+      "timeNames": {
+        "morning": "上午",
+        "afternoon": "下午",
+        "evening": "晚上"
+      },
+      "days": "哪些日期？",
+      "idProof": "照片身份证件",
+      "idProofHint": "选民证、驾照、PAN，或仅显示末四位的Aadhaar。照片或PDF，最大10MB。",
+      "selfie": "自拍照",
+      "selfieHint": "我们会与证件核对。"
+    },
+    "files": {
+      "choose": "选择文件",
+      "addMore": "继续添加",
+      "takePhoto": "拍照",
+      "uploading": "正在上传…",
+      "remove": "移除",
+      "size": "{size} MB",
+      "sizeKb": "{size} KB"
+    },
+    "status": {
+      "metaTitle": "你的申请",
+      "none": {
+        "title": "介绍你的工作",
+        "lead": "选择角色以开始申请。"
+      },
+      "draft": {
+        "title": "申请尚未提交",
+        "lead": "已填写的内容都已保存。",
+        "continue": "继续",
+        "changeRole": "换个角色重新开始",
+        "confirmChange": "这会删除目前填写的内容。重新开始吗？"
+      },
+      "submitted": {
+        "title": "审核中",
+        "lead": "通常需12至24小时，完成后会短信通知你。",
+        "sentAt": "提交于{when}",
+        "whatWeCheck": "我们检查什么"
+      },
+      "changes_requested": {
+        "title": "需要几处修改",
+        "lead": "团队提出以下要求：",
+        "fix": "修改后重新提交"
+      },
+      "approved": {
+        "title": "已通过核验",
+        "lead": "你的企业已在Luma.Green上线。",
+        "open": "打开控制台"
+      },
+      "rejected": {
+        "title": "未能通过核验",
+        "lead": "团队说明的原因：",
+        "contact": "与我们交流"
+      },
+      "suspended": {
+        "title": "账户已暂停",
+        "lead": "请联系我们协助解决。",
+        "contact": "与我们交流"
+      },
+      "roleLabel": "申请身份：{role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "店铺位于地图上所标的位置",
+          "two": "我们拨打你的登录号码确认",
+          "three": "如提供GST号码，核查其有效性"
+        },
+        "business": {
+          "one": "如提供GST号码，核查其有效且与企业一致",
+          "two": "许可列于委员会登记册、仍有效且覆盖你的业务",
+          "three": "照片展示运营中的设施，并通过电话确认"
+        },
+        "saathi": {
+          "one": "证件清晰可读，姓名一致",
+          "two": "自拍照与证件相符",
+          "three": "我们拨打你的号码确认"
+        }
+      }
+    },
+    "errors": {
+      "required": "此项必填",
+      "tooShort": "请再填写多一些",
+      "tooLong": "内容过长",
+      "chooseOne": "请选择",
+      "pickAtLeastOne": "至少选择一项",
+      "gstin": "请检查GST号码：15个字符，例如29ABCDE1234F1Z5",
+      "phone": "请输入10位手机号码",
+      "duplicatePhone": "此号码已在列表中",
+      "maxPhones": "最多两个额外号码",
+      "maxTags": "最多五个区域名称",
+      "time": "请输入时间",
+      "closesBeforeOpens": "关门时间必须晚于开门时间",
+      "date": "请输入日期",
+      "expired": "许可已过期，请上传续期版本。",
+      "explainMore": "请再详细说明",
+      "declaration": "请确认此项",
+      "fileMissing": "请添加此项",
+      "fileType": "此处不支持这种文件类型",
+      "fileTooBig": "文件过大",
+      "uploadFailed": "上传失败，请重试。",
+      "generic": "发生问题，请重试。"
+    }
+  },
+  "app": {
+    "navLabel": "应用",
+    "homeLink": "Luma.Green首页",
+    "signOut": "退出登录",
+    "more": "更多",
+    "comingSoon": "此页面正在开发中。",
+    "nav": {
+      "home": "首页",
+      "requests": "请求",
+      "stock": "库存",
+      "prices": "我的价格",
+      "buy": "购买",
+      "sell": "出售",
+      "trades": "交易",
+      "impact": "环境效益",
+      "compliance": "合规",
+      "earnings": "收入",
+      "help": "帮助"
+    },
+    "roles": {
+      "kabadiwala": "废品回收店",
+      "yard": "分拣场",
+      "recycler": "再生企业",
+      "manufacturer": "制造商",
+      "saathi": "萨蒂（Saathi）"
+    }
+  },
+  "saathi": {
+    "greeting": "你好，{name}",
+    "lead": "{area}附近的有偿工作。接单、完成工作，再标记完成。",
+    "demoNote": "示例数据：这里的工作、企业和报酬仅供原型演示。",
+    "week": {
+      "label": "本周收入",
+      "hint": "过去7天 · {count, plural, =0 {暂无工作} one {#项工作} other {#项工作}}",
+      "all": "查看全部收入"
+    },
+    "today": {
+      "title": "你今天的工作",
+      "empty": "今天没有工作",
+      "emptyBody": "承接下方开放的工作，到当天会显示在这里。"
+    },
+    "upcoming": {
+      "title": "即将开始",
+      "hint": "工作当天可标记完成。"
+    },
+    "open": {
+      "title": "可接工作",
+      "lead": "优先显示所在区域的工作。",
+      "empty": "目前没有可接工作",
+      "emptyBody": "店铺、分拣场和工厂的新工作会显示在这里。"
+    },
+    "work": {
+      "home_pickups": "上门回收",
+      "shop_help": "店内帮工",
+      "yard_sorting": "分拣场分拣",
+      "factory_shifts": "工厂轮班"
+    },
+    "windows": {
+      "morning": "上午",
+      "afternoon": "下午",
+      "evening": "晚上"
+    },
+    "when": "{day}，{window}",
+    "whenWhere": "{when} · {area}",
+    "days": {
+      "today": "今天",
+      "tomorrow": "明天",
+      "yesterday": "昨天"
+    },
+    "late": "尚未标记完成",
+    "nearYou": "你的区域",
+    "postedBy": "为{name}工作",
+    "pay": "报酬",
+    "take": "承接此工作",
+    "taking": "正在承接…",
+    "taken": "已接下工作，已加入你的列表。",
+    "markDone": "标记完成",
+    "saving": "正在保存…",
+    "doneToast": "辛苦了！已将{pay}加入收入。",
+    "confirm": {
+      "title": "完成此工作了吗？",
+      "body": "{area}的{title}。将把{pay}加入收入。",
+      "yes": "是，已完成",
+      "no": "还没有"
+    },
+    "errors": {
+      "JOB_TAKEN": "其他人已接下此工作，请选择另一项。",
+      "JOB_EXPIRED": "此工作日期已过。",
+      "SLOT_BUSY": "该时段已有其他工作。",
+      "NOT_YOUR_JOB": "这不是你的工作。",
+      "ALREADY_DONE": "此工作已标记完成。",
+      "TOO_EARLY": "可以在工作当天标记完成。",
+      "JOB_NOT_FOUND": "此工作已无法承接。",
+      "generic": "操作失败，请检查网络后重试。"
+    }
+  },
+  "impact": {
+    "title": "你的环境效益",
+    "lead": "你的企业让多少材料留在回收循环中。",
+    "demoNote": "示例数据：数量为示例，CO₂e使用参考系数，表示每回收一公斤材料而非使用新原料生产所避免的CO₂e公斤数。",
+    "since": "来自{date}以来完成的回收和交易。",
+    "kpi": {
+      "recycled": "回收公斤数",
+      "recycledHint": "每公斤仅计一次",
+      "recycledContent": "购入的再生材料",
+      "co2e": "避免的CO₂e排放",
+      "co2eHint": "与使用新原料生产相比",
+      "earned": "销售所得",
+      "spent": "材料支出",
+      "paidHouseholds": "支付给家庭",
+      "sales": "{count, plural, =0 {暂无销售} one {#笔销售} other {#笔销售}}",
+      "purchases": "{count, plural, =0 {暂无采购} one {#笔采购} other {#笔采购}}",
+      "pickups": "{count, plural, =0 {暂无回收} one {#次回收} other {#次回收}}"
+    },
+    "byFamily": {
+      "title": "按材料",
+      "lead": "回收公斤数，以及各材料避免的CO₂e排放。",
+      "co2e": "避免{amount} CO₂e排放"
+    },
+    "flows": {
+      "title": "流入与流出",
+      "lead": "进入企业的材料，以及继续流转的材料。",
+      "households": "从家庭收购",
+      "bought": "从企业采购",
+      "sold": "向下游销售"
+    },
+    "families": {
+      "paper": "纸",
+      "plastic": "塑料",
+      "metal": "金属",
+      "glass": "玻璃",
+      "ewaste": "电子废弃物",
+      "other": "其他"
+    },
+    "ledger": {
+      "title": "为信用签发准备的账本",
+      "lead": "每公斤都记录经手人、时间和地点，提供碳与塑料信用标准要求的证据。",
+      "who": "谁",
+      "whoBody": "经过核验的企业和家庭，各自关联手机号码。",
+      "when": "何时",
+      "whenBody": "从回收到交货，每个步骤都有时间戳。",
+      "where": "何地",
+      "whereBody": "材料经过的店铺、分拣场或工厂。",
+      "what": "什么",
+      "whatBody": "收据或发票上的材料及重量。"
+    },
+    "empty": {
+      "title": "暂无记录",
+      "body": "首次完成回收或交易后，数据会显示在这里。"
+    },
+    "saathi": {
+      "title": "你的收入",
+      "lead": "已完成工作的报酬。",
+      "total": "累计收入",
+      "jobsDone": "{count, plural, one {完成#项工作} other {完成#项工作}}",
+      "week": "本周收入",
+      "weekHint": "过去7天 · {count, plural, =0 {无工作} one {#项工作} other {#项工作}}",
+      "byKind": "按工作类型",
+      "jobs": "{count, plural, one {#项工作} other {#项工作}}",
+      "history": "已完成工作",
+      "empty": "尚无已完成工作",
+      "emptyBody": "在首页承接工作。标记完成后，报酬会显示在这里。",
+      "findJob": "寻找工作",
+      "demoNote": "示例数据：此处的工作和报酬仅供原型演示。"
+    }
+  },
+  "compliance": {
+    "title": "合规",
+    "lead": "在一处管理许可和记录。",
+    "demoNote": "示例数据：此处的文件、收据和金额仅供原型演示。",
+    "checklist": {
+      "title": "检查清单",
+      "whatThisMeans": "含义："
+    },
+    "status": {
+      "done": "完成",
+      "due_soon": "即将续期",
+      "overdue": "已过期",
+      "missing": "缺失",
+      "optional": "可选",
+      "not_needed": "不需要",
+      "self_declared": "尚未检查"
+    },
+    "items": {
+      "gst": {
+        "title": "GST注册",
+        "registered": "GSTIN：{gstin}",
+        "notRegistered": "未注册",
+        "note": "GST号码可用于开具税务发票和抵扣采购税款。在卡纳塔克邦，年销售额超过400万卢比，或向其他邦销售时必须注册。"
+      },
+      "consent": {
+        "title": "污染控制委员会许可",
+        "detail": "{board} · {number}",
+        "missing": "未存档许可",
+        "note": "州污染控制委员会的运营许可允许合法经营分拣或再生设施。再生企业和工厂采购前会要求查看。",
+        "noteShop": "仅收购并分类废品的小店通常不需要。开始打包、破碎或加工材料时则需要。"
+      },
+      "scale": {
+        "title": "秤已检定",
+        "detail": "自行申报。此处的确认功能即将开放。",
+        "note": "买卖所用的秤必须经过法定计量部门检查并盖章，通常每年一次。检定标记证明称重公平。"
+      },
+      "safety": {
+        "title": "工人安全装备",
+        "detail": "自行申报。此处的确认功能即将开放。",
+        "note": "为所有分拣或搬抬人员提供手套、口罩和包脚鞋，并在现场放置急救箱。承接工作的Saathi也需要这些装备。"
+      }
+    },
+    "consent": {
+      "title": "许可有效期",
+      "validUntil": "有效至{date}",
+      "daysLeft": "{days, plural, =0 {今天是最后一天} one {剩#天} other {剩#天}}",
+      "ranOut": "{days, plural, one {已过期#天} other {已过期#天}}",
+      "reminder": "续期检查日期：{date}，即到期前90天。",
+      "expiringTitle": "现在续期许可",
+      "expiringBody": "许可将于{date}到期。请立即向{board}申请续期，办理可能需要数周。",
+      "expiredTitle": "许可已过期",
+      "expiredBody": "许可已于{date}到期。继续买卖材料前，请向{board}续期。",
+      "missingTitle": "未存档许可",
+      "missingBody": "再生企业和工厂会要求有效许可。通过帮助发送给我们，我们会添加。"
+    },
+    "receipts": {
+      "title": "交易收据",
+      "lead": "按最新优先显示Luma.Green交易收据。GST税务发票随真实付款开具。",
+      "number": "收据",
+      "date": "日期",
+      "with": "交易对象",
+      "what": "什么",
+      "amount": "金额",
+      "eway": "电子运单",
+      "sale": "销售",
+      "purchase": "采购",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "需要",
+      "ewayNotNeeded": "不需要",
+      "ewayNeededLong": "需要电子运单",
+      "ewayNotNeededLong": "无需电子运单",
+      "ewayNote": "运输价值超过₹50,000的货物需要电子运单。",
+      "view": "查看收据{number}",
+      "unknown": "已不再使用Luma.Green的企业",
+      "empty": "暂无收据",
+      "emptyBody": "买方将货款存入托管后生成收据。"
+    },
+    "epr": {
+      "title": "EPR记录，{from}至{to}财年",
+      "lead": "本财年（4月至3月）接收并再生的材料。",
+      "leadManufacturer": "本财年（4月至3月）采购的再生材料。",
+      "received": "已接收",
+      "recycled": "再生料",
+      "bought": "已采购",
+      "streams": {
+        "plastic": "塑料",
+        "ewaste": "电子废弃物",
+        "battery": "电池",
+        "paper": "纸",
+        "metal": "金属",
+        "glass": "玻璃",
+        "other": "其他"
+      },
+      "regimes": {
+        "pwm_2016": "2016年塑料废弃物管理规则",
+        "ewaste_2022": "2022年电子废弃物管理规则",
+        "bwm_2022": "2022年电池废弃物管理规则",
+        "none": "此材料暂无EPR规则"
+      },
+      "note": "EPR证书在CPCB的EPR门户生成，不在此处签发。这些总量来自已完成交易，可供申报使用。",
+      "empty": "本年度暂无记录",
+      "emptyBody": "此处统计4月1日起完成的交易。"
+    },
+    "saathi": {
+      "title": "企业适用",
+      "body": "合规功能面向店铺、分拣场、再生企业和工厂。你的工作和报酬在首页。",
+      "home": "前往我的工作"
+    }
+  },
+  "sell": {
+    "metaTitle": "出售我的废品",
+    "metaDescription": "在班加罗尔家中出售报纸、塑料、金属和旧电子设备。查看附近店铺收购价，预约回收，在门口收款。",
+    "eyebrow": "面向班加罗尔家庭",
+    "title": "在家卖废品",
+    "lead": "选择材料和附近店铺，称重后通过现金或UPI收款。",
+    "promises": {
+      "label": "为什么在这里出售",
+      "noAccount": "无需账户",
+      "payAtDoor": "称重后付款",
+      "verified": "经过核验的店铺"
+    },
+    "unavailable": {
+      "title": "预约即将开放",
+      "body": "我们正在设置家庭预约服务，请稍后查看。"
+    },
+    "demoNote": "班加罗尔试点的示例价格与店铺。",
+    "loadError": "无法加载，请检查连接后重试。",
+    "retry": "重试",
+    "steps": {
+      "label": "步骤",
+      "progress": "第{current}步，共{total}步",
+      "basket": "什么",
+      "shop": "谁",
+      "when": "何时",
+      "confirm": "预约"
+    },
+    "back": "返回",
+    "families": {
+      "paper": "纸",
+      "plastic": "塑料",
+      "metal": "金属",
+      "glass": "玻璃",
+      "ewaste": "电子废弃物",
+      "other": "其他"
+    },
+    "windows": {
+      "morning": "上午",
+      "afternoon": "下午",
+      "evening": "晚上"
+    },
+    "perKg": "{price}/公斤",
+    "basket": {
+      "title": "你有什么？",
+      "lead": "点击要卖的材料，再设置大致公斤数。",
+      "yours": "你的废品",
+      "empty": "尚未添加，请点击上方材料。",
+      "kilos": "{material}的公斤数",
+      "less": "减少{material}",
+      "more": "增加{material}",
+      "remove": "移除{material}",
+      "presets": "快速选择{material}的数量",
+      "preset": "{kg}公斤",
+      "kgUnit": "公斤",
+      "lineValue": "约{amount}",
+      "worth": "估值约为",
+      "summary": "{items, plural, one {#项} other {#项}} · {weight}",
+      "points": "+{points, plural, one {#回收积分} other {#回收积分}}",
+      "next": "寻找买家",
+      "full": "每次预约最多{max}种材料。",
+      "weighNote": "最终金额在废品称重时确定。"
+    },
+    "shop": {
+      "title": "谁来收购？",
+      "lead": "根据各店自定价格，显示你的废品报价。",
+      "modeLabel": "希望怎样交接？",
+      "pickup": "上门回收",
+      "pickupHint": "店铺到你家收取",
+      "dropoff": "我送到店里",
+      "dropoffHint": "你自行送到店铺",
+      "useLocation": "使用我的位置",
+      "locating": "正在定位…",
+      "nearestFirst": "附近店铺优先",
+      "byPrice": "改按价格排序",
+      "locationFailed": "无法获取位置，已按最高价格排序。",
+      "listLabel": "店铺",
+      "offerFor": "你的废品报价",
+      "distance": "{km}公里",
+      "hours": "营业时间{hours}",
+      "picksUp": "提供上门回收",
+      "dropOnly": "仅限送店",
+      "verified": "已核验",
+      "best": "最高价",
+      "nearest": "最近",
+      "cityPrice": "{count, plural, one {#项使用城市价格} other {#项使用城市价格}}",
+      "noPickupHere": "此店不上门回收。选择“我送到店里”即可在此出售。",
+      "empty": "暂时没有店铺接受预约，请稍后查看。",
+      "next": "选择时间",
+      "pickOne": "选择一家店铺以继续。"
+    },
+    "when": {
+      "titlePickup": "希望何时上门？",
+      "titleDropoff": "你何时送到店里？",
+      "dayLabel": "日期",
+      "today": "今天",
+      "tomorrow": "明天",
+      "windowLabel": "时间",
+      "passed": "今天已无法预约",
+      "addressLabel": "回收地址",
+      "addressHint": "门牌或房号、街道、区域和地标。",
+      "dropoffAt": "送往",
+      "nameLabel": "姓名",
+      "nameHint": "方便店铺知道找谁。",
+      "privacy": "只有预约的店铺能查看地址，而且仅在接受后可见。",
+      "next": "核对并预约",
+      "errors": {
+        "day": "请选择日期。",
+        "window": "请选择时间。",
+        "address": "请填写含门牌号和区域的完整地址。",
+        "name": "请填写姓名，至少2字。"
+      }
+    },
+    "confirm": {
+      "title": "核对并预约",
+      "what": "什么",
+      "who": "谁",
+      "when": "何时",
+      "where": "何地",
+      "change": "更改",
+      "changeLabel": "更改{section}",
+      "pickup": "从家中收取",
+      "dropoff": "你送到店铺",
+      "whenValue": "{day} · {window}，{time}",
+      "youGet": "你将收到约{amount}",
+      "payNote": "店铺称重后，通过现金或UPI付款。",
+      "phoneTitle": "验证手机号码",
+      "phoneLead": "我们会发送6位短信验证码。预约保存在此号码下，方便你在任何手机上查看。",
+      "bookingAs": "预约号码：{phone}",
+      "notYou": "使用其他号码",
+      "bookPickup": "预约上门回收",
+      "bookDropoff": "预约送店",
+      "confirmAndBook": "确认并预约",
+      "booking": "正在预约…",
+      "booked": "预约成功！正在打开预约…",
+      "fixIt": "修改",
+      "locationNote": "本次回收将保存大致位置，以便必要时寻找另一家附近店铺。"
+    },
+    "phone": {
+      "label": "手机号码",
+      "hint": "我们会向此号码发送6位验证码。",
+      "invalid": "请输入10位印度手机号码。",
+      "sendCode": "发送验证码",
+      "sending": "正在发送…",
+      "sendFailed": "无法发送验证码，请一分钟后重试。",
+      "codeLabel": "6位验证码",
+      "sentTo": "已通过短信发送至{phone}",
+      "changeNumber": "更换号码",
+      "verifying": "正在验证…",
+      "resendIn": "{seconds, plural, one {#秒} other {#秒}}后可请求新验证码",
+      "resend": "发送新验证码",
+      "resent": "已发送新验证码。",
+      "errorInvalid": "验证码不正确，请核对短信后重试。",
+      "errorExpired": "验证码已过期，请请求新的验证码。",
+      "errorTooMany": "尝试次数过多，请请求新验证码。",
+      "errorGeneric": "出了点问题，请重试。",
+      "privacy": "手机号码仅用于预约及其相关通知。"
+    },
+    "errors": {
+      "generic": "出了点问题，请重试。",
+      "EMPTY_BASKET": "请至少添加一种要卖的物品。",
+      "TOO_MANY_ITEMS": "单次预约的材料种类过多。",
+      "DUPLICATE_ITEM": "有材料重复，请检查废品列表。",
+      "INVALID_KG": "请检查公斤数：每项必须大于0且不超过500。",
+      "UNKNOWN_MATERIAL": "某种材料已无法在此出售，请检查列表。",
+      "SHOP_NOT_FOUND": "该店目前不接预约，请另选一家。",
+      "SHOP_NO_PICKUP": "该店不上门回收，请选择其他店铺或送店。",
+      "INVALID_DATE": "该日期已无法预约，请另选日期。",
+      "SLOT_PASSED": "该时间已过，请选择更晚的时间。",
+      "INVALID_NAME": "请检查姓名。",
+      "ADDRESS_REQUIRED": "请添加回收地址。",
+      "INVALID_ADDRESS": "请填写完整地址。",
+      "TOO_MANY_OPEN": "已有5个待完成预约。请等待一个完成，或取消一个。",
+      "NO_PHONE": "请验证手机号码后预约。",
+      "NOT_SIGNED_IN": "请先验证手机号码。",
+      "CANNOT_CANCEL": "此预约已无法取消。",
+      "NOT_YOURS": "此预约由另一个号码创建。",
+      "NOT_FOUND": "未找到此预约。"
+    },
+    "mine": {
+      "title": "你的预约列表",
+      "showAll": "显示全部{count}项",
+      "showFewer": "收起",
+      "summary": "{items, plural, one {#项} other {#项}} · {weight}",
+      "paid": "已支付{amount}",
+      "estimate": "约{amount}"
+    },
+    "photo": {
+      "title": "试试照片估算",
+      "lead": "可选：添加一张废品照片，再核对建议品项。",
+      "privacy": "请勿包含人脸、文件或车牌。照片会发送给AI服务商进行本次估算，Luma.Green不会保存。",
+      "choose": "选择或拍摄照片",
+      "selected": "照片已准备好",
+      "estimate": "估算此照片",
+      "busy": "正在检查照片…",
+      "manual": "手动选择物品",
+      "review": "核对这些建议",
+      "reviewNote": "照片重量仅为粗略估算。可用这些物品替换清单，再在下方修改材料和重量。",
+      "apply": "使用这些物品",
+      "range": "{low}至{high}",
+      "confidence": "置信度：{confidence}",
+      "value": "估计价值：{low}至{high}",
+      "applied": "已添加建议。请检查清单并修正错误。",
+      "unavailable": "照片估算不可用，请在下方选择物品。",
+      "failed": "无法检查照片。请换张照片或在下方选择物品。",
+      "invalid": "请使用小于12MB的清晰JPEG或PNG照片。",
+      "limited": "已达到照片使用上限。请在下方选择物品，或明天重试。",
+      "retake": "照片不清晰或未显示废品。请换张照片或在下方选择物品。",
+      "empty": "未找到支持的材料。请换张照片或在下方选择物品。",
+      "replace": "选择另一张照片"
+    }
+  },
+  "track": {
+    "metaTitle": "你的预约",
+    "notFound": {
+      "title": "未找到此预约",
+      "body": "请检查短信中的链接。如刚预约，请稍等后重试。",
+      "sell": "卖废品"
+    },
+    "reference": "预约{token}",
+    "status": {
+      "requested": "等待中",
+      "accepted": "已接受",
+      "on_the_way": "正在前往",
+      "completed": "完成",
+      "declined": "已拒绝",
+      "cancelled": "已取消"
+    },
+    "hero": {
+      "requested": "{mode, select, pickup {等待{shop}接受} other {等待{shop}确认}}",
+      "requestedBody": "请求已发送。对方回复后，此页面会立即更新。",
+      "accepted": "{mode, select, pickup {{shop}已接受回收预约} other {{shop}正在等你到店}}",
+      "acceptedBody": "请准备好废品。称重后通过现金或UPI收款。",
+      "on_the_way": "{shop}正在前往",
+      "on_the_wayBody": "请将废品准备在门口附近。",
+      "completed": "完成！你收到{amount}",
+      "completedBody": "感谢参与回收，积分已记入你的手机号。",
+      "declined": "{shop}无法承接此预约",
+      "declinedBody": "尚未收取任何物品。废品清单已保存，请试试其他店铺。",
+      "cancelled": "此预约已取消",
+      "cancelledBody": "尚未收取任何物品，随时可重新预约。"
+    },
+    "progress": {
+      "label": "进度",
+      "booked": "已预约",
+      "accepted": "已接受",
+      "confirmed": "已确认",
+      "onTheWay": "正在前往",
+      "done": "完成"
+    },
+    "when": "何时",
+    "whenValue": "{day} · {window}，{time}",
+    "today": "今天",
+    "tomorrow": "明天",
+    "mode": {
+      "pickup": "从家中收取",
+      "dropoff": "你送到店铺"
+    },
+    "shop": {
+      "title": "你的店铺",
+      "verified": "已核验",
+      "call": "拨打电话",
+      "callLabel": "致电{shop}",
+      "hours": "营业时间{hours}"
+    },
+    "items": {
+      "title": "收取内容",
+      "estimated": "约{weight}",
+      "weighed": "{weight}，单价{price}/公斤"
+    },
+    "money": {
+      "title": "你的金额和积分",
+      "estimate": "你将收到约{amount}",
+      "estimateNote": "店铺称重后，通过现金或UPI付款。",
+      "paid": "你收到{amount}",
+      "paidBy": "通过{method, select, upi {UPI} other {现金}}支付 · {date}",
+      "estimateWas": "原估算为{amount}",
+      "points": "+{points, plural, one {#回收积分} other {#回收积分}}",
+      "pointsAfter": "称重后约+{points, plural, one {#回收积分} other {#回收积分}}"
+    },
+    "timeline": {
+      "title": "历史",
+      "requested": "已预约",
+      "accepted": "店铺已接受",
+      "on_the_way": "店铺正在前往",
+      "completed": "已称重付款",
+      "declined": "店铺已拒绝",
+      "cancelled": "已取消"
+    },
+    "cancel": {
+      "button": "取消预约",
+      "title": "取消此预约？",
+      "body": "店铺会看到取消状态，随时可重新预约。",
+      "confirm": "是，取消",
+      "keep": "保留预约",
+      "cancelling": "正在取消…",
+      "checking": "正在检查号码…",
+      "done": "预约已取消。",
+      "free": "店铺出发前可免费取消。",
+      "signInTitle": "确认是你本人",
+      "signInBody": "输入预约时的手机号码，我们会发送验证码。",
+      "confirmNumber": "验证我的号码",
+      "notYours": "此预约由另一个号码创建。",
+      "close": "关闭",
+      "otherNumber": "使用其他号码"
+    },
+    "saved": "无需账户。保存此链接，即可在任何手机上查看预约。",
+    "sellMore": "出售更多废品",
+    "tryAnother": "试试其他店铺",
+    "dispatchChanged": "请求已转至另一家附近店铺，当前店铺显示在下方。"
+  },
+  "market": {
+    "sampleData": "此页面的价格和金额为原型示例数据。",
+    "simulated": "示例数据。原型中的付款均为模拟，不会转移真实资金。",
+    "perKg": "{price}/公斤",
+    "recycled": "再生料",
+    "forBusinessesTitle": "此页面面向企业",
+    "forBusinessesBody": "回收店、分拣场、再生企业和制造商在此交易。",
+    "units": {
+      "kg": "公斤",
+      "rupee": "₹"
+    },
+    "errors": {
+      "NOT_SIGNED_IN": "你已退出，请重新登录。",
+      "WRONG_ROLE": "你的企业无法执行此操作。",
+      "NOT_FOUND": "未找到，可能已被移除。",
+      "OWN_LISTING": "这是你自己的批次。",
+      "LISTING_NOT_OPEN": "此批次已不再出售。",
+      "NOT_ENOUGH_LEFT": "所选数量超过此批次剩余量。",
+      "NOT_ENOUGH_STOCK": "库存不足，请先检查库存。",
+      "INVALID_WEIGHT": "请输入大于0公斤的重量。",
+      "INVALID_PRICE": "请输入大于₹0的价格。",
+      "NOTE_TOO_LONG": "备注请控制在140字以内。",
+      "UNKNOWN_MATERIAL": "请从列表选择材料。",
+      "WRONG_STEP": "交易已进入下一步，请查看最新进度。",
+      "generic": "出了点问题，请重试。"
+    },
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "可用",
+      "lotValue": "整批"
+    },
+    "buy": {
+      "button": "购买",
+      "buttonLabel": "从{seller}购买{material}",
+      "title": "购买{material}",
+      "from": "来自{area}的{seller}。可购{weight}，单价{price}/公斤。",
+      "kgLabel": "多少公斤？",
+      "kgHint": "最多{weight}。",
+      "all": "全部{weight}",
+      "kgInvalid": "按公斤填写，例如50或12.5。",
+      "kgTooMuch": "只有{weight}可用。",
+      "total": "总额",
+      "totalLine": "{weight} × {price}/公斤",
+      "escrow": "{seller}接受后，你将货款存入托管。确认收货后，款项支付给对方。",
+      "ewayBill": "超过₹50,000：此批货物必须随附电子运单。",
+      "cancel": "取消",
+      "submit": "发送请求",
+      "sending": "正在发送…",
+      "sent": "已向{seller}发送请求",
+      "sentNext": "对方接受后，你将货款存入托管。",
+      "seeTrades": "查看交易"
+    },
+    "browse": {
+      "title": "购买",
+      "lead": "{kind, select, yard {附近回收店的分拣废料。} recycler {来自分拣场的分类打包材料。} manufacturer {经过核验的再生企业提供的再生材料。} other {附近在售材料。}}",
+      "filterLabel": "按材料筛选",
+      "all": "全部",
+      "count": "{count, plural, =0 {无批次} one {#批在售} other {#批在售}}",
+      "emptyTitle": "目前没有在售材料",
+      "emptyBody": "新批次发布后会立即显示在这里。",
+      "notForYouTitle": "回收店从家庭收购",
+      "notForYouBody": "在市场上，你负责出售：向分拣场提供分拣后的库存。",
+      "goSell": "卖给分拣场"
+    },
+    "sell": {
+      "title": "出售",
+      "lead": "{buyer, select, yard {向分拣场提供分拣后的库存。} recycler {向再生企业提供包块。} manufacturer {向制造商提供材料。} other {向买方提供库存。}}",
+      "notForYouTitle": "制造商在Luma.Green采购",
+      "notForYouBody": "寻找经过核验的再生企业提供的材料。",
+      "goBuy": "采购材料",
+      "form": {
+        "title": "新供货信息",
+        "material": "你要卖什么？",
+        "free": "可出售{weight}",
+        "allPromised": "全部已发布或售出",
+        "kg": "多少公斤？",
+        "kgHint": "最多{weight}。",
+        "all": "全部{weight}",
+        "price": "你的价格，₹/公斤",
+        "market": "今日市场价{price}/公斤",
+        "suggested": "建议{price}/公斤",
+        "useSuggested": "使用{price}",
+        "farFromMarket": "这与今日价格相差较大，请检查。",
+        "note": "给买方的备注",
+        "optional": "（选填）",
+        "notePlaceholder": "例如：干燥、捆扎、50公斤包块",
+        "noteCount": "{count}/{max}",
+        "value": "批次价值",
+        "submit": "开始出售",
+        "submitting": "正在发布…",
+        "listed": "已上架，{buyer, select, yard {分拣场} recycler {再生企业} manufacturer {制造商} other {买方}}现在可以看到。",
+        "nothingTitle": "暂无可售库存",
+        "nothingBody": "已记录的库存会显示在这里。已发布或售出的数量不会重复计算。",
+        "goStock": "前往库存",
+        "errors": {
+          "pickMaterial": "请选择材料。",
+          "kgInvalid": "按公斤填写，例如50或12.5。",
+          "kgTooMuch": "你有{weight}可出售。",
+          "priceInvalid": "请以卢比输入价格，例如18或17.50。",
+          "noteTooLong": "备注请控制在140字以内。"
+        }
+      },
+      "mine": {
+        "title": "当前在售",
+        "emptyTitle": "暂无在售批次",
+        "emptyBody": "使用表单发布第一批货物。",
+        "past": "以往供货信息",
+        "onSale": "在售",
+        "listedOn": "发布于{date}",
+        "pastLine": "发布于{date} · {price}/公斤",
+        "sold": "售罄",
+        "withdrawn": "已撤下",
+        "withdraw": "撤下",
+        "withdrawLabel": "撤下{material}",
+        "withdrawConfirm": "将此批货物从市场撤下？买方将无法看到，等待中的请求会被拒绝。",
+        "withdrawYes": "是，撤下",
+        "withdrawNo": "继续出售",
+        "withdrawnToast": "已从市场撤下{material}"
+      }
+    },
+    "trades": {
+      "title": "交易",
+      "lead": "逐步查看每笔交易。买方确认交货前，货款保留在托管中。",
+      "buying": "采购中",
+      "selling": "销售中",
+      "tabsLabel": "采购或销售",
+      "waitingBadge": "{count, plural, one {#项需要你处理} other {#项需要你处理}}",
+      "emptyBuyingTitle": "暂无采购",
+      "emptyBuyingBody": "你请求购买的批次会显示在这里。",
+      "emptySellingTitle": "暂无销售",
+      "emptySellingBody": "有人请求购买你的批次时，会显示在这里。",
+      "goBuy": "寻找材料",
+      "goSell": "发布库存出售",
+      "card": {
+        "title": "{material} · {weight}",
+        "from": "卖方{name} · {area}",
+        "to": "买方{name} · {area}",
+        "rate": "{price}/公斤",
+        "inEscrow": "托管中{amount}",
+        "ewayBill": "超过₹50,000：此批货物必须随附电子运单。",
+        "updated": "更新于{when}",
+        "receipt": "收据{number}",
+        "buying": "采购中",
+        "selling": "销售中"
+      },
+      "steps": {
+        "label": "交易进度",
+        "requested": "已请求",
+        "accepted": "已接受",
+        "paid_to_escrow": "托管中",
+        "dispatched": "已发货",
+        "completed": "已交货",
+        "srStep": "{step}：{state}",
+        "state": {
+          "done": "完成",
+          "current": "下一步",
+          "todo": "尚未"
+        }
+      },
+      "declined": "于{date}拒绝",
+      "hint": {
+        "requested": {
+          "buyer": "等待{name}接受。",
+          "seller": "{name}想购买此批次。接受后将为其预留。"
+        },
+        "accepted": {
+          "buyer": "已接受。请存入托管以继续，确认交货前款项会被保管。",
+          "seller": "等待{name}将款项存入托管。"
+        },
+        "paid_to_escrow": {
+          "buyer": "你的货款安全保管在托管中，等待{name}发货。",
+          "seller": "货款安全保管在托管中。请发货后标记已发货。"
+        },
+        "dispatched": {
+          "buyer": "运输中。检查货物后确认交货，即可支付货款。",
+          "seller": "运输中。{name}确认交货后，你将收到货款。"
+        },
+        "completed": {
+          "buyer": "已交货，款项已支付给{name}。",
+          "seller": "已交货，款项已支付给你。"
+        },
+        "declined": {
+          "buyer": "{name}拒绝了订单，或此批次已售罄。",
+          "seller": "你拒绝了订单，或此批次已关闭。"
+        }
+      },
+      "action": {
+        "accept": "接受订单",
+        "decline": "拒绝",
+        "pay": "将{amount}存入托管",
+        "dispatch": "标记已发货",
+        "confirm": "确认收货"
+      },
+      "busy": "正在保存…",
+      "done": {
+        "accept": "订单已接受",
+        "decline": "订单已拒绝",
+        "pay": "已存入托管。收据{number}",
+        "dispatch": "已标记发货",
+        "confirm": "交货已确认，货款将支付给卖方。"
+      },
+      "declineConfirm": "拒绝{name}的订单？此操作无法撤销。",
+      "declineYes": "是，拒绝",
+      "declineNo": "保留预约"
+    },
+    "receipt": {
+      "title": "交易收据",
+      "numberLabel": "收据编号",
+      "dateLabel": "日期",
+      "statusLabel": "付款",
+      "inEscrow": "托管中",
+      "settled": "已支付",
+      "seller": "卖方",
+      "buyer": "买方",
+      "gstin": "GSTIN：{gstin}",
+      "noGstin": "未注册GST",
+      "material": "材料",
+      "quantity": "数量",
+      "rate": "单价",
+      "amount": "金额",
+      "total": "总额",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "于{date}存入Luma.Green资金托管。",
+      "held": "买方确认交货前，款项保留在托管中。",
+      "released": "于{date}支付给卖方。",
+      "ewayBill": "货值超过₹50,000：此批货物必须随附电子运单。",
+      "notTaxInvoice": "这是交易收据，不是GST税务发票。税务发票随真实付款开具。",
+      "print": "打印",
+      "back": "返回交易",
+      "missingTitle": "未找到收据",
+      "missingBody": "这不是你的交易，或链接有误。",
+      "pendingTitle": "尚无收据",
+      "pendingBody": "买方将款项存入托管后生成收据。",
+      "declinedBody": "此交易已被拒绝，因此没有收据。"
+    },
+    "home": {
+      "greeting": "你好，{name}",
+      "lead": "{kind, select, yard {从回收店采购，向再生企业出售分拣包块。} recycler {从分拣场采购分拣废料，向制造商出售再生材料。} manufacturer {从经过核验的再生企业采购再生材料。} other {一眼查看你的交易。}}",
+      "buy": "购买",
+      "sell": "出售",
+      "trades": "交易",
+      "statsTitle": "概览",
+      "stats": {
+        "escrow": "托管中",
+        "escrowHint": "确认交货后支付",
+        "waiting": "等待你处理",
+        "waitingHint": "{count, plural, =0 {全部已处理} one {#笔交易需要操作} other {#笔交易需要操作}}",
+        "listings": "在售",
+        "listingsHint": "已发布{weight}",
+        "offers": "再生材料批次",
+        "offersHint": "再生企业在售",
+        "completed": "本月完成",
+        "completedHint": "交易额{amount}"
+      },
+      "waitingTitle": "等待你处理",
+      "allTrades": "全部交易",
+      "caughtUpTitle": "目前没有待处理事项",
+      "caughtUpBody": "新订单、付款和交货会显示在这里。",
+      "offersTitle": "最新批次推荐",
+      "recycledTitle": "适合你的再生材料",
+      "recycledBody": "来自经过核验的再生企业的碎片、颗粒、牛皮纸和锭，可供生产线使用。",
+      "seeAll": "查看全部",
+      "noOffersTitle": "目前没有在售批次",
+      "noOffersBody": "新批次发布后会立即显示在这里。"
+    },
+    "totalInvalid": "总金额过大。请减少数量或降低价格。"
+  },
+  "shop": {
+    "sampleNote": "此页面的价格、市场单价和估值为原型示例数据。",
+    "household": "家庭",
+    "perKg": "{price}/公斤",
+    "about": "约{amount}",
+    "slot": "{day}，{window}",
+    "dropoff": "送到你的店铺",
+    "windows": {
+      "morning": "上午",
+      "afternoon": "下午",
+      "evening": "晚上"
+    },
+    "days": {
+      "today": "今天",
+      "tomorrow": "明天",
+      "yesterday": "昨天"
+    },
+    "status": {
+      "requested": "新请求",
+      "accepted": "已接受",
+      "on_the_way": "正在前往",
+      "completed": "已付款",
+      "declined": "已拒绝",
+      "cancelled": "已取消"
+    },
+    "methods": {
+      "cash": "现金",
+      "upi": "UPI"
+    },
+    "families": {
+      "paper": "纸",
+      "plastic": "塑料",
+      "metal": "金属",
+      "glass": "玻璃",
+      "ewaste": "电子废弃物",
+      "other": "其他"
+    },
+    "compare": {
+      "above": "高于市场",
+      "below": "低于市场",
+      "same": "与市场相同"
+    },
+    "errors": {
+      "generic": "发生问题，请重试。",
+      "changed": "此请求刚刚发生变化，请重新检查。",
+      "loadTitle": "未能加载",
+      "loadBody": "请检查网络连接后重试。",
+      "retry": "重试"
+    },
+    "notShop": {
+      "title": "仅限废品回收店",
+      "body": "回收请求和家庭收购价属于回收店功能。",
+      "home": "前往首页"
+    },
+    "home": {
+      "greeting": "你好",
+      "newTitle": "新请求",
+      "newNone": "目前没有新请求。",
+      "newSome": "{count, plural, one {#户家庭希望回收。} other {#户家庭希望回收。}}",
+      "seeRequests": "查看请求",
+      "todayTitle": "今日回收",
+      "next": "下一项",
+      "todayNone": "今天没有更多回收。",
+      "seeToday": "查看今日回收",
+      "moneyTitle": "资金与库存",
+      "paidToday": "今日支付",
+      "paidWeek": "过去7天",
+      "pickups": "{count, plural, =0 {无回收} one {#次回收} other {#次回收}}",
+      "stockWorth": "库存价值",
+      "stockWeight": "库存{weight}",
+      "priceCheck": "价格检查",
+      "allPrices": "我的全部价格",
+      "perKg": "每公斤",
+      "you": "你的支付价",
+      "market": "市场",
+      "quickLinks": "快捷入口",
+      "sell": "卖给分拣场",
+      "sellHint": "向附近分拣场提供库存",
+      "prices": "我的价格",
+      "pricesHint": "你支付给家庭的每公斤价格"
+    },
+    "requests": {
+      "title": "请求",
+      "lead": "附近希望出售废品的家庭。",
+      "tabs": {
+        "new": "新请求",
+        "today": "今天",
+        "done": "完成"
+      },
+      "dueNow": "今天",
+      "later": "即将开始",
+      "empty": {
+        "newTitle": "没有新请求",
+        "newBody": "家庭向你预约回收后，会显示在这里。",
+        "todayTitle": "暂无待回收",
+        "todayBody": "你接受的回收会显示在这里。",
+        "doneTitle": "暂无已完成事项",
+        "doneBody": "已付款和被拒绝的回收会显示在这里。"
+      },
+      "estimate": "估算",
+      "doneLine": "{when} · {materials}",
+      "accept": "接受",
+      "decline": "拒绝",
+      "startTrip": "开始出发",
+      "weigh": "称重并付款",
+      "accepted": "已接受，现在可查看地址和电话号码。",
+      "declined": "请求已拒绝。",
+      "onTheWay": "家庭可看到你正在前往。",
+      "confirmDecline": {
+        "title": "拒绝此请求？",
+        "body": "此操作无法撤销。",
+        "confirm": "是，拒绝",
+        "cancel": "保留预约"
+      }
+    },
+    "request": {
+      "back": "全部请求",
+      "details": "回收详情",
+      "where": "地址",
+      "phone": "电话",
+      "call": "拨打电话",
+      "directions": "路线",
+      "hidden": "接受后即可查看完整地址和电话号码。",
+      "items": "对方的物品",
+      "estimate": "估算",
+      "history": "历史",
+      "declined": "你已拒绝此请求。",
+      "cancelled": "家庭已取消此次回收。",
+      "notFoundTitle": "未找到请求",
+      "notFoundBody": "可能是其他店铺的请求，或链接有误。",
+      "steps": {
+        "requested": "已请求",
+        "accepted": "已接受",
+        "on_the_way": "正在前往",
+        "completed": "已称重付款",
+        "declined": "已拒绝",
+        "cancelled": "已取消"
+      }
+    },
+    "weigh": {
+      "title": "称重并付款",
+      "lead": "逐项称重，金额按你的价格计算。",
+      "kg": "公斤",
+      "inputLabel": "{material}，单位公斤",
+      "less": "{material}减少半公斤",
+      "more": "{material}增加半公斤",
+      "remove": "移除{material}",
+      "estimated": "预估：{weight}",
+      "noRate": "未设置价格",
+      "add": "添加另一种材料",
+      "total": "应付金额",
+      "method": "付款方式",
+      "confirm": "确认已支付{amount}",
+      "saving": "正在保存…",
+      "invalidKg": "请输入公斤数，例如12或12.5。",
+      "nothing": "至少称量一种材料。",
+      "done": "付款已保存。"
+    },
+    "receipt": {
+      "thanks": "感谢参与回收！",
+      "thanksNamed": "{name}，感谢参与回收！",
+      "title": "已支付{amount}",
+      "method": "{method}，{when}",
+      "points": "{name}获得{points, plural, one {#积分} other {#积分}}",
+      "pointsHint": "每₹10获得1积分。",
+      "line": "{weight}，单价{price}/公斤",
+      "kg": "{kg}公斤",
+      "total": "总额",
+      "stock": "已加入你的库存。",
+      "back": "返回请求"
+    },
+    "stock": {
+      "title": "库存",
+      "lead": "当前库存及其今日价值。",
+      "totalWeight": "总重量",
+      "worth": "今日价值",
+      "worthHint": "按今日市场价格",
+      "scrap": "废料",
+      "recycled": "再生材料",
+      "atPrice": "市场价{price}/公斤",
+      "noPrice": "今日暂无市场价",
+      "sellTo": {
+        "yard": "卖给分拣场",
+        "recycler": "卖给再生企业",
+        "manufacturer": "卖给制造商"
+      },
+      "emptyTitle": "暂无库存",
+      "emptyShop": "完成回收称重付款后，会显示在这里。",
+      "emptyBusiness": "在市场采购后，会显示在这里。",
+      "buy": "采购材料",
+      "notBusinessTitle": "仅限企业",
+      "notBusinessBody": "店铺、分拣场、再生企业和工厂管理库存。"
+    },
+    "prices": {
+      "title": "我的价格",
+      "lead": "支付给家庭的每公斤价格，不得低于最低价。",
+      "label": "你的{material}价格，单位卢比/公斤",
+      "prefix": "₹",
+      "suffix": "/公斤",
+      "minimum": "最低{price}/公斤",
+      "market": "市场价{price}/公斤",
+      "notSet": "尚未设置，家庭将按城市价格{price}/公斤收款。",
+      "save": "保存",
+      "saving": "正在保存…",
+      "saved": "已保存{material}：{price}/公斤。",
+      "invalid": "请输入价格，例如14或14.50。",
+      "belowFloor": "过低，最低价为{price}/公斤。",
+      "belowFloorUnknown": "过低，低于最低价格。",
+      "emptyTitle": "暂无材料",
+      "emptyBody": "店铺获批时会设置收购材料。"
+    },
+    "dispatch": {
+      "title": "回收设置",
+      "autoAccept": "自动接受附近回收",
+      "autoAcceptHint": "可自动接受半径内的回收，无需手动回复。无法收取时请关闭。",
+      "radius": "回收半径（公里）",
+      "radiusHint": "请选择1至50之间的整数。",
+      "saved": "回收设置已保存",
+      "error": "无法保存设置，请重试。",
+      "saving": "正在保存…",
+      "ownerOnly": "只有店主能更改回收设置。",
+      "locationRequired": "使用自动接受前，请添加店铺位置并启用上门回收。"
+    }
+  },
+  "native": {
+    "back": "返回",
+    "reload": "重新加载",
+    "openBrowser": "在浏览器中打开",
+    "offlineTitle": "无法连接",
+    "offlineBody": "请检查网络连接，然后重试。",
+    "updates": "检查应用更新",
+    "updateReady": "应用更新已准备好。",
+    "restart": "立即重启",
+    "later": "稍后",
+    "updateCurrent": "应用已是最新版本。",
+    "updateUnavailable": "此构建版本不支持应用更新。",
+    "updateFailed": "无法检查更新，请稍后重试。",
+    "locationTitle": "分享你的位置？",
+    "locationBody": "允许Luma.Green使用位置来寻找附近回收店。",
+    "allow": "允许",
+    "deny": "暂不",
+    "browserNotice": "此页面将在浏览器打开，可能需要重新登录。",
+    "cameraPermission": "使用相机拍摄废品或核验文件。",
+    "photoPermission": "选择用于废品估算和核验的照片。",
+    "cameraTitle": "相机"
+  },
+  "analytics": {
+    "title": "可选分析",
+    "description": "允许PostHog和Google Analytics统计公共页面访问。我们不记录表单、私密页面或会话回放。你的选择不会影响平台访问权限。",
+    "accept": "允许分析",
+    "decline": "保持关闭分析",
+    "settings": "分析设置",
+    "saved": "选择已保存在此设备上。",
+    "unavailable": "浏览器无法保存此选择，分析将保持关闭。",
+    "close": "关闭"
+  },
+  "showcase": {
+    "scene": "示意场景",
+    "context": {
+      "heading": "了解你的工作区",
+      "body": "示意页面展示各角色如何使用Luma.Green。可用步骤请参阅下方指南。"
+    },
+    "adminBody": "审核申请、管理权限并检查运营记录。",
+    "preview": {
+      "label": "应用示意预览 · 不含真实记录",
+      "roles": {
+        "household": {
+          "title": "你的家庭回收",
+          "first": "选择材料",
+          "second": "安排回收",
+          "third": "保存收据"
+        },
+        "kabadiwala": {
+          "title": "你的废品回收店",
+          "first": "审核回收请求",
+          "second": "记录重量",
+          "third": "管理分拣库存"
+        },
+        "yard": {
+          "title": "你的分拣场",
+          "first": "接收材料",
+          "second": "分拣库存",
+          "third": "准备出货批次"
+        },
+        "recycler": {
+          "title": "你的再生工作区",
+          "first": "追踪入库批次",
+          "second": "记录再生产出",
+          "third": "保存材料记录"
+        },
+        "manufacturer": {
+          "title": "你的材料采购",
+          "first": "寻找再生材料",
+          "second": "查看可用供货信息",
+          "third": "追踪交易"
+        },
+        "saathi": {
+          "title": "你的工作日",
+          "first": "寻找附近工作",
+          "second": "安排日程",
+          "third": "记录已完成工作"
+        },
+        "admin": {
+          "title": "平台管理",
+          "first": "审核申请",
+          "second": "检查提交文件",
+          "third": "审核运营记录"
+        }
+      }
+    }
+  },
+  "accountSecurity": {
+    "title": "账户安全",
+    "description": "在手机验证码之后增加身份验证器验证码。",
+    "enabled": "已开启",
+    "disabled": "已关闭",
+    "enable": "设置",
+    "disable": "关闭",
+    "recentSignIn": "更改安全设置前，请重新登录。",
+    "signInAgain": "重新登录",
+    "setupTitle": "连接身份验证器",
+    "setupDescription": "用身份验证器应用扫描此二维码，或输入密钥。请妥善保密。",
+    "setupKey": "设置密钥",
+    "backupTitle": "保存恢复代码",
+    "backupDescription": "请安全保存这些代码。每个代码在手机验证码之后仅可使用一次。",
+    "savedCodes": "已保存代码",
+    "regenerate": "获取新代码",
+    "regenerateDescription": "旧恢复代码将失效。离开此页面前，请保存新代码。",
+    "disableDescription": "登录将仅使用手机验证码。身份验证器和恢复代码将失效。",
+    "errorCode": "该代码无效，请重试。",
+    "errorRateLimited": "尝试次数过多，请稍后再试。",
+    "recoveryHelp": "丢失了身份验证器和恢复代码？请联系支持团队。仅凭手机验证码无法关闭双重验证。"
+  },
+  "notifications": {
+    "title": "通知",
+    "permissionBody": "在此设备上接收上门回收和申请的最新消息。",
+    "enable": "启用",
+    "denied": "通知已被阻止。请在设备或浏览器设置中更改。",
+    "unavailable": "此处暂不支持通知。",
+    "error": "无法启用通知，请重试。",
+    "lockscreenTitle": "Luma.Green 最新消息",
+    "lockscreenBody": "打开 Luma.Green 查看最新消息。",
+    "emptyTitle": "暂无更新",
+    "emptyBody": "回收预约和入驻申请的更新将在此显示。",
+    "markRead": "标为已读",
+    "markAllRead": "全部已读",
+    "unread": "未读",
+    "enabled": "已在此设备启用",
+    "disable": "关闭",
+    "disabled": "已在此设备关闭",
+    "deviceTitle": "此设备",
+    "inboxTitle": "我的更新",
+    "loadMore": "显示更多",
+    "events": {
+      "booking_confirmed": "预约已确认",
+      "booking_offer": "新的回收请求",
+      "booking_accepted": "回收请求已接受",
+      "booking_reassigned": "回收员已更换",
+      "application_received": "申请已收到",
+      "application_approved": "申请已批准",
+      "application_changes_requested": "申请需要修改",
+      "application_rejected": "申请未获批准"
+    }
+  },
+  "integrations": {
+    "title": "API 访问",
+    "lead": "将您的业务系统连接到 Luma.Green 中的记录。",
+    "connection": "连接系统",
+    "readOnly": "REST v1 可读取企业资料、材料、库存和交易，无法修改记录或处理付款。",
+    "baseUrl": "本网站的基础路径：",
+    "openApi": "打开 API 规范",
+    "ownerOnly": "只有处于活跃状态的企业所有者才能管理 API 密钥。",
+    "tokenTitle": "保存您的 API 密钥",
+    "tokenHint": "此密钥仅显示一次。请将其保存到系统的机密存储中。请勿将其放入浏览器应用、网址或消息中。关闭此页面后，密钥将不再显示。",
+    "tokenLabel": "新 API 密钥",
+    "expiresOn": "于 {date} 到期",
+    "copy": "复制密钥",
+    "dismiss": "完成",
+    "copyError": "复制失败。请选中密钥并手动复制。",
+    "copied": "密钥已复制。",
+    "createTitle": "创建密钥",
+    "keyHint": "每个系统使用一个独立密钥。仅选择所需权限。最多可保留五个有效密钥。",
+    "label": "系统名称",
+    "expiry": "有效期",
+    "days": "{count, plural, one {# 天} other {# 天}}",
+    "permissions": "读取权限",
+    "limit": "已有五个有效密钥。请先撤销一个不再使用的密钥，再创建新密钥。",
+    "createError": "无法创建密钥。请检查您的访问权限后重试。",
+    "creating": "正在创建…",
+    "create": "创建密钥",
+    "keysTitle": "您的密钥",
+    "empty": "暂无密钥。创建一个密钥以连接您的首个系统。",
+    "neverUsed": "尚未使用",
+    "lastUsed": "上次使用：{date}",
+    "revokeLabel": "撤销 {label}",
+    "revoke": "撤销",
+    "revokeTitle": "撤销此密钥？",
+    "revokeHint": "使用“{label}”的系统将立即失去访问权限。此密钥无法恢复。",
+    "revokeError": "无法撤销密钥。请重试。",
+    "revoking": "正在撤销…",
+    "newsHint": "配置新闻服务后，行业新闻将提供与您的材料类别相关的动态，并附上来源链接。",
+    "scopes": {
+      "organization": "企业资料",
+      "materials": "材料目录",
+      "inventory": "企业库存",
+      "trades": "企业交易",
+      "news": "行业新闻"
+    },
+    "status": {
+      "active": "有效",
+      "expired": "已过期",
+      "revoked": "已撤销"
+    }
+  }
+}

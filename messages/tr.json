@@ -1,0 +1,3482 @@
+{
+  "brand": {
+    "name": "Luma.Green",
+    "tagline": "Daha temiz yarınlar için harekette"
+  },
+  "meta": {
+    "title": "Luma.Green — Daha temiz yarınlar için harekette",
+    "description": "Luma.Green, Hindistan’ın hurda zincirini tek platformda birleştirir: haneler, hurdacılar, ayrıştırma sahaları, geri dönüşümcüler ve üreticiler. Adil fiyatlar, tartılı alımlar ve her teslimatın kaydı."
+  },
+  "theme": {
+    "label": "Görünüm",
+    "light": "Açık",
+    "dark": "Koyu",
+    "system": "Sistem"
+  },
+  "common": {
+    "loading": "Yükleniyor…",
+    "error": "Bir sorun oluştu",
+    "retry": "Tekrar dene",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "search": "Ara",
+    "language": "Dil",
+    "close": "Kapat"
+  },
+  "nav": {
+    "label": "Ana menü",
+    "home": "Ana sayfa",
+    "howItWorks": "Nasıl çalışır",
+    "contact": "İletişim",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "skipToContent": "İçeriğe geç",
+    "prices": "Fiyatlar",
+    "help": "Yardım",
+    "join": "Katıl",
+    "sellScrap": "Hurda sat"
+  },
+  "footer": {
+    "about": "Hindistan’ın hurda zinciri, evden fabrikaya tek platformda. Her teslimat tartılır, fiyatlandırılır ve kaydedilir.",
+    "navLabel": "Alt bilgi",
+    "useHeading": "Luma.Green kullanın",
+    "learnHeading": "Daha fazla bilgi",
+    "standards": "Sektör standartları",
+    "solar": "Çatı güneş enerjisi",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "sell": {
+      "title": "Satış",
+      "summary": "Haneler hurdalarını evden adil fiyatla satar; kapıda tartılır ve ödenir."
+    },
+    "trade": {
+      "title": "Ticaret",
+      "summary": "Planlanan emanet ödeme hizmeti, teslimata kadar ödemeyi tutacak. Mevcut demo yalnızca simüle edilmiş ödemeleri kaydeder."
+    },
+    "record": {
+      "title": "Kayıt",
+      "summary": "Her teslimat; mevzuata uyum, etki ve geri dönüşüm kanıtı için kaydedilir."
+    }
+  },
+  "principles": {
+    "heading": "Denetime hazır kayıtlar",
+    "intro": "Alıcı, düzenleyici kurum veya denetçi malzemenin nereden geldiğini sorabilir. Kayıt, yanıtın her zaman bulunmasını sağlayacak şekilde tasarlanır.",
+    "auditable": {
+      "title": "Her değişiklik kayıt altında",
+      "body": "Tartılan alım, ödenen işlem veya teslim edilen yük: her adım, mevcut girdileri değiştirilmeyen denetim günlüğüne yazılır."
+    },
+    "exact": {
+      "title": "Hassas sayılar",
+      "body": "Para tam paise, kütle tam gram olarak tutulur. Kantar ile hesaplaşma arasında yuvarlama hatası birikmez."
+    },
+    "frozen": {
+      "title": "Geçmiş değişmez",
+      "body": "Her makbuz, o günün fiyatını ve ağırlığını korur. Fiyatın sonradan değişmesi mevcut makbuzu değiştirmez."
+    }
+  },
+  "prices": {
+    "detail": {
+      "close": "Kapat",
+      "description": "{code} · {family} · Bengaluru",
+      "today": "Bugün",
+      "low": "30 günlük en düşük",
+      "high": "30 günlük en yüksek",
+      "floor": "Taban",
+      "noFloor": "Yok",
+      "noHistory": "Henüz fiyat geçmişi yok."
+    },
+    "error": {
+      "retry": "Tekrar dene",
+      "title": "Fiyatlar yüklenemedi",
+      "body": "Bağlantınızı kontrol edip tekrar deneyin."
+    },
+    "metaTitle": "Bengaluru’da bugünkü hurda fiyatları",
+    "metaDescription": "Bengaluru’da kg başına hurda fiyatları: kâğıt, plastik, metal, cam ve elektronik atık. Haftalık değişim, 30 günlük grafik ve dükkânın ödeyebileceği minimum tutar.",
+    "eyebrow": "Bengaluru",
+    "title": "Bugünün hurda fiyatları",
+    "lead": "Hurdanın bugünkü kilo fiyatı. Dükkânlar tabanın altına düşmeden fiyat belirler. Son 30 günü görmek için malzemeye dokunun.",
+    "demoNote": "Prototip için örnek fiyatlar; canlı piyasa oranları değildir.",
+    "date": "{date} fiyatları",
+    "floorHelp": "Taban: doğrulanmış dükkânın bir kilo için ödeyebileceği en düşük tutar.",
+    "perKg": "{price}/kg",
+    "floor": "Taban {price}",
+    "noPrice": "Henüz fiyat yok",
+    "columns": {
+      "material": "Malzeme",
+      "today": "Bugün",
+      "week": "Bu hafta",
+      "month": "30 gün",
+      "floor": "Taban"
+    },
+    "families": {
+      "paper": "Kâğıt",
+      "plastic": "Plastik",
+      "metal": "Metaller",
+      "glass": "Cam",
+      "ewaste": "Elektronik atık",
+      "other": "Diğer"
+    },
+    "factoryGate": {
+      "title": "Fabrika çıkışı",
+      "body": "Geri dönüşümcülerin üreticilere sattığı geri dönüştürülmüş malzemeler."
+    },
+    "change": {
+      "up": "Bu hafta {pct} arttı",
+      "down": "Bu hafta {pct} düştü",
+      "flat": "Bu hafta değişmedi",
+      "unknown": "Henüz yeterli geçmiş yok"
+    },
+    "chart": {
+      "label": "{material}: günlük kilo fiyatı. Günler arasında geçmek için ok tuşlarını kullanın.",
+      "point": "{date}: {price}",
+      "floor": "Taban {price}",
+      "table": "Sayıları göster",
+      "tableCaption": "{material}, günlük kilo fiyatı",
+      "date": "Tarih",
+      "price": "Kg başına fiyat"
+    },
+    "unavailable": {
+      "title": "Fiyatlar şu anda kullanılamıyor",
+      "body": "Fiyat panosu bağlanıyor. Yakında tekrar bakın."
+    },
+    "empty": {
+      "title": "Henüz fiyat yok",
+      "body": "Bugünün fiyatları yayımlandığında burada görünür."
+    },
+    "sellCta": {
+      "title": "Evde hurdanız var mı?",
+      "body": "Alım ayarlayın, kapıda ödeme alın.",
+      "action": "Hurdanızı satın"
+    }
+  },
+  "standards": {
+    "codes": {
+      "retry": "Tekrar dene",
+      "columns": {
+        "name": "Malzeme",
+        "code": "Kod",
+        "family": "Grup",
+        "stage": "Aşama"
+      },
+      "title": "Her malzemeye tek kod",
+      "nav": "Malzeme kodları",
+      "body": "Aynı hurdanın birçok yerel adı vardır. Açık kod, her malzemeye ortak bir ad verir. Böylece bir kilo gazete dükkânda, sahada ve fabrikada aynı şeyi ifade eder.",
+      "caption": "Luma.Green malzeme kodları",
+      "count": "{count, plural, one {# malzeme} other {# malzeme}}",
+      "download": "Kodları indir (CSV)",
+      "stages": {
+        "scrap": "Hurda",
+        "recycled": "Geri dönüştürülmüş"
+      },
+      "unavailable": "Kod listesi şu anda kullanılamıyor. Yakında tekrar bakın.",
+      "empty": "Henüz malzeme kodu yok.",
+      "error": "Kod listesi yüklenemedi."
+    },
+    "escrow": {
+      "body": "Planlanan emanet ödeme hizmeti, teslimata kadar ödemeyi tutacak. Mevcut demo yalnızca simüle edilmiş ödemeleri kaydeder.",
+      "title": "Planlanıyor: işletmeler arası emanet ödeme",
+      "nav": "Emanet ödeme",
+      "steps": {
+        "accepted": "Satıcı siparişi kabul eder",
+        "paid": "Alıcı emanet hesaba öder",
+        "dispatched": "Satıcı malları gönderir",
+        "released": "Alıcı doğrular ve para serbest bırakılır"
+      }
+    },
+    "verification": {
+      "body": "Ticarete başlamadan önce her işletmeyi ve Saathi çalışanını bir kişi inceler.",
+      "title": "Doğrulama",
+      "nav": "Doğrulama",
+      "business": "İşletmeler: varsa GST numarası, dükkân veya tesis fotoğrafları ve telefon görüşmesi.",
+      "consent": "Sahalar, geri dönüşümcüler ve fabrikalar: eyalet kirlilik kontrol kurulundan geçerli izin.",
+      "saathi": "Saathi çalışanları: fotoğraflı kimlik ve eşleşen özçekim."
+    },
+    "adopt": {
+      "cta": "Bizimle konuşun",
+      "title": "Standardı kullanın",
+      "body": "Kodlar ve kurallar açık ve ücretsizdir. Luma.Green’de veya dışında dükkânınızda, sahanızda ya da fabrikanızda kullanın; nasıl iyileştirebileceğimizi söyleyin."
+    },
+    "metaTitle": "Luma.Green standardı",
+    "metaDescription": "Planlanıyor: Hindistan’da adil hurda ticareti için açık malzeme kodları ve basit kurallar: sınıflandırma, tartım, makbuz, doğrulama ve emanet ödeme. Herkes ücretsiz kullanabilir.",
+    "eyebrow": "Açık standart",
+    "title": "Luma.Green standardı",
+    "lead": "Adil hurda ticareti için basit ve açık kurallar: her malzemeye tek kod, net sınıflandırma, dürüst tartım ve her teslimatta kayıt. Sektördeki herkes kullanabilir.",
+    "onThisPage": "Bu sayfada",
+    "grading": {
+      "title": "Sınıflandırma: kuru, ayrılmış, temiz",
+      "nav": "Sınıflandırma",
+      "body": "Adil fiyat için sınıf net olmalı. Tartımdan önce üç kontrol yapılır.",
+      "dry": {
+        "title": "Kuru",
+        "body": "Su hurda değildir. Islak kâğıt ve karton tartılmadan önce kurutulur."
+      },
+      "sorted": {
+        "title": "Ayrılmış",
+        "body": "Her torba veya balyada tek kod altında tek malzeme. Karışık yük MIXED koduyla kaydedilir."
+      },
+      "clean": {
+        "title": "Kirlilik yok",
+        "body": "Yiyecek, yağ, toprak veya taş yok. Malzemeye ait olmayan her şey önce çıkarılır."
+      }
+    },
+    "weighing": {
+      "title": "Adil tartım",
+      "nav": "Tartım",
+      "body": "Hurda anlaşmazlıklarının çoğu ağırlıkla ilgilidir. Bu kurallar doğru tartım sağlar.",
+      "stamped": {
+        "title": "Damgalı teraziler",
+        "body": "Yalnızca Yasal Metroloji birimince doğrulanmış ve damgalanmış terazide tartın."
+      },
+      "shown": {
+        "title": "Satıcı ağırlığı görür",
+        "body": "Ekran satıcıya dönüktür; fiyat anlaşılmadan önce ağırlık sesli söylenir."
+      },
+      "receipt": {
+        "title": "Dijital makbuz",
+        "body": "Ağırlık gramına kadar makbuza yazılır, kimsenin lehine yuvarlanmaz."
+      }
+    },
+    "custody": {
+      "title": "Makbuzlar ve teslimat zinciri",
+      "nav": "Makbuzlar",
+      "body": "Her teslimat makbuz alır. Makbuzlar birbirine bağlanır; geri dönüşümcüdeki balya kaynak dükkânlara kadar izlenebilir.",
+      "receiptTitle": "Her makbuzun gösterdikleri",
+      "fields": {
+        "number": "Makbuz numarası",
+        "time": "Tarih ve saat",
+        "seller": "Satıcı",
+        "buyer": "Alıcı",
+        "code": "Malzeme kodu",
+        "weight": "Gramına kadar ağırlık",
+        "rate": "Kg başına fiyat",
+        "total": "Toplam ve ödeme şekli"
+      }
+    }
+  },
+  "howItWorks": {
+    "metaTitle": "Nasıl çalışır",
+    "metaDescription": "Planlanıyor: Luma.Green’de hurdanın yolu; evden adil fiyatla satış, emanet ödemeyle zincir boyunca ticaret ve her teslimatın kaydı.",
+    "title": "Luma.Green nasıl çalışır",
+    "lead": "Hurda yeni bir ürüne dönüşmeden önce dört kez el değiştirir. Her adımda ne olduğunu ve Luma.Green’in ne kaydettiğini görün.",
+    "stepLabel": "Adım {number}",
+    "sell": {
+      "body": "Hane malzemelerini seçer, yakın dükkânların tekliflerini görür ve alım veya teslim ayarlar. Hurdacı her malzemeyi tartıp nakit veya UPI ile öder; iki taraf da makbuz alır.",
+      "point1": "Her dükkân kendi fiyatını belirler; yayımlanan tabanın altına inemez",
+      "point2": "Dükkân terazisinden ağırlıklar gram olarak kaydedilir",
+      "point3": "Hesap gerektirmeyen takip bağlantısı"
+    },
+    "trade": {
+      "body": "Demo: hurdacılar ayrıştırılmış stoku sahalara, sahalar balyaları geri dönüşümcülere, onlar da pul, granül ve külçeleri fabrikalara satar. Alıcının ödemesi teslimata kadar emanette bekler. Demo adımları gösterir ama gerçek para tutmaz veya aktarmaz.",
+      "point1": "Yalnızca doğrulanmış işletmeler ticaret yapabilir",
+      "point2": "Yük gönderilip teslim alındığında stok değişir",
+      "point3": "Ödenen her ticaret için numaralı makbuz"
+    },
+    "record": {
+      "body": "Her teslimatta kim, ne, ne kadar, ne zaman ve nerede bilgisi kaydedilir. Bu kayıtlar fiyat panosunu, stoku, uyum ve etki değerlerini besler; EPR ve geri dönüşüm standartları için kanıt oluşturur.",
+      "point1": "Kapıdan fabrikaya tek kayıt",
+      "point2": "Geri dönüşümcü ve fabrikalar için mali yıla göre EPR toplamları",
+      "point3": "Krediler için destekleyici kanıt; iki kez sayılmaz"
+    }
+  },
+  "contact": {
+    "metaTitle": "İletişim",
+    "metaDescription": "Bengaluru pilotuna katılmak için Luma.Green ekibiyle iletişime geçin.",
+    "title": "Bizimle konuşun",
+    "lead": "Bengaluru’da küçük bir hurdacı, saha, geri dönüşümcü ve fabrika grubuyla başlıyoruz. Kim olduğunuzu, ne alıp sattığınızı ve aylık yaklaşık hacminizi anlatın.",
+    "emailHeading": "Erken erişim ve genel sorular",
+    "securityHeading": "Güvenlik bildirimleri",
+    "securityBody": "Bir güvenlik açığı mı buldunuz? Herkese açık paylaşmak yerine özel olarak bildirin."
+  },
+  "help": {
+    "home": "Yardım",
+    "topics": {
+      "prices": "Fiyatlar",
+      "start": "Başlangıç",
+      "signIn": "Giriş yapma",
+      "pickups": "Alımlar",
+      "weighing": "Tartım ve makbuzlar",
+      "payments": "Ödemeler",
+      "trading": "Alım ve satım",
+      "documents": "Belgeler ve kontroller",
+      "safety": "Güvenlik",
+      "carbon": "Karbon ve EPR",
+      "disputes": "Sorunlar ve anlaşmazlıklar",
+      "privacy": "Gizlilik"
+    },
+    "contact": {
+      "topics": {
+        "prices": "Fiyatlar",
+        "account": "Giriş veya hesabım",
+        "pickup": "Alım",
+        "payments": "Ödemeler",
+        "documents": "Belgeler ve kontroller",
+        "trade": "İşletmeler arası ticaret",
+        "solar": "Güneş enerjisi",
+        "other": "Başka konu"
+      },
+      "phone": "Cep telefonu numarası",
+      "sending": "Gönderiliyor…",
+      "errors": {
+        "phoneInvalid": "10 haneli Hindistan cep telefonu numarası girin.",
+        "nameInvalid": "Adınızı yazın, 2–80 harf.",
+        "roleMissing": "Rolünüzü seçin.",
+        "topicMissing": "Konuyu seçin.",
+        "messageShort": "Biraz daha yazın: en az 5 harf.",
+        "messageLong": "1.000 harften kısa tutun.",
+        "generic": "Gönderemedik. Bağlantıyı kontrol edip tekrar deneyin.",
+        "rateLimited": "Bu numaradan çok fazla mesaj gönderildi. Lütfen bir saat sonra tekrar deneyin."
+      },
+      "name": "Adınız",
+      "sendAnother": "Başka mesaj gönder",
+      "choose": "Birini seçin",
+      "hoursTitle": "Açılış saatleri",
+      "metaTitle": "Desteğe ulaşın",
+      "metaDescription": "Luma.Green ekibine telefon, WhatsApp veya kısa mesajla sorun. Bir iş günü içinde yanıtlarız.",
+      "title": "Bize ulaşın",
+      "lead": "Her mesajı gerçek bir kişi okur. Kendi sözlerinizle sorun.",
+      "formHeading": "Mesaj gönder",
+      "phoneHint": "Bu numaradan arar veya SMS göndeririz.",
+      "role": "Siz",
+      "topic": "Konu nedir?",
+      "message": "Mesajınız",
+      "messageHint": "Ne oldu, ne zaman? Varsa rezervasyon veya ticaret numarasını ekleyin.",
+      "messageCount": "{max, number} içinden {count, number}",
+      "roles": {
+        "household": "Hane",
+        "kabadiwala": "Hurdacı",
+        "yard": "Saha",
+        "recycler": "Geri dönüşümcü",
+        "manufacturer": "Üretici",
+        "saathi": "Saathi",
+        "other": "Başka biri"
+      },
+      "submit": "Mesaj gönder",
+      "privacy": "Numaranızı yalnızca yanıtlamak için kullanırız.",
+      "sentTitle": "Mesaj gönderildi",
+      "sentBody": "Teşekkürler. Bir iş günü içinde arar veya SMS göndeririz.",
+      "backToHelp": "Yardıma dön",
+      "unavailableTitle": "Burada mesajlar kapalı",
+      "unavailableBody": "Telefon veya WhatsApp ile ulaşın. Yardımcı olmaktan mutluyuz.",
+      "otherWays": "Diğer iletişim yolları",
+      "callTitle": "Bizi arayın",
+      "whatsappTitle": "WhatsApp’tan yazın",
+      "replyTitle": "Yanıt süremiz",
+      "sampleNumbers": "Prototip: bunlar örnek numaralardır."
+    },
+    "guides": {
+      "escrow": {
+        "summary": "Planlanan emanet ödeme hizmeti, teslimata kadar ödemeyi tutacak. Mevcut demo yalnızca simüle edilmiş ödemeleri kaydeder.",
+        "steps": {
+          "pay": {
+            "title": "Alıcı emanet hesaba öder",
+            "body": "Para güvenle tutulur, henüz satıcıya verilmez. Satıcı yüklemeden önce parayı görebilir."
+          },
+          "request": {
+            "title": "Alıcı talep gönderir",
+            "body": "Malzeme, kilo ve kg fiyatını gösterir."
+          },
+          "accept": {
+            "title": "Satıcı kabul eder",
+            "body": "Henüz ödeme yok. Ayrıntı anlaşması için gerekirse arayın."
+          },
+          "dispatch": {
+            "title": "Satıcı yükü gönderir",
+            "body": "Gönderildi işaretleyin. Fatura ve gerekirse e-sevk belgesi yükle gider."
+          },
+          "confirm": {
+            "title": "Alıcı teslimatı doğrular",
+            "body": "Ağırlık ve kaliteyi kontrol edip doğrulayın. Para satıcıya bırakılır."
+          }
+        },
+        "title": "Demo rehberi: emanet ödeme ticareti nasıl korur"
+      },
+      "weighAndPay": {
+        "steps": {
+          "save": {
+            "title": "Kaydet",
+            "body": "Hane takip sayfasında makbuzu görür; tarttığınız stokunuza eklenir."
+          },
+          "zero": {
+            "title": "Teraziyi sıfırlayın",
+            "body": "Hanenin görebileceği yerde, boş terazide 0’dan başlayın."
+          },
+          "weigh": {
+            "title": "Her malzemeyi tartın",
+            "body": "Her birinin kilosunu girin. Yarım kilo için + ve − kullanın."
+          },
+          "total": {
+            "title": "Toplamı gösterin",
+            "body": "Uygulama sizin fiyatınızla hesaplar. Ekranı haneye gösterin."
+          },
+          "pay": {
+            "title": "Nakit veya UPI ödeyin",
+            "body": "Gitmeden ödeyin ve yöntemi seçin."
+          }
+        },
+        "title": "Tart ve öde",
+        "summary": "Bir dakikadan kısa sürede alım kaydedin."
+      },
+      "orderRecycled": {
+        "steps": {
+          "confirm": {
+            "title": "Teslimatı doğrula",
+            "body": "Geri dönüşümcüye ödemeyi serbest bırakmak için onaylayın."
+          },
+          "browse": {
+            "title": "Geri dönüşümcülerin stoklarını görün",
+            "body": "Geri dönüştürülmüş malzemeleri tür, mevcut kilogram miktarı ve fiyata göre görmek için Satın Al bölümünü açın."
+          },
+          "order": {
+            "title": "Sipariş gönderin",
+            "body": "Kilogram miktarını seçip gönderin. Geri dönüşümcü kabul eder veya reddeder."
+          },
+          "pay": {
+            "title": "Emanet hesaba ödeme yapın",
+            "body": "Kabul ettikten sonra ödeme yapın. Teslimatı onaylayana kadar para tutulur."
+          },
+          "receive": {
+            "title": "Yükü teslim alın",
+            "body": "Tesis girişinde tartın ve sınıfını kontrol edin."
+          }
+        },
+        "title": "Demo kılavuzu: Geri dönüştürülmüş malzeme siparişi verme",
+        "summary": "Geri dönüştürülmüş girdi bulun ve ihtiyacınız kadar sipariş verin."
+      },
+      "signIn": {
+        "title": "SMS koduyla giriş yapın",
+        "summary": "Şifre yok. Telefon numarası ve 6 haneli kod yeterli.",
+        "steps": {
+          "open": {
+            "title": "Giriş sayfasını açın",
+            "body": "luma.green/login adresine gidip dili seçin."
+          },
+          "number": {
+            "title": "Cep telefonu numaranızı girin",
+            "body": "Katıldığınız 10 haneli numarayı yazın."
+          },
+          "code": {
+            "title": "6 haneli kodu yazın",
+            "body": "SMS ile göndeririz. 5 dakika geçerlidir. 30 saniyede SMS gelmedi mi? Yeniden gönderin."
+          },
+          "stay": {
+            "title": "Girişiniz açık kalsın",
+            "body": "Telefonda 30 gün açık kalır. Kodu paylaşmayın; ekibimiz asla istemez."
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "İşte güvende kalın",
+        "summary": "Koruyucu ekipman, kaldırma, keskin hurda, bataryalar ve makineler: yaralanmaları önleyen temel bilgiler.",
+        "steps": {
+          "gear": {
+            "title": "Koruyucu ekipmanınızı giyin",
+            "body": "Her zaman eldiven ve kapalı ayakkabı. Tozda maske, kesme ve kırmada gözlük kullanın."
+          },
+          "lift": {
+            "title": "Bacaklarınızla kaldırın",
+            "body": "Dizlerinizi bükün, yükü yakın tutun, dönmeyin. 25 kg üzeri için yardım alın."
+          },
+          "sharp": {
+            "title": "Keskin kenarlara dikkat",
+            "body": "Cam, teneke ve tel kolay keser. Camı kutuda taşıyın, çuvalda gevşek bırakmayın."
+          },
+          "batteries": {
+            "title": "Batarya ve elektronik atığı ayırın",
+            "body": "Diğer hurdadan uzakta kuru ve serin tutun. Tel yakmayın, batarya veya ekran kırmayın."
+          },
+          "machines": {
+            "title": "Sıkışıklığı açmadan kapatın",
+            "body": "Önce balya veya parçalama makinesini durdurup fişini çekin. Çalışırken elinizi sokmayın."
+          },
+          "firstAid": {
+            "title": "İlk yardım yakın olsun",
+            "body": "Sahada ilk yardım kiti ve temiz su bulundurun. Derin kesik veya yanıkta hemen sağlık yardımı alın."
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "Katılın ve doğrulanın",
+        "summary": "İşletme açılmadan hazırlanacaklar ve ekibin kontrolleri.",
+        "steps": {
+          "start": {
+            "title": "luma.green/join ile başlayın",
+            "body": "Telefonla giriş yapıp Saha, Geri dönüşümcü veya Üretici seçin."
+          },
+          "details": {
+            "title": "İşletme bilgilerini ekleyin",
+            "body": "Ad, adres, harita noktası, malzemeler ve saatler. GST isteğe bağlı."
+          },
+          "consent": {
+            "title": "Kirlilik kurulu iznini ekleyin",
+            "body": "KSPCB veya eyalet kurulu izni: numara, bitiş tarihi ve PDF belge."
+          },
+          "photos": {
+            "title": "Makine fotoğrafı ekleyin",
+            "body": "Ana makineler ve sahanın en az iki fotoğrafı veya kısa videosu."
+          },
+          "review": {
+            "title": "12–24 saatte kontrol ederiz",
+            "body": "Her belgeyi bir kişi inceler. Eksik varsa ne düzeltileceğini açıkça söyleriz."
+          },
+          "live": {
+            "title": "Ticarete başlayın",
+            "body": "Onaydan sonra panel açılır, yakındaki alıcı ve satıcılar sizi bulur."
+          }
+        }
+      },
+      "paperwork": {
+        "title": "Faturalar ve e-sevk belgeleri",
+        "summary": "Her yükle giden belgeler.",
+        "steps": {
+          "invoice": {
+            "title": "Ticaretten faturayı alın",
+            "body": "Her ticaretin açılabilir, yazdırılabilir veya paylaşılabilir faturası vardır."
+          },
+          "ewayBill": {
+            "title": "50.000 rupi üzerinde e-sevk belgesi",
+            "body": "GST kuralları 50.000 rupiden değerli malların taşınmasında e-sevk belgesi ister. Bazı eyaletlerin sınırı farklıdır."
+          },
+          "vehicle": {
+            "title": "Belgeler araçla gider",
+            "body": "Fatura ve e-sevk belgesini araçta tutun, araç numarasının eşleştiğini kontrol edin."
+          },
+          "keep": {
+            "title": "Kayıtları saklayın",
+            "body": "Makbuz ve faturalar vergi kanununun istediği 6 yıl boyunca uygulamada kalır."
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "Demo rehberi: yük uyuşmadığında",
+        "summary": "Ağırlık veya kalite anlaştığınız gibi değilse yapılacaklar.",
+        "steps": {
+          "check": {
+            "title": "Doğrulamadan kontrol edin",
+            "body": "Yük gelince sürücü oradayken tartın ve kaliteyi inceleyin."
+          },
+          "hold": {
+            "title": "Eksik yükü doğrulamayın",
+            "body": "Doğrulama parayı bırakır. O zamana kadar emanette kalır."
+          },
+          "report": {
+            "title": "Fotoğraflarla bildirin",
+            "body": "Arayın veya Yardım, Bize ulaşın üzerinden yazın. Tartım fişi ve malzeme fotoğraflarını ekleyin."
+          },
+          "settle": {
+            "title": "İki tarafın anlaşmasına yardım ederiz",
+            "body": "İkinizin ağırlık, fotoğraf ve mesajlarını inceleriz. Çözülene kadar para güvende kalır."
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "Karbon kredisi ve EPR, basitçe",
+        "summary": "Kayıtlı geri dönüşüm neden önemli, marka ve geri dönüşümcüler ne bilmeli.",
+        "steps": {
+          "record": {
+            "title": "Her kilo kayıtlı",
+            "body": "Luma.Green’de her tartım ve ticarette malzeme, ağırlık, tarih ve yer kaydedilir."
+          },
+          "carbon": {
+            "title": "Geri dönüşüm karbon tasarrufu sağlar",
+            "body": "Geri dönüştürülmüş malzemeyle üretim daha az enerji kullanır. Bu tasarruf sonra karbon kredisine dönüşebilir."
+          },
+          "epr": {
+            "title": "EPR: üreticiler geri almalı",
+            "body": "Genişletilmiş Üretici Sorumluluğu, ambalaj, elektronik veya batarya satan markaların atığın bir kısmını geri dönüştürtmesini gerektirir."
+          },
+          "certificates": {
+            "title": "Geri dönüşümcüler EPR sertifikası verir",
+            "body": "Kayıtlı geri dönüşümcüler işledikleri miktar için CPCB portalında sertifika verir. Markalar hedeflerini karşılamak için alır."
+          },
+          "proof": {
+            "title": "Düzenli kayıt kanıtınızdır",
+            "body": "Evden fabrikaya izimiz malzemenin kaynağını gösterir. Luma.Green karbon kredileri daha sonra gelecek."
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "İlk alımınızı ayarlayın",
+        "summary": "Fotoğraftan rezervasyona yaklaşık iki dakika. Hesap gerekmez.",
+        "steps": {
+          "photo": {
+            "title": "Hurdanın fotoğrafını çekin",
+            "body": "İsteğe bağlı: hurdanızın bir fotoğrafını ekleyin, önerilen kalemleri kontrol edin."
+          },
+          "estimate": {
+            "title": "Tahmini kontrol edin",
+            "body": "Gördüklerimizi ve yaklaşık kiloyu gösteririz. Yanlış görünüyorsa kiloyu değiştirin."
+          },
+          "choose": {
+            "title": "Alım veya teslim seçin",
+            "body": "Yakındaki doğrulanmış hurdacıları saatleriyle görün, en yakını önce."
+          },
+          "slot": {
+            "title": "Saat seçin",
+            "body": "Zaman aralığı seçip adres ve harita noktasını kontrol edin."
+          },
+          "code": {
+            "title": "Numaranızı doğrulayın",
+            "body": "SMS ile gelen 6 haneli kodu yazın. Hepsi bu, şifre yok."
+          },
+          "track": {
+            "title": "Takip bağlantınızı alın",
+            "body": "Alımı izlemek için SMS bağlantısı göndeririz."
+          }
+        }
+      },
+      "getReady": {
+        "title": "Hurdanızı hazırlayın",
+        "summary": "Ayrılmış kuru hurda daha hızlı tartılır ve daha değerli satılır.",
+        "steps": {
+          "paper": {
+            "title": "Kâğıdı kuru ve düz tutun",
+            "body": "Gazeteleri istifleyin, kutuları düzleştirin. Islak kâğıt daha az eder."
+          },
+          "bottles": {
+            "title": "Şişeleri boşaltıp ezin",
+            "body": "Sıvıyı dökün, yer kazanmak için plastik şişeyi düzleştirin."
+          },
+          "metal": {
+            "title": "Metali ayrı tutun",
+            "body": "Teneke, çelik ve alüminyumu ayrı torbaya koyun."
+          },
+          "ewaste": {
+            "title": "Cihaz ve bataryaları ayırın",
+            "body": "Eski telefon, şarj cihazı ve bataryaları ısıdan uzak ayrı kutuya koyun."
+          },
+          "door": {
+            "title": "Torbaları kapıya yakın koyun",
+            "body": "Alımı hızlandırır. Kuru yerde tutun."
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "Alımı izleyin",
+        "summary": "Ne zaman, kim ve ne kadar; tek sayfada.",
+        "steps": {
+          "open": {
+            "title": "SMS bağlantısını açın",
+            "body": "Her telefonda çalışır. Giriş gerekmez."
+          },
+          "when": {
+            "title": "Zamanı görün",
+            "body": "Tarih ve zaman aralığınız. Değişirse haber veririz."
+          },
+          "who": {
+            "title": "Kimin geldiğini görün",
+            "body": "Ad, dükkân ve doğrulama rozeti. Konuşmak için Ara’ya dokunun."
+          },
+          "after": {
+            "title": "Aldığınızı görün",
+            "body": "Alımdan sonra sayfa ödemeyi ve geri dönüşüm puanlarını gösterir."
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "Kapıda tartım ve ödeme",
+        "summary": "Her kilonun sayıldığından nasıl emin olursunuz.",
+        "steps": {
+          "zero": {
+            "title": "Terazide sıfırı kontrol edin",
+            "body": "Yüklemeden önce boş terazi 0 göstermeli."
+          },
+          "each": {
+            "title": "Her malzeme ayrı tartılır",
+            "body": "Kâğıt, plastik ve metalin fiyatları farklıdır; ayrı tartılır."
+          },
+          "amount": {
+            "title": "Uygulama tutarı hesaplar",
+            "body": "Kilo çarpı hurdacının kg fiyatı. Ödenmeden toplamı görürsünüz."
+          },
+          "pay": {
+            "title": "Hemen ödeme alın",
+            "body": "Gitmeden önce nakit veya UPI. Luma.Green paranızı tutmaz."
+          },
+          "receipt": {
+            "title": "Makbuzu kontrol edin",
+            "body": "Takip sayfası her malzemeyi, ağırlığı, fiyatı ve toplamı gösterir."
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "Fiyatlar nasıl belirlenir",
+        "summary": "Tahminin neden aralık olduğu ve son tutarın hesabı.",
+        "steps": {
+          "estimate": {
+            "title": "Tahmin şehir fiyatını kullanır",
+            "body": "Hurdacı seçmeden standart Bengaluru fiyatlarını kullanırız, bu yüzden aralık görürsünüz."
+          },
+          "own": {
+            "title": "Her hurdacı fiyat belirler",
+            "body": "Seçtikten sonra her malzeme için kendi fiyatını görürsünüz."
+          },
+          "floor": {
+            "title": "Asla minimumun altında değil",
+            "body": "Luma.Green her malzemeye minimum fiyat koyar. Hiçbir hurdacı daha az ödeyemez."
+          },
+          "final": {
+            "title": "Tutarı ağırlık belirler",
+            "body": "Kapıda tartılan malzemeye, seçilen hurdacının fiyatıyla ödeme alırsınız."
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "Rezervasyonu iptal etme veya değiştirme",
+        "summary": "Planlar değişebilir. Yapılacaklar burada.",
+        "steps": {
+          "open": {
+            "title": "Takip bağlantısını açın",
+            "body": "Rezervasyonla ilgili her şey orada."
+          },
+          "cancel": {
+            "title": "Ücretsiz iptal edin",
+            "body": "Hurdacı yola çıkana kadar iptal edebilirsiniz. Ücret yok."
+          },
+          "declined": {
+            "title": "Hurdacı gelemezse",
+            "body": "Alımı sonraki en yakın dükkâna sunar, SMS ile bildiririz."
+          },
+          "help": {
+            "title": "Başka saat mi gerekiyor?",
+            "body": "İptal edip yeniden ayarlayın veya arayın, yardımcı olalım."
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "Eski telefonlar, bataryalar ve elektronik atık",
+        "summary": "Evde güvenli saklama ve güvenli teslim.",
+        "steps": {
+          "apart": {
+            "title": "Kuru bir kutuda tutun",
+            "body": "Ocak, su ve güneşten uzak; çocukların erişemeyeceği yerde."
+          },
+          "tape": {
+            "title": "Batarya uçlarını bantlayın",
+            "body": "Kıvılcım çıkmaması için metal uçları bantlayın."
+          },
+          "swollen": {
+            "title": "Şişmiş bataryayı sıkmayın",
+            "body": "Alev alabilir. Metal kutuda ayrı tutun, hurdacıya söyleyin."
+          },
+          "handover": {
+            "title": "Cihazları bütün teslim edin",
+            "body": "Telefon kırmayın, parça çıkarmayın. Ayırtırken elektronik atık olduğunu söyleyin."
+          }
+        }
+      },
+      "registerShop": {
+        "title": "Dükkânınızı kaydedin",
+        "summary": "Doldurulacaklar ve kontrol süresi.",
+        "steps": {
+          "start": {
+            "title": "luma.green/join ile başlayın",
+            "body": "Telefonla giriş yapıp Hurdacı seçin."
+          },
+          "shop": {
+            "title": "Dükkân ekleyin",
+            "body": "Adınız, dükkân adı, harita noktasıyla adres ve saatler."
+          },
+          "pickups": {
+            "title": "Alım yapıp yapmadığınızı söyleyin",
+            "body": "El arabası, bisiklet, üç tekerlekli veya küçük kamyon seçin. Araç yok mu? Haneler getirebilir."
+          },
+          "gst": {
+            "title": "GST isteğe bağlı",
+            "body": "Varsa GST numarasını ekleyin. Yoksa belirtin."
+          },
+          "review": {
+            "title": "12–24 saatte kontrol ederiz",
+            "body": "Bir kişi bilgileri kontrol eder. Onaylanınca panel açılır."
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "Alım taleplerini yanıtlayın",
+        "summary": "Yakındaki hanelerden yeni alımlar ve yönetimi.",
+        "steps": {
+          "see": {
+            "title": "Yeni talepleri görün",
+            "body": "Bölge, saat, malzeme, yaklaşık kilo ve ödeyeceğiniz tutar görünür."
+          },
+          "answer": {
+            "title": "Kabul veya reddet",
+            "body": "Almak için kabul edin. Reddederseniz sonraki en yakın hurdacıya gider; haneye kimin reddettiği söylenmez."
+          },
+          "auto": {
+            "title": "Otomatik kabulü açın",
+            "body": "Açıkken bölgenizdeki her talep gece bile hemen kabul edilir."
+          },
+          "go": {
+            "title": "Arayın ve gidin",
+            "body": "Kabulden sonra telefon ve tam adres görünür. Yolda olduğunuzu söylemek için arayın."
+          }
+        }
+      },
+      "setPrices": {
+        "title": "Fiyatlarınızı belirleyin",
+        "summary": "Minimumun üstünde ödeyeceğinizi siz seçersiniz.",
+        "steps": {
+          "open": {
+            "title": "Fiyatlarım’ı açın",
+            "body": "Her malzemenin yanında minimum fiyat görünür."
+          },
+          "enter": {
+            "title": "Kg fiyatınızı girin",
+            "body": "Her malzemeye haneye ödemek istediğiniz tutarı yazın."
+          },
+          "floor": {
+            "title": "Minimumun üstünde kalın",
+            "body": "Alt fiyat kaydedilmez. Minimum yükselirse sizin fiyatınız da yükselir, haber veririz."
+          },
+          "blank": {
+            "title": "Bir fiyatı boş bırakın",
+            "body": "Fiyat belirlemezseniz standart şehir fiyatı kullanılır."
+          },
+          "history": {
+            "title": "Eski makbuzlar değişmez",
+            "body": "Yeni fiyat yalnızca yeni alımlara uygulanır. Eski makbuz ödenen fiyatı korur."
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "Demo rehberi: stoku ayrıştırıp sahalara satmak",
+        "summary": "Birçok küçük alımdan sahanın istediği yüke.",
+        "steps": {
+          "grows": {
+            "title": "Stok kendiliğinden dolar",
+            "body": "Tarttığınız her alım Stokum’a eklenir."
+          },
+          "sort": {
+            "title": "Ayrıştırmayı kaydedin",
+            "body": "Karışık hurdayı gerçek malzemelerine ayırın. Örneğin karışık kâğıdı gazete, karton ve atığa."
+          },
+          "show": {
+            "title": "Stoku sahalara gösterin",
+            "body": "Yakındaki sahaların görmesi için Sahalara göster’i açın."
+          },
+          "sell": {
+            "title": "Sahanın talebini kabul edin",
+            "body": "Kilo ve fiyatı kontrol edip kabul edin. Saha toplamadan önce emanete öder."
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "Hane anlaşmazsa",
+        "summary": "Sakin, açık ve adil olun.",
+        "steps": {
+          "reweigh": {
+            "title": "Birlikte yeniden tartın",
+            "body": "Teraziyi sıfırlayın ve ürünü görebilecekleri yerde yeniden tartın."
+          },
+          "show": {
+            "title": "Fiyatınızı gösterin",
+            "body": "Telefonunuzda kilogram fiyatını ve toplam tutarı gösterin."
+          },
+          "noForce": {
+            "title": "Satışa zorlamayın",
+            "body": "Hâlâ kabul etmiyorlarsa o malzemeyi satmak zorunda değiller. Makbuza eklemeyin."
+          },
+          "call": {
+            "title": "Çözemiyorsanız bizi arayın",
+            "body": "İkinizle de görüşebiliriz. Her makbuzda ağırlıklar ve fiyatlar gösterilir."
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "Demo kılavuzu: Hurdacılardan stok satın alma",
+        "summary": "Yakınınızdaki ayrıştırılmış hurdaları bulun ve teslim alma rezervasyonu yapın.",
+        "steps": {
+          "browse": {
+            "title": "Satın Al bölümünü açın",
+            "body": "Yakınınızdaki stokları malzeme ve mesafeye göre, kilo ve fiyat bilgileriyle görün."
+          },
+          "request": {
+            "title": "Talep gönderin",
+            "body": "Kaç kilo istediğinizi seçin. Göndermeden önce kilogram fiyatı gösterilir."
+          },
+          "pay": {
+            "title": "Emanet hesaba ödeme yapın",
+            "body": "Hurdacı kabul ettiğinde ödeme yapın. Siz onaylayana kadar para tutulur."
+          },
+          "collect": {
+            "title": "Teslim alın ve tartın",
+            "body": "Yükü teslim alın ve sahanızda tartın."
+          },
+          "confirm": {
+            "title": "Ödemeyi serbest bırakmak için onaylayın",
+            "body": "Ağırlık ve kalite uygunsa onaylayın. Hurdacıya ödeme yapılır."
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "Demo kılavuzu: Ayrıştırılmış balyaları geri dönüşümcülere satma",
+        "summary": "Elinizdeki malzemeyi bir kez listeleyin; geri dönüşümcüler size ulaşsın.",
+        "steps": {
+          "list": {
+            "title": "Elinizdeki malzemeyi listeleyin",
+            "body": "Sat bölümünde malzemeyi, kilogram miktarını ve kilogram fiyatınızı ekleyin."
+          },
+          "requests": {
+            "title": "Talep alın",
+            "body": "Bu malzemeyi satın alan geri dönüşümcüler ilanınızı görüp talep gönderebilir."
+          },
+          "accept": {
+            "title": "Kabul edin, ardından ödemeyi bekleyin",
+            "body": "Yalnızca alıcının parası emanet hesaba geçtikten sonra yükleyin."
+          },
+          "dispatch": {
+            "title": "Yükü gönderin",
+            "body": "Faturayla birlikte gönderildi olarak işaretleyin. ₹50.000 üzerindeki yükler için e-irsaliye de ekleyin."
+          },
+          "paid": {
+            "title": "Ödemenizi alın",
+            "body": "Geri dönüşümcü teslimatı onayladığında para size aktarılır."
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "Demo kılavuzu: Sahalardan ayrıştırılmış hurda satın alma",
+        "summary": "Üretim hattınız için düzenli, sınıflandırılmış girdi.",
+        "steps": {
+          "browse": {
+            "title": "Yakınınızdaki balyaları bulun",
+            "body": "Saha ilanlarını malzeme ve mesafeye göre görmek için Satın Al bölümünü açın."
+          },
+          "request": {
+            "title": "Yük talep edin",
+            "body": "Kilogram miktarını seçin. Göndermeden önce kilogram fiyatı gösterilir."
+          },
+          "pay": {
+            "title": "Emanet hesaba ödeme yapın",
+            "body": "Saha kabul ettiğinde ödeme yapın. Teslimatı onaylayana kadar para tutulur."
+          },
+          "confirm": {
+            "title": "Tartın, kontrol edin, onaylayın",
+            "body": "Onaylamadan önce yükü tesis girişinde tartın ve sınıfını kontrol edin."
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "Demo kılavuzu: Üreticilere geri dönüştürülmüş malzeme satma",
+        "summary": "Fabrikaların sipariş verebilmesi için hattınızın ürettiği malzemeyi gösterin.",
+        "steps": {
+          "list": {
+            "title": "Üretiminizi listeleyin",
+            "body": "Pul, granül, balya veya külçeleri mevcut kilogram miktarı ve kilogram fiyatınızla ekleyin."
+          },
+          "orders": {
+            "title": "Sipariş alın",
+            "body": "Üreticiler ilanınızı görür ve ihtiyaç duydukları kilogram miktarı için talep gönderir."
+          },
+          "load": {
+            "title": "Ödemeden sonra yükleyin",
+            "body": "Kabul edin; ödeme emanet hesaba geçtikten sonra yükü gönderin."
+          },
+          "paid": {
+            "title": "Teslimatta ödeme alın",
+            "body": "Üretici onayladığında para serbest bırakılır."
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "Demo kılavuzu: Teslimat kontrolü",
+        "summary": "Onaylamadan ve ödemeyi serbest bırakmadan önce hızlı bir kontrol.",
+        "steps": {
+          "papers": {
+            "title": "Belgeleri eşleştirin",
+            "body": "Fatura ve e-irsaliye, siparişinizle ve araçla eşleşmelidir."
+          },
+          "weigh": {
+            "title": "Kendiniz tartın",
+            "body": "Kamyonu dolu ve boş tartın. Aradaki fark teslim aldığınız miktardır."
+          },
+          "look": {
+            "title": "Malzemeyi inceleyin",
+            "body": "Renk, nem ve kir durumunu siparişinizle karşılaştırın."
+          },
+          "decide": {
+            "title": "Onaylayın veya bildirin",
+            "body": "Her şey uygun mu? Onaylayın. Uygun değil mi? Fotoğraflarla bildirin; para emanet hesapta kalır."
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "Saathi olun",
+        "summary": "Fotoğraflı kimliğiniz ve özçekiminizle katılın, yakınınızdaki işleri almaya başlayın.",
+        "steps": {
+          "start": {
+            "title": "luma.green/join adresinden başlayın",
+            "body": "Cep telefonu numaranızla giriş yapın ve Saathi rolünü seçin."
+          },
+          "work": {
+            "title": "İşinizi seçin",
+            "body": "Evden alımlar, hurdacı dükkânında yardım, sahada ayrıştırma veya geri dönüşüm tesisi ya da fabrikada vardiyalar."
+          },
+          "area": {
+            "title": "Bölgenizi ve saatlerinizi belirleyin",
+            "body": "Nerede yaşadığınız, ne kadar uzağa gideceğiniz (2, 5 veya 10 km) ve ne zaman müsait olduğunuz."
+          },
+          "id": {
+            "title": "Fotoğraflı kimlik ve özçekim ekleyin",
+            "body": "Seçmen kimliği, sürücü belgesi, PAN veya maskelenmiş Aadhaar. Asla tam Aadhaar numarası eklemeyin."
+          },
+          "review": {
+            "title": "12–24 saat içinde kontrol ederiz",
+            "body": "Bir görevli özçekiminizi kimliğinizle karşılaştırır. Ardından iş alabilirsiniz."
+          }
+        }
+      },
+      "findJobs": {
+        "title": "İş bulun ve alın",
+        "summary": "İstediğiniz zaman yakınınızda çalışın.",
+        "steps": {
+          "home": {
+            "title": "Ana Sayfada işleri görün",
+            "body": "Her işte yer, gün, saat ve ücret gösterilir."
+          },
+          "accept": {
+            "title": "İşi kabul edin",
+            "body": "Kabul Et’e dokunun. İşletme geleceğinizi görebilir."
+          },
+          "arrive": {
+            "title": "Zamanında gidin",
+            "body": "Geç kalacaksanız önceden arayın. Zamanında gitmek daha çok iş almanızı sağlar."
+          },
+          "done": {
+            "title": "Tamamlandı olarak işaretleyin",
+            "body": "İş bittikten sonra kazançlarınızda görünmesi için tamamlandı olarak işaretleyin."
+          }
+        }
+      },
+      "homePickup": {
+        "title": "Evden alım yapın",
+        "summary": "Her kapıda güler yüzlü, hızlı ve adil hizmet.",
+        "steps": {
+          "call": {
+            "title": "Gitmeden önce arayın",
+            "body": "Adınızı, hangi dükkândan geldiğinizi ve ne zaman varacağınızı söyleyin."
+          },
+          "greet": {
+            "title": "Kendinizi tanıtın",
+            "body": "Kapıda adınızı ve dükkânın adını söyleyin. İçeri davet edilmeyi bekleyin."
+          },
+          "weigh": {
+            "title": "Görebilecekleri yerde tartın",
+            "body": "Teraziyi sıfırlayın ve her malzemeyi önlerinde tartın."
+          },
+          "record": {
+            "title": "Ödeyin ve kaydedin",
+            "body": "Dükkânın istediği şekilde ödeme yapın ve ayrılmadan önce ödemeyi kaydedin."
+          },
+          "deliver": {
+            "title": "Dükkâna getirin",
+            "body": "Hurdayı doğrudan dükkâna götürüp teslim edin."
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "Ödemenizi nasıl alırsınız",
+        "summary": "Önce ücrette anlaşın, ardından Kazançlar bölümünden kontrol edin.",
+        "steps": {
+          "agree": {
+            "title": "Önce ücrette anlaşın",
+            "body": "Ücretinizi çalıştığınız dükkân veya işletme öder. İş başlamadan önce tutarda anlaşın."
+          },
+          "earnings": {
+            "title": "Kazançları kontrol edin",
+            "body": "Tamamladığınız işleri ve her birinin ücretini görün."
+          },
+          "upi": {
+            "title": "UPI ile ödeme isteyin",
+            "body": "UPI kayıt oluşturur; böylece aldığınız tutar konusunda şüphe kalmaz."
+          },
+          "problem": {
+            "title": "Ödeme yapılmadı mı?",
+            "body": "Önce işletmeyle konuşun. Sorun çözülmedi mi? Bizi arayın."
+          }
+        }
+      }
+    },
+    "roles": {
+      "household": {
+        "name": "Haneler",
+        "who": "Evden hurda satmak",
+        "title": "Haneler için yardım",
+        "lead": "Alım ayarlayın, adil tartım ve kapıda ödeme alın. Hesap gerekmez."
+      },
+      "kabadiwala": {
+        "name": "Hurdacılar",
+        "who": "Hurda dükkânı işletmek",
+        "title": "Hurdacılar için yardım",
+        "lead": "Alım alın, bir dakikada tartıp ödeyin, fiyat belirleyin ve sahalara satın."
+      },
+      "yard": {
+        "name": "Ayrıştırma sahaları",
+        "who": "Hurdacılardan alıp daha fazla ayrıştırmak",
+        "title": "Sahalar için yardım",
+        "lead": "Demo: yakında stok bulun, balyaları geri dönüşümcülere satın ve emanet ödemeyle güvenli ticaret yapın."
+      },
+      "recycler": {
+        "name": "Geri dönüşümcüler",
+        "who": "Hurdayı ham maddeye dönüştürmek",
+        "title": "Geri dönüşümcüler için yardım",
+        "lead": "Sahalardan sınıflandırılmış hurda alın, ürününüzü fabrikalara satın ve EPR kayıtlarını düzenli tutun."
+      },
+      "manufacturer": {
+        "name": "Üreticiler",
+        "who": "Geri dönüştürülmüş malzemeyle üretmek",
+        "title": "Üreticiler için yardım",
+        "lead": "Malzeme sipariş edin, teslimatları kontrol edin ve EPR kayıtlarını tutun."
+      },
+      "saathi": {
+        "name": "Saathi çalışanları",
+        "who": "Alım ve kısa vardiya işleri",
+        "title": "Saathi çalışanları için yardım",
+        "lead": "Fotoğraflı kimlikle katılın, yakın iş bulun, güvenle çalışın ve ücret alın."
+      }
+    },
+    "role": {
+      "onThisPage": "Bu sayfada",
+      "guidesHeading": "Rehberler",
+      "guidesLead": "Resimlerle adım adım.",
+      "steps": "{count, plural, one {# adım} other {# adım}}",
+      "faqsHeading": "Sık sorulanlar",
+      "faqsLead": "Yanıt için soruya dokunun.",
+      "tutorialsHeading": "Videolar",
+      "tutorialsLead": "Dilinizde kısa videolar.",
+      "trainingHeading": "Eğitim",
+      "trainingLead": "Kısa dersler. Bitirdikçe tamamlandı işaretleyin.",
+      "otherRoles": "Başka biri için yardım"
+    },
+    "contactStrip": {
+      "call": "Ara",
+      "title": "Hâlâ yardım gerekiyor mu?",
+      "body": "Bir kişiyle konuşun. Bir iş günü içinde yanıtlarız.",
+      "whatsapp": "WhatsApp",
+      "write": "Bize yazın"
+    },
+    "guide": {
+      "stepsHeading": "Adımlar",
+      "metaTitle": "{guide} · {role}",
+      "stepLabel": "{total} adımdan {number}.",
+      "relatedHeading": "İlgili sorular",
+      "nextHeading": "Sonraki rehber"
+    },
+    "metaTitle": "Yardım merkezi",
+    "metaDescription": "Luma.Green’de haneler, hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için basit rehberler, yanıtlar ve eğitim.",
+    "eyebrow": "Yardım merkezi",
+    "title": "Nasıl yardımcı olabiliriz?",
+    "lead": "Luma.Green’de herkes için kısa rehberler, sade yanıtlar ve hızlı eğitim.",
+    "breadcrumb": "Buradasınız",
+    "hours": "Pazartesi–cumartesi, 09.00–19.00",
+    "replyTime": "Bir iş günü içinde yanıtlarız.",
+    "search": {
+      "label": "Yardımda ara",
+      "placeholder": "Örneğin: SMS kodu veya emanet ödeme",
+      "clear": "Aramayı temizle",
+      "summary": "“{query}” için {count, plural, =0 {yanıt yok} one {# yanıt} other {# yanıt}}",
+      "topicSummary": "{topic} hakkında {count, plural, =0 {yanıt yok} one {# yanıt} other {# yanıt}}",
+      "emptyTitle": "Sonuç bulunamadı",
+      "emptyBody": "Kısa bir kelime deneyin, konu seçin veya bize doğrudan sorun.",
+      "ask": "Bize sorun",
+      "guide": "Rehber",
+      "question": "Soru",
+      "forRoles": "{roles} için",
+      "showMore": "{count} yanıtın tümünü göster"
+    },
+    "topicsHeading": "Konuya göre göz at",
+    "rolesHeading": "Size yardım",
+    "rolesLead": "Rehber, soru ve eğitimlerinizi görmek için rol seçin.",
+    "guideCount": "{count, plural, one {# rehber} other {# rehber}}",
+    "tutorial": {
+      "comingSoon": "Video yakında",
+      "minutes": "{minutes} dk"
+    },
+    "training": {
+      "progressLabel": "Eğitiminiz",
+      "progress": "{total} dersten {done} tamamlandı",
+      "minutes": "{minutes} dk",
+      "markDone": "Tamamlandı işaretle",
+      "openGuide": "Rehberi aç",
+      "badgeTitle": "Eğitim tamamlandı",
+      "badgeBody": "Tebrikler! Tüm dersleri bitirdiniz. Hatırlamak için istediğiniz zaman dönün.",
+      "reset": "Yeniden başla",
+      "savedHere": "İlerlemeniz bu cihazda kaydedilir."
+    },
+    "faqs": {
+      "noCode": {
+        "q": "SMS kodunu almadım",
+        "a": "30 saniye bekleyip Yeniden Gönder’e dokunun. Numaranın doğru olduğundan ve telefonunuzun çektiğinden emin olun. Kod 5 dakika geçerlidir."
+      },
+      "newPhone": {
+        "q": "Yeni bir telefonum veya numaram var",
+        "a": "Telefon yeni, numara aynıysa tekrar giriş yapın. Numaranız değiştiyse bizi arayın; kimliğinizi kontrol ettikten sonra hesabınızı taşırız."
+      },
+      "deleteData": {
+        "q": "Verilerimi görebilir veya silebilir miyim?",
+        "a": "Evet. İletişim bölümünden bize yazın; talebinizi 30 gün içinde yerine getiririz. Yalnızca makbuzlar gibi yasanın gerektirdiği kayıtları saklarız."
+      },
+      "verifyTime": {
+        "q": "Kontrol ne kadar sürer?",
+        "a": "Başvurunuzu gönderdikten sonra genellikle 12–24 saat. Başka bir şey gerekirse ne gerektiğini açıkça söyleriz."
+      },
+      "noAccount": {
+        "q": "Hesap açmam gerekir mi?",
+        "a": "Hayır. Rezervasyon sırasında cep telefonu numaranızı SMS koduyla doğrularsınız. Hatırlamanız gereken bir parola yoktur."
+      },
+      "whatCanISell": {
+        "q": "Neler satabilirim?",
+        "a": "Kâğıt ve karton, plastik şişe ve kaplar, metal, cam ve eski elektronik eşyalar. Emin değil misiniz? Fotoğraf çekin; tahmin size bilgi verir."
+      },
+      "howPriceWorks": {
+        "q": "Alacağım tutar nasıl hesaplanır?",
+        "a": "Her malzemenin ağırlığı, hurdacının kilogram fiyatıyla çarpılır. Fiyatları Luma.Green’in belirlediği asgari fiyatın altında olamaz."
+      },
+      "howPaid": {
+        "q": "Ödememi nasıl alırım?",
+        "a": "Hurdacı ayrılmadan önce kapınızda nakit veya UPI ile. Luma.Green ödemeyi kaydeder ama paranızı asla tutmaz."
+      },
+      "recyclePoints": {
+        "q": "Geri dönüşüm puanları nedir?",
+        "a": "Geri dönüşüm için bir teşekkür: Aldığınız her ₹10 için 1 puan. Puanların kullanım alanları yakında açıklanacak."
+      },
+      "weightWrong": {
+        "q": "Ağırlık yanlış görünüyorsa ne yapmalıyım?",
+        "a": "Teraziyi sıfırlayıp önünüzde tekrar tartmalarını isteyin. Hâlâ yanlış mı? Bizi arayın: Makbuzda tüm ağırlıklar bulunur."
+      },
+      "canCancel": {
+        "q": "İptal edebilir miyim?",
+        "a": "Evet, hurdacı yola çıkana kadar ücretsiz. Takip bağlantınızı açıp İptal Et’e dokunun."
+      },
+      "kabadiwalasChecked": {
+        "q": "Hurdacılar kontrol ediliyor mu?",
+        "a": "Evet. Ekibimiz her dükkânı rezervasyon almadan önce kontrol eder. Doğrulanmış rozetini arayın."
+      },
+      "whoSeesAddress": {
+        "q": "Numaramı ve adresimi kim görebilir?",
+        "a": "Yalnızca alımınızı kabul eden hurdacı ve ekibimiz. Bunları son rezervasyonunuzdan sonra 12 ay saklarız."
+      },
+      "photosKept": {
+        "q": "Fotoğraflarıma ne olur?",
+        "a": "Yüz, belge veya plaka eklemeyin. Fotoğraf bu tahmin için yapay zekâ sağlayıcısına gönderilir. Luma.Green kaydetmez."
+      },
+      "whyVerify": {
+        "q": "Neden doğrulanmam gerekiyor?",
+        "a": "Haneler sizi kapılarına kabul eder. Her dükkânı kontrol etmek onları korur ve doğrulanmış rozetinizi anlamlı kılar."
+      },
+      "gstNeeded": {
+        "q": "GST numarası gerekli mi?",
+        "a": "Hayır, isteğe bağlıdır. Varsa ekleyin."
+      },
+      "ownPrices": {
+        "q": "Kendi fiyatlarımı belirleyebilir miyim?",
+        "a": "Evet, her malzeme için; ancak Luma.Green’in belirlediği asgari fiyatın altında olmamalıdır."
+      },
+      "noVehicle": {
+        "q": "Aracım yok. Yine de katılabilir miyim?",
+        "a": "Evet. Haneler hurdalarını dükkânınıza getirebilir. Aracı olmayan dükkânlar için Saathi alımları ileride sunulacak."
+      },
+      "autoAccept": {
+        "q": "Otomatik kabul nedir?",
+        "a": "Açıkken bölgenizdeki her yeni talep gece bile hemen kabul edilir. Gidemeyeceğiniz zaman kapatın."
+      },
+      "rejectRequest": {
+        "q": "Bir talebi reddedersem ne olur?",
+        "a": "Sıradaki en yakın hurdacıya gider. Haneye kimin reddettiği söylenmez."
+      },
+      "payHousehold": {
+        "q": "Luma.Green haneye benim yerime ödeme yapar mı?",
+        "a": "Hayır. Kapıda nakit veya UPI ile siz ödersiniz. Uygulama tutarı ve ödeme yöntemini kaydeder."
+      },
+      "paidByYard": {
+        "q": "Bir sahaya satış yaptığımda ödememi nasıl alırım?",
+        "a": "Şimdilik ödemeyi sahayla doğrudan kararlaştırın. Emanet ödeme planlanmaktadır; demo para aktarmaz."
+      },
+      "whoSeesShop": {
+        "q": "Dükkânımı kim görebilir?",
+        "a": "Onaylandıktan sonra hanelerin sizi bulabilmesi için dükkân adınız, bölgeniz ve çalışma saatleriniz herkese görünür. Belgeleriniz gizli kalır."
+      },
+      "consentDocs": {
+        "q": "Hangi belgeler gerekli?",
+        "a": "Kirlilik kontrol kurulunun izni (Karnataka’da KSPCB): numarası, geçerlilik tarihi ve PDF belgesi; ayrıca makinelerinizin fotoğrafları. GST isteğe bağlıdır."
+      },
+      "noConsentNeeded": {
+        "q": "İşletmemin izne ihtiyacı yok. Yine de katılabilir miyim?",
+        "a": "Evet. İzne ihtiyaç duymadığınızı belirten kutuyu işaretleyin ve nedenini, örneğin yalnızca kâğıt balyalama yaptığınızı, açıklayın. Kontrol ederiz."
+      },
+      "consentExpiry": {
+        "q": "İznimin süresi dolarsa ne olur?",
+        "a": "Uyumluluk bölümünde geçerlilik tarihini kontrol edin. İznin bitmesine 90 günden az kaldığında bu bölüm uyarı gösterir. İzni kirlilik kontrol kurulunuzdan yenileyin ve belgeyi güncellemek için destekle iletişime geçin."
+      },
+      "findStock": {
+        "q": "Yakınımdaki stokları nasıl bulurum?",
+        "a": "Satın Al bölümünü açın. Doğrulanmış hurdacıların stokları malzemeye göre, en yakın olanlar önce gösterilir."
+      },
+      "whoSetsPrice": {
+        "q": "Fiyatı kim belirler?",
+        "a": "Satıcı kilogram fiyatını ilan eder. Talep göndermeden önce fiyatı görürsünüz; ayrıntılarda anlaşmak için arayabilirsiniz."
+      },
+      "whatIsEscrow": {
+        "q": "Emanet ödeme nedir?",
+        "a": "Güvenli bir ara adım: Alıcının parası yük anlaşıldığı şekilde gelene kadar tutulur, ardından satıcıya aktarılır. İşletmeler için emanet ödeme planlanmaktadır."
+      },
+      "whenSellerPaid": {
+        "q": "Satıcıya ne zaman ödeme yapılır?",
+        "a": "Alıcı teslimatı onayladığı anda."
+      },
+      "shortLoad": {
+        "q": "Yük eksikse ne olur?",
+        "a": "Demo, önerilen itiraz adımlarını gösterir. Gerçek parayı tutamaz veya koruyamaz."
+      },
+      "ewayBill": {
+        "q": "E-irsaliye gerekli mi?",
+        "a": "Evet, değeri ₹50.000’i aşan malların taşınması için gerekir; ticaret ekranı bunu hatırlatır. Bazı eyaletlerde sınır farklıdır."
+      },
+      "whoSeesBusiness": {
+        "q": "İşletmemi kim görebilir?",
+        "a": "Doğrulanmış alıcılar ve satıcılar adınızı, bölgenizi ve işlediğiniz malzemeleri görür. Belgelerinizi yalnızca siz ve ekibimiz görür."
+      },
+      "pwpRegistration": {
+        "q": "Plastik geri dönüştürüyorum. Başka bir şey gerekli mi?",
+        "a": "CPCB Plastik Atık İşleyicisi kaydınızı hazır tutun. Markalar bunu ister; bu kayıt EPR sertifikası düzenlemenizi sağlar."
+      },
+      "buyFromAnyYard": {
+        "q": "Birden fazla sahadan satın alabilir miyim?",
+        "a": "Evet. İhtiyacınız olan malzemeyi listeleyen herhangi bir doğrulanmış sahadan istediğiniz sıklıkta alabilirsiniz."
+      },
+      "eprRecords": {
+        "q": "Luma.Green kayıtları EPR için yardımcı olur mu?",
+        "a": "Evet. Her ticarette malzeme, ağırlık, tarih ve satıcı kaydedilir; bunlar EPR beyanlarınızı destekler. Beyanınızı yine CPCB portalında yaparsınız."
+      },
+      "carbonCredits": {
+        "q": "Karbon kredisi kazanacak mıyım?",
+        "a": "Henüz değil. Yöntem doğrulandığında ileride kredi düzenlenebilmesi için şimdiden her kilogramı kaydediyoruz."
+      },
+      "whatCanIBuy": {
+        "q": "Neler satın alabilirim?",
+        "a": "Doğrulanmış geri dönüşümcülerden PET pulları, HDPE granülleri, kraft kâğıdı ve alüminyum külçeleri gibi geri dönüştürülmüş malzemeler."
+      },
+      "qualityWrong": {
+        "q": "Kalite sipariş ettiğim gibi değilse ne olur?",
+        "a": "Demo, önerilen itiraz adımlarını gösterir. Gerçek parayı tutamaz veya koruyamaz."
+      },
+      "recycledContent": {
+        "q": "Geri dönüştürülmüş malzeme almak EPR’ye yardımcı olur mu?",
+        "a": "Evet. Plastik EPR kuralları ambalaj için geri dönüştürülmüş içerik hedefleri belirler; ticaret kayıtlarınız ne kadar geri dönüştürülmüş malzeme aldığınızı gösterir."
+      },
+      "carbonClaims": {
+        "q": "Karbon tasarrufu iddiasında bulunabilir miyim?",
+        "a": "Etki ekranınız tasarruf edilen karbonu tahmin eder. Bağımsız olarak doğrulanana kadar bu sayıları gösterge olarak değerlendirin."
+      },
+      "whoCanJoin": {
+        "q": "Kimler Saathi olabilir?",
+        "a": "Evine yakın kısa işlerden gelir elde etmek isteyen 18 yaş ve üzeri herkes."
+      },
+      "whichId": {
+        "q": "Hangi kimliği kullanabilirim?",
+        "a": "Seçmen kimliği, sürücü belgesi, PAN, DigiLocker belgesi veya yalnızca son 4 hanesi görünen Aadhaar."
+      },
+      "fullAadhaar": {
+        "q": "Neden tam Aadhaar kullanamıyorum?",
+        "a": "Aadhaar numaralarını asla saklamayız. Yanlışlıkla tam belge yüklerseniz maskelenmiş kopyasını ister ve ilkini sileriz."
+      },
+      "needVehicle": {
+        "q": "Araca ihtiyacım var mı?",
+        "a": "Hayır. Dükkân yardımı ve vardiyalar için gerekmez. Evden alımlarda bisiklet, motosiklet veya üç tekerlekli araç yardımcı olur."
+      },
+      "whoPaysMe": {
+        "q": "Ücretimi kim öder?",
+        "a": "Çalıştığınız hurdacı veya işletme. Başlamadan önce tutarda anlaşın."
+      },
+      "chooseHours": {
+        "q": "Ne zaman çalışacağımı seçebilir miyim?",
+        "a": "Evet. Müsait olduğunuz gün ve saatleri bildirirsiniz, yalnızca istediğiniz işleri alırsınız."
+      },
+      "safetyGear": {
+        "q": "Hangi güvenlik ekipmanına ihtiyacım var?",
+        "a": "Her iş için eldiven ve kapalı ayakkabı; tozlu işler için maske. İşletmeye başka ekipman gerekip gerekmediğini sorun."
+      },
+      "whoSeesId": {
+        "q": "Kimliğimi ve özçekimimi kim görür?",
+        "a": "Kimliğinizi kontrol etmek için yalnızca siz ve ekibimiz."
+      },
+      "jobWentWrong": {
+        "q": "İşte bir sorun çıktı. Ne yapmalıyım?",
+        "a": "Önce güvenliğinizi sağlayın. İşletmeye bildirin, ardından bizi arayın. Her iki tarafı da dinleriz."
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "İki dakikada alım rezervasyonu",
+      "sortAtHome": "Evde hurda ayrıştırma",
+      "batterySafety": "Eski pilleri güvenle işleme",
+      "firstDay": "Luma.Green’de ilk gününüz",
+      "weighAndPayVideo": "Bir dakikada tartım ve ödeme",
+      "settingPrices": "Fiyatlarınızı belirleme",
+      "buyingFromKabadiwalas": "Hurdacılardan satın alma",
+      "listingBales": "Geri dönüşümcüler için balya listeleme",
+      "escrowExplained": "Demo: İki dakikada emanet ödeme",
+      "buyingFromYards": "Sahalardan satın alma",
+      "sellingOutput": "Üretiminizi satma",
+      "eprPlainWords": "EPR’nin sade anlatımı",
+      "firstOrder": "İlk siparişinizi verme",
+      "checkingDelivery": "Teslimat kontrolü",
+      "becomingSaathi": "Saathi olma",
+      "goodPickup": "İyi bir evden alım",
+      "liftingSafely": "Güvenli kaldırma ve taşıma"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "Neler geri dönüştürülebilir",
+        "p1": "Kâğıt, karton, çoğu plastik, metal ve camın değeri vardır.",
+        "p2": "Eski telefonlar, şarj cihazları ve piller elektronik atıktır: Ayrı tutun.",
+        "p3": "Yemek atıkları ve kirli bebek bezleri geri dönüştürülemez."
+      },
+      "sortOnce": {
+        "title": "Bir kez ayrıştırın",
+        "p1": "Kâğıt, plastik ve metal için ayrı birer torba kullanın.",
+        "p2": "Her şeyi kuru ve temiz tutun.",
+        "p3": "Ayrıştırılmış hurda daha hızlı tartılır ve daha iyi fiyatla alınır."
+      },
+      "batteriesSafe": {
+        "title": "Pilleri güvenle saklayın",
+        "p1": "Metal uçlarını bantlayın.",
+        "p2": "Kuru, serin ve çocuklardan uzak tutun.",
+        "p3": "Asla çöpe veya ateşe atmayın."
+      },
+      "fairWeigh": {
+        "title": "Adil tartım sağlayın",
+        "p1": "Terazinin sıfırdan başladığını kontrol edin.",
+        "p2": "Her malzemenin tartılmasını izleyin.",
+        "p3": "Makbuzunuzdaki toplamı kontrol edin."
+      },
+      "usingTheApp": {
+        "title": "Uygulamayı kullanma",
+        "p1": "Numaranız ve SMS koduyla giriş yapın.",
+        "p2": "Yeni talepleri hızla kabul edin veya reddedin.",
+        "p3": "Otomatik kabulü yalnızca gidebileceğiniz zaman açın."
+      },
+      "weighingFairly": {
+        "title": "Adil tartım",
+        "p1": "Teraziyi hane sahibinin önünde sıfırlayın.",
+        "p2": "Her malzemeyi ayrı tartın.",
+        "p3": "Ödemeden önce toplamı gösterin."
+      },
+      "safeHandling": {
+        "title": "Hurdayı güvenle işleme",
+        "p1": "Her zaman eldiven ve kapalı ayakkabı kullanın.",
+        "p2": "Kaldırırken bacaklarınızı kullanın; 25 kg üzeri için yardım alın.",
+        "p3": "Pilleri ve elektronik atıkları ayrı tutun."
+      },
+      "servingHouseholds": {
+        "title": "Hanelere iyi hizmet",
+        "p1": "Gitmeden önce arayın ve seçilen zaman aralığında varın.",
+        "p2": "Nazik olun ve görebilecekleri yerde tartın.",
+        "p3": "Her seferinde ayrılmadan önce ödeme yapın."
+      },
+      "sellingToYards": {
+        "title": "Demo: Sahalara satış",
+        "p1": "Stokunuzun doğru olması için ayrıştırmayı kaydedin.",
+        "p2": "Stokunuzu yakınınızdaki sahalara gösterin.",
+        "p3": "Yalnızca ödeme emanet hesaba geçtikten sonra yükleyin."
+      },
+      "buyingStock": {
+        "title": "Stok satın alma",
+        "p1": "Satın Al bölümünde yakınınızdaki stokları bulun.",
+        "p2": "Talep göndermeden önce kilogram fiyatını kontrol edin.",
+        "p3": "Onaylamadan önce her yükü tartın."
+      },
+      "tradingWithEscrow": {
+        "title": "Demo: Emanet ödeme ile ticaret",
+        "p1": "Satıcı kabul ettikten sonra alıcı emanet hesaba ödeme yapar.",
+        "p2": "Satıcı yalnızca para hesaba geçtiğinde yükler.",
+        "p3": "Teslimatı onaylamak parayı serbest bırakır."
+      },
+      "papersForLoads": {
+        "title": "Her yük için belgeler",
+        "p1": "Her ticaret için fatura.",
+        "p2": "₹50.000 üzerindeki yükler için e-irsaliye.",
+        "p3": "Belgeler araçta taşınır."
+      },
+      "siteSafety": {
+        "title": "Sahada güvenlik",
+        "p1": "Eldiven, kapalı ayakkabı ve tozlu yerlerde maske kullanın.",
+        "p2": "Sıkışmayı gidermeden önce makineyi kapatın ve fişini çekin.",
+        "p3": "Sahada her zaman ilk yardım malzemesi ve temiz su bulundurun."
+      },
+      "buyingInputs": {
+        "title": "Demo: Üretim girdisi satın alma",
+        "p1": "Satın Al bölümünde sahaların sınıflandırılmış balyalarını bulun.",
+        "p2": "Saha kabul edince emanet hesaba ödeme yapın.",
+        "p3": "Onaylamadan önce sınıfı kontrol edin."
+      },
+      "eprBasics": {
+        "title": "EPR’nin temelleri",
+        "p1": "Markalar atıklarının belirli bir bölümünün geri dönüştürülmesini sağlamalıdır.",
+        "p2": "Kayıtlı geri dönüşümcüler CPCB portalında sertifika düzenler.",
+        "p3": "Düzenli ticaret kayıtları her beyanı destekler."
+      },
+      "orderingRecycled": {
+        "title": "Demo: Geri dönüştürülmüş malzeme siparişi",
+        "p1": "İlanları tür, kilogram miktarı ve fiyata göre karşılaştırın.",
+        "p2": "İhtiyacınız olan kilogram miktarı için sipariş gönderin.",
+        "p3": "Kabul edildiğinde emanet hesaba ödeme yapın."
+      },
+      "checkingDeliveries": {
+        "title": "Teslimatları kontrol etme",
+        "p1": "Fatura ve e-irsaliyeyi siparişle karşılaştırın.",
+        "p2": "Kamyonu dolu ve boş tartın.",
+        "p3": "Yalnızca ağırlık ve kalite uygunsa onaylayın."
+      },
+      "firstJob": {
+        "title": "İlk işiniz",
+        "p1": "Kabul etmeden önce yer, saat ve ücreti kontrol edin.",
+        "p2": "Önceden arayın ve zamanında gidin.",
+        "p3": "Bitirdiğinizde işi tamamlandı olarak işaretleyin."
+      },
+      "inPeoplesHomes": {
+        "title": "İnsanların evlerinde çalışma",
+        "p1": "Kim olduğunuzu ve hangi dükkândan geldiğinizi söyleyin.",
+        "p2": "İçeri davet edilmeyi bekleyin.",
+        "p3": "Görebilecekleri yerde tartın ve nazik olun."
+      },
+      "gettingPaid": {
+        "title": "Ödeme alma",
+        "p1": "İş başlamadan önce ücrette anlaşın.",
+        "p2": "Kayıt olması için UPI ile ödeme isteyin.",
+        "p3": "Kazançlar bölümünde her işi kontrol edin."
+      }
+    }
+  },
+  "app": {
+    "nav": {
+      "home": "Ana sayfa",
+      "sell": "Satış",
+      "help": "Yardım",
+      "requests": "Talepler",
+      "stock": "Stok",
+      "prices": "Fiyatlarım",
+      "buy": "Satın al",
+      "trades": "Ticaretler",
+      "impact": "Etki",
+      "compliance": "Mevzuata uyum",
+      "earnings": "Kazançlar"
+    },
+    "navLabel": "Uygulama",
+    "homeLink": "Luma.Green ana sayfa",
+    "signOut": "Çıkış yap",
+    "more": "Diğer",
+    "comingSoon": "Bu ekran hazırlanıyor.",
+    "roles": {
+      "kabadiwala": "Hurdacı",
+      "yard": "Ayrıştırma sahası",
+      "recycler": "Geri dönüşümcü",
+      "manufacturer": "Üretici",
+      "saathi": "Saathi"
+    }
+  },
+  "sell": {
+    "retry": "Tekrar dene",
+    "metaTitle": "Hurdanızı satın",
+    "families": {
+      "paper": "Kâğıt",
+      "plastic": "Plastik",
+      "metal": "Metaller",
+      "glass": "Cam",
+      "ewaste": "Elektronik atık",
+      "other": "Diğer"
+    },
+    "perKg": "{price}/kg",
+    "when": {
+      "today": "Bugün",
+      "nameLabel": "Adınız",
+      "tomorrow": "Yarın",
+      "titlePickup": "Ne zaman gelsinler?",
+      "titleDropoff": "Ne zaman götüreceksiniz?",
+      "dayLabel": "Gün",
+      "windowLabel": "Saat",
+      "passed": "Bugün için çok geç",
+      "addressLabel": "Alım adresi",
+      "addressHint": "Ev veya daire numarası, sokak, bölge ve bilinen bir yer.",
+      "dropoffAt": "Buraya götürün",
+      "nameHint": "Dükkân kimi soracağını bilsin diye.",
+      "privacy": "Adresinizi yalnızca seçtiğiniz dükkân, kabul ettikten sonra görür.",
+      "next": "Kontrol et ve ayırt",
+      "errors": {
+        "day": "Gün seçin.",
+        "window": "Saat seçin.",
+        "address": "Ev numarası ve bölgeyle tam adresi yazın.",
+        "name": "Adınızı yazın, en az 2 harf."
+      }
+    },
+    "back": "Geri",
+    "phone": {
+      "label": "Cep telefonu numarası",
+      "hint": "Bu numaraya 6 haneli kod göndereceğiz.",
+      "invalid": "10 haneli Hindistan cep telefonu numarası girin.",
+      "sendCode": "Kod gönder",
+      "sending": "Gönderiliyor…",
+      "sendFailed": "Kod gönderilemedi. Bir dakika sonra tekrar deneyin.",
+      "codeLabel": "6 haneli kod",
+      "sentTo": "{phone} numarasına SMS ile gönderildi",
+      "changeNumber": "Numarayı değiştir",
+      "verifying": "Kontrol ediliyor…",
+      "resendIn": "{seconds, plural, one {# saniye} other {# saniye}} sonra yeni kod isteyebilirsiniz",
+      "resend": "Yeni kod gönder",
+      "resent": "Yeni bir kod gönderdik.",
+      "errorInvalid": "Kod doğru değil. SMS’i kontrol edip tekrar deneyin.",
+      "errorExpired": "Kodun süresi dolmuş. Yenisini isteyin.",
+      "errorTooMany": "Çok fazla deneme. Yeni kod isteyin.",
+      "errorGeneric": "Bir sorun oluştu. Tekrar deneyin.",
+      "privacy": "Numaranızı yalnızca rezervasyonlar ve ilgili bildirimler için kullanırız."
+    },
+    "errors": {
+      "generic": "Bir sorun oluştu. Tekrar deneyin.",
+      "NOT_YOURS": "Bu rezervasyon başka numarayla yapıldı.",
+      "EMPTY_BASKET": "Satmak için en az bir şey ekleyin.",
+      "TOO_MANY_ITEMS": "Bir rezervasyon için çok fazla malzeme.",
+      "DUPLICATE_ITEM": "Bir malzeme iki kez listelenmiş. Listenizi kontrol edin.",
+      "INVALID_KG": "Kiloyu kontrol edin: her biri 0’dan büyük ve en fazla 500 olmalı.",
+      "UNKNOWN_MATERIAL": "Bir malzemeniz artık burada satılamıyor. Listenizi kontrol edin.",
+      "SHOP_NOT_FOUND": "Dükkân şu anda rezervasyon almıyor. Başkasını seçin.",
+      "SHOP_NO_PICKUP": "Dükkân alım yapmıyor. Başkasını seçin veya götürün.",
+      "INVALID_DATE": "Bu gün artık ayırtılamıyor. Başka gün seçin.",
+      "SLOT_PASSED": "Bu saat geçti. Daha geç saat seçin.",
+      "INVALID_NAME": "Adınızı kontrol edin.",
+      "ADDRESS_REQUIRED": "Alım adresinizi ekleyin.",
+      "INVALID_ADDRESS": "Tam adresinizi yazın.",
+      "TOO_MANY_OPEN": "Zaten 5 bekleyen rezervasyonunuz var. Birinin bitmesini bekleyin veya iptal edin.",
+      "NO_PHONE": "Ayırtmak için numaranızı doğrulayın.",
+      "NOT_SIGNED_IN": "Önce numaranızı doğrulayın.",
+      "CANNOT_CANCEL": "Bu rezervasyon artık iptal edilemez.",
+      "NOT_FOUND": "Bu rezervasyonu bulamadık."
+    },
+    "windows": {
+      "morning": "Sabah",
+      "afternoon": "Öğleden sonra",
+      "evening": "Akşam"
+    },
+    "shop": {
+      "useLocation": "Konumumu kullan",
+      "locating": "Konum bulunuyor…",
+      "distance": "{km} km",
+      "hours": "Açık: {hours}",
+      "verified": "Doğrulandı",
+      "title": "Kim alır?",
+      "lead": "Her dükkânın kendi fiyatıyla hurdanıza teklifi.",
+      "modeLabel": "Nasıl teslim etmek istersiniz?",
+      "pickup": "Evden alım",
+      "pickupHint": "Dükkân size gelir",
+      "dropoff": "Ben götüreceğim",
+      "dropoffHint": "Siz dükkâna götürürsünüz",
+      "nearestFirst": "En yakın dükkânlar önce",
+      "byPrice": "Fiyata göre sırala",
+      "locationFailed": "Konum alınamadığı için dükkânlar en iyi fiyata göre sıralandı.",
+      "listLabel": "Dükkânlar",
+      "offerFor": "hurdanız için",
+      "picksUp": "Alım yapar",
+      "dropOnly": "Yalnızca teslim",
+      "best": "En iyi fiyat",
+      "nearest": "En yakın",
+      "cityPrice": "{count, plural, one {# kalem için şehir fiyatı kullanıldı} other {# kalem için şehir fiyatı kullanıldı}}",
+      "noPickupHere": "Bu dükkân alım yapmaz. Burada satmak için “Ben götüreceğim” seçin.",
+      "empty": "Henüz rezervasyon alan dükkân yok. Yakında tekrar bakın.",
+      "next": "Saat seç",
+      "pickOne": "Devam etmek için dükkân seçin."
+    },
+    "steps": {
+      "basket": "Ne",
+      "shop": "Kim",
+      "when": "Ne zaman",
+      "label": "Adımlar",
+      "progress": "{total} adımdan {current}.",
+      "confirm": "Ayırt"
+    },
+    "basket": {
+      "points": "+{points, plural, one {# geri dönüşüm puanı} other {# geri dönüşüm puanı}}",
+      "title": "Neleriniz var?",
+      "lead": "Satmak istediğinize dokunun, yaklaşık kiloyu belirleyin.",
+      "yours": "Hurdanız",
+      "empty": "Henüz eklenmedi. Yukarıdan malzemeye dokunun.",
+      "kilos": "{material} kilosu",
+      "less": "Daha az {material}",
+      "more": "Daha fazla {material}",
+      "remove": "{material} kaldır",
+      "presets": "{material} için hızlı miktarlar",
+      "preset": "{kg} kg",
+      "kgUnit": "kg",
+      "lineValue": "Yaklaşık {amount}",
+      "worth": "Yaklaşık değeri",
+      "summary": "{items, plural, one {# kalem} other {# kalem}} · {weight}",
+      "next": "Alıcı bul",
+      "full": "Bir rezervasyonda en fazla {max} malzeme olabilir.",
+      "weighNote": "Son tutar hurdanız tartıldığında belirlenir."
+    },
+    "confirm": {
+      "what": "Ne",
+      "who": "Kim",
+      "when": "Ne zaman",
+      "where": "Nerede",
+      "pickup": "Evinizden alım",
+      "dropoff": "Dükkâna siz götürürsünüz",
+      "whenValue": "{day} · {window}, {time}",
+      "youGet": "Yaklaşık {amount} alırsınız",
+      "payNote": "Dükkân hurdanızı tartar ve nakit veya UPI ile öder.",
+      "notYou": "Başka numara kullan",
+      "title": "Kontrol et ve ayırt",
+      "change": "Değiştir",
+      "changeLabel": "{section} değiştir",
+      "phoneTitle": "Cep telefonu numaranızı doğrulayın",
+      "phoneLead": "SMS ile 6 haneli kod göndeririz. Rezervasyon numaranıza kaydedilir, böylece her telefondan izleyebilirsiniz.",
+      "bookingAs": "{phone} olarak rezervasyon",
+      "bookPickup": "Alım ayırt",
+      "bookDropoff": "Teslim ayırt",
+      "confirmAndBook": "Doğrula ve ayırt",
+      "booking": "Ayırtılıyor…",
+      "booked": "Ayırtıldı! Rezervasyon açılıyor…",
+      "fixIt": "Düzelt",
+      "locationNote": "Gerekirse başka yakın dükkân bulmak için yaklaşık konumunuz bu alımla kaydedilir."
+    },
+    "metaDescription": "Bengaluru’da evden gazete, plastik, metal ve eski elektronik satın. Yakındaki dükkân fiyatlarını görün, alım ayarlayın ve kapıda ödeme alın.",
+    "eyebrow": "Bengaluru’daki evler için",
+    "title": "Hurdanızı evden satın",
+    "lead": "Malzemelerinizi ve yakındaki dükkânı seçin; tartıldığında nakit veya UPI alın.",
+    "promises": {
+      "label": "Neden burada satmalı",
+      "noAccount": "Hesap gerekmez",
+      "payAtDoor": "Tartıldığında ödenir",
+      "verified": "Doğrulanmış dükkânlar"
+    },
+    "unavailable": {
+      "title": "Rezervasyon yakında açılacak",
+      "body": "Evler için rezervasyonları hazırlıyoruz. Kısa süre sonra tekrar bakın."
+    },
+    "demoNote": "Bengaluru pilotu için örnek fiyat ve dükkânlar.",
+    "loadError": "Yükleyemedik. Bağlantınızı kontrol edip tekrar deneyin.",
+    "mine": {
+      "title": "Rezervasyonlarınız",
+      "showAll": "{count} kaydın tümünü göster",
+      "showFewer": "Daha az göster",
+      "summary": "{items, plural, one {# kalem} other {# kalem}} · {weight}",
+      "paid": "{amount} ödendi",
+      "estimate": "Yaklaşık {amount}"
+    },
+    "photo": {
+      "title": "Fotoğraf tahmini deneyin",
+      "lead": "İsteğe bağlı: hurdanızın bir fotoğrafını ekleyin, önerilen kalemleri kontrol edin.",
+      "privacy": "Yüz, belge veya plaka eklemeyin. Fotoğraf bu tahmin için yapay zekâ sağlayıcısına gönderilir. Luma.Green kaydetmez.",
+      "choose": "Fotoğraf seç veya çek",
+      "selected": "Fotoğraf hazır",
+      "estimate": "Bu fotoğrafı tahmin et",
+      "busy": "Fotoğraf kontrol ediliyor…",
+      "manual": "Kalemleri elle seç",
+      "review": "Önerileri kontrol edin",
+      "reviewNote": "Fotoğraf ağırlıkları kabaca tahmindir. Sepeti bu kalemlerle değiştirin, sonra aşağıdan malzeme ve ağırlıkları düzenleyin.",
+      "apply": "Bu kalemleri kullan",
+      "range": "{low}–{high}",
+      "confidence": "Güven: {confidence}",
+      "value": "Tahmini değer: {low}–{high}",
+      "applied": "Öneriler eklendi. Sepeti kontrol edip hataları düzeltin.",
+      "unavailable": "Fotoğraf tahmini kullanılamıyor. Aşağıdan kalem seçin.",
+      "failed": "Fotoğraf kontrol edilemedi. Başka fotoğraf deneyin veya aşağıdan seçin.",
+      "invalid": "12 MB’tan küçük, net JPEG veya PNG kullanın.",
+      "limited": "Fotoğraf sınırına ulaşıldı. Aşağıdan seçin veya yarın deneyin.",
+      "retake": "Fotoğraf net değil veya hurda göstermiyor. Başkasını deneyin veya aşağıdan seçin.",
+      "empty": "Desteklenen malzeme bulunamadı. Başka fotoğraf deneyin veya aşağıdan seçin.",
+      "replace": "Başka fotoğraf seç"
+    }
+  },
+  "track": {
+    "notFound": {
+      "sell": "Hurda sat",
+      "title": "Bu rezervasyonu bulamadık",
+      "body": "SMS bağlantısını kontrol edin. Yeni ayarladıysanız biraz bekleyip tekrar deneyin."
+    },
+    "cancel": {
+      "close": "Kapat",
+      "button": "Rezervasyonu iptal et",
+      "title": "Bu rezervasyon iptal edilsin mi?",
+      "body": "Dükkân iptali görecek. İstediğiniz zaman yeniden ayarlayabilirsiniz.",
+      "confirm": "Evet, iptal et",
+      "keep": "Koru",
+      "cancelling": "İptal ediliyor…",
+      "checking": "Numara kontrol ediliyor…",
+      "done": "Rezervasyonunuz iptal edildi.",
+      "free": "Dükkân yola çıkana kadar iptal ücretsizdir.",
+      "signInTitle": "Siz olduğunuzu doğrulayın",
+      "signInBody": "Rezervasyonda kullandığınız numarayı girin. Kod göndereceğiz.",
+      "confirmNumber": "Numaramı doğrula",
+      "notYours": "Bu rezervasyon başka numarayla yapıldı.",
+      "otherNumber": "Başka numara kullan"
+    },
+    "today": "Bugün",
+    "tomorrow": "Yarın",
+    "shop": {
+      "title": "Dükkânınız",
+      "verified": "Doğrulandı",
+      "call": "Ara",
+      "callLabel": "{shop} ara",
+      "hours": "Açık: {hours}"
+    },
+    "metaTitle": "Rezervasyonunuz",
+    "reference": "Rezervasyon {token}",
+    "status": {
+      "requested": "Bekliyor",
+      "accepted": "Kabul edildi",
+      "on_the_way": "Yolda",
+      "completed": "Tamamlandı",
+      "declined": "Reddedildi",
+      "cancelled": "İptal edildi"
+    },
+    "hero": {
+      "requested": "{mode, select, pickup {{shop} kabulü bekleniyor} other {{shop} onayı bekleniyor}}",
+      "requestedBody": "Talebiniz gönderildi. Yanıt verdiklerinde sayfa güncellenir.",
+      "accepted": "{mode, select, pickup {{shop} alımınızı kabul etti} other {{shop} sizi bekliyor}}",
+      "acceptedBody": "Hurdanızı hazır tutun. Tartılır, ardından nakit veya UPI ile ödenir.",
+      "on_the_way": "{shop} yolda",
+      "on_the_wayBody": "Hurdanızı kapı yakınında hazır tutun.",
+      "completed": "Tamamlandı! {amount} aldınız",
+      "completedBody": "Geri dönüştürdüğünüz için teşekkürler. Puanlar numaranıza eklendi.",
+      "declined": "{shop} bu rezervasyonu alamadı",
+      "declinedBody": "Hiçbir şey alınmadı. Başka dükkân deneyin; hurda listeniz kayıtlı.",
+      "cancelled": "Bu rezervasyon iptal edildi",
+      "cancelledBody": "Hiçbir şey alınmadı. İstediğiniz zaman yeniden ayarlayabilirsiniz."
+    },
+    "progress": {
+      "label": "İlerleme",
+      "booked": "Ayırtıldı",
+      "accepted": "Kabul edildi",
+      "confirmed": "Onaylandı",
+      "onTheWay": "Yolda",
+      "done": "Tamamlandı"
+    },
+    "when": "Ne zaman",
+    "whenValue": "{day} · {window}, {time}",
+    "mode": {
+      "pickup": "Evinizden alım",
+      "dropoff": "Dükkâna siz götürürsünüz"
+    },
+    "items": {
+      "title": "Toplananlar",
+      "estimated": "Yaklaşık {weight}",
+      "weighed": "{price}/kg ile {weight}"
+    },
+    "money": {
+      "title": "Paranız ve puanlarınız",
+      "estimate": "Yaklaşık {amount} alırsınız",
+      "estimateNote": "Dükkân hurdanızı tartar ve nakit veya UPI ile öder.",
+      "paid": "{amount} aldınız",
+      "paidBy": "{method, select, upi {UPI} other {Nakit}} ile ödendi · {date}",
+      "estimateWas": "Tahmin {amount} idi",
+      "points": "+{points, plural, one {# geri dönüşüm puanı} other {# geri dönüşüm puanı}}",
+      "pointsAfter": "Tartım sonrası yaklaşık +{points, plural, one {# geri dönüşüm puanı} other {# geri dönüşüm puanı}}"
+    },
+    "timeline": {
+      "title": "Geçmiş",
+      "requested": "Ayırtıldı",
+      "accepted": "Dükkân kabul etti",
+      "on_the_way": "Dükkân yolda",
+      "completed": "Tartıldı ve ödendi",
+      "declined": "Dükkân reddetti",
+      "cancelled": "İptal edildi"
+    },
+    "saved": "Hesap gerekmez. Herhangi bir telefondan kontrol için bu bağlantıyı saklayın.",
+    "sellMore": "Daha fazla hurda sat",
+    "tryAnother": "Başka dükkân dene",
+    "dispatchChanged": "Talebiniz yakındaki başka dükkâna geçti. Güncel dükkân aşağıda gösteriliyor."
+  },
+  "market": {
+    "buy": {
+      "cancel": "İptal",
+      "button": "Satın al",
+      "sending": "Gönderiliyor…",
+      "buttonLabel": "{seller} satıcısından {material} al",
+      "title": "{material} al",
+      "from": "{seller}, {area}. {price}/kg üzerinden {weight} mevcut.",
+      "kgLabel": "Kaç kg?",
+      "kgHint": "En fazla {weight}.",
+      "all": "Tümü: {weight}",
+      "kgInvalid": "50 veya 12.5 gibi kg girin.",
+      "kgTooMuch": "Yalnızca {weight} mevcut.",
+      "total": "Toplam",
+      "totalLine": "{weight} × {price}/kg",
+      "escrow": "{seller} kabul ettikten sonra emanet hesaba ödersiniz. Teslimatı doğrulayınca para satıcıya gider.",
+      "ewayBill": "50.000 rupi üzeri: yükle e-sevk belgesi gitmelidir.",
+      "submit": "Talep gönder",
+      "sent": "Talep {seller} satıcısına gönderildi",
+      "sentNext": "Kabul edince emanet hesaba ödersiniz.",
+      "seeTrades": "Ticaretleri gör"
+    },
+    "sell": {
+      "title": "Satış",
+      "lead": "{buyer, select, yard {Ayrıştırılmış stokunuzu sahalara sunun.} recycler {Balyalarınızı geri dönüşümcülere sunun.} manufacturer {Malzemenizi üreticilere sunun.} other {Stokunuzu alıcılara sunun.}}",
+      "notForYouTitle": "Üreticiler Luma.Green’de alım yapar",
+      "notForYouBody": "Doğrulanmış geri dönüşümcülerden malzeme bulun.",
+      "goBuy": "Malzeme al",
+      "form": {
+        "title": "Yeni ilan",
+        "material": "Ne satıyorsunuz?",
+        "free": "{weight} satışa uygun",
+        "allPromised": "Tümü listelendi veya satıldı",
+        "kg": "Kaç kg?",
+        "kgHint": "En fazla {weight}.",
+        "all": "Tümü: {weight}",
+        "price": "Fiyatınız, kg başına ₹",
+        "market": "Bugünkü piyasa {price}/kg",
+        "suggested": "Önerilen {price}/kg",
+        "useSuggested": "{price} kullan",
+        "farFromMarket": "Bugünkü fiyattan çok farklı. Kontrol edin.",
+        "note": "Alıcılara not",
+        "optional": "(isteğe bağlı)",
+        "notePlaceholder": "Örneğin: kuru, bağlı, 50 kg balyalar",
+        "noteCount": "{count}/{max}",
+        "value": "Parti değeri",
+        "submit": "Satışa çıkar",
+        "submitting": "Satışa çıkarılıyor…",
+        "listed": "Satılık. Artık {buyer, select, yard {sahalar} recycler {geri dönüşümcüler} manufacturer {üreticiler} other {alıcılar}} görebilir.",
+        "nothingTitle": "Henüz satacak bir şey yok",
+        "nothingBody": "Kaydettiğiniz stok burada görünür. Listelenmiş veya satılmış olan iki kez sayılmaz.",
+        "goStock": "Stoka git",
+        "errors": {
+          "pickMaterial": "Malzeme seçin.",
+          "kgInvalid": "50 veya 12.5 gibi kg girin.",
+          "kgTooMuch": "Satışa uygun {weight} var.",
+          "priceInvalid": "18 veya 17.50 gibi rupi fiyatı girin.",
+          "noteTooLong": "Notu en fazla 140 harf tutun."
+        }
+      },
+      "mine": {
+        "title": "Şu anda satılık",
+        "emptyTitle": "Henüz satılık yok",
+        "emptyBody": "Formla ilk partinizi satışa çıkarın.",
+        "past": "Önceki ilanlar",
+        "onSale": "Satılık",
+        "listedOn": "{date} tarihinde listelendi",
+        "pastLine": "{date} tarihinde listelendi · {price}/kg",
+        "sold": "Tükendi",
+        "withdrawn": "Geri çekildi",
+        "withdraw": "Geri çek",
+        "withdrawLabel": "{material} geri çek",
+        "withdrawConfirm": "Parti pazardan kaldırılsın mı? Alıcılar artık göremez, bekleyen talepler reddedilir.",
+        "withdrawYes": "Evet, geri çek",
+        "withdrawNo": "Satışta tut",
+        "withdrawnToast": "{material} pazardan kaldırıldı"
+      }
+    },
+    "home": {
+      "sell": "Satış",
+      "buy": "Satın al",
+      "trades": "Ticaretler",
+      "greeting": "Merhaba, {name}",
+      "lead": "{kind, select, yard {Hurdacılardan alın, ayrıştırılmış balyaları geri dönüşümcülere satın.} recycler {Sahalardan ayrıştırılmış hurda alın, geri dönüştürülmüş malzemeyi üreticilere satın.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme alın.} other {Ticaretlerinize genel bakış.}}",
+      "statsTitle": "Genel bakış",
+      "stats": {
+        "escrow": "Emanette",
+        "escrowHint": "Teslimat doğrulanınca bırakılır",
+        "waiting": "Sizi bekliyor",
+        "waitingHint": "{count, plural, =0 {Hepsi tamam} one {# ticaret adım bekliyor} other {# ticaret adım bekliyor}}",
+        "listings": "Satılık",
+        "listingsHint": "{weight} listelendi",
+        "offers": "Geri dönüştürülmüş partiler",
+        "offersHint": "Geri dönüşümcülerden satılık",
+        "completed": "Bu ay tamamlanan",
+        "completedHint": "{amount} ticaret"
+      },
+      "waitingTitle": "Sizi bekliyor",
+      "allTrades": "Tüm ticaretler",
+      "caughtUpTitle": "Şu anda işlem gerekmiyor",
+      "caughtUpBody": "Yeni sipariş, ödeme ve teslimatlar burada görünür.",
+      "offersTitle": "Size yeni partiler",
+      "recycledTitle": "Size geri dönüştürülmüş malzemeler",
+      "recycledBody": "Doğrulanmış geri dönüşümcülerden pul, granül, kraft ve külçe; üretiminize hazır.",
+      "seeAll": "Tümünü gör",
+      "noOffersTitle": "Şu anda satılık parti yok",
+      "noOffersBody": "Yeni partiler listelendiklerinde burada görünür."
+    },
+    "perKg": "{price}/kg",
+    "trades": {
+      "card": {
+        "rate": "{price}/kg",
+        "title": "{material} · {weight}",
+        "from": "{name} satıcısından · {area}",
+        "to": "{name} alıcısına · {area}",
+        "inEscrow": "Emanette {amount}",
+        "ewayBill": "50.000 rupi üzeri: yükle e-sevk belgesi gitmelidir.",
+        "updated": "Güncellendi: {when}",
+        "receipt": "Makbuz {number}",
+        "buying": "Alımlar",
+        "selling": "Satışlar"
+      },
+      "title": "Ticaretler",
+      "busy": "Kaydediliyor…",
+      "steps": {
+        "accepted": "Kabul edildi",
+        "label": "Ticaret ilerlemesi",
+        "requested": "Talep edildi",
+        "paid_to_escrow": "Emanette",
+        "dispatched": "Gönderildi",
+        "completed": "Teslim edildi",
+        "srStep": "{step}: {state}",
+        "state": {
+          "done": "tamamlandı",
+          "current": "sonraki",
+          "todo": "henüz değil"
+        }
+      },
+      "declineNo": "Koru",
+      "lead": "Her ticaret adım adım. Alıcı teslimatı doğrulayana kadar para emanette kalır.",
+      "buying": "Alımlar",
+      "selling": "Satışlar",
+      "tabsLabel": "Alım veya satış",
+      "waitingBadge": "{count, plural, one {# işlem sizi bekliyor} other {# işlem sizi bekliyor}}",
+      "emptyBuyingTitle": "Henüz alım yok",
+      "emptyBuyingBody": "Almak istediğiniz partiler burada görünür.",
+      "emptySellingTitle": "Henüz satış yok",
+      "emptySellingBody": "Biri partinizi almak istediğinde burada görünür.",
+      "goBuy": "Malzeme bul",
+      "goSell": "Stoku satışa çıkar",
+      "declined": "{date} tarihinde reddedildi",
+      "hint": {
+        "requested": {
+          "buyer": "{name} kabulü bekleniyor.",
+          "seller": "{name} bunu almak istiyor. Ayırmak için kabul edin."
+        },
+        "accepted": {
+          "buyer": "Kabul edildi. Devam için emanet hesaba ödeyin; teslimatı doğrulayana kadar para tutulur.",
+          "seller": "{name} emanet ödemesi bekleniyor."
+        },
+        "paid_to_escrow": {
+          "buyer": "Paranız emanette güvende. {name} gönderimi bekleniyor.",
+          "seller": "Para emanette güvende. Yükü gönderip gönderildi işaretleyin."
+        },
+        "dispatched": {
+          "buyer": "Yolda. Yükü kontrol edip parayı serbest bırakmak için teslimatı doğrulayın.",
+          "seller": "Yolda. {name} teslimatı doğrulayınca para size bırakılır."
+        },
+        "completed": {
+          "buyer": "Teslim edildi. Para {name} kişisine bırakıldı.",
+          "seller": "Teslim edildi. Para size bırakıldı."
+        },
+        "declined": {
+          "buyer": "{name} siparişi reddetti veya parti tükendi.",
+          "seller": "Siparişi reddettiniz veya parti kapandı."
+        }
+      },
+      "action": {
+        "accept": "Siparişi kabul et",
+        "decline": "Reddet",
+        "pay": "Emanete {amount} öde",
+        "dispatch": "Gönderildi işaretle",
+        "confirm": "Teslimatı doğrula"
+      },
+      "done": {
+        "accept": "Sipariş kabul edildi",
+        "decline": "Sipariş reddedildi",
+        "pay": "Emanete ödendi. Makbuz {number}",
+        "dispatch": "Gönderildi işaretlendi",
+        "confirm": "Teslimat doğrulandı. Para satıcıya bırakıldı."
+      },
+      "declineConfirm": "{name} siparişi reddedilsin mi? Geri alınamaz.",
+      "declineYes": "Evet, reddet"
+    },
+    "receipt": {
+      "dateLabel": "Tarih",
+      "material": "Malzeme",
+      "seller": "Satıcı",
+      "buyer": "Alıcı",
+      "gstin": "GSTIN {gstin}",
+      "amount": "Tutar",
+      "title": "Ticaret makbuzu",
+      "numberLabel": "Makbuz no.",
+      "statusLabel": "Ödeme",
+      "inEscrow": "Emanette",
+      "settled": "Serbest bırakıldı",
+      "noGstin": "GST kaydı yok",
+      "quantity": "Miktar",
+      "rate": "Birim fiyat",
+      "total": "Toplam",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "{date} tarihinde Luma.Green emanet hesabına ödendi.",
+      "held": "Alıcı teslimatı doğrulayana kadar emanette tutulur.",
+      "released": "{date} tarihinde satıcıya bırakıldı.",
+      "ewayBill": "50.000 rupi üzeri mal: yükle e-sevk belgesi gitmelidir.",
+      "notTaxInvoice": "Bu ticaret makbuzudur, GST vergi faturası değil. Gerçek ödemelerle vergi faturası gelir.",
+      "print": "Yazdır",
+      "back": "Ticaretlere dön",
+      "missingTitle": "Makbuz bulunamadı",
+      "missingBody": "Ticaret sizin değil veya bağlantı yanlış.",
+      "pendingTitle": "Henüz makbuz yok",
+      "pendingBody": "Alıcı emanet hesaba ödediğinde makbuz oluşur.",
+      "declinedBody": "Ticaret reddedildiği için makbuz yok."
+    },
+    "errors": {
+      "generic": "Bir sorun oluştu. Tekrar deneyin.",
+      "NOT_SIGNED_IN": "Çıkış yaptınız. Yeniden giriş yapın.",
+      "WRONG_ROLE": "İşletmeniz bu işlemi yapamaz.",
+      "NOT_FOUND": "Bulamadık. Kaldırılmış olabilir.",
+      "OWN_LISTING": "Bu sizin partiniz.",
+      "LISTING_NOT_OPEN": "Bu parti artık satılık değil.",
+      "NOT_ENOUGH_LEFT": "Bu partide o kadar kalmadı.",
+      "NOT_ENOUGH_STOCK": "Stokunuzda o kadar yok. Önce stoku kontrol edin.",
+      "INVALID_WEIGHT": "0 kg’dan büyük ağırlık girin.",
+      "INVALID_PRICE": "₹0’dan yüksek fiyat girin.",
+      "NOTE_TOO_LONG": "Notu en fazla 140 harf tutun.",
+      "UNKNOWN_MATERIAL": "Listeden malzeme seçin.",
+      "WRONG_STEP": "Bu ticaret ilerlemiş. Son adımı kontrol edin."
+    },
+    "browse": {
+      "title": "Satın al",
+      "lead": "{kind, select, yard {Yakındaki hurdacılardan ayrıştırılmış hurda.} recycler {Sahalardan ayrıştırılıp balyalanmış malzeme.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme.} other {Yakında satılık malzeme.}}",
+      "filterLabel": "Malzemeye göre filtrele",
+      "all": "Tümü",
+      "count": "{count, plural, =0 {Parti yok} one {# parti satılık} other {# parti satılık}}",
+      "emptyTitle": "Şu anda satılık yok",
+      "emptyBody": "Yeni partiler listelendiklerinde burada görünür.",
+      "notForYouTitle": "Hurdacılar hanelerden alır",
+      "notForYouBody": "Pazarda satarsınız: ayrıştırılmış stokunuzu sahalara sunun.",
+      "goSell": "Sahalara sat"
+    },
+    "recycled": "Geri dönüştürülmüş",
+    "units": {
+      "kg": "kg",
+      "rupee": "₹"
+    },
+    "sampleData": "Bu ekrandaki fiyat ve tutarlar prototip için örnek veridir.",
+    "simulated": "Örnek veri. Prototipte ödemeler simülasyondur; gerçek para aktarılmaz.",
+    "forBusinessesTitle": "Bu ekran işletmeler içindir",
+    "forBusinessesBody": "Hurdacılar, sahalar, geri dönüşümcüler ve üreticiler burada ticaret yapar.",
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "Mevcut",
+      "lotValue": "Tüm parti"
+    },
+    "totalInvalid": "Toplam tutar çok yüksek. Miktarı veya fiyatı azaltın."
+  },
+  "shop": {
+    "errors": {
+      "retry": "Tekrar dene",
+      "generic": "Bir sorun oluştu. Tekrar deneyin.",
+      "changed": "Bu sırada talep değişti. Yeniden kontrol edin.",
+      "loadTitle": "Yüklenemedi",
+      "loadBody": "İnterneti kontrol edip tekrar deneyin."
+    },
+    "prices": {
+      "save": "Kaydet",
+      "title": "Fiyatlarım",
+      "saving": "Kaydediliyor…",
+      "prefix": "₹",
+      "lead": "Hanelere kg başına ödediğiniz. Asla minimumun altında değil.",
+      "label": "{material} fiyatınız, kg başına rupi",
+      "suffix": "/kg",
+      "minimum": "Asgari {price}/kg",
+      "market": "Piyasa {price}/kg",
+      "notSet": "Henüz belirlenmedi. Haneler şehir fiyatı {price}/kg alır.",
+      "saved": "{material}: {price}/kg kaydedildi.",
+      "invalid": "14 veya 14.50 gibi fiyat girin.",
+      "belowFloor": "Çok düşük. Minimum {price}/kg.",
+      "belowFloorUnknown": "Çok düşük. Minimum fiyatın altında.",
+      "emptyTitle": "Henüz malzeme yok",
+      "emptyBody": "Aldığınız malzemeler dükkân onaylandığında belirlenir."
+    },
+    "perKg": "{price}/kg",
+    "days": {
+      "today": "Bugün",
+      "tomorrow": "Yarın",
+      "yesterday": "Dün"
+    },
+    "families": {
+      "paper": "Kâğıt",
+      "plastic": "Plastik",
+      "metal": "Metaller",
+      "glass": "Cam",
+      "ewaste": "Elektronik atık",
+      "other": "Diğer"
+    },
+    "requests": {
+      "tabs": {
+        "today": "Bugün",
+        "done": "Tamamlandı",
+        "new": "Yeni"
+      },
+      "dueNow": "Bugün",
+      "title": "Talepler",
+      "later": "Yaklaşan",
+      "confirmDecline": {
+        "cancel": "Koru",
+        "confirm": "Evet, reddet",
+        "title": "Talep reddedilsin mi?",
+        "body": "Geri alamazsınız."
+      },
+      "decline": "Reddet",
+      "lead": "Hurda satmak isteyen yakındaki haneler.",
+      "empty": {
+        "newTitle": "Yeni talep yok",
+        "newBody": "Hane sizden alım ayarladığında burada görünür.",
+        "todayTitle": "Alınacak bir şey yok",
+        "todayBody": "Kabul ettiğiniz alımlar burada görünür.",
+        "doneTitle": "Henüz biten yok",
+        "doneBody": "Ödenen ve reddedilen alımlar burada görünür."
+      },
+      "estimate": "Tahmin",
+      "doneLine": "{when} · {materials}",
+      "accept": "Kabul et",
+      "startTrip": "Yola çık",
+      "weigh": "Tart ve öde",
+      "accepted": "Kabul edildi. Artık adres ve numarayı görebilirsiniz.",
+      "declined": "Talep reddedildi.",
+      "onTheWay": "Hane yolda olduğunuzu görebilir."
+    },
+    "home": {
+      "prices": "Fiyatlarım",
+      "greeting": "Merhaba",
+      "newTitle": "Yeni talepler",
+      "newNone": "Şu anda yeni talep yok.",
+      "newSome": "{count, plural, one {# hane alım istiyor.} other {# hane alım istiyor.}}",
+      "seeRequests": "Talepleri gör",
+      "todayTitle": "Bugünkü alımlar",
+      "next": "Sonraki",
+      "todayNone": "Bugün başka alım yok.",
+      "seeToday": "Bugünkü alımları gör",
+      "moneyTitle": "Para ve stok",
+      "paidToday": "Bugün ödenen",
+      "paidWeek": "Son 7 gün",
+      "pickups": "{count, plural, =0 {Alım yok} one {# alım} other {# alım}}",
+      "stockWorth": "Stok değeri",
+      "stockWeight": "Stokta {weight}",
+      "priceCheck": "Fiyat kontrolü",
+      "allPrices": "Tüm fiyatlarım",
+      "perKg": "kg başına",
+      "you": "Ödediğiniz",
+      "market": "Piyasa",
+      "quickLinks": "Kısayollar",
+      "sell": "Sahaya sat",
+      "sellHint": "Stokunuzu yakın sahalara sunun",
+      "pricesHint": "Hanelere kg başına ödediğiniz"
+    },
+    "stock": {
+      "title": "Stok",
+      "scrap": "Hurda",
+      "buy": "Malzeme al",
+      "lead": "Elinizdekiler ve bugünkü değerleri.",
+      "totalWeight": "Toplam ağırlık",
+      "worth": "Bugünkü değer",
+      "worthHint": "Bugünün piyasa fiyatıyla",
+      "recycled": "Geri dönüştürülmüş malzeme",
+      "atPrice": "Piyasa {price}/kg",
+      "noPrice": "Bugün piyasa fiyatı yok",
+      "sellTo": {
+        "yard": "Sahaya sat",
+        "recycler": "Geri dönüşümcüye sat",
+        "manufacturer": "Üreticiye sat"
+      },
+      "emptyTitle": "Henüz stok yok",
+      "emptyShop": "Alımı tartıp ödeyin, burada görünsün.",
+      "emptyBusiness": "Pazardan alın, burada görünsün.",
+      "notBusinessTitle": "Yalnızca işletmeler için",
+      "notBusinessBody": "Stoku dükkân, saha, geri dönüşümcü ve fabrikalar tutar."
+    },
+    "slot": "{day}, {window}",
+    "windows": {
+      "morning": "Sabah",
+      "afternoon": "Öğleden sonra",
+      "evening": "Akşam"
+    },
+    "weigh": {
+      "saving": "Kaydediliyor…",
+      "kg": "kg",
+      "remove": "{material} kaldır",
+      "title": "Tart ve öde",
+      "lead": "Her malzemeyi tartın. Tutar sizin fiyatlarınızı kullanır.",
+      "inputLabel": "{material}, kg olarak",
+      "less": "Yarım kilo az {material}",
+      "more": "Yarım kilo fazla {material}",
+      "estimated": "Tahmin: {weight}",
+      "noRate": "Fiyat belirlenmedi",
+      "add": "Başka malzeme ekle",
+      "total": "Ödenecek",
+      "method": "Ödeme şekli",
+      "confirm": "{amount} ödendiğini doğrula",
+      "invalidKg": "12 veya 12.5 gibi kilogram girin.",
+      "nothing": "En az bir malzeme tartın.",
+      "done": "Ödeme kaydedildi."
+    },
+    "dispatch": {
+      "saving": "Kaydediliyor…",
+      "title": "Alım ayarları",
+      "autoAccept": "Yakındaki alımları otomatik kabul et",
+      "autoAcceptHint": "Yarıçap içindeki alımlar elle yanıt olmadan kabul edilebilir. Toplama yapamayacağınızda kapalı tutun.",
+      "radius": "Alım yarıçapı (km)",
+      "radiusHint": "1 ile 50 arasında tam sayı seçin.",
+      "saved": "Alım ayarları kaydedildi",
+      "error": "Ayarları kaydedemedik. Tekrar deneyin.",
+      "ownerOnly": "Alım ayarlarını yalnızca dükkân sahibi değiştirebilir.",
+      "locationRequired": "Otomatik kabulden önce dükkân konumunu ekleyin ve evden alımı açın."
+    },
+    "request": {
+      "where": "Adres",
+      "call": "Ara",
+      "history": "Geçmiş",
+      "steps": {
+        "accepted": "Kabul edildi",
+        "on_the_way": "Yolda",
+        "completed": "Tartıldı ve ödendi",
+        "declined": "Reddedildi",
+        "cancelled": "İptal edildi",
+        "requested": "Talep edildi"
+      },
+      "back": "Tüm talepler",
+      "details": "Alım ayrıntıları",
+      "phone": "Telefon",
+      "directions": "Yol tarifi",
+      "hidden": "Kabul edince tam adres ve numarayı görürsünüz.",
+      "items": "Ellerindekiler",
+      "estimate": "Tahmin",
+      "declined": "Bu talebi reddettiniz.",
+      "cancelled": "Hane alımı iptal etti.",
+      "notFoundTitle": "Talep bulunamadı",
+      "notFoundBody": "Başka dükkânın talebi olabilir veya bağlantı yanlış."
+    },
+    "status": {
+      "accepted": "Kabul edildi",
+      "on_the_way": "Yolda",
+      "declined": "Reddedildi",
+      "cancelled": "İptal edildi",
+      "requested": "Yeni",
+      "completed": "Ödendi"
+    },
+    "receipt": {
+      "line": "{price}/kg ile {weight}",
+      "title": "{amount} ödendi",
+      "kg": "{kg} kg",
+      "total": "Toplam",
+      "thanks": "Geri dönüşüm için teşekkürler!",
+      "thanksNamed": "Geri dönüşüm için teşekkürler, {name}!",
+      "method": "{method}, {when}",
+      "points": "{name}, {points, plural, one {# puan} other {# puan}} kazandı",
+      "pointsHint": "Her ₹10 için bir puan.",
+      "stock": "Stokunuza eklendi.",
+      "back": "Taleplere dön"
+    },
+    "about": "Yaklaşık {amount}",
+    "sampleNote": "Bu ekrandaki fiyat, piyasa oranı ve değerler prototip örnekleridir.",
+    "household": "Hane",
+    "dropoff": "Dükkânınıza getirir",
+    "methods": {
+      "cash": "Nakit",
+      "upi": "UPI"
+    },
+    "compare": {
+      "above": "Piyasanın üstünde",
+      "below": "Piyasanın altında",
+      "same": "Piyasayla aynı"
+    },
+    "notShop": {
+      "title": "Yalnızca hurda dükkânları için",
+      "body": "Alım talepleri ve hane fiyatları hurdacının dükkânına aittir.",
+      "home": "Ana sayfaya git"
+    }
+  },
+  "analytics": {
+    "close": "Kapat",
+    "title": "İsteğe bağlı analiz",
+    "description": "PostHog ve Google Analytics’in herkese açık sayfa ziyaretlerini ölçmesine izin verin. Formları, özel sayfaları veya oturum tekrarlarını kaydetmeyiz. Seçiminiz platforma erişimi değiştirmez.",
+    "accept": "Analize izin ver",
+    "decline": "Analizi kapalı tut",
+    "settings": "Analiz ayarları",
+    "saved": "Seçiminiz bu cihazda kaydedildi.",
+    "unavailable": "Tarayıcı seçiminizi kaydedemedi. Analiz kapalı kalacak."
+  },
+  "home": {
+    "metaDescription": "Luma.Green, Hindistan’ın hurda zincirini tek platformda birleştirir: haneler, hurdacılar, sahalar, geri dönüşümcüler ve üreticiler. Adil fiyatlar, doğrulanmış işletmeler ve her adımda makbuz.",
+    "hero": {
+      "eyebrow": "Bengaluru’da başlıyoruz",
+      "title": "Hindistan’ın hurda zinciri tek platformda",
+      "lead": "Evden adil fiyatla hurda satın. Doğrulanmış işletmelerle zincir boyunca ticaret yapın. Her teslimat tartılır, fiyatlandırılır ve kaydedilir.",
+      "sell": "Hurdanızı satın",
+      "join": "İşletme olarak katılın",
+      "prices": "Bugünün fiyatlarını görün"
+    },
+    "teaser": {
+      "title": "Bugünün fiyatları",
+      "placeAndDate": "Bengaluru · {date}",
+      "place": "Bengaluru",
+      "seeAll": "Tüm fiyatlar",
+      "demoNote": "Prototip için örnek fiyatlar.",
+      "unavailable": "Bugünün fiyatları yakında burada görünecek.",
+      "error": "Fiyatlar şu anda yüklenemedi."
+    },
+    "chain": {
+      "heading": "Hurda nasıl ilerler",
+      "intro": "Hurda, yeni bir ürüne dönüşmeden önce dört kez el değiştirir. Her adımda daha iyi ayrıştırılır ve Luma.Green her teslimatı kaydeder.",
+      "steps": {
+        "household": {
+          "name": "Haneler",
+          "body": "Eski kâğıt, plastik, metal ve elektronik atık satar."
+        },
+        "kabadiwala": {
+          "name": "Hurdacılar",
+          "body": "Satın alır, tartar ve malzemeye göre ayırır."
+        },
+        "yard": {
+          "name": "Ayrıştırma sahaları",
+          "body": "Sınıflandırır ve balya hâline getirir."
+        },
+        "recycler": {
+          "name": "Geri dönüşümcüler",
+          "body": "Balyaları pul, granül ve külçeye dönüştürür."
+        },
+        "manufacturer": {
+          "name": "Üreticiler",
+          "body": "Geri dönüştürülmüş malzemeden yeni ürün yapar."
+        }
+      },
+      "money": "Haneler kapıda nakit veya UPI alır. İşletmeler arası emanet ödeme planlanıyor.",
+      "saathi": "Saathi çalışanları zincir boyunca toplama, ayrıştırma ve vardiyalarda yardımcı olur."
+    },
+    "roles": {
+      "heading": "Zincirdeki herkes için",
+      "intro": "Altı katılımcı grubu hurdaların ilerlemesini sağlar. Luma.Green’in her biri için sundukları burada.",
+      "household": {
+        "title": "Haneler",
+        "one": "Rezervasyondan önce hurdanızın değerini görün.",
+        "two": "Kapıdan alım veya dükkâna teslim.",
+        "three": "Makbuzla nakit veya UPI ödemesi.",
+        "cta": "Hurdanızı satın"
+      },
+      "kabadiwala": {
+        "title": "Hurdacılar",
+        "one": "Yakındaki evlerden alım talepleri.",
+        "two": "Taban fiyatın altına düşmeden fiyat belirleyin.",
+        "three": "Ayrıştırılmış stokunuzu sahalara satın.",
+        "cta": "Hurdacı olarak katılın"
+      },
+      "yard": {
+        "title": "Ayrıştırma sahaları",
+        "one": "Yakındaki dükkânların stokunu görün.",
+        "two": "Toplu alın, balyaları geri dönüşümcülere satın.",
+        "three": "Planlanıyor: ödeme teslimata kadar emanette tutulur.",
+        "cta": "Saha olarak katılın"
+      },
+      "recycler": {
+        "title": "Geri dönüşümcüler",
+        "one": "Doğrulanmış sahalardan sınıflandırılmış balyalar.",
+        "two": "Her parti için teslimat zinciri.",
+        "three": "Üretiminizi fabrikalara satın.",
+        "cta": "Geri dönüşümcü olarak katılın"
+      },
+      "manufacturer": {
+        "title": "Üreticiler",
+        "one": "Geri dönüşümcülerin üretimini görün.",
+        "two": "Planlanıyor: emanet ödemeyle geri dönüştürülmüş malzeme siparişi.",
+        "three": "EPR raporları için kayıtlar.",
+        "cta": "Üretici olarak katılın"
+      },
+      "saathi": {
+        "title": "Saathi çalışanları",
+        "one": "Yakında ücretli işler: toplama, ayrıştırma ve vardiyalar.",
+        "two": "Bölgenizi ve saatlerinizi seçin.",
+        "three": "Doğrulama sayesinde evler ve işletmeler size güvenir.",
+        "cta": "Saathi olarak katılın"
+      }
+    },
+    "trust": {
+      "heading": "Güven üzerine kurulu",
+      "intro": "Hurda ticareti uzun süredir nakit ve tahminlerle yürür. Bu kurallar bunu değiştirir.",
+      "verified": {
+        "title": "Doğrulanmış işletmeler",
+        "body": "Ticarete başlamadan önce her işletmeyi ve Saathi çalışanını bir kişi inceler."
+      },
+      "floor": {
+        "title": "Taban fiyatla adil ücret",
+        "body": "Dükkânlar kendi fiyatını belirler ama malzeme için yayımladığımız minimumun altına inemez."
+      },
+      "escrow": {
+        "title": "Planlanıyor: işletme ticaretinde emanet ödeme",
+        "body": "Demo ödeme adımlarını gösterir; gerçek para tutmaz veya aktarmaz."
+      },
+      "receipts": {
+        "title": "Dijital makbuzlar",
+        "body": "Her alım ve ticarette malzeme, miktar ve fiyatı gösteren makbuz verilir."
+      },
+      "languages": {
+        "title": "{count, number} dil",
+        "body": "Kannada, Hintçe, Tamilce, İngilizce ve daha fazlası. Büyük düğmeler, az sözcük."
+      }
+    },
+    "whyNow": {
+      "heading": "Neden şimdi",
+      "intro": "Üç değişiklik, Hindistan’ın hurda zincirini kayda almak için doğru zamanı oluşturuyor.",
+      "epr": {
+        "title": "EPR kuralları",
+        "body": "Plastik ambalaj, elektronik atık ve bataryalar için Genişletilmiş Üretici Sorumluluğu kuralları, malzemenin gerçekten toplanıp geri dönüştürüldüğünün kanıtını ister. Kanıt ilk teslimattan başlamalıdır."
+      },
+      "informal": {
+        "title": "Kayıt dışı sektör",
+        "body": "Hurdacılar ve kayıt dışı çalışanlar, adil fiyatlara, kayıtlara ve tanınmaya sınırlı erişimle Hindistan’daki geri dönüşümün önemli kısmını yapıyor. Luma.Green onlarla birlikte çalışır."
+      },
+      "upi": {
+        "title": "UPI her yerde",
+        "body": "En küçük dükkânda bile telefonla ödeme artık normal. Her ödeme bir kayıt bırakabilir."
+      }
+    },
+    "closing": {
+      "title": "Elinizdekiyle başlayın",
+      "body": "Bir torba eski gazete veya bir kamyon balya: Luma.Green’de hepsine yer var.",
+      "sell": "Hurdanızı satın",
+      "join": "İşletme olarak katılın"
+    },
+    "expansion": {
+      "materialsTitle": "Elinizdeki malzemelerle başlayın",
+      "pickupTitle": "Adım adım bir alım",
+      "shopTitle": "Hurda dükkânınız bağlantıda",
+      "recordsTitle": "Malzemeyi izleyen bir kayıt",
+      "paymentTitle": "Net ağırlıklar. Net ödemeler.",
+      "questionsTitle": "Başlamadan önce"
+    },
+    "marquee": {
+      "label": "Katalogdaki malzemeler",
+      "pause": "Hareketi durdur",
+      "resume": "Hareketi sürdür"
+    },
+    "testimonials": {
+      "title": "Demo görüşleri",
+      "note": "Örnek alıntılardır, müşteri yorumu değildir.",
+      "household": "Alım seçmeden önce fiyatı kontrol edebiliyorum.",
+      "kabadiwala": "Ağırlık, fiyat ve makbuz birlikte kalıyor. Her alımı kontrol etmek kolaylaşıyor.",
+      "manufacturer": "Malzeme kodları istediğim sınıfı belirtmeyi kolaylaştırıyor."
+    }
+  },
+  "notFound": {
+    "metaTitle": "Sayfa bulunamadı",
+    "title": "Sayfa bulunamadı",
+    "body": "Aradığınız sayfa yok veya taşınmış.",
+    "backHome": "Ana sayfaya dön"
+  },
+  "solar": {
+    "chart": {
+      "table": "Sayıları göster",
+      "title": "{years, number} yıllık tasarruf",
+      "legendPaying": "Henüz maliyeti karşılıyor",
+      "legendPaid": "Maliyeti karşıladı",
+      "legendCost": "Maliyetiniz",
+      "label": "Yıllara göre tasarruf. Yıllar arasında ok tuşlarıyla ilerleyin.",
+      "point": "{year, number}. yıl: {amount} tasarruf",
+      "yearLabel": "{year, number}. yıl",
+      "tableCaption": "Yıllara göre tasarruf",
+      "year": "Yıl",
+      "saved": "Şimdiye kadarki tasarruf"
+    },
+    "contact": {
+      "phone": "Cep telefonu numarası",
+      "sending": "Gönderiliyor…",
+      "errors": {
+        "phone": "10 haneli Hindistan cep telefonu numarası girin.",
+        "name": "Adınızı girin.",
+        "message": "En fazla 1.000 harfle birkaç kelime yazın.",
+        "generic": "Gönderemedik. Tekrar deneyin."
+      },
+      "title": "Bizimle konuşun",
+      "lead": "Size nasıl ulaşacağımızı söyleyin. Geri arayacağız.",
+      "name": "Adınız",
+      "phoneHint": "Bu numaradan arayacağız.",
+      "message": "Bilmemiz gereken başka bir şey var mı?",
+      "messageHint": "Tahmininiz dolduruldu. İstediğinizi ekleyin.",
+      "prefill": "{kind, select, home {Evim için} other {İşletmem için}}: bu sayfadaki tahmine göre {kw} kW sistem.",
+      "send": "Gönder",
+      "sentTitle": "Teşekkürler, {name}",
+      "sentBody": "Mesajınızı aldık, yakında arayacağız.",
+      "another": "Başka mesaj gönder",
+      "privacy": "Numaranızı yalnızca güneş enerjisi hakkında aramak için kullanırız.",
+      "unavailable": "Bu sayfadan henüz mesaj gönderilemiyor. <link>{email}</link> adresine yazın."
+    },
+    "metaTitle": "Karnataka için çatı güneş enerjisi hesaplayıcısı",
+    "metaDescription": "Karnataka’daki ev veya işletmenizin güneş sistemi ihtiyacını, PM Surya Ghar desteği sonrası maliyeti ve geri ödeme süresini tahmin edin.",
+    "eyebrow": "Karnataka",
+    "title": "Ev veya işletmeniz için çatı güneş enerjisi",
+    "lead": "Çatınıza uygun kapasiteyi, devlet desteği sonrası maliyeti ve geri ödeme süresini bulun. Buradaki tüm sayılar tahmindir.",
+    "form": {
+      "heading": "Bilgileriniz",
+      "kind": "Kimin için?",
+      "kinds": {
+        "home": "Evim",
+        "business": "İşletmem"
+      },
+      "mode": "Elektrik kullanımınız",
+      "modes": {
+        "bill": "Aylık fatura",
+        "units": "Aylık birim"
+      },
+      "bill": "Aylık elektrik faturası",
+      "billHint": "Rupi olarak, örneğin 2500",
+      "units": "Aylık tüketilen birim",
+      "unitsHint": "Faturanızda yazar, örneğin 300",
+      "unitsSuffix": "birim",
+      "roof": "Gölgesiz çatı alanı",
+      "roofHint": "Emin değilseniz boş bırakın.",
+      "roofUnit": "Çatı alanı birimi",
+      "areaUnits": {
+        "sqft": "ft²",
+        "m2": "m²"
+      },
+      "optional": "isteğe bağlı",
+      "errors": {
+        "bill": "{min} ile {max} arasında fatura girin.",
+        "units": "{min} ile {max} arasında birim girin.",
+        "roof": "Sıfırdan büyük çatı alanı girin veya boş bırakın."
+      }
+    },
+    "result": {
+      "heading": "Tahmininiz",
+      "prompt": "Tahmini görmek için fatura veya birim girin.",
+      "size": "Önerilen sistem",
+      "kw": "{kw} kW",
+      "sizeHint": "Ayda yaklaşık {units} birim üretir ve yaklaşık {area} çatı gerekir.",
+      "areaIn": "{value} {unit, select, sqft {ft²} other {m²}}",
+      "fromBill": "Faturanız ayda yaklaşık {units} birime denk gelir.",
+      "limitedByRoof": "Çatınıza sığacak şekilde boyutlandırıldı. Daha fazla çatı alanı faturanın daha büyük kısmını karşılayabilir.",
+      "roofTooSmallTitle": "Çatınız çok küçük görünüyor",
+      "roofTooSmallBody": "En küçük 1 kW sistem bile yaklaşık {area} gölgesiz çatı ister. Bizimle konuşun; başka bir yol olabilir.",
+      "cost": "Destek öncesi maliyet",
+      "subsidy": "PM Surya Ghar desteği",
+      "noSubsidy": "İşletmeler için değil",
+      "netCost": "Maliyetiniz",
+      "savings": "Yaklaşık tasarruf",
+      "perMonth": "Ayda {amount}",
+      "payback": "Kendini ödeme süresi",
+      "yearsRange": "{low}–{high} yıl",
+      "years": "{count, plural, one {# yıl} other {# yıl}}",
+      "range": "{low} – {high}",
+      "minus": "− {amount}",
+      "noPayback": "Bu tasarrufla karşılanmaz",
+      "demoNote": "Aşağıdaki varsayımlara dayalı tahmindir. Gerçek sayılar yerinde incelemeyle belirlenir."
+    },
+    "assumptions": {
+      "title": "Nasıl tahmin ediyoruz",
+      "production": "Karnataka’da 1 kW panel ayda yaklaşık {units} birim üretir.",
+      "roof": "Her kW için yaklaşık {m2} m² ({sqft} ft²) gölgesiz çatı gerekir.",
+      "cost": "Kurulum kW başına yaklaşık {low}–{high} tutar.",
+      "tariff": "Fatura, evlerde birim başına yaklaşık {home}, işletmelerde {business} üzerinden tüketim birimine çevrilir.",
+      "subsidy": "Evlere ilk 2 kW için kW başına {first}, üçüncü kW için {third}, en fazla {cap} verilir. İşletmeler alamaz.",
+      "savings": "Tasarruf yalnızca kendiniz kullandığınız elektriği bugünkü fiyatlarla hesaplar."
+    },
+    "subsidy": {
+      "title": "PM Surya Ghar desteği",
+      "body": "PM Surya Ghar: Muft Bijli Yojana, Hindistan Hükûmetinin ev çatılarına güneş enerjisi programıdır. Destek, sistem kurulup incelendikten sonra banka hesabınıza ödenir.",
+      "caption": "Evler için sistem kapasitesine göre destek",
+      "size": "Sistem kapasitesi",
+      "amount": "Destek",
+      "atLeast": "{kw} kW veya üzeri",
+      "kw": "{kw} kW",
+      "source": "Kurallar ve başvurular:",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "(yeni sekmede açılır)",
+      "business": "İşletmeler bu desteği alamaz, ancak birim başına daha çok ödedikleri için genellikle daha fazla tasarruf eder."
+    },
+    "next": {
+      "title": "Sonraki adımlar",
+      "one": {
+        "title": "Sizi ararız",
+        "body": "Çatınızı, faturanızı ve ne zaman başlamak istediğinizi sorarız."
+      },
+      "two": {
+        "title": "Yerinde inceleme",
+        "body": "Doğrulanmış kurulumcu çatınızı kontrol eder ve kesin teklif verir."
+      },
+      "three": {
+        "title": "Destek ve net ölçüm",
+        "body": "Destek ve elektrik şirketinizden net ölçüm başvurularında yardımcı oluruz."
+      }
+    }
+  },
+  "participants": {
+    "kabadiwala": {
+      "name": "Hurdacılar",
+      "body": "Yakındaki evlerden alım talebi alın, adil tartıp ödeyin ve ayrıştırılmış stoku sahalara satın."
+    },
+    "yard": {
+      "name": "Ayrıştırma sahaları",
+      "body": "Planlanıyor: hurdacılardan alın, ayrıştırıp balyalayın ve sınıflandırılmış partileri emanet ödemeyle geri dönüşümcülere satın."
+    },
+    "recycler": {
+      "name": "Geri dönüşümcüler",
+      "body": "Doğrulanmış sahalardan sınıflandırılmış balya alın; pul, granül ve külçeleri fabrikalara satın."
+    },
+    "manufacturer": {
+      "name": "Üreticiler",
+      "body": "EPR raporlarının gerektirdiği kayıtlarla doğrulanmış geri dönüşümcülerden malzeme sipariş edin."
+    },
+    "saathi": {
+      "name": "Saathi çalışanları",
+      "body": "Eve yakın ücretli alım, ayrıştırma ve vardiya işleri alın; kazancınızı görün."
+    },
+    "metaTitle": "Kimler için",
+    "metaDescription": "Luma.Green; haneler, hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için, yani hurdayı evden fabrikaya taşıyan herkes için tasarlandı.",
+    "title": "Luma.Green kimler için",
+    "lead": "Hurdayı evden fabrikaya taşıyan herkes ve aradaki işleri yapan kişiler.",
+    "householdHeading": "Ve her hane için",
+    "householdBody": "Herkes hesap açmadan evden hurda satabilir: malzemelerini seçer, dükkân tekliflerini görür ve makbuzla nakit veya UPI alır."
+  },
+  "join": {
+    "consent": {
+      "title": "Başlamadan önce",
+      "lead": "Neleri, neden isteyeceğiz.",
+      "why": {
+        "kabadiwala": "Dükkân bilgileri yakındaki evlerin rezervasyon yapmasını ve gerçek bir dükkân olduğunu doğrulamamızı sağlar. Teyit için bir kez ararız.",
+        "business": "İzin belgesi ve makine fotoğrafları, alıcı ve satıcılara lisanslı ve faal olduğunuzu gösterir. Kirlilik kontrol kurulunun açık sicilinden kontrol ederiz.",
+        "saathi": "Fotoğraflı kimlik ve özçekim, biri sizi evine veya sahasına almadan önce kimliğinizi doğrulamamızı sağlar."
+      },
+      "privacy": "Bilgileri ve dosyaları yalnızca siz ve Luma.Green ekibi görür. Doğrulamak ve platformdakilerle bağlantı kurmak için kullanırız, asla satmayız. Silinmesini isteyebilirsiniz.",
+      "age": "18 yaşındayım veya daha büyüğüm",
+      "accept": "Nelerin neden toplandığını okudum",
+      "startButton": "Başvurumu başlat",
+      "starting": "Başlatılıyor…"
+    },
+    "business": {
+      "materialNames": {
+        "paper": "Kâğıt",
+        "plastic": "Plastik",
+        "metal": "Metaller",
+        "glass": "Cam",
+        "ewaste": "Elektronik atık"
+      },
+      "titles": {
+        "yard": "Sahanız",
+        "recycler": "Geri dönüşüm tesisiniz",
+        "manufacturer": "Fabrikanız"
+      },
+      "step": "2 adımdan {step}.",
+      "businessName": "İşletme adı",
+      "materials": "İşlediğiniz malzemeler",
+      "materialsHint": "Doğru alıcı ve satıcılarla bağlantı kurabilmeniz için.",
+      "address": "Adres",
+      "addressHint": "Parsel, sokak ve bölge",
+      "locationTags": "Bölge adları",
+      "locationTagsHint": "Peenya Sanayi Bölgesi gibi adlarla bulunmayı kolaylaştırın. En fazla beş.",
+      "addTag": "Ekle",
+      "collects": "Tedarikçilerden alım yapıyor musunuz?",
+      "hours": "Çalışma saatleri"
+    },
+    "saathi": {
+      "vehicles": {
+        "none": "Yok",
+        "cycle": "Bisiklet",
+        "two_wheeler": "Motosiklet veya skuter",
+        "auto": "Üç tekerlekli taksi"
+      },
+      "name": "Adınız",
+      "work": {
+        "home_pickups": "Evlerden alım",
+        "yard_sorting": "Sahada ayrıştırma",
+        "shop_help": "Hurda dükkânında yardım",
+        "factory_shifts": "Geri dönüşümcü veya fabrikada vardiya"
+      },
+      "timeNames": {
+        "morning": "Sabah",
+        "afternoon": "Öğleden sonra",
+        "evening": "Akşam"
+      },
+      "title": "Hakkınızda",
+      "nameHint": "Kimliğinizdeki gibi",
+      "area": "Yaşadığınız yer",
+      "areaHint": "Malleshwaram gibi bölgeniz",
+      "radius": "Ne kadar uzağa gidebilirsiniz?",
+      "radiusOption": "{km} km",
+      "workTypes": "İstediğiniz iş",
+      "vehicle": "Aracınız",
+      "times": "Ne zaman çalışabilirsiniz?",
+      "days": "Hangi günler?",
+      "idProof": "Fotoğraflı kimlik",
+      "idProofHint": "Seçmen kartı, ehliyet, PAN veya yalnızca son dört hanesi görünen maskeli Aadhaar. En fazla 10 MB fotoğraf ya da PDF.",
+      "selfie": "Özçekim",
+      "selfieHint": "Kimliğinizle eşleştiririz."
+    },
+    "homeLink": "Nasıl çalıştığını görün",
+    "roles": {
+      "kabadiwala": {
+        "title": "Hurdacı",
+        "body": "Hurda dükkânı işletiyor ve yakındaki evlerden satın alıyorsunuz.",
+        "needs": "Dükkân adresi ve çalışma saatleri. Varsa GST numaranız."
+      },
+      "yard": {
+        "title": "Ayrıştırma sahası",
+        "body": "Hurdayı toplu ayrıştırıp balyalıyor, ardından satıyorsunuz.",
+        "needs": "Varsa GST numarası, kirlilik kontrol izni (PDF) ve makine fotoğrafları."
+      },
+      "recycler": {
+        "title": "Geri dönüşümcü",
+        "body": "Hurdayı tekrar ham maddeye dönüştürüyorsunuz.",
+        "needs": "Varsa GST numarası, kirlilik kontrol izni (PDF) ve makine fotoğrafları."
+      },
+      "manufacturer": {
+        "title": "Üretici",
+        "body": "Fabrikanız için geri dönüştürülmüş malzeme alıyorsunuz.",
+        "needs": "Varsa GST numarası, kirlilik kontrol izni (PDF) ve makine fotoğrafları."
+      },
+      "saathi": {
+        "title": "Saathi",
+        "body": "Ücretli iş arıyorsunuz: evden alım, ayrıştırma veya fabrika vardiyası.",
+        "needs": "Fotoğraflı kimlik ve özçekim."
+      }
+    },
+    "shell": {
+      "signOut": "Çıkış yap"
+    },
+    "form": {
+      "submitting": "Gönderiliyor…",
+      "back": "Geri",
+      "optional": "isteğe bağlı",
+      "saving": "Kaydediliyor…",
+      "saved": "Kaydedildi",
+      "notSaved": "Kaydedilmedi. Bağlantınızı kontrol edin.",
+      "submit": "Doğrulamaya gönder",
+      "next": "Sonraki: belgeler",
+      "fixErrors": "Bazı yanıtları kontrol edin. Aşağıda işaretlendiler.",
+      "yes": "Evet",
+      "no": "Hayır",
+      "gstQuestion": "GST numaranız var mı?",
+      "gstin": "GST numarası",
+      "gstinHint": "29ABCDE1234F1Z5 gibi 15 karakter",
+      "useLocation": "Konumumu kullan",
+      "locating": "Konum bulunuyor…",
+      "locationSaved": "Konum kaydedildi",
+      "locationFailed": "Konum alınamadı. Siteye konum izni verin veya adresi yazın. Aradığımızda doğrularız.",
+      "locationWhy": "Yakındaki evler ve alıcılar sizi bulabilsin diye.",
+      "loginPhone": "Giriş numaranız",
+      "otherPhones": "Diğer numaralar",
+      "otherPhonesHint": "Yardımcı veya ortak gibi en fazla iki ek numara. Yalnızca işinizle ilgili ararız.",
+      "addPhone": "Numara ekle",
+      "remove": "Kaldır",
+      "phoneNumber": "Numara",
+      "phoneLabel": "Kimin numarası",
+      "phoneLabelPlaceholder": "Yardımcı, ortak…",
+      "hours": "Açılış saatleri",
+      "opens": "Açılış",
+      "closes": "Kapanış",
+      "weeklyOff": "Haftalık tatil",
+      "weeklyOffHint": "Her gün açıksanız boş bırakın.",
+      "weekdays": {
+        "mon": "Pzt",
+        "tue": "Sal",
+        "wed": "Çar",
+        "thu": "Per",
+        "fri": "Cum",
+        "sat": "Cmt",
+        "sun": "Paz"
+      },
+      "changesTitle": "Düzeltilecekler"
+    },
+    "status": {
+      "draft": {
+        "continue": "Devam et",
+        "title": "Başvurunuz henüz gönderilmedi",
+        "lead": "Doldurduğunuz her şey kaydedildi.",
+        "changeRole": "Başka rolle yeniden başla",
+        "confirmChange": "Şimdiye kadar doldurduklarınız silinir. Yeniden başlansın mı?"
+      },
+      "rejected": {
+        "contact": "Bizimle konuşun",
+        "title": "Sizi doğrulayamadık",
+        "lead": "Ekibin gerekçesi:"
+      },
+      "suspended": {
+        "contact": "Bizimle konuşun",
+        "title": "Hesabınız duraklatıldı",
+        "lead": "Çözebilmemiz için iletişime geçin."
+      },
+      "metaTitle": "Başvurunuz",
+      "none": {
+        "title": "Ne yaptığınızı anlatın",
+        "lead": "Başlamak için rolünüzü seçin."
+      },
+      "submitted": {
+        "title": "İnceleniyor",
+        "lead": "Genellikle 12–24 saat. Bitince SMS göndeririz.",
+        "sentAt": "Gönderildi: {when}",
+        "whatWeCheck": "Kontrol ettiklerimiz"
+      },
+      "changes_requested": {
+        "title": "Birkaç değişiklik gerekiyor",
+        "lead": "Ekibimiz şunları istedi:",
+        "fix": "Düzelt ve yeniden gönder"
+      },
+      "approved": {
+        "title": "Doğrulandınız",
+        "lead": "İşletmeniz Luma.Green’de yayında.",
+        "open": "Panelinizi açın"
+      },
+      "roleLabel": "Başvuru rolü: {role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "Dükkânınız haritada belirttiğiniz yerde",
+          "two": "Giriş numaranızdan ararız",
+          "three": "Verdiyseniz GST numaranız etkin"
+        },
+        "business": {
+          "one": "Verdiyseniz GST numaranız etkin ve işletmeyle eşleşiyor",
+          "two": "İzin sicilde, geçerli ve işinizi kapsıyor",
+          "three": "Fotoğraflar faal tesisi gösteriyor; sizi ararız"
+        },
+        "saathi": {
+          "one": "Kimlik okunuyor ve ad eşleşiyor",
+          "two": "Özçekim kimlikle eşleşiyor",
+          "three": "Numaranızdan ararız"
+        }
+      }
+    },
+    "kabadiwala": {
+      "ownerName": "Adınız",
+      "title": "Dükkânınız",
+      "shopName": "Dükkân adı",
+      "address": "Dükkân adresi",
+      "addressHint": "Sokak, bölge ve bilinen bir yer",
+      "offersPickup": "Evlerden alım yapıyor musunuz?",
+      "noPickupHint": "Sorun değil. Yakındaki bir Saathi dükkânınız için evden alım yapabilir.",
+      "vehicle": "Aracınız",
+      "vehicles": {
+        "handcart": "El arabası",
+        "cycle": "Bisiklet",
+        "auto": "Üç tekerlekli taksi",
+        "mini_truck": "Küçük kamyon"
+      }
+    },
+    "metaTitle": "Luma.Green’e katılın",
+    "metaDescription": "Bengaluru’daki hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları: Luma.Green’e başvurun. Her başvuruyu bir kişi genellikle 12–24 saatte inceler.",
+    "title": "Luma.Green’e katılın",
+    "lead": "Ne yaptığınızı anlatın. Her başvuruyu bir kişi genellikle 12–24 saatte inceler.",
+    "start": "Başla",
+    "youNeed": "Gerekenler",
+    "homeTitle": "Evden hurda mı satıyorsunuz?",
+    "homeBody": "Katılmanız gerekmez. Satacak malzemeniz olduğunda alım ayarlayın.",
+    "documents": {
+      "title": "Belgeler ve fotoğraflar",
+      "lead": "İzninizi kirlilik kontrol kurulunun açık sicilinden kontrol ederiz.",
+      "notRequired": "Tesisimizin izne ihtiyacı yok",
+      "notRequiredHint": "Yalnızca kâğıt balyalayanlar gibi bazı tesisler muaftır. Nedenini yazın, kontrol edelim.",
+      "reason": "Neden gerekmiyor",
+      "board": "Hangi kurul verdi?",
+      "boards": {
+        "kspcb": "Karnataka (KSPCB)",
+        "other": "Başka eyaletin kurulu"
+      },
+      "boardState": "Hangi eyalet?",
+      "consentNumber": "İzin veya kayıt numarası",
+      "consentNumberHint": "Belgede yazdığı gibi",
+      "validUntil": "Geçerlilik sonu",
+      "certificate": "İzin belgesi",
+      "certificateHint": "En fazla 10 MB, bir PDF.",
+      "machineMedia": "Makine fotoğraf veya videoları",
+      "machineMediaHint": "En az iki. Ana makineleri ve sahayı gösterin. Fotoğraf en fazla 10 MB, video en fazla 20 MB.",
+      "declaration": "Belgeler gerçektir ve bu işletmeye aittir."
+    },
+    "files": {
+      "choose": "Dosya seç",
+      "addMore": "Daha fazla ekle",
+      "takePhoto": "Fotoğraf çek",
+      "uploading": "Yükleniyor…",
+      "remove": "Kaldır",
+      "size": "{size} MB",
+      "sizeKb": "{size} KB"
+    },
+    "errors": {
+      "required": "Bu gerekli",
+      "tooShort": "Biraz daha uzun yazın",
+      "tooLong": "Çok uzun",
+      "chooseOne": "Birini seçin",
+      "pickAtLeastOne": "En az birini seçin",
+      "gstin": "GST numarasını kontrol edin: 29ABCDE1234F1Z5 gibi 15 karakter",
+      "phone": "10 haneli cep telefonu numarası girin",
+      "duplicatePhone": "Bu numara zaten listede",
+      "maxPhones": "En fazla iki ek numara",
+      "maxTags": "En fazla beş bölge adı",
+      "time": "Saat girin",
+      "closesBeforeOpens": "Kapanış açılıştan sonra olmalı",
+      "date": "Tarih girin",
+      "expired": "İznin süresi dolmuş. Yenilenen belgeyi yükleyin.",
+      "explainMore": "Biraz daha anlatın",
+      "declaration": "Lütfen doğrulayın",
+      "fileMissing": "Lütfen ekleyin",
+      "fileType": "Bu dosya türü burada kullanılamaz",
+      "fileTooBig": "Dosya çok büyük",
+      "uploadFailed": "Yükleme başarısız. Tekrar deneyin.",
+      "generic": "Bir sorun oluştu. Tekrar deneyin."
+    }
+  },
+  "saathi": {
+    "days": {
+      "today": "Bugün",
+      "tomorrow": "Yarın",
+      "yesterday": "Dün"
+    },
+    "greeting": "Merhaba, {name}",
+    "lead": "{area} çevresinde ücretli işler. İş alın, yapın, tamamlandı olarak işaretleyin.",
+    "demoNote": "Örnek veri: işler, işletmeler ve ödemeler prototip örnekleridir.",
+    "week": {
+      "label": "Bu haftanın kazancı",
+      "hint": "Son 7 gün · {count, plural, =0 {henüz iş yok} one {# iş} other {# iş}}",
+      "all": "Tüm kazançlar"
+    },
+    "today": {
+      "title": "Bugünkü işleriniz",
+      "empty": "Bugün iş yok",
+      "emptyBody": "Aşağıdan açık iş alın. Günü geldiğinde burada görünür."
+    },
+    "upcoming": {
+      "title": "Yaklaşan",
+      "hint": "İş gününde tamamlandı olarak işaretleyebilirsiniz."
+    },
+    "open": {
+      "title": "Açık işler",
+      "lead": "Bölgenizdeki işler önce gelir.",
+      "empty": "Şu anda açık iş yok",
+      "emptyBody": "Dükkân, saha ve fabrikalardan yeni işler burada görünür."
+    },
+    "work": {
+      "home_pickups": "Evlerden alım",
+      "shop_help": "Dükkânda yardım",
+      "yard_sorting": "Sahada ayrıştırma",
+      "factory_shifts": "Fabrika vardiyası"
+    },
+    "windows": {
+      "morning": "Sabah",
+      "afternoon": "Öğleden sonra",
+      "evening": "Akşam"
+    },
+    "when": "{day}, {window}",
+    "whenWhere": "{when} · {area}",
+    "late": "Henüz tamamlandı işaretlenmedi",
+    "nearYou": "Bölgeniz",
+    "postedBy": "{name} için",
+    "pay": "Ücret",
+    "take": "Bu işi al",
+    "taking": "Alınıyor…",
+    "taken": "İş alındı. Artık listenizde.",
+    "markDone": "Tamamlandı işaretle",
+    "saving": "Kaydediliyor…",
+    "doneToast": "Tebrikler! Kazancınıza {pay} eklendi.",
+    "confirm": {
+      "title": "Bu işi bitirdiniz mi?",
+      "body": "{area} bölgesinde {title}. Kazancınıza {pay} eklenecek.",
+      "yes": "Evet, bitti",
+      "no": "Henüz değil"
+    },
+    "errors": {
+      "JOB_TAKEN": "Bu işi başka biri aldı. Başka iş deneyin.",
+      "JOB_EXPIRED": "Bu işin günü geçti.",
+      "SLOT_BUSY": "O saatte zaten işiniz var.",
+      "NOT_YOUR_JOB": "Bu iş sizin değil.",
+      "ALREADY_DONE": "İş zaten tamamlandı işaretlenmiş.",
+      "TOO_EARLY": "İşin gününde tamamlandı işaretleyebilirsiniz.",
+      "JOB_NOT_FOUND": "Bu iş artık kullanılamıyor.",
+      "generic": "İşlem olmadı. İnterneti kontrol edip tekrar deneyin."
+    }
+  },
+  "impact": {
+    "families": {
+      "paper": "Kâğıt",
+      "plastic": "Plastik",
+      "metal": "Metaller",
+      "glass": "Cam",
+      "ewaste": "Elektronik atık",
+      "other": "Diğer"
+    },
+    "saathi": {
+      "week": "Bu haftanın kazancı",
+      "title": "Kazançlarınız",
+      "lead": "Bitirdiğiniz işlerin ücretleri.",
+      "total": "Şimdiye kadar kazanılan",
+      "jobsDone": "{count, plural, one {# iş tamamlandı} other {# iş tamamlandı}}",
+      "weekHint": "Son 7 gün · {count, plural, =0 {iş yok} one {# iş} other {# iş}}",
+      "byKind": "İş türüne göre",
+      "jobs": "{count, plural, one {# iş} other {# iş}}",
+      "history": "Tamamlanan işler",
+      "empty": "Henüz biten iş yok",
+      "emptyBody": "Ana ekrandan iş alın. Tamamlandı işaretlediğinizde ücret burada görünür.",
+      "findJob": "İş bul",
+      "demoNote": "Örnek veri: işler ve ücretler prototip örnekleridir."
+    },
+    "title": "Etkiniz",
+    "lead": "İşletmenizin geri dönüşüm döngüsünde tuttuğu malzemeler.",
+    "demoNote": "Örnek veri: miktarlar örnektir. CO₂e, yeni üretim yerine geri dönüştürülen her kg için önlenen CO₂e kilogramını gösteren yaklaşık katsayılar kullanır.",
+    "since": "{date} tarihinden beri tamamlanan alım ve ticaretlerden.",
+    "kpi": {
+      "recycled": "Geri dönüştürülen kilo",
+      "recycledHint": "Her kilo bir kez sayılır",
+      "recycledContent": "Alınan geri dönüştürülmüş malzeme",
+      "co2e": "Önlenen CO₂e",
+      "co2eHint": "Yeni üretime kıyasla",
+      "earned": "Satışlardan kazanılan",
+      "spent": "Malzemeye harcanan",
+      "paidHouseholds": "Hanelere ödenen",
+      "sales": "{count, plural, =0 {Henüz satış yok} one {# satış} other {# satış}}",
+      "purchases": "{count, plural, =0 {Henüz alım yok} one {# alım} other {# alım}}",
+      "pickups": "{count, plural, =0 {Henüz toplama yok} one {# toplama} other {# toplama}}"
+    },
+    "byFamily": {
+      "title": "Malzemeye göre",
+      "lead": "Geri dönüştürülen kilo ve her malzemenin önlediği CO₂e.",
+      "co2e": "{amount} CO₂e önlendi"
+    },
+    "flows": {
+      "title": "Giriş ve çıkış",
+      "lead": "İşletmenize gelen ve sonraki aşamaya gidenler.",
+      "households": "Hanelerden alınan",
+      "bought": "İşletmelerden alınan",
+      "sold": "Zincirde ileri satılan"
+    },
+    "ledger": {
+      "title": "Kredilere hazır kayıt",
+      "lead": "Her kilo kim, ne zaman ve nerede bilgisiyle kaydedilir; karbon ve plastik kredi standartlarının istediği kanıtı sağlar.",
+      "who": "Kim",
+      "whoBody": "Her biri telefon numarasına sahip doğrulanmış işletmeler ve haneler.",
+      "when": "Ne zaman",
+      "whenBody": "Alımdan teslimata her adım zaman damgalıdır.",
+      "where": "Nerede",
+      "whereBody": "Malzemenin geçtiği dükkân, saha veya fabrika.",
+      "what": "Ne",
+      "whatBody": "Makbuz veya faturada malzeme ve ağırlığı."
+    },
+    "empty": {
+      "title": "Henüz kayıt yok",
+      "body": "İlk tamamlanan alım veya ticaretten sonra sayılarınız burada görünür."
+    }
+  },
+  "compliance": {
+    "receipts": {
+      "date": "Tarih",
+      "title": "Ticaret makbuzları",
+      "lead": "Luma.Green ticaretlerinizin makbuzları, en yenisi önce. Gerçek ödemelerle GST vergi faturaları gelir.",
+      "number": "Makbuz",
+      "with": "Karşı taraf",
+      "what": "Ne",
+      "amount": "Tutar",
+      "eway": "E-sevk belgesi",
+      "sale": "Satış",
+      "purchase": "Alım",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "Gerekli",
+      "ewayNotNeeded": "Gerekmiyor",
+      "ewayNeededLong": "E-sevk belgesi gerekli",
+      "ewayNotNeededLong": "E-sevk belgesi gerekmiyor",
+      "ewayNote": "50.000 rupiden fazla değerde mal taşımak için e-sevk belgesi gerekir.",
+      "view": "{number} makbuzunu gör",
+      "unknown": "Artık Luma.Green’de olmayan işletme",
+      "empty": "Henüz makbuz yok",
+      "emptyBody": "Alıcı emanet hesaba ödediğinde makbuz oluşur."
+    },
+    "epr": {
+      "streams": {
+        "plastic": "Plastik",
+        "ewaste": "Elektronik atık",
+        "paper": "Kâğıt",
+        "metal": "Metaller",
+        "glass": "Cam",
+        "other": "Diğer",
+        "battery": "Bataryalar"
+      },
+      "recycled": "Geri dönüştürülmüş",
+      "title": "EPR kaydı, mali yıl {from}–{to}",
+      "lead": "Bu mali yılda (nisan–mart) aldığınız ve geri dönüştürdüğünüz malzemeler.",
+      "leadManufacturer": "Bu mali yılda (nisan–mart) aldığınız geri dönüştürülmüş malzemeler.",
+      "received": "Teslim alınan",
+      "bought": "Satın alınan",
+      "regimes": {
+        "pwm_2016": "Plastik Atık Yönetimi Kuralları, 2016",
+        "ewaste_2022": "Elektronik Atık Yönetimi Kuralları, 2022",
+        "bwm_2022": "Batarya Atığı Yönetimi Kuralları, 2022",
+        "none": "Bu malzeme için henüz EPR kuralı yok"
+      },
+      "note": "EPR sertifikaları burada değil, CPCB EPR portallarında oluşturulur. Bu toplamlar tamamlanan ticaretlerinizden gelir ve beyanınıza hazırdır.",
+      "empty": "Bu yıl henüz kayıt yok",
+      "emptyBody": "1 Nisan’dan sonraki tamamlanan ticaretler burada sayılır."
+    },
+    "title": "Mevzuata uyum",
+    "lead": "Lisanslarınız ve kayıtlarınız tek yerde.",
+    "demoNote": "Örnek veri: belgeler, makbuzlar ve tutarlar prototip örnekleridir.",
+    "checklist": {
+      "title": "Kontrol listesi",
+      "whatThisMeans": "Anlamı:"
+    },
+    "status": {
+      "done": "Tamamlandı",
+      "due_soon": "Yakında yenileyin",
+      "overdue": "Süresi doldu",
+      "missing": "Eksik",
+      "optional": "İsteğe bağlı",
+      "not_needed": "Gerekmiyor",
+      "self_declared": "Henüz kontrol edilmedi"
+    },
+    "items": {
+      "gst": {
+        "title": "GST kaydı",
+        "registered": "GSTIN {gstin}",
+        "notRegistered": "Kayıtlı değil",
+        "note": "GST numarası vergi faturası düzenlemenizi ve alımlardaki vergiyi geri istemenizi sağlar. Karnataka’da yıllık satış 40 lakh rupiyi aşınca veya başka eyalete satış için kayıt gerekir."
+      },
+      "consent": {
+        "title": "Kirlilik kurulu izni",
+        "detail": "{board} · {number}",
+        "missing": "Kayıtlı izin yok",
+        "note": "Eyalet kirlilik kontrol kurulunun işletme izni, ayrıştırma veya geri dönüşüm tesisini yasal çalıştırmanızı sağlar. Geri dönüşümcü ve fabrikalar almadan önce ister.",
+        "noteShop": "Yalnızca hurda alıp ayıran küçük dükkânlar genellikle izin istemez. Balyalama, parçalama veya işleme başlarsanız gerekir."
+      },
+      "scale": {
+        "title": "Terazi damgalı",
+        "detail": "Kendi beyanınız. Yakında burada doğrulayabileceksiniz.",
+        "note": "Alım satım terazileri Yasal Metroloji birimince, genellikle yılda bir kontrol edilip damgalanmalıdır. Damga tartımların adil olduğunu gösterir."
+      },
+      "safety": {
+        "title": "Çalışan güvenlik ekipmanı",
+        "detail": "Kendi beyanınız. Yakında burada doğrulayabileceksiniz.",
+        "note": "Ayrıştıran ve kaldıran herkes için eldiven, maske ve kapalı ayakkabı; sahada ilk yardım kutusu. İşlerinizde çalışan Saathi kişileri de bunlara ihtiyaç duyar."
+      }
+    },
+    "consent": {
+      "title": "İzin geçerliliği",
+      "validUntil": "{date} tarihine kadar geçerli",
+      "daysLeft": "{days, plural, =0 {Son gün bugün} one {# gün kaldı} other {# gün kaldı}}",
+      "ranOut": "{days, plural, one {# gün önce doldu} other {# gün önce doldu}}",
+      "reminder": "Yenileme inceleme tarihi: {date}, geçerlilik süresinin dolmasından 90 gün önce.",
+      "expiringTitle": "İzninizi şimdi yenileyin",
+      "expiringBody": "{date} tarihinde biter. {board} kuruluna şimdi başvurun; haftalar sürebilir.",
+      "expiredTitle": "İzninizin süresi doldu",
+      "expiredBody": "{date} tarihinde doldu. Daha fazla malzeme almadan veya satmadan önce {board} ile yenileyin.",
+      "missingTitle": "Kayıtlı izin yok",
+      "missingBody": "Geri dönüşümcüler ve fabrikalar geçerli izin ister. Yardım üzerinden gönderin, ekleyelim."
+    },
+    "saathi": {
+      "title": "İşletmeler için",
+      "body": "Uyum; dükkân, saha, geri dönüşümcü ve fabrikalar içindir. İşleriniz ve ücretleriniz ana ekrandadır.",
+      "home": "İşlerime git"
+    }
+  },
+  "auth": {
+    "metaTitle": "Giriş yap",
+    "verifyMetaTitle": "Kodunuzu girin",
+    "chooseLanguage": "Dilinizi seçin",
+    "chooseLanguageHint": "Ekranın üstünden istediğiniz zaman değiştirebilirsiniz.",
+    "continue": "Devam et",
+    "title": "Cep telefonu numaranızla giriş yapın",
+    "lead": "Hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için.",
+    "mobileLabel": "Cep telefonu numarası",
+    "mobileHint": "Bu numaraya 6 haneli kod göndereceğiz.",
+    "mobileInvalid": "10 haneli Hindistan cep telefonu numarası girin.",
+    "sendCode": "Kod gönder",
+    "sending": "Gönderiliyor…",
+    "sendFailed": "Kod gönderilemedi. Bir dakika sonra tekrar deneyin.",
+    "homeTitle": "Evden hurda mı satıyorsunuz? Hesap gerekmez.",
+    "homeLink": "Nasıl çalıştığını görün",
+    "privacy": "Numaranızı yalnızca giriş yapmanız ve Luma.Green’deki işiniz hakkında bilgi göndermek için kullanırız.",
+    "unavailableTitle": "Telefonla giriş yakında açılacak",
+    "unavailableBody": "Giriş kodları için SMS kurulumunu tamamlıyoruz. Kısa süre sonra tekrar bakın.",
+    "verifyTitle": "6 haneli kodu girin",
+    "sentTo": "{phone} numarasına SMS ile gönderildi",
+    "codeLabel": "6 haneli kod",
+    "verify": "Doğrula",
+    "verifying": "Kontrol ediliyor…",
+    "resendIn": "{seconds, plural, one {# saniye} other {# saniye}} sonra yeni kod isteyebilirsiniz",
+    "resend": "Yeni kod gönder",
+    "resent": "Yeni bir kod gönderdik.",
+    "changeNumber": "Numarayı değiştir",
+    "errorInvalid": "Kod doğru değil. SMS’i kontrol edip tekrar deneyin.",
+    "errorExpired": "Kodun süresi dolmuş. Yenisini isteyin.",
+    "errorTooMany": "Çok fazla deneme. Yeni kod isteyin.",
+    "errorGeneric": "Bir sorun oluştu. Tekrar deneyin.",
+    "signingIn": "Giriş yapılıyor…",
+    "sendRateLimited": "Çok fazla kod istendi. Daha sonra tekrar deneyin.",
+    "previewAction": "Kod ekranını önizle",
+    "previewTitle": "Kod önizlemesi",
+    "previewNumber": "Cep telefonu: {phone}",
+    "previewBody": "SMS henüz bağlı değil. Kod gönderilmedi. Bu ekranı inceleyebilirsiniz ancak giriş yapamazsınız.",
+    "previewPhoneHint": "Sonraki adımı önizlemek için numaranızı girin. SMS gönderilmeyecek.",
+    "twoFactorTitle": "Doğrulayıcınızı kontrol edin",
+    "twoFactorDescription": "Girişi tamamlamak için doğrulayıcı uygulamanızdaki 6 haneli kodu girin.",
+    "twoFactorUseBackup": "Kurtarma kodu kullan",
+    "twoFactorUseApp": "Doğrulayıcı kullan",
+    "twoFactorBackupTitle": "Kurtarma kodu kullanın",
+    "twoFactorBackupDescription": "Kaydettiğiniz bir kurtarma kodunu girin. Her kod bir kez kullanılabilir.",
+    "twoFactorBackupLabel": "Kurtarma kodu",
+    "twoFactorExpired": "Giriş süresi doldu. Yeni bir telefon koduyla yeniden başlayın.",
+    "twoFactorRestart": "Yeniden başla"
+  },
+  "native": {
+    "back": "Geri",
+    "reload": "Yenile",
+    "openBrowser": "Tarayıcıda aç",
+    "offlineTitle": "Bağlanılamıyor",
+    "offlineBody": "İnternet bağlantısını kontrol edip tekrar deneyin.",
+    "updates": "Uygulama güncellemelerini kontrol et",
+    "updateReady": "Uygulama güncellemesi hazır.",
+    "restart": "Şimdi yeniden başlat",
+    "later": "Daha sonra",
+    "updateCurrent": "Uygulamanız güncel.",
+    "updateUnavailable": "Bu sürümde uygulama güncellemeleri kullanılamıyor.",
+    "updateFailed": "Güncellemeler kontrol edilemedi. Daha sonra tekrar deneyin.",
+    "locationTitle": "Konumunuz paylaşılsın mı?",
+    "locationBody": "Yakındaki hurda dükkânlarını bulmak için Luma.Green’in konumunuzu kullanmasına izin verin.",
+    "allow": "İzin ver",
+    "deny": "Şimdi değil",
+    "browserNotice": "Bu sayfa tarayıcıda açılır. Yeniden giriş yapmanız gerekebilir.",
+    "cameraPermission": "Hurda veya doğrulama belgelerini fotoğraflamak için kamerayı kullanın.",
+    "photoPermission": "Hurda tahmini ve doğrulama için fotoğraf seçin.",
+    "cameraTitle": "Kamera"
+  },
+  "showcase": {
+    "scene": "Örnek sahne",
+    "context": {
+      "heading": "Çalışma alanınıza bir bakış",
+      "body": "Örnek ekranlar, her rolün Luma.Green’i nasıl kullandığını gösterir. Kullanılabilir adımlar için aşağıdaki rehberleri izleyin."
+    },
+    "adminBody": "Başvuruları inceleyin, erişimi yönetin ve işlem kayıtlarını kontrol edin.",
+    "preview": {
+      "label": "Örnek uygulama önizlemesi · gerçek kayıt yok",
+      "roles": {
+        "household": {
+          "title": "Evden alımınız",
+          "first": "Malzemelerinizi seçin",
+          "second": "Alım ayarlayın",
+          "third": "Makbuzunuzu saklayın"
+        },
+        "kabadiwala": {
+          "title": "Hurda dükkânınız",
+          "first": "Alım taleplerini inceleyin",
+          "second": "Ağırlığı kaydedin",
+          "third": "Ayrıştırılmış stoku yönetin"
+        },
+        "yard": {
+          "title": "Ayrıştırma sahanız",
+          "first": "Malzemeleri teslim alın",
+          "second": "Stokunuzu ayrıştırın",
+          "third": "Çıkış partilerini hazırlayın"
+        },
+        "recycler": {
+          "title": "Geri dönüşüm çalışma alanınız",
+          "first": "Gelen partileri izleyin",
+          "second": "Geri dönüştürülmüş üretimi kaydedin",
+          "third": "Malzeme kayıtlarını tutun"
+        },
+        "manufacturer": {
+          "title": "Malzeme tedarikiniz",
+          "first": "Geri dönüştürülmüş malzeme bulun",
+          "second": "Mevcut ilanları inceleyin",
+          "third": "Ticaretlerinizi izleyin"
+        },
+        "saathi": {
+          "title": "İş gününüz",
+          "first": "Yakındaki işleri bulun",
+          "second": "Programınızı planlayın",
+          "third": "Tamamlanan işleri kaydedin"
+        },
+        "admin": {
+          "title": "Platform yönetimi",
+          "first": "Başvuruları inceleyin",
+          "second": "Gönderilen belgeleri kontrol edin",
+          "third": "İşlem kayıtlarını inceleyin"
+        }
+      }
+    }
+  },
+  "accountSecurity": {
+    "title": "Hesap güvenliği",
+    "description": "Telefon kodundan sonra bir doğrulayıcı kodu ekleyin.",
+    "enabled": "Açık",
+    "disabled": "Kapalı",
+    "enable": "Kur",
+    "disable": "Kapat",
+    "recentSignIn": "Güvenlik ayarlarını değiştirmeden önce yeniden giriş yapın.",
+    "signInAgain": "Yeniden giriş",
+    "setupTitle": "Doğrulayıcınızı bağlayın",
+    "setupDescription": "Bu QR kodunu bir doğrulayıcı uygulamasıyla tarayın veya anahtarı girin. Anahtarı gizli tutun.",
+    "setupKey": "Kurulum anahtarı",
+    "backupTitle": "Kurtarma kodlarını kaydedin",
+    "backupDescription": "Bu kodları gizli saklayın. Her kod, telefon kodundan sonra bir kez kullanılabilir.",
+    "savedCodes": "Kodları kaydettim",
+    "regenerate": "Yeni kodlar",
+    "regenerateDescription": "Eski kurtarma kodları geçersiz olacak. Ayrılmadan önce yeni kodları kaydedin.",
+    "disableDescription": "Giriş için yalnızca telefon kodları kullanılacak. Doğrulayıcınız ve kurtarma kodlarınız geçersiz olacak.",
+    "errorCode": "Bu kod çalışmadı. Lütfen yeniden deneyin.",
+    "errorRateLimited": "Çok fazla deneme yapıldı. Yeniden denemeden önce bekleyin.",
+    "recoveryHelp": "Doğrulayıcınızı ve kurtarma kodlarınızı mı kaybettiniz? Destekle iletişime geçin. Telefon kodu tek başına iki faktörlü doğrulamayı kapatamaz."
+  },
+  "notifications": {
+    "title": "Bildirimler",
+    "permissionBody": "Toplama işlemleriniz ve başvurularınız hakkında bu cihazda bilgi alın.",
+    "enable": "Etkinleştir",
+    "denied": "Bildirimler engellenmiş. Cihaz veya tarayıcı ayarlarınızdan bunu değiştirin.",
+    "unavailable": "Bildirimler burada henüz kullanılamıyor.",
+    "error": "Bildirimler etkinleştirilemedi. Tekrar deneyin.",
+    "lockscreenTitle": "Luma.Green’den haber",
+    "lockscreenBody": "Yeni bilgiyi görmek için Luma.Green’i açın.",
+    "emptyTitle": "Henüz güncelleme yok",
+    "emptyBody": "Teslim alma ve başvuru güncellemeleri burada görünecek.",
+    "markRead": "Okundu işaretle",
+    "markAllRead": "Tümü okundu",
+    "unread": "Okunmadı",
+    "enabled": "Bu cihazda etkin",
+    "disable": "Kapat",
+    "disabled": "Bu cihazda kapalı",
+    "deviceTitle": "Bu cihaz",
+    "inboxTitle": "Güncellemeleriniz",
+    "loadMore": "Daha fazla göster",
+    "events": {
+      "booking_confirmed": "Rezervasyon onaylandı",
+      "booking_offer": "Yeni toplama talebi",
+      "booking_accepted": "Toplama kabul edildi",
+      "booking_reassigned": "Toplayıcı değişti",
+      "application_received": "Başvuru alındı",
+      "application_approved": "Başvuru onaylandı",
+      "application_changes_requested": "Başvuruda değişiklik gerekiyor",
+      "application_rejected": "Başvuru onaylanmadı"
+    }
+  },
+  "integrations": {
+    "title": "API erişimi",
+    "lead": "İşletme sistemlerinizi Luma.Green kayıtlarınıza bağlayın.",
+    "connection": "Sistem bağla",
+    "readOnly": "REST v1 işletme bilgilerini, malzemeleri, stokları ve ticari işlemleri okur. Kayıtları değiştiremez veya ödeme işleyemez.",
+    "baseUrl": "Bu web sitesindeki temel yol:",
+    "openApi": "API belirtimini aç",
+    "ownerOnly": "API anahtarlarını yalnızca etkin bir işletme sahibi yönetebilir.",
+    "tokenTitle": "API anahtarınızı kaydedin",
+    "tokenHint": "Bu anahtar yalnızca bir kez gösterilir. Sisteminizin gizli bilgi deposuna kaydedin. Bir tarayıcı uygulamasına, URL’ye veya mesaja eklemeyin. Bu ekranı kapattığınızda anahtar artık görünmez.",
+    "tokenLabel": "Yeni API anahtarı",
+    "expiresOn": "Son geçerlilik: {date}",
+    "copy": "Anahtarı kopyala",
+    "dismiss": "Tamam",
+    "copyError": "Kopyalanamadı. Anahtarı seçip elle kopyalayın.",
+    "copied": "Anahtar kopyalandı.",
+    "createTitle": "Anahtar oluştur",
+    "keyHint": "Her sistem için ayrı bir anahtar kullanın. Yalnızca gereken izinleri seçin. En fazla beş etkin anahtarınız olabilir.",
+    "label": "Sistem adı",
+    "expiry": "Geçerlilik süresi",
+    "days": "{count, plural, one {# gün} other {# gün}}",
+    "permissions": "Okuma izinleri",
+    "limit": "Beş anahtar etkin. Yeni bir anahtar oluşturmadan önce kullanılmayan bir anahtarı iptal edin.",
+    "createError": "Anahtar oluşturulamadı. Erişiminizi kontrol edip tekrar deneyin.",
+    "creating": "Oluşturuluyor…",
+    "create": "Anahtar oluştur",
+    "keysTitle": "Anahtarlarınız",
+    "empty": "Henüz anahtar yok. İlk sisteminizi bağlamak için bir anahtar oluşturun.",
+    "neverUsed": "Henüz kullanılmadı",
+    "lastUsed": "Son kullanım: {date}",
+    "revokeLabel": "{label} anahtarını iptal et",
+    "revoke": "İptal et",
+    "revokeTitle": "Bu anahtar iptal edilsin mi?",
+    "revokeHint": "“{label}” anahtarını kullanan sistemler erişimini hemen kaybeder. Bu anahtarı geri yükleyemezsiniz.",
+    "revokeError": "Anahtar iptal edilemedi. Tekrar deneyin.",
+    "revoking": "İptal ediliyor…",
+    "newsHint": "Haber hizmeti yapılandırıldığında sektör haberleri, malzeme gruplarınızla ilgili güncellemeleri kaynak bağlantılarıyla sunar.",
+    "scopes": {
+      "organization": "İşletme bilgileri",
+      "materials": "Malzeme kataloğu",
+      "inventory": "İşletme stoku",
+      "trades": "İşletme işlemleri",
+      "news": "Sektör haberleri"
+    },
+    "status": {
+      "active": "Etkin",
+      "expired": "Süresi dolmuş",
+      "revoked": "İptal edilmiş"
+    }
+  }
+}

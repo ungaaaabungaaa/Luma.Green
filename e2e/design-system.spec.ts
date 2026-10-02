@@ -1,8 +1,10 @@
 import { expect, type Locator, test } from "@playwright/test";
 
 import english from "../messages/en.json";
+import kannada from "../messages/kn.json";
 import malayalam from "../messages/ml.json";
 import tamil from "../messages/ta.json";
+import { actionName } from "../src/components/site/action-name";
 
 const routes = [
   "/",
@@ -79,7 +81,10 @@ for (const { locale, copy } of [
         name: content.title,
         exact: true,
       });
-      for (const label of [content.sell, content.join]) {
+      for (const label of [
+        actionName(copy.nav.sellScrap, content.sell),
+        actionName(copy.nav.join, content.join),
+      ]) {
         await expectActionTextToFit(
           section.getByRole("link", { name: label, exact: true }),
         );
@@ -124,7 +129,7 @@ test("material motion can pause and respects reduced motion", async ({
   }
 });
 
-test("mobile navigation shows the brand mark and the current language", async ({
+test("mobile navigation shows the brand mark and puts language in the side menu", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -132,13 +137,17 @@ test("mobile navigation shows the brand mark and the current language", async ({
   const header = page.locator("header").first();
   await expect(header.getByRole("img", { name: "Luma.Green" })).toBeVisible();
   await expect(header.getByText("Luma.Green", { exact: true })).toBeHidden();
-  await expect(header.getByRole("button", { name: /ಕನ್ನಡ/ })).toBeVisible();
-  await header.getByRole("button", { name: /ಕನ್ನಡ/ }).click();
+  await expect(header.getByRole("button", { name: /ಕನ್ನಡ/ })).toHaveCount(0);
+  await header.getByRole("button", { name: kannada.nav.openMenu }).click();
+  const menu = page.getByRole("dialog");
+  const language = menu.getByRole("button", { name: /ಕನ್ನಡ/ });
+  await expect(language).toBeVisible();
+  await language.click();
   await expect(
     page.getByRole("menuitemradio", { name: "العربية" }),
   ).toBeVisible();
   await page.keyboard.press("Escape");
-  await expect(header.getByRole("button", { name: /ಕನ್ನಡ/ })).toBeFocused();
+  await expect(language).toBeFocused();
 });
 
 for (const mode of [

@@ -6,9 +6,9 @@ import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
+import { useSignOut } from "@/components/account/use-sign-out";
 import { useFormat } from "@/components/app/format";
 import { DemoNote } from "@/components/app/page-parts";
-import { useSignOut } from "@/components/auth/use-sign-out";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -89,8 +89,6 @@ export function ConfirmStep({
   onEdit: (step: SellStep) => void;
 }) {
   const t = useTranslations("sell");
-  const common = useTranslations("common");
-  const { signOut } = useSignOut(common("error"));
   const format = useFormat();
   const time = useTimeFormat();
   const locale = useLocale();
@@ -146,10 +144,9 @@ export function ConfirmStep({
     }
   }
 
-  async function switchNumber() {
+  const { signOut: switchNumber } = useSignOut(() => {
     setError(null);
-    await signOut();
-  }
+  });
 
   const byCode = new Map(
     materials.map((material) => [material.code, material]),

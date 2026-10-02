@@ -120,18 +120,18 @@ export function KgStepper({
       <div
         role="group"
         aria-label={t("presets", { material })}
-        className="grid grid-cols-5 gap-1.5"
+        className="flex flex-wrap gap-x-2 gap-y-1"
       >
         {KG_PRESETS.map((preset) => (
           <Button
             key={preset}
             type="button"
-            variant="outline"
+            variant="ghost"
             aria-pressed={kg === preset}
             onClick={() => {
               onChange(preset);
             }}
-            className="h-11 rounded-xl px-1 tabular-nums aria-pressed:border-primary aria-pressed:bg-accent aria-pressed:text-primary"
+            className="h-11 min-w-11 rounded-none border-0 border-b-2 border-transparent px-2 tabular-nums aria-pressed:border-b-primary aria-pressed:text-primary"
           >
             {t("preset", { kg: preset })}
           </Button>

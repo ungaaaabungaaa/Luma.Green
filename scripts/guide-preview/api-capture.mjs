@@ -63,6 +63,13 @@ const sourceFiles = [
   "scripts/guide-preview/api-capture.mjs",
   "scripts/guide-preview/vite.config.mts",
   "scripts/guide-preview/queries.ts",
+  "scripts/guide-preview/account-fixtures.ts",
+  "scripts/guide-preview/auth.ts",
+  "scripts/guide-preview/provider.tsx",
+  "src/components/account/account-links.tsx",
+  "src/components/account/use-sign-out.ts",
+  "src/lib/sign-out.ts",
+  "src/components/notifications/device-provider.tsx",
   "scripts/guide-preview/fixtures.ts",
   ...locales.map((locale) => `messages/${locale}.json`),
 ];

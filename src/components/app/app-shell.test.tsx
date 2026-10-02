@@ -30,19 +30,36 @@ const state = vi.hoisted(
   }),
 );
 
+vi.mock("@/components/notifications/device-provider", () => ({
+  lockDeviceSignOut: () => vi.fn(),
+  revokeCurrentDevice: vi.fn().mockResolvedValue(undefined),
+}));
 vi.mock("./use-workspace", () => ({ useWorkspace: () => state.workspace }));
 vi.mock("@/lib/auth-client", () => ({
-  authClient: { signOut: state.signOut },
+  authClient: {
+    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
+    signOut: state.signOut,
+  },
 }));
 vi.mock("@/i18n/navigation", () => ({
-  Link: (props: ComponentProps<"a">) => <a {...props} />,
+  Link: (props: ComponentProps<"a">) => (
+    <a
+      {...props}
+      onClick={(event) => {
+        event.preventDefault();
+        props.onClick?.(event);
+      }}
+    />
+  ),
   usePathname: () => state.pathname,
   useRouter: () => ({ replace: state.replace }),
 }));
 vi.mock("@/components/site/language-switcher", () => ({
-  LanguageSwitcher: () => null,
+  LanguageSwitcher: () => <button>Language: English</button>,
 }));
-vi.mock("@/components/theme/theme-toggle", () => ({ ThemeToggle: () => null }));
+vi.mock("@/components/theme/theme-toggle", () => ({
+  ThemeToggle: () => <button>Appearance</button>,
+}));
 
 function view() {
   return render(
@@ -61,7 +78,7 @@ beforeEach(() => {
     org: { kind: "kabadiwala", name: "Test collection shop" },
   };
   state.replace.mockReset();
-  state.signOut.mockReset();
+  state.signOut.mockReset().mockResolvedValue({ error: null });
 });
 
 describe("workspace navigation", () => {
@@ -88,11 +105,96 @@ describe("workspace navigation", () => {
     state.pathname = "/app/compliance";
     view();
     await userEvent.click(
-      screen.getByRole("button", { name: messages.app.more }),
+      within(screen.getByRole("banner")).getByRole("button", {
+        name: messages.app.more,
+      }),
     );
     expect(
-      screen.getByRole("menuitem", { name: messages.app.nav.compliance }),
+      within(screen.getByRole("dialog")).getByRole("link", {
+        name: messages.app.nav.compliance,
+      }),
     ).toHaveAttribute("aria-current", "page");
+  });
+
+  it("keeps two daily destinations visible and puts remaining routes and settings in More", async () => {
+    state.workspace = {
+      kind: "org",
+      org: { kind: "manufacturer", name: "Test manufacturer" },
+    };
+    view();
+    const [desktop, mobile] = screen.getAllByRole("navigation", {
+      name: messages.app.navLabel,
+    });
+    expect(
+      within(mobile)
+        .getAllByRole("link")
+        .map((link) => link.textContent),
+    ).toEqual([messages.app.nav.home, messages.app.nav.buy]);
+    expect(
+      within(desktop).getByRole("link", {
+        name: messages.app.nav.compliance,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      within(screen.getByRole("banner")).queryByRole("button", {
+        name: "Language: English",
+      }),
+    ).not.toBeInTheDocument();
+    expect(
+      within(screen.getByRole("banner")).queryByRole("button", {
+        name: "Appearance",
+      }),
+    ).not.toBeInTheDocument();
+
+    await userEvent.click(
+      within(mobile).getByRole("button", {
+        name: messages.app.more,
+      }),
+    );
+    const menu = within(screen.getByRole("dialog"));
+    for (const label of ["trades", "compliance", "impact", "stock"] as const) {
+      expect(
+        menu.getByRole("link", { name: messages.app.nav[label] }),
+      ).toBeInTheDocument();
+    }
+    expect(
+      menu.getByRole("button", { name: "Language: English" }),
+    ).toBeInTheDocument();
+    expect(
+      menu.getByRole("button", { name: "Appearance" }),
+    ).toBeInTheDocument();
+    await userEvent.click(
+      menu.getByRole("button", { name: messages.app.signOut }),
+    );
+    expect(state.signOut).toHaveBeenCalledOnce();
+    expect(state.replace).toHaveBeenCalledWith("/login");
+  });
+
+  it("closes the menu after choosing a destination", async () => {
+    view();
+    await userEvent.click(
+      within(screen.getByRole("banner")).getByRole("button", {
+        name: messages.app.more,
+      }),
+    );
+    await userEvent.click(
+      within(screen.getByRole("dialog")).getByRole("link", {
+        name: messages.app.nav.stock,
+      }),
+    );
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
+
+  it("returns keyboard focus to the trigger that opened the menu", async () => {
+    view();
+    const triggers = screen.getAllByRole("button", { name: messages.app.more });
+    for (const trigger of triggers) {
+      await userEvent.click(trigger);
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+      await userEvent.keyboard("{Escape}");
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+      expect(trigger).toHaveFocus();
+    }
   });
 
   it("shows Saathi jobs and earnings without business trading actions", () => {

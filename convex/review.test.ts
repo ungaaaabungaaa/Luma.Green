@@ -409,6 +409,7 @@ describe("approving", () => {
           orgId: result.org._id,
         }) as unknown,
       },
+      { action: "inbox.created", metadata: undefined },
       { action: "notification.disabled", metadata: undefined },
     ]);
 
@@ -417,6 +418,21 @@ describe("approving", () => {
     expect(await kavitha.query(api.workspace.mine, {})).toMatchObject({
       kind: "org",
       org: { name: "Kavitha Raddi Shop", kind: "kabadiwala" },
+    });
+    const inbox = await kavitha.query(api.inbox.list, {
+      paginationOpts: { numItems: 10, cursor: null },
+    });
+    expect(inbox.page).toHaveLength(1);
+    expect(inbox.page[0]).toMatchObject({
+      event: "application_approved",
+      read: false,
+    });
+    expect(
+      result.audit.find((row) => row.action === "inbox.created"),
+    ).toMatchObject({
+      entityTable: "inbox",
+      entityId: inbox.page[0]?.id,
+      actorProfileId: application.profileId,
     });
   });
 

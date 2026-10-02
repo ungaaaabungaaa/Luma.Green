@@ -301,7 +301,7 @@ test("language changes preserve a page query and help anchor", async ({
 });
 
 for (const locale of ["en", "ar", "ur"] as const) {
-  test(`${locale} mobile menu waits for client code before accepting a click`, async ({
+  test(`${locale} mobile menu waits for client code before accepting pointer and keyboard input`, async ({
     page,
   }) => {
     const scripts = Promise.withResolvers<boolean>();
@@ -323,6 +323,10 @@ for (const locale of ["en", "ar", "ur"] as const) {
       scripts.resolve(true);
       await expect(trigger).toBeEnabled();
       await trigger.click();
+      await expect(page.getByRole("dialog")).toBeVisible();
+      await page.keyboard.press("Escape");
+      await expect(trigger).toBeFocused();
+      await page.keyboard.press("Enter");
       await expect(page.getByRole("dialog")).toBeVisible();
       await page.keyboard.press("Escape");
       await expect(trigger).toBeFocused();

@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
+import { actionName } from "@/components/site/action-name";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -30,7 +31,7 @@ export async function WeightPayment() {
   return (
     <section
       aria-labelledby="weight-payment-heading"
-      className="border-b py-16 lg:py-24"
+      className="border-b py-10 sm:py-12 lg:py-24"
     >
       <Container className="grid min-w-0 grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
         <div className="relative aspect-[4/3] overflow-hidden bg-muted lg:aspect-4/5">
@@ -70,10 +71,17 @@ export async function WeightPayment() {
             asChild
             variant="outline"
             size="lg"
-            className="h-auto min-h-12 max-w-full min-w-0 self-start py-3 text-start wrap-anywhere whitespace-normal"
+            className="min-h-12 max-w-full min-w-0 self-start py-3 text-start whitespace-nowrap"
           >
-            <Link href="/help/household/weighing-at-door">
-              <span className="min-w-0">
+            <Link
+              href="/help/household/weighing-at-door"
+              aria-label={actionName(
+                help("training.openGuide"),
+                help("guides.weighingAtDoor.title"),
+              )}
+            >
+              <span className="sm:hidden">{help("training.openGuide")}</span>
+              <span className="hidden sm:inline">
                 {help("guides.weighingAtDoor.title")}
               </span>
               <ArrowRightIcon aria-hidden className="shrink-0 rtl:rotate-180" />

@@ -1,3 +1,5 @@
+import { asciiDigits } from "@/lib/number-input";
+
 /**
  * Rooftop solar in Karnataka: the estimate behind /solar, kept pure so each
  * rule has a test. Amounts are whole rupees — these are estimates shown to
@@ -184,9 +186,13 @@ export type Reading =
   { status: "empty" } | { status: "invalid" } | { status: "ok"; value: number };
 
 /** The monthly bill (₹) or units they typed, within `USAGE_LIMITS`. */
-export function readUsage(mode: UsageMode, text: string): Reading {
+export function readUsage(
+  mode: UsageMode,
+  text: string,
+  locale = "en-IN",
+): Reading {
   if (text.trim() === "") return { status: "empty" };
-  const value = parseAmount(text);
+  const value = parseAmount(text, locale);
   const { min, max } = USAGE_LIMITS[mode];
   return value === null || value < min || value > max
     ? { status: "invalid" }
@@ -194,9 +200,13 @@ export function readUsage(mode: UsageMode, text: string): Reading {
 }
 
 /** The roof in m². Empty is fine: plenty of people don't know it. */
-export function readRoof(text: string, unit: AreaUnit): Reading {
+export function readRoof(
+  text: string,
+  unit: AreaUnit,
+  locale = "en-IN",
+): Reading {
   if (text.trim() === "") return { status: "empty" };
-  const value = parseAmount(text);
+  const value = parseAmount(text, locale);
   return value === null || value <= 0
     ? { status: "invalid" }
     : { status: "ok", value: toSquareMetres(value, unit) };
@@ -213,32 +223,43 @@ export function fromSquareMetres(m2: number, unit: AreaUnit): number {
 }
 
 /**
- * Zero of each decimal-digit block people may type in on our 12 locales:
- * ASCII, Arabic-Indic, Extended Arabic-Indic (Urdu), Devanagari, Bengali,
- * Gurmukhi, Gujarati, Oriya, Tamil, Telugu, Kannada and Malayalam.
- */
-const DIGIT_ZEROS = [
-  0x30, 0x6_60, 0x6_f0, 0x9_66, 0x9_e6, 0xa_66, 0xa_e6, 0xb_66, 0xb_e6, 0xc_66,
-  0xc_e6, 0xd_66,
-];
-
-function toAsciiDigit(character: string): string {
-  const code = character.codePointAt(0) ?? 0;
-  const zero = DIGIT_ZEROS.find((start) => code >= start && code <= start + 9);
-  return zero === undefined ? character : String(code - zero);
-}
-
-/**
  * A positive number as someone types it — "2,500", "₹ 3000", "1,00,000",
  * "12.5", or in their own script's digits. Null for anything else.
  */
-export function parseAmount(text: string): number | null {
-  const cleaned = text
-    .trim()
-    .replaceAll(/\p{Nd}/gu, (digit) => toAsciiDigit(digit))
-    .replaceAll("٫", ".") // Arabic decimal separator
-    // Spaces, commas, the Arabic thousands separator and the rupee sign.
-    .replaceAll(/[\s,٬₹]/g, "");
+export function parseAmount(text: string, locale = "en-IN"): number | null {
+  const parts = new Intl.NumberFormat(
+    locale === "en" ? "en-IN" : locale,
+  ).formatToParts(1_234_567.8);
+  const group = parts.find((part) => part.type === "group")?.value ?? ",";
+  const decimal = parts.find((part) => part.type === "decimal")?.value ?? ".";
+  let cleaned = asciiDigits(text.trim()).replaceAll(/[\s₹]/g, "");
+  // A dot is a grouping mark in some locales. Reject malformed groups rather
+  // than silently turning a typed decimal (12.5) into a different value (125).
+  if (!/\s/.test(group) && cleaned.includes(group)) {
+    const [whole = "", fraction = ""] = cleaned.split(decimal);
+    if (fraction.includes(group)) return null;
+    const groups = whole.split(group);
+    const integerParts = parts.filter((part) => part.type === "integer");
+    const lastSize = integerParts.at(-1)?.value.length ?? 3;
+    const middleSize = integerParts.at(-2)?.value.length ?? 3;
+    const hasGrouping = (middleWidth: number) =>
+      groups.every((value, index) => {
+        if (!/^\d+$/.test(value)) return false;
+        if (index === 0) return value.length <= middleWidth;
+        const width = index === groups.length - 1 ? lastSize : middleWidth;
+        return value.length === width;
+      });
+    // Indian keyboards and pasted bills can use either complete grouping
+    // pattern. Choose one pattern for the whole number; never mix the two.
+    const hasWesternGrouping =
+      middleSize === 2 && lastSize === 3 && hasGrouping(3);
+    if (!hasWesternGrouping && !hasGrouping(middleSize)) return null;
+  }
+  cleaned = cleaned
+    .replaceAll(group, "")
+    .replaceAll(decimal, ".")
+    .replaceAll("٬", "")
+    .replaceAll("٫", ".");
   if (!/^\d+(?:\.\d+)?$/.test(cleaned)) return null;
   const value = Number(cleaned);
   return Number.isFinite(value) ? value : null;

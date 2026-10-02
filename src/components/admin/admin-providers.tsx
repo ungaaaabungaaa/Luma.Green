@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { NotificationRevocationProvider } from "@/components/notifications/device-provider";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ThemeProvider, ThemeToaster } from "@/components/theme/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,8 +13,10 @@ export function AdminProviders({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider>
       <ConvexClientProvider>
-        <TooltipProvider>{children}</TooltipProvider>
-        <ThemeToaster />
+        <NotificationRevocationProvider>
+          <TooltipProvider>{children}</TooltipProvider>
+          <ThemeToaster />
+        </NotificationRevocationProvider>
       </ConvexClientProvider>
     </ThemeProvider>
   );

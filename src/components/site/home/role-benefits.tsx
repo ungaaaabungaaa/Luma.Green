@@ -34,7 +34,7 @@ export async function RoleBenefits() {
   return (
     <section
       aria-labelledby="roles-heading"
-      className="border-y bg-muted/30 py-16 lg:py-24"
+      className="border-y bg-muted/30 py-10 sm:py-12 lg:py-24"
     >
       <Container className="space-y-12">
         <SectionHeading

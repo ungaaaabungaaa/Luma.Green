@@ -6,6 +6,8 @@ import { fileURLToPath } from "node:url";
 
 import { chromium } from "@playwright/test";
 
+import { accountScreens } from "./account-screens.mjs";
+
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const repository = path.resolve(directory, "../..");
 const output = path.resolve(repository, "docs/user-guide/screenshots");
@@ -25,6 +27,36 @@ if (
   );
 }
 const screens = [
+  {
+    name: "household-basket-phone",
+    route: "/en/sell/basket",
+    component: "src/components/sell/basket-step.tsx",
+    heading: "What do you have?",
+    headingLevel: 2,
+    width: 390,
+    height: 844,
+    viewportOnly: true,
+  },
+  {
+    name: "household-mode-phone",
+    route: "/en/sell/shop",
+    component: "src/components/sell/mode-choice.tsx",
+    heading: "Who buys it?",
+    headingLevel: 2,
+    width: 390,
+    height: 844,
+    viewportOnly: true,
+  },
+  {
+    name: "household-when-phone",
+    route: "/en/sell/when",
+    component: "src/components/sell/when-step.tsx",
+    heading: "When should they come?",
+    headingLevel: 2,
+    width: 390,
+    height: 844,
+    viewportOnly: true,
+  },
   {
     name: "admin-overview",
     route: "/admin",
@@ -274,22 +306,70 @@ screens.push(
   },
 );
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
+screens.push(...accountScreens());
 const sharedSources = [
+  "scripts/guide-preview/account-screens.mjs",
+  "scripts/guide-preview/account-fixtures.ts",
+  "scripts/guide-preview/auth.ts",
+  "scripts/guide-preview/provider.tsx",
+  "src/app/[locale]/(account)/account/layout.tsx",
+  "src/components/account/account-security.tsx",
+  "src/components/account/account-menu.tsx",
+  "src/components/account/account-links.tsx",
+  "src/components/account/use-sign-out.ts",
+  "src/components/admin/use-admin-sign-out.ts",
+  "src/lib/sign-out.ts",
+  "src/components/auth/factor-challenge.tsx",
+  "src/components/admin/auth-shell.tsx",
+  "src/components/admin/password-recovery.tsx",
+  "src/components/admin/password-input.tsx",
+  "src/app/admin/forgot-password/page.tsx",
+  "src/app/admin/reset-password/page.tsx",
+  "src/components/notifications/notifications-page.tsx",
+  "src/components/notifications/notification-error-boundary.tsx",
+  "src/components/notifications/device-provider.tsx",
   "src/components/showcase/role-story-image.tsx",
   "src/app/globals.css",
   "src/components/theme/theme-provider.tsx",
   "src/components/theme/theme-toggle.tsx",
   "src/components/app/app-shell.tsx",
+  "src/components/shop/home-cards.tsx",
+  "src/components/saathi/job-actions.tsx",
+  "src/components/saathi/job-card.tsx",
   "src/components/admin/console-shell.tsx",
   "src/components/ui/button.tsx",
   "src/components/ui/chart.tsx",
+  "src/components/ui/switch.tsx",
+  "src/components/ui/input.tsx",
+  "src/components/ui/label.tsx",
+  "src/components/ui/checkbox.tsx",
+  "src/components/ui/radio-group.tsx",
   "src/components/admin/pilot/pilot-charts.tsx",
   "src/lib/fonts.ts",
   "src/lib/money-format.ts",
   "src/components/app/format.ts",
   "src/components/admin/format.ts",
+  "src/lib/number-input.ts",
+  "src/components/market/logic.ts",
+  "src/components/market/material-filter.tsx",
+  "src/components/shop/weigh.ts",
   "scripts/guide-preview/main.tsx",
+  "scripts/guide-preview/navigation.tsx",
+  "scripts/guide-preview/translations.ts",
+  "scripts/guide-preview/locale.ts",
+  "convex/lib/catalogue.ts",
   "scripts/guide-preview/queries.ts",
+  "scripts/guide-preview/selection-fixtures.tsx",
+  "src/components/sell/basket-step.tsx",
+  "src/components/sell/shop-step.tsx",
+  "src/components/sell/material-tile.tsx",
+  "src/components/sell/kg-stepper.tsx",
+  "src/components/sell/mode-choice.tsx",
+  "src/components/sell/when-step.tsx",
+  "src/components/sell/draft.ts",
+  "src/components/sell/step-frame.tsx",
+  "src/components/sell/step-indicator.tsx",
+  "src/app/[locale]/(household)/layout.tsx",
   "src/app/[locale]/(join)/layout.tsx",
   "src/components/join/join-pages.tsx",
   "src/components/join/join-gate.tsx",
@@ -298,6 +378,7 @@ const sharedSources = [
   "src/components/join/use-autosave.ts",
   "src/components/market/new-listing-form.tsx",
   "src/components/market/listing-fields.tsx",
+  "src/components/market/field.tsx",
   "src/components/market/my-listings.tsx",
   "src/components/insights/org-impact.tsx",
   "src/components/insights/bar-list.tsx",
@@ -305,6 +386,8 @@ const sharedSources = [
   "scripts/guide-preview/image.tsx",
   "scripts/guide-preview/vite.config.mts",
   "messages/en.json",
+  "messages/ar.json",
+  "messages/ta.json",
   "public/images/showcase/household-sorting.webp",
   "public/images/showcase/collection-partners.webp",
   "public/images/showcase/material-yard.webp",
@@ -358,15 +441,73 @@ try {
       waitUntil: "domcontentloaded",
     });
     await page
-      .getByRole("note", { name: "Screenshot provenance" })
+      .getByRole("note", { name: "Screenshot provenance", includeHidden: true })
       .waitFor({ state: "visible" });
     await page
-      .getByRole("heading", { level: 1, name: screen.heading })
+      .getByRole("heading", {
+        level: screen.headingLevel ?? 1,
+        name: screen.heading,
+      })
       .waitFor({ state: "visible" });
     await page.evaluate(async () => {
       await document.fonts.ready;
       await Promise.all([...document.images].map((image) => image.decode()));
     });
+    if (screen.openMenuLabel) {
+      await page
+        .getByRole("button", { name: screen.openMenuLabel, exact: true })
+        .first()
+        .click();
+      await page.getByRole("dialog").waitFor({ state: "visible" });
+      // Only the harness note moves. The application's sheet and controls keep
+      // their real styles and geometry, and the menu header stays visible.
+      await page
+        .getByRole("note", {
+          name: "Screenshot provenance",
+          includeHidden: true,
+        })
+        .evaluate((note) => {
+          Object.assign(note.style, {
+            position: "fixed",
+            top: "auto",
+            bottom: "0",
+            left: "0",
+            right: "0",
+          });
+        });
+      const note = await page
+        .getByRole("note", {
+          name: "Screenshot provenance",
+          includeHidden: true,
+        })
+        .boundingBox();
+      const controls = await page
+        .getByRole("dialog")
+        .locator("a, button")
+        .all();
+      for (const control of controls) {
+        const box = await control.boundingBox();
+        if (
+          box &&
+          note &&
+          box.y + box.height > note.y &&
+          box.y < viewport.height
+        )
+          throw new Error(
+            `${screen.name}: the fixture note overlaps a menu control.`,
+          );
+      }
+    }
+    if (screen.rejectedActionLabel) {
+      await page
+        .getByRole("button", { name: screen.rejectedActionLabel, exact: true })
+        .click();
+      await page.getByRole("alert").waitFor({ state: "visible" });
+    }
+    if (screen.switchModeLabel)
+      await page
+        .getByRole("button", { name: screen.switchModeLabel, exact: true })
+        .click();
     if (
       await page.evaluate(
         () => getComputedStyle(document.body).margin !== "0px",
@@ -439,7 +580,7 @@ try {
       });
     }
     const bannerBounds = await page
-      .getByRole("note", { name: "Screenshot provenance" })
+      .getByRole("note", { name: "Screenshot provenance", includeHidden: true })
       .boundingBox();
     if (!bannerBounds || bannerBounds.y < 0)
       throw new Error("Screenshot provenance must remain inside the viewport.");

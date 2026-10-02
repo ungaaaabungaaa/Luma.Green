@@ -4,11 +4,9 @@ import { useQuery } from "convex/react";
 import {
   CalendarDaysIcon,
   CircleAlertIcon,
-  CloudOffIcon,
   FactoryIcon,
   InfoIcon,
   type LucideIcon,
-  TagIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -19,7 +17,6 @@ import { isConvexConfigured } from "@/components/providers/convex-provider";
 import { DataBoundary } from "@/components/site/data-boundary";
 import { Button } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
-import { Skeleton } from "@/components/ui/skeleton";
 
 import { api } from "../../../convex/_generated/api";
 import {
@@ -30,6 +27,7 @@ import {
 } from "./board";
 import { FAMILY_ICONS } from "./family-icon";
 import { PriceDetail } from "./price-detail";
+import { PricePlaceholder } from "./price-placeholder";
 import { BoardColumns, PriceRowButton } from "./price-row";
 
 /**
@@ -39,13 +37,7 @@ import { BoardColumns, PriceRowButton } from "./price-row";
 export function PriceBoard() {
   const t = useTranslations("prices");
   if (!isConvexConfigured) {
-    return (
-      <EmptyState
-        icon={CloudOffIcon}
-        title={t("unavailable.title")}
-        body={t("unavailable.body")}
-      />
-    );
+    return <PricePlaceholder state="unavailable" />;
   }
   return (
     <DataBoundary
@@ -68,20 +60,17 @@ export function PriceBoard() {
 }
 
 function LiveBoard() {
-  const t = useTranslations("prices");
   const board = useQuery(api.catalogue.priceBoard, { city: PRICE_CITY });
 
-  if (board === undefined) return <BoardSkeleton />;
-  if (board.rows.length === 0) {
-    return (
-      <EmptyState
-        icon={TagIcon}
-        title={t("empty.title")}
-        body={t("empty.body")}
-      />
-    );
-  }
-  return <BoardView board={board} />;
+  if (board === undefined) return <PricePlaceholder state="loading" />;
+  const hasPrices = board.rows.some(
+    (row) => row.todayPaise !== null || row.series.length > 0,
+  );
+  return hasPrices ? (
+    <BoardView board={board} />
+  ) : (
+    <PricePlaceholder state="empty" />
+  );
 }
 
 /** The board itself, given its data. */
@@ -184,29 +173,5 @@ function RowsSection({
         </ul>
       </div>
     </section>
-  );
-}
-
-function BoardSkeleton() {
-  const t = useTranslations("common");
-  return (
-    <div
-      role="status"
-      aria-busy="true"
-      aria-label={t("loading")}
-      className="flex flex-col gap-8"
-    >
-      <Skeleton className="h-5 w-64" />
-      {[4, 3].map((count, section) => (
-        <div key={section} className="flex flex-col gap-3">
-          <Skeleton className="h-8 w-40" />
-          <div className="flex flex-col gap-px overflow-hidden border-y border-border">
-            {Array.from({ length: count }, (_, index) => (
-              <Skeleton key={index} className="h-16 w-full rounded-none" />
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
   );
 }

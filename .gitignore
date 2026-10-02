@@ -87,9 +87,12 @@ apps/desktop/generated/
 *.keystore
 *.jks
 *.mobileprovision
+apps/mobile/google-services.json
+apps/mobile/*service-account*.json
 
 # os
 Thumbs.db
 
 # Local guide tooling
 /.venv-guide/
+__pycache__/

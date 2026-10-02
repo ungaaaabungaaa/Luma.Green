@@ -61,3 +61,4 @@ the bottom:
 | Date       | Migration                                                       | Status                                     |
 | ---------- | --------------------------------------------------------------- | ------------------------------------------ |
 | 2 Oct 2026 | [Industry API credential storage](./2026-10-02-industry-api.md) | Additive source change; deployment pending |
+| 3 Oct 2026 | [Push session binding](./2026-10-03-push-session-binding.md)    | Additive source change; deployment pending |

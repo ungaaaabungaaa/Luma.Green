@@ -1,7 +1,10 @@
 import { ArrowRightIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
+import {
+  roleProcessScenes,
+  RoleStoryImage,
+} from "@/components/showcase/role-story-image";
 import { Link } from "@/i18n/navigation";
 
 import { APPLICATION_KINDS } from "../../../convex/lib/onboarding";
@@ -16,33 +19,35 @@ export function RoleCards() {
           <li key={kind}>
             <Link
               href={`/join/${kind}`}
-              className="group grid grid-cols-[5rem_minmax(0,1fr)] items-start gap-x-4 gap-y-3 py-6 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-x-6 sm:py-8"
+              className="group grid grid-cols-[5rem_minmax(0,1fr)] items-start gap-x-4 gap-y-2 py-5 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-x-6 sm:py-6"
             >
               <RoleStoryImage
-                scene={kind}
+                scene={roleProcessScenes[kind]}
                 compact
                 frameClassName="aspect-square rounded-none sm:aspect-4/3"
               />
-              <span className="flex min-w-0 flex-col gap-2">
-                <span className="flex items-start justify-between gap-3">
-                  <span className="font-display text-xl font-semibold tracking-tight group-hover:text-primary sm:text-2xl">
-                    {t(`roles.${kind}.title`)}
+              <span className="contents sm:flex sm:min-w-0 sm:flex-col sm:gap-2">
+                <span className="flex min-w-0 flex-col gap-1">
+                  <span className="flex items-start justify-between gap-3">
+                    <span className="min-w-0 font-display text-xl font-semibold tracking-tight wrap-anywhere group-hover:text-primary sm:text-2xl">
+                      {t(`roles.${kind}.title`)}
+                    </span>
+                    <ArrowRightIcon
+                      aria-hidden
+                      className="mt-1 size-5 shrink-0 text-primary rtl:rotate-180"
+                    />
                   </span>
-                  <ArrowRightIcon
-                    aria-hidden
-                    className="mt-1 size-5 shrink-0 text-primary rtl:rotate-180"
-                  />
+                  <span className="text-sm leading-relaxed text-muted-foreground">
+                    {t(`roles.${kind}.body`)}
+                  </span>
                 </span>
-                <span className="text-sm leading-relaxed text-muted-foreground">
-                  {t(`roles.${kind}.body`)}
+                <span className="col-span-2 text-sm leading-relaxed">
+                  <span className="font-medium">{t("youNeed")}: </span>
+                  {t(`roles.${kind}.needs`)}
                 </span>
-              </span>
-              <span className="col-span-2 text-sm leading-relaxed sm:col-span-1 sm:col-start-2">
-                <span className="font-medium">{t("youNeed")}: </span>
-                {t(`roles.${kind}.needs`)}
-              </span>
-              <span className="col-span-2 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 group-hover:underline sm:col-span-1 sm:col-start-2">
-                {t("start")}
+                <span className="col-span-2 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 group-hover:underline">
+                  {t("start")}
+                </span>
               </span>
             </Link>
           </li>

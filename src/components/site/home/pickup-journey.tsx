@@ -2,6 +2,7 @@ import { ArrowRightIcon, CheckIcon } from "lucide-react";
 import Image from "next/image";
 import { getFormatter, getTranslations } from "next-intl/server";
 
+import { actionName } from "@/components/site/action-name";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -11,12 +12,13 @@ import { SectionHeading } from "../section-heading";
 
 /** Manual selection is the starting path; photo estimation remains optional. */
 export async function PickupJourney() {
-  const [home, sell, help, how, format] = await Promise.all([
+  const [home, sell, help, how, format, nav] = await Promise.all([
     getTranslations("home"),
     getTranslations("sell"),
     getTranslations("help"),
     getTranslations("howItWorks.sell"),
     getFormatter(),
+    getTranslations("nav"),
   ]);
   const steps = [
     { title: sell("basket.title"), body: sell("basket.lead") },
@@ -29,7 +31,10 @@ export async function PickupJourney() {
   ];
 
   return (
-    <section aria-labelledby="pickup-heading" className="py-16 lg:py-24">
+    <section
+      aria-labelledby="pickup-heading"
+      className="py-10 sm:py-12 lg:py-24"
+    >
       <Container className="grid min-w-0 grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="flex min-w-0 flex-col gap-8">
           <SectionHeading
@@ -60,10 +65,14 @@ export async function PickupJourney() {
             <Button
               asChild
               size="lg"
-              className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal"
+              className="min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap"
             >
-              <Link href="/sell">
-                <span className="min-w-0">{home("hero.sell")}</span>
+              <Link
+                href="/sell"
+                aria-label={actionName(nav("sellScrap"), home("hero.sell"))}
+              >
+                <span className="sm:hidden">{nav("sellScrap")}</span>
+                <span className="hidden sm:inline">{home("hero.sell")}</span>
                 <ArrowRightIcon aria-hidden className="rtl:rotate-180" />
               </Link>
             </Button>
@@ -71,7 +80,7 @@ export async function PickupJourney() {
               asChild
               variant="outline"
               size="lg"
-              className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal"
+              className="min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap"
             >
               <Link href="/help/household/first-pickup">
                 <span className="min-w-0">{help("training.openGuide")}</span>

@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import { AccountMenu } from "@/components/account/account-menu";
 import { Logo } from "@/components/brand/logo";
-import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { SkipLink } from "@/components/site/skip-link";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -28,7 +27,7 @@ export default async function HouseholdLayout({
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <SkipLink />
-      <header className="flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-border bg-background px-4 py-2">
+      <header className="flex min-h-16 items-center justify-between gap-2 border-b border-border bg-background px-4 py-2">
         <Link
           href="/"
           aria-label={t("home")}
@@ -36,10 +35,7 @@ export default async function HouseholdLayout({
         >
           <Logo />
         </Link>
-        <div className="flex items-center gap-1">
-          <ThemeToggle />
-          <LanguageSwitcher />
-        </div>
+        <AccountMenu />
       </header>
       <main
         id="main"

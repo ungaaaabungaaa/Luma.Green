@@ -12,13 +12,17 @@ const calls = vi.hoisted(() => ({
   success: vi.fn(),
 }));
 vi.mock("@/lib/auth-client", () => ({ authClient: { phoneNumber: calls } }));
+vi.mock("@/i18n/navigation", () => ({ Link: "a" }));
 vi.mock("sonner", () => ({ toast: { success: calls.success } }));
 
 beforeEach(() => {
   vi.resetAllMocks();
   vi.useFakeTimers();
   calls.sendOtp.mockResolvedValue({ error: null });
-  calls.verify.mockResolvedValue({ error: null });
+  calls.verify.mockResolvedValue({
+    error: null,
+    data: { token: "test-session" },
+  });
 });
 afterEach(() => vi.useRealTimers());
 

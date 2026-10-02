@@ -22,4 +22,14 @@ describe("motion boundaries", () => {
       "Other title",
     ]);
   });
+
+  it("does not apply a second entrance to a heading with its own motion", () => {
+    const scope = document.createElement("div");
+    scope.innerHTML =
+      "<h1 data-text-entrance>Hero</h1><h2>Section</h2><div data-reveal>Body</div>";
+    expect(revealTargets(scope).map((element) => element.textContent)).toEqual([
+      "Section",
+      "Body",
+    ]);
+  });
 });

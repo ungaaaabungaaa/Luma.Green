@@ -2,7 +2,7 @@
 export function revealTargets(scope: HTMLElement): HTMLElement[] {
   const candidates = [
     ...scope.querySelectorAll<HTMLElement>("[data-reveal], h1, h2"),
-  ];
+  ].filter((element) => element.dataset.textEntrance === undefined);
   const selected = new Set(candidates);
   return candidates.filter((element) => {
     let ancestor = element.parentElement;

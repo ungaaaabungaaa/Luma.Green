@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "convex/react";
 import { PackageIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
@@ -108,20 +108,23 @@ type FormErrorKey =
 const EMPTY: Values = { materialCode: "", kg: "", price: "", note: "" };
 
 /** The form's rules; `kg` is checked against what's free of the material. */
-function listingSchema(byCode: ReadonlyMap<string, SellableItem>) {
+function listingSchema(
+  byCode: ReadonlyMap<string, SellableItem>,
+  locale: string,
+) {
   return z
     .object({
       materialCode: z.string().min(1, "pickMaterial"),
       kg: z.string(),
       price: z
         .string()
-        .refine((value) => parseRupees(value) !== null, "priceInvalid"),
+        .refine((value) => parseRupees(value, locale) !== null, "priceInvalid"),
       note: z.string().max(NOTE_MAX_LENGTH, "noteTooLong"),
     })
     .superRefine((values, context) => {
-      const grams = parseKg(values.kg);
+      const grams = parseKg(values.kg, locale);
       const available = byCode.get(values.materialCode)?.availableGrams;
-      const price = parseRupees(values.price);
+      const price = parseRupees(values.price, locale);
       if (
         grams !== null &&
         price !== null &&
@@ -159,6 +162,7 @@ function ListingForm({
   sellerKind: OrgKind;
 }) {
   const t = useTranslations("market");
+  const locale = useLocale();
   const format = useFormat();
   const createListing = useMutation(api.market.createListing);
   const [failure, setFailure] = useState<MarketErrorKey | null>(null);
@@ -166,7 +170,7 @@ function ListingForm({
     () => new Map(items.map((item) => [item.material.code, item])),
     [items],
   );
-  const schema = useMemo(() => listingSchema(byCode), [byCode]);
+  const schema = useMemo(() => listingSchema(byCode, locale), [byCode, locale]);
   const {
     control,
     register,
@@ -187,8 +191,8 @@ function ListingForm({
       : null;
   };
   const item = byCode.get(materialCode);
-  const grams = parseKg(kg);
-  const paise = parseRupees(price);
+  const grams = parseKg(kg, locale);
+  const paise = parseRupees(price, locale);
   const total =
     grams !== null && paise !== null ? safePaiseFor(grams, paise) : 0;
 
@@ -206,8 +210,8 @@ function ListingForm({
   }
 
   async function onSubmit(values: Values) {
-    const wanted = parseKg(values.kg);
-    const ask = parseRupees(values.price);
+    const wanted = parseKg(values.kg, locale);
+    const ask = parseRupees(values.price, locale);
     if (wanted === null || ask === null) return;
     const trimmed = values.note.trim();
     setFailure(null);

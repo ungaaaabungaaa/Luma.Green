@@ -1,6 +1,7 @@
 import { MessageCircleIcon, PencilLineIcon, PhoneIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { DemoNote } from "@/components/app/page-parts";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -37,43 +38,46 @@ export function ContactStrip({
         </p>
         <p className="text-sm text-muted-foreground">{t("hours")}</p>
       </div>
-      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-        <Button
-          asChild
-          size="lg"
-          variant="secondary"
-          className="h-auto min-h-12 rounded-lg px-5 py-3 whitespace-normal"
-        >
-          <a href={`tel:${SUPPORT_CONTACT.tel}`}>
-            <PhoneIcon aria-hidden />
-            {t("contactStrip.call")}
-            <span dir="ltr" className="font-normal">
-              {SUPPORT_CONTACT.display}
-            </span>
-          </a>
-        </Button>
-        <Button
-          asChild
-          size="lg"
-          variant="secondary"
-          className="h-auto min-h-12 rounded-lg px-5 py-3 whitespace-normal"
-        >
-          <a href={SUPPORT_CONTACT.whatsapp} target="_blank" rel="noreferrer">
-            <MessageCircleIcon aria-hidden />
-            {t("contactStrip.whatsapp")}
-          </a>
-        </Button>
-        <Button
-          asChild
-          size="lg"
-          variant="outline"
-          className="h-auto min-h-12 rounded-lg border-border bg-transparent px-5 py-3 whitespace-normal text-foreground hover:bg-accent hover:text-accent-foreground"
-        >
-          <Link href={contactHref(role, topic)}>
-            <PencilLineIcon aria-hidden />
-            {t("contactStrip.write")}
-          </Link>
-        </Button>
+      <div className="space-y-3">
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="min-h-12 rounded-lg px-5 py-3 whitespace-nowrap"
+          >
+            <a href={`tel:${SUPPORT_CONTACT.tel}`}>
+              <PhoneIcon aria-hidden />
+              {t("contactStrip.call")}
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="min-h-12 rounded-lg px-5 py-3 whitespace-nowrap"
+          >
+            <a href={SUPPORT_CONTACT.whatsapp} target="_blank" rel="noreferrer">
+              <MessageCircleIcon aria-hidden />
+              {t("contactStrip.whatsapp")}
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="min-h-12 rounded-lg border-border bg-transparent px-5 py-3 whitespace-nowrap text-foreground hover:bg-accent hover:text-accent-foreground"
+          >
+            <Link href={contactHref(role, topic)}>
+              <PencilLineIcon aria-hidden />
+              {t("contactStrip.write")}
+            </Link>
+          </Button>
+        </div>
+        <p dir="ltr" className="w-fit text-sm font-medium tabular-nums">
+          {SUPPORT_CONTACT.display}
+        </p>
+        <DemoNote>{t("contact.sampleNumbers")}</DemoNote>
       </div>
     </section>
   );

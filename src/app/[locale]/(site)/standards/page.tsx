@@ -63,7 +63,6 @@ const sections = [
  */
 export default async function StandardsPage() {
   const t = await getTranslations("standards");
-  const imageRole = "manufacturer";
 
   return (
     <>
@@ -71,7 +70,7 @@ export default async function StandardsPage() {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        scene={imageRole}
+        scene="electronics"
       />
 
       <Container className="flex flex-col gap-10 py-8 lg:py-12">
@@ -107,6 +106,7 @@ export default async function StandardsPage() {
           icon={LayersIcon}
           title={t("grading.title")}
           body={t("grading.body")}
+          scene="sorting"
         >
           <RuleCards
             rules={[
@@ -137,6 +137,7 @@ export default async function StandardsPage() {
           icon={ScaleIcon}
           title={t("weighing.title")}
           body={t("weighing.body")}
+          scene="fairWeighing"
         >
           <RuleCards
             rules={[
@@ -167,6 +168,7 @@ export default async function StandardsPage() {
           icon={ReceiptTextIcon}
           title={t("custody.title")}
           body={t("custody.body")}
+          scene="dispatch"
         >
           <ReceiptAnatomy />
         </NormSection>

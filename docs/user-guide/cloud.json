@@ -4,11 +4,57 @@
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": "2 October 2026 security and industry API revision",
-  "result": "The existing native Google Doc remains at its last verified revision. The current local guide revision has not been published to it. No cloud content or sharing settings were changed.",
-  "connection_gate": "The connected import_document action creates a new document. update_file does not support replacing a native Google Doc with raw DOCX bytes. Neither provides a verified in-place DOCX import to the existing document ID.",
-  "next_action": "Update the existing native document through a supported in-place document workflow using the reviewed local revision, then verify its contents. Preserve this document ID, URL and sharing settings; do not create a replacement document.",
+  "pending_revision": "2 October 2026 public detail, account security, failure recovery, notifications, industry API and 33 language revision",
+  "result": "The existing native Google Doc is verified through main 2ba8246. This newer combined local guide revision remains pending its coordinated in-place update after PR29 merges. The document ID, folder and sharing settings remain unchanged.",
+  "connection_gate": null,
+  "next_action": "After the combined reviewed guide lands on main, coordinate its in-place, revision-guarded native update through the security followup. Preserve later human edits, the existing document ID, tab/table structures, folder and sharing. Verify all text, dates and image placements, export and inspect every native page, then record the result. Keep the native image-alt-text API limitation explicit; visible captions are not identical semantic accessibility.",
   "last_verified_revision": {
+    "source_commit": "2ba8246640fe5773e5dd3b7863c7726ee29d6fb6",
+    "source_docx_sha256": "69bb80cf805fcdc64e9675b2645186e79d4181250d49525041ad793eaa94bcc7",
+    "recorded_at": "2026-10-02T16:57:28.573326+00:00",
+    "method": "Revision-guarded native Google Docs batch updates from the reviewed DOCX. Existing tab and table containers preserved; changed paragraphs, cells and image placements updated in place.",
+    "result": "All 38 chapters, six tables, 548 body paragraphs and 72 image placements match the reviewed Word source. Three exact dates retain native date fields. All 78 exported PDF pages were visually reviewed. Three native page-break settings prevent split sections. Sharing settings were not changed.",
+    "verification": {
+      "mime_type": "application/vnd.google-apps.document",
+      "chapter_count": 38,
+      "heading_1_count": 39,
+      "body_paragraph_count": 548,
+      "native_bullet_count": 9,
+      "table_count": 6,
+      "inline_image_count": 72,
+      "date_element_count": 3,
+      "native_date_timestamps": [
+        "2026-10-02T00:00:00Z",
+        "2026-10-13T00:00:00Z",
+        "2026-10-20T00:00:00Z"
+      ],
+      "word_body_and_table_text": "matched; date displays normalized only after checking each exact native timestamp",
+      "source_image_urls": "all 72 match immutable public source commit URLs; native dimensions match reviewed DOCX within 0.1 point",
+      "local_visual_review_page_count": 76,
+      "native_pdf_visual_review_page_count": 78,
+      "native_pdf_visual_review": "passed; every page inspected, two orphan-note layouts repaired and affected pages reinspected",
+      "native_revision_id": "ANLCKQk2HBz5Ah_OZ_y2LYyv5m3rCHBltdoD7uEW5_sZh20NOONlasTPfKtop8XbW7WrYcQF8-5Ncka8LsmH94YtNIAyRupFuT_0Vewk9W8",
+      "native_readback_sha256": "8ad9b0fc7ebbcbf9f6c1dd3e8bc2b5d4ec70d2ba21d04da4a419f6e7026c592b",
+      "canonical_body_sha256": "4ebe0a6a0347f661c032371cefba7686e6d263728b81300e3b403ed6290a3d31",
+      "native_pdf_sha256": "90bc3bbf22a8e6bdc4db699417262ea9bc183abc6301634b111984f1843b3ff1",
+      "sharing_changed": false,
+      "tab_tree_changed": false,
+      "folder_changed": false,
+      "fidelity_limits": [
+        "Google Docs uses the existing Verdana typography, so pagination differs from the reviewed Word document.",
+        "The current Google Docs batchUpdate API can insert images but cannot set embedded image title/description alt-text attributes. All 72 image descriptions are present as visible editable captions. Native image-alt semantics are not identical to the DOCX."
+      ],
+      "image_alt_text_api_reference": "https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request"
+    }
+  },
+  "local_reviewed_revision": {
+    "source_docx_sha256": "a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3",
+    "visual_review_pages": 103,
+    "image_placements": 99,
+    "recorded_at": "2026-10-02T19:17:50.622083+00:00",
+    "result": "All 103 rendered pages of the combined public detail, account security, failure recovery, notification and industry API guide passed visual review. Current screenshots and sign-out/session delivery limits are included; changed pages were inspected and other page images match their reviewed versions exactly. All capture inputs are current. This newer local revision awaits its coordinated in-place Google Docs update after PR29 merges."
+  },
+  "previous_verified_revision": {
     "source_docx_sha256": "d1a565e757f55012c9dcf542334f1ced509b31ab5fe568f632372d2c02fc12e6",
     "recorded_at": "2026-10-01T21:13:39.142517+00:00",
     "result": "Reviewed Word imported as a native Google Doc. Native readback verified all 37 chapters, six tables and 51 inline images. All Word body paragraphs and table cell text are present; precise dates use three native date fields. Sharing settings were not changed.",
@@ -25,11 +71,5 @@
       "native_readback_sha256": "d0d70521e252ec83311ef8f23d7bee20e1c2920f2cbf2bbb7a0651a86990f2bd",
       "sharing_changed": false
     }
-  },
-  "local_reviewed_revision": {
-    "source_docx_sha256": "69bb80cf805fcdc64e9675b2645186e79d4181250d49525041ad793eaa94bcc7",
-    "visual_review_pages": 76,
-    "image_placements": 72,
-    "recorded_at": "2026-10-02T09:09:50.507027+00:00"
   }
 }

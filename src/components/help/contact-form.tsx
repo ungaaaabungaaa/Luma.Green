@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
 import { CircleCheckIcon, MessageSquareOffIcon, SendIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 
@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
+import { defaultLocale, isLocale, localeDirection } from "@/i18n/locales";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
@@ -119,6 +120,8 @@ function describedBy(id: string, error?: string, hint?: string) {
 /** `/help/contact`: name, number, who they are, topic and the message. */
 export function ContactMessageForm() {
   const t = useTranslations("help.contact");
+  const locale = useLocale();
+  const direction = localeDirection(isLocale(locale) ? locale : defaultLocale);
   const searchParams = useSearchParams();
   const send = useMutation(api.support.send);
   const [isSent, setIsSent] = useState(false);
@@ -240,6 +243,7 @@ export function ContactMessageForm() {
             name="role"
             render={({ field }) => (
               <Select
+                dir={direction}
                 name={field.name}
                 value={field.value ?? ""}
                 onValueChange={(value) => {
@@ -284,6 +288,7 @@ export function ContactMessageForm() {
             name="topic"
             render={({ field }) => (
               <Select
+                dir={direction}
                 name={field.name}
                 value={field.value ?? ""}
                 onValueChange={(value) => {

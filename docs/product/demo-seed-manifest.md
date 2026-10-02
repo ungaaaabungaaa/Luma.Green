@@ -41,7 +41,7 @@ public price board or represent current market quotes.
 Normalized SHA-256:
 
 ```text
-87de2132933b2e2c01b505841b80f78167926c07dc844283d04aea14b3d6f5ff
+178674d73d442a7134f50b203527204b3a1438732b7b31baffe33896a8dc8b54
 ```
 
 The hash covers the parsed manifest serialized with recursively sorted object
@@ -67,7 +67,10 @@ separate synthetic owner identities.
 “Planned business” does not mean an approved organisation. The eight textile
 businesses have `pending-schema` readiness and no operational records. Glass
 and e-waste manufacturer plans have empty stock because the catalogue has no
-matching recycled outputs.
+matching recycled outputs. Normal kabadiwala approval assigns paper, plastic
+and metal. The planned glass/e-waste shops need reviewed onboarding/import
+handling; their presence here does not prove that the normal approval flow can
+create them. This limit is included in `identity-documents-admin`.
 
 | Record group         | Count | Review coverage                                                                   |
 | -------------------- | ----: | --------------------------------------------------------------------------------- |

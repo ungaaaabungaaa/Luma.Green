@@ -38,6 +38,87 @@ test("sign-in speaks the visitor's language", async ({ page }) => {
   );
 });
 
+for (const { locale, messages } of [
+  { locale: "en", messages: en },
+  { locale: "ar", messages: ar },
+]) {
+  for (const width of [320, 768, 1440]) {
+    test(`${locale} language picker is searchable and keeps Continue reachable at ${String(width)}px`, async ({
+      page,
+    }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(`/${locale}/login?next=%2Fjoin%2Fsaathi`);
+      const group = page.getByRole("radiogroup", {
+        name: messages.common.language,
+      });
+      const search = page.getByRole("searchbox", {
+        name: messages.common.search,
+      });
+      const continueButton = page.getByRole("button", {
+        name: messages.auth.continue,
+        exact: true,
+      });
+      await expect(group).toBeVisible();
+      await page.evaluate(async () => document.fonts.ready);
+      const bounds = await group.evaluate((element) => ({
+        height: element.getBoundingClientRect().height,
+        scrollHeight: element.scrollHeight,
+        width: element.getBoundingClientRect().width,
+        scrollWidth: element.scrollWidth,
+      }));
+      expect(bounds.height).toBeLessThanOrEqual(225);
+      expect(bounds.scrollHeight).toBeGreaterThan(bounds.height);
+      expect(bounds.scrollWidth).toBeLessThanOrEqual(bounds.width + 1);
+      await expect(continueButton).toBeInViewport();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+
+      await search.fill("malayalam");
+      await expect(group.getByRole("radio")).toHaveCount(1);
+      await expect(group.getByRole("radio", { name: /മലയാളം/ })).toBeVisible();
+      await search.fill("العربية");
+      await expect(group.getByRole("radio")).toHaveCount(1);
+      await expect(group.getByRole("radio", { name: /العربية/ })).toBeVisible();
+      await search.fill("no-such-language");
+      await expect(
+        page.getByText(messages.help.search.emptyTitle),
+      ).toBeVisible();
+      await expect(continueButton).toBeEnabled();
+      await continueButton.click();
+      await expect(
+        page.getByLabel(messages.auth.mobileLabel, { exact: true }),
+      ).toBeVisible();
+      await expect(page).toHaveURL(/\/login\?next=%2Fjoin%2Fsaathi$/);
+    });
+  }
+}
+
+test("language picker keyboard selection changes locale only after Continue", async ({
+  page,
+}) => {
+  await page.goto("/login?next=%2Fjoin%2Fsaathi");
+  const search = page.getByRole("searchbox", { name: en.common.search });
+  await search.fill("Arabic");
+  await search.press("Tab");
+  const arabic = page.getByRole("radio", { name: /العربية/ });
+  await expect(arabic).toBeFocused();
+  await arabic.press("Space");
+  await expect(arabic).toBeChecked();
+  expect(
+    await page.evaluate(() => localStorage.getItem("lg.languageChosen")),
+  ).toBeNull();
+  await page
+    .getByRole("button", { name: en.auth.continue, exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/ar\/login\?next=%2Fjoin%2Fsaathi$/);
+  await expect(
+    page.getByLabel(ar.auth.mobileLabel, { exact: true }),
+  ).toBeVisible();
+});
+
 for (const { locale, messages, width } of [
   { locale: "en", messages: en, width: 360 },
   { locale: "ar", messages: ar, width: 360 },

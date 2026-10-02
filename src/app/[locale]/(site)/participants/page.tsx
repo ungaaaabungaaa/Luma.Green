@@ -2,7 +2,10 @@ import { ArrowRightIcon, HouseIcon, ShieldCheckIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { RoleStoryImage } from "@/components/showcase/role-story-image";
+import {
+  roleProcessScenes,
+  RoleStoryImage,
+} from "@/components/showcase/role-story-image";
 import { ClosingCta } from "@/components/site/closing-cta";
 import { Container } from "@/components/site/container";
 import { roles } from "@/components/site/content";
@@ -14,6 +17,16 @@ import { pageMetadata } from "@/lib/seo";
 interface Props {
   params: Promise<{ locale: string }>;
 }
+
+const workModules = {
+  household: "sortOnce",
+  kabadiwala: "weighingFairly",
+  yard: "buyingStock",
+  recycler: "buyingInputs",
+  manufacturer: "checkingDeliveries",
+  saathi: "firstJob",
+} as const;
+const workPoints = ["p1", "p2", "p3"] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await localeFromParams(params);
@@ -63,7 +76,7 @@ export default async function ParticipantsPage() {
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} scene="saathi" />
+      <PageHeader title={t("title")} lead={t("lead")} scene="pellets" />
 
       <Container className="py-8 lg:py-12">
         <ul className="divide-y border-y">
@@ -72,9 +85,9 @@ export default async function ParticipantsPage() {
               <li key={key}>
                 <section
                   aria-labelledby={`participant-${key}`}
-                  className="grid items-center gap-6 py-7 sm:gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:py-10"
+                  className="grid items-center gap-5 py-7 lg:grid-cols-[1.25fr_0.75fr] lg:gap-10 lg:py-10"
                 >
-                  <div className="min-w-0 space-y-6">
+                  <div className="min-w-0 space-y-3 lg:space-y-6">
                     <div className="flex items-center gap-4">
                       <span className="inline-flex size-8 shrink-0 items-center text-primary">
                         <Icon aria-hidden className="size-5" />
@@ -89,6 +102,29 @@ export default async function ParticipantsPage() {
                     <p className="max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg">
                       {body}
                     </p>
+                    {key === "admin" ? null : (
+                      <div className="space-y-3 border-t pt-4">
+                        <h3 className="font-semibold">
+                          {help(`modules.${workModules[key]}.title`)}
+                        </h3>
+                        <ul className="grid gap-2">
+                          {workPoints.map((point) => (
+                            <li
+                              key={point}
+                              className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
+                            >
+                              <span
+                                aria-hidden
+                                className="mt-2 size-1 shrink-0 rounded-full bg-primary"
+                              />
+                              <span>
+                                {help(`modules.${workModules[key]}.${point}`)}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     <Link
                       href={href}
                       className="inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
@@ -101,8 +137,9 @@ export default async function ParticipantsPage() {
                     </Link>
                   </div>
                   <RoleStoryImage
-                    scene={key}
-                    compact
+                    scene={roleProcessScenes[key]}
+                    sizes="(min-width: 1280px) 429px, (min-width: 1024px) 36vw, (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)"
+                    frameClassName="aspect-[3/2] lg:aspect-[4/3]"
                     className="w-full min-w-0"
                   />
                 </section>

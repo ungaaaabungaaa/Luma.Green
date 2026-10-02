@@ -1,10 +1,10 @@
 import {
   RoleStoryImage,
-  type StoryRole,
+  type StoryScene,
 } from "@/components/showcase/role-story-image";
 
 /** Full-width public-page artwork, with a taller crop on small screens. */
-export function PageBanner({ scene }: { scene: StoryRole }) {
+export function PageBanner({ scene }: { scene: StoryScene }) {
   return (
     <div data-page-banner className="w-full min-w-0">
       <RoleStoryImage

@@ -43,7 +43,7 @@ Next.js 16 app on Vercel                 Convex deployment (dev · preview · pr
   • server components; client islands        notifications · ai · admin · analytics
     for forms, camera and live data         • Better Auth component: sessions, SMS
   • /api/auth/* → Better Auth handler         codes, email+password, authenticator
-  • next-intl: 12 locales, RTL              • file storage: photos, PDFs, IDs
+  • next-intl: 33 locales, RTL              • file storage: photos, PDFs, IDs
                                             • scheduler + crons: dispatch timeouts,
                                               SLA flags, notification retries
                                             • HTTP actions: webhooks, private files

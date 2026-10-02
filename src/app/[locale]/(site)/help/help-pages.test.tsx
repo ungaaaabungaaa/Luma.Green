@@ -240,7 +240,7 @@ describe("/help/contact", () => {
       screen.getByText("We reply within one working day."),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("Prototype: these are sample numbers."),
-    ).toBeInTheDocument();
+      screen.getAllByText("Prototype: these are sample numbers."),
+    ).toHaveLength(2);
   });
 });

@@ -1,18 +1,27 @@
 import { ArrowRightIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
+import { actionName } from "@/components/site/action-name";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
+import effects from "./public-effects.module.css";
 
 /** Two clear next actions at the end of the public material story. */
 export async function ClosingCta() {
-  const t = await getTranslations("home.closing");
+  const [t, nav] = await Promise.all([
+    getTranslations("home.closing"),
+    getTranslations("nav"),
+  ]);
   return (
     <section
       aria-labelledby="closing-cta-heading"
-      className="border-t bg-muted/50 py-16 lg:py-24"
+      className={cn(
+        "border-t bg-muted/50 py-10 sm:py-12 lg:py-24",
+        effects.mesh,
+      )}
     >
       <Container className="grid min-w-0 grid-cols-1 items-end gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-16">
         <div data-reveal className="max-w-3xl min-w-0 space-y-5 wrap-anywhere">
@@ -26,14 +35,21 @@ export async function ClosingCta() {
             {t("body")}
           </p>
         </div>
-        <div className="flex min-w-0 flex-col gap-3 sm:flex-row lg:flex-col">
+        <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col">
           <Button
             asChild
             size="lg"
-            className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal sm:flex-1"
+            className={cn(
+              "min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap",
+              effects.action,
+            )}
           >
-            <Link href="/sell">
-              <span className="min-w-0">{t("sell")}</span>
+            <Link
+              href="/sell"
+              aria-label={actionName(nav("sellScrap"), t("sell"))}
+            >
+              <span className="sm:hidden">{nav("sellScrap")}</span>
+              <span className="hidden sm:inline">{t("sell")}</span>
               <ArrowRightIcon aria-hidden className="size-5 rtl:rotate-180" />
             </Link>
           </Button>
@@ -41,10 +57,11 @@ export async function ClosingCta() {
             asChild
             size="lg"
             variant="outline"
-            className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal sm:flex-1"
+            className="min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap"
           >
-            <Link href="/join">
-              <span className="min-w-0">{t("join")}</span>
+            <Link href="/join" aria-label={actionName(nav("join"), t("join"))}>
+              <span className="sm:hidden">{nav("join")}</span>
+              <span className="hidden sm:inline">{t("join")}</span>
             </Link>
           </Button>
         </div>

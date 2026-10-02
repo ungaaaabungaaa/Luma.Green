@@ -57,9 +57,9 @@ beforeEach(() => {
   ];
 });
 
-function renderForm() {
+function renderForm(locale = "en") {
   render(
-    <WithIntl>
+    <WithIntl locale={locale}>
       <NewListingForm sellerKind="kabadiwala" city="Bengaluru" />
     </WithIntl>,
   );
@@ -115,19 +115,23 @@ describe("NewListingForm", () => {
   });
 });
 
-it("rejects a total outside exact money range without crashing the preview", async () => {
-  renderForm();
-  await userEvent.click(screen.getByRole("radio", { name: /PET bottles/ }));
-  await userEvent.type(screen.getByLabelText("How many kg?"), "42");
-  await userEvent.clear(screen.getByLabelText("Your price, ₹ per kg"));
-  await userEvent.type(
-    screen.getByLabelText("Your price, ₹ per kg"),
-    "90071992547409.91",
-  );
-  await userEvent.click(screen.getByRole("button", { name: "Put on sale" }));
-  const errors = await screen.findAllByText(
-    "This total is too large. Reduce the quantity or price.",
-  );
-  expect(errors[0]).toBeInTheDocument();
-  expect(createListing).not.toHaveBeenCalled();
-});
+it.each([
+  ["en", "42", "90071992547409.91"],
+  ["ar", "٤٢", "٩٠٠٧١٩٩٢٥٤٧٤٠٩٫٩١"],
+  ["fr", "42", "90071992547409,91"],
+])(
+  "rejects a %s total outside exact money range without crashing the preview",
+  async (locale, kg, price) => {
+    renderForm(locale);
+    await userEvent.click(screen.getByRole("radio", { name: /PET bottles/ }));
+    await userEvent.type(screen.getByLabelText("How many kg?"), kg);
+    await userEvent.clear(screen.getByLabelText("Your price, ₹ per kg"));
+    await userEvent.type(screen.getByLabelText("Your price, ₹ per kg"), price);
+    await userEvent.click(screen.getByRole("button", { name: "Put on sale" }));
+    const errors = await screen.findAllByText(
+      "This total is too large. Reduce the quantity or price.",
+    );
+    expect(errors[0]).toBeInTheDocument();
+    expect(createListing).not.toHaveBeenCalled();
+  },
+);

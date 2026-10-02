@@ -1,5 +1,96 @@
 # Agent handoff — 2 October 2026
 
+## Current work: final account and notification integration
+
+Continue on `feat/account-notifications-detail`. Pushed checkpoint `a3c890e`
+contains account security, inbox/push, native controls, account navigation,
+public page content and the industry API in all 33 locales. Its five required
+hosted checks, 734 browser cases and five analytics cases passed. Main then
+advanced to security repair `2ba8246`; the current working merge preserves
+those fixes alongside this pass. Read [the pass record](account-notifications-and-content.md).
+Do not stage the unrelated root `luma-green-user-guide.pdf`.
+
+PR 29 is the existing delivery PR, with remote branch
+`feat/responsive-locales-review`. Push the final checked HEAD to that branch and
+rewrite the PR around the combined scope. Main is protected: require all checks
+for the actual final head before merge. Do not create a duplicate PR or override
+red checks. No frontend deployment monitoring is requested.
+
+The earlier PR unit timeout was scoped to the five full-catalogue seed cases;
+all assertions remain. Its browser run passed 713 cases but reached the old
+20-minute job cap during the separate analytics build. The job now allows
+30 minutes, with every case retained. That run passed on `a3c890e`; the new
+security integration needs its own final hosted checks.
+
+Evidence for `a3c890e`: the complete `pnpm check` passed with lint, TypeScript,
+1,496 web/backend tests, 40 mobile tests and 21 desktop tests. Formatting,
+110 catalogue checks, 36 focused browser cases and five isolated
+analytics cases pass. All 144 public visual captures were inspected. The team
+Word document has 47 reviewed pages and a 92-case manual. The platform guide
+has 99 reviewed pages, 40 chapters and 93 image placements; all 13 document
+tests and both builder freshness checks pass. The final disconnected production
+build passes with 2,622 generated pages. Hosted CI must pass on the final PR
+head before merge. Exact evidence belongs in the pass record; do not present old checkpoint counts
+as current totals. The new `2ba8246` integration has a passing production build,
+1,567 non-document tests, 62 focused browser cases, 43 mobile tests, 22 desktop
+tests and lint. Its current guide has 103 reviewed pages, 40 chapters and 99
+image placements. The team pack has 47 reviewed pages and a 92-case manual.
+The complete `pnpm check` passes: lint, TypeScript, 1,582 web/backend tests,
+43 mobile tests and 22 desktop tests. Formatting and all 15 document freshness
+tests pass. The final commit still requires hosted checks before merge.
+
+Apple, Google Play and Expo/EAS accounts are not set up. Code and local app
+checks are complete; signing, physical-device tests, push credentials and store
+review remain external gates. Auth/inbox backend release must preserve the
+parallel recycling schema additions. Do not deploy this checkout over them.
+The existing Google Doc is verified through main `2ba8246`; its ID and sharing
+remain unchanged. The newer reviewed Word revision will be synced in place by
+the coordinated security followup after PR 29 merges. That followup also owns
+the combined backend rollout. Before merging the final green PR head into main,
+hold for that owner's verified additive backend release from the same head.
+Vercel does not deploy Convex as part of its frontend build. Preserve the
+already-deployed recycling schema in the combined release. The cloud document
+update follows the main merge. Local Word artifacts are current for this pass.
+
+Final CI repair: `6a20089` passed all five required checks and native checks.
+Its browser run passed 727 cases but failed nine menu cases; one other menu
+case passed on retry. All ten retry traces show the keyboard test focusing a
+disabled, pre-hydration trigger. The tests now wait for an enabled control and
+assert focus before Enter. The held-script tests also check keyboard reopening
+after hydration. Runtime behavior and all existing assertions remain unchanged.
+The production-build regression passed 30 repeated menu cases with zero retries
+and three delayed-script pointer/keyboard cases.
+The guide's final route table restores the API connections entry; the Word file
+and review record are rebuilt together. No screen changed in this repair, so
+the current browser captures remain valid. Recheck CI on the repair commit.
+
+The final security repair checks forbidden auth flags independently and holds
+push registration blocked through the entire sign-out transaction. The real
+HTTP/control regressions pass, along with 127 focused auth tests, 69 focused
+notification/sign-out tests, scoped lint, TypeScript and the production build.
+The auth patch also passed an independent 23-test handler rerun. Refresh affected
+guide captures, rebuild/review Word, run the full checks and require green
+actual-head CI before completing the release order above.
+
+The server repair also binds push devices to validated Better Auth sessions and
+rejects new delivery claims after that session ends. It covers a second-client
+registration during sign-out, beyond the frontend's same-runtime lock. Legacy
+unbound records require authenticated renewal. Preserve the additive session
+field and its migration notes in the combined backend release. No live provider
+delivery is claimed by the local HTTP regression.
+
+Final local check passes with 1,603 web/backend tests, 43 mobile tests and 22
+desktop tests, plus lint and TypeScript. All 33 final production-browser cases
+pass with zero retries. Independent server review passed 62 auth/push cases and
+the original cross-client regression unchanged. The 240 affected captures and
+103-page guide / 47-page team pack passed visual review; 15 document tests pass.
+Require formatting and hosted checks on the final committed head, then follow
+the backend-before-main release order above.
+
+## Integrated industry API checkpoint
+
+The account checkpoint bc986f4 is combined with origin/main af2e295. The following industry API evidence describes its earlier branch, not the combined build. Combined captures, guide rebuild, visual review and local checks are complete; hosted CI remains pending on the final PR head. Preserve all 33 locale catalogues and both account and API workflows.
+
 **Industry API work:** `feat/industry-api` adds REST v1 for an approved business's
 organization, material catalogue, stock, buying/selling trades and optional
 material-family news. Owners can create scoped, expiring keys and revoke them
@@ -28,6 +119,116 @@ phone/tablet/desktop sizes and RTL. Protected examples have synthetic data and
 writes disabled. The maintained Word document, visual review record and source
 hashes travel with this change. The existing Google Docs copy retains its stable
 ID and sharing; its in-place update remains a separate connection gate.
+
+## Selection and production demo-price checkpoint
+
+The follow-up on `feat/responsive-locales-review` replaces large selection
+blocks with a searchable first-login language picker and compact form controls.
+It fixes the remaining narrow Tamil labels, basket alignment and explicit RTL
+direction. All 36 targeted phone/tablet/desktop selection scenes passed, with
+each browser capture visually inspected. All 15 auth browser cases passed.
+The normal disconnected build and a separate connected development build passed.
+Final `pnpm check` passed with 1,296 web tests, 27 mobile tests and 20 desktop
+tests, plus lint and TypeScript. Formatting passed. Hosted checks must be read
+again for the new commit before merge.
+
+At the founder's request, `demoPrices:seed` was deployed and run on both Convex
+environments. Production now has 26 materials, 26 reference prices and 780
+sample daily prices. Development and production price-board values match for
+all 26 materials and 30 dates. Existing records were preserved. This is a
+price-only import, not the full platform demo seed. Read
+[the import and cleanup record](selection-prices-and-account-ux.md).
+
+Guide impact: the editable platform guide now has 75 reviewed pages and 73
+image placements. Fresh public and protected captures include the new picker,
+selection controls and two read-only connected development price views.
+The team document has 38 reviewed pages and 12 image placements. Their exact
+hashes and capture provenance are in the respective build records. The stable
+Google Docs copy remains pending an in-place update; its ID and sharing remain
+unchanged. The connected development captures do not prove a production page
+load, authentication or provider delivery.
+
+The next authorised slice is more page-specific imagery and descriptions,
+optional authenticator protection after phone sign-in, in-app/browser push,
+and Expo/Electron integration. Apple, Google Play and Expo/EAS accounts are not
+set up: finish code and local checks, then document account, credential,
+signing, store and real-device gates. Do not claim those gates are complete.
+The founder excluded frontend deployment monitoring. Use the protected PR path
+for integration into main, and keep the unrelated root PDF untracked.
+
+## Release snapshot
+
+This snapshot records the local release evidence for
+`feat/responsive-locales-review`, based on `c1ed004`. The founder requested
+commit, push and integration into `main`. Use the protected PR path, with all
+required checks green. Read the live Git/PR state before resuming; this document
+is not a substitute for hosted CI or deployment status.
+
+The founder merged the earlier PR #28 at 03:27 UTC. Its `dfb7de2` head passed
+all five required checks, Chromium and native policy checks. Vercel reported
+production `c1ed004` successful, and its How it works page returned HTTP 200.
+That checkpoint contains the initial UI pass, banners, logo motion and offline
+seed manifest. This follow-up contains the final responsive and language work.
+
+`9930381` records durable UI rules, the 62-case team manual, the proposed
+October–March plan, India-first legal preparation and the corrected offline
+seed gap. The founder confirmed that the entity is not registered. The UI
+contract in `docs/design/designer-system.md` supersedes historical visual rules.
+
+### What changed
+
+- Compact public and operational phone/tablet menus, one-row desktop navigation,
+  tight section spacing and complete single-line action text. The final narrow
+  pass also stacks pickup contact actions and lets long form labels wrap.
+- 21 additional complete catalogues: 33 locales, script-font priority repair,
+  localized numeric input, root-error and native-shell copy generation.
+- Real-price loading placeholders and restrained public text/button/mesh effects.
+  Public static rendering and private/live data boundaries are preserved.
+- Maintained Word guide and illustrated team pack with light/dark pairs,
+  translated examples, role/edge-case testing, roadmap and API/legal gates.
+
+### Local verification
+
+`pnpm check` passed: 1,272 web tests, 27 mobile tests and 20 desktop tests,
+plus lint and TypeScript. Formatting passed. The normal webpack production build
+emits 2,521 static routes. All 706 Chromium cases passed with one worker; all five
+configured-analytics checks passed in an isolated build with intercepted provider
+requests. The last German selector-label correction received a fresh 101-test
+message check and all 33 narrow control-bound checks before the final rebuild.
+
+The protected fixture matrix initially passed 777 of 784 cases. Seven genuine
+layout defects were fixed; all 160 affected cases then passed. All 99 operational
+navigation states and the 33-locale descendant-text bounds checks passed. This
+catches text hidden inside a control as well as page overflow. Original browser
+PNGs were visually reviewed. Fixtures have synthetic records, reject writes and
+do not prove authenticated access or backend/provider execution.
+
+The language audit covers 33 × 2,260 message values and 26 material names per
+locale, with no mechanical coverage issues. Native-speaker review remains
+required. The 35 separate offline seed tests pass; no seed import or reset ran.
+See the [responsive record](responsive-performance-locales.md) and
+[cache audit](rendering-cache-audit.md) for scope and repeatable checks.
+
+### Guide impact and external gates
+
+The platform guide has 69 reviewed pages and 65 image placements. Its current
+public, analytics and protected captures and exact DOCX hash are recorded in
+`docs/user-guide/build.json`. The team pack has 38 reviewed pages and 12 image
+placements, with its own freshness record. The 62-case manual is a test plan;
+its staging/provider/device cases have not been claimed as executed.
+
+The existing Google Docs ID and sharing are unchanged. Its in-place update is
+explicitly pending in `docs/user-guide/cloud.json`; use the current local Word
+file for this revision. Demo isolation still needs the founder's choice before
+import work. Stored material names require the separate authenticated, audited
+repair after backend deployment. Live SMS/provider acceptance, native signing,
+real-device tests and legal review remain release gates. No live provider send,
+payment, credit issuance or legal filing ran in this pass.
+
+Preserve the unrelated root PDF and pre-existing previews on ports 3004/3202.
+The task preview uses port 3009; the isolated fixture preview uses port 3203.
+
+## Earlier checkpoints
 
 **Logo motion follow-up:** after `8975575`, the founder requested an eased logo
 spin on hover. The shared SVG mark makes one 900ms turn on fine-pointer hover

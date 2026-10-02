@@ -62,11 +62,12 @@ describe.each(locales)("messages/%s.json", (locale) => {
       expect(typeof source, label).toBe("string");
       if (typeof value !== "string" || typeof source !== "string") continue;
       expect(value.trim(), label).not.toBe("");
-      expect(value, label).not.toMatch(/^TODO/i);
+      // Spanish “Todo…” is normal copy; only reject explicit task markers.
+      expect(value, label).not.toMatch(/^TODO(?:\s*[:—-]|\s*$)/u);
       expect(() => messageContract(value), label).not.toThrow();
       expect(hasSameMessageContract(source, value), label).toBe(true);
       if (locale !== defaultLocale) {
-        expect(hasUntranslatedCopy(source, value), label).toBe(false);
+        expect(hasUntranslatedCopy(source, value, locale), label).toBe(false);
       }
     }
   });

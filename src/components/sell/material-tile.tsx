@@ -43,13 +43,13 @@ export function MaterialTile({
       disabled={!isAdded && isFull}
       onClick={onToggle}
       className={cn(
-        "group flex min-h-20 w-full items-center gap-3 border-b px-2 py-4 text-start transition-colors duration-150 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50",
+        "group flex min-h-16 w-full items-center gap-3 border-b px-2 py-3 text-start transition-colors duration-150 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50",
         isAdded
           ? "border-primary bg-accent/50"
           : "border-border hover:bg-muted/40",
       )}
     >
-      <FamilyIcon family={material.family} />
+      <FamilyIcon family={material.family} size="sm" />
       <span className="flex min-w-0 flex-1 flex-col gap-1">
         <span className="text-base leading-snug font-semibold">
           {format.material(material.names, material.code)}
@@ -71,10 +71,8 @@ export function MaterialTile({
       <span
         aria-hidden
         className={cn(
-          "flex size-8 shrink-0 items-center justify-center rounded-md",
-          isAdded
-            ? "bg-primary text-primary-foreground"
-            : "border text-muted-foreground",
+          "flex size-5 shrink-0 items-center justify-center",
+          isAdded ? "text-primary" : "text-muted-foreground",
         )}
       >
         {isAdded ? (

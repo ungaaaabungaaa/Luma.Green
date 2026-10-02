@@ -7,6 +7,7 @@ const message = {
   common: { retry: "Retry", error: "Error", close: "Close" },
   nav: { home: "Home" },
   native: { offlineTitle: "<Offline>", offlineBody: 'Try "again"' },
+  notifications: { title: "Notifications", permissionBody: "Enable updates" },
 };
 const catalogues = { en: message, ar: message };
 test("OS language selects installed locale; admin is English", () => {

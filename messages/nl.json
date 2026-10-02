@@ -1,0 +1,3482 @@
+{
+  "brand": {
+    "name": "Luma.Green",
+    "tagline": "Een schonere toekomst in beweging"
+  },
+  "meta": {
+    "title": "Luma.Green — Een schonere toekomst in beweging",
+    "description": "Luma.Green brengt de Indiase schrootketen samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, gewogen inzamelingen en een registratie van elke overdracht."
+  },
+  "theme": {
+    "label": "Weergave",
+    "light": "Licht",
+    "dark": "Donker",
+    "system": "Systeem"
+  },
+  "common": {
+    "loading": "Laden…",
+    "error": "Er ging iets mis",
+    "retry": "Opnieuw proberen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "search": "Zoeken",
+    "language": "Taal",
+    "close": "Sluiten"
+  },
+  "nav": {
+    "label": "Hoofdnavigatie",
+    "home": "Start",
+    "howItWorks": "Hoe het werkt",
+    "contact": "Contact",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "skipToContent": "Naar de inhoud",
+    "prices": "Prijzen",
+    "help": "Hulp",
+    "join": "Aanmelden",
+    "sellScrap": "Schroot verkopen"
+  },
+  "footer": {
+    "about": "De Indiase schrootketen op één platform, van huis tot fabriek. Elke overdracht wordt gewogen, geprijsd en geregistreerd.",
+    "navLabel": "Voettekst",
+    "useHeading": "Gebruik Luma.Green",
+    "learnHeading": "Meer informatie",
+    "standards": "Sectornormen",
+    "solar": "Zonnepanelen op het dak",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "sell": {
+      "title": "Verkopen",
+      "summary": "Huishoudens verkopen schroot vanuit huis voor een eerlijke prijs, gewogen en betaald aan de deur."
+    },
+    "trade": {
+      "title": "Handelen",
+      "summary": "De voorgestelde escrowdienst zou de betaling vasthouden tot de levering. De huidige demo registreert alleen gesimuleerde betalingen."
+    },
+    "record": {
+      "title": "Registreren",
+      "summary": "Elke overdracht wordt geregistreerd voor naleving, impact en bewijs van recycling."
+    }
+  },
+  "principles": {
+    "heading": "Ontworpen voor een controle",
+    "intro": "Een koper, toezichthouder of auditor kan vragen waar materiaal vandaan komt. De registratie is zo opgezet dat het antwoord altijd beschikbaar is.",
+    "auditable": {
+      "title": "Elke wijziging wordt vastgelegd",
+      "body": "Elke stap, van gewogen inzameling tot betaalde transactie of geleverde lading, voegt een regel toe aan een auditlogboek die nooit ter plekke wordt gewijzigd."
+    },
+    "exact": {
+      "title": "Getallen zonder oplopende fouten",
+      "body": "Geld wordt opgeslagen in hele paise en massa in hele grammen. Er kan geen afrondingsfout ontstaan tussen de weegbrug en de afrekening."
+    },
+    "frozen": {
+      "title": "Het verleden blijft ongewijzigd",
+      "body": "Elke bon bewaart de prijs en het gewicht van die dag. Een latere prijswijziging herschrijft nooit een bestaande bon."
+    }
+  },
+  "home": {
+    "metaDescription": "Luma.Green brengt de Indiase schrootketen samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, geverifieerde bedrijven en een bon bij elke stap.",
+    "hero": {
+      "eyebrow": "We beginnen in Bengaluru",
+      "title": "De Indiase schrootketen op één platform",
+      "lead": "Verkoop schroot vanuit huis voor een eerlijke prijs. Handel verder in de keten met geverifieerde bedrijven. Elke overdracht wordt gewogen, geprijsd en geregistreerd.",
+      "sell": "Verkoop uw schroot",
+      "join": "Aanmelden als bedrijf",
+      "prices": "Bekijk de prijzen van vandaag"
+    },
+    "teaser": {
+      "title": "Prijzen van vandaag",
+      "placeAndDate": "Bengaluru · {date}",
+      "place": "Bengaluru",
+      "seeAll": "Alle prijzen bekijken",
+      "demoNote": "Voorbeeldprijzen voor het prototype.",
+      "unavailable": "De prijzen van vandaag verschijnen hier binnenkort.",
+      "error": "De prijzen konden nu niet worden geladen."
+    },
+    "chain": {
+      "heading": "De route van schroot",
+      "intro": "Schroot gaat vier keer over in andere handen voordat het iets nieuws wordt. Bij elke stap wordt het verder gesorteerd en Luma.Green registreert elke overdracht.",
+      "steps": {
+        "household": {
+          "name": "Huishoudens",
+          "body": "Verkopen oud papier, plastic, metaal en elektronica."
+        },
+        "kabadiwala": {
+          "name": "Kabadiwala's",
+          "body": "Kopen het, wegen het en sorteren het per materiaal."
+        },
+        "yard": {
+          "name": "Sorteerterreinen",
+          "body": "Delen het in naar kwaliteit en persen het tot balen."
+        },
+        "recycler": {
+          "name": "Recyclers",
+          "body": "Maken van balen vlokken, korrels en ingots."
+        },
+        "manufacturer": {
+          "name": "Fabrikanten",
+          "body": "Maken nieuwe producten van gerecycled materiaal."
+        }
+      },
+      "money": "Huishoudens ontvangen contant geld of UPI aan de deur. Escrow tussen bedrijven is gepland.",
+      "saathi": "Saathi's helpen in de hele keten met inzameling, sortering en diensten."
+    },
+    "roles": {
+      "heading": "Voor iedereen in de keten",
+      "intro": "Zes groepen mensen houden schroot in beweging. Dit doet Luma.Green voor elk van hen.",
+      "household": {
+        "title": "Huishoudens",
+        "one": "Bekijk de waarde van uw schroot voordat u boekt.",
+        "two": "Ophalen aan de deur of inleveren bij een winkel.",
+        "three": "Contant of via UPI betaald, met een bon.",
+        "cta": "Verkoop uw schroot"
+      },
+      "kabadiwala": {
+        "title": "Kabadiwala's",
+        "one": "Ophaalverzoeken van huishoudens in de buurt.",
+        "two": "Bepaal uw eigen prijzen, nooit onder het minimum.",
+        "three": "Verkoop gesorteerde voorraad aan sorteerterreinen.",
+        "cta": "Aanmelden als kabadiwala"
+      },
+      "yard": {
+        "title": "Sorteerterreinen",
+        "one": "Bekijk de voorraad van winkels in de buurt.",
+        "two": "Koop in grote hoeveelheden en verkoop balen aan recyclers.",
+        "three": "Gepland: betaling in escrow tot de levering.",
+        "cta": "Aanmelden als sorteerterrein"
+      },
+      "recycler": {
+        "title": "Recyclers",
+        "one": "Balen op kwaliteitsklasse van geverifieerde sorteerterreinen.",
+        "two": "Elk lot met zijn eigen overdrachtsketen.",
+        "three": "Verkoop uw productie aan fabrieken.",
+        "cta": "Aanmelden als recycler"
+      },
+      "manufacturer": {
+        "title": "Fabrikanten",
+        "one": "Bekijk wat recyclers produceren.",
+        "two": "Gepland: bestel gerecycled materiaal met escrow.",
+        "three": "Registraties voor uw EPR-rapportages.",
+        "cta": "Aanmelden als fabrikant"
+      },
+      "saathi": {
+        "title": "Saathi's",
+        "one": "Betaald werk in de buurt: inzameling, sortering en diensten.",
+        "two": "Kies uw gebied en werktijden.",
+        "three": "Geverifieerd, zodat huishoudens en bedrijven u vertrouwen.",
+        "cta": "Aanmelden als Saathi"
+      }
+    },
+    "trust": {
+      "heading": "Gebouwd op vertrouwen",
+      "intro": "De schrootsector werkte altijd met contant geld en schattingen. Deze regels veranderen dat.",
+      "verified": {
+        "title": "Geverifieerde bedrijven",
+        "body": "Een persoon controleert elk bedrijf en elke Saathi voordat zij kunnen handelen."
+      },
+      "floor": {
+        "title": "Eerlijke prijzen, met een minimum",
+        "body": "Winkels bepalen hun eigen prijzen, maar nooit onder het minimum dat we per materiaal publiceren."
+      },
+      "escrow": {
+        "title": "Gepland: escrow voor zakelijke transacties",
+        "body": "De demo toont de betaalstappen, maar houdt geen echt geld vast en maakt niets over."
+      },
+      "receipts": {
+        "title": "Digitale bonnen",
+        "body": "Elke inzameling en transactie krijgt een bon: wat, hoeveel en tegen welke prijs."
+      },
+      "languages": {
+        "title": "{count, number} talen",
+        "body": "Kannada, Hindi, Tamil, Engels en meer, met grote knoppen en weinig woorden."
+      }
+    },
+    "whyNow": {
+      "heading": "Waarom nu",
+      "intro": "Drie veranderingen maken dit het moment om de Indiase schrootketen vast te leggen.",
+      "epr": {
+        "title": "EPR-regels",
+        "body": "Regels voor uitgebreide producentenverantwoordelijkheid voor plastic verpakkingen, elektronica en batterijen vragen bewijs dat materiaal echt is ingezameld en gerecycled. Dat bewijs begint bij de eerste overdracht."
+      },
+      "informal": {
+        "title": "De informele sector",
+        "body": "Kabadiwala's en informele werkers verzorgen al veel recycling in India, met weinig toegang tot eerlijke prijzen, registraties of erkenning. Luma.Green werkt met hen samen."
+      },
+      "upi": {
+        "title": "UPI overal",
+        "body": "Betalen met de telefoon is nu normaal, zelfs in de kleinste winkel. Elke betaling kan een registratie achterlaten."
+      }
+    },
+    "closing": {
+      "title": "Begin met wat u heeft",
+      "body": "Een zak oude kranten of een vrachtwagen vol balen: er is plaats voor op Luma.Green.",
+      "sell": "Verkoop uw schroot",
+      "join": "Aanmelden als bedrijf"
+    },
+    "expansion": {
+      "materialsTitle": "Begin met de materialen die u al heeft",
+      "pickupTitle": "Een inzameling, stap voor stap",
+      "shopTitle": "Uw schrootwinkel, verbonden",
+      "recordsTitle": "Een registratie die het materiaal volgt",
+      "paymentTitle": "Duidelijke gewichten. Duidelijke betalingen.",
+      "questionsTitle": "Voordat u begint"
+    },
+    "marquee": {
+      "label": "Materialen in de catalogus",
+      "pause": "Beweging pauzeren",
+      "resume": "Beweging hervatten"
+    },
+    "testimonials": {
+      "title": "Demogetuigenissen",
+      "note": "Illustratieve citaten, geen klantbeoordelingen.",
+      "household": "Ik kan de prijs controleren voordat ik een inzameling kies.",
+      "kabadiwala": "Gewicht, prijs en bon blijven bij elkaar. Elke inzameling is eenvoudiger te controleren.",
+      "manufacturer": "Met materiaalcodes kan ik makkelijker vragen om de kwaliteit die ik nodig heb."
+    }
+  },
+  "prices": {
+    "metaTitle": "Schrootprijzen in Bengaluru vandaag",
+    "metaDescription": "De schrootprijzen in Bengaluru vandaag per kg: papier, plastic, metaal, glas en elektronica, met weekverschil, een grafiek van 30 dagen en het minimum dat een winkel mag betalen.",
+    "eyebrow": "Bengaluru",
+    "title": "Schrootprijzen van vandaag",
+    "lead": "Wat schroot vandaag per kilo opbrengt. Winkels bepalen hun prijzen, nooit onder het minimum. Tik op een materiaal voor de afgelopen 30 dagen.",
+    "demoNote": "Voorbeeldprijzen voor het prototype, geen actuele marktprijzen.",
+    "date": "Prijzen voor {date}",
+    "floorHelp": "Minimum: het laagste bedrag dat een geverifieerde winkel u per kilo mag betalen.",
+    "perKg": "{price}/kg",
+    "floor": "Minimum {price}",
+    "noPrice": "Nog geen prijs",
+    "columns": {
+      "material": "Materiaal",
+      "today": "Vandaag",
+      "week": "Deze week",
+      "month": "30 dagen",
+      "floor": "Minimum"
+    },
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastic",
+      "metal": "Metaal",
+      "glass": "Glas",
+      "ewaste": "Elektronisch afval",
+      "other": "Overig"
+    },
+    "factoryGate": {
+      "title": "Af fabriek",
+      "body": "Gerecycled materiaal zoals recyclers het aan fabrikanten verkopen."
+    },
+    "change": {
+      "up": "Deze week {pct} gestegen",
+      "down": "Deze week {pct} gedaald",
+      "flat": "Deze week ongewijzigd",
+      "unknown": "Nog onvoldoende geschiedenis"
+    },
+    "detail": {
+      "description": "{code} · {family} · Bengaluru",
+      "today": "Vandaag",
+      "low": "Laagste in 30 dagen",
+      "high": "Hoogste in 30 dagen",
+      "floor": "Minimum",
+      "noFloor": "Geen",
+      "close": "Sluiten",
+      "noHistory": "Nog geen prijsgeschiedenis."
+    },
+    "chart": {
+      "label": "{material}: prijs per kilo per dag. Gebruik de pijltoetsen om van dag te wisselen.",
+      "point": "{date}: {price}",
+      "floor": "Minimum {price}",
+      "table": "Cijfers tonen",
+      "tableCaption": "{material}, prijs per kilo per dag",
+      "date": "Datum",
+      "price": "Prijs per kg"
+    },
+    "unavailable": {
+      "title": "Prijzen zijn nu niet beschikbaar",
+      "body": "De prijslijst wordt aangesloten. Kijk binnenkort opnieuw."
+    },
+    "empty": {
+      "title": "Nog geen prijzen",
+      "body": "De prijzen van vandaag verschijnen hier na publicatie."
+    },
+    "error": {
+      "title": "Prijzen konden niet worden geladen",
+      "body": "Controleer uw verbinding en probeer het opnieuw.",
+      "retry": "Opnieuw proberen"
+    },
+    "sellCta": {
+      "title": "Heeft u schroot thuis?",
+      "body": "Boek een inzameling en krijg betaald aan de deur.",
+      "action": "Verkoop uw schroot"
+    }
+  },
+  "standards": {
+    "metaTitle": "De Luma.Green-standaard",
+    "metaDescription": "Gepland: open materiaalcodes en eenvoudige regels voor eerlijke schroothandel in India: kwaliteitsindeling, wegen, bonnen, verificatie en escrow. Vrij te gebruiken.",
+    "eyebrow": "Open standaard",
+    "title": "De Luma.Green-standaard",
+    "lead": "Eenvoudige, open regels voor eerlijke schroothandel: één code per materiaal, duidelijke kwaliteitsindeling, eerlijk wegen en een registratie bij elke overdracht. Iedereen in de sector kan ze gebruiken.",
+    "onThisPage": "Op deze pagina",
+    "codes": {
+      "title": "Eén code per materiaal",
+      "nav": "Materiaalcodes",
+      "body": "Hetzelfde schroot heeft veel lokale namen. Een open code geeft elk materiaal één gemeenschappelijke naam, zodat een kilo kranten in winkel, sorteerterrein en fabriek hetzelfde betekent.",
+      "caption": "Luma.Green-materiaalcodes",
+      "count": "{count, plural, one {# materiaal} other {# materialen}}",
+      "download": "Codes downloaden (CSV)",
+      "columns": {
+        "code": "Code",
+        "name": "Materiaal",
+        "family": "Categorie",
+        "stage": "Fase"
+      },
+      "stages": {
+        "scrap": "Schroot",
+        "recycled": "Gerecycled"
+      },
+      "unavailable": "De codelijst is nu niet beschikbaar. Kijk binnenkort opnieuw.",
+      "empty": "Nog geen materiaalcodes.",
+      "error": "De codelijst kon niet worden geladen.",
+      "retry": "Opnieuw proberen"
+    },
+    "grading": {
+      "title": "Kwaliteitsindeling: droog, gesorteerd, schoon",
+      "nav": "Kwaliteitsindeling",
+      "body": "Een eerlijke prijs vraagt om een duidelijke kwaliteitsklasse. Vóór het wegen volgen drie controles.",
+      "dry": {
+        "title": "Droog",
+        "body": "Water is geen schroot. Nat papier en karton worden gedroogd voordat ze worden gewogen."
+      },
+      "sorted": {
+        "title": "Gesorteerd",
+        "body": "Eén materiaal per zak of baal, onder één code. Een gemengde lading gebruikt een MIXED-code."
+      },
+      "clean": {
+        "title": "Zonder verontreiniging",
+        "body": "Geen eten, olie, aarde of stenen. Alles wat niet tot het materiaal behoort, wordt eerst verwijderd."
+      }
+    },
+    "weighing": {
+      "title": "Eerlijk wegen",
+      "nav": "Wegen",
+      "body": "De meeste meningsverschillen in schroothandel gaan over gewicht. Deze regels houden de weegschaal eerlijk.",
+      "stamped": {
+        "title": "Geijkte weegschalen",
+        "body": "Weeg alleen op een weegschaal die door de afdeling wettelijke metrologie is gecontroleerd en gestempeld."
+      },
+      "shown": {
+        "title": "De verkoper ziet het gewicht",
+        "body": "Het scherm is naar de verkoper gericht. Het gewicht wordt voorgelezen voordat de prijs wordt afgesproken."
+      },
+      "receipt": {
+        "title": "Een digitale bon",
+        "body": "Het gewicht staat tot op de gram op de bon, zonder afronding in iemands voordeel."
+      }
+    },
+    "custody": {
+      "title": "Bonnen en overdrachtsketen",
+      "nav": "Bonnen",
+      "body": "Elke overdracht krijgt een bon. Bonnen zijn per stap verbonden, zodat een baal bij een recycler te herleiden is tot de winkels van herkomst.",
+      "receiptTitle": "Wat elke bon vermeldt",
+      "fields": {
+        "number": "Bonnummer",
+        "time": "Datum en tijd",
+        "seller": "Verkoper",
+        "buyer": "Koper",
+        "code": "Materiaalcode",
+        "weight": "Gewicht, tot op de gram",
+        "rate": "Prijs per kg",
+        "total": "Totaal en betaalwijze"
+      }
+    },
+    "verification": {
+      "title": "Verificatie",
+      "nav": "Verificatie",
+      "body": "Een persoon controleert elk bedrijf en elke Saathi voordat zij kunnen handelen.",
+      "business": "Bedrijven: het GST-nummer indien aanwezig, foto's van de winkel of installatie en een telefoongesprek.",
+      "consent": "Sorteerterreinen, recyclers en fabrieken: een geldige vergunning van de milieuraad van de deelstaat.",
+      "saathi": "Saathi's: een identiteitsbewijs met foto en een bijpassende selfie."
+    },
+    "escrow": {
+      "title": "Gepland: escrow tussen bedrijven",
+      "nav": "Escrowregeling",
+      "body": "De voorgestelde escrowdienst zou de betaling vasthouden tot de levering. De huidige demo registreert alleen gesimuleerde betalingen.",
+      "steps": {
+        "accepted": "De verkoper accepteert de bestelling",
+        "paid": "De koper betaalt op de escrowrekening",
+        "dispatched": "De verkoper verzendt de goederen",
+        "released": "De koper bevestigt en het geld wordt vrijgegeven"
+      }
+    },
+    "adopt": {
+      "title": "Gebruik de standaard",
+      "body": "De codes en regels zijn open en gratis. Gebruik ze in uw winkel, sorteerterrein of fabriek, op of buiten Luma.Green, en vertel ons wat beter kan.",
+      "cta": "Neem contact op"
+    }
+  },
+  "solar": {
+    "metaTitle": "Calculator voor zonnepanelen op daken in Karnataka",
+    "metaDescription": "Schat welk zonnestroomsysteem uw huis of bedrijf in Karnataka nodig heeft, de kosten na de PM Surya Ghar-subsidie en de terugverdientijd.",
+    "eyebrow": "Karnataka",
+    "title": "Zonnepanelen voor uw huis of bedrijf",
+    "lead": "Vind het passende vermogen voor uw dak, de kosten na overheidssubsidie en de terugverdientijd. Elk getal hier is een schatting.",
+    "form": {
+      "heading": "Uw gegevens",
+      "kind": "Voor wie is het?",
+      "kinds": {
+        "home": "Mijn huis",
+        "business": "Mijn bedrijf"
+      },
+      "mode": "Uw stroomverbruik",
+      "modes": {
+        "bill": "Maandelijkse rekening",
+        "units": "Eenheden per maand"
+      },
+      "bill": "Maandelijkse stroomrekening",
+      "billHint": "In roepies, bijvoorbeeld 2500",
+      "units": "Verbruikte eenheden per maand",
+      "unitsHint": "Dit staat op uw rekening, bijvoorbeeld 300",
+      "unitsSuffix": "eenheden",
+      "roof": "Dakoppervlak zonder schaduw",
+      "roofHint": "Laat leeg als u het niet weet.",
+      "roofUnit": "Eenheid voor dakoppervlak",
+      "areaUnits": {
+        "sqft": "vierkante voet",
+        "m2": "m²"
+      },
+      "optional": "optioneel",
+      "errors": {
+        "bill": "Voer een rekening tussen {min} en {max} in.",
+        "units": "Voer tussen {min} en {max} eenheden in.",
+        "roof": "Voer een dakoppervlak groter dan nul in of laat leeg."
+      }
+    },
+    "result": {
+      "heading": "Uw schatting",
+      "prompt": "Voer uw rekening of eenheden in om de schatting te zien.",
+      "size": "Voorgesteld systeem",
+      "kw": "{kw} kW",
+      "sizeHint": "Levert ongeveer {units} eenheden per maand en heeft ongeveer {area} dak nodig.",
+      "areaIn": "{value} {unit, select, sqft {vierkante voet} other {m²}}",
+      "fromBill": "Uw rekening komt overeen met ongeveer {units} eenheden per maand.",
+      "limitedByRoof": "Afgestemd op uw dak. Meer dakruimte kan een groter deel van uw verbruik dekken.",
+      "roofTooSmallTitle": "Uw dak lijkt te klein",
+      "roofTooSmallBody": "Zelfs het kleinste systeem van 1 kW heeft ongeveer {area} schaduwvrij dak nodig. Neem contact op: er kan een andere oplossing zijn.",
+      "cost": "Kosten vóór subsidie",
+      "subsidy": "PM Surya Ghar-subsidie",
+      "noSubsidy": "Niet voor bedrijven",
+      "netCost": "Uw kosten",
+      "savings": "U bespaart ongeveer",
+      "perMonth": "{amount} per maand",
+      "payback": "Terugverdiend in",
+      "yearsRange": "{low}–{high} jaar",
+      "years": "{count, plural, one {# jaar} other {# jaar}}",
+      "range": "{low} – {high}",
+      "minus": "− {amount}",
+      "noPayback": "Niet met deze besparing",
+      "demoNote": "Alleen schattingen op basis van de aannames hieronder. Een bezoek op locatie geeft de werkelijke cijfers."
+    },
+    "chart": {
+      "title": "Besparing over {years, number} jaar",
+      "legendPaying": "Nog niet terugverdiend",
+      "legendPaid": "Terugverdiend",
+      "legendCost": "Uw kosten",
+      "label": "Besparing per jaar. Gebruik de pijltoetsen om van jaar te wisselen.",
+      "point": "Jaar {year, number}: {amount} bespaard",
+      "yearLabel": "Jaar {year, number}",
+      "table": "Cijfers tonen",
+      "tableCaption": "Besparing per jaar",
+      "year": "Jaar",
+      "saved": "Tot nu toe bespaard"
+    },
+    "assumptions": {
+      "title": "Hoe we schatten",
+      "production": "1 kW aan panelen levert in Karnataka ongeveer {units} eenheden per maand.",
+      "roof": "Elke kW heeft ongeveer {m2} m² ({sqft} vierkante voet) schaduwvrij dak nodig.",
+      "cost": "Installatie kost ongeveer {low}–{high} per kW.",
+      "tariff": "Een rekening wordt omgerekend tegen ongeveer {home} per eenheid voor huishoudens en {business} voor bedrijven.",
+      "subsidy": "Huishoudens krijgen {first} per kW voor de eerste 2 kW en {third} voor de derde kW, tot {cap}. Bedrijven krijgen niets.",
+      "savings": "De besparing telt alleen stroom die u zelf verbruikt, tegen de tarieven van vandaag."
+    },
+    "subsidy": {
+      "title": "De PM Surya Ghar-subsidie",
+      "body": "PM Surya Ghar: Muft Bijli Yojana is de Indiase overheidsregeling voor zonnepanelen op woningen. De subsidie wordt na installatie en inspectie op uw bankrekening gestort.",
+      "caption": "Subsidie per systeemvermogen, voor huishoudens",
+      "size": "Systeemvermogen",
+      "amount": "Subsidie",
+      "atLeast": "{kw} kW of meer",
+      "kw": "{kw} kW",
+      "source": "Regels en aanvragen:",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "(opent in een nieuw tabblad)",
+      "business": "Bedrijven krijgen deze subsidie niet, maar besparen vaak meer omdat zij meer per eenheid betalen."
+    },
+    "next": {
+      "title": "Wat er daarna gebeurt",
+      "one": {
+        "title": "We bellen u",
+        "body": "We vragen naar uw dak, stroomrekening en gewenste startdatum."
+      },
+      "two": {
+        "title": "Een bezoek op locatie",
+        "body": "Een geverifieerde installateur controleert uw dak en geeft een vaste offerte."
+      },
+      "three": {
+        "title": "Subsidie en verrekening",
+        "body": "We helpen u subsidie en verrekening van teruggeleverde stroom aan te vragen bij uw stroomleverancier."
+      }
+    },
+    "contact": {
+      "title": "Neem contact op",
+      "lead": "Vertel ons hoe we u kunnen bereiken. We bellen terug.",
+      "name": "Uw naam",
+      "phone": "Mobiel nummer",
+      "phoneHint": "We bellen u op dit nummer.",
+      "message": "Moeten we nog iets weten?",
+      "messageHint": "Uw schatting is al ingevuld. Voeg toe wat u wilt.",
+      "prefill": "{kind, select, home {Voor mijn huis} other {Voor mijn bedrijf}}: een systeem van {kw} kW, op basis van de schatting op deze pagina.",
+      "send": "Versturen",
+      "sending": "Versturen…",
+      "sentTitle": "Bedankt, {name}",
+      "sentBody": "We hebben uw bericht ontvangen en bellen u binnenkort.",
+      "another": "Nog een bericht sturen",
+      "privacy": "We gebruiken uw nummer alleen om over zonne-energie te bellen.",
+      "unavailable": "Vanaf deze pagina kunt u nog geen berichten sturen. Mail naar <link>{email}</link>.",
+      "errors": {
+        "name": "Voer uw naam in.",
+        "phone": "Voer een Indiaas mobiel nummer van 10 cijfers in.",
+        "message": "Schrijf een paar woorden, maximaal 1.000 tekens.",
+        "generic": "We konden dit niet versturen. Probeer het opnieuw."
+      }
+    }
+  },
+  "howItWorks": {
+    "metaTitle": "Hoe het werkt",
+    "metaDescription": "Gepland: hoe schroot via Luma.Green beweegt, thuis verkocht voor een eerlijke prijs, verder verhandeld met escrow en bij elke overdracht geregistreerd.",
+    "title": "Hoe Luma.Green werkt",
+    "lead": "Schroot gaat vier keer over in andere handen voordat het iets nieuws wordt. Dit gebeurt bij elke stap en dit legt Luma.Green vast.",
+    "stepLabel": "Stap {number}",
+    "sell": {
+      "body": "Een huishouden kiest de materialen, bekijkt het aanbod van winkels in de buurt en boekt ophalen of inleveren. De kabadiwala weegt elk materiaal en betaalt contant of via UPI. Beiden krijgen een bon.",
+      "point1": "Elke winkel bepaalt zijn eigen prijzen, nooit onder het gepubliceerde minimum",
+      "point2": "Gewichten worden in grammen geregistreerd vanaf de winkelweegschaal",
+      "point3": "Een volglink zonder account"
+    },
+    "trade": {
+      "body": "Demo: kabadiwala's verkopen gesorteerde voorraad aan sorteerterreinen, die balen verkopen aan recyclers. Recyclers verkopen vlokken, korrels en ingots aan fabrieken. De betaling blijft in escrow tot de goederen aankomen. De demo toont betaalstappen, maar houdt geen echt geld vast en maakt niets over.",
+      "point1": "Alleen geverifieerde bedrijven kunnen handelen",
+      "point2": "Voorraad wordt verplaatst bij verzending en ontvangst",
+      "point3": "Een genummerde transactiebon voor elke betaalde transactie"
+    },
+    "record": {
+      "body": "Elke overdracht wordt vastgelegd: wie, wat, hoeveel, wanneer en waar. Deze registratie ondersteunt prijzen, voorraad, naleving en impactcijfers en levert het bewijs voor EPR en recyclingnormen.",
+      "point1": "Eén registratie van deur tot fabriek",
+      "point2": "EPR-totalen per boekjaar voor recyclers en fabrieken",
+      "point3": "Ondersteunend bewijs voor credits, nooit dubbel geteld"
+    }
+  },
+  "participants": {
+    "metaTitle": "Voor wie het is",
+    "metaDescription": "Luma.Green is er voor huishoudens, kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's: iedereen die schroot van huis naar fabriek brengt.",
+    "title": "Voor wie Luma.Green is",
+    "lead": "Iedereen die schroot van huis naar fabriek brengt en de mensen die daartussen werken.",
+    "kabadiwala": {
+      "name": "Kabadiwala's",
+      "body": "Neem ophaalverzoeken van huishoudens aan, weeg en betaal eerlijk en verkoop gesorteerde voorraad aan sorteerterreinen."
+    },
+    "yard": {
+      "name": "Sorteerterreinen",
+      "body": "Gepland: koop van kabadiwala's, sorteer en pers balen en verkoop op kwaliteit ingedeelde loten aan recyclers met betaling in escrow."
+    },
+    "recycler": {
+      "name": "Recyclers",
+      "body": "Koop balen op kwaliteitsklasse van geverifieerde sorteerterreinen en verkoop vlokken, korrels en ingots aan fabrieken."
+    },
+    "manufacturer": {
+      "name": "Fabrikanten",
+      "body": "Bestel gerecycled materiaal bij geverifieerde recyclers met de registraties voor EPR-rapportages."
+    },
+    "saathi": {
+      "name": "Saathi's",
+      "body": "Doe betaalde inzamelingen, sorteerwerk en diensten dicht bij huis en bekijk uw verdiensten."
+    },
+    "householdHeading": "En elk huishouden",
+    "householdBody": "Iedereen kan zonder account schroot vanuit huis verkopen: kies de materialen, bekijk winkelaanbiedingen en ontvang contant geld of UPI met een bon."
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Neem contact op met het Luma.Green-team over deelname aan de pilot in Bengaluru.",
+    "title": "Neem contact op",
+    "lead": "We beginnen in Bengaluru met een kleine groep kabadiwala's, sorteerterreinen, recyclers en fabrieken. Vertel wie u bent, wat u verhandelt en ongeveer hoeveel materiaal u per maand verwerkt.",
+    "emailHeading": "Vroege toegang en algemene vragen",
+    "securityHeading": "Beveiligingsmeldingen",
+    "securityBody": "Een kwetsbaarheid gevonden? Meld deze privé in plaats van openbaar."
+  },
+  "help": {
+    "metaTitle": "Hulpcentrum",
+    "metaDescription": "Eenvoudige gidsen, antwoorden en training voor huishoudens, kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's op Luma.Green.",
+    "eyebrow": "Hulpcentrum",
+    "title": "Hoe kunnen we helpen?",
+    "lead": "Korte gidsen, duidelijke antwoorden en snelle training voor iedereen op Luma.Green.",
+    "home": "Hulp",
+    "breadcrumb": "U bent hier",
+    "hours": "Maandag tot zaterdag, 9.00 tot 19.00 uur",
+    "replyTime": "We antwoorden binnen één werkdag.",
+    "search": {
+      "label": "Hulp doorzoeken",
+      "placeholder": "Probeer: sms-code of escrow",
+      "clear": "Zoekopdracht wissen",
+      "summary": "{count, plural, =0 {Geen antwoorden} one {# antwoord} other {# antwoorden}} voor ‘{query}’",
+      "topicSummary": "{count, plural, =0 {Geen antwoorden} one {# antwoord} other {# antwoorden}} over {topic}",
+      "emptyTitle": "Niets gevonden",
+      "emptyBody": "Probeer één kort woord, kies een onderwerp of vraag het ons rechtstreeks.",
+      "ask": "Vraag het ons",
+      "guide": "Gids",
+      "question": "Vraag",
+      "forRoles": "Voor {roles}",
+      "showMore": "Alle {count} antwoorden tonen"
+    },
+    "topicsHeading": "Bladeren op onderwerp",
+    "topics": {
+      "start": "Aan de slag",
+      "signIn": "Inloggen",
+      "pickups": "Inzameling",
+      "prices": "Prijzen",
+      "weighing": "Wegen en bonnen",
+      "payments": "Betalingen",
+      "trading": "Kopen en verkopen",
+      "documents": "Documenten en controles",
+      "safety": "Veiligheid",
+      "carbon": "Koolstof en EPR",
+      "disputes": "Problemen en geschillen",
+      "privacy": "Privacy"
+    },
+    "rolesHeading": "Hulp voor u",
+    "rolesLead": "Kies uw rol voor uw gidsen, vragen en training.",
+    "guideCount": "{count, plural, one {# gids} other {# gidsen}}",
+    "roles": {
+      "household": {
+        "name": "Huishoudens",
+        "who": "Schroot vanuit huis verkopen",
+        "title": "Hulp voor huishoudens",
+        "lead": "Boek een inzameling, laat eerlijk wegen en ontvang geld aan de deur. Geen account nodig."
+      },
+      "kabadiwala": {
+        "name": "Kabadiwala's",
+        "who": "Een schrootwinkel beheren",
+        "title": "Hulp voor kabadiwala's",
+        "lead": "Neem inzamelingen aan, weeg en betaal in een minuut, stel prijzen in en verkoop aan sorteerterreinen."
+      },
+      "yard": {
+        "name": "Sorteerterreinen",
+        "who": "Kopen van kabadiwala's en verder sorteren",
+        "title": "Hulp voor sorteerterreinen",
+        "lead": "Demo: vind voorraad in de buurt, verkoop gesorteerde balen aan recyclers en handel veilig met escrow."
+      },
+      "recycler": {
+        "name": "Recyclers",
+        "who": "Schroot omzetten in grondstoffen",
+        "title": "Hulp voor recyclers",
+        "lead": "Koop ingedeeld schroot van sorteerterreinen, verkoop productie aan fabrieken en houd EPR-registraties op orde."
+      },
+      "manufacturer": {
+        "name": "Fabrikanten",
+        "who": "Producten maken van gerecycled materiaal",
+        "title": "Hulp voor fabrikanten",
+        "lead": "Bestel gerecycled materiaal, controleer leveringen en bewaar de registraties die EPR vereist."
+      },
+      "saathi": {
+        "name": "Saathi's",
+        "who": "Inzamelingen en korte diensten uitvoeren",
+        "title": "Hulp voor Saathi's",
+        "lead": "Meld u aan met een identiteitsbewijs, vind klussen in de buurt, werk veilig en krijg betaald."
+      }
+    },
+    "role": {
+      "onThisPage": "Op deze pagina",
+      "guidesHeading": "Gidsen",
+      "guidesLead": "Stap voor stap, met afbeeldingen.",
+      "steps": "{count, plural, one {# stap} other {# stappen}}",
+      "faqsHeading": "Veelgestelde vragen",
+      "faqsLead": "Tik op een vraag voor het antwoord.",
+      "tutorialsHeading": "Video's",
+      "tutorialsLead": "Korte video's in uw taal.",
+      "trainingHeading": "Opleiding",
+      "trainingLead": "Korte lessen. Markeer elke afgeronde les als klaar.",
+      "otherRoles": "Hulp voor iemand anders"
+    },
+    "guide": {
+      "metaTitle": "{guide} · {role}",
+      "stepsHeading": "Stappen",
+      "stepLabel": "Stap {number} van {total}",
+      "relatedHeading": "Gerelateerde vragen",
+      "nextHeading": "Volgende gids"
+    },
+    "tutorial": {
+      "comingSoon": "Video komt binnenkort",
+      "minutes": "{minutes} min"
+    },
+    "training": {
+      "progressLabel": "Uw opleiding",
+      "progress": "{done} van {total} klaar",
+      "minutes": "{minutes} min",
+      "markDone": "Markeren als klaar",
+      "openGuide": "De gids openen",
+      "badgeTitle": "Opleiding voltooid",
+      "badgeBody": "Goed gedaan! U heeft elke les afgerond. Kom altijd terug om uw kennis op te frissen.",
+      "reset": "Opnieuw beginnen",
+      "savedHere": "Uw voortgang wordt op dit apparaat opgeslagen."
+    },
+    "contactStrip": {
+      "title": "Nog hulp nodig?",
+      "body": "Praat met een persoon. We antwoorden binnen één werkdag.",
+      "call": "Bellen",
+      "whatsapp": "WhatsApp",
+      "write": "Schrijf ons"
+    },
+    "contact": {
+      "metaTitle": "Contact met ondersteuning",
+      "metaDescription": "Stel het Luma.Green-team uw vragen via telefoon, WhatsApp of een kort bericht. We antwoorden binnen één werkdag.",
+      "title": "Neem contact op",
+      "lead": "Een echte persoon leest elk bericht. Vraag in uw eigen woorden.",
+      "formHeading": "Bericht sturen",
+      "name": "Uw naam",
+      "phone": "Mobiel nummer",
+      "phoneHint": "We bellen of sms'en u op dit nummer.",
+      "role": "U bent",
+      "topic": "Waar gaat het over?",
+      "choose": "Kies één optie",
+      "message": "Uw bericht",
+      "messageHint": "Wat gebeurde er en wanneer? Voeg uw boekings- of transactienummer toe als u dat heeft.",
+      "messageCount": "{count, number} van {max, number}",
+      "roles": {
+        "household": "Een huishouden",
+        "kabadiwala": "Een kabadiwala",
+        "yard": "Een sorteerterrein",
+        "recycler": "Een recycler",
+        "manufacturer": "Een fabrikant",
+        "saathi": "Een Saathi",
+        "other": "Iemand anders"
+      },
+      "topics": {
+        "account": "Inloggen of mijn account",
+        "pickup": "Een inzameling",
+        "prices": "Prijzen",
+        "payments": "Betalingen",
+        "documents": "Documenten en controles",
+        "trade": "Een transactie tussen bedrijven",
+        "solar": "Zonne-energie",
+        "other": "Iets anders"
+      },
+      "submit": "Bericht versturen",
+      "sending": "Versturen…",
+      "privacy": "We gebruiken uw nummer alleen om u te antwoorden.",
+      "sentTitle": "Bericht verstuurd",
+      "sentBody": "Bedankt. We bellen of sms'en u binnen één werkdag.",
+      "sendAnother": "Nog een bericht sturen",
+      "backToHelp": "Terug naar hulp",
+      "errors": {
+        "nameInvalid": "Schrijf uw naam, 2 tot 80 letters.",
+        "phoneInvalid": "Voer een Indiaas mobiel nummer van 10 cijfers in.",
+        "roleMissing": "Kies wie u bent.",
+        "topicMissing": "Kies waar het over gaat.",
+        "messageShort": "Schrijf iets meer: minstens 5 letters.",
+        "messageLong": "Blijf onder 1.000 tekens.",
+        "generic": "Dit kon niet worden verstuurd. Controleer uw verbinding en probeer het opnieuw.",
+        "rateLimited": "Er zijn te veel berichten vanaf dit nummer verzonden. Probeer het over een uur opnieuw."
+      },
+      "unavailableTitle": "Berichten zijn hier uitgeschakeld",
+      "unavailableBody": "Bel of WhatsApp ons. We helpen u graag.",
+      "otherWays": "Andere contactmogelijkheden",
+      "callTitle": "Bel ons",
+      "whatsappTitle": "WhatsApp ons",
+      "hoursTitle": "Openingstijden",
+      "replyTitle": "Wanneer we antwoorden",
+      "sampleNumbers": "Prototype: dit zijn voorbeeldnummers."
+    },
+    "guides": {
+      "signIn": {
+        "title": "Inloggen met een sms-code",
+        "summary": "Geen wachtwoord. Uw mobiele nummer en een code van 6 cijfers zijn voldoende.",
+        "steps": {
+          "open": {
+            "title": "Open de inlogpagina",
+            "body": "Ga naar luma.green/login en kies uw taal."
+          },
+          "number": {
+            "title": "Voer uw mobiele nummer in",
+            "body": "Typ het nummer van 10 cijfers waarmee u zich aanmeldde."
+          },
+          "code": {
+            "title": "Typ de code van 6 cijfers",
+            "body": "We sturen deze per sms. De code werkt 5 minuten. Na 30 seconden geen sms? Tik op Opnieuw sturen."
+          },
+          "stay": {
+            "title": "Blijf ingelogd",
+            "body": "U blijft op die telefoon 30 dagen ingelogd. Deel uw code nooit: ons team zal er nooit om vragen."
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "Veilig blijven op het werk",
+        "summary": "Bescherming, tillen, scherp schroot, batterijen en machines: basisregels die letsel voorkomen.",
+        "steps": {
+          "gear": {
+            "title": "Draag uw persoonlijke beschermingsmiddelen",
+            "body": "Altijd handschoenen en dichte schoenen. Gebruik een masker bij stof en een bril bij snijden of breken."
+          },
+          "lift": {
+            "title": "Til met uw benen",
+            "body": "Buig uw knieën, houd de lading dichtbij en draai uw lichaam niet. Vraag hulp bij meer dan 25 kg."
+          },
+          "sharp": {
+            "title": "Let op scherpe randen",
+            "body": "Glas, blik en draad kunnen snijden. Draag glas in een doos, nooit los in een zak."
+          },
+          "batteries": {
+            "title": "Houd batterijen en elektronisch afval apart",
+            "body": "Bewaar ze droog en koel, weg van ander schroot. Verbrand nooit kabels en breek batterijen of schermen niet open."
+          },
+          "machines": {
+            "title": "Schakel uit voordat u een blokkade verwijdert",
+            "body": "Stop een pers of versnipperaar en haal eerst de stekker eruit. Steek nooit uw handen naar binnen als de machine draait."
+          },
+          "firstAid": {
+            "title": "Houd EHBO bij de hand",
+            "body": "Zorg voor een EHBO-doos en schoon water op locatie. Vraag direct medische hulp bij een diepe snijwond of brandwond."
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "Aanmelden en geverifieerd worden",
+        "summary": "Wat u klaar moet hebben en wat ons team controleert voordat uw bedrijf actief wordt.",
+        "steps": {
+          "start": {
+            "title": "Begin op luma.green/join",
+            "body": "Log in met uw mobiele nummer en kies Sorteerterrein, Recycler of Fabrikant."
+          },
+          "details": {
+            "title": "Voeg uw bedrijfsgegevens toe",
+            "body": "Naam, adres en kaartlocatie, uw materialen en werktijden. GST is optioneel."
+          },
+          "consent": {
+            "title": "Voeg uw milieuvergunning toe",
+            "body": "Uw KSPCB-vergunning of die van uw deelstaat: nummer, vervaldatum en certificaat als PDF."
+          },
+          "photos": {
+            "title": "Voeg machinefoto's toe",
+            "body": "Minstens twee foto's of korte video's van uw belangrijkste machines en locatie."
+          },
+          "review": {
+            "title": "We controleren binnen 12–24 uur",
+            "body": "Een persoon controleert elk document. Als iets ontbreekt, vertellen we precies wat u moet aanpassen."
+          },
+          "live": {
+            "title": "Begin met handelen",
+            "body": "Na goedkeuring opent uw overzicht en kunnen kopers en verkopers in de buurt u vinden."
+          }
+        }
+      },
+      "escrow": {
+        "title": "Demogids: hoe escrow een transactie beschermt",
+        "summary": "De voorgestelde escrowdienst zou de betaling vasthouden tot de levering. De huidige demo registreert alleen gesimuleerde betalingen.",
+        "steps": {
+          "request": {
+            "title": "De koper stuurt een verzoek",
+            "body": "Het toont materiaal, kilo's en prijs per kg."
+          },
+          "accept": {
+            "title": "De verkoper accepteert",
+            "body": "Er is nog niets betaald. Bel elkaar om zo nodig details af te spreken."
+          },
+          "pay": {
+            "title": "De koper betaalt in escrow",
+            "body": "Het geld wordt veilig bewaard en staat nog niet bij de verkoper. De verkoper ziet vóór het laden dat het geld er is."
+          },
+          "dispatch": {
+            "title": "De verkoper verstuurt de lading",
+            "body": "Markeer deze als verzonden. De factuur gaat mee, samen met een e-waybill als die nodig is."
+          },
+          "confirm": {
+            "title": "De koper bevestigt de levering",
+            "body": "Controleer gewicht en kwaliteit en bevestig. Het geld wordt aan de verkoper vrijgegeven."
+          }
+        }
+      },
+      "paperwork": {
+        "title": "Facturen en e-waybills",
+        "summary": "De documenten die met elke lading meegaan.",
+        "steps": {
+          "invoice": {
+            "title": "Open de factuur van de transactie",
+            "body": "Elke transactie heeft een factuur die u kunt openen, afdrukken of delen."
+          },
+          "ewayBill": {
+            "title": "E-waybill boven ₹50.000",
+            "body": "GST-regels vereisen een e-waybill voor goederen boven ₹50.000. Sommige deelstaten hebben een andere grens."
+          },
+          "vehicle": {
+            "title": "Documenten gaan mee in het voertuig",
+            "body": "Neem factuur en e-waybill mee en controleer of het voertuignummer overeenkomt."
+          },
+          "keep": {
+            "title": "Bewaar uw registraties",
+            "body": "Bonnen en facturen blijven 6 jaar in de app, de termijn die de belastingwet vraagt."
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "Demogids: wanneer een lading niet klopt",
+        "summary": "Wat u doet als gewicht of kwaliteit niet overeenkomt met de afspraak.",
+        "steps": {
+          "check": {
+            "title": "Controleer voordat u bevestigt",
+            "body": "Weeg de lading en bekijk de kwaliteit bij aankomst terwijl de chauffeur er is."
+          },
+          "hold": {
+            "title": "Bevestig geen onvolledige lading",
+            "body": "Bevestiging geeft het geld vrij. Totdat u bevestigt, blijft het in escrow."
+          },
+          "report": {
+            "title": "Meld het met foto's",
+            "body": "Bel ons of schrijf via Hulp, Neem contact op. Voeg foto's van de weegbon en het materiaal toe."
+          },
+          "settle": {
+            "title": "We helpen beide partijen overeenstemming vinden",
+            "body": "We bekijken gewichten, foto's en berichten van beide partijen. Het geld blijft veilig tot de zaak is opgelost."
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "Koolstofcredits en EPR, eenvoudig uitgelegd",
+        "summary": "Waarom geregistreerde recycling telt en wat merken en recyclers moeten weten.",
+        "steps": {
+          "record": {
+            "title": "Elke kilo wordt geregistreerd",
+            "body": "Elke weging en transactie op Luma.Green wordt vastgelegd met materiaal, gewicht, datum en plaats."
+          },
+          "carbon": {
+            "title": "Recycling vermindert uitstoot",
+            "body": "Produceren met gerecycled materiaal kost minder energie dan nieuw produceren. Die besparing kan later koolstofcredits opleveren."
+          },
+          "epr": {
+            "title": "EPR: producenten moeten terugnemen",
+            "body": "Uitgebreide producentenverantwoordelijkheid betekent dat merken die verpakkingen, elektronica of batterijen verkopen een deel van dat afval moeten laten recyclen."
+          },
+          "certificates": {
+            "title": "Recyclers geven EPR-certificaten uit",
+            "body": "Geregistreerde recyclers geven op het CPCB-portaal certificaten uit voor hun recycling. Merken kopen die om hun doelen te halen."
+          },
+          "proof": {
+            "title": "Goede registraties zijn uw bewijs",
+            "body": "Onze route van huis tot fabriek toont waar materiaal vandaan komt. Koolstofcredits op Luma.Green komen later."
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "Boek uw eerste inzameling",
+        "summary": "Van foto tot geboekte inzameling in ongeveer twee minuten. Geen account nodig.",
+        "steps": {
+          "photo": {
+            "title": "Maak een foto van uw schroot",
+            "body": "Optioneel: voeg één foto van uw schroot toe en controleer de voorgestelde artikelen."
+          },
+          "estimate": {
+            "title": "Controleer de schatting",
+            "body": "We tonen wat we zien en ongeveer hoeveel kilo's. Pas het gewicht aan als het niet lijkt te kloppen."
+          },
+          "choose": {
+            "title": "Kies ophalen of inleveren",
+            "body": "Bekijk geverifieerde kabadiwala's in de buurt, dichtbij eerst, met openingstijden."
+          },
+          "slot": {
+            "title": "Kies een tijd",
+            "body": "Kies een tijdvak en controleer uw adres en kaartlocatie."
+          },
+          "code": {
+            "title": "Bevestig uw nummer",
+            "body": "Typ de code van 6 cijfers die we per sms sturen. Dat is alles: geen wachtwoord."
+          },
+          "track": {
+            "title": "Ontvang uw volglink",
+            "body": "We sms'en een link om uw inzameling te volgen."
+          }
+        }
+      },
+      "getReady": {
+        "title": "Zet uw schroot klaar",
+        "summary": "Gesorteerd, droog schroot wordt sneller gewogen en brengt meer op.",
+        "steps": {
+          "paper": {
+            "title": "Houd papier droog en plat",
+            "body": "Stapel kranten en maak dozen plat. Nat papier is minder waard."
+          },
+          "bottles": {
+            "title": "Leeg flessen en druk ze plat",
+            "body": "Giet vloeistof eruit en druk plastic flessen plat om ruimte te besparen."
+          },
+          "metal": {
+            "title": "Houd metaal apart",
+            "body": "Doe blik, staal en aluminium in een eigen zak."
+          },
+          "ewaste": {
+            "title": "Leg apparaten en batterijen apart",
+            "body": "Bewaar oude telefoons, laders en batterijen in een aparte doos, weg van hitte."
+          },
+          "door": {
+            "title": "Zet zakken bij de deur",
+            "body": "Dat maakt ophalen snel. Bewaar ze droog."
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "Volg uw inzameling",
+        "summary": "Wanneer, wie en hoeveel, op één pagina.",
+        "steps": {
+          "open": {
+            "title": "Open de link in uw sms",
+            "body": "De link werkt op elke telefoon. U hoeft niet in te loggen."
+          },
+          "when": {
+            "title": "Bekijk wanneer",
+            "body": "Uw datum en tijdvak. We melden wijzigingen."
+          },
+          "who": {
+            "title": "Bekijk wie komt",
+            "body": "Naam, winkel en verificatieteken. Tik op Bellen om te spreken."
+          },
+          "after": {
+            "title": "Bekijk wat u kreeg",
+            "body": "Na de inzameling toont de pagina uw betaling en recyclingpunten."
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "Wegen en betalen aan uw deur",
+        "summary": "Zo zorgt u dat elke kilo telt.",
+        "steps": {
+          "zero": {
+            "title": "Controleer of de weegschaal nul aangeeft",
+            "body": "De lege weegschaal moet 0 aangeven voordat er iets op gaat."
+          },
+          "each": {
+            "title": "Elk materiaal wordt afzonderlijk gewogen",
+            "body": "Papier, plastic en metaal hebben verschillende prijzen en worden apart gewogen."
+          },
+          "amount": {
+            "title": "De app berekent het bedrag",
+            "body": "Kilo's maal de prijs per kg van de kabadiwala. U ziet het totaal voordat u betaald krijgt."
+          },
+          "pay": {
+            "title": "Krijg direct betaald",
+            "body": "Contant of via UPI, voordat de inzamelaar vertrekt. Luma.Green houdt uw geld nooit vast."
+          },
+          "receipt": {
+            "title": "Controleer uw bon",
+            "body": "Uw volgpagina toont elk materiaal, gewicht, prijs en totaal."
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "Hoe prijzen worden bepaald",
+        "summary": "Waarom de schatting een bereik is en hoe het definitieve bedrag wordt berekend.",
+        "steps": {
+          "estimate": {
+            "title": "Schattingen gebruiken stadsprijzen",
+            "body": "Voordat u een kabadiwala kiest, gebruiken we standaardprijzen voor Bengaluru en tonen we een bereik."
+          },
+          "own": {
+            "title": "Elke kabadiwala bepaalt een prijs",
+            "body": "Na uw keuze ziet u de eigen prijs van die winkel per materiaal."
+          },
+          "floor": {
+            "title": "Nooit onder het minimum",
+            "body": "Luma.Green bepaalt een minimumprijs voor elk materiaal. Geen kabadiwala mag minder betalen."
+          },
+          "final": {
+            "title": "Het gewicht bepaalt het bedrag",
+            "body": "U wordt betaald voor wat aan uw deur wordt gewogen, tegen de prijs van die kabadiwala."
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "Een boeking annuleren of wijzigen",
+        "summary": "Plannen veranderen. Dit kunt u doen.",
+        "steps": {
+          "open": {
+            "title": "Open uw volglink",
+            "body": "Daar staat alles over uw boeking."
+          },
+          "cancel": {
+            "title": "Gratis annuleren",
+            "body": "U kunt annuleren totdat de kabadiwala onderweg is. Het kost niets."
+          },
+          "declined": {
+            "title": "Als een kabadiwala niet kan komen",
+            "body": "We bieden uw inzameling aan de volgende dichtstbijzijnde winkel aan en sturen u een sms."
+          },
+          "help": {
+            "title": "Heeft u een andere tijd nodig?",
+            "body": "Annuleer en boek opnieuw of bel ons voor hulp."
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "Oude telefoons, batterijen en elektronisch afval",
+        "summary": "Veilig thuis bewaren en veilig overdragen.",
+        "steps": {
+          "apart": {
+            "title": "Bewaar ze in één droge doos",
+            "body": "Weg van het fornuis, water en zonlicht en buiten bereik van kinderen."
+          },
+          "tape": {
+            "title": "Plak batterijuiteinden af",
+            "body": "Plak tape over metalen uiteinden zodat ze geen vonken kunnen maken."
+          },
+          "swollen": {
+            "title": "Druk niet op een opgezwollen batterij",
+            "body": "Een opgezwollen batterij kan branden. Bewaar deze apart in een metalen blik en vertel het de kabadiwala."
+          },
+          "handover": {
+            "title": "Lever apparaten heel in",
+            "body": "Breek telefoons niet open en verwijder geen onderdelen. Geef bij het boeken aan dat het elektronisch afval is."
+          }
+        }
+      },
+      "registerShop": {
+        "title": "Registreer uw winkel",
+        "summary": "Wat u invult en hoe lang de controle duurt.",
+        "steps": {
+          "start": {
+            "title": "Begin op luma.green/join",
+            "body": "Log in met uw mobiele nummer en kies Kabadiwala."
+          },
+          "shop": {
+            "title": "Voeg uw winkel toe",
+            "body": "Uw naam, winkelnaam, adres met kaartlocatie en openingstijden."
+          },
+          "pickups": {
+            "title": "Geef aan of u ophaalt",
+            "body": "Kies uw voertuig: handkar, fiets, autoriksja of kleine vrachtwagen. Geen voertuig? Huishoudens kunnen nog steeds inleveren."
+          },
+          "gst": {
+            "title": "GST is optioneel",
+            "body": "Voeg uw GST-nummer toe als u er een heeft. Geef anders aan dat u geen nummer heeft."
+          },
+          "review": {
+            "title": "We controleren binnen 12–24 uur",
+            "body": "Een persoon controleert uw gegevens. Na goedkeuring opent uw overzicht."
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "Beantwoord ophaalverzoeken",
+        "summary": "Nieuwe inzamelingen van huishoudens in de buurt en hoe u ze afhandelt.",
+        "steps": {
+          "see": {
+            "title": "Bekijk nieuwe verzoeken",
+            "body": "Elk verzoek toont gebied, tijdvak, materialen, geschat gewicht en uw betaling."
+          },
+          "answer": {
+            "title": "Accepteer of wijs af",
+            "body": "Accepteer om het aan te nemen. Bij afwijzing gaat het naar de volgende dichtstbijzijnde kabadiwala zonder het huishouden te vertellen wie afwees."
+          },
+          "auto": {
+            "title": "Zet automatisch accepteren aan",
+            "body": "Als dit aan staat, wordt elk verzoek in uw gebied direct geaccepteerd, ook 's nachts."
+          },
+          "go": {
+            "title": "Bel en vertrek",
+            "body": "Na acceptatie ziet u telefoonnummer en exact adres. Bel om te zeggen dat u onderweg bent."
+          }
+        }
+      },
+      "weighAndPay": {
+        "title": "Wegen en betalen",
+        "summary": "Registreer een inzameling in minder dan een minuut.",
+        "steps": {
+          "zero": {
+            "title": "Zet de weegschaal op nul",
+            "body": "Begin met een lege weegschaal op 0, waar het huishouden het kan zien."
+          },
+          "weigh": {
+            "title": "Weeg elk materiaal",
+            "body": "Voer het gewicht per materiaal in. Gebruik + en − voor stappen van een halve kilo."
+          },
+          "total": {
+            "title": "Toon het totaal",
+            "body": "De app berekent dit met uw prijzen. Toon het scherm aan het huishouden."
+          },
+          "pay": {
+            "title": "Betaal contant of via UPI",
+            "body": "Betaal voordat u vertrekt en kies hoe u heeft betaald."
+          },
+          "save": {
+            "title": "Opslaan",
+            "body": "Het huishouden ziet de bon op de volgpagina en uw voorraad neemt toe met het gewogen materiaal."
+          }
+        }
+      },
+      "setPrices": {
+        "title": "Stel uw prijzen in",
+        "summary": "U kiest wat u betaalt, boven het minimum.",
+        "steps": {
+          "open": {
+            "title": "Open Mijn prijzen",
+            "body": "U ziet elk materiaal met de minimumprijs ernaast."
+          },
+          "enter": {
+            "title": "Voer uw prijs per kg in",
+            "body": "Typ wat u huishoudens per materiaal wilt betalen."
+          },
+          "floor": {
+            "title": "Blijf boven het minimum",
+            "body": "Een prijs onder het minimum wordt niet opgeslagen. Stijgt het minimum, dan stijgt uw prijs mee en melden we dat."
+          },
+          "blank": {
+            "title": "Laat een materiaal leeg",
+            "body": "Als u geen prijs instelt, wordt de standaardprijs van de stad gebruikt."
+          },
+          "history": {
+            "title": "Oude bonnen veranderen niet",
+            "body": "Een nieuwe prijs geldt alleen voor nieuwe inzamelingen. Eerdere bonnen behouden de betaalde prijs."
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "Demogids: sorteer uw voorraad en verkoop aan terreinen",
+        "summary": "Van veel kleine inzamelingen naar een lading voor een sorteerterrein.",
+        "steps": {
+          "grows": {
+            "title": "Uw voorraad wordt vanzelf aangevuld",
+            "body": "Elke gewogen inzameling wordt toegevoegd aan Mijn voorraad."
+          },
+          "sort": {
+            "title": "Registreer uw sortering",
+            "body": "Splits gemengd schroot op in de echte materialen. Bijvoorbeeld gemengd papier in kranten, karton en afval."
+          },
+          "show": {
+            "title": "Toon uw voorraad aan sorteerterreinen",
+            "body": "Zet Tonen aan sorteerterreinen aan zodat terreinen in de buurt uw voorraad zien."
+          },
+          "sell": {
+            "title": "Accepteer een verzoek van een terrein",
+            "body": "Controleer kilo's en prijs en accepteer. Het terrein betaalt in escrow voordat het ophaalt."
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "Als een huishouden het oneens is",
+        "summary": "Blijf rustig, duidelijk en eerlijk.",
+        "steps": {
+          "reweigh": {
+            "title": "Weeg samen opnieuw",
+            "body": "Zet de weegschaal op nul en weeg opnieuw waar zij het kunnen zien."
+          },
+          "show": {
+            "title": "Toon uw prijs",
+            "body": "Toon de prijs per kg en het totaal op uw telefoon."
+          },
+          "noForce": {
+            "title": "Dwing geen verkoop af",
+            "body": "Als zij het nog steeds oneens zijn, hoeven ze dat materiaal niet te verkopen. Laat het van de bon weg."
+          },
+          "call": {
+            "title": "Bel ons als u er niet uitkomt",
+            "body": "We kunnen met u beiden spreken. Elke bon toont gewichten en prijzen."
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "Demogids: koop voorraad van kabadiwala's",
+        "summary": "Vind gesorteerd schroot in de buurt en boek een ophaling.",
+        "steps": {
+          "browse": {
+            "title": "Open Kopen",
+            "body": "Bekijk voorraad in de buurt per materiaal en afstand, met kilo's en prijs."
+          },
+          "request": {
+            "title": "Stuur een verzoek",
+            "body": "Kies hoeveel kilo's u wilt. De prijs per kg staat vóór het versturen in beeld."
+          },
+          "pay": {
+            "title": "Betaal in escrow",
+            "body": "Betaal zodra de kabadiwala accepteert. Het geld blijft in bewaring tot u bevestigt."
+          },
+          "collect": {
+            "title": "Ophalen en wegen",
+            "body": "Haal de lading op en weeg deze op uw terrein."
+          },
+          "confirm": {
+            "title": "Bevestig om de betaling vrij te geven",
+            "body": "Bevestig als gewicht en kwaliteit kloppen. De kabadiwala wordt betaald."
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "Demogids: verkoop gesorteerde balen aan recyclers",
+        "summary": "Bied uw voorraad één keer aan en laat recyclers naar u komen.",
+        "steps": {
+          "list": {
+            "title": "Bied uw voorraad aan",
+            "body": "Voeg onder Verkopen het materiaal, gewicht en uw prijs per kg toe."
+          },
+          "requests": {
+            "title": "Ontvang verzoeken",
+            "body": "Recyclers die dat materiaal kopen, zien uw aanbieding en kunnen een verzoek sturen."
+          },
+          "accept": {
+            "title": "Accepteer en wacht op betaling",
+            "body": "Laad pas zodra het geld van de koper in escrow staat."
+          },
+          "dispatch": {
+            "title": "Verstuur de lading",
+            "body": "Markeer als verzonden, met de factuur en een e-waybill voor ladingen boven ₹50.000."
+          },
+          "paid": {
+            "title": "Krijg betaald",
+            "body": "Als de recycler de levering bevestigt, wordt het geld aan u vrijgegeven."
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "Demogids: koop gesorteerd schroot van terreinen",
+        "summary": "Een regelmatige, ingedeelde toevoer voor uw productielijn.",
+        "steps": {
+          "browse": {
+            "title": "Vind balen in de buurt",
+            "body": "Open Kopen voor aanbiedingen van terreinen per materiaal en afstand."
+          },
+          "request": {
+            "title": "Vraag een lading aan",
+            "body": "Kies de kilo's. De prijs per kg staat vóór het versturen in beeld."
+          },
+          "pay": {
+            "title": "Betaal in escrow",
+            "body": "Betaal nadat het terrein accepteert. Het geld blijft in bewaring tot u de levering bevestigt."
+          },
+          "confirm": {
+            "title": "Wegen, controleren, bevestigen",
+            "body": "Weeg de lading bij uw poort en controleer de kwaliteitsklasse voordat u bevestigt."
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "Demogids: verkoop gerecycled materiaal aan fabrikanten",
+        "summary": "Toon wat uw productielijn maakt zodat fabrieken kunnen bestellen.",
+        "steps": {
+          "list": {
+            "title": "Bied uw productie aan",
+            "body": "Voeg vlokken, korrels, balen of ingots toe met beschikbare kilo's en uw prijs per kg."
+          },
+          "orders": {
+            "title": "Ontvang bestellingen",
+            "body": "Fabrikanten zien de aanbieding en sturen verzoeken voor de benodigde kilo's."
+          },
+          "load": {
+            "title": "Laden na betaling",
+            "body": "Accepteer en verstuur de lading zodra de betaling in escrow staat."
+          },
+          "paid": {
+            "title": "Betaald bij levering",
+            "body": "Het geld wordt vrijgegeven als de fabrikant bevestigt."
+          }
+        }
+      },
+      "orderRecycled": {
+        "title": "Demogids: bestel gerecycled materiaal",
+        "summary": "Vind gerecyclede grondstoffen en bestel wat u nodig heeft.",
+        "steps": {
+          "browse": {
+            "title": "Bekijk wat recyclers hebben",
+            "body": "Open Kopen voor gerecycled materiaal per type, beschikbare kilo's en prijs."
+          },
+          "order": {
+            "title": "Stuur een bestelling",
+            "body": "Kies de kilo's en verstuur. De recycler accepteert of wijst af."
+          },
+          "pay": {
+            "title": "Betaal in escrow",
+            "body": "Betaal na acceptatie. Het geld blijft in bewaring tot u de levering bevestigt."
+          },
+          "receive": {
+            "title": "Ontvang de lading",
+            "body": "Weeg deze en controleer de kwaliteitsklasse bij uw poort."
+          },
+          "confirm": {
+            "title": "Bevestig de levering",
+            "body": "Bevestig om de betaling aan de recycler vrij te geven."
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "Demogids: controleer een levering",
+        "summary": "Een snelle controle voordat u bevestigt en de betaling vrijgeeft.",
+        "steps": {
+          "papers": {
+            "title": "Vergelijk de documenten",
+            "body": "Factuur en e-waybill moeten overeenkomen met uw bestelling en het voertuig."
+          },
+          "weigh": {
+            "title": "Weeg zelf",
+            "body": "Weeg de vrachtwagen vol en leeg. Het verschil is wat u heeft ontvangen."
+          },
+          "look": {
+            "title": "Bekijk het materiaal",
+            "body": "Controleer kleur, vocht en vuil aan de hand van uw bestelling."
+          },
+          "decide": {
+            "title": "Bevestig of meld een probleem",
+            "body": "Alles goed? Bevestig. Niet goed? Meld het met foto's en het geld blijft in escrow."
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "Word Saathi",
+        "summary": "Meld u aan met een identiteitsbewijs en selfie en begin met klussen in de buurt.",
+        "steps": {
+          "start": {
+            "title": "Begin op luma.green/join",
+            "body": "Log in met uw mobiele nummer en kies Saathi."
+          },
+          "work": {
+            "title": "Kies uw werk",
+            "body": "Ophalen bij huishoudens, winkelhulp bij een kabadiwala, sorteren op een terrein of diensten bij een recycler of fabriek."
+          },
+          "area": {
+            "title": "Stel uw gebied en tijden in",
+            "body": "Waar u woont, hoe ver u reist (2, 5 of 10 km) en wanneer u vrij bent."
+          },
+          "id": {
+            "title": "Voeg een identiteitsbewijs en selfie toe",
+            "body": "Kiezerspas, rijbewijs, PAN of afgeschermde Aadhaar. Nooit een volledig Aadhaar-nummer."
+          },
+          "review": {
+            "title": "We controleren binnen 12–24 uur",
+            "body": "Een persoon vergelijkt uw selfie met uw identiteitsbewijs. Daarna kunt u klussen aannemen."
+          }
+        }
+      },
+      "findJobs": {
+        "title": "Zoek en neem klussen aan",
+        "summary": "Werk in de buurt, wanneer u wilt.",
+        "steps": {
+          "home": {
+            "title": "Bekijk klussen op Start",
+            "body": "Elke klus toont locatie, dag, tijd en beloning."
+          },
+          "accept": {
+            "title": "Neem een klus aan",
+            "body": "Tik op Accepteren. Het bedrijf ziet dat u komt."
+          },
+          "arrive": {
+            "title": "Kom op tijd",
+            "body": "Bel vooraf als u te laat bent. Op tijd komen zorgt voor meer werk."
+          },
+          "done": {
+            "title": "Markeer als klaar",
+            "body": "Markeer de klus na afloop als klaar zodat deze in uw verdiensten verschijnt."
+          }
+        }
+      },
+      "homePickup": {
+        "title": "Haal op bij een huishouden",
+        "summary": "Vriendelijk, snel en eerlijk aan elke deur.",
+        "steps": {
+          "call": {
+            "title": "Bel voordat u vertrekt",
+            "body": "Noem uw naam, winkel en aankomsttijd."
+          },
+          "greet": {
+            "title": "Stel uzelf voor",
+            "body": "Noem aan de deur uw naam en de winkelnaam. Wacht op een uitnodiging om binnen te komen."
+          },
+          "weigh": {
+            "title": "Weeg waar zij het kunnen zien",
+            "body": "Zet de weegschaal op nul en weeg elk materiaal waar zij bij zijn."
+          },
+          "record": {
+            "title": "Betaal en registreer",
+            "body": "Betaal volgens de instructie van de winkel en sla de betaling op voordat u vertrekt."
+          },
+          "deliver": {
+            "title": "Breng het naar de winkel",
+            "body": "Breng het schroot rechtstreeks naar de winkel en draag het over."
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "Hoe u betaald krijgt",
+        "summary": "Spreek eerst de beloning af en controleer daarna onder Verdiensten.",
+        "steps": {
+          "agree": {
+            "title": "Spreek eerst de beloning af",
+            "body": "De winkel of het bedrijf waarvoor u werkt betaalt u. Spreek het bedrag af voordat de klus begint."
+          },
+          "earnings": {
+            "title": "Controleer Verdiensten",
+            "body": "Bekijk voltooide klussen en wat elke klus opbracht."
+          },
+          "upi": {
+            "title": "Vraag om UPI",
+            "body": "UPI laat een registratie achter, zodat er geen twijfel is over wat u ontving."
+          },
+          "problem": {
+            "title": "Niet betaald?",
+            "body": "Praat eerst met het bedrijf. Nog steeds geen oplossing? Bel ons."
+          }
+        }
+      }
+    },
+    "faqs": {
+      "noCode": {
+        "q": "Ik heb de sms-code niet ontvangen",
+        "a": "Wacht 30 seconden en tik op Opnieuw sturen. Controleer het nummer en uw telefoonsignaal. Een code is 5 minuten geldig."
+      },
+      "newPhone": {
+        "q": "Ik heb een nieuwe telefoon of een nieuw nummer",
+        "a": "Nieuwe telefoon, hetzelfde nummer: log opnieuw in. Nieuw nummer: bel ons en we verplaatsen uw account nadat we uw identiteit hebben gecontroleerd."
+      },
+      "deleteData": {
+        "q": "Kan ik mijn gegevens bekijken of verwijderen?",
+        "a": "Ja. Schrijf ons via Contact en we doen het binnen 30 dagen. We bewaren alleen wat wettelijk nodig is, zoals bonnen."
+      },
+      "verifyTime": {
+        "q": "Hoe lang duurt de controle?",
+        "a": "Meestal 12 tot 24 uur na het versturen van uw aanvraag. Als iets ontbreekt, vertellen we precies wat."
+      },
+      "noAccount": {
+        "q": "Heb ik een account nodig?",
+        "a": "Nee. U bevestigt uw mobiele nummer met een sms-code bij het boeken. U hoeft geen wachtwoord te onthouden."
+      },
+      "whatCanISell": {
+        "q": "Wat kan ik verkopen?",
+        "a": "Papier en karton, plastic flessen en bakken, metaal, glas en oude elektronica. Twijfelt u? Maak een foto en de schatting helpt u."
+      },
+      "howPriceWorks": {
+        "q": "Hoe wordt mijn bedrag berekend?",
+        "a": "Het gewicht van elk materiaal maal de prijs per kg van de kabadiwala. Die prijs mag nooit onder het minimum van Luma.Green liggen."
+      },
+      "howPaid": {
+        "q": "Hoe word ik betaald?",
+        "a": "Aan de deur, contant of via UPI, voordat de kabadiwala weggaat. Luma.Green registreert de betaling maar houdt uw geld nooit vast."
+      },
+      "recyclePoints": {
+        "q": "Wat zijn recyclingpunten?",
+        "a": "Een bedankje voor recycling: 1 punt voor elke ₹10 die u ontvangt. Waarvoor u ze kunt gebruiken, komt binnenkort."
+      },
+      "weightWrong": {
+        "q": "Wat als het gewicht verkeerd lijkt?",
+        "a": "Vraag om opnieuw te wegen waar u het kunt zien, vanaf nul. Klopt het nog niet? Bel ons: de bon toont elk gewicht."
+      },
+      "canCancel": {
+        "q": "Kan ik annuleren?",
+        "a": "Ja, gratis, totdat de kabadiwala onderweg is. Open uw volglink en tik op Annuleren."
+      },
+      "kabadiwalasChecked": {
+        "q": "Worden kabadiwala's gecontroleerd?",
+        "a": "Ja. Ons team controleert elke winkel voordat deze boekingen mag aannemen. Let op het verificatieteken."
+      },
+      "whoSeesAddress": {
+        "q": "Wie ziet mijn nummer en adres?",
+        "a": "Alleen de kabadiwala die uw inzameling accepteert en ons team. We bewaren ze 12 maanden na uw laatste boeking."
+      },
+      "photosKept": {
+        "q": "Wat gebeurt er met mijn foto's?",
+        "a": "Neem geen gezichten, documenten of kentekens op. De foto wordt voor deze schatting naar een AI-aanbieder gestuurd. Luma.Green slaat hem niet op."
+      },
+      "whyVerify": {
+        "q": "Waarom moet ik worden geverifieerd?",
+        "a": "Huishoudens vertrouwen u aan hun deur. Elke winkel controleren beschermt hen en geeft uw verificatieteken betekenis."
+      },
+      "gstNeeded": {
+        "q": "Heb ik een GST-nummer nodig?",
+        "a": "Nee, dat is optioneel. Voeg het toe als u er een heeft."
+      },
+      "ownPrices": {
+        "q": "Kan ik mijn eigen prijzen bepalen?",
+        "a": "Ja, voor elk materiaal, zolang ze niet onder het minimum van Luma.Green liggen."
+      },
+      "noVehicle": {
+        "q": "Ik heb geen voertuig. Kan ik me aanmelden?",
+        "a": "Ja. Huishoudens kunnen schroot naar uw winkel brengen. Saathi-inzameling voor winkels zonder voertuig komt later."
+      },
+      "autoAccept": {
+        "q": "Wat is automatisch accepteren?",
+        "a": "Als dit aan staat, wordt elk nieuw verzoek in uw gebied direct geaccepteerd, ook 's nachts. Zet het uit als u niet kunt gaan."
+      },
+      "rejectRequest": {
+        "q": "Wat gebeurt er als ik een verzoek afwijs?",
+        "a": "Het gaat naar de volgende dichtstbijzijnde kabadiwala. Het huishouden hoort niet wie heeft afgewezen."
+      },
+      "payHousehold": {
+        "q": "Betaalt Luma.Green het huishouden voor mij?",
+        "a": "Nee. U betaalt contant of via UPI aan de deur. De app registreert hoeveel en hoe."
+      },
+      "paidByYard": {
+        "q": "Hoe word ik betaald als ik aan een sorteerterrein verkoop?",
+        "a": "Spreek de betaling voorlopig rechtstreeks met het terrein af. Escrow is gepland; de demo verplaatst geen geld."
+      },
+      "whoSeesShop": {
+        "q": "Wie kan mijn winkel zien?",
+        "a": "Na goedkeuring zijn winkelnaam, gebied en openingstijden openbaar zodat huishoudens u vinden. Uw documenten blijven privé."
+      },
+      "consentDocs": {
+        "q": "Welke documenten heb ik nodig?",
+        "a": "Uw milieuvergunning, KSPCB in Karnataka, met nummer, vervaldatum en certificaat als PDF, plus machinefoto's. GST is optioneel."
+      },
+      "noConsentNeeded": {
+        "q": "Mijn installatie heeft geen vergunning nodig. Kan ik me aanmelden?",
+        "a": "Ja. Vink aan dat uw installatie is vrijgesteld en leg uit waarom, bijvoorbeeld alleen papier persen. We controleren dit."
+      },
+      "consentExpiry": {
+        "q": "Wat gebeurt er als mijn vergunning verloopt?",
+        "a": "Controleer de vervaldatum onder Naleving. Daar worden vergunningen gemarkeerd die nog minder dan 90 dagen geldig zijn. Vraag verlenging aan bij uw milieudienst en neem contact op met de ondersteuning om het certificaat bij te werken."
+      },
+      "findStock": {
+        "q": "Hoe vind ik voorraad in de buurt?",
+        "a": "Open Kopen. Voorraad van geverifieerde kabadiwala's staat per materiaal, dichtbij eerst."
+      },
+      "whoSetsPrice": {
+        "q": "Wie bepaalt de prijs?",
+        "a": "De verkoper vermeldt een prijs per kg. U ziet die voordat u een verzoek stuurt en kunt bellen om details af te spreken."
+      },
+      "whatIsEscrow": {
+        "q": "Wat is escrow?",
+        "a": "Een veilige tussenstap: het geld van de koper blijft in bewaring tot de lading volgens afspraak aankomt en gaat daarna naar de verkoper. Zakelijke escrow is gepland."
+      },
+      "whenSellerPaid": {
+        "q": "Wanneer wordt de verkoper betaald?",
+        "a": "Zodra de koper de levering bevestigt."
+      },
+      "shortLoad": {
+        "q": "Wat als een lading te klein is?",
+        "a": "De demo toont voorgestelde stappen bij geschillen. Deze kan geen echt geld vasthouden of beschermen."
+      },
+      "ewayBill": {
+        "q": "Heb ik een e-waybill nodig?",
+        "a": "Ja, bij vervoer van goederen boven ₹50.000. Het transactiescherm herinnert u eraan. Sommige deelstaten hanteren een andere grens."
+      },
+      "whoSeesBusiness": {
+        "q": "Wie kan mijn bedrijf zien?",
+        "a": "Geverifieerde kopers en verkopers zien uw naam, gebied en materialen. Alleen u en ons team zien uw documenten."
+      },
+      "pwpRegistration": {
+        "q": "Ik recycle plastic. Heb ik meer nodig?",
+        "a": "Houd uw CPCB-registratie als Plastic Waste Processor klaar. Merken vragen ernaar en deze laat u EPR-certificaten uitgeven."
+      },
+      "buyFromAnyYard": {
+        "q": "Kan ik van meerdere sorteerterreinen kopen?",
+        "a": "Ja. Koop zo vaak u wilt van elk geverifieerd terrein dat aanbiedt wat u nodig heeft."
+      },
+      "eprRecords": {
+        "q": "Helpen Luma.Green-registraties met EPR?",
+        "a": "Ja. Elke transactie registreert materiaal, gewicht, datum en verkoper ter ondersteuning van EPR-aangiften. U dient nog steeds in op het CPCB-portaal."
+      },
+      "carbonCredits": {
+        "q": "Verdien ik koolstofcredits?",
+        "a": "Nog niet. We registreren nu elke kilo zodat later credits kunnen worden uitgegeven zodra de methode is geverifieerd."
+      },
+      "whatCanIBuy": {
+        "q": "Wat kan ik kopen?",
+        "a": "Gerecycled materiaal van geverifieerde recyclers, zoals PET-vlokken, HDPE-korrels, kraftpapier en aluminium ingots."
+      },
+      "qualityWrong": {
+        "q": "Wat als de kwaliteit niet is wat ik bestelde?",
+        "a": "De demo toont voorgestelde stappen bij geschillen. Deze kan geen echt geld vasthouden of beschermen."
+      },
+      "recycledContent": {
+        "q": "Helpt gerecycled inkopen met EPR?",
+        "a": "Ja. EPR-regels voor plastic stellen doelen voor gerecycled materiaal in verpakkingen. Uw transacties tonen hoeveel u daarvan kocht."
+      },
+      "carbonClaims": {
+        "q": "Kan ik koolstofbesparing claimen?",
+        "a": "Uw Impact-scherm schat de bespaarde uitstoot. Behandel de cijfers als indicatief totdat ze onafhankelijk zijn geverifieerd."
+      },
+      "whoCanJoin": {
+        "q": "Wie kan Saathi worden?",
+        "a": "Iedereen van 18 jaar of ouder die wil verdienen met korte klussen dicht bij huis."
+      },
+      "whichId": {
+        "q": "Welk identiteitsbewijs kan ik gebruiken?",
+        "a": "Kiezerspas, rijbewijs, PAN, een DigiLocker-document of Aadhaar met alleen de laatste 4 cijfers zichtbaar."
+      },
+      "fullAadhaar": {
+        "q": "Waarom niet mijn volledige Aadhaar?",
+        "a": "We bewaren nooit Aadhaar-nummers. Als u per ongeluk een volledig document uploadt, vragen we een afgeschermde kopie en verwijderen de eerste."
+      },
+      "needVehicle": {
+        "q": "Heb ik een voertuig nodig?",
+        "a": "Nee. Winkelhulp en diensten hebben dat niet nodig. Voor thuis ophalen helpt een fiets, motor of autoriksja."
+      },
+      "whoPaysMe": {
+        "q": "Wie betaalt mij?",
+        "a": "De kabadiwala of het bedrijf waarvoor u werkt. Spreek het bedrag af voordat u begint."
+      },
+      "chooseHours": {
+        "q": "Kan ik kiezen wanneer ik werk?",
+        "a": "Ja. U geeft beschikbare dagen en tijden op en neemt alleen klussen aan die u wilt."
+      },
+      "safetyGear": {
+        "q": "Welke veiligheidsmiddelen heb ik nodig?",
+        "a": "Handschoenen en dichte schoenen bij elke klus en een masker bij stof. Vraag het bedrijf of meer nodig is."
+      },
+      "whoSeesId": {
+        "q": "Wie ziet mijn identiteitsbewijs en selfie?",
+        "a": "Alleen u en ons team, om te controleren of u het echt bent."
+      },
+      "jobWentWrong": {
+        "q": "Er ging iets mis bij een klus. Wat doe ik?",
+        "a": "Zorg eerst voor uw veiligheid. Vertel het bedrijf wat er is gebeurd en bel ons. We luisteren naar beide kanten."
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "Boek een inzameling in twee minuten",
+      "sortAtHome": "Schroot thuis sorteren",
+      "batterySafety": "Oude batterijen veilig behandelen",
+      "firstDay": "Uw eerste dag op Luma.Green",
+      "weighAndPayVideo": "Wegen en betalen in een minuut",
+      "settingPrices": "Uw prijzen instellen",
+      "buyingFromKabadiwalas": "Kopen van kabadiwala's",
+      "listingBales": "Balen aanbieden aan recyclers",
+      "escrowExplained": "Demo: escrow in twee minuten",
+      "buyingFromYards": "Kopen van sorteerterreinen",
+      "sellingOutput": "Uw productie verkopen",
+      "eprPlainWords": "EPR in gewone taal",
+      "firstOrder": "Uw eerste bestelling plaatsen",
+      "checkingDelivery": "Een levering controleren",
+      "becomingSaathi": "Saathi worden",
+      "goodPickup": "Een goede inzameling aan huis",
+      "liftingSafely": "Veilig tillen en dragen"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "Wat gerecycled kan worden",
+        "p1": "Papier, karton, de meeste plastics, metaal en glas hebben waarde.",
+        "p2": "Oude telefoons, laders en batterijen zijn elektronisch afval: houd ze apart.",
+        "p3": "Voedselafval en vuile luiers kunnen niet worden gerecycled."
+      },
+      "sortOnce": {
+        "title": "Sorteer het één keer",
+        "p1": "Een aparte zak voor papier, plastic en metaal.",
+        "p2": "Houd alles droog en schoon.",
+        "p3": "Gesorteerd schroot wordt sneller gewogen en beter betaald."
+      },
+      "batteriesSafe": {
+        "title": "Batterijen, veilig",
+        "p1": "Plak de metalen uiteinden af.",
+        "p2": "Houd ze droog, koel en buiten bereik van kinderen.",
+        "p3": "Gooi ze nooit in de vuilnisbak of het vuur."
+      },
+      "fairWeigh": {
+        "title": "Laat eerlijk wegen",
+        "p1": "Controleer of de weegschaal op nul begint.",
+        "p2": "Kijk mee bij het wegen van elk materiaal.",
+        "p3": "Controleer het totaal op uw bon."
+      },
+      "usingTheApp": {
+        "title": "De app gebruiken",
+        "p1": "Log in met uw nummer en een sms-code.",
+        "p2": "Accepteer of wijs nieuwe verzoeken snel af.",
+        "p3": "Zet automatisch accepteren alleen aan als u kunt gaan."
+      },
+      "weighingFairly": {
+        "title": "Eerlijk wegen",
+        "p1": "Zet de weegschaal voor het huishouden op nul.",
+        "p2": "Weeg elk materiaal afzonderlijk.",
+        "p3": "Toon het totaal voordat u betaalt."
+      },
+      "safeHandling": {
+        "title": "Schroot veilig behandelen",
+        "p1": "Altijd handschoenen en dichte schoenen.",
+        "p2": "Til met uw benen en vraag hulp boven 25 kg.",
+        "p3": "Houd batterijen en elektronisch afval apart."
+      },
+      "servingHouseholds": {
+        "title": "Huishoudens goed helpen",
+        "p1": "Bel voordat u vertrekt en kom binnen uw tijdvak.",
+        "p2": "Wees beleefd en weeg waar zij het kunnen zien.",
+        "p3": "Betaal altijd voordat u weggaat."
+      },
+      "sellingToYards": {
+        "title": "Demo: verkopen aan sorteerterreinen",
+        "p1": "Registreer uw sorteerwerk voor een juiste voorraad.",
+        "p2": "Toon uw voorraad aan terreinen in de buurt.",
+        "p3": "Laad pas nadat de betaling in escrow staat."
+      },
+      "buyingStock": {
+        "title": "Voorraad kopen",
+        "p1": "Vind voorraad in de buurt onder Kopen.",
+        "p2": "Controleer de prijs per kg voordat u een verzoek stuurt.",
+        "p3": "Weeg elke lading voordat u bevestigt."
+      },
+      "tradingWithEscrow": {
+        "title": "Demo: handelen met escrow",
+        "p1": "De koper betaalt in escrow nadat de verkoper accepteert.",
+        "p2": "De verkoper laadt pas als het geld er staat.",
+        "p3": "Bevestiging van de levering geeft het geld vrij."
+      },
+      "papersForLoads": {
+        "title": "Documenten voor elke lading",
+        "p1": "Een factuur voor elke transactie.",
+        "p2": "Een e-waybill voor ladingen boven ₹50.000.",
+        "p3": "De documenten gaan mee in het voertuig."
+      },
+      "siteSafety": {
+        "title": "Veiligheid op locatie",
+        "p1": "Handschoenen, dichte schoenen en bij stof een masker.",
+        "p2": "Zet een machine uit en trek de stekker eruit voordat u een blokkade verwijdert.",
+        "p3": "Altijd EHBO en schoon water op locatie."
+      },
+      "buyingInputs": {
+        "title": "Demo: uw grondstoffen kopen",
+        "p1": "Vind balen op kwaliteitsklasse van sorteerterreinen onder Kopen.",
+        "p2": "Betaal in escrow zodra het terrein accepteert.",
+        "p3": "Controleer de kwaliteitsklasse voordat u bevestigt."
+      },
+      "eprBasics": {
+        "title": "De basis van EPR",
+        "p1": "Merken moeten een deel van hun afval laten recyclen.",
+        "p2": "Geregistreerde recyclers geven certificaten uit op het CPCB-portaal.",
+        "p3": "Goede transactieregistraties onderbouwen elke claim."
+      },
+      "orderingRecycled": {
+        "title": "Demo: gerecycled materiaal bestellen",
+        "p1": "Vergelijk aanbiedingen op type, kilo's en prijs.",
+        "p2": "Bestel de kilo's die u nodig heeft.",
+        "p3": "Betaal in escrow zodra de bestelling is geaccepteerd."
+      },
+      "checkingDeliveries": {
+        "title": "Leveringen controleren",
+        "p1": "Vergelijk factuur en e-waybill met de bestelling.",
+        "p2": "Weeg de vrachtwagen vol en leeg.",
+        "p3": "Bevestig alleen als gewicht en kwaliteit kloppen."
+      },
+      "firstJob": {
+        "title": "Uw eerste klus",
+        "p1": "Controleer locatie, tijd en beloning voordat u accepteert.",
+        "p2": "Bel vooraf en kom op tijd.",
+        "p3": "Markeer de klus als klaar wanneer u klaar bent."
+      },
+      "inPeoplesHomes": {
+        "title": "Bij mensen thuis werken",
+        "p1": "Vertel wie u bent en van welke winkel u komt.",
+        "p2": "Wacht tot u wordt uitgenodigd om binnen te komen.",
+        "p3": "Weeg waar zij het kunnen zien en wees beleefd."
+      },
+      "gettingPaid": {
+        "title": "Betaald krijgen",
+        "p1": "Spreek de beloning af voordat de klus begint.",
+        "p2": "Vraag om UPI zodat er een registratie is.",
+        "p3": "Controleer elke klus onder Verdiensten."
+      }
+    }
+  },
+  "notFound": {
+    "metaTitle": "Pagina niet gevonden",
+    "title": "Pagina niet gevonden",
+    "body": "De gezochte pagina bestaat niet of is verplaatst.",
+    "backHome": "Terug naar de startpagina"
+  },
+  "auth": {
+    "metaTitle": "Inloggen",
+    "verifyMetaTitle": "Voer uw code in",
+    "chooseLanguage": "Kies uw taal",
+    "chooseLanguageHint": "U kunt deze altijd bovenaan het scherm wijzigen.",
+    "continue": "Doorgaan",
+    "title": "Log in met uw mobiele nummer",
+    "lead": "Voor kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's.",
+    "mobileLabel": "Mobiel nummer",
+    "mobileHint": "We sturen een code van 6 cijfers naar dit nummer.",
+    "mobileInvalid": "Voer een Indiaas mobiel nummer van 10 cijfers in.",
+    "sendCode": "Code sturen",
+    "sending": "Versturen…",
+    "sendFailed": "We konden de code niet sturen. Probeer het over een minuut opnieuw.",
+    "homeTitle": "Verkoopt u schroot vanuit huis? U heeft geen account nodig.",
+    "homeLink": "Bekijk hoe het werkt",
+    "privacy": "We gebruiken uw nummer alleen om in te loggen en updates over uw werk op Luma.Green te sturen.",
+    "unavailableTitle": "Inloggen via telefoon komt binnenkort",
+    "unavailableBody": "We ronden de sms-instellingen voor inlogcodes af. Kijk binnenkort opnieuw.",
+    "verifyTitle": "Voer de code van 6 cijfers in",
+    "sentTo": "Per sms verstuurd naar {phone}",
+    "codeLabel": "Code van 6 cijfers",
+    "verify": "Verifiëren",
+    "verifying": "Controleren…",
+    "resendIn": "U kunt over {seconds, plural, one {# seconde} other {# seconden}} een nieuwe code vragen",
+    "resend": "Nieuwe code sturen",
+    "resent": "We hebben een nieuwe code gestuurd.",
+    "changeNumber": "Nummer wijzigen",
+    "errorInvalid": "Die code klopt niet. Controleer de sms en probeer het opnieuw.",
+    "errorExpired": "Die code is verlopen. Vraag een nieuwe aan.",
+    "errorTooMany": "Te veel pogingen. Vraag een nieuwe code aan.",
+    "errorGeneric": "Er ging iets mis. Probeer het opnieuw.",
+    "signingIn": "Inloggen…",
+    "sendRateLimited": "Te veel codeverzoeken. Probeer het later opnieuw.",
+    "previewAction": "Codescherm bekijken",
+    "previewTitle": "Voorbeeld van codescherm",
+    "previewNumber": "Mobiel nummer: {phone}",
+    "previewBody": "Sms is nog niet aangesloten. Er is geen code verstuurd. U kunt dit scherm bekijken, maar niet inloggen.",
+    "previewPhoneHint": "Voer uw mobiele nummer in om de volgende stap te bekijken. Er wordt geen sms verstuurd.",
+    "twoFactorTitle": "Controleer je authenticator",
+    "twoFactorDescription": "Voer de 6-cijferige code uit je authenticator-app in om het inloggen af te ronden.",
+    "twoFactorUseBackup": "Herstelcode gebruiken",
+    "twoFactorUseApp": "Authenticator gebruiken",
+    "twoFactorBackupTitle": "Gebruik een herstelcode",
+    "twoFactorBackupDescription": "Voer een bewaarde herstelcode in. Elke code werkt één keer.",
+    "twoFactorBackupLabel": "Herstelcode",
+    "twoFactorExpired": "Je aanmelding is verlopen. Begin opnieuw met een nieuwe telefooncode.",
+    "twoFactorRestart": "Opnieuw beginnen"
+  },
+  "join": {
+    "metaTitle": "Aanmelden bij Luma.Green",
+    "metaDescription": "Kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's in Bengaluru: meld u aan bij Luma.Green. Een persoon beoordeelt elke aanvraag, meestal binnen 12–24 uur.",
+    "title": "Aanmelden bij Luma.Green",
+    "lead": "Vertel wat u doet. Een persoon beoordeelt elke aanvraag, meestal binnen 12–24 uur.",
+    "start": "Beginnen",
+    "youNeed": "U heeft nodig",
+    "homeTitle": "Verkoopt u schroot vanuit huis?",
+    "homeBody": "U hoeft zich niet aan te melden. Boek een inzameling wanneer u iets wilt verkopen.",
+    "homeLink": "Bekijk hoe het werkt",
+    "roles": {
+      "kabadiwala": {
+        "title": "Kabadiwala",
+        "body": "U heeft een schrootwinkel en koopt van huishoudens in de buurt.",
+        "needs": "Het adres en de openingstijden van uw winkel. Uw GST-nummer indien aanwezig."
+      },
+      "yard": {
+        "title": "Sorteerterrein",
+        "body": "U sorteert en perst grote hoeveelheden schroot tot balen en verkoopt deze door.",
+        "needs": "Uw GST-nummer indien aanwezig, milieuvergunning als PDF en foto's van uw machines."
+      },
+      "recycler": {
+        "title": "Recycler",
+        "body": "U maakt van schroot weer grondstoffen.",
+        "needs": "Uw GST-nummer indien aanwezig, milieuvergunning als PDF en foto's van uw machines."
+      },
+      "manufacturer": {
+        "title": "Fabrikant",
+        "body": "U koopt gerecycled materiaal voor uw fabriek.",
+        "needs": "Uw GST-nummer indien aanwezig, milieuvergunning als PDF en foto's van uw machines."
+      },
+      "saathi": {
+        "title": "Saathi",
+        "body": "U zoekt betaald werk: ophalen bij huishoudens, sorteren of fabrieksdiensten.",
+        "needs": "Een identiteitsbewijs met foto en een selfie."
+      }
+    },
+    "shell": {
+      "signOut": "Uitloggen"
+    },
+    "consent": {
+      "title": "Voordat u begint",
+      "lead": "Wat we vragen en waarom.",
+      "why": {
+        "kabadiwala": "Met uw winkelgegevens kunnen huishoudens in de buurt boeken en kunnen we controleren of de winkel echt bestaat. We bellen eenmaal ter bevestiging.",
+        "business": "Uw vergunning en machinefoto's tonen kopers en verkopers dat u vergund en actief bent. We controleren ze in het openbare register van de milieuraad.",
+        "saathi": "Met uw identiteitsbewijs en selfie bevestigen we wie u bent voordat iemand u in huis of op het terrein laat."
+      },
+      "privacy": "Alleen u en het Luma.Green-team kunnen uw gegevens en bestanden zien. We gebruiken ze om u te verifiëren en te verbinden met anderen op Luma.Green, nooit om te verkopen. U kunt om verwijdering vragen.",
+      "age": "Ik ben 18 jaar of ouder",
+      "accept": "Ik heb gelezen wat wordt verzameld en waarom",
+      "startButton": "Mijn aanvraag starten",
+      "starting": "Starten…"
+    },
+    "form": {
+      "saving": "Opslaan…",
+      "saved": "Opgeslagen",
+      "notSaved": "Niet opgeslagen. Controleer uw verbinding.",
+      "submit": "Versturen voor verificatie",
+      "submitting": "Versturen…",
+      "next": "Volgende: documenten",
+      "back": "Terug",
+      "fixErrors": "Sommige antwoorden moeten worden nagekeken. Ze zijn hieronder gemarkeerd.",
+      "yes": "Ja",
+      "no": "Nee",
+      "optional": "optioneel",
+      "gstQuestion": "Heeft u een GST-nummer?",
+      "gstin": "GST-nummer",
+      "gstinHint": "15 tekens, bijvoorbeeld 29ABCDE1234F1Z5",
+      "useLocation": "Mijn locatie gebruiken",
+      "locating": "Uw locatie zoeken…",
+      "locationSaved": "Locatie opgeslagen",
+      "locationFailed": "Uw locatie kon niet worden gevonden. Sta locatiegebruik voor deze site toe of typ het adres. We bevestigen het tijdens ons telefoongesprek.",
+      "locationWhy": "Zodat huishoudens en kopers in de buurt u vinden.",
+      "loginPhone": "Uw inlognummer",
+      "otherPhones": "Andere nummers",
+      "otherPhonesHint": "Maximaal twee extra, bijvoorbeeld van een helper of partner. We bellen alleen over uw werk.",
+      "addPhone": "Nummer toevoegen",
+      "remove": "Verwijderen",
+      "phoneNumber": "Nummer",
+      "phoneLabel": "Van wie is dit nummer",
+      "phoneLabelPlaceholder": "Hulp, partner…",
+      "hours": "Openingstijden",
+      "opens": "Open",
+      "closes": "Dicht",
+      "weeklyOff": "Wekelijkse sluitingsdag",
+      "weeklyOffHint": "Laat leeg als u elke dag open bent.",
+      "weekdays": {
+        "mon": "Ma",
+        "tue": "Di",
+        "wed": "Wo",
+        "thu": "Do",
+        "fri": "Vr",
+        "sat": "Za",
+        "sun": "Zo"
+      },
+      "changesTitle": "Wat u moet aanpassen"
+    },
+    "kabadiwala": {
+      "title": "Uw winkel",
+      "ownerName": "Uw naam",
+      "shopName": "Winkelnaam",
+      "address": "Winkeladres",
+      "addressHint": "Straat, buurt en herkenningspunt",
+      "offersPickup": "Haalt u op bij huishoudens?",
+      "noPickupHint": "Geen probleem. Een Saathi in de buurt kan voor uw winkel ophalen.",
+      "vehicle": "Uw voertuig",
+      "vehicles": {
+        "handcart": "Handkar",
+        "cycle": "Fiets",
+        "auto": "Autoriksja",
+        "mini_truck": "Kleine vrachtwagen"
+      }
+    },
+    "business": {
+      "titles": {
+        "yard": "Uw sorteerterrein",
+        "recycler": "Uw recyclinginstallatie",
+        "manufacturer": "Uw fabriek"
+      },
+      "step": "Stap {step} van 2",
+      "businessName": "Bedrijfsnaam",
+      "materials": "Materialen waarmee u werkt",
+      "materialsHint": "Zodat we u met de juiste verkopers en kopers verbinden.",
+      "materialNames": {
+        "paper": "Papier",
+        "plastic": "Plastic",
+        "metal": "Metaal",
+        "glass": "Glas",
+        "ewaste": "Elektronisch afval"
+      },
+      "address": "Adres",
+      "addressHint": "Perceel, straat en buurt",
+      "locationTags": "Gebiedsnamen",
+      "locationTagsHint": "Help anderen u te vinden, bijvoorbeeld Peenya Industrial Area. Maximaal vijf.",
+      "addTag": "Toevoegen",
+      "collects": "Haalt u op bij leveranciers?",
+      "hours": "Werktijden"
+    },
+    "documents": {
+      "title": "Documenten en foto's",
+      "lead": "We controleren uw vergunning in het openbare register van de milieuraad.",
+      "notRequired": "Onze installatie heeft geen vergunning nodig",
+      "notRequiredHint": "Sommige installaties, zoals alleen papier persen, zijn vrijgesteld. Vertel waarom en we controleren het.",
+      "reason": "Waarom deze niet nodig is",
+      "board": "Welke raad heeft de vergunning afgegeven?",
+      "boards": {
+        "kspcb": "Karnataka (KSPCB)",
+        "other": "Raad van een andere deelstaat"
+      },
+      "boardState": "Welke deelstaat?",
+      "consentNumber": "Vergunnings- of registratienummer",
+      "consentNumberHint": "Zoals op het certificaat",
+      "validUntil": "Geldig tot",
+      "certificate": "Vergunningscertificaat",
+      "certificateHint": "Eén PDF, maximaal 10 MB.",
+      "machineMedia": "Foto's of video's van uw machines",
+      "machineMediaHint": "Minstens twee. Toon de belangrijkste machines en het terrein. Foto's maximaal 10 MB, video's maximaal 20 MB.",
+      "declaration": "Deze documenten zijn echt en horen bij dit bedrijf."
+    },
+    "saathi": {
+      "title": "Over u",
+      "name": "Uw naam",
+      "nameHint": "Zoals op uw identiteitsbewijs",
+      "area": "Waar u woont",
+      "areaHint": "Uw gebied, bijvoorbeeld Malleshwaram",
+      "radius": "Hoe ver kunt u reizen?",
+      "radiusOption": "{km} km",
+      "workTypes": "Gewenst werk",
+      "work": {
+        "home_pickups": "Ophalen bij huishoudens",
+        "shop_help": "Hulp in een kabadiwalawinkel",
+        "yard_sorting": "Sorteren op een terrein",
+        "factory_shifts": "Diensten bij een recycler of fabriek"
+      },
+      "vehicle": "Uw voertuig",
+      "vehicles": {
+        "none": "Geen",
+        "cycle": "Fiets",
+        "two_wheeler": "Motor of scooter",
+        "auto": "Autoriksja"
+      },
+      "times": "Wanneer kunt u werken?",
+      "timeNames": {
+        "morning": "Ochtend",
+        "afternoon": "Middag",
+        "evening": "Avond"
+      },
+      "days": "Welke dagen?",
+      "idProof": "Identiteitsbewijs met foto",
+      "idProofHint": "Kiezerspas, rijbewijs, PAN of afgeschermde Aadhaar met alleen de laatste vier cijfers zichtbaar. Foto of PDF, maximaal 10 MB.",
+      "selfie": "Een selfie",
+      "selfieHint": "We vergelijken deze met uw identiteitsbewijs."
+    },
+    "files": {
+      "choose": "Bestand kiezen",
+      "addMore": "Meer toevoegen",
+      "takePhoto": "Foto maken",
+      "uploading": "Uploaden…",
+      "remove": "Verwijderen",
+      "size": "{size} MB",
+      "sizeKb": "{size} KB"
+    },
+    "status": {
+      "metaTitle": "Uw aanvraag",
+      "none": {
+        "title": "Vertel wat u doet",
+        "lead": "Kies uw rol om de aanvraag te starten."
+      },
+      "draft": {
+        "title": "Uw aanvraag is nog niet verstuurd",
+        "lead": "Alles wat u heeft ingevuld is opgeslagen.",
+        "continue": "Doorgaan",
+        "changeRole": "Opnieuw beginnen met een andere rol",
+        "confirmChange": "Dit verwijdert wat u tot nu toe heeft ingevuld. Opnieuw beginnen?"
+      },
+      "submitted": {
+        "title": "In beoordeling",
+        "lead": "Meestal 12–24 uur. We sturen een sms zodra het klaar is.",
+        "sentAt": "Verstuurd {when}",
+        "whatWeCheck": "Wat we controleren"
+      },
+      "changes_requested": {
+        "title": "Enkele wijzigingen nodig",
+        "lead": "Ons team vraagt om:",
+        "fix": "Aanpassen en opnieuw versturen"
+      },
+      "approved": {
+        "title": "U bent geverifieerd",
+        "lead": "Uw bedrijf is actief op Luma.Green.",
+        "open": "Uw overzicht openen"
+      },
+      "rejected": {
+        "title": "We konden u niet verifiëren",
+        "lead": "De reden van ons team:",
+        "contact": "Neem contact op"
+      },
+      "suspended": {
+        "title": "Uw account is gepauzeerd",
+        "lead": "Neem contact op zodat we het kunnen oplossen.",
+        "contact": "Neem contact op"
+      },
+      "roleLabel": "Aanvraag als: {role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "Uw winkel staat op de aangegeven plek op de kaart",
+          "two": "We bellen uw inlognummer",
+          "three": "Uw GST-nummer is actief, als u dat heeft opgegeven"
+        },
+        "business": {
+          "one": "Uw GST-nummer is actief en hoort bij het bedrijf, als u dat heeft opgegeven",
+          "two": "Uw vergunning staat in het register, is geldig en dekt uw werk",
+          "three": "Uw foto's tonen een werkende installatie en we bellen u"
+        },
+        "saathi": {
+          "one": "Uw identiteitsbewijs is leesbaar en de naam klopt",
+          "two": "Uw selfie komt overeen met uw identiteitsbewijs",
+          "three": "We bellen uw nummer"
+        }
+      }
+    },
+    "errors": {
+      "required": "Dit is nodig",
+      "tooShort": "Graag iets langer",
+      "tooLong": "Dit is te lang",
+      "chooseOne": "Kies één optie",
+      "pickAtLeastOne": "Kies minstens één optie",
+      "gstin": "Controleer het GST-nummer: 15 tekens, bijvoorbeeld 29ABCDE1234F1Z5",
+      "phone": "Voer een mobiel nummer van 10 cijfers in",
+      "duplicatePhone": "Dit nummer staat al in de lijst",
+      "maxPhones": "Maximaal twee extra nummers",
+      "maxTags": "Maximaal vijf gebiedsnamen",
+      "time": "Voer een tijd in",
+      "closesBeforeOpens": "De sluitingstijd moet na de openingstijd liggen",
+      "date": "Voer een datum in",
+      "expired": "Deze vergunning is verlopen. Upload de vernieuwde versie.",
+      "explainMore": "Vertel iets meer",
+      "declaration": "Bevestig dit",
+      "fileMissing": "Voeg dit toe",
+      "fileType": "Dit bestandstype kan hier niet worden gebruikt",
+      "fileTooBig": "Dit bestand is te groot",
+      "uploadFailed": "Upload mislukt. Probeer het opnieuw.",
+      "generic": "Er ging iets mis. Probeer het opnieuw."
+    }
+  },
+  "app": {
+    "navLabel": "Toepassing",
+    "homeLink": "Luma.Green-startpagina",
+    "signOut": "Uitloggen",
+    "more": "Meer",
+    "comingSoon": "Dit scherm wordt gebouwd.",
+    "nav": {
+      "home": "Start",
+      "requests": "Verzoeken",
+      "stock": "Voorraad",
+      "prices": "Mijn prijzen",
+      "buy": "Kopen",
+      "sell": "Verkopen",
+      "trades": "Transacties",
+      "impact": "Impact",
+      "compliance": "Naleving",
+      "earnings": "Verdiensten",
+      "help": "Hulp"
+    },
+    "roles": {
+      "kabadiwala": "Kabadiwala",
+      "yard": "Sorteerterrein",
+      "recycler": "Recycler",
+      "manufacturer": "Fabrikant",
+      "saathi": "Saathi"
+    }
+  },
+  "saathi": {
+    "greeting": "Hallo, {name}",
+    "lead": "Betaald werk rond {area}. Neem een klus aan, voer deze uit en markeer hem als klaar.",
+    "demoNote": "Voorbeeldgegevens: de klussen, bedrijven en beloningen zijn voorbeelden voor het prototype.",
+    "week": {
+      "label": "Deze week verdiend",
+      "hint": "Afgelopen 7 dagen · {count, plural, =0 {nog geen klussen} one {# klus} other {# klussen}}",
+      "all": "Alle verdiensten bekijken"
+    },
+    "today": {
+      "title": "Uw klussen vandaag",
+      "empty": "Geen klussen voor vandaag",
+      "emptyBody": "Neem hieronder een open klus aan. Deze verschijnt hier op de afgesproken dag."
+    },
+    "upcoming": {
+      "title": "Binnenkort",
+      "hint": "U kunt de klus op de dag zelf als klaar markeren."
+    },
+    "open": {
+      "title": "Open klussen",
+      "lead": "Klussen in uw gebied komen eerst.",
+      "empty": "Nu geen open klussen",
+      "emptyBody": "Nieuwe klussen van winkels, sorteerterreinen en fabrieken verschijnen hier."
+    },
+    "work": {
+      "home_pickups": "Ophalen bij huishoudens",
+      "shop_help": "Hulp in een winkel",
+      "yard_sorting": "Sorteren op een terrein",
+      "factory_shifts": "Fabrieksdienst"
+    },
+    "windows": {
+      "morning": "Ochtend",
+      "afternoon": "Middag",
+      "evening": "Avond"
+    },
+    "when": "{day}, {window}",
+    "whenWhere": "{when} · {area}",
+    "days": {
+      "today": "Vandaag",
+      "tomorrow": "Morgen",
+      "yesterday": "Gisteren"
+    },
+    "late": "Nog niet als klaar gemarkeerd",
+    "nearYou": "Uw gebied",
+    "postedBy": "Voor {name}",
+    "pay": "Beloning",
+    "take": "Deze klus aannemen",
+    "taking": "Aannemen…",
+    "taken": "Klus aangenomen. Deze staat nu op uw lijst.",
+    "markDone": "Markeren als klaar",
+    "saving": "Opslaan…",
+    "doneToast": "Goed gedaan! {pay} toegevoegd aan uw verdiensten.",
+    "confirm": {
+      "title": "Is deze klus klaar?",
+      "body": "{title} in {area}. {pay} wordt aan uw verdiensten toegevoegd.",
+      "yes": "Ja, klaar",
+      "no": "Nog niet"
+    },
+    "errors": {
+      "JOB_TAKEN": "Iemand anders heeft deze klus aangenomen. Probeer een andere.",
+      "JOB_EXPIRED": "De datum van deze klus is voorbij.",
+      "SLOT_BUSY": "U heeft al een klus op dat tijdstip.",
+      "NOT_YOUR_JOB": "Deze klus is niet van u.",
+      "ALREADY_DONE": "Deze klus is al als klaar gemarkeerd.",
+      "TOO_EARLY": "U kunt de klus op de afgesproken dag als klaar markeren.",
+      "JOB_NOT_FOUND": "Deze klus is niet meer beschikbaar.",
+      "generic": "Dat is niet gelukt. Controleer uw internet en probeer het opnieuw."
+    }
+  },
+  "impact": {
+    "title": "Uw impact",
+    "lead": "Wat uw bedrijf in de recyclingkringloop heeft gehouden.",
+    "demoNote": "Voorbeeldgegevens: hoeveelheden zijn illustratief en CO₂e gebruikt indicatieve factoren — kg vermeden CO₂e per kg die wordt gerecycled in plaats van nieuw gemaakt.",
+    "since": "Van voltooide inzamelingen en transacties sinds {date}.",
+    "kpi": {
+      "recycled": "Gerecyclede kilo's",
+      "recycledHint": "Elke kilo één keer geteld",
+      "recycledContent": "Gekocht gerecycled materiaal",
+      "co2e": "Vermeden CO₂e",
+      "co2eHint": "Vergeleken met nieuw produceren",
+      "earned": "Verdiend met verkoop",
+      "spent": "Besteed aan materiaal",
+      "paidHouseholds": "Betaald aan huishoudens",
+      "sales": "{count, plural, =0 {Nog geen verkopen} one {# verkoop} other {# verkopen}}",
+      "purchases": "{count, plural, =0 {Nog geen aankopen} one {# aankoop} other {# aankopen}}",
+      "pickups": "{count, plural, =0 {Nog geen inzamelingen} one {# inzameling} other {# inzamelingen}}"
+    },
+    "byFamily": {
+      "title": "Per materiaal",
+      "lead": "Gerecyclede kilo's en de CO₂e die elk materiaal heeft vermeden.",
+      "co2e": "{amount} CO₂e vermeden"
+    },
+    "flows": {
+      "title": "In en uit",
+      "lead": "Wat uw bedrijf binnenkwam en wat verderging.",
+      "households": "Gekocht van huishoudens",
+      "bought": "Gekocht van bedrijven",
+      "sold": "Verder in de keten verkocht"
+    },
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastic",
+      "metal": "Metaal",
+      "glass": "Glas",
+      "ewaste": "Elektronisch afval",
+      "other": "Overig"
+    },
+    "ledger": {
+      "title": "Een administratie klaar voor credits",
+      "lead": "Elke kilo wordt vastgelegd met wie, wanneer en waar: het bewijs dat normen voor koolstof- en plasticcredits vragen.",
+      "who": "Wie",
+      "whoBody": "Geverifieerde bedrijven en huishoudens, elk met een telefoonnummer.",
+      "when": "Wanneer",
+      "whenBody": "Elke stap heeft een tijdstempel, van inzameling tot levering.",
+      "where": "Waar",
+      "whereBody": "De winkel, het sorteerterrein of de fabriek waar het materiaal langs kwam.",
+      "what": "Wat",
+      "whatBody": "Het materiaal en gewicht, op een bon of factuur."
+    },
+    "empty": {
+      "title": "Nog niets geregistreerd",
+      "body": "Uw cijfers verschijnen hier na de eerste voltooide inzameling of transactie."
+    },
+    "saathi": {
+      "title": "Uw verdiensten",
+      "lead": "Beloning voor voltooide klussen.",
+      "total": "Tot nu toe verdiend",
+      "jobsDone": "{count, plural, one {# klus voltooid} other {# klussen voltooid}}",
+      "week": "Deze week verdiend",
+      "weekHint": "Afgelopen 7 dagen · {count, plural, =0 {geen klussen} one {# klus} other {# klussen}}",
+      "byKind": "Per soort werk",
+      "jobs": "{count, plural, one {# klus} other {# klussen}}",
+      "history": "Voltooide klussen",
+      "empty": "Nog geen voltooide klussen",
+      "emptyBody": "Neem een klus aan op uw startscherm. Na het markeren als klaar verschijnt de beloning hier.",
+      "findJob": "Een klus zoeken",
+      "demoNote": "Voorbeeldgegevens: de klussen en beloningen zijn voorbeelden voor het prototype."
+    }
+  },
+  "compliance": {
+    "title": "Naleving",
+    "lead": "Uw vergunningen en registraties op één plek.",
+    "demoNote": "Voorbeeldgegevens: documenten, bonnen en bedragen zijn voorbeelden voor het prototype.",
+    "checklist": {
+      "title": "Controlelijst",
+      "whatThisMeans": "Wat dit betekent:"
+    },
+    "status": {
+      "done": "Klaar",
+      "due_soon": "Binnenkort vernieuwen",
+      "overdue": "Verlopen",
+      "missing": "Ontbreekt",
+      "optional": "Optioneel",
+      "not_needed": "Niet nodig",
+      "self_declared": "Nog niet gecontroleerd"
+    },
+    "items": {
+      "gst": {
+        "title": "GST-registratie",
+        "registered": "GSTIN {gstin}",
+        "notRegistered": "Niet geregistreerd",
+        "note": "Met een GST-nummer kunt u belastingfacturen uitgeven en belasting op aankopen terugvragen. In Karnataka moet u zich registreren zodra uw omzet meer dan ₹40 lakh per jaar is of als u aan een andere deelstaat verkoopt."
+      },
+      "consent": {
+        "title": "Vergunning van de milieuraad",
+        "detail": "{board} · {number}",
+        "missing": "Geen vergunning geregistreerd",
+        "note": "Een exploitatievergunning van de milieuraad van de deelstaat staat een sorteer- of recyclinginstallatie wettelijk toe. Recyclers en fabrieken vragen ernaar voordat ze kopen.",
+        "noteShop": "Een kleine winkel die alleen schroot koopt en sorteert, heeft deze meestal niet nodig. Dat verandert als u gaat persen, versnipperen of verwerken."
+      },
+      "scale": {
+        "title": "Weegschaal geijkt",
+        "detail": "Zelf verklaard. U kunt dit hier binnenkort bevestigen.",
+        "note": "Weegschalen voor koop en verkoop moeten door de afdeling wettelijke metrologie worden gecontroleerd en gestempeld, meestal jaarlijks. De stempel toont dat u eerlijk weegt."
+      },
+      "safety": {
+        "title": "Veiligheidsmiddelen voor werkers",
+        "detail": "Zelf verklaard. U kunt dit hier binnenkort bevestigen.",
+        "note": "Handschoenen, maskers en dichte schoenen voor iedereen die sorteert of tilt en een EHBO-doos op locatie. Saathi's die voor u werken hebben deze ook nodig."
+      }
+    },
+    "consent": {
+      "title": "Geldigheid vergunning",
+      "validUntil": "Geldig tot {date}",
+      "daysLeft": "{days, plural, =0 {Vandaag de laatste dag} one {Nog # dag} other {Nog # dagen}}",
+      "ranOut": "{days, plural, one {# dag geleden verlopen} other {# dagen geleden verlopen}}",
+      "reminder": "Controledatum voor verlenging: {date}, 90 dagen voor de vervaldatum.",
+      "expiringTitle": "Vernieuw uw vergunning nu",
+      "expiringBody": "Deze verloopt op {date}. Vraag nu verlenging aan bij {board}: dat kan weken duren.",
+      "expiredTitle": "Uw vergunning is verlopen",
+      "expiredBody": "Deze verliep op {date}. Vernieuw bij {board} voordat u meer materiaal koopt of verkoopt.",
+      "missingTitle": "Geen vergunning geregistreerd",
+      "missingBody": "Recyclers en fabrieken vragen een geldige vergunning. Stuur deze via Hulp en we voegen hem toe."
+    },
+    "receipts": {
+      "title": "Transactiebonnen",
+      "lead": "Bonnen van uw transacties op Luma.Green, nieuwste eerst. GST-belastingfacturen horen bij echte betalingen.",
+      "number": "Bon",
+      "date": "Datum",
+      "with": "Met",
+      "what": "Wat",
+      "amount": "Bedrag",
+      "eway": "E-waybill",
+      "sale": "Verkoop",
+      "purchase": "Aankoop",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "Nodig",
+      "ewayNotNeeded": "Niet nodig",
+      "ewayNeededLong": "E-waybill nodig",
+      "ewayNotNeededLong": "Geen e-waybill nodig",
+      "ewayNote": "Een e-waybill is nodig voor goederen met een waarde van meer dan ₹50.000.",
+      "view": "Bon {number} bekijken",
+      "unknown": "Een bedrijf dat niet meer op Luma.Green staat",
+      "empty": "Nog geen bonnen",
+      "emptyBody": "Een bon wordt gemaakt wanneer de koper op de escrowrekening betaalt."
+    },
+    "epr": {
+      "title": "EPR-registratie, boekjaar {from}–{to}",
+      "lead": "Materiaal dat u dit boekjaar, van april tot maart, ontving en recyclede.",
+      "leadManufacturer": "Gerecycled materiaal dat u dit boekjaar, van april tot maart, kocht.",
+      "received": "Ontvangen",
+      "recycled": "Gerecycled",
+      "bought": "Gekocht",
+      "streams": {
+        "plastic": "Plastic",
+        "ewaste": "Elektronisch afval",
+        "battery": "Batterijen",
+        "paper": "Papier",
+        "metal": "Metaal",
+        "glass": "Glas",
+        "other": "Overig"
+      },
+      "regimes": {
+        "pwm_2016": "Regels voor plasticafvalbeheer, 2016",
+        "ewaste_2022": "Regels voor beheer van elektronisch afval, 2022",
+        "bwm_2022": "Regels voor batterijafvalbeheer, 2022",
+        "none": "Nog geen EPR-regels voor dit materiaal"
+      },
+      "note": "EPR-certificaten worden op de EPR-portalen van CPCB gemaakt, niet hier. Deze totalen komen uit uw voltooide transacties en zijn klaar voor uw aangifte.",
+      "empty": "Dit jaar nog niets geregistreerd",
+      "emptyBody": "Voltooide transacties vanaf 1 april tellen hier mee."
+    },
+    "saathi": {
+      "title": "Voor bedrijven",
+      "body": "Naleving is voor winkels, sorteerterreinen, recyclers en fabrieken. Uw klussen en beloning staan op het startscherm.",
+      "home": "Naar mijn klussen"
+    }
+  },
+  "sell": {
+    "metaTitle": "Verkoop uw schroot",
+    "metaDescription": "Verkoop kranten, plastic, metaal en oude elektronica vanuit huis in Bengaluru. Bekijk wat winkels in de buurt betalen, boek een inzameling en ontvang geld aan de deur.",
+    "eyebrow": "Voor huishoudens in Bengaluru",
+    "title": "Verkoop uw schroot vanuit huis",
+    "lead": "Kies wat u heeft en een winkel in de buurt. U wordt na het wegen contant of via UPI betaald.",
+    "promises": {
+      "label": "Waarom hier verkopen",
+      "noAccount": "Geen account nodig",
+      "payAtDoor": "Betaald na het wegen",
+      "verified": "Geverifieerde winkels"
+    },
+    "unavailable": {
+      "title": "Boeken kan binnenkort",
+      "body": "We bereiden boekingen voor huishoudens voor. Kijk binnenkort opnieuw."
+    },
+    "demoNote": "Voorbeeldprijzen en winkels voor de pilot in Bengaluru.",
+    "loadError": "Dit kon niet worden geladen. Controleer uw verbinding en probeer het opnieuw.",
+    "retry": "Opnieuw proberen",
+    "steps": {
+      "label": "Stappen",
+      "progress": "Stap {current} van {total}",
+      "basket": "Wat",
+      "shop": "Wie",
+      "when": "Wanneer",
+      "confirm": "Boeken"
+    },
+    "back": "Terug",
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastic",
+      "metal": "Metaal",
+      "glass": "Glas",
+      "ewaste": "Elektronisch afval",
+      "other": "Overig"
+    },
+    "windows": {
+      "morning": "Ochtend",
+      "afternoon": "Middag",
+      "evening": "Avond"
+    },
+    "perKg": "{price}/kg",
+    "basket": {
+      "title": "Wat heeft u?",
+      "lead": "Tik op wat u wilt verkopen en geef het geschatte aantal kilo's aan.",
+      "yours": "Uw schroot",
+      "empty": "Nog niets toegevoegd. Tik hierboven op een materiaal.",
+      "kilos": "Kilo's {material}",
+      "less": "Minder {material}",
+      "more": "Meer {material}",
+      "remove": "{material} verwijderen",
+      "presets": "Snelle hoeveelheden voor {material}",
+      "preset": "{kg} kg",
+      "kgUnit": "kg",
+      "lineValue": "Ongeveer {amount}",
+      "worth": "Geschatte waarde",
+      "summary": "{items, plural, one {# artikel} other {# artikelen}} · {weight}",
+      "points": "+{points, plural, one {# recyclingpunt} other {# recyclingpunten}}",
+      "next": "Kopers zoeken",
+      "full": "Dit is het maximum per boeking: {max} materialen.",
+      "weighNote": "Het definitieve bedrag wordt na het wegen bepaald."
+    },
+    "shop": {
+      "title": "Wie koopt het?",
+      "lead": "Het aanbod van elke winkel voor uw schroot, op basis van eigen prijzen.",
+      "modeLabel": "Hoe wilt u het overdragen?",
+      "pickup": "Thuis ophalen",
+      "pickupHint": "De winkel komt naar u toe",
+      "dropoff": "Ik lever het in",
+      "dropoffHint": "U brengt het naar de winkel",
+      "useLocation": "Mijn locatie gebruiken",
+      "locating": "Uw locatie zoeken…",
+      "nearestFirst": "Dichtstbijzijnde winkels eerst",
+      "byPrice": "In plaats daarvan op prijs sorteren",
+      "locationFailed": "Uw locatie kon niet worden gevonden. Winkels zijn daarom op beste prijs gesorteerd.",
+      "listLabel": "Winkels",
+      "offerFor": "voor uw schroot",
+      "distance": "{km} km",
+      "hours": "Geopend {hours}",
+      "picksUp": "Haalt op",
+      "dropOnly": "Alleen inleveren",
+      "verified": "Geverifieerd",
+      "best": "Beste prijs",
+      "nearest": "Dichtstbij",
+      "cityPrice": "{count, plural, one {Stadsprijs gebruikt voor # artikel} other {Stadsprijs gebruikt voor # artikelen}}",
+      "noPickupHere": "Deze winkel haalt niet op. Kies ‘Ik lever het in’ om hier te verkopen.",
+      "empty": "Nog geen winkels nemen boekingen aan. Kijk binnenkort opnieuw.",
+      "next": "Tijd kiezen",
+      "pickOne": "Kies een winkel om verder te gaan."
+    },
+    "when": {
+      "titlePickup": "Wanneer moeten ze komen?",
+      "titleDropoff": "Wanneer levert u het in?",
+      "dayLabel": "Dag",
+      "today": "Vandaag",
+      "tomorrow": "Morgen",
+      "windowLabel": "Tijd",
+      "passed": "Te laat voor vandaag",
+      "addressLabel": "Ophaaladres",
+      "addressHint": "Huis- of appartementnummer, straat, buurt en herkenningspunt.",
+      "dropoffAt": "Brengen naar",
+      "nameLabel": "Uw naam",
+      "nameHint": "Zodat de winkel weet naar wie te vragen.",
+      "privacy": "Alleen de geboekte winkel ziet uw adres, en pas na acceptatie.",
+      "next": "Controleren en boeken",
+      "errors": {
+        "day": "Kies een dag.",
+        "window": "Kies een tijd.",
+        "address": "Schrijf uw volledige adres, met huisnummer en buurt.",
+        "name": "Schrijf uw naam, minstens 2 letters."
+      }
+    },
+    "confirm": {
+      "title": "Controleren en boeken",
+      "what": "Wat",
+      "who": "Wie",
+      "when": "Wanneer",
+      "where": "Waar",
+      "change": "Wijzigen",
+      "changeLabel": "{section} wijzigen",
+      "pickup": "Ophalen bij u thuis",
+      "dropoff": "U levert in bij de winkel",
+      "whenValue": "{day} · {window}, {time}",
+      "youGet": "U ontvangt ongeveer {amount}",
+      "payNote": "De winkel weegt uw schroot en betaalt contant of via UPI.",
+      "phoneTitle": "Bevestig uw mobiele nummer",
+      "phoneLead": "We sturen per sms een code van 6 cijfers. Uw boeking wordt bij dit nummer opgeslagen, zodat u deze op elke telefoon kunt volgen.",
+      "bookingAs": "Boeken met {phone}",
+      "notYou": "Ander nummer gebruiken",
+      "bookPickup": "Ophalen boeken",
+      "bookDropoff": "Inleveren boeken",
+      "confirmAndBook": "Bevestigen en boeken",
+      "booking": "Boeken…",
+      "booked": "Geboekt! Uw boeking wordt geopend…",
+      "fixIt": "Aanpassen",
+      "locationNote": "Uw geschatte locatie wordt bij deze inzameling opgeslagen om zo nodig een andere winkel in de buurt te vinden."
+    },
+    "phone": {
+      "label": "Mobiel nummer",
+      "hint": "We sturen een code van 6 cijfers naar dit nummer.",
+      "invalid": "Voer een Indiaas mobiel nummer van 10 cijfers in.",
+      "sendCode": "Code sturen",
+      "sending": "Versturen…",
+      "sendFailed": "We konden de code niet sturen. Probeer het over een minuut opnieuw.",
+      "codeLabel": "Code van 6 cijfers",
+      "sentTo": "Per sms verstuurd naar {phone}",
+      "changeNumber": "Nummer wijzigen",
+      "verifying": "Controleren…",
+      "resendIn": "U kunt over {seconds, plural, one {# seconde} other {# seconden}} een nieuwe code vragen",
+      "resend": "Nieuwe code sturen",
+      "resent": "We hebben een nieuwe code gestuurd.",
+      "errorInvalid": "Die code klopt niet. Controleer de sms en probeer het opnieuw.",
+      "errorExpired": "Die code is verlopen. Vraag een nieuwe aan.",
+      "errorTooMany": "Te veel pogingen. Vraag een nieuwe code aan.",
+      "errorGeneric": "Er ging iets mis. Probeer het opnieuw.",
+      "privacy": "We gebruiken uw nummer alleen voor uw boekingen en updates daarover."
+    },
+    "errors": {
+      "generic": "Er ging iets mis. Probeer het opnieuw.",
+      "EMPTY_BASKET": "Voeg minstens één materiaal toe om te verkopen.",
+      "TOO_MANY_ITEMS": "Te veel materialen voor één boeking.",
+      "DUPLICATE_ITEM": "Een materiaal staat er twee keer in. Controleer uw lijst.",
+      "INVALID_KG": "Controleer de kilo's: elke hoeveelheid moet groter dan 0 en maximaal 500 zijn.",
+      "UNKNOWN_MATERIAL": "Een van uw materialen kan hier niet meer worden verkocht. Controleer uw lijst.",
+      "SHOP_NOT_FOUND": "Die winkel neemt nu geen boekingen aan. Kies een andere.",
+      "SHOP_NO_PICKUP": "Die winkel haalt niet op. Kies een andere of lever het in.",
+      "INVALID_DATE": "Die dag kan niet meer worden geboekt. Kies een andere.",
+      "SLOT_PASSED": "Die tijd is voorbij. Kies een later tijdstip.",
+      "INVALID_NAME": "Controleer uw naam.",
+      "ADDRESS_REQUIRED": "Voeg uw ophaaladres toe.",
+      "INVALID_ADDRESS": "Schrijf uw volledige adres.",
+      "TOO_MANY_OPEN": "U heeft al 5 boekingen in behandeling. Wacht tot er één klaar is of annuleer er één.",
+      "NO_PHONE": "Bevestig uw mobiele nummer om te boeken.",
+      "NOT_SIGNED_IN": "Bevestig eerst uw mobiele nummer.",
+      "CANNOT_CANCEL": "Deze boeking kan niet meer worden geannuleerd.",
+      "NOT_YOURS": "Deze boeking is met een ander nummer gemaakt.",
+      "NOT_FOUND": "We konden deze boeking niet vinden."
+    },
+    "mine": {
+      "title": "Uw boekingen",
+      "showAll": "Alle {count} tonen",
+      "showFewer": "Minder tonen",
+      "summary": "{items, plural, one {# artikel} other {# artikelen}} · {weight}",
+      "paid": "{amount} betaald",
+      "estimate": "Ongeveer {amount}"
+    },
+    "photo": {
+      "title": "Probeer een fotoschatting",
+      "lead": "Optioneel: voeg één foto van uw schroot toe en controleer de voorgestelde artikelen.",
+      "privacy": "Neem geen gezichten, documenten of kentekens op. De foto wordt voor deze schatting naar een AI-aanbieder gestuurd. Luma.Green slaat hem niet op.",
+      "choose": "Foto kiezen of maken",
+      "selected": "Foto klaar",
+      "estimate": "Deze foto schatten",
+      "busy": "Uw foto controleren…",
+      "manual": "Artikelen handmatig kiezen",
+      "review": "Controleer deze suggesties",
+      "reviewNote": "Gewichten uit foto's zijn ruwe schattingen. Vervang uw mandje met deze artikelen en pas daarna materialen en gewichten hieronder aan.",
+      "apply": "Deze artikelen gebruiken",
+      "range": "{low}–{high}",
+      "confidence": "Betrouwbaarheid: {confidence}",
+      "value": "Geschatte waarde: {low}–{high}",
+      "applied": "Suggesties toegevoegd. Controleer het mandje en verbeter fouten.",
+      "unavailable": "Fotoschattingen zijn niet beschikbaar. Kies uw artikelen hieronder.",
+      "failed": "De foto kon niet worden gecontroleerd. Probeer een andere of kies uw artikelen hieronder.",
+      "invalid": "Gebruik een duidelijke JPEG- of PNG-foto kleiner dan 12 MB.",
+      "limited": "De fotolimiet is bereikt. Kies uw artikelen hieronder of probeer het morgen opnieuw.",
+      "retake": "De foto is onduidelijk of toont geen schroot. Probeer een andere of kies uw artikelen hieronder.",
+      "empty": "Geen ondersteunde materialen gevonden. Probeer een andere foto of kies uw artikelen hieronder.",
+      "replace": "Andere foto kiezen"
+    }
+  },
+  "track": {
+    "metaTitle": "Uw boeking",
+    "notFound": {
+      "title": "We konden deze boeking niet vinden",
+      "body": "Controleer de link in uw sms. Heeft u net geboekt? Wacht even en probeer het opnieuw.",
+      "sell": "Schroot verkopen"
+    },
+    "reference": "Boeking {token}",
+    "status": {
+      "requested": "Wachten",
+      "accepted": "Geaccepteerd",
+      "on_the_way": "Onderweg",
+      "completed": "Klaar",
+      "declined": "Afgewezen",
+      "cancelled": "Geannuleerd"
+    },
+    "hero": {
+      "requested": "{mode, select, pickup {Wachten op acceptatie door {shop}} other {Wachten op bevestiging door {shop}}}",
+      "requestedBody": "Uw verzoek is verstuurd. Deze pagina wordt bijgewerkt zodra de winkel antwoordt.",
+      "accepted": "{mode, select, pickup {{shop} heeft uw inzameling geaccepteerd} other {{shop} verwacht u}}",
+      "acceptedBody": "Zet uw schroot klaar. Het wordt gewogen en daarna wordt u contant of via UPI betaald.",
+      "on_the_way": "{shop} is onderweg",
+      "on_the_wayBody": "Zet uw schroot klaar bij de deur.",
+      "completed": "Klaar! U ontving {amount}",
+      "completedBody": "Bedankt voor het recyclen. Uw punten zijn aan uw nummer toegevoegd.",
+      "declined": "{shop} kon deze boeking niet aannemen",
+      "declinedBody": "Er is niets ingezameld. Probeer een andere winkel: uw materiaallijst is opgeslagen.",
+      "cancelled": "Deze boeking is geannuleerd",
+      "cancelledBody": "Er is niets ingezameld. U kunt altijd opnieuw boeken."
+    },
+    "progress": {
+      "label": "Voortgang",
+      "booked": "Geboekt",
+      "accepted": "Geaccepteerd",
+      "confirmed": "Bevestigd",
+      "onTheWay": "Onderweg",
+      "done": "Klaar"
+    },
+    "when": "Wanneer",
+    "whenValue": "{day} · {window}, {time}",
+    "today": "Vandaag",
+    "tomorrow": "Morgen",
+    "mode": {
+      "pickup": "Ophalen bij u thuis",
+      "dropoff": "U levert in bij de winkel"
+    },
+    "shop": {
+      "title": "Uw winkel",
+      "verified": "Geverifieerd",
+      "call": "Bellen",
+      "callLabel": "{shop} bellen",
+      "hours": "Geopend {hours}"
+    },
+    "items": {
+      "title": "Wat wordt ingezameld",
+      "estimated": "Ongeveer {weight}",
+      "weighed": "{weight} tegen {price}/kg"
+    },
+    "money": {
+      "title": "Uw geld en punten",
+      "estimate": "U ontvangt ongeveer {amount}",
+      "estimateNote": "De winkel weegt uw schroot en betaalt contant of via UPI.",
+      "paid": "U ontving {amount}",
+      "paidBy": "Betaald met {method, select, upi {UPI} other {contant geld}} · {date}",
+      "estimateWas": "De schatting was {amount}",
+      "points": "+{points, plural, one {# recyclingpunt} other {# recyclingpunten}}",
+      "pointsAfter": "Ongeveer +{points, plural, one {# recyclingpunt} other {# recyclingpunten}} na het wegen"
+    },
+    "timeline": {
+      "title": "Geschiedenis",
+      "requested": "Geboekt",
+      "accepted": "Door de winkel geaccepteerd",
+      "on_the_way": "Winkel onderweg",
+      "completed": "Gewogen en betaald",
+      "declined": "Door de winkel afgewezen",
+      "cancelled": "Geannuleerd"
+    },
+    "cancel": {
+      "button": "Boeking annuleren",
+      "title": "Deze boeking annuleren?",
+      "body": "De winkel ziet dat deze is geannuleerd. U kunt altijd opnieuw boeken.",
+      "confirm": "Ja, annuleren",
+      "keep": "Behouden",
+      "cancelling": "Annuleren…",
+      "checking": "Uw nummer controleren…",
+      "done": "Uw boeking is geannuleerd.",
+      "free": "Gratis annuleren totdat de winkel onderweg is.",
+      "signInTitle": "Bevestig dat u het bent",
+      "signInBody": "Voer het mobiele nummer van de boeking in. We sturen een code.",
+      "confirmNumber": "Mijn nummer bevestigen",
+      "notYours": "Deze boeking is met een ander nummer gemaakt.",
+      "close": "Sluiten",
+      "otherNumber": "Ander nummer gebruiken"
+    },
+    "saved": "Geen account nodig. Bewaar deze link om uw boeking op elke telefoon te bekijken.",
+    "sellMore": "Meer schroot verkopen",
+    "tryAnother": "Andere winkel proberen",
+    "dispatchChanged": "Uw verzoek is naar een andere winkel in de buurt gegaan. De huidige winkel staat hieronder."
+  },
+  "market": {
+    "sampleData": "Prijzen en bedragen op dit scherm zijn voorbeeldgegevens voor het prototype.",
+    "simulated": "Voorbeeldgegevens. Betalingen zijn gesimuleerd in het prototype: er wordt geen echt geld verplaatst.",
+    "perKg": "{price}/kg",
+    "recycled": "Gerecycled",
+    "forBusinessesTitle": "Dit scherm is voor bedrijven",
+    "forBusinessesBody": "Kabadiwala's, sorteerterreinen, recyclers en fabrikanten handelen hier.",
+    "units": {
+      "kg": "kg",
+      "rupee": "₹"
+    },
+    "errors": {
+      "NOT_SIGNED_IN": "U bent uitgelogd. Log opnieuw in.",
+      "WRONG_ROLE": "Uw bedrijf kan dit niet doen.",
+      "NOT_FOUND": "Dit is niet gevonden. Het kan zijn verwijderd.",
+      "OWN_LISTING": "Dit is uw eigen lot.",
+      "LISTING_NOT_OPEN": "Dit lot is niet meer te koop.",
+      "NOT_ENOUGH_LEFT": "Er is niet zoveel over in dit lot.",
+      "NOT_ENOUGH_STOCK": "U heeft niet zoveel op voorraad. Controleer eerst uw voorraad.",
+      "INVALID_WEIGHT": "Voer een gewicht boven 0 kg in.",
+      "INVALID_PRICE": "Voer een prijs boven ₹0 in.",
+      "NOTE_TOO_LONG": "Beperk de opmerking tot 140 tekens.",
+      "UNKNOWN_MATERIAL": "Kies een materiaal uit de lijst.",
+      "WRONG_STEP": "Deze transactie is al verdergegaan. Controleer de laatste stap.",
+      "generic": "Er ging iets mis. Probeer het opnieuw."
+    },
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "Beschikbaar",
+      "lotValue": "Hele lot"
+    },
+    "buy": {
+      "button": "Kopen",
+      "buttonLabel": "{material} kopen van {seller}",
+      "title": "{material} kopen",
+      "from": "Van {seller}, {area}. {weight} beschikbaar tegen {price}/kg.",
+      "kgLabel": "Hoeveel kg?",
+      "kgHint": "Maximaal {weight}.",
+      "all": "Alle {weight}",
+      "kgInvalid": "Voer het gewicht in kg in, bijvoorbeeld 50 of 12,5.",
+      "kgTooMuch": "Er is maar {weight} beschikbaar.",
+      "total": "Totaal",
+      "totalLine": "{weight} × {price}/kg",
+      "escrow": "U betaalt op de escrowrekening nadat {seller} accepteert. Het geld gaat naar de verkoper zodra u de levering bevestigt.",
+      "ewayBill": "Boven ₹50.000: een e-waybill moet met deze lading meegaan.",
+      "cancel": "Annuleren",
+      "submit": "Verzoek sturen",
+      "sending": "Versturen…",
+      "sent": "Verzoek verstuurd naar {seller}",
+      "sentNext": "U betaalt op de escrowrekening zodra de verkoper accepteert.",
+      "seeTrades": "Transacties bekijken"
+    },
+    "browse": {
+      "title": "Kopen",
+      "lead": "{kind, select, yard {Gesorteerd schroot van kabadiwala's in de buurt.} recycler {Gesorteerd materiaal in balen van sorteerterreinen.} manufacturer {Gerecycled materiaal van geverifieerde recyclers.} other {Materiaal te koop in de buurt.}}",
+      "filterLabel": "Filteren op materiaal",
+      "all": "Alles",
+      "count": "{count, plural, =0 {Geen loten} one {# lot te koop} other {# loten te koop}}",
+      "emptyTitle": "Nu niets te koop",
+      "emptyBody": "Nieuwe loten verschijnen hier zodra ze worden aangeboden.",
+      "notForYouTitle": "Kabadiwala's kopen van huishoudens",
+      "notForYouBody": "Op de markt verkoopt u: bied gesorteerde voorraad aan sorteerterreinen aan.",
+      "goSell": "Verkopen aan sorteerterreinen"
+    },
+    "sell": {
+      "title": "Verkopen",
+      "lead": "{buyer, select, yard {Bied uw gesorteerde voorraad aan sorteerterreinen aan.} recycler {Bied uw balen aan recyclers aan.} manufacturer {Bied uw materiaal aan fabrikanten aan.} other {Bied uw voorraad aan kopers aan.}}",
+      "notForYouTitle": "Fabrikanten kopen op Luma.Green",
+      "notForYouBody": "Vind gerecycled materiaal van geverifieerde recyclers.",
+      "goBuy": "Materiaal kopen",
+      "form": {
+        "title": "Nieuwe aanbieding",
+        "material": "Wat verkoopt u?",
+        "free": "{weight} vrij voor verkoop",
+        "allPromised": "Alles aangeboden of verkocht",
+        "kg": "Hoeveel kg?",
+        "kgHint": "Maximaal {weight}.",
+        "all": "Alle {weight}",
+        "price": "Uw prijs, ₹ per kg",
+        "market": "Markt vandaag {price}/kg",
+        "suggested": "Voorgesteld {price}/kg",
+        "useSuggested": "{price} gebruiken",
+        "farFromMarket": "Dit wijkt sterk af van de prijs van vandaag. Controleer het.",
+        "note": "Opmerking voor kopers",
+        "optional": "(optioneel)",
+        "notePlaceholder": "Bijvoorbeeld: droog, gebundeld, balen van 50 kg",
+        "noteCount": "{count}/{max}",
+        "value": "Lotwaarde",
+        "submit": "Te koop aanbieden",
+        "submitting": "Aanbieden…",
+        "listed": "Te koop. {buyer, select, yard {Sorteerterreinen} recycler {Recyclers} manufacturer {Fabrikanten} other {Kopers}} kunnen het nu zien.",
+        "nothingTitle": "Nog niets te verkopen",
+        "nothingBody": "Geregistreerde voorraad verschijnt hier. Wat al is aangeboden of verkocht, telt niet dubbel.",
+        "goStock": "Naar voorraad",
+        "errors": {
+          "pickMaterial": "Kies een materiaal.",
+          "kgInvalid": "Voer het gewicht in kg in, bijvoorbeeld 50 of 12,5.",
+          "kgTooMuch": "U heeft {weight} vrij voor verkoop.",
+          "priceInvalid": "Voer een prijs in roepies in, bijvoorbeeld 18 of 17,50.",
+          "noteTooLong": "Beperk de opmerking tot 140 tekens."
+        }
+      },
+      "mine": {
+        "title": "Nu te koop",
+        "emptyTitle": "Nog niets te koop",
+        "emptyBody": "Bied uw eerste lot aan via het formulier.",
+        "past": "Eerdere aanbiedingen",
+        "onSale": "Te koop",
+        "listedOn": "Aangeboden op {date}",
+        "pastLine": "Aangeboden op {date} · {price}/kg",
+        "sold": "Uitverkocht",
+        "withdrawn": "Ingetrokken",
+        "withdraw": "Intrekken",
+        "withdrawLabel": "{material} intrekken",
+        "withdrawConfirm": "Dit lot van de markt halen? Kopers zien het niet meer en openstaande verzoeken worden afgewezen.",
+        "withdrawYes": "Ja, intrekken",
+        "withdrawNo": "Te koop houden",
+        "withdrawnToast": "{material} van de markt gehaald"
+      }
+    },
+    "trades": {
+      "title": "Transacties",
+      "lead": "Elke transactie, stap voor stap. Het geld blijft in escrow tot de koper de levering bevestigt.",
+      "buying": "Inkopen",
+      "selling": "Verkopen",
+      "tabsLabel": "Inkopen of verkopen",
+      "waitingBadge": "{count, plural, one {# vraagt uw actie} other {# vragen uw actie}}",
+      "emptyBuyingTitle": "Nog geen aankopen",
+      "emptyBuyingBody": "Loten die u wilt kopen verschijnen hier.",
+      "emptySellingTitle": "Nog geen verkopen",
+      "emptySellingBody": "Als iemand een van uw loten wil kopen, verschijnt dat hier.",
+      "goBuy": "Materiaal zoeken",
+      "goSell": "Voorraad te koop aanbieden",
+      "card": {
+        "title": "{material} · {weight}",
+        "from": "Van {name} · {area}",
+        "to": "Aan {name} · {area}",
+        "rate": "{price}/kg",
+        "inEscrow": "{amount} in escrow",
+        "ewayBill": "Boven ₹50.000: een e-waybill moet met deze lading meegaan.",
+        "updated": "Bijgewerkt {when}",
+        "receipt": "Bon {number}",
+        "buying": "Inkopen",
+        "selling": "Verkopen"
+      },
+      "steps": {
+        "label": "Transactievoortgang",
+        "requested": "Aangevraagd",
+        "accepted": "Geaccepteerd",
+        "paid_to_escrow": "In bewaring",
+        "dispatched": "Verzonden",
+        "completed": "Geleverd",
+        "srStep": "{step}: {state}",
+        "state": {
+          "done": "klaar",
+          "current": "volgende",
+          "todo": "nog niet"
+        }
+      },
+      "declined": "Afgewezen op {date}",
+      "hint": {
+        "requested": {
+          "buyer": "Wachten op acceptatie door {name}.",
+          "seller": "{name} wil dit kopen. Accepteer om het te reserveren."
+        },
+        "accepted": {
+          "buyer": "Geaccepteerd. Betaal op de escrowrekening om door te gaan: het geld blijft vast tot u de levering bevestigt.",
+          "seller": "Wachten op betaling door {name} op de escrowrekening."
+        },
+        "paid_to_escrow": {
+          "buyer": "Uw geld staat veilig in escrow. Wachten op verzending door {name}.",
+          "seller": "Het geld staat veilig in escrow. Verstuur de lading en markeer deze als verzonden."
+        },
+        "dispatched": {
+          "buyer": "Onderweg. Controleer de lading en bevestig de levering om het geld vrij te geven.",
+          "seller": "Onderweg. Het geld wordt aan u vrijgegeven als {name} de levering bevestigt."
+        },
+        "completed": {
+          "buyer": "Geleverd. Het geld is vrijgegeven aan {name}.",
+          "seller": "Geleverd. Het geld is aan u vrijgegeven."
+        },
+        "declined": {
+          "buyer": "{name} heeft de bestelling afgewezen of het lot is uitverkocht.",
+          "seller": "U heeft de bestelling afgewezen of het lot is gesloten."
+        }
+      },
+      "action": {
+        "accept": "Bestelling accepteren",
+        "decline": "Afwijzen",
+        "pay": "{amount} in escrow betalen",
+        "dispatch": "Markeren als verzonden",
+        "confirm": "Levering bevestigen"
+      },
+      "busy": "Opslaan…",
+      "done": {
+        "accept": "Bestelling geaccepteerd",
+        "decline": "Bestelling afgewezen",
+        "pay": "In escrow betaald. Bon {number}",
+        "dispatch": "Gemarkeerd als verzonden",
+        "confirm": "Levering bevestigd. Het geld is vrijgegeven aan de verkoper."
+      },
+      "declineConfirm": "Deze bestelling van {name} afwijzen? Dit kan niet worden teruggedraaid.",
+      "declineYes": "Ja, afwijzen",
+      "declineNo": "Behouden"
+    },
+    "receipt": {
+      "title": "Transactiebon",
+      "numberLabel": "Bonnummer",
+      "dateLabel": "Datum",
+      "statusLabel": "Betaling",
+      "inEscrow": "In bewaring",
+      "settled": "Vrijgegeven",
+      "seller": "Verkoper",
+      "buyer": "Koper",
+      "gstin": "GSTIN {gstin}",
+      "noGstin": "Niet GST-geregistreerd",
+      "material": "Materiaal",
+      "quantity": "Hoeveelheid",
+      "rate": "Tarief",
+      "amount": "Bedrag",
+      "total": "Totaal",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "Betaald op de Luma.Green-escrowrekening op {date}.",
+      "held": "In escrow gehouden tot de koper de levering bevestigt.",
+      "released": "Vrijgegeven aan de verkoper op {date}.",
+      "ewayBill": "Goederen boven ₹50.000: een e-waybill moet met deze lading meegaan.",
+      "notTaxInvoice": "Dit is een transactiebon, geen GST-belastingfactuur. Belastingfacturen horen bij echte betalingen.",
+      "print": "Afdrukken",
+      "back": "Terug naar transacties",
+      "missingTitle": "Bon niet gevonden",
+      "missingBody": "Deze transactie is niet van u of de link klopt niet.",
+      "pendingTitle": "Nog geen bon",
+      "pendingBody": "De bon wordt gemaakt wanneer de koper op de escrowrekening betaalt.",
+      "declinedBody": "Deze transactie is afgewezen, dus er is geen bon."
+    },
+    "home": {
+      "greeting": "Namasté, {name}",
+      "lead": "{kind, select, yard {Koop van kabadiwala's en verkoop gesorteerde balen aan recyclers.} recycler {Koop gesorteerd schroot van terreinen en verkoop gerecycled materiaal aan fabrikanten.} manufacturer {Koop gerecycled materiaal van geverifieerde recyclers.} other {Uw transacties in één oogopslag.}}",
+      "buy": "Kopen",
+      "sell": "Verkopen",
+      "trades": "Transacties",
+      "statsTitle": "In één oogopslag",
+      "stats": {
+        "escrow": "In bewaring",
+        "escrowHint": "Vrijgegeven na bevestiging van de levering",
+        "waiting": "Wacht op u",
+        "waitingHint": "{count, plural, =0 {Alles bijgewerkt} one {# transactie vraagt een stap} other {# transacties vragen een stap}}",
+        "listings": "Te koop",
+        "listingsHint": "{weight} aangeboden",
+        "offers": "Gerecyclede loten",
+        "offersHint": "Te koop bij recyclers",
+        "completed": "Deze maand klaar",
+        "completedHint": "{amount} verhandeld"
+      },
+      "waitingTitle": "Wacht op u",
+      "allTrades": "Alle transacties",
+      "caughtUpTitle": "Nu geen actie nodig",
+      "caughtUpBody": "Nieuwe bestellingen, betalingen en leveringen verschijnen hier.",
+      "offersTitle": "Nieuwste loten voor u",
+      "recycledTitle": "Gerecycled materiaal voor u",
+      "recycledBody": "Vlokken, korrels, kraftpapier en ingots van geverifieerde recyclers, klaar voor uw productie.",
+      "seeAll": "Alles bekijken",
+      "noOffersTitle": "Nu geen loten te koop",
+      "noOffersBody": "Nieuwe loten verschijnen hier zodra ze worden aangeboden."
+    },
+    "totalInvalid": "Het totaalbedrag is te hoog. Verlaag de hoeveelheid of de prijs."
+  },
+  "shop": {
+    "sampleNote": "Prijzen, marktprijzen en bedragen op dit scherm zijn voorbeeldcijfers voor het prototype.",
+    "household": "Huishouden",
+    "perKg": "{price}/kg",
+    "about": "Ongeveer {amount}",
+    "slot": "{day}, {window}",
+    "dropoff": "Brengt het naar uw winkel",
+    "windows": {
+      "morning": "Ochtend",
+      "afternoon": "Middag",
+      "evening": "Avond"
+    },
+    "days": {
+      "today": "Vandaag",
+      "tomorrow": "Morgen",
+      "yesterday": "Gisteren"
+    },
+    "status": {
+      "requested": "Nieuw",
+      "accepted": "Geaccepteerd",
+      "on_the_way": "Onderweg",
+      "completed": "Betaald",
+      "declined": "Afgewezen",
+      "cancelled": "Geannuleerd"
+    },
+    "methods": {
+      "cash": "Contant",
+      "upi": "UPI"
+    },
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastic",
+      "metal": "Metaal",
+      "glass": "Glas",
+      "ewaste": "Elektronisch afval",
+      "other": "Overig"
+    },
+    "compare": {
+      "above": "Boven marktprijs",
+      "below": "Onder marktprijs",
+      "same": "Gelijk aan marktprijs"
+    },
+    "errors": {
+      "generic": "Er ging iets mis. Probeer het opnieuw.",
+      "changed": "Dit verzoek is intussen gewijzigd. Controleer het opnieuw.",
+      "loadTitle": "Dit kon niet worden geladen",
+      "loadBody": "Controleer uw internetverbinding en probeer het opnieuw.",
+      "retry": "Opnieuw proberen"
+    },
+    "notShop": {
+      "title": "Alleen voor kabadiwalawinkels",
+      "body": "Ophaalverzoeken en huishoudprijzen horen bij een kabadiwalawinkel.",
+      "home": "Naar de startpagina"
+    },
+    "home": {
+      "greeting": "Namasté",
+      "newTitle": "Nieuwe verzoeken",
+      "newNone": "Nu geen nieuwe verzoeken.",
+      "newSome": "{count, plural, one {# huishouden wil een inzameling.} other {# huishoudens willen een inzameling.}}",
+      "seeRequests": "Verzoeken bekijken",
+      "todayTitle": "Inzamelingen vandaag",
+      "next": "Volgende",
+      "todayNone": "Vandaag geen inzamelingen meer.",
+      "seeToday": "Inzamelingen van vandaag bekijken",
+      "moneyTitle": "Geld en voorraad",
+      "paidToday": "Vandaag betaald",
+      "paidWeek": "Afgelopen 7 dagen",
+      "pickups": "{count, plural, =0 {Geen inzamelingen} one {# inzameling} other {# inzamelingen}}",
+      "stockWorth": "Voorraadwaarde",
+      "stockWeight": "{weight} op voorraad",
+      "priceCheck": "Prijscontrole",
+      "allPrices": "Al mijn prijzen",
+      "perKg": "per kg",
+      "you": "U betaalt",
+      "market": "Markt",
+      "quickLinks": "Snelkoppelingen",
+      "sell": "Verkopen aan een sorteerterrein",
+      "sellHint": "Bied uw voorraad aan terreinen in de buurt aan",
+      "prices": "Mijn prijzen",
+      "pricesHint": "Wat u huishoudens per kg betaalt"
+    },
+    "requests": {
+      "title": "Verzoeken",
+      "lead": "Huishoudens in de buurt die hun schroot willen verkopen.",
+      "tabs": {
+        "new": "Nieuw",
+        "today": "Vandaag",
+        "done": "Klaar"
+      },
+      "dueNow": "Vandaag",
+      "later": "Binnenkort",
+      "empty": {
+        "newTitle": "Geen nieuwe verzoeken",
+        "newBody": "Als een huishouden bij u boekt, verschijnt het hier.",
+        "todayTitle": "Niets op te halen",
+        "todayBody": "Geaccepteerde inzamelingen verschijnen hier.",
+        "doneTitle": "Nog niets afgerond",
+        "doneBody": "Betaalde en afgewezen inzamelingen verschijnen hier."
+      },
+      "estimate": "Schatting",
+      "doneLine": "{when} · {materials}",
+      "accept": "Accepteren",
+      "decline": "Afwijzen",
+      "startTrip": "Rit starten",
+      "weigh": "Wegen en betalen",
+      "accepted": "Geaccepteerd. U ziet nu het adres en telefoonnummer.",
+      "declined": "Verzoek afgewezen.",
+      "onTheWay": "Het huishouden ziet dat u onderweg bent.",
+      "confirmDecline": {
+        "title": "Dit verzoek afwijzen?",
+        "body": "Dit kunt u niet ongedaan maken.",
+        "confirm": "Ja, afwijzen",
+        "cancel": "Behouden"
+      }
+    },
+    "request": {
+      "back": "Alle verzoeken",
+      "details": "Inzamelgegevens",
+      "where": "Adres",
+      "phone": "Telefoon",
+      "call": "Bellen",
+      "directions": "Route",
+      "hidden": "Na acceptatie ziet u het volledige adres en telefoonnummer.",
+      "items": "Wat zij hebben",
+      "estimate": "Schatting",
+      "history": "Geschiedenis",
+      "declined": "U heeft dit verzoek afgewezen.",
+      "cancelled": "Het huishouden heeft deze inzameling geannuleerd.",
+      "notFoundTitle": "Verzoek niet gevonden",
+      "notFoundBody": "Het verzoek kan bij een andere winkel horen of de link klopt niet.",
+      "steps": {
+        "requested": "Aangevraagd",
+        "accepted": "Geaccepteerd",
+        "on_the_way": "Onderweg",
+        "completed": "Gewogen en betaald",
+        "declined": "Afgewezen",
+        "cancelled": "Geannuleerd"
+      }
+    },
+    "weigh": {
+      "title": "Wegen en betalen",
+      "lead": "Weeg elk materiaal. Het bedrag gebruikt uw prijzen.",
+      "kg": "kg",
+      "inputLabel": "Gewicht van {material} in kg",
+      "less": "Een halve kilo minder {material}",
+      "more": "Een halve kilo meer {material}",
+      "remove": "{material} verwijderen",
+      "estimated": "Schatting: {weight}",
+      "noRate": "Geen prijs ingesteld",
+      "add": "Ander materiaal toevoegen",
+      "total": "Te betalen",
+      "method": "Betaald met",
+      "confirm": "Bevestig {amount} betaald",
+      "saving": "Opslaan…",
+      "invalidKg": "Voer kilo's in, bijvoorbeeld 12 of 12,5.",
+      "nothing": "Weeg minstens één materiaal.",
+      "done": "Betaling opgeslagen."
+    },
+    "receipt": {
+      "thanks": "Bedankt voor het recyclen!",
+      "thanksNamed": "Bedankt voor het recyclen, {name}!",
+      "title": "{amount} betaald",
+      "method": "{method}, {when}",
+      "points": "{name} verdiende {points, plural, one {# punt} other {# punten}}",
+      "pointsHint": "Eén punt voor elke ₹10.",
+      "line": "{weight} tegen {price}/kg",
+      "kg": "{kg} kg",
+      "total": "Totaal",
+      "stock": "Toegevoegd aan uw voorraad.",
+      "back": "Terug naar verzoeken"
+    },
+    "stock": {
+      "title": "Voorraad",
+      "lead": "Wat u nu heeft en wat het vandaag waard is.",
+      "totalWeight": "Totaalgewicht",
+      "worth": "Waarde vandaag",
+      "worthHint": "Tegen de marktprijzen van vandaag",
+      "scrap": "Schroot",
+      "recycled": "Gerecycled materiaal",
+      "atPrice": "Markt {price}/kg",
+      "noPrice": "Vandaag geen marktprijs",
+      "sellTo": {
+        "yard": "Verkopen aan een sorteerterrein",
+        "recycler": "Verkopen aan een recycler",
+        "manufacturer": "Verkopen aan een fabrikant"
+      },
+      "emptyTitle": "Nog geen voorraad",
+      "emptyShop": "Weeg en betaal een inzameling, dan verschijnt deze hier.",
+      "emptyBusiness": "Koop op de markt, dan verschijnt het hier.",
+      "buy": "Materiaal kopen",
+      "notBusinessTitle": "Alleen voor bedrijven",
+      "notBusinessBody": "Winkels, sorteerterreinen, recyclers en fabrieken houden voorraad bij."
+    },
+    "prices": {
+      "title": "Mijn prijzen",
+      "lead": "Wat u huishoudens per kg betaalt. Nooit onder het minimum.",
+      "label": "Uw prijs voor {material}, in roepies per kg",
+      "prefix": "₹",
+      "suffix": "/kg",
+      "minimum": "Minimaal {price}/kg",
+      "market": "Markt {price}/kg",
+      "notSet": "Nog niet ingesteld. Huishoudens krijgen de stadsprijs, {price}/kg.",
+      "save": "Opslaan",
+      "saving": "Opslaan…",
+      "saved": "{material}: {price}/kg opgeslagen.",
+      "invalid": "Voer een prijs in, bijvoorbeeld 14 of 14,50.",
+      "belowFloor": "Te laag. Het minimum is {price}/kg.",
+      "belowFloorUnknown": "Te laag. Dit ligt onder de minimumprijs.",
+      "emptyTitle": "Nog geen materialen",
+      "emptyBody": "Welke materialen u koopt, wordt bij goedkeuring van uw winkel vastgelegd."
+    },
+    "dispatch": {
+      "title": "Ophaalinstellingen",
+      "autoAccept": "Nabije inzamelingen automatisch accepteren",
+      "autoAcceptHint": "Inzamelingen binnen uw straal kunnen zonder handmatig antwoord worden geaccepteerd. Zet dit uit als u niet kunt ophalen.",
+      "radius": "Ophaalstraal (km)",
+      "radiusHint": "Kies een geheel getal van 1 tot 50.",
+      "saved": "Ophaalinstellingen opgeslagen",
+      "error": "Deze instellingen konden niet worden opgeslagen. Probeer het opnieuw.",
+      "saving": "Opslaan…",
+      "ownerOnly": "Alleen de winkeleigenaar kan ophaalinstellingen wijzigen.",
+      "locationRequired": "Voeg uw winkellocatie toe en schakel thuis ophalen in voordat u automatisch accepteren gebruikt."
+    }
+  },
+  "native": {
+    "back": "Terug",
+    "reload": "Herladen",
+    "openBrowser": "Openen in browser",
+    "offlineTitle": "Geen verbinding",
+    "offlineBody": "Controleer uw internetverbinding en probeer het opnieuw.",
+    "updates": "Zoeken naar app-updates",
+    "updateReady": "Een app-update is klaar.",
+    "restart": "Nu herstarten",
+    "later": "Later",
+    "updateCurrent": "Uw app is bijgewerkt.",
+    "updateUnavailable": "App-updates zijn niet beschikbaar voor deze versie.",
+    "updateFailed": "Zoeken naar updates is mislukt. Probeer het later opnieuw.",
+    "locationTitle": "Uw locatie delen?",
+    "locationBody": "Sta Luma.Green toe uw locatie te gebruiken om schrootwinkels in de buurt te vinden.",
+    "allow": "Toestaan",
+    "deny": "Niet nu",
+    "browserNotice": "Deze pagina opent in uw browser. Mogelijk moet u opnieuw inloggen.",
+    "cameraPermission": "Gebruik de camera om schroot of verificatiedocumenten te fotograferen.",
+    "photoPermission": "Selecteer foto's voor schrootschattingen en verificatie.",
+    "cameraTitle": "Camera"
+  },
+  "analytics": {
+    "title": "Optionele statistieken",
+    "description": "Sta PostHog en Google Analytics toe bezoeken aan openbare pagina's te meten. We registreren geen formulieren, privépagina's of sessieopnamen. Uw keuze verandert uw toegang niet.",
+    "accept": "Statistieken toestaan",
+    "decline": "Statistieken uit laten",
+    "settings": "Instellingen voor statistieken",
+    "saved": "Uw keuze is opgeslagen op dit apparaat.",
+    "unavailable": "Uw browser kon de keuze niet opslaan. Statistieken blijven uit.",
+    "close": "Sluiten"
+  },
+  "showcase": {
+    "scene": "Illustratieve scène",
+    "context": {
+      "heading": "Een blik op uw werkruimte",
+      "body": "Voorbeeldschermen tonen hoe elke rol Luma.Green gebruikt. Volg de gidsen hieronder voor de beschikbare stappen."
+    },
+    "adminBody": "Beoordeel aanvragen, beheer toegang en controleer operationele registraties.",
+    "preview": {
+      "label": "Illustratief appvoorbeeld · geen echte gegevens",
+      "roles": {
+        "household": {
+          "title": "Uw inzameling thuis",
+          "first": "Kies uw materialen",
+          "second": "Plan een inzameling",
+          "third": "Bewaar uw bon"
+        },
+        "kabadiwala": {
+          "title": "Uw schrootwinkel",
+          "first": "Bekijk ophaalverzoeken",
+          "second": "Registreer het gewicht",
+          "third": "Beheer gesorteerde voorraad"
+        },
+        "yard": {
+          "title": "Uw sorteerterrein",
+          "first": "Ontvang materialen",
+          "second": "Sorteer uw voorraad",
+          "third": "Bereid uitgaande loten voor"
+        },
+        "recycler": {
+          "title": "Uw recyclingwerkruimte",
+          "first": "Volg inkomende loten",
+          "second": "Registreer gerecyclede productie",
+          "third": "Bewaar materiaalregistraties"
+        },
+        "manufacturer": {
+          "title": "Uw materiaalinkoop",
+          "first": "Vind gerecyclede materialen",
+          "second": "Bekijk beschikbare aanbiedingen",
+          "third": "Volg uw transacties"
+        },
+        "saathi": {
+          "title": "Uw werkdag",
+          "first": "Zoek klussen in de buurt",
+          "second": "Plan uw werktijden",
+          "third": "Registreer voltooid werk"
+        },
+        "admin": {
+          "title": "Platformbeheer",
+          "first": "Beoordeel aanvragen",
+          "second": "Controleer ingediende documenten",
+          "third": "Bekijk operationele registraties"
+        }
+      }
+    }
+  },
+  "accountSecurity": {
+    "title": "Accountbeveiliging",
+    "description": "Voeg na je telefooncode een code uit een authenticator-app toe.",
+    "enabled": "Aan",
+    "disabled": "Uit",
+    "enable": "Instellen",
+    "disable": "Uitschakelen",
+    "recentSignIn": "Log opnieuw in voordat je de beveiliging wijzigt.",
+    "signInAgain": "Opnieuw inloggen",
+    "setupTitle": "Koppel je authenticator",
+    "setupDescription": "Scan deze QR-code met een authenticator-app of voer de sleutel in. Houd deze privé.",
+    "setupKey": "Instelsleutel",
+    "backupTitle": "Bewaar je herstelcodes",
+    "backupDescription": "Bewaar deze codes op een veilige plek. Elke code werkt één keer na je telefooncode.",
+    "savedCodes": "Codes bewaard",
+    "regenerate": "Nieuwe codes",
+    "regenerateDescription": "Je oude herstelcodes werken straks niet meer. Bewaar de nieuwe codes voordat je vertrekt.",
+    "disableDescription": "Je logt voortaan alleen in met telefooncodes. Je authenticator en herstelcodes werken dan niet meer.",
+    "errorCode": "Deze code werkte niet. Probeer het opnieuw.",
+    "errorRateLimited": "Te veel pogingen. Wacht voordat je het opnieuw probeert.",
+    "recoveryHelp": "Authenticator en herstelcodes kwijt? Neem contact op met ondersteuning. Een telefooncode alleen kan tweestapsverificatie niet uitschakelen."
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "permissionBody": "Ontvang op dit apparaat nieuws over je ophalingen en aanvragen.",
+    "enable": "Inschakelen",
+    "denied": "Meldingen zijn geblokkeerd. Wijzig dit in de instellingen van je apparaat of browser.",
+    "unavailable": "Meldingen zijn hier nog niet beschikbaar.",
+    "error": "Meldingen konden niet worden ingeschakeld. Probeer het opnieuw.",
+    "lockscreenTitle": "Nieuws van Luma.Green",
+    "lockscreenBody": "Open Luma.Green om het nieuws te bekijken.",
+    "emptyTitle": "Nog geen nieuws",
+    "emptyBody": "Nieuws over ophaalafspraken en aanvragen verschijnt hier.",
+    "markRead": "Als gelezen markeren",
+    "markAllRead": "Alles als gelezen",
+    "unread": "Ongelezen",
+    "enabled": "Ingeschakeld op dit apparaat",
+    "disable": "Uitschakelen",
+    "disabled": "Uitgeschakeld op dit apparaat",
+    "deviceTitle": "Dit apparaat",
+    "inboxTitle": "Jouw nieuws",
+    "loadMore": "Meer tonen",
+    "events": {
+      "booking_confirmed": "Boeking bevestigd",
+      "booking_offer": "Nieuw ophaalverzoek",
+      "booking_accepted": "Ophaling geaccepteerd",
+      "booking_reassigned": "Ophaler gewijzigd",
+      "application_received": "Aanvraag ontvangen",
+      "application_approved": "Aanvraag goedgekeurd",
+      "application_changes_requested": "Aanvraag moet worden aangepast",
+      "application_rejected": "Aanvraag niet goedgekeurd"
+    }
+  },
+  "integrations": {
+    "title": "API-toegang",
+    "lead": "Verbind je bedrijfssystemen met je gegevens in Luma.Green.",
+    "connection": "Systeem verbinden",
+    "readOnly": "REST v1 leest bedrijfsgegevens, materialen, voorraad en handelstransacties. De API kan geen gegevens wijzigen of betalingen verwerken.",
+    "baseUrl": "Basispad op deze website:",
+    "openApi": "API-specificatie openen",
+    "ownerOnly": "Alleen een actieve bedrijfseigenaar kan API-sleutels beheren.",
+    "tokenTitle": "Bewaar je API-sleutel",
+    "tokenHint": "Deze sleutel wordt maar één keer getoond. Bewaar hem in de geheime opslag van je systeem. Zet hem niet in een browserapp, URL of bericht. Na het sluiten van dit scherm is hij niet meer zichtbaar.",
+    "tokenLabel": "Nieuwe API-sleutel",
+    "expiresOn": "Verloopt op {date}",
+    "copy": "Sleutel kopiëren",
+    "dismiss": "Gereed",
+    "copyError": "Kopiëren mislukt. Selecteer en kopieer de sleutel handmatig.",
+    "copied": "Sleutel gekopieerd.",
+    "createTitle": "Sleutel maken",
+    "keyHint": "Gebruik één sleutel per systeem. Selecteer alleen de benodigde rechten. Je kunt maximaal vijf actieve sleutels hebben.",
+    "label": "Systeemnaam",
+    "expiry": "Geldig gedurende",
+    "days": "{count, plural, one {# dag} other {# dagen}}",
+    "permissions": "Leesrechten",
+    "limit": "Er zijn vijf sleutels actief. Trek een ongebruikte sleutel in voordat je een nieuwe maakt.",
+    "createError": "De sleutel kon niet worden gemaakt. Controleer je toegang en probeer het opnieuw.",
+    "creating": "Wordt gemaakt…",
+    "create": "Sleutel maken",
+    "keysTitle": "Je sleutels",
+    "empty": "Nog geen sleutels. Maak een sleutel om je eerste systeem te verbinden.",
+    "neverUsed": "Nog niet gebruikt",
+    "lastUsed": "Laatst gebruikt: {date}",
+    "revokeLabel": "{label} intrekken",
+    "revoke": "Intrekken",
+    "revokeTitle": "Deze sleutel intrekken?",
+    "revokeHint": "Systemen die ‘{label}’ gebruiken, verliezen direct de toegang. Je kunt deze sleutel niet herstellen.",
+    "revokeError": "De sleutel kon niet worden ingetrokken. Probeer het opnieuw.",
+    "revoking": "Wordt ingetrokken…",
+    "newsHint": "Als de nieuwsdienst is ingesteld, biedt branchenieuws updates over je materiaalgroepen met links naar de bronnen.",
+    "scopes": {
+      "organization": "Bedrijfsgegevens",
+      "materials": "Materiaalcatalogus",
+      "inventory": "Bedrijfsvoorraad",
+      "trades": "Bedrijfstransacties",
+      "news": "Branchenieuws"
+    },
+    "status": {
+      "active": "Actief",
+      "expired": "Verlopen",
+      "revoked": "Ingetrokken"
+    }
+  }
+}

@@ -85,6 +85,13 @@ describe("KgStepper", () => {
     expect(onChange).toHaveBeenLastCalledWith(12.5);
   });
 
+  it("keeps quick amounts selectable from the keyboard", async () => {
+    const { onChange } = renderStepper(10);
+    screen.getByRole("button", { name: "25 kg" }).focus();
+    await userEvent.keyboard(" ");
+    expect(onChange).toHaveBeenLastCalledWith(25);
+  });
+
   it("ignores typing that isn't a number", async () => {
     const { onChange } = renderStepper(5);
     const box = screen.getByRole("textbox", { name: "Kilos of Newspaper" });

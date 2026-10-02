@@ -64,6 +64,9 @@ describe("typed kilos", () => {
   it("read a dot or a comma as the decimal, to 0.1 kg", () => {
     expect(parseKg("12.5")).toBe(12.5);
     expect(parseKg("12,5")).toBe(12.5);
+    expect(parseKg("١٢٫٥")).toBe(12.5);
+    expect(parseKg("๑๒.๕")).toBe(12.5);
+    expect(parseKg("१२,५")).toBe(12.5);
     expect(parseKg(" 7 ")).toBe(7);
     expect(parseKg("3.14")).toBeCloseTo(3.1, 5);
     expect(parseKg(".5")).toBe(0.5);

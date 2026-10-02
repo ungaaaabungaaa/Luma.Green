@@ -32,7 +32,9 @@ jobs:
   e2e:
     name: Playwright (chromium)
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # The 33-locale browser suite takes about 16 minutes on one worker. Allow
+    # both production builds and the separate analytics checks to finish too.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6

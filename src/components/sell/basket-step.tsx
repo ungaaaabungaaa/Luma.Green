@@ -180,10 +180,10 @@ function BasketLine({
 
   return (
     <li className="flex flex-col gap-3 p-4">
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <FamilyIcon family={material.family} />
-        <div className="flex min-w-0 flex-1 flex-col">
-          <span className="font-medium">{name}</span>
+        <div className="flex min-w-0 flex-1 basis-28 flex-col">
+          <span className="font-medium [overflow-wrap:anywhere]">{name}</span>
           {pricePaise === undefined ? null : (
             <span className="text-sm text-muted-foreground tabular-nums">
               {t("perKg", { price: format.perKg(pricePaise) })}
@@ -191,7 +191,7 @@ function BasketLine({
           )}
         </div>
         {worth === undefined ? null : (
-          <span className="font-semibold tabular-nums">
+          <span className="max-w-full font-semibold tabular-nums">
             {t("basket.lineValue", { amount: worth })}
           </span>
         )}

@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
 import { FileTextIcon, ShieldCheckIcon, ShoppingCartIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
@@ -108,6 +108,7 @@ function BuyForm({
   onDone: () => void;
 }) {
   const t = useTranslations("market");
+  const locale = useLocale();
   const format = useFormat();
   const router = useRouter();
   const requestTrade = useMutation(api.market.requestTrade);
@@ -118,13 +119,13 @@ function BuyForm({
       z.object({
         kg: z
           .string()
-          .refine((value) => parseKg(value) !== null, "kgInvalid")
+          .refine((value) => parseKg(value, locale) !== null, "kgInvalid")
           .refine(
-            (value) => (parseKg(value) ?? 0) <= listing.grams,
+            (value) => (parseKg(value, locale) ?? 0) <= listing.grams,
             "kgTooMuch",
           )
           .refine((value) => {
-            const grams = parseKg(value);
+            const grams = parseKg(value, locale);
             return (
               grams === null ||
               grams > listing.grams ||
@@ -132,7 +133,7 @@ function BuyForm({
             );
           }, "totalInvalid"),
       }),
-    [listing.grams, listing.askPaisePerKg],
+    [listing.grams, listing.askPaisePerKg, locale],
   );
   const {
     control,
@@ -145,7 +146,7 @@ function BuyForm({
     defaultValues: { kg: "" },
   });
 
-  const grams = parseKg(useWatch({ control, name: "kg" }));
+  const grams = parseKg(useWatch({ control, name: "kg" }), locale);
   const total =
     grams !== null && grams <= listing.grams
       ? safePaiseFor(grams, listing.askPaisePerKg)
@@ -155,7 +156,7 @@ function BuyForm({
   const fieldError = errors.kg?.message;
 
   async function onSubmit(values: z.infer<typeof schema>) {
-    const wanted = parseKg(values.kg);
+    const wanted = parseKg(values.kg, locale);
     if (wanted === null) return;
     setFailure(null);
     try {

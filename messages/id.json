@@ -1,0 +1,3482 @@
+{
+  "brand": {
+    "name": "Luma.Green",
+    "tagline": "Bergerak Menuju Esok yang Lebih Bersih"
+  },
+  "meta": {
+    "title": "Luma.Green — Bergerak Menuju Esok yang Lebih Bersih",
+    "description": "Luma.Green menyatukan rantai barang bekas India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, penjemputan yang ditimbang, serta catatan setiap serah terima."
+  },
+  "theme": {
+    "label": "Tampilan",
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem"
+  },
+  "common": {
+    "loading": "Memuat…",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "search": "Cari",
+    "language": "Bahasa",
+    "close": "Tutup"
+  },
+  "nav": {
+    "label": "Utama",
+    "home": "Beranda",
+    "howItWorks": "Cara kerja",
+    "contact": "Kontak",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "skipToContent": "Lewati ke konten",
+    "prices": "Harga",
+    "help": "Bantuan",
+    "join": "Gabung",
+    "sellScrap": "Jual barang bekas"
+  },
+  "footer": {
+    "about": "Rantai barang bekas India dalam satu platform, dari rumah hingga pabrik. Setiap serah terima ditimbang, dihargai, dan dicatat.",
+    "navLabel": "Bagian bawah",
+    "useHeading": "Gunakan Luma.Green",
+    "learnHeading": "Pelajari lebih lanjut",
+    "standards": "Standar industri",
+    "solar": "Panel surya atap",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "sell": {
+      "title": "Jual",
+      "summary": "Rumah tangga menjual barang bekas dari rumah dengan harga adil, ditimbang dan dibayar di depan pintu."
+    },
+    "trade": {
+      "title": "Dagang",
+      "summary": "Layanan rekening penampungan yang direncanakan akan menahan pembayaran hingga pengiriman selesai. Demo saat ini hanya mencatat pembayaran simulasi."
+    },
+    "record": {
+      "title": "Catat",
+      "summary": "Setiap serah terima dicatat untuk kepatuhan, dampak, dan bukti daur ulang."
+    }
+  },
+  "principles": {
+    "heading": "Dirancang untuk diaudit",
+    "intro": "Pembeli, regulator, atau auditor dapat menanyakan asal bahan. Catatan dirancang agar jawabannya selalu tersedia.",
+    "auditable": {
+      "title": "Setiap perubahan tercatat",
+      "body": "Setiap tahap (penjemputan ditimbang, transaksi dibayar, muatan dikirim) menambahkan entri ke log audit yang tidak pernah diubah di tempat."
+    },
+    "exact": {
+      "title": "Angka tetap akurat",
+      "body": "Uang disimpan dalam paise bulat dan massa dalam gram bulat. Kesalahan pembulatan tidak dapat menumpuk antara jembatan timbang dan penyelesaian pembayaran."
+    },
+    "frozen": {
+      "title": "Riwayat tetap utuh",
+      "body": "Setiap tanda terima menyimpan harga dan berat pada hari itu. Perubahan harga berikutnya tidak mengubah tanda terima yang sudah ada."
+    }
+  },
+  "prices": {
+    "detail": {
+      "close": "Tutup",
+      "description": "{code} · {family} · Bengaluru",
+      "today": "Hari ini",
+      "low": "Terendah dalam 30 hari",
+      "high": "Tertinggi dalam 30 hari",
+      "floor": "Batas minimum",
+      "noFloor": "Tidak ada",
+      "noHistory": "Belum ada riwayat harga."
+    },
+    "error": {
+      "retry": "Coba lagi",
+      "title": "Harga gagal dimuat",
+      "body": "Periksa koneksi Anda dan coba lagi."
+    },
+    "metaTitle": "Harga barang bekas di Bengaluru hari ini",
+    "metaDescription": "Harga barang bekas di Bengaluru hari ini per kg: kertas, plastik, logam, kaca, dan limbah elektronik, disertai perubahan mingguan, grafik 30 hari, dan pembayaran minimum toko.",
+    "eyebrow": "Bengaluru",
+    "title": "Harga barang bekas hari ini",
+    "lead": "Harga jual barang bekas hari ini per kilo. Toko menentukan harga sendiri, tetapi tidak di bawah batas minimum. Ketuk bahan untuk melihat riwayat 30 hari.",
+    "demoNote": "Contoh harga prototipe, bukan harga pasar langsung.",
+    "date": "Harga untuk {date}",
+    "floorHelp": "Batas minimum: harga terendah per kilo yang boleh dibayarkan toko terverifikasi.",
+    "perKg": "{price}/kg",
+    "floor": "Minimum {price}",
+    "noPrice": "Belum ada harga",
+    "columns": {
+      "material": "Bahan",
+      "today": "Hari ini",
+      "week": "Minggu ini",
+      "month": "30 hari",
+      "floor": "Batas minimum"
+    },
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "Limbah elektronik",
+      "other": "Lainnya"
+    },
+    "factoryGate": {
+      "title": "Harga di pabrik",
+      "body": "Bahan daur ulang yang dijual pendaur ulang kepada produsen."
+    },
+    "change": {
+      "up": "Naik {pct} minggu ini",
+      "down": "Turun {pct} minggu ini",
+      "flat": "Tidak berubah minggu ini",
+      "unknown": "Riwayat belum cukup"
+    },
+    "chart": {
+      "label": "{material}: harga per kilo tiap hari. Gunakan tombol panah untuk berpindah hari.",
+      "point": "{date}: {price}",
+      "floor": "Minimum {price}",
+      "table": "Tampilkan angka",
+      "tableCaption": "{material}, harga per kilo per hari",
+      "date": "Tanggal",
+      "price": "Harga per kg"
+    },
+    "unavailable": {
+      "title": "Harga belum tersedia",
+      "body": "Papan harga sedang dihubungkan. Periksa kembali nanti."
+    },
+    "empty": {
+      "title": "Belum ada harga",
+      "body": "Harga hari ini tampil di sini setelah diterbitkan."
+    },
+    "sellCta": {
+      "title": "Punya barang bekas di rumah?",
+      "body": "Pesan penjemputan dan terima pembayaran di depan pintu.",
+      "action": "Jual barang bekas Anda"
+    }
+  },
+  "standards": {
+    "codes": {
+      "retry": "Coba lagi",
+      "columns": {
+        "name": "Bahan",
+        "code": "Kode",
+        "family": "Kelompok",
+        "stage": "Tahap"
+      },
+      "title": "Satu kode untuk setiap bahan",
+      "nav": "Kode bahan",
+      "body": "Barang bekas yang sama memiliki banyak nama lokal. Kode terbuka memberi setiap bahan satu nama bersama, sehingga sekilo koran berarti sama di toko, tempat pemilahan, dan pabrik.",
+      "caption": "Kode bahan Luma.Green",
+      "count": "{count, plural, one {# bahan} other {# bahan}}",
+      "download": "Unduh kode (CSV)",
+      "stages": {
+        "scrap": "Barang bekas",
+        "recycled": "Hasil daur ulang"
+      },
+      "unavailable": "Daftar kode belum tersedia. Periksa kembali nanti.",
+      "empty": "Belum ada kode bahan.",
+      "error": "Daftar kode gagal dimuat."
+    },
+    "escrow": {
+      "body": "Layanan rekening penampungan yang direncanakan akan menahan pembayaran hingga pengiriman selesai. Demo saat ini hanya mencatat pembayaran simulasi.",
+      "title": "Direncanakan: Rekening penampungan antarusaha",
+      "nav": "Rekening penampungan",
+      "steps": {
+        "accepted": "Penjual menerima pesanan",
+        "paid": "Pembeli membayar ke rekening penampungan",
+        "dispatched": "Penjual mengirim barang",
+        "released": "Pembeli mengonfirmasi dan uang dilepaskan"
+      }
+    },
+    "verification": {
+      "body": "Petugas memeriksa setiap usaha dan Saathi sebelum mereka dapat berdagang.",
+      "title": "Verifikasi",
+      "nav": "Verifikasi",
+      "business": "Usaha: nomor GST jika ada, foto toko atau unit, dan panggilan telepon.",
+      "consent": "Tempat pemilahan, pendaur ulang, dan pabrik: izin yang masih berlaku dari badan pengendalian pencemaran negara bagian.",
+      "saathi": "Saathi: identitas berfoto dan swafoto yang cocok."
+    },
+    "adopt": {
+      "cta": "Bicaralah dengan kami",
+      "title": "Gunakan standar ini",
+      "body": "Kode dan aturan bersifat terbuka dan gratis. Gunakan di toko, tempat pemilahan, atau pabrik Anda, di dalam maupun di luar Luma.Green, dan sampaikan cara memperbaikinya."
+    },
+    "metaTitle": "Standar Luma.Green",
+    "metaDescription": "Direncanakan: Kode bahan terbuka dan aturan sederhana untuk perdagangan barang bekas yang adil di India: mutu, penimbangan, tanda terima, verifikasi, dan rekening penampungan. Bebas diterapkan siapa pun.",
+    "eyebrow": "Standar terbuka",
+    "title": "Standar Luma.Green",
+    "lead": "Aturan sederhana dan terbuka untuk perdagangan barang bekas yang adil: satu kode tiap bahan, mutu jelas, penimbangan jujur, dan catatan setiap serah terima. Siapa pun di industri ini dapat menerapkannya.",
+    "onThisPage": "Di halaman ini",
+    "grading": {
+      "title": "Mutu: kering, terpilah, bersih",
+      "nav": "Penilaian mutu",
+      "body": "Harga adil membutuhkan mutu yang jelas. Tiga pemeriksaan dilakukan sebelum menimbang.",
+      "dry": {
+        "title": "Kering",
+        "body": "Air bukan barang bekas. Kertas dan karton basah dikeringkan sebelum ditimbang."
+      },
+      "sorted": {
+        "title": "Terpilah",
+        "body": "Satu bahan per kantong atau bal, dengan satu kode. Muatan campuran memakai kode MIXED."
+      },
+      "clean": {
+        "title": "Tanpa kontaminasi",
+        "body": "Tanpa makanan, minyak, tanah, atau batu. Semua yang bukan bahan tersebut dikeluarkan terlebih dahulu."
+      }
+    },
+    "weighing": {
+      "title": "Penimbangan adil",
+      "nav": "Penimbangan",
+      "body": "Sebagian besar perselisihan barang bekas menyangkut berat. Aturan ini menjaga kejujuran timbangan.",
+      "stamped": {
+        "title": "Timbangan bertanda tera",
+        "body": "Timbang hanya dengan timbangan yang diverifikasi dan ditera oleh departemen Metrologi Legal."
+      },
+      "shown": {
+        "title": "Penjual melihat berat",
+        "body": "Layar menghadap penjual dan berat dibacakan sebelum harga disepakati."
+      },
+      "receipt": {
+        "title": "Tanda terima digital",
+        "body": "Berat dicatat hingga satuan gram, tidak dibulatkan untuk menguntungkan pihak mana pun."
+      }
+    },
+    "custody": {
+      "title": "Tanda terima dan riwayat penguasaan",
+      "nav": "Tanda terima",
+      "body": "Setiap serah terima mendapat tanda terima. Tanda terima terhubung antartahap agar bal di pendaur ulang dapat dilacak ke toko asalnya.",
+      "receiptTitle": "Isi setiap tanda terima",
+      "fields": {
+        "number": "Nomor tanda terima",
+        "time": "Tanggal dan waktu",
+        "seller": "Penjual",
+        "buyer": "Pembeli",
+        "code": "Kode bahan",
+        "weight": "Berat hingga gram",
+        "rate": "Harga per kg",
+        "total": "Total dan cara pembayarannya"
+      }
+    }
+  },
+  "howItWorks": {
+    "metaTitle": "Cara kerja",
+    "metaDescription": "Direncanakan: Alur barang bekas di Luma.Green: dijual dari rumah dengan harga adil, diperdagangkan sepanjang rantai dengan rekening penampungan, dan dicatat setiap serah terima.",
+    "title": "Cara kerja Luma.Green",
+    "lead": "Barang bekas berpindah tangan empat kali sebelum menjadi sesuatu yang baru. Berikut proses di setiap tahap dan hal yang dicatat Luma.Green.",
+    "stepLabel": "Langkah {number}",
+    "sell": {
+      "body": "Rumah tangga memilih bahan yang dimiliki, melihat penawaran toko sekitar, dan memesan penjemputan atau pengantaran. Pengepul menimbang tiap bahan dan membayar tunai atau UPI; kedua pihak mendapat tanda terima.",
+      "point1": "Tiap toko menentukan harga sendiri, tidak di bawah batas minimum yang diterbitkan",
+      "point2": "Berat dicatat dalam gram dari timbangan toko",
+      "point3": "Tautan pelacakan tanpa perlu akun"
+    },
+    "trade": {
+      "body": "Demo: Pengepul menjual stok terpilah ke tempat pemilahan, tempat pemilahan menjual bal ke pendaur ulang, dan pendaur ulang menjual serpihan, butiran, serta batangan ke pabrik. Pembayaran pembeli menunggu di rekening penampungan hingga barang tiba. Demo menampilkan tahap pembayaran, tetapi tidak menyimpan atau memindahkan uang sungguhan.",
+      "point1": "Hanya usaha terverifikasi yang dapat berdagang",
+      "point2": "Stok berpindah saat muatan dikirim dan diterima",
+      "point3": "Tanda terima bernomor untuk setiap transaksi yang dibayar"
+    },
+    "record": {
+      "body": "Setiap serah terima dicatat: siapa, apa, berapa, kapan, dan di mana. Catatan itu mendasari papan harga, stok, kepatuhan, serta angka dampak, dan menjadi bukti yang diminta EPR serta standar daur ulang.",
+      "point1": "Satu catatan dari pintu rumah ke pabrik",
+      "point2": "Total EPR per tahun fiskal untuk pendaur ulang dan pabrik",
+      "point3": "Bukti pendukung kredit, tidak pernah dihitung dua kali"
+    }
+  },
+  "contact": {
+    "metaTitle": "Kontak",
+    "metaDescription": "Hubungi tim Luma.Green untuk bergabung dalam uji coba Bengaluru.",
+    "title": "Bicaralah dengan kami",
+    "lead": "Kami memulai di Bengaluru bersama sekelompok kecil pengepul, tempat pemilahan, pendaur ulang, dan pabrik. Ceritakan siapa Anda, bahan yang diperdagangkan, serta perkiraan volume bulanan Anda.",
+    "emailHeading": "Akses awal dan pertanyaan umum",
+    "securityHeading": "Laporan keamanan",
+    "securityBody": "Menemukan celah keamanan? Laporkan secara pribadi, jangan di ruang publik."
+  },
+  "help": {
+    "home": "Bantuan",
+    "topics": {
+      "prices": "Harga",
+      "start": "Memulai",
+      "signIn": "Masuk akun",
+      "pickups": "Penjemputan",
+      "weighing": "Penimbangan dan tanda terima",
+      "payments": "Pembayaran",
+      "trading": "Jual beli",
+      "documents": "Dokumen dan pemeriksaan",
+      "safety": "Keselamatan",
+      "carbon": "Karbon dan EPR",
+      "disputes": "Masalah dan perselisihan",
+      "privacy": "Privasi"
+    },
+    "contact": {
+      "topics": {
+        "prices": "Harga",
+        "account": "Masuk atau akun saya",
+        "pickup": "Penjemputan",
+        "payments": "Pembayaran",
+        "documents": "Dokumen dan pemeriksaan",
+        "trade": "Transaksi antarusaha",
+        "solar": "Tenaga surya",
+        "other": "Hal lain"
+      },
+      "phone": "Nomor ponsel",
+      "sending": "Mengirim…",
+      "errors": {
+        "phoneInvalid": "Masukkan nomor ponsel India 10 digit.",
+        "nameInvalid": "Tulis nama Anda (2 hingga 80 huruf).",
+        "roleMissing": "Pilih peran Anda.",
+        "topicMissing": "Pilih topik pesan.",
+        "messageShort": "Tulis sedikit lebih panjang: minimal 5 karakter.",
+        "messageLong": "Batasi hingga kurang dari 1.000 karakter.",
+        "generic": "Pesan gagal dikirim. Periksa koneksi dan coba lagi.",
+        "rateLimited": "Terlalu banyak pesan dari nomor ini. Silakan coba lagi dalam satu jam."
+      },
+      "name": "Nama Anda",
+      "sendAnother": "Kirim pesan lain",
+      "choose": "Pilih satu",
+      "hoursTitle": "Jam buka",
+      "metaTitle": "Hubungi dukungan",
+      "metaDescription": "Tanyakan apa saja kepada tim Luma.Green melalui telepon, WhatsApp, atau pesan singkat. Kami membalas dalam satu hari kerja.",
+      "title": "Hubungi kami",
+      "lead": "Setiap pesan dibaca petugas. Tanyakan dengan kata-kata Anda sendiri.",
+      "formHeading": "Kirim pesan",
+      "phoneHint": "Kami akan menelepon atau mengirim SMS ke nomor ini.",
+      "role": "Anda adalah",
+      "topic": "Tentang apa?",
+      "message": "Pesan Anda",
+      "messageHint": "Apa yang terjadi dan kapan? Tambahkan nomor pemesanan atau transaksi jika ada.",
+      "messageCount": "{count, number} dari {max, number}",
+      "roles": {
+        "household": "Rumah tangga",
+        "kabadiwala": "Pengepul",
+        "yard": "Tempat pemilahan",
+        "recycler": "Pendaur ulang",
+        "manufacturer": "Produsen",
+        "saathi": "Pekerja Saathi",
+        "other": "Peran lain"
+      },
+      "submit": "Kirim pesan",
+      "privacy": "Kami hanya menggunakan nomor Anda untuk membalas.",
+      "sentTitle": "Pesan terkirim",
+      "sentBody": "Terima kasih. Kami menelepon atau mengirim SMS dalam satu hari kerja.",
+      "backToHelp": "Kembali ke bantuan",
+      "unavailableTitle": "Pesan dinonaktifkan di sini",
+      "unavailableBody": "Telepon atau hubungi kami melalui WhatsApp. Kami siap membantu.",
+      "otherWays": "Cara lain menghubungi kami",
+      "callTitle": "Telepon kami",
+      "whatsappTitle": "Hubungi melalui WhatsApp",
+      "replyTitle": "Waktu balasan",
+      "sampleNumbers": "Prototipe: nomor ini adalah contoh."
+    },
+    "guides": {
+      "escrow": {
+        "summary": "Layanan rekening penampungan yang direncanakan akan menahan pembayaran hingga pengiriman selesai. Demo saat ini hanya mencatat pembayaran simulasi.",
+        "steps": {
+          "pay": {
+            "title": "Pembeli membayar ke rekening penampungan",
+            "body": "Uang ditahan dengan aman, belum pada penjual. Penjual dapat melihat uang tersedia sebelum memuat."
+          },
+          "request": {
+            "title": "Pembeli mengirim permintaan",
+            "body": "Permintaan menampilkan bahan, kilogram, dan harga per kg."
+          },
+          "accept": {
+            "title": "Penjual menerima",
+            "body": "Belum ada pembayaran. Saling telepon jika perlu menyepakati rincian."
+          },
+          "dispatch": {
+            "title": "Penjual mengirim muatan",
+            "body": "Tandai dikirim. Faktur menyertai muatan, juga surat jalan elektronik jika diperlukan."
+          },
+          "confirm": {
+            "title": "Pembeli mengonfirmasi pengiriman",
+            "body": "Periksa berat dan mutu, lalu konfirmasi. Uang dilepaskan kepada penjual."
+          }
+        },
+        "title": "Panduan demo: Perlindungan transaksi dengan rekening penampungan"
+      },
+      "weighAndPay": {
+        "steps": {
+          "save": {
+            "title": "Simpan",
+            "body": "Rumah tangga melihat tanda terima di halaman pelacakan, dan stok Anda bertambah sesuai berat yang ditimbang."
+          },
+          "zero": {
+            "title": "Nolkan timbangan",
+            "body": "Mulai dari 0 tanpa beban, di tempat yang terlihat oleh rumah tangga."
+          },
+          "weigh": {
+            "title": "Timbang setiap bahan",
+            "body": "Masukkan kilo masing-masing. Gunakan + dan − untuk langkah setengah kilo."
+          },
+          "total": {
+            "title": "Tampilkan total",
+            "body": "Aplikasi menghitung berdasarkan harga Anda. Perlihatkan layar kepada rumah tangga."
+          },
+          "pay": {
+            "title": "Bayar tunai atau melalui UPI",
+            "body": "Bayar sebelum pergi, lalu pilih cara pembayaran."
+          }
+        },
+        "title": "Timbang dan bayar",
+        "summary": "Catat penjemputan dalam kurang dari satu menit."
+      },
+      "orderRecycled": {
+        "steps": {
+          "confirm": {
+            "title": "Konfirmasi pengiriman",
+            "body": "Konfirmasi untuk melepaskan pembayaran kepada pendaur ulang."
+          },
+          "browse": {
+            "title": "Lihat stok pendaur ulang",
+            "body": "Buka Beli untuk melihat bahan daur ulang menurut jenis, kilo tersedia, dan harga."
+          },
+          "order": {
+            "title": "Kirim pesanan",
+            "body": "Pilih kilo dan kirim. Pendaur ulang menerima atau menolak."
+          },
+          "pay": {
+            "title": "Bayar ke rekening penampungan",
+            "body": "Bayar setelah diterima. Uang ditahan hingga Anda mengonfirmasi pengiriman."
+          },
+          "receive": {
+            "title": "Terima muatan",
+            "body": "Timbang dan periksa mutu di pintu masuk."
+          }
+        },
+        "title": "Panduan demo: Memesan bahan daur ulang",
+        "summary": "Cari bahan baku daur ulang dan pesan sesuai kebutuhan."
+      },
+      "signIn": {
+        "title": "Masuk dengan kode SMS",
+        "summary": "Tanpa kata sandi. Cukup nomor ponsel dan kode 6 digit.",
+        "steps": {
+          "open": {
+            "title": "Buka halaman masuk",
+            "body": "Kunjungi luma.green/login dan pilih bahasa."
+          },
+          "number": {
+            "title": "Masukkan nomor ponsel",
+            "body": "Ketik nomor 10 digit yang digunakan saat bergabung."
+          },
+          "code": {
+            "title": "Ketik kode 6 digit",
+            "body": "Kami mengirimnya melalui SMS. Berlaku 5 menit. Belum ada SMS setelah 30 detik? Ketuk Kirim Ulang."
+          },
+          "stay": {
+            "title": "Tetap masuk",
+            "body": "Anda tetap masuk pada ponsel itu selama 30 hari. Jangan bagikan kode: tim kami tidak pernah memintanya."
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "Tetap aman saat bekerja",
+        "summary": "Perlengkapan keselamatan, mengangkat, barang tajam, baterai, dan mesin: dasar pencegahan cedera.",
+        "steps": {
+          "gear": {
+            "title": "Pakai alat pelindung diri (APD)",
+            "body": "Selalu pakai sarung tangan dan sepatu tertutup. Tambahkan masker untuk muatan berdebu dan kacamata pelindung saat memotong atau menghancurkan."
+          },
+          "lift": {
+            "title": "Angkat dengan kekuatan kaki",
+            "body": "Tekuk lutut, dekatkan beban, dan jangan memutar tubuh. Minta bantuan untuk beban di atas 25 kg."
+          },
+          "sharp": {
+            "title": "Waspadai sisi tajam",
+            "body": "Kaca, kaleng, dan kawat mudah melukai. Bawa kaca dalam kotak, jangan lepas di dalam karung."
+          },
+          "batteries": {
+            "title": "Pisahkan baterai dan limbah elektronik",
+            "body": "Simpan kering dan sejuk, jauh dari barang bekas lain. Jangan bakar kabel atau membongkar baterai maupun layar."
+          },
+          "machines": {
+            "title": "Matikan sebelum mengatasi kemacetan",
+            "body": "Hentikan mesin pengepres atau pencacah dan cabut listrik terlebih dahulu. Jangan masukkan tangan saat mesin berjalan."
+          },
+          "firstAid": {
+            "title": "Sediakan P3K di dekat Anda",
+            "body": "Sediakan kotak P3K dan air bersih di lokasi. Untuk luka dalam atau luka bakar, segera cari bantuan medis."
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "Gabung dan dapatkan verifikasi",
+        "summary": "Yang perlu disiapkan dan yang diperiksa tim kami sebelum usaha aktif.",
+        "steps": {
+          "start": {
+            "title": "Mulai di luma.green/join",
+            "body": "Masuk dengan nomor ponsel dan pilih Tempat Pemilahan, Pendaur Ulang, atau Produsen."
+          },
+          "details": {
+            "title": "Tambahkan rincian usaha",
+            "body": "Nama, alamat dan pin peta, bahan yang ditangani, serta jam kerja. GST opsional."
+          },
+          "consent": {
+            "title": "Tambahkan izin badan pencemaran",
+            "body": "Izin KSPCB atau badan negara bagian Anda: nomor, tanggal berlaku, dan sertifikat PDF."
+          },
+          "photos": {
+            "title": "Tambahkan foto mesin",
+            "body": "Minimal dua foto atau video singkat mesin utama dan lokasi usaha."
+          },
+          "review": {
+            "title": "Kami memeriksa dalam 12–24 jam",
+            "body": "Petugas memeriksa setiap dokumen. Jika ada yang kurang, kami menjelaskan yang perlu diperbaiki."
+          },
+          "live": {
+            "title": "Mulai berdagang",
+            "body": "Setelah disetujui, dasbor terbuka dan pembeli serta penjual sekitar dapat menemukan Anda."
+          }
+        }
+      },
+      "paperwork": {
+        "title": "Faktur dan surat jalan elektronik",
+        "summary": "Dokumen yang menyertai setiap muatan.",
+        "steps": {
+          "invoice": {
+            "title": "Dapatkan faktur dari transaksi",
+            "body": "Setiap transaksi memiliki faktur yang dapat dibuka, dicetak, atau dibagikan."
+          },
+          "ewayBill": {
+            "title": "Surat jalan elektronik di atas ₹50.000",
+            "body": "Aturan GST memerlukan surat jalan elektronik untuk memindahkan barang bernilai lebih dari ₹50.000. Beberapa negara bagian menetapkan batas berbeda."
+          },
+          "vehicle": {
+            "title": "Dokumen ikut kendaraan",
+            "body": "Bawa faktur dan surat jalan elektronik di kendaraan, lalu pastikan nomor kendaraannya sesuai."
+          },
+          "keep": {
+            "title": "Simpan catatan Anda",
+            "body": "Tanda terima dan faktur disimpan dalam aplikasi selama 6 tahun, sesuai ketentuan perpajakan."
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "Panduan demo: Saat muatan tidak sesuai",
+        "summary": "Yang dilakukan jika berat atau mutu tidak sesuai kesepakatan.",
+        "steps": {
+          "check": {
+            "title": "Periksa sebelum mengonfirmasi",
+            "body": "Timbang muatan dan periksa mutu saat tiba, selagi pengemudi masih di lokasi."
+          },
+          "hold": {
+            "title": "Jangan konfirmasi muatan kurang",
+            "body": "Konfirmasi melepaskan uang. Sebelum dikonfirmasi, uang tetap di rekening penampungan."
+          },
+          "report": {
+            "title": "Laporkan dengan foto",
+            "body": "Telepon atau tulis melalui Bantuan, Hubungi Kami. Tambahkan foto slip timbang dan bahan."
+          },
+          "settle": {
+            "title": "Kami membantu kedua pihak bersepakat",
+            "body": "Kami memeriksa berat, foto, dan pesan kedua pihak. Uang tetap aman hingga masalah selesai."
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "Kredit karbon dan EPR secara sederhana",
+        "summary": "Pentingnya pencatatan daur ulang serta hal yang perlu diketahui merek dan pendaur ulang.",
+        "steps": {
+          "record": {
+            "title": "Setiap kilo dicatat",
+            "body": "Setiap penimbangan dan transaksi di Luma.Green dicatat dengan bahan, berat, tanggal, dan tempat."
+          },
+          "carbon": {
+            "title": "Daur ulang mengurangi emisi karbon",
+            "body": "Membuat produk dari bahan daur ulang membutuhkan lebih sedikit energi daripada membuat baru. Penghematan ini dapat menjadi kredit karbon di kemudian hari."
+          },
+          "epr": {
+            "title": "EPR: produsen wajib mengambil kembali",
+            "body": "Tanggung Jawab Produsen yang Diperluas berarti merek yang menjual kemasan, elektronik, atau baterai harus mendaur ulang sebagian limbahnya."
+          },
+          "certificates": {
+            "title": "Pendaur ulang menerbitkan sertifikat EPR",
+            "body": "Pendaur ulang terdaftar menerbitkan sertifikat di portal CPCB untuk bahan yang didaur ulang. Merek membelinya untuk memenuhi target."
+          },
+          "proof": {
+            "title": "Catatan rapi menjadi bukti",
+            "body": "Jejak dari rumah ke pabrik menunjukkan asal bahan. Kredit karbon di Luma.Green akan hadir kemudian."
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "Pesan penjemputan pertama",
+        "summary": "Dari foto hingga penjemputan dipesan dalam sekitar dua menit. Tidak perlu akun.",
+        "steps": {
+          "photo": {
+            "title": "Ambil foto barang bekas",
+            "body": "Opsional: tambahkan satu foto barang bekas, lalu periksa saran barangnya."
+          },
+          "estimate": {
+            "title": "Periksa perkiraan",
+            "body": "Kami menampilkan bahan yang terlihat dan perkiraan kilogram. Ubah kilogram jika tampak salah."
+          },
+          "choose": {
+            "title": "Pilih penjemputan atau pengantaran",
+            "body": "Lihat pengepul terverifikasi sekitar, terdekat lebih dahulu, beserta jam buka."
+          },
+          "slot": {
+            "title": "Pilih waktu",
+            "body": "Pilih slot waktu, lalu periksa alamat dan pin peta."
+          },
+          "code": {
+            "title": "Konfirmasi nomor",
+            "body": "Ketik kode 6 digit yang kami kirim melalui SMS. Cukup itu, tanpa kata sandi."
+          },
+          "track": {
+            "title": "Dapatkan tautan pelacakan",
+            "body": "Kami mengirim tautan pelacakan penjemputan melalui SMS."
+          }
+        }
+      },
+      "getReady": {
+        "title": "Siapkan barang bekas",
+        "summary": "Barang bekas terpilah dan kering lebih cepat ditimbang serta bernilai lebih tinggi.",
+        "steps": {
+          "paper": {
+            "title": "Jaga kertas kering dan rata",
+            "body": "Tumpuk koran dan ratakan kardus. Kertas basah bernilai lebih rendah."
+          },
+          "bottles": {
+            "title": "Kosongkan dan pipihkan botol",
+            "body": "Buang cairan dan pipihkan botol plastik untuk menghemat ruang."
+          },
+          "metal": {
+            "title": "Pisahkan logam",
+            "body": "Masukkan kaleng, baja, dan aluminium dalam kantong tersendiri."
+          },
+          "ewaste": {
+            "title": "Pisahkan perangkat dan baterai",
+            "body": "Simpan ponsel lama, pengisi daya, dan baterai dalam kotak terpisah, jauh dari panas."
+          },
+          "door": {
+            "title": "Letakkan kantong dekat pintu",
+            "body": "Penjemputan menjadi lebih cepat. Simpan di tempat kering."
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "Lacak penjemputan",
+        "summary": "Kapan, siapa, dan berapa, dalam satu halaman.",
+        "steps": {
+          "open": {
+            "title": "Buka tautan dalam SMS",
+            "body": "Bisa dibuka di ponsel mana pun. Tidak perlu masuk."
+          },
+          "when": {
+            "title": "Lihat waktunya",
+            "body": "Tanggal dan slot waktu Anda. Kami memberi tahu jika ada perubahan."
+          },
+          "who": {
+            "title": "Lihat siapa yang datang",
+            "body": "Nama, toko, dan lencana verifikasi mereka. Ketuk Telepon untuk berbicara."
+          },
+          "after": {
+            "title": "Lihat yang Anda terima",
+            "body": "Setelah penjemputan, halaman menampilkan pembayaran dan poin daur ulang."
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "Penimbangan dan pembayaran di depan pintu",
+        "summary": "Cara memastikan setiap kilo dihitung.",
+        "steps": {
+          "zero": {
+            "title": "Pastikan timbangan menunjukkan nol",
+            "body": "Sebelum barang diletakkan, timbangan kosong harus menunjukkan 0."
+          },
+          "each": {
+            "title": "Setiap bahan ditimbang terpisah",
+            "body": "Harga kertas, plastik, dan logam berbeda sehingga ditimbang terpisah."
+          },
+          "amount": {
+            "title": "Aplikasi menghitung jumlah",
+            "body": "Kilogram dikalikan harga per kg pengepul. Anda melihat total sebelum dibayar."
+          },
+          "pay": {
+            "title": "Terima pembayaran langsung",
+            "body": "Tunai atau UPI sebelum mereka pergi. Luma.Green tidak pernah menahan uang Anda."
+          },
+          "receipt": {
+            "title": "Periksa tanda terima",
+            "body": "Halaman pelacakan menampilkan setiap bahan, berat, harga, dan total."
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "Cara harga ditentukan",
+        "summary": "Alasan perkiraan berupa rentang dan cara menghitung jumlah akhir.",
+        "steps": {
+          "estimate": {
+            "title": "Perkiraan memakai harga kota",
+            "body": "Sebelum Anda memilih pengepul, kami menggunakan harga standar Bengaluru sehingga muncul rentang."
+          },
+          "own": {
+            "title": "Setiap pengepul menetapkan harga",
+            "body": "Setelah memilih pengepul, Anda melihat harga mereka untuk tiap bahan."
+          },
+          "floor": {
+            "title": "Tidak di bawah minimum",
+            "body": "Luma.Green menetapkan harga minimum tiap bahan. Pengepul tidak boleh membayar lebih rendah."
+          },
+          "final": {
+            "title": "Berat menentukan jumlah",
+            "body": "Anda dibayar untuk berat yang ditimbang di depan pintu, dengan harga pengepul tersebut."
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "Batalkan atau ubah pemesanan",
+        "summary": "Rencana bisa berubah. Berikut caranya.",
+        "steps": {
+          "open": {
+            "title": "Buka tautan pelacakan",
+            "body": "Semua informasi pemesanan ada di sana."
+          },
+          "cancel": {
+            "title": "Batalkan gratis",
+            "body": "Anda dapat membatalkan sampai pengepul dalam perjalanan. Tanpa biaya."
+          },
+          "declined": {
+            "title": "Jika pengepul tidak bisa datang",
+            "body": "Kami menawarkan penjemputan ke pengepul terdekat berikutnya dan memberi kabar melalui SMS."
+          },
+          "help": {
+            "title": "Perlu waktu lain?",
+            "body": "Batalkan lalu pesan lagi, atau telepon kami untuk bantuan."
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "Ponsel lama, baterai, dan limbah elektronik",
+        "summary": "Aman disimpan di rumah, aman diserahkan.",
+        "steps": {
+          "apart": {
+            "title": "Simpan dalam satu kotak kering",
+            "body": "Jauh dari kompor, air, dan sinar matahari, serta jangkauan anak."
+          },
+          "tape": {
+            "title": "Rekatkan pita pada ujung baterai",
+            "body": "Tutupi ujung logam dengan pita agar tidak memercik."
+          },
+          "swollen": {
+            "title": "Jangan tekan baterai menggembung",
+            "body": "Baterai menggembung dapat terbakar. Simpan tersendiri dalam wadah logam dan beri tahu pengepul."
+          },
+          "handover": {
+            "title": "Serahkan perangkat utuh",
+            "body": "Jangan merusak ponsel atau melepas bagian. Sebutkan limbah elektronik saat memesan."
+          }
+        }
+      },
+      "registerShop": {
+        "title": "Daftarkan toko",
+        "summary": "Data yang diisi dan lama pemeriksaan.",
+        "steps": {
+          "start": {
+            "title": "Mulai di luma.green/join",
+            "body": "Masuk dengan nomor ponsel dan pilih Pengepul."
+          },
+          "shop": {
+            "title": "Tambahkan toko",
+            "body": "Nama Anda, nama toko, alamat dengan pin peta, serta jam buka."
+          },
+          "pickups": {
+            "title": "Sampaikan apakah menjemput",
+            "body": "Pilih kendaraan: gerobak, sepeda, bajaj, atau truk kecil. Tidak punya kendaraan? Rumah tangga tetap bisa mengantar."
+          },
+          "gst": {
+            "title": "GST opsional",
+            "body": "Tambahkan nomor GST jika ada. Jika tidak, cukup nyatakan."
+          },
+          "review": {
+            "title": "Kami memeriksa dalam 12–24 jam",
+            "body": "Petugas memeriksa rincian Anda. Setelah disetujui, dasbor terbuka."
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "Jawab permintaan penjemputan",
+        "summary": "Penjemputan baru dari rumah sekitar dan cara menanganinya.",
+        "steps": {
+          "see": {
+            "title": "Lihat permintaan baru",
+            "body": "Setiap permintaan menampilkan wilayah, slot waktu, bahan, perkiraan kilo, dan pembayaran Anda."
+          },
+          "answer": {
+            "title": "Terima atau tolak",
+            "body": "Terima untuk mengambilnya. Jika ditolak, permintaan dialihkan ke pengepul terdekat berikutnya tanpa memberi tahu rumah tangga siapa yang menolak."
+          },
+          "auto": {
+            "title": "Aktifkan penerimaan otomatis",
+            "body": "Saat aktif, setiap permintaan di wilayah Anda langsung diterima, bahkan malam hari."
+          },
+          "go": {
+            "title": "Telepon dan berangkat",
+            "body": "Setelah menerima, nomor telepon dan alamat lengkap terlihat. Telepon untuk memberi tahu bahwa Anda berangkat."
+          }
+        }
+      },
+      "setPrices": {
+        "title": "Tentukan harga Anda",
+        "summary": "Anda menentukan pembayaran, di atas harga minimum.",
+        "steps": {
+          "open": {
+            "title": "Buka Harga Saya",
+            "body": "Setiap bahan terlihat dengan harga minimum di sampingnya."
+          },
+          "enter": {
+            "title": "Masukkan harga per kg",
+            "body": "Ketik harga yang ingin Anda bayarkan kepada rumah tangga untuk tiap bahan."
+          },
+          "floor": {
+            "title": "Tetap di atas minimum",
+            "body": "Harga di bawah minimum tidak disimpan. Jika harga minimum naik, harga Anda juga naik dan kami memberi tahu."
+          },
+          "blank": {
+            "title": "Kosongkan harga bahan",
+            "body": "Jika tidak menetapkan harga, harga standar kota digunakan."
+          },
+          "history": {
+            "title": "Tanda terima lama tidak berubah",
+            "body": "Harga baru hanya berlaku untuk penjemputan baru. Tanda terima lama menyimpan harga yang sudah dibayar."
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "Panduan demo: Pilah stok dan jual ke tempat pemilahan",
+        "summary": "Dari banyak penjemputan kecil menjadi muatan yang dibutuhkan tempat pemilahan.",
+        "steps": {
+          "grows": {
+            "title": "Stok bertambah otomatis",
+            "body": "Setiap penjemputan yang ditimbang ditambahkan ke Stok Saya."
+          },
+          "sort": {
+            "title": "Catat pemilahan",
+            "body": "Pisahkan barang campuran menurut bahan sebenarnya. Misalnya, kertas campuran menjadi koran, karton, dan limbah."
+          },
+          "show": {
+            "title": "Tampilkan stok ke tempat pemilahan",
+            "body": "Aktifkan Tampilkan ke Tempat Pemilahan agar tempat sekitar dapat melihat stok Anda."
+          },
+          "sell": {
+            "title": "Terima permintaan tempat pemilahan",
+            "body": "Periksa kilo dan harga, lalu terima. Tempat pemilahan membayar ke rekening penampungan sebelum mengambil."
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "Saat rumah tangga tidak setuju",
+        "summary": "Tetap tenang, jelas, dan adil.",
+        "steps": {
+          "reweigh": {
+            "title": "Timbang ulang bersama",
+            "body": "Nolkan timbangan dan timbang ulang barang di tempat yang dapat mereka lihat."
+          },
+          "show": {
+            "title": "Tunjukkan harga Anda",
+            "body": "Tampilkan harga per kg dan total pada ponsel."
+          },
+          "noForce": {
+            "title": "Jangan memaksa penjualan",
+            "body": "Jika masih tidak setuju, mereka tidak wajib menjual bahan itu. Jangan masukkan dalam tanda terima."
+          },
+          "call": {
+            "title": "Telepon kami jika belum selesai",
+            "body": "Kami dapat berbicara dengan kedua pihak. Setiap tanda terima menampilkan berat dan harga."
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "Panduan demo: Membeli stok dari pengepul",
+        "summary": "Cari barang bekas terpilah di sekitar dan pesan pengambilan.",
+        "steps": {
+          "browse": {
+            "title": "Buka Beli",
+            "body": "Lihat stok sekitar menurut bahan dan jarak, beserta kilo dan harga."
+          },
+          "request": {
+            "title": "Kirim permintaan",
+            "body": "Pilih jumlah kilo yang diinginkan. Harga per kg terlihat sebelum dikirim."
+          },
+          "pay": {
+            "title": "Bayar ke rekening penampungan",
+            "body": "Saat pengepul menerima, lakukan pembayaran. Uang ditahan sampai Anda mengonfirmasi."
+          },
+          "collect": {
+            "title": "Ambil dan timbang",
+            "body": "Ambil muatan dan timbang di tempat pemilahan Anda."
+          },
+          "confirm": {
+            "title": "Konfirmasi untuk melepaskan pembayaran",
+            "body": "Jika berat dan mutu sesuai, konfirmasi. Pengepul dibayar."
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "Panduan demo: Menjual bal terpilah ke pendaur ulang",
+        "summary": "Tawarkan stok sekali dan biarkan pendaur ulang menghubungi Anda.",
+        "steps": {
+          "list": {
+            "title": "Tawarkan stok Anda",
+            "body": "Di Jual, tambahkan bahan, kilo, dan harga per kg."
+          },
+          "requests": {
+            "title": "Terima permintaan",
+            "body": "Pendaur ulang yang membeli bahan tersebut dapat melihat penawaran dan mengirim permintaan."
+          },
+          "accept": {
+            "title": "Terima, lalu tunggu pembayaran",
+            "body": "Muat hanya setelah uang pembeli masuk rekening penampungan."
+          },
+          "dispatch": {
+            "title": "Kirim muatan",
+            "body": "Tandai dikirim dengan faktur dan surat jalan elektronik untuk muatan di atas ₹50.000."
+          },
+          "paid": {
+            "title": "Terima pembayaran",
+            "body": "Saat pendaur ulang mengonfirmasi pengiriman, uang dilepaskan kepada Anda."
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "Panduan demo: Membeli barang bekas terpilah dari tempat pemilahan",
+        "summary": "Pasokan rutin bermutu untuk lini produksi.",
+        "steps": {
+          "browse": {
+            "title": "Cari bal terdekat",
+            "body": "Buka Beli untuk melihat penawaran tempat pemilahan menurut bahan dan jarak."
+          },
+          "request": {
+            "title": "Minta muatan",
+            "body": "Pilih kilo. Harga per kg terlihat sebelum dikirim."
+          },
+          "pay": {
+            "title": "Bayar ke rekening penampungan",
+            "body": "Setelah tempat pemilahan menerima, bayar. Uang ditahan hingga Anda mengonfirmasi pengiriman."
+          },
+          "confirm": {
+            "title": "Timbang, periksa, konfirmasi",
+            "body": "Timbang muatan di pintu masuk dan periksa mutu sebelum mengonfirmasi."
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "Panduan demo: Menjual bahan daur ulang ke produsen",
+        "summary": "Tampilkan hasil lini produksi agar pabrik dapat memesan.",
+        "steps": {
+          "list": {
+            "title": "Tawarkan hasil produksi",
+            "body": "Tambahkan serpihan, butiran, bal, atau batangan beserta kilo tersedia dan harga per kg."
+          },
+          "orders": {
+            "title": "Terima pesanan",
+            "body": "Produsen melihat penawaran dan meminta kilo yang dibutuhkan."
+          },
+          "load": {
+            "title": "Muat setelah pembayaran",
+            "body": "Terima, lalu kirim muatan setelah pembayaran masuk rekening penampungan."
+          },
+          "paid": {
+            "title": "Terima pembayaran saat terkirim",
+            "body": "Uang dilepaskan saat produsen mengonfirmasi."
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "Panduan demo: Memeriksa pengiriman",
+        "summary": "Pemeriksaan cepat sebelum mengonfirmasi dan melepaskan pembayaran.",
+        "steps": {
+          "papers": {
+            "title": "Cocokkan dokumen",
+            "body": "Faktur dan surat jalan elektronik harus sesuai dengan pesanan dan kendaraan."
+          },
+          "weigh": {
+            "title": "Timbang sendiri",
+            "body": "Timbang truk penuh dan kosong. Selisihnya adalah berat yang diterima."
+          },
+          "look": {
+            "title": "Periksa bahan",
+            "body": "Bandingkan warna, kelembapan, dan kotoran dengan pesanan."
+          },
+          "decide": {
+            "title": "Konfirmasi atau laporkan",
+            "body": "Semuanya sesuai? Konfirmasi. Tidak sesuai? Laporkan dengan foto, dan uang tetap di rekening penampungan."
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "Menjadi Saathi",
+        "summary": "Gabung dengan identitas berfoto dan swafoto, lalu mulai mengambil pekerjaan sekitar.",
+        "steps": {
+          "start": {
+            "title": "Mulai di luma.green/join",
+            "body": "Masuk dengan nomor ponsel dan pilih Saathi."
+          },
+          "work": {
+            "title": "Pilih pekerjaan",
+            "body": "Penjemputan rumah, bantuan toko pengepul, pemilahan, atau sif di pendaur ulang maupun pabrik."
+          },
+          "area": {
+            "title": "Atur wilayah dan waktu",
+            "body": "Tempat tinggal, jarak perjalanan (2, 5, atau 10 km), dan waktu luang Anda."
+          },
+          "id": {
+            "title": "Tambahkan identitas berfoto dan swafoto",
+            "body": "Kartu pemilih, SIM, PAN, atau Aadhaar tersamarkan. Jangan gunakan nomor Aadhaar lengkap."
+          },
+          "review": {
+            "title": "Kami memeriksa dalam 12–24 jam",
+            "body": "Petugas mencocokkan swafoto dengan identitas. Setelah itu Anda dapat mengambil pekerjaan."
+          }
+        }
+      },
+      "findJobs": {
+        "title": "Cari dan ambil pekerjaan",
+        "summary": "Bekerja di sekitar Anda, saat Anda inginkan.",
+        "steps": {
+          "home": {
+            "title": "Lihat pekerjaan di Beranda",
+            "body": "Setiap pekerjaan menampilkan tempat, hari, waktu, dan upah."
+          },
+          "accept": {
+            "title": "Terima pekerjaan",
+            "body": "Ketuk Terima. Usaha dapat melihat Anda akan datang."
+          },
+          "arrive": {
+            "title": "Datang tepat waktu",
+            "body": "Telepon lebih dahulu jika terlambat. Tepat waktu membantu Anda mendapat lebih banyak pekerjaan."
+          },
+          "done": {
+            "title": "Tandai selesai",
+            "body": "Setelah bekerja, tandai selesai agar tercatat dalam penghasilan."
+          }
+        }
+      },
+      "homePickup": {
+        "title": "Lakukan penjemputan rumah",
+        "summary": "Ramah, cepat, dan adil di setiap pintu.",
+        "steps": {
+          "call": {
+            "title": "Telepon sebelum berangkat",
+            "body": "Sebutkan nama, asal toko, dan waktu kedatangan."
+          },
+          "greet": {
+            "title": "Perkenalkan diri",
+            "body": "Di depan pintu, sebutkan nama Anda dan toko. Tunggu diundang masuk."
+          },
+          "weigh": {
+            "title": "Timbang di tempat terlihat",
+            "body": "Nolkan timbangan dan timbang setiap bahan di depan mereka."
+          },
+          "record": {
+            "title": "Bayar dan catat",
+            "body": "Bayar sesuai arahan toko dan simpan pembayaran sebelum pergi."
+          },
+          "deliver": {
+            "title": "Bawa ke toko",
+            "body": "Bawa barang bekas langsung ke toko dan serahkan."
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "Cara menerima upah",
+        "summary": "Sepakati upah dahulu, lalu periksa di Penghasilan.",
+        "steps": {
+          "agree": {
+            "title": "Sepakati upah dahulu",
+            "body": "Toko atau usaha tempat Anda bekerja membayar Anda. Sepakati jumlah sebelum pekerjaan dimulai."
+          },
+          "earnings": {
+            "title": "Periksa Penghasilan",
+            "body": "Lihat pekerjaan selesai dan upah masing-masing."
+          },
+          "upi": {
+            "title": "Minta pembayaran UPI",
+            "body": "UPI meninggalkan catatan sehingga jumlah yang diterima jelas."
+          },
+          "problem": {
+            "title": "Belum dibayar?",
+            "body": "Bicara dengan usaha dahulu. Belum selesai? Telepon kami."
+          }
+        }
+      }
+    },
+    "roles": {
+      "household": {
+        "name": "Rumah tangga",
+        "who": "Menjual barang bekas dari rumah",
+        "title": "Bantuan rumah tangga",
+        "lead": "Pesan penjemputan, dapatkan penimbangan adil, dan terima pembayaran di depan pintu. Tidak perlu akun."
+      },
+      "kabadiwala": {
+        "name": "Pengepul",
+        "who": "Mengelola toko barang bekas",
+        "title": "Bantuan pengepul",
+        "lead": "Terima penjemputan, timbang dan bayar dalam satu menit, tentukan harga, lalu jual ke tempat pemilahan."
+      },
+      "yard": {
+        "name": "Tempat pemilahan",
+        "who": "Membeli dari pengepul dan memilah lebih lanjut",
+        "title": "Bantuan tempat pemilahan",
+        "lead": "Demo: Cari stok sekitar, jual bal terpilah ke pendaur ulang, dan berdagang aman dengan rekening penampungan."
+      },
+      "recycler": {
+        "name": "Pendaur ulang",
+        "who": "Mengubah barang bekas menjadi bahan baku",
+        "title": "Bantuan pendaur ulang",
+        "lead": "Beli barang bekas bermutu dari tempat pemilahan, jual hasil ke pabrik, dan jaga catatan EPR tetap rapi."
+      },
+      "manufacturer": {
+        "name": "Produsen",
+        "who": "Membuat produk dari bahan daur ulang",
+        "title": "Bantuan produsen",
+        "lead": "Pesan bahan daur ulang, periksa pengiriman, dan simpan catatan yang diminta EPR."
+      },
+      "saathi": {
+        "name": "Pekerja Saathi",
+        "who": "Mengerjakan penjemputan dan sif singkat",
+        "title": "Bantuan Saathi",
+        "lead": "Gabung dengan identitas berfoto, cari pekerjaan sekitar, bekerja aman, dan terima upah."
+      }
+    },
+    "role": {
+      "onThisPage": "Di halaman ini",
+      "guidesHeading": "Panduan",
+      "guidesLead": "Langkah demi langkah, dengan gambar.",
+      "steps": "{count, plural, one {# langkah} other {# langkah}}",
+      "faqsHeading": "Pertanyaan umum",
+      "faqsLead": "Ketuk pertanyaan untuk melihat jawaban.",
+      "tutorialsHeading": "Video panduan",
+      "tutorialsLead": "Video singkat dalam bahasa Anda.",
+      "trainingHeading": "Pelatihan",
+      "trainingLead": "Pelajaran singkat. Tandai selesai setiap kali selesai belajar.",
+      "otherRoles": "Bantuan untuk peran lain"
+    },
+    "contactStrip": {
+      "call": "Telepon",
+      "title": "Masih perlu bantuan?",
+      "body": "Bicara dengan petugas. Kami membalas dalam satu hari kerja.",
+      "whatsapp": "WhatsApp",
+      "write": "Tulis kepada kami"
+    },
+    "guide": {
+      "stepsHeading": "Langkah",
+      "metaTitle": "{guide} · {role}",
+      "stepLabel": "Langkah {number} dari {total}",
+      "relatedHeading": "Pertanyaan terkait",
+      "nextHeading": "Panduan berikutnya"
+    },
+    "metaTitle": "Pusat bantuan",
+    "metaDescription": "Panduan, jawaban, dan pelatihan sederhana bagi rumah tangga, pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi di Luma.Green.",
+    "eyebrow": "Pusat bantuan",
+    "title": "Apa yang dapat kami bantu?",
+    "lead": "Panduan singkat, jawaban jelas, dan pelatihan cepat bagi semua pengguna Luma.Green.",
+    "breadcrumb": "Anda di sini",
+    "hours": "Senin hingga Sabtu, pukul 09.00–19.00",
+    "replyTime": "Kami membalas dalam satu hari kerja.",
+    "search": {
+      "label": "Cari bantuan",
+      "placeholder": "Coba: kode SMS atau rekening penampungan",
+      "clear": "Hapus pencarian",
+      "summary": "{count, plural, =0 {Tidak ada jawaban} one {# jawaban} other {# jawaban}} untuk “{query}”",
+      "topicSummary": "{count, plural, =0 {Tidak ada jawaban} one {# jawaban} other {# jawaban}} tentang {topic}",
+      "emptyTitle": "Tidak ditemukan",
+      "emptyBody": "Coba satu kata singkat, pilih topik, atau tanyakan langsung kepada kami.",
+      "ask": "Tanya kami",
+      "guide": "Panduan",
+      "question": "Pertanyaan",
+      "forRoles": "Untuk {roles}",
+      "showMore": "Tampilkan semua {count} jawaban"
+    },
+    "topicsHeading": "Jelajahi menurut topik",
+    "rolesHeading": "Bantuan untuk Anda",
+    "rolesLead": "Pilih peran untuk melihat panduan, pertanyaan, dan pelatihan Anda.",
+    "guideCount": "{count, plural, one {# panduan} other {# panduan}}",
+    "tutorial": {
+      "comingSoon": "Video segera tersedia",
+      "minutes": "{minutes} menit"
+    },
+    "training": {
+      "progressLabel": "Pelatihan Anda",
+      "progress": "{done} dari {total} selesai",
+      "minutes": "{minutes} menit",
+      "markDone": "Tandai sudah selesai",
+      "openGuide": "Buka panduan",
+      "badgeTitle": "Pelatihan selesai",
+      "badgeBody": "Bagus! Semua pelajaran selesai. Kembali kapan saja untuk mengulang.",
+      "reset": "Mulai lagi",
+      "savedHere": "Kemajuan disimpan di perangkat ini."
+    },
+    "faqs": {
+      "noCode": {
+        "q": "Saya tidak menerima kode SMS",
+        "a": "Tunggu 30 detik lalu ketuk Kirim Ulang. Pastikan nomor benar dan ponsel mendapat sinyal. Kode berlaku 5 menit."
+      },
+      "newPhone": {
+        "q": "Ponsel atau nomor saya baru",
+        "a": "Ponsel baru, nomor sama: cukup masuk lagi. Nomor baru: telepon kami dan akun akan dipindahkan setelah identitas diperiksa."
+      },
+      "deleteData": {
+        "q": "Bisakah saya melihat atau menghapus data?",
+        "a": "Ya. Tulis melalui Kontak dan kami akan melakukannya dalam 30 hari. Kami hanya menyimpan yang diwajibkan hukum, seperti tanda terima."
+      },
+      "verifyTime": {
+        "q": "Berapa lama pemeriksaannya?",
+        "a": "Biasanya 12 hingga 24 jam setelah pendaftaran dikirim. Jika perlu hal lain, kami jelaskan dengan tepat."
+      },
+      "noAccount": {
+        "q": "Apakah perlu akun?",
+        "a": "Tidak. Anda mengonfirmasi nomor ponsel dengan kode SMS saat memesan. Tidak ada kata sandi yang perlu diingat."
+      },
+      "whatCanISell": {
+        "q": "Apa yang bisa dijual?",
+        "a": "Kertas dan karton, botol dan wadah plastik, logam, kaca, serta elektronik lama. Tidak yakin? Ambil foto dan perkiraan akan memberi tahu."
+      },
+      "howPriceWorks": {
+        "q": "Bagaimana pembayaran dihitung?",
+        "a": "Berat setiap bahan dikalikan harga per kg pengepul. Harga mereka tidak boleh di bawah minimum Luma.Green."
+      },
+      "howPaid": {
+        "q": "Bagaimana saya dibayar?",
+        "a": "Di depan pintu, tunai atau UPI, sebelum pengepul pergi. Luma.Green mencatat pembayaran tetapi tidak pernah menahan uang Anda."
+      },
+      "recyclePoints": {
+        "q": "Apa itu poin daur ulang?",
+        "a": "Ucapan terima kasih atas daur ulang: 1 poin untuk setiap ₹10 yang Anda terima. Kegunaan poin segera tersedia."
+      },
+      "weightWrong": {
+        "q": "Bagaimana jika berat tampak salah?",
+        "a": "Minta timbang ulang di depan Anda mulai dari nol. Masih salah? Telepon kami: setiap berat tercatat pada tanda terima."
+      },
+      "canCancel": {
+        "q": "Bisakah saya membatalkan?",
+        "a": "Ya, gratis sampai pengepul dalam perjalanan. Buka tautan pelacakan dan ketuk Batal."
+      },
+      "kabadiwalasChecked": {
+        "q": "Apakah pengepul diperiksa?",
+        "a": "Ya. Tim memeriksa setiap toko sebelum dapat menerima pemesanan. Cari lencana terverifikasi."
+      },
+      "whoSeesAddress": {
+        "q": "Siapa melihat nomor dan alamat saya?",
+        "a": "Hanya pengepul yang menerima penjemputan dan tim kami. Kami menyimpannya selama 12 bulan setelah pemesanan terakhir."
+      },
+      "photosKept": {
+        "q": "Apa yang terjadi pada foto saya?",
+        "a": "Jangan sertakan wajah, dokumen, atau pelat nomor. Foto dikirim ke penyedia AI untuk perkiraan ini. Luma.Green tidak menyimpannya."
+      },
+      "whyVerify": {
+        "q": "Mengapa saya perlu diverifikasi?",
+        "a": "Rumah tangga memercayai Anda di depan pintu mereka. Pemeriksaan tiap toko menjaga keselamatan dan membuat lencana verifikasi bermakna."
+      },
+      "gstNeeded": {
+        "q": "Apakah perlu nomor GST?",
+        "a": "Tidak, opsional. Tambahkan jika ada."
+      },
+      "ownPrices": {
+        "q": "Bisakah menentukan harga sendiri?",
+        "a": "Ya, untuk setiap bahan, selama tidak di bawah harga minimum Luma.Green."
+      },
+      "noVehicle": {
+        "q": "Saya tidak punya kendaraan. Bisa bergabung?",
+        "a": "Ya. Rumah tangga dapat membawa barang ke toko. Penjemputan Saathi untuk toko tanpa kendaraan akan hadir kemudian."
+      },
+      "autoAccept": {
+        "q": "Apa itu penerimaan otomatis?",
+        "a": "Saat aktif, setiap permintaan baru di wilayah Anda langsung diterima, bahkan malam hari. Nonaktifkan saat tidak bisa pergi."
+      },
+      "rejectRequest": {
+        "q": "Apa yang terjadi jika saya menolak?",
+        "a": "Permintaan dialihkan ke pengepul terdekat berikutnya. Rumah tangga tidak diberi tahu siapa yang menolak."
+      },
+      "payHousehold": {
+        "q": "Apakah Luma.Green membayar rumah tangga untuk saya?",
+        "a": "Tidak. Anda membayar tunai atau UPI di depan pintu. Aplikasi mencatat jumlah dan caranya."
+      },
+      "paidByYard": {
+        "q": "Bagaimana saya dibayar saat menjual ke tempat pemilahan?",
+        "a": "Untuk saat ini, sepakati pembayaran langsung dengan tempat pemilahan. Rekening penampungan direncanakan; demo tidak memindahkan uang."
+      },
+      "whoSeesShop": {
+        "q": "Siapa dapat melihat toko saya?",
+        "a": "Setelah disetujui, nama, wilayah, dan jam toko bersifat publik agar rumah tangga dapat menemukan Anda. Dokumen tetap pribadi."
+      },
+      "consentDocs": {
+        "q": "Dokumen apa yang diperlukan?",
+        "a": "Izin badan pencemaran (KSPCB di Karnataka) beserta nomor, tanggal berlaku, dan sertifikat PDF, serta foto mesin. GST opsional."
+      },
+      "noConsentNeeded": {
+        "q": "Unit saya tidak perlu izin. Bisa bergabung?",
+        "a": "Ya. Centang kotak yang menyatakan tidak perlu izin dan jelaskan alasannya, misalnya hanya pengepresan kertas. Kami akan memeriksa."
+      },
+      "consentExpiry": {
+        "q": "Apa yang terjadi saat izin kedaluwarsa?",
+        "a": "Periksa tanggal kedaluwarsa di Kepatuhan. Izin dengan sisa kurang dari 90 hari ditandai. Perbarui melalui badan pengendalian pencemaran Anda dan hubungi dukungan untuk memperbarui sertifikat."
+      },
+      "findStock": {
+        "q": "Bagaimana mencari stok sekitar?",
+        "a": "Buka Beli. Stok pengepul terverifikasi ditampilkan menurut bahan, terdekat lebih dahulu."
+      },
+      "whoSetsPrice": {
+        "q": "Siapa menentukan harga?",
+        "a": "Penjual menawarkan harga per kg. Anda melihatnya sebelum mengirim permintaan dan dapat menelepon untuk menyepakati rincian."
+      },
+      "whatIsEscrow": {
+        "q": "Apa itu rekening penampungan?",
+        "a": "Tahap perantara yang aman: uang pembeli ditahan sampai muatan tiba sesuai kesepakatan, lalu dilepaskan kepada penjual. Rekening penampungan usaha masih direncanakan."
+      },
+      "whenSellerPaid": {
+        "q": "Kapan penjual dibayar?",
+        "a": "Segera setelah pembeli mengonfirmasi pengiriman."
+      },
+      "shortLoad": {
+        "q": "Bagaimana jika muatan kurang?",
+        "a": "Demo menunjukkan usulan tahap perselisihan. Demo tidak dapat menahan atau melindungi uang nyata."
+      },
+      "ewayBill": {
+        "q": "Apakah perlu surat jalan elektronik?",
+        "a": "Ya, untuk memindahkan barang bernilai lebih dari ₹50.000, dan layar transaksi mengingatkannya. Beberapa negara bagian menetapkan batas berbeda."
+      },
+      "whoSeesBusiness": {
+        "q": "Siapa dapat melihat usaha saya?",
+        "a": "Pembeli dan penjual terverifikasi melihat nama, wilayah, dan bahan yang Anda tangani. Hanya Anda dan tim kami melihat dokumen."
+      },
+      "pwpRegistration": {
+        "q": "Saya mendaur ulang plastik. Perlu tambahan?",
+        "a": "Siapkan pendaftaran Pengolah Limbah Plastik CPCB. Merek memintanya, dan pendaftaran ini memungkinkan penerbitan sertifikat EPR."
+      },
+      "buyFromAnyYard": {
+        "q": "Bisakah membeli dari lebih dari satu tempat pemilahan?",
+        "a": "Ya. Beli dari tempat pemilahan terverifikasi mana pun yang menawarkan kebutuhan Anda, sesering yang diinginkan."
+      },
+      "eprRecords": {
+        "q": "Apakah catatan Luma.Green membantu EPR?",
+        "a": "Ya. Setiap transaksi mencatat bahan, berat, tanggal, dan penjual untuk mendukung pelaporan EPR. Anda tetap melapor di portal CPCB."
+      },
+      "carbonCredits": {
+        "q": "Apakah saya mendapat kredit karbon?",
+        "a": "Belum. Kami mencatat setiap kilo sekarang agar kredit dapat diterbitkan setelah metodenya diverifikasi."
+      },
+      "whatCanIBuy": {
+        "q": "Apa yang bisa dibeli?",
+        "a": "Bahan daur ulang dari pendaur ulang terverifikasi, seperti serpihan PET, butiran HDPE, kertas kraft, dan batangan aluminium."
+      },
+      "qualityWrong": {
+        "q": "Bagaimana jika mutu tidak sesuai pesanan?",
+        "a": "Demo menunjukkan usulan tahap perselisihan. Demo tidak dapat menahan atau melindungi uang nyata."
+      },
+      "recycledContent": {
+        "q": "Apakah membeli bahan daur ulang membantu EPR?",
+        "a": "Ya. Aturan EPR plastik menetapkan target kandungan daur ulang pada kemasan, dan catatan transaksi menunjukkan jumlah bahan daur ulang yang dibeli."
+      },
+      "carbonClaims": {
+        "q": "Bisakah saya mengklaim penghematan karbon?",
+        "a": "Layar Dampak memperkirakan karbon yang dihemat. Anggap angka ini indikatif hingga diverifikasi secara independen."
+      },
+      "whoCanJoin": {
+        "q": "Siapa bisa menjadi Saathi?",
+        "a": "Siapa pun berusia 18 tahun atau lebih yang ingin memperoleh penghasilan dari pekerjaan singkat dekat rumah."
+      },
+      "whichId": {
+        "q": "Identitas apa yang bisa dipakai?",
+        "a": "Kartu pemilih, SIM, PAN, dokumen DigiLocker, atau Aadhaar yang hanya menampilkan 4 digit terakhir."
+      },
+      "fullAadhaar": {
+        "q": "Mengapa bukan Aadhaar lengkap?",
+        "a": "Kami tidak pernah menyimpan nomor Aadhaar. Jika tidak sengaja mengunggah yang lengkap, kami meminta salinan tersamarkan dan menghapus yang pertama."
+      },
+      "needVehicle": {
+        "q": "Apakah perlu kendaraan?",
+        "a": "Tidak. Bantuan toko dan sif tidak memerlukannya. Untuk penjemputan rumah, sepeda, motor, atau bajaj membantu."
+      },
+      "whoPaysMe": {
+        "q": "Siapa membayar saya?",
+        "a": "Pengepul atau usaha tempat Anda bekerja. Sepakati jumlah sebelum mulai."
+      },
+      "chooseHours": {
+        "q": "Bisakah memilih waktu kerja?",
+        "a": "Ya. Beri tahu hari dan waktu luang Anda, lalu ambil hanya pekerjaan yang diinginkan."
+      },
+      "safetyGear": {
+        "q": "Perlengkapan keselamatan apa yang diperlukan?",
+        "a": "Sarung tangan dan sepatu tertutup untuk setiap pekerjaan, serta masker untuk pekerjaan berdebu. Tanyakan kebutuhan tambahan kepada usaha."
+      },
+      "whoSeesId": {
+        "q": "Siapa melihat identitas dan swafoto saya?",
+        "a": "Hanya Anda dan tim kami untuk memastikan identitas Anda."
+      },
+      "jobWentWrong": {
+        "q": "Ada masalah saat bekerja. Apa yang harus dilakukan?",
+        "a": "Utamakan keselamatan. Beri tahu usaha, lalu telepon kami. Kami mendengarkan kedua pihak."
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "Pesan penjemputan dalam dua menit",
+      "sortAtHome": "Memilah barang bekas di rumah",
+      "batterySafety": "Menangani baterai lama dengan aman",
+      "firstDay": "Hari pertama di Luma.Green",
+      "weighAndPayVideo": "Timbang dan bayar dalam satu menit",
+      "settingPrices": "Menentukan harga",
+      "buyingFromKabadiwalas": "Membeli dari pengepul",
+      "listingBales": "Menawarkan bal ke pendaur ulang",
+      "escrowExplained": "Demo: Rekening penampungan dalam dua menit",
+      "buyingFromYards": "Membeli dari tempat pemilahan",
+      "sellingOutput": "Menjual hasil produksi",
+      "eprPlainWords": "EPR dengan bahasa sederhana",
+      "firstOrder": "Membuat pesanan pertama",
+      "checkingDelivery": "Memeriksa pengiriman",
+      "becomingSaathi": "Menjadi Saathi",
+      "goodPickup": "Penjemputan rumah yang baik",
+      "liftingSafely": "Mengangkat dan membawa dengan aman"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "Bahan yang dapat didaur ulang",
+        "p1": "Kertas, karton, sebagian besar plastik, logam, dan kaca memiliki nilai.",
+        "p2": "Ponsel lama, pengisi daya, dan baterai adalah limbah elektronik: pisahkan.",
+        "p3": "Sisa makanan dan popok kotor tidak dapat didaur ulang."
+      },
+      "sortOnce": {
+        "title": "Pilah sekali",
+        "p1": "Gunakan kantong terpisah untuk kertas, plastik, dan logam.",
+        "p2": "Jaga semuanya kering dan bersih.",
+        "p3": "Barang bekas terpilah lebih cepat ditimbang dan dihargai lebih baik."
+      },
+      "batteriesSafe": {
+        "title": "Baterai yang aman",
+        "p1": "Rekatkan pita pada ujung logam.",
+        "p2": "Simpan kering, sejuk, dan jauh dari anak.",
+        "p3": "Jangan buang ke tempat sampah atau api."
+      },
+      "fairWeigh": {
+        "title": "Dapatkan penimbangan adil",
+        "p1": "Pastikan timbangan mulai dari nol.",
+        "p2": "Perhatikan penimbangan tiap bahan.",
+        "p3": "Periksa total pada tanda terima."
+      },
+      "usingTheApp": {
+        "title": "Menggunakan aplikasi",
+        "p1": "Masuk dengan nomor dan kode SMS.",
+        "p2": "Terima atau tolak permintaan baru dengan cepat.",
+        "p3": "Aktifkan penerimaan otomatis hanya saat dapat pergi."
+      },
+      "weighingFairly": {
+        "title": "Menimbang dengan adil",
+        "p1": "Nolkan timbangan di depan rumah tangga.",
+        "p2": "Timbang setiap bahan terpisah.",
+        "p3": "Tampilkan total sebelum membayar."
+      },
+      "safeHandling": {
+        "title": "Menangani barang bekas dengan aman",
+        "p1": "Selalu gunakan sarung tangan dan sepatu tertutup.",
+        "p2": "Angkat dengan kekuatan kaki, dan minta bantuan untuk lebih dari 25 kg.",
+        "p3": "Pisahkan baterai dan limbah elektronik."
+      },
+      "servingHouseholds": {
+        "title": "Melayani rumah tangga dengan baik",
+        "p1": "Telepon sebelum berangkat dan tiba sesuai slot.",
+        "p2": "Bersikap sopan dan timbang di tempat terlihat.",
+        "p3": "Selalu bayar sebelum pergi."
+      },
+      "sellingToYards": {
+        "title": "Demo: Menjual ke tempat pemilahan",
+        "p1": "Catat pemilahan agar stok akurat.",
+        "p2": "Tampilkan stok ke tempat pemilahan sekitar.",
+        "p3": "Muat hanya setelah pembayaran masuk rekening penampungan."
+      },
+      "buyingStock": {
+        "title": "Membeli stok",
+        "p1": "Cari stok sekitar di Beli.",
+        "p2": "Periksa harga per kg sebelum mengirim permintaan.",
+        "p3": "Timbang setiap muatan sebelum mengonfirmasi."
+      },
+      "tradingWithEscrow": {
+        "title": "Demo: Berdagang dengan rekening penampungan",
+        "p1": "Pembeli membayar ke rekening penampungan setelah penjual menerima.",
+        "p2": "Penjual hanya memuat setelah uang tersedia.",
+        "p3": "Konfirmasi pengiriman melepaskan uang."
+      },
+      "papersForLoads": {
+        "title": "Dokumen setiap muatan",
+        "p1": "Faktur untuk setiap transaksi.",
+        "p2": "Surat jalan elektronik untuk muatan di atas ₹50.000.",
+        "p3": "Dokumen dibawa dalam kendaraan."
+      },
+      "siteSafety": {
+        "title": "Keselamatan di lokasi",
+        "p1": "Sarung tangan, sepatu tertutup, dan masker di tempat berdebu.",
+        "p2": "Matikan dan cabut listrik mesin sebelum mengatasi kemacetan.",
+        "p3": "Selalu sediakan P3K dan air bersih di lokasi."
+      },
+      "buyingInputs": {
+        "title": "Demo: Membeli bahan baku",
+        "p1": "Cari bal bermutu dari tempat pemilahan di Beli.",
+        "p2": "Bayar ke rekening penampungan setelah tempat pemilahan menerima.",
+        "p3": "Periksa mutu sebelum mengonfirmasi."
+      },
+      "eprBasics": {
+        "title": "Dasar EPR",
+        "p1": "Merek wajib mendaur ulang sebagian limbahnya.",
+        "p2": "Pendaur ulang terdaftar menerbitkan sertifikat di portal CPCB.",
+        "p3": "Catatan transaksi rapi mendukung setiap klaim."
+      },
+      "orderingRecycled": {
+        "title": "Demo: Memesan bahan daur ulang",
+        "p1": "Bandingkan penawaran menurut jenis, kilo, dan harga.",
+        "p2": "Kirim pesanan sesuai kilo yang dibutuhkan.",
+        "p3": "Bayar ke rekening penampungan setelah diterima."
+      },
+      "checkingDeliveries": {
+        "title": "Memeriksa pengiriman",
+        "p1": "Cocokkan faktur dan surat jalan elektronik dengan pesanan.",
+        "p2": "Timbang truk penuh dan kosong.",
+        "p3": "Konfirmasi hanya jika berat dan mutu sesuai."
+      },
+      "firstJob": {
+        "title": "Pekerjaan pertama Anda",
+        "p1": "Periksa tempat, waktu, dan upah sebelum menerima.",
+        "p2": "Telepon lebih dahulu dan datang tepat waktu.",
+        "p3": "Tandai selesai setelah pekerjaan selesai."
+      },
+      "inPeoplesHomes": {
+        "title": "Bekerja di rumah orang",
+        "p1": "Sebutkan identitas dan asal toko Anda.",
+        "p2": "Tunggu diundang masuk.",
+        "p3": "Timbang di tempat terlihat dan bersikap sopan."
+      },
+      "gettingPaid": {
+        "title": "Menerima upah",
+        "p1": "Sepakati upah sebelum pekerjaan dimulai.",
+        "p2": "Minta UPI agar ada catatan.",
+        "p3": "Periksa setiap pekerjaan di Penghasilan."
+      }
+    }
+  },
+  "app": {
+    "nav": {
+      "home": "Beranda",
+      "sell": "Jual",
+      "help": "Bantuan",
+      "requests": "Permintaan",
+      "stock": "Persediaan",
+      "prices": "Harga saya",
+      "buy": "Beli",
+      "trades": "Transaksi",
+      "impact": "Dampak",
+      "compliance": "Kepatuhan",
+      "earnings": "Penghasilan"
+    },
+    "navLabel": "Aplikasi",
+    "homeLink": "Beranda Luma.Green",
+    "signOut": "Keluar",
+    "more": "Lainnya",
+    "comingSoon": "Layar ini sedang dibuat.",
+    "roles": {
+      "kabadiwala": "Pengepul",
+      "yard": "Tempat pemilahan",
+      "recycler": "Pendaur ulang",
+      "manufacturer": "Produsen",
+      "saathi": "Pekerja Saathi"
+    }
+  },
+  "sell": {
+    "retry": "Coba lagi",
+    "metaTitle": "Jual barang bekas Anda",
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "Limbah elektronik",
+      "other": "Lainnya"
+    },
+    "perKg": "{price}/kg",
+    "when": {
+      "today": "Hari ini",
+      "nameLabel": "Nama Anda",
+      "tomorrow": "Besok",
+      "titlePickup": "Kapan mereka harus datang?",
+      "titleDropoff": "Kapan Anda akan mengantar?",
+      "dayLabel": "Hari",
+      "windowLabel": "Waktu",
+      "passed": "Sudah terlambat untuk hari ini",
+      "addressLabel": "Alamat penjemputan",
+      "addressHint": "Nomor rumah atau apartemen, jalan, wilayah, dan patokan.",
+      "dropoffAt": "Antar ke",
+      "nameHint": "Agar toko tahu siapa yang dicari.",
+      "privacy": "Hanya toko yang Anda pesan dapat melihat alamat, setelah menerima permintaan.",
+      "next": "Periksa dan pesan",
+      "errors": {
+        "day": "Pilih hari.",
+        "window": "Pilih waktu.",
+        "address": "Tulis alamat lengkap beserta nomor rumah dan wilayah.",
+        "name": "Tulis nama Anda (minimal 2 huruf)."
+      }
+    },
+    "back": "Kembali",
+    "phone": {
+      "label": "Nomor ponsel",
+      "hint": "Kami akan mengirim kode 6 digit ke nomor ini.",
+      "invalid": "Masukkan nomor ponsel India 10 digit.",
+      "sendCode": "Kirim kode",
+      "sending": "Mengirim…",
+      "sendFailed": "Kode gagal dikirim. Coba lagi dalam satu menit.",
+      "codeLabel": "Kode 6 digit",
+      "sentTo": "Dikirim melalui SMS ke {phone}",
+      "changeNumber": "Ubah nomor",
+      "verifying": "Memeriksa…",
+      "resendIn": "Anda dapat meminta kode baru dalam {seconds, plural, one {# detik} other {# detik}}",
+      "resend": "Kirim kode baru",
+      "resent": "Kode baru telah dikirim.",
+      "errorInvalid": "Kode itu salah. Periksa SMS dan coba lagi.",
+      "errorExpired": "Kode itu kedaluwarsa. Minta kode baru.",
+      "errorTooMany": "Terlalu banyak percobaan. Minta kode baru.",
+      "errorGeneric": "Terjadi kesalahan. Coba lagi.",
+      "privacy": "Kami hanya menggunakan nomor Anda untuk pemesanan dan kabar terkait."
+    },
+    "errors": {
+      "generic": "Terjadi kesalahan. Coba lagi.",
+      "NOT_YOURS": "Pemesanan ini dibuat dengan nomor lain.",
+      "EMPTY_BASKET": "Tambahkan minimal satu barang untuk dijual.",
+      "TOO_MANY_ITEMS": "Terlalu banyak bahan untuk satu pemesanan.",
+      "DUPLICATE_ITEM": "Satu bahan tercantum dua kali. Periksa barang Anda.",
+      "INVALID_KG": "Periksa kilogram: masing-masing harus lebih dari 0 dan maksimal 500.",
+      "UNKNOWN_MATERIAL": "Salah satu bahan tidak dapat dijual lagi di sini. Periksa barang Anda.",
+      "SHOP_NOT_FOUND": "Toko itu belum menerima pemesanan. Pilih toko lain.",
+      "SHOP_NO_PICKUP": "Toko itu tidak menjemput. Pilih toko lain atau antar sendiri.",
+      "INVALID_DATE": "Hari itu tidak dapat dipesan lagi. Pilih hari lain.",
+      "SLOT_PASSED": "Waktu itu sudah berlalu. Pilih waktu berikutnya.",
+      "INVALID_NAME": "Periksa nama Anda.",
+      "ADDRESS_REQUIRED": "Tambahkan alamat penjemputan.",
+      "INVALID_ADDRESS": "Tulis alamat lengkap.",
+      "TOO_MANY_OPEN": "Anda sudah memiliki 5 pemesanan menunggu. Tunggu satu selesai atau batalkan salah satunya.",
+      "NO_PHONE": "Konfirmasi nomor ponsel untuk memesan.",
+      "NOT_SIGNED_IN": "Konfirmasi nomor ponsel terlebih dahulu.",
+      "CANNOT_CANCEL": "Pemesanan ini tidak dapat dibatalkan lagi.",
+      "NOT_FOUND": "Pemesanan ini tidak ditemukan."
+    },
+    "windows": {
+      "morning": "Pagi",
+      "afternoon": "Siang",
+      "evening": "Sore"
+    },
+    "shop": {
+      "useLocation": "Gunakan lokasi saya",
+      "locating": "Mencari lokasi Anda…",
+      "distance": "{km} km",
+      "hours": "Buka {hours}",
+      "verified": "Terverifikasi",
+      "title": "Siapa yang membeli?",
+      "lead": "Penawaran setiap toko untuk barang Anda berdasarkan harga mereka sendiri.",
+      "modeLabel": "Bagaimana cara menyerahkannya?",
+      "pickup": "Dijemput dari rumah",
+      "pickupHint": "Toko mendatangi Anda",
+      "dropoff": "Saya antar sendiri",
+      "dropoffHint": "Anda membawa ke toko",
+      "nearestFirst": "Toko terdekat lebih dahulu",
+      "byPrice": "Urutkan berdasarkan harga",
+      "locationFailed": "Lokasi Anda gagal diperoleh, jadi toko diurutkan menurut harga terbaik.",
+      "listLabel": "Toko",
+      "offerFor": "untuk barang bekas Anda",
+      "picksUp": "Melayani penjemputan",
+      "dropOnly": "Hanya pengantaran",
+      "best": "Harga terbaik",
+      "nearest": "Terdekat",
+      "cityPrice": "{count, plural, one {Harga kota dipakai untuk # barang} other {Harga kota dipakai untuk # barang}}",
+      "noPickupHere": "Toko ini tidak menjemput. Pilih “Saya antar sendiri” untuk menjual di sini.",
+      "empty": "Belum ada toko yang menerima pemesanan. Periksa kembali nanti.",
+      "next": "Pilih waktu",
+      "pickOne": "Pilih toko untuk melanjutkan."
+    },
+    "steps": {
+      "basket": "Apa",
+      "shop": "Siapa",
+      "when": "Kapan",
+      "label": "Langkah",
+      "progress": "Langkah {current} dari {total}",
+      "confirm": "Pesan"
+    },
+    "basket": {
+      "points": "+{points, plural, one {# poin daur ulang} other {# poin daur ulang}}",
+      "title": "Apa yang Anda miliki?",
+      "lead": "Ketuk barang yang ingin dijual, lalu tentukan perkiraan kilogramnya.",
+      "yours": "Barang bekas Anda",
+      "empty": "Belum ada yang ditambahkan. Ketuk bahan di atas.",
+      "kilos": "Kilogram {material}",
+      "less": "Kurangi {material}",
+      "more": "Tambah {material}",
+      "remove": "Hapus {material}",
+      "presets": "Jumlah cepat untuk {material}",
+      "preset": "{kg} kg",
+      "kgUnit": "kg",
+      "lineValue": "Sekitar {amount}",
+      "worth": "Perkiraan nilai",
+      "summary": "{items, plural, one {# barang} other {# barang}} · {weight}",
+      "next": "Cari pembeli",
+      "full": "Batas satu pemesanan: {max} bahan.",
+      "weighNote": "Jumlah akhir ditentukan saat barang ditimbang."
+    },
+    "confirm": {
+      "what": "Apa",
+      "who": "Siapa",
+      "when": "Kapan",
+      "where": "Di mana",
+      "pickup": "Dijemput dari rumah Anda",
+      "dropoff": "Anda mengantar ke toko",
+      "whenValue": "{day} · {window}, {time}",
+      "youGet": "Anda menerima sekitar {amount}",
+      "payNote": "Toko menimbang barang bekas dan membayar tunai atau melalui UPI.",
+      "notYou": "Gunakan nomor lain",
+      "title": "Periksa dan pesan",
+      "change": "Ubah",
+      "changeLabel": "Ubah {section}",
+      "phoneTitle": "Konfirmasi nomor ponsel",
+      "phoneLead": "Kami akan mengirim kode 6 digit melalui SMS. Pemesanan disimpan pada nomor ini agar dapat dilacak dari ponsel mana pun.",
+      "bookingAs": "Memesan sebagai {phone}",
+      "bookPickup": "Pesan penjemputan",
+      "bookDropoff": "Pesan pengantaran",
+      "confirmAndBook": "Konfirmasi dan pesan",
+      "booking": "Memesan…",
+      "booked": "Berhasil dipesan! Membuka pemesanan Anda…",
+      "fixIt": "Perbaiki",
+      "locationNote": "Perkiraan lokasi Anda disimpan bersama penjemputan ini agar kami dapat mencari toko lain di sekitar jika perlu."
+    },
+    "metaDescription": "Jual koran, plastik, logam, dan elektronik lama dari rumah di Bengaluru. Lihat harga toko sekitar, pesan penjemputan, dan terima pembayaran di depan pintu.",
+    "eyebrow": "Untuk rumah di Bengaluru",
+    "title": "Jual barang bekas dari rumah",
+    "lead": "Pilih barang, pilih toko terdekat, dan terima pembayaran tunai atau UPI setelah ditimbang.",
+    "promises": {
+      "label": "Mengapa menjual di sini",
+      "noAccount": "Tidak perlu akun",
+      "payAtDoor": "Dibayar setelah ditimbang",
+      "verified": "Toko terverifikasi"
+    },
+    "unavailable": {
+      "title": "Pemesanan segera tersedia",
+      "body": "Kami sedang menyiapkan pemesanan untuk rumah tangga. Periksa kembali sebentar lagi."
+    },
+    "demoNote": "Contoh harga dan toko untuk uji coba Bengaluru.",
+    "loadError": "Gagal memuat. Periksa koneksi Anda dan coba lagi.",
+    "mine": {
+      "title": "Pemesanan Anda",
+      "showAll": "Tampilkan semua {count}",
+      "showFewer": "Tampilkan lebih sedikit",
+      "summary": "{items, plural, one {# barang} other {# barang}} · {weight}",
+      "paid": "Dibayar {amount}",
+      "estimate": "Sekitar {amount}"
+    },
+    "photo": {
+      "title": "Coba perkiraan dari foto",
+      "lead": "Opsional: tambahkan satu foto barang bekas, lalu periksa saran barangnya.",
+      "privacy": "Jangan sertakan wajah, dokumen, atau pelat nomor. Foto dikirim ke penyedia AI untuk perkiraan ini. Luma.Green tidak menyimpannya.",
+      "choose": "Pilih atau ambil foto",
+      "selected": "Foto siap",
+      "estimate": "Perkirakan foto ini",
+      "busy": "Memeriksa foto Anda…",
+      "manual": "Pilih barang secara manual",
+      "review": "Periksa saran ini",
+      "reviewNote": "Berat dari foto hanyalah perkiraan kasar. Gunakan barang ini untuk mengganti keranjang, lalu sunting bahan dan berat di bawah.",
+      "apply": "Gunakan barang ini",
+      "range": "{low}–{high}",
+      "confidence": "Tingkat keyakinan: {confidence}",
+      "value": "Perkiraan nilai: {low}–{high}",
+      "applied": "Saran ditambahkan. Periksa keranjang dan perbaiki kesalahan.",
+      "unavailable": "Perkiraan foto tidak tersedia. Pilih barang di bawah.",
+      "failed": "Foto gagal diperiksa. Coba foto lain atau pilih barang di bawah.",
+      "invalid": "Gunakan foto JPEG atau PNG yang jelas, kurang dari 12 MB.",
+      "limited": "Batas foto tercapai. Pilih barang di bawah atau coba lagi besok.",
+      "retake": "Foto kurang jelas atau tidak menampilkan barang bekas. Coba foto lain atau pilih barang di bawah.",
+      "empty": "Tidak ditemukan bahan yang didukung. Coba foto lain atau pilih barang di bawah.",
+      "replace": "Pilih foto lain"
+    }
+  },
+  "track": {
+    "notFound": {
+      "sell": "Jual barang bekas",
+      "title": "Pemesanan ini tidak ditemukan",
+      "body": "Periksa tautan dalam SMS. Jika baru memesan, tunggu sebentar lalu coba lagi."
+    },
+    "cancel": {
+      "close": "Tutup",
+      "button": "Batalkan pemesanan",
+      "title": "Batalkan pemesanan ini?",
+      "body": "Toko akan melihat pembatalannya. Anda dapat memesan lagi kapan saja.",
+      "confirm": "Ya, batalkan",
+      "keep": "Pertahankan",
+      "cancelling": "Membatalkan…",
+      "checking": "Memeriksa nomor Anda…",
+      "done": "Pemesanan Anda dibatalkan.",
+      "free": "Gratis dibatalkan sampai toko dalam perjalanan.",
+      "signInTitle": "Konfirmasi identitas Anda",
+      "signInBody": "Masukkan nomor ponsel yang dipakai untuk memesan. Kami akan mengirim kode.",
+      "confirmNumber": "Konfirmasi nomor saya",
+      "notYours": "Pemesanan ini dibuat dengan nomor lain.",
+      "otherNumber": "Gunakan nomor lain"
+    },
+    "today": "Hari ini",
+    "tomorrow": "Besok",
+    "shop": {
+      "title": "Toko Anda",
+      "verified": "Terverifikasi",
+      "call": "Telepon",
+      "callLabel": "Telepon {shop}",
+      "hours": "Buka {hours}"
+    },
+    "metaTitle": "Pemesanan Anda",
+    "reference": "Pemesanan {token}",
+    "status": {
+      "requested": "Menunggu",
+      "accepted": "Diterima",
+      "on_the_way": "Dalam perjalanan",
+      "completed": "Selesai",
+      "declined": "Ditolak",
+      "cancelled": "Dibatalkan"
+    },
+    "hero": {
+      "requested": "{mode, select, pickup {Menunggu {shop} menerima} other {Menunggu {shop} mengonfirmasi}}",
+      "requestedBody": "Permintaan Anda telah dikirim. Halaman ini diperbarui segera setelah mereka menjawab.",
+      "accepted": "{mode, select, pickup {{shop} menerima penjemputan Anda} other {{shop} menunggu kedatangan Anda}}",
+      "acceptedBody": "Siapkan barang bekas. Barang ditimbang, lalu Anda dibayar tunai atau melalui UPI.",
+      "on_the_way": "{shop} dalam perjalanan",
+      "on_the_wayBody": "Siapkan barang bekas di dekat pintu.",
+      "completed": "Selesai! Anda menerima {amount}",
+      "completedBody": "Terima kasih telah mendaur ulang. Poin ditambahkan ke nomor Anda.",
+      "declined": "{shop} tidak dapat mengambil pemesanan ini",
+      "declinedBody": "Tidak ada barang yang diambil. Coba toko lain — daftar barang Anda tersimpan.",
+      "cancelled": "Pemesanan ini dibatalkan",
+      "cancelledBody": "Tidak ada barang yang diambil. Anda dapat memesan lagi kapan saja."
+    },
+    "progress": {
+      "label": "Kemajuan",
+      "booked": "Dipesan",
+      "accepted": "Diterima",
+      "confirmed": "Dikonfirmasi",
+      "onTheWay": "Dalam perjalanan",
+      "done": "Selesai"
+    },
+    "when": "Kapan",
+    "whenValue": "{day} · {window}, {time}",
+    "mode": {
+      "pickup": "Dijemput dari rumah Anda",
+      "dropoff": "Anda mengantar ke toko"
+    },
+    "items": {
+      "title": "Barang yang diambil",
+      "estimated": "Sekitar {weight}",
+      "weighed": "{weight} dengan harga {price}/kg"
+    },
+    "money": {
+      "title": "Uang dan poin Anda",
+      "estimate": "Anda menerima sekitar {amount}",
+      "estimateNote": "Toko menimbang barang bekas dan membayar tunai atau melalui UPI.",
+      "paid": "Anda menerima {amount}",
+      "paidBy": "Dibayar melalui {method, select, upi {UPI} other {tunai}} · {date}",
+      "estimateWas": "Perkiraan sebelumnya {amount}",
+      "points": "+{points, plural, one {# poin daur ulang} other {# poin daur ulang}}",
+      "pointsAfter": "Sekitar +{points, plural, one {# poin daur ulang} other {# poin daur ulang}} setelah ditimbang"
+    },
+    "timeline": {
+      "title": "Riwayat",
+      "requested": "Dipesan",
+      "accepted": "Diterima toko",
+      "on_the_way": "Toko dalam perjalanan",
+      "completed": "Ditimbang dan dibayar",
+      "declined": "Ditolak toko",
+      "cancelled": "Dibatalkan"
+    },
+    "saved": "Tidak perlu akun. Simpan tautan ini untuk memeriksa pemesanan dari ponsel mana pun.",
+    "sellMore": "Jual barang bekas lagi",
+    "tryAnother": "Coba toko lain",
+    "dispatchChanged": "Permintaan Anda dialihkan ke toko terdekat lainnya. Toko saat ini ditampilkan di bawah."
+  },
+  "market": {
+    "buy": {
+      "cancel": "Batal",
+      "button": "Beli",
+      "sending": "Mengirim…",
+      "buttonLabel": "Beli {material} dari {seller}",
+      "title": "Beli {material}",
+      "from": "Dari {seller}, {area}. Tersedia {weight} dengan harga {price}/kg.",
+      "kgLabel": "Berapa kg?",
+      "kgHint": "Maksimal {weight}.",
+      "all": "Semua {weight}",
+      "kgInvalid": "Masukkan berat dalam kg, misalnya 50 atau 12,5.",
+      "kgTooMuch": "Hanya tersedia {weight}.",
+      "total": "Jumlah total",
+      "totalLine": "{weight} × {price}/kg",
+      "escrow": "Anda membayar ke rekening penampungan setelah {seller} menerima. Uang diteruskan kepada mereka saat Anda mengonfirmasi pengiriman.",
+      "ewayBill": "Di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
+      "submit": "Kirim permintaan",
+      "sent": "Permintaan dikirim ke {seller}",
+      "sentNext": "Anda membayar ke rekening penampungan setelah mereka menerima.",
+      "seeTrades": "Lihat transaksi"
+    },
+    "sell": {
+      "title": "Jual",
+      "lead": "{buyer, select, yard {Tawarkan stok terpilah ke tempat pemilahan.} recycler {Tawarkan bal ke pendaur ulang.} manufacturer {Tawarkan bahan ke produsen.} other {Tawarkan stok ke pembeli.}}",
+      "notForYouTitle": "Produsen membeli di Luma.Green",
+      "notForYouBody": "Cari bahan daur ulang dari pendaur ulang terverifikasi.",
+      "goBuy": "Beli bahan",
+      "form": {
+        "title": "Penawaran baru",
+        "material": "Apa yang Anda jual?",
+        "free": "{weight} tersedia untuk dijual",
+        "allPromised": "Semua sudah ditawarkan atau terjual",
+        "kg": "Berapa kg?",
+        "kgHint": "Maksimal {weight}.",
+        "all": "Semua {weight}",
+        "price": "Harga Anda, ₹ per kg",
+        "market": "Harga pasar hari ini {price}/kg",
+        "suggested": "Saran {price}/kg",
+        "useSuggested": "Gunakan {price}",
+        "farFromMarket": "Jauh dari harga hari ini. Periksa kembali.",
+        "note": "Catatan untuk pembeli",
+        "optional": "(opsional)",
+        "notePlaceholder": "Misalnya: kering, diikat, bal 50 kg",
+        "noteCount": "{count}/{max}",
+        "value": "Nilai lot",
+        "submit": "Tawarkan untuk dijual",
+        "submitting": "Menerbitkan penawaran…",
+        "listed": "Sudah ditawarkan. {buyer, select, yard {Tempat pemilahan} recycler {Pendaur ulang} manufacturer {Produsen} other {Pembeli}} kini dapat melihatnya.",
+        "nothingTitle": "Belum ada yang dijual",
+        "nothingBody": "Stok yang Anda catat muncul di sini. Stok yang sudah ditawarkan atau terjual tidak dihitung dua kali.",
+        "goStock": "Buka stok",
+        "errors": {
+          "pickMaterial": "Pilih bahan.",
+          "kgInvalid": "Masukkan berat dalam kg, misalnya 50 atau 12,5.",
+          "kgTooMuch": "Anda memiliki {weight} untuk dijual.",
+          "priceInvalid": "Masukkan harga dalam rupee, misalnya 18 atau 17,50.",
+          "noteTooLong": "Batasi catatan hingga 140 karakter."
+        }
+      },
+      "mine": {
+        "title": "Sedang dijual",
+        "emptyTitle": "Belum ada penawaran",
+        "emptyBody": "Tawarkan lot pertama melalui formulir.",
+        "past": "Penawaran sebelumnya",
+        "onSale": "Dijual",
+        "listedOn": "Ditawarkan {date}",
+        "pastLine": "Ditawarkan {date} · {price}/kg",
+        "sold": "Habis terjual",
+        "withdrawn": "Ditarik",
+        "withdraw": "Tarik",
+        "withdrawLabel": "Tarik {material}",
+        "withdrawConfirm": "Tarik lot ini dari pasar? Pembeli tidak lagi melihatnya dan permintaan yang menunggu akan ditolak.",
+        "withdrawYes": "Ya, tarik",
+        "withdrawNo": "Tetap jual",
+        "withdrawnToast": "{material} ditarik dari pasar"
+      }
+    },
+    "home": {
+      "sell": "Jual",
+      "buy": "Beli",
+      "trades": "Transaksi",
+      "greeting": "Salam, {name}",
+      "lead": "{kind, select, yard {Beli dari pengepul, jual bal terpilah ke pendaur ulang.} recycler {Beli barang bekas terpilah dari tempat pemilahan, jual bahan daur ulang ke produsen.} manufacturer {Beli bahan daur ulang dari pendaur ulang terverifikasi.} other {Sekilas transaksi Anda.}}",
+      "statsTitle": "Sekilas",
+      "stats": {
+        "escrow": "Di rekening penampungan",
+        "escrowHint": "Dilepaskan saat pengiriman dikonfirmasi",
+        "waiting": "Menunggu Anda",
+        "waitingHint": "{count, plural, =0 {Semua sudah ditangani} one {# transaksi perlu tindakan} other {# transaksi perlu tindakan}}",
+        "listings": "Dijual",
+        "listingsHint": "{weight} ditawarkan",
+        "offers": "Lot daur ulang",
+        "offersHint": "Dijual oleh pendaur ulang",
+        "completed": "Selesai bulan ini",
+        "completedHint": "{amount} diperdagangkan"
+      },
+      "waitingTitle": "Menunggu Anda",
+      "allTrades": "Semua transaksi",
+      "caughtUpTitle": "Belum ada yang perlu ditangani",
+      "caughtUpBody": "Pesanan, pembayaran, dan pengiriman baru muncul di sini.",
+      "offersTitle": "Lot terbaru untuk Anda",
+      "recycledTitle": "Bahan daur ulang untuk Anda",
+      "recycledBody": "Serpihan, butiran, kraft, dan batangan dari pendaur ulang terverifikasi, siap untuk lini produksi Anda.",
+      "seeAll": "Lihat semua",
+      "noOffersTitle": "Belum ada lot dijual",
+      "noOffersBody": "Lot baru muncul segera setelah ditawarkan."
+    },
+    "perKg": "{price}/kg",
+    "trades": {
+      "card": {
+        "rate": "{price}/kg",
+        "title": "{material} · {weight}",
+        "from": "Dari {name} · {area}",
+        "to": "Ke {name} · {area}",
+        "inEscrow": "{amount} ditahan di rekening penampungan",
+        "ewayBill": "Di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
+        "updated": "Diperbarui {when}",
+        "receipt": "Tanda terima {number}",
+        "buying": "Pembelian",
+        "selling": "Penjualan"
+      },
+      "title": "Transaksi",
+      "busy": "Menyimpan…",
+      "steps": {
+        "accepted": "Diterima",
+        "label": "Kemajuan transaksi",
+        "requested": "Diminta",
+        "paid_to_escrow": "Di rekening penampungan",
+        "dispatched": "Dikirim",
+        "completed": "Terkirim",
+        "srStep": "{step}: {state}",
+        "state": {
+          "done": "selesai",
+          "current": "berikutnya",
+          "todo": "belum"
+        }
+      },
+      "declineNo": "Pertahankan",
+      "lead": "Setiap transaksi, langkah demi langkah. Uang tetap dalam rekening penampungan hingga pembeli mengonfirmasi pengiriman.",
+      "buying": "Pembelian",
+      "selling": "Penjualan",
+      "tabsLabel": "Pembelian atau penjualan",
+      "waitingBadge": "{count, plural, one {# perlu tindakan Anda} other {# perlu tindakan Anda}}",
+      "emptyBuyingTitle": "Belum ada pembelian",
+      "emptyBuyingBody": "Lot yang Anda minta untuk dibeli muncul di sini.",
+      "emptySellingTitle": "Belum ada penjualan",
+      "emptySellingBody": "Permintaan pembelian lot Anda muncul di sini.",
+      "goBuy": "Cari bahan",
+      "goSell": "Tawarkan stok",
+      "declined": "Ditolak pada {date}",
+      "hint": {
+        "requested": {
+          "buyer": "Menunggu {name} menerima.",
+          "seller": "{name} ingin membeli ini. Terima untuk mencadangkannya bagi mereka."
+        },
+        "accepted": {
+          "buyer": "Diterima. Bayar ke rekening penampungan untuk melanjutkan: uang ditahan hingga Anda mengonfirmasi pengiriman.",
+          "seller": "Menunggu {name} membayar ke rekening penampungan."
+        },
+        "paid_to_escrow": {
+          "buyer": "Uang Anda aman di rekening penampungan. Menunggu {name} mengirim.",
+          "seller": "Uang aman di rekening penampungan. Kirim muatan, lalu tandai dikirim."
+        },
+        "dispatched": {
+          "buyer": "Dalam perjalanan. Periksa muatan, lalu konfirmasi pengiriman untuk melepaskan uang.",
+          "seller": "Dalam perjalanan. Uang diteruskan kepada Anda saat {name} mengonfirmasi pengiriman."
+        },
+        "completed": {
+          "buyer": "Terkirim. Uang sudah diteruskan kepada {name}.",
+          "seller": "Terkirim. Uang sudah diteruskan kepada Anda."
+        },
+        "declined": {
+          "buyer": "{name} menolak pesanan ini atau lot habis terjual.",
+          "seller": "Anda menolak pesanan ini atau lot ditutup."
+        }
+      },
+      "action": {
+        "accept": "Terima pesanan",
+        "decline": "Tolak",
+        "pay": "Bayar {amount} ke rekening penampungan",
+        "dispatch": "Tandai dikirim",
+        "confirm": "Konfirmasi pengiriman"
+      },
+      "done": {
+        "accept": "Pesanan diterima",
+        "decline": "Pesanan ditolak",
+        "pay": "Dibayar ke rekening penampungan. Tanda terima {number}",
+        "dispatch": "Ditandai dikirim",
+        "confirm": "Pengiriman dikonfirmasi. Uang dilepaskan kepada penjual."
+      },
+      "declineConfirm": "Tolak pesanan dari {name}? Tindakan ini tidak dapat dibatalkan.",
+      "declineYes": "Ya, tolak"
+    },
+    "receipt": {
+      "dateLabel": "Tanggal",
+      "material": "Bahan",
+      "seller": "Penjual",
+      "buyer": "Pembeli",
+      "gstin": "GSTIN {gstin}",
+      "amount": "Jumlah",
+      "title": "Tanda terima transaksi",
+      "numberLabel": "No. tanda terima",
+      "statusLabel": "Pembayaran",
+      "inEscrow": "Di rekening penampungan",
+      "settled": "Dilepaskan",
+      "noGstin": "Tidak terdaftar GST",
+      "quantity": "Kuantitas",
+      "rate": "Tarif",
+      "total": "Jumlah total",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "Dibayar ke rekening penampungan Luma.Green pada {date}.",
+      "held": "Ditahan di rekening penampungan hingga pembeli mengonfirmasi pengiriman.",
+      "released": "Dilepaskan kepada penjual pada {date}.",
+      "ewayBill": "Barang bernilai di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
+      "notTaxInvoice": "Ini tanda terima transaksi, bukan faktur pajak GST. Faktur pajak menyertai pembayaran nyata.",
+      "print": "Cetak",
+      "back": "Kembali ke transaksi",
+      "missingTitle": "Tanda terima tidak ditemukan",
+      "missingBody": "Transaksi ini bukan milik Anda atau tautannya salah.",
+      "pendingTitle": "Belum ada tanda terima",
+      "pendingBody": "Tanda terima dibuat saat pembeli membayar ke rekening penampungan.",
+      "declinedBody": "Transaksi ini ditolak, jadi tidak ada tanda terima."
+    },
+    "errors": {
+      "generic": "Terjadi kesalahan. Coba lagi.",
+      "NOT_SIGNED_IN": "Anda telah keluar. Masuk lagi.",
+      "WRONG_ROLE": "Usaha Anda tidak dapat melakukan ini.",
+      "NOT_FOUND": "Tidak ditemukan. Mungkin telah dihapus.",
+      "OWN_LISTING": "Ini lot milik Anda sendiri.",
+      "LISTING_NOT_OPEN": "Lot ini tidak lagi dijual.",
+      "NOT_ENOUGH_LEFT": "Sisa lot ini tidak sebanyak itu.",
+      "NOT_ENOUGH_STOCK": "Stok Anda tidak sebanyak itu. Periksa stok terlebih dahulu.",
+      "INVALID_WEIGHT": "Masukkan berat lebih dari 0 kg.",
+      "INVALID_PRICE": "Masukkan harga lebih dari ₹0.",
+      "NOTE_TOO_LONG": "Batasi catatan hingga 140 karakter.",
+      "UNKNOWN_MATERIAL": "Pilih bahan dari daftar.",
+      "WRONG_STEP": "Transaksi ini sudah berlanjut. Periksa tahap terbarunya."
+    },
+    "browse": {
+      "title": "Beli",
+      "lead": "{kind, select, yard {Barang bekas terpilah dari pengepul sekitar.} recycler {Bahan terpilah dan dibal dari tempat pemilahan.} manufacturer {Bahan daur ulang dari pendaur ulang terverifikasi.} other {Bahan yang dijual di sekitar Anda.}}",
+      "filterLabel": "Saring menurut bahan",
+      "all": "Semua",
+      "count": "{count, plural, =0 {Tidak ada lot} one {# lot dijual} other {# lot dijual}}",
+      "emptyTitle": "Belum ada yang dijual",
+      "emptyBody": "Lot baru muncul segera setelah ditawarkan.",
+      "notForYouTitle": "Pengepul membeli dari rumah tangga",
+      "notForYouBody": "Di pasar, Anda menjual: tawarkan stok terpilah ke tempat pemilahan.",
+      "goSell": "Jual ke tempat pemilahan"
+    },
+    "recycled": "Hasil daur ulang",
+    "units": {
+      "kg": "kg",
+      "rupee": "₹"
+    },
+    "sampleData": "Harga dan jumlah di layar ini adalah data contoh untuk prototipe.",
+    "simulated": "Data contoh. Pembayaran disimulasikan dalam prototipe: tidak ada uang sungguhan yang berpindah.",
+    "forBusinessesTitle": "Layar ini untuk usaha",
+    "forBusinessesBody": "Pengepul, tempat pemilahan, pendaur ulang, dan produsen berdagang di sini.",
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "Tersedia",
+      "lotValue": "Seluruh lot"
+    },
+    "totalInvalid": "Total ini terlalu besar. Kurangi jumlah atau harga."
+  },
+  "shop": {
+    "errors": {
+      "retry": "Coba lagi",
+      "generic": "Terjadi kesalahan. Coba lagi.",
+      "changed": "Permintaan ini telah berubah. Periksa lagi.",
+      "loadTitle": "Gagal dimuat",
+      "loadBody": "Periksa koneksi internet dan coba lagi."
+    },
+    "prices": {
+      "save": "Simpan",
+      "title": "Harga saya",
+      "saving": "Menyimpan…",
+      "prefix": "₹",
+      "lead": "Harga per kg yang Anda bayarkan ke rumah tangga. Tidak boleh di bawah minimum.",
+      "label": "Harga {material} Anda, rupee per kg",
+      "suffix": "/kg",
+      "minimum": "Batas minimum {price}/kg",
+      "market": "Pasar {price}/kg",
+      "notSet": "Belum diatur. Rumah tangga mendapat harga kota, {price}/kg.",
+      "saved": "{material}: {price}/kg tersimpan.",
+      "invalid": "Masukkan harga, misalnya 14 atau 14,50.",
+      "belowFloor": "Terlalu rendah. Minimum {price}/kg.",
+      "belowFloorUnknown": "Terlalu rendah. Di bawah harga minimum.",
+      "emptyTitle": "Belum ada bahan",
+      "emptyBody": "Bahan yang Anda beli ditentukan saat toko disetujui."
+    },
+    "perKg": "{price}/kg",
+    "days": {
+      "today": "Hari ini",
+      "tomorrow": "Besok",
+      "yesterday": "Kemarin"
+    },
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "Limbah elektronik",
+      "other": "Lainnya"
+    },
+    "requests": {
+      "tabs": {
+        "today": "Hari ini",
+        "done": "Selesai",
+        "new": "Baru"
+      },
+      "dueNow": "Hari ini",
+      "title": "Permintaan",
+      "later": "Mendatang",
+      "confirmDecline": {
+        "cancel": "Pertahankan",
+        "confirm": "Ya, tolak",
+        "title": "Tolak permintaan ini?",
+        "body": "Tindakan ini tidak dapat dibatalkan."
+      },
+      "decline": "Tolak",
+      "lead": "Rumah tangga sekitar yang ingin menjual barang bekas.",
+      "empty": {
+        "newTitle": "Belum ada permintaan baru",
+        "newBody": "Pemesanan penjemputan rumah tangga kepada Anda muncul di sini.",
+        "todayTitle": "Tidak ada yang dijemput",
+        "todayBody": "Penjemputan yang Anda terima muncul di sini.",
+        "doneTitle": "Belum ada yang selesai",
+        "doneBody": "Penjemputan yang dibayar dan ditolak muncul di sini."
+      },
+      "estimate": "Perkiraan",
+      "doneLine": "{when} · {materials}",
+      "accept": "Terima",
+      "startTrip": "Mulai perjalanan",
+      "weigh": "Timbang dan bayar",
+      "accepted": "Diterima. Alamat dan nomor telepon kini terlihat.",
+      "declined": "Permintaan ditolak.",
+      "onTheWay": "Rumah tangga dapat melihat Anda sedang dalam perjalanan."
+    },
+    "home": {
+      "prices": "Harga saya",
+      "greeting": "Salam",
+      "newTitle": "Permintaan baru",
+      "newNone": "Belum ada permintaan baru.",
+      "newSome": "{count, plural, one {# rumah tangga meminta penjemputan.} other {# rumah tangga meminta penjemputan.}}",
+      "seeRequests": "Lihat permintaan",
+      "todayTitle": "Penjemputan hari ini",
+      "next": "Berikutnya",
+      "todayNone": "Tidak ada lagi penjemputan hari ini.",
+      "seeToday": "Lihat penjemputan hari ini",
+      "moneyTitle": "Uang dan stok",
+      "paidToday": "Dibayar hari ini",
+      "paidWeek": "7 hari terakhir",
+      "pickups": "{count, plural, =0 {Tidak ada penjemputan} one {# penjemputan} other {# penjemputan}}",
+      "stockWorth": "Nilai stok",
+      "stockWeight": "{weight} dalam stok",
+      "priceCheck": "Periksa harga",
+      "allPrices": "Semua harga saya",
+      "perKg": "per kilogram",
+      "you": "Anda membayar",
+      "market": "Pasar",
+      "quickLinks": "Pintasan",
+      "sell": "Jual ke tempat pemilahan",
+      "sellHint": "Tawarkan stok ke tempat pemilahan sekitar",
+      "pricesHint": "Harga per kg yang Anda bayarkan ke rumah tangga"
+    },
+    "stock": {
+      "title": "Persediaan",
+      "scrap": "Barang bekas",
+      "buy": "Beli bahan",
+      "lead": "Stok Anda sekarang dan nilainya hari ini.",
+      "totalWeight": "Berat total",
+      "worth": "Nilai hari ini",
+      "worthHint": "Dengan harga pasar hari ini",
+      "recycled": "Bahan daur ulang",
+      "atPrice": "Pasar {price}/kg",
+      "noPrice": "Tidak ada harga pasar hari ini",
+      "sellTo": {
+        "yard": "Jual ke tempat pemilahan",
+        "recycler": "Jual ke pendaur ulang",
+        "manufacturer": "Jual ke produsen"
+      },
+      "emptyTitle": "Belum ada stok",
+      "emptyShop": "Timbang dan bayar penjemputan, lalu stok muncul di sini.",
+      "emptyBusiness": "Beli di pasar, lalu stok muncul di sini.",
+      "notBusinessTitle": "Khusus usaha",
+      "notBusinessBody": "Stok dikelola toko, tempat pemilahan, pendaur ulang, dan pabrik."
+    },
+    "slot": "{day}, {window}",
+    "windows": {
+      "morning": "Pagi",
+      "afternoon": "Siang",
+      "evening": "Sore"
+    },
+    "weigh": {
+      "saving": "Menyimpan…",
+      "kg": "kg",
+      "remove": "Hapus {material}",
+      "title": "Timbang dan bayar",
+      "lead": "Timbang setiap bahan. Jumlah dihitung memakai harga Anda.",
+      "inputLabel": "{material}, dalam kg",
+      "less": "Kurangi setengah kilo {material}",
+      "more": "Tambah setengah kilo {material}",
+      "estimated": "Perkiraan: {weight}",
+      "noRate": "Harga belum diatur",
+      "add": "Tambah bahan lain",
+      "total": "Jumlah dibayar",
+      "method": "Dibayar melalui",
+      "confirm": "Konfirmasi pembayaran {amount}",
+      "invalidKg": "Masukkan kilogram, misalnya 12 atau 12,5.",
+      "nothing": "Timbang minimal satu bahan.",
+      "done": "Pembayaran tersimpan."
+    },
+    "dispatch": {
+      "saving": "Menyimpan…",
+      "title": "Pengaturan penjemputan",
+      "autoAccept": "Terima penjemputan sekitar secara otomatis",
+      "autoAcceptHint": "Penjemputan dalam radius Anda dapat diterima tanpa jawaban manual. Nonaktifkan jika tidak dapat menjemput.",
+      "radius": "Radius penjemputan (km)",
+      "radiusHint": "Pilih bilangan bulat dari 1 hingga 50.",
+      "saved": "Pengaturan penjemputan tersimpan",
+      "error": "Pengaturan gagal disimpan. Coba lagi.",
+      "ownerOnly": "Hanya pemilik toko dapat mengubah pengaturan penjemputan.",
+      "locationRequired": "Tambahkan lokasi toko dan aktifkan penjemputan rumah sebelum memakai penerimaan otomatis."
+    },
+    "request": {
+      "where": "Alamat",
+      "call": "Telepon",
+      "history": "Riwayat",
+      "steps": {
+        "accepted": "Diterima",
+        "on_the_way": "Dalam perjalanan",
+        "completed": "Ditimbang dan dibayar",
+        "declined": "Ditolak",
+        "cancelled": "Dibatalkan",
+        "requested": "Diminta"
+      },
+      "back": "Semua permintaan",
+      "details": "Rincian penjemputan",
+      "phone": "Telepon",
+      "directions": "Petunjuk arah",
+      "hidden": "Alamat lengkap dan nomor telepon terlihat setelah Anda menerima.",
+      "items": "Barang yang mereka miliki",
+      "estimate": "Perkiraan",
+      "declined": "Anda menolak permintaan ini.",
+      "cancelled": "Rumah tangga membatalkan penjemputan ini.",
+      "notFoundTitle": "Permintaan tidak ditemukan",
+      "notFoundBody": "Mungkin permintaan toko lain atau tautannya salah."
+    },
+    "status": {
+      "accepted": "Diterima",
+      "on_the_way": "Dalam perjalanan",
+      "declined": "Ditolak",
+      "cancelled": "Dibatalkan",
+      "requested": "Baru",
+      "completed": "Dibayar"
+    },
+    "receipt": {
+      "line": "{weight} dengan harga {price}/kg",
+      "title": "Dibayar {amount}",
+      "kg": "{kg} kg",
+      "total": "Jumlah total",
+      "thanks": "Terima kasih telah mendaur ulang!",
+      "thanksNamed": "Terima kasih telah mendaur ulang, {name}!",
+      "method": "{method}, {when}",
+      "points": "{name} mendapat {points, plural, one {# poin} other {# poin}}",
+      "pointsHint": "Satu poin untuk setiap ₹10.",
+      "stock": "Ditambahkan ke stok Anda.",
+      "back": "Kembali ke permintaan"
+    },
+    "about": "Sekitar {amount}",
+    "sampleNote": "Harga, harga pasar, dan nilai di layar ini merupakan angka contoh untuk prototipe.",
+    "household": "Rumah tangga",
+    "dropoff": "Mengantar ke toko Anda",
+    "methods": {
+      "cash": "Tunai",
+      "upi": "UPI"
+    },
+    "compare": {
+      "above": "Di atas harga pasar",
+      "below": "Di bawah harga pasar",
+      "same": "Sama dengan harga pasar"
+    },
+    "notShop": {
+      "title": "Khusus toko pengepul",
+      "body": "Permintaan penjemputan dan harga rumah tangga merupakan bagian toko pengepul.",
+      "home": "Ke beranda"
+    }
+  },
+  "analytics": {
+    "close": "Tutup",
+    "title": "Analitik opsional",
+    "description": "Izinkan PostHog dan Google Analytics mengukur kunjungan ke halaman publik. Kami tidak merekam formulir, halaman pribadi, atau pemutaran ulang sesi. Pilihan Anda tidak mengubah akses ke platform.",
+    "accept": "Izinkan analitik",
+    "decline": "Tetap nonaktifkan analitik",
+    "settings": "Pengaturan analitik",
+    "saved": "Pilihan Anda disimpan di perangkat ini.",
+    "unavailable": "Peramban gagal menyimpan pilihan ini. Analitik akan tetap nonaktif."
+  },
+  "home": {
+    "metaDescription": "Luma.Green menyatukan rantai barang bekas India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, usaha terverifikasi, dan tanda terima di setiap tahap.",
+    "hero": {
+      "eyebrow": "Dimulai di Bengaluru",
+      "title": "Rantai barang bekas India dalam satu platform",
+      "lead": "Jual barang bekas dari rumah dengan harga adil. Dagangkan sepanjang rantai bersama usaha terverifikasi. Setiap serah terima ditimbang, dihargai, dan dicatat.",
+      "sell": "Jual barang bekas Anda",
+      "join": "Gabung sebagai usaha",
+      "prices": "Lihat harga hari ini"
+    },
+    "teaser": {
+      "title": "Harga hari ini",
+      "placeAndDate": "Bengaluru · {date}",
+      "place": "Bengaluru",
+      "seeAll": "Lihat semua harga",
+      "demoNote": "Contoh harga untuk prototipe.",
+      "unavailable": "Harga hari ini akan segera tampil di sini.",
+      "error": "Harga belum dapat dimuat."
+    },
+    "chain": {
+      "heading": "Alur barang bekas",
+      "intro": "Barang bekas berpindah tangan empat kali sebelum menjadi sesuatu yang baru. Pemilahannya makin baik di setiap tahap, dan Luma.Green mencatat setiap serah terima.",
+      "steps": {
+        "household": {
+          "name": "Rumah tangga",
+          "body": "Jual kertas, plastik, logam, dan limbah elektronik lama."
+        },
+        "kabadiwala": {
+          "name": "Pengepul",
+          "body": "Membeli, menimbang, dan memilah berdasarkan bahan."
+        },
+        "yard": {
+          "name": "Tempat pemilahan",
+          "body": "Mengelompokkan mutu dan mengepres menjadi bal."
+        },
+        "recycler": {
+          "name": "Pendaur ulang",
+          "body": "Mengubah bal menjadi serpihan, butiran, dan batangan."
+        },
+        "manufacturer": {
+          "name": "Produsen",
+          "body": "Membuat produk baru dari bahan daur ulang."
+        }
+      },
+      "money": "Rumah tangga menerima uang tunai atau UPI di depan pintu. Rekening penampungan antarusaha masih direncanakan.",
+      "saathi": "Saathi membantu di seluruh rantai melalui penjemputan, pemilahan, dan kerja sif."
+    },
+    "roles": {
+      "heading": "Manfaat bagi setiap pelaku dalam rantai",
+      "intro": "Enam kelompok menjaga barang bekas terus bergerak. Inilah manfaat Luma.Green bagi masing-masing kelompok.",
+      "household": {
+        "title": "Rumah tangga",
+        "one": "Lihat nilai barang bekas sebelum memesan.",
+        "two": "Dijemput di depan pintu atau diantar ke toko.",
+        "three": "Dibayar tunai atau melalui UPI, disertai tanda terima.",
+        "cta": "Jual barang bekas Anda"
+      },
+      "kabadiwala": {
+        "title": "Pengepul",
+        "one": "Permintaan penjemputan dari rumah sekitar.",
+        "two": "Tentukan harga sendiri, tidak di bawah batas minimum.",
+        "three": "Jual stok terpilah ke tempat pemilahan.",
+        "cta": "Gabung sebagai pengepul"
+      },
+      "yard": {
+        "title": "Tempat pemilahan",
+        "one": "Lihat stok toko di sekitar.",
+        "two": "Beli dalam jumlah besar dan jual bal ke pendaur ulang.",
+        "three": "Direncanakan: Pembayaran ditahan dalam rekening penampungan hingga pengiriman selesai.",
+        "cta": "Gabung sebagai tempat pemilahan"
+      },
+      "recycler": {
+        "title": "Pendaur ulang",
+        "one": "Bal bermutu dari tempat pemilahan terverifikasi.",
+        "two": "Setiap lot disertai riwayat penguasaan bahan.",
+        "three": "Jual hasil produksi ke pabrik.",
+        "cta": "Gabung sebagai pendaur ulang"
+      },
+      "manufacturer": {
+        "title": "Produsen",
+        "one": "Lihat hasil produksi pendaur ulang.",
+        "two": "Direncanakan: Pesan bahan daur ulang dengan rekening penampungan.",
+        "three": "Catatan untuk laporan EPR Anda.",
+        "cta": "Gabung sebagai produsen"
+      },
+      "saathi": {
+        "title": "Pekerja Saathi",
+        "one": "Pekerjaan berbayar di sekitar: penjemputan, pemilahan, dan sif.",
+        "two": "Pilih wilayah dan jam kerja Anda.",
+        "three": "Terverifikasi agar rumah tangga dan usaha memercayai Anda.",
+        "cta": "Gabung sebagai Saathi"
+      }
+    },
+    "trust": {
+      "heading": "Dibangun di atas kepercayaan",
+      "intro": "Perdagangan barang bekas selama ini mengandalkan uang tunai dan perkiraan. Aturan ini mengubahnya.",
+      "verified": {
+        "title": "Usaha terverifikasi",
+        "body": "Petugas memeriksa setiap usaha dan Saathi sebelum mereka dapat berdagang."
+      },
+      "floor": {
+        "title": "Harga adil dengan batas minimum",
+        "body": "Toko menentukan harga sendiri, tetapi tidak di bawah harga minimum yang kami terbitkan untuk setiap bahan."
+      },
+      "escrow": {
+        "title": "Direncanakan: Rekening penampungan untuk transaksi usaha",
+        "body": "Demo menampilkan tahap pembayaran, tetapi tidak menyimpan atau memindahkan uang sungguhan."
+      },
+      "receipts": {
+        "title": "Tanda terima digital",
+        "body": "Setiap penjemputan dan transaksi mendapat tanda terima: barang, jumlah, dan harganya."
+      },
+      "languages": {
+        "title": "{count, number} bahasa",
+        "body": "Kannada, Hindi, Tamil, Inggris, dan lainnya, dengan tombol besar dan teks singkat."
+      }
+    },
+    "whyNow": {
+      "heading": "Mengapa sekarang",
+      "intro": "Tiga perubahan menjadikan saat ini tepat untuk mencatat rantai barang bekas India.",
+      "epr": {
+        "title": "Aturan EPR",
+        "body": "Aturan Tanggung Jawab Produsen yang Diperluas untuk kemasan plastik, limbah elektronik, dan baterai meminta produsen membuktikan bahwa bahan benar-benar dikumpulkan dan didaur ulang. Bukti itu harus dimulai dari serah terima pertama."
+      },
+      "informal": {
+        "title": "Sektor informal",
+        "body": "Pengepul dan pekerja informal sudah menangani sebagian besar daur ulang India, dengan akses terbatas ke harga adil, catatan, atau pengakuan. Luma.Green bekerja bersama mereka."
+      },
+      "upi": {
+        "title": "UPI di mana-mana",
+        "body": "Pembayaran melalui ponsel kini biasa, bahkan di toko terkecil. Setiap pembayaran dapat meninggalkan catatan."
+      }
+    },
+    "closing": {
+      "title": "Mulai dari yang Anda miliki",
+      "body": "Sekantong koran lama atau satu truk bal: semuanya punya tempat di Luma.Green.",
+      "sell": "Jual barang bekas Anda",
+      "join": "Gabung sebagai usaha"
+    },
+    "expansion": {
+      "materialsTitle": "Mulai dari bahan yang sudah Anda miliki",
+      "pickupTitle": "Penjemputan, langkah demi langkah",
+      "shopTitle": "Toko barang bekas Anda, terhubung",
+      "recordsTitle": "Catatan yang mengikuti bahan",
+      "paymentTitle": "Berat jelas. Pembayaran jelas.",
+      "questionsTitle": "Sebelum memulai"
+    },
+    "marquee": {
+      "label": "Bahan dalam katalog",
+      "pause": "Jeda gerakan",
+      "resume": "Lanjutkan gerakan"
+    },
+    "testimonials": {
+      "title": "Testimoni demo",
+      "note": "Kutipan ilustrasi, bukan ulasan pelanggan.",
+      "household": "Saya bisa memeriksa harga sebelum memilih penjemputan.",
+      "kabadiwala": "Berat, harga, dan tanda terima tersimpan bersama. Setiap penjemputan lebih mudah diperiksa.",
+      "manufacturer": "Kode bahan memudahkan saya meminta mutu yang dibutuhkan."
+    }
+  },
+  "notFound": {
+    "metaTitle": "Halaman tidak ditemukan",
+    "title": "Halaman tidak ditemukan",
+    "body": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+    "backHome": "Kembali ke beranda"
+  },
+  "solar": {
+    "chart": {
+      "table": "Tampilkan angka",
+      "title": "Penghematan selama {years, number} tahun",
+      "legendPaying": "Belum balik modal",
+      "legendPaid": "Sudah balik modal",
+      "legendCost": "Biaya Anda",
+      "label": "Penghematan per tahun. Gunakan tombol panah untuk berpindah tahun.",
+      "point": "Tahun {year, number}: hemat {amount}",
+      "yearLabel": "Tahun {year, number}",
+      "tableCaption": "Penghematan per tahun",
+      "year": "Tahun",
+      "saved": "Penghematan sejauh ini"
+    },
+    "contact": {
+      "phone": "Nomor ponsel",
+      "sending": "Mengirim…",
+      "errors": {
+        "phone": "Masukkan nomor ponsel India 10 digit.",
+        "name": "Masukkan nama Anda.",
+        "message": "Tulis beberapa kata, maksimal 1.000 karakter.",
+        "generic": "Pesan gagal dikirim. Coba lagi."
+      },
+      "title": "Bicaralah dengan kami",
+      "lead": "Beri tahu cara menghubungi Anda. Kami akan menelepon kembali.",
+      "name": "Nama Anda",
+      "phoneHint": "Kami akan menelepon nomor ini.",
+      "message": "Ada hal yang perlu kami ketahui?",
+      "messageHint": "Perkiraan Anda sudah terisi. Tambahkan apa pun yang diperlukan.",
+      "prefill": "{kind, select, home {Untuk rumah saya} other {Untuk usaha saya}}: sistem {kw} kW, dari perkiraan di halaman ini.",
+      "send": "Kirim",
+      "sentTitle": "Terima kasih, {name}",
+      "sentBody": "Pesan Anda sudah diterima dan kami akan segera menelepon.",
+      "another": "Kirim pesan lain",
+      "privacy": "Kami hanya menggunakan nomor Anda untuk membahas panel surya.",
+      "unavailable": "Pesan belum dapat dikirim dari halaman ini. Kirim surel ke <link>{email}</link>."
+    },
+    "metaTitle": "Kalkulator panel surya atap untuk Karnataka",
+    "metaDescription": "Perkirakan sistem panel surya atap yang dibutuhkan rumah atau usaha Anda di Karnataka, biaya setelah subsidi PM Surya Ghar, dan waktu balik modal.",
+    "eyebrow": "Karnataka",
+    "title": "Panel surya atap untuk rumah atau usaha Anda",
+    "lead": "Temukan ukuran yang sesuai dengan atap, biaya setelah subsidi pemerintah, dan waktu balik modal. Semua angka di sini merupakan perkiraan.",
+    "form": {
+      "heading": "Rincian Anda",
+      "kind": "Untuk siapa?",
+      "kinds": {
+        "home": "Rumah saya",
+        "business": "Usaha saya"
+      },
+      "mode": "Pemakaian listrik Anda",
+      "modes": {
+        "bill": "Tagihan bulanan",
+        "units": "Unit per bulan"
+      },
+      "bill": "Tagihan listrik bulanan",
+      "billHint": "Dalam rupee, misalnya 2500",
+      "units": "Unit yang dipakai per bulan",
+      "unitsHint": "Tercantum di tagihan, misalnya 300",
+      "unitsSuffix": "unit listrik",
+      "roof": "Luas atap tanpa bayangan",
+      "roofHint": "Biarkan kosong jika tidak yakin.",
+      "roofUnit": "Satuan luas atap",
+      "areaUnits": {
+        "sqft": "kaki persegi",
+        "m2": "m²"
+      },
+      "optional": "opsional",
+      "errors": {
+        "bill": "Masukkan tagihan antara {min} dan {max}.",
+        "units": "Masukkan antara {min} dan {max} unit.",
+        "roof": "Masukkan luas atap lebih dari nol atau biarkan kosong."
+      }
+    },
+    "result": {
+      "heading": "Perkiraan Anda",
+      "prompt": "Masukkan tagihan atau unit untuk melihat perkiraan.",
+      "size": "Sistem yang disarankan",
+      "kw": "{kw} kW",
+      "sizeHint": "Menghasilkan sekitar {units} unit per bulan dan membutuhkan atap sekitar {area}.",
+      "areaIn": "{value} {unit, select, sqft {kaki persegi} other {m²}}",
+      "fromBill": "Tagihan Anda setara sekitar {units} unit per bulan.",
+      "limitedByRoof": "Disesuaikan dengan atap Anda. Atap lebih luas dapat menutup bagian tagihan yang lebih besar.",
+      "roofTooSmallTitle": "Atap Anda tampaknya terlalu kecil",
+      "roofTooSmallBody": "Sistem terkecil sekalipun, 1 kW, membutuhkan sekitar {area} atap tanpa bayangan. Hubungi kami: mungkin ada cara lain.",
+      "cost": "Biaya sebelum subsidi",
+      "subsidy": "Subsidi PM Surya Ghar",
+      "noSubsidy": "Tidak untuk usaha",
+      "netCost": "Biaya Anda",
+      "savings": "Perkiraan penghematan",
+      "perMonth": "{amount} per bulan",
+      "payback": "Balik modal dalam",
+      "yearsRange": "{low}–{high} tahun",
+      "years": "{count, plural, one {# tahun} other {# tahun}}",
+      "range": "{low} – {high}",
+      "minus": "− {amount}",
+      "noPayback": "Tidak dari penghematan ini",
+      "demoNote": "Hanya perkiraan berdasarkan asumsi di bawah. Kunjungan lokasi memberikan angka sebenarnya."
+    },
+    "assumptions": {
+      "title": "Cara kami memperkirakan",
+      "production": "Panel 1 kW menghasilkan sekitar {units} unit per bulan di Karnataka.",
+      "roof": "Setiap kW membutuhkan sekitar {m2} m² ({sqft} kaki persegi) atap tanpa bayangan.",
+      "cost": "Pemasangan membutuhkan sekitar {low}–{high} per kW.",
+      "tariff": "Tagihan dikonversi ke unit dengan tarif sekitar {home} per unit untuk rumah dan {business} untuk usaha.",
+      "subsidy": "Rumah mendapat {first} per kW untuk 2 kW pertama dan {third} untuk kW ke-3, hingga {cap}. Usaha tidak mendapat subsidi.",
+      "savings": "Penghematan hanya menghitung listrik yang digunakan sendiri dengan tarif saat ini."
+    },
+    "subsidy": {
+      "title": "Subsidi PM Surya Ghar",
+      "body": "PM Surya Ghar: Muft Bijli Yojana adalah program Pemerintah India untuk panel surya atap rumah. Subsidi dibayar ke rekening bank setelah sistem dipasang dan diperiksa.",
+      "caption": "Subsidi berdasarkan ukuran sistem untuk rumah",
+      "size": "Ukuran sistem",
+      "amount": "Subsidi",
+      "atLeast": "{kw} kW atau lebih",
+      "kw": "{kw} kW",
+      "source": "Aturan dan pendaftaran:",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "(dibuka di tab baru)",
+      "business": "Usaha tidak mendapat subsidi ini, tetapi sering menghemat lebih banyak karena tarif listrik per unit lebih tinggi."
+    },
+    "next": {
+      "title": "Langkah berikutnya",
+      "one": {
+        "title": "Kami menelepon Anda",
+        "body": "Kami menanyakan atap, tagihan, dan kapan Anda ingin memulai."
+      },
+      "two": {
+        "title": "Kunjungan lokasi",
+        "body": "Pemasang terverifikasi memeriksa atap dan memberikan penawaran harga pasti."
+      },
+      "three": {
+        "title": "Subsidi dan pengukuran neto",
+        "body": "Kami membantu pengajuan subsidi dan pengukuran neto ke perusahaan listrik Anda."
+      }
+    }
+  },
+  "participants": {
+    "kabadiwala": {
+      "name": "Pengepul",
+      "body": "Terima permintaan penjemputan dari rumah sekitar, timbang dan bayar dengan adil, lalu jual stok terpilah ke tempat pemilahan."
+    },
+    "yard": {
+      "name": "Tempat pemilahan",
+      "body": "Direncanakan: Beli dari pengepul, pilah dan buat bal, lalu jual lot bermutu ke pendaur ulang dengan pembayaran ditahan di rekening penampungan."
+    },
+    "recycler": {
+      "name": "Pendaur ulang",
+      "body": "Beli bal bermutu dari tempat pemilahan terverifikasi dan jual serpihan, butiran, serta batangan ke pabrik."
+    },
+    "manufacturer": {
+      "name": "Produsen",
+      "body": "Pesan bahan daur ulang dari pendaur ulang terverifikasi, disertai catatan untuk laporan EPR."
+    },
+    "saathi": {
+      "name": "Pekerja Saathi",
+      "body": "Ambil pekerjaan penjemputan, pemilahan, dan sif berbayar di dekat rumah, lalu lihat penghasilan Anda."
+    },
+    "metaTitle": "Untuk siapa",
+    "metaDescription": "Luma.Green dibuat untuk rumah tangga, pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi: semua yang memindahkan barang bekas dari rumah ke pabrik.",
+    "title": "Untuk siapa Luma.Green dibuat",
+    "lead": "Semua yang memindahkan barang bekas dari rumah ke pabrik, serta orang yang bekerja di antaranya.",
+    "householdHeading": "Serta setiap rumah tangga",
+    "householdBody": "Siapa pun dapat menjual barang bekas dari rumah tanpa akun: pilih bahan, lihat penawaran tiap toko, lalu terima pembayaran tunai atau UPI dengan tanda terima."
+  },
+  "join": {
+    "consent": {
+      "title": "Sebelum memulai",
+      "lead": "Data yang kami minta dan alasannya.",
+      "why": {
+        "kabadiwala": "Rincian toko memungkinkan rumah sekitar memesan layanan Anda dan membantu kami memastikan toko benar-benar ada. Kami menelepon sekali untuk konfirmasi.",
+        "business": "Sertifikat izin dan foto mesin menunjukkan kepada pembeli dan penjual bahwa Anda berizin dan beroperasi. Kami memeriksanya di daftar publik badan pengendalian pencemaran.",
+        "saathi": "Identitas berfoto dan swafoto membantu kami memastikan siapa Anda sebelum orang mengizinkan Anda masuk rumah atau tempat pemilahan."
+      },
+      "privacy": "Hanya Anda dan tim Luma.Green yang dapat melihat rincian dan berkas Anda. Kami memakainya untuk verifikasi dan menghubungkan Anda dengan pengguna Luma.Green, tidak pernah menjualnya. Anda dapat meminta penghapusan.",
+      "age": "Saya berusia 18 tahun atau lebih",
+      "accept": "Saya sudah membaca data yang dikumpulkan dan alasannya",
+      "startButton": "Mulai pendaftaran saya",
+      "starting": "Memulai…"
+    },
+    "business": {
+      "materialNames": {
+        "paper": "Kertas",
+        "plastic": "Plastik",
+        "metal": "Logam",
+        "glass": "Kaca",
+        "ewaste": "Limbah elektronik"
+      },
+      "titles": {
+        "yard": "Tempat pemilahan Anda",
+        "recycler": "Unit daur ulang Anda",
+        "manufacturer": "Pabrik Anda"
+      },
+      "step": "Langkah {step} dari 2",
+      "businessName": "Nama usaha",
+      "materials": "Bahan yang ditangani",
+      "materialsHint": "Agar kami dapat menghubungkan Anda dengan penjual dan pembeli yang tepat.",
+      "address": "Alamat",
+      "addressHint": "Kavling, jalan, dan wilayah",
+      "locationTags": "Nama wilayah",
+      "locationTagsHint": "Bantu orang menemukan Anda, misalnya Kawasan Industri Peenya. Maksimal lima.",
+      "addTag": "Tambah",
+      "collects": "Apakah Anda mengambil dari pemasok?",
+      "hours": "Jam kerja"
+    },
+    "saathi": {
+      "vehicles": {
+        "none": "Tidak ada",
+        "cycle": "Sepeda",
+        "two_wheeler": "Motor atau skuter",
+        "auto": "Bajaj"
+      },
+      "name": "Nama Anda",
+      "work": {
+        "home_pickups": "Penjemputan dari rumah",
+        "yard_sorting": "Pemilahan di tempat pemilahan",
+        "shop_help": "Bantuan di toko pengepul",
+        "factory_shifts": "Sif di pendaur ulang atau pabrik"
+      },
+      "timeNames": {
+        "morning": "Pagi",
+        "afternoon": "Siang",
+        "evening": "Sore"
+      },
+      "title": "Tentang Anda",
+      "nameHint": "Sesuai identitas",
+      "area": "Tempat tinggal Anda",
+      "areaHint": "Wilayah Anda, misalnya Malleshwaram",
+      "radius": "Seberapa jauh Anda dapat bepergian?",
+      "radiusOption": "{km} km",
+      "workTypes": "Pekerjaan yang diinginkan",
+      "vehicle": "Kendaraan Anda",
+      "times": "Kapan Anda dapat bekerja?",
+      "days": "Hari apa saja?",
+      "idProof": "Identitas berfoto",
+      "idProofHint": "Kartu pemilih, SIM, PAN, atau Aadhaar tersamarkan yang hanya menampilkan empat digit terakhir. Foto atau PDF, maksimal 10 MB.",
+      "selfie": "Swafoto",
+      "selfieHint": "Kami mencocokkannya dengan identitas Anda."
+    },
+    "homeLink": "Lihat cara kerjanya",
+    "roles": {
+      "kabadiwala": {
+        "title": "Pengepul",
+        "body": "Anda mengelola toko barang bekas dan membeli dari rumah sekitar.",
+        "needs": "Alamat dan jam buka toko. Nomor GST jika ada."
+      },
+      "yard": {
+        "title": "Tempat pemilahan",
+        "body": "Anda memilah dan mengepres barang bekas dalam jumlah besar, lalu menjualnya kembali.",
+        "needs": "Nomor GST jika ada, izin pengendalian pencemaran (PDF), dan foto mesin Anda."
+      },
+      "recycler": {
+        "title": "Pendaur ulang",
+        "body": "Anda mengolah barang bekas menjadi bahan baku kembali.",
+        "needs": "Nomor GST jika ada, izin pengendalian pencemaran (PDF), dan foto mesin Anda."
+      },
+      "manufacturer": {
+        "title": "Produsen",
+        "body": "Anda membeli bahan daur ulang untuk pabrik.",
+        "needs": "Nomor GST jika ada, izin pengendalian pencemaran (PDF), dan foto mesin Anda."
+      },
+      "saathi": {
+        "title": "Pekerja Saathi",
+        "body": "Anda mencari pekerjaan berbayar: penjemputan dari rumah, pemilahan, atau sif pabrik.",
+        "needs": "Identitas berfoto dan swafoto."
+      }
+    },
+    "shell": {
+      "signOut": "Keluar"
+    },
+    "form": {
+      "submitting": "Mengirim…",
+      "back": "Kembali",
+      "optional": "opsional",
+      "saving": "Menyimpan…",
+      "saved": "Tersimpan",
+      "notSaved": "Belum tersimpan. Periksa koneksi Anda.",
+      "submit": "Kirim untuk verifikasi",
+      "next": "Berikutnya: dokumen",
+      "fixErrors": "Beberapa jawaban perlu diperiksa. Sudah ditandai di bawah.",
+      "yes": "Ya",
+      "no": "Tidak",
+      "gstQuestion": "Apakah Anda memiliki nomor GST?",
+      "gstin": "Nomor GST",
+      "gstinHint": "15 karakter, misalnya 29ABCDE1234F1Z5",
+      "useLocation": "Gunakan lokasi saya",
+      "locating": "Mencari lokasi Anda…",
+      "locationSaved": "Lokasi tersimpan",
+      "locationFailed": "Lokasi gagal diperoleh. Izinkan lokasi untuk situs ini atau ketik alamat. Kami akan mengonfirmasinya saat menelepon.",
+      "locationWhy": "Agar rumah dan pembeli terdekat dapat menemukan Anda.",
+      "loginPhone": "Nomor untuk masuk",
+      "otherPhones": "Nomor lain",
+      "otherPhonesHint": "Maksimal dua nomor tambahan, misalnya asisten atau mitra. Kami hanya menelepon tentang pekerjaan Anda.",
+      "addPhone": "Tambah nomor",
+      "remove": "Hapus",
+      "phoneNumber": "Nomor",
+      "phoneLabel": "Pemilik nomor",
+      "phoneLabelPlaceholder": "Asisten, mitra…",
+      "hours": "Jam buka",
+      "opens": "Buka",
+      "closes": "Tutup",
+      "weeklyOff": "Hari libur mingguan",
+      "weeklyOffHint": "Kosongkan jika buka setiap hari.",
+      "weekdays": {
+        "mon": "Sen",
+        "tue": "Sel",
+        "wed": "Rab",
+        "thu": "Kam",
+        "fri": "Jum",
+        "sat": "Sab",
+        "sun": "Min"
+      },
+      "changesTitle": "Yang perlu diperbaiki"
+    },
+    "status": {
+      "draft": {
+        "continue": "Lanjutkan",
+        "title": "Pendaftaran Anda belum dikirim",
+        "lead": "Semua yang sudah diisi tersimpan.",
+        "changeRole": "Mulai lagi dengan peran lain",
+        "confirmChange": "Data yang sudah Anda isi akan dihapus. Mulai lagi?"
+      },
+      "rejected": {
+        "contact": "Bicaralah dengan kami",
+        "title": "Kami belum dapat memverifikasi Anda",
+        "lead": "Alasan tim kami:"
+      },
+      "suspended": {
+        "contact": "Bicaralah dengan kami",
+        "title": "Akun Anda dijeda",
+        "lead": "Hubungi kami agar masalah dapat diselesaikan."
+      },
+      "metaTitle": "Pendaftaran Anda",
+      "none": {
+        "title": "Ceritakan pekerjaan Anda",
+        "lead": "Pilih peran untuk memulai pendaftaran."
+      },
+      "submitted": {
+        "title": "Sedang ditinjau",
+        "lead": "Biasanya 12–24 jam. Kami mengirim SMS setelah selesai.",
+        "sentAt": "Dikirim {when}",
+        "whatWeCheck": "Yang kami periksa"
+      },
+      "changes_requested": {
+        "title": "Perlu beberapa perubahan",
+        "lead": "Tim kami meminta ini:",
+        "fix": "Perbaiki dan kirim ulang"
+      },
+      "approved": {
+        "title": "Anda terverifikasi",
+        "lead": "Usaha Anda sudah aktif di Luma.Green.",
+        "open": "Buka dasbor Anda"
+      },
+      "roleLabel": "Mendaftar sebagai: {role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "Toko berada di lokasi yang Anda tunjukkan pada peta",
+          "two": "Kami menelepon nomor yang Anda gunakan untuk masuk",
+          "three": "Nomor GST Anda aktif, jika diberikan"
+        },
+        "business": {
+          "one": "Nomor GST Anda aktif dan sesuai dengan usaha, jika diberikan",
+          "two": "Izin Anda tercatat di badan terkait, masih berlaku, dan mencakup pekerjaan Anda",
+          "three": "Foto menunjukkan unit yang beroperasi, dan kami menelepon Anda"
+        },
+        "saathi": {
+          "one": "Identitas dapat dibaca dan namanya sesuai",
+          "two": "Swafoto sesuai dengan identitas",
+          "three": "Kami menelepon nomor Anda"
+        }
+      }
+    },
+    "kabadiwala": {
+      "ownerName": "Nama Anda",
+      "title": "Toko Anda",
+      "shopName": "Nama toko",
+      "address": "Alamat toko",
+      "addressHint": "Jalan, wilayah, dan patokan",
+      "offersPickup": "Apakah Anda menjemput dari rumah?",
+      "noPickupHint": "Tidak masalah. Saathi di dekat Anda dapat menjemput dari rumah untuk toko Anda.",
+      "vehicle": "Kendaraan Anda",
+      "vehicles": {
+        "handcart": "Gerobak dorong",
+        "cycle": "Sepeda",
+        "auto": "Bajaj",
+        "mini_truck": "Truk kecil"
+      }
+    },
+    "metaTitle": "Gabung Luma.Green",
+    "metaDescription": "Pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi di Bengaluru: daftar untuk bergabung dengan Luma.Green. Petugas memeriksa setiap pendaftaran, biasanya dalam 12–24 jam.",
+    "title": "Gabung Luma.Green",
+    "lead": "Ceritakan pekerjaan Anda. Petugas memeriksa setiap pendaftaran, biasanya dalam 12–24 jam.",
+    "start": "Mulai",
+    "youNeed": "Yang diperlukan",
+    "homeTitle": "Menjual barang bekas dari rumah?",
+    "homeBody": "Anda tidak perlu bergabung. Pesan penjemputan saat ada barang yang ingin dijual.",
+    "documents": {
+      "title": "Dokumen dan foto",
+      "lead": "Kami memeriksa izin Anda dalam daftar publik badan pengendalian pencemaran.",
+      "notRequired": "Unit kami tidak memerlukan izin",
+      "notRequiredHint": "Beberapa unit, misalnya hanya pengepresan kertas, dikecualikan. Jelaskan alasannya agar kami memeriksa.",
+      "reason": "Alasan tidak diperlukan",
+      "board": "Badan mana yang menerbitkan?",
+      "boards": {
+        "kspcb": "Karnataka (KSPCB)",
+        "other": "Badan negara bagian lain"
+      },
+      "boardState": "Negara bagian mana?",
+      "consentNumber": "Nomor izin atau pendaftaran",
+      "consentNumberHint": "Sesuai yang tercetak pada sertifikat",
+      "validUntil": "Berlaku sampai",
+      "certificate": "Sertifikat izin",
+      "certificateHint": "Satu PDF, maksimal 10 MB.",
+      "machineMedia": "Foto atau video mesin Anda",
+      "machineMediaHint": "Minimal dua. Tampilkan mesin utama dan tempat pemilahan. Foto maksimal 10 MB, video maksimal 20 MB.",
+      "declaration": "Dokumen ini asli dan milik usaha ini."
+    },
+    "files": {
+      "choose": "Pilih berkas",
+      "addMore": "Tambah lagi",
+      "takePhoto": "Ambil foto",
+      "uploading": "Mengunggah…",
+      "remove": "Hapus",
+      "size": "{size} MB",
+      "sizeKb": "{size} KB"
+    },
+    "errors": {
+      "required": "Wajib diisi",
+      "tooShort": "Mohon sedikit lebih panjang",
+      "tooLong": "Terlalu panjang",
+      "chooseOne": "Pilih satu",
+      "pickAtLeastOne": "Pilih minimal satu",
+      "gstin": "Periksa nomor GST: 15 karakter, misalnya 29ABCDE1234F1Z5",
+      "phone": "Masukkan nomor ponsel 10 digit",
+      "duplicatePhone": "Nomor ini sudah terdaftar",
+      "maxPhones": "Maksimal dua nomor tambahan",
+      "maxTags": "Maksimal lima nama wilayah",
+      "time": "Masukkan waktu",
+      "closesBeforeOpens": "Jam tutup harus setelah jam buka",
+      "date": "Masukkan tanggal",
+      "expired": "Izin ini kedaluwarsa. Unggah izin yang diperbarui.",
+      "explainMore": "Ceritakan sedikit lagi",
+      "declaration": "Mohon konfirmasi",
+      "fileMissing": "Mohon tambahkan ini",
+      "fileType": "Jenis berkas ini tidak dapat digunakan di sini",
+      "fileTooBig": "Berkas ini terlalu besar",
+      "uploadFailed": "Unggahan gagal. Coba lagi.",
+      "generic": "Terjadi kesalahan. Coba lagi."
+    }
+  },
+  "saathi": {
+    "days": {
+      "today": "Hari ini",
+      "tomorrow": "Besok",
+      "yesterday": "Kemarin"
+    },
+    "greeting": "Halo, {name}",
+    "lead": "Pekerjaan berbayar di sekitar {area}. Ambil pekerjaan, kerjakan, lalu tandai selesai.",
+    "demoNote": "Data contoh: pekerjaan, usaha, dan upah di sini merupakan contoh untuk prototipe.",
+    "week": {
+      "label": "Penghasilan minggu ini",
+      "hint": "7 hari terakhir · {count, plural, =0 {belum ada pekerjaan} one {# pekerjaan} other {# pekerjaan}}",
+      "all": "Lihat semua penghasilan"
+    },
+    "today": {
+      "title": "Pekerjaan Anda hari ini",
+      "empty": "Tidak ada pekerjaan hari ini",
+      "emptyBody": "Ambil pekerjaan terbuka di bawah. Pekerjaan akan tampil di sini pada harinya."
+    },
+    "upcoming": {
+      "title": "Mendatang",
+      "hint": "Anda dapat menandainya selesai pada hari pekerjaan."
+    },
+    "open": {
+      "title": "Pekerjaan terbuka",
+      "lead": "Pekerjaan di wilayah Anda ditampilkan lebih dahulu.",
+      "empty": "Belum ada pekerjaan terbuka",
+      "emptyBody": "Pekerjaan baru dari toko, tempat pemilahan, dan pabrik muncul di sini."
+    },
+    "work": {
+      "home_pickups": "Penjemputan dari rumah",
+      "shop_help": "Bantuan di toko",
+      "yard_sorting": "Pemilahan di tempat pemilahan",
+      "factory_shifts": "Sif pabrik"
+    },
+    "windows": {
+      "morning": "Pagi",
+      "afternoon": "Siang",
+      "evening": "Sore"
+    },
+    "when": "{day}, {window}",
+    "whenWhere": "{when} · {area}",
+    "late": "Belum ditandai selesai",
+    "nearYou": "Wilayah Anda",
+    "postedBy": "Untuk {name}",
+    "pay": "Upah",
+    "take": "Ambil pekerjaan ini",
+    "taking": "Mengambil…",
+    "taken": "Pekerjaan diambil. Sekarang ada dalam daftar Anda.",
+    "markDone": "Tandai selesai",
+    "saving": "Menyimpan…",
+    "doneToast": "Selesai! {pay} ditambahkan ke penghasilan Anda.",
+    "confirm": {
+      "title": "Sudah menyelesaikan pekerjaan ini?",
+      "body": "{title} di {area}. {pay} akan ditambahkan ke penghasilan Anda.",
+      "yes": "Ya, sudah selesai",
+      "no": "Belum"
+    },
+    "errors": {
+      "JOB_TAKEN": "Orang lain sudah mengambil pekerjaan ini. Coba pekerjaan lain.",
+      "JOB_EXPIRED": "Hari pekerjaan ini sudah berlalu.",
+      "SLOT_BUSY": "Anda sudah memiliki pekerjaan pada waktu itu.",
+      "NOT_YOUR_JOB": "Pekerjaan ini bukan milik Anda.",
+      "ALREADY_DONE": "Pekerjaan ini sudah ditandai selesai.",
+      "TOO_EARLY": "Anda dapat menandainya selesai pada hari pekerjaan.",
+      "JOB_NOT_FOUND": "Pekerjaan ini tidak lagi tersedia.",
+      "generic": "Gagal. Periksa internet Anda dan coba lagi."
+    }
+  },
+  "impact": {
+    "families": {
+      "paper": "Kertas",
+      "plastic": "Plastik",
+      "metal": "Logam",
+      "glass": "Kaca",
+      "ewaste": "Limbah elektronik",
+      "other": "Lainnya"
+    },
+    "saathi": {
+      "week": "Penghasilan minggu ini",
+      "title": "Penghasilan Anda",
+      "lead": "Upah dari pekerjaan yang sudah selesai.",
+      "total": "Penghasilan sejauh ini",
+      "jobsDone": "{count, plural, one {# pekerjaan selesai} other {# pekerjaan selesai}}",
+      "weekHint": "7 hari terakhir · {count, plural, =0 {tidak ada pekerjaan} one {# pekerjaan} other {# pekerjaan}}",
+      "byKind": "Menurut jenis pekerjaan",
+      "jobs": "{count, plural, one {# pekerjaan} other {# pekerjaan}}",
+      "history": "Pekerjaan selesai",
+      "empty": "Belum ada pekerjaan selesai",
+      "emptyBody": "Ambil pekerjaan di beranda. Saat ditandai selesai, upah muncul di sini.",
+      "findJob": "Cari pekerjaan",
+      "demoNote": "Data contoh: pekerjaan dan upah di sini merupakan contoh untuk prototipe."
+    },
+    "title": "Dampak Anda",
+    "lead": "Bahan yang usaha Anda pertahankan dalam siklus daur ulang.",
+    "demoNote": "Data contoh: jumlah merupakan contoh, dan CO₂e memakai faktor indikatif — kg CO₂e yang dihindari untuk tiap kg yang didaur ulang, bukan dibuat baru.",
+    "since": "Dari penjemputan dan transaksi selesai sejak {date}.",
+    "kpi": {
+      "recycled": "Kilo didaur ulang",
+      "recycledHint": "Setiap kilo dihitung sekali",
+      "recycledContent": "Bahan daur ulang dibeli",
+      "co2e": "CO₂e yang dihindari",
+      "co2eHint": "Dibandingkan dengan membuat baru",
+      "earned": "Pendapatan penjualan",
+      "spent": "Belanja bahan",
+      "paidHouseholds": "Dibayarkan ke rumah tangga",
+      "sales": "{count, plural, =0 {Belum ada penjualan} one {# penjualan} other {# penjualan}}",
+      "purchases": "{count, plural, =0 {Belum ada pembelian} one {# pembelian} other {# pembelian}}",
+      "pickups": "{count, plural, =0 {Belum ada penjemputan} one {# penjemputan} other {# penjemputan}}"
+    },
+    "byFamily": {
+      "title": "Menurut bahan",
+      "lead": "Kilo didaur ulang dan CO₂e yang dihindari setiap bahan.",
+      "co2e": "{amount} CO₂e dihindari"
+    },
+    "flows": {
+      "title": "Masuk dan keluar",
+      "lead": "Bahan yang masuk ke usaha Anda dan yang diteruskan.",
+      "households": "Dibeli dari rumah tangga",
+      "bought": "Dibeli dari usaha",
+      "sold": "Dijual ke tahap selanjutnya"
+    },
+    "ledger": {
+      "title": "Buku besar siap untuk kredit",
+      "lead": "Setiap kilo dicatat beserta siapa, kapan, dan di mana — bukti yang diminta standar kredit karbon dan plastik.",
+      "who": "Siapa",
+      "whoBody": "Usaha dan rumah tangga terverifikasi, masing-masing dengan nomor telepon.",
+      "when": "Kapan",
+      "whenBody": "Setiap tahap diberi cap waktu, dari penjemputan hingga pengiriman.",
+      "where": "Di mana",
+      "whereBody": "Toko, tempat pemilahan, atau pabrik yang dilalui bahan.",
+      "what": "Apa",
+      "whatBody": "Bahan dan beratnya, pada tanda terima atau faktur."
+    },
+    "empty": {
+      "title": "Belum ada catatan",
+      "body": "Angka Anda muncul setelah penjemputan atau transaksi pertama selesai."
+    }
+  },
+  "compliance": {
+    "receipts": {
+      "date": "Tanggal",
+      "title": "Tanda terima transaksi",
+      "lead": "Tanda terima transaksi Luma.Green Anda, yang terbaru lebih dahulu. Faktur pajak GST menyertai pembayaran nyata.",
+      "number": "Tanda terima",
+      "with": "Dengan",
+      "what": "Apa",
+      "amount": "Jumlah",
+      "eway": "Surat jalan elektronik",
+      "sale": "Penjualan",
+      "purchase": "Pembelian",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "Diperlukan",
+      "ewayNotNeeded": "Tidak diperlukan",
+      "ewayNeededLong": "Perlu surat jalan elektronik",
+      "ewayNotNeededLong": "Tidak perlu surat jalan elektronik",
+      "ewayNote": "Surat jalan elektronik diperlukan untuk memindahkan barang senilai lebih dari ₹50.000.",
+      "view": "Lihat tanda terima {number}",
+      "unknown": "Usaha yang sudah tidak ada di Luma.Green",
+      "empty": "Belum ada tanda terima",
+      "emptyBody": "Tanda terima dibuat saat pembeli membayar ke rekening penampungan."
+    },
+    "epr": {
+      "streams": {
+        "plastic": "Plastik",
+        "ewaste": "Limbah elektronik",
+        "paper": "Kertas",
+        "metal": "Logam",
+        "glass": "Kaca",
+        "other": "Lainnya",
+        "battery": "Baterai"
+      },
+      "recycled": "Hasil daur ulang",
+      "title": "Catatan EPR, tahun fiskal {from}–{to}",
+      "lead": "Bahan yang diterima dan didaur ulang pada tahun fiskal ini (April hingga Maret).",
+      "leadManufacturer": "Bahan daur ulang yang dibeli pada tahun fiskal ini (April hingga Maret).",
+      "received": "Diterima",
+      "bought": "Dibeli",
+      "regimes": {
+        "pwm_2016": "Aturan Pengelolaan Limbah Plastik, 2016",
+        "ewaste_2022": "Aturan Pengelolaan Limbah Elektronik, 2022",
+        "bwm_2022": "Aturan Pengelolaan Limbah Baterai, 2022",
+        "none": "Belum ada aturan EPR untuk bahan ini"
+      },
+      "note": "Sertifikat EPR dibuat di portal EPR CPCB, bukan di sini. Total ini berasal dari transaksi selesai Anda dan siap untuk pelaporan.",
+      "empty": "Belum ada catatan tahun ini",
+      "emptyBody": "Transaksi selesai sejak 1 April dihitung di sini."
+    },
+    "title": "Kepatuhan",
+    "lead": "Izin dan catatan Anda di satu tempat.",
+    "demoNote": "Data contoh: dokumen, tanda terima, dan jumlah di sini merupakan contoh untuk prototipe.",
+    "checklist": {
+      "title": "Daftar periksa",
+      "whatThisMeans": "Artinya:"
+    },
+    "status": {
+      "done": "Selesai",
+      "due_soon": "Segera perbarui",
+      "overdue": "Kedaluwarsa",
+      "missing": "Belum ada",
+      "optional": "Opsional",
+      "not_needed": "Tidak diperlukan",
+      "self_declared": "Belum diperiksa"
+    },
+    "items": {
+      "gst": {
+        "title": "Pendaftaran GST",
+        "registered": "GSTIN {gstin}",
+        "notRegistered": "Belum terdaftar",
+        "note": "Nomor GST memungkinkan Anda membuat faktur pajak dan mengkreditkan pajak pembelian. Di Karnataka, pendaftaran wajib saat penjualan melebihi ₹40 lakh setahun atau untuk penjualan ke negara bagian lain."
+      },
+      "consent": {
+        "title": "Izin badan pencemaran",
+        "detail": "{board} · {number}",
+        "missing": "Belum ada izin tersimpan",
+        "note": "Izin operasi dari badan pengendalian pencemaran negara bagian memungkinkan unit pemilahan atau daur ulang beroperasi secara legal. Pendaur ulang dan pabrik memintanya sebelum membeli.",
+        "noteShop": "Toko kecil yang hanya membeli dan memilah barang bekas biasanya tidak memerlukannya. Izin diperlukan jika mulai mengepres, mencacah, atau mengolah bahan."
+      },
+      "scale": {
+        "title": "Timbangan ditera",
+        "detail": "Pernyataan mandiri. Konfirmasi di sini segera tersedia.",
+        "note": "Timbangan jual beli harus diperiksa dan ditera departemen Metrologi Legal, biasanya setahun sekali. Tanda tera menunjukkan berat yang adil."
+      },
+      "safety": {
+        "title": "Perlengkapan keselamatan pekerja",
+        "detail": "Pernyataan mandiri. Konfirmasi di sini segera tersedia.",
+        "note": "Sarung tangan, masker, dan sepatu tertutup untuk semua yang memilah atau mengangkat, serta kotak P3K di lokasi. Saathi yang bekerja untuk Anda juga memerlukannya."
+      }
+    },
+    "consent": {
+      "title": "Masa berlaku izin",
+      "validUntil": "Berlaku sampai {date}",
+      "daysLeft": "{days, plural, =0 {Hari terakhir hari ini} one {Tersisa # hari} other {Tersisa # hari}}",
+      "ranOut": "{days, plural, one {Berakhir # hari lalu} other {Berakhir # hari lalu}}",
+      "reminder": "Tanggal peninjauan pembaruan: {date}, 90 hari sebelum kedaluwarsa.",
+      "expiringTitle": "Perbarui izin sekarang",
+      "expiringBody": "Izin berakhir pada {date}. Ajukan pembaruan ke {board} sekarang — prosesnya dapat memakan waktu berminggu-minggu.",
+      "expiredTitle": "Izin Anda telah berakhir",
+      "expiredBody": "Izin berakhir pada {date}. Perbarui melalui {board} sebelum membeli atau menjual bahan lagi.",
+      "missingTitle": "Belum ada izin tersimpan",
+      "missingBody": "Pendaur ulang dan pabrik meminta izin yang berlaku. Kirim izin melalui Bantuan dan kami akan menambahkannya."
+    },
+    "saathi": {
+      "title": "Untuk usaha",
+      "body": "Kepatuhan ditujukan bagi toko, tempat pemilahan, pendaur ulang, dan pabrik. Pekerjaan dan upah Anda ada di beranda.",
+      "home": "Buka pekerjaan saya"
+    }
+  },
+  "auth": {
+    "metaTitle": "Masuk",
+    "verifyMetaTitle": "Masukkan kode Anda",
+    "chooseLanguage": "Pilih bahasa Anda",
+    "chooseLanguageHint": "Anda dapat mengubahnya kapan saja dari bagian atas layar.",
+    "continue": "Lanjutkan",
+    "title": "Masuk dengan nomor ponsel",
+    "lead": "Untuk pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi.",
+    "mobileLabel": "Nomor ponsel",
+    "mobileHint": "Kami akan mengirim kode 6 digit ke nomor ini.",
+    "mobileInvalid": "Masukkan nomor ponsel India 10 digit.",
+    "sendCode": "Kirim kode",
+    "sending": "Mengirim…",
+    "sendFailed": "Kode gagal dikirim. Coba lagi dalam satu menit.",
+    "homeTitle": "Menjual barang bekas dari rumah? Anda tidak memerlukan akun.",
+    "homeLink": "Lihat cara kerjanya",
+    "privacy": "Kami hanya menggunakan nomor Anda untuk masuk dan mengirim kabar tentang pekerjaan Anda di Luma.Green.",
+    "unavailableTitle": "Masuk melalui ponsel segera tersedia",
+    "unavailableBody": "Kami sedang menyelesaikan pengaturan SMS untuk kode masuk. Periksa kembali sebentar lagi.",
+    "verifyTitle": "Masukkan kode 6 digit",
+    "sentTo": "Dikirim melalui SMS ke {phone}",
+    "codeLabel": "Kode 6 digit",
+    "verify": "Verifikasi",
+    "verifying": "Memeriksa…",
+    "resendIn": "Anda dapat meminta kode baru dalam {seconds, plural, one {# detik} other {# detik}}",
+    "resend": "Kirim kode baru",
+    "resent": "Kode baru telah dikirim.",
+    "changeNumber": "Ubah nomor",
+    "errorInvalid": "Kode itu salah. Periksa SMS dan coba lagi.",
+    "errorExpired": "Kode itu kedaluwarsa. Minta kode baru.",
+    "errorTooMany": "Terlalu banyak percobaan. Minta kode baru.",
+    "errorGeneric": "Terjadi kesalahan. Coba lagi.",
+    "signingIn": "Sedang masuk…",
+    "sendRateLimited": "Terlalu banyak permintaan kode. Coba lagi nanti.",
+    "previewAction": "Pratinjau layar kode",
+    "previewTitle": "Pratinjau kode",
+    "previewNumber": "Nomor ponsel: {phone}",
+    "previewBody": "SMS belum terhubung. Tidak ada kode yang dikirim. Anda dapat memeriksa layar ini, tetapi tidak dapat masuk.",
+    "previewPhoneHint": "Masukkan nomor ponsel untuk melihat pratinjau tahap berikutnya. SMS tidak akan dikirim.",
+    "twoFactorTitle": "Periksa autentikator",
+    "twoFactorDescription": "Masukkan kode 6 digit dari aplikasi autentikator untuk menyelesaikan proses masuk.",
+    "twoFactorUseBackup": "Kode pemulihan",
+    "twoFactorUseApp": "Pakai autentikator",
+    "twoFactorBackupTitle": "Gunakan kode pemulihan",
+    "twoFactorBackupDescription": "Masukkan satu kode pemulihan yang disimpan. Tiap kode hanya berlaku sekali.",
+    "twoFactorBackupLabel": "Kode pemulihan",
+    "twoFactorExpired": "Proses masuk telah kedaluwarsa. Mulai lagi dengan kode telepon baru.",
+    "twoFactorRestart": "Mulai lagi"
+  },
+  "native": {
+    "back": "Kembali",
+    "reload": "Muat ulang",
+    "openBrowser": "Buka di peramban",
+    "offlineTitle": "Tidak dapat terhubung",
+    "offlineBody": "Periksa koneksi internet Anda, lalu coba lagi.",
+    "updates": "Periksa pembaruan aplikasi",
+    "updateReady": "Pembaruan aplikasi siap.",
+    "restart": "Mulai ulang sekarang",
+    "later": "Nanti",
+    "updateCurrent": "Aplikasi Anda sudah terbaru.",
+    "updateUnavailable": "Pembaruan aplikasi tidak tersedia pada versi ini.",
+    "updateFailed": "Pembaruan gagal diperiksa. Coba lagi nanti.",
+    "locationTitle": "Bagikan lokasi Anda?",
+    "locationBody": "Izinkan Luma.Green menggunakan lokasi Anda untuk mencari toko barang bekas terdekat.",
+    "allow": "Izinkan",
+    "deny": "Jangan sekarang",
+    "browserNotice": "Halaman ini dibuka di peramban. Anda mungkin perlu masuk lagi.",
+    "cameraPermission": "Gunakan kamera untuk memotret barang bekas atau dokumen verifikasi.",
+    "photoPermission": "Pilih foto untuk perkiraan barang bekas dan verifikasi.",
+    "cameraTitle": "Kamera"
+  },
+  "showcase": {
+    "scene": "Adegan ilustrasi",
+    "context": {
+      "heading": "Sekilas ruang kerja Anda",
+      "body": "Layar ilustrasi menunjukkan cara setiap peran menggunakan Luma.Green. Ikuti panduan di bawah untuk tahap yang tersedia."
+    },
+    "adminBody": "Tinjau pendaftaran, kelola akses, dan periksa catatan operasional.",
+    "preview": {
+      "label": "Pratinjau aplikasi ilustrasi · tanpa catatan nyata",
+      "roles": {
+        "household": {
+          "title": "Penjemputan rumah tangga Anda",
+          "first": "Pilih bahan Anda",
+          "second": "Atur penjemputan",
+          "third": "Simpan tanda terima"
+        },
+        "kabadiwala": {
+          "title": "Toko barang bekas Anda",
+          "first": "Tinjau permintaan penjemputan",
+          "second": "Catat berat",
+          "third": "Kelola stok terpilah"
+        },
+        "yard": {
+          "title": "Tempat pemilahan Anda",
+          "first": "Terima bahan",
+          "second": "Pilah persediaan",
+          "third": "Siapkan lot keluar"
+        },
+        "recycler": {
+          "title": "Ruang kerja daur ulang Anda",
+          "first": "Lacak lot masuk",
+          "second": "Catat hasil daur ulang",
+          "third": "Simpan catatan bahan"
+        },
+        "manufacturer": {
+          "title": "Pengadaan bahan Anda",
+          "first": "Cari bahan daur ulang",
+          "second": "Tinjau penawaran tersedia",
+          "third": "Lacak transaksi Anda"
+        },
+        "saathi": {
+          "title": "Hari kerja Anda",
+          "first": "Cari pekerjaan terdekat",
+          "second": "Rencanakan jadwal",
+          "third": "Catat pekerjaan selesai"
+        },
+        "admin": {
+          "title": "Administrasi platform",
+          "first": "Tinjau pendaftaran",
+          "second": "Periksa dokumen yang dikirim",
+          "third": "Tinjau catatan operasional"
+        }
+      }
+    }
+  },
+  "accountSecurity": {
+    "title": "Keamanan akun",
+    "description": "Tambahkan kode autentikator setelah kode telepon.",
+    "enabled": "Aktif",
+    "disabled": "Nonaktif",
+    "enable": "Siapkan",
+    "disable": "Nonaktifkan",
+    "recentSignIn": "Masuk lagi sebelum mengubah pengaturan keamanan.",
+    "signInAgain": "Masuk lagi",
+    "setupTitle": "Hubungkan autentikator",
+    "setupDescription": "Pindai kode QR ini dengan aplikasi autentikator, atau masukkan kuncinya. Rahasiakan kunci ini.",
+    "setupKey": "Kunci pengaturan",
+    "backupTitle": "Simpan kode pemulihan",
+    "backupDescription": "Simpan kode ini secara pribadi. Tiap kode berlaku sekali setelah kode telepon.",
+    "savedCodes": "Kode sudah disimpan",
+    "regenerate": "Dapatkan kode baru",
+    "regenerateDescription": "Kode pemulihan lama akan tidak berlaku. Simpan kode baru sebelum meninggalkan halaman ini.",
+    "disableDescription": "Anda hanya akan memakai kode telepon untuk masuk. Autentikator dan kode pemulihan akan tidak berlaku.",
+    "errorCode": "Kode ini tidak berhasil. Coba lagi.",
+    "errorRateLimited": "Terlalu banyak percobaan. Tunggu sebelum mencoba lagi.",
+    "recoveryHelp": "Kehilangan autentikator dan kode pemulihan? Hubungi dukungan. Kode telepon saja tidak dapat menonaktifkan autentikasi dua faktor."
+  },
+  "notifications": {
+    "title": "Notifikasi",
+    "permissionBody": "Dapatkan kabar tentang penjemputan dan pengajuan Anda di perangkat ini.",
+    "enable": "Aktifkan",
+    "denied": "Notifikasi diblokir. Ubah di pengaturan perangkat atau browser Anda.",
+    "unavailable": "Notifikasi belum tersedia di sini.",
+    "error": "Tidak dapat mengaktifkan notifikasi. Coba lagi.",
+    "lockscreenTitle": "Kabar dari Luma.Green",
+    "lockscreenBody": "Buka Luma.Green untuk melihat kabar terbaru.",
+    "emptyTitle": "Belum ada pembaruan",
+    "emptyBody": "Pembaruan penjemputan dan pengajuan akan muncul di sini.",
+    "markRead": "Tandai dibaca",
+    "markAllRead": "Baca semua",
+    "unread": "Belum dibaca",
+    "enabled": "Aktif di perangkat ini",
+    "disable": "Matikan",
+    "disabled": "Nonaktif di perangkat ini",
+    "deviceTitle": "Perangkat ini",
+    "inboxTitle": "Pembaruan Anda",
+    "loadMore": "Tampilkan lagi",
+    "events": {
+      "booking_confirmed": "Pemesanan dikonfirmasi",
+      "booking_offer": "Permintaan penjemputan baru",
+      "booking_accepted": "Penjemputan diterima",
+      "booking_reassigned": "Pengumpul diganti",
+      "application_received": "Pendaftaran diterima",
+      "application_approved": "Pendaftaran disetujui",
+      "application_changes_requested": "Pendaftaran perlu diperbaiki",
+      "application_rejected": "Pendaftaran tidak disetujui"
+    }
+  },
+  "integrations": {
+    "title": "Akses API",
+    "lead": "Hubungkan sistem bisnis Anda dengan catatan Anda di Luma.Green.",
+    "connection": "Hubungkan sistem",
+    "readOnly": "REST v1 membaca detail bisnis, bahan, stok, dan transaksi dagang. API ini tidak dapat mengubah catatan atau memproses pembayaran.",
+    "baseUrl": "Jalur dasar di situs ini:",
+    "openApi": "Buka spesifikasi API",
+    "ownerOnly": "Hanya pemilik bisnis yang aktif yang dapat mengelola kunci API.",
+    "tokenTitle": "Simpan kunci API Anda",
+    "tokenHint": "Kunci ini hanya ditampilkan sekali. Simpan di penyimpanan rahasia sistem Anda. Jangan masukkan ke aplikasi peramban, URL, atau pesan. Menutup layar ini akan menghilangkannya dari tampilan.",
+    "tokenLabel": "Kunci API baru",
+    "expiresOn": "Kedaluwarsa {date}",
+    "copy": "Salin kunci",
+    "dismiss": "Selesai",
+    "copyError": "Gagal menyalin. Pilih dan salin kunci secara manual.",
+    "copied": "Kunci disalin.",
+    "createTitle": "Buat kunci",
+    "keyHint": "Gunakan satu kunci untuk setiap sistem. Pilih hanya izin yang diperlukan. Anda dapat memiliki hingga lima kunci aktif.",
+    "label": "Nama sistem",
+    "expiry": "Berlaku selama",
+    "days": "{count, plural, one {# hari} other {# hari}}",
+    "permissions": "Izin baca",
+    "limit": "Ada lima kunci aktif. Cabut kunci yang tidak digunakan sebelum membuat kunci lain.",
+    "createError": "Kunci tidak dapat dibuat. Periksa akses Anda dan coba lagi.",
+    "creating": "Membuat…",
+    "create": "Buat kunci",
+    "keysTitle": "Kunci Anda",
+    "empty": "Belum ada kunci. Buat kunci untuk menghubungkan sistem pertama Anda.",
+    "neverUsed": "Belum digunakan",
+    "lastUsed": "Terakhir digunakan {date}",
+    "revokeLabel": "Cabut {label}",
+    "revoke": "Cabut",
+    "revokeTitle": "Cabut kunci ini?",
+    "revokeHint": "Sistem yang menggunakan “{label}” akan langsung kehilangan akses. Kunci ini tidak dapat dipulihkan.",
+    "revokeError": "Kunci tidak dapat dicabut. Coba lagi.",
+    "revoking": "Mencabut…",
+    "newsHint": "Jika layanan berita telah dikonfigurasi, berita industri menyediakan pembaruan untuk kelompok bahan Anda beserta tautan ke sumbernya.",
+    "scopes": {
+      "organization": "Detail bisnis",
+      "materials": "Katalog bahan",
+      "inventory": "Stok bisnis",
+      "trades": "Transaksi bisnis",
+      "news": "Berita industri"
+    },
+    "status": {
+      "active": "Aktif",
+      "expired": "Kedaluwarsa",
+      "revoked": "Dicabut"
+    }
+  }
+}

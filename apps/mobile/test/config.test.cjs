@@ -30,7 +30,70 @@ test("a fresh clone uses the dedicated app origin with OTA disabled", () => {
     allowLocalHttp: false,
     projectId: undefined,
     signing: undefined,
+    pushEnabled: false,
+    googleServicesFile: undefined,
   });
+});
+
+test("Android Firebase config rejects private keys and another app identity", () => {
+  const directory = mkdtempSync(path.join(tmpdir(), "luma-firebase-config-"));
+  const filename = "google-services.json";
+  try {
+    const env = { LUMA_ANDROID_GOOGLE_SERVICES_FILE: filename };
+    for (const invalid of [
+      { type: "service_account", private_key: "do-not-bundle" },
+      {
+        client: [
+          {
+            client_info: { android_client_info: { package_name: "other.app" } },
+          },
+        ],
+      },
+      {},
+    ]) {
+      writeFileSync(path.join(directory, filename), JSON.stringify(invalid));
+      assert.throws(() => resolveSettings(env, directory));
+    }
+    writeFileSync(
+      path.join(directory, filename),
+      JSON.stringify({
+        client: [
+          {
+            client_info: {
+              android_client_info: { package_name: "green.luma.app" },
+            },
+          },
+        ],
+      }),
+    );
+    assert.equal(
+      resolveSettings(env, directory).googleServicesFile,
+      path.join(directory, filename),
+    );
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test("push stays disabled without an explicit flag and a real EAS project", () => {
+  assert.equal(
+    resolveSettings({ EXPO_PUBLIC_EAS_PROJECT_ID: project }).pushEnabled,
+    false,
+  );
+  assert.equal(
+    resolveSettings({
+      EXPO_PUBLIC_PUSH_ENABLED: "true",
+      EXPO_PUBLIC_EAS_PROJECT_ID: project,
+    }).pushEnabled,
+    true,
+  );
+  assert.throws(() => resolveSettings({ EXPO_PUBLIC_PUSH_ENABLED: "true" }));
+  assert.throws(() =>
+    resolveSettings({
+      EXPO_PUBLIC_PUSH_ENABLED: "yes",
+      EXPO_PUBLIC_EAS_PROJECT_ID: project,
+    }),
+  );
 });
 
 test("a release never permits local HTTP even if the developer flag is set", () => {

@@ -6,7 +6,7 @@ import {
   PhoneCallIcon,
   ScrollTextIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, useState } from "react";
 
 import { useFormat } from "@/components/app/format";
@@ -38,12 +38,13 @@ const nextSteps = [
  */
 export function SolarPlanner({ between }: { between?: ReactNode }) {
   const t = useTranslations("solar");
+  const locale = useLocale();
   const format = useFormat();
   const [state, setState] = useState(initialState);
   const [left, setLeft] = useState({ amount: false, roof: false });
 
-  const usage = readUsage(state.mode, state.amount);
-  const roof = readRoof(state.roof, state.areaUnit);
+  const usage = readUsage(state.mode, state.amount, locale);
+  const roof = readRoof(state.roof, state.areaUnit, locale);
   const result: SolarResult | null =
     usage.status === "ok" && roof.status !== "invalid"
       ? estimateSolar({

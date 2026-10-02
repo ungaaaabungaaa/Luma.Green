@@ -37,6 +37,7 @@ vi.mock("@/i18n/navigation", () => ({
 
 vi.mock("@/lib/auth-client", () => ({
   authClient: {
+    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
     signOut: vi.fn(),
     phoneNumber: { sendOtp: vi.fn(), verify: vi.fn() },
   },

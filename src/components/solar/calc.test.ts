@@ -220,6 +220,60 @@ describe("parseAmount", () => {
     expect(parseAmount("೩೦೦೦")).toBe(3000); // Kannada
     expect(parseAmount("٣٠٠٠")).toBe(3000); // Arabic-Indic
     expect(parseAmount("۱۲٫۵")).toBe(12.5); // Urdu digits, Arabic decimal
+    expect(parseAmount("๑๒.๕", "th")).toBe(12.5);
+    expect(parseAmount("෧෨.෫", "si")).toBe(12.5);
+    expect(parseAmount("１２.５", "ja")).toBe(12.5);
+  });
+
+  it("uses the active language's decimal and grouping marks", () => {
+    expect(parseAmount("2.500,5", "de")).toBe(2500.5);
+    expect(parseAmount("2\u{202F}500,5", "fr")).toBe(2500.5);
+    expect(parseAmount("2 500,5", "pl")).toBe(2500.5);
+    expect(parseAmount("2.500,5", "id")).toBe(2500.5);
+    expect(parseAmount("12.5", "de")).toBeNull();
+    expect(parseAmount("2,50", "en")).toBeNull();
+    expect(parseAmount("1,00,000", "en")).toBe(100_000);
+    expect(parseAmount("100,000", "en")).toBe(100_000);
+    expect(parseAmount("2.500,5.6", "de")).toBeNull();
+    expect(readUsage("bill", "2.500,5", "de")).toEqual({
+      status: "ok",
+      value: 2500.5,
+    });
+    expect(readRoof("12,5", "m2", "de")).toEqual({ status: "ok", value: 12.5 });
+  });
+
+  it("accepts complete Western and Indian grouping through the bill limit", () => {
+    for (const locale of ["en", "en-IN", "hi", "mr"]) {
+      for (const input of ["1,000,000", "1,000,000.00", "10,00,000"]) {
+        expect(readUsage("bill", input, locale)).toEqual({
+          status: "ok",
+          value: 1_000_000,
+        });
+      }
+      expect(parseAmount("123,456,789.50", locale)).toBe(123_456_789.5);
+      expect(parseAmount("12,34,56,789.50", locale)).toBe(123_456_789.5);
+      expect(readUsage("bill", "1,000,000.01", locale)).toEqual({
+        status: "invalid",
+      });
+    }
+    expect(parseAmount("१०,००,०००", "hi")).toBe(1_000_000);
+  });
+
+  it("rejects mixed or malformed grouping instead of removing separators", () => {
+    for (const locale of ["en", "en-IN", "hi", "mr"]) {
+      for (const input of [
+        "1,000,00,000",
+        "1,00,000,000",
+        "123,45,678",
+        "1,0000,000",
+        "1,,000",
+        "1,000,000.0,0",
+      ])
+        expect(parseAmount(input, locale), `${locale}: ${input}`).toBeNull();
+    }
+    // Indian grouping is not valid in a locale that uses Western grouping.
+    expect(parseAmount("10,00,000", "en-US")).toBeNull();
+    expect(parseAmount("10.00.000", "de")).toBeNull();
   });
 
   it("rejects anything that isn't a plain positive number", () => {

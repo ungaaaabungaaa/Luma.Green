@@ -10,6 +10,7 @@ import { MobileNav } from "./mobile-nav";
 
 vi.mock("@/i18n/navigation", () => ({
   usePathname: () => "/",
+  useRouter: () => ({ replace: vi.fn() }),
   Link: ({
     href,
     children,
