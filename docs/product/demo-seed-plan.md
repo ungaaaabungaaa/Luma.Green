@@ -31,7 +31,11 @@ e-waste and textile processing cannot be shown as a complete manufactured-output
 chain without new, reviewed material definitions. The catalogue has an `other` family,
 but the onboarding forms accept only paper, plastic, metal, glass and e-waste.
 Textile onboarding therefore needs a reviewed schema/form change before that
-family can complete the same application flow. Carbon credit issuance and
+family can complete the same application flow. Normal kabadiwala approval assigns
+paper, plastic and metal (`KABADIWALA_FAMILIES` in `convex/lib/review.ts`); the
+planned glass/e-waste shops also need reviewed onboarding/import handling. Their
+role kind is valid, but the current approval path does not assign those families.
+Carbon credit issuance and
 real escrow/payment execution are outside the implemented pilot.
 
 ## Dataset coverage

@@ -508,7 +508,7 @@ class Builder {
       {
         id: "identity-documents-admin",
         detail:
-          "Synthetic identities are non-routable labels, not auth users. All application states and snapshots are review examples. Controlled identity mapping, a real authorised admin, schema-valid submissions and generated watermarked files are pending.",
+          "Synthetic identities are non-routable labels, not auth users. All application states and snapshots are review examples. Controlled identity mapping, a real authorised admin, schema-valid submissions and generated watermarked files are pending. Normal approval assigns kabadiwalas paper/plastic/metal; glass/e-waste shop plans need reviewed onboarding/import handling before import.",
         materialCodes: [],
         orgIds: [],
       },

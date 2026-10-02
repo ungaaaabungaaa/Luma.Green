@@ -51,7 +51,7 @@ Three properties follow from that and are non-negotiable:
 | Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment          |
 | UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`              |
 | Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1                |
-| i18n        | next-intl, 12 locales, RTL-ready     | `messages/*.json`                                           |
+| i18n        | next-intl, 33 locales, RTL-ready     | `messages/*.json`                                           |
 | Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server            |
 | Server sync | TanStack Query                       | For non-Convex async work                                   |
 | Auth        | Better Auth on Convex                | Phone codes; admin password + TOTP — see §9                 |
@@ -105,12 +105,25 @@ allows this there and nowhere else.
 or the `brand-*` scale. A raw hex in a component is a bug — see
 `.claude/skills/design-system`.
 
-The shared visual system is documented in [designer system](docs/design/designer-system.md).
-Use neutral light/dark surfaces, Geist display with Noto script coverage, shared
-Lucide icons and shared control sizes. Recharts is available through the vendored
-shadcn chart primitive; charts need real data and readable text/table equivalents.
-The installed `gpt-taste-skill` is design guidance, not permission to invent
-statistics, testimonials, user records or device mockups.
+**Read the [current UI contract](docs/design/designer-system.md#current-ui-contract)
+before any UI change**, then use `.claude/skills/design-system`. That contract is
+the detailed owner of the founder's accepted design rules. Preserve the current
+neutral themes, Geist/Noto typography and corner tokens. Use open sections,
+dividers and useful content, not generic cards or filler tiles. Keep mobile
+navigation, single-line action labels and all registered languages usable.
+
+Use shared Lucide icons and control sizes. Recharts is available through the
+vendored shadcn chart primitive; charts need recorded data and readable text/table
+equivalents. Installed design skills are guidance, not permission to change the
+brand, add cards, invent live statistics or present illustrations as app evidence.
+The approved demo testimonials must remain visibly illustrative. Unavailable
+live prices show loading/unavailable placeholders, never synthetic live quotes.
+
+**UI completion requires visual inspection.** Inspect current browser captures
+in light and dark mode, at phone/tablet/desktop widths and in affected translated
+scripts, including RTL. Check real font loading, label fit and control overlap;
+DOM assertions alone do not prove the page looks right. Use the matrix in the
+current UI contract and retain the guide evidence required below.
 
 Native shell controls use React Native primitives or OS menus and the shared
 message catalogues. Their config modules validate public app settings; backend
@@ -184,7 +197,12 @@ merged branches delete themselves.
 
 **Server vs client**: components are server components unless they need state,
 effects or browser APIs. Push `"use client"` as far down the tree as possible —
-a client boundary at the layout level pulls the whole page into the bundle.
+a client boundary adds its imports to the browser bundle. Passing rendered
+server children through a provider preserves their server boundary. Keep static
+public HTML and measured route caching where appropriate; do not force
+request-time rendering just to call it SSR. Never add a shared cache for
+sessions, authorisation, private records or changing live prices. See the
+[rendering audit](docs/delivery/rendering-cache-audit.md).
 
 **Data fetching**: Convex `useQuery` for live data. TanStack Query for anything
 else async. Never `fetch` in a component body.
@@ -209,7 +227,11 @@ number formatting follow the user's locale.
 Every feature must work in `/ar` and `/ur`. Use logical properties
 (`ms-*`/`me-*`, `ps-*`/`pe-*`, `text-start`/`text-end`) — never `ml-*`/`text-left`.
 Every interactive element needs an accessible name. Test keyboard navigation
-before calling a flow done.
+before calling a flow done. `src/i18n/locales.ts` owns the supported locale list
+(currently 33); do not maintain a second list in controls or tests. For decimal
+entry, use the shared `src/lib/number-input.ts` helpers with the active locale,
+then keep amounts in integer grams/paise. Follow `.claude/skills/i18n` for copy,
+ICU arguments and script coverage.
 
 ## 9. Integration boundaries
 

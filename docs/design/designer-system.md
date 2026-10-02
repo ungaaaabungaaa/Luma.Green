@@ -2,6 +2,165 @@
 
 Status: approved implementation scope from the founder request, 2 October 2026.
 
+## Current UI contract
+
+This section is the canonical design rule set for future agents and teammates.
+It consolidates the founder's accepted requests on 2 October 2026. Apply it to
+public, sign-in, onboarding, household, operator and admin screens. The dated
+sections below preserve the work history and earlier test results; they are not
+current completion evidence and do not override this contract. See the delivery
+handoff for the current build and open gates. New user directions supersede this
+contract. Make routine fixes within it without adding another approval step.
+
+### Keep the identity and make each screen useful
+
+- Preserve neutral light/dark surfaces, restrained green actions, Geist Latin
+  display, Noto body/script coverage and the existing Lucide family. Use semantic
+  tokens and shared controls. Keep existing corner tokens and approved shapes;
+  a polish pass does not mean changing global radii, rounding everything or
+  introducing a new theme.
+- Use open sections, fine dividers, compact metric rows, useful lists and tables.
+  Do not add generic cards, nested panels, bento tiles, repeated explanation
+  blocks or decorative statistics. Functional input borders, dialogs, sheets,
+  badges and popovers remain valid. An installed Card primitive does not override
+  the no-card layout rule.
+- Make hierarchy, alignment, line length, spacing and state clear on every
+  screen. Add helpful domain detail from real records or approved labelled demo
+  data. Do not pad empty space with vague prose. Empty states need a useful next
+  action; loading/error/disabled states need honest feedback and a recovery path
+  where one exists. Preserve the user's entered values on recoverable errors.
+- Reuse the existing 4px spacing scale and section rhythm. Adapt spacing to the
+  task, viewport and content. A dense operational list and a public story page
+  need different spacing. Check screen edges, table headers, labels, helper text,
+  validation messages, icon baselines and action placement.
+
+### Navigation and controls
+
+- Keep the public navbar on one row. Below **1280px**, the header contains only
+  the brand link and menu trigger. Navigation, theme, language, sign-in and sell
+  controls belong in the side menu. Do not leave a crowded settings row outside
+  it on phones or tablets. At desktop widths the full row must fit every locale.
+- Below the phone wordmark breakpoint (**640px**), show the mark without visible
+  “Luma.Green” text, while retaining an accessible brand name. Do not distort or
+  recolour the logo. The side menu must scroll at short heights, keep its settings
+  reachable, respect safe areas and open from the RTL-aware inline end. Keyboard
+  focus, Escape, focus return, route navigation and resize-to-desktop must work.
+- Show the current language in its own name, and use the same endonyms in the
+  selector. Use a chevron; do not restore the rejected translate icon. Localise
+  settings labels and accessible names. Keep theme choice visible and reversible.
+- Ordinary action-button labels stay on **one line** with no clipping or overlap.
+  Let an action group wrap or stack, use the available width, or shorten the
+  translated action while preserving its meaning. Do not wrap text inside a
+  fixed-height button or shrink it to unreadable type. Use shared variants and
+  keep the 44px minimum target, 48px large actions, focus ring and disabled state.
+  Body text, field help, menu descriptions and headings may wrap naturally.
+- Every control has an accessible name and a real outcome. Do not use a dead
+  “opens soon” page to hide an implemented interface. Unconfigured phone sign-in
+  may reach the labelled OTP preview, but it sends no SMS, verifies no code and
+  creates no session. Preview mode must not bypass a protected route.
+
+### Languages, fonts and exact entry
+
+- `src/i18n/locales.ts` is the only locale registry, currently **33 locales**.
+  Read endonyms, direction and hreflang from it. Use complete translated
+  catalogues and canonical material names; preserve ICU arguments and brand
+  literals. English fallback is a recovery mechanism, not translation completion.
+  Track native review separately from automated catalogue checks.
+- All scripts must render with their approved font. Keep font declarations in
+  `src/lib/fonts.ts`, script selection on the locale root and system fallbacks
+  after the actual script font. Check loaded browser fonts, not only CSS family
+  strings. Do not let a metric/system fallback claim glyphs before the locale
+  face. Avoid unnecessary font preloads and forceful Latin tracking/line counts
+  on non-Latin text.
+- Use logical CSS properties and test Arabic and Urdu. Keep numeric identifiers
+  readable without reversing their characters. Test long Tamil/Malayalam labels,
+  accented Latin, Cyrillic, Thai, Sinhala, Odia and CJK content when shared layout
+  or font behavior changes. No clipped words, missing glyphs or horizontal page
+  scrolling is acceptable as a translation workaround.
+- Use `src/lib/number-input.ts` with the active locale for amount entry. Accept
+  supported native digits and the locale decimal separator, validate ambiguous
+  or invalid input, and store exact integer paise/grams. Format output with
+  next-intl. Do not use floating-point parsing for money or mass.
+
+### Images, detail and motion
+
+- Main public pages keep purposeful wide banner art: How it works, Participants,
+  Prices, Standards, Solar, Join, Contact and help landing/role/contact pages.
+  Home keeps its hero. Reuse shared banner/header components and responsive crops.
+  Place readable page copy outside the image. Help articles keep their reading
+  layout; auth forms and transaction screens do not need decorative banners.
+- Generated images or line art may explain a material or process. They must not
+  impersonate product screenshots, real customers, certifications or partners.
+  Give informative images useful alt text and decorative images empty alt text.
+  Keep assets compressed and layouts stable as images load.
+- Keep animation selective. Use existing 150–200ms control feedback and restrained
+  emphasis on chosen public actions; do not apply shimmer, parallax or moving
+  borders to every control or operational row. Motion must not shift layout,
+  hide information, delay input or add a new focus target. Preserve the approved
+  corners when adapting a visual effect.
+- The logo mark may turn once through 360 degrees with the approved 900ms
+  ease-out on fine-pointer hover or keyboard focus of its link. The wordmark
+  stays still and the resting mark remains upright. Material marquees need a
+  usable pause control and a static reduced-motion presentation. Reduced motion
+  disables and cancels decorative motion, including a preference change during
+  an active effect. Test touch, keyboard and reduced motion explicitly.
+
+### Honest data and fast rendering
+
+- Use recorded values for live charts, activity, balances and claims. Missing
+  live prices show loading/unavailable placeholders, never sample quotes passed
+  off as current prices. Approved demo testimonials remain visibly illustrative,
+  use role descriptions and do not claim real customer identities or validation.
+- Offline demo records remain labelled and isolated. Approval to draft demo data
+  does not approve database import, production identities, an OTP bypass or
+  provider execution. Follow the demo seed plan and its explicit coverage gaps;
+  do not invent unsupported materials or workflow states to fill a screen.
+- Prefer server-rendered page structure and static generation for stable public
+  content. Keep small interactive leaves for live data, forms and device state.
+  Inspect actual production HTML/cache headers before proposing cache changes;
+  forcing request-time SSR can make a static public page slower.
+- Never put sessions, authorisation results, private records or changing live
+  prices into a shared public/process cache. Retain live Convex reads and audited
+  mutation paths. A cached page shell is not proof of authenticated access or a
+  successful provider call. See the [rendering audit](../delivery/rendering-cache-audit.md).
+
+### Required visual and functional proof
+
+For each changed screen, inspect the **actual browser image** after fonts and
+images load. Use light and dark mode, phone/tablet/desktop, English, RTL and the
+changed translated scripts. Inspect page top, content, controls and the bottom;
+check loaded, empty, loading and error states that the change affects. Use a
+production build when font generation, static HTML or caching is involved.
+
+Shared header and control changes must exercise every registered locale at
+**320, 390, 640, 768, 1024, 1280 and 1440px**, with short-height menu coverage.
+Test control bounds, text bounds and overlaps; page scroll width alone misses
+painted text outside a button. Keep keyboard, reduced motion and numeric-entry
+regressions covered. Run the relevant tests, locale validation, lint, types and
+build; report failures rather than disabling assertions.
+
+Use public pages directly and approved test accounts for protected routes.
+Label isolated component fixtures and offline demo data. Neither proves live
+authentication, server permissions, provider execution or deployment. Do not
+include real contact details, IDs, passwords, OTPs, authenticator keys or tokens
+in captures.
+
+Follow [the maintained guide workflow](../user-guide/README.md) for every
+user-facing change: update affected source text, recapture changed screens,
+rebuild the editable DOCX, render and inspect every page, and keep the build
+record with the source and evidence. Preserve the existing cloud document ID and
+sharing state; record a pending connection honestly. Record guide impact even
+when only these instructions change and no new screenshots are needed.
+
+### Use external design guidance with judgment
+
+UI/UX Pro Max, GPT Taste, Vercel Web Design Guidelines, Baseline UI and Impeccable
+support the work; this contract and explicit user instructions set the product
+rules. Do not import a skill's card layout, font, colour, fabricated testimonial,
+heavy dependency or animation if it conflicts with this system. Mobbin can inform
+mobile flow and control placement. Cite the inspected reference, state access
+limits, and adapt the pattern without copying app assets.
+
 ## Starting point
 
 Base `e403503`, clean tracked main; preserve unrelated root
@@ -20,7 +179,7 @@ page surfaces. Dark mode is neutral charcoal, not a green wash. Primary actions
 use one restrained green. Avoid lime glow, nested decorative panels, giant round
 cards, decorative dashboard photos and repeated pill buttons.
 
-Body text retains Noto for all twelve scripts. Geist supplies Latin display type through
+Body text retains Noto for all supported scripts. Geist supplies Latin display type through
 next/font with Noto script fallbacks. Buttons share 44px regular/48px large
 heights, 8px corners, 16/24px horizontal padding and stable focus/disabled states.
 Cards use 12px corners; inputs use 8px. Public sections use 64/96px spacing;
