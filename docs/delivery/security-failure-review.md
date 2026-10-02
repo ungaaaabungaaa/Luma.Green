@@ -257,7 +257,8 @@ native validation/export. Its main merge is `53dae4db62432119505bd06d7d9ac85284c
 The follow-up reconciles that main commit while preserving every tested runtime
 file from the deployed source. See [safe rollout evidence](security-rollout-verification.json).
 
-Vercel production for main `53dae4d` is `READY` at `lumagreen.vercel.app`.
+Vercel production for security main `7f58485` is `READY` at
+`lumagreen.vercel.app`, verified on 2 October at 20:29 UTC.
 Public English, Arabic and Urdu pages return 200; the admin login page returns
 200 with `noindex, nofollow`. OpenAPI returns 200 and an industry API request
 without a key returns 401. These are delivery and denial checks, not
