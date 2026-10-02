@@ -58,6 +58,6 @@ One file per migration: `docs/migrations/YYYY-MM-DD-short-name.md`, with what
 changed, why, the three steps and when each ran, and how to verify. Newest at
 the bottom:
 
-| Date | Migration | Status |
-| ---- | --------- | ------ |
-| —    | None yet  | —      |
+| Date       | Migration                                                       | Status                                     |
+| ---------- | --------------------------------------------------------------- | ------------------------------------------ |
+| 2 Oct 2026 | [Industry API credential storage](./2026-10-02-industry-api.md) | Additive source change; deployment pending |

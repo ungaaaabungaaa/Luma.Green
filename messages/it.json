@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Domanda da modificare",
       "application_rejected": "Domanda non approvata"
     }
+  },
+  "integrations": {
+    "title": "Accesso API",
+    "lead": "Collega i sistemi della tua attività ai tuoi dati su Luma.Green.",
+    "connection": "Collega un sistema",
+    "readOnly": "REST v1 legge i dati dell’attività, i materiali, le scorte e gli scambi. Non può modificare i dati né elaborare pagamenti.",
+    "baseUrl": "Percorso di base su questo sito:",
+    "openApi": "Apri la specifica API",
+    "ownerOnly": "Solo un titolare attivo dell’attività può gestire le chiavi API.",
+    "tokenTitle": "Salva la tua chiave API",
+    "tokenHint": "Questa chiave viene mostrata una sola volta. Salvala nell’archivio dei segreti del tuo sistema. Non inserirla in un’app per browser, in un URL o in un messaggio. Chiudendo questa schermata, la chiave non sarà più visibile.",
+    "tokenLabel": "Nuova chiave API",
+    "expiresOn": "Scade il {date}",
+    "copy": "Copia chiave",
+    "dismiss": "Fine",
+    "copyError": "Copia non riuscita. Seleziona e copia la chiave manualmente.",
+    "copied": "Chiave copiata.",
+    "createTitle": "Crea una chiave",
+    "keyHint": "Usa una chiave per ogni sistema. Seleziona solo le autorizzazioni necessarie. Puoi avere fino a cinque chiavi attive.",
+    "label": "Nome del sistema",
+    "expiry": "Validità",
+    "days": "{count, plural, one {# giorno} other {# giorni}}",
+    "permissions": "Autorizzazioni di lettura",
+    "limit": "Ci sono cinque chiavi attive. Revoca una chiave inutilizzata prima di crearne un’altra.",
+    "createError": "Impossibile creare la chiave. Controlla il tuo accesso e riprova.",
+    "creating": "Creazione…",
+    "create": "Crea chiave",
+    "keysTitle": "Le tue chiavi",
+    "empty": "Ancora nessuna chiave. Creane una per collegare il tuo primo sistema.",
+    "neverUsed": "Mai utilizzata",
+    "lastUsed": "Ultimo utilizzo: {date}",
+    "revokeLabel": "Revoca {label}",
+    "revoke": "Revoca",
+    "revokeTitle": "Revocare questa chiave?",
+    "revokeHint": "I sistemi che usano «{label}» perderanno subito l’accesso. Non puoi ripristinare questa chiave.",
+    "revokeError": "Impossibile revocare la chiave. Riprova.",
+    "revoking": "Revoca in corso…",
+    "newsHint": "Quando il servizio di notizie è configurato, le notizie di settore offrono aggiornamenti sulle tue famiglie di materiali con collegamenti alle fonti.",
+    "scopes": {
+      "organization": "Dati dell’attività",
+      "materials": "Catalogo dei materiali",
+      "inventory": "Scorte dell’attività",
+      "trades": "Scambi dell’attività",
+      "news": "Notizie di settore"
+    },
+    "status": {
+      "active": "Attiva",
+      "expired": "Scaduta",
+      "revoked": "Revocata"
+    }
   }
 }

@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Pendaftaran perlu diperbaiki",
       "application_rejected": "Pendaftaran tidak disetujui"
     }
+  },
+  "integrations": {
+    "title": "Akses API",
+    "lead": "Hubungkan sistem bisnis Anda dengan catatan Anda di Luma.Green.",
+    "connection": "Hubungkan sistem",
+    "readOnly": "REST v1 membaca detail bisnis, bahan, stok, dan transaksi dagang. API ini tidak dapat mengubah catatan atau memproses pembayaran.",
+    "baseUrl": "Jalur dasar di situs ini:",
+    "openApi": "Buka spesifikasi API",
+    "ownerOnly": "Hanya pemilik bisnis yang aktif yang dapat mengelola kunci API.",
+    "tokenTitle": "Simpan kunci API Anda",
+    "tokenHint": "Kunci ini hanya ditampilkan sekali. Simpan di penyimpanan rahasia sistem Anda. Jangan masukkan ke aplikasi peramban, URL, atau pesan. Menutup layar ini akan menghilangkannya dari tampilan.",
+    "tokenLabel": "Kunci API baru",
+    "expiresOn": "Kedaluwarsa {date}",
+    "copy": "Salin kunci",
+    "dismiss": "Selesai",
+    "copyError": "Gagal menyalin. Pilih dan salin kunci secara manual.",
+    "copied": "Kunci disalin.",
+    "createTitle": "Buat kunci",
+    "keyHint": "Gunakan satu kunci untuk setiap sistem. Pilih hanya izin yang diperlukan. Anda dapat memiliki hingga lima kunci aktif.",
+    "label": "Nama sistem",
+    "expiry": "Berlaku selama",
+    "days": "{count, plural, one {# hari} other {# hari}}",
+    "permissions": "Izin baca",
+    "limit": "Ada lima kunci aktif. Cabut kunci yang tidak digunakan sebelum membuat kunci lain.",
+    "createError": "Kunci tidak dapat dibuat. Periksa akses Anda dan coba lagi.",
+    "creating": "Membuat…",
+    "create": "Buat kunci",
+    "keysTitle": "Kunci Anda",
+    "empty": "Belum ada kunci. Buat kunci untuk menghubungkan sistem pertama Anda.",
+    "neverUsed": "Belum digunakan",
+    "lastUsed": "Terakhir digunakan {date}",
+    "revokeLabel": "Cabut {label}",
+    "revoke": "Cabut",
+    "revokeTitle": "Cabut kunci ini?",
+    "revokeHint": "Sistem yang menggunakan “{label}” akan langsung kehilangan akses. Kunci ini tidak dapat dipulihkan.",
+    "revokeError": "Kunci tidak dapat dicabut. Coba lagi.",
+    "revoking": "Mencabut…",
+    "newsHint": "Jika layanan berita telah dikonfigurasi, berita industri menyediakan pembaruan untuk kelompok bahan Anda beserta tautan ke sumbernya.",
+    "scopes": {
+      "organization": "Detail bisnis",
+      "materials": "Katalog bahan",
+      "inventory": "Stok bisnis",
+      "trades": "Transaksi bisnis",
+      "news": "Berita industri"
+    },
+    "status": {
+      "active": "Aktif",
+      "expired": "Kedaluwarsa",
+      "revoked": "Dicabut"
+    }
   }
 }

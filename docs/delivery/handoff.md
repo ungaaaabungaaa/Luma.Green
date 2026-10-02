@@ -1,20 +1,75 @@
 # Agent handoff — 2 October 2026
 
-## Current work in progress: account and notification detail
+## Current work: final account and notification integration
 
-Continue on `feat/account-notifications-detail`, based on checkpoint `0f052c0`.
-The auth, inbox/push, native, account-menu and public-content source is being
-completed and checked in parallel. Read [the current pass record](account-notifications-and-content.md)
-for ownership, collected proof and remaining checks. The guide artifacts below
-still describe the last checkpoint until their next complete capture/rebuild.
+Continue on `feat/account-notifications-detail`. Local checkpoint `bc986f4`
+contains account security, inbox/push, native controls, account navigation and
+new public page content. A resolved merge of `origin/main` at `af2e295` preserves
+its industry API and extends the API screen to all 33 locales. This delivery
+checkpoint includes that merge. Read [the pass record](account-notifications-and-content.md).
 Do not stage the unrelated root `luma-green-user-guide.pdf`.
 
-PR 29 contains the prior checkpoint. Its new-head hosted unit job timed out in
-full-catalogue demo seed tests, although build/lint/types/format passed. A scoped
-seed-test timeout correction is present locally; nine tests now pass under
-coverage. It must be committed, pushed and verified before that PR can merge.
-No frontend deployment monitoring is requested. Native account setup is pending
-as confirmed by the founder; finish code and keep external release gates clear.
+PR 29 is the existing delivery PR, with remote branch
+`feat/responsive-locales-review`. Push the final checked HEAD to that branch and
+rewrite the PR around the combined scope. Main is protected: require all checks
+for the actual final head before merge. Do not create a duplicate PR or override
+red checks. No frontend deployment monitoring is requested.
+
+The earlier PR unit timeout was scoped to the five full-catalogue seed cases;
+all assertions remain. Its browser run passed 713 cases but reached the old
+20-minute job cap during the separate analytics build. The job now allows
+30 minutes, with every case retained. Final combined hosted CI remains pending.
+
+Current local evidence: the complete `pnpm check` passes with lint, TypeScript,
+1,496 web/backend tests, 40 mobile tests and 21 desktop tests. Formatting,
+110 catalogue checks, 36 focused browser cases and five isolated
+analytics cases pass. All 144 public visual captures were inspected. The team
+Word document has 47 reviewed pages and a 92-case manual. The platform guide
+has 99 reviewed pages, 40 chapters and 93 image placements; all 13 document
+tests and both builder freshness checks pass. The final disconnected production
+build passes with 2,622 generated pages. Hosted CI must pass on the final PR
+head before merge. Exact evidence belongs in the pass record; do not present old checkpoint counts
+as current totals.
+
+Apple, Google Play and Expo/EAS accounts are not set up. Code and local app
+checks are complete; signing, physical-device tests, push credentials and store
+review remain external gates. Auth/inbox backend release must preserve the
+parallel recycling schema additions. Do not deploy this checkout over them.
+Existing Google Docs ID and sharing remain unchanged; its in-place update is
+pending. Local Word artifacts are the maintained deliverables for this pass.
+
+## Integrated industry API checkpoint
+
+The account checkpoint bc986f4 is combined with origin/main af2e295. The following industry API evidence describes its earlier branch, not the combined build. Combined captures, guide rebuild, visual review and local checks are complete; hosted CI remains pending on the final PR head. Preserve all 33 locale catalogues and both account and API workflows.
+
+**Industry API work:** `feat/industry-api` adds REST v1 for an approved business's
+organization, material catalogue, stock, buying/selling trades and optional
+material-family news. Owners can create scoped, expiring keys and revoke them
+from Compliance → API access. Convex owns current membership checks, key
+hashes, business isolation, accepted-read limits and audit writes. The API exports
+integer grams/paise; trade payments remain simulated. There are no ledger writes,
+GraphQL or MCP endpoints in this release. The industry plan records those later
+contracts and their release gates.
+
+Local proof: the full check passed with two Vitest workers: lint, types, 1,267 web
+unit tests, 27 mobile tests and 20 desktop tests. Formatting, production builds,
+155 Chromium checks with zero retries and five isolated analytics checks passed.
+The maintained Word guide has 71 visually reviewed pages and eight passing
+freshness tests. See the PR for hosted checks and merge state.
+
+See [industry API delivery](industry-api.md) for current verification and
+[the API contract](../architecture/industry-api.md) for setup and examples.
+The schema change is additive; deploy its tables, indexes and functions before
+the web release. News remains off until an operator configures an appropriate
+provider plan and explicitly enables it in Convex. Local tests do not prove
+provider execution or a deployed integration.
+
+Guide impact: a new API setup and key-management section, current Compliance
+capture and API screen captures in every registered language, light/dark themes,
+phone/tablet/desktop sizes and RTL. Protected examples have synthetic data and
+writes disabled. The maintained Word document, visual review record and source
+hashes travel with this change. The existing Google Docs copy retains its stable
+ID and sharing; its in-place update remains a separate connection gate.
 
 ## Selection and production demo-price checkpoint
 

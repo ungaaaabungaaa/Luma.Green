@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Wniosek wymaga zmian",
       "application_rejected": "Wniosek niezatwierdzony"
     }
+  },
+  "integrations": {
+    "title": "Dostęp do API",
+    "lead": "Połącz systemy swojej firmy z danymi w Luma.Green.",
+    "connection": "Połącz system",
+    "readOnly": "REST v1 odczytuje dane firmy, materiały, zapasy i transakcje handlowe. Nie może zmieniać danych ani przetwarzać płatności.",
+    "baseUrl": "Ścieżka bazowa w tej witrynie:",
+    "openApi": "Otwórz specyfikację API",
+    "ownerOnly": "Tylko aktywny właściciel firmy może zarządzać kluczami API.",
+    "tokenTitle": "Zapisz swój klucz API",
+    "tokenHint": "Ten klucz jest wyświetlany tylko raz. Zapisz go w magazynie sekretów swojego systemu. Nie umieszczaj go w aplikacji przeglądarkowej, adresie URL ani wiadomości. Po zamknięciu tego ekranu klucz nie będzie już widoczny.",
+    "tokenLabel": "Nowy klucz API",
+    "expiresOn": "Wygasa {date}",
+    "copy": "Kopiuj klucz",
+    "dismiss": "Gotowe",
+    "copyError": "Kopiowanie nie powiodło się. Zaznacz i skopiuj klucz ręcznie.",
+    "copied": "Klucz skopiowany.",
+    "createTitle": "Utwórz klucz",
+    "keyHint": "Używaj osobnego klucza dla każdego systemu. Wybierz tylko potrzebne uprawnienia. Możesz mieć do pięciu aktywnych kluczy.",
+    "label": "Nazwa systemu",
+    "expiry": "Okres ważności",
+    "days": "{count, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
+    "permissions": "Uprawnienia do odczytu",
+    "limit": "Pięć kluczy jest aktywnych. Unieważnij nieużywany klucz przed utworzeniem kolejnego.",
+    "createError": "Nie udało się utworzyć klucza. Sprawdź swoje uprawnienia i spróbuj ponownie.",
+    "creating": "Tworzenie…",
+    "create": "Utwórz klucz",
+    "keysTitle": "Twoje klucze",
+    "empty": "Nie ma jeszcze kluczy. Utwórz klucz, aby połączyć pierwszy system.",
+    "neverUsed": "Jeszcze nie użyto",
+    "lastUsed": "Ostatnie użycie: {date}",
+    "revokeLabel": "Unieważnij {label}",
+    "revoke": "Unieważnij",
+    "revokeTitle": "Unieważnić ten klucz?",
+    "revokeHint": "Systemy używające „{label}” natychmiast stracą dostęp. Tego klucza nie można przywrócić.",
+    "revokeError": "Nie udało się unieważnić klucza. Spróbuj ponownie.",
+    "revoking": "Unieważnianie…",
+    "newsHint": "Po skonfigurowaniu usługi wiadomości aktualności branżowe dostarczają informacji o Twoich grupach materiałów wraz z odnośnikami do źródeł.",
+    "scopes": {
+      "organization": "Dane firmy",
+      "materials": "Katalog materiałów",
+      "inventory": "Zapasy firmy",
+      "trades": "Transakcje firmy",
+      "news": "Aktualności branżowe"
+    },
+    "status": {
+      "active": "Aktywny",
+      "expired": "Wygasły",
+      "revoked": "Unieważniony"
+    }
   }
 }

@@ -35,16 +35,17 @@ private until shared from its Share menu.
 
 ## Architecture — how it's built
 
-| Page                                                | What's in it                                                    |
-| --------------------------------------------------- | --------------------------------------------------------------- |
-| [overview.md](./architecture/overview.md)           | Containers, modules, key flows, failure modes, what comes later |
-| [urls.md](./architecture/urls.md)                   | Route map, canonical and hreflang rules, indexing               |
-| [frontend.md](./architecture/frontend.md)           | Layouts per area, look and feel, components, every screen       |
-| [auth.md](./architecture/auth.md)                   | Sign-in for each role, the admin, permissions, private files    |
-| [data-model.md](./architecture/data-model.md)       | Planned tables and state machines                               |
-| [ai-estimation.md](./architecture/ai-estimation.md) | Photo → estimate, model choice, cost controls                   |
-| [native-apps.md](./architecture/native-apps.md)     | Mobile and desktop ownership, navigation and update boundaries  |
-| [decisions/](./decisions/README.md)                 | Architecture decision records, one per decision                 |
+| Page                                                | What's in it                                                         |
+| --------------------------------------------------- | -------------------------------------------------------------------- |
+| [overview.md](./architecture/overview.md)           | Containers, modules, key flows, failure modes, what comes later      |
+| [urls.md](./architecture/urls.md)                   | Route map, canonical and hreflang rules, indexing                    |
+| [frontend.md](./architecture/frontend.md)           | Layouts per area, look and feel, components, every screen            |
+| [auth.md](./architecture/auth.md)                   | Sign-in for each role, the admin, permissions, private files         |
+| [data-model.md](./architecture/data-model.md)       | Planned tables and state machines                                    |
+| [ai-estimation.md](./architecture/ai-estimation.md) | Photo → estimate, model choice, cost controls                        |
+| [industry-api.md](./architecture/industry-api.md)   | Factory and industry connections, REST setup, key access and roadmap |
+| [native-apps.md](./architecture/native-apps.md)     | Mobile and desktop ownership, navigation and update boundaries       |
+| [decisions/](./decisions/README.md)                 | Architecture decision records, one per decision                      |
 
 ## Operations — how it's run
 
@@ -89,7 +90,7 @@ For caching, compression, self-hosted AI and cost measurements, use
 The [team review pack](team-review/review.md) explains product scope, the stack,
 theme comparisons, translated examples and account gates. Its editable Word
 edition is [the team pack](../output/docx/luma-green-team-review.docx).
-Use the [62-case test manual](testing/team-end-to-end-manual.md) to run each role
+Use the [end-to-end test manual](testing/team-end-to-end-manual.md) to run each role
 and record results. The [six-month plan](product/six-month-execution-plan.md)
 sets proposed milestones. The [India-first legal checklist](operations/india-entity-trademark-and-legal.md)
 assumes the entity is not registered and no trademark filing is complete.

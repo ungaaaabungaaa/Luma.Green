@@ -3426,5 +3426,55 @@
       "application_changes_requested": "申请需要修改",
       "application_rejected": "申请未获批准"
     }
+  },
+  "integrations": {
+    "title": "API 访问",
+    "lead": "将您的业务系统连接到 Luma.Green 中的记录。",
+    "connection": "连接系统",
+    "readOnly": "REST v1 可读取企业资料、材料、库存和交易，无法修改记录或处理付款。",
+    "baseUrl": "本网站的基础路径：",
+    "openApi": "打开 API 规范",
+    "ownerOnly": "只有处于活跃状态的企业所有者才能管理 API 密钥。",
+    "tokenTitle": "保存您的 API 密钥",
+    "tokenHint": "此密钥仅显示一次。请将其保存到系统的机密存储中。请勿将其放入浏览器应用、网址或消息中。关闭此页面后，密钥将不再显示。",
+    "tokenLabel": "新 API 密钥",
+    "expiresOn": "于 {date} 到期",
+    "copy": "复制密钥",
+    "dismiss": "完成",
+    "copyError": "复制失败。请选中密钥并手动复制。",
+    "copied": "密钥已复制。",
+    "createTitle": "创建密钥",
+    "keyHint": "每个系统使用一个独立密钥。仅选择所需权限。最多可保留五个有效密钥。",
+    "label": "系统名称",
+    "expiry": "有效期",
+    "days": "{count, plural, one {# 天} other {# 天}}",
+    "permissions": "读取权限",
+    "limit": "已有五个有效密钥。请先撤销一个不再使用的密钥，再创建新密钥。",
+    "createError": "无法创建密钥。请检查您的访问权限后重试。",
+    "creating": "正在创建…",
+    "create": "创建密钥",
+    "keysTitle": "您的密钥",
+    "empty": "暂无密钥。创建一个密钥以连接您的首个系统。",
+    "neverUsed": "尚未使用",
+    "lastUsed": "上次使用：{date}",
+    "revokeLabel": "撤销 {label}",
+    "revoke": "撤销",
+    "revokeTitle": "撤销此密钥？",
+    "revokeHint": "使用“{label}”的系统将立即失去访问权限。此密钥无法恢复。",
+    "revokeError": "无法撤销密钥。请重试。",
+    "revoking": "正在撤销…",
+    "newsHint": "配置新闻服务后，行业新闻将提供与您的材料类别相关的动态，并附上来源链接。",
+    "scopes": {
+      "organization": "企业资料",
+      "materials": "材料目录",
+      "inventory": "企业库存",
+      "trades": "企业交易",
+      "news": "行业新闻"
+    },
+    "status": {
+      "active": "有效",
+      "expired": "已过期",
+      "revoked": "已撤销"
+    }
   }
 }

@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Candidatura precisa de alterações",
       "application_rejected": "Candidatura não aprovada"
     }
+  },
+  "integrations": {
+    "title": "Acesso à API",
+    "lead": "Ligue os sistemas da sua empresa aos seus registos na Luma.Green.",
+    "connection": "Ligar um sistema",
+    "readOnly": "A REST v1 lê dados da empresa, materiais, existências e transações comerciais. Não pode alterar registos nem processar pagamentos.",
+    "baseUrl": "Caminho base neste site:",
+    "openApi": "Abrir a especificação da API",
+    "ownerOnly": "Só um proprietário ativo da empresa pode gerir chaves de API.",
+    "tokenTitle": "Guarde a sua chave de API",
+    "tokenHint": "Esta chave é apresentada apenas uma vez. Guarde-a no repositório de segredos do seu sistema. Não a coloque numa aplicação de navegador, URL ou mensagem. Ao fechar este ecrã, a chave deixa de estar visível.",
+    "tokenLabel": "Nova chave de API",
+    "expiresOn": "Expira em {date}",
+    "copy": "Copiar chave",
+    "dismiss": "Concluído",
+    "copyError": "Não foi possível copiar. Selecione e copie a chave manualmente.",
+    "copied": "Chave copiada.",
+    "createTitle": "Criar uma chave",
+    "keyHint": "Use uma chave por sistema. Selecione apenas as permissões necessárias. Pode ter até cinco chaves ativas.",
+    "label": "Nome do sistema",
+    "expiry": "Validade",
+    "days": "{count, plural, one {# dia} other {# dias}}",
+    "permissions": "Permissões de leitura",
+    "limit": "Existem cinco chaves ativas. Revogue uma chave não utilizada antes de criar outra.",
+    "createError": "Não foi possível criar a chave. Verifique o seu acesso e tente novamente.",
+    "creating": "A criar…",
+    "create": "Criar chave",
+    "keysTitle": "As suas chaves",
+    "empty": "Ainda não existem chaves. Crie uma para ligar o seu primeiro sistema.",
+    "neverUsed": "Ainda não utilizada",
+    "lastUsed": "Última utilização: {date}",
+    "revokeLabel": "Revogar {label}",
+    "revoke": "Revogar",
+    "revokeTitle": "Revogar esta chave?",
+    "revokeHint": "Os sistemas que usam «{label}» perderão o acesso de imediato. Não pode restaurar esta chave.",
+    "revokeError": "Não foi possível revogar a chave. Tente novamente.",
+    "revoking": "A revogar…",
+    "newsHint": "Quando o serviço de notícias está configurado, as notícias do setor apresentam atualizações sobre as suas famílias de materiais com ligações às fontes.",
+    "scopes": {
+      "organization": "Dados da empresa",
+      "materials": "Catálogo de materiais",
+      "inventory": "Existências da empresa",
+      "trades": "Transações da empresa",
+      "news": "Notícias do setor"
+    },
+    "status": {
+      "active": "Ativa",
+      "expired": "Expirada",
+      "revoked": "Revogada"
+    }
   }
 }

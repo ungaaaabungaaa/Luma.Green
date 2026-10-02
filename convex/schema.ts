@@ -13,6 +13,7 @@ import {
   vShopVehicle,
   vWeekday,
 } from "./lib/drafts";
+import { vIntegrationScope } from "./lib/integrations";
 import {
   vNotificationEvent,
   vNotificationStatus,
@@ -292,7 +293,41 @@ export default defineSchema({
     createdAt: v.number(),
   })
     .index("by_profile", ["profileId"])
-    .index("by_org", ["orgId"]),
+    .index("by_org", ["orgId"])
+    .index("by_org_profile", ["orgId", "profileId"]),
+
+  /** Machine credentials. Plain tokens are returned once and never stored. */
+  integrationKeys: defineTable({
+    orgId: v.id("orgs"),
+    issuerProfileId: v.id("profiles"),
+    label: v.string(),
+    prefix: v.string(),
+    keyHash: v.string(),
+    scopes: v.array(vIntegrationScope),
+    createdAt: v.number(),
+    expiresAt: v.number(),
+    revokedAt: v.optional(v.number()),
+    lastUsedAt: v.optional(v.number()),
+    windowStartedAt: v.number(),
+    requestsInWindow: v.number(),
+  })
+    .index("by_hash", ["keyHash"])
+    .index("by_org_created", ["orgId", "createdAt"])
+    .index("by_org_revoked_expires", ["orgId", "revokedAt", "expiresAt"]),
+
+  /** One fixed-window request counter per business, shared by all its keys. */
+  integrationUsage: defineTable({
+    orgId: v.id("orgs"),
+    windowStartedAt: v.number(),
+    requestsInWindow: v.number(),
+  }).index("by_org", ["orgId"]),
+
+  /** Fixed global cost bound for optional industry-news provider requests. */
+  integrationNewsQuota: defineTable({
+    key: v.literal("global"),
+    startedAt: v.number(),
+    count: v.number(),
+  }).index("by_key", ["key"]),
 
   /** An approved Saathi. */
   saathiProfiles: defineTable({

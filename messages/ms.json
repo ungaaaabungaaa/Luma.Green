@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Permohonan perlu diubah",
       "application_rejected": "Permohonan tidak diluluskan"
     }
+  },
+  "integrations": {
+    "title": "Akses API",
+    "lead": "Hubungkan sistem perniagaan anda dengan rekod anda di Luma.Green.",
+    "connection": "Hubungkan sistem",
+    "readOnly": "REST v1 membaca butiran perniagaan, bahan, stok dan urus niaga. API ini tidak boleh mengubah rekod atau memproses pembayaran.",
+    "baseUrl": "Laluan asas di laman web ini:",
+    "openApi": "Buka spesifikasi API",
+    "ownerOnly": "Hanya pemilik perniagaan yang aktif boleh mengurus kunci API.",
+    "tokenTitle": "Simpan kunci API anda",
+    "tokenHint": "Kunci ini dipaparkan sekali sahaja. Simpannya dalam stor rahsia sistem anda. Jangan letakkannya dalam aplikasi pelayar, URL atau mesej. Selepas skrin ini ditutup, kunci tidak lagi kelihatan.",
+    "tokenLabel": "Kunci API baharu",
+    "expiresOn": "Tamat tempoh pada {date}",
+    "copy": "Salin kunci",
+    "dismiss": "Selesai",
+    "copyError": "Gagal menyalin. Pilih dan salin kunci secara manual.",
+    "copied": "Kunci disalin.",
+    "createTitle": "Cipta kunci",
+    "keyHint": "Gunakan satu kunci bagi setiap sistem. Pilih kebenaran yang diperlukan sahaja. Anda boleh mempunyai sehingga lima kunci aktif.",
+    "label": "Nama sistem",
+    "expiry": "Tempoh sah",
+    "days": "{count, plural, one {# hari} other {# hari}}",
+    "permissions": "Kebenaran membaca",
+    "limit": "Lima kunci sedang aktif. Batalkan kunci yang tidak digunakan sebelum mencipta kunci lain.",
+    "createError": "Kunci tidak dapat dicipta. Semak akses anda dan cuba lagi.",
+    "creating": "Sedang mencipta…",
+    "create": "Cipta kunci",
+    "keysTitle": "Kunci anda",
+    "empty": "Belum ada kunci. Cipta kunci untuk menghubungkan sistem pertama anda.",
+    "neverUsed": "Belum digunakan",
+    "lastUsed": "Terakhir digunakan pada {date}",
+    "revokeLabel": "Batalkan {label}",
+    "revoke": "Batalkan",
+    "revokeTitle": "Batalkan kunci ini?",
+    "revokeHint": "Sistem yang menggunakan “{label}” akan kehilangan akses serta-merta. Kunci ini tidak boleh dipulihkan.",
+    "revokeError": "Kunci tidak dapat dibatalkan. Cuba lagi.",
+    "revoking": "Sedang membatalkan…",
+    "newsHint": "Apabila perkhidmatan berita dikonfigurasikan, berita industri menyediakan perkembangan untuk kumpulan bahan anda berserta pautan sumber.",
+    "scopes": {
+      "organization": "Butiran perniagaan",
+      "materials": "Katalog bahan",
+      "inventory": "Stok perniagaan",
+      "trades": "Urus niaga perniagaan",
+      "news": "Berita industri"
+    },
+    "status": {
+      "active": "Aktif",
+      "expired": "Tamat tempoh",
+      "revoked": "Dibatalkan"
+    }
   }
 }

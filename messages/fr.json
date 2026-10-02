@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Candidature à modifier",
       "application_rejected": "Candidature non approuvée"
     }
+  },
+  "integrations": {
+    "title": "Accès à l’API",
+    "lead": "Connectez vos systèmes d’entreprise à vos données Luma.Green.",
+    "connection": "Connecter un système",
+    "readOnly": "REST v1 permet de lire les informations de l’entreprise, les matériaux, les stocks et les échanges. Elle ne peut ni modifier les données ni traiter de paiements.",
+    "baseUrl": "Chemin de base sur ce site :",
+    "openApi": "Ouvrir la spécification de l’API",
+    "ownerOnly": "Seul un propriétaire d’entreprise actif peut gérer les clés d’API.",
+    "tokenTitle": "Enregistrez votre clé d’API",
+    "tokenHint": "Cette clé ne s’affiche qu’une seule fois. Enregistrez-la dans le gestionnaire de secrets de votre système. Ne la placez pas dans une application de navigateur, une URL ou un message. Elle ne sera plus visible après la fermeture de cet écran.",
+    "tokenLabel": "Nouvelle clé d’API",
+    "expiresOn": "Expire le {date}",
+    "copy": "Copier la clé",
+    "dismiss": "Terminé",
+    "copyError": "Échec de la copie. Sélectionnez et copiez la clé manuellement.",
+    "copied": "Clé copiée.",
+    "createTitle": "Créer une clé",
+    "keyHint": "Utilisez une clé par système. Sélectionnez uniquement les autorisations nécessaires. Vous pouvez avoir jusqu’à cinq clés actives.",
+    "label": "Nom du système",
+    "expiry": "Durée de validité",
+    "days": "{count, plural, one {# jour} other {# jours}}",
+    "permissions": "Autorisations de lecture",
+    "limit": "Cinq clés sont actives. Révoquez une clé inutilisée avant d’en créer une autre.",
+    "createError": "Impossible de créer la clé. Vérifiez votre accès et réessayez.",
+    "creating": "Création…",
+    "create": "Créer la clé",
+    "keysTitle": "Vos clés",
+    "empty": "Aucune clé pour le moment. Créez-en une pour connecter votre premier système.",
+    "neverUsed": "Jamais utilisée",
+    "lastUsed": "Dernière utilisation : {date}",
+    "revokeLabel": "Révoquer {label}",
+    "revoke": "Révoquer",
+    "revokeTitle": "Révoquer cette clé ?",
+    "revokeHint": "Les systèmes utilisant « {label} » perdront immédiatement leur accès. Cette clé ne pourra pas être restaurée.",
+    "revokeError": "Impossible de révoquer la clé. Réessayez.",
+    "revoking": "Révocation…",
+    "newsHint": "Lorsque le service d’actualités est configuré, les actualités du secteur présentent des informations sur vos familles de matériaux, avec des liens vers les sources.",
+    "scopes": {
+      "organization": "Informations de l’entreprise",
+      "materials": "Catalogue des matériaux",
+      "inventory": "Stock de l’entreprise",
+      "trades": "Échanges de l’entreprise",
+      "news": "Actualités du secteur"
+    },
+    "status": {
+      "active": "Valide",
+      "expired": "Expirée",
+      "revoked": "Révoquée"
+    }
   }
 }

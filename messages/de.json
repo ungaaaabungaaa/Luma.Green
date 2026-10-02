@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Antrag muss geändert werden",
       "application_rejected": "Antrag nicht genehmigt"
     }
+  },
+  "integrations": {
+    "title": "API-Zugriff",
+    "lead": "Verbinde deine Unternehmenssysteme mit deinen Datensätzen in Luma.Green.",
+    "connection": "System verbinden",
+    "readOnly": "REST v1 liest Unternehmensdaten, Materialien, Bestände und Handelsvorgänge. Datensätze können nicht geändert und Zahlungen nicht verarbeitet werden.",
+    "baseUrl": "Basispfad auf dieser Website:",
+    "openApi": "API-Spezifikation öffnen",
+    "ownerOnly": "Nur ein aktiver Unternehmensinhaber kann API-Schlüssel verwalten.",
+    "tokenTitle": "API-Schlüssel speichern",
+    "tokenHint": "Dieser Schlüssel wird nur einmal angezeigt. Speichere ihn im Geheimnisspeicher deines Systems. Verwende ihn nicht in einer Browser-App, URL oder Nachricht. Nach dem Schließen dieses Bildschirms ist er nicht mehr sichtbar.",
+    "tokenLabel": "Neuer API-Schlüssel",
+    "expiresOn": "Läuft am {date} ab",
+    "copy": "Schlüssel kopieren",
+    "dismiss": "Fertig",
+    "copyError": "Kopieren fehlgeschlagen. Markiere und kopiere den Schlüssel manuell.",
+    "copied": "Schlüssel kopiert.",
+    "createTitle": "Schlüssel erstellen",
+    "keyHint": "Verwende für jedes System einen eigenen Schlüssel. Wähle nur die benötigten Berechtigungen. Du kannst bis zu fünf aktive Schlüssel haben.",
+    "label": "Systemname",
+    "expiry": "Gültigkeitsdauer",
+    "days": "{count, plural, one {# Tag} other {# Tage}}",
+    "permissions": "Leseberechtigungen",
+    "limit": "Fünf Schlüssel sind aktiv. Widerrufe einen ungenutzten Schlüssel, bevor du einen weiteren erstellst.",
+    "createError": "Der Schlüssel konnte nicht erstellt werden. Prüfe deinen Zugriff und versuche es erneut.",
+    "creating": "Wird erstellt…",
+    "create": "Schlüssel erstellen",
+    "keysTitle": "Deine Schlüssel",
+    "empty": "Noch keine Schlüssel. Erstelle einen, um dein erstes System zu verbinden.",
+    "neverUsed": "Noch nicht verwendet",
+    "lastUsed": "Zuletzt verwendet: {date}",
+    "revokeLabel": "{label} widerrufen",
+    "revoke": "Widerrufen",
+    "revokeTitle": "Diesen Schlüssel widerrufen?",
+    "revokeHint": "Systeme, die „{label}“ verwenden, verlieren sofort den Zugriff. Dieser Schlüssel kann nicht wiederhergestellt werden.",
+    "revokeError": "Der Schlüssel konnte nicht widerrufen werden. Versuche es erneut.",
+    "revoking": "Wird widerrufen…",
+    "newsHint": "Wenn der Nachrichtendienst eingerichtet ist, liefern Branchennachrichten Neuigkeiten zu deinen Materialgruppen mit Links zu den Quellen.",
+    "scopes": {
+      "organization": "Unternehmensdaten",
+      "materials": "Materialkatalog",
+      "inventory": "Unternehmensbestand",
+      "trades": "Handelsvorgänge des Unternehmens",
+      "news": "Branchennachrichten"
+    },
+    "status": {
+      "active": "Aktiv",
+      "expired": "Abgelaufen",
+      "revoked": "Widerrufen"
+    }
   }
 }

@@ -1,8 +1,13 @@
 # Account, notifications and public content pass
 
-Status: implementation and verification in progress, 2 October 2026.
+Status: source complete; final integration checks in progress, 2 October 2026.
 Branch: `feat/account-notifications-detail`, based on UI checkpoint `0f052c0`.
 Do not read a planned check below as a completed release gate.
+
+Local checkpoint `bc986f4` saves the account, notification and public detail
+source. Main then advanced to `af2e295` with the industry API. The combined work
+preserves both features and extends that API screen to all 33 locales. Final
+captures, artifacts and checks must describe this combined source.
 
 ## Accepted scope
 
@@ -59,6 +64,12 @@ path in AGENTS.md owns main integration. Do not override a required red check.
   covering show/hide, reset validation, provider errors and recovery links.
 - The notification slice passed 50 focused cases, including optional-query
   failure isolation, slow consent dialogs and failed-cleanup retry after reload.
+- After main integration, TypeScript and 1,382 source/backend tests passed.
+  This preflight excludes the catalogue and document freshness suites while
+  their final translations and artifacts are being prepared. The combined
+  push/API/auth boundary also passed 112 focused tests.
+- Application submission and approval now assert the new inbox audit event,
+  unread state and recipient ownership. All 56 relevant workflow tests passed.
 - A read-only public price-board check at 08:05 UTC confirmed 26 priced
   materials and 780 history points in both development and production. The
   code/today/series projections have the same SHA-256:
@@ -73,18 +84,39 @@ path in AGENTS.md owns main integration. Do not override a required red check.
   The budget is now 30 minutes so both builds and all browser checks can run;
   no assertions, cases or required checks were removed.
 
+## Final combined verification
+
+- All 33 catalogues include the industry API workflow. The 110 catalogue and
+  validation checks passed. This proves key, argument and mechanical coverage;
+  native-language review remains separate.
+- The focused production-browser run passed 36 cases across account, auth,
+  public detail and API routes. The public visual matrix passed 48 contexts
+  with 144 original browser captures across six routes, both themes, phones,
+  tablets, desktops, Arabic and Tamil. All originals were visually reviewed.
+- Final public, showcase and team captures were recaptured from the combined
+  source. The 72 protected captures use synthetic records and disabled writes;
+  they do not prove authenticated access or live provider execution.
+- Visual inspection corrected tablet image sizing, narrow Tamil/Malayalam
+  action labels and Arabic/Urdu expiry-selector direction. The selector
+  regression suite passed all 16 cases; its 90 API captures were refreshed.
+- Configured analytics passed all five browser cases with fake keys and all
+  external requests intercepted. Both current consent captures were inspected.
+- The team Word document has 47 reviewed pages, 12 screenshot placements and
+  a 92-case manual. Its source/screenshot freshness checks passed.
+- The platform Word guide has 99 reviewed pages, 40 chapters and 93 image
+  placements. All 13 document tests and both builder freshness checks pass.
+- The final disconnected production build passes with 2,622 generated pages.
+  The six API browser cases also pass against that final build.
+- Final combined lint passed with no errors and one existing translation-review
+  TODO warning. The complete `pnpm check` passed: TypeScript, 1,496 web/backend
+  tests, 40 mobile tests and 21 desktop tests. Formatting passed. Hosted CI must
+  still pass on the final PR head before merge.
+
 ## Remaining proof before completion
 
-1. Finish auth and notification tests, including real-handler session/JWT
-   withholding, expired/replayed codes, recovery, optional email reset and
-   installation ownership/revocation.
-2. Run the complete local check and format gate. Run the disconnected production
-   build and focused browser flows; inspect current light/dark phone, tablet,
-   desktop and translated captures. Keep fixture evidence explicitly labelled.
-3. Rebuild the user guide and team document, inspect every page, record hashes
-   and commit source, screenshot manifests and Word files together.
-4. Commit coherent slices, update PRs and merge only after required checks pass.
-   Do not monitor frontend deployments; the founder excluded that work.
+1. Commit source, screenshot manifests and Word files together, update PR 29
+   and merge only after required checks pass. Do not monitor frontend
+   deployments; the founder excluded that work.
 
 ## Release limits
 

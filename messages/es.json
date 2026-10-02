@@ -3426,5 +3426,55 @@
       "application_changes_requested": "La solicitud necesita cambios",
       "application_rejected": "Solicitud no aprobada"
     }
+  },
+  "integrations": {
+    "title": "Acceso a la API",
+    "lead": "Conecta los sistemas de tu empresa con tus registros de Luma.Green.",
+    "connection": "Conectar un sistema",
+    "readOnly": "REST v1 permite leer datos de la empresa, materiales, existencias y operaciones. No puede modificar registros ni procesar pagos.",
+    "baseUrl": "Ruta base en este sitio web:",
+    "openApi": "Abrir la especificación de la API",
+    "ownerOnly": "Solo el propietario activo de una empresa puede gestionar las claves de API.",
+    "tokenTitle": "Guarda tu clave de API",
+    "tokenHint": "Esta clave se muestra una sola vez. Guárdala en el almacén de secretos de tu sistema. No la incluyas en una aplicación de navegador, URL o mensaje. Al cerrar esta pantalla, dejará de mostrarse.",
+    "tokenLabel": "Nueva clave de API",
+    "expiresOn": "Caduca el {date}",
+    "copy": "Copiar clave",
+    "dismiss": "Listo",
+    "copyError": "No se pudo copiar. Selecciona y copia la clave manualmente.",
+    "copied": "Clave copiada.",
+    "createTitle": "Crear una clave",
+    "keyHint": "Usa una clave por sistema. Selecciona solo los permisos que necesita. Puedes tener hasta cinco claves activas.",
+    "label": "Nombre del sistema",
+    "expiry": "Validez",
+    "days": "{count, plural, one {# día} other {# días}}",
+    "permissions": "Permisos de lectura",
+    "limit": "Hay cinco claves activas. Revoca una clave que no uses antes de crear otra.",
+    "createError": "No se pudo crear la clave. Comprueba tu acceso e inténtalo de nuevo.",
+    "creating": "Creando…",
+    "create": "Crear clave",
+    "keysTitle": "Tus claves",
+    "empty": "Aún no hay claves. Crea una para conectar tu primer sistema.",
+    "neverUsed": "Sin usar",
+    "lastUsed": "Último uso: {date}",
+    "revokeLabel": "Revocar {label}",
+    "revoke": "Revocar",
+    "revokeTitle": "¿Revocar esta clave?",
+    "revokeHint": "Los sistemas que usen «{label}» perderán el acceso de inmediato. No podrás restaurar esta clave.",
+    "revokeError": "No se pudo revocar la clave. Inténtalo de nuevo.",
+    "revoking": "Revocando…",
+    "newsHint": "Cuando el servicio de noticias está configurado, las noticias del sector ofrecen novedades sobre tus familias de materiales con enlaces a las fuentes.",
+    "scopes": {
+      "organization": "Datos de la empresa",
+      "materials": "Catálogo de materiales",
+      "inventory": "Existencias de la empresa",
+      "trades": "Operaciones de la empresa",
+      "news": "Noticias del sector"
+    },
+    "status": {
+      "active": "Activa",
+      "expired": "Caducada",
+      "revoked": "Revocada"
+    }
   }
 }

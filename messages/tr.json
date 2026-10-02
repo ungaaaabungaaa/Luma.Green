@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Başvuruda değişiklik gerekiyor",
       "application_rejected": "Başvuru onaylanmadı"
     }
+  },
+  "integrations": {
+    "title": "API erişimi",
+    "lead": "İşletme sistemlerinizi Luma.Green kayıtlarınıza bağlayın.",
+    "connection": "Sistem bağla",
+    "readOnly": "REST v1 işletme bilgilerini, malzemeleri, stokları ve ticari işlemleri okur. Kayıtları değiştiremez veya ödeme işleyemez.",
+    "baseUrl": "Bu web sitesindeki temel yol:",
+    "openApi": "API belirtimini aç",
+    "ownerOnly": "API anahtarlarını yalnızca etkin bir işletme sahibi yönetebilir.",
+    "tokenTitle": "API anahtarınızı kaydedin",
+    "tokenHint": "Bu anahtar yalnızca bir kez gösterilir. Sisteminizin gizli bilgi deposuna kaydedin. Bir tarayıcı uygulamasına, URL’ye veya mesaja eklemeyin. Bu ekranı kapattığınızda anahtar artık görünmez.",
+    "tokenLabel": "Yeni API anahtarı",
+    "expiresOn": "Son geçerlilik: {date}",
+    "copy": "Anahtarı kopyala",
+    "dismiss": "Tamam",
+    "copyError": "Kopyalanamadı. Anahtarı seçip elle kopyalayın.",
+    "copied": "Anahtar kopyalandı.",
+    "createTitle": "Anahtar oluştur",
+    "keyHint": "Her sistem için ayrı bir anahtar kullanın. Yalnızca gereken izinleri seçin. En fazla beş etkin anahtarınız olabilir.",
+    "label": "Sistem adı",
+    "expiry": "Geçerlilik süresi",
+    "days": "{count, plural, one {# gün} other {# gün}}",
+    "permissions": "Okuma izinleri",
+    "limit": "Beş anahtar etkin. Yeni bir anahtar oluşturmadan önce kullanılmayan bir anahtarı iptal edin.",
+    "createError": "Anahtar oluşturulamadı. Erişiminizi kontrol edip tekrar deneyin.",
+    "creating": "Oluşturuluyor…",
+    "create": "Anahtar oluştur",
+    "keysTitle": "Anahtarlarınız",
+    "empty": "Henüz anahtar yok. İlk sisteminizi bağlamak için bir anahtar oluşturun.",
+    "neverUsed": "Henüz kullanılmadı",
+    "lastUsed": "Son kullanım: {date}",
+    "revokeLabel": "{label} anahtarını iptal et",
+    "revoke": "İptal et",
+    "revokeTitle": "Bu anahtar iptal edilsin mi?",
+    "revokeHint": "“{label}” anahtarını kullanan sistemler erişimini hemen kaybeder. Bu anahtarı geri yükleyemezsiniz.",
+    "revokeError": "Anahtar iptal edilemedi. Tekrar deneyin.",
+    "revoking": "İptal ediliyor…",
+    "newsHint": "Haber hizmeti yapılandırıldığında sektör haberleri, malzeme gruplarınızla ilgili güncellemeleri kaynak bağlantılarıyla sunar.",
+    "scopes": {
+      "organization": "İşletme bilgileri",
+      "materials": "Malzeme kataloğu",
+      "inventory": "İşletme stoku",
+      "trades": "İşletme işlemleri",
+      "news": "Sektör haberleri"
+    },
+    "status": {
+      "active": "Etkin",
+      "expired": "Süresi dolmuş",
+      "revoked": "İptal edilmiş"
+    }
   }
 }

@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Aanvraag moet worden aangepast",
       "application_rejected": "Aanvraag niet goedgekeurd"
     }
+  },
+  "integrations": {
+    "title": "API-toegang",
+    "lead": "Verbind je bedrijfssystemen met je gegevens in Luma.Green.",
+    "connection": "Systeem verbinden",
+    "readOnly": "REST v1 leest bedrijfsgegevens, materialen, voorraad en handelstransacties. De API kan geen gegevens wijzigen of betalingen verwerken.",
+    "baseUrl": "Basispad op deze website:",
+    "openApi": "API-specificatie openen",
+    "ownerOnly": "Alleen een actieve bedrijfseigenaar kan API-sleutels beheren.",
+    "tokenTitle": "Bewaar je API-sleutel",
+    "tokenHint": "Deze sleutel wordt maar één keer getoond. Bewaar hem in de geheime opslag van je systeem. Zet hem niet in een browserapp, URL of bericht. Na het sluiten van dit scherm is hij niet meer zichtbaar.",
+    "tokenLabel": "Nieuwe API-sleutel",
+    "expiresOn": "Verloopt op {date}",
+    "copy": "Sleutel kopiëren",
+    "dismiss": "Gereed",
+    "copyError": "Kopiëren mislukt. Selecteer en kopieer de sleutel handmatig.",
+    "copied": "Sleutel gekopieerd.",
+    "createTitle": "Sleutel maken",
+    "keyHint": "Gebruik één sleutel per systeem. Selecteer alleen de benodigde rechten. Je kunt maximaal vijf actieve sleutels hebben.",
+    "label": "Systeemnaam",
+    "expiry": "Geldig gedurende",
+    "days": "{count, plural, one {# dag} other {# dagen}}",
+    "permissions": "Leesrechten",
+    "limit": "Er zijn vijf sleutels actief. Trek een ongebruikte sleutel in voordat je een nieuwe maakt.",
+    "createError": "De sleutel kon niet worden gemaakt. Controleer je toegang en probeer het opnieuw.",
+    "creating": "Wordt gemaakt…",
+    "create": "Sleutel maken",
+    "keysTitle": "Je sleutels",
+    "empty": "Nog geen sleutels. Maak een sleutel om je eerste systeem te verbinden.",
+    "neverUsed": "Nog niet gebruikt",
+    "lastUsed": "Laatst gebruikt: {date}",
+    "revokeLabel": "{label} intrekken",
+    "revoke": "Intrekken",
+    "revokeTitle": "Deze sleutel intrekken?",
+    "revokeHint": "Systemen die ‘{label}’ gebruiken, verliezen direct de toegang. Je kunt deze sleutel niet herstellen.",
+    "revokeError": "De sleutel kon niet worden ingetrokken. Probeer het opnieuw.",
+    "revoking": "Wordt ingetrokken…",
+    "newsHint": "Als de nieuwsdienst is ingesteld, biedt branchenieuws updates over je materiaalgroepen met links naar de bronnen.",
+    "scopes": {
+      "organization": "Bedrijfsgegevens",
+      "materials": "Materiaalcatalogus",
+      "inventory": "Bedrijfsvoorraad",
+      "trades": "Bedrijfstransacties",
+      "news": "Branchenieuws"
+    },
+    "status": {
+      "active": "Actief",
+      "expired": "Verlopen",
+      "revoked": "Ingetrokken"
+    }
   }
 }

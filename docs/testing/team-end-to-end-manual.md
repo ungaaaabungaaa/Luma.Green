@@ -221,7 +221,25 @@ Those accounts are not yet set up. A local export or permission unit test cannot
 fill the N or P result cell. Test internal inbox persistence separately from
 browser, desktop and mobile alert delivery.
 
-## 9. Run sheet, defects and sign-off
+## 9. Business API access
+
+Use a controlled approved owner and a separate business in the staging lane.
+Never record the full API key in a screenshot, test report, URL or log. The guide
+chapter on business connections explains scope, expiry and rotation. Check the
+current REST contract and migration note before these cases; the combined
+backend must be released to the approved test environment first.
+
+| ID     | Role / lane                           | Setup                                                                      | Steps                                                                                                                   | Expected result                                                                                                                                  | Evidence                    |
+| ------ | ------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- |
+| API-01 | Owner, staff, Saathi and outsider / S | Separate controlled identities                                             | Open Compliance and API access; call key management directly as each identity                                           | Only the current approved business owner can create or revoke its keys; private metadata remains isolated                                        | UI without secrets, NET     |
+| API-02 | Business owner / S                    | Fewer than five active keys                                                | Create a named key with selected scopes and each allowed expiry; try no scopes, invalid expiry and a sixth active key   | Valid key shown once; only safe prefix later; default 30 days, allowed 1/7/30/90; server validates limits                                        | NET, DB without credentials |
+| API-03 | Two businesses / S                    | Separate scoped keys                                                       | Request an ungranted scope; replay another business's cursor; expire/revoke key; remove issuing owner; suspend business | Denial preserves organization and resource boundaries; expired, revoked or no-longer-authorized credentials fail                                 | NET, DB                     |
+| API-04 | Integration tester / S                | More than one page of materials, stock and trades                          | Import every page for each resource; compare integer units and buyer/seller lists; interrupt a scan                     | Default 50 and maximum 100 records/page; grams/paise remain exact; incomplete scan never implies deletion or a bank payment                      | NET, DB                     |
+| API-05 | Integration tester / S                | Isolated limit-test window                                                 | Exercise per-key and per-business accepted-read caps with the test harness; follow retry instruction                    | 60 accepted requests/minute/key and 180/business enforced; no retry storm; production receives no load                                           | NET, DB                     |
+| API-06 | Operator / S+P                        | Optional NewsAPI disabled, quota exhausted and controlled provider failure | Request news in each state; enable only with an approved plan; inspect a successful response separately                 | Unavailable states are honest; no invented headlines; publisher/date/link retained; no business identity or Luma key sent to news provider       | NET, PROVIDER               |
+| API-07 | Owner in launch languages / F+S       | Phone/tablet/desktop, both themes and RTL                                  | Tab through label, expiry, scopes and actions; open revoke dialog; Escape; retry a failed action                        | Focus order and return are correct; actions fit; text and technical identifiers use correct direction; fixture cannot issue or revoke a real key | UI without secrets          |
+
+## 10. Run sheet, defects and sign-off
 
 Copy one row per case and per distinct locale/device variant. Status values are
 **Not run / Pass / Fail / Blocked / Not applicable**. “Not applicable” needs a

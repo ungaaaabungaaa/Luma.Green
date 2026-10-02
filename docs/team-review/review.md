@@ -120,6 +120,8 @@ font. These are review examples; language fluency still needs a human reviewer.
 
 ## 8. How the system is built
 
+The business API connects approved owners to their ERP or reporting system. It reads scoped business, material, stock and trade records. Keys expire and can be revoked; the API cannot change the ledger or move money. Optional industry news needs an approved provider plan and remains unavailable without configuration.
+
 | Layer        | Choice                                                 | Why it matters to this product                                                         |
 | ------------ | ------------------------------------------------------ | -------------------------------------------------------------------------------------- |
 | Web          | Next.js 16, React 19, TypeScript                       | Server components and static public pages reduce browser work; types protect contracts |
@@ -194,6 +196,8 @@ manager. The full values and locations are in the account/deployment checklist.
 | Native — release owner           | Apple/Google developer accounts, signing and store submissions; desktop signing/update hosting       | Named signed builds, real-device results and tested update/rollback                        |
 | Later — founder + finance        | Payment provider, escrow model and partner/legal terms                                               | Approved money flow and settlement/reconciliation plan before implementation               |
 
+Industry API access also requires the additive backend migration and owner acceptance checks. Optional news needs a suitable NewsAPI plan, a daily quota and a controlled live request; local tests do not establish provider access.
+
 Razorpay, Cloudflare R2, Mapbox and WhatsApp Business are not prerequisites
 for manual-entry pilot operation. Do not buy them only because their names
 appear in a roadmap. Files currently use Convex storage; location can use the
@@ -249,10 +253,3 @@ opinion is claimed. A qualified adviser must settle entity and filing choices.
 Do not display the registered trademark symbol before registration is granted.
 Keep identity evidence and signed legal documents in restricted storage, with
 owners and versions; this repository holds the work checklist only.
-
-## 15. How to use the appendices
-
-Run the manual in its stated evidence lane. Record Pass, Fail, Blocked or Not
-run with a reason. Use the six-month plan to assign work, and use the legal
-checklist to prepare questions and documents for advisers. The product is ready
-for disciplined evaluation; this pack does not replace that evaluation.

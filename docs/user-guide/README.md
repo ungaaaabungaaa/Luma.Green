@@ -134,7 +134,7 @@ before the next build. This prevents later builds from losing your changes.
 ## Google Docs copy
 
 Current publication state is recorded in [cloud.json](cloud.json). The current
-public detail, account security and notifications revision is **pending publication**. The existing native
+public detail, account security, notifications and industry API revision is **pending publication**. The existing native
 [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
 remains at its last verified revision. Its document ID and sharing settings are
 unchanged. No cloud update was performed for this local revision.

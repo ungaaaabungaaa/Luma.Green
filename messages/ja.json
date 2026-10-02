@@ -3426,5 +3426,55 @@
       "application_changes_requested": "申請の修正が必要です",
       "application_rejected": "申請は承認されませんでした"
     }
+  },
+  "integrations": {
+    "title": "APIへのアクセス",
+    "lead": "業務システムをLuma.Greenの記録に接続します。",
+    "connection": "システムを接続",
+    "readOnly": "REST v1は事業者情報、資材、在庫、取引を読み取ります。記録の変更や支払いの処理はできません。",
+    "baseUrl": "このウェブサイトのベースパス：",
+    "openApi": "API仕様を開く",
+    "ownerOnly": "APIキーを管理できるのは、有効な事業者オーナーのみです。",
+    "tokenTitle": "APIキーを保存",
+    "tokenHint": "このキーは一度しか表示されません。システムのシークレット保管庫に保存してください。ブラウザーアプリ、URL、メッセージには含めないでください。この画面を閉じると、キーは表示されなくなります。",
+    "tokenLabel": "新しいAPIキー",
+    "expiresOn": "有効期限：{date}",
+    "copy": "キーをコピー",
+    "dismiss": "完了",
+    "copyError": "コピーできませんでした。キーを選択して手動でコピーしてください。",
+    "copied": "キーをコピーしました。",
+    "createTitle": "キーを作成",
+    "keyHint": "システムごとに別のキーを使用してください。必要な権限のみを選んでください。有効なキーは最大5個まで作成できます。",
+    "label": "システム名",
+    "expiry": "有効期間",
+    "days": "{count, plural, one {#日} other {#日}}",
+    "permissions": "読み取り権限",
+    "limit": "5個のキーが有効です。新しいキーを作成する前に、未使用のキーを失効させてください。",
+    "createError": "キーを作成できませんでした。アクセス権を確認して、もう一度お試しください。",
+    "creating": "作成中…",
+    "create": "キーを作成",
+    "keysTitle": "あなたのキー",
+    "empty": "キーはまだありません。最初のシステムを接続するためのキーを作成してください。",
+    "neverUsed": "未使用",
+    "lastUsed": "最終使用日：{date}",
+    "revokeLabel": "{label}を失効",
+    "revoke": "失効",
+    "revokeTitle": "このキーを失効させますか？",
+    "revokeHint": "「{label}」を使用するシステムは、直ちにアクセスできなくなります。このキーは復元できません。",
+    "revokeError": "キーを失効させられませんでした。もう一度お試しください。",
+    "revoking": "失効処理中…",
+    "newsHint": "ニュースサービスを設定すると、取り扱う資材分類に関する業界ニュースが、情報源へのリンク付きで表示されます。",
+    "scopes": {
+      "organization": "事業者情報",
+      "materials": "資材カタログ",
+      "inventory": "事業者の在庫",
+      "trades": "事業者の取引",
+      "news": "業界ニュース"
+    },
+    "status": {
+      "active": "有効",
+      "expired": "期限切れ",
+      "revoked": "失効済み"
+    }
   }
 }

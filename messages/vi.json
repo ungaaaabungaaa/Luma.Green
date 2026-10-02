@@ -3426,5 +3426,55 @@
       "application_changes_requested": "Đơn cần chỉnh sửa",
       "application_rejected": "Đơn chưa được duyệt"
     }
+  },
+  "integrations": {
+    "title": "Quyền truy cập API",
+    "lead": "Kết nối hệ thống của doanh nghiệp với hồ sơ trên Luma.Green.",
+    "connection": "Kết nối hệ thống",
+    "readOnly": "REST v1 đọc thông tin doanh nghiệp, vật liệu, hàng tồn kho và giao dịch. API không thể sửa hồ sơ hoặc xử lý thanh toán.",
+    "baseUrl": "Đường dẫn gốc trên trang web này:",
+    "openApi": "Mở đặc tả API",
+    "ownerOnly": "Chỉ chủ doanh nghiệp đang hoạt động mới có thể quản lý khóa API.",
+    "tokenTitle": "Lưu khóa API của bạn",
+    "tokenHint": "Khóa này chỉ hiển thị một lần. Hãy lưu trong kho bí mật của hệ thống. Không đặt khóa trong ứng dụng trình duyệt, URL hoặc tin nhắn. Khi đóng màn hình này, khóa sẽ không còn hiển thị.",
+    "tokenLabel": "Khóa API mới",
+    "expiresOn": "Hết hạn {date}",
+    "copy": "Sao chép khóa",
+    "dismiss": "Xong",
+    "copyError": "Không sao chép được. Hãy chọn và sao chép khóa theo cách thủ công.",
+    "copied": "Đã sao chép khóa.",
+    "createTitle": "Tạo khóa",
+    "keyHint": "Dùng một khóa riêng cho mỗi hệ thống. Chỉ chọn các quyền cần thiết. Bạn có thể có tối đa năm khóa đang hoạt động.",
+    "label": "Tên hệ thống",
+    "expiry": "Thời hạn hiệu lực",
+    "days": "{count, plural, one {# ngày} other {# ngày}}",
+    "permissions": "Quyền đọc",
+    "limit": "Đã có năm khóa đang hoạt động. Hãy thu hồi một khóa không dùng trước khi tạo khóa mới.",
+    "createError": "Không thể tạo khóa. Hãy kiểm tra quyền truy cập rồi thử lại.",
+    "creating": "Đang tạo…",
+    "create": "Tạo khóa",
+    "keysTitle": "Khóa của bạn",
+    "empty": "Chưa có khóa. Hãy tạo khóa để kết nối hệ thống đầu tiên.",
+    "neverUsed": "Chưa sử dụng",
+    "lastUsed": "Lần dùng gần nhất: {date}",
+    "revokeLabel": "Thu hồi {label}",
+    "revoke": "Thu hồi",
+    "revokeTitle": "Thu hồi khóa này?",
+    "revokeHint": "Các hệ thống dùng “{label}” sẽ mất quyền truy cập ngay lập tức. Không thể khôi phục khóa này.",
+    "revokeError": "Không thể thu hồi khóa. Vui lòng thử lại.",
+    "revoking": "Đang thu hồi…",
+    "newsHint": "Khi dịch vụ tin tức được cấu hình, mục tin ngành cung cấp thông tin mới theo nhóm vật liệu của bạn, kèm liên kết nguồn.",
+    "scopes": {
+      "organization": "Thông tin doanh nghiệp",
+      "materials": "Danh mục vật liệu",
+      "inventory": "Hàng tồn kho của doanh nghiệp",
+      "trades": "Giao dịch của doanh nghiệp",
+      "news": "Tin ngành"
+    },
+    "status": {
+      "active": "Đang hoạt động",
+      "expired": "Đã hết hạn",
+      "revoked": "Đã thu hồi"
+    }
   }
 }
