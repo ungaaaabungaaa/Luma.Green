@@ -66,6 +66,11 @@ const serverSchema = z.object({
       typeof value === "string" && value.trim() === "" ? undefined : value,
     z.string().min(32).optional(),
   ),
+  ADMIN_SETUP_TOKEN: z.preprocess(
+    (value) =>
+      typeof value === "string" && value.trim() === "" ? undefined : value,
+    z.string().min(32).max(512).optional(),
+  ),
   BETTER_AUTH_URL: optionalUrl,
   OPENROUTER_API_KEY: z.string().optional(),
   OPENROUTER_MODEL: z.string().optional(),

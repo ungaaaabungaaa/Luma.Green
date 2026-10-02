@@ -46,14 +46,26 @@ it("keeps the session and allows retry when device revocation fails", async () =
   expect(done).toHaveBeenCalledOnce();
 });
 
-it("does not navigate after an auth error", async () => {
-  calls.signOut.mockResolvedValueOnce({ error: { message: "offline" } });
-  const done = vi.fn();
-  const { result } = renderHook(() => useSignOut(done));
-  await act(() => result.current.signOut());
-  expect(done).not.toHaveBeenCalled();
-  expect(calls.error).toHaveBeenCalledOnce();
-});
+it.each(["rejection", "server refusal"])(
+  "allows retry after auth %s without navigating",
+  async (failure) => {
+    if (failure === "rejection") {
+      calls.signOut.mockRejectedValueOnce(new Error("offline"));
+    } else {
+      calls.signOut.mockResolvedValueOnce({ error: { message: "offline" } });
+    }
+    const done = vi.fn();
+    const { result } = renderHook(() => useSignOut(done));
+    await act(() => result.current.signOut());
+    expect(done).not.toHaveBeenCalled();
+    expect(calls.error).toHaveBeenCalledOnce();
+    expect(result.current.busy).toBe(false);
+    await act(() => result.current.signOut());
+    expect(calls.revoke).toHaveBeenCalledTimes(2);
+    expect(calls.signOut).toHaveBeenCalledTimes(2);
+    expect(done).toHaveBeenCalledOnce();
+  },
+);
 
 it("coalesces rapid logout taps while revocation is pending", async () => {
   const deferred = Promise.withResolvers<undefined>();
@@ -70,4 +82,26 @@ it("coalesces rapid logout taps while revocation is pending", async () => {
     await first;
   });
   expect(calls.signOut).toHaveBeenCalledOnce();
+});
+
+it("coalesces rapid logout taps while the auth request is pending", async () => {
+  const deferred = Promise.withResolvers<{ error: null }>();
+  calls.signOut.mockReturnValueOnce(deferred.promise);
+  const done = vi.fn();
+  const { result } = renderHook(() => useSignOut(done));
+  let first: Promise<void>;
+  await act(async () => {
+    first = result.current.signOut();
+    await result.current.signOut();
+  });
+  expect(result.current.busy).toBe(true);
+  expect(calls.revoke).toHaveBeenCalledOnce();
+  expect(calls.signOut).toHaveBeenCalledOnce();
+  expect(done).not.toHaveBeenCalled();
+  await act(async () => {
+    deferred.resolve({ error: null });
+    await first;
+  });
+  expect(done).toHaveBeenCalledOnce();
+  expect(result.current.busy).toBe(false);
 });

@@ -27,7 +27,7 @@ describe("signInOptions", () => {
     expect(devMode.phone).toBe(true);
   });
 
-  it("opens admin setup once, while ADMIN_EMAIL is set and no admin exists", async () => {
+  it("opens admin setup only with an email and valid bootstrap secret, before an admin exists", async () => {
     const t = convexTest(schema, modules);
 
     vi.stubEnv("ADMIN_EMAIL", "");
@@ -35,6 +35,16 @@ describe("signInOptions", () => {
     expect(unset.adminSetup).toBe(false);
 
     vi.stubEnv("ADMIN_EMAIL", "admin@luma.test");
+    vi.stubEnv("ADMIN_SETUP_TOKEN", "");
+    const noToken = await t.query(api.identity.signInOptions, {});
+    expect(noToken.adminSetup).toBe(false);
+    vi.stubEnv("ADMIN_SETUP_TOKEN", "short-token");
+    const shortToken = await t.query(api.identity.signInOptions, {});
+    expect(shortToken.adminSetup).toBe(false);
+    vi.stubEnv("ADMIN_SETUP_TOKEN", "x".repeat(513));
+    const longToken = await t.query(api.identity.signInOptions, {});
+    expect(longToken.adminSetup).toBe(false);
+    vi.stubEnv("ADMIN_SETUP_TOKEN", "test-setup-token-0123456789abcdef");
     const open = await t.query(api.identity.signInOptions, {});
     expect(open.adminSetup).toBe(true);
 

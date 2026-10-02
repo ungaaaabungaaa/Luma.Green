@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useQuery } from "convex/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { isConvexConfigured } from "@/components/providers/convex-provider";
@@ -96,13 +96,17 @@ function PasswordStep({
   });
 
   async function onSubmit(values: AdminSignInValues) {
-    const { data, error } = await authClient.signIn.email(values);
-    if (error) {
-      setError("root", { message: signInErrorMessage(error) });
-      return;
+    try {
+      const { data, error } = await authClient.signIn.email(values);
+      if (error) {
+        setError("root", { message: signInErrorMessage(error) });
+        return;
+      }
+      if ("twoFactorRedirect" in data && data.twoFactorRedirect) onTwoFactor();
+      else onNoAuthenticator();
+    } catch {
+      setError("root", { message: signInErrorMessage({}) });
     }
-    if ("twoFactorRedirect" in data && data.twoFactorRedirect) onTwoFactor();
-    else onNoAuthenticator();
   }
 
   return (
@@ -173,25 +177,36 @@ function CodeStep({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const checking = useRef(false);
+
   async function check(value: string) {
+    if (checking.current) return;
+    checking.current = true;
     setBusy(true);
     setError(null);
-    const { error: authError } =
-      mode === "totp"
-        ? await authClient.twoFactor.verifyTotp({ code: value })
-        : await authClient.twoFactor.verifyBackupCode({ code: value });
-    if (!authError) {
-      onDone();
-      return;
+    try {
+      const { error: authError } =
+        mode === "totp"
+          ? await authClient.twoFactor.verifyTotp({ code: value })
+          : await authClient.twoFactor.verifyBackupCode({ code: value });
+      if (!authError) {
+        onDone();
+        return;
+      }
+      const { message, restart } = codeErrorMessage(authError);
+      if (restart) {
+        onRestart(message);
+        return;
+      }
+      setCode("");
+      setError(message);
+    } catch {
+      setCode("");
+      setError(codeErrorMessage({}).message);
+    } finally {
+      checking.current = false;
+      setBusy(false);
     }
-    const { message, restart } = codeErrorMessage(authError);
-    if (restart) {
-      onRestart(message);
-      return;
-    }
-    setBusy(false);
-    setCode("");
-    setError(message);
   }
 
   return (
@@ -222,6 +237,7 @@ function CodeStep({
           <Label htmlFor="backup">Backup code</Label>
           <Input
             id="backup"
+            disabled={busy}
             autoComplete="one-time-code"
             spellCheck={false}
             className="font-mono"
@@ -259,6 +275,7 @@ function CodeStep({
           type="button"
           variant="link"
           className="px-0"
+          disabled={busy}
           onClick={() => {
             setMode(mode === "totp" ? "backup" : "totp");
             setError(null);
@@ -270,6 +287,7 @@ function CodeStep({
           type="button"
           variant="link"
           className="px-0"
+          disabled={busy}
           onClick={() => {
             onRestart();
           }}

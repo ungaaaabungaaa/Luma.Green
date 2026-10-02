@@ -782,7 +782,8 @@
         "topicMissing": "Kies waar het over gaat.",
         "messageShort": "Schrijf iets meer: minstens 5 letters.",
         "messageLong": "Blijf onder 1.000 tekens.",
-        "generic": "Dit kon niet worden verstuurd. Controleer uw verbinding en probeer het opnieuw."
+        "generic": "Dit kon niet worden verstuurd. Controleer uw verbinding en probeer het opnieuw.",
+        "rateLimited": "Er zijn te veel berichten vanaf dit nummer verzonden. Probeer het over een uur opnieuw."
       },
       "unavailableTitle": "Berichten zijn hier uitgeschakeld",
       "unavailableBody": "Bel of WhatsApp ons. We helpen u graag.",
@@ -3061,7 +3062,8 @@
       "seeAll": "Alles bekijken",
       "noOffersTitle": "Nu geen loten te koop",
       "noOffersBody": "Nieuwe loten verschijnen hier zodra ze worden aangeboden."
-    }
+    },
+    "totalInvalid": "Het totaalbedrag is te hoog. Verlaag de hoeveelheid of de prijs."
   },
   "shop": {
     "sampleNote": "Prijzen, marktprijzen en bedragen op dit scherm zijn voorbeeldcijfers voor het prototype.",

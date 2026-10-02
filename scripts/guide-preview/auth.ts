@@ -6,9 +6,17 @@ function rejectAccountChange() {
 }
 
 export const authClient = {
+  signIn: {
+    email: () =>
+      window.location.pathname.endsWith("/failure.html") &&
+      new URLSearchParams(window.location.search).get("scenario") === "totp"
+        ? Promise.resolve({ data: { twoFactorRedirect: true }, error: null })
+        : rejectAccountChange(),
+  },
+  signUp: { email: rejectAccountChange },
   // A truthy marker renders signed-in controls; it is not a valid auth session.
   useSession: () => ({
-    data: { fixture: true },
+    data: { fixture: true, session: { id: undefined } },
     isPending: false,
     error: null,
   }),

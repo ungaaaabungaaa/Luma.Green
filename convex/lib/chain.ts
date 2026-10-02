@@ -26,9 +26,27 @@ export function buyerKindFor(seller: OrgKind): OrgKind | null {
 
 // --- Money ---------------------------------------------------------------
 
-/** What `grams` cost at `paisePerKg`, rounded to the paisa. */
+/** Exact integer-paisa pricing, or null when the inputs/result are unsafe. */
+export function safePaiseFor(grams: number, paisePerKg: number): number | null {
+  if (!Number.isSafeInteger(grams) || !Number.isSafeInteger(paisePerKg))
+    return null;
+  const product = BigInt(grams) * BigInt(paisePerKg);
+  // Preserve Math.round's half-toward-positive-infinity rule, including refunds.
+  // eslint-disable-next-line unicorn/prefer-bigint-literals -- ES2017 TypeScript source target forbids BigInt literals; the runtime supports the constructor.
+  const scale = BigInt(1000);
+  const rounded = (product + BigInt(product >= 0 ? 500 : -499)) / scale;
+  const limit = BigInt(Number.MAX_SAFE_INTEGER);
+  if (rounded > limit || rounded < -limit) return null;
+  const amount = Number(rounded);
+  return amount === 0 && product < 0 ? -0 : amount;
+}
+
+/** Pricing for already validated amounts. Never return an imprecise total. */
 export function paiseFor(grams: number, paisePerKg: number): number {
-  return Math.round((grams * paisePerKg) / 1000);
+  const amount = safePaiseFor(grams, paisePerKg);
+  if (amount === null)
+    throw new RangeError("Money values must be safe integers.");
+  return amount;
 }
 
 export function kgToGrams(kg: number): number {

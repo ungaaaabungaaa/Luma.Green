@@ -1,11 +1,11 @@
 {
-  "sourceCommit": "bc986f4ea13518473191930a55881f293dddddb1",
+  "sourceCommit": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
   "note": "Real browser renders of current application components. Synthetic data and isolated local query/auth/navigation adapters. Not evidence of sign-in, authorization, live records, provider calls or production deployment. Build styles and Geist/Noto fonts are reused without restyling the app. The visible provenance banner belongs only to this harness.",
   "fixtureSha256": "c96cf240328b563f6ebed44a028bfd14237ac4d94eb7b209983deadc120f3ec7",
   "sharedSourceHashes": {
     "scripts/guide-preview/account-screens.mjs": "16de49bb7ee1bc31ae4a4499bc542bc930cb810d24f28fd66e5a9a435189c93a",
     "scripts/guide-preview/account-fixtures.ts": "c02db0f8ed8a07d74ed1e24e4a7ced5dc640d3f9a931022d912ede4e9f5fa43f",
-    "scripts/guide-preview/auth.ts": "8c3d86204e7c2baa5451eddc01daa9d8a13136faf6b08c9c46318fc2bb9f5cd9",
+    "scripts/guide-preview/auth.ts": "7a14df477174e1c57e9aa51de9172b83455280bba4d9c85b5bdab8019c60b9b8",
     "scripts/guide-preview/provider.tsx": "97187377a9ad4ac5ea2b320e937bb78a95ccdbc644520dfaf5b5cf6dae80f802",
     "src/app/[locale]/(account)/account/layout.tsx": "4576c32b4e94d6865e73feada51edd2f5205e11c247fb1df31c52b36af307255",
     "src/components/account/account-security.tsx": "3ce5a3f4271a352a37eb511ccdeab6fab07912ca90cacfbcd69b199b38e03b59",
@@ -39,8 +39,11 @@
     "src/components/ui/radio-group.tsx": "6148a9d8435723239ea538486451a4c99eba060018c59b1197e5d25ff13a424f",
     "src/components/admin/pilot/pilot-charts.tsx": "3f55ab6660fcf1c21ae963e3e90f034beb07f287efad7b57f7618a6a8db61e96",
     "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
+    "src/lib/money-format.ts": "f3cf7e5ade380ef829757b8dced8419143f545372df6af1e7515f970242ee2f4",
+    "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
+    "src/components/admin/format.ts": "84cc6603eb2d483603a8b816ee5d303cbacd846cf54151b90cd848f51c3feb02",
     "src/lib/number-input.ts": "c516f503a1e7133f698d3d697ac8b56a1c919636c718c55a7ac6c690fa0e8053",
-    "src/components/market/logic.ts": "16561efefa45414b120100892643f2055333ff973efcb65ac609c68bada7878a",
+    "src/components/market/logic.ts": "30fa879ebda8b36485222753471282b796d0c82117a0db1f950702f3326e509f",
     "src/components/market/material-filter.tsx": "7b0f79e9ffc8d916fd0d1413cbd852b559652f46732e5b3a5c83bf4fb1f159e2",
     "src/components/shop/weigh.ts": "c41d821af68a6531ecdf004e1fb40e6c29923c1315779b6a301d48db8ce07140",
     "scripts/guide-preview/main.tsx": "c2342a1abac24c6ae9bb96825b977e6fe6b9ef6c6774445c7280bad7dbe67785",
@@ -48,7 +51,7 @@
     "scripts/guide-preview/translations.ts": "00133fbd6143b55d9ef774349cb2877dd10c3f0bd178e15165b0de27b6c5f959",
     "scripts/guide-preview/locale.ts": "3e8b2a2b4c51576857cc210b742e146c0157bfd3db64f78119b675d9adfdb75a",
     "convex/lib/catalogue.ts": "556f284936b958876156cae5aaac7cd3efada116da3470e228a1e630c08665dd",
-    "scripts/guide-preview/queries.ts": "286d0b4742c294d86aa1eb71dd7f732ddeb2e25fe10257ba38ce1c00376bac3e",
+    "scripts/guide-preview/queries.ts": "181c69bfcb9c5e7258efaa5cba1206122a1c8625ca8663ff5a4a2f91ec4d591a",
     "scripts/guide-preview/selection-fixtures.tsx": "6613ab3a3e88ad4d3589bcd9c01688bd7618f259f9713ea1bf900434865fae2f",
     "src/components/sell/basket-step.tsx": "a646389a4954545ae01cae0bbaa72fd691cf73ed962514f433445d30ce27107e",
     "src/components/sell/shop-step.tsx": "e167f6508c490d0322b80ceb41fd43b83003d1fda0a86643b1c3c8bf388423c6",
@@ -66,7 +69,7 @@
     "src/components/join/fields.tsx": "338ae74dc83c03d228752141dc4aed48f88d5b2d16f4be7a064cdee9055f6b3a",
     "src/components/join/form-parts.tsx": "08dd0b0d101e01a40130d9684e7bcbf113ccc4519b6e4875c6e57f027f33ab73",
     "src/components/join/use-autosave.ts": "48b6ad76ccc26dcf1579c88577e0ede6bfe45b33bee2efb50f611818933ad1ad",
-    "src/components/market/new-listing-form.tsx": "e02b2a9ed87eb7a1c222dbaf5acab48727b1de1b9cd01892bd56cccd92038278",
+    "src/components/market/new-listing-form.tsx": "2ce0838114616679e66d4aa3b20fc6c861adfa909c09fed51ebaf2e2ff600f72",
     "src/components/market/listing-fields.tsx": "651848954b929c966b6d9f5ae00ac86dbe78ffd0340fd9cac4db386ee37520de",
     "src/components/market/field.tsx": "973340081dba920b18b07a94d5d293e3a98e4dc9fb3ef63ce4befbf80f0dcd57",
     "src/components/market/my-listings.tsx": "8c57e331373fbcbbe1e72c4269779f6196257f5918fbc52373dff0f9e370c6de",
@@ -75,9 +78,9 @@
     "src/components/insights/ledger-explainer.tsx": "9795e65e3a51fc75f56c8805550fdc12ac33138a564b00bba334f61ef34a6817",
     "scripts/guide-preview/image.tsx": "a1aac43e9a0256145a5a5fe58ca4f367bd15b4b46837b0d1302c054a83b3fa2d",
     "scripts/guide-preview/vite.config.mts": "e86ddf095fb8c7da843e6295beffbaf8f37b26e48a43581919770dcc31e91c99",
-    "messages/en.json": "32e0232b3f6b559601810b51783a8534deb4684f38671dbffc1703012ad9640d",
-    "messages/ar.json": "ee069dfa17659f820abcfbaf3e21d5fe35eb39b5e1eb4fd36e4f78872c552c48",
-    "messages/ta.json": "7eb3169f4fe4f0e2d50ec482ce6c1556724b396c9bdd9dfeb4590bdb009af1a9",
+    "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f",
+    "messages/ar.json": "59058e21c58ffe4b1a29eab80087ef210eb675244654aab612bf866459c8cff6",
+    "messages/ta.json": "c4ed68fa4ad3de6bee84f53dddd454a42067269056bb3cb79ef4c6d9ad7dacaa",
     "public/images/showcase/household-sorting.webp": "c3dd81eb46dd919f68f91aa89511450ea1ba4eff0fce77c285ccd090a0c6380f",
     "public/images/showcase/collection-partners.webp": "430e3eba77371df632f35759001cfec09d81683b5455b80fad07d53e365df0b5",
     "public/images/showcase/material-yard.webp": "0ea4aebbd02335a2bbb8306532cb09d520b7f2f1e050dcb44174326fb3bed74d",
@@ -101,16 +104,16 @@
       "sha256": "b63fa86668a0f99bcd4fa01d9597bc80a7f575041d0de7aece02964241f30d81"
     },
     {
+      "file": "8cca038f2806ea2f.css",
+      "sha256": "593ed3230001d91ce903b06f1272c8c39fef9eb473b008406d8169557400b794"
+    },
+    {
       "file": "905840386963a59a.css",
       "sha256": "3bf8bb4dbed3468f68bc1eab081729db4a4d9dcfe5bd8f4345ffc362333fd386"
     },
     {
       "file": "aa3081e675310d43.css",
       "sha256": "abcf76fa74ef17c2343a9afbdb5332043cad941ba3d171e20f9b01468610f890"
-    },
-    {
-      "file": "bd369931b91a1d78.css",
-      "sha256": "7ef69fe84e9f5d3b657570bdba9ec71718bf3c419b78b2d9bb46587684fb855e"
     },
     {
       "file": "d7dadd757ff5cdab.css",
@@ -130,7 +133,7 @@
       "file": "household-basket-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:45.792Z",
+      "capturedAt": "2026-10-02T16:55:04.858Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -156,7 +159,7 @@
       "file": "household-mode-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:46.120Z",
+      "capturedAt": "2026-10-02T16:55:05.382Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -182,7 +185,7 @@
       "file": "household-when-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:46.451Z",
+      "capturedAt": "2026-10-02T16:55:05.947Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -204,7 +207,7 @@
       "file": "admin-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:46.809Z",
+      "capturedAt": "2026-10-02T16:55:06.657Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -226,7 +229,7 @@
       "file": "admin-verification.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:47.166Z",
+      "capturedAt": "2026-10-02T16:55:07.471Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -248,7 +251,7 @@
       "file": "admin-review.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:47.526Z",
+      "capturedAt": "2026-10-02T16:55:08.319Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -270,7 +273,7 @@
       "file": "admin-support.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:47.880Z",
+      "capturedAt": "2026-10-02T16:55:09.124Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -292,7 +295,7 @@
       "file": "admin-prices.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:48.239Z",
+      "capturedAt": "2026-10-02T16:55:09.968Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -314,7 +317,7 @@
       "file": "admin-pilot.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:48.682Z",
+      "capturedAt": "2026-10-02T16:55:10.859Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -336,7 +339,7 @@
       "file": "kabadiwala-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:49.082Z",
+      "capturedAt": "2026-10-02T16:55:11.873Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -358,7 +361,7 @@
       "file": "kabadiwala-request.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:49.478Z",
+      "capturedAt": "2026-10-02T16:55:12.871Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -381,7 +384,7 @@
       "file": "kabadiwala-request-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:49.868Z",
+      "capturedAt": "2026-10-02T16:55:13.988Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -405,7 +408,7 @@
       "file": "kabadiwala-weigh.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:50.242Z",
+      "capturedAt": "2026-10-02T16:55:15.353Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -414,7 +417,7 @@
       "fullPage": false,
       "applicationRoute": "/en/app/requests/guide-booking",
       "previewUrl": "http://127.0.0.1:3203/en/app/requests/guide-booking",
-      "componentSha256": "0aec375157d6fb884315ab83dbb98f1c12484c166740c681194c070600c4862a",
+      "componentSha256": "45e171b54deba5a762a891c0e9adb2761b6e0eb6f69bd32524e8c0aefa3bb96d",
       "screenshotSha256": "6030113e2c4190ce0540023d64bcb854a9b0d0f9c1f4a114fdc175e3752394d2",
       "browserErrors": [],
       "blockedExternalRequests": []
@@ -428,7 +431,7 @@
       "file": "kabadiwala-ratecard.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:50.583Z",
+      "capturedAt": "2026-10-02T16:55:16.316Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -438,7 +441,7 @@
       "applicationRoute": "/en/app/prices",
       "previewUrl": "http://127.0.0.1:3203/en/app/prices",
       "componentSha256": "b93ef01419defea43e2cb3c139dcb879ca5eefe732435edc6d0cf156b92315a7",
-      "screenshotSha256": "c0b0c679319f46f44a83694e186b8f7cee26f5c4e7d8ea08db12515e633bb68c",
+      "screenshotSha256": "9be1ee36c5c0bcf9d79ef0393835f29c00761c1ce01f10868835059ef0b26d91",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -452,7 +455,7 @@
       "file": "household-tracking.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:50.976Z",
+      "capturedAt": "2026-10-02T16:55:17.187Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 480,
@@ -475,7 +478,7 @@
       "file": "kabadiwala-requests.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:51.452Z",
+      "capturedAt": "2026-10-02T16:55:18.057Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -498,7 +501,7 @@
       "file": "yard-market.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:51.927Z",
+      "capturedAt": "2026-10-02T16:55:18.868Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -521,7 +524,7 @@
       "file": "yard-trades.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:52.488Z",
+      "capturedAt": "2026-10-02T16:55:19.672Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -543,7 +546,7 @@
       "file": "manufacturer-compliance.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:53.118Z",
+      "capturedAt": "2026-10-02T16:55:20.565Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -565,7 +568,7 @@
       "file": "yard-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:53.844Z",
+      "capturedAt": "2026-10-02T16:55:21.539Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -587,7 +590,7 @@
       "file": "recycler-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:54.557Z",
+      "capturedAt": "2026-10-02T16:55:22.574Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -609,7 +612,7 @@
       "file": "manufacturer-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:55.129Z",
+      "capturedAt": "2026-10-02T16:55:23.467Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -631,7 +634,7 @@
       "file": "saathi-overview.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:55.620Z",
+      "capturedAt": "2026-10-02T16:55:24.328Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -656,7 +659,7 @@
       "file": "kabadiwala-stock-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:56.142Z",
+      "capturedAt": "2026-10-02T16:55:25.199Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -678,7 +681,7 @@
       "file": "yard-sell.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:56.653Z",
+      "capturedAt": "2026-10-02T16:55:26.178Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -700,7 +703,7 @@
       "file": "yard-invoice.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:57.169Z",
+      "capturedAt": "2026-10-02T16:55:27.114Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -722,7 +725,7 @@
       "file": "recycler-impact.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:57.661Z",
+      "capturedAt": "2026-10-02T16:55:28.004Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -747,7 +750,7 @@
       "file": "recycler-impact-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:58.123Z",
+      "capturedAt": "2026-10-02T16:55:28.875Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -772,7 +775,7 @@
       "file": "join-kabadiwala-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:58.682Z",
+      "capturedAt": "2026-10-02T16:55:29.757Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -795,7 +798,7 @@
       "file": "join-yard.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:59.215Z",
+      "capturedAt": "2026-10-02T16:55:30.661Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -819,7 +822,7 @@
       "file": "join-status-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:38:59.720Z",
+      "capturedAt": "2026-10-02T16:55:31.582Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -828,7 +831,7 @@
       "fullPage": true,
       "applicationRoute": "/en/join/status",
       "previewUrl": "http://127.0.0.1:3203/en/join/status",
-      "componentSha256": "8df360716e46664d88e74e30861624df64606562156e0b9b01d03d3ebc7fb3b0",
+      "componentSha256": "a9e2c89cb041f9c50de61a64437a4242f5f6804e7e10f6c1dbe960eab86c76ea",
       "screenshotSha256": "5486a60e2b245981ba1868042fbab7a87f6097aacc156695c18c35e5d6278bed",
       "browserErrors": [],
       "blockedExternalRequests": []
@@ -843,7 +846,7 @@
       "file": "admin-pilot-outcomes.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:00.282Z",
+      "capturedAt": "2026-10-02T16:55:32.599Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -867,7 +870,7 @@
       "file": "admin-pilot-materials.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:00.850Z",
+      "capturedAt": "2026-10-02T16:55:33.826Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -890,7 +893,7 @@
       "file": "admin-pilot-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:01.448Z",
+      "capturedAt": "2026-10-02T16:55:35.349Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -900,7 +903,7 @@
       "applicationRoute": "/admin/pilot",
       "previewUrl": "http://127.0.0.1:3203/admin/pilot",
       "componentSha256": "3f55ab6660fcf1c21ae963e3e90f034beb07f287efad7b57f7618a6a8db61e96",
-      "screenshotSha256": "4980001ace405e9277db1dd7ed703509be654d562e062fc7eddc0c52466be2fa",
+      "screenshotSha256": "fe7cc835c1c75e99b2af753e4f971fa4a3573eaf45c1f6cb993c5fc2d430c381",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -914,7 +917,7 @@
       "file": "admin-pilot-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:02.018Z",
+      "capturedAt": "2026-10-02T16:55:36.684Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -939,7 +942,7 @@
       "file": "admin-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:02.532Z",
+      "capturedAt": "2026-10-02T16:55:38.156Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -964,7 +967,7 @@
       "file": "kabadiwala-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:03.065Z",
+      "capturedAt": "2026-10-02T16:55:39.754Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -989,7 +992,7 @@
       "file": "yard-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:03.616Z",
+      "capturedAt": "2026-10-02T16:55:41.123Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1014,7 +1017,7 @@
       "file": "recycler-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:04.113Z",
+      "capturedAt": "2026-10-02T16:55:42.205Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1039,7 +1042,7 @@
       "file": "manufacturer-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:04.575Z",
+      "capturedAt": "2026-10-02T16:55:43.397Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1064,7 +1067,7 @@
       "file": "saathi-overview-phone.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:05.069Z",
+      "capturedAt": "2026-10-02T16:55:44.530Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1088,7 +1091,7 @@
       "file": "admin-overview-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:05.536Z",
+      "capturedAt": "2026-10-02T16:55:45.565Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 1440,
@@ -1098,7 +1101,7 @@
       "applicationRoute": "/admin",
       "previewUrl": "http://127.0.0.1:3203/admin",
       "componentSha256": "145aa0135c65301355adc080978346e46607788bb5bcc59d671be35264543732",
-      "screenshotSha256": "7c71525c9d0a82f81728b6513cc27e459fe091c5401ffca374f6a168b201641d",
+      "screenshotSha256": "219bd40739b478408fd8129bc06da9b45493e472bdbed105b3f255e0cbf21b3d",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -1114,7 +1117,7 @@
       "file": "kabadiwala-overview-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:06.050Z",
+      "capturedAt": "2026-10-02T16:55:46.717Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1140,7 +1143,7 @@
       "file": "account-inbox-en-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:06.509Z",
+      "capturedAt": "2026-10-02T16:55:47.793Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1167,7 +1170,7 @@
       "file": "account-menu-en-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:07.097Z",
+      "capturedAt": "2026-10-02T16:55:49.296Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1193,7 +1196,7 @@
       "file": "account-inbox-en-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:07.581Z",
+      "capturedAt": "2026-10-02T16:55:50.334Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1220,7 +1223,7 @@
       "file": "account-menu-en-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:08.183Z",
+      "capturedAt": "2026-10-02T16:55:51.455Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1247,7 +1250,7 @@
       "file": "operator-menu-en.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:08.796Z",
+      "capturedAt": "2026-10-02T16:55:52.662Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1273,7 +1276,7 @@
       "file": "account-security-en.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:09.297Z",
+      "capturedAt": "2026-10-02T16:55:53.599Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1299,7 +1302,7 @@
       "file": "account-challenge-en.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:09.793Z",
+      "capturedAt": "2026-10-02T16:55:54.491Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1309,7 +1312,7 @@
       "applicationRoute": "/en/login/factor",
       "previewUrl": "http://127.0.0.1:3203/en/login/factor",
       "componentSha256": "843d64d6bda7a102e6aa537c1a3cdb3f5cb44765b8d13c3f8cd111fa9d14b229",
-      "screenshotSha256": "36b8f6479609fa5056a84dc04268b659bf3ac5aff23c30bea2445631b738602f",
+      "screenshotSha256": "6988e46ce40b6729871af4311c8be920b4a83e6cab3a745e8bd26f8d49bc83b8",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -1325,7 +1328,7 @@
       "file": "account-inbox-ar-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:10.289Z",
+      "capturedAt": "2026-10-02T16:55:55.348Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1352,7 +1355,7 @@
       "file": "account-menu-ar-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:10.905Z",
+      "capturedAt": "2026-10-02T16:55:56.425Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1378,7 +1381,7 @@
       "file": "account-inbox-ar-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:11.395Z",
+      "capturedAt": "2026-10-02T16:55:57.273Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1405,7 +1408,7 @@
       "file": "account-menu-ar-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:12.027Z",
+      "capturedAt": "2026-10-02T16:55:58.396Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1432,7 +1435,7 @@
       "file": "operator-menu-ar.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:12.697Z",
+      "capturedAt": "2026-10-02T16:55:59.627Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1458,7 +1461,7 @@
       "file": "account-security-ar.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:13.159Z",
+      "capturedAt": "2026-10-02T16:56:00.649Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1484,7 +1487,7 @@
       "file": "account-challenge-ar.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:13.687Z",
+      "capturedAt": "2026-10-02T16:56:01.743Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1494,7 +1497,7 @@
       "applicationRoute": "/ar/login/factor",
       "previewUrl": "http://127.0.0.1:3203/ar/login/factor",
       "componentSha256": "843d64d6bda7a102e6aa537c1a3cdb3f5cb44765b8d13c3f8cd111fa9d14b229",
-      "screenshotSha256": "54f5d8b2608cd0b3c337092eec6b9260ebb5ab610fa1fcd1e350d7bb1c11506f",
+      "screenshotSha256": "c0e815eb7553d7973bd2358b75ef79021a795330ff247d59229215f9acdece48",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -1510,7 +1513,7 @@
       "file": "account-inbox-ta-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:14.196Z",
+      "capturedAt": "2026-10-02T16:56:02.801Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1537,7 +1540,7 @@
       "file": "account-menu-ta-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:14.849Z",
+      "capturedAt": "2026-10-02T16:56:04.128Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1563,7 +1566,7 @@
       "file": "account-inbox-ta-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:15.395Z",
+      "capturedAt": "2026-10-02T16:56:05.101Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1590,7 +1593,7 @@
       "file": "account-menu-ta-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:16.097Z",
+      "capturedAt": "2026-10-02T16:56:06.489Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1617,7 +1620,7 @@
       "file": "operator-menu-ta.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:16.831Z",
+      "capturedAt": "2026-10-02T16:56:08.080Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1643,7 +1646,7 @@
       "file": "account-security-ta.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:17.318Z",
+      "capturedAt": "2026-10-02T16:56:09.115Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1669,7 +1672,7 @@
       "file": "account-challenge-ta.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:17.857Z",
+      "capturedAt": "2026-10-02T16:56:10.249Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1679,7 +1682,7 @@
       "applicationRoute": "/ta/login/factor",
       "previewUrl": "http://127.0.0.1:3203/ta/login/factor",
       "componentSha256": "843d64d6bda7a102e6aa537c1a3cdb3f5cb44765b8d13c3f8cd111fa9d14b229",
-      "screenshotSha256": "3ed7fcb1e258c9cb74e72f6452cd8e5fbba8648b0260152c0f6f205cc53a200d",
+      "screenshotSha256": "68f6e8bc8bcd6bcaeed89a03728895e171734bbd163f11fe0607a9ea70001f15",
       "browserErrors": [],
       "blockedExternalRequests": []
     },
@@ -1694,7 +1697,7 @@
       "file": "account-inbox-empty.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:18.301Z",
+      "capturedAt": "2026-10-02T16:56:11.125Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1721,7 +1724,7 @@
       "file": "account-inbox-error.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:18.883Z",
+      "capturedAt": "2026-10-02T16:56:12.586Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1747,7 +1750,7 @@
       "file": "account-security-enabled.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:19.369Z",
+      "capturedAt": "2026-10-02T16:56:13.720Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1773,7 +1776,7 @@
       "file": "account-recovery-challenge.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:19.949Z",
+      "capturedAt": "2026-10-02T16:56:15.059Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1799,7 +1802,7 @@
       "file": "admin-password-recovery-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:20.426Z",
+      "capturedAt": "2026-10-02T16:56:16.125Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1825,7 +1828,7 @@
       "file": "admin-password-reset-missing-light.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:20.880Z",
+      "capturedAt": "2026-10-02T16:56:17.232Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,
@@ -1851,7 +1854,7 @@
       "file": "admin-password-recovery-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:21.476Z",
+      "capturedAt": "2026-10-02T16:56:18.212Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 390,
@@ -1877,7 +1880,7 @@
       "file": "admin-password-reset-missing-dark.png",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
-      "capturedAt": "2026-10-02T08:39:22.067Z",
+      "capturedAt": "2026-10-02T16:56:19.053Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "viewport": {
         "width": 768,

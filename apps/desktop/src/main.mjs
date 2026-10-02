@@ -8,6 +8,7 @@ import { offlineHtml, pageLocale, selectLocale } from "./localization.mjs";
 import {
   isAppBlob,
   isAppUrl,
+  isCancelledLoad,
   isExternalUrl,
   isPdfViewerFrame,
   mayDownload,
@@ -52,8 +53,8 @@ async function loadApp(window, url) {
   try {
     offlineWindows.delete(window);
     await window.loadURL(url);
-  } catch {
-    await showOffline(window);
+  } catch (error) {
+    if (!isCancelledLoad(error)) await showOffline(window);
   }
 }
 /** @param {BrowserWindow} window */

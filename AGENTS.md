@@ -214,13 +214,17 @@ else async. Never `fetch` in a component body.
 
 ```ts
 // Right
-const totalPaise = (quantityGrams * pricePerKgPaise) / 1000; // integer math
+const totalPaise = safePaiseFor(quantityGrams, pricePerKgPaise);
+if (totalPaise === null) throw new ConvexError("INVALID_PRICE");
 // Wrong
 const total = kg * pricePerKg; // float — drifts, and an audit will find it
 ```
 
-Format at the edge only, with `next-intl`'s `useFormatter`, so currency and
-number formatting follow the user's locale.
+Use `safePaiseFor` from `convex/lib/chain.ts` for untrusted amounts. It uses exact
+integer arithmetic and rejects unsafe totals; do not multiply JavaScript numbers
+before calling it. Format only at the edge through the shared app formatter.
+Money uses `src/lib/money-format.ts` to preserve exact paise and locale digits;
+other numbers and dates use `next-intl`.
 
 ## 8. Accessibility and RTL
 

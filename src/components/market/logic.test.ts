@@ -24,16 +24,25 @@ describe("parseKg", () => {
     ["1.001", 1001],
     [".5", 500],
     ["150.", 150_000],
+    ["9007199254740.991", Number.MAX_SAFE_INTEGER],
   ])("reads %j as %i grams", (input, grams) => {
     expect(parseKg(input)).toBe(grams);
   });
 
-  it.each(["", "0", "0.000", "-3", "1.0005", "12kg", "1,200", "abc"])(
-    "refuses %j",
-    (input) => {
-      expect(parseKg(input)).toBeNull();
-    },
-  );
+  it.each([
+    "",
+    "0",
+    "0.000",
+    "-3",
+    "1.0005",
+    "12kg",
+    "1,200",
+    "abc",
+    "9007199254740.992",
+    "9".repeat(400),
+  ])("refuses %j", (input) => {
+    expect(parseKg(input)).toBeNull();
+  });
 });
 
 describe("parseRupees", () => {
@@ -42,11 +51,22 @@ describe("parseRupees", () => {
     ["17.5", 1750],
     ["17.50", 1750],
     ["0.05", 5],
+    ["90071992547409.91", Number.MAX_SAFE_INTEGER],
+    ["90071992547409.90", Number.MAX_SAFE_INTEGER - 1],
   ])("reads ₹%s as %i paise", (input, paise) => {
     expect(parseRupees(input)).toBe(paise);
   });
 
-  it.each(["", "0", "-1", "17.555", "₹18", "1,800"])("refuses %j", (input) => {
+  it.each([
+    "",
+    "0",
+    "-1",
+    "17.555",
+    "₹18",
+    "1,800",
+    "90071992547409.92",
+    "9".repeat(400),
+  ])("refuses %j", (input) => {
     expect(parseRupees(input)).toBeNull();
   });
 });
@@ -65,6 +85,12 @@ describe("field values", () => {
     expect(kgFieldValue(12_500)).toBe("12.5");
     expect(parseKg(kgFieldValue(1001))).toBe(1001);
     expect(rupeeFieldValue(1750)).toBe("17.5");
+    expect(parseKg(kgFieldValue(Number.MAX_SAFE_INTEGER))).toBe(
+      Number.MAX_SAFE_INTEGER,
+    );
+    expect(parseRupees(rupeeFieldValue(Number.MAX_SAFE_INTEGER))).toBe(
+      Number.MAX_SAFE_INTEGER,
+    );
     expect(parseRupees(rupeeFieldValue(2505))).toBe(2505);
   });
 });

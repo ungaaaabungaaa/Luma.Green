@@ -8,9 +8,13 @@ import { authClient } from "../scripts/guide-preview/auth";
 
 describe("isolated account documentation fixtures", () => {
   it("never authenticates, changes protection or returns a secret", async () => {
-    expect(authClient.useSession().data).toEqual({ fixture: true });
+    expect(authClient.useSession().data).toEqual({
+      fixture: true,
+      session: { id: undefined },
+    });
     for (const change of [
       authClient.signOut,
+      authClient.signUp.email,
       authClient.requestPasswordReset,
       authClient.resetPassword,
       ...Object.values(authClient.twoFactor),
@@ -22,6 +26,23 @@ describe("isolated account documentation fixtures", () => {
       twoFactorEnabled: true,
     });
     expect(securityFixture("")?.twoFactorEnabled).toBe(false);
+  });
+
+  it("permits only a synthetic challenge transition in the failure entry", async () => {
+    window.history.replaceState(null, "", "/en/account/security?scenario=totp");
+    await expect(authClient.signIn.email()).rejects.toThrow(
+      "cannot change accounts",
+    );
+    window.history.replaceState(null, "", "/failure.html?scenario=login");
+    await expect(authClient.signIn.email()).rejects.toThrow(
+      "cannot change accounts",
+    );
+    window.history.replaceState(null, "", "/failure.html?scenario=totp");
+    await expect(authClient.signIn.email()).resolves.toEqual({
+      data: { twoFactorRedirect: true },
+      error: null,
+    });
+    window.history.replaceState(null, "", "/");
   });
 
   it("keeps inbox records synthetic and missing data separate from loading", () => {

@@ -82,6 +82,10 @@ contract. Make routine fixes within it without adding another approval step.
   accented Latin, Cyrillic, Thai, Sinhala, Odia and CJK content when shared layout
   or font behavior changes. No clipped words, missing glyphs or horizontal page
   scrolling is acceptable as a translation workaround.
+- Pass the registry's locale direction to each Radix Select root. The page's
+  `dir` attribute alone does not set the primitive's direction or its portal.
+  Check the selected text, chevron, option list, keyboard navigation and focus
+  return in Arabic and Urdu when adding or changing a select control.
 - Use `src/lib/number-input.ts` with the active locale for amount entry. Accept
   supported native digits and the locale decimal separator, validate ambiguous
   or invalid input, and store exact integer paise/grams. Format output with

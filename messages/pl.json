@@ -782,7 +782,8 @@
         "topicMissing": "Wybierz temat sprawy.",
         "messageShort": "Napisz nieco więcej: co najmniej 5 znaków.",
         "messageLong": "Użyj mniej niż 1000 znaków.",
-        "generic": "Nie udało się wysłać. Sprawdź połączenie i spróbuj ponownie."
+        "generic": "Nie udało się wysłać. Sprawdź połączenie i spróbuj ponownie.",
+        "rateLimited": "Z tego numeru wysłano zbyt wiele wiadomości. Spróbuj ponownie za godzinę."
       },
       "unavailableTitle": "Wiadomości są tutaj wyłączone",
       "unavailableBody": "Zadzwoń lub napisz przez WhatsApp. Chętnie pomożemy.",
@@ -3061,7 +3062,8 @@
       "seeAll": "Zobacz wszystkie",
       "noOffersTitle": "Obecnie brak partii w sprzedaży",
       "noOffersBody": "Nowe partie pojawią się tutaj po wystawieniu."
-    }
+    },
+    "totalInvalid": "Łączna kwota jest zbyt wysoka. Zmniejsz ilość lub cenę."
   },
   "shop": {
     "sampleNote": "Ceny, stawki rynkowe i wartości na tym ekranie są przykładowymi danymi prototypu.",

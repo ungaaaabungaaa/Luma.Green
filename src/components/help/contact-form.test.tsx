@@ -1,15 +1,34 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ConvexError } from "convex/values";
 import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import {
+  afterAll,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from "vitest";
 
+import arabicMessages from "../../../messages/ar.json";
 import messages from "../../../messages/en.json";
+import urduMessages from "../../../messages/ur.json";
 import { ContactMessageForm } from "./contact-form";
 
 const send = vi.hoisted(() => vi.fn());
 const search = vi.hoisted(() => ({ current: "" }));
+
+// Radix scrolls the selected option into view; jsdom has no layout API.
+beforeAll(() => {
+  Element.prototype.scrollIntoView = vi.fn();
+});
+afterAll(() => {
+  const stubbed = Element.prototype as Partial<Element>;
+  delete stubbed.scrollIntoView;
+});
 
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
@@ -67,6 +86,36 @@ describe("ContactMessageForm", () => {
       screen.getByRole("combobox", { name: "What is it about?" }),
     ).toHaveTextContent("A trade between businesses");
   });
+
+  it.each([
+    ["ar", arabicMessages],
+    ["ur", urduMessages],
+  ] as const)(
+    "keeps %s role and topic controls and their menus right to left",
+    async (locale, translated) => {
+      const user = userEvent.setup();
+      render(
+        <NextIntlClientProvider locale={locale} messages={translated}>
+          <ContactMessageForm />
+        </NextIntlClientProvider>,
+      );
+      for (const label of [
+        translated.help.contact.role,
+        translated.help.contact.topic,
+      ]) {
+        const control = screen.getByRole("combobox", { name: label });
+        expect(control).toHaveAttribute("dir", "rtl");
+        act(() => {
+          control.focus();
+        });
+        await user.keyboard("{Enter}");
+        expect(screen.getByRole("listbox")).toHaveAttribute("dir", "rtl");
+        await user.keyboard("{Escape}");
+        expect(control).toHaveFocus();
+      }
+      expect(send).not.toHaveBeenCalled();
+    },
+  );
 
   it("ignores a role or topic it doesn't know", () => {
     search.current = "role=admin&topic=bitcoin";
@@ -157,5 +206,20 @@ describe("ContactMessageForm", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent(
       "We couldn't send that. Check your connection and try again.",
     );
+  });
+
+  it("explains when to retry a rate-limited message and preserves the text", async () => {
+    send.mockRejectedValue(new ConvexError("SUPPORT_RATE_LIMITED"));
+    const user = userEvent.setup();
+    renderForm();
+    await fillIn(user);
+    await user.click(screen.getByRole("button", { name: "Send message" }));
+    expect(
+      await screen.findByText(messages.help.contact.errors.rateLimited),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText("Your message")).toHaveValue(
+      "The yard has not collected my load.",
+    );
+    expect(screen.getByRole("button", { name: "Send message" })).toBeEnabled();
   });
 });

@@ -36,14 +36,24 @@ export function parseRupees(input: string, locale = "en"): number | null {
   return paise !== null && paise > 0 ? paise : null;
 }
 
+/** Format integer digits without rounding at the safe-integer boundary. */
+function scaledFieldValue(value: number, places: number): string {
+  const sign = value < 0 ? "-" : "";
+  const digits = String(Math.abs(value)).padStart(places + 1, "0");
+  let fraction = digits.slice(-places);
+  while (fraction.endsWith("0")) fraction = fraction.slice(0, -1);
+  const suffix = fraction ? "." + fraction : "";
+  return `${sign}${digits.slice(0, -places)}${suffix}`;
+}
+
 /** Grams as the plain number a kg field holds: 12500 → "12.5". */
 export function kgFieldValue(grams: number): string {
-  return String(grams / 1000);
+  return scaledFieldValue(grams, 3);
 }
 
 /** Paise as the plain number a rupee field holds: 1750 → "17.5". */
 export function rupeeFieldValue(paise: number): string {
-  return String(paise / 100);
+  return scaledFieldValue(paise, 2);
 }
 
 // --- Prices -------------------------------------------------------------------

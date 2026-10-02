@@ -782,7 +782,8 @@
         "topicMissing": "Chọn chủ đề.",
         "messageShort": "Viết thêm một chút, ít nhất 5 ký tự.",
         "messageLong": "Giữ nội dung dưới 1.000 ký tự.",
-        "generic": "Không gửi được. Kiểm tra kết nối rồi thử lại."
+        "generic": "Không gửi được. Kiểm tra kết nối rồi thử lại.",
+        "rateLimited": "Số điện thoại này đã gửi quá nhiều tin nhắn. Vui lòng thử lại sau một giờ."
       },
       "unavailableTitle": "Tin nhắn đang tắt tại đây",
       "unavailableBody": "Hãy gọi hoặc nhắn WhatsApp. Chúng tôi sẵn lòng hỗ trợ.",
@@ -3061,7 +3062,8 @@
       "seeAll": "Xem hết",
       "noOffersTitle": "Hiện không có lô đang bán",
       "noOffersBody": "Lô mới xuất hiện ngay khi được đăng."
-    }
+    },
+    "totalInvalid": "Tổng tiền quá lớn. Hãy giảm số lượng hoặc giá."
   },
   "shop": {
     "sampleNote": "Giá, giá thị trường và giá trị trên màn hình này là số liệu mẫu cho nguyên mẫu.",

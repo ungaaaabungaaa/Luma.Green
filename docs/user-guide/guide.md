@@ -2,9 +2,9 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, account security, notifications, fuller public pages, industry API and 33 languages. Source baseline: bc986f4.
+Edition: 2 October 2026, account security, failure recovery, notifications, fuller public pages, industry API and 33 languages. Source baseline: bc986f4.
 
-This edition combines the account checkpoint with industry API main af2e295. The capture manifests record the exact source hashes for the combined revision.
+This edition combines the account checkpoint with industry API main af2e295. It also includes the security and failure-recovery changes from main 2ba8246. The capture manifests record the exact source hashes for the combined revision.
 Includes the UI detail pass, distinct work scenes and practical guides on the main public pages, plus safe account, recovery and business API examples.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
@@ -68,7 +68,7 @@ The testimonial section is labelled **Demo testimonials**. Its role-based quotes
 2. Business escrow and payment steps are demonstrations. No real funds are held or transferred.
 3. EPR and impact records are supporting records, not issued certificates or verified carbon credits.
 
-All paths in this guide are relative to the correct deployment address. Use the address supplied by the platform owner. The local review address is http://localhost:3009. Do not assume a domain is live because it appears in source code.
+All paths in this guide are relative to the correct deployment address. Use the address supplied by the platform owner. Local demonstrations use http://localhost:3004. Capture manifests record the review origins. Do not assume a domain is live because it appears in source code.
 
 ---
 
@@ -213,9 +213,15 @@ Certificate PDFs, ID files, selfies and machine images are capped at 10 MiB each
 - Rejected: read the reason and contact the owner if necessary. No self-service reopening control is provided.
 - Suspended: operational access is unavailable. Contact the owner; the ordinary admin console has no suspension or reinstatement button.
 
+If removing a file or discarding an application draft fails, the page shows an error. The file or draft remains visible so you can check its current state and try again.
+
 Private files require a valid session and permission on every request. Do not share downloaded IDs or certificates. If a preview fails, sign in again if needed and use Try again. Large videos are not loaded until requested; video uploads are capped at 20 MB.
 
 Files are not general attachments for customer conversations. Upload only what the application asks for. The mobile shell cannot open every private document path; use the authenticated browser or desktop flow when the app directs you there.
+
+![Synthetic documentation fixture: a failed file removal keeps the document visible and shows an Arabic error.](screenshots/failure-file-ar-dark-phone.png)
+
+![Synthetic documentation fixture: a failed draft discard keeps the confirmation open, so the user can retry or cancel.](screenshots/failure-discard-ar-light-phone.png)
 
 ---
 
@@ -322,6 +328,10 @@ For an active listing you no longer want to offer, select Withdraw and confirm. 
 
 The sequence is state-driven. Only a permitted participant can use a transition. Stock is reserved and moved according to those transitions. Do not use screenshots as authority to skip an action in the current interface.
 
+A price, quantity and total must fit the exact integer range. If a price is rejected, reduce the price or quantity and check the total before sending again. A failed request keeps the form open. Existing records with an invalid total remain visible with an error instead of an estimated amount.
+
+![Synthetic documentation fixture: an invalid market total is rejected without sending a trade.](screenshots/failure-market-en-light-phone.png)
+
 ### Payment boundary
 
 There is no live escrow or provider payment transfer. Adding payment keys does not turn the demonstration into a live payment service. Arrange real commercial terms outside this prototype until a reviewed payment implementation is released.
@@ -419,17 +429,21 @@ The Saathi home is /app. There is no /app/saathi page. If an application is not 
 The system has one configured admin. There is no staff invitation screen. Phone sign-in never grants admin access.
 
 1. Owner: confirm the intended frontend and Convex deployment.
-2. Configure the backend authentication settings and the allowed ADMIN_EMAIL. Set that address only when ready to complete setup immediately.
+2. Configure the backend authentication settings and the allowed ADMIN_EMAIL. Set a separate random ADMIN_SETUP_TOKEN of 32–512 characters on Convex. Keep it private and give it only to the person who will create the admin account.
 3. Open /admin/setup.
 4. Enter the full name, Indian mobile number, date of birth and only the last four Aadhaar digits.
-5. Enter the configured email address. Set and confirm a password of 12-128 characters.
+5. Enter the configured email address and the private Setup token. Set and confirm a password of 12-128 characters.
 6. Select Create the admin account.
 7. Scan the authenticator QR code or enter its key in an authenticator app.
 8. Enter the current six-digit code and turn on the authenticator.
 9. Save the one-time backup codes securely. Confirm that they are stored, then go to the console.
-10. Sign out and test a normal sign-in.
+10. Remove ADMIN_SETUP_TOKEN from the Convex environment. Sign out and test a normal password and authenticator sign-in.
 
-Do not include a real password, authenticator key, QR code, backup code or identity file in a screenshot or this guide. Setup checks the configured email address; it does not prove mailbox ownership through a verification email. If an unexpected person claimed it, stop and use an owner-led recovery procedure.
+Do not include a real setup token, password, authenticator key, QR code, backup code or identity file in a screenshot or this guide. New account creation requires the configured email and setup token. It does not prove mailbox ownership through a verification email. If an unexpected account already exists, stop and use an owner-led recovery procedure.
+
+If setup cannot connect, read the safe error message and try again after the connection returns. The control becomes available again. If the account already exists after an uncertain result, use admin sign-in and return to setup to complete it. Do not create another identity.
+
+![Synthetic documentation fixture: the first-admin setup form includes a private, masked Setup token field. The fields are empty; this image does not show a completed or failed signup.](screenshots/failure-setup-en-light-phone.png)
 
 ---
 
@@ -443,6 +457,10 @@ Do not include a real password, authenticator key, QR code, backup code or ident
 4. If the authenticator is unavailable, select Use a backup code. Enter one unused code and select Sign in.
 5. Use Start again to return to password entry.
 6. Select Sign out when finished, particularly on a shared device.
+
+If a password, authenticator or backup-code request fails, the form shows an error and allows another attempt. A failed sign-out keeps the current page open. It does not confirm that your session ended; retry before you leave a shared device. Phone codes cannot grant an admin session.
+
+![Synthetic documentation fixture: an authenticator request failed, and the form allows another attempt. No real code or account is shown.](screenshots/failure-totp-en-dark-phone.png)
 
 Admin sessions last at most 12 hours. Activity does not extend that limit. The console is English-only and has no locale prefix.
 
@@ -604,6 +622,10 @@ Training completion is stored in this browser's local storage. It is not a certi
 
 The current Call and WhatsApp number is a placeholder: +91 80 0000 0000. It is not an active support number. The owner must replace it before launch. When connected, the contact form creates a support request; it does not prove that a person has replied or that an SMS/email was delivered.
 
+The contact form limits repeated messages from the same number within one hour. If the limit message appears, keep your draft and try again in an hour.
+
+![Synthetic documentation fixture: the contact form shows its hourly limit and retains the sample message. No live message was sent.](screenshots/failure-support-en-light-phone.png)
+
 ---
 
 ## 25 / Standards, impact and rooftop solar
@@ -706,7 +728,7 @@ This is an owner/developer checklist, not a list of admin console buttons. The e
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hosting and domain   | Intended HTTPS origin; frontend deployment; NEXT_PUBLIC_SITE_URL                                                                                      |
 | Convex               | Correct deployment and URLs; deployment-specific keys; schema/functions deployed before dependent UI                                                  |
-| Authentication       | SITE_URL, BETTER_AUTH_SECRET and ADMIN_EMAIL in the intended backend; immediate admin setup                                                           |
+| Authentication       | SITE_URL, BETTER_AUTH_SECRET and ADMIN_EMAIL; private ADMIN_SETUP_TOKEN for first setup, then remove it                                               |
 | Phone SMS            | MSG91 account, DLT/template approval and OTP limits; configured OTP values                                                                            |
 | Admin email recovery | Optional Resend account, verified sender, RESEND_API_KEY and ADMIN_RESET_FROM_EMAIL; HTTPS SITE_URL; test delivery and single-use reset               |
 | Device notifications | VAPID keys for browsers; Expo/EAS and APNs/FCM for mobile; signed desktop/device acceptance. Inbox persistence and alert delivery are separate checks |
@@ -833,7 +855,7 @@ Only the home, how-it-works, participants, prices, standards, solar and help lan
 
 ### Error reports and owner settings
 
-Sentry error reports are separate from optional visit analytics. When the owner configures Sentry, it receives error types and scrubbed code locations. Reports remove error messages, request details, user data and breadcrumbs. Performance tracing and replay are off. If the application shows its general failure screen, use the retry control; it does not submit the failed operation again automatically.
+Sentry error reports are separate from optional visit analytics. When the owner configures Sentry, it receives error types and scrubbed code locations. Reports remove error messages, request details, user data and breadcrumbs. Performance tracing and replay are off. If the application shows its general failure screen, use the retry control. Retry refreshes the failed page data; it does not submit the failed operation again automatically. A failure in error reporting does not disable this control.
 
 The general failure screen uses the same appearance and translated retry control. Its safe retry and accessibility behavior are covered by tests. This guide does not include a forced-failure browser capture.
 
@@ -873,7 +895,7 @@ or device. Admin and public pages use the same local preference.
 
 ![Current homepage in dark mode. Actual local browser capture, with no backend connection.](screenshots/public-home-dark.png)
 
-The wide desktop header keeps its links and controls on one row. On phones and
+The wide desktop header keeps its links and controls on one row. The phone menu button stays disabled until the page controls are ready. On phones and
 tablets, the header shows the logo and menu control. Open the menu for navigation,
 appearance, language, sign-in and Sell scrap. The menu scrolls on short screens.
 Press Escape to close it and return keyboard focus to the menu control.

@@ -22,7 +22,7 @@ them it is not an account — nothing to remember, nothing to fill in.
 component. Built and tested on 29 Sep 2026.
 
 - **Plugins:** `phoneNumber` (SMS codes), `emailAndPassword` (admin only — the
-  server refuses sign-up for any address but `ADMIN_EMAIL`) and `twoFactor`
+  server requires the configured `ADMIN_EMAIL` and an owner-held `ADMIN_SETUP_TOKEN` for sign-up) and `twoFactor`
   (authenticator app, with backup codes).
 - **Installed locally** (`convex/betterAuth/`). The component's tables come
   from our own plugin list: `pnpm auth:schema` writes
@@ -116,16 +116,22 @@ Phone codes remain the primary sign-in method. Normal users do not have a passwo
 
 ### The admin
 
-- **One admin account:** whoever signs up with `ADMIN_EMAIL`, a Convex
-  environment variable. Setup is at **`/admin/setup`**, open only while
-  `ADMIN_EMAIL` is set and no admin exists: name, mobile, date of birth, last
-  four Aadhaar digits, then email and password (12+ characters), then an
-  authenticator app (QR code or typed key) and ten backup codes, shown once.
-  It picks up where it left off if interrupted.
-- **Set `ADMIN_EMAIL` right before running setup, then run it at once.** Until
-  the account exists, anyone who knows the address could claim it. If setup
-  says the account already exists and it wasn't you, delete that user in the
-  Convex dashboard (component `betterAuth` → `user`) and start again.
+- **One admin account:** first sign-up requires `ADMIN_EMAIL` and a separate
+  `ADMIN_SETUP_TOKEN` set on the Convex deployment. Use a random token with at
+  least 32 characters (maximum 512). Setup at **`/admin/setup`** collects the
+  token, name, mobile, date of birth, last four Aadhaar digits, email and password,
+  then requires an authenticator app and backup codes. Missing or invalid token
+  configuration disables new account creation. The token is sent only in the
+  `x-luma-admin-setup-token` header on sign-up. It is not a public env variable,
+  session credential or mailbox-ownership check.
+- **The owner supplies the setup token privately.** Remove it from the Convex
+  environment after setup. Normal password/TOTP sign-in and completion of an
+  already-created account do not need it. If an unexpected account already
+  exists, stop and follow an owner-led incident/recovery procedure; this change
+  does not prove ownership of a pre-existing account or erase one automatically.
+- **Admin phone verification is rejected before session creation.** Phone codes
+  cannot substitute for the admin password and second factor, even if an admin
+  auth record has a linked phone number.
 - **Every sign-in** at `/admin/login`: password, then a code from the app — or
   a backup code, each of which works once.
 - **Profile, not credentials.** Name, email, phone, date of birth and the

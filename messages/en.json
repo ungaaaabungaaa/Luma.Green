@@ -782,7 +782,8 @@
         "topicMissing": "Choose what it's about.",
         "messageShort": "Write a little more: at least 5 letters.",
         "messageLong": "Keep it under 1,000 letters.",
-        "generic": "We couldn't send that. Check your connection and try again."
+        "generic": "We couldn't send that. Check your connection and try again.",
+        "rateLimited": "Too many messages from this number. Please try again in an hour."
       },
       "unavailableTitle": "Messages are switched off here",
       "unavailableBody": "Call or WhatsApp us instead. We're happy to help.",
@@ -3061,7 +3062,8 @@
       "seeAll": "See all",
       "noOffersTitle": "No lots on sale right now",
       "noOffersBody": "New lots show up here as soon as they're listed."
-    }
+    },
+    "totalInvalid": "This total is too large. Reduce the quantity or price."
   },
   "shop": {
     "sampleNote": "Prices, market rates and values on this screen are sample figures for the prototype.",

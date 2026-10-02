@@ -458,7 +458,8 @@
         "topicMissing": "Pilih topik mesej.",
         "messageShort": "Tulis sedikit lagi: sekurang-kurangnya 5 huruf.",
         "messageLong": "Gunakan kurang daripada 1,000 huruf.",
-        "generic": "Mesej tidak dapat dihantar. Periksa sambungan dan cuba lagi."
+        "generic": "Mesej tidak dapat dihantar. Periksa sambungan dan cuba lagi.",
+        "rateLimited": "Terlalu banyak mesej daripada nombor ini. Sila cuba lagi dalam masa satu jam."
       },
       "unavailableTitle": "Mesej dinyahaktifkan di sini",
       "unavailableBody": "Telefon atau WhatsApp kami. Kami sedia membantu.",
@@ -2148,7 +2149,8 @@
       "seller": "{name} · {area}",
       "available": "Tersedia",
       "lotValue": "Seluruh lot"
-    }
+    },
+    "totalInvalid": "Jumlah ini terlalu besar. Kurangkan kuantiti atau harga."
   },
   "shop": {
     "errors": {

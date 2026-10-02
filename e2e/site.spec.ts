@@ -1,5 +1,9 @@
 import { expect, test } from "@playwright/test";
 
+import ar from "../messages/ar.json";
+import en from "../messages/en.json";
+import ur from "../messages/ur.json";
+
 /**
  * The public site: the home page tells the chain's story, every page is
  * reachable from the header or footer, pages keep their locale when
@@ -297,6 +301,37 @@ test("language changes preserve a page query and help anchor", async ({
 });
 
 for (const locale of ["en", "ar", "ur"] as const) {
+  test(`${locale} mobile menu waits for client code before accepting a click`, async ({
+    page,
+  }) => {
+    const scripts = Promise.withResolvers<boolean>();
+    await page.route("**/*", async (route) => {
+      if (route.request().resourceType() === "script") await scripts.promise;
+      await route.continue();
+    });
+    try {
+      await page.setViewportSize({ width: 360, height: 700 });
+      await page.goto(locale === "en" ? "/" : `/${locale}`, {
+        waitUntil: "commit",
+      });
+      const trigger = page.getByRole("banner").getByRole("button", {
+        name: { en, ar, ur }[locale].nav.openMenu,
+        exact: true,
+      });
+      await expect(trigger).toBeVisible();
+      await expect(trigger).toBeDisabled();
+      scripts.resolve(true);
+      await expect(trigger).toBeEnabled();
+      await trigger.click();
+      await expect(page.getByRole("dialog")).toBeVisible();
+      await page.keyboard.press("Escape");
+      await expect(trigger).toBeFocused();
+    } finally {
+      scripts.resolve(true);
+      await page.unrouteAll({ behavior: "wait" });
+    }
+  });
+
   test(`${locale} navigation fits phones and tablets with accessible targets`, async ({
     page,
   }) => {

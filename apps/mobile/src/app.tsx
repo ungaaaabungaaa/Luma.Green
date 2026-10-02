@@ -20,6 +20,7 @@ import { localeDirection } from "../../../src/i18n/locales";
 import { LocaleProvider, useTranslations } from "./i18n";
 import {
   classifyNavigation,
+  handleNavigationChange,
   localeFromLanguage,
   localeFromUrl,
 } from "./navigation";
@@ -158,21 +159,24 @@ function Shell({
   };
 
   const trackNavigation = (state: WebViewNavigation) => {
-    const decision = classifyNavigation(state.url, origin);
-    if (decision !== "internal") {
-      webView.current?.stopLoading();
-      if (decision === "browser") {
-        // A same-document navigation can skip the native request callback.
-        openExternal(state.url);
+    handleNavigationChange(state, origin, {
+      stopLoading: () => webView.current?.stopLoading(),
+      openExternal,
+      restoreTrusted: () => {
+        push.invalidate();
+        setFailed(false);
+        setLoading(true);
+        setCanGoBack(false);
         setSourceUrl(currentUrl.current);
         setWebViewKey((key) => key + 1);
-      }
-      return;
-    }
-    if (currentUrl.current !== state.url) push.invalidate();
-    currentUrl.current = state.url;
-    setCanGoBack(state.canGoBack);
-    onLocale(localeFromUrl(state.url, locale));
+      },
+      trackTrusted: (trusted) => {
+        if (currentUrl.current !== trusted.url) push.invalidate();
+        currentUrl.current = trusted.url;
+        setCanGoBack(trusted.canGoBack);
+        onLocale(localeFromUrl(trusted.url, locale));
+      },
+    });
   };
 
   const reload = () => {

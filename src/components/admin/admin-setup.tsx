@@ -153,6 +153,7 @@ function AccountForm({
     register,
     handleSubmit,
     setError,
+    resetField,
     formState: { errors, isSubmitting },
   } = useForm<AdminAccountValues>({
     resolver: zodResolver(adminAccountSchema),
@@ -161,6 +162,7 @@ function AccountForm({
       email: "",
       password: "",
       confirmPassword: "",
+      setupToken: "",
       phone: "",
       dateOfBirth: "",
       aadhaarLast4: "",
@@ -168,24 +170,32 @@ function AccountForm({
   });
 
   async function onSubmit(values: AdminAccountValues) {
-    const { error } = await authClient.signUp.email({
-      email: values.email,
-      password: values.password,
-      name: values.name,
-    });
-    if (error) {
-      setError("root", { message: signUpErrorMessage(error) });
-      return;
-    }
-    onCreated({
-      profile: {
+    try {
+      const { error } = await authClient.signUp.email({
+        email: values.email,
+        password: values.password,
         name: values.name,
-        phone: values.phone,
-        dateOfBirth: values.dateOfBirth,
-        aadhaarLast4: values.aadhaarLast4,
-      },
-      password: values.password,
-    });
+        fetchOptions: {
+          headers: { "x-luma-admin-setup-token": values.setupToken },
+        },
+      });
+      if (error) {
+        setError("root", { message: signUpErrorMessage(error) });
+        return;
+      }
+      resetField("setupToken");
+      onCreated({
+        profile: {
+          name: values.name,
+          phone: values.phone,
+          dateOfBirth: values.dateOfBirth,
+          aadhaarLast4: values.aadhaarLast4,
+        },
+        password: values.password,
+      });
+    } catch {
+      setError("root", { message: signUpErrorMessage({}) });
+    }
   }
 
   return (
@@ -206,6 +216,15 @@ function AccountForm({
         errors={errors}
       />
       <Separator />
+      <Field
+        id="setupToken"
+        label="Setup token"
+        hint="Enter the setup token from the deployment owner."
+        error={errors.setupToken}
+        type="password"
+        autoComplete="off"
+        {...register("setupToken")}
+      />
       <Field
         id="email"
         label="Email"
@@ -363,12 +382,16 @@ function PasswordToEnrol({
   } = useForm<{ password: string }>({ defaultValues: { password: "" } });
 
   async function onSubmit({ password }: { password: string }) {
-    const { data, error } = await authClient.twoFactor.enable({ password });
-    if (error) {
-      setError("password", { message: passwordErrorMessage(error) });
-      return;
+    try {
+      const { data, error } = await authClient.twoFactor.enable({ password });
+      if (error) {
+        setError("password", { message: passwordErrorMessage(error) });
+        return;
+      }
+      onEnrol(data);
+    } catch {
+      setError("password", { message: passwordErrorMessage({}) });
     }
-    onEnrol(data);
   }
 
   return (
@@ -474,8 +497,8 @@ function SetupClosed() {
   return (
     <div className="flex flex-col gap-5">
       <p className="text-sm text-muted-foreground">
-        Setup is closed: either the admin account already exists, or ADMIN_EMAIL
-        isn&apos;t set on this deployment.
+        Setup is closed: either the admin account already exists, or its email
+        and setup token are not configured on this deployment.
       </p>
       <Button asChild variant="outline">
         <Link href="/admin/login">Go to sign-in</Link>

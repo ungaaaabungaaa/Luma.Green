@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 import { useFormat } from "@/components/app/format";
 import { StatusPill } from "@/components/app/page-parts";
 
-import { paiseFor } from "../../../convex/lib/chain";
+import { safePaiseFor } from "../../../convex/lib/chain";
 import { MaterialIcon } from "./material-icon";
 import type { ListingView } from "./types";
 
@@ -31,6 +31,7 @@ export function ListingCard({
 }) {
   const t = useTranslations("market");
   const format = useFormat();
+  const total = safePaiseFor(listing.grams, listing.askPaisePerKg);
   const name = format.material(listing.material.names, listing.material.code);
 
   return (
@@ -73,7 +74,7 @@ export function ListingCard({
           <div className="flex flex-col gap-0.5">
             <dt className="text-muted-foreground">{t("listing.lotValue")}</dt>
             <dd className="font-medium tabular-nums">
-              {format.money(paiseFor(listing.grams, listing.askPaisePerKg))}
+              {total === null ? t("totalInvalid") : format.money(total)}
             </dd>
           </div>
         </dl>

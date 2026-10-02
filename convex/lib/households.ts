@@ -201,13 +201,13 @@ export function canHouseholdCancel(status: BookingStatus): boolean {
   return status === "requested" || status === "accepted";
 }
 
-const OPEN_STATUSES: ReadonlySet<BookingStatus> = new Set([
+export const OPEN_BOOKING_STATUSES: readonly BookingStatus[] = [
   "requested",
   "accepted",
   "on_the_way",
-]);
+];
 
 /** Still waiting to happen: counts towards MAX_OPEN_BOOKINGS. */
 export function isOpenBooking(status: BookingStatus): boolean {
-  return OPEN_STATUSES.has(status);
+  return OPEN_BOOKING_STATUSES.includes(status);
 }

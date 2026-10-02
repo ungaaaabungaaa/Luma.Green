@@ -15,6 +15,9 @@ describe("admin auth errors", () => {
   });
 
   it("explains a closed sign-up and an existing account", () => {
+    expect(
+      signUpErrorMessage({ status: 403, code: "ADMIN_SETUP_REQUIRED" }),
+    ).toMatch(/setup token/);
     expect(signUpErrorMessage({ status: 403 })).toMatch(/ADMIN_EMAIL/);
     expect(
       signUpErrorMessage({ status: 422, code: "USER_ALREADY_EXISTS" }),

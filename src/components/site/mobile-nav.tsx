@@ -2,7 +2,7 @@
 
 import { MenuIcon, XIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 import { Logo } from "@/components/brand/logo";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -21,6 +21,11 @@ import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./language-switcher";
 import { SiteNav } from "./site-nav";
 
+function unsubscribeFromHydration() {
+  // The server/client snapshots are static; no external updates are needed.
+}
+const subscribeToHydration = () => unsubscribeFromHydration;
+
 export function MobileNav({ className }: { className?: string }) {
   const t = useTranslations("nav");
   const auth = useTranslations("auth");
@@ -28,6 +33,11 @@ export function MobileNav({ className }: { className?: string }) {
   const theme = useTranslations("theme");
   const locale = useLocale();
   const [open, setOpen] = useState(false);
+  const isHydrated = useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
     // Match the header's xl breakpoint. Do not leave a modal and scroll lock
@@ -57,6 +67,7 @@ export function MobileNav({ className }: { className?: string }) {
           size="icon-lg"
           className={className}
           aria-label={t("openMenu")}
+          disabled={!isHydrated}
         >
           <MenuIcon />
         </Button>

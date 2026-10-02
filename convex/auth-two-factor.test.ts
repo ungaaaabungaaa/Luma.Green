@@ -22,6 +22,7 @@ async function responseBody(request: Promise<Response>): Promise<unknown> {
 const PHONE = "+919000000031";
 const SMS_CODE = "381429";
 const ORIGIN = "https://luma.test";
+const SETUP_TOKEN = "test-setup-token-0123456789abcdef";
 const setupSchema = z.object({
   totpURI: z.string(),
   backupCodes: z.array(z.string()),
@@ -33,6 +34,7 @@ beforeEach(() => {
   vi.stubEnv("CONVEX_SITE_URL", "https://test.convex.site");
   vi.stubEnv("BETTER_AUTH_SECRET", "0123456789abcdef0123456789abcdef");
   vi.stubEnv("ADMIN_EMAIL", "admin@luma.test");
+  vi.stubEnv("ADMIN_SETUP_TOKEN", SETUP_TOKEN);
 });
 afterEach(() => {
   vi.unstubAllEnvs();
@@ -43,7 +45,11 @@ afterEach(() => {
 function client(t: Test) {
   const cookies = new Map<string, string>();
   let requestCount = 0;
-  const request = async (path: string, body?: Record<string, unknown>) => {
+  const request = async (
+    path: string,
+    body?: Record<string, unknown>,
+    headers?: Record<string, string>,
+  ) => {
     const response = await t.fetch(`/api/auth${path}`, {
       method: body ? "POST" : "GET",
       headers: {
@@ -55,6 +61,7 @@ function client(t: Test) {
         Cookie: [...cookies]
           .map(([key, value]) => `${key}=${value}`)
           .join("; "),
+        ...headers,
       },
       ...(body && { body: JSON.stringify(body) }),
     });
@@ -312,12 +319,19 @@ async function adminAccount() {
   registerAuth(t);
   const browser = client(t);
   const password = "test-only original passphrase";
-  const signup = await browser.request("/sign-up/email", {
-    email: "admin@luma.test",
-    password,
-    name: "Test admin",
-  });
+  const signup = await browser.request(
+    "/sign-up/email",
+    {
+      email: "admin@luma.test",
+      password,
+      name: "Test admin",
+    },
+    { "x-luma-admin-setup-token": SETUP_TOKEN },
+  );
   expect(signup.status).toBe(200);
+  // Bootstrap authorization is only for creation. Enrollment, sign-in and
+  // recovery must continue to work after the operator removes the token.
+  vi.stubEnv("ADMIN_SETUP_TOKEN", "");
   const setupResponse = await browser.request("/two-factor/enable", {
     password,
   });

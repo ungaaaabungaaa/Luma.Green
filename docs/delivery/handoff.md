@@ -2,11 +2,12 @@
 
 ## Current work: final account and notification integration
 
-Continue on `feat/account-notifications-detail`. Local checkpoint `bc986f4`
-contains account security, inbox/push, native controls, account navigation and
-new public page content. A resolved merge of `origin/main` at `af2e295` preserves
-its industry API and extends the API screen to all 33 locales. This delivery
-checkpoint includes that merge. Read [the pass record](account-notifications-and-content.md).
+Continue on `feat/account-notifications-detail`. Pushed checkpoint `a3c890e`
+contains account security, inbox/push, native controls, account navigation,
+public page content and the industry API in all 33 locales. Its five required
+hosted checks, 734 browser cases and five analytics cases passed. Main then
+advanced to security repair `2ba8246`; the current working merge preserves
+those fixes alongside this pass. Read [the pass record](account-notifications-and-content.md).
 Do not stage the unrelated root `luma-green-user-guide.pdf`.
 
 PR 29 is the existing delivery PR, with remote branch
@@ -18,9 +19,10 @@ red checks. No frontend deployment monitoring is requested.
 The earlier PR unit timeout was scoped to the five full-catalogue seed cases;
 all assertions remain. Its browser run passed 713 cases but reached the old
 20-minute job cap during the separate analytics build. The job now allows
-30 minutes, with every case retained. Final combined hosted CI remains pending.
+30 minutes, with every case retained. That run passed on `a3c890e`; the new
+security integration needs its own final hosted checks.
 
-Current local evidence: the complete `pnpm check` passes with lint, TypeScript,
+Evidence for `a3c890e`: the complete `pnpm check` passed with lint, TypeScript,
 1,496 web/backend tests, 40 mobile tests and 21 desktop tests. Formatting,
 110 catalogue checks, 36 focused browser cases and five isolated
 analytics cases pass. All 144 public visual captures were inspected. The team
@@ -29,14 +31,22 @@ has 99 reviewed pages, 40 chapters and 93 image placements; all 13 document
 tests and both builder freshness checks pass. The final disconnected production
 build passes with 2,622 generated pages. Hosted CI must pass on the final PR
 head before merge. Exact evidence belongs in the pass record; do not present old checkpoint counts
-as current totals.
+as current totals. The new `2ba8246` integration has a passing production build,
+1,567 non-document tests, 62 focused browser cases, 43 mobile tests, 22 desktop
+tests and lint. Its current guide has 103 reviewed pages, 40 chapters and 99
+image placements. The team pack has 47 reviewed pages and a 92-case manual.
+The complete `pnpm check` passes: lint, TypeScript, 1,582 web/backend tests,
+43 mobile tests and 22 desktop tests. Formatting and all 15 document freshness
+tests pass. The final commit still requires hosted checks before merge.
 
 Apple, Google Play and Expo/EAS accounts are not set up. Code and local app
 checks are complete; signing, physical-device tests, push credentials and store
 review remain external gates. Auth/inbox backend release must preserve the
 parallel recycling schema additions. Do not deploy this checkout over them.
-Existing Google Docs ID and sharing remain unchanged; its in-place update is
-pending. Local Word artifacts are the maintained deliverables for this pass.
+The existing Google Doc is verified through main `2ba8246`; its ID and sharing
+remain unchanged. The newer reviewed Word revision will be synced in place by
+the coordinated security followup after PR 29 merges. That followup also owns
+the combined backend rollout. Local Word artifacts are current for this pass.
 
 ## Integrated industry API checkpoint
 
@@ -540,3 +550,27 @@ authentication or production change was made. Import isolation is still pending.
 Guide impact: these offline files change no route, screen, role, permission or
 workflow. They need no new guide screenshot. The parallel responsive/language
 and visual-polish pass remains uncommitted while its matching guide is refreshed.
+
+## Security and failure review — 2 October 2026
+
+Work is isolated on `fix/security-failure-review`, based on `c1ed004`, in the
+managed `security-failure-review` worktree. The concurrent responsive/locales
+checkout is preserved. See [the review record](security-failure-review.md) for
+findings, fixes, remaining risks, current checks and delivery evidence.
+
+Guide impact: account setup now requires a private operator token; failed admin
+login, file removal, draft discard, sign-out, invalid money totals and support
+quota feedback have explicit recovery behavior. The guide source, labelled
+browser fixtures, capture manifests, reviewed Word artifact and build record are
+updated together. Native navigation fixes change no screen or control. Google
+Docs publication remains pending at the existing document ID; sharing is unchanged.
+
+Deployment must apply the support phone/time index and server functions before
+the frontend. Remove the bootstrap token after setup. Review/revoke existing admin
+sessions if the vulnerable phone/setup endpoints were exposed. The open node-forge
+advisory, real-device acceptance, live authentication/provider tests and production
+deployment remain separate gates. This report does not claim launch readiness.
+
+The security repair branch preserves the industry API feature merged through PR #30 at `af2e295`. Its additive schema and API guide chapter are retained. The combined source was reviewed for access boundaries and checked again. A slow-loading phone menu also keeps its trigger disabled until interactive, preventing lost first clicks. The current guide includes both revisions.
+
+Final local evidence: `pnpm check` passed (1,345 web/backend, 30 mobile and 21 desktop tests), formatting passed, both production build formats passed, and all 158 browser tests passed without retries. The reviewed Word guide has 76 pages and 72 screenshot placements. Capture hashes match the combined source. Hosted checks and protected squash-merge evidence belong to the associated security repair PR; production backend deployment and the cloud guide update are not implied.

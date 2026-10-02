@@ -514,7 +514,9 @@ export default defineSchema({
     message: v.string(),
     status: v.union(v.literal("open"), v.literal("answered")),
     createdAt: v.number(),
-  }).index("by_status", ["status"]),
+  })
+    .index("by_status", ["status"])
+    .index("by_phone_createdAt", ["phone", "createdAt"]),
 
   /** Immutable audit trail. Anything a regulator could ask about lands here. */
   auditLog: defineTable({

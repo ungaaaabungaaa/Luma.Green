@@ -581,6 +581,7 @@ describe("selling", () => {
       [{ ...lot, grams: 10.5 }, /INVALID_WEIGHT/],
       [{ ...lot, askPaisePerKg: 0 }, /INVALID_PRICE/],
       [{ ...lot, askPaisePerKg: 2500.5 }, /INVALID_PRICE/],
+      [{ ...lot, askPaisePerKg: Number.MAX_SAFE_INTEGER }, /INVALID_PRICE/],
       [{ ...lot, note: "x".repeat(141) }, /NOTE_TOO_LONG/],
       [{ ...lot, materialCode: "GOLD" }, /UNKNOWN_MATERIAL/],
       // Glass is a real material, but none is in stock here.
@@ -596,6 +597,27 @@ describe("selling", () => {
       note: "x".repeat(140),
     });
     expect(id).toBeTruthy();
+  });
+
+  it("rejects an unsafe stored price without creating a trade", async () => {
+    const t = await demoWorld();
+    const yard = await signInAs(t, YARD);
+    const lot = await lotOf(yard, RAMESH, "PAPER-NEWS");
+    await t.run((ctx) =>
+      ctx.db.patch("listings", lot.id, {
+        askPaisePerKg: Number.MAX_SAFE_INTEGER,
+      }),
+    );
+    const before = await t.run((ctx) => ctx.db.query("trades").collect());
+    await expect(
+      yard.mutation(api.market.requestTrade, {
+        listingId: lot.id,
+        grams: 1001,
+      }),
+    ).rejects.toThrow(/INVALID_PRICE/);
+    expect(await t.run((ctx) => ctx.db.query("trades").collect())).toEqual(
+      before,
+    );
   });
 
   it("is for businesses someone buys from", async () => {
@@ -621,6 +643,72 @@ describe("selling", () => {
         askPaisePerKg: 1800,
       }),
     ).rejects.toThrow(/NOT_SIGNED_IN/);
+  });
+
+  it("declines all waiting requests when a listing has more than two hundred older closed trades", async () => {
+    const t = await demoWorld();
+    const yard = await signInAs(t, YARD);
+    const shop = await signInAs(t, SHOP);
+    const lot = await lotOf(yard, RAMESH, "METAL-IRON");
+    const originalId = await yard.mutation(api.market.requestTrade, {
+      listingId: lot.id,
+      grams: 1000,
+    });
+    await shop.mutation(api.market.act, {
+      tradeId: originalId,
+      action: "decline",
+    });
+    const waitingIds = await t.run(async (ctx) => {
+      const original = await ctx.db.get("trades", originalId);
+      if (!original) throw new Error("Missing trade");
+      const { _id, _creationTime, ...trade } = original;
+      for (let index = 0; index < 200; index += 1)
+        await ctx.db.insert("trades", trade);
+      const ids = [];
+      for (let index = 0; index < 201; index += 1)
+        ids.push(
+          await ctx.db.insert("trades", { ...trade, status: "requested" }),
+        );
+      return ids;
+    });
+    await shop.mutation(api.market.withdraw, { listingId: lot.id });
+    const statuses = await t.run(async (ctx) =>
+      Promise.all(
+        waitingIds.map(async (id) => {
+          const trade = await ctx.db.get("trades", id);
+          return trade?.status;
+        }),
+      ),
+    );
+    expect(statuses).toEqual(Array.from({ length: 201 }, () => "declined"));
+  });
+
+  it("refuses an oversized waiting queue without partially closing the listing", async () => {
+    const t = await demoWorld();
+    const yard = await signInAs(t, YARD);
+    const shop = await signInAs(t, SHOP);
+    const lot = await lotOf(yard, RAMESH, "METAL-IRON");
+    const originalId = await yard.mutation(api.market.requestTrade, {
+      listingId: lot.id,
+      grams: 1000,
+    });
+    await t.run(async (ctx) => {
+      const original = await ctx.db.get("trades", originalId);
+      if (!original) throw new Error("Missing trade");
+      const { _id, _creationTime, ...trade } = original;
+      for (let index = 0; index < 1000; index += 1)
+        await ctx.db.insert("trades", trade);
+    });
+    await expect(
+      shop.mutation(api.market.withdraw, { listingId: lot.id }),
+    ).rejects.toThrow(/TOO_MANY_TRADE_REQUESTS/);
+    const state = await t.run(async (ctx) => ({
+      listing: await ctx.db.get("listings", lot.id),
+      trade: await ctx.db.get("trades", originalId),
+    }));
+    expect(state.listing?.status).toBe("open");
+    expect(state.trade?.status).toBe("requested");
+    expect(await auditActions(t, "listings", lot.id)).toEqual([]);
   });
 
   it("withdraws only my own open lots, declining waiting requests", async () => {
@@ -740,5 +828,77 @@ describe("receipt", () => {
       tradeId: requested?.id as Id<"trades">,
     });
     expect(receipt).toMatchObject({ number: null, issuedAt: null });
+  });
+});
+
+describe("complete stock reservations", () => {
+  it("counts an older open lot even after 1,000 newer lots were withdrawn", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, SHOP);
+    const before = await shop.query(api.market.sellable, {});
+    await t.run(async (ctx) => {
+      const existing = await ctx.db.query("listings").first();
+      if (!existing) throw new Error("Missing seeded listing");
+      const { _id, _creationTime, ...listing } = existing;
+      for (let index = 0; index < 1000; index += 1) {
+        await ctx.db.insert("listings", { ...listing, status: "withdrawn" });
+      }
+    });
+    expect(await shop.query(api.market.sellable, {})).toEqual(before);
+    const paper = before.find((row) => row.material.code === "PAPER-NEWS");
+    if (!paper) throw new Error("Missing paper stock");
+    await expect(
+      shop.mutation(api.market.createListing, {
+        materialCode: "PAPER-NEWS",
+        grams: paper.availableGrams + 1,
+        askPaisePerKg: 100,
+      }),
+    ).rejects.toThrow(/NOT_ENOUGH_STOCK/);
+  });
+
+  it("counts older accepted sales after 1,000 newer declined requests", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, SHOP);
+    const yard = await signInAs(t, YARD);
+    const listing = await lotOf(yard, RAMESH, "PAPER-NEWS");
+    const tradeId = await yard.mutation(api.market.requestTrade, {
+      listingId: listing.id,
+      grams: 1000,
+    });
+    await shop.mutation(api.market.act, { tradeId, action: "accept" });
+    const before = await shop.query(api.market.sellable, {});
+    await t.run(async (ctx) => {
+      const existing = await ctx.db.get("trades", tradeId);
+      if (!existing) throw new Error("Missing trade");
+      const { _id, _creationTime, ...trade } = existing;
+      for (let index = 0; index < 1000; index += 1) {
+        await ctx.db.insert("trades", { ...trade, status: "declined" });
+      }
+    });
+    expect(await shop.query(api.market.sellable, {})).toEqual(before);
+  });
+
+  it("refuses to list stock when active reservations exceed the safety bound", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, SHOP);
+    await t.run(async (ctx) => {
+      const existing = await ctx.db.query("listings").first();
+      if (!existing) throw new Error("Missing seeded listing");
+      const { _id, _creationTime, ...listing } = existing;
+      for (let index = 0; index < 1001; index += 1) {
+        await ctx.db.insert("listings", {
+          ...listing,
+          grams: 1,
+          status: "open",
+        });
+      }
+    });
+    await expect(
+      shop.mutation(api.market.createListing, {
+        materialCode: "PAPER-NEWS",
+        grams: 1,
+        askPaisePerKg: 100,
+      }),
+    ).rejects.toThrow(/TOO_MANY_RESERVATIONS/);
   });
 });

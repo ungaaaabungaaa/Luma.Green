@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   isAppBlob,
   isAppUrl,
+  isCancelledLoad,
   isExternalUrl,
   isPdfViewerFrame,
   mayDownload,
@@ -177,4 +178,25 @@ test("desktop notifications require the trusted main window and requesting main 
       false,
     );
   }
+});
+
+test("cancelled loads do not replace a newer navigation with the offline screen", () => {
+  const cancelled = Object.assign(new Error("cancelled"), {
+    code: "ERR_ABORTED",
+    errno: -3,
+  });
+  assert.equal(isCancelledLoad(cancelled), true);
+  assert.equal(isCancelledLoad({ code: "ERR_ABORTED" }), true);
+  assert.equal(isCancelledLoad({ errno: -3 }), true);
+  for (const error of [
+    Object.assign(new Error("offline"), {
+      code: "ERR_INTERNET_DISCONNECTED",
+      errno: -106,
+    }),
+    new Error("unknown failure"),
+    { code: "ERR_FAILED", errno: -2 },
+    null,
+    undefined,
+  ])
+    assert.equal(isCancelledLoad(error), false);
 });

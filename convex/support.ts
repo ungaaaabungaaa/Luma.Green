@@ -5,6 +5,9 @@ import { requireAdmin } from "./lib/access";
 import { normalizeIndianMobile } from "./lib/phone";
 import { currentProfile } from "./lib/workspace";
 
+const SUPPORT_HOUR_MS = 60 * 60 * 1000;
+const SUPPORT_HOURLY_LIMIT = 3;
+
 const TOPICS = [
   "account",
   "pickup",
@@ -61,8 +64,18 @@ export const send = mutation({
     if (message.length < 5 || message.length > 1000) {
       throw new ConvexError("INVALID_MESSAGE");
     }
+    const now = Date.now();
+    const recent = await ctx.db
+      .query("supportRequests")
+      .withIndex("by_phone_createdAt", (q) =>
+        q.eq("phone", phone).gt("createdAt", now - SUPPORT_HOUR_MS),
+      )
+      .take(SUPPORT_HOURLY_LIMIT);
+    if (recent.length >= SUPPORT_HOURLY_LIMIT) {
+      throw new ConvexError("SUPPORT_RATE_LIMITED");
+    }
     const profile = await currentProfile(ctx);
-    await ctx.db.insert("supportRequests", {
+    const requestId = await ctx.db.insert("supportRequests", {
       profileId: profile?._id,
       name,
       phone,
@@ -70,7 +83,14 @@ export const send = mutation({
       topic: args.topic,
       message,
       status: "open",
-      createdAt: Date.now(),
+      createdAt: now,
+    });
+    await ctx.db.insert("auditLog", {
+      actorProfileId: profile?._id,
+      action: "support.created",
+      entityTable: "supportRequests",
+      entityId: requestId,
+      createdAt: now,
     });
     return null;
   },
@@ -114,7 +134,16 @@ export const markAnswered = mutation({
     await requireAdmin(ctx);
     const row = await ctx.db.get("supportRequests", args.id);
     if (!row) throw new ConvexError("NOT_FOUND");
+    if (row.status === "answered") return null;
+    const profile = await currentProfile(ctx);
     await ctx.db.patch("supportRequests", args.id, { status: "answered" });
+    await ctx.db.insert("auditLog", {
+      actorProfileId: profile?._id,
+      action: "support.answered",
+      entityTable: "supportRequests",
+      entityId: args.id,
+      createdAt: Date.now(),
+    });
     return null;
   },
 });

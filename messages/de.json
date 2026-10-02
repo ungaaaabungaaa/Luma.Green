@@ -782,7 +782,8 @@
         "topicMissing": "Wählen Sie das Thema.",
         "messageShort": "Schreiben Sie etwas mehr: mindestens 5 Zeichen.",
         "messageLong": "Verwenden Sie weniger als 1.000 Zeichen.",
-        "generic": "Die Nachricht konnte nicht gesendet werden. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+        "generic": "Die Nachricht konnte nicht gesendet werden. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+        "rateLimited": "Von dieser Nummer wurden zu viele Nachrichten gesendet. Versuche es in einer Stunde erneut."
       },
       "unavailableTitle": "Nachrichten sind hier deaktiviert",
       "unavailableBody": "Rufen Sie uns an oder schreiben Sie per WhatsApp. Wir helfen Ihnen gern.",
@@ -3061,7 +3062,8 @@
       "seeAll": "Alles ansehen",
       "noOffersTitle": "Zurzeit keine Lose im Verkauf",
       "noOffersBody": "Neue Lose erscheinen hier sofort nach Veröffentlichung."
-    }
+    },
+    "totalInvalid": "Der Gesamtbetrag ist zu hoch. Verringere die Menge oder den Preis."
   },
   "shop": {
     "sampleNote": "Preise, Marktwerte und Beträge auf diesem Bildschirm sind Beispielzahlen für den Prototyp.",

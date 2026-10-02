@@ -50,6 +50,18 @@ before the next build. This prevents later builds from losing your changes.
    visible fixture banner and metadata. It does not prove live access, server
    permissions or provider behavior.
 
+   The separate failure matrix uses the same isolated preview and rejects local
+   requests. It captures 78 English/Arabic phone, tablet and desktop views:
+
+   ```sh
+   GUIDE_FIXTURE_ORIGIN=http://127.0.0.1:3203 node scripts/guide-preview/capture-failures.mjs
+   ```
+
+   This matrix covers retained files and drafts, sign-out retry, invalid totals,
+   support limits and admin authentication errors. Setup images show empty
+   password and token fields. They do not prove account creation or live failure
+   recovery. Inspect each original PNG and retain `failure-captures.json`.
+
    Approved sample prices have a separate read-only capture command:
 
    ```sh
@@ -133,37 +145,46 @@ before the next build. This prevents later builds from losing your changes.
 
 ## Google Docs copy
 
-Current publication state is recorded in [cloud.json](cloud.json). The current
-public detail, account security, notifications and industry API revision is **pending publication**. The existing native
-[Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
-remains at its last verified revision. Its document ID and sharing settings are
-unchanged. No cloud update was performed for this local revision.
+Current publication state is recorded in [cloud.json](cloud.json). The existing
+native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
+is verified through the security and industry API revision from main `2ba8246`.
+Its document ID, folder and sharing settings are unchanged. The newer combined
+public detail, account security, notifications and failure-recovery revision in
+this branch is **pending publication** after its reviewed source lands on main.
+The security followup owns the coordinated in-place update after PR29 merges.
 
-The last verified import contained all 37 chapters, six tables and 51 inline
-images. Native readback matched the reviewed Word body and table text, with three
-native date fields. The corresponding Word file had 56 visually reviewed pages.
-Its DOCX hash, native readback hash, revision ID and verification details remain
-under `last_verified_revision` in `cloud.json`. They describe that earlier
-publication, not the current local source or Word rebuild.
+The last verified native copy has 38 chapters, six tables, 548 body paragraphs
+and 72 image placements. Readback checked all paragraphs, table cells, image
+source URLs and dimensions. Three exact dates remain native date fields. Its
+Word source had 76 reviewed pages; the native PDF had 78 reviewed pages because
+native typography and pagination differ. These counts describe the published
+revision, not the newer local Word guide. The exact proof remains under
+`last_verified_revision` in `cloud.json`.
 
-The connected `google_drive_import_document` action creates a new document.
-The connected `update_file` action does not accept raw DOCX replacement of an
-existing native Google Doc. These actions therefore cannot complete the required
-in-place update while preserving this document ID. Do not create a replacement
-document or change the link. Keep the reviewed local DOCX and report this update
-as pending until a supported in-place native document workflow is available.
+The supported update uses revision-guarded Google Docs batch requests. Compare
+the current native revision with the last verified record first, and preserve or
+reconcile later human edits. Keep the tab and table structures, apply the reviewed
+changes in bounded batches, and use committed screenshot bytes or immutable
+source URLs. Verify all body text, table cells, dates, headings and image
+placements after writing. Export the native PDF and inspect every page before
+recording the new source hash, native revision and publication status.
 
-For the first import only, the sanitized and visually reviewed DOCX can use
-`google_drive_import_document` with `upload_mode: "native_google_docs"`. After
-that import, every revision must reuse the recorded native document ID and
-preserve its sharing settings. Do not reconstruct the guide in an empty Google
-Doc. Verify native text, structure and images after any supported update before
-marking the current revision as published.
+One accessibility limit remains: the current Google Docs batch-update API does
+not expose a setter for embedded image title/description alt text. The published
+image descriptions remain editable visible captions. Do not claim that native
+image-alt semantics match the Word source. See the [request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
 
-A manually uploaded Word document can also be opened in Google Docs by its
-owner, but a new copy does not update the existing guide. Any edits made in the
-native document must return to `guide.md` before the next local rebuild. No
-automatic cloud synchronization is configured.
+The connected `google_drive_import_document` action creates a new document and
+is only for the first import. `update_file` cannot replace a native Google Doc
+with raw DOCX bytes. Neither is the in-place update path. Do not create a
+replacement document or change the existing link or sharing settings.
+
+For the first import only, use the sanitized and visually reviewed DOCX with
+`google_drive_import_document` and `upload_mode: "native_google_docs"`. A manually
+uploaded Word document opened in Google Docs creates a different copy; it does
+not update this guide. Any edits made in the native document must return to
+`guide.md` before the next local rebuild. No automatic cloud synchronization is
+configured.
 
 ## Screenshot and privacy rules
 

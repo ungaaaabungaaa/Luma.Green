@@ -8,7 +8,7 @@
       "width": 1280,
       "height": 900
     },
-    "revision": "bc986f4ea13518473191930a55881f293dddddb1",
+    "revision": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
     "sourceHashes": {
       "scripts/capture-price-guide.mts": "c07f10d241a3edc68b79ec350691b319b654e2c6b8240417142ed2455c17ef94",
       "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
@@ -27,11 +27,11 @@
       "src/components/prices/price-change.tsx": "eff54d05a46349713a73c94700e19e306ede4342e6ef593ea19003095e1227e7",
       "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
       "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
-      "src/components/app/format.ts": "296b38b7f24f086aa817ee194b14ca7964f71cc2ee15aa956523a4dff1758613",
+      "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
       "src/components/app/page-parts.tsx": "d070dd172ce301c89295f1ac8b1fa5ae0f14041f7bc1bb55ed4c65410b978fa2",
-      "messages/en.json": "32e0232b3f6b559601810b51783a8534deb4684f38671dbffc1703012ad9640d"
+      "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f"
     },
-    "capturedAt": "2026-10-02T08:43:34.214Z",
+    "capturedAt": "2026-10-02T17:06:01.280Z",
     "kind": "current-local-connected-demo",
     "backendDeployment": "glorious-rooster-470",
     "sampleData": true,
@@ -52,7 +52,7 @@
       "width": 1280,
       "height": 900
     },
-    "revision": "bc986f4ea13518473191930a55881f293dddddb1",
+    "revision": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
     "sourceHashes": {
       "scripts/capture-price-guide.mts": "c07f10d241a3edc68b79ec350691b319b654e2c6b8240417142ed2455c17ef94",
       "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
@@ -71,11 +71,11 @@
       "src/components/prices/price-change.tsx": "eff54d05a46349713a73c94700e19e306ede4342e6ef593ea19003095e1227e7",
       "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
       "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
-      "src/components/app/format.ts": "296b38b7f24f086aa817ee194b14ca7964f71cc2ee15aa956523a4dff1758613",
+      "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
       "src/components/app/page-parts.tsx": "d070dd172ce301c89295f1ac8b1fa5ae0f14041f7bc1bb55ed4c65410b978fa2",
-      "messages/en.json": "32e0232b3f6b559601810b51783a8534deb4684f38671dbffc1703012ad9640d"
+      "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f"
     },
-    "capturedAt": "2026-10-02T08:43:35.405Z",
+    "capturedAt": "2026-10-02T17:06:02.463Z",
     "kind": "current-local-connected-demo",
     "backendDeployment": "glorious-rooster-470",
     "sampleData": true,

@@ -1,6 +1,6 @@
 # Account, notifications and public content pass
 
-Status: source complete; final integration checks in progress, 2 October 2026.
+Status: source, artifacts and local checks complete; final hosted checks pending, 2 October 2026.
 Branch: `feat/account-notifications-detail`, based on UI checkpoint `0f052c0`.
 Do not read a planned check below as a completed release gate.
 
@@ -117,6 +117,37 @@ path in AGENTS.md owns main integration. Do not override a required red check.
 1. Commit source, screenshot manifests and Word files together, update PR 29
    and merge only after required checks pass. Do not monitor frontend
    deployments; the founder excluded that work.
+
+## Security-main integration
+
+Checkpoint `a3c890e` passed all five required hosted checks, 734 browser cases
+and five configured analytics cases. During that run, PR 31 merged security
+repair `2ba8246` into main. The next integration preserves its admin bootstrap
+token, active-record limits, exact money arithmetic, safe async failures,
+optional monitoring recovery and native navigation policy.
+
+The existing account and admin sign-out hooks remain canonical: device
+revocation runs before server sign-out, failed requests retain the current
+screen, and pending actions cannot run twice. The unused incoming hook was
+removed after its failure tests were moved into the canonical hook coverage.
+All 33 catalogues include the new support-quota and invalid-total messages.
+
+Current combined proof: production build (2,622 pages), 1,567 non-document
+tests, 62 focused browser cases, five isolated analytics cases, 69 focused auth
+cases, 88 focused controls cases, 43 mobile tests, 22 desktop tests and lint pass.
+The final RTL selectors also pass 21 focused tests and original browser review.
+All capture sets are refreshed. The user guide has 103 reviewed pages, 40
+chapters and 99 image placements; the team pack has 47 reviewed pages and a
+92-case manual. Both Word builder freshness checks and all 15 document tests pass. The final
+complete `pnpm check` passes: lint, TypeScript, 1,582 web/backend tests, 43 mobile
+tests and 22 desktop tests. Formatting passes. Earlier green hosted checks do
+not establish the new head; wait for the final commit checks before merge.
+
+The native Google Doc is verified through main `2ba8246`. The combined local
+Word revision remains pending the coordinated in-place sync after PR 29 merges;
+the stable document ID, folder and sharing are preserved. The security followup
+also owns the backend integration and rollout that preserves the ecosystem,
+API, account and notification schema together.
 
 ## Release limits
 

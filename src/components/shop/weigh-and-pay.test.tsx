@@ -14,8 +14,10 @@ import {
 } from "vitest";
 
 import type { Id } from "../../../convex/_generated/dataModel";
+import arabic from "../../../messages/ar.json";
 import italian from "../../../messages/it.json";
 import tamil from "../../../messages/ta.json";
+import urdu from "../../../messages/ur.json";
 import { IRON, NEWSPAPER, PET, renderWithIntl } from "./test-helpers";
 import { WeighAndPay } from "./weigh-and-pay";
 
@@ -74,6 +76,39 @@ const newspaperKg = () =>
   screen.getByRole("textbox", { name: "Newspaper, in kg" });
 
 describe("WeighAndPay", () => {
+  it.each([
+    { locale: "ar", messages: arabic },
+    { locale: "ur", messages: urdu },
+  ])(
+    "keeps the $locale material picker and menu right to left",
+    async ({ locale, messages }) => {
+      render(
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+          timeZone="Asia/Kolkata"
+        >
+          <WeighAndPay
+            bookingId={BOOKING_ID}
+            items={[]}
+            rates={RATES}
+            choices={[IRON]}
+          />
+        </NextIntlClientProvider>,
+      );
+      const picker = screen.getByRole("combobox", {
+        name: messages.shop.weigh.add,
+      });
+      expect(picker).toHaveAttribute("dir", "rtl");
+      await userEvent.click(picker);
+      expect(screen.getByRole("listbox")).toHaveAttribute("dir", "rtl");
+      await userEvent.click(screen.getByRole("option"));
+      expect(screen.getByRole("textbox")).toHaveFocus();
+      expect(screen.queryByRole("combobox")).not.toBeInTheDocument();
+      expect(complete).not.toHaveBeenCalled();
+    },
+  );
+
   it.each([
     { locale: "ta", messages: tamil, confirmation: /^₹237 கொடுத்தேன்$/ },
     {

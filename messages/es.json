@@ -782,7 +782,8 @@
         "topicMissing": "Elige el tema.",
         "messageShort": "Escribe un poco más: al menos 5 caracteres.",
         "messageLong": "Usa menos de 1000 caracteres.",
-        "generic": "No hemos podido enviarlo. Comprueba tu conexión y vuelve a intentarlo."
+        "generic": "No hemos podido enviarlo. Comprueba tu conexión y vuelve a intentarlo.",
+        "rateLimited": "Se han enviado demasiados mensajes desde este número. Inténtalo de nuevo en una hora."
       },
       "unavailableTitle": "Los mensajes están desactivados aquí",
       "unavailableBody": "Llámanos o escríbenos por WhatsApp. Te ayudaremos con gusto.",
@@ -3061,7 +3062,8 @@
       "seeAll": "Ver todo",
       "noOffersTitle": "No hay lotes a la venta ahora",
       "noOffersBody": "Los nuevos lotes aparecen aquí en cuanto se publican."
-    }
+    },
+    "totalInvalid": "El total es demasiado alto. Reduce la cantidad o el precio."
   },
   "shop": {
     "sampleNote": "Los precios, cotizaciones e importes de esta pantalla son cifras de ejemplo del prototipo.",

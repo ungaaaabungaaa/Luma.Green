@@ -782,7 +782,8 @@
         "topicMissing": "Choisissez le sujet.",
         "messageShort": "Écrivez au moins 5 caractères.",
         "messageLong": "Ne dépassez pas 1 000 caractères.",
-        "generic": "Échec de l’envoi. Vérifiez votre connexion et réessayez."
+        "generic": "Échec de l’envoi. Vérifiez votre connexion et réessayez.",
+        "rateLimited": "Trop de messages ont été envoyés depuis ce numéro. Réessayez dans une heure."
       },
       "unavailableTitle": "L’envoi de messages est désactivé ici",
       "unavailableBody": "Appelez-nous ou contactez-nous par WhatsApp. Nous vous aiderons volontiers.",
@@ -3061,7 +3062,8 @@
       "seeAll": "Tout voir",
       "noOffersTitle": "Aucun lot en vente pour le moment",
       "noOffersBody": "Les nouveaux lots apparaissent ici dès leur publication."
-    }
+    },
+    "totalInvalid": "Ce total est trop élevé. Réduisez la quantité ou le prix."
   },
   "shop": {
     "sampleNote": "Les prix, tarifs de marché et valeurs de cet écran sont des exemples du prototype.",

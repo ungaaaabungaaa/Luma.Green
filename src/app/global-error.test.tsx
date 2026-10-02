@@ -22,11 +22,11 @@ afterEach(() => {
   vi.clearAllMocks();
 });
 
-function renderFailure(error: Error, reset = vi.fn()) {
+function renderFailure(error: Error, retry = vi.fn()) {
   const container = document;
   return {
-    ...render(<GlobalError error={error} reset={reset} />, { container }),
-    reset,
+    ...render(<GlobalError error={error} retry={retry} />, { container }),
+    retry,
   };
 }
 
@@ -37,7 +37,7 @@ describe("root failure screen", () => {
       view.getByRole("heading", { level: 1, name: en.common.error }),
     ).toBeInTheDocument();
     await userEvent.click(view.getByRole("button", { name: en.common.retry }));
-    expect(view.reset).toHaveBeenCalledOnce();
+    expect(view.retry).toHaveBeenCalledOnce();
     expect(sentry.captureException).not.toHaveBeenCalled();
     expect(view.queryByText("Private error details")).not.toBeInTheDocument();
   });
@@ -60,7 +60,25 @@ describe("root failure screen", () => {
       view.getByRole("heading", { level: 1, name: ar.common.error }),
     ).toBeInTheDocument();
     await userEvent.click(view.getByRole("button", { name: ar.common.retry }));
-    expect(view.reset).toHaveBeenCalledOnce();
+    expect(view.retry).toHaveBeenCalledOnce();
     expect(sentry.captureException).not.toHaveBeenCalled();
+  });
+
+  it("keeps retry usable when optional reporting throws", async () => {
+    monitoring.enabled = true;
+    sentry.captureException.mockImplementationOnce(() => {
+      throw new Error("Private provider details");
+    });
+    const logged = vi.spyOn(console, "error").mockImplementation(vi.fn());
+    const view = renderFailure(new Error("Fixture failure"));
+    await waitFor(() => {
+      expect(logged).toHaveBeenCalledWith("Error reporting is unavailable.");
+    });
+    await userEvent.click(view.getByRole("button", { name: en.common.retry }));
+    expect(view.retry).toHaveBeenCalledOnce();
+    expect(
+      view.queryByText("Private provider details"),
+    ).not.toBeInTheDocument();
+    logged.mockRestore();
   });
 });

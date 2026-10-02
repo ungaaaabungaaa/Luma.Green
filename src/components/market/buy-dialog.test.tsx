@@ -24,10 +24,10 @@ beforeEach(() => {
   toast.success.mockReset();
 });
 
-async function openDialog() {
+async function openDialog(listing = aListing(), locale = "en") {
   render(
-    <WithIntl>
-      <BuyButton listing={aListing()} />
+    <WithIntl locale={locale}>
+      <BuyButton listing={listing} />
     </WithIntl>,
   );
   await userEvent.click(
@@ -74,3 +74,22 @@ describe("BuyButton", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 });
+
+it.each([
+  ["en", "2"],
+  ["ar", "٢"],
+  ["fr", "2,5"],
+])(
+  "keeps an unsafe %s total editable and does not send a trade",
+  async (locale, input) => {
+    await openDialog(
+      aListing({ askPaisePerKg: Number.MAX_SAFE_INTEGER }),
+      locale,
+    );
+    await userEvent.type(screen.getByLabelText("How many kg?"), input);
+    await userEvent.click(screen.getByRole("button", { name: "Send request" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(/price/i);
+    expect(requestTrade).not.toHaveBeenCalled();
+    expect(screen.getByLabelText("How many kg?")).toHaveValue(input);
+  },
+);

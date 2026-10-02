@@ -782,7 +782,8 @@
         "topicMissing": "请选择咨询主题。",
         "messageShort": "请再详细一些，至少5字。",
         "messageLong": "请控制在1,000字以内。",
-        "generic": "发送失败。请检查连接后重试。"
+        "generic": "发送失败。请检查连接后重试。",
+        "rateLimited": "此号码发送的消息过多。请一小时后重试。"
       },
       "unavailableTitle": "此处暂不支持发送消息",
       "unavailableBody": "请改用电话或WhatsApp联系我们，我们会提供帮助。",
@@ -3061,7 +3062,8 @@
       "seeAll": "查看全部",
       "noOffersTitle": "目前没有在售批次",
       "noOffersBody": "新批次发布后会立即显示在这里。"
-    }
+    },
+    "totalInvalid": "总金额过大。请减少数量或降低价格。"
   },
   "shop": {
     "sampleNote": "此页面的价格、市场单价和估值为原型示例数据。",

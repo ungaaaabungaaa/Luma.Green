@@ -94,10 +94,16 @@ async function initializePosthog() {
 
 async function posthogClient() {
   runtime.posthog ??= initializePosthog();
-  const client = await runtime.posthog;
-  // A cancelled first load must be allowed to initialize on a later visit.
-  if (!client.__loaded) runtime.posthog = undefined;
-  return client;
+  try {
+    const client = await runtime.posthog;
+    // A cancelled first load must be allowed to initialize on a later visit.
+    if (!client.__loaded) runtime.posthog = undefined;
+    return client;
+  } catch (error) {
+    // A rejected import or initialization must not poison every later visit.
+    runtime.posthog = undefined;
+    throw error;
+  }
 }
 
 function googlePage(page: string, locale: string) {

@@ -1,6 +1,7 @@
 import { createClient, type GenericCtx } from "@convex-dev/better-auth";
 import { convex } from "@convex-dev/better-auth/plugins";
 import { APIError, createAuthMiddleware } from "better-auth/api";
+import { constantTimeEqual } from "better-auth/crypto";
 import { betterAuth, type BetterAuthOptions } from "better-auth/minimal";
 import { phoneNumber } from "better-auth/plugins";
 
@@ -8,7 +9,11 @@ import { components, internal } from "./_generated/api";
 import type { DataModel } from "./_generated/dataModel";
 import authConfig from "./auth.config";
 import authSchema from "./betterAuth/schema";
-import { adminSessionExpiry, isAdminEmail } from "./lib/admin";
+import {
+  adminSessionExpiry,
+  getAdminSetupToken,
+  isAdminEmail,
+} from "./lib/admin";
 import {
   clearPasswordResetProofs,
   guardAdminRecovery,
@@ -26,7 +31,7 @@ import { smsPhoneHash } from "./lib/smsLimits";
  *
  * - Everyone but the admin: phone number + 6-digit SMS code.
  * - The one admin: email + password, then an authenticator-app code. Email
- *   sign-up is closed to every address except `ADMIN_EMAIL`.
+ *   sign-up requires `ADMIN_EMAIL` and the operator's `ADMIN_SETUP_TOKEN`.
  */
 export const authComponent: ReturnType<
   typeof createClient<DataModel, typeof authSchema>
@@ -165,6 +170,18 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) =>
         if (!isAdminEmail(email)) {
           throw new APIError("FORBIDDEN", { message: "Sign-up is closed." });
         }
+        const setupToken = getAdminSetupToken();
+        const provided = hookCtx.headers?.get("x-luma-admin-setup-token");
+        if (
+          !setupToken ||
+          !provided ||
+          !constantTimeEqual(setupToken, provided)
+        ) {
+          throw new APIError("FORBIDDEN", {
+            code: "ADMIN_SETUP_REQUIRED",
+            message: "Admin setup requires a valid setup token.",
+          });
+        }
       }),
     },
     plugins: [
@@ -189,6 +206,7 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) =>
         allowedAttempts: 5,
         phoneNumberValidator: isIndianMobile,
         callbackOnVerification: ({ user }) => {
+          // Admin sessions require password sign-in followed by TOTP.
           if (isAdminEmail(user.email)) {
             throw new APIError("FORBIDDEN", {
               code: "ADMIN_PASSWORD_REQUIRED",
