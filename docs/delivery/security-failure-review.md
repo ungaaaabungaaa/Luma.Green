@@ -174,7 +174,7 @@ The final combined source preserves PR #30 (`af2e295`) and has these results:
 
 The original repair source, screenshots, capture manifests, Word guide and build record were committed together and merged through PR #31 at `2ba8246`. The follow-up verified an in-place Google Docs update for that reviewed guide; see `docs/user-guide/cloud.json`. Its existing ID, folder and sharing remain unchanged. Hosted CI, preview status and protected squash merge are separate from local results. Main is never pushed directly.
 
-Live SMS receipt, authenticated staging acceptance, native signing and real-device tests are separate gates. The current Google Docs API cannot set native image alt-text attributes. One native description was restored and verified; the other 71 published images retain visible editable captions. The publication record states this limit and does not claim identical accessibility semantics. The newer guide from parallel PR #29 requires its own verified synchronization after that revision merges.
+Live SMS receipt, authenticated staging acceptance, native signing and real-device tests are separate gates. The previous 76-page edition had one restored native image description. The newer guide is now synchronized; its image replacements removed that description. The current Google Docs API cannot set native descriptions. All 99 images retain visible editable captions, with this semantic accessibility limit stated in the publication record.
 
 ## Combined backend rollout checks
 
@@ -256,3 +256,39 @@ The frontend PR #29 merged only after this rollout and all hosted checks passed:
 native validation/export. Its main merge is `53dae4db62432119505bd06d7d9ac85284c0c386`.
 The follow-up reconciles that main commit while preserving every tested runtime
 file from the deployed source. See [safe rollout evidence](security-rollout-verification.json).
+
+Vercel production for main `53dae4d` is `READY` at `lumagreen.vercel.app`.
+Public English, Arabic and Urdu pages return 200; the admin login page returns
+200 with `noindex, nofollow`. OpenAPI returns 200 and an industry API request
+without a key returns 401. These are delivery and denial checks, not
+authenticated admin or provider acceptance. Independent review of PR #32's
+actual runtime diff found no actionable defect and confirmed identical tested
+runtime bytes, retained backend permissions, bounded provider requests, exact
+stock validation and the installed verifier hashes.
+
+## Final protected delivery and cloud publication
+
+PR #32 merged at `7f584854896b991ea3970d91e0a20d43ed1cca2f` on 2 October
+2026 at 20:23:29 UTC (3 October in Bengaluru). All five required checks,
+737 browser tests, five analytics-consent tests, native validation/export and
+Vercel preview passed on exact head `a5e8acd`. Review threads were empty; the
+independent diff review found no actionable defect. Remote main runtime files
+match the tested and deployed source. No direct push or admin override was used.
+
+The existing Google Doc was updated in place from reviewed source `593dfa2`,
+merged through PR #29 at `53dae4d`. All 40 chapters, 659 body paragraphs, six
+tables, 99 uncropped image placements, 41 first-level headings, ten native
+bullets and three original date fields match. Its ID, folder, sharing, tab and
+footer remain unchanged. Every page of the final 104-page export is covered
+by full-size visual review. A native spacing repair removed one two-line
+orphan; affected pages were inspected again and other page bodies match the
+reviewed export pixel for pixel, excluding only checked footer numbers.
+The maintained Word guide remains the reviewed 103-page artifact.
+
+Native Google image descriptions are absent for all 99 images. The replacement
+API removed the previous sole description and exposes no setter. Its exact text
+is saved for a supported editor repair; native UI input remained stopped to
+preserve user focus. All source descriptions remain visible editable captions.
+This is an explicit accessibility limit, not a claim of identical native image
+semantics. Publication proof is in [cloud.json](../user-guide/cloud.json); the
+final metadata and delivery evidence land through the associated documentation PR.

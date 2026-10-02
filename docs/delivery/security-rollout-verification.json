@@ -40,5 +40,42 @@
       "active_admin_sessions": 0,
       "admin_provisioning": "not configured; no auth users or admin profiles"
     }
-  ]
+  ],
+  "frontend_production": {
+    "source_commit": "53dae4db62432119505bd06d7d9ac85284c0c386",
+    "deployment_id": "dpl_5KpBH7ER15w2cbFTBXfmys5DYNrS",
+    "status": "READY",
+    "canonical_alias": "https://lumagreen.vercel.app",
+    "recorded_at": "2026-10-02T20:04:10.037572+00:00",
+    "public_pages": {
+      "/": "200",
+      "/ar": "200",
+      "/ur": "200",
+      "/admin/login": "200; noindex, nofollow"
+    },
+    "openapi": "200; noindex",
+    "industry_api_without_key": "401; noindex",
+    "authenticated_acceptance_performed": false
+  },
+  "security_followup_main_merge": "7f584854896b991ea3970d91e0a20d43ed1cca2f",
+  "security_followup_merged_at": "2026-10-02T20:23:29Z",
+  "security_followup_head": "a5e8acd89184ce7553d679149b460533634467b7",
+  "hosted_checks": {
+    "required_checks": "all five passed",
+    "browser_tests_passed": 737,
+    "analytics_consent_tests_passed": 5,
+    "native_validation_export": "passed",
+    "vercel_preview": "READY",
+    "unresolved_review_threads": 0
+  },
+  "guide_publication": {
+    "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
+    "source_docx_sha256": "a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3",
+    "native_pdf_sha256": "d29424ad36501b9922f4b15ff4e69147f15c631d10fbc5a59550d57f18e06583",
+    "native_export_pages_reviewed": 104,
+    "image_count": 99,
+    "sharing_changed": false,
+    "native_image_description_count": 0,
+    "image_accessibility_limit": "Visible captions remain; native descriptions cannot be set through the current update API."
+  }
 }
