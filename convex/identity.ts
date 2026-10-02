@@ -4,7 +4,11 @@ import { isLocale } from "../src/i18n/locales";
 import { mutation, query } from "./_generated/server";
 import { authComponent } from "./auth";
 import { requireAdmin, requireUser } from "./lib/access";
-import { isAdminEmail, validateAdminProfile } from "./lib/admin";
+import {
+  getAdminSetupToken,
+  isAdminEmail,
+  validateAdminProfile,
+} from "./lib/admin";
 import { codeDelivery } from "./lib/sms";
 
 /** What the sign-in screens can offer on this deployment. Public. */
@@ -22,7 +26,10 @@ export const signInOptions = query({
       (await ctx.db.query("adminProfiles").first()) !== null;
     return {
       phone: isPhone,
-      adminSetup: Boolean(process.env.ADMIN_EMAIL) && !isAdminExists,
+      adminSetup:
+        Boolean(process.env.ADMIN_EMAIL?.trim()) &&
+        Boolean(getAdminSetupToken()) &&
+        !isAdminExists,
     };
   },
 });

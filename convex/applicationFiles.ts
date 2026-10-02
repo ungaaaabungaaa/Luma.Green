@@ -66,6 +66,20 @@ export const checkAttach = internalQuery({
   },
 });
 
+/** A failed attachment must not delete a concurrent request's saved file. */
+export const discardUnattached = internalMutation({
+  args: { storageId: v.id("_storage") },
+  returns: v.null(),
+  handler: async (ctx, args) => {
+    const attached = await ctx.db
+      .query("applicationFiles")
+      .withIndex("by_storageId", (q) => q.eq("storageId", args.storageId))
+      .first();
+    if (!attached) await ctx.storage.delete(args.storageId);
+    return null;
+  },
+});
+
 export const record = internalMutation({
   args: {
     storageId: v.id("_storage"),
@@ -81,6 +95,9 @@ export const record = internalMutation({
       args.storageId,
       args.type,
     );
+    // Cleanup may have won the race after checkAttach. Never save a missing file.
+    const stored = await ctx.db.system.get("_storage", args.storageId);
+    if (!stored) throw new ConvexError("FILE_NOT_FOUND");
     const attached = await activeFiles(ctx, application._id);
     const sameType = attached.filter((file) => file.type === args.type);
     const { max } = FILE_RULES[args.type];
@@ -132,7 +149,9 @@ export const attach = action({
     const contentType = sniffContentType(head);
     const problem = fileProblem(args.type, { contentType, size: blob.size });
     if (problem || !contentType) {
-      await ctx.storage.delete(args.storageId);
+      await ctx.runMutation(internal.applicationFiles.discardUnattached, {
+        storageId: args.storageId,
+      });
       return { ok: false, error: problem ?? "fileType" };
     }
 
@@ -149,7 +168,9 @@ export const attach = action({
       );
       return { ok: true, fileId };
     } catch (error) {
-      await ctx.storage.delete(args.storageId);
+      await ctx.runMutation(internal.applicationFiles.discardUnattached, {
+        storageId: args.storageId,
+      });
       throw error;
     }
   },

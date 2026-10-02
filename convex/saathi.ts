@@ -249,14 +249,18 @@ export const take = mutation({
     }
 
     // One job at a time: nobody can be at two places in the same slot.
-    const own = await jobsOf(ctx, saathi._id);
-    const isBusy = own.some(
-      (mine) =>
-        mine.status === "assigned" &&
-        mine.date === job.date &&
-        mine.window === job.window,
-    );
-    if (isBusy) throw new ConvexError("SLOT_BUSY");
+    const conflict = await ctx.db
+      .query("jobs")
+      .withIndex("by_saathi", (q) => q.eq("saathiProfileId", saathi._id))
+      .filter((q) =>
+        q.and(
+          q.eq(q.field("status"), "assigned"),
+          q.eq(q.field("date"), job.date),
+          q.eq(q.field("window"), job.window),
+        ),
+      )
+      .first();
+    if (conflict) throw new ConvexError("SLOT_BUSY");
 
     await ctx.db.patch("jobs", job._id, {
       status: "assigned",

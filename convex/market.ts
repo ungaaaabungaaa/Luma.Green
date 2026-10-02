@@ -11,8 +11,8 @@ import {
   buyerKindFor,
   isInEscrow,
   type OrgKind,
-  paiseFor,
   requiresEwayBill,
+  safePaiseFor,
   sellerKindFor,
   type TradeAction,
   tradeActionsFor,
@@ -51,8 +51,10 @@ const BUYER_KINDS = ORG_KINDS.filter((kind) => sellerKindFor(kind) !== null);
 
 /** The most rows one screen reads. */
 const PAGE = 200;
-/** How far back the stock check looks for lots already promised. */
-const HISTORY = 1000;
+/** Fail closed when the pilot cannot account for every stock reservation. */
+const RESERVATION_LIMIT = 1000;
+/** Listing closure is atomic; never decline only part of its waiting queue. */
+const WAITING_TRADE_LIMIT = 1000;
 /** A listing's note, in characters. The sell form uses the same limit. */
 const NOTE_MAX_LENGTH = 140;
 
@@ -225,16 +227,27 @@ async function promisedGrams(
   const listings = await ctx.db
     .query("listings")
     .withIndex("by_org", (q) => q.eq("orgId", orgId))
-    .order("desc")
-    .take(HISTORY);
+    .filter((q) => q.eq(q.field("status"), "open"))
+    .take(RESERVATION_LIMIT + 1);
+  if (listings.length > RESERVATION_LIMIT) {
+    throw new ConvexError("TOO_MANY_RESERVATIONS");
+  }
   for (const listing of listings) {
     if (listing.status === "open") add(listing.materialCode, listing.grams);
   }
   const sales = await ctx.db
     .query("trades")
     .withIndex("by_seller", (q) => q.eq("sellerOrgId", orgId))
-    .order("desc")
-    .take(HISTORY);
+    .filter((q) =>
+      q.or(
+        q.eq(q.field("status"), "accepted"),
+        q.eq(q.field("status"), "paid_to_escrow"),
+      ),
+    )
+    .take(RESERVATION_LIMIT + 1);
+  if (sales.length > RESERVATION_LIMIT) {
+    throw new ConvexError("TOO_MANY_RESERVATIONS");
+  }
   for (const trade of sales) {
     if (trade.status === "accepted" || trade.status === "paid_to_escrow") {
       add(trade.materialCode, trade.grams);
@@ -321,7 +334,11 @@ async function declineWaiting(
   const trades = await ctx.db
     .query("trades")
     .withIndex("by_listing", (q) => q.eq("listingId", listingId))
-    .take(PAGE);
+    .filter((q) => q.eq(q.field("status"), "requested"))
+    .take(WAITING_TRADE_LIMIT + 1);
+  if (trades.length > WAITING_TRADE_LIMIT) {
+    throw new ConvexError("TOO_MANY_TRADE_REQUESTS");
+  }
   for (const trade of trades) {
     if (trade.status !== "requested" || trade._id === keep) continue;
     await ctx.db.patch("trades", trade._id, {
@@ -474,7 +491,8 @@ export const requestTrade = mutation({
     if (args.grams > listing.grams) throw new ConvexError("NOT_ENOUGH_LEFT");
 
     const now = Date.now();
-    const totalPaise = paiseFor(args.grams, listing.askPaisePerKg);
+    const totalPaise = safePaiseFor(args.grams, listing.askPaisePerKg);
+    if (totalPaise === null) throw new ConvexError("INVALID_PRICE");
     const tradeId = await ctx.db.insert("trades", {
       listingId: listing._id,
       sellerOrgId: listing.orgId,
@@ -572,7 +590,10 @@ export const createListing = mutation({
   handler: async (ctx, args) => {
     const { profile, org } = await requireOrg(ctx, SELLER_KINDS);
     if (!isPositiveInteger(args.grams)) throw new ConvexError("INVALID_WEIGHT");
-    if (!isPositiveInteger(args.askPaisePerKg)) {
+    if (
+      !isPositiveInteger(args.askPaisePerKg) ||
+      safePaiseFor(args.grams, args.askPaisePerKg) === null
+    ) {
       throw new ConvexError("INVALID_PRICE");
     }
     const trimmed = args.note?.trim();

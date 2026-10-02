@@ -3,7 +3,7 @@ import { convexTest } from "convex-test";
 import { afterEach, expect, it, vi } from "vitest";
 
 import { components } from "./_generated/api";
-import { convexModules, registerAuth } from "./lib/auth.testing";
+import { convexModules, registerAuth, signIn } from "./lib/auth.testing";
 import schema from "./schema";
 
 const modules = convexModules(import.meta.glob("./**/*.*s"));
@@ -51,3 +51,66 @@ it("rejects a resend before storing another code, even with a different client I
   );
   await t.finishAllScheduledFunctions(vi.runAllTimers);
 });
+
+it.each([
+  { email: "admin@luma.test", status: 403 },
+  { email: "member@luma.test", status: 200 },
+])(
+  "phone-code sign-in permits members but requires the admin route for $email",
+  async ({ email, status }) => {
+    vi.stubEnv("SITE_URL", "https://luma.test");
+    vi.stubEnv("CONVEX_SITE_URL", "https://test.convex.site");
+    vi.stubEnv("BETTER_AUTH_SECRET", "0123456789abcdef0123456789abcdef");
+    vi.stubEnv("ADMIN_EMAIL", "admin@luma.test");
+    const t = convexTest(schema, modules);
+    registerAuth(t);
+    await signIn(t, {
+      email,
+      phoneNumber: "+919876543210",
+      twoFactorEnabled: email === "admin@luma.test",
+    });
+    const sessions = () =>
+      t.run((ctx) =>
+        ctx.runQuery(components.betterAuth.adapter.findMany, {
+          model: "session",
+          paginationOpts: { cursor: null, numItems: 10 },
+        }),
+      );
+    const before = await sessions();
+    const now = Date.now();
+    await t.run((ctx) =>
+      ctx.runMutation(components.betterAuth.adapter.create, {
+        input: {
+          model: "verification",
+          data: {
+            identifier: "+919876543210",
+            value: "345678:0",
+            expiresAt: now + 60_000,
+            createdAt: now,
+            updatedAt: now,
+          },
+        },
+      }),
+    );
+    const result = await t.fetch("/api/auth/phone-number/verify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Origin: "https://luma.test",
+      },
+      body: JSON.stringify({ phoneNumber: "+919876543210", code: "345678" }),
+    });
+    expect(result.status).toBe(status);
+    const after = await sessions();
+    if (status === 403) {
+      expect(await result.json()).not.toHaveProperty("token");
+      expect(result.headers.get("set-cookie")).toBeNull();
+      expect(after.page).toEqual(before.page);
+    } else {
+      expect(await result.json()).toHaveProperty("token");
+      expect(result.headers.get("set-cookie")).toBeTruthy();
+      expect(before.page).toHaveLength(1);
+      expect(after.page).toHaveLength(2);
+    }
+  },
+);

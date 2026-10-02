@@ -220,6 +220,27 @@ describe("taking a job", () => {
     ).rejects.toThrow(/JOB_EXPIRED/);
   });
 
+  it("finds an older assigned job after five hundred newer completed jobs", async () => {
+    const t = await demoWorld();
+    const lakshmi = await signInAs(t, LAKSHMI);
+    const assignedId = await jobId(t, "Home pickups, 4 houses");
+    await t.run(async (ctx) => {
+      const assigned = await ctx.db.get("jobs", assignedId);
+      if (!assigned) throw new Error("Missing assigned job");
+      const { _id, _creationTime, ...job } = assigned;
+      for (let index = 0; index < 500; index += 1) {
+        await ctx.db.insert("jobs", { ...job, status: "done" });
+      }
+    });
+    const id = await postJob(t, TODAY, "morning");
+    await expect(
+      lakshmi.mutation(api.saathi.take, { jobId: id }),
+    ).rejects.toThrow(/SLOT_BUSY/);
+    const job = await t.run((ctx) => ctx.db.get("jobs", id));
+    expect(job?.status).toBe("open");
+    expect(job?.saathiProfileId).toBeUndefined();
+  });
+
   it("won't book two jobs at the same time", async () => {
     const t = await demoWorld();
     const lakshmi = await signInAs(t, LAKSHMI);

@@ -10,7 +10,7 @@
 | Convex      | Select separate development and production deployments. Enable backups.                                                     | `NEXT_PUBLIC_CONVEX_URL` (build-injected), optional `NEXT_PUBLIC_CONVEX_SITE_URL` (local only) | Next.js / Vercel, for the matching environment |
 | Convex      | Create a production deploy key.                                                                                             | `CONVEX_DEPLOY_KEY`                                                                            | Vercel build environment only                  |
 | Vercel      | Connect this repository, select the production branch, and add `luma.green`. Set the DNS records Vercel gives you.          | `NEXT_PUBLIC_SITE_URL=https://luma.green`                                                      | Vercel production                              |
-| Better Auth | No separate account. Generate a random secret with at least 32 characters. Set the allowed site origin.                     | `BETTER_AUTH_SECRET`, `SITE_URL=https://luma.green`, `ADMIN_EMAIL`                             | Convex production environment                  |
+| Better Auth | No separate account. Generate a random secret with at least 32 characters. Set the allowed site origin.                     | `BETTER_AUTH_SECRET`, `SITE_URL=https://luma.green`, `ADMIN_EMAIL`, `ADMIN_SETUP_TOKEN`        | Convex production environment                  |
 | MSG91       | Create the account and complete its current sender/template approval process. Add a sending budget and provider OTP limits. | `MSG91_AUTH_KEY`, `MSG91_OTP_TEMPLATE_ID`                                                      | Convex production environment                  |
 
 Configure Vercel's Build Command as described in [environments.md](environments.md).
@@ -102,7 +102,9 @@ from a local test or from the presence of keys alone.
 1. Configure the production values above. Follow
    [environments.md](environments.md) to deploy the Convex schema and functions
    before the matching frontend.
-2. Create the admin at `/admin/setup`. Enable two-factor authentication and store
+2. Set a separate random `ADMIN_SETUP_TOKEN` (32–512 characters) on Convex.
+   Give it only to the owner for `/admin/setup`; remove it after account setup.
+   Create the admin, enable two-factor authentication and store
    its recovery codes securely. Check that `/admin` requires that session.
 3. Back up existing data. Apply the
    [material-name repair](../migrations/2026-10-01-material-names.md) from the
