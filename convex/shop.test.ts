@@ -558,3 +558,73 @@ describe("the rate card", () => {
     }
   });
 });
+
+describe("inventory mass boundary", () => {
+  it.each([Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER + 1, -1, 0.5])(
+    "refuses unsafe pickup stock without saving a receipt, points, inventory or audit (stock %s)",
+    async (grams) => {
+      const t = await demoWorld();
+      const shop = await signInAs(t, RAMESH);
+      const bookingId = await bookingOf(t, "Meena Iyer", "accepted");
+      await t.run(async (ctx) => {
+        const booking = await ctx.db.get("bookings", bookingId);
+        if (!booking) throw new Error("Missing booking");
+        const row = await ctx.db
+          .query("inventory")
+          .withIndex("by_org_material", (q) =>
+            q.eq("orgId", booking.orgId).eq("materialCode", "PAPER-NEWS"),
+          )
+          .first();
+        if (!row) throw new Error("Missing paper stock");
+        await ctx.db.patch("inventory", row._id, { grams });
+      });
+      const snapshot = () =>
+        t.run(async (ctx) => ({
+          booking: await ctx.db.get("bookings", bookingId),
+          inventory: await ctx.db.query("inventory").collect(),
+          audit: await ctx.db.query("auditLog").collect(),
+        }));
+      const before = await snapshot();
+      await expect(
+        shop.mutation(api.shop.complete, {
+          bookingId,
+          lines: [
+            { materialCode: "GLASS-BOTTLE", grams: 1000 },
+            { materialCode: "PAPER-NEWS", grams: 2 },
+          ],
+          method: "cash",
+        }),
+      ).rejects.toThrow(/INVALID_WEIGHT/);
+      expect(await snapshot()).toEqual(before);
+    },
+  );
+});
+
+it("completes a pickup exactly at the safe stock boundary", async () => {
+  const t = await demoWorld();
+  const shop = await signInAs(t, RAMESH);
+  const bookingId = await bookingOf(t, "Meena Iyer", "accepted");
+  const stockId = await t.run(async (ctx) => {
+    const booking = await ctx.db.get("bookings", bookingId);
+    if (!booking) throw new Error("Missing booking");
+    const row = await ctx.db
+      .query("inventory")
+      .withIndex("by_org_material", (q) =>
+        q.eq("orgId", booking.orgId).eq("materialCode", "PAPER-NEWS"),
+      )
+      .first();
+    if (!row) throw new Error("Missing paper stock");
+    await ctx.db.patch("inventory", row._id, {
+      grams: Number.MAX_SAFE_INTEGER - 2,
+    });
+    return row._id;
+  });
+  await shop.mutation(api.shop.complete, {
+    bookingId,
+    lines: [{ materialCode: "PAPER-NEWS", grams: 2 }],
+    method: "cash",
+  });
+  const currentStock = await t.run((ctx) => ctx.db.get("inventory", stockId));
+  expect(currentStock?.grams).toBe(Number.MAX_SAFE_INTEGER);
+  expect(await auditActions(t, bookingId)).toContain("booking.completed");
+});

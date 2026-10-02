@@ -30,6 +30,43 @@ The coordinator owns integration and worktree cleanup after a verified merge. Re
 | Mobile rejected navigation can leave an untrusted page displayed                 | Medium         | Restore the trusted page for all rejected routes; ignore native blank/error callbacks without weakening request policy.                                                                     |
 | Two transitive dependency advisories have published patches                      | Moderate / low | Scoped xcode > uuid 11.1.1 and posthog-js > DOMPurify 3.4.16 overrides. Audit clears both; xcode CommonJS v4 compatibility smoke passes.                                                    |
 
+## Follow-up check of the confirmed repairs
+
+An independent second pass checked each row above against the actual source and
+regression tests. The focused backend pass ran 105 tests across eight suites;
+the focused UI pass ran 36 tests across eight suites plus 21 native policy tests.
+No new blocking defect was found in those reported repairs. The full baseline
+check also passed 1,345 web/backend, 36 mobile and 21 desktop tests, lint, types,
+formatting and the production build. These are local checks; deployment proof is
+recorded separately.
+
+- `convex/auth-admin.test.ts` exercises the real Better Auth handlers for setup
+  tokens, admin phone rejection and ordinary member phone sign-in.
+- `convex/files.test.ts` covers attachment ownership and both cleanup orders.
+- `convex/market.test.ts`, `convex/lib/chain.test.ts`, household and Saathi tests
+  cover reservation bounds, exact per-trade prices, waiting requests and active
+  work hidden behind historical records.
+- `convex/support.test.ts` covers the rolling quota, permission checks and audit
+  events without storing submitted content in audit metadata.
+- Admin auth, file-slot, status-view and sign-out tests cover rejected promises,
+  safe feedback and controls that can be retried.
+- Global error, instrumentation and analytics-runtime tests cover Next's retry
+  contract, optional Sentry failures and PostHog initialization retry.
+- Menu hydration tests include delayed scripts in English, Arabic and Urdu.
+  Native tests cover cancelled navigation and rejected destinations; real device
+  behavior remains a separate acceptance gate.
+
+The second pass found an additional stock-balance boundary issue: receiving grams
+could overflow an otherwise valid integer inventory balance. Trade and pickup
+writers now share a checked addition function, reject invalid legacy quantities,
+and leave the whole transaction unchanged on failure. Eight original regression
+cases failed before the repair. The expanded 32 regressions cover invalid values,
+exact-boundary success, existing insufficient-stock errors, and rollback of
+inventory, receipts, points, workflow state and audit writes. A multi-line pickup
+fails after its first material write, proving that earlier writes also roll back.
+This enforces the existing exact-grams contract and changes no user-facing copy
+or screen.
+
 ## Review coverage and rollout
 
 The review covered the web route/component tree, shared validation and environment
