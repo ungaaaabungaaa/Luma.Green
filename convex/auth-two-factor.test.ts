@@ -4,9 +4,10 @@ import { convexTest, type TestConvex } from "convex-test";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { z } from "zod";
 
-import { api, components } from "./_generated/api";
+import { api, components, internal } from "./_generated/api";
 import { createAuth } from "./auth";
 import { convexModules, registerAuth } from "./lib/auth.testing";
+import { queueInbox } from "./lib/push";
 import schema from "./schema";
 
 const modules = convexModules(import.meta.glob("./**/*.*s"));
@@ -830,4 +831,93 @@ it("requires the factor even when a previously valid trusted-device cookie exist
   });
   expect(await response.json()).toMatchObject({ twoFactorRedirect: true });
   expect(await responseBody(trusted.request("/get-session"))).toBeNull();
+});
+
+it("rejects direct phone changes despite an invalid unrelated flag", async () => {
+  const { t, browser } = await signedIn();
+  const newPhone = "+919000000032";
+  await seedCode(t, newPhone);
+  const response = await browser.request("/phone-number/verify", {
+    phoneNumber: newPhone,
+    code: SMS_CODE,
+    updatePhoneNumber: true,
+    trustDevice: "not-a-boolean",
+  });
+  expect(response.status).toBe(403);
+  expect(await response.json()).toMatchObject({
+    code: "UNSUPPORTED_PHONE_ACCOUNT_CHANGE",
+  });
+  expect(await responseBody(browser.request("/get-session"))).toMatchObject({
+    user: { phoneNumber: PHONE },
+  });
+});
+
+it("rejects trusted factor login despite an invalid unrelated flag", async () => {
+  const { t, setup } = await enrolled();
+  const browser = await newChallenge(t);
+  const code = await codeFor(t, setup.totpURI);
+  const response = await browser.request("/two-factor/verify-totp", {
+    code,
+    trustDevice: true,
+    updatePhoneNumber: "not-a-boolean",
+  });
+  expect(response.status).toBe(403);
+  expect(await response.json()).toMatchObject({
+    code: "TRUST_DEVICE_DISABLED",
+  });
+  expect(await responseBody(browser.request("/get-session"))).toBeNull();
+});
+
+it("cancels push recreated by a second tab before real HTTP logout", async () => {
+  vi.useFakeTimers();
+  vi.stubEnv("EXPO_PUSH_ENABLED", "true");
+  vi.stubEnv("EXPO_PUSH_ACCESS_TOKEN", "fixture-test-token");
+  vi.stubEnv("WEB_PUSH_ENABLED", "false");
+  const { t, browser } = await signedIn();
+  const session = sessionShape.parse(
+    await responseBody(browser.request("/get-session")),
+  );
+  const identity = { subject: session.user.id, sessionId: session.session.id };
+  const firstTab = t.withIdentity(identity);
+  const secondTab = t.withIdentity(identity);
+  const profileId = await firstTab.mutation(api.identity.ensureProfile, {
+    locale: "en",
+  });
+  const installationId = "11111111-1111-4111-8111-111111111111";
+  const registration = {
+    token: "ExpoPushToken[second_tab]",
+    locale: "en",
+    installationId,
+  };
+  await firstTab.mutation(api.push.registerExpo, registration);
+  await firstTab.mutation(api.push.unregisterInstallation, { installationId });
+  // The second runtime can register while the shared session is still live,
+  // between the first runtime's device cleanup and its actual HTTP sign-out.
+  const recreated = await secondTab.mutation(
+    api.push.registerExpo,
+    registration,
+  );
+  expect(await responseStatus(browser.request("/sign-out", {}))).toBe(200);
+  await expect(secondTab.query(api.push.settings, {})).rejects.toThrow(
+    "NOT_SIGNED_IN",
+  );
+  await t.run((ctx) =>
+    queueInbox(ctx, {
+      profileId,
+      event: "application_received",
+      dedupKey: "post-signout-fixture-event",
+    }),
+  );
+  const delivery = await t.run((ctx) => ctx.db.query("pushDeliveries").first());
+  expect(delivery?.deviceId).toBe(recreated);
+  if (!delivery) throw new Error("No delivery fixture");
+  expect(
+    await t.mutation(internal.pushState.claim, { id: delivery._id }),
+  ).toBeNull();
+  expect(
+    await t.run((ctx) => ctx.db.get("pushDeliveries", delivery._id)),
+  ).toMatchObject({
+    status: "cancelled",
+  });
+  expect(await t.run((ctx) => ctx.db.get("pushDevices", recreated))).toBeNull();
 });

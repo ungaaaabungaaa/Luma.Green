@@ -4,7 +4,9 @@ import { getFunctionName } from "convex/server";
 import { NextIntlClientProvider } from "next-intl";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { useSignOut } from "@/components/account/use-sign-out";
 import { useAdminSignOut } from "@/components/admin/use-admin-sign-out";
+import { signOutWithDeviceRevocation } from "@/lib/sign-out";
 
 import messages from "../../../messages/en.json";
 import {
@@ -13,6 +15,7 @@ import {
   revokeCurrentDevice,
   useNotificationDevice,
 } from "./device-provider";
+import { NotificationsPage } from "./notifications-page";
 
 interface MockState {
   settings: { webKey: string | null; expo: boolean } | undefined;
@@ -52,13 +55,19 @@ vi.mock("@/lib/auth-client", () => ({
 }));
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isAuthenticated: true }),
-  useQuery: (query: Parameters<typeof getFunctionName>[0]) => {
+  usePaginatedQuery: () => ({
+    results: [],
+    status: "Exhausted",
+    loadMore: vi.fn(),
+  }),
+  useQuery: (query: Parameters<typeof getFunctionName>[0]): unknown => {
     const name = getFunctionName(query);
     if (name === "identity:me") return mocks.me;
     if (name === "push:settings") {
       if (mocks.settingsError) throw new Error("push:settings is unavailable");
       return mocks.settings;
     }
+    if (name === "inbox:unreadCount") return 0;
     throw new Error(name);
   },
   useMutation: (mutation: Parameters<typeof getFunctionName>[0]) => {
@@ -74,7 +83,7 @@ vi.mock("convex/react", () => ({
   },
 }));
 
-function Controls() {
+function Controls({ label = "Enable" }: { label?: string }) {
   const device = useNotificationDevice();
   return (
     <>
@@ -84,7 +93,7 @@ function Controls() {
           void device?.enable();
         }}
       >
-        Enable
+        {label}
       </button>
     </>
   );
@@ -102,6 +111,7 @@ function App() {
 
 beforeEach(() => {
   localStorage.clear();
+  mocks.session = { data: { session: { id: crypto.randomUUID() } } };
   mocks.settings = { webKey: null, expo: true };
   mocks.settingsError = false;
   mocks.postMessage.mockReset();
@@ -311,3 +321,216 @@ function AdminLogout() {
     </>
   );
 }
+
+function MemberLogout({ onSignedOut }: { onSignedOut?: () => void }) {
+  const { signOut, busy } = useSignOut(onSignedOut);
+  return (
+    <button
+      disabled={busy}
+      onClick={() => {
+        void signOut();
+      }}
+    >
+      Log out
+    </button>
+  );
+}
+function SignOutApp({ onSignedOut }: { onSignedOut?: () => void }) {
+  return (
+    <NextIntlClientProvider locale="en" messages={messages}>
+      <NotificationDeviceProvider>
+        <NotificationsPage />
+        <Controls label="Direct enable" />
+        <MemberLogout onSignedOut={onSignedOut} />
+      </NotificationDeviceProvider>
+    </NextIntlClientProvider>
+  );
+}
+
+it("cannot recreate a binding during sign-out, rerender or a same-session remount", async () => {
+  const pendingAuth = Promise.withResolvers<{ error: null }>();
+  const finished = vi.fn();
+  let hasBinding = true;
+  mocks.registerExpo.mockImplementation(() => {
+    hasBinding = true;
+    return "registered-logout-race";
+  });
+  mocks.unregisterInstallation.mockImplementation(() => {
+    hasBinding = false;
+    return null;
+  });
+  mocks.signOut.mockReturnValue(pendingAuth.promise);
+  localStorage.setItem(
+    "luma.push.installation",
+    "11111111-1111-4111-8111-111111111111",
+  );
+  const user = userEvent.setup();
+  const view = render(<SignOutApp onSignedOut={finished} />);
+  const settings = screen.getByRole("button", {
+    name: messages.notifications.enable,
+  });
+  await user.click(screen.getByRole("button", { name: "Log out" }));
+  expect(mocks.signOut).toHaveBeenCalledOnce();
+  expect(hasBinding).toBe(false);
+  expect(settings).toBeDisabled();
+  // A direct caller must be blocked too, even before React disables the UI.
+  await user.click(screen.getByRole("button", { name: "Direct enable" }));
+  await user.click(settings);
+  mocks.settings = { webKey: null, expo: true };
+  view.rerender(<SignOutApp onSignedOut={finished} />);
+  act(() => {
+    document.dispatchEvent(new Event("luma-push-ready"));
+    document.dispatchEvent(new Event("luma-push-changed"));
+    window.dispatchEvent(new Event("focus"));
+  });
+  expect(mocks.postMessage).not.toHaveBeenCalled();
+  expect(mocks.registerExpo).not.toHaveBeenCalled();
+  await act(async () => {
+    pendingAuth.resolve({ error: null });
+    await pendingAuth.promise;
+  });
+  expect(finished).toHaveBeenCalledOnce();
+  expect(settings).toBeDisabled();
+  view.unmount();
+  const remount = render(<SignOutApp />);
+  expect(
+    screen.getByRole("button", { name: messages.common.loading }),
+  ).toBeDisabled();
+  await user.click(screen.getByRole("button", { name: "Direct enable" }));
+  expect(mocks.postMessage).not.toHaveBeenCalled();
+  expect(hasBinding).toBe(false);
+  // An unrelated new authenticated session is not left locked.
+  mocks.session = { data: { session: { id: crypto.randomUUID() } } };
+  remount.rerender(<SignOutApp />);
+  await user.click(
+    screen.getByRole("button", { name: messages.notifications.enable }),
+  );
+  expect(mocks.postMessage).toHaveBeenCalledOnce();
+});
+
+it.each(["revocation", "auth response", "auth rejection"])(
+  "unlocks notification controls after %s failure and permits a safe retry",
+  async (failure) => {
+    localStorage.setItem(
+      "luma.push.installation",
+      "11111111-1111-4111-8111-111111111111",
+    );
+    if (failure === "revocation")
+      mocks.unregisterInstallation.mockRejectedValueOnce(new Error("offline"));
+    else if (failure === "auth response")
+      mocks.signOut.mockResolvedValueOnce({ error: { message: "offline" } });
+    else mocks.signOut.mockRejectedValueOnce(new Error("offline"));
+    const user = userEvent.setup();
+    render(<SignOutApp />);
+    await user.click(screen.getByRole("button", { name: "Log out" }));
+    expect(
+      screen.getByRole("button", { name: messages.notifications.enable }),
+    ).toBeEnabled();
+    expect(localStorage.getItem("luma.push.revocation-pending")).toBe(
+      failure === "revocation" ? "true" : null,
+    );
+    await user.click(
+      screen.getByRole("button", { name: messages.notifications.enable }),
+    );
+    expect(localStorage.getItem("luma.push.revocation-pending")).toBeNull();
+    expect(mocks.postMessage).toHaveBeenCalledOnce();
+    await user.click(screen.getByRole("button", { name: "Log out" }));
+    expect(mocks.signOut).toHaveBeenCalledTimes(
+      failure === "revocation" ? 1 : 2,
+    );
+    expect(
+      screen.getByRole("button", { name: messages.common.loading }),
+    ).toBeDisabled();
+  },
+);
+
+it("waits for and removes a late binding while the session lock is held", async () => {
+  const registration = Promise.withResolvers<string>();
+  const pendingAuth = Promise.withResolvers<{ error: null }>();
+  mocks.registerExpo.mockReturnValue(registration.promise);
+  mocks.signOut.mockReturnValue(pendingAuth.promise);
+  const user = userEvent.setup();
+  const view = render(<SignOutApp />);
+  await user.click(
+    screen.getByRole("button", { name: messages.notifications.enable }),
+  );
+  act(() => {
+    nativeResult("granted", "ExpoPushToken[late]");
+  });
+  await waitFor(() => {
+    expect(mocks.registerExpo).toHaveBeenCalledOnce();
+  });
+  await user.click(screen.getByRole("button", { name: "Log out" }));
+  expect(mocks.signOut).not.toHaveBeenCalled();
+  mocks.settings = { webKey: null, expo: true };
+  view.rerender(<SignOutApp />);
+  await act(async () => {
+    registration.resolve("late-device");
+    await registration.promise;
+  });
+  expect(mocks.unregister).toHaveBeenCalledWith({ id: "late-device" });
+  expect(mocks.signOut).toHaveBeenCalledOnce();
+  await user.click(screen.getByRole("button", { name: "Direct enable" }));
+  expect(mocks.registerExpo).toHaveBeenCalledOnce();
+  await act(async () => {
+    pendingAuth.resolve({ error: null });
+    await pendingAuth.promise;
+  });
+});
+
+it("locks synchronously before revocation starts, including a direct enable caller", async () => {
+  const cleanup = Promise.withResolvers<null>();
+  mocks.unregisterInstallation.mockReturnValue(cleanup.promise);
+  localStorage.setItem(
+    "luma.push.installation",
+    "11111111-1111-4111-8111-111111111111",
+  );
+  render(<App />);
+  let leaving: Promise<void>;
+  act(() => {
+    leaving = signOutWithDeviceRevocation(mocks.session.data.session.id);
+    screen.getByRole("button", { name: "Enable" }).click();
+  });
+  expect(mocks.postMessage).not.toHaveBeenCalled();
+  await act(async () => {
+    cleanup.resolve(null);
+    await leaving;
+  });
+});
+
+it("fails closed before cleanup when the authenticated session ID is not ready", async () => {
+  render(<App />);
+  await expect(signOutWithDeviceRevocation(undefined)).rejects.toThrow(
+    "SIGN_OUT_SESSION_NOT_READY",
+  );
+  expect(mocks.signOut).not.toHaveBeenCalled();
+  expect(mocks.unregisterInstallation).not.toHaveBeenCalled();
+  await userEvent.click(screen.getByRole("button", { name: "Enable" }));
+  expect(mocks.postMessage).toHaveBeenCalledOnce();
+});
+
+it("a second sign-out caller cannot release the first caller's session lock", async () => {
+  const pendingAuth = Promise.withResolvers<{ error: null }>();
+  mocks.signOut.mockReturnValue(pendingAuth.promise);
+  render(<SignOutApp />);
+  let first: Promise<void>;
+  await act(async () => {
+    first = signOutWithDeviceRevocation(mocks.session.data.session.id);
+    await expect(
+      signOutWithDeviceRevocation(mocks.session.data.session.id),
+    ).rejects.toThrow("SIGN_OUT_PENDING");
+  });
+  expect(mocks.signOut).toHaveBeenCalledOnce();
+  expect(
+    screen.getByRole("button", { name: messages.common.loading }),
+  ).toBeDisabled();
+  await userEvent.click(screen.getByRole("button", { name: "Direct enable" }));
+  expect(mocks.postMessage).not.toHaveBeenCalled();
+  await act(async () => {
+    pendingAuth.resolve({ error: null });
+    await first;
+  });
+  expect(
+    screen.getByRole("button", { name: messages.common.loading }),
+  ).toBeDisabled();
+});

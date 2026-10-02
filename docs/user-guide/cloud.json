@@ -48,11 +48,11 @@
     }
   },
   "local_reviewed_revision": {
-    "source_docx_sha256": "31cc98da4a0e3f121808819a71ff4f7b15c928e61c3b2e157b5b1c458aae3a9e",
+    "source_docx_sha256": "a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3",
     "visual_review_pages": 103,
     "image_placements": 99,
-    "recorded_at": "2026-10-02T17:18:59.658464+00:00",
-    "result": "All 103 rendered pages of the combined public detail, account security, failure recovery, notification and industry API guide passed visual review. All capture inputs are current. This newer local revision awaits its coordinated in-place Google Docs update after PR29 merges."
+    "recorded_at": "2026-10-02T19:17:50.622083+00:00",
+    "result": "All 103 rendered pages of the combined public detail, account security, failure recovery, notification and industry API guide passed visual review. Current screenshots and sign-out/session delivery limits are included; changed pages were inspected and other page images match their reviewed versions exactly. All capture inputs are current. This newer local revision awaits its coordinated in-place Google Docs update after PR29 merges."
   },
   "previous_verified_revision": {
     "source_docx_sha256": "d1a565e757f55012c9dcf542334f1ced509b31ab5fe568f632372d2c02fc12e6",

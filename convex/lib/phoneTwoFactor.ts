@@ -74,25 +74,27 @@ function forbidden(code: string): never {
 
 function assertSupportedAction(ctx: Context) {
   const body: unknown = ctx.body;
-  const flags = z
-    .object({
-      updatePhoneNumber: z.boolean().optional(),
-      trustDevice: z.boolean().optional(),
-    })
+  // Each policy flag must be checked independently: a malformed, unrelated
+  // option must not disable a guard before the endpoint validates its body.
+  const phoneChange = z
+    .object({ updatePhoneNumber: z.boolean().optional() })
+    .safeParse(body);
+  const deviceTrust = z
+    .object({ trustDevice: z.boolean().optional() })
     .safeParse(body);
   if (
     ctx.path === "/phone-number/request-password-reset" ||
     ctx.path === "/phone-number/reset-password" ||
     ctx.path === "/sign-in/phone-number" ||
     (ctx.path === "/phone-number/verify" &&
-      flags.success &&
-      flags.data.updatePhoneNumber)
+      phoneChange.success &&
+      phoneChange.data.updatePhoneNumber)
   )
     forbidden("UNSUPPORTED_PHONE_ACCOUNT_CHANGE");
   if (
     ctx.path.startsWith("/two-factor/") &&
-    flags.success &&
-    flags.data.trustDevice
+    deviceTrust.success &&
+    deviceTrust.data.trustDevice
   )
     forbidden("TRUST_DEVICE_DISABLED");
 }

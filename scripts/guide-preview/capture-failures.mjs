@@ -56,6 +56,8 @@ const sources = [
   "src/components/admin/authenticator-step.tsx",
   "src/components/admin/auth-shell.tsx",
   "src/components/account/use-sign-out.ts",
+  "src/components/admin/use-admin-sign-out.ts",
+  "src/lib/sign-out.ts",
   "src/components/join/status-view.tsx",
   "src/components/join/file-slot.tsx",
   "src/components/app/app-shell.tsx",

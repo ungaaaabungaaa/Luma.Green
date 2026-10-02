@@ -317,6 +317,8 @@ const sharedSources = [
   "src/components/account/account-menu.tsx",
   "src/components/account/account-links.tsx",
   "src/components/account/use-sign-out.ts",
+  "src/components/admin/use-admin-sign-out.ts",
+  "src/lib/sign-out.ts",
   "src/components/auth/factor-challenge.tsx",
   "src/components/admin/auth-shell.tsx",
   "src/components/admin/password-recovery.tsx",

@@ -3,7 +3,7 @@ import { v } from "convex/values";
 import { pushEnv } from "../src/lib/env";
 import { internal } from "./_generated/api";
 import { internalMutation } from "./_generated/server";
-import { pushAudit } from "./lib/push";
+import { hasActivePushSession, pushAudit } from "./lib/push";
 
 const sendTarget = v.object({
   deviceId: v.id("pushDevices"),
@@ -20,6 +20,25 @@ export const claim = internalMutation({
     const delivery = await ctx.db.get("pushDeliveries", id);
     if (delivery?.status !== "pending") return null;
     const device = await ctx.db.get("pushDevices", delivery.deviceId);
+    const profile = device
+      ? await ctx.db.get("profiles", device.profileId)
+      : null;
+    const hasSession =
+      device &&
+      profile &&
+      (await hasActivePushSession(ctx, device.sessionId, profile));
+    // Retire only this delivery's device owner. A token reassigned to another
+    // account must survive cancellation of the previous account's queued work.
+    if (!hasSession && device?.profileId === delivery.profileId) {
+      await ctx.db.delete(device._id);
+      await pushAudit(
+        ctx,
+        "push.revoked",
+        "pushDevices",
+        device._id,
+        device.profileId,
+      );
+    }
     const now = Date.now();
     const attempts = await ctx.db
       .query("pushDeliveries")
@@ -30,7 +49,8 @@ export const claim = internalMutation({
       )
       .take(30);
     if (
-      device?.profileId !== delivery.profileId ||
+      !hasSession ||
+      device.profileId !== delivery.profileId ||
       device.expiresAt <= now ||
       !(device.channel === "web" ? pushEnv().web : pushEnv().expo) ||
       attempts.length >= 30

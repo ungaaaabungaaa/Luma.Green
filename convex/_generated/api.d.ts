@@ -29,6 +29,7 @@ import type * as integrationHttp from "../integrationHttp.js";
 import type * as integrations from "../integrations.js";
 import type * as lib_access from "../lib/access.js";
 import type * as lib_admin from "../lib/admin.js";
+import type * as lib_adminRecovery from "../lib/adminRecovery.js";
 import type * as lib_applicationAccess from "../lib/applicationAccess.js";
 import type * as lib_catalogue from "../lib/catalogue.js";
 import type * as lib_chain from "../lib/chain.js";
@@ -105,6 +106,7 @@ declare const fullApi: ApiFromModules<{
   integrations: typeof integrations;
   "lib/access": typeof lib_access;
   "lib/admin": typeof lib_admin;
+  "lib/adminRecovery": typeof lib_adminRecovery;
   "lib/applicationAccess": typeof lib_applicationAccess;
   "lib/catalogue": typeof lib_catalogue;
   "lib/chain": typeof lib_chain;

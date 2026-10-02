@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 import QRCode from "qrcode";
 import { useEffect, useRef, useState } from "react";
 
-import { revokeCurrentDevice } from "@/components/notifications/device-provider";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -22,6 +21,7 @@ import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link, useRouter } from "@/i18n/navigation";
 import { authClient } from "@/lib/auth-client";
+import { signOutWithDeviceRevocation } from "@/lib/sign-out";
 
 import { api } from "../../../convex/_generated/api";
 
@@ -49,6 +49,7 @@ export function AccountSecurity() {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const person = useQuery(api.identity.me, isAuthenticated ? {} : "skip");
   const router = useRouter();
+  const session = authClient.useSession();
   const [setup, setSetup] = useState<Enrollment | null>(null);
   const [codes, setCodes] = useState<string[] | null>(null);
   const [code, setCode] = useState("");
@@ -112,12 +113,7 @@ export function AccountSecurity() {
   }
 
   async function signInAgain() {
-    await revokeCurrentDevice();
-    const { error: failure } = await authClient.signOut();
-    if (failure) {
-      setError("generic");
-      return;
-    }
+    await signOutWithDeviceRevocation(session.data?.session.id);
     router.replace({
       pathname: "/login",
       query: { next: "/account/security" },

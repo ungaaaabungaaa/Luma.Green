@@ -46,7 +46,46 @@ parallel recycling schema additions. Do not deploy this checkout over them.
 The existing Google Doc is verified through main `2ba8246`; its ID and sharing
 remain unchanged. The newer reviewed Word revision will be synced in place by
 the coordinated security followup after PR 29 merges. That followup also owns
-the combined backend rollout. Local Word artifacts are current for this pass.
+the combined backend rollout. Before merging the final green PR head into main,
+hold for that owner's verified additive backend release from the same head.
+Vercel does not deploy Convex as part of its frontend build. Preserve the
+already-deployed recycling schema in the combined release. The cloud document
+update follows the main merge. Local Word artifacts are current for this pass.
+
+Final CI repair: `6a20089` passed all five required checks and native checks.
+Its browser run passed 727 cases but failed nine menu cases; one other menu
+case passed on retry. All ten retry traces show the keyboard test focusing a
+disabled, pre-hydration trigger. The tests now wait for an enabled control and
+assert focus before Enter. The held-script tests also check keyboard reopening
+after hydration. Runtime behavior and all existing assertions remain unchanged.
+The production-build regression passed 30 repeated menu cases with zero retries
+and three delayed-script pointer/keyboard cases.
+The guide's final route table restores the API connections entry; the Word file
+and review record are rebuilt together. No screen changed in this repair, so
+the current browser captures remain valid. Recheck CI on the repair commit.
+
+The final security repair checks forbidden auth flags independently and holds
+push registration blocked through the entire sign-out transaction. The real
+HTTP/control regressions pass, along with 127 focused auth tests, 69 focused
+notification/sign-out tests, scoped lint, TypeScript and the production build.
+The auth patch also passed an independent 23-test handler rerun. Refresh affected
+guide captures, rebuild/review Word, run the full checks and require green
+actual-head CI before completing the release order above.
+
+The server repair also binds push devices to validated Better Auth sessions and
+rejects new delivery claims after that session ends. It covers a second-client
+registration during sign-out, beyond the frontend's same-runtime lock. Legacy
+unbound records require authenticated renewal. Preserve the additive session
+field and its migration notes in the combined backend release. No live provider
+delivery is claimed by the local HTTP regression.
+
+Final local check passes with 1,603 web/backend tests, 43 mobile tests and 22
+desktop tests, plus lint and TypeScript. All 33 final production-browser cases
+pass with zero retries. Independent server review passed 62 auth/push cases and
+the original cross-client regression unchanged. The 240 affected captures and
+103-page guide / 47-page team pack passed visual review; 15 document tests pass.
+Require formatting and hosted checks on the final committed head, then follow
+the backend-before-main release order above.
 
 ## Integrated industry API checkpoint
 

@@ -24,6 +24,7 @@ vi.mock("@/components/providers/convex-provider", () => ({
   isConvexConfigured: true,
 }));
 vi.mock("@/components/notifications/device-provider", () => ({
+  lockDeviceSignOut: () => vi.fn(),
   revokeCurrentDevice: vi.fn(),
 }));
 vi.mock("convex/react", () => ({
@@ -37,6 +38,7 @@ vi.mock("next/navigation", () => ({
 }));
 vi.mock("@/lib/auth-client", () => ({
   authClient: {
+    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
     signIn: { email: mocks.signIn },
     signUp: { email: mocks.signUp },
     twoFactor: {

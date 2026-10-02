@@ -45,7 +45,7 @@ function DeviceSettings() {
   const [failed, setFailed] = useState(false);
   const isEnabled = device?.status === "granted";
   async function toggle() {
-    if (!device) return;
+    if (!device || device.signingOut) return;
     setFailed(false);
     try {
       await (isEnabled ? device.disable() : device.enable());
@@ -59,7 +59,10 @@ function DeviceSettings() {
   else if (device.status === "denied") status = t("denied");
   else if (failed || device.status === "error") status = t("error");
   const actionLabel = t(isEnabled ? "disable" : "enable");
-  const buttonLabel = device?.status === "busy" ? tc("loading") : actionLabel;
+  const buttonLabel =
+    device?.status === "busy" || device?.signingOut
+      ? tc("loading")
+      : actionLabel;
   return (
     <section
       aria-labelledby="notification-device"
@@ -83,7 +86,10 @@ function DeviceSettings() {
         variant={isEnabled ? "outline" : "default"}
         className="shrink-0 self-start"
         disabled={
-          !device || device.status === "busy" || device.status === "unavailable"
+          !device ||
+          device.signingOut ||
+          device.status === "busy" ||
+          device.status === "unavailable"
         }
         onClick={() => {
           void toggle();

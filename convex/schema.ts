@@ -57,6 +57,8 @@ export default defineSchema({
   /** Secrets are only returned to an internal delivery action, never a client. */
   pushDevices: defineTable({
     profileId: v.id("profiles"),
+    // Legacy unbound registrations stay inactive until authenticated renewal.
+    sessionId: v.optional(v.string()),
     installationId: v.string(),
     fingerprint: v.string(),
     channel: v.union(v.literal("web"), v.literal("expo")),

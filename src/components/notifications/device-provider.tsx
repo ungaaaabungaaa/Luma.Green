@@ -10,6 +10,7 @@ import {
   useEffect,
   useRef,
   useState,
+  useSyncExternalStore,
 } from "react";
 
 import { isConvexConfigured } from "@/components/providers/convex-provider";
@@ -25,11 +26,40 @@ import { NotificationErrorBoundary } from "./notification-error-boundary";
 type Status = "off" | "busy" | "granted" | "denied" | "unavailable" | "error";
 interface DeviceContext {
   status: Status;
+  signingOut: boolean;
   enable: () => Promise<void>;
   disable: () => Promise<void>;
 }
 const Device = createContext<DeviceContext | null>(null);
 const lifecycle: { revoke?: () => Promise<void> } = {};
+// Keep successful sign-out locks beyond provider effect cleanup/remount. A new
+// authenticated session has a new ID and therefore a separate lifecycle.
+const signOutLocks = new Map<string, symbol>();
+const signOutListeners = new Set<() => void>();
+function subscribeToSignOut(listener: () => void) {
+  signOutListeners.add(listener);
+  return () => {
+    signOutListeners.delete(listener);
+  };
+}
+function notifySignOut() {
+  for (const listener of signOutListeners) listener();
+}
+
+/** Lock synchronously; only a failed sign-out may release this session. */
+export function lockDeviceSignOut(sessionId: string | undefined): () => void {
+  if (!sessionId) throw new Error("SIGN_OUT_SESSION_NOT_READY");
+  if (signOutLocks.has(sessionId)) throw new Error("SIGN_OUT_PENDING");
+  const lock = Symbol(sessionId);
+  signOutLocks.set(sessionId, lock);
+  notifySignOut();
+  return () => {
+    if (signOutLocks.get(sessionId) !== lock) return;
+    signOutLocks.delete(sessionId);
+    notifySignOut();
+  };
+}
+
 const consentKey = "luma.push.enabled";
 const pendingRevocationKey = "luma.push.revocation-pending";
 const installationKey = "luma.push.installation";
@@ -95,14 +125,21 @@ function ConnectedProvider({
   const me = useQuery(api.identity.me, isAuthenticated ? {} : "skip");
   const Wrapper = revokeOnly ? RevocationOnly : ActiveProvider;
   return isAuthenticated && me?.hasProfile && session.data?.session.id ? (
-    <Wrapper key={session.data.session.id}>{children}</Wrapper>
+    <Wrapper key={session.data.session.id} sessionId={session.data.session.id}>
+      {children}
+    </Wrapper>
   ) : (
     children
   );
 }
 
-function RevocationOnly({ children }: { children: ReactNode }) {
-  useDeviceLifecycle();
+interface SessionProps {
+  children: ReactNode;
+  sessionId: string;
+}
+
+function RevocationOnly({ children, sessionId }: SessionProps) {
+  useDeviceLifecycle(sessionId);
   return children;
 }
 
@@ -114,12 +151,17 @@ const ignoreStatus: (status: Status) => void = () => {
   // The admin cleanup lifecycle has no notification settings display.
 };
 
-function ActiveProvider({ children }: { children: ReactNode }) {
+function ActiveProvider({ children, sessionId }: SessionProps) {
   const locale = useLocale();
   const t = useTranslations("notifications");
   const [settings, setSettings] = useState<PushSettings>();
   const [status, setStatus] = useState<Status>("off");
-  const { enable, disable } = useDeviceLifecycle({
+  const isSigningOut = useSyncExternalStore(
+    subscribeToSignOut,
+    () => signOutLocks.has(sessionId),
+    () => false,
+  );
+  const { enable, disable } = useDeviceLifecycle(sessionId, {
     locale,
     settings,
     setStatus,
@@ -129,11 +171,11 @@ function ActiveProvider({ children }: { children: ReactNode }) {
     setSettings(undefined);
   }, []);
   return (
-    <Device value={{ status, enable, disable }}>
+    <Device value={{ status, signingOut: isSigningOut, enable, disable }}>
       {children}
       <NotificationErrorBoundary onError={unavailable}>
         <SettingsLoader onSettings={setSettings} />
-        {status === "granted" && isDesktopShell() ? (
+        {!isSigningOut && status === "granted" && isDesktopShell() ? (
           <DesktopUpdates
             title={t("lockscreenTitle")}
             body={t("lockscreenBody")}
@@ -156,11 +198,14 @@ function SettingsLoader({
   return null;
 }
 
-function useDeviceLifecycle(options?: {
-  locale: string;
-  settings: PushSettings | undefined;
-  setStatus: (status: Status) => void;
-}) {
+function useDeviceLifecycle(
+  sessionId: string,
+  options?: {
+    locale: string;
+    settings: PushSettings | undefined;
+    setStatus: (status: Status) => void;
+  },
+) {
   const locale = options?.locale ?? "en";
   const settings = options?.settings;
   const setStatus = options?.setStatus ?? ignoreStatus;
@@ -179,6 +224,7 @@ function useDeviceLifecycle(options?: {
 
   const connect = useCallback(
     (shouldAsk: boolean): Promise<void> => {
+      if (signOutLocks.has(sessionId)) return Promise.resolve();
       if (work.current.pending) return work.current.pending;
       if (!settings || work.current.stopped) return Promise.resolve();
       const generation = ++work.current.generation;
@@ -187,7 +233,8 @@ function useDeviceLifecycle(options?: {
       const isCurrent = () =>
         !abort.signal.aborted &&
         generation === work.current.generation &&
-        !work.current.stopped;
+        !work.current.stopped &&
+        !signOutLocks.has(sessionId);
       const bind = async (id: Id<"pushDevices">) => {
         work.current.id = id;
         if (!isCurrent()) {
@@ -250,6 +297,7 @@ function useDeviceLifecycle(options?: {
     },
     [
       locale,
+      sessionId,
       registerExpo,
       registerWeb,
       settings,
@@ -264,6 +312,7 @@ function useDeviceLifecycle(options?: {
     const currentWork = work.current;
     currentWork.stopped = false;
     const restore = () => {
+      if (signOutLocks.has(sessionId)) return;
       try {
         if (localStorage.getItem(pendingRevocationKey) === "true") {
           setStatus("error");
@@ -286,7 +335,7 @@ function useDeviceLifecycle(options?: {
       currentWork.generation += 1;
       currentWork.abort?.abort();
     };
-  }, [connect, setStatus, shouldRestore]);
+  }, [connect, setStatus, shouldRestore, sessionId]);
 
   const disable = useCallback(async () => {
     // Persist only consent, never a token. Do this before revocation so a refresh
@@ -325,9 +374,10 @@ function useDeviceLifecycle(options?: {
   }, [disable]);
 
   const enable = useCallback(async () => {
+    if (signOutLocks.has(sessionId)) return;
     if (localStorage.getItem(pendingRevocationKey) === "true") await disable();
     await connect(true);
-  }, [connect, disable]);
+  }, [connect, disable, sessionId]);
   return { enable, disable };
 }
 

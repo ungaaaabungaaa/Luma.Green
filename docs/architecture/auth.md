@@ -110,6 +110,8 @@ Phone codes remain the primary sign-in method. Normal users do not have a passwo
   separately approved identity recovery process; one is not enabled by this UI.
 - Direct phone-password, phone-password-reset and number-change endpoints are
   disabled. Changing the registered number needs a separate verified workflow.
+  The server checks forbidden number-change and trusted-device flags independently;
+  a malformed unrelated option cannot disable either guard.
 - Authenticator setup, enable/disable, recovery-code changes and password changes
   write audit events without secrets. Every private Convex operation still checks
   the stored session through `requireUser` / `requireAdmin`.

@@ -42,6 +42,8 @@ describe("the mandatory platform guide", () => {
         "src/components/admin/admin-setup.tsx",
         "src/components/admin/admin-login.tsx",
         "src/components/account/use-sign-out.ts",
+        "src/components/admin/use-admin-sign-out.ts",
+        "src/lib/sign-out.ts",
         "src/components/join/file-slot.tsx",
         "src/components/join/status-view.tsx",
         "src/components/help/contact-schema.ts",
@@ -163,6 +165,12 @@ describe("the mandatory platform guide", () => {
   it("keeps Word aligned with the complete source and screenshot input set", () => {
     const directory = "docs/user-guide";
     const source = readFileSync(`${directory}/guide.md`, "utf8");
+    const apiRouteRow = source
+      .split("\n")
+      .find((line) => line.startsWith("| API connections"));
+    expect(apiRouteRow).toMatch(
+      /^\| API connections\s+\| \/app\/integrations; \/api\/v1\/openapi\.json\s+\|$/m,
+    );
     const images = Array.from(
       source.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g),
       (match) => path.posix.normalize(`${directory}/${match[1]}`),
@@ -343,6 +351,8 @@ describe("the mandatory platform guide", () => {
         "src/components/account/account-menu.tsx",
         "src/components/account/account-links.tsx",
         "src/components/account/use-sign-out.ts",
+        "src/components/admin/use-admin-sign-out.ts",
+        "src/lib/sign-out.ts",
         "src/components/auth/factor-challenge.tsx",
         "src/components/admin/auth-shell.tsx",
         "src/components/admin/password-recovery.tsx",
@@ -530,6 +540,9 @@ describe("the mandatory platform guide", () => {
     expect(Object.keys(evidence.sourceHashes)).toEqual(
       expect.arrayContaining([
         "src/components/integrations/api-access.tsx",
+        "src/components/account/use-sign-out.ts",
+        "src/components/notifications/device-provider.tsx",
+        "src/lib/sign-out.ts",
         "src/app/globals.css",
         "src/lib/fonts.ts",
         "scripts/guide-preview/api-main.tsx",

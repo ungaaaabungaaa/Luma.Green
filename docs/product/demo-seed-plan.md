@@ -1,6 +1,9 @@
 # Full-platform demo dataset
 
-Status: planned, 2 October 2026. No local or production database was changed.
+Status: full-platform import planned, 2 October 2026. This full dataset has not
+been imported into either database. A later, separately approved **price-only**
+import is complete in development and production; see
+[the price import record](../delivery/selection-prices-and-account-ux.md).
 The founder’s deployment-isolation choice is pending: a separate demo deployment
 or an explicitly isolated workspace alongside live records. Import depends on
 that choice. The existing whole-table reset is not part of this plan.
@@ -12,9 +15,11 @@ the same logical records and relationships. Cover each recycling role and all
 six material families with enough activity to exercise the UI and run small
 load checks. Clearly identify every record as demo data.
 
-The founder chose **loading placeholders until real prices are available**.
-Synthetic price history belongs only in an explicit demo workspace. It must
-not replace the public price board or be presented as a current market quote.
+The founder first chose loading placeholders, then explicitly requested dummy
+prices on production. The separate price-only import implements that later
+choice, with visible sample labels. This full-platform plan still requires an
+isolated demo workspace; its synthetic records must not be presented as real
+business activity or current market quotes.
 
 ## What exists today
 

@@ -1,6 +1,6 @@
 {
-  "capturedAt": "2026-10-02T16:56:18.454Z",
-  "sourceCommit": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
+  "capturedAt": "2026-10-02T19:08:26.492Z",
+  "sourceCommit": "6a200898b6bb70af87322990f37b7282f509b089",
   "sourceHashes": {
     "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f",
     "messages/ar.json": "59058e21c58ffe4b1a29eab80087ef210eb675244654aab612bf866459c8cff6",
@@ -16,12 +16,14 @@
     "src/components/ui/input.tsx": "3417db3d25a5fbc95792c2f8d49cfce5190b51640da196f74246f5cae5c4f7ea",
     "src/components/ui/dialog.tsx": "9cee303ad5afb2d5b5e22c2219d972b54f656e66c4ac2157f9e1b6d126b53f12",
     "src/components/ui/sonner.tsx": "4256466d8850445be4b7da50702fdb3f0ca3931c54f391f8671c4142bf4e6a24",
-    "scripts/guide-preview/capture-failures.mjs": "6bff53cea99e3db7ab9e0040885a288ef2c26f57ef2f3f521a1b8dd9b2428b88",
+    "scripts/guide-preview/capture-failures.mjs": "bce677a1f4ee83b8ab4f1853987643beefb082e41b2853a29ccbe9620b8b2003",
     "src/components/admin/admin-login.tsx": "c7f4c1c3ed4566af7158056533fafc5e891f677bd54fd7d0e47f8d1270d6571e",
     "src/components/admin/admin-setup.tsx": "b7c3dc10c6dd8be4fb298a12189a1e141a7739873f096008d1d546a04927f4e4",
     "src/components/admin/authenticator-step.tsx": "157e073701eebf0f38f3b5e9d7586b7b5bf7cc7773accb6c97c1399e8114bd41",
     "src/components/admin/auth-shell.tsx": "5bea6f074ce9879f9c85d920e12a328343bb4e983f9025bffa77ae838be69699",
-    "src/components/account/use-sign-out.ts": "36c5a7ecb9b0aa5cc09fe6e29b25d7d9d09b4ebfc0e1509ab9c8a5ba2cb51b30",
+    "src/components/account/use-sign-out.ts": "1553c45b5602ef9a1cb369fcc946d453e37bc3eeca8e88cae3f95b66dac5d455",
+    "src/components/admin/use-admin-sign-out.ts": "f2caf07bfe67c46732c8a76ca14218df20eda0d0da3a054cad1e68eeaba90889",
+    "src/lib/sign-out.ts": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
     "src/components/join/status-view.tsx": "a9e2c89cb041f9c50de61a64437a4242f5f6804e7e10f6c1dbe960eab86c76ea",
     "src/components/join/file-slot.tsx": "589ad966f51293f545a4913cffb63132ea2a3de60ef329cfb94b4d99081e5bce",
     "src/components/app/app-shell.tsx": "d6ba070694b7de7d7a5cac8104ba70de24f7279b233087a28b9feaecd0693563",
@@ -35,7 +37,7 @@
     "scripts/guide-preview/failure.tsx": "64980247dc85072a21a84d18f011fdec2173ca9296aacd6c772acb30f47e582e",
     "scripts/guide-preview/failure.html": "2d53b71eee3b6b01d5ca8394ae3f9b803211087c42c382545742ddde15948a9c",
     "src/components/account/account-links.tsx": "810f8cafb68db720f4e328da763c56a2fe1b7f5896590f15f8833435480ccf74",
-    "src/components/notifications/device-provider.tsx": "cc26b4955e0d1830a22f145674e7f7345f730975c7301d8f5b6057c475633d95",
+    "src/components/notifications/device-provider.tsx": "9732de33c946afc38e6f9f633f9a99e25c66afe4b6c93ab72213dc786fd73f3e",
     "scripts/guide-preview/auth.ts": "7a14df477174e1c57e9aa51de9172b83455280bba4d9c85b5bdab8019c60b9b8",
     "scripts/guide-preview/provider.tsx": "97187377a9ad4ac5ea2b320e937bb78a95ccdbc644520dfaf5b5cf6dae80f802",
     "scripts/guide-preview/queries.ts": "181c69bfcb9c5e7258efaa5cba1206122a1c8625ca8663ff5a4a2f91ec4d591a",
@@ -1208,7 +1210,7 @@
         "width": 768,
         "height": 1024
       },
-      "sha256": "738358bdc876f357013fcfc1dabf938369ef262af96f729fa4876a82746b1303",
+      "sha256": "1a8693e7c5fad76670adb19aef99716be6a7ebb53dfbf847832c7f7a0be6b6c0",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1229,7 +1231,7 @@
         "width": 1440,
         "height": 1000
       },
-      "sha256": "9e170135962aa526cab818f81dae4e1e67ff348de9ef4e463d6817153e81f816",
+      "sha256": "5ae9fda08fee17719245f4bd04008ee2f7f25dce8ab7354e54fd9b00a7b33023",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1271,7 +1273,7 @@
         "width": 768,
         "height": 1024
       },
-      "sha256": "fbf2dd9e774095d80dda923b91c98d56c6a7667341aef0b2c02f515f7e7c8765",
+      "sha256": "0ee9d1ca0fe4c6723508976b65a2871c5e1a6567011217b6ead925043d752256",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1292,7 +1294,7 @@
         "width": 1440,
         "height": 1000
       },
-      "sha256": "35da280051db121882750702da00cb0606ab5d696f0d960031cf3f66afe0c4e0",
+      "sha256": "9b0854aa53ed2fb20fc003249ec694c3f13174c9a092804640568664dd26ada3",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",
@@ -1334,7 +1336,7 @@
         "width": 768,
         "height": 1024
       },
-      "sha256": "406cdfe340f1a02478bb26db01d685dc27555771d44dfe1f39b93dcb1c675937",
+      "sha256": "36556e23d14aac1d4b23793907fee335f9e03036645cf9aa47789c2a5b3e47b9",
       "provenance": "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",
       "checks": [
         "failure feedback and retry or setup control",

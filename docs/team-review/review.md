@@ -175,7 +175,7 @@ case is a task to run, not a result that has already passed.
 
 ## 11. Accounts and APIs to finish
 
-Before the next Convex release, combine and review this branch's backend changes with the parallel ecosystem branch. Do not overwrite that work's production additions with an older schema or function set. This review records local implementation and tests; it does not claim a new backend release.
+Combine and review these backend changes with the parallel ecosystem branch before release. Preserve its production schema and functions. Release the checked additive backend before merging the frontend update into main. This pack records local implementation and tests; it does not claim a verified backend release.
 
 The repository has the integration code. Creating an account, approving its
 templates and proving a real request are separate jobs. Do not paste secrets

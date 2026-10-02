@@ -149,6 +149,63 @@ the stable document ID, folder and sharing are preserved. The security followup
 also owns the backend integration and rollout that preserves the ecosystem,
 API, account and notification schema together.
 
+Release order: push and verify the final PR head, then hold its main merge while
+the backend owner integrates that exact head, checks the combined schema and
+releases its additive Convex changes. Require a zero-deletion dry run that
+preserves the existing recycling tables/indexes. Merge the frontend only after
+the backend rollout is verified. The in-place Google Docs update follows merge.
+
+## Final CI repair
+
+At `6a20089`, the five required checks and native validation passed. The browser
+run passed 727 cases, failed nine menu cases and reported one menu case passing
+on retry. All ten retry traces show `focus()` resolving to the disabled
+pre-hydration menu button before Enter. The test now waits for enabled state
+and confirms focus; no runtime code, assertions or retry settings were removed.
+The existing delayed-script cases also check keyboard reopening after hydration.
+The production-build regression passed all ten menu cases three times with
+one worker and zero retries, plus all three delayed-script cases.
+
+Guide impact: restore the API connections route-reference row for
+`/app/integrations` and `/api/v1/openapi.json`, rebuild the maintained Word file
+and review the result. The tested screens did not change, so the current
+browser captures remain valid. Hosted checks must pass on the repair commit.
+
+Independent security review found two additional blockers. The final repair
+checks forbidden phone-change and trusted-device flags independently, so a
+malformed unrelated option cannot disable either guard. Both real HTTP
+regressions failed before the change and pass with typed 403 responses and
+unchanged identity/session state. All 127 focused auth tests pass; a separate
+reviewer applied the patch to the previous head and passed all 23 handler tests.
+
+The same repair closes push registration for the complete sign-out transaction,
+including account reauthentication and admin sign-out. A synchronous session
+lock covers direct Enable calls, restoration, rerenders, same-session remounts
+and late registrations. Failure releases that attempt's lock for retry; a new
+session has a separate lifecycle. All 69 focused tests pass, including the real
+NotificationsPage control, pending auth, failed cleanup, missing session and
+concurrent callers. Scoped lint, TypeScript and the final production build pass.
+Affected capture manifests and document artifacts are refreshed with this
+repair. Require green hosted checks on the new actual head before merging.
+
+Server delivery also validates the registration's bound Better Auth session.
+A second client can no longer recreate a deliverable binding just before a
+shared session ends: a later claim cancels the delivery and retires that inactive
+binding. Registration validates session ownership, and its reuse path refreshes
+the binding when the session changes. Legacy rows without a proven session stay
+inactive until authenticated registration. Already in-flight delivery cannot be
+recalled. The real HTTP session-delete ordering regression failed before the
+repair and passes after it; no provider request is part of that proof.
+
+Final combined local check: lint, TypeScript, 1,603 web/backend tests, 43 mobile
+tests and 22 desktop tests pass. The final production-browser slice passes all
+33 account/auth/menu cases with zero retries. Independent review passes 62
+auth/push cases plus the original cross-client regression unchanged. All 240
+affected screenshot captures pass review (227 exact matches to reviewed pixels,
+13 changed originals inspected); the guide remains 103 pages and the team pack
+47 pages with 92 manual cases. All 15 document tests pass. The final pushed head
+still requires hosted checks and the coordinated backend release before merge.
+
 ## Release limits
 
 No new native signing, store upload, APNs/FCM/provider message or native device

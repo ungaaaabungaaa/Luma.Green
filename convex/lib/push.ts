@@ -1,9 +1,10 @@
 import { ConvexError, v } from "convex/values";
+import { z } from "zod";
 
 import { isLocale } from "../../src/i18n/locales";
 import { pushEnv } from "../../src/lib/env";
-import { internal } from "../_generated/api";
-import type { Id } from "../_generated/dataModel";
+import { components, internal } from "../_generated/api";
+import type { Doc, Id } from "../_generated/dataModel";
 import type { MutationCtx, QueryCtx } from "../_generated/server";
 import { requireUser } from "./access";
 import { findProfile } from "./applicationAccess";
@@ -70,6 +71,30 @@ export async function requireNotificationProfile(ctx: QueryCtx) {
   const profile = await findProfile(ctx, user._id);
   if (!profile) throw new ConvexError("NO_PROFILE");
   return profile;
+}
+
+/** A registration belongs to a live server session, not just an account. */
+export async function hasActivePushSession(
+  ctx: QueryCtx,
+  sessionId: string | undefined,
+  profile: Doc<"profiles">,
+): Promise<boolean> {
+  if (!sessionId) return false;
+  const stored: unknown = await ctx.runQuery(
+    components.betterAuth.adapter.findOne,
+    {
+      model: "session",
+      where: [{ field: "_id", value: sessionId }],
+    },
+  );
+  const session = z
+    .object({ userId: z.string(), expiresAt: z.number() })
+    .safeParse(stored);
+  return (
+    session.success &&
+    session.data.userId === profile.authUserId &&
+    session.data.expiresAt > Date.now()
+  );
 }
 
 export async function pushAudit(

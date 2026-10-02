@@ -31,11 +31,15 @@ const state = vi.hoisted(
 );
 
 vi.mock("@/components/notifications/device-provider", () => ({
+  lockDeviceSignOut: () => vi.fn(),
   revokeCurrentDevice: vi.fn().mockResolvedValue(undefined),
 }));
 vi.mock("./use-workspace", () => ({ useWorkspace: () => state.workspace }));
 vi.mock("@/lib/auth-client", () => ({
-  authClient: { signOut: state.signOut },
+  authClient: {
+    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
+    signOut: state.signOut,
+  },
 }));
 vi.mock("@/i18n/navigation", () => ({
   Link: (props: ComponentProps<"a">) => (

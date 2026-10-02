@@ -22,9 +22,14 @@ vi.mock("convex/react", () => ({
   useQuery: mocks.identity,
 }));
 vi.mock("@/lib/auth-client", () => ({
-  authClient: { twoFactor: mocks, signOut: mocks.signOut },
+  authClient: {
+    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
+    twoFactor: mocks,
+    signOut: mocks.signOut,
+  },
 }));
 vi.mock("@/components/notifications/device-provider", () => ({
+  lockDeviceSignOut: () => vi.fn(),
   revokeCurrentDevice: mocks.revoke,
 }));
 vi.mock("@/i18n/navigation", () => ({

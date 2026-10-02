@@ -5,9 +5,14 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { z } from "zod";
 
 import { locales } from "../src/i18n/locales";
-import { api, internal } from "./_generated/api";
+import { api, components, internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
-import { convexModules, registerAuth, signIn } from "./lib/auth.testing";
+import {
+  convexModules,
+  registerAuth,
+  signIn,
+  signInAs,
+} from "./lib/auth.testing";
 import { queueNotification } from "./lib/notifications";
 import { isValidEndpoint, isValidExpoToken, isValidWebKeys } from "./lib/push";
 import { pushCopy } from "./lib/pushCopy";
@@ -409,6 +414,221 @@ describe("push devices and delivery claims", () => {
     expect(
       await t.mutation(internal.pushState.claim, { id: delivery!._id }),
     ).toBeNull();
+    const reassigned = await t.run((ctx) =>
+      ctx.db.query("pushDevices").first(),
+    );
+    expect(reassigned?.profileId).not.toBe(delivery?.profileId);
+    expect(reassigned).not.toBeNull();
+  });
+  it.each(["expired", "revoked", "unbound", "wrong-owner"] as const)(
+    "cancels and audits an inactive %s session binding exactly once",
+    async (state) => {
+      const { t, alice, bob, queue } = await world();
+      const id = await alice.mutation(api.push.registerExpo, {
+        token,
+        locale: "en",
+        installationId,
+      });
+      const device = await t.run((ctx) => ctx.db.get("pushDevices", id));
+      if (!device?.sessionId) throw new Error("Missing bound session fixture");
+      const sessionId = device.sessionId;
+      await queue();
+      switch (state) {
+        case "expired": {
+          await t.run((ctx) =>
+            ctx.runMutation(components.betterAuth.adapter.updateOne, {
+              input: {
+                model: "session",
+                where: [{ field: "_id", value: sessionId }],
+                update: { expiresAt: Date.now() },
+              },
+            }),
+          );
+          break;
+        }
+        case "revoked": {
+          await deleteSession(t, device.sessionId);
+          break;
+        }
+        case "unbound": {
+          await t.run((ctx) => ctx.db.patch(id, { sessionId: undefined }));
+          break;
+        }
+        case "wrong-owner": {
+          const otherId = await bob.mutation(api.push.registerExpo, {
+            token: "ExpoPushToken[bob_session]",
+            locale: "ar",
+            installationId: otherInstallation,
+          });
+          const other = await t.run((ctx) =>
+            ctx.db.get("pushDevices", otherId),
+          );
+          await t.run((ctx) =>
+            ctx.db.patch(id, { sessionId: other?.sessionId }),
+          );
+          break;
+        }
+      }
+      const delivery = await t.run((ctx) =>
+        ctx.db.query("pushDeliveries").first(),
+      );
+      if (!delivery) throw new Error("No delivery fixture");
+      expect(
+        await t.mutation(internal.pushState.claim, { id: delivery._id }),
+      ).toBeNull();
+      expect(
+        await t.mutation(internal.pushState.claim, { id: delivery._id }),
+      ).toBeNull();
+      expect(await deliveryStatus(t, delivery._id)).toBe("cancelled");
+      expect(await t.run((ctx) => ctx.db.get("pushDevices", id))).toBeNull();
+      const audits = await t.run((ctx) => ctx.db.query("auditLog").collect());
+      expect(
+        audits.filter(
+          (row) => row.entityId === id && row.action === "push.revoked",
+        ),
+      ).toHaveLength(1);
+      expect(
+        audits.filter(
+          (row) =>
+            row.entityId === delivery._id && row.action === "push.cancelled",
+        ),
+      ).toHaveLength(1);
+      expect(audits.some((row) => row.action === "push.sending")).toBe(false);
+    },
+  );
+  it.each(["legacy", "new-session"] as const)(
+    "rebinds a %s registration without cancelling same-owner queued content",
+    async (state) => {
+      const { t, alice, queue } = await world();
+      const registration = { token, locale: "en", installationId };
+      const id = await alice.mutation(api.push.registerExpo, registration);
+      const original = await t.run((ctx) => ctx.db.get("pushDevices", id));
+      if (!original?.sessionId)
+        throw new Error("Missing bound session fixture");
+      await queue();
+      if (state === "legacy")
+        await t.run((ctx) => ctx.db.patch(id, { sessionId: undefined }));
+      const active =
+        state === "legacy" ? alice : await signInAs(t, "+919000000101");
+      expect(await active.mutation(api.push.registerExpo, registration)).toBe(
+        id,
+      );
+      const renewed = await t.run((ctx) => ctx.db.get("pushDevices", id));
+      expect(renewed?.sessionId).toBeDefined();
+      if (state === "new-session") {
+        expect(renewed?.sessionId).not.toBe(original.sessionId);
+        await deleteSession(t, original.sessionId);
+      }
+      const delivery = await t.run((ctx) =>
+        ctx.db.query("pushDeliveries").first(),
+      );
+      if (!delivery) throw new Error("No delivery fixture");
+      expect(
+        await t.mutation(internal.pushState.claim, { id: delivery._id }),
+      ).toMatchObject({ deviceId: id });
+      expect(
+        await t.run((ctx) => ctx.db.get("pushDevices", id)),
+      ).not.toBeNull();
+    },
+  );
+  it.each(["revoked", "legacy"] as const)(
+    "removes inactive %s bindings before applying the device quota",
+    async (state) => {
+      const { t, alice } = await world();
+      for (let index = 0; index < 10; index++) {
+        await alice.mutation(api.push.registerExpo, {
+          token: `ExpoPushToken[old_${String(index)}]`,
+          locale: "en",
+          installationId: `00000000-0000-4000-8000-${String(index).padStart(12, "0")}`,
+        });
+      }
+      const previous = await t.run((ctx) =>
+        ctx.db.query("pushDevices").collect(),
+      );
+      if (!previous[0]?.sessionId)
+        throw new Error("Missing bound session fixture");
+      if (state === "revoked") await deleteSession(t, previous[0].sessionId);
+      else
+        await t.run(async (ctx) => {
+          for (const device of previous)
+            await ctx.db.patch(device._id, { sessionId: undefined });
+        });
+      const active = await signInAs(t, "+919000000101");
+      const id = await active.mutation(api.push.registerExpo, {
+        token,
+        locale: "en",
+        installationId,
+      });
+      const remaining = await t.run((ctx) =>
+        ctx.db.query("pushDevices").collect(),
+      );
+      expect(remaining.map((device) => device._id)).toEqual([id]);
+      const audits = await t.run((ctx) => ctx.db.query("auditLog").collect());
+      expect(
+        audits.filter((row) => row.action === "push.replaced"),
+      ).toHaveLength(10);
+    },
+  );
+  it("revoking one session preserves another active session's device", async () => {
+    const { t, alice, queue } = await world();
+    const oldId = await alice.mutation(api.push.registerExpo, {
+      token,
+      locale: "en",
+      installationId,
+    });
+    const oldDevice = await t.run((ctx) => ctx.db.get("pushDevices", oldId));
+    if (!oldDevice?.sessionId) throw new Error("Missing bound session fixture");
+    const otherSession = await signInAs(t, "+919000000101");
+    const otherId = await otherSession.mutation(api.push.registerExpo, {
+      token: "ExpoPushToken[other_live_session]",
+      locale: "en",
+      installationId: otherInstallation,
+    });
+    await deleteSession(t, oldDevice.sessionId);
+    await queue();
+    const deliveries = await t.run((ctx) =>
+      ctx.db.query("pushDeliveries").collect(),
+    );
+    for (const delivery of deliveries) {
+      const claimed = await t.mutation(internal.pushState.claim, {
+        id: delivery._id,
+      });
+      if (delivery.deviceId === oldId) expect(claimed).toBeNull();
+      else expect(claimed?.deviceId).toBe(otherId);
+    }
+    expect(deliveries).toHaveLength(2);
+    expect(
+      await t.run((ctx) => ctx.db.get("pushDevices", otherId)),
+    ).not.toBeNull();
+  });
+  it("rejects registration when the session belongs to a different profile", async () => {
+    const { t, alice, bob, aliceId } = await world();
+    const bobDeviceId = await bob.mutation(api.push.registerExpo, {
+      token,
+      locale: "en",
+      installationId,
+    });
+    const bobDevice = await t.run((ctx) =>
+      ctx.db.get("pushDevices", bobDeviceId),
+    );
+    const profile = await t.run((ctx) => ctx.db.get("profiles", aliceId));
+    if (!profile || !bobDevice?.sessionId)
+      throw new Error("Missing owner fixture");
+    const mismatched = t.withIdentity({
+      subject: profile.authUserId,
+      sessionId: bobDevice.sessionId,
+    });
+    await expect(
+      mismatched.mutation(api.push.registerExpo, {
+        token: "ExpoPushToken[mismatched]",
+        locale: "en",
+        installationId,
+      }),
+    ).rejects.toThrow("NOT_SIGNED_IN");
+    // The valid owner's independent session is unaffected.
+    expect(await alice.query(api.push.settings, {})).toMatchObject({
+      expo: true,
+    });
   });
   it("removes invalid subscriptions without removing another device", async () => {
     const { t, alice, queue } = await world();
@@ -446,4 +666,16 @@ async function deliveryStatus(
 ) {
   const row = await t.run((ctx) => ctx.db.get("pushDeliveries", id));
   return row?.status;
+}
+
+async function deleteSession(
+  t: Awaited<ReturnType<typeof world>>["t"],
+  sessionId: string,
+) {
+  await t.run((ctx) =>
+    ctx.runMutation(components.betterAuth.adapter.deleteMany, {
+      input: { model: "session", where: [{ field: "_id", value: sessionId }] },
+      paginationOpts: { cursor: null, numItems: 1 },
+    }),
+  );
 }

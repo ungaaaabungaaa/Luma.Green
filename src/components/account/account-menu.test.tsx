@@ -15,11 +15,16 @@ const state = vi.hoisted(() => ({
   revoke: vi.fn(),
 }));
 vi.mock("@/components/notifications/device-provider", () => ({
+  lockDeviceSignOut: () => vi.fn(),
   revokeCurrentDevice: state.revoke,
 }));
 vi.mock("@/lib/auth-client", () => ({
   authClient: {
-    useSession: () => ({ data: state.signedIn ? { user: {} } : null }),
+    useSession: () => ({
+      data: state.signedIn
+        ? { user: {}, session: { id: "fixture-session" } }
+        : null,
+    }),
     signOut: state.signOut,
   },
 }));

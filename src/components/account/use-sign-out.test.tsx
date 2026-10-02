@@ -10,10 +10,14 @@ const calls = vi.hoisted(() => ({
   translate: (key: string) => key,
 }));
 vi.mock("@/components/notifications/device-provider", () => ({
+  lockDeviceSignOut: () => vi.fn(),
   revokeCurrentDevice: calls.revoke,
 }));
 vi.mock("@/lib/auth-client", () => ({
-  authClient: { signOut: calls.signOut },
+  authClient: {
+    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
+    signOut: calls.signOut,
+  },
 }));
 vi.mock("next-intl", () => ({ useTranslations: () => calls.translate }));
 vi.mock("sonner", () => ({ toast: { error: calls.error } }));

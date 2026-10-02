@@ -6,6 +6,7 @@ import { mutation, type MutationCtx, query } from "./_generated/server";
 import {
   checkedLocale,
   fingerprint,
+  hasActivePushSession,
   isValidEndpoint,
   isValidExpoToken,
   isValidWebKeys,
@@ -63,36 +64,46 @@ async function checkRegistrationLimit(
 
 async function removeOldDevices(
   ctx: MutationCtx,
-  profileId: Id<"profiles">,
+  profile: Doc<"profiles">,
   installation: string,
   currentId: Id<"pushDevices"> | undefined,
   now: number,
 ) {
   const devices = await ctx.db
     .query("pushDevices")
-    .withIndex("by_profile", (q) => q.eq("profileId", profileId))
+    .withIndex("by_profile", (q) => q.eq("profileId", profile._id))
     .take(10);
+  let remaining = 0;
   for (const device of devices) {
+    if (device._id === currentId) continue;
     const shouldRemove =
-      device.expiresAt <= now || device.installationId === installation;
-    if (!shouldRemove || device._id === currentId) continue;
-    await ctx.db.delete(device._id);
-    await pushAudit(ctx, "push.replaced", "pushDevices", device._id, profileId);
+      device.expiresAt <= now ||
+      device.installationId === installation ||
+      !(await hasActivePushSession(ctx, device.sessionId, profile));
+    if (shouldRemove) {
+      await ctx.db.delete(device._id);
+      await pushAudit(
+        ctx,
+        "push.replaced",
+        "pushDevices",
+        device._id,
+        profile._id,
+      );
+    } else remaining++;
   }
-  return devices.filter(
-    (device) =>
-      device.expiresAt > now && device.installationId !== installation,
-  ).length;
+  return remaining;
 }
 
 function canReuseDevice(
   current: Doc<"pushDevices"> | null,
   input: Registration,
   profileId: Id<"profiles">,
+  sessionId: string,
   now: number,
 ): boolean {
   return (
     current?.profileId === profileId &&
+    current.sessionId === sessionId &&
     current.installationId === input.installationId &&
     current.locale === input.locale &&
     current.keys?.auth === input.keys?.auth &&
@@ -106,6 +117,13 @@ async function register(
   input: Registration,
 ): Promise<Id<"pushDevices">> {
   const profile = await requireNotificationProfile(ctx);
+  const identity = await ctx.auth.getUserIdentity();
+  const sessionId = identity?.sessionId;
+  if (
+    typeof sessionId !== "string" ||
+    !(await hasActivePushSession(ctx, sessionId, profile))
+  )
+    throw new ConvexError("NOT_SIGNED_IN");
   checkInstallation(input.installationId);
   const locale = checkedLocale(input.locale);
   const now = Date.now();
@@ -114,11 +132,11 @@ async function register(
     .query("pushDevices")
     .withIndex("by_fingerprint", (q) => q.eq("fingerprint", hash))
     .unique();
-  if (current && canReuseDevice(current, input, profile._id, now))
+  if (current && canReuseDevice(current, input, profile._id, sessionId, now))
     return current._id;
   const remaining = await removeOldDevices(
     ctx,
-    profile._id,
+    profile,
     input.installationId,
     current?._id,
     now,
@@ -132,6 +150,7 @@ async function register(
     locale,
     fingerprint: hash,
     profileId: profile._id,
+    sessionId,
     expiresAt: now + 30 * 24 * 60 * 60 * 1000,
     updatedAt: now,
   };

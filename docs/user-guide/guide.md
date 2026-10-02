@@ -741,7 +741,7 @@ This is an owner/developer checklist, not a list of admin console buttons. The e
 | Support and prices   | Real contact details; verified pilot prices; staffed review/support process                                                                           |
 | Operations           | Measured backups and restore drill, provider cost limits and incident procedure                                                                       |
 
-Before the next Convex release, merge and review the backend changes from this work together with the parallel ecosystem branch. Preserve its current production schema and functions. Do not deploy this branch over those additions from an older checkout. No backend release of the new account-security or notification work is claimed by this guide.
+Before the next Convex release, merge and review the backend changes from this work together with the parallel ecosystem branch. Preserve its current production schema and functions. Do not deploy this branch over those additions from an older checkout. Release the checked additive backend before merging the frontend update into main. No backend release of the new account-security or notification work is claimed by this guide.
 
 Use docs/operations/launch-checklist.md, app-releases.md, push-notifications.md, low-cost-operation.md and sms-notifications.md. Keep secrets outside Git and the guide. AUTH_DEV_MODE belongs only to a development or preview environment.
 
@@ -762,6 +762,7 @@ A branch push is not deployment. A build is not provider approval. A provider ac
 | Role home and requests | /app; /app/requests; /app/requests/[id]                                                            |
 | Stock and prices       | /app/stock; /app/prices                                                                            |
 | Business trade         | /app/market; /app/sell; /app/trades; /app/trades/[id]/invoice                                      |
+| API connections        | /app/integrations; /api/v1/openapi.json                                                            |
 | Reporting              | /app/impact; /app/compliance                                                                       |
 | Help                   | /help; /help/[role]; /help/[role]/[guide]; /help/contact                                           |
 | Reference/enquiry      | /standards; /solar                                                                                 |
@@ -1004,9 +1005,11 @@ An empty inbox means that no update is available in the loaded account view. A l
 3. If permission is denied, the app remains usable. If the operating system blocks another prompt, change its notification setting before trying again.
 4. When enabled, alerts use general Luma.Green text. Private pickup and application details remain in the signed-in application.
 5. Open an alert to reach the inbox in the active language. If the session has ended, sign in before reading private updates.
-6. Select Turn off to stop alerts for this installation. Inbox history stays available. Sign-out revokes this installation's registration before clearing the session. If sign-out reports an error, retry; do not assume that access or delivery has already ended.
+6. Select Turn off to stop alerts for this installation. Inbox history stays available. Sign-out revokes this installation's registration before clearing the session. The notification control stays disabled while sign-out is pending. If sign-out reports an error, retry; do not assume that access or delivery has already ended.
 
 Each explicit mobile alert tap opens the inbox, including a second tap after you visited another page. A notification does not grant account access. There is no action in the user interface to send an arbitrary notification to another person.
+
+The server checks that the linked sign-in session is still active before starting each delivery. A notification already in transit can still arrive.
 
 If device cleanup fails, its pending state remains after a reload. Retry sign-out
 on that device; a reload alone does not prove that cleanup or sign-out finished.

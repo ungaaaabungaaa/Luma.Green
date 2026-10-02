@@ -255,7 +255,9 @@ for (const { locale, copy } of [
         name: copy.nav.openMenu,
         exact: true,
       });
+      await expect(trigger).toBeEnabled();
       await trigger.focus();
+      await expect(trigger).toBeFocused();
       await page.keyboard.press("Enter");
       const menu = page.getByRole("dialog");
       await expect(menu).toBeVisible();

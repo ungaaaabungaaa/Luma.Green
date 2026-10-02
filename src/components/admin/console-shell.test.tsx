@@ -24,10 +24,14 @@ vi.mock("next/navigation", () => ({
   useRouter: () => ({ replace: mocks.replace }),
 }));
 vi.mock("@/components/notifications/device-provider", () => ({
+  lockDeviceSignOut: () => vi.fn(),
   revokeCurrentDevice: mocks.revoke,
 }));
 vi.mock("@/lib/auth-client", () => ({
-  authClient: { signOut: mocks.signOut },
+  authClient: {
+    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
+    signOut: mocks.signOut,
+  },
 }));
 vi.mock("@/components/providers/query-provider", () => ({
   QueryProvider: ({ children }: { children: ReactNode }) => children,

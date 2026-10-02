@@ -70,9 +70,34 @@ itself is bounded separately.
 - Convex derives the caller from a real session. An installation is indexed with
   its owner. Knowing another installation ID cannot revoke another account's
   devices. One token can bind to only one account at a time.
-- `revokeCurrentDevice()` runs before every normal sign-out. It waits for a
-  pending registration, removes any late result, and revokes all bindings for
-  the current installation. It can revoke before initial token restoration.
+- Each device registration also records the exact live Better Auth session,
+  checked against the profile's auth user on the server. Re-registration under
+  a new session replaces that binding, even when its token has not changed.
+  Immediately before claiming a delivery, the worker checks that session again.
+  A deleted, expired, mismatched or absent session cancels the delivery and
+  retires that owner's inactive device with an audit event. This server check
+  also covers another tab re-registering between device cleanup and HTTP logout.
+  Other active sessions and tokens reassigned to another account are preserved.
+- Legacy device rows without a session binding are inactive until authenticated
+  registration renews them. Registration prunes inactive bindings in its bounded
+  ten-device check before applying the quota. Do not backfill a session from a
+  profile or installation ID. See the [session-binding migration](../migrations/2026-10-03-push-session-binding.md).
+- Member sign-out, admin sign-out and security reauthentication use the same
+  `signOutWithDeviceRevocation(sessionId)` transaction in `src/lib/sign-out.ts`.
+  It locks notification registration synchronously, before awaiting device
+  cleanup. Settings show the existing loading label and cannot enable a new
+  device while this session is leaving. Automatic restore, native renewal and
+  direct registration calls also check the session lock.
+- The transaction calls `revokeCurrentDevice()` to wait for a pending
+  registration, remove any late result, and revoke all bindings for the current
+  installation. It can revoke before initial token restoration. It then calls
+  auth sign-out. A successful transaction retains the lock through provider
+  cleanup and same-session remounts; a new authenticated session has its own
+  lifecycle. Do not call auth sign-out directly from a new account control.
+- If cleanup or auth sign-out fails, the transaction releases only that
+  attempt's session lock so the person can retry. It does not remove a pending
+  revocation marker on failure. Turning notifications off uses device cleanup
+  alone; it does not start or release the sign-out transaction.
 - A storage or network failure rejects revocation. The shared sign-out control
   keeps the session available and shows an error so the person can retry. Do not
   suppress that error and claim device cleanup succeeded. If browser storage is
@@ -83,7 +108,9 @@ itself is bounded separately.
 - Device bindings expire after 30 days without renewal. A restore can renew a
   binding after half its lifetime. Turning notifications off revokes the current
   installation but does not alter the account inbox or other devices.
-- A logout can race with a provider call already in flight. All lock-screen
+- A logout can race with a delivery already claimed or a provider call in flight.
+  The claim is the server authorization boundary; it cannot recall a provider
+  request after dispatch. All lock-screen
   payloads are therefore generic: “Luma.Green update” and a prompt to open the
   app, translated from the shared catalogue. There is no private record ID,
   address, amount, phone number or booking link in the push payload.
