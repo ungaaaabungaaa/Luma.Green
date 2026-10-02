@@ -14,6 +14,8 @@ describe("parseKg", () => {
     expect(parseKg("12")).toBe(12_000);
     expect(parseKg("12.5")).toBe(12_500);
     expect(parseKg("12,5")).toBe(12_500);
+    expect(parseKg("๑๒.๕")).toBe(12_500);
+    expect(parseKg("١٢٫٣٤٥")).toBe(12_345);
     expect(parseKg(" 0.001 ")).toBe(1);
     expect(parseKg(".5")).toBe(500);
     expect(parseKg("12.")).toBe(12_000);
@@ -80,6 +82,7 @@ describe("parseRupees and rupeesInput", () => {
     expect(parseRupees("14.50")).toBe(1450);
     expect(parseRupees("0.29")).toBe(29);
     expect(parseRupees("14,05")).toBe(1405);
+    expect(parseRupees("۱۴٫۰۵")).toBe(1405);
   });
 
   it("refuses what isn't a price", () => {

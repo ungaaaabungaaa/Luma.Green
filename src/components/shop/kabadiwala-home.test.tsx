@@ -122,8 +122,11 @@ describe("KabadiwalaHome", () => {
       within(waiting).getByText("1 household wants a pickup."),
     ).toBeInTheDocument();
     expect(
-      within(waiting).getByRole("link", { name: "See requests" }),
+      within(waiting).getByRole("link", { name: "Requests: See requests" }),
     ).toHaveAttribute("href", "/app/requests");
+    expect(
+      within(waiting).getByRole("link", { name: "Requests: See requests" }),
+    ).toHaveTextContent(/^Requests$/u);
   });
 
   it("shows the next pickup today: who, where and when", () => {
@@ -135,6 +138,9 @@ describe("KabadiwalaHome", () => {
     expect(next).toHaveTextContent("Meena");
     expect(next).toHaveTextContent("Malleshwaram");
     expect(next).toHaveTextContent("Today, Afternoon");
+    expect(
+      within(today).getByRole("link", { name: "Today: See today's pickups" }),
+    ).toHaveTextContent(/^Today$/u);
   });
 
   it("adds up what was paid and what the stock is worth", () => {

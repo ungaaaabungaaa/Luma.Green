@@ -43,7 +43,7 @@ export function HelpHero({
             art && "md:grid-cols-[1fr_auto]",
           )}
         >
-          <div className="flex min-w-0 flex-col gap-5">
+          <div className="flex min-w-0 flex-col gap-3 lg:gap-5">
             {eyebrow ? (
               <p className="text-sm font-medium text-muted-foreground">
                 {eyebrow}

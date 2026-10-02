@@ -25,6 +25,7 @@ const language = vi.hoisted((): { current: "en" | "ar" } => ({
 
 type HomeNamespace =
   | "home"
+  | "nav"
   | "prices.families"
   | "sell"
   | "help.modules.sortOnce"
@@ -118,10 +119,14 @@ describe("extended homepage", () => {
       screen.getByText(english.help.guides.weighAndPay.steps.save.body),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: english.home.roles.kabadiwala.cta }),
+      screen.getByRole("link", {
+        name: `${english.nav.join}: ${english.home.roles.kabadiwala.cta}`,
+      }),
     ).toHaveAttribute("href", "/join/kabadiwala");
     expect(
-      screen.getByRole("link", { name: english.help.roles.kabadiwala.title }),
+      screen.getByRole("link", {
+        name: `${english.nav.help}: ${english.help.roles.kabadiwala.title}`,
+      }),
     ).toHaveAttribute("href", "/help/kabadiwala");
   });
 
@@ -146,7 +151,7 @@ describe("extended homepage", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
-        name: english.help.guides.weighingAtDoor.title,
+        name: `${english.help.training.openGuide}: ${english.help.guides.weighingAtDoor.title}`,
       }),
     ).toHaveAttribute("href", "/help/household/weighing-at-door");
     expect(findGuide("household", "weighing-at-door")).toBeDefined();

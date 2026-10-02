@@ -46,7 +46,10 @@ export async function ChainDiagram() {
   ]);
 
   return (
-    <section aria-labelledby="chain-heading" className="py-16 lg:py-24">
+    <section
+      aria-labelledby="chain-heading"
+      className="py-10 sm:py-12 lg:py-24"
+    >
       <Container className="flex flex-col gap-8 sm:gap-10">
         <SectionHeading
           id="chain-heading"

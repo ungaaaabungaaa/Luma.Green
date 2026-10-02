@@ -36,16 +36,16 @@ test("Arabic mobile controls fit and the menu reaches sign-in", async ({
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto("/ar");
   await page
+    .getByRole("button", { name: arabic.nav.openMenu, exact: true })
+    .click();
+  const menu = page.getByRole("dialog");
+  await menu
     .getByRole("button", { name: arabic.theme.label, exact: true })
     .click();
   await page
     .getByRole("menuitemradio", { name: arabic.theme.dark, exact: true })
     .click();
   await expect(page.locator("html")).toHaveClass(/dark/);
-  await page
-    .getByRole("button", { name: arabic.nav.openMenu, exact: true })
-    .click();
-  const menu = page.getByRole("dialog");
   await expect(
     menu.getByRole("link", { name: arabic.auth.metaTitle, exact: true }),
   ).toHaveAttribute("href", "/ar/login");

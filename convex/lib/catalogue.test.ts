@@ -13,7 +13,13 @@ describe("material catalogue translations", () => {
       for (const locale of locales) {
         const name = materialName(material.names, locale, material.code);
         expect(name.trim(), `${material.code}.${locale}`).not.toBe("");
-        if (locale !== "en")
+        // This exact Dutch term is also idiomatic English. Do not force an
+        // incorrect spelling merely to make every translated value different.
+        const isSharedDutchTerm =
+          locale === "nl" &&
+          material.code === "PLASTIC-HDPE" &&
+          name === "Hard plastic (HDPE)";
+        if (locale !== "en" && !isSharedDutchTerm)
           expect(name, `${material.code}.${locale}`).not.toBe(
             material.names.en,
           );

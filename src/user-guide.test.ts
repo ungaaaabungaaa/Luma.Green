@@ -122,6 +122,9 @@ describe("the mandatory platform guide", () => {
         "public-home-questions",
         "public-participants-dark",
         "public-arabic-dark",
+        "public-navigation-phone",
+        "public-navigation-tablet",
+        "public-navigation-arabic-phone",
       ]),
     );
     for (const capture of captures) {
@@ -136,10 +139,18 @@ describe("the mandatory platform guide", () => {
         expect.arrayContaining([
           "src/app/globals.css",
           "src/lib/fonts.ts",
+          "src/lib/number-input.ts",
+          "src/components/solar/calc.ts",
+          "src/components/solar/solar-planner.tsx",
+          "src/components/sell/draft.ts",
           "src/components/site/home/hero.tsx",
           "src/components/site/closing-cta.tsx",
+          "src/components/site/public-effects.module.css",
           "src/components/site/home/chain-diagram.tsx",
           "src/components/site/home/role-benefits.tsx",
+          "src/components/site/mobile-nav.tsx",
+          "src/components/site/site-nav.tsx",
+          "src/components/prices/price-placeholder.tsx",
           "public/images/materials-hall.webp",
         ]),
       );
@@ -178,12 +189,23 @@ describe("the mandatory platform guide", () => {
         "src/components/theme/theme-provider.tsx",
         "src/components/theme/theme-toggle.tsx",
         "src/components/app/app-shell.tsx",
+        "src/components/shop/home-cards.tsx",
+        "src/components/saathi/job-actions.tsx",
+        "src/components/saathi/job-card.tsx",
         "src/components/admin/console-shell.tsx",
         "src/components/ui/button.tsx",
         "src/components/ui/chart.tsx",
+        "src/components/ui/switch.tsx",
         "src/components/admin/pilot/pilot-charts.tsx",
         "src/lib/fonts.ts",
+        "src/lib/number-input.ts",
+        "src/components/market/logic.ts",
+        "src/components/shop/weigh.ts",
         "scripts/guide-preview/main.tsx",
+        "scripts/guide-preview/navigation.tsx",
+        "scripts/guide-preview/translations.ts",
+        "scripts/guide-preview/locale.ts",
+        "convex/lib/catalogue.ts",
         "scripts/guide-preview/queries.ts",
         "src/app/[locale]/(join)/layout.tsx",
         "src/components/join/join-pages.tsx",
@@ -193,6 +215,7 @@ describe("the mandatory platform guide", () => {
         "src/components/join/use-autosave.ts",
         "src/components/market/new-listing-form.tsx",
         "src/components/market/listing-fields.tsx",
+        "src/components/market/field.tsx",
         "src/components/market/my-listings.tsx",
         "src/components/insights/org-impact.tsx",
         "src/components/insights/bar-list.tsx",
@@ -270,8 +293,35 @@ describe("the mandatory platform guide", () => {
     );
     for (const capture of evidence.captures) {
       expect(hash(capture.path), capture.path).toBe(capture.sha256);
-      expect(Object.keys(capture.sourceHashes)).toContain(
-        "src/components/providers/analytics-controls.tsx",
+      expect(
+        Object.keys(capture.sourceHashes).toSorted((left, right) =>
+          left.localeCompare(right),
+        ),
+      ).toEqual(
+        [
+          "src/components/providers/analytics-controls.tsx",
+          "src/components/providers/analytics-enabled.tsx",
+          "src/components/providers/analytics-provider.tsx",
+          "src/lib/analytics-runtime.ts",
+          "src/lib/analytics.ts",
+          "src/components/site/home/hero.tsx",
+          "src/components/site/action-name.ts",
+          "src/components/site/public-effects.module.css",
+          "src/components/site/site-header.tsx",
+          "src/components/site/mobile-nav.tsx",
+          "src/components/site/site-nav.tsx",
+          "src/components/site/language-switcher.tsx",
+          "src/components/brand/logo.tsx",
+          "src/components/brand/logo.module.css",
+          "src/components/theme/theme-toggle.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/site/container.tsx",
+          "src/app/globals.css",
+          "src/lib/fonts.ts",
+          "public/images/materials-hall.webp",
+          "messages/en.json",
+          "messages/ar.json",
+        ].toSorted((left, right) => left.localeCompare(right)),
       );
       for (const [file, expected] of Object.entries(capture.sourceHashes)) {
         expect(hash(file), `${file}: recapture analytics controls`).toBe(

@@ -83,7 +83,8 @@ void test("device language and later locale navigation retain RTL language choic
   assert.equal(localeFromLanguage("ar-SA"), "ar");
   assert.equal(localeFromLanguage("ur_IN"), "ur");
   assert.equal(localeFromLanguage("kn-IN"), "kn");
-  assert.equal(localeFromLanguage("fr-FR"), "en");
+  assert.equal(localeFromLanguage("fr-FR"), "fr");
+  assert.equal(localeFromLanguage("sw-KE"), "en");
   assert.equal(localeFromUrl(`${origin}/ar/sell`, "kn"), "ar");
   assert.equal(localeFromUrl(`${origin}/sell`, "ar"), "en");
   assert.equal(localeFromUrl(`${origin}/`, "ar"), "en");

@@ -21,25 +21,21 @@ import type { TrackedBooking } from "@/components/track/types";
 
 import type { api } from "../../convex/_generated/api";
 import type { Id } from "../../convex/_generated/dataModel";
+import { CATALOGUE } from "../../convex/lib/catalogue";
 
 export const NOW = Date.parse("2026-10-14T06:00:00Z");
 const TODAY = "2026-10-14";
 const HOUR = 3_600_000;
-const materials: MaterialRef[] = [
-  { code: "PAPER-NEWS", family: "paper", names: { en: "Newspaper" } },
-  { code: "PLASTIC-PET", family: "plastic", names: { en: "PET bottles" } },
-  { code: "METAL-IRON", family: "metal", names: { en: "Iron and steel" } },
-];
-const paper: MaterialRef = {
-  code: "PAPER-NEWS",
-  family: "paper",
-  names: { en: "Newspaper" },
-};
-const plastic: MaterialRef = {
-  code: "PLASTIC-PET",
-  family: "plastic",
-  names: { en: "PET bottles" },
-};
+function materialRef(code: string): MaterialRef {
+  const item = CATALOGUE.find((entry) => entry.code === code);
+  if (!item) throw new Error(`Unknown fixture material: ${code}`);
+  return { code: item.code, family: item.family, names: item.names };
+}
+const materials = ["PAPER-NEWS", "PLASTIC-PET", "METAL-IRON"].map((code) =>
+  materialRef(code),
+);
+const paper = materialRef("PAPER-NEWS");
+const plastic = materialRef("PLASTIC-PET");
 const booking: BookingView = {
   id: "guide-booking" as Id<"bookings">,
   token: "",
@@ -272,9 +268,7 @@ export function offersFixture(): FunctionReturnType<typeof api.market.browse> {
   } as const;
   const sellerKind = suppliers[kind];
   const material: MaterialRef =
-    kind === "manufacturer"
-      ? { code: "PET-FLAKES", names: { en: "PET flakes" }, family: "plastic" }
-      : paper;
+    kind === "manufacturer" ? materialRef("RECYCLED-PET-FLAKE") : paper;
   return [
     {
       id: "guide-listing" as Id<"listings">,
@@ -401,10 +395,10 @@ export const fixtures: Record<string, unknown> = {
       co2eFactor: 1,
     })),
     {
-      code: "PET-FLAKES",
+      code: "RECYCLED-PET-FLAKE",
       family: "plastic",
       stage: "recycled",
-      names: { en: "PET flakes" },
+      names: materialRef("RECYCLED-PET-FLAKE").names,
       co2eFactor: 1,
     },
   ],
@@ -486,8 +480,8 @@ export const complianceFixture: ComplianceRecord = {
       side: "purchase",
       counterparty: { name: "Demo recycler", kind: "recycler" },
       material: {
-        code: "PET-FLAKES",
-        names: { en: "PET flakes" },
+        code: "RECYCLED-PET-FLAKE",
+        names: materialRef("RECYCLED-PET-FLAKE").names,
         family: "plastic",
       },
       grams: 100_000,

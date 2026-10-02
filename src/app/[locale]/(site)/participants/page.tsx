@@ -72,9 +72,9 @@ export default async function ParticipantsPage() {
               <li key={key}>
                 <section
                   aria-labelledby={`participant-${key}`}
-                  className="grid items-center gap-6 py-7 sm:gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:py-10"
+                  className="grid items-center gap-5 py-7 lg:grid-cols-[1.25fr_0.75fr] lg:gap-10 lg:py-10"
                 >
-                  <div className="min-w-0 space-y-6">
+                  <div className="min-w-0 space-y-3 lg:space-y-6">
                     <div className="flex items-center gap-4">
                       <span className="inline-flex size-8 shrink-0 items-center text-primary">
                         <Icon aria-hidden className="size-5" />

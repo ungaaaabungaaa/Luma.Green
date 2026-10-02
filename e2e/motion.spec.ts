@@ -103,7 +103,7 @@ test.describe("home content without JavaScript", () => {
     await expect(
       page
         .getByRole("main")
-        .getByRole("link", { name: "Sell your scrap", exact: true })
+        .getByRole("link", { name: "Sell scrap: Sell your scrap", exact: true })
         .first(),
     ).toBeVisible();
     await expect(page.getByRole("heading", { level: 2 }).first()).toHaveCSS(
@@ -143,7 +143,7 @@ test("motion leaves no hidden content after navigation and preference changes", 
       for (const { target } of records) {
         if (
           target instanceof HTMLElement &&
-          target.tagName === "H1" &&
+          target.matches("[data-reveal]:has(> #chain-heading)") &&
           target.style.transform
         ) {
           target.dataset.motionObserved = "true";
@@ -161,13 +161,17 @@ test("motion leaves no hidden content after navigation and preference changes", 
   await page.goto("/en");
   const heading = page.getByRole("heading", { level: 1 });
   await expect(heading).toBeVisible();
-  await expect(heading).toHaveAttribute("data-motion-observed", "true");
+  const reveal = page.locator("[data-reveal]:has(> #chain-heading)");
+  await reveal.scrollIntoViewIfNeeded();
+  await expect(reveal).toHaveAttribute("data-motion-observed", "true");
   await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(reveal).toHaveCSS("transform", "none");
+  await expect(reveal).toHaveCSS("opacity", "1");
   await expect(heading).toHaveCSS("transform", "none");
   await expect(heading).toHaveCSS("opacity", "1");
   await page
     .getByRole("main")
-    .getByRole("link", { name: "Sell your scrap", exact: true })
+    .getByRole("link", { name: "Sell scrap: Sell your scrap", exact: true })
     .first()
     .click();
   await expect(page).toHaveURL(/\/sell$/u);

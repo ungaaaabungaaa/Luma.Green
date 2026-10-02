@@ -70,6 +70,7 @@ function useJobAction(run: (args: { jobId: Job["id"] }) => Promise<null>) {
 
 export function TakeJobButton({ job }: { job: Job }) {
   const t = useTranslations("saathi");
+  const action = useTranslations("shop.requests");
   const take = useMutation(api.saathi.take);
   const { isPending, error, perform } = useJobAction(take);
 
@@ -79,6 +80,9 @@ export function TakeJobButton({ job }: { job: Job }) {
         size="lg"
         className={`${BIG} w-full`}
         disabled={isPending}
+        aria-label={
+          isPending ? t("taking") : `${action("accept")}: ${t("take")}`
+        }
         aria-describedby={jobLabelledBy(job)}
         onClick={() => void perform(job.id, () => toast.success(t("taken")))}
       >
@@ -87,7 +91,7 @@ export function TakeJobButton({ job }: { job: Job }) {
         ) : (
           <HandIcon aria-hidden />
         )}
-        {t(isPending ? "taking" : "take")}
+        {isPending ? t("taking") : action("accept")}
       </Button>
       <InlineError error={error} />
     </div>
@@ -148,6 +152,9 @@ export function FinishJobButton({ job }: { job: Job }) {
             size="lg"
             className={BIG}
             disabled={isPending}
+            aria-label={
+              isPending ? t("saving") : `${t("markDone")}: ${t("confirm.yes")}`
+            }
             onClick={() => void confirm()}
           >
             {isPending ? (
@@ -155,7 +162,7 @@ export function FinishJobButton({ job }: { job: Job }) {
             ) : (
               <CircleCheckIcon aria-hidden />
             )}
-            {t(isPending ? "saving" : "confirm.yes")}
+            {t(isPending ? "saving" : "markDone")}
           </Button>
         </DialogFooter>
       </DialogContent>

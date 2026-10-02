@@ -5,11 +5,17 @@ import {
   Noto_Sans_Bengali,
   Noto_Sans_Gujarati,
   Noto_Sans_Gurmukhi,
+  Noto_Sans_JP,
   Noto_Sans_Kannada,
+  Noto_Sans_KR,
   Noto_Sans_Malayalam,
   Noto_Sans_Mono,
+  Noto_Sans_Oriya,
+  Noto_Sans_SC,
+  Noto_Sans_Sinhala,
   Noto_Sans_Tamil,
   Noto_Sans_Telugu,
+  Noto_Sans_Thai,
 } from "next/font/google";
 
 import type { Locale } from "@/i18n/locales";
@@ -21,7 +27,7 @@ import type { Locale } from "@/i18n/locales";
  * coverage of every script we ship, so the wordmark and the UI never fall back
  * to a mismatched system font when a user switches language.
  *
- * `Noto_Sans` covers Latin, Cyrillic, Greek and Devanagari (en/hi/mr). Scripts
+ * `Noto_Sans` covers Latin, Cyrillic, Greek, Vietnamese and Devanagari. Scripts
  * outside that set get a sibling Noto face, all exposing the SAME CSS variable
  * (`--font-noto-script`) — only one is ever attached to `<html>`, so the font
  * stack in `globals.css` stays a single, stable declaration.
@@ -35,6 +41,9 @@ export const fontDisplay = Geist({
   subsets: ["latin"],
   display: "swap",
   preload: false,
+  // An injected Arial fallback would win before the locale's script face.
+  // Shared CSS supplies system fallbacks after all configured web fonts.
+  adjustFontFallback: false,
 });
 
 export const fontSans = Noto_Sans({
@@ -42,7 +51,7 @@ export const fontSans = Noto_Sans({
   subsets: ["latin", "latin-ext", "devanagari"],
   display: "swap",
   preload: true,
-  fallback: ["system-ui", "Segoe UI", "Helvetica Neue", "Arial", "sans-serif"],
+  adjustFontFallback: false,
 });
 
 export const fontMono = Noto_Sans_Mono({
@@ -114,12 +123,58 @@ const notoArabic = Noto_Sans_Arabic({
   preload: false,
 });
 
+const notoSinhala = Noto_Sans_Sinhala({
+  variable: "--font-noto-script",
+  subsets: ["sinhala"],
+  display: "swap",
+  preload: false,
+});
+
+const notoThai = Noto_Sans_Thai({
+  variable: "--font-noto-script",
+  subsets: ["thai"],
+  display: "swap",
+  preload: false,
+});
+
+const notoOdia = Noto_Sans_Oriya({
+  variable: "--font-noto-script",
+  subsets: ["oriya"],
+  display: "swap",
+  preload: false,
+});
+
+const notoJapanese = Noto_Sans_JP({
+  variable: "--font-noto-script",
+  display: "swap",
+  preload: false,
+});
+
+const notoKorean = Noto_Sans_KR({
+  variable: "--font-noto-script",
+  display: "swap",
+  preload: false,
+});
+
+const notoChinese = Noto_Sans_SC({
+  variable: "--font-noto-script",
+  display: "swap",
+  preload: false,
+});
+
 /**
  * Locales absent from this map are covered by `fontSans` itself
- * (en, hi, mr — Latin + Devanagari).
+ * (Latin, Cyrillic and Devanagari scripts).
  */
 const scriptFontByLocale: Partial<Record<Locale, { variable: string }>> = {
   bn: notoBengali,
+  as: notoBengali,
+  si: notoSinhala,
+  th: notoThai,
+  or: notoOdia,
+  ja: notoJapanese,
+  ko: notoKorean,
+  zh: notoChinese,
   ta: notoTamil,
   te: notoTelugu,
   kn: notoKannada,

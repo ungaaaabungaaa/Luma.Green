@@ -978,7 +978,7 @@
         "steps": {
           "photo": {
             "title": "Take a photo of your scrap",
-            "body": "Open luma.green/sell and photograph your pile. More than one photo is fine."
+            "body": "Optional: add one photo of your scrap, then check the suggested items."
           },
           "estimate": {
             "title": "Check the estimate",
@@ -1582,7 +1582,7 @@
       },
       "photosKept": {
         "q": "What happens to my photos?",
-        "a": "They are used only for your estimate and deleted within 90 days."
+        "a": "Do not include faces, documents, or number plates. The photo is sent to an AI provider for this estimate. Luma.Green does not save it."
       },
       "whyVerify": {
         "q": "Why do I have to be verified?",
@@ -1630,7 +1630,7 @@
       },
       "consentExpiry": {
         "q": "What happens when my consent expires?",
-        "a": "We remind you 30 days before. Upload the renewed certificate to keep trading."
+        "a": "Check the expiry date in Compliance. It flags consent with fewer than 90 days left. Renew with your pollution control board and contact support to update the certificate."
       },
       "findStock": {
         "q": "How do I find stock near me?",
@@ -2415,7 +2415,7 @@
       "validUntil": "Valid until {date}",
       "daysLeft": "{days, plural, =0 {Last day today} one {# day left} other {# days left}}",
       "ranOut": "{days, plural, one {Ran out # day ago} other {Ran out # days ago}}",
-      "reminder": "We'll remind you on {date}, 90 days before it runs out.",
+      "reminder": "Renewal review date: {date}, 90 days before expiry.",
       "expiringTitle": "Renew your consent now",
       "expiringBody": "It runs out on {date}. Apply to {board} for renewal now — it can take weeks.",
       "expiredTitle": "Your consent has run out",

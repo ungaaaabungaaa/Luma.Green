@@ -23,7 +23,7 @@ Language ─► Phone ─► SMS code ─► What do you do? ─► Form for tha
             Dashboard opens   Fix and resubmit ─► back to review
 ```
 
-1. **Language.** A grid of all 12 languages in their own script, shown until the
+1. **Language.** A grid of all 33 languages in their own script, shown until the
    user picks one. Kannada, Hindi and English appear first for Bengaluru.
 2. **Phone.** A 10-digit Indian mobile number.
 3. **SMS code.** Six digits sent through MSG91 on a DLT-registered template.

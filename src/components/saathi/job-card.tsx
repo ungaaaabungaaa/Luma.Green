@@ -45,7 +45,7 @@ export function JobCard({
   return (
     <article
       aria-labelledby={jobLabelledBy(job)}
-      className="grid gap-4 border-b border-border py-5 md:grid-cols-[minmax(0,1fr)_14rem]"
+      className="grid min-w-0 grid-cols-1 gap-4 border-b border-border py-5 md:grid-cols-[minmax(0,1fr)_minmax(14rem,max-content)]"
     >
       <div className="flex items-start gap-3 md:col-span-2">
         <span className="flex size-10 shrink-0 items-center justify-center text-primary">

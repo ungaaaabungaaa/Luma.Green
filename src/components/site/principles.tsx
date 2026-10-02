@@ -20,7 +20,10 @@ export async function Principles() {
   const t = await getTranslations("principles");
 
   return (
-    <section aria-labelledby="principles-heading" className="py-16 lg:py-24">
+    <section
+      aria-labelledby="principles-heading"
+      className="py-10 sm:py-12 lg:py-24"
+    >
       <Container className="space-y-12">
         <SectionHeading
           id="principles-heading"

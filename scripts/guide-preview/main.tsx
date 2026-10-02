@@ -27,11 +27,20 @@ import { RequestsPage } from "@/components/shop/requests-page";
 import { StockPage } from "@/components/shop/stock-page";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { TrackView } from "@/components/track/track-view";
+import { localeMeta } from "@/i18n/locales";
 
-import messages from "../../messages/en.json";
 import { NOW, trackedBooking } from "./fixtures";
+import { locale, messages } from "./locale";
 
-const path = window.location.pathname;
+const path = window.location.pathname.replace(`/${locale}/`, "/en/");
+document.documentElement.lang = locale;
+document.documentElement.dir = localeMeta[locale].dir;
+const fontClasses = JSON.parse(
+  document.documentElement.dataset.localeFonts ?? "{}",
+) as Partial<Record<string, string>>;
+const localeFonts = fontClasses[locale];
+if (!localeFonts) throw new Error(`Build the ${locale} locale before capture.`);
+document.documentElement.className = localeFonts;
 const adminPages: Record<string, ReactNode | undefined> = {
   "/admin": <ConsoleHome />,
   "/admin/support": <SupportInbox />,
@@ -81,7 +90,7 @@ const root = document.querySelector("#root");
 if (!root) throw new Error("Documentation preview root is missing.");
 createRoot(root).render(
   <NextIntlClientProvider
-    locale="en"
+    locale={locale}
     messages={messages}
     timeZone="Asia/Kolkata"
     now={new Date(NOW)}

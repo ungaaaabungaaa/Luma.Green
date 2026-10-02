@@ -247,7 +247,7 @@ function BookingFacts({
         </Fact>
       </div>
       {isRevealed ? (
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid gap-3 sm:grid-cols-2">
           <Button
             asChild
             variant="outline"

@@ -33,7 +33,7 @@ export function SiteNav({
             aria-current={isCurrent ? "page" : undefined}
             onClick={onNavigate}
             className={cn(
-              "flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors outline-none hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+              "flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors outline-none hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
               isCurrent &&
                 "bg-muted text-foreground hover:bg-muted hover:text-foreground",
             )}

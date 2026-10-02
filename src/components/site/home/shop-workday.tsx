@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
+import { actionName } from "@/components/site/action-name";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -16,10 +17,11 @@ import { SectionHeading } from "../section-heading";
 
 /** Three real shop tasks, with the hand-off from household receipt to stock. */
 export async function ShopWorkday() {
-  const [home, help, participants] = await Promise.all([
+  const [home, help, participants, nav] = await Promise.all([
     getTranslations("home"),
     getTranslations("help"),
     getTranslations("participants"),
+    getTranslations("nav"),
   ]);
   const tasks = [
     {
@@ -41,7 +43,7 @@ export async function ShopWorkday() {
   return (
     <section
       aria-labelledby="shop-workday-heading"
-      className="border-y bg-muted/35 py-16 lg:py-24"
+      className="border-y bg-muted/35 py-10 sm:py-12 lg:py-24"
     >
       <Container className="space-y-10">
         <div className="grid min-w-0 grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
@@ -54,10 +56,19 @@ export async function ShopWorkday() {
             <Button
               asChild
               size="lg"
-              className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal"
+              className="min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap"
             >
-              <Link href="/join/kabadiwala">
-                <span className="min-w-0">{home("roles.kabadiwala.cta")}</span>
+              <Link
+                href="/join/kabadiwala"
+                aria-label={actionName(
+                  nav("join"),
+                  home("roles.kabadiwala.cta"),
+                )}
+              >
+                <span className="xl:hidden">{nav("join")}</span>
+                <span className="hidden xl:inline">
+                  {home("roles.kabadiwala.cta")}
+                </span>
                 <ArrowRightIcon aria-hidden className="rtl:rotate-180" />
               </Link>
             </Button>
@@ -65,10 +76,17 @@ export async function ShopWorkday() {
               asChild
               size="lg"
               variant="outline"
-              className="h-auto min-h-12 max-w-full min-w-0 py-3 text-start wrap-anywhere whitespace-normal"
+              className="min-h-12 max-w-full min-w-0 py-3 text-start whitespace-nowrap"
             >
-              <Link href="/help/kabadiwala">
-                <span className="min-w-0">
+              <Link
+                href="/help/kabadiwala"
+                aria-label={actionName(
+                  nav("help"),
+                  help("roles.kabadiwala.title"),
+                )}
+              >
+                <span className="xl:hidden">{nav("help")}</span>
+                <span className="hidden xl:inline">
                   {help("roles.kabadiwala.title")}
                 </span>
               </Link>

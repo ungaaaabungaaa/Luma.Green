@@ -1,0 +1,3368 @@
+{
+  "brand": {
+    "name": "Luma.Green",
+    "tagline": "Cùng hướng tới ngày mai xanh sạch hơn"
+  },
+  "meta": {
+    "title": "Luma.Green — Cùng hướng tới ngày mai xanh sạch hơn",
+    "description": "Luma.Green kết nối toàn bộ chuỗi phế liệu của Ấn Độ trên một nền tảng: hộ gia đình, cửa hàng kabadiwala, bãi phân loại, cơ sở tái chế và nhà sản xuất, với giá công bằng, thu gom có cân và hồ sơ cho mỗi lần bàn giao."
+  },
+  "theme": {
+    "label": "Giao diện",
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Theo hệ thống"
+  },
+  "common": {
+    "loading": "Đang tải…",
+    "error": "Đã xảy ra lỗi",
+    "retry": "Thử lại",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "search": "Tìm kiếm",
+    "language": "Ngôn ngữ",
+    "close": "Đóng"
+  },
+  "nav": {
+    "label": "Chính",
+    "home": "Trang chủ",
+    "howItWorks": "Cách hoạt động",
+    "contact": "Liên hệ",
+    "openMenu": "Mở trình đơn",
+    "closeMenu": "Đóng trình đơn",
+    "skipToContent": "Chuyển đến nội dung",
+    "prices": "Giá",
+    "help": "Trợ giúp",
+    "join": "Tham gia",
+    "sellScrap": "Bán phế liệu"
+  },
+  "footer": {
+    "about": "Chuỗi phế liệu của Ấn Độ trên một nền tảng, từ hộ gia đình đến nhà máy. Mỗi lần bàn giao đều được cân, định giá và ghi nhận.",
+    "navLabel": "Chân trang",
+    "useHeading": "Sử dụng Luma.Green",
+    "learnHeading": "Tìm hiểu thêm",
+    "standards": "Tiêu chuẩn ngành",
+    "solar": "Điện mặt trời mái nhà",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "sell": {
+      "title": "Bán",
+      "summary": "Hộ gia đình bán phế liệu tại nhà với giá công bằng, được cân và thanh toán ngay tại cửa."
+    },
+    "trade": {
+      "title": "Giao dịch",
+      "summary": "Dịch vụ ký quỹ dự kiến sẽ giữ tiền đến khi giao hàng. Bản minh họa hiện tại chỉ ghi nhận các khoản thanh toán mô phỏng."
+    },
+    "record": {
+      "title": "Ghi nhận",
+      "summary": "Mỗi lần bàn giao đều được ghi nhận để phục vụ tuân thủ, đánh giá tác động và chứng minh việc tái chế."
+    }
+  },
+  "principles": {
+    "heading": "Sẵn sàng cho kiểm toán",
+    "intro": "Người mua, cơ quan quản lý hoặc kiểm toán viên có thể hỏi vật liệu đến từ đâu. Hồ sơ được thiết kế để luôn có câu trả lời.",
+    "auditable": {
+      "title": "Mọi thay đổi đều được ghi lại",
+      "body": "Mỗi bước — cân hàng thu gom, thanh toán giao dịch hoặc giao một chuyến hàng — tạo một mục trong nhật ký kiểm toán không bao giờ bị sửa trực tiếp."
+    },
+    "exact": {
+      "title": "Số liệu luôn chính xác",
+      "body": "Tiền được lưu bằng số nguyên paise và khối lượng bằng số nguyên gam. Sai số làm tròn không tích lũy từ trạm cân đến lúc quyết toán."
+    },
+    "frozen": {
+      "title": "Giữ nguyên lịch sử",
+      "body": "Mỗi biên nhận giữ nguyên giá và khối lượng tại thời điểm lập. Thay đổi giá sau đó không làm thay đổi biên nhận đã có."
+    }
+  },
+  "home": {
+    "metaDescription": "Luma.Green kết nối chuỗi phế liệu của Ấn Độ trên một nền tảng: hộ gia đình, cửa hàng kabadiwala, bãi phân loại, cơ sở tái chế và nhà sản xuất, với giá công bằng, doanh nghiệp đã xác minh và biên nhận ở mỗi bước.",
+    "hero": {
+      "eyebrow": "Bắt đầu tại Bengaluru",
+      "title": "Chuỗi phế liệu của Ấn Độ trên một nền tảng",
+      "lead": "Bán phế liệu tại nhà với giá công bằng. Giao dịch với doanh nghiệp đã xác minh trong toàn chuỗi. Mỗi lần bàn giao đều được cân, định giá và ghi nhận.",
+      "sell": "Bán phế liệu của bạn",
+      "join": "Đăng ký doanh nghiệp",
+      "prices": "Xem giá hôm nay"
+    },
+    "teaser": {
+      "title": "Giá hôm nay",
+      "placeAndDate": "Bengaluru · {date}",
+      "place": "Bengaluru",
+      "seeAll": "Xem tất cả giá",
+      "demoNote": "Giá mẫu cho nguyên mẫu.",
+      "unavailable": "Giá hôm nay sẽ sớm xuất hiện tại đây.",
+      "error": "Hiện không tải được giá."
+    },
+    "chain": {
+      "heading": "Hành trình của phế liệu",
+      "intro": "Phế liệu qua bốn lần chuyển giao trước khi trở thành sản phẩm mới. Mỗi bước đều phân loại kỹ hơn và Luma.Green ghi nhận từng lần bàn giao.",
+      "steps": {
+        "household": {
+          "name": "Hộ gia đình",
+          "body": "Bán giấy, nhựa, kim loại và rác thải điện tử cũ."
+        },
+        "kabadiwala": {
+          "name": "Cửa hàng kabadiwala",
+          "body": "Mua, cân và phân loại theo vật liệu."
+        },
+        "yard": {
+          "name": "Bãi phân loại",
+          "body": "Phân hạng và ép thành kiện."
+        },
+        "recycler": {
+          "name": "Cơ sở tái chế",
+          "body": "Biến kiện hàng thành mảnh, hạt và thỏi vật liệu."
+        },
+        "manufacturer": {
+          "name": "Nhà sản xuất",
+          "body": "Tạo sản phẩm mới từ vật liệu tái chế."
+        }
+      },
+      "money": "Hộ gia đình nhận tiền mặt hoặc UPI tại cửa. Dịch vụ ký quỹ giữa doanh nghiệp đang được lên kế hoạch.",
+      "saathi": "Saathi hỗ trợ toàn chuỗi với công việc thu gom, phân loại và làm theo ca."
+    },
+    "roles": {
+      "heading": "Dành cho mọi người trong chuỗi",
+      "intro": "Sáu nhóm người giúp phế liệu tiếp tục lưu chuyển. Đây là những gì Luma.Green hỗ trợ cho từng nhóm.",
+      "household": {
+        "title": "Hộ gia đình",
+        "one": "Xem giá trị phế liệu trước khi đặt lịch.",
+        "two": "Thu gom tại cửa hoặc mang đến cửa hàng.",
+        "three": "Nhận tiền mặt hoặc UPI, kèm biên nhận.",
+        "cta": "Bán phế liệu của bạn"
+      },
+      "kabadiwala": {
+        "title": "Cửa hàng kabadiwala",
+        "one": "Nhận yêu cầu thu gom từ hộ gia đình gần bạn.",
+        "two": "Tự đặt giá nhưng không thấp hơn giá sàn.",
+        "three": "Bán hàng đã phân loại cho bãi.",
+        "cta": "Đăng ký làm kabadiwala"
+      },
+      "yard": {
+        "title": "Bãi phân loại",
+        "one": "Xem hàng tồn của các cửa hàng gần bạn.",
+        "two": "Mua số lượng lớn và bán kiện hàng cho cơ sở tái chế.",
+        "three": "Dự kiến: giữ tiền trong ký quỹ đến khi giao hàng.",
+        "cta": "Đăng ký bãi phân loại"
+      },
+      "recycler": {
+        "title": "Cơ sở tái chế",
+        "one": "Kiện hàng đã phân hạng từ bãi được xác minh.",
+        "two": "Mỗi lô hàng đều có chuỗi bàn giao.",
+        "three": "Bán sản phẩm đầu ra cho nhà máy.",
+        "cta": "Đăng ký cơ sở tái chế"
+      },
+      "manufacturer": {
+        "title": "Nhà sản xuất",
+        "one": "Xem các cơ sở tái chế đang sản xuất gì.",
+        "two": "Dự kiến: đặt vật liệu tái chế với dịch vụ ký quỹ.",
+        "three": "Hồ sơ phục vụ báo cáo EPR.",
+        "cta": "Đăng ký nhà sản xuất"
+      },
+      "saathi": {
+        "title": "Cộng tác viên Saathi",
+        "one": "Việc làm có thu nhập gần bạn: thu gom, phân loại và làm theo ca.",
+        "two": "Chọn khu vực và giờ làm.",
+        "three": "Được xác minh để hộ gia đình và doanh nghiệp tin tưởng.",
+        "cta": "Đăng ký làm Saathi"
+      }
+    },
+    "trust": {
+      "heading": "Được xây dựng trên sự tin cậy",
+      "intro": "Ngành phế liệu lâu nay dựa vào tiền mặt và ước đoán. Những quy tắc này thay đổi điều đó.",
+      "verified": {
+        "title": "Doanh nghiệp đã xác minh",
+        "body": "Nhân viên kiểm tra từng doanh nghiệp và từng Saathi trước khi họ được giao dịch."
+      },
+      "floor": {
+        "title": "Giá công bằng, có giá sàn",
+        "body": "Cửa hàng tự đặt giá nhưng không thấp hơn mức tối thiểu chúng tôi công bố cho từng vật liệu."
+      },
+      "escrow": {
+        "title": "Dự kiến: ký quỹ cho giao dịch doanh nghiệp",
+        "body": "Bản minh họa hiển thị các bước thanh toán nhưng không giữ hoặc chuyển tiền thật."
+      },
+      "receipts": {
+        "title": "Biên nhận điện tử",
+        "body": "Mỗi lần thu gom và giao dịch đều có biên nhận ghi rõ vật liệu, số lượng và giá."
+      },
+      "languages": {
+        "title": "{count, number} ngôn ngữ",
+        "body": "Tiếng Kannada, Hindi, Tamil, Anh và nhiều ngôn ngữ khác, với nút lớn và nội dung ngắn gọn."
+      }
+    },
+    "whyNow": {
+      "heading": "Vì sao là lúc này",
+      "intro": "Ba thay đổi khiến đây là lúc đưa chuỗi phế liệu của Ấn Độ vào hồ sơ rõ ràng.",
+      "epr": {
+        "title": "Quy định EPR",
+        "body": "Quy định về trách nhiệm mở rộng của nhà sản xuất đối với bao bì nhựa, rác thải điện tử và pin yêu cầu chứng minh vật liệu thực sự được thu gom và tái chế. Bằng chứng đó phải bắt đầu từ lần bàn giao đầu tiên."
+      },
+      "informal": {
+        "title": "Khu vực phi chính thức",
+        "body": "Kabadiwala và lao động phi chính thức đang thực hiện phần lớn hoạt động tái chế ở Ấn Độ nhưng ít được tiếp cận giá công bằng, hồ sơ và sự công nhận. Luma.Green hợp tác cùng họ, không bỏ qua họ."
+      },
+      "upi": {
+        "title": "UPI ở khắp nơi",
+        "body": "Thanh toán bằng điện thoại đã phổ biến, ngay cả ở cửa hàng nhỏ nhất. Mỗi khoản thanh toán đều có thể để lại hồ sơ."
+      }
+    },
+    "closing": {
+      "title": "Bắt đầu với những gì bạn có",
+      "body": "Từ một túi báo cũ đến một xe tải chở kiện hàng: tất cả đều có chỗ trên Luma.Green.",
+      "sell": "Bán phế liệu của bạn",
+      "join": "Đăng ký doanh nghiệp"
+    },
+    "expansion": {
+      "materialsTitle": "Bắt đầu với vật liệu bạn đang có",
+      "pickupTitle": "Từng bước thu gom",
+      "shopTitle": "Cửa hàng phế liệu của bạn, luôn kết nối",
+      "recordsTitle": "Hồ sơ theo suốt hành trình vật liệu",
+      "paymentTitle": "Khối lượng rõ ràng. Thanh toán rõ ràng.",
+      "questionsTitle": "Trước khi bắt đầu"
+    },
+    "marquee": {
+      "label": "Vật liệu trong danh mục",
+      "pause": "Tạm dừng chuyển động",
+      "resume": "Tiếp tục chuyển động"
+    },
+    "testimonials": {
+      "title": "Lời nhận xét minh họa",
+      "note": "Trích dẫn minh họa, không phải đánh giá của khách hàng.",
+      "household": "Tôi có thể xem giá trước khi chọn lịch thu gom.",
+      "kabadiwala": "Khối lượng, giá và biên nhận được lưu cùng nhau. Mỗi lần thu gom đều dễ kiểm tra hơn.",
+      "manufacturer": "Mã vật liệu giúp tôi dễ yêu cầu đúng hạng vật liệu cần dùng."
+    }
+  },
+  "prices": {
+    "metaTitle": "Giá phế liệu tại Bengaluru hôm nay",
+    "metaDescription": "Giá phế liệu hôm nay tại Bengaluru theo kg: giấy, nhựa, kim loại, thủy tinh và rác thải điện tử, kèm biến động tuần, biểu đồ 30 ngày và mức tối thiểu cửa hàng được trả.",
+    "eyebrow": "Bengaluru",
+    "title": "Giá phế liệu hôm nay",
+    "lead": "Giá bán phế liệu hôm nay theo kg. Cửa hàng tự đặt giá nhưng không thấp hơn giá sàn. Chạm vào vật liệu để xem 30 ngày gần nhất.",
+    "demoNote": "Giá mẫu cho nguyên mẫu, không phải giá thị trường trực tiếp.",
+    "date": "Giá ngày {date}",
+    "floorHelp": "Giá sàn: mức thấp nhất cửa hàng đã xác minh được trả cho một kg.",
+    "perKg": "{price}/kg",
+    "floor": "Giá sàn {price}",
+    "noPrice": "Chưa có giá",
+    "columns": {
+      "material": "Vật liệu",
+      "today": "Hôm nay",
+      "week": "Tuần này",
+      "month": "30 ngày",
+      "floor": "Giá sàn"
+    },
+    "families": {
+      "paper": "Giấy",
+      "plastic": "Nhựa",
+      "metal": "Kim loại",
+      "glass": "Thủy tinh",
+      "ewaste": "Rác thải điện tử",
+      "other": "Khác"
+    },
+    "factoryGate": {
+      "title": "Tại cổng nhà máy",
+      "body": "Vật liệu tái chế được cơ sở tái chế bán cho nhà sản xuất."
+    },
+    "change": {
+      "up": "Tăng {pct} trong tuần này",
+      "down": "Giảm {pct} trong tuần này",
+      "flat": "Không đổi trong tuần này",
+      "unknown": "Chưa đủ dữ liệu lịch sử"
+    },
+    "detail": {
+      "description": "{code} · {family} · Bengaluru",
+      "today": "Hôm nay",
+      "low": "Thấp nhất trong 30 ngày",
+      "high": "Cao nhất trong 30 ngày",
+      "floor": "Giá sàn",
+      "noFloor": "Không có",
+      "close": "Đóng",
+      "noHistory": "Chưa có lịch sử giá."
+    },
+    "chart": {
+      "label": "{material}: giá theo kg từng ngày. Dùng phím mũi tên để chuyển ngày.",
+      "point": "{date}: {price}",
+      "floor": "Giá sàn {price}",
+      "table": "Hiện số liệu",
+      "tableCaption": "{material}, giá theo kg từng ngày",
+      "date": "Ngày",
+      "price": "Giá mỗi kg"
+    },
+    "unavailable": {
+      "title": "Hiện chưa có giá",
+      "body": "Bảng giá đang được kết nối. Vui lòng quay lại sau."
+    },
+    "empty": {
+      "title": "Chưa có mức giá nào",
+      "body": "Giá hôm nay sẽ xuất hiện tại đây sau khi được công bố."
+    },
+    "error": {
+      "title": "Không tải được giá",
+      "body": "Kiểm tra kết nối rồi thử lại.",
+      "retry": "Thử lại"
+    },
+    "sellCta": {
+      "title": "Bạn có phế liệu ở nhà?",
+      "body": "Đặt lịch thu gom và nhận tiền tại cửa.",
+      "action": "Bán phế liệu của bạn"
+    }
+  },
+  "standards": {
+    "metaTitle": "Tiêu chuẩn Luma.Green",
+    "metaDescription": "Dự kiến: mã vật liệu mở và quy tắc đơn giản cho giao dịch phế liệu công bằng tại Ấn Độ: phân hạng, cân, biên nhận, xác minh và ký quỹ. Mọi người đều có thể áp dụng miễn phí.",
+    "eyebrow": "Tiêu chuẩn mở",
+    "title": "Tiêu chuẩn Luma.Green",
+    "lead": "Quy tắc đơn giản, công khai để giao dịch phế liệu công bằng: một mã cho mỗi vật liệu, phân hạng rõ ràng, cân trung thực và ghi nhận mỗi lần bàn giao. Bất kỳ ai trong ngành cũng có thể áp dụng.",
+    "onThisPage": "Trên trang này",
+    "codes": {
+      "title": "Một mã cho mỗi vật liệu",
+      "nav": "Mã vật liệu",
+      "body": "Cùng một loại phế liệu có nhiều tên địa phương. Mã mở tạo một tên chung để một kg báo có cùng ý nghĩa ở cửa hàng, bãi phân loại và nhà máy.",
+      "caption": "Mã vật liệu Luma.Green",
+      "count": "{count, plural, one {# vật liệu} other {# vật liệu}}",
+      "download": "Tải mã vật liệu (CSV)",
+      "columns": {
+        "code": "Mã",
+        "name": "Vật liệu",
+        "family": "Nhóm",
+        "stage": "Giai đoạn"
+      },
+      "stages": {
+        "scrap": "Phế liệu",
+        "recycled": "Đã tái chế"
+      },
+      "unavailable": "Hiện không có danh sách mã. Vui lòng quay lại sau.",
+      "empty": "Chưa có mã vật liệu.",
+      "error": "Không tải được danh sách mã.",
+      "retry": "Thử lại"
+    },
+    "grading": {
+      "title": "Phân hạng: khô, tách riêng, sạch",
+      "nav": "Phân hạng",
+      "body": "Giá công bằng cần phân hạng rõ ràng. Cần kiểm tra ba điều trước khi cân.",
+      "dry": {
+        "title": "Khô",
+        "body": "Nước không phải phế liệu. Giấy và bìa carton ướt phải được làm khô trước khi cân."
+      },
+      "sorted": {
+        "title": "Đã tách riêng",
+        "body": "Mỗi túi hoặc kiện chỉ chứa một loại vật liệu, dưới một mã. Hàng trộn dùng mã MIXED."
+      },
+      "clean": {
+        "title": "Không lẫn tạp chất",
+        "body": "Không có thức ăn, dầu, đất hoặc đá. Loại bỏ mọi thứ không phải vật liệu trước."
+      }
+    },
+    "weighing": {
+      "title": "Cân công bằng",
+      "nav": "Cân khối lượng",
+      "body": "Phần lớn tranh chấp phế liệu liên quan đến khối lượng. Các quy tắc này giúp cân trung thực.",
+      "stamped": {
+        "title": "Cân có dấu kiểm định",
+        "body": "Chỉ dùng cân đã được cơ quan Đo lường Pháp định kiểm định và đóng dấu."
+      },
+      "shown": {
+        "title": "Người bán nhìn thấy số cân",
+        "body": "Màn hình hướng về người bán và khối lượng được đọc rõ trước khi thống nhất giá."
+      },
+      "receipt": {
+        "title": "Biên nhận điện tử cho từng lần",
+        "body": "Biên nhận ghi khối lượng chính xác đến gam, không làm tròn có lợi cho bất kỳ bên nào."
+      }
+    },
+    "custody": {
+      "title": "Biên nhận và chuỗi bàn giao",
+      "nav": "Biên nhận",
+      "body": "Mỗi lần bàn giao đều có biên nhận. Các biên nhận liên kết qua từng bước để truy xuất kiện hàng tại cơ sở tái chế về các cửa hàng nguồn.",
+      "receiptTitle": "Nội dung trên mỗi biên nhận",
+      "fields": {
+        "number": "Số biên nhận",
+        "time": "Ngày và giờ",
+        "seller": "Người bán",
+        "buyer": "Người mua",
+        "code": "Mã của vật liệu",
+        "weight": "Khối lượng chính xác đến gam",
+        "rate": "Đơn giá mỗi kg",
+        "total": "Tổng tiền và phương thức thanh toán"
+      }
+    },
+    "verification": {
+      "title": "Xác minh",
+      "nav": "Xác minh",
+      "body": "Nhân viên kiểm tra từng doanh nghiệp và từng Saathi trước khi họ được giao dịch.",
+      "business": "Doanh nghiệp: số GST nếu có, ảnh cửa hàng hoặc cơ sở và một cuộc gọi xác nhận.",
+      "consent": "Bãi phân loại, cơ sở tái chế và nhà máy: giấy chấp thuận còn hiệu lực của hội đồng kiểm soát ô nhiễm cấp bang.",
+      "saathi": "Saathi: giấy tờ có ảnh và ảnh tự chụp trùng khớp."
+    },
+    "escrow": {
+      "title": "Dự kiến: ký quỹ giữa doanh nghiệp",
+      "nav": "Ký quỹ",
+      "body": "Dịch vụ ký quỹ dự kiến sẽ giữ tiền đến khi giao hàng. Bản minh họa hiện tại chỉ ghi nhận các khoản thanh toán mô phỏng.",
+      "steps": {
+        "accepted": "Người bán chấp nhận đơn hàng",
+        "paid": "Người mua nộp tiền ký quỹ",
+        "dispatched": "Người bán gửi hàng",
+        "released": "Người mua xác nhận và tiền được giải ngân"
+      }
+    },
+    "adopt": {
+      "title": "Sử dụng tiêu chuẩn",
+      "body": "Các mã và quy tắc đều mở và miễn phí. Dùng tại cửa hàng, bãi hoặc nhà máy, trên Luma.Green hoặc bên ngoài, và góp ý để chúng tốt hơn.",
+      "cta": "Trao đổi với chúng tôi"
+    }
+  },
+  "solar": {
+    "metaTitle": "Công cụ tính điện mặt trời mái nhà cho Karnataka",
+    "metaDescription": "Ước tính hệ thống điện mặt trời mái nhà phù hợp cho hộ gia đình hoặc doanh nghiệp ở Karnataka, chi phí sau trợ cấp PM Surya Ghar và thời gian hoàn vốn.",
+    "eyebrow": "Karnataka",
+    "title": "Điện mặt trời mái nhà cho gia đình hoặc doanh nghiệp",
+    "lead": "Tìm công suất phù hợp với mái nhà, chi phí sau trợ cấp và thời gian hoàn vốn. Mọi số liệu ở đây đều là ước tính.",
+    "form": {
+      "heading": "Thông tin của bạn",
+      "kind": "Dành cho ai?",
+      "kinds": {
+        "home": "Gia đình tôi",
+        "business": "Doanh nghiệp tôi"
+      },
+      "mode": "Mức sử dụng điện",
+      "modes": {
+        "bill": "Hóa đơn hằng tháng",
+        "units": "Số điện mỗi tháng"
+      },
+      "bill": "Hóa đơn tiền điện hằng tháng",
+      "billHint": "Nhập bằng rupee, ví dụ 2500",
+      "units": "Số điện sử dụng mỗi tháng",
+      "unitsHint": "Có trên hóa đơn, ví dụ 300",
+      "unitsSuffix": "số điện",
+      "roof": "Diện tích mái không bị che bóng",
+      "roofHint": "Để trống nếu bạn không chắc.",
+      "roofUnit": "Đơn vị diện tích mái",
+      "areaUnits": {
+        "sqft": "feet vuông",
+        "m2": "m²"
+      },
+      "optional": "không bắt buộc",
+      "errors": {
+        "bill": "Nhập hóa đơn từ {min} đến {max}.",
+        "units": "Nhập từ {min} đến {max} số điện.",
+        "roof": "Nhập diện tích mái lớn hơn 0 hoặc để trống."
+      }
+    },
+    "result": {
+      "heading": "Ước tính của bạn",
+      "prompt": "Nhập tiền điện hoặc số điện để xem ước tính.",
+      "size": "Hệ thống đề xuất",
+      "kw": "{kw} kW",
+      "sizeHint": "Sản xuất khoảng {units} số điện mỗi tháng và cần khoảng {area} diện tích mái.",
+      "areaIn": "{value} {unit, select, sqft {feet vuông} other {m²}}",
+      "fromBill": "Hóa đơn tương đương khoảng {units} số điện mỗi tháng.",
+      "limitedByRoof": "Được tính theo diện tích mái. Mái lớn hơn có thể bù được nhiều tiền điện hơn.",
+      "roofTooSmallTitle": "Mái nhà có vẻ quá nhỏ",
+      "roofTooSmallBody": "Ngay cả hệ thống nhỏ nhất 1 kW cũng cần khoảng {area} mái không bị che bóng. Hãy liên hệ với chúng tôi: có thể có cách khác.",
+      "cost": "Chi phí trước trợ cấp",
+      "subsidy": "Trợ cấp PM Surya Ghar",
+      "noSubsidy": "Không áp dụng cho doanh nghiệp",
+      "netCost": "Chi phí bạn trả",
+      "savings": "Bạn tiết kiệm khoảng",
+      "perMonth": "{amount} mỗi tháng",
+      "payback": "Hoàn vốn trong",
+      "yearsRange": "{low}–{high} năm",
+      "years": "{count, plural, one {# năm} other {# năm}}",
+      "range": "{low} – {high}",
+      "minus": "− {amount}",
+      "noPayback": "Không thể hoàn vốn từ mức tiết kiệm này",
+      "demoNote": "Chỉ là ước tính theo các giả định bên dưới. Khảo sát thực tế mới xác định số liệu chính xác."
+    },
+    "chart": {
+      "title": "Tiết kiệm trong {years, number} năm",
+      "legendPaying": "Đang hoàn vốn",
+      "legendPaid": "Đã hoàn vốn",
+      "legendCost": "Chi phí bạn trả",
+      "label": "Tiết kiệm theo năm. Dùng phím mũi tên để chuyển năm.",
+      "point": "Năm {year, number}: tiết kiệm {amount}",
+      "yearLabel": "Năm {year, number}",
+      "table": "Hiện số liệu",
+      "tableCaption": "Tiết kiệm theo năm",
+      "year": "Năm",
+      "saved": "Đã tiết kiệm"
+    },
+    "assumptions": {
+      "title": "Cách ước tính",
+      "production": "Mỗi 1 kW tấm pin tạo khoảng {units} số điện mỗi tháng tại Karnataka.",
+      "roof": "Mỗi kW cần khoảng {m2} m² ({sqft} feet vuông) mái không bị che bóng.",
+      "cost": "Chi phí lắp đặt khoảng {low}–{high} mỗi kW.",
+      "tariff": "Hóa đơn được quy đổi thành số điện theo mức khoảng {home} mỗi số cho hộ gia đình và {business} cho doanh nghiệp.",
+      "subsidy": "Hộ gia đình được trợ cấp {first} mỗi kW cho 2 kW đầu và {third} cho kW thứ ba, tối đa {cap}. Doanh nghiệp không được trợ cấp.",
+      "savings": "Mức tiết kiệm chỉ tính phần điện bạn tự sử dụng theo giá hiện tại."
+    },
+    "subsidy": {
+      "title": "Chương trình trợ cấp PM Surya Ghar",
+      "body": "PM Surya Ghar: Muft Bijli Yojana là chương trình của Chính phủ Ấn Độ hỗ trợ điện mặt trời mái nhà cho hộ gia đình. Trợ cấp được chuyển vào tài khoản sau khi hệ thống được lắp đặt và kiểm tra.",
+      "caption": "Trợ cấp theo công suất cho hộ gia đình",
+      "size": "Công suất hệ thống",
+      "amount": "Trợ cấp",
+      "atLeast": "Từ {kw} kW trở lên",
+      "kw": "{kw} kW",
+      "source": "Quy định và đăng ký:",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "(mở trong thẻ mới)",
+      "business": "Doanh nghiệp không nhận trợ cấp này nhưng thường tiết kiệm nhiều hơn vì phải trả giá điện cao hơn."
+    },
+    "next": {
+      "title": "Các bước tiếp theo",
+      "one": {
+        "title": "Chúng tôi gọi cho bạn",
+        "body": "Chúng tôi hỏi về mái nhà, hóa đơn và thời điểm bạn muốn bắt đầu."
+      },
+      "two": {
+        "title": "Khảo sát tại chỗ",
+        "body": "Đơn vị lắp đặt đã xác minh kiểm tra mái và đưa ra báo giá chính thức."
+      },
+      "three": {
+        "title": "Trợ cấp và đo đếm điện hai chiều",
+        "body": "Chúng tôi hỗ trợ đăng ký trợ cấp và đo đếm điện hai chiều với công ty điện lực."
+      }
+    },
+    "contact": {
+      "title": "Trao đổi với chúng tôi",
+      "lead": "Để lại thông tin liên hệ. Chúng tôi sẽ gọi lại.",
+      "name": "Tên của bạn",
+      "phone": "Số di động",
+      "phoneHint": "Chúng tôi sẽ gọi đến số này.",
+      "message": "Có điều gì chúng tôi cần biết?",
+      "messageHint": "Ước tính đã được điền sẵn. Bạn có thể bổ sung thông tin.",
+      "prefill": "{kind, select, home {Cho gia đình tôi} other {Cho doanh nghiệp tôi}}: hệ thống {kw} kW, theo ước tính trên trang này.",
+      "send": "Gửi",
+      "sending": "Đang gửi…",
+      "sentTitle": "Cảm ơn bạn, {name}",
+      "sentBody": "Chúng tôi đã nhận được tin nhắn và sẽ sớm gọi cho bạn.",
+      "another": "Gửi tin nhắn khác",
+      "privacy": "Chúng tôi chỉ dùng số điện thoại để trao đổi về điện mặt trời.",
+      "unavailable": "Trang này chưa gửi được tin nhắn. Hãy gửi email đến <link>{email}</link>.",
+      "errors": {
+        "name": "Nhập tên của bạn.",
+        "phone": "Nhập số di động Ấn Độ gồm 10 chữ số.",
+        "message": "Viết vài lời, tối đa 1.000 ký tự.",
+        "generic": "Không gửi được. Vui lòng thử lại."
+      }
+    }
+  },
+  "howItWorks": {
+    "metaTitle": "Cách hoạt động",
+    "metaDescription": "Dự kiến: hành trình phế liệu trên Luma.Green, được bán tại nhà với giá công bằng, giao dịch qua ký quỹ và ghi nhận mỗi lần bàn giao.",
+    "title": "Cách Luma.Green hoạt động",
+    "lead": "Phế liệu qua bốn lần chuyển giao trước khi trở thành sản phẩm mới. Đây là việc diễn ra ở mỗi bước và những gì Luma.Green ghi nhận.",
+    "stepLabel": "Bước {number}",
+    "sell": {
+      "body": "Hộ gia đình chọn vật liệu, xem báo giá của các cửa hàng gần mình và đặt lịch thu gom hoặc giao tại cửa hàng. Kabadiwala cân từng vật liệu và trả tiền mặt hoặc UPI. Hai bên đều nhận biên nhận.",
+      "point1": "Mỗi cửa hàng tự đặt giá, không thấp hơn giá sàn đã công bố",
+      "point2": "Khối lượng được ghi bằng gam từ cân của cửa hàng",
+      "point3": "Có liên kết theo dõi, không cần tài khoản"
+    },
+    "trade": {
+      "body": "Minh họa: kabadiwala bán hàng đã phân loại cho bãi, bãi bán kiện cho cơ sở tái chế, và cơ sở tái chế bán mảnh, hạt, thỏi cho nhà máy. Tiền của người mua nằm trong ký quỹ đến khi hàng tới nơi. Bản minh họa hiển thị các bước thanh toán nhưng không giữ hoặc chuyển tiền thật.",
+      "point1": "Chỉ doanh nghiệp đã xác minh được giao dịch",
+      "point2": "Tồn kho được cập nhật khi gửi và nhận hàng",
+      "point3": "Mỗi giao dịch đã thanh toán có biên nhận đánh số"
+    },
+    "record": {
+      "body": "Mỗi lần bàn giao đều ghi rõ ai, vật liệu gì, bao nhiêu, khi nào và ở đâu. Hồ sơ này phục vụ bảng giá, tồn kho, tuân thủ và số liệu tác động, đồng thời là bằng chứng theo yêu cầu EPR và tiêu chuẩn tái chế.",
+      "point1": "Một hồ sơ từ cửa nhà đến nhà máy",
+      "point2": "Tổng EPR theo năm tài chính cho cơ sở tái chế và nhà máy",
+      "point3": "Bằng chứng hỗ trợ tín chỉ, không tính trùng"
+    }
+  },
+  "participants": {
+    "metaTitle": "Dành cho ai",
+    "metaDescription": "Luma.Green dành cho hộ gia đình, kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi: tất cả những người đưa phế liệu từ nhà đến nhà máy.",
+    "title": "Luma.Green dành cho ai",
+    "lead": "Tất cả những người đưa phế liệu từ nhà đến nhà máy và những người làm việc ở các bước trung gian.",
+    "kabadiwala": {
+      "name": "Cửa hàng kabadiwala",
+      "body": "Nhận yêu cầu thu gom từ hộ gần bạn, cân và trả tiền công bằng, rồi bán hàng đã phân loại cho bãi."
+    },
+    "yard": {
+      "name": "Bãi phân loại",
+      "body": "Dự kiến: mua từ kabadiwala, phân loại, ép kiện và bán lô đã phân hạng cho cơ sở tái chế với tiền được giữ trong ký quỹ."
+    },
+    "recycler": {
+      "name": "Cơ sở tái chế",
+      "body": "Mua kiện đã phân hạng từ bãi được xác minh và bán mảnh, hạt, thỏi cho nhà máy."
+    },
+    "manufacturer": {
+      "name": "Nhà sản xuất",
+      "body": "Đặt vật liệu tái chế từ cơ sở đã xác minh, kèm hồ sơ cần thiết cho báo cáo EPR."
+    },
+    "saathi": {
+      "name": "Cộng tác viên Saathi",
+      "body": "Nhận việc thu gom, phân loại và làm ca có trả công gần nhà, rồi theo dõi thu nhập."
+    },
+    "householdHeading": "Và mọi hộ gia đình",
+    "householdBody": "Bất kỳ ai cũng có thể bán phế liệu tại nhà mà không cần tài khoản: chọn vật liệu, xem báo giá và nhận tiền mặt hoặc UPI kèm biên nhận."
+  },
+  "contact": {
+    "metaTitle": "Liên hệ",
+    "metaDescription": "Liên hệ đội ngũ Luma.Green để tham gia thí điểm tại Bengaluru.",
+    "title": "Trao đổi với chúng tôi",
+    "lead": "Chúng tôi bắt đầu tại Bengaluru với một nhóm nhỏ kabadiwala, bãi phân loại, cơ sở tái chế và nhà máy. Hãy cho biết bạn là ai, kinh doanh vật liệu gì và lượng xử lý gần đúng mỗi tháng.",
+    "emailHeading": "Truy cập sớm và câu hỏi chung",
+    "securityHeading": "Báo cáo bảo mật",
+    "securityBody": "Phát hiện lỗ hổng? Vui lòng báo riêng thay vì công khai."
+  },
+  "help": {
+    "metaTitle": "Trung tâm trợ giúp",
+    "metaDescription": "Hướng dẫn đơn giản, câu trả lời và đào tạo cho hộ gia đình, kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi trên Luma.Green.",
+    "eyebrow": "Trung tâm trợ giúp",
+    "title": "Chúng tôi có thể giúp gì?",
+    "lead": "Hướng dẫn ngắn, câu trả lời rõ ràng và đào tạo nhanh cho mọi người trên Luma.Green.",
+    "home": "Trợ giúp",
+    "breadcrumb": "Bạn đang ở đây",
+    "hours": "Thứ Hai đến thứ Bảy, từ 9 giờ đến 19 giờ",
+    "replyTime": "Chúng tôi trả lời trong một ngày làm việc.",
+    "search": {
+      "label": "Tìm nội dung trợ giúp",
+      "placeholder": "Thử tìm: mã SMS hoặc ký quỹ",
+      "clear": "Xóa tìm kiếm",
+      "summary": "{count, plural, =0 {Không có câu trả lời} one {# câu trả lời} other {# câu trả lời}} cho “{query}”",
+      "topicSummary": "{count, plural, =0 {Không có câu trả lời} one {# câu trả lời} other {# câu trả lời}} về {topic}",
+      "emptyTitle": "Không tìm thấy kết quả",
+      "emptyBody": "Thử một từ ngắn, chọn chủ đề hoặc hỏi trực tiếp chúng tôi.",
+      "ask": "Hỏi chúng tôi",
+      "guide": "Hướng dẫn",
+      "question": "Câu hỏi",
+      "forRoles": "Dành cho {roles}",
+      "showMore": "Hiện tất cả {count} câu trả lời"
+    },
+    "topicsHeading": "Duyệt theo chủ đề",
+    "topics": {
+      "start": "Bắt đầu sử dụng",
+      "signIn": "Đăng nhập",
+      "pickups": "Thu gom",
+      "prices": "Giá",
+      "weighing": "Cân và biên nhận",
+      "payments": "Thanh toán",
+      "trading": "Mua và bán",
+      "documents": "Giấy tờ và kiểm tra",
+      "safety": "An toàn",
+      "carbon": "Carbon và EPR",
+      "disputes": "Sự cố và tranh chấp",
+      "privacy": "Quyền riêng tư"
+    },
+    "rolesHeading": "Trợ giúp dành cho bạn",
+    "rolesLead": "Chọn vai trò để xem hướng dẫn, câu hỏi và đào tạo phù hợp.",
+    "guideCount": "{count, plural, one {# hướng dẫn} other {# hướng dẫn}}",
+    "roles": {
+      "household": {
+        "name": "Hộ gia đình",
+        "who": "Bán phế liệu tại nhà",
+        "title": "Trợ giúp cho hộ gia đình",
+        "lead": "Đặt lịch thu gom, được cân công bằng và nhận tiền tại cửa. Không cần tài khoản."
+      },
+      "kabadiwala": {
+        "name": "Cửa hàng kabadiwala",
+        "who": "Điều hành cửa hàng phế liệu",
+        "title": "Trợ giúp cho kabadiwala",
+        "lead": "Nhận lịch thu gom, cân và thanh toán trong một phút, đặt giá và bán cho bãi."
+      },
+      "yard": {
+        "name": "Bãi phân loại",
+        "who": "Mua từ kabadiwala và phân loại thêm",
+        "title": "Trợ giúp cho bãi phân loại",
+        "lead": "Minh họa: tìm hàng gần bạn, bán kiện đã phân loại cho cơ sở tái chế và giao dịch qua ký quỹ."
+      },
+      "recycler": {
+        "name": "Cơ sở tái chế",
+        "who": "Biến phế liệu thành nguyên liệu",
+        "title": "Trợ giúp cho cơ sở tái chế",
+        "lead": "Mua phế liệu đã phân hạng từ bãi, bán sản phẩm cho nhà máy và giữ hồ sơ EPR rõ ràng."
+      },
+      "manufacturer": {
+        "name": "Nhà sản xuất",
+        "who": "Sản xuất từ vật liệu tái chế",
+        "title": "Trợ giúp cho nhà sản xuất",
+        "lead": "Đặt vật liệu tái chế, kiểm tra giao hàng và lưu hồ sơ EPR yêu cầu."
+      },
+      "saathi": {
+        "name": "Cộng tác viên Saathi",
+        "who": "Nhận việc thu gom và ca ngắn",
+        "title": "Trợ giúp cho Saathi",
+        "lead": "Đăng ký với giấy tờ có ảnh, tìm việc gần bạn, làm việc an toàn và nhận tiền."
+      }
+    },
+    "role": {
+      "onThisPage": "Trên trang này",
+      "guidesHeading": "Các hướng dẫn",
+      "guidesLead": "Từng bước, có hình ảnh.",
+      "steps": "{count, plural, one {# bước} other {# bước}}",
+      "faqsHeading": "Câu hỏi thường gặp",
+      "faqsLead": "Chạm vào câu hỏi để xem câu trả lời.",
+      "tutorialsHeading": "Video",
+      "tutorialsLead": "Video ngắn bằng ngôn ngữ của bạn.",
+      "trainingHeading": "Đào tạo",
+      "trainingLead": "Bài học ngắn. Đánh dấu hoàn thành sau mỗi bài.",
+      "otherRoles": "Trợ giúp cho người khác"
+    },
+    "guide": {
+      "metaTitle": "{guide} · {role}",
+      "stepsHeading": "Các bước",
+      "stepLabel": "Bước {number} trên {total}",
+      "relatedHeading": "Câu hỏi liên quan",
+      "nextHeading": "Hướng dẫn tiếp theo"
+    },
+    "tutorial": {
+      "comingSoon": "Video sắp có",
+      "minutes": "{minutes} phút"
+    },
+    "training": {
+      "progressLabel": "Nội dung đào tạo của bạn",
+      "progress": "Đã hoàn thành {done}/{total}",
+      "minutes": "{minutes} phút",
+      "markDone": "Đánh dấu hoàn thành",
+      "openGuide": "Mở hướng dẫn",
+      "badgeTitle": "Đã hoàn thành đào tạo",
+      "badgeBody": "Làm tốt lắm! Bạn đã hoàn thành mọi bài học. Có thể quay lại ôn tập bất cứ lúc nào.",
+      "reset": "Bắt đầu lại",
+      "savedHere": "Tiến độ được lưu trên thiết bị này."
+    },
+    "contactStrip": {
+      "title": "Bạn vẫn cần hỗ trợ?",
+      "body": "Trao đổi với nhân viên. Chúng tôi trả lời trong một ngày làm việc.",
+      "call": "Gọi",
+      "whatsapp": "WhatsApp",
+      "write": "Viết cho chúng tôi"
+    },
+    "contact": {
+      "metaTitle": "Liên hệ hỗ trợ",
+      "metaDescription": "Hỏi đội ngũ Luma.Green qua điện thoại, WhatsApp hoặc tin nhắn ngắn. Chúng tôi trả lời trong một ngày làm việc.",
+      "title": "Liên hệ với chúng tôi",
+      "lead": "Nhân viên đọc từng tin nhắn. Hãy diễn đạt bằng lời của bạn.",
+      "formHeading": "Gửi tin nhắn",
+      "name": "Tên của bạn",
+      "phone": "Số di động",
+      "phoneHint": "Chúng tôi sẽ gọi hoặc gửi SMS đến số này.",
+      "role": "Bạn là",
+      "topic": "Nội dung liên quan đến gì?",
+      "choose": "Chọn một mục",
+      "message": "Tin nhắn của bạn",
+      "messageHint": "Chuyện gì đã xảy ra và khi nào? Thêm số lịch đặt hoặc giao dịch nếu có.",
+      "messageCount": "{count, number} trên {max, number}",
+      "roles": {
+        "household": "Một hộ gia đình",
+        "kabadiwala": "Một kabadiwala",
+        "yard": "Một bãi phân loại",
+        "recycler": "Một cơ sở tái chế",
+        "manufacturer": "Một nhà sản xuất",
+        "saathi": "Một Saathi",
+        "other": "Người khác"
+      },
+      "topics": {
+        "account": "Đăng nhập hoặc tài khoản của tôi",
+        "pickup": "Một lần thu gom",
+        "prices": "Giá",
+        "payments": "Thanh toán",
+        "documents": "Giấy tờ và kiểm tra",
+        "trade": "Giao dịch giữa doanh nghiệp",
+        "solar": "Điện mặt trời",
+        "other": "Vấn đề khác"
+      },
+      "submit": "Gửi lời nhắn",
+      "sending": "Đang gửi…",
+      "privacy": "Chúng tôi chỉ dùng số của bạn để trả lời.",
+      "sentTitle": "Đã gửi tin nhắn",
+      "sentBody": "Cảm ơn bạn. Chúng tôi sẽ gọi hoặc gửi SMS trong một ngày làm việc.",
+      "sendAnother": "Gửi tin nhắn khác",
+      "backToHelp": "Quay lại trợ giúp",
+      "errors": {
+        "nameInvalid": "Nhập tên từ 2 đến 80 ký tự.",
+        "phoneInvalid": "Nhập số di động Ấn Độ gồm 10 chữ số.",
+        "roleMissing": "Chọn vai trò của bạn.",
+        "topicMissing": "Chọn chủ đề.",
+        "messageShort": "Viết thêm một chút, ít nhất 5 ký tự.",
+        "messageLong": "Giữ nội dung dưới 1.000 ký tự.",
+        "generic": "Không gửi được. Kiểm tra kết nối rồi thử lại."
+      },
+      "unavailableTitle": "Tin nhắn đang tắt tại đây",
+      "unavailableBody": "Hãy gọi hoặc nhắn WhatsApp. Chúng tôi sẵn lòng hỗ trợ.",
+      "otherWays": "Cách liên hệ khác",
+      "callTitle": "Gọi cho chúng tôi",
+      "whatsappTitle": "Nhắn WhatsApp cho chúng tôi",
+      "hoursTitle": "Giờ mở cửa",
+      "replyTitle": "Thời gian trả lời",
+      "sampleNumbers": "Nguyên mẫu: đây là số điện thoại mẫu."
+    },
+    "guides": {
+      "signIn": {
+        "title": "Đăng nhập bằng mã SMS",
+        "summary": "Không cần mật khẩu. Chỉ cần số di động và mã 6 chữ số.",
+        "steps": {
+          "open": {
+            "title": "Mở trang đăng nhập",
+            "body": "Truy cập luma.green/login và chọn ngôn ngữ."
+          },
+          "number": {
+            "title": "Nhập số di động",
+            "body": "Nhập số 10 chữ số đã dùng đăng ký."
+          },
+          "code": {
+            "title": "Nhập mã 6 chữ số",
+            "body": "Chúng tôi gửi mã qua SMS. Mã có hiệu lực 5 phút. Chưa nhận được sau 30 giây? Chạm Gửi lại."
+          },
+          "stay": {
+            "title": "Duy trì đăng nhập",
+            "body": "Bạn được duy trì đăng nhập trên điện thoại đó trong 30 ngày. Không chia sẻ mã: đội ngũ chúng tôi không bao giờ hỏi mã này."
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "An toàn khi làm việc",
+        "summary": "Đồ bảo hộ, nâng vật nặng, phế liệu sắc nhọn, pin và máy móc: các kiến thức cơ bản giúp tránh chấn thương.",
+        "steps": {
+          "gear": {
+            "title": "Mang trang bị bảo hộ cá nhân",
+            "body": "Luôn đeo găng tay và giày kín. Dùng khẩu trang khi có bụi và kính bảo hộ khi cắt hoặc nghiền."
+          },
+          "lift": {
+            "title": "Dùng sức chân để nâng",
+            "body": "Gập đầu gối, giữ vật sát người và không vặn mình. Nhờ hỗ trợ với vật nặng trên 25 kg."
+          },
+          "sharp": {
+            "title": "Chú ý cạnh sắc",
+            "body": "Thủy tinh, thiếc và dây kim loại dễ gây đứt tay. Đựng thủy tinh trong hộp, không để rời trong bao."
+          },
+          "batteries": {
+            "title": "Tách riêng pin và rác thải điện tử",
+            "body": "Cất nơi khô, mát, cách xa phế liệu khác. Không đốt dây điện hoặc đập mở pin và màn hình."
+          },
+          "machines": {
+            "title": "Tắt máy trước khi gỡ vật kẹt",
+            "body": "Dừng máy ép kiện hoặc máy nghiền và rút điện trước. Không đưa tay vào khi máy đang chạy."
+          },
+          "firstAid": {
+            "title": "Để dụng cụ sơ cứu gần nơi làm việc",
+            "body": "Luôn có hộp sơ cứu và nước sạch tại cơ sở. Nếu bị cắt sâu hoặc bỏng, cần hỗ trợ y tế ngay."
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "Đăng ký và xác minh",
+        "summary": "Cần chuẩn bị gì và đội ngũ chúng tôi kiểm tra gì trước khi doanh nghiệp hoạt động.",
+        "steps": {
+          "start": {
+            "title": "Bắt đầu tại luma.green/join",
+            "body": "Đăng nhập bằng số di động và chọn Bãi phân loại, Cơ sở tái chế hoặc Nhà sản xuất."
+          },
+          "details": {
+            "title": "Thêm thông tin doanh nghiệp",
+            "body": "Tên, địa chỉ và ghim bản đồ, vật liệu xử lý và giờ làm việc. GST không bắt buộc."
+          },
+          "consent": {
+            "title": "Thêm giấy chấp thuận môi trường",
+            "body": "Giấy của KSPCB hoặc hội đồng tại bang của bạn: số giấy, ngày hết hạn và chứng nhận dạng PDF."
+          },
+          "photos": {
+            "title": "Thêm ảnh máy móc",
+            "body": "Ít nhất hai ảnh hoặc video ngắn về máy chính và cơ sở."
+          },
+          "review": {
+            "title": "Chúng tôi kiểm tra trong 12–24 giờ",
+            "body": "Nhân viên kiểm tra từng giấy tờ. Nếu thiếu thông tin, chúng tôi nói rõ cần sửa gì."
+          },
+          "live": {
+            "title": "Bắt đầu giao dịch",
+            "body": "Sau khi được duyệt, bảng điều khiển sẽ mở và người mua, người bán gần bạn có thể tìm thấy bạn."
+          }
+        }
+      },
+      "escrow": {
+        "title": "Hướng dẫn minh họa: ký quỹ bảo vệ giao dịch như thế nào",
+        "summary": "Dịch vụ ký quỹ dự kiến sẽ giữ tiền đến khi giao hàng. Bản minh họa hiện tại chỉ ghi nhận các khoản thanh toán mô phỏng.",
+        "steps": {
+          "request": {
+            "title": "Người mua gửi yêu cầu",
+            "body": "Yêu cầu ghi vật liệu, số kg và giá mỗi kg."
+          },
+          "accept": {
+            "title": "Người bán chấp nhận",
+            "body": "Chưa có thanh toán. Gọi cho nhau nếu cần thống nhất chi tiết."
+          },
+          "pay": {
+            "title": "Người mua nộp tiền ký quỹ",
+            "body": "Tiền được giữ an toàn, chưa chuyển cho người bán. Người bán thấy tiền đã có trước khi xếp hàng."
+          },
+          "dispatch": {
+            "title": "Người bán gửi chuyến hàng",
+            "body": "Đánh dấu đã gửi. Hóa đơn đi kèm hàng, cùng chứng từ e-way bill nếu cần."
+          },
+          "confirm": {
+            "title": "Người mua xác nhận nhận hàng",
+            "body": "Kiểm tra khối lượng và chất lượng rồi xác nhận. Tiền được giải ngân cho người bán."
+          }
+        }
+      },
+      "paperwork": {
+        "title": "Hóa đơn và e-way bill",
+        "summary": "Giấy tờ đi cùng mỗi chuyến hàng.",
+        "steps": {
+          "invoice": {
+            "title": "Lấy hóa đơn từ giao dịch",
+            "body": "Mỗi giao dịch có hóa đơn để mở, in hoặc chia sẻ."
+          },
+          "ewayBill": {
+            "title": "E-way bill cho giá trị trên ₹50.000",
+            "body": "Quy định GST yêu cầu e-way bill khi vận chuyển hàng trên ₹50.000. Một số bang có ngưỡng khác."
+          },
+          "vehicle": {
+            "title": "Giấy tờ đi cùng xe",
+            "body": "Mang hóa đơn và e-way bill trên xe, kiểm tra biển số xe trùng khớp."
+          },
+          "keep": {
+            "title": "Lưu giữ hồ sơ",
+            "body": "Biên nhận và hóa đơn lưu trong ứng dụng 6 năm, theo thời hạn luật thuế yêu cầu."
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "Hướng dẫn minh họa: khi hàng không đúng thỏa thuận",
+        "summary": "Cần làm gì nếu khối lượng hoặc chất lượng không như đã thống nhất.",
+        "steps": {
+          "check": {
+            "title": "Kiểm tra trước khi xác nhận",
+            "body": "Cân hàng và kiểm tra chất lượng lúc hàng đến, khi tài xế vẫn còn ở đó."
+          },
+          "hold": {
+            "title": "Không xác nhận hàng thiếu",
+            "body": "Xác nhận sẽ giải ngân tiền. Khi chưa xác nhận, tiền vẫn trong ký quỹ."
+          },
+          "report": {
+            "title": "Báo cáo kèm ảnh",
+            "body": "Gọi hoặc nhắn từ Trợ giúp, Liên hệ với chúng tôi. Thêm ảnh phiếu cân và vật liệu."
+          },
+          "settle": {
+            "title": "Chúng tôi giúp hai bên thống nhất",
+            "body": "Chúng tôi xem khối lượng, ảnh và tin nhắn của cả hai bên. Tiền được giữ an toàn đến khi giải quyết xong."
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "Tín chỉ carbon và EPR, dễ hiểu",
+        "summary": "Vì sao cần ghi nhận tái chế và những điều thương hiệu, cơ sở tái chế cần biết.",
+        "steps": {
+          "record": {
+            "title": "Mỗi kg đều được ghi nhận",
+            "body": "Mỗi lần cân và giao dịch trên Luma.Green đều ghi vật liệu, khối lượng, ngày và địa điểm."
+          },
+          "carbon": {
+            "title": "Tái chế giúp giảm phát thải carbon",
+            "body": "Sản xuất từ vật liệu tái chế cần ít năng lượng hơn vật liệu mới. Phần tiết kiệm đó có thể trở thành tín chỉ carbon sau này."
+          },
+          "epr": {
+            "title": "EPR: nhà sản xuất phải thu hồi",
+            "body": "Trách nhiệm mở rộng của nhà sản xuất nghĩa là thương hiệu bán bao bì, điện tử hoặc pin phải tái chế một phần chất thải đó."
+          },
+          "certificates": {
+            "title": "Cơ sở tái chế cấp chứng nhận EPR",
+            "body": "Cơ sở đăng ký cấp chứng nhận trên cổng CPCB cho lượng đã tái chế. Thương hiệu mua chứng nhận để hoàn thành mục tiêu."
+          },
+          "proof": {
+            "title": "Hồ sơ rõ ràng là bằng chứng",
+            "body": "Hồ sơ từ nhà đến nhà máy cho thấy nguồn gốc vật liệu. Tín chỉ carbon trên Luma.Green sẽ có sau."
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "Đặt lịch thu gom đầu tiên",
+        "summary": "Từ ảnh đến lịch thu gom trong khoảng hai phút. Không cần tài khoản.",
+        "steps": {
+          "photo": {
+            "title": "Chụp ảnh phế liệu",
+            "body": "Tùy chọn: thêm một ảnh phế liệu rồi kiểm tra vật liệu đề xuất."
+          },
+          "estimate": {
+            "title": "Kiểm tra ước tính",
+            "body": "Chúng tôi hiển thị vật liệu nhận diện và số kg gần đúng. Điều chỉnh số kg nếu chưa đúng."
+          },
+          "choose": {
+            "title": "Chọn thu gom hoặc mang đến",
+            "body": "Xem kabadiwala đã xác minh gần bạn, xếp theo khoảng cách, kèm giờ mở cửa."
+          },
+          "slot": {
+            "title": "Chọn giờ",
+            "body": "Chọn khung giờ rồi kiểm tra địa chỉ và ghim bản đồ."
+          },
+          "code": {
+            "title": "Xác nhận số điện thoại",
+            "body": "Nhập mã 6 chữ số gửi qua SMS. Chỉ vậy thôi, không cần mật khẩu."
+          },
+          "track": {
+            "title": "Nhận liên kết theo dõi",
+            "body": "Chúng tôi gửi SMS chứa liên kết theo dõi lần thu gom."
+          }
+        }
+      },
+      "getReady": {
+        "title": "Chuẩn bị phế liệu",
+        "summary": "Phế liệu khô, phân loại sẵn được cân nhanh và bán giá tốt hơn.",
+        "steps": {
+          "paper": {
+            "title": "Giữ giấy khô và phẳng",
+            "body": "Xếp báo và làm phẳng hộp. Giấy ướt có giá thấp hơn."
+          },
+          "bottles": {
+            "title": "Đổ hết nước và ép chai",
+            "body": "Đổ chất lỏng ra, ép phẳng chai nhựa để tiết kiệm chỗ."
+          },
+          "metal": {
+            "title": "Tách riêng kim loại",
+            "body": "Cho lon, thép và nhôm vào túi riêng."
+          },
+          "ewaste": {
+            "title": "Để riêng thiết bị và pin",
+            "body": "Cất điện thoại, bộ sạc và pin cũ trong hộp riêng, tránh xa nhiệt."
+          },
+          "door": {
+            "title": "Đặt túi gần cửa",
+            "body": "Giúp thu gom nhanh hơn. Đặt ở nơi khô ráo."
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "Theo dõi lần thu gom",
+        "summary": "Khi nào, ai đến và bao nhiêu tiền, tất cả trên một trang.",
+        "steps": {
+          "open": {
+            "title": "Mở liên kết trong SMS",
+            "body": "Dùng được trên mọi điện thoại. Không cần đăng nhập."
+          },
+          "when": {
+            "title": "Xem thời gian",
+            "body": "Ngày và khung giờ của bạn. Chúng tôi báo nếu có thay đổi."
+          },
+          "who": {
+            "title": "Xem ai đang đến",
+            "body": "Tên, cửa hàng và huy hiệu xác minh. Chạm Gọi để trao đổi."
+          },
+          "after": {
+            "title": "Xem những gì bạn nhận được",
+            "body": "Sau thu gom, trang hiển thị tiền đã trả và điểm tái chế của bạn."
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "Cân và thanh toán tại cửa",
+        "summary": "Cách bảo đảm mỗi kg đều được tính đúng.",
+        "steps": {
+          "zero": {
+            "title": "Kiểm tra cân chỉ số 0",
+            "body": "Trước khi đặt vật lên, cân trống phải hiện 0."
+          },
+          "each": {
+            "title": "Cân riêng từng vật liệu",
+            "body": "Giấy, nhựa và kim loại có giá khác nhau nên được cân riêng."
+          },
+          "amount": {
+            "title": "Ứng dụng tính số tiền",
+            "body": "Số kg nhân với giá mỗi kg của kabadiwala. Bạn thấy tổng tiền trước khi nhận."
+          },
+          "pay": {
+            "title": "Nhận tiền ngay tại chỗ",
+            "body": "Bằng tiền mặt hoặc UPI, trước khi họ rời đi. Luma.Green không giữ tiền của bạn."
+          },
+          "receipt": {
+            "title": "Kiểm tra biên nhận",
+            "body": "Trang theo dõi hiển thị từng vật liệu, khối lượng, giá và tổng tiền."
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "Cách đặt giá",
+        "summary": "Vì sao ước tính là một khoảng và cách tính số tiền cuối cùng.",
+        "steps": {
+          "estimate": {
+            "title": "Ước tính dùng giá của thành phố",
+            "body": "Trước khi bạn chọn kabadiwala, chúng tôi dùng giá chuẩn tại Bengaluru để hiển thị một khoảng."
+          },
+          "own": {
+            "title": "Mỗi kabadiwala tự đặt giá",
+            "body": "Khi chọn một cửa hàng, bạn thấy giá riêng của họ cho từng vật liệu."
+          },
+          "floor": {
+            "title": "Không thấp hơn mức tối thiểu",
+            "body": "Luma.Green đặt giá tối thiểu cho mỗi vật liệu. Kabadiwala không được trả thấp hơn."
+          },
+          "final": {
+            "title": "Khối lượng quyết định số tiền",
+            "body": "Bạn được trả theo lượng cân tại cửa, với giá của kabadiwala đó."
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "Hủy hoặc đổi lịch đặt",
+        "summary": "Kế hoạch có thể thay đổi. Đây là cách xử lý.",
+        "steps": {
+          "open": {
+            "title": "Mở liên kết theo dõi",
+            "body": "Mọi thông tin lịch đặt đều ở đó."
+          },
+          "cancel": {
+            "title": "Hủy miễn phí",
+            "body": "Bạn có thể hủy trước khi kabadiwala lên đường. Không mất phí."
+          },
+          "declined": {
+            "title": "Nếu kabadiwala không thể đến",
+            "body": "Chúng tôi chuyển yêu cầu cho cửa hàng gần nhất tiếp theo và báo qua SMS."
+          },
+          "help": {
+            "title": "Bạn cần giờ khác?",
+            "body": "Hủy và đặt lại hoặc gọi để chúng tôi hỗ trợ."
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "Điện thoại cũ, pin và rác thải điện tử",
+        "summary": "An toàn khi giữ tại nhà và khi bàn giao.",
+        "steps": {
+          "apart": {
+            "title": "Cất chung trong hộp khô",
+            "body": "Tránh xa bếp, nước, ánh nắng và tầm với của trẻ em."
+          },
+          "tape": {
+            "title": "Dán băng keo lên đầu cực pin",
+            "body": "Che các đầu kim loại bằng băng keo để tránh phát tia lửa."
+          },
+          "swollen": {
+            "title": "Không ép pin bị phồng",
+            "body": "Pin phồng có thể bắt lửa. Để riêng trong hộp kim loại và báo cho kabadiwala."
+          },
+          "handover": {
+            "title": "Bàn giao thiết bị nguyên vẹn",
+            "body": "Không đập điện thoại hoặc tháo linh kiện. Nêu rõ là rác thải điện tử khi đặt lịch."
+          }
+        }
+      },
+      "registerShop": {
+        "title": "Đăng ký cửa hàng",
+        "summary": "Cần điền gì và thời gian kiểm tra.",
+        "steps": {
+          "start": {
+            "title": "Bắt đầu tại luma.green/join",
+            "body": "Đăng nhập bằng số di động và chọn Kabadiwala."
+          },
+          "shop": {
+            "title": "Thêm cửa hàng",
+            "body": "Tên bạn, tên cửa hàng, địa chỉ với ghim bản đồ và giờ mở cửa."
+          },
+          "pickups": {
+            "title": "Cho biết bạn có thu gom không",
+            "body": "Chọn phương tiện: xe đẩy tay, xe đạp, xe ba bánh hoặc xe tải nhỏ. Không có xe? Hộ gia đình vẫn có thể mang hàng đến."
+          },
+          "gst": {
+            "title": "GST không bắt buộc",
+            "body": "Thêm số GST nếu có. Nếu không, chỉ cần cho biết."
+          },
+          "review": {
+            "title": "Chúng tôi kiểm tra trong 12–24 giờ",
+            "body": "Nhân viên kiểm tra thông tin của bạn. Bảng điều khiển mở sau khi được duyệt."
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "Trả lời yêu cầu thu gom",
+        "summary": "Yêu cầu mới từ hộ gần bạn và cách xử lý.",
+        "steps": {
+          "see": {
+            "title": "Xem yêu cầu mới",
+            "body": "Mỗi yêu cầu hiển thị khu vực, khung giờ, vật liệu, số kg ước tính và số tiền bạn sẽ trả."
+          },
+          "answer": {
+            "title": "Chấp nhận hoặc từ chối",
+            "body": "Chấp nhận để nhận việc. Nếu từ chối, yêu cầu chuyển đến kabadiwala gần nhất tiếp theo và hộ gia đình không được báo ai đã từ chối."
+          },
+          "auto": {
+            "title": "Bật tự động chấp nhận",
+            "body": "Khi bật, mọi yêu cầu trong khu vực được chấp nhận ngay, kể cả ban đêm."
+          },
+          "go": {
+            "title": "Gọi rồi lên đường",
+            "body": "Sau khi chấp nhận, bạn thấy số điện thoại và địa chỉ chính xác. Gọi để báo bạn đang đến."
+          }
+        }
+      },
+      "weighAndPay": {
+        "title": "Cân và thanh toán",
+        "summary": "Ghi nhận thu gom trong chưa đầy một phút.",
+        "steps": {
+          "zero": {
+            "title": "Đưa cân về 0",
+            "body": "Bắt đầu từ số 0 khi cân trống, tại vị trí hộ gia đình nhìn thấy."
+          },
+          "weigh": {
+            "title": "Cân từng vật liệu",
+            "body": "Nhập số kg cho từng loại. Dùng + và − để tăng giảm nửa kg."
+          },
+          "total": {
+            "title": "Hiện tổng tiền",
+            "body": "Ứng dụng tính theo giá của bạn. Cho hộ gia đình xem màn hình."
+          },
+          "pay": {
+            "title": "Trả bằng tiền mặt hoặc UPI",
+            "body": "Trả trước khi rời đi và chọn phương thức đã dùng."
+          },
+          "save": {
+            "title": "Lưu",
+            "body": "Hộ gia đình thấy biên nhận trên trang theo dõi, còn tồn kho tăng theo lượng bạn đã cân."
+          }
+        }
+      },
+      "setPrices": {
+        "title": "Đặt giá của bạn",
+        "summary": "Bạn chọn mức trả, trên giá tối thiểu.",
+        "steps": {
+          "open": {
+            "title": "Mở Giá của tôi",
+            "body": "Bạn thấy từng vật liệu với giá tối thiểu bên cạnh."
+          },
+          "enter": {
+            "title": "Nhập giá mỗi kg",
+            "body": "Nhập mức bạn muốn trả cho hộ gia đình theo từng vật liệu."
+          },
+          "floor": {
+            "title": "Không thấp hơn giá tối thiểu",
+            "body": "Giá thấp hơn mức tối thiểu không được lưu. Nếu mức tối thiểu tăng, giá của bạn cũng tăng và chúng tôi sẽ thông báo."
+          },
+          "blank": {
+            "title": "Để trống giá một vật liệu",
+            "body": "Nếu không đặt giá, giá chuẩn của thành phố được áp dụng."
+          },
+          "history": {
+            "title": "Biên nhận cũ không thay đổi",
+            "body": "Giá mới chỉ áp dụng cho lần thu gom mới. Biên nhận trước đó giữ nguyên giá đã trả."
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "Hướng dẫn minh họa: phân loại tồn kho và bán cho bãi",
+        "summary": "Từ nhiều lần thu gom nhỏ thành chuyến hàng phù hợp cho bãi.",
+        "steps": {
+          "grows": {
+            "title": "Tồn kho tự động tăng",
+            "body": "Mỗi lần thu gom được cân đều thêm vào Tồn kho của tôi."
+          },
+          "sort": {
+            "title": "Ghi nhận phân loại",
+            "body": "Tách phế liệu trộn thành đúng loại. Ví dụ, giấy trộn thành báo, bìa carton và phần thải bỏ."
+          },
+          "show": {
+            "title": "Cho bãi xem tồn kho",
+            "body": "Bật Hiện cho bãi để các bãi gần bạn biết bạn có gì."
+          },
+          "sell": {
+            "title": "Chấp nhận yêu cầu của bãi",
+            "body": "Kiểm tra số kg và giá rồi chấp nhận. Bãi nộp tiền ký quỹ trước khi thu hàng."
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "Khi hộ gia đình không đồng ý",
+        "summary": "Bình tĩnh, rõ ràng và công bằng.",
+        "steps": {
+          "reweigh": {
+            "title": "Cùng cân lại",
+            "body": "Đưa cân về 0 và cân lại trước mặt họ."
+          },
+          "show": {
+            "title": "Hiện giá của bạn",
+            "body": "Hiện giá mỗi kg và tổng tiền trên điện thoại."
+          },
+          "noForce": {
+            "title": "Không ép bán",
+            "body": "Nếu họ vẫn không đồng ý, họ không phải bán vật liệu đó. Bỏ vật liệu đó khỏi biên nhận."
+          },
+          "call": {
+            "title": "Gọi chúng tôi nếu chưa giải quyết được",
+            "body": "Chúng tôi có thể trao đổi với cả hai bên. Mọi biên nhận đều ghi khối lượng và giá."
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "Hướng dẫn minh họa: mua hàng từ kabadiwala",
+        "summary": "Tìm phế liệu đã phân loại gần bạn và đặt lịch lấy hàng.",
+        "steps": {
+          "browse": {
+            "title": "Mở Mua",
+            "body": "Xem tồn kho gần bạn theo vật liệu và khoảng cách, kèm số kg và giá."
+          },
+          "request": {
+            "title": "Gửi yêu cầu",
+            "body": "Chọn số kg cần mua. Giá mỗi kg hiện trước khi gửi."
+          },
+          "pay": {
+            "title": "Nộp tiền ký quỹ",
+            "body": "Thanh toán khi kabadiwala chấp nhận. Tiền được giữ đến khi bạn xác nhận."
+          },
+          "collect": {
+            "title": "Lấy hàng và cân",
+            "body": "Lấy hàng rồi cân tại bãi của bạn."
+          },
+          "confirm": {
+            "title": "Xác nhận để giải ngân",
+            "body": "Nếu khối lượng và chất lượng đúng, hãy xác nhận. Kabadiwala sẽ được trả tiền."
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "Hướng dẫn minh họa: bán kiện đã phân loại cho cơ sở tái chế",
+        "summary": "Đăng hàng một lần để cơ sở tái chế tìm đến bạn.",
+        "steps": {
+          "list": {
+            "title": "Đăng hàng bạn có",
+            "body": "Trong Bán, thêm vật liệu, số kg và giá mỗi kg."
+          },
+          "requests": {
+            "title": "Nhận yêu cầu",
+            "body": "Cơ sở tái chế mua loại vật liệu đó có thể xem tin đăng và gửi yêu cầu."
+          },
+          "accept": {
+            "title": "Chấp nhận rồi chờ thanh toán",
+            "body": "Chỉ xếp hàng sau khi tiền người mua đã vào ký quỹ."
+          },
+          "dispatch": {
+            "title": "Gửi chuyến hàng",
+            "body": "Đánh dấu đã gửi, kèm hóa đơn và e-way bill cho hàng trên ₹50.000."
+          },
+          "paid": {
+            "title": "Nhận tiền",
+            "body": "Khi cơ sở tái chế xác nhận nhận hàng, tiền được giải ngân cho bạn."
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "Hướng dẫn minh họa: mua phế liệu đã phân loại từ bãi",
+        "summary": "Nguồn đầu vào ổn định, đã phân hạng cho dây chuyền.",
+        "steps": {
+          "browse": {
+            "title": "Tìm kiện hàng gần bạn",
+            "body": "Mở Mua để xem tin đăng của bãi theo vật liệu và khoảng cách."
+          },
+          "request": {
+            "title": "Yêu cầu một chuyến hàng",
+            "body": "Chọn số kg. Giá mỗi kg hiện trước khi gửi."
+          },
+          "pay": {
+            "title": "Nộp tiền ký quỹ",
+            "body": "Thanh toán khi bãi chấp nhận. Tiền được giữ đến khi bạn xác nhận nhận hàng."
+          },
+          "confirm": {
+            "title": "Cân, kiểm tra, xác nhận",
+            "body": "Cân tại cổng và kiểm tra hạng vật liệu trước khi xác nhận."
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "Hướng dẫn minh họa: bán vật liệu tái chế cho nhà sản xuất",
+        "summary": "Cho nhà máy thấy sản phẩm của dây chuyền để họ đặt hàng.",
+        "steps": {
+          "list": {
+            "title": "Đăng sản phẩm đầu ra",
+            "body": "Thêm mảnh, hạt, kiện hoặc thỏi, cùng số kg sẵn có và giá mỗi kg."
+          },
+          "orders": {
+            "title": "Nhận đơn hàng",
+            "body": "Nhà sản xuất xem tin đăng và gửi yêu cầu số kg cần dùng."
+          },
+          "load": {
+            "title": "Xếp hàng sau thanh toán",
+            "body": "Chấp nhận rồi gửi hàng khi tiền đã vào ký quỹ."
+          },
+          "paid": {
+            "title": "Nhận tiền khi giao hàng",
+            "body": "Tiền được giải ngân khi nhà sản xuất xác nhận."
+          }
+        }
+      },
+      "orderRecycled": {
+        "title": "Hướng dẫn minh họa: đặt vật liệu tái chế",
+        "summary": "Tìm nguyên liệu tái chế và đặt số lượng cần dùng.",
+        "steps": {
+          "browse": {
+            "title": "Xem hàng của cơ sở tái chế",
+            "body": "Mở Mua để xem vật liệu tái chế theo loại, số kg còn và giá."
+          },
+          "order": {
+            "title": "Gửi đơn hàng",
+            "body": "Chọn số kg rồi gửi. Cơ sở tái chế chấp nhận hoặc từ chối."
+          },
+          "pay": {
+            "title": "Nộp tiền ký quỹ",
+            "body": "Thanh toán khi họ chấp nhận. Tiền được giữ đến khi bạn xác nhận nhận hàng."
+          },
+          "receive": {
+            "title": "Nhận chuyến hàng",
+            "body": "Cân và kiểm tra hạng vật liệu tại cổng."
+          },
+          "confirm": {
+            "title": "Xác nhận nhận hàng",
+            "body": "Xác nhận để giải ngân cho cơ sở tái chế."
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "Hướng dẫn minh họa: kiểm tra giao hàng",
+        "summary": "Kiểm tra nhanh trước khi xác nhận và giải ngân.",
+        "steps": {
+          "papers": {
+            "title": "Đối chiếu giấy tờ",
+            "body": "Hóa đơn và e-way bill phải khớp với đơn hàng và phương tiện."
+          },
+          "weigh": {
+            "title": "Tự cân hàng",
+            "body": "Cân xe lúc đầy và lúc rỗng. Chênh lệch là lượng bạn nhận."
+          },
+          "look": {
+            "title": "Kiểm tra vật liệu",
+            "body": "Đối chiếu màu sắc, độ ẩm và tạp chất với đơn hàng."
+          },
+          "decide": {
+            "title": "Xác nhận hoặc báo sự cố",
+            "body": "Đúng hết? Xác nhận. Chưa đúng? Báo kèm ảnh và tiền tiếp tục ở ký quỹ."
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "Trở thành Saathi",
+        "summary": "Đăng ký bằng giấy tờ có ảnh và ảnh tự chụp để nhận việc gần bạn.",
+        "steps": {
+          "start": {
+            "title": "Bắt đầu tại luma.green/join",
+            "body": "Đăng nhập bằng số di động và chọn Saathi."
+          },
+          "work": {
+            "title": "Chọn công việc",
+            "body": "Thu gom tại nhà, phụ cửa hàng kabadiwala, phân loại tại bãi hoặc làm ca ở cơ sở tái chế hay nhà máy."
+          },
+          "area": {
+            "title": "Đặt khu vực và thời gian",
+            "body": "Nơi ở, khoảng cách bạn có thể đi — 2, 5 hoặc 10 km — và khi nào bạn rảnh."
+          },
+          "id": {
+            "title": "Thêm giấy tờ có ảnh và ảnh tự chụp",
+            "body": "Thẻ cử tri, bằng lái, PAN hoặc Aadhaar đã che bớt. Không dùng đầy đủ số Aadhaar."
+          },
+          "review": {
+            "title": "Chúng tôi kiểm tra trong 12–24 giờ",
+            "body": "Nhân viên đối chiếu ảnh tự chụp với giấy tờ. Sau đó bạn có thể nhận việc."
+          }
+        }
+      },
+      "findJobs": {
+        "title": "Tìm và nhận việc",
+        "summary": "Việc gần bạn, khi bạn muốn làm.",
+        "steps": {
+          "home": {
+            "title": "Xem việc trên Trang chủ",
+            "body": "Mỗi việc hiển thị địa điểm, ngày, giờ và tiền công."
+          },
+          "accept": {
+            "title": "Nhận một việc",
+            "body": "Chạm Chấp nhận. Doanh nghiệp sẽ thấy bạn nhận đến làm."
+          },
+          "arrive": {
+            "title": "Đến đúng giờ",
+            "body": "Gọi báo trước nếu đến muộn. Đúng giờ giúp bạn có thêm việc."
+          },
+          "done": {
+            "title": "Đánh dấu đã xong",
+            "body": "Sau khi làm xong, đánh dấu hoàn thành để việc xuất hiện trong thu nhập."
+          }
+        }
+      },
+      "homePickup": {
+        "title": "Thu gom tại hộ gia đình",
+        "summary": "Thân thiện, nhanh chóng và công bằng tại mỗi nhà.",
+        "steps": {
+          "call": {
+            "title": "Gọi trước khi đi",
+            "body": "Nêu tên, cửa hàng bạn đại diện và giờ dự kiến đến."
+          },
+          "greet": {
+            "title": "Giới thiệu bản thân",
+            "body": "Tại cửa, nói tên bạn và tên cửa hàng. Đợi được mời vào."
+          },
+          "weigh": {
+            "title": "Cân ở nơi khách nhìn thấy",
+            "body": "Đưa cân về 0 và cân từng vật liệu trước mặt khách."
+          },
+          "record": {
+            "title": "Thanh toán và ghi nhận",
+            "body": "Trả tiền theo chỉ dẫn của cửa hàng và lưu thanh toán trước khi rời đi."
+          },
+          "deliver": {
+            "title": "Mang về cửa hàng",
+            "body": "Đưa phế liệu thẳng về cửa hàng và bàn giao."
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "Cách nhận tiền công",
+        "summary": "Thống nhất tiền công trước rồi kiểm tra trong Thu nhập.",
+        "steps": {
+          "agree": {
+            "title": "Thống nhất tiền công trước",
+            "body": "Cửa hàng hoặc doanh nghiệp thuê bạn trả công. Thống nhất số tiền trước khi bắt đầu."
+          },
+          "earnings": {
+            "title": "Kiểm tra Thu nhập",
+            "body": "Xem các việc đã làm và tiền công từng việc."
+          },
+          "upi": {
+            "title": "Đề nghị trả qua UPI",
+            "body": "UPI để lại hồ sơ để không có nghi ngờ về số tiền đã nhận."
+          },
+          "problem": {
+            "title": "Chưa được trả công?",
+            "body": "Trao đổi với doanh nghiệp trước. Vẫn chưa giải quyết được? Gọi chúng tôi."
+          }
+        }
+      }
+    },
+    "faqs": {
+      "noCode": {
+        "q": "Tôi chưa nhận được mã SMS",
+        "a": "Đợi 30 giây rồi chạm Gửi lại. Kiểm tra đúng số và điện thoại có sóng. Mã có hiệu lực 5 phút."
+      },
+      "newPhone": {
+        "q": "Tôi có điện thoại hoặc số mới",
+        "a": "Điện thoại mới, số cũ: chỉ cần đăng nhập lại. Số mới: gọi chúng tôi để chuyển tài khoản sau khi xác minh danh tính."
+      },
+      "deleteData": {
+        "q": "Tôi có thể xem hoặc xóa dữ liệu không?",
+        "a": "Có. Nhắn từ Liên hệ và chúng tôi xử lý trong 30 ngày. Chỉ giữ dữ liệu luật yêu cầu, như biên nhận."
+      },
+      "verifyTime": {
+        "q": "Kiểm tra mất bao lâu?",
+        "a": "Thường từ 12 đến 24 giờ sau khi gửi hồ sơ. Nếu cần thêm gì, chúng tôi nói rõ."
+      },
+      "noAccount": {
+        "q": "Tôi có cần tài khoản không?",
+        "a": "Không. Bạn xác nhận số di động bằng mã SMS khi đặt lịch. Không cần nhớ mật khẩu."
+      },
+      "whatCanISell": {
+        "q": "Tôi có thể bán gì?",
+        "a": "Giấy và bìa carton, chai và hộp nhựa, kim loại, thủy tinh và thiết bị điện tử cũ. Chưa chắc? Chụp ảnh để xem ước tính."
+      },
+      "howPriceWorks": {
+        "q": "Tiền của tôi được tính thế nào?",
+        "a": "Khối lượng từng vật liệu nhân giá mỗi kg của kabadiwala. Giá không được thấp hơn mức tối thiểu Luma.Green đặt ra."
+      },
+      "howPaid": {
+        "q": "Tôi nhận tiền bằng cách nào?",
+        "a": "Tại cửa, bằng tiền mặt hoặc UPI, trước khi kabadiwala rời đi. Luma.Green ghi nhận thanh toán nhưng không giữ tiền của bạn."
+      },
+      "recyclePoints": {
+        "q": "Điểm tái chế là gì?",
+        "a": "Lời cảm ơn vì tái chế: 1 điểm cho mỗi ₹10 bạn nhận. Công dụng của điểm sẽ sớm được công bố."
+      },
+      "weightWrong": {
+        "q": "Nếu số cân có vẻ sai thì sao?",
+        "a": "Yêu cầu cân lại trước mặt bạn, bắt đầu từ 0. Vẫn chưa đúng? Gọi chúng tôi: biên nhận ghi mọi khối lượng."
+      },
+      "canCancel": {
+        "q": "Tôi có thể hủy không?",
+        "a": "Có, miễn phí, trước khi kabadiwala lên đường. Mở liên kết theo dõi và chạm Hủy."
+      },
+      "kabadiwalasChecked": {
+        "q": "Kabadiwala có được kiểm tra không?",
+        "a": "Có. Đội ngũ kiểm tra từng cửa hàng trước khi nhận lịch. Hãy tìm huy hiệu đã xác minh."
+      },
+      "whoSeesAddress": {
+        "q": "Ai thấy số và địa chỉ của tôi?",
+        "a": "Chỉ kabadiwala chấp nhận thu gom và đội ngũ chúng tôi. Dữ liệu được giữ 12 tháng sau lịch đặt cuối cùng."
+      },
+      "photosKept": {
+        "q": "Ảnh của tôi được xử lý thế nào?",
+        "a": "Không chụp mặt, giấy tờ hoặc biển số. Ảnh được gửi đến nhà cung cấp AI để ước tính. Luma.Green không lưu ảnh."
+      },
+      "whyVerify": {
+        "q": "Vì sao tôi phải được xác minh?",
+        "a": "Hộ gia đình tin tưởng khi đón bạn tại cửa. Kiểm tra từng cửa hàng giúp bảo vệ họ và tạo ý nghĩa cho huy hiệu xác minh."
+      },
+      "gstNeeded": {
+        "q": "Tôi có cần số GST không?",
+        "a": "Không, không bắt buộc. Hãy thêm nếu có."
+      },
+      "ownPrices": {
+        "q": "Tôi có thể tự đặt giá không?",
+        "a": "Có, cho từng vật liệu, miễn không thấp hơn giá tối thiểu của Luma.Green."
+      },
+      "noVehicle": {
+        "q": "Tôi không có xe. Vẫn đăng ký được không?",
+        "a": "Có. Hộ gia đình có thể mang phế liệu tới cửa hàng. Dịch vụ Saathi thu gom cho cửa hàng không có xe sẽ có sau."
+      },
+      "autoAccept": {
+        "q": "Tự động chấp nhận là gì?",
+        "a": "Khi bật, mọi yêu cầu mới trong khu vực được chấp nhận ngay, kể cả ban đêm. Tắt khi bạn không thể đi."
+      },
+      "rejectRequest": {
+        "q": "Nếu tôi từ chối yêu cầu thì sao?",
+        "a": "Yêu cầu chuyển đến kabadiwala gần nhất tiếp theo. Hộ gia đình không biết ai đã từ chối."
+      },
+      "payHousehold": {
+        "q": "Luma.Green có trả tiền cho hộ thay tôi không?",
+        "a": "Không. Bạn trả tiền mặt hoặc UPI tại cửa. Ứng dụng ghi lại số tiền và cách trả."
+      },
+      "paidByYard": {
+        "q": "Tôi nhận tiền thế nào khi bán cho bãi?",
+        "a": "Hiện hãy thống nhất thanh toán trực tiếp với bãi. Dịch vụ ký quỹ đang được lên kế hoạch; bản minh họa không chuyển tiền."
+      },
+      "whoSeesShop": {
+        "q": "Ai thấy cửa hàng của tôi?",
+        "a": "Sau khi duyệt, tên cửa hàng, khu vực và giờ mở cửa được công khai để hộ gia đình tìm bạn. Giấy tờ vẫn riêng tư."
+      },
+      "consentDocs": {
+        "q": "Tôi cần giấy tờ gì?",
+        "a": "Giấy chấp thuận môi trường — KSPCB tại Karnataka — gồm số, ngày hết hạn, chứng nhận PDF và ảnh máy móc. GST không bắt buộc."
+      },
+      "noConsentNeeded": {
+        "q": "Cơ sở của tôi không cần giấy chấp thuận. Vẫn tham gia được không?",
+        "a": "Có. Đánh dấu cơ sở không cần giấy và nêu lý do, ví dụ chỉ ép kiện giấy. Chúng tôi sẽ kiểm tra."
+      },
+      "consentExpiry": {
+        "q": "Khi giấy chấp thuận hết hạn thì sao?",
+        "a": "Kiểm tra ngày hết hạn trong Tuân thủ. Giấy chấp thuận còn dưới 90 ngày sẽ được đánh dấu. Gia hạn với hội đồng kiểm soát ô nhiễm và liên hệ hỗ trợ để cập nhật chứng nhận."
+      },
+      "findStock": {
+        "q": "Tìm hàng gần tôi bằng cách nào?",
+        "a": "Mở Mua. Hàng của kabadiwala đã xác minh hiển thị theo vật liệu, gần nhất trước."
+      },
+      "whoSetsPrice": {
+        "q": "Ai đặt giá?",
+        "a": "Người bán đăng giá mỗi kg. Bạn thấy giá trước khi gửi yêu cầu và có thể gọi để thống nhất chi tiết."
+      },
+      "whatIsEscrow": {
+        "q": "Ký quỹ là gì?",
+        "a": "Một bước trung gian an toàn: giữ tiền người mua đến khi hàng đến đúng thỏa thuận, sau đó giải ngân cho người bán. Ký quỹ doanh nghiệp là tính năng dự kiến."
+      },
+      "whenSellerPaid": {
+        "q": "Khi nào người bán nhận tiền?",
+        "a": "Ngay khi người mua xác nhận nhận hàng."
+      },
+      "shortLoad": {
+        "q": "Nếu chuyến hàng bị thiếu thì sao?",
+        "a": "Bản minh họa hiển thị các bước giải quyết tranh chấp dự kiến. Nó không giữ hoặc bảo vệ tiền thật."
+      },
+      "ewayBill": {
+        "q": "Tôi có cần e-way bill không?",
+        "a": "Có, khi vận chuyển hàng trên ₹50.000, màn hình giao dịch sẽ nhắc bạn. Một số bang có ngưỡng khác."
+      },
+      "whoSeesBusiness": {
+        "q": "Ai thấy doanh nghiệp của tôi?",
+        "a": "Người mua và bán đã xác minh thấy tên, khu vực và vật liệu bạn xử lý. Chỉ bạn và đội ngũ chúng tôi thấy giấy tờ."
+      },
+      "pwpRegistration": {
+        "q": "Tôi tái chế nhựa. Cần thêm gì không?",
+        "a": "Chuẩn bị đăng ký cơ sở xử lý chất thải nhựa CPCB. Thương hiệu yêu cầu giấy này và nó cho phép cấp chứng nhận EPR."
+      },
+      "buyFromAnyYard": {
+        "q": "Tôi có thể mua từ nhiều bãi không?",
+        "a": "Có. Mua từ bất kỳ bãi đã xác minh nào đăng loại bạn cần, với tần suất tùy bạn."
+      },
+      "eprRecords": {
+        "q": "Hồ sơ Luma.Green có hỗ trợ EPR không?",
+        "a": "Có. Mọi giao dịch ghi vật liệu, khối lượng, ngày và người bán để hỗ trợ khai báo EPR. Bạn vẫn nộp hồ sơ trên cổng CPCB."
+      },
+      "carbonCredits": {
+        "q": "Tôi có nhận tín chỉ carbon không?",
+        "a": "Chưa. Chúng tôi ghi nhận từng kg ngay bây giờ để cấp tín chỉ sau khi phương pháp được xác minh."
+      },
+      "whatCanIBuy": {
+        "q": "Tôi có thể mua gì?",
+        "a": "Vật liệu tái chế từ cơ sở đã xác minh như mảnh PET, hạt HDPE, giấy kraft và thỏi nhôm."
+      },
+      "qualityWrong": {
+        "q": "Nếu chất lượng không đúng đơn đặt thì sao?",
+        "a": "Bản minh họa hiển thị các bước giải quyết tranh chấp dự kiến. Nó không giữ hoặc bảo vệ tiền thật."
+      },
+      "recycledContent": {
+        "q": "Mua vật liệu tái chế có hỗ trợ EPR không?",
+        "a": "Có. Quy định EPR nhựa đặt mục tiêu hàm lượng tái chế trong bao bì. Hồ sơ giao dịch cho thấy lượng vật liệu tái chế bạn đã mua."
+      },
+      "carbonClaims": {
+        "q": "Tôi có thể công bố lượng carbon tiết kiệm không?",
+        "a": "Màn hình Tác động ước tính lượng carbon giảm được. Chỉ xem số liệu là tham khảo cho đến khi được xác minh độc lập."
+      },
+      "whoCanJoin": {
+        "q": "Ai có thể làm Saathi?",
+        "a": "Bất kỳ ai từ 18 tuổi muốn kiếm tiền từ việc ngắn gần nhà."
+      },
+      "whichId": {
+        "q": "Tôi dùng giấy tờ nào được?",
+        "a": "Thẻ cử tri, bằng lái, PAN, giấy tờ DigiLocker hoặc Aadhaar chỉ hiện 4 chữ số cuối."
+      },
+      "fullAadhaar": {
+        "q": "Vì sao không dùng Aadhaar đầy đủ?",
+        "a": "Chúng tôi không giữ số Aadhaar. Nếu tải nhầm bản đầy đủ, chúng tôi sẽ yêu cầu bản che số và xóa bản đầu."
+      },
+      "needVehicle": {
+        "q": "Tôi có cần xe không?",
+        "a": "Không. Phụ cửa hàng và làm ca không cần xe. Thu gom tại nhà sẽ thuận tiện hơn nếu có xe đạp, xe máy hoặc xe ba bánh."
+      },
+      "whoPaysMe": {
+        "q": "Ai trả công cho tôi?",
+        "a": "Kabadiwala hoặc doanh nghiệp thuê bạn. Thống nhất tiền công trước khi bắt đầu."
+      },
+      "chooseHours": {
+        "q": "Tôi có thể chọn giờ làm không?",
+        "a": "Có. Bạn cho biết ngày giờ rảnh và chỉ nhận việc mình muốn."
+      },
+      "safetyGear": {
+        "q": "Tôi cần đồ bảo hộ gì?",
+        "a": "Găng tay và giày kín cho mọi việc, cùng khẩu trang khi có bụi. Hỏi doanh nghiệp có yêu cầu thêm không."
+      },
+      "whoSeesId": {
+        "q": "Ai thấy giấy tờ và ảnh tự chụp của tôi?",
+        "a": "Chỉ bạn và đội ngũ chúng tôi, để xác minh đúng người."
+      },
+      "jobWentWrong": {
+        "q": "Có sự cố khi làm việc. Tôi phải làm gì?",
+        "a": "Trước hết, giữ an toàn. Báo doanh nghiệp rồi gọi chúng tôi. Chúng tôi lắng nghe cả hai bên."
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "Đặt lịch thu gom trong hai phút",
+      "sortAtHome": "Phân loại phế liệu tại nhà",
+      "batterySafety": "Xử lý pin cũ an toàn",
+      "firstDay": "Ngày đầu trên Luma.Green",
+      "weighAndPayVideo": "Cân và thanh toán trong một phút",
+      "settingPrices": "Thiết lập giá của bạn",
+      "buyingFromKabadiwalas": "Mua từ kabadiwala",
+      "listingBales": "Đăng kiện hàng cho cơ sở tái chế",
+      "escrowExplained": "Minh họa: hiểu ký quỹ trong hai phút",
+      "buyingFromYards": "Mua từ bãi phân loại",
+      "sellingOutput": "Bán sản phẩm đầu ra",
+      "eprPlainWords": "EPR bằng lời dễ hiểu",
+      "firstOrder": "Đặt đơn hàng đầu tiên",
+      "checkingDelivery": "Kiểm tra chuyến giao hàng",
+      "becomingSaathi": "Trở thành cộng tác viên Saathi",
+      "goodPickup": "Một lần thu gom tại nhà tốt",
+      "liftingSafely": "Nâng và mang vác an toàn"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "Vật liệu nào tái chế được",
+        "p1": "Giấy, carton, phần lớn nhựa, kim loại và thủy tinh đều có giá trị.",
+        "p2": "Điện thoại, bộ sạc và pin cũ là rác thải điện tử: hãy để riêng.",
+        "p3": "Rác thực phẩm và tã bẩn không thể tái chế."
+      },
+      "sortOnce": {
+        "title": "Phân loại ngay từ đầu",
+        "p1": "Mỗi loại giấy, nhựa, kim loại dùng một túi riêng.",
+        "p2": "Giữ mọi thứ khô và sạch.",
+        "p3": "Phế liệu đã phân loại được cân nhanh và trả giá cao hơn."
+      },
+      "batteriesSafe": {
+        "title": "An toàn với pin",
+        "p1": "Dán băng keo lên đầu kim loại.",
+        "p2": "Giữ pin khô, mát và xa trẻ em.",
+        "p3": "Không vứt vào thùng rác hoặc lửa."
+      },
+      "fairWeigh": {
+        "title": "Được cân công bằng",
+        "p1": "Kiểm tra cân bắt đầu từ 0.",
+        "p2": "Quan sát lúc cân từng vật liệu.",
+        "p3": "Kiểm tra tổng tiền trên biên nhận."
+      },
+      "usingTheApp": {
+        "title": "Sử dụng ứng dụng",
+        "p1": "Đăng nhập bằng số của bạn và mã SMS.",
+        "p2": "Nhanh chóng chấp nhận hoặc từ chối yêu cầu mới.",
+        "p3": "Chỉ bật tự động chấp nhận khi bạn có thể đi."
+      },
+      "weighingFairly": {
+        "title": "Cân trung thực",
+        "p1": "Đưa cân về 0 trước mặt hộ gia đình.",
+        "p2": "Cân riêng từng loại vật liệu.",
+        "p3": "Hiện tổng tiền trước khi trả."
+      },
+      "safeHandling": {
+        "title": "Xử lý phế liệu an toàn",
+        "p1": "Luôn dùng găng tay và giày kín.",
+        "p2": "Dùng sức chân nâng và nhờ giúp khi quá 25 kg.",
+        "p3": "Tách riêng pin và rác thải điện tử."
+      },
+      "servingHouseholds": {
+        "title": "Phục vụ hộ gia đình tốt",
+        "p1": "Gọi trước khi đi và đến trong khung giờ đã hẹn.",
+        "p2": "Lịch sự và cân ở nơi khách nhìn thấy.",
+        "p3": "Luôn trả tiền trước khi rời đi."
+      },
+      "sellingToYards": {
+        "title": "Minh họa: bán cho bãi",
+        "p1": "Ghi nhận phân loại để tồn kho đúng.",
+        "p2": "Cho bãi gần bạn xem hàng tồn.",
+        "p3": "Chỉ xếp hàng sau khi tiền vào ký quỹ."
+      },
+      "buyingStock": {
+        "title": "Mua hàng tồn",
+        "p1": "Tìm hàng gần bạn trong Mua.",
+        "p2": "Kiểm tra giá mỗi kg trước khi gửi yêu cầu.",
+        "p3": "Cân mỗi chuyến hàng trước khi xác nhận."
+      },
+      "tradingWithEscrow": {
+        "title": "Minh họa: giao dịch qua ký quỹ",
+        "p1": "Người mua nộp ký quỹ sau khi người bán chấp nhận.",
+        "p2": "Người bán chỉ xếp hàng khi tiền đã có.",
+        "p3": "Xác nhận nhận hàng sẽ giải ngân tiền."
+      },
+      "papersForLoads": {
+        "title": "Giấy tờ cho mỗi chuyến hàng",
+        "p1": "Mỗi giao dịch có một hóa đơn.",
+        "p2": "Hàng trên ₹50.000 cần e-way bill.",
+        "p3": "Giấy tờ đi cùng phương tiện."
+      },
+      "siteSafety": {
+        "title": "An toàn tại cơ sở",
+        "p1": "Găng tay, giày kín và khẩu trang khi có bụi.",
+        "p2": "Tắt và rút điện máy trước khi gỡ vật kẹt.",
+        "p3": "Luôn có sơ cứu và nước sạch tại cơ sở."
+      },
+      "buyingInputs": {
+        "title": "Minh họa: mua nguyên liệu đầu vào",
+        "p1": "Tìm kiện đã phân hạng từ bãi trong Mua.",
+        "p2": "Nộp ký quỹ khi bãi chấp nhận.",
+        "p3": "Kiểm tra hạng vật liệu trước khi xác nhận."
+      },
+      "eprBasics": {
+        "title": "Kiến thức EPR cơ bản",
+        "p1": "Thương hiệu phải tái chế một phần chất thải của mình.",
+        "p2": "Cơ sở đăng ký cấp chứng nhận trên cổng CPCB.",
+        "p3": "Hồ sơ giao dịch rõ ràng hỗ trợ mọi tuyên bố."
+      },
+      "orderingRecycled": {
+        "title": "Minh họa: đặt vật liệu tái chế",
+        "p1": "So sánh tin đăng theo loại, số kg và giá.",
+        "p2": "Gửi đơn cho số kg bạn cần.",
+        "p3": "Nộp ký quỹ khi được chấp nhận."
+      },
+      "checkingDeliveries": {
+        "title": "Kiểm tra giao hàng",
+        "p1": "Đối chiếu hóa đơn và e-way bill với đơn hàng.",
+        "p2": "Cân xe khi đầy và khi rỗng.",
+        "p3": "Chỉ xác nhận khi khối lượng và chất lượng đúng."
+      },
+      "firstJob": {
+        "title": "Công việc đầu tiên",
+        "p1": "Kiểm tra nơi, giờ và tiền công trước khi nhận.",
+        "p2": "Gọi trước và đến đúng giờ.",
+        "p3": "Đánh dấu hoàn thành khi làm xong."
+      },
+      "inPeoplesHomes": {
+        "title": "Làm việc tại nhà người khác",
+        "p1": "Nêu tên bạn và cửa hàng bạn đại diện.",
+        "p2": "Đợi được mời vào.",
+        "p3": "Cân ở nơi khách thấy và luôn lịch sự."
+      },
+      "gettingPaid": {
+        "title": "Nhận tiền công",
+        "p1": "Thống nhất tiền công trước khi bắt đầu việc.",
+        "p2": "Đề nghị UPI để có hồ sơ.",
+        "p3": "Kiểm tra từng việc trong Thu nhập."
+      }
+    }
+  },
+  "notFound": {
+    "metaTitle": "Không tìm thấy trang",
+    "title": "Không tìm thấy trang",
+    "body": "Trang bạn tìm không tồn tại hoặc đã chuyển vị trí.",
+    "backHome": "Về trang chủ"
+  },
+  "auth": {
+    "metaTitle": "Đăng nhập tài khoản",
+    "verifyMetaTitle": "Nhập mã của bạn",
+    "chooseLanguage": "Chọn ngôn ngữ",
+    "chooseLanguageHint": "Bạn có thể đổi bất cứ lúc nào ở đầu màn hình.",
+    "continue": "Tiếp tục",
+    "title": "Đăng nhập bằng số di động",
+    "lead": "Dành cho kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi.",
+    "mobileLabel": "Số di động",
+    "mobileHint": "Chúng tôi sẽ gửi mã 6 chữ số đến số này.",
+    "mobileInvalid": "Nhập số di động Ấn Độ gồm 10 chữ số.",
+    "sendCode": "Gửi mã",
+    "sending": "Đang gửi…",
+    "sendFailed": "Không gửi được mã. Vui lòng thử lại sau một phút.",
+    "homeTitle": "Bán phế liệu tại nhà? Bạn không cần tài khoản.",
+    "homeLink": "Xem cách hoạt động",
+    "privacy": "Chúng tôi chỉ dùng số để đăng nhập và gửi cập nhật về công việc trên Luma.Green.",
+    "unavailableTitle": "Đăng nhập bằng điện thoại sắp mở",
+    "unavailableBody": "Chúng tôi đang hoàn tất thiết lập SMS cho mã đăng nhập. Vui lòng quay lại sau.",
+    "verifyTitle": "Nhập mã gồm 6 chữ số",
+    "sentTo": "Đã gửi SMS đến {phone}",
+    "codeLabel": "Mã 6 chữ số",
+    "verify": "Xác minh mã",
+    "verifying": "Đang kiểm tra…",
+    "resendIn": "Bạn có thể xin mã mới sau {seconds, plural, one {# giây} other {# giây}}",
+    "resend": "Gửi mã mới",
+    "resent": "Chúng tôi đã gửi mã mới.",
+    "changeNumber": "Đổi số",
+    "errorInvalid": "Mã chưa đúng. Kiểm tra SMS và thử lại.",
+    "errorExpired": "Mã đã hết hạn. Hãy xin mã mới.",
+    "errorTooMany": "Thử quá nhiều lần. Hãy xin mã mới.",
+    "errorGeneric": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "signingIn": "Đang đăng nhập…",
+    "sendRateLimited": "Quá nhiều yêu cầu mã. Vui lòng thử lại sau.",
+    "previewAction": "Xem trước màn hình nhập mã",
+    "previewTitle": "Xem trước mã",
+    "previewNumber": "Số di động: {phone}",
+    "previewBody": "SMS chưa được kết nối. Không có mã nào được gửi. Bạn có thể xem màn hình này nhưng không thể đăng nhập.",
+    "previewPhoneHint": "Nhập số di động để xem trước bước tiếp theo. Không gửi SMS."
+  },
+  "join": {
+    "metaTitle": "Tham gia Luma.Green",
+    "metaDescription": "Kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi tại Bengaluru: đăng ký tham gia Luma.Green. Nhân viên kiểm tra từng hồ sơ, thường trong 12–24 giờ.",
+    "title": "Tham gia Luma.Green",
+    "lead": "Cho biết công việc của bạn. Nhân viên kiểm tra từng hồ sơ, thường trong 12–24 giờ.",
+    "start": "Bắt đầu",
+    "youNeed": "Bạn cần chuẩn bị",
+    "homeTitle": "Bán phế liệu tại nhà?",
+    "homeBody": "Bạn không cần đăng ký. Đặt lịch thu gom khi có vật liệu muốn bán.",
+    "homeLink": "Xem cách hoạt động",
+    "roles": {
+      "kabadiwala": {
+        "title": "Người thu mua kabadiwala",
+        "body": "Bạn điều hành cửa hàng phế liệu và mua từ hộ gần đó.",
+        "needs": "Địa chỉ, giờ mở cửa và số GST của cửa hàng nếu có."
+      },
+      "yard": {
+        "title": "Bãi phân loại",
+        "body": "Bạn phân loại và ép kiện số lượng lớn rồi bán tiếp.",
+        "needs": "Số GST nếu có, giấy chấp thuận môi trường dạng PDF và ảnh máy móc."
+      },
+      "recycler": {
+        "title": "Đơn vị tái chế",
+        "body": "Bạn biến phế liệu trở lại thành nguyên liệu.",
+        "needs": "Số GST nếu có, giấy chấp thuận môi trường dạng PDF và ảnh máy móc."
+      },
+      "manufacturer": {
+        "title": "Đơn vị sản xuất",
+        "body": "Bạn mua vật liệu tái chế cho nhà máy.",
+        "needs": "Số GST nếu có, giấy chấp thuận môi trường dạng PDF và ảnh máy móc."
+      },
+      "saathi": {
+        "title": "Nhân viên Saathi",
+        "body": "Bạn muốn việc có trả công: thu gom tại nhà, phân loại hoặc làm ca ở nhà máy.",
+        "needs": "Giấy tờ có ảnh và ảnh tự chụp."
+      }
+    },
+    "shell": {
+      "signOut": "Đăng xuất"
+    },
+    "consent": {
+      "title": "Trước khi bắt đầu",
+      "lead": "Chúng tôi hỏi gì và vì sao.",
+      "why": {
+        "kabadiwala": "Thông tin cửa hàng giúp hộ gần bạn đặt lịch và giúp chúng tôi xác thực cửa hàng. Chúng tôi gọi một lần để xác nhận.",
+        "business": "Giấy chấp thuận và ảnh máy chứng minh cơ sở được cấp phép và đang hoạt động. Chúng tôi đối chiếu với sổ đăng ký công khai của hội đồng kiểm soát ô nhiễm.",
+        "saathi": "Giấy tờ có ảnh và ảnh tự chụp giúp xác nhận danh tính trước khi ai đó cho bạn vào nhà hoặc bãi."
+      },
+      "privacy": "Chỉ bạn và đội ngũ Luma.Green thấy thông tin và tệp của bạn. Chúng tôi dùng để xác minh và kết nối bạn với người khác trên Luma.Green, không bán dữ liệu. Bạn có thể yêu cầu xóa.",
+      "age": "Tôi đủ 18 tuổi",
+      "accept": "Tôi đã đọc nội dung dữ liệu thu thập và mục đích",
+      "startButton": "Bắt đầu hồ sơ",
+      "starting": "Đang bắt đầu…"
+    },
+    "form": {
+      "saving": "Đang lưu…",
+      "saved": "Đã lưu",
+      "notSaved": "Chưa lưu được. Kiểm tra kết nối.",
+      "submit": "Gửi để xác minh",
+      "submitting": "Đang gửi…",
+      "next": "Tiếp theo: giấy tờ",
+      "back": "Quay lại",
+      "fixErrors": "Một số câu trả lời cần kiểm tra. Đã đánh dấu bên dưới.",
+      "yes": "Có",
+      "no": "Không",
+      "optional": "không bắt buộc",
+      "gstQuestion": "Bạn có số GST không?",
+      "gstin": "Số GST",
+      "gstinHint": "15 ký tự, ví dụ 29ABCDE1234F1Z5",
+      "useLocation": "Dùng vị trí của tôi",
+      "locating": "Đang tìm vị trí…",
+      "locationSaved": "Đã lưu vị trí",
+      "locationFailed": "Không lấy được vị trí. Cho phép trang truy cập vị trí hoặc nhập địa chỉ. Chúng tôi xác nhận khi gọi.",
+      "locationWhy": "Để hộ gia đình và người mua gần bạn tìm được bạn.",
+      "loginPhone": "Số dùng đăng nhập",
+      "otherPhones": "Số khác",
+      "otherPhonesHint": "Thêm tối đa hai số, ví dụ của người phụ hoặc đối tác. Chúng tôi chỉ gọi về công việc.",
+      "addPhone": "Thêm số",
+      "remove": "Xóa",
+      "phoneNumber": "Số điện thoại",
+      "phoneLabel": "Số của ai",
+      "phoneLabelPlaceholder": "Người phụ, đối tác…",
+      "hours": "Giờ mở cửa",
+      "opens": "Mở cửa",
+      "closes": "Đóng cửa",
+      "weeklyOff": "Ngày nghỉ hằng tuần",
+      "weeklyOffHint": "Để trống nếu mở cửa mọi ngày.",
+      "weekdays": {
+        "mon": "T2",
+        "tue": "T3",
+        "wed": "T4",
+        "thu": "T5",
+        "fri": "T6",
+        "sat": "T7",
+        "sun": "CN"
+      },
+      "changesTitle": "Nội dung cần sửa"
+    },
+    "kabadiwala": {
+      "title": "Cửa hàng của bạn",
+      "ownerName": "Tên của bạn",
+      "shopName": "Tên cửa hàng",
+      "address": "Địa chỉ cửa hàng",
+      "addressHint": "Đường, khu vực và mốc dễ nhận biết",
+      "offersPickup": "Bạn có thu gom tại nhà không?",
+      "noPickupHint": "Không sao. Saathi gần bạn có thể thu gom cho cửa hàng.",
+      "vehicle": "Phương tiện của bạn",
+      "vehicles": {
+        "handcart": "Xe đẩy tay",
+        "cycle": "Xe đạp",
+        "auto": "Xe ba bánh",
+        "mini_truck": "Xe tải nhỏ"
+      }
+    },
+    "business": {
+      "titles": {
+        "yard": "Bãi của bạn",
+        "recycler": "Cơ sở tái chế của bạn",
+        "manufacturer": "Nhà máy của bạn"
+      },
+      "step": "Bước {step} trên 2",
+      "businessName": "Tên doanh nghiệp",
+      "materials": "Vật liệu bạn xử lý",
+      "materialsHint": "Để kết nối bạn với đúng người mua và bán.",
+      "materialNames": {
+        "paper": "Giấy",
+        "plastic": "Nhựa",
+        "metal": "Kim loại",
+        "glass": "Thủy tinh",
+        "ewaste": "Rác thải điện tử"
+      },
+      "address": "Địa chỉ",
+      "addressHint": "Số lô, đường và khu vực",
+      "locationTags": "Tên khu vực",
+      "locationTagsHint": "Giúp người khác tìm bạn, ví dụ Khu công nghiệp Peenya. Tối đa năm tên.",
+      "addTag": "Thêm",
+      "collects": "Bạn có lấy hàng từ nhà cung cấp không?",
+      "hours": "Giờ làm việc"
+    },
+    "documents": {
+      "title": "Giấy tờ và ảnh",
+      "lead": "Chúng tôi kiểm tra giấy chấp thuận trong sổ đăng ký công khai của hội đồng kiểm soát ô nhiễm.",
+      "notRequired": "Cơ sở của chúng tôi không cần giấy chấp thuận",
+      "notRequiredHint": "Một số cơ sở như chỉ ép kiện giấy được miễn. Nêu lý do để chúng tôi kiểm tra.",
+      "reason": "Lý do không cần",
+      "board": "Hội đồng nào cấp giấy?",
+      "boards": {
+        "kspcb": "Bang Karnataka (KSPCB)",
+        "other": "Hội đồng của bang khác"
+      },
+      "boardState": "Bang nào?",
+      "consentNumber": "Số chấp thuận hoặc đăng ký",
+      "consentNumberHint": "Theo nội dung trên chứng nhận",
+      "validUntil": "Có hiệu lực đến",
+      "certificate": "Chứng nhận chấp thuận",
+      "certificateHint": "Một PDF, tối đa 10 MB.",
+      "machineMedia": "Ảnh hoặc video máy móc",
+      "machineMediaHint": "Ít nhất hai tệp. Cho thấy máy chính và bãi. Ảnh tối đa 10 MB, video tối đa 20 MB.",
+      "declaration": "Các giấy tờ này là thật và thuộc doanh nghiệp này."
+    },
+    "saathi": {
+      "title": "Thông tin về bạn",
+      "name": "Tên của bạn",
+      "nameHint": "Theo giấy tờ tùy thân",
+      "area": "Nơi bạn sống",
+      "areaHint": "Khu vực, ví dụ Malleshwaram",
+      "radius": "Bạn có thể đi xa bao nhiêu?",
+      "radiusOption": "{km} kilômét",
+      "workTypes": "Công việc bạn muốn",
+      "work": {
+        "home_pickups": "Thu gom tại nhà",
+        "shop_help": "Phụ cửa hàng kabadiwala",
+        "yard_sorting": "Phân loại ở bãi",
+        "factory_shifts": "Làm ca ở cơ sở tái chế hoặc nhà máy"
+      },
+      "vehicle": "Phương tiện của bạn",
+      "vehicles": {
+        "none": "Không có",
+        "cycle": "Xe đạp",
+        "two_wheeler": "Xe máy hoặc xe tay ga",
+        "auto": "Xe ba bánh"
+      },
+      "times": "Bạn làm được khi nào?",
+      "timeNames": {
+        "morning": "Buổi sáng",
+        "afternoon": "Buổi chiều",
+        "evening": "Buổi tối"
+      },
+      "days": "Những ngày nào?",
+      "idProof": "Giấy tờ có ảnh",
+      "idProofHint": "Thẻ cử tri, bằng lái, PAN hoặc Aadhaar đã che chỉ còn bốn số cuối. Ảnh hoặc PDF tối đa 10 MB.",
+      "selfie": "Ảnh tự chụp",
+      "selfieHint": "Chúng tôi đối chiếu với giấy tờ."
+    },
+    "files": {
+      "choose": "Chọn tệp",
+      "addMore": "Thêm nữa",
+      "takePhoto": "Chụp ảnh",
+      "uploading": "Đang tải lên…",
+      "remove": "Xóa",
+      "size": "{size} MB",
+      "sizeKb": "{size} KB"
+    },
+    "status": {
+      "metaTitle": "Hồ sơ của bạn",
+      "none": {
+        "title": "Cho biết công việc của bạn",
+        "lead": "Chọn vai trò để bắt đầu hồ sơ."
+      },
+      "draft": {
+        "title": "Hồ sơ chưa được gửi",
+        "lead": "Mọi thông tin đã nhập đều được lưu.",
+        "continue": "Tiếp tục",
+        "changeRole": "Bắt đầu lại với vai trò khác",
+        "confirmChange": "Thông tin đã điền sẽ bị xóa. Bắt đầu lại?"
+      },
+      "submitted": {
+        "title": "Đang xét duyệt",
+        "lead": "Thường 12–24 giờ. Chúng tôi gửi SMS khi hoàn tất.",
+        "sentAt": "Đã gửi {when}",
+        "whatWeCheck": "Chúng tôi kiểm tra gì"
+      },
+      "changes_requested": {
+        "title": "Cần điều chỉnh vài chỗ",
+        "lead": "Yêu cầu từ đội ngũ:",
+        "fix": "Sửa và gửi lại"
+      },
+      "approved": {
+        "title": "Bạn đã được xác minh",
+        "lead": "Doanh nghiệp đang hoạt động trên Luma.Green.",
+        "open": "Mở bảng điều khiển"
+      },
+      "rejected": {
+        "title": "Không thể xác minh bạn",
+        "lead": "Lý do từ đội ngũ:",
+        "contact": "Trao đổi với chúng tôi"
+      },
+      "suspended": {
+        "title": "Tài khoản tạm dừng",
+        "lead": "Vui lòng liên hệ để chúng tôi xử lý.",
+        "contact": "Trao đổi với chúng tôi"
+      },
+      "roleLabel": "Đăng ký vai trò: {role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "Cửa hàng nằm đúng vị trí bạn đánh dấu",
+          "two": "Chúng tôi gọi số đăng nhập",
+          "three": "Số GST đang hoạt động nếu bạn cung cấp"
+        },
+        "business": {
+          "one": "Số GST đang hoạt động và khớp doanh nghiệp nếu bạn cung cấp",
+          "two": "Giấy chấp thuận có trên sổ đăng ký, còn hạn và phù hợp công việc",
+          "three": "Ảnh cho thấy cơ sở đang hoạt động và chúng tôi gọi xác nhận"
+        },
+        "saathi": {
+          "one": "Giấy tờ đọc được và tên khớp",
+          "two": "Ảnh tự chụp khớp giấy tờ",
+          "three": "Chúng tôi gọi số của bạn"
+        }
+      }
+    },
+    "errors": {
+      "required": "Thông tin bắt buộc",
+      "tooShort": "Vui lòng viết dài hơn một chút",
+      "tooLong": "Nội dung quá dài",
+      "chooseOne": "Chọn một mục",
+      "pickAtLeastOne": "Chọn ít nhất một mục",
+      "gstin": "Kiểm tra số GST: 15 ký tự, ví dụ 29ABCDE1234F1Z5",
+      "phone": "Nhập số di động 10 chữ số",
+      "duplicatePhone": "Số này đã được thêm",
+      "maxPhones": "Tối đa hai số bổ sung",
+      "maxTags": "Tối đa năm tên khu vực",
+      "time": "Nhập giờ",
+      "closesBeforeOpens": "Giờ đóng phải sau giờ mở",
+      "date": "Nhập ngày",
+      "expired": "Giấy chấp thuận đã hết hạn. Tải bản gia hạn.",
+      "explainMore": "Cho biết thêm một chút",
+      "declaration": "Vui lòng xác nhận",
+      "fileMissing": "Vui lòng thêm mục này",
+      "fileType": "Không dùng được loại tệp này ở đây",
+      "fileTooBig": "Tệp quá lớn",
+      "uploadFailed": "Tải lên thất bại. Thử lại.",
+      "generic": "Đã xảy ra lỗi. Thử lại."
+    }
+  },
+  "app": {
+    "navLabel": "Ứng dụng",
+    "homeLink": "Trang chủ Luma.Green",
+    "signOut": "Đăng xuất",
+    "more": "Thêm mục",
+    "comingSoon": "Màn hình này đang được xây dựng.",
+    "nav": {
+      "home": "Trang chủ",
+      "requests": "Yêu cầu",
+      "stock": "Tồn kho",
+      "prices": "Giá của tôi",
+      "buy": "Mua",
+      "sell": "Bán",
+      "trades": "Giao dịch của bạn",
+      "impact": "Tác động",
+      "compliance": "Tuân thủ",
+      "earnings": "Thu nhập",
+      "help": "Trợ giúp"
+    },
+    "roles": {
+      "kabadiwala": "Người thu mua kabadiwala",
+      "yard": "Bãi phân loại",
+      "recycler": "Đơn vị tái chế",
+      "manufacturer": "Đơn vị sản xuất",
+      "saathi": "Nhân viên Saathi"
+    }
+  },
+  "saathi": {
+    "greeting": "Xin chào, {name}",
+    "lead": "Việc có trả công quanh {area}. Nhận việc, thực hiện và đánh dấu hoàn thành.",
+    "demoNote": "Dữ liệu mẫu: việc làm, doanh nghiệp và tiền công ở đây chỉ là ví dụ cho nguyên mẫu.",
+    "week": {
+      "label": "Thu nhập tuần này",
+      "hint": "7 ngày qua · {count, plural, =0 {chưa có việc} one {# việc} other {# việc}}",
+      "all": "Xem toàn bộ thu nhập"
+    },
+    "today": {
+      "title": "Việc của bạn hôm nay",
+      "empty": "Hôm nay không có việc",
+      "emptyBody": "Nhận việc mở bên dưới. Việc sẽ hiện ở đây vào đúng ngày."
+    },
+    "upcoming": {
+      "title": "Sắp tới",
+      "hint": "Bạn có thể đánh dấu xong vào ngày làm việc."
+    },
+    "open": {
+      "title": "Việc đang tuyển",
+      "lead": "Việc trong khu vực được ưu tiên hiển thị.",
+      "empty": "Hiện không có việc mở",
+      "emptyBody": "Việc mới từ cửa hàng, bãi và nhà máy sẽ hiện ở đây."
+    },
+    "work": {
+      "home_pickups": "Thu gom tại nhà",
+      "shop_help": "Phụ việc tại cửa hàng",
+      "yard_sorting": "Phân loại ở bãi",
+      "factory_shifts": "Ca làm nhà máy"
+    },
+    "windows": {
+      "morning": "Buổi sáng",
+      "afternoon": "Buổi chiều",
+      "evening": "Buổi tối"
+    },
+    "when": "{day}, {window}",
+    "whenWhere": "{when} · {area}",
+    "days": {
+      "today": "Hôm nay",
+      "tomorrow": "Ngày mai",
+      "yesterday": "Hôm qua"
+    },
+    "late": "Chưa đánh dấu hoàn thành",
+    "nearYou": "Khu vực của bạn",
+    "postedBy": "Cho {name}",
+    "pay": "Tiền công",
+    "take": "Nhận việc này",
+    "taking": "Đang nhận…",
+    "taken": "Đã nhận việc. Việc đã có trong danh sách.",
+    "markDone": "Đánh dấu xong",
+    "saving": "Đang lưu…",
+    "doneToast": "Làm tốt lắm! Đã thêm {pay} vào thu nhập.",
+    "confirm": {
+      "title": "Bạn đã làm xong việc này?",
+      "body": "{title} tại {area}. Sẽ thêm {pay} vào thu nhập.",
+      "yes": "Có, đã xong",
+      "no": "Chưa"
+    },
+    "errors": {
+      "JOB_TAKEN": "Người khác đã nhận việc. Hãy thử việc khác.",
+      "JOB_EXPIRED": "Ngày làm việc này đã qua.",
+      "SLOT_BUSY": "Bạn đã có việc vào giờ đó.",
+      "NOT_YOUR_JOB": "Việc này không thuộc về bạn.",
+      "ALREADY_DONE": "Việc đã được đánh dấu hoàn thành.",
+      "TOO_EARLY": "Bạn có thể đánh dấu hoàn thành vào ngày làm việc.",
+      "JOB_NOT_FOUND": "Việc này không còn sẵn có.",
+      "generic": "Không thực hiện được. Kiểm tra internet rồi thử lại."
+    }
+  },
+  "impact": {
+    "title": "Tác động của bạn",
+    "lead": "Lượng vật liệu doanh nghiệp giữ trong vòng tái chế.",
+    "demoNote": "Dữ liệu mẫu: các lượng là ví dụ, CO₂e dùng hệ số tham khảo — số kg CO₂e tránh được cho mỗi kg tái chế thay vì sản xuất mới.",
+    "since": "Từ các lần thu gom và giao dịch hoàn tất kể từ {date}.",
+    "kpi": {
+      "recycled": "Số kg đã tái chế",
+      "recycledHint": "Mỗi kg chỉ tính một lần",
+      "recycledContent": "Vật liệu tái chế đã mua",
+      "co2e": "CO₂e tránh được",
+      "co2eHint": "So với sản xuất mới",
+      "earned": "Thu từ bán hàng",
+      "spent": "Chi mua vật liệu",
+      "paidHouseholds": "Đã trả hộ gia đình",
+      "sales": "{count, plural, =0 {Chưa có lượt bán} one {# lượt bán} other {# lượt bán}}",
+      "purchases": "{count, plural, =0 {Chưa có lượt mua} one {# lượt mua} other {# lượt mua}}",
+      "pickups": "{count, plural, =0 {Chưa có lần thu gom} one {# lần thu gom} other {# lần thu gom}}"
+    },
+    "byFamily": {
+      "title": "Theo vật liệu",
+      "lead": "Số kg tái chế và CO₂e tránh được của từng vật liệu.",
+      "co2e": "Tránh được {amount} CO₂e"
+    },
+    "flows": {
+      "title": "Nhập và xuất",
+      "lead": "Những gì đi vào và đi ra khỏi doanh nghiệp.",
+      "households": "Mua từ hộ gia đình",
+      "bought": "Mua từ doanh nghiệp",
+      "sold": "Bán lên chuỗi"
+    },
+    "families": {
+      "paper": "Giấy",
+      "plastic": "Nhựa",
+      "metal": "Kim loại",
+      "glass": "Thủy tinh",
+      "ewaste": "Rác thải điện tử",
+      "other": "Khác"
+    },
+    "ledger": {
+      "title": "Sổ ghi sẵn sàng cho tín chỉ",
+      "lead": "Mỗi kg đều ghi ai, khi nào và ở đâu — bằng chứng các tiêu chuẩn tín chỉ carbon và nhựa yêu cầu.",
+      "who": "Ai",
+      "whoBody": "Doanh nghiệp và hộ gia đình đã xác minh, mỗi bên có số điện thoại.",
+      "when": "Khi nào",
+      "whenBody": "Mỗi bước có dấu thời gian, từ thu gom đến giao hàng.",
+      "where": "Ở đâu",
+      "whereBody": "Cửa hàng, bãi hoặc nhà máy mà vật liệu đi qua.",
+      "what": "Vật liệu gì",
+      "whatBody": "Loại vật liệu và khối lượng trên biên nhận hoặc hóa đơn."
+    },
+    "empty": {
+      "title": "Chưa ghi nhận gì",
+      "body": "Số liệu xuất hiện sau lần thu gom hoặc giao dịch hoàn tất đầu tiên."
+    },
+    "saathi": {
+      "title": "Thu nhập của bạn",
+      "lead": "Tiền công từ những việc đã hoàn thành.",
+      "total": "Tổng thu nhập đến nay",
+      "jobsDone": "{count, plural, one {# việc đã xong} other {# việc đã xong}}",
+      "week": "Thu nhập tuần này",
+      "weekHint": "7 ngày qua · {count, plural, =0 {không có việc} one {# việc} other {# việc}}",
+      "byKind": "Theo loại công việc",
+      "jobs": "{count, plural, one {# việc} other {# việc}}",
+      "history": "Việc đã xong",
+      "empty": "Chưa có việc hoàn thành",
+      "emptyBody": "Nhận việc trên Trang chủ. Khi đánh dấu xong, tiền công hiện ở đây.",
+      "findJob": "Tìm việc",
+      "demoNote": "Dữ liệu mẫu: việc và tiền công ở đây chỉ là ví dụ cho nguyên mẫu."
+    }
+  },
+  "compliance": {
+    "title": "Tuân thủ",
+    "lead": "Giấy phép và hồ sơ trong một nơi.",
+    "demoNote": "Dữ liệu mẫu: giấy tờ, biên nhận và số tiền ở đây chỉ là ví dụ cho nguyên mẫu.",
+    "checklist": {
+      "title": "Danh sách kiểm tra",
+      "whatThisMeans": "Ý nghĩa:"
+    },
+    "status": {
+      "done": "Hoàn tất",
+      "due_soon": "Sắp cần gia hạn",
+      "overdue": "Hết hạn",
+      "missing": "Còn thiếu",
+      "optional": "Không bắt buộc",
+      "not_needed": "Không cần",
+      "self_declared": "Chưa kiểm tra"
+    },
+    "items": {
+      "gst": {
+        "title": "Đăng ký GST",
+        "registered": "GSTIN {gstin}",
+        "notRegistered": "Chưa đăng ký",
+        "note": "Số GST cho phép xuất hóa đơn thuế và khấu trừ thuế đầu vào. Tại Karnataka, bạn phải đăng ký khi doanh thu vượt ₹40 lakh mỗi năm hoặc bán sang bang khác."
+      },
+      "consent": {
+        "title": "Chấp thuận của hội đồng môi trường",
+        "detail": "{board} · {number}",
+        "missing": "Chưa có giấy chấp thuận trong hồ sơ",
+        "note": "Giấy chấp thuận hoạt động của hội đồng kiểm soát ô nhiễm bang cho phép vận hành cơ sở phân loại hoặc tái chế hợp pháp. Cơ sở tái chế và nhà máy yêu cầu giấy này trước khi mua.",
+        "noteShop": "Cửa hàng nhỏ chỉ mua và phân loại thường không cần. Bạn cần nếu bắt đầu ép kiện, nghiền hoặc xử lý vật liệu."
+      },
+      "scale": {
+        "title": "Cân được đóng dấu kiểm định",
+        "detail": "Tự khai báo. Bạn sẽ sớm xác nhận tại đây.",
+        "note": "Cân mua bán phải được cơ quan Đo lường Pháp định kiểm tra và đóng dấu, thường hằng năm. Dấu cho biết cân đáng tin cậy."
+      },
+      "safety": {
+        "title": "Bộ bảo hộ cho người lao động",
+        "detail": "Tự khai báo. Bạn sẽ sớm xác nhận tại đây.",
+        "note": "Găng tay, khẩu trang, giày kín cho mọi người phân loại hoặc nâng hàng và hộp sơ cứu tại cơ sở. Saathi làm việc cho bạn cũng cần trang bị này."
+      }
+    },
+    "consent": {
+      "title": "Thời hạn giấy chấp thuận",
+      "validUntil": "Có hiệu lực đến {date}",
+      "daysLeft": "{days, plural, =0 {Hôm nay là ngày cuối} one {Còn # ngày} other {Còn # ngày}}",
+      "ranOut": "{days, plural, one {Đã hết hạn # ngày} other {Đã hết hạn # ngày}}",
+      "reminder": "Ngày xem xét gia hạn: {date}, trước khi hết hạn 90 ngày.",
+      "expiringTitle": "Gia hạn giấy chấp thuận ngay",
+      "expiringBody": "Giấy hết hạn vào {date}. Hãy xin gia hạn tại {board} ngay vì có thể mất vài tuần.",
+      "expiredTitle": "Giấy chấp thuận đã hết hạn",
+      "expiredBody": "Giấy hết hạn vào {date}. Gia hạn với {board} trước khi tiếp tục mua bán vật liệu.",
+      "missingTitle": "Chưa có giấy chấp thuận trong hồ sơ",
+      "missingBody": "Cơ sở tái chế và nhà máy yêu cầu giấy còn hạn. Gửi cho chúng tôi qua Trợ giúp để bổ sung."
+    },
+    "receipts": {
+      "title": "Biên nhận giao dịch",
+      "lead": "Biên nhận trên Luma.Green, mới nhất trước. Hóa đơn thuế GST đi kèm thanh toán thật.",
+      "number": "Biên nhận",
+      "date": "Ngày",
+      "with": "Với",
+      "what": "Vật liệu gì",
+      "amount": "Số tiền",
+      "eway": "Chứng từ e-way bill",
+      "sale": "Lượt bán",
+      "purchase": "Lượt mua",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "Cần có",
+      "ewayNotNeeded": "Không cần",
+      "ewayNeededLong": "Cần e-way bill",
+      "ewayNotNeededLong": "Không cần e-way bill",
+      "ewayNote": "Cần e-way bill khi vận chuyển hàng có giá trị trên ₹50.000.",
+      "view": "Xem biên nhận {number}",
+      "unknown": "Doanh nghiệp không còn trên Luma.Green",
+      "empty": "Chưa có biên nhận",
+      "emptyBody": "Biên nhận được tạo khi người mua nộp tiền ký quỹ."
+    },
+    "epr": {
+      "title": "Hồ sơ EPR, năm tài chính {from}–{to}",
+      "lead": "Vật liệu bạn nhận và tái chế trong năm tài chính này, từ tháng 4 đến tháng 3.",
+      "leadManufacturer": "Vật liệu tái chế bạn mua trong năm tài chính này, từ tháng 4 đến tháng 3.",
+      "received": "Đã nhận",
+      "recycled": "Đã tái chế",
+      "bought": "Đã mua",
+      "streams": {
+        "plastic": "Nhựa",
+        "ewaste": "Rác thải điện tử",
+        "battery": "Pin và ắc quy",
+        "paper": "Giấy",
+        "metal": "Kim loại",
+        "glass": "Thủy tinh",
+        "other": "Khác"
+      },
+      "regimes": {
+        "pwm_2016": "Quy tắc quản lý chất thải nhựa năm 2016",
+        "ewaste_2022": "Quy tắc quản lý rác thải điện tử năm 2022",
+        "bwm_2022": "Quy tắc quản lý chất thải pin năm 2022",
+        "none": "Chưa có quy định EPR cho vật liệu này"
+      },
+      "note": "Chứng nhận EPR được tạo trên các cổng EPR của CPCB, không phải tại đây. Tổng số lấy từ giao dịch đã hoàn tất, sẵn sàng cho khai báo.",
+      "empty": "Năm nay chưa có dữ liệu",
+      "emptyBody": "Giao dịch hoàn tất từ ngày 1 tháng 4 được tính tại đây."
+    },
+    "saathi": {
+      "title": "Dành cho doanh nghiệp",
+      "body": "Tuân thủ dành cho cửa hàng, bãi, cơ sở tái chế và nhà máy. Việc và tiền công của bạn nằm trên Trang chủ.",
+      "home": "Đến việc của tôi"
+    }
+  },
+  "sell": {
+    "metaTitle": "Bán phế liệu của bạn",
+    "metaDescription": "Bán báo, nhựa, kim loại và đồ điện tử cũ tại nhà ở Bengaluru. Xem giá cửa hàng gần bạn, đặt lịch thu gom và nhận tiền tại cửa.",
+    "eyebrow": "Dành cho hộ tại Bengaluru",
+    "title": "Bán phế liệu ngay tại nhà",
+    "lead": "Chọn vật liệu và cửa hàng gần bạn, nhận tiền mặt hoặc UPI sau khi cân.",
+    "promises": {
+      "label": "Vì sao bán ở đây",
+      "noAccount": "Không cần tài khoản",
+      "payAtDoor": "Trả tiền khi cân xong",
+      "verified": "Cửa hàng đã xác minh"
+    },
+    "unavailable": {
+      "title": "Đặt lịch sắp mở",
+      "body": "Chúng tôi đang thiết lập đặt lịch cho hộ gia đình. Vui lòng quay lại sau."
+    },
+    "demoNote": "Giá và cửa hàng mẫu cho thí điểm Bengaluru.",
+    "loadError": "Không tải được. Kiểm tra kết nối rồi thử lại.",
+    "retry": "Thử lại",
+    "steps": {
+      "label": "Các bước",
+      "progress": "Bước {current} trên {total}",
+      "basket": "Vật liệu gì",
+      "shop": "Ai",
+      "when": "Khi nào",
+      "confirm": "Đặt lịch"
+    },
+    "back": "Quay lại",
+    "families": {
+      "paper": "Giấy",
+      "plastic": "Nhựa",
+      "metal": "Kim loại",
+      "glass": "Thủy tinh",
+      "ewaste": "Rác thải điện tử",
+      "other": "Khác"
+    },
+    "windows": {
+      "morning": "Buổi sáng",
+      "afternoon": "Buổi chiều",
+      "evening": "Buổi tối"
+    },
+    "perKg": "{price}/kg",
+    "basket": {
+      "title": "Bạn có những gì?",
+      "lead": "Chạm vật liệu muốn bán rồi nhập số kg gần đúng.",
+      "yours": "Phế liệu của bạn",
+      "empty": "Chưa thêm gì. Chạm vào vật liệu bên trên.",
+      "kilos": "Số kg {material}",
+      "less": "Giảm {material}",
+      "more": "Tăng {material}",
+      "remove": "Xóa {material}",
+      "presets": "Lượng nhanh cho {material}",
+      "preset": "{kg} kg",
+      "kgUnit": "kg",
+      "lineValue": "Khoảng {amount}",
+      "worth": "Giá trị khoảng",
+      "summary": "{items, plural, one {# mục} other {# mục}} · {weight}",
+      "points": "+{points, plural, one {# điểm tái chế} other {# điểm tái chế}}",
+      "next": "Tìm người mua",
+      "full": "Tối đa cho một lịch đặt: {max} vật liệu.",
+      "weighNote": "Số tiền cuối cùng được xác định khi cân phế liệu."
+    },
+    "shop": {
+      "title": "Ai mua?",
+      "lead": "Báo giá từng cửa hàng cho phế liệu của bạn theo giá riêng của họ.",
+      "modeLabel": "Bạn muốn giao vật liệu thế nào?",
+      "pickup": "Thu gom từ nhà",
+      "pickupHint": "Cửa hàng đến chỗ bạn",
+      "dropoff": "Tôi sẽ mang đến",
+      "dropoffHint": "Bạn mang đến cửa hàng",
+      "useLocation": "Dùng vị trí của tôi",
+      "locating": "Đang tìm vị trí…",
+      "nearestFirst": "Cửa hàng gần nhất trước",
+      "byPrice": "Sắp theo giá thay thế",
+      "locationFailed": "Không lấy được vị trí nên cửa hàng được xếp theo giá tốt nhất.",
+      "listLabel": "Các cửa hàng",
+      "offerFor": "cho phế liệu của bạn",
+      "distance": "{km} kilômét",
+      "hours": "Mở cửa {hours}",
+      "picksUp": "Có thu gom",
+      "dropOnly": "Chỉ nhận tại cửa hàng",
+      "verified": "Đã xác minh",
+      "best": "Giá tốt nhất",
+      "nearest": "Gần nhất",
+      "cityPrice": "{count, plural, one {Dùng giá thành phố cho # mục} other {Dùng giá thành phố cho # mục}}",
+      "noPickupHere": "Cửa hàng không thu gom. Chọn “Tôi sẽ mang đến” để bán ở đây.",
+      "empty": "Chưa có cửa hàng nhận đặt lịch. Vui lòng quay lại sau.",
+      "next": "Chọn thời gian",
+      "pickOne": "Chọn cửa hàng để tiếp tục."
+    },
+    "when": {
+      "titlePickup": "Bạn muốn họ đến khi nào?",
+      "titleDropoff": "Bạn sẽ mang đến khi nào?",
+      "dayLabel": "Ngày hẹn",
+      "today": "Hôm nay",
+      "tomorrow": "Ngày mai",
+      "windowLabel": "Giờ",
+      "passed": "Đã quá muộn cho hôm nay",
+      "addressLabel": "Địa chỉ thu gom",
+      "addressHint": "Số nhà hoặc căn hộ, đường, khu vực và mốc dễ tìm.",
+      "dropoffAt": "Mang đến",
+      "nameLabel": "Tên của bạn",
+      "nameHint": "Để cửa hàng biết tìm ai.",
+      "privacy": "Chỉ cửa hàng bạn đặt thấy địa chỉ và chỉ sau khi chấp nhận.",
+      "next": "Kiểm tra và đặt lịch",
+      "errors": {
+        "day": "Chọn ngày.",
+        "window": "Chọn giờ.",
+        "address": "Nhập địa chỉ đầy đủ, gồm số nhà và khu vực.",
+        "name": "Nhập tên ít nhất 2 ký tự."
+      }
+    },
+    "confirm": {
+      "title": "Kiểm tra và đặt lịch",
+      "what": "Vật liệu gì",
+      "who": "Ai",
+      "when": "Khi nào",
+      "where": "Ở đâu",
+      "change": "Đổi",
+      "changeLabel": "Đổi {section}",
+      "pickup": "Thu gom tại nhà bạn",
+      "dropoff": "Bạn mang đến cửa hàng",
+      "whenValue": "{day} · {window}, {time}",
+      "youGet": "Bạn sẽ nhận khoảng {amount}",
+      "payNote": "Cửa hàng cân phế liệu và trả tiền mặt hoặc UPI.",
+      "phoneTitle": "Xác nhận số di động",
+      "phoneLead": "Chúng tôi gửi mã 6 chữ số qua SMS. Lịch đặt gắn với số này để theo dõi trên mọi điện thoại.",
+      "bookingAs": "Đặt lịch bằng {phone}",
+      "notYou": "Dùng số khác",
+      "bookPickup": "Đặt lịch thu gom",
+      "bookDropoff": "Đặt lịch mang đến",
+      "confirmAndBook": "Xác nhận và đặt lịch",
+      "booking": "Đang đặt lịch…",
+      "booked": "Đã đặt! Đang mở lịch của bạn…",
+      "fixIt": "Sửa lại",
+      "locationNote": "Vị trí gần đúng sẽ lưu cùng lịch này để tìm cửa hàng khác gần bạn khi cần."
+    },
+    "phone": {
+      "label": "Số di động",
+      "hint": "Chúng tôi sẽ gửi mã 6 chữ số đến số này.",
+      "invalid": "Nhập số di động Ấn Độ gồm 10 chữ số.",
+      "sendCode": "Gửi mã",
+      "sending": "Đang gửi…",
+      "sendFailed": "Không gửi được mã. Vui lòng thử lại sau một phút.",
+      "codeLabel": "Mã 6 chữ số",
+      "sentTo": "Đã gửi SMS đến {phone}",
+      "changeNumber": "Đổi số",
+      "verifying": "Đang kiểm tra…",
+      "resendIn": "Bạn có thể xin mã mới sau {seconds, plural, one {# giây} other {# giây}}",
+      "resend": "Gửi mã mới",
+      "resent": "Chúng tôi đã gửi mã mới.",
+      "errorInvalid": "Mã chưa đúng. Kiểm tra SMS và thử lại.",
+      "errorExpired": "Mã đã hết hạn. Hãy xin mã mới.",
+      "errorTooMany": "Thử quá nhiều lần. Hãy xin mã mới.",
+      "errorGeneric": "Đã xảy ra lỗi. Vui lòng thử lại.",
+      "privacy": "Chúng tôi chỉ dùng số cho lịch đặt và các cập nhật liên quan."
+    },
+    "errors": {
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại.",
+      "EMPTY_BASKET": "Thêm ít nhất một thứ muốn bán.",
+      "TOO_MANY_ITEMS": "Quá nhiều vật liệu cho một lịch đặt.",
+      "DUPLICATE_ITEM": "Có vật liệu bị lặp. Kiểm tra danh sách phế liệu.",
+      "INVALID_KG": "Kiểm tra số kg: mỗi mục phải lớn hơn 0 và không quá 500.",
+      "UNKNOWN_MATERIAL": "Một vật liệu không còn được bán ở đây. Kiểm tra danh sách.",
+      "SHOP_NOT_FOUND": "Cửa hàng đó hiện không nhận lịch. Chọn cửa hàng khác.",
+      "SHOP_NO_PICKUP": "Cửa hàng đó không thu gom. Chọn nơi khác hoặc mang đến.",
+      "INVALID_DATE": "Ngày đó không còn đặt được. Chọn ngày khác.",
+      "SLOT_PASSED": "Giờ đó đã qua. Chọn giờ muộn hơn.",
+      "INVALID_NAME": "Vui lòng kiểm tra tên.",
+      "ADDRESS_REQUIRED": "Vui lòng thêm địa chỉ thu gom.",
+      "INVALID_ADDRESS": "Vui lòng nhập địa chỉ đầy đủ.",
+      "TOO_MANY_OPEN": "Bạn đã có 5 lịch đang chờ. Đợi một lịch hoàn tất hoặc hủy một lịch.",
+      "NO_PHONE": "Xác nhận số di động để đặt lịch.",
+      "NOT_SIGNED_IN": "Xác nhận số di động trước.",
+      "CANNOT_CANCEL": "Lịch này không thể hủy nữa.",
+      "NOT_YOURS": "Lịch này được đặt bằng số khác.",
+      "NOT_FOUND": "Không tìm thấy lịch đặt."
+    },
+    "mine": {
+      "title": "Lịch đặt của bạn",
+      "showAll": "Hiện tất cả {count}",
+      "showFewer": "Hiện ít hơn",
+      "summary": "{items, plural, one {# mục} other {# mục}} · {weight}",
+      "paid": "Đã trả {amount}",
+      "estimate": "Khoảng {amount}"
+    },
+    "photo": {
+      "title": "Thử ước tính bằng ảnh",
+      "lead": "Tùy chọn: thêm một ảnh phế liệu rồi kiểm tra vật liệu đề xuất.",
+      "privacy": "Không chụp mặt, giấy tờ hoặc biển số. Ảnh được gửi đến nhà cung cấp AI để ước tính. Luma.Green không lưu ảnh.",
+      "choose": "Chọn hoặc chụp ảnh",
+      "selected": "Ảnh sẵn sàng",
+      "estimate": "Ước tính ảnh này",
+      "busy": "Đang kiểm tra ảnh…",
+      "manual": "Chọn vật liệu thủ công",
+      "review": "Kiểm tra các gợi ý",
+      "reviewNote": "Khối lượng từ ảnh chỉ là ước tính sơ bộ. Dùng các mục này thay giỏ rồi chỉnh vật liệu và khối lượng bên dưới.",
+      "apply": "Dùng các mục này",
+      "range": "{low}–{high}",
+      "confidence": "Độ tin cậy: {confidence}",
+      "value": "Giá trị ước tính: {low}–{high}",
+      "applied": "Đã thêm gợi ý. Kiểm tra giỏ và sửa lỗi.",
+      "unavailable": "Không có ước tính ảnh. Chọn vật liệu bên dưới.",
+      "failed": "Không kiểm tra được ảnh. Thử ảnh khác hoặc chọn vật liệu bên dưới.",
+      "invalid": "Dùng ảnh JPEG hoặc PNG rõ nét dưới 12 MB.",
+      "limited": "Đã đạt giới hạn ảnh. Chọn vật liệu bên dưới hoặc thử lại ngày mai.",
+      "retake": "Ảnh không rõ hoặc không có phế liệu. Thử ảnh khác hoặc chọn vật liệu bên dưới.",
+      "empty": "Không tìm thấy vật liệu hỗ trợ. Thử ảnh khác hoặc chọn vật liệu bên dưới.",
+      "replace": "Chọn ảnh khác"
+    }
+  },
+  "track": {
+    "metaTitle": "Lịch đặt của bạn",
+    "notFound": {
+      "title": "Không tìm thấy lịch đặt này",
+      "body": "Kiểm tra liên kết trong SMS. Nếu vừa đặt, đợi một chút rồi thử lại.",
+      "sell": "Bán phế liệu"
+    },
+    "reference": "Lịch đặt {token}",
+    "status": {
+      "requested": "Đang chờ",
+      "accepted": "Đã chấp nhận",
+      "on_the_way": "Đang đến",
+      "completed": "Hoàn tất",
+      "declined": "Đã từ chối",
+      "cancelled": "Đã hủy"
+    },
+    "hero": {
+      "requested": "{mode, select, pickup {Chờ {shop} chấp nhận} other {Chờ {shop} xác nhận}}",
+      "requestedBody": "Chúng tôi đã gửi yêu cầu. Trang cập nhật ngay khi họ trả lời.",
+      "accepted": "{mode, select, pickup {{shop} đã nhận lịch thu gom} other {{shop} đang chờ bạn đến}}",
+      "acceptedBody": "Chuẩn bị phế liệu. Sau khi cân, bạn nhận tiền mặt hoặc UPI.",
+      "on_the_way": "{shop} đang đến",
+      "on_the_wayBody": "Chuẩn bị phế liệu gần cửa.",
+      "completed": "Xong! Bạn nhận {amount}",
+      "completedBody": "Cảm ơn bạn đã tái chế. Điểm đã cộng vào số của bạn.",
+      "declined": "{shop} không nhận được lịch này",
+      "declinedBody": "Chưa thu gom gì. Thử cửa hàng khác: danh sách của bạn đã lưu.",
+      "cancelled": "Lịch đặt này đã hủy",
+      "cancelledBody": "Chưa thu gom gì. Bạn có thể đặt lại bất cứ lúc nào."
+    },
+    "progress": {
+      "label": "Tiến độ",
+      "booked": "Đã đặt",
+      "accepted": "Đã chấp nhận",
+      "confirmed": "Đã xác nhận",
+      "onTheWay": "Đang đến",
+      "done": "Hoàn tất"
+    },
+    "when": "Khi nào",
+    "whenValue": "{day} · {window}, {time}",
+    "today": "Hôm nay",
+    "tomorrow": "Ngày mai",
+    "mode": {
+      "pickup": "Thu gom tại nhà bạn",
+      "dropoff": "Bạn mang đến cửa hàng"
+    },
+    "shop": {
+      "title": "Cửa hàng của bạn",
+      "verified": "Đã xác minh",
+      "call": "Gọi",
+      "callLabel": "Gọi {shop}",
+      "hours": "Mở cửa {hours}"
+    },
+    "items": {
+      "title": "Vật liệu thu gom",
+      "estimated": "Khoảng {weight}",
+      "weighed": "{weight} với giá {price}/kg"
+    },
+    "money": {
+      "title": "Tiền và điểm của bạn",
+      "estimate": "Bạn sẽ nhận khoảng {amount}",
+      "estimateNote": "Cửa hàng cân phế liệu và trả tiền mặt hoặc UPI.",
+      "paid": "Bạn nhận {amount}",
+      "paidBy": "Trả bằng {method, select, upi {UPI} other {tiền mặt}} · {date}",
+      "estimateWas": "Ước tính trước đó là {amount}",
+      "points": "+{points, plural, one {# điểm tái chế} other {# điểm tái chế}}",
+      "pointsAfter": "Khoảng +{points, plural, one {# điểm tái chế} other {# điểm tái chế}} sau khi cân"
+    },
+    "timeline": {
+      "title": "Lịch sử",
+      "requested": "Đã đặt",
+      "accepted": "Cửa hàng đã chấp nhận",
+      "on_the_way": "Cửa hàng đang đến",
+      "completed": "Đã cân và thanh toán",
+      "declined": "Cửa hàng đã từ chối",
+      "cancelled": "Đã hủy"
+    },
+    "cancel": {
+      "button": "Hủy lịch đặt",
+      "title": "Hủy lịch này?",
+      "body": "Cửa hàng sẽ thấy lịch bị hủy. Bạn có thể đặt lại bất cứ lúc nào.",
+      "confirm": "Có, hủy",
+      "keep": "Giữ lịch",
+      "cancelling": "Đang hủy…",
+      "checking": "Đang kiểm tra số…",
+      "done": "Lịch của bạn đã hủy.",
+      "free": "Hủy miễn phí trước khi cửa hàng lên đường.",
+      "signInTitle": "Xác nhận đúng là bạn",
+      "signInBody": "Nhập số di động đã dùng đặt lịch. Chúng tôi gửi mã.",
+      "confirmNumber": "Xác nhận số của tôi",
+      "notYours": "Lịch này được đặt bằng số khác.",
+      "close": "Đóng",
+      "otherNumber": "Dùng số khác"
+    },
+    "saved": "Không cần tài khoản. Giữ liên kết để xem lịch trên mọi điện thoại.",
+    "sellMore": "Bán thêm phế liệu",
+    "tryAnother": "Thử cửa hàng khác",
+    "dispatchChanged": "Yêu cầu đã chuyển sang cửa hàng gần bạn khác. Cửa hàng hiện tại hiển thị bên dưới."
+  },
+  "market": {
+    "sampleData": "Giá và số tiền trên màn hình này là dữ liệu mẫu cho nguyên mẫu.",
+    "simulated": "Dữ liệu mẫu. Thanh toán trong nguyên mẫu chỉ được mô phỏng: không chuyển tiền thật.",
+    "perKg": "{price}/kg",
+    "recycled": "Đã tái chế",
+    "forBusinessesTitle": "Màn hình này dành cho doanh nghiệp",
+    "forBusinessesBody": "Kabadiwala, bãi, cơ sở tái chế và nhà sản xuất giao dịch tại đây.",
+    "units": {
+      "kg": "kg",
+      "rupee": "₹"
+    },
+    "errors": {
+      "NOT_SIGNED_IN": "Bạn đã bị đăng xuất. Vui lòng đăng nhập lại.",
+      "WRONG_ROLE": "Doanh nghiệp của bạn không thể thực hiện việc này.",
+      "NOT_FOUND": "Không tìm thấy. Mục này có thể đã bị xóa.",
+      "OWN_LISTING": "Đây là lô hàng của bạn.",
+      "LISTING_NOT_OPEN": "Lô này không còn được bán.",
+      "NOT_ENOUGH_LEFT": "Lô không còn đủ số lượng đó.",
+      "NOT_ENOUGH_STOCK": "Tồn kho không đủ lượng đó. Kiểm tra tồn kho trước.",
+      "INVALID_WEIGHT": "Nhập khối lượng lớn hơn 0 kg.",
+      "INVALID_PRICE": "Nhập giá cao hơn ₹0.",
+      "NOTE_TOO_LONG": "Ghi chú tối đa 140 ký tự.",
+      "UNKNOWN_MATERIAL": "Chọn vật liệu trong danh sách.",
+      "WRONG_STEP": "Giao dịch đã chuyển bước. Kiểm tra trạng thái mới nhất.",
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
+    },
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "Sẵn có",
+      "lotValue": "Cả lô"
+    },
+    "buy": {
+      "button": "Mua",
+      "buttonLabel": "Mua {material} từ {seller}",
+      "title": "Mua {material}",
+      "from": "Từ {seller}, {area}. Có {weight} với giá {price}/kg.",
+      "kgLabel": "Bao nhiêu kg?",
+      "kgHint": "Tối đa {weight}.",
+      "all": "Toàn bộ {weight}",
+      "kgInvalid": "Nhập kg, ví dụ 50 hoặc 12,5.",
+      "kgTooMuch": "Chỉ có {weight}.",
+      "total": "Tổng cộng",
+      "totalLine": "{weight} × {price}/kg",
+      "escrow": "Bạn nộp ký quỹ sau khi {seller} chấp nhận. Tiền chuyển cho họ khi bạn xác nhận nhận hàng.",
+      "ewayBill": "Trên ₹50.000: hàng phải đi kèm e-way bill.",
+      "cancel": "Hủy",
+      "submit": "Gửi yêu cầu mua",
+      "sending": "Đang gửi…",
+      "sent": "Đã gửi yêu cầu tới {seller}",
+      "sentNext": "Bạn sẽ nộp ký quỹ khi họ chấp nhận.",
+      "seeTrades": "Xem giao dịch"
+    },
+    "browse": {
+      "title": "Mua",
+      "lead": "{kind, select, yard {Phế liệu đã phân loại từ kabadiwala gần bạn.} recycler {Vật liệu đã phân loại và ép kiện từ bãi.} manufacturer {Vật liệu tái chế từ cơ sở đã xác minh.} other {Vật liệu đang bán gần bạn.}}",
+      "filterLabel": "Lọc theo vật liệu",
+      "all": "Tất cả",
+      "count": "{count, plural, =0 {Không có lô} one {# lô đang bán} other {# lô đang bán}}",
+      "emptyTitle": "Hiện chưa có hàng bán",
+      "emptyBody": "Lô mới xuất hiện ngay khi được đăng.",
+      "notForYouTitle": "Kabadiwala mua từ hộ gia đình",
+      "notForYouBody": "Trên chợ, bạn là người bán: cung cấp tồn kho đã phân loại cho bãi.",
+      "goSell": "Bán cho các bãi"
+    },
+    "sell": {
+      "title": "Bán",
+      "lead": "{buyer, select, yard {Chào bán tồn kho đã phân loại cho bãi.} recycler {Chào bán kiện hàng cho cơ sở tái chế.} manufacturer {Chào bán vật liệu cho nhà sản xuất.} other {Chào bán tồn kho cho người mua.}}",
+      "notForYouTitle": "Nhà sản xuất mua trên Luma.Green",
+      "notForYouBody": "Tìm vật liệu tái chế từ cơ sở đã xác minh.",
+      "goBuy": "Mua vật liệu",
+      "form": {
+        "title": "Tin đăng mới",
+        "material": "Bạn đang bán gì?",
+        "free": "Có thể bán {weight}",
+        "allPromised": "Đã đăng bán hoặc bán hết",
+        "kg": "Bao nhiêu kg?",
+        "kgHint": "Tối đa {weight}.",
+        "all": "Toàn bộ {weight}",
+        "price": "Giá của bạn, ₹ mỗi kg",
+        "market": "Giá thị trường hôm nay {price}/kg",
+        "suggested": "Đề xuất {price}/kg",
+        "useSuggested": "Dùng {price}",
+        "farFromMarket": "Giá này chênh nhiều so với hôm nay. Vui lòng kiểm tra.",
+        "note": "Ghi chú cho người mua",
+        "optional": "(không bắt buộc)",
+        "notePlaceholder": "Ví dụ: khô, buộc bó, kiện 50 kg",
+        "noteCount": "{count}/{max}",
+        "value": "Giá trị lô",
+        "submit": "Đăng bán",
+        "submitting": "Đang đăng bán…",
+        "listed": "Đã đăng bán. {buyer, select, yard {Các bãi} recycler {Cơ sở tái chế} manufacturer {Nhà sản xuất} other {Người mua}} hiện có thể xem.",
+        "nothingTitle": "Chưa có gì để bán",
+        "nothingBody": "Tồn kho bạn ghi nhận xuất hiện ở đây. Hàng đã đăng hoặc bán không được tính hai lần.",
+        "goStock": "Đến tồn kho",
+        "errors": {
+          "pickMaterial": "Chọn vật liệu.",
+          "kgInvalid": "Nhập kg, ví dụ 50 hoặc 12,5.",
+          "kgTooMuch": "Bạn có thể bán {weight}.",
+          "priceInvalid": "Nhập giá bằng rupee, ví dụ 18 hoặc 17,50.",
+          "noteTooLong": "Ghi chú tối đa 140 ký tự."
+        }
+      },
+      "mine": {
+        "title": "Đang được bán",
+        "emptyTitle": "Chưa có hàng đăng bán",
+        "emptyBody": "Dùng biểu mẫu để đăng lô đầu tiên.",
+        "past": "Tin đăng trước",
+        "onSale": "Đang bán",
+        "listedOn": "Đăng ngày {date}",
+        "pastLine": "Đăng ngày {date} · {price}/kg",
+        "sold": "Đã bán hết",
+        "withdrawn": "Đã gỡ",
+        "withdraw": "Gỡ bán",
+        "withdrawLabel": "Gỡ {material}",
+        "withdrawConfirm": "Gỡ lô này khỏi chợ? Người mua không còn thấy và yêu cầu đang chờ sẽ bị từ chối.",
+        "withdrawYes": "Có, gỡ bán",
+        "withdrawNo": "Tiếp tục bán",
+        "withdrawnToast": "Đã gỡ {material} khỏi chợ"
+      }
+    },
+    "trades": {
+      "title": "Giao dịch của bạn",
+      "lead": "Từng bước của mọi giao dịch. Tiền nằm trong ký quỹ đến khi người mua xác nhận nhận hàng.",
+      "buying": "Đang mua",
+      "selling": "Đang bán hàng",
+      "tabsLabel": "Mua hoặc bán",
+      "waitingBadge": "{count, plural, one {# mục cần bạn xử lý} other {# mục cần bạn xử lý}}",
+      "emptyBuyingTitle": "Chưa có giao dịch mua",
+      "emptyBuyingBody": "Lô bạn yêu cầu mua sẽ xuất hiện ở đây.",
+      "emptySellingTitle": "Chưa có giao dịch bán",
+      "emptySellingBody": "Khi có người yêu cầu mua lô của bạn, giao dịch xuất hiện ở đây.",
+      "goBuy": "Tìm vật liệu",
+      "goSell": "Đăng bán tồn kho",
+      "card": {
+        "title": "{material} · {weight}",
+        "from": "Từ {name} · {area}",
+        "to": "Đến {name} · {area}",
+        "rate": "{price}/kg",
+        "inEscrow": "{amount} đang giữ trong ký quỹ",
+        "ewayBill": "Trên ₹50.000: hàng phải đi kèm e-way bill.",
+        "updated": "Cập nhật {when}",
+        "receipt": "Biên nhận {number}",
+        "buying": "Đang mua",
+        "selling": "Đang bán hàng"
+      },
+      "steps": {
+        "label": "Tiến độ giao dịch",
+        "requested": "Đã yêu cầu",
+        "accepted": "Đã chấp nhận",
+        "paid_to_escrow": "Trong ký quỹ",
+        "dispatched": "Đã xuất hàng",
+        "completed": "Đã giao",
+        "srStep": "{step}: {state}",
+        "state": {
+          "done": "đã xong",
+          "current": "tiếp theo",
+          "todo": "chưa"
+        }
+      },
+      "declined": "Từ chối ngày {date}",
+      "hint": {
+        "requested": {
+          "buyer": "Đang chờ {name} chấp nhận.",
+          "seller": "{name} muốn mua. Chấp nhận để giữ hàng cho họ."
+        },
+        "accepted": {
+          "buyer": "Đã chấp nhận. Nộp ký quỹ để tiếp tục: tiền được giữ đến khi bạn xác nhận nhận hàng.",
+          "seller": "Chờ {name} nộp ký quỹ."
+        },
+        "paid_to_escrow": {
+          "buyer": "Tiền của bạn an toàn trong ký quỹ. Chờ {name} xuất hàng.",
+          "seller": "Tiền an toàn trong ký quỹ. Gửi hàng rồi đánh dấu đã xuất."
+        },
+        "dispatched": {
+          "buyer": "Đang vận chuyển. Kiểm tra hàng rồi xác nhận để giải ngân.",
+          "seller": "Đang vận chuyển. Tiền giải ngân cho bạn khi {name} xác nhận nhận hàng."
+        },
+        "completed": {
+          "buyer": "Đã giao. Tiền đã giải ngân cho {name}.",
+          "seller": "Đã giao. Tiền đã giải ngân cho bạn."
+        },
+        "declined": {
+          "buyer": "{name} từ chối đơn hoặc lô đã bán hết.",
+          "seller": "Bạn từ chối đơn hoặc lô đã đóng."
+        }
+      },
+      "action": {
+        "accept": "Chấp nhận đơn",
+        "decline": "Từ chối",
+        "pay": "Nộp {amount} vào ký quỹ",
+        "dispatch": "Đánh dấu đã xuất hàng",
+        "confirm": "Xác nhận nhận hàng"
+      },
+      "busy": "Đang lưu…",
+      "done": {
+        "accept": "Đã chấp nhận đơn",
+        "decline": "Đã từ chối đơn",
+        "pay": "Đã nộp ký quỹ. Biên nhận {number}",
+        "dispatch": "Đã đánh dấu xuất hàng",
+        "confirm": "Đã xác nhận nhận hàng. Tiền được giải ngân cho người bán."
+      },
+      "declineConfirm": "Từ chối đơn này từ {name}? Không thể hoàn tác.",
+      "declineYes": "Có, từ chối",
+      "declineNo": "Giữ lịch"
+    },
+    "receipt": {
+      "title": "Biên nhận mua bán",
+      "numberLabel": "Số biên nhận",
+      "dateLabel": "Ngày",
+      "statusLabel": "Khoản thanh toán",
+      "inEscrow": "Trong ký quỹ",
+      "settled": "Đã giải ngân",
+      "seller": "Người bán",
+      "buyer": "Người mua",
+      "gstin": "GSTIN {gstin}",
+      "noGstin": "Chưa đăng ký GST",
+      "material": "Vật liệu",
+      "quantity": "Số lượng",
+      "rate": "Đơn giá",
+      "amount": "Số tiền",
+      "total": "Tổng cộng",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "Đã nộp ký quỹ Luma.Green vào {date}.",
+      "held": "Giữ trong ký quỹ đến khi người mua xác nhận nhận hàng.",
+      "released": "Đã giải ngân cho người bán vào {date}.",
+      "ewayBill": "Hàng trên ₹50.000: chuyến hàng phải có e-way bill đi kèm.",
+      "notTaxInvoice": "Đây là biên nhận giao dịch, không phải hóa đơn thuế GST. Hóa đơn thuế đi cùng thanh toán thật.",
+      "print": "In",
+      "back": "Quay lại giao dịch",
+      "missingTitle": "Không tìm thấy biên nhận",
+      "missingBody": "Giao dịch không thuộc bạn hoặc liên kết sai.",
+      "pendingTitle": "Chưa có biên nhận cho giao dịch",
+      "pendingBody": "Biên nhận tạo khi người mua nộp ký quỹ.",
+      "declinedBody": "Giao dịch bị từ chối nên không có biên nhận."
+    },
+    "home": {
+      "greeting": "Chào bạn, {name}",
+      "lead": "{kind, select, yard {Mua từ kabadiwala, bán kiện đã phân loại cho cơ sở tái chế.} recycler {Mua phế liệu đã phân loại từ bãi, bán vật liệu tái chế cho nhà sản xuất.} manufacturer {Mua vật liệu tái chế từ cơ sở đã xác minh.} other {Tổng quan giao dịch của bạn.}}",
+      "buy": "Mua",
+      "sell": "Bán",
+      "trades": "Giao dịch của bạn",
+      "statsTitle": "Tổng quan",
+      "stats": {
+        "escrow": "Trong ký quỹ",
+        "escrowHint": "Giải ngân khi xác nhận nhận hàng",
+        "waiting": "Đang chờ bạn",
+        "waitingHint": "{count, plural, =0 {Đã xử lý hết} one {# giao dịch cần thao tác} other {# giao dịch cần thao tác}}",
+        "listings": "Đang bán",
+        "listingsHint": "Đã đăng {weight}",
+        "offers": "Lô vật liệu tái chế",
+        "offersHint": "Cơ sở tái chế đang bán",
+        "completed": "Hoàn tất tháng này",
+        "completedHint": "Đã giao dịch {amount}"
+      },
+      "waitingTitle": "Đang chờ bạn",
+      "allTrades": "Mọi giao dịch",
+      "caughtUpTitle": "Hiện không có gì cần bạn xử lý",
+      "caughtUpBody": "Đơn, thanh toán và giao hàng mới hiện ở đây.",
+      "offersTitle": "Lô mới nhất cho bạn",
+      "recycledTitle": "Vật liệu tái chế cho bạn",
+      "recycledBody": "Mảnh, hạt, kraft và thỏi từ cơ sở đã xác minh, sẵn sàng cho dây chuyền.",
+      "seeAll": "Xem hết",
+      "noOffersTitle": "Hiện không có lô đang bán",
+      "noOffersBody": "Lô mới xuất hiện ngay khi được đăng."
+    }
+  },
+  "shop": {
+    "sampleNote": "Giá, giá thị trường và giá trị trên màn hình này là số liệu mẫu cho nguyên mẫu.",
+    "household": "Hộ dân",
+    "perKg": "{price}/kg",
+    "about": "Khoảng {amount}",
+    "slot": "{day}, {window}",
+    "dropoff": "Mang đến cửa hàng của bạn",
+    "windows": {
+      "morning": "Buổi sáng",
+      "afternoon": "Buổi chiều",
+      "evening": "Buổi tối"
+    },
+    "days": {
+      "today": "Hôm nay",
+      "tomorrow": "Ngày mai",
+      "yesterday": "Hôm qua"
+    },
+    "status": {
+      "requested": "Mới",
+      "accepted": "Đã chấp nhận",
+      "on_the_way": "Đang đến",
+      "completed": "Đã trả",
+      "declined": "Đã từ chối",
+      "cancelled": "Đã hủy"
+    },
+    "methods": {
+      "cash": "Tiền mặt",
+      "upi": "UPI"
+    },
+    "families": {
+      "paper": "Giấy",
+      "plastic": "Nhựa",
+      "metal": "Kim loại",
+      "glass": "Thủy tinh",
+      "ewaste": "Rác thải điện tử",
+      "other": "Khác"
+    },
+    "compare": {
+      "above": "Cao hơn thị trường",
+      "below": "Thấp hơn thị trường",
+      "same": "Bằng thị trường"
+    },
+    "errors": {
+      "generic": "Đã xảy ra lỗi. Thử lại.",
+      "changed": "Yêu cầu vừa thay đổi. Kiểm tra lại.",
+      "loadTitle": "Không tải được nội dung",
+      "loadBody": "Kiểm tra kết nối internet và thử lại.",
+      "retry": "Thử lại"
+    },
+    "notShop": {
+      "title": "Chỉ dành cho cửa hàng kabadiwala",
+      "body": "Yêu cầu thu gom và giá cho hộ gia đình thuộc cửa hàng kabadiwala.",
+      "home": "Về Trang chủ"
+    },
+    "home": {
+      "greeting": "Xin chào",
+      "newTitle": "Yêu cầu mới",
+      "newNone": "Hiện không có yêu cầu mới.",
+      "newSome": "{count, plural, one {# hộ muốn thu gom.} other {# hộ muốn thu gom.}}",
+      "seeRequests": "Xem yêu cầu",
+      "todayTitle": "Thu gom hôm nay",
+      "next": "Tiếp",
+      "todayNone": "Hôm nay không còn lịch thu gom.",
+      "seeToday": "Xem thu gom hôm nay",
+      "moneyTitle": "Tiền và tồn kho",
+      "paidToday": "Đã trả hôm nay",
+      "paidWeek": "7 ngày qua",
+      "pickups": "{count, plural, =0 {Không có lần thu gom} one {# lần thu gom} other {# lần thu gom}}",
+      "stockWorth": "Giá trị tồn kho",
+      "stockWeight": "{weight} trong kho",
+      "priceCheck": "Kiểm tra giá",
+      "allPrices": "Tất cả giá của tôi",
+      "perKg": "mỗi kg",
+      "you": "Bạn trả",
+      "market": "Thị trường",
+      "quickLinks": "Lối tắt",
+      "sell": "Bán cho một bãi",
+      "sellHint": "Chào hàng tồn cho bãi gần bạn",
+      "prices": "Giá của tôi",
+      "pricesHint": "Giá bạn trả hộ gia đình mỗi kg"
+    },
+    "requests": {
+      "title": "Yêu cầu",
+      "lead": "Hộ gần bạn muốn bán phế liệu.",
+      "tabs": {
+        "new": "Mới",
+        "today": "Hôm nay",
+        "done": "Hoàn tất"
+      },
+      "dueNow": "Hôm nay",
+      "later": "Sắp tới",
+      "empty": {
+        "newTitle": "Không có yêu cầu mới",
+        "newBody": "Khi hộ đặt thu gom với bạn, yêu cầu hiện ở đây.",
+        "todayTitle": "Không có gì cần thu gom",
+        "todayBody": "Lịch bạn chấp nhận hiện ở đây.",
+        "doneTitle": "Chưa hoàn thành lần nào",
+        "doneBody": "Lịch đã trả tiền và bị từ chối hiện ở đây."
+      },
+      "estimate": "Ước tính",
+      "doneLine": "{when} · {materials}",
+      "accept": "Chấp nhận",
+      "decline": "Từ chối",
+      "startTrip": "Bắt đầu đi",
+      "weigh": "Cân và thanh toán",
+      "accepted": "Đã nhận. Bạn có thể xem địa chỉ và số điện thoại.",
+      "declined": "Đã từ chối yêu cầu.",
+      "onTheWay": "Hộ gia đình thấy bạn đang đến.",
+      "confirmDecline": {
+        "title": "Từ chối yêu cầu này?",
+        "body": "Bạn không thể hoàn tác.",
+        "confirm": "Có, từ chối",
+        "cancel": "Giữ lịch"
+      }
+    },
+    "request": {
+      "back": "Mọi yêu cầu",
+      "details": "Chi tiết thu gom",
+      "where": "Địa chỉ",
+      "phone": "Điện thoại",
+      "call": "Gọi",
+      "directions": "Chỉ đường",
+      "hidden": "Bạn thấy địa chỉ đầy đủ và số điện thoại sau khi chấp nhận.",
+      "items": "Họ có những gì",
+      "estimate": "Ước tính",
+      "history": "Lịch sử",
+      "declined": "Bạn đã từ chối yêu cầu.",
+      "cancelled": "Hộ gia đình đã hủy lần thu gom này.",
+      "notFoundTitle": "Không tìm thấy yêu cầu",
+      "notFoundBody": "Có thể là yêu cầu của cửa hàng khác hoặc liên kết sai.",
+      "steps": {
+        "requested": "Đã yêu cầu",
+        "accepted": "Đã chấp nhận",
+        "on_the_way": "Đang đến",
+        "completed": "Đã cân và thanh toán",
+        "declined": "Đã từ chối",
+        "cancelled": "Đã hủy"
+      }
+    },
+    "weigh": {
+      "title": "Cân và thanh toán",
+      "lead": "Cân từng vật liệu. Số tiền tính theo giá của bạn.",
+      "kg": "kg",
+      "inputLabel": "{material}, tính bằng kg",
+      "less": "Giảm nửa kg {material}",
+      "more": "Tăng nửa kg {material}",
+      "remove": "Xóa {material}",
+      "estimated": "Ước đoán: {weight}",
+      "noRate": "Chưa đặt giá",
+      "add": "Thêm vật liệu khác",
+      "total": "Cần trả",
+      "method": "Thanh toán bằng",
+      "confirm": "Xác nhận đã trả {amount}",
+      "saving": "Đang lưu…",
+      "invalidKg": "Nhập kg, ví dụ 12 hoặc 12,5.",
+      "nothing": "Cân ít nhất một vật liệu.",
+      "done": "Đã lưu thanh toán."
+    },
+    "receipt": {
+      "thanks": "Cảm ơn bạn đã tái chế!",
+      "thanksNamed": "Cảm ơn {name} đã tái chế!",
+      "title": "Đã trả {amount}",
+      "method": "{method}, {when}",
+      "points": "{name} nhận {points, plural, one {# điểm} other {# điểm}}",
+      "pointsHint": "Một điểm cho mỗi ₹10.",
+      "line": "{weight} với giá {price}/kg",
+      "kg": "{kg} kg",
+      "total": "Tổng cộng",
+      "stock": "Đã thêm vào tồn kho.",
+      "back": "Quay lại yêu cầu"
+    },
+    "stock": {
+      "title": "Tồn kho",
+      "lead": "Hàng bạn có và giá trị hôm nay.",
+      "totalWeight": "Tổng khối lượng",
+      "worth": "Giá trị hôm nay",
+      "worthHint": "Theo giá thị trường hôm nay",
+      "scrap": "Phế liệu",
+      "recycled": "Vật liệu tái chế",
+      "atPrice": "Thị trường {price}/kg",
+      "noPrice": "Hôm nay chưa có giá thị trường",
+      "sellTo": {
+        "yard": "Bán cho một bãi",
+        "recycler": "Bán cho cơ sở tái chế",
+        "manufacturer": "Bán cho nhà sản xuất"
+      },
+      "emptyTitle": "Chưa có tồn kho",
+      "emptyShop": "Cân và trả tiền một lần thu gom để hàng hiện tại đây.",
+      "emptyBusiness": "Mua trên chợ để hàng hiện tại đây.",
+      "buy": "Mua vật liệu",
+      "notBusinessTitle": "Chỉ dành cho doanh nghiệp",
+      "notBusinessBody": "Cửa hàng, bãi, cơ sở tái chế và nhà máy quản lý tồn kho."
+    },
+    "prices": {
+      "title": "Giá của tôi",
+      "lead": "Giá bạn trả hộ gia đình mỗi kg, không thấp hơn mức tối thiểu.",
+      "label": "Giá {material} của bạn, bằng rupee mỗi kg",
+      "prefix": "₹",
+      "suffix": "mỗi kg",
+      "minimum": "Tối thiểu {price}/kg",
+      "market": "Thị trường {price}/kg",
+      "notSet": "Chưa đặt. Hộ nhận giá thành phố là {price}/kg.",
+      "save": "Lưu",
+      "saving": "Đang lưu…",
+      "saved": "{material}: đã lưu {price}/kg.",
+      "invalid": "Nhập giá, ví dụ 14 hoặc 14,50.",
+      "belowFloor": "Quá thấp. Tối thiểu là {price}/kg.",
+      "belowFloorUnknown": "Quá thấp. Giá này dưới mức tối thiểu.",
+      "emptyTitle": "Chưa có vật liệu",
+      "emptyBody": "Vật liệu bạn mua được thiết lập khi cửa hàng được duyệt."
+    },
+    "dispatch": {
+      "title": "Cài đặt thu gom",
+      "autoAccept": "Tự động nhận lịch thu gom gần bạn",
+      "autoAcceptHint": "Lịch trong bán kính có thể được nhận mà không cần trả lời thủ công. Tắt khi bạn không thể đi thu gom.",
+      "radius": "Bán kính thu gom (km)",
+      "radiusHint": "Chọn số nguyên từ 1 đến 50.",
+      "saved": "Đã lưu cài đặt thu gom",
+      "error": "Không lưu được cài đặt. Thử lại.",
+      "saving": "Đang lưu…",
+      "ownerOnly": "Chỉ chủ cửa hàng được đổi cài đặt thu gom.",
+      "locationRequired": "Thêm vị trí cửa hàng và bật thu gom tại nhà trước khi dùng tự động chấp nhận."
+    }
+  },
+  "native": {
+    "back": "Quay lại",
+    "reload": "Tải lại",
+    "openBrowser": "Mở trong trình duyệt",
+    "offlineTitle": "Không kết nối được",
+    "offlineBody": "Kiểm tra internet rồi thử lại.",
+    "updates": "Kiểm tra cập nhật ứng dụng",
+    "updateReady": "Có bản cập nhật ứng dụng.",
+    "restart": "Khởi động lại ngay",
+    "later": "Để sau",
+    "updateCurrent": "Ứng dụng đã là bản mới nhất.",
+    "updateUnavailable": "Bản dựng này không hỗ trợ cập nhật ứng dụng.",
+    "updateFailed": "Không kiểm tra được cập nhật. Thử lại sau.",
+    "locationTitle": "Chia sẻ vị trí?",
+    "locationBody": "Cho phép Luma.Green dùng vị trí để tìm cửa hàng phế liệu gần bạn.",
+    "allow": "Cho phép",
+    "deny": "Không phải bây giờ",
+    "browserNotice": "Trang này mở trong trình duyệt. Bạn có thể cần đăng nhập lại.",
+    "cameraPermission": "Dùng camera chụp phế liệu hoặc giấy tờ xác minh.",
+    "photoPermission": "Chọn ảnh để ước tính phế liệu và xác minh.",
+    "cameraTitle": "Máy ảnh"
+  },
+  "analytics": {
+    "title": "Phân tích tùy chọn",
+    "description": "Cho phép PostHog và Google Analytics đo lượt truy cập trang công khai. Chúng tôi không ghi biểu mẫu, trang riêng tư hoặc phát lại phiên. Lựa chọn không ảnh hưởng quyền truy cập nền tảng.",
+    "accept": "Cho phép phân tích",
+    "decline": "Tiếp tục tắt phân tích",
+    "settings": "Cài đặt phân tích",
+    "saved": "Lựa chọn được lưu trên thiết bị này.",
+    "unavailable": "Trình duyệt không lưu được lựa chọn. Phân tích sẽ tiếp tục tắt.",
+    "close": "Đóng"
+  },
+  "showcase": {
+    "scene": "Cảnh minh họa",
+    "context": {
+      "heading": "Xem không gian làm việc của bạn",
+      "body": "Màn hình minh họa cho thấy từng vai trò dùng Luma.Green thế nào. Xem hướng dẫn bên dưới để biết các bước sẵn có."
+    },
+    "adminBody": "Duyệt hồ sơ, quản lý quyền truy cập và kiểm tra hồ sơ hoạt động.",
+    "preview": {
+      "label": "Xem trước ứng dụng minh họa · không có hồ sơ thật",
+      "roles": {
+        "household": {
+          "title": "Thu gom cho gia đình bạn",
+          "first": "Chọn vật liệu",
+          "second": "Sắp xếp thu gom",
+          "third": "Giữ biên nhận"
+        },
+        "kabadiwala": {
+          "title": "Cửa hàng phế liệu của bạn",
+          "first": "Xem yêu cầu thu gom",
+          "second": "Ghi khối lượng",
+          "third": "Quản lý tồn kho đã phân loại"
+        },
+        "yard": {
+          "title": "Bãi phân loại của bạn",
+          "first": "Nhận vật liệu",
+          "second": "Phân loại tồn kho",
+          "third": "Chuẩn bị lô xuất đi"
+        },
+        "recycler": {
+          "title": "Không gian tái chế của bạn",
+          "first": "Theo dõi lô đến",
+          "second": "Ghi nhận sản lượng tái chế",
+          "third": "Lưu hồ sơ vật liệu"
+        },
+        "manufacturer": {
+          "title": "Nguồn cung vật liệu của bạn",
+          "first": "Tìm vật liệu tái chế",
+          "second": "Xem tin đăng sẵn có",
+          "third": "Theo dõi giao dịch"
+        },
+        "saathi": {
+          "title": "Ngày làm việc của bạn",
+          "first": "Tìm việc gần đây",
+          "second": "Lên lịch làm việc",
+          "third": "Ghi việc đã hoàn thành"
+        },
+        "admin": {
+          "title": "Quản trị nền tảng",
+          "first": "Duyệt hồ sơ",
+          "second": "Kiểm tra giấy tờ đã nộp",
+          "third": "Xem hồ sơ hoạt động"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,79 @@
 # Agent handoff — 2 October 2026
 
+## Release snapshot
+
+This snapshot records the local release evidence for
+`feat/responsive-locales-review`, based on `c1ed004`. The founder requested
+commit, push and integration into `main`. Use the protected PR path, with all
+required checks green. Read the live Git/PR state before resuming; this document
+is not a substitute for hosted CI or deployment status.
+
+The founder merged the earlier PR #28 at 03:27 UTC. Its `dfb7de2` head passed
+all five required checks, Chromium and native policy checks. Vercel reported
+production `c1ed004` successful, and its How it works page returned HTTP 200.
+That checkpoint contains the initial UI pass, banners, logo motion and offline
+seed manifest. This follow-up contains the final responsive and language work.
+
+`9930381` records durable UI rules, the 62-case team manual, the proposed
+October–March plan, India-first legal preparation and the corrected offline
+seed gap. The founder confirmed that the entity is not registered. The UI
+contract in `docs/design/designer-system.md` supersedes historical visual rules.
+
+### What changed
+
+- Compact public and operational phone/tablet menus, one-row desktop navigation,
+  tight section spacing and complete single-line action text. The final narrow
+  pass also stacks pickup contact actions and lets long form labels wrap.
+- 21 additional complete catalogues: 33 locales, script-font priority repair,
+  localized numeric input, root-error and native-shell copy generation.
+- Real-price loading placeholders and restrained public text/button/mesh effects.
+  Public static rendering and private/live data boundaries are preserved.
+- Maintained Word guide and illustrated team pack with light/dark pairs,
+  translated examples, role/edge-case testing, roadmap and API/legal gates.
+
+### Local verification
+
+`pnpm check` passed: 1,272 web tests, 27 mobile tests and 20 desktop tests,
+plus lint and TypeScript. Formatting passed. The normal webpack production build
+emits 2,521 static routes. All 706 Chromium cases passed with one worker; all five
+configured-analytics checks passed in an isolated build with intercepted provider
+requests. The last German selector-label correction received a fresh 101-test
+message check and all 33 narrow control-bound checks before the final rebuild.
+
+The protected fixture matrix initially passed 777 of 784 cases. Seven genuine
+layout defects were fixed; all 160 affected cases then passed. All 99 operational
+navigation states and the 33-locale descendant-text bounds checks passed. This
+catches text hidden inside a control as well as page overflow. Original browser
+PNGs were visually reviewed. Fixtures have synthetic records, reject writes and
+do not prove authenticated access or backend/provider execution.
+
+The language audit covers 33 × 2,260 message values and 26 material names per
+locale, with no mechanical coverage issues. Native-speaker review remains
+required. The 35 separate offline seed tests pass; no seed import or reset ran.
+See the [responsive record](responsive-performance-locales.md) and
+[cache audit](rendering-cache-audit.md) for scope and repeatable checks.
+
+### Guide impact and external gates
+
+The platform guide has 69 reviewed pages and 65 image placements. Its current
+public, analytics and protected captures and exact DOCX hash are recorded in
+`docs/user-guide/build.json`. The team pack has 38 reviewed pages and 12 image
+placements, with its own freshness record. The 62-case manual is a test plan;
+its staging/provider/device cases have not been claimed as executed.
+
+The existing Google Docs ID and sharing are unchanged. Its in-place update is
+explicitly pending in `docs/user-guide/cloud.json`; use the current local Word
+file for this revision. Demo isolation still needs the founder's choice before
+import work. Stored material names require the separate authenticated, audited
+repair after backend deployment. Live SMS/provider acceptance, native signing,
+real-device tests and legal review remain release gates. No live provider send,
+payment, credit issuance or legal filing ran in this pass.
+
+Preserve the unrelated root PDF and pre-existing previews on ports 3004/3202.
+The task preview uses port 3009; the isolated fixture preview uses port 3203.
+
+## Earlier checkpoints
+
 **Logo motion follow-up:** after `8975575`, the founder requested an eased logo
 spin on hover. The shared SVG mark makes one 900ms turn on fine-pointer hover
 and home-link keyboard focus. The wordmark stays still. Reduced motion disables

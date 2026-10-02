@@ -37,7 +37,7 @@ API or automatic sitemap submission service is required by this implementation.
   a search policy; session and server authorization protect private records.
 - `/api/` stays blocked. Admin responses also carry `X-Robots-Tag`.
 - Each public page supplies its own canonical. The locale root does not assign
-  the home canonical to every child. Sitemap entries include all 12 locales and
+  the home canonical to every child. Sitemap entries include all 33 locales and
   an English `x-default` link. `lastModified` is omitted because the repository
   has no authoritative per-page content update timestamp.
 

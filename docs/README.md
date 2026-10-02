@@ -66,6 +66,11 @@ For caching, compression, self-hosted AI and cost measurements, use
 
 ## Delivery
 
+- [Demo seed plan](product/demo-seed-plan.md): full-platform sample data,
+  matching local/production manifests and scoped cleanup; planned only.
+- [Responsive and language follow-up](delivery/responsive-performance-locales.md):
+  accepted scope and verification progress.
+
 | Page                                                  | What's in it                                               |
 | ----------------------------------------------------- | ---------------------------------------------------------- |
 | [cleanup-progress.md](./delivery/cleanup-progress.md) | UI and pilot implementation evidence from 1 October        |
@@ -79,6 +84,14 @@ For caching, compression, self-hosted AI and cost measurements, use
 - [Search setup](operations/seo.md): Google/Bing verification, sitemap and indexing checks.
 
 ## Platform user guide
+
+The [team review pack](team-review/review.md) explains product scope, the stack,
+theme comparisons, translated examples and account gates. Its editable Word
+edition is [the team pack](../output/docx/luma-green-team-review.docx).
+Use the [62-case test manual](testing/team-end-to-end-manual.md) to run each role
+and record results. The [six-month plan](product/six-month-execution-plan.md)
+sets proposed milestones. The [India-first legal checklist](operations/india-entity-trademark-and-legal.md)
+assumes the entity is not registered and no trademark filing is complete.
 
 Use the [A-to-Z user guide](user-guide/guide.md) for role workflows and admin
 access, or open the [Word guide](../output/docx/luma-green-user-guide.docx).

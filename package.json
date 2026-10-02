@@ -28,6 +28,7 @@
     "convex:dev": "convex dev",
     "convex:deploy": "convex deploy",
     "auth:schema": "jiti scripts/generate-auth-schema.mts",
+    "i18n:generate": "jiti scripts/generate-error-copy.mts && pnpm --filter @luma/mobile messages:generate",
     "screenshots": "jiti scripts/screenshots.mts",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm apps:check",
     "prepare": "husky",

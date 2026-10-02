@@ -94,21 +94,57 @@ export function messageContract(message: string): MessageContract {
 // shared. Do not exempt message keys: a later paragraph at that key must fail.
 const sharedLiterals = [
   "Luma.Green",
+  "Bengaluru",
+  "Karnataka",
+  "KSPCB",
+  "Kabadiwala",
+  "Saathi",
   "pmsuryaghar.gov.in",
   "WhatsApp",
   "GSTIN",
   "UPI",
   "kg",
+  "km",
+  "min",
   "kW",
   "m²",
   "MB",
   "KB",
 ];
 
+// Exact words can be valid in both languages. Keep this list narrow and
+// locale-specific; it must never exempt a message key or a longer paragraph.
+const identicalTranslations: Readonly<
+  Partial<Record<string, readonly string[]>>
+> = {
+  es: ["No"],
+  it: ["No"],
+  pt: ["Material", "Metal", "Total", "Kabadiwalas", "Saathis"],
+  nl: [
+    "Contact",
+    "Plastic",
+    "Recycler",
+    "Recyclers",
+    "Code",
+    "Impact",
+    "Later",
+    "Camera",
+    "Privacy",
+    "per kg",
+  ],
+};
+
 export function hasUntranslatedCopy(
   source: string,
   translated: string,
+  locale?: string,
 ): boolean {
+  if (
+    source === translated &&
+    locale !== undefined &&
+    identicalTranslations[locale]?.includes(source)
+  )
+    return false;
   const sourceLiterals = messageContract(source).literals;
   const translatedLiterals = messageContract(translated).literals;
   if (source === translated) {

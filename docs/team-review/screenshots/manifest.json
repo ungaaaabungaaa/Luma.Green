@@ -1,0 +1,233 @@
+{
+  "sourceHashes": {
+    "scripts/capture-team-review.mts": "c91bce7df7448879936b482b5d72e38f5bee342a119ee24c51b93544f1d865e7",
+    "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
+    "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
+    "src/app/[locale]/(site)/how-it-works/page.tsx": "d01072e5135ea4ed72cf27f79f49aad5201da02dc0924ea67d92332048f9df97",
+    "src/app/[locale]/(site)/join/page.tsx": "46825d9f6f8da21dcc2f1070a57ddec3f7b93f43339c588ba5c908ea23a5c240",
+    "src/components/join/role-cards.tsx": "bced2400ec22a10295c04221bdcee77264d9ef7eeded51064d1ef177484ac2c5",
+    "src/components/site/home/hero.tsx": "3e8d4ea6b18b8d2a5f1a1bb14a6cd7fab8d76873cb743cb80ce3270fb860951a",
+    "src/components/site/home/price-teaser.tsx": "78044aae15866941f9dcd024e88c85367ff2b2036ad5e51df6a78046669c69fb",
+    "src/components/site/page-header.tsx": "b3b003311603e60f29d278892c03fbd147cc6f53a57c9a46505a07f38e7f5ec7",
+    "src/components/site/page-banner.tsx": "4f853d7d9c68d156ad0b541ddb3e68898184dd3185654f9f38f62d58fcffdaff",
+    "src/components/site/site-header.tsx": "b6759891fafbb73fe5571b9bceecc9bdca96e2d2f64384e84bfac830fd743159",
+    "src/components/site/site-nav.tsx": "b09049d530115e32336e6f3ba7e8020361b2759e1381755067fc15107694a4fc",
+    "src/components/site/mobile-nav.tsx": "a461d45d56b8934fea9087e031eb9a2fc30bbd2bc51317a5aa0b579e004a7701",
+    "src/components/site/language-switcher.tsx": "605c2aa7c55d4dafe0031fd72d36991c3a2cf854abc1b64126f674c66ade7224",
+    "src/components/site/public-effects.module.css": "a1e2d678f59a1a0accc5c66fb36e5489ad88e52173b4eaa5ee62a1ecb988fc82",
+    "src/components/site/action-name.ts": "3e669342f3a69c8c7e2f71332d39f9c5d0a2eaf211994a456506e6ee91401ceb",
+    "src/components/brand/logo.tsx": "e25deb243618422e5a2f5991357fc9dd7f93addce899d12c7d6bac92249e6e9c",
+    "src/components/brand/logo.module.css": "4b2401a4e32f4554af2038cde2a6e4339b5e26f38a013969c04f5cbab6b61c34",
+    "messages/en.json": "c85b40af63d0c2d093d3937d6b64dca3c6c469c0ddfaf4abe9fe656979d3e7b2",
+    "messages/fr.json": "4feb0cceda83bae1276913f419c9c0519c7d484fbd9cf2bdccd39e2a7dfd6a9f",
+    "messages/kn.json": "25227c14e19f50bba43fa200a1e143cbd86ca2fd4f935558cb413712900b295b",
+    "messages/ar.json": "52f9feb1113461bc7d6a734ed12f6e256033bf5ba192585fe5871d6ddf0f65f4",
+    "messages/ja.json": "419a929aaaa95805ee1d0f77a1ad848280c5bcc1c9b6d3e2051e6dfc75139e9a"
+  },
+  "captures": [
+    {
+      "path": "docs/team-review/screenshots/home-light.png",
+      "sha256": "dcc7a19434f0359456d6ef2088b27bb64cba14a233b04776656bf269d7bb91af",
+      "route": "/",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:10.563Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/home-dark.png",
+      "sha256": "35e1695f5205079f179aa792db4a468daff34b5e6d8353ce3364821a2bea00b7",
+      "route": "/",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:11.621Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/how-light.png",
+      "sha256": "331a66609ec9644bd24aae457838939effb2ef7581d5ef61e0acc29d8830ae51",
+      "route": "/how-it-works",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:12.229Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/how-dark.png",
+      "sha256": "660f5383e9094001e5a4af478fe2af41819ffb5d351c75ab363aefcddbbf3365",
+      "route": "/how-it-works",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:12.773Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/join-light.png",
+      "sha256": "bfeee4bf4208a0e4efc9a358eb8229d6b65b30c39cd8eae1369148ce8cc43872",
+      "route": "/join",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:13.271Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/join-dark.png",
+      "sha256": "a6194df1dbdcb6c1eff3e140b21e30175f90e5faf03afa1c78c64b2d108b4aa2",
+      "route": "/join",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:13.697Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/menu-light.png",
+      "sha256": "4e0f27d45fb031673b4de69934c58c2f4827c6b578a7334f6b7408b0dea4f7c2",
+      "route": "/how-it-works",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:14.361Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/menu-dark.png",
+      "sha256": "330e678fa6e04348d2dca6bbe031031e00bc7fc03f24b9b84c2522a809a9de60",
+      "route": "/how-it-works",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:14.864Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/french-join.png",
+      "sha256": "5c4708bf7eb78e5010ea1a79df5ce60a6136abd73dc5de6b511c2c08bbfba7a0",
+      "route": "/fr/join",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:15.452Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/kannada-how.png",
+      "sha256": "df94cb5a42c2e15b670a97eb9a6d28f67d4ca2b8f4ef415071ca20f9ad58d95b",
+      "route": "/kn/how-it-works",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:15.876Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/arabic-menu.png",
+      "sha256": "a5519588cd4e040ee43885c478b09525fc4080f5cf6ba2694c1734b4d91c784e",
+      "route": "/ar/how-it-works",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:16.444Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    },
+    {
+      "path": "docs/team-review/screenshots/japanese-how.png",
+      "sha256": "19349f46529c716a0dac414e579dd45c2da5740f0b4d2c8e4dce161026d74ad3",
+      "route": "/ja/how-it-works",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sourceRevision": "9930381d82fa6b1184f8e2cb19251eb44c113b14",
+      "capturedAt": "2026-10-02T03:53:16.964Z",
+      "actualBrowserUI": true,
+      "provenance": "disconnected-local-production-build",
+      "authenticatedAccessTested": false,
+      "browserErrors": [],
+      "blockedRequests": []
+    }
+  ]
+}

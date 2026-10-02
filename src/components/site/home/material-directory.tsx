@@ -35,7 +35,7 @@ export async function MaterialDirectory() {
   return (
     <section
       aria-labelledby="materials-heading"
-      className="border-b py-16 lg:py-24"
+      className="border-b py-10 sm:py-12 lg:py-24"
     >
       <Container className="space-y-10">
         <div className="flex min-w-0 flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -47,7 +47,7 @@ export async function MaterialDirectory() {
           <Button
             asChild
             variant="outline"
-            className="h-auto min-h-11 max-w-full min-w-0 self-start py-3 text-start wrap-anywhere whitespace-normal lg:shrink-0"
+            className="h-auto min-h-11 max-w-full min-w-0 self-start py-3 text-start whitespace-nowrap lg:shrink-0"
           >
             <Link href="/sell">
               {sell("basket.next")}

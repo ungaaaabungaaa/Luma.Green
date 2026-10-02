@@ -1,0 +1,3368 @@
+{
+  "brand": {
+    "name": "Luma.Green",
+    "tagline": "Un avenir plus propre en mouvement"
+  },
+  "meta": {
+    "title": "Luma.Green — Un avenir plus propre en mouvement",
+    "description": "Luma.Green réunit la filière indienne du recyclage sur une plateforme : ménages, kabadiwalas, centres de tri, recycleurs et fabricants, avec des prix justes, des collectes pesées et un relevé de chaque transfert."
+  },
+  "theme": {
+    "label": "Apparence",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "search": "Rechercher",
+    "language": "Langue",
+    "close": "Fermer"
+  },
+  "nav": {
+    "label": "Principal",
+    "home": "Accueil",
+    "howItWorks": "Fonctionnement",
+    "contact": "Nous contacter",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "skipToContent": "Aller au contenu",
+    "prices": "Prix",
+    "help": "Aide",
+    "join": "Nous rejoindre",
+    "sellScrap": "Vendre mes matériaux"
+  },
+  "footer": {
+    "about": "La filière indienne du recyclage sur une plateforme, du foyer à l’usine. Chaque transfert est pesé, chiffré et enregistré.",
+    "navLabel": "Pied de page",
+    "useHeading": "Utiliser Luma.Green",
+    "learnHeading": "En savoir plus",
+    "standards": "Normes du secteur",
+    "solar": "Solaire en toiture",
+    "copyright": "© Luma.Green"
+  },
+  "loop": {
+    "sell": {
+      "title": "Vendre",
+      "summary": "Les ménages vendent leurs matériaux recyclables à un prix juste, avec pesée et paiement à domicile."
+    },
+    "trade": {
+      "title": "Échanger",
+      "summary": "Le service de séquestre prévu retiendrait le paiement jusqu’à la livraison. La démonstration actuelle enregistre uniquement des paiements simulés."
+    },
+    "record": {
+      "title": "Consigner",
+      "summary": "Chaque transfert est enregistré pour la conformité, le suivi de l’impact et la preuve du recyclage."
+    }
+  },
+  "principles": {
+    "heading": "Conçu pour répondre aux audits",
+    "intro": "Un acheteur, une autorité ou un auditeur peut demander l’origine d’un matériau. Le registre est conçu pour fournir cette réponse.",
+    "auditable": {
+      "title": "Chaque modification est consignée",
+      "body": "Chaque étape — pesée d’une collecte, paiement d’une transaction, livraison d’un chargement — ajoute une entrée à un journal d’audit qui n’est jamais modifié directement."
+    },
+    "exact": {
+      "title": "Des chiffres qui restent exacts",
+      "body": "Les montants sont conservés en paise entiers et les masses en grammes entiers. Aucune erreur d’arrondi ne peut s’accumuler entre la pesée et le règlement."
+    },
+    "frozen": {
+      "title": "L’historique reste inchangé",
+      "body": "Chaque reçu conserve le prix et le poids du jour. Une modification ultérieure du prix ne réécrit jamais un reçu existant."
+    }
+  },
+  "home": {
+    "metaDescription": "Luma.Green réunit la filière indienne du recyclage sur une plateforme : ménages, kabadiwalas, centres de tri, recycleurs et fabricants, avec des prix justes, des entreprises vérifiées et un reçu à chaque étape.",
+    "hero": {
+      "eyebrow": "Lancement à Bengaluru",
+      "title": "La filière indienne du recyclage, sur une plateforme",
+      "lead": "Vendez vos matériaux recyclables à domicile à un prix juste. Échangez-les avec des entreprises vérifiées tout au long de la filière. Chaque transfert est pesé, chiffré et enregistré.",
+      "sell": "Vendre vos matériaux",
+      "join": "Inscrire une entreprise",
+      "prices": "Voir les prix du jour"
+    },
+    "teaser": {
+      "title": "Prix du jour",
+      "placeAndDate": "Bengaluru · {date}",
+      "place": "Bengaluru",
+      "seeAll": "Voir tous les prix",
+      "demoNote": "Prix d’exemple pour le prototype.",
+      "unavailable": "Les prix du jour s’afficheront bientôt ici.",
+      "error": "Impossible de charger les prix pour le moment."
+    },
+    "chain": {
+      "heading": "Le parcours des matériaux",
+      "intro": "Les matériaux changent de mains quatre fois avant de devenir de nouveaux produits. Le tri s’affine à chaque étape et Luma.Green enregistre chaque transfert.",
+      "steps": {
+        "household": {
+          "name": "Ménages",
+          "body": "Vendent vieux papiers, plastiques, métaux et déchets électroniques."
+        },
+        "kabadiwala": {
+          "name": "Collecteurs kabadiwalas",
+          "body": "Les achètent, les pèsent et les trient par matériau."
+        },
+        "yard": {
+          "name": "Centres de tri",
+          "body": "Les classent et les compactent en balles."
+        },
+        "recycler": {
+          "name": "Recycleurs",
+          "body": "Transforment les balles en paillettes, granulés et lingots."
+        },
+        "manufacturer": {
+          "name": "Fabricants",
+          "body": "Fabriquent de nouveaux produits à partir de matières recyclées."
+        }
+      },
+      "money": "Les ménages reçoivent un paiement en espèces ou par UPI à domicile. Le séquestre entre entreprises est prévu.",
+      "saathi": "Les Saathis participent à toute la filière : collectes, tri et postes de travail."
+    },
+    "roles": {
+      "heading": "Une place pour chaque acteur de la filière",
+      "intro": "Six catégories de personnes font circuler les matériaux. Voici ce que Luma.Green apporte à chacune.",
+      "household": {
+        "title": "Ménages",
+        "one": "Découvrez la valeur de vos matériaux avant de réserver.",
+        "two": "Collecte à domicile ou dépôt en boutique.",
+        "three": "Paiement en espèces ou par UPI, avec un reçu.",
+        "cta": "Vendre vos matériaux"
+      },
+      "kabadiwala": {
+        "title": "Collecteurs kabadiwalas",
+        "one": "Recevez des demandes de collecte à proximité.",
+        "two": "Fixez vos prix sans descendre sous le prix plancher.",
+        "three": "Vendez vos stocks triés aux centres de tri.",
+        "cta": "S’inscrire comme kabadiwala"
+      },
+      "yard": {
+        "title": "Centres de tri",
+        "one": "Consultez les stocks des boutiques voisines.",
+        "two": "Achetez en gros et vendez des balles aux recycleurs.",
+        "three": "Prévu : paiement sous séquestre jusqu’à la livraison.",
+        "cta": "Inscrire un centre de tri"
+      },
+      "recycler": {
+        "title": "Recycleurs",
+        "one": "Des balles classées provenant de centres vérifiés.",
+        "two": "La traçabilité accompagne chaque lot.",
+        "three": "Vendez votre production aux usines.",
+        "cta": "S’inscrire comme recycleur"
+      },
+      "manufacturer": {
+        "title": "Fabricants",
+        "one": "Consultez la production des recycleurs.",
+        "two": "Prévu : commande de matières recyclées avec séquestre.",
+        "three": "Des relevés pour vos rapports REP.",
+        "cta": "S’inscrire comme fabricant"
+      },
+      "saathi": {
+        "title": "Travailleurs Saathi",
+        "one": "Des missions rémunérées près de chez vous : collectes, tri et postes.",
+        "two": "Choisissez votre zone et vos horaires.",
+        "three": "Un profil vérifié pour rassurer les ménages et les entreprises.",
+        "cta": "S’inscrire comme Saathi"
+      }
+    },
+    "trust": {
+      "heading": "Fondé sur la confiance",
+      "intro": "Le commerce des matériaux reposait sur les espèces et les estimations. Ces règles changent la pratique.",
+      "verified": {
+        "title": "Entreprises vérifiées",
+        "body": "Une personne vérifie chaque entreprise et chaque Saathi avant qu’ils puissent effectuer des échanges."
+      },
+      "floor": {
+        "title": "Des prix justes, avec un plancher",
+        "body": "Les boutiques fixent leurs prix, sans jamais descendre sous le minimum publié pour chaque matériau."
+      },
+      "escrow": {
+        "title": "Prévu : séquestre pour les échanges professionnels",
+        "body": "La démonstration présente les étapes du paiement sans détenir ni transférer d’argent réel."
+      },
+      "receipts": {
+        "title": "Reçus numériques",
+        "body": "Chaque collecte et chaque transaction produit un reçu : matériau, quantité et prix."
+      },
+      "languages": {
+        "title": "{count, number} langues",
+        "body": "Kannada, hindi, tamoul, anglais et d’autres langues, avec de grands boutons et peu de texte."
+      }
+    },
+    "whyNow": {
+      "heading": "Pourquoi maintenant",
+      "intro": "Trois changements permettent aujourd’hui de documenter la filière indienne du recyclage.",
+      "epr": {
+        "title": "Règles de REP",
+        "body": "Les règles de responsabilité élargie des producteurs pour les emballages plastiques, les déchets électroniques et les batteries demandent de prouver la collecte et le recyclage réels. Cette preuve commence au premier transfert."
+      },
+      "informal": {
+        "title": "Le secteur informel",
+        "body": "Les kabadiwalas et les travailleurs informels assurent déjà une grande part du recyclage en Inde, avec peu d’accès à des prix justes, des registres ou une reconnaissance. Luma.Green travaille avec eux."
+      },
+      "upi": {
+        "title": "UPI au quotidien",
+        "body": "Payer par téléphone est devenu courant, même dans les plus petites boutiques. Chaque paiement peut laisser une trace."
+      }
+    },
+    "closing": {
+      "title": "Commencez avec ce que vous avez",
+      "body": "Un sac de vieux journaux ou un camion de balles : tout a sa place sur Luma.Green.",
+      "sell": "Vendre vos matériaux",
+      "join": "Inscrire une entreprise"
+    },
+    "expansion": {
+      "materialsTitle": "Commencez avec vos matériaux disponibles",
+      "pickupTitle": "Une collecte, étape par étape",
+      "shopTitle": "Votre boutique de récupération, connectée",
+      "recordsTitle": "Un relevé qui suit le matériau",
+      "paymentTitle": "Des poids clairs. Des paiements clairs.",
+      "questionsTitle": "Avant de commencer"
+    },
+    "marquee": {
+      "label": "Matériaux du catalogue",
+      "pause": "Mettre le défilement en pause",
+      "resume": "Reprendre le défilement"
+    },
+    "testimonials": {
+      "title": "Témoignages de démonstration",
+      "note": "Citations illustratives, sans avis de vrais clients.",
+      "household": "Je peux vérifier le tarif avant de choisir une collecte.",
+      "kabadiwala": "Le poids, le tarif et le reçu restent ensemble. Chaque collecte est plus facile à vérifier.",
+      "manufacturer": "Les codes des matériaux facilitent la demande de la qualité dont j’ai besoin."
+    }
+  },
+  "prices": {
+    "metaTitle": "Prix des matériaux recyclables à Bengaluru aujourd’hui",
+    "metaDescription": "Prix du jour à Bengaluru par kg : papier, plastique, métal, verre et déchets électroniques, avec l’évolution hebdomadaire, un graphique sur 30 jours et le prix minimum payé par une boutique.",
+    "eyebrow": "Bengaluru",
+    "title": "Prix des matériaux du jour",
+    "lead": "Les prix de vente du jour par kilo. Les boutiques fixent leurs prix sans descendre sous le plancher. Sélectionnez un matériau pour voir les 30 derniers jours.",
+    "demoNote": "Prix d’exemple du prototype, sans cotation de marché en direct.",
+    "date": "Prix du {date}",
+    "floorHelp": "Prix plancher : minimum qu’une boutique vérifiée peut vous payer par kilo.",
+    "perKg": "{price}/kg",
+    "floor": "Plancher : {price}",
+    "noPrice": "Pas encore de prix",
+    "columns": {
+      "material": "Matériau",
+      "today": "Aujourd’hui",
+      "week": "Cette semaine",
+      "month": "30 jours",
+      "floor": "Prix plancher"
+    },
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastique",
+      "metal": "Métal",
+      "glass": "Verre",
+      "ewaste": "Déchets électroniques",
+      "other": "Autres"
+    },
+    "factoryGate": {
+      "title": "Sortie d’usine",
+      "body": "Matières recyclées vendues par les recycleurs aux fabricants."
+    },
+    "change": {
+      "up": "Hausse de {pct} cette semaine",
+      "down": "Baisse de {pct} cette semaine",
+      "flat": "Aucune variation cette semaine",
+      "unknown": "Historique encore insuffisant"
+    },
+    "detail": {
+      "description": "{code} · {family} · Bengaluru",
+      "today": "Aujourd’hui",
+      "low": "Plus bas sur 30 jours",
+      "high": "Plus haut sur 30 jours",
+      "floor": "Prix plancher",
+      "noFloor": "Aucun",
+      "close": "Fermer",
+      "noHistory": "Aucun historique de prix pour le moment."
+    },
+    "chart": {
+      "label": "{material} : prix par kilo, jour après jour. Utilisez les flèches pour parcourir les jours.",
+      "point": "{date} : {price}",
+      "floor": "Plancher : {price}",
+      "table": "Afficher les chiffres",
+      "tableCaption": "{material}, prix par kilo et par jour",
+      "date": "Jour",
+      "price": "Prix par kg"
+    },
+    "unavailable": {
+      "title": "Les prix sont momentanément indisponibles",
+      "body": "Le tableau des prix est en cours de connexion. Revenez bientôt."
+    },
+    "empty": {
+      "title": "Aucun prix pour le moment",
+      "body": "Les prix du jour s’afficheront ici dès leur publication."
+    },
+    "error": {
+      "title": "Impossible de charger les prix",
+      "body": "Vérifiez votre connexion et réessayez.",
+      "retry": "Réessayer"
+    },
+    "sellCta": {
+      "title": "Des matériaux à vendre chez vous ?",
+      "body": "Réservez une collecte et recevez votre paiement à domicile.",
+      "action": "Vendre vos matériaux"
+    }
+  },
+  "standards": {
+    "metaTitle": "La norme Luma.Green",
+    "metaDescription": "Prévu : codes ouverts des matériaux et règles simples pour des échanges équitables en Inde : classement, pesée, reçus, vérification et séquestre. Adoption libre pour tous.",
+    "eyebrow": "Norme ouverte",
+    "title": "La norme Luma.Green",
+    "lead": "Des règles ouvertes et simples pour des échanges équitables : un code par matériau, un classement clair, une pesée honnête et un relevé à chaque transfert. Tout acteur de la filière peut les adopter.",
+    "onThisPage": "Sur cette page",
+    "codes": {
+      "title": "Un code pour chaque matériau",
+      "nav": "Codes des matériaux",
+      "body": "Un même matériau porte de nombreux noms locaux. Un code ouvert lui donne une référence commune : un kilo de journaux désigne la même chose en boutique, au centre de tri et à l’usine.",
+      "caption": "Codes des matériaux Luma.Green",
+      "count": "{count, plural, one {# matériau} other {# matériaux}}",
+      "download": "Télécharger les codes (CSV)",
+      "columns": {
+        "code": "Référence",
+        "name": "Matériau",
+        "family": "Famille",
+        "stage": "Étape"
+      },
+      "stages": {
+        "scrap": "À recycler",
+        "recycled": "Recyclé"
+      },
+      "unavailable": "La liste des codes est momentanément indisponible. Revenez bientôt.",
+      "empty": "Aucun code de matériau pour le moment.",
+      "error": "Impossible de charger la liste des codes.",
+      "retry": "Réessayer"
+    },
+    "grading": {
+      "title": "Classement : sec, trié, propre",
+      "nav": "Classement",
+      "body": "Un prix juste exige un classement clair. Trois contrôles précèdent toute pesée.",
+      "dry": {
+        "title": "Sec",
+        "body": "L’eau n’est pas un matériau recyclable. Le papier et le carton humides sont séchés avant la pesée."
+      },
+      "sorted": {
+        "title": "Trié",
+        "body": "Un seul matériau par sac ou balle, sous un même code. Les chargements mélangés utilisent un code MIXED."
+      },
+      "clean": {
+        "title": "Sans impuretés",
+        "body": "Ni nourriture, ni huile, ni terre, ni pierres. Tout élément étranger au matériau est retiré avant la pesée."
+      }
+    },
+    "weighing": {
+      "title": "Pesée équitable",
+      "nav": "Pesée",
+      "body": "La plupart des litiges concernent le poids. Ces règles assurent une pesée honnête.",
+      "stamped": {
+        "title": "Balances contrôlées",
+        "body": "Pesez uniquement sur une balance vérifiée et estampillée par le service de métrologie légale."
+      },
+      "shown": {
+        "title": "Le vendeur voit le poids",
+        "body": "L’affichage est tourné vers le vendeur et le poids est annoncé avant l’accord sur le prix."
+      },
+      "receipt": {
+        "title": "Un reçu numérique",
+        "body": "Le reçu indique le poids au gramme près, sans arrondi en faveur de l’une des parties."
+      }
+    },
+    "custody": {
+      "title": "Reçus et traçabilité",
+      "nav": "Reçus",
+      "body": "Chaque transfert produit un reçu. Les reçus sont reliés entre eux pour retracer une balle chez le recycleur jusqu’aux boutiques d’origine.",
+      "receiptTitle": "Ce que chaque reçu indique",
+      "fields": {
+        "number": "Numéro de reçu",
+        "time": "Date et heure",
+        "seller": "Vendeur",
+        "buyer": "Acheteur",
+        "code": "Code du matériau",
+        "weight": "Poids au gramme près",
+        "rate": "Tarif par kg",
+        "total": "Montant total et moyen de paiement"
+      }
+    },
+    "verification": {
+      "title": "Vérification",
+      "nav": "Vérification",
+      "body": "Une personne vérifie chaque entreprise et chaque Saathi avant qu’ils puissent effectuer des échanges.",
+      "business": "Entreprises : numéro GST si disponible, photos de la boutique ou du site, et appel téléphonique.",
+      "consent": "Centres de tri, recycleurs et usines : autorisation valide du conseil de contrôle de la pollution de l’État.",
+      "saathi": "Saathis : pièce d’identité avec photo et selfie correspondant."
+    },
+    "escrow": {
+      "title": "Prévu : séquestre entre entreprises",
+      "nav": "Séquestre",
+      "body": "Le service de séquestre prévu retiendrait le paiement jusqu’à la livraison. La démonstration actuelle enregistre uniquement des paiements simulés.",
+      "steps": {
+        "accepted": "Le vendeur accepte la commande",
+        "paid": "L’acheteur verse le paiement sous séquestre",
+        "dispatched": "Le vendeur expédie les marchandises",
+        "released": "L’acheteur confirme et les fonds sont débloqués"
+      }
+    },
+    "adopt": {
+      "title": "Adopter la norme",
+      "body": "Les codes et règles sont ouverts et gratuits. Utilisez-les dans votre boutique, centre de tri ou usine, sur Luma.Green ou ailleurs, et faites-nous part des améliorations possibles.",
+      "cta": "Écrivez-nous"
+    }
+  },
+  "solar": {
+    "metaTitle": "Calculateur solaire en toiture pour le Karnataka",
+    "metaDescription": "Estimez l’installation solaire nécessaire à votre logement ou entreprise au Karnataka, son coût après la subvention PM Surya Ghar et son délai de rentabilité.",
+    "eyebrow": "Karnataka",
+    "title": "Le solaire en toiture pour votre logement ou entreprise",
+    "lead": "Estimez la puissance adaptée à votre toit, le coût après subvention et le délai de rentabilité. Tous les chiffres présentés sont des estimations.",
+    "form": {
+      "heading": "Vos informations",
+      "kind": "À qui est destinée l’installation ?",
+      "kinds": {
+        "home": "Mon logement",
+        "business": "Mon entreprise"
+      },
+      "mode": "Votre consommation électrique",
+      "modes": {
+        "bill": "Facture mensuelle",
+        "units": "Unités par mois"
+      },
+      "bill": "Facture d’électricité mensuelle",
+      "billHint": "En roupies, par exemple 2500",
+      "units": "Unités consommées par mois",
+      "unitsHint": "Indiquées sur votre facture, par exemple 300",
+      "unitsSuffix": "unités",
+      "roof": "Surface de toit sans ombre",
+      "roofHint": "Laissez vide si vous ne savez pas.",
+      "roofUnit": "Unité de surface du toit",
+      "areaUnits": {
+        "sqft": "pi²",
+        "m2": "m²"
+      },
+      "optional": "facultatif",
+      "errors": {
+        "bill": "Saisissez une facture entre {min} et {max}.",
+        "units": "Saisissez entre {min} et {max} unités.",
+        "roof": "Saisissez une surface supérieure à zéro ou laissez vide."
+      }
+    },
+    "result": {
+      "heading": "Votre estimation",
+      "prompt": "Saisissez votre facture ou vos unités pour obtenir une estimation.",
+      "size": "Installation proposée",
+      "kw": "{kw} kW",
+      "sizeHint": "Produit environ {units} unités par mois et nécessite environ {area} de toiture.",
+      "areaIn": "{value} {unit, select, sqft {pi²} other {m²}}",
+      "fromBill": "Votre facture correspond à environ {units} unités par mois.",
+      "limitedByRoof": "Dimensionnée pour votre toit. Une surface supplémentaire pourrait couvrir une plus grande part de votre facture.",
+      "roofTooSmallTitle": "Votre toit semble trop petit",
+      "roofTooSmallBody": "Même l’installation minimale de 1 kW nécessite environ {area} de toit sans ombre. Contactez-nous : une autre solution peut exister.",
+      "cost": "Coût avant subvention",
+      "subsidy": "Subvention PM Surya Ghar",
+      "noSubsidy": "Non applicable aux entreprises",
+      "netCost": "Votre coût",
+      "savings": "Économie estimée",
+      "perMonth": "{amount} par mois",
+      "payback": "Rentabilisé en",
+      "yearsRange": "{low}–{high} ans",
+      "years": "{count, plural, one {# an} other {# ans}}",
+      "range": "{low} – {high}",
+      "minus": "− {amount}",
+      "noPayback": "Ces économies ne suffisent pas",
+      "demoNote": "Estimations fondées uniquement sur les hypothèses ci-dessous. Une visite du site permettra d’établir les chiffres réels."
+    },
+    "chart": {
+      "title": "Économies sur {years, number} ans",
+      "legendPaying": "En cours d’amortissement",
+      "legendPaid": "Amorti",
+      "legendCost": "Votre coût",
+      "label": "Économies par année. Utilisez les flèches pour parcourir les années.",
+      "point": "Année {year, number} : {amount} économisés",
+      "yearLabel": "Année {year, number}",
+      "table": "Afficher les chiffres",
+      "tableCaption": "Économies par année",
+      "year": "Année",
+      "saved": "Économies cumulées"
+    },
+    "assumptions": {
+      "title": "Méthode d’estimation",
+      "production": "Au Karnataka, 1 kW de panneaux produit environ {units} unités par mois.",
+      "roof": "Chaque kW nécessite environ {m2} m² ({sqft} pi²) de toiture sans ombre.",
+      "cost": "L’installation coûte environ {low}–{high} par kW.",
+      "tariff": "La facture est convertie en unités à environ {home} par unité pour les ménages et {business} pour les entreprises.",
+      "subsidy": "Les ménages reçoivent {first} par kW pour les 2 premiers kW et {third} pour le troisième, dans la limite de {cap}. Les entreprises ne reçoivent aucune subvention.",
+      "savings": "Les économies portent uniquement sur l’électricité autoconsommée, aux tarifs actuels."
+    },
+    "subsidy": {
+      "title": "La subvention PM Surya Ghar",
+      "body": "PM Surya Ghar : Muft Bijli Yojana est le programme du gouvernement indien pour le solaire résidentiel en toiture. La subvention est versée sur votre compte bancaire après l’installation et le contrôle du système.",
+      "caption": "Subvention selon la puissance, pour les ménages",
+      "size": "Puissance de l’installation",
+      "amount": "Subvention",
+      "atLeast": "{kw} kW ou plus",
+      "kw": "{kw} kW",
+      "source": "Règles et demandes :",
+      "link": "pmsuryaghar.gov.in",
+      "newTab": "(s’ouvre dans un nouvel onglet)",
+      "business": "Les entreprises ne bénéficient pas de cette subvention, mais réalisent souvent davantage d’économies car leur tarif par unité est plus élevé."
+    },
+    "next": {
+      "title": "Les prochaines étapes",
+      "one": {
+        "title": "Nous vous appelons",
+        "body": "Nous vous demandons des informations sur votre toit, votre facture et la date souhaitée de début."
+      },
+      "two": {
+        "title": "Une visite du site",
+        "body": "Un installateur vérifié examine votre toit et vous remet un devis ferme."
+      },
+      "three": {
+        "title": "Subvention et comptage net",
+        "body": "Nous vous aidons à demander la subvention et le comptage net auprès de votre fournisseur d’électricité."
+      }
+    },
+    "contact": {
+      "title": "Écrivez-nous",
+      "lead": "Indiquez comment vous joindre. Nous vous rappellerons.",
+      "name": "Votre nom",
+      "phone": "Numéro de portable",
+      "phoneHint": "Nous vous appellerons à ce numéro.",
+      "message": "Autre chose à nous signaler ?",
+      "messageHint": "Votre estimation est déjà renseignée. Ajoutez les informations utiles.",
+      "prefill": "{kind, select, home {Pour mon logement} other {Pour mon entreprise}} : installation de {kw} kW, selon l’estimation de cette page.",
+      "send": "Envoyer",
+      "sending": "Envoi en cours…",
+      "sentTitle": "Merci, {name}",
+      "sentBody": "Nous avons reçu votre message et vous appellerons bientôt.",
+      "another": "Envoyer un autre message",
+      "privacy": "Nous utilisons votre numéro uniquement pour vous appeler au sujet du solaire.",
+      "unavailable": "L’envoi de messages depuis cette page n’est pas encore disponible. Écrivez à <link>{email}</link>.",
+      "errors": {
+        "name": "Saisissez votre nom.",
+        "phone": "Saisissez un numéro de portable indien à 10 chiffres.",
+        "message": "Rédigez quelques mots, dans la limite de 1 000 caractères.",
+        "generic": "Échec de l’envoi. Réessayez."
+      }
+    }
+  },
+  "howItWorks": {
+    "metaTitle": "Fonctionnement",
+    "metaDescription": "Prévu : le parcours des matériaux sur Luma.Green, vendus à domicile à un prix juste, échangés dans la filière avec séquestre et enregistrés à chaque transfert.",
+    "title": "Comment fonctionne Luma.Green",
+    "lead": "Les matériaux changent de mains quatre fois avant de devenir de nouveaux produits. Voici chaque étape et ce que Luma.Green enregistre.",
+    "stepLabel": "Étape {number}",
+    "sell": {
+      "body": "Un ménage sélectionne ses matériaux, consulte les offres des boutiques voisines et réserve une collecte ou un dépôt. Le kabadiwala pèse chaque matériau et paie en espèces ou par UPI. Les deux parties reçoivent un reçu.",
+      "point1": "Chaque boutique fixe ses prix, sans descendre sous le plancher publié",
+      "point2": "Poids enregistrés en grammes à partir de la balance de la boutique",
+      "point3": "Un lien de suivi, sans compte obligatoire"
+    },
+    "trade": {
+      "body": "Démonstration : les kabadiwalas vendent leurs stocks triés aux centres de tri, qui vendent des balles aux recycleurs. Ceux-ci vendent paillettes, granulés et lingots aux usines. Le paiement attend sous séquestre jusqu’à la livraison. La démonstration présente les étapes sans détenir ni transférer d’argent réel.",
+      "point1": "Seules les entreprises vérifiées peuvent effectuer des échanges",
+      "point2": "Les stocks changent lors de l’expédition et de la réception du chargement",
+      "point3": "Un reçu numéroté pour chaque transaction payée"
+    },
+    "record": {
+      "body": "Chaque transfert est consigné : qui, quoi, combien, quand et où. Ces relevés alimentent les prix, les stocks, la conformité et les chiffres d’impact. Ils fournissent les preuves demandées par la REP et les normes de recyclage.",
+      "point1": "Un relevé continu du domicile à l’usine",
+      "point2": "Totaux REP par exercice financier pour les recycleurs et les usines",
+      "point3": "Des justificatifs pour les crédits, sans double comptage"
+    }
+  },
+  "participants": {
+    "metaTitle": "À qui s’adresse la plateforme",
+    "metaDescription": "Luma.Green est conçu pour les ménages, les kabadiwalas, les centres de tri, les recycleurs, les fabricants et les Saathis : tous ceux qui acheminent les matériaux du domicile à l’usine.",
+    "title": "À qui s’adresse Luma.Green",
+    "lead": "Tous ceux qui acheminent les matériaux du domicile à l’usine et réalisent les travaux intermédiaires.",
+    "kabadiwala": {
+      "name": "Collecteurs kabadiwalas",
+      "body": "Recevez les demandes de collecte des ménages voisins, pesez et payez équitablement, puis vendez vos stocks triés aux centres."
+    },
+    "yard": {
+      "name": "Centres de tri",
+      "body": "Prévu : achetez aux kabadiwalas, triez et compactez, puis vendez des lots classés aux recycleurs avec paiement sous séquestre."
+    },
+    "recycler": {
+      "name": "Recycleurs",
+      "body": "Achetez des balles classées aux centres vérifiés et vendez paillettes, granulés et lingots aux usines."
+    },
+    "manufacturer": {
+      "name": "Fabricants",
+      "body": "Commandez des matières recyclées auprès de recycleurs vérifiés, avec les justificatifs nécessaires aux rapports REP."
+    },
+    "saathi": {
+      "name": "Travailleurs Saathi",
+      "body": "Acceptez des collectes, des travaux de tri et des postes rémunérés près de chez vous, et suivez vos gains."
+    },
+    "householdHeading": "Et chaque ménage",
+    "householdBody": "Tout le monde peut vendre des matériaux à domicile sans compte : sélectionnez vos matériaux, comparez les offres et recevez un paiement en espèces ou par UPI avec un reçu."
+  },
+  "contact": {
+    "metaTitle": "Nous contacter",
+    "metaDescription": "Contactez l’équipe Luma.Green pour rejoindre le pilote à Bengaluru.",
+    "title": "Écrivez-nous",
+    "lead": "Nous commençons à Bengaluru avec un petit groupe de kabadiwalas, centres de tri, recycleurs et usines. Présentez votre activité, les matériaux échangés et votre volume mensuel approximatif.",
+    "emailHeading": "Accès anticipé et questions générales",
+    "securityHeading": "Signalements de sécurité",
+    "securityBody": "Vous avez trouvé une faille ? Signalez-la en privé plutôt que publiquement."
+  },
+  "help": {
+    "metaTitle": "Centre d’aide",
+    "metaDescription": "Guides simples, réponses et formations pour les ménages, kabadiwalas, centres de tri, recycleurs, fabricants et Saathis sur Luma.Green.",
+    "eyebrow": "Centre d’aide",
+    "title": "Comment pouvons-nous vous aider ?",
+    "lead": "Des guides courts, des réponses claires et des formations rapides pour tous les utilisateurs de Luma.Green.",
+    "home": "Aide",
+    "breadcrumb": "Vous êtes ici",
+    "hours": "Du lundi au samedi, de 9 h à 19 h",
+    "replyTime": "Nous répondons sous un jour ouvré.",
+    "search": {
+      "label": "Rechercher dans l’aide",
+      "placeholder": "Exemple : code SMS ou séquestre",
+      "clear": "Effacer la recherche",
+      "summary": "{count, plural, =0 {Aucune réponse} one {# réponse} other {# réponses}} pour « {query} »",
+      "topicSummary": "{count, plural, =0 {Aucune réponse} one {# réponse} other {# réponses}} sur {topic}",
+      "emptyTitle": "Aucun résultat",
+      "emptyBody": "Essayez un mot court, choisissez un sujet ou contactez-nous directement.",
+      "ask": "Posez-nous une question",
+      "guide": "Mode d’emploi",
+      "question": "Votre question",
+      "forRoles": "Pour {roles}",
+      "showMore": "Afficher les {count} réponses"
+    },
+    "topicsHeading": "Parcourir par sujet",
+    "topics": {
+      "start": "Premiers pas",
+      "signIn": "Connexion",
+      "pickups": "Collectes",
+      "prices": "Prix",
+      "weighing": "Pesée et reçus",
+      "payments": "Paiements",
+      "trading": "Achats et ventes",
+      "documents": "Documents et contrôles",
+      "safety": "Sécurité",
+      "carbon": "Carbone et REP",
+      "disputes": "Problèmes et litiges",
+      "privacy": "Confidentialité"
+    },
+    "rolesHeading": "Une aide adaptée à votre rôle",
+    "rolesLead": "Choisissez votre rôle pour accéder aux guides, questions et formations.",
+    "guideCount": "{count, plural, one {# mode d’emploi} other {# modes d’emploi}}",
+    "roles": {
+      "household": {
+        "name": "Ménages",
+        "who": "Vendre des matériaux à domicile",
+        "title": "Aide aux ménages",
+        "lead": "Réservez une collecte, obtenez une pesée juste et recevez votre paiement à domicile. Aucun compte requis."
+      },
+      "kabadiwala": {
+        "name": "Collecteurs kabadiwalas",
+        "who": "Gérer une boutique de récupération",
+        "title": "Aide aux kabadiwalas",
+        "lead": "Acceptez des collectes, pesez et payez en une minute, fixez vos prix et vendez aux centres de tri."
+      },
+      "yard": {
+        "name": "Centres de tri",
+        "who": "Acheter aux kabadiwalas et affiner le tri",
+        "title": "Aide aux centres de tri",
+        "lead": "Démonstration : trouvez des stocks à proximité, vendez des balles triées aux recycleurs et sécurisez les échanges par séquestre."
+      },
+      "recycler": {
+        "name": "Recycleurs",
+        "who": "Transformer les déchets en matières premières",
+        "title": "Aide aux recycleurs",
+        "lead": "Achetez des matériaux classés aux centres de tri, vendez votre production aux usines et conservez des registres REP fiables."
+      },
+      "manufacturer": {
+        "name": "Fabricants",
+        "who": "Fabriquer à partir de matières recyclées",
+        "title": "Aide aux fabricants",
+        "lead": "Commandez des matières recyclées, contrôlez les livraisons et conservez les justificatifs demandés par la REP."
+      },
+      "saathi": {
+        "name": "Travailleurs Saathi",
+        "who": "Effectuer des collectes et de courtes missions",
+        "title": "Aide aux Saathis",
+        "lead": "Inscrivez-vous avec une pièce d’identité, trouvez des missions à proximité, travaillez en sécurité et recevez votre paiement."
+      }
+    },
+    "role": {
+      "onThisPage": "Sur cette page",
+      "guidesHeading": "Modes d’emploi",
+      "guidesLead": "Étape par étape, avec des images.",
+      "steps": "{count, plural, one {# étape} other {# étapes}}",
+      "faqsHeading": "Questions fréquentes",
+      "faqsLead": "Sélectionnez une question pour lire la réponse.",
+      "tutorialsHeading": "Vidéos",
+      "tutorialsLead": "Des vidéos courtes dans votre langue.",
+      "trainingHeading": "Formation",
+      "trainingLead": "Des leçons courtes. Marquez-les comme terminées au fur et à mesure.",
+      "otherRoles": "Aide pour un autre rôle"
+    },
+    "guide": {
+      "metaTitle": "{guide} · {role}",
+      "stepsHeading": "Étapes",
+      "stepLabel": "Étape {number} sur {total}",
+      "relatedHeading": "Questions associées",
+      "nextHeading": "Guide suivant"
+    },
+    "tutorial": {
+      "comingSoon": "Vidéo bientôt disponible",
+      "minutes": "{minutes} min"
+    },
+    "training": {
+      "progressLabel": "Votre formation",
+      "progress": "{done} sur {total} terminés",
+      "minutes": "{minutes} min",
+      "markDone": "Marquer comme terminé",
+      "openGuide": "Ouvrir le guide",
+      "badgeTitle": "Formation terminée",
+      "badgeBody": "Bravo ! Vous avez terminé toutes les leçons. Revenez quand vous le souhaitez pour les revoir.",
+      "reset": "Recommencer",
+      "savedHere": "Votre progression est enregistrée sur cet appareil."
+    },
+    "contactStrip": {
+      "title": "Encore besoin d’aide ?",
+      "body": "Parlez à une personne. Nous répondons sous un jour ouvré.",
+      "call": "Appeler",
+      "whatsapp": "WhatsApp",
+      "write": "Nous écrire"
+    },
+    "contact": {
+      "metaTitle": "Contacter l’assistance",
+      "metaDescription": "Contactez l’équipe Luma.Green par téléphone, WhatsApp ou message court. Nous répondons sous un jour ouvré.",
+      "title": "Contactez-nous",
+      "lead": "Une personne lit chaque message. Posez votre question avec vos propres mots.",
+      "formHeading": "Envoyer un message",
+      "name": "Votre nom",
+      "phone": "Numéro de portable",
+      "phoneHint": "Nous vous appellerons ou vous enverrons un SMS à ce numéro.",
+      "role": "Votre rôle",
+      "topic": "Quel est le sujet ?",
+      "choose": "Choisissez une option",
+      "message": "Votre message",
+      "messageHint": "Que s’est-il passé et quand ? Ajoutez votre numéro de réservation ou de transaction si vous l’avez.",
+      "messageCount": "{count, number} sur {max, number}",
+      "roles": {
+        "household": "Un ménage",
+        "kabadiwala": "Un kabadiwala",
+        "yard": "Un centre de tri",
+        "recycler": "Un recycleur",
+        "manufacturer": "Un fabricant",
+        "saathi": "Un Saathi",
+        "other": "Un autre rôle"
+      },
+      "topics": {
+        "account": "Connexion ou compte",
+        "pickup": "Une collecte",
+        "prices": "Prix",
+        "payments": "Paiements",
+        "documents": "Documents et contrôles",
+        "trade": "Un échange entre entreprises",
+        "solar": "Énergie solaire",
+        "other": "Autre sujet"
+      },
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "privacy": "Nous utilisons votre numéro uniquement pour vous répondre.",
+      "sentTitle": "Message envoyé",
+      "sentBody": "Merci. Nous vous appellerons ou vous enverrons un SMS sous un jour ouvré.",
+      "sendAnother": "Envoyer un autre message",
+      "backToHelp": "Retour à l’aide",
+      "errors": {
+        "nameInvalid": "Saisissez votre nom, de 2 à 80 caractères.",
+        "phoneInvalid": "Saisissez un numéro de portable indien à 10 chiffres.",
+        "roleMissing": "Choisissez votre rôle.",
+        "topicMissing": "Choisissez le sujet.",
+        "messageShort": "Écrivez au moins 5 caractères.",
+        "messageLong": "Ne dépassez pas 1 000 caractères.",
+        "generic": "Échec de l’envoi. Vérifiez votre connexion et réessayez."
+      },
+      "unavailableTitle": "L’envoi de messages est désactivé ici",
+      "unavailableBody": "Appelez-nous ou contactez-nous par WhatsApp. Nous vous aiderons volontiers.",
+      "otherWays": "Autres moyens de nous joindre",
+      "callTitle": "Appelez-nous",
+      "whatsappTitle": "Contactez-nous par WhatsApp",
+      "hoursTitle": "Horaires d’ouverture",
+      "replyTitle": "Délai de réponse",
+      "sampleNumbers": "Prototype : ces numéros sont des exemples."
+    },
+    "guides": {
+      "signIn": {
+        "title": "Se connecter avec un code SMS",
+        "summary": "Aucun mot de passe. Il suffit de votre portable et d’un code à 6 chiffres.",
+        "steps": {
+          "open": {
+            "title": "Ouvrir la page de connexion",
+            "body": "Allez sur luma.green/login et choisissez votre langue."
+          },
+          "number": {
+            "title": "Saisir votre numéro de portable",
+            "body": "Saisissez le numéro à 10 chiffres utilisé lors de l’inscription."
+          },
+          "code": {
+            "title": "Saisir le code à 6 chiffres",
+            "body": "Nous l’envoyons par SMS. Il est valable 5 minutes. Aucun SMS après 30 secondes ? Sélectionnez Renvoyer."
+          },
+          "stay": {
+            "title": "Rester connecté",
+            "body": "La connexion reste active 30 jours sur ce téléphone. Ne partagez jamais votre code : notre équipe ne vous le demandera jamais."
+          }
+        }
+      },
+      "safetyAtWork": {
+        "title": "Travailler en sécurité",
+        "summary": "Équipements de protection, manutention, objets coupants, batteries et machines : les gestes essentiels pour prévenir les blessures.",
+        "steps": {
+          "gear": {
+            "title": "Porter vos équipements de protection (EPI)",
+            "body": "Portez toujours des gants et des chaussures fermées. Ajoutez un masque pour les charges poussiéreuses et des lunettes pour la découpe ou le broyage."
+          },
+          "lift": {
+            "title": "Soulever avec les jambes",
+            "body": "Pliez les genoux, gardez la charge près du corps et évitez les torsions. Demandez de l’aide au-delà de 25 kg."
+          },
+          "sharp": {
+            "title": "Attention aux bords coupants",
+            "body": "Le verre, la tôle et les fils peuvent couper. Transportez le verre dans une boîte, jamais en vrac dans un sac."
+          },
+          "batteries": {
+            "title": "Séparer les batteries et les déchets électroniques",
+            "body": "Stockez-les au sec et au frais, à l’écart des autres matériaux. Ne brûlez jamais les fils et n’ouvrez jamais les batteries ni les écrans."
+          },
+          "machines": {
+            "title": "Couper le courant avant de dégager un blocage",
+            "body": "Arrêtez puis débranchez la presse ou le broyeur. N’introduisez jamais la main dans une machine en marche."
+          },
+          "firstAid": {
+            "title": "Garder les premiers secours à proximité",
+            "body": "Gardez une trousse de secours et de l’eau propre sur place. En cas de coupure profonde ou de brûlure, consultez immédiatement un professionnel de santé."
+          }
+        }
+      },
+      "verifyBusiness": {
+        "title": "S’inscrire et faire vérifier son activité",
+        "summary": "Ce qu’il faut préparer et ce que notre équipe vérifie avant l’activation de votre entreprise.",
+        "steps": {
+          "start": {
+            "title": "Commencer sur luma.green/join",
+            "body": "Connectez-vous avec votre portable et choisissez Centre de tri, Recycleur ou Fabricant."
+          },
+          "details": {
+            "title": "Ajouter les informations de l’entreprise",
+            "body": "Nom, adresse, position sur la carte, matériaux traités et horaires. Le numéro GST est facultatif."
+          },
+          "consent": {
+            "title": "Ajouter l’autorisation de l’organisme de contrôle de la pollution",
+            "body": "Indiquez le numéro de votre autorisation KSPCB ou de l’organisme de votre État, sa date de validité et le certificat PDF."
+          },
+          "photos": {
+            "title": "Ajouter des photos des machines",
+            "body": "Au moins deux photos ou courtes vidéos des principales machines et du site."
+          },
+          "review": {
+            "title": "Vérification sous 12 à 24 heures",
+            "body": "Une personne contrôle chaque document. S’il manque un élément, nous indiquons précisément quoi corriger."
+          },
+          "live": {
+            "title": "Commencer les échanges",
+            "body": "Après validation, votre tableau de bord devient accessible et les acheteurs et vendeurs voisins peuvent vous trouver."
+          }
+        }
+      },
+      "escrow": {
+        "title": "Guide de démonstration : sécuriser un échange par séquestre",
+        "summary": "Le service de séquestre prévu retiendrait le paiement jusqu’à la livraison. La démonstration actuelle enregistre uniquement des paiements simulés.",
+        "steps": {
+          "request": {
+            "title": "L’acheteur envoie une demande",
+            "body": "Elle indique le matériau, les kilos et le prix par kg."
+          },
+          "accept": {
+            "title": "Le vendeur accepte",
+            "body": "Aucun paiement n’est encore effectué. Appelez-vous si vous devez convenir de détails."
+          },
+          "pay": {
+            "title": "L’acheteur verse le paiement sous séquestre",
+            "body": "L’argent est conservé en sécurité, sans être encore versé au vendeur. Celui-ci voit sa disponibilité avant le chargement."
+          },
+          "dispatch": {
+            "title": "Le vendeur envoie le chargement",
+            "body": "Marquez-le comme expédié. La facture accompagne la marchandise, ainsi qu’un e-way bill si nécessaire."
+          },
+          "confirm": {
+            "title": "L’acheteur confirme la livraison",
+            "body": "Vérifiez le poids et la qualité, puis confirmez. Les fonds sont versés au vendeur."
+          }
+        }
+      },
+      "paperwork": {
+        "title": "Factures et e-way bills",
+        "summary": "Les documents qui accompagnent chaque chargement.",
+        "steps": {
+          "invoice": {
+            "title": "Récupérer la facture de la transaction",
+            "body": "Chaque transaction dispose d’une facture à ouvrir, imprimer ou partager."
+          },
+          "ewayBill": {
+            "title": "E-way bill au-delà de 50 000 ₹",
+            "body": "Les règles GST exigent un e-way bill pour transporter des marchandises de plus de 50 000 ₹. Certains États appliquent un autre seuil."
+          },
+          "vehicle": {
+            "title": "Les documents accompagnent le véhicule",
+            "body": "Gardez la facture et l’e-way bill dans le véhicule et vérifiez que son immatriculation correspond."
+          },
+          "keep": {
+            "title": "Conserver vos justificatifs",
+            "body": "Les reçus et factures restent dans l’application pendant 6 ans, durée demandée par la législation fiscale."
+          }
+        }
+      },
+      "tradeDisputes": {
+        "title": "Guide de démonstration : chargement non conforme",
+        "summary": "Que faire si le poids ou la qualité ne correspond pas à l’accord.",
+        "steps": {
+          "check": {
+            "title": "Contrôler avant de confirmer",
+            "body": "À l’arrivée, pesez le chargement et contrôlez la qualité en présence du chauffeur."
+          },
+          "hold": {
+            "title": "Ne pas confirmer un chargement incomplet",
+            "body": "La confirmation débloque les fonds. Ils restent sous séquestre jusqu’à votre confirmation."
+          },
+          "report": {
+            "title": "Signaler le problème avec des photos",
+            "body": "Appelez-nous ou écrivez depuis Aide, Contactez-nous. Ajoutez des photos du ticket de pesée et du matériau."
+          },
+          "settle": {
+            "title": "Nous aidons les deux parties à trouver un accord",
+            "body": "Nous examinons les poids, les photos et les messages des deux parties. Les fonds restent protégés jusqu’au règlement du litige."
+          }
+        }
+      },
+      "carbonEpr": {
+        "title": "Les crédits carbone et la REP, simplement",
+        "summary": "Pourquoi documenter le recyclage et ce que les marques et recycleurs doivent savoir.",
+        "steps": {
+          "record": {
+            "title": "Chaque kilo est enregistré",
+            "body": "Chaque pesée et transaction sur Luma.Green est consignée avec le matériau, le poids, la date et le lieu."
+          },
+          "carbon": {
+            "title": "Le recyclage réduit les émissions",
+            "body": "Fabriquer à partir de matières recyclées consomme moins d’énergie qu’utiliser des matières neuves. Ces économies pourront ensuite donner lieu à des crédits carbone."
+          },
+          "epr": {
+            "title": "REP : les producteurs doivent reprendre leurs déchets",
+            "body": "La responsabilité élargie des producteurs impose aux marques qui vendent des emballages, des appareils électroniques ou des batteries de faire recycler une part de ces déchets."
+          },
+          "certificates": {
+            "title": "Les recycleurs délivrent des certificats REP",
+            "body": "Les recycleurs enregistrés délivrent des certificats sur le portail CPCB pour les matériaux recyclés. Les marques les achètent pour atteindre leurs objectifs."
+          },
+          "proof": {
+            "title": "Des registres fiables constituent vos preuves",
+            "body": "Notre traçabilité du domicile à l’usine indique l’origine des matériaux. Les crédits carbone sur Luma.Green viendront plus tard."
+          }
+        }
+      },
+      "firstPickup": {
+        "title": "Réserver votre première collecte",
+        "summary": "De la photo à la réservation en environ deux minutes. Aucun compte requis.",
+        "steps": {
+          "photo": {
+            "title": "Photographier vos matériaux",
+            "body": "Facultatif : ajoutez une photo de vos matériaux, puis vérifiez les articles proposés."
+          },
+          "estimate": {
+            "title": "Vérifier l’estimation",
+            "body": "Nous indiquons les matériaux identifiés et leur poids approximatif. Corrigez les kilos s’ils semblent erronés."
+          },
+          "choose": {
+            "title": "Choisir collecte ou dépôt",
+            "body": "Consultez les kabadiwalas vérifiés à proximité, classés par distance, avec leurs horaires."
+          },
+          "slot": {
+            "title": "Choisir un horaire",
+            "body": "Choisissez un créneau, puis vérifiez votre adresse et votre position sur la carte."
+          },
+          "code": {
+            "title": "Confirmer votre numéro",
+            "body": "Saisissez le code à 6 chiffres envoyé par SMS. Aucun mot de passe nécessaire."
+          },
+          "track": {
+            "title": "Recevoir votre lien de suivi",
+            "body": "Nous vous envoyons par SMS un lien pour suivre votre collecte."
+          }
+        }
+      },
+      "getReady": {
+        "title": "Préparer vos matériaux",
+        "summary": "Des matériaux triés et secs se pèsent plus vite et se vendent mieux.",
+        "steps": {
+          "paper": {
+            "title": "Garder le papier sec et à plat",
+            "body": "Empilez les journaux et aplatissez les cartons. Le papier humide vaut moins cher."
+          },
+          "bottles": {
+            "title": "Vider et écraser les bouteilles",
+            "body": "Videz les liquides et aplatissez les bouteilles en plastique pour gagner de la place."
+          },
+          "metal": {
+            "title": "Séparer les métaux",
+            "body": "Placez boîtes métalliques, acier et aluminium dans un sac séparé."
+          },
+          "ewaste": {
+            "title": "Mettre les appareils et batteries à part",
+            "body": "Gardez les anciens téléphones, chargeurs et batteries dans une boîte séparée, à l’abri de la chaleur."
+          },
+          "door": {
+            "title": "Placer les sacs près de la porte",
+            "body": "La collecte sera plus rapide. Conservez-les au sec."
+          }
+        }
+      },
+      "trackPickup": {
+        "title": "Suivre votre collecte",
+        "summary": "Quand, qui et combien, sur une seule page.",
+        "steps": {
+          "open": {
+            "title": "Ouvrir le lien du SMS",
+            "body": "Il fonctionne sur tout téléphone. Aucune connexion au compte n’est nécessaire."
+          },
+          "when": {
+            "title": "Consulter l’horaire",
+            "body": "Votre date et votre créneau. Nous vous signalons tout changement."
+          },
+          "who": {
+            "title": "Voir qui vient",
+            "body": "Son nom, sa boutique et son badge de vérification. Sélectionnez Appeler pour lui parler."
+          },
+          "after": {
+            "title": "Consulter votre paiement",
+            "body": "Après la collecte, la page indique le montant payé et vos points de recyclage."
+          }
+        }
+      },
+      "weighingAtDoor": {
+        "title": "Pesée et paiement à domicile",
+        "summary": "Comment faire compter chaque kilo.",
+        "steps": {
+          "zero": {
+            "title": "Vérifier que la balance affiche zéro",
+            "body": "La balance vide doit afficher 0 avant toute pesée."
+          },
+          "each": {
+            "title": "Peser chaque matériau séparément",
+            "body": "Papier, plastique et métal ont des prix différents : ils sont donc pesés séparément."
+          },
+          "amount": {
+            "title": "L’application calcule le montant",
+            "body": "Les kilos multipliés par le tarif au kg du kabadiwala. Vous voyez le total avant le paiement."
+          },
+          "pay": {
+            "title": "Recevoir le paiement sur place",
+            "body": "En espèces ou par UPI, avant le départ. Luma.Green ne détient jamais votre argent."
+          },
+          "receipt": {
+            "title": "Vérifier votre reçu",
+            "body": "Votre page de suivi indique chaque matériau, son poids, son prix et le total."
+          }
+        }
+      },
+      "howPricesWork": {
+        "title": "Comment sont fixés les prix",
+        "summary": "Pourquoi l’estimation est une fourchette et comment est calculé le montant final.",
+        "steps": {
+          "estimate": {
+            "title": "Les estimations utilisent les prix de la ville",
+            "body": "Avant votre choix d’un kabadiwala, nous utilisons les prix de référence de Bengaluru pour afficher une fourchette."
+          },
+          "own": {
+            "title": "Chaque kabadiwala fixe son tarif",
+            "body": "Après votre choix, vous voyez son prix pour chaque matériau."
+          },
+          "floor": {
+            "title": "Jamais sous le minimum",
+            "body": "Luma.Green fixe un prix minimum pour chaque matériau. Aucun kabadiwala ne peut payer moins."
+          },
+          "final": {
+            "title": "Le poids détermine le montant",
+            "body": "Vous êtes payé pour le poids mesuré à domicile, au tarif de ce kabadiwala."
+          }
+        }
+      },
+      "cancelBooking": {
+        "title": "Annuler ou modifier une réservation",
+        "summary": "Vos projets changent. Voici comment procéder.",
+        "steps": {
+          "open": {
+            "title": "Ouvrir votre lien de suivi",
+            "body": "Toutes les informations de votre réservation s’y trouvent."
+          },
+          "cancel": {
+            "title": "Annuler gratuitement",
+            "body": "Vous pouvez annuler jusqu’au départ du kabadiwala. C’est gratuit."
+          },
+          "declined": {
+            "title": "Si le kabadiwala ne peut pas venir",
+            "body": "Nous proposons la collecte au suivant le plus proche et vous avertissons par SMS."
+          },
+          "help": {
+            "title": "Besoin d’un autre horaire ?",
+            "body": "Annulez et réservez à nouveau, ou appelez-nous pour obtenir de l’aide."
+          }
+        }
+      },
+      "batteriesAtHome": {
+        "title": "Anciens téléphones, batteries et déchets électroniques",
+        "summary": "Les conserver et les remettre en sécurité.",
+        "steps": {
+          "apart": {
+            "title": "Les garder dans une boîte sèche",
+            "body": "À l’écart de la cuisinière, de l’eau et du soleil, et hors de portée des enfants."
+          },
+          "tape": {
+            "title": "Isoler les bornes des batteries",
+            "body": "Couvrez les bornes métalliques avec du ruban adhésif pour éviter les étincelles."
+          },
+          "swollen": {
+            "title": "Ne pas comprimer une batterie gonflée",
+            "body": "Une batterie gonflée peut prendre feu. Isolez-la dans une boîte métallique et prévenez le kabadiwala."
+          },
+          "handover": {
+            "title": "Remettre les appareils entiers",
+            "body": "Ne cassez pas les téléphones et ne retirez pas leurs pièces. Indiquez les déchets électroniques lors de la réservation."
+          }
+        }
+      },
+      "registerShop": {
+        "title": "Inscrire votre boutique",
+        "summary": "Les informations à fournir et le délai de vérification.",
+        "steps": {
+          "start": {
+            "title": "Commencer sur luma.green/join",
+            "body": "Connectez-vous avec votre portable et choisissez Kabadiwala."
+          },
+          "shop": {
+            "title": "Ajouter votre boutique",
+            "body": "Votre nom, le nom de la boutique, l’adresse avec sa position sur la carte et les horaires."
+          },
+          "pickups": {
+            "title": "Indiquer si vous faites des collectes",
+            "body": "Choisissez votre véhicule : charrette, vélo, auto-rickshaw ou petit camion. Sans véhicule, les ménages peuvent toujours déposer leurs matériaux."
+          },
+          "gst": {
+            "title": "Le numéro GST est facultatif",
+            "body": "Ajoutez votre numéro GST si vous en avez un. Sinon, indiquez-le simplement."
+          },
+          "review": {
+            "title": "Vérification sous 12 à 24 heures",
+            "body": "Une personne vérifie vos informations. Après validation, votre tableau de bord devient accessible."
+          }
+        }
+      },
+      "pickupRequests": {
+        "title": "Répondre aux demandes de collecte",
+        "summary": "Les nouvelles collectes des ménages voisins et leur traitement.",
+        "steps": {
+          "see": {
+            "title": "Voir les nouvelles demandes",
+            "body": "Chaque demande indique la zone, le créneau, les matériaux, les kilos estimés et le montant à payer."
+          },
+          "answer": {
+            "title": "Accepter ou refuser",
+            "body": "Acceptez pour prendre la collecte. En cas de refus, elle passe au kabadiwala suivant le plus proche, sans indiquer votre identité au ménage."
+          },
+          "auto": {
+            "title": "Activer l’acceptation automatique",
+            "body": "Avec l’acceptation automatique, chaque demande de votre zone est acceptée immédiatement, même la nuit."
+          },
+          "go": {
+            "title": "Appeler et partir",
+            "body": "Après acceptation, vous voyez le numéro et l’adresse exacte. Appelez pour prévenir de votre départ."
+          }
+        }
+      },
+      "weighAndPay": {
+        "title": "Peser et payer",
+        "summary": "Enregistrer une collecte en moins d’une minute.",
+        "steps": {
+          "zero": {
+            "title": "Mettre la balance à zéro",
+            "body": "Commencez à 0, balance vide et visible par le ménage."
+          },
+          "weigh": {
+            "title": "Peser chaque matériau",
+            "body": "Saisissez les kilos pour chacun. Utilisez + et − par pas d’un demi-kilo."
+          },
+          "total": {
+            "title": "Montrer le total",
+            "body": "L’application calcule le total selon vos prix. Montrez l’écran au ménage."
+          },
+          "pay": {
+            "title": "Payer en espèces ou par UPI",
+            "body": "Payez avant de partir et choisissez le moyen de paiement utilisé."
+          },
+          "save": {
+            "title": "Enregistrer",
+            "body": "Le ménage voit le reçu sur sa page de suivi et votre stock augmente selon les poids enregistrés."
+          }
+        }
+      },
+      "setPrices": {
+        "title": "Fixer vos prix",
+        "summary": "Choisissez votre tarif, au-dessus du minimum.",
+        "steps": {
+          "open": {
+            "title": "Ouvrir Mes prix",
+            "body": "Chaque matériau apparaît avec son prix minimum."
+          },
+          "enter": {
+            "title": "Saisir votre prix par kg",
+            "body": "Indiquez le montant à payer aux ménages pour chaque matériau."
+          },
+          "floor": {
+            "title": "Respecter le minimum",
+            "body": "Un prix sous le minimum n’est pas enregistré. Si le minimum augmente, votre prix augmente aussi et nous vous en informons."
+          },
+          "blank": {
+            "title": "Laisser un matériau vide",
+            "body": "Sans tarif personnel, le prix de référence de la ville est utilisé."
+          },
+          "history": {
+            "title": "Les anciens reçus restent inchangés",
+            "body": "Un nouveau prix s’applique uniquement aux nouvelles collectes. Les anciens reçus conservent le tarif payé."
+          }
+        }
+      },
+      "stockAndSell": {
+        "title": "Guide de démonstration : trier vos stocks et vendre aux centres",
+        "summary": "Passer de petites collectes à un chargement destiné à un centre de tri.",
+        "steps": {
+          "grows": {
+            "title": "Vos stocks se remplissent automatiquement",
+            "body": "Chaque collecte pesée est ajoutée à Mes stocks."
+          },
+          "sort": {
+            "title": "Enregistrer le tri",
+            "body": "Séparez les mélanges en matériaux réels. Par exemple, triez le papier mélangé en journaux, cartons et déchets."
+          },
+          "show": {
+            "title": "Montrer vos stocks aux centres",
+            "body": "Activez Afficher aux centres pour rendre vos stocks visibles aux centres voisins."
+          },
+          "sell": {
+            "title": "Accepter la demande d’un centre",
+            "body": "Vérifiez les kilos et le prix, puis acceptez. Le centre verse le paiement sous séquestre avant la collecte."
+          }
+        }
+      },
+      "householdDisagrees": {
+        "title": "Quand un ménage conteste",
+        "summary": "Restez calme, clair et équitable.",
+        "steps": {
+          "reweigh": {
+            "title": "Refaire la pesée ensemble",
+            "body": "Mettez la balance à zéro et pesez à nouveau devant le ménage."
+          },
+          "show": {
+            "title": "Montrer votre tarif",
+            "body": "Montrez le prix par kg et le total sur votre téléphone."
+          },
+          "noForce": {
+            "title": "Ne pas forcer une vente",
+            "body": "En cas de désaccord persistant, le ménage n’est pas obligé de vendre ce matériau. Ne l’ajoutez pas au reçu."
+          },
+          "call": {
+            "title": "Nous appeler en cas de blocage",
+            "body": "Nous pouvons parler aux deux parties. Chaque reçu indique les poids et les prix."
+          }
+        }
+      },
+      "buyFromKabadiwalas": {
+        "title": "Guide de démonstration : acheter aux kabadiwalas",
+        "summary": "Trouver des matériaux triés à proximité et organiser leur collecte.",
+        "steps": {
+          "browse": {
+            "title": "Ouvrir Acheter",
+            "body": "Consultez les stocks voisins par matériau et distance, avec les kilos et les prix."
+          },
+          "request": {
+            "title": "Envoyer une demande",
+            "body": "Choisissez les kilos souhaités. Le prix par kg est affiché avant l’envoi."
+          },
+          "pay": {
+            "title": "Payer sous séquestre",
+            "body": "Payez après acceptation du kabadiwala. Les fonds restent bloqués jusqu’à votre confirmation."
+          },
+          "collect": {
+            "title": "Collecter et peser",
+            "body": "Récupérez le chargement et pesez-le dans votre centre."
+          },
+          "confirm": {
+            "title": "Confirmer pour débloquer le paiement",
+            "body": "Si le poids et la qualité conviennent, confirmez. Le kabadiwala reçoit son paiement."
+          }
+        }
+      },
+      "sellToRecyclers": {
+        "title": "Guide de démonstration : vendre des balles triées aux recycleurs",
+        "summary": "Publiez vos stocks une fois et laissez les recycleurs vous contacter.",
+        "steps": {
+          "list": {
+            "title": "Publier vos stocks",
+            "body": "Dans Vendre, ajoutez le matériau, les kilos et le prix par kg."
+          },
+          "requests": {
+            "title": "Recevoir des demandes",
+            "body": "Les recycleurs qui achètent ce matériau voient votre annonce et peuvent envoyer une demande."
+          },
+          "accept": {
+            "title": "Accepter, puis attendre le paiement",
+            "body": "Chargez uniquement après la mise sous séquestre du paiement de l’acheteur."
+          },
+          "dispatch": {
+            "title": "Expédier le chargement",
+            "body": "Marquez-le comme expédié, avec sa facture et un e-way bill pour les chargements dépassant 50 000 ₹."
+          },
+          "paid": {
+            "title": "Recevoir votre paiement",
+            "body": "Les fonds vous sont versés quand le recycleur confirme la livraison."
+          }
+        }
+      },
+      "buyFromYards": {
+        "title": "Guide de démonstration : acheter des matériaux triés aux centres",
+        "summary": "Des matières classées et régulières pour votre chaîne de production.",
+        "steps": {
+          "browse": {
+            "title": "Trouver des balles à proximité",
+            "body": "Ouvrez Acheter pour consulter les annonces des centres par matériau et distance."
+          },
+          "request": {
+            "title": "Demander un chargement",
+            "body": "Choisissez les kilos. Le prix par kg est indiqué avant l’envoi."
+          },
+          "pay": {
+            "title": "Payer sous séquestre",
+            "body": "Payez après acceptation du centre. Les fonds restent bloqués jusqu’à votre confirmation de livraison."
+          },
+          "confirm": {
+            "title": "Peser, contrôler, confirmer",
+            "body": "Pesez le chargement à l’entrée et contrôlez sa qualité avant de confirmer."
+          }
+        }
+      },
+      "sellRecycled": {
+        "title": "Guide de démonstration : vendre des matières recyclées aux fabricants",
+        "summary": "Présentez votre production pour permettre aux usines de commander.",
+        "steps": {
+          "list": {
+            "title": "Publier votre production",
+            "body": "Ajoutez paillettes, granulés, balles ou lingots avec les kilos disponibles et votre prix par kg."
+          },
+          "orders": {
+            "title": "Recevoir des commandes",
+            "body": "Les fabricants voient votre annonce et demandent les kilos nécessaires."
+          },
+          "load": {
+            "title": "Charger après le paiement",
+            "body": "Acceptez, puis expédiez une fois le paiement placé sous séquestre."
+          },
+          "paid": {
+            "title": "Recevoir le paiement à la livraison",
+            "body": "Les fonds sont débloqués lorsque le fabricant confirme."
+          }
+        }
+      },
+      "orderRecycled": {
+        "title": "Guide de démonstration : commander des matières recyclées",
+        "summary": "Trouver des matières recyclées et commander la quantité nécessaire.",
+        "steps": {
+          "browse": {
+            "title": "Voir les stocks des recycleurs",
+            "body": "Ouvrez Acheter pour consulter les matières recyclées, les kilos disponibles et les prix."
+          },
+          "order": {
+            "title": "Envoyer une commande",
+            "body": "Choisissez les kilos et envoyez la demande. Le recycleur l’accepte ou la refuse."
+          },
+          "pay": {
+            "title": "Payer sous séquestre",
+            "body": "Payez après acceptation. Les fonds restent bloqués jusqu’à votre confirmation de livraison."
+          },
+          "receive": {
+            "title": "Recevoir le chargement",
+            "body": "Pesez-le et contrôlez sa qualité à l’entrée."
+          },
+          "confirm": {
+            "title": "Confirmer la livraison",
+            "body": "Confirmez pour verser le paiement au recycleur."
+          }
+        }
+      },
+      "checkDelivery": {
+        "title": "Guide de démonstration : contrôler une livraison",
+        "summary": "Un contrôle rapide avant la confirmation et le déblocage du paiement.",
+        "steps": {
+          "papers": {
+            "title": "Comparer les documents",
+            "body": "La facture et l’e-way bill doivent correspondre à la commande et au véhicule."
+          },
+          "weigh": {
+            "title": "Peser vous-même",
+            "body": "Pesez le camion chargé puis vide. La différence correspond à la quantité reçue."
+          },
+          "look": {
+            "title": "Examiner les matériaux",
+            "body": "Contrôlez couleur, humidité et impuretés par rapport à votre commande."
+          },
+          "decide": {
+            "title": "Confirmer ou signaler",
+            "body": "Tout est conforme ? Confirmez. Sinon, signalez le problème avec des photos : les fonds restent sous séquestre."
+          }
+        }
+      },
+      "becomeSaathi": {
+        "title": "Devenir Saathi",
+        "summary": "Inscrivez-vous avec une pièce d’identité et un selfie, puis acceptez des missions à proximité.",
+        "steps": {
+          "start": {
+            "title": "Commencer sur luma.green/join",
+            "body": "Connectez-vous avec votre portable et choisissez Saathi."
+          },
+          "work": {
+            "title": "Choisir votre travail",
+            "body": "Collectes à domicile, aide dans une boutique, tri dans un centre ou postes chez un recycleur ou dans une usine."
+          },
+          "area": {
+            "title": "Définir votre zone et vos horaires",
+            "body": "Votre lieu de résidence, votre rayon de déplacement — 2, 5 ou 10 km — et vos disponibilités."
+          },
+          "id": {
+            "title": "Ajouter une pièce d’identité et un selfie",
+            "body": "Carte d’électeur, permis de conduire, PAN ou Aadhaar masqué. Jamais le numéro Aadhaar complet."
+          },
+          "review": {
+            "title": "Vérification sous 12 à 24 heures",
+            "body": "Une personne compare le selfie à la pièce d’identité. Vous pouvez ensuite accepter des missions."
+          }
+        }
+      },
+      "findJobs": {
+        "title": "Trouver et accepter des missions",
+        "summary": "Du travail à proximité, selon vos disponibilités.",
+        "steps": {
+          "home": {
+            "title": "Voir les missions sur l’accueil",
+            "body": "Chaque mission indique le lieu, le jour, l’horaire et la rémunération."
+          },
+          "accept": {
+            "title": "Accepter une mission",
+            "body": "Sélectionnez Accepter. L’entreprise voit que vous venez."
+          },
+          "arrive": {
+            "title": "Arriver à l’heure",
+            "body": "Prévenez par téléphone en cas de retard. La ponctualité aide à obtenir plus de missions."
+          },
+          "done": {
+            "title": "Marquer comme terminée",
+            "body": "Après la mission, marquez-la comme terminée pour l’ajouter à vos gains."
+          }
+        }
+      },
+      "homePickup": {
+        "title": "Effectuer une collecte à domicile",
+        "summary": "Un service aimable, rapide et équitable à chaque porte.",
+        "steps": {
+          "call": {
+            "title": "Appeler avant de partir",
+            "body": "Donnez votre nom, celui de votre boutique et votre heure d’arrivée."
+          },
+          "greet": {
+            "title": "Vous présenter",
+            "body": "À la porte, donnez votre nom et celui de la boutique. Attendez qu’on vous invite à entrer."
+          },
+          "weigh": {
+            "title": "Peser devant le ménage",
+            "body": "Mettez la balance à zéro et pesez chaque matériau devant eux."
+          },
+          "record": {
+            "title": "Payer et enregistrer",
+            "body": "Payez selon les consignes de la boutique et enregistrez le paiement avant de partir."
+          },
+          "deliver": {
+            "title": "Apporter les matériaux à la boutique",
+            "body": "Transportez-les directement à la boutique et remettez-les sur place."
+          }
+        }
+      },
+      "saathiPay": {
+        "title": "Comment recevoir votre rémunération",
+        "summary": "Convenez du montant d’abord, puis vérifiez-le dans Gains.",
+        "steps": {
+          "agree": {
+            "title": "Convenir d’abord de la rémunération",
+            "body": "La boutique ou l’entreprise qui vous emploie vous paie. Fixez le montant avant le début de la mission."
+          },
+          "earnings": {
+            "title": "Consulter Gains",
+            "body": "Retrouvez vos missions terminées et leur rémunération."
+          },
+          "upi": {
+            "title": "Demander un paiement UPI",
+            "body": "UPI laisse une trace qui permet de vérifier le montant reçu."
+          },
+          "problem": {
+            "title": "Paiement non reçu ?",
+            "body": "Parlez d’abord à l’entreprise. Si le problème persiste, appelez-nous."
+          }
+        }
+      }
+    },
+    "faqs": {
+      "noCode": {
+        "q": "Je n’ai pas reçu le code SMS",
+        "a": "Attendez 30 secondes et sélectionnez Renvoyer. Vérifiez le numéro et le réseau du téléphone. Le code est valable 5 minutes."
+      },
+      "newPhone": {
+        "q": "J’ai un nouveau téléphone ou numéro",
+        "a": "Nouveau téléphone, même numéro : reconnectez-vous. Nouveau numéro : appelez-nous ; nous transférerons votre compte après vérification de votre identité."
+      },
+      "deleteData": {
+        "q": "Puis-je consulter ou supprimer mes données ?",
+        "a": "Oui. Écrivez-nous depuis Contactez-nous ; nous traiterons votre demande sous 30 jours. Nous conservons uniquement ce que la loi exige, notamment les reçus."
+      },
+      "verifyTime": {
+        "q": "Combien de temps dure la vérification ?",
+        "a": "En général, 12 à 24 heures après l’envoi du dossier. Si un élément manque, nous vous indiquons précisément lequel."
+      },
+      "noAccount": {
+        "q": "Ai-je besoin d’un compte ?",
+        "a": "Non. Vous confirmez votre numéro par code SMS lors de la réservation. Aucun mot de passe à mémoriser."
+      },
+      "whatCanISell": {
+        "q": "Que puis-je vendre ?",
+        "a": "Papier, carton, bouteilles et contenants plastiques, métal, verre et anciens appareils électroniques. Un doute ? Prenez une photo pour obtenir une estimation."
+      },
+      "howPriceWorks": {
+        "q": "Comment est calculé mon paiement ?",
+        "a": "Le poids de chaque matériau est multiplié par le tarif au kg du kabadiwala. Son tarif ne peut pas être inférieur au minimum de Luma.Green."
+      },
+      "howPaid": {
+        "q": "Comment suis-je payé ?",
+        "a": "À domicile, en espèces ou par UPI, avant le départ du kabadiwala. Luma.Green enregistre le paiement sans détenir votre argent."
+      },
+      "recyclePoints": {
+        "q": "Que sont les points de recyclage ?",
+        "a": "Un remerciement pour le recyclage : 1 point par tranche de 10 ₹ reçus. Leurs utilisations seront précisées prochainement."
+      },
+      "weightWrong": {
+        "q": "Et si le poids semble incorrect ?",
+        "a": "Demandez une nouvelle pesée devant vous, en partant de zéro. Si le désaccord persiste, appelez-nous : chaque poids figure sur le reçu."
+      },
+      "canCancel": {
+        "q": "Puis-je annuler ?",
+        "a": "Oui, gratuitement, jusqu’au départ du kabadiwala. Ouvrez votre lien de suivi et sélectionnez Annuler."
+      },
+      "kabadiwalasChecked": {
+        "q": "Les kabadiwalas sont-ils vérifiés ?",
+        "a": "Oui. Notre équipe contrôle chaque boutique avant qu’elle puisse recevoir des réservations. Recherchez le badge de vérification."
+      },
+      "whoSeesAddress": {
+        "q": "Qui voit mon numéro et mon adresse ?",
+        "a": "Uniquement le kabadiwala qui accepte votre collecte et notre équipe. Nous les conservons 12 mois après votre dernière réservation."
+      },
+      "photosKept": {
+        "q": "Que deviennent mes photos ?",
+        "a": "N’incluez ni visages, ni documents, ni plaques d’immatriculation. La photo est envoyée à un fournisseur d’IA pour cette estimation. Luma.Green ne l’enregistre pas."
+      },
+      "whyVerify": {
+        "q": "Pourquoi dois-je être vérifié ?",
+        "a": "Les ménages vous accueillent chez eux. Le contrôle de chaque boutique protège les ménages et donne sa valeur au badge de vérification."
+      },
+      "gstNeeded": {
+        "q": "Ai-je besoin d’un numéro GST ?",
+        "a": "Non, il est facultatif. Ajoutez-le si vous en avez un."
+      },
+      "ownPrices": {
+        "q": "Puis-je fixer mes propres prix ?",
+        "a": "Oui, pour chaque matériau, à condition de respecter le prix minimum de Luma.Green."
+      },
+      "noVehicle": {
+        "q": "Je n’ai pas de véhicule. Puis-je m’inscrire ?",
+        "a": "Oui. Les ménages peuvent déposer les matériaux dans votre boutique. La collecte par un Saathi pour les boutiques sans véhicule est prévue plus tard."
+      },
+      "autoAccept": {
+        "q": "Qu’est-ce que l’acceptation automatique ?",
+        "a": "Lorsqu’elle est activée, chaque nouvelle demande de votre zone est acceptée immédiatement, même la nuit. Désactivez-la si vous ne pouvez pas vous déplacer."
+      },
+      "rejectRequest": {
+        "q": "Que se passe-t-il si je refuse une demande ?",
+        "a": "Elle passe au kabadiwala suivant le plus proche. Le ménage ne sait pas qui a refusé."
+      },
+      "payHousehold": {
+        "q": "Luma.Green paie-t-il le ménage à ma place ?",
+        "a": "Non. Vous le payez en espèces ou par UPI à domicile. L’application enregistre le montant et le moyen de paiement."
+      },
+      "paidByYard": {
+        "q": "Comment suis-je payé quand je vends à un centre ?",
+        "a": "Pour le moment, convenez du paiement directement avec le centre. Le séquestre est prévu ; la démonstration ne transfère pas d’argent."
+      },
+      "whoSeesShop": {
+        "q": "Qui peut voir ma boutique ?",
+        "a": "Après validation, le nom, la zone et les horaires de votre boutique sont publics pour que les ménages vous trouvent. Vos documents restent privés."
+      },
+      "consentDocs": {
+        "q": "Quels documents dois-je fournir ?",
+        "a": "Votre autorisation de contrôle de la pollution — KSPCB au Karnataka — avec numéro, date de validité et certificat PDF, ainsi que des photos de vos machines. Le numéro GST est facultatif."
+      },
+      "noConsentNeeded": {
+        "q": "Mon activité ne nécessite pas d’autorisation. Puis-je m’inscrire ?",
+        "a": "Oui. Cochez la case correspondante et expliquez pourquoi, par exemple si vous effectuez uniquement la mise en balles du papier. Nous vérifierons ce point."
+      },
+      "consentExpiry": {
+        "q": "Que se passe-t-il à l’expiration de mon autorisation ?",
+        "a": "Consultez la date d’expiration dans Conformité. Les autorisations valables moins de 90 jours sont signalées. Renouvelez l’autorisation auprès de votre conseil de contrôle de la pollution et contactez l’assistance pour mettre à jour le certificat."
+      },
+      "findStock": {
+        "q": "Comment trouver des stocks à proximité ?",
+        "a": "Ouvrez Acheter. Les stocks des kabadiwalas vérifiés sont affichés par matériau, les plus proches en premier."
+      },
+      "whoSetsPrice": {
+        "q": "Qui fixe le prix ?",
+        "a": "Le vendeur publie un prix par kg. Vous le voyez avant d’envoyer la demande et pouvez appeler pour convenir des détails."
+      },
+      "whatIsEscrow": {
+        "q": "Qu’est-ce que le séquestre ?",
+        "a": "Une étape intermédiaire sûre : les fonds de l’acheteur sont conservés jusqu’à la livraison convenue, puis versés au vendeur. Le séquestre professionnel est prévu."
+      },
+      "whenSellerPaid": {
+        "q": "Quand le vendeur est-il payé ?",
+        "a": "Dès que l’acheteur confirme la livraison."
+      },
+      "shortLoad": {
+        "q": "Et si le chargement est incomplet ?",
+        "a": "La démonstration présente les étapes proposées pour les litiges. Elle ne peut ni conserver ni protéger de fonds réels."
+      },
+      "ewayBill": {
+        "q": "Ai-je besoin d’un e-way bill ?",
+        "a": "Oui, pour transporter des marchandises de plus de 50 000 ₹. L’écran de transaction le rappelle. Certains États appliquent un autre seuil."
+      },
+      "whoSeesBusiness": {
+        "q": "Qui peut voir mon entreprise ?",
+        "a": "Les acheteurs et vendeurs vérifiés voient votre nom, votre zone et vos matériaux. Seuls vous et notre équipe voyez vos documents."
+      },
+      "pwpRegistration": {
+        "q": "Je recycle du plastique. Faut-il un autre document ?",
+        "a": "Préparez votre enregistrement CPCB de transformateur de déchets plastiques. Les marques le demandent et il permet de délivrer des certificats REP."
+      },
+      "buyFromAnyYard": {
+        "q": "Puis-je acheter à plusieurs centres ?",
+        "a": "Oui. Achetez aussi souvent que nécessaire à tout centre vérifié qui propose les matériaux recherchés."
+      },
+      "eprRecords": {
+        "q": "Les relevés Luma.Green aident-ils pour la REP ?",
+        "a": "Oui. Chaque transaction indique le matériau, le poids, la date et le vendeur pour étayer vos déclarations REP. La déclaration reste à déposer sur le portail CPCB."
+      },
+      "carbonCredits": {
+        "q": "Vais-je obtenir des crédits carbone ?",
+        "a": "Pas encore. Nous enregistrons chaque kilo pour permettre une émission future après vérification de la méthode."
+      },
+      "whatCanIBuy": {
+        "q": "Que puis-je acheter ?",
+        "a": "Des matières recyclées de recycleurs vérifiés : paillettes de PET, granulés de PEHD, papier kraft et lingots d’aluminium, par exemple."
+      },
+      "qualityWrong": {
+        "q": "Et si la qualité ne correspond pas à la commande ?",
+        "a": "La démonstration présente les étapes proposées pour les litiges. Elle ne peut ni conserver ni protéger de fonds réels."
+      },
+      "recycledContent": {
+        "q": "Acheter des matières recyclées aide-t-il pour la REP ?",
+        "a": "Oui. Les règles REP sur les plastiques fixent des objectifs de contenu recyclé dans les emballages. Vos transactions indiquent la quantité de matières recyclées achetée."
+      },
+      "carbonClaims": {
+        "q": "Puis-je déclarer des économies de carbone ?",
+        "a": "L’écran Impact estime les émissions évitées. Considérez ces chiffres comme indicatifs jusqu’à leur vérification indépendante."
+      },
+      "whoCanJoin": {
+        "q": "Qui peut devenir Saathi ?",
+        "a": "Toute personne de 18 ans ou plus qui souhaite gagner de l’argent avec de courtes missions près de chez elle."
+      },
+      "whichId": {
+        "q": "Quelle pièce d’identité puis-je utiliser ?",
+        "a": "Carte d’électeur, permis de conduire, PAN, document DigiLocker ou Aadhaar n’affichant que les 4 derniers chiffres."
+      },
+      "fullAadhaar": {
+        "q": "Pourquoi pas mon Aadhaar complet ?",
+        "a": "Nous ne conservons jamais les numéros Aadhaar. Si vous importez une version complète par erreur, nous demanderons une copie masquée et supprimerons la première."
+      },
+      "needVehicle": {
+        "q": "Ai-je besoin d’un véhicule ?",
+        "a": "Non. L’aide en boutique et les postes de travail n’en nécessitent pas. Pour les collectes à domicile, un vélo, une moto ou un auto-rickshaw est utile."
+      },
+      "whoPaysMe": {
+        "q": "Qui me paie ?",
+        "a": "Le kabadiwala ou l’entreprise pour qui vous travaillez. Convenez du montant avant de commencer."
+      },
+      "chooseHours": {
+        "q": "Puis-je choisir mes horaires ?",
+        "a": "Oui. Indiquez vos jours et heures disponibles et acceptez uniquement les missions souhaitées."
+      },
+      "safetyGear": {
+        "q": "Quels équipements de protection faut-il ?",
+        "a": "Des gants et des chaussures fermées pour chaque mission, ainsi qu’un masque pour les travaux poussiéreux. Demandez à l’entreprise si d’autres équipements sont nécessaires."
+      },
+      "whoSeesId": {
+        "q": "Qui voit ma pièce d’identité et mon selfie ?",
+        "a": "Uniquement vous et notre équipe, pour vérifier votre identité."
+      },
+      "jobWentWrong": {
+        "q": "Un problème est survenu pendant une mission. Que faire ?",
+        "a": "Mettez-vous d’abord en sécurité. Prévenez l’entreprise, puis appelez-nous. Nous écouterons les deux parties."
+      }
+    },
+    "tutorials": {
+      "bookInTwoMinutes": "Réserver une collecte en deux minutes",
+      "sortAtHome": "Trier les matériaux chez soi",
+      "batterySafety": "Manipuler les anciennes batteries en sécurité",
+      "firstDay": "Votre premier jour sur Luma.Green",
+      "weighAndPayVideo": "Peser et payer en une minute",
+      "settingPrices": "Définir vos prix",
+      "buyingFromKabadiwalas": "Acheter aux kabadiwalas",
+      "listingBales": "Publier des balles pour les recycleurs",
+      "escrowExplained": "Démonstration : le séquestre en deux minutes",
+      "buyingFromYards": "Acheter aux centres de tri",
+      "sellingOutput": "Vendre votre production",
+      "eprPlainWords": "La REP en termes simples",
+      "firstOrder": "Passer votre première commande",
+      "checkingDelivery": "Contrôler une livraison",
+      "becomingSaathi": "Devenir un Saathi",
+      "goodPickup": "Réussir une collecte à domicile",
+      "liftingSafely": "Soulever et porter en sécurité"
+    },
+    "modules": {
+      "whatRecycles": {
+        "title": "Ce qui se recycle",
+        "p1": "Papier, carton, la plupart des plastiques, métal et verre ont une valeur.",
+        "p2": "Anciens téléphones, chargeurs et batteries sont des déchets électroniques : séparez-les.",
+        "p3": "Les déchets alimentaires et les couches sales ne se recyclent pas."
+      },
+      "sortOnce": {
+        "title": "Trier une seule fois",
+        "p1": "Un sac chacun pour le papier, le plastique et le métal.",
+        "p2": "Gardez tout sec et propre.",
+        "p3": "Des matériaux triés se pèsent plus vite et se vendent mieux."
+      },
+      "batteriesSafe": {
+        "title": "Les batteries en sécurité",
+        "p1": "Isolez les bornes métalliques avec du ruban adhésif.",
+        "p2": "Gardez-les au sec, au frais et loin des enfants.",
+        "p3": "Ne les jetez jamais à la poubelle ni au feu."
+      },
+      "fairWeigh": {
+        "title": "Obtenir une pesée juste",
+        "p1": "Vérifiez que la balance démarre à zéro.",
+        "p2": "Observez la pesée de chaque matériau.",
+        "p3": "Vérifiez le total sur le reçu."
+      },
+      "usingTheApp": {
+        "title": "Utiliser l’application",
+        "p1": "Connectez-vous avec votre numéro et un code SMS.",
+        "p2": "Acceptez ou refusez rapidement les nouvelles demandes.",
+        "p3": "Activez l’acceptation automatique uniquement si vous pouvez vous déplacer."
+      },
+      "weighingFairly": {
+        "title": "Peser équitablement",
+        "p1": "Mettez la balance à zéro devant le ménage.",
+        "p2": "Pesez chaque matériau séparément.",
+        "p3": "Montrez le total avant de payer."
+      },
+      "safeHandling": {
+        "title": "Manipuler les matériaux en sécurité",
+        "p1": "Portez toujours des gants et des chaussures fermées.",
+        "p2": "Soulevez avec les jambes et demandez de l’aide au-delà de 25 kg.",
+        "p3": "Séparez les batteries et les déchets électroniques."
+      },
+      "servingHouseholds": {
+        "title": "Bien servir les ménages",
+        "p1": "Appelez avant de partir et respectez le créneau.",
+        "p2": "Restez poli et pesez devant eux.",
+        "p3": "Payez toujours avant de partir."
+      },
+      "sellingToYards": {
+        "title": "Démonstration : vendre aux centres de tri",
+        "p1": "Enregistrez le tri pour maintenir des stocks exacts.",
+        "p2": "Montrez vos stocks aux centres voisins.",
+        "p3": "Chargez uniquement après la mise sous séquestre du paiement."
+      },
+      "buyingStock": {
+        "title": "Acheter des stocks",
+        "p1": "Trouvez les stocks voisins dans Acheter.",
+        "p2": "Vérifiez le prix par kg avant d’envoyer une demande.",
+        "p3": "Pesez chaque chargement avant de confirmer."
+      },
+      "tradingWithEscrow": {
+        "title": "Démonstration : échanger avec séquestre",
+        "p1": "L’acheteur paie sous séquestre après l’acceptation du vendeur.",
+        "p2": "Le vendeur charge uniquement lorsque les fonds sont disponibles.",
+        "p3": "La confirmation de livraison débloque les fonds."
+      },
+      "papersForLoads": {
+        "title": "Des documents pour chaque chargement",
+        "p1": "Une facture pour chaque transaction.",
+        "p2": "Un e-way bill pour les chargements au-delà de 50 000 ₹.",
+        "p3": "Les documents accompagnent le véhicule."
+      },
+      "siteSafety": {
+        "title": "Sécurité sur le site",
+        "p1": "Portez des gants, des chaussures fermées et un masque en présence de poussière.",
+        "p2": "Arrêtez et débranchez une machine avant de dégager un blocage.",
+        "p3": "Gardez toujours une trousse de secours et de l’eau propre sur place."
+      },
+      "buyingInputs": {
+        "title": "Démonstration : acheter vos matières premières",
+        "p1": "Trouvez des balles classées proposées par les centres dans Acheter.",
+        "p2": "Payez sous séquestre après l’acceptation du centre.",
+        "p3": "Contrôlez la qualité avant de confirmer."
+      },
+      "eprBasics": {
+        "title": "Les bases de la REP",
+        "p1": "Les marques doivent faire recycler une partie de leurs déchets.",
+        "p2": "Les recycleurs enregistrés délivrent des certificats sur le portail CPCB.",
+        "p3": "Des relevés de transaction fiables étayent chaque déclaration."
+      },
+      "orderingRecycled": {
+        "title": "Démonstration : commander des matières recyclées",
+        "p1": "Comparez les annonces selon le type, les kilos et le prix.",
+        "p2": "Commandez les kilos nécessaires.",
+        "p3": "Payez sous séquestre après acceptation."
+      },
+      "checkingDeliveries": {
+        "title": "Contrôler les livraisons",
+        "p1": "Comparez la facture et l’e-way bill à la commande.",
+        "p2": "Pesez le camion chargé puis vide.",
+        "p3": "Confirmez uniquement si le poids et la qualité conviennent."
+      },
+      "firstJob": {
+        "title": "Votre première mission",
+        "p1": "Vérifiez le lieu, l’horaire et la rémunération avant d’accepter.",
+        "p2": "Appelez à l’avance et arrivez à l’heure.",
+        "p3": "Marquez la mission comme terminée après le travail."
+      },
+      "inPeoplesHomes": {
+        "title": "Travailler au domicile des ménages",
+        "p1": "Présentez-vous et indiquez votre boutique.",
+        "p2": "Attendez qu’on vous invite à entrer.",
+        "p3": "Pesez devant eux et restez poli."
+      },
+      "gettingPaid": {
+        "title": "Recevoir sa rémunération",
+        "p1": "Convenez de la rémunération avant le début de la mission.",
+        "p2": "Demandez UPI pour conserver une trace.",
+        "p3": "Vérifiez chaque mission dans Gains."
+      }
+    }
+  },
+  "notFound": {
+    "metaTitle": "Page introuvable",
+    "title": "Page introuvable",
+    "body": "La page recherchée n’existe pas ou a été déplacée.",
+    "backHome": "Retour à l’accueil"
+  },
+  "auth": {
+    "metaTitle": "Se connecter",
+    "verifyMetaTitle": "Saisissez votre code",
+    "chooseLanguage": "Choisissez votre langue",
+    "chooseLanguageHint": "Vous pouvez la modifier à tout moment en haut de l’écran.",
+    "continue": "Continuer",
+    "title": "Connectez-vous avec votre portable",
+    "lead": "Pour les kabadiwalas, centres de tri, recycleurs, fabricants et Saathis.",
+    "mobileLabel": "Numéro de portable",
+    "mobileHint": "Nous enverrons un code à 6 chiffres à ce numéro.",
+    "mobileInvalid": "Saisissez un numéro de portable indien à 10 chiffres.",
+    "sendCode": "Envoyer le code",
+    "sending": "Envoi en cours…",
+    "sendFailed": "Impossible d’envoyer le code. Réessayez dans une minute.",
+    "homeTitle": "Vous vendez des matériaux à domicile ? Aucun compte nécessaire.",
+    "homeLink": "Découvrir le fonctionnement",
+    "privacy": "Nous utilisons votre numéro uniquement pour vous connecter et vous informer de votre activité sur Luma.Green.",
+    "unavailableTitle": "La connexion par téléphone sera bientôt disponible",
+    "unavailableBody": "Nous terminons la configuration SMS des codes de connexion. Revenez bientôt.",
+    "verifyTitle": "Saisissez le code à 6 chiffres",
+    "sentTo": "Envoyé par SMS au {phone}",
+    "codeLabel": "Code à 6 chiffres",
+    "verify": "Vérifier",
+    "verifying": "Vérification…",
+    "resendIn": "Vous pourrez demander un nouveau code dans {seconds, plural, one {# seconde} other {# secondes}}",
+    "resend": "Envoyer un nouveau code",
+    "resent": "Nous avons envoyé un nouveau code.",
+    "changeNumber": "Changer de numéro",
+    "errorInvalid": "Ce code est incorrect. Vérifiez le SMS et réessayez.",
+    "errorExpired": "Ce code a expiré. Demandez-en un nouveau.",
+    "errorTooMany": "Trop de tentatives. Demandez un nouveau code.",
+    "errorGeneric": "Une erreur est survenue. Réessayez.",
+    "signingIn": "Connexion en cours…",
+    "sendRateLimited": "Trop de demandes de code. Réessayez plus tard.",
+    "previewAction": "Aperçu de l’écran du code",
+    "previewTitle": "Aperçu du code",
+    "previewNumber": "Numéro de portable : {phone}",
+    "previewBody": "Le service SMS n’est pas encore connecté. Aucun code n’a été envoyé. Vous pouvez consulter cet écran, mais pas vous connecter.",
+    "previewPhoneHint": "Saisissez votre portable pour voir l’étape suivante. Aucun SMS ne sera envoyé."
+  },
+  "join": {
+    "metaTitle": "Rejoindre Luma.Green",
+    "metaDescription": "Kabadiwalas, centres de tri, recycleurs, fabricants et Saathis à Bengaluru : demandez à rejoindre Luma.Green. Une personne examine chaque dossier, généralement sous 12 à 24 heures.",
+    "title": "Rejoindre Luma.Green",
+    "lead": "Présentez votre activité. Une personne examine chaque dossier, généralement sous 12 à 24 heures.",
+    "start": "Commencer",
+    "youNeed": "À préparer",
+    "homeTitle": "Vous vendez des matériaux à domicile ?",
+    "homeBody": "Inutile de vous inscrire. Réservez une collecte quand vous avez des matériaux à vendre.",
+    "homeLink": "Découvrir le fonctionnement",
+    "roles": {
+      "kabadiwala": {
+        "title": "Collecteur kabadiwala",
+        "body": "Vous gérez une boutique de récupération et achetez aux ménages voisins.",
+        "needs": "Adresse et horaires de la boutique. Numéro GST si disponible."
+      },
+      "yard": {
+        "title": "Centre de tri",
+        "body": "Vous triez et compactez les matériaux en gros avant de les revendre.",
+        "needs": "Numéro GST si disponible, autorisation de contrôle de la pollution au format PDF et photos des machines."
+      },
+      "recycler": {
+        "title": "Entreprise de recyclage",
+        "body": "Vous transformez les déchets en matières premières.",
+        "needs": "Numéro GST si disponible, autorisation de contrôle de la pollution au format PDF et photos des machines."
+      },
+      "manufacturer": {
+        "title": "Entreprise de fabrication",
+        "body": "Vous achetez des matières recyclées pour votre usine.",
+        "needs": "Numéro GST si disponible, autorisation de contrôle de la pollution au format PDF et photos des machines."
+      },
+      "saathi": {
+        "title": "Travailleur Saathi",
+        "body": "Vous cherchez un travail rémunéré : collectes à domicile, tri ou postes en usine.",
+        "needs": "Une pièce d’identité avec photo et un selfie."
+      }
+    },
+    "shell": {
+      "signOut": "Se déconnecter"
+    },
+    "consent": {
+      "title": "Avant de commencer",
+      "lead": "Les informations demandées et leur utilité.",
+      "why": {
+        "kabadiwala": "Les informations de la boutique permettent aux ménages voisins de réserver et à notre équipe de vérifier son existence. Nous appelons une fois votre numéro pour confirmer.",
+        "business": "Votre autorisation et les photos des machines montrent aux partenaires que votre site est autorisé et actif. Nous les comparons au registre public de l’organisme de contrôle de la pollution.",
+        "saathi": "Votre pièce d’identité et votre selfie permettent de confirmer votre identité avant qu’un ménage ou un centre vous accueille."
+      },
+      "privacy": "Seuls vous et l’équipe Luma.Green voyez vos informations et fichiers. Nous les utilisons pour vous vérifier et vous mettre en relation, jamais pour les vendre. Vous pouvez demander leur suppression.",
+      "age": "J’ai au moins 18 ans",
+      "accept": "J’ai lu quelles données sont collectées et pourquoi",
+      "startButton": "Commencer mon dossier",
+      "starting": "Démarrage…"
+    },
+    "form": {
+      "saving": "Enregistrement…",
+      "saved": "Enregistré",
+      "notSaved": "Non enregistré. Vérifiez votre connexion.",
+      "submit": "Envoyer pour vérification",
+      "submitting": "Envoi en cours…",
+      "next": "Suivant : documents",
+      "back": "Retour",
+      "fixErrors": "Certaines réponses sont à vérifier. Elles sont signalées ci-dessous.",
+      "yes": "Oui",
+      "no": "Non",
+      "optional": "facultatif",
+      "gstQuestion": "Avez-vous un numéro GST ?",
+      "gstin": "Numéro GST",
+      "gstinHint": "15 caractères, par exemple 29ABCDE1234F1Z5",
+      "useLocation": "Utiliser ma position",
+      "locating": "Recherche de votre position…",
+      "locationSaved": "Position enregistrée",
+      "locationFailed": "Impossible d’obtenir votre position. Autorisez la localisation pour ce site ou saisissez l’adresse. Nous la confirmerons lors de l’appel.",
+      "locationWhy": "Pour que les ménages et acheteurs voisins vous trouvent.",
+      "loginPhone": "Votre numéro de connexion",
+      "otherPhones": "Autres numéros",
+      "otherPhonesHint": "Jusqu’à deux numéros supplémentaires, par exemple un assistant ou associé. Nous les appelons uniquement au sujet de votre activité.",
+      "addPhone": "Ajouter un numéro",
+      "remove": "Supprimer",
+      "phoneNumber": "Numéro",
+      "phoneLabel": "Titulaire du numéro",
+      "phoneLabelPlaceholder": "Assistant, associé…",
+      "hours": "Horaires d’ouverture",
+      "opens": "Ouverture",
+      "closes": "Fermeture",
+      "weeklyOff": "Jour de repos hebdomadaire",
+      "weeklyOffHint": "Laissez vide si vous ouvrez tous les jours.",
+      "weekdays": {
+        "mon": "Lun.",
+        "tue": "Mar.",
+        "wed": "Mer.",
+        "thu": "Jeu.",
+        "fri": "Ven.",
+        "sat": "Sam.",
+        "sun": "Dim."
+      },
+      "changesTitle": "Points à corriger"
+    },
+    "kabadiwala": {
+      "title": "Votre boutique",
+      "ownerName": "Votre nom",
+      "shopName": "Nom de la boutique",
+      "address": "Adresse de la boutique",
+      "addressHint": "Rue, quartier et point de repère",
+      "offersPickup": "Collectez-vous à domicile ?",
+      "noPickupHint": "Aucun problème. Un Saathi voisin peut effectuer des collectes pour votre boutique.",
+      "vehicle": "Votre véhicule",
+      "vehicles": {
+        "handcart": "Charrette",
+        "cycle": "Vélo",
+        "auto": "Auto-rickshaw",
+        "mini_truck": "Petit camion"
+      }
+    },
+    "business": {
+      "titles": {
+        "yard": "Votre centre de tri",
+        "recycler": "Votre unité de recyclage",
+        "manufacturer": "Votre usine"
+      },
+      "step": "Étape {step} sur 2",
+      "businessName": "Nom de l’entreprise",
+      "materials": "Matériaux traités",
+      "materialsHint": "Pour vous mettre en relation avec les bons vendeurs et acheteurs.",
+      "materialNames": {
+        "paper": "Papier",
+        "plastic": "Plastique",
+        "metal": "Métal",
+        "glass": "Verre",
+        "ewaste": "Déchets électroniques"
+      },
+      "address": "Adresse",
+      "addressHint": "Parcelle, rue et quartier",
+      "locationTags": "Noms des zones",
+      "locationTagsHint": "Aidez les autres à vous trouver, par exemple Peenya Industrial Area. Cinq zones maximum.",
+      "addTag": "Ajouter",
+      "collects": "Collectez-vous chez vos fournisseurs ?",
+      "hours": "Horaires de travail"
+    },
+    "documents": {
+      "title": "Documents et photos",
+      "lead": "Nous vérifions votre autorisation dans le registre public de l’organisme de contrôle de la pollution.",
+      "notRequired": "Notre activité ne nécessite pas d’autorisation",
+      "notRequiredHint": "Certaines activités, comme la seule mise en balles du papier, sont exemptées. Expliquez pourquoi ; nous vérifierons.",
+      "reason": "Motif de l’exemption",
+      "board": "Quel organisme l’a délivrée ?",
+      "boards": {
+        "kspcb": "État du Karnataka (KSPCB)",
+        "other": "Organisme d’un autre État"
+      },
+      "boardState": "Quel État ?",
+      "consentNumber": "Numéro d’autorisation ou d’enregistrement",
+      "consentNumberHint": "Tel qu’indiqué sur le certificat",
+      "validUntil": "Valide jusqu’au",
+      "certificate": "Certificat d’autorisation",
+      "certificateHint": "Un PDF, 10 Mo maximum.",
+      "machineMedia": "Photos ou vidéos de vos machines",
+      "machineMediaHint": "Au moins deux. Montrez les machines principales et le site. Photos : 10 Mo maximum ; vidéos : 20 Mo maximum.",
+      "declaration": "Ces documents sont authentiques et appartiennent à cette entreprise."
+    },
+    "saathi": {
+      "title": "À propos de vous",
+      "name": "Votre nom",
+      "nameHint": "Comme sur votre pièce d’identité",
+      "area": "Votre lieu de résidence",
+      "areaHint": "Votre quartier, par exemple Malleshwaram",
+      "radius": "Quel est votre rayon de déplacement ?",
+      "radiusOption": "{km} km",
+      "workTypes": "Travaux souhaités",
+      "work": {
+        "home_pickups": "Collectes à domicile",
+        "shop_help": "Aide dans une boutique de kabadiwala",
+        "yard_sorting": "Tri dans un centre",
+        "factory_shifts": "Postes chez un recycleur ou dans une usine"
+      },
+      "vehicle": "Votre véhicule",
+      "vehicles": {
+        "none": "Aucun",
+        "cycle": "Vélo",
+        "two_wheeler": "Moto ou scooter",
+        "auto": "Auto-rickshaw"
+      },
+      "times": "Quand pouvez-vous travailler ?",
+      "timeNames": {
+        "morning": "Matin",
+        "afternoon": "Après-midi",
+        "evening": "Soir"
+      },
+      "days": "Quels jours ?",
+      "idProof": "Pièce d’identité avec photo",
+      "idProofHint": "Carte d’électeur, permis de conduire, PAN ou Aadhaar masqué n’affichant que les quatre derniers chiffres. Photo ou PDF, 10 Mo maximum.",
+      "selfie": "Un selfie",
+      "selfieHint": "Nous le comparons à votre pièce d’identité."
+    },
+    "files": {
+      "choose": "Choisir un fichier",
+      "addMore": "Ajouter d’autres fichiers",
+      "takePhoto": "Prendre une photo",
+      "uploading": "Importation…",
+      "remove": "Supprimer",
+      "size": "{size} Mo",
+      "sizeKb": "{size} Ko"
+    },
+    "status": {
+      "metaTitle": "Votre dossier",
+      "none": {
+        "title": "Présentez votre activité",
+        "lead": "Choisissez votre rôle pour commencer le dossier."
+      },
+      "draft": {
+        "title": "Votre dossier n’est pas encore envoyé",
+        "lead": "Toutes les informations saisies sont enregistrées.",
+        "continue": "Continuer",
+        "changeRole": "Recommencer avec un autre rôle",
+        "confirmChange": "Les informations déjà saisies seront supprimées. Recommencer ?"
+      },
+      "submitted": {
+        "title": "En cours d’examen",
+        "lead": "Généralement 12 à 24 heures. Nous vous enverrons un SMS une fois l’examen terminé.",
+        "sentAt": "Envoyé {when}",
+        "whatWeCheck": "Ce que nous vérifions"
+      },
+      "changes_requested": {
+        "title": "Quelques modifications nécessaires",
+        "lead": "Notre équipe demande les éléments suivants :",
+        "fix": "Corriger et renvoyer"
+      },
+      "approved": {
+        "title": "Votre profil est vérifié",
+        "lead": "Votre entreprise est active sur Luma.Green.",
+        "open": "Ouvrir votre tableau de bord"
+      },
+      "rejected": {
+        "title": "Votre profil n’a pas pu être vérifié",
+        "lead": "Motif indiqué par notre équipe :",
+        "contact": "Écrivez-nous"
+      },
+      "suspended": {
+        "title": "Votre compte est suspendu",
+        "lead": "Contactez-nous pour résoudre le problème.",
+        "contact": "Écrivez-nous"
+      },
+      "roleLabel": "Rôle demandé : {role}",
+      "checks": {
+        "kabadiwala": {
+          "one": "Votre boutique se trouve à l’emplacement indiqué sur la carte",
+          "two": "Nous appelons votre numéro de connexion",
+          "three": "Votre numéro GST est actif, si vous en avez fourni un"
+        },
+        "business": {
+          "one": "Votre numéro GST est actif et correspond à l’entreprise, si vous en avez fourni un",
+          "two": "Votre autorisation figure au registre, est valide et couvre votre activité",
+          "three": "Vos photos montrent une unité active et nous vous appelons"
+        },
+        "saathi": {
+          "one": "Votre pièce d’identité est lisible et le nom correspond",
+          "two": "Votre selfie correspond à la pièce d’identité",
+          "three": "Nous vous appelons à votre numéro"
+        }
+      }
+    },
+    "errors": {
+      "required": "Champ obligatoire",
+      "tooShort": "Ajoutez un peu plus de texte",
+      "tooLong": "Texte trop long",
+      "chooseOne": "Choisissez une option",
+      "pickAtLeastOne": "Choisissez au moins une option",
+      "gstin": "Vérifiez le numéro GST : 15 caractères, par exemple 29ABCDE1234F1Z5",
+      "phone": "Saisissez un portable à 10 chiffres",
+      "duplicatePhone": "Ce numéro figure déjà dans la liste",
+      "maxPhones": "Deux numéros supplémentaires maximum",
+      "maxTags": "Cinq noms de zone maximum",
+      "time": "Saisissez une heure",
+      "closesBeforeOpens": "La fermeture doit être postérieure à l’ouverture",
+      "date": "Saisissez une date",
+      "expired": "Cette autorisation a expiré. Importez la version renouvelée.",
+      "explainMore": "Ajoutez quelques précisions",
+      "declaration": "Veuillez confirmer",
+      "fileMissing": "Veuillez ajouter cet élément",
+      "fileType": "Ce type de fichier n’est pas accepté ici",
+      "fileTooBig": "Ce fichier est trop volumineux",
+      "uploadFailed": "Échec de l’importation. Réessayez.",
+      "generic": "Une erreur est survenue. Réessayez."
+    }
+  },
+  "app": {
+    "navLabel": "Application",
+    "homeLink": "Accueil Luma.Green",
+    "signOut": "Se déconnecter",
+    "more": "Plus",
+    "comingSoon": "Cet écran est en cours de création.",
+    "nav": {
+      "home": "Accueil",
+      "requests": "Demandes",
+      "stock": "Stocks",
+      "prices": "Mes prix",
+      "buy": "Acheter",
+      "sell": "Vendre",
+      "trades": "Transactions",
+      "impact": "Bilan d’impact",
+      "compliance": "Conformité",
+      "earnings": "Gains",
+      "help": "Aide"
+    },
+    "roles": {
+      "kabadiwala": "Collecteur kabadiwala",
+      "yard": "Centre de tri",
+      "recycler": "Entreprise de recyclage",
+      "manufacturer": "Entreprise de fabrication",
+      "saathi": "Travailleur Saathi"
+    }
+  },
+  "saathi": {
+    "greeting": "Bonjour, {name}",
+    "lead": "Des missions rémunérées autour de {area}. Acceptez une mission, réalisez-la et marquez-la comme terminée.",
+    "demoNote": "Données d’exemple : missions, entreprises et rémunérations du prototype.",
+    "week": {
+      "label": "Gains de la semaine",
+      "hint": "7 derniers jours · {count, plural, =0 {aucune mission} one {# mission} other {# missions}}",
+      "all": "Voir tous les gains"
+    },
+    "today": {
+      "title": "Vos missions du jour",
+      "empty": "Aucune mission aujourd’hui",
+      "emptyBody": "Acceptez une mission ci-dessous. Elle apparaîtra ici le jour prévu."
+    },
+    "upcoming": {
+      "title": "À venir",
+      "hint": "Vous pourrez la marquer comme terminée le jour prévu."
+    },
+    "open": {
+      "title": "Missions disponibles",
+      "lead": "Les missions de votre zone apparaissent en premier.",
+      "empty": "Aucune mission disponible pour le moment",
+      "emptyBody": "Les nouvelles missions des boutiques, centres et usines apparaîtront ici."
+    },
+    "work": {
+      "home_pickups": "Collectes à domicile",
+      "shop_help": "Aide en boutique",
+      "yard_sorting": "Tri dans un centre",
+      "factory_shifts": "Poste en usine"
+    },
+    "windows": {
+      "morning": "Matin",
+      "afternoon": "Après-midi",
+      "evening": "Soir"
+    },
+    "when": "{day}, {window}",
+    "whenWhere": "{when} · {area}",
+    "days": {
+      "today": "Aujourd’hui",
+      "tomorrow": "Demain",
+      "yesterday": "Hier"
+    },
+    "late": "Pas encore marquée comme terminée",
+    "nearYou": "Votre zone",
+    "postedBy": "Pour {name}",
+    "pay": "Rémunération",
+    "take": "Accepter cette mission",
+    "taking": "Acceptation…",
+    "taken": "Mission acceptée. Elle figure maintenant dans votre liste.",
+    "markDone": "Marquer terminée",
+    "saving": "Enregistrement…",
+    "doneToast": "Bravo ! {pay} ajoutés à vos gains.",
+    "confirm": {
+      "title": "Cette mission est-elle terminée ?",
+      "body": "{title} à {area}. {pay} seront ajoutés à vos gains.",
+      "yes": "Oui, elle est terminée",
+      "no": "Pas encore"
+    },
+    "errors": {
+      "JOB_TAKEN": "Quelqu’un a déjà accepté cette mission. Choisissez-en une autre.",
+      "JOB_EXPIRED": "La date de cette mission est passée.",
+      "SLOT_BUSY": "Vous avez déjà une mission à cet horaire.",
+      "NOT_YOUR_JOB": "Cette mission ne vous appartient pas.",
+      "ALREADY_DONE": "Cette mission est déjà marquée comme terminée.",
+      "TOO_EARLY": "Vous pouvez la marquer comme terminée le jour prévu.",
+      "JOB_NOT_FOUND": "Cette mission n’est plus disponible.",
+      "generic": "Échec de l’opération. Vérifiez votre connexion et réessayez."
+    }
+  },
+  "impact": {
+    "title": "Votre bilan d’impact",
+    "lead": "Les matériaux maintenus dans la boucle du recyclage par votre entreprise.",
+    "demoNote": "Données d’exemple : les montants sont illustratifs et le CO₂e utilise des facteurs indicatifs, en kg de CO₂e évités par kg recyclé plutôt que produit neuf.",
+    "since": "D’après les collectes et transactions terminées depuis le {date}.",
+    "kpi": {
+      "recycled": "Kilos recyclés",
+      "recycledHint": "Chaque kilo compté une seule fois",
+      "recycledContent": "Matières recyclées achetées",
+      "co2e": "CO₂e évité",
+      "co2eHint": "Par rapport à une production neuve",
+      "earned": "Recettes des ventes",
+      "spent": "Dépenses en matériaux",
+      "paidHouseholds": "Paiements aux ménages",
+      "sales": "{count, plural, =0 {Aucune vente} one {# vente} other {# ventes}}",
+      "purchases": "{count, plural, =0 {Aucun achat} one {# achat} other {# achats}}",
+      "pickups": "{count, plural, =0 {Aucune collecte} one {# collecte} other {# collectes}}"
+    },
+    "byFamily": {
+      "title": "Par matériau",
+      "lead": "Kilos recyclés et CO₂e évité pour chaque matériau.",
+      "co2e": "{amount} de CO₂e évité"
+    },
+    "flows": {
+      "title": "Entrées et sorties",
+      "lead": "Les matériaux entrés dans votre entreprise et ceux repartis.",
+      "households": "Achetés aux ménages",
+      "bought": "Achetés aux entreprises",
+      "sold": "Vendus dans la filière"
+    },
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastique",
+      "metal": "Métal",
+      "glass": "Verre",
+      "ewaste": "Déchets électroniques",
+      "other": "Autres"
+    },
+    "ledger": {
+      "title": "Un registre préparé pour les crédits",
+      "lead": "Chaque kilo est enregistré avec les acteurs, la date et le lieu : les preuves demandées par les normes de crédits carbone et plastique.",
+      "who": "Qui",
+      "whoBody": "Entreprises et ménages vérifiés, chacun avec un numéro de téléphone.",
+      "when": "Quand",
+      "whenBody": "Chaque étape est horodatée, de la collecte à la livraison.",
+      "where": "Où",
+      "whereBody": "La boutique, le centre ou l’usine traversé par le matériau.",
+      "what": "Quoi",
+      "whatBody": "Le matériau et son poids, sur un reçu ou une facture."
+    },
+    "empty": {
+      "title": "Aucune activité enregistrée",
+      "body": "Vos chiffres apparaîtront ici après la première collecte ou transaction terminée."
+    },
+    "saathi": {
+      "title": "Vos gains",
+      "lead": "La rémunération de vos missions terminées.",
+      "total": "Gains cumulés",
+      "jobsDone": "{count, plural, one {# mission terminée} other {# missions terminées}}",
+      "week": "Gains de la semaine",
+      "weekHint": "7 derniers jours · {count, plural, =0 {aucune mission} one {# mission} other {# missions}}",
+      "byKind": "Par type de travail",
+      "jobs": "{count, plural, one {# mission} other {# missions}}",
+      "history": "Missions terminées",
+      "empty": "Aucune mission terminée pour le moment",
+      "emptyBody": "Acceptez une mission sur l’accueil. Après l’avoir marquée comme terminée, sa rémunération apparaît ici.",
+      "findJob": "Trouver une mission",
+      "demoNote": "Données d’exemple : missions et rémunérations illustratives du prototype."
+    }
+  },
+  "compliance": {
+    "title": "Conformité",
+    "lead": "Vos autorisations et registres au même endroit.",
+    "demoNote": "Données d’exemple : documents, reçus et montants illustratifs du prototype.",
+    "checklist": {
+      "title": "Liste de contrôle",
+      "whatThisMeans": "Signification :"
+    },
+    "status": {
+      "done": "Terminé",
+      "due_soon": "À renouveler bientôt",
+      "overdue": "Expiré",
+      "missing": "Manquant",
+      "optional": "Facultatif",
+      "not_needed": "Non nécessaire",
+      "self_declared": "Pas encore vérifié"
+    },
+    "items": {
+      "gst": {
+        "title": "Enregistrement GST",
+        "registered": "GSTIN {gstin}",
+        "notRegistered": "Non enregistré",
+        "note": "Un numéro GST permet d’émettre des factures fiscales et de récupérer la taxe sur les achats. Au Karnataka, l’enregistrement est obligatoire au-delà de 40 lakh ₹ de ventes annuelles ou pour vendre dans un autre État."
+      },
+      "consent": {
+        "title": "Autorisation de contrôle de la pollution",
+        "detail": "{board} · {number}",
+        "missing": "Aucune autorisation enregistrée",
+        "note": "L’autorisation d’exploitation de l’organisme de contrôle de la pollution de l’État permet de gérer légalement une unité de tri ou de recyclage. Recycleurs et usines la demandent avant d’acheter.",
+        "noteShop": "Une petite boutique qui achète et trie uniquement n’en a généralement pas besoin. La mise en balles, le broyage ou la transformation peuvent la rendre nécessaire."
+      },
+      "scale": {
+        "title": "Balance contrôlée et estampillée",
+        "detail": "Autodéclaration. Vous pourrez bientôt la confirmer ici.",
+        "note": "Les balances commerciales doivent être contrôlées et estampillées par le service de métrologie légale, généralement chaque année. L’estampille atteste la fiabilité des poids."
+      },
+      "safety": {
+        "title": "Équipements de sécurité des travailleurs",
+        "detail": "Autodéclaration. Vous pourrez bientôt la confirmer ici.",
+        "note": "Gants, masques et chaussures fermées pour toute personne qui trie ou porte, avec une trousse de secours sur place. Les Saathis doivent aussi en disposer."
+      }
+    },
+    "consent": {
+      "title": "Validité de l’autorisation",
+      "validUntil": "Valide jusqu’au {date}",
+      "daysLeft": "{days, plural, =0 {Dernier jour aujourd’hui} one {# jour restant} other {# jours restants}}",
+      "ranOut": "{days, plural, one {Expirée depuis # jour} other {Expirée depuis # jours}}",
+      "reminder": "Date de vérification du renouvellement : {date}, 90 jours avant expiration.",
+      "expiringTitle": "Renouvelez votre autorisation maintenant",
+      "expiringBody": "Elle expire le {date}. Demandez le renouvellement à {board} dès maintenant : cela peut prendre plusieurs semaines.",
+      "expiredTitle": "Votre autorisation a expiré",
+      "expiredBody": "Elle a expiré le {date}. Renouvelez-la auprès de {board} avant d’acheter ou de vendre davantage de matériaux.",
+      "missingTitle": "Aucune autorisation enregistrée",
+      "missingBody": "Recycleurs et usines demandent une autorisation valide. Envoyez-la depuis Aide pour que nous l’ajoutions."
+    },
+    "receipts": {
+      "title": "Reçus de transaction",
+      "lead": "Vos reçus Luma.Green, du plus récent au plus ancien. Les factures fiscales GST accompagnent les paiements réels.",
+      "number": "Reçu",
+      "date": "Jour",
+      "with": "Avec",
+      "what": "Quoi",
+      "amount": "Montant",
+      "eway": "Document e-way bill",
+      "sale": "Vente",
+      "purchase": "Achat",
+      "sideWith": "{side} · {name}",
+      "line": "{material} · {weight} · {date}",
+      "ewayNeeded": "Nécessaire",
+      "ewayNotNeeded": "Non nécessaire",
+      "ewayNeededLong": "E-way bill nécessaire",
+      "ewayNotNeededLong": "E-way bill non nécessaire",
+      "ewayNote": "Un e-way bill est nécessaire pour transporter des marchandises de plus de 50 000 ₹.",
+      "view": "Voir le reçu {number}",
+      "unknown": "Une entreprise qui n’est plus sur Luma.Green",
+      "empty": "Aucun reçu pour le moment",
+      "emptyBody": "Un reçu est créé lorsque l’acheteur verse le paiement sous séquestre."
+    },
+    "epr": {
+      "title": "Registre REP, exercice {from}–{to}",
+      "lead": "Matériaux reçus et recyclés pendant cet exercice, d’avril à mars.",
+      "leadManufacturer": "Matières recyclées achetées pendant cet exercice, d’avril à mars.",
+      "received": "Reçus",
+      "recycled": "Recyclé",
+      "bought": "Achetés",
+      "streams": {
+        "plastic": "Plastique",
+        "ewaste": "Déchets électroniques",
+        "battery": "Batteries et piles",
+        "paper": "Papier",
+        "metal": "Métal",
+        "glass": "Verre",
+        "other": "Autres"
+      },
+      "regimes": {
+        "pwm_2016": "Règles de gestion des déchets plastiques de 2016",
+        "ewaste_2022": "Règles de gestion des déchets électroniques de 2022",
+        "bwm_2022": "Règles de gestion des déchets de batteries de 2022",
+        "none": "Aucune règle REP pour ce matériau pour le moment"
+      },
+      "note": "Les certificats REP sont générés sur les portails CPCB, pas ici. Ces totaux proviennent de vos transactions terminées et sont prêts pour votre déclaration.",
+      "empty": "Aucune activité enregistrée cette année",
+      "emptyBody": "Les transactions terminées depuis le 1er avril sont comptabilisées ici."
+    },
+    "saathi": {
+      "title": "Pour les entreprises",
+      "body": "La conformité concerne les boutiques, centres, recycleurs et usines. Vos missions et rémunérations se trouvent sur l’accueil.",
+      "home": "Voir mes missions"
+    }
+  },
+  "sell": {
+    "metaTitle": "Vendre vos matériaux",
+    "metaDescription": "Vendez journaux, plastiques, métaux et anciens appareils électroniques à domicile à Bengaluru. Comparez les offres des boutiques voisines, réservez une collecte et recevez votre paiement chez vous.",
+    "eyebrow": "Pour les ménages de Bengaluru",
+    "title": "Vendez vos matériaux à domicile",
+    "lead": "Sélectionnez vos matériaux, choisissez une boutique voisine et recevez un paiement en espèces ou par UPI après la pesée.",
+    "promises": {
+      "label": "Pourquoi vendre ici",
+      "noAccount": "Aucun compte requis",
+      "payAtDoor": "Paiement après pesée",
+      "verified": "Boutiques vérifiées"
+    },
+    "unavailable": {
+      "title": "Les réservations seront bientôt disponibles",
+      "body": "Nous préparons les réservations pour les ménages. Revenez bientôt."
+    },
+    "demoNote": "Prix et boutiques d’exemple pour le pilote de Bengaluru.",
+    "loadError": "Chargement impossible. Vérifiez votre connexion et réessayez.",
+    "retry": "Réessayer",
+    "steps": {
+      "label": "Étapes",
+      "progress": "Étape {current} sur {total}",
+      "basket": "Quoi",
+      "shop": "Qui",
+      "when": "Quand",
+      "confirm": "Réserver"
+    },
+    "back": "Retour",
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastique",
+      "metal": "Métal",
+      "glass": "Verre",
+      "ewaste": "Déchets électroniques",
+      "other": "Autres"
+    },
+    "windows": {
+      "morning": "Matin",
+      "afternoon": "Après-midi",
+      "evening": "Soir"
+    },
+    "perKg": "{price}/kg",
+    "basket": {
+      "title": "Quels matériaux avez-vous ?",
+      "lead": "Sélectionnez les matériaux à vendre, puis indiquez leur poids approximatif.",
+      "yours": "Vos matériaux",
+      "empty": "Aucun ajout pour le moment. Sélectionnez un matériau ci-dessus.",
+      "kilos": "Kilos de {material}",
+      "less": "Moins de {material}",
+      "more": "Plus de {material}",
+      "remove": "Retirer {material}",
+      "presets": "Quantités rapides pour {material}",
+      "preset": "{kg} kg",
+      "kgUnit": "kg",
+      "lineValue": "Environ {amount}",
+      "worth": "Valeur approximative",
+      "summary": "{items, plural, one {# article} other {# articles}} · {weight}",
+      "points": "+{points, plural, one {# point de recyclage} other {# points de recyclage}}",
+      "next": "Trouver des acheteurs",
+      "full": "Limite par réservation atteinte : {max} matériaux.",
+      "weighNote": "Le montant final est fixé lors de la pesée."
+    },
+    "shop": {
+      "title": "Qui les achète ?",
+      "lead": "L’offre de chaque boutique pour vos matériaux, selon ses propres prix.",
+      "modeLabel": "Comment voulez-vous les remettre ?",
+      "pickup": "Collecte à domicile",
+      "pickupHint": "La boutique vient chez vous",
+      "dropoff": "Je les déposerai",
+      "dropoffHint": "Vous les apportez à la boutique",
+      "useLocation": "Utiliser ma position",
+      "locating": "Recherche de votre position…",
+      "nearestFirst": "Boutiques les plus proches d’abord",
+      "byPrice": "Trier plutôt par prix",
+      "locationFailed": "Votre position n’a pas pu être obtenue. Les boutiques sont classées par meilleur prix.",
+      "listLabel": "Boutiques",
+      "offerFor": "pour vos matériaux",
+      "distance": "{km} km",
+      "hours": "Ouvert {hours}",
+      "picksUp": "Collecte disponible",
+      "dropOnly": "Dépôt uniquement",
+      "verified": "Vérifié",
+      "best": "Meilleur prix",
+      "nearest": "Le plus proche",
+      "cityPrice": "{count, plural, one {Prix de la ville utilisé pour # article} other {Prix de la ville utilisé pour # articles}}",
+      "noPickupHere": "Cette boutique ne fait pas de collecte. Choisissez « Je les déposerai » pour y vendre vos matériaux.",
+      "empty": "Aucune boutique ne prend encore de réservation. Revenez bientôt.",
+      "next": "Choisir un horaire",
+      "pickOne": "Choisissez une boutique pour continuer."
+    },
+    "when": {
+      "titlePickup": "Quand doivent-ils venir ?",
+      "titleDropoff": "Quand déposerez-vous les matériaux ?",
+      "dayLabel": "Jour prévu",
+      "today": "Aujourd’hui",
+      "tomorrow": "Demain",
+      "windowLabel": "Horaire",
+      "passed": "Trop tard pour aujourd’hui",
+      "addressLabel": "Adresse de collecte",
+      "addressHint": "Numéro de maison ou d’appartement, rue, quartier et point de repère.",
+      "dropoffAt": "Apportez-les à",
+      "nameLabel": "Votre nom",
+      "nameHint": "Pour que la boutique sache qui demander.",
+      "privacy": "Seule la boutique choisie voit votre adresse, après avoir accepté.",
+      "next": "Vérifier et réserver",
+      "errors": {
+        "day": "Choisissez un jour.",
+        "window": "Choisissez un horaire.",
+        "address": "Indiquez l’adresse complète, avec numéro et quartier.",
+        "name": "Saisissez votre nom, au moins 2 caractères."
+      }
+    },
+    "confirm": {
+      "title": "Vérifier et réserver",
+      "what": "Quoi",
+      "who": "Qui",
+      "when": "Quand",
+      "where": "Où",
+      "change": "Modifier",
+      "changeLabel": "Modifier {section}",
+      "pickup": "Collecte chez vous",
+      "dropoff": "Dépôt à la boutique",
+      "whenValue": "{day} · {window}, {time}",
+      "youGet": "Vous recevrez environ {amount}",
+      "payNote": "La boutique pèse vos matériaux et vous paie en espèces ou par UPI.",
+      "phoneTitle": "Confirmez votre portable",
+      "phoneLead": "Nous enverrons un code à 6 chiffres par SMS. La réservation sera liée à ce numéro pour la suivre depuis tout téléphone.",
+      "bookingAs": "Réservation avec {phone}",
+      "notYou": "Utiliser un autre numéro",
+      "bookPickup": "Réserver la collecte",
+      "bookDropoff": "Réserver le dépôt",
+      "confirmAndBook": "Confirmer et réserver",
+      "booking": "Réservation…",
+      "booked": "Réservation confirmée ! Ouverture…",
+      "fixIt": "Corriger",
+      "locationNote": "Votre position approximative sera enregistrée avec la collecte pour trouver une autre boutique voisine si nécessaire."
+    },
+    "phone": {
+      "label": "Numéro de portable",
+      "hint": "Nous enverrons un code à 6 chiffres à ce numéro.",
+      "invalid": "Saisissez un numéro de portable indien à 10 chiffres.",
+      "sendCode": "Envoyer le code",
+      "sending": "Envoi en cours…",
+      "sendFailed": "Impossible d’envoyer le code. Réessayez dans une minute.",
+      "codeLabel": "Code à 6 chiffres",
+      "sentTo": "Envoyé par SMS au {phone}",
+      "changeNumber": "Changer de numéro",
+      "verifying": "Vérification…",
+      "resendIn": "Vous pourrez demander un nouveau code dans {seconds, plural, one {# seconde} other {# secondes}}",
+      "resend": "Envoyer un nouveau code",
+      "resent": "Nous avons envoyé un nouveau code.",
+      "errorInvalid": "Ce code est incorrect. Vérifiez le SMS et réessayez.",
+      "errorExpired": "Ce code a expiré. Demandez-en un nouveau.",
+      "errorTooMany": "Trop de tentatives. Demandez un nouveau code.",
+      "errorGeneric": "Une erreur est survenue. Réessayez.",
+      "privacy": "Nous utilisons votre numéro uniquement pour vos réservations et leurs mises à jour."
+    },
+    "errors": {
+      "generic": "Une erreur est survenue. Réessayez.",
+      "EMPTY_BASKET": "Ajoutez au moins un matériau à vendre.",
+      "TOO_MANY_ITEMS": "Trop de matériaux pour une seule réservation.",
+      "DUPLICATE_ITEM": "Un matériau figure deux fois. Vérifiez votre liste.",
+      "INVALID_KG": "Vérifiez les kilos : chaque poids doit être supérieur à 0 et inférieur ou égal à 500.",
+      "UNKNOWN_MATERIAL": "Un matériau ne peut plus être vendu ici. Vérifiez votre liste.",
+      "SHOP_NOT_FOUND": "Cette boutique ne prend pas de réservation actuellement. Choisissez-en une autre.",
+      "SHOP_NO_PICKUP": "Cette boutique ne fait pas de collecte. Choisissez-en une autre ou déposez les matériaux.",
+      "INVALID_DATE": "Ce jour n’est plus disponible. Choisissez-en un autre.",
+      "SLOT_PASSED": "Ce créneau est passé. Choisissez-en un plus tardif.",
+      "INVALID_NAME": "Vérifiez votre nom.",
+      "ADDRESS_REQUIRED": "Ajoutez votre adresse de collecte.",
+      "INVALID_ADDRESS": "Indiquez votre adresse complète.",
+      "TOO_MANY_OPEN": "Vous avez déjà 5 réservations en attente. Attendez la fin de l’une d’elles ou annulez-en une.",
+      "NO_PHONE": "Confirmez votre portable pour réserver.",
+      "NOT_SIGNED_IN": "Confirmez d’abord votre portable.",
+      "CANNOT_CANCEL": "Cette réservation ne peut plus être annulée.",
+      "NOT_YOURS": "Cette réservation a été faite avec un autre numéro.",
+      "NOT_FOUND": "Cette réservation est introuvable."
+    },
+    "mine": {
+      "title": "Vos réservations",
+      "showAll": "Afficher les {count}",
+      "showFewer": "Afficher moins",
+      "summary": "{items, plural, one {# article} other {# articles}} · {weight}",
+      "paid": "{amount} payés",
+      "estimate": "Environ {amount}"
+    },
+    "photo": {
+      "title": "Essayer l’estimation par photo",
+      "lead": "Facultatif : ajoutez une photo de vos matériaux, puis vérifiez les articles proposés.",
+      "privacy": "N’incluez ni visages, ni documents, ni plaques d’immatriculation. La photo est envoyée à un fournisseur d’IA pour cette estimation. Luma.Green ne l’enregistre pas.",
+      "choose": "Choisir ou prendre une photo",
+      "selected": "Photo prête",
+      "estimate": "Estimer cette photo",
+      "busy": "Analyse de votre photo…",
+      "manual": "Choisir les articles manuellement",
+      "review": "Vérifiez ces propositions",
+      "reviewNote": "Les poids issus des photos sont approximatifs. Remplacez votre panier par ces articles, puis corrigez les matériaux et les poids ci-dessous.",
+      "apply": "Utiliser ces articles",
+      "range": "{low}–{high}",
+      "confidence": "Confiance : {confidence}",
+      "value": "Valeur estimée : {low}–{high}",
+      "applied": "Propositions ajoutées. Vérifiez le panier et corrigez les erreurs.",
+      "unavailable": "Les estimations par photo sont indisponibles. Choisissez vos articles ci-dessous.",
+      "failed": "Impossible d’analyser la photo. Essayez une autre photo ou choisissez vos articles ci-dessous.",
+      "invalid": "Utilisez une photo JPEG ou PNG nette de moins de 12 Mo.",
+      "limited": "La limite de photos est atteinte. Choisissez vos articles ci-dessous ou réessayez demain.",
+      "retake": "La photo est floue ou ne montre pas de matériaux recyclables. Essayez une autre photo ou choisissez vos articles ci-dessous.",
+      "empty": "Aucun matériau pris en charge n’a été identifié. Essayez une autre photo ou choisissez vos articles ci-dessous.",
+      "replace": "Choisir une autre photo"
+    }
+  },
+  "track": {
+    "metaTitle": "Votre réservation",
+    "notFound": {
+      "title": "Votre réservation est introuvable",
+      "body": "Vérifiez le lien du SMS. Si vous venez de réserver, patientez un instant et réessayez.",
+      "sell": "Vendre mes matériaux"
+    },
+    "reference": "Réservation {token}",
+    "status": {
+      "requested": "En attente",
+      "accepted": "Acceptée",
+      "on_the_way": "En route",
+      "completed": "Terminé",
+      "declined": "Refusée",
+      "cancelled": "Annulée"
+    },
+    "hero": {
+      "requested": "{mode, select, pickup {En attente de l’acceptation de {shop}} other {En attente de la confirmation de {shop}}}",
+      "requestedBody": "Votre demande a été envoyée. Cette page se met à jour dès leur réponse.",
+      "accepted": "{mode, select, pickup {{shop} a accepté votre collecte} other {{shop} attend votre visite}}",
+      "acceptedBody": "Préparez vos matériaux. Ils seront pesés, puis payés en espèces ou par UPI.",
+      "on_the_way": "{shop} est en route",
+      "on_the_wayBody": "Préparez vos matériaux près de la porte.",
+      "completed": "Terminé ! Vous avez reçu {amount}",
+      "completedBody": "Merci de recycler. Vos points sont ajoutés à votre numéro.",
+      "declined": "{shop} n’a pas pu accepter cette réservation",
+      "declinedBody": "Rien n’a été collecté. Essayez une autre boutique : votre liste est conservée.",
+      "cancelled": "Cette réservation a été annulée",
+      "cancelledBody": "Rien n’a été collecté. Vous pouvez réserver à nouveau à tout moment."
+    },
+    "progress": {
+      "label": "Progression",
+      "booked": "Réservé",
+      "accepted": "Acceptée",
+      "confirmed": "Confirmé",
+      "onTheWay": "En route",
+      "done": "Terminé"
+    },
+    "when": "Quand",
+    "whenValue": "{day} · {window}, {time}",
+    "today": "Aujourd’hui",
+    "tomorrow": "Demain",
+    "mode": {
+      "pickup": "Collecte chez vous",
+      "dropoff": "Dépôt à la boutique"
+    },
+    "shop": {
+      "title": "Votre boutique",
+      "verified": "Vérifié",
+      "call": "Appeler",
+      "callLabel": "Appeler {shop}",
+      "hours": "Ouvert {hours}"
+    },
+    "items": {
+      "title": "Matériaux collectés",
+      "estimated": "Environ {weight}",
+      "weighed": "{weight} à {price}/kg"
+    },
+    "money": {
+      "title": "Votre paiement et vos points",
+      "estimate": "Vous recevrez environ {amount}",
+      "estimateNote": "La boutique pèse vos matériaux et vous paie en espèces ou par UPI.",
+      "paid": "Vous avez reçu {amount}",
+      "paidBy": "Payé par {method, select, upi {UPI} other {espèces}} · {date}",
+      "estimateWas": "Estimation initiale : {amount}",
+      "points": "+{points, plural, one {# point de recyclage} other {# points de recyclage}}",
+      "pointsAfter": "Environ +{points, plural, one {# point de recyclage} other {# points de recyclage}} après pesée"
+    },
+    "timeline": {
+      "title": "Historique",
+      "requested": "Réservé",
+      "accepted": "Accepté par la boutique",
+      "on_the_way": "Boutique en route",
+      "completed": "Pesé et payé",
+      "declined": "Refusé par la boutique",
+      "cancelled": "Annulée"
+    },
+    "cancel": {
+      "button": "Annuler la réservation",
+      "title": "Annuler cette réservation ?",
+      "body": "La boutique verra l’annulation. Vous pouvez réserver à nouveau à tout moment.",
+      "confirm": "Oui, annuler",
+      "keep": "La conserver",
+      "cancelling": "Annulation…",
+      "checking": "Vérification de votre numéro…",
+      "done": "Votre réservation est annulée.",
+      "free": "Annulation gratuite jusqu’au départ de la boutique.",
+      "signInTitle": "Confirmez votre identité",
+      "signInBody": "Saisissez le numéro utilisé pour réserver. Nous enverrons un code.",
+      "confirmNumber": "Confirmer mon numéro",
+      "notYours": "Cette réservation a été faite avec un autre numéro.",
+      "close": "Fermer",
+      "otherNumber": "Utiliser un autre numéro"
+    },
+    "saved": "Aucun compte requis. Conservez ce lien pour consulter la réservation sur tout téléphone.",
+    "sellMore": "Vendre d’autres matériaux",
+    "tryAnother": "Essayer une autre boutique",
+    "dispatchChanged": "Votre demande a été transmise à une autre boutique voisine. La boutique actuelle est indiquée ci-dessous."
+  },
+  "market": {
+    "sampleData": "Les prix et montants de cet écran sont des exemples pour le prototype.",
+    "simulated": "Données d’exemple. Les paiements sont simulés dans le prototype : aucun transfert d’argent réel.",
+    "perKg": "{price}/kg",
+    "recycled": "Recyclé",
+    "forBusinessesTitle": "Cet écran est destiné aux entreprises",
+    "forBusinessesBody": "Kabadiwalas, centres de tri, recycleurs et fabricants échangent ici.",
+    "units": {
+      "kg": "kg",
+      "rupee": "₹"
+    },
+    "errors": {
+      "NOT_SIGNED_IN": "Vous avez été déconnecté. Reconnectez-vous.",
+      "WRONG_ROLE": "Votre entreprise n’est pas autorisée à effectuer cette opération.",
+      "NOT_FOUND": "Élément introuvable. Il a peut-être été supprimé.",
+      "OWN_LISTING": "Il s’agit de votre propre lot.",
+      "LISTING_NOT_OPEN": "Ce lot n’est plus en vente.",
+      "NOT_ENOUGH_LEFT": "La quantité restante dans ce lot est insuffisante.",
+      "NOT_ENOUGH_STOCK": "Votre stock est insuffisant. Vérifiez-le d’abord.",
+      "INVALID_WEIGHT": "Saisissez un poids supérieur à 0 kg.",
+      "INVALID_PRICE": "Saisissez un prix supérieur à 0 ₹.",
+      "NOTE_TOO_LONG": "Limitez la note à 140 caractères.",
+      "UNKNOWN_MATERIAL": "Choisissez un matériau dans la liste.",
+      "WRONG_STEP": "La transaction a déjà progressé. Vérifiez son étape actuelle.",
+      "generic": "Une erreur est survenue. Réessayez."
+    },
+    "listing": {
+      "seller": "{name} · {area}",
+      "available": "Disponible",
+      "lotValue": "Lot entier"
+    },
+    "buy": {
+      "button": "Acheter",
+      "buttonLabel": "Acheter {material} à {seller}",
+      "title": "Acheter {material}",
+      "from": "Chez {seller}, {area}. {weight} disponibles à {price}/kg.",
+      "kgLabel": "Combien de kg ?",
+      "kgHint": "Jusqu’à {weight}.",
+      "all": "La totalité : {weight}",
+      "kgInvalid": "Saisissez le poids en kg, par exemple 50 ou 12,5.",
+      "kgTooMuch": "Seuls {weight} sont disponibles.",
+      "total": "Montant total",
+      "totalLine": "{weight} × {price}/kg",
+      "escrow": "Vous payez sous séquestre après acceptation de {seller}. Les fonds lui sont versés lorsque vous confirmez la livraison.",
+      "ewayBill": "Au-delà de 50 000 ₹ : un e-way bill doit accompagner le chargement.",
+      "cancel": "Annuler",
+      "submit": "Envoyer la demande",
+      "sending": "Envoi en cours…",
+      "sent": "Demande envoyée à {seller}",
+      "sentNext": "Vous paierez sous séquestre après acceptation.",
+      "seeTrades": "Voir les transactions"
+    },
+    "browse": {
+      "title": "Acheter",
+      "lead": "{kind, select, yard {Matériaux triés des kabadiwalas voisins.} recycler {Matériaux triés et compactés des centres.} manufacturer {Matières recyclées de recycleurs vérifiés.} other {Matériaux en vente à proximité.}}",
+      "filterLabel": "Filtrer par matériau",
+      "all": "Tous",
+      "count": "{count, plural, =0 {Aucun lot} one {# lot en vente} other {# lots en vente}}",
+      "emptyTitle": "Rien en vente pour le moment",
+      "emptyBody": "Les nouveaux lots apparaissent ici dès leur publication.",
+      "notForYouTitle": "Les kabadiwalas achètent aux ménages",
+      "notForYouBody": "Sur le marché, vous vendez : proposez vos stocks triés aux centres.",
+      "goSell": "Vendre aux centres de tri"
+    },
+    "sell": {
+      "title": "Vendre",
+      "lead": "{buyer, select, yard {Proposez vos stocks triés aux centres.} recycler {Proposez vos balles aux recycleurs.} manufacturer {Proposez vos matériaux aux fabricants.} other {Proposez vos stocks aux acheteurs.}}",
+      "notForYouTitle": "Les fabricants achètent sur Luma.Green",
+      "notForYouBody": "Trouvez des matières recyclées auprès de recycleurs vérifiés.",
+      "goBuy": "Acheter des matériaux",
+      "form": {
+        "title": "Nouvelle annonce",
+        "material": "Que vendez-vous ?",
+        "free": "{weight} disponibles à la vente",
+        "allPromised": "Tout est déjà publié ou vendu",
+        "kg": "Combien de kg ?",
+        "kgHint": "Jusqu’à {weight}.",
+        "all": "La totalité : {weight}",
+        "price": "Votre prix en ₹ par kg",
+        "market": "Marché du jour : {price}/kg",
+        "suggested": "Prix conseillé : {price}/kg",
+        "useSuggested": "Utiliser {price}",
+        "farFromMarket": "Ce prix diffère beaucoup du prix du jour. Vérifiez-le.",
+        "note": "Note aux acheteurs",
+        "optional": "(facultatif)",
+        "notePlaceholder": "Exemple : sec, conditionné en balles de 50 kg",
+        "noteCount": "{count}/{max}",
+        "value": "Valeur du lot",
+        "submit": "Mettre en vente",
+        "submitting": "Mise en vente…",
+        "listed": "En vente. {buyer, select, yard {Les centres de tri} recycler {Les recycleurs} manufacturer {Les fabricants} other {Les acheteurs}} peuvent désormais le voir.",
+        "nothingTitle": "Rien à vendre pour le moment",
+        "nothingBody": "Les stocks enregistrés apparaissent ici. Les quantités déjà publiées ou vendues ne sont pas comptées deux fois.",
+        "goStock": "Accéder aux stocks",
+        "errors": {
+          "pickMaterial": "Choisissez un matériau.",
+          "kgInvalid": "Saisissez le poids en kg, par exemple 50 ou 12,5.",
+          "kgTooMuch": "Vous avez {weight} disponibles à la vente.",
+          "priceInvalid": "Saisissez un prix en roupies, par exemple 18 ou 17,50.",
+          "noteTooLong": "Limitez la note à 140 caractères."
+        }
+      },
+      "mine": {
+        "title": "En vente actuellement",
+        "emptyTitle": "Aucune annonce pour le moment",
+        "emptyBody": "Utilisez le formulaire pour mettre votre premier lot en vente.",
+        "past": "Annonces précédentes",
+        "onSale": "En vente",
+        "listedOn": "Publié le {date}",
+        "pastLine": "Publié le {date} · {price}/kg",
+        "sold": "Épuisé",
+        "withdrawn": "Retiré",
+        "withdraw": "Retirer",
+        "withdrawLabel": "Retirer {material}",
+        "withdrawConfirm": "Retirer ce lot du marché ? Les acheteurs ne le verront plus et les demandes en attente seront refusées.",
+        "withdrawYes": "Oui, retirer",
+        "withdrawNo": "Maintenir en vente",
+        "withdrawnToast": "{material} retiré du marché"
+      }
+    },
+    "trades": {
+      "title": "Transactions",
+      "lead": "Chaque transaction, étape par étape. Les fonds restent sous séquestre jusqu’à la confirmation de livraison de l’acheteur.",
+      "buying": "Achats",
+      "selling": "Ventes",
+      "tabsLabel": "Achats ou ventes",
+      "waitingBadge": "{count, plural, one {# nécessite votre action} other {# nécessitent votre action}}",
+      "emptyBuyingTitle": "Aucun achat pour le moment",
+      "emptyBuyingBody": "Les lots que vous demandez à acheter apparaissent ici.",
+      "emptySellingTitle": "Aucune vente pour le moment",
+      "emptySellingBody": "Les demandes d’achat de vos lots apparaissent ici.",
+      "goBuy": "Trouver des matériaux",
+      "goSell": "Mettre les stocks en vente",
+      "card": {
+        "title": "{material} · {weight}",
+        "from": "De {name} · {area}",
+        "to": "À {name} · {area}",
+        "rate": "{price}/kg",
+        "inEscrow": "{amount} sous séquestre",
+        "ewayBill": "Au-delà de 50 000 ₹ : un e-way bill doit accompagner le chargement.",
+        "updated": "Mis à jour {when}",
+        "receipt": "Reçu {number}",
+        "buying": "Achats",
+        "selling": "Ventes"
+      },
+      "steps": {
+        "label": "Suivi de la transaction",
+        "requested": "Demandé",
+        "accepted": "Acceptée",
+        "paid_to_escrow": "Sous séquestre",
+        "dispatched": "Expédié",
+        "completed": "Livré",
+        "srStep": "{step} : {state}",
+        "state": {
+          "done": "terminé",
+          "current": "suivant",
+          "todo": "pas encore"
+        }
+      },
+      "declined": "Refusé le {date}",
+      "hint": {
+        "requested": {
+          "buyer": "En attente de l’acceptation de {name}.",
+          "seller": "{name} souhaite acheter ce lot. Acceptez pour le lui réserver."
+        },
+        "accepted": {
+          "buyer": "Accepté. Payez sous séquestre pour continuer : les fonds restent bloqués jusqu’à votre confirmation de livraison.",
+          "seller": "En attente du paiement sous séquestre de {name}."
+        },
+        "paid_to_escrow": {
+          "buyer": "Vos fonds sont protégés sous séquestre. En attente de l’expédition par {name}.",
+          "seller": "Les fonds sont protégés sous séquestre. Envoyez le chargement, puis marquez-le comme expédié."
+        },
+        "dispatched": {
+          "buyer": "En route. Vérifiez le chargement, puis confirmez la livraison pour débloquer les fonds.",
+          "seller": "En route. Les fonds vous seront versés lorsque {name} confirmera la livraison."
+        },
+        "completed": {
+          "buyer": "Livré. Les fonds ont été versés à {name}.",
+          "seller": "Livré. Les fonds vous ont été versés."
+        },
+        "declined": {
+          "buyer": "{name} a refusé cette commande ou le lot est épuisé.",
+          "seller": "Vous avez refusé cette commande ou le lot a été fermé."
+        }
+      },
+      "action": {
+        "accept": "Accepter la commande",
+        "decline": "Refuser",
+        "pay": "Verser {amount} sous séquestre",
+        "dispatch": "Marquer comme expédié",
+        "confirm": "Confirmer la livraison"
+      },
+      "busy": "Enregistrement…",
+      "done": {
+        "accept": "Commande acceptée",
+        "decline": "Commande refusée",
+        "pay": "Paiement sous séquestre effectué. Reçu {number}",
+        "dispatch": "Marqué comme expédié",
+        "confirm": "Livraison confirmée. Les fonds sont versés au vendeur."
+      },
+      "declineConfirm": "Refuser cette commande de {name} ? Cette action est irréversible.",
+      "declineYes": "Oui, refuser",
+      "declineNo": "La conserver"
+    },
+    "receipt": {
+      "title": "Reçu de transaction",
+      "numberLabel": "Nº de reçu",
+      "dateLabel": "Jour",
+      "statusLabel": "Paiement",
+      "inEscrow": "Sous séquestre",
+      "settled": "Débloqué",
+      "seller": "Vendeur",
+      "buyer": "Acheteur",
+      "gstin": "GSTIN {gstin}",
+      "noGstin": "Non enregistré à la GST",
+      "material": "Matériau",
+      "quantity": "Quantité",
+      "rate": "Tarif",
+      "amount": "Montant",
+      "total": "Montant total",
+      "lineSummary": "{weight} × {rate}",
+      "paidInto": "Paiement sous séquestre Luma.Green effectué le {date}.",
+      "held": "Sous séquestre jusqu’à la confirmation de livraison de l’acheteur.",
+      "released": "Versé au vendeur le {date}.",
+      "ewayBill": "Marchandises de plus de 50 000 ₹ : un e-way bill doit accompagner le chargement.",
+      "notTaxInvoice": "Ce document est un reçu de transaction, pas une facture fiscale GST. Les factures fiscales accompagnent les paiements réels.",
+      "print": "Imprimer",
+      "back": "Retour aux transactions",
+      "missingTitle": "Reçu introuvable",
+      "missingBody": "Cette transaction ne vous appartient pas ou le lien est incorrect.",
+      "pendingTitle": "Pas encore de reçu",
+      "pendingBody": "Le reçu est créé lorsque l’acheteur verse le paiement sous séquestre.",
+      "declinedBody": "Cette transaction a été refusée : aucun reçu n’existe."
+    },
+    "home": {
+      "greeting": "Bienvenue, {name}",
+      "lead": "{kind, select, yard {Achetez aux kabadiwalas et vendez des balles triées aux recycleurs.} recycler {Achetez aux centres et vendez des matières recyclées aux fabricants.} manufacturer {Achetez des matières recyclées aux recycleurs vérifiés.} other {Vos transactions en un coup d’œil.}}",
+      "buy": "Acheter",
+      "sell": "Vendre",
+      "trades": "Transactions",
+      "statsTitle": "En un coup d’œil",
+      "stats": {
+        "escrow": "Sous séquestre",
+        "escrowHint": "Versé après confirmation de livraison",
+        "waiting": "En attente de votre action",
+        "waitingHint": "{count, plural, =0 {Tout est à jour} one {# transaction nécessite une action} other {# transactions nécessitent une action}}",
+        "listings": "En vente",
+        "listingsHint": "{weight} publiés",
+        "offers": "Lots recyclés",
+        "offersHint": "En vente chez les recycleurs",
+        "completed": "Terminées ce mois-ci",
+        "completedHint": "{amount} échangés"
+      },
+      "waitingTitle": "En attente de votre action",
+      "allTrades": "Toutes les transactions",
+      "caughtUpTitle": "Aucune action requise pour le moment",
+      "caughtUpBody": "Les nouvelles commandes, paiements et livraisons apparaissent ici.",
+      "offersTitle": "Derniers lots pour vous",
+      "recycledTitle": "Des matières recyclées pour vous",
+      "recycledBody": "Paillettes, granulés, kraft et lingots de recycleurs vérifiés, prêts pour votre chaîne de production.",
+      "seeAll": "Tout voir",
+      "noOffersTitle": "Aucun lot en vente pour le moment",
+      "noOffersBody": "Les nouveaux lots apparaissent ici dès leur publication."
+    }
+  },
+  "shop": {
+    "sampleNote": "Les prix, tarifs de marché et valeurs de cet écran sont des exemples du prototype.",
+    "household": "Ménage",
+    "perKg": "{price}/kg",
+    "about": "Environ {amount}",
+    "slot": "{day}, {window}",
+    "dropoff": "Dépose les matériaux à votre boutique",
+    "windows": {
+      "morning": "Matin",
+      "afternoon": "Après-midi",
+      "evening": "Soir"
+    },
+    "days": {
+      "today": "Aujourd’hui",
+      "tomorrow": "Demain",
+      "yesterday": "Hier"
+    },
+    "status": {
+      "requested": "Nouveau",
+      "accepted": "Acceptée",
+      "on_the_way": "En route",
+      "completed": "Payé",
+      "declined": "Refusée",
+      "cancelled": "Annulée"
+    },
+    "methods": {
+      "cash": "Espèces",
+      "upi": "UPI"
+    },
+    "families": {
+      "paper": "Papier",
+      "plastic": "Plastique",
+      "metal": "Métal",
+      "glass": "Verre",
+      "ewaste": "Déchets électroniques",
+      "other": "Autres"
+    },
+    "compare": {
+      "above": "Au-dessus du marché",
+      "below": "Sous le marché",
+      "same": "Au prix du marché"
+    },
+    "errors": {
+      "generic": "Une erreur est survenue. Réessayez.",
+      "changed": "Cette demande a changé entre-temps. Vérifiez-la à nouveau.",
+      "loadTitle": "Échec du chargement",
+      "loadBody": "Vérifiez votre connexion Internet et réessayez.",
+      "retry": "Réessayer"
+    },
+    "notShop": {
+      "title": "Réservé aux boutiques de kabadiwalas",
+      "body": "Les demandes de collecte et les prix aux ménages concernent les boutiques de kabadiwalas.",
+      "home": "Accéder à l’accueil"
+    },
+    "home": {
+      "greeting": "Bienvenue",
+      "newTitle": "Nouvelles demandes",
+      "newNone": "Aucune nouvelle demande pour le moment.",
+      "newSome": "{count, plural, one {# ménage souhaite une collecte.} other {# ménages souhaitent une collecte.}}",
+      "seeRequests": "Voir les demandes",
+      "todayTitle": "Collectes du jour",
+      "next": "Suivant",
+      "todayNone": "Plus de collecte aujourd’hui.",
+      "seeToday": "Voir les collectes du jour",
+      "moneyTitle": "Paiements et stocks",
+      "paidToday": "Payé aujourd’hui",
+      "paidWeek": "7 derniers jours",
+      "pickups": "{count, plural, =0 {Aucune collecte} one {# collecte} other {# collectes}}",
+      "stockWorth": "Valeur des stocks",
+      "stockWeight": "{weight} en stock",
+      "priceCheck": "Vérification des prix",
+      "allPrices": "Tous mes prix",
+      "perKg": "par kg",
+      "you": "Vous payez",
+      "market": "Marché",
+      "quickLinks": "Raccourcis",
+      "sell": "Vendre à un centre",
+      "sellHint": "Proposez vos stocks aux centres voisins",
+      "prices": "Mes prix",
+      "pricesHint": "Votre tarif par kg pour les ménages"
+    },
+    "requests": {
+      "title": "Demandes",
+      "lead": "Les ménages voisins qui souhaitent vendre leurs matériaux.",
+      "tabs": {
+        "new": "Nouveau",
+        "today": "Aujourd’hui",
+        "done": "Terminé"
+      },
+      "dueNow": "Aujourd’hui",
+      "later": "À venir",
+      "empty": {
+        "newTitle": "Aucune nouvelle demande",
+        "newBody": "Les réservations de collecte des ménages apparaissent ici.",
+        "todayTitle": "Aucune collecte à effectuer",
+        "todayBody": "Les collectes acceptées apparaissent ici.",
+        "doneTitle": "Rien de terminé pour le moment",
+        "doneBody": "Les collectes payées ou refusées apparaissent ici."
+      },
+      "estimate": "Estimation",
+      "doneLine": "{when} · {materials}",
+      "accept": "Accepter",
+      "decline": "Refuser",
+      "startTrip": "Commencer le trajet",
+      "weigh": "Peser et payer",
+      "accepted": "Accepté. Vous pouvez désormais voir l’adresse et le numéro de téléphone.",
+      "declined": "Demande refusée.",
+      "onTheWay": "Le ménage voit que vous êtes en route.",
+      "confirmDecline": {
+        "title": "Refuser cette demande ?",
+        "body": "Cette action est irréversible.",
+        "confirm": "Oui, refuser",
+        "cancel": "La conserver"
+      }
+    },
+    "request": {
+      "back": "Toutes les demandes",
+      "details": "Détails de la collecte",
+      "where": "Adresse",
+      "phone": "Téléphone",
+      "call": "Appeler",
+      "directions": "Itinéraire",
+      "hidden": "L’adresse complète et le numéro apparaîtront après acceptation.",
+      "items": "Leurs matériaux",
+      "estimate": "Estimation",
+      "history": "Historique",
+      "declined": "Vous avez refusé cette demande.",
+      "cancelled": "Le ménage a annulé cette collecte.",
+      "notFoundTitle": "Demande introuvable",
+      "notFoundBody": "Elle appartient peut-être à une autre boutique ou le lien est incorrect.",
+      "steps": {
+        "requested": "Demandé",
+        "accepted": "Acceptée",
+        "on_the_way": "En route",
+        "completed": "Pesé et payé",
+        "declined": "Refusée",
+        "cancelled": "Annulée"
+      }
+    },
+    "weigh": {
+      "title": "Peser et payer",
+      "lead": "Pesez chaque matériau. Le montant utilise vos tarifs.",
+      "kg": "kg",
+      "inputLabel": "{material}, en kg",
+      "less": "Un demi-kilo de {material} en moins",
+      "more": "Un demi-kilo de {material} en plus",
+      "remove": "Retirer {material}",
+      "estimated": "Estimation : {weight}",
+      "noRate": "Aucun tarif défini",
+      "add": "Ajouter un autre matériau",
+      "total": "À payer",
+      "method": "Payé par",
+      "confirm": "Confirmer le paiement de {amount}",
+      "saving": "Enregistrement…",
+      "invalidKg": "Saisissez les kilos, par exemple 12 ou 12,5.",
+      "nothing": "Pesez au moins un matériau.",
+      "done": "Paiement enregistré."
+    },
+    "receipt": {
+      "thanks": "Merci de recycler !",
+      "thanksNamed": "Merci de recycler, {name} !",
+      "title": "{amount} payés",
+      "method": "{method}, {when}",
+      "points": "{name} a gagné {points, plural, one {# point} other {# points}}",
+      "pointsHint": "Un point par tranche de 10 ₹.",
+      "line": "{weight} à {price}/kg",
+      "kg": "{kg} kg",
+      "total": "Montant total",
+      "stock": "Ajouté à vos stocks.",
+      "back": "Retour aux demandes"
+    },
+    "stock": {
+      "title": "Stocks",
+      "lead": "Vos stocks actuels et leur valeur du jour.",
+      "totalWeight": "Poids total",
+      "worth": "Valeur du jour",
+      "worthHint": "Aux prix du marché du jour",
+      "scrap": "À recycler",
+      "recycled": "Matières recyclées",
+      "atPrice": "Marché : {price}/kg",
+      "noPrice": "Aucun prix de marché aujourd’hui",
+      "sellTo": {
+        "yard": "Vendre à un centre",
+        "recycler": "Vendre à un recycleur",
+        "manufacturer": "Vendre à un fabricant"
+      },
+      "emptyTitle": "Aucun stock pour le moment",
+      "emptyShop": "Pesez et payez une collecte pour la voir apparaître ici.",
+      "emptyBusiness": "Les achats sur le marché apparaissent ici.",
+      "buy": "Acheter des matériaux",
+      "notBusinessTitle": "Réservé aux entreprises",
+      "notBusinessBody": "Les stocks sont gérés par les boutiques, centres, recycleurs et usines."
+    },
+    "prices": {
+      "title": "Mes prix",
+      "lead": "Votre tarif par kg pour les ménages. Jamais sous le minimum.",
+      "label": "Votre prix pour {material}, en roupies par kg",
+      "prefix": "₹",
+      "suffix": "/kg",
+      "minimum": "Minimum : {price}/kg",
+      "market": "Marché : {price}/kg",
+      "notSet": "Pas encore défini. Les ménages reçoivent le prix de la ville : {price}/kg.",
+      "save": "Enregistrer",
+      "saving": "Enregistrement…",
+      "saved": "{material} : tarif de {price}/kg enregistré.",
+      "invalid": "Saisissez un prix, par exemple 14 ou 14,50.",
+      "belowFloor": "Trop bas. Le minimum est {price}/kg.",
+      "belowFloorUnknown": "Trop bas. Ce tarif est inférieur au prix minimum.",
+      "emptyTitle": "Aucun matériau pour le moment",
+      "emptyBody": "Les matériaux achetés sont définis lors de la validation de votre boutique."
+    },
+    "dispatch": {
+      "title": "Paramètres de collecte",
+      "autoAccept": "Accepter automatiquement les collectes voisines",
+      "autoAcceptHint": "Les demandes dans votre rayon peuvent être acceptées sans réponse manuelle. Désactivez cette option si vous ne pouvez pas collecter.",
+      "radius": "Rayon de collecte (km)",
+      "radiusHint": "Choisissez un nombre entier entre 1 et 50.",
+      "saved": "Paramètres de collecte enregistrés",
+      "error": "Impossible d’enregistrer ces paramètres. Réessayez.",
+      "saving": "Enregistrement…",
+      "ownerOnly": "Seul le propriétaire de la boutique peut modifier les paramètres de collecte.",
+      "locationRequired": "Ajoutez la position de votre boutique et activez la collecte à domicile avant l’acceptation automatique."
+    }
+  },
+  "native": {
+    "back": "Retour",
+    "reload": "Recharger",
+    "openBrowser": "Ouvrir dans le navigateur",
+    "offlineTitle": "Connexion impossible",
+    "offlineBody": "Vérifiez votre connexion Internet, puis réessayez.",
+    "updates": "Rechercher les mises à jour",
+    "updateReady": "Une mise à jour de l’application est prête.",
+    "restart": "Redémarrer maintenant",
+    "later": "Plus tard",
+    "updateCurrent": "Votre application est à jour.",
+    "updateUnavailable": "Les mises à jour ne sont pas disponibles pour cette version.",
+    "updateFailed": "Impossible de vérifier les mises à jour. Réessayez plus tard.",
+    "locationTitle": "Partager votre position ?",
+    "locationBody": "Autorisez Luma.Green à utiliser votre position pour trouver les boutiques de récupération voisines.",
+    "allow": "Autoriser",
+    "deny": "Pas maintenant",
+    "browserNotice": "Cette page s’ouvre dans votre navigateur. Une nouvelle connexion peut être nécessaire.",
+    "cameraPermission": "Utilisez l’appareil photo pour photographier des matériaux ou des documents de vérification.",
+    "photoPermission": "Sélectionnez des photos pour les estimations et les vérifications.",
+    "cameraTitle": "Appareil photo"
+  },
+  "analytics": {
+    "title": "Mesure d’audience facultative",
+    "description": "Autorisez PostHog et Google Analytics à mesurer les visites des pages publiques. Nous n’enregistrons ni formulaires, ni pages privées, ni relectures de sessions. Votre choix ne change pas l’accès à la plateforme.",
+    "accept": "Autoriser la mesure d’audience",
+    "decline": "Laisser la mesure désactivée",
+    "settings": "Paramètres de mesure d’audience",
+    "saved": "Votre choix est enregistré sur cet appareil.",
+    "unavailable": "Votre navigateur n’a pas pu enregistrer ce choix. La mesure restera désactivée.",
+    "close": "Fermer"
+  },
+  "showcase": {
+    "scene": "Scène illustrative",
+    "context": {
+      "heading": "Aperçu de votre espace de travail",
+      "body": "Ces écrans illustrent l’utilisation de Luma.Green par chaque rôle. Consultez les guides ci-dessous pour les étapes disponibles."
+    },
+    "adminBody": "Examinez les dossiers, gérez les accès et contrôlez les registres opérationnels.",
+    "preview": {
+      "label": "Aperçu illustratif de l’application · aucun enregistrement réel",
+      "roles": {
+        "household": {
+          "title": "Votre collecte à domicile",
+          "first": "Choisissez vos matériaux",
+          "second": "Organisez une collecte",
+          "third": "Conservez votre reçu"
+        },
+        "kabadiwala": {
+          "title": "Votre boutique de récupération",
+          "first": "Examinez les demandes de collecte",
+          "second": "Enregistrez le poids",
+          "third": "Gérez les stocks triés"
+        },
+        "yard": {
+          "title": "Votre centre de tri",
+          "first": "Réceptionnez les matériaux",
+          "second": "Triez vos stocks",
+          "third": "Préparez les lots sortants"
+        },
+        "recycler": {
+          "title": "Votre espace de recyclage",
+          "first": "Suivez les lots entrants",
+          "second": "Enregistrez la production recyclée",
+          "third": "Conservez les relevés des matériaux"
+        },
+        "manufacturer": {
+          "title": "Votre approvisionnement en matériaux",
+          "first": "Trouvez des matières recyclées",
+          "second": "Examinez les annonces disponibles",
+          "third": "Suivez vos transactions"
+        },
+        "saathi": {
+          "title": "Votre journée de travail",
+          "first": "Trouvez des missions à proximité",
+          "second": "Planifiez vos horaires",
+          "third": "Enregistrez le travail terminé"
+        },
+        "admin": {
+          "title": "Administration de la plateforme",
+          "first": "Examinez les dossiers",
+          "second": "Contrôlez les documents transmis",
+          "third": "Examinez les registres opérationnels"
+        }
+      }
+    }
+  }
+}

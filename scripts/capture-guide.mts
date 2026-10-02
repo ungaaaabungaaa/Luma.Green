@@ -5,6 +5,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 import { chromium } from "@playwright/test";
 
+import ar from "../messages/ar.json";
 import en from "../messages/en.json";
 
 const origin = new URL(process.env.GUIDE_BASE_URL ?? "http://localhost:3004");
@@ -62,6 +63,9 @@ const shots: readonly (readonly [string, string, string?])[] = [
   ["public-contact-info", "/contact"],
   ["public-how-it-works", "/how-it-works"],
   ["public-arabic", "/ar"],
+  ["public-navigation-phone", "/how-it-works"],
+  ["public-navigation-tablet", "/how-it-works"],
+  ["public-navigation-arabic-phone", "/ar/help"],
 ] as const;
 await mkdir(directory, { recursive: true });
 // eslint-disable-next-line sonarjs/no-os-command-from-path -- invoke the developer-installed Git only for read-only capture provenance.
@@ -71,11 +75,24 @@ const revision = execFileSync("git", ["rev-parse", "HEAD"], {
 const sharedSources = [
   "src/app/globals.css",
   "src/lib/fonts.ts",
+  "src/lib/number-input.ts",
+  "src/components/solar/calc.ts",
+  "src/components/solar/solar-planner.tsx",
+  "src/components/sell/draft.ts",
   "src/components/site/site-header.tsx",
+  "src/components/site/mobile-nav.tsx",
+  "src/components/site/site-nav.tsx",
+  "src/components/site/section-heading.tsx",
   "src/components/site/page-header.tsx",
   "src/components/site/page-banner.tsx",
   "src/components/help/help-hero.tsx",
+  "src/components/help/contact-panel.tsx",
+  "src/components/help/contact-strip.tsx",
+  "src/components/motion/reveal-targets.ts",
+  "src/app/[locale]/(site)/participants/page.tsx",
   "src/components/site/closing-cta.tsx",
+  "src/components/site/public-effects.module.css",
+  "src/components/site/action-name.ts",
   "src/components/site/home/chain-diagram.tsx",
   "src/components/site/home/role-benefits.tsx",
   "src/components/site/home/hero.tsx",
@@ -88,12 +105,17 @@ const sharedSources = [
   "src/components/site/home/material-marquee.tsx",
   "src/components/site/home/material-marquee.module.css",
   "src/components/site/home/demo-testimonials.tsx",
+  "src/components/site/home/price-teaser.tsx",
+  "src/components/prices/price-board.tsx",
+  "src/components/prices/price-placeholder.tsx",
+  "src/components/join/role-cards.tsx",
   "src/components/site/language-switcher.tsx",
   "src/components/brand/logo.tsx",
   "src/components/brand/logo.module.css",
   "src/components/auth/phone-form.tsx",
   "src/components/auth/verify-preview.tsx",
   "messages/en.json",
+  "messages/ar.json",
   "src/components/ui/button.tsx",
   "public/images/materials-hall.webp",
 ] as const;
@@ -111,11 +133,14 @@ const browser = await chromium.launch();
 const captures = [];
 try {
   for (const [name, route, sectionSelector] of shots) {
+    let viewport = { width: 1280, height: 900 };
+    if (name.endsWith("-tablet")) {
+      viewport = { width: 1024, height: 768 };
+    } else if (name.startsWith("public-arabic") || name.endsWith("-phone")) {
+      viewport = { width: 390, height: 844 };
+    }
     const page = await browser.newPage({
-      viewport:
-        name.startsWith("public-arabic") || name.endsWith("-phone")
-          ? { width: 390, height: 844 }
-          : { width: 1280, height: 900 },
+      viewport,
       reducedMotion: "reduce",
       locale: "en-IN",
       colorScheme: name.endsWith("-dark") ? "dark" : "light",
@@ -163,6 +188,16 @@ try {
         await page
           .locator('section[aria-labelledby="contact-form-heading"]')
           .getByRole("status")
+          .waitFor();
+      }
+      if (name.startsWith("public-navigation-")) {
+        const labels = route.startsWith("/ar") ? ar : en;
+        await page
+          .getByRole("button", { name: labels.nav.openMenu, exact: true })
+          .click();
+        await page
+          .getByRole("dialog")
+          .getByRole("button", { name: labels.theme.label, exact: true })
           .waitFor();
       }
       if (sectionSelector) {

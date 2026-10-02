@@ -1,5 +1,7 @@
+import { fixedDecimalInput } from "@/lib/number-input";
+
 import { CHAIN_MARKUP } from "../../../convex/lib/catalogue";
-import { kgToGrams, type OrgKind } from "../../../convex/lib/chain";
+import type { OrgKind } from "../../../convex/lib/chain";
 import { indiaToday } from "../../../convex/lib/onboarding";
 import type { ListingView, TradeStatus, TradeView } from "./types";
 
@@ -22,23 +24,16 @@ export const TRADE_STEPS = [
 
 // --- Reading what people type ---------------------------------------------------
 
-const KG_PATTERN = /^(?:\d+(?:\.\d{0,3})?|\.\d{1,3})$/;
-const RUPEE_PATTERN = /^(?:\d+(?:\.\d{0,2})?|\.\d{1,2})$/;
-
-/** "12.5" kg → 12500 grams; null unless it's a weight above zero. */
-export function parseKg(input: string): number | null {
-  const text = input.trim();
-  if (!KG_PATTERN.test(text)) return null;
-  const grams = kgToGrams(Number(text));
-  return grams > 0 ? grams : null;
+/** Kilograms in the selected language to exact grams, above zero. */
+export function parseKg(input: string, locale = "en"): number | null {
+  const grams = fixedDecimalInput(input, 3, locale);
+  return grams !== null && grams > 0 ? grams : null;
 }
 
-/** "17.5" rupees → 1750 paise; null unless it's a price above zero. */
-export function parseRupees(input: string): number | null {
-  const text = input.trim();
-  if (!RUPEE_PATTERN.test(text)) return null;
-  const paise = Math.round(Number(text) * 100);
-  return paise > 0 ? paise : null;
+/** Rupees in the selected language to exact paise, above zero. */
+export function parseRupees(input: string, locale = "en"): number | null {
+  const paise = fixedDecimalInput(input, 2, locale);
+  return paise !== null && paise > 0 ? paise : null;
 }
 
 /** Grams as the plain number a kg field holds: 12500 → "12.5". */

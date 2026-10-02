@@ -2,7 +2,7 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, logo motion revision. Source baseline: 8975575.
+Edition: 2 October 2026, responsive navigation and 33 language revision. Source baseline: c1ed004.
 Includes the UI detail pass and wide artwork banners on the main public pages, with taller image crops on phones.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
@@ -65,7 +65,7 @@ The testimonial section is labelled **Demo testimonials**. Its role-based quotes
 2. Business escrow and payment steps are demonstrations. No real funds are held or transferred.
 3. EPR and impact records are supporting records, not issued certificates or verified carbon credits.
 
-All paths in this guide are relative to the correct deployment address. Use the address supplied by the platform owner. The local review address is http://localhost:3004. Do not assume a domain is live because it appears in source code.
+All paths in this guide are relative to the correct deployment address. Use the address supplied by the platform owner. The local review address is http://localhost:3009. Do not assume a domain is live because it appears in source code.
 
 ---
 
@@ -109,7 +109,7 @@ With SMS connected, codes last five minutes and allow five attempts. The resend 
 
 Regular sessions last up to 30 days. Sign in again after expiry. Sign out on shared devices. Your identity follows your phone number; the browser language does not change your role.
 
-The twelve languages are English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Urdu and Arabic. The header language control shows the current language in its own script, for example English or العربية. Open it to choose another language. On phones, the brand appears as its icon; the full name appears on wider screens. Arabic and Urdu use right-to-left layouts. The admin console is English-only.
+The 33 languages are English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Urdu, Arabic, Assamese, Odia, Nepali, Sinhala, Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian, Ukrainian, Turkish, Indonesian, Malay, Vietnamese, Thai, Japanese, Korean and Simplified Chinese. The language control shows the current language in its own script, for example English or العربية. On public pages and operational screens, phones and tablets keep it in the menu. Sign-in screens keep it in the header, as do wider desktop screens. Open the control to choose another language. On phones, the brand appears as its icon; the full name appears on wider screens. Arabic and Urdu use right-to-left layouts. The admin console is English-only. All translated catalogues have automated coverage checks; native-speaker review is still required before launch. Adding a language does not change the pilot region, Indian mobile-number requirement or rupee currency.
 
 ---
 
@@ -127,7 +127,7 @@ The household flow stays at /sell. Its address uses a step query parameter; ther
 6. Use Confirm and book with the SMS code. Successful verification submits the booking automatically. If already signed in, use the booking button once.
 7. Save the tracking link shown after booking.
 
-The estimate is not the final payment. The shop records the actual weight and the agreed material rate at collection. A photo estimate does not set a price and is not a certified measurement.
+The estimate is not the final payment. The shop records the actual weight and the agreed material rate at collection. A photo estimate does not set a price and is not a certified measurement. It accepts one optional photo. Keep faces, documents and number plates out of the image. The photo goes to the configured AI provider for the estimate; Luma.Green does not save it.
 
 The draft is kept in this browser tab during the flow. A closed tab or reset can remove the draft. A submitted booking is a backend record. Do not treat a draft as a confirmed booking.
 
@@ -212,7 +212,7 @@ A kabadiwala is a local scrap shop. The approved shop uses /app to manage househ
 5. Check Prices before accepting new work. A shop rate cannot be below the platform minimum.
 6. Check Stock before offering material to another business.
 
-Use the bottom navigation on a phone. Use More for the role's additional pages. On wider screens the same app can show side navigation. The available destinations follow the approved role; typing a route does not change permission.
+Use the bottom navigation on a phone or tablet. Two frequent destinations stay visible. Open More for the role's additional pages, language, appearance and sign-out. On wider desktop screens the same app shows side navigation. The available destinations follow the approved role; typing a route does not change permission.
 
 Auto-accept can accept suitable bookings without a separate manual tap. Check the radius and location before enabling it. There is no separate Taking pickups availability switch. Changing auto-accept does not cancel bookings already accepted.
 
@@ -253,7 +253,7 @@ Avoid repeated taps while a request is being submitted. An offline screen does n
 
 Luma.Green records the result. It does not make the cash or UPI transfer. A button labelled as a payment step must not be treated as bank confirmation.
 
-The backend stores money in whole paise and mass in whole grams. The screen formats those values for the selected language. Review the displayed units before entering a number.
+The backend stores money in whole paise and mass in whole grams. The screen formats those values for the selected language. Review the displayed units before entering a number. Weight and price fields accept digits used by supported scripts. Enter quantities without thousands separators. Use at most three decimal places for weighed kilograms and two for rupees. A decimal comma is accepted where the selected language uses it; an ASCII decimal point also works.
 
 The final receipt is the record of that transaction. If a correction is needed after completion, contact the owner; do not silently alter another record to hide the difference.
 
@@ -346,6 +346,8 @@ Keep documentary evidence required by the business outside the demo payment flow
 
 There is no standalone Convert batch or Record processing run screen in this version. The guide does not infer one from the recycler role or from the fact that stock has several material groups.
 
+Compliance shows a renewal warning when a consent has fewer than 90 days left. The renewal review date is 90 days before expiry; it is not a promise of an SMS reminder. Renew with the issuing board and contact support to update the certificate.
+
 Compliance totals depend on the recorded transactions. They are supporting information. Check the date range, categories and underlying receipts before using them in an external report. No automated regulatory filing is performed.
 
 ---
@@ -381,7 +383,7 @@ A Saathi is an approved worker who can take pickup, sorting or shift work offere
 2. Open /app to view the job board.
 3. Read the job's location, work, time and offered amount.
 4. Accept only work you can attend.
-5. Use the current job's action when the work is complete.
+5. Select Mark done on the current job when the work is complete, then confirm completion.
 6. Open /app/impact to inspect the earnings record shown for the role.
 
 Finish marks the job done and records that action. It does not call a payout provider. Confirm actual payment through the agreed payment method outside the platform.
@@ -579,7 +581,7 @@ Use /app/impact for the summary available to your role. Keep recorded collection
 
 ![The same synthetic impact example at phone width. The visible fixture banner identifies this as a documentation preview. Scroll to read the remaining sections.](screenshots/recycler-impact-phone.png)
 
-Use /solar to explore the rooftop-solar information and estimator. Treat estimates as planning inputs, not an installation quote or guaranteed return. Send an enquiry through the form if enabled. It enters the support workflow; no installer booking, finance approval or electricity connection is completed by that form.
+Use /solar to explore the rooftop-solar information and estimator. The input reads local digits and decimal separators, such as 3000,50 in French or ٣٠٠٠٫٥٠ in Arabic. Check the displayed estimate after editing; malformed numbers show a field error. Treat estimates as planning inputs, not an installation quote or guaranteed return. Send an enquiry through the form if enabled. It enters the support workflow; no installer booking, finance approval or electricity connection is completed by that form.
 
 The platform does not replace business compliance advice, physical inspection, product testing or a supplier's official documents.
 
@@ -731,7 +733,7 @@ Check the material, unit, quantity and price before you confirm an action. Keep 
 
 ![Current public price page in the disconnected build. Live values require a configured backend.](screenshots/public-prices.png)
 
-Open /prices before comparing a shop offer. When data is available, choose a material to inspect its price detail and history. Check the city, unit and sample-data notice. This board is not independent market-price advice.
+Open /prices before comparing a shop offer. Until real data is available, the price board shows placeholder rows and a status message. It does not invent prices or chart lines. Placeholders move only while a request is loading; reduced-motion settings stop that motion. When data is available, choose a material to inspect its price detail and history. Check the city, unit and sample-data notice. This board is not independent market-price advice.
 
 ![Current rooftop-solar page header and banner. Scroll to reach the estimator. Estimates require a real site survey.](screenshots/public-solar.png)
 
@@ -741,7 +743,7 @@ Open /prices before comparing a shop offer. When data is available, choose a mat
 
 ![Current Arabic homepage at phone width. This is an actual browser capture, not a translated image.](screenshots/public-arabic.png)
 
-Use the header language control to change language. The same workflows remain available; text direction and number formatting follow the locale. The admin console stays English-only.
+Use the language control to change language. On public pages and operational screens, phones and tablets keep it in the menu. Sign-in screens keep it in the header. The same workflows remain available; text direction and number formatting follow the locale. The admin console stays English-only.
 
 ![Current help-contact page header and banner. Scroll to reach the message form. Submission needs a connected backend; no message was sent to create this screenshot.](screenshots/public-contact.png)
 
@@ -799,19 +801,26 @@ keep records and controls closer together. Buttons, form fields and panels use
 consistent shapes across roles. Read the text label before selecting an icon.
 
 Geist supplies the large display headings. Noto supplies body text and the script
-fallbacks for all twelve languages. The language control changes text, direction
+fallbacks for all 33 languages. The language control changes text, direction
 and number formatting; it does not change access or stored records.
 
-Use Appearance in the header or workspace controls to select Light, Dark or
-System. System follows the device setting. Your selection stays in this browser
+Use Appearance in the desktop header, phone or tablet menu, or workspace controls
+to select Light, Dark or System. System follows the device setting. Your selection stays in this browser
 when browser storage is available. It does not change another person's account
 or device. Admin and public pages use the same local preference.
 
 ![Current homepage in dark mode. Actual local browser capture, with no backend connection.](screenshots/public-home-dark.png)
 
-The desktop header shows the main navigation links. On a phone, open the menu
-for links and sign-in. The language and appearance controls remain in the header.
-Use the page's Sell scrap, Join and help links to open a workflow.
+The wide desktop header keeps its links and controls on one row. On phones and
+tablets, the header shows the logo and menu control. Open the menu for navigation,
+appearance, language, sign-in and Sell scrap. The menu scrolls on short screens.
+Press Escape to close it and return keyboard focus to the menu control.
+
+![Current phone menu. Navigation, appearance, language and actions are grouped inside the menu.](screenshots/public-navigation-phone.png)
+
+![Current tablet menu. The header remains compact and the menu uses the side of the screen.](screenshots/public-navigation-tablet.png)
+
+![Current Arabic phone menu. Labels and layout follow right-to-left direction.](screenshots/public-navigation-arabic-phone.png)
 
 The logo mark turns once when you hover over it or use the keyboard to focus its
 link. The name stays still. Reduced motion in your device settings disables the turn.

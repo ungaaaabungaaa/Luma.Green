@@ -150,7 +150,7 @@ describe("SaathiHome", () => {
     expect(today).toHaveTextContent("Today, Morning");
     expect(
       within(today).getByRole("button", { name: /Mark done/ }),
-    ).toBeInTheDocument();
+    ).toHaveTextContent(/^Mark done$/u);
 
     const later = screen.getByRole("article", { name: /^Factory shift/ });
     expect(within(later).queryByRole("button")).not.toBeInTheDocument();
@@ -160,6 +160,8 @@ describe("SaathiHome", () => {
       name: /Take this job/,
     });
     expect(takeButtons).toHaveLength(2);
+    for (const button of takeButtons)
+      expect(button).toHaveTextContent(/^Accept$/u);
     const nearby = screen.getByRole("article", {
       name: /Home pickups, 6 houses/,
     });

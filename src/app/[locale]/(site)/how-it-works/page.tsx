@@ -43,18 +43,23 @@ export default async function HowItWorksPage() {
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} scene="recycler" />
+      <PageHeader
+        title={t("title")}
+        lead={t("lead")}
+        scene="recycler"
+        atmosphere
+      />
 
-      <Container className="py-16 lg:py-24">
+      <Container className="py-8 sm:py-10 lg:py-16">
         <ol className="divide-y border-y">
           {loopSteps.map(({ key, icon: Icon }, index) => (
             <li
               key={key}
               data-reveal
               aria-labelledby={`step-${key}`}
-              className="grid gap-6 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:items-center md:gap-12 lg:py-10"
+              className="grid gap-4 py-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:items-center md:gap-8 lg:py-10"
             >
-              <div className="min-w-0 space-y-5">
+              <div className="min-w-0 space-y-3 lg:space-y-5">
                 <span className="inline-flex size-8 items-center text-primary">
                   <Icon aria-hidden className="size-6" />
                 </span>
