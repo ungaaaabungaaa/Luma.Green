@@ -130,15 +130,22 @@ PDF page was inspected. Native page breaks keep the mobile demonstration and
 verification-queue explanation with their related content.
 
 One accessibility difference remains explicit: the Google Docs batch-update API
-does not expose a setter for embedded image title/description alt text. The 72
-image descriptions remain as visible editable captions. Do not claim that native
-image-alt semantics match the Word source. See the [current request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
+does not expose a setter for embedded image title/description alt text. The native
+editor restored one description, and connector readback verified it. The remaining
+71 images retain visible editable captions but lack native descriptions. Native
+editor work stopped when the user changed browser focus. Readback confirmed that
+body text, tables, dates, styles, image objects and sharing remained unchanged.
+Do not claim that native image-alt semantics match the Word source. See the
+[current request schema](https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request).
 
 For each later revision, update this same native document through the dedicated
 Google Docs batch-update action. First compare its current revision with the last
 verified record; preserve or reconcile any later human edits. Use revision guards,
 retain the tab and table structures, and apply the reviewed source changes in
-bounded batches. Use the committed screenshot bytes or immutable source URLs.
+bounded batches. Preserve unchanged image objects and their native descriptions.
+For changed images, use supported replacement that preserves the reviewed size,
+aspect ratio and description; verify these fields after writing. Use the committed
+screenshot bytes or immutable source URLs.
 Verify all body and table text, native dates, headings and image placements after
 writing. Export the native PDF, inspect every page, repair layout issues, then
 record the exact source hash, native revision and verification in `cloud.json`.

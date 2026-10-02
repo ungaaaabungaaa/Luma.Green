@@ -5,9 +5,9 @@
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
   "pending_revision": null,
-  "result": "The reviewed security and industry API guide from main commit 2ba8246 is synchronized to the existing native Google Doc. Content, tables, images, dates and all 78 exported PDF pages were verified. The document ID, folder and sharing settings are unchanged. Native image alt-text remains an API limitation; all descriptions are retained as editable captions.",
+  "result": "The reviewed security and industry API guide from main commit 2ba8246 is synchronized to the existing native Google Doc. Content, tables, images, dates and all 78 exported PDF pages were verified. The document ID, folder and sharing settings are unchanged. One native image description was restored and verified; the remaining 71 images retain their visible editable captions but lack native alt-text descriptions.",
   "connection_gate": null,
-  "next_action": "Repeat the in-place, revision-guarded native update after the next reviewed guide revision lands on main. Preserve the document ID and sharing settings. Image alt-text attributes require a supported native editor or API capability; do not treat captions as identical semantic accessibility.",
+  "next_action": "Repeat the in-place, revision-guarded native update after the next reviewed guide revision lands on main. Preserve the document ID, sharing settings and unchanged image objects. Preserve native descriptions during supported image replacements. Complete the remaining 71 native descriptions only through a reliable supported editor workflow; do not interrupt active user browser work or treat captions as identical semantic accessibility.",
   "last_verified_revision": {
     "source_commit": "2ba8246640fe5773e5dd3b7863c7726ee29d6fb6",
     "source_docx_sha256": "69bb80cf805fcdc64e9675b2645186e79d4181250d49525041ad793eaa94bcc7",
@@ -33,8 +33,8 @@
       "local_visual_review_page_count": 76,
       "native_pdf_visual_review_page_count": 78,
       "native_pdf_visual_review": "passed; every page inspected, two orphan-note layouts repaired and affected pages reinspected",
-      "native_revision_id": "ANLCKQk2HBz5Ah_OZ_y2LYyv5m3rCHBltdoD7uEW5_sZh20NOONlasTPfKtop8XbW7WrYcQF8-5Ncka8LsmH94YtNIAyRupFuT_0Vewk9W8",
-      "native_readback_sha256": "8ad9b0fc7ebbcbf9f6c1dd3e8bc2b5d4ec70d2ba21d04da4a419f6e7026c592b",
+      "native_revision_id": "ANLCKQllf2AgxCtRIQhBFcZnK9SFQ_0ijbetSXS0lvN14FQKrp40Rfxl0xDGWzo904QcWs9YJVyerh9KZN1sEVYXdJTCnZWc_uKCoNOYNAM",
+      "native_readback_sha256": "2c50e0d811665a144ade5e99a0af978b72d20f7f7cd0edb23317f290b1cda048",
       "canonical_body_sha256": "4ebe0a6a0347f661c032371cefba7686e6d263728b81300e3b403ed6290a3d31",
       "native_pdf_sha256": "90bc3bbf22a8e6bdc4db699417262ea9bc183abc6301634b111984f1843b3ff1",
       "sharing_changed": false,
@@ -42,9 +42,25 @@
       "folder_changed": false,
       "fidelity_limits": [
         "Google Docs uses the existing Verdana typography, so pagination differs from the reviewed Word document.",
-        "The current Google Docs batchUpdate API can insert images but cannot set embedded image title/description alt-text attributes. All 72 image descriptions are present as visible editable captions. Native image-alt semantics are not identical to the DOCX."
+        "The current Google Docs batchUpdate API cannot set embedded image title/description alt-text attributes. Native UI repair restored and verified 1 of 72 descriptions. The remaining 71 images retain visible editable captions but lack native descriptions; native image-alt semantics are not identical to the DOCX."
       ],
-      "image_alt_text_api_reference": "https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request"
+      "image_alt_text_api_reference": "https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request",
+      "native_pdf_visual_review_revision_id": "ANLCKQk2HBz5Ah_OZ_y2LYyv5m3rCHBltdoD7uEW5_sZh20NOONlasTPfKtop8XbW7WrYcQF8-5Ncka8LsmH94YtNIAyRupFuT_0Vewk9W8",
+      "native_image_description_count": 1,
+      "images_without_native_description": 71,
+      "image_alt_text_verification": {
+        "recorded_at": "2026-10-02T17:28:25.333980+00:00",
+        "method": "Authenticated native Google Docs Image options > Alt text editor; native connector readback compared all 72 image objects with the prior verified revision.",
+        "verified_descriptions": [
+          {
+            "inline_object_id": "kix.2kb3grpvf7ta",
+            "description": "The current public homepage. Actual local browser capture; backend not connected."
+          }
+        ],
+        "remaining_limit": "The current batch-update API has no image description setter. Native UI work stopped when the user changed browser focus; the remaining 71 images have visible captions but no native descriptions.",
+        "preservation_check": "All body paragraphs, tables, dates, styles, image object IDs, image sizes, image source URLs, tab, footer, folder and permissions are unchanged. Only the first image description changed; temporary image download URLs were excluded from the comparison.",
+        "sharing_changed": false
+      }
     }
   },
   "local_reviewed_revision": {
