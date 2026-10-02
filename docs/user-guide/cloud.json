@@ -4,7 +4,7 @@
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": "2 October 2026 public banner revision",
+  "pending_revision": "2 October 2026 logo motion revision",
   "result": "The existing native Google Doc remains at its last verified revision. The current local guide revision has not been published to it. No cloud content or sharing settings were changed.",
   "connection_gate": "The connected import_document action creates a new document. update_file does not support replacing a native Google Doc with raw DOCX bytes. Neither provides a verified in-place DOCX import to the existing document ID.",
   "next_action": "Update the existing native document through a supported in-place document workflow using the reviewed local revision, then verify its contents. Preserve this document ID, URL and sharing settings; do not create a replacement document.",
@@ -27,9 +27,9 @@
     }
   },
   "local_reviewed_revision": {
-    "source_docx_sha256": "814ae12d50b888c7d473c2f2f6fde17599152140a64a12c2b407cc4ec0d20bb2",
+    "source_docx_sha256": "d806eec9ab02ebe0022495e698b7c09e077eebe7ad115e3c2bb7b055de171b11",
     "visual_review_pages": 66,
     "image_placements": 62,
-    "recorded_at": "2026-10-02T00:12:47.253191+00:00"
+    "recorded_at": "2026-10-02T00:21:12.972987+00:00"
   }
 }

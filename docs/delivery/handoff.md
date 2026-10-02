@@ -1,5 +1,21 @@
 # Agent handoff — 2 October 2026
 
+**Logo motion follow-up:** after `8975575`, the founder requested an eased logo
+spin on hover. The shared SVG mark makes one 900ms turn on fine-pointer hover
+and home-link keyboard focus. The wordmark stays still. Reduced motion disables
+the effect, including a turn already in progress. This is CSS only; no client
+boundary or dependency was added. The brand playbook records this approved
+exception to the previous rotation rule.
+
+Production build, scoped lint, three logo unit tests and all eight motion browser
+checks passed. The browser tests cover hover, keyboard focus, the still wordmark,
+return to rest and preference changes. Refreshed public captures match the previous
+PNG files exactly. The guide remains 66 pages: 64 rendered pages match the reviewed
+banner edition pixel for pixel; the changed cover and appearance page passed a
+new visual review. The local Word guide and build record are current. Its existing
+Google Docs copy remains pending an in-place update under the recorded connection
+gate. The local preview on port 3009 serves this revision.
+
 **Banner follow-up:** on `feat/ui-detail-pass`, after `ff7bb64`, the founder
 requested banner images on How it works and every main public page. Public
 headers now require a scene and display a full-width image below the title.

@@ -1,16 +1,16 @@
 {
   "format": "docx",
-  "edition": "2 October 2026, public banner revision",
-  "application_checkpoint": "ff7bb64",
+  "edition": "2 October 2026, logo motion revision",
+  "application_checkpoint": "8975575",
   "docx": "output/docx/luma-green-user-guide.docx",
-  "docx_sha256": "814ae12d50b888c7d473c2f2f6fde17599152140a64a12c2b407cc4ec0d20bb2",
+  "docx_sha256": "d806eec9ab02ebe0022495e698b7c09e077eebe7ad115e3c2bb7b055de171b11",
   "visual_review": {
     "status": "passed",
     "pages": 66,
-    "docx_sha256": "814ae12d50b888c7d473c2f2f6fde17599152140a64a12c2b407cc4ec0d20bb2"
+    "docx_sha256": "d806eec9ab02ebe0022495e698b7c09e077eebe7ad115e3c2bb7b055de171b11"
   },
   "inputs": {
-    "docs/user-guide/guide.md": "5caf5163a386b9a79f94dc1c59c0b8fe5d995301f66a37cc4187b7c7b7ffc276",
+    "docs/user-guide/guide.md": "b650aa173c61ddc937f84ed0c618b690431bf940796a829ad7d3d775a6e6b57a",
     "scripts/build-user-guide.py": "f90efab617d12c255a51a45f72710a28b5a9352573ff666f30ccfe4eb09e30a6",
     "scripts/user-guide-requirements.txt": "9c946ddb0d5bdd4dab99c479ec36e13fad18ea669ddf6743f4725930346307d0",
     "docs/user-guide/screenshots/public-home.png": "2fd162fb5237ebce9aeea5f249b41d853536d6c152216e4dcd90b8bbb6133b0f",
@@ -76,7 +76,7 @@
     "docs/user-guide/screenshots/admin-overview-dark.png": "0bc3f7e8d0e37eff2be6564aadcfde55fd2dd9d6761c9635eba1b841324b7a04",
     "docs/user-guide/screenshots/kabadiwala-overview-dark.png": "ba8956dae0b8c9624d249635b7fcefc35e7d97ef4d9a21c1c0a39106937668fc",
     "docs/user-guide/analytics-captures.json": "7cf5d27735b8eb7cb9fcb1857e616ce898c3301df37851d5b4f4743c76b66685",
-    "docs/user-guide/public-captures.json": "0ac9a3fd5e0b7102601d154f97d6cc3b7d76f02f5b0e55b00825d9ac79b45c04",
+    "docs/user-guide/public-captures.json": "5f58ab47dcfb03840d46035f531620eaf3cc79c25726b9fcc583a6ce66b765c0",
     "docs/user-guide/screenshots/fixture-captures.json": "6442b07c284c746ec8bf499dbc5cf280d4a0e4bd0e8483edf955b2546e02f537",
     "docs/user-guide/showcase-captures.json": "19724ce3d5fb66a7b0f0cb78c3f5c766f2b734b2a940dfbb130025863fb85f76"
   }

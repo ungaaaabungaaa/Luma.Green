@@ -134,6 +134,11 @@ shows a static list. The founder explicitly approved **demo testimonials** in
 this conversation. Label each section as illustrative content, not customer
 reviews; use role names without fictional customer identities or partner logos.
 
+The founder also approved one 900ms ease-out turn of the shared logo mark on
+fine-pointer hover and keyboard focus of its link. Keep the wordmark still and
+the resting mark upright. Reduced motion disables and cancels the effect.
+Use the shared CSS module; no JavaScript animation or extra focus target is needed.
+
 Phone sign-in remains navigable through the code-entry screen with no SMS
 configuration. This is a labelled interface preview. It sends no code, accepts
 no successful verification, creates no session and preserves private-route guards.

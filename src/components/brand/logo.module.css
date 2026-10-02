@@ -1,0 +1,27 @@
+.mark {
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :global(a:focus-visible) .mark {
+    animation: spin 900ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .logo:hover .mark,
+  .mark:hover,
+  :global(a:hover) .mark {
+    animation: spin 900ms ease-out;
+  }
+}

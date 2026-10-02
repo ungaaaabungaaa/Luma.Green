@@ -1,6 +1,8 @@
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+import styles from "./logo.module.css";
+
 /**
  * The Luma.Green mark: four leaf blades turning around a shared centre —
  * material in motion, always coming back around.
@@ -22,7 +24,7 @@ export function LogoMark({
       viewBox="0 0 512 512"
       role="img"
       aria-label={site.name}
-      className={cn("size-10", className)}
+      className={cn("size-10", styles.mark, className)}
       {...props}
     >
       <defs>
@@ -140,7 +142,9 @@ export function Logo({
   idPrefix?: string;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span
+      className={cn("inline-flex items-center gap-2.5", styles.logo, className)}
+    >
       <LogoMark className="size-8 shrink-0" idPrefix={idPrefix} />
       <span
         aria-hidden="true"

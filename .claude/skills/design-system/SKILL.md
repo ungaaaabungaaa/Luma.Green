@@ -126,5 +126,7 @@ configured with RTL support; the rest is on you. Verify at `/ar`.
 ## The mark
 
 `<LogoMark />` and `<Logo />` in `src/components/brand/logo.tsx`; static file at
-`public/logo.svg`. Never restretch, recolour or rotate it — size it and leave it
-alone. Minimum size 24px; keep clear space equal to one leaf-width around it.
+`public/logo.svg`. Never restretch or recolour it. The founder approved one
+900ms eased turn of the mark on pointer hover or link keyboard focus. Keep the
+wordmark still and disable the turn for reduced motion. Do not rotate the
+resting mark. Minimum size 24px; keep clear space equal to one leaf-width around it.

@@ -90,6 +90,7 @@ const sharedSources = [
   "src/components/site/home/demo-testimonials.tsx",
   "src/components/site/language-switcher.tsx",
   "src/components/brand/logo.tsx",
+  "src/components/brand/logo.module.css",
   "src/components/auth/phone-form.tsx",
   "src/components/auth/verify-preview.tsx",
   "messages/en.json",

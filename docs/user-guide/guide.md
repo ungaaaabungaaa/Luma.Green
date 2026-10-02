@@ -2,7 +2,7 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 2 October 2026, public banner revision. Source baseline: ff7bb64.
+Edition: 2 October 2026, logo motion revision. Source baseline: 8975575.
 Includes the UI detail pass and wide artwork banners on the main public pages, with taller image crops on phones.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 
@@ -812,6 +812,9 @@ or device. Admin and public pages use the same local preference.
 The desktop header shows the main navigation links. On a phone, open the menu
 for links and sign-in. The language and appearance controls remain in the header.
 Use the page's Sell scrap, Join and help links to open a workflow.
+
+The logo mark turns once when you hover over it or use the keyboard to focus its
+link. The name stays still. Reduced motion in your device settings disables the turn.
 
 ![Current Participants page in dark mode. Role descriptions and work scenes replace device mockups.](screenshots/public-participants-dark.png)
 

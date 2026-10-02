@@ -1,4 +1,98 @@
-import { expect, test } from "@playwright/test";
+import { expect, type Locator, test } from "@playwright/test";
+
+async function pauseLogoAtMidSpin(mark: Locator) {
+  await expect
+    .poll(async () =>
+      mark.evaluate((element) => element.getAnimations().length),
+    )
+    .toBe(1);
+  const spin = await mark.evaluate((element) => {
+    const animation = element.getAnimations().at(0);
+    const timing = animation?.effect?.getTiming();
+    if (!animation || !timing || typeof timing.duration !== "number")
+      return null;
+    animation.pause();
+    animation.currentTime = timing.duration / 2;
+    return {
+      iterations: timing.iterations,
+      rotated: !new DOMMatrixReadOnly(getComputedStyle(element).transform)
+        .isIdentity,
+    };
+  });
+  expect(spin).toEqual({ iterations: 1, rotated: true });
+}
+
+async function finishLogoSpin(mark: Locator) {
+  await mark.evaluate((element) => {
+    for (const animation of element.getAnimations()) animation.finish();
+  });
+  await expect(mark).toHaveCSS("transform", "none");
+}
+
+test("the logo mark spins once on hover and keyboard focus while its name stays still", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/en");
+  const header = page.getByRole("banner");
+  const mark = header.getByRole("img", { name: "Luma.Green", exact: true });
+  const wordmark = header.getByText("Luma.Green", { exact: true });
+  const homeLink = header.getByRole("link", { name: "Home", exact: true });
+  await expect(mark).toHaveCSS("transform", "none");
+  await mark.hover();
+  await pauseLogoAtMidSpin(mark);
+  await expect(wordmark).toHaveCSS("transform", "none");
+  await finishLogoSpin(mark);
+
+  await page.mouse.move(1400, 850);
+  await page.keyboard.press("Tab");
+  await expect(
+    page.getByRole("link", { name: "Skip to content" }),
+  ).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(homeLink).toBeFocused();
+  expect(
+    await homeLink.evaluate((element) => element.matches(":focus-visible")),
+  ).toBe(true);
+  await pauseLogoAtMidSpin(mark);
+  await expect(wordmark).toHaveCSS("transform", "none");
+  await finishLogoSpin(mark);
+});
+
+test("reduced motion prevents logo spins and cancels one already in progress", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/en");
+  const header = page.getByRole("banner");
+  const mark = header.getByRole("img", { name: "Luma.Green", exact: true });
+  const homeLink = header.getByRole("link", { name: "Home", exact: true });
+  await mark.hover();
+  await expect(mark).toHaveCSS("animation-name", "none");
+  await expect(mark).toHaveCSS("transform", "none");
+  expect(await mark.evaluate((element) => element.getAnimations().length)).toBe(
+    0,
+  );
+
+  await page.mouse.move(1400, 850);
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await mark.hover();
+  await pauseLogoAtMidSpin(mark);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(mark).toHaveCSS("transform", "none");
+  expect(await mark.evaluate((element) => element.getAnimations().length)).toBe(
+    0,
+  );
+
+  await page.mouse.move(1400, 850);
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Tab");
+  await expect(homeLink).toBeFocused();
+  await expect(mark).toHaveCSS("animation-name", "none");
+  await expect(mark).toHaveCSS("transform", "none");
+});
 
 test.describe("home content without JavaScript", () => {
   test.use({ javaScriptEnabled: false });
