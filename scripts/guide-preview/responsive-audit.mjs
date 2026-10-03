@@ -100,7 +100,10 @@ try {
         waitUntil: "domcontentloaded",
       });
       await page.getByRole("note", { name: "Screenshot provenance" }).waitFor();
-      await page.locator("h1").waitFor();
+      await page
+        .getByRole("heading", { level: screen.headingLevel ?? 1 })
+        .first()
+        .waitFor();
       await page.evaluate(async () => {
         await document.fonts.ready;
         await Promise.all([...document.images].map((image) => image.decode()));

@@ -90,7 +90,7 @@ describe("extended homepage", () => {
       expect(screen.queryByText(item.names.en)).not.toBeInTheDocument();
     }
     expect(
-      screen.getByRole("link", { name: english.sell.basket.next }),
+      screen.getByRole("link", { name: english.home.hero.sell }),
     ).toHaveAttribute("href", "/sell");
   });
 
@@ -200,7 +200,7 @@ describe("extended homepage", () => {
     expect(screen.getByText("صحف")).toBeInTheDocument();
     expect(screen.queryByText("Newspaper")).not.toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: arabic.sell.basket.next }),
+      screen.getByRole("link", { name: arabic.home.hero.sell }),
     ).toHaveAttribute("href", "/sell");
   });
 });

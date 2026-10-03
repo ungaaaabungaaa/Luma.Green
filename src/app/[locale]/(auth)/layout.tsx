@@ -38,9 +38,9 @@ export default async function AuthLayout({
           <LanguageSwitcher />
         </div>
       </header>
-      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-8 px-5 py-6 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:py-12">
-        <aside className="relative hidden flex-col justify-between border-e border-border pe-12 text-foreground lg:flex">
-          <p className="max-w-md font-display text-5xl leading-tight font-semibold tracking-tight text-balance">
+      <div className="mx-auto grid w-full max-w-7xl flex-1 gap-8 px-5 py-6 sm:px-8 lg:grid-cols-[1fr_0.85fr] lg:gap-20 lg:py-14">
+        <aside className="relative hidden flex-col justify-center border-e border-border pe-12 text-foreground lg:flex">
+          <p className="max-w-md font-display text-5xl leading-[1.1] font-semibold tracking-tight text-balance">
             {brand("tagline")}
           </p>
           <figure className="lg:mt-10">
@@ -49,7 +49,7 @@ export default async function AuthLayout({
                 src={collectionPartners}
                 alt=""
                 sizes="(min-width: 1024px) 520px, 92vw"
-                className="aspect-4/3 w-full object-cover"
+                className="aspect-[5/4] w-full object-cover"
               />
             </div>
           </figure>

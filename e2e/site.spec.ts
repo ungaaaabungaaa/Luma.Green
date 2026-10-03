@@ -26,8 +26,8 @@ const pages = [
   {
     path: "/prices",
     link: "Prices",
-    heading: "Today's scrap prices",
-    title: "Scrap prices in Bengaluru today · Luma.Green",
+    heading: "Material prices",
+    title: "Material prices in Bengaluru · Luma.Green",
   },
   { path: "/help", link: "Help", heading: /\S/, title: /· Luma\.Green$/ },
   {
@@ -50,20 +50,30 @@ test("home tells the chain's story, with a way in for everyone", async ({
   const main = page.getByRole("main");
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "India's scrap chain, on one platform",
+    "Give your materials a new beginning.",
   );
   await expect(
-    main.getByRole("link", { name: "Sell your scrap" }).first(),
+    main.getByRole("link", { name: "Book a collection" }).first(),
   ).toHaveAttribute("href", "/sell");
   await expect(
     main.getByRole("link", { name: "Join as a business" }).first(),
   ).toHaveAttribute("href", "/join");
   await expect(
-    main.getByRole("link", { name: "See today's prices" }),
+    main.getByRole("link", { name: "View material prices" }),
   ).toHaveAttribute("href", "/prices");
   await expect(page).toHaveTitle("Luma.Green — Cleaner Tomorrow in Motion");
 
-  const chain = main.getByRole("region", { name: "How scrap moves" });
+  const materials = main.getByRole("region", {
+    name: "What would you like to recycle?",
+  });
+  const materialLinks = materials.getByRole("list").first().getByRole("link");
+  await expect(materialLinks).toHaveCount(6);
+  const links = await materialLinks.all();
+  for (const link of links) {
+    await expect(link).toHaveAttribute("href", "/sell");
+  }
+
+  const chain = main.getByRole("region", { name: "How materials move" });
   await expect(chain.getByRole("heading", { level: 3 })).toHaveText([
     "Households",
     "Kabadiwalas",
@@ -106,11 +116,11 @@ for (const item of pages) {
   });
 }
 
-test("the header's main button is for selling scrap", async ({ page }) => {
+test("the header's main button starts a collection", async ({ page }) => {
   await page.goto("/prices");
 
   await expect(
-    page.getByRole("banner").getByRole("link", { name: "Sell scrap" }),
+    page.getByRole("banner").getByRole("link", { name: "Book a collection" }),
   ).toHaveAttribute("href", "/sell");
 });
 
@@ -139,7 +149,7 @@ test("the price board explains itself when prices can't load", async ({
     page.getByText("Prices aren't available right now"),
   ).toBeVisible();
   await expect(
-    page.getByRole("main").getByRole("link", { name: "Sell your scrap" }),
+    page.getByRole("main").getByRole("link", { name: "Book a collection" }),
   ).toHaveAttribute("href", "/sell");
 });
 
@@ -258,10 +268,9 @@ test("mobile menu opens, navigates and closes", async ({ page }) => {
   await page.getByRole("button", { name: "Open menu" }).click();
   const menu = page.getByRole("dialog");
   await expect(menu).toBeVisible();
-  await expect(menu.getByRole("link", { name: "Sell scrap" })).toHaveAttribute(
-    "href",
-    "/sell",
-  );
+  await expect(
+    menu.getByRole("link", { name: "Book a collection" }),
+  ).toHaveAttribute("href", "/sell");
 
   await menu.getByRole("link", { name: "Prices" }).click();
 

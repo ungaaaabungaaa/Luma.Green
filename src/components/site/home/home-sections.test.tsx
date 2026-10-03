@@ -48,16 +48,16 @@ describe("home page", () => {
     await renderSection(HomeHero());
 
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
-      "India's scrap chain, on one platform",
+      "Give your materials a new beginning.",
     );
     expect(
-      screen.getByRole("link", { name: "Sell scrap: Sell your scrap" }),
+      screen.getByRole("link", { name: "Book a collection" }),
     ).toHaveAttribute("href", "/sell");
     expect(
-      screen.getByRole("link", { name: "Join: Join as a business" }),
+      screen.getByRole("link", { name: "For businesses" }),
     ).toHaveAttribute("href", "/join");
     expect(
-      screen.getByRole("link", { name: "See today's prices" }),
+      screen.getByRole("link", { name: "View material prices" }),
     ).toHaveAttribute("href", "/prices");
     // Without Convex the price card still stands, and says why it's empty.
     expect(
@@ -68,7 +68,7 @@ describe("home page", () => {
   it("draws the chain in the order scrap moves, numbered", async () => {
     await renderSection(ChainDiagram());
 
-    const chain = screen.getByRole("region", { name: "How scrap moves" });
+    const chain = screen.getByRole("region", { name: "How materials move" });
     const steps = within(chain).getAllByRole("listitem");
     expect(
       steps.map((step) => within(step).getByRole("heading").textContent),
@@ -128,7 +128,7 @@ describe("home page", () => {
     await renderSection(ClosingCta());
 
     expect(
-      screen.getByRole("link", { name: "Sell scrap: Sell your scrap" }),
+      screen.getByRole("link", { name: "Book a collection" }),
     ).toHaveAttribute("href", "/sell");
     expect(
       screen.getByRole("link", { name: "Join: Join as a business" }),

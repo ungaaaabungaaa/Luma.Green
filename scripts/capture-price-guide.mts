@@ -108,6 +108,7 @@ try {
         await document.fonts.ready;
       });
       let name = "public-prices-demo";
+      let historyPoints: number | null = null;
       if (theme === "light") {
         await notice.evaluate((node) => {
           window.scrollTo(
@@ -120,12 +121,22 @@ try {
         await rows.first().click();
         const slider = page.getByRole("dialog").getByRole("slider");
         await slider.waitFor();
-        if ((await slider.getAttribute("aria-valuemax")) !== "29") {
-          throw new Error("Expected the full 30-day demo history.");
+        const lastPoint = Number(await slider.getAttribute("aria-valuemax"));
+        historyPoints = lastPoint + 1;
+        if (
+          !Number.isSafeInteger(lastPoint) ||
+          lastPoint < 1 ||
+          lastPoint > 29
+        ) {
+          throw new Error(
+            "Expected available daily samples within the 30-day window.",
+          );
         }
         await slider.focus();
         await slider.press("ArrowLeft");
-        if ((await slider.getAttribute("aria-valuenow")) !== "28") {
+        if (
+          (await slider.getAttribute("aria-valuenow")) !== String(lastPoint - 1)
+        ) {
           throw new Error("The price chart must respond to the keyboard.");
         }
         await slider.press("ArrowRight");
@@ -136,7 +147,8 @@ try {
       if (theme === "dark") {
         await page.getByRole("dialog").locator("summary").click();
         if (
-          (await page.getByRole("dialog").locator("tbody tr").count()) !== 30
+          (await page.getByRole("dialog").locator("tbody tr").count()) !==
+          historyPoints
         ) {
           throw new Error(
             "All daily values must be available in the data table.",
@@ -170,6 +182,7 @@ try {
         authenticationTested: false,
         mutationsPerformed: false,
         rows: 26,
+        historyPoints,
         browserErrors,
         blockedRequests,
         sha256: createHash("sha256")

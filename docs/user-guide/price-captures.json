@@ -8,14 +8,14 @@
       "width": 1280,
       "height": 900
     },
-    "revision": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
+    "revision": "f82df3c341bcfa1f976af67919162fef1f88e191",
     "sourceHashes": {
-      "scripts/capture-price-guide.mts": "c07f10d241a3edc68b79ec350691b319b654e2c6b8240417142ed2455c17ef94",
+      "scripts/capture-price-guide.mts": "ee0bace09af370b9a6ceb814f7857da0013e56319b47b0259aaac64acf28c9b6",
       "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
       "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
       "src/app/[locale]/(site)/prices/page.tsx": "f525ba637e7eb973236504f455179278e99636c4b9285b773135986ca148188e",
-      "src/components/site/page-header.tsx": "0344df604e89a35eccc053eba201d3c246e6ea73df8380623be9df7c64b2503d",
-      "src/components/site/page-banner.tsx": "ff22195e5abb297ce5fff1b84cafae09d211b20bd9959e132de7d8ce83da9620",
+      "src/components/site/page-header.tsx": "611e100176a354cbe4843d7e0f362fbb77d57ab7eed781310e53a74527a88c3c",
+      "src/components/site/page-banner.tsx": "5c9bbdbfa88b8336e204c8aad939d2639c2e8a221e1692826b23940916b2ce6e",
       "src/components/showcase/role-story-image.tsx": "241cd78e6518cd8e1e6ec1b7bd02c15a0c8c977ef13bcbed11d3e4566d9a0504",
       "src/components/prices/price-guide.tsx": "5c8c14f3f52de8d24b8477dc4efae65dd9d55843aacf75096dd756b3596e6341",
       "public/images/showcase/fair-weighing.webp": "49bb112ad16128bb4d73cf2926e9db9f2638b1690ddd2e556cfac7a5f291abd7",
@@ -28,10 +28,10 @@
       "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
       "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
       "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
-      "src/components/app/page-parts.tsx": "d070dd172ce301c89295f1ac8b1fa5ae0f14041f7bc1bb55ed4c65410b978fa2",
-      "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f"
+      "src/components/app/page-parts.tsx": "a025b1e0c7afce7da3d3e20988c6d801dcff3be5e94ed553ceba24944cca563b",
+      "messages/en.json": "ffede6185ab4b962f50b010b7438b56b966e53488207ea4dea758dac5cc7661c"
     },
-    "capturedAt": "2026-10-02T17:06:01.280Z",
+    "capturedAt": "2026-10-02T23:20:38.968Z",
     "kind": "current-local-connected-demo",
     "backendDeployment": "glorious-rooster-470",
     "sampleData": true,
@@ -39,9 +39,10 @@
     "authenticationTested": false,
     "mutationsPerformed": false,
     "rows": 26,
+    "historyPoints": null,
     "browserErrors": [],
     "blockedRequests": [],
-    "sha256": "6ce3e20b5d33e1214f05b9f5aabe4d7d50d8120e6a7350f4dde81647655a1d16"
+    "sha256": "7ed167d9ab8ae3ae44544e3fe82bb0c0eb41679b4753a6dcf293b194401b9716"
   },
   {
     "name": "public-price-history-demo-dark",
@@ -52,14 +53,14 @@
       "width": 1280,
       "height": 900
     },
-    "revision": "a3c890e0a13ece0efb3d5e0da0d36df85c2f22a1",
+    "revision": "f82df3c341bcfa1f976af67919162fef1f88e191",
     "sourceHashes": {
-      "scripts/capture-price-guide.mts": "c07f10d241a3edc68b79ec350691b319b654e2c6b8240417142ed2455c17ef94",
+      "scripts/capture-price-guide.mts": "ee0bace09af370b9a6ceb814f7857da0013e56319b47b0259aaac64acf28c9b6",
       "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
       "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
       "src/app/[locale]/(site)/prices/page.tsx": "f525ba637e7eb973236504f455179278e99636c4b9285b773135986ca148188e",
-      "src/components/site/page-header.tsx": "0344df604e89a35eccc053eba201d3c246e6ea73df8380623be9df7c64b2503d",
-      "src/components/site/page-banner.tsx": "ff22195e5abb297ce5fff1b84cafae09d211b20bd9959e132de7d8ce83da9620",
+      "src/components/site/page-header.tsx": "611e100176a354cbe4843d7e0f362fbb77d57ab7eed781310e53a74527a88c3c",
+      "src/components/site/page-banner.tsx": "5c9bbdbfa88b8336e204c8aad939d2639c2e8a221e1692826b23940916b2ce6e",
       "src/components/showcase/role-story-image.tsx": "241cd78e6518cd8e1e6ec1b7bd02c15a0c8c977ef13bcbed11d3e4566d9a0504",
       "src/components/prices/price-guide.tsx": "5c8c14f3f52de8d24b8477dc4efae65dd9d55843aacf75096dd756b3596e6341",
       "public/images/showcase/fair-weighing.webp": "49bb112ad16128bb4d73cf2926e9db9f2638b1690ddd2e556cfac7a5f291abd7",
@@ -72,10 +73,10 @@
       "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
       "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
       "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
-      "src/components/app/page-parts.tsx": "d070dd172ce301c89295f1ac8b1fa5ae0f14041f7bc1bb55ed4c65410b978fa2",
-      "messages/en.json": "d2cb4ec28c564fac0d99c2c549af735b3b4bb1aa67f7c43f504aa6a83d0bbf6f"
+      "src/components/app/page-parts.tsx": "a025b1e0c7afce7da3d3e20988c6d801dcff3be5e94ed553ceba24944cca563b",
+      "messages/en.json": "ffede6185ab4b962f50b010b7438b56b966e53488207ea4dea758dac5cc7661c"
     },
-    "capturedAt": "2026-10-02T17:06:02.463Z",
+    "capturedAt": "2026-10-02T23:20:40.630Z",
     "kind": "current-local-connected-demo",
     "backendDeployment": "glorious-rooster-470",
     "sampleData": true,
@@ -83,8 +84,9 @@
     "authenticationTested": false,
     "mutationsPerformed": false,
     "rows": 26,
+    "historyPoints": 29,
     "browserErrors": [],
     "blockedRequests": [],
-    "sha256": "9dd32d9f4a193aae433233f0a3244231d03c047210474ff865956e3298e31696"
+    "sha256": "67a0bd11ba468577efee5a08e55faeaca6dffcad7241b88f80678ee3e3c485d6"
   }
 ]

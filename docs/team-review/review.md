@@ -2,7 +2,7 @@
 
 Cleaner Tomorrow in Motion.
 
-**Product review and team test pack — 2 October 2026**
+**Product review and team test pack — 3 October 2026 local design review**
 
 From a household pickup to a recorded material trade, the platform gives each
 person in the recycling chain a clear next action. The team has built the
@@ -20,7 +20,7 @@ Luma.Green connects households, kabadiwalas, sorting yards, recyclers,
 manufacturers and Saathis. An admin verifies applicants and manages prices and
 support. Each role gets a workspace for its part of the material journey.
 
-The first loop is simple: select scrap, compare available shop offers, book a
+The first loop is simple: select materials, compare available shop offers, book a
 pickup, record the actual weight, record cash or UPI payment, and keep the
 receipt. The second loop moves available material from shop to yard, recycler
 and manufacturer. Stock reservations and audit records connect these actions.

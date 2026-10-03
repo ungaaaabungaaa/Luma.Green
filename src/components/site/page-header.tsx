@@ -26,17 +26,17 @@ export function PageHeader({
         atmosphere && effects.mesh,
       )}
     >
-      <Container className="flex flex-col gap-6 py-8 sm:py-10 lg:gap-8 lg:py-12">
-        <div className="min-w-0 space-y-3 lg:space-y-4">
+      <Container className="grid min-w-0 gap-8 py-8 sm:py-12 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-16 lg:py-16">
+        <div className="min-w-0 space-y-4 lg:space-y-6">
           {eyebrow ? (
-            <p className="text-sm font-medium text-muted-foreground">
+            <p className="border-s-2 border-primary ps-3 text-sm font-medium text-muted-foreground">
               {eyebrow}
             </p>
           ) : null}
           <h1
             data-text-entrance={atmosphere || undefined}
             className={cn(
-              "max-w-5xl font-display text-[2rem] leading-[1.15] font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl",
+              "max-w-2xl font-display text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl",
               atmosphere && effects.heading,
             )}
           >
@@ -46,7 +46,7 @@ export function PageHeader({
             {lead}
           </p>
         </div>
-        <PageBanner scene={scene} />
+        <PageBanner scene={scene} split />
       </Container>
     </div>
   );

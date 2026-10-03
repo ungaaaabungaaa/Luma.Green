@@ -34,7 +34,7 @@ export function HelpHero({
       data-parallax-scene
       className="relative isolate overflow-hidden border-b border-border bg-background"
     >
-      <Container className="relative flex flex-col gap-6 py-8 sm:py-12 lg:py-16">
+      <Container className="relative flex flex-col gap-8 py-8 sm:py-12 lg:py-16">
         {breadcrumbs}
         <div
           data-reveal
@@ -45,11 +45,11 @@ export function HelpHero({
         >
           <div className="flex min-w-0 flex-col gap-3 lg:gap-5">
             {eyebrow ? (
-              <p className="text-sm font-medium text-muted-foreground">
+              <p className="border-s-2 border-primary ps-3 text-sm font-medium text-muted-foreground">
                 {eyebrow}
               </p>
             ) : null}
-            <h1 className="max-w-3xl font-display text-[2rem] leading-[1.15] font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl font-display text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               {title}
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">

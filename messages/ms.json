@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Bergerak ke Arah Hari Esok yang Lebih Bersih",
-    "description": "Luma.Green menyatukan rantaian barang lusuh India dalam satu platform: isi rumah, peniaga barang lusuh, kawasan pengasingan, pengitar semula dan pengilang, dengan harga adil, kutipan yang ditimbang serta rekod setiap serahan."
+    "description": "Luma.Green menyatukan rangkaian kitar semula India dalam satu platform: isi rumah, peniaga bahan kitar semula, kawasan pengasingan, pengitar semula dan pengilang, dengan harga adil, kutipan yang ditimbang serta rekod setiap serahan."
   },
   "theme": {
     "label": "Penampilan",
@@ -34,10 +34,10 @@
     "prices": "Harga",
     "help": "Bantuan",
     "join": "Sertai",
-    "sellScrap": "Jual barang lusuh"
+    "sellScrap": "Tempah kutipan"
   },
   "footer": {
-    "about": "Rantaian barang lusuh India dalam satu platform, dari rumah ke kilang. Setiap serahan ditimbang, dinilai dan direkodkan.",
+    "about": "Rantaian bahan kitar semula India dalam satu platform, dari rumah ke kilang. Setiap serahan ditimbang, dinilai dan direkodkan.",
     "navLabel": "Pengaki",
     "useHeading": "Gunakan Luma.Green",
     "learnHeading": "Ketahui lebih lanjut",
@@ -48,7 +48,7 @@
   "loop": {
     "sell": {
       "title": "Jual",
-      "summary": "Isi rumah menjual barang lusuh dari rumah pada harga adil, ditimbang dan dibayar di depan pintu."
+      "summary": "Isi rumah menjual bahan kitar semula dari rumah pada harga adil, ditimbang dan dibayar di depan pintu."
     },
     "trade": {
       "title": "Niaga",
@@ -91,11 +91,11 @@
       "title": "Harga gagal dimuatkan",
       "body": "Semak sambungan anda dan cuba lagi."
     },
-    "metaTitle": "Harga barang lusuh Bengaluru hari ini",
-    "metaDescription": "Harga barang lusuh Bengaluru hari ini per kg: kertas, plastik, logam, kaca dan e-sisa, dengan perubahan minggu ini, carta 30 hari dan bayaran minimum kedai.",
+    "metaTitle": "Harga bahan kitar semula Bengaluru hari ini",
+    "metaDescription": "Harga bahan kitar semula Bengaluru hari ini per kg: kertas, plastik, logam, kaca dan e-sisa, dengan perubahan minggu ini, carta 30 hari dan bayaran minimum kedai.",
     "eyebrow": "Bengaluru",
-    "title": "Harga barang lusuh hari ini",
-    "lead": "Harga jual barang lusuh hari ini sekilo. Kedai menetapkan harga sendiri, tetapi tidak di bawah had minimum. Ketik bahan untuk melihat 30 hari lalu.",
+    "title": "Harga bahan",
+    "lead": "Harga jual bahan kitar semula hari ini sekilo. Kedai menetapkan harga sendiri, tetapi tidak di bawah had minimum. Ketik bahan untuk melihat 30 hari lalu.",
     "demoNote": "Harga contoh untuk prototaip, bukan kadar pasaran langsung.",
     "date": "Harga untuk {date}",
     "floorHelp": "Had minimum: bayaran terendah sekilo yang dibenarkan bagi kedai disahkan.",
@@ -145,9 +145,9 @@
       "body": "Harga hari ini dipaparkan di sini selepas diterbitkan."
     },
     "sellCta": {
-      "title": "Ada barang lusuh di rumah?",
+      "title": "Ada bahan kitar semula di rumah?",
       "body": "Tempah kutipan dan terima bayaran di depan pintu.",
-      "action": "Jual barang lusuh anda"
+      "action": "Tempah kutipan"
     }
   },
   "standards": {
@@ -161,12 +161,12 @@
       },
       "title": "Satu kod untuk setiap bahan",
       "nav": "Kod bahan",
-      "body": "Barang lusuh yang sama mempunyai banyak nama tempatan. Kod terbuka memberikan satu nama bersama bagi setiap bahan, supaya sekilo surat khabar membawa maksud sama di kedai, kawasan pengasingan dan kilang.",
+      "body": "Bahan kitar semula yang sama mempunyai banyak nama tempatan. Kod terbuka memberikan satu nama bersama bagi setiap bahan, supaya sekilo surat khabar membawa maksud sama di kedai, kawasan pengasingan dan kilang.",
       "caption": "Kod bahan Luma.Green",
       "count": "{count, plural, one {# bahan} other {# bahan}}",
       "download": "Muat turun kod (CSV)",
       "stages": {
-        "scrap": "Barang lusuh",
+        "scrap": "Bahan terkumpul",
         "recycled": "Dikitar semula"
       },
       "unavailable": "Senarai kod tidak tersedia sekarang. Sila semak semula nanti.",
@@ -198,10 +198,10 @@
       "body": "Kod dan peraturan terbuka serta percuma. Gunakan di kedai, kawasan pengasingan atau kilang anda, di dalam atau di luar Luma.Green, dan beritahu cara memperbaikinya."
     },
     "metaTitle": "Piawaian Luma.Green",
-    "metaDescription": "Dirancang: Kod bahan terbuka dan peraturan mudah untuk perdagangan barang lusuh yang adil di India: penggredan, penimbangan, resit, pengesahan dan eskrow. Percuma untuk digunakan sesiapa sahaja.",
+    "metaDescription": "Dirancang: Kod bahan terbuka dan peraturan mudah untuk perdagangan bahan kitar semula yang adil di India: penggredan, penimbangan, resit, pengesahan dan eskrow. Percuma untuk digunakan sesiapa sahaja.",
     "eyebrow": "Piawaian terbuka",
     "title": "Piawaian Luma.Green",
-    "lead": "Peraturan mudah dan terbuka untuk memperdagangkan barang lusuh dengan adil: satu kod setiap bahan, gred jelas, penimbangan jujur dan rekod setiap serahan. Sesiapa dalam industri boleh menggunakannya.",
+    "lead": "Peraturan mudah dan terbuka untuk memperdagangkan bahan kitar semula dengan adil: satu kod setiap bahan, gred jelas, penimbangan jujur dan rekod setiap serahan. Sesiapa dalam industri boleh menggunakannya.",
     "onThisPage": "Pada halaman ini",
     "grading": {
       "title": "Penggredan: kering, diasingkan, bersih",
@@ -209,7 +209,7 @@
       "body": "Harga adil memerlukan gred jelas. Tiga pemeriksaan dibuat sebelum penimbangan.",
       "dry": {
         "title": "Kering",
-        "body": "Air bukan barang lusuh. Kertas dan kadbod basah dikeringkan sebelum ditimbang."
+        "body": "Air bukan bahan kitar semula. Kertas dan kadbod basah dikeringkan sebelum ditimbang."
       },
       "sorted": {
         "title": "Diasingkan",
@@ -223,7 +223,7 @@
     "weighing": {
       "title": "Penimbangan adil",
       "nav": "Penimbangan",
-      "body": "Kebanyakan pertikaian barang lusuh melibatkan berat. Peraturan ini memastikan penimbang jujur.",
+      "body": "Kebanyakan pertikaian bahan kitar semula melibatkan berat. Peraturan ini memastikan penimbang jujur.",
       "stamped": {
         "title": "Penimbang bercap",
         "body": "Gunakan hanya penimbang yang disahkan dan dicap oleh jabatan Metrologi Undang-Undang."
@@ -256,9 +256,9 @@
   },
   "howItWorks": {
     "metaTitle": "Cara berfungsi",
-    "metaDescription": "Dirancang: Pergerakan barang lusuh di Luma.Green: dijual dari rumah pada harga adil, diniagakan sepanjang rantaian dengan eskrow dan direkodkan pada setiap serahan.",
+    "metaDescription": "Dirancang: Pergerakan bahan kitar semula di Luma.Green: dijual dari rumah pada harga adil, diniagakan sepanjang rantaian dengan eskrow dan direkodkan pada setiap serahan.",
     "title": "Cara Luma.Green berfungsi",
-    "lead": "Barang lusuh bertukar tangan empat kali sebelum menjadi sesuatu yang baharu. Inilah proses pada setiap langkah dan perkara yang direkodkan Luma.Green.",
+    "lead": "Bahan bergerak dari rumah ke kedai kutipan, kawasan pengasingan dan pengitar semula sebelum menjadi sesuatu yang baharu. Luma.Green merekodkan setiap serahan.",
     "stepLabel": "Langkah {number}",
     "sell": {
       "body": "Isi rumah memilih bahan, melihat tawaran setiap kedai berhampiran dan menempah kutipan atau penghantaran sendiri. Peniaga menimbang setiap bahan dan membayar tunai atau UPI; kedua-duanya mendapat resit.",
@@ -333,13 +333,13 @@
     "roles": {
       "household": {
         "name": "Isi rumah",
-        "who": "Menjual barang lusuh dari rumah",
+        "who": "Menjual bahan kitar semula dari rumah",
         "title": "Bantuan untuk isi rumah",
         "lead": "Tempah kutipan, dapatkan timbangan adil dan terima bayaran di rumah. Akaun tidak diperlukan."
       },
       "kabadiwala": {
         "name": "Kabadiwala",
-        "who": "Mengurus kedai barang lusuh",
+        "who": "Mengurus kedai kutipan",
         "title": "Bantuan untuk kabadiwala",
         "lead": "Terima kutipan, timbang dan bayar dalam seminit, tetapkan harga dan jual kepada kawasan pengasingan."
       },
@@ -351,9 +351,9 @@
       },
       "recycler": {
         "name": "Pengitar semula",
-        "who": "Menukar barang lusuh menjadi bahan mentah",
+        "who": "Menukar bahan kitar semula menjadi bahan mentah",
         "title": "Bantuan untuk pengitar semula",
-        "lead": "Beli barang lusuh bergred daripada kawasan pengasingan, jual keluaran kepada kilang dan simpan rekod EPR yang teratur."
+        "lead": "Beli bahan kitar semula bergred daripada kawasan pengasingan, jual keluaran kepada kilang dan simpan rekod EPR yang teratur."
       },
       "manufacturer": {
         "name": "Pengilang",
@@ -495,7 +495,7 @@
       },
       "safetyAtWork": {
         "title": "Kekal selamat di tempat kerja",
-        "summary": "Peralatan keselamatan, mengangkat beban, barang lusuh tajam, bateri dan mesin: asas untuk mencegah kecederaan.",
+        "summary": "Peralatan keselamatan, mengangkat beban, bahan kitar semula tajam, bateri dan mesin: asas untuk mencegah kecederaan.",
         "steps": {
           "gear": {
             "title": "Pakai peralatan pelindung diri (PPE)",
@@ -511,7 +511,7 @@
           },
           "batteries": {
             "title": "Asingkan bateri dan e-sisa",
-            "body": "Simpan di tempat kering dan sejuk, jauh daripada barang lusuh lain. Jangan bakar wayar atau pecahkan bateri atau skrin."
+            "body": "Simpan di tempat kering dan sejuk, jauh daripada bahan kitar semula lain. Jangan bakar wayar atau pecahkan bateri atau skrin."
           },
           "machines": {
             "title": "Matikan mesin sebelum mengeluarkan benda tersekat",
@@ -654,8 +654,8 @@
         "summary": "Daripada foto hingga tempahan kutipan dalam kira-kira dua minit. Akaun tidak diperlukan.",
         "steps": {
           "photo": {
-            "title": "Ambil foto barang lusuh",
-            "body": "Pilihan: tambah satu foto barang lusuh, kemudian semak barang yang dicadangkan."
+            "title": "Ambil foto bahan kitar semula",
+            "body": "Pilihan: tambah satu foto bahan kitar semula, kemudian semak barang yang dicadangkan."
           },
           "estimate": {
             "title": "Periksa anggaran",
@@ -680,8 +680,8 @@
         }
       },
       "getReady": {
-        "title": "Sediakan barang lusuh anda",
-        "summary": "Barang lusuh kering dan diasingkan lebih cepat ditimbang serta mendapat harga lebih baik.",
+        "title": "Sediakan bahan kitar semula anda",
+        "summary": "Bahan kitar semula kering dan diasingkan lebih cepat ditimbang serta mendapat harga lebih baik.",
         "steps": {
           "paper": {
             "title": "Pastikan kertas kering dan rata",
@@ -929,7 +929,7 @@
           },
           "sort": {
             "title": "Rekodkan pengasingan anda",
-            "body": "Asingkan barang lusuh bercampur mengikut bahan sebenar. Contohnya, kertas bercampur menjadi surat khabar, kadbod dan sisa."
+            "body": "Asingkan bahan kitar semula bercampur mengikut bahan sebenar. Contohnya, kertas bercampur menjadi surat khabar, kadbod dan sisa."
           },
           "show": {
             "title": "Tunjukkan stok kepada kawasan pengasingan",
@@ -965,7 +965,7 @@
       },
       "buyFromKabadiwalas": {
         "title": "Panduan demo: Beli stok daripada peniaga barang lusuh",
-        "summary": "Cari barang lusuh diasingkan berhampiran anda dan tempah pengambilan.",
+        "summary": "Cari bahan kitar semula diasingkan berhampiran anda dan tempah pengambilan.",
         "steps": {
           "browse": {
             "title": "Buka Beli",
@@ -1016,7 +1016,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Panduan demo: Beli barang lusuh diasingkan daripada kawasan pengasingan",
+        "title": "Panduan demo: Beli bahan kitar semula diasingkan daripada kawasan pengasingan",
         "summary": "Bekalan bergred yang tetap untuk barisan pengeluaran anda.",
         "steps": {
           "browse": {
@@ -1177,7 +1177,7 @@
           },
           "deliver": {
             "title": "Bawa ke kedai",
-            "body": "Bawa barang lusuh terus ke kedai dan serahkan."
+            "body": "Bawa bahan kitar semula terus ke kedai dan serahkan."
           }
         }
       },
@@ -1275,7 +1275,7 @@
       },
       "noVehicle": {
         "q": "Saya tidak mempunyai kenderaan. Masih boleh menyertai?",
-        "a": "Ya. Isi rumah boleh membawa barang lusuh ke kedai anda. Kutipan Saathi bagi kedai tanpa kenderaan akan tersedia kemudian."
+        "a": "Ya. Isi rumah boleh membawa bahan kitar semula ke kedai anda. Kutipan Saathi bagi kedai tanpa kenderaan akan tersedia kemudian."
       },
       "autoAccept": {
         "q": "Apakah penerimaan automatik?",
@@ -1408,7 +1408,7 @@
     },
     "tutorials": {
       "bookInTwoMinutes": "Tempah kutipan dalam dua minit",
-      "sortAtHome": "Mengasingkan barang lusuh di rumah",
+      "sortAtHome": "Mengasingkan bahan kitar semula di rumah",
       "batterySafety": "Bateri lama dikendalikan dengan selamat",
       "firstDay": "Hari pertama anda di Luma.Green",
       "weighAndPayVideo": "Timbang dan bayar dalam seminit",
@@ -1436,7 +1436,7 @@
         "title": "Asingkan sekali",
         "p1": "Satu beg setiap satu untuk kertas, plastik dan logam.",
         "p2": "Pastikan semuanya kering dan bersih.",
-        "p3": "Barang lusuh diasingkan lebih cepat ditimbang dan dibayar lebih baik."
+        "p3": "Bahan kitar semula diasingkan lebih cepat ditimbang dan dibayar lebih baik."
       },
       "batteriesSafe": {
         "title": "Bateri dengan selamat",
@@ -1463,7 +1463,7 @@
         "p3": "Tunjukkan jumlah sebelum membayar."
       },
       "safeHandling": {
-        "title": "Mengendalikan barang lusuh dengan selamat",
+        "title": "Mengendalikan bahan kitar semula dengan selamat",
         "p1": "Sentiasa gunakan sarung tangan dan kasut bertutup.",
         "p2": "Angkat dengan kekuatan kaki dan minta bantuan untuk beban melebihi 25 kg.",
         "p3": "Asingkan bateri dan e-sisa."
@@ -1603,9 +1603,9 @@
       "NOT_YOURS": "Tempahan ini dibuat dengan nombor lain.",
       "EMPTY_BASKET": "Tambah sekurang-kurangnya satu barang untuk dijual.",
       "TOO_MANY_ITEMS": "Terlalu banyak bahan untuk satu tempahan.",
-      "DUPLICATE_ITEM": "Satu bahan disenaraikan dua kali. Sila semak barang lusuh anda.",
+      "DUPLICATE_ITEM": "Satu bahan disenaraikan dua kali. Sila semak bahan kitar semula anda.",
       "INVALID_KG": "Semak kilo: setiap satu mesti melebihi 0 dan paling banyak 500.",
-      "UNKNOWN_MATERIAL": "Salah satu bahan tidak boleh dijual di sini lagi. Sila semak barang lusuh anda.",
+      "UNKNOWN_MATERIAL": "Salah satu bahan tidak boleh dijual di sini lagi. Sila semak bahan kitar semula anda.",
       "SHOP_NOT_FOUND": "Kedai itu tidak menerima tempahan sekarang. Sila pilih yang lain.",
       "SHOP_NO_PICKUP": "Kedai itu tidak membuat kutipan. Pilih kedai lain atau hantar sendiri.",
       "INVALID_DATE": "Hari itu tidak boleh ditempah lagi. Sila pilih yang lain.",
@@ -1619,7 +1619,7 @@
       "CANNOT_CANCEL": "Tempahan ini tidak boleh dibatalkan lagi.",
       "NOT_FOUND": "Tempahan ini tidak ditemui."
     },
-    "metaTitle": "Jual barang lusuh anda",
+    "metaTitle": "Tempah kutipan",
     "families": {
       "paper": "Kertas",
       "plastic": "Plastik",
@@ -1663,7 +1663,7 @@
       "hours": "Dibuka {hours}",
       "verified": "Disahkan",
       "title": "Siapa membelinya?",
-      "lead": "Tawaran setiap kedai untuk barang lusuh anda berdasarkan harga mereka sendiri.",
+      "lead": "Tawaran setiap kedai untuk bahan kitar semula anda berdasarkan harga mereka sendiri.",
       "modeLabel": "Bagaimana anda mahu menyerahkannya?",
       "pickup": "Kutipan dari rumah",
       "pickupHint": "Kedai datang kepada anda",
@@ -1673,7 +1673,7 @@
       "byPrice": "Susun mengikut harga",
       "locationFailed": "Lokasi tidak dapat diperoleh, jadi kedai disusun mengikut harga terbaik.",
       "listLabel": "Kedai",
-      "offerFor": "untuk barang lusuh anda",
+      "offerFor": "untuk bahan kitar semula anda",
       "picksUp": "Membuat kutipan",
       "dropOnly": "Hantar sendiri sahaja",
       "best": "Harga terbaik",
@@ -1685,18 +1685,18 @@
       "pickOne": "Pilih kedai untuk meneruskan."
     },
     "steps": {
-      "basket": "Apa",
-      "shop": "Siapa",
-      "when": "Bila",
+      "basket": "Bahan",
+      "shop": "Rakan niaga",
+      "when": "Masa",
       "label": "Langkah",
       "progress": "Langkah {current} daripada {total}",
-      "confirm": "Tempah"
+      "confirm": "Semakan"
     },
     "basket": {
       "points": "+{points, plural, one {# mata kitar semula} other {# mata kitar semula}}",
-      "title": "Apa yang anda ada?",
+      "title": "Apa yang anda kitar semula?",
       "lead": "Ketik barang untuk dijual, kemudian tetapkan anggaran kilo.",
-      "yours": "Barang lusuh anda",
+      "yours": "Bahan kitar semula anda",
       "empty": "Belum ada barang ditambah. Ketik bahan di atas.",
       "kilos": "Kilo {material}",
       "less": "Kurangkan {material}",
@@ -1710,7 +1710,7 @@
       "summary": "{items, plural, one {# barang} other {# barang}} · {weight}",
       "next": "Cari pembeli",
       "full": "Had satu tempahan: {max} bahan.",
-      "weighNote": "Amaun akhir ditentukan apabila barang lusuh ditimbang."
+      "weighNote": "Amaun akhir ditentukan apabila bahan kitar semula ditimbang."
     },
     "confirm": {
       "what": "Apa",
@@ -1721,7 +1721,7 @@
       "dropoff": "Anda menghantar ke kedai",
       "whenValue": "{day} · {window}, {time}",
       "youGet": "Anda menerima kira-kira {amount}",
-      "payNote": "Kedai menimbang barang lusuh dan membayar tunai atau melalui UPI.",
+      "payNote": "Kedai menimbang bahan kitar semula dan membayar tunai atau melalui UPI.",
       "notYou": "Gunakan nombor lain",
       "title": "Semak dan tempah",
       "change": "Tukar",
@@ -1739,7 +1739,7 @@
     },
     "metaDescription": "Jual surat khabar, plastik, logam dan elektronik lama dari rumah di Bengaluru. Lihat bayaran kedai berhampiran, tempah kutipan dan terima bayaran di depan pintu.",
     "eyebrow": "Untuk rumah di Bengaluru",
-    "title": "Jual barang lusuh dari rumah",
+    "title": "Tempah kutipan dari rumah",
     "lead": "Pilih barang anda, pilih kedai berhampiran dan terima tunai atau UPI selepas ditimbang.",
     "promises": {
       "label": "Mengapa jual di sini",
@@ -1763,7 +1763,7 @@
     },
     "photo": {
       "title": "Cuba anggaran foto",
-      "lead": "Pilihan: tambah satu foto barang lusuh, kemudian semak barang yang dicadangkan.",
+      "lead": "Pilihan: tambah satu foto bahan kitar semula, kemudian semak barang yang dicadangkan.",
       "privacy": "Jangan sertakan wajah, dokumen atau nombor plat. Foto dihantar kepada penyedia AI untuk anggaran ini. Luma.Green tidak menyimpannya.",
       "choose": "Pilih atau ambil foto",
       "selected": "Foto sedia",
@@ -1781,14 +1781,14 @@
       "failed": "Foto tidak dapat disemak. Cuba foto lain atau pilih barang di bawah.",
       "invalid": "Gunakan foto JPEG atau PNG yang jelas di bawah 12 MB.",
       "limited": "Had foto telah dicapai. Pilih barang di bawah atau cuba lagi esok.",
-      "retake": "Foto tidak jelas atau tidak menunjukkan barang lusuh. Cuba foto lain atau pilih barang di bawah.",
+      "retake": "Foto tidak jelas atau tidak menunjukkan bahan kitar semula. Cuba foto lain atau pilih barang di bawah.",
       "empty": "Tiada bahan disokong ditemui. Cuba foto lain atau pilih barang di bawah.",
       "replace": "Pilih foto lain"
     }
   },
   "track": {
     "notFound": {
-      "sell": "Jual barang lusuh",
+      "sell": "Tempah kutipan",
       "title": "Tempahan ini tidak ditemui",
       "body": "Semak pautan dalam SMS. Jika baru menempah, tunggu sebentar dan cuba lagi."
     },
@@ -1832,13 +1832,13 @@
       "requested": "{mode, select, pickup {Menunggu {shop} menerima} other {Menunggu {shop} mengesahkan}}",
       "requestedBody": "Permintaan anda telah dihantar. Halaman ini dikemas kini sebaik sahaja mereka menjawab.",
       "accepted": "{mode, select, pickup {{shop} menerima kutipan anda} other {{shop} menunggu anda}}",
-      "acceptedBody": "Sediakan barang lusuh. Ia ditimbang, kemudian anda dibayar tunai atau melalui UPI.",
+      "acceptedBody": "Sediakan bahan kitar semula. Ia ditimbang, kemudian anda dibayar tunai atau melalui UPI.",
       "on_the_way": "{shop} dalam perjalanan",
-      "on_the_wayBody": "Sediakan barang lusuh berhampiran pintu.",
+      "on_the_wayBody": "Sediakan bahan kitar semula berhampiran pintu.",
       "completed": "Selesai! Anda menerima {amount}",
       "completedBody": "Terima kasih kerana mengitar semula. Mata ditambah pada nombor anda.",
       "declined": "{shop} tidak dapat menerima tempahan ini",
-      "declinedBody": "Tiada barang dikutip. Cuba kedai lain — senarai barang lusuh anda disimpan.",
+      "declinedBody": "Tiada barang dikutip. Cuba kedai lain — senarai bahan kitar semula anda disimpan.",
       "cancelled": "Tempahan ini dibatalkan",
       "cancelledBody": "Tiada barang dikutip. Anda boleh menempah lagi bila-bila masa."
     },
@@ -1864,7 +1864,7 @@
     "money": {
       "title": "Wang dan mata anda",
       "estimate": "Anda menerima kira-kira {amount}",
-      "estimateNote": "Kedai menimbang barang lusuh dan membayar tunai atau melalui UPI.",
+      "estimateNote": "Kedai menimbang bahan kitar semula dan membayar tunai atau melalui UPI.",
       "paid": "Anda menerima {amount}",
       "paidBy": "Dibayar melalui {method, select, upi {UPI} other {tunai}} · {date}",
       "estimateWas": "Anggaran asal {amount}",
@@ -1881,7 +1881,7 @@
       "cancelled": "Dibatalkan"
     },
     "saved": "Tiada akaun diperlukan. Simpan pautan ini untuk menyemak tempahan pada mana-mana telefon.",
-    "sellMore": "Jual lagi barang lusuh",
+    "sellMore": "Tempah kutipan lagi",
     "tryAnother": "Cuba kedai lain",
     "dispatchChanged": "Permintaan anda dialihkan ke kedai berhampiran lain. Kedai semasa ditunjukkan di bawah."
   },
@@ -1968,7 +1968,7 @@
       "buy": "Beli",
       "trades": "Urus niaga",
       "greeting": "Salam, {name}",
-      "lead": "{kind, select, yard {Beli daripada peniaga barang lusuh, jual bal diasingkan kepada pengitar semula.} recycler {Beli barang lusuh diasingkan daripada kawasan pengasingan, jual bahan kitar semula kepada pengilang.} manufacturer {Beli bahan kitar semula daripada pengitar semula disahkan.} other {Urus niaga anda sepintas lalu.}}",
+      "lead": "{kind, select, yard {Beli daripada peniaga bahan kitar semula, jual bal diasingkan kepada pengitar semula.} recycler {Beli bahan kitar semula diasingkan daripada kawasan pengasingan, jual bahan kitar semula kepada pengilang.} manufacturer {Beli bahan kitar semula daripada pengitar semula disahkan.} other {Urus niaga anda sepintas lalu.}}",
       "statsTitle": "Sepintas lalu",
       "stats": {
         "escrow": "Dalam eskrow",
@@ -2010,7 +2010,7 @@
     },
     "browse": {
       "title": "Beli",
-      "lead": "{kind, select, yard {Barang lusuh diasingkan daripada peniaga berhampiran.} recycler {Bahan diasingkan dan dibal daripada kawasan pengasingan.} manufacturer {Bahan kitar semula daripada pengitar semula disahkan.} other {Bahan dijual berhampiran anda.}}",
+      "lead": "{kind, select, yard {Bahan kitar semula diasingkan daripada peniaga berhampiran.} recycler {Bahan diasingkan dan dibal daripada kawasan pengasingan.} manufacturer {Bahan kitar semula daripada pengitar semula disahkan.} other {Bahan dijual berhampiran anda.}}",
       "filterLabel": "Tapis mengikut bahan",
       "all": "Semua",
       "count": "{count, plural, =0 {Tiada lot} one {# lot dijual} other {# lot dijual}}",
@@ -2221,7 +2221,7 @@
         "body": "Tindakan ini tidak boleh dibatalkan."
       },
       "decline": "Tolak",
-      "lead": "Isi rumah berhampiran yang mahu menjual barang lusuh.",
+      "lead": "Isi rumah berhampiran yang mahu menjual bahan kitar semula.",
       "empty": {
         "newTitle": "Tiada permintaan baharu",
         "newBody": "Apabila isi rumah menempah kutipan dengan anda, ia muncul di sini.",
@@ -2241,7 +2241,7 @@
     },
     "stock": {
       "title": "Stok tersedia",
-      "scrap": "Barang lusuh",
+      "scrap": "Bahan terkumpul",
       "buy": "Beli bahan",
       "lead": "Stok anda sekarang dan nilainya hari ini.",
       "totalWeight": "Jumlah berat",
@@ -2400,7 +2400,7 @@
     "sendCode": "Hantar kod",
     "sending": "Menghantar…",
     "sendFailed": "Kod tidak dapat dihantar. Cuba lagi dalam seminit.",
-    "homeTitle": "Menjual barang lusuh dari rumah? Anda tidak memerlukan akaun.",
+    "homeTitle": "Mengitar semula dari rumah? Tidak perlu akaun.",
     "homeLink": "Lihat cara ia berfungsi",
     "privacy": "Kami menggunakan nombor anda hanya untuk log masuk dan menghantar perkembangan kerja anda di Luma.Green.",
     "unavailableTitle": "Log masuk telefon dibuka tidak lama lagi",
@@ -2449,12 +2449,12 @@
     "updateUnavailable": "Kemas kini aplikasi tidak tersedia untuk binaan ini.",
     "updateFailed": "Tidak dapat menyemak kemas kini. Cuba lagi kemudian.",
     "locationTitle": "Kongsi lokasi anda?",
-    "locationBody": "Benarkan Luma.Green menggunakan lokasi anda untuk mencari kedai barang lusuh berhampiran.",
+    "locationBody": "Benarkan Luma.Green menggunakan lokasi anda untuk mencari kedai kutipan berhampiran.",
     "allow": "Benarkan",
     "deny": "Bukan sekarang",
     "browserNotice": "Halaman ini dibuka dalam pelayar. Anda mungkin perlu log masuk semula.",
-    "cameraPermission": "Gunakan kamera untuk mengambil gambar barang lusuh atau dokumen pengesahan.",
-    "photoPermission": "Pilih foto untuk anggaran barang lusuh dan pengesahan.",
+    "cameraPermission": "Gunakan kamera untuk mengambil gambar bahan kitar semula atau dokumen pengesahan.",
+    "photoPermission": "Pilih foto untuk anggaran bahan kitar semula dan pengesahan.",
     "cameraTitle": "Kamera"
   },
   "showcase": {
@@ -2474,7 +2474,7 @@
           "third": "Simpan resit"
         },
         "kabadiwala": {
-          "title": "Kedai barang lusuh anda",
+          "title": "Kedai kutipan anda",
           "first": "Semak permintaan kutipan",
           "second": "Rekodkan berat",
           "third": "Urus stok diasingkan"
@@ -2653,17 +2653,17 @@
     "roles": {
       "kabadiwala": {
         "title": "Peniaga barang lusuh",
-        "body": "Anda mengendalikan kedai barang lusuh dan membeli daripada rumah berhampiran.",
+        "body": "Anda mengendalikan kedai kutipan dan membeli daripada rumah berhampiran.",
         "needs": "Alamat dan waktu operasi kedai. Nombor GST jika ada."
       },
       "yard": {
         "title": "Kawasan pengasingan",
-        "body": "Anda mengasing dan memampatkan barang lusuh secara pukal, kemudian menjualnya.",
+        "body": "Anda mengasing dan memampatkan bahan kitar semula secara pukal, kemudian menjualnya.",
         "needs": "Nombor GST jika ada, kebenaran kawalan pencemaran (PDF) dan foto mesin anda."
       },
       "recycler": {
         "title": "Pengitar semula",
-        "body": "Anda mengubah barang lusuh kembali menjadi bahan mentah.",
+        "body": "Anda mengubah bahan kitar semula kembali menjadi bahan mentah.",
         "needs": "Nombor GST jika ada, kebenaran kawalan pencemaran (PDF) dan foto mesin anda."
       },
       "manufacturer": {
@@ -2877,7 +2877,7 @@
     "lead": "Beritahu pekerjaan anda. Petugas menyemak setiap permohonan, biasanya dalam 12–24 jam.",
     "start": "Mula",
     "youNeed": "Anda perlukan",
-    "homeTitle": "Menjual barang lusuh dari rumah?",
+    "homeTitle": "Mengitar semula dari rumah?",
     "homeBody": "Anda tidak perlu menyertai. Tempah kutipan apabila ada barang untuk dijual.",
     "documents": {
       "title": "Dokumen dan foto",
@@ -3011,7 +3011,7 @@
         "detail": "{board} · {number}",
         "missing": "Tiada kebenaran dalam rekod",
         "note": "Kebenaran operasi daripada lembaga kawalan pencemaran negeri membolehkan anda mengendalikan unit pengasingan atau kitar semula secara sah. Pengitar semula dan kilang memintanya sebelum membeli.",
-        "noteShop": "Kedai kecil yang hanya membeli dan mengasingkan barang lusuh biasanya tidak memerlukannya. Anda memerlukannya jika mula memampat, mencarik atau memproses bahan."
+        "noteShop": "Kedai kecil yang hanya membeli dan mengasingkan bahan kitar semula biasanya tidak memerlukannya. Anda memerlukannya jika mula memampat, mencarik atau memproses bahan."
       },
       "scale": {
         "title": "Penimbang dicap",
@@ -3044,14 +3044,14 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green menyatukan rantaian barang lusuh India dalam satu platform: isi rumah, peniaga barang lusuh, kawasan pengasingan, pengitar semula dan pengilang, dengan harga adil, perniagaan disahkan dan resit pada setiap langkah.",
+    "metaDescription": "Luma.Green menyatukan rangkaian kitar semula India dalam satu platform: isi rumah, peniaga bahan kitar semula, kawasan pengasingan, pengitar semula dan pengilang, dengan harga adil, perniagaan disahkan dan resit pada setiap langkah.",
     "hero": {
       "eyebrow": "Bermula di Bengaluru",
-      "title": "Rantaian barang lusuh India dalam satu platform",
-      "lead": "Jual barang lusuh dari rumah pada harga adil. Niagakannya sepanjang rantaian dengan perniagaan disahkan. Setiap serahan ditimbang, dinilai dan direkodkan.",
-      "sell": "Jual barang lusuh anda",
-      "join": "Sertai sebagai perniagaan",
-      "prices": "Lihat harga hari ini"
+      "title": "Beri bahan anda permulaan baharu.",
+      "lead": "Tempah kutipan kertas, plastik, logam dan banyak lagi. Bandingkan tawaran dan simpan rekod yang jelas.",
+      "sell": "Tempah kutipan",
+      "join": "Untuk perniagaan",
+      "prices": "Lihat harga bahan"
     },
     "teaser": {
       "title": "Harga hari ini",
@@ -3063,8 +3063,8 @@
       "error": "Harga tidak dapat dimuatkan sekarang."
     },
     "chain": {
-      "heading": "Pergerakan barang lusuh",
-      "intro": "Barang lusuh bertukar tangan empat kali sebelum menjadi sesuatu yang baharu. Pengasingan bertambah baik pada setiap langkah dan Luma.Green merekodkan setiap serahan.",
+      "heading": "Pergerakan bahan kitar semula",
+      "intro": "Bahan bergerak dari rumah ke kedai kutipan, kawasan pengasingan dan pengitar semula sebelum menjadi sesuatu yang baharu. Luma.Green merekodkan setiap serahan.",
       "steps": {
         "household": {
           "name": "Isi rumah",
@@ -3092,13 +3092,13 @@
     },
     "roles": {
       "heading": "Manfaat untuk semua dalam rantaian",
-      "intro": "Enam kumpulan memastikan barang lusuh terus bergerak. Inilah manfaat Luma.Green bagi setiap kumpulan.",
+      "intro": "Enam kumpulan memastikan bahan kitar semula terus bergerak. Inilah manfaat Luma.Green bagi setiap kumpulan.",
       "household": {
         "title": "Isi rumah",
-        "one": "Lihat nilai barang lusuh sebelum membuat tempahan.",
+        "one": "Lihat nilai bahan kitar semula sebelum membuat tempahan.",
         "two": "Dikutip di depan pintu atau dihantar ke kedai.",
         "three": "Dibayar tunai atau melalui UPI, berserta resit.",
-        "cta": "Jual barang lusuh anda"
+        "cta": "Tempah kutipan"
       },
       "kabadiwala": {
         "title": "Peniaga barang lusuh",
@@ -3138,7 +3138,7 @@
     },
     "trust": {
       "heading": "Dibina atas kepercayaan",
-      "intro": "Urusan barang lusuh selama ini bergantung pada tunai dan anggaran. Peraturan ini mengubahnya.",
+      "intro": "Harga yang jelas, berat yang ditimbang dan rekod membantu semua pihak menyemak kutipan.",
       "verified": {
         "title": "Perniagaan disahkan",
         "body": "Petugas memeriksa setiap perniagaan dan Saathi sebelum mereka boleh berniaga."
@@ -3162,7 +3162,7 @@
     },
     "whyNow": {
       "heading": "Mengapa sekarang",
-      "intro": "Tiga perubahan menjadikan ini masa yang sesuai untuk merekodkan rantaian barang lusuh India.",
+      "intro": "Tiga perubahan menjadikan ini masa yang sesuai untuk merekodkan rangkaian kitar semula India.",
       "epr": {
         "title": "Peraturan EPR",
         "body": "Peraturan Tanggungjawab Pengeluar Diperluas untuk pembungkusan plastik, e-sisa dan bateri meminta pengeluar membuktikan bahan benar-benar dikumpul dan dikitar semula. Bukti itu mesti bermula pada serahan pertama."
@@ -3179,13 +3179,13 @@
     "closing": {
       "title": "Mulakan dengan apa yang anda ada",
       "body": "Sebeg surat khabar lama atau satu lori bal: semuanya mempunyai tempat di Luma.Green.",
-      "sell": "Jual barang lusuh anda",
+      "sell": "Tempah kutipan",
       "join": "Sertai sebagai perniagaan"
     },
     "expansion": {
-      "materialsTitle": "Mulakan dengan bahan yang anda ada",
+      "materialsTitle": "Apa yang anda mahu kitar semula?",
       "pickupTitle": "Kutipan, langkah demi langkah",
-      "shopTitle": "Kedai barang lusuh anda, berhubung",
+      "shopTitle": "Kedai kutipan anda, berhubung",
       "recordsTitle": "Rekod yang mengikut bahan",
       "paymentTitle": "Berat jelas. Bayaran jelas.",
       "questionsTitle": "Sebelum anda bermula"
@@ -3231,11 +3231,11 @@
       "body": "Ambil kerja kutipan, pengasingan dan syif berbayar berhampiran rumah, serta lihat pendapatan anda."
     },
     "metaTitle": "Untuk siapa",
-    "metaDescription": "Luma.Green dibina untuk isi rumah, peniaga barang lusuh, kawasan pengasingan, pengitar semula, pengilang dan Saathi: semua yang memindahkan barang lusuh dari rumah ke kilang.",
+    "metaDescription": "Luma.Green dibina untuk isi rumah, peniaga bahan kitar semula, kawasan pengasingan, pengitar semula, pengilang dan Saathi: semua yang memindahkan bahan kitar semula dari rumah ke kilang.",
     "title": "Untuk siapa Luma.Green dibina",
-    "lead": "Semua yang memindahkan barang lusuh dari rumah ke kilang, serta orang yang melakukan kerja di antaranya.",
+    "lead": "Semua yang memindahkan bahan kitar semula dari rumah ke kilang, serta orang yang melakukan kerja di antaranya.",
     "householdHeading": "Serta setiap isi rumah",
-    "householdBody": "Sesiapa sahaja boleh menjual barang lusuh dari rumah tanpa akaun: pilih bahan, lihat tawaran setiap kedai dan terima tunai atau UPI berserta resit."
+    "householdBody": "Sesiapa sahaja boleh menjual bahan kitar semula dari rumah tanpa akaun: pilih bahan, lihat tawaran setiap kedai dan terima tunai atau UPI berserta resit."
   },
   "saathi": {
     "days": {

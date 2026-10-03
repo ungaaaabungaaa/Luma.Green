@@ -155,7 +155,7 @@ describe("SellFlow", () => {
   it("starts with what they have, and sells only scrap", () => {
     render(withIntl(<SellFlow />));
     expect(
-      screen.getByRole("heading", { name: "What do you have?" }),
+      screen.getByRole("heading", { name: "What are you recycling?" }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: /^Newspaper/ }),

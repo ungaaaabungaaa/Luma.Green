@@ -108,7 +108,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         className={cn(
           className,
           isCurrent &&
-            "bg-sidebar-accent font-semibold text-sidebar-accent-foreground ring-1 ring-sidebar-border ring-inset",
+            "border-s-primary bg-sidebar-accent font-semibold text-sidebar-accent-foreground",
         )}
       >
         <Icon aria-hidden className="size-5 shrink-0" />
@@ -122,17 +122,17 @@ export function AppShell({ children }: { children: ReactNode }) {
   };
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background xl:flex-row">
+    <div className="flex min-h-dvh flex-col bg-muted/20 xl:flex-row">
       <SkipLink />
-      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-6 overflow-y-auto border-e border-sidebar-border bg-sidebar p-4 text-sidebar-foreground xl:flex xl:w-64">
+      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-5 overflow-y-auto border-e border-sidebar-border bg-background p-4 text-sidebar-foreground xl:flex xl:w-60">
         <Link
           href="/"
           className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <Logo />
         </Link>
-        <div className="border-y border-sidebar-border px-3 py-4">
-          <p className="truncate text-sm font-semibold">{name}</p>
+        <div className="border-y border-sidebar-border px-2 py-5">
+          <p className="text-sm font-semibold break-words">{name}</p>
           <p className="mt-1 text-xs text-muted-foreground">
             {t(`roles.${role}`)}
           </p>
@@ -141,7 +141,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           {primary.map((item) =>
             link(
               item,
-              "flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+              "flex min-h-11 items-center gap-3 rounded-md border-s-2 border-transparent px-3 text-sm font-medium outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
             ),
           )}
           {more.length > 0 ? (
@@ -149,14 +149,14 @@ export function AppShell({ children }: { children: ReactNode }) {
               {more.map((item) =>
                 link(
                   item,
-                  "flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm text-muted-foreground outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+                  "flex min-h-11 items-center gap-3 rounded-md border-s-2 border-transparent px-3 text-sm text-muted-foreground outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
                 ),
               )}
             </div>
           ) : null}
           <Link
             href={help}
-            className="mt-4 flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="mt-4 flex min-h-11 items-center gap-3 rounded-md border-s-2 border-transparent px-3 text-sm font-medium transition-colors outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <LifeBuoyIcon aria-hidden className="size-5" />
             {t("nav.help")}
@@ -330,7 +330,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-6 px-4 pt-6 pb-28 sm:px-6 md:gap-8 md:px-8 md:pt-8 lg:px-10 xl:pb-12"
+        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-8 bg-background px-4 pt-6 pb-28 sm:px-6 md:px-8 md:pt-8 lg:px-10 xl:me-6 xl:mt-6 xl:border xl:border-border xl:pt-8 xl:pb-12"
       >
         {children}
       </main>

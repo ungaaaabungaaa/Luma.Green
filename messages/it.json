@@ -34,7 +34,7 @@
     "prices": "Prezzi",
     "help": "Aiuto",
     "join": "Iscriviti",
-    "sellScrap": "Vendi materiali"
+    "sellScrap": "Prenota un ritiro"
   },
   "footer": {
     "about": "La filiera indiana dei materiali di recupero in una piattaforma, dalla casa alla fabbrica. Ogni passaggio viene pesato, valutato e registrato.",
@@ -79,11 +79,11 @@
     "metaDescription": "Luma.Green riunisce la filiera indiana dei materiali di recupero in una piattaforma: famiglie, kabadiwala, piazzali, riciclatori e produttori, con prezzi equi, imprese verificate e una ricevuta a ogni fase.",
     "hero": {
       "eyebrow": "Si parte da Bengaluru",
-      "title": "La filiera indiana del recupero, in una piattaforma",
-      "lead": "Vendi da casa i materiali di recupero a un prezzo equo. Scambiali lungo la filiera con imprese verificate. Ogni passaggio viene pesato, valutato e registrato.",
-      "sell": "Vendi i tuoi materiali",
-      "join": "Iscriviti come impresa",
-      "prices": "Vedi i prezzi di oggi"
+      "title": "Dai un nuovo inizio ai tuoi materiali.",
+      "lead": "Prenota il ritiro di carta, plastica, metallo e altro. Confronta le offerte e conserva un registro chiaro.",
+      "sell": "Prenota un ritiro",
+      "join": "Per le imprese",
+      "prices": "Vedi prezzi dei materiali"
     },
     "teaser": {
       "title": "Prezzi di oggi",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "Il percorso dei materiali di recupero",
-      "intro": "I materiali passano di mano quattro volte prima di diventare qualcosa di nuovo. Vengono selezionati meglio a ogni fase e Luma.Green registra ogni passaggio.",
+      "intro": "I materiali passano dalle case ai punti di raccolta, ai centri di selezione e ai riciclatori prima di diventare qualcosa di nuovo. Luma.Green registra ogni passaggio.",
       "steps": {
         "household": {
           "name": "Famiglie",
@@ -130,7 +130,7 @@
         "one": "Scopri il valore dei tuoi materiali prima di prenotare.",
         "two": "Ritiro alla porta o consegna in negozio.",
         "three": "Pagamento in contanti o UPI, con ricevuta.",
-        "cta": "Vendi i tuoi materiali"
+        "cta": "Prenota un ritiro"
       },
       "kabadiwala": {
         "title": "Kabadiwala",
@@ -170,7 +170,7 @@
     },
     "trust": {
       "heading": "Fondato sulla fiducia",
-      "intro": "Il recupero si è sempre basato su contanti e stime. Queste regole cambiano le cose.",
+      "intro": "Prezzi chiari, pesi misurati e registri aiutano tutti a verificare un ritiro.",
       "verified": {
         "title": "Imprese verificate",
         "body": "Una persona controlla ogni impresa e ogni Saathi prima che possano operare."
@@ -211,11 +211,11 @@
     "closing": {
       "title": "Inizia da ciò che hai",
       "body": "Un sacco di vecchi giornali o un camion di balle: su Luma.Green c'è posto per entrambi.",
-      "sell": "Vendi i tuoi materiali",
+      "sell": "Prenota un ritiro",
       "join": "Iscriviti come impresa"
     },
     "expansion": {
-      "materialsTitle": "Inizia dai materiali che hai già",
+      "materialsTitle": "Cosa vorresti riciclare?",
       "pickupTitle": "Un ritiro, passo dopo passo",
       "shopTitle": "Il tuo negozio di recupero, connesso",
       "recordsTitle": "Un registro che segue il materiale",
@@ -239,7 +239,7 @@
     "metaTitle": "Prezzi dei materiali di recupero oggi a Bengaluru",
     "metaDescription": "Prezzi di oggi a Bengaluru, al kg: carta, plastica, metallo, vetro ed elettronica, con variazione settimanale, grafico di 30 giorni e minimo pagabile da un negozio.",
     "eyebrow": "Bengaluru",
-    "title": "Prezzi di oggi dei materiali di recupero",
+    "title": "Prezzi dei materiali",
     "lead": "Quanto valgono oggi i materiali, al chilo. I negozi fissano i propri prezzi, mai sotto il minimo. Tocca un materiale per vedere gli ultimi 30 giorni.",
     "demoNote": "Prezzi di esempio per il prototipo, non quotazioni di mercato in tempo reale.",
     "date": "Prezzi del {date}",
@@ -307,7 +307,7 @@
     "sellCta": {
       "title": "Hai materiali da recuperare in casa?",
       "body": "Prenota un ritiro e ricevi il pagamento alla porta.",
-      "action": "Vendi i tuoi materiali"
+      "action": "Prenota un ritiro"
     }
   },
   "standards": {
@@ -331,7 +331,7 @@
         "stage": "Fase"
       },
       "stages": {
-        "scrap": "Da recuperare",
+        "scrap": "Materiali raccolti",
         "recycled": "Riciclato"
       },
       "unavailable": "L'elenco dei codici non è disponibile al momento. Ricontrolla a breve.",
@@ -554,7 +554,7 @@
     "metaTitle": "Come funziona",
     "metaDescription": "Previsto: il percorso dei materiali su Luma.Green, venduti da casa a un prezzo equo, scambiati lungo la filiera con deposito a garanzia e registrati a ogni passaggio.",
     "title": "Come funziona Luma.Green",
-    "lead": "I materiali passano di mano quattro volte prima di diventare qualcosa di nuovo. Ecco cosa accade a ogni fase e cosa registra Luma.Green.",
+    "lead": "I materiali passano dalle case ai punti di raccolta, ai centri di selezione e ai riciclatori prima di diventare qualcosa di nuovo. Luma.Green registra ogni passaggio.",
     "stepLabel": "Fase {number}",
     "sell": {
       "body": "Una famiglia seleziona ciò che ha, vede l'offerta di ogni negozio vicino e prenota un ritiro o una consegna. Il kabadiwala pesa ogni materiale e paga in contanti o UPI; entrambi ricevono una ricevuta.",
@@ -1892,7 +1892,7 @@
     "sendCode": "Invia codice",
     "sending": "Invio…",
     "sendFailed": "Impossibile inviare il codice. Riprova tra un minuto.",
-    "homeTitle": "Vendi materiali da casa? Non serve un account.",
+    "homeTitle": "Ricicli da casa? Non serve un account.",
     "homeLink": "Scopri come funziona",
     "privacy": "Usiamo il numero solo per farti accedere e inviarti aggiornamenti sul tuo lavoro su Luma.Green.",
     "unavailableTitle": "L'accesso telefonico sarà disponibile a breve",
@@ -1934,7 +1934,7 @@
     "lead": "Dicci cosa fai. Una persona esamina ogni domanda, di norma entro 12–24 ore.",
     "start": "Inizia",
     "youNeed": "Ti serviranno",
-    "homeTitle": "Vendi materiali da casa?",
+    "homeTitle": "Ricicli da casa?",
     "homeBody": "Non serve iscriverti. Prenota un ritiro quando hai qualcosa da vendere.",
     "homeLink": "Scopri come funziona",
     "roles": {
@@ -2489,10 +2489,10 @@
     }
   },
   "sell": {
-    "metaTitle": "Vendi i tuoi materiali",
+    "metaTitle": "Prenota un ritiro",
     "metaDescription": "Vendi giornali, plastica, metallo ed elettronica usata da casa a Bengaluru. Scopri i prezzi dei negozi vicini, prenota un ritiro e ricevi il pagamento alla porta.",
     "eyebrow": "Per le famiglie di Bengaluru",
-    "title": "Vendi i tuoi materiali da casa",
+    "title": "Prenota un ritiro a domicilio",
     "lead": "Scegli ciò che hai e un negozio vicino. Ricevi contanti o UPI al momento della pesatura.",
     "promises": {
       "label": "Perché vendere qui",
@@ -2510,10 +2510,10 @@
     "steps": {
       "label": "Fasi",
       "progress": "Fase {current} di {total}",
-      "basket": "Cosa",
-      "shop": "Chi",
-      "when": "Quando",
-      "confirm": "Prenota"
+      "basket": "Materiali",
+      "shop": "Operatore",
+      "when": "Orario",
+      "confirm": "Riepilogo"
     },
     "back": "Indietro",
     "families": {
@@ -2531,7 +2531,7 @@
     },
     "perKg": "{price}/kg",
     "basket": {
-      "title": "Cosa hai?",
+      "title": "Cosa vuoi riciclare?",
       "lead": "Tocca ciò che vuoi vendere, poi indica i chili approssimativi.",
       "yours": "I tuoi materiali",
       "empty": "Non hai ancora aggiunto nulla. Tocca un materiale sopra.",
@@ -2704,7 +2704,7 @@
     "notFound": {
       "title": "Prenotazione non trovata",
       "body": "Controlla il link nell'SMS. Se hai appena prenotato, attendi un momento e riprova.",
-      "sell": "Vendi materiali"
+      "sell": "Prenota un ritiro"
     },
     "reference": "Prenotazione {token}",
     "status": {
@@ -2794,7 +2794,7 @@
       "otherNumber": "Usa un altro numero"
     },
     "saved": "Non serve un account. Conserva questo link per controllare la prenotazione da qualsiasi telefono.",
-    "sellMore": "Vendi altri materiali",
+    "sellMore": "Prenota un altro ritiro",
     "tryAnother": "Prova un altro negozio",
     "dispatchChanged": "La richiesta è passata a un altro negozio vicino. Il negozio attuale è indicato qui sotto."
   },
@@ -3242,7 +3242,7 @@
       "totalWeight": "Peso totale",
       "worth": "Valore di oggi",
       "worthHint": "Ai prezzi di mercato di oggi",
-      "scrap": "Materiali di recupero",
+      "scrap": "Materiali raccolti",
       "recycled": "Materiali riciclati",
       "atPrice": "Mercato {price}/kg",
       "noPrice": "Nessun prezzo di mercato oggi",
@@ -3338,7 +3338,7 @@
           "third": "Conserva la ricevuta"
         },
         "kabadiwala": {
-          "title": "Il tuo negozio di recupero",
+          "title": "Il tuo punto di raccolta",
           "first": "Esamina le richieste di ritiro",
           "second": "Registra il peso",
           "third": "Gestisci le scorte selezionate"

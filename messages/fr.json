@@ -34,7 +34,7 @@
     "prices": "Prix",
     "help": "Aide",
     "join": "Nous rejoindre",
-    "sellScrap": "Vendre mes matériaux"
+    "sellScrap": "Réserver une collecte"
   },
   "footer": {
     "about": "La filière indienne du recyclage sur une plateforme, du foyer à l’usine. Chaque transfert est pesé, chiffré et enregistré.",
@@ -79,11 +79,11 @@
     "metaDescription": "Luma.Green réunit la filière indienne du recyclage sur une plateforme : ménages, kabadiwalas, centres de tri, recycleurs et fabricants, avec des prix justes, des entreprises vérifiées et un reçu à chaque étape.",
     "hero": {
       "eyebrow": "Lancement à Bengaluru",
-      "title": "La filière indienne du recyclage, sur une plateforme",
-      "lead": "Vendez vos matériaux recyclables à domicile à un prix juste. Échangez-les avec des entreprises vérifiées tout au long de la filière. Chaque transfert est pesé, chiffré et enregistré.",
-      "sell": "Vendre vos matériaux",
-      "join": "Inscrire une entreprise",
-      "prices": "Voir les prix du jour"
+      "title": "Offrez un nouveau départ à vos matériaux.",
+      "lead": "Réservez une collecte de papier, plastique, métal et plus encore. Comparez les offres et gardez une trace claire.",
+      "sell": "Réserver une collecte",
+      "join": "Pour les entreprises",
+      "prices": "Voir les prix des matériaux"
     },
     "teaser": {
       "title": "Prix du jour",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "Le parcours des matériaux",
-      "intro": "Les matériaux changent de mains quatre fois avant de devenir de nouveaux produits. Le tri s’affine à chaque étape et Luma.Green enregistre chaque transfert.",
+      "intro": "Les matériaux passent des foyers aux points de collecte, aux centres de tri et aux recycleurs avant de devenir de nouveaux produits. Luma.Green enregistre chaque transfert.",
       "steps": {
         "household": {
           "name": "Ménages",
@@ -130,7 +130,7 @@
         "one": "Découvrez la valeur de vos matériaux avant de réserver.",
         "two": "Collecte à domicile ou dépôt en boutique.",
         "three": "Paiement en espèces ou par UPI, avec un reçu.",
-        "cta": "Vendre vos matériaux"
+        "cta": "Réserver une collecte"
       },
       "kabadiwala": {
         "title": "Collecteurs kabadiwalas",
@@ -170,7 +170,7 @@
     },
     "trust": {
       "heading": "Fondé sur la confiance",
-      "intro": "Le commerce des matériaux reposait sur les espèces et les estimations. Ces règles changent la pratique.",
+      "intro": "Des prix clairs, des poids mesurés et des relevés permettent à chacun de vérifier une collecte.",
       "verified": {
         "title": "Entreprises vérifiées",
         "body": "Une personne vérifie chaque entreprise et chaque Saathi avant qu’ils puissent effectuer des échanges."
@@ -211,11 +211,11 @@
     "closing": {
       "title": "Commencez avec ce que vous avez",
       "body": "Un sac de vieux journaux ou un camion de balles : tout a sa place sur Luma.Green.",
-      "sell": "Vendre vos matériaux",
+      "sell": "Réserver une collecte",
       "join": "Inscrire une entreprise"
     },
     "expansion": {
-      "materialsTitle": "Commencez avec vos matériaux disponibles",
+      "materialsTitle": "Que souhaitez-vous recycler ?",
       "pickupTitle": "Une collecte, étape par étape",
       "shopTitle": "Votre boutique de récupération, connectée",
       "recordsTitle": "Un relevé qui suit le matériau",
@@ -239,7 +239,7 @@
     "metaTitle": "Prix des matériaux recyclables à Bengaluru aujourd’hui",
     "metaDescription": "Prix du jour à Bengaluru par kg : papier, plastique, métal, verre et déchets électroniques, avec l’évolution hebdomadaire, un graphique sur 30 jours et le prix minimum payé par une boutique.",
     "eyebrow": "Bengaluru",
-    "title": "Prix des matériaux du jour",
+    "title": "Prix des matériaux",
     "lead": "Les prix de vente du jour par kilo. Les boutiques fixent leurs prix sans descendre sous le plancher. Sélectionnez un matériau pour voir les 30 derniers jours.",
     "demoNote": "Prix d’exemple du prototype, sans cotation de marché en direct.",
     "date": "Prix du {date}",
@@ -307,7 +307,7 @@
     "sellCta": {
       "title": "Des matériaux à vendre chez vous ?",
       "body": "Réservez une collecte et recevez votre paiement à domicile.",
-      "action": "Vendre vos matériaux"
+      "action": "Réserver une collecte"
     }
   },
   "standards": {
@@ -331,7 +331,7 @@
         "stage": "Étape"
       },
       "stages": {
-        "scrap": "À recycler",
+        "scrap": "Matériaux collectés",
         "recycled": "Recyclé"
       },
       "unavailable": "La liste des codes est momentanément indisponible. Revenez bientôt.",
@@ -554,7 +554,7 @@
     "metaTitle": "Fonctionnement",
     "metaDescription": "Prévu : le parcours des matériaux sur Luma.Green, vendus à domicile à un prix juste, échangés dans la filière avec séquestre et enregistrés à chaque transfert.",
     "title": "Comment fonctionne Luma.Green",
-    "lead": "Les matériaux changent de mains quatre fois avant de devenir de nouveaux produits. Voici chaque étape et ce que Luma.Green enregistre.",
+    "lead": "Les matériaux passent des foyers aux points de collecte, aux centres de tri et aux recycleurs avant de devenir de nouveaux produits. Luma.Green enregistre chaque transfert.",
     "stepLabel": "Étape {number}",
     "sell": {
       "body": "Un ménage sélectionne ses matériaux, consulte les offres des boutiques voisines et réserve une collecte ou un dépôt. Le kabadiwala pèse chaque matériau et paie en espèces ou par UPI. Les deux parties reçoivent un reçu.",
@@ -1892,7 +1892,7 @@
     "sendCode": "Envoyer le code",
     "sending": "Envoi en cours…",
     "sendFailed": "Impossible d’envoyer le code. Réessayez dans une minute.",
-    "homeTitle": "Vous vendez des matériaux à domicile ? Aucun compte nécessaire.",
+    "homeTitle": "Vous recyclez depuis chez vous ? Aucun compte nécessaire.",
     "homeLink": "Découvrir le fonctionnement",
     "privacy": "Nous utilisons votre numéro uniquement pour vous connecter et vous informer de votre activité sur Luma.Green.",
     "unavailableTitle": "La connexion par téléphone sera bientôt disponible",
@@ -1934,7 +1934,7 @@
     "lead": "Présentez votre activité. Une personne examine chaque dossier, généralement sous 12 à 24 heures.",
     "start": "Commencer",
     "youNeed": "À préparer",
-    "homeTitle": "Vous vendez des matériaux à domicile ?",
+    "homeTitle": "Vous recyclez depuis chez vous ?",
     "homeBody": "Inutile de vous inscrire. Réservez une collecte quand vous avez des matériaux à vendre.",
     "homeLink": "Découvrir le fonctionnement",
     "roles": {
@@ -2489,10 +2489,10 @@
     }
   },
   "sell": {
-    "metaTitle": "Vendre vos matériaux",
+    "metaTitle": "Réserver une collecte",
     "metaDescription": "Vendez journaux, plastiques, métaux et anciens appareils électroniques à domicile à Bengaluru. Comparez les offres des boutiques voisines, réservez une collecte et recevez votre paiement chez vous.",
     "eyebrow": "Pour les ménages de Bengaluru",
-    "title": "Vendez vos matériaux à domicile",
+    "title": "Réservez une collecte à domicile",
     "lead": "Sélectionnez vos matériaux, choisissez une boutique voisine et recevez un paiement en espèces ou par UPI après la pesée.",
     "promises": {
       "label": "Pourquoi vendre ici",
@@ -2510,10 +2510,10 @@
     "steps": {
       "label": "Étapes",
       "progress": "Étape {current} sur {total}",
-      "basket": "Quoi",
-      "shop": "Qui",
-      "when": "Quand",
-      "confirm": "Réserver"
+      "basket": "Matériaux",
+      "shop": "Partenaire",
+      "when": "Horaire",
+      "confirm": "Vérification"
     },
     "back": "Retour",
     "families": {
@@ -2531,7 +2531,7 @@
     },
     "perKg": "{price}/kg",
     "basket": {
-      "title": "Quels matériaux avez-vous ?",
+      "title": "Que recyclez-vous ?",
       "lead": "Sélectionnez les matériaux à vendre, puis indiquez leur poids approximatif.",
       "yours": "Vos matériaux",
       "empty": "Aucun ajout pour le moment. Sélectionnez un matériau ci-dessus.",
@@ -2704,7 +2704,7 @@
     "notFound": {
       "title": "Votre réservation est introuvable",
       "body": "Vérifiez le lien du SMS. Si vous venez de réserver, patientez un instant et réessayez.",
-      "sell": "Vendre mes matériaux"
+      "sell": "Réserver une collecte"
     },
     "reference": "Réservation {token}",
     "status": {
@@ -2794,7 +2794,7 @@
       "otherNumber": "Utiliser un autre numéro"
     },
     "saved": "Aucun compte requis. Conservez ce lien pour consulter la réservation sur tout téléphone.",
-    "sellMore": "Vendre d’autres matériaux",
+    "sellMore": "Réserver une autre collecte",
     "tryAnother": "Essayer une autre boutique",
     "dispatchChanged": "Votre demande a été transmise à une autre boutique voisine. La boutique actuelle est indiquée ci-dessous."
   },
@@ -3242,7 +3242,7 @@
       "totalWeight": "Poids total",
       "worth": "Valeur du jour",
       "worthHint": "Aux prix du marché du jour",
-      "scrap": "À recycler",
+      "scrap": "Matériaux collectés",
       "recycled": "Matières recyclées",
       "atPrice": "Marché : {price}/kg",
       "noPrice": "Aucun prix de marché aujourd’hui",
@@ -3338,7 +3338,7 @@
           "third": "Conservez votre reçu"
         },
         "kabadiwala": {
-          "title": "Votre boutique de récupération",
+          "title": "Votre point de collecte",
           "first": "Examinez les demandes de collecte",
           "second": "Enregistrez le poids",
           "third": "Gérez les stocks triés"

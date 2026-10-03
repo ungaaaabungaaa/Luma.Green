@@ -112,7 +112,7 @@ describe("StockPage", () => {
       YARD_WORKSPACE,
     );
     expect(
-      screen.getByRole("heading", { level: 2, name: "Scrap" }),
+      screen.getByRole("heading", { level: 2, name: "Collected materials" }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { level: 2, name: "Recycled material" }),

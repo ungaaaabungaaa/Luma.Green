@@ -86,7 +86,7 @@ describe("BasketStep", () => {
       "aria-pressed",
       "true",
     );
-    const basket = screen.getByRole("region", { name: "Your scrap" });
+    const basket = screen.getByRole("region", { name: "Your materials" });
     // 12 kg at ₹14/kg.
     expect(within(basket).getByText("About ₹168")).toBeInTheDocument();
     expect(

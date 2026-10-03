@@ -297,6 +297,8 @@ describe("the mandatory platform guide", () => {
       authenticationTested: boolean;
       mutationsPerformed: boolean;
       rows: number;
+      historyPoints: number | null;
+      theme: string;
       sourceHashes: Record<string, string>;
       browserErrors: string[];
       blockedRequests: string[];
@@ -310,6 +312,12 @@ describe("the mandatory platform guide", () => {
       expect(capture.authenticationTested).toBe(false);
       expect(capture.mutationsPerformed).toBe(false);
       expect(capture.rows).toBe(26);
+      if (capture.theme === "dark") {
+        expect(capture.historyPoints).toBeGreaterThanOrEqual(2);
+        expect(capture.historyPoints).toBeLessThanOrEqual(30);
+      } else {
+        expect(capture.historyPoints).toBeNull();
+      }
       expect(capture.browserErrors).toEqual([]);
       expect(capture.blockedRequests).toEqual([]);
       for (const [file, expected] of Object.entries(capture.sourceHashes)) {

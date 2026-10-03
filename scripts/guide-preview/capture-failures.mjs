@@ -237,6 +237,23 @@ try {
                       exact: true,
                     })
                     .click();
+                  // Give the unchanged menu, error toast and documentation note
+                  // separate space. Only the harness note is repositioned.
+                  await page.setViewportSize({ ...viewport, height: 1100 });
+                  await page
+                    .getByRole("note", {
+                      name: "Screenshot provenance",
+                      includeHidden: true,
+                    })
+                    .evaluate((note) => {
+                      Object.assign(note.style, {
+                        position: "fixed",
+                        top: "auto",
+                        bottom: "96px",
+                        left: "0",
+                        right: "0",
+                      });
+                    });
                   await page
                     .getByRole("dialog")
                     .getByRole("button", {
@@ -329,7 +346,7 @@ try {
               scenario,
               locale,
               theme,
-              viewport,
+              viewport: page.viewportSize(),
               sha256: sha256(image),
               provenance:
                 "synthetic local failure fixture; actual components; no live authentication, writes or provider execution",

@@ -15,10 +15,10 @@ export function GuideCards({ role }: { role: HelpRole }) {
         <li
           key={key}
           data-reveal
-          className="group relative flex gap-3 py-5 transition-colors hover:bg-muted/30 has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:gap-5 sm:py-6"
+          className="group relative flex gap-4 py-5 transition-colors hover:bg-muted/30 has-[a:focus-visible]:ring-3 has-[a:focus-visible]:ring-ring/50 sm:gap-5 sm:py-6"
         >
           <IconTile icon={icon} size="sm" />
-          <div className="grid min-w-0 flex-1 gap-2 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)_auto] md:items-center md:gap-6">
+          <div className="grid min-w-0 flex-1 gap-2 md:items-center md:gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)_auto]">
             <h3 className="text-lg font-semibold tracking-tight">
               <Link
                 href={`/help/${role}/${slug}`}

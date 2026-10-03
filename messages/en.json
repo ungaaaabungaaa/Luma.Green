@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Cleaner Tomorrow in Motion",
-    "description": "Luma.Green puts India's scrap chain on one platform: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, weighed pickups and a record of every hand-off."
+    "description": "Luma.Green connects India's recycling network: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, weighed collections and a record of every hand-off."
   },
   "theme": {
     "label": "Appearance",
@@ -34,10 +34,10 @@
     "prices": "Prices",
     "help": "Help",
     "join": "Join",
-    "sellScrap": "Sell scrap"
+    "sellScrap": "Book a collection"
   },
   "footer": {
-    "about": "India's scrap chain on one platform, from the home to the factory. Every hand-off weighed, priced and recorded.",
+    "about": "India's recycling network, from home to factory. Every hand-off weighed, priced and recorded.",
     "navLabel": "Footer",
     "useHeading": "Use Luma.Green",
     "learnHeading": "Learn more",
@@ -48,7 +48,7 @@
   "loop": {
     "sell": {
       "title": "Sell",
-      "summary": "Households sell scrap from home at a fair price, weighed and paid at the door."
+      "summary": "Households sell recyclable materials from home, with weighing and payment at collection."
     },
     "trade": {
       "title": "Trade",
@@ -76,14 +76,14 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green puts India's scrap chain on one platform: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, verified businesses and a receipt at every step.",
+    "metaDescription": "Luma.Green connects India's recycling network: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, verified businesses and a receipt at every step.",
     "hero": {
       "eyebrow": "Starting in Bengaluru",
-      "title": "India's scrap chain, on one platform",
-      "lead": "Sell scrap from home at a fair price. Trade it up the chain with verified businesses. Every hand-off is weighed, priced and recorded.",
-      "sell": "Sell your scrap",
-      "join": "Join as a business",
-      "prices": "See today's prices"
+      "title": "Give your materials a new beginning.",
+      "lead": "Book a collection for paper, plastic, metal and more. Compare offers and keep a clear record.",
+      "sell": "Book a collection",
+      "join": "For businesses",
+      "prices": "View material prices"
     },
     "teaser": {
       "title": "Today's prices",
@@ -95,8 +95,8 @@
       "error": "Prices couldn't load right now."
     },
     "chain": {
-      "heading": "How scrap moves",
-      "intro": "Scrap changes hands four times before it becomes something new. It is sorted better at every step, and Luma.Green records every hand-off.",
+      "heading": "How materials move",
+      "intro": "Materials move from homes to collection shops, sorting yards and recyclers before they become something new. Luma.Green records each hand-off.",
       "steps": {
         "household": {
           "name": "Households",
@@ -124,13 +124,13 @@
     },
     "roles": {
       "heading": "Something for everyone in the chain",
-      "intro": "Six kinds of people keep scrap moving. Here is what Luma.Green does for each of them.",
+      "intro": "Six groups keep materials moving. Here is what Luma.Green does for each of them.",
       "household": {
         "title": "Households",
-        "one": "See what your scrap is worth before you book.",
+        "one": "Compare offers for your materials before you book.",
         "two": "Pickup at your door, or drop it at a shop.",
         "three": "Paid in cash or UPI, with a receipt.",
-        "cta": "Sell your scrap"
+        "cta": "Book a collection"
       },
       "kabadiwala": {
         "title": "Kabadiwalas",
@@ -170,7 +170,7 @@
     },
     "trust": {
       "heading": "Built on trust",
-      "intro": "Scrap has always run on cash and guesswork. These rules change that.",
+      "intro": "Clear prices, measured weights and records help everyone check a collection.",
       "verified": {
         "title": "Verified businesses",
         "body": "A person checks every business and every Saathi before they can trade."
@@ -194,7 +194,7 @@
     },
     "whyNow": {
       "heading": "Why now",
-      "intro": "Three changes make this the moment to put India's scrap chain on record.",
+      "intro": "Three changes make this the moment to put India's recycling network on record.",
       "epr": {
         "title": "EPR rules",
         "body": "Extended Producer Responsibility rules for plastic packaging, e-waste and batteries ask producers to prove that material was really collected and recycled. That proof has to start at the first hand-off."
@@ -211,13 +211,13 @@
     "closing": {
       "title": "Start with what you have",
       "body": "A bag of old newspapers or a truckload of bales: there is a place for it on Luma.Green.",
-      "sell": "Sell your scrap",
+      "sell": "Book a collection",
       "join": "Join as a business"
     },
     "expansion": {
-      "materialsTitle": "Start with the materials you already have",
+      "materialsTitle": "What would you like to recycle?",
       "pickupTitle": "A pickup, step by step",
-      "shopTitle": "Your scrap shop, connected",
+      "shopTitle": "Your collection shop, connected",
       "recordsTitle": "A record that follows the material",
       "paymentTitle": "Clear weights. Clear payments.",
       "questionsTitle": "Before you start"
@@ -236,11 +236,11 @@
     }
   },
   "prices": {
-    "metaTitle": "Scrap prices in Bengaluru today",
-    "metaDescription": "Today's scrap prices in Bengaluru, per kg: paper, plastic, metal, glass and e-waste, with the week's change, a 30-day chart and the least a shop may pay.",
+    "metaTitle": "Material prices in Bengaluru",
+    "metaDescription": "Material prices in Bengaluru, per kg: paper, plastic, metal, glass and e-waste, with the week's change, a 30-day chart and the least a shop may pay.",
     "eyebrow": "Bengaluru",
-    "title": "Today's scrap prices",
-    "lead": "What scrap sells for today, per kilo. Shops set their own prices, but never below the floor. Tap a material to see its last 30 days.",
+    "title": "Material prices",
+    "lead": "Prices per kilogram for recyclable materials. Shops set their own prices, but never below the floor. Choose a material to see its last 30 days.",
     "demoNote": "Sample prices for the prototype, not live market rates.",
     "date": "Prices for {date}",
     "floorHelp": "Floor: the least a verified shop may pay you for a kilo.",
@@ -305,22 +305,22 @@
       "retry": "Try again"
     },
     "sellCta": {
-      "title": "Got scrap at home?",
+      "title": "Ready to recycle at home?",
       "body": "Book a pickup and get paid at your door.",
-      "action": "Sell your scrap"
+      "action": "Book a collection"
     }
   },
   "standards": {
     "metaTitle": "The Luma.Green standard",
-    "metaDescription": "Planned: Open material codes and simple rules for fair scrap trade in India: grading, weighing, receipts, verification and escrow. Free for anyone to adopt.",
+    "metaDescription": "Planned: Open material codes and simple rules for fair material trade in India: grading, weighing, receipts, verification and escrow. Free for anyone to adopt.",
     "eyebrow": "Open standard",
     "title": "The Luma.Green standard",
-    "lead": "Simple, open rules for trading scrap fairly: one code for every material, clear grading, honest weighing and a record at every hand-off. Anyone in the industry can adopt them.",
+    "lead": "Simple, open rules for trading recyclable materials fairly: one code for every material, clear grading, honest weighing and a record at every hand-off. Anyone in the industry can adopt them.",
     "onThisPage": "On this page",
     "codes": {
       "title": "One code for every material",
       "nav": "Material codes",
-      "body": "The same scrap goes by many local names. An open code gives each material one name everyone can use, so a kilo of newspaper means the same thing at a shop, a yard and a factory.",
+      "body": "The same material goes by many local names. An open code gives each material one name everyone can use, so a kilo of newspaper means the same thing at a shop, a yard and a factory.",
       "caption": "Luma.Green material codes",
       "count": "{count, plural, one {# material} other {# materials}}",
       "download": "Download the codes (CSV)",
@@ -331,7 +331,7 @@
         "stage": "Stage"
       },
       "stages": {
-        "scrap": "Scrap",
+        "scrap": "Collected materials",
         "recycled": "Recycled"
       },
       "unavailable": "The code list isn't available right now. Please check back soon.",
@@ -345,7 +345,7 @@
       "body": "A fair price needs a clear grade. Three checks come before any weighing.",
       "dry": {
         "title": "Dry",
-        "body": "Water is not scrap. Wet paper and cardboard are dried before they are weighed."
+        "body": "Do not include water in the material weight. Wet paper and cardboard are dried before they are weighed."
       },
       "sorted": {
         "title": "Sorted",
@@ -359,7 +359,7 @@
     "weighing": {
       "title": "Fair weighing",
       "nav": "Weighing",
-      "body": "Most arguments in scrap are about weight. These rules keep the scale honest.",
+      "body": "Clear weighing rules help resolve disputes over material weight.",
       "stamped": {
         "title": "Stamped scales",
         "body": "Weigh only on a scale verified and stamped by the Legal Metrology department."
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "How it works",
-    "metaDescription": "Planned: How scrap moves on Luma.Green: sold from home at a fair price, traded up the chain with escrow, and recorded at every hand-off.",
+    "metaDescription": "Planned: How recyclable materials move on Luma.Green: collected from home, traded through the network with escrow, and recorded at every hand-off.",
     "title": "How Luma.Green works",
-    "lead": "Scrap changes hands four times before it becomes something new. Here is what happens at each step, and what Luma.Green records.",
+    "lead": "Materials move from homes to collection shops, sorting yards and recyclers before they become something new. Here is what happens at each step, and what Luma.Green records.",
     "stepLabel": "Step {number}",
     "sell": {
       "body": "A household picks what it has, sees each nearby shop's offer and books a pickup or a drop-off. The kabadiwala weighs each material and pays in cash or UPI, and both get a receipt.",
@@ -577,9 +577,9 @@
   },
   "participants": {
     "metaTitle": "Who it's for",
-    "metaDescription": "Luma.Green is built for households, kabadiwalas, yards, recyclers, manufacturers and Saathis: everyone who moves scrap from a home to a factory.",
+    "metaDescription": "Luma.Green is built for households, kabadiwalas, yards, recyclers, manufacturers and Saathis: everyone who moves recyclable materials from home to factory.",
     "title": "Who Luma.Green is for",
-    "lead": "Everyone who moves scrap from a home to a factory, and the people who do the work in between.",
+    "lead": "Everyone who moves recyclable materials from home to factory, and the people who do the work in between.",
     "kabadiwala": {
       "name": "Kabadiwalas",
       "body": "Take pickup requests from homes nearby, weigh and pay fairly, and sell sorted stock to yards."
@@ -601,7 +601,7 @@
       "body": "Take paid pickups, sorting work and shifts near home, and see what you've earned."
     },
     "householdHeading": "And every household",
-    "householdBody": "Anyone can sell scrap from home without an account: pick what you have, see each shop's offer, and get paid in cash or UPI with a receipt."
+    "householdBody": "Book a collection from home without an account: choose your materials, compare shop offers, and receive cash or UPI payment from the shop with a receipt."
   },
   "contact": {
     "metaTitle": "Contact",
@@ -657,13 +657,13 @@
     "roles": {
       "household": {
         "name": "Households",
-        "who": "Selling scrap from home",
+        "who": "Recycling from home",
         "title": "Help for households",
         "lead": "Book a pickup, get a fair weigh and get paid at your door. No account needed."
       },
       "kabadiwala": {
         "name": "Kabadiwalas",
-        "who": "Running a scrap shop",
+        "who": "Running a local collection shop",
         "title": "Help for kabadiwalas",
         "lead": "Take pickups, weigh and pay in a minute, set your prices and sell to yards."
       },
@@ -675,9 +675,9 @@
       },
       "recycler": {
         "name": "Recyclers",
-        "who": "Turning scrap into raw material",
+        "who": "Turning collected materials into raw material",
         "title": "Help for recyclers",
-        "lead": "Buy graded scrap from yards, sell your output to factories and keep your EPR records clean."
+        "lead": "Buy graded materials from yards, sell your output to factories and keep your EPR records clear."
       },
       "manufacturer": {
         "name": "Manufacturers",
@@ -819,7 +819,7 @@
       },
       "safetyAtWork": {
         "title": "Stay safe at work",
-        "summary": "Safety gear, lifting, sharp scrap, batteries and machines: the basics that prevent injuries.",
+        "summary": "Safety gear, lifting, sharp materials, batteries and machines: the basics that prevent injuries.",
         "steps": {
           "gear": {
             "title": "Wear your safety gear (PPE)",
@@ -835,7 +835,7 @@
           },
           "batteries": {
             "title": "Keep batteries and e-waste apart",
-            "body": "Store them dry and cool, away from other scrap. Never burn wires or break open batteries or screens."
+            "body": "Store them dry and cool, away from other materials. Never burn wires or break open batteries or screens."
           },
           "machines": {
             "title": "Switch off before you clear a jam",
@@ -978,8 +978,8 @@
         "summary": "From photo to booked pickup in about two minutes. No account needed.",
         "steps": {
           "photo": {
-            "title": "Take a photo of your scrap",
-            "body": "Optional: add one photo of your scrap, then check the suggested items."
+            "title": "Take a photo of your materials",
+            "body": "Optional: add one photo of your materials, then check the suggested items."
           },
           "estimate": {
             "title": "Check the estimate",
@@ -1004,8 +1004,8 @@
         }
       },
       "getReady": {
-        "title": "Get your scrap ready",
-        "summary": "Sorted, dry scrap is weighed faster and sells for more.",
+        "title": "Get your materials ready",
+        "summary": "Sort your materials and keep them dry to help the shop weigh and price them.",
         "steps": {
           "paper": {
             "title": "Keep paper dry and flat",
@@ -1253,7 +1253,7 @@
           },
           "sort": {
             "title": "Record your sorting",
-            "body": "Split mixed scrap into what it really is. For example, mixed paper into newspaper, cardboard and waste."
+            "body": "Separate mixed materials by type. For example, sort mixed paper into newspaper, cardboard and waste."
           },
           "show": {
             "title": "Show your stock to yards",
@@ -1289,7 +1289,7 @@
       },
       "buyFromKabadiwalas": {
         "title": "Demo guide: Buy stock from kabadiwalas",
-        "summary": "Find sorted scrap near you and book a collection.",
+        "summary": "Find sorted materials near you and book a collection.",
         "steps": {
           "browse": {
             "title": "Open Buy",
@@ -1340,7 +1340,7 @@
         }
       },
       "buyFromYards": {
-        "title": "Demo guide: Buy sorted scrap from yards",
+        "title": "Demo guide: Buy sorted materials from yards",
         "summary": "Steady, graded input for your line.",
         "steps": {
           "browse": {
@@ -1501,7 +1501,7 @@
           },
           "deliver": {
             "title": "Bring it to the shop",
-            "body": "Take the scrap straight to the shop and hand it over."
+            "body": "Take the materials straight to the shop and hand them over."
           }
         }
       },
@@ -1599,7 +1599,7 @@
       },
       "noVehicle": {
         "q": "I don't have a vehicle. Can I still join?",
-        "a": "Yes. Households can bring scrap to your shop. Saathi pickups for shops without a vehicle are coming later."
+        "a": "Yes. Households can bring materials to your shop. Saathi collections for shops without a vehicle are coming later."
       },
       "autoAccept": {
         "q": "What is auto-accept?",
@@ -1732,7 +1732,7 @@
     },
     "tutorials": {
       "bookInTwoMinutes": "Book a pickup in two minutes",
-      "sortAtHome": "Sorting scrap at home",
+      "sortAtHome": "Sorting materials at home",
       "batterySafety": "Old batteries, handled safely",
       "firstDay": "Your first day on Luma.Green",
       "weighAndPayVideo": "Weigh and pay in a minute",
@@ -1760,7 +1760,7 @@
         "title": "Sort it once",
         "p1": "One bag each for paper, plastic and metal.",
         "p2": "Keep everything dry and clean.",
-        "p3": "Sorted scrap is weighed faster and paid better."
+        "p3": "Sorted materials are easier to weigh and price."
       },
       "batteriesSafe": {
         "title": "Batteries, safely",
@@ -1787,7 +1787,7 @@
         "p3": "Show the total before you pay."
       },
       "safeHandling": {
-        "title": "Handling scrap safely",
+        "title": "Handling materials safely",
         "p1": "Gloves and closed shoes, every time.",
         "p2": "Lift with your legs, and get help over 25 kg.",
         "p3": "Keep batteries and e-waste apart."
@@ -1892,7 +1892,7 @@
     "sendCode": "Send code",
     "sending": "Sending…",
     "sendFailed": "We couldn't send the code. Please try again in a minute.",
-    "homeTitle": "Selling scrap from home? You don't need an account.",
+    "homeTitle": "Recycling from home? You don't need an account.",
     "homeLink": "See how it works",
     "privacy": "We use your number only to sign you in and to send you updates about your work on Luma.Green.",
     "unavailableTitle": "Phone sign-in opens soon",
@@ -1934,23 +1934,23 @@
     "lead": "Tell us what you do. A person checks every application, usually within 12–24 hours.",
     "start": "Start",
     "youNeed": "You'll need",
-    "homeTitle": "Selling scrap from home?",
+    "homeTitle": "Recycling from home?",
     "homeBody": "You don't need to join. Book a pickup whenever you have something to sell.",
     "homeLink": "See how it works",
     "roles": {
       "kabadiwala": {
         "title": "Kabadiwala",
-        "body": "You run a scrap shop and buy from homes nearby.",
+        "body": "You run a local collection shop and buy materials from nearby homes.",
         "needs": "Your shop's address and opening hours. Your GST number if you have one."
       },
       "yard": {
         "title": "Yard",
-        "body": "You sort and bale scrap in bulk, then sell it on.",
+        "body": "You sort and bale materials in bulk, then sell them on.",
         "needs": "Your GST number if you have one, your pollution-control consent (a PDF) and photos of your machines."
       },
       "recycler": {
         "title": "Recycler",
-        "body": "You turn scrap back into raw material.",
+        "body": "You turn collected materials back into raw material.",
         "needs": "Your GST number if you have one, your pollution-control consent (a PDF) and photos of your machines."
       },
       "manufacturer": {
@@ -2407,7 +2407,7 @@
         "detail": "{board} · {number}",
         "missing": "No consent on file",
         "note": "The state pollution control board's consent to operate lets you run a sorting or recycling unit legally. Recyclers and factories ask for it before they buy.",
-        "noteShop": "A small shop that only buys and sorts scrap usually doesn't need one. You would if you start baling, shredding or processing material."
+        "noteShop": "A small shop that only buys and sorts recyclable materials usually doesn't need one. You would if you start baling, shredding or processing material."
       },
       "scale": {
         "title": "Weighing scale stamped",
@@ -2489,10 +2489,10 @@
     }
   },
   "sell": {
-    "metaTitle": "Sell your scrap",
+    "metaTitle": "Book a collection",
     "metaDescription": "Sell newspaper, plastic, metal and old electronics from home in Bengaluru. See what shops near you pay, book a pickup and get paid at your door.",
     "eyebrow": "For homes in Bengaluru",
-    "title": "Sell your scrap from home",
+    "title": "Book a collection from home",
     "lead": "Pick what you have, choose a shop near you, and get paid in cash or UPI when it's weighed.",
     "promises": {
       "label": "Why sell here",
@@ -2510,10 +2510,10 @@
     "steps": {
       "label": "Steps",
       "progress": "Step {current} of {total}",
-      "basket": "What",
-      "shop": "Who",
-      "when": "When",
-      "confirm": "Book"
+      "basket": "Materials",
+      "shop": "Partner",
+      "when": "Time",
+      "confirm": "Review"
     },
     "back": "Back",
     "families": {
@@ -2531,9 +2531,9 @@
     },
     "perKg": "{price}/kg",
     "basket": {
-      "title": "What do you have?",
+      "title": "What are you recycling?",
       "lead": "Tap what you want to sell, then set about how many kilos.",
-      "yours": "Your scrap",
+      "yours": "Your materials",
       "empty": "Nothing added yet. Tap a material above.",
       "kilos": "Kilos of {material}",
       "less": "Less {material}",
@@ -2548,11 +2548,11 @@
       "points": "+{points, plural, one {# recycle point} other {# recycle points}}",
       "next": "Find buyers",
       "full": "That's the most for one booking: {max} materials.",
-      "weighNote": "The final amount is set when your scrap is weighed."
+      "weighNote": "The final amount is set when your materials are weighed."
     },
     "shop": {
       "title": "Who buys it?",
-      "lead": "Each shop's offer for your scrap, from its own prices.",
+      "lead": "Each shop's offer for your materials, from its own prices.",
       "modeLabel": "How do you want to hand it over?",
       "pickup": "Pickup from home",
       "pickupHint": "The shop comes to you",
@@ -2564,7 +2564,7 @@
       "byPrice": "Sort by price instead",
       "locationFailed": "We couldn't get your location, so shops are sorted by best price.",
       "listLabel": "Shops",
-      "offerFor": "for your scrap",
+      "offerFor": "for your materials",
       "distance": "{km} km",
       "hours": "Open {hours}",
       "picksUp": "Picks up",
@@ -2612,7 +2612,7 @@
       "dropoff": "You drop it at the shop",
       "whenValue": "{day} · {window}, {time}",
       "youGet": "You'll get about {amount}",
-      "payNote": "The shop weighs your scrap and pays you in cash or UPI.",
+      "payNote": "The shop weighs your materials and pays you in cash or UPI.",
       "phoneTitle": "Confirm your mobile number",
       "phoneLead": "We'll send a 6-digit code by SMS. Your booking is saved to this number, so you can follow it on any phone.",
       "bookingAs": "Booking as {phone}",
@@ -2649,9 +2649,9 @@
       "generic": "Something went wrong. Please try again.",
       "EMPTY_BASKET": "Add at least one thing to sell.",
       "TOO_MANY_ITEMS": "That's too many materials for one booking.",
-      "DUPLICATE_ITEM": "A material is listed twice. Please check your scrap.",
+      "DUPLICATE_ITEM": "A material is listed twice. Please check your list.",
       "INVALID_KG": "Check the kilos: each must be more than 0 and at most 500.",
-      "UNKNOWN_MATERIAL": "One of your materials can't be sold here any more. Please check your scrap.",
+      "UNKNOWN_MATERIAL": "One of your materials can't be sold here any more. Please check your list.",
       "SHOP_NOT_FOUND": "That shop isn't taking bookings now. Please pick another.",
       "SHOP_NO_PICKUP": "That shop doesn't pick up. Pick another shop, or drop it off.",
       "INVALID_DATE": "That day can't be booked any more. Please pick another.",
@@ -2676,7 +2676,7 @@
     },
     "photo": {
       "title": "Try a photo estimate",
-      "lead": "Optional: add one photo of your scrap, then check the suggested items.",
+      "lead": "Optional: add one photo of your materials, then check the suggested items.",
       "privacy": "Do not include faces, documents, or number plates. The photo is sent to an AI provider for this estimate. Luma.Green does not save it.",
       "choose": "Choose or take a photo",
       "selected": "Photo ready",
@@ -2694,7 +2694,7 @@
       "failed": "The photo could not be checked. Try another photo or choose your items below.",
       "invalid": "Use a clear JPEG or PNG photo under 12 MB.",
       "limited": "The photo limit has been reached. Choose your items below, or try again tomorrow.",
-      "retake": "The photo is unclear or does not show scrap. Try another photo or choose your items below.",
+      "retake": "The photo is unclear or does not show recyclable materials. Try another photo or choose your items below.",
       "empty": "No supported materials were found. Try another photo or choose your items below.",
       "replace": "Choose another photo"
     }
@@ -2704,7 +2704,7 @@
     "notFound": {
       "title": "We couldn't find this booking",
       "body": "Check the link in your SMS. If you just booked, give it a moment and try again.",
-      "sell": "Sell scrap"
+      "sell": "Book a collection"
     },
     "reference": "Booking {token}",
     "status": {
@@ -2719,13 +2719,13 @@
       "requested": "{mode, select, pickup {Waiting for {shop} to accept} other {Waiting for {shop} to confirm}}",
       "requestedBody": "We've sent your request. This page updates as soon as they answer.",
       "accepted": "{mode, select, pickup {{shop} accepted your pickup} other {{shop} is expecting you}}",
-      "acceptedBody": "Keep your scrap ready. It's weighed, then you're paid in cash or UPI.",
+      "acceptedBody": "Keep your materials ready. The shop weighs them, then pays you in cash or UPI.",
       "on_the_way": "{shop} is on the way",
-      "on_the_wayBody": "Keep your scrap ready near the door.",
+      "on_the_wayBody": "Keep your materials ready near the door.",
       "completed": "Done! You got {amount}",
       "completedBody": "Thank you for recycling. Your points are added to your number.",
       "declined": "{shop} couldn't take this booking",
-      "declinedBody": "Nothing was collected. Try another shop — your scrap list is saved.",
+      "declinedBody": "Nothing was collected. Try another shop — your material list is saved.",
       "cancelled": "This booking was cancelled",
       "cancelledBody": "Nothing was collected. You can book again any time."
     },
@@ -2760,7 +2760,7 @@
     "money": {
       "title": "Your money and points",
       "estimate": "You'll get about {amount}",
-      "estimateNote": "The shop weighs your scrap and pays you in cash or UPI.",
+      "estimateNote": "The shop weighs your materials and pays you in cash or UPI.",
       "paid": "You got {amount}",
       "paidBy": "Paid by {method, select, upi {UPI} other {cash}} · {date}",
       "estimateWas": "Estimate was {amount}",
@@ -2794,7 +2794,7 @@
       "otherNumber": "Use another number"
     },
     "saved": "No account needed. Keep this link to check your booking on any phone.",
-    "sellMore": "Sell more scrap",
+    "sellMore": "Book another collection",
     "tryAnother": "Try another shop",
     "dispatchChanged": "Your request has moved to another nearby shop. The current shop is shown below."
   },
@@ -2852,7 +2852,7 @@
     },
     "browse": {
       "title": "Buy",
-      "lead": "{kind, select, yard {Sorted scrap from kabadiwalas near you.} recycler {Sorted, baled material from yards.} manufacturer {Recycled material from verified recyclers.} other {Material on sale near you.}}",
+      "lead": "{kind, select, yard {Sorted materials from kabadiwalas near you.} recycler {Sorted, baled material from yards.} manufacturer {Recycled material from verified recyclers.} other {Material on sale near you.}}",
       "filterLabel": "Filter by material",
       "all": "All",
       "count": "{count, plural, =0 {No lots} one {# lot on sale} other {# lots on sale}}",
@@ -3035,7 +3035,7 @@
     },
     "home": {
       "greeting": "Namaste, {name}",
-      "lead": "{kind, select, yard {Buy from kabadiwalas, sell sorted bales to recyclers.} recycler {Buy sorted scrap from yards, sell recycled material to manufacturers.} manufacturer {Buy recycled material from verified recyclers.} other {Your trades at a glance.}}",
+      "lead": "{kind, select, yard {Buy from kabadiwalas, sell sorted bales to recyclers.} recycler {Buy sorted materials from yards, sell recycled material to manufacturers.} manufacturer {Buy recycled material from verified recyclers.} other {Your trades at a glance.}}",
       "buy": "Buy",
       "sell": "Sell",
       "trades": "Trades",
@@ -3148,7 +3148,7 @@
     },
     "requests": {
       "title": "Requests",
-      "lead": "Households near you who want to sell their scrap.",
+      "lead": "Households near you with materials ready for collection.",
       "tabs": {
         "new": "New",
         "today": "Today",
@@ -3242,7 +3242,7 @@
       "totalWeight": "Total weight",
       "worth": "Worth today",
       "worthHint": "At today's market prices",
-      "scrap": "Scrap",
+      "scrap": "Collected materials",
       "recycled": "Recycled material",
       "atPrice": "Market {price}/kg",
       "noPrice": "No market price today",
@@ -3303,12 +3303,12 @@
     "updateUnavailable": "App updates are not available on this build.",
     "updateFailed": "Could not check for updates. Try again later.",
     "locationTitle": "Share your location?",
-    "locationBody": "Allow Luma.Green to use your location to find nearby scrap shops.",
+    "locationBody": "Allow Luma.Green to use your location to find nearby collection shops.",
     "allow": "Allow",
     "deny": "Not now",
     "browserNotice": "This page opens in your browser. You may need to sign in again.",
-    "cameraPermission": "Use the camera to photograph scrap or verification documents.",
-    "photoPermission": "Select photos for scrap estimates and verification.",
+    "cameraPermission": "Use the camera to photograph materials or verification documents.",
+    "photoPermission": "Select photos for material estimates and verification.",
     "cameraTitle": "Camera"
   },
   "analytics": {
@@ -3338,7 +3338,7 @@
           "third": "Keep your receipt"
         },
         "kabadiwala": {
-          "title": "Your scrap shop",
+          "title": "Your collection shop",
           "first": "Review pickup requests",
           "second": "Record the weight",
           "third": "Manage sorted stock"
