@@ -55,12 +55,16 @@ preview returned HTTP 200 for home and collection routes with the new copy;
 robots.txt disallows indexing.
 
 The first hosted browser run exposed old preparation text, hero accessible names,
-removed hero animation and an outdated action count in three test files.
-The tests now follow the approved UI and retain text-fit, keyboard, normal-motion
-and reduced-motion assertions. The independent final code review found no
-blocking issues. Browser checks and final-head hosted checks must pass before
-squash merge. Production must be verified against the exact merged SHA; preview
-success alone is not production proof.
+removed hero animation and an outdated action count. The complete local browser
+run then passed 729 cases and found eight desktop banner assertions that still
+expected the previous full-width layout. All 40 showcase cases pass after those
+assertions were updated to check the approved split heading, image size, alignment
+and non-overlap in LTR and RTL. Mobile and help-page width checks remain intact.
+The tests retain text-fit, keyboard, normal-motion and reduced-motion assertions.
+Both repairs passed independent review. Final-head hosted checks, including the
+complete browser/analytics workflow, must pass before squash merge. Production
+must be verified against the exact merged SHA; preview success alone is not
+production proof.
 
 ## Current work: final account and notification integration
 

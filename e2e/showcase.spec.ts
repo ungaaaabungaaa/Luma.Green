@@ -66,9 +66,67 @@ async function expectNoDevicePreviews(page: Page) {
   ).toBeLessThanOrEqual(1);
 }
 
+async function expectBannerLayout(
+  page: Page,
+  banner: Locator,
+  width: number,
+  isSplitHeader: boolean,
+) {
+  const bounds = await banner.evaluate((element) => {
+    const rect = element.getBoundingClientRect();
+    return {
+      width: rect.width,
+      height: rect.height,
+      left: rect.left,
+      right: rect.right,
+      top: rect.top,
+      bottom: rect.bottom,
+    };
+  });
+  if (isSplitHeader) {
+    expect(bounds.width).toBeGreaterThanOrEqual(width * 0.3);
+    expect(bounds.width / bounds.height).toBeCloseTo(4 / 3, 1);
+    const headingBounds = await page
+      .getByRole("heading", { level: 1 })
+      .evaluate((element) => {
+        const rect = element.getBoundingClientRect();
+        return {
+          left: rect.left,
+          right: rect.right,
+          top: rect.top,
+          bottom: rect.bottom,
+        };
+      });
+    const isRtl = (await page.locator("html").getAttribute("dir")) === "rtl";
+    expect(
+      isRtl ? bounds.right : headingBounds.right,
+      "The image and heading must not overlap",
+    ).toBeLessThanOrEqual(isRtl ? headingBounds.left : bounds.left);
+    expect(
+      Math.min(bounds.bottom, headingBounds.bottom) -
+        Math.max(bounds.top, headingBounds.top),
+      "The image must sit beside the heading",
+    ).toBeGreaterThan(0);
+  } else {
+    expect(
+      bounds.width,
+      "The banner must span the main reading area",
+    ).toBeGreaterThanOrEqual(width * 0.7);
+    expect(
+      bounds.width / bounds.height,
+      "The banner must have a wide shape",
+    ).toBeGreaterThanOrEqual(1.6);
+  }
+  expect(bounds.left).toBeGreaterThanOrEqual(-1);
+  expect(bounds.right).toBeLessThanOrEqual(width + 1);
+}
+
 for (const width of [390, 1440]) {
   for (const route of bannerRoutes) {
-    test(`${route} has a loaded wide page banner at ${String(width)}px`, async ({
+    // Public headers split at desktop width; help keeps a full-width banner.
+    const isSplitHeader = width >= 1024 && !route.includes("/help");
+
+    test(`${route} keeps its page image loaded and aligned at ${String(width)}px`, async ({
       page,
     }) => {
       await page.setViewportSize({ width, height: 900 });
@@ -82,25 +140,7 @@ for (const width of [390, 1440]) {
       await expectStoryImages(banner, 1);
       await expect(banner.locator("img")).toBeVisible();
       await page.evaluate(async () => document.fonts.ready);
-      const bounds = await banner.evaluate((element) => {
-        const rect = element.getBoundingClientRect();
-        return {
-          width: rect.width,
-          height: rect.height,
-          left: rect.left,
-          right: rect.right,
-        };
-      });
-      expect(
-        bounds.width,
-        "The banner must span the main reading area",
-      ).toBeGreaterThanOrEqual(width * 0.7);
-      expect(
-        bounds.width / bounds.height,
-        "The banner must have a wide shape",
-      ).toBeGreaterThanOrEqual(1.6);
-      expect(bounds.left).toBeGreaterThanOrEqual(-1);
-      expect(bounds.right).toBeLessThanOrEqual(width + 1);
+      await expectBannerLayout(page, banner, width, isSplitHeader);
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth - innerWidth,
