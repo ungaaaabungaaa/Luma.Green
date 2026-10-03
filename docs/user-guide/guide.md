@@ -314,7 +314,7 @@ To offer material onward, use /app/sell or the Sell action available to the role
 ![Current yard trade list with synthetic records. Payment and escrow actions are simulated.](screenshots/yard-trades.png)
 
 1. Seller: open /app/sell, select material, available quantity and asking price, add an optional note, then create the listing.
-2. Buyer: open Market, choose a listing from an allowed supplier and inspect its material, available quantity and price.
+2. Buyer: open Buy, choose a listing from an allowed supplier and inspect its material, available quantity and price.
 3. Buyer: enter the requested quantity, review the offer and create the order.
 4. Seller: open Trades, inspect the new order and accept or reject it as offered by the current state.
 5. Buyer: complete the displayed demo payment step when it becomes available. This records a state only.
