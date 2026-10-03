@@ -4,14 +4,14 @@ test("the chain page leads from preparation details to the complete guide", asyn
   page,
 }) => {
   await page.goto("/how-it-works");
-  const guide = page.getByRole("region", { name: "Get your scrap ready" });
+  const guide = page.getByRole("region", { name: "Get your materials ready" });
   await expect(
     guide.getByText("Set gadgets and batteries aside"),
   ).toBeVisible();
   await guide.getByRole("link").click();
   await expect(page).toHaveURL("/help/household/get-ready");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Get your scrap ready",
+    "Get your materials ready",
   );
 });
 

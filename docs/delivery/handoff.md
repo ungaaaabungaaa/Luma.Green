@@ -37,23 +37,30 @@ were repaired and visually rechecked. Current public, protected, failure,
 industry API, sample-price and analytics screenshots passed visual inspection.
 All 33 catalogues retain their keys; 2,301 values changed, including 91 English
 values. No English value contains “scrap”. Native copy was regenerated.
-The final full `VITEST_MAX_WORKERS=2 pnpm check` passes: lint, TypeScript,
-1,706 web/backend tests, 49 mobile tests and 22 desktop tests. Formatting passes.
-The existing native-language review TODO remains a lint warning.
-The local preview is `http://localhost:3107`; fixture screens use `http://127.0.0.1:3217`.
-Protected previews use synthetic data and do not prove authentication or provider
-execution. Native-speaker copy review, authenticated acceptance, hosted CI,
-production Vercel deployment remain separate gates. The release branch passes a fresh production build (2,622 pages), formatting,
+The release branch passes a fresh production build (2,622 pages), formatting,
 lint, TypeScript and the full test suite: 1,695 web/backend, 49 mobile and
-22 desktop tests. The lower backend count excludes the unrelated prototype tests.
-The approved source is `732283d`; its release guide has 103 reviewed pages. Changes reuse existing components, semantic tokens and
-data owners. No backend, auth or calculation code changed. Main remains protected
-and receives the change only through a checked PR. PR34 is open. Its first head `dec0413` passed all five required checks, native
-checks and the Vercel preview build. The protected preview returned HTTP200 for
-home and collection routes with the new copy; robots.txt disallows indexing.
-Browser checks and final-head publication checks must pass before squash merge.
-The independent final code review found no blocking issues. Production must be
-verified against the exact merged SHA; preview success alone is not production proof.
+22 desktop tests. The earlier local snapshot included 11 unrelated prototype
+tests; those are excluded from this release. The existing native-language review
+TODO remains a lint warning. The local preview is `http://localhost:3107`;
+fixture screens use `http://127.0.0.1:3217`. Protected previews use synthetic data
+and do not prove authentication or provider execution. Native-speaker copy
+review and authenticated acceptance remain separate launch gates.
+
+The approved application source is `732283d`; the final reviewed guide source is
+`364ecd6`. Changes reuse existing components, semantic tokens and data owners.
+No backend, auth or calculation code changed. Main remains protected and receives
+the change only through a checked PR. PR #34 is open. All five required checks,
+native checks and the Vercel preview build passed on head `fec1261`. The protected
+preview returned HTTP 200 for home and collection routes with the new copy;
+robots.txt disallows indexing.
+
+The first hosted browser run exposed old preparation text, hero accessible names,
+removed hero animation and an outdated action count in three test files.
+The tests now follow the approved UI and retain text-fit, keyboard, normal-motion
+and reduced-motion assertions. The independent final code review found no
+blocking issues. Browser checks and final-head hosted checks must pass before
+squash merge. Production must be verified against the exact merged SHA; preview
+success alone is not production proof.
 
 ## Current work: final account and notification integration
 

@@ -5,7 +5,7 @@
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
   "pending_revision": null,
-  "result": "The approved recycling design guide is synchronized to the same Google Doc. All40 chapters, six tables and99 images are verified. All105 exported native pages passed visual review. Document link, folder and sharing are unchanged.",
+  "result": "The approved recycling design guide is synchronized to the same Google Doc. All 40 chapters, six tables and 99 images are verified. All 105 exported native pages passed visual review. Document link, folder and sharing are unchanged.",
   "connection_gate": null,
   "next_action": "Reuse this document. Compare its current revision with last_verified_revision before bounded native updates, preserve later human edits and unchanged objects, then verify text, images and every exported page. Native image descriptions remain an explicit supported-editor followup.",
   "last_verified_revision": {
@@ -13,7 +13,7 @@
     "source_application_commit": "732283d",
     "source_docx_sha256": "1166865b8783682ae5a131b33f8437619625f7751c276fca2a61eb45315ed3d5",
     "recorded_at": "2026-10-03T00:20:32.358885+00:00",
-    "method": "Revision-guarded native edits from the reviewed Word source; preserved tab, table containers, footer, sharing and unchanged images. Updated text, four native date fields and81 screenshots.",
+    "method": "Revision-guarded native edits from the reviewed Word source; preserved tab, table containers, footer, sharing and unchanged images. Updated text, four native date fields and 81 screenshots.",
     "result": "Published and verified in place; native image-alt accessibility remains incomplete.",
     "verification": {
       "mime_type": "application/vnd.google-apps.document",
@@ -37,14 +37,14 @@
         "kix.pjt3v8kk37x4",
         "kix.po0ydacmyaq"
       ],
-      "word_body_and_table_text": "All554 nonempty body paragraphs and146 table cells match; date displays and the unchanged native pilot-range separator were normalized only after checking exact timestamps.",
-      "source_image_urls": "81 updated images use immutable dec0413 URLs;18 unchanged images retain immutable593dfa2 URLs. All99 match the reviewed source bytes and dimensions within0.1 point.",
+      "word_body_and_table_text": "All 554 nonempty body paragraphs and 146 table cells match; date displays and the unchanged native pilot-range separator were normalized only after checking exact timestamps.",
+      "source_image_urls": "81 updated images use immutable dec0413 URLs; 18 unchanged images retain immutable 593dfa2 URLs. All 99 match the reviewed source bytes and dimensions within 0.1 point.",
       "replaced_image_object_ids_preserved": 64,
       "unchanged_image_object_ids_preserved": 18,
       "resized_images_reinserted": 17,
       "local_visual_review_page_count": 103,
       "native_pdf_visual_review_page_count": 105,
-      "native_pdf_visual_review": "All106 initial pages inspected. Final33 and62 reinspected after label and page-break repairs, adjacent61/63 checked. Other103 page bodies match reviewed originals; all105 final footer numbers verified.",
+      "native_pdf_visual_review": "All 106 initial pages inspected. Final pages 33 and 62 reinspected after label and page-break repairs, adjacent pages 61/63 checked. Other 103 page bodies match reviewed originals; all 105 final footer numbers verified.",
       "native_pagination_exceptions": [
         {
           "purpose": "Keep demo instructions together",
@@ -68,8 +68,8 @@
       "native_image_description_count": 0,
       "images_without_native_description": 99,
       "fidelity_limits": [
-        "Native Verdana/Courier New typography gives105 pages versus103 in Word.",
-        "All99 native images retain editable visible captions but lack native alt descriptions. The supported batch API cannot set them; this existing accessibility limitation remains."
+        "Native Verdana/Courier New typography gives 105 pages versus 103 in Word.",
+        "All 99 native images retain editable visible captions but lack native alt descriptions. The supported batch API cannot set them; this existing accessibility limitation remains."
       ]
     }
   },
@@ -78,7 +78,7 @@
     "visual_review_pages": 103,
     "image_placements": 99,
     "recorded_at": "2026-10-03T00:20:32.358885+00:00",
-    "result": "All103 Word pages reviewed. Final page32 was reinspected for the Buy-label correction; other102 pages exactly match reviewed originals. The same source is published to the existing Google Doc."
+    "result": "All 103 Word pages reviewed. Final page 32 was reinspected for the Buy-label correction; other 102 pages exactly match reviewed originals. The same source is published to the existing Google Doc."
   },
   "previous_verified_revision": {
     "source_commit": "593dfa2de2a2cf31b358ce4e7af3f8a517da17e1",
@@ -124,7 +124,7 @@
       "local_visual_review_page_count": 103,
       "native_pdf_visual_review_page_count": 104,
       "native_pdf_visual_review": "passed; all 105 initial pages individually inspected. After spacing repair, final page 13 was reinspected independently, adjacent final pages 12 and 14 checked, and the other 103 page bodies matched reviewed originals pixel-for-pixel. All 104 footer page numbers were verified separately.",
-      "native_pdf_review_mapping": "Final pages 1\u201312 match initial pages 1\u201312. Final pages 14\u2013104 match initial pages 15\u2013105, excluding only the automatically updated footer number region. Final page 13 contains the repaired note; initial orphan page 14 was removed.",
+      "native_pdf_review_mapping": "Final pages 1–12 match initial pages 1–12. Final pages 14–104 match initial pages 15–105, excluding only the automatically updated footer number region. Final page 13 contains the repaired note; initial orphan page 14 was removed.",
       "native_revision_id": "ANLCKQm10oTBuF5TL-cVDztZsyY4kuZWeVZLBVIjT133-RyfFWott4s9KI4WHtOZWWU_JnpBHB6jJ1AeAjkhNlBtWWNhPT0aczHxTTfGIvg",
       "native_readback_sha256": "91296f493f7770973493163b0283b39d477a6a388a405e56297ba35b1aee830e",
       "canonical_body_sha256": "b2010023394a7dbb87652789055a007203ce3f734c8f4310935ec8d01ed9cfaf",

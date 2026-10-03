@@ -76,15 +76,28 @@ for (const { locale, copy } of [
       page.getByRole("heading", { level: 1, name: copy.home.hero.title }),
     ).toBeVisible();
     await page.evaluate(async () => document.fonts.ready);
-    for (const content of [copy.home.hero, copy.home.closing]) {
+    for (const { content, labels } of [
+      {
+        content: copy.home.hero,
+        labels: [
+          actionName(copy.nav.sellScrap, copy.home.hero.sell),
+          copy.home.hero.prices,
+          copy.home.hero.join,
+        ],
+      },
+      {
+        content: copy.home.closing,
+        labels: [
+          actionName(copy.nav.sellScrap, copy.home.closing.sell),
+          actionName(copy.nav.join, copy.home.closing.join),
+        ],
+      },
+    ]) {
       const section = page.getByRole("region", {
         name: content.title,
         exact: true,
       });
-      for (const label of [
-        actionName(copy.nav.sellScrap, content.sell),
-        actionName(copy.nav.join, content.join),
-      ]) {
+      for (const label of labels) {
         await expectActionTextToFit(
           section.getByRole("link", { name: label, exact: true }),
         );

@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 
 import arabic from "../messages/ar.json";
 import english from "../messages/en.json";
+import { actionName } from "../src/components/site/action-name";
 import { locales } from "../src/i18n/locales";
 
 const languages = [
@@ -37,21 +38,22 @@ for (const { locale, messages } of languages) {
         }
 
         await page.goto(`/${locale}`);
-        const hero = page.getByRole("region", {
-          name: messages.home.hero.title,
-        });
-        const action = hero.getByRole("link", {
-          name: `${messages.nav.sellScrap}: ${messages.home.hero.sell}`,
-          exact: true,
-        });
-        await action.focus();
-        await expect(action).toBeFocused();
-        await expect(action).toHaveAttribute("href", /\/sell$/);
-        expect(
-          await action.evaluate(
-            (element) => getComputedStyle(element, "::before").animationName,
-          ),
-        ).toBe("none");
+        for (const content of [messages.home.hero, messages.home.closing]) {
+          const action = page
+            .getByRole("region", { name: content.title })
+            .getByRole("link", {
+              name: actionName(messages.nav.sellScrap, content.sell),
+              exact: true,
+            });
+          await action.focus();
+          await expect(action).toBeFocused();
+          await expect(action).toHaveAttribute("href", /\/sell$/);
+          expect(
+            await action.evaluate(
+              (element) => getComputedStyle(element, "::before").animationName,
+            ),
+          ).toBe("none");
+        }
 
         const testimonials = page.getByRole("region", {
           name: messages.home.testimonials.title,
@@ -71,26 +73,50 @@ for (const { locale, messages } of languages) {
   }
 }
 
-test("public motion completes without hiding text or blocking the main action", async ({
+test("public motion keeps headings readable and collection actions usable", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/how-it-works");
+  const animatedHeading = page.getByRole("heading", { level: 1 });
+  await expect(animatedHeading).toHaveText(english.howItWorks.title);
+  await expect(animatedHeading).toHaveCSS("animation-name", /heading-arrive/);
+  await expect(animatedHeading).toHaveCSS("opacity", "1");
+  await expect(animatedHeading).toHaveCSS("transform", "none");
+
   await page.goto("/");
   const heading = page.getByRole("heading", { level: 1 });
   await expect(heading).toHaveText(english.home.hero.title);
-  await expect(heading).toHaveCSS("animation-name", /heading-arrive/);
+  await expect(heading).toHaveCSS("animation-name", "none");
   await expect(heading).toHaveCSS("opacity", "1");
   await expect(heading).toHaveCSS("transform", "none");
   const action = page
     .getByRole("region", { name: english.home.hero.title })
     .getByRole("link", {
-      name: `${english.nav.sellScrap}: ${english.home.hero.sell}`,
+      name: actionName(english.nav.sellScrap, english.home.hero.sell),
       exact: true,
     });
   await action.focus();
   await expect(action).toBeFocused();
   expect(
     await action.evaluate(
+      (element) => getComputedStyle(element, "::before").animationName,
+    ),
+  ).toBe("none");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/\/sell$/);
+
+  await page.goto("/");
+  const closingAction = page
+    .getByRole("region", { name: english.home.closing.title })
+    .getByRole("link", {
+      name: actionName(english.nav.sellScrap, english.home.closing.sell),
+      exact: true,
+    });
+  await closingAction.focus();
+  await expect(closingAction).toBeFocused();
+  expect(
+    await closingAction.evaluate(
       (element) => getComputedStyle(element, "::before").animationName,
     ),
   ).toMatch(/action-sheen/);
@@ -165,7 +191,7 @@ for (const locale of locales) {
                   : "",
             })),
           );
-        const expectedActions = { "": 8, "/help": 0, "/help/contact": 2 };
+        const expectedActions = { "": 7, "/help": 0, "/help/contact": 2 };
         expect(namedActions).toHaveLength(
           expectedActions[route as keyof typeof expectedActions],
         );
