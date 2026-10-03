@@ -4,11 +4,83 @@
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": "3 October 2026 approved recycling design, collection language and shared workspace revision",
-  "result": "The previous publication remains verified. The user approved the recycling design release and the in-place Google Docs update. Publication of this reviewed revision is in progress.",
+  "pending_revision": null,
+  "result": "The approved recycling design guide is synchronized to the same Google Doc. All40 chapters, six tables and99 images are verified. All105 exported native pages passed visual review. Document link, folder and sharing are unchanged.",
   "connection_gate": null,
-  "next_action": "Update the existing Google Doc from the reviewed approved Word source with revision-guarded native edits. Preserve its ID, tab tree, tables, folder and sharing. Verify text, images and native export, then record the result here.",
+  "next_action": "Reuse this document. Compare its current revision with last_verified_revision before bounded native updates, preserve later human edits and unchanged objects, then verify text, images and every exported page. Native image descriptions remain an explicit supported-editor followup.",
   "last_verified_revision": {
+    "source_commit": "364ecd6a97bb6b91f7703e2dc8a11a995a85aefe",
+    "source_application_commit": "732283d",
+    "source_docx_sha256": "1166865b8783682ae5a131b33f8437619625f7751c276fca2a61eb45315ed3d5",
+    "recorded_at": "2026-10-03T00:20:32.358885+00:00",
+    "method": "Revision-guarded native edits from the reviewed Word source; preserved tab, table containers, footer, sharing and unchanged images. Updated text, four native date fields and81 screenshots.",
+    "result": "Published and verified in place; native image-alt accessibility remains incomplete.",
+    "verification": {
+      "mime_type": "application/vnd.google-apps.document",
+      "chapter_count": 40,
+      "heading_1_count": 41,
+      "body_paragraph_count": 659,
+      "nonempty_body_paragraph_count": 554,
+      "table_count": 6,
+      "table_cell_count": 146,
+      "inline_image_count": 99,
+      "date_element_count": 4,
+      "native_date_timestamps": [
+        "2026-10-03T00:00:00Z",
+        "2026-10-13T00:00:00Z",
+        "2026-10-20T00:00:00Z",
+        "2026-10-03T00:00:00Z"
+      ],
+      "native_date_ids": [
+        "kix.57r5jhibmql0",
+        "kix.nvj7p1o4o2vb",
+        "kix.pjt3v8kk37x4",
+        "kix.po0ydacmyaq"
+      ],
+      "word_body_and_table_text": "All554 nonempty body paragraphs and146 table cells match; date displays and the unchanged native pilot-range separator were normalized only after checking exact timestamps.",
+      "source_image_urls": "81 updated images use immutable dec0413 URLs;18 unchanged images retain immutable593dfa2 URLs. All99 match the reviewed source bytes and dimensions within0.1 point.",
+      "replaced_image_object_ids_preserved": 64,
+      "unchanged_image_object_ids_preserved": 18,
+      "resized_images_reinserted": 17,
+      "local_visual_review_page_count": 103,
+      "native_pdf_visual_review_page_count": 105,
+      "native_pdf_visual_review": "All106 initial pages inspected. Final33 and62 reinspected after label and page-break repairs, adjacent61/63 checked. Other103 page bodies match reviewed originals; all105 final footer numbers verified.",
+      "native_pagination_exceptions": [
+        {
+          "purpose": "Keep demo instructions together",
+          "settings": "Page break before Local desktop demonstration; removed the older break before Android and iOS demonstration."
+        },
+        {
+          "purpose": "Preserve previously reviewed native flow",
+          "settings": "Existing spacing around phone-code explanations and breaks before admin verification and Tamil API screenshot retained. Shop instructions begin after the enlarged overview screenshot."
+        }
+      ],
+      "native_revision_id": "ANLCKQmGU7uiYKIAqeeyQAuTsw6IUpi0UuFqOYWxG6u-ene6RZ2GfuGz1DnEzzKFUUz71Zz8-nePidUJnJVL6VhXLH8n0KyCXeaP30fd9wM",
+      "native_readback_sha256": "b29f1f6e389087419ec7ea7a897eff78704a0cf0b61bd7e655b68469b83f3fd3",
+      "canonical_body_sha256": "fad5c2a710968c2f29d6cfc4f2f69d4b50bf2225156536cacd1e15d26fbab8e7",
+      "native_pdf_sha256": "fed2f98d3a48eedf27fe32ba7da1489005f4431ebc2438177ded804232950efa",
+      "pagination_comparison_sha256": "807503975a9a634b4a5decf0c7acfc427ee286b542619ebc95fa14249f8e09dc",
+      "sharing_changed": false,
+      "tab_tree_changed": false,
+      "folder_changed": false,
+      "footer_changed": false,
+      "document_style_changed": false,
+      "native_image_description_count": 0,
+      "images_without_native_description": 99,
+      "fidelity_limits": [
+        "Native Verdana/Courier New typography gives105 pages versus103 in Word.",
+        "All99 native images retain editable visible captions but lack native alt descriptions. The supported batch API cannot set them; this existing accessibility limitation remains."
+      ]
+    }
+  },
+  "local_reviewed_revision": {
+    "source_docx_sha256": "1166865b8783682ae5a131b33f8437619625f7751c276fca2a61eb45315ed3d5",
+    "visual_review_pages": 103,
+    "image_placements": 99,
+    "recorded_at": "2026-10-03T00:20:32.358885+00:00",
+    "result": "All103 Word pages reviewed. Final page32 was reinspected for the Buy-label correction; other102 pages exactly match reviewed originals. The same source is published to the existing Google Doc."
+  },
+  "previous_verified_revision": {
     "source_commit": "593dfa2de2a2cf31b358ce4e7af3f8a517da17e1",
     "merged_main_commit": "53dae4db62432119505bd06d7d9ac85284c0c386",
     "source_docx_sha256": "a4cbbe1f589e0e84bc95aa2aa1723e17e9c637e48a752eefb71330478f660fd3",
@@ -84,68 +156,6 @@
         "All 99 native image descriptions are absent. The batch-update API cannot set them, and replaceImage removes existing descriptions. Visible editable captions retain the source descriptions; semantic image accessibility remains incomplete."
       ],
       "image_alt_text_api_reference": "https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request"
-    }
-  },
-  "local_reviewed_revision": {
-    "source_docx_sha256": "c610ed76d7d8d4bbb38623533a376e01ccb255a009e89b5d69ec97ff6d674021",
-    "visual_review_pages": 103,
-    "image_placements": 99,
-    "recorded_at": "2026-10-03T00:00:25.296594+00:00",
-    "result": "The founder-approved guide passed local visual review. The updated cover was inspected; the other 102 pages match reviewed originals exactly. Native Google Docs text and image synchronization is in progress."
-  },
-  "previous_verified_revision": {
-    "source_commit": "2ba8246640fe5773e5dd3b7863c7726ee29d6fb6",
-    "source_docx_sha256": "69bb80cf805fcdc64e9675b2645186e79d4181250d49525041ad793eaa94bcc7",
-    "recorded_at": "2026-10-02T16:57:28.573326+00:00",
-    "method": "Revision-guarded native Google Docs batch updates from the reviewed DOCX. Existing tab and table containers preserved; changed paragraphs, cells and image placements updated in place.",
-    "result": "All 38 chapters, six tables, 548 body paragraphs and 72 image placements match the reviewed Word source. Three exact dates retain native date fields. All 78 exported PDF pages were visually reviewed. Three native page-break settings prevent split sections. Sharing settings were not changed.",
-    "verification": {
-      "mime_type": "application/vnd.google-apps.document",
-      "chapter_count": 38,
-      "heading_1_count": 39,
-      "body_paragraph_count": 548,
-      "native_bullet_count": 9,
-      "table_count": 6,
-      "inline_image_count": 72,
-      "date_element_count": 3,
-      "native_date_timestamps": [
-        "2026-10-02T00:00:00Z",
-        "2026-10-13T00:00:00Z",
-        "2026-10-20T00:00:00Z"
-      ],
-      "word_body_and_table_text": "matched; date displays normalized only after checking each exact native timestamp",
-      "source_image_urls": "all 72 match immutable public source commit URLs; native dimensions match reviewed DOCX within 0.1 point",
-      "local_visual_review_page_count": 76,
-      "native_pdf_visual_review_page_count": 78,
-      "native_pdf_visual_review": "passed; every page inspected, two orphan-note layouts repaired and affected pages reinspected",
-      "native_revision_id": "ANLCKQllf2AgxCtRIQhBFcZnK9SFQ_0ijbetSXS0lvN14FQKrp40Rfxl0xDGWzo904QcWs9YJVyerh9KZN1sEVYXdJTCnZWc_uKCoNOYNAM",
-      "native_readback_sha256": "2c50e0d811665a144ade5e99a0af978b72d20f7f7cd0edb23317f290b1cda048",
-      "canonical_body_sha256": "4ebe0a6a0347f661c032371cefba7686e6d263728b81300e3b403ed6290a3d31",
-      "native_pdf_sha256": "90bc3bbf22a8e6bdc4db699417262ea9bc183abc6301634b111984f1843b3ff1",
-      "sharing_changed": false,
-      "tab_tree_changed": false,
-      "folder_changed": false,
-      "fidelity_limits": [
-        "Google Docs uses the existing Verdana typography, so pagination differs from the reviewed Word document.",
-        "The current Google Docs batchUpdate API cannot set embedded image title/description alt-text attributes. Native UI repair restored and verified 1 of 72 descriptions. The remaining 71 images retain visible editable captions but lack native descriptions; native image-alt semantics are not identical to the DOCX."
-      ],
-      "image_alt_text_api_reference": "https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request",
-      "native_pdf_visual_review_revision_id": "ANLCKQk2HBz5Ah_OZ_y2LYyv5m3rCHBltdoD7uEW5_sZh20NOONlasTPfKtop8XbW7WrYcQF8-5Ncka8LsmH94YtNIAyRupFuT_0Vewk9W8",
-      "native_image_description_count": 1,
-      "images_without_native_description": 71,
-      "image_alt_text_verification": {
-        "recorded_at": "2026-10-02T17:28:25.333980+00:00",
-        "method": "Authenticated native Google Docs Image options > Alt text editor; native connector readback compared all 72 image objects with the prior verified revision.",
-        "verified_descriptions": [
-          {
-            "inline_object_id": "kix.2kb3grpvf7ta",
-            "description": "The current public homepage. Actual local browser capture; backend not connected."
-          }
-        ],
-        "remaining_limit": "The current batch-update API has no image description setter. Native UI work stopped when the user changed browser focus; the remaining 71 images have visible captions but no native descriptions.",
-        "preservation_check": "All body paragraphs, tables, dates, styles, image object IDs, image sizes, image source URLs, tab, footer, folder and permissions are unchanged. Only the first image description changed; temporary image download URLs were excluded from the comparison.",
-        "sharing_changed": false
-      }
     }
   }
 }

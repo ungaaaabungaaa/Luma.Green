@@ -15,14 +15,17 @@ See the current design contract for sources and scope. Authentication, Convex,
 integer money/mass, material identifiers and audit ownership are unchanged.
 
 Guide impact: public entry pages, translated actions, collection progress and
-shared household, applicant, business and admin layouts changed. The local
-Markdown, current browser evidence and both Word guides are rebuilt and reviewed:
-103 platform-guide pages with 99 screenshot placements, and 47 team-review pages.
-Twenty repaired platform-guide pages were inspected again; the other 83 page
-PNGs match their reviewed originals exactly. All 47 team-page PNGs also match
-the reviewed render after rebuilding against the shared guide builder.
-Both builder checks and all 12 document tests pass. Google Docs publication is in progress.
-Keep its ID and sharing settings, and use the reviewed Word source.
+shared household, applicant, business and admin layouts changed. The maintained
+platform Word guide has 103 reviewed pages with 99 screenshot placements; the
+team pack has 47 reviewed pages. Both source/build checks pass. Final review
+corrected the remaining Market instruction to Buy in source and Google Docs.
+
+The same Google Doc is now published from reviewed guide commit `364ecd6`.
+Its link, folder and sharing are unchanged. All 40 chapters, six tables, 99 images
+and four native date fields were verified. The 105-page native export passed
+full-page review with exact unchanged-page comparisons after two final repairs.
+All 99 native image descriptions remain absent; visible captions remain editable.
+See `docs/user-guide/cloud.json` for exact hashes, revision and accessibility limits.
 
 Verification: the disconnected Webpack production build passes with 2,622 pages.
 The final home/navigation/motion run passes 34 cases; the separate 86-case public
@@ -40,13 +43,17 @@ The existing native-language review TODO remains a lint warning.
 The local preview is `http://localhost:3107`; fixture screens use `http://127.0.0.1:3217`.
 Protected previews use synthetic data and do not prove authentication or provider
 execution. Native-speaker copy review, authenticated acceptance, hosted CI,
-Google Docs publication and Vercel deployment remain separate gates. The release branch passes a fresh production build (2,622 pages), formatting,
+production Vercel deployment remain separate gates. The release branch passes a fresh production build (2,622 pages), formatting,
 lint, TypeScript and the full test suite: 1,695 web/backend, 49 mobile and
 22 desktop tests. The lower backend count excludes the unrelated prototype tests.
 The approved source is `732283d`; its release guide has 103 reviewed pages. Changes reuse existing components, semantic tokens and
 data owners. No backend, auth or calculation code changed. Main remains protected
-and receives the change only through a checked PR. The current Google Doc still
-matches the latest recorded revision; no later human edits were found.
+and receives the change only through a checked PR. PR34 is open. Its first head `dec0413` passed all five required checks, native
+checks and the Vercel preview build. The protected preview returned HTTP200 for
+home and collection routes with the new copy; robots.txt disallows indexing.
+Browser checks and final-head publication checks must pass before squash merge.
+The independent final code review found no blocking issues. Production must be
+verified against the exact merged SHA; preview success alone is not production proof.
 
 ## Current work: final account and notification integration
 

@@ -148,20 +148,17 @@ before the next build. This prevents later builds from losing your changes.
 
 Current publication state is recorded in [cloud.json](cloud.json). The existing
 native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
-is verified through reviewed source commit `593dfa2`, merged by PR29 at `53dae4d`.
-Its document ID, folder and sharing settings are unchanged. The founder approved
-the recycling design release and the update of this same document. Publication
-of the approved revision is in progress; retain the previous verified record
-until native readback and rendered export checks pass.
+is published from reviewed source commit `364ecd6`, including the approved
+recycling redesign. Its document ID, folder and sharing settings are unchanged.
 
 The native copy has 40 chapters, six tables, 659 body paragraphs and 99 image
-placements. Readback checked every paragraph, table cell, image source URL,
-image dimension and mapped style. Three exact dates retain their original native
-date fields. The Word source has 103 reviewed pages; the native PDF has 104 because
-native fonts and pagination differ. Every native page is covered by visual review.
-A small caption and paragraph spacing adjustment removed an orphan continuation
-without changing text or image size. The record lists these native layout
-exceptions and the unchanged page-body comparison used after the repair.
+placements. Readback checked every paragraph, table cell, image source URL and
+image dimension. Four exact dates use native date fields; the two original pilot
+dates retain their IDs. The Word source has 103 reviewed pages; the native PDF
+has 105 because native fonts and pagination differ. All 106 initial native pages
+were inspected. After a label correction and page-break repair, final pages 33
+and 62 and their affected neighbors were reinspected; the other 103 page bodies
+match reviewed originals. All 105 final footer page numbers were verified.
 
 The supported update uses revision-guarded Google Docs batch requests. Compare
 the current native revision with the last verified record first, and preserve or
