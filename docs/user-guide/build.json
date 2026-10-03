@@ -1,16 +1,16 @@
 {
   "format": "docx",
-  "edition": "3 October 2026, local recycling service redesign, account security, notifications, industry API and 33 languages",
-  "application_checkpoint": "f82df3c",
+  "edition": "3 October 2026, recycling service redesign, account security, notifications, industry API and 33 languages",
+  "application_checkpoint": "732283d",
   "docx": "output/docx/luma-green-user-guide.docx",
-  "docx_sha256": "1a08206a45ebd9a01f12a0fad60a9a6ac85d9d325d536a9ca5a68edc26157502",
+  "docx_sha256": "c610ed76d7d8d4bbb38623533a376e01ccb255a009e89b5d69ec97ff6d674021",
   "visual_review": {
     "status": "passed",
     "pages": 103,
-    "docx_sha256": "1a08206a45ebd9a01f12a0fad60a9a6ac85d9d325d536a9ca5a68edc26157502"
+    "docx_sha256": "c610ed76d7d8d4bbb38623533a376e01ccb255a009e89b5d69ec97ff6d674021"
   },
   "inputs": {
-    "docs/user-guide/guide.md": "0cb2279e2a7ae9f4e27f3fce3a973e44c1f023c35e3abe17b87c3236bfda605f",
+    "docs/user-guide/guide.md": "7e388331fe9f35249ed9acec1788e32e632f7ddc20c821633cee5a82939f2905",
     "scripts/build-user-guide.py": "ea462064db7cda161d0fe066d2a8b4dca4423bee8ea95b931fe94036c27f3452",
     "scripts/user-guide-requirements.txt": "9c946ddb0d5bdd4dab99c479ec36e13fad18ea669ddf6743f4725930346307d0",
     "docs/user-guide/screenshots/public-home.png": "b26b76f011be8341c386d44035fbebb634c5bb9169817a4d2b2f143ebfc7cc87",

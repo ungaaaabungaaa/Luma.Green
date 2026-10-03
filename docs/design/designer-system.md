@@ -74,13 +74,12 @@ accessible names, collection progress, material navigation and content structure
    responsive/locale browser checks, and inspect each changed screen and every
    rendered guide page. Record fixtures and disconnected pages accurately.
 
-Checkpoint: the local implementation and guide refresh are complete for founder
-review. The final design still needs the founder's approval before any commit,
-push, Vercel deployment or Google Docs publication. The same existing Google
-Doc must receive the reviewed guide after approval. The public preview is
-`http://localhost:3107`; protected component examples remain labelled fixtures.
-The delivery handoff owns the current verification results and remaining gates.
-No deployment, provider acceptance or hosted CI is claimed by this record.
+Checkpoint: the founder approved the UI and authorized the checked PR, Vercel
+release and update of the existing Google Doc. The release branch
+`codex/recycling-ui-release` starts from current main `c087a68`; it applies only
+the approved UI delta and excludes the unrelated prototype backend commits.
+The public preview is `http://localhost:3107`; protected component examples remain
+labelled fixtures. The delivery handoff owns verification and release status.
 
 ## Current UI contract
 

@@ -2,9 +2,9 @@
 
 How to use the recycling platform and its admin console
 
-Edition: 3 October 2026, local recycling service redesign, account security, notifications, industry API and 33 languages. Source baseline: f82df3c.
+Edition: 3 October 2026, recycling service redesign, account security, notifications, industry API and 33 languages. Source baseline: 732283d.
 
-This edition includes uncommitted design changes on a local review branch. Its revised public pages, collection steps and business layouts await design approval. The capture manifests record the exact source hashes. This edition has not been committed, deployed or published to Google Docs.
+This edition includes the approved recycling design, collection steps and business layouts. It preserves the account security and industry API work from the current release branch. The capture manifests record the exact source hashes and test conditions.
 Includes the UI detail pass, distinct work scenes and practical guides on the main public pages, plus safe account, recovery and business API examples.
 Audience: households, kabadiwalas, yards, recyclers, manufacturers, Saathis and the platform owner.
 

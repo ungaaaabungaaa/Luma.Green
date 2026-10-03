@@ -1,12 +1,13 @@
 # Agent handoff — 2 October 2026
 
-## Local recycling UI review — 3 October 2026
+## Approved recycling UI release — 3 October 2026
 
-The active design work is in `/Users/syedabdulmuqeeth/.codex/worktrees/recycling-ui/luma.green`,
-branch `codex/recycling-ui`, based on `f82df3c`. The original production-prototype
-checkout has unrelated edits and was not changed. The user requires all design
-work to stay local until they approve the finished UI. Do not commit, push,
-create a release or deploy to Vercel before that approval.
+The founder approved the design and authorized commit, checked PR, Vercel release
+and the existing Google Doc update. Active work is in
+`/Users/syedabdulmuqeeth/.codex/worktrees/recycling-ui/luma.green`, branch
+`codex/recycling-ui-release`. It starts at current main `c087a68` and applies only
+the approved UI delta from local snapshot `7f1e135`. The prototype backend commits
+are excluded. The original dirty checkout remains intact.
 
 The accepted direction uses Mobbin recycling and inventory references, a household
 collection entry, clearer material wording and compact business workspaces.
@@ -20,9 +21,8 @@ Markdown, current browser evidence and both Word guides are rebuilt and reviewed
 Twenty repaired platform-guide pages were inspected again; the other 83 page
 PNGs match their reviewed originals exactly. All 47 team-page PNGs also match
 the reviewed render after rebuilding against the shared guide builder.
-Both builder checks and all 12 document tests pass. Google Docs remains pending.
-The user also requested the latest guide in the existing Google Doc after design
-approval; keep its ID and sharing settings, and use the reviewed Word source.
+Both builder checks and all 12 document tests pass. Google Docs publication is in progress.
+Keep its ID and sharing settings, and use the reviewed Word source.
 
 Verification: the disconnected Webpack production build passes with 2,622 pages.
 The final home/navigation/motion run passes 34 cases; the separate 86-case public
@@ -40,12 +40,13 @@ The existing native-language review TODO remains a lint warning.
 The local preview is `http://localhost:3107`; fixture screens use `http://127.0.0.1:3217`.
 Protected previews use synthetic data and do not prove authentication or provider
 execution. Native-speaker copy review, authenticated acceptance, hosted CI,
-Google Docs publication and Vercel deployment remain separate gates. The worktree
-is intentionally uncommitted for founder review; HEAD remains `f82df3c`.
-Changes reuse existing components, semantic tokens and data owners. No backend,
-auth or calculation code changed. After approval, update the guide's publication
-wording and rebuild it before the commit/push/release workflow. Main remains
-protected and must receive the change through a checked PR.
+Google Docs publication and Vercel deployment remain separate gates. The release branch passes a fresh production build (2,622 pages), formatting,
+lint, TypeScript and the full test suite: 1,695 web/backend, 49 mobile and
+22 desktop tests. The lower backend count excludes the unrelated prototype tests.
+The approved source is `732283d`; its release guide has 103 reviewed pages. Changes reuse existing components, semantic tokens and
+data owners. No backend, auth or calculation code changed. Main remains protected
+and receives the change only through a checked PR. The current Google Doc still
+matches the latest recorded revision; no later human edits were found.
 
 ## Current work: final account and notification integration
 

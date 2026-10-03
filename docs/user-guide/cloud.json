@@ -87,11 +87,11 @@
     }
   },
   "local_reviewed_revision": {
-    "source_docx_sha256": "1a08206a45ebd9a01f12a0fad60a9a6ac85d9d325d536a9ca5a68edc26157502",
+    "source_docx_sha256": "c610ed76d7d8d4bbb38623533a376e01ccb255a009e89b5d69ec97ff6d674021",
     "visual_review_pages": 103,
     "image_placements": 99,
-    "recorded_at": "2026-10-02T23:33:26.231088+00:00",
-    "result": "The approved recycling guide has 103 reviewed pages and 99 labelled screenshot placements. The source wording is being updated for release, after which the Word artifact will be rebuilt and checked."
+    "recorded_at": "2026-10-03T00:00:25.296594+00:00",
+    "result": "The founder-approved guide passed local visual review. The updated cover was inspected; the other 102 pages match reviewed originals exactly. Native Google Docs text and image synchronization is in progress."
   },
   "previous_verified_revision": {
     "source_commit": "2ba8246640fe5773e5dd3b7863c7726ee29d6fb6",
