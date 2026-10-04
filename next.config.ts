@@ -8,8 +8,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    // One output format avoids duplicate transforms. Static image imports use
-    // content-hashed URLs with immutable caching; private files bypass this.
+    // Sources are already compressed WebP files. Serve their content-hashed
+    // URLs directly so Vercel image-transform limits cannot hide public art.
+    unoptimized: true,
     formats: ["image/webp"],
     maximumDiskCacheSize: 64 * 1024 * 1024,
   },

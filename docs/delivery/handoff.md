@@ -780,3 +780,24 @@ remain explicit; they do not invalidate the tested source repairs.
 Guide impact: no source, screenshot or DOCX content changed after PR #29's
 reviewed build. This final documentation-only delivery records cloud publication
 and rollout evidence. The separate team-review Word artifact is preserved.
+
+## Vercel image loading repair — 4 October 2026
+
+Production image transforms return HTTP 402 with
+`OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`. The corresponding content-hashed
+static WebP files return HTTP 200. `next.config.ts` now serves existing compressed
+image sources directly, without the Vercel optimizer. The image loading regression
+blocks the optimizer and checks every homepage image plus shared role art in
+English and Arabic.
+
+Guide impact: no text, screen layout, artwork, route or workflow changes. This
+repair restores the existing artwork shown in the guide; its source, captures and
+Word artifact remain valid. No cloud document update is needed. The unrelated
+prototype checkout remains untouched.
+
+Validation: `pnpm check` passes (lint, types, 1,695 web/backend tests, 49
+mobile tests and 22 desktop tests). Production build and full formatting pass.
+Both image-loading browser regressions pass with the optimizer returning 402.
+Local browser inspection confirms restored image rendering in English and Arabic,
+including phone and desktop views. Hosted checks, preview and main deployment
+must be verified on the final PR head.

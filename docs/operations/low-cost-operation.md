@@ -4,14 +4,14 @@ Code and source review: 1 Oct 2026. See the [local measurements](../delivery/cos
 
 ## What the app now avoids
 
-| Work                               | Cost control                                                                                           | Lifetime and invalidation                                                                                           |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| Onboarding JPEG/PNG uploads        | Resize in the browser before upload; use the smaller encoded or metadata-stripped file                 | Preparation is local. No server image transform is required. Private files retain normal access checks.             |
-| Sell and listing price suggestions | Read compact quotes, without 30-day chart history or translated names                                  | Convex reactive query cache; database changes invalidate results                                                    |
-| Repeated draft saves               | Compare validated sections and skip unchanged writes                                                   | Authorize every request before comparison                                                                           |
-| Repeated photo estimates           | Coalesce matching requests; retain up to three successful replies in form memory                       | Five minutes; clear on unmount or account change; key includes image hash, prompt and catalogue; never cache prices |
-| AI quota cleanup                   | One pending cleanup chain, with hourly expiry buckets                                                  | Quotas use exact rolling 24-hour checks; inactive hashes expire within 25 hours                                     |
-| Public home illustration           | Content-hashed static import, WebP output, Next image disk cache limited to 64 MiB on self-hosted Next | Image edits change the URL; immutable browser/CDN caching                                                           |
+| Work                               | Cost control                                                                           | Lifetime and invalidation                                                                                           |
+| ---------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Onboarding JPEG/PNG uploads        | Resize in the browser before upload; use the smaller encoded or metadata-stripped file | Preparation is local. No server image transform is required. Private files retain normal access checks.             |
+| Sell and listing price suggestions | Read compact quotes, without 30-day chart history or translated names                  | Convex reactive query cache; database changes invalidate results                                                    |
+| Repeated draft saves               | Compare validated sections and skip unchanged writes                                   | Authorize every request before comparison                                                                           |
+| Repeated photo estimates           | Coalesce matching requests; retain up to three successful replies in form memory       | Five minutes; clear on unmount or account change; key includes image hash, prompt and catalogue; never cache prices |
+| AI quota cleanup                   | One pending cleanup chain, with hourly expiry buckets                                  | Quotas use exact rolling 24-hour checks; inactive hashes expire within 25 hours                                     |
+| Public home illustration           | Content-hashed static WebP import, served directly without paid image transforms       | Image edits change the URL; immutable browser/CDN caching                                                           |
 
 Repeated preparation of the same File and preset uses a weak-key memory cache;
 failed preparation is removed so a retry can run. No file or upload URL is cached
