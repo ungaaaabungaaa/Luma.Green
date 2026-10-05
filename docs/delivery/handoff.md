@@ -801,3 +801,18 @@ Both image-loading browser regressions pass with the optimizer returning 402.
 Local browser inspection confirms restored image rendering in English and Arabic,
 including phone and desktop views. Hosted checks, preview and main deployment
 must be verified on the final PR head.
+
+## Dependency bot refinement — 5 October 2026
+
+Dependabot now separates security updates by production/development dependencies,
+keeps routine related updates together (including Convex/auth, Expo and Tailwind),
+and leaves major upgrades outside routine groups. Routine npm releases wait
+3 days for patches, 7 for minor versions and 14 for major versions; security
+updates do not use this cooldown. The Node type-major and Better Auth >=1.7
+limits remain. GitHub Actions minor/patch updates share a monthly PR.
+The root pnpm workspace remains the single update owner. Groups help review;
+they do not prove peer compatibility, Expo SDK compatibility or provider execution.
+No guide change is needed: no user screen, permission or workflow changed.
+Validation: Prettier YAML parsing/format checks and diff whitespace checks.
+Hosted Dependabot PR creation must be verified after this configuration lands
+on the default branch. No dependency versions, lockfile or merge policy changed.

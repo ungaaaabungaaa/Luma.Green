@@ -11,6 +11,11 @@ updates:
     # Grouped so a quiet week is one PR, not fifteen — each PR still burns CI
     # minutes on the free plan.
     open-pull-requests-limit: 5
+    # Let routine releases settle. GitHub does not apply cooldown to security fixes.
+    cooldown:
+      semver-major-days: 14
+      semver-minor-days: 7
+      semver-patch-days: 3
     ignore:
       # Types must describe the runtime we deploy on (.nvmrc). Bump this major
       # by hand, together with .nvmrc and the CI node-version.
@@ -21,17 +26,58 @@ updates:
       - dependency-name: "better-auth"
         versions: [">=1.7.0"]
     groups:
+      # Security updates have a separate queue and must not wait for routine batches.
+      security-production:
+        applies-to: security-updates
+        dependency-type: production
+        patterns: ["*"]
+      security-development:
+        applies-to: security-updates
+        dependency-type: development
+        patterns: ["*"]
+      # Expo SDK upgrades need `expo install --check` and device verification.
+      # Keep routine native packages together; major upgrades remain individual PRs.
+      expo:
+        patterns: ["expo", "expo-*", "react-native", "react-native-*"]
+        update-types: ["minor", "patch"]
+      convex-auth:
+        patterns: ["convex", "convex-test", "@convex-dev/*", "better-auth"]
+        update-types: ["minor", "patch"]
       react:
+        update-types: ["minor", "patch"]
         patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
       next:
+        update-types: ["minor", "patch"]
         patterns: ["next", "eslint-config-next", "@next/*"]
       testing:
+        update-types: ["minor", "patch"]
         patterns:
-          ["vitest", "@vitest/*", "@testing-library/*", "@playwright/test"]
+          [
+            "vitest",
+            "@vitest/*",
+            "vite",
+            "@vitejs/*",
+            "@testing-library/*",
+            "@playwright/test",
+          ]
       linting:
+        update-types: ["minor", "patch"]
         patterns:
-          ["eslint*", "prettier*", "@commitlint/*", "husky", "lint-staged"]
+          [
+            "eslint*",
+            "typescript-eslint",
+            "prettier*",
+            "@commitlint/*",
+            "husky",
+            "lint-staged",
+          ]
+      tailwind:
+        patterns:
+          ["tailwindcss", "@tailwindcss/*", "tailwind-merge", "tw-animate-css"]
+        update-types: ["minor", "patch"]
+      # Catch-all goes last: Dependabot uses the first matching group.
       minor-and-patch:
+        patterns: ["*"]
         update-types: ["minor", "patch"]
     commit-message:
       prefix: "chore(deps)"
@@ -40,5 +86,12 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
+      time: "06:00"
+      timezone: Asia/Kolkata
+    open-pull-requests-limit: 2
+    groups:
+      actions-minor-and-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
     commit-message:
       prefix: "chore(ci)"
