@@ -12,6 +12,17 @@ record and reviewed editable Word copy are
 `docs/product/platform-refinement-interview.md` and
 `output/docx/luma-green-platform-refinement-interview.docx`.
 
+The founder has requested a **plan first** for normal-user email/password and
+phone-OTP signup, workspace roles and team invites, disposable local test users,
+real-browser acceptance, and a restricted credentials annex. The detailed plan
+is in the 6 October proposed-account section of the interview record and its
+reviewed Word copy. The founder confirmed both verified signup methods with a
+local-only test path, and selected disposable development credentials in a
+restricted annex. Do not start that new implementation scope before the founder
+approves the plan. The broadly shared Google user guide will not carry passwords;
+after implementation, update its existing document ID with the reviewed guide
+and distribute the annex only to the named test team.
+
 Decisions: a kabadiwala buys household material and pays the household; Luma
 does not handle that payment. Every B2B payment must use a future gateway;
 the provider is not yet chosen, and simulated escrow cannot authorize live

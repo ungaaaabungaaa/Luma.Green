@@ -430,7 +430,8 @@ the appropriate buyer, customer or adviser verifies them.
   escrow as a live transaction path. Orders, inspections and custody records
   may exist without a completed payment; payment-dependent actions must wait
   for verified gateway state. The gateway provider and live account remain
-  open at this entry.
+  open at this entry. [ADR 0019](../decisions/0019-gateway-only-business-payments.md)
+  records this boundary.
 - A manufacturer may offer a non-hazardous recyclable byproduct to **any
   approved buyer handling that material**. Buyer eligibility follows the
   material and current approval, rather than only the prototype's next
@@ -519,6 +520,128 @@ files, functions and crons**. Both deployments remain paused until the reviewed
 new backend is deployed. The exports are recovery archives, not active data.
 This reset removes old-data migration as a release constraint; new data and
 future schema changes still require ordinary migration care.
+
+### 6 October 2026 proposed account, workspace and local acceptance plan
+
+**Approval status:** the founder asked to review this plan before implementation.
+The choices below are approved interview inputs, not a claim that the screens,
+test users or credentials already exist. Do not start this new scope until the
+founder approves the plan.
+
+**Confirmed inputs.** Offer normal users both email-and-password and phone-OTP
+signup after the corresponding provider verifies the address or number. Use a
+development-only verification path for local browser tests without sending SMS
+or email. Create disposable development accounts, and provide their generated
+email addresses and passwords in a **restricted credentials annex** for the
+founder and test team. The shared platform guide and its Google Docs copy show
+the account roster, roles and test instructions but contain no passwords. Do
+not put passwords, admin setup tokens or authenticator secrets in Git, screenshots,
+logs or the shared guide. The annex is separate from the public or broadly shared
+guide, with access limited to the named test team. All test identities are
+clearly marked as synthetic, never customer or production accounts.
+
+**Feasibility boundary.** Today the Better Auth integration supports phone OTP
+for normal users and email/password for the sole admin. It blocks normal-user
+email signup and has no team-invitation lifecycle. A new email path must change
+server policy, forms and the Better Auth adapter together, while keeping admin
+TOTP and recovery separate. Verified email linking to a phone identity must
+require proof of both identifiers; matching typed values is not proof. Use the
+existing organisation and membership records as workspace authority, and assess
+the Better Auth organisation plugin in a short technical spike before choosing
+an invite mechanism. Do not create two conflicting owners of role grants. True
+local Convex deployment is available but is beta; prove Better Auth sessions,
+component persistence and file storage work in that mode before using it as
+the acceptance environment. If that gate fails, use an isolated disposable
+development deployment, never the paused production deployment.
+
+**Account and workspace model to implement after approval.** A person has one
+verified identity and may belong to more than one organisation. An organisation
+has a business or observer type, approval state, sites and one or more workspaces.
+Workspace roles begin with owner, admin, member and viewer; specific abilities
+such as inviting people, approving a trade, entering quality evidence, seeing
+prices or exporting reports are checked on the server, not inferred from a
+screen label. A founder/admin account manages platform verification and cannot
+silently join customer workspaces. Specialist observers receive purpose-limited
+access only after the data owner grants it. A stakeholder's account approval
+alone does not grant trade or private-data access. Every grant, invitation,
+revocation and sensitive action writes an audit event. Decide precise permission
+rows with the team before enabling each workflow.
+
+**Invite and identity flow.** A workspace owner or authorised admin enters a
+teammate's email, chooses a workspace role and sends a one-use, expiring invite.
+The recipient opens the invite, verifies email, signs up or signs in, accepts
+the named organisation and role, then sees only permitted screens. Existing
+members can change roles or revoke access; an expired, reused, revoked or
+wrong-email invite fails with a clear message. Recheck current membership on
+every server operation, so a revoked member loses access even if a browser tab
+is open. A phone-only person may use phone OTP normally, but email-based invite
+acceptance requires them to add and verify the invited email first. Do not
+merge accounts automatically. A later phone-number invite can be interviewed
+separately. Development test mode must be server-gated to local/disposable
+environments, never enabled by a browser flag or production URL.
+
+**Disposable fixture roster.** Seed one person for each distinct journey, plus
+two people in at least one workspace to exercise collaboration. Cover:
+
+1. Household member and household-team coordinator; kabadiwala owner and
+   invited staff member; Saathi.
+2. Preprocessor, recycler and manufacturer buyer/seller; include a manufacturer
+   offering a non-hazardous byproduct and another approved buyer handling it.
+3. Apartment community, office, hotel and resort representatives as separate
+   non-household material generators; at least one generator site and one
+   rejected or unapproved buyer fixture.
+4. Fibre, textile and garment manufacturer subtypes; apparel/packaging brand
+   or PIBO where that journey differs.
+5. City official, CSR sponsor, lender, auditor and waste-picker union as
+   separate least-privilege observer accounts; platform administrator.
+
+Use synthetic names, reserved test email addresses and non-routable phone
+numbers. Create Better Auth identities through supported auth flows, not by
+writing its component tables directly. Seed domain records through validated
+application APIs or tightly scoped test-only setup functions. Give the seed a
+repeatable manifest and cleanup command, so it cannot run against production
+and rerunning it does not duplicate identities or material lots. Generate unique
+strong passwords for email accounts at execution time. The restricted annex
+will list environment, account name, email, password, workspace, role, expected
+starting screen and expiry/rotation date; phone-only and TOTP accounts instead
+list their test access procedure, without publishing codes or secrets. The
+founder can then distribute that annex to the named team. The shared guide will
+link to it only if the sharing boundary is verified.
+
+**Real-browser acceptance matrix.** Run the app against the isolated seeded
+backend and test as a person would: navigate, enter forms, receive local-only
+verification, sign in, reload, switch workspaces, invite and accept, attempt
+unauthorised screens, sign out and sign back in. Test both email and phone signup
+and login, duplicate identifier, wrong password/code, expired challenge,
+recovery, invite expiry/reuse/revocation and cross-organisation isolation.
+Walk household booking and kabadiwala receipt, each supported material hand-off,
+manufacturer byproduct offer to an approved buyer, inspection/correction,
+compliance evidence and observer views. Test a payment-dependent action with no
+gateway and require the explicit blocked state. Do not claim a completed B2B
+purchase until a real gateway sandbox and webhook reconciliation pass. Inspect
+browser console and failed network requests, keyboard focus, light/dark views,
+phone/tablet/desktop widths and affected translations including Arabic/Urdu RTL.
+Capture only synthetic data, and identify local screenshots as local evidence.
+
+**Implementation order and proof gates after approval.** (1) Freeze the account
+matrix and permissions; spike local Convex and Better Auth feasibility.
+(2) Implement identity methods and server-side dev verification guard with unit,
+handler and adapter tests. (3) Add workspace roles and invite lifecycle with
+permission, concurrency and revocation tests. (4) Add signup, login, workspace
+and team screens using the current UI and translation contracts. (5) Create and
+seed the disposable fixture roster and generate the restricted annex.
+(6) Run real-browser paths, correct failures, and review visual captures.
+(7) Update the source user guide, rebuild and inspect its Word copy, then update
+the existing Google Doc with the same reviewed source and verify sharing.
+(8) Run `pnpm check`, build, browser suite, protected-branch checks and the
+actual deployment smoke tests before making a release claim. Production
+credentials, provider secrets, delivery and payment remain separate gates.
+
+**Decisions still needed during implementation.** The exact email sender and
+domain, SMS provider availability, gateway provider, team invitation email
+delivery, permission details for each observer, and whether a phone-only person
+can later add a password need named owners. Missing providers must show an honest
+unavailable state; no preview challenge can produce a production session.
 
 ## Documentation and implementation boundary
 
