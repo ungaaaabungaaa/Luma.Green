@@ -43,8 +43,6 @@ vi.mock("@/i18n/navigation", () => ({
   useRouter: () => ({ push: vi.fn() }),
 }));
 
-const now = Date.now();
-
 beforeEach(() => {
   data.kind = "yard";
   data.trades = {
@@ -58,6 +56,11 @@ beforeEach(() => {
     ],
     selling: [
       aTrade({
+        id: "decide" as TradeView["id"],
+        status: "requested",
+        actions: ["accept", "decline"],
+      }),
+      aTrade({
         id: "held" as TradeView["id"],
         status: "dispatched",
         inEscrow: true,
@@ -67,7 +70,6 @@ beforeEach(() => {
         id: "done" as TradeView["id"],
         status: "completed",
         totalPaise: 2_000_000,
-        timeline: [{ status: "completed", at: now }],
       }),
     ],
   };
@@ -100,17 +102,21 @@ describe("BusinessHome", () => {
       }),
     ).toBeInTheDocument();
     const stats = screen.getByRole("region", { name: "At a glance" });
-    expect(within(stats).getByText("₹76,000")).toBeInTheDocument();
+    expect(within(stats).getByText("Awaiting gateway")).toBeInTheDocument();
+    expect(within(stats).getAllByText("1")).toHaveLength(3);
     expect(within(stats).getByText("1 trade needs a step")).toBeInTheDocument();
     expect(within(stats).getByText("5,000 kg listed")).toBeInTheDocument();
-    expect(within(stats).getByText("₹20,000 traded")).toBeInTheDocument();
+    expect(within(stats).queryByText("₹76,000")).not.toBeInTheDocument();
   });
 
-  it("puts the step that's waiting one tap away", () => {
+  it("offers only order decisions and no simulated payment action", () => {
     renderHome();
     expect(
-      screen.getByRole("button", { name: "Pay ₹1,750 into escrow" }),
+      screen.getByRole("button", { name: "Accept order" }),
     ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /Pay/ }),
+    ).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Sell/ })).toHaveAttribute(
       "href",
       "/app/sell",

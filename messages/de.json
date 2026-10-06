@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Handeln",
-      "summary": "Der geplante Treuhandservice würde die Zahlung bis zur Lieferung verwahren. Die aktuelle Demo erfasst nur simulierte Zahlungen."
+      "summary": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
     },
     "record": {
       "title": "Erfassen",
@@ -119,7 +119,7 @@
           "body": "Stellen aus recyceltem Material neue Produkte her."
         }
       },
-      "money": "Haushalte erhalten Bargeld oder eine UPI-Zahlung an der Haustür. Treuhandzahlungen zwischen Betrieben sind geplant.",
+      "money": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
       "saathi": "Saathis unterstützen die gesamte Kette bei Abholungen, beim Sortieren und in Schichten."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Sortierhöfe",
         "one": "Sehen Sie die Bestände nahegelegener Läden.",
         "two": "Kaufen Sie größere Mengen und verkaufen Sie Ballen an Recycler.",
-        "three": "Geplant: Zahlung bis zur Lieferung treuhänderisch verwahren.",
+        "three": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
         "cta": "Als Sortierhof registrieren"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Hersteller",
         "one": "Sehen Sie, was Recycler produzieren.",
-        "two": "Geplant: Recyceltes Material mit Treuhandzahlung bestellen.",
+        "two": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
         "three": "Aufzeichnungen für Ihre EPR-Berichte.",
         "cta": "Als Hersteller registrieren"
       },
@@ -180,7 +180,7 @@
         "body": "Läden legen eigene Preise fest, dürfen aber den veröffentlichten Mindestpreis je Material nicht unterschreiten."
       },
       "escrow": {
-        "title": "Geplant: Treuhandzahlungen im Geschäftshandel",
+        "title": "Warten auf Zahlungsanbieter",
         "body": "Die Demo zeigt Zahlungsschritte, verwahrt und überträgt aber kein echtes Geld."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Der Luma.Green-Standard",
-    "metaDescription": "Geplant: Offene Materialcodes und einfache Regeln für fairen Recyclingmaterialhandel in Indien — Qualität, Wiegen, Belege, Prüfung und Treuhandzahlungen. Frei nutzbar.",
+    "metaDescription": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
     "eyebrow": "Offener Standard",
     "title": "Der Luma.Green-Standard",
     "lead": "Einfache, offene Regeln für fairen Recyclingmaterialhandel: ein Code je Material, klare Qualitätsstufen, ehrliches Wiegen und ein Nachweis bei jeder Übergabe. Alle in der Branche können sie übernehmen.",
@@ -398,14 +398,14 @@
       "saathi": "Saathis: ein Lichtbildausweis und ein dazu passendes Selfie."
     },
     "escrow": {
-      "title": "Geplant: Treuhandzahlungen zwischen Betrieben",
-      "nav": "Treuhandzahlung",
-      "body": "Der geplante Treuhandservice würde die Zahlung bis zur Lieferung verwahren. Die aktuelle Demo erfasst nur simulierte Zahlungen.",
+      "title": "Warten auf Zahlungsanbieter",
+      "nav": "Warten auf Zahlungsanbieter",
+      "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
       "steps": {
         "accepted": "Der Verkäufer nimmt die Bestellung an",
-        "paid": "Der Käufer zahlt auf das Treuhandkonto",
+        "paid": "Warten auf Zahlungsanbieter",
         "dispatched": "Der Verkäufer versendet die Ware",
-        "released": "Der Käufer bestätigt die Lieferung, das Geld wird freigegeben"
+        "released": "Warten auf Zahlungsanbieter"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "So funktioniert es",
-    "metaDescription": "Geplant: So bewegt sich Recyclingmaterial auf Luma.Green — fairer Verkauf aus dem Haushalt, Handel entlang der Kette mit Treuhandzahlung und eine Aufzeichnung bei jeder Übergabe.",
+    "metaDescription": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
     "title": "So funktioniert Luma.Green",
     "lead": "Materialien gelangen von Haushalten zu Sammelstellen, Sortierhöfen und Recyclern, bevor daraus etwas Neues entsteht. Luma.Green erfasst jede Übergabe.",
     "stepLabel": "Schritt {number}",
@@ -563,7 +563,7 @@
       "point3": "Ein Tracking-Link ohne erforderliches Konto"
     },
     "trade": {
-      "body": "Demo: Kabadiwalas verkaufen sortierte Bestände an Sortierhöfe, diese verkaufen Ballen an Recycler, und Recycler verkaufen Flakes, Granulat und Barren an Fabriken. Die Zahlung bleibt bis zur Lieferung treuhänderisch verwahrt. Die Demo zeigt die Zahlungsschritte, verwahrt und überträgt aber kein echtes Geld.",
+      "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
       "point1": "Nur geprüfte Betriebe dürfen handeln",
       "point2": "Bestände ändern sich bei Versand und Empfang einer Ladung",
       "point3": "Ein nummerierter Beleg für jeden bezahlten Handel"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Sortierhöfe",
-      "body": "Geplant: Bei Kabadiwalas einkaufen, sortieren, Ballen pressen und nach Qualität sortierte Lose mit Treuhandzahlung an Recycler verkaufen."
+      "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
     },
     "recycler": {
       "name": "Recyclingbetriebe",
@@ -624,7 +624,7 @@
     "replyTime": "Wir antworten innerhalb eines Arbeitstags.",
     "search": {
       "label": "Hilfe durchsuchen",
-      "placeholder": "Zum Beispiel: SMS-Code oder Treuhandzahlung",
+      "placeholder": "Warten auf Zahlungsanbieter",
       "clear": "Suche löschen",
       "summary": "{count, plural, =0 {Keine Antworten} one {# Antwort} other {# Antworten}} für „{query}“",
       "topicSummary": "{count, plural, =0 {Keine Antworten} one {# Antwort} other {# Antworten}} zu {topic}",
@@ -671,7 +671,7 @@
         "name": "Sortierhöfe",
         "who": "Bei Kabadiwalas einkaufen und weiter sortieren",
         "title": "Hilfe für Sortierhöfe",
-        "lead": "Demo: Finden Sie Bestände in Ihrer Nähe, verkaufen Sie sortierte Ballen an Recycler und handeln Sie sicher mit Treuhandzahlungen."
+        "lead": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
       },
       "recycler": {
         "name": "Recyclingbetriebe",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Demo-Anleitung: Wie Treuhandzahlungen einen Handel absichern",
-        "summary": "Der geplante Treuhandservice würde die Zahlung bis zur Lieferung verwahren. Die aktuelle Demo erfasst nur simulierte Zahlungen.",
+        "title": "Warten auf Zahlungsanbieter",
+        "summary": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
         "steps": {
           "request": {
             "title": "Der Käufer sendet eine Anfrage",
@@ -890,8 +890,8 @@
             "body": "Es wird noch nichts bezahlt. Rufen Sie einander an, wenn Einzelheiten zu klären sind."
           },
           "pay": {
-            "title": "Der Käufer zahlt auf das Treuhandkonto",
-            "body": "Das Geld ist sicher verwahrt und noch nicht beim Verkäufer. Er kann die Zahlung vor dem Verladen sehen."
+            "title": "Warten auf Zahlungsanbieter",
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           },
           "dispatch": {
             "title": "Der Verkäufer versendet die Ladung",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "Der Käufer bestätigt die Lieferung",
-            "body": "Prüfen Sie Gewicht und Qualität und bestätigen Sie dann. Das Geld wird an den Verkäufer freigegeben."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Eine zu kleine Ladung nicht bestätigen",
-            "body": "Die Bestätigung gibt das Geld frei. Bis dahin bleibt es treuhänderisch verwahrt."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           },
           "report": {
             "title": "Mit Fotos melden",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Anfrage eines Sortierhofs annehmen",
-            "body": "Prüfen Sie Gewicht und Preis und nehmen Sie an. Der Hof zahlt vor der Abholung auf das Treuhandkonto."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Wählen Sie die gewünschte Menge. Der Kilopreis wird vor dem Senden angezeigt."
           },
           "pay": {
-            "title": "Auf das Treuhandkonto zahlen",
-            "body": "Bezahlen Sie, sobald der Kabadiwala annimmt. Das Geld bleibt bis zu Ihrer Bestätigung verwahrt."
+            "title": "Warten auf Zahlungsanbieter",
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           },
           "collect": {
             "title": "Abholen und wiegen",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Annehmen und auf Zahlung warten",
-            "body": "Verladen Sie erst, wenn die Zahlung auf dem Treuhandkonto eingegangen ist."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           },
           "dispatch": {
             "title": "Ladung versenden",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Bezahlt werden",
-            "body": "Sobald der Recycler die Lieferung bestätigt, wird das Geld an Sie freigegeben."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Wählen Sie die Kilogramm. Der Kilopreis wird vor dem Senden angezeigt."
           },
           "pay": {
-            "title": "Auf das Treuhandkonto zahlen",
-            "body": "Bezahlen Sie nach Annahme durch den Hof. Das Geld bleibt bis zu Ihrer Lieferbestätigung verwahrt."
+            "title": "Warten auf Zahlungsanbieter",
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           },
           "confirm": {
             "title": "Wiegen, prüfen, bestätigen",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Nach Zahlung verladen",
-            "body": "Nehmen Sie an und versenden Sie die Ladung, sobald die Zahlung treuhänderisch hinterlegt ist."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           },
           "paid": {
             "title": "Bei Lieferung bezahlt werden",
-            "body": "Das Geld wird freigegeben, sobald der Hersteller bestätigt."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Wählen Sie die Menge und senden Sie die Anfrage. Der Recycler nimmt an oder lehnt ab."
           },
           "pay": {
-            "title": "Auf das Treuhandkonto zahlen",
-            "body": "Bezahlen Sie nach der Annahme. Das Geld bleibt bis zu Ihrer Lieferbestätigung verwahrt."
+            "title": "Warten auf Zahlungsanbieter",
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           },
           "receive": {
             "title": "Ladung empfangen",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Bestätigen oder melden",
-            "body": "Alles in Ordnung? Bestätigen Sie. Etwas stimmt nicht? Melden Sie es mit Fotos. Das Geld bleibt treuhänderisch verwahrt."
+            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "Wie werde ich beim Verkauf an einen Sortierhof bezahlt?",
-        "a": "Vereinbaren Sie die Zahlung vorerst direkt mit dem Hof. Treuhandzahlungen sind geplant; die Demo überträgt kein Geld."
+        "a": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
       },
       "whoSeesShop": {
         "q": "Wer kann meinen Laden sehen?",
@@ -1642,8 +1642,8 @@
         "a": "Der Verkäufer nennt einen Kilopreis. Sie sehen ihn vor Ihrer Anfrage und können Details telefonisch vereinbaren."
       },
       "whatIsEscrow": {
-        "q": "Was ist eine Treuhandzahlung?",
-        "a": "Ein sicherer Zwischenschritt: Das Geld des Käufers wird bis zur vereinbarten Lieferung verwahrt und danach an den Verkäufer freigegeben. Treuhandzahlungen für Betriebe sind geplant."
+        "q": "Warten auf Zahlungsanbieter",
+        "a": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
       },
       "whenSellerPaid": {
         "q": "Wann wird der Verkäufer bezahlt?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Ihre Preise festlegen",
       "buyingFromKabadiwalas": "Bei Kabadiwalas einkaufen",
       "listingBales": "Ballen für Recycler anbieten",
-      "escrowExplained": "Demo: Treuhandzahlungen in zwei Minuten",
+      "escrowExplained": "Warten auf Zahlungsanbieter",
       "buyingFromYards": "Bei Sortierhöfen einkaufen",
       "sellingOutput": "Ihre Erzeugnisse verkaufen",
       "eprPlainWords": "EPR verständlich erklärt",
@@ -1802,7 +1802,7 @@
         "title": "Demo: An Sortierhöfe verkaufen",
         "p1": "Sortierung erfassen, damit der Bestand stimmt.",
         "p2": "Bestand für nahegelegene Höfe sichtbar machen.",
-        "p3": "Erst nach Eingang der Treuhandzahlung verladen."
+        "p3": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
       },
       "buyingStock": {
         "title": "Bestand einkaufen",
@@ -1811,8 +1811,8 @@
         "p3": "Jede Ladung vor der Bestätigung wiegen."
       },
       "tradingWithEscrow": {
-        "title": "Demo: Mit Treuhandzahlung handeln",
-        "p1": "Der Käufer zahlt nach Annahme durch den Verkäufer auf das Treuhandkonto.",
+        "title": "Warten auf Zahlungsanbieter",
+        "p1": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
         "p2": "Der Verkäufer verlädt erst nach Zahlungseingang.",
         "p3": "Die Lieferbestätigung gibt das Geld frei."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Demo: Rohstoffe einkaufen",
         "p1": "Unter „Kaufen“ nach Qualität sortierte Ballen von Höfen finden.",
-        "p2": "Nach Annahme durch den Hof auf das Treuhandkonto zahlen.",
+        "p2": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
         "p3": "Qualität vor der Bestätigung prüfen."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: Recyceltes Material bestellen",
         "p1": "Angebote nach Art, Menge und Preis vergleichen.",
         "p2": "Eine Bestellung über die benötigte Menge senden.",
-        "p3": "Nach Annahme auf das Treuhandkonto zahlen."
+        "p3": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
       },
       "checkingDeliveries": {
         "title": "Lieferungen prüfen",
@@ -2454,7 +2454,7 @@
       "view": "Beleg {number} ansehen",
       "unknown": "Ein nicht mehr auf Luma.Green aktiver Betrieb",
       "empty": "Noch keine Belege",
-      "emptyBody": "Ein Beleg wird erstellt, wenn ein Käufer auf das Treuhandkonto zahlt."
+      "emptyBody": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
     },
     "epr": {
       "title": "EPR-Nachweis, Geschäftsjahr {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Nur {weight} verfügbar.",
       "total": "Gesamtbetrag",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Sie zahlen nach Annahme durch {seller} auf das Treuhandkonto. Das Geld wird bei Ihrer Lieferbestätigung freigegeben.",
+      "escrow": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
       "ewayBill": "Über ₹50.000: Ein E-Way Bill muss diese Ladung begleiten.",
       "cancel": "Abbrechen",
       "submit": "Anfrage abschicken",
       "sending": "Wird gesendet…",
       "sent": "Anfrage an {seller} gesendet",
-      "sentNext": "Nach der Annahme zahlen Sie auf das Treuhandkonto.",
+      "sentNext": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
       "seeTrades": "Handelsvorgänge ansehen"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Handel",
-      "lead": "Jeder Handel, Schritt für Schritt. Das Geld bleibt bis zur Lieferbestätigung des Käufers treuhänderisch verwahrt.",
+      "lead": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
       "buying": "Einkäufe",
       "selling": "Verkäufe",
       "tabsLabel": "Kaufen oder verkaufen",
@@ -2936,7 +2936,7 @@
         "from": "Von {name} · {area}",
         "to": "An {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} treuhänderisch verwahrt",
+        "inEscrow": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
         "ewayBill": "Über ₹50.000: Ein E-Way Bill muss diese Ladung begleiten.",
         "updated": "Aktualisiert {when}",
         "receipt": "Beleg {number}",
@@ -2947,7 +2947,7 @@
         "label": "Handelsfortschritt",
         "requested": "Angefragt",
         "accepted": "Angenommen",
-        "paid_to_escrow": "In Treuhand",
+        "paid_to_escrow": "Nicht verifiziert",
         "dispatched": "Versendet",
         "completed": "Geliefert",
         "srStep": "{step}: {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} möchte dies kaufen. Nehmen Sie an, um es zu reservieren."
         },
         "accepted": {
-          "buyer": "Angenommen. Zahlen Sie auf das Treuhandkonto, um fortzufahren. Das Geld bleibt bis zu Ihrer Lieferbestätigung verwahrt.",
-          "seller": "Wartet auf Treuhandzahlung von {name}."
+          "buyer": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+          "seller": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
         },
         "paid_to_escrow": {
-          "buyer": "Ihr Geld ist treuhänderisch verwahrt. Wartet auf Versand durch {name}.",
-          "seller": "Das Geld ist treuhänderisch verwahrt. Versenden Sie die Ladung und markieren Sie sie als versendet."
+          "buyer": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
+          "seller": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert."
         },
         "dispatched": {
-          "buyer": "Unterwegs. Prüfen Sie die Ladung und bestätigen Sie die Lieferung zur Geldfreigabe.",
-          "seller": "Unterwegs. Das Geld wird freigegeben, sobald {name} die Lieferung bestätigt."
+          "buyer": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
+          "seller": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert."
         },
         "completed": {
-          "buyer": "Geliefert. Das Geld wurde an {name} freigegeben.",
-          "seller": "Geliefert. Das Geld wurde an Sie freigegeben."
+          "buyer": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
+          "seller": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert."
         },
         "declined": {
           "buyer": "{name} hat die Bestellung abgelehnt oder das Los ist ausverkauft.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Bestellung annehmen",
         "decline": "Ablehnen",
-        "pay": "{amount} auf das Treuhandkonto zahlen",
+        "pay": "Warten auf Zahlungsanbieter",
         "dispatch": "Als versendet markieren",
         "confirm": "Lieferung bestätigen"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Bestellung angenommen",
         "decline": "Bestellung abgelehnt",
-        "pay": "Auf das Treuhandkonto gezahlt. Beleg {number}",
+        "pay": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
         "dispatch": "Als versendet markiert",
-        "confirm": "Lieferung bestätigt. Das Geld wird an den Verkäufer freigegeben."
+        "confirm": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert."
       },
       "declineConfirm": "Bestellung von {name} ablehnen? Dies kann nicht rückgängig gemacht werden.",
       "declineYes": "Ja, ablehnen",
-      "declineNo": "Behalten"
+      "declineNo": "Behalten",
+      "gatewayPending": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "legacyUnverified": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert."
     },
     "receipt": {
       "title": "Handelsbeleg",
       "numberLabel": "Belegnr.",
       "dateLabel": "Datum",
       "statusLabel": "Zahlung",
-      "inEscrow": "In Treuhand",
-      "settled": "Freigegeben",
+      "inEscrow": "Nicht verifiziert",
+      "settled": "Nicht verifiziert",
       "seller": "Verkäufer",
       "buyer": "Käufer",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Betrag",
       "total": "Gesamtbetrag",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Am {date} auf das Treuhandkonto von Luma.Green gezahlt.",
-      "held": "Bis zur Lieferbestätigung des Käufers treuhänderisch verwahrt.",
-      "released": "Am {date} an den Verkäufer freigegeben.",
+      "paidInto": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
+      "held": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
+      "released": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
       "ewayBill": "Warenwert über ₹50.000: Ein E-Way Bill muss die Ladung begleiten.",
       "notTaxInvoice": "Dies ist ein Handelsbeleg, keine GST-Steuerrechnung. Steuerrechnungen folgen mit echten Zahlungen.",
       "print": "Drucken",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Beleg nicht gefunden",
       "missingBody": "Dieser Handel gehört nicht zu Ihnen oder der Link ist falsch.",
       "pendingTitle": "Noch kein Beleg",
-      "pendingBody": "Der Beleg entsteht bei der Treuhandzahlung des Käufers.",
-      "declinedBody": "Dieser Handel wurde abgelehnt. Es gibt keinen Beleg."
+      "pendingBody": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "declinedBody": "Dieser Handel wurde abgelehnt. Es gibt keinen Beleg.",
+      "unverified": "Nicht verifiziert"
     },
     "home": {
       "greeting": "Guten Tag, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Handel",
       "statsTitle": "Auf einen Blick",
       "stats": {
-        "escrow": "In Treuhand",
-        "escrowHint": "Freigabe bei bestätigter Lieferung",
+        "escrow": "Nicht verifiziert",
+        "escrowHint": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
         "waiting": "Wartet auf Sie",
         "waitingHint": "{count, plural, =0 {Alles erledigt} one {# Handel erfordert eine Aktion} other {# Handelsvorgänge erfordern eine Aktion}}",
         "listings": "Im Verkauf",
@@ -3050,7 +3053,8 @@
         "offers": "Recycelte Lose",
         "offersHint": "Von Recyclern angeboten",
         "completed": "Diesen Monat abgeschlossen",
-        "completedHint": "{amount} gehandelt"
+        "completedHint": "{amount} gehandelt",
+        "gatewayPending": "Warten auf Zahlungsanbieter"
       },
       "waitingTitle": "Wartet auf Sie",
       "allTrades": "Alle Handelsvorgänge",

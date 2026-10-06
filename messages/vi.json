@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Giao dịch",
-      "summary": "Dịch vụ ký quỹ dự kiến sẽ giữ tiền đến khi giao hàng. Bản minh họa hiện tại chỉ ghi nhận các khoản thanh toán mô phỏng."
+      "summary": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
     },
     "record": {
       "title": "Ghi nhận",
@@ -119,7 +119,7 @@
           "body": "Tạo sản phẩm mới từ vật liệu tái chế."
         }
       },
-      "money": "Hộ gia đình nhận tiền mặt hoặc UPI tại cửa. Dịch vụ ký quỹ giữa doanh nghiệp đang được lên kế hoạch.",
+      "money": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
       "saathi": "Saathi hỗ trợ toàn chuỗi với công việc thu gom, phân loại và làm theo ca."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Bãi phân loại",
         "one": "Xem hàng tồn của các cửa hàng gần bạn.",
         "two": "Mua số lượng lớn và bán kiện hàng cho cơ sở tái chế.",
-        "three": "Dự kiến: giữ tiền trong ký quỹ đến khi giao hàng.",
+        "three": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
         "cta": "Đăng ký bãi phân loại"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Nhà sản xuất",
         "one": "Xem các cơ sở tái chế đang sản xuất gì.",
-        "two": "Dự kiến: đặt vật liệu tái chế với dịch vụ ký quỹ.",
+        "two": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
         "three": "Hồ sơ phục vụ báo cáo EPR.",
         "cta": "Đăng ký nhà sản xuất"
       },
@@ -180,7 +180,7 @@
         "body": "Cửa hàng tự đặt giá nhưng không thấp hơn mức tối thiểu chúng tôi công bố cho từng vật liệu."
       },
       "escrow": {
-        "title": "Dự kiến: ký quỹ cho giao dịch doanh nghiệp",
+        "title": "Đang chờ cổng thanh toán",
         "body": "Bản minh họa hiển thị các bước thanh toán nhưng không giữ hoặc chuyển tiền thật."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Tiêu chuẩn Luma.Green",
-    "metaDescription": "Dự kiến: mã vật liệu mở và quy tắc đơn giản cho giao dịch vật liệu công bằng tại Ấn Độ: phân hạng, cân, biên nhận, xác minh và ký quỹ. Mọi người đều có thể áp dụng miễn phí.",
+    "metaDescription": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
     "eyebrow": "Tiêu chuẩn mở",
     "title": "Tiêu chuẩn Luma.Green",
     "lead": "Quy tắc đơn giản, công khai để giao dịch vật liệu công bằng: một mã cho mỗi vật liệu, phân hạng rõ ràng, cân trung thực và ghi nhận mỗi lần bàn giao. Bất kỳ ai trong ngành cũng có thể áp dụng.",
@@ -398,14 +398,14 @@
       "saathi": "Saathi: giấy tờ có ảnh và ảnh tự chụp trùng khớp."
     },
     "escrow": {
-      "title": "Dự kiến: ký quỹ giữa doanh nghiệp",
-      "nav": "Ký quỹ",
-      "body": "Dịch vụ ký quỹ dự kiến sẽ giữ tiền đến khi giao hàng. Bản minh họa hiện tại chỉ ghi nhận các khoản thanh toán mô phỏng.",
+      "title": "Đang chờ cổng thanh toán",
+      "nav": "Đang chờ cổng thanh toán",
+      "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
       "steps": {
         "accepted": "Người bán chấp nhận đơn hàng",
-        "paid": "Người mua nộp tiền ký quỹ",
+        "paid": "Đang chờ cổng thanh toán",
         "dispatched": "Người bán gửi hàng",
-        "released": "Người mua xác nhận và tiền được giải ngân"
+        "released": "Đang chờ cổng thanh toán"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "Cách hoạt động",
-    "metaDescription": "Dự kiến: hành trình vật liệu trên Luma.Green, được bán tại nhà với giá công bằng, giao dịch qua ký quỹ và ghi nhận mỗi lần bàn giao.",
+    "metaDescription": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
     "title": "Cách Luma.Green hoạt động",
     "lead": "Vật liệu đi từ các hộ gia đình đến cửa hàng thu gom, bãi phân loại và cơ sở tái chế trước khi trở thành sản phẩm mới. Luma.Green ghi lại mỗi lần bàn giao.",
     "stepLabel": "Bước {number}",
@@ -563,7 +563,7 @@
       "point3": "Có liên kết theo dõi, không cần tài khoản"
     },
     "trade": {
-      "body": "Minh họa: kabadiwala bán hàng đã phân loại cho bãi, bãi bán kiện cho cơ sở tái chế, và cơ sở tái chế bán mảnh, hạt, thỏi cho nhà máy. Tiền của người mua nằm trong ký quỹ đến khi hàng tới nơi. Bản minh họa hiển thị các bước thanh toán nhưng không giữ hoặc chuyển tiền thật.",
+      "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
       "point1": "Chỉ doanh nghiệp đã xác minh được giao dịch",
       "point2": "Tồn kho được cập nhật khi gửi và nhận hàng",
       "point3": "Mỗi giao dịch đã thanh toán có biên nhận đánh số"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Bãi phân loại",
-      "body": "Dự kiến: mua từ kabadiwala, phân loại, ép kiện và bán lô đã phân hạng cho cơ sở tái chế với tiền được giữ trong ký quỹ."
+      "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
     },
     "recycler": {
       "name": "Cơ sở tái chế",
@@ -624,7 +624,7 @@
     "replyTime": "Chúng tôi trả lời trong một ngày làm việc.",
     "search": {
       "label": "Tìm nội dung trợ giúp",
-      "placeholder": "Thử tìm: mã SMS hoặc ký quỹ",
+      "placeholder": "Đang chờ cổng thanh toán",
       "clear": "Xóa tìm kiếm",
       "summary": "{count, plural, =0 {Không có câu trả lời} one {# câu trả lời} other {# câu trả lời}} cho “{query}”",
       "topicSummary": "{count, plural, =0 {Không có câu trả lời} one {# câu trả lời} other {# câu trả lời}} về {topic}",
@@ -671,7 +671,7 @@
         "name": "Bãi phân loại",
         "who": "Mua từ kabadiwala và phân loại thêm",
         "title": "Trợ giúp cho bãi phân loại",
-        "lead": "Minh họa: tìm hàng gần bạn, bán kiện đã phân loại cho cơ sở tái chế và giao dịch qua ký quỹ."
+        "lead": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
       },
       "recycler": {
         "name": "Cơ sở tái chế",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Hướng dẫn minh họa: ký quỹ bảo vệ giao dịch như thế nào",
-        "summary": "Dịch vụ ký quỹ dự kiến sẽ giữ tiền đến khi giao hàng. Bản minh họa hiện tại chỉ ghi nhận các khoản thanh toán mô phỏng.",
+        "title": "Đang chờ cổng thanh toán",
+        "summary": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
         "steps": {
           "request": {
             "title": "Người mua gửi yêu cầu",
@@ -890,8 +890,8 @@
             "body": "Chưa có thanh toán. Gọi cho nhau nếu cần thống nhất chi tiết."
           },
           "pay": {
-            "title": "Người mua nộp tiền ký quỹ",
-            "body": "Tiền được giữ an toàn, chưa chuyển cho người bán. Người bán thấy tiền đã có trước khi xếp hàng."
+            "title": "Đang chờ cổng thanh toán",
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           },
           "dispatch": {
             "title": "Người bán gửi chuyến hàng",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "Người mua xác nhận nhận hàng",
-            "body": "Kiểm tra khối lượng và chất lượng rồi xác nhận. Tiền được giải ngân cho người bán."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Không xác nhận hàng thiếu",
-            "body": "Xác nhận sẽ giải ngân tiền. Khi chưa xác nhận, tiền vẫn trong ký quỹ."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           },
           "report": {
             "title": "Báo cáo kèm ảnh",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Chấp nhận yêu cầu của bãi",
-            "body": "Kiểm tra số kg và giá rồi chấp nhận. Bãi nộp tiền ký quỹ trước khi thu hàng."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Chọn số kg cần mua. Giá mỗi kg hiện trước khi gửi."
           },
           "pay": {
-            "title": "Nộp tiền ký quỹ",
-            "body": "Thanh toán khi kabadiwala chấp nhận. Tiền được giữ đến khi bạn xác nhận."
+            "title": "Đang chờ cổng thanh toán",
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           },
           "collect": {
             "title": "Lấy hàng và cân",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Chấp nhận rồi chờ thanh toán",
-            "body": "Chỉ xếp hàng sau khi tiền người mua đã vào ký quỹ."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           },
           "dispatch": {
             "title": "Gửi chuyến hàng",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Nhận tiền",
-            "body": "Khi cơ sở tái chế xác nhận nhận hàng, tiền được giải ngân cho bạn."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Chọn số kg. Giá mỗi kg hiện trước khi gửi."
           },
           "pay": {
-            "title": "Nộp tiền ký quỹ",
-            "body": "Thanh toán khi bãi chấp nhận. Tiền được giữ đến khi bạn xác nhận nhận hàng."
+            "title": "Đang chờ cổng thanh toán",
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           },
           "confirm": {
             "title": "Cân, kiểm tra, xác nhận",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Xếp hàng sau thanh toán",
-            "body": "Chấp nhận rồi gửi hàng khi tiền đã vào ký quỹ."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           },
           "paid": {
             "title": "Nhận tiền khi giao hàng",
-            "body": "Tiền được giải ngân khi nhà sản xuất xác nhận."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Chọn số kg rồi gửi. Cơ sở tái chế chấp nhận hoặc từ chối."
           },
           "pay": {
-            "title": "Nộp tiền ký quỹ",
-            "body": "Thanh toán khi họ chấp nhận. Tiền được giữ đến khi bạn xác nhận nhận hàng."
+            "title": "Đang chờ cổng thanh toán",
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           },
           "receive": {
             "title": "Nhận chuyến hàng",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Xác nhận hoặc báo sự cố",
-            "body": "Đúng hết? Xác nhận. Chưa đúng? Báo kèm ảnh và tiền tiếp tục ở ký quỹ."
+            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "Tôi nhận tiền thế nào khi bán cho bãi?",
-        "a": "Hiện hãy thống nhất thanh toán trực tiếp với bãi. Dịch vụ ký quỹ đang được lên kế hoạch; bản minh họa không chuyển tiền."
+        "a": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
       },
       "whoSeesShop": {
         "q": "Ai thấy cửa hàng của tôi?",
@@ -1642,8 +1642,8 @@
         "a": "Người bán đăng giá mỗi kg. Bạn thấy giá trước khi gửi yêu cầu và có thể gọi để thống nhất chi tiết."
       },
       "whatIsEscrow": {
-        "q": "Ký quỹ là gì?",
-        "a": "Một bước trung gian an toàn: giữ tiền người mua đến khi hàng đến đúng thỏa thuận, sau đó giải ngân cho người bán. Ký quỹ doanh nghiệp là tính năng dự kiến."
+        "q": "Đang chờ cổng thanh toán",
+        "a": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
       },
       "whenSellerPaid": {
         "q": "Khi nào người bán nhận tiền?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Thiết lập giá của bạn",
       "buyingFromKabadiwalas": "Mua từ kabadiwala",
       "listingBales": "Đăng kiện hàng cho cơ sở tái chế",
-      "escrowExplained": "Minh họa: hiểu ký quỹ trong hai phút",
+      "escrowExplained": "Đang chờ cổng thanh toán",
       "buyingFromYards": "Mua từ bãi phân loại",
       "sellingOutput": "Bán sản phẩm đầu ra",
       "eprPlainWords": "EPR bằng lời dễ hiểu",
@@ -1802,7 +1802,7 @@
         "title": "Minh họa: bán cho bãi",
         "p1": "Ghi nhận phân loại để tồn kho đúng.",
         "p2": "Cho bãi gần bạn xem hàng tồn.",
-        "p3": "Chỉ xếp hàng sau khi tiền vào ký quỹ."
+        "p3": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
       },
       "buyingStock": {
         "title": "Mua hàng tồn",
@@ -1811,8 +1811,8 @@
         "p3": "Cân mỗi chuyến hàng trước khi xác nhận."
       },
       "tradingWithEscrow": {
-        "title": "Minh họa: giao dịch qua ký quỹ",
-        "p1": "Người mua nộp ký quỹ sau khi người bán chấp nhận.",
+        "title": "Đang chờ cổng thanh toán",
+        "p1": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
         "p2": "Người bán chỉ xếp hàng khi tiền đã có.",
         "p3": "Xác nhận nhận hàng sẽ giải ngân tiền."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Minh họa: mua nguyên liệu đầu vào",
         "p1": "Tìm kiện đã phân hạng từ bãi trong Mua.",
-        "p2": "Nộp ký quỹ khi bãi chấp nhận.",
+        "p2": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
         "p3": "Kiểm tra hạng vật liệu trước khi xác nhận."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Minh họa: đặt vật liệu tái chế",
         "p1": "So sánh tin đăng theo loại, số kg và giá.",
         "p2": "Gửi đơn cho số kg bạn cần.",
-        "p3": "Nộp ký quỹ khi được chấp nhận."
+        "p3": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
       },
       "checkingDeliveries": {
         "title": "Kiểm tra giao hàng",
@@ -2454,7 +2454,7 @@
       "view": "Xem biên nhận {number}",
       "unknown": "Doanh nghiệp không còn trên Luma.Green",
       "empty": "Chưa có biên nhận",
-      "emptyBody": "Biên nhận được tạo khi người mua nộp tiền ký quỹ."
+      "emptyBody": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
     },
     "epr": {
       "title": "Hồ sơ EPR, năm tài chính {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Chỉ có {weight}.",
       "total": "Tổng cộng",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Bạn nộp ký quỹ sau khi {seller} chấp nhận. Tiền chuyển cho họ khi bạn xác nhận nhận hàng.",
+      "escrow": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
       "ewayBill": "Trên ₹50.000: hàng phải đi kèm e-way bill.",
       "cancel": "Hủy",
       "submit": "Gửi yêu cầu mua",
       "sending": "Đang gửi…",
       "sent": "Đã gửi yêu cầu tới {seller}",
-      "sentNext": "Bạn sẽ nộp ký quỹ khi họ chấp nhận.",
+      "sentNext": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
       "seeTrades": "Xem giao dịch"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Giao dịch của bạn",
-      "lead": "Từng bước của mọi giao dịch. Tiền nằm trong ký quỹ đến khi người mua xác nhận nhận hàng.",
+      "lead": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
       "buying": "Đang mua",
       "selling": "Đang bán hàng",
       "tabsLabel": "Mua hoặc bán",
@@ -2936,7 +2936,7 @@
         "from": "Từ {name} · {area}",
         "to": "Đến {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} đang giữ trong ký quỹ",
+        "inEscrow": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
         "ewayBill": "Trên ₹50.000: hàng phải đi kèm e-way bill.",
         "updated": "Cập nhật {when}",
         "receipt": "Biên nhận {number}",
@@ -2947,7 +2947,7 @@
         "label": "Tiến độ giao dịch",
         "requested": "Đã yêu cầu",
         "accepted": "Đã chấp nhận",
-        "paid_to_escrow": "Trong ký quỹ",
+        "paid_to_escrow": "Chưa xác minh",
         "dispatched": "Đã xuất hàng",
         "completed": "Đã giao",
         "srStep": "{step}: {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} muốn mua. Chấp nhận để giữ hàng cho họ."
         },
         "accepted": {
-          "buyer": "Đã chấp nhận. Nộp ký quỹ để tiếp tục: tiền được giữ đến khi bạn xác nhận nhận hàng.",
-          "seller": "Chờ {name} nộp ký quỹ."
+          "buyer": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+          "seller": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
         },
         "paid_to_escrow": {
-          "buyer": "Tiền của bạn an toàn trong ký quỹ. Chờ {name} xuất hàng.",
-          "seller": "Tiền an toàn trong ký quỹ. Gửi hàng rồi đánh dấu đã xuất."
+          "buyer": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
+          "seller": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh."
         },
         "dispatched": {
-          "buyer": "Đang vận chuyển. Kiểm tra hàng rồi xác nhận để giải ngân.",
-          "seller": "Đang vận chuyển. Tiền giải ngân cho bạn khi {name} xác nhận nhận hàng."
+          "buyer": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
+          "seller": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh."
         },
         "completed": {
-          "buyer": "Đã giao. Tiền đã giải ngân cho {name}.",
-          "seller": "Đã giao. Tiền đã giải ngân cho bạn."
+          "buyer": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
+          "seller": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh."
         },
         "declined": {
           "buyer": "{name} từ chối đơn hoặc lô đã bán hết.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Chấp nhận đơn",
         "decline": "Từ chối",
-        "pay": "Nộp {amount} vào ký quỹ",
+        "pay": "Đang chờ cổng thanh toán",
         "dispatch": "Đánh dấu đã xuất hàng",
         "confirm": "Xác nhận nhận hàng"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Đã chấp nhận đơn",
         "decline": "Đã từ chối đơn",
-        "pay": "Đã nộp ký quỹ. Biên nhận {number}",
+        "pay": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
         "dispatch": "Đã đánh dấu xuất hàng",
-        "confirm": "Đã xác nhận nhận hàng. Tiền được giải ngân cho người bán."
+        "confirm": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh."
       },
       "declineConfirm": "Từ chối đơn này từ {name}? Không thể hoàn tác.",
       "declineYes": "Có, từ chối",
-      "declineNo": "Giữ lịch"
+      "declineNo": "Giữ lịch",
+      "gatewayPending": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "legacyUnverified": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh."
     },
     "receipt": {
       "title": "Biên nhận mua bán",
       "numberLabel": "Số biên nhận",
       "dateLabel": "Ngày",
       "statusLabel": "Khoản thanh toán",
-      "inEscrow": "Trong ký quỹ",
-      "settled": "Đã giải ngân",
+      "inEscrow": "Chưa xác minh",
+      "settled": "Chưa xác minh",
       "seller": "Người bán",
       "buyer": "Người mua",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Số tiền",
       "total": "Tổng cộng",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Đã nộp ký quỹ Luma.Green vào {date}.",
-      "held": "Giữ trong ký quỹ đến khi người mua xác nhận nhận hàng.",
-      "released": "Đã giải ngân cho người bán vào {date}.",
+      "paidInto": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
+      "held": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
+      "released": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
       "ewayBill": "Hàng trên ₹50.000: chuyến hàng phải có e-way bill đi kèm.",
       "notTaxInvoice": "Đây là biên nhận giao dịch, không phải hóa đơn thuế GST. Hóa đơn thuế đi cùng thanh toán thật.",
       "print": "In",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Không tìm thấy biên nhận",
       "missingBody": "Giao dịch không thuộc bạn hoặc liên kết sai.",
       "pendingTitle": "Chưa có biên nhận cho giao dịch",
-      "pendingBody": "Biên nhận tạo khi người mua nộp ký quỹ.",
-      "declinedBody": "Giao dịch bị từ chối nên không có biên nhận."
+      "pendingBody": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "declinedBody": "Giao dịch bị từ chối nên không có biên nhận.",
+      "unverified": "Chưa xác minh"
     },
     "home": {
       "greeting": "Chào bạn, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Giao dịch của bạn",
       "statsTitle": "Tổng quan",
       "stats": {
-        "escrow": "Trong ký quỹ",
-        "escrowHint": "Giải ngân khi xác nhận nhận hàng",
+        "escrow": "Chưa xác minh",
+        "escrowHint": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
         "waiting": "Đang chờ bạn",
         "waitingHint": "{count, plural, =0 {Đã xử lý hết} one {# giao dịch cần thao tác} other {# giao dịch cần thao tác}}",
         "listings": "Đang bán",
@@ -3050,7 +3053,8 @@
         "offers": "Lô vật liệu tái chế",
         "offersHint": "Cơ sở tái chế đang bán",
         "completed": "Hoàn tất tháng này",
-        "completedHint": "Đã giao dịch {amount}"
+        "completedHint": "Đã giao dịch {amount}",
+        "gatewayPending": "Đang chờ cổng thanh toán"
       },
       "waitingTitle": "Đang chờ bạn",
       "allTrades": "Mọi giao dịch",

@@ -65,7 +65,7 @@ The testimonial section is labelled **Demo testimonials**. Its role-based quotes
 ### Three limits to remember
 
 1. Household payments are recorded after cash or UPI payment outside the platform.
-2. Business escrow and payment steps are demonstrations. No real funds are held or transferred.
+2. Business trades stop after order acceptance until a verified payment gateway is connected. Older prototype payment records are unverified and do not prove that funds moved.
 3. EPR and impact records are supporting records, not issued certificates or verified carbon credits.
 
 All paths in this guide are relative to the correct deployment address. Use the address supplied by the platform owner. This local design review uses http://localhost:3107. Protected component examples use a separate local fixture server and remain labelled. Capture manifests record the review origins. Do not assume a domain is live because it appears in source code.
@@ -317,22 +317,20 @@ To offer material onward, use /app/sell or the Sell action available to the role
 
 ## 12 / Business trade: buyer and seller
 
-![Current yard trade list with synthetic records. Payment and escrow actions are simulated.](screenshots/yard-trades.png)
+![Earlier yard trade capture with synthetic records. Its payment control belongs to the prototype and is no longer available.](screenshots/yard-trades.png)
 
 1. Seller: open /app/sell, select material, available quantity and asking price, add an optional note, then create the listing.
 2. Buyer: open Buy, choose a listing from an allowed supplier and inspect its material, available quantity and price.
 3. Buyer: enter the requested quantity, review the offer and create the order.
 4. Seller: open Trades, inspect the new order and accept or reject it as offered by the current state.
-5. Buyer: complete the displayed demo payment step when it becomes available. This records a state only.
-6. Seller: dispatch the material when the page offers Dispatch. Confirm the quantity and destination.
-7. Buyer: check the delivered material and select Confirm delivery when the page offers it.
-8. Both parties: inspect the completed trade and its receipt.
+5. Both parties: see the accepted order waiting for a payment gateway. Checkout, dispatch and delivery confirmation are not available yet.
+6. For an older prototype record, check the unverified label. It does not confirm a payment, shipment or delivery.
 
 ![Current business sale page with a synthetic open lot and available stock. No listing was created or withdrawn.](screenshots/yard-sell.png)
 
 For an active listing you no longer want to offer, select Withdraw and confirm. Read the resulting listing state.
 
-The sequence is state-driven. Only a permitted participant can use a transition. Stock is reserved and moved according to those transitions. Do not use screenshots as authority to skip an action in the current interface.
+The available sequence is request, then accept or decline. Accepted stock remains reserved. Older prototype states remain readable as history; they do not authorize a new movement. Use the current interface instead of an old screenshot to decide which action is available.
 
 A price, quantity and total must fit the exact integer range. If a price is rejected, reduce the price or quantity and check the total before sending again. A failed request keeps the form open. Existing records with an invalid total remain visible with an error instead of an estimated amount.
 
@@ -340,11 +338,11 @@ A price, quantity and total must fit the exact integer range. If a price is reje
 
 ### Payment boundary
 
-There is no live escrow or provider payment transfer. Adding payment keys does not turn the demonstration into a live payment service. Arrange real commercial terms outside this prototype until a reviewed payment implementation is released.
+There is no live gateway checkout or provider transfer. An accepted business order stays paused. Luma.Green does not provide an off-platform settlement option for these trades. Checkout and later trade steps need a verified gateway integration before they can be enabled.
 
 /app/trades/[id]/invoice is a printable trade receipt. It is not a GST tax invoice. It does not replace the supplier's required tax or transport documents.
 
-![Current trade receipt with synthetic businesses and quantities. The displayed escrow state is a prototype example; no funds were transferred or held.](screenshots/yard-invoice.png)
+![Earlier trade receipt capture with synthetic businesses and quantities. Its escrow status is a prototype example, not proof that funds were transferred or held.](screenshots/yard-invoice.png)
 
 ---
 
@@ -790,20 +788,20 @@ App routes have no organisation slug. In particular, do not use /app/[org]/stock
 
 ## 30 / Glossary and working rules
 
-| Term           | Meaning in this platform                                                 |
-| -------------- | ------------------------------------------------------------------------ |
-| Kabadiwala     | A local collection shop that buys from households                        |
-| Yard           | A bulk sorting/preprocessing business                                    |
-| Saathi         | An approved worker who takes local jobs                                  |
-| Minimum        | Lowest permitted shop price for a material                               |
-| Fallback       | Reference price where a shop has no custom rate                          |
-| Estimate       | A starting quantity/value that must be checked                           |
-| Receipt        | Recorded material, weight, price and transaction details                 |
-| Reserved stock | Quantity committed to an active trade                                    |
-| EPR            | Extended Producer Responsibility; platform records can support reporting |
-| Escrow         | Planned holding of business payments; simulated in this version          |
-| TOTP           | Time-based code from an authenticator app                                |
-| Partial report | A bounded report that did not include every matching record              |
+| Term           | Meaning in this platform                                                  |
+| -------------- | ------------------------------------------------------------------------- |
+| Kabadiwala     | A local collection shop that buys from households                         |
+| Yard           | A bulk sorting/preprocessing business                                     |
+| Saathi         | An approved worker who takes local jobs                                   |
+| Minimum        | Lowest permitted shop price for a material                                |
+| Fallback       | Reference price where a shop has no custom rate                           |
+| Estimate       | A starting quantity/value that must be checked                            |
+| Receipt        | Recorded material, weight, price and transaction details                  |
+| Reserved stock | Quantity committed to an active trade                                     |
+| EPR            | Extended Producer Responsibility; platform records can support reporting  |
+| Gateway        | Required payment provider for business trades; checkout is not yet active |
+| TOTP           | Time-based code from an authenticator app                                 |
+| Partial report | A bounded report that did not include every matching record               |
 
 Check the material, unit, quantity and price before you confirm an action. Keep real payment confirmation separate from a recorded payment state. Use the correct account and deployment. Preserve private files and recovery codes. Resolve errors through a correcting operation that keeps the audit history.
 

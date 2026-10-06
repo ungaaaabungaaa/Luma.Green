@@ -79,7 +79,7 @@ describe("TradesPage", () => {
     renderPage();
     const buying = screen.getByRole("tab", { name: /Buying/ });
     expect(buying).toHaveAttribute("aria-selected", "true");
-    expect(buying).toHaveTextContent("1 needs you");
+    expect(buying).not.toHaveTextContent("needs you");
     expect(
       screen.getByRole("heading", { name: "Newspaper · 100 kg" }),
     ).toBeInTheDocument();

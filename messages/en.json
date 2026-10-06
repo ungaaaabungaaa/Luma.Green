@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Trade",
-      "summary": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments."
+      "summary": "Payment gateway required. Checkout is not available yet."
     },
     "record": {
       "title": "Record",
@@ -119,7 +119,7 @@
           "body": "Make new products from recycled material."
         }
       },
-      "money": "Households receive cash or UPI at the door. Escrow between businesses is planned.",
+      "money": "Payment gateway required. Checkout is not available yet.",
       "saathi": "Saathis help all along the chain with pickups, sorting and shifts."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Yards",
         "one": "See what nearby shops have in stock.",
         "two": "Buy in bulk and sell bales to recyclers.",
-        "three": "Planned: Payment held in escrow until delivery.",
+        "three": "Payment gateway required. Checkout is not available yet.",
         "cta": "Join as a yard"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Manufacturers",
         "one": "See what recyclers are producing.",
-        "two": "Planned: Order recycled material with escrow.",
+        "two": "Payment gateway required. Checkout is not available yet.",
         "three": "Records for your EPR reports.",
         "cta": "Join as a manufacturer"
       },
@@ -180,7 +180,7 @@
         "body": "Shops set their own prices, but never below the minimum we publish for each material."
       },
       "escrow": {
-        "title": "Planned: Escrow for business trades",
+        "title": "Awaiting gateway",
         "body": "The demo shows payment steps but does not hold or transfer real money."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "The Luma.Green standard",
-    "metaDescription": "Planned: Open material codes and simple rules for fair material trade in India: grading, weighing, receipts, verification and escrow. Free for anyone to adopt.",
+    "metaDescription": "Payment gateway required. Checkout is not available yet.",
     "eyebrow": "Open standard",
     "title": "The Luma.Green standard",
     "lead": "Simple, open rules for trading recyclable materials fairly: one code for every material, clear grading, honest weighing and a record at every hand-off. Anyone in the industry can adopt them.",
@@ -398,14 +398,14 @@
       "saathi": "Saathis: a photo ID and a selfie that matches it."
     },
     "escrow": {
-      "title": "Planned: Escrow between businesses",
-      "nav": "Escrow",
-      "body": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments.",
+      "title": "Awaiting gateway",
+      "nav": "Awaiting gateway",
+      "body": "Payment gateway required. Checkout is not available yet.",
       "steps": {
         "accepted": "The seller accepts the order",
-        "paid": "The buyer pays into escrow",
+        "paid": "Awaiting gateway",
         "dispatched": "The seller dispatches the goods",
-        "released": "The buyer confirms, and the money is released"
+        "released": "Awaiting gateway"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "How it works",
-    "metaDescription": "Planned: How recyclable materials move on Luma.Green: collected from home, traded through the network with escrow, and recorded at every hand-off.",
+    "metaDescription": "Payment gateway required. Checkout is not available yet.",
     "title": "How Luma.Green works",
     "lead": "Materials move from homes to collection shops, sorting yards and recyclers before they become something new. Here is what happens at each step, and what Luma.Green records.",
     "stepLabel": "Step {number}",
@@ -563,7 +563,7 @@
       "point3": "A tracking link, with no account needed"
     },
     "trade": {
-      "body": "Demo: Kabadiwalas sell sorted stock to yards, yards sell bales to recyclers, and recyclers sell flakes, granules and ingots to factories. The buyer's payment waits in escrow until the goods arrive. The demo shows payment steps but does not hold or transfer real money.",
+      "body": "Payment gateway required. Checkout is not available yet.",
       "point1": "Only verified businesses can trade",
       "point2": "Stock moves when a load is dispatched and received",
       "point3": "A numbered trade receipt for every paid trade"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Yards",
-      "body": "Planned: Buy from kabadiwalas, sort and bale, and sell graded lots to recyclers with payment held in escrow."
+      "body": "Payment gateway required. Checkout is not available yet."
     },
     "recycler": {
       "name": "Recyclers",
@@ -624,7 +624,7 @@
     "replyTime": "We reply within one working day.",
     "search": {
       "label": "Search help",
-      "placeholder": "Try: SMS code or escrow",
+      "placeholder": "Awaiting gateway",
       "clear": "Clear search",
       "summary": "{count, plural, =0 {No answers} one {# answer} other {# answers}} for “{query}”",
       "topicSummary": "{count, plural, =0 {No answers} one {# answer} other {# answers}} about {topic}",
@@ -671,7 +671,7 @@
         "name": "Yards",
         "who": "Buying from kabadiwalas and sorting further",
         "title": "Help for yards",
-        "lead": "Demo: Find stock near you, sell sorted bales to recyclers and trade safely with escrow."
+        "lead": "Payment gateway required. Checkout is not available yet."
       },
       "recycler": {
         "name": "Recyclers",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Demo guide: How escrow keeps a trade safe",
-        "summary": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments.",
+        "title": "Awaiting gateway",
+        "summary": "Payment gateway required. Checkout is not available yet.",
         "steps": {
           "request": {
             "title": "The buyer sends a request",
@@ -890,8 +890,8 @@
             "body": "Nothing is paid yet. Call each other if you need to agree details."
           },
           "pay": {
-            "title": "The buyer pays into escrow",
-            "body": "The money is held safely, not yet with the seller. The seller can see it's there before loading."
+            "title": "Awaiting gateway",
+            "body": "Payment gateway required. Checkout is not available yet."
           },
           "dispatch": {
             "title": "The seller sends the load",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "The buyer confirms delivery",
-            "body": "Check the weight and quality, then confirm. The money is released to the seller."
+            "body": "Payment gateway required. Checkout is not available yet."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Don't confirm a short load",
-            "body": "Confirming releases the money. Until you confirm, it stays in escrow."
+            "body": "Payment gateway required. Checkout is not available yet."
           },
           "report": {
             "title": "Report it with photos",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Accept a yard's request",
-            "body": "Check the kilos and the price, then accept. The yard pays into escrow before collecting."
+            "body": "Payment gateway required. Checkout is not available yet."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Choose how many kilos you want. The price per kg is shown before you send."
           },
           "pay": {
-            "title": "Pay into escrow",
-            "body": "When the kabadiwala accepts, pay. The money is held until you confirm."
+            "title": "Awaiting gateway",
+            "body": "Payment gateway required. Checkout is not available yet."
           },
           "collect": {
             "title": "Collect and weigh",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Accept, then wait for payment",
-            "body": "Load only once the buyer's money is in escrow."
+            "body": "Payment gateway required. Checkout is not available yet."
           },
           "dispatch": {
             "title": "Send the load",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Get paid",
-            "body": "When the recycler confirms delivery, the money is released to you."
+            "body": "Payment gateway required. Checkout is not available yet."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Choose the kilos. The price per kg is shown before you send."
           },
           "pay": {
-            "title": "Pay into escrow",
-            "body": "Once the yard accepts, pay. The money is held until you confirm delivery."
+            "title": "Awaiting gateway",
+            "body": "Payment gateway required. Checkout is not available yet."
           },
           "confirm": {
             "title": "Weigh, check, confirm",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Load after payment",
-            "body": "Accept, then send the load once the payment is in escrow."
+            "body": "Payment gateway required. Checkout is not available yet."
           },
           "paid": {
             "title": "Get paid on delivery",
-            "body": "The money is released when the manufacturer confirms."
+            "body": "Payment gateway required. Checkout is not available yet."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Choose the kilos and send. The recycler accepts or declines."
           },
           "pay": {
-            "title": "Pay into escrow",
-            "body": "Pay once they accept. The money is held until you confirm delivery."
+            "title": "Awaiting gateway",
+            "body": "Payment gateway required. Checkout is not available yet."
           },
           "receive": {
             "title": "Receive the load",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Confirm or report",
-            "body": "All good? Confirm. Not right? Report it with photos, and the money stays in escrow."
+            "body": "Payment gateway required. Checkout is not available yet."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "How am I paid when I sell to a yard?",
-        "a": "For now, agree payment directly with the yard. Escrow is planned; the demo does not move money."
+        "a": "Payment gateway required. Checkout is not available yet."
       },
       "whoSeesShop": {
         "q": "Who can see my shop?",
@@ -1642,8 +1642,8 @@
         "a": "The seller lists a price per kg. You see it before you send a request, and you can call to agree details."
       },
       "whatIsEscrow": {
-        "q": "What is escrow?",
-        "a": "A safe middle step: the buyer's money is held until the load arrives as agreed, then released to the seller. Business escrow is planned."
+        "q": "Awaiting gateway",
+        "a": "Payment gateway required. Checkout is not available yet."
       },
       "whenSellerPaid": {
         "q": "When is the seller paid?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Setting your prices",
       "buyingFromKabadiwalas": "Buying from kabadiwalas",
       "listingBales": "Listing bales for recyclers",
-      "escrowExplained": "Demo: Escrow in two minutes",
+      "escrowExplained": "Awaiting gateway",
       "buyingFromYards": "Buying from yards",
       "sellingOutput": "Selling your output",
       "eprPlainWords": "EPR in plain words",
@@ -1802,7 +1802,7 @@
         "title": "Demo: Selling to yards",
         "p1": "Record your sorting so your stock is right.",
         "p2": "Show your stock to yards near you.",
-        "p3": "Load only after the payment is in escrow."
+        "p3": "Payment gateway required. Checkout is not available yet."
       },
       "buyingStock": {
         "title": "Buying stock",
@@ -1811,8 +1811,8 @@
         "p3": "Weigh every load before you confirm."
       },
       "tradingWithEscrow": {
-        "title": "Demo: Trading with escrow",
-        "p1": "The buyer pays into escrow after the seller accepts.",
+        "title": "Awaiting gateway",
+        "p1": "Payment gateway required. Checkout is not available yet.",
         "p2": "The seller loads only when the money is there.",
         "p3": "Confirming delivery releases the money."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Demo: Buying your input",
         "p1": "Find graded bales from yards in Buy.",
-        "p2": "Pay into escrow once the yard accepts.",
+        "p2": "Payment gateway required. Checkout is not available yet.",
         "p3": "Check the grade before you confirm."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: Ordering recycled material",
         "p1": "Compare listings by type, kilos and price.",
         "p2": "Send an order for the kilos you need.",
-        "p3": "Pay into escrow once it's accepted."
+        "p3": "Payment gateway required. Checkout is not available yet."
       },
       "checkingDeliveries": {
         "title": "Checking deliveries",
@@ -2454,7 +2454,7 @@
       "view": "View receipt {number}",
       "unknown": "A business no longer on Luma.Green",
       "empty": "No receipts yet",
-      "emptyBody": "A receipt is made when a buyer pays into escrow."
+      "emptyBody": "Payment gateway required. Checkout is not available yet."
     },
     "epr": {
       "title": "EPR record, FY {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Only {weight} is available.",
       "total": "Total",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "You pay into escrow after {seller} accepts. The money goes to them when you confirm delivery.",
+      "escrow": "Payment gateway required. Checkout is not available yet.",
       "ewayBill": "Over ₹50,000: an e-way bill must travel with this load.",
       "cancel": "Cancel",
       "submit": "Send request",
       "sending": "Sending…",
       "sent": "Request sent to {seller}",
-      "sentNext": "You'll pay into escrow once they accept.",
+      "sentNext": "Payment gateway required. Checkout is not available yet.",
       "seeTrades": "See trades"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Trades",
-      "lead": "Every trade, step by step. The money stays in escrow until the buyer confirms delivery.",
+      "lead": "Payment gateway required. Checkout is not available yet.",
       "buying": "Buying",
       "selling": "Selling",
       "tabsLabel": "Buying or selling",
@@ -2936,7 +2936,7 @@
         "from": "From {name} · {area}",
         "to": "To {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} held in escrow",
+        "inEscrow": "Payment gateway required. Checkout is not available yet.",
         "ewayBill": "Over ₹50,000: an e-way bill must travel with this load.",
         "updated": "Updated {when}",
         "receipt": "Receipt {number}",
@@ -2947,7 +2947,7 @@
         "label": "Trade progress",
         "requested": "Requested",
         "accepted": "Accepted",
-        "paid_to_escrow": "In escrow",
+        "paid_to_escrow": "Unverified",
         "dispatched": "Dispatched",
         "completed": "Delivered",
         "srStep": "{step}: {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} wants to buy this. Accept to keep it for them."
         },
         "accepted": {
-          "buyer": "Accepted. Pay into escrow to go ahead: the money is held until you confirm delivery.",
-          "seller": "Waiting for {name} to pay into escrow."
+          "buyer": "Payment gateway required. Checkout is not available yet.",
+          "seller": "Payment gateway required. Checkout is not available yet."
         },
         "paid_to_escrow": {
-          "buyer": "Your money is safe in escrow. Waiting for {name} to dispatch.",
-          "seller": "The money is safe in escrow. Send the load, then mark it dispatched."
+          "buyer": "Prototype record. Payment and delivery are unverified.",
+          "seller": "Prototype record. Payment and delivery are unverified."
         },
         "dispatched": {
-          "buyer": "On its way. Check the load, then confirm delivery to release the money.",
-          "seller": "On its way. The money is released to you when {name} confirms delivery."
+          "buyer": "Prototype record. Payment and delivery are unverified.",
+          "seller": "Prototype record. Payment and delivery are unverified."
         },
         "completed": {
-          "buyer": "Delivered. The money was released to {name}.",
-          "seller": "Delivered. The money was released to you."
+          "buyer": "Prototype record. Payment and delivery are unverified.",
+          "seller": "Prototype record. Payment and delivery are unverified."
         },
         "declined": {
           "buyer": "{name} declined this order, or the lot sold out.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Accept order",
         "decline": "Decline",
-        "pay": "Pay {amount} into escrow",
+        "pay": "Awaiting gateway",
         "dispatch": "Mark as dispatched",
         "confirm": "Confirm delivery"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Order accepted",
         "decline": "Order declined",
-        "pay": "Paid into escrow. Receipt {number}",
+        "pay": "Prototype record. Payment and delivery are unverified.",
         "dispatch": "Marked as dispatched",
-        "confirm": "Delivery confirmed. The money is released to the seller."
+        "confirm": "Prototype record. Payment and delivery are unverified."
       },
       "declineConfirm": "Decline this order from {name}? This can't be undone.",
       "declineYes": "Yes, decline",
-      "declineNo": "Keep it"
+      "declineNo": "Keep it",
+      "gatewayPending": "Payment gateway required. Checkout is not available yet.",
+      "legacyUnverified": "Prototype record. Payment and delivery are unverified."
     },
     "receipt": {
       "title": "Trade receipt",
       "numberLabel": "Receipt no.",
       "dateLabel": "Date",
       "statusLabel": "Payment",
-      "inEscrow": "In escrow",
-      "settled": "Released",
+      "inEscrow": "Unverified",
+      "settled": "Unverified",
       "seller": "Seller",
       "buyer": "Buyer",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Amount",
       "total": "Total",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Paid into Luma.Green escrow on {date}.",
-      "held": "Held in escrow until the buyer confirms delivery.",
-      "released": "Released to the seller on {date}.",
+      "paidInto": "Prototype record. Payment and delivery are unverified.",
+      "held": "Prototype record. Payment and delivery are unverified.",
+      "released": "Prototype record. Payment and delivery are unverified.",
       "ewayBill": "Goods worth over ₹50,000: an e-way bill must travel with this load.",
       "notTaxInvoice": "This is a trade receipt, not a GST tax invoice. Tax invoices come with real payments.",
       "print": "Print",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Receipt not found",
       "missingBody": "This trade isn't one of yours, or the link is wrong.",
       "pendingTitle": "No receipt yet",
-      "pendingBody": "The receipt is made when the buyer pays into escrow.",
-      "declinedBody": "This trade was declined, so there's no receipt."
+      "pendingBody": "Payment gateway required. Checkout is not available yet.",
+      "declinedBody": "This trade was declined, so there's no receipt.",
+      "unverified": "Unverified"
     },
     "home": {
       "greeting": "Namaste, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Trades",
       "statsTitle": "At a glance",
       "stats": {
-        "escrow": "In escrow",
-        "escrowHint": "Released when delivery is confirmed",
+        "escrow": "Unverified",
+        "escrowHint": "Payment gateway required. Checkout is not available yet.",
         "waiting": "Waiting for you",
         "waitingHint": "{count, plural, =0 {All caught up} one {# trade needs a step} other {# trades need a step}}",
         "listings": "On sale",
@@ -3050,7 +3053,8 @@
         "offers": "Recycled lots",
         "offersHint": "On sale from recyclers",
         "completed": "Done this month",
-        "completedHint": "{amount} traded"
+        "completedHint": "{amount} traded",
+        "gatewayPending": "Awaiting gateway"
       },
       "waitingTitle": "Waiting for you",
       "allTrades": "All trades",

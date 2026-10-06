@@ -42,6 +42,7 @@ const extremeListing: ListingView = {
   note: undefined,
   status: "open",
   isMine: false,
+  origin: undefined,
   createdAt: 0,
 };
 const content = (() => {

@@ -9,7 +9,6 @@ import {
   parseRupees,
   recycledFirst,
   rupeeFieldValue,
-  stepStates,
   suggestedAskPaise,
   tradeTotals,
 } from "./logic";
@@ -129,44 +128,12 @@ describe("isFarFromSuggestion", () => {
   });
 });
 
-describe("stepStates", () => {
-  it("ticks what happened and rings the step it's waiting for", () => {
-    expect(stepStates("requested")).toEqual([
-      "done",
-      "current",
-      "todo",
-      "todo",
-      "todo",
-    ]);
-    expect(stepStates("paid_to_escrow")).toEqual([
-      "done",
-      "done",
-      "done",
-      "current",
-      "todo",
-    ]);
-    expect(stepStates("completed")).toEqual([
-      "done",
-      "done",
-      "done",
-      "done",
-      "done",
-    ]);
-  });
-
-  it("has no steps for a declined trade", () => {
-    expect(stepStates("declined")).toBeNull();
-  });
-});
-
-const DAY = 24 * 60 * 60 * 1000;
-
 function trade(overrides: Partial<TradeView>): TradeView {
   return aTrade({ timeline: [], createdAt: 0, ...overrides });
 }
 
 describe("byUrgency", () => {
-  it("puts trades that need me first, then open ones, then finished", () => {
+  it("puts order decisions first, then paused orders, then historical records", () => {
     const done = trade({ status: "completed", createdAt: 5 });
     const open = trade({ status: "dispatched", createdAt: 4 });
     const mine = trade({ status: "accepted", actions: ["pay"], createdAt: 1 });
@@ -177,62 +144,31 @@ describe("byUrgency", () => {
     });
     expect([done, open, mine, newerMine].toSorted(byUrgency)).toEqual([
       newerMine,
-      mine,
       open,
+      mine,
       done,
     ]);
   });
 });
 
 describe("tradeTotals", () => {
-  // 15 Oct 2026, noon in India.
-  const now = Date.parse("2026-10-15T12:00:00+05:30");
-
-  it("adds up escrow, waiting steps and this month's completed trades", () => {
-    const totals = tradeTotals(
-      [
-        trade({ status: "paid_to_escrow", inEscrow: true, totalPaise: 50_000 }),
-        trade({
-          status: "dispatched",
-          inEscrow: true,
-          totalPaise: 20_000,
-          actions: ["confirm"],
-        }),
-        trade({
-          status: "completed",
-          totalPaise: 30_000,
-          timeline: [{ status: "completed", at: now - DAY }],
-        }),
-        // Last month.
-        trade({
-          status: "completed",
-          totalPaise: 99_000,
-          timeline: [{ status: "completed", at: now - 20 * DAY }],
-        }),
-      ],
-      now,
-    );
+  it("counts only safe order decisions and accepted orders awaiting gateway", () => {
+    const totals = tradeTotals([
+      trade({ status: "accepted", actions: ["pay"] }),
+      trade({
+        status: "dispatched",
+        inEscrow: true,
+        actions: ["confirm"],
+      }),
+      trade({
+        status: "requested",
+        actions: ["accept", "decline"],
+      }),
+    ]);
     expect(totals).toEqual({
-      escrowPaise: 70_000,
+      pendingGateway: 1,
       waiting: 1,
-      completedThisMonth: 1,
-      completedValuePaise: 30_000,
     });
-  });
-
-  it("counts the month in India time", () => {
-    // 1 Oct, 00:30 in India is still 30 Sep in UTC.
-    const firstOfMonth = Date.parse("2026-10-01T00:30:00+05:30");
-    const totals = tradeTotals(
-      [
-        trade({
-          status: "completed",
-          timeline: [{ status: "completed", at: firstOfMonth }],
-        }),
-      ],
-      now,
-    );
-    expect(totals.completedThisMonth).toBe(1);
   });
 });
 

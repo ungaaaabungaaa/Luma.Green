@@ -42,6 +42,8 @@ export function aTrade(overrides: Partial<TradeView> = {}): TradeView {
       kind: "yard",
     },
     invoiceNo: undefined,
+    legacyReceiptNo: undefined,
+    paymentVerification: "not_applicable",
     needsEwayBill: false,
     inEscrow: false,
     actions: [],
@@ -68,6 +70,7 @@ export function aListing(overrides: Partial<ListingView> = {}): ListingView {
     note: "Dry, bundled",
     status: "open",
     isMine: false,
+    origin: undefined,
     createdAt: Date.parse("2026-10-01T10:00:00Z"),
     ...overrides,
   };

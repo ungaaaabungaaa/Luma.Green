@@ -283,6 +283,7 @@ export function offersFixture(): FunctionReturnType<typeof api.market.browse> {
       note: "Synthetic material lot for documentation",
       status: "open",
       isMine: false,
+      origin: undefined,
       createdAt: NOW - HOUR,
     },
   ];
@@ -446,9 +447,11 @@ const demoTrade: TradeView = {
     kind: "kabadiwala",
   },
   invoiceNo: undefined,
+  legacyReceiptNo: undefined,
+  paymentVerification: "gateway_required",
   needsEwayBill: false,
   inEscrow: false,
-  actions: ["pay"],
+  actions: [],
   createdAt: NOW - HOUR,
 };
 export const tradesFixture: FunctionReturnType<typeof api.market.trades> = {
@@ -475,8 +478,9 @@ export const complianceFixture: ComplianceRecord = {
   receipts: [
     {
       tradeId: "guide-demo-receipt" as Id<"trades">,
-      invoiceNo: "DEMO-LG-001",
-      issuedAt: NOW - HOUR,
+      legacyReceiptNo: "DEMO-LG-001",
+      recordedAt: NOW - HOUR,
+      paymentVerification: "legacy_unverified",
       side: "purchase",
       counterparty: { name: "Demo recycler", kind: "recycler" },
       material: {
@@ -490,6 +494,7 @@ export const complianceFixture: ComplianceRecord = {
     },
   ],
   epr: {
+    evidenceStatus: "source_records_unverified",
     role: "manufacturer",
     from: "2026-04-01",
     to: "2027-03-31",
@@ -530,15 +535,19 @@ export const myListingsFixture: FunctionReturnType<
     note: "Synthetic lot: sorted, dry newspaper for documentation.",
     status: "open",
     isMine: true,
+    origin: undefined,
     createdAt: NOW - HOUR,
   },
 ];
 export const invoiceFixture: TradeReceipt = {
   id: "guide-receipt" as Id<"trades">,
-  number: "DEMO-LG-002",
+  number: null,
+  legacyReceiptNo: "DEMO-LG-002",
+  legacyRecordedAt: NOW - HOUR,
+  paymentVerification: "legacy_unverified",
   status: "paid_to_escrow",
   side: "buyer",
-  issuedAt: NOW - HOUR,
+  issuedAt: null,
   releasedAt: null,
   seller: {
     name: "Demo neighbourhood shop",
@@ -554,7 +563,7 @@ export const invoiceFixture: TradeReceipt = {
   },
   line: { material: paper, grams: 100_000, paisePerKg: 1500, paise: 150_000 },
   totalPaise: 150_000,
-  inEscrow: true,
+  inEscrow: false,
   needsEwayBill: false,
 };
 export const impactFixture: OrgImpact = {

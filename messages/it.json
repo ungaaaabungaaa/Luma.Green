@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Commercia",
-      "summary": "Il servizio di deposito a garanzia proposto tratterrebbe il pagamento fino alla consegna. La demo attuale registra solo pagamenti simulati."
+      "summary": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
     },
     "record": {
       "title": "Registra",
@@ -119,7 +119,7 @@
           "body": "Creano nuovi prodotti da materiali riciclati."
         }
       },
-      "money": "Le famiglie ricevono contanti o UPI alla porta. È previsto il deposito a garanzia tra imprese.",
+      "money": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
       "saathi": "I Saathi aiutano lungo tutta la filiera con ritiri, selezione e turni."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Piazzali",
         "one": "Scopri le scorte dei negozi vicini.",
         "two": "Acquista all'ingrosso e vendi balle ai riciclatori.",
-        "three": "Previsto: pagamento in deposito a garanzia fino alla consegna.",
+        "three": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
         "cta": "Iscriviti come piazzale"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Produttori",
         "one": "Scopri cosa producono i riciclatori.",
-        "two": "Previsto: ordina materiali riciclati con deposito a garanzia.",
+        "two": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
         "three": "Registri per i tuoi rapporti EPR.",
         "cta": "Iscriviti come produttore"
       },
@@ -180,7 +180,7 @@
         "body": "I negozi fissano i propri prezzi, mai sotto il minimo che pubblichiamo per ciascun materiale."
       },
       "escrow": {
-        "title": "Previsto: deposito a garanzia per gli scambi tra imprese",
+        "title": "In attesa del gateway",
         "body": "La demo mostra le fasi del pagamento, ma non trattiene né trasferisce denaro reale."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Lo standard Luma.Green",
-    "metaDescription": "Previsto: codici dei materiali aperti e regole semplici per scambi equi in India: classificazione, pesatura, ricevute, verifica e deposito a garanzia. Liberi da adottare.",
+    "metaDescription": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
     "eyebrow": "Standard aperto",
     "title": "Lo standard Luma.Green",
     "lead": "Regole semplici e aperte per scambi equi: un codice per ogni materiale, classificazione chiara, pesatura onesta e un registro a ogni passaggio. Chiunque nel settore può adottarle.",
@@ -398,14 +398,14 @@
       "saathi": "Saathi: documento d'identità con foto e un selfie corrispondente."
     },
     "escrow": {
-      "title": "Previsto: deposito a garanzia tra imprese",
-      "nav": "Deposito a garanzia",
-      "body": "Il servizio di deposito a garanzia proposto tratterrebbe il pagamento fino alla consegna. La demo attuale registra solo pagamenti simulati.",
+      "title": "In attesa del gateway",
+      "nav": "In attesa del gateway",
+      "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
       "steps": {
         "accepted": "Il venditore accetta l'ordine",
-        "paid": "L'acquirente versa il denaro nel deposito a garanzia",
+        "paid": "In attesa del gateway",
         "dispatched": "Il venditore spedisce la merce",
-        "released": "L'acquirente conferma e il denaro viene rilasciato"
+        "released": "In attesa del gateway"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "Come funziona",
-    "metaDescription": "Previsto: il percorso dei materiali su Luma.Green, venduti da casa a un prezzo equo, scambiati lungo la filiera con deposito a garanzia e registrati a ogni passaggio.",
+    "metaDescription": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
     "title": "Come funziona Luma.Green",
     "lead": "I materiali passano dalle case ai punti di raccolta, ai centri di selezione e ai riciclatori prima di diventare qualcosa di nuovo. Luma.Green registra ogni passaggio.",
     "stepLabel": "Fase {number}",
@@ -563,7 +563,7 @@
       "point3": "Un link per seguire il ritiro, senza account"
     },
     "trade": {
-      "body": "Demo: i kabadiwala vendono scorte selezionate ai piazzali, i piazzali vendono balle ai riciclatori e i riciclatori vendono scaglie, granuli e lingotti alle fabbriche. Il pagamento resta nel deposito a garanzia fino all'arrivo della merce. La demo mostra le fasi, ma non trattiene né trasferisce denaro reale.",
+      "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
       "point1": "Solo le imprese verificate possono commerciare",
       "point2": "Le scorte cambiano quando un carico viene spedito e ricevuto",
       "point3": "Una ricevuta numerata per ogni scambio pagato"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Piazzali",
-      "body": "Previsto: acquista dai kabadiwala, seleziona e imballa, poi vendi lotti classificati ai riciclatori con pagamento in deposito a garanzia."
+      "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
     },
     "recycler": {
       "name": "Riciclatori",
@@ -624,7 +624,7 @@
     "replyTime": "Rispondiamo entro un giorno lavorativo.",
     "search": {
       "label": "Cerca nell'aiuto",
-      "placeholder": "Prova: codice SMS o deposito a garanzia",
+      "placeholder": "In attesa del gateway",
       "clear": "Cancella ricerca",
       "summary": "{count, plural, =0 {Nessuna risposta} one {# risposta} other {# risposte}} per «{query}»",
       "topicSummary": "{count, plural, =0 {Nessuna risposta} one {# risposta} other {# risposte}} su {topic}",
@@ -671,7 +671,7 @@
         "name": "Piazzali",
         "who": "Acquistare dai kabadiwala e selezionare ulteriormente",
         "title": "Aiuto per i piazzali",
-        "lead": "Demo: trova scorte vicine, vendi balle selezionate ai riciclatori e commercia in sicurezza con il deposito a garanzia."
+        "lead": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
       },
       "recycler": {
         "name": "Riciclatori",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Guida demo: come il deposito a garanzia protegge uno scambio",
-        "summary": "Il servizio di deposito a garanzia proposto tratterrebbe il pagamento fino alla consegna. La demo attuale registra solo pagamenti simulati.",
+        "title": "In attesa del gateway",
+        "summary": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
         "steps": {
           "request": {
             "title": "L'acquirente invia una richiesta",
@@ -890,8 +890,8 @@
             "body": "Non è ancora stato pagato nulla. Chiamatevi per concordare i dettagli, se serve."
           },
           "pay": {
-            "title": "L'acquirente versa nel deposito a garanzia",
-            "body": "Il denaro viene custodito in sicurezza, senza essere ancora al venditore. Il venditore può vederlo prima di caricare."
+            "title": "In attesa del gateway",
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           },
           "dispatch": {
             "title": "Il venditore invia il carico",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "L'acquirente conferma la consegna",
-            "body": "Controlla peso e qualità, poi conferma. Il denaro viene rilasciato al venditore."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Non confermare un carico incompleto",
-            "body": "La conferma rilascia il denaro. Fino ad allora resta nel deposito a garanzia."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           },
           "report": {
             "title": "Segnala con foto",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Accetta la richiesta di un piazzale",
-            "body": "Controlla chili e prezzo, poi accetta. Il piazzale versa nel deposito a garanzia prima del ritiro."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Scegli i chili desiderati. Il prezzo al kg appare prima dell'invio."
           },
           "pay": {
-            "title": "Versa nel deposito a garanzia",
-            "body": "Paga quando il kabadiwala accetta. Il denaro resta trattenuto fino alla tua conferma."
+            "title": "In attesa del gateway",
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           },
           "collect": {
             "title": "Ritira e pesa",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Accetta, poi aspetta il pagamento",
-            "body": "Carica solo quando il denaro dell'acquirente è nel deposito a garanzia."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           },
           "dispatch": {
             "title": "Invia il carico",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Ricevi il pagamento",
-            "body": "Quando il riciclatore conferma la consegna, il denaro ti viene rilasciato."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Scegli i chili. Il prezzo al kg appare prima dell'invio."
           },
           "pay": {
-            "title": "Versa nel deposito a garanzia",
-            "body": "Paga dopo che il piazzale accetta. Il denaro resta trattenuto fino alla tua conferma di consegna."
+            "title": "In attesa del gateway",
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           },
           "confirm": {
             "title": "Pesa, controlla, conferma",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Carica dopo il pagamento",
-            "body": "Accetta e invia il carico dopo che il pagamento è nel deposito a garanzia."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           },
           "paid": {
             "title": "Ricevi il pagamento alla consegna",
-            "body": "Il denaro viene rilasciato quando il produttore conferma."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Scegli i chili e invia. Il riciclatore accetta o rifiuta."
           },
           "pay": {
-            "title": "Versa nel deposito a garanzia",
-            "body": "Paga dopo l'accettazione. Il denaro resta trattenuto fino alla tua conferma di consegna."
+            "title": "In attesa del gateway",
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           },
           "receive": {
             "title": "Ricevi il carico",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Conferma o segnala",
-            "body": "Tutto bene? Conferma. Qualcosa non va? Segnala con foto e il denaro resta nel deposito a garanzia."
+            "body": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "Come vengo pagato quando vendo a un piazzale?",
-        "a": "Per ora concorda il pagamento direttamente con il piazzale. Il deposito a garanzia è previsto; la demo non trasferisce denaro."
+        "a": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
       },
       "whoSeesShop": {
         "q": "Chi può vedere il mio negozio?",
@@ -1642,8 +1642,8 @@
         "a": "Il venditore pubblica un prezzo al kg. Lo vedi prima di inviare la richiesta e puoi chiamare per concordare i dettagli."
       },
       "whatIsEscrow": {
-        "q": "Cos'è il deposito a garanzia?",
-        "a": "Una fase intermedia sicura: il denaro dell'acquirente viene trattenuto finché il carico arriva come concordato, poi rilasciato al venditore. Il servizio per imprese è previsto."
+        "q": "In attesa del gateway",
+        "a": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
       },
       "whenSellerPaid": {
         "q": "Quando viene pagato il venditore?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Impostare i prezzi",
       "buyingFromKabadiwalas": "Acquistare dai kabadiwala",
       "listingBales": "Pubblicare balle per i riciclatori",
-      "escrowExplained": "Demo: deposito a garanzia in due minuti",
+      "escrowExplained": "In attesa del gateway",
       "buyingFromYards": "Acquistare dai piazzali",
       "sellingOutput": "Vendere la produzione",
       "eprPlainWords": "L'EPR in parole semplici",
@@ -1802,7 +1802,7 @@
         "title": "Demo: vendere ai piazzali",
         "p1": "Registra la selezione per mantenere corrette le scorte.",
         "p2": "Mostra le scorte ai piazzali vicini.",
-        "p3": "Carica solo dopo il versamento nel deposito a garanzia."
+        "p3": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
       },
       "buyingStock": {
         "title": "Acquistare scorte",
@@ -1811,8 +1811,8 @@
         "p3": "Pesa ogni carico prima di confermare."
       },
       "tradingWithEscrow": {
-        "title": "Demo: scambi con deposito a garanzia",
-        "p1": "L'acquirente versa nel deposito a garanzia dopo l'accettazione del venditore.",
+        "title": "In attesa del gateway",
+        "p1": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
         "p2": "Il venditore carica solo quando il denaro è presente.",
         "p3": "La conferma della consegna rilascia il denaro."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Demo: acquistare materie prime",
         "p1": "Trova balle classificate dai piazzali in Acquista.",
-        "p2": "Versa nel deposito a garanzia dopo l'accettazione del piazzale.",
+        "p2": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
         "p3": "Controlla la qualità prima di confermare."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: ordinare materiali riciclati",
         "p1": "Confronta gli annunci per tipo, chili e prezzo.",
         "p2": "Invia un ordine per i chili necessari.",
-        "p3": "Versa nel deposito a garanzia dopo l'accettazione."
+        "p3": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
       },
       "checkingDeliveries": {
         "title": "Controllare le consegne",
@@ -2454,7 +2454,7 @@
       "view": "Vedi ricevuta {number}",
       "unknown": "Un'impresa non più presente su Luma.Green",
       "empty": "Nessuna ricevuta disponibile",
-      "emptyBody": "La ricevuta viene creata quando l'acquirente versa nel deposito a garanzia."
+      "emptyBody": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
     },
     "epr": {
       "title": "Registro EPR, esercizio {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Sono disponibili solo {weight}.",
       "total": "Totale",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Versi nel deposito a garanzia dopo che {seller} accetta. Il denaro gli viene trasferito quando confermi la consegna.",
+      "escrow": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
       "ewayBill": "Oltre ₹50.000: il carico deve viaggiare con un e-way bill.",
       "cancel": "Annulla",
       "submit": "Invia richiesta",
       "sending": "Invio…",
       "sent": "Richiesta inviata a {seller}",
-      "sentNext": "Verserai nel deposito a garanzia dopo l'accettazione.",
+      "sentNext": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
       "seeTrades": "Vedi gli scambi"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Scambi",
-      "lead": "Ogni scambio, fase per fase. Il denaro resta nel deposito a garanzia fino alla conferma della consegna da parte dell'acquirente.",
+      "lead": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
       "buying": "Acquisti",
       "selling": "Vendite",
       "tabsLabel": "Acquisti o vendite",
@@ -2936,7 +2936,7 @@
         "from": "Da {name} · {area}",
         "to": "A {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} in deposito a garanzia",
+        "inEscrow": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
         "ewayBill": "Oltre ₹50.000: il carico deve viaggiare con un e-way bill.",
         "updated": "Aggiornato {when}",
         "receipt": "Ricevuta {number}",
@@ -2947,7 +2947,7 @@
         "label": "Avanzamento dello scambio",
         "requested": "Richiesto",
         "accepted": "Accettato",
-        "paid_to_escrow": "In deposito a garanzia",
+        "paid_to_escrow": "Non verificato",
         "dispatched": "Spedito",
         "completed": "Consegnato",
         "srStep": "{step}: {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} vuole acquistarlo. Accetta per riservarglielo."
         },
         "accepted": {
-          "buyer": "Accettato. Versa nel deposito a garanzia per continuare: il denaro resta trattenuto fino alla tua conferma di consegna.",
-          "seller": "In attesa che {name} versi nel deposito a garanzia."
+          "buyer": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
+          "seller": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile."
         },
         "paid_to_escrow": {
-          "buyer": "Il denaro è al sicuro nel deposito a garanzia. In attesa che {name} spedisca.",
-          "seller": "Il denaro è al sicuro nel deposito a garanzia. Invia il carico, poi segnalo come spedito."
+          "buyer": "Record del prototipo. Pagamento e consegna non sono verificati.",
+          "seller": "Record del prototipo. Pagamento e consegna non sono verificati."
         },
         "dispatched": {
-          "buyer": "In viaggio. Controlla il carico, poi conferma la consegna per rilasciare il denaro.",
-          "seller": "In viaggio. Riceverai il denaro quando {name} conferma la consegna."
+          "buyer": "Record del prototipo. Pagamento e consegna non sono verificati.",
+          "seller": "Record del prototipo. Pagamento e consegna non sono verificati."
         },
         "completed": {
-          "buyer": "Consegnato. Il denaro è stato rilasciato a {name}.",
-          "seller": "Consegnato. Il denaro ti è stato rilasciato."
+          "buyer": "Record del prototipo. Pagamento e consegna non sono verificati.",
+          "seller": "Record del prototipo. Pagamento e consegna non sono verificati."
         },
         "declined": {
           "buyer": "{name} ha rifiutato l'ordine oppure il lotto è esaurito.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Accetta ordine",
         "decline": "Rifiuta",
-        "pay": "Versa {amount} nel deposito a garanzia",
+        "pay": "In attesa del gateway",
         "dispatch": "Segna come spedito",
         "confirm": "Conferma consegna"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Ordine accettato",
         "decline": "Ordine rifiutato",
-        "pay": "Versato nel deposito a garanzia. Ricevuta {number}",
+        "pay": "Record del prototipo. Pagamento e consegna non sono verificati.",
         "dispatch": "Segnato come spedito",
-        "confirm": "Consegna confermata. Il denaro viene rilasciato al venditore."
+        "confirm": "Record del prototipo. Pagamento e consegna non sono verificati."
       },
       "declineConfirm": "Rifiutare l'ordine di {name}? L'operazione non può essere annullata.",
       "declineYes": "Sì, rifiuta",
-      "declineNo": "Mantieni"
+      "declineNo": "Mantieni",
+      "gatewayPending": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
+      "legacyUnverified": "Record del prototipo. Pagamento e consegna non sono verificati."
     },
     "receipt": {
       "title": "Ricevuta dello scambio",
       "numberLabel": "N. ricevuta",
       "dateLabel": "Data",
       "statusLabel": "Pagamento",
-      "inEscrow": "In deposito a garanzia",
-      "settled": "Rilasciato",
+      "inEscrow": "Non verificato",
+      "settled": "Non verificato",
       "seller": "Venditore",
       "buyer": "Acquirente",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Importo",
       "total": "Totale",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Versato nel deposito a garanzia Luma.Green il {date}.",
-      "held": "Trattenuto nel deposito a garanzia fino alla conferma della consegna.",
-      "released": "Rilasciato al venditore il {date}.",
+      "paidInto": "Record del prototipo. Pagamento e consegna non sono verificati.",
+      "held": "Record del prototipo. Pagamento e consegna non sono verificati.",
+      "released": "Record del prototipo. Pagamento e consegna non sono verificati.",
       "ewayBill": "Merce di valore superiore a ₹50.000: il carico deve viaggiare con un e-way bill.",
       "notTaxInvoice": "Questa è una ricevuta dello scambio, non una fattura fiscale GST. Le fatture fiscali accompagnano i pagamenti reali.",
       "print": "Stampa",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Ricevuta non trovata",
       "missingBody": "Lo scambio non ti appartiene oppure il link è errato.",
       "pendingTitle": "Nessuna ricevuta disponibile",
-      "pendingBody": "La ricevuta viene creata quando l'acquirente versa nel deposito a garanzia.",
-      "declinedBody": "Lo scambio è stato rifiutato, quindi non c'è una ricevuta."
+      "pendingBody": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
+      "declinedBody": "Lo scambio è stato rifiutato, quindi non c'è una ricevuta.",
+      "unverified": "Non verificato"
     },
     "home": {
       "greeting": "Namasté, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Scambi",
       "statsTitle": "A colpo d'occhio",
       "stats": {
-        "escrow": "In deposito a garanzia",
-        "escrowHint": "Rilasciato alla conferma della consegna",
+        "escrow": "Non verificato",
+        "escrowHint": "È necessario un gateway di pagamento. Il pagamento non è ancora disponibile.",
         "waiting": "In attesa di te",
         "waitingHint": "{count, plural, =0 {Tutto aggiornato} one {# scambio richiede un'azione} other {# scambi richiedono un'azione}}",
         "listings": "In vendita",
@@ -3050,7 +3053,8 @@
         "offers": "Lotti riciclati",
         "offersHint": "In vendita dai riciclatori",
         "completed": "Conclusi questo mese",
-        "completedHint": "{amount} scambiati"
+        "completedHint": "{amount} scambiati",
+        "gatewayPending": "In attesa del gateway"
       },
       "waitingTitle": "In attesa di te",
       "allTrades": "Tutti gli scambi",

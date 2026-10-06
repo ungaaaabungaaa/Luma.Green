@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Handluj",
-      "summary": "Planowana usługa depozytu przechowywałaby płatność do czasu dostawy. Obecne demo zapisuje wyłącznie symulowane płatności."
+      "summary": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
     },
     "record": {
       "title": "Rejestruj",
@@ -119,7 +119,7 @@
           "body": "Tworzą nowe produkty z materiałów po recyklingu."
         }
       },
-      "money": "Gospodarstwa otrzymują gotówkę lub płatność UPI przy drzwiach. Depozyt płatności między firmami jest planowany.",
+      "money": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
       "saathi": "Saathi wspierają cały łańcuch przy odbiorach, sortowaniu i pracy zmianowej."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Sortownie",
         "one": "Sprawdzaj zapasy pobliskich punktów.",
         "two": "Kupuj hurtowo i sprzedawaj bele recyklerom.",
-        "three": "Planowane: płatność w depozycie do dostawy.",
+        "three": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
         "cta": "Dołącz jako sortownia"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Producenci",
         "one": "Sprawdzaj, co produkują recyklerzy.",
-        "two": "Planowane: zamawianie surowców wtórnych z depozytem.",
+        "two": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
         "three": "Dokumentacja do raportów EPR.",
         "cta": "Dołącz jako producent"
       },
@@ -180,7 +180,7 @@
         "body": "Punkty ustalają własne ceny, lecz nie mogą zejść poniżej minimum publikowanego dla każdego materiału."
       },
       "escrow": {
-        "title": "Planowane: depozyt w transakcjach firmowych",
+        "title": "Oczekiwanie na bramkę",
         "body": "Demo pokazuje etapy płatności, ale nie przechowuje ani nie przesyła prawdziwych pieniędzy."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Standard Luma.Green",
-    "metaDescription": "Planowane: otwarte kody materiałów i proste zasady uczciwego handlu surowcami w Indiach — klasyfikacja, ważenie, potwierdzenia, weryfikacja i depozyt. Bezpłatne dla każdego.",
+    "metaDescription": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
     "eyebrow": "Otwarty standard",
     "title": "Standard Luma.Green",
     "lead": "Proste, otwarte zasady uczciwego handlu surowcami: jeden kod dla każdego materiału, jasna klasyfikacja, rzetelne ważenie i zapis każdego przekazania. Może je przyjąć każdy uczestnik branży.",
@@ -398,14 +398,14 @@
       "saathi": "Saathi: dokument ze zdjęciem i zgodne z nim selfie."
     },
     "escrow": {
-      "title": "Planowane: depozyt między firmami",
-      "nav": "Depozyt płatności",
-      "body": "Planowana usługa depozytu przechowywałaby płatność do czasu dostawy. Obecne demo zapisuje wyłącznie symulowane płatności.",
+      "title": "Oczekiwanie na bramkę",
+      "nav": "Oczekiwanie na bramkę",
+      "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
       "steps": {
         "accepted": "Sprzedający przyjmuje zamówienie",
-        "paid": "Kupujący wpłaca do depozytu",
+        "paid": "Oczekiwanie na bramkę",
         "dispatched": "Sprzedający wysyła towar",
-        "released": "Kupujący potwierdza dostawę, a pieniądze są zwalniane"
+        "released": "Oczekiwanie na bramkę"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "Jak to działa",
-    "metaDescription": "Planowane: droga surowców w Luma.Green — uczciwy zakup z domu, handel w łańcuchu z depozytem i zapis każdego przekazania.",
+    "metaDescription": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
     "title": "Jak działa Luma.Green",
     "lead": "Surowce trafiają z domów do punktów zbiórki, sortowni i zakładów recyklingu, zanim powstanie z nich coś nowego. Luma.Green zapisuje każde przekazanie.",
     "stepLabel": "Krok {number}",
@@ -563,7 +563,7 @@
       "point3": "Link do śledzenia, bez konta"
     },
     "trade": {
-      "body": "Demo: Kabadiwalowie sprzedają posortowane zapasy sortowniom, sortownie sprzedają bele recyklerom, a recyklerzy dostarczają płatki, granulat i wlewki fabrykom. Płatność czeka w depozycie do dostawy. Demo pokazuje etapy płatności, lecz nie przechowuje ani nie przesyła prawdziwych pieniędzy.",
+      "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
       "point1": "Handlować mogą tylko zweryfikowane firmy",
       "point2": "Stan zapasów zmienia się przy wysyłce i odbiorze ładunku",
       "point3": "Numerowane potwierdzenie dla każdej opłaconej transakcji"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Sortownie",
-      "body": "Planowane: kupuj od kabadiwalów, sortuj i prasuj bele oraz sprzedawaj recyklerom sklasyfikowane partie z płatnością w depozycie."
+      "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
     },
     "recycler": {
       "name": "Recyklerzy",
@@ -624,7 +624,7 @@
     "replyTime": "Odpowiadamy w ciągu jednego dnia roboczego.",
     "search": {
       "label": "Szukaj w pomocy",
-      "placeholder": "Na przykład: kod SMS lub depozyt",
+      "placeholder": "Oczekiwanie na bramkę",
       "clear": "Wyczyść wyszukiwanie",
       "summary": "{count, plural, =0 {Brak odpowiedzi} one {# odpowiedź} few {# odpowiedzi} many {# odpowiedzi} other {# odpowiedzi}} dla „{query}”",
       "topicSummary": "{count, plural, =0 {Brak odpowiedzi} one {# odpowiedź} few {# odpowiedzi} many {# odpowiedzi} other {# odpowiedzi}} na temat {topic}",
@@ -671,7 +671,7 @@
         "name": "Sortownie",
         "who": "Kupowanie od kabadiwalów i dalsze sortowanie",
         "title": "Pomoc dla sortowni",
-        "lead": "Demo: Znajduj pobliskie zapasy, sprzedawaj posortowane bele recyklerom i handluj z ochroną depozytu."
+        "lead": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
       },
       "recycler": {
         "name": "Recyklerzy",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Poradnik demonstracyjny: jak depozyt zabezpiecza transakcję",
-        "summary": "Planowana usługa depozytu przechowywałaby płatność do czasu dostawy. Obecne demo zapisuje wyłącznie symulowane płatności.",
+        "title": "Oczekiwanie na bramkę",
+        "summary": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
         "steps": {
           "request": {
             "title": "Kupujący wysyła zapytanie",
@@ -890,8 +890,8 @@
             "body": "Płatność nie jest jeszcze pobierana. Zadzwońcie do siebie, aby uzgodnić szczegóły."
           },
           "pay": {
-            "title": "Kupujący wpłaca do depozytu",
-            "body": "Środki są bezpiecznie przechowywane i nie trafiają jeszcze do sprzedającego. Przed załadunkiem sprzedający widzi, że wpłynęły."
+            "title": "Oczekiwanie na bramkę",
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           },
           "dispatch": {
             "title": "Sprzedający wysyła ładunek",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "Kupujący potwierdza dostawę",
-            "body": "Sprawdź masę i jakość, a następnie potwierdź. Środki zostaną przekazane sprzedającemu."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Nie potwierdzaj brakującego ładunku",
-            "body": "Potwierdzenie uruchamia wypłatę. Do tego czasu środki pozostają w depozycie."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           },
           "report": {
             "title": "Zgłoś problem i dodaj zdjęcia",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Przyjmij zapytanie sortowni",
-            "body": "Sprawdź masę i cenę, a następnie przyjmij. Sortownia wpłaci środki do depozytu przed odbiorem."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Wybierz liczbę kilogramów. Cena za kg jest widoczna przed wysłaniem."
           },
           "pay": {
-            "title": "Wpłać do depozytu",
-            "body": "Zapłać, gdy punkt skupu przyjmie zapytanie. Środki pozostaną zabezpieczone do Twojego potwierdzenia."
+            "title": "Oczekiwanie na bramkę",
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           },
           "collect": {
             "title": "Odbierz i zważ",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Przyjmij, a następnie poczekaj na wpłatę",
-            "body": "Ładuj dopiero po wpłynięciu środków kupującego do depozytu."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           },
           "dispatch": {
             "title": "Wyślij ładunek",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Otrzymaj zapłatę",
-            "body": "Gdy zakład recyklingu potwierdzi dostawę, środki zostaną Ci przekazane."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Wybierz masę. Cena za kg jest widoczna przed wysłaniem."
           },
           "pay": {
-            "title": "Wpłać do depozytu",
-            "body": "Zapłać po przyjęciu przez sortownię. Środki pozostaną zabezpieczone do potwierdzenia dostawy."
+            "title": "Oczekiwanie na bramkę",
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           },
           "confirm": {
             "title": "Zważ, sprawdź, potwierdź",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Ładuj po wpłacie",
-            "body": "Przyjmij zapytanie i wyślij ładunek po wpłynięciu płatności do depozytu."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           },
           "paid": {
             "title": "Otrzymaj zapłatę po dostawie",
-            "body": "Środki zostaną przekazane po potwierdzeniu przez producenta."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Wybierz masę i wyślij. Zakład recyklingu przyjmie lub odrzuci zamówienie."
           },
           "pay": {
-            "title": "Wpłać do depozytu",
-            "body": "Zapłać po przyjęciu. Środki pozostaną zabezpieczone do potwierdzenia dostawy."
+            "title": "Oczekiwanie na bramkę",
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           },
           "receive": {
             "title": "Odbierz ładunek",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Potwierdź lub zgłoś problem",
-            "body": "Wszystko się zgadza? Potwierdź. Coś jest nie tak? Zgłoś problem ze zdjęciami, a środki pozostaną w depozycie."
+            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "Jak otrzymuję zapłatę za sprzedaż sortowni?",
-        "a": "Na razie ustal płatność bezpośrednio z sortownią. Depozyt jest planowany; wersja demonstracyjna nie przesyła pieniędzy."
+        "a": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
       },
       "whoSeesShop": {
         "q": "Kto może zobaczyć mój punkt?",
@@ -1642,8 +1642,8 @@
         "a": "Sprzedający podaje cenę za kg. Widzisz ją przed wysłaniem zapytania i możesz zadzwonić, aby ustalić szczegóły."
       },
       "whatIsEscrow": {
-        "q": "Czym jest depozyt?",
-        "a": "Bezpieczny etap pośredni: środki kupującego są przechowywane do zgodnego z ustaleniami dostarczenia ładunku, a potem przekazywane sprzedającemu. Depozyt dla firm jest planowany."
+        "q": "Oczekiwanie na bramkę",
+        "a": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
       },
       "whenSellerPaid": {
         "q": "Kiedy sprzedający otrzymuje zapłatę?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Ustalanie cen",
       "buyingFromKabadiwalas": "Zakupy od punktów skupu",
       "listingBales": "Wystawianie bel dla zakładów recyklingu",
-      "escrowExplained": "Demo: depozyt w dwie minuty",
+      "escrowExplained": "Oczekiwanie na bramkę",
       "buyingFromYards": "Zakupy od sortowni",
       "sellingOutput": "Sprzedaż produktów",
       "eprPlainWords": "Prosto o EPR",
@@ -1802,7 +1802,7 @@
         "title": "Demo: sprzedaż sortowniom",
         "p1": "Zapisuj sortowanie, aby stan zapasów był poprawny.",
         "p2": "Pokaż zapasy pobliskim sortowniom.",
-        "p3": "Ładuj dopiero po wpłynięciu płatności do depozytu."
+        "p3": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
       },
       "buyingStock": {
         "title": "Zakup zapasów",
@@ -1811,8 +1811,8 @@
         "p3": "Zważ każdy ładunek przed potwierdzeniem."
       },
       "tradingWithEscrow": {
-        "title": "Demo: handel z depozytem",
-        "p1": "Kupujący wpłaca do depozytu po przyjęciu przez sprzedającego.",
+        "title": "Oczekiwanie na bramkę",
+        "p1": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
         "p2": "Sprzedający ładuje dopiero po wpłynięciu środków.",
         "p3": "Potwierdzenie dostawy uruchamia wypłatę."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Demo: zakup surowca",
         "p1": "Znajdź bele określonej klasy od sortowni w sekcji Kupuj.",
-        "p2": "Wpłać do depozytu po przyjęciu przez sortownię.",
+        "p2": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
         "p3": "Sprawdź klasę przed potwierdzeniem."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: zamawianie surowców wtórnych",
         "p1": "Porównaj oferty według rodzaju, masy i ceny.",
         "p2": "Zamów potrzebną liczbę kilogramów.",
-        "p3": "Wpłać do depozytu po przyjęciu zamówienia."
+        "p3": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
       },
       "checkingDeliveries": {
         "title": "Sprawdzanie dostaw",
@@ -2454,7 +2454,7 @@
       "view": "Zobacz potwierdzenie {number}",
       "unknown": "Firma, której nie ma już w Luma.Green",
       "empty": "Brak potwierdzeń",
-      "emptyBody": "Potwierdzenie powstaje po wpłacie kupującego do depozytu."
+      "emptyBody": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
     },
     "epr": {
       "title": "Rejestr EPR, rok finansowy {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Dostępne jest tylko {weight}.",
       "total": "Suma",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Wpłacasz do depozytu po przyjęciu przez {seller}. Środki trafią do sprzedającego po potwierdzeniu dostawy.",
+      "escrow": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
       "ewayBill": "Powyżej 50 000 ₹: ładunkowi musi towarzyszyć dokument e-way bill.",
       "cancel": "Anuluj",
       "submit": "Wyślij zapytanie",
       "sending": "Wysyłanie…",
       "sent": "Wysłano zapytanie do {seller}",
-      "sentNext": "Wpłacisz do depozytu po przyjęciu zapytania.",
+      "sentNext": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
       "seeTrades": "Zobacz transakcje"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Transakcje",
-      "lead": "Każda transakcja krok po kroku. Środki pozostają w depozycie do potwierdzenia dostawy przez kupującego.",
+      "lead": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
       "buying": "Kupowanie",
       "selling": "Sprzedawanie",
       "tabsLabel": "Kupno lub sprzedaż",
@@ -2936,7 +2936,7 @@
         "from": "Od {name} · {area}",
         "to": "Do {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} w depozycie",
+        "inEscrow": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
         "ewayBill": "Powyżej 50 000 ₹: ładunkowi musi towarzyszyć dokument e-way bill.",
         "updated": "Zaktualizowano {when}",
         "receipt": "Potwierdzenie {number}",
@@ -2947,7 +2947,7 @@
         "label": "Postęp transakcji",
         "requested": "Zapytano",
         "accepted": "Przyjęta",
-        "paid_to_escrow": "W depozycie",
+        "paid_to_escrow": "Niezweryfikowane",
         "dispatched": "Wysłano",
         "completed": "Dostarczono",
         "srStep": "{step}: {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} chce to kupić. Przyjmij, aby zarezerwować materiał."
         },
         "accepted": {
-          "buyer": "Przyjęto. Wpłać do depozytu, aby kontynuować: środki pozostaną zabezpieczone do potwierdzenia dostawy.",
-          "seller": "Oczekiwanie na wpłatę do depozytu od {name}."
+          "buyer": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+          "seller": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
         },
         "paid_to_escrow": {
-          "buyer": "Twoje środki są zabezpieczone w depozycie. Oczekiwanie na wysyłkę od {name}.",
-          "seller": "Środki są zabezpieczone w depozycie. Wyślij ładunek i oznacz jako wysłany."
+          "buyer": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
+          "seller": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane."
         },
         "dispatched": {
-          "buyer": "W drodze. Sprawdź ładunek, a następnie potwierdź dostawę, aby uruchomić płatność.",
-          "seller": "W drodze. Środki otrzymasz po potwierdzeniu dostawy przez {name}."
+          "buyer": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
+          "seller": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane."
         },
         "completed": {
-          "buyer": "Dostarczono. Środki przekazano do {name}.",
-          "seller": "Dostarczono. Środki zostały Ci przekazane."
+          "buyer": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
+          "seller": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane."
         },
         "declined": {
           "buyer": "{name} odrzucił zamówienie lub partia została wyprzedana.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Przyjmij zamówienie",
         "decline": "Odrzuć",
-        "pay": "Wpłać {amount} do depozytu",
+        "pay": "Oczekiwanie na bramkę",
         "dispatch": "Oznacz jako wysłane",
         "confirm": "Potwierdź dostawę"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Zamówienie przyjęte",
         "decline": "Zamówienie odrzucone",
-        "pay": "Wpłacono do depozytu. Potwierdzenie {number}",
+        "pay": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
         "dispatch": "Oznaczono jako wysłane",
-        "confirm": "Dostawa potwierdzona. Środki przekazano sprzedającemu."
+        "confirm": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane."
       },
       "declineConfirm": "Odrzucić zamówienie od {name}? Tej czynności nie można cofnąć.",
       "declineYes": "Tak, odrzuć",
-      "declineNo": "Zachowaj"
+      "declineNo": "Zachowaj",
+      "gatewayPending": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "legacyUnverified": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane."
     },
     "receipt": {
       "title": "Potwierdzenie transakcji",
       "numberLabel": "Nr potwierdzenia",
       "dateLabel": "Data",
       "statusLabel": "Płatność",
-      "inEscrow": "W depozycie",
-      "settled": "Przekazano",
+      "inEscrow": "Niezweryfikowane",
+      "settled": "Niezweryfikowane",
       "seller": "Sprzedający",
       "buyer": "Kupujący",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Kwota",
       "total": "Suma",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Wpłacono do depozytu Luma.Green {date}.",
-      "held": "Przechowywane w depozycie do potwierdzenia dostawy przez kupującego.",
-      "released": "Przekazano sprzedającemu {date}.",
+      "paidInto": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
+      "held": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
+      "released": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
       "ewayBill": "Towary o wartości ponad 50 000 ₹: ładunkowi musi towarzyszyć dokument e-way bill.",
       "notTaxInvoice": "To potwierdzenie transakcji, a nie faktura podatkowa GST. Faktury będą dostępne przy rzeczywistych płatnościach.",
       "print": "Drukuj",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Nie znaleziono potwierdzenia",
       "missingBody": "To nie jest Twoja transakcja lub link jest błędny.",
       "pendingTitle": "Brak potwierdzenia",
-      "pendingBody": "Potwierdzenie powstaje po wpłacie kupującego do depozytu.",
-      "declinedBody": "Transakcja została odrzucona, więc nie ma potwierdzenia."
+      "pendingBody": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "declinedBody": "Transakcja została odrzucona, więc nie ma potwierdzenia.",
+      "unverified": "Niezweryfikowane"
     },
     "home": {
       "greeting": "Witaj, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Transakcje",
       "statsTitle": "W skrócie",
       "stats": {
-        "escrow": "W depozycie",
-        "escrowHint": "Wypłata po potwierdzeniu dostawy",
+        "escrow": "Niezweryfikowane",
+        "escrowHint": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
         "waiting": "Czeka na Ciebie",
         "waitingHint": "{count, plural, =0 {Wszystko zrobione} one {# transakcja wymaga działania} few {# transakcje wymagają działania} many {# transakcji wymaga działania} other {# transakcji wymaga działania}}",
         "listings": "W sprzedaży",
@@ -3050,7 +3053,8 @@
         "offers": "Partie surowców wtórnych",
         "offersHint": "W sprzedaży od zakładów recyklingu",
         "completed": "Zakończone w tym miesiącu",
-        "completedHint": "Obrót: {amount}"
+        "completedHint": "Obrót: {amount}",
+        "gatewayPending": "Oczekiwanie na bramkę"
       },
       "waitingTitle": "Czeka na Ciebie",
       "allTrades": "Wszystkie transakcje",

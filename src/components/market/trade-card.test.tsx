@@ -88,7 +88,7 @@ describe("TradeCard", () => {
     expect(act).toHaveBeenCalledWith({ tradeId: "trade1", action: "decline" });
   });
 
-  it("asks the buyer to pay the exact amount into escrow", () => {
+  it("pauses accepted orders until a gateway is connected", () => {
     render(
       <WithIntl>
         <TradeCard
@@ -106,14 +106,19 @@ describe("TradeCard", () => {
       </WithIntl>,
     );
     expect(
-      screen.getByRole("button", { name: "Pay ₹1,750 into escrow" }),
+      screen.queryByRole("button", { name: /Pay/ }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Payment gateway required. Checkout is not available yet.",
+      ),
     ).toBeInTheDocument();
     expect(
       screen.getByText("From Ramesh Kabadi Store · Yeshwanthpur"),
     ).toBeInTheDocument();
   });
 
-  it("shows escrow, the e-way bill and the receipt on a big paid load", () => {
+  it("labels a prototype payment state unverified and blocks dispatch", () => {
     render(
       <WithIntl>
         <TradeCard
@@ -124,41 +129,43 @@ describe("TradeCard", () => {
             status: "paid_to_escrow",
             inEscrow: true,
             needsEwayBill: true,
-            invoiceNo: "LG-26-0004",
+            legacyReceiptNo: "LG-26-0004",
             actions: ["dispatch"],
           })}
           side="seller"
         />
       </WithIntl>,
     );
-    expect(screen.getByText("₹76,000 held in escrow")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Prototype record. Payment and delivery are unverified.",
+      ),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/held in escrow/)).not.toBeInTheDocument();
     expect(screen.getByText(/e-way bill must travel/)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Mark as dispatched" }),
-    ).toBeInTheDocument();
+      screen.queryByRole("button", { name: /dispatch/i }),
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: "Receipt LG-26-0004" }),
     ).toHaveAttribute("href", "/app/trades/trade1/invoice");
   });
 
-  it("says what went wrong when a step fails", async () => {
+  it("says what went wrong when an order decision fails", async () => {
     const { ConvexError } = await import("convex/values");
     act.mockRejectedValue(new ConvexError("NOT_ENOUGH_STOCK"));
     render(
       <WithIntl>
         <TradeCard
           trade={aTrade({
-            status: "paid_to_escrow",
-            inEscrow: true,
-            actions: ["dispatch"],
+            status: "requested",
+            actions: ["accept", "decline"],
           })}
           side="seller"
         />
       </WithIntl>,
     );
-    await userEvent.click(
-      screen.getByRole("button", { name: "Mark as dispatched" }),
-    );
+    await userEvent.click(screen.getByRole("button", { name: "Accept order" }));
     expect(await screen.findByRole("alert")).toHaveTextContent(
       "You don't have that much in stock.",
     );
@@ -173,7 +180,9 @@ describe("TradeCard", () => {
     );
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(
-      screen.getByText("Delivered. The money was released to you."),
+      screen.getByText(
+        "Prototype record. Payment and delivery are unverified.",
+      ),
     ).toBeInTheDocument();
   });
 });

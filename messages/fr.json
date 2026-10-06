@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Échanger",
-      "summary": "Le service de séquestre prévu retiendrait le paiement jusqu’à la livraison. La démonstration actuelle enregistre uniquement des paiements simulés."
+      "summary": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
     },
     "record": {
       "title": "Consigner",
@@ -119,7 +119,7 @@
           "body": "Fabriquent de nouveaux produits à partir de matières recyclées."
         }
       },
-      "money": "Les ménages reçoivent un paiement en espèces ou par UPI à domicile. Le séquestre entre entreprises est prévu.",
+      "money": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
       "saathi": "Les Saathis participent à toute la filière : collectes, tri et postes de travail."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Centres de tri",
         "one": "Consultez les stocks des boutiques voisines.",
         "two": "Achetez en gros et vendez des balles aux recycleurs.",
-        "three": "Prévu : paiement sous séquestre jusqu’à la livraison.",
+        "three": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
         "cta": "Inscrire un centre de tri"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Fabricants",
         "one": "Consultez la production des recycleurs.",
-        "two": "Prévu : commande de matières recyclées avec séquestre.",
+        "two": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
         "three": "Des relevés pour vos rapports REP.",
         "cta": "S’inscrire comme fabricant"
       },
@@ -180,7 +180,7 @@
         "body": "Les boutiques fixent leurs prix, sans jamais descendre sous le minimum publié pour chaque matériau."
       },
       "escrow": {
-        "title": "Prévu : séquestre pour les échanges professionnels",
+        "title": "En attente de la passerelle",
         "body": "La démonstration présente les étapes du paiement sans détenir ni transférer d’argent réel."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "La norme Luma.Green",
-    "metaDescription": "Prévu : codes ouverts des matériaux et règles simples pour des échanges équitables en Inde : classement, pesée, reçus, vérification et séquestre. Adoption libre pour tous.",
+    "metaDescription": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
     "eyebrow": "Norme ouverte",
     "title": "La norme Luma.Green",
     "lead": "Des règles ouvertes et simples pour des échanges équitables : un code par matériau, un classement clair, une pesée honnête et un relevé à chaque transfert. Tout acteur de la filière peut les adopter.",
@@ -398,14 +398,14 @@
       "saathi": "Saathis : pièce d’identité avec photo et selfie correspondant."
     },
     "escrow": {
-      "title": "Prévu : séquestre entre entreprises",
-      "nav": "Séquestre",
-      "body": "Le service de séquestre prévu retiendrait le paiement jusqu’à la livraison. La démonstration actuelle enregistre uniquement des paiements simulés.",
+      "title": "En attente de la passerelle",
+      "nav": "En attente de la passerelle",
+      "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
       "steps": {
         "accepted": "Le vendeur accepte la commande",
-        "paid": "L’acheteur verse le paiement sous séquestre",
+        "paid": "En attente de la passerelle",
         "dispatched": "Le vendeur expédie les marchandises",
-        "released": "L’acheteur confirme et les fonds sont débloqués"
+        "released": "En attente de la passerelle"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "Fonctionnement",
-    "metaDescription": "Prévu : le parcours des matériaux sur Luma.Green, vendus à domicile à un prix juste, échangés dans la filière avec séquestre et enregistrés à chaque transfert.",
+    "metaDescription": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
     "title": "Comment fonctionne Luma.Green",
     "lead": "Les matériaux passent des foyers aux points de collecte, aux centres de tri et aux recycleurs avant de devenir de nouveaux produits. Luma.Green enregistre chaque transfert.",
     "stepLabel": "Étape {number}",
@@ -563,7 +563,7 @@
       "point3": "Un lien de suivi, sans compte obligatoire"
     },
     "trade": {
-      "body": "Démonstration : les kabadiwalas vendent leurs stocks triés aux centres de tri, qui vendent des balles aux recycleurs. Ceux-ci vendent paillettes, granulés et lingots aux usines. Le paiement attend sous séquestre jusqu’à la livraison. La démonstration présente les étapes sans détenir ni transférer d’argent réel.",
+      "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
       "point1": "Seules les entreprises vérifiées peuvent effectuer des échanges",
       "point2": "Les stocks changent lors de l’expédition et de la réception du chargement",
       "point3": "Un reçu numéroté pour chaque transaction payée"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Centres de tri",
-      "body": "Prévu : achetez aux kabadiwalas, triez et compactez, puis vendez des lots classés aux recycleurs avec paiement sous séquestre."
+      "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
     },
     "recycler": {
       "name": "Recycleurs",
@@ -624,7 +624,7 @@
     "replyTime": "Nous répondons sous un jour ouvré.",
     "search": {
       "label": "Rechercher dans l’aide",
-      "placeholder": "Exemple : code SMS ou séquestre",
+      "placeholder": "En attente de la passerelle",
       "clear": "Effacer la recherche",
       "summary": "{count, plural, =0 {Aucune réponse} one {# réponse} other {# réponses}} pour « {query} »",
       "topicSummary": "{count, plural, =0 {Aucune réponse} one {# réponse} other {# réponses}} sur {topic}",
@@ -671,7 +671,7 @@
         "name": "Centres de tri",
         "who": "Acheter aux kabadiwalas et affiner le tri",
         "title": "Aide aux centres de tri",
-        "lead": "Démonstration : trouvez des stocks à proximité, vendez des balles triées aux recycleurs et sécurisez les échanges par séquestre."
+        "lead": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
       },
       "recycler": {
         "name": "Recycleurs",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Guide de démonstration : sécuriser un échange par séquestre",
-        "summary": "Le service de séquestre prévu retiendrait le paiement jusqu’à la livraison. La démonstration actuelle enregistre uniquement des paiements simulés.",
+        "title": "En attente de la passerelle",
+        "summary": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
         "steps": {
           "request": {
             "title": "L’acheteur envoie une demande",
@@ -890,8 +890,8 @@
             "body": "Aucun paiement n’est encore effectué. Appelez-vous si vous devez convenir de détails."
           },
           "pay": {
-            "title": "L’acheteur verse le paiement sous séquestre",
-            "body": "L’argent est conservé en sécurité, sans être encore versé au vendeur. Celui-ci voit sa disponibilité avant le chargement."
+            "title": "En attente de la passerelle",
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           },
           "dispatch": {
             "title": "Le vendeur envoie le chargement",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "L’acheteur confirme la livraison",
-            "body": "Vérifiez le poids et la qualité, puis confirmez. Les fonds sont versés au vendeur."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Ne pas confirmer un chargement incomplet",
-            "body": "La confirmation débloque les fonds. Ils restent sous séquestre jusqu’à votre confirmation."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           },
           "report": {
             "title": "Signaler le problème avec des photos",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Accepter la demande d’un centre",
-            "body": "Vérifiez les kilos et le prix, puis acceptez. Le centre verse le paiement sous séquestre avant la collecte."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Choisissez les kilos souhaités. Le prix par kg est affiché avant l’envoi."
           },
           "pay": {
-            "title": "Payer sous séquestre",
-            "body": "Payez après acceptation du kabadiwala. Les fonds restent bloqués jusqu’à votre confirmation."
+            "title": "En attente de la passerelle",
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           },
           "collect": {
             "title": "Collecter et peser",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Accepter, puis attendre le paiement",
-            "body": "Chargez uniquement après la mise sous séquestre du paiement de l’acheteur."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           },
           "dispatch": {
             "title": "Expédier le chargement",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Recevoir votre paiement",
-            "body": "Les fonds vous sont versés quand le recycleur confirme la livraison."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Choisissez les kilos. Le prix par kg est indiqué avant l’envoi."
           },
           "pay": {
-            "title": "Payer sous séquestre",
-            "body": "Payez après acceptation du centre. Les fonds restent bloqués jusqu’à votre confirmation de livraison."
+            "title": "En attente de la passerelle",
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           },
           "confirm": {
             "title": "Peser, contrôler, confirmer",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Charger après le paiement",
-            "body": "Acceptez, puis expédiez une fois le paiement placé sous séquestre."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           },
           "paid": {
             "title": "Recevoir le paiement à la livraison",
-            "body": "Les fonds sont débloqués lorsque le fabricant confirme."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Choisissez les kilos et envoyez la demande. Le recycleur l’accepte ou la refuse."
           },
           "pay": {
-            "title": "Payer sous séquestre",
-            "body": "Payez après acceptation. Les fonds restent bloqués jusqu’à votre confirmation de livraison."
+            "title": "En attente de la passerelle",
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           },
           "receive": {
             "title": "Recevoir le chargement",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Confirmer ou signaler",
-            "body": "Tout est conforme ? Confirmez. Sinon, signalez le problème avec des photos : les fonds restent sous séquestre."
+            "body": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "Comment suis-je payé quand je vends à un centre ?",
-        "a": "Pour le moment, convenez du paiement directement avec le centre. Le séquestre est prévu ; la démonstration ne transfère pas d’argent."
+        "a": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
       },
       "whoSeesShop": {
         "q": "Qui peut voir ma boutique ?",
@@ -1642,8 +1642,8 @@
         "a": "Le vendeur publie un prix par kg. Vous le voyez avant d’envoyer la demande et pouvez appeler pour convenir des détails."
       },
       "whatIsEscrow": {
-        "q": "Qu’est-ce que le séquestre ?",
-        "a": "Une étape intermédiaire sûre : les fonds de l’acheteur sont conservés jusqu’à la livraison convenue, puis versés au vendeur. Le séquestre professionnel est prévu."
+        "q": "En attente de la passerelle",
+        "a": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
       },
       "whenSellerPaid": {
         "q": "Quand le vendeur est-il payé ?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Définir vos prix",
       "buyingFromKabadiwalas": "Acheter aux kabadiwalas",
       "listingBales": "Publier des balles pour les recycleurs",
-      "escrowExplained": "Démonstration : le séquestre en deux minutes",
+      "escrowExplained": "En attente de la passerelle",
       "buyingFromYards": "Acheter aux centres de tri",
       "sellingOutput": "Vendre votre production",
       "eprPlainWords": "La REP en termes simples",
@@ -1802,7 +1802,7 @@
         "title": "Démonstration : vendre aux centres de tri",
         "p1": "Enregistrez le tri pour maintenir des stocks exacts.",
         "p2": "Montrez vos stocks aux centres voisins.",
-        "p3": "Chargez uniquement après la mise sous séquestre du paiement."
+        "p3": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
       },
       "buyingStock": {
         "title": "Acheter des stocks",
@@ -1811,8 +1811,8 @@
         "p3": "Pesez chaque chargement avant de confirmer."
       },
       "tradingWithEscrow": {
-        "title": "Démonstration : échanger avec séquestre",
-        "p1": "L’acheteur paie sous séquestre après l’acceptation du vendeur.",
+        "title": "En attente de la passerelle",
+        "p1": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
         "p2": "Le vendeur charge uniquement lorsque les fonds sont disponibles.",
         "p3": "La confirmation de livraison débloque les fonds."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Démonstration : acheter vos matières premières",
         "p1": "Trouvez des balles classées proposées par les centres dans Acheter.",
-        "p2": "Payez sous séquestre après l’acceptation du centre.",
+        "p2": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
         "p3": "Contrôlez la qualité avant de confirmer."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Démonstration : commander des matières recyclées",
         "p1": "Comparez les annonces selon le type, les kilos et le prix.",
         "p2": "Commandez les kilos nécessaires.",
-        "p3": "Payez sous séquestre après acceptation."
+        "p3": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
       },
       "checkingDeliveries": {
         "title": "Contrôler les livraisons",
@@ -2454,7 +2454,7 @@
       "view": "Voir le reçu {number}",
       "unknown": "Une entreprise qui n’est plus sur Luma.Green",
       "empty": "Aucun reçu pour le moment",
-      "emptyBody": "Un reçu est créé lorsque l’acheteur verse le paiement sous séquestre."
+      "emptyBody": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
     },
     "epr": {
       "title": "Registre REP, exercice {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Seuls {weight} sont disponibles.",
       "total": "Montant total",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Vous payez sous séquestre après acceptation de {seller}. Les fonds lui sont versés lorsque vous confirmez la livraison.",
+      "escrow": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
       "ewayBill": "Au-delà de 50 000 ₹ : un e-way bill doit accompagner le chargement.",
       "cancel": "Annuler",
       "submit": "Envoyer la demande",
       "sending": "Envoi en cours…",
       "sent": "Demande envoyée à {seller}",
-      "sentNext": "Vous paierez sous séquestre après acceptation.",
+      "sentNext": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
       "seeTrades": "Voir les transactions"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Transactions",
-      "lead": "Chaque transaction, étape par étape. Les fonds restent sous séquestre jusqu’à la confirmation de livraison de l’acheteur.",
+      "lead": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
       "buying": "Achats",
       "selling": "Ventes",
       "tabsLabel": "Achats ou ventes",
@@ -2936,7 +2936,7 @@
         "from": "De {name} · {area}",
         "to": "À {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} sous séquestre",
+        "inEscrow": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
         "ewayBill": "Au-delà de 50 000 ₹ : un e-way bill doit accompagner le chargement.",
         "updated": "Mis à jour {when}",
         "receipt": "Reçu {number}",
@@ -2947,7 +2947,7 @@
         "label": "Suivi de la transaction",
         "requested": "Demandé",
         "accepted": "Acceptée",
-        "paid_to_escrow": "Sous séquestre",
+        "paid_to_escrow": "Non vérifié",
         "dispatched": "Expédié",
         "completed": "Livré",
         "srStep": "{step} : {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} souhaite acheter ce lot. Acceptez pour le lui réserver."
         },
         "accepted": {
-          "buyer": "Accepté. Payez sous séquestre pour continuer : les fonds restent bloqués jusqu’à votre confirmation de livraison.",
-          "seller": "En attente du paiement sous séquestre de {name}."
+          "buyer": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
+          "seller": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible."
         },
         "paid_to_escrow": {
-          "buyer": "Vos fonds sont protégés sous séquestre. En attente de l’expédition par {name}.",
-          "seller": "Les fonds sont protégés sous séquestre. Envoyez le chargement, puis marquez-le comme expédié."
+          "buyer": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés.",
+          "seller": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés."
         },
         "dispatched": {
-          "buyer": "En route. Vérifiez le chargement, puis confirmez la livraison pour débloquer les fonds.",
-          "seller": "En route. Les fonds vous seront versés lorsque {name} confirmera la livraison."
+          "buyer": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés.",
+          "seller": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés."
         },
         "completed": {
-          "buyer": "Livré. Les fonds ont été versés à {name}.",
-          "seller": "Livré. Les fonds vous ont été versés."
+          "buyer": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés.",
+          "seller": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés."
         },
         "declined": {
           "buyer": "{name} a refusé cette commande ou le lot est épuisé.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Accepter la commande",
         "decline": "Refuser",
-        "pay": "Verser {amount} sous séquestre",
+        "pay": "En attente de la passerelle",
         "dispatch": "Marquer comme expédié",
         "confirm": "Confirmer la livraison"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Commande acceptée",
         "decline": "Commande refusée",
-        "pay": "Paiement sous séquestre effectué. Reçu {number}",
+        "pay": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés.",
         "dispatch": "Marqué comme expédié",
-        "confirm": "Livraison confirmée. Les fonds sont versés au vendeur."
+        "confirm": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés."
       },
       "declineConfirm": "Refuser cette commande de {name} ? Cette action est irréversible.",
       "declineYes": "Oui, refuser",
-      "declineNo": "La conserver"
+      "declineNo": "La conserver",
+      "gatewayPending": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
+      "legacyUnverified": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés."
     },
     "receipt": {
       "title": "Reçu de transaction",
       "numberLabel": "Nº de reçu",
       "dateLabel": "Jour",
       "statusLabel": "Paiement",
-      "inEscrow": "Sous séquestre",
-      "settled": "Débloqué",
+      "inEscrow": "Non vérifié",
+      "settled": "Non vérifié",
       "seller": "Vendeur",
       "buyer": "Acheteur",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Montant",
       "total": "Montant total",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Paiement sous séquestre Luma.Green effectué le {date}.",
-      "held": "Sous séquestre jusqu’à la confirmation de livraison de l’acheteur.",
-      "released": "Versé au vendeur le {date}.",
+      "paidInto": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés.",
+      "held": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés.",
+      "released": "Enregistrement du prototype. Le paiement et la livraison ne sont pas vérifiés.",
       "ewayBill": "Marchandises de plus de 50 000 ₹ : un e-way bill doit accompagner le chargement.",
       "notTaxInvoice": "Ce document est un reçu de transaction, pas une facture fiscale GST. Les factures fiscales accompagnent les paiements réels.",
       "print": "Imprimer",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Reçu introuvable",
       "missingBody": "Cette transaction ne vous appartient pas ou le lien est incorrect.",
       "pendingTitle": "Pas encore de reçu",
-      "pendingBody": "Le reçu est créé lorsque l’acheteur verse le paiement sous séquestre.",
-      "declinedBody": "Cette transaction a été refusée : aucun reçu n’existe."
+      "pendingBody": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
+      "declinedBody": "Cette transaction a été refusée : aucun reçu n’existe.",
+      "unverified": "Non vérifié"
     },
     "home": {
       "greeting": "Bienvenue, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Transactions",
       "statsTitle": "En un coup d’œil",
       "stats": {
-        "escrow": "Sous séquestre",
-        "escrowHint": "Versé après confirmation de livraison",
+        "escrow": "Non vérifié",
+        "escrowHint": "Une passerelle de paiement est nécessaire. Le paiement n’est pas encore disponible.",
         "waiting": "En attente de votre action",
         "waitingHint": "{count, plural, =0 {Tout est à jour} one {# transaction nécessite une action} other {# transactions nécessitent une action}}",
         "listings": "En vente",
@@ -3050,7 +3053,8 @@
         "offers": "Lots recyclés",
         "offersHint": "En vente chez les recycleurs",
         "completed": "Terminées ce mois-ci",
-        "completedHint": "{amount} échangés"
+        "completedHint": "{amount} échangés",
+        "gatewayPending": "En attente de la passerelle"
       },
       "waitingTitle": "En attente de votre action",
       "allTrades": "Toutes les transactions",

@@ -1,13 +1,7 @@
 "use client";
 
 import { useMutation } from "convex/react";
-import {
-  CircleCheckIcon,
-  HandshakeIcon,
-  type LucideIcon,
-  ShieldCheckIcon,
-  TruckIcon,
-} from "lucide-react";
+import { HandshakeIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useId, useState } from "react";
 import { toast } from "sonner";
@@ -17,44 +11,34 @@ import { Button } from "@/components/ui/button";
 
 import { api } from "../../../convex/_generated/api";
 import { type MarketErrorKey, marketErrorKey } from "./errors";
-import type { TradeAction, TradeView } from "./types";
+import type { TradeView } from "./types";
 
-type ForwardAction = Exclude<TradeAction, "decline">;
-
-const ICONS: Record<ForwardAction, LucideIcon> = {
-  accept: HandshakeIcon,
-  pay: ShieldCheckIcon,
-  dispatch: TruckIcon,
-  confirm: CircleCheckIcon,
-};
+type DecisionAction = "accept" | "decline";
 
 /**
- * The step a trade is waiting for from me, as one big button — plus
- * "Decline" for a new order, which asks first because it can't be undone.
+ * Only an order decision is available before gateway checkout is connected.
  */
 export function TradeActions({ trade }: { trade: TradeView }) {
   const t = useTranslations("market");
   const format = useFormat();
   const act = useMutation(api.market.act);
   const questionId = useId();
-  const [busy, setBusy] = useState<TradeAction | null>(null);
+  const [busy, setBusy] = useState<DecisionAction | null>(null);
   const [isConfirmingDecline, setIsConfirmingDecline] = useState(false);
   const [failure, setFailure] = useState<MarketErrorKey | null>(null);
 
-  const forward = trade.actions.find(
-    (action): action is ForwardAction => action !== "decline",
-  );
-  const canDecline = trade.actions.includes("decline");
-  if (!forward && !canDecline) return null;
+  const canAccept =
+    trade.status === "requested" && trade.actions.includes("accept");
+  const canDecline =
+    trade.status === "requested" && trade.actions.includes("decline");
+  if (!canAccept && !canDecline) return null;
 
-  async function run(action: TradeAction) {
+  async function run(action: DecisionAction) {
     setBusy(action);
     setFailure(null);
     try {
-      const result = await act({ tradeId: trade.id, action });
-      toast.success(
-        t(`trades.done.${action}`, { number: result.invoiceNo ?? "" }),
-      );
+      await act({ tradeId: trade.id, action });
+      toast.success(t(`trades.done.${action}`));
     } catch (error) {
       const key = marketErrorKey(error);
       setFailure(key);
@@ -64,8 +48,6 @@ export function TradeActions({ trade }: { trade: TradeView }) {
       setIsConfirmingDecline(false);
     }
   }
-
-  const ForwardIcon = forward ? ICONS[forward] : null;
 
   return (
     <div className="flex flex-col gap-2">
@@ -103,17 +85,17 @@ export function TradeActions({ trade }: { trade: TradeView }) {
         </div>
       ) : (
         <div className="flex flex-col gap-2 sm:flex-row">
-          {forward && ForwardIcon ? (
+          {canAccept ? (
             <Button
               size="lg"
               className="h-auto min-h-12 py-2 text-base whitespace-normal sm:flex-1"
               disabled={busy !== null}
-              onClick={() => void run(forward)}
+              onClick={() => void run("accept")}
             >
-              <ForwardIcon aria-hidden />
-              {busy === forward
+              <HandshakeIcon aria-hidden />
+              {busy === "accept"
                 ? t("trades.busy")
-                : t(`trades.action.${forward}`, {
+                : t("trades.action.accept", {
                     amount: format.money(trade.totalPaise),
                   })}
             </Button>

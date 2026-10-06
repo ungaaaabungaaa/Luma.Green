@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Niaga",
-      "summary": "Perkhidmatan eskrow yang dicadangkan akan menahan bayaran sehingga penghantaran selesai. Demo semasa hanya merekodkan bayaran simulasi."
+      "summary": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
     },
     "record": {
       "title": "Rekod",
@@ -174,14 +174,14 @@
       "error": "Senarai kod gagal dimuatkan."
     },
     "escrow": {
-      "body": "Perkhidmatan eskrow yang dicadangkan akan menahan bayaran sehingga penghantaran selesai. Demo semasa hanya merekodkan bayaran simulasi.",
-      "title": "Dirancang: Eskrow antara perniagaan",
-      "nav": "Perkhidmatan eskrow",
+      "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
+      "title": "Menunggu gerbang pembayaran",
+      "nav": "Menunggu gerbang pembayaran",
       "steps": {
         "accepted": "Penjual menerima pesanan",
-        "paid": "Pembeli membayar ke eskrow",
+        "paid": "Menunggu gerbang pembayaran",
         "dispatched": "Penjual menghantar barang",
-        "released": "Pembeli mengesahkan dan wang dilepaskan"
+        "released": "Menunggu gerbang pembayaran"
       }
     },
     "verification": {
@@ -198,7 +198,7 @@
       "body": "Kod dan peraturan terbuka serta percuma. Gunakan di kedai, kawasan pengasingan atau kilang anda, di dalam atau di luar Luma.Green, dan beritahu cara memperbaikinya."
     },
     "metaTitle": "Piawaian Luma.Green",
-    "metaDescription": "Dirancang: Kod bahan terbuka dan peraturan mudah untuk perdagangan bahan kitar semula yang adil di India: penggredan, penimbangan, resit, pengesahan dan eskrow. Percuma untuk digunakan sesiapa sahaja.",
+    "metaDescription": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
     "eyebrow": "Piawaian terbuka",
     "title": "Piawaian Luma.Green",
     "lead": "Peraturan mudah dan terbuka untuk memperdagangkan bahan kitar semula dengan adil: satu kod setiap bahan, gred jelas, penimbangan jujur dan rekod setiap serahan. Sesiapa dalam industri boleh menggunakannya.",
@@ -256,7 +256,7 @@
   },
   "howItWorks": {
     "metaTitle": "Cara berfungsi",
-    "metaDescription": "Dirancang: Pergerakan bahan kitar semula di Luma.Green: dijual dari rumah pada harga adil, diniagakan sepanjang rantaian dengan eskrow dan direkodkan pada setiap serahan.",
+    "metaDescription": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
     "title": "Cara Luma.Green berfungsi",
     "lead": "Bahan bergerak dari rumah ke kedai kutipan, kawasan pengasingan dan pengitar semula sebelum menjadi sesuatu yang baharu. Luma.Green merekodkan setiap serahan.",
     "stepLabel": "Langkah {number}",
@@ -267,7 +267,7 @@
       "point3": "Pautan penjejakan tanpa memerlukan akaun"
     },
     "trade": {
-      "body": "Demo: Peniaga barang lusuh menjual stok diasingkan ke kawasan pengasingan, kawasan pengasingan menjual bal kepada pengitar semula, dan pengitar semula menjual serpihan, butiran serta jongkong kepada kilang. Bayaran pembeli menunggu dalam eskrow sehingga barang tiba. Demo menunjukkan langkah bayaran tetapi tidak menyimpan atau memindahkan wang sebenar.",
+      "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
       "point1": "Hanya perniagaan disahkan boleh berniaga",
       "point2": "Stok bergerak apabila muatan dihantar dan diterima",
       "point3": "Resit urus niaga bernombor bagi setiap urus niaga berbayar"
@@ -300,7 +300,7 @@
     "replyTime": "Kami membalas dalam satu hari bekerja.",
     "search": {
       "label": "Cari bantuan",
-      "placeholder": "Cuba: kod SMS atau eskrow",
+      "placeholder": "Menunggu gerbang pembayaran",
       "clear": "Kosongkan carian",
       "summary": "{count, plural, =0 {Tiada jawapan} other {# jawapan}} untuk “{query}”",
       "topicSummary": "{count, plural, =0 {Tiada jawapan} other {# jawapan}} tentang {topic}",
@@ -347,7 +347,7 @@
         "name": "Kawasan pengasingan",
         "who": "Membeli daripada kabadiwala dan mengasingkan lagi",
         "title": "Bantuan untuk kawasan pengasingan",
-        "lead": "Demo: Cari stok berdekatan, jual bal yang diasingkan kepada pengitar semula dan berdagang dengan selamat melalui eskrow."
+        "lead": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "recycler": {
         "name": "Pengitar semula",
@@ -554,8 +554,8 @@
         }
       },
       "escrow": {
-        "title": "Panduan demo: Cara eskrow melindungi dagangan",
-        "summary": "Perkhidmatan eskrow yang dicadangkan akan menahan bayaran hingga penghantaran. Demo semasa hanya merekodkan bayaran simulasi.",
+        "title": "Menunggu gerbang pembayaran",
+        "summary": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
         "steps": {
           "request": {
             "title": "Pembeli menghantar permintaan",
@@ -566,8 +566,8 @@
             "body": "Belum ada bayaran. Hubungi satu sama lain jika perlu bersetuju tentang butiran."
           },
           "pay": {
-            "title": "Pembeli membayar ke eskrow",
-            "body": "Wang disimpan dengan selamat dan belum diserahkan kepada penjual. Penjual boleh melihat wang tersedia sebelum memuatkan barang."
+            "title": "Menunggu gerbang pembayaran",
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "dispatch": {
             "title": "Penjual menghantar muatan",
@@ -575,7 +575,7 @@
           },
           "confirm": {
             "title": "Pembeli mengesahkan penghantaran",
-            "body": "Periksa berat dan mutu, kemudian sahkan. Wang dilepaskan kepada penjual."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -611,7 +611,7 @@
           },
           "hold": {
             "title": "Jangan sahkan muatan yang kurang",
-            "body": "Pengesahan melepaskan wang. Wang kekal dalam eskrow sehingga anda mengesahkan."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "report": {
             "title": "Laporkan dengan foto",
@@ -937,7 +937,7 @@
           },
           "sell": {
             "title": "Terima permintaan kawasan pengasingan",
-            "body": "Semak kilo dan harga, kemudian terima. Kawasan pengasingan membayar ke eskrow sebelum mengambil."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -976,8 +976,8 @@
             "body": "Pilih jumlah kilo yang diingini. Harga per kg ditunjukkan sebelum dihantar."
           },
           "pay": {
-            "title": "Bayar ke eskrow",
-            "body": "Apabila peniaga menerima, bayar. Wang ditahan sehingga anda mengesahkan."
+            "title": "Menunggu gerbang pembayaran",
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "collect": {
             "title": "Ambil dan timbang",
@@ -1003,7 +1003,7 @@
           },
           "accept": {
             "title": "Terima, kemudian tunggu bayaran",
-            "body": "Muatkan hanya selepas wang pembeli berada dalam eskrow."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "dispatch": {
             "title": "Hantar muatan",
@@ -1011,7 +1011,7 @@
           },
           "paid": {
             "title": "Terima bayaran",
-            "body": "Apabila pengitar semula mengesahkan penghantaran, wang dilepaskan kepada anda."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -1028,8 +1028,8 @@
             "body": "Pilih kilo. Harga per kg ditunjukkan sebelum dihantar."
           },
           "pay": {
-            "title": "Bayar ke eskrow",
-            "body": "Selepas kawasan pengasingan menerima, bayar. Wang ditahan sehingga anda mengesahkan penghantaran."
+            "title": "Menunggu gerbang pembayaran",
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "confirm": {
             "title": "Timbang, semak, sahkan",
@@ -1051,11 +1051,11 @@
           },
           "load": {
             "title": "Muatkan selepas bayaran",
-            "body": "Terima, kemudian hantar muatan selepas bayaran masuk ke eskrow."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "paid": {
             "title": "Terima bayaran selepas penghantaran",
-            "body": "Wang dilepaskan apabila pengilang mengesahkan."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -1072,8 +1072,8 @@
             "body": "Pilih kilo dan hantar. Pengitar semula menerima atau menolak."
           },
           "pay": {
-            "title": "Bayar ke eskrow",
-            "body": "Bayar selepas mereka menerima. Wang ditahan sehingga anda mengesahkan penghantaran."
+            "title": "Menunggu gerbang pembayaran",
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "receive": {
             "title": "Terima muatan",
@@ -1103,7 +1103,7 @@
           },
           "decide": {
             "title": "Sahkan atau laporkan",
-            "body": "Semuanya betul? Sahkan. Tidak betul? Laporkan dengan foto, dan wang kekal dalam eskrow."
+            "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -1291,7 +1291,7 @@
       },
       "paidByYard": {
         "q": "Bagaimana saya dibayar apabila menjual ke kawasan pengasingan?",
-        "a": "Buat masa ini, persetujui bayaran terus dengan kawasan pengasingan. Eskrow dirancang; demo tidak memindahkan wang."
+        "a": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "whoSeesShop": {
         "q": "Siapa boleh melihat kedai saya?",
@@ -1318,8 +1318,8 @@
         "a": "Penjual menyenaraikan harga per kg. Anda melihatnya sebelum menghantar permintaan dan boleh menelefon untuk mempersetujui butiran."
       },
       "whatIsEscrow": {
-        "q": "Apakah eskrow?",
-        "a": "Langkah perantara yang selamat: wang pembeli ditahan sehingga muatan tiba seperti dipersetujui, kemudian dilepaskan kepada penjual. Eskrow perniagaan masih dirancang."
+        "q": "Menunggu gerbang pembayaran",
+        "a": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "whenSellerPaid": {
         "q": "Bila penjual dibayar?",
@@ -1415,7 +1415,7 @@
       "settingPrices": "Menetapkan harga anda",
       "buyingFromKabadiwalas": "Membeli daripada peniaga barang lusuh",
       "listingBales": "Menyenaraikan bal untuk pengitar semula",
-      "escrowExplained": "Demo: Eskrow dalam dua minit",
+      "escrowExplained": "Menunggu gerbang pembayaran",
       "buyingFromYards": "Membeli daripada kawasan pengasingan",
       "sellingOutput": "Menjual keluaran anda",
       "eprPlainWords": "EPR dalam bahasa mudah",
@@ -1478,7 +1478,7 @@
         "title": "Demo: Menjual ke kawasan pengasingan",
         "p1": "Rekodkan pengasingan supaya stok tepat.",
         "p2": "Tunjukkan stok kepada kawasan pengasingan berhampiran.",
-        "p3": "Muatkan hanya selepas bayaran berada dalam eskrow."
+        "p3": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "buyingStock": {
         "title": "Membeli stok",
@@ -1487,8 +1487,8 @@
         "p3": "Timbang setiap muatan sebelum mengesahkan."
       },
       "tradingWithEscrow": {
-        "title": "Demo: Berniaga dengan eskrow",
-        "p1": "Pembeli membayar ke eskrow selepas penjual menerima.",
+        "title": "Menunggu gerbang pembayaran",
+        "p1": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
         "p2": "Penjual hanya memuatkan apabila wang tersedia.",
         "p3": "Pengesahan penghantaran melepaskan wang."
       },
@@ -1507,7 +1507,7 @@
       "buyingInputs": {
         "title": "Demo: Membeli bahan input",
         "p1": "Cari bal bergred daripada kawasan pengasingan dalam Beli.",
-        "p2": "Bayar ke eskrow selepas kawasan pengasingan menerima.",
+        "p2": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
         "p3": "Semak gred sebelum mengesahkan."
       },
       "eprBasics": {
@@ -1520,7 +1520,7 @@
         "title": "Demo: Memesan bahan kitar semula",
         "p1": "Bandingkan penyenaraian mengikut jenis, kilo dan harga.",
         "p2": "Hantar pesanan bagi kilo yang diperlukan.",
-        "p3": "Bayar ke eskrow selepas diterima."
+        "p3": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "checkingDeliveries": {
         "title": "Menyemak penghantaran",
@@ -1900,11 +1900,11 @@
       "kgTooMuch": "Hanya {weight} tersedia.",
       "total": "Jumlah keseluruhan",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Anda membayar ke eskrow selepas {seller} menerima. Wang diserahkan kepada mereka apabila anda mengesahkan penghantaran.",
+      "escrow": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
       "ewayBill": "Melebihi ₹50,000: bil e-way mesti mengiringi muatan ini.",
       "submit": "Hantar permintaan",
       "sent": "Permintaan dihantar kepada {seller}",
-      "sentNext": "Anda membayar ke eskrow selepas mereka menerima.",
+      "sentNext": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
       "seeTrades": "Lihat urus niaga"
     },
     "sell": {
@@ -1971,8 +1971,8 @@
       "lead": "{kind, select, yard {Beli daripada peniaga bahan kitar semula, jual bal diasingkan kepada pengitar semula.} recycler {Beli bahan kitar semula diasingkan daripada kawasan pengasingan, jual bahan kitar semula kepada pengilang.} manufacturer {Beli bahan kitar semula daripada pengitar semula disahkan.} other {Urus niaga anda sepintas lalu.}}",
       "statsTitle": "Sepintas lalu",
       "stats": {
-        "escrow": "Dalam eskrow",
-        "escrowHint": "Dilepaskan apabila penghantaran disahkan",
+        "escrow": "Belum disahkan",
+        "escrowHint": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
         "waiting": "Menunggu anda",
         "waitingHint": "{count, plural, =0 {Semua selesai} one {# urus niaga memerlukan tindakan} other {# urus niaga memerlukan tindakan}}",
         "listings": "Untuk dijual",
@@ -1980,7 +1980,8 @@
         "offers": "Lot kitar semula",
         "offersHint": "Dijual oleh pengitar semula",
         "completed": "Selesai bulan ini",
-        "completedHint": "{amount} diniagakan"
+        "completedHint": "{amount} diniagakan",
+        "gatewayPending": "Menunggu gerbang pembayaran"
       },
       "waitingTitle": "Menunggu anda",
       "allTrades": "Semua urus niaga",
@@ -2027,7 +2028,7 @@
         "title": "{material} · {weight}",
         "from": "Daripada {name} · {area}",
         "to": "Kepada {name} · {area}",
-        "inEscrow": "{amount} ditahan dalam eskrow",
+        "inEscrow": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
         "ewayBill": "Melebihi ₹50,000: bil e-way mesti mengiringi muatan ini.",
         "updated": "Dikemas kini {when}",
         "receipt": "Resit {number}",
@@ -2039,7 +2040,7 @@
         "accepted": "Diterima",
         "label": "Kemajuan urus niaga",
         "requested": "Diminta",
-        "paid_to_escrow": "Dalam eskrow",
+        "paid_to_escrow": "Belum disahkan",
         "dispatched": "Dihantar",
         "completed": "Telah sampai",
         "srStep": "{step}: {state}",
@@ -2050,7 +2051,7 @@
         }
       },
       "declineNo": "Kekalkan",
-      "lead": "Setiap urus niaga, langkah demi langkah. Wang kekal dalam eskrow sehingga pembeli mengesahkan penghantaran.",
+      "lead": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
       "buying": "Pembelian",
       "selling": "Penjualan",
       "tabsLabel": "Pembelian atau penjualan",
@@ -2068,20 +2069,20 @@
           "seller": "{name} mahu membeli ini. Terima untuk menyimpannya bagi mereka."
         },
         "accepted": {
-          "buyer": "Diterima. Bayar ke eskrow untuk meneruskan: wang ditahan sehingga anda mengesahkan penghantaran.",
-          "seller": "Menunggu {name} membayar ke eskrow."
+          "buyer": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
+          "seller": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
         },
         "paid_to_escrow": {
-          "buyer": "Wang anda selamat dalam eskrow. Menunggu {name} menghantar.",
-          "seller": "Wang selamat dalam eskrow. Hantar muatan, kemudian tandakan dihantar."
+          "buyer": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan.",
+          "seller": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan."
         },
         "dispatched": {
-          "buyer": "Dalam perjalanan. Semak muatan, kemudian sahkan penghantaran untuk melepaskan wang.",
-          "seller": "Dalam perjalanan. Wang dilepaskan kepada anda apabila {name} mengesahkan penghantaran."
+          "buyer": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan.",
+          "seller": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan."
         },
         "completed": {
-          "buyer": "Telah sampai. Wang dilepaskan kepada {name}.",
-          "seller": "Telah sampai. Wang dilepaskan kepada anda."
+          "buyer": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan.",
+          "seller": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan."
         },
         "declined": {
           "buyer": "{name} menolak pesanan ini atau lot habis dijual.",
@@ -2091,19 +2092,21 @@
       "action": {
         "accept": "Terima pesanan",
         "decline": "Tolak",
-        "pay": "Bayar {amount} ke eskrow",
+        "pay": "Menunggu gerbang pembayaran",
         "dispatch": "Tandakan sebagai dihantar",
         "confirm": "Sahkan penghantaran"
       },
       "done": {
         "accept": "Pesanan diterima",
         "decline": "Pesanan ditolak",
-        "pay": "Dibayar ke eskrow. Resit {number}",
+        "pay": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan.",
         "dispatch": "Ditandakan sebagai dihantar",
-        "confirm": "Penghantaran disahkan. Wang dilepaskan kepada penjual."
+        "confirm": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan."
       },
       "declineConfirm": "Tolak pesanan daripada {name}? Tindakan ini tidak boleh dibatalkan.",
-      "declineYes": "Ya, tolak"
+      "declineYes": "Ya, tolak",
+      "gatewayPending": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
+      "legacyUnverified": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan."
     },
     "perKg": "{price}/kg",
     "receipt": {
@@ -2116,16 +2119,16 @@
       "title": "Resit urus niaga",
       "numberLabel": "No. resit",
       "statusLabel": "Pembayaran",
-      "inEscrow": "Dalam eskrow",
-      "settled": "Dilepaskan",
+      "inEscrow": "Belum disahkan",
+      "settled": "Belum disahkan",
       "noGstin": "Tidak berdaftar GST",
       "quantity": "Kuantiti",
       "rate": "Kadar",
       "total": "Jumlah keseluruhan",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Dibayar ke eskrow Luma.Green pada {date}.",
-      "held": "Ditahan dalam eskrow sehingga pembeli mengesahkan penghantaran.",
-      "released": "Dilepaskan kepada penjual pada {date}.",
+      "paidInto": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan.",
+      "held": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan.",
+      "released": "Rekod prototaip. Pembayaran dan penghantaran belum disahkan.",
       "ewayBill": "Barang bernilai melebihi ₹50,000: bil e-way mesti mengiringi muatan ini.",
       "notTaxInvoice": "Ini resit urus niaga, bukan invois cukai GST. Invois cukai disertakan dengan bayaran sebenar.",
       "print": "Cetak",
@@ -2133,8 +2136,9 @@
       "missingTitle": "Resit tidak ditemui",
       "missingBody": "Urus niaga ini bukan milik anda atau pautannya salah.",
       "pendingTitle": "Belum ada resit",
-      "pendingBody": "Resit dibuat apabila pembeli membayar ke eskrow.",
-      "declinedBody": "Urus niaga ini ditolak, jadi tiada resit."
+      "pendingBody": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
+      "declinedBody": "Urus niaga ini ditolak, jadi tiada resit.",
+      "unverified": "Belum disahkan"
     },
     "recycled": "Dikitar semula",
     "units": {
@@ -2956,7 +2960,7 @@
       "view": "Lihat resit {number}",
       "unknown": "Perniagaan yang tidak lagi berada di Luma.Green",
       "empty": "Belum ada resit",
-      "emptyBody": "Resit dibuat apabila pembeli membayar ke eskrow."
+      "emptyBody": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
     },
     "epr": {
       "streams": {
@@ -3087,7 +3091,7 @@
           "body": "Membuat produk baharu daripada bahan kitar semula."
         }
       },
-      "money": "Isi rumah menerima tunai atau UPI di depan pintu. Eskrow antara perniagaan masih dirancang.",
+      "money": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
       "saathi": "Saathi membantu sepanjang rantaian melalui kutipan, pengasingan dan kerja syif."
     },
     "roles": {
@@ -3111,7 +3115,7 @@
         "title": "Kawasan pengasingan",
         "one": "Lihat stok kedai berhampiran.",
         "two": "Beli secara pukal dan jual bal kepada pengitar semula.",
-        "three": "Dirancang: Bayaran ditahan dalam eskrow sehingga penghantaran selesai.",
+        "three": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
         "cta": "Sertai sebagai kawasan pengasingan"
       },
       "recycler": {
@@ -3124,7 +3128,7 @@
       "manufacturer": {
         "title": "Pengilang",
         "one": "Lihat keluaran pengitar semula.",
-        "two": "Dirancang: Pesan bahan kitar semula dengan eskrow.",
+        "two": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia.",
         "three": "Rekod untuk laporan EPR anda.",
         "cta": "Sertai sebagai pengilang"
       },
@@ -3148,7 +3152,7 @@
         "body": "Kedai menetapkan harga sendiri, tetapi tidak di bawah harga minimum yang kami terbitkan bagi setiap bahan."
       },
       "escrow": {
-        "title": "Dirancang: Eskrow untuk urus niaga perniagaan",
+        "title": "Menunggu gerbang pembayaran",
         "body": "Demo menunjukkan langkah bayaran tetapi tidak menyimpan atau memindahkan wang sebenar."
       },
       "receipts": {
@@ -3216,7 +3220,7 @@
     },
     "yard": {
       "name": "Kawasan pengasingan",
-      "body": "Dirancang: Beli daripada peniaga barang lusuh, asing dan mampatkan menjadi bal, kemudian jual lot bergred kepada pengitar semula dengan bayaran ditahan dalam eskrow."
+      "body": "Gerbang pembayaran diperlukan. Pembayaran belum tersedia."
     },
     "recycler": {
       "name": "Pengitar semula",

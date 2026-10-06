@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Ticaret",
-      "summary": "Planlanan emanet ödeme hizmeti, teslimata kadar ödemeyi tutacak. Mevcut demo yalnızca simüle edilmiş ödemeleri kaydeder."
+      "summary": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
     },
     "record": {
       "title": "Kayıt",
@@ -174,14 +174,14 @@
       "error": "Kod listesi yüklenemedi."
     },
     "escrow": {
-      "body": "Planlanan emanet ödeme hizmeti, teslimata kadar ödemeyi tutacak. Mevcut demo yalnızca simüle edilmiş ödemeleri kaydeder.",
-      "title": "Planlanıyor: işletmeler arası emanet ödeme",
-      "nav": "Emanet ödeme",
+      "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "title": "Ödeme altyapısı bekleniyor",
+      "nav": "Ödeme altyapısı bekleniyor",
       "steps": {
         "accepted": "Satıcı siparişi kabul eder",
-        "paid": "Alıcı emanet hesaba öder",
+        "paid": "Ödeme altyapısı bekleniyor",
         "dispatched": "Satıcı malları gönderir",
-        "released": "Alıcı doğrular ve para serbest bırakılır"
+        "released": "Ödeme altyapısı bekleniyor"
       }
     },
     "verification": {
@@ -198,7 +198,7 @@
       "body": "Kodlar ve kurallar açık ve ücretsizdir. Luma.Green’de veya dışında dükkânınızda, sahanızda ya da fabrikanızda kullanın; nasıl iyileştirebileceğimizi söyleyin."
     },
     "metaTitle": "Luma.Green standardı",
-    "metaDescription": "Planlanıyor: Hindistan’da adil malzeme ticareti için açık malzeme kodları ve basit kurallar: sınıflandırma, tartım, makbuz, doğrulama ve emanet ödeme. Herkes ücretsiz kullanabilir.",
+    "metaDescription": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
     "eyebrow": "Açık standart",
     "title": "Luma.Green standardı",
     "lead": "Adil malzeme ticareti için basit ve açık kurallar: her malzemeye tek kod, net sınıflandırma, dürüst tartım ve her teslimatta kayıt. Sektördeki herkes kullanabilir.",
@@ -256,7 +256,7 @@
   },
   "howItWorks": {
     "metaTitle": "Nasıl çalışır",
-    "metaDescription": "Planlanıyor: Luma.Green’de malzemenin yolu; evden adil fiyatla satış, emanet ödemeyle zincir boyunca ticaret ve her teslimatın kaydı.",
+    "metaDescription": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
     "title": "Luma.Green nasıl çalışır",
     "lead": "Malzemeler yeni bir ürüne dönüşmeden önce evlerden toplama dükkânlarına, ayrıştırma sahalarına ve geri dönüşümcülere gider. Luma.Green her teslimatı kaydeder.",
     "stepLabel": "Adım {number}",
@@ -267,7 +267,7 @@
       "point3": "Hesap gerektirmeyen takip bağlantısı"
     },
     "trade": {
-      "body": "Demo: hurdacılar ayrıştırılmış stoku sahalara, sahalar balyaları geri dönüşümcülere, onlar da pul, granül ve külçeleri fabrikalara satar. Alıcının ödemesi teslimata kadar emanette bekler. Demo adımları gösterir ama gerçek para tutmaz veya aktarmaz.",
+      "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
       "point1": "Yalnızca doğrulanmış işletmeler ticaret yapabilir",
       "point2": "Yük gönderilip teslim alındığında stok değişir",
       "point3": "Ödenen her ticaret için numaralı makbuz"
@@ -366,11 +366,11 @@
     },
     "guides": {
       "escrow": {
-        "summary": "Planlanan emanet ödeme hizmeti, teslimata kadar ödemeyi tutacak. Mevcut demo yalnızca simüle edilmiş ödemeleri kaydeder.",
+        "summary": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
         "steps": {
           "pay": {
-            "title": "Alıcı emanet hesaba öder",
-            "body": "Para güvenle tutulur, henüz satıcıya verilmez. Satıcı yüklemeden önce parayı görebilir."
+            "title": "Ödeme altyapısı bekleniyor",
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           },
           "request": {
             "title": "Alıcı talep gönderir",
@@ -386,10 +386,10 @@
           },
           "confirm": {
             "title": "Alıcı teslimatı doğrular",
-            "body": "Ağırlık ve kaliteyi kontrol edip doğrulayın. Para satıcıya bırakılır."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           }
         },
-        "title": "Demo rehberi: emanet ödeme ticareti nasıl korur"
+        "title": "Ödeme altyapısı bekleniyor"
       },
       "weighAndPay": {
         "steps": {
@@ -432,8 +432,8 @@
             "body": "Kilogram miktarını seçip gönderin. Geri dönüşümcü kabul eder veya reddeder."
           },
           "pay": {
-            "title": "Emanet hesaba ödeme yapın",
-            "body": "Kabul ettikten sonra ödeme yapın. Teslimatı onaylayana kadar para tutulur."
+            "title": "Ödeme altyapısı bekleniyor",
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           },
           "receive": {
             "title": "Yükü teslim alın",
@@ -557,7 +557,7 @@
           },
           "hold": {
             "title": "Eksik yükü doğrulamayın",
-            "body": "Doğrulama parayı bırakır. O zamana kadar emanette kalır."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           },
           "report": {
             "title": "Fotoğraflarla bildirin",
@@ -857,7 +857,7 @@
           },
           "sell": {
             "title": "Sahanın talebini kabul edin",
-            "body": "Kilo ve fiyatı kontrol edip kabul edin. Saha toplamadan önce emanete öder."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           }
         }
       },
@@ -896,8 +896,8 @@
             "body": "Kaç kilo istediğinizi seçin. Göndermeden önce kilogram fiyatı gösterilir."
           },
           "pay": {
-            "title": "Emanet hesaba ödeme yapın",
-            "body": "Hurdacı kabul ettiğinde ödeme yapın. Siz onaylayana kadar para tutulur."
+            "title": "Ödeme altyapısı bekleniyor",
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           },
           "collect": {
             "title": "Teslim alın ve tartın",
@@ -923,7 +923,7 @@
           },
           "accept": {
             "title": "Kabul edin, ardından ödemeyi bekleyin",
-            "body": "Yalnızca alıcının parası emanet hesaba geçtikten sonra yükleyin."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           },
           "dispatch": {
             "title": "Yükü gönderin",
@@ -931,7 +931,7 @@
           },
           "paid": {
             "title": "Ödemenizi alın",
-            "body": "Geri dönüşümcü teslimatı onayladığında para size aktarılır."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           }
         }
       },
@@ -948,8 +948,8 @@
             "body": "Kilogram miktarını seçin. Göndermeden önce kilogram fiyatı gösterilir."
           },
           "pay": {
-            "title": "Emanet hesaba ödeme yapın",
-            "body": "Saha kabul ettiğinde ödeme yapın. Teslimatı onaylayana kadar para tutulur."
+            "title": "Ödeme altyapısı bekleniyor",
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           },
           "confirm": {
             "title": "Tartın, kontrol edin, onaylayın",
@@ -971,11 +971,11 @@
           },
           "load": {
             "title": "Ödemeden sonra yükleyin",
-            "body": "Kabul edin; ödeme emanet hesaba geçtikten sonra yükü gönderin."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           },
           "paid": {
             "title": "Teslimatta ödeme alın",
-            "body": "Üretici onayladığında para serbest bırakılır."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           }
         }
       },
@@ -997,7 +997,7 @@
           },
           "decide": {
             "title": "Onaylayın veya bildirin",
-            "body": "Her şey uygun mu? Onaylayın. Uygun değil mi? Fotoğraflarla bildirin; para emanet hesapta kalır."
+            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
           }
         }
       },
@@ -1115,7 +1115,7 @@
         "name": "Ayrıştırma sahaları",
         "who": "Hurdacılardan alıp daha fazla ayrıştırmak",
         "title": "Sahalar için yardım",
-        "lead": "Demo: yakında stok bulun, balyaları geri dönüşümcülere satın ve emanet ödemeyle güvenli ticaret yapın."
+        "lead": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
       },
       "recycler": {
         "name": "Geri dönüşümcüler",
@@ -1173,7 +1173,7 @@
     "replyTime": "Bir iş günü içinde yanıtlarız.",
     "search": {
       "label": "Yardımda ara",
-      "placeholder": "Örneğin: SMS kodu veya emanet ödeme",
+      "placeholder": "Ödeme altyapısı bekleniyor",
       "clear": "Aramayı temizle",
       "summary": "“{query}” için {count, plural, =0 {yanıt yok} one {# yanıt} other {# yanıt}}",
       "topicSummary": "{topic} hakkında {count, plural, =0 {yanıt yok} one {# yanıt} other {# yanıt}}",
@@ -1291,7 +1291,7 @@
       },
       "paidByYard": {
         "q": "Bir sahaya satış yaptığımda ödememi nasıl alırım?",
-        "a": "Şimdilik ödemeyi sahayla doğrudan kararlaştırın. Emanet ödeme planlanmaktadır; demo para aktarmaz."
+        "a": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
       },
       "whoSeesShop": {
         "q": "Dükkânımı kim görebilir?",
@@ -1318,8 +1318,8 @@
         "a": "Satıcı kilogram fiyatını ilan eder. Talep göndermeden önce fiyatı görürsünüz; ayrıntılarda anlaşmak için arayabilirsiniz."
       },
       "whatIsEscrow": {
-        "q": "Emanet ödeme nedir?",
-        "a": "Güvenli bir ara adım: Alıcının parası yük anlaşıldığı şekilde gelene kadar tutulur, ardından satıcıya aktarılır. İşletmeler için emanet ödeme planlanmaktadır."
+        "q": "Ödeme altyapısı bekleniyor",
+        "a": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
       },
       "whenSellerPaid": {
         "q": "Satıcıya ne zaman ödeme yapılır?",
@@ -1415,7 +1415,7 @@
       "settingPrices": "Fiyatlarınızı belirleme",
       "buyingFromKabadiwalas": "Hurdacılardan satın alma",
       "listingBales": "Geri dönüşümcüler için balya listeleme",
-      "escrowExplained": "Demo: İki dakikada emanet ödeme",
+      "escrowExplained": "Ödeme altyapısı bekleniyor",
       "buyingFromYards": "Sahalardan satın alma",
       "sellingOutput": "Üretiminizi satma",
       "eprPlainWords": "EPR’nin sade anlatımı",
@@ -1478,7 +1478,7 @@
         "title": "Demo: Sahalara satış",
         "p1": "Stokunuzun doğru olması için ayrıştırmayı kaydedin.",
         "p2": "Stokunuzu yakınınızdaki sahalara gösterin.",
-        "p3": "Yalnızca ödeme emanet hesaba geçtikten sonra yükleyin."
+        "p3": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
       },
       "buyingStock": {
         "title": "Stok satın alma",
@@ -1487,8 +1487,8 @@
         "p3": "Onaylamadan önce her yükü tartın."
       },
       "tradingWithEscrow": {
-        "title": "Demo: Emanet ödeme ile ticaret",
-        "p1": "Satıcı kabul ettikten sonra alıcı emanet hesaba ödeme yapar.",
+        "title": "Ödeme altyapısı bekleniyor",
+        "p1": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
         "p2": "Satıcı yalnızca para hesaba geçtiğinde yükler.",
         "p3": "Teslimatı onaylamak parayı serbest bırakır."
       },
@@ -1507,7 +1507,7 @@
       "buyingInputs": {
         "title": "Demo: Üretim girdisi satın alma",
         "p1": "Satın Al bölümünde sahaların sınıflandırılmış balyalarını bulun.",
-        "p2": "Saha kabul edince emanet hesaba ödeme yapın.",
+        "p2": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
         "p3": "Onaylamadan önce sınıfı kontrol edin."
       },
       "eprBasics": {
@@ -1520,7 +1520,7 @@
         "title": "Demo: Geri dönüştürülmüş malzeme siparişi",
         "p1": "İlanları tür, kilogram miktarı ve fiyata göre karşılaştırın.",
         "p2": "İhtiyacınız olan kilogram miktarı için sipariş gönderin.",
-        "p3": "Kabul edildiğinde emanet hesaba ödeme yapın."
+        "p3": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
       },
       "checkingDeliveries": {
         "title": "Teslimatları kontrol etme",
@@ -1900,11 +1900,11 @@
       "kgTooMuch": "Yalnızca {weight} mevcut.",
       "total": "Toplam",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "{seller} kabul ettikten sonra emanet hesaba ödersiniz. Teslimatı doğrulayınca para satıcıya gider.",
+      "escrow": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
       "ewayBill": "50.000 rupi üzeri: yükle e-sevk belgesi gitmelidir.",
       "submit": "Talep gönder",
       "sent": "Talep {seller} satıcısına gönderildi",
-      "sentNext": "Kabul edince emanet hesaba ödersiniz.",
+      "sentNext": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
       "seeTrades": "Ticaretleri gör"
     },
     "sell": {
@@ -1971,8 +1971,8 @@
       "lead": "{kind, select, yard {Toplama işletmelerinden alın, ayrıştırılmış balyaları geri dönüşümcülere satın.} recycler {Sahalardan ayrıştırılmış malzeme alın, geri dönüştürülmüş malzemeyi üreticilere satın.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme alın.} other {Ticaretlerinize genel bakış.}}",
       "statsTitle": "Genel bakış",
       "stats": {
-        "escrow": "Emanette",
-        "escrowHint": "Teslimat doğrulanınca bırakılır",
+        "escrow": "Doğrulanmadı",
+        "escrowHint": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
         "waiting": "Sizi bekliyor",
         "waitingHint": "{count, plural, =0 {Hepsi tamam} one {# ticaret adım bekliyor} other {# ticaret adım bekliyor}}",
         "listings": "Satılık",
@@ -1980,7 +1980,8 @@
         "offers": "Geri dönüştürülmüş partiler",
         "offersHint": "Geri dönüşümcülerden satılık",
         "completed": "Bu ay tamamlanan",
-        "completedHint": "{amount} ticaret"
+        "completedHint": "{amount} ticaret",
+        "gatewayPending": "Ödeme altyapısı bekleniyor"
       },
       "waitingTitle": "Sizi bekliyor",
       "allTrades": "Tüm ticaretler",
@@ -2000,7 +2001,7 @@
         "title": "{material} · {weight}",
         "from": "{name} satıcısından · {area}",
         "to": "{name} alıcısına · {area}",
-        "inEscrow": "Emanette {amount}",
+        "inEscrow": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
         "ewayBill": "50.000 rupi üzeri: yükle e-sevk belgesi gitmelidir.",
         "updated": "Güncellendi: {when}",
         "receipt": "Makbuz {number}",
@@ -2013,7 +2014,7 @@
         "accepted": "Kabul edildi",
         "label": "Ticaret ilerlemesi",
         "requested": "Talep edildi",
-        "paid_to_escrow": "Emanette",
+        "paid_to_escrow": "Doğrulanmadı",
         "dispatched": "Gönderildi",
         "completed": "Teslim edildi",
         "srStep": "{step}: {state}",
@@ -2024,7 +2025,7 @@
         }
       },
       "declineNo": "Koru",
-      "lead": "Her ticaret adım adım. Alıcı teslimatı doğrulayana kadar para emanette kalır.",
+      "lead": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
       "buying": "Alımlar",
       "selling": "Satışlar",
       "tabsLabel": "Alım veya satış",
@@ -2042,20 +2043,20 @@
           "seller": "{name} bunu almak istiyor. Ayırmak için kabul edin."
         },
         "accepted": {
-          "buyer": "Kabul edildi. Devam için emanet hesaba ödeyin; teslimatı doğrulayana kadar para tutulur.",
-          "seller": "{name} emanet ödemesi bekleniyor."
+          "buyer": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+          "seller": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
         },
         "paid_to_escrow": {
-          "buyer": "Paranız emanette güvende. {name} gönderimi bekleniyor.",
-          "seller": "Para emanette güvende. Yükü gönderip gönderildi işaretleyin."
+          "buyer": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
+          "seller": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı."
         },
         "dispatched": {
-          "buyer": "Yolda. Yükü kontrol edip parayı serbest bırakmak için teslimatı doğrulayın.",
-          "seller": "Yolda. {name} teslimatı doğrulayınca para size bırakılır."
+          "buyer": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
+          "seller": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı."
         },
         "completed": {
-          "buyer": "Teslim edildi. Para {name} kişisine bırakıldı.",
-          "seller": "Teslim edildi. Para size bırakıldı."
+          "buyer": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
+          "seller": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı."
         },
         "declined": {
           "buyer": "{name} siparişi reddetti veya parti tükendi.",
@@ -2065,19 +2066,21 @@
       "action": {
         "accept": "Siparişi kabul et",
         "decline": "Reddet",
-        "pay": "Emanete {amount} öde",
+        "pay": "Ödeme altyapısı bekleniyor",
         "dispatch": "Gönderildi işaretle",
         "confirm": "Teslimatı doğrula"
       },
       "done": {
         "accept": "Sipariş kabul edildi",
         "decline": "Sipariş reddedildi",
-        "pay": "Emanete ödendi. Makbuz {number}",
+        "pay": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
         "dispatch": "Gönderildi işaretlendi",
-        "confirm": "Teslimat doğrulandı. Para satıcıya bırakıldı."
+        "confirm": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı."
       },
       "declineConfirm": "{name} siparişi reddedilsin mi? Geri alınamaz.",
-      "declineYes": "Evet, reddet"
+      "declineYes": "Evet, reddet",
+      "gatewayPending": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "legacyUnverified": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı."
     },
     "receipt": {
       "dateLabel": "Tarih",
@@ -2089,16 +2092,16 @@
       "title": "Ticaret makbuzu",
       "numberLabel": "Makbuz no.",
       "statusLabel": "Ödeme",
-      "inEscrow": "Emanette",
-      "settled": "Serbest bırakıldı",
+      "inEscrow": "Doğrulanmadı",
+      "settled": "Doğrulanmadı",
       "noGstin": "GST kaydı yok",
       "quantity": "Miktar",
       "rate": "Birim fiyat",
       "total": "Toplam",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "{date} tarihinde Luma.Green emanet hesabına ödendi.",
-      "held": "Alıcı teslimatı doğrulayana kadar emanette tutulur.",
-      "released": "{date} tarihinde satıcıya bırakıldı.",
+      "paidInto": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
+      "held": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
+      "released": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
       "ewayBill": "50.000 rupi üzeri mal: yükle e-sevk belgesi gitmelidir.",
       "notTaxInvoice": "Bu ticaret makbuzudur, GST vergi faturası değil. Gerçek ödemelerle vergi faturası gelir.",
       "print": "Yazdır",
@@ -2106,8 +2109,9 @@
       "missingTitle": "Makbuz bulunamadı",
       "missingBody": "Ticaret sizin değil veya bağlantı yanlış.",
       "pendingTitle": "Henüz makbuz yok",
-      "pendingBody": "Alıcı emanet hesaba ödediğinde makbuz oluşur.",
-      "declinedBody": "Ticaret reddedildiği için makbuz yok."
+      "pendingBody": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "declinedBody": "Ticaret reddedildiği için makbuz yok.",
+      "unverified": "Doğrulanmadı"
     },
     "errors": {
       "generic": "Bir sorun oluştu. Tekrar deneyin.",
@@ -2430,7 +2434,7 @@
           "body": "Geri dönüştürülmüş malzemeden yeni ürün yapar."
         }
       },
-      "money": "Haneler kapıda nakit veya UPI alır. İşletmeler arası emanet ödeme planlanıyor.",
+      "money": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
       "saathi": "Saathi çalışanları zincir boyunca toplama, ayrıştırma ve vardiyalarda yardımcı olur."
     },
     "roles": {
@@ -2454,7 +2458,7 @@
         "title": "Ayrıştırma sahaları",
         "one": "Yakındaki dükkânların stokunu görün.",
         "two": "Toplu alın, balyaları geri dönüşümcülere satın.",
-        "three": "Planlanıyor: ödeme teslimata kadar emanette tutulur.",
+        "three": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
         "cta": "Saha olarak katılın"
       },
       "recycler": {
@@ -2467,7 +2471,7 @@
       "manufacturer": {
         "title": "Üreticiler",
         "one": "Geri dönüşümcülerin üretimini görün.",
-        "two": "Planlanıyor: emanet ödemeyle geri dönüştürülmüş malzeme siparişi.",
+        "two": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
         "three": "EPR raporları için kayıtlar.",
         "cta": "Üretici olarak katılın"
       },
@@ -2491,7 +2495,7 @@
         "body": "Dükkânlar kendi fiyatını belirler ama malzeme için yayımladığımız minimumun altına inemez."
       },
       "escrow": {
-        "title": "Planlanıyor: işletme ticaretinde emanet ödeme",
+        "title": "Ödeme altyapısı bekleniyor",
         "body": "Demo ödeme adımlarını gösterir; gerçek para tutmaz veya aktarmaz."
       },
       "receipts": {
@@ -2695,7 +2699,7 @@
     },
     "yard": {
       "name": "Ayrıştırma sahaları",
-      "body": "Planlanıyor: hurdacılardan alın, ayrıştırıp balyalayın ve sınıflandırılmış partileri emanet ödemeyle geri dönüşümcülere satın."
+      "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
     },
     "recycler": {
       "name": "Geri dönüşümcüler",
@@ -3162,7 +3166,7 @@
       "view": "{number} makbuzunu gör",
       "unknown": "Artık Luma.Green’de olmayan işletme",
       "empty": "Henüz makbuz yok",
-      "emptyBody": "Alıcı emanet hesaba ödediğinde makbuz oluşur."
+      "emptyBody": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
     },
     "epr": {
       "streams": {

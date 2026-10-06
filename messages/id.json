@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Dagang",
-      "summary": "Layanan rekening penampungan yang direncanakan akan menahan pembayaran hingga pengiriman selesai. Demo saat ini hanya mencatat pembayaran simulasi."
+      "summary": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
     },
     "record": {
       "title": "Catat",
@@ -174,14 +174,14 @@
       "error": "Daftar kode gagal dimuat."
     },
     "escrow": {
-      "body": "Layanan rekening penampungan yang direncanakan akan menahan pembayaran hingga pengiriman selesai. Demo saat ini hanya mencatat pembayaran simulasi.",
-      "title": "Direncanakan: Rekening penampungan antarusaha",
-      "nav": "Rekening penampungan",
+      "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "title": "Menunggu gateway",
+      "nav": "Menunggu gateway",
       "steps": {
         "accepted": "Penjual menerima pesanan",
-        "paid": "Pembeli membayar ke rekening penampungan",
+        "paid": "Menunggu gateway",
         "dispatched": "Penjual mengirim barang",
-        "released": "Pembeli mengonfirmasi dan uang dilepaskan"
+        "released": "Menunggu gateway"
       }
     },
     "verification": {
@@ -198,7 +198,7 @@
       "body": "Kode dan aturan bersifat terbuka dan gratis. Gunakan di toko, tempat pemilahan, atau pabrik Anda, di dalam maupun di luar Luma.Green, dan sampaikan cara memperbaikinya."
     },
     "metaTitle": "Standar Luma.Green",
-    "metaDescription": "Direncanakan: Kode bahan terbuka dan aturan sederhana untuk perdagangan bahan daur ulang yang adil di India: mutu, penimbangan, tanda terima, verifikasi, dan rekening penampungan. Bebas diterapkan siapa pun.",
+    "metaDescription": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
     "eyebrow": "Standar terbuka",
     "title": "Standar Luma.Green",
     "lead": "Aturan sederhana dan terbuka untuk perdagangan bahan daur ulang yang adil: satu kode tiap bahan, mutu jelas, penimbangan jujur, dan catatan setiap serah terima. Siapa pun di industri ini dapat menerapkannya.",
@@ -256,7 +256,7 @@
   },
   "howItWorks": {
     "metaTitle": "Cara kerja",
-    "metaDescription": "Direncanakan: Alur bahan daur ulang di Luma.Green: dijual dari rumah dengan harga adil, diperdagangkan sepanjang rantai dengan rekening penampungan, dan dicatat setiap serah terima.",
+    "metaDescription": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
     "title": "Cara kerja Luma.Green",
     "lead": "Bahan berpindah dari rumah ke toko pengumpulan, tempat pemilahan, dan pendaur ulang sebelum menjadi sesuatu yang baru. Luma.Green mencatat setiap serah terima.",
     "stepLabel": "Langkah {number}",
@@ -267,7 +267,7 @@
       "point3": "Tautan pelacakan tanpa perlu akun"
     },
     "trade": {
-      "body": "Demo: Pengepul menjual stok terpilah ke tempat pemilahan, tempat pemilahan menjual bal ke pendaur ulang, dan pendaur ulang menjual serpihan, butiran, serta batangan ke pabrik. Pembayaran pembeli menunggu di rekening penampungan hingga barang tiba. Demo menampilkan tahap pembayaran, tetapi tidak menyimpan atau memindahkan uang sungguhan.",
+      "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
       "point1": "Hanya usaha terverifikasi yang dapat berdagang",
       "point2": "Stok berpindah saat muatan dikirim dan diterima",
       "point3": "Tanda terima bernomor untuk setiap transaksi yang dibayar"
@@ -366,11 +366,11 @@
     },
     "guides": {
       "escrow": {
-        "summary": "Layanan rekening penampungan yang direncanakan akan menahan pembayaran hingga pengiriman selesai. Demo saat ini hanya mencatat pembayaran simulasi.",
+        "summary": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
         "steps": {
           "pay": {
-            "title": "Pembeli membayar ke rekening penampungan",
-            "body": "Uang ditahan dengan aman, belum pada penjual. Penjual dapat melihat uang tersedia sebelum memuat."
+            "title": "Menunggu gateway",
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "request": {
             "title": "Pembeli mengirim permintaan",
@@ -386,10 +386,10 @@
           },
           "confirm": {
             "title": "Pembeli mengonfirmasi pengiriman",
-            "body": "Periksa berat dan mutu, lalu konfirmasi. Uang dilepaskan kepada penjual."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           }
         },
-        "title": "Panduan demo: Perlindungan transaksi dengan rekening penampungan"
+        "title": "Menunggu gateway"
       },
       "weighAndPay": {
         "steps": {
@@ -432,8 +432,8 @@
             "body": "Pilih kilo dan kirim. Pendaur ulang menerima atau menolak."
           },
           "pay": {
-            "title": "Bayar ke rekening penampungan",
-            "body": "Bayar setelah diterima. Uang ditahan hingga Anda mengonfirmasi pengiriman."
+            "title": "Menunggu gateway",
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "receive": {
             "title": "Terima muatan",
@@ -557,7 +557,7 @@
           },
           "hold": {
             "title": "Jangan konfirmasi muatan kurang",
-            "body": "Konfirmasi melepaskan uang. Sebelum dikonfirmasi, uang tetap di rekening penampungan."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "report": {
             "title": "Laporkan dengan foto",
@@ -857,7 +857,7 @@
           },
           "sell": {
             "title": "Terima permintaan tempat pemilahan",
-            "body": "Periksa kilo dan harga, lalu terima. Tempat pemilahan membayar ke rekening penampungan sebelum mengambil."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -896,8 +896,8 @@
             "body": "Pilih jumlah kilo yang diinginkan. Harga per kg terlihat sebelum dikirim."
           },
           "pay": {
-            "title": "Bayar ke rekening penampungan",
-            "body": "Saat pengepul menerima, lakukan pembayaran. Uang ditahan sampai Anda mengonfirmasi."
+            "title": "Menunggu gateway",
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "collect": {
             "title": "Ambil dan timbang",
@@ -923,7 +923,7 @@
           },
           "accept": {
             "title": "Terima, lalu tunggu pembayaran",
-            "body": "Muat hanya setelah uang pembeli masuk rekening penampungan."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "dispatch": {
             "title": "Kirim muatan",
@@ -931,7 +931,7 @@
           },
           "paid": {
             "title": "Terima pembayaran",
-            "body": "Saat pendaur ulang mengonfirmasi pengiriman, uang dilepaskan kepada Anda."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -948,8 +948,8 @@
             "body": "Pilih kilo. Harga per kg terlihat sebelum dikirim."
           },
           "pay": {
-            "title": "Bayar ke rekening penampungan",
-            "body": "Setelah tempat pemilahan menerima, bayar. Uang ditahan hingga Anda mengonfirmasi pengiriman."
+            "title": "Menunggu gateway",
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "confirm": {
             "title": "Timbang, periksa, konfirmasi",
@@ -971,11 +971,11 @@
           },
           "load": {
             "title": "Muat setelah pembayaran",
-            "body": "Terima, lalu kirim muatan setelah pembayaran masuk rekening penampungan."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           },
           "paid": {
             "title": "Terima pembayaran saat terkirim",
-            "body": "Uang dilepaskan saat produsen mengonfirmasi."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -997,7 +997,7 @@
           },
           "decide": {
             "title": "Konfirmasi atau laporkan",
-            "body": "Semuanya sesuai? Konfirmasi. Tidak sesuai? Laporkan dengan foto, dan uang tetap di rekening penampungan."
+            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
           }
         }
       },
@@ -1115,7 +1115,7 @@
         "name": "Tempat pemilahan",
         "who": "Membeli dari pengepul dan memilah lebih lanjut",
         "title": "Bantuan tempat pemilahan",
-        "lead": "Demo: Cari stok sekitar, jual bal terpilah ke pendaur ulang, dan berdagang aman dengan rekening penampungan."
+        "lead": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "recycler": {
         "name": "Pendaur ulang",
@@ -1173,7 +1173,7 @@
     "replyTime": "Kami membalas dalam satu hari kerja.",
     "search": {
       "label": "Cari bantuan",
-      "placeholder": "Coba: kode SMS atau rekening penampungan",
+      "placeholder": "Menunggu gateway",
       "clear": "Hapus pencarian",
       "summary": "{count, plural, =0 {Tidak ada jawaban} one {# jawaban} other {# jawaban}} untuk “{query}”",
       "topicSummary": "{count, plural, =0 {Tidak ada jawaban} one {# jawaban} other {# jawaban}} tentang {topic}",
@@ -1291,7 +1291,7 @@
       },
       "paidByYard": {
         "q": "Bagaimana saya dibayar saat menjual ke tempat pemilahan?",
-        "a": "Untuk saat ini, sepakati pembayaran langsung dengan tempat pemilahan. Rekening penampungan direncanakan; demo tidak memindahkan uang."
+        "a": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "whoSeesShop": {
         "q": "Siapa dapat melihat toko saya?",
@@ -1318,8 +1318,8 @@
         "a": "Penjual menawarkan harga per kg. Anda melihatnya sebelum mengirim permintaan dan dapat menelepon untuk menyepakati rincian."
       },
       "whatIsEscrow": {
-        "q": "Apa itu rekening penampungan?",
-        "a": "Tahap perantara yang aman: uang pembeli ditahan sampai muatan tiba sesuai kesepakatan, lalu dilepaskan kepada penjual. Rekening penampungan usaha masih direncanakan."
+        "q": "Menunggu gateway",
+        "a": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "whenSellerPaid": {
         "q": "Kapan penjual dibayar?",
@@ -1415,7 +1415,7 @@
       "settingPrices": "Menentukan harga",
       "buyingFromKabadiwalas": "Membeli dari pengepul",
       "listingBales": "Menawarkan bal ke pendaur ulang",
-      "escrowExplained": "Demo: Rekening penampungan dalam dua menit",
+      "escrowExplained": "Menunggu gateway",
       "buyingFromYards": "Membeli dari tempat pemilahan",
       "sellingOutput": "Menjual hasil produksi",
       "eprPlainWords": "EPR dengan bahasa sederhana",
@@ -1478,7 +1478,7 @@
         "title": "Demo: Menjual ke tempat pemilahan",
         "p1": "Catat pemilahan agar stok akurat.",
         "p2": "Tampilkan stok ke tempat pemilahan sekitar.",
-        "p3": "Muat hanya setelah pembayaran masuk rekening penampungan."
+        "p3": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "buyingStock": {
         "title": "Membeli stok",
@@ -1487,8 +1487,8 @@
         "p3": "Timbang setiap muatan sebelum mengonfirmasi."
       },
       "tradingWithEscrow": {
-        "title": "Demo: Berdagang dengan rekening penampungan",
-        "p1": "Pembeli membayar ke rekening penampungan setelah penjual menerima.",
+        "title": "Menunggu gateway",
+        "p1": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
         "p2": "Penjual hanya memuat setelah uang tersedia.",
         "p3": "Konfirmasi pengiriman melepaskan uang."
       },
@@ -1507,7 +1507,7 @@
       "buyingInputs": {
         "title": "Demo: Membeli bahan baku",
         "p1": "Cari bal bermutu dari tempat pemilahan di Beli.",
-        "p2": "Bayar ke rekening penampungan setelah tempat pemilahan menerima.",
+        "p2": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
         "p3": "Periksa mutu sebelum mengonfirmasi."
       },
       "eprBasics": {
@@ -1520,7 +1520,7 @@
         "title": "Demo: Memesan bahan daur ulang",
         "p1": "Bandingkan penawaran menurut jenis, kilo, dan harga.",
         "p2": "Kirim pesanan sesuai kilo yang dibutuhkan.",
-        "p3": "Bayar ke rekening penampungan setelah diterima."
+        "p3": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
       },
       "checkingDeliveries": {
         "title": "Memeriksa pengiriman",
@@ -1900,11 +1900,11 @@
       "kgTooMuch": "Hanya tersedia {weight}.",
       "total": "Jumlah total",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Anda membayar ke rekening penampungan setelah {seller} menerima. Uang diteruskan kepada mereka saat Anda mengonfirmasi pengiriman.",
+      "escrow": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
       "ewayBill": "Di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
       "submit": "Kirim permintaan",
       "sent": "Permintaan dikirim ke {seller}",
-      "sentNext": "Anda membayar ke rekening penampungan setelah mereka menerima.",
+      "sentNext": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
       "seeTrades": "Lihat transaksi"
     },
     "sell": {
@@ -1971,8 +1971,8 @@
       "lead": "{kind, select, yard {Beli dari pengepul, jual bal terpilah ke pendaur ulang.} recycler {Beli bahan daur ulang terpilah dari tempat pemilahan, jual bahan daur ulang ke produsen.} manufacturer {Beli bahan daur ulang dari pendaur ulang terverifikasi.} other {Sekilas transaksi Anda.}}",
       "statsTitle": "Sekilas",
       "stats": {
-        "escrow": "Di rekening penampungan",
-        "escrowHint": "Dilepaskan saat pengiriman dikonfirmasi",
+        "escrow": "Belum diverifikasi",
+        "escrowHint": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
         "waiting": "Menunggu Anda",
         "waitingHint": "{count, plural, =0 {Semua sudah ditangani} one {# transaksi perlu tindakan} other {# transaksi perlu tindakan}}",
         "listings": "Dijual",
@@ -1980,7 +1980,8 @@
         "offers": "Lot daur ulang",
         "offersHint": "Dijual oleh pendaur ulang",
         "completed": "Selesai bulan ini",
-        "completedHint": "{amount} diperdagangkan"
+        "completedHint": "{amount} diperdagangkan",
+        "gatewayPending": "Menunggu gateway"
       },
       "waitingTitle": "Menunggu Anda",
       "allTrades": "Semua transaksi",
@@ -2000,7 +2001,7 @@
         "title": "{material} · {weight}",
         "from": "Dari {name} · {area}",
         "to": "Ke {name} · {area}",
-        "inEscrow": "{amount} ditahan di rekening penampungan",
+        "inEscrow": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
         "ewayBill": "Di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
         "updated": "Diperbarui {when}",
         "receipt": "Tanda terima {number}",
@@ -2013,7 +2014,7 @@
         "accepted": "Diterima",
         "label": "Kemajuan transaksi",
         "requested": "Diminta",
-        "paid_to_escrow": "Di rekening penampungan",
+        "paid_to_escrow": "Belum diverifikasi",
         "dispatched": "Dikirim",
         "completed": "Terkirim",
         "srStep": "{step}: {state}",
@@ -2024,7 +2025,7 @@
         }
       },
       "declineNo": "Pertahankan",
-      "lead": "Setiap transaksi, langkah demi langkah. Uang tetap dalam rekening penampungan hingga pembeli mengonfirmasi pengiriman.",
+      "lead": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
       "buying": "Pembelian",
       "selling": "Penjualan",
       "tabsLabel": "Pembelian atau penjualan",
@@ -2042,20 +2043,20 @@
           "seller": "{name} ingin membeli ini. Terima untuk mencadangkannya bagi mereka."
         },
         "accepted": {
-          "buyer": "Diterima. Bayar ke rekening penampungan untuk melanjutkan: uang ditahan hingga Anda mengonfirmasi pengiriman.",
-          "seller": "Menunggu {name} membayar ke rekening penampungan."
+          "buyer": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+          "seller": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
         },
         "paid_to_escrow": {
-          "buyer": "Uang Anda aman di rekening penampungan. Menunggu {name} mengirim.",
-          "seller": "Uang aman di rekening penampungan. Kirim muatan, lalu tandai dikirim."
+          "buyer": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
+          "seller": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi."
         },
         "dispatched": {
-          "buyer": "Dalam perjalanan. Periksa muatan, lalu konfirmasi pengiriman untuk melepaskan uang.",
-          "seller": "Dalam perjalanan. Uang diteruskan kepada Anda saat {name} mengonfirmasi pengiriman."
+          "buyer": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
+          "seller": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi."
         },
         "completed": {
-          "buyer": "Terkirim. Uang sudah diteruskan kepada {name}.",
-          "seller": "Terkirim. Uang sudah diteruskan kepada Anda."
+          "buyer": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
+          "seller": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi."
         },
         "declined": {
           "buyer": "{name} menolak pesanan ini atau lot habis terjual.",
@@ -2065,19 +2066,21 @@
       "action": {
         "accept": "Terima pesanan",
         "decline": "Tolak",
-        "pay": "Bayar {amount} ke rekening penampungan",
+        "pay": "Menunggu gateway",
         "dispatch": "Tandai dikirim",
         "confirm": "Konfirmasi pengiriman"
       },
       "done": {
         "accept": "Pesanan diterima",
         "decline": "Pesanan ditolak",
-        "pay": "Dibayar ke rekening penampungan. Tanda terima {number}",
+        "pay": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
         "dispatch": "Ditandai dikirim",
-        "confirm": "Pengiriman dikonfirmasi. Uang dilepaskan kepada penjual."
+        "confirm": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi."
       },
       "declineConfirm": "Tolak pesanan dari {name}? Tindakan ini tidak dapat dibatalkan.",
-      "declineYes": "Ya, tolak"
+      "declineYes": "Ya, tolak",
+      "gatewayPending": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "legacyUnverified": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi."
     },
     "receipt": {
       "dateLabel": "Tanggal",
@@ -2089,16 +2092,16 @@
       "title": "Tanda terima transaksi",
       "numberLabel": "No. tanda terima",
       "statusLabel": "Pembayaran",
-      "inEscrow": "Di rekening penampungan",
-      "settled": "Dilepaskan",
+      "inEscrow": "Belum diverifikasi",
+      "settled": "Belum diverifikasi",
       "noGstin": "Tidak terdaftar GST",
       "quantity": "Kuantitas",
       "rate": "Tarif",
       "total": "Jumlah total",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Dibayar ke rekening penampungan Luma.Green pada {date}.",
-      "held": "Ditahan di rekening penampungan hingga pembeli mengonfirmasi pengiriman.",
-      "released": "Dilepaskan kepada penjual pada {date}.",
+      "paidInto": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
+      "held": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
+      "released": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
       "ewayBill": "Barang bernilai di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
       "notTaxInvoice": "Ini tanda terima transaksi, bukan faktur pajak GST. Faktur pajak menyertai pembayaran nyata.",
       "print": "Cetak",
@@ -2106,8 +2109,9 @@
       "missingTitle": "Tanda terima tidak ditemukan",
       "missingBody": "Transaksi ini bukan milik Anda atau tautannya salah.",
       "pendingTitle": "Belum ada tanda terima",
-      "pendingBody": "Tanda terima dibuat saat pembeli membayar ke rekening penampungan.",
-      "declinedBody": "Transaksi ini ditolak, jadi tidak ada tanda terima."
+      "pendingBody": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "declinedBody": "Transaksi ini ditolak, jadi tidak ada tanda terima.",
+      "unverified": "Belum diverifikasi"
     },
     "errors": {
       "generic": "Terjadi kesalahan. Coba lagi.",
@@ -2430,7 +2434,7 @@
           "body": "Membuat produk baru dari bahan daur ulang."
         }
       },
-      "money": "Rumah tangga menerima uang tunai atau UPI di depan pintu. Rekening penampungan antarusaha masih direncanakan.",
+      "money": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
       "saathi": "Saathi membantu di seluruh rantai melalui penjemputan, pemilahan, dan kerja sif."
     },
     "roles": {
@@ -2454,7 +2458,7 @@
         "title": "Tempat pemilahan",
         "one": "Lihat stok toko di sekitar.",
         "two": "Beli dalam jumlah besar dan jual bal ke pendaur ulang.",
-        "three": "Direncanakan: Pembayaran ditahan dalam rekening penampungan hingga pengiriman selesai.",
+        "three": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
         "cta": "Gabung sebagai tempat pemilahan"
       },
       "recycler": {
@@ -2467,7 +2471,7 @@
       "manufacturer": {
         "title": "Produsen",
         "one": "Lihat hasil produksi pendaur ulang.",
-        "two": "Direncanakan: Pesan bahan daur ulang dengan rekening penampungan.",
+        "two": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
         "three": "Catatan untuk laporan EPR Anda.",
         "cta": "Gabung sebagai produsen"
       },
@@ -2491,7 +2495,7 @@
         "body": "Toko menentukan harga sendiri, tetapi tidak di bawah harga minimum yang kami terbitkan untuk setiap bahan."
       },
       "escrow": {
-        "title": "Direncanakan: Rekening penampungan untuk transaksi usaha",
+        "title": "Menunggu gateway",
         "body": "Demo menampilkan tahap pembayaran, tetapi tidak menyimpan atau memindahkan uang sungguhan."
       },
       "receipts": {
@@ -2695,7 +2699,7 @@
     },
     "yard": {
       "name": "Tempat pemilahan",
-      "body": "Direncanakan: Beli dari pengepul, pilah dan buat bal, lalu jual lot bermutu ke pendaur ulang dengan pembayaran ditahan di rekening penampungan."
+      "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
     },
     "recycler": {
       "name": "Pendaur ulang",
@@ -3162,7 +3166,7 @@
       "view": "Lihat tanda terima {number}",
       "unknown": "Usaha yang sudah tidak ada di Luma.Green",
       "empty": "Belum ada tanda terima",
-      "emptyBody": "Tanda terima dibuat saat pembeli membayar ke rekening penampungan."
+      "emptyBody": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
     },
     "epr": {
       "streams": {

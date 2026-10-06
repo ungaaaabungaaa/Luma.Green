@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Handelen",
-      "summary": "De voorgestelde escrowdienst zou de betaling vasthouden tot de levering. De huidige demo registreert alleen gesimuleerde betalingen."
+      "summary": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
     },
     "record": {
       "title": "Registreren",
@@ -119,7 +119,7 @@
           "body": "Maken nieuwe producten van gerecycled materiaal."
         }
       },
-      "money": "Huishoudens ontvangen contant geld of UPI aan de deur. Escrow tussen bedrijven is gepland.",
+      "money": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
       "saathi": "Saathi's helpen in de hele keten met inzameling, sortering en diensten."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Sorteerterreinen",
         "one": "Bekijk de voorraad van winkels in de buurt.",
         "two": "Koop in grote hoeveelheden en verkoop balen aan recyclers.",
-        "three": "Gepland: betaling in escrow tot de levering.",
+        "three": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
         "cta": "Aanmelden als sorteerterrein"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Fabrikanten",
         "one": "Bekijk wat recyclers produceren.",
-        "two": "Gepland: bestel gerecycled materiaal met escrow.",
+        "two": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
         "three": "Registraties voor uw EPR-rapportages.",
         "cta": "Aanmelden als fabrikant"
       },
@@ -180,7 +180,7 @@
         "body": "Winkels bepalen hun eigen prijzen, maar nooit onder het minimum dat we per materiaal publiceren."
       },
       "escrow": {
-        "title": "Gepland: escrow voor zakelijke transacties",
+        "title": "Wachten op betaalprovider",
         "body": "De demo toont de betaalstappen, maar houdt geen echt geld vast en maakt niets over."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "De Luma.Green-standaard",
-    "metaDescription": "Gepland: open materiaalcodes en eenvoudige regels voor eerlijke recyclebaar materiaalhandel in India: kwaliteitsindeling, wegen, bonnen, verificatie en escrow. Vrij te gebruiken.",
+    "metaDescription": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
     "eyebrow": "Open standaard",
     "title": "De Luma.Green-standaard",
     "lead": "Eenvoudige, open regels voor eerlijke recyclebaar materiaalhandel: één code per materiaal, duidelijke kwaliteitsindeling, eerlijk wegen en een registratie bij elke overdracht. Iedereen in de sector kan ze gebruiken.",
@@ -398,14 +398,14 @@
       "saathi": "Saathi's: een identiteitsbewijs met foto en een bijpassende selfie."
     },
     "escrow": {
-      "title": "Gepland: escrow tussen bedrijven",
-      "nav": "Escrowregeling",
-      "body": "De voorgestelde escrowdienst zou de betaling vasthouden tot de levering. De huidige demo registreert alleen gesimuleerde betalingen.",
+      "title": "Wachten op betaalprovider",
+      "nav": "Wachten op betaalprovider",
+      "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
       "steps": {
         "accepted": "De verkoper accepteert de bestelling",
-        "paid": "De koper betaalt op de escrowrekening",
+        "paid": "Wachten op betaalprovider",
         "dispatched": "De verkoper verzendt de goederen",
-        "released": "De koper bevestigt en het geld wordt vrijgegeven"
+        "released": "Wachten op betaalprovider"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "Hoe het werkt",
-    "metaDescription": "Gepland: hoe recyclebaar materiaal via Luma.Green beweegt, thuis verkocht voor een eerlijke prijs, verder verhandeld met escrow en bij elke overdracht geregistreerd.",
+    "metaDescription": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
     "title": "Hoe Luma.Green werkt",
     "lead": "Materialen gaan van huishoudens naar inzamelpunten, sorteerterreinen en recyclers voordat ze iets nieuws worden. Luma.Green registreert elke overdracht.",
     "stepLabel": "Stap {number}",
@@ -563,7 +563,7 @@
       "point3": "Een volglink zonder account"
     },
     "trade": {
-      "body": "Demo: kabadiwala's verkopen gesorteerde voorraad aan sorteerterreinen, die balen verkopen aan recyclers. Recyclers verkopen vlokken, korrels en ingots aan fabrieken. De betaling blijft in escrow tot de goederen aankomen. De demo toont betaalstappen, maar houdt geen echt geld vast en maakt niets over.",
+      "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
       "point1": "Alleen geverifieerde bedrijven kunnen handelen",
       "point2": "Voorraad wordt verplaatst bij verzending en ontvangst",
       "point3": "Een genummerde transactiebon voor elke betaalde transactie"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Sorteerterreinen",
-      "body": "Gepland: koop van kabadiwala's, sorteer en pers balen en verkoop op kwaliteit ingedeelde loten aan recyclers met betaling in escrow."
+      "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
     },
     "recycler": {
       "name": "Recyclers",
@@ -624,7 +624,7 @@
     "replyTime": "We antwoorden binnen één werkdag.",
     "search": {
       "label": "Hulp doorzoeken",
-      "placeholder": "Probeer: sms-code of escrow",
+      "placeholder": "Wachten op betaalprovider",
       "clear": "Zoekopdracht wissen",
       "summary": "{count, plural, =0 {Geen antwoorden} one {# antwoord} other {# antwoorden}} voor ‘{query}’",
       "topicSummary": "{count, plural, =0 {Geen antwoorden} one {# antwoord} other {# antwoorden}} over {topic}",
@@ -671,7 +671,7 @@
         "name": "Sorteerterreinen",
         "who": "Kopen van kabadiwala's en verder sorteren",
         "title": "Hulp voor sorteerterreinen",
-        "lead": "Demo: vind voorraad in de buurt, verkoop gesorteerde balen aan recyclers en handel veilig met escrow."
+        "lead": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
       },
       "recycler": {
         "name": "Recyclers",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Demogids: hoe escrow een transactie beschermt",
-        "summary": "De voorgestelde escrowdienst zou de betaling vasthouden tot de levering. De huidige demo registreert alleen gesimuleerde betalingen.",
+        "title": "Wachten op betaalprovider",
+        "summary": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
         "steps": {
           "request": {
             "title": "De koper stuurt een verzoek",
@@ -890,8 +890,8 @@
             "body": "Er is nog niets betaald. Bel elkaar om zo nodig details af te spreken."
           },
           "pay": {
-            "title": "De koper betaalt in escrow",
-            "body": "Het geld wordt veilig bewaard en staat nog niet bij de verkoper. De verkoper ziet vóór het laden dat het geld er is."
+            "title": "Wachten op betaalprovider",
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           },
           "dispatch": {
             "title": "De verkoper verstuurt de lading",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "De koper bevestigt de levering",
-            "body": "Controleer gewicht en kwaliteit en bevestig. Het geld wordt aan de verkoper vrijgegeven."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Bevestig geen onvolledige lading",
-            "body": "Bevestiging geeft het geld vrij. Totdat u bevestigt, blijft het in escrow."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           },
           "report": {
             "title": "Meld het met foto's",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Accepteer een verzoek van een terrein",
-            "body": "Controleer kilo's en prijs en accepteer. Het terrein betaalt in escrow voordat het ophaalt."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Kies hoeveel kilo's u wilt. De prijs per kg staat vóór het versturen in beeld."
           },
           "pay": {
-            "title": "Betaal in escrow",
-            "body": "Betaal zodra de kabadiwala accepteert. Het geld blijft in bewaring tot u bevestigt."
+            "title": "Wachten op betaalprovider",
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           },
           "collect": {
             "title": "Ophalen en wegen",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Accepteer en wacht op betaling",
-            "body": "Laad pas zodra het geld van de koper in escrow staat."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           },
           "dispatch": {
             "title": "Verstuur de lading",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Krijg betaald",
-            "body": "Als de recycler de levering bevestigt, wordt het geld aan u vrijgegeven."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Kies de kilo's. De prijs per kg staat vóór het versturen in beeld."
           },
           "pay": {
-            "title": "Betaal in escrow",
-            "body": "Betaal nadat het terrein accepteert. Het geld blijft in bewaring tot u de levering bevestigt."
+            "title": "Wachten op betaalprovider",
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           },
           "confirm": {
             "title": "Wegen, controleren, bevestigen",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Laden na betaling",
-            "body": "Accepteer en verstuur de lading zodra de betaling in escrow staat."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           },
           "paid": {
             "title": "Betaald bij levering",
-            "body": "Het geld wordt vrijgegeven als de fabrikant bevestigt."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Kies de kilo's en verstuur. De recycler accepteert of wijst af."
           },
           "pay": {
-            "title": "Betaal in escrow",
-            "body": "Betaal na acceptatie. Het geld blijft in bewaring tot u de levering bevestigt."
+            "title": "Wachten op betaalprovider",
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           },
           "receive": {
             "title": "Ontvang de lading",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Bevestig of meld een probleem",
-            "body": "Alles goed? Bevestig. Niet goed? Meld het met foto's en het geld blijft in escrow."
+            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "Hoe word ik betaald als ik aan een sorteerterrein verkoop?",
-        "a": "Spreek de betaling voorlopig rechtstreeks met het terrein af. Escrow is gepland; de demo verplaatst geen geld."
+        "a": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
       },
       "whoSeesShop": {
         "q": "Wie kan mijn winkel zien?",
@@ -1642,8 +1642,8 @@
         "a": "De verkoper vermeldt een prijs per kg. U ziet die voordat u een verzoek stuurt en kunt bellen om details af te spreken."
       },
       "whatIsEscrow": {
-        "q": "Wat is escrow?",
-        "a": "Een veilige tussenstap: het geld van de koper blijft in bewaring tot de lading volgens afspraak aankomt en gaat daarna naar de verkoper. Zakelijke escrow is gepland."
+        "q": "Wachten op betaalprovider",
+        "a": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
       },
       "whenSellerPaid": {
         "q": "Wanneer wordt de verkoper betaald?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Uw prijzen instellen",
       "buyingFromKabadiwalas": "Kopen van kabadiwala's",
       "listingBales": "Balen aanbieden aan recyclers",
-      "escrowExplained": "Demo: escrow in twee minuten",
+      "escrowExplained": "Wachten op betaalprovider",
       "buyingFromYards": "Kopen van sorteerterreinen",
       "sellingOutput": "Uw productie verkopen",
       "eprPlainWords": "EPR in gewone taal",
@@ -1802,7 +1802,7 @@
         "title": "Demo: verkopen aan sorteerterreinen",
         "p1": "Registreer uw sorteerwerk voor een juiste voorraad.",
         "p2": "Toon uw voorraad aan terreinen in de buurt.",
-        "p3": "Laad pas nadat de betaling in escrow staat."
+        "p3": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
       },
       "buyingStock": {
         "title": "Voorraad kopen",
@@ -1811,8 +1811,8 @@
         "p3": "Weeg elke lading voordat u bevestigt."
       },
       "tradingWithEscrow": {
-        "title": "Demo: handelen met escrow",
-        "p1": "De koper betaalt in escrow nadat de verkoper accepteert.",
+        "title": "Wachten op betaalprovider",
+        "p1": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
         "p2": "De verkoper laadt pas als het geld er staat.",
         "p3": "Bevestiging van de levering geeft het geld vrij."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Demo: uw grondstoffen kopen",
         "p1": "Vind balen op kwaliteitsklasse van sorteerterreinen onder Kopen.",
-        "p2": "Betaal in escrow zodra het terrein accepteert.",
+        "p2": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
         "p3": "Controleer de kwaliteitsklasse voordat u bevestigt."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: gerecycled materiaal bestellen",
         "p1": "Vergelijk aanbiedingen op type, kilo's en prijs.",
         "p2": "Bestel de kilo's die u nodig heeft.",
-        "p3": "Betaal in escrow zodra de bestelling is geaccepteerd."
+        "p3": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
       },
       "checkingDeliveries": {
         "title": "Leveringen controleren",
@@ -2454,7 +2454,7 @@
       "view": "Bon {number} bekijken",
       "unknown": "Een bedrijf dat niet meer op Luma.Green staat",
       "empty": "Nog geen bonnen",
-      "emptyBody": "Een bon wordt gemaakt wanneer de koper op de escrowrekening betaalt."
+      "emptyBody": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
     },
     "epr": {
       "title": "EPR-registratie, boekjaar {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Er is maar {weight} beschikbaar.",
       "total": "Totaal",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "U betaalt op de escrowrekening nadat {seller} accepteert. Het geld gaat naar de verkoper zodra u de levering bevestigt.",
+      "escrow": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
       "ewayBill": "Boven ₹50.000: een e-waybill moet met deze lading meegaan.",
       "cancel": "Annuleren",
       "submit": "Verzoek sturen",
       "sending": "Versturen…",
       "sent": "Verzoek verstuurd naar {seller}",
-      "sentNext": "U betaalt op de escrowrekening zodra de verkoper accepteert.",
+      "sentNext": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
       "seeTrades": "Transacties bekijken"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Transacties",
-      "lead": "Elke transactie, stap voor stap. Het geld blijft in escrow tot de koper de levering bevestigt.",
+      "lead": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
       "buying": "Inkopen",
       "selling": "Verkopen",
       "tabsLabel": "Inkopen of verkopen",
@@ -2936,7 +2936,7 @@
         "from": "Van {name} · {area}",
         "to": "Aan {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} in escrow",
+        "inEscrow": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
         "ewayBill": "Boven ₹50.000: een e-waybill moet met deze lading meegaan.",
         "updated": "Bijgewerkt {when}",
         "receipt": "Bon {number}",
@@ -2947,7 +2947,7 @@
         "label": "Transactievoortgang",
         "requested": "Aangevraagd",
         "accepted": "Geaccepteerd",
-        "paid_to_escrow": "In bewaring",
+        "paid_to_escrow": "Niet geverifieerd",
         "dispatched": "Verzonden",
         "completed": "Geleverd",
         "srStep": "{step}: {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} wil dit kopen. Accepteer om het te reserveren."
         },
         "accepted": {
-          "buyer": "Geaccepteerd. Betaal op de escrowrekening om door te gaan: het geld blijft vast tot u de levering bevestigt.",
-          "seller": "Wachten op betaling door {name} op de escrowrekening."
+          "buyer": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+          "seller": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
         },
         "paid_to_escrow": {
-          "buyer": "Uw geld staat veilig in escrow. Wachten op verzending door {name}.",
-          "seller": "Het geld staat veilig in escrow. Verstuur de lading en markeer deze als verzonden."
+          "buyer": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
+          "seller": "Prototyperecord. Betaling en levering zijn niet geverifieerd."
         },
         "dispatched": {
-          "buyer": "Onderweg. Controleer de lading en bevestig de levering om het geld vrij te geven.",
-          "seller": "Onderweg. Het geld wordt aan u vrijgegeven als {name} de levering bevestigt."
+          "buyer": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
+          "seller": "Prototyperecord. Betaling en levering zijn niet geverifieerd."
         },
         "completed": {
-          "buyer": "Geleverd. Het geld is vrijgegeven aan {name}.",
-          "seller": "Geleverd. Het geld is aan u vrijgegeven."
+          "buyer": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
+          "seller": "Prototyperecord. Betaling en levering zijn niet geverifieerd."
         },
         "declined": {
           "buyer": "{name} heeft de bestelling afgewezen of het lot is uitverkocht.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Bestelling accepteren",
         "decline": "Afwijzen",
-        "pay": "{amount} in escrow betalen",
+        "pay": "Wachten op betaalprovider",
         "dispatch": "Markeren als verzonden",
         "confirm": "Levering bevestigen"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Bestelling geaccepteerd",
         "decline": "Bestelling afgewezen",
-        "pay": "In escrow betaald. Bon {number}",
+        "pay": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
         "dispatch": "Gemarkeerd als verzonden",
-        "confirm": "Levering bevestigd. Het geld is vrijgegeven aan de verkoper."
+        "confirm": "Prototyperecord. Betaling en levering zijn niet geverifieerd."
       },
       "declineConfirm": "Deze bestelling van {name} afwijzen? Dit kan niet worden teruggedraaid.",
       "declineYes": "Ja, afwijzen",
-      "declineNo": "Behouden"
+      "declineNo": "Behouden",
+      "gatewayPending": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "legacyUnverified": "Prototyperecord. Betaling en levering zijn niet geverifieerd."
     },
     "receipt": {
       "title": "Transactiebon",
       "numberLabel": "Bonnummer",
       "dateLabel": "Datum",
       "statusLabel": "Betaling",
-      "inEscrow": "In bewaring",
-      "settled": "Vrijgegeven",
+      "inEscrow": "Niet geverifieerd",
+      "settled": "Niet geverifieerd",
       "seller": "Verkoper",
       "buyer": "Koper",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Bedrag",
       "total": "Totaal",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Betaald op de Luma.Green-escrowrekening op {date}.",
-      "held": "In escrow gehouden tot de koper de levering bevestigt.",
-      "released": "Vrijgegeven aan de verkoper op {date}.",
+      "paidInto": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
+      "held": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
+      "released": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
       "ewayBill": "Goederen boven ₹50.000: een e-waybill moet met deze lading meegaan.",
       "notTaxInvoice": "Dit is een transactiebon, geen GST-belastingfactuur. Belastingfacturen horen bij echte betalingen.",
       "print": "Afdrukken",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Bon niet gevonden",
       "missingBody": "Deze transactie is niet van u of de link klopt niet.",
       "pendingTitle": "Nog geen bon",
-      "pendingBody": "De bon wordt gemaakt wanneer de koper op de escrowrekening betaalt.",
-      "declinedBody": "Deze transactie is afgewezen, dus er is geen bon."
+      "pendingBody": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "declinedBody": "Deze transactie is afgewezen, dus er is geen bon.",
+      "unverified": "Niet geverifieerd"
     },
     "home": {
       "greeting": "Namasté, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Transacties",
       "statsTitle": "In één oogopslag",
       "stats": {
-        "escrow": "In bewaring",
-        "escrowHint": "Vrijgegeven na bevestiging van de levering",
+        "escrow": "Niet geverifieerd",
+        "escrowHint": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
         "waiting": "Wacht op u",
         "waitingHint": "{count, plural, =0 {Alles bijgewerkt} one {# transactie vraagt een stap} other {# transacties vragen een stap}}",
         "listings": "Te koop",
@@ -3050,7 +3053,8 @@
         "offers": "Gerecyclede loten",
         "offersHint": "Te koop bij recyclers",
         "completed": "Deze maand klaar",
-        "completedHint": "{amount} verhandeld"
+        "completedHint": "{amount} verhandeld",
+        "gatewayPending": "Wachten op betaalprovider"
       },
       "waitingTitle": "Wacht op u",
       "allTrades": "Alle transacties",

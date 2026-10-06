@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
-import { FileTextIcon, ShieldCheckIcon, ShoppingCartIcon } from "lucide-react";
+import { FileTextIcon, InfoIcon, ShoppingCartIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
@@ -162,7 +162,7 @@ function BuyForm({
     try {
       await requestTrade({ listingId: listing.id, grams: wanted });
       toast.success(t("buy.sent", { seller: listing.seller.name }), {
-        description: t("buy.sentNext"),
+        description: t("trades.gatewayPending"),
         action: {
           label: t("buy.seeTrades"),
           onClick: () => {
@@ -269,11 +269,8 @@ function BuyForm({
       </div>
 
       <p className="flex gap-2 text-sm text-muted-foreground">
-        <ShieldCheckIcon
-          aria-hidden
-          className="mt-0.5 size-4 shrink-0 text-primary"
-        />
-        {t("buy.escrow", { seller: listing.seller.name })}
+        <InfoIcon aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+        {t("trades.gatewayPending")}
       </p>
       {total !== null && requiresEwayBill(total) ? (
         <p className="flex gap-2 border-s-2 border-primary ps-3 text-sm text-muted-foreground">

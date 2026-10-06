@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Comerciar",
-      "summary": "El servicio de depósito en garantía previsto retendría el pago hasta la entrega. La demostración actual solo registra pagos simulados."
+      "summary": "Se requiere una pasarela de pago. El pago aún no está disponible."
     },
     "record": {
       "title": "Registrar",
@@ -119,7 +119,7 @@
           "body": "Fabrica productos nuevos con material reciclado."
         }
       },
-      "money": "Los hogares reciben efectivo o un pago por UPI en la puerta. Está previsto el depósito en garantía entre empresas.",
+      "money": "Se requiere una pasarela de pago. El pago aún no está disponible.",
       "saathi": "Los Saathis ayudan en toda la cadena con recogidas, clasificación y turnos."
     },
     "roles": {
@@ -143,7 +143,7 @@
         "title": "Centros de clasificación",
         "one": "Consulta las existencias de las tiendas cercanas.",
         "two": "Compra al por mayor y vende balas a recicladores.",
-        "three": "Previsto: pago retenido en garantía hasta la entrega.",
+        "three": "Se requiere una pasarela de pago. El pago aún no está disponible.",
         "cta": "Registrarse como centro de clasificación"
       },
       "recycler": {
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Fabricantes",
         "one": "Consulta la producción de los recicladores.",
-        "two": "Previsto: pedidos de material reciclado con depósito en garantía.",
+        "two": "Se requiere una pasarela de pago. El pago aún no está disponible.",
         "three": "Registros para tus informes de responsabilidad ampliada del productor (EPR).",
         "cta": "Registrarse como fabricante"
       },
@@ -180,7 +180,7 @@
         "body": "Las tiendas fijan sus precios, pero nunca por debajo del mínimo que publicamos para cada material."
       },
       "escrow": {
-        "title": "Previsto: depósito en garantía entre empresas",
+        "title": "Esperando la pasarela",
         "body": "La demostración muestra los pasos del pago, pero no retiene ni transfiere dinero real."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "El estándar de Luma.Green",
-    "metaDescription": "Previsto: códigos abiertos de materiales y reglas sencillas para un comercio justo en la India: clasificación, pesaje, recibos, verificación y depósito en garantía. De uso gratuito para todos.",
+    "metaDescription": "Se requiere una pasarela de pago. El pago aún no está disponible.",
     "eyebrow": "Estándar abierto",
     "title": "El estándar de Luma.Green",
     "lead": "Reglas sencillas y abiertas para comerciar de forma justa: un código por material, clasificación clara, pesaje honesto y un registro en cada entrega. Cualquier participante del sector puede adoptarlas.",
@@ -398,14 +398,14 @@
       "saathi": "Saathis: documento con foto y una autofoto que coincida."
     },
     "escrow": {
-      "title": "Previsto: depósito en garantía entre empresas",
-      "nav": "Depósito en garantía",
-      "body": "El servicio de depósito en garantía previsto retendría el pago hasta la entrega. La demostración actual solo registra pagos simulados.",
+      "title": "Esperando la pasarela",
+      "nav": "Esperando la pasarela",
+      "body": "Se requiere una pasarela de pago. El pago aún no está disponible.",
       "steps": {
         "accepted": "El vendedor acepta el pedido",
-        "paid": "El comprador ingresa el pago en garantía",
+        "paid": "Esperando la pasarela",
         "dispatched": "El vendedor envía la mercancía",
-        "released": "El comprador confirma y se libera el dinero"
+        "released": "Esperando la pasarela"
       }
     },
     "adopt": {
@@ -552,7 +552,7 @@
   },
   "howItWorks": {
     "metaTitle": "Cómo funciona",
-    "metaDescription": "Previsto: el recorrido de los materiales en Luma.Green, vendidos desde casa a un precio justo, comercializados con depósito en garantía y registrados en cada entrega.",
+    "metaDescription": "Se requiere una pasarela de pago. El pago aún no está disponible.",
     "title": "Cómo funciona Luma.Green",
     "lead": "Los materiales pasan de los hogares a tiendas de recogida, centros de clasificación y recicladores antes de convertirse en algo nuevo. Luma.Green registra cada entrega.",
     "stepLabel": "Paso {number}",
@@ -563,7 +563,7 @@
       "point3": "Un enlace de seguimiento, sin necesidad de cuenta"
     },
     "trade": {
-      "body": "Demostración: los kabadiwalas venden existencias clasificadas a los centros; estos venden balas a los recicladores, que venden escamas, granza y lingotes a las fábricas. El pago del comprador queda en garantía hasta recibir la mercancía. La demostración muestra los pasos del pago, pero no retiene ni transfiere dinero real.",
+      "body": "Se requiere una pasarela de pago. El pago aún no está disponible.",
       "point1": "Solo pueden operar empresas verificadas",
       "point2": "Las existencias se actualizan al enviar y recibir una carga",
       "point3": "Un recibo numerado para cada operación pagada"
@@ -586,7 +586,7 @@
     },
     "yard": {
       "name": "Centros de clasificación",
-      "body": "Previsto: compra a kabadiwalas, clasifica, prensa en balas y vende lotes clasificados a recicladores con el pago en garantía."
+      "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
     },
     "recycler": {
       "name": "Recicladores",
@@ -624,7 +624,7 @@
     "replyTime": "Respondemos en un día laborable.",
     "search": {
       "label": "Buscar ayuda",
-      "placeholder": "Prueba: código SMS o depósito en garantía",
+      "placeholder": "Esperando la pasarela",
       "clear": "Borrar búsqueda",
       "summary": "{count, plural, =0 {Sin respuestas} one {# respuesta} other {# respuestas}} para «{query}»",
       "topicSummary": "{count, plural, =0 {Sin respuestas} one {# respuesta} other {# respuestas}} sobre {topic}",
@@ -671,7 +671,7 @@
         "name": "Centros de clasificación",
         "who": "Comprar a kabadiwalas y clasificar mejor",
         "title": "Ayuda para centros de clasificación",
-        "lead": "Demostración: encuentra existencias cerca, vende balas clasificadas a recicladores y opera con depósito en garantía."
+        "lead": "Se requiere una pasarela de pago. El pago aún no está disponible."
       },
       "recycler": {
         "name": "Recicladores",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Guía de demostración: cómo protege una operación el depósito en garantía",
-        "summary": "El servicio de depósito en garantía previsto retendría el pago hasta la entrega. La demostración actual solo registra pagos simulados.",
+        "title": "Esperando la pasarela",
+        "summary": "Se requiere una pasarela de pago. El pago aún no está disponible.",
         "steps": {
           "request": {
             "title": "El comprador envía una solicitud",
@@ -890,8 +890,8 @@
             "body": "Todavía no se paga nada. Llamad para acordar los detalles si es necesario."
           },
           "pay": {
-            "title": "El comprador ingresa el pago en garantía",
-            "body": "El dinero se retiene de forma segura y todavía no llega al vendedor. Este puede comprobar el depósito antes de cargar."
+            "title": "Esperando la pasarela",
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           },
           "dispatch": {
             "title": "El vendedor envía la carga",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "El comprador confirma la entrega",
-            "body": "Comprueba el peso y la calidad y confirma. El dinero se libera al vendedor."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "No confirmes una carga incompleta",
-            "body": "La confirmación libera el dinero. Hasta entonces, permanece en garantía."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           },
           "report": {
             "title": "Comunícalo con fotos",
@@ -1261,7 +1261,7 @@
           },
           "sell": {
             "title": "Acepta la solicitud de un centro",
-            "body": "Comprueba los kilos y el precio y acepta. El centro ingresa el pago en garantía antes de recoger."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Elige los kilos que necesitas. El precio por kg aparece antes del envío."
           },
           "pay": {
-            "title": "Ingresa el pago en garantía",
-            "body": "Paga cuando el kabadiwala acepte. El dinero se retiene hasta que confirmes."
+            "title": "Esperando la pasarela",
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           },
           "collect": {
             "title": "Recoge y pesa",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Acepta y espera el pago",
-            "body": "Carga solo cuando el dinero del comprador esté en garantía."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           },
           "dispatch": {
             "title": "Envía la carga",
@@ -1335,7 +1335,7 @@
           },
           "paid": {
             "title": "Cobra",
-            "body": "Cuando el reciclador confirma la entrega, se libera el dinero a tu favor."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           }
         }
       },
@@ -1352,8 +1352,8 @@
             "body": "Elige los kilos. El precio por kg aparece antes del envío."
           },
           "pay": {
-            "title": "Ingresa el pago en garantía",
-            "body": "Paga cuando el centro acepte. El dinero se retiene hasta que confirmes la entrega."
+            "title": "Esperando la pasarela",
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           },
           "confirm": {
             "title": "Pesa, revisa y confirma",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Carga después del pago",
-            "body": "Acepta y envía la carga cuando el pago esté en garantía."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           },
           "paid": {
             "title": "Cobra al entregar",
-            "body": "El dinero se libera cuando el fabricante confirma."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Elige los kilos y envía. El reciclador acepta o rechaza."
           },
           "pay": {
-            "title": "Ingresa el pago en garantía",
-            "body": "Paga cuando acepten. El dinero se retiene hasta que confirmes la entrega."
+            "title": "Esperando la pasarela",
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           },
           "receive": {
             "title": "Recibe la carga",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Confirma o comunica el problema",
-            "body": "Si está todo bien, confirma. Si no, comunícalo con fotos y el dinero seguirá en garantía."
+            "body": "Se requiere una pasarela de pago. El pago aún no está disponible."
           }
         }
       },
@@ -1615,7 +1615,7 @@
       },
       "paidByYard": {
         "q": "¿Cómo cobro al vender a un centro?",
-        "a": "Por ahora, acuerda el pago directamente con el centro. El depósito en garantía está previsto; la demostración no mueve dinero."
+        "a": "Se requiere una pasarela de pago. El pago aún no está disponible."
       },
       "whoSeesShop": {
         "q": "¿Quién puede ver mi tienda?",
@@ -1642,8 +1642,8 @@
         "a": "El vendedor publica un precio por kg. Lo ves antes de enviar la solicitud y puedes llamar para acordar los detalles."
       },
       "whatIsEscrow": {
-        "q": "¿Qué es el depósito en garantía?",
-        "a": "Un paso intermedio seguro: el dinero del comprador se retiene hasta que llegue la carga acordada y después se libera al vendedor. Este servicio entre empresas está previsto."
+        "q": "Esperando la pasarela",
+        "a": "Se requiere una pasarela de pago. El pago aún no está disponible."
       },
       "whenSellerPaid": {
         "q": "¿Cuándo cobra el vendedor?",
@@ -1739,7 +1739,7 @@
       "settingPrices": "Cómo fijar tus precios",
       "buyingFromKabadiwalas": "Comprar a kabadiwalas",
       "listingBales": "Publicar balas para recicladores",
-      "escrowExplained": "Demostración: depósito en garantía en dos minutos",
+      "escrowExplained": "Esperando la pasarela",
       "buyingFromYards": "Comprar a centros de clasificación",
       "sellingOutput": "Vender tu producción",
       "eprPlainWords": "La EPR en palabras sencillas",
@@ -1802,7 +1802,7 @@
         "title": "Demostración: vender a centros",
         "p1": "Registra la clasificación para mantener correctas las existencias.",
         "p2": "Muestra tus existencias a los centros cercanos.",
-        "p3": "Carga solo cuando el pago esté en garantía."
+        "p3": "Se requiere una pasarela de pago. El pago aún no está disponible."
       },
       "buyingStock": {
         "title": "Comprar existencias",
@@ -1811,8 +1811,8 @@
         "p3": "Pesa cada carga antes de confirmar."
       },
       "tradingWithEscrow": {
-        "title": "Demostración: operar con depósito en garantía",
-        "p1": "El comprador ingresa el pago en garantía cuando el vendedor acepta.",
+        "title": "Esperando la pasarela",
+        "p1": "Se requiere una pasarela de pago. El pago aún no está disponible.",
         "p2": "El vendedor carga solo cuando el dinero está depositado.",
         "p3": "Confirmar la entrega libera el dinero."
       },
@@ -1831,7 +1831,7 @@
       "buyingInputs": {
         "title": "Demostración: comprar materia prima",
         "p1": "Encuentra balas clasificadas de centros en Comprar.",
-        "p2": "Ingresa el pago en garantía cuando el centro acepte.",
+        "p2": "Se requiere una pasarela de pago. El pago aún no está disponible.",
         "p3": "Comprueba la calidad antes de confirmar."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demostración: pedir material reciclado",
         "p1": "Compara anuncios por tipo, kilos y precio.",
         "p2": "Envía un pedido por los kilos que necesitas.",
-        "p3": "Ingresa el pago en garantía cuando se acepte."
+        "p3": "Se requiere una pasarela de pago. El pago aún no está disponible."
       },
       "checkingDeliveries": {
         "title": "Comprobar entregas",
@@ -2454,7 +2454,7 @@
       "view": "Ver recibo {number}",
       "unknown": "Una empresa que ya no está en Luma.Green",
       "empty": "Todavía no hay recibos",
-      "emptyBody": "Se genera un recibo cuando el comprador ingresa el pago en garantía."
+      "emptyBody": "Se requiere una pasarela de pago. El pago aún no está disponible."
     },
     "epr": {
       "title": "Registro EPR, ejercicio {from}–{to}",
@@ -2841,13 +2841,13 @@
       "kgTooMuch": "Solo hay {weight} disponibles.",
       "total": "Importe total",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Ingresas el pago en garantía cuando {seller} acepta. El vendedor recibe el dinero cuando confirmas la entrega.",
+      "escrow": "Se requiere una pasarela de pago. El pago aún no está disponible.",
       "ewayBill": "Más de ₹50 000: esta carga debe ir acompañada de un e-way bill.",
       "cancel": "Cancelar",
       "submit": "Enviar solicitud",
       "sending": "Enviando…",
       "sent": "Solicitud enviada a {seller}",
-      "sentNext": "Ingresarás el pago en garantía cuando acepte.",
+      "sentNext": "Se requiere una pasarela de pago. El pago aún no está disponible.",
       "seeTrades": "Ver operaciones"
     },
     "browse": {
@@ -2920,7 +2920,7 @@
     },
     "trades": {
       "title": "Operaciones",
-      "lead": "Cada operación, paso a paso. El dinero permanece en garantía hasta que el comprador confirma la entrega.",
+      "lead": "Se requiere una pasarela de pago. El pago aún no está disponible.",
       "buying": "Comprando",
       "selling": "Vendiendo",
       "tabsLabel": "Compras y ventas",
@@ -2936,7 +2936,7 @@
         "from": "De {name} · {area}",
         "to": "Para {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} retenidos en garantía",
+        "inEscrow": "Se requiere una pasarela de pago. El pago aún no está disponible.",
         "ewayBill": "Más de ₹50 000: esta carga debe ir acompañada de un e-way bill.",
         "updated": "Actualizado {when}",
         "receipt": "Recibo {number}",
@@ -2947,7 +2947,7 @@
         "label": "Progreso de la operación",
         "requested": "Solicitada",
         "accepted": "Aceptada",
-        "paid_to_escrow": "En garantía",
+        "paid_to_escrow": "Sin verificar",
         "dispatched": "Enviada",
         "completed": "Entregada",
         "srStep": "{step}: {state}",
@@ -2964,20 +2964,20 @@
           "seller": "{name} quiere comprar esto. Acepta para reservarlo."
         },
         "accepted": {
-          "buyer": "Aceptado. Ingresa el pago en garantía para continuar: el dinero se retiene hasta que confirmes la entrega.",
-          "seller": "Esperando a que {name} ingrese el pago en garantía."
+          "buyer": "Se requiere una pasarela de pago. El pago aún no está disponible.",
+          "seller": "Se requiere una pasarela de pago. El pago aún no está disponible."
         },
         "paid_to_escrow": {
-          "buyer": "Tu dinero está protegido en garantía. Esperando a que {name} envíe la carga.",
-          "seller": "El dinero está protegido en garantía. Envía la carga y márcala como enviada."
+          "buyer": "Registro de prototipo. No se han verificado el pago ni la entrega.",
+          "seller": "Registro de prototipo. No se han verificado el pago ni la entrega."
         },
         "dispatched": {
-          "buyer": "De camino. Revisa la carga y confirma la entrega para liberar el dinero.",
-          "seller": "De camino. Recibirás el dinero cuando {name} confirme la entrega."
+          "buyer": "Registro de prototipo. No se han verificado el pago ni la entrega.",
+          "seller": "Registro de prototipo. No se han verificado el pago ni la entrega."
         },
         "completed": {
-          "buyer": "Entregado. El dinero se ha liberado a {name}.",
-          "seller": "Entregado. El dinero se ha liberado a tu favor."
+          "buyer": "Registro de prototipo. No se han verificado el pago ni la entrega.",
+          "seller": "Registro de prototipo. No se han verificado el pago ni la entrega."
         },
         "declined": {
           "buyer": "{name} rechazó el pedido o se agotó el lote.",
@@ -2987,7 +2987,7 @@
       "action": {
         "accept": "Aceptar pedido",
         "decline": "Rechazar",
-        "pay": "Ingresar {amount} en garantía",
+        "pay": "Esperando la pasarela",
         "dispatch": "Marcar como enviado",
         "confirm": "Confirma la entrega"
       },
@@ -2995,21 +2995,23 @@
       "done": {
         "accept": "Pedido aceptado",
         "decline": "Pedido rechazado",
-        "pay": "Pago ingresado en garantía. Recibo {number}",
+        "pay": "Registro de prototipo. No se han verificado el pago ni la entrega.",
         "dispatch": "Marcado como enviado",
-        "confirm": "Entrega confirmada. El dinero se libera al vendedor."
+        "confirm": "Registro de prototipo. No se han verificado el pago ni la entrega."
       },
       "declineConfirm": "¿Rechazar este pedido de {name}? No se puede deshacer.",
       "declineYes": "Sí, rechazar",
-      "declineNo": "Conservar reserva"
+      "declineNo": "Conservar reserva",
+      "gatewayPending": "Se requiere una pasarela de pago. El pago aún no está disponible.",
+      "legacyUnverified": "Registro de prototipo. No se han verificado el pago ni la entrega."
     },
     "receipt": {
       "title": "Recibo de operación",
       "numberLabel": "N.º de recibo",
       "dateLabel": "Fecha",
       "statusLabel": "Pago",
-      "inEscrow": "En garantía",
-      "settled": "Liberado",
+      "inEscrow": "Sin verificar",
+      "settled": "Sin verificar",
       "seller": "Vendedor",
       "buyer": "Comprador",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3022,9 @@
       "amount": "Importe",
       "total": "Importe total",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Pago ingresado en garantía en Luma.Green el {date}.",
-      "held": "Retenido en garantía hasta que el comprador confirme la entrega.",
-      "released": "Liberado al vendedor el {date}.",
+      "paidInto": "Registro de prototipo. No se han verificado el pago ni la entrega.",
+      "held": "Registro de prototipo. No se han verificado el pago ni la entrega.",
+      "released": "Registro de prototipo. No se han verificado el pago ni la entrega.",
       "ewayBill": "Mercancías por valor superior a ₹50 000: la carga debe ir acompañada de un e-way bill.",
       "notTaxInvoice": "Este es un recibo de operación, no una factura fiscal GST. Las facturas fiscales acompañan a los pagos reales.",
       "print": "Imprimir",
@@ -3030,8 +3032,9 @@
       "missingTitle": "Recibo no encontrado",
       "missingBody": "Esta operación no es tuya o el enlace es incorrecto.",
       "pendingTitle": "Todavía no hay recibo",
-      "pendingBody": "El recibo se genera cuando el comprador ingresa el pago en garantía.",
-      "declinedBody": "Esta operación fue rechazada y no tiene recibo."
+      "pendingBody": "Se requiere una pasarela de pago. El pago aún no está disponible.",
+      "declinedBody": "Esta operación fue rechazada y no tiene recibo.",
+      "unverified": "Sin verificar"
     },
     "home": {
       "greeting": "Bienvenido, {name}",
@@ -3041,8 +3044,8 @@
       "trades": "Operaciones",
       "statsTitle": "De un vistazo",
       "stats": {
-        "escrow": "En garantía",
-        "escrowHint": "Se libera al confirmar la entrega",
+        "escrow": "Sin verificar",
+        "escrowHint": "Se requiere una pasarela de pago. El pago aún no está disponible.",
         "waiting": "Pendiente de ti",
         "waitingHint": "{count, plural, =0 {Todo al día} one {# operación necesita una acción} other {# operaciones necesitan una acción}}",
         "listings": "A la venta",
@@ -3050,7 +3053,8 @@
         "offers": "Lotes reciclados",
         "offersHint": "A la venta por recicladores",
         "completed": "Completadas este mes",
-        "completedHint": "{amount} en operaciones"
+        "completedHint": "{amount} en operaciones",
+        "gatewayPending": "Esperando la pasarela"
       },
       "waitingTitle": "Pendiente de ti",
       "allTrades": "Todas las operaciones",

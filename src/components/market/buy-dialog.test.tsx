@@ -41,6 +41,12 @@ async function openDialog(listing = aListing(), locale = "en") {
 describe("BuyButton", () => {
   it("shows the total as the weight is typed", async () => {
     await openDialog();
+    expect(
+      screen.getByText(
+        "Payment gateway required. Checkout is not available yet.",
+      ),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/escrow/i)).not.toBeInTheDocument();
     await userEvent.type(screen.getByLabelText("How many kg?"), "100");
     expect(screen.getByText("₹1,750")).toBeInTheDocument();
     expect(screen.getByText("100 kg × ₹17.50/kg")).toBeInTheDocument();
