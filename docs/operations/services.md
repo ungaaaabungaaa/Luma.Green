@@ -1,93 +1,88 @@
 # Services and accounts
 
-What is wired in code and what still needs a human with a login. Keep this
-file current. Code was reviewed on 1 Oct 2026. Account and deployment notes
-from 29 Sep are historical and have not been re-verified. Use the
-[launch checklist](launch-checklist.md) for the current setup steps.
+> Status: inventory updated 6 October 2026. This is a setup and evidence record,
+> not a claim of live provider readiness. Account ownership is unverified unless
+> stated below. The [setup checklist](launch-checklist.md) owns exact settings;
+> the [10 October test plan](../testing/launch-2026-10-10.md) owns acceptance.
 
-Legend: **✅ implemented** · **🟡 partly** · **🔑 needs a human** · **⏸ deferred** ·
-**⬜ later**
+The approved plan adds normal verified email/password alongside phone OTP and
+workspace email invitations. It requires gateway-only B2B payment. Earlier
+claims that Resend is not needed, that demo escrow is a live path, or that
+cloud test-code delivery is authorized are superseded for this work.
 
-## Core platform
+## Existing platform and access to reuse
 
-| Service             | Status | Notes                                                                                                                                                                    |
-| ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Next.js 16          | ✅     | App Router, Turbopack, server components by default                                                                                                                      |
-| Tailwind v4         | ✅     | Tokens in `src/app/globals.css`; light, dark and system appearance; see the [current UI contract](../design/designer-system.md#current-ui-contract)                      |
-| shadcn/ui           | ✅     | Vendored in `src/components/ui`; add more with the shadcn CLI                                                                                                            |
-| next-intl           | ✅     | 33 locales, hreflang, RTL                                                                                                                                                |
-| Convex              | 🟡     | Historical dev deployment: `glorious-rooster-470`, EU West. Verify the target; production needs a deploy key — [switch-on](./environments.md#one-time-switch-on-founder) |
-| Vercel              | 🟡     | Project `luma_green`; production at `lumagreen.vercel.app`, previews per PR. Build command not yet running `convex deploy`                                               |
-| Domain `luma.green` | 🔑     | Verify DNS and the Vercel domain binding; route `www` to apex                                                                                                            |
-| GitHub              | ✅     | Actions, Dependabot, branch protection, templates                                                                                                                        |
-| CodeRabbit          | 🔑     | `.coderabbit.yaml` committed; install the GitHub app                                                                                                                     |
+| Service                                 | Current evidence and remaining action                                                                                                                                                                                                                                                    |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GitHub                                  | Existing repository and protected PR path. Verify required checks on the exact release head; owner access/recovery and current CI are release checks.                                                                                                                                    |
+| Convex                                  | Existing dev `glorious-rooster-470` and prod `outstanding-buzzard-942`. The 6 October reset record verifies both empty and paused. Preserve recovery exports; deploy and reactivate only through the approved release.                                                                   |
+| Local Convex                            | Anonymous local process reported at `127.0.0.1:3210` and HTTP actions at `127.0.0.1:3211`. Component auth, persistence and storage acceptance still need proof. Local deployments are beta and have no public URL; see [official limits](https://docs.convex.dev/cli/local-deployments). |
+| Vercel                                  | Existing `luma_green` project. Confirm domain, branch, environment and build command. Default repository build does not deploy Convex; configured release build must deploy the matching backend first.                                                                                  |
+| Domain and DNS                          | Reuse `luma.green` ownership. Verify registrar access, Vercel HTTPS/domain records and Resend sending-domain records. DNS access is not yet verified here.                                                                                                                               |
+| Better Auth                             | Existing self-hosted library on Convex; no separate account. New normal email verification/reset and invitations are under implementation. Admin TOTP and recovery remain separate.                                                                                                      |
+| Next.js, Tailwind, shadcn and next-intl | Existing local packages, not service accounts. Keep the current UI contract and all registered locales; an installed package is not acceptance evidence.                                                                                                                                 |
 
-> **Vercel plan.** Check the current terms and choose a plan that permits
-> the pilot's business use.
+## Required external paths for the approved launch
 
-## Product services
+| Service             | Setup and release gate                                                                                                                                                                                                                                                |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resend email        | Required for production email signup verification, password reset and workspace invite delivery under the approved plan. Create/verify account, owned domain, DNS, restricted sending key and sender. Existing admin recovery code does not prove the new paths work. |
+| MSG91 OTP           | Required for production phone signup/login. Create/verify account, DLT entity/header/content approvals, OTP template, credits and limits. The local pass sends no external SMS. Require controlled-handset proof before production.                                   |
+| MSG91 Flow          | Optional status messages for booking/application events once configured. Use separate approved Flow IDs and language mappings. Verify actual recipient delivery separately from the API response.                                                                     |
+| B2B payment gateway | Provider not selected and payment integration not established. Confirm marketplace/vendor settlement fit, eligibility and onboarding. Complete sandbox and live gates. Never replace gateway state with manual approval, payment-proof upload or simulated escrow.    |
 
-| Service                 | Status | Notes                                                                                                                                                                 |
-| ----------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Better Auth (on Convex) | 🟡     | Implemented with onboarding, per-number OTP limits and recovery paths ([auth](../architecture/auth.md))                                                               |
-| MSG91 (SMS codes)       | 🔑     | OTP and status-message code implemented; account, sender and template approval remain external checks                                                                 |
-| OpenRouter (AI)         | 🔑     | Optional paid adapter; alternatively use the [self-hosted endpoint](low-cost-operation.md). Both need model evaluation                                                |
-| Mapbox                  | ⬜     | Not used. Browser location and distance calculations need no map account                                                                                              |
-| PostHog                 | ✅     | Optional consent-based public page analytics; provider setup and receipt remain unverified ([ADR 0016](../decisions/0016-optional-analytics-and-error-monitoring.md)) |
-| Sentry                  | ✅     | Optional error capture; deployment flag, DSN and scrubbed event receipt remain external gates                                                                         |
-| Resend (email)          | ⬜     | Not needed in the pilot                                                                                                                                               |
-| Razorpay                | ⬜     | Escrow after the pilot ([ADR 0009](../decisions/0009-money-off-platform-first.md))                                                                                    |
-| Cloudflare R2           | ⬜     | Only if files outgrow Convex storage or need expiring links                                                                                                           |
-| WhatsApp Business       | ⬜     | Household channel after the pilot                                                                                                                                     |
+[Razorpay Route](https://razorpay.com/docs/payments/route/) and
+[Cashfree Easy Split](https://www.cashfree.com/docs/payments/split/overview)
+are examples for provider review, not a recommendation that Luma is eligible.
+Route publishes turnover/review eligibility; Easy Split needs account-manager
+enablement. The [setup checklist](launch-checklist.md) records the current
+checks. B2B payment-dependent actions remain blocked until verified gateway
+state exists. A kabadiwala pays a household directly; Luma records that fact
+without collecting or transferring those funds.
 
-### SMS templates to register
+### SMS preparation
 
-Use [MSG91's current setup documentation](https://docs.msg91.com/) and the
-account dashboard to confirm registration, sender IDs, template category,
-languages, fees and approval status. These requirements are external to the
-application. The OTP adapter uses `POST /api/v5/otp`; status messages use Flow
-and their own approved templates. Local tests do not send messages.
+Prepare the exact approved content for the launch languages: sign-in/booking
+code; application received, approved, changes requested and rejected; booking
+confirmed; kabadiwala assigned; new pickup request. These are event purposes,
+not approved message text. The detailed [SMS runbook](sms-notifications.md)
+owns all eight status event keys, including events beyond this short list.
+Check actual DLT text, variables, links, sender and Flow ID before enabling sends.
+Do not claim a response time or service promise in a template without approval.
+[MSG91 template setup](https://msg91.com/help/template/how-to-create-flow-id-to-send-sms-via-api)
+explains the required mapping.
 
-Prepare approved templates for the enabled launch languages. The examples
-below describe intended content, not approved provider text. Confirm each
-placeholder and URL against the actual template before enabling sends:
+## Optional feature accounts
 
-| Template                | Example (English)                                                                         |
-| ----------------------- | ----------------------------------------------------------------------------------------- |
-| Sign-in / booking code  | `{#var#} is your Luma.Green code. It expires in 5 minutes. Do not share it. - Luma.Green` |
-| Application received    | `We have received your Luma.Green application. We usually reply within 24 hours.`         |
-| Application approved    | `Your Luma.Green account is verified. Open the app: {#var#}`                              |
-| Changes requested       | `Please update your Luma.Green application: {#var#}. Open: {#var#}`                       |
-| Application rejected    | `We could not verify your Luma.Green application. Reason: {#var#}. Call {#var#}`          |
-| Booking confirmed       | `Pickup booked for {#var#}. Track it: {#var#}`                                            |
-| Kabadiwala assigned     | `{#var#} from {#var#} will collect your scrap on {#var#}. Track: {#var#}`                 |
-| New pickup (kabadiwala) | `New pickup request near you: {#var#}. Open Luma.Green to accept.`                        |
+| Service                                            | When an account is needed                                                                                                                                                                      |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OpenRouter or self-hosted vision                   | Only for optional photo estimates. Use one selected endpoint with evaluation and limits; manual entry needs neither account nor model.                                                         |
+| Sentry                                             | Only when error capture is enabled with the deployment flag and DSN. Verify scrubbed receipt.                                                                                                  |
+| PostHog and Google Analytics 4                     | Only for enabled, consented public-page analytics. No private workflow data.                                                                                                                   |
+| Search Console and Bing Webmaster Tools            | For domain ownership, sitemap and search operations. Verification is not indexing evidence.                                                                                                    |
+| NewsAPI and data.gov.in                            | Only for explicitly enabled industry news or public-area data. Verify plan rights, quotas, source freshness and fallbacks.                                                                     |
+| Browser push                                       | Generate VAPID credentials; no separate paid account implied. Device permission and delivery/revocation checks are required.                                                                   |
+| Expo/EAS, Apple Developer, Google Play Console     | Needed for the corresponding native build/distribution path; stores require their own accounts/signing/review. Earlier handoff says not set up; current founder verification is still pending. |
+| Apple desktop signing and Windows signing provider | Needed for signed desktop releases and trusted updates. A local unsigned pack is not a release artifact.                                                                                       |
+| WhatsApp Business                                  | Later optional channel, not a present onboarding prerequisite.                                                                                                                                 |
+| CodeRabbit, uptime and backup tooling              | Optional operations services; verify any existing account first and name the alert/recovery owner.                                                                                             |
 
-## Mobile and desktop
+No Mapbox account is needed for current browser location. No Cloudflare R2
+account is needed for current Convex document storage. No payment key can make
+an unimplemented gateway work. Follow [native app releases](app-releases.md),
+[observability](observability.md), [push](push-notifications.md) and
+[public data](public-data.md) for each enabled feature's setup.
 
-| Item                | Status | Notes                                                                                                                 |
-| ------------------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
-| Installable web app | 🟡     | Manifest exists; install prompt comes with the kabadiwala app                                                         |
-| Expo / React Native | 🟡     | Android/iOS shell in `apps/mobile`; signed builds, device checks and store approval remain                            |
-| Electron            | 🟡     | macOS/Windows shell in `apps/desktop`; local macOS smoke/unsigned pack pass; Windows and signed release checks remain |
+## Access and evidence rules
 
-See [app releases](app-releases.md) for accounts, exact environment values and
-the three update paths. Source implementation does not establish store readiness.
-
-## Operations
-
-| Item                   | Status | Notes                                                      |
-| ---------------------- | ------ | ---------------------------------------------------------- |
-| CI (5 required checks) | ✅     | [ci-checks skill](../../.claude/skills/ci-checks/SKILL.md) |
-| E2E (Playwright)       | ✅     | PRs only, path-filtered                                    |
-| Daily local backups    | 🔑     | Founder's Mac; set up from [backups.md](./backups.md)      |
-| Uptime monitoring      | ⬜     | Better Stack or UptimeRobot once the domain is live        |
-
-## Accounts hygiene
-
-- Separate Google accounts for production, support and billing.
-- All shared credentials in one password manager (1Password or Bitwarden) —
-  never in chat, email or a repo.
-- An emergency admin account with recovery codes stored offline; the admin's
-  authenticator backup codes too.
-- Every third-party key gets a spend limit or quota where the vendor offers one.
+- Use one named owner and recovery custodian per service; verify existing access
+  before signup. Keep secrets in secured provider settings or a password manager.
+- Local disposable auth tests stay local. No live keys, SMS/email delivery,
+  production records or public development verification endpoint in that pass.
+- Keep the restricted credentials annex outside Git and the shared guide.
+  Give access only to the founder and named test team, then expire test accounts.
+- Record configured, sandbox verified and live verified separately. For email
+  and SMS, also record recipient receipt. Set quotas and costs before activation.
+- Missing required accounts are launch blockers for their flows. Keep those
+  flows listed; only the founder can explicitly change the proposed release
+  scope. Saturday 10 October is conditional on passing evidence and readiness.

@@ -12,14 +12,15 @@ record and reviewed editable Word copy are
 `docs/product/platform-refinement-interview.md` and
 `output/docx/luma-green-platform-refinement-interview.docx`.
 
-The founder has requested a **plan first** for normal-user email/password and
+The founder has **approved implementation** of normal-user email/password and
 phone-OTP signup, workspace roles and team invites, disposable local test users,
 real-browser acceptance, and a restricted credentials annex. The detailed plan
-is in the 6 October proposed-account section of the interview record and its
+is in the 6 October account section of the interview record and its
 reviewed Word copy. The founder confirmed both verified signup methods with a
 local-only test path, and selected disposable development credentials in a
-restricted annex. Do not start that new implementation scope before the founder
-approves the plan. The broadly shared Google user guide will not carry passwords;
+restricted annex. The later instruction “Go ahead, don't wait on me” and renewed
+parallel-agent authorization supersede the earlier plan-first hold. The broadly
+shared Google user guide will not carry passwords;
 after implementation, update its existing document ID with the reviewed guide
 and distribute the annex only to the named test team.
 
@@ -48,14 +49,41 @@ site/origin classification (`0f840f4`), stakeholder accounts (`2740b5c`),
 material-generator account requests (`5f9eb8b`) and the synchronized interview
 document (`b142388`). All new records are evidence only; they do not add
 inventory, prove payment or issue certificates. The combined focused backend
-suite passed 66 tests and `pnpm typecheck` passed. Regenerate Convex API types
-from the combined schema before release; local worktree lacks a deployment
-binding. Check schema deployment and live configuration before reactivating
+suite passed 66 tests and `pnpm typecheck` passed at that earlier checkpoint.
+Regenerate Convex API types from the final combined schema before release.
+Check schema deployment and live configuration before reactivating
 either backend.
 
-Concurrent agents are implementing the gateway-only server boundary, the
-market UI copy in 33 locales, and stakeholder request/review UI. Integrate
-their commits only after reviewing conflict resolution, then run `pnpm check`,
+Gateway-only server rules (`5ffbedc`), market UI copy in 33 locales (`c152539`),
+and stakeholder request/review screens (`0b2eb0e`) are integrated. Local Convex
+deployment exposed unsupported iterator helpers; `779ac9e` replaces them with
+array operations and adds the Convex runtime TypeScript check. Its focused
+regression passed 98 tests plus scoped lint and backend typecheck.
+
+Task-start checkpoint for the resumed 6 October pass: integration HEAD is
+`779ac9e`. Existing uncommitted docs, launch-plan Word files and local acceptance
+runner files belong to this task and must be preserved. Auth implementation is
+in `commerce-evidence/luma.green`; workspace roles are in
+`roles-onboarding/luma.green`, both under the managed worktree root. Fresh agents
+continue those existing diffs. Root owns Git integration and the local runtime.
+The primary checkout remains out of scope. This is a high-impact auth/permission
+change; independent review, real adapter tests and browser acceptance are needed.
+
+The isolated anonymous Convex deployment uses `127.0.0.1:3210` and HTTP actions
+at `127.0.0.1:3211`; Next uses `http://localhost:3100`. It successfully deployed
+the baseline schema and Better Auth component before the interruption. Restart
+the local processes and verify them before acceptance. Private configuration is
+under ignored `.convex/local-acceptance/` with mode 0700/0600. No hosted auth-test
+fallback is authorized. Never run the old broad demo seed or fake escrow flow.
+The new narrow runner creates identities through the actual signup/verification
+handlers and records synthetic domain fixtures; it is still under implementation.
+
+Email auth and workspace roles/invites are now the concurrent code tasks.
+The launch test plan and provider inventory are drafted; the 9-page launch Word
+and 10-page interview Word were visually reviewed. They are plans, not executed
+acceptance evidence. Detailed test cases are in
+`docs/testing/launch-2026-10-10.md`. Saturday 10 October is conditional on passing
+release gates. Integrate agent changes after review, then run `pnpm check`,
 `pnpm build`, required e2e and browser visual checks, guide capture/rebuild,
 protected-branch CI, Convex backend deployment and Vercel production
 verification. The current guide source changed for source classification but

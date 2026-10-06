@@ -521,12 +521,11 @@ new backend is deployed. The exports are recovery archives, not active data.
 This reset removes old-data migration as a release constraint; new data and
 future schema changes still require ordinary migration care.
 
-### 6 October 2026 proposed account, workspace and local acceptance plan
+### 6 October 2026 approved account, workspace and local acceptance plan
 
-**Approval status:** the founder asked to review this plan before implementation.
-The choices below are approved interview inputs, not a claim that the screens,
-test users or credentials already exist. Do not start this new scope until the
-founder approves the plan.
+**Approval status:** approved by the founder on 6 October 2026 with “Go ahead,
+don’t wait on me.” Proceed with implementation and tests. This approval is not
+a claim that screens, test users, credentials or provider delivery already work.
 
 **Confirmed inputs.** Offer normal users both email-and-password and phone-OTP
 signup after the corresponding provider verifies the address or number. Use a
@@ -551,10 +550,11 @@ the Better Auth organisation plugin in a short technical spike before choosing
 an invite mechanism. Do not create two conflicting owners of role grants. True
 local Convex deployment is available but is beta; prove Better Auth sessions,
 component persistence and file storage work in that mode before using it as
-the acceptance environment. If that gate fails, use an isolated disposable
-development deployment, never the paused production deployment.
+the acceptance environment. Disposable identities and development verification
+must remain strictly local. If that gate fails, fix or report the blocker; do
+not switch to a cloud deployment without a new explicit decision.
 
-**Account and workspace model to implement after approval.** A person has one
+**Approved account and workspace model.** A person has one
 verified identity and may belong to more than one organisation. An organisation
 has a business or observer type, approval state, sites and one or more workspaces.
 Workspace roles begin with owner, admin, member and viewer; specific abilities
@@ -577,8 +577,8 @@ every server operation, so a revoked member loses access even if a browser tab
 is open. A phone-only person may use phone OTP normally, but email-based invite
 acceptance requires them to add and verify the invited email first. Do not
 merge accounts automatically. A later phone-number invite can be interviewed
-separately. Development test mode must be server-gated to local/disposable
-environments, never enabled by a browser flag or production URL.
+separately. Development test mode must be server-gated to local environments only, never
+enabled by a browser flag, cloud deployment or production URL.
 
 **Disposable fixture roster.** Seed one person for each distinct journey, plus
 two people in at least one workspace to exercise collaboration. Cover:
@@ -623,7 +623,7 @@ browser console and failed network requests, keyboard focus, light/dark views,
 phone/tablet/desktop widths and affected translations including Arabic/Urdu RTL.
 Capture only synthetic data, and identify local screenshots as local evidence.
 
-**Implementation order and proof gates after approval.** (1) Freeze the account
+**Approved implementation order and proof gates.** (1) Freeze the account
 matrix and permissions; spike local Convex and Better Auth feasibility.
 (2) Implement identity methods and server-side dev verification guard with unit,
 handler and adapter tests. (3) Add workspace roles and invite lifecycle with
@@ -642,6 +642,35 @@ domain, SMS provider availability, gateway provider, team invitation email
 delivery, permission details for each observer, and whether a phone-only person
 can later add a password need named owners. Missing providers must show an honest
 unavailable state; no preview challenge can produce a production session.
+
+### 6 October 2026 launch test and account setup plan
+
+The founder approved proceeding without another plan wait and requested a
+detailed testing document and every required account/API signup. The target
+launch decision is **Saturday 10 October 2026, Asia/Kolkata**. The
+[launch test plan](../testing/launch-2026-10-10.md) and its editable Word copy
+`output/docx/luma-green-launch-test-plan.docx` record the 6–10 October sequence,
+role roster, owner/admin/member/viewer checks, local-only verification, invite
+failure cases, material/PET journeys, provider gates, visual/language tests,
+result log, release criteria and rollback. No full role acceptance pass is
+claimed by preparing that plan.
+
+Use the [account checklist](../operations/launch-checklist.md) and
+[service inventory](../operations/services.md). Reuse GitHub, Convex, Vercel and
+domain access where available. Better Auth needs no separate hosted account.
+The approved production email path needs a verified Resend sender and API key;
+phone OTP needs MSG91/DLT approval. B2B gateway provider fit and onboarding remain
+open. Optional AI, telemetry, search, news, public data and native distribution
+accounts are required only for their enabled features. No new account has been
+created or verified by this entry.
+
+Development test delivery and disposable credentials must stay strictly local.
+The restricted annex stays outside Git and the shared guide. After real-browser
+acceptance, update the existing Google user guide ID from the reviewed source
+and preserve its sharing. Both cloud Convex deployments remain paused until the
+validated release action. Saturday release is conditional on the exact tested
+scope and provider readiness; blocked flows stay listed. The founder must
+explicitly approve any smaller release scope rather than silently dropping work.
 
 ## Documentation and implementation boundary
 
