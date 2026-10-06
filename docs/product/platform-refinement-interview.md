@@ -443,19 +443,19 @@ the appropriate buyer, customer or adviser verifies them.
 ### Implementation and release sequence
 
 This is the working implementation map for the full workbook request. Each
-slice must keep current data readable, include permission and failure tests,
+slice must include permission and failure tests,
 update the user guide for visible behavior and pass the repository release
 checks. The production release is the final verified result, not a substitute
 for deciding an open contract.
 
-1. **Accounts and sites:** keep existing users; add approved participant
+1. **Accounts and sites:** create new participant
    accounts, facility/site activity and material-origin facts. Separate trading
    rights from read-only, sponsor, lender, city and audit rights. Verify each
    role's onboarding and cross-organisation access.
 2. **Material catalogue and custody:** define material forms and buyer-grade
    specifications. Record source, lot, transfer, transformation, byproducts,
-   losses and accepted integer grams. Preserve the old inventory owner until
-   a tested reconciliation explains how the new lot records connect to it.
+   losses and accepted integer grams. Keep the inventory owner separate until
+   a tested reconciliation explains how new lot records connect to it.
 3. **Quality:** record sampling, lab or inspector, specification revision,
    measured result, acceptance, rejection and audited correction. Do not make
    workbook example limits the default for every buyer.
@@ -480,8 +480,9 @@ for deciding an open contract.
    preserve language, accessibility, phone and desktop coverage.
 8. **Local and release verification:** check all changed backend contracts,
    app flows, Word/user-guide outputs, `pnpm check`, build, required browser
-   tests and an actual preview. Check Convex schema compatibility against
-   deployed rows before a backend release. Merge through protected `main`,
+   tests and an actual preview. Both prior Convex deployments were reset to
+   zero rows on 6 October; validate the new schema before the backend release.
+   Merge through protected `main`,
    confirm Vercel production deployment and walk each enabled flow. Provider
    acceptance, compliance portal execution and customer payment remain
    separate live checks.
@@ -505,6 +506,19 @@ before any live B2B use. The account-request API needs the corresponding
 customer and admin screens before teams can use those roles through the app.
 Neither a gateway provider nor a production gateway account has been approved
 in this interview.
+
+### 6 October 2026 full Convex reset
+
+The founder approved removing all prototype records from development and
+production. The saved development and production export archives passed ZIP
+integrity checks before deletion. After the empty schema unmounted Better Auth,
+the remaining application tables, Better Auth component records and stored
+files were deleted. Fresh checks of `glorious-rooster-470` and
+`outstanding-buzzard-942` each returned **zero tables, rows, users, stored
+files, functions and crons**. Both deployments remain paused until the reviewed
+new backend is deployed. The exports are recovery archives, not active data.
+This reset removes old-data migration as a release constraint; new data and
+future schema changes still require ordinary migration care.
 
 ## Documentation and implementation boundary
 

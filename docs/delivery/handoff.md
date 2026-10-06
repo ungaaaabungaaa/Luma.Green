@@ -1,4 +1,56 @@
-# Agent handoff — 2 October 2026
+# Agent handoff — 6 October 2026
+
+## Platform refinement implementation in progress
+
+The founder requested the full teammate PET-workbook scope, local tests,
+production backend release and Vercel deployment. Continue in the managed
+worktree `/Users/syedabdulmuqeeth/.codex/worktrees/platform-refinement/luma.green`,
+branch `codex/platform-refinement`, based on fetched `origin/main` at `40beddb`.
+The original `/Users/syedabdulmuqeeth/Developer/SandBox/luma.green` checkout
+contains unrelated changes and must remain intact. The current requirements
+record and reviewed editable Word copy are
+`docs/product/platform-refinement-interview.md` and
+`output/docx/luma-green-platform-refinement-interview.docx`.
+
+Decisions: a kabadiwala buys household material and pays the household; Luma
+does not handle that payment. Every B2B payment must use a future gateway;
+the provider is not yet chosen, and simulated escrow cannot authorize live
+trade. A manufacturer may offer a non-hazardous recyclable byproduct to any
+approved buyer handling that material. City, CSR, lender, auditor, union,
+brand and material-generator accounts need default-deny permissions. Use
+“preprocessor” for the actor and “non-household material generators” for
+source sites. The S2P/P2P boundary remains open.
+
+The founder-approved full Convex reset finished on 6 October. Both saved export
+archives passed ZIP integrity checks. Development `glorious-rooster-470` and
+production `outstanding-buzzard-942` now each verify **zero** tables, rows,
+users, stored files, functions and crons; both deployments are paused. The
+empty backend deployment unmounted Better Auth before its component records
+were deleted. The former data does not need a migration, but the new schema
+and live release still require validation, deployment and reactivation. The
+original exports are recovery points. The production site has no active
+Convex backend during this implementation period.
+
+Integrated commits on this branch add externally reported commercial
+references (`3accbe3`), PET lot custody and quality evidence (`68fb1d1`),
+site/origin classification (`0f840f4`), stakeholder accounts (`2740b5c`),
+material-generator account requests (`5f9eb8b`) and the synchronized interview
+document (`b142388`). All new records are evidence only; they do not add
+inventory, prove payment or issue certificates. The combined focused backend
+suite passed 66 tests and `pnpm typecheck` passed. Regenerate Convex API types
+from the combined schema before release; local worktree lacks a deployment
+binding. Check schema deployment and live configuration before reactivating
+either backend.
+
+Concurrent agents are implementing the gateway-only server boundary, the
+market UI copy in 33 locales, and stakeholder request/review UI. Integrate
+their commits only after reviewing conflict resolution, then run `pnpm check`,
+`pnpm build`, required e2e and browser visual checks, guide capture/rebuild,
+protected-branch CI, Convex backend deployment and Vercel production
+verification. The current guide source changed for source classification but
+its screenshot manifest and maintained Word guide are stale; this is an
+explicit release gate. Do not claim a live B2B gateway, payment, certificate
+or production release until actual provider/deployment evidence exists.
 
 ## Approved recycling UI release — 3 October 2026
 
