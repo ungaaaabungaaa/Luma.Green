@@ -12,7 +12,9 @@ Code rules live in [AGENTS.md](../AGENTS.md) and the
 It lists the continuation branch, completed commits, tests and ordered next tasks.
 The current redesign is recorded in [shared UI redesign](./delivery/ui-redesign.md).
 Demo setup: [desktop](./delivery/desktop-demo.md), [mobile](./delivery/mobile-demo.md).
-The [enhancement proposal](./product/enhancement-proposal.md) is research awaiting approval.
+The [platform refinement interview](./product/platform-refinement-interview.md)
+is the current requirements record and has an editable Word copy. The
+[enhancement proposal](./product/enhancement-proposal.md) is older research.
 
 **Clickable prototype:**
 [Luma.Green Prototype](https://claude.ai/artifact/4hiq2r5tm5kWDBqTGEPD8C) —
@@ -20,18 +22,19 @@ private until shared from its Share menu.
 
 ## Product — what and why
 
-| Page                                                     | What's in it                                                   |
-| -------------------------------------------------------- | -------------------------------------------------------------- |
-| [vision.md](./product/vision.md)                         | The problem, the chain, principles, what's in and out of scope |
-| [roles.md](./product/roles.md)                           | Every role, their device and sign-in, what each wants          |
-| [onboarding.md](./product/onboarding.md)                 | Every field each role gives us, states, admin checks, messages |
-| [household.md](./product/household.md)                   | Snap → book → track and get paid                               |
-| [kabadiwala.md](./product/kabadiwala.md)                 | Requests, auto-accept, weigh and pay, stock, prices            |
-| [kabadiwala-to-yard.md](./product/kabadiwala-to-yard.md) | The hand-off still being researched                            |
-| [pricing.md](./product/pricing.md)                       | Rate cards, the minimum table and the fallback table           |
-| [glossary.md](./product/glossary.md)                     | Every term, and its name in code                               |
-| [open-questions.md](./product/open-questions.md)         | Decided and still-open questions                               |
-| [brief.md](./product/brief.md)                           | The founder's own words, as captured                           |
+| Page                                                                           | What's in it                                                   |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| [vision.md](./product/vision.md)                                               | The problem, the chain, principles, what's in and out of scope |
+| [roles.md](./product/roles.md)                                                 | Every role, their device and sign-in, what each wants          |
+| [onboarding.md](./product/onboarding.md)                                       | Every field each role gives us, states, admin checks, messages |
+| [household.md](./product/household.md)                                         | Snap → book → track and get paid                               |
+| [kabadiwala.md](./product/kabadiwala.md)                                       | Requests, auto-accept, weigh and pay, stock, prices            |
+| [kabadiwala-to-yard.md](./product/kabadiwala-to-yard.md)                       | The hand-off still being researched                            |
+| [pricing.md](./product/pricing.md)                                             | Rate cards, the minimum table and the fallback table           |
+| [glossary.md](./product/glossary.md)                                           | Every term, and its name in code                               |
+| [open-questions.md](./product/open-questions.md)                               | Decided and still-open questions                               |
+| [platform-refinement-interview.md](./product/platform-refinement-interview.md) | Current interview, decisions and feasibility gates             |
+| [brief.md](./product/brief.md)                                                 | The founder's own words, as captured                           |
 
 ## Architecture — how it's built
 
