@@ -460,6 +460,97 @@ export default defineSchema({
     .index("by_org", ["orgId"])
     .index("by_org_material", ["orgId", "materialCode"]),
 
+  /** Physical evidence only. A declared lot is not verified stock or title. */
+  materialLots: defineTable({
+    orgId: v.id("orgs"),
+    declaredByOrgId: v.id("orgs"),
+    materialCode: v.string(),
+    state: v.string(),
+    sourceKind: v.union(v.literal("self_declared"), v.literal("transformed")),
+    sourceReference: v.optional(v.string()),
+    parentTransformationId: v.optional(v.id("lotTransformations")),
+    initialGrams: v.number(),
+    availableGrams: v.number(),
+    status: v.union(
+      v.literal("available"),
+      v.literal("in_transit"),
+      v.literal("exhausted"),
+    ),
+    pendingReceiverOrgId: v.optional(v.id("orgs")),
+    pendingDispatchId: v.optional(v.id("lotCustodyEvents")),
+    createdByProfileId: v.id("profiles"),
+    ...timestamps,
+  })
+    .index("by_org_created", ["orgId", "createdAt"])
+    .index("by_declared_org_created", ["declaredByOrgId", "createdAt"])
+    .index("by_parent_transformation", ["parentTransformationId"])
+    .index("by_pending_receiver", ["pendingReceiverOrgId"]),
+
+  /** Append-only physical hand-offs. Title and payment live elsewhere. */
+  lotCustodyEvents: defineTable({
+    lotId: v.id("materialLots"),
+    kind: v.union(v.literal("dispatched"), v.literal("received")),
+    fromOrgId: v.id("orgs"),
+    toOrgId: v.id("orgs"),
+    grams: v.number(),
+    dispatchId: v.optional(v.id("lotCustodyEvents")),
+    actorProfileId: v.id("profiles"),
+    createdAt: v.number(),
+  })
+    .index("by_lot_created", ["lotId", "createdAt"])
+    .index("by_from_created", ["fromOrgId", "createdAt"])
+    .index("by_to_created", ["toOrgId", "createdAt"]),
+
+  /** One input lot; each output is a child lot linked by parentTransformationId. */
+  lotTransformations: defineTable({
+    orgId: v.id("orgs"),
+    inputLotId: v.id("materialLots"),
+    inputGrams: v.number(),
+    contaminationGrams: v.number(),
+    processLossGrams: v.number(),
+    actorProfileId: v.id("profiles"),
+    createdAt: v.number(),
+  })
+    .index("by_input_lot_created", ["inputLotId", "createdAt"])
+    .index("by_org_created", ["orgId", "createdAt"]),
+
+  /** Inspection results stay immutable, including proposed corrections. */
+  lotInspections: defineTable({
+    lotId: v.id("materialLots"),
+    orgId: v.id("orgs"),
+    buyerOrgId: v.optional(v.id("orgs")),
+    assessmentScope: v.literal("inspecting_org"),
+    specificationReference: v.string(),
+    specificationVersion: v.string(),
+    sampleMethod: v.string(),
+    results: v.array(
+      v.object({ parameter: v.string(), unit: v.string(), value: v.string() }),
+    ),
+    decision: v.union(
+      v.literal("accepted"),
+      v.literal("rejected"),
+      v.literal("conditional"),
+    ),
+    evidenceReference: v.optional(v.string()),
+    supersedesInspectionId: v.optional(v.id("lotInspections")),
+    correctionReason: v.optional(v.string()),
+    actorProfileId: v.id("profiles"),
+    createdAt: v.number(),
+  })
+    .index("by_lot_created", ["lotId", "createdAt"])
+    .index("by_supersedes", ["supersedesInspectionId"]),
+
+  /** Separate approval means no accepted inspection row is ever patched. */
+  lotInspectionApprovals: defineTable({
+    inspectionId: v.id("lotInspections"),
+    supersededInspectionId: v.id("lotInspections"),
+    orgId: v.id("orgs"),
+    approverProfileId: v.id("profiles"),
+    createdAt: v.number(),
+  })
+    .index("by_inspection", ["inspectionId"])
+    .index("by_superseded", ["supersededInspectionId"]),
+
   /** A lot offered to the next business up the chain. */
   listings: defineTable({
     orgId: v.id("orgs"),
