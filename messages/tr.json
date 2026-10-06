@@ -3478,5 +3478,30 @@
       "expired": "Süresi dolmuş",
       "revoked": "İptal edilmiş"
     }
+  },
+  "stakeholder": {
+    "title": "Hesap talep et",
+    "kind": "Hesap grubu",
+    "name": "Kuruluş adı",
+    "site": "Ana tesis",
+    "submit": "Talebi gönder",
+    "note": "Ticaret veya özel kayıtlara henüz erişim yok.",
+    "kinds": {
+      "material_generator": "Hane dışı malzeme üreticisi",
+      "city_official": "Belediye görevlisi",
+      "csr_sponsor": "KSS sponsoru",
+      "lender": "Kredi veren",
+      "independent_auditor": "Bağımsız denetçi",
+      "waste_picker_union": "Atık toplayıcıları sendikası",
+      "apparel_brand": "Giyim markası",
+      "packaging_brand": "Ambalaj markası"
+    },
+    "sites": {
+      "apartment_community": "Apartman topluluğu",
+      "office": "Ofis",
+      "hotel": "Otel işletmesi",
+      "resort": "Tatil tesisi",
+      "other": "Diğer tesis"
+    }
   }
 }

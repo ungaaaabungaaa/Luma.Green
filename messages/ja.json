@@ -3478,5 +3478,30 @@
       "expired": "期限切れ",
       "revoked": "失効済み"
     }
+  },
+  "stakeholder": {
+    "title": "アカウントを申請",
+    "kind": "アカウント区分",
+    "name": "組織名",
+    "site": "主な拠点",
+    "submit": "申請を送信",
+    "note": "取引や非公開記録にはまだアクセスできません。",
+    "kinds": {
+      "material_generator": "家庭以外の資材排出者",
+      "city_official": "市の職員",
+      "csr_sponsor": "CSR支援者",
+      "lender": "貸付業者",
+      "independent_auditor": "独立監査人",
+      "waste_picker_union": "廃棄物回収者の組合",
+      "apparel_brand": "衣料ブランド",
+      "packaging_brand": "包装ブランド"
+    },
+    "sites": {
+      "apartment_community": "集合住宅コミュニティ",
+      "office": "オフィス",
+      "hotel": "宿泊施設",
+      "resort": "リゾート施設",
+      "other": "その他の施設"
+    }
   }
 }

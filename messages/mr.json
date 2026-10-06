@@ -3478,5 +3478,30 @@
       "expired": "मुदत संपली",
       "revoked": "रद्द"
     }
+  },
+  "stakeholder": {
+    "title": "खात्यासाठी विनंती करा",
+    "kind": "खाते गट",
+    "name": "संस्थेचे नाव",
+    "site": "मुख्य ठिकाण",
+    "submit": "विनंती पाठवा",
+    "note": "अद्याप व्यापार किंवा खाजगी नोंदींमध्ये प्रवेश नाही.",
+    "kinds": {
+      "material_generator": "घरगुती नसलेला साहित्य उत्पादक",
+      "city_official": "महानगर अधिकारी",
+      "csr_sponsor": "सीएसआर प्रायोजक",
+      "lender": "कर्जदाता",
+      "independent_auditor": "स्वतंत्र लेखापरीक्षक",
+      "waste_picker_union": "कचरा वेचक संघटना",
+      "apparel_brand": "वस्त्र ब्रँड",
+      "packaging_brand": "पॅकेजिंग ब्रँड"
+    },
+    "sites": {
+      "apartment_community": "अपार्टमेंट समुदाय",
+      "office": "कार्यालय",
+      "hotel": "हॉटेल",
+      "resort": "रिसॉर्ट",
+      "other": "इतर परिसर"
+    }
   }
 }

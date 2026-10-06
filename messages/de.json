@@ -3478,5 +3478,30 @@
       "expired": "Abgelaufen",
       "revoked": "Widerrufen"
     }
+  },
+  "stakeholder": {
+    "title": "Konto beantragen",
+    "kind": "Kontogruppe",
+    "name": "Name der Organisation",
+    "site": "Hauptstandort",
+    "submit": "Antrag senden",
+    "note": "Noch kein Zugriff auf Handel oder private Unterlagen.",
+    "kinds": {
+      "material_generator": "Nichtprivater Materialerzeuger",
+      "city_official": "Städtischer Mitarbeiter",
+      "csr_sponsor": "CSR-Förderer",
+      "lender": "Kreditgeber",
+      "independent_auditor": "Unabhängiger Prüfer",
+      "waste_picker_union": "Gewerkschaft der Abfallsammler",
+      "apparel_brand": "Bekleidungsmarke",
+      "packaging_brand": "Verpackungsmarke"
+    },
+    "sites": {
+      "apartment_community": "Wohnanlage",
+      "office": "Büro",
+      "hotel": "Hotelbetrieb",
+      "resort": "Ferienanlage",
+      "other": "Andere Räumlichkeiten"
+    }
   }
 }

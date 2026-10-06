@@ -3478,5 +3478,30 @@
       "expired": "Đã hết hạn",
       "revoked": "Đã thu hồi"
     }
+  },
+  "stakeholder": {
+    "title": "Yêu cầu tài khoản",
+    "kind": "Nhóm tài khoản",
+    "name": "Tên tổ chức",
+    "site": "Địa điểm chính",
+    "submit": "Gửi yêu cầu",
+    "note": "Chưa có quyền truy cập giao dịch hoặc hồ sơ riêng.",
+    "kinds": {
+      "material_generator": "Đơn vị tạo vật liệu ngoài hộ gia đình",
+      "city_official": "Cán bộ thành phố",
+      "csr_sponsor": "Nhà tài trợ trách nhiệm xã hội",
+      "lender": "Bên cho vay",
+      "independent_auditor": "Kiểm toán viên độc lập",
+      "waste_picker_union": "Công đoàn người thu gom rác",
+      "apparel_brand": "Thương hiệu may mặc",
+      "packaging_brand": "Thương hiệu bao bì"
+    },
+    "sites": {
+      "apartment_community": "Cộng đồng căn hộ",
+      "office": "Văn phòng",
+      "hotel": "Khách sạn",
+      "resort": "Khu nghỉ dưỡng",
+      "other": "Cơ sở khác"
+    }
   }
 }

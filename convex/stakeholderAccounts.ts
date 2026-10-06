@@ -29,6 +29,8 @@ export const request = mutation({
     kind: vStakeholderKind,
     siteType: v.optional(vSiteType),
     organizationName: v.string(),
+    ageConfirmed: v.literal(true),
+    privacyAccepted: v.literal(true),
   },
   returns: vAccountId,
   handler: async (ctx, args) => {
@@ -60,6 +62,8 @@ export const request = mutation({
     const now = Date.now();
     const id = await ctx.db.insert("stakeholderAccounts", {
       ownerProfileId: profile._id,
+      ageConfirmedAt: now,
+      privacyAcceptedAt: now,
       kind: args.kind,
       siteType: args.siteType,
       organizationName: name,

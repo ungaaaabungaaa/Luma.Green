@@ -3478,5 +3478,30 @@
       "expired": "समाप्त",
       "revoked": "रद्द"
     }
+  },
+  "stakeholder": {
+    "title": "खाते के लिए अनुरोध करें",
+    "kind": "खाता समूह",
+    "name": "संगठन का नाम",
+    "site": "मुख्य स्थल",
+    "submit": "अनुरोध भेजें",
+    "note": "अभी व्यापार या निजी रिकॉर्ड तक पहुँच नहीं है।",
+    "kinds": {
+      "material_generator": "गैर-घरेलू सामग्री उत्पादक",
+      "city_official": "नगर अधिकारी",
+      "csr_sponsor": "सीएसआर प्रायोजक",
+      "lender": "ऋणदाता",
+      "independent_auditor": "स्वतंत्र लेखा परीक्षक",
+      "waste_picker_union": "कचरा चुनने वालों का संघ",
+      "apparel_brand": "परिधान ब्रांड",
+      "packaging_brand": "पैकेजिंग ब्रांड"
+    },
+    "sites": {
+      "apartment_community": "अपार्टमेंट समुदाय",
+      "office": "कार्यालय",
+      "hotel": "होटल",
+      "resort": "रिसॉर्ट",
+      "other": "अन्य परिसर"
+    }
   }
 }

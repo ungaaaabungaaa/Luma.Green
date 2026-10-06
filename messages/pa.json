@@ -3478,5 +3478,30 @@
       "expired": "ਮਿਆਦ ਖ਼ਤਮ",
       "revoked": "ਰੱਦ"
     }
+  },
+  "stakeholder": {
+    "title": "ਖਾਤੇ ਲਈ ਬੇਨਤੀ ਕਰੋ",
+    "kind": "ਖਾਤਾ ਸਮੂਹ",
+    "name": "ਸੰਸਥਾ ਦਾ ਨਾਮ",
+    "site": "ਮੁੱਖ ਥਾਂ",
+    "submit": "ਬੇਨਤੀ ਭੇਜੋ",
+    "note": "ਵਪਾਰ ਜਾਂ ਨਿੱਜੀ ਰਿਕਾਰਡਾਂ ਤੱਕ ਹਾਲੇ ਪਹੁੰਚ ਨਹੀਂ।",
+    "kinds": {
+      "material_generator": "ਗੈਰ-ਘਰੇਲੂ ਸਮੱਗਰੀ ਉਤਪਾਦਕ",
+      "city_official": "ਸ਼ਹਿਰੀ ਅਧਿਕਾਰੀ",
+      "csr_sponsor": "ਸੀਐਸਆਰ ਪ੍ਰਾਯੋਜਕ",
+      "lender": "ਕਰਜ਼ਦਾਤਾ",
+      "independent_auditor": "ਸੁਤੰਤਰ ਆਡੀਟਰ",
+      "waste_picker_union": "ਕੂੜਾ ਚੁੱਕਣ ਵਾਲਿਆਂ ਦੀ ਯੂਨੀਅਨ",
+      "apparel_brand": "ਪਹਿਰਾਵਾ ਬ੍ਰਾਂਡ",
+      "packaging_brand": "ਪੈਕੇਜਿੰਗ ਬ੍ਰਾਂਡ"
+    },
+    "sites": {
+      "apartment_community": "ਅਪਾਰਟਮੈਂਟ ਭਾਈਚਾਰਾ",
+      "office": "ਦਫ਼ਤਰ",
+      "hotel": "ਹੋਟਲ",
+      "resort": "ਰਿਜ਼ੋਰਟ",
+      "other": "ਹੋਰ ਪਰਿਸਰ"
+    }
   }
 }

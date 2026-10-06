@@ -194,6 +194,12 @@ Kabadiwala forms ask about the shop, area, opening hours and collection options.
 
 The interface describes review as usually taking 12-24 hours. This is an operational target, not a guaranteed response time.
 
+### Request another account type
+
+On /join, choose **Request an account** for a non-household material generator, city official, CSR sponsor, lender, independent auditor, waste-picker union, apparel brand or packaging brand. Sign in with the phone number that will own the account. Select the account group, enter the organisation name and confirm the age and privacy statements. A material generator must also select a primary site: apartment community, office, hotel, resort or other premises. A manufacturer with a manufacturing facility uses the Manufacturer business application above.
+
+The request page shows only your own pending, approved or rejected status. If it is rejected, read the review note there. An approved stakeholder account confirms identity only. It does not open trading, private records, evidence or a specialist workspace. Those permissions need a separate verified grant.
+
 ---
 
 ## 07 / Documents and application status
@@ -526,6 +532,10 @@ Approve becomes available after every checklist item is ticked. Checklist ticks 
 
 Already decided applications show status. There is no reopening or suspend button. Approved kabadiwalas start with fallback prices.
 
+### Review stakeholder account requests
+
+The bottom of /admin/verification has a separate stakeholder queue. For each request, check the claimed organisation, account group, primary site if present, applicant phone, identity and affiliation. Enter a review note of 10-1,000 characters. Tick the identity-and-affiliation check before approval, then choose Approve account or Reject request. A rejection does not require the checkbox. The decision is recorded in the audit trail. Approval does not create a trading organisation or give access to private records.
+
 ---
 
 ## 21 / Admin: reference prices
@@ -754,23 +764,23 @@ A branch push is not deployment. A build is not provider approval. A provider ac
 
 ## 29 / Route reference
 
-| Area                   | Routes                                                                                             |
-| ---------------------- | -------------------------------------------------------------------------------------------------- |
-| Public                 | /, /how-it-works, /participants, /prices, /contact                                                 |
-| Household              | /sell; /t/[token]                                                                                  |
-| Sign-in                | /login; /login/verify                                                                              |
-| Account settings       | /account/security; /account/notifications                                                          |
-| Onboarding             | /join; /join/kabadiwala; /join/yard; /join/recycler; /join/manufacturer; /join/saathi              |
-| Onboarding documents   | /join/[business]/documents; /join/status                                                           |
-| Role home and requests | /app; /app/requests; /app/requests/[id]                                                            |
-| Stock and prices       | /app/stock; /app/prices                                                                            |
-| Business trade         | /app/market; /app/sell; /app/trades; /app/trades/[id]/invoice                                      |
-| API connections        | /app/integrations; /api/v1/openapi.json                                                            |
-| Reporting              | /app/impact; /app/compliance                                                                       |
-| Help                   | /help; /help/[role]; /help/[role]/[guide]; /help/contact                                           |
-| Reference/enquiry      | /standards; /solar                                                                                 |
-| Admin access           | /admin/setup; /admin/login; /admin/forgot-password; /admin/reset-password                          |
-| Admin work             | /admin; /admin/verification; /admin/verification/[id]; /admin/prices; /admin/pilot; /admin/support |
+| Area                   | Routes                                                                                                   |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- |
+| Public                 | /, /how-it-works, /participants, /prices, /contact                                                       |
+| Household              | /sell; /t/[token]                                                                                        |
+| Sign-in                | /login; /login/verify                                                                                    |
+| Account settings       | /account/security; /account/notifications                                                                |
+| Onboarding             | /join; /join/kabadiwala; /join/yard; /join/recycler; /join/manufacturer; /join/saathi; /join/stakeholder |
+| Onboarding documents   | /join/[business]/documents; /join/status                                                                 |
+| Role home and requests | /app; /app/requests; /app/requests/[id]                                                                  |
+| Stock and prices       | /app/stock; /app/prices                                                                                  |
+| Business trade         | /app/market; /app/sell; /app/trades; /app/trades/[id]/invoice                                            |
+| API connections        | /app/integrations; /api/v1/openapi.json                                                                  |
+| Reporting              | /app/impact; /app/compliance                                                                             |
+| Help                   | /help; /help/[role]; /help/[role]/[guide]; /help/contact                                                 |
+| Reference/enquiry      | /standards; /solar                                                                                       |
+| Admin access           | /admin/setup; /admin/login; /admin/forgot-password; /admin/reset-password                                |
+| Admin work             | /admin; /admin/verification; /admin/verification/[id]; /admin/prices; /admin/pilot; /admin/support       |
 
 Replace bracketed parts with the real record, role or guide value. They are not literal links. User-facing routes support locale prefixes such as /kn, /hi and /ar. English normally uses no prefix. Admin routes never use a locale prefix. Unknown routes show a not-found page.
 

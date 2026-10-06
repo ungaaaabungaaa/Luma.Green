@@ -3478,5 +3478,30 @@
       "expired": "Caducada",
       "revoked": "Revocada"
     }
+  },
+  "stakeholder": {
+    "title": "Solicitar una cuenta",
+    "kind": "Grupo de cuenta",
+    "name": "Nombre de la organización",
+    "site": "Sede principal",
+    "submit": "Enviar solicitud",
+    "note": "Aún no hay acceso al comercio ni a registros privados.",
+    "kinds": {
+      "material_generator": "Generador de materiales no domésticos",
+      "city_official": "Funcionario municipal",
+      "csr_sponsor": "Patrocinador de RSC",
+      "lender": "Prestamista",
+      "independent_auditor": "Auditor independiente",
+      "waste_picker_union": "Sindicato de recolectores de residuos",
+      "apparel_brand": "Marca de ropa",
+      "packaging_brand": "Marca de envases"
+    },
+    "sites": {
+      "apartment_community": "Comunidad residencial",
+      "office": "Oficina",
+      "hotel": "Establecimiento hotelero",
+      "resort": "Complejo turístico",
+      "other": "Otras instalaciones"
+    }
   }
 }

@@ -3478,5 +3478,30 @@
       "expired": "میعاد ختم",
       "revoked": "منسوخ"
     }
+  },
+  "stakeholder": {
+    "title": "اکاؤنٹ کی درخواست کریں",
+    "kind": "اکاؤنٹ گروہ",
+    "name": "تنظیم کا نام",
+    "site": "بنیادی مقام",
+    "submit": "درخواست بھیجیں",
+    "note": "ابھی تجارت یا نجی ریکارڈ تک رسائی نہیں ہے۔",
+    "kinds": {
+      "material_generator": "غیر گھریلو مواد پیدا کرنے والا",
+      "city_official": "شہری افسر",
+      "csr_sponsor": "سی ایس آر معاون",
+      "lender": "قرض دہندہ",
+      "independent_auditor": "آزاد آڈیٹر",
+      "waste_picker_union": "کچرا چننے والوں کی یونین",
+      "apparel_brand": "ملبوسات کا برانڈ",
+      "packaging_brand": "پیکیجنگ برانڈ"
+    },
+    "sites": {
+      "apartment_community": "اپارٹمنٹ کمیونٹی",
+      "office": "دفتر",
+      "hotel": "ہوٹل",
+      "resort": "تفریحی مقام",
+      "other": "دیگر احاطہ"
+    }
   }
 }

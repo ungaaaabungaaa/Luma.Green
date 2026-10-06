@@ -3478,5 +3478,30 @@
       "expired": "સમય પૂરો",
       "revoked": "રદ"
     }
+  },
+  "stakeholder": {
+    "title": "ખાતાની વિનંતી કરો",
+    "kind": "ખાતા જૂથ",
+    "name": "સંસ્થાનું નામ",
+    "site": "મુખ્ય સ્થળ",
+    "submit": "વિનંતી મોકલો",
+    "note": "વેપાર કે ખાનગી નોંધોમાં હજી પ્રવેશ નથી.",
+    "kinds": {
+      "material_generator": "બિન-ઘરેલું સામગ્રી ઉત્પાદક",
+      "city_official": "શહેર અધિકારી",
+      "csr_sponsor": "સીએસઆર પ્રાયોજક",
+      "lender": "ધિરાણકર્તા",
+      "independent_auditor": "સ્વતંત્ર ઓડિટર",
+      "waste_picker_union": "કચરો વીણનારાઓનું સંઘ",
+      "apparel_brand": "વસ્ત્ર બ્રાન્ડ",
+      "packaging_brand": "પેકેજિંગ બ્રાન્ડ"
+    },
+    "sites": {
+      "apartment_community": "એપાર્ટમેન્ટ સમુદાય",
+      "office": "કચેરી",
+      "hotel": "હોટેલ",
+      "resort": "રિસોર્ટ",
+      "other": "અન્ય પરિસર"
+    }
   }
 }

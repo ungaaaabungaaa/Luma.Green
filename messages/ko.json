@@ -3478,5 +3478,30 @@
       "expired": "만료됨",
       "revoked": "폐기됨"
     }
+  },
+  "stakeholder": {
+    "title": "계정 신청",
+    "kind": "계정 그룹",
+    "name": "조직 이름",
+    "site": "주요 사업장",
+    "submit": "신청 보내기",
+    "note": "거래나 비공개 기록에 아직 접근할 수 없습니다.",
+    "kinds": {
+      "material_generator": "비가정 자재 배출자",
+      "city_official": "시 공무원",
+      "csr_sponsor": "사회공헌 후원자",
+      "lender": "대출 기관",
+      "independent_auditor": "독립 감사인",
+      "waste_picker_union": "폐기물 수거인 노동조합",
+      "apparel_brand": "의류 브랜드",
+      "packaging_brand": "포장 브랜드"
+    },
+    "sites": {
+      "apartment_community": "아파트 공동체",
+      "office": "사무실",
+      "hotel": "숙박업소",
+      "resort": "휴양 시설",
+      "other": "기타 시설"
+    }
   }
 }

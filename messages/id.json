@@ -3478,5 +3478,30 @@
       "expired": "Kedaluwarsa",
       "revoked": "Dicabut"
     }
+  },
+  "stakeholder": {
+    "title": "Ajukan akun",
+    "kind": "Kelompok akun",
+    "name": "Nama organisasi",
+    "site": "Lokasi utama",
+    "submit": "Kirim permintaan",
+    "note": "Belum ada akses ke perdagangan atau catatan pribadi.",
+    "kinds": {
+      "material_generator": "Penghasil material nonrumah tangga",
+      "city_official": "Pejabat kota",
+      "csr_sponsor": "Sponsor CSR",
+      "lender": "Pemberi pinjaman",
+      "independent_auditor": "Auditor independen",
+      "waste_picker_union": "Serikat pemungut sampah",
+      "apparel_brand": "Merek pakaian",
+      "packaging_brand": "Merek kemasan"
+    },
+    "sites": {
+      "apartment_community": "Komunitas apartemen",
+      "office": "Kantor",
+      "hotel": "Penginapan",
+      "resort": "Resor",
+      "other": "Tempat lain"
+    }
   }
 }

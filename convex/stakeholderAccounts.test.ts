@@ -37,12 +37,16 @@ describe("stakeholder accounts", () => {
     const apartment = await member(t, "+919000000306");
     await expect(
       apartment.mutation(api.stakeholderAccounts.request, {
+        ageConfirmed: true,
+        privacyAccepted: true,
         kind: "material_generator",
         organizationName: "Lakeview Community",
       }),
     ).rejects.toThrow();
     await expect(
       apartment.mutation(api.stakeholderAccounts.request, {
+        ageConfirmed: true,
+        privacyAccepted: true,
         kind: "material_generator",
         siteType: "manufacturing_facility",
         organizationName: "Lakeview Community",
@@ -50,12 +54,16 @@ describe("stakeholder accounts", () => {
     ).rejects.toThrow();
     await expect(
       apartment.mutation(api.stakeholderAccounts.request, {
+        ageConfirmed: true,
+        privacyAccepted: true,
         kind: "city_official",
         siteType: "office",
         organizationName: "Lakeview Community",
       }),
     ).rejects.toThrow();
     const id = await apartment.mutation(api.stakeholderAccounts.request, {
+      ageConfirmed: true,
+      privacyAccepted: true,
       kind: "material_generator",
       siteType: "apartment_community",
       organizationName: "Lakeview Community",
@@ -93,6 +101,8 @@ describe("stakeholder accounts", () => {
     const stranger = await member(t, "+919000000302");
 
     const id = await applicant.mutation(api.stakeholderAccounts.request, {
+      ageConfirmed: true,
+      privacyAccepted: true,
       kind: "city_official",
       organizationName: "  Bengaluru City Office  ",
     });
@@ -123,6 +133,8 @@ describe("stakeholder accounts", () => {
     const t = setup();
     const applicant = await member(t, "+919000000303");
     const id = await applicant.mutation(api.stakeholderAccounts.request, {
+      ageConfirmed: true,
+      privacyAccepted: true,
       kind: "independent_auditor",
       organizationName: "Independent Materials Audit",
     });
@@ -184,22 +196,30 @@ describe("stakeholder accounts", () => {
     const applicant = await member(t, "+919000000305");
     await expect(
       applicant.mutation(api.stakeholderAccounts.request, {
+        ageConfirmed: true,
+        privacyAccepted: true,
         kind: "lender",
         organizationName: " ",
       }),
     ).rejects.toThrow();
     const id = await applicant.mutation(api.stakeholderAccounts.request, {
+      ageConfirmed: true,
+      privacyAccepted: true,
       kind: "lender",
       organizationName: "Bengaluru Credit Co-op",
     });
     expect(
       await applicant.mutation(api.stakeholderAccounts.request, {
+        ageConfirmed: true,
+        privacyAccepted: true,
         kind: "lender",
         organizationName: "Bengaluru Credit Co-op",
       }),
     ).toBe(id);
     await expect(
       applicant.mutation(api.stakeholderAccounts.request, {
+        ageConfirmed: true,
+        privacyAccepted: true,
         kind: "csr_sponsor",
         organizationName: "Bengaluru Credit Co-op",
       }),

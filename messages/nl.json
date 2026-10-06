@@ -3478,5 +3478,30 @@
       "expired": "Verlopen",
       "revoked": "Ingetrokken"
     }
+  },
+  "stakeholder": {
+    "title": "Account aanvragen",
+    "kind": "Accountgroep",
+    "name": "Naam van de organisatie",
+    "site": "Hoofdlocatie",
+    "submit": "Aanvraag versturen",
+    "note": "Nog geen toegang tot handel of privégegevens.",
+    "kinds": {
+      "material_generator": "Niet-huishoudelijke materiaalproducent",
+      "city_official": "Gemeenteambtenaar",
+      "csr_sponsor": "MVO-sponsor",
+      "lender": "Geldverstrekker",
+      "independent_auditor": "Onafhankelijke auditor",
+      "waste_picker_union": "Vakbond van afvalinzamelaars",
+      "apparel_brand": "Kledingmerk",
+      "packaging_brand": "Verpakkingsmerk"
+    },
+    "sites": {
+      "apartment_community": "Appartementengemeenschap",
+      "office": "Kantoor",
+      "hotel": "Hotelbedrijf",
+      "resort": "Vakantieoord",
+      "other": "Andere locatie"
+    }
   }
 }

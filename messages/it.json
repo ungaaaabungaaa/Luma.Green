@@ -3478,5 +3478,30 @@
       "expired": "Scaduta",
       "revoked": "Revocata"
     }
+  },
+  "stakeholder": {
+    "title": "Richiedi un account",
+    "kind": "Gruppo dell’account",
+    "name": "Nome dell’organizzazione",
+    "site": "Sede principale",
+    "submit": "Invia richiesta",
+    "note": "Nessun accesso agli scambi o ai documenti privati per ora.",
+    "kinds": {
+      "material_generator": "Produttore di materiali non domestici",
+      "city_official": "Funzionario comunale",
+      "csr_sponsor": "Sponsor di responsabilità sociale",
+      "lender": "Finanziatore",
+      "independent_auditor": "Revisore indipendente",
+      "waste_picker_union": "Sindacato dei raccoglitori di rifiuti",
+      "apparel_brand": "Marchio di abbigliamento",
+      "packaging_brand": "Marchio di imballaggi"
+    },
+    "sites": {
+      "apartment_community": "Comunità residenziale",
+      "office": "Ufficio",
+      "hotel": "Albergo",
+      "resort": "Complesso turistico",
+      "other": "Altri locali"
+    }
   }
 }

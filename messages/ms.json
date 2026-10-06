@@ -3478,5 +3478,30 @@
       "expired": "Tamat tempoh",
       "revoked": "Dibatalkan"
     }
+  },
+  "stakeholder": {
+    "title": "Mohon akaun",
+    "kind": "Kumpulan akaun",
+    "name": "Nama organisasi",
+    "site": "Tapak utama",
+    "submit": "Hantar permohonan",
+    "note": "Belum ada akses kepada perdagangan atau rekod peribadi.",
+    "kinds": {
+      "material_generator": "Penjana bahan bukan isi rumah",
+      "city_official": "Pegawai bandar",
+      "csr_sponsor": "Penaja CSR",
+      "lender": "Pemberi pinjaman",
+      "independent_auditor": "Juruaudit bebas",
+      "waste_picker_union": "Kesatuan pengutip sisa",
+      "apparel_brand": "Jenama pakaian",
+      "packaging_brand": "Jenama pembungkusan"
+    },
+    "sites": {
+      "apartment_community": "Komuniti pangsapuri",
+      "office": "Pejabat",
+      "hotel": "Bangunan hotel",
+      "resort": "Tempat peranginan",
+      "other": "Premis lain"
+    }
   }
 }

@@ -3478,5 +3478,30 @@
       "expired": "Expirée",
       "revoked": "Révoquée"
     }
+  },
+  "stakeholder": {
+    "title": "Demander un compte",
+    "kind": "Groupe de compte",
+    "name": "Nom de l’organisation",
+    "site": "Site principal",
+    "submit": "Envoyer la demande",
+    "note": "Aucun accès aux échanges ni aux dossiers privés pour le moment.",
+    "kinds": {
+      "material_generator": "Producteur de matières non ménagères",
+      "city_official": "Agent municipal",
+      "csr_sponsor": "Partenaire RSE",
+      "lender": "Prêteur",
+      "independent_auditor": "Auditeur indépendant",
+      "waste_picker_union": "Syndicat des collecteurs de déchets",
+      "apparel_brand": "Marque de vêtements",
+      "packaging_brand": "Marque d’emballages"
+    },
+    "sites": {
+      "apartment_community": "Résidence collective",
+      "office": "Bureau",
+      "hotel": "Hôtel",
+      "resort": "Complexe touristique",
+      "other": "Autres locaux"
+    }
   }
 }

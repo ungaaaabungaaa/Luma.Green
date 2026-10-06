@@ -3478,5 +3478,30 @@
       "expired": "Expired",
       "revoked": "Revoked"
     }
+  },
+  "stakeholder": {
+    "title": "Request an account",
+    "kind": "Account group",
+    "name": "Organisation name",
+    "site": "Primary site",
+    "submit": "Send request",
+    "note": "No trade or private-record access yet.",
+    "kinds": {
+      "material_generator": "Non-household material generator",
+      "city_official": "City official",
+      "csr_sponsor": "CSR sponsor",
+      "lender": "Lender",
+      "independent_auditor": "Independent auditor",
+      "waste_picker_union": "Waste-picker union",
+      "apparel_brand": "Apparel brand",
+      "packaging_brand": "Packaging brand"
+    },
+    "sites": {
+      "apartment_community": "Apartment community",
+      "office": "Office",
+      "hotel": "Hotel",
+      "resort": "Resort",
+      "other": "Other premises"
+    }
   }
 }

@@ -195,6 +195,8 @@ export default defineSchema({
   /** Default-deny stakeholder identities, separate from trading orgs. */
   stakeholderAccounts: defineTable({
     ownerProfileId: v.id("profiles"),
+    ageConfirmedAt: v.optional(v.number()),
+    privacyAcceptedAt: v.optional(v.number()),
     kind: vStakeholderKind,
     /** Required for material generators; optional for earlier stakeholders. */
     siteType: v.optional(vSiteType),

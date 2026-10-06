@@ -3478,5 +3478,30 @@
       "expired": "已过期",
       "revoked": "已撤销"
     }
+  },
+  "stakeholder": {
+    "title": "申请账户",
+    "kind": "账户类别",
+    "name": "机构名称",
+    "site": "主要场所",
+    "submit": "提交申请",
+    "note": "目前无法访问交易或私人记录。",
+    "kinds": {
+      "material_generator": "非家庭材料产生者",
+      "city_official": "城市官员",
+      "csr_sponsor": "企业社会责任赞助方",
+      "lender": "贷款方",
+      "independent_auditor": "独立审计员",
+      "waste_picker_union": "废品收集者工会",
+      "apparel_brand": "服装品牌",
+      "packaging_brand": "包装品牌"
+    },
+    "sites": {
+      "apartment_community": "公寓社区",
+      "office": "办公室",
+      "hotel": "酒店",
+      "resort": "度假村",
+      "other": "其他场所"
+    }
   }
 }

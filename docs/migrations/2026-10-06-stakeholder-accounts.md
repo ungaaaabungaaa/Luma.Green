@@ -27,10 +27,10 @@ until independently checked by the admin. Access to a city, CSR, lender, union,
 auditor or brand workspace requires a separate purpose-specific grant and
 redacted or consented data contract. Default to deny.
 
-This backend slice does not add a public request form, an admin review screen
-or an account status screen. Those interfaces need translated copy in all 33
-locales, role-specific verification evidence, and browser/user-guide capture.
-Keep the functions disabled in product navigation until those screens and
-their checks ship. The maintained user guide has no new route to describe in
-this slice; its earlier admin source-declaration change still needs capture
-and Word rebuild at integration.
+The public `/join/stakeholder` page now accepts requests and shows the owner's
+status. `/admin/verification` now includes the separate stakeholder queue.
+Requesting requires explicit age and privacy confirmations, recorded as
+timestamps. The UI has copy in all 33 locale catalogues. No category-specific
+workspace or data-sharing grant is present. The maintained guide source now
+describes the routes; browser captures and the Word rebuild remain an
+integration gate.

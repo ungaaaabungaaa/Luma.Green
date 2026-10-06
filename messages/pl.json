@@ -3478,5 +3478,30 @@
       "expired": "Wygasły",
       "revoked": "Unieważniony"
     }
+  },
+  "stakeholder": {
+    "title": "Złóż wniosek o konto",
+    "kind": "Grupa konta",
+    "name": "Nazwa organizacji",
+    "site": "Główna lokalizacja",
+    "submit": "Wyślij wniosek",
+    "note": "Brak jeszcze dostępu do handlu i prywatnych danych.",
+    "kinds": {
+      "material_generator": "Wytwórca materiałów spoza gospodarstw domowych",
+      "city_official": "Urzędnik miejski",
+      "csr_sponsor": "Sponsor CSR",
+      "lender": "Kredytodawca",
+      "independent_auditor": "Niezależny audytor",
+      "waste_picker_union": "Związek zbieraczy odpadów",
+      "apparel_brand": "Marka odzieżowa",
+      "packaging_brand": "Marka opakowań"
+    },
+    "sites": {
+      "apartment_community": "Wspólnota mieszkaniowa",
+      "office": "Biuro",
+      "hotel": "Obiekt hotelowy",
+      "resort": "Ośrodek wypoczynkowy",
+      "other": "Inny obiekt"
+    }
   }
 }

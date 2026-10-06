@@ -3478,5 +3478,30 @@
       "expired": "منتهي الصلاحية",
       "revoked": "ملغى"
     }
+  },
+  "stakeholder": {
+    "title": "اطلب حسابًا",
+    "kind": "فئة الحساب",
+    "name": "اسم المؤسسة",
+    "site": "الموقع الرئيسي",
+    "submit": "إرسال الطلب",
+    "note": "لا يتوفر الوصول إلى التجارة أو السجلات الخاصة بعد.",
+    "kinds": {
+      "material_generator": "مولّد مواد غير منزلية",
+      "city_official": "مسؤول بلدي",
+      "csr_sponsor": "جهة داعمة للمسؤولية الاجتماعية",
+      "lender": "جهة إقراض",
+      "independent_auditor": "مدقق مستقل",
+      "waste_picker_union": "نقابة جامعي النفايات",
+      "apparel_brand": "علامة ملابس",
+      "packaging_brand": "علامة تغليف"
+    },
+    "sites": {
+      "apartment_community": "مجمع سكني",
+      "office": "مكتب",
+      "hotel": "منشأة فندقية",
+      "resort": "منتجع",
+      "other": "موقع آخر"
+    }
   }
 }
