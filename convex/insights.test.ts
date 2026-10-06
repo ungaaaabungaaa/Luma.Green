@@ -329,7 +329,7 @@ describe("impact", () => {
 // --- Compliance on the demo world ----------------------------------------------------
 
 describe("compliance", () => {
-  it("gives a yard its GST, consent, checklist and invoices", async () => {
+  it("gives a yard its GST, consent, checklist and unverified old references", async () => {
     const t = await demoWorld();
     const farida = await signInAs(t, PHONES.yard);
     const record = await farida.query(api.insights.compliance, {});
@@ -349,24 +349,37 @@ describe("compliance", () => {
       { id: "scale", status: "self_declared" },
       { id: "safety", status: "self_declared" },
     ]);
-    // Newest first; only trades that reached escrow have an invoice.
+    // Newest first; old LG numbers are preserved without payment proof.
     expect(
       record.receipts.map((receipt) => [
-        receipt.invoiceNo,
+        receipt.legacyReceiptNo,
+        receipt.paymentVerification,
         receipt.side,
         receipt.counterparty?.name,
         receipt.needsEwayBill,
       ]),
     ).toEqual([
-      ["LG-26-0002", "purchase", "Ramesh Kabadi Store", false],
-      ["LG-26-0004", "sale", "GreenLoop Polymers", true], // ₹76,000
-      ["LG-26-0001", "purchase", "Ramesh Kabadi Store", false],
-      ["LG-26-0005", "sale", "GreenLoop Polymers", false], // ₹33,600
+      [
+        "LG-26-0002",
+        "legacy_unverified",
+        "purchase",
+        "Ramesh Kabadi Store",
+        false,
+      ],
+      ["LG-26-0004", "legacy_unverified", "sale", "GreenLoop Polymers", true],
+      [
+        "LG-26-0001",
+        "legacy_unverified",
+        "purchase",
+        "Ramesh Kabadi Store",
+        false,
+      ],
+      ["LG-26-0005", "legacy_unverified", "sale", "GreenLoop Polymers", false],
     ]);
     expect(record.epr).toBeNull();
   });
 
-  it("shows a kabadiwala only their own invoices, and asks for no consent", async () => {
+  it("shows a kabadiwala only their own old references, and asks for no consent", async () => {
     const t = await demoWorld();
     const ramesh = await signInAs(t, PHONES.kabadiwala);
     const record = await ramesh.query(api.insights.compliance, {});
@@ -377,7 +390,7 @@ describe("compliance", () => {
       { id: "gst", status: "optional" },
       { id: "consent", status: "not_needed" },
     ]);
-    expect(record.receipts.map((receipt) => receipt.invoiceNo)).toEqual([
+    expect(record.receipts.map((receipt) => receipt.legacyReceiptNo)).toEqual([
       "LG-26-0002",
       "LG-26-0001",
     ]);
@@ -421,6 +434,7 @@ describe("compliance", () => {
     const record = await suresh.query(api.insights.compliance, {});
     expect(record.epr).toEqual({
       role: "recycler",
+      evidenceStatus: "source_records_unverified",
       from: "2026-04-01",
       to: "2027-03-31",
       rows: [
@@ -440,6 +454,7 @@ describe("compliance", () => {
     const record = await anita.query(api.insights.compliance, {});
     expect(record.epr).toEqual({
       role: "manufacturer",
+      evidenceStatus: "source_records_unverified",
       from: "2026-04-01",
       to: "2027-03-31",
       rows: [
@@ -453,7 +468,7 @@ describe("compliance", () => {
     });
     expect(
       record.receipts.map((receipt) => [
-        receipt.invoiceNo,
+        receipt.legacyReceiptNo,
         receipt.needsEwayBill,
       ]),
     ).toEqual([

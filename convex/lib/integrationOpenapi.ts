@@ -158,7 +158,7 @@ export const integrationOpenapi = {
     ),
     "/trades": operation(
       "listTrades",
-      "This business's purchases or sales. paymentMode is always simulated; a paid status does not prove payment.",
+      "This business's purchases or sales. Historical simulated statuses and LG receipt numbers do not prove payment; a gateway is required for every B2B payment.",
       "trades:read",
       pageOf("Trade"),
       [
@@ -285,7 +285,10 @@ export const integrationOpenapi = {
           "createdAt",
           "updatedAt",
           "invoiceNo",
+          "legacyReceiptNo",
           "paymentMode",
+          "paymentVerification",
+          "gatewayRequired",
         ],
         properties: {
           id: string,
@@ -308,7 +311,13 @@ export const integrationOpenapi = {
           createdAt: integer,
           updatedAt: integer,
           invoiceNo: nullableString,
-          paymentMode: { const: "simulated" },
+          legacyReceiptNo: nullableString,
+          paymentMode: { const: "gateway_required" },
+          paymentVerification: {
+            type: "string",
+            enum: ["not_applicable", "gateway_required", "legacy_unverified"],
+          },
+          gatewayRequired: { const: true },
         },
       },
       News: {

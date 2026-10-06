@@ -1,5 +1,6 @@
 import { ConvexError, type Infer, v } from "convex/values";
 
+import { vPaymentVerification } from "./gatewayPayments";
 import { vFamily, vOrgKind, vTradeStatus } from "./validators";
 
 export const integrationScopes = [
@@ -92,7 +93,10 @@ export const vIntegrationTrade = v.object({
   createdAt: v.number(),
   updatedAt: v.number(),
   invoiceNo: v.union(v.string(), v.null()),
-  paymentMode: v.literal("simulated"),
+  legacyReceiptNo: v.union(v.string(), v.null()),
+  paymentMode: v.literal("gateway_required"),
+  paymentVerification: vPaymentVerification,
+  gatewayRequired: v.literal(true),
 });
 export type IntegrationOrganization = Infer<typeof vIntegrationOrganization>;
 export type IntegrationMaterial = Infer<typeof vIntegrationMaterial>;

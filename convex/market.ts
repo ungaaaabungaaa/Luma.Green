@@ -11,6 +11,7 @@ import {
   buyerKindFor,
   isInEscrow,
   type OrgKind,
+  paymentVerificationFor,
   requiresEwayBill,
   safePaiseFor,
   sellerKindFor,
@@ -18,8 +19,11 @@ import {
   tradeActionsFor,
   tradeStep,
 } from "./lib/chain";
+import {
+  requiresGatewayEvent,
+  vPaymentVerification,
+} from "./lib/gatewayPayments";
 import { stockGramsAfter } from "./lib/inventory";
-import { indiaToday } from "./lib/onboarding";
 import { vOrgKind, vTradeStatus } from "./lib/validators";
 import {
   vListingView,
@@ -31,12 +35,12 @@ import { materialIndex, requireOrg } from "./lib/workspace";
 
 /**
  * The business-to-business market: lots offered one step up the chain
- * (kabadiwala → yard → recycler → manufacturer), and the trades that move
- * them with the money held in escrow until the buyer confirms delivery.
+ * (kabadiwala → yard → recycler → manufacturer), plus reviewed manufacturer
+ * byproducts offered to an approved business with a matching material family.
  *
- * Escrow is simulated in the prototype (docs/decisions/0009): a trade's
- * status says where the money is; nothing moves. Every step writes the audit
- * log, and stock moves only at dispatch (seller) and delivery (buyer).
+ * Historical simulated payment statuses remain readable but do not prove
+ * payment. A verified gateway integration is required before new B2B trades
+ * may advance past acceptance.
  */
 
 const ORG_KINDS: readonly OrgKind[] = [
@@ -45,10 +49,9 @@ const ORG_KINDS: readonly OrgKind[] = [
   "recycler",
   "manufacturer",
 ];
-/** Kinds with someone to sell to: kabadiwalas, yards and recyclers. */
-const SELLER_KINDS = ORG_KINDS.filter((kind) => buyerKindFor(kind) !== null);
-/** Kinds with someone to buy from: yards, recyclers and manufacturers. */
-const BUYER_KINDS = ORG_KINDS.filter((kind) => sellerKindFor(kind) !== null);
+/** Every approved business can offer or buy an eligible byproduct. */
+const SELLER_KINDS = ORG_KINDS;
+const BUYER_KINDS = ORG_KINDS;
 
 /** The most rows one screen reads. */
 const PAGE = 200;
@@ -80,13 +83,13 @@ const vParty = v.object({
 
 const vTradeReceipt = v.object({
   id: v.id("trades"),
-  /** LG-26-0001; null until the buyer pays into escrow. */
+  /** No verified payment or tax-invoice number exists yet. */
   number: v.union(v.string(), v.null()),
   status: vTradeStatus,
   side: v.union(v.literal("buyer"), v.literal("seller")),
-  /** When the money went into escrow: the receipt's date. */
+  /** No verified payment issue time exists yet. */
   issuedAt: v.union(v.number(), v.null()),
-  /** When delivery was confirmed and the money released to the seller. */
+  /** No verified payment release time exists yet. */
   releasedAt: v.union(v.number(), v.null()),
   seller: vParty,
   buyer: vParty,
@@ -98,6 +101,9 @@ const vTradeReceipt = v.object({
   }),
   totalPaise: v.number(),
   inEscrow: v.boolean(),
+  legacyReceiptNo: v.union(v.string(), v.null()),
+  legacyRecordedAt: v.union(v.number(), v.null()),
+  paymentVerification: vPaymentVerification,
   needsEwayBill: v.boolean(),
 });
 
@@ -160,6 +166,7 @@ function toListingView(
 ) {
   return {
     id: listing._id,
+    origin: listing.origin,
     seller: { name: seller.name, area: seller.area, kind: seller.kind },
     material: materialRef(materials, listing.materialCode),
     grams: listing.grams,
@@ -190,7 +197,10 @@ function toTradeView(
       area: counterparty.area,
       kind: counterparty.kind,
     },
-    invoiceNo: trade.invoiceNo,
+    // Old LG numbers were issued by a simulated transition, not by GST.
+    invoiceNo: undefined,
+    legacyReceiptNo: trade.invoiceNo,
+    paymentVerification: paymentVerificationFor(trade.status),
     needsEwayBill: requiresEwayBill(trade.totalPaise),
     inEscrow: isInEscrow(trade.status),
     actions: tradeActionsFor(trade.status, side),
@@ -379,28 +389,6 @@ async function takeFromListing(
   }
 }
 
-/**
- * The next trade receipt number for the year in India: LG-26-0001, … It
- * reads every trade — fine for the pilot's volume; a counter row replaces
- * this scan when real payments arrive.
- */
-async function nextReceiptNumber(ctx: QueryCtx, now: number): Promise<string> {
-  const prefix = `LG-${indiaToday(now).slice(2, 4)}-`;
-  let last = 0;
-  for await (const trade of ctx.db.query("trades")) {
-    if (!trade.invoiceNo?.startsWith(prefix)) continue;
-    const sequence = Number(trade.invoiceNo.slice(prefix.length));
-    if (Number.isSafeInteger(sequence)) last = Math.max(last, sequence);
-  }
-  return `${prefix}${String(last + 1).padStart(4, "0")}`;
-}
-
-/** What a step does to the money in escrow (simulated in the prototype). */
-const ESCROW_EFFECT: Partial<Record<TradeAction, "held" | "released">> = {
-  pay: "held",
-  confirm: "released",
-};
-
 /** What a step moves besides the trade itself: the listing or the stock. */
 async function applyStep(
   ctx: MutationCtx,
@@ -433,9 +421,8 @@ async function applyStep(
 // --- Buying ------------------------------------------------------------------
 
 /**
- * Open lots from the kind of business that sells to mine, in my city, newest
- * first: kabadiwalas for a yard, yards for a recycler, recyclers for a
- * manufacturer.
+ * Open lots from the fixed chain tier below mine, plus approved non-hazardous
+ * manufacturer byproducts for any matching active buyer, including other cities.
  */
 export const browse = query({
   args: { materialCode: v.optional(v.string()) },
@@ -443,22 +430,42 @@ export const browse = query({
   handler: async (ctx, args) => {
     const { org } = await requireOrg(ctx, BUYER_KINDS);
     const sellerKind = sellerKindFor(org.kind);
-    if (!sellerKind) return [];
-    const rows = await ctx.db
+    const regular = sellerKind
+      ? await ctx.db
+          .query("listings")
+          .withIndex("by_status_kind", (q) =>
+            q.eq("status", "open").eq("sellerKind", sellerKind),
+          )
+          .order("desc")
+          .take(PAGE)
+      : [];
+    const byproducts = await ctx.db
       .query("listings")
       .withIndex("by_status_kind", (q) =>
-        q.eq("status", "open").eq("sellerKind", sellerKind),
+        q.eq("status", "open").eq("sellerKind", "manufacturer"),
       )
       .order("desc")
       .take(PAGE);
     const materials = await materialIndex(ctx);
     const orgOf = orgLookup(ctx);
     const views = [];
-    for (const listing of rows.toSorted(newestFirst)) {
+    for (const listing of [...regular, ...byproducts].toSorted(newestFirst)) {
+      const material = materials.get(listing.materialCode);
+      const isEligibleByproduct =
+        listing.sellerKind === "manufacturer" &&
+        listing.origin === "manufacturer_byproduct" &&
+        material?.active === true &&
+        material.stage === "scrap" &&
+        material.byproductEligibility?.hazardStatus === "non_hazardous" &&
+        org.families.includes(material.family);
+      const isRegularTrade =
+        listing.origin === undefined &&
+        buyerKindFor(listing.sellerKind) === org.kind;
       const isForMe =
         listing.grams > 0 &&
         listing.orgId !== org._id &&
-        listing.city === org.city &&
+        (isEligibleByproduct || listing.city === org.city) &&
+        (isRegularTrade || isEligibleByproduct) &&
         (args.materialCode === undefined ||
           listing.materialCode === args.materialCode);
       if (!isForMe) continue;
@@ -472,7 +479,7 @@ export const browse = query({
 
 /**
  * Asks to buy part (or all) of a lot at its asking price. Nothing is held
- * yet: the seller accepts first, then the buyer pays into escrow.
+ * yet: the seller accepts first. Payment waits for a verified gateway.
  */
 export const requestTrade = mutation({
   args: { listingId: v.id("listings"), grams: v.number() },
@@ -480,13 +487,35 @@ export const requestTrade = mutation({
   handler: async (ctx, args) => {
     const { profile, org } = await requireOrg(ctx, BUYER_KINDS);
     const listing = await ctx.db.get("listings", args.listingId);
-    if (listing?.city !== org.city) throw new ConvexError("NOT_FOUND");
-    if (listing.orgId === org._id) throw new ConvexError("OWN_LISTING");
-    if (buyerKindFor(listing.sellerKind) !== org.kind) {
-      throw new ConvexError("WRONG_ROLE");
+    if (
+      listing?.city !== org.city &&
+      listing?.origin !== "manufacturer_byproduct"
+    ) {
+      throw new ConvexError("NOT_FOUND");
     }
+    if (listing.orgId === org._id) throw new ConvexError("OWN_LISTING");
     const seller = await ctx.db.get("orgs", listing.orgId);
     if (seller?.status !== "active") throw new ConvexError("NOT_FOUND");
+    if (seller.kind !== listing.sellerKind) {
+      throw new ConvexError("INVALID_LISTING");
+    }
+    if (listing.origin === "manufacturer_byproduct") {
+      const material = await ctx.db
+        .query("materials")
+        .withIndex("by_code", (q) => q.eq("code", listing.materialCode))
+        .unique();
+      if (
+        seller.kind !== "manufacturer" ||
+        material?.active !== true ||
+        material.stage !== "scrap" ||
+        material.byproductEligibility?.hazardStatus !== "non_hazardous" ||
+        !org.families.includes(material.family)
+      ) {
+        throw new ConvexError("BYPRODUCT_NOT_ELIGIBLE");
+      }
+    } else if (buyerKindFor(listing.sellerKind) !== org.kind) {
+      throw new ConvexError("WRONG_ROLE");
+    }
     if (listing.status !== "open") throw new ConvexError("LISTING_NOT_OPEN");
     if (!isPositiveInteger(args.grams)) throw new ConvexError("INVALID_WEIGHT");
     if (args.grams > listing.grams) throw new ConvexError("NOT_ENOUGH_LEFT");
@@ -567,6 +596,14 @@ export const sellable = query({
     for (const material of materials.values()) {
       const held = stock.get(material.code);
       if (!held || held.stockGrams <= 0 || !material.active) continue;
+      if (
+        org.kind === "manufacturer" &&
+        (material.stage !== "scrap" ||
+          material.byproductEligibility?.hazardStatus !== "non_hazardous" ||
+          !org.families.includes(material.family))
+      ) {
+        continue;
+      }
       items.push({
         material: materialRef(materials, material.code),
         stage: material.stage,
@@ -607,6 +644,14 @@ export const createListing = mutation({
       .withIndex("by_code", (q) => q.eq("code", args.materialCode))
       .first();
     if (!material?.active) throw new ConvexError("UNKNOWN_MATERIAL");
+    if (
+      org.kind === "manufacturer" &&
+      (material.stage !== "scrap" ||
+        material.byproductEligibility?.hazardStatus !== "non_hazardous" ||
+        !org.families.includes(material.family))
+    ) {
+      throw new ConvexError("BYPRODUCT_NOT_ELIGIBLE");
+    }
     const stock = await stockFor(ctx, org._id);
     const available = stock.get(args.materialCode)?.availableGrams ?? 0;
     if (args.grams > available) throw new ConvexError("NOT_ENOUGH_STOCK");
@@ -620,6 +665,8 @@ export const createListing = mutation({
       askPaisePerKg: args.askPaisePerKg,
       city: org.city,
       note,
+      origin:
+        org.kind === "manufacturer" ? "manufacturer_byproduct" : undefined,
       status: "open",
       createdAt: now,
       updatedAt: now,
@@ -712,9 +759,8 @@ export const trades = query({
 });
 
 /**
- * One step of a trade, by the side whose turn it is: the seller accepts or
- * declines, the buyer pays into escrow, the seller dispatches, the buyer
- * confirms delivery.
+ * One current trade step: the seller accepts or declines. Payment, dispatch
+ * and completion are unavailable until a gateway event can be verified.
  */
 export const act = mutation({
   args: { tradeId: v.id("trades"), action: vTradeAction },
@@ -727,21 +773,18 @@ export const act = mutation({
     const trade = await ctx.db.get("trades", args.tradeId);
     const side = trade ? sideOf(trade, org._id) : null;
     if (!trade || !side) throw new ConvexError("NOT_FOUND");
+    if (requiresGatewayEvent(args.action)) {
+      throw new ConvexError("GATEWAY_REQUIRED");
+    }
     const next = tradeStep(trade.status, args.action, side);
     if (!next) throw new ConvexError("WRONG_STEP");
 
     const now = Date.now();
     const actor = { profileId: profile._id, orgId: org._id };
     await applyStep(ctx, actor, trade, args.action, now);
-    // Paying into escrow is what issues the trade receipt.
-    const invoiceNo =
-      args.action === "pay"
-        ? await nextReceiptNumber(ctx, now)
-        : trade.invoiceNo;
     await ctx.db.patch("trades", trade._id, {
       status: next,
       timeline: [...trade.timeline, { status: next, at: now }],
-      invoiceNo,
       updatedAt: now,
     });
     await audit(ctx, {
@@ -756,18 +799,15 @@ export const act = mutation({
         side,
         grams: trade.grams,
         totalPaise: trade.totalPaise,
-        invoiceNo,
-        escrow: ESCROW_EFFECT[args.action],
       },
     });
-    return { status: next, invoiceNo };
+    return { status: next };
   },
 });
 
 /**
- * A trade's receipt, for either side: both businesses, the line, the total
- * and the e-way-bill note. A trade receipt, not a GST tax invoice — those
- * come with real payments. Null when the trade isn't found or isn't mine.
+ * A read-only record for either trade party. It retains old numbers as
+ * unverified legacy references, not as payment or tax-invoice proof.
  */
 export const receipt = query({
   args: { tradeId: v.string() },
@@ -782,15 +822,19 @@ export const receipt = query({
     const buyer = await ctx.db.get("orgs", trade.buyerOrgId);
     if (!seller || !buyer) return null;
     const materials = await materialIndex(ctx);
-    const at = (status: Doc<"trades">["status"]) =>
-      trade.timeline.find((entry) => entry.status === status)?.at ?? null;
     return {
       id: trade._id,
-      number: trade.invoiceNo ?? null,
+      number: null,
+      legacyReceiptNo: trade.invoiceNo ?? null,
+      legacyRecordedAt: trade.invoiceNo
+        ? (trade.timeline.find((entry) => entry.status === "paid_to_escrow")
+            ?.at ?? trade.updatedAt)
+        : null,
+      paymentVerification: paymentVerificationFor(trade.status),
       status: trade.status,
       side,
-      issuedAt: at("paid_to_escrow"),
-      releasedAt: at("completed"),
+      issuedAt: null,
+      releasedAt: null,
       seller: partyOf(seller),
       buyer: partyOf(buyer),
       line: {

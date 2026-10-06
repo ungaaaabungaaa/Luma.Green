@@ -10,6 +10,7 @@ import {
   type QueryCtx,
 } from "./_generated/server";
 import { requireUser } from "./lib/access";
+import { paymentVerificationFor } from "./lib/chain";
 import {
   hashToken,
   INTEGRATION_DAY_MS,
@@ -362,8 +363,11 @@ async function readResource(
           status: row.status,
           createdAt: row.createdAt,
           updatedAt: row.updatedAt,
-          invoiceNo: row.invoiceNo ?? null,
-          paymentMode: "simulated" as const,
+          invoiceNo: null,
+          legacyReceiptNo: row.invoiceNo ?? null,
+          paymentMode: "gateway_required" as const,
+          paymentVerification: paymentVerificationFor(row.status),
+          gatewayRequired: true as const,
         })),
         pagination: {
           nextCursor: result.isDone ? null : result.continueCursor,

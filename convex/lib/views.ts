@@ -1,6 +1,7 @@
 import { v } from "convex/values";
 
 import { vSaathiTime } from "./drafts";
+import { vPaymentVerification } from "./gatewayPayments";
 import { vBookingStatus, vFamily, vOrgKind, vTradeStatus } from "./validators";
 
 /** Result shapes shared by the query functions. */
@@ -78,6 +79,9 @@ export const vTradeView = v.object({
     kind: vOrgKind,
   }),
   invoiceNo: v.optional(v.string()),
+  /** Old internal receipt number; it is not a verified GST invoice. */
+  legacyReceiptNo: v.optional(v.string()),
+  paymentVerification: vPaymentVerification,
   needsEwayBill: v.boolean(),
   inEscrow: v.boolean(),
   actions: v.array(vTradeAction),
@@ -86,6 +90,7 @@ export const vTradeView = v.object({
 
 export const vListingView = v.object({
   id: v.id("listings"),
+  origin: v.optional(v.literal("manufacturer_byproduct")),
   seller: v.object({ name: v.string(), area: v.string(), kind: vOrgKind }),
   material: vMaterialRef,
   grams: v.number(),

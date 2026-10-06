@@ -9,6 +9,7 @@ import {
   convexModules,
   registerAuth,
   seedDemo,
+  signIn,
   signInAs,
 } from "./lib/auth.testing";
 import { paiseFor } from "./lib/chain";
@@ -193,15 +194,13 @@ describe("browse", () => {
     expect(lots.map((lot) => lot.seller.name)).not.toContain("Mysuru Scrap");
   });
 
-  it("is for businesses that buy, signed in", async () => {
+  it("lets approved businesses browse and keeps applicants out", async () => {
     const t = await demoWorld();
     await expect(t.query(api.market.browse, {})).rejects.toThrow(
       /NOT_SIGNED_IN/,
     );
     const shop = await signInAs(t, SHOP);
-    await expect(shop.query(api.market.browse, {})).rejects.toThrow(
-      /WRONG_ROLE/,
-    );
+    expect(await shop.query(api.market.browse, {})).toEqual([]);
     const saathi = await signInAs(t, SAATHI);
     await expect(saathi.query(api.market.browse, {})).rejects.toThrow(
       /NO_BUSINESS/,
@@ -209,8 +208,8 @@ describe("browse", () => {
   });
 });
 
-describe("a trade from request to delivery", () => {
-  it("moves a lot from a kabadiwala to a yard, step by step", async () => {
+describe("a trade awaiting the payment gateway", () => {
+  it("accepts a request but cannot claim payment, dispatch, or delivery", async () => {
     const t = await demoWorld();
     const yard = await signInAs(t, YARD);
     const shop = await signInAs(t, SHOP);
@@ -248,63 +247,34 @@ describe("a trade from request to delivery", () => {
     const shrunk = await lotOf(yard, RAMESH, "PAPER-NEWS");
     expect(shrunk.grams).toBe(50_000);
     const accepted = await tradeOf(yard, "buying", tradeId);
-    expect(accepted.actions).toEqual(["pay"]);
+    expect(accepted).toMatchObject({
+      status: "accepted",
+      actions: [],
+      inEscrow: false,
+      paymentVerification: "gateway_required",
+    });
+    expect(accepted).not.toHaveProperty("invoiceNo");
 
-    // 3. The yard pays into escrow, which issues the receipt number.
-    const paid = await yard.mutation(api.market.act, {
-      tradeId,
-      action: "pay",
-    });
-    expect(paid.status).toBe("paid_to_escrow");
-    expect(paid.invoiceNo).toMatch(/^LG-\d{2}-\d{4}$/);
-    const seededNumbers = await t.run(async (ctx) => {
-      const trades = await ctx.db.query("trades").collect();
-      return trades.flatMap((trade) =>
-        trade._id !== tradeId && trade.invoiceNo ? [trade.invoiceNo] : [],
-      );
-    });
-    expect(seededNumbers.length).toBeGreaterThan(0);
-    expect(seededNumbers).not.toContain(paid.invoiceNo);
-    expect(await tradeOf(shop, "selling", tradeId)).toMatchObject({
-      inEscrow: true,
-      invoiceNo: paid.invoiceNo,
-      actions: ["dispatch"],
-    });
-
-    // 4. The kabadiwala dispatches: the load leaves the shop's stock.
-    await shop.mutation(api.market.act, { tradeId, action: "dispatch" });
+    for (const [actor, action] of [
+      [yard, "pay"],
+      [shop, "dispatch"],
+      [yard, "confirm"],
+    ] as const) {
+      await expect(
+        actor.mutation(api.market.act, { tradeId, action }),
+      ).rejects.toThrow(/GATEWAY_REQUIRED/);
+    }
     expect(await stockOf(t, "ramesh-kabadi-store", "PAPER-NEWS")).toBe(
-      shopStock - 100_000,
+      shopStock,
     );
     expect(await stockOf(t, "peenya-paper-plastic-yard", "PAPER-NEWS")).toBe(
       yardStock,
     );
-
-    // 5. The yard confirms delivery: stock arrives, escrow is released.
-    const done = await yard.mutation(api.market.act, {
-      tradeId,
-      action: "confirm",
-    });
-    expect(done).toEqual({ status: "completed", invoiceNo: paid.invoiceNo });
-    expect(await stockOf(t, "peenya-paper-plastic-yard", "PAPER-NEWS")).toBe(
-      yardStock + 100_000,
-    );
-    const completed = await tradeOf(yard, "buying", tradeId);
-    expect(completed).toMatchObject({ inEscrow: false, actions: [] });
-    expect(completed.timeline.map((entry) => entry.status)).toEqual([
-      "requested",
-      "accepted",
-      "paid_to_escrow",
-      "dispatched",
-      "completed",
-    ]);
-
+    const unchanged = await tradeOf(yard, "buying", tradeId);
+    expect(unchanged.timeline).toHaveLength(2);
     expect(await auditActions(t, "trades", tradeId)).toEqual([
       "trade.requested",
       "trade.accepted",
-      "trade.paid_to_escrow",
-      "trade.dispatched",
-      "trade.completed",
     ]);
   });
 
@@ -372,7 +342,7 @@ describe("a trade from request to delivery", () => {
 });
 
 describe("act refuses", () => {
-  it("steps out of turn, by the wrong side", async () => {
+  it("rejects wrong-side acceptance and all payment actions", async () => {
     const t = await demoWorld();
     const yard = await signInAs(t, YARD);
     const shop = await signInAs(t, SHOP);
@@ -382,33 +352,30 @@ describe("act refuses", () => {
       grams: 10_000,
     });
 
-    // The buyer can't accept their own request, nor pay before acceptance.
+    // The buyer can't accept their own request.
     await expect(
       yard.mutation(api.market.act, { tradeId, action: "accept" }),
     ).rejects.toThrow(/WRONG_STEP/);
     await expect(
       yard.mutation(api.market.act, { tradeId, action: "pay" }),
-    ).rejects.toThrow(/WRONG_STEP/);
+    ).rejects.toThrow(/GATEWAY_REQUIRED/);
 
     await shop.mutation(api.market.act, { tradeId, action: "accept" });
-    // The seller can't pay, and can't dispatch before the money is in.
+    // Neither side can advance through an unconfigured payment gateway.
     await expect(
       shop.mutation(api.market.act, { tradeId, action: "pay" }),
-    ).rejects.toThrow(/WRONG_STEP/);
+    ).rejects.toThrow(/GATEWAY_REQUIRED/);
     await expect(
       shop.mutation(api.market.act, { tradeId, action: "dispatch" }),
-    ).rejects.toThrow(/WRONG_STEP/);
-
-    await yard.mutation(api.market.act, { tradeId, action: "pay" });
-    // No paying twice, and no confirming before dispatch.
+    ).rejects.toThrow(/GATEWAY_REQUIRED/);
     await expect(
       yard.mutation(api.market.act, { tradeId, action: "pay" }),
-    ).rejects.toThrow(/WRONG_STEP/);
+    ).rejects.toThrow(/GATEWAY_REQUIRED/);
     await expect(
       yard.mutation(api.market.act, { tradeId, action: "confirm" }),
-    ).rejects.toThrow(/WRONG_STEP/);
+    ).rejects.toThrow(/GATEWAY_REQUIRED/);
     const trade = await tradeOf(yard, "buying", tradeId);
-    expect(trade.status).toBe("paid_to_escrow");
+    expect(trade.status).toBe("accepted");
   });
 
   it("someone else's trade, and anyone signed out", async () => {
@@ -426,11 +393,10 @@ describe("act refuses", () => {
     ).rejects.toThrow(/NOT_SIGNED_IN/);
   });
 
-  it("a dispatch bigger than the seller's stock", async () => {
+  it("blocks dispatch of a legacy simulated trade before stock moves", async () => {
     const t = await demoWorld();
     const shop = await signInAs(t, SHOP);
-    // Seeded: 180 kg of cartons paid into escrow. The shop then sold most
-    // of its cartons elsewhere and holds only 95 kg.
+    // A seeded simulated status is not a verified gateway payment.
     await setStock(t, "ramesh-kabadi-store", "PAPER-CARTON", 95_000);
     const { selling } = await shop.query(api.market.trades, {});
     const cartons = selling.find(
@@ -438,7 +404,11 @@ describe("act refuses", () => {
         trade.material.code === "PAPER-CARTON" &&
         trade.status === "paid_to_escrow",
     );
-    expect(cartons?.actions).toEqual(["dispatch"]);
+    expect(cartons).toMatchObject({
+      actions: [],
+      inEscrow: false,
+      paymentVerification: "legacy_unverified",
+    });
     const before = await stockOf(t, "ramesh-kabadi-store", "PAPER-CARTON");
     expect(before).toBeLessThan(cartons?.grams ?? 0);
 
@@ -447,7 +417,7 @@ describe("act refuses", () => {
         tradeId: cartons?.id as Id<"trades">,
         action: "dispatch",
       }),
-    ).rejects.toThrow(/NOT_ENOUGH_STOCK/);
+    ).rejects.toThrow(/GATEWAY_REQUIRED/);
     expect(await stockOf(t, "ramesh-kabadi-store", "PAPER-CARTON")).toBe(
       before,
     );
@@ -469,13 +439,13 @@ describe("requestTrade refuses", () => {
         grams: 10_000,
       }),
     ).rejects.toThrow(/WRONG_ROLE/);
-    // Kabadiwalas sell on the market; they don't buy there.
+    // A business cannot buy its own listing.
     await expect(
       shop.mutation(api.market.requestTrade, {
         listingId: lot.id,
         grams: 10_000,
       }),
-    ).rejects.toThrow(/WRONG_ROLE/);
+    ).rejects.toThrow(/OWN_LISTING/);
 
     await expect(
       yard.mutation(api.market.requestTrade, {
@@ -620,7 +590,7 @@ describe("selling", () => {
     );
   });
 
-  it("is for businesses someone buys from", async () => {
+  it("keeps unclassified manufacturer material off the market", async () => {
     const t = await demoWorld();
     const maker = await signInAs(t, MAKER);
     await expect(
@@ -629,13 +599,9 @@ describe("selling", () => {
         grams: 1000,
         askPaisePerKg: 3800,
       }),
-    ).rejects.toThrow(/WRONG_ROLE/);
-    await expect(maker.query(api.market.myListings, {})).rejects.toThrow(
-      /WRONG_ROLE/,
-    );
-    await expect(maker.query(api.market.sellable, {})).rejects.toThrow(
-      /WRONG_ROLE/,
-    );
+    ).rejects.toThrow(/BYPRODUCT_NOT_ELIGIBLE/);
+    expect(await maker.query(api.market.myListings, {})).toEqual([]);
+    expect(await maker.query(api.market.sellable, {})).toEqual([]);
     await expect(
       t.mutation(api.market.createListing, {
         materialCode: "PAPER-NEWS",
@@ -739,26 +705,173 @@ describe("selling", () => {
   });
 });
 
+describe("manufacturer non-hazardous byproduct offers", () => {
+  it("requires admin-reviewed classification and a matching active buyer", async () => {
+    vi.stubEnv("ADMIN_EMAIL", "admin@luma.test");
+    const t = await demoWorld();
+    const maker = await signInAs(t, MAKER);
+    const shop = await signInAs(t, SHOP);
+    const admin = await signIn(t, {
+      email: "admin@luma.test",
+      twoFactorEnabled: true,
+    });
+    const { materialId, shopId } = await t.run(async (ctx) => {
+      const factory = await ctx.db
+        .query("orgs")
+        .withIndex("by_slug", (q) => q.eq("slug", "deccan-packaging"))
+        .unique();
+      const buyer = await ctx.db
+        .query("orgs")
+        .withIndex("by_slug", (q) => q.eq("slug", "ramesh-kabadi-store"))
+        .unique();
+      const material = await ctx.db
+        .query("materials")
+        .withIndex("by_code", (q) => q.eq("code", "PLASTIC-PET"))
+        .unique();
+      if (!factory || !buyer || !material) throw new Error("Missing fixture");
+      await ctx.db.insert("inventory", {
+        orgId: factory._id,
+        materialCode: material.code,
+        grams: 50_000,
+        updatedAt: Date.now(),
+      });
+      return { materialId: material._id, shopId: buyer._id };
+    });
+    const offer = {
+      materialCode: "PLASTIC-PET",
+      grams: 10_000,
+      askPaisePerKg: 2500,
+    };
+
+    await expect(
+      maker.mutation(api.market.createListing, offer),
+    ).rejects.toThrow(/BYPRODUCT_NOT_ELIGIBLE/);
+    await expect(
+      maker.mutation(api.byproductClassification.reviewMaterial, {
+        materialCode: "PLASTIC-PET",
+        hazardStatus: "non_hazardous",
+        sourceReference: "LAB-TEST-1",
+      }),
+    ).rejects.toThrow(/NOT_ADMIN/);
+    await admin.mutation(api.byproductClassification.reviewMaterial, {
+      materialCode: "PLASTIC-PET",
+      hazardStatus: "non_hazardous",
+      sourceReference: "LAB-TEST-1",
+    });
+    const reviewed = await t.run((ctx) => ctx.db.get("materials", materialId));
+    expect(reviewed?.byproductEligibility).toMatchObject({
+      hazardStatus: "non_hazardous",
+      sourceReference: "LAB-TEST-1",
+    });
+
+    await t.run((ctx) => ctx.db.patch("orgs", shopId, { city: "Mysuru" }));
+    const listingId = await maker.mutation(api.market.createListing, offer);
+    const visible = await shop.query(api.market.browse, {
+      materialCode: "PLASTIC-PET",
+    });
+    expect(visible).toContainEqual(
+      expect.objectContaining({
+        id: listingId,
+        origin: "manufacturer_byproduct",
+      }),
+    );
+    const makerLots = await maker.query(api.market.browse, {
+      materialCode: "PLASTIC-PET",
+    });
+    expect(makerLots.some((listing) => listing.id === listingId)).toBe(false);
+
+    await t.run((ctx) => ctx.db.patch("orgs", shopId, { families: ["paper"] }));
+    const wrongFamilyLots = await shop.query(api.market.browse, {
+      materialCode: "PLASTIC-PET",
+    });
+    expect(wrongFamilyLots.some((listing) => listing.id === listingId)).toBe(
+      false,
+    );
+    await expect(
+      shop.mutation(api.market.requestTrade, { listingId, grams: 1000 }),
+    ).rejects.toThrow(/BYPRODUCT_NOT_ELIGIBLE/);
+    await t.run((ctx) =>
+      ctx.db.patch("orgs", shopId, { families: ["paper", "plastic"] }),
+    );
+    const tradeId = await shop.mutation(api.market.requestTrade, {
+      listingId,
+      grams: 1000,
+    });
+    const requested = await tradeOf(shop, "buying", tradeId);
+    expect(requested.status).toBe("requested");
+
+    await admin.mutation(api.byproductClassification.reviewMaterial, {
+      materialCode: "PLASTIC-PET",
+      hazardStatus: "hazardous",
+      sourceReference: "LAB-TEST-2",
+    });
+    const revokedLots = await shop.query(api.market.browse, {
+      materialCode: "PLASTIC-PET",
+    });
+    expect(revokedLots.some((listing) => listing.id === listingId)).toBe(false);
+    await expect(
+      shop.mutation(api.market.requestTrade, { listingId, grams: 1000 }),
+    ).rejects.toThrow(/BYPRODUCT_NOT_ELIGIBLE/);
+  });
+
+  it("refuses missing review evidence, product grades, and inactive buyers", async () => {
+    vi.stubEnv("ADMIN_EMAIL", "admin@luma.test");
+    const t = await demoWorld();
+    const admin = await signIn(t, {
+      email: "admin@luma.test",
+      twoFactorEnabled: true,
+    });
+    await expect(
+      admin.mutation(api.byproductClassification.reviewMaterial, {
+        materialCode: "PLASTIC-PET",
+        hazardStatus: "non_hazardous",
+        sourceReference: " ",
+      }),
+    ).rejects.toThrow(/INVALID_CLASSIFICATION_SOURCE/);
+    await expect(
+      admin.mutation(api.byproductClassification.reviewMaterial, {
+        materialCode: "RECYCLED-PET-FLAKE",
+        hazardStatus: "non_hazardous",
+        sourceReference: "LAB-TEST-1",
+      }),
+    ).rejects.toThrow(/MATERIAL_NOT_ELIGIBLE/);
+    const shop = await signInAs(t, SHOP);
+    await t.run(async (ctx) => {
+      const buyer = await ctx.db
+        .query("orgs")
+        .withIndex("by_slug", (q) => q.eq("slug", "ramesh-kabadi-store"))
+        .unique();
+      if (!buyer) throw new Error("Missing buyer");
+      await ctx.db.patch("orgs", buyer._id, { status: "suspended" });
+    });
+    await expect(shop.query(api.market.browse, {})).rejects.toThrow(
+      /NO_BUSINESS/,
+    );
+  });
+});
+
 describe("trades", () => {
   it("shows each side its own trades with the steps open to it", async () => {
     const t = await demoWorld();
     const recycler = await signInAs(t, RECYCLER);
     const { buying, selling } = await recycler.query(api.market.trades, {});
-    // Seeded: 2,000 kg of PET dispatched by the yard, waiting for delivery.
+    // Seeded history remains visible, but its payment was never verified.
     const pet = buying.find((trade) => trade.status === "dispatched");
     expect(pet).toMatchObject({
       material: { code: "PLASTIC-PET", family: "plastic" },
       counterparty: { name: PEENYA, kind: "yard" },
-      actions: ["confirm"],
-      inEscrow: true,
+      actions: [],
+      inEscrow: false,
+      paymentVerification: "legacy_unverified",
       needsEwayBill: true,
     });
-    // Seeded: 5,000 kg of flakes paid for by the manufacturer.
+    // The old status cannot open a new dispatch action.
     expect(
       selling.find((trade) => trade.status === "paid_to_escrow"),
     ).toMatchObject({
       material: { code: "RECYCLED-PET-FLAKE" },
-      actions: ["dispatch"],
+      actions: [],
+      paymentVerification: "legacy_unverified",
     });
 
     const maker = await signInAs(t, MAKER);
@@ -776,8 +889,8 @@ describe("trades", () => {
   });
 });
 
-describe("receipt", () => {
-  it("shows both businesses to either side, and nobody else", async () => {
+describe("unverified legacy trade record", () => {
+  it("preserves the old reference without calling it a paid invoice", async () => {
     const t = await demoWorld();
     const yard = await signInAs(t, YARD);
     const { buying } = await yard.query(api.market.trades, {});
@@ -786,7 +899,9 @@ describe("receipt", () => {
 
     const receipt = await yard.query(api.market.receipt, { tradeId });
     expect(receipt).toMatchObject({
-      number: completed?.invoiceNo,
+      number: null,
+      legacyReceiptNo: completed?.legacyReceiptNo,
+      paymentVerification: "legacy_unverified",
       side: "buyer",
       status: "completed",
       seller: { name: RAMESH, kind: "kabadiwala" },
@@ -799,14 +914,15 @@ describe("receipt", () => {
       totalPaise: completed?.totalPaise,
       inEscrow: false,
     });
-    expect(receipt?.issuedAt).toBeTypeOf("number");
-    expect(receipt?.releasedAt).toBeTypeOf("number");
+    expect(receipt?.issuedAt).toBeNull();
+    expect(receipt?.releasedAt).toBeNull();
     expect(receipt?.seller.address).toContain("Yeshwanthpur");
 
     const shop = await signInAs(t, SHOP);
     expect(await shop.query(api.market.receipt, { tradeId })).toMatchObject({
       side: "seller",
-      number: completed?.invoiceNo,
+      number: null,
+      legacyReceiptNo: completed?.legacyReceiptNo,
     });
 
     const maker = await signInAs(t, MAKER);
@@ -819,7 +935,7 @@ describe("receipt", () => {
     );
   });
 
-  it("has no number until the buyer pays", async () => {
+  it("has no issued number while a trade awaits the gateway", async () => {
     const t = await demoWorld();
     const yard = await signInAs(t, YARD);
     const { buying } = await yard.query(api.market.trades, {});
@@ -827,7 +943,11 @@ describe("receipt", () => {
     const receipt = await yard.query(api.market.receipt, {
       tradeId: requested?.id as Id<"trades">,
     });
-    expect(receipt).toMatchObject({ number: null, issuedAt: null });
+    expect(receipt).toMatchObject({
+      number: null,
+      issuedAt: null,
+      paymentVerification: "not_applicable",
+    });
   });
 });
 
@@ -903,9 +1023,9 @@ describe("complete stock reservations", () => {
   });
 });
 
-describe("inventory mass boundary", () => {
+describe("gateway guard before inventory changes", () => {
   it.each([Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER + 1, -1, 0.5])(
-    "refuses an unsafe receipt without changing the trade, stock or audit (stock %s)",
+    "blocks a legacy confirmation without changing trade, stock or audit (stock %s)",
     async (grams) => {
       const t = await demoWorld();
       const recycler = await signInAs(t, RECYCLER);
@@ -925,13 +1045,13 @@ describe("inventory mass boundary", () => {
           tradeId: delivery.id,
           action: "confirm",
         }),
-      ).rejects.toThrow(/INVALID_WEIGHT/);
+      ).rejects.toThrow(/GATEWAY_REQUIRED/);
       expect(await snapshot()).toEqual(before);
     },
   );
 });
 
-describe("stored trade mass validation", () => {
+describe("legacy trade mass stays unchanged without gateway verification", () => {
   it.each([
     ["confirm", Number.MAX_SAFE_INTEGER + 1],
     ["confirm", 0.5],
@@ -942,7 +1062,7 @@ describe("stored trade mass validation", () => {
     ["dispatch", -1],
     ["dispatch", 0],
   ] as const)(
-    "refuses %s for invalid stored grams %s atomically",
+    "blocks %s for invalid stored grams %s atomically",
     async (action, grams) => {
       const t = await demoWorld();
       const recycler = await signInAs(t, RECYCLER);
@@ -962,12 +1082,12 @@ describe("stored trade mass validation", () => {
       const before = await snapshot();
       await expect(
         recycler.mutation(api.market.act, { tradeId: trade.id, action }),
-      ).rejects.toThrow(/INVALID_WEIGHT/);
+      ).rejects.toThrow(/GATEWAY_REQUIRED/);
       expect(await snapshot()).toEqual(before);
     },
   );
 
-  it("receives stock exactly at the safe-integer boundary", async () => {
+  it("does not receive stock even at a safe-integer boundary", async () => {
     const t = await demoWorld();
     const recycler = await signInAs(t, RECYCLER);
     const { buying } = await recycler.query(api.market.trades, {});
@@ -979,16 +1099,18 @@ describe("stored trade mass validation", () => {
       delivery.material.code,
       Number.MAX_SAFE_INTEGER - delivery.grams,
     );
-    await recycler.mutation(api.market.act, {
-      tradeId: delivery.id,
-      action: "confirm",
-    });
+    await expect(
+      recycler.mutation(api.market.act, {
+        tradeId: delivery.id,
+        action: "confirm",
+      }),
+    ).rejects.toThrow(/GATEWAY_REQUIRED/);
     expect(await stockOf(t, "greenloop-polymers", delivery.material.code)).toBe(
-      Number.MAX_SAFE_INTEGER,
+      Number.MAX_SAFE_INTEGER - delivery.grams,
     );
-    const completed = await tradeOf(recycler, "buying", delivery.id);
-    expect(completed.status).toBe("completed");
-    expect(await auditActions(t, "trades", delivery.id)).toContain(
+    const pending = await tradeOf(recycler, "buying", delivery.id);
+    expect(pending.status).toBe("dispatched");
+    expect(await auditActions(t, "trades", delivery.id)).not.toContain(
       "trade.completed",
     );
   });

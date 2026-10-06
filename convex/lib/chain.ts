@@ -81,7 +81,7 @@ export function canMoveBooking(from: BookingStatus, to: BookingStatus) {
   return BOOKING_NEXT[from].includes(to);
 }
 
-// --- Trades (business to business, escrow) --------------------------------
+// --- Trades (business to business, gateway required) ----------------------
 
 export type TradeStatus =
   | "requested"
@@ -93,17 +93,42 @@ export type TradeStatus =
 
 export type TradeAction = "accept" | "decline" | "pay" | "dispatch" | "confirm";
 
-/** Which side acts at each step, and where the action takes the trade. */
-const TRADE_ACTIONS: Record<
-  TradeAction,
-  { from: TradeStatus; to: TradeStatus; by: "buyer" | "seller" }
+/**
+ * Old payment, dispatch and completion statuses remain readable. No caller
+ * may reach them through a user action until a gateway verifies payment.
+ */
+const TRADE_ACTIONS: Partial<
+  Record<
+    TradeAction,
+    { from: TradeStatus; to: TradeStatus; by: "buyer" | "seller" }
+  >
 > = {
   accept: { from: "requested", to: "accepted", by: "seller" },
   decline: { from: "requested", to: "declined", by: "seller" },
-  pay: { from: "accepted", to: "paid_to_escrow", by: "buyer" },
-  dispatch: { from: "paid_to_escrow", to: "dispatched", by: "seller" },
-  confirm: { from: "dispatched", to: "completed", by: "buyer" },
 };
+
+export type PaymentVerification =
+  "not_applicable" | "gateway_required" | "legacy_unverified";
+
+/** A status alone never proves that money reached a gateway. */
+export function paymentVerificationFor(
+  status: TradeStatus,
+): PaymentVerification {
+  switch (status) {
+    case "accepted": {
+      return "gateway_required";
+    }
+    case "paid_to_escrow":
+    case "dispatched":
+    case "completed": {
+      return "legacy_unverified";
+    }
+    case "requested":
+    case "declined": {
+      return "not_applicable";
+    }
+  }
+}
 
 /** The status an action leads to, or null if this side can't take it now. */
 export function tradeStep(
@@ -112,7 +137,7 @@ export function tradeStep(
   side: "buyer" | "seller",
 ): TradeStatus | null {
   const step = TRADE_ACTIONS[action];
-  return step.from === status && step.by === side ? step.to : null;
+  return step?.from === status && step.by === side ? step.to : null;
 }
 
 /** The actions open to one side of a trade right now. */
@@ -125,9 +150,9 @@ export function tradeActionsFor(
   );
 }
 
-/** Money is in escrow from payment until the buyer confirms delivery. */
-export function isInEscrow(status: TradeStatus): boolean {
-  return status === "paid_to_escrow" || status === "dispatched";
+/** Legacy simulated status is not evidence of funds held by Luma or a gateway. */
+export function isInEscrow(_status: TradeStatus): boolean {
+  return false;
 }
 
 /**

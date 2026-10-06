@@ -254,6 +254,18 @@ export default defineSchema({
     co2eFactor: v.number(),
     sortOrder: v.number(),
     active: v.boolean(),
+    /** Admin-reviewed evidence gate; absent means not classified. */
+    byproductEligibility: v.optional(
+      v.object({
+        hazardStatus: v.union(
+          v.literal("non_hazardous"),
+          v.literal("hazardous"),
+        ),
+        sourceReference: v.string(),
+        reviewedAt: v.number(),
+        reviewedByProfileId: v.optional(v.id("profiles")),
+      }),
+    ),
   })
     .index("by_code", ["code"])
     .index("by_sortOrder", ["sortOrder"]),
@@ -582,6 +594,8 @@ export default defineSchema({
     askPaisePerKg: v.number(),
     city: v.string(),
     note: v.optional(v.string()),
+    /** Manufacturer offers require an admin-reviewed non-hazardous material. */
+    origin: v.optional(v.literal("manufacturer_byproduct")),
     status: v.union(
       v.literal("open"),
       v.literal("sold"),
@@ -593,8 +607,9 @@ export default defineSchema({
     .index("by_org", ["orgId"]),
 
   /**
-   * A purchase between two businesses. Money is held in escrow (simulated in
-   * the prototype) from payment until the buyer confirms delivery.
+   * A purchase between two businesses. Legacy prototype payment statuses and
+   * receipt numbers remain for history but do not prove payment or invoicing.
+   * New trades stop at acceptance until a verified gateway is integrated.
    */
   trades: defineTable({
     listingId: v.id("listings"),

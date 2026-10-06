@@ -28,8 +28,8 @@ import {
 
 /**
  * Impact and compliance: what a business has kept in the recycling loop, and
- * the papers and records it needs to keep doing it. Everything is read from
- * the ledger — completed pickups and trades — never typed in.
+ * the papers and records it needs to keep doing it. Historical completed
+ * trades are records, not proof that a gateway received payment.
  */
 
 /** Most rows one list reads — a prototype bound; keep running totals past it. */
@@ -300,9 +300,11 @@ const vEprRegime = v.union(
 
 const vReceiptRow = v.object({
   tradeId: v.id("trades"),
-  invoiceNo: v.string(),
-  /** When the invoice was issued: the buyer's payment into escrow. */
-  issuedAt: v.number(),
+  /** Old LG reference from the prototype; not a verified GST invoice. */
+  legacyReceiptNo: v.string(),
+  /** When the old reference was recorded, not a verified payment date. */
+  recordedAt: v.number(),
+  paymentVerification: v.literal("legacy_unverified"),
   side: v.union(v.literal("sale"), v.literal("purchase")),
   /** The other business; null only if its record is gone. */
   counterparty: v.union(
@@ -317,6 +319,8 @@ const vReceiptRow = v.object({
 
 const vEprSummary = v.object({
   role: v.union(v.literal("recycler"), v.literal("manufacturer")),
+  /** Old completed rows are physical-flow claims without verified evidence. */
+  evidenceStatus: v.literal("source_records_unverified"),
   /** The financial year, YYYY-MM-DD, April to March. */
   from: v.string(),
   to: v.string(),
@@ -494,18 +498,18 @@ async function receiptsOf(
   trades: readonly Doc<"trades">[],
   materials: Materials,
 ): Promise<Infer<typeof vReceiptRow>[]> {
-  const invoiced = trades
+  const legacyReferences = trades
     .filter((trade) => trade.invoiceNo !== undefined)
     .map((trade) => ({
       trade,
-      issuedAt: reachedAt(trade, "paid_to_escrow") ?? trade.updatedAt,
+      recordedAt: reachedAt(trade, "paid_to_escrow") ?? trade.updatedAt,
     }))
-    .toSorted((a, b) => b.issuedAt - a.issuedAt)
+    .toSorted((a, b) => b.recordedAt - a.recordedAt)
     .slice(0, MAX_RECEIPTS);
 
   const others = new Map<Id<"orgs">, Doc<"orgs"> | null>();
   const rows: Infer<typeof vReceiptRow>[] = [];
-  for (const { trade, issuedAt } of invoiced) {
+  for (const { trade, recordedAt } of legacyReferences) {
     const side = trade.sellerOrgId === orgId ? "sale" : "purchase";
     const otherId = side === "sale" ? trade.buyerOrgId : trade.sellerOrgId;
     if (!others.has(otherId)) {
@@ -514,8 +518,9 @@ async function receiptsOf(
     const other = others.get(otherId);
     rows.push({
       tradeId: trade._id,
-      invoiceNo: trade.invoiceNo ?? "",
-      issuedAt,
+      legacyReceiptNo: trade.invoiceNo ?? "",
+      recordedAt,
+      paymentVerification: "legacy_unverified",
       side,
       counterparty: other ? { name: other.name, kind: other.kind } : null,
       material: materialRef(materials, trade.materialCode),
@@ -566,6 +571,7 @@ function eprSummary(
   }
   return {
     role,
+    evidenceStatus: "source_records_unverified",
     from,
     to,
     rows: EPR_STREAMS.flatMap((stream) => {
@@ -586,8 +592,8 @@ function eprSummary(
 
 /**
  * The compliance screen: GST, the pollution-board consent and how long it
- * has left, a checklist, the business's trade invoices and — for recyclers
- * and manufacturers — the financial year's EPR record.
+ * has left, a checklist, old trade references and — for recyclers and
+ * manufacturers — a financial-year material-flow summary.
  */
 export const compliance = query({
   args: {},
