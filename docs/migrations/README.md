@@ -7,9 +7,10 @@ steps, and each one is recorded here.
 
 ## Until the first real row
 
-As of 29 Sep 2026 there is no production data, so the planned v2 schema
-([architecture/data-model.md](../architecture/data-model.md)) replaces v1
-directly. From the first real row onwards, everything below applies.
+The founder-approved [full prototype reset](./2026-10-06-full-prototype-reset.md)
+left development and production at zero tables and rows on 6 October 2026.
+The refined schema can start from that empty state. From the first new row
+onwards, the steps below apply.
 
 ## The three steps
 
@@ -58,7 +59,8 @@ One file per migration: `docs/migrations/YYYY-MM-DD-short-name.md`, with what
 changed, why, the three steps and when each ran, and how to verify. Newest at
 the bottom:
 
-| Date       | Migration                                                       | Status                                             |
-| ---------- | --------------------------------------------------------------- | -------------------------------------------------- |
-| 2 Oct 2026 | [Industry API credential storage](./2026-10-02-industry-api.md) | Deployed to dev and prod; live acceptance separate |
-| 3 Oct 2026 | [Push session binding](./2026-10-03-push-session-binding.md)    | Deployed to dev and prod; live acceptance separate |
+| Date       | Migration                                                       | Status                                              |
+| ---------- | --------------------------------------------------------------- | --------------------------------------------------- |
+| 2 Oct 2026 | [Industry API credential storage](./2026-10-02-industry-api.md) | Deployed to dev and prod; live acceptance separate  |
+| 3 Oct 2026 | [Push session binding](./2026-10-03-push-session-binding.md)    | Deployed to dev and prod; live acceptance separate  |
+| 6 Oct 2026 | [Full prototype reset](./2026-10-06-full-prototype-reset.md)    | Completed in dev and prod; both paused at zero rows |
