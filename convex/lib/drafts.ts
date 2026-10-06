@@ -1,5 +1,7 @@
 import { v } from "convex/values";
 
+import { vMaterialOrigin, vSiteType } from "./siteClassification";
+
 /**
  * Convex validators for onboarding. Drafts are saved as people type, so every
  * form field is optional here; `applications.submit` checks completeness with
@@ -100,6 +102,9 @@ export const kabadiwalaDraft = v.object({
 
 export const businessDraft = v.object({
   businessName: v.optional(v.string()),
+  /** Primary site and sources are declarations for admin review, not permits. */
+  siteType: v.optional(vSiteType),
+  materialOrigins: v.optional(v.array(vMaterialOrigin)),
   gstRegistered: v.optional(v.boolean()),
   gstin: v.optional(v.string()),
   materials: v.optional(v.array(vMaterialFamily)),

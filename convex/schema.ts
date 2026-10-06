@@ -21,6 +21,7 @@ import {
   vNotificationStatus,
 } from "./lib/notificationConfig";
 import { publicDataFields } from "./lib/publicData";
+import { vMaterialOrigin, vSiteType } from "./lib/siteClassification";
 import {
   vBookingStatus,
   vFamily,
@@ -272,6 +273,10 @@ export default defineSchema({
   /** An approved business: created when the admin approves its application. */
   orgs: defineTable({
     kind: vOrgKind,
+    /** Optional for existing rows; a physical site is separate from org kind. */
+    siteType: v.optional(vSiteType),
+    /** Sources this organisation declared, not a legal classification. */
+    materialOrigins: v.optional(v.array(vMaterialOrigin)),
     name: v.string(),
     slug: v.string(),
     status: v.union(v.literal("active"), v.literal("suspended")),

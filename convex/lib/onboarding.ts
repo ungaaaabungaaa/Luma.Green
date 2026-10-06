@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { normalizeIndianMobile } from "./phone";
+import { MATERIAL_ORIGINS, SITE_TYPES } from "./siteClassification";
 
 /**
  * What each role gives us at onboarding — docs/product/onboarding.md.
@@ -166,6 +167,8 @@ export type KabadiwalaForm = z.infer<typeof kabadiwalaSchema>;
 export const businessSchema = z
   .object({
     businessName: text(2, 120),
+    siteType: z.enum(SITE_TYPES).optional(),
+    materialOrigins: z.array(z.enum(MATERIAL_ORIGINS)).max(2).optional(),
     gstRegistered: yesNo,
     gstin: z.string().optional(),
     materials: z.array(z.enum(MATERIAL_FAMILIES)).min(1, "pickAtLeastOne"),

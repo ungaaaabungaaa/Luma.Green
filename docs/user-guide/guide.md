@@ -508,6 +508,9 @@ The console does not include a maintenance switch, staff invitation, suspension/
 1. Open /admin/verification. Select Review on a submitted application.
 2. Check the applicant, role, phone, language, submission time and version.
 3. Inspect the form, files and any changes from a previous submission.
+   If a source site or material origin is declared, complete the extra source
+   check against the applicant's evidence. These are declarations, not
+   verified material grades or permits.
 4. Complete the role checklist below.
 5. Choose Approve, Ask for changes or Reject.
 6. Read the confirmation and enter a note if required.

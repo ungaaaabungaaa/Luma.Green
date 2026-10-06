@@ -181,6 +181,25 @@ describe("yard, recycler and manufacturer", () => {
     expect(businessSchema.safeParse(business).success).toBe(true);
   });
 
+  it("records source site and material origin without requiring old drafts to have them", () => {
+    expect(
+      businessSchema.safeParse({
+        ...business,
+        siteType: "apartment_community",
+        materialOrigins: ["post_consumer"],
+      }).success,
+    ).toBe(true);
+    expect(
+      businessSchema.safeParse({ ...business, siteType: "unknown" }).success,
+    ).toBe(false);
+    expect(
+      businessSchema.safeParse({
+        ...business,
+        materialOrigins: ["industrial_byproduct", "unknown"],
+      }).success,
+    ).toBe(false);
+  });
+
   it("needs at least one material and at most five area tags", () => {
     expect(
       errors(

@@ -46,6 +46,8 @@ type Draft = NonNullable<Application["business"]>;
 function toDraft(values: Partial<Values>): Draft {
   return withoutUndefined({
     businessName: values.businessName,
+    siteType: values.siteType,
+    materialOrigins: values.materialOrigins,
     gstRegistered: values.gstRegistered,
     gstin: cleanGstin(values.gstRegistered, values.gstin),
     materials: values.materials,
@@ -88,6 +90,8 @@ export function BusinessForm({
     resolver: zodResolver(businessSchema),
     defaultValues: {
       businessName: draft.businessName ?? "",
+      siteType: draft.siteType,
+      materialOrigins: draft.materialOrigins,
       gstRegistered: draft.gstRegistered,
       gstin: draft.gstin ?? "",
       materials: draft.materials ?? [],

@@ -103,4 +103,30 @@ describe("ApplicationDetails", () => {
       within(validUntil).getByText("Expires in 11 days"),
     ).toBeInTheDocument();
   });
+
+  it("shows a declared source site and origin for admin review", () => {
+    render(
+      <ApplicationDetails
+        application={{
+          ...yard,
+          kind: "manufacturer",
+          business: {
+            ...yard.business,
+            siteType: "manufacturing_facility",
+            materialOrigins: ["industrial_byproduct"],
+          },
+          changes: ["business.materialOrigins"],
+        }}
+        today="2026-09-29"
+      />,
+    );
+
+    expect(screen.getByText("Manufacturing facility")).toBeInTheDocument();
+    const origins = screen.getByText("Material origins").closest("div");
+    if (!origins) throw new Error("No material origins row");
+    expect(
+      within(origins).getByText("Industrial byproduct"),
+    ).toBeInTheDocument();
+    expect(within(origins).getByText("Changed")).toBeInTheDocument();
+  });
 });
