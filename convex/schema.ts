@@ -22,6 +22,7 @@ import {
 } from "./lib/notificationConfig";
 import { publicDataFields } from "./lib/publicData";
 import { vMaterialOrigin, vSiteType } from "./lib/siteClassification";
+import { vStakeholderKind, vStakeholderStatus } from "./lib/stakeholderKinds";
 import {
   vBookingStatus,
   vFamily,
@@ -190,6 +191,20 @@ export default defineSchema({
     .index("by_profile", ["profileId"])
     .index("by_status_submittedAt", ["status", "submittedAt"])
     .index("by_submittedAt", ["submittedAt"]),
+
+  /** Default-deny stakeholder identities, separate from trading orgs. */
+  stakeholderAccounts: defineTable({
+    ownerProfileId: v.id("profiles"),
+    kind: vStakeholderKind,
+    organizationName: v.string(),
+    status: vStakeholderStatus,
+    reviewedBy: v.optional(v.id("profiles")),
+    reviewedAt: v.optional(v.number()),
+    reviewNote: v.optional(v.string()),
+    ...timestamps,
+  })
+    .index("by_owner", ["ownerProfileId"])
+    .index("by_status_createdAt", ["status", "createdAt"]),
 
   /** What was sent at each version, so the admin can see what changed. */
   applicationSnapshots: defineTable({
