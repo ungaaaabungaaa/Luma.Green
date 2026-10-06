@@ -1,6 +1,7 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
+import { vEvidenceIssuerKind, vEvidenceKind } from "./lib/commercialEvidence";
 import {
   draftSections,
   vApplicationKind,
@@ -498,6 +499,27 @@ export default defineSchema({
     .index("by_seller", ["sellerOrgId"])
     .index("by_buyer", ["buyerOrgId"])
     .index("by_listing", ["listingId"]),
+
+  /**
+   * User-reported references to documents issued outside Luma. A correction
+   * inserts another row and points to the old one; neither row proves validity.
+   */
+  commercialEvidence: defineTable({
+    orgId: v.id("orgs"),
+    tradeId: v.optional(v.id("trades")),
+    kind: vEvidenceKind,
+    reference: v.string(),
+    issuerKind: vEvidenceIssuerKind,
+    issuerName: v.string(),
+    issuedAt: v.optional(v.number()),
+    supersedesId: v.optional(v.id("commercialEvidence")),
+    recordedByProfileId: v.id("profiles"),
+    version: v.number(),
+    createdAt: v.number(),
+  })
+    .index("by_org_created", ["orgId", "createdAt"])
+    .index("by_trade_created", ["tradeId", "createdAt"])
+    .index("by_supersedes", ["supersedesId"]),
 
   // --- Saathi work --------------------------------------------------------------
 
