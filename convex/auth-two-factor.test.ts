@@ -201,11 +201,9 @@ describe("phone codes with optional authenticator protection", () => {
     const { t, setup } = await enrolled();
     const browser = await newChallenge(t);
     expect(
-      browser.cookies
-        .keys()
-        .some(
-          (key) => key.endsWith("session_token") || key.includes("convex_jwt"),
-        ),
+      [...browser.cookies.keys()].some(
+        (key) => key.endsWith("session_token") || key.includes("convex_jwt"),
+      ),
     ).toBe(false);
     expect(await responseBody(browser.request("/get-session"))).toBeNull();
     expect(await responseStatus(browser.request("/convex/token"))).toBe(401);
@@ -802,8 +800,7 @@ it("requires the factor even when a previously valid trusted-device cookie exist
     .replaceAll("=", "");
   const value = `${inner}!${identifier}`;
   const signature = await makeSignature(value, secret);
-  const cookieName = browser.cookies
-    .keys()
+  const cookieName = [...browser.cookies.keys()]
     .find((name) => name.endsWith("session_token"))
     ?.replace("session_token", "trust_device");
   if (!cookieName) throw new Error("Missing fixture cookie name");

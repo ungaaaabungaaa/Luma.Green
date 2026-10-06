@@ -113,9 +113,9 @@ export const listKeys = query({
       .withIndex("by_org_created", (q) => q.eq("orgId", org._id))
       .order("desc")
       .take(50);
-    const keys = new Map([...active, ...recent].map((key) => [key._id, key]))
-      .values()
-      .toArray()
+    const keys = [
+      ...new Map([...active, ...recent].map((key) => [key._id, key])).values(),
+    ]
       .toSorted((a, b) => b.createdAt - a.createdAt)
       .map((key) => ({
         id: key._id,

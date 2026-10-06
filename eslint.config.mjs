@@ -208,6 +208,9 @@ const eslintConfig = defineConfig([
   {
     files: ["convex/**/*.ts"],
     rules: {
+      // Convex's declared ES2023 runtime does not include iterator helpers.
+      "unicorn/prefer-iterator-helpers": "off",
+      "unicorn/prefer-iterator-to-array": "off",
       // Convex module paths can't contain hyphens, and its own convention is
       // camelCase (e.g. the local `convex/betterAuth/` component).
       "unicorn/filename-case": [

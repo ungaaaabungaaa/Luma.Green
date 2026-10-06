@@ -199,10 +199,9 @@ export const listMine = query({
         );
       }
     }
-    const ordered = visible
-      .values()
-      .toArray()
-      .toSorted((a, b) => b.updatedAt - a.updatedAt);
+    const ordered = [...visible.values()].toSorted(
+      (a, b) => b.updatedAt - a.updatedAt,
+    );
     const supportThread = ordered.find((item) => item.kind === "support");
     const tradeThreads = ordered.filter((item) => item.kind === "trade");
     // A busy business must still be able to reach its support conversation.
