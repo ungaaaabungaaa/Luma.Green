@@ -32,6 +32,61 @@ async function member(t: Test, phone: string) {
 }
 
 describe("stakeholder accounts", () => {
+  it("accepts non-household generator sites without granting trade access", async () => {
+    const t = setup();
+    const apartment = await member(t, "+919000000306");
+    await expect(
+      apartment.mutation(api.stakeholderAccounts.request, {
+        kind: "material_generator",
+        organizationName: "Lakeview Community",
+      }),
+    ).rejects.toThrow();
+    await expect(
+      apartment.mutation(api.stakeholderAccounts.request, {
+        kind: "material_generator",
+        siteType: "manufacturing_facility",
+        organizationName: "Lakeview Community",
+      }),
+    ).rejects.toThrow();
+    await expect(
+      apartment.mutation(api.stakeholderAccounts.request, {
+        kind: "city_official",
+        siteType: "office",
+        organizationName: "Lakeview Community",
+      }),
+    ).rejects.toThrow();
+    const id = await apartment.mutation(api.stakeholderAccounts.request, {
+      kind: "material_generator",
+      siteType: "apartment_community",
+      organizationName: "Lakeview Community",
+    });
+    expect(
+      await apartment.query(api.stakeholderAccounts.mine, {}),
+    ).toMatchObject({
+      id,
+      kind: "material_generator",
+      siteType: "apartment_community",
+      status: "pending",
+    });
+    const admin = await signIn(t, {
+      email: "admin@luma.test",
+      twoFactorEnabled: true,
+    });
+    await admin.mutation(api.identity.ensureProfile, { locale: "en" });
+    expect(
+      await admin.query(api.stakeholderAccounts.pending, {}),
+    ).toMatchObject([{ id, siteType: "apartment_community" }]);
+    await admin.mutation(api.stakeholderAccounts.decide, {
+      id,
+      decision: "approve",
+      reviewNote: "Verified community contact and site",
+    });
+    await t.run(async (ctx) => {
+      expect(await ctx.db.query("orgs").take(1)).toEqual([]);
+      expect(await ctx.db.query("memberships").take(1)).toEqual([]);
+    });
+  });
+
   it("keeps a request visible only to its owner and out of trading organisations", async () => {
     const t = setup();
     const applicant = await member(t, "+919000000301");

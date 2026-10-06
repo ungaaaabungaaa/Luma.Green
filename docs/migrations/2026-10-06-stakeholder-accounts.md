@@ -2,9 +2,17 @@
 
 `stakeholderAccounts` is additive and separate from `orgs`. It stores a
 requesting member, a self-declared organisation name, a category, a review
-status and an admin decision. The categories are city official, CSR sponsor,
+status and an admin decision. The categories are non-household material
+generator, city official, CSR sponsor,
 lender, independent auditor, waste-picker union, apparel brand and packaging
 brand. No old rows need migration.
+
+A material generator request includes one primary site type: apartment
+community, office, hotel, resort or other. A manufacturer remains a separate
+existing business kind; a manufacturing facility cannot be requested as a
+generic material generator here. Site category and account ownership give a
+future verified organisation/site migration a stable starting point. This
+record does not itself create an `orgs` row or a material listing.
 
 A signed-in member can submit one request and read only their own status with
 `stakeholderAccounts.mine`. Repeating the same request is idempotent. The

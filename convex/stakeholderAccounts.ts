@@ -3,7 +3,9 @@ import { ConvexError, v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 import { requireAdmin } from "./lib/access";
 import { findProfile, requireMember } from "./lib/applicationAccess";
+import { vSiteType } from "./lib/siteClassification";
 import {
+  isGeneratorSiteType,
   organizationNameOrNull,
   vStakeholderKind,
   vStakeholderStatus,
@@ -13,6 +15,7 @@ const vAccountId = v.id("stakeholderAccounts");
 const vSelfView = v.object({
   id: vAccountId,
   kind: vStakeholderKind,
+  siteType: v.optional(vSiteType),
   organizationName: v.string(),
   status: vStakeholderStatus,
   requestedAt: v.number(),
@@ -22,18 +25,33 @@ const vSelfView = v.object({
 
 /** One application per member. Repeating an identical request is safe. */
 export const request = mutation({
-  args: { kind: vStakeholderKind, organizationName: v.string() },
+  args: {
+    kind: vStakeholderKind,
+    siteType: v.optional(vSiteType),
+    organizationName: v.string(),
+  },
   returns: vAccountId,
   handler: async (ctx, args) => {
     const profile = await requireMember(ctx);
     const name = organizationNameOrNull(args.organizationName);
     if (!name) throw new ConvexError("INVALID_ORGANIZATION_NAME");
+    if (
+      args.kind === "material_generator"
+        ? !isGeneratorSiteType(args.siteType)
+        : args.siteType !== undefined
+    ) {
+      throw new ConvexError("INVALID_SITE_TYPE");
+    }
     const existing = await ctx.db
       .query("stakeholderAccounts")
       .withIndex("by_owner", (q) => q.eq("ownerProfileId", profile._id))
       .unique();
     if (existing) {
-      if (existing.kind === args.kind && existing.organizationName === name) {
+      if (
+        existing.kind === args.kind &&
+        existing.siteType === args.siteType &&
+        existing.organizationName === name
+      ) {
         return existing._id;
       }
       throw new ConvexError("ALREADY_REQUESTED");
@@ -43,6 +61,7 @@ export const request = mutation({
     const id = await ctx.db.insert("stakeholderAccounts", {
       ownerProfileId: profile._id,
       kind: args.kind,
+      siteType: args.siteType,
       organizationName: name,
       status: "pending",
       createdAt: now,
@@ -53,7 +72,7 @@ export const request = mutation({
       entityTable: "stakeholderAccounts",
       entityId: id,
       actorProfileId: profile._id,
-      metadata: { kind: args.kind },
+      metadata: { kind: args.kind, siteType: args.siteType },
       createdAt: now,
     });
     return id;
@@ -74,6 +93,7 @@ export const mine = query({
     return {
       id: account._id,
       kind: account.kind,
+      siteType: account.siteType,
       organizationName: account.organizationName,
       status: account.status,
       requestedAt: account.createdAt,
@@ -91,6 +111,7 @@ export const pending = query({
     v.object({
       id: vAccountId,
       kind: vStakeholderKind,
+      siteType: v.optional(vSiteType),
       organizationName: v.string(),
       requestedAt: v.number(),
       applicantPhone: v.optional(v.string()),
@@ -108,6 +129,7 @@ export const pending = query({
         return {
           id: account._id,
           kind: account.kind,
+          siteType: account.siteType,
           organizationName: account.organizationName,
           requestedAt: account.createdAt,
           applicantPhone: profile?.phone,

@@ -196,6 +196,8 @@ export default defineSchema({
   stakeholderAccounts: defineTable({
     ownerProfileId: v.id("profiles"),
     kind: vStakeholderKind,
+    /** Required for material generators; optional for earlier stakeholders. */
+    siteType: v.optional(vSiteType),
     organizationName: v.string(),
     status: vStakeholderStatus,
     reviewedBy: v.optional(v.id("profiles")),
