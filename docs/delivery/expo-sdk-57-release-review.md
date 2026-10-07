@@ -1,0 +1,48 @@
+# Expo SDK 57 release compatibility review
+
+7 October 2026. Hosted Expo compatibility required four new SDK 57 patch
+versions. The local native tests, types, compatibility check and Android/iOS
+export pass with the updated lockfile. A clean hosted install then rejected
+18 required packages because their publication age was below 24 hours.
+
+The release uses exact-version cooldown exceptions for that reviewed cohort.
+The default cooldown, install-script allowlist, dependency overrides and
+node-forge security patch are unchanged. No CI check is removed or skipped.
+Remove these exceptions after **7 October 2026, 12:15 UTC**; all cohort packages
+then meet the normal age rule. This does not authorize future versions.
+
+For all 18 versions, the official npm registry SHA-512 integrity value matches
+the committed lockfile. All 36 registry signatures verify against the current
+official npm signing key. All declare publisher `alanhughes` and Expo source
+commit `50ac74f1ab5682c8e32b24da6e5e97dd4dbbb80f`. The official repository
+identifies that commit as a package publication. The cohort was published from
+6 October 2026, 12:07:16 to 12:14:47 UTC.
+
+This verifies registry integrity and declared source identity. It does not prove
+reproducible builds or absence of malicious code. npm build-provenance
+attestations are unavailable and the source commit is unsigned.
+
+References: [npm registry signature verification](https://docs.npmjs.com/about-registry-signatures/),
+[registry signing keys](https://registry.npmjs.org/-/npm/v1/keys),
+[Expo source commit](https://github.com/expo/expo/commit/50ac74f1ab5682c8e32b24da6e5e97dd4dbbb80f).
+
+## Reviewed exact versions
+
+- `@expo/cli@57.0.28`
+- `@expo/config-plugins@57.0.10`
+- `@expo/config@57.0.10`
+- `@expo/image-utils@0.11.6`
+- `@expo/metro-config@57.0.13`
+- `@expo/metro-file-map@57.0.4`
+- `@expo/prebuild-config@57.0.17`
+- `@expo/require-utils@57.0.6`
+- `@expo/router-server@57.0.12`
+- `babel-preset-expo@57.0.14`
+- `expo-asset@57.0.19`
+- `expo-constants@57.0.21`
+- `expo-eas-client@57.0.5`
+- `expo-modules-autolinking@57.0.14`
+- `expo-modules-core@57.0.21`
+- `expo-notifications@57.0.22`
+- `expo-updates@57.0.25`
+- `expo@57.0.27`
