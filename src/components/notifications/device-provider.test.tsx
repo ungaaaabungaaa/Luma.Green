@@ -114,6 +114,7 @@ beforeEach(() => {
   mocks.session = { data: { session: { id: crypto.randomUUID() } } };
   mocks.settings = { webKey: null, expo: true };
   mocks.settingsError = false;
+  mocks.me = { hasProfile: true };
   mocks.postMessage.mockReset();
   mocks.registerExpo.mockReset().mockResolvedValue("device-a");
   mocks.registerWeb.mockReset();
@@ -244,6 +245,104 @@ describe("authenticated notification lifecycle", () => {
     });
     expect(mocks.registerExpo).toHaveBeenCalledOnce();
   });
+  it("keeps form state while session rotation replaces notification work and cleans late bindings", async () => {
+    const previousSessionId = mocks.session.data.session.id;
+    const firstRegistration = Promise.withResolvers<string>();
+    mocks.registerExpo
+      .mockReturnValueOnce(firstRegistration.promise)
+      .mockResolvedValueOnce("current-device");
+    const user = userEvent.setup();
+    const view = render(<App />);
+    const input = screen.getByRole("textbox", { name: "Unsaved form" });
+    await user.type(input, "Keep my work");
+    await user.click(screen.getByRole("button", { name: "Enable" }));
+    act(() => {
+      nativeResult("granted", "ExpoPushToken[before-rotation]");
+    });
+    await waitFor(() => {
+      expect(mocks.registerExpo).toHaveBeenCalledOnce();
+    });
+
+    mocks.session = { data: { session: { id: crypto.randomUUID() } } };
+    view.rerender(<App />);
+    expect(screen.getByRole("textbox", { name: "Unsaved form" })).toBe(input);
+    expect(input).toHaveValue("Keep my work");
+    await waitFor(() => {
+      expect(mocks.postMessage).toHaveBeenCalledTimes(2);
+    });
+    expect(mocks.postMessage.mock.calls[1][0]).toContain("luma.push.status");
+    await act(async () => {
+      firstRegistration.resolve("previous-device");
+      await firstRegistration.promise;
+    });
+    expect(mocks.unregister).toHaveBeenCalledExactlyOnceWith({
+      id: "previous-device",
+      expectedSessionId: previousSessionId,
+    });
+    expect(screen.getByRole("status")).not.toHaveTextContent("granted");
+
+    await act(async () => {
+      nativeResult("granted", "ExpoPushToken[after-rotation]");
+      await Promise.resolve();
+    });
+    expect(mocks.registerExpo).toHaveBeenCalledTimes(2);
+    expect(mocks.registerExpo).toHaveBeenLastCalledWith({
+      token: "ExpoPushToken[after-rotation]",
+      locale: "en",
+      installationId: localStorage.getItem("luma.push.installation"),
+    });
+    expect(screen.getByRole("status")).toHaveTextContent("granted");
+    await act(async () => {
+      await revokeCurrentDevice();
+    });
+    expect(mocks.unregister).toHaveBeenLastCalledWith({ id: "current-device" });
+    expect(mocks.unregisterInstallation).toHaveBeenCalledOnce();
+    expect(screen.getByRole("status")).toHaveTextContent("off");
+    expect(localStorage.getItem("luma.push.enabled")).toBeNull();
+    expect(input).toHaveValue("Keep my work");
+  });
+  it("scopes late cleanup to the old session when rotation reuses the same device row", async () => {
+    const previousSessionId = mocks.session.data.session.id;
+    const firstRegistration = Promise.withResolvers<string>();
+    mocks.registerExpo
+      .mockReturnValueOnce(firstRegistration.promise)
+      .mockResolvedValueOnce("shared-device");
+    const user = userEvent.setup();
+    const view = render(<App />);
+    await user.click(screen.getByRole("button", { name: "Enable" }));
+    act(() => {
+      nativeResult("granted", "ExpoPushToken[same-token]");
+    });
+    await waitFor(() => {
+      expect(mocks.registerExpo).toHaveBeenCalledOnce();
+    });
+    mocks.session = { data: { session: { id: crypto.randomUUID() } } };
+    view.rerender(<App />);
+    await waitFor(() => {
+      expect(mocks.postMessage).toHaveBeenCalledTimes(2);
+    });
+    await act(async () => {
+      nativeResult("granted", "ExpoPushToken[same-token]");
+      await Promise.resolve();
+    });
+    expect(screen.getByRole("status")).toHaveTextContent("granted");
+    expect(mocks.registerExpo).toHaveBeenCalledTimes(2);
+    await act(async () => {
+      firstRegistration.resolve("shared-device");
+      await firstRegistration.promise;
+    });
+    expect(mocks.unregister).toHaveBeenCalledExactlyOnceWith({
+      id: "shared-device",
+      expectedSessionId: previousSessionId,
+    });
+    expect(screen.getByRole("status")).toHaveTextContent("granted");
+    await act(async () => {
+      await revokeCurrentDevice();
+    });
+    expect(mocks.unregister).toHaveBeenLastCalledWith({ id: "shared-device" });
+    expect(mocks.unregisterInstallation).toHaveBeenCalledOnce();
+    expect(screen.getByRole("status")).toHaveTextContent("off");
+  });
   it("can revoke before settings or token restoration completes", async () => {
     mocks.settings = undefined;
     const installation = "11111111-1111-4111-8111-111111111111";
@@ -280,7 +379,10 @@ describe("authenticated notification lifecycle", () => {
       registration.resolve("late-device");
       await revoking;
     });
-    expect(mocks.unregister).toHaveBeenCalledWith({ id: "late-device" });
+    expect(mocks.unregister).toHaveBeenCalledWith({
+      id: "late-device",
+      expectedSessionId: mocks.session.data.session.id,
+    });
     expect(mocks.unregisterInstallation).toHaveBeenCalledOnce();
     expect(screen.getByRole("status")).toHaveTextContent("off");
   });
@@ -468,7 +570,10 @@ it("waits for and removes a late binding while the session lock is held", async 
     registration.resolve("late-device");
     await registration.promise;
   });
-  expect(mocks.unregister).toHaveBeenCalledWith({ id: "late-device" });
+  expect(mocks.unregister).toHaveBeenCalledWith({
+    id: "late-device",
+    expectedSessionId: mocks.session.data.session.id,
+  });
   expect(mocks.signOut).toHaveBeenCalledOnce();
   await user.click(screen.getByRole("button", { name: "Direct enable" }));
   expect(mocks.registerExpo).toHaveBeenCalledOnce();

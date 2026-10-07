@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import { useQuery } from "convex/react";
 import type { ReactNode } from "react";
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { StockPage } from "./stock-page";
 import {
@@ -14,6 +14,12 @@ import {
 } from "./test-helpers";
 import type { Stock } from "./types";
 
+const permissions = vi.hoisted(() => ({ canOperate: true }));
+beforeEach(() => {
+  permissions.canOperate = true;
+});
+
+vi.mock("./stock-intake", () => ({ StockIntake: () => null }));
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: vi.fn(),
@@ -82,11 +88,11 @@ describe("StockPage", () => {
     expect(screen.getByText("₹7,020")).toBeInTheDocument();
     expect(screen.getByText("Market ₹14.50/kg")).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Sell to a yard" }),
+      screen.getByRole("link", { name: "Sell to a preprocessor" }),
     ).toHaveAttribute("href", "/app/sell");
   });
 
-  it("offers no sale where nobody further up buys", () => {
+  it("opens manufacturer byproduct sales without inventing a next chain tier", () => {
     renderStock(
       {
         ...SHOP_STOCK,
@@ -96,6 +102,16 @@ describe("StockPage", () => {
       },
       SHOP_WORKSPACE,
     );
+    expect(screen.getByRole("link", { name: "Sell" })).toHaveAttribute(
+      "href",
+      "/app/sell",
+    );
+  });
+
+  it("keeps a viewer's stock read-only", () => {
+    permissions.canOperate = false;
+    renderStock(SHOP_STOCK, SHOP_WORKSPACE);
+    expect(screen.getByText("440 kg")).toBeVisible();
     expect(
       screen.queryByRole("link", { name: /^Sell/ }),
     ).not.toBeInTheDocument();
@@ -122,6 +138,26 @@ describe("StockPage", () => {
     ).toBeInTheDocument();
   });
 
+  it("shows unavailable total value when some held material has no price", () => {
+    renderStock(
+      {
+        ...SHOP_STOCK,
+        totalValuePaise: null,
+        rows: [
+          IRON_ROW,
+          { ...NEWSPAPER_ROW, marketPaise: null, valuePaise: null },
+        ],
+      },
+      SHOP_WORKSPACE,
+    );
+    expect(screen.getAllByText("No market price today")).toHaveLength(2);
+    expect(
+      screen.queryByText("At today's market prices"),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText("₹9,630")).not.toBeInTheDocument();
+    expect(screen.getByText("₹7,020")).toBeInTheDocument();
+  });
+
   it("says how stock arrives when there is none", () => {
     renderStock(
       { ...SHOP_STOCK, rows: [], totalGrams: 0, totalValuePaise: 0 },
@@ -141,3 +177,20 @@ describe("StockPage", () => {
     expect(screen.getByText("Only for businesses")).toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => permissions.canOperate,
+}));
+
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      isPending: false,
+      error: null,
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session" },
+      },
+    }),
+  },
+}));

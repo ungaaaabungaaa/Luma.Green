@@ -211,7 +211,7 @@ export const forTrade = query({
   },
   returns: paginationResultValidator(vEvidenceView),
   handler: async (ctx, args) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     await requireTradeParticipant(ctx, args.tradeId, org._id);
     const result = await ctx.db
       .query("commercialEvidence")
@@ -231,7 +231,7 @@ export const mine = query({
   args: { paginationOpts: paginationOptsValidator },
   returns: paginationResultValidator(vEvidenceView),
   handler: async (ctx, args) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     const result = await ctx.db
       .query("commercialEvidence")
       .withIndex("by_org_created", (q) => q.eq("orgId", org._id))

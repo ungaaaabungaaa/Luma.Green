@@ -127,7 +127,7 @@ describe("/help/[role]", () => {
 
   it("describes the role in its metadata", async () => {
     const meta = await roleMetadata(params({ role: "yard" }));
-    expect(meta.title).toBe("Help for yards");
+    expect(meta.title).toBe("Help for preprocessors");
     expect(meta.alternates?.canonical).toBe("/help/yard");
   });
 
@@ -199,7 +199,7 @@ describe("/help/[role]/[guide]", () => {
     const next = screen.getByRole("region", { name: "Next guide" });
     expect(
       within(next).getByRole("link", {
-        name: "Demo guide: Sort your stock and sell to yards",
+        name: "Demo guide: Sort your stock and sell to preprocessors",
       }),
     ).toHaveAttribute("href", "/help/kabadiwala/stock-and-sell");
     expect(screen.getByRole("link", { name: /Write to us/ })).toHaveAttribute(

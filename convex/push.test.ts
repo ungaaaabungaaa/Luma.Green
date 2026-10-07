@@ -496,6 +496,36 @@ describe("push devices and delivery claims", () => {
       expect(audits.some((row) => row.action === "push.sending")).toBe(false);
     },
   );
+  it("does not let stale registration cleanup remove the same device rebound to a new session", async () => {
+    const { t, alice, bob } = await world();
+    const registration = { token, locale: "en", installationId };
+    const id = await alice.mutation(api.push.registerExpo, registration);
+    const original = await t.run((ctx) => ctx.db.get("pushDevices", id));
+    if (!original?.sessionId) throw new Error("Missing session fixture");
+    const active = await signInAs(t, "+919000000101");
+    expect(await active.mutation(api.push.registerExpo, registration)).toBe(id);
+    const renewed = await t.run((ctx) => ctx.db.get("pushDevices", id));
+    if (!renewed?.sessionId) throw new Error("Missing renewed session fixture");
+    expect(renewed.sessionId).not.toBe(original.sessionId);
+    await active.mutation(api.push.unregister, {
+      id,
+      expectedSessionId: original.sessionId,
+    });
+    expect(await t.run((ctx) => ctx.db.get("pushDevices", id))).toEqual(
+      renewed,
+    );
+    await expect(
+      bob.mutation(api.push.unregister, {
+        id,
+        expectedSessionId: renewed.sessionId,
+      }),
+    ).rejects.toThrow("NOT_FOUND");
+    await active.mutation(api.push.unregister, {
+      id,
+      expectedSessionId: renewed.sessionId,
+    });
+    expect(await t.run((ctx) => ctx.db.get("pushDevices", id))).toBeNull();
+  });
   it.each(["legacy", "new-session"] as const)(
     "rebinds a %s registration without cancelling same-owner queued content",
     async (state) => {

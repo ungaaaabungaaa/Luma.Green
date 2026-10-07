@@ -47,12 +47,6 @@ export const sendCode = internalAction({
         }
         return null;
       }
-      case "log": {
-        // Dev and preview deployments only (AUTH_DEV_MODE). Production never
-        // logs a code.
-        console.warn(`[dev] sign-in code for ${maskPhone(phone)}: ${code}`);
-        return null;
-      }
       case "off": {
         throw new Error("SMS is not configured on this deployment.");
       }

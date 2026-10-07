@@ -205,6 +205,8 @@ export const forLot = query({
       v.object({
         id: v.id("lotInspections"),
         orgId: v.id("orgs"),
+        orgName: v.string(),
+        buyerName: v.optional(v.string()),
         buyerOrgId: v.optional(v.id("orgs")),
         assessmentScope: v.literal("inspecting_org"),
         specificationReference: v.string(),
@@ -217,12 +219,15 @@ export const forLot = query({
         correctionReason: v.optional(v.string()),
         approvedByProfileId: v.optional(v.id("profiles")),
         createdAt: v.number(),
+        canCorrect: v.boolean(),
+        canApprove: v.boolean(),
+        isSuperseded: v.boolean(),
       }),
     ),
     hasMore: v.boolean(),
   }),
   handler: async (ctx, args) => {
-    const { org } = await requireOrg(ctx);
+    const { org, role, profile } = await requireOrg(ctx, undefined, "read");
     const lot = await ctx.db.get("materialLots", args.lotId);
     if (lot?.orgId !== org._id) throw new ConvexError("LOT_NOT_FOUND");
     const rows = await ctx.db
@@ -237,9 +242,43 @@ export const forLot = query({
             .query("lotInspectionApprovals")
             .withIndex("by_inspection", (q) => q.eq("inspectionId", row._id))
             .first();
+          const replacement = await ctx.db
+            .query("lotInspectionApprovals")
+            .withIndex("by_superseded", (q) =>
+              q.eq("supersededInspectionId", row._id),
+            )
+            .first();
+          const supersededId = row.supersedesInspectionId;
+          const previousReplacement = supersededId
+            ? await ctx.db
+                .query("lotInspectionApprovals")
+                .withIndex("by_superseded", (q) =>
+                  q.eq("supersededInspectionId", supersededId),
+                )
+                .first()
+            : null;
+          const isOwn = row.orgId === org._id;
+          const inspectingOrg = await ctx.db.get("orgs", row.orgId);
+          const buyerOrg = row.buyerOrgId
+            ? await ctx.db.get("orgs", row.buyerOrgId)
+            : null;
           return {
+            canCorrect:
+              isOwn &&
+              role !== "viewer" &&
+              !replacement &&
+              (!row.supersedesInspectionId || Boolean(approval)),
+            canApprove:
+              isOwn &&
+              role === "owner" &&
+              row.actorProfileId !== profile._id &&
+              Boolean(row.supersedesInspectionId) &&
+              !previousReplacement,
+            isSuperseded: Boolean(replacement),
             id: row._id,
             orgId: row.orgId,
+            orgName: inspectingOrg?.name ?? "",
+            buyerName: buyerOrg?.name,
             buyerOrgId: row.buyerOrgId,
             assessmentScope: row.assessmentScope,
             specificationReference: row.specificationReference,

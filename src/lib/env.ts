@@ -115,6 +115,69 @@ export function adminRecoveryEnv() {
   return parsed.success ? parsed.data : null;
 }
 
+/** Local delivery needs the platform-owned backend origin as well as a local site. */
+export function isLoopbackUrl(value: string | undefined): boolean {
+  if (!value) return false;
+  try {
+    const url = new URL(value);
+    return (
+      url.protocol === "http:" &&
+      ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname) &&
+      !url.username &&
+      !url.password
+    );
+  } catch {
+    return false;
+  }
+}
+
+/** Fails closed on every hosted Convex deployment, including cloud development. */
+export function isLocalAuthTestMode(): boolean {
+  return (
+    process.env.AUTH_LOCAL_TEST_MODE === "true" &&
+    isLoopbackUrl(process.env.CONVEX_SITE_URL) &&
+    isLoopbackUrl(process.env.SITE_URL)
+  );
+}
+
+/** Optional normal-user email transport. No public/browser switch can enable it. */
+export function authEmailEnv() {
+  const siteUrl = process.env.SITE_URL;
+  const inboxUrl = process.env.AUTH_LOCAL_EMAIL_INBOX_URL;
+  const inboxToken = process.env.AUTH_LOCAL_EMAIL_INBOX_TOKEN;
+  if (
+    siteUrl &&
+    inboxUrl &&
+    inboxToken &&
+    isLocalAuthTestMode() &&
+    isLoopbackUrl(inboxUrl) &&
+    inboxToken.length >= 32 &&
+    !/[\r\n]/.test(inboxToken)
+  ) {
+    return { kind: "local" as const, siteUrl, inboxUrl, inboxToken };
+  }
+  const live = z
+    .object({
+      apiKey: z
+        .string()
+        .trim()
+        .min(1)
+        .max(4096)
+        .regex(/^[^\r\n]+$/),
+      from: z.email(),
+      siteUrl: z.url().refine((value) => {
+        const url = new URL(value);
+        return url.protocol === "https:" && !url.username && !url.password;
+      }),
+    })
+    .safeParse({
+      apiKey: process.env.RESEND_API_KEY,
+      from: process.env.AUTH_FROM_EMAIL,
+      siteUrl,
+    });
+  return live.success ? { kind: "resend" as const, ...live.data } : null;
+}
+
 // Held on an object rather than a bare `let` so the memo write is a property
 // assignment, not a reassignment of module state from inside a function.
 const memo: { value?: ServerEnv } = {};
@@ -279,4 +342,56 @@ export function industryNewsEnv() {
       dailyLimit: dailyLimit === "" ? "100" : (dailyLimit ?? "100"),
     });
   return parsed.success ? parsed.data : null;
+}
+
+/** Cashfree secrets stay on Convex. Invalid or absent configuration fails closed. */
+export function cashfreeEnv(): {
+  mode: "sandbox" | "live";
+  clientId: string;
+  clientSecret: string;
+  baseUrl: string;
+  checkoutEnabled: boolean;
+} | null {
+  if (typeof document !== "undefined") return null;
+  const mode = process.env.CASHFREE_MODE;
+  if (mode !== "sandbox" && mode !== "live") return null;
+  const sandboxId = process.env.CASHFREE_SANDBOX_CLIENT_ID?.trim();
+  const sandboxSecret = process.env.CASHFREE_SANDBOX_CLIENT_SECRET?.trim();
+  const liveId = process.env.CASHFREE_LIVE_CLIENT_ID?.trim();
+  const liveSecret = process.env.CASHFREE_LIVE_CLIENT_SECRET?.trim();
+  if (
+    (sandboxId && sandboxId === liveId) ||
+    (sandboxSecret && sandboxSecret === liveSecret)
+  )
+    return null;
+  const clientId = mode === "sandbox" ? sandboxId : liveId;
+  const clientSecret = mode === "sandbox" ? sandboxSecret : liveSecret;
+  if (
+    !clientId ||
+    !clientSecret ||
+    clientId.length > 512 ||
+    clientSecret.length > 512
+  )
+    return null;
+  return {
+    mode,
+    clientId,
+    clientSecret,
+    baseUrl:
+      mode === "sandbox"
+        ? "https://sandbox.cashfree.com/pg"
+        : "https://api.cashfree.com/pg",
+    // Live mode additionally requires an immutable approved policy in the backend.
+    checkoutEnabled:
+      (mode === "sandbox"
+        ? process.env.CASHFREE_SANDBOX_CHECKOUT_ENABLED
+        : process.env.CASHFREE_LIVE_CHECKOUT_ENABLED) === "true",
+  };
+}
+
+/** The selected policy is an approval reference, never payment proof. */
+export function cashfreePolicyVersion(): string | null {
+  if (typeof document !== "undefined") return null;
+  const value = process.env.CASHFREE_LIVE_POLICY_VERSION?.trim();
+  return value && /^[A-Za-z0-9_-]{1,80}$/.test(value) ? value : null;
 }

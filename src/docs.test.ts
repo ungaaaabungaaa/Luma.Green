@@ -139,15 +139,32 @@ describe("the partner docs", () => {
     ).toEqual([]);
   });
 
-  it("list every demo login in the README and the test plan", () => {
+  it("documents isolated local acceptance without shared credentials or cloud demo resets", () => {
     for (const doc of ["README.md", "docs/testing/README.md"]) {
       const text = read(doc);
-      for (const { phone } of DEMO_ACCOUNTS) {
-        expect(text, `${doc} lists ${phone}`).toContain(
-          formatIndianMobile(phone),
-        );
-      }
+      expect(text, doc).toContain("launch-2026-10-10.md");
+      expect(text, doc).toContain("http://localhost:3100");
+      expect(text, doc).toContain("restricted annex");
+      expect(text, doc).toMatch(/outside Git and the shared guide/);
+      expect(text, doc).toMatch(
+        /cloud[^\n]*paused|cloud backends[\s\S]{0,80}paused/i,
+      );
+      expect(text, doc).not.toMatch(
+        /123456|AUTH_DEV_MODE(?:=|\s+)true|convex run demo:(?:seed|reset)/,
+      );
+      for (const { phone } of DEMO_ACCOUNTS)
+        expect(
+          text,
+          `${doc} must not publish reusable demo phone access`,
+        ).not.toContain(formatIndianMobile(phone));
     }
+    const readme = read("README.md");
+    expect(readme).toContain("scripts/local-acceptance/README.md");
+    expect(readme).toContain("AUTH_LOCAL_TEST_MODE=true");
+    expect(readme).toContain("CONVEX_SITE_URL");
+    expect(readme).toContain("historical prototype captures");
+    expect(readme).toContain("B2B payment-dependent actions");
+    expect(readme).toContain("Cashfree Payment Gateway with Easy Split");
   });
 
   it.each(PARTNER_DOCS)(

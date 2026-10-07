@@ -122,3 +122,7 @@ describe("RateRow", () => {
     ).toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

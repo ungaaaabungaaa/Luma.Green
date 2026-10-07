@@ -515,6 +515,13 @@ describe("shop dispatch preferences", () => {
     ).rejects.toThrow(/PICKUP_LOCATION_REQUIRED/);
     await w.t.run(async (ctx) => {
       await ctx.db.patch("orgs", w.org._id, { ownerProfileId: undefined });
+      // Workspace membership is the current authority, including legacy staff.
+      const memberships = await ctx.db
+        .query("memberships")
+        .withIndex("by_org", (q) => q.eq("orgId", w.org._id))
+        .collect();
+      for (const membership of memberships)
+        await ctx.db.patch("memberships", membership._id, { role: "staff" });
     });
     await expect(
       w.shop.mutation(api.shop.configureDispatch, args),

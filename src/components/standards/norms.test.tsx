@@ -31,16 +31,16 @@ describe("the standard's norms", () => {
     ]);
   });
 
-  it("walks a business trade through escrow in order", async () => {
+  it("shows the business order sequence with unavailable gateway steps", async () => {
     await renderAsync(EscrowSteps());
 
     expect(
       screen.getAllByRole("listitem").map((item) => item.textContent),
     ).toEqual([
       "1The seller accepts the order",
-      "2The buyer pays into escrow",
+      "2Awaiting gateway",
       "3The seller dispatches the goods",
-      "4The buyer confirms, and the money is released",
+      "4Awaiting gateway",
     ]);
   });
 

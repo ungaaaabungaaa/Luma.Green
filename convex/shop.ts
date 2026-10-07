@@ -297,7 +297,7 @@ export const requests = query({
     done: v.array(vBookingView),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx, SHOP);
+    const { org } = await requireOrg(ctx, SHOP, "read");
     const materials = await materialIndex(ctx);
     const withStatus = (status: BookingStatus, limit: number) =>
       ctx.db
@@ -355,7 +355,7 @@ export const get = query({
     }),
   ),
   handler: async (ctx, args) => {
-    const { org } = await requireOrg(ctx, SHOP);
+    const { org } = await requireOrg(ctx, SHOP, "read");
     const bookingId = ctx.db.normalizeId("bookings", args.bookingId);
     const booking = bookingId ? await ctx.db.get("bookings", bookingId) : null;
     if (booking?.orgId !== org._id) return null;
@@ -396,7 +396,7 @@ export const rateCard = query({
     ),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx, SHOP);
+    const { org } = await requireOrg(ctx, SHOP, "read");
     const today = indiaToday();
     const materials = await ctx.db
       .query("materials")
@@ -435,7 +435,7 @@ export const payouts = query({
     weekCount: v.number(),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx, SHOP);
+    const { org } = await requireOrg(ctx, SHOP, "read");
     const today = indiaToday();
     const weekStart = shiftDate(today, -6);
     const completed = await ctx.db
@@ -642,10 +642,10 @@ export const dispatchSettings = query({
     canAutoAccept: v.boolean(),
   }),
   handler: async (ctx) => {
-    const { org, profile } = await requireOrg(ctx, SHOP);
+    const { org, role } = await requireOrg(ctx, SHOP, "read");
     return {
       ...settingsFor(org),
-      canManage: org.ownerProfileId === profile._id,
+      canManage: role === "owner",
       canAutoAccept: org.offersPickup && org.location !== undefined,
     };
   },
@@ -656,9 +656,8 @@ export const configureDispatch = mutation({
   args: { autoAccept: v.boolean(), pickupRadiusKm: v.number() },
   returns: v.null(),
   handler: async (ctx, args) => {
-    const { profile, org } = await requireOrg(ctx, SHOP);
-    if (org.ownerProfileId !== profile._id)
-      throw new ConvexError("OWNER_REQUIRED");
+    const { profile, org, role } = await requireOrg(ctx, SHOP);
+    if (role !== "owner") throw new ConvexError("OWNER_REQUIRED");
     if (
       !Number.isSafeInteger(args.pickupRadiusKm) ||
       args.pickupRadiusKm < 1 ||

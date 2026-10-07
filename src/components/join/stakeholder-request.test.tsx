@@ -23,9 +23,9 @@ vi.mock("@/i18n/navigation", () => ({
   useRouter: () => ({ replace: mocks.replace }),
 }));
 
-function renderPage() {
+function renderPage(locale = "en") {
   return render(
-    <NextIntlClientProvider locale="en" messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <StakeholderRequest />
     </NextIntlClientProvider>,
   );
@@ -38,6 +38,32 @@ beforeEach(() => {
 });
 
 describe("stakeholder account request", () => {
+  it.each(["ar", "ur"])(
+    "keeps both %s selectors and keyboard options in the locale direction",
+    async (locale) => {
+      const user = userEvent.setup();
+      renderPage(locale);
+      const group = screen.getByRole("combobox", { name: "Account group" });
+      expect(group).toHaveAttribute("dir", "rtl");
+      group.focus();
+      await user.keyboard("{Enter}");
+      expect(screen.getByRole("listbox")).toHaveAttribute("dir", "rtl");
+      await user.click(
+        screen.getByRole("option", {
+          name: "Non-household material generator",
+        }),
+      );
+      const site = screen.getByRole("combobox", { name: "Primary site" });
+      expect(site).toHaveAttribute("dir", "rtl");
+      site.focus();
+      await user.keyboard("{Enter}");
+      expect(screen.getByRole("listbox")).toHaveAttribute("dir", "rtl");
+      await user.keyboard("{Home}{Enter}");
+      expect(site).toHaveTextContent("Apartment community");
+      expect(site).toHaveFocus();
+    },
+  );
+
   it("requires group, site, organisation name and both consents", async () => {
     const user = userEvent.setup();
     renderPage();

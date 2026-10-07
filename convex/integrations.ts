@@ -96,7 +96,7 @@ export const listKeys = query({
   args: {},
   returns: v.object({ canManage: v.boolean(), keys: v.array(keySummary) }),
   handler: async (ctx): Promise<KeyListResult> => {
-    const { org, profile } = await requireOrg(ctx);
+    const { org, profile } = await requireOrg(ctx, undefined, "read");
     if (!(await isOwner(ctx, org._id, profile._id)))
       return { canManage: false, keys: [] };
     const active = await ctx.db

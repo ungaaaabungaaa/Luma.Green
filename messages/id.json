@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Bergerak Menuju Esok yang Lebih Bersih",
-    "description": "Luma.Green menyatukan jaringan daur ulang India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, penjemputan yang ditimbang, serta catatan setiap serah terima."
+    "description": "Luma.Green menyatukan jaringan daur ulang India dalam satu platform: rumah tangga, pengepul, pengolah awal, pendaur ulang, dan produsen, dengan harga adil, penjemputan yang ditimbang, serta catatan setiap serah terima."
   },
   "theme": {
     "label": "Tampilan",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Dagang",
-      "summary": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+      "summary": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
     },
     "record": {
       "title": "Catat",
@@ -174,7 +174,7 @@
       "error": "Daftar kode gagal dimuat."
     },
     "escrow": {
-      "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "title": "Menunggu gateway",
       "nav": "Menunggu gateway",
       "steps": {
@@ -189,7 +189,7 @@
       "title": "Verifikasi",
       "nav": "Verifikasi",
       "business": "Usaha: nomor GST jika ada, foto toko atau unit, dan panggilan telepon.",
-      "consent": "Tempat pemilahan, pendaur ulang, dan pabrik: izin yang masih berlaku dari badan pengendalian pencemaran negara bagian.",
+      "consent": "Pengolah awal, pendaur ulang, dan pabrik: izin yang masih berlaku dari badan pengendalian pencemaran negara bagian.",
       "saathi": "Saathi: identitas berfoto dan swafoto yang cocok."
     },
     "adopt": {
@@ -198,7 +198,7 @@
       "body": "Kode dan aturan bersifat terbuka dan gratis. Gunakan di toko, tempat pemilahan, atau pabrik Anda, di dalam maupun di luar Luma.Green, dan sampaikan cara memperbaikinya."
     },
     "metaTitle": "Standar Luma.Green",
-    "metaDescription": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+    "metaDescription": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
     "eyebrow": "Standar terbuka",
     "title": "Standar Luma.Green",
     "lead": "Aturan sederhana dan terbuka untuk perdagangan bahan daur ulang yang adil: satu kode tiap bahan, mutu jelas, penimbangan jujur, dan catatan setiap serah terima. Siapa pun di industri ini dapat menerapkannya.",
@@ -256,9 +256,9 @@
   },
   "howItWorks": {
     "metaTitle": "Cara kerja",
-    "metaDescription": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+    "metaDescription": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
     "title": "Cara kerja Luma.Green",
-    "lead": "Bahan berpindah dari rumah ke toko pengumpulan, tempat pemilahan, dan pendaur ulang sebelum menjadi sesuatu yang baru. Luma.Green mencatat setiap serah terima.",
+    "lead": "Bahan berpindah dari rumah ke toko pengumpulan, pengolah awal, dan pendaur ulang sebelum menjadi sesuatu yang baru. Luma.Green mencatat setiap serah terima.",
     "stepLabel": "Langkah {number}",
     "sell": {
       "body": "Rumah tangga memilih bahan yang dimiliki, melihat penawaran toko sekitar, dan memesan penjemputan atau pengantaran. Pengepul menimbang tiap bahan dan membayar tunai atau UPI; kedua pihak mendapat tanda terima.",
@@ -267,7 +267,7 @@
       "point3": "Tautan pelacakan tanpa perlu akun"
     },
     "trade": {
-      "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "point1": "Hanya usaha terverifikasi yang dapat berdagang",
       "point2": "Stok berpindah saat muatan dikirim dan diterima",
       "point3": "Tanda terima bernomor untuk setiap transaksi yang dibayar"
@@ -283,7 +283,7 @@
     "metaTitle": "Kontak",
     "metaDescription": "Hubungi tim Luma.Green untuk bergabung dalam uji coba Bengaluru.",
     "title": "Bicaralah dengan kami",
-    "lead": "Kami memulai di Bengaluru bersama sekelompok kecil pengepul, tempat pemilahan, pendaur ulang, dan pabrik. Ceritakan siapa Anda, bahan yang diperdagangkan, serta perkiraan volume bulanan Anda.",
+    "lead": "Kami memulai di Bengaluru bersama sekelompok kecil pengepul, pengolah awal, pendaur ulang, dan pabrik. Ceritakan siapa Anda, bahan yang diperdagangkan, serta perkiraan volume bulanan Anda.",
     "emailHeading": "Akses awal dan pertanyaan umum",
     "securityHeading": "Laporan keamanan",
     "securityBody": "Menemukan celah keamanan? Laporkan secara pribadi, jangan di ruang publik."
@@ -345,7 +345,7 @@
       "roles": {
         "household": "Rumah tangga",
         "kabadiwala": "Pengepul",
-        "yard": "Tempat pemilahan",
+        "yard": "Pengolah awal",
         "recycler": "Pendaur ulang",
         "manufacturer": "Produsen",
         "saathi": "Pekerja Saathi",
@@ -366,11 +366,11 @@
     },
     "guides": {
       "escrow": {
-        "summary": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+        "summary": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
         "steps": {
           "pay": {
             "title": "Menunggu gateway",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           },
           "request": {
             "title": "Pembeli mengirim permintaan",
@@ -386,7 +386,7 @@
           },
           "confirm": {
             "title": "Pembeli mengonfirmasi pengiriman",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           }
         },
         "title": "Menunggu gateway"
@@ -433,7 +433,7 @@
           },
           "pay": {
             "title": "Menunggu gateway",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           },
           "receive": {
             "title": "Terima muatan",
@@ -501,7 +501,7 @@
         "steps": {
           "start": {
             "title": "Mulai di luma.green/join",
-            "body": "Masuk dengan nomor ponsel dan pilih Tempat Pemilahan, Pendaur Ulang, atau Produsen."
+            "body": "Masuk dengan nomor ponsel dan pilih Pengolah awal, Pendaur Ulang, atau Produsen."
           },
           "details": {
             "title": "Tambahkan rincian usaha",
@@ -557,7 +557,7 @@
           },
           "hold": {
             "title": "Jangan konfirmasi muatan kurang",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           },
           "report": {
             "title": "Laporkan dengan foto",
@@ -597,7 +597,7 @@
       },
       "firstPickup": {
         "title": "Pesan penjemputan pertama",
-        "summary": "Dari foto hingga penjemputan dipesan dalam sekitar dua menit. Tidak perlu akun.",
+        "summary": "Pilih bahan, bandingkan toko, dan verifikasi nomor ponsel Anda untuk memesan penjemputan.",
         "steps": {
           "photo": {
             "title": "Ambil foto bahan daur ulang",
@@ -840,8 +840,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Panduan demo: Pilah stok dan jual ke tempat pemilahan",
-        "summary": "Dari banyak penjemputan kecil menjadi muatan yang dibutuhkan tempat pemilahan.",
+        "title": "Panduan demo: Pilah stok dan jual ke pengolah awal",
+        "summary": "Dari banyak penjemputan kecil menjadi muatan yang dibutuhkan pengolah awal.",
         "steps": {
           "grows": {
             "title": "Stok bertambah otomatis",
@@ -852,12 +852,12 @@
             "body": "Pisahkan barang campuran menurut bahan sebenarnya. Misalnya, kertas campuran menjadi koran, karton, dan limbah."
           },
           "show": {
-            "title": "Tampilkan stok ke tempat pemilahan",
-            "body": "Aktifkan Tampilkan ke Tempat Pemilahan agar tempat sekitar dapat melihat stok Anda."
+            "title": "Tampilkan stok ke pengolah awal",
+            "body": "Aktifkan Tampilkan ke Pengolah awal agar tempat sekitar dapat melihat stok Anda."
           },
           "sell": {
-            "title": "Terima permintaan tempat pemilahan",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "title": "Terima permintaan pengolah awal",
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           }
         }
       },
@@ -897,7 +897,7 @@
           },
           "pay": {
             "title": "Menunggu gateway",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           },
           "collect": {
             "title": "Ambil dan timbang",
@@ -923,7 +923,7 @@
           },
           "accept": {
             "title": "Terima, lalu tunggu pembayaran",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           },
           "dispatch": {
             "title": "Kirim muatan",
@@ -931,17 +931,17 @@
           },
           "paid": {
             "title": "Terima pembayaran",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           }
         }
       },
       "buyFromYards": {
-        "title": "Panduan demo: Membeli bahan daur ulang terpilah dari tempat pemilahan",
+        "title": "Panduan demo: Membeli bahan daur ulang terpilah dari pengolah awal",
         "summary": "Pasokan rutin bermutu untuk lini produksi.",
         "steps": {
           "browse": {
             "title": "Cari bal terdekat",
-            "body": "Buka Beli untuk melihat penawaran tempat pemilahan menurut bahan dan jarak."
+            "body": "Buka Beli untuk melihat penawaran pengolah awal menurut bahan dan jarak."
           },
           "request": {
             "title": "Minta muatan",
@@ -949,7 +949,7 @@
           },
           "pay": {
             "title": "Menunggu gateway",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           },
           "confirm": {
             "title": "Timbang, periksa, konfirmasi",
@@ -971,11 +971,11 @@
           },
           "load": {
             "title": "Muat setelah pembayaran",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           },
           "paid": {
             "title": "Terima pembayaran saat terkirim",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           }
         }
       },
@@ -997,7 +997,7 @@
           },
           "decide": {
             "title": "Konfirmasi atau laporkan",
-            "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+            "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
           }
         }
       },
@@ -1103,25 +1103,25 @@
         "name": "Rumah tangga",
         "who": "Menjual bahan daur ulang dari rumah",
         "title": "Bantuan rumah tangga",
-        "lead": "Pesan penjemputan, dapatkan penimbangan adil, dan terima pembayaran di depan pintu. Tidak perlu akun."
+        "lead": "Pesan penjemputan, konfirmasi nomor ponsel Anda, dan terima pembayaran setelah penimbangan."
       },
       "kabadiwala": {
         "name": "Pengepul",
         "who": "Mengelola toko pengumpulan",
         "title": "Bantuan pengepul",
-        "lead": "Terima penjemputan, timbang dan bayar dalam satu menit, tentukan harga, lalu jual ke tempat pemilahan."
+        "lead": "Terima penjemputan, timbang dan bayar dalam satu menit, tentukan harga, lalu jual ke pengolah awal."
       },
       "yard": {
-        "name": "Tempat pemilahan",
+        "name": "Pengolah awal",
         "who": "Membeli dari pengepul dan memilah lebih lanjut",
-        "title": "Bantuan tempat pemilahan",
-        "lead": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+        "title": "Bantuan pengolah awal",
+        "lead": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
       },
       "recycler": {
         "name": "Pendaur ulang",
         "who": "Mengubah bahan daur ulang menjadi bahan baku",
         "title": "Bantuan pendaur ulang",
-        "lead": "Beli bahan daur ulang bermutu dari tempat pemilahan, jual hasil ke pabrik, dan jaga catatan EPR tetap rapi."
+        "lead": "Beli bahan daur ulang bermutu dari pengolah awal, jual hasil ke pabrik, dan jaga catatan EPR tetap rapi."
       },
       "manufacturer": {
         "name": "Produsen",
@@ -1164,7 +1164,7 @@
       "nextHeading": "Panduan berikutnya"
     },
     "metaTitle": "Pusat bantuan",
-    "metaDescription": "Panduan, jawaban, dan pelatihan sederhana bagi rumah tangga, pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi di Luma.Green.",
+    "metaDescription": "Panduan, jawaban, dan pelatihan sederhana bagi rumah tangga, pengepul, pengolah awal, pendaur ulang, produsen, dan Saathi di Luma.Green.",
     "eyebrow": "Pusat bantuan",
     "title": "Apa yang dapat kami bantu?",
     "lead": "Panduan singkat, jawaban jelas, dan pelatihan cepat bagi semua pengguna Luma.Green.",
@@ -1290,8 +1290,8 @@
         "a": "Tidak. Anda membayar tunai atau UPI di depan pintu. Aplikasi mencatat jumlah dan caranya."
       },
       "paidByYard": {
-        "q": "Bagaimana saya dibayar saat menjual ke tempat pemilahan?",
-        "a": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+        "q": "Bagaimana saya dibayar saat menjual ke pengolah awal?",
+        "a": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
       },
       "whoSeesShop": {
         "q": "Siapa dapat melihat toko saya?",
@@ -1319,7 +1319,7 @@
       },
       "whatIsEscrow": {
         "q": "Menunggu gateway",
-        "a": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+        "a": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
       },
       "whenSellerPaid": {
         "q": "Kapan penjual dibayar?",
@@ -1342,8 +1342,8 @@
         "a": "Siapkan pendaftaran Pengolah Limbah Plastik CPCB. Merek memintanya, dan pendaftaran ini memungkinkan penerbitan sertifikat EPR."
       },
       "buyFromAnyYard": {
-        "q": "Bisakah membeli dari lebih dari satu tempat pemilahan?",
-        "a": "Ya. Beli dari tempat pemilahan terverifikasi mana pun yang menawarkan kebutuhan Anda, sesering yang diinginkan."
+        "q": "Bisakah membeli dari lebih dari satu pengolah awal?",
+        "a": "Ya. Beli dari pengolah awal terverifikasi mana pun yang menawarkan kebutuhan Anda, sesering yang diinginkan."
       },
       "eprRecords": {
         "q": "Apakah catatan Luma.Green membantu EPR?",
@@ -1416,7 +1416,7 @@
       "buyingFromKabadiwalas": "Membeli dari pengepul",
       "listingBales": "Menawarkan bal ke pendaur ulang",
       "escrowExplained": "Menunggu gateway",
-      "buyingFromYards": "Membeli dari tempat pemilahan",
+      "buyingFromYards": "Membeli dari pengolah awal",
       "sellingOutput": "Menjual hasil produksi",
       "eprPlainWords": "EPR dengan bahasa sederhana",
       "firstOrder": "Membuat pesanan pertama",
@@ -1475,10 +1475,10 @@
         "p3": "Selalu bayar sebelum pergi."
       },
       "sellingToYards": {
-        "title": "Demo: Menjual ke tempat pemilahan",
+        "title": "Demo: Menjual ke pengolah awal",
         "p1": "Catat pemilahan agar stok akurat.",
-        "p2": "Tampilkan stok ke tempat pemilahan sekitar.",
-        "p3": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+        "p2": "Tampilkan stok ke pengolah awal sekitar.",
+        "p3": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
       },
       "buyingStock": {
         "title": "Membeli stok",
@@ -1488,7 +1488,7 @@
       },
       "tradingWithEscrow": {
         "title": "Menunggu gateway",
-        "p1": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+        "p1": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
         "p2": "Penjual hanya memuat setelah uang tersedia.",
         "p3": "Konfirmasi pengiriman melepaskan uang."
       },
@@ -1506,8 +1506,8 @@
       },
       "buyingInputs": {
         "title": "Demo: Membeli bahan baku",
-        "p1": "Cari bal bermutu dari tempat pemilahan di Beli.",
-        "p2": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+        "p1": "Cari bal bermutu dari pengolah awal di Beli.",
+        "p2": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
         "p3": "Periksa mutu sebelum mengonfirmasi."
       },
       "eprBasics": {
@@ -1520,7 +1520,7 @@
         "title": "Demo: Memesan bahan daur ulang",
         "p1": "Bandingkan penawaran menurut jenis, kilo, dan harga.",
         "p2": "Kirim pesanan sesuai kilo yang dibutuhkan.",
-        "p3": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+        "p3": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
       },
       "checkingDeliveries": {
         "title": "Memeriksa pengiriman",
@@ -1569,7 +1569,7 @@
     "comingSoon": "Layar ini sedang dibuat.",
     "roles": {
       "kabadiwala": "Pengepul",
-      "yard": "Tempat pemilahan",
+      "yard": "Pengolah awal",
       "recycler": "Pendaur ulang",
       "manufacturer": "Produsen",
       "saathi": "Pekerja Saathi"
@@ -1743,7 +1743,7 @@
     "lead": "Pilih barang, pilih toko terdekat, dan terima pembayaran tunai atau UPI setelah ditimbang.",
     "promises": {
       "label": "Mengapa menjual di sini",
-      "noAccount": "Tidak perlu akun",
+      "noAccount": "Verifikasi ponsel untuk memesan",
       "payAtDoor": "Dibayar setelah ditimbang",
       "verified": "Toko terverifikasi"
     },
@@ -1900,16 +1900,16 @@
       "kgTooMuch": "Hanya tersedia {weight}.",
       "total": "Jumlah total",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "escrow": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "ewayBill": "Di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
       "submit": "Kirim permintaan",
       "sent": "Permintaan dikirim ke {seller}",
-      "sentNext": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "sentNext": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "seeTrades": "Lihat transaksi"
     },
     "sell": {
       "title": "Jual",
-      "lead": "{buyer, select, yard {Tawarkan stok terpilah ke tempat pemilahan.} recycler {Tawarkan bal ke pendaur ulang.} manufacturer {Tawarkan bahan ke produsen.} other {Tawarkan stok ke pembeli.}}",
+      "lead": "{buyer, select, yard {Tawarkan stok terpilah ke pengolah awal.} recycler {Tawarkan bal ke pendaur ulang.} manufacturer {Tawarkan bahan ke produsen.} other {Tawarkan stok ke pembeli.}}",
       "notForYouTitle": "Produsen membeli di Luma.Green",
       "notForYouBody": "Cari bahan daur ulang dari pendaur ulang terverifikasi.",
       "goBuy": "Beli bahan",
@@ -1933,7 +1933,7 @@
         "value": "Nilai lot",
         "submit": "Tawarkan untuk dijual",
         "submitting": "Menerbitkan penawaran…",
-        "listed": "Sudah ditawarkan. {buyer, select, yard {Tempat pemilahan} recycler {Pendaur ulang} manufacturer {Produsen} other {Pembeli}} kini dapat melihatnya.",
+        "listed": "Sudah ditawarkan. {buyer, select, yard {Pengolah awal} recycler {Pendaur ulang} manufacturer {Produsen} other {Pembeli}} kini dapat melihatnya.",
         "nothingTitle": "Belum ada yang dijual",
         "nothingBody": "Stok yang Anda catat muncul di sini. Stok yang sudah ditawarkan atau terjual tidak dihitung dua kali.",
         "goStock": "Buka stok",
@@ -1968,11 +1968,11 @@
       "buy": "Beli",
       "trades": "Transaksi",
       "greeting": "Salam, {name}",
-      "lead": "{kind, select, yard {Beli dari pengepul, jual bal terpilah ke pendaur ulang.} recycler {Beli bahan daur ulang terpilah dari tempat pemilahan, jual bahan daur ulang ke produsen.} manufacturer {Beli bahan daur ulang dari pendaur ulang terverifikasi.} other {Sekilas transaksi Anda.}}",
+      "lead": "Kelola pembelian, penjualan, dan pesanan bahan Anda.",
       "statsTitle": "Sekilas",
       "stats": {
         "escrow": "Belum diverifikasi",
-        "escrowHint": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+        "escrowHint": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
         "waiting": "Menunggu Anda",
         "waitingHint": "{count, plural, =0 {Semua sudah ditangani} one {# transaksi perlu tindakan} other {# transaksi perlu tindakan}}",
         "listings": "Dijual",
@@ -1981,15 +1981,15 @@
         "offersHint": "Dijual oleh pendaur ulang",
         "completed": "Selesai bulan ini",
         "completedHint": "{amount} diperdagangkan",
-        "gatewayPending": "Menunggu gateway"
+        "gatewayPending": "Pesanan diterima"
       },
       "waitingTitle": "Menunggu Anda",
       "allTrades": "Semua transaksi",
       "caughtUpTitle": "Belum ada yang perlu ditangani",
       "caughtUpBody": "Pesanan, pembayaran, dan pengiriman baru muncul di sini.",
       "offersTitle": "Lot terbaru untuk Anda",
-      "recycledTitle": "Bahan daur ulang untuk Anda",
-      "recycledBody": "Serpihan, butiran, kraft, dan batangan dari pendaur ulang terverifikasi, siap untuk lini produksi Anda.",
+      "recycledTitle": "Penawaran bahan untuk Anda",
+      "recycledBody": "Lihat pemasok yang disetujui. Bahan daur ulang ditampilkan lebih dulu.",
       "seeAll": "Lihat semua",
       "noOffersTitle": "Belum ada lot dijual",
       "noOffersBody": "Lot baru muncul segera setelah ditawarkan."
@@ -2001,7 +2001,7 @@
         "title": "{material} · {weight}",
         "from": "Dari {name} · {area}",
         "to": "Ke {name} · {area}",
-        "inEscrow": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+        "inEscrow": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
         "ewayBill": "Di atas ₹50.000: surat jalan elektronik harus menyertai muatan ini.",
         "updated": "Diperbarui {when}",
         "receipt": "Tanda terima {number}",
@@ -2025,7 +2025,7 @@
         }
       },
       "declineNo": "Pertahankan",
-      "lead": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "lead": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "buying": "Pembelian",
       "selling": "Penjualan",
       "tabsLabel": "Pembelian atau penjualan",
@@ -2043,8 +2043,8 @@
           "seller": "{name} ingin membeli ini. Terima untuk mencadangkannya bagi mereka."
         },
         "accepted": {
-          "buyer": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
-          "seller": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+          "buyer": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
+          "seller": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
         },
         "paid_to_escrow": {
           "buyer": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi.",
@@ -2079,7 +2079,7 @@
       },
       "declineConfirm": "Tolak pesanan dari {name}? Tindakan ini tidak dapat dibatalkan.",
       "declineYes": "Ya, tolak",
-      "gatewayPending": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "gatewayPending": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "legacyUnverified": "Catatan prototipe. Pembayaran dan pengiriman belum diverifikasi."
     },
     "receipt": {
@@ -2109,7 +2109,7 @@
       "missingTitle": "Tanda terima tidak ditemukan",
       "missingBody": "Transaksi ini bukan milik Anda atau tautannya salah.",
       "pendingTitle": "Belum ada tanda terima",
-      "pendingBody": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "pendingBody": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "declinedBody": "Transaksi ini ditolak, jadi tidak ada tanda terima.",
       "unverified": "Belum diverifikasi"
     },
@@ -2130,15 +2130,15 @@
     },
     "browse": {
       "title": "Beli",
-      "lead": "{kind, select, yard {Bahan daur ulang terpilah dari pengepul sekitar.} recycler {Bahan terpilah dan dibal dari tempat pemilahan.} manufacturer {Bahan daur ulang dari pendaur ulang terverifikasi.} other {Bahan yang dijual di sekitar Anda.}}",
+      "lead": "Lihat penawaran pemasok yang disetujui untuk bahan yang Anda tangani.",
       "filterLabel": "Saring menurut bahan",
       "all": "Semua",
       "count": "{count, plural, =0 {Tidak ada lot} one {# lot dijual} other {# lot dijual}}",
       "emptyTitle": "Belum ada yang dijual",
       "emptyBody": "Lot baru muncul segera setelah ditawarkan.",
       "notForYouTitle": "Pengepul membeli dari rumah tangga",
-      "notForYouBody": "Di pasar, Anda menjual: tawarkan stok terpilah ke tempat pemilahan.",
-      "goSell": "Jual ke tempat pemilahan"
+      "notForYouBody": "Di pasar, Anda menjual: tawarkan stok terpilah ke pengolah awal.",
+      "goSell": "Jual ke pengolah awal"
     },
     "recycled": "Hasil daur ulang",
     "units": {
@@ -2148,7 +2148,7 @@
     "sampleData": "Harga dan jumlah di layar ini adalah data contoh untuk prototipe.",
     "simulated": "Data contoh. Pembayaran disimulasikan dalam prototipe: tidak ada uang sungguhan yang berpindah.",
     "forBusinessesTitle": "Layar ini untuk usaha",
-    "forBusinessesBody": "Pengepul, tempat pemilahan, pendaur ulang, dan produsen berdagang di sini.",
+    "forBusinessesBody": "Pengepul, pengolah awal, pendaur ulang, dan produsen berdagang di sini.",
     "listing": {
       "seller": "{name} · {area}",
       "available": "Tersedia",
@@ -2253,8 +2253,8 @@
       "you": "Anda membayar",
       "market": "Pasar",
       "quickLinks": "Pintasan",
-      "sell": "Jual ke tempat pemilahan",
-      "sellHint": "Tawarkan stok ke tempat pemilahan sekitar",
+      "sell": "Jual ke pengolah awal",
+      "sellHint": "Tawarkan stok ke pengolah awal sekitar",
       "pricesHint": "Harga per kg yang Anda bayarkan ke rumah tangga"
     },
     "stock": {
@@ -2269,7 +2269,7 @@
       "atPrice": "Pasar {price}/kg",
       "noPrice": "Tidak ada harga pasar hari ini",
       "sellTo": {
-        "yard": "Jual ke tempat pemilahan",
+        "yard": "Jual ke pengolah awal",
         "recycler": "Jual ke pendaur ulang",
         "manufacturer": "Jual ke produsen"
       },
@@ -2277,7 +2277,7 @@
       "emptyShop": "Timbang dan bayar penjemputan, lalu stok muncul di sini.",
       "emptyBusiness": "Beli di pasar, lalu stok muncul di sini.",
       "notBusinessTitle": "Khusus usaha",
-      "notBusinessBody": "Stok dikelola toko, tempat pemilahan, pendaur ulang, dan pabrik."
+      "notBusinessBody": "Stok dikelola toko, pengolah awal, pendaur ulang, dan pabrik."
     },
     "slot": "{day}, {window}",
     "windows": {
@@ -2391,7 +2391,7 @@
     "unavailable": "Peramban gagal menyimpan pilihan ini. Analitik akan tetap nonaktif."
   },
   "home": {
-    "metaDescription": "Luma.Green menyatukan jaringan daur ulang India dalam satu platform: rumah tangga, pengepul, tempat pemilahan, pendaur ulang, dan produsen, dengan harga adil, usaha terverifikasi, dan tanda terima di setiap tahap.",
+    "metaDescription": "Luma.Green menyatukan jaringan daur ulang India dalam satu platform: rumah tangga, pengepul, pengolah awal, pendaur ulang, dan produsen, dengan harga adil, usaha terverifikasi, dan tanda terima di setiap tahap.",
     "hero": {
       "eyebrow": "Dimulai di Bengaluru",
       "title": "Beri bahan Anda awal yang baru.",
@@ -2411,7 +2411,7 @@
     },
     "chain": {
       "heading": "Alur bahan daur ulang",
-      "intro": "Bahan berpindah dari rumah ke toko pengumpulan, tempat pemilahan, dan pendaur ulang sebelum menjadi sesuatu yang baru. Luma.Green mencatat setiap serah terima.",
+      "intro": "Bahan berpindah dari rumah ke toko pengumpulan, pengolah awal, dan pendaur ulang sebelum menjadi sesuatu yang baru. Luma.Green mencatat setiap serah terima.",
       "steps": {
         "household": {
           "name": "Rumah tangga",
@@ -2422,7 +2422,7 @@
           "body": "Membeli, menimbang, dan memilah berdasarkan bahan."
         },
         "yard": {
-          "name": "Tempat pemilahan",
+          "name": "Pengolah awal",
           "body": "Mengelompokkan mutu dan mengepres menjadi bal."
         },
         "recycler": {
@@ -2434,7 +2434,7 @@
           "body": "Membuat produk baru dari bahan daur ulang."
         }
       },
-      "money": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+      "money": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
       "saathi": "Saathi membantu di seluruh rantai melalui penjemputan, pemilahan, dan kerja sif."
     },
     "roles": {
@@ -2451,19 +2451,19 @@
         "title": "Pengepul",
         "one": "Permintaan penjemputan dari rumah sekitar.",
         "two": "Tentukan harga sendiri, tidak di bawah batas minimum.",
-        "three": "Jual stok terpilah ke tempat pemilahan.",
+        "three": "Jual stok terpilah ke pengolah awal.",
         "cta": "Gabung sebagai pengepul"
       },
       "yard": {
-        "title": "Tempat pemilahan",
+        "title": "Pengolah awal",
         "one": "Lihat stok toko di sekitar.",
         "two": "Beli dalam jumlah besar dan jual bal ke pendaur ulang.",
-        "three": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
-        "cta": "Gabung sebagai tempat pemilahan"
+        "three": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
+        "cta": "Gabung sebagai pengolah awal"
       },
       "recycler": {
         "title": "Pendaur ulang",
-        "one": "Bal bermutu dari tempat pemilahan terverifikasi.",
+        "one": "Bal bermutu dari pengolah awal terverifikasi.",
         "two": "Setiap lot disertai riwayat penguasaan bahan.",
         "three": "Jual hasil produksi ke pabrik.",
         "cta": "Gabung sebagai pendaur ulang"
@@ -2471,7 +2471,7 @@
       "manufacturer": {
         "title": "Produsen",
         "one": "Lihat hasil produksi pendaur ulang.",
-        "two": "Gateway pembayaran diperlukan. Pembayaran belum tersedia.",
+        "two": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini.",
         "three": "Catatan untuk laporan EPR Anda.",
         "cta": "Gabung sebagai produsen"
       },
@@ -2695,15 +2695,15 @@
   "participants": {
     "kabadiwala": {
       "name": "Pengepul",
-      "body": "Terima permintaan penjemputan dari rumah sekitar, timbang dan bayar dengan adil, lalu jual stok terpilah ke tempat pemilahan."
+      "body": "Terima permintaan penjemputan dari rumah sekitar, timbang dan bayar dengan adil, lalu jual stok terpilah ke pengolah awal."
     },
     "yard": {
-      "name": "Tempat pemilahan",
-      "body": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+      "name": "Pengolah awal",
+      "body": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
     },
     "recycler": {
       "name": "Pendaur ulang",
-      "body": "Beli bal bermutu dari tempat pemilahan terverifikasi dan jual serpihan, butiran, serta batangan ke pabrik."
+      "body": "Beli bal bermutu dari pengolah awal terverifikasi dan jual serpihan, butiran, serta batangan ke pabrik."
     },
     "manufacturer": {
       "name": "Produsen",
@@ -2714,11 +2714,11 @@
       "body": "Ambil pekerjaan penjemputan, pemilahan, dan sif berbayar di dekat rumah, lalu lihat penghasilan Anda."
     },
     "metaTitle": "Untuk siapa",
-    "metaDescription": "Luma.Green dibuat untuk rumah tangga, pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi: semua yang memindahkan bahan daur ulang dari rumah ke pabrik.",
+    "metaDescription": "Luma.Green dibuat untuk rumah tangga, pengepul, pengolah awal, pendaur ulang, produsen, dan Saathi: semua yang memindahkan bahan daur ulang dari rumah ke pabrik.",
     "title": "Untuk siapa Luma.Green dibuat",
     "lead": "Semua yang memindahkan bahan daur ulang dari rumah ke pabrik, serta orang yang bekerja di antaranya.",
     "householdHeading": "Serta setiap rumah tangga",
-    "householdBody": "Siapa pun dapat menjual bahan daur ulang dari rumah tanpa akun: pilih bahan, lihat penawaran tiap toko, lalu terima pembayaran tunai atau UPI dengan tanda terima."
+    "householdBody": "Pesan penjemputan dari rumah dengan nomor ponsel Anda: pilih bahan, bandingkan penawaran toko, lalu terima pembayaran tunai atau melalui UPI dari toko beserta tanda terima."
   },
   "join": {
     "consent": {
@@ -2744,7 +2744,7 @@
         "ewaste": "Limbah elektronik"
       },
       "titles": {
-        "yard": "Tempat pemilahan Anda",
+        "yard": "Usaha pengolahan awal Anda",
         "recycler": "Unit daur ulang Anda",
         "manufacturer": "Pabrik Anda"
       },
@@ -2802,7 +2802,7 @@
         "needs": "Alamat dan jam buka toko. Nomor GST jika ada."
       },
       "yard": {
-        "title": "Tempat pemilahan",
+        "title": "Pengolah awal",
         "body": "Anda memilah dan mengepres bahan daur ulang dalam jumlah besar, lalu menjualnya kembali.",
         "needs": "Nomor GST jika ada, izin pengendalian pencemaran (PDF), dan foto mesin Anda."
       },
@@ -2944,7 +2944,7 @@
       }
     },
     "metaTitle": "Gabung Luma.Green",
-    "metaDescription": "Pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi di Bengaluru: daftar untuk bergabung dengan Luma.Green. Petugas memeriksa setiap pendaftaran, biasanya dalam 12–24 jam.",
+    "metaDescription": "Pengepul, pengolah awal, pendaur ulang, produsen, dan Saathi di Bengaluru: daftar untuk bergabung dengan Luma.Green. Petugas memeriksa setiap pendaftaran, biasanya dalam 12–24 jam.",
     "title": "Gabung Luma.Green",
     "lead": "Ceritakan pekerjaan Anda. Petugas memeriksa setiap pendaftaran, biasanya dalam 12–24 jam.",
     "start": "Mulai",
@@ -3032,7 +3032,7 @@
       "title": "Pekerjaan terbuka",
       "lead": "Pekerjaan di wilayah Anda ditampilkan lebih dahulu.",
       "empty": "Belum ada pekerjaan terbuka",
-      "emptyBody": "Pekerjaan baru dari toko, tempat pemilahan, dan pabrik muncul di sini."
+      "emptyBody": "Pekerjaan baru dari toko, pengolah awal, dan pabrik muncul di sini."
     },
     "work": {
       "home_pickups": "Penjemputan dari rumah",
@@ -3142,7 +3142,8 @@
     "empty": {
       "title": "Belum ada catatan",
       "body": "Angka Anda muncul setelah penjemputan atau transaksi pertama selesai."
-    }
+    },
+    "factorUnavailable": "Perkiraan CO₂e tidak tersedia. Faktor emisi belum ditetapkan."
   },
   "compliance": {
     "receipts": {
@@ -3166,7 +3167,7 @@
       "view": "Lihat tanda terima {number}",
       "unknown": "Usaha yang sudah tidak ada di Luma.Green",
       "empty": "Belum ada tanda terima",
-      "emptyBody": "Gateway pembayaran diperlukan. Pembayaran belum tersedia."
+      "emptyBody": "Pembayaran bisnis menggunakan gerbang pembayaran. Periksa pesanan untuk status pembayaran saat ini."
     },
     "epr": {
       "streams": {
@@ -3250,7 +3251,7 @@
     },
     "saathi": {
       "title": "Untuk usaha",
-      "body": "Kepatuhan ditujukan bagi toko, tempat pemilahan, pendaur ulang, dan pabrik. Pekerjaan dan upah Anda ada di beranda.",
+      "body": "Kepatuhan ditujukan bagi toko, pengolah awal, pendaur ulang, dan pabrik. Pekerjaan dan upah Anda ada di beranda.",
       "home": "Buka pekerjaan saya"
     }
   },
@@ -3261,14 +3262,14 @@
     "chooseLanguageHint": "Anda dapat mengubahnya kapan saja dari bagian atas layar.",
     "continue": "Lanjutkan",
     "title": "Masuk dengan nomor ponsel",
-    "lead": "Untuk pengepul, tempat pemilahan, pendaur ulang, produsen, dan Saathi.",
+    "lead": "Untuk pengepul, pengolah awal, pendaur ulang, produsen, dan Saathi.",
     "mobileLabel": "Nomor ponsel",
     "mobileHint": "Kami akan mengirim kode 6 digit ke nomor ini.",
     "mobileInvalid": "Masukkan nomor ponsel India 10 digit.",
     "sendCode": "Kirim kode",
     "sending": "Mengirim…",
     "sendFailed": "Kode gagal dikirim. Coba lagi dalam satu menit.",
-    "homeTitle": "Mendaur ulang dari rumah? Tidak perlu akun.",
+    "homeTitle": "Mendaur ulang dari rumah?",
     "homeLink": "Lihat cara kerjanya",
     "privacy": "Kami hanya menggunakan nomor Anda untuk masuk dan mengirim kabar tentang pekerjaan Anda di Luma.Green.",
     "unavailableTitle": "Masuk melalui ponsel segera tersedia",
@@ -3348,7 +3349,7 @@
           "third": "Kelola stok terpilah"
         },
         "yard": {
-          "title": "Tempat pemilahan Anda",
+          "title": "Ruang kerja pengolahan awal Anda",
           "first": "Terima bahan",
           "second": "Pilah persediaan",
           "third": "Siapkan lot keluar"
@@ -3507,5 +3508,617 @@
       "resort": "Resor",
       "other": "Tempat lain"
     }
+  },
+  "emailAuth": {
+    "phone": "Telepon",
+    "email": "Surel",
+    "signin": "Masuk",
+    "signup": "Buat akun",
+    "forgot": "Atur ulang sandi",
+    "name": "Nama Anda",
+    "password": "Kata sandi",
+    "show": "Tampilkan sandi",
+    "hide": "Sembunyikan sandi",
+    "passwordHint": "Gunakan 12–128 karakter.",
+    "unavailable": "Pengiriman surel tidak tersedia. Akun yang ada tetap dapat masuk.",
+    "sent": "Periksa kotak masuk. Jika memenuhi syarat, Anda akan menerima tautan yang berlaku selama 15 menit.",
+    "resend": "Kirim ulang verifikasi",
+    "limited": "Terlalu banyak percobaan. Coba nanti.",
+    "unverified": "Verifikasi surel sebelum masuk.",
+    "credentials": "Periksa surel dan kata sandi Anda.",
+    "invalidLink": "Tautan tidak sah atau kedaluwarsa. Minta yang baru.",
+    "failed": "Permintaan gagal. Coba lagi.",
+    "reset": "Sandi baru",
+    "verify": "Verifikasi surel",
+    "done": "Selesai. Masuk untuk melanjutkan.",
+    "confirm": "Ulangi sandi",
+    "mismatch": "Kata sandi tidak cocok.",
+    "securityHint": "Tambahkan kode autentikator setelah kata sandi. Pemulihan sandi tetap menjaga perlindungan ini.",
+    "backupHint": "Setiap kode pemulihan berfungsi sekali setelah kata sandi.",
+    "disableHint": "Masuk dengan sandi tetap aktif. Kode autentikator dan pemulihan berhenti berfungsi."
+  },
+  "workspace": {
+    "title": "Ruang kerja dan tim",
+    "choose": "Pilih ruang kerja",
+    "team": "Tim",
+    "role": "Peran",
+    "owner": "Pemilik",
+    "admin": "Pengelola",
+    "member": "Anggota",
+    "viewer": "Pembaca",
+    "invite": "Kirim undangan",
+    "email": "Alamat surel",
+    "pending": "Undangan tertunda",
+    "revoke": "Cabut",
+    "remove": "Hapus",
+    "empty": "Ruang kerja tidak tersedia.",
+    "error": "Tidak dapat memperbarui. Periksa akses dan coba lagi.",
+    "inviteTitle": "Undangan ruang kerja",
+    "accept": "Terima undangan",
+    "verifyEmail": "Verifikasi surel yang diundang sebelum menerima.",
+    "unavailable": "Undangan ini tidak tersedia. Periksa surel atau minta undangan baru.",
+    "join": "Gabung ke {name} sebagai {role}.",
+    "readOnly": "Akses hanya baca",
+    "confirmRemove": "Hapus orang ini dari ruang kerja?",
+    "lastOwner": "Pertahankan setidaknya satu pemilik. Tambahkan pemilik lain sebelum perubahan ini.",
+    "deliveryPending": "Surel tertunda",
+    "deliveryAccepted": "Layanan surel menerima",
+    "deliveryFailed": "Pengiriman surel belum terkonfirmasi",
+    "expires": "Kedaluwarsa {date}",
+    "emailBody": "Anda diundang ke {name}. Buka tautan dalam tujuh hari dan masuk dengan surel terverifikasi ini. Undangan berlaku sekali.",
+    "switchAccount": "Ganti akun",
+    "switchHint": "Keluar untuk masuk atau mendaftar dengan alamat email yang menerima undangan.",
+    "invitationLimit": "Batas undangan telah tercapai. Tunggu sebelum mengirim undangan berikutnya."
+  },
+  "lots": {
+    "title": "Lot dan mutu",
+    "lead": "Catat bahan terukur, pemrosesan, dan serah terima fisik.",
+    "evidenceNote": "Catatan ini menjelaskan bukti fisik. Catatan tidak mengubah stok, pembayaran, kepemilikan hukum, atau sertifikat.",
+    "notBusiness": "Pilih ruang kerja usaha aktif untuk menggunakan catatan lot.",
+    "readOnly": "Peran ruang kerja Anda dapat membaca catatan ini.",
+    "held": "Lot yang dipegang",
+    "incoming": "Lot masuk",
+    "sent": "Riwayat serah terima",
+    "empty": "Belum ada catatan.",
+    "limit": "Hanya 100 catatan pertama yang ditampilkan.",
+    "declare": "Deklarasikan lot",
+    "detail": "Detail lot",
+    "back": "Semua lot",
+    "material": "Kode atau nama bahan",
+    "state": "Kondisi fisik",
+    "mass": "Massa (g)",
+    "grams": "{value} g",
+    "integerHint": "Masukkan gram bulat. Jangan gunakan desimal atau pemisah ribuan.",
+    "sourceReference": "Referensi sumber (opsional)",
+    "source": "Sumber",
+    "selfDeclared": "Deklarasi mandiri",
+    "transformed": "Dari transformasi",
+    "initial": "Massa awal",
+    "remaining": "Massa tersisa",
+    "available": "Tersedia",
+    "in_transit": "Dalam perjalanan",
+    "exhausted": "Habis",
+    "save": "Simpan catatan",
+    "saving": "Menyimpan…",
+    "saved": "Catatan disimpan.",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "required": "Lengkapi semua kolom wajib.",
+    "invalidInput": "Periksa nilainya. Gunakan gram bulat dan lengkapi kolom wajib.",
+    "genericError": "Catatan tidak dapat disimpan. Nilai Anda tetap tersimpan di formulir. Coba lagi.",
+    "accessChanged": "Lot ini atau akses ruang kerja Anda berubah. Muat ulang daftar lot.",
+    "balanceError": "Massa masukan harus sama dengan jumlah keluaran, kontaminan, dan kehilangan proses.",
+    "weightDispute": "Massa yang diterima berbeda dari yang dikirim. Penerimaan belum dicatat. Periksa pengukuran dengan pengirim.",
+    "approvalError": "Pemilik lain harus menyetujui koreksi ini saat usaha Anda memegang lot.",
+    "transform": "Catat transformasi",
+    "inputMass": "Massa masukan (g)",
+    "contamination": "Kontaminan (g)",
+    "processLoss": "Kehilangan proses (g)",
+    "outputs": "Lot keluaran",
+    "outputNumber": "Keluaran {number}",
+    "addOutput": "Tambah keluaran",
+    "remove": "Hapus",
+    "balance": "Massa terhitung: {value}",
+    "transformHint": "Catat setiap keluaran dan kehilangan. Massa masukan dikurangi dari lot ini dan membuat lot keluaran terkait.",
+    "dispatch": "Kirim lot",
+    "dispatchHint": "Seluruh sisa lot akan dikirim ke usaha yang dipilih. Periksa penerima sebelum menyimpan.",
+    "receiver": "Penerima",
+    "city": "Kota",
+    "businessKind": "Jenis usaha",
+    "chooseBusiness": "Pilih usaha",
+    "searchBusinesses": "Cari usaha",
+    "directoryNote": "Direktori menampilkan usaha aktif. Ini tidak memastikan kemampuan pemrosesannya.",
+    "directoryEmpty": "Tidak ada usaha yang cocok. Periksa kota dan jenis usaha.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Pengolah awal",
+    "recycler": "Pendaur ulang",
+    "manufacturer": "Produsen",
+    "receive": "Terima lot",
+    "receivedMass": "Massa diterima (g)",
+    "receiveHint": "Ukur lot yang diterima. Berat berbeda tidak dapat diterima melalui formulir ini.",
+    "pendingNote": "Anda hanya dapat melihat pengiriman ini. Riwayat lot lengkap tersedia setelah penerimaan.",
+    "custody": "Riwayat penguasaan",
+    "dispatched": "Dikirim",
+    "received": "Diterima",
+    "handoff": "{from} → {to}",
+    "from": "Dari {name}",
+    "to": "Ke {name}",
+    "transformations": "Transformasi",
+    "inspection": "Catat inspeksi",
+    "inspections": "Bukti inspeksi",
+    "inspectionNote": "Catat spesifikasi sebenarnya, metode pengambilan sampel, dan hasil pengukuran. Keputusan hanya berlaku untuk inspeksi ini, bukan kelas mutu atau sertifikat platform.",
+    "specification": "Referensi spesifikasi",
+    "version": "Versi spesifikasi",
+    "sampleMethod": "Metode pengambilan sampel",
+    "buyer": "Cakupan pembeli (opsional)",
+    "addBuyer": "Tentukan pembeli",
+    "noBuyer": "Pembeli belum ditentukan",
+    "results": "Hasil pengukuran",
+    "resultNumber": "Hasil {number}",
+    "parameter": "Parameter pengukuran",
+    "unit": "Satuan",
+    "value": "Nilai terukur",
+    "addResult": "Tambah hasil",
+    "decision": "Keputusan inspeksi",
+    "accepted": "Diterima",
+    "rejected": "Ditolak",
+    "conditional": "Bersyarat",
+    "evidenceReference": "Referensi bukti (opsional)",
+    "correct": "Usulkan koreksi",
+    "correctionHint": "Catatan asli tetap terlihat. Cakupan pembeli dan spesifikasi tidak dapat diubah. Pemilik lain harus menyetujui koreksi.",
+    "reason": "Alasan koreksi",
+    "approve": "Setujui koreksi",
+    "pendingApproval": "Menunggu persetujuan terpisah",
+    "approved": "Koreksi disetujui",
+    "superseded": "Digantikan oleh koreksi yang disetujui",
+    "original": "Inspeksi asli",
+    "previousResult": "Inspeksi sebelumnya",
+    "recordedBy": "Usaha pemeriksa: {name}",
+    "loadError": "Catatan tidak dapat dimuat. Coba lagi.",
+    "retry": "Coba lagi",
+    "streamClass": "Aliran keluaran",
+    "handlingClass": "Klasifikasi penanganan",
+    "streams": {
+      "main_product": "Produk utama",
+      "saleable_byproduct": "Produk sampingan yang dapat dijual",
+      "recoverable_waste": "Limbah yang dapat dipulihkan",
+      "residual_waste": "Limbah residu",
+      "unspecified": "Tidak ditentukan"
+    },
+    "handling": {
+      "non_hazardous": "Tidak berbahaya",
+      "controlled": "Terkendali",
+      "unassessed": "Belum dinilai"
+    },
+    "facility": "Fasilitas",
+    "processKind": "Proses",
+    "noFacility": "Belum memilih fasilitas",
+    "controlledBlocked": "Material terkendali atau residu membutuhkan penanganan terdokumentasi. Pengiriman atau transformasi biasa tidak diizinkan.",
+    "recordDisposition": "Catat penanganan",
+    "destinationReference": "Referensi tujuan",
+    "authorisationReference": "Referensi izin",
+    "manifestReference": "Referensi manifes",
+    "dispositions": "Riwayat penanganan",
+    "dispositionHint": "Catat massa terukur dan referensi tujuan, izin, serta manifes yang sebenarnya. Ini mengurangi sisa massa lot. Ini tidak memverifikasi izin atau membuat stok yang dapat dijual.",
+    "inputs": "Lot masukan",
+    "additionalInputs": "Lot masukan lainnya",
+    "addInput": "Tambah lot masukan",
+    "chooseInput": "Pilih lot masukan",
+    "combinedInput": "Total massa masukan",
+    "multiInputHint": "Gabungkan hanya bahan terukur dalam penguasaan Anda. Setiap jumlah dikonsumsi dari lotnya sendiri. Ini mencatat bukti pemrosesan dan tidak menambah stok."
+  },
+  "evidence": {
+    "title": "Referensi dokumen",
+    "lead": "Simpan referensi yang dilaporkan. Luma tidak memverifikasi atau menerbitkan dokumen ini.",
+    "record": "Tambah referensi",
+    "correct": "Ganti referensi",
+    "replacement": "Menggantikan: {reference}",
+    "reference": "Referensi dokumen",
+    "kind": "Jenis dokumen",
+    "issuer": "Penerbit",
+    "issuerName": "Nama penerbit",
+    "trade": "Transaksi terkait",
+    "none": "Tanpa transaksi",
+    "unverified": "Dilaporkan · belum diverifikasi",
+    "gst_invoice": "Faktur GST",
+    "eway_bill": "Surat jalan e-way",
+    "cpcb_epr_certificate": "Sertifikat CPCB EPR",
+    "pollution_consent": "Persetujuan pengendalian pencemaran",
+    "external_authority": "Otoritas penerbit",
+    "external_organization": "Organisasi penerbit",
+    "trade_seller": "Penjual",
+    "trade_buyer": "Pembeli",
+    "correctionHint": "Catatan asli tetap terlihat. Simpan referensi baru untuk menggantikannya."
+  },
+  "accountPhone": {
+    "title": "Verifikasi nomor ponsel Anda",
+    "description": "Tambahkan nomor milik Anda untuk pengumpulan dan pembayaran. Akun email tetap terpisah dari akun lain. Tetap masuk dengan email.",
+    "verified": "Nomor ponsel terverifikasi",
+    "unavailable": "Verifikasi belum tersedia sampai pengiriman SMS dikonfigurasi.",
+    "inUse": "Nomor ini tidak dapat ditambahkan. Gunakan nomor yang tidak terkait akun lain.",
+    "unsupported": "Nomor ponsel akun ini tidak dapat diubah di sini."
+  },
+  "sandboxPayment": {
+    "title": "Pembayaran uji",
+    "note": "Hanya uji. Tanpa pembayaran nyata, penyelesaian, atau pengembalian dana. Transaksi tetap dijeda.",
+    "open": "Buka uji",
+    "unavailable": "Pembayaran uji tidak tersedia.",
+    "pending": "Menunggu konfirmasi server.",
+    "collected": "Penagihan uji dikonfirmasi.",
+    "failed": "Pembayaran tidak dapat dibuka. Coba lagi.",
+    "review": "Perlu peninjauan server.",
+    "liveTitle": "Bayar melalui gerbang",
+    "liveNote": "Bayar total pesanan yang disepakati melalui Cashfree. Konfirmasi penyedia diperlukan; menutup halaman pembayaran tidak mengonfirmasi pembayaran.",
+    "liveOpen": "Buka pembayaran aman",
+    "liveCollected": "Pembayaran dikonfirmasi oleh penyedia."
+  },
+  "industry": {
+    "title": "Referensi industri",
+    "lead": "Cari buku kerja yang diberikan. Referensi ini belum diverifikasi dan tidak memberi izin perdagangan atau pemrosesan material.",
+    "sourceNote": "Teks sumber ditampilkan dalam bahasa Inggris asli buku kerja.",
+    "sectors": "Referensi sektor",
+    "industries": "Matriks industri",
+    "lifecycles": "Siklus hidup material",
+    "byproducts": "Contoh produk sampingan",
+    "matches": "{count} referensi cocok",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "select": "Pilih referensi",
+    "selected": "Referensi terpilih",
+    "clear": "Hapus referensi",
+    "detailLabels": {
+      "annexure": "Lampiran",
+      "category": "Kategori",
+      "division": "Divisi",
+      "industryGroup": "Kelompok industri",
+      "inputs": "Masukan",
+      "products": "Produk",
+      "byproducts": "Produk sampingan",
+      "recoverableWaste": "Limbah yang dapat dipulihkan",
+      "residualWaste": "Limbah residu",
+      "nextUser": "Pengguna berikutnya",
+      "suggestedFlow": "Alur yang disarankan",
+      "materialState": "Keadaan material",
+      "note": "Catatan",
+      "route": "Jalur",
+      "qualityAttributes": "Atribut mutu",
+      "reportedCommercialStatus": "Status komersial yang dilaporkan"
+    },
+    "view": "Lihat referensi",
+    "empty": "Tidak ada referensi cocok."
+  },
+  "facility": {
+    "title": "Fasilitas dan proses",
+    "lead": "Catat lokasi dan proses yang dinyatakan bisnis Anda. Profil ini tidak memverifikasi fasilitas atau mengizinkan perdagangan material.",
+    "add": "Tambah fasilitas",
+    "edit": "Edit fasilitas",
+    "name": "Nama fasilitas",
+    "siteReference": "Referensi lokasi",
+    "sector": "Referensi industri (opsional)",
+    "capabilities": "Proses yang dinyatakan",
+    "readOnly": "Hanya pemilik dan administrator ruang kerja yang dapat mengubah fasilitas.",
+    "processNote": "Kemampuan ini dinyatakan sendiri, bukan izin yang terverifikasi.",
+    "processKinds": {
+      "sorting": "Pemilahan",
+      "baling": "Pengebalan",
+      "shredding": "Pencacahan",
+      "stripping": "Pengupasan",
+      "washing": "Pencucian",
+      "granulating": "Granulasi",
+      "compounding": "Pencampuran bahan",
+      "recovery": "Pemulihan",
+      "manufacturing": "Manufaktur",
+      "residual_handling": "Penanganan residu"
+    },
+    "empty": "Belum ada fasilitas tercatat.",
+    "registration": {
+      "title": "Referensi persetujuan dan registrasi",
+      "lead": "Hanya referensi yang dilaporkan. Tanggal tidak membuktikan persetujuan atau membuka perdagangan.",
+      "add": "Tambah referensi",
+      "correct": "Tambah koreksi",
+      "reference": "Referensi",
+      "issuedAt": "Tanggal terbit",
+      "validUntil": "Berlaku hingga",
+      "empty": "Belum ada referensi tercatat.",
+      "current": "Dalam tanggal yang dilaporkan",
+      "expired": "Melewati kedaluwarsa yang dilaporkan",
+      "superseded": "Diganti referensi berikutnya",
+      "kind": "Jenis referensi",
+      "kinds": {
+        "consent_to_operate": "Persetujuan operasi",
+        "consent_to_establish": "Persetujuan pendirian",
+        "epr_registration": "Registrasi EPR",
+        "waste_authorisation": "Izin limbah",
+        "other": "Referensi lain"
+      },
+      "not_yet_current": "Sebelum tanggal terbit yang dilaporkan"
+    }
+  },
+  "marketSpecification": {
+    "title": "Grade dan spesifikasi",
+    "enable": "Tambah grade dan spesifikasi",
+    "grade": "Grade material",
+    "specification": "Spesifikasi mutu pembeli",
+    "lot": "Lot terbaru yang cocok (opsional)",
+    "noLot": "Tidak ada lot tertaut",
+    "source": "Pernyataan penjual. Ini tidak memverifikasi mutu atau mencadangkan lot bukti.",
+    "lotState": "Keadaan lot tercatat"
+  },
+  "stockIntake": {
+    "title": "Stok produk sampingan produksi sendiri",
+    "add": "Catat penerimaan stok",
+    "lead": "Catat produk sampingan tertimbang dari produsen ini. Menyimpan menambah stok sesuai catatan produksi dan penimbangan yang dinyatakan. Lot bukti saja tidak menambah stok.",
+    "reference": "Referensi penerimaan unik",
+    "source": "Referensi batch produksi",
+    "weighing": "Referensi catatan penimbangan",
+    "date": "Tanggal produksi",
+    "confirm": "Saya memastikan ini produk sampingan kami sendiri dan jumlah tertimbang ini belum pernah dicatat sebagai stok.",
+    "empty": "Belum ada penerimaan stok produksi.",
+    "noMaterials": "Tidak ada bahan produk sampingan nonbahaya yang disetujui untuk usaha ini. Minta administrator meninjau bahan sebelum mencatat stok.",
+    "conflict": "Referensi penerimaan ini sudah memiliki rincian berbeda. Periksa catatan asli sebelum melanjutkan.",
+    "history": "Penerimaan stok tercatat",
+    "more": "Muat penerimaan lainnya",
+    "note": "Ini pernyataan produsen, bukan verifikasi independen atas mutu, kepemilikan atau kepatuhan. Catatan tersimpan tidak dapat diubah."
+  },
+  "tradeLifecycle": {
+    "title": "Pembayaran dan pengiriman",
+    "collectionLabel": "Pembayaran pembeli",
+    "settlementLabel": "Penyelesaian dana penjual",
+    "refundLabel": "Pengembalian dana",
+    "state": {
+      "awaiting_payment": "Menunggu pembayaran melalui gerbang",
+      "authorized": "Pembayaran dikonfirmasi; siap dikirim",
+      "dispatched": "Dikirim; menunggu penerimaan",
+      "received": "Material diterima",
+      "cancellation_pending": "Pembatalan sedang diperiksa",
+      "cancelled": "Pesanan dibatalkan",
+      "hold": "Pesanan perlu ditinjau"
+    },
+    "collection": {
+      "pending": "Belum dikonfirmasi",
+      "sandbox_confirmed": "Hanya lingkungan uji; tanpa dana nyata",
+      "live_confirmed": "Dikonfirmasi penyedia",
+      "review": "Pembayaran perlu ditinjau"
+    },
+    "settlement": {
+      "pending": "Belum dikonfirmasi",
+      "settled": "Dikonfirmasi penyedia",
+      "reversed": "Penyelesaian dana dibalik",
+      "review": "Penyelesaian dana perlu ditinjau"
+    },
+    "refund": {
+      "none": "Belum ada pengembalian dana tercatat",
+      "pending": "Pengembalian dana tertunda",
+      "refunded": "Dikonfirmasi penyedia",
+      "review": "Pengembalian dana perlu ditinjau"
+    },
+    "action": {
+      "dispatch": "Catat pengiriman",
+      "receive": "Konfirmasi penerimaan",
+      "cancel": "Minta pembatalan"
+    },
+    "policyMissing": "Pembayaran nyata memerlukan ketentuan pembayaran yang disetujui dan penyiapan penyedia.",
+    "reviewRequired": "Administrator harus memeriksa bukti pembayaran sebelum pesanan ini dapat dilanjutkan.",
+    "fullQuantity": "Konfirmasikan seluruh jumlah yang disepakati: {weight}. Jika jumlah atau mutu berbeda, hentikan dan hubungi administrator.",
+    "cancelNote": "Pembatalan hanya melepas stok setelah server memastikan tidak ada pembayaran yang masih dapat diselesaikan. Permintaan tertunda tidak berarti pesanan dibatalkan.",
+    "reason": "Alasan",
+    "reference": "Referensi pengiriman atau penerimaan",
+    "confirm": "Konfirmasi",
+    "back": "Kembali",
+    "saved": "Catatan pesanan diperbarui",
+    "failed": "Pembaruan belum selesai. Periksa status saat ini, lalu coba lagi. Referensi Anda tetap disimpan.",
+    "actionUnavailable": "Tindakan ini tidak lagi tersedia. Periksa status pesanan terbaru."
+  },
+  "sourcing": {
+    "close": "Tutup",
+    "material": "Bahan",
+    "save": "Simpan catatan",
+    "saved": "Catatan disimpan.",
+    "reference": "Referensi",
+    "buying": "Pembelian",
+    "active": "Aktif",
+    "decline": "Tolak",
+    "title": "Sumber bahan",
+    "lead": "Rencanakan permintaan material, catat keputusan Anda tentang pemasok, dan setujui permintaan pasokan individual.",
+    "boundary": "Catatan ini tidak membuat transaksi pembelian. Mereka tidak memesan inventaris atau mengkonfirmasi pembayaran. Selesaikan pembelian menggunakan pasar dan alur kerja pembayaran.",
+    "board": "Papan permintaan",
+    "plans": "Permintaan berulang",
+    "qualifications": "Keputusan pemasok",
+    "agreements": "Perjanjian tetap",
+    "post": "Publikasikan permintaan material",
+    "createPlan": "Buat jadwal",
+    "publish": "Publikasikan permintaan berikutnya",
+    "supplier": "Pemasok",
+    "choose": "Pilih sebuah opsi",
+    "quantity": "Kuantitas (g)",
+    "area": "Daerah pengiriman",
+    "specification": "Spesifikasi tertulis",
+    "neededBy": "Tanggal pengiriman yang diperlukan",
+    "cadence": "Interval pengulangan",
+    "weekly": "Setiap 7 hari",
+    "monthly": "Setiap 30 hari",
+    "planHint": "Setiap kejadian diterbitkan hanya bila Anda memilih Publikasikan permintaan berikutnya. Tidak ada pesanan otomatis yang dibuat.",
+    "myDemand": "Permintaan saya",
+    "availableDemand": "Permintaan dari pembeli",
+    "empty": "Belum ada catatan.",
+    "limited": "Hanya himpunan berbatas yang ditampilkan. Catatan lama tetap ada dalam riwayat audit.",
+    "loadMore": "Muat lebih banyak",
+    "invalid": "Periksa bidang yang diperlukan, tanggal dan jumlah bilangan bulat.",
+    "failed": "Tindakan ini tidak dapat diselesaikan. Draf Anda disimpan. Periksa izin dan kelayakan saat ini, lalu coba lagi.",
+    "qualify": "Catat keputusan pemasok",
+    "sample": "Sampel atau referensi inspeksi",
+    "decision": "Keputusan Anda",
+    "reason": "Alasan keputusan",
+    "validUntil": "Keputusan berlaku sampai",
+    "privateDecision": "Ini adalah keputusan sumber organisasi Anda. Ini bukan persetujuan platform atau sertifikasi peraturan. Riwayat keputusan bersifat pribadi untuk ruang kerja pembeli Anda. Keputusan terbaru untuk pemasok dan material mengontrol perjanjian dan rilis baru; entri sebelumnya tetap ada dalam sejarah.",
+    "pending": "Tertunda",
+    "approved": "Disetujui oleh pembeli",
+    "rejected": "Ditolak oleh pembeli",
+    "propose": "Usulkan persetujuan",
+    "price": "Harga yang disepakati (paise/kg)",
+    "startsOn": "Dimulai",
+    "endsOn": "Berakhir pada",
+    "agreementHint": "Diperlukan keputusan pemasok saat ini yang disetujui untuk spesifikasi yang tepat ini. Pemasok harus menyetujui proposal tersebut secara terpisah.",
+    "supplying": "Memasok",
+    "requested": "Menunggu tanggapan pemasok",
+    "acknowledged": "Diakui oleh pemasok",
+    "declined": "Ditolak oleh pemasok",
+    "closed": "Tertutup",
+    "acknowledge": "Konfirmasikan pengakuan",
+    "responseReference": "Referensi respons",
+    "release": "Minta jumlah pasokan",
+    "releaseHint": "Minta sebagian dari jumlah yang disepakati. Pengakuan pemasok hanya mencatat maksudnya; itu tidak memindahkan materi atau uang.",
+    "releases": "Permintaan pasokan individu",
+    "history": "Sejarah perjanjian",
+    "view": "Lihat permintaan pasokan dan sejarah",
+    "closeAgreement": "Tutup perjanjian ini",
+    "closeHint": "Hal ini mencegah permintaan pasokan baru berdasarkan perjanjian. Permintaan yang ada dan riwayatnya tetap dicatat.",
+    "state": "Rekam status",
+    "nextDate": "Tanggal permintaan berikutnya",
+    "readOnly": "Peran ruang kerja Anda bisa melihat catatan ini tetapi tidak bisa mengubahnya.",
+    "published": "Kejadian permintaan dipublikasikan.",
+    "event": {
+      "proposed": "Kesepakatan diusulkan",
+      "acknowledged": "Kesepakatan diakui",
+      "declined": "Perjanjian ditolak",
+      "closed": "Perjanjian ditutup",
+      "release_requested": "Jumlah pasokan yang diminta",
+      "release_acknowledged": "Permintaan pasokan diakui",
+      "release_declined": "Permintaan pasokan ditolak"
+    },
+    "reschedule": "Pindahkan tanggal permintaan berikutnya",
+    "rescheduleHint": "Pilih tanggal sekarang yang lebih baru. Publikasi sebelumnya tetap tidak berubah. Ini tidak mempublikasikan permintaan atau membuat pesanan.",
+    "overdue": "Tanggal yang dijadwalkan ini telah berlalu. Pindahkan tanggal berikutnya sebelum dipublikasikan."
+  },
+  "operations": {
+    "validUntil": "Berlaku hingga",
+    "decisions": {
+      "revoked": "Dicabut",
+      "approved": "Disetujui",
+      "rejected": "Ditolak"
+    },
+    "reference": "Referensi",
+    "remove": "Hapus",
+    "save": "Simpan catatan",
+    "saved": "Catatan disimpan.",
+    "standards": "Standar materi",
+    "standardsHint": "Cari definisi yang ditinjau. Kelas atau sektor tidak memberikan izin penanganan atau sertifikasi kualitas.",
+    "workspaceRequired": "Pilih ruang kerja bisnis yang disetujui untuk melanjutkan.",
+    "definitions": "Definisi",
+    "reviews": "Ulasan ruang lingkup",
+    "destinations": "Tujuan yang dikontrol",
+    "search": "Cari berdasarkan bahan, keadaan fisik, kelas atau spesifikasi",
+    "empty": "Belum ada catatan.",
+    "truncated": "Hasilnya terbatas. Persempit pencarian Anda atau periksa catatan terbaru.",
+    "reviewHint": "Ini adalah tinjauan administrator atas bukti yang diberikan. Fasilitas yang diubah, registrasi yang digantikan, kadaluarsa atau pencabutan membatalkan cakupan saat ini.",
+    "destinationHint": "Periksa cakupan material dan otorisasi saat ini sebelum serah terima terkendali. Entri direktori tidak membuktikan pembuangan atau penyerahan portal.",
+    "current": "Saat ini",
+    "historical": "Tidak terkini",
+    "production": "Catatan produksi",
+    "productionHint": "Tautkan resep dan masukan yang dinyatakan ke transformasi terukur dan pemeriksaan keluarannya. Fraksi daur ulang menggambarkan masukan yang dinyatakan, bukan kandungan produk bersertifikat. Catatan ini tidak mengubah stok.",
+    "recipes": "Formula manufaktur",
+    "batches": "Batch produksi",
+    "newRecipe": "Catat formula pembuatannya",
+    "newBatch": "Rekam kumpulan",
+    "version": "Versi rekaman",
+    "name": "Nama resep",
+    "instructions": "Instruksi proses",
+    "ingredients": "Bahan",
+    "ingredient": "Nama bahan",
+    "basisPoints": "Proporsi bahan dalam basis poin (100 = 1%)",
+    "additive": "Aditif",
+    "addIngredient": "Tambahkan bahan",
+    "recipeHint": "Gunakan versi baru untuk koreksi. Jumlah pembagian bahan harus berjumlah 10.000 basis poin. Semua bahan dan aditif yang diukur harus disertakan dalam transformasi terkait.",
+    "failed": "Tidak dapat menyimpan. Periksa nilai, rekaman tertaut, dan akses ruang kerja Anda, lalu coba lagi.",
+    "invalid": "Periksa bidang dan total gram yang tepat.",
+    "choose": "Pilih",
+    "recipe": "Versi formula manufaktur",
+    "transformation": "Transformasi terukur",
+    "inspection": "Inspeksi keluaran",
+    "recycledGrams": "Input daur ulang yang dinyatakan (gram)",
+    "inputEvidence": "Masukkan referensi asal",
+    "batchEvidence": "Referensi bukti produksi",
+    "inputFraction": "Menyatakan pembagian masukan yang didaur ulang",
+    "inputTotal": "masukan total",
+    "outputTotal": "Keluaran terukur",
+    "batchHint": "Pilih transformasi yang ada dengan pemeriksaan outputnya. Nyatakan gram daur ulang untuk setiap masukan dan berikan referensi buktinya. Ini adalah pernyataan yang dapat diatribusikan, bukan sertifikasi independen."
+  },
+  "logistics": {
+    "title": "Rencana rute dan muatan",
+    "add": "Buat rencana",
+    "correct": "Simpan revisi baru",
+    "titleLabel": "Nama rencana",
+    "reference": "Referensi rencana unik",
+    "vehicle": "Referensi kendaraan",
+    "capacity": "Kapasitas kendaraan (g)",
+    "origin": "Lokasi awal",
+    "stop": "Perhentian {number}",
+    "addStop": "Tambah perhentian",
+    "latitude": "Lintang",
+    "longitude": "Bujur",
+    "entered": "Pertahankan urutan input",
+    "geometric": "Perhentian berikutnya terdekat (garis lurus)",
+    "distance": "Jarak garis lurus: {value} m",
+    "archive": "Arsipkan rencana",
+    "archived": "Diarsipkan",
+    "history": "Riwayat revisi",
+    "revision": "Revisi {number}",
+    "reason": "Alasan catatan ini",
+    "conflict": "Rencana atau akses Anda berubah. Muat ulang sebelum menyimpan.",
+    "invalid": "Periksa koordinat, bahan, gram bulat, dan kapasitas. Semua muatan harus muat dalam kendaraan.",
+    "lead": "Hanya perencanaan manual. Muatan semua perhentian dijumlahkan. Urutan garis lurus bukan rute jalan, waktu tiba, atau pengiriman. Lokasi berasal dari input Anda, bukan metadata foto.",
+    "empty": "Belum ada rencana rute."
+  },
+  "qualityDocuments": {
+    "businessRequired": "Pilih ruang kerja usaha aktif untuk menggunakan catatan lot.",
+    "inspections": "Bukti inspeksi",
+    "readOnly": "Peran ruang kerja Anda dapat membaca catatan ini.",
+    "empty": "Belum ada catatan.",
+    "inspection": "Bukti inspeksi",
+    "kind": "Jenis dokumen",
+    "accepted": "Diterima",
+    "rejected": "Ditolak",
+    "conditional": "Bersyarat",
+    "note": "Alasan koreksi",
+    "record": "Simpan catatan",
+    "error": "Terjadi kesalahan",
+    "limit": "Hanya 100 catatan pertama yang ditampilkan.",
+    "title": "Dokumen mutu",
+    "own": "Dokumen Anda",
+    "incoming": "Dibagikan ke usaha Anda",
+    "decisions": "Riwayat keputusan pembeli",
+    "upload": "Lampirkan dokumen",
+    "coa": "Sertifikat analisis",
+    "photo": "Foto mutu",
+    "sample_report": "Laporan sampel",
+    "file": "Berkas",
+    "shareBuyer": "Bagikan dokumen ini dengan {name}",
+    "download": "Unduh",
+    "shared": "Dibagikan ke pembeli yang disebut",
+    "private": "Hanya usaha",
+    "withdrawn": "Akses ditarik",
+    "withdraw": "Tarik akses",
+    "decision": "Keputusan pembeli",
+    "lead": "Catat spesifikasi sebenarnya, metode pengambilan sampel, dan hasil pengukuran. Keputusan hanya berlaku untuk inspeksi ini, bukan kelas mutu atau sertifikat platform. Catatan ini menjelaskan bukti fisik. Catatan tidak mengubah stok, pembayaran, kepemilikan hukum, atau sertifikat.",
+    "fileHint": "PDF, JPEG, PNG atau WebP, hingga 2 MiB. Gunakan PDF yang diratakan. Berkas diunduh, tanpa pratinjau. Tidak diverifikasi independen atau dipindai malware. Hapus data pribadi sebelum berbagi."
+  },
+  "auditReports": {
+    "title": "Laporan audit bersama",
+    "create": "Bagikan laporan",
+    "recipient": "Penerima yang disetujui",
+    "purpose": "Tujuan peninjauan",
+    "expiry": "Akses berakhir (waktu setempat)",
+    "sent": "Laporan yang Anda bagikan",
+    "received": "Laporan yang dibagikan kepada Anda",
+    "empty": "Belum ada laporan.",
+    "unavailable": "Akses kedaluwarsa, dicabut atau tidak tersedia.",
+    "open": "Baca laporan",
+    "revoke": "Cabut akses",
+    "inspection": "Bukti inspeksi",
+    "error": "Terjadi kesalahan",
+    "limit": "Hanya 100 catatan pertama yang ditampilkan.",
+    "lead": "Baca salinan bukti tetap untuk tujuan yang disebutkan. Persetujuan penerima tidak memberi akses ke catatan usaha lain.",
+    "warning": "Bagikan hanya pemeriksaan terpilih dan berkas yang dicentang. Hapus data pribadi dahulu. Akses hingga 90 hari dan dapat dicabut; salinan unduhan tidak dapat ditarik kembali.",
+    "snapshot": "Salinan tetap pernyataan usaha pemeriksa. Bukan sertifikat atau verifikasi independen."
   }
 }

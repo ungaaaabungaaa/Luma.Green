@@ -1,6 +1,8 @@
 import { ConvexError, v } from "convex/values";
 
 import { isLocale } from "../src/i18n/locales";
+import { authEmailEnv } from "../src/lib/env";
+import { components } from "./_generated/api";
 import { mutation, query } from "./_generated/server";
 import { authComponent } from "./auth";
 import { requireAdmin, requireUser } from "./lib/access";
@@ -14,18 +16,23 @@ import { codeDelivery } from "./lib/sms";
 /** What the sign-in screens can offer on this deployment. Public. */
 export const signInOptions = query({
   args: {},
-  returns: v.object({ phone: v.boolean(), adminSetup: v.boolean() }),
+  returns: v.object({
+    phone: v.boolean(),
+    email: v.boolean(),
+    adminSetup: v.boolean(),
+  }),
   handler: async (ctx) => {
     const isPhone =
       codeDelivery({
         MSG91_AUTH_KEY: process.env.MSG91_AUTH_KEY,
         MSG91_OTP_TEMPLATE_ID: process.env.MSG91_OTP_TEMPLATE_ID,
         AUTH_DEV_MODE: process.env.AUTH_DEV_MODE,
-      }).kind !== "off";
+      }).kind !== "off" || authEmailEnv()?.kind === "local";
     const isAdminExists =
       (await ctx.db.query("adminProfiles").first()) !== null;
     return {
       phone: isPhone,
+      email: authEmailEnv() !== null,
       adminSetup:
         Boolean(process.env.ADMIN_EMAIL?.trim()) &&
         Boolean(getAdminSetupToken()) &&
@@ -45,6 +52,7 @@ export const me = query({
       locale: v.optional(v.string()),
       twoFactorEnabled: v.boolean(),
       hasProfile: v.boolean(),
+      hasPassword: v.boolean(),
       adminName: v.optional(v.string()),
     }),
   ),
@@ -69,6 +77,15 @@ export const me = query({
       locale: profile?.locale,
       twoFactorEnabled: user.twoFactorEnabled === true,
       hasProfile: profile !== null,
+      hasPassword: Boolean(
+        await ctx.runQuery(components.betterAuth.adapter.findOne, {
+          model: "account",
+          where: [
+            { field: "userId", value: user._id },
+            { field: "providerId", value: "credential" },
+          ],
+        }),
+      ),
       adminName: admin?.name,
     };
   },

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { NextIntlClientProvider } from "next-intl";
 import { beforeEach, describe, expect, it, vi } from "vitest";
@@ -7,6 +7,10 @@ import messages from "../../../messages/en.json";
 import { AccountSecurity } from "./account-security";
 
 const mocks = vi.hoisted(() => ({
+  session: {
+    data: { session: { id: "fixture-session" }, user: { id: "fixture-user" } },
+  },
+  useSession: vi.fn(),
   identity: vi.fn(),
   auth: vi.fn(),
   enable: vi.fn(),
@@ -23,7 +27,8 @@ vi.mock("convex/react", () => ({
 }));
 vi.mock("@/lib/auth-client", () => ({
   authClient: {
-    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
+    useSession: () =>
+      mocks.useSession() as typeof mocks.session | { data: null },
     twoFactor: mocks,
     signOut: mocks.signOut,
   },
@@ -42,6 +47,11 @@ vi.mock("qrcode", () => ({
 
 beforeEach(() => {
   vi.resetAllMocks();
+  mocks.session.data = {
+    session: { id: "fixture-session" },
+    user: { id: "fixture-user" },
+  };
+  mocks.useSession.mockImplementation(() => mocks.session);
   mocks.auth.mockReturnValue({ isLoading: false, isAuthenticated: true });
   mocks.identity.mockReturnValue({ kind: "member", twoFactorEnabled: false });
   mocks.enable.mockResolvedValue({
@@ -149,6 +159,8 @@ describe("account security", () => {
   });
 
   it("does not leave an expired session on an endless skeleton", () => {
+    mocks.session.data = { session: { id: "" }, user: { id: "" } };
+    mocks.useSession.mockReturnValue({ data: null });
     mocks.auth.mockReturnValue({ isLoading: false, isAuthenticated: false });
     mocks.identity.mockReturnValue(undefined);
     view();
@@ -159,4 +171,106 @@ describe("account security", () => {
       screen.queryByRole("button", { name: messages.accountSecurity.enable }),
     ).not.toBeInTheDocument();
   });
+});
+
+it("sends the current password when an email account enrolls its authenticator", async () => {
+  mocks.identity.mockReturnValue({
+    kind: "member",
+    twoFactorEnabled: false,
+    hasPassword: true,
+  });
+  view();
+  await userEvent.type(
+    screen.getByLabelText(messages.emailAuth.password),
+    "Disposable-password-123",
+  );
+  await userEvent.click(
+    screen.getByRole("button", { name: messages.accountSecurity.enable }),
+  );
+  expect(mocks.enable).toHaveBeenCalledWith({
+    password: "Disposable-password-123",
+  });
+});
+
+it("asks for an email password only inside the selected protection change", async () => {
+  mocks.identity.mockReturnValue({
+    kind: "member",
+    twoFactorEnabled: true,
+    hasPassword: true,
+  });
+  mocks.disable.mockResolvedValue({ error: null });
+  const user = userEvent.setup();
+  view();
+  expect(
+    screen.queryByLabelText(messages.emailAuth.password),
+  ).not.toBeInTheDocument();
+  expect(screen.getAllByText(messages.emailAuth.securityHint)).toHaveLength(1);
+  await user.click(
+    screen.getByRole("button", { name: messages.accountSecurity.disable }),
+  );
+  const dialog = screen.getByRole("dialog");
+  const password = within(dialog).getByLabelText(messages.emailAuth.password);
+  expect(screen.getAllByLabelText(messages.emailAuth.password)).toHaveLength(1);
+  await user.type(password, "Disposable-password-123");
+  await user.click(
+    within(dialog).getByRole("button", {
+      name: messages.accountSecurity.disable,
+    }),
+  );
+  expect(mocks.disable).toHaveBeenCalledWith({
+    password: "Disposable-password-123",
+  });
+});
+
+it("does not show an unused password field for the fixed admin factor policy", () => {
+  mocks.identity.mockReturnValue({
+    kind: "admin",
+    twoFactorEnabled: true,
+    hasPassword: true,
+  });
+  view();
+  expect(
+    screen.queryByLabelText(messages.emailAuth.password),
+  ).not.toBeInTheDocument();
+  expect(
+    screen.queryByRole("button", { name: messages.accountSecurity.disable }),
+  ).not.toBeInTheDocument();
+  expect(screen.getByText(messages.emailAuth.securityHint)).toBeVisible();
+  expect(
+    screen.getByRole("link", { name: messages.nav.contact }),
+  ).toBeVisible();
+});
+
+it("preserves revealed recovery codes on same-user session rotation and clears them for a different user", async () => {
+  const rendered = view();
+  await userEvent.click(
+    screen.getByRole("button", { name: messages.accountSecurity.enable }),
+  );
+  fireEvent.change(screen.getByLabelText(messages.auth.codeLabel), {
+    target: { value: "123456" },
+  });
+  await userEvent.click(
+    screen.getByRole("button", { name: messages.auth.verify }),
+  );
+  expect(screen.getByText("fixture-code")).toBeVisible();
+  mocks.session.data = {
+    session: { id: "rotated-session" },
+    user: { id: "fixture-user" },
+  };
+  rendered.rerender(
+    <NextIntlClientProvider locale="en" messages={messages}>
+      <AccountSecurity />
+    </NextIntlClientProvider>,
+  );
+  expect(screen.getByText("fixture-code")).toBeVisible();
+  mocks.session.data = {
+    session: { id: "other-session" },
+    user: { id: "other-user" },
+  };
+  rendered.rerender(
+    <NextIntlClientProvider locale="en" messages={messages}>
+      <AccountSecurity />
+    </NextIntlClientProvider>,
+  );
+  expect(screen.queryByText("fixture-code")).not.toBeInTheDocument();
 });

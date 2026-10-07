@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Daha temiz yarınlar için harekette",
-    "description": "Luma.Green, Hindistan’ın geri dönüşüm ağını tek platformda birleştirir: haneler, toplama işletmeleri, ayrıştırma sahaları, geri dönüşümcüler ve üreticiler. Adil fiyatlar, tartılı alımlar ve her teslimatın kaydı."
+    "description": "Luma.Green, Hindistan’ın geri dönüşüm ağını tek platformda birleştirir: haneler, toplama işletmeleri, ön işleme işletmeleri, geri dönüşümcüler ve üreticiler. Adil fiyatlar, tartılı alımlar ve her teslimatın kaydı."
   },
   "theme": {
     "label": "Görünüm",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Ticaret",
-      "summary": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+      "summary": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
     },
     "record": {
       "title": "Kayıt",
@@ -174,7 +174,7 @@
       "error": "Kod listesi yüklenemedi."
     },
     "escrow": {
-      "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "title": "Ödeme altyapısı bekleniyor",
       "nav": "Ödeme altyapısı bekleniyor",
       "steps": {
@@ -189,7 +189,7 @@
       "title": "Doğrulama",
       "nav": "Doğrulama",
       "business": "İşletmeler: varsa GST numarası, dükkân veya tesis fotoğrafları ve telefon görüşmesi.",
-      "consent": "Sahalar, geri dönüşümcüler ve fabrikalar: eyalet kirlilik kontrol kurulundan geçerli izin.",
+      "consent": "Ön işleme işletmeleri, geri dönüşümcüler ve fabrikalar: eyalet kirlilik kontrol kurulundan geçerli izin.",
       "saathi": "Saathi çalışanları: fotoğraflı kimlik ve eşleşen özçekim."
     },
     "adopt": {
@@ -198,7 +198,7 @@
       "body": "Kodlar ve kurallar açık ve ücretsizdir. Luma.Green’de veya dışında dükkânınızda, sahanızda ya da fabrikanızda kullanın; nasıl iyileştirebileceğimizi söyleyin."
     },
     "metaTitle": "Luma.Green standardı",
-    "metaDescription": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+    "metaDescription": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
     "eyebrow": "Açık standart",
     "title": "Luma.Green standardı",
     "lead": "Adil malzeme ticareti için basit ve açık kurallar: her malzemeye tek kod, net sınıflandırma, dürüst tartım ve her teslimatta kayıt. Sektördeki herkes kullanabilir.",
@@ -256,9 +256,9 @@
   },
   "howItWorks": {
     "metaTitle": "Nasıl çalışır",
-    "metaDescription": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+    "metaDescription": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
     "title": "Luma.Green nasıl çalışır",
-    "lead": "Malzemeler yeni bir ürüne dönüşmeden önce evlerden toplama dükkânlarına, ayrıştırma sahalarına ve geri dönüşümcülere gider. Luma.Green her teslimatı kaydeder.",
+    "lead": "Malzemeler yeni bir ürüne dönüşmeden önce evlerden toplama dükkânlarına, ön işleme işletmelerine ve geri dönüşümcülere gider. Luma.Green her teslimatı kaydeder.",
     "stepLabel": "Adım {number}",
     "sell": {
       "body": "Hane malzemelerini seçer, yakın dükkânların tekliflerini görür ve alım veya teslim ayarlar. Hurdacı her malzemeyi tartıp nakit veya UPI ile öder; iki taraf da makbuz alır.",
@@ -267,7 +267,7 @@
       "point3": "Hesap gerektirmeyen takip bağlantısı"
     },
     "trade": {
-      "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "point1": "Yalnızca doğrulanmış işletmeler ticaret yapabilir",
       "point2": "Yük gönderilip teslim alındığında stok değişir",
       "point3": "Ödenen her ticaret için numaralı makbuz"
@@ -283,7 +283,7 @@
     "metaTitle": "İletişim",
     "metaDescription": "Bengaluru pilotuna katılmak için Luma.Green ekibiyle iletişime geçin.",
     "title": "Bizimle konuşun",
-    "lead": "Bengaluru’da küçük bir hurdacı, saha, geri dönüşümcü ve fabrika grubuyla başlıyoruz. Kim olduğunuzu, ne alıp sattığınızı ve aylık yaklaşık hacminizi anlatın.",
+    "lead": "Bengaluru’da küçük bir hurdacı, ön işleme işletmesi, geri dönüşümcü ve fabrika grubuyla başlıyoruz. Kim olduğunuzu, ne alıp sattığınızı ve aylık yaklaşık hacminizi anlatın.",
     "emailHeading": "Erken erişim ve genel sorular",
     "securityHeading": "Güvenlik bildirimleri",
     "securityBody": "Bir güvenlik açığı mı buldunuz? Herkese açık paylaşmak yerine özel olarak bildirin."
@@ -345,7 +345,7 @@
       "roles": {
         "household": "Hane",
         "kabadiwala": "Hurdacı",
-        "yard": "Saha",
+        "yard": "Ön işleme işletmesi",
         "recycler": "Geri dönüşümcü",
         "manufacturer": "Üretici",
         "saathi": "Saathi",
@@ -366,11 +366,11 @@
     },
     "guides": {
       "escrow": {
-        "summary": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+        "summary": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
         "steps": {
           "pay": {
             "title": "Ödeme altyapısı bekleniyor",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           },
           "request": {
             "title": "Alıcı talep gönderir",
@@ -386,7 +386,7 @@
           },
           "confirm": {
             "title": "Alıcı teslimatı doğrular",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           }
         },
         "title": "Ödeme altyapısı bekleniyor"
@@ -433,7 +433,7 @@
           },
           "pay": {
             "title": "Ödeme altyapısı bekleniyor",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           },
           "receive": {
             "title": "Yükü teslim alın",
@@ -501,7 +501,7 @@
         "steps": {
           "start": {
             "title": "luma.green/join ile başlayın",
-            "body": "Telefonla giriş yapıp Saha, Geri dönüşümcü veya Üretici seçin."
+            "body": "Telefonla giriş yapıp Ön işleme işletmesi, Geri dönüşümcü veya Üretici seçin."
           },
           "details": {
             "title": "İşletme bilgilerini ekleyin",
@@ -557,7 +557,7 @@
           },
           "hold": {
             "title": "Eksik yükü doğrulamayın",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           },
           "report": {
             "title": "Fotoğraflarla bildirin",
@@ -597,7 +597,7 @@
       },
       "firstPickup": {
         "title": "İlk alımınızı ayarlayın",
-        "summary": "Fotoğraftan rezervasyona yaklaşık iki dakika. Hesap gerekmez.",
+        "summary": "Toplama rezervasyonu için malzemeleri seçin, dükkânları karşılaştırın ve cep telefonu numaranızı doğrulayın.",
         "steps": {
           "photo": {
             "title": "Malzemenin fotoğrafını çekin",
@@ -840,8 +840,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Demo rehberi: stoku ayrıştırıp sahalara satmak",
-        "summary": "Birçok küçük alımdan sahanın istediği yüke.",
+        "title": "Demo rehberi: stoku ayrıştırıp ön işleme işletmelerine satmak",
+        "summary": "Birçok küçük alımdan ön işleme işletmesinin istediği yüke.",
         "steps": {
           "grows": {
             "title": "Stok kendiliğinden dolar",
@@ -852,12 +852,12 @@
             "body": "Karışık malzemeyi gerçek malzemelerine ayırın. Örneğin karışık kâğıdı gazete, karton ve atığa."
           },
           "show": {
-            "title": "Stoku sahalara gösterin",
-            "body": "Yakındaki sahaların görmesi için Sahalara göster’i açın."
+            "title": "Stoku ön işleme işletmelerine gösterin",
+            "body": "Yakındaki ön işleme işletmelerinin görmesi için Ön işleme işletmelerine göster’i açın."
           },
           "sell": {
-            "title": "Sahanın talebini kabul edin",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "title": "Ön işleme işletmesinin talebini kabul edin",
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           }
         }
       },
@@ -897,7 +897,7 @@
           },
           "pay": {
             "title": "Ödeme altyapısı bekleniyor",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           },
           "collect": {
             "title": "Teslim alın ve tartın",
@@ -923,7 +923,7 @@
           },
           "accept": {
             "title": "Kabul edin, ardından ödemeyi bekleyin",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           },
           "dispatch": {
             "title": "Yükü gönderin",
@@ -931,17 +931,17 @@
           },
           "paid": {
             "title": "Ödemenizi alın",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           }
         }
       },
       "buyFromYards": {
-        "title": "Demo kılavuzu: Sahalardan ayrıştırılmış malzeme satın alma",
+        "title": "Demo kılavuzu: Ön işleme işletmelerinden ayrıştırılmış malzeme satın alma",
         "summary": "Üretim hattınız için düzenli, sınıflandırılmış girdi.",
         "steps": {
           "browse": {
             "title": "Yakınınızdaki balyaları bulun",
-            "body": "Saha ilanlarını malzeme ve mesafeye göre görmek için Satın Al bölümünü açın."
+            "body": "Ön işleme işletmesi ilanlarını malzeme ve mesafeye göre görmek için Satın Al bölümünü açın."
           },
           "request": {
             "title": "Yük talep edin",
@@ -949,7 +949,7 @@
           },
           "pay": {
             "title": "Ödeme altyapısı bekleniyor",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           },
           "confirm": {
             "title": "Tartın, kontrol edin, onaylayın",
@@ -971,11 +971,11 @@
           },
           "load": {
             "title": "Ödemeden sonra yükleyin",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           },
           "paid": {
             "title": "Teslimatta ödeme alın",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           }
         }
       },
@@ -997,7 +997,7 @@
           },
           "decide": {
             "title": "Onaylayın veya bildirin",
-            "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+            "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
           }
         }
       },
@@ -1103,25 +1103,25 @@
         "name": "Haneler",
         "who": "Evden malzeme satmak",
         "title": "Haneler için yardım",
-        "lead": "Alım ayarlayın, adil tartım ve kapıda ödeme alın. Hesap gerekmez."
+        "lead": "Toplama için rezervasyon yapın, cep telefonu numaranızı doğrulayın ve tartım sonrası ödemenizi alın."
       },
       "kabadiwala": {
         "name": "Hurdacılar",
         "who": "Toplama dükkânı işletmek",
         "title": "Hurdacılar için yardım",
-        "lead": "Alım alın, bir dakikada tartıp ödeyin, fiyat belirleyin ve sahalara satın."
+        "lead": "Alım alın, bir dakikada tartıp ödeyin, fiyat belirleyin ve ön işleme işletmelerine satın."
       },
       "yard": {
-        "name": "Ayrıştırma sahaları",
+        "name": "Ön işleme işletmeleri",
         "who": "Hurdacılardan alıp daha fazla ayrıştırmak",
-        "title": "Sahalar için yardım",
-        "lead": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+        "title": "Ön işleme işletmeleri için yardım",
+        "lead": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
       },
       "recycler": {
         "name": "Geri dönüşümcüler",
         "who": "Malzemeyi ham maddeye dönüştürmek",
         "title": "Geri dönüşümcüler için yardım",
-        "lead": "Sahalardan sınıflandırılmış malzeme alın, ürününüzü fabrikalara satın ve EPR kayıtlarını düzenli tutun."
+        "lead": "Ön işleme işletmelerinden sınıflandırılmış malzeme alın, ürününüzü fabrikalara satın ve EPR kayıtlarını düzenli tutun."
       },
       "manufacturer": {
         "name": "Üreticiler",
@@ -1164,7 +1164,7 @@
       "nextHeading": "Sonraki rehber"
     },
     "metaTitle": "Yardım merkezi",
-    "metaDescription": "Luma.Green’de haneler, hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için basit rehberler, yanıtlar ve eğitim.",
+    "metaDescription": "Luma.Green’de haneler, hurdacılar, ön işleme işletmeleri, geri dönüşümcüler, üreticiler ve Saathi çalışanları için basit rehberler, yanıtlar ve eğitim.",
     "eyebrow": "Yardım merkezi",
     "title": "Nasıl yardımcı olabiliriz?",
     "lead": "Luma.Green’de herkes için kısa rehberler, sade yanıtlar ve hızlı eğitim.",
@@ -1290,8 +1290,8 @@
         "a": "Hayır. Kapıda nakit veya UPI ile siz ödersiniz. Uygulama tutarı ve ödeme yöntemini kaydeder."
       },
       "paidByYard": {
-        "q": "Bir sahaya satış yaptığımda ödememi nasıl alırım?",
-        "a": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+        "q": "Bir ön işleme işletmesine satış yaptığımda ödememi nasıl alırım?",
+        "a": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
       },
       "whoSeesShop": {
         "q": "Dükkânımı kim görebilir?",
@@ -1319,7 +1319,7 @@
       },
       "whatIsEscrow": {
         "q": "Ödeme altyapısı bekleniyor",
-        "a": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+        "a": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
       },
       "whenSellerPaid": {
         "q": "Satıcıya ne zaman ödeme yapılır?",
@@ -1342,8 +1342,8 @@
         "a": "CPCB Plastik Atık İşleyicisi kaydınızı hazır tutun. Markalar bunu ister; bu kayıt EPR sertifikası düzenlemenizi sağlar."
       },
       "buyFromAnyYard": {
-        "q": "Birden fazla sahadan satın alabilir miyim?",
-        "a": "Evet. İhtiyacınız olan malzemeyi listeleyen herhangi bir doğrulanmış sahadan istediğiniz sıklıkta alabilirsiniz."
+        "q": "Birden fazla ön işleme işletmesinden satın alabilir miyim?",
+        "a": "Evet. İhtiyacınız olan malzemeyi listeleyen herhangi bir doğrulanmış ön işleme işletmesinden istediğiniz sıklıkta alabilirsiniz."
       },
       "eprRecords": {
         "q": "Luma.Green kayıtları EPR için yardımcı olur mu?",
@@ -1416,7 +1416,7 @@
       "buyingFromKabadiwalas": "Hurdacılardan satın alma",
       "listingBales": "Geri dönüşümcüler için balya listeleme",
       "escrowExplained": "Ödeme altyapısı bekleniyor",
-      "buyingFromYards": "Sahalardan satın alma",
+      "buyingFromYards": "Ön işleme işletmelerinden satın alma",
       "sellingOutput": "Üretiminizi satma",
       "eprPlainWords": "EPR’nin sade anlatımı",
       "firstOrder": "İlk siparişinizi verme",
@@ -1475,10 +1475,10 @@
         "p3": "Her seferinde ayrılmadan önce ödeme yapın."
       },
       "sellingToYards": {
-        "title": "Demo: Sahalara satış",
+        "title": "Demo: Ön işleme işletmelerine satış",
         "p1": "Stokunuzun doğru olması için ayrıştırmayı kaydedin.",
-        "p2": "Stokunuzu yakınınızdaki sahalara gösterin.",
-        "p3": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+        "p2": "Stokunuzu yakınınızdaki ön işleme işletmelerine gösterin.",
+        "p3": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
       },
       "buyingStock": {
         "title": "Stok satın alma",
@@ -1488,7 +1488,7 @@
       },
       "tradingWithEscrow": {
         "title": "Ödeme altyapısı bekleniyor",
-        "p1": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+        "p1": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
         "p2": "Satıcı yalnızca para hesaba geçtiğinde yükler.",
         "p3": "Teslimatı onaylamak parayı serbest bırakır."
       },
@@ -1506,8 +1506,8 @@
       },
       "buyingInputs": {
         "title": "Demo: Üretim girdisi satın alma",
-        "p1": "Satın Al bölümünde sahaların sınıflandırılmış balyalarını bulun.",
-        "p2": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+        "p1": "Satın Al bölümünde ön işleme işletmelerinin sınıflandırılmış balyalarını bulun.",
+        "p2": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
         "p3": "Onaylamadan önce sınıfı kontrol edin."
       },
       "eprBasics": {
@@ -1520,7 +1520,7 @@
         "title": "Demo: Geri dönüştürülmüş malzeme siparişi",
         "p1": "İlanları tür, kilogram miktarı ve fiyata göre karşılaştırın.",
         "p2": "İhtiyacınız olan kilogram miktarı için sipariş gönderin.",
-        "p3": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+        "p3": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
       },
       "checkingDeliveries": {
         "title": "Teslimatları kontrol etme",
@@ -1569,7 +1569,7 @@
     "comingSoon": "Bu ekran hazırlanıyor.",
     "roles": {
       "kabadiwala": "Hurdacı",
-      "yard": "Ayrıştırma sahası",
+      "yard": "Ön işleme işletmesi",
       "recycler": "Geri dönüşümcü",
       "manufacturer": "Üretici",
       "saathi": "Saathi"
@@ -1743,7 +1743,7 @@
     "lead": "Malzemelerinizi ve yakındaki dükkânı seçin; tartıldığında nakit veya UPI alın.",
     "promises": {
       "label": "Neden burada satmalı",
-      "noAccount": "Hesap gerekmez",
+      "noAccount": "Rezervasyon için telefonu doğrulayın",
       "payAtDoor": "Tartıldığında ödenir",
       "verified": "Doğrulanmış dükkânlar"
     },
@@ -1900,16 +1900,16 @@
       "kgTooMuch": "Yalnızca {weight} mevcut.",
       "total": "Toplam",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "escrow": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "ewayBill": "50.000 rupi üzeri: yükle e-sevk belgesi gitmelidir.",
       "submit": "Talep gönder",
       "sent": "Talep {seller} satıcısına gönderildi",
-      "sentNext": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "sentNext": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "seeTrades": "Ticaretleri gör"
     },
     "sell": {
       "title": "Satış",
-      "lead": "{buyer, select, yard {Ayrıştırılmış stokunuzu sahalara sunun.} recycler {Balyalarınızı geri dönüşümcülere sunun.} manufacturer {Malzemenizi üreticilere sunun.} other {Stokunuzu alıcılara sunun.}}",
+      "lead": "{buyer, select, yard {Ayrıştırılmış stokunuzu ön işleme işletmelerine sunun.} recycler {Balyalarınızı geri dönüşümcülere sunun.} manufacturer {Malzemenizi üreticilere sunun.} other {Stokunuzu alıcılara sunun.}}",
       "notForYouTitle": "Üreticiler Luma.Green’de alım yapar",
       "notForYouBody": "Doğrulanmış geri dönüşümcülerden malzeme bulun.",
       "goBuy": "Malzeme al",
@@ -1933,7 +1933,7 @@
         "value": "Parti değeri",
         "submit": "Satışa çıkar",
         "submitting": "Satışa çıkarılıyor…",
-        "listed": "Satılık. Artık {buyer, select, yard {sahalar} recycler {geri dönüşümcüler} manufacturer {üreticiler} other {alıcılar}} görebilir.",
+        "listed": "Satılık. Artık {buyer, select, yard {ön işleme işletmeleri} recycler {geri dönüşümcüler} manufacturer {üreticiler} other {alıcılar}} görebilir.",
         "nothingTitle": "Henüz satacak bir şey yok",
         "nothingBody": "Kaydettiğiniz stok burada görünür. Listelenmiş veya satılmış olan iki kez sayılmaz.",
         "goStock": "Stoka git",
@@ -1968,11 +1968,11 @@
       "buy": "Satın al",
       "trades": "Ticaretler",
       "greeting": "Merhaba, {name}",
-      "lead": "{kind, select, yard {Toplama işletmelerinden alın, ayrıştırılmış balyaları geri dönüşümcülere satın.} recycler {Sahalardan ayrıştırılmış malzeme alın, geri dönüştürülmüş malzemeyi üreticilere satın.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme alın.} other {Ticaretlerinize genel bakış.}}",
+      "lead": "Malzeme alımlarınızı, satışlarınızı ve siparişlerinizi yönetin.",
       "statsTitle": "Genel bakış",
       "stats": {
         "escrow": "Doğrulanmadı",
-        "escrowHint": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+        "escrowHint": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
         "waiting": "Sizi bekliyor",
         "waitingHint": "{count, plural, =0 {Hepsi tamam} one {# ticaret adım bekliyor} other {# ticaret adım bekliyor}}",
         "listings": "Satılık",
@@ -1981,15 +1981,15 @@
         "offersHint": "Geri dönüşümcülerden satılık",
         "completed": "Bu ay tamamlanan",
         "completedHint": "{amount} ticaret",
-        "gatewayPending": "Ödeme altyapısı bekleniyor"
+        "gatewayPending": "Kabul edilen siparişler"
       },
       "waitingTitle": "Sizi bekliyor",
       "allTrades": "Tüm ticaretler",
       "caughtUpTitle": "Şu anda işlem gerekmiyor",
       "caughtUpBody": "Yeni sipariş, ödeme ve teslimatlar burada görünür.",
       "offersTitle": "Size yeni partiler",
-      "recycledTitle": "Size geri dönüştürülmüş malzemeler",
-      "recycledBody": "Doğrulanmış geri dönüşümcülerden pul, granül, kraft ve külçe; üretiminize hazır.",
+      "recycledTitle": "Size uygun malzeme teklifleri",
+      "recycledBody": "Onaylı tedarikçileri inceleyin. Geri dönüştürülmüş malzemeler önce gösterilir.",
       "seeAll": "Tümünü gör",
       "noOffersTitle": "Şu anda satılık parti yok",
       "noOffersBody": "Yeni partiler listelendiklerinde burada görünür."
@@ -2001,7 +2001,7 @@
         "title": "{material} · {weight}",
         "from": "{name} satıcısından · {area}",
         "to": "{name} alıcısına · {area}",
-        "inEscrow": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+        "inEscrow": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
         "ewayBill": "50.000 rupi üzeri: yükle e-sevk belgesi gitmelidir.",
         "updated": "Güncellendi: {when}",
         "receipt": "Makbuz {number}",
@@ -2025,7 +2025,7 @@
         }
       },
       "declineNo": "Koru",
-      "lead": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "lead": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "buying": "Alımlar",
       "selling": "Satışlar",
       "tabsLabel": "Alım veya satış",
@@ -2043,8 +2043,8 @@
           "seller": "{name} bunu almak istiyor. Ayırmak için kabul edin."
         },
         "accepted": {
-          "buyer": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
-          "seller": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+          "buyer": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
+          "seller": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
         },
         "paid_to_escrow": {
           "buyer": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı.",
@@ -2079,7 +2079,7 @@
       },
       "declineConfirm": "{name} siparişi reddedilsin mi? Geri alınamaz.",
       "declineYes": "Evet, reddet",
-      "gatewayPending": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "gatewayPending": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "legacyUnverified": "Prototip kaydı. Ödeme ve teslimat doğrulanmadı."
     },
     "receipt": {
@@ -2109,7 +2109,7 @@
       "missingTitle": "Makbuz bulunamadı",
       "missingBody": "Ticaret sizin değil veya bağlantı yanlış.",
       "pendingTitle": "Henüz makbuz yok",
-      "pendingBody": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "pendingBody": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "declinedBody": "Ticaret reddedildiği için makbuz yok.",
       "unverified": "Doğrulanmadı"
     },
@@ -2130,15 +2130,15 @@
     },
     "browse": {
       "title": "Satın al",
-      "lead": "{kind, select, yard {Yakındaki toplama işletmelerinden ayrıştırılmış malzeme.} recycler {Sahalardan ayrıştırılıp balyalanmış malzeme.} manufacturer {Doğrulanmış geri dönüşümcülerden malzeme.} other {Yakında satılık malzeme.}}",
+      "lead": "İşlediğiniz malzemeler için onaylı tedarikçilerin tekliflerini inceleyin.",
       "filterLabel": "Malzemeye göre filtrele",
       "all": "Tümü",
       "count": "{count, plural, =0 {Parti yok} one {# parti satılık} other {# parti satılık}}",
       "emptyTitle": "Şu anda satılık yok",
       "emptyBody": "Yeni partiler listelendiklerinde burada görünür.",
       "notForYouTitle": "Hurdacılar hanelerden alır",
-      "notForYouBody": "Pazarda satarsınız: ayrıştırılmış stokunuzu sahalara sunun.",
-      "goSell": "Sahalara sat"
+      "notForYouBody": "Pazarda satarsınız: ayrıştırılmış stokunuzu ön işleme işletmelerine sunun.",
+      "goSell": "Ön işleme işletmelerine sat"
     },
     "recycled": "Geri dönüştürülmüş",
     "units": {
@@ -2148,7 +2148,7 @@
     "sampleData": "Bu ekrandaki fiyat ve tutarlar prototip için örnek veridir.",
     "simulated": "Örnek veri. Prototipte ödemeler simülasyondur; gerçek para aktarılmaz.",
     "forBusinessesTitle": "Bu ekran işletmeler içindir",
-    "forBusinessesBody": "Hurdacılar, sahalar, geri dönüşümcüler ve üreticiler burada ticaret yapar.",
+    "forBusinessesBody": "Hurdacılar, ön işleme işletmeleri, geri dönüşümcüler ve üreticiler burada ticaret yapar.",
     "listing": {
       "seller": "{name} · {area}",
       "available": "Mevcut",
@@ -2253,8 +2253,8 @@
       "you": "Ödediğiniz",
       "market": "Piyasa",
       "quickLinks": "Kısayollar",
-      "sell": "Sahaya sat",
-      "sellHint": "Stokunuzu yakın sahalara sunun",
+      "sell": "Ön işleme işletmesine sat",
+      "sellHint": "Stokunuzu yakın ön işleme işletmelerine sunun",
       "pricesHint": "Hanelere kg başına ödediğiniz"
     },
     "stock": {
@@ -2269,7 +2269,7 @@
       "atPrice": "Piyasa {price}/kg",
       "noPrice": "Bugün piyasa fiyatı yok",
       "sellTo": {
-        "yard": "Sahaya sat",
+        "yard": "Ön işleme işletmesine sat",
         "recycler": "Geri dönüşümcüye sat",
         "manufacturer": "Üreticiye sat"
       },
@@ -2277,7 +2277,7 @@
       "emptyShop": "Alımı tartıp ödeyin, burada görünsün.",
       "emptyBusiness": "Pazardan alın, burada görünsün.",
       "notBusinessTitle": "Yalnızca işletmeler için",
-      "notBusinessBody": "Stoku dükkân, saha, geri dönüşümcü ve fabrikalar tutar."
+      "notBusinessBody": "Stoku dükkân, ön işleme işletmesi, geri dönüşümcü ve fabrikalar tutar."
     },
     "slot": "{day}, {window}",
     "windows": {
@@ -2391,7 +2391,7 @@
     "unavailable": "Tarayıcı seçiminizi kaydedemedi. Analiz kapalı kalacak."
   },
   "home": {
-    "metaDescription": "Luma.Green, Hindistan’ın geri dönüşüm ağını tek platformda birleştirir: haneler, toplama işletmeleri, sahalar, geri dönüşümcüler ve üreticiler. Adil fiyatlar, doğrulanmış işletmeler ve her adımda makbuz.",
+    "metaDescription": "Luma.Green, Hindistan’ın geri dönüşüm ağını tek platformda birleştirir: haneler, toplama işletmeleri, ön işleme işletmeleri, geri dönüşümcüler ve üreticiler. Adil fiyatlar, doğrulanmış işletmeler ve her adımda makbuz.",
     "hero": {
       "eyebrow": "Bengaluru’da başlıyoruz",
       "title": "Malzemelerinize yeni bir başlangıç verin.",
@@ -2411,7 +2411,7 @@
     },
     "chain": {
       "heading": "Malzeme nasıl ilerler",
-      "intro": "Malzemeler yeni bir ürüne dönüşmeden önce evlerden toplama dükkânlarına, ayrıştırma sahalarına ve geri dönüşümcülere gider. Luma.Green her teslimatı kaydeder.",
+      "intro": "Malzemeler yeni bir ürüne dönüşmeden önce evlerden toplama dükkânlarına, ön işleme işletmelerine ve geri dönüşümcülere gider. Luma.Green her teslimatı kaydeder.",
       "steps": {
         "household": {
           "name": "Haneler",
@@ -2422,7 +2422,7 @@
           "body": "Satın alır, tartar ve malzemeye göre ayırır."
         },
         "yard": {
-          "name": "Ayrıştırma sahaları",
+          "name": "Ön işleme işletmeleri",
           "body": "Sınıflandırır ve balya hâline getirir."
         },
         "recycler": {
@@ -2434,7 +2434,7 @@
           "body": "Geri dönüştürülmüş malzemeden yeni ürün yapar."
         }
       },
-      "money": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+      "money": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
       "saathi": "Saathi çalışanları zincir boyunca toplama, ayrıştırma ve vardiyalarda yardımcı olur."
     },
     "roles": {
@@ -2451,19 +2451,19 @@
         "title": "Hurdacılar",
         "one": "Yakındaki evlerden alım talepleri.",
         "two": "Taban fiyatın altına düşmeden fiyat belirleyin.",
-        "three": "Ayrıştırılmış stokunuzu sahalara satın.",
+        "three": "Ayrıştırılmış stokunuzu ön işleme işletmelerine satın.",
         "cta": "Hurdacı olarak katılın"
       },
       "yard": {
-        "title": "Ayrıştırma sahaları",
+        "title": "Ön işleme işletmeleri",
         "one": "Yakındaki dükkânların stokunu görün.",
         "two": "Toplu alın, balyaları geri dönüşümcülere satın.",
-        "three": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
-        "cta": "Saha olarak katılın"
+        "three": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
+        "cta": "Ön işleme işletmesi olarak katılın"
       },
       "recycler": {
         "title": "Geri dönüşümcüler",
-        "one": "Doğrulanmış sahalardan sınıflandırılmış balyalar.",
+        "one": "Doğrulanmış ön işleme işletmelerinden sınıflandırılmış balyalar.",
         "two": "Her parti için teslimat zinciri.",
         "three": "Üretiminizi fabrikalara satın.",
         "cta": "Geri dönüşümcü olarak katılın"
@@ -2471,7 +2471,7 @@
       "manufacturer": {
         "title": "Üreticiler",
         "one": "Geri dönüşümcülerin üretimini görün.",
-        "two": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor.",
+        "two": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin.",
         "three": "EPR raporları için kayıtlar.",
         "cta": "Üretici olarak katılın"
       },
@@ -2695,15 +2695,15 @@
   "participants": {
     "kabadiwala": {
       "name": "Hurdacılar",
-      "body": "Yakındaki evlerden alım talebi alın, adil tartıp ödeyin ve ayrıştırılmış stoku sahalara satın."
+      "body": "Yakındaki evlerden alım talebi alın, adil tartıp ödeyin ve ayrıştırılmış stoku ön işleme işletmelerine satın."
     },
     "yard": {
-      "name": "Ayrıştırma sahaları",
-      "body": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+      "name": "Ön işleme işletmeleri",
+      "body": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
     },
     "recycler": {
       "name": "Geri dönüşümcüler",
-      "body": "Doğrulanmış sahalardan sınıflandırılmış balya alın; pul, granül ve külçeleri fabrikalara satın."
+      "body": "Doğrulanmış ön işleme işletmelerinden sınıflandırılmış balya alın; pul, granül ve külçeleri fabrikalara satın."
     },
     "manufacturer": {
       "name": "Üreticiler",
@@ -2714,11 +2714,11 @@
       "body": "Eve yakın ücretli alım, ayrıştırma ve vardiya işleri alın; kazancınızı görün."
     },
     "metaTitle": "Kimler için",
-    "metaDescription": "Luma.Green; haneler, toplama işletmeleri, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için, yani malzemeyi evden fabrikaya taşıyan herkes için tasarlandı.",
+    "metaDescription": "Luma.Green; haneler, toplama işletmeleri, ön işleme işletmeleri, geri dönüşümcüler, üreticiler ve Saathi çalışanları için, yani malzemeyi evden fabrikaya taşıyan herkes için tasarlandı.",
     "title": "Luma.Green kimler için",
     "lead": "Malzemeyi evden fabrikaya taşıyan herkes ve aradaki işleri yapan kişiler.",
     "householdHeading": "Ve her hane için",
-    "householdBody": "Herkes hesap açmadan evden malzeme satabilir: malzemelerini seçer, dükkân tekliflerini görür ve makbuzla nakit veya UPI alır."
+    "householdBody": "Cep telefonu numaranızla evden toplama için rezervasyon yapın: malzemeleri seçin, dükkânların tekliflerini karşılaştırın ve dükkândan makbuzla birlikte nakit veya UPI ödemesi alın."
   },
   "join": {
     "consent": {
@@ -2744,7 +2744,7 @@
         "ewaste": "Elektronik atık"
       },
       "titles": {
-        "yard": "Sahanız",
+        "yard": "Ön işleme işletmeniz",
         "recycler": "Geri dönüşüm tesisiniz",
         "manufacturer": "Fabrikanız"
       },
@@ -2802,7 +2802,7 @@
         "needs": "Dükkân adresi ve çalışma saatleri. Varsa GST numaranız."
       },
       "yard": {
-        "title": "Ayrıştırma sahası",
+        "title": "Ön işleme işletmesi",
         "body": "Malzemeyi toplu ayrıştırıp balyalıyor, ardından satıyorsunuz.",
         "needs": "Varsa GST numarası, kirlilik kontrol izni (PDF) ve makine fotoğrafları."
       },
@@ -2944,7 +2944,7 @@
       }
     },
     "metaTitle": "Luma.Green’e katılın",
-    "metaDescription": "Bengaluru’daki hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları: Luma.Green’e başvurun. Her başvuruyu bir kişi genellikle 12–24 saatte inceler.",
+    "metaDescription": "Bengaluru’daki hurdacılar, ön işleme işletmeleri, geri dönüşümcüler, üreticiler ve Saathi çalışanları: Luma.Green’e başvurun. Her başvuruyu bir kişi genellikle 12–24 saatte inceler.",
     "title": "Luma.Green’e katılın",
     "lead": "Ne yaptığınızı anlatın. Her başvuruyu bir kişi genellikle 12–24 saatte inceler.",
     "start": "Başla",
@@ -3032,7 +3032,7 @@
       "title": "Açık işler",
       "lead": "Bölgenizdeki işler önce gelir.",
       "empty": "Şu anda açık iş yok",
-      "emptyBody": "Dükkân, saha ve fabrikalardan yeni işler burada görünür."
+      "emptyBody": "Dükkân, ön işleme işletmesi ve fabrikalardan yeni işler burada görünür."
     },
     "work": {
       "home_pickups": "Evlerden alım",
@@ -3142,7 +3142,8 @@
     "empty": {
       "title": "Henüz kayıt yok",
       "body": "İlk tamamlanan alım veya ticaretten sonra sayılarınız burada görünür."
-    }
+    },
+    "factorUnavailable": "CO₂e tahmini kullanılamıyor. Emisyon faktörleri ayarlanmamış."
   },
   "compliance": {
     "receipts": {
@@ -3166,7 +3167,7 @@
       "view": "{number} makbuzunu gör",
       "unknown": "Artık Luma.Green’de olmayan işletme",
       "empty": "Henüz makbuz yok",
-      "emptyBody": "Ödeme altyapısı gerekli. Ödeme henüz kullanılamıyor."
+      "emptyBody": "İşletme ödemeleri ödeme geçidini kullanır. Güncel ödeme durumu için siparişi kontrol edin."
     },
     "epr": {
       "streams": {
@@ -3250,7 +3251,7 @@
     },
     "saathi": {
       "title": "İşletmeler için",
-      "body": "Uyum; dükkân, saha, geri dönüşümcü ve fabrikalar içindir. İşleriniz ve ücretleriniz ana ekrandadır.",
+      "body": "Uyum; dükkân, ön işleme işletmesi, geri dönüşümcü ve fabrikalar içindir. İşleriniz ve ücretleriniz ana ekrandadır.",
       "home": "İşlerime git"
     }
   },
@@ -3261,14 +3262,14 @@
     "chooseLanguageHint": "Ekranın üstünden istediğiniz zaman değiştirebilirsiniz.",
     "continue": "Devam et",
     "title": "Cep telefonu numaranızla giriş yapın",
-    "lead": "Hurdacılar, sahalar, geri dönüşümcüler, üreticiler ve Saathi çalışanları için.",
+    "lead": "Hurdacılar, ön işleme işletmeleri, geri dönüşümcüler, üreticiler ve Saathi çalışanları için.",
     "mobileLabel": "Cep telefonu numarası",
     "mobileHint": "Bu numaraya 6 haneli kod göndereceğiz.",
     "mobileInvalid": "10 haneli Hindistan cep telefonu numarası girin.",
     "sendCode": "Kod gönder",
     "sending": "Gönderiliyor…",
     "sendFailed": "Kod gönderilemedi. Bir dakika sonra tekrar deneyin.",
-    "homeTitle": "Evden geri dönüşüme mi veriyorsunuz? Hesap gerekmez.",
+    "homeTitle": "Evden geri dönüşüme mi veriyorsunuz?",
     "homeLink": "Nasıl çalıştığını görün",
     "privacy": "Numaranızı yalnızca giriş yapmanız ve Luma.Green’deki işiniz hakkında bilgi göndermek için kullanırız.",
     "unavailableTitle": "Telefonla giriş yakında açılacak",
@@ -3348,7 +3349,7 @@
           "third": "Ayrıştırılmış stoku yönetin"
         },
         "yard": {
-          "title": "Ayrıştırma sahanız",
+          "title": "Ön işleme çalışma alanınız",
           "first": "Malzemeleri teslim alın",
           "second": "Stokunuzu ayrıştırın",
           "third": "Çıkış partilerini hazırlayın"
@@ -3507,5 +3508,617 @@
       "resort": "Tatil tesisi",
       "other": "Diğer tesis"
     }
+  },
+  "emailAuth": {
+    "phone": "Telefon",
+    "email": "E-posta",
+    "signin": "Giriş yap",
+    "signup": "Hesap oluştur",
+    "forgot": "Parolayı sıfırla",
+    "name": "Adınız",
+    "password": "Parola",
+    "show": "Parolayı göster",
+    "hide": "Parolayı gizle",
+    "passwordHint": "12–128 karakter kullanın.",
+    "unavailable": "E-posta gönderimi kullanılamıyor. Mevcut hesaplar giriş yapabilir.",
+    "sent": "Gelen kutunuzu kontrol edin. Hesap uygunsa 15 dakika geçerli bir bağlantı alırsınız.",
+    "resend": "Doğrulamayı tekrar gönder",
+    "limited": "Çok fazla deneme. Daha sonra deneyin.",
+    "unverified": "Girişten önce e-postanızı doğrulayın.",
+    "credentials": "E-posta ve parolanızı kontrol edin.",
+    "invalidLink": "Bağlantı geçersiz veya süresi dolmuş. Yenisini isteyin.",
+    "failed": "İstek başarısız oldu. Tekrar deneyin.",
+    "reset": "Yeni parola belirle",
+    "verify": "E-postayı doğrula",
+    "done": "Tamamlandı. Devam etmek için giriş yapın.",
+    "confirm": "Parolayı tekrarlayın",
+    "mismatch": "Parolalar eşleşmiyor.",
+    "securityHint": "Paroladan sonra doğrulayıcı kodu ekleyin. Parola kurtarma bu korumayı sürdürür.",
+    "backupHint": "Her kurtarma kodu paroladan sonra bir kez çalışır.",
+    "disableHint": "Parolayla giriş sürer. Doğrulayıcı ve kurtarma kodları çalışmayı durdurur."
+  },
+  "workspace": {
+    "title": "Çalışma alanları ve ekip",
+    "choose": "Çalışma alanı seç",
+    "team": "Ekip",
+    "role": "Rol",
+    "owner": "Sahip",
+    "admin": "Yönetici",
+    "member": "Üye",
+    "viewer": "Okuyucu",
+    "invite": "Davet gönder",
+    "email": "E-posta adresi",
+    "pending": "Bekleyen davetler",
+    "revoke": "İptal et",
+    "remove": "Kaldır",
+    "empty": "Kullanılabilir çalışma alanı yok.",
+    "error": "Güncellenemedi. Erişiminizi kontrol edip tekrar deneyin.",
+    "inviteTitle": "Çalışma alanı daveti",
+    "accept": "Daveti kabul et",
+    "verifyEmail": "Kabul etmeden önce davet edilen e-postayı doğrulayın.",
+    "unavailable": "Bu davet kullanılamıyor. E-postanızı kontrol edin veya yeni davet isteyin.",
+    "join": "{name} alanına {role} olarak katılın.",
+    "readOnly": "Salt okunur erişim",
+    "confirmRemove": "Bu kişi çalışma alanından kaldırılsın mı?",
+    "lastOwner": "En az bir sahip kalsın. Bu değişiklikten önce başka bir sahip ekleyin.",
+    "deliveryPending": "E-posta bekliyor",
+    "deliveryAccepted": "E-posta hizmeti kabul etti",
+    "deliveryFailed": "E-posta teslimi doğrulanmadı",
+    "expires": "Bitiş {date}",
+    "emailBody": "{name} alanına davet edildiniz. Yedi gün içinde bağlantıyı açıp bu doğrulanmış e-postayla giriş yapın. Davet bir kez kullanılabilir.",
+    "switchAccount": "Hesap değiştir",
+    "switchHint": "Davetin gönderildiği e-posta adresiyle giriş yapmak veya kayıt olmak için çıkış yapın.",
+    "invitationLimit": "Davet sınırına ulaşıldı. Başka bir davet göndermeden önce bekleyin."
+  },
+  "lots": {
+    "title": "Partiler ve kalite",
+    "lead": "Ölçülen malzemeyi, işlemeyi ve fiziksel teslimleri kaydedin.",
+    "evidenceNote": "Bu kayıtlar fiziksel kanıtları açıklar. Stoku, ödemeyi, yasal mülkiyeti veya sertifikaları değiştirmez.",
+    "notBusiness": "Parti kayıtlarını kullanmak için etkin bir işletme çalışma alanı seçin.",
+    "readOnly": "Çalışma alanı rolünüz bu kayıtları okuyabilir.",
+    "held": "Elde tutulan partiler",
+    "incoming": "Gelen partiler",
+    "sent": "Teslim geçmişi",
+    "empty": "Henüz kayıt yok.",
+    "limit": "Yalnızca ilk 100 kayıt gösterilir.",
+    "declare": "Parti bildir",
+    "detail": "Parti ayrıntısı",
+    "back": "Tüm partiler",
+    "material": "Malzeme kodu veya adı",
+    "state": "Fiziksel durum",
+    "mass": "Kütle (g)",
+    "grams": "{value} g",
+    "integerHint": "Tam gram girin. Ondalık veya basamak gruplama ayırıcı kullanmayın.",
+    "sourceReference": "Kaynak referansı (isteğe bağlı)",
+    "source": "Kaynak",
+    "selfDeclared": "Öz beyan",
+    "transformed": "Dönüşümden",
+    "initial": "Başlangıç kütlesi",
+    "remaining": "Kalan kütle",
+    "available": "Kullanılabilir",
+    "in_transit": "Yolda",
+    "exhausted": "Tükendi",
+    "save": "Kaydı kaydet",
+    "saving": "Kaydediliyor…",
+    "saved": "Kayıt kaydedildi.",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "required": "Tüm zorunlu alanları doldurun.",
+    "invalidInput": "Değerleri kontrol edin. Tam gram kullanın ve zorunlu alanları doldurun.",
+    "genericError": "Kayıt kaydedilemedi. Değerleriniz korundu. Yeniden deneyin.",
+    "accessChanged": "Bu parti veya çalışma alanı erişiminiz değişti. Parti listesini yeniden yükleyin.",
+    "balanceError": "Girdi kütlesi; çıktılar, kirleticiler ve işlem kaybının toplamına eşit olmalıdır.",
+    "weightDispute": "Alınan kütle sevk edilenden farklı. Teslim alındığı kaydedilmedi. Ölçümü göndericiyle kontrol edin.",
+    "approvalError": "İşletmeniz partiyi elinde tutarken bu düzeltmeyi başka bir sahip onaylamalıdır.",
+    "transform": "Dönüşümü kaydet",
+    "inputMass": "Girdi kütlesi (g)",
+    "contamination": "Kirleticiler (g)",
+    "processLoss": "İşlem kaybı (g)",
+    "outputs": "Çıktı partileri",
+    "outputNumber": "Çıktı {number}",
+    "addOutput": "Çıktı ekle",
+    "remove": "Kaldır",
+    "balance": "Hesaplanan kütle: {value}",
+    "transformHint": "Her çıktıyı ve kaybı kaydedin. Girdi kütlesi bu partiden düşülür ve bağlantılı çıktı partileri oluşturulur.",
+    "dispatch": "Partiyi sevk et",
+    "dispatchHint": "Kalan partinin tamamı seçilen işletmeye gönderilir. Kaydetmeden önce alıcıyı kontrol edin.",
+    "receiver": "Teslim alan",
+    "city": "Şehir",
+    "businessKind": "İşletme türü",
+    "chooseBusiness": "İşletme seç",
+    "searchBusinesses": "İşletme bul",
+    "directoryNote": "Dizin etkin işletmeleri gösterir. İşleme kapasitelerini doğrulamaz.",
+    "directoryEmpty": "Eşleşen işletme yok. Şehri ve işletme türünü kontrol edin.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Ön işleme işletmesi",
+    "recycler": "Geri dönüştürücü",
+    "manufacturer": "Üretici",
+    "receive": "Partiyi teslim al",
+    "receivedMass": "Alınan kütle (g)",
+    "receiveHint": "Alınan partiyi ölçün. Bu formda farklı bir ağırlık kabul edilemez.",
+    "pendingNote": "Yalnızca bu sevkiyatı görebilirsiniz. Partinin tüm geçmişi teslim alındıktan sonra açılır.",
+    "custody": "Zilyetlik geçmişi",
+    "dispatched": "Sevk edildi",
+    "received": "Teslim alındı",
+    "handoff": "{from} → {to}",
+    "from": "{name} işletmesinden",
+    "to": "{name} işletmesine",
+    "transformations": "Dönüşümler",
+    "inspection": "İncelemeyi kaydet",
+    "inspections": "İnceleme kanıtı",
+    "inspectionNote": "Gerçek şartnameyi, numune yöntemini ve ölçülen sonuçları kaydedin. Karar yalnızca bu inceleme için geçerlidir; platform derecesi veya sertifikası değildir.",
+    "specification": "Şartname referansı",
+    "version": "Şartname sürümü",
+    "sampleMethod": "Numune yöntemi",
+    "buyer": "Alıcı kapsamı (isteğe bağlı)",
+    "addBuyer": "Alıcı belirt",
+    "noBuyer": "Alıcı belirtilmedi",
+    "results": "Ölçülen sonuçlar",
+    "resultNumber": "Sonuç {number}",
+    "parameter": "Parametre",
+    "unit": "Birim",
+    "value": "Ölçülen değer",
+    "addResult": "Sonuç ekle",
+    "decision": "İnceleme kararı",
+    "accepted": "Kabul edildi",
+    "rejected": "Reddedildi",
+    "conditional": "Koşullu",
+    "evidenceReference": "Kanıt referansı (isteğe bağlı)",
+    "correct": "Düzeltme öner",
+    "correctionHint": "Asıl kayıt görünür kalır. Alıcı kapsamı ve şartname değişemez. Düzeltmeyi başka bir sahip onaylamalıdır.",
+    "reason": "Düzeltme nedeni",
+    "approve": "Düzeltmeyi onayla",
+    "pendingApproval": "Ayrı onay bekliyor",
+    "approved": "Düzeltme onaylandı",
+    "superseded": "Onaylı düzeltmeyle değiştirildi",
+    "original": "Asıl inceleme",
+    "previousResult": "Önceki inceleme",
+    "recordedBy": "İnceleyen işletme: {name}",
+    "loadError": "Kayıtlar yüklenemedi. Yeniden deneyin.",
+    "retry": "Yeniden dene",
+    "streamClass": "Çıktı akışı",
+    "handlingClass": "İşleme sınıfı",
+    "streams": {
+      "main_product": "Ana ürün",
+      "saleable_byproduct": "Satılabilir yan ürün",
+      "recoverable_waste": "Geri kazanılabilir atık",
+      "residual_waste": "Artık atık",
+      "unspecified": "Belirtilmedi"
+    },
+    "handling": {
+      "non_hazardous": "Tehlikesiz",
+      "controlled": "Kontrollü",
+      "unassessed": "Değerlendirilmedi"
+    },
+    "facility": "Tesis",
+    "processKind": "Süreç",
+    "noFacility": "Tesis seçilmedi",
+    "controlledBlocked": "Kontrollü veya artık malzeme belgeli yönlendirme gerektirir. Normal sevk veya dönüşüm uygulanamaz.",
+    "recordDisposition": "Yönlendirmeyi kaydet",
+    "destinationReference": "Varış yeri referansı",
+    "authorisationReference": "Yetki referansı",
+    "manifestReference": "Taşıma belgesi referansı",
+    "dispositions": "Yönlendirme geçmişi",
+    "dispositionHint": "Ölçülen kütleyi ve gerçek varış yeri, yetki ve taşıma belgesi referanslarını kaydedin. Bu, partinin kalan kütlesini azaltır. Yetkiyi doğrulamaz veya satılabilir stok oluşturmaz.",
+    "inputs": "Girdi partileri",
+    "additionalInputs": "Diğer girdi partileri",
+    "addInput": "Girdi partisi ekle",
+    "chooseInput": "Girdi partisi seç",
+    "combinedInput": "Toplam girdi kütlesi",
+    "multiInputHint": "Yalnızca elinizdeki ölçülmüş malzemeyi birleştirin. Her miktar kendi partisinden tüketilir. Bu işlem işleme kanıtı kaydeder ve envanter stoğu eklemez."
+  },
+  "evidence": {
+    "title": "Belge referansları",
+    "lead": "Bildirilen referansları kaydedin. Luma bu belgeleri doğrulamaz veya düzenlemez.",
+    "record": "Referans ekle",
+    "correct": "Referansı değiştir",
+    "replacement": "Yerine geçtiği: {reference}",
+    "reference": "Belge referansı",
+    "kind": "Belge türü",
+    "issuer": "Düzenleyen",
+    "issuerName": "Düzenleyen adı",
+    "trade": "Bağlı ticaret",
+    "none": "Ticaret yok",
+    "unverified": "Bildirildi · doğrulanmadı",
+    "gst_invoice": "GST faturası",
+    "eway_bill": "E-way sevk belgesi",
+    "cpcb_epr_certificate": "CPCB EPR sertifikası",
+    "pollution_consent": "Kirlilik kontrol izni",
+    "external_authority": "Düzenleyen makam",
+    "external_organization": "Düzenleyen kuruluş",
+    "trade_seller": "Satıcı",
+    "trade_buyer": "Alıcı",
+    "correctionHint": "Asıl kayıt görünür kalır. Yerine yeni bir referans kaydedin."
+  },
+  "accountPhone": {
+    "title": "Cep telefonu numaranızı doğrulayın",
+    "description": "Toplama ve ödemeler için size ait bir numara ekleyin. E-posta hesabınız korunur, başka hesapla birleştirilmez. E-posta ile giriş yapmaya devam edin.",
+    "verified": "Cep telefonu numarası doğrulandı",
+    "unavailable": "SMS gönderimi yapılandırılana kadar telefon doğrulaması kullanılamaz.",
+    "inUse": "Bu numara eklenemez. Başka hesaba bağlı olmayan bir numara kullanın.",
+    "unsupported": "Bu hesabın cep telefonu numarası burada değiştirilemez."
+  },
+  "sandboxPayment": {
+    "title": "Test ödemesi",
+    "note": "Yalnızca test. Gerçek ödeme, mutabakat veya iade yok. Ticaret duraklatılmış kalır.",
+    "open": "Testi aç",
+    "unavailable": "Test ödemesi kullanılamıyor.",
+    "pending": "Sunucu onayı bekleniyor.",
+    "collected": "Test tahsilatı onaylandı.",
+    "failed": "Ödeme açılamadı. Tekrar deneyin.",
+    "review": "Sunucu incelemesi gerekli.",
+    "liveTitle": "Ödeme geçidiyle öde",
+    "liveNote": "Kararlaştırılan sipariş toplamını Cashfree ile ödeyin. Sağlayıcı doğrulaması gerekir; ödeme penceresini kapatmak ödemeyi doğrulamaz.",
+    "liveOpen": "Güvenli ödemeyi aç",
+    "liveCollected": "Ödeme sağlayıcı tarafından doğrulandı."
+  },
+  "industry": {
+    "title": "Sektör referansları",
+    "lead": "Sağlanan çalışma kitabında arayın. Bu referanslar doğrulanmamıştır; malzeme ticareti veya işleme izni vermez.",
+    "sourceNote": "Kaynak metin çalışma kitabının özgün İngilizcesiyle gösterilir.",
+    "sectors": "Sektör kayıtları",
+    "industries": "Endüstri matrisi",
+    "lifecycles": "Malzeme yaşam döngüsü",
+    "byproducts": "Yan ürün örnekleri",
+    "matches": "{count} eşleşen referans",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "select": "Referans seç",
+    "selected": "Seçilen referans",
+    "clear": "Referansı temizle",
+    "detailLabels": {
+      "annexure": "Ek",
+      "category": "Kategori",
+      "division": "Bölüm",
+      "industryGroup": "Endüstri grubu",
+      "inputs": "Girdiler",
+      "products": "Ürünler",
+      "byproducts": "Yan ürünler",
+      "recoverableWaste": "Geri kazanılabilir atık",
+      "residualWaste": "Artık atık",
+      "nextUser": "Sonraki kullanıcı",
+      "suggestedFlow": "Önerilen akış",
+      "materialState": "Malzeme durumu",
+      "note": "Not",
+      "route": "Rota",
+      "qualityAttributes": "Kalite özellikleri",
+      "reportedCommercialStatus": "Bildirilen ticari durum"
+    },
+    "view": "Referansı görüntüle",
+    "empty": "Eşleşen referans yok."
+  },
+  "facility": {
+    "title": "Tesisler ve süreçler",
+    "lead": "İşletmenizin beyan ettiği yerleri ve süreçleri kaydedin. Bu profil tesisi doğrulamaz veya malzeme ticaretine izin vermez.",
+    "add": "Tesis ekle",
+    "edit": "Tesisi düzenle",
+    "name": "Tesis adı",
+    "siteReference": "Yer referansı",
+    "sector": "Sektör referansı (isteğe bağlı)",
+    "capabilities": "Beyan edilen süreçler",
+    "readOnly": "Tesisleri yalnızca çalışma alanı sahipleri ve yöneticileri değiştirebilir.",
+    "processNote": "Bunlar beyan edilen yeteneklerdir, doğrulanmış izinler değildir.",
+    "processKinds": {
+      "sorting": "Ayırma",
+      "baling": "Balyalama",
+      "shredding": "Parçalama",
+      "stripping": "Soyma",
+      "washing": "Yıkama",
+      "granulating": "Granülleme",
+      "compounding": "Bileşik hazırlama",
+      "recovery": "Geri kazanım",
+      "manufacturing": "Üretim",
+      "residual_handling": "Artık yönetimi"
+    },
+    "empty": "Henüz tesis kaydedilmedi.",
+    "registration": {
+      "title": "İzin ve kayıt referansları",
+      "lead": "Yalnızca bildirilen referanslar. Tarihler onayı kanıtlamaz veya ticareti açmaz.",
+      "add": "Referans ekle",
+      "correct": "Düzeltme ekle",
+      "reference": "Referans",
+      "issuedAt": "Düzenlenme tarihi",
+      "validUntil": "Geçerlilik sonu",
+      "empty": "Henüz referans kaydedilmedi.",
+      "current": "Bildirilen tarih aralığında",
+      "expired": "Bildirilen süre dolmuş",
+      "superseded": "Daha sonraki referansla değiştirildi",
+      "kind": "Referans türü",
+      "kinds": {
+        "consent_to_operate": "İşletme izni",
+        "consent_to_establish": "Kuruluş izni",
+        "epr_registration": "EPR kaydı",
+        "waste_authorisation": "Atık yetkisi",
+        "other": "Diğer referans"
+      },
+      "not_yet_current": "Bildirilen düzenlenme tarihinden önce"
+    }
+  },
+  "marketSpecification": {
+    "title": "Sınıf ve şartname",
+    "enable": "Sınıf ve şartname ekle",
+    "grade": "Malzeme sınıfı",
+    "specification": "Alıcı kalite şartnamesi",
+    "lot": "Yakın tarihli eşleşen parti (isteğe bağlı)",
+    "noLot": "Bağlı parti yok",
+    "source": "Satıcı beyanı. Kaliteyi doğrulamaz veya kanıt partisini rezerve etmez.",
+    "lotState": "Kayıtlı parti durumu"
+  },
+  "stockIntake": {
+    "title": "Kendi üretim yan ürün stoğu",
+    "add": "Stok girişi kaydet",
+    "lead": "Bu üreticinin tartılmış yan ürünlerini kaydedin. Kayıt, beyan edilen üretim ve tartım bilgilerine göre stok ekler. Yalnızca kanıt niteliğindeki partiler stok eklemez.",
+    "reference": "Benzersiz giriş referansı",
+    "source": "Üretim partisi referansı",
+    "weighing": "Tartım kaydı referansı",
+    "date": "Üretim tarihi",
+    "confirm": "Bunun kendi ürettiğimiz yan ürün olduğunu ve bu tartılmış miktarın daha önce stoğa kaydedilmediğini onaylıyorum.",
+    "empty": "Henüz üretim stok girişi kaydedilmedi.",
+    "noMaterials": "Bu işletmeye uygun onaylı tehlikesiz yan ürün malzemesi yok. Stok kaydetmeden önce yöneticiden malzemeyi incelemesini isteyin.",
+    "conflict": "Bu giriş referansında farklı bilgiler zaten var. Devam etmeden önce asıl kaydı kontrol edin.",
+    "history": "Kaydedilen stok girişleri",
+    "more": "Daha fazla giriş yükle",
+    "note": "Bunlar üretici beyanlarıdır; bağımsız kalite, mülkiyet veya mevzuat doğrulaması değildir. Kaydedilen kayıtlar düzenlenemez."
+  },
+  "tradeLifecycle": {
+    "title": "Ödeme ve teslimat",
+    "collectionLabel": "Alıcı ödemesi",
+    "settlementLabel": "Satıcıya ödeme aktarımı",
+    "refundLabel": "Para iadesi",
+    "state": {
+      "awaiting_payment": "Ödeme geçidi ödemesi bekleniyor",
+      "authorized": "Ödeme doğrulandı; sevke hazır",
+      "dispatched": "Sevk edildi; teslim alınması bekleniyor",
+      "received": "Malzeme teslim alındı",
+      "cancellation_pending": "İptal kontrol ediliyor",
+      "cancelled": "Sipariş iptal edildi",
+      "hold": "Sipariş incelenmeli"
+    },
+    "collection": {
+      "pending": "Doğrulanmadı",
+      "sandbox_confirmed": "Yalnızca test ortamı; gerçek para yok",
+      "live_confirmed": "Sağlayıcı tarafından doğrulandı",
+      "review": "Ödeme incelenmeli"
+    },
+    "settlement": {
+      "pending": "Doğrulanmadı",
+      "settled": "Sağlayıcı tarafından doğrulandı",
+      "reversed": "Satıcıya aktarım geri alındı",
+      "review": "Satıcıya aktarım incelenmeli"
+    },
+    "refund": {
+      "none": "Kayıtlı iade yok",
+      "pending": "İade bekleniyor",
+      "refunded": "Sağlayıcı tarafından doğrulandı",
+      "review": "İade incelenmeli"
+    },
+    "action": {
+      "dispatch": "Sevki kaydet",
+      "receive": "Teslim almayı doğrula",
+      "cancel": "İptal iste"
+    },
+    "policyMissing": "Gerçek ödemeler için onaylı ödeme koşulları ve sağlayıcı kurulumu gerekir.",
+    "reviewRequired": "Bu siparişin ilerleyebilmesi için bir yönetici ödeme kanıtını incelemelidir.",
+    "fullQuantity": "Kararlaştırılan miktarın tamamını doğrulayın: {weight}. Miktar veya kalite farklıysa durun ve yöneticiyle iletişime geçin.",
+    "cancelNote": "İptal, yalnızca sunucu hiçbir ödemenin artık tamamlanamayacağını doğruladıktan sonra stoku serbest bırakır. Bekleyen istek, siparişin iptal edildiği anlamına gelmez.",
+    "reason": "Neden",
+    "reference": "Sevk veya teslim alma referansı",
+    "confirm": "Doğrula",
+    "back": "Geri dön",
+    "saved": "Sipariş kaydı güncellendi",
+    "failed": "Güncelleme tamamlanmadı. Mevcut durumu kontrol edip yeniden deneyin. Referansınız korundu.",
+    "actionUnavailable": "Bu işlem artık kullanılamıyor. Güncel sipariş durumunu kontrol edin."
+  },
+  "sourcing": {
+    "close": "Kapat",
+    "material": "Malzeme",
+    "save": "Kaydı kaydet",
+    "saved": "Kayıt kaydedildi.",
+    "reference": "Referans",
+    "buying": "Alımlar",
+    "active": "Etkin",
+    "decline": "Reddet",
+    "title": "Malzeme kaynağı",
+    "lead": "Malzeme talebini planlayın, tedarikçilerle ilgili kararlarınızı kaydedin ve bireysel tedarik taleplerini kabul edin.",
+    "boundary": "Bu kayıtlar satın alma işlemleri oluşturmaz. Envanter ayırmazlar veya ödemeleri onaylamazlar. Marketi ve ödeme iş akışını kullanarak satın alma işlemlerini tamamlayın.",
+    "board": "Talep panosu",
+    "plans": "Yinelenen talep",
+    "qualifications": "Tedarikçi kararları",
+    "agreements": "Daimi anlaşmalar",
+    "post": "Malzeme talebini yayınla",
+    "createPlan": "Program oluştur",
+    "publish": "Sonraki talebi yayınla",
+    "supplier": "Tedarikçi",
+    "choose": "Bir seçenek seçin",
+    "quantity": "Miktar (g)",
+    "area": "Teslimat alanı",
+    "specification": "Yazılı spesifikasyon",
+    "neededBy": "Gerekli teslim tarihi",
+    "cadence": "Tekrar aralığı",
+    "weekly": "Her 7 günde bir",
+    "monthly": "Her 30 günde bir",
+    "planHint": "Her oluşum yalnızca Sonraki talebi yayınla'yı seçtiğinizde yayınlanır. Otomatik sipariş oluşturulmaz.",
+    "myDemand": "talebim",
+    "availableDemand": "Alıcılardan gelen talep",
+    "empty": "Henüz kayıt yok.",
+    "limited": "Yalnızca sınırlı bir küme gösterilir. Daha eski kayıtlar denetim geçmişinde kalır.",
+    "loadMore": "Daha fazlasını yükle",
+    "invalid": "Gerekli alanları, tarihleri ve tam sayı miktarlarını kontrol edin.",
+    "failed": "Bu işlem tamamlanamadı. Taslağınız saklanıyor. Mevcut izinleri ve uygunluğu kontrol edip tekrar deneyin.",
+    "qualify": "Tedarikçi kararını kaydedin",
+    "sample": "Numune veya inceleme referansı",
+    "decision": "Kararınız",
+    "reason": "Karar nedeni",
+    "validUntil": "Karar şu tarihe kadar geçerlidir:",
+    "privateDecision": "Bu kuruluşunuzun kaynak bulma kararıdır. Platform onayı veya düzenleyici sertifikasyon değildir. Karar geçmişi alıcı çalışma alanınıza özeldir. Bir tedarikçi ve malzeme için en son karar, yeni anlaşmaları ve yayınları kontrol eder; daha önceki girişler geçmişte kalır.",
+    "pending": "Beklemede",
+    "approved": "Alıcı tarafından onaylandı",
+    "rejected": "Alıcı tarafından reddedildi",
+    "propose": "Anlaşma öner",
+    "price": "Mutabık kalınan fiyat (paise/kg)",
+    "startsOn": "Başlıyor",
+    "endsOn": "Bitiş tarihi",
+    "agreementHint": "Bu kesin spesifikasyon için onaylanmış güncel bir tedarikçi kararı gereklidir. Tedarikçi teklifi ayrıca kabul etmelidir.",
+    "supplying": "Tedarik",
+    "requested": "Tedarikçi yanıtı bekleniyor",
+    "acknowledged": "Tedarikçi tarafından onaylandı",
+    "declined": "Tedarikçi tarafından reddedildi",
+    "closed": "Kapalı",
+    "acknowledge": "Onaylamayı onaylayın",
+    "responseReference": "Yanıt referansı",
+    "release": "Tedarik miktarı talep edin",
+    "releaseHint": "Kararlaştırılan miktarın bir kısmını talep edin. Tedarikçi onayı yalnızca amacı kaydeder; malzemeyi veya parayı hareket ettirmez.",
+    "releases": "Bireysel tedarik talepleri",
+    "history": "Sözleşme geçmişi",
+    "view": "Tedarik taleplerini ve geçmişini görüntüleyin",
+    "closeAgreement": "Bu sözleşmeyi kapat",
+    "closeHint": "Bu, anlaşma kapsamında yeni tedarik taleplerinin önüne geçmektedir. Mevcut istekler ve bunların geçmişi kayıtlı kalır.",
+    "state": "Kayıt durumu",
+    "nextDate": "Sonraki talep tarihi",
+    "readOnly": "Çalışma alanı rolünüz bu kayıtları görüntüleyebilir ancak değiştiremez.",
+    "published": "Talep oluşumu yayınlandı.",
+    "event": {
+      "proposed": "Anlaşma teklif edildi",
+      "acknowledged": "Anlaşma onaylandı",
+      "declined": "Anlaşma reddedildi",
+      "closed": "Anlaşma kapatıldı",
+      "release_requested": "Talep edilen tedarik miktarı",
+      "release_acknowledged": "Tedarik talebi onaylandı",
+      "release_declined": "Tedarik talebi reddedildi"
+    },
+    "reschedule": "Sonraki talep tarihini taşı",
+    "rescheduleHint": "Daha sonraki bir güncel tarihi seçin. Önceki yayınlar değişmeden kalır. Bu, bir talebi yayınlamaz veya bir sipariş oluşturmaz.",
+    "overdue": "Bu planlanan tarih geçti. Yayınlamadan önce bir sonraki tarihe taşıyın."
+  },
+  "operations": {
+    "validUntil": "Geçerlilik sonu",
+    "decisions": {
+      "revoked": "İptal edilmiş",
+      "approved": "Onaylandı",
+      "rejected": "Reddedildi"
+    },
+    "reference": "Referans",
+    "remove": "Kaldır",
+    "save": "Kaydı kaydet",
+    "saved": "Kayıt kaydedildi.",
+    "standards": "Malzeme standartları",
+    "standardsHint": "İncelenen tanımları arayın. Bir kalite veya sektör, kullanım izni vermez veya kaliteyi belgelemez.",
+    "workspaceRequired": "Devam etmek için onaylanmış bir iş çalışma alanı seçin.",
+    "definitions": "Tanımlar",
+    "reviews": "Kapsam incelemeleri",
+    "destinations": "Kontrollü varış noktaları",
+    "search": "Malzemeye, fiziksel duruma, kaliteye veya spesifikasyona göre arama yapın",
+    "empty": "Henüz kayıt yok.",
+    "truncated": "Sonuç sınırlıdır. Aramanızı daraltın veya son kayıtları kontrol edin.",
+    "reviewHint": "Bunlar sağlanan kanıtların yönetici incelemeleridir. Değiştirilen bir tesis, yenilenen kayıt, sona erme veya iptal, mevcut kapsamı geçersiz kılar.",
+    "destinationHint": "Kontrollü bir dağıtımdan önce malzeme kapsamını ve mevcut yetkiyi kontrol edin. Bir rehber girişi, elden çıkarma veya portal gönderimini kanıtlamaz.",
+    "current": "Mevcut",
+    "historical": "Güncel değil",
+    "production": "Üretim kayıtları",
+    "productionHint": "Tarifleri ve beyan edilen girdileri ölçülen bir dönüşüme ve bunun çıktı denetimine bağlayın. Geri dönüştürülmüş kısım, sertifikalı ürün içeriğini değil, beyan edilen girdiyi tanımlar. Bu kayıtlar stoku değiştirmez.",
+    "recipes": "Üretim formülleri",
+    "batches": "Üretim partileri",
+    "newRecipe": "Kayıt üretim formülü",
+    "newBatch": "Toplu kaydı kaydet",
+    "version": "Sürümü kaydet",
+    "name": "Tarif adı",
+    "instructions": "İşlem talimatları",
+    "ingredients": "Malzemeler",
+    "ingredient": "İçerik adı",
+    "basisPoints": "Temel puan cinsinden içerik oranı (100 = %1)",
+    "additive": "Katkı maddesi",
+    "addIngredient": "İçerik ekle",
+    "recipeHint": "Düzeltme için yeni bir sürüm kullanın. İçerik paylarının toplamı 10.000 baz puan olmalıdır. Ölçülen tüm içerik maddeleri ve katkı maddeleri bağlantılı dönüşüme dahil edilmelidir.",
+    "failed": "Kaydedilemedi. Değerleri, bağlantılı kayıtları ve çalışma alanı erişiminizi kontrol edip yeniden deneyin.",
+    "invalid": "Alanları ve tam gram toplamlarını kontrol edin.",
+    "choose": "Seç",
+    "recipe": "Üretim formülü versiyonu",
+    "transformation": "Ölçülen dönüşüm",
+    "inspection": "Çıkış denetimi",
+    "recycledGrams": "Beyan edilen geri dönüştürülmüş girdi (gram)",
+    "inputEvidence": "Giriş kaynağı referansı",
+    "batchEvidence": "Üretim kanıtı referansı",
+    "inputFraction": "Bildirilen geri dönüştürülmüş girdi payı",
+    "inputTotal": "Toplam girdi",
+    "outputTotal": "Ölçülen çıktı",
+    "batchHint": "Çıktısını inceleyerek mevcut bir dönüşümü seçin. Her girdi için geri dönüştürülmüş gramı bildirin ve kanıt referansını verin. Bu, bağımsız bir sertifikasyon değil, atfedilebilir bir beyandır."
+  },
+  "logistics": {
+    "title": "Rota ve yük planları",
+    "add": "Plan oluştur",
+    "correct": "Yeni sürümü kaydet",
+    "titleLabel": "Plan adı",
+    "reference": "Benzersiz plan referansı",
+    "vehicle": "Araç referansı",
+    "capacity": "Araç kapasitesi (g)",
+    "origin": "Başlangıç yeri",
+    "stop": "Durak {number}",
+    "addStop": "Durak ekle",
+    "latitude": "Enlem",
+    "longitude": "Boylam",
+    "entered": "Girilen sırayı koru",
+    "geometric": "Sonraki en yakın durak (kuş uçuşu)",
+    "distance": "Kuş uçuşu mesafe: {value} m",
+    "archive": "Planı arşivle",
+    "archived": "Arşivlendi",
+    "history": "Sürüm geçmişi",
+    "revision": "Sürüm {number}",
+    "reason": "Bu kaydın nedeni",
+    "conflict": "Plan veya erişiminiz değişti. Kaydetmeden önce yeniden yükleyin.",
+    "invalid": "Koordinatları, malzemeyi, tam gramları ve kapasiteyi kontrol edin. Toplam yük araca sığmalıdır.",
+    "lead": "Yalnızca elle planlama. Tüm durak yükleri toplanır. Kuş uçuşu sıralama yol güzergâhı, varış saati veya sevkiyat değildir. Konumlar fotoğraf meta verisinden değil, girdiğiniz bilgilerden alınır.",
+    "empty": "Henüz rota planı yok."
+  },
+  "qualityDocuments": {
+    "businessRequired": "Parti kayıtlarını kullanmak için etkin bir işletme çalışma alanı seçin.",
+    "inspections": "İnceleme kanıtı",
+    "readOnly": "Çalışma alanı rolünüz bu kayıtları okuyabilir.",
+    "empty": "Henüz kayıt yok.",
+    "inspection": "İnceleme kanıtı",
+    "kind": "Belge türü",
+    "accepted": "Kabul edildi",
+    "rejected": "Reddedildi",
+    "conditional": "Koşullu",
+    "note": "Düzeltme nedeni",
+    "record": "Kaydı kaydet",
+    "error": "Bir sorun oluştu",
+    "limit": "Yalnızca ilk 100 kayıt gösterilir.",
+    "title": "Kalite belgeleri",
+    "own": "Belgeleriniz",
+    "incoming": "İşletmenizle paylaşılanlar",
+    "decisions": "Alıcı karar geçmişi",
+    "upload": "Belge ekle",
+    "coa": "Analiz sertifikası",
+    "photo": "Kalite fotoğrafı",
+    "sample_report": "Numune raporu",
+    "file": "Dosya",
+    "shareBuyer": "Bu belgeyi {name} ile paylaş",
+    "download": "İndir",
+    "shared": "Belirtilen alıcıyla paylaşıldı",
+    "private": "Yalnızca işletme",
+    "withdrawn": "Erişim geri çekildi",
+    "withdraw": "Erişimi geri çek",
+    "decision": "Alıcı kararı",
+    "lead": "Gerçek şartnameyi, numune yöntemini ve ölçülen sonuçları kaydedin. Karar yalnızca bu inceleme için geçerlidir; platform derecesi veya sertifikası değildir. Bu kayıtlar fiziksel kanıtları açıklar. Stoku, ödemeyi, yasal mülkiyeti veya sertifikaları değiştirmez.",
+    "fileHint": "PDF, JPEG, PNG veya WebP; en fazla 2 MiB. Düzleştirilmiş PDF kullanın. Dosyalar indirilir, önizlenmez. Bağımsız doğrulama veya zararlı yazılım taraması yapılmaz. Paylaşmadan önce özel bilgileri kaldırın."
+  },
+  "auditReports": {
+    "title": "Paylaşılan denetim raporları",
+    "create": "Rapor paylaş",
+    "recipient": "Onaylı alıcı",
+    "purpose": "İnceleme amacı",
+    "expiry": "Erişim bitişi (yerel saat)",
+    "sent": "Paylaştığınız raporlar",
+    "received": "Sizinle paylaşılan raporlar",
+    "empty": "Henüz rapor yok.",
+    "unavailable": "Erişim süresi doldu, kaldırıldı veya kullanılamıyor.",
+    "open": "Raporu oku",
+    "revoke": "Erişimi iptal et",
+    "inspection": "İnceleme kanıtı",
+    "error": "Bir sorun oluştu",
+    "limit": "Yalnızca ilk 100 kayıt gösterilir.",
+    "lead": "Belirtilen amaç için paylaşılan sabit kanıt kopyasını okuyun. Alıcı onayı, diğer işletme kayıtlarına erişim vermez.",
+    "warning": "Yalnızca seçilen inceleme ve işaretlenen dosyaları paylaşın. Önce kişisel bilgileri kaldırın. Erişim en fazla 90 gün ve iptal edilebilir; indirilen kopyalar geri alınamaz.",
+    "snapshot": "İnceleyen işletmenin beyanının sabit kopyası. Sertifika veya bağımsız doğrulama değildir."
   }
 }

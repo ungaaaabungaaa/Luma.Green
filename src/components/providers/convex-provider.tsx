@@ -35,10 +35,38 @@ export function ConvexClientProvider({ children }: { children: ReactNode }) {
   );
 
   return client ? (
-    <ConvexBetterAuthProvider client={client} authClient={providerAuthClient}>
-      {children}
-    </ConvexBetterAuthProvider>
+    <IdentityProvider client={client}>{children}</IdentityProvider>
   ) : (
     <>{children}</>
+  );
+}
+
+/** Preserve initial public sign-in work; reset when a previous private identity leaves. */
+function IdentityProvider({
+  client,
+  children,
+}: {
+  client: ConvexReactClient;
+  children: ReactNode;
+}) {
+  const session = authClient.useSession();
+  const userId = session.data?.user.id ?? null;
+  const [boundary, setBoundary] = useState({ userId, generation: 0 });
+  if (boundary.userId !== userId) {
+    // React rerenders this component before its children. Initial sign-in has
+    // no earlier private identity, so keep the public OTP/booking continuation.
+    setBoundary({
+      userId,
+      generation: boundary.generation + (boundary.userId === null ? 0 : 1),
+    });
+  }
+  return (
+    <ConvexBetterAuthProvider
+      key={boundary.generation}
+      client={client}
+      authClient={providerAuthClient}
+    >
+      {children}
+    </ConvexBetterAuthProvider>
   );
 }

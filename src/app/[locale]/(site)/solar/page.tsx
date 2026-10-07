@@ -35,6 +35,7 @@ export default async function SolarPage() {
   return (
     <>
       <PageHeader
+        variant="task"
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}

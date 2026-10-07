@@ -68,14 +68,16 @@ describe("searchHelp", () => {
   });
 
   it("ranks title matches above matches deep in the steps", () => {
-    const results = ids(searchHelp(entries, { query: "escrow" }));
-    // The only two titles with the word come first…
-    expect(results.slice(0, 2).toSorted((a, b) => a.localeCompare(b))).toEqual([
-      "faq:whatIsEscrow",
-      "guide:escrow",
+    const ranked = [
+      entry({ id: "guide:steps", body: "Review the payment gateway result." }),
+      entry({ id: "guide:title", title: "Payment gateway" }),
+      entry({ id: "faq:summary", snippet: "The payment gateway is required." }),
+    ];
+    expect(ids(searchHelp(ranked, { query: "payment gateway" }))).toEqual([
+      "guide:title",
+      "faq:summary",
+      "guide:steps",
     ]);
-    // …then guides that only mention it along the way.
-    expect(results).toContain("guide:sellToRecyclers");
   });
 
   it("needs every word to match, in any order", () => {

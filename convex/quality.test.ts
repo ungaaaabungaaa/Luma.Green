@@ -173,3 +173,59 @@ describe("buyer-specific lot inspections", () => {
     ).rejects.toThrow(/CORRECTION_SCOPE_CHANGED/);
   });
 });
+
+it("reports correction and approval permissions without hiding superseded evidence", async () => {
+  const { t, inspector, owner, yardId, lotId } = await world();
+  const fields = {
+    lotId,
+    specificationReference: "Measured specification",
+    specificationVersion: "1",
+    sampleMethod: "Composite",
+    results: [{ parameter: "Moisture", unit: "%", value: "2" }],
+    decision: "accepted" as const,
+  };
+  const original = await inspector.mutation(
+    api.quality.recordInspection,
+    fields,
+  );
+  const correction = await inspector.mutation(api.quality.proposeCorrection, {
+    ...fields,
+    supersedesInspectionId: original,
+    reason: "Measurement correction",
+  });
+  const queried1 = await inspector.query(api.quality.forLot, { lotId });
+  expect(queried1.rows.find((row) => row.id === correction)).toMatchObject({
+    canApprove: false,
+    canCorrect: false,
+    isSuperseded: false,
+  });
+  const queried2 = await owner.query(api.quality.forLot, { lotId });
+  expect(queried2.rows.find((row) => row.id === correction)).toMatchObject({
+    canApprove: true,
+    canCorrect: false,
+  });
+  await owner.mutation(api.quality.approveCorrection, {
+    inspectionId: correction,
+  });
+  const { rows } = await owner.query(api.quality.forLot, { lotId });
+  expect(rows.find((row) => row.id === original)).toMatchObject({
+    canCorrect: false,
+    isSuperseded: true,
+  });
+  expect(rows.find((row) => row.id === correction)).toMatchObject({
+    canApprove: false,
+    canCorrect: true,
+  });
+  await t.run(async (ctx) => {
+    const membership = await ctx.db
+      .query("memberships")
+      .withIndex("by_org", (q) => q.eq("orgId", yardId))
+      .collect();
+    for (const row of membership)
+      await ctx.db.patch("memberships", row._id, { role: "viewer" });
+  });
+  const queried3 = await inspector.query(api.quality.forLot, { lotId });
+  expect(queried3.rows.every((row) => !row.canCorrect && !row.canApprove)).toBe(
+    true,
+  );
+});

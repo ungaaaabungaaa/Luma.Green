@@ -236,13 +236,19 @@ export const unregisterInstallation = mutation({
 });
 
 export const unregister = mutation({
-  args: { id: v.id("pushDevices") },
+  args: { id: v.id("pushDevices"), expectedSessionId: v.optional(v.string()) },
   returns: v.null(),
-  handler: async (ctx, { id }) => {
+  handler: async (ctx, { id, expectedSessionId }) => {
     const profile = await requireNotificationProfile(ctx);
     const device = await ctx.db.get("pushDevices", id);
     if (!device) return null;
     if (device.profileId !== profile._id) throw new ConvexError("NOT_FOUND");
+    // Late cleanup must not revoke a token rebound to another live session.
+    if (
+      expectedSessionId !== undefined &&
+      device.sessionId !== expectedSessionId
+    )
+      return null;
     await ctx.db.delete(id);
     await pushAudit(ctx, "push.revoked", "pushDevices", id, profile._id);
     return null;

@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Een schonere toekomst in beweging",
-    "description": "Luma.Green brengt de Indiase recyclingnetwerk samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, gewogen inzamelingen en een registratie van elke overdracht."
+    "description": "Luma.Green brengt de Indiase recyclingnetwerk samen op één platform: huishoudens, kabadiwala's, voorverwerkers, recyclers en fabrikanten, met eerlijke prijzen, gewogen inzamelingen en een registratie van elke overdracht."
   },
   "theme": {
     "label": "Weergave",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Handelen",
-      "summary": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+      "summary": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
     },
     "record": {
       "title": "Registreren",
@@ -76,7 +76,7 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green brengt de Indiase recyclingnetwerk samen op één platform: huishoudens, kabadiwala's, sorteerterreinen, recyclers en fabrikanten, met eerlijke prijzen, geverifieerde bedrijven en een bon bij elke stap.",
+    "metaDescription": "Luma.Green brengt de Indiase recyclingnetwerk samen op één platform: huishoudens, kabadiwala's, voorverwerkers, recyclers en fabrikanten, met eerlijke prijzen, geverifieerde bedrijven en een bon bij elke stap.",
     "hero": {
       "eyebrow": "We beginnen in Bengaluru",
       "title": "Geef uw materialen een nieuw begin.",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "De route van recyclebaar materiaal",
-      "intro": "Materialen gaan van huishoudens naar inzamelpunten, sorteerterreinen en recyclers voordat ze iets nieuws worden. Luma.Green registreert elke overdracht.",
+      "intro": "Materialen gaan van huishoudens naar inzamelpunten, voorverwerkers en recyclers voordat ze iets nieuws worden. Luma.Green registreert elke overdracht.",
       "steps": {
         "household": {
           "name": "Huishoudens",
@@ -107,7 +107,7 @@
           "body": "Kopen het, wegen het en sorteren het per materiaal."
         },
         "yard": {
-          "name": "Sorteerterreinen",
+          "name": "Voorverwerkers",
           "body": "Delen het in naar kwaliteit en persen het tot balen."
         },
         "recycler": {
@@ -119,7 +119,7 @@
           "body": "Maken nieuwe producten van gerecycled materiaal."
         }
       },
-      "money": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "money": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "saathi": "Saathi's helpen in de hele keten met inzameling, sortering en diensten."
     },
     "roles": {
@@ -136,19 +136,19 @@
         "title": "Kabadiwala's",
         "one": "Ophaalverzoeken van huishoudens in de buurt.",
         "two": "Bepaal uw eigen prijzen, nooit onder het minimum.",
-        "three": "Verkoop gesorteerde voorraad aan sorteerterreinen.",
+        "three": "Verkoop gesorteerde voorraad aan voorverwerkers.",
         "cta": "Aanmelden als kabadiwala"
       },
       "yard": {
-        "title": "Sorteerterreinen",
+        "title": "Voorverwerkers",
         "one": "Bekijk de voorraad van winkels in de buurt.",
         "two": "Koop in grote hoeveelheden en verkoop balen aan recyclers.",
-        "three": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
-        "cta": "Aanmelden als sorteerterrein"
+        "three": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
+        "cta": "Aanmelden als voorverwerker"
       },
       "recycler": {
         "title": "Recyclers",
-        "one": "Balen op kwaliteitsklasse van geverifieerde sorteerterreinen.",
+        "one": "Balen op kwaliteitsklasse van geverifieerde voorverwerkers.",
         "two": "Elk lot met zijn eigen overdrachtsketen.",
         "three": "Verkoop uw productie aan fabrieken.",
         "cta": "Aanmelden als recycler"
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Fabrikanten",
         "one": "Bekijk wat recyclers produceren.",
-        "two": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+        "two": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
         "three": "Registraties voor uw EPR-rapportages.",
         "cta": "Aanmelden als fabrikant"
       },
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "De Luma.Green-standaard",
-    "metaDescription": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+    "metaDescription": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
     "eyebrow": "Open standaard",
     "title": "De Luma.Green-standaard",
     "lead": "Eenvoudige, open regels voor eerlijke recyclebaar materiaalhandel: één code per materiaal, duidelijke kwaliteitsindeling, eerlijk wegen en een registratie bij elke overdracht. Iedereen in de sector kan ze gebruiken.",
@@ -394,13 +394,13 @@
       "nav": "Verificatie",
       "body": "Een persoon controleert elk bedrijf en elke Saathi voordat zij kunnen handelen.",
       "business": "Bedrijven: het GST-nummer indien aanwezig, foto's van de winkel of installatie en een telefoongesprek.",
-      "consent": "Sorteerterreinen, recyclers en fabrieken: een geldige vergunning van de milieuraad van de deelstaat.",
+      "consent": "Voorverwerkers, recyclers en fabrieken: een geldige vergunning van de milieuraad van de deelstaat.",
       "saathi": "Saathi's: een identiteitsbewijs met foto en een bijpassende selfie."
     },
     "escrow": {
       "title": "Wachten op betaalprovider",
       "nav": "Wachten op betaalprovider",
-      "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "steps": {
         "accepted": "De verkoper accepteert de bestelling",
         "paid": "Wachten op betaalprovider",
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "Hoe het werkt",
-    "metaDescription": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+    "metaDescription": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
     "title": "Hoe Luma.Green werkt",
-    "lead": "Materialen gaan van huishoudens naar inzamelpunten, sorteerterreinen en recyclers voordat ze iets nieuws worden. Luma.Green registreert elke overdracht.",
+    "lead": "Materialen gaan van huishoudens naar inzamelpunten, voorverwerkers en recyclers voordat ze iets nieuws worden. Luma.Green registreert elke overdracht.",
     "stepLabel": "Stap {number}",
     "sell": {
       "body": "Een huishouden kiest de materialen, bekijkt het aanbod van winkels in de buurt en boekt ophalen of inleveren. De kabadiwala weegt elk materiaal en betaalt contant of via UPI. Beiden krijgen een bon.",
@@ -563,7 +563,7 @@
       "point3": "Een volglink zonder account"
     },
     "trade": {
-      "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "point1": "Alleen geverifieerde bedrijven kunnen handelen",
       "point2": "Voorraad wordt verplaatst bij verzending en ontvangst",
       "point3": "Een genummerde transactiebon voor elke betaalde transactie"
@@ -577,20 +577,20 @@
   },
   "participants": {
     "metaTitle": "Voor wie het is",
-    "metaDescription": "Luma.Green is er voor huishoudens, kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's: iedereen die recyclebaar materiaal van huis naar fabriek brengt.",
+    "metaDescription": "Luma.Green is er voor huishoudens, kabadiwala's, voorverwerkers, recyclers, fabrikanten en Saathi's: iedereen die recyclebaar materiaal van huis naar fabriek brengt.",
     "title": "Voor wie Luma.Green is",
     "lead": "Iedereen die recyclebaar materiaal van huis naar fabriek brengt en de mensen die daartussen werken.",
     "kabadiwala": {
       "name": "Kabadiwala's",
-      "body": "Neem ophaalverzoeken van huishoudens aan, weeg en betaal eerlijk en verkoop gesorteerde voorraad aan sorteerterreinen."
+      "body": "Neem ophaalverzoeken van huishoudens aan, weeg en betaal eerlijk en verkoop gesorteerde voorraad aan voorverwerkers."
     },
     "yard": {
-      "name": "Sorteerterreinen",
-      "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+      "name": "Voorverwerkers",
+      "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
     },
     "recycler": {
       "name": "Recyclers",
-      "body": "Koop balen op kwaliteitsklasse van geverifieerde sorteerterreinen en verkoop vlokken, korrels en ingots aan fabrieken."
+      "body": "Koop balen op kwaliteitsklasse van geverifieerde voorverwerkers en verkoop vlokken, korrels en ingots aan fabrieken."
     },
     "manufacturer": {
       "name": "Fabrikanten",
@@ -601,20 +601,20 @@
       "body": "Doe betaalde inzamelingen, sorteerwerk en diensten dicht bij huis en bekijk uw verdiensten."
     },
     "householdHeading": "En elk huishouden",
-    "householdBody": "Iedereen kan zonder account recyclebaar materiaal vanuit huis verkopen: kies de materialen, bekijk winkelaanbiedingen en ontvang contant geld of UPI met een bon."
+    "householdBody": "Boek een ophaling thuis met je mobiele nummer: kies de materialen, vergelijk aanbiedingen van inzamelbedrijven en ontvang van het bedrijf contant geld of een UPI-betaling met een ontvangstbewijs."
   },
   "contact": {
     "metaTitle": "Contact",
     "metaDescription": "Neem contact op met het Luma.Green-team over deelname aan de pilot in Bengaluru.",
     "title": "Neem contact op",
-    "lead": "We beginnen in Bengaluru met een kleine groep kabadiwala's, sorteerterreinen, recyclers en fabrieken. Vertel wie u bent, wat u verhandelt en ongeveer hoeveel materiaal u per maand verwerkt.",
+    "lead": "We beginnen in Bengaluru met een kleine groep kabadiwala's, voorverwerkers, recyclers en fabrieken. Vertel wie u bent, wat u verhandelt en ongeveer hoeveel materiaal u per maand verwerkt.",
     "emailHeading": "Vroege toegang en algemene vragen",
     "securityHeading": "Beveiligingsmeldingen",
     "securityBody": "Een kwetsbaarheid gevonden? Meld deze privé in plaats van openbaar."
   },
   "help": {
     "metaTitle": "Hulpcentrum",
-    "metaDescription": "Eenvoudige gidsen, antwoorden en training voor huishoudens, kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's op Luma.Green.",
+    "metaDescription": "Eenvoudige gidsen, antwoorden en training voor huishoudens, kabadiwala's, voorverwerkers, recyclers, fabrikanten en Saathi's op Luma.Green.",
     "eyebrow": "Hulpcentrum",
     "title": "Hoe kunnen we helpen?",
     "lead": "Korte gidsen, duidelijke antwoorden en snelle training voor iedereen op Luma.Green.",
@@ -659,25 +659,25 @@
         "name": "Huishoudens",
         "who": "Recyclebaar materiaal vanuit huis verkopen",
         "title": "Hulp voor huishoudens",
-        "lead": "Boek een inzameling, laat eerlijk wegen en ontvang geld aan de deur. Geen account nodig."
+        "lead": "Boek een ophaling, bevestig je mobiele nummer en ontvang je betaling na het wegen."
       },
       "kabadiwala": {
         "name": "Kabadiwala's",
         "who": "Een inzamelpunt beheren",
         "title": "Hulp voor kabadiwala's",
-        "lead": "Neem inzamelingen aan, weeg en betaal in een minuut, stel prijzen in en verkoop aan sorteerterreinen."
+        "lead": "Neem inzamelingen aan, weeg en betaal in een minuut, stel prijzen in en verkoop aan voorverwerkers."
       },
       "yard": {
-        "name": "Sorteerterreinen",
+        "name": "Voorverwerkers",
         "who": "Kopen van kabadiwala's en verder sorteren",
-        "title": "Hulp voor sorteerterreinen",
-        "lead": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+        "title": "Hulp voor voorverwerkers",
+        "lead": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
       },
       "recycler": {
         "name": "Recyclers",
         "who": "Recyclebaar materiaal omzetten in grondstoffen",
         "title": "Hulp voor recyclers",
-        "lead": "Koop ingedeeld recyclebaar materiaal van sorteerterreinen, verkoop productie aan fabrieken en houd EPR-registraties op orde."
+        "lead": "Koop ingedeeld recyclebaar materiaal van voorverwerkers, verkoop productie aan fabrieken en houd EPR-registraties op orde."
       },
       "manufacturer": {
         "name": "Fabrikanten",
@@ -752,7 +752,7 @@
       "roles": {
         "household": "Een huishouden",
         "kabadiwala": "Een kabadiwala",
-        "yard": "Een sorteerterrein",
+        "yard": "Een voorverwerker",
         "recycler": "Een recycler",
         "manufacturer": "Een fabrikant",
         "saathi": "Een Saathi",
@@ -853,7 +853,7 @@
         "steps": {
           "start": {
             "title": "Begin op luma.green/join",
-            "body": "Log in met uw mobiele nummer en kies Sorteerterrein, Recycler of Fabrikant."
+            "body": "Log in met uw mobiele nummer en kies Voorverwerker, Recycler of Fabrikant."
           },
           "details": {
             "title": "Voeg uw bedrijfsgegevens toe",
@@ -879,7 +879,7 @@
       },
       "escrow": {
         "title": "Wachten op betaalprovider",
-        "summary": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+        "summary": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
         "steps": {
           "request": {
             "title": "De koper stuurt een verzoek",
@@ -891,7 +891,7 @@
           },
           "pay": {
             "title": "Wachten op betaalprovider",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           },
           "dispatch": {
             "title": "De verkoper verstuurt de lading",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "De koper bevestigt de levering",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Bevestig geen onvolledige lading",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           },
           "report": {
             "title": "Meld het met foto's",
@@ -975,7 +975,7 @@
       },
       "firstPickup": {
         "title": "Boek uw eerste inzameling",
-        "summary": "Van foto tot geboekte inzameling in ongeveer twee minuten. Geen account nodig.",
+        "summary": "Kies materialen, vergelijk inzamelbedrijven en verifieer je mobiele nummer om een ophaling te boeken.",
         "steps": {
           "photo": {
             "title": "Maak een foto van uw recyclebare materiaal",
@@ -1244,8 +1244,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Demogids: sorteer uw voorraad en verkoop aan terreinen",
-        "summary": "Van veel kleine inzamelingen naar een lading voor een sorteerterrein.",
+        "title": "Demogids: sorteer uw voorraad en verkoop aan voorverwerkers",
+        "summary": "Van veel kleine inzamelingen naar een lading voor een voorverwerker.",
         "steps": {
           "grows": {
             "title": "Uw voorraad wordt vanzelf aangevuld",
@@ -1256,12 +1256,12 @@
             "body": "Splits gemengd recyclebaar materiaal op in de echte materialen. Bijvoorbeeld gemengd papier in kranten, karton en afval."
           },
           "show": {
-            "title": "Toon uw voorraad aan sorteerterreinen",
-            "body": "Zet Tonen aan sorteerterreinen aan zodat terreinen in de buurt uw voorraad zien."
+            "title": "Toon uw voorraad aan voorverwerkers",
+            "body": "Zet Tonen aan voorverwerkers aan zodat voorverwerkers in de buurt uw voorraad zien."
           },
           "sell": {
-            "title": "Accepteer een verzoek van een terrein",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "title": "Accepteer een verzoek van een voorverwerker",
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           }
         }
       },
@@ -1301,7 +1301,7 @@
           },
           "pay": {
             "title": "Wachten op betaalprovider",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           },
           "collect": {
             "title": "Ophalen en wegen",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Accepteer en wacht op betaling",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           },
           "dispatch": {
             "title": "Verstuur de lading",
@@ -1335,17 +1335,17 @@
           },
           "paid": {
             "title": "Krijg betaald",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           }
         }
       },
       "buyFromYards": {
-        "title": "Demogids: koop gesorteerd recyclebaar materiaal van terreinen",
+        "title": "Demogids: koop gesorteerd recyclebaar materiaal van voorverwerkers",
         "summary": "Een regelmatige, ingedeelde toevoer voor uw productielijn.",
         "steps": {
           "browse": {
             "title": "Vind balen in de buurt",
-            "body": "Open Kopen voor aanbiedingen van terreinen per materiaal en afstand."
+            "body": "Open Kopen voor aanbiedingen van voorverwerkers per materiaal en afstand."
           },
           "request": {
             "title": "Vraag een lading aan",
@@ -1353,7 +1353,7 @@
           },
           "pay": {
             "title": "Wachten op betaalprovider",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           },
           "confirm": {
             "title": "Wegen, controleren, bevestigen",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Laden na betaling",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           },
           "paid": {
             "title": "Betaald bij levering",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           }
         }
       },
@@ -1397,7 +1397,7 @@
           },
           "pay": {
             "title": "Wachten op betaalprovider",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           },
           "receive": {
             "title": "Ontvang de lading",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Bevestig of meld een probleem",
-            "body": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+            "body": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
           }
         }
       },
@@ -1614,8 +1614,8 @@
         "a": "Nee. U betaalt contant of via UPI aan de deur. De app registreert hoeveel en hoe."
       },
       "paidByYard": {
-        "q": "Hoe word ik betaald als ik aan een sorteerterrein verkoop?",
-        "a": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+        "q": "Hoe word ik betaald als ik aan een voorverwerker verkoop?",
+        "a": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
       },
       "whoSeesShop": {
         "q": "Wie kan mijn winkel zien?",
@@ -1643,7 +1643,7 @@
       },
       "whatIsEscrow": {
         "q": "Wachten op betaalprovider",
-        "a": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+        "a": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
       },
       "whenSellerPaid": {
         "q": "Wanneer wordt de verkoper betaald?",
@@ -1666,8 +1666,8 @@
         "a": "Houd uw CPCB-registratie als Plastic Waste Processor klaar. Merken vragen ernaar en deze laat u EPR-certificaten uitgeven."
       },
       "buyFromAnyYard": {
-        "q": "Kan ik van meerdere sorteerterreinen kopen?",
-        "a": "Ja. Koop zo vaak u wilt van elk geverifieerd terrein dat aanbiedt wat u nodig heeft."
+        "q": "Kan ik van meerdere voorverwerkers kopen?",
+        "a": "Ja. Koop zo vaak u wilt van elk geverifieerd voorverwerker dat aanbiedt wat u nodig heeft."
       },
       "eprRecords": {
         "q": "Helpen Luma.Green-registraties met EPR?",
@@ -1740,7 +1740,7 @@
       "buyingFromKabadiwalas": "Kopen van kabadiwala's",
       "listingBales": "Balen aanbieden aan recyclers",
       "escrowExplained": "Wachten op betaalprovider",
-      "buyingFromYards": "Kopen van sorteerterreinen",
+      "buyingFromYards": "Kopen van voorverwerkers",
       "sellingOutput": "Uw productie verkopen",
       "eprPlainWords": "EPR in gewone taal",
       "firstOrder": "Uw eerste bestelling plaatsen",
@@ -1799,10 +1799,10 @@
         "p3": "Betaal altijd voordat u weggaat."
       },
       "sellingToYards": {
-        "title": "Demo: verkopen aan sorteerterreinen",
+        "title": "Demo: verkopen aan voorverwerkers",
         "p1": "Registreer uw sorteerwerk voor een juiste voorraad.",
-        "p2": "Toon uw voorraad aan terreinen in de buurt.",
-        "p3": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+        "p2": "Toon uw voorraad aan voorverwerkers in de buurt.",
+        "p3": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
       },
       "buyingStock": {
         "title": "Voorraad kopen",
@@ -1812,7 +1812,7 @@
       },
       "tradingWithEscrow": {
         "title": "Wachten op betaalprovider",
-        "p1": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+        "p1": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
         "p2": "De verkoper laadt pas als het geld er staat.",
         "p3": "Bevestiging van de levering geeft het geld vrij."
       },
@@ -1830,8 +1830,8 @@
       },
       "buyingInputs": {
         "title": "Demo: uw grondstoffen kopen",
-        "p1": "Vind balen op kwaliteitsklasse van sorteerterreinen onder Kopen.",
-        "p2": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+        "p1": "Vind balen op kwaliteitsklasse van voorverwerkers onder Kopen.",
+        "p2": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
         "p3": "Controleer de kwaliteitsklasse voordat u bevestigt."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: gerecycled materiaal bestellen",
         "p1": "Vergelijk aanbiedingen op type, kilo's en prijs.",
         "p2": "Bestel de kilo's die u nodig heeft.",
-        "p3": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+        "p3": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
       },
       "checkingDeliveries": {
         "title": "Leveringen controleren",
@@ -1885,14 +1885,14 @@
     "chooseLanguageHint": "U kunt deze altijd bovenaan het scherm wijzigen.",
     "continue": "Doorgaan",
     "title": "Log in met uw mobiele nummer",
-    "lead": "Voor kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's.",
+    "lead": "Voor kabadiwala's, voorverwerkers, recyclers, fabrikanten en Saathi's.",
     "mobileLabel": "Mobiel nummer",
     "mobileHint": "We sturen een code van 6 cijfers naar dit nummer.",
     "mobileInvalid": "Voer een Indiaas mobiel nummer van 10 cijfers in.",
     "sendCode": "Code sturen",
     "sending": "Versturen…",
     "sendFailed": "We konden de code niet sturen. Probeer het over een minuut opnieuw.",
-    "homeTitle": "Recyclen vanuit huis? U hebt geen account nodig.",
+    "homeTitle": "Recyclen vanuit huis?",
     "homeLink": "Bekijk hoe het werkt",
     "privacy": "We gebruiken uw nummer alleen om in te loggen en updates over uw werk op Luma.Green te sturen.",
     "unavailableTitle": "Inloggen via telefoon komt binnenkort",
@@ -1929,7 +1929,7 @@
   },
   "join": {
     "metaTitle": "Aanmelden bij Luma.Green",
-    "metaDescription": "Kabadiwala's, sorteerterreinen, recyclers, fabrikanten en Saathi's in Bengaluru: meld u aan bij Luma.Green. Een persoon beoordeelt elke aanvraag, meestal binnen 12–24 uur.",
+    "metaDescription": "Kabadiwala's, voorverwerkers, recyclers, fabrikanten en Saathi's in Bengaluru: meld u aan bij Luma.Green. Een persoon beoordeelt elke aanvraag, meestal binnen 12–24 uur.",
     "title": "Aanmelden bij Luma.Green",
     "lead": "Vertel wat u doet. Een persoon beoordeelt elke aanvraag, meestal binnen 12–24 uur.",
     "start": "Beginnen",
@@ -1944,7 +1944,7 @@
         "needs": "Het adres en de openingstijden van uw winkel. Uw GST-nummer indien aanwezig."
       },
       "yard": {
-        "title": "Sorteerterrein",
+        "title": "Voorverwerker",
         "body": "U sorteert en perst grote hoeveelheden recyclebaar materiaal tot balen en verkoopt deze door.",
         "needs": "Uw GST-nummer indien aanwezig, milieuvergunning als PDF en foto's van uw machines."
       },
@@ -2043,7 +2043,7 @@
     },
     "business": {
       "titles": {
-        "yard": "Uw sorteerterrein",
+        "yard": "Uw voorverwerkingsbedrijf",
         "recycler": "Uw recyclinginstallatie",
         "manufacturer": "Uw fabriek"
       },
@@ -2233,7 +2233,7 @@
     },
     "roles": {
       "kabadiwala": "Kabadiwala",
-      "yard": "Sorteerterrein",
+      "yard": "Voorverwerker",
       "recycler": "Recycler",
       "manufacturer": "Fabrikant",
       "saathi": "Saathi"
@@ -2261,7 +2261,7 @@
       "title": "Open klussen",
       "lead": "Klussen in uw gebied komen eerst.",
       "empty": "Nu geen open klussen",
-      "emptyBody": "Nieuwe klussen van winkels, sorteerterreinen en fabrieken verschijnen hier."
+      "emptyBody": "Nieuwe klussen van winkels, voorverwerkers en fabrieken verschijnen hier."
     },
     "work": {
       "home_pickups": "Ophalen bij huishoudens",
@@ -2376,7 +2376,8 @@
       "emptyBody": "Neem een klus aan op uw startscherm. Na het markeren als klaar verschijnt de beloning hier.",
       "findJob": "Een klus zoeken",
       "demoNote": "Voorbeeldgegevens: de klussen en beloningen zijn voorbeelden voor het prototype."
-    }
+    },
+    "factorUnavailable": "CO₂e-schatting niet beschikbaar. Emissiefactoren zijn niet ingesteld."
   },
   "compliance": {
     "title": "Naleving",
@@ -2454,7 +2455,7 @@
       "view": "Bon {number} bekijken",
       "unknown": "Een bedrijf dat niet meer op Luma.Green staat",
       "empty": "Nog geen bonnen",
-      "emptyBody": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+      "emptyBody": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
     },
     "epr": {
       "title": "EPR-registratie, boekjaar {from}–{to}",
@@ -2484,7 +2485,7 @@
     },
     "saathi": {
       "title": "Voor bedrijven",
-      "body": "Naleving is voor winkels, sorteerterreinen, recyclers en fabrieken. Uw klussen en beloning staan op het startscherm.",
+      "body": "Naleving is voor winkels, voorverwerkers, recyclers en fabrieken. Uw klussen en beloning staan op het startscherm.",
       "home": "Naar mijn klussen"
     }
   },
@@ -2496,7 +2497,7 @@
     "lead": "Kies wat u heeft en een winkel in de buurt. U wordt na het wegen contant of via UPI betaald.",
     "promises": {
       "label": "Waarom hier verkopen",
-      "noAccount": "Geen account nodig",
+      "noAccount": "Verifieer je mobiel om te boeken",
       "payAtDoor": "Betaald na het wegen",
       "verified": "Geverifieerde winkels"
     },
@@ -2804,7 +2805,7 @@
     "perKg": "{price}/kg",
     "recycled": "Gerecycled",
     "forBusinessesTitle": "Dit scherm is voor bedrijven",
-    "forBusinessesBody": "Kabadiwala's, sorteerterreinen, recyclers en fabrikanten handelen hier.",
+    "forBusinessesBody": "Kabadiwala's, voorverwerkers, recyclers en fabrikanten handelen hier.",
     "units": {
       "kg": "kg",
       "rupee": "₹"
@@ -2841,30 +2842,30 @@
       "kgTooMuch": "Er is maar {weight} beschikbaar.",
       "total": "Totaal",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "escrow": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "ewayBill": "Boven ₹50.000: een e-waybill moet met deze lading meegaan.",
       "cancel": "Annuleren",
       "submit": "Verzoek sturen",
       "sending": "Versturen…",
       "sent": "Verzoek verstuurd naar {seller}",
-      "sentNext": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "sentNext": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "seeTrades": "Transacties bekijken"
     },
     "browse": {
       "title": "Kopen",
-      "lead": "{kind, select, yard {Gesorteerd recyclebaar materiaal van kabadiwala's in de buurt.} recycler {Gesorteerd materiaal in balen van sorteerterreinen.} manufacturer {Gerecycled materiaal van geverifieerde recyclers.} other {Materiaal te koop in de buurt.}}",
+      "lead": "Bekijk aanbiedingen van goedgekeurde leveranciers voor de materialen die u verwerkt.",
       "filterLabel": "Filteren op materiaal",
       "all": "Alles",
       "count": "{count, plural, =0 {Geen loten} one {# lot te koop} other {# loten te koop}}",
       "emptyTitle": "Nu niets te koop",
       "emptyBody": "Nieuwe loten verschijnen hier zodra ze worden aangeboden.",
       "notForYouTitle": "Kabadiwala's kopen van huishoudens",
-      "notForYouBody": "Op de markt verkoopt u: bied gesorteerde voorraad aan sorteerterreinen aan.",
-      "goSell": "Verkopen aan sorteerterreinen"
+      "notForYouBody": "Op de markt verkoopt u: bied gesorteerde voorraad aan voorverwerkers aan.",
+      "goSell": "Verkopen aan voorverwerkers"
     },
     "sell": {
       "title": "Verkopen",
-      "lead": "{buyer, select, yard {Bied uw gesorteerde voorraad aan sorteerterreinen aan.} recycler {Bied uw balen aan recyclers aan.} manufacturer {Bied uw materiaal aan fabrikanten aan.} other {Bied uw voorraad aan kopers aan.}}",
+      "lead": "{buyer, select, yard {Bied uw gesorteerde voorraad aan voorverwerkers aan.} recycler {Bied uw balen aan recyclers aan.} manufacturer {Bied uw materiaal aan fabrikanten aan.} other {Bied uw voorraad aan kopers aan.}}",
       "notForYouTitle": "Fabrikanten kopen op Luma.Green",
       "notForYouBody": "Vind gerecycled materiaal van geverifieerde recyclers.",
       "goBuy": "Materiaal kopen",
@@ -2888,7 +2889,7 @@
         "value": "Lotwaarde",
         "submit": "Te koop aanbieden",
         "submitting": "Aanbieden…",
-        "listed": "Te koop. {buyer, select, yard {Sorteerterreinen} recycler {Recyclers} manufacturer {Fabrikanten} other {Kopers}} kunnen het nu zien.",
+        "listed": "Te koop. {buyer, select, yard {Voorverwerkers} recycler {Recyclers} manufacturer {Fabrikanten} other {Kopers}} kunnen het nu zien.",
         "nothingTitle": "Nog niets te verkopen",
         "nothingBody": "Geregistreerde voorraad verschijnt hier. Wat al is aangeboden of verkocht, telt niet dubbel.",
         "goStock": "Naar voorraad",
@@ -2920,7 +2921,7 @@
     },
     "trades": {
       "title": "Transacties",
-      "lead": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "lead": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "buying": "Inkopen",
       "selling": "Verkopen",
       "tabsLabel": "Inkopen of verkopen",
@@ -2936,7 +2937,7 @@
         "from": "Van {name} · {area}",
         "to": "Aan {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+        "inEscrow": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
         "ewayBill": "Boven ₹50.000: een e-waybill moet met deze lading meegaan.",
         "updated": "Bijgewerkt {when}",
         "receipt": "Bon {number}",
@@ -2964,8 +2965,8 @@
           "seller": "{name} wil dit kopen. Accepteer om het te reserveren."
         },
         "accepted": {
-          "buyer": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
-          "seller": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar."
+          "buyer": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
+          "seller": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus."
         },
         "paid_to_escrow": {
           "buyer": "Prototyperecord. Betaling en levering zijn niet geverifieerd.",
@@ -3002,7 +3003,7 @@
       "declineConfirm": "Deze bestelling van {name} afwijzen? Dit kan niet worden teruggedraaid.",
       "declineYes": "Ja, afwijzen",
       "declineNo": "Behouden",
-      "gatewayPending": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "gatewayPending": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "legacyUnverified": "Prototyperecord. Betaling en levering zijn niet geverifieerd."
     },
     "receipt": {
@@ -3032,20 +3033,20 @@
       "missingTitle": "Bon niet gevonden",
       "missingBody": "Deze transactie is niet van u of de link klopt niet.",
       "pendingTitle": "Nog geen bon",
-      "pendingBody": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+      "pendingBody": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
       "declinedBody": "Deze transactie is afgewezen, dus er is geen bon.",
       "unverified": "Niet geverifieerd"
     },
     "home": {
       "greeting": "Namasté, {name}",
-      "lead": "{kind, select, yard {Koop van kabadiwala's en verkoop gesorteerde balen aan recyclers.} recycler {Koop gesorteerd recyclebaar materiaal van terreinen en verkoop gerecycled materiaal aan fabrikanten.} manufacturer {Koop gerecycled materiaal van geverifieerde recyclers.} other {Uw transacties in één oogopslag.}}",
+      "lead": "Beheer uw materiaalaankopen, verkopen en bestellingen.",
       "buy": "Kopen",
       "sell": "Verkopen",
       "trades": "Transacties",
       "statsTitle": "In één oogopslag",
       "stats": {
         "escrow": "Niet geverifieerd",
-        "escrowHint": "Een betaalprovider is vereist. Afrekenen is nog niet beschikbaar.",
+        "escrowHint": "Zakelijke betalingen lopen via de betaalprovider. Bekijk de bestelling voor de huidige betaalstatus.",
         "waiting": "Wacht op u",
         "waitingHint": "{count, plural, =0 {Alles bijgewerkt} one {# transactie vraagt een stap} other {# transacties vragen een stap}}",
         "listings": "Te koop",
@@ -3054,15 +3055,15 @@
         "offersHint": "Te koop bij recyclers",
         "completed": "Deze maand klaar",
         "completedHint": "{amount} verhandeld",
-        "gatewayPending": "Wachten op betaalprovider"
+        "gatewayPending": "Geaccepteerde bestellingen"
       },
       "waitingTitle": "Wacht op u",
       "allTrades": "Alle transacties",
       "caughtUpTitle": "Nu geen actie nodig",
       "caughtUpBody": "Nieuwe bestellingen, betalingen en leveringen verschijnen hier.",
       "offersTitle": "Nieuwste loten voor u",
-      "recycledTitle": "Gerecycled materiaal voor u",
-      "recycledBody": "Vlokken, korrels, kraftpapier en ingots van geverifieerde recyclers, klaar voor uw productie.",
+      "recycledTitle": "Materiaalaanbiedingen voor u",
+      "recycledBody": "Bekijk goedgekeurde leveranciers. Gerecyclede materialen verschijnen eerst.",
       "seeAll": "Alles bekijken",
       "noOffersTitle": "Nu geen loten te koop",
       "noOffersBody": "Nieuwe loten verschijnen hier zodra ze worden aangeboden."
@@ -3145,8 +3146,8 @@
       "you": "U betaalt",
       "market": "Markt",
       "quickLinks": "Snelkoppelingen",
-      "sell": "Verkopen aan een sorteerterrein",
-      "sellHint": "Bied uw voorraad aan terreinen in de buurt aan",
+      "sell": "Verkopen aan een voorverwerker",
+      "sellHint": "Bied uw voorraad aan voorverwerkers in de buurt aan",
       "prices": "Mijn prijzen",
       "pricesHint": "Wat u huishoudens per kg betaalt"
     },
@@ -3251,7 +3252,7 @@
       "atPrice": "Markt {price}/kg",
       "noPrice": "Vandaag geen marktprijs",
       "sellTo": {
-        "yard": "Verkopen aan een sorteerterrein",
+        "yard": "Verkopen aan een voorverwerker",
         "recycler": "Verkopen aan een recycler",
         "manufacturer": "Verkopen aan een fabrikant"
       },
@@ -3260,7 +3261,7 @@
       "emptyBusiness": "Koop op de markt, dan verschijnt het hier.",
       "buy": "Materiaal kopen",
       "notBusinessTitle": "Alleen voor bedrijven",
-      "notBusinessBody": "Winkels, sorteerterreinen, recyclers en fabrieken houden voorraad bij."
+      "notBusinessBody": "Winkels, voorverwerkers, recyclers en fabrieken houden voorraad bij."
     },
     "prices": {
       "title": "Mijn prijzen",
@@ -3348,7 +3349,7 @@
           "third": "Beheer gesorteerde voorraad"
         },
         "yard": {
-          "title": "Uw sorteerterrein",
+          "title": "Uw voorverwerkingsomgeving",
           "first": "Ontvang materialen",
           "second": "Sorteer uw voorraad",
           "third": "Bereid uitgaande loten voor"
@@ -3507,5 +3508,617 @@
       "resort": "Vakantieoord",
       "other": "Andere locatie"
     }
+  },
+  "emailAuth": {
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "signin": "Inloggen",
+    "signup": "Account maken",
+    "forgot": "Wachtwoord herstellen",
+    "name": "Uw naam",
+    "password": "Wachtwoord",
+    "show": "Wachtwoord tonen",
+    "hide": "Wachtwoord verbergen",
+    "passwordHint": "Gebruik 12–128 tekens.",
+    "unavailable": "E-mail verzenden is niet beschikbaar. Bestaande accounts kunnen inloggen.",
+    "sent": "Controleer uw inbox. Als het account in aanmerking komt, ontvangt u een link die 15 minuten geldig is.",
+    "resend": "Verificatie opnieuw sturen",
+    "limited": "Te veel pogingen. Probeer het later.",
+    "unverified": "Verifieer uw e-mail voordat u inlogt.",
+    "credentials": "Controleer uw e-mail en wachtwoord.",
+    "invalidLink": "Deze link is ongeldig of verlopen. Vraag een nieuwe aan.",
+    "failed": "Het verzoek is mislukt. Probeer opnieuw.",
+    "reset": "Nieuw wachtwoord",
+    "verify": "E-mail verifiëren",
+    "done": "Voltooid. Log in om door te gaan.",
+    "confirm": "Herhaal wachtwoord",
+    "mismatch": "De wachtwoorden komen niet overeen.",
+    "securityHint": "Voeg na uw wachtwoord een authenticatiecode toe. Wachtwoordherstel behoudt deze bescherming.",
+    "backupHint": "Elke herstelcode werkt één keer na uw wachtwoord.",
+    "disableHint": "Inloggen met een wachtwoord blijft actief. Authenticatie- en herstelcodes werken niet meer."
+  },
+  "workspace": {
+    "title": "Werkruimten en team",
+    "choose": "Werkruimte kiezen",
+    "team": "Teamleden",
+    "role": "Rol",
+    "owner": "Eigenaar",
+    "admin": "Beheerder",
+    "member": "Lid",
+    "viewer": "Lezer",
+    "invite": "Uitnodiging sturen",
+    "email": "E-mailadres",
+    "pending": "Openstaande uitnodigingen",
+    "revoke": "Intrekken",
+    "remove": "Verwijderen",
+    "empty": "Geen werkruimte beschikbaar.",
+    "error": "Bijwerken mislukt. Controleer je toegang en probeer opnieuw.",
+    "inviteTitle": "Uitnodiging voor werkruimte",
+    "accept": "Uitnodiging accepteren",
+    "verifyEmail": "Verifieer het uitgenodigde e-mailadres voordat je accepteert.",
+    "unavailable": "Deze uitnodiging is niet beschikbaar. Controleer je e-mail of vraag een nieuwe aan.",
+    "join": "Word lid van {name} als {role}.",
+    "readOnly": "Alleen leestoegang",
+    "confirmRemove": "Deze persoon uit de werkruimte verwijderen?",
+    "lastOwner": "Behoud minimaal één eigenaar. Voeg vóór deze wijziging een andere toe.",
+    "deliveryPending": "E-mail in afwachting",
+    "deliveryAccepted": "E-maildienst heeft geaccepteerd",
+    "deliveryFailed": "E-mailbezorging niet bevestigd",
+    "expires": "Verloopt op {date}",
+    "emailBody": "Je bent uitgenodigd voor {name}. Open de link binnen zeven dagen en meld je aan met dit geverifieerde e-mailadres. De uitnodiging werkt eenmaal.",
+    "switchAccount": "Account wisselen",
+    "switchHint": "Log uit om in te loggen of je te registreren met het e-mailadres waarop je de uitnodiging hebt ontvangen.",
+    "invitationLimit": "De uitnodigingslimiet is bereikt. Wacht voordat u nog een uitnodiging verstuurt."
+  },
+  "lots": {
+    "title": "Partijen en kwaliteit",
+    "lead": "Leg gemeten materiaal, verwerking en fysieke overdrachten vast.",
+    "evidenceNote": "Deze registraties beschrijven fysiek bewijs. Ze wijzigen geen voorraad, betaling, juridisch eigendom of certificaten.",
+    "notBusiness": "Selecteer een actieve bedrijfswerkruimte om partijregistraties te gebruiken.",
+    "readOnly": "Uw werkruimterol mag deze registraties lezen.",
+    "held": "Partijen in beheer",
+    "incoming": "Inkomende partijen",
+    "sent": "Overdrachtsgeschiedenis",
+    "empty": "Nog geen registraties.",
+    "limit": "Alleen de eerste 100 registraties worden getoond.",
+    "declare": "Partij aanmelden",
+    "detail": "Partijdetails",
+    "back": "Alle partijen",
+    "material": "Materiaalcode of naam",
+    "state": "Fysieke toestand",
+    "mass": "Massa (g)",
+    "grams": "{value} g",
+    "integerHint": "Voer hele grammen in, zonder decimalen of scheidingstekens voor duizendtallen.",
+    "sourceReference": "Bronverwijzing (optioneel)",
+    "source": "Bron",
+    "selfDeclared": "Zelf aangegeven",
+    "transformed": "Uit een omzetting",
+    "initial": "Beginmassa",
+    "remaining": "Resterende massa",
+    "available": "Beschikbaar",
+    "in_transit": "Onderweg",
+    "exhausted": "Opgebruikt",
+    "save": "Registratie opslaan",
+    "saving": "Opslaan…",
+    "saved": "Registratie opgeslagen.",
+    "cancel": "Annuleren",
+    "close": "Sluiten",
+    "required": "Vul elk verplicht veld in.",
+    "invalidInput": "Controleer de waarden. Gebruik hele grammen en vul alle verplichte velden in.",
+    "genericError": "Opslaan is mislukt. Uw waarden blijven staan. Probeer opnieuw.",
+    "accessChanged": "Deze partij of uw toegang tot de werkruimte is gewijzigd. Laad de lijst opnieuw.",
+    "balanceError": "De invoermassa moet gelijk zijn aan de som van uitgangen, verontreiniging en procesverlies.",
+    "weightDispute": "De ontvangen massa wijkt af van de verzonden massa. De ontvangst is niet geregistreerd. Controleer de meting met de afzender.",
+    "approvalError": "Een andere eigenaar moet deze correctie goedkeuren terwijl uw bedrijf de partij beheert.",
+    "transform": "Omzetting registreren",
+    "inputMass": "Invoermassa (g)",
+    "contamination": "Verontreiniging (g)",
+    "processLoss": "Procesverlies (g)",
+    "outputs": "Uitgaande partijen",
+    "outputNumber": "Uitgang {number}",
+    "addOutput": "Uitgang toevoegen",
+    "remove": "Verwijderen",
+    "balance": "Verantwoorde massa: {value}",
+    "transformHint": "Registreer elke uitgang en elk verlies. De invoermassa wordt van deze partij afgetrokken en maakt gekoppelde uitgaande partijen.",
+    "dispatch": "Partij verzenden",
+    "dispatchHint": "De hele resterende partij gaat naar het gekozen bedrijf. Controleer de ontvanger vóór het opslaan.",
+    "receiver": "Ontvanger",
+    "city": "Stad",
+    "businessKind": "Bedrijfstype",
+    "chooseBusiness": "Bedrijf kiezen",
+    "searchBusinesses": "Bedrijven zoeken",
+    "directoryNote": "De lijst toont actieve bedrijven. Ze bevestigt niet hun verwerkingscapaciteit.",
+    "directoryEmpty": "Geen passend bedrijf. Controleer stad en bedrijfstype.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Voorverwerker",
+    "recycler": "Recycler",
+    "manufacturer": "Fabrikant",
+    "receive": "Partij ontvangen",
+    "receivedMass": "Ontvangen massa (g)",
+    "receiveHint": "Meet de ontvangen partij. Een afwijkend gewicht kan niet via dit formulier worden aanvaard.",
+    "pendingNote": "U ziet alleen deze verzending. De volledige partijgeschiedenis is na ontvangst beschikbaar.",
+    "custody": "Beheergeschiedenis",
+    "dispatched": "Verzonden",
+    "received": "Ontvangen",
+    "handoff": "{from} → {to}",
+    "from": "Van {name}",
+    "to": "Naar {name}",
+    "transformations": "Omzettingen",
+    "inspection": "Inspectie registreren",
+    "inspections": "Inspectiebewijs",
+    "inspectionNote": "Leg de werkelijke specificatie, bemonsteringsmethode en meetresultaten vast. Een besluit geldt alleen voor deze inspectie; het is geen platformclassificatie of certificaat.",
+    "specification": "Specificatiereferentie",
+    "version": "Specificatieversie",
+    "sampleMethod": "Bemonsteringsmethode",
+    "buyer": "Kopersbereik (optioneel)",
+    "addBuyer": "Koper opgeven",
+    "noBuyer": "Geen koper opgegeven",
+    "results": "Meetresultaten",
+    "resultNumber": "Resultaat {number}",
+    "parameter": "Meetparameter",
+    "unit": "Eenheid",
+    "value": "Meetwaarde",
+    "addResult": "Resultaat toevoegen",
+    "decision": "Inspectiebesluit",
+    "accepted": "Aanvaard",
+    "rejected": "Afgewezen",
+    "conditional": "Voorwaardelijk",
+    "evidenceReference": "Bewijsreferentie (optioneel)",
+    "correct": "Correctie voorstellen",
+    "correctionHint": "Het origineel blijft zichtbaar. Kopersbereik en specificatie kunnen niet wijzigen. Een andere eigenaar moet de correctie goedkeuren.",
+    "reason": "Reden voor correctie",
+    "approve": "Correctie goedkeuren",
+    "pendingApproval": "Wacht op aparte goedkeuring",
+    "approved": "Correctie goedgekeurd",
+    "superseded": "Vervangen door een goedgekeurde correctie",
+    "original": "Oorspronkelijke inspectie",
+    "previousResult": "Vorige inspectie",
+    "recordedBy": "Inspecterend bedrijf: {name}",
+    "loadError": "Registraties konden niet laden. Probeer opnieuw.",
+    "retry": "Opnieuw proberen",
+    "streamClass": "Uitgaande stroom",
+    "handlingClass": "Behandelingsklasse",
+    "streams": {
+      "main_product": "Hoofdproduct",
+      "saleable_byproduct": "Verkoopbaar bijproduct",
+      "recoverable_waste": "Terugwinbaar afval",
+      "residual_waste": "Restafval",
+      "unspecified": "Niet opgegeven"
+    },
+    "handling": {
+      "non_hazardous": "Niet gevaarlijk",
+      "controlled": "Gecontroleerd",
+      "unassessed": "Niet beoordeeld"
+    },
+    "facility": "Installatie",
+    "processKind": "Proces",
+    "noFacility": "Geen installatie gekozen",
+    "controlledBlocked": "Gecontroleerd materiaal of restmateriaal vereist gedocumenteerde afvoer. Gewone verzending of omzetting is niet toegestaan.",
+    "recordDisposition": "Afvoer vastleggen",
+    "destinationReference": "Bestemmingsreferentie",
+    "authorisationReference": "Vergunningsreferentie",
+    "manifestReference": "Manifestreferentie",
+    "dispositions": "Afvoerhistorie",
+    "dispositionHint": "Leg de gemeten massa en werkelijke bestemmings-, vergunnings- en manifestreferenties vast. Dit vermindert de resterende partijmassa. Het verifieert geen vergunning en maakt geen verkoopbare voorraad aan.",
+    "inputs": "Invoerpartijen",
+    "additionalInputs": "Andere invoerpartijen",
+    "addInput": "Invoerpartij toevoegen",
+    "chooseInput": "Kies een invoerpartij",
+    "combinedInput": "Totale invoermassa",
+    "multiInputHint": "Combineer alleen gemeten materiaal dat u beheert. Elke hoeveelheid wordt uit de eigen partij verbruikt. Dit legt verwerkingsbewijs vast en voegt geen voorraad toe."
+  },
+  "evidence": {
+    "title": "Documentverwijzingen",
+    "lead": "Bewaar gemelde verwijzingen. Luma controleert deze documenten niet en geeft ze niet uit.",
+    "record": "Verwijzing toevoegen",
+    "correct": "Verwijzing vervangen",
+    "replacement": "Vervangt: {reference}",
+    "reference": "Documentverwijzing",
+    "kind": "Documenttype",
+    "issuer": "Uitgever",
+    "issuerName": "Naam van uitgever",
+    "trade": "Gekoppelde transactie",
+    "none": "Geen transactie",
+    "unverified": "Gemeld · niet gecontroleerd",
+    "gst_invoice": "GST-factuur",
+    "eway_bill": "E-way-vrachtbrief",
+    "cpcb_epr_certificate": "CPCB EPR-certificaat",
+    "pollution_consent": "Milieuvergunning",
+    "external_authority": "Uitgevende autoriteit",
+    "external_organization": "Uitgevende organisatie",
+    "trade_seller": "Verkoper",
+    "trade_buyer": "Koper",
+    "correctionHint": "Het origineel blijft zichtbaar. Bewaar een nieuwe verwijzing om het te vervangen."
+  },
+  "accountPhone": {
+    "title": "Verifieer je mobiele nummer",
+    "description": "Voeg je eigen nummer toe voor inzameling en betalingen. Je e-mailaccount blijft behouden; er worden geen accounts samengevoegd. Blijf inloggen met e-mail.",
+    "verified": "Mobiel nummer geverifieerd",
+    "unavailable": "Verificatie is pas beschikbaar nadat sms-bezorging is ingesteld.",
+    "inUse": "Dit nummer kan niet worden toegevoegd. Gebruik een nummer zonder ander account.",
+    "unsupported": "Het mobiele nummer van dit account kan hier niet worden gewijzigd."
+  },
+  "sandboxPayment": {
+    "title": "Testbetaling",
+    "note": "Alleen een test. Geen echte betaling, afrekening of terugbetaling. De transactie blijft gepauzeerd.",
+    "open": "Test openen",
+    "unavailable": "Testbetaling is niet beschikbaar.",
+    "pending": "Wachten op serverbevestiging.",
+    "collected": "Testinning bevestigd.",
+    "failed": "Betaling kon niet worden geopend. Probeer opnieuw.",
+    "review": "Servercontrole vereist.",
+    "liveTitle": "Betalen via de betaalprovider",
+    "liveNote": "Betaal het afgesproken bestelbedrag via Cashfree. Bevestiging van de aanbieder is vereist; het sluiten van het betaalvenster bevestigt geen betaling.",
+    "liveOpen": "Veilig betalen openen",
+    "liveCollected": "Betaling bevestigd door de aanbieder."
+  },
+  "industry": {
+    "title": "Industriereferenties",
+    "lead": "Doorzoek de aangeleverde werkmap. Deze referenties zijn niet geverifieerd en geven geen toestemming voor materiaalhandel of verwerking.",
+    "sourceNote": "De brontekst verschijnt in het oorspronkelijke Engels van de werkmap.",
+    "sectors": "Sectorreferenties",
+    "industries": "Industriematrix",
+    "lifecycles": "Materiaallevenscyclus",
+    "byproducts": "Voorbeelden van bijproducten",
+    "matches": "{count} overeenkomende referenties",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "select": "Referentie kiezen",
+    "selected": "Gekozen referentie",
+    "clear": "Referentie wissen",
+    "detailLabels": {
+      "annexure": "Bijlage",
+      "category": "Categorie",
+      "division": "Afdeling",
+      "industryGroup": "Industriegroep",
+      "inputs": "Invoer",
+      "products": "Producten",
+      "byproducts": "Bijproducten",
+      "recoverableWaste": "Terugwinbaar afval",
+      "residualWaste": "Restafval",
+      "nextUser": "Volgende gebruiker",
+      "suggestedFlow": "Voorgestelde stroom",
+      "materialState": "Materiaaltoestand",
+      "note": "Opmerking",
+      "route": "Verwerkingsroute",
+      "qualityAttributes": "Kwaliteitskenmerken",
+      "reportedCommercialStatus": "Gemelde handelsstatus"
+    },
+    "view": "Referentie bekijken",
+    "empty": "Geen passende referenties."
+  },
+  "facility": {
+    "title": "Installaties en processen",
+    "lead": "Leg de locaties en processen vast die uw bedrijf opgeeft. Dit profiel verifieert geen installatie en staat geen materiaalhandel toe.",
+    "add": "Installatie toevoegen",
+    "edit": "Installatie bewerken",
+    "name": "Installatienaam",
+    "siteReference": "Locatiereferentie",
+    "sector": "Industriereferentie (optioneel)",
+    "capabilities": "Opgegeven processen",
+    "readOnly": "Alleen eigenaren en beheerders van de werkruimte kunnen installaties wijzigen.",
+    "processNote": "Dit zijn zelf opgegeven mogelijkheden, geen geverifieerde vergunningen.",
+    "processKinds": {
+      "sorting": "Sorteren",
+      "baling": "Balen persen",
+      "shredding": "Versnipperen",
+      "stripping": "Strippen",
+      "washing": "Wassen",
+      "granulating": "Granuleren",
+      "compounding": "Compounderen",
+      "recovery": "Terugwinning",
+      "manufacturing": "Productie",
+      "residual_handling": "Restafvalbeheer"
+    },
+    "empty": "Nog geen installaties vastgelegd.",
+    "registration": {
+      "title": "Vergunnings- en registratiereferenties",
+      "lead": "Alleen gemelde referenties. Datums bewijzen geen goedkeuring en geven geen handel vrij.",
+      "add": "Referentie toevoegen",
+      "correct": "Correctie toevoegen",
+      "reference": "Referentie",
+      "issuedAt": "Uitgiftedatum",
+      "validUntil": "Geldig tot",
+      "empty": "Nog geen referenties vastgelegd.",
+      "current": "Binnen de gemelde datums",
+      "expired": "Gemelde vervaldatum verstreken",
+      "superseded": "Vervangen door een latere referentie",
+      "kind": "Referentietype",
+      "kinds": {
+        "consent_to_operate": "Exploitatievergunning",
+        "consent_to_establish": "Vestigingsvergunning",
+        "epr_registration": "EPR-registratie",
+        "waste_authorisation": "Afvalvergunning",
+        "other": "Andere referentie"
+      },
+      "not_yet_current": "Vóór de gemelde uitgiftedatum"
+    }
+  },
+  "marketSpecification": {
+    "title": "Kwaliteitsklasse en specificatie",
+    "enable": "Klasse en specificatie toevoegen",
+    "grade": "Materiaalklasse",
+    "specification": "Kwaliteitsspecificatie van koper",
+    "lot": "Recente passende partij (optioneel)",
+    "noLot": "Geen gekoppelde partij",
+    "source": "Verklaring van verkoper. Dit verifieert geen kwaliteit en reserveert de bewijsgebonden partij niet.",
+    "lotState": "Vastgelegde partijstatus"
+  },
+  "stockIntake": {
+    "title": "Voorraad bijproducten uit eigen productie",
+    "add": "Voorraadontvangst vastleggen",
+    "lead": "Leg gewogen bijproducten van deze fabrikant vast. Opslaan voegt voorraad toe op basis van uw productie- en weeggegevens. Partijen die alleen als bewijs dienen voegen geen voorraad toe.",
+    "reference": "Unieke ontvangstverwijzing",
+    "source": "Verwijzing naar productiepartij",
+    "weighing": "Verwijzing naar weegregistratie",
+    "date": "Productiedatum",
+    "confirm": "Ik bevestig dat dit ons eigen bijproduct is en dat deze gewogen hoeveelheid niet eerder als voorraad is geregistreerd.",
+    "empty": "Nog geen productieontvangsten vastgelegd.",
+    "noMaterials": "Geen goedgekeurde niet-gevaarlijke bijproductmaterialen voor dit bedrijf. Vraag de platformbeheerder om beoordeling voordat u voorraad vastlegt.",
+    "conflict": "Deze ontvangstverwijzing bevat al andere gegevens. Controleer eerst de oorspronkelijke registratie.",
+    "history": "Vastgelegde voorraadontvangsten",
+    "more": "Meer ontvangsten laden",
+    "note": "Dit zijn verklaringen van de fabrikant, geen onafhankelijke controle van kwaliteit, eigendom of regelgeving. Opgeslagen registraties kunnen niet worden gewijzigd."
+  },
+  "tradeLifecycle": {
+    "title": "Betaling en levering",
+    "collectionLabel": "Betaling van de koper",
+    "settlementLabel": "Uitbetaling aan de verkoper",
+    "refundLabel": "Terugbetaling",
+    "state": {
+      "awaiting_payment": "Wachten op betaling via de betaalprovider",
+      "authorized": "Betaling bevestigd; klaar voor verzending",
+      "dispatched": "Verzonden; wachten op ontvangst",
+      "received": "Materiaal ontvangen",
+      "cancellation_pending": "Annulering wordt gecontroleerd",
+      "cancelled": "Bestelling geannuleerd",
+      "hold": "Bestelling vereist beoordeling"
+    },
+    "collection": {
+      "pending": "Niet bevestigd",
+      "sandbox_confirmed": "Alleen testomgeving; geen echt geld",
+      "live_confirmed": "Bevestigd door de aanbieder",
+      "review": "Betaling vereist beoordeling"
+    },
+    "settlement": {
+      "pending": "Niet bevestigd",
+      "settled": "Bevestigd door de aanbieder",
+      "reversed": "Uitbetaling teruggedraaid",
+      "review": "Uitbetaling vereist beoordeling"
+    },
+    "refund": {
+      "none": "Geen terugbetaling vastgelegd",
+      "pending": "Terugbetaling in behandeling",
+      "refunded": "Bevestigd door de aanbieder",
+      "review": "Terugbetaling vereist beoordeling"
+    },
+    "action": {
+      "dispatch": "Verzending vastleggen",
+      "receive": "Ontvangst bevestigen",
+      "cancel": "Annulering aanvragen"
+    },
+    "policyMissing": "Echte betalingen vereisen goedgekeurde betaalvoorwaarden en een ingestelde aanbieder.",
+    "reviewRequired": "Een beheerder moet het betaalbewijs controleren voordat deze bestelling verder kan.",
+    "fullQuantity": "Bevestig de volledige afgesproken hoeveelheid: {weight}. Stop bij een andere hoeveelheid of kwaliteit en neem contact op met de beheerder.",
+    "cancelNote": "Annulering geeft voorraad pas vrij nadat de server bevestigt dat geen betaling meer kan worden voltooid. Een open verzoek betekent niet dat de bestelling is geannuleerd.",
+    "reason": "Reden",
+    "reference": "Verzend- of ontvangstverwijzing",
+    "confirm": "Bevestigen",
+    "back": "Teruggaan",
+    "saved": "Bestelregistratie bijgewerkt",
+    "failed": "De wijziging is niet voltooid. Controleer de huidige status en probeer opnieuw. Uw verwijzing blijft bewaard.",
+    "actionUnavailable": "Deze actie is niet meer beschikbaar. Controleer de bijgewerkte bestelstatus."
+  },
+  "sourcing": {
+    "close": "Sluiten",
+    "material": "Materiaal",
+    "save": "Registratie opslaan",
+    "saved": "Registratie opgeslagen.",
+    "reference": "Referentie",
+    "buying": "Inkopen",
+    "active": "Actief",
+    "decline": "Afwijzen",
+    "title": "Materiaal inkoop",
+    "lead": "Plan de materiaalvraag, leg uw beslissingen over leveranciers vast en ga akkoord met individuele leveringsverzoeken.",
+    "boundary": "Deze records creëren geen aankooptransacties. Ze reserveren geen inventaris en bevestigen geen betalingen. Voltooi aankopen met behulp van de marktplaats en betalingsworkflow.",
+    "board": "Vraagbord",
+    "plans": "Terugkerende vraag",
+    "qualifications": "Beslissingen van leveranciers",
+    "agreements": "Vaste afspraken",
+    "post": "Publiceer de materiële vraag",
+    "createPlan": "Maak een schema",
+    "publish": "Publiceer de volgende vraag",
+    "supplier": "Leverancier",
+    "choose": "Kies een optie",
+    "quantity": "Hoeveelheid (g)",
+    "area": "Bezorggebied",
+    "specification": "Schriftelijke specificatie",
+    "neededBy": "Vereiste leverdatum",
+    "cadence": "Herhaal interval",
+    "weekly": "Elke 7 dagen",
+    "monthly": "Elke 30 dagen",
+    "planHint": "Elke gebeurtenis wordt alleen gepubliceerd als u Volgende aanvraag publiceren selecteert. Er wordt geen automatische bestelling aangemaakt.",
+    "myDemand": "Mijn eis",
+    "availableDemand": "Vraag van kopers",
+    "empty": "Nog geen gegevens.",
+    "limited": "Er wordt alleen een begrensde verzameling weergegeven. Oudere records blijven in de auditgeschiedenis aanwezig.",
+    "loadMore": "Laad meer",
+    "invalid": "Controleer de verplichte velden, datums en gehele getallen.",
+    "failed": "Deze actie kon niet worden voltooid. Uw concept wordt bewaard. Controleer de huidige rechten en geschiktheid en probeer het opnieuw.",
+    "qualify": "Leg de leveranciersbeslissing vast",
+    "sample": "Monster- of inspectiereferentie",
+    "decision": "Jouw beslissing",
+    "reason": "Reden van besluit",
+    "validUntil": "Beslissing geldig tot",
+    "privateDecision": "Dit is de inkoopbeslissing van uw organisatie. Het is geen platformgoedkeuring of wettelijke certificering. De beslissingsgeschiedenis is privé in uw koperswerkruimte. De laatste beslissing voor een leverancier en materiaal bepaalt nieuwe overeenkomsten en releases; eerdere vermeldingen blijven in de geschiedenis.",
+    "pending": "In behandeling",
+    "approved": "Goedgekeurd door koper",
+    "rejected": "Afgewezen door koper",
+    "propose": "Overeenkomst voorstellen",
+    "price": "Overeengekomen prijs (paise/kg)",
+    "startsOn": "Begint op",
+    "endsOn": "Eindigt op",
+    "agreementHint": "Voor deze exacte specificatie is een goedgekeurd actueel leveranciersbesluit vereist. De leverancier dient het voorstel afzonderlijk te erkennen.",
+    "supplying": "Het leveren",
+    "requested": "In afwachting van reactie van de leverancier",
+    "acknowledged": "Erkend door de leverancier",
+    "declined": "Geweigerd door leverancier",
+    "closed": "Gesloten",
+    "acknowledge": "Bevestig de bevestiging",
+    "responseReference": "Reactiereferentie",
+    "release": "Vraag een leveringshoeveelheid aan",
+    "releaseHint": "Vraag een deel van de afgesproken hoeveelheid aan. Leverancierserkenning registreert uitsluitend de intentie; het verplaatst geen materiaal of geld.",
+    "releases": "Individuele leveringsaanvragen",
+    "history": "Geschiedenis van overeenkomsten",
+    "view": "Bekijk leveringsaanvragen en geschiedenis",
+    "closeAgreement": "Sluit deze overeenkomst",
+    "closeHint": "Dit voorkomt nieuwe leveringsaanvragen op grond van de overeenkomst. Bestaande verzoeken en hun geschiedenis blijven vastgelegd.",
+    "state": "Opnamestatus",
+    "nextDate": "Volgende aanvraagdatum",
+    "readOnly": "Uw werkruimterol kan deze records bekijken, maar niet wijzigen.",
+    "published": "Vraaggebeurtenis gepubliceerd.",
+    "event": {
+      "proposed": "Overeenkomst voorgesteld",
+      "acknowledged": "Akkoord erkend",
+      "declined": "Overeenkomst afgewezen",
+      "closed": "Overeenkomst gesloten",
+      "release_requested": "Gevraagde leveringshoeveelheid",
+      "release_acknowledged": "Leveringsaanvraag bevestigd",
+      "release_declined": "Leveringsverzoek afgewezen"
+    },
+    "reschedule": "Verplaats de volgende vraagdatum",
+    "rescheduleHint": "Kies een latere huidige datum. Eerdere publicaties blijven ongewijzigd. Hiermee wordt geen vraag gepubliceerd en geen bestelling gecreëerd.",
+    "overdue": "Deze geplande datum is verstreken. Verplaats de volgende datum vóór publicatie."
+  },
+  "operations": {
+    "validUntil": "Geldig tot",
+    "decisions": {
+      "revoked": "Ingetrokken",
+      "approved": "Goedgekeurd",
+      "rejected": "Afgewezen"
+    },
+    "reference": "Referentie",
+    "remove": "Verwijderen",
+    "save": "Registratie opslaan",
+    "saved": "Registratie opgeslagen.",
+    "standards": "Materiële normen",
+    "standardsHint": "Zoek beoordeelde definities. Een klasse of sector geeft geen toestemming voor verwerking en certificeert geen kwaliteit.",
+    "workspaceRequired": "Selecteer een goedgekeurde zakelijke werkruimte om door te gaan.",
+    "definitions": "Definities",
+    "reviews": "Reikwijdte beoordelingen",
+    "destinations": "Gecontroleerde bestemmingen",
+    "search": "Zoek op materiaal, fysieke staat, kwaliteit of specificatie",
+    "empty": "Nog geen gegevens.",
+    "truncated": "Het resultaat is beperkt. Verfijn uw zoekopdracht of bekijk de recente gegevens.",
+    "reviewHint": "Dit zijn beheerdersbeoordelingen van aangeleverd bewijsmateriaal. Een gewijzigde faciliteit, verouderde registratie, verlopen of intrekking maakt de huidige scope ongeldig.",
+    "destinationHint": "Controleer de materiaalomvang en huidige autorisatie vóór een gecontroleerde overdracht. Een vermelding in het telefoonboek bewijst geen verwijdering of indiening bij de portal.",
+    "current": "Huidig",
+    "historical": "Niet actueel",
+    "production": "Productiegegevens",
+    "productionHint": "Koppel recepten en gedeclareerde inputs aan een gemeten transformatie en de outputinspectie ervan. De gerecycleerde fractie beschrijft de aangegeven input, niet de gecertificeerde productinhoud. Deze records veranderen de voorraad niet.",
+    "recipes": "Productieformules",
+    "batches": "Productie batches",
+    "newRecipe": "Recordproductieformule",
+    "newBatch": "Batch opnemen",
+    "version": "Recordversie",
+    "name": "Receptnaam",
+    "instructions": "Procesinstructies",
+    "ingredients": "Ingrediënten",
+    "ingredient": "Naam van het ingrediënt",
+    "basisPoints": "Ingrediëntaandeel in basispunten (100 = 1%)",
+    "additive": "Additief",
+    "addIngredient": "Voeg ingrediënt toe",
+    "recipeHint": "Gebruik voor een correctie een nieuwe versie. Ingrediëntaandelen moeten in totaal 10.000 basispunten bedragen. Alle gemeten ingrediënten en additieven moeten worden meegenomen in de gekoppelde transformatie.",
+    "failed": "Kan niet opslaan. Controleer de waarden, gekoppelde records en uw toegang tot de werkruimte en probeer het opnieuw.",
+    "invalid": "Controleer de velden en de exacte gramtotalen.",
+    "choose": "Selecteer",
+    "recipe": "Versie van de productieformule",
+    "transformation": "Gemeten transformatie",
+    "inspection": "Uitgangsinspectie",
+    "recycledGrams": "Aangegeven gerecyclede input (gram)",
+    "inputEvidence": "Voer herkomstreferentie in",
+    "batchEvidence": "Referentie productiebewijs",
+    "inputFraction": "Opgegeven aandeel gerecyclede input",
+    "inputTotal": "Totale invoer",
+    "outputTotal": "Gemeten vermogen",
+    "batchHint": "Selecteer een bestaande transformatie met een inspectie van de uitvoer ervan. Geef gerecyclede grammen aan voor elke invoer en geef de bewijsreferentie. Dit is een toerekenbare verklaring, geen onafhankelijke certificering."
+  },
+  "logistics": {
+    "title": "Route- en laadplannen",
+    "add": "Plan maken",
+    "correct": "Nieuwe versie opslaan",
+    "titleLabel": "Plannaam",
+    "reference": "Unieke planreferentie",
+    "vehicle": "Voertuigreferentie",
+    "capacity": "Voertuigcapaciteit (g)",
+    "origin": "Startlocatie",
+    "stop": "Stopplaats {number}",
+    "addStop": "Stop toevoegen",
+    "latitude": "Breedtegraad",
+    "longitude": "Lengtegraad",
+    "entered": "Ingevoerde volgorde behouden",
+    "geometric": "Dichtstbijzijnde volgende stop (rechte lijn)",
+    "distance": "Afstand in rechte lijn: {value} m",
+    "archive": "Plan archiveren",
+    "archived": "Gearchiveerd",
+    "history": "Versiegeschiedenis",
+    "revision": "Versie {number}",
+    "reason": "Reden voor deze registratie",
+    "conflict": "Het plan of je toegang is gewijzigd. Laad opnieuw voordat je opslaat.",
+    "invalid": "Controleer coördinaten, materiaal, hele grammen en capaciteit. Alle ladingen samen moeten in het voertuig passen.",
+    "lead": "Alleen handmatige planning. Alle ladingen worden opgeteld. De volgorde in rechte lijn is geen wegroute, aankomsttijd of verzending. Locaties komen uit je invoer, niet uit fotometadata.",
+    "empty": "Nog geen routeplannen."
+  },
+  "qualityDocuments": {
+    "businessRequired": "Selecteer een actieve bedrijfswerkruimte om partijregistraties te gebruiken.",
+    "inspections": "Inspectiebewijs",
+    "readOnly": "Uw werkruimterol mag deze registraties lezen.",
+    "empty": "Nog geen registraties.",
+    "inspection": "Inspectiebewijs",
+    "kind": "Documenttype",
+    "accepted": "Aanvaard",
+    "rejected": "Afgewezen",
+    "conditional": "Voorwaardelijk",
+    "note": "Reden voor correctie",
+    "record": "Registratie opslaan",
+    "error": "Er ging iets mis",
+    "limit": "Alleen de eerste 100 registraties worden getoond.",
+    "title": "Kwaliteitsdocumenten",
+    "own": "Uw documenten",
+    "incoming": "Gedeeld met uw bedrijf",
+    "decisions": "Beslissingsgeschiedenis koper",
+    "upload": "Document toevoegen",
+    "coa": "Analysecertificaat",
+    "photo": "Kwaliteitsfoto",
+    "sample_report": "Monsterrapport",
+    "file": "Bestand",
+    "shareBuyer": "Deel dit document met {name}",
+    "download": "Downloaden",
+    "shared": "Gedeeld met de genoemde koper",
+    "private": "Alleen bedrijf",
+    "withdrawn": "Toegang ingetrokken",
+    "withdraw": "Toegang intrekken",
+    "decision": "Beslissing koper",
+    "lead": "Leg de werkelijke specificatie, bemonsteringsmethode en meetresultaten vast. Een besluit geldt alleen voor deze inspectie; het is geen platformclassificatie of certificaat. Deze registraties beschrijven fysiek bewijs. Ze wijzigen geen voorraad, betaling, juridisch eigendom of certificaten.",
+    "fileHint": "PDF, JPEG, PNG of WebP, maximaal 2 MiB. Gebruik afgevlakte PDF’s. Bestanden worden gedownload, niet vooraf getoond. Geen onafhankelijke controle of malwarescan. Verwijder privégegevens vóór het delen."
+  },
+  "auditReports": {
+    "title": "Gedeelde auditrapporten",
+    "create": "Rapport delen",
+    "recipient": "Goedgekeurde ontvanger",
+    "purpose": "Doel van beoordeling",
+    "expiry": "Toegang verloopt (lokale tijd)",
+    "sent": "Door u gedeelde rapporten",
+    "received": "Met u gedeelde rapporten",
+    "empty": "Nog geen rapporten.",
+    "unavailable": "Toegang verlopen, ingetrokken of niet beschikbaar.",
+    "open": "Rapport lezen",
+    "revoke": "Toegang herroepen",
+    "inspection": "Inspectiebewijs",
+    "error": "Er ging iets mis",
+    "limit": "Alleen de eerste 100 registraties worden getoond.",
+    "lead": "Lees een vaste bewijskopie voor het vermelde doel. Goedkeuring van de ontvanger geeft geen toegang tot andere bedrijfsgegevens.",
+    "warning": "Deel alleen de gekozen inspectie en aangevinkte bestanden. Verwijder eerst persoonsgegevens. Toegang maximaal 90 dagen, intrekbaar; gedownloade kopieën kunnen niet worden teruggehaald.",
+    "snapshot": "Vaste kopie van de verklaring van het inspecterende bedrijf. Geen certificaat of onafhankelijke verificatie."
   }
 }

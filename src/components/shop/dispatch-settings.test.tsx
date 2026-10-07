@@ -104,3 +104,7 @@ describe("DispatchSettings", () => {
     expect(save).toHaveBeenCalledTimes(2);
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

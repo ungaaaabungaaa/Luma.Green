@@ -43,7 +43,7 @@ export function MaterialTile({
       disabled={!isAdded && isFull}
       onClick={onToggle}
       className={cn(
-        "group flex min-h-20 w-full items-center gap-4 border-b px-3 py-4 text-start transition-colors duration-150 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50",
+        "group flex min-h-16 w-full items-center gap-3 border-b px-2 py-3 text-start transition-colors duration-150 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50 motion-reduce:transition-none",
         isAdded
           ? "border-primary bg-accent/50"
           : "border-border hover:bg-muted/40",
@@ -51,7 +51,7 @@ export function MaterialTile({
     >
       <FamilyIcon family={material.family} size="sm" />
       <span className="flex min-w-0 flex-1 flex-col gap-1">
-        <span className="text-base leading-snug font-semibold">
+        <span className="text-sm leading-snug font-medium">
           {format.material(material.names, material.code)}
         </span>
         <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">

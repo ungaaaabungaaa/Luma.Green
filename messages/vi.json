@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Cùng hướng tới ngày mai xanh sạch hơn",
-    "description": "Luma.Green kết nối toàn bộ mạng lưới tái chế của Ấn Độ trên một nền tảng: hộ gia đình, cửa hàng kabadiwala, bãi phân loại, cơ sở tái chế và nhà sản xuất, với giá công bằng, thu gom có cân và hồ sơ cho mỗi lần bàn giao."
+    "description": "Luma.Green kết nối toàn bộ mạng lưới tái chế của Ấn Độ trên một nền tảng: hộ gia đình, cửa hàng kabadiwala, đơn vị sơ chế, cơ sở tái chế và nhà sản xuất, với giá công bằng, thu gom có cân và hồ sơ cho mỗi lần bàn giao."
   },
   "theme": {
     "label": "Giao diện",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Giao dịch",
-      "summary": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+      "summary": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
     },
     "record": {
       "title": "Ghi nhận",
@@ -76,7 +76,7 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green kết nối mạng lưới tái chế của Ấn Độ trên một nền tảng: hộ gia đình, cửa hàng kabadiwala, bãi phân loại, cơ sở tái chế và nhà sản xuất, với giá công bằng, doanh nghiệp đã xác minh và biên nhận ở mỗi bước.",
+    "metaDescription": "Luma.Green kết nối mạng lưới tái chế của Ấn Độ trên một nền tảng: hộ gia đình, cửa hàng kabadiwala, đơn vị sơ chế, cơ sở tái chế và nhà sản xuất, với giá công bằng, doanh nghiệp đã xác minh và biên nhận ở mỗi bước.",
     "hero": {
       "eyebrow": "Bắt đầu tại Bengaluru",
       "title": "Cho vật liệu của bạn một khởi đầu mới.",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "Hành trình của vật liệu",
-      "intro": "Vật liệu đi từ các hộ gia đình đến cửa hàng thu gom, bãi phân loại và cơ sở tái chế trước khi trở thành sản phẩm mới. Luma.Green ghi lại mỗi lần bàn giao.",
+      "intro": "Vật liệu đi từ các hộ gia đình đến cửa hàng thu gom, đơn vị sơ chế và cơ sở tái chế trước khi trở thành sản phẩm mới. Luma.Green ghi lại mỗi lần bàn giao.",
       "steps": {
         "household": {
           "name": "Hộ gia đình",
@@ -107,7 +107,7 @@
           "body": "Mua, cân và phân loại theo vật liệu."
         },
         "yard": {
-          "name": "Bãi phân loại",
+          "name": "Đơn vị sơ chế",
           "body": "Phân hạng và ép thành kiện."
         },
         "recycler": {
@@ -119,7 +119,7 @@
           "body": "Tạo sản phẩm mới từ vật liệu tái chế."
         }
       },
-      "money": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "money": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "saathi": "Saathi hỗ trợ toàn chuỗi với công việc thu gom, phân loại và làm theo ca."
     },
     "roles": {
@@ -136,19 +136,19 @@
         "title": "Cửa hàng kabadiwala",
         "one": "Nhận yêu cầu thu gom từ hộ gia đình gần bạn.",
         "two": "Tự đặt giá nhưng không thấp hơn giá sàn.",
-        "three": "Bán hàng đã phân loại cho bãi.",
+        "three": "Bán hàng đã phân loại cho đơn vị sơ chế.",
         "cta": "Đăng ký làm kabadiwala"
       },
       "yard": {
-        "title": "Bãi phân loại",
+        "title": "Đơn vị sơ chế",
         "one": "Xem hàng tồn của các cửa hàng gần bạn.",
         "two": "Mua số lượng lớn và bán kiện hàng cho cơ sở tái chế.",
-        "three": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
-        "cta": "Đăng ký bãi phân loại"
+        "three": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
+        "cta": "Đăng ký đơn vị sơ chế"
       },
       "recycler": {
         "title": "Cơ sở tái chế",
-        "one": "Kiện hàng đã phân hạng từ bãi được xác minh.",
+        "one": "Kiện hàng đã phân hạng từ đơn vị sơ chế được xác minh.",
         "two": "Mỗi lô hàng đều có chuỗi bàn giao.",
         "three": "Bán sản phẩm đầu ra cho nhà máy.",
         "cta": "Đăng ký cơ sở tái chế"
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Nhà sản xuất",
         "one": "Xem các cơ sở tái chế đang sản xuất gì.",
-        "two": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+        "two": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
         "three": "Hồ sơ phục vụ báo cáo EPR.",
         "cta": "Đăng ký nhà sản xuất"
       },
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Tiêu chuẩn Luma.Green",
-    "metaDescription": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+    "metaDescription": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
     "eyebrow": "Tiêu chuẩn mở",
     "title": "Tiêu chuẩn Luma.Green",
     "lead": "Quy tắc đơn giản, công khai để giao dịch vật liệu công bằng: một mã cho mỗi vật liệu, phân hạng rõ ràng, cân trung thực và ghi nhận mỗi lần bàn giao. Bất kỳ ai trong ngành cũng có thể áp dụng.",
@@ -394,13 +394,13 @@
       "nav": "Xác minh",
       "body": "Nhân viên kiểm tra từng doanh nghiệp và từng Saathi trước khi họ được giao dịch.",
       "business": "Doanh nghiệp: số GST nếu có, ảnh cửa hàng hoặc cơ sở và một cuộc gọi xác nhận.",
-      "consent": "Bãi phân loại, cơ sở tái chế và nhà máy: giấy chấp thuận còn hiệu lực của hội đồng kiểm soát ô nhiễm cấp bang.",
+      "consent": "Đơn vị sơ chế, cơ sở tái chế và nhà máy: giấy chấp thuận còn hiệu lực của hội đồng kiểm soát ô nhiễm cấp bang.",
       "saathi": "Saathi: giấy tờ có ảnh và ảnh tự chụp trùng khớp."
     },
     "escrow": {
       "title": "Đang chờ cổng thanh toán",
       "nav": "Đang chờ cổng thanh toán",
-      "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "steps": {
         "accepted": "Người bán chấp nhận đơn hàng",
         "paid": "Đang chờ cổng thanh toán",
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "Cách hoạt động",
-    "metaDescription": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+    "metaDescription": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
     "title": "Cách Luma.Green hoạt động",
-    "lead": "Vật liệu đi từ các hộ gia đình đến cửa hàng thu gom, bãi phân loại và cơ sở tái chế trước khi trở thành sản phẩm mới. Luma.Green ghi lại mỗi lần bàn giao.",
+    "lead": "Vật liệu đi từ các hộ gia đình đến cửa hàng thu gom, đơn vị sơ chế và cơ sở tái chế trước khi trở thành sản phẩm mới. Luma.Green ghi lại mỗi lần bàn giao.",
     "stepLabel": "Bước {number}",
     "sell": {
       "body": "Hộ gia đình chọn vật liệu, xem báo giá của các cửa hàng gần mình và đặt lịch thu gom hoặc giao tại cửa hàng. Kabadiwala cân từng vật liệu và trả tiền mặt hoặc UPI. Hai bên đều nhận biên nhận.",
@@ -563,7 +563,7 @@
       "point3": "Có liên kết theo dõi, không cần tài khoản"
     },
     "trade": {
-      "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "point1": "Chỉ doanh nghiệp đã xác minh được giao dịch",
       "point2": "Tồn kho được cập nhật khi gửi và nhận hàng",
       "point3": "Mỗi giao dịch đã thanh toán có biên nhận đánh số"
@@ -577,20 +577,20 @@
   },
   "participants": {
     "metaTitle": "Dành cho ai",
-    "metaDescription": "Luma.Green dành cho hộ gia đình, kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi: tất cả những người đưa vật liệu từ nhà đến nhà máy.",
+    "metaDescription": "Luma.Green dành cho hộ gia đình, kabadiwala, đơn vị sơ chế, cơ sở tái chế, nhà sản xuất và Saathi: tất cả những người đưa vật liệu từ nhà đến nhà máy.",
     "title": "Luma.Green dành cho ai",
     "lead": "Tất cả những người đưa vật liệu từ nhà đến nhà máy và những người làm việc ở các bước trung gian.",
     "kabadiwala": {
       "name": "Cửa hàng kabadiwala",
-      "body": "Nhận yêu cầu thu gom từ hộ gần bạn, cân và trả tiền công bằng, rồi bán hàng đã phân loại cho bãi."
+      "body": "Nhận yêu cầu thu gom từ hộ gần bạn, cân và trả tiền công bằng, rồi bán hàng đã phân loại cho đơn vị sơ chế."
     },
     "yard": {
-      "name": "Bãi phân loại",
-      "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+      "name": "Đơn vị sơ chế",
+      "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
     },
     "recycler": {
       "name": "Cơ sở tái chế",
-      "body": "Mua kiện đã phân hạng từ bãi được xác minh và bán mảnh, hạt, thỏi cho nhà máy."
+      "body": "Mua kiện đã phân hạng từ đơn vị sơ chế được xác minh và bán mảnh, hạt, thỏi cho nhà máy."
     },
     "manufacturer": {
       "name": "Nhà sản xuất",
@@ -601,20 +601,20 @@
       "body": "Nhận việc thu gom, phân loại và làm ca có trả công gần nhà, rồi theo dõi thu nhập."
     },
     "householdHeading": "Và mọi hộ gia đình",
-    "householdBody": "Bất kỳ ai cũng có thể bán vật liệu tại nhà mà không cần tài khoản: chọn vật liệu, xem báo giá và nhận tiền mặt hoặc UPI kèm biên nhận."
+    "householdBody": "Đặt lịch thu gom tại nhà bằng số điện thoại di động: chọn vật liệu, so sánh báo giá của các cửa hàng và nhận thanh toán bằng tiền mặt hoặc UPI từ cửa hàng kèm biên nhận."
   },
   "contact": {
     "metaTitle": "Liên hệ",
     "metaDescription": "Liên hệ đội ngũ Luma.Green để tham gia thí điểm tại Bengaluru.",
     "title": "Trao đổi với chúng tôi",
-    "lead": "Chúng tôi bắt đầu tại Bengaluru với một nhóm nhỏ kabadiwala, bãi phân loại, cơ sở tái chế và nhà máy. Hãy cho biết bạn là ai, kinh doanh vật liệu gì và lượng xử lý gần đúng mỗi tháng.",
+    "lead": "Chúng tôi bắt đầu tại Bengaluru với một nhóm nhỏ kabadiwala, đơn vị sơ chế, cơ sở tái chế và nhà máy. Hãy cho biết bạn là ai, kinh doanh vật liệu gì và lượng xử lý gần đúng mỗi tháng.",
     "emailHeading": "Truy cập sớm và câu hỏi chung",
     "securityHeading": "Báo cáo bảo mật",
     "securityBody": "Phát hiện lỗ hổng? Vui lòng báo riêng thay vì công khai."
   },
   "help": {
     "metaTitle": "Trung tâm trợ giúp",
-    "metaDescription": "Hướng dẫn đơn giản, câu trả lời và đào tạo cho hộ gia đình, kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi trên Luma.Green.",
+    "metaDescription": "Hướng dẫn đơn giản, câu trả lời và đào tạo cho hộ gia đình, kabadiwala, đơn vị sơ chế, cơ sở tái chế, nhà sản xuất và Saathi trên Luma.Green.",
     "eyebrow": "Trung tâm trợ giúp",
     "title": "Chúng tôi có thể giúp gì?",
     "lead": "Hướng dẫn ngắn, câu trả lời rõ ràng và đào tạo nhanh cho mọi người trên Luma.Green.",
@@ -659,25 +659,25 @@
         "name": "Hộ gia đình",
         "who": "Bán vật liệu tại nhà",
         "title": "Trợ giúp cho hộ gia đình",
-        "lead": "Đặt lịch thu gom, được cân công bằng và nhận tiền tại cửa. Không cần tài khoản."
+        "lead": "Đặt lịch thu gom, xác nhận số điện thoại di động và nhận thanh toán sau khi cân."
       },
       "kabadiwala": {
         "name": "Cửa hàng kabadiwala",
         "who": "Điều hành cửa hàng thu gom",
         "title": "Trợ giúp cho kabadiwala",
-        "lead": "Nhận lịch thu gom, cân và thanh toán trong một phút, đặt giá và bán cho bãi."
+        "lead": "Nhận lịch thu gom, cân và thanh toán trong một phút, đặt giá và bán cho đơn vị sơ chế."
       },
       "yard": {
-        "name": "Bãi phân loại",
+        "name": "Đơn vị sơ chế",
         "who": "Mua từ kabadiwala và phân loại thêm",
-        "title": "Trợ giúp cho bãi phân loại",
-        "lead": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+        "title": "Trợ giúp cho đơn vị sơ chế",
+        "lead": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
       },
       "recycler": {
         "name": "Cơ sở tái chế",
         "who": "Biến vật liệu thành nguyên liệu",
         "title": "Trợ giúp cho cơ sở tái chế",
-        "lead": "Mua vật liệu đã phân hạng từ bãi, bán sản phẩm cho nhà máy và giữ hồ sơ EPR rõ ràng."
+        "lead": "Mua vật liệu đã phân hạng từ đơn vị sơ chế, bán sản phẩm cho nhà máy và giữ hồ sơ EPR rõ ràng."
       },
       "manufacturer": {
         "name": "Nhà sản xuất",
@@ -752,7 +752,7 @@
       "roles": {
         "household": "Một hộ gia đình",
         "kabadiwala": "Một kabadiwala",
-        "yard": "Một bãi phân loại",
+        "yard": "Một đơn vị sơ chế",
         "recycler": "Một cơ sở tái chế",
         "manufacturer": "Một nhà sản xuất",
         "saathi": "Một Saathi",
@@ -853,7 +853,7 @@
         "steps": {
           "start": {
             "title": "Bắt đầu tại luma.green/join",
-            "body": "Đăng nhập bằng số di động và chọn Bãi phân loại, Cơ sở tái chế hoặc Nhà sản xuất."
+            "body": "Đăng nhập bằng số di động và chọn Đơn vị sơ chế, Cơ sở tái chế hoặc Nhà sản xuất."
           },
           "details": {
             "title": "Thêm thông tin doanh nghiệp",
@@ -879,7 +879,7 @@
       },
       "escrow": {
         "title": "Đang chờ cổng thanh toán",
-        "summary": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+        "summary": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
         "steps": {
           "request": {
             "title": "Người mua gửi yêu cầu",
@@ -891,7 +891,7 @@
           },
           "pay": {
             "title": "Đang chờ cổng thanh toán",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           },
           "dispatch": {
             "title": "Người bán gửi chuyến hàng",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "Người mua xác nhận nhận hàng",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Không xác nhận hàng thiếu",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           },
           "report": {
             "title": "Báo cáo kèm ảnh",
@@ -975,7 +975,7 @@
       },
       "firstPickup": {
         "title": "Đặt lịch thu gom đầu tiên",
-        "summary": "Từ ảnh đến lịch thu gom trong khoảng hai phút. Không cần tài khoản.",
+        "summary": "Chọn vật liệu, so sánh cửa hàng và xác minh số điện thoại di động để đặt lịch thu gom.",
         "steps": {
           "photo": {
             "title": "Chụp ảnh vật liệu",
@@ -1244,8 +1244,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Hướng dẫn minh họa: phân loại tồn kho và bán cho bãi",
-        "summary": "Từ nhiều lần thu gom nhỏ thành chuyến hàng phù hợp cho bãi.",
+        "title": "Hướng dẫn minh họa: phân loại tồn kho và bán cho đơn vị sơ chế",
+        "summary": "Từ nhiều lần thu gom nhỏ thành chuyến hàng phù hợp cho đơn vị sơ chế.",
         "steps": {
           "grows": {
             "title": "Tồn kho tự động tăng",
@@ -1256,12 +1256,12 @@
             "body": "Tách vật liệu trộn thành đúng loại. Ví dụ, giấy trộn thành báo, bìa carton và phần thải bỏ."
           },
           "show": {
-            "title": "Cho bãi xem tồn kho",
-            "body": "Bật Hiện cho bãi để các bãi gần bạn biết bạn có gì."
+            "title": "Cho đơn vị sơ chế xem tồn kho",
+            "body": "Bật Hiện cho đơn vị sơ chế để các đơn vị sơ chế gần bạn biết bạn có gì."
           },
           "sell": {
-            "title": "Chấp nhận yêu cầu của bãi",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "title": "Chấp nhận yêu cầu của đơn vị sơ chế",
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           }
         }
       },
@@ -1301,7 +1301,7 @@
           },
           "pay": {
             "title": "Đang chờ cổng thanh toán",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           },
           "collect": {
             "title": "Lấy hàng và cân",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Chấp nhận rồi chờ thanh toán",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           },
           "dispatch": {
             "title": "Gửi chuyến hàng",
@@ -1335,17 +1335,17 @@
           },
           "paid": {
             "title": "Nhận tiền",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           }
         }
       },
       "buyFromYards": {
-        "title": "Hướng dẫn minh họa: mua vật liệu đã phân loại từ bãi",
+        "title": "Hướng dẫn minh họa: mua vật liệu đã phân loại từ đơn vị sơ chế",
         "summary": "Nguồn đầu vào ổn định, đã phân hạng cho dây chuyền.",
         "steps": {
           "browse": {
             "title": "Tìm kiện hàng gần bạn",
-            "body": "Mở Mua để xem tin đăng của bãi theo vật liệu và khoảng cách."
+            "body": "Mở Mua để xem tin đăng của đơn vị sơ chế theo vật liệu và khoảng cách."
           },
           "request": {
             "title": "Yêu cầu một chuyến hàng",
@@ -1353,7 +1353,7 @@
           },
           "pay": {
             "title": "Đang chờ cổng thanh toán",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           },
           "confirm": {
             "title": "Cân, kiểm tra, xác nhận",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Xếp hàng sau thanh toán",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           },
           "paid": {
             "title": "Nhận tiền khi giao hàng",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           }
         }
       },
@@ -1397,7 +1397,7 @@
           },
           "pay": {
             "title": "Đang chờ cổng thanh toán",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           },
           "receive": {
             "title": "Nhận chuyến hàng",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Xác nhận hoặc báo sự cố",
-            "body": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+            "body": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
           }
         }
       },
@@ -1614,8 +1614,8 @@
         "a": "Không. Bạn trả tiền mặt hoặc UPI tại cửa. Ứng dụng ghi lại số tiền và cách trả."
       },
       "paidByYard": {
-        "q": "Tôi nhận tiền thế nào khi bán cho bãi?",
-        "a": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+        "q": "Tôi nhận tiền thế nào khi bán cho đơn vị sơ chế?",
+        "a": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
       },
       "whoSeesShop": {
         "q": "Ai thấy cửa hàng của tôi?",
@@ -1643,7 +1643,7 @@
       },
       "whatIsEscrow": {
         "q": "Đang chờ cổng thanh toán",
-        "a": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+        "a": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
       },
       "whenSellerPaid": {
         "q": "Khi nào người bán nhận tiền?",
@@ -1666,8 +1666,8 @@
         "a": "Chuẩn bị đăng ký cơ sở xử lý chất thải nhựa CPCB. Thương hiệu yêu cầu giấy này và nó cho phép cấp chứng nhận EPR."
       },
       "buyFromAnyYard": {
-        "q": "Tôi có thể mua từ nhiều bãi không?",
-        "a": "Có. Mua từ bất kỳ bãi đã xác minh nào đăng loại bạn cần, với tần suất tùy bạn."
+        "q": "Tôi có thể mua từ nhiều đơn vị sơ chế không?",
+        "a": "Có. Mua từ bất kỳ đơn vị sơ chế đã xác minh nào đăng loại bạn cần, với tần suất tùy bạn."
       },
       "eprRecords": {
         "q": "Hồ sơ Luma.Green có hỗ trợ EPR không?",
@@ -1740,7 +1740,7 @@
       "buyingFromKabadiwalas": "Mua từ kabadiwala",
       "listingBales": "Đăng kiện hàng cho cơ sở tái chế",
       "escrowExplained": "Đang chờ cổng thanh toán",
-      "buyingFromYards": "Mua từ bãi phân loại",
+      "buyingFromYards": "Mua từ đơn vị sơ chế",
       "sellingOutput": "Bán sản phẩm đầu ra",
       "eprPlainWords": "EPR bằng lời dễ hiểu",
       "firstOrder": "Đặt đơn hàng đầu tiên",
@@ -1799,10 +1799,10 @@
         "p3": "Luôn trả tiền trước khi rời đi."
       },
       "sellingToYards": {
-        "title": "Minh họa: bán cho bãi",
+        "title": "Minh họa: bán cho đơn vị sơ chế",
         "p1": "Ghi nhận phân loại để tồn kho đúng.",
-        "p2": "Cho bãi gần bạn xem hàng tồn.",
-        "p3": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+        "p2": "Cho đơn vị sơ chế gần bạn xem hàng tồn.",
+        "p3": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
       },
       "buyingStock": {
         "title": "Mua hàng tồn",
@@ -1812,7 +1812,7 @@
       },
       "tradingWithEscrow": {
         "title": "Đang chờ cổng thanh toán",
-        "p1": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+        "p1": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
         "p2": "Người bán chỉ xếp hàng khi tiền đã có.",
         "p3": "Xác nhận nhận hàng sẽ giải ngân tiền."
       },
@@ -1830,8 +1830,8 @@
       },
       "buyingInputs": {
         "title": "Minh họa: mua nguyên liệu đầu vào",
-        "p1": "Tìm kiện đã phân hạng từ bãi trong Mua.",
-        "p2": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+        "p1": "Tìm kiện đã phân hạng từ đơn vị sơ chế trong Mua.",
+        "p2": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
         "p3": "Kiểm tra hạng vật liệu trước khi xác nhận."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Minh họa: đặt vật liệu tái chế",
         "p1": "So sánh tin đăng theo loại, số kg và giá.",
         "p2": "Gửi đơn cho số kg bạn cần.",
-        "p3": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+        "p3": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
       },
       "checkingDeliveries": {
         "title": "Kiểm tra giao hàng",
@@ -1885,14 +1885,14 @@
     "chooseLanguageHint": "Bạn có thể đổi bất cứ lúc nào ở đầu màn hình.",
     "continue": "Tiếp tục",
     "title": "Đăng nhập bằng số di động",
-    "lead": "Dành cho kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi.",
+    "lead": "Dành cho kabadiwala, đơn vị sơ chế, cơ sở tái chế, nhà sản xuất và Saathi.",
     "mobileLabel": "Số di động",
     "mobileHint": "Chúng tôi sẽ gửi mã 6 chữ số đến số này.",
     "mobileInvalid": "Nhập số di động Ấn Độ gồm 10 chữ số.",
     "sendCode": "Gửi mã",
     "sending": "Đang gửi…",
     "sendFailed": "Không gửi được mã. Vui lòng thử lại sau một phút.",
-    "homeTitle": "Tái chế tại nhà? Bạn không cần tài khoản.",
+    "homeTitle": "Tái chế tại nhà?",
     "homeLink": "Xem cách hoạt động",
     "privacy": "Chúng tôi chỉ dùng số để đăng nhập và gửi cập nhật về công việc trên Luma.Green.",
     "unavailableTitle": "Đăng nhập bằng điện thoại sắp mở",
@@ -1929,7 +1929,7 @@
   },
   "join": {
     "metaTitle": "Tham gia Luma.Green",
-    "metaDescription": "Kabadiwala, bãi phân loại, cơ sở tái chế, nhà sản xuất và Saathi tại Bengaluru: đăng ký tham gia Luma.Green. Nhân viên kiểm tra từng hồ sơ, thường trong 12–24 giờ.",
+    "metaDescription": "Kabadiwala, đơn vị sơ chế, cơ sở tái chế, nhà sản xuất và Saathi tại Bengaluru: đăng ký tham gia Luma.Green. Nhân viên kiểm tra từng hồ sơ, thường trong 12–24 giờ.",
     "title": "Tham gia Luma.Green",
     "lead": "Cho biết công việc của bạn. Nhân viên kiểm tra từng hồ sơ, thường trong 12–24 giờ.",
     "start": "Bắt đầu",
@@ -1944,7 +1944,7 @@
         "needs": "Địa chỉ, giờ mở cửa và số GST của cửa hàng nếu có."
       },
       "yard": {
-        "title": "Bãi phân loại",
+        "title": "Đơn vị sơ chế",
         "body": "Bạn phân loại và ép kiện số lượng lớn rồi bán tiếp.",
         "needs": "Số GST nếu có, giấy chấp thuận môi trường dạng PDF và ảnh máy móc."
       },
@@ -2043,7 +2043,7 @@
     },
     "business": {
       "titles": {
-        "yard": "Bãi của bạn",
+        "yard": "Doanh nghiệp sơ chế của bạn",
         "recycler": "Cơ sở tái chế của bạn",
         "manufacturer": "Nhà máy của bạn"
       },
@@ -2233,7 +2233,7 @@
     },
     "roles": {
       "kabadiwala": "Người thu mua kabadiwala",
-      "yard": "Bãi phân loại",
+      "yard": "Đơn vị sơ chế",
       "recycler": "Đơn vị tái chế",
       "manufacturer": "Đơn vị sản xuất",
       "saathi": "Nhân viên Saathi"
@@ -2261,7 +2261,7 @@
       "title": "Việc đang tuyển",
       "lead": "Việc trong khu vực được ưu tiên hiển thị.",
       "empty": "Hiện không có việc mở",
-      "emptyBody": "Việc mới từ cửa hàng, bãi và nhà máy sẽ hiện ở đây."
+      "emptyBody": "Việc mới từ cửa hàng, đơn vị sơ chế và nhà máy sẽ hiện ở đây."
     },
     "work": {
       "home_pickups": "Thu gom tại nhà",
@@ -2376,7 +2376,8 @@
       "emptyBody": "Nhận việc trên Trang chủ. Khi đánh dấu xong, tiền công hiện ở đây.",
       "findJob": "Tìm việc",
       "demoNote": "Dữ liệu mẫu: việc và tiền công ở đây chỉ là ví dụ cho nguyên mẫu."
-    }
+    },
+    "factorUnavailable": "Chưa có ước tính CO₂e. Hệ số phát thải chưa được thiết lập."
   },
   "compliance": {
     "title": "Tuân thủ",
@@ -2454,7 +2455,7 @@
       "view": "Xem biên nhận {number}",
       "unknown": "Doanh nghiệp không còn trên Luma.Green",
       "empty": "Chưa có biên nhận",
-      "emptyBody": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+      "emptyBody": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
     },
     "epr": {
       "title": "Hồ sơ EPR, năm tài chính {from}–{to}",
@@ -2484,7 +2485,7 @@
     },
     "saathi": {
       "title": "Dành cho doanh nghiệp",
-      "body": "Tuân thủ dành cho cửa hàng, bãi, cơ sở tái chế và nhà máy. Việc và tiền công của bạn nằm trên Trang chủ.",
+      "body": "Tuân thủ dành cho cửa hàng, đơn vị sơ chế, cơ sở tái chế và nhà máy. Việc và tiền công của bạn nằm trên Trang chủ.",
       "home": "Đến việc của tôi"
     }
   },
@@ -2496,7 +2497,7 @@
     "lead": "Chọn vật liệu và cửa hàng gần bạn, nhận tiền mặt hoặc UPI sau khi cân.",
     "promises": {
       "label": "Vì sao bán ở đây",
-      "noAccount": "Không cần tài khoản",
+      "noAccount": "Xác minh điện thoại để đặt lịch",
       "payAtDoor": "Trả tiền khi cân xong",
       "verified": "Cửa hàng đã xác minh"
     },
@@ -2804,7 +2805,7 @@
     "perKg": "{price}/kg",
     "recycled": "Đã tái chế",
     "forBusinessesTitle": "Màn hình này dành cho doanh nghiệp",
-    "forBusinessesBody": "Kabadiwala, bãi, cơ sở tái chế và nhà sản xuất giao dịch tại đây.",
+    "forBusinessesBody": "Kabadiwala, đơn vị sơ chế, cơ sở tái chế và nhà sản xuất giao dịch tại đây.",
     "units": {
       "kg": "kg",
       "rupee": "₹"
@@ -2841,30 +2842,30 @@
       "kgTooMuch": "Chỉ có {weight}.",
       "total": "Tổng cộng",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "escrow": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "ewayBill": "Trên ₹50.000: hàng phải đi kèm e-way bill.",
       "cancel": "Hủy",
       "submit": "Gửi yêu cầu mua",
       "sending": "Đang gửi…",
       "sent": "Đã gửi yêu cầu tới {seller}",
-      "sentNext": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "sentNext": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "seeTrades": "Xem giao dịch"
     },
     "browse": {
       "title": "Mua",
-      "lead": "{kind, select, yard {Vật liệu đã phân loại từ kabadiwala gần bạn.} recycler {Vật liệu đã phân loại và ép kiện từ bãi.} manufacturer {Vật liệu tái chế từ cơ sở đã xác minh.} other {Vật liệu đang bán gần bạn.}}",
+      "lead": "Xem chào bán từ nhà cung cấp được phê duyệt cho các vật liệu bạn xử lý.",
       "filterLabel": "Lọc theo vật liệu",
       "all": "Tất cả",
       "count": "{count, plural, =0 {Không có lô} one {# lô đang bán} other {# lô đang bán}}",
       "emptyTitle": "Hiện chưa có hàng bán",
       "emptyBody": "Lô mới xuất hiện ngay khi được đăng.",
       "notForYouTitle": "Kabadiwala mua từ hộ gia đình",
-      "notForYouBody": "Trên chợ, bạn là người bán: cung cấp tồn kho đã phân loại cho bãi.",
-      "goSell": "Bán cho các bãi"
+      "notForYouBody": "Trên chợ, bạn là người bán: cung cấp tồn kho đã phân loại cho đơn vị sơ chế.",
+      "goSell": "Bán cho các đơn vị sơ chế"
     },
     "sell": {
       "title": "Bán",
-      "lead": "{buyer, select, yard {Chào bán tồn kho đã phân loại cho bãi.} recycler {Chào bán kiện hàng cho cơ sở tái chế.} manufacturer {Chào bán vật liệu cho nhà sản xuất.} other {Chào bán tồn kho cho người mua.}}",
+      "lead": "{buyer, select, yard {Chào bán tồn kho đã phân loại cho đơn vị sơ chế.} recycler {Chào bán kiện hàng cho cơ sở tái chế.} manufacturer {Chào bán vật liệu cho nhà sản xuất.} other {Chào bán tồn kho cho người mua.}}",
       "notForYouTitle": "Nhà sản xuất mua trên Luma.Green",
       "notForYouBody": "Tìm vật liệu tái chế từ cơ sở đã xác minh.",
       "goBuy": "Mua vật liệu",
@@ -2888,7 +2889,7 @@
         "value": "Giá trị lô",
         "submit": "Đăng bán",
         "submitting": "Đang đăng bán…",
-        "listed": "Đã đăng bán. {buyer, select, yard {Các bãi} recycler {Cơ sở tái chế} manufacturer {Nhà sản xuất} other {Người mua}} hiện có thể xem.",
+        "listed": "Đã đăng bán. {buyer, select, yard {Các đơn vị sơ chế} recycler {Cơ sở tái chế} manufacturer {Nhà sản xuất} other {Người mua}} hiện có thể xem.",
         "nothingTitle": "Chưa có gì để bán",
         "nothingBody": "Tồn kho bạn ghi nhận xuất hiện ở đây. Hàng đã đăng hoặc bán không được tính hai lần.",
         "goStock": "Đến tồn kho",
@@ -2920,7 +2921,7 @@
     },
     "trades": {
       "title": "Giao dịch của bạn",
-      "lead": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "lead": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "buying": "Đang mua",
       "selling": "Đang bán hàng",
       "tabsLabel": "Mua hoặc bán",
@@ -2936,7 +2937,7 @@
         "from": "Từ {name} · {area}",
         "to": "Đến {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+        "inEscrow": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
         "ewayBill": "Trên ₹50.000: hàng phải đi kèm e-way bill.",
         "updated": "Cập nhật {when}",
         "receipt": "Biên nhận {number}",
@@ -2964,8 +2965,8 @@
           "seller": "{name} muốn mua. Chấp nhận để giữ hàng cho họ."
         },
         "accepted": {
-          "buyer": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
-          "seller": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng."
+          "buyer": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
+          "seller": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại."
         },
         "paid_to_escrow": {
           "buyer": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh.",
@@ -3002,7 +3003,7 @@
       "declineConfirm": "Từ chối đơn này từ {name}? Không thể hoàn tác.",
       "declineYes": "Có, từ chối",
       "declineNo": "Giữ lịch",
-      "gatewayPending": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "gatewayPending": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "legacyUnverified": "Bản ghi thử nghiệm. Thanh toán và giao hàng chưa được xác minh."
     },
     "receipt": {
@@ -3032,20 +3033,20 @@
       "missingTitle": "Không tìm thấy biên nhận",
       "missingBody": "Giao dịch không thuộc bạn hoặc liên kết sai.",
       "pendingTitle": "Chưa có biên nhận cho giao dịch",
-      "pendingBody": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+      "pendingBody": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
       "declinedBody": "Giao dịch bị từ chối nên không có biên nhận.",
       "unverified": "Chưa xác minh"
     },
     "home": {
       "greeting": "Chào bạn, {name}",
-      "lead": "{kind, select, yard {Mua từ kabadiwala, bán kiện đã phân loại cho cơ sở tái chế.} recycler {Mua vật liệu đã phân loại từ bãi, bán vật liệu tái chế cho nhà sản xuất.} manufacturer {Mua vật liệu tái chế từ cơ sở đã xác minh.} other {Tổng quan giao dịch của bạn.}}",
+      "lead": "Quản lý việc mua, bán và đơn hàng vật liệu.",
       "buy": "Mua",
       "sell": "Bán",
       "trades": "Giao dịch của bạn",
       "statsTitle": "Tổng quan",
       "stats": {
         "escrow": "Chưa xác minh",
-        "escrowHint": "Cần cổng thanh toán. Chức năng thanh toán chưa khả dụng.",
+        "escrowHint": "Thanh toán giữa doanh nghiệp sử dụng cổng thanh toán. Xem đơn hàng để biết trạng thái thanh toán hiện tại.",
         "waiting": "Đang chờ bạn",
         "waitingHint": "{count, plural, =0 {Đã xử lý hết} one {# giao dịch cần thao tác} other {# giao dịch cần thao tác}}",
         "listings": "Đang bán",
@@ -3054,15 +3055,15 @@
         "offersHint": "Cơ sở tái chế đang bán",
         "completed": "Hoàn tất tháng này",
         "completedHint": "Đã giao dịch {amount}",
-        "gatewayPending": "Đang chờ cổng thanh toán"
+        "gatewayPending": "Đơn hàng đã chấp nhận"
       },
       "waitingTitle": "Đang chờ bạn",
       "allTrades": "Mọi giao dịch",
       "caughtUpTitle": "Hiện không có gì cần bạn xử lý",
       "caughtUpBody": "Đơn, thanh toán và giao hàng mới hiện ở đây.",
       "offersTitle": "Lô mới nhất cho bạn",
-      "recycledTitle": "Vật liệu tái chế cho bạn",
-      "recycledBody": "Mảnh, hạt, kraft và thỏi từ cơ sở đã xác minh, sẵn sàng cho dây chuyền.",
+      "recycledTitle": "Chào bán vật liệu dành cho bạn",
+      "recycledBody": "Xem nhà cung cấp được phê duyệt. Vật liệu tái chế hiển thị trước.",
       "seeAll": "Xem hết",
       "noOffersTitle": "Hiện không có lô đang bán",
       "noOffersBody": "Lô mới xuất hiện ngay khi được đăng."
@@ -3145,8 +3146,8 @@
       "you": "Bạn trả",
       "market": "Thị trường",
       "quickLinks": "Lối tắt",
-      "sell": "Bán cho một bãi",
-      "sellHint": "Chào hàng tồn cho bãi gần bạn",
+      "sell": "Bán cho một đơn vị sơ chế",
+      "sellHint": "Chào hàng tồn cho đơn vị sơ chế gần bạn",
       "prices": "Giá của tôi",
       "pricesHint": "Giá bạn trả hộ gia đình mỗi kg"
     },
@@ -3251,7 +3252,7 @@
       "atPrice": "Thị trường {price}/kg",
       "noPrice": "Hôm nay chưa có giá thị trường",
       "sellTo": {
-        "yard": "Bán cho một bãi",
+        "yard": "Bán cho một đơn vị sơ chế",
         "recycler": "Bán cho cơ sở tái chế",
         "manufacturer": "Bán cho nhà sản xuất"
       },
@@ -3260,7 +3261,7 @@
       "emptyBusiness": "Mua trên chợ để hàng hiện tại đây.",
       "buy": "Mua vật liệu",
       "notBusinessTitle": "Chỉ dành cho doanh nghiệp",
-      "notBusinessBody": "Cửa hàng, bãi, cơ sở tái chế và nhà máy quản lý tồn kho."
+      "notBusinessBody": "Cửa hàng, đơn vị sơ chế, cơ sở tái chế và nhà máy quản lý tồn kho."
     },
     "prices": {
       "title": "Giá của tôi",
@@ -3348,7 +3349,7 @@
           "third": "Quản lý tồn kho đã phân loại"
         },
         "yard": {
-          "title": "Bãi phân loại của bạn",
+          "title": "Không gian làm việc sơ chế của bạn",
           "first": "Nhận vật liệu",
           "second": "Phân loại tồn kho",
           "third": "Chuẩn bị lô xuất đi"
@@ -3507,5 +3508,617 @@
       "resort": "Khu nghỉ dưỡng",
       "other": "Cơ sở khác"
     }
+  },
+  "emailAuth": {
+    "phone": "Điện thoại",
+    "email": "Thư điện tử",
+    "signin": "Đăng nhập",
+    "signup": "Tạo tài khoản",
+    "forgot": "Đặt lại mật khẩu",
+    "name": "Tên của bạn",
+    "password": "Mật khẩu",
+    "show": "Hiện mật khẩu",
+    "hide": "Ẩn mật khẩu",
+    "passwordHint": "Dùng 12–128 ký tự.",
+    "unavailable": "Không thể gửi email. Tài khoản hiện có vẫn có thể đăng nhập.",
+    "sent": "Kiểm tra hộp thư. Nếu đủ điều kiện, bạn sẽ nhận liên kết có hiệu lực 15 phút.",
+    "resend": "Gửi lại xác minh",
+    "limited": "Quá nhiều lần thử. Hãy thử sau.",
+    "unverified": "Xác minh email trước khi đăng nhập.",
+    "credentials": "Kiểm tra email và mật khẩu.",
+    "invalidLink": "Liên kết không hợp lệ hoặc hết hạn. Yêu cầu liên kết khác.",
+    "failed": "Yêu cầu thất bại. Hãy thử lại.",
+    "reset": "Mật khẩu mới",
+    "verify": "Xác minh email",
+    "done": "Hoàn tất. Đăng nhập để tiếp tục.",
+    "confirm": "Nhập lại mật khẩu",
+    "mismatch": "Mật khẩu không khớp.",
+    "securityHint": "Thêm mã xác thực sau mật khẩu. Khôi phục mật khẩu vẫn giữ bảo vệ này.",
+    "backupHint": "Mỗi mã khôi phục dùng một lần sau mật khẩu.",
+    "disableHint": "Đăng nhập bằng mật khẩu vẫn hoạt động. Mã xác thực và khôi phục ngừng hoạt động."
+  },
+  "workspace": {
+    "title": "Không gian làm việc và nhóm",
+    "choose": "Chọn không gian",
+    "team": "Nhóm",
+    "role": "Vai trò",
+    "owner": "Chủ sở hữu",
+    "admin": "Quản trị viên",
+    "member": "Thành viên",
+    "viewer": "Người xem",
+    "invite": "Gửi lời mời",
+    "email": "Địa chỉ email",
+    "pending": "Lời mời đang chờ",
+    "revoke": "Thu hồi",
+    "remove": "Xóa",
+    "empty": "Không có không gian làm việc.",
+    "error": "Không thể cập nhật. Kiểm tra quyền truy cập và thử lại.",
+    "inviteTitle": "Lời mời vào không gian",
+    "accept": "Chấp nhận lời mời",
+    "verifyEmail": "Xác minh email được mời trước khi chấp nhận.",
+    "unavailable": "Lời mời không khả dụng. Kiểm tra email hoặc yêu cầu lời mời mới.",
+    "join": "Tham gia {name} với vai trò {role}.",
+    "readOnly": "Quyền chỉ đọc",
+    "confirmRemove": "Xóa người này khỏi không gian?",
+    "lastOwner": "Giữ ít nhất một chủ sở hữu. Thêm chủ sở hữu khác trước khi đổi.",
+    "deliveryPending": "Email đang chờ",
+    "deliveryAccepted": "Dịch vụ email đã tiếp nhận",
+    "deliveryFailed": "Chưa xác nhận gửi email",
+    "expires": "Hết hạn {date}",
+    "emailBody": "Bạn được mời vào {name}. Mở liên kết trong bảy ngày và đăng nhập bằng email đã xác minh này. Lời mời dùng một lần.",
+    "switchAccount": "Đổi tài khoản",
+    "switchHint": "Đăng xuất để đăng nhập hoặc đăng ký bằng địa chỉ email đã nhận lời mời.",
+    "invitationLimit": "Đã đạt giới hạn lời mời. Hãy đợi trước khi gửi lời mời khác."
+  },
+  "lots": {
+    "title": "Lô và chất lượng",
+    "lead": "Ghi vật liệu đã đo, quá trình xử lý và bàn giao thực tế.",
+    "evidenceNote": "Các bản ghi mô tả bằng chứng thực tế. Chúng không thay đổi tồn kho, thanh toán, quyền sở hữu pháp lý hay chứng nhận.",
+    "notBusiness": "Chọn không gian làm việc của doanh nghiệp đang hoạt động để dùng hồ sơ lô.",
+    "readOnly": "Vai trò của bạn trong không gian làm việc được đọc các hồ sơ này.",
+    "held": "Lô đang giữ",
+    "incoming": "Lô đang đến",
+    "sent": "Lịch sử bàn giao",
+    "empty": "Chưa có bản ghi.",
+    "limit": "Chỉ hiển thị 100 bản ghi đầu tiên.",
+    "declare": "Khai báo lô",
+    "detail": "Chi tiết lô",
+    "back": "Tất cả lô",
+    "material": "Mã hoặc tên vật liệu",
+    "state": "Trạng thái vật lý",
+    "mass": "Khối lượng (g)",
+    "grams": "{value} g",
+    "integerHint": "Nhập số gam nguyên. Không dùng dấu thập phân hay dấu phân nhóm số.",
+    "sourceReference": "Tham chiếu nguồn (tùy chọn)",
+    "source": "Nguồn",
+    "selfDeclared": "Tự khai báo",
+    "transformed": "Từ chuyển đổi",
+    "initial": "Khối lượng ban đầu",
+    "remaining": "Khối lượng còn lại",
+    "available": "Có sẵn",
+    "in_transit": "Đang vận chuyển",
+    "exhausted": "Đã hết",
+    "save": "Lưu bản ghi",
+    "saving": "Đang lưu…",
+    "saved": "Đã lưu bản ghi.",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "required": "Điền mọi trường bắt buộc.",
+    "invalidInput": "Kiểm tra giá trị. Dùng số gam nguyên và điền các trường bắt buộc.",
+    "genericError": "Không lưu được bản ghi. Các giá trị vẫn được giữ. Hãy thử lại.",
+    "accessChanged": "Lô này hoặc quyền truy cập không gian làm việc đã đổi. Tải lại danh sách lô.",
+    "balanceError": "Khối lượng đầu vào phải bằng tổng đầu ra, tạp chất và hao hụt xử lý.",
+    "weightDispute": "Khối lượng nhận khác với khối lượng gửi. Chưa ghi nhận việc nhận hàng. Kiểm tra phép đo với bên gửi.",
+    "approvalError": "Một chủ sở hữu khác phải duyệt sửa đổi khi doanh nghiệp của bạn đang giữ lô.",
+    "transform": "Ghi chuyển đổi",
+    "inputMass": "Khối lượng đầu vào (g)",
+    "contamination": "Tạp chất (g)",
+    "processLoss": "Hao hụt xử lý (g)",
+    "outputs": "Lô đầu ra",
+    "outputNumber": "Đầu ra {number}",
+    "addOutput": "Thêm đầu ra",
+    "remove": "Xóa",
+    "balance": "Khối lượng đã hạch toán: {value}",
+    "transformHint": "Ghi mọi đầu ra và hao hụt. Khối lượng đầu vào được trừ khỏi lô này và tạo các lô đầu ra liên kết.",
+    "dispatch": "Gửi lô",
+    "dispatchHint": "Toàn bộ phần lô còn lại sẽ được gửi đến doanh nghiệp đã chọn. Kiểm tra bên nhận trước khi lưu.",
+    "receiver": "Bên nhận",
+    "city": "Thành phố",
+    "businessKind": "Loại doanh nghiệp",
+    "chooseBusiness": "Chọn doanh nghiệp",
+    "searchBusinesses": "Tìm doanh nghiệp",
+    "directoryNote": "Danh bạ hiển thị doanh nghiệp đang hoạt động. Danh bạ không xác nhận năng lực xử lý của họ.",
+    "directoryEmpty": "Không có doanh nghiệp phù hợp. Kiểm tra thành phố và loại doanh nghiệp.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Đơn vị sơ chế",
+    "recycler": "Đơn vị tái chế",
+    "manufacturer": "Nhà sản xuất",
+    "receive": "Nhận lô",
+    "receivedMass": "Khối lượng nhận (g)",
+    "receiveHint": "Đo lô nhận được. Biểu mẫu này không cho phép chấp nhận khối lượng khác.",
+    "pendingNote": "Bạn chỉ xem được chuyến gửi này. Lịch sử lô đầy đủ sẽ có sau khi nhận.",
+    "custody": "Lịch sử lưu giữ",
+    "dispatched": "Đã gửi",
+    "received": "Đã nhận",
+    "handoff": "{from} → {to}",
+    "from": "Từ {name}",
+    "to": "Đến {name}",
+    "transformations": "Các chuyển đổi",
+    "inspection": "Ghi kiểm tra",
+    "inspections": "Bằng chứng kiểm tra",
+    "inspectionNote": "Ghi quy cách thực tế, phương pháp lấy mẫu và kết quả đo. Quyết định chỉ áp dụng cho lần kiểm tra này, không phải phân hạng hay chứng nhận của nền tảng.",
+    "specification": "Tham chiếu quy cách",
+    "version": "Phiên bản quy cách",
+    "sampleMethod": "Phương pháp lấy mẫu",
+    "buyer": "Phạm vi bên mua (tùy chọn)",
+    "addBuyer": "Chỉ định bên mua",
+    "noBuyer": "Chưa chỉ định bên mua",
+    "results": "Kết quả đo",
+    "resultNumber": "Kết quả {number}",
+    "parameter": "Thông số",
+    "unit": "Đơn vị",
+    "value": "Giá trị đo",
+    "addResult": "Thêm kết quả",
+    "decision": "Quyết định kiểm tra",
+    "accepted": "Chấp nhận",
+    "rejected": "Từ chối",
+    "conditional": "Có điều kiện",
+    "evidenceReference": "Tham chiếu bằng chứng (tùy chọn)",
+    "correct": "Đề xuất sửa đổi",
+    "correctionHint": "Bản gốc vẫn hiển thị. Không được đổi phạm vi bên mua và quy cách. Một chủ sở hữu khác phải duyệt sửa đổi.",
+    "reason": "Lý do sửa đổi",
+    "approve": "Duyệt sửa đổi",
+    "pendingApproval": "Chờ phê duyệt riêng",
+    "approved": "Đã duyệt sửa đổi",
+    "superseded": "Đã thay bằng sửa đổi được duyệt",
+    "original": "Kiểm tra gốc",
+    "previousResult": "Kiểm tra trước",
+    "recordedBy": "Doanh nghiệp kiểm tra: {name}",
+    "loadError": "Không tải được hồ sơ. Hãy thử lại.",
+    "retry": "Thử lại",
+    "streamClass": "Luồng đầu ra",
+    "handlingClass": "Phân loại xử lý",
+    "streams": {
+      "main_product": "Sản phẩm chính",
+      "saleable_byproduct": "Phụ phẩm có thể bán",
+      "recoverable_waste": "Chất thải có thể thu hồi",
+      "residual_waste": "Chất thải còn lại",
+      "unspecified": "Chưa chỉ định"
+    },
+    "handling": {
+      "non_hazardous": "Không nguy hại",
+      "controlled": "Có kiểm soát",
+      "unassessed": "Chưa đánh giá"
+    },
+    "facility": "Cơ sở",
+    "processKind": "Quy trình",
+    "noFacility": "Chưa chọn cơ sở",
+    "controlledBlocked": "Vật liệu có kiểm soát hoặc phần dư cần hồ sơ xử lý. Không được giao hoặc chuyển đổi theo quy trình thông thường.",
+    "recordDisposition": "Ghi nhận xử lý",
+    "destinationReference": "Tham chiếu nơi nhận",
+    "authorisationReference": "Tham chiếu giấy phép",
+    "manifestReference": "Tham chiếu chứng từ vận chuyển",
+    "dispositions": "Lịch sử xử lý",
+    "dispositionHint": "Ghi khối lượng đo được và tham chiếu thực tế về nơi nhận, giấy phép và chứng từ vận chuyển. Việc này giảm khối lượng còn lại của lô. Không xác minh giấy phép hoặc tạo tồn kho có thể bán.",
+    "inputs": "Lô đầu vào",
+    "additionalInputs": "Các lô đầu vào khác",
+    "addInput": "Thêm lô đầu vào",
+    "chooseInput": "Chọn lô đầu vào",
+    "combinedInput": "Tổng khối lượng đầu vào",
+    "multiInputHint": "Chỉ kết hợp vật liệu đã đo do bạn giữ. Mỗi lượng được tiêu thụ từ chính lô đó. Đây là bằng chứng xử lý và không tăng tồn kho."
+  },
+  "evidence": {
+    "title": "Tham chiếu tài liệu",
+    "lead": "Lưu tham chiếu được khai báo. Luma không xác minh hoặc cấp các tài liệu này.",
+    "record": "Thêm tham chiếu",
+    "correct": "Thay tham chiếu",
+    "replacement": "Thay thế: {reference}",
+    "reference": "Tham chiếu tài liệu",
+    "kind": "Loại tài liệu",
+    "issuer": "Bên cấp",
+    "issuerName": "Tên bên cấp",
+    "trade": "Giao dịch liên kết",
+    "none": "Không có giao dịch",
+    "unverified": "Đã khai báo · chưa xác minh",
+    "gst_invoice": "Hóa đơn GST",
+    "eway_bill": "Chứng từ e-way",
+    "cpcb_epr_certificate": "Chứng nhận CPCB EPR",
+    "pollution_consent": "Chấp thuận kiểm soát ô nhiễm",
+    "external_authority": "Cơ quan cấp",
+    "external_organization": "Tổ chức cấp",
+    "trade_seller": "Bên bán",
+    "trade_buyer": "Bên mua",
+    "correctionHint": "Bản gốc vẫn hiển thị. Lưu tham chiếu mới để thay thế."
+  },
+  "accountPhone": {
+    "title": "Xác minh số điện thoại của bạn",
+    "description": "Thêm số của bạn để thu gom và thanh toán. Tài khoản email được giữ riêng, không hợp nhất tài khoản khác. Tiếp tục đăng nhập bằng email.",
+    "verified": "Đã xác minh số điện thoại",
+    "unavailable": "Chưa thể xác minh điện thoại cho đến khi thiết lập gửi SMS.",
+    "inUse": "Không thể thêm số này. Hãy dùng số chưa liên kết với tài khoản khác.",
+    "unsupported": "Không thể đổi số điện thoại của tài khoản này tại đây."
+  },
+  "sandboxPayment": {
+    "title": "Thanh toán thử",
+    "note": "Chỉ thử nghiệm. Không có thanh toán thực, quyết toán hay hoàn tiền. Giao dịch vẫn tạm dừng.",
+    "open": "Mở thử nghiệm",
+    "unavailable": "Thanh toán thử không khả dụng.",
+    "pending": "Đang chờ máy chủ xác nhận.",
+    "collected": "Đã xác nhận thu tiền thử.",
+    "failed": "Không mở được thanh toán. Hãy thử lại.",
+    "review": "Cần máy chủ kiểm tra.",
+    "liveTitle": "Thanh toán qua cổng",
+    "liveNote": "Thanh toán tổng tiền đơn hàng đã thỏa thuận qua Cashfree. Cần xác nhận từ nhà cung cấp; đóng trang thanh toán không xác nhận đã trả tiền.",
+    "liveOpen": "Mở thanh toán an toàn",
+    "liveCollected": "Nhà cung cấp đã xác nhận thanh toán."
+  },
+  "industry": {
+    "title": "Tham chiếu ngành",
+    "lead": "Tìm trong sổ làm việc được cung cấp. Các tham chiếu này chưa được xác minh và không cấp phép giao dịch hay xử lý vật liệu.",
+    "sourceNote": "Văn bản nguồn hiển thị bằng tiếng Anh gốc của sổ làm việc.",
+    "sectors": "Tham chiếu lĩnh vực",
+    "industries": "Ma trận ngành",
+    "lifecycles": "Vòng đời vật liệu",
+    "byproducts": "Ví dụ phụ phẩm",
+    "matches": "{count} tham chiếu phù hợp",
+    "previous": "Trước",
+    "next": "Tiếp",
+    "select": "Chọn tham chiếu",
+    "selected": "Tham chiếu đã chọn",
+    "clear": "Xóa tham chiếu",
+    "detailLabels": {
+      "annexure": "Phụ lục",
+      "category": "Danh mục",
+      "division": "Bộ phận",
+      "industryGroup": "Nhóm ngành",
+      "inputs": "Đầu vào",
+      "products": "Sản phẩm",
+      "byproducts": "Phụ phẩm",
+      "recoverableWaste": "Chất thải có thể thu hồi",
+      "residualWaste": "Chất thải còn lại",
+      "nextUser": "Người dùng tiếp theo",
+      "suggestedFlow": "Luồng đề xuất",
+      "materialState": "Trạng thái vật liệu",
+      "note": "Ghi chú",
+      "route": "Tuyến",
+      "qualityAttributes": "Thuộc tính chất lượng",
+      "reportedCommercialStatus": "Tình trạng thương mại được khai báo"
+    },
+    "view": "Xem tham chiếu",
+    "empty": "Không có tham chiếu phù hợp."
+  },
+  "facility": {
+    "title": "Cơ sở và quy trình",
+    "lead": "Ghi lại địa điểm và quy trình doanh nghiệp khai báo. Hồ sơ này không xác minh cơ sở hoặc cho phép giao dịch vật liệu.",
+    "add": "Thêm cơ sở",
+    "edit": "Sửa cơ sở",
+    "name": "Tên cơ sở",
+    "siteReference": "Tham chiếu địa điểm",
+    "sector": "Tham chiếu ngành (tùy chọn)",
+    "capabilities": "Quy trình khai báo",
+    "readOnly": "Chỉ chủ sở hữu và quản trị viên không gian làm việc được sửa cơ sở.",
+    "processNote": "Đây là năng lực tự khai báo, không phải giấy phép đã xác minh.",
+    "processKinds": {
+      "sorting": "Phân loại",
+      "baling": "Ép kiện",
+      "shredding": "Nghiền nhỏ",
+      "stripping": "Tuốt vỏ",
+      "washing": "Rửa",
+      "granulating": "Tạo hạt",
+      "compounding": "Phối trộn",
+      "recovery": "Thu hồi",
+      "manufacturing": "Sản xuất",
+      "residual_handling": "Xử lý phần dư"
+    },
+    "empty": "Chưa ghi nhận cơ sở nào.",
+    "registration": {
+      "title": "Tham chiếu chấp thuận và đăng ký",
+      "lead": "Chỉ là tham chiếu khai báo. Ngày tháng không chứng minh phê duyệt hoặc mở giao dịch.",
+      "add": "Thêm tham chiếu",
+      "correct": "Thêm bản sửa",
+      "reference": "Tham chiếu",
+      "issuedAt": "Ngày cấp",
+      "validUntil": "Hiệu lực đến",
+      "empty": "Chưa ghi nhận tham chiếu.",
+      "current": "Trong khoảng ngày khai báo",
+      "expired": "Quá hạn khai báo",
+      "superseded": "Được thay bằng tham chiếu sau",
+      "kind": "Loại tham chiếu",
+      "kinds": {
+        "consent_to_operate": "Chấp thuận vận hành",
+        "consent_to_establish": "Chấp thuận thành lập",
+        "epr_registration": "Đăng ký EPR",
+        "waste_authorisation": "Giấy phép chất thải",
+        "other": "Tham chiếu khác"
+      },
+      "not_yet_current": "Trước ngày cấp khai báo"
+    }
+  },
+  "marketSpecification": {
+    "title": "Cấp chất lượng và đặc tả",
+    "enable": "Thêm cấp chất lượng và đặc tả",
+    "grade": "Cấp chất lượng vật liệu",
+    "specification": "Đặc tả chất lượng của bên mua",
+    "lot": "Lô phù hợp gần đây (tùy chọn)",
+    "noLot": "Không liên kết lô",
+    "source": "Khai báo của bên bán. Không xác minh chất lượng hoặc giữ chỗ lô bằng chứng.",
+    "lotState": "Trạng thái lô đã ghi nhận"
+  },
+  "stockIntake": {
+    "title": "Tồn kho phụ phẩm tự sản xuất",
+    "add": "Ghi nhận nhập kho",
+    "lead": "Ghi phụ phẩm đã cân của nhà sản xuất này. Lưu sẽ tăng tồn kho theo hồ sơ sản xuất và cân đã khai báo. Lô chỉ làm bằng chứng không tăng tồn kho.",
+    "reference": "Mã nhập kho duy nhất",
+    "source": "Mã lô sản xuất",
+    "weighing": "Mã hồ sơ cân",
+    "date": "Ngày sản xuất",
+    "confirm": "Tôi xác nhận đây là phụ phẩm do chúng tôi sản xuất và khối lượng đã cân này chưa được ghi vào tồn kho.",
+    "empty": "Chưa ghi nhận nhập kho sản xuất.",
+    "noMaterials": "Không có vật liệu phụ phẩm không nguy hại đã duyệt phù hợp với doanh nghiệp này. Hãy yêu cầu quản trị viên xem xét vật liệu trước khi ghi tồn kho.",
+    "conflict": "Mã nhập kho này đã có thông tin khác. Kiểm tra hồ sơ gốc trước khi tiếp tục.",
+    "history": "Các lần nhập kho đã ghi",
+    "more": "Tải thêm lần nhập kho",
+    "note": "Đây là khai báo của nhà sản xuất, không phải xác minh độc lập về chất lượng, quyền sở hữu hay quy định. Không thể sửa hồ sơ sau khi lưu."
+  },
+  "tradeLifecycle": {
+    "title": "Thanh toán và giao nhận",
+    "collectionLabel": "Khoản thanh toán của người mua",
+    "settlementLabel": "Quyết toán cho người bán",
+    "refundLabel": "Hoàn tiền",
+    "state": {
+      "awaiting_payment": "Đang chờ thanh toán qua cổng",
+      "authorized": "Đã xác nhận thanh toán; sẵn sàng gửi hàng",
+      "dispatched": "Đã gửi; đang chờ nhận hàng",
+      "received": "Đã nhận vật liệu",
+      "cancellation_pending": "Đang kiểm tra yêu cầu hủy",
+      "cancelled": "Đã hủy đơn hàng",
+      "hold": "Đơn hàng cần được xem xét"
+    },
+    "collection": {
+      "pending": "Chưa xác nhận",
+      "sandbox_confirmed": "Chỉ môi trường thử nghiệm; không có tiền thật",
+      "live_confirmed": "Đã được nhà cung cấp xác nhận",
+      "review": "Khoản thanh toán cần xem xét"
+    },
+    "settlement": {
+      "pending": "Chưa xác nhận",
+      "settled": "Đã được nhà cung cấp xác nhận",
+      "reversed": "Đã đảo ngược quyết toán",
+      "review": "Quyết toán cần xem xét"
+    },
+    "refund": {
+      "none": "Chưa ghi nhận hoàn tiền",
+      "pending": "Đang chờ hoàn tiền",
+      "refunded": "Đã được nhà cung cấp xác nhận",
+      "review": "Khoản hoàn tiền cần xem xét"
+    },
+    "action": {
+      "dispatch": "Ghi nhận gửi hàng",
+      "receive": "Xác nhận nhận hàng",
+      "cancel": "Yêu cầu hủy"
+    },
+    "policyMissing": "Thanh toán thật cần điều khoản thanh toán được duyệt và thiết lập nhà cung cấp.",
+    "reviewRequired": "Quản trị viên phải kiểm tra bằng chứng thanh toán trước khi đơn hàng này tiếp tục.",
+    "fullQuantity": "Xác nhận toàn bộ số lượng đã thỏa thuận: {weight}. Nếu số lượng hoặc chất lượng khác, hãy dừng và liên hệ quản trị viên.",
+    "cancelNote": "Việc hủy chỉ giải phóng tồn kho sau khi máy chủ xác nhận không còn khoản thanh toán nào có thể hoàn tất. Yêu cầu đang chờ không có nghĩa là đơn hàng đã bị hủy.",
+    "reason": "Lý do",
+    "reference": "Mã tham chiếu gửi hoặc nhận hàng",
+    "confirm": "Xác nhận",
+    "back": "Quay lại",
+    "saved": "Đã cập nhật hồ sơ đơn hàng",
+    "failed": "Chưa cập nhật xong. Kiểm tra trạng thái hiện tại rồi thử lại. Mã tham chiếu của bạn được giữ lại.",
+    "actionUnavailable": "Thao tác này không còn khả dụng. Kiểm tra trạng thái mới của đơn hàng."
+  },
+  "sourcing": {
+    "close": "Đóng",
+    "material": "Vật liệu",
+    "save": "Lưu bản ghi",
+    "saved": "Đã lưu bản ghi.",
+    "reference": "Tham chiếu",
+    "buying": "Đang mua",
+    "active": "Đang hoạt động",
+    "decline": "Từ chối",
+    "title": "Tìm nguồn cung ứng vật liệu",
+    "lead": "Lập kế hoạch nhu cầu nguyên vật liệu, ghi lại các quyết định của bạn về nhà cung cấp và thống nhất các yêu cầu cung cấp riêng lẻ.",
+    "boundary": "Những hồ sơ này không tạo ra giao dịch mua hàng. Họ không dự trữ hàng tồn kho hoặc xác nhận thanh toán. Hoàn tất giao dịch mua bằng cách sử dụng thị trường và quy trình thanh toán.",
+    "board": "bảng nhu cầu",
+    "plans": "Nhu cầu định kỳ",
+    "qualifications": "Quyết định của nhà cung cấp",
+    "agreements": "Thỏa thuận thường trực",
+    "post": "Xuất bản nhu cầu vật chất",
+    "createPlan": "Tạo lịch trình",
+    "publish": "Xuất bản nhu cầu tiếp theo",
+    "supplier": "Nhà cung cấp",
+    "choose": "Chọn một tùy chọn",
+    "quantity": "Số lượng (g)",
+    "area": "Khu vực giao hàng",
+    "specification": "Đặc điểm kỹ thuật bằng văn bản",
+    "neededBy": "Ngày giao hàng bắt buộc",
+    "cadence": "Khoảng thời gian lặp lại",
+    "weekly": "Cứ 7 ngày một lần",
+    "monthly": "Cứ sau 30 ngày",
+    "planHint": "Mỗi lần xuất hiện chỉ được xuất bản khi bạn chọn Xuất bản theo yêu cầu tiếp theo. Không có đơn hàng tự động nào được tạo ra.",
+    "myDemand": "Nhu cầu của tôi",
+    "availableDemand": "Nhu cầu từ người mua",
+    "empty": "Chưa có hồ sơ nào.",
+    "limited": "Chỉ một tập hợp giới hạn được hiển thị. Các hồ sơ cũ hơn vẫn còn trong lịch sử kiểm toán.",
+    "loadMore": "Tải thêm",
+    "invalid": "Kiểm tra các trường bắt buộc, ngày tháng và số lượng nguyên.",
+    "failed": "Không thể hoàn tất hành động này. Bản nháp của bạn được giữ lại. Kiểm tra các quyền hiện tại và tính đủ điều kiện, sau đó thử lại.",
+    "qualify": "Ghi lại quyết định của nhà cung cấp",
+    "sample": "Tài liệu tham khảo mẫu hoặc kiểm tra",
+    "decision": "Quyết định của bạn",
+    "reason": "Lý do quyết định",
+    "validUntil": "Quyết định có hiệu lực đến",
+    "privateDecision": "Đây là quyết định tìm nguồn cung ứng của tổ chức bạn. Nó không phải là sự phê duyệt của nền tảng hoặc chứng nhận theo quy định. Lịch sử quyết định là riêng tư đối với không gian làm việc của người mua. Quyết định mới nhất đối với nhà cung cấp và kiểm soát nguyên vật liệu trong các thỏa thuận và phát hành mới; các mục trước đó vẫn còn trong lịch sử.",
+    "pending": "Đang chờ xử lý",
+    "approved": "Được người mua chấp thuận",
+    "rejected": "Bị người mua từ chối",
+    "propose": "Đề xuất thỏa thuận",
+    "price": "Giá thỏa thuận (đồng/kg)",
+    "startsOn": "Bắt đầu vào",
+    "endsOn": "Kết thúc vào",
+    "agreementHint": "Cần phải có quyết định của nhà cung cấp hiện tại đã được phê duyệt đối với thông số kỹ thuật chính xác này. Nhà cung cấp phải thừa nhận đề xuất này một cách riêng biệt.",
+    "supplying": "cung cấp",
+    "requested": "Đang chờ phản hồi của nhà cung cấp",
+    "acknowledged": "Được nhà cung cấp xác nhận",
+    "declined": "Bị nhà cung cấp từ chối",
+    "closed": "Đã đóng",
+    "acknowledge": "Xác nhận xác nhận",
+    "responseReference": "Tham chiếu phản hồi",
+    "release": "Yêu cầu số lượng cung cấp",
+    "releaseHint": "Yêu cầu một phần số lượng đã thỏa thuận. Nhà cung cấp chỉ ghi nhận mục đích ghi nhận; nó không di chuyển vật chất hoặc tiền bạc.",
+    "releases": "Yêu cầu cung cấp cá nhân",
+    "history": "Lịch sử thỏa thuận",
+    "view": "Xem yêu cầu và lịch sử cung cấp",
+    "closeAgreement": "Đóng thỏa thuận này",
+    "closeHint": "Điều này ngăn cản các yêu cầu cung cấp mới theo thỏa thuận. Các yêu cầu hiện tại và lịch sử của chúng vẫn được ghi lại.",
+    "state": "Ghi lại trạng thái",
+    "nextDate": "Ngày yêu cầu tiếp theo",
+    "readOnly": "Vai trò không gian làm việc của bạn có thể xem các bản ghi này nhưng không thể thay đổi chúng.",
+    "published": "Nhu cầu xuất hiện được công bố.",
+    "event": {
+      "proposed": "Thỏa thuận đề xuất",
+      "acknowledged": "Thỏa thuận được thừa nhận",
+      "declined": "Thỏa thuận bị từ chối",
+      "closed": "Thỏa thuận đã đóng",
+      "release_requested": "Số lượng cung cấp yêu cầu",
+      "release_acknowledged": "Yêu cầu cung cấp được thừa nhận",
+      "release_declined": "Yêu cầu cung cấp bị từ chối"
+    },
+    "reschedule": "Di chuyển ngày nhu cầu tiếp theo",
+    "rescheduleHint": "Chọn một ngày hiện tại muộn hơn. Các ấn phẩm trước đây không thay đổi. Điều này không công bố nhu cầu hoặc tạo ra một đơn đặt hàng.",
+    "overdue": "Ngày dự kiến ​​này đã trôi qua. Di chuyển ngày tiếp theo trước khi xuất bản."
+  },
+  "operations": {
+    "validUntil": "Hiệu lực đến",
+    "decisions": {
+      "revoked": "Đã thu hồi",
+      "approved": "Đã được phê duyệt",
+      "rejected": "Bị từ chối"
+    },
+    "reference": "Tham chiếu",
+    "remove": "Xóa",
+    "save": "Lưu bản ghi",
+    "saved": "Đã lưu bản ghi.",
+    "standards": "Tiêu chuẩn vật liệu",
+    "standardsHint": "Tìm kiếm các định nghĩa được xem xét. Cấp hoặc ngành không cấp phép xử lý hoặc chứng nhận chất lượng.",
+    "workspaceRequired": "Chọn không gian làm việc kinh doanh đã được phê duyệt để tiếp tục.",
+    "definitions": "định nghĩa",
+    "reviews": "Đánh giá phạm vi",
+    "destinations": "Điểm đến được kiểm soát",
+    "search": "Tìm kiếm theo vật liệu, trạng thái vật lý, cấp hoặc thông số kỹ thuật",
+    "empty": "Chưa có hồ sơ nào.",
+    "truncated": "Kết quả là bị hạn chế. Tinh chỉnh tìm kiếm của bạn hoặc kiểm tra các hồ sơ gần đây.",
+    "reviewHint": "Đây là những đánh giá của quản trị viên về bằng chứng được cung cấp. Cơ sở bị thay đổi, đăng ký thay thế, hết hạn hoặc thu hồi sẽ làm mất hiệu lực phạm vi hiện tại.",
+    "destinationHint": "Kiểm tra phạm vi quan trọng và ủy quyền hiện tại trước khi chuyển giao có kiểm soát. Mục nhập thư mục không chứng minh việc xử lý hoặc gửi cổng thông tin.",
+    "current": "hiện tại",
+    "historical": "Không hiện tại",
+    "production": "Hồ sơ sản xuất",
+    "productionHint": "Liên kết các công thức nấu ăn và đầu vào đã khai báo với một phép biến đổi được đo lường và kiểm tra đầu ra của nó. Phần tái chế mô tả đầu vào được khai báo, không phải hàm lượng sản phẩm được chứng nhận. Những hồ sơ này không thay đổi cổ phiếu.",
+    "recipes": "Công thức sản xuất",
+    "batches": "Lô sản xuất",
+    "newRecipe": "Ghi lại công thức sản xuất",
+    "newBatch": "Ghi lô",
+    "version": "Phiên bản ghi âm",
+    "name": "Tên công thức",
+    "instructions": "Hướng dẫn quy trình",
+    "ingredients": "thành phần",
+    "ingredient": "Tên thành phần",
+    "basisPoints": "Tỷ lệ thành phần tính theo điểm cơ bản (100 = 1%)",
+    "additive": "phụ gia",
+    "addIngredient": "Thêm thành phần",
+    "recipeHint": "Sử dụng một phiên bản mới để sửa chữa. Cổ phiếu thành phần phải có tổng cộng 10.000 điểm cơ bản. Tất cả các thành phần và chất phụ gia đo được phải được đưa vào chuyển đổi liên kết.",
+    "failed": "Không thể lưu. Hãy kiểm tra các giá trị, bản ghi được liên kết và quyền truy cập vào không gian làm việc của bạn, sau đó thử lại.",
+    "invalid": "Kiểm tra các trường và tổng số gam chính xác.",
+    "choose": "chọn",
+    "recipe": "Phiên bản công thức sản xuất",
+    "transformation": "Chuyển đổi đo được",
+    "inspection": "Kiểm tra đầu ra",
+    "recycledGrams": "Đầu vào tái chế được khai báo (gram)",
+    "inputEvidence": "Tham chiếu xuất xứ đầu vào",
+    "batchEvidence": "Tài liệu tham khảo bằng chứng sản xuất",
+    "inputFraction": "Tỷ lệ đầu vào tái chế được khai báo",
+    "inputTotal": "Tổng đầu vào",
+    "outputTotal": "Sản lượng đo được",
+    "batchHint": "Chọn một phép biến đổi hiện có bằng cách kiểm tra đầu ra của nó. Khai báo số gam tái chế cho mỗi đầu vào và đưa ra bằng chứng tham khảo. Đây là một tuyên bố có thể quy kết, không phải là chứng nhận độc lập."
+  },
+  "logistics": {
+    "title": "Kế hoạch tuyến và tải",
+    "add": "Tạo kế hoạch",
+    "correct": "Lưu bản sửa đổi mới",
+    "titleLabel": "Tên kế hoạch",
+    "reference": "Mã tham chiếu kế hoạch duy nhất",
+    "vehicle": "Tham chiếu xe",
+    "capacity": "Sức chứa của xe (g)",
+    "origin": "Điểm xuất phát",
+    "stop": "Điểm dừng {number}",
+    "addStop": "Thêm điểm dừng",
+    "latitude": "Vĩ độ",
+    "longitude": "Kinh độ",
+    "entered": "Giữ thứ tự đã nhập",
+    "geometric": "Điểm tiếp theo gần nhất (đường thẳng)",
+    "distance": "Khoảng cách đường thẳng: {value} m",
+    "archive": "Lưu trữ kế hoạch",
+    "archived": "Đã lưu trữ",
+    "history": "Lịch sử sửa đổi",
+    "revision": "Bản sửa đổi {number}",
+    "reason": "Lý do ghi nhận",
+    "conflict": "Kế hoạch hoặc quyền truy cập đã đổi. Tải lại trước khi lưu.",
+    "invalid": "Kiểm tra tọa độ, vật liệu, gam nguyên và sức chứa. Tổng tải phải vừa sức chứa của xe.",
+    "lead": "Chỉ lập kế hoạch thủ công. Tải tại mọi điểm dừng được cộng lại. Thứ tự đường thẳng không phải tuyến đường bộ, giờ đến hay điều vận. Vị trí lấy từ dữ liệu bạn nhập, không lấy từ siêu dữ liệu ảnh.",
+    "empty": "Chưa có kế hoạch tuyến đường."
+  },
+  "qualityDocuments": {
+    "businessRequired": "Chọn không gian làm việc của doanh nghiệp đang hoạt động để dùng hồ sơ lô.",
+    "inspections": "Bằng chứng kiểm tra",
+    "readOnly": "Vai trò của bạn trong không gian làm việc được đọc các hồ sơ này.",
+    "empty": "Chưa có bản ghi.",
+    "inspection": "Bằng chứng kiểm tra",
+    "kind": "Loại tài liệu",
+    "accepted": "Chấp nhận",
+    "rejected": "Từ chối",
+    "conditional": "Có điều kiện",
+    "note": "Lý do sửa đổi",
+    "record": "Lưu bản ghi",
+    "error": "Đã xảy ra lỗi",
+    "limit": "Chỉ hiển thị 100 bản ghi đầu tiên.",
+    "title": "Tài liệu chất lượng",
+    "own": "Tài liệu của bạn",
+    "incoming": "Được chia sẻ với doanh nghiệp",
+    "decisions": "Lịch sử quyết định của người mua",
+    "upload": "Đính kèm tài liệu",
+    "coa": "Chứng nhận phân tích",
+    "photo": "Ảnh chất lượng",
+    "sample_report": "Báo cáo mẫu",
+    "file": "Tệp",
+    "shareBuyer": "Chia sẻ tài liệu này với {name}",
+    "download": "Tải xuống",
+    "shared": "Chia sẻ với người mua được chỉ định",
+    "private": "Chỉ doanh nghiệp",
+    "withdrawn": "Đã thu hồi quyền truy cập",
+    "withdraw": "Thu hồi truy cập",
+    "decision": "Quyết định của người mua",
+    "lead": "Ghi quy cách thực tế, phương pháp lấy mẫu và kết quả đo. Quyết định chỉ áp dụng cho lần kiểm tra này, không phải phân hạng hay chứng nhận của nền tảng. Các bản ghi mô tả bằng chứng thực tế. Chúng không thay đổi tồn kho, thanh toán, quyền sở hữu pháp lý hay chứng nhận.",
+    "fileHint": "PDF, JPEG, PNG hoặc WebP, tối đa 2 MiB. Dùng PDF đã làm phẳng. Tệp được tải xuống, không xem trước. Chưa được xác minh độc lập hoặc quét mã độc. Xóa chi tiết riêng tư trước khi chia sẻ."
+  },
+  "auditReports": {
+    "title": "Báo cáo kiểm toán được chia sẻ",
+    "create": "Chia sẻ báo cáo",
+    "recipient": "Người nhận được duyệt",
+    "purpose": "Mục đích xem xét",
+    "expiry": "Hết hạn truy cập (giờ địa phương)",
+    "sent": "Báo cáo bạn đã chia sẻ",
+    "received": "Báo cáo được chia sẻ với bạn",
+    "empty": "Chưa có báo cáo.",
+    "unavailable": "Quyền truy cập đã hết hạn, bị thu hồi hoặc không khả dụng.",
+    "open": "Đọc báo cáo",
+    "revoke": "Hủy quyền truy cập",
+    "inspection": "Bằng chứng kiểm tra",
+    "error": "Đã xảy ra lỗi",
+    "limit": "Chỉ hiển thị 100 bản ghi đầu tiên.",
+    "lead": "Đọc bản sao bằng chứng cố định cho mục đích đã nêu. Việc duyệt người nhận không cấp quyền vào hồ sơ doanh nghiệp khác.",
+    "warning": "Chỉ chia sẻ kiểm tra đã chọn và tệp đã đánh dấu. Xóa dữ liệu cá nhân trước. Quyền truy cập tối đa 90 ngày và có thể thu hồi; không thể lấy lại bản đã tải xuống.",
+    "snapshot": "Bản sao cố định tuyên bố của doanh nghiệp kiểm tra. Không phải chứng nhận hay xác minh độc lập."
   }
 }

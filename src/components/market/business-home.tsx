@@ -3,7 +3,6 @@
 import { useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import {
-  ArrowLeftRightIcon,
   ArrowRightIcon,
   BellRingIcon,
   CircleCheckIcon,
@@ -27,10 +26,10 @@ import {
 import type { OrgWorkspace } from "@/components/app/use-workspace";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useCanOperate } from "@/components/workspace/permissions";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
-import { buyerKindFor } from "../../../convex/lib/chain";
 import { BuyButton } from "./buy-dialog";
 import { ListingCard } from "./listing-card";
 import { isAvailableTradeAction, recycledFirst, tradeTotals } from "./logic";
@@ -56,11 +55,10 @@ export function BusinessHome() {
 
 function Home({ org }: { org: OrgWorkspace }) {
   const t = useTranslations("market.home");
-  const canSell = buyerKindFor(org.kind) !== null;
   const isMaker = org.kind === "manufacturer";
   const trades = useQuery(api.market.trades);
   const offers = useQuery(api.market.browse, {});
-  const mine = useQuery(api.market.myListings, canSell ? {} : "skip");
+  const mine = useQuery(api.market.myListings);
   const recycled = useRecycledCodes();
 
   return (
@@ -68,31 +66,21 @@ function Home({ org }: { org: OrgWorkspace }) {
       <div className="min-w-0">
         <AppPageHeader
           title={t("greeting", { name: org.name })}
-          lead={t("lead", { kind: org.kind })}
-          actions={<QuickActions canSell={canSell} />}
+          lead={t("lead")}
+          actions={<QuickActions />}
         />
       </div>
-      <Stats
-        trades={trades}
-        third={
-          canSell
-            ? { kind: "listings", listings: mine }
-            : {
-                kind: "recycledOffers",
-                count: offers?.filter((offer) =>
-                  recycled.has(offer.material.code),
-                ).length,
-              }
-        }
-      />
-      <WaitingForYou trades={trades} showSide={canSell} />
+      <Stats trades={trades} listings={mine} />
+      <WaitingForYou trades={trades} showSide />
       <LatestOffers offers={offers} recycled={recycled} isMaker={isMaker} />
     </>
   );
 }
 
-function QuickActions({ canSell }: { canSell: boolean }) {
+function QuickActions() {
+  const canOperate = useCanOperate();
   const t = useTranslations("market.home");
+  if (!canOperate) return null;
   return (
     <>
       <Button asChild size="lg" className="text-sm">
@@ -102,48 +90,34 @@ function QuickActions({ canSell }: { canSell: boolean }) {
         </Link>
       </Button>
       <Button asChild variant="outline" size="lg" className="text-sm">
-        {canSell ? (
-          <Link href="/app/sell">
-            <TagIcon aria-hidden />
-            {t("sell")}
-          </Link>
-        ) : (
-          <Link href="/app/trades">
-            <ArrowLeftRightIcon aria-hidden />
-            {t("trades")}
-          </Link>
-        )}
+        <Link href="/app/sell">
+          <TagIcon aria-hidden />
+          {t("sell")}
+        </Link>
       </Button>
     </>
   );
 }
 
-/** The third number: my lots on sale, or recycled lots for manufacturers. */
-type ThirdStat =
-  | { kind: "listings"; listings: ListingView[] | undefined }
-  | { kind: "recycledOffers"; count: number | undefined };
-
 /**
- * Three numbers: orders waiting for gateway checkout, decisions waiting for me,
- * and my lots on sale (or recycled offers for manufacturers).
+ * Three numbers: accepted orders, decisions waiting for me,
+ * and my lots on sale, including manufacturer byproducts.
  */
 function Stats({
   trades,
-  third,
+  listings,
 }: {
   trades: Trades | undefined;
-  third: ThirdStat;
+  listings: ListingView[] | undefined;
 }) {
   const t = useTranslations("market");
   const format = useFormat();
 
-  const isThirdLoading =
-    (third.kind === "listings" ? third.listings : third.count) === undefined;
-  if (trades === undefined || isThirdLoading) {
+  if (trades === undefined || listings === undefined) {
     return (
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-3" aria-busy="true">
         {[0, 1, 2].map((index) => (
-          <Skeleton key={index} className="h-28 rounded-xl" />
+          <Skeleton key={index} className="h-24 rounded-none" />
         ))}
       </div>
     );
@@ -170,17 +144,7 @@ function Stats({
           icon={BellRingIcon}
           tone={totals.waiting > 0 ? "warn" : "neutral"}
         />
-        {third.kind === "listings" ? (
-          <OnSaleStat listings={third.listings ?? []} />
-        ) : (
-          <StatCard
-            label={t("home.stats.offers")}
-            value={format.number(third.count ?? 0)}
-            hint={t("home.stats.offersHint")}
-            icon={RecycleIcon}
-            tone="good"
-          />
-        )}
+        <OnSaleStat listings={listings} />
       </div>
       <DemoNote>{t("sampleData")}</DemoNote>
     </section>

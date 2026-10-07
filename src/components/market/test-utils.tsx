@@ -25,6 +25,7 @@ export function WithIntl({
 
 export function aTrade(overrides: Partial<TradeView> = {}): TradeView {
   return {
+    specification: undefined,
     id: "trade1" as TradeView["id"],
     material: {
       code: "PAPER-NEWS",
@@ -54,6 +55,7 @@ export function aTrade(overrides: Partial<TradeView> = {}): TradeView {
 
 export function aListing(overrides: Partial<ListingView> = {}): ListingView {
   return {
+    specification: undefined,
     id: "listing1" as ListingView["id"],
     seller: {
       name: "Ramesh Kabadi Store",

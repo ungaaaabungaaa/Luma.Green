@@ -22,6 +22,134 @@ function world() {
   return t;
 }
 
+describe("production catalogue definitions", () => {
+  it("requires the configured admin and completed two-factor protection", async () => {
+    const t = world();
+    await expect(
+      t.mutation(api.catalogue.initializeDefinitions, {}),
+    ).rejects.toThrow("NOT_SIGNED_IN");
+    const member = await signIn(t, {
+      email: "member@luma.test",
+      twoFactorEnabled: true,
+    });
+    await expect(
+      member.mutation(api.catalogue.initializeDefinitions, {}),
+    ).rejects.toThrow("NOT_ADMIN");
+    const pending = await signIn(t, { email: ADMIN_EMAIL });
+    await expect(
+      pending.mutation(api.catalogue.initializeDefinitions, {}),
+    ).rejects.toThrow("TWO_FACTOR_REQUIRED");
+    expect(await t.run((ctx) => ctx.db.query("materials").collect())).toEqual(
+      [],
+    );
+    expect(await t.run((ctx) => ctx.db.query("auditLog").collect())).toEqual(
+      [],
+    );
+  });
+
+  it("adds only missing definitions with unknown factors and no operational records", async () => {
+    const t = world();
+    const admin = await signIn(t, {
+      email: ADMIN_EMAIL,
+      twoFactorEnabled: true,
+    });
+    await admin.mutation(api.identity.ensureProfile, { locale: "en" });
+    expect(
+      await admin.mutation(api.catalogue.initializeDefinitions, {}),
+    ).toEqual({ inserted: 26 });
+    const materials = await t.run((ctx) =>
+      ctx.db.query("materials").withIndex("by_sortOrder").collect(),
+    );
+    expect(
+      materials.map(({ code, family, stage, names, sortOrder, active }) => ({
+        code,
+        family,
+        stage,
+        names,
+        sortOrder,
+        active,
+      })),
+    ).toEqual(
+      CATALOGUE.map(({ code, family, stage, names }, sortOrder) => ({
+        code,
+        family,
+        stage,
+        names,
+        sortOrder,
+        active: true,
+      })),
+    );
+    for (const material of materials) {
+      expect(material.co2eFactor).toBeUndefined();
+      expect(material.byproductEligibility).toBeUndefined();
+    }
+    const publicRows = await t.query(api.catalogue.materials, {});
+    expect(publicRows.every((material) => material.co2eFactor === null)).toBe(
+      true,
+    );
+    const audit = await t.run((ctx) => ctx.db.query("auditLog").collect());
+    expect(
+      audit.filter(({ action }) => action === "material.definitionInitialized"),
+    ).toHaveLength(26);
+    const rows = await t.run(async (ctx) => ({
+      references: await ctx.db.query("referencePrices").collect(),
+      history: await ctx.db.query("marketPrices").collect(),
+      stock: await ctx.db.query("inventory").collect(),
+      listings: await ctx.db.query("listings").collect(),
+      trades: await ctx.db.query("trades").collect(),
+      evidence: await ctx.db.query("commercialEvidence").collect(),
+      lots: await ctx.db.query("materialLots").collect(),
+    }));
+    for (const records of Object.values(rows)) expect(records).toEqual([]);
+    expect(
+      await admin.mutation(api.catalogue.initializeDefinitions, {}),
+    ).toEqual({ inserted: 0 });
+    expect(
+      await t.run((ctx) =>
+        ctx.db.query("materials").withIndex("by_sortOrder").collect(),
+      ),
+    ).toEqual(materials);
+    expect(await t.run((ctx) => ctx.db.query("auditLog").collect())).toEqual(
+      audit,
+    );
+  });
+
+  it("preserves existing definitions, factors and prices exactly", async () => {
+    const t = world();
+    const admin = await signIn(t, {
+      email: ADMIN_EMAIL,
+      twoFactorEnabled: true,
+    });
+    const id = await t.run((ctx) =>
+      ctx.db.insert("materials", {
+        code: "PAPER-NEWS",
+        family: "paper",
+        stage: "scrap",
+        names: { en: "Reviewed paper" },
+        co2eFactor: 3.25,
+        sortOrder: 99,
+        active: false,
+      }),
+    );
+    const before = await t.run((ctx) => ctx.db.get(id));
+    const priceId = await t.run((ctx) =>
+      ctx.db.insert("referencePrices", {
+        city: "Bengaluru",
+        materialCode: "PAPER-NEWS",
+        floorPaise: 1234,
+        fallbackPaise: 2345,
+        updatedAt: 1,
+      }),
+    );
+    const priceBefore = await t.run((ctx) => ctx.db.get(priceId));
+    expect(
+      await admin.mutation(api.catalogue.initializeDefinitions, {}),
+    ).toEqual({ inserted: 25 });
+    expect(await t.run((ctx) => ctx.db.get(id))).toEqual(before);
+    expect(await t.run((ctx) => ctx.db.get(priceId))).toEqual(priceBefore);
+  });
+});
+
 describe("fill missing material names", () => {
   it("requires an authenticated admin with two-factor authentication", async () => {
     const t = world();

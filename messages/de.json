@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Eine sauberere Zukunft in Bewegung",
-    "description": "Luma.Green verbindet Indiens Recyclingkette auf einer Plattform: Haushalte, Kabadiwalas, Sortierhöfe, Recycler und Hersteller. Mit fairen Preisen, gewogenen Abholungen und einem Nachweis für jede Übergabe."
+    "description": "Luma.Green verbindet Indiens Recyclingkette auf einer Plattform: Haushalte, Kabadiwalas, Vorverarbeiter, Recycler und Hersteller. Mit fairen Preisen, gewogenen Abholungen und einem Nachweis für jede Übergabe."
   },
   "theme": {
     "label": "Darstellung",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Handeln",
-      "summary": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+      "summary": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
     },
     "record": {
       "title": "Erfassen",
@@ -76,7 +76,7 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green verbindet Indiens Recyclingkette auf einer Plattform: Haushalte, Kabadiwalas, Sortierhöfe, Recycler und Hersteller. Mit fairen Preisen, geprüften Betrieben und einem Beleg bei jedem Schritt.",
+    "metaDescription": "Luma.Green verbindet Indiens Recyclingkette auf einer Plattform: Haushalte, Kabadiwalas, Vorverarbeiter, Recycler und Hersteller. Mit fairen Preisen, geprüften Betrieben und einem Beleg bei jedem Schritt.",
     "hero": {
       "eyebrow": "Start in Bengaluru",
       "title": "Geben Sie Ihren Wertstoffen einen neuen Anfang.",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "Der Weg des Recyclingmaterials",
-      "intro": "Materialien gelangen von Haushalten zu Sammelstellen, Sortierhöfen und Recyclern, bevor daraus etwas Neues entsteht. Luma.Green erfasst jede Übergabe.",
+      "intro": "Materialien gelangen von Haushalten zu Sammelstellen, Vorverarbeitern und Recyclern, bevor daraus etwas Neues entsteht. Luma.Green erfasst jede Übergabe.",
       "steps": {
         "household": {
           "name": "Haushalte",
@@ -107,7 +107,7 @@
           "body": "Kaufen, wiegen und sortieren nach Material."
         },
         "yard": {
-          "name": "Sortierhöfe",
+          "name": "Vorverarbeiter",
           "body": "Sortieren nach Qualität und pressen das Material zu Ballen."
         },
         "recycler": {
@@ -119,7 +119,7 @@
           "body": "Stellen aus recyceltem Material neue Produkte her."
         }
       },
-      "money": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "money": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "saathi": "Saathis unterstützen die gesamte Kette bei Abholungen, beim Sortieren und in Schichten."
     },
     "roles": {
@@ -136,19 +136,19 @@
         "title": "Kabadiwala-Betriebe",
         "one": "Abholanfragen von Haushalten in der Nähe.",
         "two": "Legen Sie eigene Preise fest, mindestens zum Mindestpreis.",
-        "three": "Verkaufen Sie sortierte Bestände an Sortierhöfe.",
+        "three": "Verkaufen Sie sortierte Bestände an Vorverarbeiter.",
         "cta": "Als Kabadiwala registrieren"
       },
       "yard": {
-        "title": "Sortierhöfe",
+        "title": "Vorverarbeiter",
         "one": "Sehen Sie die Bestände nahegelegener Läden.",
         "two": "Kaufen Sie größere Mengen und verkaufen Sie Ballen an Recycler.",
-        "three": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
-        "cta": "Als Sortierhof registrieren"
+        "three": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
+        "cta": "Als Vorverarbeiter registrieren"
       },
       "recycler": {
         "title": "Recyclingbetriebe",
-        "one": "Nach Qualität sortierte Ballen von geprüften Höfen.",
+        "one": "Nach Qualität sortierte Ballen von geprüften Vorverarbeitern.",
         "two": "Jedes Los mit nachvollziehbarer Lieferkette.",
         "three": "Verkaufen Sie Ihre Erzeugnisse an Fabriken.",
         "cta": "Als Recycler registrieren"
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Hersteller",
         "one": "Sehen Sie, was Recycler produzieren.",
-        "two": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+        "two": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
         "three": "Aufzeichnungen für Ihre EPR-Berichte.",
         "cta": "Als Hersteller registrieren"
       },
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Der Luma.Green-Standard",
-    "metaDescription": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+    "metaDescription": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
     "eyebrow": "Offener Standard",
     "title": "Der Luma.Green-Standard",
     "lead": "Einfache, offene Regeln für fairen Recyclingmaterialhandel: ein Code je Material, klare Qualitätsstufen, ehrliches Wiegen und ein Nachweis bei jeder Übergabe. Alle in der Branche können sie übernehmen.",
@@ -394,13 +394,13 @@
       "nav": "Prüfung",
       "body": "Ein Mensch prüft jeden Betrieb und jeden Saathi vor der Teilnahme.",
       "business": "Betriebe: GST-Nummer, falls vorhanden, Fotos des Ladens oder Standorts und ein Telefongespräch.",
-      "consent": "Sortierhöfe, Recycler und Fabriken: eine gültige Genehmigung der staatlichen Umweltschutzbehörde.",
+      "consent": "Vorverarbeiter, Recycler und Fabriken: eine gültige Genehmigung der staatlichen Umweltschutzbehörde.",
       "saathi": "Saathis: ein Lichtbildausweis und ein dazu passendes Selfie."
     },
     "escrow": {
       "title": "Warten auf Zahlungsanbieter",
       "nav": "Warten auf Zahlungsanbieter",
-      "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "steps": {
         "accepted": "Der Verkäufer nimmt die Bestellung an",
         "paid": "Warten auf Zahlungsanbieter",
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "So funktioniert es",
-    "metaDescription": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+    "metaDescription": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
     "title": "So funktioniert Luma.Green",
-    "lead": "Materialien gelangen von Haushalten zu Sammelstellen, Sortierhöfen und Recyclern, bevor daraus etwas Neues entsteht. Luma.Green erfasst jede Übergabe.",
+    "lead": "Materialien gelangen von Haushalten zu Sammelstellen, Vorverarbeitern und Recyclern, bevor daraus etwas Neues entsteht. Luma.Green erfasst jede Übergabe.",
     "stepLabel": "Schritt {number}",
     "sell": {
       "body": "Ein Haushalt wählt sein Material, sieht die Angebote naher Läden und bucht Abholung oder Abgabe. Der Kabadiwala wiegt jedes Material und zahlt bar oder per UPI. Beide erhalten einen Beleg.",
@@ -563,7 +563,7 @@
       "point3": "Ein Tracking-Link ohne erforderliches Konto"
     },
     "trade": {
-      "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "point1": "Nur geprüfte Betriebe dürfen handeln",
       "point2": "Bestände ändern sich bei Versand und Empfang einer Ladung",
       "point3": "Ein nummerierter Beleg für jeden bezahlten Handel"
@@ -577,20 +577,20 @@
   },
   "participants": {
     "metaTitle": "Für wen ist es gedacht?",
-    "metaDescription": "Luma.Green ist für Haushalte, Kabadiwalas, Sortierhöfe, Recycler, Hersteller und Saathis gedacht — alle, die Recyclingmaterial vom Haushalt zur Fabrik bewegen.",
+    "metaDescription": "Luma.Green ist für Haushalte, Kabadiwalas, Vorverarbeiter, Recycler, Hersteller und Saathis gedacht — alle, die Recyclingmaterial vom Haushalt zur Fabrik bewegen.",
     "title": "Für wen Luma.Green gedacht ist",
     "lead": "Für alle, die Recyclingmaterial vom Haushalt zur Fabrik bewegen, und die Menschen, die dazwischen die Arbeit erledigen.",
     "kabadiwala": {
       "name": "Kabadiwala-Betriebe",
-      "body": "Nehmen Sie Abholanfragen naher Haushalte an, wiegen und bezahlen Sie fair und verkaufen Sie sortierte Bestände an Sortierhöfe."
+      "body": "Nehmen Sie Abholanfragen naher Haushalte an, wiegen und bezahlen Sie fair und verkaufen Sie sortierte Bestände an Vorverarbeiter."
     },
     "yard": {
-      "name": "Sortierhöfe",
-      "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+      "name": "Vorverarbeiter",
+      "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
     },
     "recycler": {
       "name": "Recyclingbetriebe",
-      "body": "Kaufen Sie sortierte Ballen von geprüften Höfen und verkaufen Sie Flakes, Granulat und Barren an Fabriken."
+      "body": "Kaufen Sie sortierte Ballen von geprüften Vorverarbeitern und verkaufen Sie Flakes, Granulat und Barren an Fabriken."
     },
     "manufacturer": {
       "name": "Hersteller",
@@ -601,20 +601,20 @@
       "body": "Übernehmen Sie bezahlte Abholungen, Sortierarbeit und Schichten in Ihrer Nähe und sehen Sie Ihren Verdienst."
     },
     "householdHeading": "Und für jeden Haushalt",
-    "householdBody": "Alle können ohne Konto Recyclingmaterial von zu Hause verkaufen: Material auswählen, Angebote der Läden ansehen und bar oder per UPI mit Beleg bezahlt werden."
+    "householdBody": "Buche eine Abholung zu Hause mit deiner Handynummer: Wähle Materialien, vergleiche die Angebote der Betriebe und erhalte vom Betrieb Bargeld oder eine UPI-Zahlung mit Beleg."
   },
   "contact": {
     "metaTitle": "Kontakt",
     "metaDescription": "Kontaktieren Sie das Luma.Green-Team zur Teilnahme am Pilotprojekt in Bengaluru.",
     "title": "Sprechen Sie mit uns",
-    "lead": "Wir starten in Bengaluru mit einer kleinen Gruppe von Kabadiwalas, Sortierhöfen, Recyclern und Fabriken. Sagen Sie uns, wer Sie sind, womit Sie handeln und welche Menge Sie ungefähr monatlich bewegen.",
+    "lead": "Wir starten in Bengaluru mit einer kleinen Gruppe von Kabadiwalas, Vorverarbeitern, Recyclern und Fabriken. Sagen Sie uns, wer Sie sind, womit Sie handeln und welche Menge Sie ungefähr monatlich bewegen.",
     "emailHeading": "Früher Zugang und allgemeine Fragen",
     "securityHeading": "Sicherheitsmeldungen",
     "securityBody": "Eine Schwachstelle gefunden? Bitte melden Sie sie vertraulich und nicht öffentlich."
   },
   "help": {
     "metaTitle": "Hilfecenter",
-    "metaDescription": "Einfache Anleitungen, Antworten und Schulungen für Haushalte, Kabadiwalas, Sortierhöfe, Recycler, Hersteller und Saathis auf Luma.Green.",
+    "metaDescription": "Einfache Anleitungen, Antworten und Schulungen für Haushalte, Kabadiwalas, Vorverarbeiter, Recycler, Hersteller und Saathis auf Luma.Green.",
     "eyebrow": "Hilfecenter",
     "title": "Wie können wir helfen?",
     "lead": "Kurze Anleitungen, klare Antworten und schnelle Schulungen für alle auf Luma.Green.",
@@ -659,25 +659,25 @@
         "name": "Haushalte",
         "who": "Recyclingmaterial von zu Hause verkaufen",
         "title": "Hilfe für Haushalte",
-        "lead": "Buchen Sie eine Abholung, lassen Sie fair wiegen und erhalten Sie Ihr Geld an der Haustür. Kein Konto nötig."
+        "lead": "Buche eine Abholung, bestätige deine Handynummer und erhalte nach dem Wiegen dein Geld."
       },
       "kabadiwala": {
         "name": "Kabadiwala-Betriebe",
         "who": "Eine Sammelstelle führen",
         "title": "Hilfe für Kabadiwalas",
-        "lead": "Nehmen Sie Abholungen an, wiegen und bezahlen Sie schnell, legen Sie Preise fest und verkaufen Sie an Sortierhöfe."
+        "lead": "Nehmen Sie Abholungen an, wiegen und bezahlen Sie schnell, legen Sie Preise fest und verkaufen Sie an Vorverarbeiter."
       },
       "yard": {
-        "name": "Sortierhöfe",
+        "name": "Vorverarbeiter",
         "who": "Bei Kabadiwalas einkaufen und weiter sortieren",
-        "title": "Hilfe für Sortierhöfe",
-        "lead": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+        "title": "Hilfe für Vorverarbeiter",
+        "lead": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
       },
       "recycler": {
         "name": "Recyclingbetriebe",
         "who": "Recyclingmaterial zu Rohstoffen verarbeiten",
         "title": "Hilfe für Recycler",
-        "lead": "Kaufen Sie sortiertes Recyclingmaterial bei Höfen, verkaufen Sie Erzeugnisse an Fabriken und führen Sie klare EPR-Aufzeichnungen."
+        "lead": "Kaufen Sie sortiertes Recyclingmaterial bei Vorverarbeitern, verkaufen Sie Erzeugnisse an Fabriken und führen Sie klare EPR-Aufzeichnungen."
       },
       "manufacturer": {
         "name": "Hersteller",
@@ -752,7 +752,7 @@
       "roles": {
         "household": "Ein Haushalt",
         "kabadiwala": "Ein Kabadiwala",
-        "yard": "Ein Sortierhof",
+        "yard": "Ein Vorverarbeiter",
         "recycler": "Ein Recycler",
         "manufacturer": "Ein Hersteller",
         "saathi": "Ein Saathi",
@@ -853,7 +853,7 @@
         "steps": {
           "start": {
             "title": "Bei luma.green/join beginnen",
-            "body": "Melden Sie sich mit Ihrer Mobilnummer an und wählen Sie Sortierhof, Recycler oder Hersteller."
+            "body": "Melden Sie sich mit Ihrer Mobilnummer an und wählen Sie Vorverarbeiter, Recycler oder Hersteller."
           },
           "details": {
             "title": "Betriebsdaten hinzufügen",
@@ -879,7 +879,7 @@
       },
       "escrow": {
         "title": "Warten auf Zahlungsanbieter",
-        "summary": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+        "summary": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
         "steps": {
           "request": {
             "title": "Der Käufer sendet eine Anfrage",
@@ -891,7 +891,7 @@
           },
           "pay": {
             "title": "Warten auf Zahlungsanbieter",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           },
           "dispatch": {
             "title": "Der Verkäufer versendet die Ladung",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "Der Käufer bestätigt die Lieferung",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Eine zu kleine Ladung nicht bestätigen",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           },
           "report": {
             "title": "Mit Fotos melden",
@@ -975,7 +975,7 @@
       },
       "firstPickup": {
         "title": "Ihre erste Abholung buchen",
-        "summary": "Vom Foto zur gebuchten Abholung in etwa zwei Minuten. Kein Konto nötig.",
+        "summary": "Wähle Materialien, vergleiche Betriebe und bestätige deine Handynummer, um eine Abholung zu buchen.",
         "steps": {
           "photo": {
             "title": "Recyclingmaterial fotografieren",
@@ -1244,8 +1244,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Demo-Anleitung: Bestand sortieren und an Höfe verkaufen",
-        "summary": "Aus vielen kleinen Abholungen wird eine Ladung für einen Sortierhof.",
+        "title": "Demo-Anleitung: Bestand sortieren und an Vorverarbeiter verkaufen",
+        "summary": "Aus vielen kleinen Abholungen wird eine Ladung für einen Vorverarbeiter.",
         "steps": {
           "grows": {
             "title": "Ihr Bestand wächst automatisch",
@@ -1256,12 +1256,12 @@
             "body": "Teilen Sie gemischtes Recyclingmaterial in seine tatsächlichen Bestandteile auf, zum Beispiel Mischpapier in Zeitungen, Karton und Abfall."
           },
           "show": {
-            "title": "Bestand für Sortierhöfe anzeigen",
-            "body": "Aktivieren Sie „Für Höfe anzeigen“, damit nahegelegene Höfe Ihren Bestand sehen."
+            "title": "Bestand für Vorverarbeiter anzeigen",
+            "body": "Aktivieren Sie „Für Vorverarbeiter anzeigen“, damit nahegelegene Vorverarbeiter Ihren Bestand sehen."
           },
           "sell": {
-            "title": "Anfrage eines Sortierhofs annehmen",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "title": "Anfrage eines Vorverarbeiters annehmen",
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           }
         }
       },
@@ -1301,7 +1301,7 @@
           },
           "pay": {
             "title": "Warten auf Zahlungsanbieter",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           },
           "collect": {
             "title": "Abholen und wiegen",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Annehmen und auf Zahlung warten",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           },
           "dispatch": {
             "title": "Ladung versenden",
@@ -1335,17 +1335,17 @@
           },
           "paid": {
             "title": "Bezahlt werden",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           }
         }
       },
       "buyFromYards": {
-        "title": "Demo-Anleitung: Sortiertes Recyclingmaterial bei Höfen kaufen",
+        "title": "Demo-Anleitung: Sortiertes Recyclingmaterial bei Vorverarbeitern kaufen",
         "summary": "Verlässlicher, nach Qualität sortierter Rohstoff für Ihre Anlage.",
         "steps": {
           "browse": {
             "title": "Ballen in Ihrer Nähe finden",
-            "body": "Öffnen Sie „Kaufen“, um Angebote der Höfe nach Material und Entfernung zu sehen."
+            "body": "Öffnen Sie „Kaufen“, um Angebote der Vorverarbeiter nach Material und Entfernung zu sehen."
           },
           "request": {
             "title": "Eine Ladung anfragen",
@@ -1353,7 +1353,7 @@
           },
           "pay": {
             "title": "Warten auf Zahlungsanbieter",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           },
           "confirm": {
             "title": "Wiegen, prüfen, bestätigen",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Nach Zahlung verladen",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           },
           "paid": {
             "title": "Bei Lieferung bezahlt werden",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           }
         }
       },
@@ -1397,7 +1397,7 @@
           },
           "pay": {
             "title": "Warten auf Zahlungsanbieter",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           },
           "receive": {
             "title": "Ladung empfangen",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Bestätigen oder melden",
-            "body": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+            "body": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
           }
         }
       },
@@ -1614,8 +1614,8 @@
         "a": "Nein. Sie zahlen bar oder per UPI an der Haustür. Die App erfasst Betrag und Zahlungsart."
       },
       "paidByYard": {
-        "q": "Wie werde ich beim Verkauf an einen Sortierhof bezahlt?",
-        "a": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+        "q": "Wie werde ich beim Verkauf an einen Vorverarbeiter bezahlt?",
+        "a": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
       },
       "whoSeesShop": {
         "q": "Wer kann meinen Laden sehen?",
@@ -1643,7 +1643,7 @@
       },
       "whatIsEscrow": {
         "q": "Warten auf Zahlungsanbieter",
-        "a": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+        "a": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
       },
       "whenSellerPaid": {
         "q": "Wann wird der Verkäufer bezahlt?",
@@ -1666,8 +1666,8 @@
         "a": "Halten Sie Ihre CPCB-Registrierung als Kunststoffabfallverarbeiter bereit. Marken fragen danach. Sie ermöglicht die Ausstellung von EPR-Zertifikaten."
       },
       "buyFromAnyYard": {
-        "q": "Kann ich bei mehreren Höfen einkaufen?",
-        "a": "Ja. Kaufen Sie beliebig oft bei jedem geprüften Hof, der das benötigte Material anbietet."
+        "q": "Kann ich bei mehreren Vorverarbeitern einkaufen?",
+        "a": "Ja. Kaufen Sie beliebig oft bei jedem geprüften Vorverarbeiter, der das benötigte Material anbietet."
       },
       "eprRecords": {
         "q": "Helfen Luma.Green-Aufzeichnungen bei EPR?",
@@ -1740,7 +1740,7 @@
       "buyingFromKabadiwalas": "Bei Kabadiwalas einkaufen",
       "listingBales": "Ballen für Recycler anbieten",
       "escrowExplained": "Warten auf Zahlungsanbieter",
-      "buyingFromYards": "Bei Sortierhöfen einkaufen",
+      "buyingFromYards": "Bei Vorverarbeitern einkaufen",
       "sellingOutput": "Ihre Erzeugnisse verkaufen",
       "eprPlainWords": "EPR verständlich erklärt",
       "firstOrder": "Ihre erste Bestellung aufgeben",
@@ -1799,10 +1799,10 @@
         "p3": "Immer vor dem Verlassen bezahlen."
       },
       "sellingToYards": {
-        "title": "Demo: An Sortierhöfe verkaufen",
+        "title": "Demo: An Vorverarbeiter verkaufen",
         "p1": "Sortierung erfassen, damit der Bestand stimmt.",
-        "p2": "Bestand für nahegelegene Höfe sichtbar machen.",
-        "p3": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+        "p2": "Bestand für nahegelegene Vorverarbeiter sichtbar machen.",
+        "p3": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
       },
       "buyingStock": {
         "title": "Bestand einkaufen",
@@ -1812,7 +1812,7 @@
       },
       "tradingWithEscrow": {
         "title": "Warten auf Zahlungsanbieter",
-        "p1": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+        "p1": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
         "p2": "Der Verkäufer verlädt erst nach Zahlungseingang.",
         "p3": "Die Lieferbestätigung gibt das Geld frei."
       },
@@ -1830,8 +1830,8 @@
       },
       "buyingInputs": {
         "title": "Demo: Rohstoffe einkaufen",
-        "p1": "Unter „Kaufen“ nach Qualität sortierte Ballen von Höfen finden.",
-        "p2": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+        "p1": "Unter „Kaufen“ nach Qualität sortierte Ballen von Vorverarbeitern finden.",
+        "p2": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
         "p3": "Qualität vor der Bestätigung prüfen."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: Recyceltes Material bestellen",
         "p1": "Angebote nach Art, Menge und Preis vergleichen.",
         "p2": "Eine Bestellung über die benötigte Menge senden.",
-        "p3": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+        "p3": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
       },
       "checkingDeliveries": {
         "title": "Lieferungen prüfen",
@@ -1885,14 +1885,14 @@
     "chooseLanguageHint": "Sie können sie jederzeit oben auf dem Bildschirm ändern.",
     "continue": "Weiter",
     "title": "Mit Mobilnummer anmelden",
-    "lead": "Für Kabadiwalas, Sortierhöfe, Recycler, Hersteller und Saathis.",
+    "lead": "Für Kabadiwalas, Vorverarbeiter, Recycler, Hersteller und Saathis.",
     "mobileLabel": "Mobilnummer",
     "mobileHint": "Wir senden einen sechsstelligen Code an diese Nummer.",
     "mobileInvalid": "Geben Sie eine zehnstellige indische Mobilnummer ein.",
     "sendCode": "Code senden",
     "sending": "Wird gesendet…",
     "sendFailed": "Der Code konnte nicht gesendet werden. Bitte versuchen Sie es in einer Minute erneut.",
-    "homeTitle": "Recycling von zu Hause? Sie benötigen kein Konto.",
+    "homeTitle": "Recycling von zu Hause?",
     "homeLink": "So funktioniert es ansehen",
     "privacy": "Wir verwenden Ihre Nummer nur zur Anmeldung und für Mitteilungen zu Ihrer Arbeit auf Luma.Green.",
     "unavailableTitle": "Anmeldung per Handy folgt bald",
@@ -1929,7 +1929,7 @@
   },
   "join": {
     "metaTitle": "Bei Luma.Green mitmachen",
-    "metaDescription": "Kabadiwalas, Sortierhöfe, Recycler, Hersteller und Saathis in Bengaluru: Bewerben Sie sich bei Luma.Green. Ein Mensch prüft jeden Antrag, meist innerhalb von 12–24 Stunden.",
+    "metaDescription": "Kabadiwalas, Vorverarbeiter, Recycler, Hersteller und Saathis in Bengaluru: Bewerben Sie sich bei Luma.Green. Ein Mensch prüft jeden Antrag, meist innerhalb von 12–24 Stunden.",
     "title": "Bei Luma.Green mitmachen",
     "lead": "Sagen Sie uns, was Sie tun. Ein Mensch prüft jeden Antrag, meist innerhalb von 12–24 Stunden.",
     "start": "Beginnen",
@@ -1944,7 +1944,7 @@
         "needs": "Adresse und Öffnungszeiten Ihres Ladens. Ihre GST-Nummer, falls vorhanden."
       },
       "yard": {
-        "title": "Sortierhof",
+        "title": "Vorverarbeiter",
         "body": "Sie sortieren und pressen größere Materialmengen und verkaufen sie weiter.",
         "needs": "Ihre GST-Nummer, falls vorhanden, die Umweltgenehmigung als PDF und Fotos Ihrer Maschinen."
       },
@@ -2043,7 +2043,7 @@
     },
     "business": {
       "titles": {
-        "yard": "Ihr Sortierhof",
+        "yard": "Ihr Vorverarbeitungsbetrieb",
         "recycler": "Ihr Recyclingbetrieb",
         "manufacturer": "Ihre Fabrik"
       },
@@ -2233,7 +2233,7 @@
     },
     "roles": {
       "kabadiwala": "Kabadiwala-Betrieb",
-      "yard": "Sortierhof",
+      "yard": "Vorverarbeiter",
       "recycler": "Recyclingbetrieb",
       "manufacturer": "Herstellungsbetrieb",
       "saathi": "Saathi-Arbeitskraft"
@@ -2261,7 +2261,7 @@
       "title": "Offene Aufträge",
       "lead": "Aufträge in Ihrem Gebiet erscheinen zuerst.",
       "empty": "Zurzeit keine offenen Aufträge",
-      "emptyBody": "Neue Aufträge von Läden, Höfen und Fabriken erscheinen hier."
+      "emptyBody": "Neue Aufträge von Läden, Vorverarbeitern und Fabriken erscheinen hier."
     },
     "work": {
       "home_pickups": "Abholungen bei Haushalten",
@@ -2376,7 +2376,8 @@
       "emptyBody": "Nehmen Sie einen Auftrag auf Ihrer Startseite an. Nach dem Markieren als erledigt erscheint die Vergütung hier.",
       "findJob": "Auftrag finden",
       "demoNote": "Beispieldaten: Aufträge und Vergütungen sind Beispiele für den Prototyp."
-    }
+    },
+    "factorUnavailable": "CO₂e-Schätzung nicht verfügbar. Emissionsfaktoren sind nicht festgelegt."
   },
   "compliance": {
     "title": "Konformität",
@@ -2454,7 +2455,7 @@
       "view": "Beleg {number} ansehen",
       "unknown": "Ein nicht mehr auf Luma.Green aktiver Betrieb",
       "empty": "Noch keine Belege",
-      "emptyBody": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+      "emptyBody": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
     },
     "epr": {
       "title": "EPR-Nachweis, Geschäftsjahr {from}–{to}",
@@ -2484,7 +2485,7 @@
     },
     "saathi": {
       "title": "Für Betriebe",
-      "body": "Konformität betrifft Läden, Sortierhöfe, Recycler und Fabriken. Ihre Aufträge und Vergütung finden Sie auf Ihrer Startseite.",
+      "body": "Konformität betrifft Läden, Vorverarbeiter, Recycler und Fabriken. Ihre Aufträge und Vergütung finden Sie auf Ihrer Startseite.",
       "home": "Zu meinen Aufträgen"
     }
   },
@@ -2496,7 +2497,7 @@
     "lead": "Wählen Sie Ihr Material und einen Laden in der Nähe. Nach dem Wiegen erhalten Sie Bargeld oder eine UPI-Zahlung.",
     "promises": {
       "label": "Warum hier verkaufen",
-      "noAccount": "Kein Konto nötig",
+      "noAccount": "Handynummer zum Buchen bestätigen",
       "payAtDoor": "Zahlung nach dem Wiegen",
       "verified": "Geprüfte Läden"
     },
@@ -2804,7 +2805,7 @@
     "perKg": "{price}/kg",
     "recycled": "Recycelt",
     "forBusinessesTitle": "Dieser Bildschirm ist für Betriebe",
-    "forBusinessesBody": "Hier handeln Kabadiwalas, Sortierhöfe, Recycler und Hersteller.",
+    "forBusinessesBody": "Hier handeln Kabadiwalas, Vorverarbeiter, Recycler und Hersteller.",
     "units": {
       "kg": "kg",
       "rupee": "₹"
@@ -2841,30 +2842,30 @@
       "kgTooMuch": "Nur {weight} verfügbar.",
       "total": "Gesamtbetrag",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "escrow": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "ewayBill": "Über ₹50.000: Ein E-Way Bill muss diese Ladung begleiten.",
       "cancel": "Abbrechen",
       "submit": "Anfrage abschicken",
       "sending": "Wird gesendet…",
       "sent": "Anfrage an {seller} gesendet",
-      "sentNext": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "sentNext": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "seeTrades": "Handelsvorgänge ansehen"
     },
     "browse": {
       "title": "Kaufen",
-      "lead": "{kind, select, yard {Sortiertes Recyclingmaterial von Kabadiwalas in Ihrer Nähe.} recycler {Sortiertes, gepresstes Material von Höfen.} manufacturer {Recyceltes Material von geprüften Recyclern.} other {Materialangebote in Ihrer Nähe.}}",
+      "lead": "Angebote zugelassener Lieferanten für die von Ihnen verarbeiteten Materialien ansehen.",
       "filterLabel": "Nach Material filtern",
       "all": "Alle",
       "count": "{count, plural, =0 {Keine Lose} one {# Los im Verkauf} other {# Lose im Verkauf}}",
       "emptyTitle": "Zurzeit keine Angebote",
       "emptyBody": "Neue Lose erscheinen hier sofort nach Veröffentlichung.",
       "notForYouTitle": "Kabadiwalas kaufen bei Haushalten",
-      "notForYouBody": "Auf dem Markt verkaufen Sie sortierte Bestände an Sortierhöfe.",
-      "goSell": "An Höfe verkaufen"
+      "notForYouBody": "Auf dem Markt verkaufen Sie sortierte Bestände an Vorverarbeiter.",
+      "goSell": "An Vorverarbeiter verkaufen"
     },
     "sell": {
       "title": "Verkaufen",
-      "lead": "{buyer, select, yard {Bieten Sie Höfen Ihren sortierten Bestand an.} recycler {Bieten Sie Recyclern Ihre Ballen an.} manufacturer {Bieten Sie Herstellern Ihr Material an.} other {Bieten Sie Käufern Ihren Bestand an.}}",
+      "lead": "{buyer, select, yard {Bieten Sie Vorverarbeitern Ihren sortierten Bestand an.} recycler {Bieten Sie Recyclern Ihre Ballen an.} manufacturer {Bieten Sie Herstellern Ihr Material an.} other {Bieten Sie Käufern Ihren Bestand an.}}",
       "notForYouTitle": "Hersteller kaufen auf Luma.Green",
       "notForYouBody": "Finden Sie recyceltes Material von geprüften Recyclern.",
       "goBuy": "Material kaufen",
@@ -2888,7 +2889,7 @@
         "value": "Loswert",
         "submit": "Zum Verkauf anbieten",
         "submitting": "Wird angeboten…",
-        "listed": "Im Verkauf. {buyer, select, yard {Sortierhöfe} recycler {Recycler} manufacturer {Hersteller} other {Käufer}} können das Angebot jetzt sehen.",
+        "listed": "Im Verkauf. {buyer, select, yard {Vorverarbeiter} recycler {Recycler} manufacturer {Hersteller} other {Käufer}} können das Angebot jetzt sehen.",
         "nothingTitle": "Noch nichts zu verkaufen",
         "nothingBody": "Erfasster Bestand erscheint hier. Bereits angebotene oder verkaufte Mengen werden nicht doppelt gezählt.",
         "goStock": "Zum Bestand",
@@ -2920,7 +2921,7 @@
     },
     "trades": {
       "title": "Handel",
-      "lead": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "lead": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "buying": "Einkäufe",
       "selling": "Verkäufe",
       "tabsLabel": "Kaufen oder verkaufen",
@@ -2936,7 +2937,7 @@
         "from": "Von {name} · {area}",
         "to": "An {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+        "inEscrow": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
         "ewayBill": "Über ₹50.000: Ein E-Way Bill muss diese Ladung begleiten.",
         "updated": "Aktualisiert {when}",
         "receipt": "Beleg {number}",
@@ -2964,8 +2965,8 @@
           "seller": "{name} möchte dies kaufen. Nehmen Sie an, um es zu reservieren."
         },
         "accepted": {
-          "buyer": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
-          "seller": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar."
+          "buyer": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
+          "seller": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung."
         },
         "paid_to_escrow": {
           "buyer": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert.",
@@ -3002,7 +3003,7 @@
       "declineConfirm": "Bestellung von {name} ablehnen? Dies kann nicht rückgängig gemacht werden.",
       "declineYes": "Ja, ablehnen",
       "declineNo": "Behalten",
-      "gatewayPending": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "gatewayPending": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "legacyUnverified": "Prototyp-Datensatz. Zahlung und Lieferung sind nicht verifiziert."
     },
     "receipt": {
@@ -3032,20 +3033,20 @@
       "missingTitle": "Beleg nicht gefunden",
       "missingBody": "Dieser Handel gehört nicht zu Ihnen oder der Link ist falsch.",
       "pendingTitle": "Noch kein Beleg",
-      "pendingBody": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+      "pendingBody": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
       "declinedBody": "Dieser Handel wurde abgelehnt. Es gibt keinen Beleg.",
       "unverified": "Nicht verifiziert"
     },
     "home": {
       "greeting": "Guten Tag, {name}",
-      "lead": "{kind, select, yard {Bei Kabadiwalas kaufen und sortierte Ballen an Recycler verkaufen.} recycler {Sortiertes Material bei Höfen kaufen und Recyclingmaterial an Hersteller verkaufen.} manufacturer {Recyceltes Material von geprüften Recyclern kaufen.} other {Ihr Handel auf einen Blick.}}",
+      "lead": "Verwalten Sie Materialeinkäufe, Verkäufe und Bestellungen.",
       "buy": "Kaufen",
       "sell": "Verkaufen",
       "trades": "Handel",
       "statsTitle": "Auf einen Blick",
       "stats": {
         "escrow": "Nicht verifiziert",
-        "escrowHint": "Ein Zahlungsanbieter ist erforderlich. Die Bezahlung ist noch nicht verfügbar.",
+        "escrowHint": "Geschäftszahlungen erfolgen über den Zahlungsdienst. Prüfen Sie den aktuellen Zahlungsstatus in der Bestellung.",
         "waiting": "Wartet auf Sie",
         "waitingHint": "{count, plural, =0 {Alles erledigt} one {# Handel erfordert eine Aktion} other {# Handelsvorgänge erfordern eine Aktion}}",
         "listings": "Im Verkauf",
@@ -3054,15 +3055,15 @@
         "offersHint": "Von Recyclern angeboten",
         "completed": "Diesen Monat abgeschlossen",
         "completedHint": "{amount} gehandelt",
-        "gatewayPending": "Warten auf Zahlungsanbieter"
+        "gatewayPending": "Angenommene Bestellungen"
       },
       "waitingTitle": "Wartet auf Sie",
       "allTrades": "Alle Handelsvorgänge",
       "caughtUpTitle": "Zurzeit ist keine Aktion nötig",
       "caughtUpBody": "Neue Bestellungen, Zahlungen und Lieferungen erscheinen hier.",
       "offersTitle": "Neueste Lose für Sie",
-      "recycledTitle": "Recyclingmaterial für Sie",
-      "recycledBody": "Flakes, Granulat, Kraftpapier und Barren von geprüften Recyclern, bereit für Ihre Produktion.",
+      "recycledTitle": "Materialangebote für Sie",
+      "recycledBody": "Zugelassene Lieferanten ansehen. Recycelte Materialien erscheinen zuerst.",
       "seeAll": "Alles ansehen",
       "noOffersTitle": "Zurzeit keine Lose im Verkauf",
       "noOffersBody": "Neue Lose erscheinen hier sofort nach Veröffentlichung."
@@ -3145,8 +3146,8 @@
       "you": "Sie zahlen",
       "market": "Marktpreis",
       "quickLinks": "Schnellzugriff",
-      "sell": "An einen Hof verkaufen",
-      "sellHint": "Bestand nahegelegenen Höfen anbieten",
+      "sell": "An einen Vorverarbeiter verkaufen",
+      "sellHint": "Bestand nahegelegenen Vorverarbeitern anbieten",
       "prices": "Meine Preise",
       "pricesHint": "Ihr Ankaufspreis je kg für Haushalte"
     },
@@ -3251,7 +3252,7 @@
       "atPrice": "Marktpreis {price}/kg",
       "noPrice": "Heute kein Marktpreis",
       "sellTo": {
-        "yard": "An einen Hof verkaufen",
+        "yard": "An einen Vorverarbeiter verkaufen",
         "recycler": "An einen Recycler verkaufen",
         "manufacturer": "An einen Hersteller verkaufen"
       },
@@ -3260,7 +3261,7 @@
       "emptyBusiness": "Kaufen Sie auf dem Markt ein, dann erscheint es hier.",
       "buy": "Material kaufen",
       "notBusinessTitle": "Nur für Betriebe",
-      "notBusinessBody": "Bestände werden von Läden, Höfen, Recyclern und Fabriken geführt."
+      "notBusinessBody": "Bestände werden von Läden, Vorverarbeitern, Recyclern und Fabriken geführt."
     },
     "prices": {
       "title": "Meine Preise",
@@ -3348,7 +3349,7 @@
           "third": "Sortierten Bestand verwalten"
         },
         "yard": {
-          "title": "Ihr Sortierhof",
+          "title": "Ihr Vorverarbeitungsbereich",
           "first": "Materialien empfangen",
           "second": "Bestand sortieren",
           "third": "Ausgehende Lose vorbereiten"
@@ -3507,5 +3508,617 @@
       "resort": "Ferienanlage",
       "other": "Andere Räumlichkeiten"
     }
+  },
+  "emailAuth": {
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "signin": "Anmelden",
+    "signup": "Konto erstellen",
+    "forgot": "Passwort zurücksetzen",
+    "name": "Ihr Name",
+    "password": "Passwort",
+    "show": "Passwort anzeigen",
+    "hide": "Passwort verbergen",
+    "passwordHint": "Verwenden Sie 12–128 Zeichen.",
+    "unavailable": "Der E-Mail-Versand ist nicht verfügbar. Bestehende Konten können sich anmelden.",
+    "sent": "Prüfen Sie Ihr Postfach. Für berechtigte Konten wird ein Link gesendet, der 15 Minuten gültig ist.",
+    "resend": "Bestätigung erneut senden",
+    "limited": "Zu viele Versuche. Versuchen Sie es später.",
+    "unverified": "Bestätigen Sie Ihre E-Mail vor der Anmeldung.",
+    "credentials": "Prüfen Sie E-Mail und Passwort.",
+    "invalidLink": "Der Link ist ungültig oder abgelaufen. Fordern Sie einen neuen an.",
+    "failed": "Die Anfrage ist fehlgeschlagen. Erneut versuchen.",
+    "reset": "Neues Passwort setzen",
+    "verify": "E-Mail bestätigen",
+    "done": "Abgeschlossen. Melden Sie sich an.",
+    "confirm": "Passwort wiederholen",
+    "mismatch": "Die Passwörter stimmen nicht überein.",
+    "securityHint": "Fügen Sie nach dem Passwort einen Authenticator-Code hinzu. Die Passwortwiederherstellung erhält diesen Schutz.",
+    "backupHint": "Jeder Wiederherstellungscode funktioniert nach dem Passwort einmal.",
+    "disableHint": "Die Passwortanmeldung bleibt aktiv. Authenticator- und Wiederherstellungscodes werden deaktiviert."
+  },
+  "workspace": {
+    "title": "Arbeitsbereiche und Team",
+    "choose": "Arbeitsbereich wählen",
+    "team": "Teammitglieder",
+    "role": "Rolle",
+    "owner": "Inhaber",
+    "admin": "Verwalter",
+    "member": "Mitglied",
+    "viewer": "Leser",
+    "invite": "Einladung senden",
+    "email": "E-Mail-Adresse",
+    "pending": "Offene Einladungen",
+    "revoke": "Widerrufen",
+    "remove": "Entfernen",
+    "empty": "Kein Arbeitsbereich verfügbar.",
+    "error": "Änderung fehlgeschlagen. Zugang prüfen und erneut versuchen.",
+    "inviteTitle": "Einladung zum Arbeitsbereich",
+    "accept": "Einladung annehmen",
+    "verifyEmail": "Bestätige die eingeladene E-Mail-Adresse vor der Annahme.",
+    "unavailable": "Diese Einladung ist nicht verfügbar. Prüfe deine E-Mail-Adresse oder fordere eine neue an.",
+    "join": "Tritt {name} als {role} bei.",
+    "readOnly": "Nur Lesezugriff",
+    "confirmRemove": "Diese Person aus dem Arbeitsbereich entfernen?",
+    "lastOwner": "Mindestens ein Inhaber muss bleiben. Füge vor dieser Änderung einen weiteren hinzu.",
+    "deliveryPending": "E-Mail ausstehend",
+    "deliveryAccepted": "E-Mail-Dienst hat angenommen",
+    "deliveryFailed": "E-Mail-Zustellung unbestätigt",
+    "expires": "Läuft am {date} ab",
+    "emailBody": "Du bist zu {name} eingeladen. Öffne den Link innerhalb von sieben Tagen und melde dich mit dieser bestätigten E-Mail-Adresse an. Die Einladung gilt einmal.",
+    "switchAccount": "Konto wechseln",
+    "switchHint": "Melde dich ab, um dich mit der eingeladenen E-Mail-Adresse anzumelden oder zu registrieren.",
+    "invitationLimit": "Das Einladungslimit ist erreicht. Warten Sie, bevor Sie eine weitere Einladung senden."
+  },
+  "lots": {
+    "title": "Lose und Qualität",
+    "lead": "Erfassen Sie gemessenes Material, Verarbeitung und physische Übergaben.",
+    "evidenceNote": "Diese Aufzeichnungen beschreiben physische Nachweise. Sie ändern weder Bestand, Zahlung, rechtliches Eigentum noch Zertifikate.",
+    "notBusiness": "Wählen Sie einen aktiven Unternehmensarbeitsbereich für Losaufzeichnungen.",
+    "readOnly": "Ihre Arbeitsbereichsrolle erlaubt das Lesen dieser Aufzeichnungen.",
+    "held": "Verwahrte Lose",
+    "incoming": "Eingehende Lose",
+    "sent": "Übergabeverlauf",
+    "empty": "Noch keine Aufzeichnungen.",
+    "limit": "Nur die ersten 100 Aufzeichnungen werden angezeigt.",
+    "declare": "Los deklarieren",
+    "detail": "Losdetails",
+    "back": "Alle Lose",
+    "material": "Materialcode oder Name",
+    "state": "Physischer Zustand",
+    "mass": "Masse (g)",
+    "grams": "{value} g",
+    "integerHint": "Geben Sie ganze Gramm ohne Dezimal- oder Tausendertrennzeichen ein.",
+    "sourceReference": "Quellenreferenz (optional)",
+    "source": "Quelle",
+    "selfDeclared": "Selbst deklariert",
+    "transformed": "Aus einer Umwandlung",
+    "initial": "Anfangsmasse",
+    "remaining": "Restmasse",
+    "available": "Verfügbar",
+    "in_transit": "Unterwegs",
+    "exhausted": "Aufgebraucht",
+    "save": "Eintrag speichern",
+    "saving": "Wird gespeichert…",
+    "saved": "Eintrag gespeichert.",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "required": "Füllen Sie alle Pflichtfelder aus.",
+    "invalidInput": "Prüfen Sie die Werte. Verwenden Sie ganze Gramm und füllen Sie alle Pflichtfelder aus.",
+    "genericError": "Speichern fehlgeschlagen. Ihre Werte bleiben erhalten. Versuchen Sie es erneut.",
+    "accessChanged": "Dieses Los oder Ihr Arbeitsbereichszugriff hat sich geändert. Laden Sie die Losliste neu.",
+    "balanceError": "Die Eingangsmasse muss der Summe aus Ausgängen, Verunreinigungen und Prozessverlust entsprechen.",
+    "weightDispute": "Die empfangene Masse weicht vom Versand ab. Der Empfang wurde nicht erfasst. Prüfen Sie die Messung mit dem Absender.",
+    "approvalError": "Ein anderer Eigentümer muss die Korrektur genehmigen, solange Ihr Unternehmen das Los verwahrt.",
+    "transform": "Umwandlung erfassen",
+    "inputMass": "Eingangsmasse (g)",
+    "contamination": "Verunreinigungen (g)",
+    "processLoss": "Prozessverlust (g)",
+    "outputs": "Ausgangslose",
+    "outputNumber": "Ausgang {number}",
+    "addOutput": "Ausgang hinzufügen",
+    "remove": "Entfernen",
+    "balance": "Bilanzierte Masse: {value}",
+    "transformHint": "Erfassen Sie jeden Ausgang und Verlust. Die Eingangsmasse wird diesem Los entnommen und erzeugt verknüpfte Ausgangslose.",
+    "dispatch": "Los versenden",
+    "dispatchHint": "Das gesamte Restlos wird an das gewählte Unternehmen gesendet. Prüfen Sie den Empfänger vor dem Speichern.",
+    "receiver": "Empfänger",
+    "city": "Stadt",
+    "businessKind": "Unternehmensart",
+    "chooseBusiness": "Unternehmen wählen",
+    "searchBusinesses": "Unternehmen suchen",
+    "directoryNote": "Das Verzeichnis zeigt aktive Unternehmen. Es bestätigt nicht deren Verarbeitungskapazität.",
+    "directoryEmpty": "Kein passendes Unternehmen. Prüfen Sie Stadt und Unternehmensart.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Vorverarbeiter",
+    "recycler": "Recyclingbetrieb",
+    "manufacturer": "Hersteller",
+    "receive": "Los empfangen",
+    "receivedMass": "Empfangene Masse (g)",
+    "receiveHint": "Messen Sie das empfangene Los. Ein anderes Gewicht kann mit diesem Formular nicht angenommen werden.",
+    "pendingNote": "Sie sehen nur diesen Versand. Der vollständige Losverlauf ist nach dem Empfang verfügbar.",
+    "custody": "Verwahrungsverlauf",
+    "dispatched": "Versandt",
+    "received": "Empfangen",
+    "handoff": "{from} → {to}",
+    "from": "Von {name}",
+    "to": "An {name}",
+    "transformations": "Umwandlungen",
+    "inspection": "Prüfung erfassen",
+    "inspections": "Prüfnachweise",
+    "inspectionNote": "Erfassen Sie die tatsächliche Spezifikation, das Probenahmeverfahren und die Messwerte. Die Entscheidung gilt nur für diese Prüfung; sie ist keine Plattformbewertung oder Zertifizierung.",
+    "specification": "Spezifikationsreferenz",
+    "version": "Spezifikationsversion",
+    "sampleMethod": "Probenahmeverfahren",
+    "buyer": "Käuferbezug (optional)",
+    "addBuyer": "Käufer angeben",
+    "noBuyer": "Kein Käufer angegeben",
+    "results": "Messergebnisse",
+    "resultNumber": "Ergebnis {number}",
+    "parameter": "Messgröße",
+    "unit": "Einheit",
+    "value": "Messwert",
+    "addResult": "Ergebnis hinzufügen",
+    "decision": "Prüfentscheidung",
+    "accepted": "Angenommen",
+    "rejected": "Abgelehnt",
+    "conditional": "Bedingt",
+    "evidenceReference": "Nachweisreferenz (optional)",
+    "correct": "Korrektur vorschlagen",
+    "correctionHint": "Das Original bleibt sichtbar. Käuferbezug und Spezifikation können nicht geändert werden. Ein anderer Eigentümer muss die Korrektur genehmigen.",
+    "reason": "Korrekturgrund",
+    "approve": "Korrektur genehmigen",
+    "pendingApproval": "Separate Genehmigung ausstehend",
+    "approved": "Korrektur genehmigt",
+    "superseded": "Durch genehmigte Korrektur ersetzt",
+    "original": "Ursprüngliche Prüfung",
+    "previousResult": "Vorherige Prüfung",
+    "recordedBy": "Prüfendes Unternehmen: {name}",
+    "loadError": "Aufzeichnungen konnten nicht geladen werden. Versuchen Sie es erneut.",
+    "retry": "Erneut versuchen",
+    "streamClass": "Ausgangsstrom",
+    "handlingClass": "Behandlungsklasse",
+    "streams": {
+      "main_product": "Hauptprodukt",
+      "saleable_byproduct": "Verkäufliches Nebenprodukt",
+      "recoverable_waste": "Verwertbare Abfälle",
+      "residual_waste": "Restabfälle",
+      "unspecified": "Nicht angegeben"
+    },
+    "handling": {
+      "non_hazardous": "Nicht gefährlich",
+      "controlled": "Kontrolliert",
+      "unassessed": "Nicht bewertet"
+    },
+    "facility": "Anlage",
+    "processKind": "Verfahren",
+    "noFacility": "Keine Anlage gewählt",
+    "controlledBlocked": "Kontrolliertes Material oder Restmaterial benötigt eine dokumentierte Behandlung. Gewöhnlicher Versand oder Umwandlung ist nicht zulässig.",
+    "recordDisposition": "Behandlung erfassen",
+    "destinationReference": "Zielreferenz",
+    "authorisationReference": "Genehmigungsreferenz",
+    "manifestReference": "Begleitscheinreferenz",
+    "dispositions": "Behandlungsverlauf",
+    "dispositionHint": "Erfassen Sie die gemessene Masse und die tatsächlichen Ziel-, Genehmigungs- und Begleitscheinreferenzen. Dies verringert die Restmasse des Loses. Es bestätigt keine Genehmigung und erzeugt keinen verkäuflichen Bestand.",
+    "inputs": "Eingangslose",
+    "additionalInputs": "Weitere Eingangslose",
+    "addInput": "Eingangslos hinzufügen",
+    "chooseInput": "Eingangslos auswählen",
+    "combinedInput": "Gesamte Eingangsmasse",
+    "multiInputHint": "Kombinieren Sie nur gemessenes Material in Ihrer Obhut. Jede Menge wird aus ihrem eigenen Los verbraucht. Dies erfasst einen Verarbeitungsnachweis und erhöht keinen Bestand."
+  },
+  "evidence": {
+    "title": "Dokumentverweise",
+    "lead": "Gemeldete Verweise speichern. Luma prüft diese Dokumente nicht und stellt sie nicht aus.",
+    "record": "Verweis hinzufügen",
+    "correct": "Verweis ersetzen",
+    "replacement": "Ersetzt: {reference}",
+    "reference": "Dokumentverweis",
+    "kind": "Dokumenttyp",
+    "issuer": "Aussteller",
+    "issuerName": "Name des Ausstellers",
+    "trade": "Verknüpfter Handel",
+    "none": "Kein Handel",
+    "unverified": "Gemeldet · ungeprüft",
+    "gst_invoice": "GST-Rechnung",
+    "eway_bill": "E-Way-Frachtbrief",
+    "cpcb_epr_certificate": "CPCB-EPR-Zertifikat",
+    "pollution_consent": "Umweltgenehmigung",
+    "external_authority": "Ausstellende Behörde",
+    "external_organization": "Ausstellende Organisation",
+    "trade_seller": "Verkäufer",
+    "trade_buyer": "Käufer",
+    "correctionHint": "Das Original bleibt sichtbar. Speichern Sie einen neuen Verweis als Ersatz."
+  },
+  "accountPhone": {
+    "title": "Mobilnummer bestätigen",
+    "description": "Füge deine eigene Nummer für Abholungen und Zahlungen hinzu. Dein E-Mail-Konto bleibt bestehen; kein anderes Konto wird verbunden. Melde dich weiter per E-Mail an.",
+    "verified": "Mobilnummer bestätigt",
+    "unavailable": "Die Bestätigung ist erst verfügbar, wenn der SMS-Versand eingerichtet ist.",
+    "inUse": "Diese Nummer kann nicht hinzugefügt werden. Verwende eine Nummer ohne anderes Konto.",
+    "unsupported": "Die Mobilnummer dieses Kontos kann hier nicht geändert werden."
+  },
+  "sandboxPayment": {
+    "title": "Testzahlung",
+    "note": "Nur ein Test. Keine echte Zahlung, Abrechnung oder Erstattung. Der Handel bleibt pausiert.",
+    "open": "Test öffnen",
+    "unavailable": "Testzahlung ist nicht verfügbar.",
+    "pending": "Warte auf Serverbestätigung.",
+    "collected": "Testeinzug bestätigt.",
+    "failed": "Zahlung konnte nicht geöffnet werden. Erneut versuchen.",
+    "review": "Serverprüfung erforderlich.",
+    "liveTitle": "Über den Zahlungsdienst bezahlen",
+    "liveNote": "Zahlen Sie den vereinbarten Bestellbetrag über Cashfree. Die Bestätigung des Anbieters ist erforderlich; das Schließen des Zahlungsfensters bestätigt keine Zahlung.",
+    "liveOpen": "Sichere Zahlung öffnen",
+    "liveCollected": "Zahlung vom Anbieter bestätigt."
+  },
+  "industry": {
+    "title": "Branchenreferenzen",
+    "lead": "Durchsuchen Sie die bereitgestellte Arbeitsmappe. Diese Angaben sind ungeprüft und erlauben keinen Handel oder keine Verarbeitung von Material.",
+    "sourceNote": "Der Quelltext erscheint im englischen Original der Arbeitsmappe.",
+    "sectors": "Sektorreferenzen",
+    "industries": "Branchenmatrix",
+    "lifecycles": "Materiallebenszyklus",
+    "byproducts": "Beispiele für Nebenprodukte",
+    "matches": "{count} passende Referenzen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "select": "Referenz wählen",
+    "selected": "Gewählte Referenz",
+    "clear": "Referenz löschen",
+    "detailLabels": {
+      "annexure": "Anhang",
+      "category": "Kategorie",
+      "division": "Abteilung",
+      "industryGroup": "Branchengruppe",
+      "inputs": "Einsatzstoffe",
+      "products": "Produkte",
+      "byproducts": "Nebenprodukte",
+      "recoverableWaste": "Verwertbare Abfälle",
+      "residualWaste": "Restabfälle",
+      "nextUser": "Nächster Nutzer",
+      "suggestedFlow": "Vorgeschlagener Ablauf",
+      "materialState": "Materialzustand",
+      "note": "Hinweis",
+      "route": "Verwertungsweg",
+      "qualityAttributes": "Qualitätsmerkmale",
+      "reportedCommercialStatus": "Gemeldeter Handelsstatus"
+    },
+    "view": "Referenz ansehen",
+    "empty": "Keine passenden Referenzen."
+  },
+  "facility": {
+    "title": "Anlagen und Verfahren",
+    "lead": "Erfassen Sie die Standorte und Verfahren, die Ihr Unternehmen angibt. Dieses Profil bestätigt keine Anlage und erlaubt keinen Materialhandel.",
+    "add": "Anlage hinzufügen",
+    "edit": "Anlage bearbeiten",
+    "name": "Anlagenname",
+    "siteReference": "Standortreferenz",
+    "sector": "Branchenreferenz (optional)",
+    "capabilities": "Angegebene Verfahren",
+    "readOnly": "Nur Eigentümer und Administratoren des Arbeitsbereichs können Anlagen ändern.",
+    "processNote": "Dies sind selbst angegebene Fähigkeiten, keine geprüften Genehmigungen.",
+    "processKinds": {
+      "sorting": "Sortieren",
+      "baling": "Ballenpressen",
+      "shredding": "Zerkleinern",
+      "stripping": "Abisolieren",
+      "washing": "Waschen",
+      "granulating": "Granulieren",
+      "compounding": "Compoundieren",
+      "recovery": "Rückgewinnung",
+      "manufacturing": "Herstellung",
+      "residual_handling": "Reststoffbehandlung"
+    },
+    "empty": "Noch keine Anlagen erfasst.",
+    "registration": {
+      "title": "Genehmigungs- und Registrierungsreferenzen",
+      "lead": "Nur gemeldete Referenzen. Datumsangaben belegen keine Genehmigung und schalten keinen Handel frei.",
+      "add": "Referenz hinzufügen",
+      "correct": "Korrektur hinzufügen",
+      "reference": "Referenz",
+      "issuedAt": "Ausstellungsdatum",
+      "validUntil": "Gültig bis",
+      "empty": "Noch keine Referenzen erfasst.",
+      "current": "Innerhalb der gemeldeten Daten",
+      "expired": "Gemeldetes Ablaufdatum überschritten",
+      "superseded": "Durch eine spätere Referenz ersetzt",
+      "kind": "Referenztyp",
+      "kinds": {
+        "consent_to_operate": "Betriebsgenehmigung",
+        "consent_to_establish": "Errichtungsgenehmigung",
+        "epr_registration": "EPR-Registrierung",
+        "waste_authorisation": "Abfallgenehmigung",
+        "other": "Andere Referenz"
+      },
+      "not_yet_current": "Vor dem gemeldeten Ausstellungsdatum"
+    }
+  },
+  "marketSpecification": {
+    "title": "Güte und Spezifikation",
+    "enable": "Güte und Spezifikation hinzufügen",
+    "grade": "Materialgüte",
+    "specification": "Qualitätsspezifikation des Käufers",
+    "lot": "Aktuelles passendes Los (optional)",
+    "noLot": "Kein verknüpftes Los",
+    "source": "Erklärung des Verkäufers. Sie bestätigt keine Qualität und reserviert das Nachweislos nicht.",
+    "lotState": "Erfasster Loszustand"
+  },
+  "stockIntake": {
+    "title": "Nebenproduktbestand aus Eigenproduktion",
+    "add": "Bestandseingang erfassen",
+    "lead": "Erfassen Sie gewogene Nebenprodukte dieses Herstellers. Speichern erhöht den Bestand anhand Ihrer Produktions- und Wiegeangaben. Reine Nachweislose erhöhen keinen Bestand.",
+    "reference": "Eindeutige Eingangsreferenz",
+    "source": "Referenz der Produktionscharge",
+    "weighing": "Referenz des Wiegebelegs",
+    "date": "Produktionsdatum",
+    "confirm": "Ich bestätige, dass dies unser eigenes Nebenprodukt ist und diese gewogene Menge noch nicht im Bestand erfasst wurde.",
+    "empty": "Noch keine Produktionszugänge erfasst.",
+    "noMaterials": "Für dieses Unternehmen gibt es keine genehmigten ungefährlichen Nebenproduktmaterialien. Bitten Sie den Plattformadministrator vor der Bestandserfassung um Prüfung.",
+    "conflict": "Diese Eingangsreferenz enthält bereits andere Angaben. Prüfen Sie zuerst den ursprünglichen Datensatz.",
+    "history": "Erfasste Bestandseingänge",
+    "more": "Weitere Eingänge laden",
+    "note": "Dies sind Herstellerangaben, keine unabhängige Qualitäts-, Eigentums- oder Rechtsprüfung. Gespeicherte Datensätze sind nicht bearbeitbar."
+  },
+  "tradeLifecycle": {
+    "title": "Zahlung und Lieferung",
+    "collectionLabel": "Zahlung des Käufers",
+    "settlementLabel": "Auszahlung an den Verkäufer",
+    "refundLabel": "Rückerstattung",
+    "state": {
+      "awaiting_payment": "Warten auf Zahlung über den Zahlungsdienst",
+      "authorized": "Zahlung bestätigt; versandbereit",
+      "dispatched": "Versandt; Empfang ausstehend",
+      "received": "Material erhalten",
+      "cancellation_pending": "Stornierung wird geprüft",
+      "cancelled": "Bestellung storniert",
+      "hold": "Bestellung muss geprüft werden"
+    },
+    "collection": {
+      "pending": "Nicht bestätigt",
+      "sandbox_confirmed": "Nur Testumgebung; kein echtes Geld",
+      "live_confirmed": "Vom Anbieter bestätigt",
+      "review": "Zahlung muss geprüft werden"
+    },
+    "settlement": {
+      "pending": "Nicht bestätigt",
+      "settled": "Vom Anbieter bestätigt",
+      "reversed": "Auszahlung rückgängig gemacht",
+      "review": "Auszahlung muss geprüft werden"
+    },
+    "refund": {
+      "none": "Keine Rückerstattung erfasst",
+      "pending": "Rückerstattung ausstehend",
+      "refunded": "Vom Anbieter bestätigt",
+      "review": "Rückerstattung muss geprüft werden"
+    },
+    "action": {
+      "dispatch": "Versand erfassen",
+      "receive": "Empfang bestätigen",
+      "cancel": "Stornierung anfordern"
+    },
+    "policyMissing": "Echte Zahlungen erfordern genehmigte Zahlungsbedingungen und eine Anbietereinrichtung.",
+    "reviewRequired": "Ein Administrator muss die Zahlungsnachweise prüfen, bevor diese Bestellung fortgesetzt werden kann.",
+    "fullQuantity": "Bestätigen Sie die gesamte vereinbarte Menge: {weight}. Weichen Menge oder Qualität ab, stoppen Sie und kontaktieren Sie den Administrator.",
+    "cancelNote": "Eine Stornierung gibt Bestand erst frei, wenn der Server bestätigt, dass keine Zahlung mehr abgeschlossen werden kann. Ein offener Antrag bedeutet nicht, dass die Bestellung storniert ist.",
+    "reason": "Grund",
+    "reference": "Versand- oder Empfangsreferenz",
+    "confirm": "Bestätigen",
+    "back": "Zurück",
+    "saved": "Bestelldatensatz aktualisiert",
+    "failed": "Die Aktualisierung wurde nicht abgeschlossen. Prüfen Sie den aktuellen Status und versuchen Sie es erneut. Ihre Referenz bleibt erhalten.",
+    "actionUnavailable": "Diese Aktion ist nicht mehr verfügbar. Prüfen Sie den aktualisierten Bestellstatus."
+  },
+  "sourcing": {
+    "close": "Schließen",
+    "material": "Materialart",
+    "save": "Eintrag speichern",
+    "saved": "Eintrag gespeichert.",
+    "reference": "Referenz",
+    "buying": "Einkäufe",
+    "active": "Aktiv",
+    "decline": "Ablehnen",
+    "title": "Materialbeschaffung",
+    "lead": "Planen Sie den Materialbedarf, protokollieren Sie Ihre Lieferantenentscheidungen und stimmen Sie individuelle Lieferanfragen ab.",
+    "boundary": "Diese Datensätze erstellen keine Kauftransaktionen. Sie reservieren keinen Lagerbestand und bestätigen keine Zahlungen. Schließen Sie Einkäufe über den Marktplatz und den Zahlungsworkflow ab.",
+    "board": "Nachfragetafel",
+    "plans": "Wiederkehrende Nachfrage",
+    "qualifications": "Lieferantenentscheidungen",
+    "agreements": "Ständige Vereinbarungen",
+    "post": "Materialbedarf veröffentlichen",
+    "createPlan": "Zeitplan erstellen",
+    "publish": "Nächsten Bedarf veröffentlichen",
+    "supplier": "Lieferant",
+    "choose": "Wählen Sie eine Option",
+    "quantity": "Menge (g)",
+    "area": "Liefergebiet",
+    "specification": "Schriftliche Spezifikation",
+    "neededBy": "Gewünschter Liefertermin",
+    "cadence": "Intervall wiederholen",
+    "weekly": "Alle 7 Tage",
+    "monthly": "Alle 30 Tage",
+    "planHint": "Jedes Vorkommen wird nur veröffentlicht, wenn Sie „Nächsten Bedarf veröffentlichen“ auswählen. Es wird keine automatische Bestellung erstellt.",
+    "myDemand": "Meine Forderung",
+    "availableDemand": "Nachfrage von Käufern",
+    "empty": "Noch keine Aufzeichnungen.",
+    "limited": "Es wird nur eine begrenzte Menge angezeigt. Ältere Datensätze verbleiben im Prüfverlauf.",
+    "loadMore": "Mehr laden",
+    "invalid": "Überprüfen Sie die erforderlichen Felder, Daten und ganzzahligen Mengen.",
+    "failed": "Diese Aktion konnte nicht abgeschlossen werden. Ihr Entwurf bleibt erhalten. Überprüfen Sie die aktuellen Berechtigungen und Berechtigung und versuchen Sie es dann erneut.",
+    "qualify": "Lieferantenentscheidung dokumentieren",
+    "sample": "Muster- oder Inspektionsreferenz",
+    "decision": "Ihre Entscheidung",
+    "reason": "Entscheidungsgrund",
+    "validUntil": "Beschluss gültig bis",
+    "privateDecision": "Dies ist die Beschaffungsentscheidung Ihrer Organisation. Es handelt sich nicht um eine Plattformgenehmigung oder behördliche Zertifizierung. Der Entscheidungsverlauf ist für Ihren Käuferarbeitsbereich privat. Die letzte Entscheidung für einen Lieferanten und ein Material steuert neue Vereinbarungen und Freigaben; Frühere Einträge bleiben im Verlauf erhalten.",
+    "pending": "Ausstehend",
+    "approved": "Vom Käufer genehmigt",
+    "rejected": "Vom Käufer abgelehnt",
+    "propose": "Vereinbarung vorschlagen",
+    "price": "Vereinbarter Preis (Paise/kg)",
+    "startsOn": "Beginnt am",
+    "endsOn": "Endet am",
+    "agreementHint": "Eine genehmigte aktuelle Lieferantenentscheidung für genau diese Spezifikation ist erforderlich. Der Lieferant muss das Angebot gesondert anerkennen.",
+    "supplying": "Liefern",
+    "requested": "Warten auf Antwort des Lieferanten",
+    "acknowledged": "Vom Lieferanten bestätigt",
+    "declined": "Vom Lieferanten abgelehnt",
+    "closed": "Geschlossen",
+    "acknowledge": "Bestätigung bestätigen",
+    "responseReference": "Antwortreferenz",
+    "release": "Fordern Sie eine Liefermenge an",
+    "releaseHint": "Fordern Sie einen Teil der vereinbarten Menge an. Die Bestätigung des Lieferanten dokumentiert nur die Absicht; es bewegt weder Material noch Geld.",
+    "releases": "Individuelle Lieferanfragen",
+    "history": "Vereinbarungshistorie",
+    "view": "Lieferanfragen und Verlauf anzeigen",
+    "closeAgreement": "Schließen Sie diese Vereinbarung",
+    "closeHint": "Dies verhindert neue Lieferanfragen im Rahmen der Vereinbarung. Bestehende Anfragen und deren Historie bleiben gespeichert.",
+    "state": "Aufnahmestatus",
+    "nextDate": "Nächster Bedarfstermin",
+    "readOnly": "Ihre Arbeitsbereichsrolle kann diese Datensätze anzeigen, sie jedoch nicht ändern.",
+    "published": "Bedarfsvorkommen veröffentlicht.",
+    "event": {
+      "proposed": "Vereinbarung vorgeschlagen",
+      "acknowledged": "Zustimmung anerkannt",
+      "declined": "Vereinbarung abgelehnt",
+      "closed": "Vereinbarung geschlossen",
+      "release_requested": "Liefermenge angefordert",
+      "release_acknowledged": "Lieferanfrage bestätigt",
+      "release_declined": "Lieferanfrage abgelehnt"
+    },
+    "reschedule": "Nächsten Bedarfstermin verschieben",
+    "rescheduleHint": "Wählen Sie ein späteres aktuelles Datum. Frühere Veröffentlichungen bleiben unverändert. Dadurch wird weder ein Bedarf veröffentlicht noch eine Bestellung erstellt.",
+    "overdue": "Dieses geplante Datum ist abgelaufen. Verschieben Sie den nächsten Termin vor der Veröffentlichung."
+  },
+  "operations": {
+    "validUntil": "Gültig bis",
+    "decisions": {
+      "revoked": "Widerrufen",
+      "approved": "Genehmigt",
+      "rejected": "Abgelehnt"
+    },
+    "reference": "Referenz",
+    "remove": "Entfernen",
+    "save": "Eintrag speichern",
+    "saved": "Eintrag gespeichert.",
+    "standards": "Materialstandards",
+    "standardsHint": "Durchsuchen Sie überprüfte Definitionen. Eine Sorte oder Branche gewährt keine Bearbeitungserlaubnis oder bescheinigt keine Qualität.",
+    "workspaceRequired": "Wählen Sie einen genehmigten Geschäftsarbeitsbereich aus, um fortzufahren.",
+    "definitions": "Definitionen",
+    "reviews": "Scope-Bewertungen",
+    "destinations": "Kontrollierte Ziele",
+    "search": "Suchen Sie nach Material, physikalischem Zustand, Güteklasse oder Spezifikation",
+    "empty": "Noch keine Aufzeichnungen.",
+    "truncated": "Das Ergebnis ist begrenzt. Verfeinern Sie Ihre Suche oder überprüfen Sie die aktuellen Datensätze.",
+    "reviewHint": "Hierbei handelt es sich um Administratorprüfungen der bereitgestellten Beweise. Eine geänderte Einrichtung, eine abgelöste Registrierung, ein Ablauf oder ein Widerruf führen dazu, dass der aktuelle Geltungsbereich ungültig wird.",
+    "destinationHint": "Prüfen Sie vor einer kontrollierten Übergabe den Sachumfang und die aktuelle Berechtigung. Ein Verzeichniseintrag beweist keine Entsorgung oder Portaleinreichung.",
+    "current": "Aktuell",
+    "historical": "Nicht aktuell",
+    "production": "Produktionsaufzeichnungen",
+    "productionHint": "Verknüpfen Sie Rezepte und deklarierte Eingaben mit einer gemessenen Transformation und deren Ausgabeprüfung. Der recycelte Anteil beschreibt den deklarierten Input, nicht den zertifizierten Produktinhalt. Diese Datensätze verändern den Bestand nicht.",
+    "recipes": "Herstellungsformeln",
+    "batches": "Produktionschargen",
+    "newRecipe": "Herstellungsformel aufzeichnen",
+    "newBatch": "Charge aufzeichnen",
+    "version": "Aufnahmeversion",
+    "name": "Rezeptname",
+    "instructions": "Prozessanweisungen",
+    "ingredients": "Zutaten",
+    "ingredient": "Name der Zutat",
+    "basisPoints": "Zutatenanteil in Basispunkten (100 = 1 %)",
+    "additive": "Zusatzstoff",
+    "addIngredient": "Zutat hinzufügen",
+    "recipeHint": "Verwenden Sie für eine Korrektur eine neue Version. Die Zutatenanteile müssen insgesamt 10.000 Basispunkte betragen. Alle gemessenen Zutaten und Zusatzstoffe müssen in die verknüpfte Transformation einbezogen werden.",
+    "failed": "Konnte nicht gespeichert werden. Überprüfen Sie die Werte, verknüpften Datensätze und Ihren Arbeitsbereichszugriff und versuchen Sie es dann erneut.",
+    "invalid": "Überprüfen Sie die Felder und die genauen Grammsummen.",
+    "choose": "Auswählen",
+    "recipe": "Version der Herstellungsformel",
+    "transformation": "Gemessene Transformation",
+    "inspection": "Ausgangskontrolle",
+    "recycledGrams": "Deklarierter recycelter Input (Gramm)",
+    "inputEvidence": "Referenz zur Herkunft der Eingabe",
+    "batchEvidence": "Referenz zum Produktionsbeweis",
+    "inputFraction": "Deklarierter Recyclinganteil",
+    "inputTotal": "Gesamteingabe",
+    "outputTotal": "Gemessene Leistung",
+    "batchHint": "Wählen Sie eine vorhandene Transformation mit einer Überprüfung ihrer Ausgabe aus. Deklarieren Sie recycelte Gramm für jede Eingabe und geben Sie die Nachweisreferenz an. Hierbei handelt es sich um eine zurechenbare Erklärung, nicht um eine unabhängige Zertifizierung."
+  },
+  "logistics": {
+    "title": "Routen- und Ladepläne",
+    "add": "Plan erstellen",
+    "correct": "Neue Fassung speichern",
+    "titleLabel": "Planname",
+    "reference": "Eindeutige Planreferenz",
+    "vehicle": "Fahrzeugreferenz",
+    "capacity": "Fahrzeugkapazität (g)",
+    "origin": "Startort",
+    "stop": "Halt {number}",
+    "addStop": "Halt hinzufügen",
+    "latitude": "Breitengrad",
+    "longitude": "Längengrad",
+    "entered": "Eingegebene Reihenfolge",
+    "geometric": "Nächster Halt nach Luftlinie",
+    "distance": "Luftlinienentfernung: {value} m",
+    "archive": "Plan archivieren",
+    "archived": "Archiviert",
+    "history": "Versionsverlauf",
+    "revision": "Fassung {number}",
+    "reason": "Grund für diesen Eintrag",
+    "conflict": "Plan oder Zugriff geändert. Vor dem Speichern neu laden.",
+    "invalid": "Koordinaten, Material, ganze Gramm und Kapazität prüfen. Alle Ladungen zusammen müssen ins Fahrzeug passen.",
+    "lead": "Nur manuelle Planung. Alle Ladungen werden addiert. Die Luftlinienreihenfolge ist keine Straßenroute, Ankunftszeit oder Versandbestätigung. Orte stammen aus Ihren Eingaben, nicht aus Fotometadaten.",
+    "empty": "Noch keine Routenpläne."
+  },
+  "qualityDocuments": {
+    "businessRequired": "Wählen Sie einen aktiven Unternehmensarbeitsbereich für Losaufzeichnungen.",
+    "inspections": "Prüfnachweise",
+    "readOnly": "Ihre Arbeitsbereichsrolle erlaubt das Lesen dieser Aufzeichnungen.",
+    "empty": "Noch keine Aufzeichnungen.",
+    "inspection": "Prüfnachweise",
+    "kind": "Dokumenttyp",
+    "accepted": "Angenommen",
+    "rejected": "Abgelehnt",
+    "conditional": "Bedingt",
+    "note": "Korrekturgrund",
+    "record": "Eintrag speichern",
+    "error": "Etwas ist schiefgelaufen",
+    "limit": "Nur die ersten 100 Aufzeichnungen werden angezeigt.",
+    "title": "Qualitätsdokumente",
+    "own": "Ihre Dokumente",
+    "incoming": "Mit Ihrem Unternehmen geteilt",
+    "decisions": "Entscheidungsverlauf des Käufers",
+    "upload": "Dokument anhängen",
+    "coa": "Analysezertifikat",
+    "photo": "Qualitätsfoto",
+    "sample_report": "Probenbericht",
+    "file": "Datei",
+    "shareBuyer": "Dieses Dokument mit {name} teilen",
+    "download": "Herunterladen",
+    "shared": "Mit dem benannten Käufer geteilt",
+    "private": "Nur Unternehmen",
+    "withdrawn": "Zugriff entzogen",
+    "withdraw": "Zugriff entziehen",
+    "decision": "Käuferentscheidung",
+    "lead": "Erfassen Sie die tatsächliche Spezifikation, das Probenahmeverfahren und die Messwerte. Die Entscheidung gilt nur für diese Prüfung; sie ist keine Plattformbewertung oder Zertifizierung. Diese Aufzeichnungen beschreiben physische Nachweise. Sie ändern weder Bestand, Zahlung, rechtliches Eigentum noch Zertifikate.",
+    "fileHint": "PDF, JPEG, PNG oder WebP, bis 2 MiB. Verwenden Sie reduzierte PDFs. Dateien werden heruntergeladen, nicht angezeigt. Keine unabhängige Prüfung oder Schadsoftwareprüfung. Entfernen Sie private Angaben vor dem Teilen."
+  },
+  "auditReports": {
+    "title": "Geteilte Prüfberichte",
+    "create": "Bericht teilen",
+    "recipient": "Genehmigter Empfänger",
+    "purpose": "Prüfzweck",
+    "expiry": "Zugriff endet (Ortszeit)",
+    "sent": "Von Ihnen geteilte Berichte",
+    "received": "Mit Ihnen geteilte Berichte",
+    "empty": "Noch keine Berichte.",
+    "unavailable": "Zugriff abgelaufen, entzogen oder nicht verfügbar.",
+    "open": "Bericht lesen",
+    "revoke": "Zugriff widerrufen",
+    "inspection": "Prüfnachweise",
+    "error": "Etwas ist schiefgelaufen",
+    "limit": "Nur die ersten 100 Aufzeichnungen werden angezeigt.",
+    "lead": "Lesen Sie eine feste Belegkopie für den genannten Zweck. Die Empfängerfreigabe erlaubt keinen Zugriff auf andere Unternehmensdaten.",
+    "warning": "Teilen Sie nur die gewählte Prüfung und markierte Dateien. Entfernen Sie zuerst personenbezogene Angaben. Zugriff höchstens 90 Tage, widerrufbar; heruntergeladene Kopien lassen sich nicht zurückholen.",
+    "snapshot": "Feste Kopie der Erklärung des prüfenden Unternehmens. Kein Zertifikat und keine unabhängige Prüfung."
   }
 }

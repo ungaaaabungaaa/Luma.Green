@@ -24,6 +24,8 @@ import {
   vConversationView,
   vMessageView,
 } from "./lib/messaging";
+import { membershipFor, selectedMembership } from "./lib/workspace";
+import { workspaceRole } from "./lib/workspaceRoles";
 
 interface Actor {
   profile: Doc<"profiles">;
@@ -40,38 +42,19 @@ async function actorFor(ctx: QueryCtx): Promise<Actor> {
   return { profile, isAdmin };
 }
 
-async function activeMembership(
-  ctx: QueryCtx,
-  profileId: Id<"profiles">,
-  orgId: Id<"orgs">,
-) {
-  const membership = await ctx.db
-    .query("memberships")
-    .withIndex("by_profile_org", (q) =>
-      q.eq("profileId", profileId).eq("orgId", orgId),
-    )
-    .first();
-  if (!membership) return null;
-  const org = await ctx.db.get("orgs", orgId);
-  return org?.status === "active" ? org : null;
-}
-
-/** Trade membership is live, not a copied participant list that can become stale. */
+/** Use the selected workspace and its live membership for every trade request. */
 async function tradeAccess(ctx: QueryCtx, actor: Actor, tradeId: Id<"trades">) {
   if (actor.isAdmin) throw new ConvexError("MESSAGE_ACCESS_DENIED");
   const trade = await ctx.db.get("trades", tradeId);
   if (!trade) throw new ConvexError("MESSAGE_ACCESS_DENIED");
-  const seller = await activeMembership(
-    ctx,
-    actor.profile._id,
-    trade.sellerOrgId,
-  );
-  const buyer = seller
-    ? null
-    : await activeMembership(ctx, actor.profile._id, trade.buyerOrgId);
-  const org = seller ?? buyer;
-  if (!org) throw new ConvexError("MESSAGE_ACCESS_DENIED");
-  return { trade, org };
+  const selected = await selectedMembership(ctx, actor.profile._id);
+  if (
+    !selected ||
+    (selected.org._id !== trade.sellerOrgId &&
+      selected.org._id !== trade.buyerOrgId)
+  )
+    throw new ConvexError("MESSAGE_ACCESS_DENIED");
+  return { trade, org: selected.org };
 }
 
 async function conversationAccess(
@@ -362,7 +345,10 @@ export const openTrade = mutation({
   returns: v.id("conversations"),
   handler: async (ctx, args) => {
     const actor = await actorFor(ctx);
-    const { trade } = await tradeAccess(ctx, actor, args.tradeId);
+    const { trade, org } = await tradeAccess(ctx, actor, args.tradeId);
+    const membership = await membershipFor(ctx, actor.profile._id, org._id);
+    if (!membership || workspaceRole(membership.role) === "viewer")
+      throw new ConvexError("WORKSPACE_PERMISSION_DENIED");
     const existing = await ctx.db
       .query("conversations")
       .withIndex("by_trade", (q) => q.eq("tradeId", trade._id))
@@ -394,6 +380,11 @@ export const send = mutation({
       actor,
       args.conversationId,
     );
+    if (org) {
+      const membership = await membershipFor(ctx, actor.profile._id, org._id);
+      if (!membership || workspaceRole(membership.role) === "viewer")
+        throw new ConvexError("WORKSPACE_PERMISSION_DENIED");
+    }
     if (conversation.status !== "open")
       throw new ConvexError("CONVERSATION_CLOSED");
     const body = messageText(args.body);

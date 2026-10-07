@@ -1,6 +1,6 @@
 "use client";
 
-import { FactoryIcon, TagIcon } from "lucide-react";
+import { TagIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import {
@@ -8,8 +8,6 @@ import {
   DemoNote,
   EmptyState,
 } from "@/components/app/page-parts";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
 
 import { buyerKindFor } from "../../../convex/lib/chain";
 import { MyListings } from "./my-listings";
@@ -18,29 +16,22 @@ import { useOrg } from "./use-org";
 
 /**
  * `/app/sell`: put stock on sale for the next business up the chain, and
- * manage what's on sale. Kabadiwalas, yards and recyclers sell here;
- * manufacturers only buy.
+ * manage what's on sale. Manufacturers can offer eligible non-hazardous
+ * byproducts; eligibility and material scope are enforced by the server.
  */
 export function SellPage() {
   const t = useTranslations("market");
   const org = useOrg();
-  const buyer = org ? buyerKindFor(org.kind) : null;
+  const buyer = org ? (buyerKindFor(org.kind) ?? "other") : null;
 
   if (!org || !buyer) {
     return (
       <>
         <AppPageHeader title={t("sell.title")} />
         <EmptyState
-          icon={org ? FactoryIcon : TagIcon}
-          title={t(org ? "sell.notForYouTitle" : "forBusinessesTitle")}
-          body={t(org ? "sell.notForYouBody" : "forBusinessesBody")}
-          action={
-            org ? (
-              <Button asChild size="lg" className="mt-2 h-11">
-                <Link href="/app/market">{t("sell.goBuy")}</Link>
-              </Button>
-            ) : null
-          }
+          icon={TagIcon}
+          title={t("forBusinessesTitle")}
+          body={t("forBusinessesBody")}
         />
       </>
     );

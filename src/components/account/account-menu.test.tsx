@@ -10,6 +10,8 @@ import { AccountMenu } from "./account-menu";
 
 const state = vi.hoisted(() => ({
   signedIn: true,
+  configured: true,
+  useSession: vi.fn(),
   replace: vi.fn(),
   signOut: vi.fn(),
   revoke: vi.fn(),
@@ -18,13 +20,14 @@ vi.mock("@/components/notifications/device-provider", () => ({
   lockDeviceSignOut: () => vi.fn(),
   revokeCurrentDevice: state.revoke,
 }));
+vi.mock("@/components/providers/convex-provider", () => ({
+  get isConvexConfigured() {
+    return state.configured;
+  },
+}));
 vi.mock("@/lib/auth-client", () => ({
   authClient: {
-    useSession: () => ({
-      data: state.signedIn
-        ? { user: {}, session: { id: "fixture-session" } }
-        : null,
-    }),
+    useSession: state.useSession,
     signOut: state.signOut,
   },
 }));
@@ -50,6 +53,12 @@ vi.mock("@/components/theme/theme-toggle", () => ({
 beforeEach(() => {
   vi.clearAllMocks();
   state.signedIn = true;
+  state.configured = true;
+  state.useSession.mockImplementation(() => ({
+    data: state.signedIn
+      ? { user: {}, session: { id: "fixture-session" } }
+      : null,
+  }));
   state.signOut.mockResolvedValue({ error: null });
   state.revoke.mockResolvedValue(undefined);
 });
@@ -124,4 +133,26 @@ it("offers sign-in instead of sign-out for a public tracking visitor", async () 
   expect(
     screen.queryByRole("button", { name: en.app.signOut }),
   ).not.toBeInTheDocument();
+});
+
+it("does not read an auth session when opening the disconnected menu", async () => {
+  state.configured = false;
+  render(
+    <NextIntlClientProvider locale="en" messages={en}>
+      <AccountMenu />
+    </NextIntlClientProvider>,
+  );
+  expect(state.useSession).not.toHaveBeenCalled();
+  await userEvent.click(screen.getByRole("button", { name: en.nav.openMenu }));
+  const signIn = screen.getByRole("link", { name: en.auth.metaTitle });
+  expect(signIn).toHaveAttribute("href", "/login");
+  expect(
+    screen.getByRole("button", { name: "Language control" }),
+  ).toBeVisible();
+  expect(screen.getByRole("button", { name: "Theme control" })).toBeVisible();
+  await userEvent.click(signIn);
+  expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  expect(state.useSession).not.toHaveBeenCalled();
+  expect(state.signOut).not.toHaveBeenCalled();
+  expect(state.revoke).not.toHaveBeenCalled();
 });

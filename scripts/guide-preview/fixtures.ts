@@ -244,6 +244,7 @@ export function workspaceFixture(): FunctionReturnType<
   const kind = isBusinessRole(role) ? role : "kabadiwala";
   return {
     kind: "org",
+    role: "owner",
     org: {
       id: "guide-org" as Id<"orgs">,
       kind,

@@ -14,7 +14,7 @@ const roles = [
 ] as const;
 
 const helpRoles = roles.filter((role) => role !== "admin");
-const bannerRoutes = [
+const artworkRoutes = [
   "/en/how-it-works",
   "/en/participants",
   "/en/prices",
@@ -66,11 +66,11 @@ async function expectNoDevicePreviews(page: Page) {
   ).toBeLessThanOrEqual(1);
 }
 
-async function expectBannerLayout(
+async function expectHeaderArtworkLayout(
   page: Page,
   banner: Locator,
   width: number,
-  isSplitHeader: boolean,
+  isCompact: boolean,
 ) {
   const bounds = await banner.evaluate((element) => {
     const rect = element.getBoundingClientRect();
@@ -83,9 +83,17 @@ async function expectBannerLayout(
       bottom: rect.bottom,
     };
   });
-  if (isSplitHeader) {
-    expect(bounds.width).toBeGreaterThanOrEqual(width * 0.3);
-    expect(bounds.width / bounds.height).toBeCloseTo(4 / 3, 1);
+  if (isCompact) {
+    expect(bounds.height).toBeGreaterThanOrEqual(80);
+    expect(bounds.height).toBeLessThanOrEqual(width >= 1024 ? 176 : 112);
+  }
+  if (width >= 1024) {
+    if (isCompact) {
+      expect(bounds.width).toBeCloseTo(256, 0);
+    } else {
+      expect(bounds.width).toBeGreaterThanOrEqual(width * 0.3);
+      expect(bounds.width / bounds.height).toBeCloseTo(4 / 3, 1);
+    }
     const headingBounds = await page
       .getByRole("heading", { level: 1 })
       .evaluate((element) => {
@@ -114,17 +122,25 @@ async function expectBannerLayout(
     ).toBeGreaterThanOrEqual(width * 0.7);
     expect(
       bounds.width / bounds.height,
-      "The banner must have a wide shape",
+      "The page artwork must have a wide shape",
     ).toBeGreaterThanOrEqual(1.6);
+    const heading = await page.getByRole("heading", { level: 1 }).boundingBox();
+    expect(heading).not.toBeNull();
+    expect(
+      bounds.top,
+      "Phone artwork follows the heading",
+    ).toBeGreaterThanOrEqual((heading?.y ?? 0) + (heading?.height ?? 0));
   }
   expect(bounds.left).toBeGreaterThanOrEqual(-1);
   expect(bounds.right).toBeLessThanOrEqual(width + 1);
 }
 
 for (const width of [390, 1440]) {
-  for (const route of bannerRoutes) {
-    // Public headers split at desktop width; help keeps a full-width banner.
-    const isSplitHeader = width >= 1024 && !route.includes("/help");
+  for (const route of artworkRoutes) {
+    // Task pages keep compact secondary artwork; story pages keep editorial art.
+    const isCompact =
+      route.includes("/help") ||
+      ["/en/prices", "/en/solar", "/en/contact"].includes(route);
 
     test(`${route} keeps its page image loaded and aligned at ${String(width)}px`, async ({
       page,
@@ -133,14 +149,18 @@ for (const width of [390, 1440]) {
       await page.emulateMedia({ reducedMotion: "reduce" });
       await page.goto(route);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-      const banner = page.getByRole("main").locator("[data-page-banner]");
+      const main = page.getByRole("main");
+      await expect(main.locator("[data-page-banner]")).toHaveCount(
+        isCompact ? 0 : 1,
+      );
+      const banner = main.locator("figure").first();
       await expect(banner).toHaveCount(1);
       await banner.scrollIntoViewIfNeeded();
       await expect(banner).toBeInViewport();
       await expectStoryImages(banner, 1);
       await expect(banner.locator("img")).toBeVisible();
       await page.evaluate(async () => document.fonts.ready);
-      await expectBannerLayout(page, banner, width, isSplitHeader);
+      await expectHeaderArtworkLayout(page, banner, width, isCompact);
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth - innerWidth,
@@ -258,7 +278,7 @@ test("public information scenes load without adding controls or overflowing a ph
   for (const route of ["solar", "prices", "standards", "contact"]) {
     await page.goto(`/en/${route}`);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    const scene = page.getByRole("main").locator("[data-page-banner]");
+    const scene = page.getByRole("main").locator("figure").first();
     await expectStoryImages(scene, 1);
     await expect(scene.locator("img")).toHaveAttribute("alt", "");
     await expect(scene.locator("button, a, input, [tabindex]")).toHaveCount(0);

@@ -215,7 +215,7 @@ describe("kilos and CO2e by family", () => {
         materials,
       ),
     ).toEqual([
-      { family: "other", grams: 5000, co2eKg: 0 },
+      { family: "other", grams: 5000, co2eKg: null },
       { family: "paper", grams: 1001, co2eKg: 1.001 },
       { family: "plastic", grams: 1, co2eKg: 0.001 },
     ]);
@@ -225,6 +225,33 @@ describe("kilos and CO2e by family", () => {
 // --- Impact on the demo world ------------------------------------------------------
 
 describe("impact", () => {
+  it("keeps physical totals but marks the estimate unknown when a factor is absent", async () => {
+    const t = await demoWorld();
+    await t.run(async (ctx) => {
+      const material = await ctx.db
+        .query("materials")
+        .withIndex("by_code", (q) => q.eq("code", "PAPER-NEWS"))
+        .unique();
+      if (!material) throw new Error("Missing fixture material");
+      await ctx.db.patch(material._id, { co2eFactor: undefined });
+    });
+    const user = await signInAs(t, PHONES.kabadiwala);
+    const result = await user.query(api.insights.impact, {});
+    expect(result).toMatchObject({
+      kind: "org",
+      recycledGrams: 433_950,
+      co2eKg: null,
+    });
+    if (result.kind !== "org") throw new Error("Expected business impact");
+    expect(result.families.find(({ family }) => family === "paper")).toEqual({
+      family: "paper",
+      grams: 400_000,
+      co2eKg: null,
+    });
+    expect(
+      result.families.find(({ family }) => family === "metal")?.co2eKg,
+    ).toBeCloseTo(43.65);
+  });
   it("adds up a kabadiwala's pickups and sales", async () => {
     const t = await demoWorld();
     const ramesh = await signInAs(t, PHONES.kabadiwala);

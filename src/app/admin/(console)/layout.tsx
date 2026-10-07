@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { AdminUnavailable } from "@/components/admin/admin-unavailable";
 import { AdminAuthShell } from "@/components/admin/auth-shell";
 import { ConsoleShell } from "@/components/admin/console-shell";
-import { authServer } from "@/lib/auth-server";
+import { authServer, hasServerSession } from "@/lib/auth-server";
 
 /**
  * Signed-in admin pages. The session check here only saves a flash of the
@@ -22,6 +22,6 @@ export default async function ConsoleLayout({
       </AdminAuthShell>
     );
   }
-  if (!(await authServer.isAuthenticated())) redirect("/admin/login");
+  if (!(await hasServerSession())) redirect("/admin/login");
   return <ConsoleShell>{children}</ConsoleShell>;
 }

@@ -15,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useCanOperate } from "@/components/workspace/permissions";
 import { defaultLocale, isLocale, localeDirection } from "@/i18n/locales";
 
 import { api } from "../../../convex/_generated/api";
@@ -54,6 +55,7 @@ export function WeighAndPay({
   /** Materials that can be added: what the shop buys. */
   choices: readonly MaterialRef[];
 }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("shop");
   const locale = useLocale();
   const direction = localeDirection(isLocale(locale) ? locale : defaultLocale);
@@ -142,6 +144,7 @@ export function WeighAndPay({
     }
   }
 
+  if (!canOperate) return null;
   return (
     <section
       id="weigh"

@@ -75,7 +75,7 @@ describe("home page", () => {
     ).toEqual([
       "Households",
       "Kabadiwalas",
-      "Yards",
+      "Preprocessors",
       "Recyclers",
       "Manufacturers",
     ]);
@@ -84,7 +84,7 @@ describe("home page", () => {
       within(chain).getByText(/Saathis help all along the chain/),
     ).toBeInTheDocument();
     expect(
-      within(chain).getByText(/Escrow between businesses is planned/),
+      within(chain).getByText(/Business payments use the payment gateway\./),
     ).toBeInTheDocument();
   });
 

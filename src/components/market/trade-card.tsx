@@ -8,8 +8,10 @@ import { StatusPill } from "@/components/app/page-parts";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
+import { FinancialLifecycle } from "./financial-lifecycle";
 import { isAvailableTradeAction, isOpenTrade, reachedAt } from "./logic";
 import { MaterialIcon } from "./material-icon";
+import { OfferSpecification } from "./offer-specification";
 import { TradeActions } from "./trade-actions";
 import { TradeSteps } from "./trade-steps";
 import type { TradeSide, TradeView } from "./types";
@@ -39,6 +41,12 @@ export function TradeCard({
   const isHistorical = ["paid_to_escrow", "dispatched", "completed"].includes(
     trade.status,
   );
+  const hasFinancialView = [
+    "accepted",
+    "dispatched",
+    "completed",
+    "declined",
+  ].includes(trade.status);
   let hint: string;
   if (isHistorical) {
     hint = t("legacyUnverified");
@@ -47,10 +55,8 @@ export function TradeCard({
   } else {
     hint = t(`hint.${trade.status}.${side}`, counterparty);
   }
-  return (
-    <article className="flex h-full flex-col gap-4 border-b border-border py-5">
-      <TradeHeading trade={trade} side={side} showSide={showSide} />
-      {compact || isHistorical ? null : <TradeSteps status={trade.status} />}
+  const legacyContent = (
+    <>
       <DeclinedNote trade={trade} />
       <p
         className={cn(
@@ -62,6 +68,25 @@ export function TradeCard({
       >
         {hint}
       </p>
+    </>
+  );
+  return (
+    <article className="flex h-full flex-col gap-3 border-b border-border py-4">
+      <TradeHeading trade={trade} side={side} showSide={showSide} />
+      {compact ? null : <OfferSpecification value={trade.specification} />}
+      {compact || isHistorical || trade.status === "declined" ? null : (
+        <TradeSteps status={trade.status} />
+      )}
+      {hasFinancialView ? (
+        <FinancialLifecycle
+          key={trade.id}
+          tradeId={trade.id}
+          compact={compact}
+          legacyContent={legacyContent}
+        />
+      ) : (
+        legacyContent
+      )}
       <TradeNotes trade={trade} />
       <TradeActions trade={trade} />
       {compact ? null : <TradeFooter trade={trade} />}

@@ -13,11 +13,11 @@ describe("codeDelivery", () => {
     ).toEqual({ kind: "msg91", authKey: "key", templateId: "tpl" });
   });
 
-  it("logs codes in dev mode when MSG91 isn't set up", () => {
-    expect(codeDelivery({ AUTH_DEV_MODE: "true" })).toEqual({ kind: "log" });
+  it("ignores the legacy dev flag and never logs codes", () => {
+    expect(codeDelivery({ AUTH_DEV_MODE: "true" })).toEqual({ kind: "off" });
     expect(
       codeDelivery({ MSG91_AUTH_KEY: "key", AUTH_DEV_MODE: "true" }),
-    ).toEqual({ kind: "log" });
+    ).toEqual({ kind: "off" });
   });
 
   it("is off otherwise — production without MSG91 never logs codes", () => {

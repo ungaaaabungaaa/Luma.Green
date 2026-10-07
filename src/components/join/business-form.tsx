@@ -133,7 +133,7 @@ export function BusinessForm({
   return (
     <form
       noValidate
-      className="flex flex-col gap-8"
+      className="flex flex-col gap-6"
       onSubmit={(event) => {
         void handleSubmit(onNext, () => {
           setFailure("fixErrors");

@@ -6,8 +6,10 @@ import { useFormatter, useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { isConvexConfigured } from "@/components/providers/convex-provider";
+import { useVerifiedSession } from "@/components/providers/use-signed-in-query";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { reloadCurrentPage } from "@/lib/reload-current-page";
 
 import { api } from "../../../convex/_generated/api";
 import { useNotificationDevice } from "./device-provider";
@@ -15,18 +17,22 @@ import { NotificationErrorBoundary } from "./notification-error-boundary";
 
 export function NotificationsPage() {
   const t = useTranslations("notifications");
+  const common = useTranslations("common");
   return (
-    <div className="w-full">
-      <h1 className="font-display text-2xl font-semibold sm:text-3xl">
+    <div className="mx-auto w-full max-w-3xl min-w-0">
+      <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
         {t("title")}
       </h1>
       <DeviceSettings />
       {isConvexConfigured ? (
         <NotificationErrorBoundary
           fallback={
-            <p role="alert" className="py-6 text-muted-foreground">
-              {t("unavailable")}
-            </p>
+            <div className="space-y-4 py-6">
+              <p role="alert" className="text-muted-foreground">
+                {t("unavailable")}
+              </p>
+              <Button onClick={reloadCurrentPage}>{common("retry")}</Button>
+            </div>
           }
         >
           <Inbox />
@@ -66,7 +72,7 @@ function DeviceSettings() {
   return (
     <section
       aria-labelledby="notification-device"
-      className="mt-6 flex flex-col gap-3 border-y border-border py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+      className="mt-6 flex flex-col gap-3 border-y border-border py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
     >
       <div className="min-w-0">
         <h2 id="notification-device" className="font-semibold">
@@ -101,7 +107,32 @@ function DeviceSettings() {
   );
 }
 
+/** Mount private subscriptions only after Convex confirms the client identity. */
 function Inbox() {
+  const { isReady, isPending, userId } = useVerifiedSession();
+  const t = useTranslations("notifications");
+  const common = useTranslations("common");
+  if (isPending)
+    return (
+      <div
+        aria-busy="true"
+        aria-label={common("loading")}
+        className="space-y-4 py-6"
+      >
+        <Skeleton className="h-12 w-full" />
+        <Skeleton className="h-12 w-full" />
+      </div>
+    );
+  if (!isReady)
+    return (
+      <p role="status" className="py-6 text-muted-foreground">
+        {t("unavailable")}
+      </p>
+    );
+  return <AuthenticatedInbox key={userId} />;
+}
+
+function AuthenticatedInbox() {
   const t = useTranslations("notifications");
   const tc = useTranslations("common");
   const format = useFormatter();
@@ -156,7 +187,7 @@ function Inbox() {
         </div>
       ) : null}
       {status !== "LoadingFirstPage" && results.length === 0 ? (
-        <div className="flex gap-3 py-8">
+        <div className="flex gap-3 py-6">
           <BellIcon
             aria-hidden
             className="mt-1 size-5 shrink-0 text-muted-foreground"

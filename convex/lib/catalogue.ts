@@ -2,9 +2,9 @@ import type { Locale } from "../../src/i18n/locales";
 
 /**
  * Luma.Green's material codes — the catalogue every screen, price and trade
- * uses. Edit this file to add or rename a material, then re-run the seed
- * (`npx convex run demo:reset`). Names are per language; anything missing
- * falls back to English.
+ * uses. Admin catalogue setup adds missing definitions only. The separate
+ * translation action fills missing names without replacing existing values.
+ * Names are per language; anything missing falls back to English.
  *
  * Prices are Bengaluru SAMPLE figures for the prototype (paise per kg), not
  * market data. CO2e factors are indicative (kg CO2e avoided per kg recycled

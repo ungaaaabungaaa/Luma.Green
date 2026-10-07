@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Um amanhã mais limpo em movimento",
-    "description": "A Luma.Green reúne a rede de reciclagem da Índia em uma plataforma: famílias, kabadiwalas, pátios, recicladores e fabricantes, com preços justos, coletas pesadas e registro de cada entrega."
+    "description": "A Luma.Green reúne a rede de reciclagem da Índia em uma plataforma: famílias, kabadiwalas, pré-processadores, recicladores e fabricantes, com preços justos, coletas pesadas e registro de cada entrega."
   },
   "theme": {
     "label": "Aparência",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Negociar",
-      "summary": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+      "summary": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
     },
     "record": {
       "title": "Registrar",
@@ -76,7 +76,7 @@
     }
   },
   "home": {
-    "metaDescription": "A Luma.Green reúne a rede de reciclagem da Índia em uma plataforma: famílias, kabadiwalas, pátios, recicladores e fabricantes, com preços justos, empresas verificadas e recibo em cada etapa.",
+    "metaDescription": "A Luma.Green reúne a rede de reciclagem da Índia em uma plataforma: famílias, kabadiwalas, pré-processadores, recicladores e fabricantes, com preços justos, empresas verificadas e recibo em cada etapa.",
     "hero": {
       "eyebrow": "Começando em Bengaluru",
       "title": "Dê um novo começo aos seus materiais.",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "O caminho da matéria reciclável",
-      "intro": "Os materiais passam das casas às lojas de coleta, aos pátios de triagem e aos recicladores antes de se tornarem algo novo. A Luma.Green registra cada entrega.",
+      "intro": "Os materiais passam das casas às lojas de coleta, aos pré-processadores e aos recicladores antes de se tornarem algo novo. A Luma.Green registra cada entrega.",
       "steps": {
         "household": {
           "name": "Famílias",
@@ -107,7 +107,7 @@
           "body": "Compram, pesam e separam por material."
         },
         "yard": {
-          "name": "Pátios",
+          "name": "Pré-processadores",
           "body": "Classificam e prensam em fardos."
         },
         "recycler": {
@@ -119,7 +119,7 @@
           "body": "Produzem novos itens com material reciclado."
         }
       },
-      "money": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "money": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "saathi": "Os Saathis ajudam em toda a cadeia com coletas, separação e turnos."
     },
     "roles": {
@@ -136,19 +136,19 @@
         "title": "Kabadiwalas",
         "one": "Pedidos de coleta de casas próximas.",
         "two": "Defina seus preços, nunca abaixo do mínimo.",
-        "three": "Venda o estoque separado para pátios.",
+        "three": "Venda o estoque separado para pré-processadores.",
         "cta": "Cadastre-se como kabadiwala"
       },
       "yard": {
-        "title": "Pátios",
+        "title": "Pré-processadores",
         "one": "Veja o estoque das lojas próximas.",
         "two": "Compre em volume e venda fardos para recicladores.",
-        "three": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
-        "cta": "Cadastre-se como pátio"
+        "three": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
+        "cta": "Cadastre-se como pré-processador"
       },
       "recycler": {
         "title": "Recicladores",
-        "one": "Fardos classificados de pátios verificados.",
+        "one": "Fardos classificados de pré-processadores verificados.",
         "two": "Cada lote com sua cadeia de custódia.",
         "three": "Venda sua produção para fábricas.",
         "cta": "Cadastre-se como reciclador"
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Fabricantes",
         "one": "Veja o que os recicladores produzem.",
-        "two": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+        "two": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
         "three": "Registros para seus relatórios EPR.",
         "cta": "Cadastre-se como fabricante"
       },
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "O padrão Luma.Green",
-    "metaDescription": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+    "metaDescription": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
     "eyebrow": "Padrão aberto",
     "title": "O padrão Luma.Green",
     "lead": "Regras simples e abertas para negociar matéria reciclável com justiça: um código por material, classificação clara, pesagem honesta e registro em cada entrega. Qualquer participante do setor pode adotá-las.",
@@ -394,13 +394,13 @@
       "nav": "Verificação",
       "body": "Uma pessoa verifica cada empresa e cada Saathi antes que possam operar.",
       "business": "Empresas: número GST, se houver, fotos da loja ou unidade e uma ligação.",
-      "consent": "Pátios, recicladores e fábricas: autorização válida do órgão estadual de controle da poluição.",
+      "consent": "Pré-processadores, recicladores e fábricas: autorização válida do órgão estadual de controle da poluição.",
       "saathi": "Saathis: documento com foto e uma selfie correspondente."
     },
     "escrow": {
       "title": "A aguardar o gateway",
       "nav": "A aguardar o gateway",
-      "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "steps": {
         "accepted": "O vendedor aceita o pedido",
         "paid": "A aguardar o gateway",
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "Como funciona",
-    "metaDescription": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+    "metaDescription": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
     "title": "Como a Luma.Green funciona",
-    "lead": "Os materiais passam das casas às lojas de coleta, aos pátios de triagem e aos recicladores antes de se tornarem algo novo. A Luma.Green registra cada entrega.",
+    "lead": "Os materiais passam das casas às lojas de coleta, aos pré-processadores e aos recicladores antes de se tornarem algo novo. A Luma.Green registra cada entrega.",
     "stepLabel": "Etapa {number}",
     "sell": {
       "body": "Uma família escolhe o que tem, vê a oferta de cada loja próxima e agenda coleta ou entrega. O kabadiwala pesa cada material e paga em dinheiro ou UPI. Ambos recebem um recibo.",
@@ -563,7 +563,7 @@
       "point3": "Um link de acompanhamento, sem precisar de conta"
     },
     "trade": {
-      "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "point1": "Só empresas verificadas podem negociar",
       "point2": "O estoque muda quando uma carga é despachada e recebida",
       "point3": "Um recibo numerado para cada negociação paga"
@@ -577,20 +577,20 @@
   },
   "participants": {
     "metaTitle": "Para quem é",
-    "metaDescription": "A Luma.Green é feita para famílias, kabadiwalas, pátios, recicladores, fabricantes e Saathis: todos que levam a matéria reciclável da casa à fábrica.",
+    "metaDescription": "A Luma.Green é feita para famílias, kabadiwalas, pré-processadores, recicladores, fabricantes e Saathis: todos que levam a matéria reciclável da casa à fábrica.",
     "title": "Para quem a Luma.Green é feita",
     "lead": "Todos que levam a matéria reciclável da casa à fábrica e quem faz o trabalho entre essas etapas.",
     "kabadiwala": {
       "name": "Kabadiwalas",
-      "body": "Receba pedidos de coleta de casas próximas, pese e pague com justiça e venda estoque separado para pátios."
+      "body": "Receba pedidos de coleta de casas próximas, pese e pague com justiça e venda estoque separado para pré-processadores."
     },
     "yard": {
-      "name": "Pátios",
-      "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+      "name": "Pré-processadores",
+      "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
     },
     "recycler": {
       "name": "Recicladores",
-      "body": "Compre fardos classificados de pátios verificados e venda flocos, grânulos e lingotes para fábricas."
+      "body": "Compre fardos classificados de pré-processadores verificados e venda flocos, grânulos e lingotes para fábricas."
     },
     "manufacturer": {
       "name": "Fabricantes",
@@ -601,20 +601,20 @@
       "body": "Aceite coletas, separação e turnos remunerados perto de casa e acompanhe seus ganhos."
     },
     "householdHeading": "E todas as famílias",
-    "householdBody": "Qualquer pessoa pode vender matéria reciclável de casa sem conta: escolha os materiais, veja as ofertas das lojas e receba dinheiro ou UPI com recibo."
+    "householdBody": "Agende uma coleta em casa com seu número de celular: escolha os materiais, compare as ofertas das lojas e receba da loja o pagamento em dinheiro ou por UPI, com recibo."
   },
   "contact": {
     "metaTitle": "Contato",
     "metaDescription": "Fale com a equipe Luma.Green para participar do piloto em Bengaluru.",
     "title": "Fale conosco",
-    "lead": "Começamos em Bengaluru com um pequeno grupo de kabadiwalas, pátios, recicladores e fábricas. Diga quem você é, o que negocia e aproximadamente quanto material movimenta por mês.",
+    "lead": "Começamos em Bengaluru com um pequeno grupo de kabadiwalas, pré-processadores, recicladores e fábricas. Diga quem você é, o que negocia e aproximadamente quanto material movimenta por mês.",
     "emailHeading": "Acesso antecipado e dúvidas gerais",
     "securityHeading": "Relatos de segurança",
     "securityBody": "Encontrou uma vulnerabilidade? Relate em particular em vez de publicar."
   },
   "help": {
     "metaTitle": "Central de ajuda",
-    "metaDescription": "Guias simples, respostas e treinamento para famílias, kabadiwalas, pátios, recicladores, fabricantes e Saathis na Luma.Green.",
+    "metaDescription": "Guias simples, respostas e treinamento para famílias, kabadiwalas, pré-processadores, recicladores, fabricantes e Saathis na Luma.Green.",
     "eyebrow": "Central de ajuda",
     "title": "Como podemos ajudar?",
     "lead": "Guias curtos, respostas claras e treinamento rápido para todos na Luma.Green.",
@@ -659,25 +659,25 @@
         "name": "Famílias",
         "who": "Vendendo matéria reciclável de casa",
         "title": "Ajuda para famílias",
-        "lead": "Agende uma coleta, tenha uma pesagem justa e receba na porta. Não precisa de conta."
+        "lead": "Agende uma coleta, confirme seu número de celular e receba o pagamento após a pesagem."
       },
       "kabadiwala": {
         "name": "Kabadiwalas",
         "who": "Administrando uma loja de coleta",
         "title": "Ajuda para kabadiwalas",
-        "lead": "Aceite coletas, pese e pague em um minuto, defina preços e venda a pátios."
+        "lead": "Aceite coletas, pese e pague em um minuto, defina preços e venda a pré-processadores."
       },
       "yard": {
-        "name": "Pátios",
+        "name": "Pré-processadores",
         "who": "Comprando de kabadiwalas e separando mais",
-        "title": "Ajuda para pátios",
-        "lead": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+        "title": "Ajuda para pré-processadores",
+        "lead": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
       },
       "recycler": {
         "name": "Recicladores",
         "who": "Transformando matéria reciclável em matéria-prima",
         "title": "Ajuda para recicladores",
-        "lead": "Compre matéria reciclável classificada de pátios, venda sua produção a fábricas e mantenha os registros EPR em ordem."
+        "lead": "Compre matéria reciclável classificada de pré-processadores, venda sua produção a fábricas e mantenha os registros EPR em ordem."
       },
       "manufacturer": {
         "name": "Fabricantes",
@@ -752,7 +752,7 @@
       "roles": {
         "household": "Uma família",
         "kabadiwala": "Um kabadiwala",
-        "yard": "Um pátio",
+        "yard": "Um pré-processador",
         "recycler": "Um reciclador",
         "manufacturer": "Um fabricante",
         "saathi": "Um Saathi",
@@ -853,7 +853,7 @@
         "steps": {
           "start": {
             "title": "Comece em luma.green/join",
-            "body": "Entre com seu celular e escolha Pátio, Reciclador ou Fabricante."
+            "body": "Entre com seu celular e escolha Pré-processador, Reciclador ou Fabricante."
           },
           "details": {
             "title": "Adicione os dados da empresa",
@@ -879,7 +879,7 @@
       },
       "escrow": {
         "title": "A aguardar o gateway",
-        "summary": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+        "summary": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
         "steps": {
           "request": {
             "title": "O comprador envia um pedido",
@@ -891,7 +891,7 @@
           },
           "pay": {
             "title": "A aguardar o gateway",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           },
           "dispatch": {
             "title": "O vendedor envia a carga",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "O comprador confirma a entrega",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Não confirme uma carga incompleta",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           },
           "report": {
             "title": "Relate com fotos",
@@ -975,7 +975,7 @@
       },
       "firstPickup": {
         "title": "Agende a primeira coleta",
-        "summary": "Da foto à coleta agendada em cerca de dois minutos. Não precisa de conta.",
+        "summary": "Escolha os materiais, compare as lojas e verifique seu número de celular para agendar uma coleta.",
         "steps": {
           "photo": {
             "title": "Tire uma foto da matéria reciclável",
@@ -1244,8 +1244,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Guia de demonstração: separe estoque e venda a pátios",
-        "summary": "De várias coletas pequenas a uma carga que um pátio deseja.",
+        "title": "Guia de demonstração: separe estoque e venda a pré-processadores",
+        "summary": "De várias coletas pequenas a uma carga que um pré-processador deseja.",
         "steps": {
           "grows": {
             "title": "Seu estoque aumenta automaticamente",
@@ -1256,12 +1256,12 @@
             "body": "Separe matéria reciclável mista nos materiais reais. Por exemplo, papel misto em jornal, papelão e rejeitos."
           },
           "show": {
-            "title": "Mostre o estoque aos pátios",
-            "body": "Ative Mostrar aos pátios para que os próximos vejam o que você tem."
+            "title": "Mostre o estoque aos pré-processadores",
+            "body": "Ative Mostrar aos pré-processadores para que os próximos vejam o que você tem."
           },
           "sell": {
-            "title": "Aceite o pedido de um pátio",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "title": "Aceite o pedido de um pré-processador",
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           }
         }
       },
@@ -1301,7 +1301,7 @@
           },
           "pay": {
             "title": "A aguardar o gateway",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           },
           "collect": {
             "title": "Retire e pese",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Aceite e espere o pagamento",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           },
           "dispatch": {
             "title": "Envie a carga",
@@ -1335,17 +1335,17 @@
           },
           "paid": {
             "title": "Receba",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           }
         }
       },
       "buyFromYards": {
-        "title": "Guia de demonstração: compre matéria reciclável separada de pátios",
+        "title": "Guia de demonstração: compre matéria reciclável separada de pré-processadores",
         "summary": "Insumos regulares e classificados para sua produção.",
         "steps": {
           "browse": {
             "title": "Encontre fardos próximos",
-            "body": "Abra Comprar para ver anúncios de pátios por material e distância."
+            "body": "Abra Comprar para ver anúncios de pré-processadores por material e distância."
           },
           "request": {
             "title": "Peça uma carga",
@@ -1353,7 +1353,7 @@
           },
           "pay": {
             "title": "A aguardar o gateway",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           },
           "confirm": {
             "title": "Pese, confira, confirme",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Carregue após o pagamento",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           },
           "paid": {
             "title": "Receba na entrega",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           }
         }
       },
@@ -1397,7 +1397,7 @@
           },
           "pay": {
             "title": "A aguardar o gateway",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           },
           "receive": {
             "title": "Receba a carga",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Confirme ou relate",
-            "body": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+            "body": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
           }
         }
       },
@@ -1614,8 +1614,8 @@
         "a": "Não. Você paga em dinheiro ou UPI na porta. O aplicativo registra o valor e a forma."
       },
       "paidByYard": {
-        "q": "Como recebo ao vender para um pátio?",
-        "a": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+        "q": "Como recebo ao vender para um pré-processador?",
+        "a": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
       },
       "whoSeesShop": {
         "q": "Quem pode ver minha loja?",
@@ -1643,7 +1643,7 @@
       },
       "whatIsEscrow": {
         "q": "A aguardar o gateway",
-        "a": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+        "a": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
       },
       "whenSellerPaid": {
         "q": "Quando o vendedor recebe?",
@@ -1666,8 +1666,8 @@
         "a": "Tenha pronto o registro de Plastic Waste Processor do CPCB. As marcas o pedem, e ele permite emitir certificados EPR."
       },
       "buyFromAnyYard": {
-        "q": "Posso comprar de mais de um pátio?",
-        "a": "Sim. Compre de qualquer pátio verificado que anuncie o que você precisa, quantas vezes quiser."
+        "q": "Posso comprar de mais de um pré-processador?",
+        "a": "Sim. Compre de qualquer pré-processador verificado que anuncie o que você precisa, quantas vezes quiser."
       },
       "eprRecords": {
         "q": "Os registros da Luma.Green ajudam na EPR?",
@@ -1740,7 +1740,7 @@
       "buyingFromKabadiwalas": "Comprando de kabadiwalas",
       "listingBales": "Anunciando fardos para recicladores",
       "escrowExplained": "A aguardar o gateway",
-      "buyingFromYards": "Comprando de pátios",
+      "buyingFromYards": "Comprando de pré-processadores",
       "sellingOutput": "Vendendo sua produção",
       "eprPlainWords": "EPR em palavras simples",
       "firstOrder": "Fazendo o primeiro pedido",
@@ -1799,10 +1799,10 @@
         "p3": "Pague sempre antes de sair."
       },
       "sellingToYards": {
-        "title": "Demonstração: vendendo a pátios",
+        "title": "Demonstração: vendendo a pré-processadores",
         "p1": "Registre a separação para manter o estoque correto.",
-        "p2": "Mostre seu estoque aos pátios próximos.",
-        "p3": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+        "p2": "Mostre seu estoque aos pré-processadores próximos.",
+        "p3": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
       },
       "buyingStock": {
         "title": "Comprando estoque",
@@ -1812,7 +1812,7 @@
       },
       "tradingWithEscrow": {
         "title": "A aguardar o gateway",
-        "p1": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+        "p1": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
         "p2": "O vendedor carrega só quando o dinheiro estiver lá.",
         "p3": "A confirmação da entrega libera o dinheiro."
       },
@@ -1830,8 +1830,8 @@
       },
       "buyingInputs": {
         "title": "Demonstração: comprando insumos",
-        "p1": "Encontre fardos classificados de pátios em Comprar.",
-        "p2": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+        "p1": "Encontre fardos classificados de pré-processadores em Comprar.",
+        "p2": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
         "p3": "Confira a classificação antes de confirmar."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demonstração: encomendando material reciclado",
         "p1": "Compare anúncios por tipo, quilos e preço.",
         "p2": "Envie um pedido para os quilos necessários.",
-        "p3": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+        "p3": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
       },
       "checkingDeliveries": {
         "title": "Conferindo entregas",
@@ -1885,14 +1885,14 @@
     "chooseLanguageHint": "Você pode mudá-lo a qualquer momento no topo da tela.",
     "continue": "Continuar",
     "title": "Entre com seu número de celular",
-    "lead": "Para kabadiwalas, pátios, recicladores, fabricantes e Saathis.",
+    "lead": "Para kabadiwalas, pré-processadores, recicladores, fabricantes e Saathis.",
     "mobileLabel": "Número de celular",
     "mobileHint": "Enviaremos um código de 6 dígitos para este número.",
     "mobileInvalid": "Informe um celular indiano de 10 dígitos.",
     "sendCode": "Enviar código",
     "sending": "Enviando…",
     "sendFailed": "Não foi possível enviar o código. Tente novamente em um minuto.",
-    "homeTitle": "Vai reciclar de casa? Não precisa de conta.",
+    "homeTitle": "Vai reciclar de casa?",
     "homeLink": "Veja como funciona",
     "privacy": "Usamos seu número só para entrar e enviar atualizações sobre seu trabalho na Luma.Green.",
     "unavailableTitle": "O acesso por telefone estará disponível em breve",
@@ -1929,7 +1929,7 @@
   },
   "join": {
     "metaTitle": "Cadastre-se na Luma.Green",
-    "metaDescription": "Kabadiwalas, pátios, recicladores, fabricantes e Saathis em Bengaluru: inscrevam-se na Luma.Green. Uma pessoa analisa cada inscrição, geralmente em 12–24 horas.",
+    "metaDescription": "Kabadiwalas, pré-processadores, recicladores, fabricantes e Saathis em Bengaluru: inscrevam-se na Luma.Green. Uma pessoa analisa cada inscrição, geralmente em 12–24 horas.",
     "title": "Cadastre-se na Luma.Green",
     "lead": "Conte o que você faz. Uma pessoa analisa cada inscrição, geralmente em 12–24 horas.",
     "start": "Começar",
@@ -1944,7 +1944,7 @@
         "needs": "Endereço e horário da loja. Número GST, se tiver."
       },
       "yard": {
-        "title": "Pátio",
+        "title": "Pré-processador",
         "body": "Você separa e enfarda matéria reciclável em volume para revender.",
         "needs": "Número GST, se tiver, autorização de controle da poluição em PDF e fotos das máquinas."
       },
@@ -2043,7 +2043,7 @@
     },
     "business": {
       "titles": {
-        "yard": "Seu pátio",
+        "yard": "Seu negócio de pré-processamento",
         "recycler": "Sua unidade de reciclagem",
         "manufacturer": "Sua fábrica"
       },
@@ -2233,7 +2233,7 @@
     },
     "roles": {
       "kabadiwala": "Kabadiwala",
-      "yard": "Pátio",
+      "yard": "Pré-processador",
       "recycler": "Reciclador",
       "manufacturer": "Fabricante",
       "saathi": "Saathi"
@@ -2261,7 +2261,7 @@
       "title": "Trabalhos disponíveis",
       "lead": "Os trabalhos da sua área aparecem primeiro.",
       "empty": "Nenhum trabalho disponível agora",
-      "emptyBody": "Novos trabalhos de lojas, pátios e fábricas aparecem aqui."
+      "emptyBody": "Novos trabalhos de lojas, pré-processadores e fábricas aparecem aqui."
     },
     "work": {
       "home_pickups": "Coletas em casas",
@@ -2376,7 +2376,8 @@
       "emptyBody": "Aceite um trabalho na tela inicial. Ao marcá-lo como concluído, o pagamento aparece aqui.",
       "findJob": "Encontrar trabalho",
       "demoNote": "Dados de exemplo: trabalhos e pagamentos são exemplos do protótipo."
-    }
+    },
+    "factorUnavailable": "Estimativa de CO₂e indisponível. Os fatores de emissão não foram definidos."
   },
   "compliance": {
     "title": "Conformidade",
@@ -2454,7 +2455,7 @@
       "view": "Ver recibo {number}",
       "unknown": "Uma empresa que não está mais na Luma.Green",
       "empty": "Ainda não há recibos",
-      "emptyBody": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+      "emptyBody": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
     },
     "epr": {
       "title": "Registro EPR, ano fiscal {from}–{to}",
@@ -2484,7 +2485,7 @@
     },
     "saathi": {
       "title": "Para empresas",
-      "body": "Conformidade é para lojas, pátios, recicladores e fábricas. Seus trabalhos e pagamentos estão na tela inicial.",
+      "body": "Conformidade é para lojas, pré-processadores, recicladores e fábricas. Seus trabalhos e pagamentos estão na tela inicial.",
       "home": "Ir para meus trabalhos"
     }
   },
@@ -2496,7 +2497,7 @@
     "lead": "Escolha o que tem e uma loja próxima. Receba em dinheiro ou UPI após a pesagem.",
     "promises": {
       "label": "Por que vender aqui",
-      "noAccount": "Não precisa de conta",
+      "noAccount": "Verifique o celular para agendar",
       "payAtDoor": "Pagamento na pesagem",
       "verified": "Lojas verificadas"
     },
@@ -2804,7 +2805,7 @@
     "perKg": "{price}/kg",
     "recycled": "Reciclado",
     "forBusinessesTitle": "Esta tela é para empresas",
-    "forBusinessesBody": "Kabadiwalas, pátios, recicladores e fabricantes negociam aqui.",
+    "forBusinessesBody": "Kabadiwalas, pré-processadores, recicladores e fabricantes negociam aqui.",
     "units": {
       "kg": "kg",
       "rupee": "₹"
@@ -2841,30 +2842,30 @@
       "kgTooMuch": "Só há {weight} disponíveis.",
       "total": "Total",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "escrow": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "ewayBill": "Acima de ₹50.000: esta carga deve levar um e-way bill.",
       "cancel": "Cancelar",
       "submit": "Enviar pedido",
       "sending": "Enviando…",
       "sent": "Pedido enviado a {seller}",
-      "sentNext": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "sentNext": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "seeTrades": "Ver negociações"
     },
     "browse": {
       "title": "Comprar",
-      "lead": "{kind, select, yard {Matéria reciclável separada de kabadiwalas próximos.} recycler {Material separado e enfardado de pátios.} manufacturer {Material reciclado de recicladores verificados.} other {Material à venda perto de você.}}",
+      "lead": "Veja ofertas de fornecedores aprovados para os materiais com que trabalha.",
       "filterLabel": "Filtrar por material",
       "all": "Todos",
       "count": "{count, plural, =0 {Nenhum lote} one {# lote à venda} other {# lotes à venda}}",
       "emptyTitle": "Nada à venda agora",
       "emptyBody": "Novos lotes aparecem aqui assim que são anunciados.",
       "notForYouTitle": "Kabadiwalas compram de famílias",
-      "notForYouBody": "No mercado, você vende: ofereça seu estoque separado aos pátios.",
-      "goSell": "Vender a pátios"
+      "notForYouBody": "No mercado, você vende: ofereça seu estoque separado aos pré-processadores.",
+      "goSell": "Vender a pré-processadores"
     },
     "sell": {
       "title": "Vender",
-      "lead": "{buyer, select, yard {Ofereça seu estoque separado aos pátios.} recycler {Ofereça seus fardos aos recicladores.} manufacturer {Ofereça seu material aos fabricantes.} other {Ofereça seu estoque aos compradores.}}",
+      "lead": "{buyer, select, yard {Ofereça seu estoque separado aos pré-processadores.} recycler {Ofereça seus fardos aos recicladores.} manufacturer {Ofereça seu material aos fabricantes.} other {Ofereça seu estoque aos compradores.}}",
       "notForYouTitle": "Fabricantes compram na Luma.Green",
       "notForYouBody": "Encontre material reciclado de recicladores verificados.",
       "goBuy": "Comprar material",
@@ -2888,7 +2889,7 @@
         "value": "Valor do lote",
         "submit": "Colocar à venda",
         "submitting": "Colocando à venda…",
-        "listed": "À venda. {buyer, select, yard {Os pátios} recycler {Os recicladores} manufacturer {Os fabricantes} other {Os compradores}} já podem ver.",
+        "listed": "À venda. {buyer, select, yard {Os pré-processadores} recycler {Os recicladores} manufacturer {Os fabricantes} other {Os compradores}} já podem ver.",
         "nothingTitle": "Ainda não há o que vender",
         "nothingBody": "O estoque registrado aparece aqui. O que já está anunciado ou vendido não é contado duas vezes.",
         "goStock": "Ir para o estoque",
@@ -2920,7 +2921,7 @@
     },
     "trades": {
       "title": "Negociações",
-      "lead": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "lead": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "buying": "Compras",
       "selling": "Vendas",
       "tabsLabel": "Compras ou vendas",
@@ -2936,7 +2937,7 @@
         "from": "De {name} · {area}",
         "to": "Para {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+        "inEscrow": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
         "ewayBill": "Acima de ₹50.000: esta carga deve levar um e-way bill.",
         "updated": "Atualizado {when}",
         "receipt": "Recibo {number}",
@@ -2964,8 +2965,8 @@
           "seller": "{name} quer comprar. Aceite para reservar."
         },
         "accepted": {
-          "buyer": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
-          "seller": "É necessário um gateway de pagamento. O pagamento ainda não está disponível."
+          "buyer": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
+          "seller": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento."
         },
         "paid_to_escrow": {
           "buyer": "Registo do protótipo. O pagamento e a entrega não foram verificados.",
@@ -3002,7 +3003,7 @@
       "declineConfirm": "Recusar este pedido de {name}? Não é possível desfazer.",
       "declineYes": "Sim, recusar",
       "declineNo": "Manter",
-      "gatewayPending": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "gatewayPending": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "legacyUnverified": "Registo do protótipo. O pagamento e a entrega não foram verificados."
     },
     "receipt": {
@@ -3032,20 +3033,20 @@
       "missingTitle": "Recibo não encontrado",
       "missingBody": "Esta negociação não é sua ou o link está errado.",
       "pendingTitle": "Ainda não há recibo",
-      "pendingBody": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+      "pendingBody": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
       "declinedBody": "Esta negociação foi recusada, por isso não há recibo.",
       "unverified": "Não verificado"
     },
     "home": {
       "greeting": "Namastê, {name}",
-      "lead": "{kind, select, yard {Compre de kabadiwalas e venda fardos separados a recicladores.} recycler {Compre matéria reciclável separada de pátios e venda material reciclado a fabricantes.} manufacturer {Compre material reciclado de recicladores verificados.} other {Suas negociações em resumo.}}",
+      "lead": "Gerencie suas compras, vendas e pedidos de materiais.",
       "buy": "Comprar",
       "sell": "Vender",
       "trades": "Negociações",
       "statsTitle": "Visão geral",
       "stats": {
         "escrow": "Não verificado",
-        "escrowHint": "É necessário um gateway de pagamento. O pagamento ainda não está disponível.",
+        "escrowHint": "Pagamentos entre empresas usam o gateway de pagamento. Confira no pedido o estado atual do pagamento.",
         "waiting": "Aguardando você",
         "waitingHint": "{count, plural, =0 {Tudo em dia} one {# negociação precisa de uma ação} other {# negociações precisam de uma ação}}",
         "listings": "À venda",
@@ -3054,15 +3055,15 @@
         "offersHint": "À venda por recicladores",
         "completed": "Concluídos neste mês",
         "completedHint": "{amount} negociados",
-        "gatewayPending": "A aguardar o gateway"
+        "gatewayPending": "Pedidos aceitos"
       },
       "waitingTitle": "Aguardando você",
       "allTrades": "Todas as negociações",
       "caughtUpTitle": "Nada precisa de você agora",
       "caughtUpBody": "Novos pedidos, pagamentos e entregas aparecem aqui.",
       "offersTitle": "Lotes mais recentes para você",
-      "recycledTitle": "Material reciclado para você",
-      "recycledBody": "Flocos, grânulos, kraft e lingotes de recicladores verificados, prontos para sua produção.",
+      "recycledTitle": "Ofertas de materiais para você",
+      "recycledBody": "Veja fornecedores aprovados. Os materiais reciclados aparecem primeiro.",
       "seeAll": "Ver todos",
       "noOffersTitle": "Nenhum lote à venda agora",
       "noOffersBody": "Novos lotes aparecem aqui assim que são anunciados."
@@ -3145,8 +3146,8 @@
       "you": "Você paga",
       "market": "Mercado",
       "quickLinks": "Atalhos",
-      "sell": "Vender a um pátio",
-      "sellHint": "Ofereça seu estoque aos pátios próximos",
+      "sell": "Vender a um pré-processador",
+      "sellHint": "Ofereça seu estoque aos pré-processadores próximos",
       "prices": "Meus preços",
       "pricesHint": "Quanto você paga às famílias por kg"
     },
@@ -3251,7 +3252,7 @@
       "atPrice": "Mercado {price}/kg",
       "noPrice": "Sem preço de mercado hoje",
       "sellTo": {
-        "yard": "Vender a um pátio",
+        "yard": "Vender a um pré-processador",
         "recycler": "Vender a um reciclador",
         "manufacturer": "Vender a um fabricante"
       },
@@ -3260,7 +3261,7 @@
       "emptyBusiness": "Compre no mercado, e aparece aqui.",
       "buy": "Comprar material",
       "notBusinessTitle": "Só para empresas",
-      "notBusinessBody": "Lojas, pátios, recicladores e fábricas mantêm estoque."
+      "notBusinessBody": "Lojas, pré-processadores, recicladores e fábricas mantêm estoque."
     },
     "prices": {
       "title": "Meus preços",
@@ -3348,7 +3349,7 @@
           "third": "Gerencie o estoque separado"
         },
         "yard": {
-          "title": "Seu pátio de separação",
+          "title": "Seu espaço de pré-processamento",
           "first": "Receba materiais",
           "second": "Separe o estoque",
           "third": "Prepare lotes de saída"
@@ -3507,5 +3508,617 @@
       "resort": "Complexo turístico",
       "other": "Outras instalações"
     }
+  },
+  "emailAuth": {
+    "phone": "Telefone",
+    "email": "E-mail",
+    "signin": "Entrar",
+    "signup": "Criar conta",
+    "forgot": "Recuperar senha",
+    "name": "Seu nome",
+    "password": "Senha",
+    "show": "Mostrar senha",
+    "hide": "Ocultar senha",
+    "passwordHint": "Use de 12 a 128 caracteres.",
+    "unavailable": "O envio de e-mail está indisponível. Contas existentes podem entrar.",
+    "sent": "Verifique sua caixa de entrada. Se a conta for elegível, receberá um link válido por 15 minutos.",
+    "resend": "Reenviar verificação",
+    "limited": "Muitas tentativas. Tente mais tarde.",
+    "unverified": "Verifique seu e-mail antes de entrar.",
+    "credentials": "Confira seu e-mail e senha.",
+    "invalidLink": "Link inválido ou expirado. Solicite outro.",
+    "failed": "A solicitação falhou. Tente novamente.",
+    "reset": "Definir nova senha",
+    "verify": "Verificar e-mail",
+    "done": "Concluído. Entre para continuar.",
+    "confirm": "Repita a senha",
+    "mismatch": "As senhas não coincidem.",
+    "securityHint": "Adicione um código autenticador após a senha. Recuperar a senha mantém esta proteção.",
+    "backupHint": "Cada código de recuperação funciona uma vez após a senha.",
+    "disableHint": "O acesso com senha continua ativo. Os códigos autenticadores e de recuperação deixam de funcionar."
+  },
+  "workspace": {
+    "title": "Espaços e equipa",
+    "choose": "Escolher espaço",
+    "team": "Equipa",
+    "role": "Função",
+    "owner": "Proprietário",
+    "admin": "Administrador",
+    "member": "Membro",
+    "viewer": "Leitor",
+    "invite": "Enviar convite",
+    "email": "Endereço de email",
+    "pending": "Convites pendentes",
+    "revoke": "Revogar",
+    "remove": "Remover",
+    "empty": "Nenhum espaço disponível.",
+    "error": "Não foi possível atualizar. Verifique o acesso e tente novamente.",
+    "inviteTitle": "Convite para o espaço",
+    "accept": "Aceitar convite",
+    "verifyEmail": "Verifique o email convidado antes de aceitar.",
+    "unavailable": "Este convite não está disponível. Verifique o email ou peça outro convite.",
+    "join": "Junte-se a {name} como {role}.",
+    "readOnly": "Acesso só de leitura",
+    "confirmRemove": "Remover esta pessoa do espaço?",
+    "lastOwner": "Mantenha pelo menos um proprietário. Adicione outro antes desta alteração.",
+    "deliveryPending": "Email pendente",
+    "deliveryAccepted": "Serviço de email aceitou",
+    "deliveryFailed": "Entrega do email não confirmada",
+    "expires": "Expira em {date}",
+    "emailBody": "Recebeu um convite para {name}. Abra a ligação em sete dias e entre com este email verificado. O convite pode ser usado uma vez.",
+    "switchAccount": "Mudar de conta",
+    "switchHint": "Saia para entrar ou se registar com o endereço de e-mail que recebeu o convite.",
+    "invitationLimit": "O limite de convites foi atingido. Aguarde antes de enviar outro convite."
+  },
+  "lots": {
+    "title": "Lotes e qualidade",
+    "lead": "Registe o material medido, o processamento e as entregas físicas.",
+    "evidenceNote": "Estes registos descrevem provas físicas. Não alteram o stock, o pagamento, a propriedade legal ou os certificados.",
+    "notBusiness": "Selecione um espaço de trabalho empresarial ativo para usar os registos de lotes.",
+    "readOnly": "A sua função no espaço de trabalho permite ler estes registos.",
+    "held": "Lotes sob custódia",
+    "incoming": "Lotes a receber",
+    "sent": "Histórico de entregas",
+    "empty": "Ainda não há registos.",
+    "limit": "São apresentados apenas os primeiros 100 registos.",
+    "declare": "Declarar lote",
+    "detail": "Detalhes do lote",
+    "back": "Todos os lotes",
+    "material": "Código ou nome do material",
+    "state": "Estado físico",
+    "mass": "Massa (g)",
+    "grams": "{value} g",
+    "integerHint": "Introduza gramas inteiros, sem casas decimais nem separadores de milhares.",
+    "sourceReference": "Referência da origem (opcional)",
+    "source": "Origem",
+    "selfDeclared": "Autodeclarado",
+    "transformed": "De uma transformação",
+    "initial": "Massa inicial",
+    "remaining": "Massa restante",
+    "available": "Disponível",
+    "in_transit": "Em trânsito",
+    "exhausted": "Esgotado",
+    "save": "Guardar registo",
+    "saving": "A guardar…",
+    "saved": "Registo guardado.",
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "required": "Preencha todos os campos obrigatórios.",
+    "invalidInput": "Verifique os valores. Use gramas inteiros e preencha os campos obrigatórios.",
+    "genericError": "Não foi possível guardar o registo. Os valores foram mantidos. Tente novamente.",
+    "accessChanged": "Este lote ou o seu acesso ao espaço mudou. Recarregue a lista de lotes.",
+    "balanceError": "A massa de entrada deve ser igual à soma das saídas, contaminantes e perdas do processo.",
+    "weightDispute": "A massa recebida difere da enviada. A receção não foi registada. Verifique a medição com o remetente.",
+    "approvalError": "Outro proprietário tem de aprovar esta correção enquanto a sua empresa detém o lote.",
+    "transform": "Registar transformação",
+    "inputMass": "Massa de entrada (g)",
+    "contamination": "Contaminantes (g)",
+    "processLoss": "Perdas do processo (g)",
+    "outputs": "Lotes de saída",
+    "outputNumber": "Saída {number}",
+    "addOutput": "Adicionar saída",
+    "remove": "Remover",
+    "balance": "Massa contabilizada: {value}",
+    "transformHint": "Registe cada saída e perda. A massa de entrada é retirada deste lote e cria lotes de saída associados.",
+    "dispatch": "Enviar lote",
+    "dispatchHint": "Todo o lote restante será enviado à empresa selecionada. Verifique o destinatário antes de guardar.",
+    "receiver": "Destinatário",
+    "city": "Cidade",
+    "businessKind": "Tipo de empresa",
+    "chooseBusiness": "Escolher empresa",
+    "searchBusinesses": "Encontrar empresas",
+    "directoryNote": "O diretório mostra empresas ativas. Não confirma a sua capacidade de processamento.",
+    "directoryEmpty": "Nenhuma empresa corresponde. Verifique a cidade e o tipo de empresa.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Pré-processador",
+    "recycler": "Reciclador",
+    "manufacturer": "Fabricante",
+    "receive": "Receber lote",
+    "receivedMass": "Massa recebida (g)",
+    "receiveHint": "Meça o lote recebido. Este formulário não permite aceitar um peso diferente.",
+    "pendingNote": "Só pode ver este envio. O histórico completo do lote fica disponível após a receção.",
+    "custody": "Histórico de custódia",
+    "dispatched": "Enviado",
+    "received": "Recebido",
+    "handoff": "{from} → {to}",
+    "from": "De {name}",
+    "to": "Para {name}",
+    "transformations": "Transformações",
+    "inspection": "Registar inspeção",
+    "inspections": "Provas de inspeção",
+    "inspectionNote": "Registe a especificação real, o método de amostragem e os resultados medidos. A decisão aplica-se apenas a esta inspeção; não é uma classificação nem um certificado da plataforma.",
+    "specification": "Referência da especificação",
+    "version": "Versão da especificação",
+    "sampleMethod": "Método de amostragem",
+    "buyer": "Âmbito do comprador (opcional)",
+    "addBuyer": "Indicar comprador",
+    "noBuyer": "Nenhum comprador indicado",
+    "results": "Resultados medidos",
+    "resultNumber": "Resultado {number}",
+    "parameter": "Parâmetro",
+    "unit": "Unidade",
+    "value": "Valor medido",
+    "addResult": "Adicionar resultado",
+    "decision": "Decisão da inspeção",
+    "accepted": "Aceite",
+    "rejected": "Rejeitado",
+    "conditional": "Condicional",
+    "evidenceReference": "Referência da prova (opcional)",
+    "correct": "Propor correção",
+    "correctionHint": "O original permanece visível. O âmbito do comprador e a especificação não podem mudar. Outro proprietário tem de aprovar a correção.",
+    "reason": "Motivo da correção",
+    "approve": "Aprovar correção",
+    "pendingApproval": "Aguarda aprovação separada",
+    "approved": "Correção aprovada",
+    "superseded": "Substituído por uma correção aprovada",
+    "original": "Inspeção original",
+    "previousResult": "Inspeção anterior",
+    "recordedBy": "Empresa inspetora: {name}",
+    "loadError": "Não foi possível carregar os registos. Tente novamente.",
+    "retry": "Tentar novamente",
+    "streamClass": "Fluxo de saída",
+    "handlingClass": "Classificação de manejo",
+    "streams": {
+      "main_product": "Produto principal",
+      "saleable_byproduct": "Subproduto vendável",
+      "recoverable_waste": "Resíduos recuperáveis",
+      "residual_waste": "Resíduos finais",
+      "unspecified": "Não especificado"
+    },
+    "handling": {
+      "non_hazardous": "Não perigoso",
+      "controlled": "Controlado",
+      "unassessed": "Não avaliado"
+    },
+    "facility": "Instalação",
+    "processKind": "Processo",
+    "noFacility": "Nenhuma instalação selecionada",
+    "controlledBlocked": "O material controlado ou residual exige destinação documentada. Não pode seguir despacho ou transformação comum.",
+    "recordDisposition": "Registrar destinação",
+    "destinationReference": "Referência de destino",
+    "authorisationReference": "Referência de autorização",
+    "manifestReference": "Referência do manifesto",
+    "dispositions": "Histórico de destinação",
+    "dispositionHint": "Registre a massa medida e as referências reais de destino, autorização e manifesto. Isso reduz a massa restante do lote. Não verifica uma autorização nem cria estoque vendável.",
+    "inputs": "Lotes de entrada",
+    "additionalInputs": "Outros lotes de entrada",
+    "addInput": "Adicionar lote de entrada",
+    "chooseInput": "Escolher lote de entrada",
+    "combinedInput": "Massa total de entrada",
+    "multiInputHint": "Combine apenas material medido sob sua custódia. Cada quantidade é consumida do próprio lote. Isto registra evidência de processamento e não adiciona estoque."
+  },
+  "evidence": {
+    "title": "Referências documentais",
+    "lead": "Guarde as referências declaradas. A Luma não verifica nem emite estes documentos.",
+    "record": "Adicionar referência",
+    "correct": "Substituir referência",
+    "replacement": "Substitui: {reference}",
+    "reference": "Referência do documento",
+    "kind": "Tipo de documento",
+    "issuer": "Emissor",
+    "issuerName": "Nome do emissor",
+    "trade": "Negócio associado",
+    "none": "Sem negócio",
+    "unverified": "Declarado · não verificado",
+    "gst_invoice": "Fatura GST",
+    "eway_bill": "Documento e-way",
+    "cpcb_epr_certificate": "Certificado CPCB EPR",
+    "pollution_consent": "Licença ambiental",
+    "external_authority": "Autoridade emissora",
+    "external_organization": "Organização emissora",
+    "trade_seller": "Vendedor",
+    "trade_buyer": "Comprador",
+    "correctionHint": "O original permanece visível. Guarde uma nova referência para o substituir."
+  },
+  "accountPhone": {
+    "title": "Verifique seu número de celular",
+    "description": "Adicione um número seu para coletas e pagamentos. Sua conta de email permanece e não é unida a outra. Continue entrando com seu email.",
+    "verified": "Número de celular verificado",
+    "unavailable": "A verificação não está disponível até configurar o envio de SMS.",
+    "inUse": "Não é possível adicionar este número. Use um que não esteja associado a outra conta.",
+    "unsupported": "Esta conta não pode alterar seu número de celular aqui."
+  },
+  "sandboxPayment": {
+    "title": "Pagamento de teste",
+    "note": "Apenas teste. Sem pagamento real, liquidação ou reembolso. O negócio permanece em pausa.",
+    "open": "Abrir teste",
+    "unavailable": "Pagamento de teste indisponível.",
+    "pending": "A aguardar confirmação do servidor.",
+    "collected": "Cobrança de teste confirmada.",
+    "failed": "Não foi possível abrir o pagamento. Tente novamente.",
+    "review": "Revisão do servidor necessária.",
+    "liveTitle": "Pagar pelo gateway",
+    "liveNote": "Pague o total acordado do pedido pelo Cashfree. A confirmação do provedor é necessária; fechar o pagamento não o confirma.",
+    "liveOpen": "Abrir pagamento seguro",
+    "liveCollected": "Pagamento confirmado pelo provedor."
+  },
+  "industry": {
+    "title": "Referências industriais",
+    "lead": "Pesquise a planilha fornecida. Estas referências não são verificadas nem autorizam o comércio ou processamento de materiais.",
+    "sourceNote": "O texto fonte aparece no inglês original da planilha.",
+    "sectors": "Referências setoriais",
+    "industries": "Matriz industrial",
+    "lifecycles": "Ciclo de vida do material",
+    "byproducts": "Exemplos de subprodutos",
+    "matches": "{count} referências correspondentes",
+    "previous": "Anterior",
+    "next": "Seguinte",
+    "select": "Selecionar referência",
+    "selected": "Referência selecionada",
+    "clear": "Limpar referência",
+    "detailLabels": {
+      "annexure": "Anexo",
+      "category": "Categoria",
+      "division": "Divisão",
+      "industryGroup": "Grupo industrial",
+      "inputs": "Insumos",
+      "products": "Produtos",
+      "byproducts": "Subprodutos",
+      "recoverableWaste": "Resíduos recuperáveis",
+      "residualWaste": "Resíduos finais",
+      "nextUser": "Próximo usuário",
+      "suggestedFlow": "Fluxo sugerido",
+      "materialState": "Estado do material",
+      "note": "Nota",
+      "route": "Rota",
+      "qualityAttributes": "Atributos de qualidade",
+      "reportedCommercialStatus": "Situação comercial declarada"
+    },
+    "view": "Ver referência",
+    "empty": "Nenhuma referência correspondente."
+  },
+  "facility": {
+    "title": "Instalações e processos",
+    "lead": "Registre os locais e processos declarados pela sua empresa. Este perfil não verifica uma instalação nem autoriza o comércio de materiais.",
+    "add": "Adicionar instalação",
+    "edit": "Editar instalação",
+    "name": "Nome da instalação",
+    "siteReference": "Referência do local",
+    "sector": "Referência industrial (opcional)",
+    "capabilities": "Processos declarados",
+    "readOnly": "Somente proprietários e administradores do espaço de trabalho podem alterar instalações.",
+    "processNote": "Estas capacidades são autodeclaradas, não licenças verificadas.",
+    "processKinds": {
+      "sorting": "Triagem",
+      "baling": "Enfardamento",
+      "shredding": "Trituração",
+      "stripping": "Descascamento",
+      "washing": "Lavagem",
+      "granulating": "Granulação",
+      "compounding": "Composição",
+      "recovery": "Recuperação",
+      "manufacturing": "Fabricação",
+      "residual_handling": "Gestão de resíduos finais"
+    },
+    "empty": "Nenhuma instalação registrada.",
+    "registration": {
+      "title": "Referências de consentimento e registro",
+      "lead": "Somente referências declaradas. As datas não comprovam aprovação nem liberam negociações.",
+      "add": "Adicionar referência",
+      "correct": "Adicionar correção",
+      "reference": "Referência",
+      "issuedAt": "Data de emissão",
+      "validUntil": "Válido até",
+      "empty": "Nenhuma referência registrada.",
+      "current": "Dentro das datas declaradas",
+      "expired": "Validade declarada vencida",
+      "superseded": "Substituída por uma referência posterior",
+      "kind": "Tipo de referência",
+      "kinds": {
+        "consent_to_operate": "Consentimento para operar",
+        "consent_to_establish": "Consentimento para estabelecer",
+        "epr_registration": "Registro EPR",
+        "waste_authorisation": "Autorização de resíduos",
+        "other": "Outra referência"
+      },
+      "not_yet_current": "Antes da data de emissão declarada"
+    }
+  },
+  "marketSpecification": {
+    "title": "Grau e especificação",
+    "enable": "Adicionar grau e especificação",
+    "grade": "Grau do material",
+    "specification": "Especificação de qualidade do comprador",
+    "lot": "Lote recente correspondente (opcional)",
+    "noLot": "Nenhum lote vinculado",
+    "source": "Declaração do vendedor. Não verifica a qualidade nem reserva o lote usado como evidência.",
+    "lotState": "Estado registrado do lote"
+  },
+  "stockIntake": {
+    "title": "Estoque de subprodutos próprios",
+    "add": "Registrar entrada de estoque",
+    "lead": "Registre subprodutos pesados deste fabricante. Salvar adiciona estoque conforme os registros declarados de produção e pesagem. Lotes apenas de evidência não adicionam estoque.",
+    "reference": "Referência única de entrada",
+    "source": "Referência do lote de produção",
+    "weighing": "Referência do registro de pesagem",
+    "date": "Data de produção",
+    "confirm": "Confirmo que este é nosso próprio subproduto e que esta quantidade pesada ainda não foi registrada no estoque.",
+    "empty": "Nenhuma entrada de produção registrada.",
+    "noMaterials": "Nenhum material de subproduto não perigoso aprovado corresponde a esta empresa. Peça ao administrador que revise o material antes de registrar estoque.",
+    "conflict": "Esta referência já contém dados diferentes. Confira o registro original antes de continuar.",
+    "history": "Entradas de estoque registradas",
+    "more": "Carregar mais entradas",
+    "note": "São declarações do fabricante, não verificações independentes de qualidade, propriedade ou conformidade. Registros salvos não podem ser editados."
+  },
+  "tradeLifecycle": {
+    "title": "Pagamento e entrega",
+    "collectionLabel": "Pagamento do comprador",
+    "settlementLabel": "Repasse ao vendedor",
+    "refundLabel": "Reembolso",
+    "state": {
+      "awaiting_payment": "Aguardando pagamento pelo gateway",
+      "authorized": "Pagamento confirmado; pronto para envio",
+      "dispatched": "Enviado; aguardando recebimento",
+      "received": "Material recebido",
+      "cancellation_pending": "Cancelamento em análise",
+      "cancelled": "Pedido cancelado",
+      "hold": "O pedido precisa de análise"
+    },
+    "collection": {
+      "pending": "Não confirmado",
+      "sandbox_confirmed": "Somente ambiente de testes; sem fundos reais",
+      "live_confirmed": "Confirmado pelo provedor",
+      "review": "O pagamento precisa de análise"
+    },
+    "settlement": {
+      "pending": "Não confirmado",
+      "settled": "Confirmado pelo provedor",
+      "reversed": "Repasse revertido",
+      "review": "O repasse precisa de análise"
+    },
+    "refund": {
+      "none": "Nenhum reembolso registrado",
+      "pending": "Reembolso pendente",
+      "refunded": "Confirmado pelo provedor",
+      "review": "O reembolso precisa de análise"
+    },
+    "action": {
+      "dispatch": "Registrar envio",
+      "receive": "Confirmar recebimento",
+      "cancel": "Solicitar cancelamento"
+    },
+    "policyMissing": "Pagamentos reais exigem condições aprovadas e configuração do provedor.",
+    "reviewRequired": "Um administrador precisa verificar as evidências de pagamento antes de continuar este pedido.",
+    "fullQuantity": "Confirme toda a quantidade acordada: {weight}. Se a quantidade ou qualidade for diferente, pare e contate o administrador.",
+    "cancelNote": "O cancelamento libera estoque somente quando o servidor confirma que nenhum pagamento ainda pode ser concluído. Uma solicitação pendente não significa que o pedido foi cancelado.",
+    "reason": "Motivo",
+    "reference": "Referência de envio ou recebimento",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "saved": "Registro do pedido atualizado",
+    "failed": "A atualização não foi concluída. Confira o estado atual e tente novamente. Sua referência foi mantida.",
+    "actionUnavailable": "Esta ação não está mais disponível. Confira o estado atualizado do pedido."
+  },
+  "sourcing": {
+    "close": "Fechar",
+    "save": "Guardar registo",
+    "saved": "Registo guardado.",
+    "reference": "Referência",
+    "buying": "Compras",
+    "active": "Ativa",
+    "decline": "Recusar",
+    "title": "Fornecimento de materiais",
+    "lead": "Planeje a demanda de materiais, registre suas decisões sobre fornecedores e concorde com solicitações de fornecimento individuais.",
+    "boundary": "Esses registros não criam transações de compra. Eles não reservam estoque nem confirmam pagamentos. Conclua compras usando o mercado e o fluxo de trabalho de pagamento.",
+    "board": "Quadro de demanda",
+    "plans": "Demanda recorrente",
+    "qualifications": "Decisões do fornecedor",
+    "agreements": "Acordos permanentes",
+    "post": "Publicar demanda de material",
+    "createPlan": "Criar cronograma",
+    "publish": "Publicar próxima demanda",
+    "material": "Materiais",
+    "supplier": "Fornecedor",
+    "choose": "Escolha uma opção",
+    "quantity": "Quantidade (g)",
+    "area": "Área de entrega",
+    "specification": "Especificação escrita",
+    "neededBy": "Data de entrega necessária",
+    "cadence": "Intervalo de repetição",
+    "weekly": "A cada 7 dias",
+    "monthly": "A cada 30 dias",
+    "planHint": "Cada ocorrência é publicada somente quando você seleciona Publicar próxima demanda. Nenhum pedido automático é criado.",
+    "myDemand": "Minha demanda",
+    "availableDemand": "Demanda dos compradores",
+    "empty": "Ainda não há registros.",
+    "limited": "Apenas um conjunto limitado é mostrado. Os registros mais antigos permanecem no histórico de auditoria.",
+    "loadMore": "Carregar mais",
+    "invalid": "Verifique os campos obrigatórios, datas e quantidades em números inteiros.",
+    "failed": "Esta ação não pôde ser concluída. Seu rascunho foi mantido. Verifique as permissões e a elegibilidade atuais e tente novamente.",
+    "qualify": "Registrar decisão do fornecedor",
+    "sample": "Referência de amostra ou inspeção",
+    "decision": "Sua decisão",
+    "reason": "Motivo da decisão",
+    "validUntil": "Decisão válida até",
+    "privateDecision": "Esta é a decisão de fornecimento da sua organização. Não é aprovação de plataforma ou certificação regulatória. O histórico de decisões é privado do seu espaço de trabalho do comprador. A decisão mais recente para um fornecedor e material controla novos acordos e liberações; entradas anteriores permanecem no histórico.",
+    "pending": "Pendente",
+    "approved": "Aprovado pelo comprador",
+    "rejected": "Rejeitado pelo comprador",
+    "propose": "Propor acordo",
+    "price": "Preço acordado (paise/kg)",
+    "startsOn": "Começa em",
+    "endsOn": "Termina em",
+    "agreementHint": "É necessária uma decisão atual aprovada do fornecedor para esta especificação exata. O fornecedor deverá reconhecer a proposta separadamente.",
+    "supplying": "Fornecimento",
+    "requested": "Aguardando resposta do fornecedor",
+    "acknowledged": "Reconhecido pelo fornecedor",
+    "declined": "Recusado pelo fornecedor",
+    "closed": "Fechado",
+    "acknowledge": "Confirmar reconhecimento",
+    "responseReference": "Referência de resposta",
+    "release": "Solicite uma quantidade de fornecimento",
+    "releaseHint": "Solicite parte da quantidade acordada. A confirmação do fornecedor registra apenas a intenção; não movimenta materiais ou dinheiro.",
+    "releases": "Solicitações de fornecimento individuais",
+    "history": "Histórico do acordo",
+    "view": "Ver solicitações de fornecimento e histórico",
+    "closeAgreement": "Fechar este contrato",
+    "closeHint": "Isso evita novas solicitações de fornecimento no âmbito do acordo. As solicitações existentes e seu histórico permanecem registrados.",
+    "state": "Status do registro",
+    "nextDate": "Data da próxima demanda",
+    "readOnly": "Sua função de espaço de trabalho pode visualizar esses registros, mas não pode alterá-los.",
+    "published": "Ocorrência de demanda publicada.",
+    "event": {
+      "proposed": "Acordo proposto",
+      "acknowledged": "Acordo reconhecido",
+      "declined": "Contrato recusado",
+      "closed": "Acordo fechado",
+      "release_requested": "Quantidade de fornecimento solicitada",
+      "release_acknowledged": "Solicitação de fornecimento reconhecida",
+      "release_declined": "Solicitação de fornecimento recusada"
+    },
+    "reschedule": "Mover a próxima data de demanda",
+    "rescheduleHint": "Escolha uma data atual posterior. As publicações anteriores permanecem inalteradas. Isso não publica uma demanda nem cria um pedido.",
+    "overdue": "Esta data agendada já passou. Mova a próxima data antes de publicar."
+  },
+  "operations": {
+    "validUntil": "Válido até",
+    "decisions": {
+      "revoked": "Revogada",
+      "approved": "Aprovado",
+      "rejected": "Rejeitado"
+    },
+    "reference": "Referência",
+    "remove": "Remover",
+    "save": "Guardar registo",
+    "saved": "Registo guardado.",
+    "standards": "Padrões de materiais",
+    "standardsHint": "Pesquise definições revisadas. Uma classe ou setor não concede permissão de manejo nem certifica qualidade.",
+    "workspaceRequired": "Selecione um espaço de trabalho comercial aprovado para continuar.",
+    "definitions": "Definições",
+    "reviews": "Revisões de escopo",
+    "destinations": "Destinos controlados",
+    "search": "Pesquise por material, estado físico, grau ou especificação",
+    "empty": "Ainda não há registros.",
+    "truncated": "O resultado é limitado. Refine sua pesquisa ou verifique os registros recentes.",
+    "reviewHint": "Estas são revisões do administrador das evidências fornecidas. Uma instalação alterada, registro substituído, expiração ou revogação invalida o escopo atual.",
+    "destinationHint": "Verifique o escopo do material e a autorização atual antes de uma transferência controlada. Uma entrada de diretório não prova descarte ou submissão ao portal.",
+    "current": "Atual",
+    "historical": "Não atual",
+    "production": "Registros de produção",
+    "productionHint": "Vincule receitas e entradas declaradas a uma transformação medida e sua inspeção de saída. A fração reciclada descreve o insumo declarado e não o conteúdo do produto certificado. Esses registros não alteram o estoque.",
+    "recipes": "Fórmulas de fabricação",
+    "batches": "Lotes de produção",
+    "newRecipe": "Fórmula de fabricação recorde",
+    "newBatch": "Lote de registro",
+    "version": "Versão gravada",
+    "name": "Nome da receita",
+    "instructions": "Instruções de processo",
+    "ingredients": "Ingredientes",
+    "ingredient": "Nome do ingrediente",
+    "basisPoints": "Proporção do ingrediente em pontos base (100 = 1%)",
+    "additive": "Aditivo",
+    "addIngredient": "Adicionar ingrediente",
+    "recipeHint": "Use uma nova versão para uma correção. As participações de ingredientes devem totalizar 10.000 pontos base. Todos os ingredientes e aditivos medidos devem ser incluídos na transformação vinculada.",
+    "failed": "Não foi possível salvar. Verifique os valores, os registros vinculados e o acesso ao seu espaço de trabalho e tente novamente.",
+    "invalid": "Verifique os campos e os totais exatos em gramas.",
+    "choose": "Selecione",
+    "recipe": "Versão da fórmula de fabricação",
+    "transformation": "Transformação medida",
+    "inspection": "Inspeção de saída",
+    "recycledGrams": "Insumo reciclado declarado (gramas)",
+    "inputEvidence": "Referência de proveniência de entrada",
+    "batchEvidence": "Referência de evidência de produção",
+    "inputFraction": "Participação declarada de insumos reciclados",
+    "inputTotal": "Entrada total",
+    "outputTotal": "Saída medida",
+    "batchHint": "Selecione uma transformação existente com uma inspeção de sua saída. Declare gramas recicladas para cada insumo e forneça a referência da evidência. Esta é uma declaração atribuível e não uma certificação independente."
+  },
+  "logistics": {
+    "title": "Planos de rota e carga",
+    "add": "Criar plano",
+    "correct": "Guardar nova revisão",
+    "titleLabel": "Nome do plano",
+    "reference": "Referência única do plano",
+    "vehicle": "Referência do veículo",
+    "capacity": "Capacidade do veículo (g)",
+    "origin": "Local de partida",
+    "stop": "Paragem {number}",
+    "addStop": "Adicionar paragem",
+    "latitude": "Latitude do local",
+    "longitude": "Longitude do local",
+    "entered": "Manter a ordem introduzida",
+    "geometric": "Próxima paragem mais próxima (linha reta)",
+    "distance": "Distância em linha reta: {value} m",
+    "archive": "Arquivar plano",
+    "archived": "Arquivado",
+    "history": "Histórico de revisões",
+    "revision": "Revisão {number}",
+    "reason": "Motivo deste registo",
+    "conflict": "O plano ou o seu acesso mudou. Recarregue antes de guardar.",
+    "invalid": "Verifique coordenadas, material, gramas inteiros e capacidade. A soma das cargas deve caber no veículo.",
+    "lead": "Apenas planeamento manual. As cargas de todas as paragens são somadas. A ordem em linha reta não é uma rota rodoviária, hora de chegada nem expedição. Os locais vêm dos seus dados, não dos metadados de fotografias.",
+    "empty": "Ainda não há planos de rota."
+  },
+  "qualityDocuments": {
+    "businessRequired": "Selecione um espaço de trabalho empresarial ativo para usar os registos de lotes.",
+    "inspections": "Provas de inspeção",
+    "readOnly": "A sua função no espaço de trabalho permite ler estes registos.",
+    "empty": "Ainda não há registos.",
+    "inspection": "Provas de inspeção",
+    "kind": "Tipo de documento",
+    "accepted": "Aceite",
+    "rejected": "Rejeitado",
+    "conditional": "Condicional",
+    "note": "Motivo da correção",
+    "record": "Guardar registo",
+    "error": "Algo deu errado",
+    "limit": "São apresentados apenas os primeiros 100 registos.",
+    "title": "Documentos de qualidade",
+    "own": "Seus documentos",
+    "incoming": "Compartilhados com sua empresa",
+    "decisions": "Histórico de decisões do comprador",
+    "upload": "Anexar documento",
+    "coa": "Certificado de análise",
+    "photo": "Foto de qualidade",
+    "sample_report": "Relatório de amostra",
+    "file": "Arquivo",
+    "shareBuyer": "Compartilhar este documento com {name}",
+    "download": "Baixar",
+    "shared": "Compartilhado com o comprador indicado",
+    "private": "Somente a empresa",
+    "withdrawn": "Acesso retirado",
+    "withdraw": "Retirar acesso",
+    "decision": "Decisão do comprador",
+    "lead": "Registe a especificação real, o método de amostragem e os resultados medidos. A decisão aplica-se apenas a esta inspeção; não é uma classificação nem um certificado da plataforma. Estes registos descrevem provas físicas. Não alteram o stock, o pagamento, a propriedade legal ou os certificados.",
+    "fileHint": "PDF, JPEG, PNG ou WebP, até 2 MiB. Use PDF achatado. Os arquivos são baixados, sem prévia. Sem verificação independente ou análise de malware. Remova dados privados antes de compartilhar."
+  },
+  "auditReports": {
+    "title": "Relatórios de auditoria compartilhados",
+    "create": "Compartilhar relatório",
+    "recipient": "Destinatário aprovado",
+    "purpose": "Finalidade da revisão",
+    "expiry": "Fim do acesso (hora local)",
+    "sent": "Relatórios que você compartilhou",
+    "received": "Relatórios compartilhados com você",
+    "empty": "Ainda não há relatórios.",
+    "unavailable": "Acesso expirado, retirado ou indisponível.",
+    "open": "Ler relatório",
+    "revoke": "Revogar acesso",
+    "inspection": "Provas de inspeção",
+    "error": "Algo deu errado",
+    "limit": "São apresentados apenas os primeiros 100 registos.",
+    "lead": "Leia uma cópia fixa das evidências para a finalidade indicada. A aprovação do destinatário não dá acesso a outros registros empresariais.",
+    "warning": "Compartilhe apenas a inspeção escolhida e os arquivos marcados. Remova dados pessoais primeiro. Acesso por até 90 dias, revogável; cópias baixadas não podem ser recuperadas.",
+    "snapshot": "Cópia fixa da declaração da empresa inspetora. Não é certificado nem verificação independente."
   }
 }

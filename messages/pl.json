@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Czystsze jutro w ruchu",
-    "description": "Luma.Green łączy indyjski łańcuch recyklingu na jednej platformie: gospodarstwa domowe, kabadiwalów, sortownie, recyklerów i producentów. Uczciwe ceny, ważenie przy odbiorze i zapis każdego przekazania."
+    "description": "Luma.Green łączy indyjski łańcuch recyklingu na jednej platformie: gospodarstwa domowe, kabadiwalów, firmy przetwarzania wstępnego, recyklerów i producentów. Uczciwe ceny, ważenie przy odbiorze i zapis każdego przekazania."
   },
   "theme": {
     "label": "Wygląd",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Handluj",
-      "summary": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+      "summary": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
     },
     "record": {
       "title": "Rejestruj",
@@ -76,7 +76,7 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green łączy indyjski łańcuch recyklingu na jednej platformie: gospodarstwa domowe, kabadiwalów, sortownie, recyklerów i producentów. Uczciwe ceny, zweryfikowane firmy i potwierdzenie na każdym etapie.",
+    "metaDescription": "Luma.Green łączy indyjski łańcuch recyklingu na jednej platformie: gospodarstwa domowe, kabadiwalów, firmy przetwarzania wstępnego, recyklerów i producentów. Uczciwe ceny, zweryfikowane firmy i potwierdzenie na każdym etapie.",
     "hero": {
       "eyebrow": "Zaczynamy w Bengaluru",
       "title": "Daj swoim surowcom nowy początek.",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "Droga surowców",
-      "intro": "Surowce trafiają z domów do punktów zbiórki, sortowni i zakładów recyklingu, zanim powstanie z nich coś nowego. Luma.Green zapisuje każde przekazanie.",
+      "intro": "Surowce trafiają z domów do punktów zbiórki, firm przetwarzania wstępnego i zakładów recyklingu, zanim powstanie z nich coś nowego. Luma.Green zapisuje każde przekazanie.",
       "steps": {
         "household": {
           "name": "Gospodarstwa domowe",
@@ -107,7 +107,7 @@
           "body": "Kupują, ważą i sortują według materiału."
         },
         "yard": {
-          "name": "Sortownie",
+          "name": "Firmy przetwarzania wstępnego",
           "body": "Klasyfikują materiał i prasują go w bele."
         },
         "recycler": {
@@ -119,7 +119,7 @@
           "body": "Tworzą nowe produkty z materiałów po recyklingu."
         }
       },
-      "money": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "money": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "saathi": "Saathi wspierają cały łańcuch przy odbiorach, sortowaniu i pracy zmianowej."
     },
     "roles": {
@@ -136,19 +136,19 @@
         "title": "Kabadiwalowie",
         "one": "Zlecenia odbioru od pobliskich gospodarstw.",
         "two": "Ustalaj własne ceny, nie niższe od minimum.",
-        "three": "Sprzedawaj posortowane zapasy sortowniom.",
+        "three": "Sprzedawaj posortowane zapasy firmom przetwarzania wstępnego.",
         "cta": "Dołącz jako kabadiwala"
       },
       "yard": {
-        "title": "Sortownie",
+        "title": "Firmy przetwarzania wstępnego",
         "one": "Sprawdzaj zapasy pobliskich punktów.",
         "two": "Kupuj hurtowo i sprzedawaj bele recyklerom.",
-        "three": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
-        "cta": "Dołącz jako sortownia"
+        "three": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
+        "cta": "Dołącz jako firma przetwarzania wstępnego"
       },
       "recycler": {
         "title": "Recyklerzy",
-        "one": "Sklasyfikowane bele ze zweryfikowanych sortowni.",
+        "one": "Sklasyfikowane bele ze zweryfikowanych firm przetwarzania wstępnego.",
         "two": "Każda partia z udokumentowanym łańcuchem przekazań.",
         "three": "Sprzedawaj swoje wyroby fabrykom.",
         "cta": "Dołącz jako recykler"
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Producenci",
         "one": "Sprawdzaj, co produkują recyklerzy.",
-        "two": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+        "two": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
         "three": "Dokumentacja do raportów EPR.",
         "cta": "Dołącz jako producent"
       },
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Standard Luma.Green",
-    "metaDescription": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+    "metaDescription": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
     "eyebrow": "Otwarty standard",
     "title": "Standard Luma.Green",
     "lead": "Proste, otwarte zasady uczciwego handlu surowcami: jeden kod dla każdego materiału, jasna klasyfikacja, rzetelne ważenie i zapis każdego przekazania. Może je przyjąć każdy uczestnik branży.",
@@ -394,13 +394,13 @@
       "nav": "Weryfikacja",
       "body": "Człowiek sprawdza każdą firmę i każdego Saathi przed dopuszczeniem do pracy.",
       "business": "Firmy: numer GST, jeśli go mają, zdjęcia punktu lub zakładu i rozmowa telefoniczna.",
-      "consent": "Sortownie, recyklerzy i fabryki: ważne pozwolenie stanowej rady kontroli zanieczyszczeń.",
+      "consent": "Firmy przetwarzania wstępnego, recyklerzy i fabryki: ważne pozwolenie stanowej rady kontroli zanieczyszczeń.",
       "saathi": "Saathi: dokument ze zdjęciem i zgodne z nim selfie."
     },
     "escrow": {
       "title": "Oczekiwanie na bramkę",
       "nav": "Oczekiwanie na bramkę",
-      "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "steps": {
         "accepted": "Sprzedający przyjmuje zamówienie",
         "paid": "Oczekiwanie na bramkę",
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "Jak to działa",
-    "metaDescription": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+    "metaDescription": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
     "title": "Jak działa Luma.Green",
-    "lead": "Surowce trafiają z domów do punktów zbiórki, sortowni i zakładów recyklingu, zanim powstanie z nich coś nowego. Luma.Green zapisuje każde przekazanie.",
+    "lead": "Surowce trafiają z domów do punktów zbiórki, firm przetwarzania wstępnego i zakładów recyklingu, zanim powstanie z nich coś nowego. Luma.Green zapisuje każde przekazanie.",
     "stepLabel": "Krok {number}",
     "sell": {
       "body": "Gospodarstwo wybiera materiały, porównuje oferty pobliskich punktów i rezerwuje odbiór lub dostawę. Kabadiwala waży każdy materiał i płaci gotówką lub UPI. Obie strony otrzymują potwierdzenie.",
@@ -563,7 +563,7 @@
       "point3": "Link do śledzenia, bez konta"
     },
     "trade": {
-      "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "point1": "Handlować mogą tylko zweryfikowane firmy",
       "point2": "Stan zapasów zmienia się przy wysyłce i odbiorze ładunku",
       "point3": "Numerowane potwierdzenie dla każdej opłaconej transakcji"
@@ -577,20 +577,20 @@
   },
   "participants": {
     "metaTitle": "Dla kogo",
-    "metaDescription": "Luma.Green służy gospodarstwom, kabadiwalom, sortowniom, recyklerom, producentom i Saathi — wszystkim, którzy przemieszczają surowce z domu do fabryki.",
+    "metaDescription": "Luma.Green służy gospodarstwom, kabadiwalom, firmom przetwarzania wstępnego, recyklerom, producentom i Saathi — wszystkim, którzy przemieszczają surowce z domu do fabryki.",
     "title": "Dla kogo jest Luma.Green",
     "lead": "Dla wszystkich przemieszczających surowce z domu do fabryki oraz osób pracujących na etapach pośrednich.",
     "kabadiwala": {
       "name": "Kabadiwalowie",
-      "body": "Przyjmuj odbiory z pobliskich domów, uczciwie waż i płać oraz sprzedawaj posortowane zapasy sortowniom."
+      "body": "Przyjmuj odbiory z pobliskich domów, uczciwie waż i płać oraz sprzedawaj posortowane zapasy firmom przetwarzania wstępnego."
     },
     "yard": {
-      "name": "Sortownie",
-      "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+      "name": "Firmy przetwarzania wstępnego",
+      "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
     },
     "recycler": {
       "name": "Recyklerzy",
-      "body": "Kupuj sklasyfikowane bele ze zweryfikowanych sortowni i sprzedawaj płatki, granulat oraz wlewki fabrykom."
+      "body": "Kupuj sklasyfikowane bele ze zweryfikowanych firm przetwarzania wstępnego i sprzedawaj płatki, granulat oraz wlewki fabrykom."
     },
     "manufacturer": {
       "name": "Producenci",
@@ -601,20 +601,20 @@
       "body": "Podejmuj płatne odbiory, sortowanie i zmiany blisko domu oraz sprawdzaj zarobki."
     },
     "householdHeading": "Także dla każdego gospodarstwa",
-    "householdBody": "Każdy może sprzedać surowce z domu bez konta: wybierz materiały, sprawdź oferty punktów i otrzymaj gotówkę lub UPI z potwierdzeniem."
+    "householdBody": "Zamów odbiór z domu, podając numer telefonu komórkowego: wybierz materiały, porównaj oferty punktów skupu i odbierz od punktu płatność gotówką lub przez UPI wraz z pokwitowaniem."
   },
   "contact": {
     "metaTitle": "Kontakt",
     "metaDescription": "Skontaktuj się z zespołem Luma.Green w sprawie udziału w pilotażu w Bengaluru.",
     "title": "Porozmawiaj z nami",
-    "lead": "Zaczynamy w Bengaluru z małą grupą kabadiwalów, sortowni, recyklerów i fabryk. Powiedz, kim jesteś, czym handlujesz i jakie ilości obsługujesz miesięcznie.",
+    "lead": "Zaczynamy w Bengaluru z małą grupą kabadiwalów, firm przetwarzania wstępnego, recyklerów i fabryk. Powiedz, kim jesteś, czym handlujesz i jakie ilości obsługujesz miesięcznie.",
     "emailHeading": "Wczesny dostęp i pytania ogólne",
     "securityHeading": "Zgłoszenia bezpieczeństwa",
     "securityBody": "Znaleziono lukę? Zgłoś ją prywatnie, zamiast publikować szczegóły."
   },
   "help": {
     "metaTitle": "Centrum pomocy",
-    "metaDescription": "Proste poradniki, odpowiedzi i szkolenia dla gospodarstw, kabadiwalów, sortowni, recyklerów, producentów i Saathi w Luma.Green.",
+    "metaDescription": "Proste poradniki, odpowiedzi i szkolenia dla gospodarstw, kabadiwalów, firm przetwarzania wstępnego, recyklerów, producentów i Saathi w Luma.Green.",
     "eyebrow": "Centrum pomocy",
     "title": "Jak możemy pomóc?",
     "lead": "Krótkie poradniki, jasne odpowiedzi i szybkie szkolenia dla wszystkich w Luma.Green.",
@@ -659,25 +659,25 @@
         "name": "Gospodarstwa domowe",
         "who": "Sprzedaż surowców z domu",
         "title": "Pomoc dla gospodarstw domowych",
-        "lead": "Zarezerwuj odbiór, sprawdź rzetelne ważenie i otrzymaj zapłatę przy drzwiach. Bez konta."
+        "lead": "Zamów odbiór, potwierdź numer telefonu komórkowego i odbierz płatność po ważeniu."
       },
       "kabadiwala": {
         "name": "Kabadiwalowie",
         "who": "Prowadzenie punktu surowców",
         "title": "Pomoc dla kabadiwalów",
-        "lead": "Przyjmuj odbiory, szybko waż i płać, ustalaj ceny i sprzedawaj sortowniom."
+        "lead": "Przyjmuj odbiory, szybko waż i płać, ustalaj ceny i sprzedawaj firmom przetwarzania wstępnego."
       },
       "yard": {
-        "name": "Sortownie",
+        "name": "Firmy przetwarzania wstępnego",
         "who": "Kupowanie od kabadiwalów i dalsze sortowanie",
-        "title": "Pomoc dla sortowni",
-        "lead": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+        "title": "Pomoc dla firm przetwarzania wstępnego",
+        "lead": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
       },
       "recycler": {
         "name": "Recyklerzy",
         "who": "Przetwarzanie odpadów w surowce",
         "title": "Pomoc dla recyklerów",
-        "lead": "Kupuj sklasyfikowane surowce z sortowni, sprzedawaj wyroby fabrykom i prowadź przejrzystą dokumentację EPR."
+        "lead": "Kupuj sklasyfikowane surowce z firm przetwarzania wstępnego, sprzedawaj wyroby fabrykom i prowadź przejrzystą dokumentację EPR."
       },
       "manufacturer": {
         "name": "Producenci",
@@ -752,7 +752,7 @@
       "roles": {
         "household": "Gospodarstwo domowe",
         "kabadiwala": "Kabadiwala — punkt skupu",
-        "yard": "Sortownia",
+        "yard": "Firma przetwarzania wstępnego",
         "recycler": "Zakład recyklingu",
         "manufacturer": "Producent wyrobów",
         "saathi": "Pracownik Saathi",
@@ -853,7 +853,7 @@
         "steps": {
           "start": {
             "title": "Zacznij na luma.green/join",
-            "body": "Zaloguj się numerem komórkowym i wybierz sortownię, recyklera lub producenta."
+            "body": "Zaloguj się numerem komórkowym i wybierz firmę przetwarzania wstępnego, recyklera lub producenta."
           },
           "details": {
             "title": "Dodaj dane firmy",
@@ -879,7 +879,7 @@
       },
       "escrow": {
         "title": "Oczekiwanie na bramkę",
-        "summary": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+        "summary": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
         "steps": {
           "request": {
             "title": "Kupujący wysyła zapytanie",
@@ -891,7 +891,7 @@
           },
           "pay": {
             "title": "Oczekiwanie na bramkę",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           },
           "dispatch": {
             "title": "Sprzedający wysyła ładunek",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "Kupujący potwierdza dostawę",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Nie potwierdzaj brakującego ładunku",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           },
           "report": {
             "title": "Zgłoś problem i dodaj zdjęcia",
@@ -975,7 +975,7 @@
       },
       "firstPickup": {
         "title": "Zarezerwuj pierwszy odbiór",
-        "summary": "Od zdjęcia do rezerwacji w około dwie minuty. Konto nie jest potrzebne.",
+        "summary": "Wybierz materiały, porównaj punkty skupu i zweryfikuj numer telefonu komórkowego, aby zamówić odbiór.",
         "steps": {
           "photo": {
             "title": "Zrób zdjęcie surowców",
@@ -1244,8 +1244,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Poradnik demonstracyjny: sortuj zapasy i sprzedawaj sortowniom",
-        "summary": "Od wielu małych odbiorów do ładunku potrzebnego sortowni.",
+        "title": "Poradnik demonstracyjny: sortuj zapasy i sprzedawaj firmom przetwarzania wstępnego",
+        "summary": "Od wielu małych odbiorów do ładunku potrzebnego firmie przetwarzania wstępnego.",
         "steps": {
           "grows": {
             "title": "Zapas uzupełnia się automatycznie",
@@ -1256,12 +1256,12 @@
             "body": "Rozdziel mieszane surowce na rzeczywiste rodzaje. Na przykład papier mieszany na gazety, tekturę i odpady."
           },
           "show": {
-            "title": "Pokaż zapasy sortowniom",
-            "body": "Włącz Pokaż sortowniom, aby pobliskie sortownie widziały, co masz."
+            "title": "Pokaż zapasy firmom przetwarzania wstępnego",
+            "body": "Włącz Pokaż firmom przetwarzania wstępnego, aby pobliskie firmy przetwarzania wstępnego widziały, co masz."
           },
           "sell": {
-            "title": "Przyjmij zapytanie sortowni",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "title": "Przyjmij zapytanie firm przetwarzania wstępnego",
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           }
         }
       },
@@ -1301,7 +1301,7 @@
           },
           "pay": {
             "title": "Oczekiwanie na bramkę",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           },
           "collect": {
             "title": "Odbierz i zważ",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Przyjmij, a następnie poczekaj na wpłatę",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           },
           "dispatch": {
             "title": "Wyślij ładunek",
@@ -1335,17 +1335,17 @@
           },
           "paid": {
             "title": "Otrzymaj zapłatę",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           }
         }
       },
       "buyFromYards": {
-        "title": "Poradnik demonstracyjny: kupuj posortowane surowce od sortowni",
+        "title": "Poradnik demonstracyjny: kupuj posortowane surowce od firm przetwarzania wstępnego",
         "summary": "Stałe dostawy materiału o określonej klasie do Twojej linii.",
         "steps": {
           "browse": {
             "title": "Znajdź bele w pobliżu",
-            "body": "Otwórz Kupuj, aby zobaczyć oferty sortowni według materiału i odległości."
+            "body": "Otwórz Kupuj, aby zobaczyć oferty firm przetwarzania wstępnego według materiału i odległości."
           },
           "request": {
             "title": "Zamów ładunek",
@@ -1353,7 +1353,7 @@
           },
           "pay": {
             "title": "Oczekiwanie na bramkę",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           },
           "confirm": {
             "title": "Zważ, sprawdź, potwierdź",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Ładuj po wpłacie",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           },
           "paid": {
             "title": "Otrzymaj zapłatę po dostawie",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           }
         }
       },
@@ -1397,7 +1397,7 @@
           },
           "pay": {
             "title": "Oczekiwanie na bramkę",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           },
           "receive": {
             "title": "Odbierz ładunek",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Potwierdź lub zgłoś problem",
-            "body": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+            "body": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
           }
         }
       },
@@ -1614,8 +1614,8 @@
         "a": "Nie. Płacisz gotówką lub przez UPI przy odbiorze. Aplikacja zapisuje kwotę i sposób płatności."
       },
       "paidByYard": {
-        "q": "Jak otrzymuję zapłatę za sprzedaż sortowni?",
-        "a": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+        "q": "Jak otrzymuję zapłatę za sprzedaż firmie przetwarzania wstępnego?",
+        "a": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
       },
       "whoSeesShop": {
         "q": "Kto może zobaczyć mój punkt?",
@@ -1643,7 +1643,7 @@
       },
       "whatIsEscrow": {
         "q": "Oczekiwanie na bramkę",
-        "a": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+        "a": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
       },
       "whenSellerPaid": {
         "q": "Kiedy sprzedający otrzymuje zapłatę?",
@@ -1666,8 +1666,8 @@
         "a": "Przygotuj rejestrację CPCB jako przetwórca odpadów z tworzyw sztucznych. Marki o nią proszą; umożliwia wystawianie certyfikatów EPR."
       },
       "buyFromAnyYard": {
-        "q": "Czy mogę kupować od kilku sortowni?",
-        "a": "Tak. Kupuj od dowolnej zweryfikowanej sortowni oferującej potrzebny materiał, tak często, jak chcesz."
+        "q": "Czy mogę kupować od kilku firm przetwarzania wstępnego?",
+        "a": "Tak. Kupuj od dowolnej zweryfikowanej firmy przetwarzania wstępnego oferującej potrzebny materiał, tak często, jak chcesz."
       },
       "eprRecords": {
         "q": "Czy zapisy Luma.Green pomagają przy EPR?",
@@ -1740,7 +1740,7 @@
       "buyingFromKabadiwalas": "Zakupy od punktów skupu",
       "listingBales": "Wystawianie bel dla zakładów recyklingu",
       "escrowExplained": "Oczekiwanie na bramkę",
-      "buyingFromYards": "Zakupy od sortowni",
+      "buyingFromYards": "Zakupy od firm przetwarzania wstępnego",
       "sellingOutput": "Sprzedaż produktów",
       "eprPlainWords": "Prosto o EPR",
       "firstOrder": "Pierwsze zamówienie",
@@ -1799,10 +1799,10 @@
         "p3": "Zawsze zapłać przed odjazdem."
       },
       "sellingToYards": {
-        "title": "Demo: sprzedaż sortowniom",
+        "title": "Demo: sprzedaż firmom przetwarzania wstępnego",
         "p1": "Zapisuj sortowanie, aby stan zapasów był poprawny.",
-        "p2": "Pokaż zapasy pobliskim sortowniom.",
-        "p3": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+        "p2": "Pokaż zapasy pobliskim firmom przetwarzania wstępnego.",
+        "p3": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
       },
       "buyingStock": {
         "title": "Zakup zapasów",
@@ -1812,7 +1812,7 @@
       },
       "tradingWithEscrow": {
         "title": "Oczekiwanie na bramkę",
-        "p1": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+        "p1": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
         "p2": "Sprzedający ładuje dopiero po wpłynięciu środków.",
         "p3": "Potwierdzenie dostawy uruchamia wypłatę."
       },
@@ -1830,8 +1830,8 @@
       },
       "buyingInputs": {
         "title": "Demo: zakup surowca",
-        "p1": "Znajdź bele określonej klasy od sortowni w sekcji Kupuj.",
-        "p2": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+        "p1": "Znajdź bele określonej klasy od firm przetwarzania wstępnego w sekcji Kupuj.",
+        "p2": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
         "p3": "Sprawdź klasę przed potwierdzeniem."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: zamawianie surowców wtórnych",
         "p1": "Porównaj oferty według rodzaju, masy i ceny.",
         "p2": "Zamów potrzebną liczbę kilogramów.",
-        "p3": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+        "p3": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
       },
       "checkingDeliveries": {
         "title": "Sprawdzanie dostaw",
@@ -1885,14 +1885,14 @@
     "chooseLanguageHint": "Możesz go zmienić w dowolnej chwili u góry ekranu.",
     "continue": "Kontynuuj",
     "title": "Zaloguj się numerem telefonu",
-    "lead": "Dla punktów skupu, sortowni, zakładów recyklingu, producentów i Saathi.",
+    "lead": "Dla punktów skupu, firm przetwarzania wstępnego, zakładów recyklingu, producentów i Saathi.",
     "mobileLabel": "Numer komórkowy",
     "mobileHint": "Wyślemy na ten numer 6-cyfrowy kod.",
     "mobileInvalid": "Podaj 10-cyfrowy indyjski numer komórkowy.",
     "sendCode": "Wyślij kod",
     "sending": "Wysyłanie…",
     "sendFailed": "Nie udało się wysłać kodu. Spróbuj ponownie za minutę.",
-    "homeTitle": "Oddajesz surowce z domu? Nie potrzebujesz konta.",
+    "homeTitle": "Oddajesz surowce z domu?",
     "homeLink": "Zobacz, jak to działa",
     "privacy": "Używamy numeru tylko do logowania i wysyłania informacji o Twojej pracy w Luma.Green.",
     "unavailableTitle": "Logowanie telefonem będzie wkrótce dostępne",
@@ -1929,7 +1929,7 @@
   },
   "join": {
     "metaTitle": "Dołącz do Luma.Green",
-    "metaDescription": "Punkty skupu, sortownie, zakłady recyklingu, producenci i Saathi w Bengaluru: zgłoście się do Luma.Green. Każdy wniosek sprawdza człowiek, zwykle w ciągu 12–24 godzin.",
+    "metaDescription": "Punkty skupu, firmy przetwarzania wstępnego, zakłady recyklingu, producenci i Saathi w Bengaluru: zgłoście się do Luma.Green. Każdy wniosek sprawdza człowiek, zwykle w ciągu 12–24 godzin.",
     "title": "Dołącz do Luma.Green",
     "lead": "Powiedz nam, czym się zajmujesz. Każdy wniosek sprawdza człowiek, zwykle w ciągu 12–24 godzin.",
     "start": "Rozpocznij",
@@ -1944,7 +1944,7 @@
         "needs": "Adres i godziny pracy punktu. Numer GST, jeśli go masz."
       },
       "yard": {
-        "title": "Sortownia",
+        "title": "Firma przetwarzania wstępnego",
         "body": "Sortujesz i belujesz duże ilości surowców, a potem je sprzedajesz.",
         "needs": "Numer GST, jeśli go masz, pozwolenie środowiskowe w PDF i zdjęcia maszyn."
       },
@@ -2043,7 +2043,7 @@
     },
     "business": {
       "titles": {
-        "yard": "Twoja sortownia",
+        "yard": "Twoja firma przetwarzania wstępnego",
         "recycler": "Twój zakład recyklingu",
         "manufacturer": "Twoja fabryka"
       },
@@ -2233,7 +2233,7 @@
     },
     "roles": {
       "kabadiwala": "Punkt skupu",
-      "yard": "Sortownia",
+      "yard": "Firma przetwarzania wstępnego",
       "recycler": "Zakład recyklingu",
       "manufacturer": "Producent",
       "saathi": "Pracownik Saathi"
@@ -2261,7 +2261,7 @@
       "title": "Dostępne zlecenia",
       "lead": "Najpierw pokazujemy zlecenia w Twojej okolicy.",
       "empty": "Brak dostępnych zleceń",
-      "emptyBody": "Nowe zlecenia z punktów, sortowni i fabryk pojawią się tutaj."
+      "emptyBody": "Nowe zlecenia z punktów, firm przetwarzania wstępnego i fabryk pojawią się tutaj."
     },
     "work": {
       "home_pickups": "Odbiory domowe",
@@ -2376,7 +2376,8 @@
       "emptyBody": "Przyjmij zlecenie na stronie głównej. Po oznaczeniu jako wykonane wynagrodzenie pojawi się tutaj.",
       "findJob": "Znajdź zlecenie",
       "demoNote": "Dane przykładowe: zlecenia i wynagrodzenia służą do prezentacji prototypu."
-    }
+    },
+    "factorUnavailable": "Oszacowanie CO₂e jest niedostępne. Nie określono współczynników emisji."
   },
   "compliance": {
     "title": "Zgodność",
@@ -2454,7 +2455,7 @@
       "view": "Zobacz potwierdzenie {number}",
       "unknown": "Firma, której nie ma już w Luma.Green",
       "empty": "Brak potwierdzeń",
-      "emptyBody": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+      "emptyBody": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
     },
     "epr": {
       "title": "Rejestr EPR, rok finansowy {from}–{to}",
@@ -2484,7 +2485,7 @@
     },
     "saathi": {
       "title": "Dla firm",
-      "body": "Sekcja Zgodność jest dla punktów, sortowni, zakładów recyklingu i fabryk. Twoje zlecenia i wynagrodzenie są na stronie głównej.",
+      "body": "Sekcja Zgodność jest dla punktów, firm przetwarzania wstępnego, zakładów recyklingu i fabryk. Twoje zlecenia i wynagrodzenie są na stronie głównej.",
       "home": "Przejdź do moich zleceń"
     }
   },
@@ -2496,7 +2497,7 @@
     "lead": "Wybierz materiały i pobliski punkt. Po ważeniu otrzymasz gotówkę lub płatność UPI.",
     "promises": {
       "label": "Dlaczego warto tu sprzedawać",
-      "noAccount": "Bez zakładania konta",
+      "noAccount": "Zweryfikuj telefon, aby zamówić",
       "payAtDoor": "Zapłata po ważeniu",
       "verified": "Zweryfikowane punkty"
     },
@@ -2804,7 +2805,7 @@
     "perKg": "{price}/kg",
     "recycled": "Po recyklingu",
     "forBusinessesTitle": "Ten ekran jest dla firm",
-    "forBusinessesBody": "Tutaj handlują punkty skupu, sortownie, zakłady recyklingu i producenci.",
+    "forBusinessesBody": "Tutaj handlują punkty skupu, firmy przetwarzania wstępnego, zakłady recyklingu i producenci.",
     "units": {
       "kg": "kg",
       "rupee": "₹"
@@ -2841,30 +2842,30 @@
       "kgTooMuch": "Dostępne jest tylko {weight}.",
       "total": "Suma",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "escrow": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "ewayBill": "Powyżej 50 000 ₹: ładunkowi musi towarzyszyć dokument e-way bill.",
       "cancel": "Anuluj",
       "submit": "Wyślij zapytanie",
       "sending": "Wysyłanie…",
       "sent": "Wysłano zapytanie do {seller}",
-      "sentNext": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "sentNext": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "seeTrades": "Zobacz transakcje"
     },
     "browse": {
       "title": "Kupuj",
-      "lead": "{kind, select, yard {Posortowane surowce z pobliskich punktów skupu.} recycler {Posortowane, zbelowane materiały z sortowni.} manufacturer {Surowce wtórne od zweryfikowanych zakładów recyklingu.} other {Materiały na sprzedaż w pobliżu.}}",
+      "lead": "Przeglądaj oferty zatwierdzonych dostawców materiałów, którymi się zajmujesz.",
       "filterLabel": "Filtruj według materiału",
       "all": "Wszystkie",
       "count": "{count, plural, =0 {Brak partii} one {# partia w sprzedaży} few {# partie w sprzedaży} many {# partii w sprzedaży} other {# partii w sprzedaży}}",
       "emptyTitle": "Obecnie brak ofert",
       "emptyBody": "Nowe partie pojawią się tutaj po wystawieniu.",
       "notForYouTitle": "Punkty skupu kupują od mieszkańców",
-      "notForYouBody": "Na rynku sprzedajesz: oferuj posortowane zapasy sortowniom.",
-      "goSell": "Sprzedawaj sortowniom"
+      "notForYouBody": "Na rynku sprzedajesz: oferuj posortowane zapasy firmom przetwarzania wstępnego.",
+      "goSell": "Sprzedawaj firmom przetwarzania wstępnego"
     },
     "sell": {
       "title": "Sprzedawaj",
-      "lead": "{buyer, select, yard {Oferuj posortowane zapasy sortowniom.} recycler {Oferuj bele zakładom recyklingu.} manufacturer {Oferuj materiały producentom.} other {Oferuj zapasy kupującym.}}",
+      "lead": "{buyer, select, yard {Oferuj posortowane zapasy firmom przetwarzania wstępnego.} recycler {Oferuj bele zakładom recyklingu.} manufacturer {Oferuj materiały producentom.} other {Oferuj zapasy kupującym.}}",
       "notForYouTitle": "Producenci kupują w Luma.Green",
       "notForYouBody": "Znajdź surowce wtórne od zweryfikowanych zakładów recyklingu.",
       "goBuy": "Kup materiał",
@@ -2888,7 +2889,7 @@
         "value": "Wartość partii",
         "submit": "Wystaw na sprzedaż",
         "submitting": "Wystawianie…",
-        "listed": "Wystawiono. {buyer, select, yard {Sortownie} recycler {Zakłady recyklingu} manufacturer {Producenci} other {Kupujący}} widzą już ofertę.",
+        "listed": "Wystawiono. {buyer, select, yard {Firmy przetwarzania wstępnego} recycler {Zakłady recyklingu} manufacturer {Producenci} other {Kupujący}} widzą już ofertę.",
         "nothingTitle": "Brak materiału do sprzedaży",
         "nothingBody": "Zapisane zapasy pojawiają się tutaj. Wystawione lub sprzedane ilości nie są liczone dwukrotnie.",
         "goStock": "Przejdź do zapasów",
@@ -2920,7 +2921,7 @@
     },
     "trades": {
       "title": "Transakcje",
-      "lead": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "lead": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "buying": "Kupowanie",
       "selling": "Sprzedawanie",
       "tabsLabel": "Kupno lub sprzedaż",
@@ -2936,7 +2937,7 @@
         "from": "Od {name} · {area}",
         "to": "Do {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+        "inEscrow": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
         "ewayBill": "Powyżej 50 000 ₹: ładunkowi musi towarzyszyć dokument e-way bill.",
         "updated": "Zaktualizowano {when}",
         "receipt": "Potwierdzenie {number}",
@@ -2964,8 +2965,8 @@
           "seller": "{name} chce to kupić. Przyjmij, aby zarezerwować materiał."
         },
         "accepted": {
-          "buyer": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
-          "seller": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna."
+          "buyer": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
+          "seller": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności."
         },
         "paid_to_escrow": {
           "buyer": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane.",
@@ -3002,7 +3003,7 @@
       "declineConfirm": "Odrzucić zamówienie od {name}? Tej czynności nie można cofnąć.",
       "declineYes": "Tak, odrzuć",
       "declineNo": "Zachowaj",
-      "gatewayPending": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "gatewayPending": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "legacyUnverified": "Wpis z prototypu. Płatność i dostawa nie zostały zweryfikowane."
     },
     "receipt": {
@@ -3032,20 +3033,20 @@
       "missingTitle": "Nie znaleziono potwierdzenia",
       "missingBody": "To nie jest Twoja transakcja lub link jest błędny.",
       "pendingTitle": "Brak potwierdzenia",
-      "pendingBody": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+      "pendingBody": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
       "declinedBody": "Transakcja została odrzucona, więc nie ma potwierdzenia.",
       "unverified": "Niezweryfikowane"
     },
     "home": {
       "greeting": "Witaj, {name}",
-      "lead": "{kind, select, yard {Kupuj od punktów skupu, sprzedawaj posortowane bele zakładom recyklingu.} recycler {Kupuj posortowane surowce od sortowni, sprzedawaj surowce wtórne producentom.} manufacturer {Kupuj surowce wtórne od zweryfikowanych zakładów recyklingu.} other {Twoje transakcje w skrócie.}}",
+      "lead": "Zarządzaj zakupami, sprzedażą i zamówieniami materiałów.",
       "buy": "Kupuj",
       "sell": "Sprzedawaj",
       "trades": "Transakcje",
       "statsTitle": "W skrócie",
       "stats": {
         "escrow": "Niezweryfikowane",
-        "escrowHint": "Wymagana jest bramka płatnicza. Płatność nie jest jeszcze dostępna.",
+        "escrowHint": "Płatności firmowe odbywają się przez bramkę płatniczą. Sprawdź zamówienie, aby poznać aktualny stan płatności.",
         "waiting": "Czeka na Ciebie",
         "waitingHint": "{count, plural, =0 {Wszystko zrobione} one {# transakcja wymaga działania} few {# transakcje wymagają działania} many {# transakcji wymaga działania} other {# transakcji wymaga działania}}",
         "listings": "W sprzedaży",
@@ -3054,15 +3055,15 @@
         "offersHint": "W sprzedaży od zakładów recyklingu",
         "completed": "Zakończone w tym miesiącu",
         "completedHint": "Obrót: {amount}",
-        "gatewayPending": "Oczekiwanie na bramkę"
+        "gatewayPending": "Przyjęte zamówienia"
       },
       "waitingTitle": "Czeka na Ciebie",
       "allTrades": "Wszystkie transakcje",
       "caughtUpTitle": "Obecnie nic nie wymaga działania",
       "caughtUpBody": "Nowe zamówienia, płatności i dostawy pojawią się tutaj.",
       "offersTitle": "Najnowsze partie dla Ciebie",
-      "recycledTitle": "Surowce wtórne dla Ciebie",
-      "recycledBody": "Płatki, granulat, papier kraft i wlewki od zweryfikowanych zakładów, gotowe do produkcji.",
+      "recycledTitle": "Oferty materiałów dla Ciebie",
+      "recycledBody": "Przeglądaj zatwierdzonych dostawców. Materiały z recyklingu są wyświetlane jako pierwsze.",
       "seeAll": "Zobacz wszystkie",
       "noOffersTitle": "Obecnie brak partii w sprzedaży",
       "noOffersBody": "Nowe partie pojawią się tutaj po wystawieniu."
@@ -3145,8 +3146,8 @@
       "you": "Płacisz",
       "market": "Rynek",
       "quickLinks": "Skróty",
-      "sell": "Sprzedaj sortowni",
-      "sellHint": "Oferuj zapasy pobliskim sortowniom",
+      "sell": "Sprzedaj firmie przetwarzania wstępnego",
+      "sellHint": "Oferuj zapasy pobliskim firmom przetwarzania wstępnego",
       "prices": "Moje ceny",
       "pricesHint": "Kwota płacona mieszkańcom za kg"
     },
@@ -3251,7 +3252,7 @@
       "atPrice": "Cena rynkowa {price}/kg",
       "noPrice": "Brak dzisiejszej ceny rynkowej",
       "sellTo": {
-        "yard": "Sprzedaj sortowni",
+        "yard": "Sprzedaj firmie przetwarzania wstępnego",
         "recycler": "Sprzedaj zakładowi recyklingu",
         "manufacturer": "Sprzedaj producentowi"
       },
@@ -3260,7 +3261,7 @@
       "emptyBusiness": "Kup na rynku, a materiał pojawi się tutaj.",
       "buy": "Kup materiał",
       "notBusinessTitle": "Tylko dla firm",
-      "notBusinessBody": "Zapasy prowadzą punkty, sortownie, zakłady recyklingu i fabryki."
+      "notBusinessBody": "Zapasy prowadzą punkty, firmy przetwarzania wstępnego, zakłady recyklingu i fabryki."
     },
     "prices": {
       "title": "Moje ceny",
@@ -3348,7 +3349,7 @@
           "third": "Zarządzaj posortowanymi zapasami"
         },
         "yard": {
-          "title": "Twoja sortownia",
+          "title": "Twój obszar przetwarzania wstępnego",
           "first": "Przyjmuj materiały",
           "second": "Sortuj zapasy",
           "third": "Przygotuj partie do wysyłki"
@@ -3507,5 +3508,617 @@
       "resort": "Ośrodek wypoczynkowy",
       "other": "Inny obiekt"
     }
+  },
+  "emailAuth": {
+    "phone": "Telefon",
+    "email": "E-mail",
+    "signin": "Zaloguj się",
+    "signup": "Utwórz konto",
+    "forgot": "Odzyskaj hasło",
+    "name": "Twoje imię",
+    "password": "Hasło",
+    "show": "Pokaż hasło",
+    "hide": "Ukryj hasło",
+    "passwordHint": "Użyj od 12 do 128 znaków.",
+    "unavailable": "Wysyłanie e-maili jest niedostępne. Istniejące konta mogą się logować.",
+    "sent": "Sprawdź skrzynkę. Jeśli konto jest uprawnione, otrzymasz link ważny przez 15 minut.",
+    "resend": "Wyślij weryfikację ponownie",
+    "limited": "Zbyt wiele prób. Spróbuj później.",
+    "unverified": "Zweryfikuj e-mail przed logowaniem.",
+    "credentials": "Sprawdź e-mail i hasło.",
+    "invalidLink": "Link jest błędny lub wygasł. Poproś o nowy.",
+    "failed": "Żądanie nie powiodło się. Spróbuj ponownie.",
+    "reset": "Ustaw nowe hasło",
+    "verify": "Zweryfikuj e-mail",
+    "done": "Gotowe. Zaloguj się, aby kontynuować.",
+    "confirm": "Powtórz hasło",
+    "mismatch": "Hasła nie są zgodne.",
+    "securityHint": "Dodaj kod uwierzytelniający po haśle. Odzyskanie hasła zachowuje tę ochronę.",
+    "backupHint": "Każdy kod odzyskiwania działa raz po podaniu hasła.",
+    "disableHint": "Logowanie hasłem pozostaje aktywne. Kody uwierzytelniania i odzyskiwania przestają działać."
+  },
+  "workspace": {
+    "title": "Przestrzenie i zespół",
+    "choose": "Wybierz przestrzeń",
+    "team": "Zespół",
+    "role": "Rola",
+    "owner": "Właściciel",
+    "admin": "Administrator obszaru",
+    "member": "Członek",
+    "viewer": "Czytelnik",
+    "invite": "Wyślij zaproszenie",
+    "email": "Adres e-mail",
+    "pending": "Oczekujące zaproszenia",
+    "revoke": "Unieważnij",
+    "remove": "Usuń",
+    "empty": "Brak dostępnej przestrzeni.",
+    "error": "Nie udało się zmienić. Sprawdź dostęp i spróbuj ponownie.",
+    "inviteTitle": "Zaproszenie do przestrzeni",
+    "accept": "Przyjmij zaproszenie",
+    "verifyEmail": "Potwierdź zaproszony adres e-mail przed przyjęciem.",
+    "unavailable": "Zaproszenie jest niedostępne. Sprawdź adres e-mail lub poproś o nowe.",
+    "join": "Dołącz do {name} jako {role}.",
+    "readOnly": "Dostęp tylko do odczytu",
+    "confirmRemove": "Usunąć tę osobę z przestrzeni?",
+    "lastOwner": "Zachowaj co najmniej jednego właściciela. Dodaj kolejnego przed zmianą.",
+    "deliveryPending": "E-mail oczekuje",
+    "deliveryAccepted": "Usługa pocztowa przyjęła",
+    "deliveryFailed": "Dostarczenie e-maila niepotwierdzone",
+    "expires": "Wygasa {date}",
+    "emailBody": "Zaproszono Cię do {name}. Otwórz link w ciągu siedmiu dni i zaloguj się tym potwierdzonym adresem e-mail. Zaproszenie jest jednorazowe.",
+    "switchAccount": "Zmień konto",
+    "switchHint": "Wyloguj się, aby zalogować się lub zarejestrować przy użyciu adresu e-mail, na który wysłano zaproszenie.",
+    "invitationLimit": "Osiągnięto limit zaproszeń. Poczekaj przed wysłaniem kolejnego zaproszenia."
+  },
+  "lots": {
+    "title": "Partie i jakość",
+    "lead": "Zapisuj zmierzony materiał, przetwarzanie i fizyczne przekazania.",
+    "evidenceNote": "Te zapisy opisują dowody fizyczne. Nie zmieniają zapasów, płatności, własności prawnej ani certyfikatów.",
+    "notBusiness": "Wybierz aktywną przestrzeń firmy, aby używać zapisów partii.",
+    "readOnly": "Twoja rola w przestrzeni pozwala czytać te zapisy.",
+    "held": "Posiadane partie",
+    "incoming": "Partie przychodzące",
+    "sent": "Historia przekazań",
+    "empty": "Brak zapisów.",
+    "limit": "Wyświetlanych jest tylko pierwszych 100 zapisów.",
+    "declare": "Zgłoś partię",
+    "detail": "Szczegóły partii",
+    "back": "Wszystkie partie",
+    "material": "Kod lub nazwa materiału",
+    "state": "Stan fizyczny",
+    "mass": "Masa (g)",
+    "grams": "{value} g",
+    "integerHint": "Podaj pełne gramy bez części dziesiętnych i separatorów tysięcy.",
+    "sourceReference": "Odniesienie do źródła (opcjonalnie)",
+    "source": "Źródło",
+    "selfDeclared": "Deklaracja własna",
+    "transformed": "Z przekształcenia",
+    "initial": "Masa początkowa",
+    "remaining": "Pozostała masa",
+    "available": "Dostępna",
+    "in_transit": "W transporcie",
+    "exhausted": "Wyczerpana",
+    "save": "Zapisz wpis",
+    "saving": "Zapisywanie…",
+    "saved": "Wpis zapisany.",
+    "cancel": "Anuluj",
+    "close": "Zamknij",
+    "required": "Wypełnij każde wymagane pole.",
+    "invalidInput": "Sprawdź wartości. Użyj pełnych gramów i wypełnij wymagane pola.",
+    "genericError": "Nie udało się zapisać wpisu. Wartości zachowano. Spróbuj ponownie.",
+    "accessChanged": "Ta partia lub Twój dostęp do przestrzeni uległy zmianie. Odśwież listę.",
+    "balanceError": "Masa wejściowa musi być równa sumie wyjść, zanieczyszczeń i strat procesu.",
+    "weightDispute": "Masa odebrana różni się od wysłanej. Odbioru nie zapisano. Sprawdź pomiar z nadawcą.",
+    "approvalError": "Inny właściciel musi zatwierdzić korektę, gdy partia znajduje się w Twojej firmie.",
+    "transform": "Zapisz przekształcenie",
+    "inputMass": "Masa wejściowa (g)",
+    "contamination": "Zanieczyszczenia (g)",
+    "processLoss": "Straty procesu (g)",
+    "outputs": "Partie wyjściowe",
+    "outputNumber": "Wyjście {number}",
+    "addOutput": "Dodaj wyjście",
+    "remove": "Usuń",
+    "balance": "Rozliczona masa: {value}",
+    "transformHint": "Zapisz każde wyjście i stratę. Masa wejściowa jest odejmowana od tej partii i tworzy powiązane partie wyjściowe.",
+    "dispatch": "Wyślij partię",
+    "dispatchHint": "Cała pozostała partia trafi do wybranej firmy. Sprawdź odbiorcę przed zapisaniem.",
+    "receiver": "Odbiorca",
+    "city": "Miasto",
+    "businessKind": "Typ firmy",
+    "chooseBusiness": "Wybierz firmę",
+    "searchBusinesses": "Znajdź firmy",
+    "directoryNote": "Katalog pokazuje aktywne firmy. Nie potwierdza ich zdolności przetwarzania.",
+    "directoryEmpty": "Brak pasującej firmy. Sprawdź miasto i typ firmy.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Firma przetwarzania wstępnego",
+    "recycler": "Recykler",
+    "manufacturer": "Producent",
+    "receive": "Odbierz partię",
+    "receivedMass": "Odebrana masa (g)",
+    "receiveHint": "Zmierz odebraną partię. Ten formularz nie pozwala zaakceptować innej masy.",
+    "pendingNote": "Widać tylko tę wysyłkę. Pełna historia partii będzie dostępna po odbiorze.",
+    "custody": "Historia pieczy",
+    "dispatched": "Wysłana",
+    "received": "Odebrana",
+    "handoff": "{from} → {to}",
+    "from": "Od {name}",
+    "to": "Do {name}",
+    "transformations": "Przekształcenia",
+    "inspection": "Zapisz kontrolę",
+    "inspections": "Dowody kontroli",
+    "inspectionNote": "Zapisz rzeczywistą specyfikację, metodę próbkowania i wyniki pomiarów. Decyzja dotyczy tylko tej kontroli; nie jest oceną ani certyfikatem platformy.",
+    "specification": "Odniesienie do specyfikacji",
+    "version": "Wersja specyfikacji",
+    "sampleMethod": "Metoda próbkowania",
+    "buyer": "Zakres kupującego (opcjonalnie)",
+    "addBuyer": "Wskaż kupującego",
+    "noBuyer": "Nie wskazano kupującego",
+    "results": "Wyniki pomiarów",
+    "resultNumber": "Wynik {number}",
+    "parameter": "Parametr",
+    "unit": "Jednostka",
+    "value": "Wartość zmierzona",
+    "addResult": "Dodaj wynik",
+    "decision": "Decyzja kontroli",
+    "accepted": "Przyjęto",
+    "rejected": "Odrzucono",
+    "conditional": "Warunkowo",
+    "evidenceReference": "Odniesienie do dowodu (opcjonalnie)",
+    "correct": "Zaproponuj korektę",
+    "correctionHint": "Oryginał pozostaje widoczny. Zakres kupującego i specyfikacja nie mogą się zmienić. Inny właściciel musi zatwierdzić korektę.",
+    "reason": "Powód korekty",
+    "approve": "Zatwierdź korektę",
+    "pendingApproval": "Oczekuje na oddzielne zatwierdzenie",
+    "approved": "Korekta zatwierdzona",
+    "superseded": "Zastąpiono zatwierdzoną korektą",
+    "original": "Pierwotna kontrola",
+    "previousResult": "Poprzednia kontrola",
+    "recordedBy": "Firma kontrolująca: {name}",
+    "loadError": "Nie udało się wczytać zapisów. Spróbuj ponownie.",
+    "retry": "Ponów",
+    "streamClass": "Strumień wyjściowy",
+    "handlingClass": "Klasyfikacja postępowania",
+    "streams": {
+      "main_product": "Produkt główny",
+      "saleable_byproduct": "Zbywalny produkt uboczny",
+      "recoverable_waste": "Odpady odzyskiwalne",
+      "residual_waste": "Odpady resztkowe",
+      "unspecified": "Nie określono"
+    },
+    "handling": {
+      "non_hazardous": "Inny niż niebezpieczny",
+      "controlled": "Kontrolowany",
+      "unassessed": "Nie oceniono"
+    },
+    "facility": "Zakład",
+    "processKind": "Proces",
+    "noFacility": "Nie wybrano zakładu",
+    "controlledBlocked": "Materiał kontrolowany lub resztkowy wymaga udokumentowanego zagospodarowania. Nie podlega zwykłej wysyłce ani przekształceniu.",
+    "recordDisposition": "Zapisz zagospodarowanie",
+    "destinationReference": "Odnośnik miejsca docelowego",
+    "authorisationReference": "Odnośnik zezwolenia",
+    "manifestReference": "Odnośnik dokumentu przewozowego",
+    "dispositions": "Historia zagospodarowania",
+    "dispositionHint": "Zapisz zmierzoną masę oraz rzeczywiste odnośniki miejsca docelowego, zezwolenia i dokumentu przewozowego. Zmniejsza to pozostałą masę partii. Nie weryfikuje zezwolenia ani nie tworzy zbywalnego zapasu.",
+    "inputs": "Partie wejściowe",
+    "additionalInputs": "Inne partie wejściowe",
+    "addInput": "Dodaj partię wejściową",
+    "chooseInput": "Wybierz partię wejściową",
+    "combinedInput": "Łączna masa wejściowa",
+    "multiInputHint": "Łącz tylko zmierzony materiał pod swoją opieką. Każda ilość jest zużywana z własnej partii. To zapis dowodu przetwarzania, który nie dodaje zapasu."
+  },
+  "evidence": {
+    "title": "Odwołania do dokumentów",
+    "lead": "Zapisuj zgłoszone odwołania. Luma nie weryfikuje ani nie wystawia tych dokumentów.",
+    "record": "Dodaj odwołanie",
+    "correct": "Zastąp odwołanie",
+    "replacement": "Zastępuje: {reference}",
+    "reference": "Odwołanie do dokumentu",
+    "kind": "Typ dokumentu",
+    "issuer": "Wystawca",
+    "issuerName": "Nazwa wystawcy",
+    "trade": "Powiązana transakcja",
+    "none": "Bez transakcji",
+    "unverified": "Zgłoszone · niezweryfikowane",
+    "gst_invoice": "Faktura GST",
+    "eway_bill": "Dokument e-way",
+    "cpcb_epr_certificate": "Certyfikat CPCB EPR",
+    "pollution_consent": "Zgoda środowiskowa",
+    "external_authority": "Organ wystawiający",
+    "external_organization": "Organizacja wystawiająca",
+    "trade_seller": "Sprzedawca",
+    "trade_buyer": "Kupujący",
+    "correctionHint": "Oryginał pozostaje widoczny. Zapisz nowe odwołanie, aby go zastąpić."
+  },
+  "accountPhone": {
+    "title": "Potwierdź numer telefonu",
+    "description": "Dodaj własny numer do odbiorów i płatności. Konto e-mail pozostaje oddzielne od innych kont. Nadal loguj się przez e-mail.",
+    "verified": "Numer telefonu potwierdzony",
+    "unavailable": "Weryfikacja będzie dostępna po skonfigurowaniu wysyłania SMS-ów.",
+    "inUse": "Nie można dodać tego numeru. Użyj numeru niepowiązanego z innym kontem.",
+    "unsupported": "Nie można tutaj zmienić numeru telefonu tego konta."
+  },
+  "sandboxPayment": {
+    "title": "Płatność testowa",
+    "note": "Tylko test. Bez rzeczywistej płatności, rozliczenia ani zwrotu. Transakcja pozostaje wstrzymana.",
+    "open": "Otwórz test",
+    "unavailable": "Płatność testowa jest niedostępna.",
+    "pending": "Oczekiwanie na potwierdzenie serwera.",
+    "collected": "Testowe pobranie potwierdzone.",
+    "failed": "Nie udało się otworzyć płatności. Spróbuj ponownie.",
+    "review": "Wymagana weryfikacja serwera.",
+    "liveTitle": "Zapłać przez bramkę",
+    "liveNote": "Zapłać uzgodnioną kwotę zamówienia przez Cashfree. Wymagane jest potwierdzenie dostawcy usługi; zamknięcie okna płatności jej nie potwierdza.",
+    "liveOpen": "Otwórz bezpieczną płatność",
+    "liveCollected": "Płatność potwierdzona przez dostawcę usługi."
+  },
+  "industry": {
+    "title": "Odnośniki branżowe",
+    "lead": "Przeszukaj dostarczony skoroszyt. Te dane są niezweryfikowane i nie zezwalają na handel ani przetwarzanie materiałów.",
+    "sourceNote": "Tekst źródłowy jest wyświetlany w oryginalnym języku angielskim skoroszytu.",
+    "sectors": "Odnośniki sektorowe",
+    "industries": "Macierz branżowa",
+    "lifecycles": "Cykl życia materiału",
+    "byproducts": "Przykłady produktów ubocznych",
+    "matches": "Pasujące odnośniki: {count}",
+    "previous": "Poprzednie",
+    "next": "Następne",
+    "select": "Wybierz odnośnik",
+    "selected": "Wybrany odnośnik",
+    "clear": "Wyczyść odnośnik",
+    "detailLabels": {
+      "annexure": "Załącznik",
+      "category": "Kategoria",
+      "division": "Wydział",
+      "industryGroup": "Grupa branżowa",
+      "inputs": "Materiały wejściowe",
+      "products": "Produkty",
+      "byproducts": "Produkty uboczne",
+      "recoverableWaste": "Odpady odzyskiwalne",
+      "residualWaste": "Odpady resztkowe",
+      "nextUser": "Następny użytkownik",
+      "suggestedFlow": "Sugerowany przepływ",
+      "materialState": "Stan materiału",
+      "note": "Uwaga",
+      "route": "Ścieżka",
+      "qualityAttributes": "Cechy jakościowe",
+      "reportedCommercialStatus": "Zgłoszony status handlowy"
+    },
+    "view": "Zobacz odnośnik",
+    "empty": "Brak pasujących odnośników."
+  },
+  "facility": {
+    "title": "Zakłady i procesy",
+    "lead": "Zapisz lokalizacje i procesy deklarowane przez firmę. Profil nie weryfikuje zakładu ani nie zezwala na handel materiałami.",
+    "add": "Dodaj zakład",
+    "edit": "Edytuj zakład",
+    "name": "Nazwa zakładu",
+    "siteReference": "Odnośnik lokalizacji",
+    "sector": "Odnośnik branżowy (opcjonalny)",
+    "capabilities": "Deklarowane procesy",
+    "readOnly": "Tylko właściciele i administratorzy obszaru roboczego mogą zmieniać zakłady.",
+    "processNote": "To samodzielnie deklarowane możliwości, a nie zweryfikowane zezwolenia.",
+    "processKinds": {
+      "sorting": "Sortowanie",
+      "baling": "Belowanie",
+      "shredding": "Rozdrabnianie",
+      "stripping": "Usuwanie izolacji",
+      "washing": "Mycie",
+      "granulating": "Granulowanie",
+      "compounding": "Komponowanie",
+      "recovery": "Odzysk",
+      "manufacturing": "Produkcja",
+      "residual_handling": "Obsługa pozostałości"
+    },
+    "empty": "Nie zapisano jeszcze zakładów.",
+    "registration": {
+      "title": "Odnośniki zezwoleń i rejestracji",
+      "lead": "Tylko zgłoszone odnośniki. Daty nie potwierdzają zgody ani nie odblokowują handlu.",
+      "add": "Dodaj odnośnik",
+      "correct": "Dodaj korektę",
+      "reference": "Odnośnik",
+      "issuedAt": "Data wydania",
+      "validUntil": "Ważne do",
+      "empty": "Nie zapisano jeszcze odnośników.",
+      "current": "W zgłoszonym okresie",
+      "expired": "Po zgłoszonym terminie ważności",
+      "superseded": "Zastąpiony późniejszym odnośnikiem",
+      "kind": "Typ odnośnika",
+      "kinds": {
+        "consent_to_operate": "Zgoda na eksploatację",
+        "consent_to_establish": "Zgoda na utworzenie",
+        "epr_registration": "Rejestracja EPR",
+        "waste_authorisation": "Zezwolenie odpadowe",
+        "other": "Inny odnośnik"
+      },
+      "not_yet_current": "Przed zgłoszoną datą wydania"
+    }
+  },
+  "marketSpecification": {
+    "title": "Klasa i specyfikacja",
+    "enable": "Dodaj klasę i specyfikację",
+    "grade": "Klasa materiału",
+    "specification": "Specyfikacja jakości kupującego",
+    "lot": "Ostatnia pasująca partia (opcjonalna)",
+    "noLot": "Brak powiązanej partii",
+    "source": "Deklaracja sprzedawcy. Nie weryfikuje jakości ani nie rezerwuje partii dowodowej.",
+    "lotState": "Zapisany stan partii"
+  },
+  "stockIntake": {
+    "title": "Zapas produktów ubocznych własnej produkcji",
+    "add": "Zarejestruj przyjęcie zapasu",
+    "lead": "Zarejestruj zważone produkty uboczne tego producenta. Zapis dodaje zapas na podstawie zadeklarowanych danych produkcji i ważenia. Partie dowodowe nie dodają zapasu.",
+    "reference": "Unikalny numer przyjęcia",
+    "source": "Numer partii produkcyjnej",
+    "weighing": "Numer dokumentu ważenia",
+    "date": "Data produkcji",
+    "confirm": "Potwierdzam, że jest to nasz własny produkt uboczny, a ta zważona ilość nie została wcześniej dodana do zapasu.",
+    "empty": "Nie zarejestrowano przyjęć produkcyjnych.",
+    "noMaterials": "Brak zatwierdzonych niegroźnych materiałów ubocznych dla tej firmy. Poproś administratora o sprawdzenie materiału przed dodaniem zapasu.",
+    "conflict": "Ten numer przyjęcia zawiera już inne dane. Sprawdź pierwotny zapis przed kontynuowaniem.",
+    "history": "Zarejestrowane przyjęcia zapasu",
+    "more": "Wczytaj więcej przyjęć",
+    "note": "To deklaracje producenta, a nie niezależna weryfikacja jakości, własności lub zgodności. Zapisów nie można edytować po zapisaniu."
+  },
+  "tradeLifecycle": {
+    "title": "Płatność i dostawa",
+    "collectionLabel": "Płatność kupującego",
+    "settlementLabel": "Rozliczenie ze sprzedawcą",
+    "refundLabel": "Zwrot pieniędzy",
+    "state": {
+      "awaiting_payment": "Oczekiwanie na płatność przez bramkę",
+      "authorized": "Płatność potwierdzona; gotowe do wysyłki",
+      "dispatched": "Wysłano; oczekiwanie na odbiór",
+      "received": "Materiał odebrany",
+      "cancellation_pending": "Anulowanie jest sprawdzane",
+      "cancelled": "Zamówienie anulowane",
+      "hold": "Zamówienie wymaga sprawdzenia"
+    },
+    "collection": {
+      "pending": "Niepotwierdzone",
+      "sandbox_confirmed": "Tylko środowisko testowe; bez rzeczywistych środków",
+      "live_confirmed": "Potwierdzone przez dostawcę usługi",
+      "review": "Płatność wymaga sprawdzenia"
+    },
+    "settlement": {
+      "pending": "Niepotwierdzone",
+      "settled": "Potwierdzone przez dostawcę usługi",
+      "reversed": "Rozliczenie cofnięte",
+      "review": "Rozliczenie wymaga sprawdzenia"
+    },
+    "refund": {
+      "none": "Nie zarejestrowano zwrotu",
+      "pending": "Zwrot w toku",
+      "refunded": "Potwierdzone przez dostawcę usługi",
+      "review": "Zwrot wymaga sprawdzenia"
+    },
+    "action": {
+      "dispatch": "Zarejestruj wysyłkę",
+      "receive": "Potwierdź odbiór",
+      "cancel": "Poproś o anulowanie"
+    },
+    "policyMissing": "Rzeczywiste płatności wymagają zatwierdzonych warunków i konfiguracji dostawcy usługi.",
+    "reviewRequired": "Administrator musi sprawdzić dowody płatności, zanim zamówienie będzie mogło być kontynuowane.",
+    "fullQuantity": "Potwierdź pełną uzgodnioną ilość: {weight}. Jeśli ilość lub jakość się różni, przerwij i skontaktuj się z administratorem.",
+    "cancelNote": "Anulowanie zwalnia zapas dopiero, gdy serwer potwierdzi, że żadna płatność nie może już zostać zakończona. Oczekujący wniosek nie oznacza anulowania zamówienia.",
+    "reason": "Powód",
+    "reference": "Numer wysyłki lub odbioru",
+    "confirm": "Potwierdź",
+    "back": "Wróć",
+    "saved": "Zapis zamówienia zaktualizowany",
+    "failed": "Aktualizacja nie została ukończona. Sprawdź bieżący stan i spróbuj ponownie. Twój numer pozostaje zapisany.",
+    "actionUnavailable": "Ta czynność nie jest już dostępna. Sprawdź aktualny stan zamówienia."
+  },
+  "sourcing": {
+    "close": "Zamknij",
+    "material": "Materiał",
+    "save": "Zapisz wpis",
+    "saved": "Wpis zapisany.",
+    "reference": "Odnośnik",
+    "buying": "Kupowanie",
+    "active": "Aktywny",
+    "decline": "Odrzuć",
+    "title": "Pozyskiwanie materiałów",
+    "lead": "Planuj zapotrzebowanie materiałowe, zapisuj swoje decyzje dotyczące dostawców i uzgadniaj indywidualne zamówienia na dostawy.",
+    "boundary": "Te rekordy nie tworzą transakcji zakupu. Nie rezerwują zapasów i nie potwierdzają płatności. Dokonuj zakupów, korzystając z rynku i przepływu pracy związanych z płatnościami.",
+    "board": "Tablica żądań",
+    "plans": "Powtarzający się popyt",
+    "qualifications": "Decyzje dostawców",
+    "agreements": "Stałe umowy",
+    "post": "Opublikuj zapotrzebowanie materiałowe",
+    "createPlan": "Utwórz harmonogram",
+    "publish": "Opublikuj kolejne żądanie",
+    "supplier": "Dostawca",
+    "choose": "Wybierz opcję",
+    "quantity": "Ilość (g)",
+    "area": "Obszar dostawy",
+    "specification": "Specyfikacja pisemna",
+    "neededBy": "Wymagany termin dostawy",
+    "cadence": "Powtórz interwał",
+    "weekly": "Co 7 dni",
+    "monthly": "Co 30 dni",
+    "planHint": "Każde wystąpienie zostanie opublikowane dopiero po wybraniu opcji Opublikuj następne żądanie. Nie jest tworzone żadne automatyczne zamówienie.",
+    "myDemand": "Moje żądanie",
+    "availableDemand": "Zapotrzebowanie ze strony kupujących",
+    "empty": "Nie ma jeszcze żadnych rekordów.",
+    "limited": "Wyświetlany jest tylko zbiór ograniczony. Starsze zapisy pozostają w historii audytów.",
+    "loadMore": "Załaduj więcej",
+    "invalid": "Sprawdź wymagane pola, daty i ilości całkowite.",
+    "failed": "Nie udało się ukończyć tej akcji. Twoja wersja robocza zostanie zachowana. Sprawdź aktualne uprawnienia i uprawnienia, a następnie spróbuj ponownie.",
+    "qualify": "Zapisz decyzję dostawcy",
+    "sample": "Odniesienie do próbki lub kontroli",
+    "decision": "Twoja decyzja",
+    "reason": "Powód decyzji",
+    "validUntil": "Decyzja ważna do",
+    "privateDecision": "To jest decyzja dotycząca zaopatrzenia podjęta przez Twoją organizację. Nie jest to zatwierdzenie platformy ani certyfikacja organów regulacyjnych. Historia decyzji jest prywatna i dostępna w obszarze roboczym kupującego. Najnowsza decyzja dotycząca dostawcy i materiału kontroluje nowe umowy i wydania; wcześniejsze wpisy pozostają w historii.",
+    "pending": "Oczekujące",
+    "approved": "Zatwierdzone przez kupującego",
+    "rejected": "Odrzucony przez kupującego",
+    "propose": "Zaproponuj porozumienie",
+    "price": "Uzgodniona cena (paise/kg)",
+    "startsOn": "Zaczyna się",
+    "endsOn": "Kończy się",
+    "agreementHint": "Wymagana jest zatwierdzona aktualna decyzja dostawcy dotycząca tej dokładnej specyfikacji. Dostawca musi osobno potwierdzić propozycję.",
+    "supplying": "Zaopatrywanie",
+    "requested": "Oczekiwanie na odpowiedź dostawcy",
+    "acknowledged": "Uznane przez dostawcę",
+    "declined": "Odrzucone przez dostawcę",
+    "closed": "Zamknięte",
+    "acknowledge": "Potwierdź potwierdzenie",
+    "responseReference": "Odniesienie do odpowiedzi",
+    "release": "Zapytaj o ilość dostaw",
+    "releaseHint": "Zażądaj części uzgodnionej ilości. Potwierdzenie dostawcy rejestruje wyłącznie zamiar; nie przenosi materiałów ani pieniędzy.",
+    "releases": "Indywidualne zapytania ofertowe",
+    "history": "Historia umowy",
+    "view": "Przeglądaj żądania dostaw i historię",
+    "closeAgreement": "Zamknij tę umowę",
+    "closeHint": "Zapobiega to składaniu nowych wniosków o dostawy w ramach umowy. Istniejące żądania i ich historia pozostają rejestrowane.",
+    "state": "Stan zapisu",
+    "nextDate": "Data następnego zapotrzebowania",
+    "readOnly": "Twoja rola w obszarze roboczym może wyświetlać te rekordy, ale nie może ich zmieniać.",
+    "published": "Opublikowano wystąpienie zapotrzebowania.",
+    "event": {
+      "proposed": "Zaproponowano porozumienie",
+      "acknowledged": "Umowa uznana",
+      "declined": "Umowa odrzucona",
+      "closed": "Umowa zamknięta",
+      "release_requested": "Żądana ilość dostawy",
+      "release_acknowledged": "Żądanie dostawy potwierdzone",
+      "release_declined": "Żądanie dostawy zostało odrzucone"
+    },
+    "reschedule": "Przesuń datę następnego zapotrzebowania",
+    "rescheduleHint": "Wybierz późniejszą aktualną datę. Poprzednie publikacje pozostają bez zmian. Nie powoduje to publikowania zapotrzebowania ani tworzenia zamówienia.",
+    "overdue": "Ten zaplanowany termin minął. Przesuń następną datę przed publikacją."
+  },
+  "operations": {
+    "validUntil": "Ważne do",
+    "decisions": {
+      "revoked": "Unieważniony",
+      "approved": "Zatwierdzone",
+      "rejected": "Odrzucony"
+    },
+    "reference": "Odnośnik",
+    "remove": "Usuń",
+    "save": "Zapisz wpis",
+    "saved": "Wpis zapisany.",
+    "standards": "Standardy materiałowe",
+    "standardsHint": "Wyszukaj sprawdzone definicje. Stopień lub sektor nie przyznaje pozwolenia na obsługę ani nie potwierdza jakości.",
+    "workspaceRequired": "Aby kontynuować, wybierz zatwierdzony biznesowy obszar roboczy.",
+    "definitions": "Definicje",
+    "reviews": "Przeglądy zakresu",
+    "destinations": "Kontrolowane miejsca docelowe",
+    "search": "Szukaj według materiału, stanu fizycznego, gatunku lub specyfikacji",
+    "empty": "Nie ma jeszcze żadnych rekordów.",
+    "truncated": "Wynik jest ograniczony. Sprecyzuj wyszukiwanie lub sprawdź najnowsze rekordy.",
+    "reviewHint": "Są to recenzje dostarczonego dowodu przez administratora. Zmiana obiektu, zastąpiona rejestracja, wygaśnięcie lub unieważnienie powodują unieważnienie dotychczasowego zakresu.",
+    "destinationHint": "Przed kontrolowanym przekazaniem sprawdź zakres rzeczowy i aktualne uprawnienia. Wpis w katalogu nie stanowi dowodu usunięcia ani przesłania portalu.",
+    "current": "Aktualny",
+    "historical": "Nieaktualne",
+    "production": "Zapisy produkcyjne",
+    "productionHint": "Połącz receptury i zadeklarowane wejścia z mierzoną transformacją i kontrolą jej wyników. Frakcja pochodząca z recyklingu opisuje deklarowany wsad, a nie certyfikowaną zawartość produktu. Zapisy te nie powodują zmiany stanu magazynowego.",
+    "recipes": "Formuły produkcyjne",
+    "batches": "Partie produkcyjne",
+    "newRecipe": "Rekordowa formuła produkcji",
+    "newBatch": "Rekordowa partia",
+    "version": "Wersja nagrana",
+    "name": "Nazwa przepisu",
+    "instructions": "Instrukcje procesu",
+    "ingredients": "Składniki",
+    "ingredient": "Nazwa składnika",
+    "basisPoints": "Proporcja składników w punktach bazowych (100 = 1%)",
+    "additive": "Dodatek",
+    "addIngredient": "Dodaj składnik",
+    "recipeHint": "Użyj nowej wersji do korekty. Udziały składników muszą wynosić łącznie 10 000 punktów bazowych. Wszystkie odmierzone składniki i dodatki muszą zostać uwzględnione w powiązanej transformacji.",
+    "failed": "Nie udało się zapisać. Sprawdź wartości, połączone rekordy i dostęp do obszaru roboczego, a następnie spróbuj ponownie.",
+    "invalid": "Sprawdź pola i dokładne sumy gramów.",
+    "choose": "Wybierz",
+    "recipe": "Wersja formuły produkcyjnej",
+    "transformation": "Zmierzona transformacja",
+    "inspection": "Kontrola wyników",
+    "recycledGrams": "Deklarowany wsad z recyklingu (w gramach)",
+    "inputEvidence": "Wprowadź odniesienie do pochodzenia",
+    "batchEvidence": "Odniesienie do dowodów produkcji",
+    "inputFraction": "Zadeklarowany udział surowców pochodzących z recyklingu",
+    "inputTotal": "Całkowity wkład",
+    "outputTotal": "Zmierzona moc wyjściowa",
+    "batchHint": "Wybierz istniejącą transformację z kontrolą jej wyników. Zadeklaruj gramy poddane recyklingowi dla każdego wkładu i podaj odniesienie do dowodów. Jest to deklaracja, którą można przypisać, a nie niezależna certyfikacja."
+  },
+  "logistics": {
+    "title": "Plany tras i ładunków",
+    "add": "Utwórz plan",
+    "correct": "Zapisz nową wersję",
+    "titleLabel": "Nazwa planu",
+    "reference": "Unikalny numer planu",
+    "vehicle": "Oznaczenie pojazdu",
+    "capacity": "Ładowność pojazdu (g)",
+    "origin": "Miejsce startu",
+    "stop": "Przystanek {number}",
+    "addStop": "Dodaj przystanek",
+    "latitude": "Szerokość geograficzna",
+    "longitude": "Długość geograficzna",
+    "entered": "Zachowaj wpisaną kolejność",
+    "geometric": "Najbliższy następny przystanek (linia prosta)",
+    "distance": "Odległość w linii prostej: {value} m",
+    "archive": "Archiwizuj plan",
+    "archived": "Zarchiwizowany",
+    "history": "Historia wersji",
+    "revision": "Wersja {number}",
+    "reason": "Powód tego zapisu",
+    "conflict": "Plan lub uprawnienia się zmieniły. Odśwież przed zapisaniem.",
+    "invalid": "Sprawdź współrzędne, materiał, pełne gramy i ładowność. Suma ładunków musi mieścić się w pojeździe.",
+    "lead": "Tylko planowanie ręczne. Ładunki ze wszystkich przystanków są sumowane. Kolejność w linii prostej nie oznacza trasy drogowej, czasu przyjazdu ani wysyłki. Lokalizacje pochodzą z wpisanych danych, nie z metadanych zdjęć.",
+    "empty": "Nie ma jeszcze planów tras."
+  },
+  "qualityDocuments": {
+    "businessRequired": "Wybierz aktywną przestrzeń firmy, aby używać zapisów partii.",
+    "inspections": "Dowody kontroli",
+    "readOnly": "Twoja rola w przestrzeni pozwala czytać te zapisy.",
+    "empty": "Brak zapisów.",
+    "inspection": "Dowody kontroli",
+    "kind": "Typ dokumentu",
+    "accepted": "Przyjęto",
+    "rejected": "Odrzucono",
+    "conditional": "Warunkowo",
+    "note": "Powód korekty",
+    "record": "Zapisz wpis",
+    "error": "Coś poszło nie tak",
+    "limit": "Wyświetlanych jest tylko pierwszych 100 zapisów.",
+    "title": "Dokumenty jakości",
+    "own": "Twoje dokumenty",
+    "incoming": "Udostępnione Twojej firmie",
+    "decisions": "Historia decyzji kupującego",
+    "upload": "Dołącz dokument",
+    "coa": "Certyfikat analizy",
+    "photo": "Zdjęcie jakości",
+    "sample_report": "Raport próbki",
+    "file": "Plik",
+    "shareBuyer": "Udostępnij ten dokument: {name}",
+    "download": "Pobierz",
+    "shared": "Udostępniono wskazanemu kupującemu",
+    "private": "Tylko firma",
+    "withdrawn": "Dostęp wycofany",
+    "withdraw": "Wycofaj dostęp",
+    "decision": "Decyzja kupującego",
+    "lead": "Zapisz rzeczywistą specyfikację, metodę próbkowania i wyniki pomiarów. Decyzja dotyczy tylko tej kontroli; nie jest oceną ani certyfikatem platformy. Te zapisy opisują dowody fizyczne. Nie zmieniają zapasów, płatności, własności prawnej ani certyfikatów.",
+    "fileHint": "PDF, JPEG, PNG lub WebP, do 2 MiB. Używaj spłaszczonych PDF. Pliki są pobierane bez podglądu. Brak niezależnej weryfikacji i skanowania złośliwego oprogramowania. Usuń prywatne dane przed udostępnieniem."
+  },
+  "auditReports": {
+    "title": "Udostępnione raporty audytu",
+    "create": "Udostępnij raport",
+    "recipient": "Zatwierdzony odbiorca",
+    "purpose": "Cel przeglądu",
+    "expiry": "Koniec dostępu (czas lokalny)",
+    "sent": "Raporty udostępnione przez Ciebie",
+    "received": "Raporty udostępnione Tobie",
+    "empty": "Brak raportów.",
+    "unavailable": "Dostęp wygasł, wycofano go lub jest niedostępny.",
+    "open": "Czytaj raport",
+    "revoke": "Odwołaj dostęp",
+    "inspection": "Dowody kontroli",
+    "error": "Coś poszło nie tak",
+    "limit": "Wyświetlanych jest tylko pierwszych 100 zapisów.",
+    "lead": "Czytaj stałą kopię dowodów dla wskazanego celu. Zatwierdzenie odbiorcy nie daje dostępu do innych danych firmowych.",
+    "warning": "Udostępniaj tylko wybraną kontrolę i zaznaczone pliki. Najpierw usuń dane osobowe. Dostęp do 90 dni, z możliwością odwołania; pobranych kopii nie można odebrać.",
+    "snapshot": "Stała kopia deklaracji firmy kontrolującej. To nie certyfikat ani niezależna weryfikacja."
   }
 }

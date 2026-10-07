@@ -36,6 +36,18 @@ async function demoWorld() {
   const t = convexTest(schema, modules);
   registerAuth(t);
   await seedDemo(t);
+  // This suite also exercises iron offers. Give its buyer explicit material
+  // scope instead of relying on the former regular-chain family bypass.
+  await t.run(async (ctx) => {
+    const buyer = await ctx.db
+      .query("orgs")
+      .withIndex("by_slug", (q) => q.eq("slug", "peenya-paper-plastic-yard"))
+      .unique();
+    if (!buyer) throw new Error("Missing test buyer");
+    await ctx.db.patch("orgs", buyer._id, {
+      families: ["paper", "plastic", "metal"],
+    });
+  });
   return t;
 }
 
@@ -114,6 +126,187 @@ async function auditActions(t: Test, entityTable: string, id: string) {
 }
 
 describe("browse", () => {
+  it("freezes a seller specification into the order and rechecks linked lot custody before acceptance", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, SHOP);
+    const yard = await signInAs(t, YARD);
+    const lotId = await shop.mutation(api.traceability.declareLot, {
+      materialCode: "PLASTIC-PET",
+      state: "Hot washed",
+      grams: 1000,
+      streamClass: "recoverable_waste",
+      handlingClass: "non_hazardous",
+    });
+    const listingId = await shop.mutation(api.market.createListing, {
+      materialCode: "PLASTIC-PET",
+      grams: 1000,
+      askPaisePerKg: 2500,
+      specification: {
+        grade: "Clear PET",
+        specification: "Buyer specification Q1",
+        lotId,
+      },
+    });
+    const tradeId = await yard.mutation(api.market.requestTrade, {
+      listingId,
+      grams: 1000,
+    });
+    const order = await tradeOf(yard, "buying", tradeId);
+    expect(order.specification).toEqual({
+      grade: "Clear PET",
+      specification: "Buyer specification Q1",
+      lotId,
+      lotState: "Hot washed",
+      source: "seller_declared",
+    });
+    const destination = await t.run(async (ctx) => {
+      const row = await ctx.db
+        .query("orgs")
+        .withIndex("by_slug", (q) => q.eq("slug", "peenya-paper-plastic-yard"))
+        .unique();
+      if (!row) throw new Error("Missing buyer");
+      return row._id;
+    });
+    await shop.mutation(api.traceability.dispatch, {
+      lotId,
+      receiverOrgId: destination,
+    });
+    await expect(
+      shop.mutation(api.market.act, { tradeId, action: "accept" }),
+    ).rejects.toThrow("LOT_NOT_ELIGIBLE");
+    const retained = await tradeOf(yard, "buying", tradeId);
+    expect(retained.status).toBe("requested");
+    expect(retained.specification).toEqual(order.specification);
+  });
+
+  it("rejects another business's or controlled lot as sale evidence and does not create inventory from declarations", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, SHOP);
+    const yard = await signInAs(t, YARD);
+    const before = await stockOf(t, "ramesh-kabadi-store", "PLASTIC-PET");
+    const foreignLot = await yard.mutation(api.traceability.declareLot, {
+      materialCode: "PLASTIC-PET",
+      state: "Sorted",
+      grams: 1000,
+    });
+    const controlledLot = await shop.mutation(api.traceability.declareLot, {
+      materialCode: "PLASTIC-PET",
+      state: "Residue",
+      grams: 1000,
+      handlingClass: "controlled",
+    });
+    const offer = {
+      materialCode: "PLASTIC-PET",
+      grams: 1000,
+      askPaisePerKg: 2500,
+    };
+    await expect(
+      shop.mutation(api.market.createListing, {
+        ...offer,
+        specification: { grade: "PET", specification: "Q1", lotId: foreignLot },
+      }),
+    ).rejects.toThrow("LOT_NOT_ELIGIBLE");
+    await expect(
+      shop.mutation(api.market.createListing, {
+        ...offer,
+        specification: {
+          grade: "PET",
+          specification: "Q1",
+          lotId: controlledLot,
+        },
+      }),
+    ).rejects.toThrow("CONTROLLED_ROUTE_REQUIRED");
+    await expect(
+      shop.mutation(api.market.createListing, {
+        ...offer,
+        specification: { grade: " ", specification: "Q1" },
+      }),
+    ).rejects.toThrow("INVALID_LABEL");
+    const choices = await shop.query(api.market.listingLotOptions, {
+      materialCode: "PLASTIC-PET",
+    });
+    expect(choices.map((row) => row.id)).not.toContain(foreignLot);
+    expect(choices.map((row) => row.id)).not.toContain(controlledLot);
+    expect(await stockOf(t, "ramesh-kabadi-store", "PLASTIC-PET")).toBe(before);
+  });
+
+  it("rechecks an ordinary buyer's material scope when accepting a pending request", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, SHOP);
+    const yard = await signInAs(t, YARD);
+    const listing = await lotOf(yard, RAMESH, "PAPER-NEWS");
+    const tradeId = await yard.mutation(api.market.requestTrade, {
+      listingId: listing.id,
+      grams: 1000,
+    });
+    await t.run(async (ctx) => {
+      const buyer = await ctx.db
+        .query("orgs")
+        .withIndex("by_slug", (q) => q.eq("slug", "peenya-paper-plastic-yard"))
+        .unique();
+      if (!buyer) throw new Error("Missing test buyer");
+      await ctx.db.patch("orgs", buyer._id, { families: ["plastic"] });
+    });
+    expect(await lotIds(yard, "PAPER-NEWS")).not.toContain(listing.id);
+    await expect(
+      yard.mutation(api.market.requestTrade, {
+        listingId: listing.id,
+        grams: 1000,
+      }),
+    ).rejects.toThrow("MATERIAL_NOT_ELIGIBLE");
+    await expect(
+      shop.mutation(api.market.act, { tradeId, action: "accept" }),
+    ).rejects.toThrow("MATERIAL_NOT_ELIGIBLE");
+  });
+
+  it("blocks a newly restricted material for ordinary sellers, including existing requests", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, SHOP);
+    const yard = await signInAs(t, YARD);
+    const listing = await lotOf(yard, RAMESH, "PAPER-NEWS");
+    const tradeId = await yard.mutation(api.market.requestTrade, {
+      listingId: listing.id,
+      grams: 1000,
+    });
+    await t.run(async (ctx) => {
+      const material = await ctx.db
+        .query("materials")
+        .withIndex("by_code", (q) => q.eq("code", "PAPER-NEWS"))
+        .unique();
+      if (!material) throw new Error("Missing test material");
+      await ctx.db.patch("materials", material._id, {
+        byproductEligibility: {
+          hazardStatus: "hazardous",
+          sourceReference: "Synthetic controlled-material restriction",
+          reviewedAt: Date.now(),
+        },
+      });
+    });
+    expect(await lotIds(yard, "PAPER-NEWS")).not.toContain(listing.id);
+    const sellable = await shop.query(api.market.sellable, {});
+    expect(sellable.some((row) => row.material.code === "PAPER-NEWS")).toBe(
+      false,
+    );
+    await expect(
+      shop.mutation(api.market.createListing, {
+        materialCode: "PAPER-NEWS",
+        grams: 1000,
+        askPaisePerKg: 1000,
+      }),
+    ).rejects.toThrow("MATERIAL_NOT_ELIGIBLE");
+    await expect(
+      yard.mutation(api.market.requestTrade, {
+        listingId: listing.id,
+        grams: 1000,
+      }),
+    ).rejects.toThrow("MATERIAL_NOT_ELIGIBLE");
+    await expect(
+      shop.mutation(api.market.act, { tradeId, action: "accept" }),
+    ).rejects.toThrow("MATERIAL_NOT_ELIGIBLE");
+    const unchanged = await tradeOf(shop, "selling", tradeId);
+    expect(unchanged.status).toBe("requested");
+  });
+
   it("shows each buyer the tier below it, never its own lots", async () => {
     const t = await demoWorld();
 
@@ -554,8 +747,9 @@ describe("selling", () => {
       [{ ...lot, askPaisePerKg: Number.MAX_SAFE_INTEGER }, /INVALID_PRICE/],
       [{ ...lot, note: "x".repeat(141) }, /NOTE_TOO_LONG/],
       [{ ...lot, materialCode: "GOLD" }, /UNKNOWN_MATERIAL/],
-      // Glass is a real material, but none is in stock here.
-      [{ ...lot, materialCode: "GLASS-BOTTLE" }, /NOT_ENOUGH_STOCK/],
+      // Glass is real but outside this shop's approved material scope.
+      [{ ...lot, materialCode: "GLASS-BOTTLE" }, /MATERIAL_NOT_ELIGIBLE/],
+      [{ ...lot, grams: 999_999_000 }, /NOT_ENOUGH_STOCK/],
     ] as const;
     for (const [args, error] of cases) {
       await expect(
@@ -706,6 +900,118 @@ describe("selling", () => {
 });
 
 describe("manufacturer non-hazardous byproduct offers", () => {
+  it.each([
+    "hazardous",
+    "inactive-material",
+    "suspended-buyer",
+    "buyer-family-removed",
+    "seller-family-removed",
+  ] as const)(
+    "rejects acceptance after %s while preserving decline and all stock",
+    async (change) => {
+      const t = await demoWorld();
+      const maker = await signInAs(t, MAKER);
+      const shop = await signInAs(t, SHOP);
+      const ids = await t.run(async (ctx) => {
+        const seller = await ctx.db
+          .query("orgs")
+          .withIndex("by_slug", (q) => q.eq("slug", "deccan-packaging"))
+          .unique();
+        const buyer = await ctx.db
+          .query("orgs")
+          .withIndex("by_slug", (q) => q.eq("slug", "ramesh-kabadi-store"))
+          .unique();
+        const material = await ctx.db
+          .query("materials")
+          .withIndex("by_code", (q) => q.eq("code", "PLASTIC-PET"))
+          .unique();
+        if (!seller || !buyer || !material)
+          throw new Error("Missing test fixture");
+        await ctx.db.patch("materials", material._id, {
+          byproductEligibility: {
+            hazardStatus: "non_hazardous",
+            sourceReference: "Synthetic reviewed test record",
+            reviewedAt: Date.now(),
+          },
+        });
+        const inventoryId = await ctx.db.insert("inventory", {
+          orgId: seller._id,
+          materialCode: material.code,
+          grams: 50_000,
+          updatedAt: Date.now(),
+        });
+        return {
+          seller: seller._id,
+          buyer: buyer._id,
+          material: material._id,
+          inventory: inventoryId,
+        };
+      });
+      const listingId = await maker.mutation(api.market.createListing, {
+        materialCode: "PLASTIC-PET",
+        grams: 10_000,
+        askPaisePerKg: 2500,
+      });
+      const tradeId = await shop.mutation(api.market.requestTrade, {
+        listingId,
+        grams: 1000,
+      });
+      await t.run(async (ctx) => {
+        switch (change) {
+          case "hazardous": {
+            await ctx.db.patch("materials", ids.material, {
+              byproductEligibility: {
+                hazardStatus: "hazardous",
+                sourceReference: "Synthetic revised test record",
+                reviewedAt: Date.now(),
+              },
+            });
+            break;
+          }
+          case "inactive-material": {
+            await ctx.db.patch("materials", ids.material, { active: false });
+            break;
+          }
+          case "suspended-buyer": {
+            await ctx.db.patch("orgs", ids.buyer, { status: "suspended" });
+            break;
+          }
+          case "buyer-family-removed": {
+            await ctx.db.patch("orgs", ids.buyer, { families: ["paper"] });
+            break;
+          }
+          case "seller-family-removed": {
+            await ctx.db.patch("orgs", ids.seller, { families: ["paper"] });
+            break;
+          }
+        }
+      });
+      const before = await t.run(async (ctx) => ({
+        trade: await ctx.db.get("trades", tradeId),
+        listing: await ctx.db.get("listings", listingId),
+        stock: await ctx.db.get("inventory", ids.inventory),
+        audit: await ctx.db.query("auditLog").collect(),
+      }));
+      await expect(
+        maker.mutation(api.market.act, { tradeId, action: "accept" }),
+      ).rejects.toThrow("BYPRODUCT_NOT_ELIGIBLE");
+      const after = await t.run(async (ctx) => ({
+        trade: await ctx.db.get("trades", tradeId),
+        listing: await ctx.db.get("listings", listingId),
+        stock: await ctx.db.get("inventory", ids.inventory),
+        audit: await ctx.db.query("auditLog").collect(),
+      }));
+      expect(after).toEqual(before);
+      await expect(
+        maker.mutation(api.market.act, { tradeId, action: "decline" }),
+      ).resolves.toMatchObject({ status: "declined" });
+      const preservedInventory = await t.run((ctx) =>
+        ctx.db.get("inventory", ids.inventory),
+      );
+      expect(preservedInventory?.grams).toBe(50_000);
+    },
+  );
+
   it("requires admin-reviewed classification and a matching active buyer", async () => {
     vi.stubEnv("ADMIN_EMAIL", "admin@luma.test");
     const t = await demoWorld();
@@ -1114,4 +1420,100 @@ describe("legacy trade mass stays unchanged without gateway verification", () =>
       "trade.completed",
     );
   });
+});
+
+describe("market evidence classification", () => {
+  it.each([
+    {},
+    {
+      streamClass: "recoverable_waste" as const,
+      handlingClass: "unassessed" as const,
+    },
+    {
+      streamClass: "unspecified" as const,
+      handlingClass: "non_hazardous" as const,
+    },
+  ])(
+    "does not offer unknown evidence classifications %j",
+    async (classification) => {
+      const t = await demoWorld();
+      const shop = await signInAs(t, SHOP);
+      const lotId = await shop.mutation(api.traceability.declareLot, {
+        materialCode: "PLASTIC-PET",
+        state: "Declared input",
+        grams: 1000,
+        ...classification,
+      });
+      const before = await stockOf(t, "ramesh-kabadi-store", "PLASTIC-PET");
+      const choices = await shop.query(api.market.listingLotOptions, {
+        materialCode: "PLASTIC-PET",
+      });
+      expect(choices.map((row) => row.id)).not.toContain(lotId);
+      await expect(
+        shop.mutation(api.market.createListing, {
+          materialCode: "PLASTIC-PET",
+          grams: 1000,
+          askPaisePerKg: 2500,
+          specification: { grade: "PET", specification: "Q1", lotId },
+        }),
+      ).rejects.toThrow("LOT_NOT_ELIGIBLE");
+      expect(await stockOf(t, "ramesh-kabadi-store", "PLASTIC-PET")).toBe(
+        before,
+      );
+      const listings = await shop.query(api.market.myListings, {});
+      expect(listings.some((row) => row.specification?.lotId === lotId)).toBe(
+        false,
+      );
+    },
+  );
+  it.each([
+    {
+      streamClass: "recoverable_waste" as const,
+      handlingClass: "unassessed" as const,
+    },
+    {
+      streamClass: "unspecified" as const,
+      handlingClass: "non_hazardous" as const,
+    },
+  ])(
+    "rechecks linked classifications at request and acceptance %j",
+    async (classification) => {
+      const t = await demoWorld();
+      const shop = await signInAs(t, SHOP);
+      const yard = await signInAs(t, YARD);
+      const lotId = await shop.mutation(api.traceability.declareLot, {
+        materialCode: "PLASTIC-PET",
+        state: "Measured",
+        grams: 2000,
+        streamClass: "recoverable_waste",
+        handlingClass: "non_hazardous",
+      });
+      const listingId = await shop.mutation(api.market.createListing, {
+        materialCode: "PLASTIC-PET",
+        grams: 2000,
+        askPaisePerKg: 2500,
+        specification: { grade: "PET", specification: "Q1", lotId },
+      });
+      const tradeId = await yard.mutation(api.market.requestTrade, {
+        listingId,
+        grams: 1000,
+      });
+      const before = await stockOf(t, "ramesh-kabadi-store", "PLASTIC-PET");
+      await t.run((ctx) => ctx.db.patch("materialLots", lotId, classification));
+      await expect(
+        yard.mutation(api.market.requestTrade, { listingId, grams: 1000 }),
+      ).rejects.toThrow("LOT_NOT_ELIGIBLE");
+      await expect(
+        shop.mutation(api.market.act, { tradeId, action: "accept" }),
+      ).rejects.toThrow("LOT_NOT_ELIGIBLE");
+      const listing = await t.run((ctx) => ctx.db.get("listings", listingId));
+      expect(listing).toMatchObject({ status: "open", grams: 2000 });
+      const trade = await tradeOf(yard, "buying", tradeId);
+      expect(trade.status).toBe("requested");
+      expect(await stockOf(t, "ramesh-kabadi-store", "PLASTIC-PET")).toBe(
+        before,
+      );
+      await shop.mutation(api.market.act, { tradeId, action: "decline" });
+    },
+  );
 });

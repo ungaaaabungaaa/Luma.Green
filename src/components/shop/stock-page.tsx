@@ -21,11 +21,13 @@ import {
   StatCard,
 } from "@/components/app/page-parts";
 import { Button } from "@/components/ui/button";
+import { useCanOperate } from "@/components/workspace/permissions";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
 import { NotForYou, QueryBoundary } from "./guards";
 import { MaterialIcon } from "./material-icon";
+import { StockIntake } from "./stock-intake";
 import type { Stock, StockRow } from "./types";
 import { useBusiness } from "./use-shop";
 
@@ -50,7 +52,7 @@ export function StockPage() {
     <div className="flex flex-col gap-6">
       <AppPageHeader title={t("stock.title")} lead={t("stock.lead")} />
       {business ? (
-        <QueryBoundary>
+        <QueryBoundary key={business.id}>
           <StockBody />
         </QueryBoundary>
       ) : (
@@ -63,6 +65,8 @@ export function StockPage() {
 
 function StockBody() {
   const t = useTranslations("shop.stock");
+  const market = useTranslations("market.home");
+  const canOperate = useCanOperate();
   const format = useFormat();
   const stock = useQuery(api.stock.mine);
   if (stock === undefined) return <ListSkeleton rows={4} />;
@@ -76,21 +80,26 @@ function StockBody() {
         />
         <StatCard
           label={t("worth")}
-          value={format.money(stock.totalValuePaise)}
-          hint={t("worthHint")}
+          value={
+            stock.totalValuePaise === null
+              ? "—"
+              : format.money(stock.totalValuePaise)
+          }
+          hint={t(stock.totalValuePaise === null ? "noPrice" : "worthHint")}
           icon={IndianRupeeIcon}
           tone="good"
         />
       </div>
-      {stock.buyerKind ? (
+      {canOperate ? (
         <Button asChild size="lg" className="h-12 text-base sm:w-fit sm:px-6">
           <Link href="/app/sell">
             <TagIcon aria-hidden className="size-5" />
-            {t(`sellTo.${stock.buyerKind}`)}
+            {stock.buyerKind ? t(`sellTo.${stock.buyerKind}`) : market("sell")}
           </Link>
         </Button>
       ) : null}
       <StockList stock={stock} />
+      {stock.kind === "manufacturer" ? <StockIntake /> : null}
     </>
   );
 }
@@ -160,7 +169,7 @@ function StockItem({ row, totalGrams }: { row: StockRow; totalGrams: number }) {
   const format = useFormat();
   const share = totalGrams > 0 ? Math.round((row.grams / totalGrams) * 100) : 0;
   return (
-    <li className="flex flex-col gap-4 border-b border-border py-5 last:border-b-0">
+    <li className="flex flex-col gap-3 border-b border-border py-4 last:border-b-0">
       <div className="flex items-center gap-3">
         <MaterialIcon family={row.material.family} />
         <div className="flex min-w-0 flex-1 flex-col">

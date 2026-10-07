@@ -16,9 +16,9 @@ export function AppPageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="flex min-w-0 flex-col gap-5 border-b border-border pb-7 lg:flex-row lg:items-end lg:justify-between">
+    <div className="flex min-w-0 flex-col gap-3 border-b border-border pb-5 lg:flex-row lg:items-end lg:justify-between">
       <div className="flex min-w-0 flex-1 flex-col gap-2">
-        <h1 className="font-display text-3xl leading-[1.15] font-semibold tracking-tight sm:text-4xl">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
           {title}
         </h1>
         {lead ? (
@@ -50,7 +50,7 @@ export function StatCard({
   tone?: "neutral" | "good" | "warn";
 }) {
   return (
-    <div className="relative flex min-w-0 flex-col gap-3 border-s-2 border-border py-2 ps-4 pe-2 sm:ps-5">
+    <div className="relative flex min-w-0 flex-col gap-2 border-s border-border py-1 ps-3 pe-1 sm:ps-4">
       <div className="flex items-start justify-between gap-2">
         <p className="min-w-0 flex-1 text-sm font-medium wrap-anywhere text-muted-foreground">
           {label}
@@ -67,7 +67,7 @@ export function StatCard({
           />
         ) : null}
       </div>
-      <p className="font-display text-2xl font-semibold tracking-tight break-words tabular-nums sm:text-3xl">
+      <p className="font-display text-2xl font-semibold tracking-tight break-words tabular-nums">
         {value}
       </p>
       {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
@@ -85,9 +85,9 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="flex min-w-0 flex-col gap-5">
+    <section className="flex min-w-0 flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-display text-xl font-semibold tracking-tight">
+        <h2 className="font-display text-lg font-semibold tracking-tight">
           {title}
         </h2>
         {action}
@@ -109,19 +109,19 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-start gap-3 border-y border-border py-8 sm:py-10">
-      <span className="mb-1 text-muted-foreground">
-        <Icon aria-hidden className="size-9" strokeWidth={1.25} />
+    <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-3 gap-y-2 border-y border-border py-6">
+      <span className="row-span-2 text-muted-foreground">
+        <Icon aria-hidden className="size-6" strokeWidth={1.25} />
       </span>
-      <p className="font-display text-xl font-semibold tracking-tight">
+      <p className="font-display text-lg font-semibold tracking-tight">
         {title}
       </p>
       {body ? (
-        <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">
+        <p className="col-start-2 max-w-lg text-sm leading-relaxed text-muted-foreground">
           {body}
         </p>
       ) : null}
-      {action}
+      {action ? <div className="col-start-2 mt-2">{action}</div> : null}
     </div>
   );
 }

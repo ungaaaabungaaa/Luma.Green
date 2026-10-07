@@ -1,6 +1,6 @@
 import { ConvexError, v } from "convex/values";
 
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { requireAdmin } from "./lib/access";
 import { findProfile } from "./lib/applicationAccess";
 
@@ -54,5 +54,47 @@ export const reviewMaterial = mutation({
       createdAt: now,
     });
     return null;
+  },
+});
+
+/** Admin-only review evidence; never expose these references in the public catalogue. */
+export const list = query({
+  args: {},
+  returns: v.array(
+    v.object({
+      code: v.string(),
+      name: v.string(),
+      review: v.union(
+        v.null(),
+        v.object({
+          hazardStatus: v.union(
+            v.literal("non_hazardous"),
+            v.literal("hazardous"),
+          ),
+          sourceReference: v.string(),
+          reviewedAt: v.number(),
+        }),
+      ),
+    }),
+  ),
+  handler: async (ctx) => {
+    await requireAdmin(ctx);
+    const materials = await ctx.db
+      .query("materials")
+      .withIndex("by_sortOrder")
+      .take(200);
+    return materials
+      .filter((material) => material.active && material.stage === "scrap")
+      .map((material) => ({
+        code: material.code,
+        name: material.names.en,
+        review: material.byproductEligibility
+          ? {
+              hazardStatus: material.byproductEligibility.hazardStatus,
+              sourceReference: material.byproductEligibility.sourceReference,
+              reviewedAt: material.byproductEligibility.reviewedAt,
+            }
+          : null,
+      }));
   },
 });

@@ -15,6 +15,18 @@ import {
 } from "./test-helpers";
 import type { BookingDetail, BookingView, RateCard } from "./types";
 
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session", userId: "fixture-user" },
+      },
+      isPending: false,
+      error: null,
+    }),
+  },
+}));
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: vi.fn(),
@@ -204,3 +216,7 @@ describe("RequestDetail", () => {
     expect(screen.getByText("Request not found")).toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

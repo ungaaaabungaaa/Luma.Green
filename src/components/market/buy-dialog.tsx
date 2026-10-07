@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useCanOperate } from "@/components/workspace/permissions";
 import { useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -39,10 +40,12 @@ export function BuyButton({
   listing: ListingView;
   className?: string;
 }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("market.buy");
   const common = useTranslations("common");
   const format = useFormat();
   const [isOpen, setIsOpen] = useState(false);
+  if (!canOperate) return null;
   const material = format.material(
     listing.material.names,
     listing.material.code,

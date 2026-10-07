@@ -10,6 +10,12 @@ describe("isolated account documentation fixtures", () => {
   it("never authenticates, changes protection or returns a secret", async () => {
     expect(authClient.useSession().data).toEqual({
       fixture: true,
+      user: {
+        id: "guide-fictional-user",
+        email: "guide-fictional@example.test",
+        emailVerified: false,
+        phoneNumberVerified: false,
+      },
       session: { id: undefined },
     });
     for (const change of [
@@ -18,12 +24,17 @@ describe("isolated account documentation fixtures", () => {
       authClient.requestPasswordReset,
       authClient.resetPassword,
       ...Object.values(authClient.twoFactor),
+      ...Object.values(authClient.phoneNumber),
     ])
       await expect(change()).rejects.toThrow("cannot change accounts");
     expect(securityFixture("?security=on")).toEqual({
       kind: "member",
       hasProfile: true,
       twoFactorEnabled: true,
+      hasPassword: false,
+      adminName: undefined,
+      locale: undefined,
+      phone: undefined,
     });
     expect(securityFixture("")?.twoFactorEnabled).toBe(false);
   });

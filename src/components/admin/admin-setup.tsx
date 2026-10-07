@@ -45,7 +45,21 @@ interface Enrolment {
  * off if the tab was closed half-way.
  */
 export function AdminSetup() {
-  return isConvexConfigured ? <SetupSteps /> : <AdminUnavailable />;
+  return isConvexConfigured ? <SetupIdentity /> : <AdminUnavailable />;
+}
+
+/** Preserve initial signup and same-user session rotation, clear an old identity. */
+function SetupIdentity() {
+  const session = authClient.useSession();
+  const userId = session.data?.user.id;
+  const [identity, setIdentity] = useState({ userId, generation: 0 });
+  if (identity.userId !== userId) {
+    setIdentity({
+      userId,
+      generation: identity.generation + (identity.userId ? 1 : 0),
+    });
+  }
+  return <SetupSteps key={identity.generation} />;
 }
 
 function SetupSteps() {
@@ -65,23 +79,33 @@ function SetupSteps() {
   const [showCodes, setShowCodes] = useState(false);
   const [failure, setFailure] = useState<string | null>(null);
   const isEnrolling = useRef(false);
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     if (!pending || !isAuthenticated || isEnrolling.current) return;
     isEnrolling.current = true;
     const { profile, password } = pending;
+    const isMounted = () => mounted.current;
     void (async () => {
       try {
         await saveAdminProfile(profile);
+        if (!isMounted()) return;
         const { data, error } = await authClient.twoFactor.enable({
           password,
         });
+        if (!isMounted()) return;
         if (error) setFailure(passwordErrorMessage(error));
         else setEnrolment(data);
       } catch {
-        setFailure("Couldn't save your details.");
+        if (isMounted()) setFailure("Couldn't save your details.");
       } finally {
-        setPending(null);
+        if (isMounted()) setPending(null);
       }
     })();
   }, [pending, isAuthenticated, saveAdminProfile]);

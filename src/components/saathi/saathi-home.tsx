@@ -29,7 +29,7 @@ function JobGrid({ children }: { children: ReactNode }) {
 function BoardSkeleton() {
   return (
     <div className="flex flex-col gap-6" aria-busy="true">
-      <Skeleton className="h-40 w-full rounded-xl" />
+      <Skeleton className="h-28 w-full rounded-none" />
       <ListSkeleton rows={2} />
     </div>
   );

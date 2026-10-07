@@ -21,6 +21,15 @@ export interface NavItem {
   href: string;
   /** Key under `app.nav` in messages. */
   label: string;
+  /** Material evidence owns its labels in the lots namespace. */
+  namespace?:
+    | "lots"
+    | "evidence"
+    | "facility"
+    | "sourcing"
+    | "logistics"
+    | "qualityDocuments"
+    | "operations";
   icon: LucideIcon;
 }
 
@@ -62,7 +71,7 @@ export const NAV: Record<AppRole, { primary: NavItem[]; more: NavItem[] }> = {
       { href: "/app/prices", label: "prices", icon: IndianRupeeIcon },
       sell,
     ],
-    more: [trades, impact, compliance],
+    more: [buy, trades, impact, compliance],
   },
   yard: {
     primary: [home, buy, stock, sell, trades],
@@ -74,7 +83,7 @@ export const NAV: Record<AppRole, { primary: NavItem[]; more: NavItem[] }> = {
   },
   manufacturer: {
     primary: [home, buy, trades, compliance, impact],
-    more: [stock],
+    more: [stock, sell],
   },
   saathi: {
     primary: [

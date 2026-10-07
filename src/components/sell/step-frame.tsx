@@ -32,7 +32,7 @@ export function StepFrame({
   }, [shouldFocus]);
 
   return (
-    <section aria-labelledby="sell-step-title" className="flex flex-col gap-6">
+    <section aria-labelledby="sell-step-title" className="flex flex-col gap-5">
       <div className="flex flex-col gap-2">
         {onBack ? (
           <Button
@@ -48,7 +48,7 @@ export function StepFrame({
           id="sell-step-title"
           ref={heading}
           tabIndex={-1}
-          className="scroll-mt-24 font-display text-3xl leading-tight font-semibold tracking-tight outline-none sm:text-4xl"
+          className="scroll-mt-24 font-display text-2xl leading-tight font-semibold tracking-tight outline-none sm:text-3xl"
         >
           {title}
         </h2>

@@ -12,6 +12,18 @@ const { data } = vi.hoisted(() => ({
   data: { receipt: undefined as TradeReceipt | null | undefined },
 }));
 
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session", userId: "fixture-user" },
+      },
+      isPending: false,
+      error: null,
+    }),
+  },
+}));
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: (query: Parameters<typeof getFunctionName>[0]) =>
@@ -161,3 +173,7 @@ describe("InvoicePage", () => {
     ).toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

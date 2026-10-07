@@ -9,6 +9,7 @@ import { StatusPill } from "@/components/app/page-parts";
 
 import { safePaiseFor } from "../../../convex/lib/chain";
 import { MaterialIcon } from "./material-icon";
+import { OfferSpecification } from "./offer-specification";
 import type { ListingView } from "./types";
 
 /**
@@ -35,7 +36,7 @@ export function ListingCard({
   const name = format.material(listing.material.names, listing.material.code);
 
   return (
-    <article className="flex h-full flex-col gap-4 border-b border-border py-6">
+    <article className="flex h-full flex-col gap-3 border-b border-border py-4">
       <div className="flex flex-wrap items-start gap-4">
         <MaterialIcon family={listing.material.family} />
         <div className="flex min-w-32 flex-1 flex-col gap-1">
@@ -86,6 +87,7 @@ export function ListingCard({
           {listing.note}
         </p>
       ) : null}
+      <OfferSpecification value={listing.specification} />
     </article>
   );
 }

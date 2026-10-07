@@ -8,6 +8,7 @@ import { toast } from "sonner";
 
 import { useFormat } from "@/components/app/format";
 import { Button } from "@/components/ui/button";
+import { useCanOperate } from "@/components/workspace/permissions";
 
 import { api } from "../../../convex/_generated/api";
 import { type MarketErrorKey, marketErrorKey } from "./errors";
@@ -19,6 +20,7 @@ type DecisionAction = "accept" | "decline";
  * Only an order decision is available before gateway checkout is connected.
  */
 export function TradeActions({ trade }: { trade: TradeView }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("market");
   const format = useFormat();
   const act = useMutation(api.market.act);
@@ -27,10 +29,9 @@ export function TradeActions({ trade }: { trade: TradeView }) {
   const [isConfirmingDecline, setIsConfirmingDecline] = useState(false);
   const [failure, setFailure] = useState<MarketErrorKey | null>(null);
 
-  const canAccept =
-    trade.status === "requested" && trade.actions.includes("accept");
-  const canDecline =
-    trade.status === "requested" && trade.actions.includes("decline");
+  if (!canOperate || trade.status !== "requested") return null;
+  const canAccept = trade.actions.includes("accept");
+  const canDecline = trade.actions.includes("decline");
   if (!canAccept && !canDecline) return null;
 
   async function run(action: DecisionAction) {

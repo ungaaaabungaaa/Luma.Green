@@ -9,7 +9,7 @@ import { expect, test } from "@playwright/test";
 
 const roles = [
   { title: "Kabadiwala", href: "/join/kabadiwala" },
-  { title: "Yard", href: "/join/yard" },
+  { title: "Preprocessor", href: "/join/yard" },
   { title: "Recycler", href: "/join/recycler" },
   { title: "Manufacturer", href: "/join/manufacturer" },
   { title: "Saathi", href: "/join/saathi" },

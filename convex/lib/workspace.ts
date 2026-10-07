@@ -1,24 +1,61 @@
 import { ConvexError } from "convex/values";
 
-import type { Doc } from "../_generated/dataModel";
+import type { Doc, Id } from "../_generated/dataModel";
 import type { QueryCtx } from "../_generated/server";
 import { authComponent } from "../auth";
 import { requireUser } from "./access";
 import { findProfile } from "./applicationAccess";
 import type { OrgKind } from "./chain";
+import {
+  hasWorkspacePermission,
+  MAX_WORKSPACES,
+  type WorkspacePermission,
+  workspaceRole,
+} from "./workspaceRoles";
 
-/** The business a person runs (the first, in the prototype), if any. */
-export async function findOrgFor(
+/** Membership is the authority; a selected org ID is only a preference. */
+export async function membershipFor(
   ctx: QueryCtx,
-  profileId: Doc<"profiles">["_id"],
-): Promise<Doc<"orgs"> | null> {
-  const membership = await ctx.db
+  profileId: Id<"profiles">,
+  orgId: Id<"orgs">,
+) {
+  return ctx.db
+    .query("memberships")
+    .withIndex("by_profile_org", (q) =>
+      q.eq("profileId", profileId).eq("orgId", orgId),
+    )
+    .unique();
+}
+export async function selectedMembership(
+  ctx: QueryCtx,
+  profileId: Id<"profiles">,
+) {
+  const profile = await ctx.db.get("profiles", profileId);
+  if (!profile) return null;
+  if (profile.activeOrgId) {
+    const membership = await membershipFor(ctx, profileId, profile.activeOrgId);
+    if (!membership) return null;
+    const org = await ctx.db.get("orgs", membership.orgId);
+    return org?.status === "active" ? { org, membership } : null;
+  }
+  const memberships = await ctx.db
     .query("memberships")
     .withIndex("by_profile", (q) => q.eq("profileId", profileId))
-    .first();
-  if (!membership) return null;
-  const org = await ctx.db.get("orgs", membership.orgId);
-  return org?.status === "active" ? org : null;
+    .take(MAX_WORKSPACES + 1);
+  if (memberships.length > MAX_WORKSPACES)
+    throw new ConvexError("TOO_MANY_WORKSPACES");
+  for (const membership of memberships) {
+    const org = await ctx.db.get("orgs", membership.orgId);
+    if (org?.status === "active") return { org, membership };
+  }
+  return null;
+}
+export async function findOrgFor(
+  ctx: QueryCtx,
+  profileId: Id<"profiles">,
+): Promise<Doc<"orgs"> | null> {
+  const selected = await selectedMembership(ctx, profileId);
+  return selected?.org ?? null;
 }
 
 export async function findSaathiFor(
@@ -47,14 +84,19 @@ export async function currentProfile(
 export async function requireOrg(
   ctx: QueryCtx,
   kinds?: readonly OrgKind[],
-): Promise<{ profile: Doc<"profiles">; org: Doc<"orgs"> }> {
+  permission: WorkspacePermission = "operate",
+) {
   const user = await requireUser(ctx);
   const profile = await findProfile(ctx, user._id);
   if (!profile) throw new ConvexError("NO_PROFILE");
-  const org = await findOrgFor(ctx, profile._id);
-  if (!org) throw new ConvexError("NO_BUSINESS");
+  const selected = await selectedMembership(ctx, profile._id);
+  if (!selected) throw new ConvexError("NO_BUSINESS");
+  const { org, membership } = selected;
+  const role = workspaceRole(membership.role);
+  if (!hasWorkspacePermission(role, permission))
+    throw new ConvexError("WORKSPACE_PERMISSION_DENIED");
   if (kinds && !kinds.includes(org.kind)) throw new ConvexError("WRONG_ROLE");
-  return { profile, org };
+  return { profile, org, membership, role };
 }
 
 export async function requireSaathi(

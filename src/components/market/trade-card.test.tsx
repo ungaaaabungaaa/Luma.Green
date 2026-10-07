@@ -6,16 +6,31 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { aTrade, WithIntl } from "./test-utils";
 import { TradeCard } from "./trade-card";
 
-const { act, toast } = vi.hoisted(() => ({
+const { act, toast, lifecycle } = vi.hoisted(() => ({
   act: vi.fn(),
+  lifecycle: { legacy: false, state: "awaiting_payment" },
   toast: { success: vi.fn(), error: vi.fn() },
 }));
 
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useMutation: () => act,
+  useQuery: () =>
+    lifecycle.legacy
+      ? null
+      : {
+          state: lifecycle.state,
+          collection: "pending",
+          settlement: "pending",
+          refund: "none",
+          actions: [],
+          policyReady: false,
+          totalPaise: 175_000,
+          grams: 100_000,
+        },
 }));
 vi.mock("sonner", () => ({ toast }));
+vi.mock("./sandbox-checkout", () => ({ SandboxCheckout: () => null }));
 vi.mock("@/i18n/navigation", () => ({
   Link: ({
     href,
@@ -33,11 +48,37 @@ vi.mock("@/i18n/navigation", () => ({
 
 beforeEach(() => {
   act.mockReset();
+  lifecycle.legacy = false;
+  lifecycle.state = "awaiting_payment";
   toast.success.mockReset();
   toast.error.mockReset();
 });
 
 describe("TradeCard", () => {
+  it("keeps a late payment hold visible after an order was cancelled", () => {
+    lifecycle.state = "hold";
+    render(
+      <WithIntl>
+        <TradeCard
+          trade={aTrade({
+            status: "declined",
+            timeline: [
+              { status: "declined", at: Date.parse("2026-10-07T00:00:00Z") },
+            ],
+          })}
+          side="buyer"
+        />
+      </WithIntl>,
+    );
+    expect(screen.getByText("Order needs review")).toBeVisible();
+    expect(
+      screen.getByText(
+        "An administrator must check the payment evidence before this order can move forward.",
+      ),
+    ).toBeVisible();
+    expect(screen.queryByText(/Order declined/)).not.toBeInTheDocument();
+  });
+
   it("offers a new order to the seller as one tap", async () => {
     act.mockResolvedValue({ status: "accepted" });
     render(
@@ -110,7 +151,7 @@ describe("TradeCard", () => {
     ).not.toBeInTheDocument();
     expect(
       screen.getByText(
-        "Payment gateway required. Checkout is not available yet.",
+        "Live payments require approved payment terms and provider setup.",
       ),
     ).toBeInTheDocument();
     expect(
@@ -173,6 +214,7 @@ describe("TradeCard", () => {
   });
 
   it("has nothing to press once it's done", () => {
+    lifecycle.legacy = true;
     render(
       <WithIntl>
         <TradeCard trade={aTrade({ status: "completed" })} side="seller" />
@@ -186,3 +228,7 @@ describe("TradeCard", () => {
     ).toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

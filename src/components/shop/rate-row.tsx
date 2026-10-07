@@ -9,6 +9,7 @@ import { useFormat } from "@/components/app/format";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useCanOperate } from "@/components/workspace/permissions";
 
 import { api } from "../../../convex/_generated/api";
 import { errorCode } from "./bookings";
@@ -36,6 +37,7 @@ export function priceProblem(
  * it, a Save button once it changes, and a plain message when it's too low.
  */
 export function RateRow({ row }: { row: RateCardRow }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("shop");
   const format = useFormat();
   const setRate = useMutation(api.shop.setRate);
@@ -108,6 +110,7 @@ export function RateRow({ row }: { row: RateCardRow }) {
               {t("prices.prefix")}
             </span>
             <Input
+              disabled={!canOperate}
               ref={input}
               id={id}
               inputMode="decimal"
@@ -144,7 +147,7 @@ export function RateRow({ row }: { row: RateCardRow }) {
               type="submit"
               size="lg"
               className="h-12 px-5 text-base"
-              disabled={isSaving || problem !== null}
+              disabled={!canOperate || isSaving || problem !== null}
             >
               {t(isSaving ? "prices.saving" : "prices.save")}
             </Button>

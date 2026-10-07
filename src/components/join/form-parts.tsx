@@ -24,12 +24,12 @@ export function FormHeader({
   step?: string;
 }) {
   return (
-    <div className="flex flex-col gap-4 border-b border-border pb-7">
+    <div className="flex flex-col gap-3 border-b border-border pb-5">
       <p className="border-s-2 border-primary ps-3 text-sm font-medium text-primary">
         {eyebrow}
         {step ? <span className="text-muted-foreground"> · {step}</span> : null}
       </p>
-      <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
+      <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
         {title}
       </h1>
       <SaveIndicator state={saveState} />
@@ -74,12 +74,7 @@ export function SubmitBar({
           {t(failure === "fixErrors" ? "form.fixErrors" : "errors.generic")}
         </p>
       ) : null}
-      <Button
-        type="submit"
-        size="lg"
-        className="h-12 text-base"
-        disabled={isBusy}
-      >
+      <Button type="submit" size="lg" className="w-full" disabled={isBusy}>
         {isBusy ? busyLabel : label}
       </Button>
       {secondary}

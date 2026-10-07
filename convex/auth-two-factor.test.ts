@@ -345,6 +345,7 @@ async function adminAccount() {
 
 function recoveryProvider() {
   vi.stubEnv("RESEND_API_KEY", "test-only-resend-key");
+  vi.stubEnv("AUTH_FROM_EMAIL", "security@luma.test");
   vi.stubEnv("ADMIN_RESET_FROM_EMAIL", "security@luma.test");
   const delivery = vi
     .fn()

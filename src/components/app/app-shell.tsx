@@ -1,6 +1,14 @@
 "use client";
 
-import { EllipsisIcon, LifeBuoyIcon, LogOutIcon, XIcon } from "lucide-react";
+import {
+  BoxesIcon,
+  EllipsisIcon,
+  FactoryIcon,
+  FileTextIcon,
+  LifeBuoyIcon,
+  LogOutIcon,
+  XIcon,
+} from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 
@@ -20,6 +28,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { WorkspacePermissions } from "@/components/workspace/permissions";
 import { isLocale, localeDirection } from "@/i18n/locales";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
@@ -41,6 +50,13 @@ function isActive(pathname: string, href: string) {
  */
 export function AppShell({ children }: { children: ReactNode }) {
   const t = useTranslations("app");
+  const lots = useTranslations("lots");
+  const evidence = useTranslations("evidence");
+  const facility = useTranslations("facility");
+  const sourcing = useTranslations("sourcing");
+  const logistics = useTranslations("logistics");
+  const qualityDocuments = useTranslations("qualityDocuments");
+  const operations = useTranslations("operations");
   const common = useTranslations("common");
   const theme = useTranslations("theme");
   const navigation = useTranslations("nav");
@@ -57,6 +73,8 @@ export function AppShell({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (workspace === null) {
       router.replace({ pathname: "/login", query: { next: pathname } });
+    } else if (workspace?.kind === "selectionRequired") {
+      router.replace("/account/workspaces");
     } else if (workspace?.kind === "none") {
       router.replace("/join/status");
     }
@@ -73,7 +91,11 @@ export function AppShell({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  if (!workspace || workspace.kind === "none") {
+  if (
+    !workspace ||
+    workspace.kind === "none" ||
+    workspace.kind === "selectionRequired"
+  ) {
     return (
       <div className="mx-auto w-full max-w-5xl p-4">
         <ListSkeleton />
@@ -85,7 +107,75 @@ export function AppShell({ children }: { children: ReactNode }) {
     workspace.kind === "org" ? workspace.org.kind : "saathi";
   const name =
     workspace.kind === "org" ? workspace.org.name : workspace.saathi.name;
-  const { primary, more } = NAV[role];
+  const { primary, more: roleMore } = NAV[role];
+  const more: NavItem[] =
+    workspace.kind === "org"
+      ? [
+          ...roleMore,
+          {
+            href: "/app/sourcing",
+            label: "title",
+            namespace: "sourcing",
+            icon: FileTextIcon,
+          },
+          {
+            href: "/app/logistics",
+            label: "title",
+            namespace: "logistics",
+            icon: FactoryIcon,
+          },
+          {
+            href: "/app/quality-documents",
+            label: "title",
+            namespace: "qualityDocuments",
+            icon: FileTextIcon,
+          },
+          {
+            href: "/app/material-standards",
+            label: "standards",
+            namespace: "operations",
+            icon: BoxesIcon,
+          },
+          {
+            href: "/app/production",
+            label: "production",
+            namespace: "operations",
+            icon: FactoryIcon,
+          },
+          {
+            href: "/app/lots",
+            label: "title",
+            namespace: "lots",
+            icon: BoxesIcon,
+          },
+          {
+            href: "/app/evidence",
+            label: "title",
+            namespace: "evidence",
+            icon: FileTextIcon,
+          },
+          {
+            href: "/app/facility",
+            label: "title",
+            namespace: "facility",
+            icon: FactoryIcon,
+          },
+        ]
+      : roleMore;
+  const itemLabel = (item: NavItem) => {
+    if (item.namespace === "sourcing") return sourcing("title");
+    if (item.namespace === "logistics") return logistics("title");
+    if (item.namespace === "qualityDocuments") return qualityDocuments("title");
+    if (item.namespace === "operations")
+      return operations(
+        item.label === "production" ? "production" : "standards",
+      );
+    if (item.namespace === "lots") return lots("title");
+    if (item.namespace === "facility") return facility("title");
+    return item.namespace === "evidence"
+      ? evidence("title")
+      : t(`nav.${item.label}`);
+  };
   // Keep the two daily destinations visible. The menu holds the rest at
   // full text width, so translated labels never need ellipses or tiny type.
   const mobilePrimary = primary.slice(0, 2);
@@ -115,7 +205,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <span
           className={isCompact ? "whitespace-nowrap" : "min-w-0 break-words"}
         >
-          {t(`nav.${item.label}`)}
+          {itemLabel(item)}
         </span>
       </Link>
     );
@@ -124,14 +214,14 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-dvh flex-col bg-muted/20 xl:flex-row">
       <SkipLink />
-      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-5 overflow-y-auto border-e border-sidebar-border bg-background p-4 text-sidebar-foreground xl:flex xl:w-60">
+      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col gap-3 overflow-y-auto border-e border-sidebar-border bg-background p-4 text-sidebar-foreground xl:flex xl:w-60">
         <Link
           href="/"
           className="inline-flex min-h-11 items-center rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <Logo />
         </Link>
-        <div className="border-y border-sidebar-border px-2 py-5">
+        <div className="border-y border-sidebar-border px-2 py-3">
           <p className="text-sm font-semibold break-words">{name}</p>
           <p className="mt-1 text-xs text-muted-foreground">
             {t(`roles.${role}`)}
@@ -145,7 +235,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             ),
           )}
           {more.length > 0 ? (
-            <div className="mt-3 flex flex-col gap-1 border-t border-sidebar-border pt-3">
+            <div className="mt-2 flex flex-col gap-1 border-t border-sidebar-border pt-2">
               {more.map((item) =>
                 link(
                   item,
@@ -156,14 +246,14 @@ export function AppShell({ children }: { children: ReactNode }) {
           ) : null}
           <Link
             href={help}
-            className="mt-4 flex min-h-11 items-center gap-3 rounded-md border-s-2 border-transparent px-3 text-sm font-medium transition-colors outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="mt-2 flex min-h-11 items-center gap-3 rounded-md border-s-2 border-transparent px-3 text-sm font-medium transition-colors outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <LifeBuoyIcon aria-hidden className="size-5" />
             {t("nav.help")}
           </Link>
           <AccountLinks className="rounded-lg px-3 hover:bg-sidebar-accent" />
         </nav>
-        <div className="mt-auto flex flex-col gap-3 border-t border-sidebar-border pt-4">
+        <div className="mt-auto flex flex-col gap-2 border-t border-sidebar-border pt-3">
           <div className="flex items-center justify-between gap-2">
             <LanguageSwitcher />
             <ThemeToggle />
@@ -182,7 +272,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </aside>
 
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-        <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-2 border-b border-border bg-card/95 px-4 backdrop-blur xl:hidden">
+        <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-2 border-b border-border bg-card/95 px-4 backdrop-blur xl:hidden">
           <Link
             href="/"
             aria-label={t("homeLink")}
@@ -215,7 +305,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             menuOpener.current?.focus();
           }}
         >
-          <SheetHeader className="min-h-16 shrink-0 flex-row items-center justify-between px-5 py-2">
+          <SheetHeader className="min-h-14 shrink-0 flex-row items-center justify-between px-5 py-2">
             <SheetTitle className="sr-only">{t("navLabel")}</SheetTitle>
             <Logo
               idPrefix="app-menu"
@@ -250,18 +340,18 @@ export function AppShell({ children }: { children: ReactNode }) {
                   isActive(pathname, item.href) ? "page" : undefined
                 }
                 className={cn(
-                  "flex min-h-12 items-center gap-3 py-3 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                  "flex min-h-11 items-center gap-3 py-2 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
                   isActive(pathname, item.href) && "font-semibold text-primary",
                 )}
               >
                 <item.icon aria-hidden className="size-5 shrink-0" />
-                {t(`nav.${item.label}`)}
+                {itemLabel(item)}
               </Link>
             ))}
             <Link
               href={help}
               onClick={closeMenu}
-              className="flex min-h-12 items-center gap-3 py-3 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+              className="flex min-h-11 items-center gap-3 py-2 text-sm whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               <LifeBuoyIcon aria-hidden className="size-5 shrink-0" />
               {t("nav.help")}
@@ -285,7 +375,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="mx-5 shrink-0 border-t py-4">
             <Button
               variant="outline"
-              className="min-h-12 w-full text-sm"
+              className="min-h-11 w-full text-sm"
               disabled={signingOut}
               onClick={() => void signOut()}
             >
@@ -330,9 +420,18 @@ export function AppShell({ children }: { children: ReactNode }) {
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-8 bg-background px-4 pt-6 pb-28 sm:px-6 md:px-8 md:pt-8 lg:px-10 xl:me-6 xl:mt-6 xl:border xl:border-border xl:pt-8 xl:pb-12"
+        className="mx-auto flex w-full max-w-7xl min-w-0 flex-1 flex-col gap-6 bg-background px-4 pt-5 pb-28 sm:px-6 md:px-8 md:pt-6 xl:pb-10"
       >
-        {children}
+        <WorkspacePermissions
+          key={
+            workspace.kind === "org"
+              ? `${workspace.org.id}-${workspace.role}`
+              : "saathi"
+          }
+          membershipRole={workspace.kind === "org" ? workspace.role : "member"}
+        >
+          {children}
+        </WorkspacePermissions>
       </main>
     </div>
   );

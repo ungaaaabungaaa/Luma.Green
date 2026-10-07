@@ -18,7 +18,7 @@ import type {
 
 export const KIND_LABELS: Record<ApplicationKind, string> = {
   kabadiwala: "Kabadiwala",
-  yard: "Yard",
+  yard: "Preprocessor",
   recycler: "Recycler",
   manufacturer: "Manufacturer",
   saathi: "Saathi",
@@ -122,7 +122,7 @@ export const SUPPORT_TOPIC_LABELS: Readonly<Record<string, string>> = {
 export const SUPPORT_ROLE_LABELS: Readonly<Record<string, string>> = {
   household: "Household",
   kabadiwala: "Kabadiwala",
-  yard: "Yard",
+  yard: "Preprocessor",
   recycler: "Recycler",
   manufacturer: "Manufacturer",
   saathi: "Saathi",

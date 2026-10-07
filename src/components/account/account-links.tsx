@@ -1,6 +1,6 @@
 "use client";
 
-import { BellIcon, ShieldCheckIcon } from "lucide-react";
+import { BellIcon, ShieldCheckIcon, UsersIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Link, usePathname } from "@/i18n/navigation";
@@ -13,10 +13,18 @@ export function AccountLinks({
   onNavigate?: () => void;
   className?: string;
 }) {
+  const workspace = useTranslations("workspace");
   const security = useTranslations("accountSecurity");
   const notifications = useTranslations("notifications");
+  const reports = useTranslations("auditReports");
   const pathname = usePathname();
   const items = [
+    {
+      href: "/account/reports",
+      label: reports("title"),
+      icon: ShieldCheckIcon,
+    },
+    { href: "/account/workspaces", label: workspace("title"), icon: UsersIcon },
     {
       href: "/account/notifications",
       label: notifications("title"),

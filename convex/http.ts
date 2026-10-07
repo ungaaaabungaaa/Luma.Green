@@ -1,11 +1,26 @@
 import { httpRouter } from "convex/server";
 
 import { authComponent, createAuth } from "./auth";
+import { serve as serveCashfree } from "./cashfreeHttp";
 import { FILES_PATH, preflight, serve } from "./files";
 import { serve as serveIntegration } from "./integrationHttp";
 import { INTEGRATION_PATH } from "./lib/integrationHttp";
+import {
+  preflight as qualityPreflight,
+  serve as serveQuality,
+} from "./qualityFiles";
 
 const http = httpRouter();
+http.route({
+  pathPrefix: "/quality-files/",
+  method: "GET",
+  handler: serveQuality,
+});
+http.route({
+  pathPrefix: "/quality-files/",
+  method: "OPTIONS",
+  handler: qualityPreflight,
+});
 
 // Better Auth's endpoints; Next.js proxies /api/auth/* here.
 authComponent.registerRoutes(http, createAuth);
@@ -27,6 +42,14 @@ for (const method of [
     pathPrefix: INTEGRATION_PATH,
     method,
     handler: serveIntegration,
+  });
+}
+
+for (const mode of ["sandbox", "live"] as const) {
+  http.route({
+    path: `/payments/cashfree/${mode}`,
+    method: "POST",
+    handler: serveCashfree,
   });
 }
 

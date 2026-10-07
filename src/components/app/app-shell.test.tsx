@@ -11,6 +11,7 @@ import type { OrgWorkspace } from "./use-workspace";
 type ShellFixture =
   | { kind: "org"; org: Pick<OrgWorkspace, "kind" | "name"> }
   | { kind: "saathi"; saathi: { name: string } }
+  | { kind: "selectionRequired" }
   | null;
 
 const state = vi.hoisted(
@@ -82,6 +83,50 @@ beforeEach(() => {
 });
 
 describe("workspace navigation", () => {
+  it.each(["kabadiwala", "yard", "recycler", "manufacturer"] as const)(
+    "offers material lots in the %s workspace and mobile menu",
+    async (kind) => {
+      state.workspace = { kind: "org", org: { kind, name: "Test business" } };
+      state.pathname = "/app/lots/test-lot";
+      view();
+      expect(
+        screen.getByRole("link", { name: messages.lots.title }),
+      ).toHaveAttribute("aria-current", "page");
+      await userEvent.click(
+        within(screen.getByRole("banner")).getByRole("button", {
+          name: messages.app.more,
+        }),
+      );
+      expect(
+        within(screen.getByRole("dialog")).getByRole("link", {
+          name: messages.lots.title,
+        }),
+      ).toHaveAttribute("href", "/app/lots");
+    },
+  );
+  it.each([
+    { kind: "kabadiwala", label: messages.app.nav.buy, href: "/app/market" },
+    { kind: "manufacturer", label: messages.app.nav.sell, href: "/app/sell" },
+  ] as const)(
+    "offers the byproduct route in the $kind desktop and mobile navigation",
+    async ({ kind, label, href }) => {
+      state.workspace = { kind: "org", org: { kind, name: "Test business" } };
+      view();
+      expect(screen.getByRole("link", { name: label })).toHaveAttribute(
+        "href",
+        href,
+      );
+      await userEvent.click(
+        within(screen.getByRole("banner")).getByRole("button", {
+          name: messages.app.more,
+        }),
+      );
+      expect(
+        within(screen.getByRole("dialog")).getByRole("link", { name: label }),
+      ).toHaveAttribute("href", href);
+    },
+  );
+
   it("identifies the parent section on desktop and mobile for a request detail", () => {
     state.pathname = "/app/requests/test-request";
     view();
@@ -213,6 +258,16 @@ describe("workspace navigation", () => {
     expect(
       screen.queryByRole("link", { name: messages.app.nav.sell }),
     ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: messages.lots.title }),
+    ).not.toBeInTheDocument();
+  });
+
+  it("hides business controls and offers workspace selection after access is removed", () => {
+    state.workspace = { kind: "selectionRequired" };
+    view();
+    expect(screen.queryByRole("heading")).not.toBeInTheDocument();
+    expect(state.replace).toHaveBeenCalledWith("/account/workspaces");
   });
 
   it("keeps protected children hidden while redirecting a signed-out visitor", () => {

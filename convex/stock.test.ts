@@ -71,6 +71,43 @@ describe("stock.mine", () => {
     expect(values).toEqual(values.toSorted((a, b) => b - a));
   });
 
+  it.each(["one", "all"])(
+    "does not report a complete value when %s market prices are missing",
+    async (scope) => {
+      const t = await demoWorld();
+      const shop = await signInAs(t, "+919000000101");
+      await t.run(async (ctx) => {
+        const prices = await ctx.db.query("marketPrices").collect();
+        for (const price of prices) {
+          if (scope === "all" || price.materialCode === "PAPER-NEWS")
+            await ctx.db.delete("marketPrices", price._id);
+        }
+      });
+      const stock = await shop.query(api.stock.mine, {});
+      expect(stock.totalGrams).toBe(794_000);
+      expect(stock.totalValuePaise).toBeNull();
+      expect(
+        stock.rows.find((row) => row.material.code === "PAPER-NEWS")
+          ?.valuePaise,
+      ).toBeNull();
+      if (scope === "one")
+        expect(stock.rows.some((row) => row.valuePaise !== null)).toBe(true);
+    },
+  );
+
+  it("reports an actual zero value for empty stock", async () => {
+    const t = await demoWorld();
+    const shop = await signInAs(t, "+919000000101");
+    await t.run(async (ctx) => {
+      const inventory = await ctx.db.query("inventory").collect();
+      for (const item of inventory)
+        await ctx.db.patch("inventory", item._id, { grams: 0 });
+    });
+    const stock = await shop.query(api.stock.mine, {});
+    expect(stock.rows).toEqual([]);
+    expect(stock.totalValuePaise).toBe(0);
+  });
+
   it("works for every kind of business, each seeing only its own", async () => {
     const t = await demoWorld();
 

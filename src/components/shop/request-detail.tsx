@@ -85,7 +85,7 @@ function RequestBody({ id }: { id: string }) {
   if (detail === null) {
     return (
       <>
-        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
           {t("requests.title")}
         </h1>
         <EmptyState
@@ -113,7 +113,7 @@ function RequestView({ detail }: { detail: BookingDetail }) {
     <>
       <header className="flex flex-col gap-2 border-b border-border pb-6">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+          <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
             {booking.name ?? t("household")}
           </h1>
           <BookingStatusPill status={booking.status} />
@@ -228,7 +228,7 @@ function BookingFacts({
   return (
     <section
       aria-labelledby="facts-title"
-      className="flex flex-col gap-5 border-y border-border py-5"
+      className="flex flex-col gap-4 border-y border-border py-4"
     >
       <h2 id="facts-title" className="sr-only">
         {t("request.details")}

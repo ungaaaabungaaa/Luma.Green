@@ -383,6 +383,178 @@ describe("private trade conversations", () => {
     ).rejects.toThrow(/NOT_A_SUPPORT_CONVERSATION/);
   });
 
+  it("sends as the selected buyer when the same person can only view the seller", async () => {
+    const {
+      t,
+      owner,
+      ownerProfileId,
+      tradeId,
+      sellerMembershipId,
+      buyerOrgId,
+    } = await world();
+    await t.run(async (ctx) => {
+      await ctx.db.patch("memberships", sellerMembershipId, { role: "viewer" });
+      await ctx.db.insert("memberships", {
+        profileId: ownerProfileId,
+        orgId: buyerOrgId,
+        role: "member",
+        createdAt: Date.now(),
+      });
+    });
+    await owner.mutation(api.workspace.select, { orgId: buyerOrgId });
+    const conversationId = await owner.mutation(api.messaging.openTrade, {
+      tradeId,
+    });
+    const messageId = await owner.mutation(api.messaging.send, {
+      conversationId,
+      body: "Buyer confirmation",
+    });
+    const message = await t.run(async (ctx) =>
+      ctx.db.get("conversationMessages", messageId),
+    );
+    expect(message?.senderOrgId).toBe(buyerOrgId);
+    const history = await transcript(owner, conversationId);
+    expect(history.page[0]?.senderOrgName).toBe("Demo Sorting Yard");
+  });
+
+  it("does not borrow seller ownership when the selected buyer membership is read-only", async () => {
+    const { t, owner, buyer, ownerProfileId, tradeId, buyerOrgId } =
+      await world();
+    const conversationId = await buyer.mutation(api.messaging.openTrade, {
+      tradeId,
+    });
+    const membershipId = await t.run(async (ctx) =>
+      ctx.db.insert("memberships", {
+        profileId: ownerProfileId,
+        orgId: buyerOrgId,
+        role: "member",
+        createdAt: Date.now(),
+      }),
+    );
+    await owner.mutation(api.workspace.select, { orgId: buyerOrgId });
+    await owner.mutation(api.messaging.send, {
+      conversationId,
+      body: "Before role change",
+    });
+    await t.run(async (ctx) =>
+      ctx.db.patch("memberships", membershipId, { role: "viewer" }),
+    );
+    const history = await transcript(owner, conversationId);
+    const threads = await owner.query(api.messaging.listMine, {});
+    expect(history.page).toHaveLength(1);
+    expect(threads.map((thread) => thread.id)).toContain(conversationId);
+    await expect(
+      owner.mutation(api.messaging.openTrade, { tradeId }),
+    ).rejects.toThrow(/WORKSPACE_PERMISSION_DENIED/);
+    await expect(
+      owner.mutation(api.messaging.send, {
+        conversationId,
+        body: "After role change",
+      }),
+    ).rejects.toThrow(/WORKSPACE_PERMISSION_DENIED/);
+    const unchanged = await transcript(owner, conversationId);
+    expect(unchanged.page).toHaveLength(1);
+  });
+
+  it.each(["removed", "suspended", "unrelated"])(
+    "fails closed for a %s selected workspace even with another valid trade membership",
+    async (state) => {
+      const { t, owner, ownerProfileId, tradeId, sellerOrgId, buyerOrgId } =
+        await world();
+      const conversationId = await owner.mutation(api.messaging.openTrade, {
+        tradeId,
+      });
+      const membershipId = await t.run(async (ctx) =>
+        ctx.db.insert("memberships", {
+          profileId: ownerProfileId,
+          orgId: buyerOrgId,
+          role: "member",
+          createdAt: Date.now(),
+        }),
+      );
+      await owner.mutation(api.workspace.select, { orgId: buyerOrgId });
+      await t.run(async (ctx) => {
+        if (state === "removed")
+          await ctx.db.delete("memberships", membershipId);
+        else if (state === "suspended")
+          await ctx.db.patch("orgs", buyerOrgId, { status: "suspended" });
+        else {
+          const selectedOrg = await ctx.db.insert("orgs", {
+            kind: "yard",
+            status: "active",
+            name: "Unrelated workspace",
+            slug: "unrelated",
+            city: "Bengaluru",
+            area: "Peenya",
+            address: "Test address",
+            phones: [],
+            weeklyOff: [],
+            families: ["paper"],
+            offersPickup: false,
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+          });
+          await ctx.db.insert("memberships", {
+            profileId: ownerProfileId,
+            orgId: selectedOrg,
+            role: "owner",
+            createdAt: Date.now(),
+          });
+          await ctx.db.patch("profiles", ownerProfileId, {
+            activeOrgId: selectedOrg,
+          });
+        }
+      });
+      await expect(
+        owner.mutation(api.messaging.openTrade, { tradeId }),
+      ).rejects.toThrow(/MESSAGE_ACCESS_DENIED/);
+      await expect(
+        owner.query(api.messaging.get, { conversationId }),
+      ).rejects.toThrow(/MESSAGE_ACCESS_DENIED/);
+      await expect(transcript(owner, conversationId)).rejects.toThrow(
+        /MESSAGE_ACCESS_DENIED/,
+      );
+      await expect(
+        owner.mutation(api.messaging.send, {
+          conversationId,
+          body: "Wrong workspace",
+        }),
+      ).rejects.toThrow(/MESSAGE_ACCESS_DENIED/);
+      await owner.mutation(api.workspace.select, { orgId: sellerOrgId });
+      await owner.mutation(api.messaging.send, {
+        conversationId,
+        body: "Selected seller",
+      });
+      const history = await transcript(owner, conversationId);
+      expect(history.page).toHaveLength(1);
+    },
+  );
+
+  it.each(["member", "viewer"] as const)(
+    "limits inbox summaries to a live %s membership and removes them on revocation",
+    async (role) => {
+      const { t, owner, buyer, tradeId, sellerMembershipId } = await world();
+      const conversationId = await buyer.mutation(api.messaging.openTrade, {
+        tradeId,
+      });
+      await t.run(async (ctx) =>
+        ctx.db.patch("memberships", sellerMembershipId, { role }),
+      );
+      const threads = await owner.query(api.messaging.listMine, {});
+      expect(threads.map((thread) => thread.id)).toEqual([conversationId]);
+      expect(
+        await owner.query(api.messaging.get, { conversationId }),
+      ).toMatchObject({ id: conversationId });
+      await t.run(async (ctx) =>
+        ctx.db.delete("memberships", sellerMembershipId),
+      );
+      expect(await owner.query(api.messaging.listMine, {})).toEqual([]);
+      await expect(
+        owner.query(api.messaging.get, { conversationId }),
+      ).rejects.toThrow(/MESSAGE_ACCESS_DENIED/);
+    },
+  );
+
   it("denies unrelated members and the admin even when they know the trade or thread ID", async () => {
     const { owner, other, admin, tradeId } = await world();
     const conversationId = await owner.mutation(api.messaging.openTrade, {

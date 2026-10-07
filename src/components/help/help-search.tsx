@@ -71,13 +71,13 @@ export function HelpSearch() {
           type="search"
           autoComplete="off"
           enterKeyHint="search"
-          placeholder={t("search.placeholder")}
+          placeholder={t("search.label")}
           value={query}
           onChange={(event) => {
             setQuery(event.target.value);
             setShowAll(false);
           }}
-          className="h-14 rounded-lg bg-background ps-12 pe-12 text-base shadow-none md:text-base [&::-webkit-search-cancel-button]:hidden"
+          className="h-12 rounded-lg bg-background ps-12 pe-12 text-base shadow-none md:text-base [&::-webkit-search-cancel-button]:hidden"
         />
         {query ? (
           <Button

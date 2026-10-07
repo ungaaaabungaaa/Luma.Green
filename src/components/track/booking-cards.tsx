@@ -27,10 +27,10 @@ export function WhenCard({
   return (
     <section
       aria-labelledby="when-title"
-      className="flex flex-col gap-3 border-b border-border py-5"
+      className="flex flex-col gap-3 border-b border-border pb-5"
     >
       <div className="flex items-start gap-3">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
           <CalendarDaysIcon aria-hidden className="size-5" />
         </span>
         <div className="flex flex-col">
@@ -69,7 +69,7 @@ export function ItemsCard({ booking }: { booking: TrackedBooking }) {
       aria-labelledby="items-title"
       className="flex flex-col border-y border-border"
     >
-      <h2 id="items-title" className="px-4 pt-4 text-lg font-semibold">
+      <h2 id="items-title" className="pt-4 text-lg font-semibold">
         {t("title")}
       </h2>
       <ul className="divide-y">
@@ -77,7 +77,7 @@ export function ItemsCard({ booking }: { booking: TrackedBooking }) {
           ? receipt.lines.map((line) => (
               <li
                 key={line.material.code}
-                className="flex items-center gap-3 px-4 py-3"
+                className="flex items-center gap-3 py-3"
               >
                 <FamilyIcon family={line.material.family} size="sm" />
                 <div className="flex min-w-0 flex-1 flex-col">
@@ -99,7 +99,7 @@ export function ItemsCard({ booking }: { booking: TrackedBooking }) {
           : booking.items.map((item) => (
               <li
                 key={item.material.code}
-                className="flex items-center gap-3 px-4 py-3"
+                className="flex items-center gap-3 py-3"
               >
                 <FamilyIcon family={item.material.family} size="sm" />
                 <span className="min-w-0 flex-1 font-medium">
@@ -114,7 +114,7 @@ export function ItemsCard({ booking }: { booking: TrackedBooking }) {
             ))}
       </ul>
       {receipt ? null : (
-        <p className="px-4 pb-4 text-sm text-muted-foreground">
+        <p className="pb-4 text-sm text-muted-foreground">
           {tSell("basket.weighNote")}
         </p>
       )}

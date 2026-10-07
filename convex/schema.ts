@@ -1,6 +1,9 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
+import { auditShareTables } from "./lib/auditSharesSchema";
+import { lifecycleTables } from "./lib/cashfreeLifecycleSchema";
+import { cashfreeTables } from "./lib/cashfreeSchema";
 import { vEvidenceIssuerKind, vEvidenceKind } from "./lib/commercialEvidence";
 import {
   draftSections,
@@ -14,14 +17,26 @@ import {
   vShopVehicle,
   vWeekday,
 } from "./lib/drafts";
+import {
+  vHandlingClass,
+  vProcessKind,
+  vRegistrationKind,
+  vSectorSnapshot,
+  vStreamClass,
+} from "./lib/industrialClassification";
 import { vIntegrationScope } from "./lib/integrations";
+import { vMaterialOfferSpecification } from "./lib/materialOfferSpecification";
 import { vConversationKind, vConversationStatus } from "./lib/messaging";
 import {
   vNotificationEvent,
   vNotificationStatus,
 } from "./lib/notificationConfig";
+import { operationalTables } from "./lib/operationalSchema";
 import { publicDataFields } from "./lib/publicData";
+import { qualityFileTables } from "./lib/qualityFilesSchema";
+import { routePlanningTables } from "./lib/routePlanningSchema";
 import { vMaterialOrigin, vSiteType } from "./lib/siteClassification";
+import { sourcingTables } from "./lib/sourcingSchema";
 import { vStakeholderKind, vStakeholderStatus } from "./lib/stakeholderKinds";
 import {
   vBookingStatus,
@@ -29,6 +44,7 @@ import {
   vOrgKind,
   vTradeStatus,
 } from "./lib/validators";
+import { vInvitationRole, vMembershipRole } from "./lib/workspaceRoles";
 
 /**
  * Luma.Green data model — docs/architecture/data-model.md.
@@ -47,6 +63,13 @@ const timestamps = {
 };
 
 export default defineSchema({
+  ...operationalTables,
+  ...sourcingTables,
+  ...routePlanningTables,
+  ...qualityFileTables,
+  ...auditShareTables,
+  ...cashfreeTables,
+  ...lifecycleTables,
   /** Isolated demonstration records. Never used as operational platform records. */
   demoWorkspaces: defineTable({
     key: v.string(),
@@ -144,6 +167,8 @@ export default defineSchema({
    */
   profiles: defineTable({
     authUserId: v.string(),
+    /** Selection only. Every request must still verify the current membership. */
+    activeOrgId: v.optional(v.id("orgs")),
     phone: v.optional(v.string()), // E.164, verified by SMS code
     kind: v.union(v.literal("member"), v.literal("admin")),
     locale: v.string(),
@@ -245,15 +270,16 @@ export default defineSchema({
   /**
    * The material catalogue — Luma.Green's shared material codes. Names are
    * data (per language, English as the fallback), so adding a material needs
-   * no code change: edit convex/lib/catalogue.ts and re-run the seed.
+   * no code change. The admin bootstrap adds missing canonical definitions;
+   * rates and reviewed factors are separate operational inputs.
    */
   materials: defineTable({
     code: v.string(), // e.g. "PAPER-NEWS"
     family: vFamily,
     stage: v.union(v.literal("scrap"), v.literal("recycled")),
     names: v.record(v.string(), v.string()), // locale → name
-    /** kg CO2e avoided per kg recycled instead of made new (indicative). */
-    co2eFactor: v.number(),
+    /** kg CO2e per kg. Absent means unknown, never an assumed zero. */
+    co2eFactor: v.optional(v.number()),
     sortOrder: v.number(),
     active: v.boolean(),
     /** Admin-reviewed evidence gate; absent means not classified. */
@@ -344,13 +370,36 @@ export default defineSchema({
   memberships: defineTable({
     profileId: v.id("profiles"),
     orgId: v.id("orgs"),
-    role: v.union(v.literal("owner"), v.literal("staff")),
+    role: vMembershipRole,
     createdAt: v.number(),
   })
     .index("by_profile", ["profileId"])
     .index("by_profile_org", ["profileId", "orgId"])
     .index("by_org", ["orgId"])
     .index("by_org_profile", ["orgId", "profileId"]),
+
+  /** One-use, verified-email-bound team invitations; raw tokens are not stored. */
+  workspaceInvitations: defineTable({
+    orgId: v.id("orgs"),
+    email: v.string(),
+    role: vInvitationRole,
+    tokenHash: v.string(),
+    invitedBy: v.id("profiles"),
+    createdAt: v.number(),
+    expiresAt: v.number(),
+    acceptedAt: v.optional(v.number()),
+    acceptedBy: v.optional(v.id("profiles")),
+    revokedAt: v.optional(v.number()),
+    attemptedAt: v.optional(v.number()),
+    delivery: v.union(
+      v.literal("pending"),
+      v.literal("accepted"),
+      v.literal("failed"),
+    ),
+  })
+    .index("by_hash", ["tokenHash"])
+    .index("by_org_created", ["orgId", "createdAt"])
+    .index("by_org_email", ["orgId", "email"]),
 
   /** Machine credentials. Plain tokens are returned once and never stored. */
   integrationKeys: defineTable({
@@ -487,6 +536,22 @@ export default defineSchema({
   // --- Stock and trade --------------------------------------------------------
 
   /** Stock of one material at one business. */
+  /** Immutable own-production intake. This is separate from evidence-only lots. */
+  manufacturerStockIntakes: defineTable({
+    orgId: v.id("orgs"),
+    actorProfileId: v.id("profiles"),
+    intakeReference: v.string(),
+    materialCode: v.string(),
+    grams: v.number(),
+    producedOn: v.string(),
+    sourceReference: v.string(),
+    weighingReference: v.string(),
+    ownProductionConfirmed: v.literal(true),
+    createdAt: v.number(),
+  })
+    .index("by_org_reference", ["orgId", "intakeReference"])
+    .index("by_org_created", ["orgId", "createdAt"]),
+
   inventory: defineTable({
     orgId: v.id("orgs"),
     materialCode: v.string(),
@@ -496,12 +561,59 @@ export default defineSchema({
     .index("by_org", ["orgId"])
     .index("by_org_material", ["orgId", "materialCode"]),
 
+  /** Reported document references only. No regulatory approval or trade rights. */
+  facilityRegistrations: defineTable({
+    facilityId: v.id("industrialFacilities"),
+    orgId: v.id("orgs"),
+    kind: vRegistrationKind,
+    reference: v.string(),
+    issuedAt: v.string(),
+    validUntil: v.string(),
+    supersedesId: v.optional(v.id("facilityRegistrations")),
+    actorProfileId: v.id("profiles"),
+    recordedAt: v.number(),
+    sourceQuality: v.literal("reported_unverified"),
+  })
+    .index("by_facility_recorded", ["facilityId", "recordedAt"])
+    .index("by_supersedes", ["supersedesId"]),
+
+  /** Self-declared processes; no role, trading or regulatory permission is granted. */
+  industrialFacilities: defineTable({
+    revision: v.optional(v.number()),
+    orgId: v.id("orgs"),
+    name: v.string(),
+    siteReference: v.string(),
+    sectorId: v.optional(v.string()),
+    sector: v.optional(vSectorSnapshot),
+    capabilities: v.array(vProcessKind),
+    createdByProfileId: v.id("profiles"),
+    updatedByProfileId: v.id("profiles"),
+    ...timestamps,
+  })
+    .index("by_org_created", ["orgId", "createdAt"])
+    .index("by_updated", ["updatedAt"]),
+
+  /** Append-only declared controlled routing evidence, not approval or disposal certification. */
+  lotControlledDispositions: defineTable({
+    lotId: v.id("materialLots"),
+    orgId: v.id("orgs"),
+    grams: v.number(),
+    destinationReference: v.string(),
+    reviewedDestinationId: v.optional(v.id("controlledDestinations")),
+    authorisationReference: v.string(),
+    manifestReference: v.string(),
+    actorProfileId: v.id("profiles"),
+    createdAt: v.number(),
+  }).index("by_lot_created", ["lotId", "createdAt"]),
+
   /** Physical evidence only. A declared lot is not verified stock or title. */
   materialLots: defineTable({
     orgId: v.id("orgs"),
     declaredByOrgId: v.id("orgs"),
     materialCode: v.string(),
     state: v.string(),
+    streamClass: v.optional(vStreamClass),
+    handlingClass: v.optional(vHandlingClass),
     sourceKind: v.union(v.literal("self_declared"), v.literal("transformed")),
     sourceReference: v.optional(v.string()),
     parentTransformationId: v.optional(v.id("lotTransformations")),
@@ -519,6 +631,7 @@ export default defineSchema({
   })
     .index("by_org_created", ["orgId", "createdAt"])
     .index("by_declared_org_created", ["declaredByOrgId", "createdAt"])
+    .index("by_org_material_created", ["orgId", "materialCode", "createdAt"])
     .index("by_parent_transformation", ["parentTransformationId"])
     .index("by_pending_receiver", ["pendingReceiverOrgId"]),
 
@@ -537,8 +650,23 @@ export default defineSchema({
     .index("by_from_created", ["fromOrgId", "createdAt"])
     .index("by_to_created", ["toOrgId", "createdAt"]),
 
-  /** One input lot; each output is a child lot linked by parentTransformationId. */
+  /** Every consumed input is an immutable edge of one transformation. */
+  lotTransformationInputs: defineTable({
+    transformationId: v.id("lotTransformations"),
+    lotId: v.id("materialLots"),
+    materialCode: v.string(),
+    state: v.string(),
+    grams: v.number(),
+    createdAt: v.number(),
+  })
+    .index("by_lot_created", ["lotId", "createdAt"])
+    .index("by_transformation", ["transformationId"]),
+
+  /** Primary input anchors legacy history; edges record all consumed input lots. */
   lotTransformations: defineTable({
+    facilityId: v.optional(v.id("industrialFacilities")),
+    facilityName: v.optional(v.string()),
+    processKind: v.optional(vProcessKind),
     orgId: v.id("orgs"),
     inputLotId: v.id("materialLots"),
     inputGrams: v.number(),
@@ -574,6 +702,7 @@ export default defineSchema({
     createdAt: v.number(),
   })
     .index("by_lot_created", ["lotId", "createdAt"])
+    .index("by_org_created", ["orgId", "createdAt"])
     .index("by_supersedes", ["supersedesInspectionId"]),
 
   /** Separate approval means no accepted inspection row is ever patched. */
@@ -589,6 +718,7 @@ export default defineSchema({
 
   /** A lot offered to the next business up the chain. */
   listings: defineTable({
+    specification: v.optional(vMaterialOfferSpecification),
     orgId: v.id("orgs"),
     sellerKind: vOrgKind,
     materialCode: v.string(),
@@ -614,6 +744,7 @@ export default defineSchema({
    * New trades stop at acceptance until a verified gateway is integrated.
    */
   trades: defineTable({
+    specification: v.optional(vMaterialOfferSpecification),
     listingId: v.id("listings"),
     sellerOrgId: v.id("orgs"),
     buyerOrgId: v.id("orgs"),
@@ -669,6 +800,12 @@ export default defineSchema({
     ...timestamps,
   })
     .index("by_org", ["orgId"])
+    .index("by_city_status_family_neededBy", [
+      "city",
+      "status",
+      "family",
+      "neededBy",
+    ])
     .index("by_city_status_buyerKind_family_neededBy", [
       "city",
       "status",

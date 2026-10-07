@@ -1,7 +1,7 @@
 "use client";
 
 import { useConvexAuth, useMutation } from "convex/react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { useSignedInQuery } from "@/components/providers/use-signed-in-query";
@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { defaultLocale, isLocale, localeDirection } from "@/i18n/locales";
 import { useRouter } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
@@ -29,6 +30,8 @@ import { FormSkeleton } from "./join-gate";
 
 /** A private, default-deny account request. Approval does not open workspaces. */
 export function StakeholderRequest() {
+  const locale = useLocale();
+  const direction = localeDirection(isLocale(locale) ? locale : defaultLocale);
   const t = useTranslations("stakeholder");
   const join = useTranslations("join");
   const account = useSignedInQuery(api.stakeholderAccounts.mine);
@@ -64,7 +67,7 @@ export function StakeholderRequest() {
     }[account.status];
     return (
       <section className="flex flex-col gap-5 border-t border-border py-6">
-        <h1 className="font-display text-3xl font-semibold tracking-tight">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
           {title}
         </h1>
         <p className="font-medium">{account.organizationName}</p>
@@ -119,7 +122,7 @@ export function StakeholderRequest() {
       }}
     >
       <header className="border-b border-border pb-5">
-        <h1 className="font-display text-3xl font-semibold tracking-tight">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
           {t("title")}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">{t("note")}</p>
@@ -127,13 +130,18 @@ export function StakeholderRequest() {
       <div className="flex flex-col gap-2">
         <Label htmlFor="stakeholder-kind">{t("kind")}</Label>
         <Select
+          dir={direction}
           value={kind ?? ""}
           onValueChange={(value) => {
             setKind(value as StakeholderKind);
             setSiteType(undefined);
           }}
         >
-          <SelectTrigger id="stakeholder-kind" className="w-full">
+          <SelectTrigger
+            id="stakeholder-kind"
+            aria-label={t("kind")}
+            className="w-full"
+          >
             <SelectValue placeholder={t("kind")} />
           </SelectTrigger>
           <SelectContent>
@@ -149,12 +157,17 @@ export function StakeholderRequest() {
         <div className="flex flex-col gap-2">
           <Label htmlFor="stakeholder-site">{t("site")}</Label>
           <Select
+            dir={direction}
             value={siteType ?? ""}
             onValueChange={(value) => {
               setSiteType(value as SiteType);
             }}
           >
-            <SelectTrigger id="stakeholder-site" className="w-full">
+            <SelectTrigger
+              id="stakeholder-site"
+              aria-label={t("site")}
+              className="w-full"
+            >
               <SelectValue placeholder={t("site")} />
             </SelectTrigger>
             <SelectContent>

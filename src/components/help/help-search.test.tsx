@@ -36,6 +36,10 @@ describe("HelpSearch", () => {
     expect(
       screen.getByRole("searchbox", { name: "Search help" }),
     ).toBeVisible();
+    expect(screen.getByRole("searchbox")).toHaveAttribute(
+      "placeholder",
+      "Search help",
+    );
     expect(screen.queryAllByRole("link")).toHaveLength(0);
     expect(screen.queryByRole("region")).not.toBeInTheDocument();
     // …but every topic is one tap away.
@@ -57,7 +61,9 @@ describe("HelpSearch", () => {
       within(results).getByRole("link", { name: "I didn't get the SMS code" }),
     ).toHaveAttribute("href", "/help/household#faq-no-code");
     expect(
-      within(results).getAllByText(/For Kabadiwalas, Yards, Recyclers/)[0],
+      within(results).getAllByText(
+        /For Kabadiwalas, Preprocessors, Recyclers/,
+      )[0],
     ).toBeInTheDocument();
   });
 

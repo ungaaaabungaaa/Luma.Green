@@ -43,7 +43,7 @@ describe("BuyButton", () => {
     await openDialog();
     expect(
       screen.getByText(
-        "Payment gateway required. Checkout is not available yet.",
+        "Business payments use the payment gateway. Check the order for its current payment status.",
       ),
     ).toBeInTheDocument();
     expect(screen.queryByText(/escrow/i)).not.toBeInTheDocument();
@@ -99,3 +99,7 @@ it.each([
     expect(screen.getByLabelText("How many kg?")).toHaveValue(input);
   },
 );
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

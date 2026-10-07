@@ -37,7 +37,12 @@ export default async function ContactPage() {
 
   return (
     <>
-      <PageHeader title={t("title")} lead={t("lead")} scene={imageRole} />
+      <PageHeader
+        variant="task"
+        title={t("title")}
+        lead={t("lead")}
+        scene={imageRole}
+      />
 
       <Container className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-12 lg:py-16">
         <section className="space-y-5 border-t pt-6">

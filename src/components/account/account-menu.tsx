@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { Logo } from "@/components/brand/logo";
+import { isConvexConfigured } from "@/components/providers/convex-provider";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -28,15 +29,8 @@ export function AccountMenu() {
   const nav = useTranslations("nav");
   const common = useTranslations("common");
   const theme = useTranslations("theme");
-  const app = useTranslations("app");
-  const auth = useTranslations("auth");
   const locale = useLocale();
   const [open, setOpen] = useState(false);
-  const session = authClient.useSession();
-  const router = useRouter();
-  const { signOut, busy } = useSignOut(() => {
-    router.replace("/login");
-  });
   const close = () => {
     setOpen(false);
   };
@@ -101,25 +95,46 @@ export function AccountMenu() {
           </div>
         </div>
         <div className="mx-5 shrink-0 border-t py-4">
-          {session.data ? (
-            <Button
-              variant="outline"
-              className="w-full"
-              disabled={busy}
-              onClick={() => void signOut()}
-            >
-              <LogOutIcon aria-hidden />
-              {app("signOut")}
-            </Button>
+          {isConvexConfigured ? (
+            <ConnectedAccountAction onNavigate={close} />
           ) : (
-            <Button asChild variant="outline" className="w-full">
-              <Link href="/login" onClick={close}>
-                {auth("metaTitle")}
-              </Link>
-            </Button>
+            <SignInAction onNavigate={close} />
           )}
         </div>
       </SheetContent>
     </Sheet>
+  );
+}
+
+function SignInAction({ onNavigate }: { onNavigate: () => void }) {
+  const auth = useTranslations("auth");
+  return (
+    <Button asChild variant="outline" className="w-full">
+      <Link href="/login" onClick={onNavigate}>
+        {auth("metaTitle")}
+      </Link>
+    </Button>
+  );
+}
+
+function ConnectedAccountAction({ onNavigate }: { onNavigate: () => void }) {
+  const app = useTranslations("app");
+  const session = authClient.useSession();
+  const router = useRouter();
+  const { signOut, busy } = useSignOut(() => {
+    router.replace("/login");
+  });
+  return session.data ? (
+    <Button
+      variant="outline"
+      className="w-full"
+      disabled={busy}
+      onClick={() => void signOut()}
+    >
+      <LogOutIcon aria-hidden />
+      {app("signOut")}
+    </Button>
+  ) : (
+    <SignInAction onNavigate={onNavigate} />
   );
 }

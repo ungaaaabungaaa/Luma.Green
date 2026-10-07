@@ -18,21 +18,23 @@ export function WeekEarnings({ earnings }: { earnings: Board["earnings"] }) {
   return (
     <section
       aria-labelledby={headingId}
-      className="flex flex-col gap-3 border-b border-border py-5"
+      className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 gap-y-2 border-b border-border pb-4"
     >
-      <div className="flex items-center justify-between gap-2">
+      <div className="col-span-2 flex items-center justify-between gap-2">
         <h2 id={headingId} className="text-sm font-medium">
           {t("label")}
         </h2>
         <WalletIcon aria-hidden className="size-5" />
       </div>
-      <p className="font-display text-4xl font-semibold tracking-tight text-primary tabular-nums">
+      <p className="font-display text-3xl font-semibold tracking-tight text-primary tabular-nums">
         {format.money(earnings.weekPaise)}
       </p>
-      <p className="text-sm">{t("hint", { count: earnings.weekJobs })}</p>
+      <p className="col-start-1 text-sm text-muted-foreground">
+        {t("hint", { count: earnings.weekJobs })}
+      </p>
       <Link
         href="/app/impact"
-        className="-mx-2 mt-2 inline-flex min-h-11 items-center gap-1 self-start rounded-lg px-2 text-sm font-medium underline underline-offset-4 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="col-start-2 row-span-2 row-start-2 inline-flex min-h-11 items-center gap-1 self-start rounded-lg px-2 text-sm font-medium underline underline-offset-4 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
       >
         {t("all")}
         <ChevronRightIcon aria-hidden className="size-4 rtl:rotate-180" />

@@ -3,7 +3,7 @@
 import { useQuery } from "convex/react";
 import { CircleCheckBigIcon, InboxIcon, TruckIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, Suspense } from "react";
 
 import {
@@ -13,6 +13,7 @@ import {
   ListSkeleton,
 } from "@/components/app/page-parts";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { defaultLocale, isLocale, localeDirection } from "@/i18n/locales";
 
 import { api } from "../../../convex/_generated/api";
 import { splitDue } from "./bookings";
@@ -56,13 +57,15 @@ export function RequestsPage() {
 }
 
 function RequestTabs({ city }: { city: string }) {
+  const locale = useLocale();
   const t = useTranslations("shop.requests");
   const requests = useQuery(api.shop.requests);
   const today = useIndiaToday();
   const tab = tabFrom(useSearchParams().get("tab"));
 
   // Next keeps useSearchParams in step with history.replaceState, so the tab
-  // switches at once, with no trip to the server, and survives going back.
+  // switches without a server request. Pass null: reusing Next internal
+  // history state bypasses its search-parameter update.
   const showTab = (next: string) => {
     const params = new URLSearchParams(window.location.search);
     const chosen = tabFrom(next);
@@ -70,21 +73,22 @@ function RequestTabs({ city }: { city: string }) {
     else params.set("tab", chosen);
     const query = params.toString();
     window.history.replaceState(
-      window.history.state,
+      null,
       "",
       query === "" ? window.location.pathname : `?${query}`,
     );
   };
 
   return (
-    <Tabs value={tab} onValueChange={showTab} className="gap-4">
-      <TabsList className="grid w-full grid-cols-3 rounded-lg group-data-horizontal/tabs:h-12">
+    <Tabs
+      dir={localeDirection(isLocale(locale) ? locale : defaultLocale)}
+      value={tab}
+      onValueChange={showTab}
+      className="gap-4"
+    >
+      <TabsList variant="line" className="w-full">
         {TABS.map((value) => (
-          <TabsTrigger
-            key={value}
-            value={value}
-            className="gap-2 px-2 text-sm sm:px-4"
-          >
+          <TabsTrigger key={value} value={value} className="gap-2">
             {t(`tabs.${value}`)}
             <TabCount count={countFor(requests, value)} />
           </TabsTrigger>

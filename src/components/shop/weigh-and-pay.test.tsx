@@ -3,15 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { useMutation } from "convex/react";
 import { ConvexError } from "convex/values";
 import { NextIntlClientProvider } from "next-intl";
-import {
-  afterAll,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { Id } from "../../../convex/_generated/dataModel";
 import arabic from "../../../messages/ar.json";
@@ -35,20 +27,6 @@ beforeEach(() => {
   vi.mocked(useMutation).mockReturnValue(
     complete as unknown as ReturnType<typeof useMutation>,
   );
-});
-
-// Radix Select scrolls and captures the pointer, which jsdom can't do.
-beforeAll(() => {
-  Element.prototype.scrollIntoView = vi.fn();
-  Element.prototype.hasPointerCapture = vi.fn(() => false);
-  Element.prototype.releasePointerCapture = vi.fn();
-});
-
-afterAll(() => {
-  const stubbed = Element.prototype as Partial<Element>;
-  delete stubbed.scrollIntoView;
-  delete stubbed.hasPointerCapture;
-  delete stubbed.releasePointerCapture;
 });
 
 const BOOKING_ID = "booking-1" as Id<"bookings">;
@@ -269,3 +247,7 @@ describe("WeighAndPay", () => {
     });
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

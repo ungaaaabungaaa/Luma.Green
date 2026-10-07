@@ -16,6 +16,18 @@ import {
 } from "./test-helpers";
 import type { Payouts, RateCard, Requests, Stock } from "./types";
 
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session", userId: "fixture-user" },
+      },
+      isPending: false,
+      error: null,
+    }),
+  },
+}));
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: vi.fn(),
@@ -93,7 +105,7 @@ const CARD: RateCard = {
   })),
 };
 
-function renderHome() {
+function renderHome(stock: Stock = STOCK) {
   vi.mocked(useMutation).mockReturnValue(
     vi.fn() as unknown as ReturnType<typeof useMutation>,
   );
@@ -102,7 +114,7 @@ function renderHome() {
       "workspace:mine": SHOP_WORKSPACE,
       "shop:requests": REQUESTS,
       "shop:payouts": PAYOUTS,
-      "stock:mine": STOCK,
+      "stock:mine": stock,
       "shop:rateCard": CARD,
     }) as unknown as typeof useQuery,
   );
@@ -110,6 +122,21 @@ function renderHome() {
 }
 
 describe("KabadiwalaHome", () => {
+  it("does not show unpriced stock as a zero or complete valuation", () => {
+    renderHome({
+      ...STOCK,
+      totalValuePaise: null,
+      rows: STOCK.rows.map((row) => ({
+        ...row,
+        marketPaise: null,
+        valuePaise: null,
+      })),
+    });
+    expect(screen.getByText("No market price today")).toBeInTheDocument();
+    expect(screen.queryByText("₹7,020")).not.toBeInTheDocument();
+    expect(screen.queryByText("₹0")).not.toBeInTheDocument();
+  });
+
   it("greets the shop and says what's waiting", () => {
     renderHome();
 
@@ -172,10 +199,14 @@ describe("KabadiwalaHome", () => {
 
     const shortcuts = screen.getByRole("navigation", { name: "Shortcuts" });
     expect(
-      within(shortcuts).getByRole("link", { name: /Sell to a yard/ }),
+      within(shortcuts).getByRole("link", { name: /Sell to a preprocessor/ }),
     ).toHaveAttribute("href", "/app/sell");
     expect(
       within(shortcuts).getByRole("link", { name: /My prices/ }),
     ).toHaveAttribute("href", "/app/prices");
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

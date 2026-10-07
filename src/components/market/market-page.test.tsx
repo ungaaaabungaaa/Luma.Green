@@ -11,6 +11,7 @@ import type { ListingView } from "./types";
 const { data } = vi.hoisted(() => ({
   data: {
     kind: "yard",
+    canOperate: true,
     listings: [] as unknown[],
   },
 }));
@@ -49,6 +50,7 @@ function lot(id: string, code: string, name: string): ListingView {
 
 beforeEach(() => {
   data.kind = "yard";
+  data.canOperate = true;
   data.listings = [
     lot("a", "PAPER-NEWS", "Newspaper"),
     lot("b", "METAL-IRON", "Iron and steel"),
@@ -112,16 +114,55 @@ describe("MarketPage", () => {
     expect(screen.getByText("Recycled")).toBeInTheDocument();
   });
 
-  it("sends kabadiwalas to sell instead", () => {
+  it("shows a server-approved manufacturer byproduct to a kabadiwala", () => {
     data.kind = "kabadiwala";
+    data.listings = [
+      aListing({
+        material: {
+          code: "PAPER-OFFCUT",
+          names: { en: "Paper offcuts" },
+          family: "paper",
+        },
+        seller: {
+          name: "Approved manufacturer",
+          area: "Other city",
+          kind: "manufacturer",
+        },
+        origin: "manufacturer_byproduct",
+      }),
+    ];
     renderPage();
     expect(
-      screen.getByText("Kabadiwalas buy from households"),
-    ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Sell to yards" })).toHaveAttribute(
-      "href",
-      "/app/sell",
-    );
+      screen.getByRole("heading", { level: 3, name: "Paper offcuts" }),
+    ).toBeVisible();
+    expect(
+      screen.getByRole("button", {
+        name: "Buy Paper offcuts from Approved manufacturer",
+      }),
+    ).toBeVisible();
+    expect(
+      screen.getByText(
+        "Browse offers from approved suppliers for the materials you handle.",
+      ),
+    ).toBeVisible();
+    expect(
+      screen.queryByText("Kabadiwalas buy from households"),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Material on sale near you."),
+    ).not.toBeInTheDocument();
+  });
+
+  it("keeps approved offers readable to a kabadiwala viewer without a buy action", () => {
+    data.kind = "kabadiwala";
+    data.canOperate = false;
+    renderPage();
+    expect(
+      screen.getByRole("heading", { name: "3 lots on sale" }),
+    ).toBeVisible();
+    expect(
+      screen.queryByRole("button", { name: /^Buy / }),
+    ).not.toBeInTheDocument();
   });
 
   it("says so when nothing is on sale", () => {
@@ -130,3 +171,20 @@ describe("MarketPage", () => {
     expect(screen.getByText("Nothing on sale right now")).toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => data.canOperate,
+}));
+
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      isPending: false,
+      error: null,
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session" },
+      },
+    }),
+  },
+}));

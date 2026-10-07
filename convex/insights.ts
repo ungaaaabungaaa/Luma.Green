@@ -52,7 +52,7 @@ export interface Movement {
 export interface FamilyTotal {
   family: Family;
   grams: number;
-  co2eKg: number;
+  co2eKg: number | null;
 }
 
 /**
@@ -69,12 +69,21 @@ export function familyTotals(
 ): FamilyTotal[] {
   const sums = new Map<
     Family,
-    { inGrams: number; inCo2e: number; outGrams: number; outCo2e: number }
+    {
+      inGrams: number;
+      inCo2e: number | null;
+      outGrams: number;
+      outCo2e: number | null;
+    }
   >();
   const add = (movement: Movement, side: "in" | "out") => {
     const material = materials.get(movement.materialCode);
     const family = material?.family ?? "other";
-    const co2eGrams = movement.grams * (material?.co2eFactor ?? 0);
+    const factor = material?.co2eFactor;
+    const co2eGrams =
+      factor !== undefined && Number.isFinite(factor) && factor >= 0
+        ? movement.grams * factor
+        : null;
     const sum = sums.get(family) ?? {
       inGrams: 0,
       inCo2e: 0,
@@ -83,10 +92,16 @@ export function familyTotals(
     };
     if (side === "in") {
       sum.inGrams += movement.grams;
-      sum.inCo2e += co2eGrams;
+      sum.inCo2e =
+        co2eGrams === null || sum.inCo2e === null
+          ? null
+          : sum.inCo2e + co2eGrams;
     } else {
       sum.outGrams += movement.grams;
-      sum.outCo2e += co2eGrams;
+      sum.outCo2e =
+        co2eGrams === null || sum.outCo2e === null
+          ? null
+          : sum.outCo2e + co2eGrams;
     }
     sums.set(family, sum);
   };
@@ -95,10 +110,11 @@ export function familyTotals(
 
   return Array.from(sums, ([family, sum]) => {
     const isInLarger = sum.inGrams >= sum.outGrams;
+    const co2eGrams = isInLarger ? sum.inCo2e : sum.outCo2e;
     return {
       family,
       grams: isInLarger ? sum.inGrams : sum.outGrams,
-      co2eKg: Math.round(isInLarger ? sum.inCo2e : sum.outCo2e) / 1000,
+      co2eKg: co2eGrams === null ? null : Math.round(co2eGrams) / 1000,
     };
   })
     .filter((total) => total.grams > 0)
@@ -245,9 +261,13 @@ const vOrgImpact = v.object({
   sold: vFlow,
   /** Each kilo once — see `familyTotals`. */
   recycledGrams: v.number(),
-  co2eKg: v.number(),
+  co2eKg: v.union(v.number(), v.null()),
   families: v.array(
-    v.object({ family: vFamily, grams: v.number(), co2eKg: v.number() }),
+    v.object({
+      family: vFamily,
+      grams: v.number(),
+      co2eKg: v.union(v.number(), v.null()),
+    }),
   ),
   /** When the first completed pickup or trade happened; null if none yet. */
   since: v.union(v.number(), v.null()),
@@ -420,10 +440,11 @@ async function orgImpact(
     bought: flowOf(bought),
     sold: flowOf(sold),
     recycledGrams: families.reduce((sum, total) => sum + total.grams, 0),
-    co2eKg:
-      Math.round(
-        families.reduce((sum, total) => sum + total.co2eKg * 1000, 0),
-      ) / 1000,
+    co2eKg: families.some((total) => total.co2eKg === null)
+      ? null
+      : Math.round(
+          families.reduce((sum, total) => sum + (total.co2eKg ?? 0) * 1000, 0),
+        ) / 1000,
     families,
     since: times.length > 0 ? Math.min(...times) : null,
   };
@@ -624,7 +645,7 @@ export const compliance = query({
     epr: v.union(vEprSummary, v.null()),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     const today = indiaToday();
     const materials = await materialIndex(ctx);
     const { sales, purchases } = await tradesOf(ctx, org._id);

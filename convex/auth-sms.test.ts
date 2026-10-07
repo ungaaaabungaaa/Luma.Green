@@ -54,7 +54,7 @@ it("rejects a resend before storing another code, even with a different client I
 
 it.each([
   { email: "admin@luma.test", status: 403 },
-  { email: "member@luma.test", status: 200 },
+  { email: "919876543210@phone.luma.green", status: 200 },
 ])(
   "phone-code sign-in permits members but requires the admin route for $email",
   async ({ email, status }) => {

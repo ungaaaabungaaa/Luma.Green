@@ -309,6 +309,15 @@ const eslintConfig = defineConfig([
 
   // --- Config files at the repo root -------------------------------------
   {
+    // Standalone Playwright evidence runners use assertions directly;
+    // they write capture manifests rather than registering test cases.
+    files: [
+      "scripts/capture-lots-guide.mjs",
+      "scripts/guide-preview/capture-finance.mjs",
+    ],
+    rules: { "sonarjs/assertions-in-test-cases": "off" },
+  },
+  {
     files: ["*.{mjs,ts,mts}", ".husky/**"],
     rules: {
       // Next types `headers()`/`redirects()` as async even when the body has

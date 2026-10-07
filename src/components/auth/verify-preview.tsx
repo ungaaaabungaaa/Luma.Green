@@ -42,7 +42,7 @@ export function VerifyPreview() {
     <div className="flex flex-col gap-6">
       <AuthProgress step="code" />
       <div className="flex flex-col gap-2">
-        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
           {t("previewTitle")}
         </h1>
         <p className="text-muted-foreground">
@@ -52,13 +52,13 @@ export function VerifyPreview() {
         </p>
         <Link
           href={{ pathname: "/login", query: { next } }}
-          className="inline-flex min-h-11 max-w-full items-center self-start py-2 text-sm font-medium text-wrap text-primary underline-offset-4 hover:underline"
+          className="inline-flex min-h-11 max-w-full items-center self-start py-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
         >
           {t("changeNumber")}
         </Link>
       </div>
       <div className="flex flex-col gap-4">
-        <Label htmlFor="preview-code" className="text-base">
+        <Label htmlFor="preview-code" className="text-sm">
           {t("codeLabel")}
         </Label>
         <div dir="ltr" className="flex justify-center">
@@ -77,7 +77,7 @@ export function VerifyPreview() {
                 <InputOTPSlot
                   key={index}
                   index={index}
-                  className="h-14 w-11 text-xl sm:w-12"
+                  className="h-12 w-10 text-lg sm:w-12"
                 />
               ))}
             </InputOTPGroup>
@@ -96,7 +96,7 @@ export function VerifyPreview() {
         </div>
         <Button
           size="lg"
-          className="h-auto min-h-12 py-3 text-wrap whitespace-normal"
+          className="w-full"
           disabled
           aria-describedby="preview-notice"
         >
@@ -104,7 +104,7 @@ export function VerifyPreview() {
         </Button>
         <Button
           variant="ghost"
-          className="h-auto min-h-11 py-3 text-wrap whitespace-normal"
+          className="min-h-11"
           disabled
           aria-describedby="preview-notice"
         >

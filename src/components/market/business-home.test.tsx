@@ -10,6 +10,7 @@ import type { ListingView, TradeView } from "./types";
 const { data } = vi.hoisted(() => ({
   data: {
     kind: "yard",
+    canOperate: true,
     trades: { buying: [] as unknown[], selling: [] as unknown[] },
     offers: [] as unknown[],
     mine: [] as unknown[],
@@ -45,6 +46,7 @@ vi.mock("@/i18n/navigation", () => ({
 
 beforeEach(() => {
   data.kind = "yard";
+  data.canOperate = true;
   data.trades = {
     buying: [
       aTrade({
@@ -102,7 +104,7 @@ describe("BusinessHome", () => {
       }),
     ).toBeInTheDocument();
     const stats = screen.getByRole("region", { name: "At a glance" });
-    expect(within(stats).getByText("Awaiting gateway")).toBeInTheDocument();
+    expect(within(stats).getByText("Accepted orders")).toBeInTheDocument();
     expect(within(stats).getAllByText("1")).toHaveLength(3);
     expect(within(stats).getByText("1 trade needs a step")).toBeInTheDocument();
     expect(within(stats).getByText("5,000 kg listed")).toBeInTheDocument();
@@ -123,7 +125,7 @@ describe("BusinessHome", () => {
     );
   });
 
-  it("shows manufacturers recycled material and no selling", () => {
+  it("shows manufacturers recycled offers and a way to manage byproduct sales", () => {
     data.kind = "manufacturer";
     data.offers = [
       aListing({
@@ -136,11 +138,41 @@ describe("BusinessHome", () => {
     ];
     renderHome();
     expect(
-      screen.getByRole("heading", { name: "Recycled material for you" }),
+      screen.getByRole("heading", { name: "Material offers for you" }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Recycled lots")).toBeInTheDocument();
+    expect(screen.getByText("5,000 kg listed")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Sell" })).toHaveAttribute(
+      "href",
+      "/app/sell",
+    );
+  });
+  it("hides manufacturer order and sale actions for a viewer", () => {
+    data.kind = "manufacturer";
+    data.canOperate = false;
+    renderHome();
     expect(
-      screen.queryByRole("link", { name: /^Sell/ }),
+      screen.queryByRole("link", { name: "Sell" }),
     ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: "Accept order" }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText("5,000 kg listed")).toBeVisible();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => data.canOperate,
+}));
+
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      isPending: false,
+      error: null,
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session" },
+      },
+    }),
+  },
+}));

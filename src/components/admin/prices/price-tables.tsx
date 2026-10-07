@@ -16,6 +16,8 @@ import type { Family } from "../../../../convex/lib/catalogue";
 import { PILOT_CITY } from "../../../../convex/lib/review";
 import { FAMILY_LABELS } from "../labels";
 import { CatalogueNames } from "./catalogue-names";
+import { CatalogueSetup } from "./catalogue-setup";
+import { MaterialClassification } from "./material-classification";
 import { PRICE_COLUMNS, PriceRow, type PriceRowData } from "./price-row";
 
 const FAMILY_ORDER = Object.keys(FAMILY_LABELS) as Family[];
@@ -42,7 +44,9 @@ export function PriceTables() {
       <DemoNote>Sample prices for the prototype, not market rates.</DemoNote>
       <PriceRules />
       <PriceGroups rows={rows} />
+      <CatalogueSetup />
       <CatalogueNames />
+      <MaterialClassification />
     </div>
   );
 }
@@ -85,7 +89,7 @@ function PriceGroups({ rows }: { rows: readonly PriceRowData[] | undefined }) {
       <EmptyState
         icon={PackageOpenIcon}
         title="No materials yet"
-        body="The catalogue is empty. Run the demo seed to load it."
+        body="Add the catalogue definitions below, then set approved prices. No sample rates or stock will be created."
       />
     );
   }

@@ -59,13 +59,15 @@ for (const [route, selector] of [
       .poll(() =>
         image.evaluate((element: HTMLImageElement) => {
           if (!element.currentSrc) return false;
-          const selectedWidth = Number(
-            new URL(element.currentSrc).searchParams.get("w"),
-          );
+          const rendered = element.getBoundingClientRect();
+          // Direct WebP delivery has no optimizer width parameter. Check the
+          // decoded pixels in both axes so object-cover never needs to upscale.
           return (
             element.complete &&
-            element.naturalWidth > 0 &&
-            selectedWidth >= element.getBoundingClientRect().width
+            rendered.width > 0 &&
+            rendered.height > 0 &&
+            element.naturalWidth >= rendered.width &&
+            element.naturalHeight >= rendered.height
           );
         }),
       )

@@ -62,7 +62,7 @@ export function SupportInbox() {
           if (isFilter(value)) setFilter(value);
         }}
       >
-        <TabsList className="h-auto min-h-12 w-full justify-start rounded-none border-b bg-transparent p-0 sm:w-fit">
+        <TabsList>
           <TabsTrigger value="open" className="tabular-nums">
             {openCount === undefined ? "Open" : `Open (${String(openCount)})`}
           </TabsTrigger>
@@ -70,7 +70,7 @@ export function SupportInbox() {
           <TabsTrigger value="all">All</TabsTrigger>
         </TabsList>
         {FILTERS.map((value) => (
-          <TabsContent key={value} value={value} className="mt-6">
+          <TabsContent key={value} value={value}>
             <RequestList
               filter={value}
               requests={requests?.filter(
