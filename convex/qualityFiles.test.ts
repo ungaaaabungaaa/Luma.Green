@@ -276,6 +276,81 @@ async function reportWorld() {
   return { ...w, recipient, recipientId, fileId, args };
 }
 describe("scoped audit reports", () => {
+  it("shares only effective inspections after independent correction approval", async () => {
+    const w = await reportWorld();
+    const original = await w.t.run((ctx) =>
+      ctx.db.get("lotInspections", w.inspectionId),
+    );
+    if (!original) throw new Error("fixture");
+    const correction = await w.owner.mutation(api.quality.proposeCorrection, {
+      lotId: w.lotId,
+      buyerOrgId: original.buyerOrgId,
+      specificationReference: original.specificationReference,
+      specificationVersion: original.specificationVersion,
+      sampleMethod: original.sampleMethod,
+      results: [{ parameter: "Moisture", unit: "percent", value: "99" }],
+      decision: "rejected",
+      supersedesInspectionId: w.inspectionId,
+      reason: "Corrected laboratory measurement",
+    });
+    await expect(
+      w.owner.mutation(api.quality.approveCorrection, {
+        inspectionId: correction,
+      }),
+    ).rejects.toThrow("SELF_APPROVAL_FORBIDDEN");
+    const correctionArgs = {
+      ...w.args,
+      inspectionId: correction,
+      attachmentIds: [],
+    };
+    await expect(
+      w.owner.mutation(api.auditShares.create, correctionArgs),
+    ).rejects.toThrow("INSPECTION_NOT_APPROVED");
+    const pending = await w.owner.query(api.auditShares.board, {});
+    expect(pending.inspections.map((row) => row.id)).toContain(w.inspectionId);
+    expect(pending.inspections.map((row) => row.id)).not.toContain(correction);
+    await w.t.run(async (ctx) => {
+      const shop = await ctx.db
+        .query("orgs")
+        .withIndex("by_kind_city", (q) =>
+          q.eq("kind", "kabadiwala").eq("city", "Bengaluru"),
+        )
+        .first();
+      if (!shop) throw new Error("fixture");
+      const member = await ctx.db
+        .query("memberships")
+        .withIndex("by_org", (q) => q.eq("orgId", shop._id))
+        .first();
+      if (!member) throw new Error("fixture");
+      await ctx.db.insert("memberships", {
+        orgId: original.orgId,
+        profileId: member.profileId,
+        role: "owner",
+        createdAt: Date.now(),
+      });
+      await ctx.db.patch("profiles", member.profileId, {
+        activeOrgId: original.orgId,
+      });
+    });
+    await w.stranger.mutation(api.quality.approveCorrection, {
+      inspectionId: correction,
+    });
+    const approved = await w.owner.query(api.auditShares.board, {});
+    expect(approved.inspections.map((row) => row.id)).toContain(correction);
+    expect(approved.inspections.map((row) => row.id)).not.toContain(
+      w.inspectionId,
+    );
+    await expect(
+      w.owner.mutation(api.auditShares.create, w.args),
+    ).rejects.toThrow("INSPECTION_SUPERSEDED");
+    const reportId = await w.owner.mutation(
+      api.auditShares.create,
+      correctionArgs,
+    );
+    const report = await w.recipient.query(api.auditShares.read, { reportId });
+    expect(report?.snapshot.inspectingDecision).toBe("rejected");
+  });
+
   it("shares only a frozen whitelist with the exact recipient, then revokes bytes and view", async () => {
     const w = await reportWorld();
     const reportId = await w.owner.mutation(api.auditShares.create, w.args);

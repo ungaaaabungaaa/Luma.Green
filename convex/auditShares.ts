@@ -30,6 +30,27 @@ export async function canReadAuditReport(
     report.recipientProfileId === profileId
   );
 }
+/** Reports expose effective results, never pending or replaced corrections. */
+async function inspectionShareError(
+  ctx: QueryCtx,
+  inspection: Doc<"lotInspections">,
+) {
+  const replacement = await ctx.db
+    .query("lotInspectionApprovals")
+    .withIndex("by_superseded", (q) =>
+      q.eq("supersededInspectionId", inspection._id),
+    )
+    .first();
+  if (replacement) return "INSPECTION_SUPERSEDED";
+  if (inspection.supersedesInspectionId) {
+    const approval = await ctx.db
+      .query("lotInspectionApprovals")
+      .withIndex("by_inspection", (q) => q.eq("inspectionId", inspection._id))
+      .first();
+    if (!approval) return "INSPECTION_NOT_APPROVED";
+  }
+  return null;
+}
 const vReportSummary = v.object({
   id: v.id("auditReports"),
   purpose: v.string(),
@@ -106,7 +127,11 @@ export const board = query({
     const inspections = [];
     for (const row of rows) {
       const lot = await ctx.db.get("materialLots", row.lotId);
-      if (orgId && lot?.orgId === orgId)
+      if (
+        orgId &&
+        lot?.orgId === orgId &&
+        !(await inspectionShareError(ctx, row))
+      )
         inspections.push({
           id: row._id,
           label: row.specificationReference + " · " + row.specificationVersion,
@@ -168,6 +193,8 @@ export const create = mutation({
       : null;
     if (inspection?.orgId !== org._id || lot?.orgId !== org._id)
       throw new ConvexError("INSPECTION_NOT_FOUND");
+    const shareError = await inspectionShareError(ctx, inspection);
+    if (shareError) throw new ConvexError(shareError);
     if (
       args.attachmentIds.length > 20 ||
       new Set(args.attachmentIds).size !== args.attachmentIds.length

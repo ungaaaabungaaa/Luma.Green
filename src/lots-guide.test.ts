@@ -97,7 +97,7 @@ it("keeps the complete local lots, Saathi, business and payment capture matrix c
   expect(names.size).toBe(450);
   for (const [path, expected] of Object.entries(manifest.sourceHashes)) {
     expect(path).toMatch(/^(src|convex|messages|scripts)\//);
-    expect(path).not.toContain("..");
+    expect(path.split("/")).not.toContain("..");
     expect(digest(path), path).toBe(expected);
   }
   checkMatrixNames(names);
