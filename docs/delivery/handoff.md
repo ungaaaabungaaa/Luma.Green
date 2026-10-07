@@ -1,5 +1,18 @@
 # Agent handoff — updated 7 October 2026
 
+## Production backend deployed — 7 October 2026
+
+The tested backend is deployed to `outstanding-buzzard-942`. Fresh readback
+confirms running state, 76 schema tables, 278 functions, the Better Auth component,
+zero application rows and zero stored files. Local test mode and live payment
+activation are absent. The production admin identity is unconfigured. The Vercel
+frontend is still awaiting PR #47, final hosted checks and merge; this backend
+result does not establish a frontend release.
+
+The first hosted native check found four newer Expo SDK 57 patch requirements.
+Those packages and the lockfile were updated, preserving dependency security
+settings. Native tests, compatibility and Android/iOS export pass locally.
+
 ## Release checkpoint — 7 October 2026
 
 Application commit `f5c5b91` contains the final implementation and the report
