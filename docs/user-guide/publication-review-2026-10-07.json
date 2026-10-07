@@ -1,0 +1,1602 @@
+{
+  "document_id": "17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
+  "native_revision_id": "AHj4eMRt_7H6Pi6yT715V49cHSXbVWkhpqnsB-_ayZjx5Tdu2mNVeSOLzB1lDvGkQdE7v5H26IZE29NR4VJMyD3eFNT0-3bDgVdQ80MB1sk",
+  "source_docx_sha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
+  "native_pdf_sha256": "833e01bf0d59c70d04425a00e636bf899f89b57e9ea194c1ab35191d60e7e518",
+  "status": "passed",
+  "page_count": 170,
+  "method": "All 170 final native PDF pages passed: 161 original full-size PNGs inspected and nine exact-byte carryovers from previously inspected originals. Every review SHA-256 matches the final export manifest. Minor readable typography notes are retained below.",
+  "pages": [
+    {
+      "page": 1,
+      "sha256": "dcfffec7bb9211c735a5ba15b049636540a2feb517e73682f365292a694b65a3",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.819022+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 1
+    },
+    {
+      "page": 2,
+      "sha256": "e1dcbb8dad5509426964b659a48905f35e5ac67b6eec14f5728f1293285a9615",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.819114+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 2
+    },
+    {
+      "page": 3,
+      "sha256": "5e8b9e6aa9814a56cf075e6512aae672f625cbf87616e09e64d80e97c29e3f8c",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.819219+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 3
+    },
+    {
+      "page": 4,
+      "sha256": "170dec545a0a6f52ae8ec331863669789ed65a44763d44567d822b6cdcd4e72c",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.819373+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 4
+    },
+    {
+      "page": 5,
+      "sha256": "43bef16c9888dc76c52acb69a257621e778d426ac598229bb09a740d5ca59bb0",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.819570+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 5
+    },
+    {
+      "page": 6,
+      "sha256": "baa9342c7bf4fe6797409133b86d7d3d5b6d3b7534361f0b15da1354f53fd16c",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.819677+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 6
+    },
+    {
+      "page": 7,
+      "sha256": "f49998aca86c650f77087f5dc18697a49ae20e98e5a5fad8a1b2b597d32fb39d",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.820013+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 7
+    },
+    {
+      "page": 8,
+      "sha256": "63dde56f3abdcbc4093c803194ad696bda6e9756ca5fa6600de89bba85ba79b1",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.820280+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 8
+    },
+    {
+      "page": 9,
+      "sha256": "9fc4ebdfe8f64cc094d275b4c70019daca267768855da10b5f821695cfc343b2",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252041+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images and captions readable; no clipping or overlap. Date-chip punctuation repair confirmed."
+    },
+    {
+      "page": 10,
+      "sha256": "153974435b5af84f2289b33e7331cf6a44ffe6e8a069abc6ccb46d3ff8baa482",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:18:14.820528+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Exact PNG bytes match previously inspected passing original.",
+      "carriedFrom": ".convex/guide-release/native-pdf-review/lots-review.json",
+      "carriedFromPage": 10
+    },
+    {
+      "page": 11,
+      "sha256": "076b87544ab62cbcd391a1da36435ceaf5931d67e8505115ce9b1d5a5ece006d",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252148+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 12,
+      "sha256": "033eb2260da89d99cdf02b8051de8eb775dbc1dae0aa2fe770186a4103766cd7",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252229+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 13,
+      "sha256": "0034be6f62c13c4ca83ed0e1efe39ba0f56af9f8025edd26217cd513eb704bd3",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252374+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 14,
+      "sha256": "0a9374fa0c55f6be2762a01605ea16295a2f833269e6f58257fe4cc3f0cbd7db",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252479+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 15,
+      "sha256": "a82fd8fec83d7c4ed753b751f24d22c95fe9566883b7edc34b66e661b4b52d80",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252598+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 16,
+      "sha256": "5559db56996e23a07d610a30392aac6521760391c4cab512847128baba1325e5",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252752+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 17,
+      "sha256": "c9e864906ad1b0ca5a12e8d6e92b851ad7ba76b5e51a983c91be0c85b7d69cfe",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252900+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 18,
+      "sha256": "95ccda84ee1f0ad581b0801517ff494442119a8541e0e8608a1977823ce8b339",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.252973+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 19,
+      "sha256": "395ee4f139603c9502ed2c9b4edc9f21a72248bf1627a4684ba38a9c44e6634a",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253020+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 20,
+      "sha256": "e4fdd8665da0febea55e6091c2a58df7d6faa9c0bdfdfb269c339dd2185fabe7",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253167+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 21,
+      "sha256": "5c7e2e82afd162bcd8f19c9d6ac7e3c56433dce18c5b022d76b46cab09189dd7",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253260+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 22,
+      "sha256": "754787dc97883dcc3aea53f5b6501c4b9d35f807ecbc12230913075db832ce9f",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253360+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 23,
+      "sha256": "8a8eac7686d6951dc77c9271c6da71407c5cbedcaf0082784a5b4880ec48fd71",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253415+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 24,
+      "sha256": "46fb9c4887830a055bab972e07494a7783c7003a40ffbaccf830345def1eec41",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253483+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 25,
+      "sha256": "e57cf40017a4284b436bc0b8c34d02aca8c0eda5a77a5323ef1a149c2255090e",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253544+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 26,
+      "sha256": "4d9c44719d97a41a225726ba131ec67200c86fed3fc8db6043fdb36f442cc7fa",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253657+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 27,
+      "sha256": "bc4a4baecdba799cf92b31806ffe1180770b43d7fad836d0afba2a9e2d1035b8",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253712+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 28,
+      "sha256": "445e85b90b3a166f3a237e2f89886d12d8f22057f7b94047dbeae93c92ca5b5f",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253842+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 29,
+      "sha256": "22b14aa823fc491a43ac3344d7d4829116672437beedea864e7fc63d64589094",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253927+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 30,
+      "sha256": "32038f65d4f32a06211293c0796b428d753aaec70216329a9c712380b0c26bac",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.253991+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 31,
+      "sha256": "5f4d22612cec4e84678971339a02231c88bdea7a096a248cf875824fe65d4c98",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254063+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 32,
+      "sha256": "4f9e81fa0e2e5cc53e181e415e83be65fdd5701027e3cb8cdcaff98382358a2e",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254143+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 33,
+      "sha256": "12f48ff8d0c88c053b9ff5d4de81853021acffd0c9d18bddeb5375f1f1566c68",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254222+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 34,
+      "sha256": "759533354273c36b83c8e9213c2825d817bd3d41e0b79897ac9592015930106b",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254482+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 35,
+      "sha256": "09a1ee9a403e3be3942952948a24bb0fd04a56f2124d8728bd8e368b7b023233",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254557+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 36,
+      "sha256": "e697f0a8ec848a14daf77326a9576809b0e28bb90fbf3bdd40f9aac4418f3bc5",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254660+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 37,
+      "sha256": "ad1acaa14616c248703df5185d49169d9d8194e04f7d7e65ca158f37c5a56bc5",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254763+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 38,
+      "sha256": "dfe748890d682e35f8da0fcba0bdb4d2d508eb912acc0083afd6d010fcfb095f",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254854+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 39,
+      "sha256": "7b974dcc0b5f3fd2731092f30af63885ec71f93b3cf8161ad76f76cccf030d88",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.254911+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 40,
+      "sha256": "e1cff176fcd60b43898978d5c3ece3dabdedfea1177074b6aec56a0c50a79bdc",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.255000+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 41,
+      "sha256": "c6aae1dd7633ba3fcfb93c5bf65c5a743ab4a2257cd46eb5dddb0539822a900f",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.255086+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 42,
+      "sha256": "d9cc8367dde7f9aec7a17e66f082b81af6613a79acbbe708561c591f3a42c5e1",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.255163+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 43,
+      "sha256": "0e01f0ba231c69b40bd97e8e692f8f98d480c01201f3b5ada20f2920887a056b",
+      "status": "passed",
+      "reviewer": "lots_finish",
+      "reviewedAt": "2026-10-07T05:25:44.255251+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Text, images, captions and tables readable; no clipping or overlap observed."
+    },
+    {
+      "page": 44,
+      "file": "page-044.png",
+      "sha256": "f677c55c12c3fb4079a3a36b5b653f8c56757e81b4353fbb0236271084e1fcfc",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:27.755917+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 45,
+      "file": "page-045.png",
+      "sha256": "ccd3173ecac2359d53744720f5bf257d2b49b06c683760d2055a98a3b72d9832",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:27.756089+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 46,
+      "file": "page-046.png",
+      "sha256": "5bc74e58fa1e51cf4e6844538f207c7755c442ae4682f74cf437a61343dbed39",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:27.756213+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 47,
+      "file": "page-047.png",
+      "sha256": "7dd548aeaaff89a2c3464155b7ea922257d91204c0dbe411fb0a9713aeda200a",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:27.756305+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 48,
+      "file": "page-048.png",
+      "sha256": "f4c8958fd0cbe8ca66a2e9ef7bfc0cc38b1a519ada80914b930cac1b6e590a2e",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:39.276435+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 49,
+      "file": "page-049.png",
+      "sha256": "1fe56545dcce08ff6ad1fbf7694786d95593cbea6f6238a8e1e4d622fa5fa866",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:39.276663+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 50,
+      "file": "page-050.png",
+      "sha256": "859f065be363674d0227934fd46747c690d59fba1aae734952577f72bdbe0bc2",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:39.276812+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 51,
+      "file": "page-051.png",
+      "sha256": "283e5ff42ea54197fa2737f452926350501353895251085bea46101573667d55",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:39.276953+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 52,
+      "file": "page-052.png",
+      "sha256": "670984c8bd25e7d53d728ac86773ba4caabe94ae464c31b725b43e82d30fb597",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:48.901145+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 53,
+      "file": "page-053.png",
+      "sha256": "2ce75c2b225b8651bb1293b0bf47e773e2eb7fd11c6ece31a715444cb669a0fb",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:48.901358+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 54,
+      "file": "page-054.png",
+      "sha256": "3fedb4682e0e941fe92a6ff0ded251554f642b3ba39d10eeb05c06e551de4777",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:48.901493+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 55,
+      "file": "page-055.png",
+      "sha256": "7cb4c1482c47e408ecbffb1a5770e79ecfbc5236bf6d854323a01f11a803076c",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:24:48.901571+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 56,
+      "file": "page-056.png",
+      "sha256": "31dbe6148e1a74e8235460b6cc4f1ee31842f522e0255d305a269e5963293e60",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:01.259287+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 57,
+      "file": "page-057.png",
+      "sha256": "85a884c0fdddd1d2e3c5e0a2e7d68a5ca1d4bea43cd3d848d36674f2bc18fb19",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:01.259515+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 58,
+      "file": "page-058.png",
+      "sha256": "bbff0dfcd78c58d212efbf91e5641cdc35a27533083d50af3b285e8a5df2059e",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:01.259605+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 59,
+      "file": "page-059.png",
+      "sha256": "56d81684d76f729432df997a57f719391df13c8337df400ba12e815477fbb62d",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:01.259732+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 60,
+      "file": "page-060.png",
+      "sha256": "832a62fba1d432fae34c08475d44647a96011b9fc7f0f6129f2fcf6e69a89e35",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:16.791321+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 61,
+      "file": "page-061.png",
+      "sha256": "a2bbc3f5637b929f76422828102de4a25cd5ae0d7c4fef127a825cca49425b1a",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:16.791455+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected: readable screenshot and attached caption; no overlap or exposed credentials. Minor heading typography: buyer s decision omits apostrophe; meaning remains clear."
+    },
+    {
+      "page": 62,
+      "file": "page-062.png",
+      "sha256": "e85291738070866e6f00ab2307f03857df65920f7d41bc4aa2904519d277f644",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:16.791571+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 63,
+      "file": "page-063.png",
+      "sha256": "84a37722dbdd7046ac7bd59c7b87853eec8caad8ea90906181271b57633dfed7",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:25:16.791709+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 64,
+      "file": "page-064.png",
+      "sha256": "ad653f3c529289ab37f299610de565d8d94185e7788bcf7968577078ad92b396",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:26:56.424303+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 65,
+      "file": "page-065.png",
+      "sha256": "b083526e2168e1b6eb99e37727bce4870c3dc2057d68490b5e6fd75a0d92bc9f",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:26:56.424533+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 66,
+      "file": "page-066.png",
+      "sha256": "aa577bbae03884744ae31d33892da867a1e4cd862568a23863cc2b55fce5a56a",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:26:56.424643+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 67,
+      "file": "page-067.png",
+      "sha256": "ed2894f5f05fd50ed4f439dde6b76c579ffcc3022afac09864ce263cd40b07dd",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:26:56.424776+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 68,
+      "file": "page-068.png",
+      "sha256": "33d8c4ec0e312de9dba18dd8ed159b807f4f452d26d999e9b0baa631307e0495",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:03.941945+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 69,
+      "file": "page-069.png",
+      "sha256": "bd9ee6b4862ce40d979357d64620947a1e6973e672432ce28abe6e199d488560",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:03.942078+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 70,
+      "file": "page-070.png",
+      "sha256": "6ece4f3ee7b2e9156d92d075031fffbdc31d0b73387bc14445fc4496aeeda448",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:03.942246+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 71,
+      "file": "page-071.png",
+      "sha256": "b6af6e6b74516c254adf7b81c7678fa1d60ec6a538f898cefeb5e11bfb145e00",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:03.942362+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 72,
+      "file": "page-072.png",
+      "sha256": "3d9905e337e908aee641c86ff0a414e806b3103002ddd200fc24d68537115250",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:11.444871+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 73,
+      "file": "page-073.png",
+      "sha256": "0b5f27960fcb9288bb47948be77eb4ba89fc438a4752f9bdf75e5a7a40628283",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:11.445098+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 74,
+      "file": "page-074.png",
+      "sha256": "03e189227519dae22fcff7437b460457b1e58a26a7e4329dd1e0da9549b90249",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:11.445182+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 75,
+      "file": "page-075.png",
+      "sha256": "17002dbfa3f43a9892a1fa96f610ca62600aaa42664eca79afb8cfabfed5371b",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:11.445251+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 76,
+      "file": "page-076.png",
+      "sha256": "9d4481c905acd43319de5998bfdf2a984ce9977bd35d19b1ba740511bc11b3c9",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:27.440409+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 77,
+      "file": "page-077.png",
+      "sha256": "8fac1e2889c5b2fb8e788108a33b3ee82b707d94be055c173432e903fb50fa40",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:27.440631+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 78,
+      "file": "page-078.png",
+      "sha256": "65f89feed7358026d610c4975932b14a3a2375f463ab437bb3a5081394ed7114",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:27.440755+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 79,
+      "file": "page-079.png",
+      "sha256": "798606c939b83033b46428517ec0b58fabbe985de6664abe267f166ced0a587b",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:27.440895+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 80,
+      "file": "page-080.png",
+      "sha256": "dd22cf72fc9dbfbfae326ddf2e4f7ed9f549cb36eeeeb34be3e1a434e10f847a",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:34.368016+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 81,
+      "file": "page-081.png",
+      "sha256": "e2b7c02ab376d1d776c319ca4ae32d545b54e22553a197c99f5d0d3e7a94395c",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:34.368228+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 82,
+      "file": "page-082.png",
+      "sha256": "dff967730c6e862d2e18943f994cc19b5b00d8f8f990c4e62c7acc3a258debd5",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:34.368375+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 83,
+      "file": "page-083.png",
+      "sha256": "983a0c7179b40bfe016f570b6d707f555a46e36262848d28ad2a3e8e037b6440",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:34.368560+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 84,
+      "file": "page-084.png",
+      "sha256": "7f12790bb41ef08c58b7381b85cc31b24759dac03d83977bd9373cabf94fee52",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:47.654055+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 85,
+      "file": "page-085.png",
+      "sha256": "a667794ed3814f5922b30ca535c4f952d6a2574cfd7656721277d44780c1e4b7",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:47.654179+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 86,
+      "file": "page-086.png",
+      "sha256": "ed257fd31374bff367791a000895a54661f4008c9fe46ed3f5b2c3154b9fb615",
+      "status": "passed",
+      "reviewer": "auth_release",
+      "reviewedAt": "2026-10-07T05:27:47.654321+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original page inspected: readable text, complete screenshot frame, correct caption placement, no overlap or exposed credentials."
+    },
+    {
+      "page": 87,
+      "sha256": "7869eda2d44cd3b9f9b2cbd55fe373fb14df924bfb1ca8954fd0f19db991a9b4",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 88,
+      "sha256": "d2f54470c7c96e09e497e8b4774ff7cdf40ced19b7a29988a1d16389da6c78fc",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 89,
+      "sha256": "32603d655219ed5cb579be8a4b91aa2258e14e0bdf4d71046549de9ced47d886",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 90,
+      "sha256": "f779871cfaaf22aa6b39ba826df4030939a4dec82c7f0200a7f8767d5bf54602",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 91,
+      "sha256": "b436aadac39514432f1653505aeb2cc4f81b1c137eac41eb8c3716c869e9f1d8",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 92,
+      "sha256": "d1da8bbf10d8f50c960378aa827ffd42747bf49eabad329287e223c34d02a7c1",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 93,
+      "sha256": "0c9aa938340681ea464b8656bf492fb30a18f06d5a616de3c95b1293023c24c7",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 94,
+      "sha256": "6437c09181cda0daaef6d355c1f15ba99ecb94f5026d470b007e2e1d94d4d8fc",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 95,
+      "sha256": "58cf0026c2d0bf4564fc4733b57b8de9df2fbe3b18e64f1df29dadbe25fe2591",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 96,
+      "sha256": "49489ab8df5beb761ef0020fbff29adab8a8dae363b79d877a92bbe5ff63a9fe",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 97,
+      "sha256": "a3529279f4da397fd088e5e2c6fa6f3f928779961f8fa032611f4f902123f16a",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 98,
+      "sha256": "feac8b433833e210bddd16af6e7f69a71d1511d9e983cc7539997099667392d4",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Table text wraps within cells; no clipping. Screenshot and caption remain together."
+    },
+    {
+      "page": 99,
+      "sha256": "63f9da2caf994fe21a2a7981c58eeab5dd4287f8181c616612e797c8985a3268",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 100,
+      "sha256": "3edc1ccdf5475de22974fb571487a3048ba844063e1556be9f954e46eadb31f2",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 101,
+      "sha256": "f3415b284f6cc43de921472617b1edfe430375f6297326f3ecddd0011a511945",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 102,
+      "sha256": "9e2fdff44845836470001718c72b43993d37cfea00b2cde04721e9977d3167a7",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 103,
+      "sha256": "d97bf342deb9016a98a16e2c2efb7c6ffeba6891f583385e96189fe7bbc5dd9e",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Both screenshots and their captions fit without clipping or overlap."
+    },
+    {
+      "page": 104,
+      "sha256": "99bb3c2754196d58a2252f37ff57d48c9720e07bd3cb724dbee7965c6a6e32b1",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 105,
+      "sha256": "6a5619f04ddf86fcec94afe2111c3c1635739f44aba60529b3e42546f65d8af8",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 106,
+      "sha256": "910b5ed64627ddedbe17423ee26893ca60600c0ddd26b6cac2b6afe3d1ea1d4d",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 107,
+      "sha256": "07dadc0fb248ec279539f02515cc0f96ee5f24a4bad962154cebbef7827fd25b",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 108,
+      "sha256": "6aaf80a0336a04bb2a5b5ab75cc35c78b2d94a4ed2efbc27e155553d2bb0e1c8",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 109,
+      "sha256": "6badcca5112245c09fc4fab4f64565d5699a33592b1c81daa710eeba4b3e107e",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 110,
+      "sha256": "2a66f0abe733d3e756b5a2f5673b48633d4f4b9beb88d7d97769b1d806e24385",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 111,
+      "sha256": "3ca568cc223a4526fec8c619c7999e9faf34dd462e77f0ca8c7076d361248d3d",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 112,
+      "sha256": "0ecd4a1cb560396ba84d14ce2ee2459a345cda7cf91eb8016e6c6de168805dfa",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 113,
+      "sha256": "a1ab4a5ff3280eff16307c4d1607542514ce7462e5d1a6181b0d2186f529c6e3",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 114,
+      "sha256": "69c7cb9eb5325ebcf0ca06a11561c82efd1566eb5232cfa2b6068f1bb44c10a6",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 115,
+      "sha256": "1cdec31b3c3e89bb31973666bf3159a00a6cd76d46f8cbdf5f1090cb6022e372",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 116,
+      "sha256": "82b7539b6ce7d65fc8dc083fd78ced2b5237eae7c913e095fd1cf45f39876a35",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 117,
+      "sha256": "c6d2c4afe03f83f0b79ef3253ad13071c7e4c3350b9201da160982716616a895",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Troubleshooting table fully readable; all rows fit on the page."
+    },
+    {
+      "page": 118,
+      "sha256": "c240406fa58b287352ab00ff3a3bc2d43bfde1dc83b956778bcc83b1b1dc09ee",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 119,
+      "sha256": "aa237d7a30c472f3baca5c880af2db52a69017badc71919dcfda9c1563a8f034",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 120,
+      "sha256": "332115637ac2c677b7e4250887a03f4857694c61b272bff6a6804f994e40d1f3",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 121,
+      "sha256": "2ca73a3c40098165389d17830665e43aa8438963b68e507844eaec1b44df0df8",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 122,
+      "sha256": "6662a18ea66512ede804bc730e73e2af6f9f162496ef7ab645afd93a94393381",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Updated Business payments cell readable; table continues to next page."
+    },
+    {
+      "page": 123,
+      "sha256": "c6ed19ba7b9ea566f56692389f220b767c9facb3062538a65ccc0d32978d90c6",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Continued setup table repeats header; rows and following text readable."
+    },
+    {
+      "page": 124,
+      "sha256": "5010f40f852c58aa1519b21d4fe442d6cf5f82a673c7a484c805ccae4038bd3f",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Route reference table fully readable with no clipped routes."
+    },
+    {
+      "page": 125,
+      "sha256": "1ed142458b091efee03c346eb54b1d85947ada314eb6e948289a5100f9244d8e",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Glossary table fully readable."
+    },
+    {
+      "page": 126,
+      "sha256": "b16ea3f7d0d415a63a6a647f3c95a5cd3d3d3795ad876545436646f2071f576f",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 127,
+      "sha256": "6855c4e16ff21a08738c974cf6dbfa95898a66c6758b1b012c7d8f2c7ba9618b",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page visually inspected. Text, images and captions readable; no clipping, overlap or unintended isolated paragraphs found."
+    },
+    {
+      "page": 128,
+      "sha256": "d7e96954d2544531f659f27feae1ad87781c2f789c9b92bc0d5cfa12e2f8fd2b",
+      "status": "passed",
+      "reviewer": "capture_finish",
+      "reviewedAt": "2026-10-07T05:25:44.571633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Price-history screenshot, chart, caption and date chips readable."
+    },
+    {
+      "page": 129,
+      "sha256": "6587faf6bf5670162f33cc67d6ff5ee46b535bbbeb3293e6663c239c6252e0d0",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178567+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 130,
+      "sha256": "eef27a58d4ecbfd2def308199bed77531c009a01d7d2c8f21d1318d02c25ec7f",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178622+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 131,
+      "sha256": "5e78072d6be76511aefe6376be6eb4c90375cbf9bbf43e6b42516b60cd397d3f",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178625+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 132,
+      "sha256": "fd110b5cfdfd0a804d531189185ab7329abfe89c583deb79bb6be17b3cadd17b",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178626+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 133,
+      "sha256": "02f7083b657684cb517a97fd7368bd7ebfcbeefe524164d3198fb1d0b1e82073",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178627+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 134,
+      "sha256": "9c056f5aeae37b6941cd172e864aa7b5546f24141b5a2256496720b6076e9ddc",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178628+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 135,
+      "sha256": "7a5f0a9dd1612c008e5b080f531308d73769cb6e125a2dd5a1cd88e77ff075e1",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178630+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 136,
+      "sha256": "8bcd3b8366f30c8e2324b7c1f228aa838b575a90a41acf57f389cbb693ebb346",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178631+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 137,
+      "sha256": "493e14a656bccdb83e2ac89745141055318948ef5cf09c3b5d72d9d247dc7212",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178632+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 138,
+      "sha256": "1adec143356939079b4f88128f81f587fe3cbf030c20269876fb774b57a96fe5",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178633+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 139,
+      "sha256": "6bbd342c3cbaca5d59a68fcb1c6c31f4f162024a6b52cfba8d778152c0979cc7",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178634+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 140,
+      "sha256": "3fdc1c46e4629c022a102636a998b3176bed93f896958c7adea7b2d66f26eb0b",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178635+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 141,
+      "sha256": "2009a3e949a03f7aedc229def7a58ee403906b9ac0567bf0d87983135a1d0102",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178637+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 142,
+      "sha256": "19b53d130c291581ab429f329879ada01f11bc6c1260c5abfbffeb60fd139cc4",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178638+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 143,
+      "sha256": "9fe18530e2db8d30b0fc3c1326d5dd01b1a149957bed84a371820a98822f565c",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178639+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 144,
+      "sha256": "20321b2da7162085c7852c22e90551682817a9b72c9f7b39008e309b4d60c9f6",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178640+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 145,
+      "sha256": "0ccb69331d26ea2fcd78c2dae6a86af364dc4353a9c26170042885ac0d58b484",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178641+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 146,
+      "sha256": "948eb9a7b496fa252e5adb94f1d03e333db31e3cfca052723c7a255cffdba55f",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178642+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 147,
+      "sha256": "aa0da19ba28953daae826a9b850b6b7ba65bac240ad0dead952ab17a46fd0b90",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178643+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 148,
+      "sha256": "53d21e59af98a5aa24955da9ad45d65d9ed2a18d03fa40fd1bce174897e6a7b0",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178644+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 149,
+      "sha256": "8457f5625c05b3923d599bf5fe0ac54b7f97729891961054d5e9c1009be73e38",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178645+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 150,
+      "sha256": "e35e8b2d25ebc03a6487b37819d79b65896bad3d61f117251e6c1b8ea9db1c0b",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178646+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 151,
+      "sha256": "eff63ec7874a390b2e88b2bb2d070c471104aad6a8b78397d1eb1411b3d143cc",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178647+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 152,
+      "sha256": "33bfcb7772f8501e61383221567b755cf624c515e92904af1822fb484f243120",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178649+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 153,
+      "sha256": "c770f491377caa57f052a15d23d2f5ffd91fa75bd2be4d217fedf685cd2769d3",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178650+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 154,
+      "sha256": "25fea61d8a1c29b3f4a16f524db1802531054ba7f6948cb7bf7f36d0dffa1ea6",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178651+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 155,
+      "sha256": "290df2a2d1881ddcd247a6e09d6a7d15b1389b771c3fc3fbd50893f7bcabc742",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178652+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 156,
+      "sha256": "72af0ed63ce65429515aecc92f83883877f23a302123a5e2685e485c66dfc856",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178653+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 157,
+      "sha256": "24f2b56f0943640b56b418919d3699d3ed853ddfe088047877ddc494b0192f2f",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178654+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 158,
+      "sha256": "d07df4caa4ccc0ff84876ec23517e7a3d8e09d9940688e20535851004cc4afde",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178655+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 159,
+      "sha256": "4f909e36b1c8fdab23501c4e3faf44da83807e46c8aeb073efa14c71f3f6f835",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178656+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 160,
+      "sha256": "472c9c10139625d79f6989b390d6b6101ee8735d738d0088c7db0bc4d7fd7f13",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178657+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 161,
+      "sha256": "f9fcd0d3d4962ec5877ee43fece868b977a2a408dcb88edcbd179757e2609d9a",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178658+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 162,
+      "sha256": "cfd9058f1687e25f4528b7eae737d3bb8c7bad4b0e67af4b59fb4536906210e3",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178659+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 163,
+      "sha256": "0f1d270ed024c7fb341a860ebee5a7a618b731183171ede72066900a957d0f35",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178660+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 164,
+      "sha256": "25d11cc99d84fb98c8baeb710d2e549c63a418c6c804a1651e8e9a5ec00d8eaa",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178662+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 165,
+      "sha256": "59409c23c063c16b202e977ecb02c07088266425c62e874129b4204ce09a7af3",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178663+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap. Narrow Step header wraps; readable, minor layout limitation."
+    },
+    {
+      "page": 166,
+      "sha256": "e406f293f7b4db84ae36aacde88d35f3daf6aba9dccd22dfa28e89e5a752e2c7",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178664+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap. Narrow Step header wraps; readable, minor layout limitation."
+    },
+    {
+      "page": 167,
+      "sha256": "17a62f34b8beb014cf2c6e40e6de2e0fc170d3551a686aaf2d5ea61f241fd798",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178665+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap. Narrow Step header wraps; readable, minor layout limitation."
+    },
+    {
+      "page": 168,
+      "sha256": "153212f39833def63d2f695a184ddc8dbe92aa5e4782e12d47d1d31953312c8f",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178666+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap. Narrow Step header wraps; readable, minor layout limitation."
+    },
+    {
+      "page": 169,
+      "sha256": "fdcf9fe95b2d54c2121a14bbf4edb60f819d4acc1fe2446ff2cf6677a82b5c25",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178667+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    },
+    {
+      "page": 170,
+      "sha256": "002f82c2d3cc629e27c20e62ce4b4a3a5958906cc1069958d5e75458233209ec",
+      "status": "passed",
+      "reviewer": "root",
+      "reviewedAt": "2026-10-07T05:28:42.178669+00:00",
+      "inspectionMethod": "original-full-size",
+      "notes": "Original full-size page inspected. Text, captions, screenshots and tables readable; no blocking clipping or overlap."
+    }
+  ]
+}

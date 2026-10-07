@@ -3,14 +3,14 @@
   "edition": "7 October 2026, verified accounts, business workspaces, stakeholder requests and payment limits",
   "application_checkpoint": "f5c5b91",
   "docx": "output/docx/luma-green-user-guide.docx",
-  "docx_sha256": "2caaed8ff26c1050721f8bc59f88b135867d526894d2436ff7ed4c0758f6b627",
+  "docx_sha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
   "visual_review": {
     "status": "passed",
     "pages": 167,
-    "docx_sha256": "2caaed8ff26c1050721f8bc59f88b135867d526894d2436ff7ed4c0758f6b627"
+    "docx_sha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0"
   },
   "inputs": {
-    "docs/user-guide/guide.md": "6ded2b58a603f820592b5af3fac52dc3a652981e8b6fed6aeab22c3883fffbed",
+    "docs/user-guide/guide.md": "21384920ce5b53ccbc066481234e4798bb4b6abaa493da321a5b45237bc2077a",
     "scripts/build-user-guide.py": "8dc4d9ddc67e993b4f8f2761961eee98d63c26db7dd207a7e5e51827ad11bcf7",
     "scripts/user-guide-requirements.txt": "9c946ddb0d5bdd4dab99c479ec36e13fad18ea669ddf6743f4725930346307d0",
     "scripts/document_links.py": "eaec2789a1f3f7c4969a73c572ef2e6fdfe2cd251a21e36460b8460ba7f3ba89",

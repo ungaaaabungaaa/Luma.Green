@@ -244,7 +244,7 @@ Permission is checked on each protected request. Removing membership blocks futu
 
 ### Before the owner opens the pilot
 
-Connect the frontend to the intended Convex backend. Configure email delivery and complete the MSG91 account and DLT/template checks before live SMS use. Set actual prices and support contacts. Test each account and workspace role with isolated local users, then complete the required provider and deployment checks. The end of this guide contains the owner checklist.
+The frontend and backend release is verified at https://lumagreen.vercel.app. Before opening the pilot, configure the production admin identity and email delivery, complete the MSG91 account and DLT/template checks, and confirm actual prices and support contacts. The isolated local account and workspace tests have passed. Complete the enabled providers' real delivery checks and the team's manual walkthrough on the released version. The end of this guide contains the owner checklist.
 
 ---
 
@@ -983,10 +983,7 @@ cancel the trade, release or restore stock, or prove that material was returned.
 Physical resolution needs review. Seller settlement requires separate,
 order-specific provider evidence; a general payout notice is insufficient.
 
-Before live use, the owner must complete provider/KYC/Easy Split approval,
-commercial policy, real sandbox/webhook/refund/settlement acceptance and release
-checks. Policy values come from the approved business agreement. The connected local browser suite has passed. Final release checks and real
-provider acceptance remain open; adding keys alone is insufficient.
+Before live use, the owner must complete provider/KYC/Easy Split approval, commercial policy and real sandbox/webhook/refund/settlement acceptance. Policy values come from the approved business agreement. The connected local browser suite and software release checks have passed, and the production frontend and backend are deployed. Real provider acceptance remains open; adding keys alone is insufficient.
 
 /app/trades/[id]/invoice is a printable trade receipt. It is not a GST tax invoice. It does not replace the supplier's required tax or transport documents.
 
@@ -1520,18 +1517,8 @@ This is an owner/developer checklist, not a list of admin console buttons. The e
 
 ### Complete setup in this order
 
-1. **Use the existing hosting address.** The existing Vercel production address
-   is [lumagreen.vercel.app](https://lumagreen.vercel.app). The `luma.green`
-   custom domain is not configured in Vercel at this checkpoint. Do not send
-   teammates to that custom domain until ownership, DNS, HTTPS and redirects
-   have been verified. The production address is separate from the local test
-   environment and is not proof that the latest release is deployed.
-2. **Let the engineer finish the built-in configuration and release.** Reuse
-   the existing GitHub, Convex and Vercel projects. Configure a production
-   `BETTER_AUTH_SECRET`, the exact HTTPS `SITE_URL`, the matching frontend site
-   and Convex URLs, and the intended `ADMIN_EMAIL`. Deploy the reviewed backend
-   before its frontend. Keep all local test-mode and private inbox settings out
-   of hosted deployments. Better Auth needs no separate account signup.
+1. **Use the verified hosting address.** The production release is available at [lumagreen.vercel.app](https://lumagreen.vercel.app). The `luma.green` custom domain is not configured in Vercel at this checkpoint. Do not send teammates to that custom domain until ownership, DNS, HTTPS and redirects have been verified. Production is separate from the isolated local test environment; disposable local accounts do not work there. Use the release handoff to confirm the current deployed version.
+2. **Finish the production identity setup.** The reviewed backend and frontend are deployed through the existing GitHub, Convex and Vercel projects. The production auth secret and matching site/backend URLs are configured. The owner must supply the intended `ADMIN_EMAIL`; the engineer then configures the temporary admin setup token. Keep all local test-mode and private inbox settings out of hosted deployments. Better Auth needs no separate account signup.
 3. **Create the first admin account once.** The engineer supplies a private
    temporary `ADMIN_SETUP_TOKEN`. Follow chapter 17 at /admin/setup using the
    configured admin identity. Finish the authenticator check and store recovery
@@ -1550,14 +1537,7 @@ This is an owner/developer checklist, not a list of admin console buttons. The e
    `MSG91_OTP_TEMPLATE_ID` in Convex. Use a controlled handset to test receipt,
    expiry, wrong-code rejection and resend limits. Optional status SMS needs
    its own approved Flow templates; OTP setup does not enable those messages.
-6. **Finish the business-payment gates.** Ask Cashfree to approve Luma's
-   recycling-material marketplace use case and enable Payment Gateway with
-   Easy Split. Complete merchant and seller/vendor KYC. Keep sandbox and live
-   credentials separate. The implemented payment, refund and seller-settlement
-   controls require final integrated checks and real provider acceptance before
-   live checkout can open. The owner must confirm who bears gateway, refund and
-   chargeback fees. Adding a live key does not resolve these acceptance or policy gates. B2B orders
-   stay blocked at the documented payment boundary until they pass.
+6. **Finish the business-payment gates.** Ask Cashfree to approve Luma's recycling-material marketplace use case and enable Payment Gateway with Easy Split. Complete merchant and seller/vendor KYC. Keep sandbox and live credentials separate. The payment, refund and seller-settlement controls have passed local and release checks; real provider acceptance is still required before live checkout can open. The owner must confirm who bears gateway, refund and chargeback fees. Adding a live key does not resolve these acceptance or policy gates. B2B orders stay blocked at the documented payment boundary until they pass.
 7. **Add real operating details.** Confirm support contacts, operating hours,
    approved business access and actual material rates. Keep the disposable
    development accounts and synthetic training materials out of production.
@@ -1634,26 +1614,26 @@ The exact settings and owner actions are maintained in
 [Service inventory](../operations/services.md). Enter secrets in the service's
 protected settings, never in this Google Doc, a screenshot or the test log.
 
-| Service or task              | Required setup                                                                                                                                                                                    |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Hosting and domain           | Intended HTTPS origin; frontend deployment; NEXT_PUBLIC_SITE_URL                                                                                                                                  |
-| Convex                       | Correct deployment and URLs; deployment-specific keys; schema/functions deployed before dependent UI                                                                                              |
-| Authentication               | SITE_URL, BETTER_AUTH_SECRET and ADMIN_EMAIL; private ADMIN_SETUP_TOKEN for first setup, then remove it                                                                                           |
-| Phone SMS                    | MSG91 account, DLT/template approval and OTP limits; configured OTP values                                                                                                                        |
-| Account and invitation email | Resend is required for normal email verification, recovery and invitations; verified AUTH_FROM_EMAIL, RESEND_API_KEY and HTTPS SITE_URL; test inbox delivery                                      |
-| Admin email recovery         | Separate ADMIN_RESET_FROM_EMAIL and the configured existing admin identity; verify single-use reset without removing TOTP                                                                         |
-| Business payments            | Default-off Cashfree lifecycle; approved policy and explicit activation, recycling-marketplace/Easy Split and KYC approval, final code checks, actual collection/refund/settlement proof required |
-| Device notifications         | VAPID keys for browsers; Expo/EAS and APNs/FCM for mobile; signed desktop/device acceptance. Inbox persistence and alert delivery are separate checks                                             |
-| Optional status SMS          | Separate approved Flow templates and outbox configuration; verify handset delivery                                                                                                                |
-| Analytics/errors             | Optional PostHog, GA4 and Sentry projects; telemetry switch, service keys and provider settings                                                                                                   |
-| Search ownership             | Optional Google Search Console and Bing ownership tokens; deployed sitemap submission                                                                                                             |
-| Optional AI                  | OpenRouter credentials or authenticated HTTPS model gateway; quotas and evaluated model                                                                                                           |
-| Android/iOS                  | Expo/EAS project, Apple/Google developer accounts, signing credentials and physical-device checks                                                                                                 |
-| macOS/Windows                | Stable signing identities, notarization where required and signed update feeds                                                                                                                    |
-| Support and prices           | Real contact details; verified pilot prices; staffed review/support process                                                                                                                       |
-| Operations                   | Measured backups and restore drill, provider cost limits and incident procedure                                                                                                                   |
+| Service or task              | Required setup                                                                                                                                                                    |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hosting and domain           | Intended HTTPS origin; frontend deployment; NEXT_PUBLIC_SITE_URL                                                                                                                  |
+| Convex                       | Correct deployment and URLs; deployment-specific keys; schema/functions deployed before dependent UI                                                                              |
+| Authentication               | SITE_URL, BETTER_AUTH_SECRET and ADMIN_EMAIL; private ADMIN_SETUP_TOKEN for first setup, then remove it                                                                           |
+| Phone SMS                    | MSG91 account, DLT/template approval and OTP limits; configured OTP values                                                                                                        |
+| Account and invitation email | Resend is required for normal email verification, recovery and invitations; verified AUTH_FROM_EMAIL, RESEND_API_KEY and HTTPS SITE_URL; test inbox delivery                      |
+| Admin email recovery         | Separate ADMIN_RESET_FROM_EMAIL and the configured existing admin identity; verify single-use reset without removing TOTP                                                         |
+| Business payments            | Default-off Cashfree lifecycle; approved policy and explicit activation, recycling-marketplace/Easy Split and KYC approval, real collection/refund/settlement acceptance required |
+| Device notifications         | VAPID keys for browsers; Expo/EAS and APNs/FCM for mobile; signed desktop/device acceptance. Inbox persistence and alert delivery are separate checks                             |
+| Optional status SMS          | Separate approved Flow templates and outbox configuration; verify handset delivery                                                                                                |
+| Analytics/errors             | Optional PostHog, GA4 and Sentry projects; telemetry switch, service keys and provider settings                                                                                   |
+| Search ownership             | Optional Google Search Console and Bing ownership tokens; deployed sitemap submission                                                                                             |
+| Optional AI                  | OpenRouter credentials or authenticated HTTPS model gateway; quotas and evaluated model                                                                                           |
+| Android/iOS                  | Expo/EAS project, Apple/Google developer accounts, signing credentials and physical-device checks                                                                                 |
+| macOS/Windows                | Stable signing identities, notarization where required and signed update feeds                                                                                                    |
+| Support and prices           | Real contact details; verified pilot prices; staffed review/support process                                                                                                       |
+| Operations                   | Measured backups and restore drill, provider cost limits and incident procedure                                                                                                   |
 
-Better Auth runs within the existing Convex component; it needs no separate hosted-auth account. Review and test the complete integration before any backend or frontend release. This source update records local behavior, not a new cloud deployment. Use the current delivery handoff for the release baseline and the 10 October launch plan for remaining work.
+Better Auth runs within the existing Convex component; it needs no separate hosted-auth account. The reviewed backend and frontend are deployed. Production admin identity setup and real email, SMS and payment-provider acceptance remain open. Use the current delivery handoff for the deployed release evidence and the 10 October launch plan for remaining work.
 
 Use docs/testing/launch-2026-10-10.md and docs/operations/services.md for the launch plan and provider account inventory. The operations runbooks launch-checklist.md, app-releases.md, push-notifications.md, low-cost-operation.md and sms-notifications.md give the release steps. Keep secrets and disposable test passwords outside Git and the shared guide.
 

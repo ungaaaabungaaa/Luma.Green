@@ -1,89 +1,200 @@
 {
-  "status": "pending",
+  "status": "verified",
   "document_id": "17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": {
-    "source": "docs/user-guide/guide.md",
-    "updated_at": "2026-10-07",
-    "status": "awaiting_native_publication",
-    "local_browser_result": "55 of 55 connected cases passed; not a cloud publication result"
-  },
-  "result": "Current 7 October guide is locally reviewed but not yet published to the native document. The historical 3 October publication is retained below.",
-  "connection_gate": "Revision-guarded same-document update and readback remain pending; no connection failure is asserted.",
-  "next_action": "Compare the fresh native revision with last_verified_revision. Update this same document from the reviewed 167-page Word source, preserve later human edits, folder and sharing, and verify text, images and every exported page before recording publication.",
+  "result": "The 7 October 2026 guide is published and verified in the existing native document. The reviewed Word has 167 pages; all 170 native PDF pages are covered by visual review and exact-byte comparison. Known native accessibility and minor formatting differences are recorded explicitly.",
+  "connection_gate": null,
+  "next_action": "Use this same document for future reviewed guide updates. Compare fresh native revision and reconcile human edits first. Provider, admin, domain and signed-native release gates remain separate; publication does not prove provider acceptance.",
   "last_verified_revision": {
-    "source_commit": "364ecd6a97bb6b91f7703e2dc8a11a995a85aefe",
-    "source_application_commit": "732283d",
-    "source_docx_sha256": "1166865b8783682ae5a131b33f8437619625f7751c276fca2a61eb45315ed3d5",
-    "recorded_at": "2026-10-03T00:20:32.358885+00:00",
-    "method": "Revision-guarded native edits from the reviewed Word source; preserved tab, table containers, footer, sharing and unchanged images. Updated text, four native date fields and 81 screenshots.",
-    "result": "Published and verified in place; native image-alt accessibility remains incomplete.",
+    "source_application_commit": "f5c5b91",
+    "source_docx_sha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
+    "source_build_sha256": "c6ff3c6ac123ec3a1c303a0aa2a6bd166f7eaa67996008e99d4088c26a8f5dca",
+    "recorded_at": "2026-10-07T05:32:25.196429+00:00",
+    "method": "Revision-guarded same-document native updates from the reviewed Word source, with bounded readback after each batch; retained semantic table structures, native dates, captions, folder and sharing. Final native PDF export reviewed in full.",
+    "result": "Published and verified in place, with recorded native accessibility and display limitations.",
     "verification": {
       "mime_type": "application/vnd.google-apps.document",
-      "chapter_count": 40,
-      "heading_1_count": 41,
-      "body_paragraph_count": 659,
-      "nonempty_body_paragraph_count": 554,
-      "table_count": 6,
-      "table_cell_count": 146,
-      "inline_image_count": 99,
-      "date_element_count": 4,
-      "native_date_timestamps": [
-        "2026-10-03T00:00:00Z",
-        "2026-10-13T00:00:00Z",
-        "2026-10-20T00:00:00Z",
-        "2026-10-03T00:00:00Z"
-      ],
-      "native_date_ids": [
-        "kix.57r5jhibmql0",
-        "kix.nvj7p1o4o2vb",
-        "kix.pjt3v8kk37x4",
-        "kix.po0ydacmyaq"
-      ],
-      "word_body_and_table_text": "All 554 nonempty body paragraphs and 146 table cells match; date displays and the unchanged native pilot-range separator were normalized only after checking exact timestamps.",
-      "source_image_urls": "81 updated images use immutable dec0413 URLs; 18 unchanged images retain immutable 593dfa2 URLs. All 99 match the reviewed source bytes and dimensions within 0.1 point.",
-      "replaced_image_object_ids_preserved": 64,
-      "unchanged_image_object_ids_preserved": 18,
-      "resized_images_reinserted": 17,
-      "local_visual_review_page_count": 103,
-      "native_pdf_visual_review_page_count": 105,
-      "native_pdf_visual_review": "All 106 initial pages inspected. Final pages 33 and 62 reinspected after label and page-break repairs, adjacent pages 61/63 checked. Other 103 page bodies match reviewed originals; all 105 final footer numbers verified.",
-      "native_pagination_exceptions": [
+      "table_count": 12,
+      "inline_image_count": 147,
+      "date_element_count": 12,
+      "local_visual_review_page_count": 167,
+      "native_pdf_visual_review_page_count": 170,
+      "native_pdf_visual_review": "All 170 final native PDF pages passed: 161 original full-size PNGs inspected and nine exact-byte carryovers from previously inspected originals. Every review SHA-256 matches the final export manifest. Minor readable typography notes are retained below.",
+      "native_revision_id": "AHj4eMRt_7H6Pi6yT715V49cHSXbVWkhpqnsB-_ayZjx5Tdu2mNVeSOLzB1lDvGkQdE7v5H26IZE29NR4VJMyD3eFNT0-3bDgVdQ80MB1sk",
+      "native_readback_sha256": "2add6ad52f3afad802785e609236d0d6831dd9eb318efca5ef3a3ab06c0ea3ae",
+      "native_pdf_sha256": "833e01bf0d59c70d04425a00e636bf899f89b57e9ea194c1ab35191d60e7e518",
+      "native_pdf_review_ledger_sha256": "c24f383f2307ab12e37752f34df97047d9f1e096feca3f8287cb6bfac75cf16c",
+      "source_build_sha256": "c6ff3c6ac123ec3a1c303a0aa2a6bd166f7eaa67996008e99d4088c26a8f5dca",
+      "source_markdown_sha256": "21384920ce5b53ccbc066481234e4798bb4b6abaa493da321a5b45237bc2077a",
+      "word_body_and_table_text": "Source-equivalent ordinary body paragraphs, table cells and six date-bearing paragraphs were checked by bounded native readback. Dates were compared by exact native values; source captions and image ordering were checked separately.",
+      "source_image_urls": "All 147 placements match reviewed source images in order, caption relationship and uncropped Word dimensions within one Word EMU. Immutable source URLs identify the original screenshot bytes.",
+      "native_image_description_count": 0,
+      "images_without_native_description": 147,
+      "native_date_elements": [
         {
-          "purpose": "Keep demo instructions together",
-          "settings": "Page break before Local desktop demonstration; removed the older break before Android and iOS demonstration."
+          "dateId": "kix.5m03yeqf1pah",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-07T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 7, 2026"
+          }
         },
         {
-          "purpose": "Preserve previously reviewed native flow",
-          "settings": "Existing spacing around phone-code explanations and breaks before admin verification and Tamil API screenshot retained. Shop instructions begin after the enlarged overview screenshot."
+          "dateId": "kix.iuhka4uzcf3n",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-10T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 10, 2026"
+          }
+        },
+        {
+          "dateId": "kix.kzvbc8kqdt44",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-13T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 13, 2026"
+          }
+        },
+        {
+          "dateId": "kix.ak68jyiury63",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-20T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 20, 2026"
+          }
+        },
+        {
+          "dateId": "kix.x4cthxnf6g6v",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-10T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 10, 2026"
+          }
+        },
+        {
+          "dateId": "kix.415spl71r2af",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-06T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 6, 2026"
+          }
+        },
+        {
+          "dateId": "kix.nvj7p1o4o2vb",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-13T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 13, 2026"
+          }
+        },
+        {
+          "dateId": "kix.pjt3v8kk37x4",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-20T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 20, 2026"
+          }
+        },
+        {
+          "dateId": "kix.iscxjge83uc8",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-10T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 10, 2026"
+          }
+        },
+        {
+          "dateId": "kix.82bbnthq8mv7",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-10T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 10, 2026"
+          }
+        },
+        {
+          "dateId": "kix.po0ydacmyaq",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-03T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 3, 2026"
+          }
+        },
+        {
+          "dateId": "kix.m2rtvfg1ob8w",
+          "textStyle": {},
+          "dateElementProperties": {
+            "timestamp": "2026-10-06T00:00:00Z",
+            "locale": "en",
+            "dateFormat": "DATE_FORMAT_MONTH_DAY_YEAR_ABBREVIATED",
+            "timeFormat": "TIME_FORMAT_DISABLED",
+            "displayText": "Oct 6, 2026"
+          }
         }
       ],
-      "native_revision_id": "ANLCKQmGU7uiYKIAqeeyQAuTsw6IUpi0UuFqOYWxG6u-ene6RZ2GfuGz1DnEzzKFUUz71Zz8-nePidUJnJVL6VhXLH8n0KyCXeaP30fd9wM",
-      "native_readback_sha256": "b29f1f6e389087419ec7ea7a897eff78704a0cf0b61bd7e655b68469b83f3fd3",
-      "canonical_body_sha256": "fad5c2a710968c2f29d6cfc4f2f69d4b50bf2225156536cacd1e15d26fbab8e7",
-      "native_pdf_sha256": "fed2f98d3a48eedf27fe32ba7da1489005f4431ebc2438177ded804232950efa",
-      "pagination_comparison_sha256": "807503975a9a634b4a5decf0c7acfc427ee286b542619ebc95fa14249f8e09dc",
       "sharing_changed": false,
-      "tab_tree_changed": false,
       "folder_changed": false,
+      "tab_tree_changed": false,
       "footer_changed": false,
-      "document_style_changed": false,
-      "native_image_description_count": 0,
-      "images_without_native_description": 99,
+      "sharing": "Existing anyone-with-link commenter permission, without file discovery, and owner permission retained.",
+      "native_pagination_repairs": "Cleared inherited page-break-before on 13 captions and repaired 138 ordinary paragraph pagination properties; all 147 image paragraphs retain keep-with-next. The final export, rather than the rejected 209-page export, is the review evidence.",
       "fidelity_limits": [
-        "Native Verdana/Courier New typography gives 105 pages versus 103 in Word.",
-        "All 99 native images retain editable visible captions but lack native alt descriptions. The supported batch API cannot set them; this existing accessibility limitation remains."
-      ]
+        "Native fonts and pagination produce 170 pages versus 167 reviewed Word pages; pixel-perfect Word fidelity is not claimed.",
+        "All 147 screenshots have visible editable captions but no native image-alt descriptions. The supported batch API cannot set descriptions. Captions do not provide identical image-alt semantics.",
+        "The 10 October 2026 launch date chip at native index 10917 (kix.x4cthxnf6g6v) uses regular weight instead of the bold Word phrase. Its date and identity are unchanged; this display exception was accepted for the native render.",
+        "Page 61 heading reads \u201cbuyer s decision\u201d without an apostrophe. The instruction remains readable.",
+        "The narrow Step table header wraps on native pages 165\u2013168. All header text and table content remain readable."
+      ],
+      "verification_evidence_sha256": {
+        "image-insertions/trusted-read-45/final-baseline-verification.json": "8cc12433ad2680c504b7050f84026993d214a385d78698f47205a4abd97d6df2",
+        "date-ops/read47-final-date-verification.json": "25b349bfb2005b248063223516fbd12a6175a87b02af14e4a27c8fc260d78a04",
+        "image-insertions/trusted-read-49/caption-date-pagination-verification.json": "afbc362ce6aed2495c7638b13d1bf06e6641712e0f90c62491a2886da4a18e8d",
+        "planner/read49-body-pagination-verification.json": "f075d4f587055b80a7a35b79acd4e5ca2843b1412434f0be75b762ca8c0ee574"
+      },
+      "native_pdf_review_record": "docs/user-guide/publication-review-2026-10-07.json"
     }
   },
   "local_reviewed_revision": {
-    "source_docx_sha256": "1166865b8783682ae5a131b33f8437619625f7751c276fca2a61eb45315ed3d5",
-    "visual_review_pages": 103,
-    "image_placements": 99,
-    "recorded_at": "2026-10-03T00:20:32.358885+00:00",
-    "result": "All 103 Word pages reviewed. Final page 32 was reinspected for the Buy-label correction; other 102 pages exactly match reviewed originals. The same source is published to the existing Google Doc."
+    "source_docx_sha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
+    "source_build_sha256": "c6ff3c6ac123ec3a1c303a0aa2a6bd166f7eaa67996008e99d4088c26a8f5dca",
+    "visual_review_pages": 167,
+    "image_placements": 147,
+    "recorded_at": "2026-10-07T05:32:25.196429+00:00",
+    "result": "All 167 Word pages reviewed and build-input hashes current. This exact Word source is published to the existing native document, with documented native fidelity limits."
   },
   "previous_verified_revision": {
     "source_commit": "593dfa2de2a2cf31b358ce4e7af3f8a517da17e1",
@@ -162,5 +273,72 @@
       ],
       "image_alt_text_api_reference": "https://developers.google.com/workspace/docs/api/reference/rest/v1/documents/request"
     }
-  }
+  },
+  "verified_revision_history": [
+    {
+      "source_commit": "364ecd6a97bb6b91f7703e2dc8a11a995a85aefe",
+      "source_application_commit": "732283d",
+      "source_docx_sha256": "1166865b8783682ae5a131b33f8437619625f7751c276fca2a61eb45315ed3d5",
+      "recorded_at": "2026-10-03T00:20:32.358885+00:00",
+      "method": "Revision-guarded native edits from the reviewed Word source; preserved tab, table containers, footer, sharing and unchanged images. Updated text, four native date fields and 81 screenshots.",
+      "result": "Published and verified in place; native image-alt accessibility remains incomplete.",
+      "verification": {
+        "mime_type": "application/vnd.google-apps.document",
+        "chapter_count": 40,
+        "heading_1_count": 41,
+        "body_paragraph_count": 659,
+        "nonempty_body_paragraph_count": 554,
+        "table_count": 6,
+        "table_cell_count": 146,
+        "inline_image_count": 99,
+        "date_element_count": 4,
+        "native_date_timestamps": [
+          "2026-10-03T00:00:00Z",
+          "2026-10-13T00:00:00Z",
+          "2026-10-20T00:00:00Z",
+          "2026-10-03T00:00:00Z"
+        ],
+        "native_date_ids": [
+          "kix.57r5jhibmql0",
+          "kix.nvj7p1o4o2vb",
+          "kix.pjt3v8kk37x4",
+          "kix.po0ydacmyaq"
+        ],
+        "word_body_and_table_text": "All 554 nonempty body paragraphs and 146 table cells match; date displays and the unchanged native pilot-range separator were normalized only after checking exact timestamps.",
+        "source_image_urls": "81 updated images use immutable dec0413 URLs; 18 unchanged images retain immutable 593dfa2 URLs. All 99 match the reviewed source bytes and dimensions within 0.1 point.",
+        "replaced_image_object_ids_preserved": 64,
+        "unchanged_image_object_ids_preserved": 18,
+        "resized_images_reinserted": 17,
+        "local_visual_review_page_count": 103,
+        "native_pdf_visual_review_page_count": 105,
+        "native_pdf_visual_review": "All 106 initial pages inspected. Final pages 33 and 62 reinspected after label and page-break repairs, adjacent pages 61/63 checked. Other 103 page bodies match reviewed originals; all 105 final footer numbers verified.",
+        "native_pagination_exceptions": [
+          {
+            "purpose": "Keep demo instructions together",
+            "settings": "Page break before Local desktop demonstration; removed the older break before Android and iOS demonstration."
+          },
+          {
+            "purpose": "Preserve previously reviewed native flow",
+            "settings": "Existing spacing around phone-code explanations and breaks before admin verification and Tamil API screenshot retained. Shop instructions begin after the enlarged overview screenshot."
+          }
+        ],
+        "native_revision_id": "ANLCKQmGU7uiYKIAqeeyQAuTsw6IUpi0UuFqOYWxG6u-ene6RZ2GfuGz1DnEzzKFUUz71Zz8-nePidUJnJVL6VhXLH8n0KyCXeaP30fd9wM",
+        "native_readback_sha256": "b29f1f6e389087419ec7ea7a897eff78704a0cf0b61bd7e655b68469b83f3fd3",
+        "canonical_body_sha256": "fad5c2a710968c2f29d6cfc4f2f69d4b50bf2225156536cacd1e15d26fbab8e7",
+        "native_pdf_sha256": "fed2f98d3a48eedf27fe32ba7da1489005f4431ebc2438177ded804232950efa",
+        "pagination_comparison_sha256": "807503975a9a634b4a5decf0c7acfc427ee286b542619ebc95fa14249f8e09dc",
+        "sharing_changed": false,
+        "tab_tree_changed": false,
+        "folder_changed": false,
+        "footer_changed": false,
+        "document_style_changed": false,
+        "native_image_description_count": 0,
+        "images_without_native_description": 99,
+        "fidelity_limits": [
+          "Native Verdana/Courier New typography gives 105 pages versus 103 in Word.",
+          "All 99 native images retain editable visible captions but lack native alt descriptions. The supported batch API cannot set them; this existing accessibility limitation remains."
+        ]
+      }
+    }
+  ]
 }

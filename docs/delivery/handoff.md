@@ -1,5 +1,36 @@
 # Agent handoff — updated 7 October 2026
 
+## Production frontend verified — 7 October 2026
+
+PR #47 merged through the protected branch as
+`23fefc792d9e8a3b8014ce6ba135faf012096a03`. All five required checks and native
+validation passed. The hosted browser workflow passed all 747 public cases and
+all five analytics-consent cases. Vercel production
+`dpl_2ptn9SYtcu3ZPdNfrj3M8ZYjFkgU` is Ready and serves
+<https://lumagreen.vercel.app>. Home, login, join and the anonymous auth-session
+endpoint returned HTTP 200. Both live sign-in tabs were inspected in the browser;
+no browser error logs were observed. This did not create an account or prove
+email, SMS or payment-provider delivery.
+
+The production backend is running. Readback at 04:16 UTC confirmed the correct
+site URL, an auth secret, no local test mode, no production admin identity and no
+live payment activation. The admin identity, provider setup/acceptance, custom
+domain and signed native releases remain launch gates. The Word guide now states
+the verified production release and has 167 reviewed pages. The same Google Doc
+is updated and verified: 147 screenshot placements, 12 tables, 12 native dates
+and 170 reviewed PDF pages. See `docs/user-guide/cloud.json` and its publication
+review record for exact hashes, historical records and native accessibility limits.
+The final guide `pnpm check` passed. No application code changed. Four inactive
+task worktrees were archived with recoverable Git snapshots and preserved private
+evidence. The integration worktree remains until its local database, credentials
+and runtime are preserved and verified. `recycling-ui` belongs to another chat;
+the managed tool refused to attach it, so it was not removed.
+
+Private evidence: primary `.convex/guide-release/hosted-e2e-release.log`,
+`production-http-verification.json`, `production-login-2026-10-07.jpg` and the
+integration `.convex/release-work/production-readiness.json`. The source PR also
+records the exact preview, merge and production state.
+
 ## Production backend deployed — 7 October 2026
 
 The tested backend is deployed to `outstanding-buzzard-942`. Fresh readback

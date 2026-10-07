@@ -163,19 +163,25 @@ before the next build. This prevents later builds from losing your changes.
 
 Current publication state is recorded in [cloud.json](cloud.json). The existing
 native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
-has a verified **historical 3 October 2026 publication** from source commit
-`364ecd6`, including the approved recycling redesign. The current 7 October
-source has completed local captures and a reviewed 167-page Word output. The
-same-document native update remains pending. Its document ID, folder and sharing settings are unchanged.
+contains the verified **7 October 2026 publication** from the current reviewed
+Word source. Its document ID, folder and sharing settings are unchanged. Earlier
+verified revisions remain in `cloud.json` as historical evidence.
 
-That historical native copy has 40 chapters, six tables, 659 body paragraphs and 99 image
-placements. Readback checked every paragraph, table cell, image source URL and
-image dimension. Four exact dates use native date fields; the two original pilot
-dates retain their IDs. The Word source has 103 reviewed pages; the native PDF
-has 105 because native fonts and pagination differ. All 106 initial native pages
-were inspected. After a label correction and page-break repair, final pages 33
-and 62 and their affected neighbors were reinspected; the other 103 page bodies
-match reviewed originals. All 105 final footer page numbers were verified.
+The reviewed Word source has 167 pages. The native document has 147 screenshot
+placements, 12 tables and 12 native date fields. Readback checked the source body,
+table cells, date values, image source order, captions and dimensions. All 170
+pages of the final native PDF passed review: 161 originals were inspected at full
+size, and nine unchanged pages match previously inspected originals byte for byte.
+All page hashes match the review ledger. Native font and pagination differences
+mean this is not a pixel-identical Word copy.
+
+The final native review retains two minor notes: page 61 has “buyer s decision”
+without an apostrophe, and the narrow “Step” table header wraps on pages 165–168.
+The text remains readable. One 10 October 2026 launch date chip uses regular
+weight instead of the bold Word phrase; its native identity and date are
+unchanged. This accepted display exception and the native image-alt limitation
+are recorded in `cloud.json`. Guide publication does not prove live email, SMS,
+payment-provider acceptance, admin setup or signed native releases.
 
 The supported update uses revision-guarded Google Docs batch requests. Compare
 the current native revision with the last verified record first, and preserve or
@@ -186,7 +192,7 @@ table cells, dates, headings, styles and image placements after writing. Export
 the native PDF and inspect every page before recording the new source hash,
 native revision and publication status.
 
-Native image accessibility remains incomplete. All 99 images have visible editable
+Native image accessibility remains incomplete. All 147 images have visible editable
 captions but lack native alt-text descriptions. The current batch-update API has
 no description setter. A checked `replaceImage` request kept the existing object
 ID, size and uncropped bounds, but removed the one description previously restored
