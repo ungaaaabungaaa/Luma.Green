@@ -31,7 +31,32 @@ export const securityAudit: Triggers<DataModel, typeof authSchema> = {
     },
   },
   user: {
+    onCreate: async (ctx, user) => {
+      await record(ctx, user._id, "auth.identity.created");
+    },
     onUpdate: async (ctx, current, previous) => {
+      if (
+        current.phoneNumberVerified &&
+        current.phoneNumber &&
+        (current.phoneNumber !== previous.phoneNumber ||
+          !previous.phoneNumberVerified)
+      ) {
+        const profile = await ctx.db
+          .query("profiles")
+          .withIndex("by_authUserId", (query) =>
+            query.eq("authUserId", current._id),
+          )
+          .unique();
+        if (profile)
+          await ctx.db.patch(profile._id, {
+            phone: current.phoneNumber,
+            updatedAt: Date.now(),
+          });
+        await record(ctx, current._id, "auth.phone.verified");
+      }
+      if (current.emailVerified && !previous.emailVerified) {
+        await record(ctx, current._id, "auth.email.verified");
+      }
       if (current.twoFactorEnabled === previous.twoFactorEnabled) return;
       await record(
         ctx,

@@ -39,4 +39,18 @@ if (typeof document !== "undefined") {
     configurable: true,
     value: () => null,
   });
+  // Radix Select uses these browser APIs during keyboard and pointer choice.
+  // jsdom has no layout, scrolling or pointer capture.
+  const browserMethods = Object.entries({
+    scrollIntoView: vi.fn(),
+    hasPointerCapture: (): boolean => false,
+    setPointerCapture: vi.fn(),
+    releasePointerCapture: vi.fn(),
+  });
+  for (const [name, value] of browserMethods) {
+    Object.defineProperty(Element.prototype, name, {
+      configurable: true,
+      value,
+    });
+  }
 }

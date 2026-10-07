@@ -45,23 +45,23 @@ Three properties follow from that and are non-negotiable:
 
 ## 2. Stack
 
-| Layer       | Choice                               | Notes                                                       |
-| ----------- | ------------------------------------ | ----------------------------------------------------------- |
-| Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in                    |
-| Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment          |
-| UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`              |
-| Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1                |
-| i18n        | next-intl, 33 locales, RTL-ready     | `messages/*.json`                                           |
-| Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server            |
-| Server sync | TanStack Query                       | For non-Convex async work                                   |
-| Auth        | Better Auth on Convex                | Phone codes + optional TOTP; admin password + TOTP — see §9 |
-| Analytics   | PostHog / Google Analytics 4         | Optional, visitor opt-in, public page views only (ADR 0016) |
-| Errors      | Sentry                               | Optional error-only capture; explicit deployment flag + DSN |
-| Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                                |
-| Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift             |
-| Lint        | ESLint flat config, type-aware       | See §10                                                     |
-| Mobile      | Expo 57 / React Native WebView       | `apps/mobile`; shared hosted operational UI                 |
-| Desktop     | Electron                             | `apps/desktop`; macOS and Windows signed updates            |
+| Layer       | Choice                               | Notes                                                                                      |
+| ----------- | ------------------------------------ | ------------------------------------------------------------------------------------------ |
+| Framework   | Next.js 16 (App Router, Turbopack)   | RSC by default; `"use client"` is opt-in                                                   |
+| Language    | TypeScript, `strict`                 | No `any`, no `@ts-ignore` without a reason comment                                         |
+| UI          | Tailwind v4 + shadcn/ui (Radix)      | Components are vendored in `src/components/ui`                                             |
+| Data        | Convex                               | Dev `glorious-rooster-470` + prod, EU West 1                                               |
+| i18n        | next-intl, 33 locales, RTL-ready     | `messages/*.json`                                                                          |
+| Forms       | React Hook Form + Zod                | Zod schema is the contract, shared client↔server                                           |
+| Server sync | TanStack Query                       | For non-Convex async work                                                                  |
+| Auth        | Better Auth on Convex                | Verified email/password or phone codes; optional user TOTP; admin password + TOTP — see §9 |
+| Analytics   | PostHog / Google Analytics 4         | Optional, visitor opt-in, public page views only (ADR 0016)                                |
+| Errors      | Sentry                               | Optional error-only capture; explicit deployment flag + DSN                                |
+| Testing     | Vitest + Testing Library, Playwright | See `.claude/skills/testing`                                                               |
+| Packages    | pnpm 11                              | Pinned by `packageManager`; npm/yarn will drift                                            |
+| Lint        | ESLint flat config, type-aware       | See §10                                                                                    |
+| Mobile      | Expo 57 / React Native WebView       | `apps/mobile`; shared hosted operational UI                                                |
+| Desktop     | Electron                             | `apps/desktop`; macOS and Windows signed updates                                           |
 
 ## 3. Layout
 
@@ -246,14 +246,18 @@ See `docs/operations/launch-checklist.md` before enabling a service.
 Convex **is** wired: the schema is deployed and `convex/_generated` is committed,
 so `api` and `Doc`/`Id` types are safe to import today.
 
-Better Auth **is** wired too: phone codes at `/login`, the admin at
+Better Auth **is** wired too: verified email/password and phone codes at `/login`, the admin at
 `/admin/login` (set up once at `/admin/setup`). Guard every Convex function
 with `requireUser` / `requireAdmin` from `convex/lib/access.ts`, and run
 `pnpm auth:schema` after changing a Better Auth plugin. Read
 `docs/architecture/auth.md` before touching auth. Account security and inbox
 routes must work for households and applicants as well as approved operators.
 Keep phone-only users passwordless; admin email recovery must remain confined
-to the configured existing admin identity. Never bypass a factor with a preview
+to the configured existing admin identity. Normal email verification, password
+recovery and invitations have separate delivery paths. An existing verified
+email user may bind an unused phone after recent full authentication; this must
+preserve the identity, session and TOTP and must not enable phone-only login for
+that email account. Never bypass a factor with a preview
 screen or restore a session before the full challenge succeeds. Test the real
 Better Auth HTTP handler and Convex adapter for changes to this boundary.
 
@@ -282,11 +286,22 @@ there, never in a component.
   documents, revoke installation bindings before sign-out and test late results.
   Electron notices work while the process runs. See
   [push notifications](docs/operations/push-notifications.md) before changes.
-- **Resend** — optional admin password recovery only. Keep its key on Convex;
-  missing settings must show an honest unavailable state. A provider acceptance
-  response is not proof of inbox delivery. Reset preserves required TOTP.
-- **Razorpay, R2, Mapbox** — not required for the pilot. No payment
-  processing is implemented. Documents use Convex storage; location uses the browser.
+- **Resend** — normal email verification, recovery and team invitations, plus
+  separately configured admin recovery. Keep its key on Convex; missing settings
+  show an honest unavailable state. A provider acceptance response is not proof
+  of inbox delivery. Reset preserves required TOTP.
+- **Cashfree PG and Easy Split** — selected B2B provider. The bounded financial
+  lifecycle is implemented: full live collection, guarded full-quantity dispatch
+  and receipt, safe unpaid cancellation, admin full remaining refund and exact
+  order settlement evidence. Live checkout is default-off and requires explicit
+  activation, an immutable approved policy and provider/vendor checks. Final
+  integrated and provider acceptance gates remain in `docs/architecture/payments.md`.
+  Sandbox cannot authorize inventory movement. A confirmed refund stays held;
+  it does not restore stock or cancel the trade automatically. Never add a manual
+  paid override. A kabadiwala pays a household directly; Luma records that
+  separate flow.
+- **R2 and Mapbox** — not required. Documents use Convex storage; location uses
+  the browser. Do not use image GPS metadata as a location authority.
 - **Expo / React Native and Electron** — native shells are in `apps/`. Signed
   builds, native device tests, store review and update delivery remain release
   gates. Follow [app releases](docs/operations/app-releases.md).

@@ -201,6 +201,24 @@ describe("from an application to a business", () => {
     });
   });
 
+  it("keeps a manufacturer's declared byproduct origin through approval", () => {
+    expect(
+      orgDraftFrom({
+        kind: "manufacturer",
+        business: {
+          businessName: "Textile Works",
+          address: "Factory Road, Bengaluru",
+          siteType: "manufacturing_facility",
+          materialOrigins: ["industrial_byproduct"],
+        },
+      }),
+    ).toMatchObject({
+      kind: "manufacturer",
+      siteType: "manufacturing_facility",
+      materialOrigins: ["industrial_byproduct"],
+    });
+  });
+
   it("refuses an application without a name or address, or a Saathi's", () => {
     expect(
       orgDraftFrom({ kind: "recycler", business: { businessName: "  " } }),

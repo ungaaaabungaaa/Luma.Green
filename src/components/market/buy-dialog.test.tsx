@@ -41,6 +41,12 @@ async function openDialog(listing = aListing(), locale = "en") {
 describe("BuyButton", () => {
   it("shows the total as the weight is typed", async () => {
     await openDialog();
+    expect(
+      screen.getByText(
+        "Business payments use the payment gateway. Check the order for its current payment status.",
+      ),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/escrow/i)).not.toBeInTheDocument();
     await userEvent.type(screen.getByLabelText("How many kg?"), "100");
     expect(screen.getByText("₹1,750")).toBeInTheDocument();
     expect(screen.getByText("100 kg × ₹17.50/kg")).toBeInTheDocument();
@@ -93,3 +99,7 @@ it.each([
     expect(screen.getByLabelText("How many kg?")).toHaveValue(input);
   },
 );
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

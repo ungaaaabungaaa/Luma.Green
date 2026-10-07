@@ -208,6 +208,9 @@ const eslintConfig = defineConfig([
   {
     files: ["convex/**/*.ts"],
     rules: {
+      // Convex's declared ES2023 runtime does not include iterator helpers.
+      "unicorn/prefer-iterator-helpers": "off",
+      "unicorn/prefer-iterator-to-array": "off",
       // Convex module paths can't contain hyphens, and its own convention is
       // camelCase (e.g. the local `convex/betterAuth/` component).
       "unicorn/filename-case": [
@@ -305,6 +308,15 @@ const eslintConfig = defineConfig([
   },
 
   // --- Config files at the repo root -------------------------------------
+  {
+    // Standalone Playwright evidence runners use assertions directly;
+    // they write capture manifests rather than registering test cases.
+    files: [
+      "scripts/capture-lots-guide.mjs",
+      "scripts/guide-preview/capture-finance.mjs",
+    ],
+    rules: { "sonarjs/assertions-in-test-cases": "off" },
+  },
   {
     files: ["*.{mjs,ts,mts}", ".husky/**"],
     rules: {

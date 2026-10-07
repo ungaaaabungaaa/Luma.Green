@@ -65,13 +65,13 @@ export function PhoneForm({ canSend = true }: { canSend?: boolean }) {
   const readyLabel = canSend ? "sendCode" : "previewAction";
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       <AuthProgress step="phone" />
-      <div className="flex flex-col gap-3">
-        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight wrap-anywhere sm:text-4xl">
+      <div className="flex flex-col gap-2">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight wrap-anywhere sm:text-3xl">
           {t("title")}
         </h1>
-        <p className="leading-relaxed text-muted-foreground">
+        <p className="text-sm leading-relaxed text-muted-foreground">
           {t(canSend ? "lead" : "previewPhoneHint")}
         </p>
       </div>
@@ -84,11 +84,11 @@ export function PhoneForm({ canSend = true }: { canSend?: boolean }) {
         className="flex flex-col gap-4"
       >
         <div className="flex flex-col gap-2">
-          <Label htmlFor="phone" className="text-base">
+          <Label htmlFor="phone" className="text-sm">
             {t("mobileLabel")}
           </Label>
           <div className="flex gap-2" dir="ltr">
-            <span className="flex h-12 items-center rounded-lg border border-input bg-muted px-4 text-base font-medium tabular-nums">
+            <span className="flex h-11 items-center rounded-md border border-input bg-muted px-3 text-base font-medium tabular-nums">
               +91
             </span>
             <Input
@@ -99,7 +99,7 @@ export function PhoneForm({ canSend = true }: { canSend?: boolean }) {
               placeholder="98765 43210"
               aria-invalid={fieldError ? true : undefined}
               aria-describedby={hasHint ? "phone-hint" : undefined}
-              className="h-12 rounded-lg text-base tracking-wide"
+              className="text-base tracking-wide"
               {...register("phone")}
             />
           </div>
@@ -127,14 +127,14 @@ export function PhoneForm({ canSend = true }: { canSend?: boolean }) {
         <Button
           type="submit"
           size="lg"
-          className="h-auto min-h-12 py-3 text-base text-wrap whitespace-normal"
+          className="w-full"
           disabled={isSubmitting}
         >
           {t(isSubmitting ? "sending" : readyLabel)}
         </Button>
       </form>
 
-      <div className="flex flex-col gap-2 border-y border-border py-4">
+      <div className="flex flex-col border-t border-border pt-4">
         <p className="flex items-start gap-2 font-medium">
           <HomeIcon aria-hidden className="mt-1 size-4 shrink-0 text-primary" />
           {t("homeTitle")}

@@ -49,10 +49,10 @@ function StatusSection({
     bad: "text-destructive",
   }[tone];
   return (
-    <section className="flex flex-col gap-6 border-t border-border py-6 sm:py-8">
-      <span className={`flex size-10 items-center ${toneClass}`}>{icon}</span>
+    <section className="flex flex-col gap-6">
+      <span className={`flex size-8 items-center ${toneClass}`}>{icon}</span>
       <div className="flex flex-col gap-1">
-        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
           {title}
         </h1>
         <p className="text-muted-foreground">{lead}</p>
@@ -93,7 +93,7 @@ export function StatusView() {
     return (
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-1">
-          <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+          <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
             {t("none.title")}
           </h1>
           <p className="text-muted-foreground">{t("none.lead")}</p>

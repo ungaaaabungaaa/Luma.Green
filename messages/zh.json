@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — 行动起来，共创更洁净的明天",
-    "description": "Luma.Green将印度的资源回收网络连接在一个平台上：家庭、材料回收店、分拣场、再生企业和制造商，共享公平价格、称重回收和每次交接的记录。"
+    "description": "Luma.Green将印度的资源回收网络连接在一个平台上：家庭、材料回收店、预处理商、再生企业和制造商，共享公平价格、称重回收和每次交接的记录。"
   },
   "theme": {
     "label": "外观",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "交易",
-      "summary": "计划中的资金托管服务将保管货款，直到交货完成。目前的演示仅记录模拟付款。"
+      "summary": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
     },
     "record": {
       "title": "记录",
@@ -76,7 +76,7 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green将印度的资源回收网络连接在一个平台上：家庭、材料回收店、分拣场、再生企业和制造商，共享公平价格、经过核验的企业和每一步的收据。",
+    "metaDescription": "Luma.Green将印度的资源回收网络连接在一个平台上：家庭、材料回收店、预处理商、再生企业和制造商，共享公平价格、经过核验的企业和每一步的收据。",
     "hero": {
       "eyebrow": "从班加罗尔开始",
       "title": "让资源迎来新的开始。",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "可回收材料如何流转",
-      "intro": "材料从家庭流向回收店、分拣场和再生企业，最终成为新产品。Luma.Green记录每次交接。",
+      "intro": "材料从家庭流向回收店、预处理商和再生企业，最终成为新产品。Luma.Green记录每次交接。",
       "steps": {
         "household": {
           "name": "家庭",
@@ -107,7 +107,7 @@
           "body": "收购、称重，并按材料分类。"
         },
         "yard": {
-          "name": "分拣场",
+          "name": "预处理商",
           "body": "分级并压成包块。"
         },
         "recycler": {
@@ -119,7 +119,7 @@
           "body": "用再生材料制造新产品。"
         }
       },
-      "money": "家庭在门口通过现金或UPI收款。企业间资金托管正在规划中。",
+      "money": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
       "saathi": "Saathi在回收链各环节提供收取、分拣和轮班支持。"
     },
     "roles": {
@@ -136,19 +136,19 @@
         "title": "废品回收店",
         "one": "接收附近家庭的回收请求。",
         "two": "自行定价，但不得低于最低价。",
-        "three": "将分拣好的库存卖给分拣场。",
+        "three": "将分拣好的库存卖给预处理商。",
         "cta": "以废品回收店身份加入"
       },
       "yard": {
-        "title": "分拣场",
+        "title": "预处理商",
         "one": "查看附近回收店的库存。",
         "two": "批量采购，将包块卖给再生企业。",
-        "three": "计划功能：交货前将货款存入托管。",
-        "cta": "以分拣场身份加入"
+        "three": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
+        "cta": "以预处理商身份加入"
       },
       "recycler": {
         "title": "再生企业",
-        "one": "从经过核验的分拣场采购分级包块。",
+        "one": "从经过核验的预处理商采购分级包块。",
         "two": "每批货物都有完整交接记录。",
         "three": "将产出卖给工厂。",
         "cta": "以再生企业身份加入"
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "制造商",
         "one": "查看再生企业的产出。",
-        "two": "计划功能：通过资金托管订购再生材料。",
+        "two": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
         "three": "保留EPR报告所需记录。",
         "cta": "以制造商身份加入"
       },
@@ -180,7 +180,7 @@
         "body": "回收店可以自行定价，但不得低于我们为每种材料公布的最低价。"
       },
       "escrow": {
-        "title": "计划功能：企业交易资金托管",
+        "title": "等待支付网关",
         "body": "演示展示付款步骤，但不会保管或转移真实资金。"
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "Luma.Green标准",
-    "metaDescription": "计划功能：面向印度公平可回收材料交易的公开材料代码和简明规则，涵盖分级、称重、收据、核验和资金托管。任何人都可免费采用。",
+    "metaDescription": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
     "eyebrow": "开放标准",
     "title": "Luma.Green标准",
     "lead": "公平交易可回收材料的简明开放规则：每种材料一个代码，明确分级，准确称重，每次交接都有记录。行业内任何人都可采用。",
@@ -394,18 +394,18 @@
       "nav": "核验",
       "body": "开始交易前，工作人员会核验每家企业和每位Saathi。",
       "business": "企业：GST号码（如有）、店铺或设施照片，以及电话确认。",
-      "consent": "分拣场、再生企业和工厂：州污染控制委员会签发的有效许可。",
+      "consent": "预处理商、再生企业和工厂：州污染控制委员会签发的有效许可。",
       "saathi": "Saathi：带照片的身份证件和相符的自拍照。"
     },
     "escrow": {
-      "title": "计划功能：企业间资金托管",
-      "nav": "资金托管",
-      "body": "计划中的资金托管服务将保管货款，直到交货完成。目前的演示仅记录模拟付款。",
+      "title": "等待支付网关",
+      "nav": "等待支付网关",
+      "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
       "steps": {
         "accepted": "卖方接受订单",
-        "paid": "买方将货款存入托管",
+        "paid": "等待支付网关",
         "dispatched": "卖方发货",
-        "released": "买方确认后，货款支付给卖方"
+        "released": "等待支付网关"
       }
     },
     "adopt": {
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "使用流程",
-    "metaDescription": "计划功能：Luma.Green让家庭以公平价格出售可回收材料，通过资金托管逐级交易，并记录每次交接。",
+    "metaDescription": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
     "title": "Luma.Green如何运作",
-    "lead": "材料从家庭流向回收店、分拣场和再生企业，最终成为新产品。Luma.Green记录每次交接。",
+    "lead": "材料从家庭流向回收店、预处理商和再生企业，最终成为新产品。Luma.Green记录每次交接。",
     "stepLabel": "第{number}步",
     "sell": {
       "body": "家庭选择已有材料，查看附近各店报价，预约上门回收或送店。回收店逐项称重，通过现金或UPI付款，双方都获得收据。",
@@ -563,7 +563,7 @@
       "point3": "无需账户的追踪链接"
     },
     "trade": {
-      "body": "演示：回收店将分拣后的库存卖给分拣场，分拣场将包块卖给再生企业，再生企业将碎片、颗粒和锭卖给工厂。买方货款在货物送达前存入托管。演示展示付款步骤，但不会保管或转移真实资金。",
+      "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
       "point1": "仅经过核验的企业可以交易",
       "point2": "发货和收货时更新库存流转",
       "point3": "每笔已付款交易都有带编号的收据"
@@ -577,20 +577,20 @@
   },
   "participants": {
     "metaTitle": "适用人群",
-    "metaDescription": "Luma.Green面向家庭、材料回收店、分拣场、再生企业、制造商和Saathi，即所有让可回收材料从家庭流向工厂的人。",
+    "metaDescription": "Luma.Green面向家庭、材料回收店、预处理商、再生企业、制造商和Saathi，即所有让可回收材料从家庭流向工厂的人。",
     "title": "谁适合使用Luma.Green",
     "lead": "所有将可回收材料从家庭送到工厂的人，以及在各环节工作的人员。",
     "kabadiwala": {
       "name": "废品回收店",
-      "body": "接收附近家庭的回收请求，公平称重付款，将分拣后的库存卖给分拣场。"
+      "body": "接收附近家庭的回收请求，公平称重付款，将分拣后的库存卖给预处理商。"
     },
     "yard": {
-      "name": "分拣场",
-      "body": "计划功能：从回收店采购，分拣打包，将分级批次卖给再生企业，货款存入托管。"
+      "name": "预处理商",
+      "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
     },
     "recycler": {
       "name": "再生企业",
-      "body": "从经过核验的分拣场采购分级包块，将碎片、颗粒和锭卖给工厂。"
+      "body": "从经过核验的预处理商采购分级包块，将碎片、颗粒和锭卖给工厂。"
     },
     "manufacturer": {
       "name": "制造商",
@@ -601,20 +601,20 @@
       "body": "承接家附近有偿的收取、分拣和轮班工作，查看收入。"
     },
     "householdHeading": "也面向每个家庭",
-    "householdBody": "无需账户即可在家卖可回收材料：选择材料，查看各店报价，通过现金或UPI收款并获得收据。"
+    "householdBody": "使用手机号预约上门回收：选择材料，比较商家的报价，并从商家收取现金或UPI付款及收据。"
   },
   "contact": {
     "metaTitle": "联系我们",
     "metaDescription": "如需参加班加罗尔试点，请联系Luma.Green团队。",
     "title": "与我们交流",
-    "lead": "我们先在班加罗尔与少量回收店、分拣场、再生企业和工厂合作。请介绍你的身份、交易材料和每月大致处理量。",
+    "lead": "我们先在班加罗尔与少量回收店、预处理商、再生企业和工厂合作。请介绍你的身份、交易材料和每月大致处理量。",
     "emailHeading": "抢先体验与一般问题",
     "securityHeading": "安全问题报告",
     "securityBody": "发现漏洞？请私下报告，不要公开发布。"
   },
   "help": {
     "metaTitle": "帮助中心",
-    "metaDescription": "为Luma.Green上的家庭、回收店、分拣场、再生企业、制造商和Saathi提供简明指南、解答和培训。",
+    "metaDescription": "为Luma.Green上的家庭、回收店、预处理商、再生企业、制造商和Saathi提供简明指南、解答和培训。",
     "eyebrow": "帮助中心",
     "title": "需要什么帮助？",
     "lead": "为所有Luma.Green用户提供简短指南、清晰解答和快速培训。",
@@ -624,7 +624,7 @@
     "replyTime": "我们会在一个工作日内回复。",
     "search": {
       "label": "搜索帮助",
-      "placeholder": "例如：短信验证码或资金托管",
+      "placeholder": "等待支付网关",
       "clear": "清空搜索",
       "summary": "“{query}”的结果：{count, plural, =0 {无解答} one {#条解答} other {#条解答}}",
       "topicSummary": "关于{topic}：{count, plural, =0 {无解答} one {#条解答} other {#条解答}}",
@@ -659,25 +659,25 @@
         "name": "家庭",
         "who": "在家卖可回收材料",
         "title": "家庭帮助",
-        "lead": "预约回收，公平称重，在门口收款。无需账户。"
+        "lead": "预约回收，验证手机号，并在称重后收款。"
       },
       "kabadiwala": {
         "name": "废品回收店",
         "who": "经营材料回收店",
         "title": "回收店帮助",
-        "lead": "承接回收，快速称重付款，设置价格并向分拣场销售。"
+        "lead": "承接回收，快速称重付款，设置价格并向预处理商销售。"
       },
       "yard": {
-        "name": "分拣场",
+        "name": "预处理商",
         "who": "从回收店采购并进一步分拣",
-        "title": "分拣场帮助",
-        "lead": "演示：寻找附近库存，将分拣包块卖给再生企业，通过资金托管安全交易。"
+        "title": "预处理商帮助",
+        "lead": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
       },
       "recycler": {
         "name": "再生企业",
         "who": "将可回收材料变成原材料",
         "title": "再生企业帮助",
-        "lead": "从分拣场采购分级回收材料，向工厂销售产出，整理EPR记录。"
+        "lead": "从预处理商采购分级回收材料，向工厂销售产出，整理EPR记录。"
       },
       "manufacturer": {
         "name": "制造商",
@@ -752,7 +752,7 @@
       "roles": {
         "household": "家庭用户",
         "kabadiwala": "废品回收店",
-        "yard": "分拣场",
+        "yard": "预处理商",
         "recycler": "再生企业",
         "manufacturer": "制造商",
         "saathi": "Saathi工作者",
@@ -853,7 +853,7 @@
         "steps": {
           "start": {
             "title": "从luma.green/join开始",
-            "body": "用手机号码登录，选择分拣场、再生企业或制造商。"
+            "body": "用手机号码登录，选择预处理商、再生企业或制造商。"
           },
           "details": {
             "title": "添加企业信息",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "演示指南：资金托管如何保障交易",
-        "summary": "计划中的资金托管服务将保管货款，直到交货完成。目前的演示仅记录模拟付款。",
+        "title": "等待支付网关",
+        "summary": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
         "steps": {
           "request": {
             "title": "买方发送请求",
@@ -890,8 +890,8 @@
             "body": "此时尚未付款。如需商定细节，可互相致电。"
           },
           "pay": {
-            "title": "买方将货款存入托管",
-            "body": "货款安全保管，尚未支付给卖方。卖方可在装货前确认资金已到位。"
+            "title": "等待支付网关",
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           },
           "dispatch": {
             "title": "卖方发货",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "买方确认收货",
-            "body": "检查重量和质量后确认，货款将支付给卖方。"
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "货物短缺时不要确认",
-            "body": "确认后会付款。确认前，资金仍在托管中。"
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           },
           "report": {
             "title": "附照片报告",
@@ -975,7 +975,7 @@
       },
       "firstPickup": {
         "title": "预约首次回收",
-        "summary": "从拍照到预约约两分钟，无需账户。",
+        "summary": "选择材料、比较商家并验证手机号，即可预约回收。",
         "steps": {
           "photo": {
             "title": "拍摄可回收材料照片",
@@ -1244,8 +1244,8 @@
         }
       },
       "stockAndSell": {
-        "title": "演示指南：分拣库存并卖给分拣场",
-        "summary": "将多次小量回收汇成分拣场需要的一批货。",
+        "title": "演示指南：分拣库存并卖给预处理商",
+        "summary": "将多次小量回收汇成预处理商需要的一批货。",
         "steps": {
           "grows": {
             "title": "库存自动增加",
@@ -1256,12 +1256,12 @@
             "body": "将混合回收材料分成实际材料，例如把混合纸分成报纸、纸板和废弃物。"
           },
           "show": {
-            "title": "向分拣场展示库存",
-            "body": "开启向分拣场展示，附近分拣场即可查看你有的材料。"
+            "title": "向预处理商展示库存",
+            "body": "开启向预处理商展示，附近预处理商即可查看你有的材料。"
           },
           "sell": {
-            "title": "接受分拣场请求",
-            "body": "检查重量和价格后接受。分拣场会在提货前将款项存入托管。"
+            "title": "接受预处理商请求",
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "选择所需公斤数，发送前会显示每公斤价格。"
           },
           "pay": {
-            "title": "存入资金托管",
-            "body": "回收店接受后付款。确认前资金会保持托管。"
+            "title": "等待支付网关",
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           },
           "collect": {
             "title": "提货并称重",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "接受后等待付款",
-            "body": "买方货款进入托管后才能装货。"
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           },
           "dispatch": {
             "title": "发出货物",
@@ -1335,25 +1335,25 @@
           },
           "paid": {
             "title": "收款",
-            "body": "再生企业确认收货后，货款会支付给你。"
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           }
         }
       },
       "buyFromYards": {
-        "title": "演示指南：从分拣场采购分拣回收材料",
+        "title": "演示指南：从预处理商采购分拣回收材料",
         "summary": "为生产线提供稳定的分级原料。",
         "steps": {
           "browse": {
             "title": "寻找附近包块",
-            "body": "打开购买，按材料和距离查看分拣场的供货信息。"
+            "body": "打开购买，按材料和距离查看预处理商的供货信息。"
           },
           "request": {
             "title": "请求一批货",
             "body": "选择公斤数，发送前会显示每公斤价格。"
           },
           "pay": {
-            "title": "存入资金托管",
-            "body": "分拣场接受后付款。确认收货前，货款会保持托管。"
+            "title": "等待支付网关",
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           },
           "confirm": {
             "title": "称重、检查、确认",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "付款后装货",
-            "body": "接受后，等款项进入托管再发货。"
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           },
           "paid": {
             "title": "交货后收款",
-            "body": "制造商确认后，货款会支付给你。"
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "选择公斤数并发送。再生企业会接受或拒绝。"
           },
           "pay": {
-            "title": "存入资金托管",
-            "body": "接受后付款。确认收货前，货款会保持托管。"
+            "title": "等待支付网关",
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           },
           "receive": {
             "title": "接收货物",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "确认或报告",
-            "body": "没有问题就确认。不符则附照片报告，货款会留在托管中。"
+            "body": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
           }
         }
       },
@@ -1614,8 +1614,8 @@
         "a": "不会。你需在门口以现金或UPI付款。应用记录金额和方式。"
       },
       "paidByYard": {
-        "q": "卖给分拣场后如何收款？",
-        "a": "目前请与分拣场直接约定付款。资金托管正在规划中，演示不会转移资金。"
+        "q": "卖给预处理商后如何收款？",
+        "a": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
       },
       "whoSeesShop": {
         "q": "谁能看到我的店铺？",
@@ -1642,8 +1642,8 @@
         "a": "卖方发布每公斤价格。发送请求前可查看，也可致电商定细节。"
       },
       "whatIsEscrow": {
-        "q": "什么是资金托管？",
-        "a": "一种安全的中间步骤：买方货款保管至约定货物到达，再支付给卖方。企业资金托管正在规划中。"
+        "q": "等待支付网关",
+        "a": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
       },
       "whenSellerPaid": {
         "q": "卖方何时收款？",
@@ -1666,8 +1666,8 @@
         "a": "请备好CPCB塑料废弃物处理者注册资料。品牌会要求查看，这也是签发EPR证书的条件。"
       },
       "buyFromAnyYard": {
-        "q": "可以从多家分拣场购买吗？",
-        "a": "可以。任何经过核验且发布所需材料的分拣场都可购买，次数不限。"
+        "q": "可以从多家预处理商购买吗？",
+        "a": "可以。任何经过核验且发布所需材料的预处理商都可购买，次数不限。"
       },
       "eprRecords": {
         "q": "Luma.Green记录有助于EPR吗？",
@@ -1739,8 +1739,8 @@
       "settingPrices": "设置你的价格",
       "buyingFromKabadiwalas": "从回收店采购",
       "listingBales": "向再生企业发布包块",
-      "escrowExplained": "演示：两分钟了解资金托管",
-      "buyingFromYards": "从分拣场采购",
+      "escrowExplained": "等待支付网关",
+      "buyingFromYards": "从预处理商采购",
       "sellingOutput": "出售产出",
       "eprPlainWords": "通俗理解EPR",
       "firstOrder": "下第一笔订单",
@@ -1799,10 +1799,10 @@
         "p3": "每次都在离开前付款。"
       },
       "sellingToYards": {
-        "title": "演示：卖给分拣场",
+        "title": "演示：卖给预处理商",
         "p1": "记录分拣，确保库存准确。",
-        "p2": "向附近分拣场展示库存。",
-        "p3": "款项进入托管后才能装货。"
+        "p2": "向附近预处理商展示库存。",
+        "p3": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
       },
       "buyingStock": {
         "title": "采购库存",
@@ -1811,8 +1811,8 @@
         "p3": "确认前称量每批货物。"
       },
       "tradingWithEscrow": {
-        "title": "演示：使用资金托管交易",
-        "p1": "卖方接受后，买方将款项存入托管。",
+        "title": "等待支付网关",
+        "p1": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
         "p2": "卖方收到入款确认后才装货。",
         "p3": "确认交货后支付货款。"
       },
@@ -1830,8 +1830,8 @@
       },
       "buyingInputs": {
         "title": "演示：采购原料",
-        "p1": "在购买页面寻找分拣场的分级包块。",
-        "p2": "分拣场接受后将款项存入托管。",
+        "p1": "在购买页面寻找预处理商的分级包块。",
+        "p2": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
         "p3": "确认前检查等级。"
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "演示：订购再生材料",
         "p1": "按类型、公斤数和价格比较供货信息。",
         "p2": "按所需公斤数发送订单。",
-        "p3": "接受后将款项存入托管。"
+        "p3": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
       },
       "checkingDeliveries": {
         "title": "检查到货",
@@ -1885,14 +1885,14 @@
     "chooseLanguageHint": "随时可在屏幕顶部更改。",
     "continue": "继续",
     "title": "用手机号码登录",
-    "lead": "适用于回收店、分拣场、再生企业、制造商和Saathi。",
+    "lead": "适用于回收店、预处理商、再生企业、制造商和Saathi。",
     "mobileLabel": "手机号码",
     "mobileHint": "我们会向此号码发送6位验证码。",
     "mobileInvalid": "请输入10位印度手机号码。",
     "sendCode": "发送验证码",
     "sending": "正在发送…",
     "sendFailed": "无法发送验证码，请一分钟后重试。",
-    "homeTitle": "在家回收材料？无需注册账号。",
+    "homeTitle": "在家回收材料？",
     "homeLink": "了解使用流程",
     "privacy": "手机号码仅用于登录及发送Luma.Green工作相关通知。",
     "unavailableTitle": "手机号登录即将开放",
@@ -1929,7 +1929,7 @@
   },
   "join": {
     "metaTitle": "加入Luma.Green",
-    "metaDescription": "班加罗尔的回收店、分拣场、再生企业、制造商和Saathi可申请加入Luma.Green。工作人员会核验每份申请，通常需12至24小时。",
+    "metaDescription": "班加罗尔的回收店、预处理商、再生企业、制造商和Saathi可申请加入Luma.Green。工作人员会核验每份申请，通常需12至24小时。",
     "title": "加入Luma.Green",
     "lead": "请介绍你的工作。工作人员会核验每份申请，通常需12至24小时。",
     "start": "开始",
@@ -1944,7 +1944,7 @@
         "needs": "店铺地址和营业时间，以及GST号码（如有）。"
       },
       "yard": {
-        "title": "分拣场",
+        "title": "预处理商",
         "body": "你批量分拣、打包回收材料，再向下游销售。",
         "needs": "GST号码（如有）、污染控制许可（PDF）和机器照片。"
       },
@@ -2043,7 +2043,7 @@
     },
     "business": {
       "titles": {
-        "yard": "你的分拣场",
+        "yard": "你的预处理企业",
         "recycler": "你的再生设施",
         "manufacturer": "你的工厂"
       },
@@ -2233,7 +2233,7 @@
     },
     "roles": {
       "kabadiwala": "废品回收店",
-      "yard": "分拣场",
+      "yard": "预处理商",
       "recycler": "再生企业",
       "manufacturer": "制造商",
       "saathi": "萨蒂（Saathi）"
@@ -2261,7 +2261,7 @@
       "title": "可接工作",
       "lead": "优先显示所在区域的工作。",
       "empty": "目前没有可接工作",
-      "emptyBody": "店铺、分拣场和工厂的新工作会显示在这里。"
+      "emptyBody": "店铺、预处理商和工厂的新工作会显示在这里。"
     },
     "work": {
       "home_pickups": "上门回收",
@@ -2376,7 +2376,8 @@
       "emptyBody": "在首页承接工作。标记完成后，报酬会显示在这里。",
       "findJob": "寻找工作",
       "demoNote": "示例数据：此处的工作和报酬仅供原型演示。"
-    }
+    },
+    "factorUnavailable": "CO₂e 估算不可用。尚未设置排放因子。"
   },
   "compliance": {
     "title": "合规",
@@ -2454,7 +2455,7 @@
       "view": "查看收据{number}",
       "unknown": "已不再使用Luma.Green的企业",
       "empty": "暂无收据",
-      "emptyBody": "买方将货款存入托管后生成收据。"
+      "emptyBody": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
     },
     "epr": {
       "title": "EPR记录，{from}至{to}财年",
@@ -2484,7 +2485,7 @@
     },
     "saathi": {
       "title": "企业适用",
-      "body": "合规功能面向店铺、分拣场、再生企业和工厂。你的工作和报酬在首页。",
+      "body": "合规功能面向店铺、预处理商、再生企业和工厂。你的工作和报酬在首页。",
       "home": "前往我的工作"
     }
   },
@@ -2496,7 +2497,7 @@
     "lead": "选择材料和附近店铺，称重后通过现金或UPI收款。",
     "promises": {
       "label": "为什么在这里出售",
-      "noAccount": "无需账户",
+      "noAccount": "验证手机号后预约",
       "payAtDoor": "称重后付款",
       "verified": "经过核验的店铺"
     },
@@ -2804,7 +2805,7 @@
     "perKg": "{price}/公斤",
     "recycled": "再生料",
     "forBusinessesTitle": "此页面面向企业",
-    "forBusinessesBody": "回收店、分拣场、再生企业和制造商在此交易。",
+    "forBusinessesBody": "回收店、预处理商、再生企业和制造商在此交易。",
     "units": {
       "kg": "公斤",
       "rupee": "₹"
@@ -2841,30 +2842,30 @@
       "kgTooMuch": "只有{weight}可用。",
       "total": "总额",
       "totalLine": "{weight} × {price}/公斤",
-      "escrow": "{seller}接受后，你将货款存入托管。确认收货后，款项支付给对方。",
+      "escrow": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
       "ewayBill": "超过₹50,000：此批货物必须随附电子运单。",
       "cancel": "取消",
       "submit": "发送请求",
       "sending": "正在发送…",
       "sent": "已向{seller}发送请求",
-      "sentNext": "对方接受后，你将货款存入托管。",
+      "sentNext": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
       "seeTrades": "查看交易"
     },
     "browse": {
       "title": "购买",
-      "lead": "{kind, select, yard {附近回收店的分拣回收材料。} recycler {来自分拣场的分类打包材料。} manufacturer {经过核验的再生企业提供的再生材料。} other {附近在售材料。}}",
+      "lead": "浏览获批供应商提供的您所处理材料的报价。",
       "filterLabel": "按材料筛选",
       "all": "全部",
       "count": "{count, plural, =0 {无批次} one {#批在售} other {#批在售}}",
       "emptyTitle": "目前没有在售材料",
       "emptyBody": "新批次发布后会立即显示在这里。",
       "notForYouTitle": "回收店从家庭收购",
-      "notForYouBody": "在市场上，你负责出售：向分拣场提供分拣后的库存。",
-      "goSell": "卖给分拣场"
+      "notForYouBody": "在市场上，你负责出售：向预处理商提供分拣后的库存。",
+      "goSell": "卖给预处理商"
     },
     "sell": {
       "title": "出售",
-      "lead": "{buyer, select, yard {向分拣场提供分拣后的库存。} recycler {向再生企业提供包块。} manufacturer {向制造商提供材料。} other {向买方提供库存。}}",
+      "lead": "{buyer, select, yard {向预处理商提供分拣后的库存。} recycler {向再生企业提供包块。} manufacturer {向制造商提供材料。} other {向买方提供库存。}}",
       "notForYouTitle": "制造商在Luma.Green采购",
       "notForYouBody": "寻找经过核验的再生企业提供的材料。",
       "goBuy": "采购材料",
@@ -2888,7 +2889,7 @@
         "value": "批次价值",
         "submit": "开始出售",
         "submitting": "正在发布…",
-        "listed": "已上架，{buyer, select, yard {分拣场} recycler {再生企业} manufacturer {制造商} other {买方}}现在可以看到。",
+        "listed": "已上架，{buyer, select, yard {预处理商} recycler {再生企业} manufacturer {制造商} other {买方}}现在可以看到。",
         "nothingTitle": "暂无可售库存",
         "nothingBody": "已记录的库存会显示在这里。已发布或售出的数量不会重复计算。",
         "goStock": "前往库存",
@@ -2920,7 +2921,7 @@
     },
     "trades": {
       "title": "交易",
-      "lead": "逐步查看每笔交易。买方确认交货前，货款保留在托管中。",
+      "lead": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
       "buying": "采购中",
       "selling": "销售中",
       "tabsLabel": "采购或销售",
@@ -2936,7 +2937,7 @@
         "from": "卖方{name} · {area}",
         "to": "买方{name} · {area}",
         "rate": "{price}/公斤",
-        "inEscrow": "托管中{amount}",
+        "inEscrow": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
         "ewayBill": "超过₹50,000：此批货物必须随附电子运单。",
         "updated": "更新于{when}",
         "receipt": "收据{number}",
@@ -2947,7 +2948,7 @@
         "label": "交易进度",
         "requested": "已请求",
         "accepted": "已接受",
-        "paid_to_escrow": "托管中",
+        "paid_to_escrow": "未核实",
         "dispatched": "已发货",
         "completed": "已交货",
         "srStep": "{step}：{state}",
@@ -2964,20 +2965,20 @@
           "seller": "{name}想购买此批次。接受后将为其预留。"
         },
         "accepted": {
-          "buyer": "已接受。请存入托管以继续，确认交货前款项会被保管。",
-          "seller": "等待{name}将款项存入托管。"
+          "buyer": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
+          "seller": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。"
         },
         "paid_to_escrow": {
-          "buyer": "你的货款安全保管在托管中，等待{name}发货。",
-          "seller": "货款安全保管在托管中。请发货后标记已发货。"
+          "buyer": "原型记录。付款和交付尚未核实。",
+          "seller": "原型记录。付款和交付尚未核实。"
         },
         "dispatched": {
-          "buyer": "运输中。检查货物后确认交货，即可支付货款。",
-          "seller": "运输中。{name}确认交货后，你将收到货款。"
+          "buyer": "原型记录。付款和交付尚未核实。",
+          "seller": "原型记录。付款和交付尚未核实。"
         },
         "completed": {
-          "buyer": "已交货，款项已支付给{name}。",
-          "seller": "已交货，款项已支付给你。"
+          "buyer": "原型记录。付款和交付尚未核实。",
+          "seller": "原型记录。付款和交付尚未核实。"
         },
         "declined": {
           "buyer": "{name}拒绝了订单，或此批次已售罄。",
@@ -2987,7 +2988,7 @@
       "action": {
         "accept": "接受订单",
         "decline": "拒绝",
-        "pay": "将{amount}存入托管",
+        "pay": "等待支付网关",
         "dispatch": "标记已发货",
         "confirm": "确认收货"
       },
@@ -2995,21 +2996,23 @@
       "done": {
         "accept": "订单已接受",
         "decline": "订单已拒绝",
-        "pay": "已存入托管。收据{number}",
+        "pay": "原型记录。付款和交付尚未核实。",
         "dispatch": "已标记发货",
-        "confirm": "交货已确认，货款将支付给卖方。"
+        "confirm": "原型记录。付款和交付尚未核实。"
       },
       "declineConfirm": "拒绝{name}的订单？此操作无法撤销。",
       "declineYes": "是，拒绝",
-      "declineNo": "保留预约"
+      "declineNo": "保留预约",
+      "gatewayPending": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
+      "legacyUnverified": "原型记录。付款和交付尚未核实。"
     },
     "receipt": {
       "title": "交易收据",
       "numberLabel": "收据编号",
       "dateLabel": "日期",
       "statusLabel": "付款",
-      "inEscrow": "托管中",
-      "settled": "已支付",
+      "inEscrow": "未核实",
+      "settled": "未核实",
       "seller": "卖方",
       "buyer": "买方",
       "gstin": "GSTIN：{gstin}",
@@ -3020,9 +3023,9 @@
       "amount": "金额",
       "total": "总额",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "于{date}存入Luma.Green资金托管。",
-      "held": "买方确认交货前，款项保留在托管中。",
-      "released": "于{date}支付给卖方。",
+      "paidInto": "原型记录。付款和交付尚未核实。",
+      "held": "原型记录。付款和交付尚未核实。",
+      "released": "原型记录。付款和交付尚未核实。",
       "ewayBill": "货值超过₹50,000：此批货物必须随附电子运单。",
       "notTaxInvoice": "这是交易收据，不是GST税务发票。税务发票随真实付款开具。",
       "print": "打印",
@@ -3030,19 +3033,20 @@
       "missingTitle": "未找到收据",
       "missingBody": "这不是你的交易，或链接有误。",
       "pendingTitle": "尚无收据",
-      "pendingBody": "买方将款项存入托管后生成收据。",
-      "declinedBody": "此交易已被拒绝，因此没有收据。"
+      "pendingBody": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
+      "declinedBody": "此交易已被拒绝，因此没有收据。",
+      "unverified": "未核实"
     },
     "home": {
       "greeting": "你好，{name}",
-      "lead": "{kind, select, yard {从回收店采购，向再生企业出售分拣包块。} recycler {从分拣场采购分拣回收材料，向制造商出售再生材料。} manufacturer {从经过核验的再生企业采购再生材料。} other {一眼查看你的交易。}}",
+      "lead": "管理材料采购、销售和订单。",
       "buy": "购买",
       "sell": "出售",
       "trades": "交易",
       "statsTitle": "概览",
       "stats": {
-        "escrow": "托管中",
-        "escrowHint": "确认交货后支付",
+        "escrow": "未核实",
+        "escrowHint": "企业付款通过支付网关进行。请查看订单以了解当前付款状态。",
         "waiting": "等待你处理",
         "waitingHint": "{count, plural, =0 {全部已处理} one {#笔交易需要操作} other {#笔交易需要操作}}",
         "listings": "在售",
@@ -3050,15 +3054,16 @@
         "offers": "再生材料批次",
         "offersHint": "再生企业在售",
         "completed": "本月完成",
-        "completedHint": "交易额{amount}"
+        "completedHint": "交易额{amount}",
+        "gatewayPending": "已接受的订单"
       },
       "waitingTitle": "等待你处理",
       "allTrades": "全部交易",
       "caughtUpTitle": "目前没有待处理事项",
       "caughtUpBody": "新订单、付款和交货会显示在这里。",
       "offersTitle": "最新批次推荐",
-      "recycledTitle": "适合你的再生材料",
-      "recycledBody": "来自经过核验的再生企业的碎片、颗粒、牛皮纸和锭，可供生产线使用。",
+      "recycledTitle": "适合您的材料报价",
+      "recycledBody": "浏览获批供应商。再生材料优先显示。",
       "seeAll": "查看全部",
       "noOffersTitle": "目前没有在售批次",
       "noOffersBody": "新批次发布后会立即显示在这里。"
@@ -3141,8 +3146,8 @@
       "you": "你的支付价",
       "market": "市场",
       "quickLinks": "快捷入口",
-      "sell": "卖给分拣场",
-      "sellHint": "向附近分拣场提供库存",
+      "sell": "卖给预处理商",
+      "sellHint": "向附近预处理商提供库存",
       "prices": "我的价格",
       "pricesHint": "你支付给家庭的每公斤价格"
     },
@@ -3247,7 +3252,7 @@
       "atPrice": "市场价{price}/公斤",
       "noPrice": "今日暂无市场价",
       "sellTo": {
-        "yard": "卖给分拣场",
+        "yard": "卖给预处理商",
         "recycler": "卖给再生企业",
         "manufacturer": "卖给制造商"
       },
@@ -3256,7 +3261,7 @@
       "emptyBusiness": "在市场采购后，会显示在这里。",
       "buy": "采购材料",
       "notBusinessTitle": "仅限企业",
-      "notBusinessBody": "店铺、分拣场、再生企业和工厂管理库存。"
+      "notBusinessBody": "店铺、预处理商、再生企业和工厂管理库存。"
     },
     "prices": {
       "title": "我的价格",
@@ -3344,7 +3349,7 @@
           "third": "管理分拣库存"
         },
         "yard": {
-          "title": "你的分拣场",
+          "title": "你的预处理工作区",
           "first": "接收材料",
           "second": "分拣库存",
           "third": "准备出货批次"
@@ -3478,5 +3483,642 @@
       "expired": "已过期",
       "revoked": "已撤销"
     }
+  },
+  "stakeholder": {
+    "title": "申请账户",
+    "kind": "账户类别",
+    "name": "机构名称",
+    "site": "主要场所",
+    "submit": "提交申请",
+    "note": "目前无法访问交易或私人记录。",
+    "kinds": {
+      "material_generator": "非家庭材料产生者",
+      "city_official": "城市官员",
+      "csr_sponsor": "企业社会责任赞助方",
+      "lender": "贷款方",
+      "independent_auditor": "独立审计员",
+      "waste_picker_union": "废品收集者工会",
+      "apparel_brand": "服装品牌",
+      "packaging_brand": "包装品牌"
+    },
+    "sites": {
+      "apartment_community": "公寓社区",
+      "office": "办公室",
+      "hotel": "酒店",
+      "resort": "度假村",
+      "other": "其他场所"
+    }
+  },
+  "emailAuth": {
+    "phone": "电话",
+    "email": "电子邮箱",
+    "signin": "登录",
+    "signup": "创建账户",
+    "forgot": "重置密码",
+    "name": "您的姓名",
+    "password": "密码",
+    "show": "显示密码",
+    "hide": "隐藏密码",
+    "passwordHint": "请使用12–128个字符。",
+    "unavailable": "暂时无法发送邮件。现有账户仍可登录。",
+    "sent": "请查看收件箱。符合条件的账户将收到15分钟内有效的链接。",
+    "resend": "重新发送验证",
+    "limited": "尝试次数过多，请稍后重试。",
+    "unverified": "请先验证邮箱再登录。",
+    "credentials": "请检查邮箱和密码。",
+    "invalidLink": "链接无效或已过期，请申请新链接。",
+    "failed": "请求失败，请重试。",
+    "reset": "设置新密码",
+    "verify": "验证邮箱",
+    "done": "已完成，请登录后继续。",
+    "confirm": "再次输入密码",
+    "mismatch": "两次密码不一致。",
+    "securityHint": "在密码后添加身份验证器代码。重置密码会保留此保护。",
+    "backupHint": "每个恢复码在输入密码后只能使用一次。",
+    "disableHint": "密码登录仍然有效。身份验证器代码和恢复码将停止工作。"
+  },
+  "workspace": {
+    "title": "工作空间和团队",
+    "choose": "选择工作空间",
+    "team": "团队",
+    "role": "角色",
+    "owner": "所有者",
+    "admin": "管理员",
+    "member": "成员",
+    "viewer": "查看者",
+    "invite": "发送邀请",
+    "email": "电子邮箱",
+    "pending": "待处理邀请",
+    "revoke": "撤销",
+    "remove": "移除",
+    "empty": "没有可用的工作空间。",
+    "error": "无法更新。请检查权限后重试。",
+    "inviteTitle": "工作空间邀请",
+    "accept": "接受邀请",
+    "verifyEmail": "接受前请验证受邀邮箱。",
+    "unavailable": "此邀请不可用。请检查邮箱或请求新邀请。",
+    "join": "以{role}身份加入{name}。",
+    "readOnly": "只读权限",
+    "confirmRemove": "从工作空间中移除此人？",
+    "lastOwner": "请至少保留一名所有者。更改前请添加另一名所有者。",
+    "deliveryPending": "邮件待发送",
+    "deliveryAccepted": "邮件服务已接受",
+    "deliveryFailed": "邮件送达未确认",
+    "expires": "到期时间 {date}",
+    "emailBody": "您已受邀加入{name}。请在七天内打开链接，并使用此已验证邮箱登录。邀请仅可使用一次。",
+    "switchAccount": "切换账户",
+    "switchHint": "请退出登录，然后使用收到邀请的电子邮箱登录或注册。",
+    "invitationLimit": "已达到邀请次数上限。请稍候再发送邀请。"
+  },
+  "lots": {
+    "title": "批次与质量",
+    "lead": "记录实测材料、加工和实物交接。",
+    "evidenceNote": "这些记录描述实物证据，不改变库存、付款、法律所有权或证书。",
+    "notBusiness": "请选择有效的企业工作区以使用批次记录。",
+    "readOnly": "您的工作区角色可以读取这些记录。",
+    "held": "持有的批次",
+    "incoming": "待收批次",
+    "sent": "交接历史",
+    "empty": "暂无记录。",
+    "limit": "仅显示前100条记录。",
+    "declare": "申报批次",
+    "detail": "批次详情",
+    "back": "所有批次",
+    "material": "材料代码或名称",
+    "state": "物理状态",
+    "mass": "质量（克）",
+    "grams": "{value} 克",
+    "integerHint": "请输入整数克数，不要使用小数点或数位分隔符。",
+    "sourceReference": "来源参考（可选）",
+    "source": "来源",
+    "selfDeclared": "自行申报",
+    "transformed": "来自转化",
+    "initial": "初始质量",
+    "remaining": "剩余质量",
+    "available": "可用",
+    "in_transit": "运输中",
+    "exhausted": "已耗尽",
+    "save": "保存记录",
+    "saving": "正在保存…",
+    "saved": "记录已保存。",
+    "cancel": "取消",
+    "close": "关闭",
+    "required": "请填写所有必填字段。",
+    "invalidInput": "请检查数值，使用整数克数并填写所有必填字段。",
+    "genericError": "无法保存记录。输入值已保留，请重试。",
+    "accessChanged": "此批次或您的工作区权限已变更，请重新加载批次列表。",
+    "balanceError": "输入质量必须等于输出、杂质和加工损耗之和。",
+    "weightDispute": "收到的质量与发出的质量不同，尚未记录收货。请与发送方核对测量结果。",
+    "approvalError": "企业持有该批次期间，必须由另一位所有者批准此更正。",
+    "transform": "记录转化",
+    "inputMass": "输入质量（克）",
+    "contamination": "杂质（克）",
+    "processLoss": "加工损耗（克）",
+    "outputs": "输出批次",
+    "outputNumber": "输出 {number}",
+    "addOutput": "添加输出",
+    "remove": "移除",
+    "balance": "已核算质量：{value}",
+    "transformHint": "请记录每项输出和损耗。输入质量将从此批次扣除，并创建关联的输出批次。",
+    "dispatch": "发出批次",
+    "dispatchHint": "这将把整个剩余批次发送给所选企业。保存前请核对接收方。",
+    "receiver": "接收方",
+    "city": "城市",
+    "businessKind": "企业类型",
+    "chooseBusiness": "选择企业",
+    "searchBusinesses": "查找企业",
+    "directoryNote": "目录显示有效企业，但不确认其加工能力。",
+    "directoryEmpty": "没有匹配的企业，请检查城市和企业类型。",
+    "kabadiwala": "废品收购商",
+    "yard": "预处理商",
+    "recycler": "回收加工商",
+    "manufacturer": "制造商",
+    "receive": "接收批次",
+    "receivedMass": "收到的质量（克）",
+    "receiveHint": "请测量收到的批次。此表单不允许接受不同重量。",
+    "pendingNote": "您只能查看此次发货，收货后才能查看完整批次历史。",
+    "custody": "保管历史",
+    "dispatched": "已发出",
+    "received": "已接收",
+    "handoff": "{from} → {to}",
+    "from": "来自 {name}",
+    "to": "发往 {name}",
+    "transformations": "转化记录",
+    "inspection": "记录检验",
+    "inspections": "检验证据",
+    "inspectionNote": "请记录实际规格、取样方法和实测结果。决定仅适用于此次检验，并非平台等级或证书。",
+    "specification": "规格参考",
+    "version": "规格版本",
+    "sampleMethod": "取样方法",
+    "buyer": "买方范围（可选）",
+    "addBuyer": "指定买方",
+    "noBuyer": "未指定买方",
+    "results": "实测结果",
+    "resultNumber": "结果 {number}",
+    "parameter": "参数",
+    "unit": "单位",
+    "value": "实测值",
+    "addResult": "添加结果",
+    "decision": "检验决定",
+    "accepted": "接受",
+    "rejected": "拒绝",
+    "conditional": "有条件接受",
+    "evidenceReference": "证据参考（可选）",
+    "correct": "提出更正",
+    "correctionHint": "原记录保持可见。买方范围和规格不可更改。必须由另一位所有者批准更正。",
+    "reason": "更正原因",
+    "approve": "批准更正",
+    "pendingApproval": "等待单独批准",
+    "approved": "更正已批准",
+    "superseded": "已由获批更正替代",
+    "original": "原始检验",
+    "previousResult": "上次检验",
+    "recordedBy": "检验企业：{name}",
+    "loadError": "无法加载记录，请重试。",
+    "retry": "重试",
+    "streamClass": "输出物料流",
+    "handlingClass": "处理分类",
+    "streams": {
+      "main_product": "主产品",
+      "saleable_byproduct": "可销售副产品",
+      "recoverable_waste": "可回收废物",
+      "residual_waste": "残余废物",
+      "unspecified": "未指定"
+    },
+    "handling": {
+      "non_hazardous": "非危险",
+      "controlled": "受控",
+      "unassessed": "未评估"
+    },
+    "facility": "设施",
+    "processKind": "工艺",
+    "noFacility": "未选择设施",
+    "controlledBlocked": "受控或残余材料需要有记录的处置，不可按普通方式发运或转化。",
+    "recordDisposition": "记录处置",
+    "destinationReference": "目的地参考",
+    "authorisationReference": "授权参考",
+    "manifestReference": "转移联单参考",
+    "dispositions": "处置历史",
+    "dispositionHint": "记录测得的质量及实际目的地、授权和转移联单参考。这将减少该批次的剩余质量，但不会核实授权或创建可销售库存。",
+    "inputs": "投入批次",
+    "additionalInputs": "其他投入批次",
+    "addInput": "添加投入批次",
+    "chooseInput": "选择投入批次",
+    "combinedInput": "投入总质量",
+    "multiInputHint": "仅合并由您保管且已测量的材料。每项数量都从其原批次中消耗。这只记录处理证据，不增加库存。"
+  },
+  "evidence": {
+    "title": "文档参考信息",
+    "lead": "保存申报的参考信息。Luma不验证或签发这些文档。",
+    "record": "添加参考",
+    "correct": "替换参考",
+    "replacement": "替换：{reference}",
+    "reference": "文档参考信息",
+    "kind": "文档类型",
+    "issuer": "签发方",
+    "issuerName": "签发方名称",
+    "trade": "关联交易",
+    "none": "无交易",
+    "unverified": "已申报 · 未验证",
+    "gst_invoice": "GST发票",
+    "eway_bill": "电子运输单",
+    "cpcb_epr_certificate": "CPCB EPR证书",
+    "pollution_consent": "污染控制许可",
+    "external_authority": "签发机关",
+    "external_organization": "签发组织",
+    "trade_seller": "卖方",
+    "trade_buyer": "买方",
+    "correctionHint": "原记录仍然可见。保存新的参考信息以替换它。"
+  },
+  "accountPhone": {
+    "title": "验证您的手机号",
+    "description": "添加您本人持有的号码，用于回收和付款。电子邮箱账户保持不变，不会合并其他账户。请继续使用邮箱登录。",
+    "verified": "手机号已验证",
+    "unavailable": "配置短信发送服务后才能验证手机号。",
+    "inUse": "无法添加此号码。请使用未绑定其他账户的号码。",
+    "unsupported": "无法在此更改该账户的手机号。"
+  },
+  "sandboxPayment": {
+    "title": "测试付款",
+    "note": "仅供测试。不会产生真实付款、结算或退款。交易仍处于暂停状态。",
+    "open": "打开测试",
+    "unavailable": "测试付款不可用。",
+    "pending": "等待服务器确认。",
+    "collected": "测试收款已确认。",
+    "failed": "无法打开付款。请重试。",
+    "review": "需要服务器核查。",
+    "liveTitle": "通过网关付款",
+    "liveNote": "通过Cashfree支付约定的订单总额。必须获得服务商确认，关闭结账窗口并不代表付款已确认。",
+    "liveOpen": "打开安全结账",
+    "liveCollected": "服务商已确认付款。"
+  },
+  "industry": {
+    "title": "行业参考资料",
+    "lead": "搜索提供的工作簿。这些参考资料未经核实，不构成材料交易或处理许可。",
+    "sourceNote": "源文本按工作簿原始英文显示。",
+    "sectors": "行业分类参考",
+    "industries": "行业矩阵",
+    "lifecycles": "材料生命周期",
+    "byproducts": "副产品示例",
+    "matches": "{count} 条匹配参考",
+    "previous": "上一页",
+    "next": "下一页",
+    "select": "选择参考",
+    "selected": "已选参考",
+    "clear": "清除参考",
+    "detailLabels": {
+      "annexure": "附录",
+      "category": "类别",
+      "division": "部门",
+      "industryGroup": "行业组",
+      "inputs": "投入物",
+      "products": "产品",
+      "byproducts": "副产品",
+      "recoverableWaste": "可回收废物",
+      "residualWaste": "残余废物",
+      "nextUser": "下一位使用者",
+      "suggestedFlow": "建议流程",
+      "materialState": "材料状态",
+      "note": "备注",
+      "route": "路径",
+      "qualityAttributes": "质量属性",
+      "reportedCommercialStatus": "申报的商业状态"
+    },
+    "view": "查看参考",
+    "empty": "没有匹配的参考。"
+  },
+  "facility": {
+    "title": "设施与工艺",
+    "lead": "记录企业申报的场所和工艺。此资料不核实设施，也不授予材料交易许可。",
+    "add": "添加设施",
+    "edit": "编辑设施",
+    "name": "设施名称",
+    "siteReference": "场所参考",
+    "sector": "行业参考（可选）",
+    "capabilities": "申报工艺",
+    "readOnly": "仅工作区所有者和管理员可修改设施。",
+    "processNote": "这些是自行申报的能力，并非已核实的许可。",
+    "processKinds": {
+      "sorting": "分选",
+      "baling": "打包",
+      "shredding": "破碎",
+      "stripping": "剥离",
+      "washing": "清洗",
+      "granulating": "造粒",
+      "compounding": "配混",
+      "recovery": "回收",
+      "manufacturing": "制造",
+      "residual_handling": "残余物处理"
+    },
+    "empty": "尚未记录设施。",
+    "registration": {
+      "title": "许可和登记参考",
+      "lead": "仅为申报参考。日期不能证明批准，也不会开放交易。",
+      "add": "添加参考",
+      "correct": "添加更正",
+      "reference": "参考",
+      "issuedAt": "签发日期",
+      "validUntil": "有效期至",
+      "empty": "尚未记录参考。",
+      "current": "在申报日期范围内",
+      "expired": "已超过申报有效期",
+      "superseded": "已被后续参考替代",
+      "kind": "参考类型",
+      "kinds": {
+        "consent_to_operate": "运营许可",
+        "consent_to_establish": "设立许可",
+        "epr_registration": "EPR登记",
+        "waste_authorisation": "废物授权",
+        "other": "其他参考"
+      },
+      "not_yet_current": "早于申报签发日期"
+    }
+  },
+  "marketSpecification": {
+    "title": "等级和规格",
+    "enable": "添加等级和规格",
+    "grade": "材料等级",
+    "specification": "买方质量规格",
+    "lot": "近期匹配批次（可选）",
+    "noLot": "未关联批次",
+    "source": "卖方声明。这不会核实质量，也不会预留证据批次。",
+    "lotState": "记录的批次状态"
+  },
+  "stockIntake": {
+    "title": "自产副产品库存",
+    "add": "记录入库",
+    "lead": "记录本制造商生产并称重的副产品。保存将根据申报的生产和称重记录增加库存。仅作证据的批次不会增加库存。",
+    "reference": "唯一入库编号",
+    "source": "生产批次编号",
+    "weighing": "称重记录编号",
+    "date": "生产日期",
+    "confirm": "我确认这是我们自产的副产品，且此称重数量尚未计入库存。",
+    "empty": "尚无生产入库记录。",
+    "noMaterials": "没有适用于本企业且已获批准的非危险副产品材料。请先让平台管理员审核材料，再记录库存。",
+    "conflict": "此入库编号已有不同内容。请先检查原始记录再继续。",
+    "history": "已记录的入库",
+    "more": "加载更多入库",
+    "note": "这些是制造商的声明，并非对质量、所有权或合规性的独立验证。保存后无法编辑记录。"
+  },
+  "tradeLifecycle": {
+    "title": "付款与交付",
+    "collectionLabel": "买方付款",
+    "settlementLabel": "卖方结算",
+    "refundLabel": "退款",
+    "state": {
+      "awaiting_payment": "等待通过支付网关付款",
+      "authorized": "付款已确认，可以发货",
+      "dispatched": "已发货，等待收货",
+      "received": "材料已收到",
+      "cancellation_pending": "正在核查取消申请",
+      "cancelled": "订单已取消",
+      "hold": "订单需要审核"
+    },
+    "collection": {
+      "pending": "尚未确认",
+      "sandbox_confirmed": "仅限测试环境，无真实资金",
+      "live_confirmed": "服务商已确认",
+      "review": "付款需要审核"
+    },
+    "settlement": {
+      "pending": "尚未确认",
+      "settled": "服务商已确认",
+      "reversed": "结算已撤销",
+      "review": "结算需要审核"
+    },
+    "refund": {
+      "none": "尚无退款记录",
+      "pending": "退款待处理",
+      "refunded": "服务商已确认",
+      "review": "退款需要审核"
+    },
+    "action": {
+      "dispatch": "记录发货",
+      "receive": "确认收货",
+      "cancel": "申请取消"
+    },
+    "policyMissing": "真实付款需要已批准的付款条款和服务商配置。",
+    "reviewRequired": "管理员必须核查付款证据，此订单才能继续。",
+    "fullQuantity": "请确认全部约定数量：{weight}。如果数量或质量不符，请停止并联系管理员。",
+    "cancelNote": "仅在服务器确认不再有付款可能完成后，取消才会释放库存。申请待处理并不代表订单已经取消。",
+    "reason": "原因",
+    "reference": "发货或收货凭证编号",
+    "confirm": "确认",
+    "back": "返回",
+    "saved": "订单记录已更新",
+    "failed": "更新未完成。请检查当前状态后重试。您的凭证编号已保留。",
+    "actionUnavailable": "此操作已不可用。请检查更新后的订单状态。"
+  },
+  "sourcing": {
+    "close": "关闭",
+    "material": "材料",
+    "save": "保存记录",
+    "saved": "记录已保存。",
+    "reference": "参考",
+    "buying": "采购中",
+    "active": "有效",
+    "decline": "拒绝",
+    "title": "材料采购",
+    "lead": "计划材料需求，记录您对供应商的决定，并同意个别供应请求。",
+    "boundary": "这些记录不会创建购买交易。他们不保留库存或确认付款。使用市场和支付工作流程完成购买。",
+    "board": "需求板",
+    "plans": "经常性需求",
+    "qualifications": "供应商决策",
+    "agreements": "常设协议",
+    "post": "发布物资需求",
+    "createPlan": "创建日程",
+    "publish": "发布下一个需求",
+    "supplier": "供应商",
+    "choose": "选择一个选项",
+    "quantity": "数量（克）",
+    "area": "送货范围",
+    "specification": "书面规范",
+    "neededBy": "所需交货日期",
+    "cadence": "重复间隔",
+    "weekly": "每7天一次",
+    "monthly": "每 30 天一次",
+    "planHint": "仅当您选择“发布下一个需求”时，才会发布每个事件。不会创建自动订单。",
+    "myDemand": "我的需求",
+    "availableDemand": "买家需求",
+    "empty": "还没有记录。",
+    "limited": "仅显示有界集。较旧的记录保留在审核历史记录中。",
+    "loadMore": "加载更多",
+    "invalid": "检查必填字段、日期和整数数量。",
+    "failed": "此操作无法完成。您的草稿将被保留。检查当前权限和资格，然后重试。",
+    "qualify": "记录供应商决定",
+    "sample": "样品或检验参考",
+    "decision": "你的决定",
+    "reason": "决定理由",
+    "validUntil": "决定有效期至",
+    "privateDecision": "这是您组织的采购决策。这不是平台批准或监管认证。决策历史记录对于您的买家工作区来说是私有的。供应商和材料的最新决策控制新协议和发布；较早的条目保留在历史记录中。",
+    "pending": "待定",
+    "approved": "买家认可",
+    "rejected": "被买家拒绝",
+    "propose": "提出协议",
+    "price": "协议价格（派/公斤）",
+    "startsOn": "开始于",
+    "endsOn": "结束于",
+    "agreementHint": "需要针对该具体规格做出经批准的当前供应商决策。供应商必须单独确认该提案。",
+    "supplying": "供应",
+    "requested": "等待供应商回复",
+    "acknowledged": "得到供应商认可",
+    "declined": "被供应商拒绝",
+    "closed": "关闭",
+    "acknowledge": "确认确认",
+    "responseReference": "回复参考",
+    "release": "请求供应数量",
+    "releaseHint": "请求部分约定数量。供应商确认记录仅供参考；它不会移动物质或金钱。",
+    "releases": "个别供应请求",
+    "history": "协议历史",
+    "view": "查看供应请求和历史记录",
+    "closeAgreement": "关闭本协议",
+    "closeHint": "这可以防止根据协议提出新的供应请求。现有请求及其历史记录仍被记录。",
+    "state": "记录状态",
+    "nextDate": "下一个需求日期",
+    "readOnly": "您的工作区角色可以查看这些记录，但无法更改它们。",
+    "published": "需求发生情况已发布。",
+    "event": {
+      "proposed": "拟定协议",
+      "acknowledged": "协议已确认",
+      "declined": "协议被拒绝",
+      "closed": "协议结束",
+      "release_requested": "要求供应数量",
+      "release_acknowledged": "供应请求已确认",
+      "release_declined": "供应请求被拒绝"
+    },
+    "reschedule": "移动下一个需求日期",
+    "rescheduleHint": "选择较晚的当前日期。之前的出版物保持不变。这不会发布需求或创建订单。",
+    "overdue": "这个预定的日期已经过去了。发布前移至下一个日期。"
+  },
+  "operations": {
+    "validUntil": "有效期至",
+    "decisions": {
+      "revoked": "已撤销",
+      "approved": "已批准",
+      "rejected": "被拒绝"
+    },
+    "reference": "参考",
+    "remove": "移除",
+    "save": "保存记录",
+    "saved": "记录已保存。",
+    "standards": "材质标准",
+    "standardsHint": "搜索已审阅的定义。等级或部门不授予处理许可或证明质量。",
+    "workspaceRequired": "选择批准的业务工作区以继续。",
+    "definitions": "定义",
+    "reviews": "范围审查",
+    "destinations": "受控目的地",
+    "search": "按材料、物理状态、等级或规格搜索",
+    "empty": "还没有记录。",
+    "truncated": "结果是有限的。优化您的搜索或检查最近的记录。",
+    "reviewHint": "这些是管理员对所提供证据的审查。设施变更、被取代的注册、到期或撤销将使当前范围失效。",
+    "destinationHint": "在受控移交之前检查材料范围和当前授权。目录条目并不证明处置或门户提交。",
+    "current": "当前",
+    "historical": "不是当前的",
+    "production": "生产记录",
+    "productionHint": "将配方和声明的输入链接到测量的转换及其输出检查。回收部分描述的是声明的输入，而不是认证的产品内容。这些记录不会改变库存。",
+    "recipes": "制造配方",
+    "batches": "生产批次",
+    "newRecipe": "记录制造配方",
+    "newBatch": "记录批次",
+    "version": "录音版本",
+    "name": "食谱名称",
+    "instructions": "工艺说明",
+    "ingredients": "成分",
+    "ingredient": "成分名称",
+    "basisPoints": "以基点表示的成分比例 (100 = 1%)",
+    "additive": "添加剂",
+    "addIngredient": "添加成分",
+    "recipeHint": "使用新版本进行更正。成分股总数必须为 10,000 个基点。所有测量的成分和添加剂都必须包含在链接转换中。",
+    "failed": "无法保存。检查值、链接记录和您的工作区访问权限，然后重试。",
+    "invalid": "检查字段和准确的克总数。",
+    "choose": "选择",
+    "recipe": "制造配方版本",
+    "transformation": "测量的转变",
+    "inspection": "输出检查",
+    "recycledGrams": "声明的回收投入（克）",
+    "inputEvidence": "输入出处参考",
+    "batchEvidence": "生产证据参考",
+    "inputFraction": "声明的回收投入份额",
+    "inputTotal": "总投入",
+    "outputTotal": "测量输出",
+    "batchHint": "选择现有转换并检查其输出。声明每个输入的回收克数并提供证据参考。这是一份可归属的声明，而不是独立的认证。"
+  },
+  "logistics": {
+    "title": "路线与载重计划",
+    "add": "创建计划",
+    "correct": "保存新修订",
+    "titleLabel": "计划名称",
+    "reference": "唯一计划编号",
+    "vehicle": "车辆编号",
+    "capacity": "车辆载重上限（克）",
+    "origin": "起始地点",
+    "stop": "停靠点 {number}",
+    "addStop": "添加停靠点",
+    "latitude": "纬度",
+    "longitude": "经度",
+    "entered": "保持输入顺序",
+    "geometric": "下一个最近停靠点（直线）",
+    "distance": "直线距离：{value} 米",
+    "archive": "归档计划",
+    "archived": "已归档",
+    "history": "修订历史",
+    "revision": "修订 {number}",
+    "reason": "记录原因",
+    "conflict": "计划或访问权限已更改。请重新加载后再保存。",
+    "invalid": "检查坐标、材料、整数克数和载重上限。所有停靠点的总载重必须在车辆容量内。",
+    "lead": "仅供手动规划。所有停靠点的载重相加。直线排序不是道路导航、预计到达时间或发运记录。地点来自您的输入，不读取照片元数据。",
+    "empty": "暂无路线计划。"
+  },
+  "qualityDocuments": {
+    "businessRequired": "请选择有效的企业工作区以使用批次记录。",
+    "inspections": "检验证据",
+    "readOnly": "您的工作区角色可以读取这些记录。",
+    "empty": "暂无记录。",
+    "inspection": "检验证据",
+    "kind": "文档类型",
+    "accepted": "接受",
+    "rejected": "拒绝",
+    "conditional": "有条件接受",
+    "note": "更正原因",
+    "record": "保存记录",
+    "error": "出了点问题",
+    "limit": "仅显示前100条记录。",
+    "title": "质量文件",
+    "own": "您的文件",
+    "incoming": "与您的企业共享",
+    "decisions": "买方决定历史",
+    "upload": "附加文件",
+    "coa": "分析证书",
+    "photo": "质量照片",
+    "sample_report": "样品报告",
+    "file": "文件",
+    "shareBuyer": "与{name}共享此文件",
+    "download": "下载",
+    "shared": "已与指定买方共享",
+    "private": "仅限企业",
+    "withdrawn": "访问已撤回",
+    "withdraw": "撤回访问",
+    "decision": "买方决定",
+    "lead": "请记录实际规格、取样方法和实测结果。决定仅适用于此次检验，并非平台等级或证书。 这些记录描述实物证据，不改变库存、付款、法律所有权或证书。",
+    "fileHint": "PDF、JPEG、PNG或WebP，最大2 MiB。请使用扁平化PDF。文件只下载，不预览。未经独立验证或恶意软件扫描。共享前请删除私人信息。"
+  },
+  "auditReports": {
+    "title": "共享审计报告",
+    "create": "共享报告",
+    "recipient": "已批准的接收人",
+    "purpose": "审查目的",
+    "expiry": "访问截止时间（本地时间）",
+    "sent": "您共享的报告",
+    "received": "与您共享的报告",
+    "empty": "暂无报告。",
+    "unavailable": "访问已到期、撤回或不可用。",
+    "open": "阅读报告",
+    "revoke": "撤销访问",
+    "inspection": "检验证据",
+    "error": "出了点问题",
+    "limit": "仅显示前100条记录。",
+    "lead": "阅读为指定目的共享的固定证据副本。接收人获得批准并不代表可以访问其他企业的记录。",
+    "warning": "仅共享所选检验和勾选文件。请先删除个人信息。访问期限最多90天，可撤销；已下载的副本无法收回。",
+    "snapshot": "检验企业声明的固定副本。这不是证书或独立验证。"
   }
 }

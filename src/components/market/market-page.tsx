@@ -14,11 +14,8 @@ import {
   Section,
 } from "@/components/app/page-parts";
 import type { OrgWorkspace } from "@/components/app/use-workspace";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
-import { sellerKindFor } from "../../../convex/lib/chain";
 import { BuyButton } from "./buy-dialog";
 import { ListingCard } from "./listing-card";
 import { materialOptions, recycledFirst } from "./logic";
@@ -27,22 +24,21 @@ import { useOrg } from "./use-org";
 import { useRecycledCodes } from "./use-recycled-codes";
 
 /**
- * `/app/market`: lots on sale from the step below mine in the chain —
- * kabadiwalas for a yard, yards for a recycler, recyclers for a
- * manufacturer — filtered by material, each one tap from "Buy".
+ * `/app/market`: server-approved chain and manufacturer-byproduct offers.
+ * The server checks the buyer's approved material scope for every offer.
  */
 export function MarketPage() {
   const t = useTranslations("market");
   const org = useOrg();
-  const canBuy = org !== null && sellerKindFor(org.kind) !== null;
+  const canBuy = org !== null;
 
   return (
     <>
       <AppPageHeader
         title={t("browse.title")}
-        lead={canBuy ? t("browse.lead", { kind: org.kind }) : undefined}
+        lead={canBuy ? t("browse.lead") : undefined}
       />
-      {canBuy ? <Lots org={org} /> : <NotForYou isShop={org !== null} />}
+      {canBuy ? <Lots org={org} /> : <NotForYou />}
     </>
   );
 }
@@ -106,21 +102,14 @@ function Lots({ org }: { org: OrgWorkspace }) {
   );
 }
 
-/** Kabadiwalas sell here but buy from households; Saathis don't trade. */
-function NotForYou({ isShop }: { isShop: boolean }) {
+/** Personal and Saathi accounts do not have business trading access. */
+function NotForYou() {
   const t = useTranslations("market");
   return (
     <EmptyState
       icon={SearchXIcon}
-      title={t(isShop ? "browse.notForYouTitle" : "forBusinessesTitle")}
-      body={t(isShop ? "browse.notForYouBody" : "forBusinessesBody")}
-      action={
-        isShop ? (
-          <Button asChild size="lg" className="mt-2 h-11">
-            <Link href="/app/sell">{t("browse.goSell")}</Link>
-          </Button>
-        ) : null
-      }
+      title={t("forBusinessesTitle")}
+      body={t("forBusinessesBody")}
     />
   );
 }

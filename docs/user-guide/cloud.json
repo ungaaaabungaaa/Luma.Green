@@ -1,13 +1,18 @@
 {
-  "status": "published",
+  "status": "pending",
   "document_id": "17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "document_url": "https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY",
   "source_docx": "output/docx/luma-green-user-guide.docx",
   "folder_id": "1CutQzKyWZ1GslRFWF-mYx-IFI8h_UzdR",
-  "pending_revision": null,
-  "result": "The approved recycling design guide is synchronized to the same Google Doc. All 40 chapters, six tables and 99 images are verified. All 105 exported native pages passed visual review. Document link, folder and sharing are unchanged.",
-  "connection_gate": null,
-  "next_action": "Reuse this document. Compare its current revision with last_verified_revision before bounded native updates, preserve later human edits and unchanged objects, then verify text, images and every exported page. Native image descriptions remain an explicit supported-editor followup.",
+  "pending_revision": {
+    "source": "docs/user-guide/guide.md",
+    "updated_at": "2026-10-07",
+    "status": "awaiting_native_publication",
+    "local_browser_result": "55 of 55 connected cases passed; not a cloud publication result"
+  },
+  "result": "Current 7 October guide is locally reviewed but not yet published to the native document. The historical 3 October publication is retained below.",
+  "connection_gate": "Revision-guarded same-document update and readback remain pending; no connection failure is asserted.",
+  "next_action": "Compare the fresh native revision with last_verified_revision. Update this same document from the reviewed 167-page Word source, preserve later human edits, folder and sharing, and verify text, images and every exported page before recording publication.",
   "last_verified_revision": {
     "source_commit": "364ecd6a97bb6b91f7703e2dc8a11a995a85aefe",
     "source_application_commit": "732283d",
@@ -124,7 +129,7 @@
       "local_visual_review_page_count": 103,
       "native_pdf_visual_review_page_count": 104,
       "native_pdf_visual_review": "passed; all 105 initial pages individually inspected. After spacing repair, final page 13 was reinspected independently, adjacent final pages 12 and 14 checked, and the other 103 page bodies matched reviewed originals pixel-for-pixel. All 104 footer page numbers were verified separately.",
-      "native_pdf_review_mapping": "Final pages 1–12 match initial pages 1–12. Final pages 14–104 match initial pages 15–105, excluding only the automatically updated footer number region. Final page 13 contains the repaired note; initial orphan page 14 was removed.",
+      "native_pdf_review_mapping": "Final pages 1\u201312 match initial pages 1\u201312. Final pages 14\u2013104 match initial pages 15\u2013105, excluding only the automatically updated footer number region. Final page 13 contains the repaired note; initial orphan page 14 was removed.",
       "native_revision_id": "ANLCKQm10oTBuF5TL-cVDztZsyY4kuZWeVZLBVIjT133-RyfFWott4s9KI4WHtOZWWU_JnpBHB6jJ1AeAjkhNlBtWWNhPT0aczHxTTfGIvg",
       "native_readback_sha256": "91296f493f7770973493163b0283b39d477a6a388a405e56297ba35b1aee830e",
       "canonical_body_sha256": "b2010023394a7dbb87652789055a007203ce3f734c8f4310935ec8d01ed9cfaf",

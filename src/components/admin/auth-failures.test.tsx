@@ -38,7 +38,12 @@ vi.mock("next/navigation", () => ({
 }));
 vi.mock("@/lib/auth-client", () => ({
   authClient: {
-    useSession: () => ({ data: { session: { id: "fixture-session" } } }),
+    useSession: () => ({
+      data: {
+        session: { id: "fixture-session" },
+        user: { id: "fixture-user" },
+      },
+    }),
     signIn: { email: mocks.signIn },
     signUp: { email: mocks.signUp },
     twoFactor: {

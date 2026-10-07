@@ -10,6 +10,7 @@ import type { ListingView, TradeView } from "./types";
 const { data } = vi.hoisted(() => ({
   data: {
     kind: "yard",
+    canOperate: true,
     trades: { buying: [] as unknown[], selling: [] as unknown[] },
     offers: [] as unknown[],
     mine: [] as unknown[],
@@ -43,10 +44,9 @@ vi.mock("@/i18n/navigation", () => ({
   useRouter: () => ({ push: vi.fn() }),
 }));
 
-const now = Date.now();
-
 beforeEach(() => {
   data.kind = "yard";
+  data.canOperate = true;
   data.trades = {
     buying: [
       aTrade({
@@ -58,6 +58,11 @@ beforeEach(() => {
     ],
     selling: [
       aTrade({
+        id: "decide" as TradeView["id"],
+        status: "requested",
+        actions: ["accept", "decline"],
+      }),
+      aTrade({
         id: "held" as TradeView["id"],
         status: "dispatched",
         inEscrow: true,
@@ -67,7 +72,6 @@ beforeEach(() => {
         id: "done" as TradeView["id"],
         status: "completed",
         totalPaise: 2_000_000,
-        timeline: [{ status: "completed", at: now }],
       }),
     ],
   };
@@ -100,24 +104,28 @@ describe("BusinessHome", () => {
       }),
     ).toBeInTheDocument();
     const stats = screen.getByRole("region", { name: "At a glance" });
-    expect(within(stats).getByText("₹76,000")).toBeInTheDocument();
+    expect(within(stats).getByText("Accepted orders")).toBeInTheDocument();
+    expect(within(stats).getAllByText("1")).toHaveLength(3);
     expect(within(stats).getByText("1 trade needs a step")).toBeInTheDocument();
     expect(within(stats).getByText("5,000 kg listed")).toBeInTheDocument();
-    expect(within(stats).getByText("₹20,000 traded")).toBeInTheDocument();
+    expect(within(stats).queryByText("₹76,000")).not.toBeInTheDocument();
   });
 
-  it("puts the step that's waiting one tap away", () => {
+  it("offers only order decisions and no simulated payment action", () => {
     renderHome();
     expect(
-      screen.getByRole("button", { name: "Pay ₹1,750 into escrow" }),
+      screen.getByRole("button", { name: "Accept order" }),
     ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /Pay/ }),
+    ).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Sell/ })).toHaveAttribute(
       "href",
       "/app/sell",
     );
   });
 
-  it("shows manufacturers recycled material and no selling", () => {
+  it("shows manufacturers recycled offers and a way to manage byproduct sales", () => {
     data.kind = "manufacturer";
     data.offers = [
       aListing({
@@ -130,11 +138,41 @@ describe("BusinessHome", () => {
     ];
     renderHome();
     expect(
-      screen.getByRole("heading", { name: "Recycled material for you" }),
+      screen.getByRole("heading", { name: "Material offers for you" }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Recycled lots")).toBeInTheDocument();
+    expect(screen.getByText("5,000 kg listed")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Sell" })).toHaveAttribute(
+      "href",
+      "/app/sell",
+    );
+  });
+  it("hides manufacturer order and sale actions for a viewer", () => {
+    data.kind = "manufacturer";
+    data.canOperate = false;
+    renderHome();
     expect(
-      screen.queryByRole("link", { name: /^Sell/ }),
+      screen.queryByRole("link", { name: "Sell" }),
     ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: "Accept order" }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText("5,000 kg listed")).toBeVisible();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => data.canOperate,
+}));
+
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      isPending: false,
+      error: null,
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session" },
+      },
+    }),
+  },
+}));

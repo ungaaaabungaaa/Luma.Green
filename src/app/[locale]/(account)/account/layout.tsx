@@ -32,7 +32,7 @@ export default async function AccountLayout({
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto flex w-full max-w-2xl flex-1 flex-col px-4 py-6 sm:px-8 sm:py-10"
+        className="mx-auto flex w-full max-w-4xl flex-1 flex-col px-4 py-6 sm:px-8 sm:py-8"
       >
         {children}
       </main>

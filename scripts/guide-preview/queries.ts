@@ -2,6 +2,7 @@ import { type FunctionReference, getFunctionName } from "convex/server";
 import { ConvexError } from "convex/values";
 
 import { inboxFixture, securityFixture } from "./account-fixtures";
+import { financeFixture } from "./finance-fixtures";
 import {
   complianceFixture,
   fixtures,
@@ -13,6 +14,7 @@ import {
   priceQuotesFixture,
   sellableFixture,
   tradesFixture,
+  unknownFactorImpactFixture,
   workspaceFixture,
 } from "./fixtures";
 
@@ -48,12 +50,29 @@ export function useQuery(
   const name = getFunctionName(query);
   const failure = failureQuery(name);
   if (failure.matched) return failure.value;
+  // Legacy synthetic trades have no financial lifecycle or provider evidence.
+  // These read-only defaults cannot grant checkout or imply payment execution.
+  if (name === "cashfreeLifecycle:status") return financeFixture(args);
+  if (name === "cashfreePayments:status") return [];
+  if (name === "cashfreePayments:availability")
+    return {
+      sandboxEnabled: false,
+      canCheckout: false,
+      liveCanCheckout: false,
+    };
   if (name === "inbox:unreadCount")
     return inboxFixture(window.location.search).unreadCount;
   return name === "identity:me" &&
     window.location.pathname.endsWith("/account/security")
     ? securityFixture(window.location.search)
     : readFixture(name);
+}
+function impactScenario() {
+  return window.location.pathname.endsWith("/app/impact") &&
+    new URLSearchParams(window.location.search).get("scenario") ===
+      "unknown-factor"
+    ? unknownFactorImpactFixture
+    : impactFixture;
 }
 function readFixture(name: string): unknown {
   if (name === "workspace:mine") return workspaceFixture();
@@ -64,7 +83,9 @@ function readFixture(name: string): unknown {
   )
     return tradesFixture;
   if (name === "insights:compliance") return complianceFixture;
-  if (name === "insights:impact") return impactFixture;
+  if (name === "identity:signInOptions")
+    return { adminSetup: false, phone: true, email: true };
+  if (name === "insights:impact") return impactScenario();
   if (name === "market:receipt") return invoiceFixture;
   if (name === "market:sellable") return sellableFixture;
   if (name === "catalogue:priceQuotes") return priceQuotesFixture;

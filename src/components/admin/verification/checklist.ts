@@ -110,6 +110,16 @@ export function checklistFor(application: ChecklistInput): CheckItem[] {
         ),
         consentCheck(application.documents),
         { id: "machines", label: "The machine photos show a working unit" },
+        ...(application.business?.siteType ||
+        application.business?.materialOrigins?.length
+          ? [
+              {
+                id: "source",
+                label:
+                  "The declared primary site and material origins match the evidence",
+              },
+            ]
+          : []),
         { id: "call", label: "Called the owner" },
       ];
     }

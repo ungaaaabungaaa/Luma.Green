@@ -57,8 +57,9 @@ const recycler: ComplianceRecord = {
   receipts: [
     {
       tradeId: "trade-6" as Id<"trades">,
-      invoiceNo: "LG-26-0006",
-      issuedAt: Date.parse("2026-09-28T12:00:00+05:30"),
+      legacyReceiptNo: "LG-26-0006",
+      recordedAt: Date.parse("2026-09-28T12:00:00+05:30"),
+      paymentVerification: "legacy_unverified",
       side: "sale",
       counterparty: { name: "Deccan Packaging Pvt Ltd", kind: "manufacturer" },
       material: {
@@ -72,8 +73,9 @@ const recycler: ComplianceRecord = {
     },
     {
       tradeId: "trade-5" as Id<"trades">,
-      invoiceNo: "LG-26-0005",
-      issuedAt: Date.parse("2026-09-17T12:00:00+05:30"),
+      legacyReceiptNo: "LG-26-0005",
+      recordedAt: Date.parse("2026-09-17T12:00:00+05:30"),
+      paymentVerification: "legacy_unverified",
       side: "purchase",
       counterparty: null,
       material: {
@@ -87,6 +89,7 @@ const recycler: ComplianceRecord = {
     },
   ],
   epr: {
+    evidenceStatus: "source_records_unverified",
     role: "recycler",
     from: "2026-04-01",
     to: "2027-03-31",
@@ -162,6 +165,7 @@ describe("CompliancePage", () => {
     ]);
     expect(screen.getByText("E-way bill needed")).toBeInTheDocument();
     expect(screen.getByText("No e-way bill needed")).toBeInTheDocument();
+    expect(screen.getAllByText("Unverified").length).toBeGreaterThan(0);
     expect(
       screen.getAllByText("A business no longer on Luma.Green").length,
     ).toBeGreaterThan(0);

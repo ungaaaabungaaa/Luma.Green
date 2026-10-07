@@ -69,10 +69,10 @@ it.each([
   },
 );
 
-it("keeps other email addresses closed even with a valid bootstrap secret", async () => {
+it("does not use the admin bootstrap token as normal-user email delivery configuration", async () => {
   const t = setup();
   const response = await signUp(t, SETUP_TOKEN, "other@luma.test");
-  expect(response.status).toBe(403);
+  expect(response.status).toBe(503);
   expect(response.headers.get("set-cookie")).toBeNull();
 });
 

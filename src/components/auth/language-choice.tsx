@@ -75,7 +75,7 @@ export function LanguageChoice({ onDone }: { onDone: () => void }) {
       <div className="flex flex-col gap-1">
         <h1
           id="choose-language"
-          className="font-display text-3xl leading-tight font-semibold tracking-tight"
+          className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl"
         >
           {t("chooseLanguage")}
         </h1>

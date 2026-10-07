@@ -134,7 +134,7 @@ export function DocumentsForm({
   return (
     <form
       noValidate
-      className="flex flex-col gap-8"
+      className="flex flex-col gap-6"
       onSubmit={(event) => {
         void handleSubmit(onSubmit, () => {
           setShowFileErrors(true);
@@ -148,7 +148,9 @@ export function DocumentsForm({
         step={t("business.step", { step: 2 })}
         saveState={saveState}
       />
-      <p className="-mt-3 text-muted-foreground">{t("documents.lead")}</p>
+      <p className="text-sm leading-relaxed text-muted-foreground">
+        {t("documents.lead")}
+      </p>
       <ChangesNote note={application.note} />
       {isStepOneDone ? null : (
         <p role="alert" className="rounded-lg bg-destructive/10 p-3 text-sm">

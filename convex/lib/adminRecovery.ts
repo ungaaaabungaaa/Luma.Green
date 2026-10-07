@@ -1,5 +1,9 @@
 import type { GenericCtx } from "@convex-dev/better-auth";
-import { APIError, createAuthMiddleware } from "better-auth/api";
+import {
+  APIError,
+  createAuthMiddleware,
+  type getAuthoritativeSessionFromCtx,
+} from "better-auth/api";
 import { z } from "zod";
 
 import { adminRecoveryEnv } from "../../src/lib/env";
@@ -14,7 +18,9 @@ const GENERIC_RESET_RESPONSE = {
 };
 
 /** Phone-only identities can never acquire a password through reset APIs. */
-export const guardAdminRecovery = createAuthMiddleware(async (ctx) => {
+export async function checkAdminRecovery(
+  ctx: Parameters<typeof getAuthoritativeSessionFromCtx>[0],
+) {
   if (ctx.path !== "/request-password-reset" && ctx.path !== "/reset-password")
     return;
   if (!adminRecoveryEnv()) {
@@ -76,7 +82,9 @@ export const guardAdminRecovery = createAuthMiddleware(async (ctx) => {
       message: "Invalid or expired reset link.",
     });
   }
-});
+}
+
+export const guardAdminRecovery = createAuthMiddleware(checkAdminRecovery);
 
 /** An optional provider adapter; no retries after an ambiguous delivery. */
 export async function sendAdminReset({

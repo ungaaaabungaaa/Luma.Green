@@ -102,7 +102,7 @@ export function FactorChallenge({
 
   return (
     <section
-      className="flex min-w-0 flex-col gap-5"
+      className="flex min-w-0 flex-col gap-6"
       aria-labelledby={`${id}-title`}
     >
       <header className="space-y-2">

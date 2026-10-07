@@ -17,7 +17,7 @@ export function StepIndicator({ step }: { step: SellStep }) {
   const t = useTranslations("sell.steps");
   const current = SELL_STEPS.indexOf(step);
   return (
-    <nav aria-label={t("label")} className="border-b border-border pt-2 pb-6">
+    <nav aria-label={t("label")} className="border-b border-border pb-4">
       <p className="sr-only" aria-live="polite">
         {t("progress", { current: current + 1, total: SELL_STEPS.length })}
       </p>
@@ -26,7 +26,7 @@ export function StepIndicator({ step }: { step: SellStep }) {
           <li
             key={name}
             aria-current={index === current ? "step" : undefined}
-            className="relative flex min-w-0 flex-col gap-3 pe-2"
+            className="relative flex min-w-0 flex-col gap-2 pe-2"
           >
             {index < SELL_STEPS.length - 1 ? (
               <span

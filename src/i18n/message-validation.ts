@@ -150,6 +150,9 @@ export function hasUntranslatedCopy(
   const translatedLiterals = messageContract(translated).literals;
   if (source === translated) {
     return sourceLiterals.some((literal) => {
+      // The SI gram symbol is shared. Exempt the complete literal only, so
+      // adding a one-letter unit cannot hide copied words that contain it.
+      if (literal.trim() === "g") return false;
       let remainder = literal;
       for (const shared of sharedLiterals)
         remainder = remainder.replaceAll(shared, "");

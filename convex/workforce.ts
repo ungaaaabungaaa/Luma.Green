@@ -35,7 +35,7 @@ export const board = query({
     }),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     const rows = await ctx.db
       .query("jobs")
       .withIndex("by_org", (q) => q.eq("orgId", org._id))

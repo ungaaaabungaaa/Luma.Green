@@ -10,6 +10,7 @@ import {
   type QueryCtx,
 } from "./_generated/server";
 import { requireUser } from "./lib/access";
+import { paymentVerificationFor } from "./lib/chain";
 import {
   hashToken,
   INTEGRATION_DAY_MS,
@@ -95,7 +96,7 @@ export const listKeys = query({
   args: {},
   returns: v.object({ canManage: v.boolean(), keys: v.array(keySummary) }),
   handler: async (ctx): Promise<KeyListResult> => {
-    const { org, profile } = await requireOrg(ctx);
+    const { org, profile } = await requireOrg(ctx, undefined, "read");
     if (!(await isOwner(ctx, org._id, profile._id)))
       return { canManage: false, keys: [] };
     const active = await ctx.db
@@ -112,9 +113,9 @@ export const listKeys = query({
       .withIndex("by_org_created", (q) => q.eq("orgId", org._id))
       .order("desc")
       .take(50);
-    const keys = new Map([...active, ...recent].map((key) => [key._id, key]))
-      .values()
-      .toArray()
+    const keys = [
+      ...new Map([...active, ...recent].map((key) => [key._id, key])).values(),
+    ]
       .toSorted((a, b) => b.createdAt - a.createdAt)
       .map((key) => ({
         id: key._id,
@@ -362,8 +363,11 @@ async function readResource(
           status: row.status,
           createdAt: row.createdAt,
           updatedAt: row.updatedAt,
-          invoiceNo: row.invoiceNo ?? null,
-          paymentMode: "simulated" as const,
+          invoiceNo: null,
+          legacyReceiptNo: row.invoiceNo ?? null,
+          paymentMode: "gateway_required" as const,
+          paymentVerification: paymentVerificationFor(row.status),
+          gatewayRequired: true as const,
         })),
         pagination: {
           nextCursor: result.isDone ? null : result.continueCursor,

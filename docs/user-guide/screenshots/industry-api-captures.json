@@ -1,10 +1,10 @@
 {
-  "sourceCommit": "f82df3c341bcfa1f976af67919162fef1f88e191",
+  "sourceCommit": "9146ce6840b86e6b9c26a63ea67a48f28f0cfa2c",
   "note": "Actual application components in the isolated documentation harness. Synthetic key metadata only; no raw key. This proves visual rendering, not authorization, provider access or a deployed API. All write adapters reject.",
   "sourceHashes": {
     "src/components/integrations/api-access.tsx": "2442e5117e9d4ac27fc7349aa45142be8aecbb6e1ce18cb4122131856953d5f7",
-    "src/components/app/app-shell.tsx": "5bbe4ce436d74dd7cf444916916661164ffa62c0cb898999b4b81952af0a0c0d",
-    "src/components/app/page-parts.tsx": "a025b1e0c7afce7da3d3e20988c6d801dcff3be5e94ed553ceba24944cca563b",
+    "src/components/app/app-shell.tsx": "2824d37e4e16717be6cbc88079f66087c8356ec5a3a1fe2ee27430fbdb849f06",
+    "src/components/app/page-parts.tsx": "3dd45298c34917424abb92916e71bbff759f0de850d5f2153fd47322b82b5c1a",
     "src/components/theme/theme-provider.tsx": "16099dee8a247ce40bb5d410fc0a6ae58de226e89071fea987cef5114e6842c0",
     "src/components/theme/theme-toggle.tsx": "b2340a73c1abcdf0552ecd40f4d8d6e0a03e2bca9ae25d2c55deb6853ebd1684",
     "src/components/site/language-switcher.tsx": "605c2aa7c55d4dafe0031fd72d36991c3a2cf854abc1b64126f674c66ade7224",
@@ -14,54 +14,54 @@
     "src/components/ui/dialog.tsx": "9cee303ad5afb2d5b5e22c2219d972b54f656e66c4ac2157f9e1b6d126b53f12",
     "src/components/ui/checkbox.tsx": "a90c9633def82f754c4182f0bf62215a03476bb479acf0689a3d86726d9580ff",
     "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
-    "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
+    "src/lib/fonts.ts": "ffb4b8691eadcdf377fd3c0e2584c82683ffbbef7008fe1800f31dcba8e785db",
     "src/i18n/locales.ts": "2918d2ece108a441e092e293880709a5b9a5cf898dab9532ba7c4860ab7c06bb",
     "scripts/guide-preview/api-main.tsx": "44f5173387b2f04c13987ac9e44cd70c238734fccacc287dcb6490e27fc280ed",
     "scripts/guide-preview/api-vite.config.mts": "e1814f8e734589c7d02a03673a8254977b5d578e534434e0101dbd59c9926dad",
-    "scripts/guide-preview/api-capture.mjs": "9633ac4800c372fe509d1651b8e8cfb3290fddcdfd41a3097b767d546721e050",
+    "scripts/guide-preview/api-capture.mjs": "72880ecd0058715178f1248f4a635bc2609393532c2d1d3adbed733a8a83da42",
     "scripts/guide-preview/vite.config.mts": "e86ddf095fb8c7da843e6295beffbaf8f37b26e48a43581919770dcc31e91c99",
-    "scripts/guide-preview/queries.ts": "181c69bfcb9c5e7258efaa5cba1206122a1c8625ca8663ff5a4a2f91ec4d591a",
-    "scripts/guide-preview/account-fixtures.ts": "c02db0f8ed8a07d74ed1e24e4a7ced5dc640d3f9a931022d912ede4e9f5fa43f",
-    "scripts/guide-preview/auth.ts": "7a14df477174e1c57e9aa51de9172b83455280bba4d9c85b5bdab8019c60b9b8",
+    "scripts/guide-preview/queries.ts": "bd38c2dc9f8511ca158e91f608c0c928d42f33c8a5a68cd6c9db2f1be756e7b2",
+    "scripts/guide-preview/account-fixtures.ts": "854da1af247412ec0ff8c62fbb3ca723f467cd6f0d25d42e54d5b89c335a7722",
+    "scripts/guide-preview/auth.ts": "b786f9598d483e7778b4de998d8fd7cc6d5318efc11a28f4cd998cafd653d13c",
     "scripts/guide-preview/provider.tsx": "97187377a9ad4ac5ea2b320e937bb78a95ccdbc644520dfaf5b5cf6dae80f802",
-    "src/components/account/account-links.tsx": "810f8cafb68db720f4e328da763c56a2fe1b7f5896590f15f8833435480ccf74",
+    "src/components/account/account-links.tsx": "f2f13c7c4c48fbe492432529076b3ceeea9efabd73117bdc8e52c63bd74427f9",
     "src/components/account/use-sign-out.ts": "1553c45b5602ef9a1cb369fcc946d453e37bc3eeca8e88cae3f95b66dac5d455",
     "src/lib/sign-out.ts": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
-    "src/components/notifications/device-provider.tsx": "9732de33c946afc38e6f9f633f9a99e25c66afe4b6c93ab72213dc786fd73f3e",
-    "scripts/guide-preview/fixtures.ts": "c96cf240328b563f6ebed44a028bfd14237ac4d94eb7b209983deadc120f3ec7",
-    "messages/en.json": "ffede6185ab4b962f50b010b7438b56b966e53488207ea4dea758dac5cc7661c",
-    "messages/hi.json": "6ac2d5258885b37e5f15fb3b48b0f2bfe8510920b5387e305772dc950885dd2a",
-    "messages/bn.json": "e6e3aa16133df2da4fec573188f3833ae81bd604d4d9d21f828b88f53161c028",
-    "messages/mr.json": "dcedbb5e6ab6d08ee1ea971d3404816e2fd860ef926d3f47ba6942175f3cbd90",
-    "messages/ta.json": "489b8c1166f91ec83e25e2652cc81d35a90ce67e038005f5d7838c7c805ae7ed",
-    "messages/te.json": "1f53a8a5aa9437bb30d7d5ace195e5023fe716e709d35325bb08851df8855fd1",
-    "messages/kn.json": "0215d377545ccccec38739971e34930da8e2c175dc7c3d03875eabc6b250135d",
-    "messages/ml.json": "b0692126f0efb90eca4fa606f5440ba2cfde1bc1afa59b8262a6032809741726",
-    "messages/gu.json": "41513236501b8d2b56097118df2c96f34576650c829b1035fb6f5cb467e2cb2b",
-    "messages/pa.json": "563a81c8a3a2e46627c789da003e5ed079e0946ff025163fe6eae0aad76c6e11",
-    "messages/ur.json": "3c960d3a37844f176dc489f8654f7c860d8fad5f7559efb35d50ded6f5bcf2e7",
-    "messages/ar.json": "36f15efa61ff7ca5bf053471e870c84c968717748196430e00705773b20de7f4",
-    "messages/as.json": "513ee954928d6a71161a283c1e745ef36103a013e1b9e300af9b9cf63db276cf",
-    "messages/ne.json": "33bc220cba2b57ad19294093b6e9993d8e83e1a09f3ec5753f34e16018ea3470",
-    "messages/es.json": "0ab359f126531e31c95213f005cb5b6bf3499ca30a564158d75437474bf64b0a",
-    "messages/fr.json": "99a89c17345e0c338bc2c0a3e16e94362dfb9739ec88b0e033ceef7d45a12a25",
-    "messages/vi.json": "a55c312e6faf1b9e701758c3f8987fb70504c5a760375a685786bc6e2e4c185a",
-    "messages/si.json": "578c7a5958d07393a3d882ca852856a3bb8194c6958c00e3e71a556fe5b9be2b",
-    "messages/th.json": "ed58819ec00ecf6944c9a9337ef328ddaf8446d947759f58e1ff4112dfdc6373",
-    "messages/ru.json": "fbdde1829b6cbd1efe455dfd385920c0a3272bdcf1e7cfb6a1115a78c35ac282",
-    "messages/de.json": "157a189c0c411094143a15b7317ac10804d8bc7385f16b00d7a1e177c40928f6",
-    "messages/or.json": "8a3da9276dc17b92355a9249c727ba1c2880fedc8887b453a6463e10f19ea77b",
-    "messages/ja.json": "c9c47ec10f4a32ffb724bfb83dde4cf1d27f2217fef8a6e7e6729cf1b6f43d92",
-    "messages/uk.json": "7472b832c51ed94aab3dc881151416894d47e4b5f3c5b80ba360aee45fdb7489",
-    "messages/ko.json": "520796852a037fadc3fb6d6c842cc4210f37cd9b684954645803ad13d9a637d3",
-    "messages/it.json": "c098b76c35859873de8141f19d5c8b61eb1c2e3d9bcb1d304be860e4e64a23fe",
-    "messages/pl.json": "41e75788b0102170783febe91c7167f1d4af4c119ddc44ef7622fd8aebdc8f88",
-    "messages/tr.json": "2de4d6dda11e04b2519b3a0a3fe8760574d0a1aac446038d6c5f768680cc1db3",
-    "messages/zh.json": "5b205a78d83210c0cb2e5001328f07ac199d4fc8b3a10b9c63877d5c3b99b5bf",
-    "messages/pt.json": "35221d8ca499c678360e6339cc1af4c0dfb5c5fd273b8aa887e0dcb4553454ec",
-    "messages/id.json": "5e8f697e76a8ee591f83f767ad4c500ae4e801fd70f82e52f68a294f0b6b7092",
-    "messages/nl.json": "655f4e9373a6b04e16d85c9176b7816ffd161c50d3f013be9f7b4f511f06aa2a",
-    "messages/ms.json": "9c5ac2e2f04a7800fb218dd6174afda6a081a01346d01de9d6b48394818d4c99"
+    "src/components/notifications/device-provider.tsx": "c054c2f81074dec064c09d0b1b50545d42f3237f66971256a79e68401c4edbfd",
+    "scripts/guide-preview/fixtures.ts": "ba1258fa91c0bbaf6c79f39e0387769c2fdf4f021cc078041e3314f63c074bd5",
+    "messages/en.json": "c1318be00feb4378b7c68a4434a2f17b8e271cf7ed249e552c40a189a3cb2629",
+    "messages/hi.json": "bfa7223f6f6201baa6d55046497bdf6beaf743a158428eb3b5292a4b29ba7105",
+    "messages/bn.json": "ca4298743149ab02a20b944f23d2a4d2fb96ca4238d8283236b634aef4ffc354",
+    "messages/mr.json": "5c6ceef688c5b6bbbcb4f831b269ae13626b1c31f1805eeed3a78acc86af1f44",
+    "messages/ta.json": "85e7474aaf3a3389ba2ca7a3037874387a6e03caf41048b4bc941e3ebc6a525c",
+    "messages/te.json": "8cf3f98f695785f028d40d8bbe03091faafb8039a83e2fd5f1f783621e3ca5e1",
+    "messages/kn.json": "cfd47e3dc831f55ed336d86b1b518bcd9dd6a1f6435e9b956e2d4c5e5127ab30",
+    "messages/ml.json": "8d9de6fc47fbab4b6a0661ddbd7ed20d2357eb817fb305a3cc2b1b500981699e",
+    "messages/gu.json": "7ae841519db6b18e49e73b4ba33a1058811aac05db02094cb6093e6e7a6c1352",
+    "messages/pa.json": "c0c54713d55302e3c5c0e74dccddf9e4f79894bb730c6a629e10c28b456a6b97",
+    "messages/ur.json": "338f69f69c80f9322544a608bcb3db4fefd318be4ab7d1f9ee6d288cc160ebb3",
+    "messages/ar.json": "1e0e8764d13f7c3dc779e52d8c1ab4a9c0f6f9c4925dc991d45ecc4743d0dbb9",
+    "messages/as.json": "4c249aaea1060213315720438f85a6b4cbad74ca0695c7272ffe377a186113f9",
+    "messages/ne.json": "8855ea25b19339975ca2222cc4bcaea3f83a1d77deefb8d267e476a792046a8c",
+    "messages/es.json": "9a2aa9daff58befe1f6cc1289f73f32dc1a7d1f4432d3add15060b0d78f631ff",
+    "messages/fr.json": "c083ae49282f392527861571fef2eb41f101a2155574038d831dbd1a53e9fd78",
+    "messages/vi.json": "437d8403fb70107e7b53b3f008239ffe0f17df5873b1fdc494dea7edb2271eaf",
+    "messages/si.json": "69dd3befa9468eb7ddf168b55c11935d531e9f6c9e2f826069817603bf17466c",
+    "messages/th.json": "7051beb2cd470764aa361b3851353dd1d6a3d0fafe81f585cc82f468151a1e22",
+    "messages/ru.json": "28a3ffc1fa35c8469b81504a58a9a570eb2bf118d990c491fc4f928cf31d2926",
+    "messages/de.json": "cf6424d3d446a583fcae5cab92fcf18b424b2b3382e8b7af400522decfb934eb",
+    "messages/or.json": "3ac2db966e7f6e49835e355600e59d11c9173f86807a785db1ef001269d1afd8",
+    "messages/ja.json": "417f7308e3ccb73bc846fe5211b9b407db0a85860c1c9519ec5ff4ad92d4b9fd",
+    "messages/uk.json": "1fd15bb9a6f2f3fb1f387d903e94151ef4490e13e9e0094bb693398ac336b038",
+    "messages/ko.json": "8c7b63b288540ceaf532e03c0af7e7852f3bb2592cd8e1ade5be9e55e3c3c8c4",
+    "messages/it.json": "968e6efd535a0c6e53391da6d000ab83103fc9c6ca70f3fa6dd0e70c8861c977",
+    "messages/pl.json": "608bcc6c0614ee0e04cec9f7d6c3469bda518182992a99b4a915e53410683d2f",
+    "messages/tr.json": "851afc788b881a4145662b3a067db7059f61cc45cb27081b6be791797df6f5ba",
+    "messages/zh.json": "c367b41a5a95d02c549668b409867aec6ca70936a1c9db300e4342cbbe08b26a",
+    "messages/pt.json": "5ef2132722080fb14b5268c39266ecd26894487492a63d67a2f93a0451da8dad",
+    "messages/id.json": "5d1b212b0c9b59dbaeea793d15708ff584c3ac7ff24c5d52146b1a589428cbd7",
+    "messages/nl.json": "b30d4ea9f23e1c3aaacdec687a75151e4588b7f76f491c68bea118488f491e1a",
+    "messages/ms.json": "593306302263856308952b17f006aa54abde1dd176ede67d0e81ed1a5fbf0cc7"
   },
   "captures": [
     {
@@ -74,7 +74,7 @@
       },
       "theme": "light",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:42.476Z",
+      "capturedAt": "2026-10-06T22:42:16.292Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -82,7 +82,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "6b78c9109401827b4fd09e8b707b84692f1969fedfcfa98d28140345f181e1e6",
+      "screenshotSha256": "2450e1a6a078c6e97fcd424cdb729ccdfb213c9655904943d1d25f98f13d59eb",
       "keyboardFieldTab": true,
       "layout": {
         "width": 360,
@@ -100,7 +100,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "2450e1a6a078c6e97fcd424cdb729ccdfb213c9655904943d1d25f98f13d59eb",
+        "reviewedAt": "2026-10-06T22:41:46.211536+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-360-dark",
@@ -112,7 +119,7 @@
       },
       "theme": "dark",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:42.760Z",
+      "capturedAt": "2026-10-06T22:42:16.580Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -120,7 +127,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "7538607176a4a13d3b7b220afdc6ab91b12fa979d8dadbd9f06cd59b35a984d4",
+      "screenshotSha256": "d3829423ae7cf885ab73eb8903530811f9f2906b6a84829b91f8991418dd3a40",
       "keyboardFieldTab": true,
       "layout": {
         "width": 360,
@@ -138,7 +145,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "d3829423ae7cf885ab73eb8903530811f9f2906b6a84829b91f8991418dd3a40",
+        "reviewedAt": "2026-10-06T22:41:46.212005+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-390-light",
@@ -150,7 +164,7 @@
       },
       "theme": "light",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:43.026Z",
+      "capturedAt": "2026-10-06T22:42:16.894Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -158,7 +172,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "5ef8aabe3108fb25d2ce8d3552fb7804452639c770e69079a1967445b6c8afd8",
+      "screenshotSha256": "7c913d537c57208f650b6f574ea42ca3d1d9bc207d4dc60fe26d8af4897ef3b4",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -176,7 +190,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "7c913d537c57208f650b6f574ea42ca3d1d9bc207d4dc60fe26d8af4897ef3b4",
+        "reviewedAt": "2026-10-06T22:41:46.212078+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-390-dark",
@@ -188,7 +209,7 @@
       },
       "theme": "dark",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:43.429Z",
+      "capturedAt": "2026-10-06T22:42:17.302Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -196,7 +217,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "69a42ee2bb1c3f51d0c8087dd07aa61ace2cbdb3a4ab703f8642b000931eccc5",
+      "screenshotSha256": "62b1cdf7d0ccd20911a1ea5edd7054ee72733b731f759010d6a09d86ceca0b97",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -214,7 +235,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "62b1cdf7d0ccd20911a1ea5edd7054ee72733b731f759010d6a09d86ceca0b97",
+        "reviewedAt": "2026-10-06T22:41:46.212144+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-768-light",
@@ -222,11 +250,11 @@
       "route": "/en/app/integrations?role=manufacturer",
       "viewport": {
         "width": 768,
-        "height": 1000
+        "height": 1600
       },
       "theme": "light",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:43.823Z",
+      "capturedAt": "2026-10-06T22:42:17.773Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -234,7 +262,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "95dddc7bc7a9acb7554f80c79336e2552888e4cc4d2754f57a5dea09595da5cb",
+      "screenshotSha256": "66cf7c88746b014dc2c702010af123f438fefbdc65db53a8d63e6eae198428b2",
       "keyboardFieldTab": true,
       "layout": {
         "width": 768,
@@ -252,7 +280,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "66cf7c88746b014dc2c702010af123f438fefbdc65db53a8d63e6eae198428b2",
+        "reviewedAt": "2026-10-06T22:42:35.511940+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-768-dark",
@@ -260,11 +295,11 @@
       "route": "/en/app/integrations?role=manufacturer",
       "viewport": {
         "width": 768,
-        "height": 1000
+        "height": 1600
       },
       "theme": "dark",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:44.137Z",
+      "capturedAt": "2026-10-06T22:42:18.126Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -272,7 +307,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "568c50aec332a2c51ee947b1d00ccfc907e64b65b96eb7676b4c3d0f4124fca3",
+      "screenshotSha256": "97707887a91a27b71e8a76192cdf3ddcd5732f2c2df4bdc177a19dc77b72ddae",
       "keyboardFieldTab": true,
       "layout": {
         "width": 768,
@@ -290,7 +325,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "97707887a91a27b71e8a76192cdf3ddcd5732f2c2df4bdc177a19dc77b72ddae",
+        "reviewedAt": "2026-10-06T22:42:35.512083+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-1024-light",
@@ -298,11 +340,11 @@
       "route": "/en/app/integrations?role=manufacturer",
       "viewport": {
         "width": 1024,
-        "height": 1000
+        "height": 1600
       },
       "theme": "light",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:44.423Z",
+      "capturedAt": "2026-10-06T22:42:18.514Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -310,7 +352,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "aa6e32b427f82a38f0db51ea775536eac8c6d7023a79b44952eeddfc949f1f21",
+      "screenshotSha256": "9625c06d237cc5f1cfb29fdd71316f692ce26c91fcb139f9185d8f4427b285b7",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1024,
@@ -328,7 +370,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "9625c06d237cc5f1cfb29fdd71316f692ce26c91fcb139f9185d8f4427b285b7",
+        "reviewedAt": "2026-10-06T22:42:35.512166+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-1024-dark",
@@ -336,11 +385,11 @@
       "route": "/en/app/integrations?role=manufacturer",
       "viewport": {
         "width": 1024,
-        "height": 1000
+        "height": 1600
       },
       "theme": "dark",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:44.717Z",
+      "capturedAt": "2026-10-06T22:42:18.899Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -348,7 +397,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "1630d3ad5754c7adde79e1014fa44f0351a4ef5b7310cc49a8e7d40e509cb378",
+      "screenshotSha256": "0b1954d8835e105176364876614754c9c73b2b493ab565dd68824b616910e205",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1024,
@@ -366,7 +415,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "0b1954d8835e105176364876614754c9c73b2b493ab565dd68824b616910e205",
+        "reviewedAt": "2026-10-06T22:42:35.512238+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-1440-light",
@@ -378,7 +434,7 @@
       },
       "theme": "light",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:44.999Z",
+      "capturedAt": "2026-10-06T22:42:19.262Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -386,7 +442,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "8694260ee870bb60adfb459e53ca7db95f817ecc7c098b98c41ff7d0318c3349",
+      "screenshotSha256": "0c5e50eb6cc35ca196bdbfb3c98a621d71c32473d0acccd0db94497b0cc58db8",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1440,
@@ -404,7 +460,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "0c5e50eb6cc35ca196bdbfb3c98a621d71c32473d0acccd0db94497b0cc58db8",
+        "reviewedAt": "2026-10-06T22:42:35.512325+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-en-1440-dark",
@@ -416,7 +479,7 @@
       },
       "theme": "dark",
       "locale": "en",
-      "capturedAt": "2026-10-02T23:05:45.295Z",
+      "capturedAt": "2026-10-06T22:42:19.629Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -424,7 +487,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "be581e1568e22da481f707311e786c3fa92251f8d67efb16a566ef969115ebc5",
+      "screenshotSha256": "490aae27847de27fdf1e980b9db023e326100ae69b2d8918d390d23591e81021",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1440,
@@ -442,7 +505,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "490aae27847de27fdf1e980b9db023e326100ae69b2d8918d390d23591e81021",
+        "reviewedAt": "2026-10-06T22:42:35.512409+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-hi-390-light",
@@ -454,7 +524,7 @@
       },
       "theme": "light",
       "locale": "hi",
-      "capturedAt": "2026-10-02T23:05:45.577Z",
+      "capturedAt": "2026-10-06T22:42:19.968Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -462,7 +532,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "3546506921041ab5ae69754fa3c73adb8ba5b669e5b5570a2f1d1dd273a06d12",
+      "screenshotSha256": "e78b834809053015c301a04bdc11bef1e39ac7535569c2ea7532c074b06bf809",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -481,7 +551,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "e78b834809053015c301a04bdc11bef1e39ac7535569c2ea7532c074b06bf809",
+        "reviewedAt": "2026-10-06T22:42:40.872311+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-hi-390-dark",
@@ -493,7 +570,7 @@
       },
       "theme": "dark",
       "locale": "hi",
-      "capturedAt": "2026-10-02T23:05:45.876Z",
+      "capturedAt": "2026-10-06T22:42:20.285Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -501,7 +578,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "bffac4248dc9a87dd3409f25d92284f2e648744b9627b6b1afddb6ec9ba9026f",
+      "screenshotSha256": "d32b707865bbbc9a88a141814b6bceeb136cae74e4d355a343f55b04df8ab7db",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -520,7 +597,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "d32b707865bbbc9a88a141814b6bceeb136cae74e4d355a343f55b04df8ab7db",
+        "reviewedAt": "2026-10-06T22:42:40.872433+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-bn-390-light",
@@ -532,7 +616,7 @@
       },
       "theme": "light",
       "locale": "bn",
-      "capturedAt": "2026-10-02T23:05:46.191Z",
+      "capturedAt": "2026-10-06T22:42:20.585Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -540,7 +624,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "bbd362e140db7cb09ccfa6dc96715a78d470fceb718381cf1292469b6641207c",
+      "screenshotSha256": "377a255cd319a44cdd23144aad5d876215aee3c178c9a96a48373fd7b98b72b8",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -561,7 +645,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "377a255cd319a44cdd23144aad5d876215aee3c178c9a96a48373fd7b98b72b8",
+        "reviewedAt": "2026-10-06T22:42:40.872481+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-bn-390-dark",
@@ -573,7 +664,7 @@
       },
       "theme": "dark",
       "locale": "bn",
-      "capturedAt": "2026-10-02T23:05:46.489Z",
+      "capturedAt": "2026-10-06T22:42:20.883Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -581,7 +672,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "f601bf8600de5077023ea7e84f0cb367c6046ab010b30a4fdd9375e0f4fa0e72",
+      "screenshotSha256": "25eedf975778f081d173764befc627e4b32a063b6910dd8ec0f14e2e407909dc",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -602,7 +693,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "25eedf975778f081d173764befc627e4b32a063b6910dd8ec0f14e2e407909dc",
+        "reviewedAt": "2026-10-06T22:42:40.872526+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-mr-390-light",
@@ -614,7 +712,7 @@
       },
       "theme": "light",
       "locale": "mr",
-      "capturedAt": "2026-10-02T23:05:46.772Z",
+      "capturedAt": "2026-10-06T22:42:21.183Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -622,7 +720,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "7517423afbca45c462d4ee31696faed67cabae98b2a7575a4504d93504a08f92",
+      "screenshotSha256": "e0c734da4db278cb9d146908bcdf7acd57969ead0b16359781bc71c0093da2e9",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -641,7 +739,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "e0c734da4db278cb9d146908bcdf7acd57969ead0b16359781bc71c0093da2e9",
+        "reviewedAt": "2026-10-06T22:42:40.872581+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-mr-390-dark",
@@ -653,7 +758,7 @@
       },
       "theme": "dark",
       "locale": "mr",
-      "capturedAt": "2026-10-02T23:05:47.071Z",
+      "capturedAt": "2026-10-06T22:42:21.496Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -661,7 +766,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "b78cb1227259044ad3f67db697f13ae3ac1b026ea34394fb5386578513fcaafb",
+      "screenshotSha256": "488cf21531c0498075ef9ba84191066aefa64379799c44ba6135b020fad29b9f",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -680,7 +785,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "488cf21531c0498075ef9ba84191066aefa64379799c44ba6135b020fad29b9f",
+        "reviewedAt": "2026-10-06T22:42:40.872624+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ta-390-light",
@@ -692,7 +804,7 @@
       },
       "theme": "light",
       "locale": "ta",
-      "capturedAt": "2026-10-02T23:05:47.374Z",
+      "capturedAt": "2026-10-06T22:42:21.782Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -700,7 +812,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "926c70ac4af4c70cab15189d427882e7c0055d636e81d475732eeca306f66be0",
+      "screenshotSha256": "e44c4f787a1a19f063005ab31c3f4ffda31eb09dc272bc08dc8309eec71e6794",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -720,7 +832,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "e44c4f787a1a19f063005ab31c3f4ffda31eb09dc272bc08dc8309eec71e6794",
+        "reviewedAt": "2026-10-06T22:42:40.872676+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ta-390-dark",
@@ -732,7 +851,7 @@
       },
       "theme": "dark",
       "locale": "ta",
-      "capturedAt": "2026-10-02T23:05:47.658Z",
+      "capturedAt": "2026-10-06T22:42:22.066Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -740,7 +859,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "a057de9087bf425215b1d3662b23a912e79d81535223cea42a436ee5d1b87edf",
+      "screenshotSha256": "1cd492754d3024b83750beff2ec9f794ee0c8899cf3a1362a78ae3315fa0b109",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -760,7 +879,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "1cd492754d3024b83750beff2ec9f794ee0c8899cf3a1362a78ae3315fa0b109",
+        "reviewedAt": "2026-10-06T22:42:40.872726+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-te-390-light",
@@ -772,7 +898,7 @@
       },
       "theme": "light",
       "locale": "te",
-      "capturedAt": "2026-10-02T23:05:47.976Z",
+      "capturedAt": "2026-10-06T22:42:22.365Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -780,7 +906,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "5233f039af8deeb49eababcb84a65a07d3fd864bb51ead83c83d8e4ff0d813eb",
+      "screenshotSha256": "1e80cb8d1c8c023700399feffc7dee5a9e24074697a994ae8476447e00e8b6ff",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -800,7 +926,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "1e80cb8d1c8c023700399feffc7dee5a9e24074697a994ae8476447e00e8b6ff",
+        "reviewedAt": "2026-10-06T22:42:49.181116+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-te-390-dark",
@@ -812,7 +945,7 @@
       },
       "theme": "dark",
       "locale": "te",
-      "capturedAt": "2026-10-02T23:05:48.295Z",
+      "capturedAt": "2026-10-06T22:42:22.649Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -820,7 +953,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "a0278364bac7e1bebbfd8e7055a725dae8c918288c69555c51630fe7f81465db",
+      "screenshotSha256": "4c43be8d7c659c2b4b531c947bf6cb8c811e0fde40237c163d2f2e0b8ba30bfd",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -840,7 +973,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "4c43be8d7c659c2b4b531c947bf6cb8c811e0fde40237c163d2f2e0b8ba30bfd",
+        "reviewedAt": "2026-10-06T22:42:49.181398+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-kn-390-light",
@@ -852,7 +992,7 @@
       },
       "theme": "light",
       "locale": "kn",
-      "capturedAt": "2026-10-02T23:05:48.600Z",
+      "capturedAt": "2026-10-06T22:42:22.953Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -860,7 +1000,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "c1f50e73650f78a9459cfa7f8003bdb6a294bb004141b55238b1037c98020cf7",
+      "screenshotSha256": "484142e4ce78dbc81f0c50cd97eaec701130545b874f2888268079decf5d5d63",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -880,7 +1020,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "484142e4ce78dbc81f0c50cd97eaec701130545b874f2888268079decf5d5d63",
+        "reviewedAt": "2026-10-06T22:42:49.181493+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-kn-390-dark",
@@ -892,7 +1039,7 @@
       },
       "theme": "dark",
       "locale": "kn",
-      "capturedAt": "2026-10-02T23:05:48.941Z",
+      "capturedAt": "2026-10-06T22:42:23.325Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -900,7 +1047,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "55b54bdbef255c5c254cbe32b9a57e7e2ab69722ed1aaff25f0155e17f958461",
+      "screenshotSha256": "a85cc54c9bd0ebef534bd4c2c6de64096d02a1f48e8d4d723fbce207be69f8be",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -920,7 +1067,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "a85cc54c9bd0ebef534bd4c2c6de64096d02a1f48e8d4d723fbce207be69f8be",
+        "reviewedAt": "2026-10-06T22:42:49.181561+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ml-390-light",
@@ -932,7 +1086,7 @@
       },
       "theme": "light",
       "locale": "ml",
-      "capturedAt": "2026-10-02T23:05:49.280Z",
+      "capturedAt": "2026-10-06T22:42:23.686Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -940,7 +1094,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "5684d83a69cdff57cfafa67a8b8fb063d27d6b644a9319407a75f84620d92447",
+      "screenshotSha256": "3dff3f00eaebcdb724b5d8f78220971ffc9c2325f4b5386596c2e2b428dcf4d0",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -960,7 +1114,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "3dff3f00eaebcdb724b5d8f78220971ffc9c2325f4b5386596c2e2b428dcf4d0",
+        "reviewedAt": "2026-10-06T22:42:49.181631+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ml-390-dark",
@@ -972,7 +1133,7 @@
       },
       "theme": "dark",
       "locale": "ml",
-      "capturedAt": "2026-10-02T23:05:49.695Z",
+      "capturedAt": "2026-10-06T22:42:24.051Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -980,7 +1141,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "9c0a5816005f16f2dd74e1c6100963620f2855f70d1926c616f02c93c2cee3cc",
+      "screenshotSha256": "bfad7cda5a0900f7b5a65e7fa4aec359aba2699f928f07b655eb973d57602f49",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1000,7 +1161,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "bfad7cda5a0900f7b5a65e7fa4aec359aba2699f928f07b655eb973d57602f49",
+        "reviewedAt": "2026-10-06T22:42:49.181698+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-gu-390-light",
@@ -1012,7 +1180,7 @@
       },
       "theme": "light",
       "locale": "gu",
-      "capturedAt": "2026-10-02T23:05:50.067Z",
+      "capturedAt": "2026-10-06T22:42:24.390Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1020,7 +1188,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "5eefbabf171bfd8c53bdafcc03caeb364c7e1e715967f40f8f798fca0062dd6f",
+      "screenshotSha256": "9ea38be57584c48545888e8e6dfef4fed88bae9429d4b60f6c73569e50f9ca62",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1040,7 +1208,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "9ea38be57584c48545888e8e6dfef4fed88bae9429d4b60f6c73569e50f9ca62",
+        "reviewedAt": "2026-10-06T22:42:49.181753+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-gu-390-dark",
@@ -1052,7 +1227,7 @@
       },
       "theme": "dark",
       "locale": "gu",
-      "capturedAt": "2026-10-02T23:05:50.408Z",
+      "capturedAt": "2026-10-06T22:42:24.774Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1060,7 +1235,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "c368e813a73b5ac89196ab59f7b3f89122bddc6a5168919ad05bb2ff6f6a1769",
+      "screenshotSha256": "2946cdfb35ac88a09a816ca7692ef80b84b0f64c3de8f00b3f43bb4410472b3c",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1080,7 +1255,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "2946cdfb35ac88a09a816ca7692ef80b84b0f64c3de8f00b3f43bb4410472b3c",
+        "reviewedAt": "2026-10-06T22:42:49.181808+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-pa-390-light",
@@ -1092,7 +1274,7 @@
       },
       "theme": "light",
       "locale": "pa",
-      "capturedAt": "2026-10-02T23:05:50.800Z",
+      "capturedAt": "2026-10-06T22:42:25.098Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1100,7 +1282,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "fd9ea93cac1a10d4f64c0c7335ae77bb1e14e6f14d5cc86f5c1444266170e5b8",
+      "screenshotSha256": "9485350d85641d03087bb256fb67827fe99da1bfdd67fad1f715d9e505860244",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1121,7 +1303,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "9485350d85641d03087bb256fb67827fe99da1bfdd67fad1f715d9e505860244",
+        "reviewedAt": "2026-10-06T22:42:58.894330+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-pa-390-dark",
@@ -1133,7 +1322,7 @@
       },
       "theme": "dark",
       "locale": "pa",
-      "capturedAt": "2026-10-02T23:05:51.364Z",
+      "capturedAt": "2026-10-06T22:42:25.419Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1141,7 +1330,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "943b389f5a474179284a600f0412f5d59a3b2f5e1af67898cbb16a5e389c2730",
+      "screenshotSha256": "07a48714414ac5ac76d0e6c24f5338fc1a4cab3daef09b1602184927e644994d",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1162,7 +1351,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "07a48714414ac5ac76d0e6c24f5338fc1a4cab3daef09b1602184927e644994d",
+        "reviewedAt": "2026-10-06T22:42:58.894596+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ur-390-light",
@@ -1174,7 +1370,7 @@
       },
       "theme": "light",
       "locale": "ur",
-      "capturedAt": "2026-10-02T23:05:51.803Z",
+      "capturedAt": "2026-10-06T22:42:25.686Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1182,7 +1378,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "bb2c849427c98f88a693dc23e1b414f10eb8b47ab9ed637c280c5f9082d3f0cf",
+      "screenshotSha256": "448a6c5b74f8769ce76017c806548f6ecb06f23de3d0dcbb7c05a82bcb8e4ad2",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1202,7 +1398,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "448a6c5b74f8769ce76017c806548f6ecb06f23de3d0dcbb7c05a82bcb8e4ad2",
+        "reviewedAt": "2026-10-06T22:42:58.894778+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ur-390-dark",
@@ -1214,7 +1417,7 @@
       },
       "theme": "dark",
       "locale": "ur",
-      "capturedAt": "2026-10-02T23:05:52.371Z",
+      "capturedAt": "2026-10-06T22:42:25.986Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1222,7 +1425,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "a182eeab0908ba9371d3373c2255c63e0d79d5f6a83908745acfcb2e6a6d7ca5",
+      "screenshotSha256": "991af19afb0b2bd8c2980758b4dce91bc088dcdf88043ceb3ad8b596a9512e6f",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1242,7 +1445,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "991af19afb0b2bd8c2980758b4dce91bc088dcdf88043ceb3ad8b596a9512e6f",
+        "reviewedAt": "2026-10-06T22:42:58.894961+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-360-light",
@@ -1254,7 +1464,7 @@
       },
       "theme": "light",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:52.894Z",
+      "capturedAt": "2026-10-06T22:42:26.330Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1262,7 +1472,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "75d19a35b668eddd508fb0e04ed3fe1cf2a9c6ff38350fc2e47834f5ff522e3f",
+      "screenshotSha256": "cd6272b0a33f14c32b1217baa4c5b7baa1c7d46d470707c44f35a5782a88bb9b",
       "keyboardFieldTab": true,
       "layout": {
         "width": 360,
@@ -1282,7 +1492,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "cd6272b0a33f14c32b1217baa4c5b7baa1c7d46d470707c44f35a5782a88bb9b",
+        "reviewedAt": "2026-10-06T22:42:58.895138+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-360-dark",
@@ -1294,7 +1511,7 @@
       },
       "theme": "dark",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:53.402Z",
+      "capturedAt": "2026-10-06T22:42:26.699Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1302,7 +1519,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "dba623ca6243922785996754684871f3743dcd4eb9ed617a96df5d68d73a2634",
+      "screenshotSha256": "3b556e989cbfcdc940fcae7b30291b5ac525b41fb868386cd0491a90126d597f",
       "keyboardFieldTab": true,
       "layout": {
         "width": 360,
@@ -1322,7 +1539,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "3b556e989cbfcdc940fcae7b30291b5ac525b41fb868386cd0491a90126d597f",
+        "reviewedAt": "2026-10-06T22:42:58.895405+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-390-light",
@@ -1334,7 +1558,7 @@
       },
       "theme": "light",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:53.811Z",
+      "capturedAt": "2026-10-06T22:42:27.051Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1342,7 +1566,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "0a3ef9a00bec56ae87796dd2623cd25965434033cfde017f092d0ec288996005",
+      "screenshotSha256": "a2b00ff56c4a4be9dc6dfd350c4ef89dab549092b4638dbb700f003d8722906b",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1362,7 +1586,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "a2b00ff56c4a4be9dc6dfd350c4ef89dab549092b4638dbb700f003d8722906b",
+        "reviewedAt": "2026-10-06T22:42:58.895574+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-390-dark",
@@ -1374,7 +1605,7 @@
       },
       "theme": "dark",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:54.353Z",
+      "capturedAt": "2026-10-06T22:42:27.559Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1382,7 +1613,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "c9871845a20aae2f56938d7c076956fbd7ff62c08bfb237e234f4549046ca1cf",
+      "screenshotSha256": "58712311bbfb0b8ea1e0879917752c6c46cda87ebcbc49043058b6cf971d005e",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1402,7 +1633,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "58712311bbfb0b8ea1e0879917752c6c46cda87ebcbc49043058b6cf971d005e",
+        "reviewedAt": "2026-10-06T22:42:58.895734+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-768-light",
@@ -1410,11 +1648,11 @@
       "route": "/ar/app/integrations?role=manufacturer",
       "viewport": {
         "width": 768,
-        "height": 1000
+        "height": 1600
       },
       "theme": "light",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:54.896Z",
+      "capturedAt": "2026-10-06T22:42:28.081Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1422,7 +1660,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "559b042c2f83167364280bea0b6b59416541a68dd9be0b52f342a92bd66bd74d",
+      "screenshotSha256": "d2f5a48afeae0244da6793f28dbb8cc59376859313f803ebafba8fa3f506dd2b",
       "keyboardFieldTab": true,
       "layout": {
         "width": 768,
@@ -1442,7 +1680,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "d2f5a48afeae0244da6793f28dbb8cc59376859313f803ebafba8fa3f506dd2b",
+        "reviewedAt": "2026-10-06T22:43:06.928817+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-768-dark",
@@ -1450,11 +1695,11 @@
       "route": "/ar/app/integrations?role=manufacturer",
       "viewport": {
         "width": 768,
-        "height": 1000
+        "height": 1600
       },
       "theme": "dark",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:55.258Z",
+      "capturedAt": "2026-10-06T22:42:28.614Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1462,7 +1707,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "d5583ba1e7c887d3aaa023d9b294cf91bef4225f327d1727090fd15f424a7648",
+      "screenshotSha256": "affa28ea12277e79edaaada47ac232e776d1366f879dd1854f5f5a03b1f44218",
       "keyboardFieldTab": true,
       "layout": {
         "width": 768,
@@ -1482,7 +1727,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "affa28ea12277e79edaaada47ac232e776d1366f879dd1854f5f5a03b1f44218",
+        "reviewedAt": "2026-10-06T22:43:06.929155+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-1024-light",
@@ -1490,11 +1742,11 @@
       "route": "/ar/app/integrations?role=manufacturer",
       "viewport": {
         "width": 1024,
-        "height": 1000
+        "height": 1600
       },
       "theme": "light",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:55.706Z",
+      "capturedAt": "2026-10-06T22:42:29.060Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1502,7 +1754,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "966fe2b5be49fcd748ec33c617ba4008cd9a46bf32776f5ddb28868554bad721",
+      "screenshotSha256": "26d52d66f16f0dee688ea4e1594d9b9e1d2a491c241323acef8cbeadaad0ba67",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1024,
@@ -1522,7 +1774,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "26d52d66f16f0dee688ea4e1594d9b9e1d2a491c241323acef8cbeadaad0ba67",
+        "reviewedAt": "2026-10-06T22:43:06.929234+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-1024-dark",
@@ -1530,11 +1789,11 @@
       "route": "/ar/app/integrations?role=manufacturer",
       "viewport": {
         "width": 1024,
-        "height": 1000
+        "height": 1600
       },
       "theme": "dark",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:56.063Z",
+      "capturedAt": "2026-10-06T22:42:29.533Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1542,7 +1801,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "0ab788ef08ea2d109771720556fcc5558e41ea3ad3206893dad64404a80defbe",
+      "screenshotSha256": "7441b69d6287e4a59ac401ae5acce8fecac3f1bcf0a473f3dd8adbab5a76e118",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1024,
@@ -1562,7 +1821,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "7441b69d6287e4a59ac401ae5acce8fecac3f1bcf0a473f3dd8adbab5a76e118",
+        "reviewedAt": "2026-10-06T22:43:06.929304+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-1440-light",
@@ -1574,7 +1840,7 @@
       },
       "theme": "light",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:56.416Z",
+      "capturedAt": "2026-10-06T22:42:29.952Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1582,7 +1848,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "6add3bb351b0588161340da158086f451c90a4b138f5a38c4107f7fa840980b2",
+      "screenshotSha256": "e1aa143dff9649ce46a4316b90d13ae67dce1a6f4c9c69bbd9335bb11325faa8",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1440,
@@ -1602,7 +1868,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "e1aa143dff9649ce46a4316b90d13ae67dce1a6f4c9c69bbd9335bb11325faa8",
+        "reviewedAt": "2026-10-06T22:43:06.929389+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ar-1440-dark",
@@ -1614,7 +1887,7 @@
       },
       "theme": "dark",
       "locale": "ar",
-      "capturedAt": "2026-10-02T23:05:56.733Z",
+      "capturedAt": "2026-10-06T22:42:30.364Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1622,7 +1895,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": true,
-      "screenshotSha256": "3d7a495424b64e6016a1ee3edabb99745d4f08c113dfdc849839bce38f688aee",
+      "screenshotSha256": "d96ed3db8da2c91fea17b9a28d15fe51b907afa85566def6f2cff92a8d5f7454",
       "keyboardFieldTab": true,
       "layout": {
         "width": 1440,
@@ -1642,7 +1915,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "d96ed3db8da2c91fea17b9a28d15fe51b907afa85566def6f2cff92a8d5f7454",
+        "reviewedAt": "2026-10-06T22:43:06.929468+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-as-390-light",
@@ -1654,7 +1934,7 @@
       },
       "theme": "light",
       "locale": "as",
-      "capturedAt": "2026-10-02T23:05:57.052Z",
+      "capturedAt": "2026-10-06T22:42:30.704Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1662,7 +1942,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "17261b2d4a57f8cb992677a4bab296b2174e41d1b4dfa1b5f859807f48d1a691",
+      "screenshotSha256": "aba8b5b5d69659f4ca7c6367e403653544244ce4dd1a4c895b8b506623367d55",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1683,7 +1963,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "aba8b5b5d69659f4ca7c6367e403653544244ce4dd1a4c895b8b506623367d55",
+        "reviewedAt": "2026-10-06T22:43:13.193240+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-as-390-dark",
@@ -1695,7 +1982,7 @@
       },
       "theme": "dark",
       "locale": "as",
-      "capturedAt": "2026-10-02T23:05:57.390Z",
+      "capturedAt": "2026-10-06T22:42:31.128Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1703,7 +1990,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "9f3facb09f16cf9a15e873045f1896528d8ac5210481fea61ecca35c5f5f3878",
+      "screenshotSha256": "f90109a1e7d6b11656bd6080e03ffa765d4952c678563a15a50b00d5899d3fe4",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1724,7 +2011,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "f90109a1e7d6b11656bd6080e03ffa765d4952c678563a15a50b00d5899d3fe4",
+        "reviewedAt": "2026-10-06T22:43:13.193353+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ne-390-light",
@@ -1736,7 +2030,7 @@
       },
       "theme": "light",
       "locale": "ne",
-      "capturedAt": "2026-10-02T23:05:57.691Z",
+      "capturedAt": "2026-10-06T22:42:31.538Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1744,7 +2038,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "e207baafd2017134378f5f6e80c1dfb38a19268512bd522ed309cb16ae7e13ff",
+      "screenshotSha256": "a52eb31cb65935355aaf59fdcf7aea2e0cfc6458a7eb904c7b51116090f3303b",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1763,7 +2057,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "a52eb31cb65935355aaf59fdcf7aea2e0cfc6458a7eb904c7b51116090f3303b",
+        "reviewedAt": "2026-10-06T22:43:13.193403+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ne-390-dark",
@@ -1775,7 +2076,7 @@
       },
       "theme": "dark",
       "locale": "ne",
-      "capturedAt": "2026-10-02T23:05:57.992Z",
+      "capturedAt": "2026-10-06T22:42:32.029Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1783,7 +2084,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "30de29cd23989af38e967cc9e932b669b18c9205bf78649833925231ed5156dd",
+      "screenshotSha256": "7dc7557c1dc38ce9e6283d0c804a5548c77267e6ed39775cd3952df68e539566",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1802,7 +2103,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "7dc7557c1dc38ce9e6283d0c804a5548c77267e6ed39775cd3952df68e539566",
+        "reviewedAt": "2026-10-06T22:43:13.193450+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-es-390-light",
@@ -1814,7 +2122,7 @@
       },
       "theme": "light",
       "locale": "es",
-      "capturedAt": "2026-10-02T23:05:58.293Z",
+      "capturedAt": "2026-10-06T22:42:32.396Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1822,7 +2130,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "1eebe3ed2e3ef0474f1ece824e429f79c0e5d3342de974839a50db473c7c6edc",
+      "screenshotSha256": "51a0cc5fb1301642b5fe2ea3df5562cbb8010a1121051145e25c9c7051e709b6",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1840,7 +2148,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "51a0cc5fb1301642b5fe2ea3df5562cbb8010a1121051145e25c9c7051e709b6",
+        "reviewedAt": "2026-10-06T22:43:13.193495+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-es-390-dark",
@@ -1852,7 +2167,7 @@
       },
       "theme": "dark",
       "locale": "es",
-      "capturedAt": "2026-10-02T23:05:58.638Z",
+      "capturedAt": "2026-10-06T22:42:32.722Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1860,7 +2175,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "9d7c04b8f20411693acc1e054587aaeff8af62e38baf3893b078a4db622d88df",
+      "screenshotSha256": "daa8b862f4290242b2ff2bbd63a55636630078acc77ec4295b09e72eedf6ad30",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1878,7 +2193,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "daa8b862f4290242b2ff2bbd63a55636630078acc77ec4295b09e72eedf6ad30",
+        "reviewedAt": "2026-10-06T22:43:13.193539+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-fr-390-light",
@@ -1890,7 +2212,7 @@
       },
       "theme": "light",
       "locale": "fr",
-      "capturedAt": "2026-10-02T23:05:58.941Z",
+      "capturedAt": "2026-10-06T22:42:33.052Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1898,7 +2220,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "e2d5a2eca01771122e453c2d12ad91c0bc7a44a15f7f03d38c7c28210b6bf0cd",
+      "screenshotSha256": "10a9c43fed39f030aaee261822f2430350d42e153a2e34d873179bea2c649842",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1916,7 +2238,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "10a9c43fed39f030aaee261822f2430350d42e153a2e34d873179bea2c649842",
+        "reviewedAt": "2026-10-06T22:43:13.193584+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-fr-390-dark",
@@ -1928,7 +2257,7 @@
       },
       "theme": "dark",
       "locale": "fr",
-      "capturedAt": "2026-10-02T23:05:59.233Z",
+      "capturedAt": "2026-10-06T22:42:33.398Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1936,7 +2265,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "34b288a1d034405a723a1547e1f612496d19f1a087316dbb2c261eab1e253f39",
+      "screenshotSha256": "8f53bea01b952a99e53d60e4b5e23d89ee11d42547830153b7070931ffd53c82",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1954,7 +2283,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "8f53bea01b952a99e53d60e4b5e23d89ee11d42547830153b7070931ffd53c82",
+        "reviewedAt": "2026-10-06T22:43:13.193628+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-vi-390-light",
@@ -1966,7 +2302,7 @@
       },
       "theme": "light",
       "locale": "vi",
-      "capturedAt": "2026-10-02T23:05:59.517Z",
+      "capturedAt": "2026-10-06T22:42:33.799Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -1974,7 +2310,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "cb8927f0613f0447a4a1335fc14e19bacccecb4ecd5df17573e1da1e3c6cdd3c",
+      "screenshotSha256": "2ac07c75905a45a167a1dc9d1f310f4dae6eccb16668cf81173a818a6d2f6b8a",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -1995,7 +2331,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "2ac07c75905a45a167a1dc9d1f310f4dae6eccb16668cf81173a818a6d2f6b8a",
+        "reviewedAt": "2026-10-06T22:43:21.637650+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-vi-390-dark",
@@ -2007,7 +2350,7 @@
       },
       "theme": "dark",
       "locale": "vi",
-      "capturedAt": "2026-10-02T23:05:59.801Z",
+      "capturedAt": "2026-10-06T22:42:34.195Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2015,7 +2358,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "735726e78a05d73768bc1c71dffe761d6334a46c8d98584d772c6d213143b0b9",
+      "screenshotSha256": "5c4e656b60f9d899f6c4cf4d97944fe39d0b6b5400aab2c586c397f1d6110c4a",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2036,7 +2379,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "5c4e656b60f9d899f6c4cf4d97944fe39d0b6b5400aab2c586c397f1d6110c4a",
+        "reviewedAt": "2026-10-06T22:43:21.637759+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-si-390-light",
@@ -2048,7 +2398,7 @@
       },
       "theme": "light",
       "locale": "si",
-      "capturedAt": "2026-10-02T23:06:00.123Z",
+      "capturedAt": "2026-10-06T22:42:34.550Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2056,7 +2406,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "b5e1eae672f2763752286e8654d00e806856a9162fb4c6c741a6dd4385ecf12d",
+      "screenshotSha256": "f57cc636cd8b4e7f755f4c2de6edac7626ae6eb0d66851b3d247deba3fcafcd0",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2078,7 +2428,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "f57cc636cd8b4e7f755f4c2de6edac7626ae6eb0d66851b3d247deba3fcafcd0",
+        "reviewedAt": "2026-10-06T22:43:21.637818+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-si-390-dark",
@@ -2090,7 +2447,7 @@
       },
       "theme": "dark",
       "locale": "si",
-      "capturedAt": "2026-10-02T23:06:00.495Z",
+      "capturedAt": "2026-10-06T22:42:34.912Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2098,7 +2455,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "cff91a004c8eb2c099c8b60a8729ce25b75be3eb97612f4d921774d3f4bfdd21",
+      "screenshotSha256": "168e1e56b00b2612a9c39cccf4bcd6b0cbdc0cb8067489e84e545e90e2465d83",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2120,7 +2477,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "168e1e56b00b2612a9c39cccf4bcd6b0cbdc0cb8067489e84e545e90e2465d83",
+        "reviewedAt": "2026-10-06T22:43:21.637874+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-th-390-light",
@@ -2132,7 +2496,7 @@
       },
       "theme": "light",
       "locale": "th",
-      "capturedAt": "2026-10-02T23:06:00.834Z",
+      "capturedAt": "2026-10-06T22:42:35.213Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2140,7 +2504,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "25df192c2959b6fe91ed046c90981ac56cdccb1cefd855cd71aea5f38c1fb03e",
+      "screenshotSha256": "101a5873a6afeb790b0cc62dee8826a96b7f3d7de387318400eb1dfd0fa9f049",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2160,7 +2524,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "101a5873a6afeb790b0cc62dee8826a96b7f3d7de387318400eb1dfd0fa9f049",
+        "reviewedAt": "2026-10-06T22:43:21.637917+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-th-390-dark",
@@ -2172,7 +2543,7 @@
       },
       "theme": "dark",
       "locale": "th",
-      "capturedAt": "2026-10-02T23:06:01.139Z",
+      "capturedAt": "2026-10-06T22:42:35.515Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2180,7 +2551,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "d117d566aa7430e6b1d5440cf0f4d748c253fe9df06d46688c654540d6b45e42",
+      "screenshotSha256": "4dd452fb3fcd96624c2311bdc344b416c8fb86364ab22c378f734e13a4248cb6",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2200,7 +2571,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "4dd452fb3fcd96624c2311bdc344b416c8fb86364ab22c378f734e13a4248cb6",
+        "reviewedAt": "2026-10-06T22:43:21.637963+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ru-390-light",
@@ -2212,7 +2590,7 @@
       },
       "theme": "light",
       "locale": "ru",
-      "capturedAt": "2026-10-02T23:06:01.440Z",
+      "capturedAt": "2026-10-06T22:42:35.803Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2220,7 +2598,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "9a20f4c249dd3ecafeaf496c4561dfe6cc90d9e87bc86e633a7307f7d4587b90",
+      "screenshotSha256": "5f0ea9b2bcd1469ac73d092b2742c2e4dc614ba61a1877a8d2e21bb3a3969132",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2240,7 +2618,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "5f0ea9b2bcd1469ac73d092b2742c2e4dc614ba61a1877a8d2e21bb3a3969132",
+        "reviewedAt": "2026-10-06T22:43:21.638015+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ru-390-dark",
@@ -2252,7 +2637,7 @@
       },
       "theme": "dark",
       "locale": "ru",
-      "capturedAt": "2026-10-02T23:06:01.724Z",
+      "capturedAt": "2026-10-06T22:42:36.147Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2260,7 +2645,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "ee203664c59485a0a6fb733aaa08566b10ada1a893abaa1a4380da92aaab64c6",
+      "screenshotSha256": "1a26924e451fbdf7531088a1ebb7682b94237c4a979834bbfe3794298de74a1d",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2280,7 +2665,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "1a26924e451fbdf7531088a1ebb7682b94237c4a979834bbfe3794298de74a1d",
+        "reviewedAt": "2026-10-06T22:43:21.638066+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-de-390-light",
@@ -2292,7 +2684,7 @@
       },
       "theme": "light",
       "locale": "de",
-      "capturedAt": "2026-10-02T23:06:02.006Z",
+      "capturedAt": "2026-10-06T22:42:36.467Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2300,7 +2692,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "04535140746f8ff8f5d7d03a3398814765fc210f5613a6246c28745f3d70c8f6",
+      "screenshotSha256": "4b11a5e4558977be16a6ef10fdf7b162390b8adddac48dec4cd79a2c52cd8ce7",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2318,7 +2710,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "4b11a5e4558977be16a6ef10fdf7b162390b8adddac48dec4cd79a2c52cd8ce7",
+        "reviewedAt": "2026-10-06T22:43:31.543802+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-de-390-dark",
@@ -2330,7 +2729,7 @@
       },
       "theme": "dark",
       "locale": "de",
-      "capturedAt": "2026-10-02T23:06:02.289Z",
+      "capturedAt": "2026-10-06T22:42:36.797Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2338,7 +2737,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "d9ceab3937763dea2fc0c3b272db0021bb1bbff0e9c0b90fcf45d73889021b30",
+      "screenshotSha256": "16f355cf3ba3cf08e13e6b11d2ee7fbdc76c914648d73d04c230a4bb14add32d",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2356,7 +2755,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "16f355cf3ba3cf08e13e6b11d2ee7fbdc76c914648d73d04c230a4bb14add32d",
+        "reviewedAt": "2026-10-06T22:43:31.543918+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-or-390-light",
@@ -2368,7 +2774,7 @@
       },
       "theme": "light",
       "locale": "or",
-      "capturedAt": "2026-10-02T23:06:02.590Z",
+      "capturedAt": "2026-10-06T22:42:37.237Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2376,7 +2782,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "c1d2bcb26cab04a3c41e94a8dd3156d29f1a5d962e84dd3765e99a56edd62850",
+      "screenshotSha256": "ddf2ccd6840ee2cd76d94ec86ffb61a938babe2473cc79e6c436b22a86df8f1e",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2397,7 +2803,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "ddf2ccd6840ee2cd76d94ec86ffb61a938babe2473cc79e6c436b22a86df8f1e",
+        "reviewedAt": "2026-10-06T22:43:31.543978+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-or-390-dark",
@@ -2409,7 +2822,7 @@
       },
       "theme": "dark",
       "locale": "or",
-      "capturedAt": "2026-10-02T23:06:02.874Z",
+      "capturedAt": "2026-10-06T22:42:37.647Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2417,7 +2830,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "479fd4807d360abca960fc76ad9831b8e33f5a1053a8714a3968a6dd34940ab1",
+      "screenshotSha256": "cab5df0bbc56fff6effa82536d4bb994a7b8ad7299aeb8afbe84effce9feb0c9",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2438,7 +2851,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "cab5df0bbc56fff6effa82536d4bb994a7b8ad7299aeb8afbe84effce9feb0c9",
+        "reviewedAt": "2026-10-06T22:43:31.544031+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ja-390-light",
@@ -2450,7 +2870,7 @@
       },
       "theme": "light",
       "locale": "ja",
-      "capturedAt": "2026-10-02T23:06:03.191Z",
+      "capturedAt": "2026-10-06T22:42:38.058Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2458,7 +2878,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "aef3d081a6fad34c2237f3fed407ac59ced79dc3e91f764598d4d995ce2cb923",
+      "screenshotSha256": "1756e9d8aa877e177089697d7aa34179229d0563f002e1c10978cfabba707ee7",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2467,34 +2887,41 @@
         "lang": "ja",
         "bodyFont": "\"Noto Sans\", \"Noto Sans JP\", \"Noto Sans JP Fallback\", system-ui, \"Segoe UI\", sans-serif",
         "loadedFonts": [
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP Fallback",
           "Geist",
           "Noto Sans",
           "Noto Sans Mono",
-          "Noto Sans Mono Fallback"
+          "Noto Sans Mono Fallback",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP Fallback"
         ],
         "dark": false,
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "1756e9d8aa877e177089697d7aa34179229d0563f002e1c10978cfabba707ee7",
+        "reviewedAt": "2026-10-06T22:43:31.544085+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ja-390-dark",
@@ -2506,7 +2933,7 @@
       },
       "theme": "dark",
       "locale": "ja",
-      "capturedAt": "2026-10-02T23:06:03.474Z",
+      "capturedAt": "2026-10-06T22:42:38.380Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2514,7 +2941,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "b50efcd64e8960171249f4f30f9cb41fbdd363464dbab842358d151d4c10f406",
+      "screenshotSha256": "357c964e1eed0db5de5d522385acf99c9ab7c39e053b981fbdd7ab98055c863d",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2523,34 +2950,41 @@
         "lang": "ja",
         "bodyFont": "\"Noto Sans\", \"Noto Sans JP\", \"Noto Sans JP Fallback\", system-ui, \"Segoe UI\", sans-serif",
         "loadedFonts": [
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP",
-          "Noto Sans JP Fallback",
           "Geist",
           "Noto Sans",
           "Noto Sans Mono",
-          "Noto Sans Mono Fallback"
+          "Noto Sans Mono Fallback",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP",
+          "Noto Sans JP Fallback"
         ],
         "dark": true,
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "357c964e1eed0db5de5d522385acf99c9ab7c39e053b981fbdd7ab98055c863d",
+        "reviewedAt": "2026-10-06T22:43:31.544137+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-uk-390-light",
@@ -2562,7 +2996,7 @@
       },
       "theme": "light",
       "locale": "uk",
-      "capturedAt": "2026-10-02T23:06:03.739Z",
+      "capturedAt": "2026-10-06T22:42:38.702Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2570,7 +3004,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "b0cf1ac03c6bef5d0bdb964a147a7b23aedb72549d6b0d84b2bc5b14db323c1f",
+      "screenshotSha256": "be1961feb1c35d3f6ae996319c4818f9da1a0adcf71d306b78082c1dd1a50893",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2590,7 +3024,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "be1961feb1c35d3f6ae996319c4818f9da1a0adcf71d306b78082c1dd1a50893",
+        "reviewedAt": "2026-10-06T22:43:31.544187+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-uk-390-dark",
@@ -2602,7 +3043,7 @@
       },
       "theme": "dark",
       "locale": "uk",
-      "capturedAt": "2026-10-02T23:06:04.004Z",
+      "capturedAt": "2026-10-06T22:42:39.019Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2610,7 +3051,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "e75e460089dc4b449f4eb734b26aa8d41e5bb1ba181de5d032c333c5fee485e5",
+      "screenshotSha256": "5743630b70fad5209b334ac6867631e7c3ae93c204eb21039860871cbd4dc34a",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2630,7 +3071,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "5743630b70fad5209b334ac6867631e7c3ae93c204eb21039860871cbd4dc34a",
+        "reviewedAt": "2026-10-06T22:43:31.544234+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ko-390-light",
@@ -2642,7 +3090,7 @@
       },
       "theme": "light",
       "locale": "ko",
-      "capturedAt": "2026-10-02T23:06:04.303Z",
+      "capturedAt": "2026-10-06T22:42:39.318Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2650,7 +3098,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "7166225b251c1e744cb46a1fc01aef6b29b1886b730998c89316446716b9553e",
+      "screenshotSha256": "81316c81c39a96d37986aa55a9cff7d2e7dffedcfe8dce883db30be498d06c11",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2659,25 +3107,32 @@
         "lang": "ko",
         "bodyFont": "\"Noto Sans\", \"Noto Sans KR\", \"Noto Sans KR Fallback\", system-ui, \"Segoe UI\", sans-serif",
         "loadedFonts": [
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR Fallback",
           "Geist",
           "Noto Sans",
           "Noto Sans Mono",
-          "Noto Sans Mono Fallback"
+          "Noto Sans Mono Fallback",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR Fallback"
         ],
         "dark": false,
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "81316c81c39a96d37986aa55a9cff7d2e7dffedcfe8dce883db30be498d06c11",
+        "reviewedAt": "2026-10-06T22:43:38.389829+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ko-390-dark",
@@ -2689,7 +3144,7 @@
       },
       "theme": "dark",
       "locale": "ko",
-      "capturedAt": "2026-10-02T23:06:04.602Z",
+      "capturedAt": "2026-10-06T22:42:39.618Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2697,7 +3152,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "8a09d76795eb1054dce8b3fd144eac5902c48e5bb457db1a927c1f61d3bccfed",
+      "screenshotSha256": "20ad3eb2743cbb998f8e42e3d6b296b6e526e0bfbd1d4fed86934e67a5089463",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2706,25 +3161,32 @@
         "lang": "ko",
         "bodyFont": "\"Noto Sans\", \"Noto Sans KR\", \"Noto Sans KR Fallback\", system-ui, \"Segoe UI\", sans-serif",
         "loadedFonts": [
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR",
-          "Noto Sans KR Fallback",
           "Geist",
           "Noto Sans",
           "Noto Sans Mono",
-          "Noto Sans Mono Fallback"
+          "Noto Sans Mono Fallback",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR",
+          "Noto Sans KR Fallback"
         ],
         "dark": true,
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "20ad3eb2743cbb998f8e42e3d6b296b6e526e0bfbd1d4fed86934e67a5089463",
+        "reviewedAt": "2026-10-06T22:43:38.389973+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-it-390-light",
@@ -2736,7 +3198,7 @@
       },
       "theme": "light",
       "locale": "it",
-      "capturedAt": "2026-10-02T23:06:04.869Z",
+      "capturedAt": "2026-10-06T22:42:39.885Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2744,7 +3206,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "45409d6d73fd978b8c2790463ea2d531aeba5b4e229ca6891fad5bd6a0368810",
+      "screenshotSha256": "e93de48e11a8b36e6d1fb725e0d8b7a6e6e8908ad5560a8cbf1fb3f60301e72a",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2762,7 +3224,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "e93de48e11a8b36e6d1fb725e0d8b7a6e6e8908ad5560a8cbf1fb3f60301e72a",
+        "reviewedAt": "2026-10-06T22:43:38.390028+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-it-390-dark",
@@ -2774,7 +3243,7 @@
       },
       "theme": "dark",
       "locale": "it",
-      "capturedAt": "2026-10-02T23:06:05.134Z",
+      "capturedAt": "2026-10-06T22:42:40.168Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2782,7 +3251,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "56a8dbdea661dea556cb1411b92efc635504eb636a1a840f1f13a9156d529bac",
+      "screenshotSha256": "864055385ba93b97ae2b57872d050b5ab3536bb3a042866c7edfed1dd3a7687a",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2800,7 +3269,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "864055385ba93b97ae2b57872d050b5ab3536bb3a042866c7edfed1dd3a7687a",
+        "reviewedAt": "2026-10-06T22:43:38.390093+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-pl-390-light",
@@ -2812,7 +3288,7 @@
       },
       "theme": "light",
       "locale": "pl",
-      "capturedAt": "2026-10-02T23:06:05.417Z",
+      "capturedAt": "2026-10-06T22:42:40.436Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2820,7 +3296,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "33f5ce6b94f74671e1250cbf5f140eb07ae82df7db7c48e71249f8c4ed69ed59",
+      "screenshotSha256": "84fd89e5879e0d3e58b46bf58f49b3a68cf2db1581c73d23dea7232394553b8f",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2840,7 +3316,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "84fd89e5879e0d3e58b46bf58f49b3a68cf2db1581c73d23dea7232394553b8f",
+        "reviewedAt": "2026-10-06T22:43:38.390151+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-pl-390-dark",
@@ -2852,7 +3335,7 @@
       },
       "theme": "dark",
       "locale": "pl",
-      "capturedAt": "2026-10-02T23:06:05.699Z",
+      "capturedAt": "2026-10-06T22:42:40.702Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2860,7 +3343,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "fb9fe7e1713c4d2d3b0bff37d95abfe7a8acc9b8e5aef5c537b0265c42645a23",
+      "screenshotSha256": "c134070050a86dd4e3a8fe966e6ec183e99f6451c335aec440cf3ee00b315d07",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2880,7 +3363,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "c134070050a86dd4e3a8fe966e6ec183e99f6451c335aec440cf3ee00b315d07",
+        "reviewedAt": "2026-10-06T22:43:38.390338+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-tr-390-light",
@@ -2892,7 +3382,7 @@
       },
       "theme": "light",
       "locale": "tr",
-      "capturedAt": "2026-10-02T23:06:05.968Z",
+      "capturedAt": "2026-10-06T22:42:40.970Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2900,7 +3390,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "4ae8f26674470a6a6986215135f879af04eed6450aee8c1c2b89cab345037a48",
+      "screenshotSha256": "d0c8ea332a145790beec1712afaf4367432a163b9a3b9d6f30d52a2e694ab708",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2920,7 +3410,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "d0c8ea332a145790beec1712afaf4367432a163b9a3b9d6f30d52a2e694ab708",
+        "reviewedAt": "2026-10-06T22:43:38.390562+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-tr-390-dark",
@@ -2932,7 +3429,7 @@
       },
       "theme": "dark",
       "locale": "tr",
-      "capturedAt": "2026-10-02T23:06:06.234Z",
+      "capturedAt": "2026-10-06T22:42:41.254Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2940,7 +3437,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "1ba2616a0941850f3b2e7fa5c5cf8a6c907204390260484ab153db3633a43f32",
+      "screenshotSha256": "7a03f302d229bf3e41fbd16510b82b26cadf2fb620e720e5dc1b27eedea08cf7",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2960,7 +3457,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "7a03f302d229bf3e41fbd16510b82b26cadf2fb620e720e5dc1b27eedea08cf7",
+        "reviewedAt": "2026-10-06T22:43:38.390617+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-zh-390-light",
@@ -2972,7 +3476,7 @@
       },
       "theme": "light",
       "locale": "zh",
-      "capturedAt": "2026-10-02T23:06:06.519Z",
+      "capturedAt": "2026-10-06T22:42:41.554Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -2980,7 +3484,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "949928298e1d326a9e0ec9dd534c15bbdd20fee3c43b1d13bc7873b3ad027d7c",
+      "screenshotSha256": "410257c62d783060b158e5430605d89c8656520782a1afd984d62ddd323366c6",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -2989,27 +3493,34 @@
         "lang": "zh",
         "bodyFont": "\"Noto Sans\", \"Noto Sans SC\", \"Noto Sans SC Fallback\", system-ui, \"Segoe UI\", sans-serif",
         "loadedFonts": [
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC Fallback",
           "Geist",
           "Noto Sans",
           "Noto Sans Mono",
-          "Noto Sans Mono Fallback"
+          "Noto Sans Mono Fallback",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC Fallback"
         ],
         "dark": false,
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "410257c62d783060b158e5430605d89c8656520782a1afd984d62ddd323366c6",
+        "reviewedAt": "2026-10-06T22:43:44.208046+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-zh-390-dark",
@@ -3021,7 +3532,7 @@
       },
       "theme": "dark",
       "locale": "zh",
-      "capturedAt": "2026-10-02T23:06:06.818Z",
+      "capturedAt": "2026-10-06T22:42:41.862Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3029,7 +3540,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "c4745d84a0fb4b0800d532ce1f22ce2aaf283478ba099a3a3a759eb38a3aab9b",
+      "screenshotSha256": "aa0f6fcc7f733a2635c103f9fd166789404f520ed6f06141c633fef6a7406e8c",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3038,27 +3549,34 @@
         "lang": "zh",
         "bodyFont": "\"Noto Sans\", \"Noto Sans SC\", \"Noto Sans SC Fallback\", system-ui, \"Segoe UI\", sans-serif",
         "loadedFonts": [
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC",
-          "Noto Sans SC Fallback",
           "Geist",
           "Noto Sans",
           "Noto Sans Mono",
-          "Noto Sans Mono Fallback"
+          "Noto Sans Mono Fallback",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC",
+          "Noto Sans SC Fallback"
         ],
         "dark": true,
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "aa0f6fcc7f733a2635c103f9fd166789404f520ed6f06141c633fef6a7406e8c",
+        "reviewedAt": "2026-10-06T22:43:44.208266+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-pt-390-light",
@@ -3070,7 +3588,7 @@
       },
       "theme": "light",
       "locale": "pt",
-      "capturedAt": "2026-10-02T23:06:07.084Z",
+      "capturedAt": "2026-10-06T22:42:42.165Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3078,7 +3596,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "e46d4e3b919c9dbd505ab708b24794450b49b342ea38960cbc702673fb7606bf",
+      "screenshotSha256": "72052632cdb7669e82fa03bc93f5abad69206567d2d07d0278f4ec679f08dd5b",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3096,7 +3614,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "72052632cdb7669e82fa03bc93f5abad69206567d2d07d0278f4ec679f08dd5b",
+        "reviewedAt": "2026-10-06T22:43:44.208353+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-pt-390-dark",
@@ -3108,7 +3633,7 @@
       },
       "theme": "dark",
       "locale": "pt",
-      "capturedAt": "2026-10-02T23:06:07.351Z",
+      "capturedAt": "2026-10-06T22:42:42.450Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3116,7 +3641,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "361d332b9657af60fd50fb4562713700a5fc1c2c7b1023f5d5d94b7ac0dbcbad",
+      "screenshotSha256": "208fe14e3bb1efc5ca9d892357d3bb4d3cfe8d3502dbed560be2a51756a58cbb",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3134,7 +3659,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "208fe14e3bb1efc5ca9d892357d3bb4d3cfe8d3502dbed560be2a51756a58cbb",
+        "reviewedAt": "2026-10-06T22:43:44.208411+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-id-390-light",
@@ -3146,7 +3678,7 @@
       },
       "theme": "light",
       "locale": "id",
-      "capturedAt": "2026-10-02T23:06:07.619Z",
+      "capturedAt": "2026-10-06T22:42:42.717Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3154,7 +3686,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "5a972a908cb1c79dbcd8298c833162e161bd296f01e724466f612f452d49dc01",
+      "screenshotSha256": "1e3722d2c593ec148bbf023f23e7a84b7573259d2f73f15d4fe872e82a2d341c",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3172,7 +3704,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "1e3722d2c593ec148bbf023f23e7a84b7573259d2f73f15d4fe872e82a2d341c",
+        "reviewedAt": "2026-10-06T22:43:44.208474+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-id-390-dark",
@@ -3184,7 +3723,7 @@
       },
       "theme": "dark",
       "locale": "id",
-      "capturedAt": "2026-10-02T23:06:07.886Z",
+      "capturedAt": "2026-10-06T22:42:43.002Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3192,7 +3731,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "fdf3e69249023cfee3e4b56ee59e40fb8810bd310af442216729748bb04b1aef",
+      "screenshotSha256": "eed996c15cab400a89ed576236312cdc7158811d8b045edc59969d1d6ce7dcee",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3210,7 +3749,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "eed996c15cab400a89ed576236312cdc7158811d8b045edc59969d1d6ce7dcee",
+        "reviewedAt": "2026-10-06T22:43:44.208533+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-nl-390-light",
@@ -3222,7 +3768,7 @@
       },
       "theme": "light",
       "locale": "nl",
-      "capturedAt": "2026-10-02T23:06:08.134Z",
+      "capturedAt": "2026-10-06T22:42:43.277Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3230,7 +3776,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "952ba386a5bf9b99bdb9ff2f47bcc5f9f870674fef3aabb50bb048e168a51a08",
+      "screenshotSha256": "c700587740a59dd2e6e58b2a7989088181292a764c9f23bd4b9decef68fce6ef",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3248,7 +3794,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "c700587740a59dd2e6e58b2a7989088181292a764c9f23bd4b9decef68fce6ef",
+        "reviewedAt": "2026-10-06T22:43:44.208588+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-nl-390-dark",
@@ -3260,7 +3813,7 @@
       },
       "theme": "dark",
       "locale": "nl",
-      "capturedAt": "2026-10-02T23:06:08.401Z",
+      "capturedAt": "2026-10-06T22:42:43.544Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3268,7 +3821,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "713642ac216a19966d0f1c19803e04a1f7117c429381c364898fdaaa17335914",
+      "screenshotSha256": "4d485c5a62b5e0b05cfd1f5fb35c6e28b44ecc34246f691520224e5ef59c59c6",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3286,7 +3839,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "4d485c5a62b5e0b05cfd1f5fb35c6e28b44ecc34246f691520224e5ef59c59c6",
+        "reviewedAt": "2026-10-06T22:43:44.208685+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ms-390-light",
@@ -3298,7 +3858,7 @@
       },
       "theme": "light",
       "locale": "ms",
-      "capturedAt": "2026-10-02T23:06:08.665Z",
+      "capturedAt": "2026-10-06T22:42:43.811Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3306,7 +3866,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "f9fff253bc022a2d6cb443901c6bbb5bab6533afc6335686aa3d5125be0389db",
+      "screenshotSha256": "3992e2eb82941bb642a672c7f5f276da92281930be5354de3974f85c6becd210",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3324,7 +3884,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "3992e2eb82941bb642a672c7f5f276da92281930be5354de3974f85c6becd210",
+        "reviewedAt": "2026-10-06T22:43:44.208782+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "name": "api-access-ms-390-dark",
@@ -3336,7 +3903,7 @@
       },
       "theme": "dark",
       "locale": "ms",
-      "capturedAt": "2026-10-02T23:06:08.930Z",
+      "capturedAt": "2026-10-06T22:42:44.081Z",
       "fixtureClock": "2026-10-14T06:00:00Z",
       "sourceKind": "isolated-current-components-synthetic-fixtures",
       "productionAuthenticationTested": false,
@@ -3344,7 +3911,7 @@
       "writesDisabled": true,
       "realCredentialCaptured": false,
       "fullPage": false,
-      "screenshotSha256": "78afb8fd89b560bbb59b381fcd44c765aa92a7a58cd377c162b3ff9f430efac3",
+      "screenshotSha256": "95102fa2f301c692a5e9f7337fa1334236bd8682987e7f2a205ed8eb6a5f9859",
       "keyboardFieldTab": true,
       "layout": {
         "width": 390,
@@ -3362,7 +3929,14 @@
         "margin": "0px"
       },
       "browserErrors": [],
-      "blockedExternalRequests": []
+      "blockedExternalRequests": [],
+      "visualReview": {
+        "sha256": "95102fa2f301c692a5e9f7337fa1334236bd8682987e7f2a205ed8eb6a5f9859",
+        "reviewedAt": "2026-10-06T22:43:44.208842+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     }
   ],
   "controlCaptures": [
@@ -3375,7 +3949,7 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "8a3252b46835f6d5ceb3936f3c449487f935a2596e9ab27058cd12ec25f40b5d",
+      "screenshotSha256": "396a2d2b44601386ce637bec738328be40bc52c011f0746ab609d1ff23dd991f",
       "keyboardFocusOrder": [
         "api-key-expiry",
         "api-scope-organization",
@@ -3387,7 +3961,14 @@
       "createFocused": true,
       "revokeVisibleAboveNavigation": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "396a2d2b44601386ce637bec738328be40bc52c011f0746ab609d1ff23dd991f",
+        "reviewedAt": "2026-10-06T22:44:00.729269+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "file": "api-revoke-en-390-light.png",
@@ -3398,12 +3979,19 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "bb04d590bea0ce23e0285f625e093601b9d3dabe4d8f4fc3afa8d89ff590c5c1",
+      "screenshotSha256": "4ee4fbfdec021d00de5ed898161fe238b464943df4fdd92250fa20771ea3cf4d",
       "revokeFocused": true,
       "escapeClosesDialog": true,
       "escapeReturnsFocus": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "4ee4fbfdec021d00de5ed898161fe238b464943df4fdd92250fa20771ea3cf4d",
+        "reviewedAt": "2026-10-06T22:44:00.729559+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "file": "api-controls-en-390-dark.png",
@@ -3414,7 +4002,7 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "d4585a514e6ab5d6c71ecdb9514b0086bd99e1ae1438a5844d0357941cc4b423",
+      "screenshotSha256": "a9a30779b0fa9af7f70eafc4f21f39141c9b05ba6f1ee8e6862942d35398dbc6",
       "keyboardFocusOrder": [
         "api-key-expiry",
         "api-scope-organization",
@@ -3426,7 +4014,14 @@
       "createFocused": true,
       "revokeVisibleAboveNavigation": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "a9a30779b0fa9af7f70eafc4f21f39141c9b05ba6f1ee8e6862942d35398dbc6",
+        "reviewedAt": "2026-10-06T22:44:00.729734+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "file": "api-revoke-en-390-dark.png",
@@ -3437,12 +4032,19 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "21e8386b595f5b3022efbf5fbe03f2705f91aa95d9c0c68b61e7fd7e33df2e62",
+      "screenshotSha256": "e9124a57219313cc3edff6953b181b6b92a17319b4d30596c1ada554fbb43bc9",
       "revokeFocused": true,
       "escapeClosesDialog": true,
       "escapeReturnsFocus": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "e9124a57219313cc3edff6953b181b6b92a17319b4d30596c1ada554fbb43bc9",
+        "reviewedAt": "2026-10-06T22:44:00.729935+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "file": "api-controls-ar-390-light.png",
@@ -3453,7 +4055,7 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "8847da46e786f1bd421fc9729d6b01876e21021b23685c23d9c1455c85e64e5b",
+      "screenshotSha256": "25eb00e5d1209145d4d1228d2ebbe94896d5dc9537cb6e4950991eb814e120df",
       "keyboardFocusOrder": [
         "api-key-expiry",
         "api-scope-organization",
@@ -3465,7 +4067,14 @@
       "createFocused": true,
       "revokeVisibleAboveNavigation": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "25eb00e5d1209145d4d1228d2ebbe94896d5dc9537cb6e4950991eb814e120df",
+        "reviewedAt": "2026-10-06T22:44:00.730108+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "file": "api-revoke-ar-390-light.png",
@@ -3476,12 +4085,19 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "a261ceb057d51f2ba3788d1197fe40c5932acefb1dd34fa25bd1df6a73399618",
+      "screenshotSha256": "6d5ed6c2bfbb9b276aacbe618938409291d336e2e873cc0412aaca95d399579a",
       "revokeFocused": true,
       "escapeClosesDialog": true,
       "escapeReturnsFocus": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "6d5ed6c2bfbb9b276aacbe618938409291d336e2e873cc0412aaca95d399579a",
+        "reviewedAt": "2026-10-06T22:44:00.730293+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "file": "api-controls-ar-390-dark.png",
@@ -3492,7 +4108,7 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "bfbac8edbde0d3833444f57355eb51d86dc8fa7059d4699a3965ef81990501b5",
+      "screenshotSha256": "b46de053d46bfff7213d69039bc9afe454282874a1db04d416e10c937fabbd9a",
       "keyboardFocusOrder": [
         "api-key-expiry",
         "api-scope-organization",
@@ -3504,7 +4120,14 @@
       "createFocused": true,
       "revokeVisibleAboveNavigation": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "b46de053d46bfff7213d69039bc9afe454282874a1db04d416e10c937fabbd9a",
+        "reviewedAt": "2026-10-06T22:44:00.730452+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     },
     {
       "file": "api-revoke-ar-390-dark.png",
@@ -3515,12 +4138,29 @@
         "width": 390,
         "height": 844
       },
-      "screenshotSha256": "bfbeadadae7aad7b788fe9d28f27f94b6bd6cdfa8e44de917f2d90babf48497b",
+      "screenshotSha256": "81b37afa889a9f90121c936d167b12f58996706496e948e3e2059f872cb6ed42",
       "revokeFocused": true,
       "escapeClosesDialog": true,
       "escapeReturnsFocus": true,
       "writesDisabled": true,
-      "realCredentialCaptured": false
+      "realCredentialCaptured": false,
+      "visualReview": {
+        "sha256": "81b37afa889a9f90121c936d167b12f58996706496e948e3e2059f872cb6ed42",
+        "reviewedAt": "2026-10-06T22:44:00.730629+00:00",
+        "method": "original-png-at-readable-resolution",
+        "noSensitivePixels": true,
+        "layoutPassed": true
+      }
     }
-  ]
+  ],
+  "visualReview": {
+    "status": "passed",
+    "reviewedAt": "2026-10-06T22:44:05.049713+00:00",
+    "reviewedCount": 90,
+    "method": "Every original PNG inspected at readable resolution; exact image and source hashes checked.",
+    "productionAuthenticationTested": false,
+    "providerExecutionTested": false,
+    "writesDisabled": true,
+    "note": "82 base views across all 33 locales and 8 EN/AR lower-control and revoke views. Tablets use explicit 1600px documentation height; phone controls retain normal 844px height and scroll evidence."
+  }
 }

@@ -6,23 +6,46 @@
 
 ## Who signs in, and how
 
-| Who                                              | How                                                       | When              |
-| ------------------------------------------------ | --------------------------------------------------------- | ----------------- |
-| Household                                        | Phone number + SMS code — no password, no profile to fill | Only when booking |
-| Kabadiwala, yard, recycler, manufacturer, Saathi | Phone number + SMS code                                   | `/login`          |
-| Admin (one person)                               | Email + password, then a 6-digit authenticator-app code   | `/admin/login`    |
+| Who                                                      | How                                                     | When                                        |
+| -------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------- |
+| Household                                                | Phone number + SMS code; email account is optional      | Verified phone remains required for booking |
+| Kabadiwala, preprocessor, recycler, manufacturer, Saathi | Verified email + password, or phone number + SMS code   | `/login`                                    |
+| Admin (one person)                                       | Email + password, then a 6-digit authenticator-app code | `/admin/login`                              |
 
-A household's phone confirmation creates a light, passwordless identity behind
-the scenes, so their bookings and points follow the number to any device. To
-them it is not an account — nothing to remember, nothing to fill in.
+A household phone confirmation creates a passwordless identity, so bookings and
+points follow the number across devices. Email signup creates a separate verified
+email identity. These methods do not silently merge accounts or bypass phone
+verification required by booking.
+
+### Verify a phone on an existing email account
+
+A verified non-admin email member can open Account Security and explicitly verify
+one unused Indian mobile number. The real SMS code is delivered through MSG91,
+or through the secured inbox on the local-only test deployment. Delivery stays
+unavailable without either configuration. This binds possession to the current
+email identity; it does not merge an existing phone account or enable phone-only
+sign-in for the email account. Continue to sign in with email and the existing
+second factor, when enabled.
+
+The verification endpoint requires the existing five-minute full-authentication
+assurance. If it has expired, the screen offers sign-in again. A required TOTP
+challenge must already have passed. Anonymous users, unverified email users,
+admins, phone-only identities, already-bound identities and numbers owned by
+another account are rejected. Generic user updates cannot set or remove a phone.
+The Convex adapter checks unique phone ownership inside its write transaction.
+The same transaction updates the matching profile and records `auth.phone.verified`
+without copying the phone or code to the audit log. User identity, session and
+TOTP remain unchanged. This supplies the verified matching phone required by the
+payment preparation guard; it does not enable live payment processing.
 
 ## How it's built
 
 **Better Auth, running inside Convex** through the `@convex-dev/better-auth`
 component. Built and tested on 29 Sep 2026.
 
-- **Plugins:** `phoneNumber` (SMS codes), `emailAndPassword` (admin only — the
-  server requires the configured `ADMIN_EMAIL` and an owner-held `ADMIN_SETUP_TOKEN` for sign-up) and `twoFactor`
+- **Plugins:** `phoneNumber` (SMS codes), `emailAndPassword` (verified normal-user
+  email and a separate admin bootstrap requiring `ADMIN_EMAIL` plus the owner-held
+  `ADMIN_SETUP_TOKEN`) and `twoFactor`
   (authenticator app, with backup codes).
 - **Installed locally** (`convex/betterAuth/`). The component's tables come
   from our own plugin list: `pnpm auth:schema` writes
@@ -45,11 +68,21 @@ component. Built and tested on 29 Sep 2026.
   (`convex/lib/access.ts`), which use the component's session-validated user —
   never `ctx.auth.getUserIdentity()` alone — then load the `profiles` row.
 - **Sessions** last 30 days from sign-in and are never extended
-  (`disableSessionRefresh`); then a new SMS code. The admin's last 12 hours.
+  (`disableSessionRefresh`); then a new phone or email sign-in. The admin's last 12 hours.
 - **Rate limits** are stored in the database, so they hold across Convex
   requests: 10 requests a minute per client IP on the phone endpoints, 3 per
   10 seconds on two-factor. The client IP is Vercel's `x-forwarded-for`,
   passed through the Next.js proxy.
+- **Public signing-key discovery:** only `GET /api/auth/convex/jwks` is exempt
+  from the per-IP auth limiter through Better Auth's exact-path `customRules`.
+  It returns public verification keys, creates no user session and grants no
+  access. Convex verifiers share a network address; limiting their key fetches
+  caused HTTP 429 responses and loss of client auth while login sessions remained
+  valid. Other methods and auth routes retain their limits, including signup,
+  sign-in, verification email, password recovery and token issuance. This rule
+  does not cover the server-only `latest-jwks` route or expose private key fields.
+  A real-handler regression performs 105 key reads from one IP and checks the
+  existing credential quotas and unauthenticated token denial.
 
 ### SMS codes
 
@@ -60,13 +93,14 @@ component. Built and tested on 29 Sep 2026.
   success payload as well as its HTTP status. It does not automatically retry
   a timed-out send, which might already have reached the provider. Nothing is
   left as an un-awaited promise, which Convex may drop.
-- **Without MSG91 keys** (every variable is optional): with `AUTH_DEV_MODE=true`
-  (dev and preview only) the code is written to the Convex log, number masked;
-  otherwise `/login` keeps the language and phone steps available and opens
-  a labelled code-entry preview. Preview never calls the provider, creates a
-  session or grants private access. Verify and Resend are disabled. A tab-only
-  preview flag separates this state from a real sent-code flow; starting a real
-  request clears that flag.
+- **Without MSG91 keys:** the secured local inbox can receive the actual generated
+  code only when both `SITE_URL` and system `CONVEX_SITE_URL` are loopback HTTP
+  origins and `AUTH_LOCAL_TEST_MODE=true`. It also requires a loopback inbox URL
+  and private bearer token. See [local delivery](../../scripts/local-auth/README.md).
+  Delivery is awaited. There is no fixed demo code or OTP logging. The old
+  `AUTH_DEV_MODE` flag no longer enables authentication delivery on any backend.
+  Without either delivery path, `/login` offers the labelled code-entry preview;
+  preview sends nothing, creates no session and cannot access private routes.
 - **Before switching MSG91 on** — SMS costs money, and code endpoints attract
   SMS pumping:
   1. The server now enforces a 30-second resend delay, 3 requests per rolling
@@ -79,15 +113,17 @@ component. Built and tested on 29 Sep 2026.
      which weakens the per-IP limit. Consider requiring a shared secret header
      that only our Next.js proxy sends.
 
-### Optional authenticator for phone accounts
+### Optional authenticator for member accounts
 
 Any signed-in household, applicant or business user can open
 `/account/security`. Organisation approval is not required for account settings.
-Phone codes remain the primary sign-in method. Normal users do not have a password.
+Phone-only identities remain passwordless. Email identities sign in with their
+password and must provide it again for authenticator enrollment, disable and
+recovery-code replacement. The same recent-sign-in proof applies to both methods.
 
 - A complete sign-in grants five minutes to enable protection, replace recovery
-  codes or disable protection. If protection is already enabled, both the SMS
-  code and an authenticator/recovery code must have passed. The proof is bound to
+  codes or disable protection. If protection is already enabled, both the primary
+  sign-in and an authenticator/recovery code must have passed. The proof is bound to
   the user and the current server session; client flags cannot grant it.
 - Setup shows a local QR image and a manual key. Protection starts only after a
   valid authenticator code. Existing sessions are revoked at that point. The ten
@@ -115,6 +151,45 @@ Phone codes remain the primary sign-in method. Normal users do not have a passwo
 - Authenticator setup, enable/disable, recovery-code changes and password changes
   write audit events without secrets. Every private Convex operation still checks
   the stored session through `requireUser` / `requireAdmin`.
+
+### Verified email accounts
+
+`/login` shows Phone and Email tabs after the language choice. Email supports
+sign-in, signup, verification resend and password recovery. All UI copy is in the
+33 message catalogues; native-language review remains a release gate.
+
+- Passwords contain 12–128 characters. Better Auth owns hashing, credentials,
+  verification tokens and sessions. No service account is needed to create an
+  identity in the existing Convex component.
+- Signup creates an unverified identity and returns no session or Convex JWT.
+  The verification link lasts 15 minutes. `/login/email/verify` removes the token
+  from the address bar, sets no-referrer, and requires an explicit Verify action.
+  Successful verification does not sign in; password and any enabled second
+  factor are still required. Duplicate signup receives a neutral response and
+  never replaces the existing password. Unverified users can request another
+  verification message if the original send fails or the link expires.
+- Optional Resend delivery uses server-only `RESEND_API_KEY`, `AUTH_FROM_EMAIL`
+  and HTTPS `SITE_URL`. Missing config and provider failures produce unavailable
+  states. A successful provider response proves acceptance, not inbox delivery.
+  Links use fixed same-origin routes and the requested supported locale. Current
+  transactional email templates are English; locale UI translations are separate.
+- Normal-user recovery accepts only verified identities with an existing password
+  credential. Unknown, unverified and phone-only accounts receive neutral results
+  without email. A reset link lasts 15 minutes, works once and revokes sessions
+  and previous primary-authentication proofs. It keeps the authenticator and
+  recovery codes. `/login/email/reset` retains its token only in component memory.
+- The reserved `phone.luma.green` placeholder domain cannot sign up through email
+  or receive email verification/reset. Reset cannot add a password to a phone
+  identity. Email change and account merging are not enabled by this work.
+- The local runner stores real verification links and phone codes in memory only.
+  Its bearer-protected API rejects browser Origin headers, has no CORS permission,
+  limits payloads/messages and expires messages after 15 minutes. A browser flag
+  cannot enable it. Cloud development, preview and production backends fail the
+  local gate even with `AUTH_LOCAL_TEST_MODE=true`.
+- Identity creation and successful email verification write audit events with
+  the internal user ID only. No email address, password or token is recorded.
+- Email signup, verification resend and password recovery have database-backed
+  request limits. Phone delivery retains its existing per-number limits.
 
 ### The admin
 
@@ -182,10 +257,12 @@ policy. Never capture reset tokens, passwords, QR keys or recovery codes for doc
 - **E2E** (`e2e/auth.spec.ts` and `e2e/account-settings.spec.ts`) also checks the
   disconnected preview and protected route return paths. Fixtures do not prove
   live SMS/email delivery or an authenticated production walkthrough.
-- **By hand, against the dev deployment:** `AUTH_DEV_MODE=true` is set there,
-  so codes appear in `npx convex logs`. The dev admin test account's details
-  are in your `.env.local` (`DEV_ADMIN_*`, never committed); add the key to
-  an authenticator app to sign in.
+- **Local browser acceptance:** run the secured inbox and a local Convex backend.
+  Create disposable users through actual signup/verification handlers. Retrieve
+  tokens in the protected runner, never from logs or direct auth table insertion.
+  `convex/auth-email.test.ts` covers email verification, duplicate signup, wrong
+  password, recovery, real second-factor enrollment, phone signup, and hosted
+  rejection. Local tests do not prove Resend or MSG91 delivery.
 
 ## Roles and permissions
 
@@ -221,3 +298,22 @@ platform staff (`profiles.kind = "admin"`) from business users; team members
 become staff roles — _reviewer_ (verification only), _support_ (read-only plus
 notes), _owner_ (everything) — with the permission table above gaining columns.
 No schema rewrite is needed.
+
+### Server session availability
+
+Protected locale routes and the admin console use `hasServerSession` for the
+server gate. It calls the configured Convex token endpoint with only the incoming
+cookie, authorization and client IP headers. The check has no token cache and no
+automatic retry. A valid token response permits rendering; explicit HTTP 401/403
+keeps the sign-in redirect. HTTP 429, other failed responses, malformed success
+responses and network failures stop private rendering and reach a recovery
+boundary above the guarded layouts. These failures never claim that a valid
+session has ended.
+
+Recovery is an explicit current-page reload. It also recreates a browser auth
+client that retained a failed token request; a segment-only retry does not do
+that in the installed adapter. The existing token quota remains in force. Local
+capture tools use separate client IPs and bounded quiet intervals that respect
+`X-Retry-After`. Better Auth 1.6.33 resets its counter after the full quiet window
+since the last accepted request, so a continuous capture can otherwise reach the
+quota over more than one nominal window. No capture may silently sign in again.

@@ -6,6 +6,8 @@ const baseURL =
 
 export default defineConfig({
   testDir: "./e2e",
+  // Authenticated local acceptance uses its own provisioned runtime and config.
+  testIgnore: "**/connected/**",
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,

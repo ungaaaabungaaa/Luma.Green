@@ -77,7 +77,7 @@ test("home tells the chain's story, with a way in for everyone", async ({
   await expect(chain.getByRole("heading", { level: 3 })).toHaveText([
     "Households",
     "Kabadiwalas",
-    "Yards",
+    "Preprocessors",
     "Recyclers",
     "Manufacturers",
   ]);
@@ -166,7 +166,7 @@ test("the standard lays out every norm, with a jump list", async ({ page }) => {
     "Fair weighing",
     "Receipts and chain of custody",
     "Verification",
-    "Escrow between businesses",
+    en.standards.escrow.title,
   ]) {
     await expect(
       page.getByRole("heading", { name: heading, level: 2 }),
@@ -175,9 +175,11 @@ test("the standard lays out every norm, with a jump list", async ({ page }) => {
 
   await page
     .getByRole("navigation", { name: "On this page" })
-    .getByRole("link", { name: "Escrow" })
+    .getByRole("link", { name: en.standards.escrow.nav, exact: true })
     .click();
   await expect(page).toHaveURL(/#escrow$/);
+  await expect(page.locator("#escrow")).toContainText(en.standards.escrow.body);
+  await expect(page.locator("#escrow")).not.toContainText("simulated escrow");
 });
 
 test("the solar calculator estimates a home system and cites the scheme", async ({

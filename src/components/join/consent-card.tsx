@@ -49,7 +49,7 @@ export function ConsentCard({ kind }: { kind: ApplicationKind }) {
         </p>
         <h1
           id="consent-title"
-          className="font-display text-3xl font-semibold tracking-tight"
+          className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl"
         >
           {t("consent.title")}
         </h1>

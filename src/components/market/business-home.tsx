@@ -3,18 +3,16 @@
 import { useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import {
-  ArrowLeftRightIcon,
   ArrowRightIcon,
   BellRingIcon,
   CircleCheckIcon,
+  Clock3Icon,
   RecycleIcon,
-  ShieldCheckIcon,
   ShoppingCartIcon,
   StoreIcon,
   TagIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 
 import { useFormat } from "@/components/app/format";
 import {
@@ -28,13 +26,13 @@ import {
 import type { OrgWorkspace } from "@/components/app/use-workspace";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useCanOperate } from "@/components/workspace/permissions";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
-import { buyerKindFor } from "../../../convex/lib/chain";
 import { BuyButton } from "./buy-dialog";
 import { ListingCard } from "./listing-card";
-import { recycledFirst, tradeTotals } from "./logic";
+import { isAvailableTradeAction, recycledFirst, tradeTotals } from "./logic";
 import { TradeCard } from "./trade-card";
 import type { ListingView, TradeSide, TradeView } from "./types";
 import { useOrg } from "./use-org";
@@ -46,8 +44,8 @@ type Trades = FunctionReturnType<typeof api.market.trades>;
 const HOME_LIMIT = 4;
 
 /**
- * `/app` for yards, recyclers and manufacturers: what's in escrow, what
- * needs me (one tap each), and the newest lots I can buy. Manufacturers see
+ * `/app` for yards, recyclers and manufacturers: orders waiting for the gateway,
+ * order decisions, and the newest lots I can buy. Manufacturers see
  * recycled material first.
  */
 export function BusinessHome() {
@@ -57,11 +55,10 @@ export function BusinessHome() {
 
 function Home({ org }: { org: OrgWorkspace }) {
   const t = useTranslations("market.home");
-  const canSell = buyerKindFor(org.kind) !== null;
   const isMaker = org.kind === "manufacturer";
   const trades = useQuery(api.market.trades);
   const offers = useQuery(api.market.browse, {});
-  const mine = useQuery(api.market.myListings, canSell ? {} : "skip");
+  const mine = useQuery(api.market.myListings);
   const recycled = useRecycledCodes();
 
   return (
@@ -69,31 +66,21 @@ function Home({ org }: { org: OrgWorkspace }) {
       <div className="min-w-0">
         <AppPageHeader
           title={t("greeting", { name: org.name })}
-          lead={t("lead", { kind: org.kind })}
-          actions={<QuickActions canSell={canSell} />}
+          lead={t("lead")}
+          actions={<QuickActions />}
         />
       </div>
-      <Stats
-        trades={trades}
-        third={
-          canSell
-            ? { kind: "listings", listings: mine }
-            : {
-                kind: "recycledOffers",
-                count: offers?.filter((offer) =>
-                  recycled.has(offer.material.code),
-                ).length,
-              }
-        }
-      />
-      <WaitingForYou trades={trades} showSide={canSell} />
+      <Stats trades={trades} listings={mine} />
+      <WaitingForYou trades={trades} showSide />
       <LatestOffers offers={offers} recycled={recycled} isMaker={isMaker} />
     </>
   );
 }
 
-function QuickActions({ canSell }: { canSell: boolean }) {
+function QuickActions() {
+  const canOperate = useCanOperate();
   const t = useTranslations("market.home");
+  if (!canOperate) return null;
   return (
     <>
       <Button asChild size="lg" className="text-sm">
@@ -103,68 +90,52 @@ function QuickActions({ canSell }: { canSell: boolean }) {
         </Link>
       </Button>
       <Button asChild variant="outline" size="lg" className="text-sm">
-        {canSell ? (
-          <Link href="/app/sell">
-            <TagIcon aria-hidden />
-            {t("sell")}
-          </Link>
-        ) : (
-          <Link href="/app/trades">
-            <ArrowLeftRightIcon aria-hidden />
-            {t("trades")}
-          </Link>
-        )}
+        <Link href="/app/sell">
+          <TagIcon aria-hidden />
+          {t("sell")}
+        </Link>
       </Button>
     </>
   );
 }
 
-/** The third number: my lots on sale, or recycled lots for manufacturers. */
-type ThirdStat =
-  | { kind: "listings"; listings: ListingView[] | undefined }
-  | { kind: "recycledOffers"; count: number | undefined };
-
 /**
- * Four numbers: money in escrow, trades waiting for me, my lots on sale (or,
- * for manufacturers, recycled lots on offer), and trades done this month.
+ * Three numbers: accepted orders, decisions waiting for me,
+ * and my lots on sale, including manufacturer byproducts.
  */
 function Stats({
   trades,
-  third,
+  listings,
 }: {
   trades: Trades | undefined;
-  third: ThirdStat;
+  listings: ListingView[] | undefined;
 }) {
   const t = useTranslations("market");
   const format = useFormat();
-  // "This month" is fixed when the screen opens.
-  const [now] = useState(() => Date.now());
 
-  const isThirdLoading =
-    (third.kind === "listings" ? third.listings : third.count) === undefined;
-  if (trades === undefined || isThirdLoading) {
+  if (trades === undefined || listings === undefined) {
     return (
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4" aria-busy="true">
-        {[0, 1, 2, 3].map((index) => (
-          <Skeleton key={index} className="h-28 rounded-xl" />
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3" aria-busy="true">
+        {[0, 1, 2].map((index) => (
+          <Skeleton key={index} className="h-24 rounded-none" />
         ))}
       </div>
     );
   }
-  const totals = tradeTotals([...trades.buying, ...trades.selling], now);
+  const totals = tradeTotals([...trades.buying, ...trades.selling]);
 
   return (
     <section aria-labelledby="home-stats" className="flex flex-col gap-3">
       <h2 id="home-stats" className="sr-only">
         {t("home.statsTitle")}
       </h2>
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
         <StatCard
-          label={t("home.stats.escrow")}
-          value={format.money(totals.escrowPaise)}
-          hint={t("home.stats.escrowHint")}
-          icon={ShieldCheckIcon}
-          tone="good"
+          label={t("home.stats.gatewayPending")}
+          value={format.number(totals.pendingGateway)}
+          hint={t("trades.gatewayPending")}
+          icon={Clock3Icon}
+          tone="neutral"
         />
         <StatCard
           label={t("home.stats.waiting")}
@@ -173,25 +144,7 @@ function Stats({
           icon={BellRingIcon}
           tone={totals.waiting > 0 ? "warn" : "neutral"}
         />
-        {third.kind === "listings" ? (
-          <OnSaleStat listings={third.listings ?? []} />
-        ) : (
-          <StatCard
-            label={t("home.stats.offers")}
-            value={format.number(third.count ?? 0)}
-            hint={t("home.stats.offersHint")}
-            icon={RecycleIcon}
-            tone="good"
-          />
-        )}
-        <StatCard
-          label={t("home.stats.completed")}
-          value={format.number(totals.completedThisMonth)}
-          hint={t("home.stats.completedHint", {
-            amount: format.money(totals.completedValuePaise),
-          })}
-          icon={CircleCheckIcon}
-        />
+        <OnSaleStat listings={listings} />
       </div>
       <DemoNote>{t("sampleData")}</DemoNote>
     </section>
@@ -227,7 +180,9 @@ function WaitingForYou({
         ...trades.buying.map((trade) => ({ trade, side: "buyer" as const })),
         ...trades.selling.map((trade) => ({ trade, side: "seller" as const })),
       ]
-        .filter(({ trade }) => trade.actions.length > 0)
+        .filter(({ trade }) =>
+          trade.actions.some((action) => isAvailableTradeAction(action)),
+        )
         .toSorted((a, b) => b.trade.createdAt - a.trade.createdAt)
     : [];
 

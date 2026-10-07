@@ -479,12 +479,15 @@ describe("tenant-scoped API data", () => {
         expect(Object.keys(row).toSorted((a, b) => a.localeCompare(b))).toEqual(
           [
             "createdAt",
+            "gatewayRequired",
             "grams",
             "id",
             "invoiceNo",
+            "legacyReceiptNo",
             "materialCode",
             "paisePerKg",
             "paymentMode",
+            "paymentVerification",
             "side",
             "status",
             "totalPaise",
@@ -492,7 +495,9 @@ describe("tenant-scoped API data", () => {
           ],
         );
         expect(row.side).toBe("buyer");
-        expect(row.paymentMode).toBe("simulated");
+        expect(row.paymentMode).toBe("gateway_required");
+        expect(row.gatewayRequired).toBe(true);
+        expect(row.invoiceNo).toBeNull();
         expect(sourceBody.data).not.toContainEqual(row);
       }
     }
@@ -554,17 +559,23 @@ describe("tenant-scoped API data", () => {
           grams: expected[index].grams,
           paisePerKg: expected[index].paisePerKg,
           totalPaise: expected[index].totalPaise,
-          paymentMode: "simulated",
+          paymentMode: "gateway_required",
+          gatewayRequired: true,
+          invoiceNo: null,
+          legacyReceiptNo: expected[index].invoiceNo ?? null,
         });
         expect(Object.keys(row).toSorted((a, b) => a.localeCompare(b))).toEqual(
           [
             "createdAt",
+            "gatewayRequired",
             "grams",
             "id",
             "invoiceNo",
+            "legacyReceiptNo",
             "materialCode",
             "paisePerKg",
             "paymentMode",
+            "paymentVerification",
             "side",
             "status",
             "totalPaise",

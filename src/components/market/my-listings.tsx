@@ -14,6 +14,7 @@ import {
   StatusPill,
 } from "@/components/app/page-parts";
 import { Button } from "@/components/ui/button";
+import { useCanOperate } from "@/components/workspace/permissions";
 
 import { api } from "../../../convex/_generated/api";
 import { marketErrorKey } from "./errors";
@@ -110,6 +111,7 @@ function PastListing({ listing }: { listing: ListingView }) {
 
 /** Takes a lot off the market — after asking, since it can't be undone. */
 function WithdrawButton({ listing }: { listing: ListingView }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("market");
   const format = useFormat();
   const withdraw = useMutation(api.market.withdraw);
@@ -135,6 +137,7 @@ function WithdrawButton({ listing }: { listing: ListingView }) {
   }
 
   if (!isConfirming) {
+    if (!canOperate) return null;
     return (
       <Button
         variant="outline"

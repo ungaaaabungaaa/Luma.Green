@@ -3,6 +3,7 @@
 import { useQuery } from "convex/react";
 import {
   ChartNoAxesCombinedIcon,
+  CreditCardIcon,
   HouseIcon,
   IndianRupeeIcon,
   LifeBuoyIcon,
@@ -45,6 +46,18 @@ const nav: readonly NavItem[] = [
     count: { key: "waiting", label: "waiting for review" },
   },
   { href: "/admin/prices", label: "Prices", icon: IndianRupeeIcon },
+  {
+    href: "/admin/operations",
+    label: "Material review",
+    mobileLabel: "Materials",
+    icon: ShieldCheckIcon,
+  },
+  {
+    href: "/admin/payments",
+    label: "Payment setup",
+    mobileLabel: "Payments",
+    icon: CreditCardIcon,
+  },
   {
     href: "/admin/pilot",
     label: "Pilot numbers",
@@ -163,7 +176,7 @@ function Sidebar({ name }: { name: string }) {
         />
       </div>
       <nav aria-label="Admin">
-        <ul className="grid grid-cols-5 gap-1 lg:flex lg:flex-col">
+        <ul className="grid grid-cols-3 gap-1 sm:grid-cols-6 lg:flex lg:flex-col">
           {nav.map((item) => {
             const isActive = isCurrent(pathname, item.href);
             const count = item.count ? summary?.[item.count.key] : undefined;

@@ -9,6 +9,7 @@ import { twoFactor } from "better-auth/plugins";
 import { z } from "zod";
 
 import { isAdminEmail } from "./admin";
+import { PHONE_EMAIL_DOMAIN } from "./phone";
 
 type Context = Parameters<typeof getAuthoritativeSessionFromCtx>[0];
 const REAUTH_WINDOW_MS = 5 * 60_000;
@@ -76,19 +77,15 @@ function assertSupportedAction(ctx: Context) {
   const body: unknown = ctx.body;
   // Each policy flag must be checked independently: a malformed, unrelated
   // option must not disable a guard before the endpoint validates its body.
-  const phoneChange = z
-    .object({ updatePhoneNumber: z.boolean().optional() })
-    .safeParse(body);
   const deviceTrust = z
     .object({ trustDevice: z.boolean().optional() })
     .safeParse(body);
   if (
-    ctx.path === "/phone-number/request-password-reset" ||
-    ctx.path === "/phone-number/reset-password" ||
-    ctx.path === "/sign-in/phone-number" ||
-    (ctx.path === "/phone-number/verify" &&
-      phoneChange.success &&
-      phoneChange.data.updatePhoneNumber)
+    [
+      "/phone-number/request-password-reset",
+      "/phone-number/reset-password",
+      "/sign-in/phone-number",
+    ].includes(ctx.path)
   )
     forbidden("UNSUPPORTED_PHONE_ACCOUNT_CHANGE");
   if (
@@ -97,6 +94,29 @@ function assertSupportedAction(ctx: Context) {
     deviceTrust.data.trustDevice
   )
     forbidden("TRUST_DEVICE_DISABLED");
+}
+
+function isPhoneBinding(ctx: { path?: string; body?: unknown }): boolean {
+  return (
+    ctx.path === "/phone-number/verify" &&
+    z.object({ updatePhoneNumber: z.literal(true) }).safeParse(ctx.body).success
+  );
+}
+
+/** Binding proves possession for the current email identity; it never signs in. */
+async function requirePhoneBindingAssurance(ctx: Context) {
+  const session = await getAuthoritativeSessionFromCtx(ctx);
+  if (!session) forbidden("UNAUTHORIZED");
+  if (
+    !session.user.emailVerified ||
+    isAdminEmail(session.user.email) ||
+    session.user.email.endsWith(`@${PHONE_EMAIL_DOMAIN}`) ||
+    ("phoneNumber" in session.user && Boolean(session.user.phoneNumber))
+  )
+    forbidden("UNSUPPORTED_PHONE_ACCOUNT_CHANGE");
+  const proof = await readAssurance(ctx, session.session.id, session.user.id);
+  if (!proof || (isFactorEnabled(session.user) && !proof.secondFactor))
+    forbidden("SECURITY_REAUTH_REQUIRED");
 }
 
 /**
@@ -125,6 +145,10 @@ export function phoneTwoFactor() {
           matcher: () => true,
           handler: createAuthMiddleware(async (ctx) => {
             assertSupportedAction(ctx);
+            if (isPhoneBinding(ctx)) {
+              await requirePhoneBindingAssurance(ctx);
+              return;
+            }
 
             const isFactorVerification =
               ctx.path === "/two-factor/verify-totp" ||
@@ -166,7 +190,8 @@ export function phoneTwoFactor() {
       ],
       after: [
         {
-          matcher: (ctx) => signInPaths.has(ctx.path ?? ""),
+          matcher: (ctx) =>
+            signInPaths.has(ctx.path ?? "") && !isPhoneBinding(ctx),
           handler: createAuthMiddleware(async (ctx) => {
             // A trusted-device cookie issued before this policy cannot skip
             // the factor. New trust-device requests are rejected above.
@@ -186,7 +211,8 @@ export function phoneTwoFactor() {
         ...plugin.hooks.after.map((hook) => ({
           ...hook,
           matcher: (ctx: Parameters<typeof hook.matcher>[0]) =>
-            hook.matcher(ctx) || ctx.path === "/phone-number/verify",
+            hook.matcher(ctx) ||
+            (ctx.path === "/phone-number/verify" && !isPhoneBinding(ctx)),
         })),
         {
           matcher: (ctx) =>
@@ -196,7 +222,7 @@ export function phoneTwoFactor() {
             ctx.path === "/two-factor/enable" ||
             ctx.path === "/two-factor/disable",
           handler: createAuthMiddleware(async (ctx) => {
-            if (isAPIError(ctx.context.returned)) return;
+            if (isAPIError(ctx.context.returned) || isPhoneBinding(ctx)) return;
             if (ctx.path === "/two-factor/enable") {
               const session = ctx.context.session;
               if (session && isAdminEmail(session.user.email)) {

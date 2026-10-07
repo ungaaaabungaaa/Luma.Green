@@ -39,6 +39,7 @@ interface Kpi {
 /** The headline numbers, chosen by what each kind of business does. */
 function useKpis(impact: OrgImpact): Kpi[] {
   const t = useTranslations("impact.kpi");
+  const impactText = useTranslations("impact");
   const format = useFormat();
   const isFactory = impact.orgKind === "manufacturer";
 
@@ -55,8 +56,12 @@ function useKpis(impact: OrgImpact): Kpi[] {
   const co2e: Kpi = {
     key: "co2e",
     label: t("co2e"),
-    value: format.weight(Math.round(impact.co2eKg * 1000)),
-    hint: t("co2eHint"),
+    value:
+      impact.co2eKg === null
+        ? "—"
+        : format.weight(Math.round(impact.co2eKg * 1000)),
+    hint:
+      impact.co2eKg === null ? impactText("factorUnavailable") : t("co2eHint"),
     icon: LeafIcon,
     tone: "good",
   };
@@ -112,9 +117,12 @@ function ByFamily({ impact }: { impact: OrgImpact }) {
           icon: FAMILY_ICONS[row.family],
           value: row.grams,
           display: format.weight(row.grams),
-          detail: t("byFamily.co2e", {
-            amount: format.weight(Math.round(row.co2eKg * 1000)),
-          }),
+          detail:
+            row.co2eKg === null
+              ? t("factorUnavailable")
+              : t("byFamily.co2e", {
+                  amount: format.weight(Math.round(row.co2eKg * 1000)),
+                }),
         }))}
       />
     </Section>

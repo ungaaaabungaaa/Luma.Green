@@ -1,7 +1,10 @@
 import { expect, test } from "@playwright/test";
 
-// These script faces are lazy-loaded by the real Next build, not OS fallbacks.
+// Assert actual rendered web fonts, including Latin and both RTL locales.
 const scriptFaces = {
+  en: "Geist",
+  kn: "Noto Sans Kannada",
+  ur: "Noto Sans Arabic",
   as: "Noto Sans Bengali",
   or: "Noto Sans Oriya",
   si: "Noto Sans Sinhala",

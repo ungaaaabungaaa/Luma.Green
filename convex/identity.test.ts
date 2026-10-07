@@ -24,7 +24,18 @@ describe("signInOptions", () => {
 
     vi.stubEnv("AUTH_DEV_MODE", "true");
     const devMode = await t.query(api.identity.signInOptions, {});
-    expect(devMode.phone).toBe(true);
+    expect(devMode.phone).toBe(false);
+    vi.stubEnv("AUTH_LOCAL_TEST_MODE", "true");
+    vi.stubEnv("SITE_URL", "http://localhost:3000");
+    vi.stubEnv("CONVEX_SITE_URL", "http://127.0.0.1:3211");
+    vi.stubEnv("AUTH_LOCAL_EMAIL_INBOX_URL", "http://127.0.0.1:3215/deliver");
+    vi.stubEnv(
+      "AUTH_LOCAL_EMAIL_INBOX_TOKEN",
+      "private-test-inbox-0123456789abcdef",
+    );
+    const local = await t.query(api.identity.signInOptions, {});
+    expect(local.phone).toBe(true);
+    expect(local.email).toBe(true);
   });
 
   it("opens admin setup only with an email and valid bootstrap secret, before an admin exists", async () => {

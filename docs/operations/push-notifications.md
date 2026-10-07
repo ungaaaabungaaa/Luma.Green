@@ -82,6 +82,19 @@ itself is bounded separately.
   registration renews them. Registration prunes inactive bindings in its bounded
   ten-device check before applying the quota. Do not backfill a session from a
   profile or installation ID. See the [session-binding migration](../migrations/2026-10-03-push-session-binding.md).
+- Keep the application children mounted when a profile becomes ready or Better
+  Auth rotates its session after TOTP enrollment. Only the notification worker
+  uses the session ID as its React key. This lets device cleanup and registration
+  restart without clearing in-memory enrollment and backup-code screens. Publish
+  notification controls only for the current session; no enrollment secrets are
+  stored in browser storage. Account security clears its form on a change of
+  auth user ID. Admin setup preserves the first signup transition, then clears
+  secret state when that identity signs out or changes. Late enrollment work
+  cannot publish secrets into the replacement page.
+- A late registration result revokes only the session binding it started with.
+  The server compares `expectedSessionId` before deleting the device. A token
+  rebound to a new session can reuse the row ID and must survive old cleanup.
+  Explicit device or installation revocation still removes the current binding.
 - Member sign-out, admin sign-out and security reauthentication use the same
   `signOutWithDeviceRevocation(sessionId)` transaction in `src/lib/sign-out.ts`.
   It locks notification registration synchronously, before awaiting device

@@ -38,7 +38,7 @@ export function parseIntegrationRequest(url: URL): ParsedRequest {
   if (url.href.length > 8192) {
     return { kind: "error", status: 400, code: "INVALID_QUERY" };
   }
-  const names = url.searchParams.keys().toArray();
+  const names = [...url.searchParams.keys()];
   const allowed =
     resource === "trades" ? ["limit", "cursor", "side"] : ["limit", "cursor"];
   if (resource === "news") allowed.splice(0, allowed.length, "limit");

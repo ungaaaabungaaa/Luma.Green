@@ -4,6 +4,7 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
+import { CATALOGUE } from "../convex/lib/catalogue";
 import { localeMeta, locales } from "./i18n/locales";
 
 interface GuideBuild {
@@ -21,6 +22,67 @@ const hash = (file: string) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
 
 describe("the mandatory platform guide", () => {
+  it("keeps current admin captures aligned with reviewed local browser evidence", () => {
+    const evidence = JSON.parse(
+      readFileSync("docs/user-guide/admin-current-captures.json", "utf8"),
+    ) as {
+      sourceHashes: Record<string, string>;
+      captures: {
+        file: string;
+        screenshotSha256: string;
+        sourceKind: string;
+        productionAuthenticationTested: boolean;
+        localPasswordAndTotpAuthenticationTested: boolean;
+        providerExecutionTested: boolean;
+      }[];
+      diagnostics: {
+        blockedRequests: number;
+        blockedWrites: number;
+        browserErrors: number;
+      };
+      businessWritesAllowed: boolean;
+      providerCallsAllowed: boolean;
+      visualReview: { status: string };
+    };
+    expect(evidence.captures).toHaveLength(36);
+    expect(evidence.businessWritesAllowed).toBe(false);
+    expect(evidence.providerCallsAllowed).toBe(false);
+    expect(evidence.visualReview.status).toBe("passed");
+    expect(evidence.diagnostics.blockedRequests).toBe(0);
+    expect(evidence.diagnostics.blockedWrites).toBe(0);
+    expect(evidence.diagnostics.browserErrors).toBe(0);
+    for (const [file, digest] of Object.entries(evidence.sourceHashes))
+      expect(hash(file), file).toBe(digest);
+    const expected = ["light", "dark"].flatMap((theme) =>
+      [390, 768, 1440].flatMap((width) =>
+        [
+          "catalogue",
+          "classification",
+          "payments",
+          "vendor-dialog",
+          "policy-section",
+          "policy-dialog",
+        ].map(
+          (view) => `admin-current-en-${theme}-${String(width)}-${view}.png`,
+        ),
+      ),
+    );
+    expect(
+      evidence.captures
+        .map(({ file }) => file)
+        .toSorted((left, right) => left.localeCompare(right)),
+    ).toEqual(expected.toSorted((left, right) => left.localeCompare(right)));
+    for (const capture of evidence.captures) {
+      expect(hash(`docs/user-guide/screenshots/${capture.file}`)).toBe(
+        capture.screenshotSha256,
+      );
+      expect(capture.sourceKind).toBe("real-local-admin-current-ui");
+      expect(capture.productionAuthenticationTested).toBe(false);
+      expect(capture.localPasswordAndTotpAuthenticationTested).toBe(true);
+      expect(capture.providerExecutionTested).toBe(false);
+    }
+  });
+
   it("keeps the synthetic failure matrix aligned with its source and original browser pixels", () => {
     const evidence = JSON.parse(
       readFileSync("docs/user-guide/failure-captures.json", "utf8"),
@@ -184,6 +246,7 @@ describe("the mandatory platform guide", () => {
     const expected = new Set([
       `${directory}/guide.md`,
       "scripts/build-user-guide.py",
+      "scripts/document_links.py",
       "scripts/user-guide-requirements.txt",
       ...images,
       ...manifests,
@@ -268,6 +331,11 @@ describe("the mandatory platform guide", () => {
           "src/components/prices/price-placeholder.tsx",
           "src/components/auth/language-choice.tsx",
           "src/components/auth/login-flow.tsx",
+          "src/components/auth/auth-progress.tsx",
+          "src/components/auth/email-form.tsx",
+          "src/components/auth/factor-challenge.tsx",
+          "src/components/account/account-menu.tsx",
+          "src/components/ui/tabs.tsx",
           "src/components/auth/storage.ts",
           "src/app/[locale]/(auth)/layout.tsx",
           "src/i18n/locales.ts",
@@ -292,11 +360,21 @@ describe("the mandatory platform guide", () => {
       path: string;
       sha256: string;
       kind: string;
+      environment: "approved-cloud-development" | "isolated-local";
+      backendDeployment: string;
+      frontendOrigin: string;
+      backendOrigin: string;
+      backendSiteOrigin: string;
+      siteAgreement: boolean;
+      writesBlocked: boolean;
       sampleData: boolean;
       productionFrontendTested: boolean;
       authenticationTested: boolean;
       mutationsPerformed: boolean;
       rows: number;
+      materials: { code: string; name: string }[];
+      originalCatalogueRows: number;
+      localFixtureRows: number;
       historyPoints: number | null;
       theme: string;
       sourceHashes: Record<string, string>;
@@ -307,11 +385,74 @@ describe("the mandatory platform guide", () => {
     for (const capture of captures) {
       expect(hash(capture.path), capture.path).toBe(capture.sha256);
       expect(capture.kind).toBe("current-local-connected-demo");
+      expect(capture.writesBlocked).toBe(true);
+      const frontend = new URL(capture.frontendOrigin);
+      expect(frontend.protocol).toBe("http:");
+      expect(["localhost", "127.0.0.1"]).toContain(frontend.hostname);
+      expect(frontend.origin).toBe(capture.frontendOrigin);
+      if (capture.environment === "isolated-local") {
+        expect(capture.backendDeployment).toBe("isolated-anonymous-local");
+        expect(capture.siteAgreement).toBe(true);
+        const backend = new URL(capture.backendOrigin);
+        const backendSite = new URL(capture.backendSiteOrigin);
+        expect(backend.protocol).toBe("http:");
+        expect(["localhost", "127.0.0.1"]).toContain(backend.hostname);
+        expect(backend.port).toBe("3210");
+        expect(backend.origin).toBe(capture.backendOrigin);
+        expect(backendSite.protocol).toBe("http:");
+        expect(backendSite.hostname).toBe(backend.hostname);
+        expect(backendSite.port).toBe("3211");
+        expect(backendSite.origin).toBe(capture.backendSiteOrigin);
+      } else {
+        expect(capture.environment).toBe("approved-cloud-development");
+        expect(capture.backendDeployment).toBe("glorious-rooster-470");
+        expect(capture.backendOrigin).toBe(
+          "https://glorious-rooster-470.eu-west-1.convex.cloud",
+        );
+        expect(capture.backendSiteOrigin).toBe(
+          "https://glorious-rooster-470.eu-west-1.convex.site",
+        );
+      }
       expect(capture.sampleData).toBe(true);
       expect(capture.productionFrontendTested).toBe(false);
       expect(capture.authenticationTested).toBe(false);
       expect(capture.mutationsPerformed).toBe(false);
-      expect(capture.rows).toBe(26);
+      const originalMaterials = CATALOGUE.map(({ code, names }) => ({
+        code,
+        name: names.en,
+      }));
+      const localMaterials =
+        capture.environment === "isolated-local"
+          ? [
+              {
+                code: "LOCAL-PAPER-BYPRODUCT",
+                name: "Local test paper offcuts",
+              },
+              {
+                code: "LOCAL-PAPER-UNCLASSIFIED",
+                name: "Local test unclassified paper",
+              },
+            ]
+          : [];
+      expect(originalMaterials).toHaveLength(26);
+      expect(capture.originalCatalogueRows).toBe(26);
+      expect(capture.materials).toEqual(
+        expect.arrayContaining(originalMaterials),
+      );
+      expect(new Set(capture.materials.map(({ code }) => code)).size).toBe(
+        capture.materials.length,
+      );
+      for (const material of capture.materials)
+        expect([...originalMaterials, ...localMaterials]).toContainEqual(
+          material,
+        );
+      expect(capture.localFixtureRows).toBe(
+        capture.materials.filter(({ code }) =>
+          localMaterials.some((material) => material.code === code),
+        ).length,
+      );
+      expect(capture.rows).toBe(capture.materials.length);
+      expect(capture.rows).toBe(26 + capture.localFixtureRows);
       if (capture.theme === "dark") {
         expect(capture.historyPoints).toBeGreaterThanOrEqual(2);
         expect(capture.historyPoints).toBeLessThanOrEqual(30);
@@ -356,6 +497,8 @@ describe("the mandatory platform guide", () => {
         "scripts/guide-preview/provider.tsx",
         "src/app/[locale]/(account)/account/layout.tsx",
         "src/components/account/account-security.tsx",
+        "src/components/account/account-phone.tsx",
+        "src/lib/phone-auth.ts",
         "src/components/account/account-menu.tsx",
         "src/components/account/account-links.tsx",
         "src/components/account/use-sign-out.ts",
@@ -372,16 +515,27 @@ describe("the mandatory platform guide", () => {
         "src/components/notifications/device-provider.tsx",
         "messages/ar.json",
         "messages/ta.json",
+        "messages/kn.json",
         "src/components/showcase/role-story-image.tsx",
         "src/app/globals.css",
         "src/components/theme/theme-provider.tsx",
         "src/components/theme/theme-toggle.tsx",
         "src/components/app/app-shell.tsx",
+        "src/components/app/page-parts.tsx",
         "src/components/shop/home-cards.tsx",
+        "src/components/track/status-hero.tsx",
+        "src/components/track/booking-cards.tsx",
+        "src/components/track/shop-card.tsx",
+        "src/components/sell/money-card.tsx",
+        "src/components/sell/shop-option.tsx",
+        "src/components/sell/family.tsx",
+        "src/components/shop/request-cards.tsx",
         "src/components/saathi/job-actions.tsx",
         "src/components/saathi/job-card.tsx",
+        "src/components/saathi/week-earnings.tsx",
         "src/components/admin/console-shell.tsx",
         "src/components/ui/button.tsx",
+        "src/components/ui/tabs.tsx",
         "src/components/ui/chart.tsx",
         "src/components/ui/switch.tsx",
         "src/components/ui/input.tsx",
@@ -396,6 +550,11 @@ describe("the mandatory platform guide", () => {
         "src/lib/number-input.ts",
         "src/components/market/logic.ts",
         "src/components/market/material-filter.tsx",
+        "src/components/market/listing-card.tsx",
+        "src/components/market/trade-card.tsx",
+        "src/components/market/financial-lifecycle.tsx",
+        "src/components/market/sandbox-checkout.tsx",
+        "convex/lib/cashfreeLifecycleContract.ts",
         "src/components/shop/weigh.ts",
         "scripts/guide-preview/main.tsx",
         "scripts/guide-preview/navigation.tsx",
@@ -403,6 +562,7 @@ describe("the mandatory platform guide", () => {
         "scripts/guide-preview/locale.ts",
         "convex/lib/catalogue.ts",
         "scripts/guide-preview/queries.ts",
+        "scripts/guide-preview/finance-fixtures.ts",
         "scripts/guide-preview/selection-fixtures.tsx",
         "src/components/sell/basket-step.tsx",
         "src/components/sell/shop-step.tsx",
@@ -427,6 +587,7 @@ describe("the mandatory platform guide", () => {
         "src/components/insights/org-impact.tsx",
         "src/components/insights/bar-list.tsx",
         "src/components/insights/ledger-explainer.tsx",
+        "src/components/admin/prices/catalogue-setup.tsx",
         "scripts/guide-preview/image.tsx",
         "scripts/guide-preview/vite.config.mts",
         "messages/en.json",
@@ -482,6 +643,24 @@ describe("the mandatory platform guide", () => {
         "kabadiwala-stock-phone.png",
         "yard-sell.png",
         "yard-invoice.png",
+        ...["en", "ar", "kn"].flatMap((locale) =>
+          ["light", "dark"].flatMap((theme) =>
+            [390, 768, 1440].map(
+              (width) =>
+                `impact-unknown-${locale}-${String(width)}-${theme}.png`,
+            ),
+          ),
+        ),
+        ...["en", "ar", "kn"].flatMap((locale) =>
+          ["light", "dark"].flatMap((theme) =>
+            [390, 768, 1440].flatMap((width) =>
+              ["blank", "verified"].map(
+                (state) =>
+                  `account-phone-${state}-${locale}-${String(width)}-${theme}.png`,
+              ),
+            ),
+          ),
+        ),
         "recycler-impact.png",
         "recycler-impact-phone.png",
         "join-kabadiwala-phone.png",

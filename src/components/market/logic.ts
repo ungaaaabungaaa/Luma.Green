@@ -2,7 +2,6 @@ import { fixedDecimalInput } from "@/lib/number-input";
 
 import { CHAIN_MARKUP } from "../../../convex/lib/catalogue";
 import type { OrgKind } from "../../../convex/lib/chain";
-import { indiaToday } from "../../../convex/lib/onboarding";
 import type { ListingView, TradeStatus, TradeView } from "./types";
 
 /**
@@ -12,15 +11,6 @@ import type { ListingView, TradeStatus, TradeView } from "./types";
 
 /** A listing's note, in characters — the same limit convex/market.ts checks. */
 export const NOTE_MAX_LENGTH = 140;
-
-/** The steps of a trade that goes through, in order. */
-export const TRADE_STEPS = [
-  "requested",
-  "accepted",
-  "paid_to_escrow",
-  "dispatched",
-  "completed",
-] as const satisfies readonly TradeStatus[];
 
 // --- Reading what people type ---------------------------------------------------
 
@@ -136,29 +126,19 @@ export function isFarFromSuggestion(
 
 // --- Trades ---------------------------------------------------------------------
 
-export type StepState = "done" | "current" | "todo";
-
-/**
- * Where a trade stands on its way to delivery: steps that happened, the one
- * it's waiting for, and the rest. A declined trade has no steps to show.
- */
-export function stepStates(status: TradeStatus): StepState[] | null {
-  if (status === "declined") return null;
-  const reached = TRADE_STEPS.indexOf(status);
-  return TRADE_STEPS.map((_, index) => {
-    if (index <= reached) return "done";
-    return index === reached + 1 ? "current" : "todo";
-  });
-}
-
 export function isOpenTrade(status: TradeStatus): boolean {
   return status !== "completed" && status !== "declined";
+}
+
+/** Only order decisions remain available before gateway checkout is connected. */
+export function isAvailableTradeAction(action: TradeView["actions"][number]) {
+  return action === "accept" || action === "decline";
 }
 
 type Ordered = Pick<TradeView, "status" | "actions" | "createdAt">;
 
 function rank(trade: Ordered): number {
-  if (trade.actions.length > 0) return 0;
+  if (trade.actions.some((action) => isAvailableTradeAction(action))) return 0;
   return isOpenTrade(trade.status) ? 1 : 2;
 }
 
@@ -176,35 +156,22 @@ export function reachedAt(
 }
 
 export interface TradeTotals {
-  /** Money held in escrow on my trades, either side. */
-  escrowPaise: number;
-  /** Trades waiting for a step from me. */
+  /** Accepted orders paused until a payment gateway is connected. */
+  pendingGateway: number;
+  /** Orders waiting for an accept or decline decision. */
   waiting: number;
-  /** Trades completed this calendar month, India time. */
-  completedThisMonth: number;
-  completedValuePaise: number;
 }
 
-export function tradeTotals(
-  trades: readonly TradeView[],
-  now: number,
-): TradeTotals {
-  const month = indiaToday(now).slice(0, 7);
+export function tradeTotals(trades: readonly TradeView[]): TradeTotals {
   const totals: TradeTotals = {
-    escrowPaise: 0,
+    pendingGateway: 0,
     waiting: 0,
-    completedThisMonth: 0,
-    completedValuePaise: 0,
   };
   for (const trade of trades) {
-    if (trade.inEscrow) totals.escrowPaise += trade.totalPaise;
-    if (trade.actions.length > 0) totals.waiting += 1;
-    const completedAt = reachedAt(trade, "completed");
-    if (completedAt === null || !indiaToday(completedAt).startsWith(month)) {
-      continue;
+    if (trade.status === "accepted") totals.pendingGateway += 1;
+    if (trade.actions.some((action) => isAvailableTradeAction(action))) {
+      totals.waiting += 1;
     }
-    totals.completedThisMonth += 1;
-    totals.completedValuePaise += trade.totalPaise;
   }
   return totals;
 }

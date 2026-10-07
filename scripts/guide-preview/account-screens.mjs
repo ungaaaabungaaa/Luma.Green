@@ -48,7 +48,7 @@ function localizedScreens(locale) {
       heading: copy.market.home.greeting.replace("{name}", "Demo yard"),
       openMenuLabel: copy.app.more,
       width: locale === "ta" ? 768 : 390,
-      height: 1100,
+      height: 1800,
       theme: locale === "ar" ? "dark" : "light",
       viewportOnly: true,
     },

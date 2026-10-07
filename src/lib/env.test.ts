@@ -63,3 +63,38 @@ describe("optional observability configuration", () => {
     await expect(import("./env")).rejects.toThrow();
   });
 });
+
+describe("strict local auth delivery", () => {
+  it.each([
+    "https://luma.green",
+    // Intentionally insecure deceptive host: the local gate must reject it.
+    // eslint-disable-next-line unicorn/prefer-https
+    "http://localhost.evil.test",
+    "http://user:pass@localhost:3000",
+    "file:///tmp/inbox",
+  ])("rejects a non-loopback site %s", async (site) => {
+    vi.stubEnv("AUTH_LOCAL_TEST_MODE", "true");
+    vi.stubEnv("SITE_URL", site);
+    vi.stubEnv("CONVEX_SITE_URL", "http://127.0.0.1:3211");
+    const { isLocalAuthTestMode } = await import("./env");
+    expect(isLocalAuthTestMode()).toBe(false);
+  });
+  it("requires a secured local inbox and never exposes its token as a client setting", async () => {
+    vi.stubEnv("AUTH_LOCAL_TEST_MODE", "true");
+    vi.stubEnv("SITE_URL", "http://localhost:3100");
+    vi.stubEnv("CONVEX_SITE_URL", "http://127.0.0.1:3211");
+    vi.stubEnv("AUTH_LOCAL_EMAIL_INBOX_URL", "http://127.0.0.1:3215/deliver");
+    vi.stubEnv("AUTH_LOCAL_EMAIL_INBOX_TOKEN", "short");
+    vi.stubEnv("RESEND_API_KEY", "");
+    const env = await import("./env");
+    expect(env.authEmailEnv()).toBeNull();
+    vi.stubEnv(
+      "AUTH_LOCAL_EMAIL_INBOX_TOKEN",
+      "private-local-token-0123456789abcdef",
+    );
+    expect(env.authEmailEnv()?.kind).toBe("local");
+    expect(env.clientEnv).not.toHaveProperty("AUTH_LOCAL_EMAIL_INBOX_TOKEN");
+    vi.stubEnv("AUTH_LOCAL_EMAIL_INBOX_URL", "https://public-inbox.example");
+    expect(env.authEmailEnv()).toBeNull();
+  });
+});

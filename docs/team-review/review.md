@@ -2,7 +2,7 @@
 
 Cleaner Tomorrow in Motion.
 
-**Product review and team test pack — 3 October 2026 local design review**
+**Product review and team test pack — 7 October 2026 refinement review**
 
 From a household pickup to a recorded material trade, the platform gives each
 person in the recycling chain a clear next action. The team has built the
@@ -16,14 +16,19 @@ Demo quotes are labelled. The entity is not registered yet.
 
 ## 1. The product in one minute
 
-Luma.Green connects households, kabadiwalas, sorting yards, recyclers,
-manufacturers and Saathis. An admin verifies applicants and manages prices and
-support. Each role gets a workspace for its part of the material journey.
+Luma.Green connects households, kabadiwalas, preprocessors, recyclers,
+manufacturers and Saathis. Non-household material generators and supporting
+groups can request accounts. An admin verifies applicants and manages prices
+and support. Account approval does not grant access to every business record.
 
 The first loop is simple: select materials, compare available shop offers, book a
 pickup, record the actual weight, record cash or UPI payment, and keep the
-receipt. The second loop moves available material from shop to yard, recycler
-and manufacturer. Stock reservations and audit records connect these actions.
+receipt. The kabadiwala buys and pays the household directly. The second loop
+lets approved businesses offer and request material. Eligible manufacturer
+byproducts can return to any approved buyer handling that material. B2B
+payment-dependent steps use implemented gateway controls. Live activation stays
+off until the owner supplies approved policy, provider configuration and verified
+acceptance evidence.
 
 The proposed long-term value is continuity: fewer disconnected records between
 people who handle the same material. Whether that saves time and improves
@@ -32,21 +37,31 @@ remain future work, not a current certificate or revenue stream.
 
 ## 2. What the team has built
 
-| Area       | Current scope                                                                 | Evidence boundary                                                                           |
-| ---------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Recovery   | Material basket, offers, pickup/drop-off, tracking, weighing and receipts     | Complete live flow needs controlled accounts, configured backend and SMS                    |
-| Trade      | Role-based market, listings, reservations, trades, stock and receipts         | Escrow is simulated; no payment provider moves money                                        |
-| People     | Five application types, saved drafts, document checks and admin review        | Approval, file access and lifecycle cases need staging execution                            |
-| Work       | Saathi jobs, acceptance, completion and earnings views                        | No automated wage payout or employment-status determination                                 |
-| Operations | Admin verification, prices, support and bounded pilot reports                 | Reports must separate real and demo records; truncation is reported                         |
-| Access     | Phone OTP with optional user authenticator; admin password, TOTP and recovery | Local previews create no session; SMS/email and recovery custody need controlled acceptance |
-| Languages  | 33 maintained catalogues and 26 material names per locale                     | Structural/ICU coverage is complete; native-speaker review remains                          |
-| Updates    | Private inbox, read states and optional browser/mobile/desktop alerts         | Credential setup, signed builds and physical delivery remain separate gates                 |
-| Devices    | Responsive web, Expo mobile shell and Electron desktop shell                  | Signed releases, stores, physical-device checks and updates remain gates                    |
+| Area       | Current scope                                                                            | Evidence boundary                                                                                                                                              |
+| ---------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Recovery   | Material basket, offers, pickup/drop-off, tracking, weighing and receipts                | Complete live flow needs controlled accounts, configured backend and SMS                                                                                       |
+| Trade      | Approved-business market, listings, requests, accepted orders and stock views            | Gateway-only payments; no manual paid override. Cashfree lifecycle code is implemented; live account approval, policy, credentials and acceptance remain gates |
+| People     | Operator applications, stakeholder requests, workspace roles and team invites            | Approved stakeholders can read named, scoped shared reports; no blanket private-data access                                                                    |
+| Work       | Saathi jobs, acceptance, completion and earnings views                                   | No automated wage payout or employment-status determination                                                                                                    |
+| Operations | Admin verification, prices, support and bounded pilot reports                            | Reports must separate real and demo records; truncation is reported                                                                                            |
+| Access     | Verified email/password, phone OTP, optional user authenticator, admin password and TOTP | Real local handler tests use disposable accounts. External email and SMS delivery require separate provider checks                                             |
+| Languages  | 33 maintained catalogues and 26 material names per locale                                | Structural/ICU coverage is complete; native-speaker review remains                                                                                             |
+| Updates    | Private inbox, read states and optional browser/mobile/desktop alerts                    | Credential setup, signed builds and physical delivery remain separate gates                                                                                    |
+| Devices    | Responsive web, Expo mobile shell and Electron desktop shell                             | Signed releases, stores, physical-device checks and updates remain gates                                                                                       |
 
 These numbers describe code and catalogue coverage. They are not adoption or
 performance figures. The material catalogue is a product reference; sample
 rates and emission factors are not verified market or certification data.
+
+Lot, custody, transformation and quality screens record measured material
+evidence. They do not create stock, payments or certificates. The Evidence
+workspace records external invoice, transport and compliance references, keeps
+original records after corrections, and labels every reference unverified.
+Private quality files and controlled report sharing are implemented, with
+recipient, expiry and revocation checks. The financial lifecycle code covers
+verified collection, dispatch, receipt, refunds and settlement reconciliation.
+Live provider execution and subscription billing remain separate gates. See the
+launch plan's current execution record before promising a live feature.
 
 ## 3. A calmer interface with useful detail
 
@@ -159,7 +174,7 @@ case is a task to run, not a result that has already passed.
 
 1. Open Home on a phone-sized viewport. Show the material story, labelled demo prices or the disconnected price state,
    labelled demo quotes and primary actions.
-2. Open How it works. Explain household, shop, yard, recycler and manufacturer
+2. Open How it works. Explain household, shop, preprocessor, recycler and manufacturer
    hand-offs. State which information is recorded at each step.
 3. Open Join. Compare applicant requirements. Show the language menu in Kannada
    and Arabic, then return to the demo language.
@@ -182,26 +197,26 @@ templates and proving a real request are separate jobs. Do not paste secrets
 into this pack or a ticket. Use the provider dashboard and a team password
 manager. The full values and locations are in the account/deployment checklist.
 
-| Priority and owner               | Service or decision                                                                                  | Completion evidence                                                                        |
-| -------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Pilot — founder + engineering    | Register entity, choose domain ownership, verify Vercel production binding and HTTPS                 | Owner, billing, DNS, canonical origin and deployed revision recorded                       |
-| Pilot — engineering              | Separate Convex development, staging/demo and production; connect each frontend to the right backend | Matching deployment IDs, schema, guards, backup and restore drill                          |
-| Pilot — founder + operations     | MSG91 account; DLT principal entity, sender and approved OTP/Flow templates                          | Approval IDs stored securely; controlled send accepted and handset receipt observed        |
-| Pilot — engineering              | Better Auth secret, allowed origins, private first-admin setup token and recovery custody            | Controlled login, sign-out, TOTP, role denial and recovery tests                           |
-| Pilot — operations               | Verified shops, locations/radii, real price source and support contact                               | Admin-reviewed records, prices with owner/date and support drill                           |
-| Optional — engineering           | Resend sender for admin recovery; VAPID keys; Expo/EAS and APNs/FCM push setup                       | Admin reset keeps 2FA; controlled inbox/permission/revocation and physical-delivery checks |
-| Optional — engineering           | OpenRouter or approved self-hosted vision gateway                                                    | Spend cap, labelled photo evaluation, manual fallback and privacy review                   |
-| Optional — product + engineering | PostHog/GA4 and Sentry                                                                               | Consent-based safe page view and scrubbed error received in each enabled provider          |
-| Optional — founder               | Google Search Console and Bing Webmaster Tools                                                       | Domain ownership accepted and sitemap fetched                                              |
-| Native — release owner           | Apple/Google developer accounts, signing and store submissions; desktop signing/update hosting       | Named signed builds, real-device results and tested update/rollback                        |
-| Later — founder + finance        | Payment provider, escrow model and partner/legal terms                                               | Approved money flow and settlement/reconciliation plan before implementation               |
+| Priority and owner                               | Service or decision                                                                                             | Completion evidence                                                                                                        |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Pilot — founder + engineering                    | Register entity, choose domain ownership, verify Vercel production binding and HTTPS                            | Owner, billing, DNS, canonical origin and deployed revision recorded                                                       |
+| Pilot — engineering                              | Separate Convex development, staging/demo and production; connect each frontend to the right backend            | Matching deployment IDs, schema, guards, backup and restore drill                                                          |
+| Pilot — founder + operations                     | MSG91 account; DLT principal entity, sender and approved OTP/Flow templates                                     | Approval IDs stored securely; controlled send accepted and handset receipt observed                                        |
+| Pilot — engineering                              | Better Auth secret, allowed origins, private first-admin setup token and recovery custody                       | Controlled login, sign-out, TOTP, role denial and recovery tests                                                           |
+| Pilot — operations                               | Verified shops, locations/radii, real price source and support contact                                          | Admin-reviewed records, prices with owner/date and support drill                                                           |
+| Account delivery / optional alerts — engineering | Resend sender for normal email verification, reset and invites; VAPID keys; Expo/EAS and APNs/FCM push setup    | Admin reset keeps 2FA; controlled inbox/permission/revocation and physical-delivery checks                                 |
+| Optional — engineering                           | OpenRouter or approved self-hosted vision gateway                                                               | Spend cap, labelled photo evaluation, manual fallback and privacy review                                                   |
+| Optional — product + engineering                 | PostHog/GA4 and Sentry                                                                                          | Consent-based safe page view and scrubbed error received in each enabled provider                                          |
+| Optional — founder                               | Google Search Console and Bing Webmaster Tools                                                                  | Domain ownership accepted and sitemap fetched                                                                              |
+| Native — release owner                           | Apple/Google developer accounts, signing and store submissions; desktop signing/update hosting                  | Named signed builds, real-device results and tested update/rollback                                                        |
+| B2B launch — founder + finance                   | Cashfree Payment Gateway and Easy Split approval, approved fee/refund policy, vendor onboarding and credentials | Controlled live checkout, signed events, refund and per-order settlement acceptance; activation remains off until approved |
 
 Industry API access also requires the additive backend migration and owner acceptance checks. Optional news needs a suitable NewsAPI plan, a daily quota and a controlled live request; local tests do not establish provider access.
 
 Razorpay, Cloudflare R2, Mapbox and WhatsApp Business are not prerequisites
 for manual-entry pilot operation. Do not buy them only because their names
 appear in a roadmap. Files currently use Convex storage; location can use the
-browser. Resend is optional for admin password recovery. Push credentials are optional for device alerts; inbox records do not prove alert delivery. Apple Developer, Google Play and Expo/EAS accounts are not yet set up. Optional AI does not set prices.
+browser. Resend needs a verified sender for normal email verification, reset and invitations. Admin recovery preserves required TOTP. Push credentials are optional for device alerts; inbox records do not prove alert delivery. Apple Developer, Google Play and Expo/EAS accounts are not yet set up. Optional AI does not set prices.
 
 Setup references: [account checklist](../operations/launch-checklist.md),
 [service inventory](../operations/services.md),
@@ -253,3 +268,20 @@ opinion is claimed. A qualified adviser must settle entity and filing choices.
 Do not display the registered trademark symbol before registration is granted.
 Keep identity evidence and signed legal documents in restricted storage, with
 owners and versions; this repository holds the work checklist only.
+
+## Current local verification — 7 October 2026
+
+The combined connected suite passed 55 of 55 browser cases in 4.6 minutes
+against the local production build. The later stock-value correction passed
+20 focused tests and both connected byproduct cases in 9.6 seconds; the build
+passed again. Full lint previously passed with zero errors and 20 warnings,
+web/backend types passed, and native tests passed 49 mobile and 22 desktop cases.
+Final current-source captures, reviewed Word files, the full project check,
+protected PR/CI, production deployment and actual provider acceptance remain
+separate pending gates. These local results do not prove a live payment or
+external message delivery.
+
+The latest full unit preflight passed 2,306 of 2,322 tests in 79.58 seconds.
+All 16 failures are capture or Word freshness gates; no functional unit test
+failed. This is not a passing full project check; final lint and document gates
+remain pending.

@@ -244,6 +244,7 @@ export function workspaceFixture(): FunctionReturnType<
   const kind = isBusinessRole(role) ? role : "kabadiwala";
   return {
     kind: "org",
+    role: "owner",
     org: {
       id: "guide-org" as Id<"orgs">,
       kind,
@@ -272,6 +273,7 @@ export function offersFixture(): FunctionReturnType<typeof api.market.browse> {
   return [
     {
       id: "guide-listing" as Id<"listings">,
+      specification: undefined,
       seller: {
         name: "Demo material supplier",
         area: "Peenya",
@@ -283,6 +285,7 @@ export function offersFixture(): FunctionReturnType<typeof api.market.browse> {
       note: "Synthetic material lot for documentation",
       status: "open",
       isMine: false,
+      origin: undefined,
       createdAt: NOW - HOUR,
     },
   ];
@@ -364,6 +367,12 @@ export const fixtures: Record<string, unknown> = {
   "review:queue": queue,
   "review:get": application,
   "support:list": support,
+  // Read-only examples. No hazard decision or approval is fabricated.
+  "byproductClassification:list": materials.map((material) => ({
+    code: material.code,
+    name: material.names.en,
+    review: null,
+  })) satisfies FunctionReturnType<typeof api.byproductClassification.list>,
   "adminPrices:list": rateCard.rows.map((row) => ({
     ...row.material,
     stage: "scrap",
@@ -430,6 +439,7 @@ export const trackedBooking: TrackedBooking = {
   createdAt: NOW - HOUR,
 };
 const demoTrade: TradeView = {
+  specification: undefined,
   id: "guide-trade" as Id<"trades">,
   material: paper,
   grams: 100_000,
@@ -446,9 +456,11 @@ const demoTrade: TradeView = {
     kind: "kabadiwala",
   },
   invoiceNo: undefined,
+  legacyReceiptNo: undefined,
+  paymentVerification: "gateway_required",
   needsEwayBill: false,
   inEscrow: false,
-  actions: ["pay"],
+  actions: [],
   createdAt: NOW - HOUR,
 };
 export const tradesFixture: FunctionReturnType<typeof api.market.trades> = {
@@ -475,8 +487,9 @@ export const complianceFixture: ComplianceRecord = {
   receipts: [
     {
       tradeId: "guide-demo-receipt" as Id<"trades">,
-      invoiceNo: "DEMO-LG-001",
-      issuedAt: NOW - HOUR,
+      legacyReceiptNo: "DEMO-LG-001",
+      recordedAt: NOW - HOUR,
+      paymentVerification: "legacy_unverified",
       side: "purchase",
       counterparty: { name: "Demo recycler", kind: "recycler" },
       material: {
@@ -490,6 +503,7 @@ export const complianceFixture: ComplianceRecord = {
     },
   ],
   epr: {
+    evidenceStatus: "source_records_unverified",
     role: "manufacturer",
     from: "2026-04-01",
     to: "2027-03-31",
@@ -523,6 +537,7 @@ export const myListingsFixture: FunctionReturnType<
 > = [
   {
     id: "guide-own-listing" as Id<"listings">,
+    specification: undefined,
     seller: { name: "Demo sorting yard", kind: "yard", area: "Peenya" },
     material: paper,
     grams: 60_000,
@@ -530,15 +545,19 @@ export const myListingsFixture: FunctionReturnType<
     note: "Synthetic lot: sorted, dry newspaper for documentation.",
     status: "open",
     isMine: true,
+    origin: undefined,
     createdAt: NOW - HOUR,
   },
 ];
 export const invoiceFixture: TradeReceipt = {
   id: "guide-receipt" as Id<"trades">,
-  number: "DEMO-LG-002",
+  number: null,
+  legacyReceiptNo: "DEMO-LG-002",
+  legacyRecordedAt: NOW - HOUR,
+  paymentVerification: "legacy_unverified",
   status: "paid_to_escrow",
   side: "buyer",
-  issuedAt: NOW - HOUR,
+  issuedAt: null,
   releasedAt: null,
   seller: {
     name: "Demo neighbourhood shop",
@@ -554,7 +573,7 @@ export const invoiceFixture: TradeReceipt = {
   },
   line: { material: paper, grams: 100_000, paisePerKg: 1500, paise: 150_000 },
   totalPaise: 150_000,
-  inEscrow: true,
+  inEscrow: false,
   needsEwayBill: false,
 };
 export const impactFixture: OrgImpact = {
@@ -567,6 +586,16 @@ export const impactFixture: OrgImpact = {
   co2eKg: 100,
   families: [{ family: "paper", grams: 100_000, co2eKg: 100 }],
   since: NOW - 7 * 24 * HOUR,
+};
+
+/** Named synthetic missing-factor state; measured material remains visible. */
+export const unknownFactorImpactFixture: OrgImpact = {
+  ...impactFixture,
+  co2eKg: null,
+  families: impactFixture.families.map((family) => ({
+    ...family,
+    co2eKg: null,
+  })),
 };
 
 /** Draft values are already present on mount; captures never change or save them. */

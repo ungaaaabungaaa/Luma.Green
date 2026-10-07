@@ -1,0 +1,181 @@
+{
+  "reviewDate": "2026-10-07",
+  "scope": "Two maintained planning Word documents only; not the platform guide, cloud document, deployment or provider acceptance.",
+  "renderer": "Documents skill render_docx.py, sequential LibreOffice/PDF page rendering",
+  "documents": [
+    {
+      "source": "docs/product/platform-refinement-interview.md",
+      "sourceSha256": "d6f278a2e399fef72842e4741049d8df5bd6f791217ca82c56240477c31b434a",
+      "artifact": "output/docx/luma-green-platform-refinement-interview.docx",
+      "artifactSha256": "964c67733ab04997f6d659e47949ace4f430545461e0d22268212d49db1e5b90",
+      "pageCount": 12,
+      "renderedPdfSha256": "0e4846591aeeb0ee7c0f2710719a45831b4bc139d77e7ef7e65892d6afe5a208",
+      "renderDirectory": "/private/tmp/luma-docs-release/interview-final-render",
+      "status": "passed",
+      "pages": [
+        {
+          "page": 1,
+          "pngSha256": "493eaca3b8b4d24f75b40d135047d821480a3325d141c9d22343ce8b579bfd9d",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 2,
+          "pngSha256": "04665cc39be02c119e86f6ad42dae46c5947b9a587ad996d18fde7d0fd948856",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 3,
+          "pngSha256": "eeddbca7de7b542dd1d10d758fb077c92bcb45d9306903a45945bc9ee8a755c4",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 4,
+          "pngSha256": "2d2f382a1fc41b34d74339ac2cfea33aecb3fd510c9be01e6aaa92b8e7679dbf",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 5,
+          "pngSha256": "8b94c3cc090786923c70fa11ac7667ab3f99827208a3f0c2905540576ec35146",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 6,
+          "pngSha256": "f4bb102d42ee11c59d36396026d33c766d5677762d52de199c94a60b7c4655e8",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 7,
+          "pngSha256": "e5a2cb795aa2a7d33b41c8424bcb1a224bc5528a089e65de4866b811e2e1e3e0",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 8,
+          "pngSha256": "59e38fed4d08edefb2f57d91d8715bd63300a2673688d5ed1687ef03ea528267",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 9,
+          "pngSha256": "4a1c37e019aaf935d961a6d3fc7ed0607fda91b3f4bd90c899629cd67968a41c",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 10,
+          "pngSha256": "d4951b93f49ce52133bb8469e4e70742a3f21a9471d7f2a6f37b5c2a711f74f5",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 11,
+          "pngSha256": "5548c28b5c67af866933ec3ee86782cad03b83f165a37f14b4bf67fed194868c",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        },
+        {
+          "page": 12,
+          "pngSha256": "56845d037eb6b903627803bc6ded1e5fe69e2795daba685cdd2ac4930137a121",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        }
+      ],
+      "notes": [
+        "All page originals were visually inspected in this review sequence; byte-identical final pages retain that exact visual evidence.",
+        "Text and table cells are readable, contained within margins and free from overlap.",
+        "Table headers repeat; rows remain intact across page breaks.",
+        "Source execution checkpoints remain dated and separate from current release/provider readiness."
+      ]
+    },
+    {
+      "source": "docs/testing/launch-2026-10-10.md",
+      "sourceSha256": "f2b64ad1c03814838b0a166645e30c05c3885881ed5a766435f6d1c3d3771f7a",
+      "artifact": "output/docx/luma-green-launch-test-plan.docx",
+      "artifactSha256": "c356631cba847c02972d84481b64a0c4cd51a1fcb3b8ec85c164beae28b26c84",
+      "pageCount": 11,
+      "renderedPdfSha256": "544f54cfa4055c9c896f1c77b2b8e37573c4a20b94a94a541c3db466963eff5b",
+      "renderDirectory": "/private/tmp/luma-docs-release/launch-final-render",
+      "status": "passed",
+      "pages": [
+        {
+          "page": 1,
+          "pngSha256": "30b47cfcf95685cdbc9de31a4bfe732f0197d50e450e987ad071f8b0aaad7350",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 2,
+          "pngSha256": "d51e4ab7e3414f6d78683f6810a2e9a5eb7ef59b45ea476428f36c68c8b8bbf1",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 3,
+          "pngSha256": "4fa5f98a9b38ea9afec1875eb17a7c42c3c35b6ebcfc4aaaa694edd355b1af0c",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 4,
+          "pngSha256": "a73a61d018a92eefbe139e14f7b0dfdf6b912c7245a3bd3b94f274e92b6484e4",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 5,
+          "pngSha256": "f496dad22ea08a722b4add46690493911178daa94c40cb066b8a518234dcc257",
+          "inspection": "previously inspected original; final original is byte-identical",
+          "result": "passed"
+        },
+        {
+          "page": 6,
+          "pngSha256": "84b607c0e376bc62e85330b4df13833a7fbcc3720f7acd60c7dbd9081078f133",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        },
+        {
+          "page": 7,
+          "pngSha256": "e206714234fab90beecd6c4d548a8e95befb0834392c4aa16ab2d002f717cd81",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        },
+        {
+          "page": 8,
+          "pngSha256": "c1523c0a6e4897a5845c02df3717039e7b618a7fd88f27ae561ed843e3334d8d",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        },
+        {
+          "page": 9,
+          "pngSha256": "c42b2ae06ab6089367b9b8c4ea9e98a54c62efec5836444f4cfb28f7b033183f",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        },
+        {
+          "page": 10,
+          "pngSha256": "7478dd33adf611c42ec75d9dd88032cb30ad98cad4e4e7a4a7fde12dbf0498be",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        },
+        {
+          "page": 11,
+          "pngSha256": "97965461dc48297b6d4ce4f3506e3fb58078e12f44c5b77d193902a4a1468f21",
+          "inspection": "final original visually inspected",
+          "result": "passed"
+        }
+      ],
+      "notes": [
+        "All page originals were visually inspected in this review sequence; byte-identical final pages retain that exact visual evidence.",
+        "Text and table cells are readable, contained within margins and free from overlap.",
+        "Table headers repeat; rows remain intact across page breaks.",
+        "Source execution checkpoints remain dated and separate from current release/provider readiness."
+      ]
+    }
+  ]
+}

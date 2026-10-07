@@ -3,15 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { ConvexError } from "convex/values";
 import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
-import {
-  afterAll,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import arabicMessages from "../../../messages/ar.json";
 import messages from "../../../messages/en.json";
@@ -20,15 +12,6 @@ import { ContactMessageForm } from "./contact-form";
 
 const send = vi.hoisted(() => vi.fn());
 const search = vi.hoisted(() => ({ current: "" }));
-
-// Radix scrolls the selected option into view; jsdom has no layout API.
-beforeAll(() => {
-  Element.prototype.scrollIntoView = vi.fn();
-});
-afterAll(() => {
-  const stubbed = Element.prototype as Partial<Element>;
-  delete stubbed.scrollIntoView;
-});
 
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),

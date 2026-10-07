@@ -45,3 +45,7 @@ describe("short shop actions", () => {
     }
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

@@ -53,10 +53,16 @@ beforeEach(() => {
 });
 
 describe("admin navigation", () => {
-  it("keeps all five destinations and marks the active review section", () => {
+  it("keeps all seven destinations and marks the active review section", () => {
     render(<ConsoleShell>Review workspace</ConsoleShell>);
     const navigation = screen.getByRole("navigation", { name: "Admin" });
-    expect(within(navigation).getAllByRole("link")).toHaveLength(5);
+    expect(within(navigation).getAllByRole("link")).toHaveLength(7);
+    expect(
+      within(navigation).getByRole("link", { name: /Material/ }),
+    ).toHaveAttribute("href", "/admin/operations");
+    expect(
+      within(navigation).getByRole("link", { name: /Payment/ }),
+    ).toHaveAttribute("href", "/admin/payments");
     expect(
       within(navigation).getByRole("link", { current: "page" }),
     ).toHaveAttribute("href", "/admin/verification");

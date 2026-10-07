@@ -52,11 +52,11 @@ export const mine = query({
       }),
     ),
     totalGrams: v.number(),
-    /** Sum of the rows that have a market price. */
-    totalValuePaise: v.number(),
+    /** Full stock value; null if any held material lacks a market price. */
+    totalValuePaise: v.union(v.number(), v.null()),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     const today = indiaToday();
     const materials = await materialIndex(ctx);
     const inventory = await ctx.db
@@ -98,10 +98,9 @@ export const mine = query({
       buyerKind: buyerKindFor(org.kind),
       rows: sorted,
       totalGrams: sorted.reduce((sum, row) => sum + row.grams, 0),
-      totalValuePaise: sorted.reduce(
-        (sum, row) => sum + (row.valuePaise ?? 0),
-        0,
-      ),
+      totalValuePaise: sorted.some((row) => row.valuePaise === null)
+        ? null
+        : sorted.reduce((sum, row) => sum + (row.valuePaise ?? 0), 0),
     };
   },
 });

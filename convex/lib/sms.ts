@@ -1,12 +1,4 @@
-/**
- * How sign-in codes leave the system. Every variable is optional (AGENTS.md):
- *
- * - MSG91 keys present   → send through MSG91 on the DLT-approved template.
- * - `AUTH_DEV_MODE=true` → write the code to the Convex log (dev and preview
- *   deployments only — production never has this variable).
- * - neither              → phone sign-in is switched off.
- */
-
+/** Live SMS uses MSG91. Local delivery is separately gated in auth.ts. */
 export interface SmsEnv {
   MSG91_AUTH_KEY?: string;
   MSG91_OTP_TEMPLATE_ID?: string;
@@ -14,15 +6,14 @@ export interface SmsEnv {
 }
 
 export type CodeDelivery =
-  | { kind: "msg91"; authKey: string; templateId: string }
-  | { kind: "log" }
-  | { kind: "off" };
+  { kind: "msg91"; authKey: string; templateId: string } | { kind: "off" };
 
 export function codeDelivery(env: SmsEnv): CodeDelivery {
   const authKey = env.MSG91_AUTH_KEY?.trim();
   const templateId = env.MSG91_OTP_TEMPLATE_ID?.trim();
-  if (authKey && templateId) return { kind: "msg91", authKey, templateId };
-  return { kind: env.AUTH_DEV_MODE === "true" ? "log" : "off" };
+  return authKey && templateId
+    ? { kind: "msg91", authKey, templateId }
+    : { kind: "off" };
 }
 
 /** Minutes a code stays valid — matches `expiresIn` in convex/auth.ts. */

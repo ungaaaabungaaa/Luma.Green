@@ -120,7 +120,7 @@ export function SaathiForm({ application }: { application: Application }) {
   return (
     <form
       noValidate
-      className="flex flex-col gap-8"
+      className="flex flex-col gap-6"
       onSubmit={(event) => {
         void handleSubmit(onSubmit, () => {
           setShowFileErrors(true);

@@ -87,6 +87,15 @@ the role.
 | Working hours                  | Opens / closes                            | Yes                |                                                                       |
 | Weekly holiday                 | Days                                      | No                 |                                                                       |
 
+The application and approved organisation now accept optional `siteType` and
+`materialOrigins` declarations. The site values include a preprocessor yard,
+recycling or manufacturing facility, apartment community, office, hotel,
+resort and other site. Origins distinguish industrial byproducts from
+post-consumer material. These fields preserve source facts through admin
+approval; they are not yet collected by this form and do not grant trading
+rights or certify the material. Existing applications and organisations remain
+valid without them.
+
 **Step 2 — documents and photos**
 
 | Field                                             | Type                                               | Required          | Rules                                                                                                                                                         |

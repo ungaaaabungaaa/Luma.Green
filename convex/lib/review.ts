@@ -80,6 +80,8 @@ type ApplicationSections = Pick<
 export type OrgDraft = Pick<
   Doc<"orgs">,
   | "kind"
+  | "siteType"
+  | "materialOrigins"
   | "name"
   | "city"
   | "area"
@@ -217,6 +219,10 @@ export function orgDraftFrom(
   if (!business || !name || !address) return null;
   return {
     kind: application.kind,
+    ...(business.siteType && { siteType: business.siteType }),
+    ...(business.materialOrigins && {
+      materialOrigins: business.materialOrigins,
+    }),
     name,
     city: PILOT_CITY,
     area: areaFrom(address, business.locationTags),

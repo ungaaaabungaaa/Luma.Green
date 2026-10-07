@@ -12,6 +12,18 @@ const { data } = vi.hoisted(() => ({
   data: { receipt: undefined as TradeReceipt | null | undefined },
 }));
 
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session", userId: "fixture-user" },
+      },
+      isPending: false,
+      error: null,
+    }),
+  },
+}));
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: (query: Parameters<typeof getFunctionName>[0]) =>
@@ -33,10 +45,13 @@ const PAID = Date.parse("2026-09-28T09:00:00Z");
 function aReceipt(overrides: Partial<TradeReceipt> = {}): TradeReceipt {
   return {
     id: "trade1" as TradeReceipt["id"],
-    number: "LG-26-0008",
+    number: null,
+    legacyReceiptNo: "LG-26-0008",
+    legacyRecordedAt: PAID,
+    paymentVerification: "legacy_unverified",
     status: "paid_to_escrow",
     side: "buyer",
-    issuedAt: PAID,
+    issuedAt: null,
     releasedAt: null,
     seller: {
       name: "Ramesh Kabadi Store",
@@ -97,31 +112,41 @@ describe("InvoicePage", () => {
     expect(screen.getAllByText("₹70,000")).toHaveLength(2); // line and total
     expect(screen.getByText(/e-way bill must travel/)).toBeInTheDocument();
     expect(screen.getByText(/not a GST tax invoice/)).toBeInTheDocument();
+    expect(screen.getByText("Unverified")).toBeInTheDocument();
     expect(
-      screen.getByText("Held in escrow until the buyer confirms delivery."),
+      screen.getByText(
+        "Prototype record. Payment and delivery are unverified.",
+      ),
     ).toBeInTheDocument();
+    expect(screen.queryByText(/Held in escrow/)).not.toBeInTheDocument();
 
     await userEvent.click(screen.getByRole("button", { name: "Print" }));
     expect(print).toHaveBeenCalled();
   });
 
-  it("says when the money was released", () => {
+  it("does not present a prototype completion as a provider payout", () => {
     data.receipt = aReceipt({
       status: "completed",
       inEscrow: false,
-      releasedAt: PAID + 24 * 60 * 60 * 1000,
+      legacyRecordedAt: PAID + 24 * 60 * 60 * 1000,
     });
     render(
       <WithIntl>
         <InvoicePage id="trade1" />
       </WithIntl>,
     );
-    expect(screen.getByText(/^Released to the seller on/)).toBeInTheDocument();
+    expect(screen.getByText("Unverified")).toBeInTheDocument();
+    expect(
+      screen.queryByText(/^Released to the seller on/),
+    ).not.toBeInTheDocument();
   });
 
   it("waits for payment before there's a receipt", () => {
     data.receipt = aReceipt({
       number: null,
+      legacyReceiptNo: null,
+      legacyRecordedAt: null,
+      paymentVerification: "gateway_required",
       issuedAt: null,
       status: "accepted",
     });
@@ -148,3 +173,7 @@ describe("InvoicePage", () => {
     ).toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

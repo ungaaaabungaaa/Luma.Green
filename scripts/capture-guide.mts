@@ -162,6 +162,11 @@ const sharedSources = [
   "src/components/auth/phone-form.tsx",
   "src/components/auth/language-choice.tsx",
   "src/components/auth/login-flow.tsx",
+  "src/components/auth/auth-progress.tsx",
+  "src/components/auth/email-form.tsx",
+  "src/components/auth/factor-challenge.tsx",
+  "src/components/account/account-menu.tsx",
+  "src/components/ui/tabs.tsx",
   "src/components/auth/storage.ts",
   "src/app/[locale]/(auth)/layout.tsx",
   "src/i18n/locales.ts",
@@ -205,6 +210,7 @@ try {
     });
     const browserErrors: string[] = [];
     const blockedRequests: string[] = [];
+    const authRequests: string[] = [];
     page.on("pageerror", (error) => {
       browserErrors.push(error.message);
     });
@@ -214,7 +220,11 @@ try {
       });
     }
     await page.route("**/*", async (route) => {
-      if (new URL(route.request().url()).origin === origin.origin) {
+      const requestUrl = new URL(route.request().url());
+      if (requestUrl.pathname.startsWith("/api/auth/")) {
+        authRequests.push(requestUrl.pathname);
+        await route.abort();
+      } else if (requestUrl.origin === origin.origin) {
         await route.continue();
       } else {
         blockedRequests.push(new URL(route.request().url()).origin);
@@ -322,14 +332,47 @@ try {
         }
       }
       const path = `${directory}/${name}.png`;
-      if (sectionSelector) {
+      const sectionCapturePadding = name === "public-price-guide-dark" ? 16 : 0;
+      if (sectionSelector && sectionCapturePadding > 0) {
+        // Retain the real page gutter around the guide heading. This is a
+        // browser clip of unchanged DOM, not image padding or a layout edit.
+        const bounds = await page.locator(sectionSelector).boundingBox();
+        const size = page.viewportSize();
+        if (
+          !bounds ||
+          !size ||
+          bounds.x < sectionCapturePadding ||
+          bounds.y < sectionCapturePadding ||
+          bounds.x + bounds.width + sectionCapturePadding > size.width ||
+          bounds.y + bounds.height + sectionCapturePadding > size.height
+        ) {
+          throw new Error(
+            "The guide section must fit with its real page gutter.",
+          );
+        }
+        await page.screenshot({
+          path,
+          animations: "disabled",
+          caret: "hide",
+          clip: {
+            x: bounds.x - sectionCapturePadding,
+            y: bounds.y - sectionCapturePadding,
+            width: bounds.width + sectionCapturePadding * 2,
+            height: bounds.height + sectionCapturePadding * 2,
+          },
+        });
+      } else if (sectionSelector) {
         await page
           .locator(sectionSelector)
           .screenshot({ path, animations: "disabled", caret: "hide" });
       } else {
         await page.screenshot({ path, animations: "disabled", caret: "hide" });
       }
-      if (browserErrors.length > 0 || blockedRequests.length > 0) {
+      if (
+        browserErrors.length > 0 ||
+        blockedRequests.length > 0 ||
+        authRequests.length > 0
+      ) {
         throw new Error(
           `Capture ${route} had browser errors or external traffic`,
         );
@@ -337,10 +380,12 @@ try {
       captures.push({
         browserErrors,
         blockedRequests,
+        authRequests,
         sourceHashes,
         name,
         route,
         sectionSelector,
+        sectionCapturePadding,
         captureKind: sectionSelector ? "section" : "viewport",
         viewport: page.viewportSize(),
         theme: name.endsWith("-dark") ? "dark" : "light",

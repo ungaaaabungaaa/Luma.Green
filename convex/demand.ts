@@ -2,8 +2,11 @@ import { ConvexError, v } from "convex/values";
 
 import type { Doc } from "./_generated/dataModel";
 import { mutation, query, type QueryCtx } from "./_generated/server";
-import { buyerKindFor, sellerKindFor } from "./lib/chain";
-import { demandSchema, ECOSYSTEM_PAGE, scheduleBounds } from "./lib/ecosystem";
+import { buyerKindFor } from "./lib/chain";
+import { canDemand, createDemand } from "./lib/demand";
+import { ECOSYSTEM_PAGE, scheduleBounds } from "./lib/ecosystem";
+import { isOrdinaryMaterial } from "./lib/materialEligibility";
+import { canSupply } from "./lib/sourcing";
 import { vOrgKind } from "./lib/validators";
 import { vMaterialRef } from "./lib/views";
 import { requireOrg } from "./lib/workspace";
@@ -25,7 +28,7 @@ async function materialsFor(ctx: QueryCtx) {
 }
 
 function isMaterialEligible(org: Doc<"orgs">, material: Doc<"materials">) {
-  return material.active && org.families.includes(material.family);
+  return isOrdinaryMaterial(material) && org.families.includes(material.family);
 }
 
 function view(
@@ -62,7 +65,7 @@ export const board = query({
     truncated: v.boolean(),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     const { today, maxDate } = scheduleBounds();
     const materials = await materialsFor(ctx);
     const indexed = new Map(
@@ -74,10 +77,21 @@ export const board = query({
       .order("desc")
       .take(ECOSYSTEM_PAGE + 1);
     const buyerKind = buyerKindFor(org.kind);
-    const familyPages = buyerKind
-      ? await Promise.all(
-          [...new Set(org.families)].map((family) =>
-            ctx.db
+    const familyPages = await Promise.all(
+      [...new Set(org.families)].map((family) => {
+        if (org.kind === "manufacturer")
+          return ctx.db
+            .query("materialDemands")
+            .withIndex("by_city_status_family_neededBy", (q) =>
+              q
+                .eq("city", org.city)
+                .eq("status", "open")
+                .eq("family", family)
+                .gte("neededBy", today),
+            )
+            .take(ECOSYSTEM_PAGE + 1);
+        return buyerKind
+          ? ctx.db
               .query("materialDemands")
               .withIndex("by_city_status_buyerKind_family_neededBy", (q) =>
                 q
@@ -87,10 +101,10 @@ export const board = query({
                   .eq("family", family)
                   .gte("neededBy", today),
               )
-              .take(ECOSYSTEM_PAGE + 1),
-          ),
-        )
-      : [];
+              .take(ECOSYSTEM_PAGE + 1)
+          : Promise.resolve([]);
+      }),
+    );
     const rows = familyPages
       .flat()
       .toSorted(
@@ -111,7 +125,7 @@ export const board = query({
         !material ||
         buyer?.status !== "active" ||
         buyer.city !== org.city ||
-        buyer.kind !== buyerKindFor(org.kind) ||
+        !canSupply(org, buyer, material) ||
         !isMaterialEligible(org, material) ||
         !isMaterialEligible(buyer, material)
       )
@@ -122,9 +136,9 @@ export const board = query({
     return {
       today,
       maxDate,
-      canPost: sellerKindFor(org.kind) !== null,
+      canPost: materials.some((material) => canDemand(org, material)),
       materials: materials
-        .filter((material) => isMaterialEligible(org, material))
+        .filter((material) => canDemand(org, material))
         .map(({ code, names, family }) => ({ code, names, family })),
       mine,
       available: available.slice(0, ECOSYSTEM_PAGE),
@@ -147,43 +161,7 @@ export const post = mutation({
   returns: v.id("materialDemands"),
   handler: async (ctx, args) => {
     const { org, profile } = await requireOrg(ctx);
-    if (!sellerKindFor(org.kind)) throw new ConvexError("WRONG_ROLE");
-    const parsed = demandSchema.safeParse(args);
-    if (!parsed.success) throw new ConvexError("INVALID_DEMAND");
-    const material = await ctx.db
-      .query("materials")
-      .withIndex("by_code", (q) => q.eq("code", parsed.data.materialCode))
-      .unique();
-    if (!material || !isMaterialEligible(org, material))
-      throw new ConvexError("MATERIAL_NOT_ALLOWED");
-    const recent = await ctx.db
-      .query("materialDemands")
-      .withIndex("by_org", (q) => q.eq("orgId", org._id))
-      .order("desc")
-      .take(1);
-    const now = Date.now();
-    if (recent[0] && now - recent[0].createdAt < 10_000)
-      throw new ConvexError("TRY_LATER");
-    const id = await ctx.db.insert("materialDemands", {
-      ...parsed.data,
-      city: org.city,
-      buyerKind: org.kind,
-      family: material.family,
-      orgId: org._id,
-      createdBy: profile._id,
-      status: "open",
-      createdAt: now,
-      updatedAt: now,
-    });
-    await ctx.db.insert("auditLog", {
-      orgId: org._id,
-      actorProfileId: profile._id,
-      action: "demand.posted",
-      entityTable: "materialDemands",
-      entityId: id,
-      createdAt: now,
-    });
-    return id;
+    return createDemand(ctx, org, profile, args);
   },
 });
 

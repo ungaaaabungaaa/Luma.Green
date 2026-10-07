@@ -97,8 +97,8 @@ are fixture evidence, not authentication, permission or provider proof.
   cannot save a price, approve a business, send a message, or change an account.
 - `locale.ts` loads the active route language from the real message catalogue. `translations.ts` resolves the actual async `HouseholdLayout` translation call from that same catalogue. Its markup is imported unchanged. All registered locales are supported by the harness.
 - `image.tsx` uses local Vite image URLs in place of the Next optimizer. It preserves image classes, sizing and fill positioning. This adapter does not test production image delivery; production browser checks cover that. Remove it when authenticated Next captures replace the fixture harness.
-- `navigation.tsx` adapts Next links, paths and initial query parameters to the standalone preview. This
-  tests component rendering, not the Next router or server route guards.
+- `navigation.tsx` adapts Next links, paths and initial query parameters to the standalone preview. Its `useSearchParams` adapter reads an initial snapshot; it does not subscribe to history changes. Open a Requests fixture with `?tab=today` or `?tab=done` to capture that state. Tab navigation behavior, Next router updates and server route guards require the connected tests and captures.
+- The fixture route map has no Lots and quality route or traceability/quality query data. The shared navigation can display its link, but this preview cannot show or verify that destination. Use the actual connected lot captures; do not treat the preview's default home fallback as lot evidence.
 - `process.env` is an explicit empty configuration plus `NODE_ENV`. No application
   environment file, credentials, development auth flag or backend URL is loaded.
 - The capture script blocks every non-local HTTP request. No private attachment
@@ -280,3 +280,68 @@ Revoke, then close the dialog with Escape without confirming a write. A successf
 script is not a visual review: inspect the images before recording completion.
 It does not prove key issuance, revocation, provider execution, authentication or
 production deployment. Do not click Create key during a guide capture.
+
+## Current refinement matrix
+
+`capture.mjs` now plans **126** original fixture views: the retained 72 plus
+18 named unknown-factor impact views and 36 phone-verification views. The new
+views cover English, Arabic and Kannada, light/dark, and 390/768/1440 px.
+Unknown-factor views keep measured grams and show unavailable CO₂e. Phone views
+show either a blank form or verified status for a fictional verified email
+identity; all account mutations reject. The fixture banner is always visible.
+
+The separate real-local admin script plans **36** originals (catalogue setup, material classification,
+payment setup, blank vendor dialog, payment-policy section and blank policy
+dialog × two themes × three widths):
+
+```sh
+pnpm --config.verify-deps-before-run=false exec jiti scripts/capture-admin-guide.mts --capture
+```
+
+It requires existing private local admin credentials with completed TOTP and the
+approved loopback backend with live activation off. It does not enroll an admin,
+save a vendor or policy, reconcile, refund, cancel or call a provider. The exact synthetic `local_test_shop_vendor` reference may be shown;
+any other displayed vendor reference fails the privacy guard. Inspect originals
+before changing its manifest's pending visual review to passed.
+
+Legacy synthetic trades in the fixture harness have no financial lifecycle.
+Their lifecycle query returns null, provider orders are empty, and sandbox and
+live checkout availability are false. These defaults do not fabricate payment
+evidence; every fixture mutation or action still rejects.
+
+## Financial interface examples
+
+The separate `capture-finance.mjs` runner plans **36** originals: an authorized
+seller's blank dispatch-reference form and an order held for financial review,
+in EN/AR/KN, light/dark, at 390/768/1440 px. It mounts the actual
+`FinancialLifecycle` component in the existing isolated preview. The exact
+`/app/finance-example` preview route, named scenario and fictional trade ID are
+all required. Ordinary synthetic trades still return no financial lifecycle.
+
+```sh
+GUIDE_FIXTURE_ORIGIN=http://127.0.0.1:3203 node scripts/guide-preview/capture-finance.mjs
+```
+
+Both the persistent fixture banner and the adjacent simulated-state notice must
+be visible. The dispatch example opens the form but leaves its reference empty;
+Confirm remains disabled. The hold example has no financial action. No mutation,
+provider call, session or real payment record is created. External and non-read
+HTTP requests are rejected. These examples explain controls and cannot prove
+authentication, approval, payment, allocation, dispatch or settlement.
+
+The runner writes `finance-fixture-captures.json` with source, production CSS,
+original-image and font evidence. Visual review starts pending. Inspect every
+original before marking it passed or inserting a selected figure in the guide.
+Use `finance-fixture-authorized-dispatch-en-light-1440.png` for the chapter 12
+example, captioned as a synthetic interface example only. Keep the existing
+126-view and 78-view manifests separate.
+
+The three operator-menu fixtures use an 1800 px-tall viewport after the workbook
+modules added navigation entries. This keeps the complete, unchanged scrollable
+menu and the separate provenance note visible without overlap. Width remains
+390 px for English/Arabic and 768 px for Tamil; this is a documentation frame,
+not evidence that every menu entry fits a normal phone screen without scrolling.
+
+The sign-out failure examples also use a tall 1800px documentation viewport. This keeps the long navigation, retry control, provenance label and error toast visible together. It is not a claim that the whole menu fits a normal phone viewport.
+
+API access tablet screenshots use a 1600px tall documentation viewport. This keeps fixed navigation below the complete form; it is not evidence that the form fits a normal tablet screen without scrolling. Phone captures retain 844px height and include separate lower-control and dialog views.

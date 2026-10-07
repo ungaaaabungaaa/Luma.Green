@@ -1,0 +1,62 @@
+{
+  "reviewed_at": "2026-10-06T23:14:39.247617Z",
+  "builder": "scripts/build-planning-docs.py --document all",
+  "runtime": "Codex bundled Python26.905.11957",
+  "reviewer": "business_release",
+  "documents": [
+    {
+      "document": "output/docx/luma-green-platform-refinement-interview.docx",
+      "source": "docs/product/platform-refinement-interview.md",
+      "source_sha256": "7d60a80ee56c9cfbf9a45e768456cb165efbcde13df1f30e4f5439c53a807214",
+      "docx_sha256": "8e100c857e1c8423858f0e69319769ed2da710a7382cd7bdf3b583fdb49bbac6",
+      "pages": 13,
+      "reviewed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      "review_method": "Every original rendered page inspected at readable resolution. Latest unit-result edit changed only page 13; these were re-opened and inspected. All other final pages are byte-identical to inspected originals.",
+      "result": "No clipped text, overlap, missing glyphs or broken table rows observed.",
+      "hyperlinks": 13,
+      "repository_links": "Absolute clickable GitHub main relationships verified in OOXML.",
+      "rendered_page_hashes": {
+        "page-1.png": "493eaca3b8b4d24f75b40d135047d821480a3325d141c9d22343ce8b579bfd9d",
+        "page-2.png": "04665cc39be02c119e86f6ad42dae46c5947b9a587ad996d18fde7d0fd948856",
+        "page-3.png": "eeddbca7de7b542dd1d10d758fb077c92bcb45d9306903a45945bc9ee8a755c4",
+        "page-4.png": "9c1a0c9ebb507cbb7241ebd7187fb150cf1ad0107ef14ee43c550958a2389276",
+        "page-5.png": "8b94c3cc090786923c70fa11ac7667ab3f99827208a3f0c2905540576ec35146",
+        "page-6.png": "ec8a60ba7dd8155234ac20e265bd6ac7c4c3452ad29187cc6f7a8ace31f5d023",
+        "page-7.png": "e5a2cb795aa2a7d33b41c8424bcb1a224bc5528a089e65de4866b811e2e1e3e0",
+        "page-8.png": "59e38fed4d08edefb2f57d91d8715bd63300a2673688d5ed1687ef03ea528267",
+        "page-9.png": "f35661ca28c7077cc3ddedfb82eaa953661a8e9081bee556a01cdc324d9fccd0",
+        "page-10.png": "65ef0134f3fb7f88b6cdedfacdc96138d2d4d5edfed31a37510a03cfd5be1977",
+        "page-11.png": "5548c28b5c67af866933ec3ee86782cad03b83f165a37f14b4bf67fed194868c",
+        "page-12.png": "e54628bbeea48fab90d82d3d07ffa9a26f44b9daa9ebe94f6dd94f5c605b15ea",
+        "page-13.png": "c833b4edbc45b2aa3fb6a44cdbe6178f7649cda9201b69e7355ab7430ac7dbb9"
+      }
+    },
+    {
+      "document": "output/docx/luma-green-launch-test-plan.docx",
+      "source": "docs/testing/launch-2026-10-10.md",
+      "source_sha256": "3b7ae2b5e3426b3bfb9df8f1b8151deed49726780e8dcc55f4413b1efb346186",
+      "docx_sha256": "06c9b4f5310d20d686b96f2462124aa89e466936a66ee1b944465331f0a5ddbc",
+      "pages": 12,
+      "reviewed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "review_method": "Every original rendered page inspected at readable resolution. After final Markdown table formatting, all 12 newly rendered pages are byte-identical to those inspected originals.",
+      "result": "No clipped text, overlap, missing glyphs or broken table rows observed.",
+      "hyperlinks": 17,
+      "repository_links": "Absolute clickable GitHub main relationships verified in OOXML.",
+      "rendered_page_hashes": {
+        "page-1.png": "1968e3a0d28164d30fe65afbd60df71aee6357a445168c04baa02184d29b3d23",
+        "page-2.png": "aa943e903636f84eb8117ec3220cbc676592e31b1d763873237b5c6d6c1c0201",
+        "page-3.png": "f46d1991d015af5933d1a6f6eb2072699a779e9b4185514b4eb7546893c78141",
+        "page-4.png": "b813b6f1ed33f81e6f5f70c2806e3b5b98823a28346d6f2d3b3f984e88f1a351",
+        "page-5.png": "f4ca91d2bac45a19e39f610645843b028d33d14bc785ecd7f28e3dae0e7fc44b",
+        "page-6.png": "a0acc3baf8abf23126eacc33c76322ee1bc24390f7e8faa23d31d9c3473795b2",
+        "page-7.png": "e864c3b79aef8ee5afe52173b3ffcf9e66d57f4b455ecb0b7ea682e93f33d766",
+        "page-8.png": "87f38288d38ef80279a0424e6bfc6a03fa3388dbb6762d26470ebe726506a329",
+        "page-9.png": "c42b2ae06ab6089367b9b8c4ea9e98a54c62efec5836444f4cfb28f7b033183f",
+        "page-10.png": "c3789116748ddab58d8a2fb5825647136febda09cea21879042105253b8ce120",
+        "page-11.png": "0dc741a3762ab28a490c151d9e90a5857fde6ce815b95021751e5599ebafc2ea",
+        "page-12.png": "a8fefbcd91f88471c8045a00951e8120cd074accb0106ba4f75a580c343128e8"
+      }
+    }
+  ],
+  "limits": "Planning documents only; main platform guide, team review pack and native Google Docs publication remain separate pending evidence."
+}

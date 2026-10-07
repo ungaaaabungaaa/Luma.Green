@@ -25,6 +25,7 @@ export function WithIntl({
 
 export function aTrade(overrides: Partial<TradeView> = {}): TradeView {
   return {
+    specification: undefined,
     id: "trade1" as TradeView["id"],
     material: {
       code: "PAPER-NEWS",
@@ -42,6 +43,8 @@ export function aTrade(overrides: Partial<TradeView> = {}): TradeView {
       kind: "yard",
     },
     invoiceNo: undefined,
+    legacyReceiptNo: undefined,
+    paymentVerification: "not_applicable",
     needsEwayBill: false,
     inEscrow: false,
     actions: [],
@@ -52,6 +55,7 @@ export function aTrade(overrides: Partial<TradeView> = {}): TradeView {
 
 export function aListing(overrides: Partial<ListingView> = {}): ListingView {
   return {
+    specification: undefined,
     id: "listing1" as ListingView["id"],
     seller: {
       name: "Ramesh Kabadi Store",
@@ -68,6 +72,7 @@ export function aListing(overrides: Partial<ListingView> = {}): ListingView {
     note: "Dry, bundled",
     status: "open",
     isMine: false,
+    origin: undefined,
     createdAt: Date.parse("2026-10-01T10:00:00Z"),
     ...overrides,
   };

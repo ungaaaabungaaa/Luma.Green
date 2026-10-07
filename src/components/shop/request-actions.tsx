@@ -16,6 +16,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useCanOperate } from "@/components/workspace/permissions";
 
 import { api } from "../../../convex/_generated/api";
 import type { Id } from "../../../convex/_generated/dataModel";
@@ -26,6 +27,7 @@ import { actionErrorKey } from "./bookings";
  * colour; declining can't be undone, so it asks once more.
  */
 export function AcceptDecline({ bookingId }: { bookingId: Id<"bookings"> }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("shop");
   const respond = useMutation(api.shop.respond);
   const [pending, setPending] = useState<"accept" | "decline" | null>(null);
@@ -44,6 +46,7 @@ export function AcceptDecline({ bookingId }: { bookingId: Id<"bookings"> }) {
     }
   }
 
+  if (!canOperate) return null;
   return (
     <div className="grid grid-cols-2 gap-3">
       <Button
@@ -111,6 +114,7 @@ export function StartTripButton({
   bookingId: Id<"bookings">;
   className?: string;
 }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("shop");
   const startTrip = useMutation(api.shop.startTrip);
   const [isBusy, setIsBusy] = useState(false);
@@ -127,6 +131,7 @@ export function StartTripButton({
     }
   }
 
+  if (!canOperate) return null;
   return (
     <Button
       type="button"

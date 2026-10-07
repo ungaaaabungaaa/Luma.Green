@@ -28,9 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 /** Public: what each role is and a way in — docs/architecture/urls.md. */
 export default async function JoinPage() {
-  const [t, nav] = await Promise.all([
+  const [t, nav, stakeholder] = await Promise.all([
     getTranslations("join"),
     getTranslations("nav"),
+    getTranslations("stakeholder"),
   ]);
 
   return (
@@ -43,6 +44,15 @@ export default async function JoinPage() {
       />
       <Container className="flex flex-col gap-8 py-8 lg:py-12">
         <RoleCards />
+        <div className="border-t border-border pt-6">
+          <Link
+            href="/join/stakeholder"
+            className="inline-flex min-h-11 items-center text-base font-semibold text-primary underline-offset-4 hover:underline"
+          >
+            {stakeholder("title")}
+          </Link>
+          <p className="text-sm text-muted-foreground">{stakeholder("note")}</p>
+        </div>
         <JoinPreparation />
         <aside className="flex flex-col flex-wrap gap-3 border-y py-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">

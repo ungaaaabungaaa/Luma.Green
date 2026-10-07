@@ -111,10 +111,10 @@ export function ConsoleHome() {
       <section className="flex min-w-0 flex-col gap-4 border-t border-border pt-6">
         <header className="flex flex-col gap-1.5">
           <h2 className="font-display text-lg font-semibold tracking-tight">
-            Latest sign-ins
+            Recent accounts
           </h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            People who confirmed their phone number, newest first.
+            New account profiles, newest first.
           </p>
         </header>
         <div>
@@ -191,9 +191,9 @@ function RecentSignIns({
   if (people.length === 0) {
     return (
       <div className="border-b py-6">
-        <p className="text-sm font-medium">No verified phone sign-ins yet.</p>
+        <p className="text-sm font-medium">No account profiles yet.</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          People appear here after they confirm their phone number.
+          New accounts appear here after their profile is created.
         </p>
       </div>
     );
@@ -204,7 +204,7 @@ function RecentSignIns({
         <TableRow>
           <TableHead>Phone</TableHead>
           <TableHead>Language</TableHead>
-          <TableHead>First signed in</TableHead>
+          <TableHead>Profile created</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

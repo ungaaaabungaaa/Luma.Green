@@ -1,6 +1,6 @@
 # 0009. Money stays off the platform in the pilot
 
-- **Status:** Decided
+- **Status:** Superseded by 0019 for business trades
 - **Date:** 29 Sep 2026
 - **Deciders:** founder, Claude
 

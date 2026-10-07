@@ -1,10 +1,12 @@
-import { screen, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useMutation, useQuery } from "convex/react";
+import { NextIntlClientProvider } from "next-intl";
 import type { ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { Id } from "../../../convex/_generated/dataModel";
+import messages from "../../../messages/en.json";
 import { RequestsPage } from "./requests-page";
 import {
   booking,
@@ -21,6 +23,18 @@ const mocks = vi.hoisted(() => ({
   search: { current: new URLSearchParams() },
 }));
 
+vi.mock("@/lib/auth-client", () => ({
+  authClient: {
+    useSession: () => ({
+      data: {
+        user: { id: "fixture-user" },
+        session: { id: "fixture-session", userId: "fixture-user" },
+      },
+      isPending: false,
+      error: null,
+    }),
+  },
+}));
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useQuery: vi.fn(),
@@ -115,6 +129,49 @@ beforeEach(() => {
 });
 
 describe("RequestsPage", () => {
+  it.each(["ar", "ur"])(
+    "moves left to Today in %s and preserves the tab URL",
+    async (locale) => {
+      const user = userEvent.setup();
+      mocks.search.current = new URLSearchParams();
+      vi.mocked(useQuery).mockImplementation(
+        fakeQueries({
+          "workspace:mine": SHOP_WORKSPACE,
+          "shop:requests": { new: [], active: [], done: [] },
+        }) as unknown as typeof useQuery,
+      );
+      const content = () => (
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+          timeZone="Asia/Kolkata"
+          now={NOW}
+        >
+          <RequestsPage />
+        </NextIntlClientProvider>
+      );
+      const view = render(content());
+      window.history.replaceState({ __NA: true }, "", "/app/requests");
+      const replaceState = vi.spyOn(window.history, "replaceState");
+      const first = screen.getByRole("tab", { name: "New" });
+      expect(first.closest("[dir]")).toHaveAttribute("dir", "rtl");
+      await user.click(first);
+      await user.keyboard("{ArrowLeft}");
+      await waitFor(() =>
+        expect(screen.getByRole("tab", { name: "Today" })).toHaveFocus(),
+      );
+      expect(window.location.search).toBe("?tab=today");
+      expect(replaceState).toHaveBeenLastCalledWith(null, "", "?tab=today");
+      // Next updates useSearchParams after replaceState; reproduce that boundary.
+      mocks.search.current = new URLSearchParams(window.location.search);
+      view.rerender(content());
+      await user.keyboard("{ArrowRight}");
+      await waitFor(() => expect(first).toHaveFocus());
+      expect(window.location.search).toBe("");
+      replaceState.mockRestore();
+    },
+  );
+
   it("shows a new request: first name, area, slot, items and estimate", () => {
     renderPage();
 
@@ -215,3 +272,7 @@ describe("RequestsPage", () => {
     expect(screen.queryByRole("tab")).not.toBeInTheDocument();
   });
 });
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

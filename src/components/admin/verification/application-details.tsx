@@ -3,6 +3,10 @@ import type { ReactNode } from "react";
 
 import { StatusPill } from "@/components/app/page-parts";
 
+import type {
+  MaterialOrigin,
+  SiteType,
+} from "../../../../convex/lib/siteClassification";
 import { formatDay, formatPhone } from "../format";
 import {
   FAMILY_LABELS,
@@ -30,6 +34,8 @@ const FIELD_LABELS: Readonly<Record<string, string>> = {
   "kabadiwala.closes": "Opening hours",
   "kabadiwala.weeklyOff": "Weekly holiday",
   "business.businessName": "Business name",
+  "business.siteType": "Primary site",
+  "business.materialOrigins": "Material origins",
   "business.gstRegistered": "GST",
   "business.gstin": "GST",
   "business.materials": "Materials",
@@ -57,6 +63,22 @@ const FIELD_LABELS: Readonly<Record<string, string>> = {
   "saathi.times": "Times",
   "saathi.days": "Days",
   files: "Documents and photos",
+};
+
+const SITE_LABELS: Record<SiteType, string> = {
+  preprocessor_yard: "Preprocessor yard",
+  recycling_facility: "Recycling facility",
+  manufacturing_facility: "Manufacturing facility",
+  apartment_community: "Apartment community",
+  office: "Office",
+  hotel: "Hotel",
+  resort: "Resort",
+  other: "Other site",
+};
+
+const ORIGIN_LABELS: Record<MaterialOrigin, string> = {
+  industrial_byproduct: "Industrial byproduct",
+  post_consumer: "Post-consumer material",
 };
 
 /** `["kabadiwala.opens", "files"]` → `["Opening hours", "Documents and photos"]` */
@@ -307,6 +329,20 @@ function BusinessDetails({
       <Field label="Business name" isChanged={isChanged}>
         {business.businessName ?? "—"}
       </Field>
+      {business.siteType ? (
+        <Field label="Primary site" isChanged={isChanged}>
+          {SITE_LABELS[business.siteType]}
+        </Field>
+      ) : null}
+      {business.materialOrigins ? (
+        <Field label="Material origins" isChanged={isChanged}>
+          <Chips
+            items={business.materialOrigins.map(
+              (origin) => ORIGIN_LABELS[origin],
+            )}
+          />
+        </Field>
+      ) : null}
       <Field label="GST" isChanged={isChanged}>
         <GstValue
           isRegistered={business.gstRegistered}

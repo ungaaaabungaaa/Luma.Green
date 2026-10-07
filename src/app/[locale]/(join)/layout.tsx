@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import { AccountMenu } from "@/components/account/account-menu";
 import { Logo } from "@/components/brand/logo";
 import { SignOutButton } from "@/components/join/sign-out-button";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
@@ -31,7 +32,7 @@ export default async function JoinLayout({
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <SkipLink />
-      <header className="sticky top-0 z-30 flex min-h-18 flex-wrap items-center justify-between gap-2 border-b border-border bg-background/95 px-4 py-2 backdrop-blur sm:px-8">
+      <header className="sticky top-0 z-30 flex min-h-16 items-center justify-between gap-2 border-b border-border bg-background/95 px-4 py-2 backdrop-blur sm:px-8">
         <Link
           href="/"
           aria-label={t("home")}
@@ -39,7 +40,10 @@ export default async function JoinLayout({
         >
           <Logo />
         </Link>
-        <div className="flex items-center gap-1">
+        <div className="xl:hidden">
+          <AccountMenu />
+        </div>
+        <div className="hidden items-center gap-1 xl:flex">
           <ThemeToggle />
           <LanguageSwitcher />
           <SignOutButton />
@@ -48,7 +52,7 @@ export default async function JoinLayout({
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto my-8 flex w-full max-w-3xl min-w-0 flex-1 flex-col px-5 py-2 sm:my-12 sm:px-10"
+        className="mx-auto flex w-full max-w-3xl min-w-0 flex-1 flex-col px-4 py-6 sm:px-8 sm:py-8"
       >
         {children}
       </main>

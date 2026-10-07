@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "convex/react";
 import { PackageIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -12,10 +12,13 @@ import { z } from "zod";
 import { useFormat } from "@/components/app/format";
 import { EmptyState } from "@/components/app/page-parts";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useCanOperate } from "@/components/workspace/permissions";
 import { Link } from "@/i18n/navigation";
 
 import { api } from "../../../convex/_generated/api";
+import type { Id } from "../../../convex/_generated/dataModel";
 import {
   buyerKindFor,
   type OrgKind,
@@ -36,6 +39,7 @@ import {
   rupeeFieldValue,
   suggestedAskPaise,
 } from "./logic";
+import { OfferSpecificationFields } from "./offer-specification";
 import type { SellableItem } from "./types";
 
 /**
@@ -50,6 +54,7 @@ export function NewListingForm({
   sellerKind: OrgKind;
   city: string;
 }) {
+  const canOperate = useCanOperate();
   const t = useTranslations("market.sell.form");
   const items = useQuery(api.market.sellable);
   const board = useQuery(api.catalogue.priceQuotes, { city, source: "market" });
@@ -58,6 +63,7 @@ export function NewListingForm({
     [board],
   );
 
+  if (!canOperate) return null;
   if (items === undefined) {
     return (
       <div className="flex flex-col gap-3" aria-busy="true">
@@ -95,6 +101,9 @@ interface Values {
   kg: string;
   price: string;
   note: string;
+  includeSpecification: boolean;
+  grade: string;
+  specification: string;
 }
 
 type FormErrorKey =
@@ -105,7 +114,15 @@ type FormErrorKey =
   | "noteTooLong"
   | "totalInvalid";
 
-const EMPTY: Values = { materialCode: "", kg: "", price: "", note: "" };
+const EMPTY: Values = {
+  materialCode: "",
+  kg: "",
+  price: "",
+  note: "",
+  includeSpecification: false,
+  grade: "",
+  specification: "",
+};
 
 /** The form's rules; `kg` is checked against what's free of the material. */
 function listingSchema(
@@ -120,8 +137,21 @@ function listingSchema(
         .string()
         .refine((value) => parseRupees(value, locale) !== null, "priceInvalid"),
       note: z.string().max(NOTE_MAX_LENGTH, "noteTooLong"),
+      includeSpecification: z.boolean(),
+      grade: z.string().trim().max(120),
+      specification: z.string().trim().max(500),
     })
     .superRefine((values, context) => {
+      if (
+        values.includeSpecification &&
+        (!values.grade || !values.specification)
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["grade"],
+          message: "specificationInvalid",
+        });
+      }
       const grams = parseKg(values.kg, locale);
       const available = byCode.get(values.materialCode)?.availableGrams;
       const price = parseRupees(values.price, locale);
@@ -162,6 +192,9 @@ function ListingForm({
   sellerKind: OrgKind;
 }) {
   const t = useTranslations("market");
+  const specificationCopy = useTranslations("marketSpecification");
+  const specificationId = useId();
+  const [lotId, setLotId] = useState<Id<"materialLots">>();
   const locale = useLocale();
   const format = useFormat();
   const createListing = useMutation(api.market.createListing);
@@ -182,6 +215,10 @@ function ListingForm({
   const [materialCode, kg, price, note] = useWatch({
     control,
     name: ["materialCode", "kg", "price", "note"],
+  });
+  const isIncludeSpecification = useWatch({
+    control,
+    name: "includeSpecification",
   });
 
   const suggestionFor = (code: string) => {
@@ -204,6 +241,7 @@ function ListingForm({
   };
 
   function pickMaterial(code: string) {
+    setLotId(undefined);
     setValue("materialCode", code, { shouldValidate: true });
     const suggestion = suggestionFor(code);
     if (suggestion !== null) setValue("price", rupeeFieldValue(suggestion));
@@ -221,11 +259,19 @@ function ListingForm({
         grams: wanted,
         askPaisePerKg: ask,
         note: trimmed === "" ? undefined : trimmed,
+        ...(values.includeSpecification && {
+          specification: {
+            grade: values.grade,
+            specification: values.specification,
+            lotId,
+          },
+        }),
       });
       toast.success(
         t("sell.form.listed", { buyer: buyerKindFor(sellerKind) ?? "other" }),
       );
       reset(EMPTY);
+      setLotId(undefined);
     } catch (error) {
       const key = marketErrorKey(error);
       setFailure(key);
@@ -275,6 +321,30 @@ function ListingForm({
         error={errorText("note")}
         length={note.length}
       />
+      <label
+        htmlFor={specificationId}
+        className="flex min-h-11 items-center gap-3 text-sm"
+      >
+        <Checkbox
+          id={specificationId}
+          checked={isIncludeSpecification}
+          onCheckedChange={(checked) => {
+            setValue("includeSpecification", checked === true);
+          }}
+          disabled={isSubmitting}
+        />
+        <span>{specificationCopy("enable")}</span>
+      </label>
+      {isIncludeSpecification ? (
+        <OfferSpecificationFields
+          materialCode={materialCode}
+          grade={register("grade")}
+          specification={register("specification")}
+          lotId={lotId}
+          onLotChange={setLotId}
+          invalid={Boolean(errors.grade ?? errors.specification)}
+        />
+      ) : null}
 
       <div
         className="flex flex-wrap items-center justify-between gap-3 border-y border-border py-4"

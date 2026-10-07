@@ -12,7 +12,12 @@ Code rules live in [AGENTS.md](../AGENTS.md) and the
 It lists the continuation branch, completed commits, tests and ordered next tasks.
 The current redesign is recorded in [shared UI redesign](./delivery/ui-redesign.md).
 Demo setup: [desktop](./delivery/desktop-demo.md), [mobile](./delivery/mobile-demo.md).
-The [enhancement proposal](./product/enhancement-proposal.md) is research awaiting approval.
+The [platform refinement interview](./product/platform-refinement-interview.md)
+is the current requirements record and has an editable Word copy. The
+[enhancement proposal](./product/enhancement-proposal.md) is older research.
+Use the [Saturday 10 October launch test plan](testing/launch-2026-10-10.md) for
+the approved local account, role, invite and provider checks. Implementation is
+approved; test results and the final launch decision remain separate evidence.
 
 **Clickable prototype:**
 [Luma.Green Prototype](https://claude.ai/artifact/4hiq2r5tm5kWDBqTGEPD8C) —
@@ -20,18 +25,19 @@ private until shared from its Share menu.
 
 ## Product — what and why
 
-| Page                                                     | What's in it                                                   |
-| -------------------------------------------------------- | -------------------------------------------------------------- |
-| [vision.md](./product/vision.md)                         | The problem, the chain, principles, what's in and out of scope |
-| [roles.md](./product/roles.md)                           | Every role, their device and sign-in, what each wants          |
-| [onboarding.md](./product/onboarding.md)                 | Every field each role gives us, states, admin checks, messages |
-| [household.md](./product/household.md)                   | Snap → book → track and get paid                               |
-| [kabadiwala.md](./product/kabadiwala.md)                 | Requests, auto-accept, weigh and pay, stock, prices            |
-| [kabadiwala-to-yard.md](./product/kabadiwala-to-yard.md) | The hand-off still being researched                            |
-| [pricing.md](./product/pricing.md)                       | Rate cards, the minimum table and the fallback table           |
-| [glossary.md](./product/glossary.md)                     | Every term, and its name in code                               |
-| [open-questions.md](./product/open-questions.md)         | Decided and still-open questions                               |
-| [brief.md](./product/brief.md)                           | The founder's own words, as captured                           |
+| Page                                                                           | What's in it                                                   |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| [vision.md](./product/vision.md)                                               | The problem, the chain, principles, what's in and out of scope |
+| [roles.md](./product/roles.md)                                                 | Every role, their device and sign-in, what each wants          |
+| [onboarding.md](./product/onboarding.md)                                       | Every field each role gives us, states, admin checks, messages |
+| [household.md](./product/household.md)                                         | Snap → book → track and get paid                               |
+| [kabadiwala.md](./product/kabadiwala.md)                                       | Requests, auto-accept, weigh and pay, stock, prices            |
+| [kabadiwala-to-yard.md](./product/kabadiwala-to-yard.md)                       | The hand-off still being researched                            |
+| [pricing.md](./product/pricing.md)                                             | Rate cards, the minimum table and the fallback table           |
+| [glossary.md](./product/glossary.md)                                           | Every term, and its name in code                               |
+| [open-questions.md](./product/open-questions.md)                               | Decided and still-open questions                               |
+| [platform-refinement-interview.md](./product/platform-refinement-interview.md) | Current interview, decisions and feasibility gates             |
+| [brief.md](./product/brief.md)                                                 | The founder's own words, as captured                           |
 
 ## Architecture — how it's built
 
@@ -90,8 +96,11 @@ For caching, compression, self-hosted AI and cost measurements, use
 The [team review pack](team-review/review.md) explains product scope, the stack,
 theme comparisons, translated examples and account gates. Its editable Word
 edition is [the team pack](../output/docx/luma-green-team-review.docx).
-Use the [end-to-end test manual](testing/team-end-to-end-manual.md) to run each role
-and record results. The [six-month plan](product/six-month-execution-plan.md)
+The [10 October test plan](testing/launch-2026-10-10.md) owns the current role
+roster and release gates. Use the [end-to-end test manual](testing/team-end-to-end-manual.md)
+for detailed regression cases and record actual results. The
+[older prototype cases](testing/README.md) are historical examples; their sample
+data does not prove current accounts, prices or payments. The [six-month plan](product/six-month-execution-plan.md)
 sets proposed milestones. The [India-first legal checklist](operations/india-entity-trademark-and-legal.md)
 assumes the entity is not registered and no trademark filing is complete.
 
@@ -100,6 +109,27 @@ access, or open the [Word guide](../output/docx/luma-green-user-guide.docx).
 [Capture and rebuild instructions](user-guide/README.md) explain the screenshot
 evidence labels and the mandatory update process. Source, screenshots and Word document
 must be updated together when the user experience changes.
+
+## Rebuild the planning Word documents
+
+Use the maintained builder from the repository root, with Python and
+`python-docx` available (the bundled Documents runtime includes it):
+
+```sh
+python3 scripts/build-planning-docs.py --document all
+python3 scripts/test_document_links.py  # Offline portable hyperlink regression
+```
+
+`--document interview` and `--document launch` rebuild one document. `--root`
+accepts a repository path; by default the script finds its own repository.
+The same maintained outputs are `output/docx/luma-green-platform-refinement-interview.docx`
+and `output/docx/luma-green-launch-test-plan.docx`. Sources remain
+`docs/product/platform-refinement-interview.md` and
+`docs/testing/launch-2026-10-10.md`. No private temporary builder is required.
+Render both with the Documents skill renderer, inspect every original page,
+and update `docs/delivery/small-word-review-2026-10-07.json` with exact current
+source/artifact/page hashes. A successful build alone is not a visual review.
+This builder does not replace the separate platform-guide or team-review builder.
 
 ## Keeping these docs true
 

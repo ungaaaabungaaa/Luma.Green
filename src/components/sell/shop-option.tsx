@@ -37,7 +37,7 @@ export function ShopOption({
     <Label
       htmlFor={id}
       className={cn(
-        "flex items-start gap-4 border-b px-2 py-5 font-normal transition-colors duration-150",
+        "flex items-start gap-3 border-b px-2 py-4 font-normal transition-colors duration-150 motion-reduce:transition-none",
         isSelected ? "border-primary bg-accent/50" : "border-border",
         isDisabled
           ? "cursor-not-allowed bg-muted/50"
@@ -50,13 +50,13 @@ export function ShopOption({
         disabled={isDisabled}
         className="mt-1 size-5"
       />
-      <span className="flex min-w-0 flex-1 flex-col gap-3">
+      <span className="flex min-w-0 flex-1 flex-col gap-2">
         <span className="flex flex-wrap items-start justify-between gap-3">
           <span className="text-base leading-snug font-semibold">
             {shop.name}
           </span>
           <span className="flex shrink-0 flex-col items-end">
-            <span className="text-2xl leading-tight font-semibold tracking-tight text-foreground tabular-nums">
+            <span className="text-xl leading-tight font-semibold tracking-tight text-foreground tabular-nums">
               {format.money(shop.estimatePaise)}
             </span>
             <span className="text-xs text-muted-foreground">

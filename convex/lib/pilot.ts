@@ -61,10 +61,9 @@ export function bookingMetrics(bookings: readonly Doc<"bookings">[]) {
     paidPaise,
     estimatedPaise,
     weighedGrams,
-    materials: materials
-      .values()
-      .toArray()
-      .toSorted((a, b) => a.code.localeCompare(b.code)),
+    materials: [...materials.values()].toSorted((a, b) =>
+      a.code.localeCompare(b.code),
+    ),
   };
 }
 

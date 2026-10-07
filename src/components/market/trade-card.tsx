@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  CircleXIcon,
-  FileTextIcon,
-  ReceiptTextIcon,
-  ShieldCheckIcon,
-} from "lucide-react";
+import { CircleXIcon, FileTextIcon, ReceiptTextIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useFormat } from "@/components/app/format";
@@ -13,8 +8,10 @@ import { StatusPill } from "@/components/app/page-parts";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-import { isOpenTrade, reachedAt } from "./logic";
+import { FinancialLifecycle } from "./financial-lifecycle";
+import { isAvailableTradeAction, isOpenTrade, reachedAt } from "./logic";
 import { MaterialIcon } from "./material-icon";
+import { OfferSpecification } from "./offer-specification";
 import { TradeActions } from "./trade-actions";
 import { TradeSteps } from "./trade-steps";
 import type { TradeSide, TradeView } from "./types";
@@ -41,19 +38,55 @@ export function TradeCard({
     name: trade.counterparty.name,
     area: trade.counterparty.area,
   };
-  return (
-    <article className="flex h-full flex-col gap-4 border-b border-border py-5">
-      <TradeHeading trade={trade} side={side} showSide={showSide} />
-      {compact ? null : <TradeSteps status={trade.status} />}
+  const isHistorical = ["paid_to_escrow", "dispatched", "completed"].includes(
+    trade.status,
+  );
+  const hasFinancialView = [
+    "accepted",
+    "dispatched",
+    "completed",
+    "declined",
+  ].includes(trade.status);
+  let hint: string;
+  if (isHistorical) {
+    hint = t("legacyUnverified");
+  } else if (trade.status === "accepted") {
+    hint = t("gatewayPending");
+  } else {
+    hint = t(`hint.${trade.status}.${side}`, counterparty);
+  }
+  const legacyContent = (
+    <>
       <DeclinedNote trade={trade} />
       <p
         className={cn(
           "text-sm",
-          trade.actions.length > 0 ? "font-medium" : "text-muted-foreground",
+          trade.actions.some((action) => isAvailableTradeAction(action))
+            ? "font-medium"
+            : "text-muted-foreground",
         )}
       >
-        {t(`hint.${trade.status}.${side}`, counterparty)}
+        {hint}
       </p>
+    </>
+  );
+  return (
+    <article className="flex h-full flex-col gap-3 border-b border-border py-4">
+      <TradeHeading trade={trade} side={side} showSide={showSide} />
+      {compact ? null : <OfferSpecification value={trade.specification} />}
+      {compact || isHistorical || trade.status === "declined" ? null : (
+        <TradeSteps status={trade.status} />
+      )}
+      {hasFinancialView ? (
+        <FinancialLifecycle
+          key={trade.id}
+          tradeId={trade.id}
+          compact={compact}
+          legacyContent={legacyContent}
+        />
+      ) : (
+        legacyContent
+      )}
       <TradeNotes trade={trade} />
       <TradeActions trade={trade} />
       {compact ? null : <TradeFooter trade={trade} />}
@@ -119,26 +152,16 @@ function DeclinedNote({ trade }: { trade: TradeView }) {
   );
 }
 
-/** Money held in escrow, and the e-way-bill reminder for big loads. */
+/** A transport-document reminder; old payment flags are not provider proof. */
 function TradeNotes({ trade }: { trade: TradeView }) {
   const t = useTranslations("market.trades.card");
-  const format = useFormat();
-  const shouldShowEwayBill = trade.needsEwayBill && isOpenTrade(trade.status);
-  if (!shouldShowEwayBill && !trade.inEscrow) return null;
+  if (!trade.needsEwayBill || !isOpenTrade(trade.status)) return null;
   return (
     <div className="flex flex-col gap-2">
-      {trade.inEscrow ? (
-        <p className="flex items-center gap-2 self-start text-sm font-medium text-primary">
-          <ShieldCheckIcon aria-hidden className="size-4 shrink-0" />
-          {t("inEscrow", { amount: format.money(trade.totalPaise) })}
-        </p>
-      ) : null}
-      {shouldShowEwayBill ? (
-        <p className="flex gap-2 border-s-2 border-primary ps-3 text-sm text-muted-foreground">
-          <FileTextIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
-          {t("ewayBill")}
-        </p>
-      ) : null}
+      <p className="flex gap-2 border-s-2 border-primary ps-3 text-sm text-muted-foreground">
+        <FileTextIcon aria-hidden className="mt-0.5 size-4 shrink-0" />
+        {t("ewayBill")}
+      </p>
     </div>
   );
 }
@@ -147,16 +170,17 @@ function TradeFooter({ trade }: { trade: TradeView }) {
   const t = useTranslations("market.trades.card");
   const format = useFormat();
   const lastStep = trade.timeline.at(-1)?.at ?? trade.createdAt;
+  const legacyReceiptNo = trade.legacyReceiptNo;
   return (
     <div className="flex flex-wrap items-center justify-between gap-2 border-t pt-3 text-sm text-muted-foreground">
       <span>{t("updated", { when: format.dateTime(lastStep) })}</span>
-      {trade.invoiceNo ? (
+      {legacyReceiptNo ? (
         <Link
           href={`/app/trades/${trade.id}/invoice`}
           className="inline-flex min-h-11 items-center gap-1.5 rounded-md font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <ReceiptTextIcon aria-hidden className="size-4" />
-          {t("receipt", { number: trade.invoiceNo })}
+          {t("receipt", { number: legacyReceiptNo })}
         </Link>
       ) : null}
     </div>

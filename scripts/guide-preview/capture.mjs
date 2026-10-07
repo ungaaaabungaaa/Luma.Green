@@ -225,7 +225,7 @@ const screens = [
     viewportOnly: true,
     route: "/en/join/yard",
     component: "src/components/join/business-form.tsx",
-    heading: "Your yard",
+    heading: "Your preprocessing business",
   },
   {
     name: "join-status-phone",
@@ -305,6 +305,51 @@ screens.push(
     viewportOnly: true,
   },
 );
+for (const locale of ["en", "ar", "kn"]) {
+  const catalogue = JSON.parse(
+    await readFile(path.join(repository, `messages/${locale}.json`), "utf8"),
+  );
+  for (const theme of ["light", "dark"]) {
+    for (const width of [390, 768, 1440]) {
+      for (const state of ["blank", "verified"]) {
+        screens.push({
+          name: `account-phone-${state}-${locale}-${width}-${theme}`,
+          route: `/${locale}/account/security?phone=${state}`,
+          component: "src/components/account/account-phone.tsx",
+          heading: catalogue.accountSecurity.title,
+          expectedText:
+            state === "verified"
+              ? catalogue.accountPhone.verified
+              : catalogue.accountPhone.title,
+          scrollText: catalogue.accountPhone.title,
+          theme,
+          width,
+          height:
+            new Map([
+              [390, 844],
+              [768, 1024],
+            ]).get(width) ?? 1000,
+          viewportOnly: true,
+        });
+      }
+      screens.push({
+        name: `impact-unknown-${locale}-${width}-${theme}`,
+        route: `/${locale}/app/impact?role=recycler&scenario=unknown-factor`,
+        component: "src/components/insights/org-impact.tsx",
+        heading: catalogue.impact.title,
+        expectedText: catalogue.impact.factorUnavailable,
+        theme,
+        width,
+        height:
+          new Map([
+            [390, 844],
+            [768, 1024],
+          ]).get(width) ?? 1000,
+        viewportOnly: true,
+      });
+    }
+  }
+}
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
 screens.push(...accountScreens());
 const sharedSources = [
@@ -314,6 +359,8 @@ const sharedSources = [
   "scripts/guide-preview/provider.tsx",
   "src/app/[locale]/(account)/account/layout.tsx",
   "src/components/account/account-security.tsx",
+  "src/components/account/account-phone.tsx",
+  "src/lib/phone-auth.ts",
   "src/components/account/account-menu.tsx",
   "src/components/account/account-links.tsx",
   "src/components/account/use-sign-out.ts",
@@ -333,11 +380,21 @@ const sharedSources = [
   "src/components/theme/theme-provider.tsx",
   "src/components/theme/theme-toggle.tsx",
   "src/components/app/app-shell.tsx",
+  "src/components/app/page-parts.tsx",
   "src/components/shop/home-cards.tsx",
+  "src/components/track/status-hero.tsx",
+  "src/components/track/booking-cards.tsx",
+  "src/components/track/shop-card.tsx",
+  "src/components/sell/money-card.tsx",
+  "src/components/sell/shop-option.tsx",
+  "src/components/sell/family.tsx",
+  "src/components/shop/request-cards.tsx",
   "src/components/saathi/job-actions.tsx",
   "src/components/saathi/job-card.tsx",
+  "src/components/saathi/week-earnings.tsx",
   "src/components/admin/console-shell.tsx",
   "src/components/ui/button.tsx",
+  "src/components/ui/tabs.tsx",
   "src/components/ui/chart.tsx",
   "src/components/ui/switch.tsx",
   "src/components/ui/input.tsx",
@@ -352,6 +409,11 @@ const sharedSources = [
   "src/lib/number-input.ts",
   "src/components/market/logic.ts",
   "src/components/market/material-filter.tsx",
+  "src/components/market/listing-card.tsx",
+  "src/components/market/trade-card.tsx",
+  "src/components/market/financial-lifecycle.tsx",
+  "src/components/market/sandbox-checkout.tsx",
+  "convex/lib/cashfreeLifecycleContract.ts",
   "src/components/shop/weigh.ts",
   "scripts/guide-preview/main.tsx",
   "scripts/guide-preview/navigation.tsx",
@@ -359,6 +421,7 @@ const sharedSources = [
   "scripts/guide-preview/locale.ts",
   "convex/lib/catalogue.ts",
   "scripts/guide-preview/queries.ts",
+  "scripts/guide-preview/finance-fixtures.ts",
   "scripts/guide-preview/selection-fixtures.tsx",
   "src/components/sell/basket-step.tsx",
   "src/components/sell/shop-step.tsx",
@@ -383,11 +446,13 @@ const sharedSources = [
   "src/components/insights/org-impact.tsx",
   "src/components/insights/bar-list.tsx",
   "src/components/insights/ledger-explainer.tsx",
+  "src/components/admin/prices/catalogue-setup.tsx",
   "scripts/guide-preview/image.tsx",
   "scripts/guide-preview/vite.config.mts",
   "messages/en.json",
   "messages/ar.json",
   "messages/ta.json",
+  "messages/kn.json",
   "public/images/showcase/household-sorting.webp",
   "public/images/showcase/collection-partners.webp",
   "public/images/showcase/material-yard.webp",
@@ -449,6 +514,11 @@ try {
         name: screen.heading,
       })
       .waitFor({ state: "visible" });
+    if (screen.expectedText)
+      await page
+        .getByText(screen.expectedText, { exact: true })
+        .first()
+        .waitFor({ state: "visible" });
     await page.evaluate(async () => {
       await document.fonts.ready;
       await Promise.all([...document.images].map((image) => image.decode()));
@@ -578,6 +648,22 @@ try {
           element.getBoundingClientRect().top + window.scrollY - offset,
         );
       });
+    }
+    if (screen.scrollText) {
+      await page
+        .getByRole("heading", { name: screen.scrollText, exact: true })
+        .evaluate((element) => {
+          const banner = document.querySelector(
+            '[aria-label="Screenshot provenance"]',
+          );
+          window.scrollTo(
+            0,
+            element.getBoundingClientRect().top +
+              window.scrollY -
+              (banner?.getBoundingClientRect().height ?? 0) -
+              20,
+          );
+        });
     }
     const bannerBounds = await page
       .getByRole("note", { name: "Screenshot provenance", includeHidden: true })

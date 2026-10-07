@@ -93,7 +93,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
   return (
     <section
       aria-labelledby="track-title"
-      className="flex flex-col gap-8 border-b border-border py-6 sm:py-8"
+      className="flex flex-col gap-5 border-b border-border pb-5"
     >
       <div className="flex items-start gap-4">
         <span
@@ -110,7 +110,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
           </p>
           <h1
             id="track-title"
-            className="font-display text-3xl leading-tight font-semibold tracking-tight text-balance wrap-anywhere"
+            className="font-display text-2xl leading-tight font-semibold tracking-tight text-balance wrap-anywhere sm:text-3xl"
           >
             {t(`hero.${booking.status}`, {
               shop,
@@ -118,7 +118,7 @@ export function StatusHero({ booking }: { booking: TrackedBooking }) {
               amount: paid,
             })}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             {t(`hero.${booking.status}Body`)}
           </p>
         </div>

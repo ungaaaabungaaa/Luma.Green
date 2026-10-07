@@ -176,3 +176,46 @@ it("does not let other buyer types or material families hide matching demand", a
   const board = await shop.query(api.demand.board, {});
   expect(board.available.map((row) => row.id)).toContain(id);
 });
+
+it("removes restricted material from ordinary demand discovery and blocks new requests while preserving owner closure", async () => {
+  const t = await world();
+  const yard = await signInAs(t, "+919000000102");
+  const shop = await signInAs(t, "+919000000101");
+  const demandId = await yard.mutation(api.demand.post, INPUT);
+  const before = await shop.query(api.demand.board, {});
+  expect(before.available.map((row) => row.id)).toContain(demandId);
+  await t.run(async (ctx) => {
+    const material = await ctx.db
+      .query("materials")
+      .withIndex("by_code", (q) => q.eq("code", INPUT.materialCode))
+      .unique();
+    if (!material) throw new Error("Missing test material");
+    await ctx.db.patch("materials", material._id, {
+      byproductEligibility: {
+        hazardStatus: "hazardous",
+        sourceReference: "Synthetic material restriction",
+        reviewedAt: Date.now(),
+      },
+    });
+  });
+  const sellerBoard = await shop.query(api.demand.board, {});
+  const buyerBoard = await yard.query(api.demand.board, {});
+  expect(sellerBoard.available.map((row) => row.id)).not.toContain(demandId);
+  expect(sellerBoard.materials.map((row) => row.code)).not.toContain(
+    INPUT.materialCode,
+  );
+  expect(buyerBoard.materials.map((row) => row.code)).not.toContain(
+    INPUT.materialCode,
+  );
+  await expect(yard.mutation(api.demand.post, INPUT)).rejects.toThrow(
+    /MATERIAL_NOT_ALLOWED/,
+  );
+  expect(buyerBoard.mine.map((row) => row.id)).toContain(demandId);
+  await yard.mutation(api.demand.close, { demandId });
+  const closed = await yard.query(api.demand.board, {});
+  expect(closed.mine.find((row) => row.id === demandId)?.status).toBe("closed");
+  const demands = await t.run((ctx) =>
+    ctx.db.query("materialDemands").collect(),
+  );
+  expect(demands).toHaveLength(1);
+});

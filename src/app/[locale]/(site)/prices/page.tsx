@@ -34,6 +34,7 @@ export default async function PricesPage() {
   return (
     <>
       <PageHeader
+        variant="task"
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}

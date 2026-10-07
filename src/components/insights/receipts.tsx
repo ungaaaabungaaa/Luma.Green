@@ -34,13 +34,13 @@ function InvoiceLink({
   return (
     <Link
       href={invoicePath(receipt)}
-      aria-label={t("view", { number: receipt.invoiceNo })}
+      aria-label={t("view", { number: receipt.legacyReceiptNo })}
       className={cn(
         "rounded font-mono text-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50",
         className,
       )}
     >
-      {receipt.invoiceNo}
+      {receipt.legacyReceiptNo}
     </Link>
   );
 }
@@ -68,6 +68,7 @@ function useParty() {
 /** Phones: one card per invoice, the whole card a link to it. */
 function ReceiptCards({ receipts }: { receipts: Receipt[] }) {
   const t = useTranslations("compliance.receipts");
+  const verification = useTranslations("market.receipt");
   const format = useFormat();
   const longDate = useLongDate();
   const party = useParty();
@@ -88,6 +89,7 @@ function ReceiptCards({ receipts }: { receipts: Receipt[] }) {
             </p>
           </div>
           <p className="text-sm">{t("sideWith", party(receipt))}</p>
+          <StatusPill tone="neutral">{verification("unverified")}</StatusPill>
           <p className="text-sm text-muted-foreground">
             {t("line", {
               material: format.material(
@@ -95,7 +97,7 @@ function ReceiptCards({ receipts }: { receipts: Receipt[] }) {
                 receipt.material.code,
               ),
               weight: format.weight(receipt.grams),
-              date: longDate(receipt.issuedAt),
+              date: longDate(receipt.recordedAt),
             })}
           </p>
           <div>
@@ -110,6 +112,7 @@ function ReceiptCards({ receipts }: { receipts: Receipt[] }) {
 /** Wider screens: the same invoices as a table. */
 function ReceiptTable({ receipts }: { receipts: Receipt[] }) {
   const t = useTranslations("compliance.receipts");
+  const verification = useTranslations("market.receipt");
   const format = useFormat();
   const longDate = useLongDate();
   const party = useParty();
@@ -135,7 +138,7 @@ function ReceiptTable({ receipts }: { receipts: Receipt[] }) {
                   <InvoiceLink receipt={receipt} />
                 </TableCell>
                 <TableCell className="tabular-nums">
-                  {longDate(receipt.issuedAt)}
+                  {longDate(receipt.recordedAt)}
                 </TableCell>
                 <TableCell>
                   <span className="flex flex-col">
@@ -143,6 +146,9 @@ function ReceiptTable({ receipts }: { receipts: Receipt[] }) {
                     <span className="text-xs text-muted-foreground">
                       {side}
                     </span>
+                    <StatusPill tone="neutral">
+                      {verification("unverified")}
+                    </StatusPill>
                   </span>
                 </TableCell>
                 <TableCell>

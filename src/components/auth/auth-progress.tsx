@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export function AuthProgress({ step }: { step: "phone" | "code" }) {
   const t = useTranslations("auth");
   return (
-    <ol className="flex items-center gap-3 border-b border-border pb-5 text-sm">
+    <ol className="flex items-center gap-3 text-sm">
       <li
         aria-current={step === "phone" ? "step" : undefined}
         className="flex min-w-0 items-center gap-2 font-medium"

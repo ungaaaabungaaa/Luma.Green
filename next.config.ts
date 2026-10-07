@@ -2,11 +2,14 @@ import { withSentryConfig } from "@sentry/nextjs/config";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
+import { privateRequestLogPatterns } from "./src/lib/request-logging";
+
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  logging: { incomingRequests: { ignore: privateRequestLogPatterns } },
   images: {
     // Sources are already compressed WebP files. Serve their content-hashed
     // URLs directly so Vercel image-transform limits cannot hide public art.
@@ -34,6 +37,18 @@ const nextConfig: NextConfig = {
         source: "/admin/:path*",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
+      ...[
+        "/login/:path*",
+        "/:locale/login/:path*",
+        "/account/workspaces/invite",
+        "/:locale/account/workspaces/invite",
+        "/admin/reset-password",
+        "/api/auth/:path*",
+      ].map((source) => ({
+        source,
+        // Mail links and login return paths can contain one-use credentials.
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      })),
     ];
   },
 };

@@ -4,10 +4,10 @@ import { useQuery } from "convex/react";
 import {
   ArrowLeftIcon,
   FileTextIcon,
+  InfoIcon,
   PrinterIcon,
   ReceiptTextIcon,
   SearchXIcon,
-  ShieldCheckIcon,
 } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
 
@@ -50,8 +50,8 @@ const PRINT_CSS = `
 
 /**
  * `/app/trades/[id]/invoice`: the trade receipt, for either side of the
- * trade, ready to print. It is a receipt for the trade, not a GST tax
- * invoice — those come with real payments.
+ * trade, ready to print. Legacy receipts are unverified prototype records,
+ * not evidence of provider payment or a GST tax invoice.
  */
 export function InvoicePage({ id }: { id: string }) {
   const t = useTranslations("market");
@@ -73,6 +73,7 @@ export function InvoicePage({ id }: { id: string }) {
 
 function Receipt({ id }: { id: string }) {
   const t = useTranslations("market.receipt");
+  const trades = useTranslations("market.trades");
   const receipt = useQuery(api.market.receipt, { tradeId: id });
 
   if (receipt === undefined) {
@@ -96,16 +97,21 @@ function Receipt({ id }: { id: string }) {
       </>
     );
   }
-  if (receipt.number === null || receipt.issuedAt === null) {
+  // Old LG numbers remain visible as history, never as a verified payment.
+  const reference = receipt.legacyReceiptNo;
+  const recordedAt = receipt.legacyRecordedAt;
+  if (reference === null || recordedAt === null) {
     return (
       <>
         <AppPageHeader title={t("title")} />
         <EmptyState
           icon={ReceiptTextIcon}
           title={t("pendingTitle")}
-          body={t(
-            receipt.status === "declined" ? "declinedBody" : "pendingBody",
-          )}
+          body={
+            receipt.status === "declined"
+              ? t("declinedBody")
+              : trades("gatewayPending")
+          }
           action={<BackToTrades />}
         />
       </>
@@ -114,8 +120,8 @@ function Receipt({ id }: { id: string }) {
   return (
     <ReceiptDocument
       receipt={receipt}
-      number={receipt.number}
-      issuedAt={receipt.issuedAt}
+      number={reference}
+      recordedAt={recordedAt}
     />
   );
 }
@@ -135,11 +141,11 @@ function BackToTrades() {
 function ReceiptDocument({
   receipt,
   number,
-  issuedAt,
+  recordedAt,
 }: {
   receipt: TradeReceipt;
   number: string;
-  issuedAt: number;
+  recordedAt: number;
 }) {
   const t = useTranslations("market");
   const format = useFormat();
@@ -190,14 +196,12 @@ function ReceiptDocument({
             </dt>
             <dd className="font-mono font-medium">{number}</dd>
             <dt className="text-muted-foreground">{t("receipt.dateLabel")}</dt>
-            <dd>{fullDate(issuedAt)}</dd>
+            <dd>{fullDate(recordedAt)}</dd>
             <dt className="text-muted-foreground">
               {t("receipt.statusLabel")}
             </dt>
             <dd>
-              <StatusPill tone={receipt.inEscrow ? "info" : "good"}>
-                {t(receipt.inEscrow ? "receipt.inEscrow" : "receipt.settled")}
-              </StatusPill>
+              <StatusPill tone="neutral">{t("receipt.unverified")}</StatusPill>
             </dd>
           </dl>
         </div>
@@ -261,19 +265,12 @@ function ReceiptDocument({
 
         <div className="flex flex-col gap-2 text-sm">
           <div className="flex gap-2">
-            <ShieldCheckIcon
+            <InfoIcon
               aria-hidden
-              className="mt-0.5 size-4 shrink-0 text-primary"
+              className="mt-0.5 size-4 shrink-0 text-muted-foreground"
             />
             <div className="flex flex-col gap-0.5">
-              <p>{t("receipt.paidInto", { date: fullDate(issuedAt) })}</p>
-              <p className="text-muted-foreground">
-                {receipt.releasedAt === null
-                  ? t("receipt.held")
-                  : t("receipt.released", {
-                      date: fullDate(receipt.releasedAt),
-                    })}
-              </p>
+              <p>{t("trades.legacyUnverified")}</p>
             </div>
           </div>
           {receipt.needsEwayBill ? (
@@ -289,7 +286,6 @@ function ReceiptDocument({
 
         <div className="flex flex-col gap-1 border-t pt-4 text-xs text-muted-foreground">
           <p>{t("receipt.notTaxInvoice")}</p>
-          <p>{t("simulated")}</p>
         </div>
       </article>
     </>

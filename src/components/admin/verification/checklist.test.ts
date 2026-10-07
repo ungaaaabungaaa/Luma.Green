@@ -47,6 +47,25 @@ describe("the business checklist", () => {
     expect(items.at(1)?.link?.href).toBe(XGN_REGISTER);
   });
 
+  it("requires a source check when a manufacturer declares byproducts", () => {
+    const items = checklistFor({
+      kind: "manufacturer",
+      business: {
+        ...business,
+        siteType: "manufacturing_facility",
+        materialOrigins: ["industrial_byproduct"],
+      },
+      documents: { pcbNotRequired: true },
+    });
+    expect(ids(items)).toEqual([
+      "gstin",
+      "consent",
+      "machines",
+      "source",
+      "call",
+    ]);
+  });
+
   it("points to the other state's board", () => {
     const consent = checklistFor({
       kind: "recycler",

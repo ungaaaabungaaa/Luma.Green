@@ -207,11 +207,11 @@ export const board = query({
         )
         .take(MAX_JOBS),
     ]);
-    const openRows = new Map(
-      [...cityJobs, ...teamJobs].map((job) => [job._id, job]),
-    )
-      .values()
-      .toArray();
+    const openRows = [
+      ...new Map(
+        [...cityJobs, ...teamJobs].map((job) => [job._id, job]),
+      ).values(),
+    ];
     const posters = await postersOf(ctx, openRows);
     const open = openRows
       .flatMap((job) => {

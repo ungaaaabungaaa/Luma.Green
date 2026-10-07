@@ -16,7 +16,7 @@ const convex = vi.hoisted(() => ({
   ensureProfile: vi.fn(),
 }));
 const push = vi.hoisted(() => vi.fn());
-const scrollIntoView = vi.hoisted(() => vi.fn());
+const scrollIntoView = vi.spyOn(Element.prototype, "scrollIntoView");
 
 vi.mock("@/components/providers/convex-provider", () => ({
   isConvexConfigured: true,
@@ -137,7 +137,6 @@ function withIntl(children: ReactNode) {
 beforeEach(() => {
   // jsdom has no layout, so no scrolling either.
   scrollIntoView.mockClear();
-  Element.prototype.scrollIntoView = scrollIntoView;
   sessionStorage.clear();
   window.history.replaceState(null, "", "/sell");
   convex.isAuthenticated = false;

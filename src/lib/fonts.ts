@@ -41,8 +41,9 @@ export const fontDisplay = Geist({
   subsets: ["latin"],
   display: "swap",
   preload: false,
-  // An injected Arial fallback would win before the locale's script face.
-  // Shared CSS supplies system fallbacks after all configured web fonts.
+  // Explicit empty fallbacks also stop Turbopack from inserting Arial before
+  // the script face. Shared CSS places system fallbacks after all web fonts.
+  fallback: [],
   adjustFontFallback: false,
 });
 
@@ -51,6 +52,7 @@ export const fontSans = Noto_Sans({
   subsets: ["latin", "latin-ext", "devanagari"],
   display: "swap",
   preload: true,
+  fallback: [],
   adjustFontFallback: false,
 });
 

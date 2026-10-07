@@ -109,6 +109,25 @@ afterEach(() => {
 });
 
 describe("ImpactPage for a business", () => {
+  it("shows unknown factors as unavailable without hiding measured kilograms", () => {
+    impact.current = {
+      ...shop,
+      co2eKg: null,
+      families: [{ family: "paper", grams: 400_000, co2eKg: null }],
+    };
+    renderPage();
+    expect(kpi("CO₂e avoided")).toHaveTextContent("—");
+    expect(kpi("CO₂e avoided")).toHaveTextContent(
+      messages.impact.factorUnavailable,
+    );
+    expect(kpi("CO₂e avoided")).not.toHaveTextContent("0 kg");
+    expect(kpi("Kilos recycled")).toHaveTextContent("434 kg");
+    expect(
+      within(screen.getByRole("list", { name: "By material" })).getByText(
+        messages.impact.factorUnavailable,
+      ),
+    ).toBeVisible();
+  });
   it("leads with kilos, CO2e and the money that moved", () => {
     renderPage();
     expect(

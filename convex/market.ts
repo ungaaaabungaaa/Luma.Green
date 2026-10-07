@@ -1,4 +1,4 @@
-import { ConvexError, v } from "convex/values";
+import { ConvexError, type Infer, v } from "convex/values";
 
 import type { Doc, Id } from "./_generated/dataModel";
 import {
@@ -11,6 +11,7 @@ import {
   buyerKindFor,
   isInEscrow,
   type OrgKind,
+  paymentVerificationFor,
   requiresEwayBill,
   safePaiseFor,
   sellerKindFor,
@@ -18,8 +19,22 @@ import {
   tradeActionsFor,
   tradeStep,
 } from "./lib/chain";
+import {
+  requiresGatewayEvent,
+  vPaymentVerification,
+} from "./lib/gatewayPayments";
+import { assertOrdinaryRoute } from "./lib/industrialClassification";
 import { stockGramsAfter } from "./lib/inventory";
-import { indiaToday } from "./lib/onboarding";
+import { optionalReference, requiredLabel } from "./lib/lotEvidence";
+import {
+  requireEligibleByproduct,
+  requireOrdinaryTradeMaterial,
+} from "./lib/marketEligibility";
+import { isOrdinaryMaterial } from "./lib/materialEligibility";
+import {
+  hasOfferLotClassification,
+  vOfferSpecificationInput,
+} from "./lib/materialOfferSpecification";
 import { vOrgKind, vTradeStatus } from "./lib/validators";
 import {
   vListingView,
@@ -31,12 +46,12 @@ import { materialIndex, requireOrg } from "./lib/workspace";
 
 /**
  * The business-to-business market: lots offered one step up the chain
- * (kabadiwala → yard → recycler → manufacturer), and the trades that move
- * them with the money held in escrow until the buyer confirms delivery.
+ * (kabadiwala → yard → recycler → manufacturer), plus reviewed manufacturer
+ * byproducts offered to an approved business with a matching material family.
  *
- * Escrow is simulated in the prototype (docs/decisions/0009): a trade's
- * status says where the money is; nothing moves. Every step writes the audit
- * log, and stock moves only at dispatch (seller) and delivery (buyer).
+ * Historical simulated payment statuses remain readable but do not prove
+ * payment. A verified gateway integration is required before new B2B trades
+ * may advance past acceptance.
  */
 
 const ORG_KINDS: readonly OrgKind[] = [
@@ -45,10 +60,9 @@ const ORG_KINDS: readonly OrgKind[] = [
   "recycler",
   "manufacturer",
 ];
-/** Kinds with someone to sell to: kabadiwalas, yards and recyclers. */
-const SELLER_KINDS = ORG_KINDS.filter((kind) => buyerKindFor(kind) !== null);
-/** Kinds with someone to buy from: yards, recyclers and manufacturers. */
-const BUYER_KINDS = ORG_KINDS.filter((kind) => sellerKindFor(kind) !== null);
+/** Every approved business can offer or buy an eligible byproduct. */
+const SELLER_KINDS = ORG_KINDS;
+const BUYER_KINDS = ORG_KINDS;
 
 /** The most rows one screen reads. */
 const PAGE = 200;
@@ -61,6 +75,27 @@ const NOTE_MAX_LENGTH = 140;
 
 type Side = "buyer" | "seller";
 type Materials = Awaited<ReturnType<typeof materialIndex>>;
+
+async function requireOfferLot(
+  ctx: QueryCtx,
+  lotId: Id<"materialLots">,
+  orgId: Id<"orgs">,
+  materialCode: string,
+  grams: number,
+) {
+  const lot = await ctx.db.get("materialLots", lotId);
+  if (
+    lot?.orgId !== orgId ||
+    lot.materialCode !== materialCode ||
+    lot.status !== "available" ||
+    lot.availableGrams < grams
+  )
+    throw new ConvexError("LOT_NOT_ELIGIBLE");
+  assertOrdinaryRoute(lot);
+  if (!hasOfferLotClassification(lot))
+    throw new ConvexError("LOT_NOT_ELIGIBLE");
+  return lot;
+}
 
 interface Actor {
   profileId: Id<"profiles">;
@@ -80,13 +115,13 @@ const vParty = v.object({
 
 const vTradeReceipt = v.object({
   id: v.id("trades"),
-  /** LG-26-0001; null until the buyer pays into escrow. */
+  /** No verified payment or tax-invoice number exists yet. */
   number: v.union(v.string(), v.null()),
   status: vTradeStatus,
   side: v.union(v.literal("buyer"), v.literal("seller")),
-  /** When the money went into escrow: the receipt's date. */
+  /** No verified payment issue time exists yet. */
   issuedAt: v.union(v.number(), v.null()),
-  /** When delivery was confirmed and the money released to the seller. */
+  /** No verified payment release time exists yet. */
   releasedAt: v.union(v.number(), v.null()),
   seller: vParty,
   buyer: vParty,
@@ -98,6 +133,9 @@ const vTradeReceipt = v.object({
   }),
   totalPaise: v.number(),
   inEscrow: v.boolean(),
+  legacyReceiptNo: v.union(v.string(), v.null()),
+  legacyRecordedAt: v.union(v.number(), v.null()),
+  paymentVerification: vPaymentVerification,
   needsEwayBill: v.boolean(),
 });
 
@@ -160,11 +198,13 @@ function toListingView(
 ) {
   return {
     id: listing._id,
+    origin: listing.origin,
     seller: { name: seller.name, area: seller.area, kind: seller.kind },
     material: materialRef(materials, listing.materialCode),
     grams: listing.grams,
     askPaisePerKg: listing.askPaisePerKg,
     note: listing.note,
+    specification: listing.specification,
     status: listing.status,
     isMine: listing.orgId === myOrgId,
     createdAt: listing.createdAt,
@@ -183,6 +223,7 @@ function toTradeView(
     grams: trade.grams,
     paisePerKg: trade.paisePerKg,
     totalPaise: trade.totalPaise,
+    specification: trade.specification,
     status: trade.status,
     timeline: trade.timeline,
     counterparty: {
@@ -190,7 +231,10 @@ function toTradeView(
       area: counterparty.area,
       kind: counterparty.kind,
     },
-    invoiceNo: trade.invoiceNo,
+    // Old LG numbers were issued by a simulated transition, not by GST.
+    invoiceNo: undefined,
+    legacyReceiptNo: trade.invoiceNo,
+    paymentVerification: paymentVerificationFor(trade.status),
     needsEwayBill: requiresEwayBill(trade.totalPaise),
     inEscrow: isInEscrow(trade.status),
     actions: tradeActionsFor(trade.status, side),
@@ -367,7 +411,27 @@ async function takeFromListing(
 ) {
   const listing = await ctx.db.get("listings", trade.listingId);
   if (listing?.status !== "open") throw new ConvexError("LISTING_NOT_OPEN");
+  if (
+    listing.orgId !== trade.sellerOrgId ||
+    listing.materialCode !== trade.materialCode
+  )
+    throw new ConvexError("INVALID_LISTING");
+  if (listing.origin === "manufacturer_byproduct") {
+    const seller = await ctx.db.get("orgs", trade.sellerOrgId);
+    const buyer = await ctx.db.get("orgs", trade.buyerOrgId);
+    await requireEligibleByproduct(ctx, listing, seller, buyer);
+  } else {
+    await requireOrdinaryTradeMaterial(ctx, listing, trade.buyerOrgId);
+  }
   if (listing.grams < trade.grams) throw new ConvexError("NOT_ENOUGH_LEFT");
+  if (listing.specification?.lotId)
+    await requireOfferLot(
+      ctx,
+      listing.specification.lotId,
+      listing.orgId,
+      listing.materialCode,
+      trade.grams,
+    );
   const grams = listing.grams - trade.grams;
   await ctx.db.patch("listings", listing._id, {
     grams,
@@ -378,28 +442,6 @@ async function takeFromListing(
     await declineWaiting(ctx, actor, listing._id, now, trade._id);
   }
 }
-
-/**
- * The next trade receipt number for the year in India: LG-26-0001, … It
- * reads every trade — fine for the pilot's volume; a counter row replaces
- * this scan when real payments arrive.
- */
-async function nextReceiptNumber(ctx: QueryCtx, now: number): Promise<string> {
-  const prefix = `LG-${indiaToday(now).slice(2, 4)}-`;
-  let last = 0;
-  for await (const trade of ctx.db.query("trades")) {
-    if (!trade.invoiceNo?.startsWith(prefix)) continue;
-    const sequence = Number(trade.invoiceNo.slice(prefix.length));
-    if (Number.isSafeInteger(sequence)) last = Math.max(last, sequence);
-  }
-  return `${prefix}${String(last + 1).padStart(4, "0")}`;
-}
-
-/** What a step does to the money in escrow (simulated in the prototype). */
-const ESCROW_EFFECT: Partial<Record<TradeAction, "held" | "released">> = {
-  pay: "held",
-  confirm: "released",
-};
 
 /** What a step moves besides the trade itself: the listing or the stock. */
 async function applyStep(
@@ -433,37 +475,63 @@ async function applyStep(
 // --- Buying ------------------------------------------------------------------
 
 /**
- * Open lots from the kind of business that sells to mine, in my city, newest
- * first: kabadiwalas for a yard, yards for a recycler, recyclers for a
- * manufacturer.
+ * Open lots from the fixed chain tier below mine, plus approved non-hazardous
+ * manufacturer byproducts for any matching active buyer, including other cities.
  */
 export const browse = query({
   args: { materialCode: v.optional(v.string()) },
   returns: v.array(vListingView),
   handler: async (ctx, args) => {
-    const { org } = await requireOrg(ctx, BUYER_KINDS);
+    const { org } = await requireOrg(ctx, BUYER_KINDS, "read");
     const sellerKind = sellerKindFor(org.kind);
-    if (!sellerKind) return [];
-    const rows = await ctx.db
+    const regular = sellerKind
+      ? await ctx.db
+          .query("listings")
+          .withIndex("by_status_kind", (q) =>
+            q.eq("status", "open").eq("sellerKind", sellerKind),
+          )
+          .order("desc")
+          .take(PAGE)
+      : [];
+    const byproducts = await ctx.db
       .query("listings")
       .withIndex("by_status_kind", (q) =>
-        q.eq("status", "open").eq("sellerKind", sellerKind),
+        q.eq("status", "open").eq("sellerKind", "manufacturer"),
       )
       .order("desc")
       .take(PAGE);
     const materials = await materialIndex(ctx);
     const orgOf = orgLookup(ctx);
     const views = [];
-    for (const listing of rows.toSorted(newestFirst)) {
+    for (const listing of [...regular, ...byproducts].toSorted(newestFirst)) {
+      const material = materials.get(listing.materialCode);
+      const isEligibleByproduct =
+        listing.sellerKind === "manufacturer" &&
+        listing.origin === "manufacturer_byproduct" &&
+        material?.active === true &&
+        material.stage === "scrap" &&
+        material.byproductEligibility?.hazardStatus === "non_hazardous" &&
+        org.families.includes(material.family);
+      const isRegularTrade =
+        listing.origin === undefined &&
+        isOrdinaryMaterial(material) &&
+        material !== undefined &&
+        org.families.includes(material.family) &&
+        buyerKindFor(listing.sellerKind) === org.kind;
       const isForMe =
         listing.grams > 0 &&
         listing.orgId !== org._id &&
-        listing.city === org.city &&
+        (isEligibleByproduct || listing.city === org.city) &&
+        (isRegularTrade || isEligibleByproduct) &&
         (args.materialCode === undefined ||
           listing.materialCode === args.materialCode);
       if (!isForMe) continue;
       const seller = await orgOf(listing.orgId);
-      if (seller?.status !== "active") continue;
+      if (
+        seller?.status !== "active" ||
+        !seller.families.includes(material.family)
+      )
+        continue;
       views.push(toListingView(listing, seller, materials, org._id));
     }
     return views;
@@ -472,7 +540,7 @@ export const browse = query({
 
 /**
  * Asks to buy part (or all) of a lot at its asking price. Nothing is held
- * yet: the seller accepts first, then the buyer pays into escrow.
+ * yet: the seller accepts first. Payment waits for a verified gateway.
  */
 export const requestTrade = mutation({
   args: { listingId: v.id("listings"), grams: v.number() },
@@ -480,16 +548,36 @@ export const requestTrade = mutation({
   handler: async (ctx, args) => {
     const { profile, org } = await requireOrg(ctx, BUYER_KINDS);
     const listing = await ctx.db.get("listings", args.listingId);
-    if (listing?.city !== org.city) throw new ConvexError("NOT_FOUND");
-    if (listing.orgId === org._id) throw new ConvexError("OWN_LISTING");
-    if (buyerKindFor(listing.sellerKind) !== org.kind) {
-      throw new ConvexError("WRONG_ROLE");
+    if (
+      listing?.city !== org.city &&
+      listing?.origin !== "manufacturer_byproduct"
+    ) {
+      throw new ConvexError("NOT_FOUND");
     }
+    if (listing.orgId === org._id) throw new ConvexError("OWN_LISTING");
     const seller = await ctx.db.get("orgs", listing.orgId);
     if (seller?.status !== "active") throw new ConvexError("NOT_FOUND");
+    if (seller.kind !== listing.sellerKind) {
+      throw new ConvexError("INVALID_LISTING");
+    }
+    if (listing.origin === "manufacturer_byproduct") {
+      await requireEligibleByproduct(ctx, listing, seller, org);
+    } else if (buyerKindFor(listing.sellerKind) === org.kind) {
+      await requireOrdinaryTradeMaterial(ctx, listing, org._id);
+    } else {
+      throw new ConvexError("WRONG_ROLE");
+    }
     if (listing.status !== "open") throw new ConvexError("LISTING_NOT_OPEN");
     if (!isPositiveInteger(args.grams)) throw new ConvexError("INVALID_WEIGHT");
     if (args.grams > listing.grams) throw new ConvexError("NOT_ENOUGH_LEFT");
+    if (listing.specification?.lotId)
+      await requireOfferLot(
+        ctx,
+        listing.specification.lotId,
+        listing.orgId,
+        listing.materialCode,
+        args.grams,
+      );
 
     const now = Date.now();
     const totalPaise = safePaiseFor(args.grams, listing.askPaisePerKg);
@@ -502,6 +590,7 @@ export const requestTrade = mutation({
       grams: args.grams,
       paisePerKg: listing.askPaisePerKg,
       totalPaise,
+      specification: listing.specification,
       status: "requested",
       timeline: [{ status: "requested", at: now }],
       createdAt: now,
@@ -531,7 +620,7 @@ export const myListings = query({
   args: {},
   returns: v.array(vListingView),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx, SELLER_KINDS);
+    const { org } = await requireOrg(ctx, SELLER_KINDS, "read");
     const rows = await ctx.db
       .query("listings")
       .withIndex("by_org", (q) => q.eq("orgId", org._id))
@@ -548,6 +637,50 @@ export const myListings = query({
  * What I can put on sale: each material in stock, with the grams not already
  * listed or sold. Feeds the sell form.
  */
+export const listingLotOptions = query({
+  args: { materialCode: v.string() },
+  returns: v.array(
+    v.object({
+      id: v.id("materialLots"),
+      state: v.string(),
+      grams: v.number(),
+    }),
+  ),
+  handler: async (ctx, args) => {
+    const { org } = await requireOrg(ctx, SELLER_KINDS, "read");
+    const material = await ctx.db
+      .query("materials")
+      .withIndex("by_code", (q) => q.eq("code", args.materialCode))
+      .unique();
+    if (
+      !material ||
+      !isOrdinaryMaterial(material) ||
+      !org.families.includes(material.family)
+    )
+      return [];
+    const rows = await ctx.db
+      .query("materialLots")
+      .withIndex("by_org_material_created", (q) =>
+        q.eq("orgId", org._id).eq("materialCode", args.materialCode),
+      )
+      .order("desc")
+      .take(100);
+    return rows
+      .filter(
+        (row) =>
+          row.materialCode === args.materialCode &&
+          row.status === "available" &&
+          row.availableGrams > 0 &&
+          hasOfferLotClassification(row),
+      )
+      .map((row) => ({
+        id: row._id,
+        state: row.state,
+        grams: row.availableGrams,
+      }));
+  },
+});
+
 export const sellable = query({
   args: {},
   returns: v.array(
@@ -559,14 +692,28 @@ export const sellable = query({
     }),
   ),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx, SELLER_KINDS);
+    const { org } = await requireOrg(ctx, SELLER_KINDS, "read");
     const stock = await stockFor(ctx, org._id);
     const materials = await materialIndex(ctx);
     // The material index is in catalogue order, so the form is too.
     const items = [];
     for (const material of materials.values()) {
       const held = stock.get(material.code);
-      if (!held || held.stockGrams <= 0 || !material.active) continue;
+      if (
+        !held ||
+        held.stockGrams <= 0 ||
+        !isOrdinaryMaterial(material) ||
+        !org.families.includes(material.family)
+      )
+        continue;
+      if (
+        org.kind === "manufacturer" &&
+        (material.stage !== "scrap" ||
+          material.byproductEligibility?.hazardStatus !== "non_hazardous" ||
+          !org.families.includes(material.family))
+      ) {
+        continue;
+      }
       items.push({
         material: materialRef(materials, material.code),
         stage: material.stage,
@@ -578,6 +725,29 @@ export const sellable = query({
   },
 });
 
+async function offerSpecification(
+  ctx: QueryCtx,
+  input: Infer<typeof vOfferSpecificationInput> | undefined,
+  orgId: Id<"orgs">,
+  materialCode: string,
+  grams: number,
+): Promise<Doc<"listings">["specification"]> {
+  if (!input) return undefined;
+  const grade = requiredLabel(input.grade);
+  const detail = optionalReference(input.specification);
+  if (!detail) throw new ConvexError("INVALID_SPECIFICATION");
+  const lot = input.lotId
+    ? await requireOfferLot(ctx, input.lotId, orgId, materialCode, grams)
+    : null;
+  return {
+    grade,
+    specification: detail,
+    lotId: lot?._id,
+    lotState: lot?.state,
+    source: "seller_declared",
+  };
+}
+
 /** Offers a lot to the next business up the chain. */
 // eslint-disable-next-line unicorn/no-non-function-verb-prefix -- a registered Convex mutation is a const, and its name is the public API (api.market.createListing)
 export const createListing = mutation({
@@ -586,6 +756,7 @@ export const createListing = mutation({
     grams: v.number(),
     askPaisePerKg: v.number(),
     note: v.optional(v.string()),
+    specification: v.optional(vOfferSpecificationInput),
   },
   returns: v.id("listings"),
   handler: async (ctx, args) => {
@@ -607,9 +778,30 @@ export const createListing = mutation({
       .withIndex("by_code", (q) => q.eq("code", args.materialCode))
       .first();
     if (!material?.active) throw new ConvexError("UNKNOWN_MATERIAL");
+    if (
+      !isOrdinaryMaterial(material) ||
+      !org.families.includes(material.family)
+    )
+      throw new ConvexError("MATERIAL_NOT_ELIGIBLE");
+    if (
+      org.kind === "manufacturer" &&
+      (material.stage !== "scrap" ||
+        material.byproductEligibility?.hazardStatus !== "non_hazardous" ||
+        !org.families.includes(material.family))
+    ) {
+      throw new ConvexError("BYPRODUCT_NOT_ELIGIBLE");
+    }
     const stock = await stockFor(ctx, org._id);
     const available = stock.get(args.materialCode)?.availableGrams ?? 0;
     if (args.grams > available) throw new ConvexError("NOT_ENOUGH_STOCK");
+
+    const specification = await offerSpecification(
+      ctx,
+      args.specification,
+      org._id,
+      args.materialCode,
+      args.grams,
+    );
 
     const now = Date.now();
     const listingId = await ctx.db.insert("listings", {
@@ -620,6 +812,9 @@ export const createListing = mutation({
       askPaisePerKg: args.askPaisePerKg,
       city: org.city,
       note,
+      specification,
+      origin:
+        org.kind === "manufacturer" ? "manufacturer_byproduct" : undefined,
       status: "open",
       createdAt: now,
       updatedAt: now,
@@ -678,7 +873,7 @@ export const trades = query({
     selling: v.array(vTradeView),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx);
+    const { org, role } = await requireOrg(ctx, undefined, "read");
     const bought = await ctx.db
       .query("trades")
       .withIndex("by_buyer", (q) => q.eq("buyerOrgId", org._id))
@@ -698,9 +893,9 @@ export const trades = query({
         const counterparty = await orgOf(
           side === "buyer" ? trade.sellerOrgId : trade.buyerOrgId,
         );
-        if (counterparty) {
-          result.push(toTradeView(trade, side, counterparty, materials));
-        }
+        if (!counterparty) continue;
+        const view = toTradeView(trade, side, counterparty, materials);
+        result.push(role === "viewer" ? { ...view, actions: [] } : view);
       }
       return result;
     };
@@ -712,9 +907,8 @@ export const trades = query({
 });
 
 /**
- * One step of a trade, by the side whose turn it is: the seller accepts or
- * declines, the buyer pays into escrow, the seller dispatches, the buyer
- * confirms delivery.
+ * One current trade step: the seller accepts or declines. Payment, dispatch
+ * and completion are unavailable until a gateway event can be verified.
  */
 export const act = mutation({
   args: { tradeId: v.id("trades"), action: vTradeAction },
@@ -727,21 +921,18 @@ export const act = mutation({
     const trade = await ctx.db.get("trades", args.tradeId);
     const side = trade ? sideOf(trade, org._id) : null;
     if (!trade || !side) throw new ConvexError("NOT_FOUND");
+    if (requiresGatewayEvent(args.action)) {
+      throw new ConvexError("GATEWAY_REQUIRED");
+    }
     const next = tradeStep(trade.status, args.action, side);
     if (!next) throw new ConvexError("WRONG_STEP");
 
     const now = Date.now();
     const actor = { profileId: profile._id, orgId: org._id };
     await applyStep(ctx, actor, trade, args.action, now);
-    // Paying into escrow is what issues the trade receipt.
-    const invoiceNo =
-      args.action === "pay"
-        ? await nextReceiptNumber(ctx, now)
-        : trade.invoiceNo;
     await ctx.db.patch("trades", trade._id, {
       status: next,
       timeline: [...trade.timeline, { status: next, at: now }],
-      invoiceNo,
       updatedAt: now,
     });
     await audit(ctx, {
@@ -756,24 +947,21 @@ export const act = mutation({
         side,
         grams: trade.grams,
         totalPaise: trade.totalPaise,
-        invoiceNo,
-        escrow: ESCROW_EFFECT[args.action],
       },
     });
-    return { status: next, invoiceNo };
+    return { status: next };
   },
 });
 
 /**
- * A trade's receipt, for either side: both businesses, the line, the total
- * and the e-way-bill note. A trade receipt, not a GST tax invoice — those
- * come with real payments. Null when the trade isn't found or isn't mine.
+ * A read-only record for either trade party. It retains old numbers as
+ * unverified legacy references, not as payment or tax-invoice proof.
  */
 export const receipt = query({
   args: { tradeId: v.string() },
   returns: v.union(v.null(), vTradeReceipt),
   handler: async (ctx, args) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     const tradeId = ctx.db.normalizeId("trades", args.tradeId);
     const trade = tradeId ? await ctx.db.get("trades", tradeId) : null;
     const side = trade ? sideOf(trade, org._id) : null;
@@ -782,15 +970,19 @@ export const receipt = query({
     const buyer = await ctx.db.get("orgs", trade.buyerOrgId);
     if (!seller || !buyer) return null;
     const materials = await materialIndex(ctx);
-    const at = (status: Doc<"trades">["status"]) =>
-      trade.timeline.find((entry) => entry.status === status)?.at ?? null;
     return {
       id: trade._id,
-      number: trade.invoiceNo ?? null,
+      number: null,
+      legacyReceiptNo: trade.invoiceNo ?? null,
+      legacyRecordedAt: trade.invoiceNo
+        ? (trade.timeline.find((entry) => entry.status === "paid_to_escrow")
+            ?.at ?? trade.updatedAt)
+        : null,
+      paymentVerification: paymentVerificationFor(trade.status),
       status: trade.status,
       side,
-      issuedAt: at("paid_to_escrow"),
-      releasedAt: at("completed"),
+      issuedAt: null,
+      releasedAt: null,
       seller: partyOf(seller),
       buyer: partyOf(buyer),
       line: {

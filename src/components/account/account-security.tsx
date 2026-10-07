@@ -1,12 +1,12 @@
 "use client";
 
-import { useConvexAuth, useQuery } from "convex/react";
 import { ShieldCheckIcon, ShieldIcon } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import QRCode from "qrcode";
 import { useEffect, useRef, useState } from "react";
 
+import { useSignedInQuery } from "@/components/providers/use-signed-in-query";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -24,6 +24,8 @@ import { authClient } from "@/lib/auth-client";
 import { signOutWithDeviceRevocation } from "@/lib/sign-out";
 
 import { api } from "../../../convex/_generated/api";
+import { PHONE_EMAIL_DOMAIN } from "../../../convex/lib/phone";
+import { AccountPhone } from "./account-phone";
 
 interface Enrollment {
   totpURI: string;
@@ -41,15 +43,20 @@ function securityError(error: {
   return error.status === 429 ? "errorRateLimited" : "generic";
 }
 
-/** Secret values are held only in this mounted page, never browser storage. */
+/** A different identity must never inherit another person's secret form state. */
 export function AccountSecurity() {
+  const session = authClient.useSession();
+  return <SecurityForm key={session.data?.user.id} />;
+}
+
+/** Secret values are held only in this mounted form, never browser storage. */
+function SecurityForm() {
   const t = useTranslations("accountSecurity");
   const common = useTranslations("common");
-  const nav = useTranslations("nav");
-  const { isAuthenticated, isLoading } = useConvexAuth();
-  const person = useQuery(api.identity.me, isAuthenticated ? {} : "skip");
+  const person = useSignedInQuery(api.identity.me);
   const router = useRouter();
   const session = authClient.useSession();
+  const [password, setPassword] = useState("");
   const [setup, setSetup] = useState<Enrollment | null>(null);
   const [codes, setCodes] = useState<string[] | null>(null);
   const [code, setCode] = useState("");
@@ -59,6 +66,7 @@ export function AccountSecurity() {
     "disable" | "regenerate" | null
   >(null);
   const pending = useRef(false);
+  const credentials = person?.hasPassword ? { password } : {};
 
   async function perform(action: () => Promise<void>) {
     if (pending.current) return;
@@ -72,11 +80,13 @@ export function AccountSecurity() {
     } finally {
       pending.current = false;
       setBusy(false);
+      setPassword("");
     }
   }
 
   async function enable() {
-    const { data, error: failure } = await authClient.twoFactor.enable({});
+    const { data, error: failure } =
+      await authClient.twoFactor.enable(credentials);
     if (failure) {
       setError(securityError(failure));
       return;
@@ -102,11 +112,12 @@ export function AccountSecurity() {
   async function changeProtection() {
     if (confirmation === "regenerate") {
       const { data, error: failure } =
-        await authClient.twoFactor.generateBackupCodes({});
+        await authClient.twoFactor.generateBackupCodes(credentials);
       if (failure) setError(securityError(failure));
       else setCodes(data.backupCodes);
     } else {
-      const { error: failure } = await authClient.twoFactor.disable({});
+      const { error: failure } =
+        await authClient.twoFactor.disable(credentials);
       if (failure) setError(securityError(failure));
     }
     setConfirmation(null);
@@ -120,9 +131,8 @@ export function AccountSecurity() {
     });
   }
 
-  if (isLoading || (isAuthenticated && person === undefined))
-    return <Skeleton className="h-40 w-full" />;
-  if (!isAuthenticated || !person)
+  if (person === undefined) return <Skeleton className="h-40 w-full" />;
+  if (!person)
     return (
       <Link href={{ pathname: "/login", query: { next: "/account/security" } }}>
         {t("signInAgain")}
@@ -133,22 +143,37 @@ export function AccountSecurity() {
   const actionLabel = t(confirmation === "disable" ? "disable" : "regenerate");
 
   return (
-    <div className="flex min-w-0 flex-col gap-6">
+    <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-col gap-6">
       <header className="space-y-2">
-        <h1 className="font-display text-3xl leading-tight font-semibold tracking-tight">
+        <h1 className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
           {t("title")}
         </h1>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          {t("description")}
+          <SecurityHelp hasPassword={person.hasPassword} />
         </p>
       </header>
-      <div className="flex items-center gap-3 border-y py-4">
-        <StatusIcon aria-hidden className="size-5 shrink-0 text-primary" />
-        <span className="font-medium">{t("setupTitle")}</span>
+      <div className="flex items-start gap-3 border-y py-4">
+        <StatusIcon
+          aria-hidden
+          className="mt-0.5 size-5 shrink-0 text-primary"
+        />
+        <span className="min-w-0 font-medium">{t("setupTitle")}</span>
         <span className="ms-auto shrink-0 text-sm text-muted-foreground">
           {t(isEnabled ? "enabled" : "disabled")}
         </span>
       </div>
+      <SecurityPassword
+        active={
+          person.hasPassword &&
+          !isEnabled &&
+          person.kind !== "admin" &&
+          !setup &&
+          !codes
+        }
+        password={password}
+        onPassword={setPassword}
+        busy={busy}
+      />
       <SecurityContent
         setup={setup}
         codes={codes}
@@ -157,6 +182,7 @@ export function AccountSecurity() {
         error={error}
         isEnabled={isEnabled}
         isAdmin={person.kind === "admin"}
+        hasPassword={person.hasPassword}
         onCode={setCode}
         onVerify={() => {
           void perform(verify);
@@ -195,17 +221,18 @@ export function AccountSecurity() {
           ) : null}
         </div>
       ) : null}
-      <footer className="space-y-2 border-t pt-4">
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          {t("recoveryHelp")}
-        </p>
-        <Link
-          href="/help/contact"
-          className="inline-flex min-h-11 items-center text-sm font-medium text-primary underline underline-offset-4"
-        >
-          {nav("contact")}
-        </Link>
-      </footer>
+      <SecurityFooter hasPassword={person.hasPassword} />
+      {!setup &&
+      !codes &&
+      person.kind !== "admin" &&
+      session.data?.user.emailVerified &&
+      !session.data.user.email.endsWith(`@${PHONE_EMAIL_DOMAIN}`) ? (
+        <AccountPhone
+          onReauthenticate={() => {
+            void perform(signInAgain);
+          }}
+        />
+      ) : null}
       <Dialog
         open={confirmation !== null}
         onOpenChange={(open) => {
@@ -218,13 +245,19 @@ export function AccountSecurity() {
               {t(confirmation === "disable" ? "disable" : "backupTitle")}
             </DialogTitle>
             <DialogDescription>
-              {t(
-                confirmation === "disable"
-                  ? "disableDescription"
-                  : "regenerateDescription",
-              )}
+              <SecurityChangeDescription
+                isDisabling={confirmation === "disable"}
+                hasPassword={person.hasPassword}
+              />
             </DialogDescription>
           </DialogHeader>
+          <SecurityPassword
+            active={person.hasPassword}
+            password={password}
+            onPassword={setPassword}
+            busy={busy}
+            inDialog
+          />
           <DialogFooter>
             <Button
               variant="outline"
@@ -292,6 +325,7 @@ interface SecurityContentProps {
   error: SecurityError | null;
   isEnabled: boolean;
   isAdmin: boolean;
+  hasPassword: boolean;
   onCode: (value: string) => void;
   onVerify: () => void;
   onEnable: () => void;
@@ -302,7 +336,13 @@ interface SecurityContentProps {
 function SecurityContent(props: SecurityContentProps) {
   if (props.setup) return <EnrollmentForm {...props} setup={props.setup} />;
   if (props.codes)
-    return <RecoveryCodes codes={props.codes} onDismiss={props.onDismiss} />;
+    return (
+      <RecoveryCodes
+        codes={props.codes}
+        onDismiss={props.onDismiss}
+        hasPassword={props.hasPassword}
+      />
+    );
   return props.isAdmin ? null : <SecurityActions {...props} />;
 }
 
@@ -347,20 +387,23 @@ function SecurityActions({
 }
 
 function RecoveryCodes({
+  hasPassword,
   codes,
   onDismiss,
 }: {
   codes: string[];
+  hasPassword: boolean;
   onDismiss: () => void;
 }) {
   const t = useTranslations("accountSecurity");
+  const emailCopy = useTranslations("emailAuth");
   return (
     <section className="flex flex-col gap-4" aria-labelledby="recovery-title">
       <h2 id="recovery-title" className="text-lg font-semibold">
         {t("backupTitle")}
       </h2>
       <p className="text-sm leading-relaxed text-muted-foreground">
-        {t("backupDescription")}
+        {hasPassword ? emailCopy("backupHint") : t("backupDescription")}
       </p>
       <ul
         dir="ltr"
@@ -445,5 +488,84 @@ function EnrollmentForm({
         </div>
       </form>
     </section>
+  );
+}
+
+function SecurityFooter({ hasPassword }: { hasPassword: boolean }) {
+  const nav = useTranslations("nav");
+  return (
+    <footer className="space-y-2 border-t pt-4">
+      {hasPassword ? null : (
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          <SecurityHelp hasPassword={false} recovery />
+        </p>
+      )}
+      <Link
+        href="/help/contact"
+        className="inline-flex min-h-11 items-center text-sm font-medium text-primary underline underline-offset-4"
+      >
+        {nav("contact")}
+      </Link>
+    </footer>
+  );
+}
+
+function SecurityHelp({
+  hasPassword,
+  recovery = false,
+}: {
+  hasPassword: boolean;
+  recovery?: boolean;
+}) {
+  const t = useTranslations("accountSecurity");
+  const emailCopy = useTranslations("emailAuth");
+  if (hasPassword) return emailCopy("securityHint");
+  return t(recovery ? "recoveryHelp" : "description");
+}
+
+function SecurityChangeDescription({
+  isDisabling,
+  hasPassword,
+}: {
+  isDisabling: boolean;
+  hasPassword: boolean;
+}) {
+  const t = useTranslations("accountSecurity");
+  const emailCopy = useTranslations("emailAuth");
+  if (isDisabling && hasPassword) return emailCopy("disableHint");
+  return t(isDisabling ? "disableDescription" : "regenerateDescription");
+}
+
+function SecurityPassword({
+  active,
+  password,
+  onPassword,
+  busy,
+  inDialog = false,
+}: {
+  active: boolean;
+  password: string;
+  onPassword: (value: string) => void;
+  busy: boolean;
+  inDialog?: boolean;
+}) {
+  const t = useTranslations("emailAuth");
+  if (!active) return null;
+  const id = inDialog ? "security-confirm-password" : "security-password";
+  return (
+    <div className="space-y-2">
+      <Label htmlFor={id}>{t("password")}</Label>
+      <Input
+        id={id}
+        type="password"
+        autoComplete="current-password"
+        maxLength={128}
+        value={password}
+        onChange={(event) => {
+          onPassword(event.target.value);
+        }}
+        disabled={busy}
+      />
+    </div>
   );
 }

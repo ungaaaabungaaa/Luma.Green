@@ -13,7 +13,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await localeFromParams(params);
   const t = await getTranslations({ locale, namespace: "auth" });
-  return privateMetadata(t("metaTitle"));
+  return { ...privateMetadata(t("metaTitle")), referrer: "no-referrer" };
 }
 
 /** One sign-in for every business role — docs/product/onboarding.md. */

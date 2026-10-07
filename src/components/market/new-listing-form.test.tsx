@@ -17,17 +17,19 @@ const { createListing, toast, data } = vi.hoisted(() => ({
 vi.mock("convex/react", () => ({
   useConvexAuth: () => ({ isLoading: false, isAuthenticated: true }),
   useMutation: () => createListing,
-  useQuery: (query: Parameters<typeof getFunctionName>[0]) =>
-    getFunctionName(query) === "market:sellable"
-      ? data.items
-      : {
-          city: "Bengaluru",
-          date: "2026-10-02",
-          rows: [
-            { code: "PLASTIC-PET", paisePerKg: 2000 },
-            { code: "PAPER-NEWS", paisePerKg: 1400 },
-          ],
-        },
+  useQuery: (query: Parameters<typeof getFunctionName>[0]): unknown => {
+    const name = getFunctionName(query);
+    if (name === "market:sellable") return data.items;
+    if (name === "market:listingLotOptions") return [];
+    return {
+      city: "Bengaluru",
+      date: "2026-10-02",
+      rows: [
+        { code: "PLASTIC-PET", paisePerKg: 2000 },
+        { code: "PAPER-NEWS", paisePerKg: 1400 },
+      ],
+    };
+  },
 }));
 vi.mock("sonner", () => ({ toast }));
 vi.mock("@/i18n/navigation", () => ({
@@ -66,6 +68,32 @@ function renderForm(locale = "en") {
 }
 
 describe("NewListingForm", () => {
+  it("includes a grade and specification only when the seller explicitly supplies them", async () => {
+    renderForm();
+    await userEvent.click(screen.getByRole("radio", { name: /PET bottles/ }));
+    await userEvent.type(screen.getByLabelText("How many kg?"), "1");
+    await userEvent.click(
+      screen.getByRole("checkbox", { name: "Add a grade and specification" }),
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Put on sale" }));
+    expect(createListing).not.toHaveBeenCalled();
+    await userEvent.type(screen.getByLabelText("Material grade"), "Clear PET");
+    await userEvent.type(
+      screen.getByLabelText("Buyer quality specification"),
+      "Q1 buyer specification",
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Put on sale" }));
+    expect(createListing).toHaveBeenCalledWith(
+      expect.objectContaining({
+        specification: {
+          grade: "Clear PET",
+          specification: "Q1 buyer specification",
+          lotId: undefined,
+        },
+      }),
+    );
+  });
+
   it("offers only stock that's free to sell", () => {
     renderForm();
     expect(screen.getByRole("radio", { name: /Newspaper/ })).toBeDisabled();
@@ -74,10 +102,10 @@ describe("NewListingForm", () => {
     expect(screen.getByText("All listed or sold")).toBeInTheDocument();
   });
 
-  it("starts the price at today's market price, marked up for yards", async () => {
+  it("starts the price at today's market price, marked up for preprocessors", async () => {
     renderForm();
     await userEvent.click(screen.getByRole("radio", { name: /PET bottles/ }));
-    // ₹20 today × 1.25 for a kabadiwala selling to a yard.
+    // ₹20 today × 1.25 for a kabadiwala selling to a preprocessor.
     expect(screen.getByLabelText("Your price, ₹ per kg")).toHaveValue("25");
     expect(screen.getByText("Market today ₹20/kg")).toBeInTheDocument();
     expect(screen.getByText("Suggested ₹25/kg")).toBeInTheDocument();
@@ -109,7 +137,7 @@ describe("NewListingForm", () => {
       note: undefined,
     });
     expect(toast.success).toHaveBeenCalledWith(
-      "On sale. Yards can see it now.",
+      "On sale. Preprocessors can see it now.",
     );
     expect(screen.getByLabelText("How many kg?")).toHaveValue("");
   });
@@ -135,3 +163,7 @@ it.each([
     expect(createListing).not.toHaveBeenCalled();
   },
 );
+
+vi.mock("@/components/workspace/permissions", () => ({
+  useCanOperate: () => true,
+}));

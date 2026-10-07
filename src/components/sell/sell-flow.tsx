@@ -56,7 +56,7 @@ function LiveSellFlow() {
   const state = useSellState();
   if (!state.isLoaded) return <SellSkeleton />;
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       <StepIndicator step={state.step} />
       <CurrentStep state={state} />
       <StepActions state={state} />

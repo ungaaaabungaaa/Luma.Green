@@ -18,7 +18,7 @@ export const materials = query({
       family: vFamily,
       stage: v.union(v.literal("scrap"), v.literal("recycled")),
       names: vNames,
-      co2eFactor: v.number(),
+      co2eFactor: v.union(v.number(), v.null()),
     }),
   ),
   handler: async (ctx) => {
@@ -33,8 +33,51 @@ export const materials = query({
         family: row.family,
         stage: row.stage,
         names: row.names,
-        co2eFactor: row.co2eFactor,
+        co2eFactor: row.co2eFactor ?? null,
       }));
+  },
+});
+
+/** Add canonical definitions only. Existing materials and all operational data stay intact. */
+export const initializeDefinitions = mutation({
+  args: {},
+  returns: v.object({ inserted: v.number() }),
+  handler: async (ctx) => {
+    const admin = await requireAdmin(ctx);
+    const profile = await findProfile(ctx, admin._id);
+    let inserted = 0;
+    for (const [sortOrder, entry] of CATALOGUE.entries()) {
+      const existing = await ctx.db
+        .query("materials")
+        .withIndex("by_code", (q) => q.eq("code", entry.code))
+        .unique();
+      if (existing) continue;
+      // Deliberately select fields: the source also contains prototype prices
+      // and indicative factors, neither of which is a production input.
+      const definition = {
+        code: entry.code,
+        family: entry.family,
+        stage: entry.stage,
+        names: entry.names,
+        sortOrder,
+        active: true,
+      };
+      const id = await ctx.db.insert("materials", definition);
+      await ctx.db.insert("auditLog", {
+        actorProfileId: profile?._id,
+        action: "material.definitionInitialized",
+        entityTable: "materials",
+        entityId: id,
+        metadata: {
+          adminUserId: admin._id,
+          definition,
+          factorStatus: "unknown",
+        },
+        createdAt: Date.now(),
+      });
+      inserted += 1;
+    }
+    return { inserted };
   },
 });
 

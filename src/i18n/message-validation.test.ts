@@ -81,6 +81,7 @@ describe("message validation", () => {
       "UPI",
       "WhatsApp",
       "{price}/kg",
+      "{value} g",
       "{km} km",
       "{minutes} min",
       "{kw} kW",
@@ -92,6 +93,7 @@ describe("message validation", () => {
 
   it("rejects copied labels and paragraphs without exempting their keys", () => {
     expect(hasUntranslatedCopy("Close", "Close")).toBe(true);
+    expect(hasUntranslatedCopy("Egg", "Egg")).toBe(true);
     expect(
       hasUntranslatedCopy(
         "Luma.Green welcomes all households.",

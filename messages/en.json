@@ -5,7 +5,7 @@
   },
   "meta": {
     "title": "Luma.Green — Cleaner Tomorrow in Motion",
-    "description": "Luma.Green connects India's recycling network: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, weighed collections and a record of every hand-off."
+    "description": "Luma.Green connects India's recycling network: households, kabadiwalas, preprocessors, recyclers and manufacturers, with fair prices, weighed collections and a record of every hand-off."
   },
   "theme": {
     "label": "Appearance",
@@ -52,7 +52,7 @@
     },
     "trade": {
       "title": "Trade",
-      "summary": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments."
+      "summary": "Business payments use the payment gateway. Check the order for its current payment status."
     },
     "record": {
       "title": "Record",
@@ -76,7 +76,7 @@
     }
   },
   "home": {
-    "metaDescription": "Luma.Green connects India's recycling network: households, kabadiwalas, yards, recyclers and manufacturers, with fair prices, verified businesses and a receipt at every step.",
+    "metaDescription": "Luma.Green connects India's recycling network: households, kabadiwalas, preprocessors, recyclers and manufacturers, with fair prices, verified businesses and a receipt at every step.",
     "hero": {
       "eyebrow": "Starting in Bengaluru",
       "title": "Give your materials a new beginning.",
@@ -96,7 +96,7 @@
     },
     "chain": {
       "heading": "How materials move",
-      "intro": "Materials move from homes to collection shops, sorting yards and recyclers before they become something new. Luma.Green records each hand-off.",
+      "intro": "Materials move from homes to collection shops, preprocessors and recyclers before they become something new. Luma.Green records each hand-off.",
       "steps": {
         "household": {
           "name": "Households",
@@ -107,7 +107,7 @@
           "body": "Buy it, weigh it and sort it by material."
         },
         "yard": {
-          "name": "Yards",
+          "name": "Preprocessors",
           "body": "Grade it and press it into bales."
         },
         "recycler": {
@@ -119,7 +119,7 @@
           "body": "Make new products from recycled material."
         }
       },
-      "money": "Households receive cash or UPI at the door. Escrow between businesses is planned.",
+      "money": "Business payments use the payment gateway. Check the order for its current payment status.",
       "saathi": "Saathis help all along the chain with pickups, sorting and shifts."
     },
     "roles": {
@@ -136,19 +136,19 @@
         "title": "Kabadiwalas",
         "one": "Pickup requests from homes nearby.",
         "two": "Set your own prices, never below the floor.",
-        "three": "Sell your sorted stock to yards.",
+        "three": "Sell your sorted stock to preprocessors.",
         "cta": "Join as a kabadiwala"
       },
       "yard": {
-        "title": "Yards",
+        "title": "Preprocessors",
         "one": "See what nearby shops have in stock.",
         "two": "Buy in bulk and sell bales to recyclers.",
-        "three": "Planned: Payment held in escrow until delivery.",
-        "cta": "Join as a yard"
+        "three": "Business payments use the payment gateway. Check the order for its current payment status.",
+        "cta": "Join as a preprocessor"
       },
       "recycler": {
         "title": "Recyclers",
-        "one": "Graded bales from verified yards.",
+        "one": "Graded bales from verified preprocessors.",
         "two": "Every lot with its chain of custody.",
         "three": "Sell your output to factories.",
         "cta": "Join as a recycler"
@@ -156,7 +156,7 @@
       "manufacturer": {
         "title": "Manufacturers",
         "one": "See what recyclers are producing.",
-        "two": "Planned: Order recycled material with escrow.",
+        "two": "Business payments use the payment gateway. Check the order for its current payment status.",
         "three": "Records for your EPR reports.",
         "cta": "Join as a manufacturer"
       },
@@ -180,7 +180,7 @@
         "body": "Shops set their own prices, but never below the minimum we publish for each material."
       },
       "escrow": {
-        "title": "Planned: Escrow for business trades",
+        "title": "Awaiting gateway",
         "body": "The demo shows payment steps but does not hold or transfer real money."
       },
       "receipts": {
@@ -312,7 +312,7 @@
   },
   "standards": {
     "metaTitle": "The Luma.Green standard",
-    "metaDescription": "Planned: Open material codes and simple rules for fair material trade in India: grading, weighing, receipts, verification and escrow. Free for anyone to adopt.",
+    "metaDescription": "Business payments use the payment gateway. Check the order for its current payment status.",
     "eyebrow": "Open standard",
     "title": "The Luma.Green standard",
     "lead": "Simple, open rules for trading recyclable materials fairly: one code for every material, clear grading, honest weighing and a record at every hand-off. Anyone in the industry can adopt them.",
@@ -394,18 +394,18 @@
       "nav": "Verification",
       "body": "A person checks every business and every Saathi before they can trade.",
       "business": "Businesses: the GST number if they have one, photos of the shop or unit, and a phone call.",
-      "consent": "Yards, recyclers and factories: a valid consent from the state pollution control board.",
+      "consent": "Preprocessors, recyclers and factories: a valid consent from the state pollution control board.",
       "saathi": "Saathis: a photo ID and a selfie that matches it."
     },
     "escrow": {
-      "title": "Planned: Escrow between businesses",
-      "nav": "Escrow",
-      "body": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments.",
+      "title": "Awaiting gateway",
+      "nav": "Awaiting gateway",
+      "body": "Business payments use the payment gateway. Check the order for its current payment status.",
       "steps": {
         "accepted": "The seller accepts the order",
-        "paid": "The buyer pays into escrow",
+        "paid": "Awaiting gateway",
         "dispatched": "The seller dispatches the goods",
-        "released": "The buyer confirms, and the money is released"
+        "released": "Awaiting gateway"
       }
     },
     "adopt": {
@@ -552,9 +552,9 @@
   },
   "howItWorks": {
     "metaTitle": "How it works",
-    "metaDescription": "Planned: How recyclable materials move on Luma.Green: collected from home, traded through the network with escrow, and recorded at every hand-off.",
+    "metaDescription": "Business payments use the payment gateway. Check the order for its current payment status.",
     "title": "How Luma.Green works",
-    "lead": "Materials move from homes to collection shops, sorting yards and recyclers before they become something new. Here is what happens at each step, and what Luma.Green records.",
+    "lead": "Materials move from homes to collection shops, preprocessors and recyclers before they become something new. Here is what happens at each step, and what Luma.Green records.",
     "stepLabel": "Step {number}",
     "sell": {
       "body": "A household picks what it has, sees each nearby shop's offer and books a pickup or a drop-off. The kabadiwala weighs each material and pays in cash or UPI, and both get a receipt.",
@@ -563,7 +563,7 @@
       "point3": "A tracking link, with no account needed"
     },
     "trade": {
-      "body": "Demo: Kabadiwalas sell sorted stock to yards, yards sell bales to recyclers, and recyclers sell flakes, granules and ingots to factories. The buyer's payment waits in escrow until the goods arrive. The demo shows payment steps but does not hold or transfer real money.",
+      "body": "Business payments use the payment gateway. Check the order for its current payment status.",
       "point1": "Only verified businesses can trade",
       "point2": "Stock moves when a load is dispatched and received",
       "point3": "A numbered trade receipt for every paid trade"
@@ -577,20 +577,20 @@
   },
   "participants": {
     "metaTitle": "Who it's for",
-    "metaDescription": "Luma.Green is built for households, kabadiwalas, yards, recyclers, manufacturers and Saathis: everyone who moves recyclable materials from home to factory.",
+    "metaDescription": "Luma.Green is built for households, kabadiwalas, preprocessors, recyclers, manufacturers and Saathis: everyone who moves recyclable materials from home to factory.",
     "title": "Who Luma.Green is for",
     "lead": "Everyone who moves recyclable materials from home to factory, and the people who do the work in between.",
     "kabadiwala": {
       "name": "Kabadiwalas",
-      "body": "Take pickup requests from homes nearby, weigh and pay fairly, and sell sorted stock to yards."
+      "body": "Take pickup requests from homes nearby, weigh and pay fairly, and sell sorted stock to preprocessors."
     },
     "yard": {
-      "name": "Yards",
-      "body": "Planned: Buy from kabadiwalas, sort and bale, and sell graded lots to recyclers with payment held in escrow."
+      "name": "Preprocessors",
+      "body": "Business payments use the payment gateway. Check the order for its current payment status."
     },
     "recycler": {
       "name": "Recyclers",
-      "body": "Buy graded bales from verified yards and sell flakes, granules and ingots to factories."
+      "body": "Buy graded bales from verified preprocessors and sell flakes, granules and ingots to factories."
     },
     "manufacturer": {
       "name": "Manufacturers",
@@ -601,20 +601,20 @@
       "body": "Take paid pickups, sorting work and shifts near home, and see what you've earned."
     },
     "householdHeading": "And every household",
-    "householdBody": "Book a collection from home without an account: choose your materials, compare shop offers, and receive cash or UPI payment from the shop with a receipt."
+    "householdBody": "Book a collection from home with your mobile number: choose your materials, compare shop offers, and receive cash or UPI payment from the shop with a receipt."
   },
   "contact": {
     "metaTitle": "Contact",
     "metaDescription": "Get in touch with the Luma.Green team about joining the Bengaluru pilot.",
     "title": "Talk to us",
-    "lead": "We're starting in Bengaluru with a small group of kabadiwalas, yards, recyclers and factories. Tell us who you are, what you trade and roughly how much moves through you each month.",
+    "lead": "We're starting in Bengaluru with a small group of kabadiwalas, preprocessors, recyclers and factories. Tell us who you are, what you trade and roughly how much moves through you each month.",
     "emailHeading": "Early access and general questions",
     "securityHeading": "Security reports",
     "securityBody": "Found a vulnerability? Please report it privately rather than in public."
   },
   "help": {
     "metaTitle": "Help centre",
-    "metaDescription": "Simple guides, answers and training for households, kabadiwalas, yards, recyclers, manufacturers and Saathis on Luma.Green.",
+    "metaDescription": "Simple guides, answers and training for households, kabadiwalas, preprocessors, recyclers, manufacturers and Saathis on Luma.Green.",
     "eyebrow": "Help centre",
     "title": "How can we help?",
     "lead": "Short guides, plain answers and quick training for everyone on Luma.Green.",
@@ -624,7 +624,7 @@
     "replyTime": "We reply within one working day.",
     "search": {
       "label": "Search help",
-      "placeholder": "Try: SMS code or escrow",
+      "placeholder": "Awaiting gateway",
       "clear": "Clear search",
       "summary": "{count, plural, =0 {No answers} one {# answer} other {# answers}} for “{query}”",
       "topicSummary": "{count, plural, =0 {No answers} one {# answer} other {# answers}} about {topic}",
@@ -659,25 +659,25 @@
         "name": "Households",
         "who": "Recycling from home",
         "title": "Help for households",
-        "lead": "Book a pickup, get a fair weigh and get paid at your door. No account needed."
+        "lead": "Book a pickup, confirm your mobile number, and get paid after weighing."
       },
       "kabadiwala": {
         "name": "Kabadiwalas",
         "who": "Running a local collection shop",
         "title": "Help for kabadiwalas",
-        "lead": "Take pickups, weigh and pay in a minute, set your prices and sell to yards."
+        "lead": "Take pickups, weigh and pay in a minute, set your prices and sell to preprocessors."
       },
       "yard": {
-        "name": "Yards",
+        "name": "Preprocessors",
         "who": "Buying from kabadiwalas and sorting further",
-        "title": "Help for yards",
-        "lead": "Demo: Find stock near you, sell sorted bales to recyclers and trade safely with escrow."
+        "title": "Help for preprocessors",
+        "lead": "Business payments use the payment gateway. Check the order for its current payment status."
       },
       "recycler": {
         "name": "Recyclers",
         "who": "Turning collected materials into raw material",
         "title": "Help for recyclers",
-        "lead": "Buy graded materials from yards, sell your output to factories and keep your EPR records clear."
+        "lead": "Buy graded materials from preprocessors, sell your output to factories and keep your EPR records clear."
       },
       "manufacturer": {
         "name": "Manufacturers",
@@ -752,7 +752,7 @@
       "roles": {
         "household": "A household",
         "kabadiwala": "A kabadiwala",
-        "yard": "A yard",
+        "yard": "A preprocessor",
         "recycler": "A recycler",
         "manufacturer": "A manufacturer",
         "saathi": "A Saathi",
@@ -853,7 +853,7 @@
         "steps": {
           "start": {
             "title": "Start at luma.green/join",
-            "body": "Sign in with your mobile number and choose Yard, Recycler or Manufacturer."
+            "body": "Sign in with your mobile number and choose Preprocessor, Recycler or Manufacturer."
           },
           "details": {
             "title": "Add your business details",
@@ -878,8 +878,8 @@
         }
       },
       "escrow": {
-        "title": "Demo guide: How escrow keeps a trade safe",
-        "summary": "The proposed escrow service would hold payment until delivery. The current demo only records simulated payments.",
+        "title": "Awaiting gateway",
+        "summary": "Business payments use the payment gateway. Check the order for its current payment status.",
         "steps": {
           "request": {
             "title": "The buyer sends a request",
@@ -890,8 +890,8 @@
             "body": "Nothing is paid yet. Call each other if you need to agree details."
           },
           "pay": {
-            "title": "The buyer pays into escrow",
-            "body": "The money is held safely, not yet with the seller. The seller can see it's there before loading."
+            "title": "Awaiting gateway",
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           },
           "dispatch": {
             "title": "The seller sends the load",
@@ -899,7 +899,7 @@
           },
           "confirm": {
             "title": "The buyer confirms delivery",
-            "body": "Check the weight and quality, then confirm. The money is released to the seller."
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           }
         }
       },
@@ -935,7 +935,7 @@
           },
           "hold": {
             "title": "Don't confirm a short load",
-            "body": "Confirming releases the money. Until you confirm, it stays in escrow."
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           },
           "report": {
             "title": "Report it with photos",
@@ -975,7 +975,7 @@
       },
       "firstPickup": {
         "title": "Book your first pickup",
-        "summary": "From photo to booked pickup in about two minutes. No account needed.",
+        "summary": "Choose materials, compare shops and verify your mobile number to book a pickup.",
         "steps": {
           "photo": {
             "title": "Take a photo of your materials",
@@ -1244,8 +1244,8 @@
         }
       },
       "stockAndSell": {
-        "title": "Demo guide: Sort your stock and sell to yards",
-        "summary": "From many small pickups to a load a yard wants.",
+        "title": "Demo guide: Sort your stock and sell to preprocessors",
+        "summary": "From many small pickups to a load a preprocessor wants.",
         "steps": {
           "grows": {
             "title": "Your stock fills up by itself",
@@ -1256,12 +1256,12 @@
             "body": "Separate mixed materials by type. For example, sort mixed paper into newspaper, cardboard and waste."
           },
           "show": {
-            "title": "Show your stock to yards",
-            "body": "Turn on Show to yards so yards near you can see what you have."
+            "title": "Show your stock to preprocessors",
+            "body": "Turn on Show to preprocessors so preprocessors near you can see what you have."
           },
           "sell": {
-            "title": "Accept a yard's request",
-            "body": "Check the kilos and the price, then accept. The yard pays into escrow before collecting."
+            "title": "Accept a preprocessor's request",
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           }
         }
       },
@@ -1300,8 +1300,8 @@
             "body": "Choose how many kilos you want. The price per kg is shown before you send."
           },
           "pay": {
-            "title": "Pay into escrow",
-            "body": "When the kabadiwala accepts, pay. The money is held until you confirm."
+            "title": "Awaiting gateway",
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           },
           "collect": {
             "title": "Collect and weigh",
@@ -1327,7 +1327,7 @@
           },
           "accept": {
             "title": "Accept, then wait for payment",
-            "body": "Load only once the buyer's money is in escrow."
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           },
           "dispatch": {
             "title": "Send the load",
@@ -1335,25 +1335,25 @@
           },
           "paid": {
             "title": "Get paid",
-            "body": "When the recycler confirms delivery, the money is released to you."
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           }
         }
       },
       "buyFromYards": {
-        "title": "Demo guide: Buy sorted materials from yards",
+        "title": "Demo guide: Buy sorted materials from preprocessors",
         "summary": "Steady, graded input for your line.",
         "steps": {
           "browse": {
             "title": "Find bales near you",
-            "body": "Open Buy to see yards' listings by material and distance."
+            "body": "Open Buy to see preprocessors' listings by material and distance."
           },
           "request": {
             "title": "Request a load",
             "body": "Choose the kilos. The price per kg is shown before you send."
           },
           "pay": {
-            "title": "Pay into escrow",
-            "body": "Once the yard accepts, pay. The money is held until you confirm delivery."
+            "title": "Awaiting gateway",
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           },
           "confirm": {
             "title": "Weigh, check, confirm",
@@ -1375,11 +1375,11 @@
           },
           "load": {
             "title": "Load after payment",
-            "body": "Accept, then send the load once the payment is in escrow."
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           },
           "paid": {
             "title": "Get paid on delivery",
-            "body": "The money is released when the manufacturer confirms."
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           }
         }
       },
@@ -1396,8 +1396,8 @@
             "body": "Choose the kilos and send. The recycler accepts or declines."
           },
           "pay": {
-            "title": "Pay into escrow",
-            "body": "Pay once they accept. The money is held until you confirm delivery."
+            "title": "Awaiting gateway",
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           },
           "receive": {
             "title": "Receive the load",
@@ -1427,7 +1427,7 @@
           },
           "decide": {
             "title": "Confirm or report",
-            "body": "All good? Confirm. Not right? Report it with photos, and the money stays in escrow."
+            "body": "Business payments use the payment gateway. Check the order for its current payment status."
           }
         }
       },
@@ -1614,8 +1614,8 @@
         "a": "No. You pay them in cash or UPI at the door. The app records how much and how."
       },
       "paidByYard": {
-        "q": "How am I paid when I sell to a yard?",
-        "a": "For now, agree payment directly with the yard. Escrow is planned; the demo does not move money."
+        "q": "How am I paid when I sell to a preprocessor?",
+        "a": "Business payments use the payment gateway. Check the order for its current payment status."
       },
       "whoSeesShop": {
         "q": "Who can see my shop?",
@@ -1642,8 +1642,8 @@
         "a": "The seller lists a price per kg. You see it before you send a request, and you can call to agree details."
       },
       "whatIsEscrow": {
-        "q": "What is escrow?",
-        "a": "A safe middle step: the buyer's money is held until the load arrives as agreed, then released to the seller. Business escrow is planned."
+        "q": "Awaiting gateway",
+        "a": "Business payments use the payment gateway. Check the order for its current payment status."
       },
       "whenSellerPaid": {
         "q": "When is the seller paid?",
@@ -1666,8 +1666,8 @@
         "a": "Keep your CPCB Plastic Waste Processor registration ready. Brands ask for it, and it lets you issue EPR certificates."
       },
       "buyFromAnyYard": {
-        "q": "Can I buy from more than one yard?",
-        "a": "Yes. Buy from any verified yard that lists what you need, as often as you like."
+        "q": "Can I buy from more than one preprocessor?",
+        "a": "Yes. Buy from any verified preprocessor that lists what you need, as often as you like."
       },
       "eprRecords": {
         "q": "Do Luma.Green records help with EPR?",
@@ -1739,8 +1739,8 @@
       "settingPrices": "Setting your prices",
       "buyingFromKabadiwalas": "Buying from kabadiwalas",
       "listingBales": "Listing bales for recyclers",
-      "escrowExplained": "Demo: Escrow in two minutes",
-      "buyingFromYards": "Buying from yards",
+      "escrowExplained": "Awaiting gateway",
+      "buyingFromYards": "Buying from preprocessors",
       "sellingOutput": "Selling your output",
       "eprPlainWords": "EPR in plain words",
       "firstOrder": "Placing your first order",
@@ -1799,10 +1799,10 @@
         "p3": "Pay before you leave, every time."
       },
       "sellingToYards": {
-        "title": "Demo: Selling to yards",
+        "title": "Demo: Selling to preprocessors",
         "p1": "Record your sorting so your stock is right.",
-        "p2": "Show your stock to yards near you.",
-        "p3": "Load only after the payment is in escrow."
+        "p2": "Show your stock to preprocessors near you.",
+        "p3": "Business payments use the payment gateway. Check the order for its current payment status."
       },
       "buyingStock": {
         "title": "Buying stock",
@@ -1811,8 +1811,8 @@
         "p3": "Weigh every load before you confirm."
       },
       "tradingWithEscrow": {
-        "title": "Demo: Trading with escrow",
-        "p1": "The buyer pays into escrow after the seller accepts.",
+        "title": "Awaiting gateway",
+        "p1": "Business payments use the payment gateway. Check the order for its current payment status.",
         "p2": "The seller loads only when the money is there.",
         "p3": "Confirming delivery releases the money."
       },
@@ -1830,8 +1830,8 @@
       },
       "buyingInputs": {
         "title": "Demo: Buying your input",
-        "p1": "Find graded bales from yards in Buy.",
-        "p2": "Pay into escrow once the yard accepts.",
+        "p1": "Find graded bales from preprocessors in Buy.",
+        "p2": "Business payments use the payment gateway. Check the order for its current payment status.",
         "p3": "Check the grade before you confirm."
       },
       "eprBasics": {
@@ -1844,7 +1844,7 @@
         "title": "Demo: Ordering recycled material",
         "p1": "Compare listings by type, kilos and price.",
         "p2": "Send an order for the kilos you need.",
-        "p3": "Pay into escrow once it's accepted."
+        "p3": "Business payments use the payment gateway. Check the order for its current payment status."
       },
       "checkingDeliveries": {
         "title": "Checking deliveries",
@@ -1885,14 +1885,14 @@
     "chooseLanguageHint": "You can change it any time from the top of the screen.",
     "continue": "Continue",
     "title": "Log in with your mobile number",
-    "lead": "For kabadiwalas, yards, recyclers, manufacturers and Saathis.",
+    "lead": "For kabadiwalas, preprocessors, recyclers, manufacturers and Saathis.",
     "mobileLabel": "Mobile number",
     "mobileHint": "We'll send a 6-digit code to this number.",
     "mobileInvalid": "Enter a 10-digit Indian mobile number.",
     "sendCode": "Send code",
     "sending": "Sending…",
     "sendFailed": "We couldn't send the code. Please try again in a minute.",
-    "homeTitle": "Recycling from home? You don't need an account.",
+    "homeTitle": "Recycling from home?",
     "homeLink": "See how it works",
     "privacy": "We use your number only to sign you in and to send you updates about your work on Luma.Green.",
     "unavailableTitle": "Phone sign-in opens soon",
@@ -1929,7 +1929,7 @@
   },
   "join": {
     "metaTitle": "Join Luma.Green",
-    "metaDescription": "Kabadiwalas, yards, recyclers, manufacturers and Saathis in Bengaluru: apply to join Luma.Green. A person checks every application, usually within 12–24 hours.",
+    "metaDescription": "Kabadiwalas, preprocessors, recyclers, manufacturers and Saathis in Bengaluru: apply to join Luma.Green. A person checks every application, usually within 12–24 hours.",
     "title": "Join Luma.Green",
     "lead": "Tell us what you do. A person checks every application, usually within 12–24 hours.",
     "start": "Start",
@@ -1944,7 +1944,7 @@
         "needs": "Your shop's address and opening hours. Your GST number if you have one."
       },
       "yard": {
-        "title": "Yard",
+        "title": "Preprocessor",
         "body": "You sort and bale materials in bulk, then sell them on.",
         "needs": "Your GST number if you have one, your pollution-control consent (a PDF) and photos of your machines."
       },
@@ -2043,7 +2043,7 @@
     },
     "business": {
       "titles": {
-        "yard": "Your yard",
+        "yard": "Your preprocessing business",
         "recycler": "Your recycling unit",
         "manufacturer": "Your factory"
       },
@@ -2233,7 +2233,7 @@
     },
     "roles": {
       "kabadiwala": "Kabadiwala",
-      "yard": "Yard",
+      "yard": "Preprocessor",
       "recycler": "Recycler",
       "manufacturer": "Manufacturer",
       "saathi": "Saathi"
@@ -2261,7 +2261,7 @@
       "title": "Open jobs",
       "lead": "Jobs in your area come first.",
       "empty": "No open jobs right now",
-      "emptyBody": "New jobs from shops, yards and factories show up here."
+      "emptyBody": "New jobs from shops, preprocessors and factories show up here."
     },
     "work": {
       "home_pickups": "Pickups from homes",
@@ -2376,7 +2376,8 @@
       "emptyBody": "Take a job on your home screen. When you mark it done, the pay shows here.",
       "findJob": "Find a job",
       "demoNote": "Sample data: the jobs and pay here are examples for the prototype."
-    }
+    },
+    "factorUnavailable": "CO₂e estimate unavailable. Emission factors are not set."
   },
   "compliance": {
     "title": "Compliance",
@@ -2454,7 +2455,7 @@
       "view": "View receipt {number}",
       "unknown": "A business no longer on Luma.Green",
       "empty": "No receipts yet",
-      "emptyBody": "A receipt is made when a buyer pays into escrow."
+      "emptyBody": "Business payments use the payment gateway. Check the order for its current payment status."
     },
     "epr": {
       "title": "EPR record, FY {from}–{to}",
@@ -2484,7 +2485,7 @@
     },
     "saathi": {
       "title": "For businesses",
-      "body": "Compliance is for shops, yards, recyclers and factories. Your jobs and pay are on your home screen.",
+      "body": "Compliance is for shops, preprocessors, recyclers and factories. Your jobs and pay are on your home screen.",
       "home": "Go to my jobs"
     }
   },
@@ -2496,7 +2497,7 @@
     "lead": "Pick what you have, choose a shop near you, and get paid in cash or UPI when it's weighed.",
     "promises": {
       "label": "Why sell here",
-      "noAccount": "No account needed",
+      "noAccount": "Verify your phone to book",
       "payAtDoor": "Paid when it's weighed",
       "verified": "Verified shops"
     },
@@ -2804,7 +2805,7 @@
     "perKg": "{price}/kg",
     "recycled": "Recycled",
     "forBusinessesTitle": "This screen is for businesses",
-    "forBusinessesBody": "Kabadiwalas, yards, recyclers and manufacturers trade here.",
+    "forBusinessesBody": "Kabadiwalas, preprocessors, recyclers and manufacturers trade here.",
     "units": {
       "kg": "kg",
       "rupee": "₹"
@@ -2841,30 +2842,30 @@
       "kgTooMuch": "Only {weight} is available.",
       "total": "Total",
       "totalLine": "{weight} × {price}/kg",
-      "escrow": "You pay into escrow after {seller} accepts. The money goes to them when you confirm delivery.",
+      "escrow": "Business payments use the payment gateway. Check the order for its current payment status.",
       "ewayBill": "Over ₹50,000: an e-way bill must travel with this load.",
       "cancel": "Cancel",
       "submit": "Send request",
       "sending": "Sending…",
       "sent": "Request sent to {seller}",
-      "sentNext": "You'll pay into escrow once they accept.",
+      "sentNext": "Business payments use the payment gateway. Check the order for its current payment status.",
       "seeTrades": "See trades"
     },
     "browse": {
       "title": "Buy",
-      "lead": "{kind, select, yard {Sorted materials from kabadiwalas near you.} recycler {Sorted, baled material from yards.} manufacturer {Recycled material from verified recyclers.} other {Material on sale near you.}}",
+      "lead": "Browse offers from approved suppliers for the materials you handle.",
       "filterLabel": "Filter by material",
       "all": "All",
       "count": "{count, plural, =0 {No lots} one {# lot on sale} other {# lots on sale}}",
       "emptyTitle": "Nothing on sale right now",
       "emptyBody": "New lots show up here as soon as they're listed.",
       "notForYouTitle": "Kabadiwalas buy from households",
-      "notForYouBody": "On the market you sell: offer your sorted stock to yards.",
-      "goSell": "Sell to yards"
+      "notForYouBody": "On the market you sell: offer your sorted stock to preprocessors.",
+      "goSell": "Sell to preprocessors"
     },
     "sell": {
       "title": "Sell",
-      "lead": "{buyer, select, yard {Offer your sorted stock to yards.} recycler {Offer your bales to recyclers.} manufacturer {Offer your material to manufacturers.} other {Offer your stock to buyers.}}",
+      "lead": "{buyer, select, yard {Offer your sorted stock to preprocessors.} recycler {Offer your bales to recyclers.} manufacturer {Offer your material to manufacturers.} other {Offer your stock to buyers.}}",
       "notForYouTitle": "Manufacturers buy on Luma.Green",
       "notForYouBody": "Find recycled material from verified recyclers.",
       "goBuy": "Buy material",
@@ -2888,7 +2889,7 @@
         "value": "Lot value",
         "submit": "Put on sale",
         "submitting": "Putting on sale…",
-        "listed": "On sale. {buyer, select, yard {Yards} recycler {Recyclers} manufacturer {Manufacturers} other {Buyers}} can see it now.",
+        "listed": "On sale. {buyer, select, yard {Preprocessors} recycler {Recyclers} manufacturer {Manufacturers} other {Buyers}} can see it now.",
         "nothingTitle": "Nothing to sell yet",
         "nothingBody": "Stock you record shows up here. What's already listed or sold isn't counted twice.",
         "goStock": "Go to stock",
@@ -2920,7 +2921,7 @@
     },
     "trades": {
       "title": "Trades",
-      "lead": "Every trade, step by step. The money stays in escrow until the buyer confirms delivery.",
+      "lead": "Business payments use the payment gateway. Check the order for its current payment status.",
       "buying": "Buying",
       "selling": "Selling",
       "tabsLabel": "Buying or selling",
@@ -2936,7 +2937,7 @@
         "from": "From {name} · {area}",
         "to": "To {name} · {area}",
         "rate": "{price}/kg",
-        "inEscrow": "{amount} held in escrow",
+        "inEscrow": "Business payments use the payment gateway. Check the order for its current payment status.",
         "ewayBill": "Over ₹50,000: an e-way bill must travel with this load.",
         "updated": "Updated {when}",
         "receipt": "Receipt {number}",
@@ -2947,7 +2948,7 @@
         "label": "Trade progress",
         "requested": "Requested",
         "accepted": "Accepted",
-        "paid_to_escrow": "In escrow",
+        "paid_to_escrow": "Unverified",
         "dispatched": "Dispatched",
         "completed": "Delivered",
         "srStep": "{step}: {state}",
@@ -2964,20 +2965,20 @@
           "seller": "{name} wants to buy this. Accept to keep it for them."
         },
         "accepted": {
-          "buyer": "Accepted. Pay into escrow to go ahead: the money is held until you confirm delivery.",
-          "seller": "Waiting for {name} to pay into escrow."
+          "buyer": "Business payments use the payment gateway. Check the order for its current payment status.",
+          "seller": "Business payments use the payment gateway. Check the order for its current payment status."
         },
         "paid_to_escrow": {
-          "buyer": "Your money is safe in escrow. Waiting for {name} to dispatch.",
-          "seller": "The money is safe in escrow. Send the load, then mark it dispatched."
+          "buyer": "Prototype record. Payment and delivery are unverified.",
+          "seller": "Prototype record. Payment and delivery are unverified."
         },
         "dispatched": {
-          "buyer": "On its way. Check the load, then confirm delivery to release the money.",
-          "seller": "On its way. The money is released to you when {name} confirms delivery."
+          "buyer": "Prototype record. Payment and delivery are unverified.",
+          "seller": "Prototype record. Payment and delivery are unverified."
         },
         "completed": {
-          "buyer": "Delivered. The money was released to {name}.",
-          "seller": "Delivered. The money was released to you."
+          "buyer": "Prototype record. Payment and delivery are unverified.",
+          "seller": "Prototype record. Payment and delivery are unverified."
         },
         "declined": {
           "buyer": "{name} declined this order, or the lot sold out.",
@@ -2987,7 +2988,7 @@
       "action": {
         "accept": "Accept order",
         "decline": "Decline",
-        "pay": "Pay {amount} into escrow",
+        "pay": "Awaiting gateway",
         "dispatch": "Mark as dispatched",
         "confirm": "Confirm delivery"
       },
@@ -2995,21 +2996,23 @@
       "done": {
         "accept": "Order accepted",
         "decline": "Order declined",
-        "pay": "Paid into escrow. Receipt {number}",
+        "pay": "Prototype record. Payment and delivery are unverified.",
         "dispatch": "Marked as dispatched",
-        "confirm": "Delivery confirmed. The money is released to the seller."
+        "confirm": "Prototype record. Payment and delivery are unverified."
       },
       "declineConfirm": "Decline this order from {name}? This can't be undone.",
       "declineYes": "Yes, decline",
-      "declineNo": "Keep it"
+      "declineNo": "Keep it",
+      "gatewayPending": "Business payments use the payment gateway. Check the order for its current payment status.",
+      "legacyUnverified": "Prototype record. Payment and delivery are unverified."
     },
     "receipt": {
       "title": "Trade receipt",
       "numberLabel": "Receipt no.",
       "dateLabel": "Date",
       "statusLabel": "Payment",
-      "inEscrow": "In escrow",
-      "settled": "Released",
+      "inEscrow": "Unverified",
+      "settled": "Unverified",
       "seller": "Seller",
       "buyer": "Buyer",
       "gstin": "GSTIN {gstin}",
@@ -3020,9 +3023,9 @@
       "amount": "Amount",
       "total": "Total",
       "lineSummary": "{weight} × {rate}",
-      "paidInto": "Paid into Luma.Green escrow on {date}.",
-      "held": "Held in escrow until the buyer confirms delivery.",
-      "released": "Released to the seller on {date}.",
+      "paidInto": "Prototype record. Payment and delivery are unverified.",
+      "held": "Prototype record. Payment and delivery are unverified.",
+      "released": "Prototype record. Payment and delivery are unverified.",
       "ewayBill": "Goods worth over ₹50,000: an e-way bill must travel with this load.",
       "notTaxInvoice": "This is a trade receipt, not a GST tax invoice. Tax invoices come with real payments.",
       "print": "Print",
@@ -3030,19 +3033,20 @@
       "missingTitle": "Receipt not found",
       "missingBody": "This trade isn't one of yours, or the link is wrong.",
       "pendingTitle": "No receipt yet",
-      "pendingBody": "The receipt is made when the buyer pays into escrow.",
-      "declinedBody": "This trade was declined, so there's no receipt."
+      "pendingBody": "Business payments use the payment gateway. Check the order for its current payment status.",
+      "declinedBody": "This trade was declined, so there's no receipt.",
+      "unverified": "Unverified"
     },
     "home": {
       "greeting": "Namaste, {name}",
-      "lead": "{kind, select, yard {Buy from kabadiwalas, sell sorted bales to recyclers.} recycler {Buy sorted materials from yards, sell recycled material to manufacturers.} manufacturer {Buy recycled material from verified recyclers.} other {Your trades at a glance.}}",
+      "lead": "Manage your material purchases, sales and orders.",
       "buy": "Buy",
       "sell": "Sell",
       "trades": "Trades",
       "statsTitle": "At a glance",
       "stats": {
-        "escrow": "In escrow",
-        "escrowHint": "Released when delivery is confirmed",
+        "escrow": "Unverified",
+        "escrowHint": "Business payments use the payment gateway. Check the order for its current payment status.",
         "waiting": "Waiting for you",
         "waitingHint": "{count, plural, =0 {All caught up} one {# trade needs a step} other {# trades need a step}}",
         "listings": "On sale",
@@ -3050,15 +3054,16 @@
         "offers": "Recycled lots",
         "offersHint": "On sale from recyclers",
         "completed": "Done this month",
-        "completedHint": "{amount} traded"
+        "completedHint": "{amount} traded",
+        "gatewayPending": "Accepted orders"
       },
       "waitingTitle": "Waiting for you",
       "allTrades": "All trades",
       "caughtUpTitle": "Nothing needs you right now",
       "caughtUpBody": "New orders, payments and deliveries show up here.",
       "offersTitle": "Latest lots for you",
-      "recycledTitle": "Recycled material for you",
-      "recycledBody": "Flakes, granules, kraft and ingots from verified recyclers, ready for your line.",
+      "recycledTitle": "Material offers for you",
+      "recycledBody": "Browse approved suppliers. Recycled material appears first.",
       "seeAll": "See all",
       "noOffersTitle": "No lots on sale right now",
       "noOffersBody": "New lots show up here as soon as they're listed."
@@ -3141,8 +3146,8 @@
       "you": "You pay",
       "market": "Market",
       "quickLinks": "Shortcuts",
-      "sell": "Sell to a yard",
-      "sellHint": "Offer your stock to yards nearby",
+      "sell": "Sell to a preprocessor",
+      "sellHint": "Offer your stock to preprocessors nearby",
       "prices": "My prices",
       "pricesHint": "What you pay households per kg"
     },
@@ -3247,7 +3252,7 @@
       "atPrice": "Market {price}/kg",
       "noPrice": "No market price today",
       "sellTo": {
-        "yard": "Sell to a yard",
+        "yard": "Sell to a preprocessor",
         "recycler": "Sell to a recycler",
         "manufacturer": "Sell to a manufacturer"
       },
@@ -3256,7 +3261,7 @@
       "emptyBusiness": "Buy on the market, and it shows up here.",
       "buy": "Buy material",
       "notBusinessTitle": "Only for businesses",
-      "notBusinessBody": "Stock is kept by shops, yards, recyclers and factories."
+      "notBusinessBody": "Stock is kept by shops, preprocessors, recyclers and factories."
     },
     "prices": {
       "title": "My prices",
@@ -3344,7 +3349,7 @@
           "third": "Manage sorted stock"
         },
         "yard": {
-          "title": "Your sorting yard",
+          "title": "Your preprocessing workspace",
           "first": "Receive materials",
           "second": "Sort your inventory",
           "third": "Prepare outgoing lots"
@@ -3478,5 +3483,642 @@
       "expired": "Expired",
       "revoked": "Revoked"
     }
+  },
+  "stakeholder": {
+    "title": "Request an account",
+    "kind": "Account group",
+    "name": "Organisation name",
+    "site": "Primary site",
+    "submit": "Send request",
+    "note": "No trade or private-record access yet.",
+    "kinds": {
+      "material_generator": "Non-household material generator",
+      "city_official": "City official",
+      "csr_sponsor": "CSR sponsor",
+      "lender": "Lender",
+      "independent_auditor": "Independent auditor",
+      "waste_picker_union": "Waste-picker union",
+      "apparel_brand": "Apparel brand",
+      "packaging_brand": "Packaging brand"
+    },
+    "sites": {
+      "apartment_community": "Apartment community",
+      "office": "Office",
+      "hotel": "Hotel",
+      "resort": "Resort",
+      "other": "Other premises"
+    }
+  },
+  "emailAuth": {
+    "phone": "Phone",
+    "email": "Email",
+    "signin": "Sign in",
+    "signup": "Create account",
+    "forgot": "Reset password",
+    "name": "Your name",
+    "password": "Password",
+    "show": "Show password",
+    "hide": "Hide password",
+    "passwordHint": "Use 12–128 characters.",
+    "unavailable": "Email delivery is unavailable. Existing accounts can still sign in.",
+    "sent": "Check your inbox. If eligible, you will receive a link valid for 15 minutes.",
+    "resend": "Resend verification",
+    "limited": "Too many attempts. Try later.",
+    "unverified": "Verify your email before signing in.",
+    "credentials": "Check your email and password.",
+    "invalidLink": "This link is invalid or expired. Request another.",
+    "failed": "The request failed. Try again.",
+    "reset": "Set new password",
+    "verify": "Verify email",
+    "done": "Completed. Sign in to continue.",
+    "confirm": "Repeat password",
+    "mismatch": "The passwords do not match.",
+    "securityHint": "Add an authenticator code after your password. Password recovery keeps this protection.",
+    "backupHint": "Each recovery code works once after your password.",
+    "disableHint": "Password sign-in stays active. Authenticator and recovery codes stop working."
+  },
+  "workspace": {
+    "title": "Workspaces and team",
+    "choose": "Choose workspace",
+    "team": "Team",
+    "role": "Role",
+    "owner": "Owner",
+    "admin": "Administrator",
+    "member": "Member",
+    "viewer": "Viewer",
+    "invite": "Send invitation",
+    "email": "Email address",
+    "pending": "Pending invitations",
+    "revoke": "Revoke",
+    "remove": "Remove",
+    "empty": "No workspace is available.",
+    "error": "Could not update. Check your access and try again.",
+    "inviteTitle": "Workspace invitation",
+    "accept": "Accept invitation",
+    "verifyEmail": "Verify the invited email address before you accept.",
+    "unavailable": "This invitation is unavailable. Check your email address or request a new invitation.",
+    "join": "Join {name} as {role}.",
+    "readOnly": "Read-only access",
+    "confirmRemove": "Remove this person from the workspace?",
+    "lastOwner": "Keep at least one owner. Add another owner before this change.",
+    "invitationLimit": "The invitation limit has been reached. Wait before sending another invitation.",
+    "deliveryPending": "Email pending",
+    "deliveryAccepted": "Email service accepted",
+    "deliveryFailed": "Email delivery not confirmed",
+    "expires": "Expires {date}",
+    "emailBody": "You are invited to {name}. Open the link within seven days and sign in with this verified email address. The invitation works once.",
+    "switchAccount": "Switch account",
+    "switchHint": "Sign out to sign in or register with the invited email address."
+  },
+  "lots": {
+    "title": "Lots and quality",
+    "lead": "Record measured material, processing and physical hand-offs.",
+    "evidenceNote": "These records describe physical evidence. They do not change stock, payment, legal ownership or certificates.",
+    "notBusiness": "Select an active business workspace to use lot records.",
+    "readOnly": "Your workspace role can read these records.",
+    "held": "Held lots",
+    "incoming": "Incoming lots",
+    "sent": "Hand-off history",
+    "empty": "No records yet.",
+    "limit": "Only the first 100 records are shown.",
+    "declare": "Declare a lot",
+    "detail": "Lot detail",
+    "back": "All lots",
+    "material": "Material code or name",
+    "state": "Physical state",
+    "mass": "Mass (g)",
+    "grams": "{value} g",
+    "integerHint": "Enter whole grams. Do not use a decimal or a grouping separator.",
+    "sourceReference": "Source reference (optional)",
+    "source": "Source",
+    "selfDeclared": "Self-declared",
+    "transformed": "From a transformation",
+    "initial": "Initial mass",
+    "remaining": "Remaining mass",
+    "available": "Available",
+    "in_transit": "In transit",
+    "exhausted": "Exhausted",
+    "save": "Save record",
+    "saving": "Saving…",
+    "saved": "Record saved.",
+    "cancel": "Cancel",
+    "close": "Close",
+    "required": "Complete each required field.",
+    "invalidInput": "Check the values. Use whole grams and complete each required field.",
+    "genericError": "The record could not be saved. Your values are kept. Try again.",
+    "accessChanged": "This lot or your workspace access has changed. Reload the lot list.",
+    "balanceError": "Input mass must equal outputs, contamination and process loss.",
+    "weightDispute": "The received mass differs from the dispatch. Receipt was not recorded. Check the measurement with the sender.",
+    "approvalError": "A different owner must approve this correction while your business holds the lot.",
+    "transform": "Record transformation",
+    "inputMass": "Input mass (g)",
+    "contamination": "Contamination (g)",
+    "processLoss": "Process loss (g)",
+    "outputs": "Output lots",
+    "outputNumber": "Output {number}",
+    "addOutput": "Add output",
+    "remove": "Remove",
+    "balance": "Accounted mass: {value}",
+    "transformHint": "Record every output and loss. The input mass is removed from this lot and creates linked output lots.",
+    "dispatch": "Dispatch lot",
+    "dispatchHint": "This sends the whole remaining lot to the selected business. Check the receiver before you save.",
+    "receiver": "Receiver",
+    "city": "City",
+    "businessKind": "Business type",
+    "chooseBusiness": "Choose a business",
+    "searchBusinesses": "Find businesses",
+    "directoryNote": "The directory shows active businesses. It does not confirm their processing capability.",
+    "directoryEmpty": "No matching business. Check the city and business type.",
+    "kabadiwala": "Kabadiwala",
+    "yard": "Preprocessor",
+    "recycler": "Recycler",
+    "manufacturer": "Manufacturer",
+    "receive": "Receive lot",
+    "receivedMass": "Received mass (g)",
+    "receiveHint": "Measure the received lot. A different weight cannot be accepted through this form.",
+    "pendingNote": "You can see this dispatch only. Full lot history becomes available after receipt.",
+    "custody": "Custody history",
+    "dispatched": "Dispatched",
+    "received": "Received",
+    "handoff": "{from} → {to}",
+    "from": "From {name}",
+    "to": "To {name}",
+    "transformations": "Transformations",
+    "inspection": "Record inspection",
+    "inspections": "Inspection evidence",
+    "inspectionNote": "Record the actual specification, sample method and measured results. A decision applies only to this inspection; it is not a platform grade or certificate.",
+    "specification": "Specification reference",
+    "version": "Specification version",
+    "sampleMethod": "Sample method",
+    "buyer": "Buyer scope (optional)",
+    "addBuyer": "Specify a buyer",
+    "noBuyer": "No buyer specified",
+    "results": "Measured results",
+    "resultNumber": "Result {number}",
+    "parameter": "Parameter",
+    "unit": "Unit",
+    "value": "Measured value",
+    "addResult": "Add result",
+    "decision": "Inspection decision",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "conditional": "Conditional",
+    "evidenceReference": "Evidence reference (optional)",
+    "correct": "Propose correction",
+    "correctionHint": "The original stays visible. Buyer scope and specification cannot change. A different owner must approve the correction.",
+    "reason": "Correction reason",
+    "approve": "Approve correction",
+    "pendingApproval": "Pending separate approval",
+    "approved": "Correction approved",
+    "superseded": "Superseded by an approved correction",
+    "original": "Original inspection",
+    "previousResult": "Previous inspection",
+    "recordedBy": "Inspecting business: {name}",
+    "loadError": "Records could not be loaded. Try again.",
+    "retry": "Retry",
+    "streamClass": "Output stream",
+    "handlingClass": "Handling classification",
+    "streams": {
+      "main_product": "Main product",
+      "saleable_byproduct": "Saleable by-product",
+      "recoverable_waste": "Recoverable waste",
+      "residual_waste": "Residual waste",
+      "unspecified": "Not specified"
+    },
+    "handling": {
+      "non_hazardous": "Non-hazardous",
+      "controlled": "Controlled",
+      "unassessed": "Not assessed"
+    },
+    "facility": "Facility",
+    "processKind": "Process",
+    "noFacility": "No facility selected",
+    "controlledBlocked": "Controlled or residual material uses a documented disposition. It cannot follow ordinary dispatch or transformation.",
+    "recordDisposition": "Record disposition",
+    "destinationReference": "Destination reference",
+    "authorisationReference": "Authorisation reference",
+    "manifestReference": "Manifest reference",
+    "dispositions": "Disposition history",
+    "dispositionHint": "Record the measured mass and actual destination, authorisation and manifest references. This reduces the lot's remaining mass. It does not verify an authorisation or create saleable stock.",
+    "inputs": "Input lots",
+    "additionalInputs": "Other input lots",
+    "addInput": "Add input lot",
+    "chooseInput": "Choose an input lot",
+    "combinedInput": "Total input mass",
+    "multiInputHint": "Combine only measured material you hold. Every input quantity is consumed from its own lot. This records processing evidence and does not add inventory stock."
+  },
+  "evidence": {
+    "title": "Document references",
+    "lead": "Store reported references. Luma does not verify or issue these documents.",
+    "record": "Add reference",
+    "correct": "Replace reference",
+    "replacement": "Replaces: {reference}",
+    "reference": "Document reference",
+    "kind": "Document type",
+    "issuer": "Issuer",
+    "issuerName": "Issuer name",
+    "trade": "Linked trade",
+    "none": "No trade",
+    "unverified": "Reported · unverified",
+    "gst_invoice": "GST invoice",
+    "eway_bill": "E-way bill",
+    "cpcb_epr_certificate": "CPCB EPR certificate",
+    "pollution_consent": "Pollution control consent",
+    "external_authority": "Issuing authority",
+    "external_organization": "Issuing organisation",
+    "trade_seller": "Seller",
+    "trade_buyer": "Buyer",
+    "correctionHint": "The original stays visible. Save a new reference to replace it."
+  },
+  "accountPhone": {
+    "title": "Verify your mobile number",
+    "description": "Add a number you own for collections and payments. This keeps your email account and does not merge another account. Continue to sign in with email.",
+    "verified": "Mobile number verified",
+    "unavailable": "Phone verification is unavailable until SMS delivery is configured.",
+    "inUse": "This number cannot be added. Use a number that is not attached to another account.",
+    "unsupported": "This account cannot change its mobile number here."
+  },
+  "sandboxPayment": {
+    "title": "Sandbox checkout",
+    "note": "Test only. No real payment, settlement or refund. The trade stays paused.",
+    "open": "Open sandbox",
+    "unavailable": "Sandbox checkout is unavailable.",
+    "pending": "Waiting for server confirmation.",
+    "collected": "Sandbox collection confirmed.",
+    "failed": "Checkout could not open. Try again.",
+    "review": "Server review required.",
+    "liveTitle": "Pay through the gateway",
+    "liveNote": "Pay the agreed order total through Cashfree. Provider confirmation is required; closing checkout does not confirm payment.",
+    "liveOpen": "Open secure checkout",
+    "liveCollected": "Payment confirmed by the provider."
+  },
+  "industry": {
+    "title": "Industry references",
+    "lead": "Search the supplied workbook. These references are unverified and do not grant approval to trade or process material.",
+    "sourceNote": "Source text is shown in the workbook's original English.",
+    "sectors": "Sector references",
+    "industries": "Industry matrix",
+    "lifecycles": "Material lifecycle",
+    "byproducts": "By-product examples",
+    "matches": "{count} matching references",
+    "previous": "Previous",
+    "next": "Next",
+    "select": "Select reference",
+    "selected": "Selected reference",
+    "clear": "Clear reference",
+    "detailLabels": {
+      "annexure": "Annexure",
+      "category": "Category",
+      "division": "Division",
+      "industryGroup": "Industry group",
+      "inputs": "Inputs",
+      "products": "Products",
+      "byproducts": "By-products",
+      "recoverableWaste": "Recoverable waste",
+      "residualWaste": "Residual waste",
+      "nextUser": "Next user",
+      "suggestedFlow": "Suggested flow",
+      "materialState": "Material state",
+      "note": "Note",
+      "route": "Route",
+      "qualityAttributes": "Quality attributes",
+      "reportedCommercialStatus": "Reported commercial status"
+    },
+    "view": "View reference",
+    "empty": "No matching references."
+  },
+  "facility": {
+    "title": "Facilities and processes",
+    "lead": "Record the sites and processes your business declares. This profile does not verify a facility or permit a material trade.",
+    "add": "Add facility",
+    "edit": "Edit facility",
+    "name": "Facility name",
+    "siteReference": "Site reference",
+    "sector": "Industry reference (optional)",
+    "capabilities": "Declared processes",
+    "readOnly": "Only workspace owners and administrators can change facilities.",
+    "processNote": "These are self-declared capabilities, not verified permits.",
+    "processKinds": {
+      "sorting": "Sorting",
+      "baling": "Baling",
+      "shredding": "Shredding",
+      "stripping": "Stripping",
+      "washing": "Washing",
+      "granulating": "Granulating",
+      "compounding": "Compounding",
+      "recovery": "Recovery",
+      "manufacturing": "Manufacturing",
+      "residual_handling": "Residual handling"
+    },
+    "empty": "No facilities recorded yet.",
+    "registration": {
+      "title": "Consent and registration references",
+      "lead": "Reported references only. Dates do not prove approval or unlock trades.",
+      "add": "Add reference",
+      "correct": "Add correction",
+      "reference": "Reference",
+      "issuedAt": "Issue date",
+      "validUntil": "Valid until",
+      "empty": "No references recorded yet.",
+      "current": "Within reported dates",
+      "expired": "Past reported expiry",
+      "superseded": "Replaced by a later reference",
+      "kind": "Reference type",
+      "kinds": {
+        "consent_to_operate": "Consent to operate",
+        "consent_to_establish": "Consent to establish",
+        "epr_registration": "EPR registration",
+        "waste_authorisation": "Waste authorisation",
+        "other": "Other reference"
+      },
+      "not_yet_current": "Before reported issue date"
+    }
+  },
+  "marketSpecification": {
+    "title": "Grade and specification",
+    "enable": "Add a grade and specification",
+    "grade": "Material grade",
+    "specification": "Buyer quality specification",
+    "lot": "Recent matching lot (optional)",
+    "noLot": "No linked lot",
+    "source": "Seller declaration. This does not verify quality or reserve the evidence lot.",
+    "lotState": "Recorded lot state"
+  },
+  "stockIntake": {
+    "title": "Own-production byproduct stock",
+    "add": "Record stock intake",
+    "lead": "Record weighed byproducts made by this manufacturer. Saving adds stock from your declared production and weighing records. Evidence-only lots do not add stock.",
+    "reference": "Unique intake reference",
+    "source": "Production batch reference",
+    "weighing": "Weighing record reference",
+    "date": "Production date",
+    "confirm": "I confirm this is our own produced byproduct and this weighed quantity has not already been recorded in stock.",
+    "empty": "No production stock intakes recorded yet.",
+    "noMaterials": "No approved non-hazardous byproduct materials match this business. Ask the platform administrator to review the material before recording stock.",
+    "conflict": "This intake reference already has different details. Check the original record before continuing.",
+    "history": "Recorded stock intakes",
+    "more": "Load more intakes",
+    "note": "These are manufacturer declarations, not independent quality, ownership or regulatory verification. Records cannot be edited after saving."
+  },
+  "tradeLifecycle": {
+    "title": "Payment and delivery",
+    "collectionLabel": "Buyer payment",
+    "settlementLabel": "Seller settlement",
+    "refundLabel": "Refund",
+    "state": {
+      "awaiting_payment": "Waiting for gateway payment",
+      "authorized": "Payment confirmed; ready for dispatch",
+      "dispatched": "Dispatched; waiting for receipt",
+      "received": "Material received",
+      "cancellation_pending": "Cancellation is being checked",
+      "cancelled": "Order cancelled",
+      "hold": "Order needs review"
+    },
+    "collection": {
+      "pending": "Not confirmed",
+      "sandbox_confirmed": "Sandbox only; no live funds",
+      "live_confirmed": "Confirmed by the provider",
+      "review": "Payment needs review"
+    },
+    "settlement": {
+      "pending": "Not confirmed",
+      "settled": "Confirmed by the provider",
+      "reversed": "Settlement reversed",
+      "review": "Settlement needs review"
+    },
+    "refund": {
+      "none": "No refund recorded",
+      "pending": "Refund pending",
+      "refunded": "Confirmed by the provider",
+      "review": "Refund needs review"
+    },
+    "action": {
+      "dispatch": "Record dispatch",
+      "receive": "Confirm receipt",
+      "cancel": "Request cancellation"
+    },
+    "policyMissing": "Live payments require approved payment terms and provider setup.",
+    "reviewRequired": "An administrator must check the payment evidence before this order can move forward.",
+    "fullQuantity": "Confirm the full agreed quantity: {weight}. If the quantity or quality differs, stop and contact the administrator.",
+    "cancelNote": "Cancellation releases stock only after the server confirms that no payment can still complete. A pending request does not mean the order is cancelled.",
+    "reason": "Reason",
+    "reference": "Dispatch or receipt reference",
+    "confirm": "Confirm",
+    "back": "Go back",
+    "saved": "Order record updated",
+    "failed": "The update did not complete. Check the current status, then try again. Your reference is retained.",
+    "actionUnavailable": "This action is no longer available. Check the updated order status."
+  },
+  "logistics": {
+    "title": "Route and load plans",
+    "lead": "Manual planning only. All stop loads are added together. Straight-line ordering is not road routing, an ETA or dispatch. Locations come from your entries, not photo metadata.",
+    "add": "Create plan",
+    "correct": "Save a new revision",
+    "titleLabel": "Plan name",
+    "reference": "Unique plan reference",
+    "vehicle": "Vehicle reference",
+    "capacity": "Vehicle capacity (g)",
+    "origin": "Starting site",
+    "stop": "Stop {number}",
+    "addStop": "Add stop",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "entered": "Keep entered order",
+    "geometric": "Nearest next stop (straight line)",
+    "distance": "Straight-line distance: {value} m",
+    "archive": "Archive plan",
+    "archived": "Archived",
+    "history": "Revision history",
+    "revision": "Revision {number}",
+    "reason": "Reason for this record",
+    "conflict": "The plan or your access changed. Reload before saving again.",
+    "invalid": "Check coordinates, material, whole grams and capacity. All stops together must fit the vehicle.",
+    "empty": "No route plans yet."
+  },
+  "sourcing": {
+    "title": "Sourcing",
+    "lead": "Plan demand, record your supplier decisions and agree individual supply releases.",
+    "boundary": "These records do not create a trade, reserve stock or confirm payment. Use the marketplace and payment workflow for a purchase.",
+    "board": "Demand board",
+    "plans": "Recurring demand",
+    "qualifications": "Supplier decisions",
+    "agreements": "Standing agreements",
+    "post": "Post demand",
+    "createPlan": "Create schedule",
+    "publish": "Publish next demand",
+    "close": "Close",
+    "material": "Material",
+    "supplier": "Supplier",
+    "choose": "Choose an option",
+    "quantity": "Quantity (g)",
+    "area": "Delivery area",
+    "specification": "Written specification",
+    "neededBy": "Needed by",
+    "cadence": "Repeat interval",
+    "weekly": "Every 7 days",
+    "monthly": "Every 30 days",
+    "planHint": "Each occurrence is published only when you select Publish next demand. No automatic order is created.",
+    "myDemand": "My demand",
+    "availableDemand": "Demand from buyers",
+    "empty": "No records yet.",
+    "limited": "Only a bounded set is shown. Older records remain in the audit history.",
+    "loadMore": "Load more",
+    "save": "Save record",
+    "invalid": "Check the required fields, dates and whole-number quantities.",
+    "failed": "This action could not be completed. Your draft is retained. Check current permissions and eligibility, then try again.",
+    "saved": "Record saved.",
+    "qualify": "Record supplier decision",
+    "sample": "Sample or inspection reference",
+    "decision": "Your decision",
+    "reason": "Decision reason",
+    "validUntil": "Decision valid until",
+    "privateDecision": "This is your organisation's sourcing decision. It is not platform approval or regulatory certification. The decision history is private to your buyer workspace. The latest decision for a supplier and material controls new agreements and releases; earlier entries remain in the history.",
+    "pending": "Pending",
+    "approved": "Approved by buyer",
+    "rejected": "Rejected by buyer",
+    "propose": "Propose agreement",
+    "reference": "Reference",
+    "price": "Agreed price (paise/kg)",
+    "startsOn": "Starts on",
+    "endsOn": "Ends on",
+    "agreementHint": "An approved current supplier decision for this exact specification is required. The supplier must acknowledge the proposal separately.",
+    "buying": "Buying",
+    "supplying": "Supplying",
+    "requested": "Awaiting supplier response",
+    "acknowledged": "Acknowledged by supplier",
+    "declined": "Declined by supplier",
+    "closed": "Closed",
+    "active": "Active",
+    "acknowledge": "Acknowledge",
+    "decline": "Decline",
+    "responseReference": "Response reference",
+    "release": "Request release",
+    "releaseHint": "Request part of the agreed quantity. Supplier acknowledgement records intent only; it does not move material or money.",
+    "releases": "Individual releases",
+    "history": "Agreement history",
+    "view": "View releases and history",
+    "closeAgreement": "Close agreement",
+    "closeHint": "This prevents new releases. Existing releases and their history remain recorded.",
+    "state": "Status",
+    "nextDate": "Next demand date",
+    "readOnly": "Your workspace role can view these records but cannot change them.",
+    "published": "Demand occurrence published.",
+    "event": {
+      "proposed": "Agreement proposed",
+      "acknowledged": "Agreement acknowledged",
+      "declined": "Agreement declined",
+      "closed": "Agreement closed",
+      "release_requested": "Release requested",
+      "release_acknowledged": "Release acknowledged",
+      "release_declined": "Release declined"
+    },
+    "reschedule": "Move next demand date",
+    "rescheduleHint": "Choose a later current date. Previous publications remain unchanged. This does not publish a demand or create an order.",
+    "overdue": "This scheduled date has passed. Move the next date before publishing."
+  },
+  "operations": {
+    "standards": "Material standards",
+    "standardsHint": "Search reviewed definitions. A grade or sector does not grant handling permission or certify quality.",
+    "workspaceRequired": "Select an approved business workspace to continue.",
+    "definitions": "Definitions",
+    "reviews": "Scope reviews",
+    "destinations": "Controlled destinations",
+    "search": "Search material, state, grade or specification",
+    "empty": "No records yet.",
+    "truncated": "The result is limited. Refine your search or check the recent records.",
+    "reviewHint": "These are administrator reviews of supplied evidence. A changed facility, superseded registration, expiry or revocation invalidates the current scope.",
+    "destinationHint": "Check the material scope and current authorisation before a controlled hand-off. A directory entry does not prove disposal or portal submission.",
+    "current": "Current",
+    "historical": "Not current",
+    "validUntil": "Valid until",
+    "decisions": {
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "revoked": "Revoked"
+    },
+    "production": "Production records",
+    "productionHint": "Link recipes and declared inputs to a measured transformation and its output inspection. The recycled fraction describes declared input, not certified product content. These records do not change stock.",
+    "recipes": "Recipes",
+    "batches": "Production batches",
+    "newRecipe": "Record recipe",
+    "newBatch": "Record batch",
+    "reference": "Reference",
+    "version": "Version",
+    "name": "Name",
+    "instructions": "Process instructions",
+    "ingredients": "Ingredients",
+    "ingredient": "Ingredient name",
+    "basisPoints": "Share in basis points (100 = 1%)",
+    "additive": "Additive",
+    "addIngredient": "Add ingredient",
+    "remove": "Remove",
+    "recipeHint": "Use a new version for a correction. Ingredient shares must total 10,000 basis points. All measured ingredients and additives must be included in the linked transformation.",
+    "save": "Save record",
+    "saved": "Record saved.",
+    "failed": "Could not save. Check the values, linked records and your workspace access, then retry.",
+    "invalid": "Check the fields and exact gram totals.",
+    "choose": "Select",
+    "recipe": "Recipe version",
+    "transformation": "Measured transformation",
+    "inspection": "Output inspection",
+    "recycledGrams": "Declared recycled input (grams)",
+    "inputEvidence": "Input provenance reference",
+    "batchEvidence": "Production evidence reference",
+    "inputFraction": "Declared recycled input share",
+    "inputTotal": "Total input",
+    "outputTotal": "Measured output",
+    "batchHint": "Select an existing transformation with an inspection of its output. Declare recycled grams for every input and give the evidence reference. This is an attributable declaration, not independent certification."
+  },
+  "qualityDocuments": {
+    "title": "Quality documents",
+    "lead": "Attach evidence to an inspection. Buyer decisions are separate from the inspector’s observations and do not move stock or payment.",
+    "businessRequired": "Select an active business workspace.",
+    "inspections": "Open lot inspections",
+    "readOnly": "Your workspace role can read these records.",
+    "own": "Your documents",
+    "incoming": "Shared with your business",
+    "empty": "No records yet.",
+    "decisions": "Buyer decision history",
+    "limit": "Up to 100 recent records are shown in each section.",
+    "upload": "Attach document",
+    "inspection": "Inspection",
+    "kind": "Document type",
+    "coa": "Analysis certificate",
+    "photo": "Quality photo",
+    "sample_report": "Sample report",
+    "file": "File",
+    "fileHint": "PDF, JPEG, PNG or WebP, up to 2 MiB. Use flattened PDFs. Files are downloaded, not previewed. Content is not independently verified or scanned for malware. Remove private details before sharing.",
+    "shareBuyer": "Share this document with {name}",
+    "download": "Download",
+    "error": "Could not complete this action. Check the file, access and connection, then try again.",
+    "shared": "Shared with the named buyer",
+    "private": "Business only",
+    "withdrawn": "Access withdrawn",
+    "withdraw": "Withdraw access",
+    "decision": "Buyer decision",
+    "note": "Decision reason",
+    "record": "Record decision",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "conditional": "Conditional"
+  },
+  "auditReports": {
+    "title": "Shared audit reports",
+    "lead": "Read a fixed evidence snapshot shared for a stated purpose. Stakeholder approval does not grant access to other business records.",
+    "create": "Share report",
+    "inspection": "Inspection",
+    "recipient": "Approved recipient",
+    "purpose": "Review purpose",
+    "expiry": "Access expires (your local time)",
+    "warning": "Share only the selected inspection and checked files. Remove personal details first. Recipients may retain downloads. Access can last up to 90 days and can be revoked; revocation cannot recall downloaded copies.",
+    "sent": "Reports you shared",
+    "received": "Reports shared with you",
+    "empty": "No reports yet.",
+    "unavailable": "Access expired, withdrawn or unavailable.",
+    "open": "Read report",
+    "revoke": "Revoke access",
+    "error": "Could not update this report. Check the expiry, selected records and your access.",
+    "snapshot": "Fixed snapshot of the inspecting business’s declaration. This is not a certificate or independent verification.",
+    "limit": "Up to 100 recent records and approved recipients are shown."
   }
 }

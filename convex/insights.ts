@@ -28,8 +28,8 @@ import {
 
 /**
  * Impact and compliance: what a business has kept in the recycling loop, and
- * the papers and records it needs to keep doing it. Everything is read from
- * the ledger — completed pickups and trades — never typed in.
+ * the papers and records it needs to keep doing it. Historical completed
+ * trades are records, not proof that a gateway received payment.
  */
 
 /** Most rows one list reads — a prototype bound; keep running totals past it. */
@@ -52,7 +52,7 @@ export interface Movement {
 export interface FamilyTotal {
   family: Family;
   grams: number;
-  co2eKg: number;
+  co2eKg: number | null;
 }
 
 /**
@@ -69,12 +69,21 @@ export function familyTotals(
 ): FamilyTotal[] {
   const sums = new Map<
     Family,
-    { inGrams: number; inCo2e: number; outGrams: number; outCo2e: number }
+    {
+      inGrams: number;
+      inCo2e: number | null;
+      outGrams: number;
+      outCo2e: number | null;
+    }
   >();
   const add = (movement: Movement, side: "in" | "out") => {
     const material = materials.get(movement.materialCode);
     const family = material?.family ?? "other";
-    const co2eGrams = movement.grams * (material?.co2eFactor ?? 0);
+    const factor = material?.co2eFactor;
+    const co2eGrams =
+      factor !== undefined && Number.isFinite(factor) && factor >= 0
+        ? movement.grams * factor
+        : null;
     const sum = sums.get(family) ?? {
       inGrams: 0,
       inCo2e: 0,
@@ -83,10 +92,16 @@ export function familyTotals(
     };
     if (side === "in") {
       sum.inGrams += movement.grams;
-      sum.inCo2e += co2eGrams;
+      sum.inCo2e =
+        co2eGrams === null || sum.inCo2e === null
+          ? null
+          : sum.inCo2e + co2eGrams;
     } else {
       sum.outGrams += movement.grams;
-      sum.outCo2e += co2eGrams;
+      sum.outCo2e =
+        co2eGrams === null || sum.outCo2e === null
+          ? null
+          : sum.outCo2e + co2eGrams;
     }
     sums.set(family, sum);
   };
@@ -95,10 +110,11 @@ export function familyTotals(
 
   return Array.from(sums, ([family, sum]) => {
     const isInLarger = sum.inGrams >= sum.outGrams;
+    const co2eGrams = isInLarger ? sum.inCo2e : sum.outCo2e;
     return {
       family,
       grams: isInLarger ? sum.inGrams : sum.outGrams,
-      co2eKg: Math.round(isInLarger ? sum.inCo2e : sum.outCo2e) / 1000,
+      co2eKg: co2eGrams === null ? null : Math.round(co2eGrams) / 1000,
     };
   })
     .filter((total) => total.grams > 0)
@@ -245,9 +261,13 @@ const vOrgImpact = v.object({
   sold: vFlow,
   /** Each kilo once — see `familyTotals`. */
   recycledGrams: v.number(),
-  co2eKg: v.number(),
+  co2eKg: v.union(v.number(), v.null()),
   families: v.array(
-    v.object({ family: vFamily, grams: v.number(), co2eKg: v.number() }),
+    v.object({
+      family: vFamily,
+      grams: v.number(),
+      co2eKg: v.union(v.number(), v.null()),
+    }),
   ),
   /** When the first completed pickup or trade happened; null if none yet. */
   since: v.union(v.number(), v.null()),
@@ -300,9 +320,11 @@ const vEprRegime = v.union(
 
 const vReceiptRow = v.object({
   tradeId: v.id("trades"),
-  invoiceNo: v.string(),
-  /** When the invoice was issued: the buyer's payment into escrow. */
-  issuedAt: v.number(),
+  /** Old LG reference from the prototype; not a verified GST invoice. */
+  legacyReceiptNo: v.string(),
+  /** When the old reference was recorded, not a verified payment date. */
+  recordedAt: v.number(),
+  paymentVerification: v.literal("legacy_unverified"),
   side: v.union(v.literal("sale"), v.literal("purchase")),
   /** The other business; null only if its record is gone. */
   counterparty: v.union(
@@ -317,6 +339,8 @@ const vReceiptRow = v.object({
 
 const vEprSummary = v.object({
   role: v.union(v.literal("recycler"), v.literal("manufacturer")),
+  /** Old completed rows are physical-flow claims without verified evidence. */
+  evidenceStatus: v.literal("source_records_unverified"),
   /** The financial year, YYYY-MM-DD, April to March. */
   from: v.string(),
   to: v.string(),
@@ -416,10 +440,11 @@ async function orgImpact(
     bought: flowOf(bought),
     sold: flowOf(sold),
     recycledGrams: families.reduce((sum, total) => sum + total.grams, 0),
-    co2eKg:
-      Math.round(
-        families.reduce((sum, total) => sum + total.co2eKg * 1000, 0),
-      ) / 1000,
+    co2eKg: families.some((total) => total.co2eKg === null)
+      ? null
+      : Math.round(
+          families.reduce((sum, total) => sum + (total.co2eKg ?? 0) * 1000, 0),
+        ) / 1000,
     families,
     since: times.length > 0 ? Math.min(...times) : null,
   };
@@ -494,18 +519,18 @@ async function receiptsOf(
   trades: readonly Doc<"trades">[],
   materials: Materials,
 ): Promise<Infer<typeof vReceiptRow>[]> {
-  const invoiced = trades
+  const legacyReferences = trades
     .filter((trade) => trade.invoiceNo !== undefined)
     .map((trade) => ({
       trade,
-      issuedAt: reachedAt(trade, "paid_to_escrow") ?? trade.updatedAt,
+      recordedAt: reachedAt(trade, "paid_to_escrow") ?? trade.updatedAt,
     }))
-    .toSorted((a, b) => b.issuedAt - a.issuedAt)
+    .toSorted((a, b) => b.recordedAt - a.recordedAt)
     .slice(0, MAX_RECEIPTS);
 
   const others = new Map<Id<"orgs">, Doc<"orgs"> | null>();
   const rows: Infer<typeof vReceiptRow>[] = [];
-  for (const { trade, issuedAt } of invoiced) {
+  for (const { trade, recordedAt } of legacyReferences) {
     const side = trade.sellerOrgId === orgId ? "sale" : "purchase";
     const otherId = side === "sale" ? trade.buyerOrgId : trade.sellerOrgId;
     if (!others.has(otherId)) {
@@ -514,8 +539,9 @@ async function receiptsOf(
     const other = others.get(otherId);
     rows.push({
       tradeId: trade._id,
-      invoiceNo: trade.invoiceNo ?? "",
-      issuedAt,
+      legacyReceiptNo: trade.invoiceNo ?? "",
+      recordedAt,
+      paymentVerification: "legacy_unverified",
       side,
       counterparty: other ? { name: other.name, kind: other.kind } : null,
       material: materialRef(materials, trade.materialCode),
@@ -566,6 +592,7 @@ function eprSummary(
   }
   return {
     role,
+    evidenceStatus: "source_records_unverified",
     from,
     to,
     rows: EPR_STREAMS.flatMap((stream) => {
@@ -586,8 +613,8 @@ function eprSummary(
 
 /**
  * The compliance screen: GST, the pollution-board consent and how long it
- * has left, a checklist, the business's trade invoices and — for recyclers
- * and manufacturers — the financial year's EPR record.
+ * has left, a checklist, old trade references and — for recyclers and
+ * manufacturers — a financial-year material-flow summary.
  */
 export const compliance = query({
   args: {},
@@ -618,7 +645,7 @@ export const compliance = query({
     epr: v.union(vEprSummary, v.null()),
   }),
   handler: async (ctx) => {
-    const { org } = await requireOrg(ctx);
+    const { org } = await requireOrg(ctx, undefined, "read");
     const today = indiaToday();
     const materials = await materialIndex(ctx);
     const { sales, purchases } = await tradesOf(ctx, org._id);

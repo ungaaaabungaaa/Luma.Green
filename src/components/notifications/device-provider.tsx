@@ -113,6 +113,11 @@ export function NotificationRevocationProvider({
   );
 }
 
+interface PublishedDevice {
+  sessionId: string;
+  value: DeviceContext;
+}
+
 function ConnectedProvider({
   children,
   revokeOnly = false,
@@ -123,24 +128,38 @@ function ConnectedProvider({
   const { isAuthenticated } = useConvexAuth();
   const session = authClient.useSession();
   const me = useQuery(api.identity.me, isAuthenticated ? {} : "skip");
-  const Wrapper = revokeOnly ? RevocationOnly : ActiveProvider;
-  return isAuthenticated && me?.hasProfile && session.data?.session.id ? (
-    <Wrapper key={session.data.session.id} sessionId={session.data.session.id}>
+  const sessionId =
+    isAuthenticated && me?.hasProfile ? session.data?.session.id : undefined;
+  const [device, setDevice] = useState<PublishedDevice | null>(null);
+  const publish = useCallback((id: string, value: DeviceContext | null) => {
+    setDevice((current) => {
+      if (value) return { sessionId: id, value };
+      return current?.sessionId === id ? null : current;
+    });
+  }, []);
+  return (
+    <Device
+      value={device && device.sessionId === sessionId ? device.value : null}
+    >
       {children}
-    </Wrapper>
-  ) : (
-    children
+      {/* Only device work restarts. TOTP rotation must not erase enrollment state. */}
+      {sessionId && revokeOnly ? (
+        <RevocationOnly key={sessionId} sessionId={sessionId} />
+      ) : null}
+      {sessionId && !revokeOnly ? (
+        <ActiveSession
+          key={sessionId}
+          sessionId={sessionId}
+          publish={publish}
+        />
+      ) : null}
+    </Device>
   );
 }
 
-interface SessionProps {
-  children: ReactNode;
-  sessionId: string;
-}
-
-function RevocationOnly({ children, sessionId }: SessionProps) {
+function RevocationOnly({ sessionId }: { sessionId: string }) {
   useDeviceLifecycle(sessionId);
-  return children;
+  return null;
 }
 
 interface PushSettings {
@@ -151,7 +170,13 @@ const ignoreStatus: (status: Status) => void = () => {
   // The admin cleanup lifecycle has no notification settings display.
 };
 
-function ActiveProvider({ children, sessionId }: SessionProps) {
+function ActiveSession({
+  sessionId,
+  publish,
+}: {
+  sessionId: string;
+  publish: (sessionId: string, value: DeviceContext | null) => void;
+}) {
   const locale = useLocale();
   const t = useTranslations("notifications");
   const [settings, setSettings] = useState<PushSettings>();
@@ -170,19 +195,22 @@ function ActiveProvider({ children, sessionId }: SessionProps) {
     setStatus("unavailable");
     setSettings(undefined);
   }, []);
+  useEffect(() => {
+    publish(sessionId, { status, signingOut: isSigningOut, enable, disable });
+    return () => {
+      publish(sessionId, null);
+    };
+  }, [publish, sessionId, status, isSigningOut, enable, disable]);
   return (
-    <Device value={{ status, signingOut: isSigningOut, enable, disable }}>
-      {children}
-      <NotificationErrorBoundary onError={unavailable}>
-        <SettingsLoader onSettings={setSettings} />
-        {!isSigningOut && status === "granted" && isDesktopShell() ? (
-          <DesktopUpdates
-            title={t("lockscreenTitle")}
-            body={t("lockscreenBody")}
-          />
-        ) : null}
-      </NotificationErrorBoundary>
-    </Device>
+    <NotificationErrorBoundary onError={unavailable}>
+      <SettingsLoader onSettings={setSettings} />
+      {!isSigningOut && status === "granted" && isDesktopShell() ? (
+        <DesktopUpdates
+          title={t("lockscreenTitle")}
+          body={t("lockscreenBody")}
+        />
+      ) : null}
+    </NotificationErrorBoundary>
   );
 }
 
@@ -238,7 +266,7 @@ function useDeviceLifecycle(
       const bind = async (id: Id<"pushDevices">) => {
         work.current.id = id;
         if (!isCurrent()) {
-          await unregister({ id });
+          await unregister({ id, expectedSessionId: sessionId });
           if (work.current.id === id) work.current.id = undefined;
           return;
         }

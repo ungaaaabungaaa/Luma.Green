@@ -1,8 +1,6 @@
 # Data model (planned v2)
 
-> **Status:** planned, 29 Sep 2026. The live schema is `convex/schema.ts` (v1,
-> written before the product brief). Tables land with the feature that needs
-> them; each change follows [migrations](../migrations/README.md).
+> **Status:** historical v2 plan from 29 September 2026, with a current refinement appendix dated 7 October below. The earlier table and access-rule descriptions are historical wherever they conflict with that appendix or `convex/schema.ts`. The schema and guarded functions own current field names and permissions. Each change follows [migrations](../migrations/README.md).
 
 ## What changes from v1
 
@@ -112,3 +110,59 @@ designed.
   `priceFloors` and `fallbackRates`.
 - Files are served through short-lived URLs issued by a function that performs
   the same checks.
+
+## Current refinement appendix — 7 October 2026
+
+This appendix describes current source, not a deployed schema or completed acceptance result. `convex/schema.ts` and each guarded function remain authoritative. In particular, the historical claims that every table has `updatedAt`, inventory is always derived, memberships only have owner/staff, and files use unguarded short-lived links must not be read as current contracts.
+
+### Manufacturer stock and evidence boundaries
+
+`manufacturerStockIntakes` is an immutable ledger with `orgId`, `actorProfileId`, `intakeReference`, `materialCode`, exact positive integer `grams`, `producedOn` (calendar date), `sourceReference`, `weighingReference`, `ownProductionConfirmed: true` and `createdAt`. Indexes are `by_org_reference` (`orgId`, `intakeReference`) and `by_org_created` (`orgId`, `createdAt`).
+
+`stockIntake.record` requires the active manufacturer's operational membership and an active scrap material with an explicit non-hazardous byproduct classification in that organisation's material-family scope. It validates the real calendar date, rejects future production dates using the India calendar, and checks safe integer totals. The mutation atomically inserts the intake, increments or creates the organisation/material `inventory` row, and writes `inventory.manufacturer_intake_recorded` to `auditLog`. Identical normalised details under the same organisation/reference return the original intake; conflicting details fail without changing stock. This is a declared own-production receipt, not independent ownership, weighing, quality or regulatory proof. No intake edit/delete interface is supplied.
+
+`inventory` stores `orgId`, `materialCode`, `grams` and `updatedAt`, with `by_org` and `by_org_material` indexes. Evidence-only `materialLots` and transformations remain separate: they do not increment this inventory or issue credits. Offers and payment-dependent stock transitions still enforce their separate eligibility and gateway rules.
+
+### Facilities and reported registration references
+
+| Current table               | Fields and indexes                                                                                                                                                                                           | Contract                                                                                                                                                                                                        |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `industrialFacilities`      | `orgId`, `name`, `siteReference`, optional `sectorId` and `sector` snapshot, `capabilities`, creator/updater profile IDs, timestamps; `by_org_created`                                                       | Owner/admin records self-declared process capabilities. Sector provenance stays `workbook_unverified`; no new identity, trade permission or facility approval.                                                  |
+| `facilityRegistrations`     | `facilityId`, `orgId`, `kind`, `reference`, `issuedAt`, `validUntil`, optional `supersedesId`, `actorProfileId`, `recordedAt`, `sourceQuality: reported_unverified`; `by_facility_recorded`, `by_supersedes` | Append-only reported consent/registration references. Corrections keep the prior record. Status is derived from reported dates in India, with expiry day included; it does not verify a permit or enable trade. |
+| `lotControlledDispositions` | `lotId`, `orgId`, integer `grams`, `destinationReference`, `authorisationReference`, `manifestReference`, actor profile, `createdAt`; `by_lot_created`                                                       | A guarded disposition atomically reduces the held lot's available grams and preserves its evidence. No certificate, portal execution, saleable stock or payment is created.                                     |
+
+Registration kinds are `consent_to_operate`, `consent_to_establish`, `epr_registration`, `waste_authorisation` and `other`. A correction link is a relationship between immutable records; the returned `supersededById` is a view derived from the index, not a stored schema field.
+
+### Lot inputs, outputs and transformations
+
+`materialLots` has optional `streamClass` and `handlingClass`, `initialGrams`, `availableGrams`, current holding `orgId`, original `declaredByOrgId`, material/state, source metadata and optional `parentTransformationId`. Stream classes are main product, saleable byproduct, recoverable waste, residual waste and unspecified; handling is non-hazardous, controlled or unassessed. These are declarations, not approval. Controlled/residual lots use the restricted disposition route instead of ordinary dispatch/transform. Linking a lot to an ordinary offer requires explicit non-hazardous handling and an eligible main-product/byproduct/recoverable stream; missing or unassessed classification does not qualify. Existing unlinked inventory offers retain their catalogue/family/actor checks.
+
+`lotTransformationInputs` is now present in source, with `transformationId`, `lotId`, material/state snapshots, consumed integer `grams` and `createdAt`; indexes are `by_lot_created` and `by_transformation`. Each consumed input becomes an immutable edge. `lotTransformations` retains the primary `inputLotId` for legacy history, `inputGrams`, contamination/loss grams, org/actor/time and optional paired `facilityId`, `facilityName` and `processKind` snapshot. The guarded mutation supports up to 20 distinct, available ordinary-route inputs held by the current business. Its 32 focused tests and one local connected industry journey passed during this slice; final combined acceptance and deployment remain separate. Each source history retains its edge. A later recipient of an output or input remainder receives custody visibility, not the processing organisation's private process, parent or sibling history. The processing contract accounts for all input grams exactly once across measured outputs, contamination and process loss. A separately recorded residual output is not counted again as loss. This processing ledger does not add inventory or mint a carbon/EPR certificate.
+
+Viewer access remains read-only. Facility, intake, lot, registration and disposition writes use current workspace permission and audit checks; a translated label, sector selection or browser-hidden control never grants server access.
+
+### Financial lifecycle additions — 7 October 2026
+
+The current schema imports `lifecycleTables` from
+`convex/lib/cashfreeLifecycleSchema.ts`. These supplement the existing inventory
+cache and audit owner; they do not migrate legacy simulated payment states into
+verified money. The financial implementation has focused local evidence; final
+combined and provider acceptance remain separate gates.
+
+| Table                        | Current ownership and indexes                                                                                                                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cashfreePolicies`           | Immutable version, fee payer, refund funder, platform-admin authority, settlement/acceptance references and creator/time; `by_version`. Live `cashfreeOrders.policyId` freezes the selected terms. |
+| `tradeFinancials`            | One current trade state, linked order, separate collection/settlement/refund and optional hold reason; `by_trade`.                                                                                 |
+| `financialMovements`         | Exact signed grams for dispatch or receipt, organisation, reference, actor and time; `by_trade_kind`. Atomic with the existing inventory cache and audit; identical retry is idempotent.           |
+| `cashfreeRefunds`            | Frozen full amount, reference/reason, provider refund identity and idempotency key, actor, lease/retry/status/times; `by_order`, `by_trade_reference`.                                             |
+| `cashfreeRefundTriggers`     | Order/refund identity, signed-event body hash and consumed flag; `by_hash`.                                                                                                                        |
+| `cashfreeRefundEvidence`     | Append-only provider outcome, amount/identity, fingerprint and time; `by_refund_fingerprint`.                                                                                                      |
+| `cashfreeSettlementEvents`   | Sanitized signed vendor-transfer observations, exact amounts/fees/adjustments, event time and body hash; `by_mode_vendor_settlement`, `by_hash`.                                                   |
+| `cashfreeSettlementEvidence` | Order/vendor allocation, settlement ID, fees, derived state, fingerprint and time; `by_order`, `by_order_fingerprint`.                                                                             |
+
+Collection does not move stock. Dispatch subtracts seller grams and receipt adds
+buyer grams once. Unpaid final cancellation changes the accepted commitment,
+not on-hand inventory. Refund confirmation leaves a hold and does not restore
+stock or assert physical return. Exact order allocation and transfer evidence
+are required for settlement; reversals remain visible and cannot be overwritten
+by a later generic success. See [payments](payments.md) for the current boundary.

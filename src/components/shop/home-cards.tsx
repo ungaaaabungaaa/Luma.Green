@@ -35,11 +35,11 @@ function BigCount({
   isHot: boolean;
 }) {
   const format = useFormat();
-  if (count === undefined) return <Skeleton className="h-12 w-16" />;
+  if (count === undefined) return <Skeleton className="h-8 w-12" />;
   return (
     <p
       className={cn(
-        "text-5xl font-semibold tracking-tight tabular-nums",
+        "text-3xl font-semibold tracking-tight tabular-nums",
         isHot && "text-primary",
       )}
     >
@@ -67,19 +67,19 @@ function CardShell({
     <section
       aria-labelledby={id}
       className={cn(
-        "flex min-w-0 flex-col gap-4 border-t border-border py-5",
+        "flex min-w-0 flex-col gap-3 border-b border-border py-3",
         isHot && "border-primary",
       )}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-col gap-1">
-          <h2 id={id} className="font-medium text-muted-foreground">
+          <h2 id={id} className="text-sm font-medium text-muted-foreground">
             {title}
           </h2>
           <BigCount count={count} isHot={isHot} />
         </div>
-        <span className="flex size-10 items-center justify-center text-primary">
-          <Icon aria-hidden className="size-6" />
+        <span className="flex size-8 items-center justify-center text-primary">
+          <Icon aria-hidden className="size-5" />
         </span>
       </div>
       {children}
@@ -103,7 +103,7 @@ export function NewRequestsCard({ count }: { count: number | undefined }) {
       {count === undefined ? (
         <Skeleton className="h-6 w-48" />
       ) : (
-        <p className="text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           {hasNew ? t("newSome", { count }) : t("newNone")}
         </p>
       )}
@@ -111,7 +111,7 @@ export function NewRequestsCard({ count }: { count: number | undefined }) {
         asChild
         size="lg"
         variant={hasNew ? "default" : "outline"}
-        className="mt-auto h-12 text-base"
+        className="mt-auto min-h-11 self-start text-sm"
       >
         <Link
           href="/app/requests"
@@ -145,7 +145,7 @@ export function TodayCard({
       icon={TruckIcon}
       count={due?.length}
     >
-      {due === undefined ? <Skeleton className="h-24 rounded-xl" /> : null}
+      {due === undefined ? <Skeleton className="h-20 rounded-none" /> : null}
       {next ? (
         <Link
           href={requestHref(next.id)}
@@ -178,13 +178,13 @@ export function TodayCard({
         </Link>
       ) : null}
       {due?.length === 0 ? (
-        <p className="text-muted-foreground">{t("home.todayNone")}</p>
+        <p className="text-sm text-muted-foreground">{t("home.todayNone")}</p>
       ) : null}
       <Button
         asChild
         size="lg"
         variant="outline"
-        className="mt-auto h-12 text-base"
+        className="mt-auto min-h-11 self-start text-sm"
       >
         <Link
           href={{ pathname: "/app/requests", query: { tab: "today" } }}
@@ -206,8 +206,9 @@ export function MoneyStats({
   stock: Stock | undefined;
 }) {
   const t = useTranslations("shop.home");
+  const stockCopy = useTranslations("shop.stock");
   const format = useFormat();
-  const tile = "h-28 rounded-xl";
+  const tile = "h-24 rounded-none";
   return (
     <section aria-labelledby="home-money">
       <h2 id="home-money" className="sr-only">
@@ -241,10 +242,18 @@ export function MoneyStats({
           {stock ? (
             <StatCard
               label={t("stockWorth")}
-              value={format.money(stock.totalValuePaise)}
-              hint={t("stockWeight", {
-                weight: format.weight(stock.totalGrams),
-              })}
+              value={
+                stock.totalValuePaise === null
+                  ? "—"
+                  : format.money(stock.totalValuePaise)
+              }
+              hint={
+                stock.totalValuePaise === null
+                  ? stockCopy("noPrice")
+                  : t("stockWeight", {
+                      weight: format.weight(stock.totalGrams),
+                    })
+              }
               icon={PackageIcon}
               tone="good"
             />
