@@ -20,8 +20,9 @@ not change or rebuild the user guide.
 
 Headings, paragraphs, lists, tables and links remain editable. The document uses
 Letter portrait pages, black headings and a plain Word Title style. Relative
-repository links print as readable labels; external source links are clickable
-labels. The Markdown keeps the full destination paths and URLs.
+repository links resolve through `scripts/document_links.py` to clickable
+absolute GitHub `main` links. External source links are also clickable labels.
+The Markdown keeps the full destination paths and URLs.
 
 ## Browser screenshots
 

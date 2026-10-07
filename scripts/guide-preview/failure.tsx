@@ -12,6 +12,7 @@ import { BuyButton } from "@/components/market/buy-dialog";
 import { ListingCard } from "@/components/market/listing-card";
 import type { ListingView } from "@/components/market/types";
 import { ThemeProvider, ThemeToaster } from "@/components/theme/theme-provider";
+import { WorkspacePermissions } from "@/components/workspace/permissions";
 
 import type { Id } from "../../convex/_generated/dataModel";
 import ar from "../../messages/ar.json";
@@ -30,6 +31,7 @@ if (!localeFonts) throw new Error(`Build the ${locale} locale before capture.`);
 document.documentElement.className = localeFonts;
 const catalogue = locale === "ar" ? ar : en;
 const extremeListing: ListingView = {
+  specification: undefined,
   id: "fixture-extreme-listing" as Id<"listings">,
   seller: { name: "Fixture seller", kind: "kabadiwala", area: "Fixture area" },
   material: {
@@ -48,10 +50,12 @@ const extremeListing: ListingView = {
 const content = (() => {
   if (scenario === "market")
     return (
-      <ListingCard
-        listing={extremeListing}
-        action={<BuyButton listing={extremeListing} />}
-      />
+      <WorkspacePermissions membershipRole="member">
+        <ListingCard
+          listing={extremeListing}
+          action={<BuyButton listing={extremeListing} />}
+        />
+      </WorkspacePermissions>
     );
   if (scenario === "login" || scenario === "totp")
     return (

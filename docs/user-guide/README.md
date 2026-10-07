@@ -65,17 +65,32 @@ before the next build. This prevents later builds from losing your changes.
    Approved sample prices have a separate read-only capture command:
 
    ```sh
-   GUIDE_BASE_URL=http://localhost:3009 pnpm exec jiti scripts/capture-price-guide.mts
+   GUIDE_PRICE_LOCAL=true GUIDE_BASE_URL=http://localhost:3100 pnpm --config.verify-deps-before-run=false exec jiti scripts/capture-price-guide.mts
    ```
 
-   First build the local app with the approved `glorious-rooster-470` development
-   endpoint. The script uses a fresh anonymous browser, permits that backend
-   only, opens the public board and one history dialog, and checks for 26 material
-   rows, keyboard navigation and matching chart/table sample counts within the
-   rolling 30-day window. It records the available count in `price-captures.json`. The guide labels
-   these as connected development demo captures, not hosted production UI or
-   verified market quotes. It does not submit forms or change data. Keep the
-   disconnected screenshots as separate loading/unavailable-state evidence.
+   Use the approved isolated local app on port 3100 and the existing local
+   Convex data on ports 3210/3211. Do not resume the paused cloud deployments.
+   The explicit local mode requires loopback HTTP origins and matching site
+   settings in `.env.local` and the private
+   `.convex/local-acceptance/backend.env`. Add `--check-config` to validate
+   those settings without starting a browser. This capture command does not
+   create sample data.
+
+   A fresh anonymous browser opens the public board and one history dialog.
+   The script checks all 26 approved catalogue rows by exact code and English
+   name. In isolated local mode only, it also permits the two explicitly named
+   synthetic acceptance materials, `LOCAL-PAPER-BYPRODUCT` (Local test paper
+   offcuts) and `LOCAL-PAPER-UNCLASSIFIED` (Local test unclassified paper).
+   It rejects missing, duplicate or unrelated rows and records the actual row
+   count. It checks keyboard navigation
+   and matching chart/table sample counts within the rolling 30-day window.
+   It blocks HTTP writes and Convex mutations/actions before forwarding traffic.
+   `price-captures.json` records the exact origins, local environment, source
+   hashes and available sample count. Label these images as current local demo
+   data, not hosted production UI or verified market quotes. Keep disconnected
+   loading/unavailable screenshots as separate evidence. The original fixed
+   cloud target remains available only when local mode is unset; it is not part
+   of the current local capture workflow.
 
 4. Capture analytics controls with fake keys and external requests intercepted:
 
@@ -148,10 +163,12 @@ before the next build. This prevents later builds from losing your changes.
 
 Current publication state is recorded in [cloud.json](cloud.json). The existing
 native [Luma.Green platform user guide](https://docs.google.com/document/d/17B40PdN8IyvydXhAH4r2nsfgy9Nt15cyzW5WZw6ecFY)
-is published from reviewed source commit `364ecd6`, including the approved
-recycling redesign. Its document ID, folder and sharing settings are unchanged.
+has a verified **historical 3 October 2026 publication** from source commit
+`364ecd6`, including the approved recycling redesign. The current 7 October
+source has completed local captures and a reviewed 167-page Word output. The
+same-document native update remains pending. Its document ID, folder and sharing settings are unchanged.
 
-The native copy has 40 chapters, six tables, 659 body paragraphs and 99 image
+That historical native copy has 40 chapters, six tables, 659 body paragraphs and 99 image
 placements. Readback checked every paragraph, table cell, image source URL and
 image dimension. Four exact dates use native date fields; the two original pilot
 dates retain their IDs. The Word source has 103 reviewed pages; the native PDF
@@ -208,3 +225,39 @@ silently relabel a fixture as live.
 This guide is an operational manual. It is not proof of launch readiness. See
 [the handoff](../delivery/handoff.md) for deployment, account, provider and signed
 native release gates.
+
+The `impact-unknown-*` capture matrix uses the explicit `unknown-factor`
+synthetic scenario: recorded grams remain visible and CO₂e is unavailable.
+`account-phone-blank-*` and `account-phone-verified-*` are named fictional
+email-account states; they prove layout only and reject every account write.
+The separate `scripts/capture-admin-guide.mts --capture` authenticates the
+approved local admin with its real password and TOTP. It captures catalogue
+setup, payment setup and a blank vendor dialog, with provider calls and business
+writes blocked. Its manifest requires visual review before publication.
+
+### Workbook workflow captures
+
+After the final connected browser tests pass and the source is frozen, run:
+
+```bash
+pnpm exec jiti scripts/capture-workbook-guide.mts --capture
+```
+
+The separate `workbook-captures.json` covers the new manual route planner,
+material definitions/scope/destinations, production recipes/batches, sourcing,
+quality files and recipient-specific audit reports. The maintained case list is
+`scripts/workbook-guide-plan.ts`: 18 business/account states in English, Arabic
+and Kannada × light/dark × 390/768/1440, plus three English-only admin states at
+both themes and all widths (342 originals). It uses real approved local email
+sessions and admin TOTP. It creates no business records, grants, uploads or
+provider requests. Blank forms and retired/withdrawn test states remain honest.
+
+The privacy guard checks each visible region before capture. It permits only the
+explicit synthetic run-reference prefixes used by the connected tests to carry
+a 13-digit test timestamp; it does not alter pixels or permit account/contact
+values. The runner saves no session, tracing or video. Original images and the
+complete source fingerprint must pass manual visual review. `src/workbook-guide.test.ts`
+requires that review and fails while the manifest is absent, pending or stale.
+The final 7 October matrix contains 342 reviewed views and no skipped views.
+Its two freshness tests pass. The manifest records source and original-image
+hashes; these local captures do not prove production access or provider delivery.

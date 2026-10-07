@@ -7,7 +7,7 @@
 **Continue development:** [Agent handoff](docs/delivery/handoff.md) — branch and
 commit checkpoints, completed work, verification, setup gates and next tasks.
 
-**Learn the platform:** [A-to-Z Word guide guide](output/docx/luma-green-user-guide.docx)
+**Learn the platform:** [A-to-Z Word guide](output/docx/luma-green-user-guide.docx)
 and [editable guide with screenshot evidence](docs/user-guide/README.md).
 
 <p align="center"><strong>Cleaner Tomorrow in Motion</strong></p>
@@ -27,132 +27,96 @@ and [editable guide with screenshot evidence](docs/user-guide/README.md).
   <a href="docs/README.md">Docs</a>
 </p>
 
-> **This is the investor prototype.** A configured development backend can serve
-> sample Bengaluru businesses, prices and trades. Without that connection, the
-> app shows setup states. Live launch and provider execution remain separate gates.
-> What's real and what's sample: [Status](#status).
+> **Current scope:** local implementation and acceptance are in progress. The
+> target is Saturday, 10 October 2026, subject to the
+> [current launch plan](docs/testing/launch-2026-10-10.md). Both cloud backends
+> were verified empty and paused on 6 October. Local checks do not prove a
+> deployed service, provider delivery or launch approval. See [Status](#status).
 
 ## What Luma.Green is
 
-Recyclable material in an Indian city passes through many hands, and every
-hand-off is informal: prices are opaque, weights are guessed and nothing is
-written down. Luma.Green connects the whole chain on one platform, where
-everyone sees the latest prices, trades material with the next step up and,
-between businesses, demonstrates the planned escrow steps. It does not hold or
-transfer real business payments.
+Luma.Green records how recyclable material moves from a household to a factory.
+It connects pickup, weighing, material records, stock and business trade. The
+kabadiwala pays the household directly in cash or UPI; Luma records that payment.
+Business payments require a verified gateway. Payment-dependent actions stay
+blocked while that integration is unavailable.
 
 ```
-Household ──► Kabadiwala ──► Yard ──────► Recycler ──────► Manufacturer
-scrap from    buys, weighs   sorts and    turns it into    buys recycled
-home          and sorts      bales        flakes and       raw material
-                                          granules
+Household → Kabadiwala → Preprocessor → Recycler → Manufacturer
+scrap       buys, weighs  sorts, bales   makes raw   buys recycled
+from home   and sorts                   material    material
 ```
 
-Material is sorted further at every step, so its name and price change on the
-way: a household's newspaper becomes baled paper at a yard and kraft rolls at a
-recycler. The platform keeps who sold what to whom, how much and at what price.
+Material names and grades can change after sorting or processing. Lot custody,
+quality decisions and transformation records are evidence. They do not create
+stock, prove payment or issue carbon credits or statutory certificates.
 
-| Role                         | Who they are                                 | On Luma.Green they…                                                              | Sign in with                                   |
-| ---------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------- |
-| **Household**                | Anyone with scrap at home                    | Book a pickup, follow it, get paid at the door in cash or UPI                    | Nothing: a code confirms the number at booking |
-| **Kabadiwala**               | A local scrap shop, sometimes with a vehicle | Accept pickups, weigh and pay, set their own prices, sell stock to yards         | Phone and SMS code                             |
-| **Yard** (preprocessor)      | A large yard that sorts and bales in bulk    | Buy from kabadiwalas, sell bales to recyclers                                    | Phone and SMS code                             |
-| **Recycler**                 | Turns sorted scrap back into raw material    | Buy from yards, sell flakes, granules and kraft to factories                     | Phone and SMS code                             |
-| **Manufacturer**             | Makes products from recycled material        | Order recycled material, keep recycled-content and EPR records                   | Phone and SMS code                             |
-| **Saathi** (साथी, "partner") | Anyone who wants short, paid work            | Take pickup, sorting and shift jobs posted by the businesses above               | Phone and SMS code                             |
-| **Admin**                    | The Luma.Green team                          | Verify every business and Saathi by hand, keep the price tables, answer messages | Email, password and authenticator app          |
+| Role                   | Who they are                                                                 | Current access boundary                                                                          |
+| ---------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Household**          | A person with scrap to sell                                                  | Pickup and tracking flows; optional account security and inbox                                   |
+| **Kabadiwala**         | A local scrap shop                                                           | Approved workspace: pickup, direct household payment record, prices and stock                    |
+| **Preprocessor**       | A business that sorts and bales material, often at a yard                    | Approved workspace: material buying, stock, lot evidence and selling                             |
+| **Recycler**           | A business that turns sorted material into raw material                      | Approved workspace: material buying, processing evidence and selling                             |
+| **Manufacturer**       | A business that buys recycled material                                       | Approved workspace: inputs, records and permitted non-hazardous byproduct offers                 |
+| **Saathi**             | A person who takes pickup, sorting or shift jobs                             | Own approved work and earnings records                                                           |
+| **Other stakeholders** | Material generators, cities, CSR teams, lenders, auditors, unions and brands | Account request and status; approval alone grants no business workspace or private-report access |
+| **Platform admin**     | The configured operator                                                      | Separate email/password and required authenticator; reviews applications and support             |
 
-A person checks every business and every Saathi before they can trade. The
-interface speaks 12 languages, including Kannada, Tamil, Telugu, Urdu (right to
-left) and Hindi for Bengaluru, and is made for people using a smartphone for
-work for the first time: plain words, icons, big buttons, and numbers that carry
-the meaning, with rupees grouped in lakhs.
+Normal accounts can use verified email/password or verified phone OTP. Phone-only
+accounts remain passwordless. These are separate identities: the app does not
+merge them automatically. Email users enter their current password to manage
+an authenticator. A session starts only after all required verification and
+second-factor checks succeed. Better Auth runs on Convex; it needs no separate
+Better Auth service account.
+
+Business access also requires a workspace membership. Owner, admin, member and
+viewer are workspace roles, separate from the platform administrator. Owners
+and workspace admins manage permitted team actions; viewers have read-only
+access. Invitations and access revocation use the account workspace screens.
+The interface has 33 registered languages, including Kannada and right-to-left
+Arabic and Urdu. Translation review and browser fit checks remain separate.
 
 ## What's in the prototype
 
-Each screen works on a phone first; the business screens also have a desktop
-layout. The full inventory, with every URL, is
-[docs/product/features.md](docs/product/features.md).
+This heading is retained for older links. See the
+[maintained user guide](docs/user-guide/README.md) for current instructions and
+[features](docs/product/features.md) for the route inventory.
 
-**Households**, with no account:
+- **Public pickup and tracking:** `/sell` and `/t/{code}`. A household confirms
+  its phone for booking. The kabadiwala weighs the material and pays directly.
+  A receipt records the actual amounts; it is not a gateway payment.
+- **Account security and teams:** `/account/security` and `/account/workspaces`.
+  These screens are also available to households and applicants. Team access
+  requires an accepted invitation and a current membership.
+- **Stakeholder requests:** `/join/stakeholder`. A submitted or approved request
+  does not open a trading workspace or grant private data access.
+- **Approved businesses:** `/app/requests`, `/app/prices`, `/app/stock`,
+  `/app/market`, `/app/sell`, `/app/trades` and `/app/lots`, as allowed by role.
+  Lot evidence remains separate from stock and money. An accepted order does
+  not prove payment. The UI blocks payment-dependent progress without the
+  required gateway evidence.
+- **Saathi work:** permitted jobs and own work records under `/app`.
+- **Platform admin:** `/admin` for verification, prices and support. Its sign-in
+  and recovery remain separate from normal signup and account changes.
+- **Public information:** `/prices`, `/standards`, `/solar`, `/help`, `/join`,
+  `/how-it-works`, `/participants` and `/contact`. Samples and estimates must
+  be labelled; an unavailable price source does not become a live quote.
 
-- **Sell** at `/sell`, in four steps: what you have, which verified shop (each
-  one's offer for your scrap, nearest first), when to pick it up or drop it
-  off, then book with a code sent to your number.
-- **Track** at `/t/{code}`, the link shown after booking (and sent by SMS once
-  SMS is switched on): when, which shop and how much to expect, live;
-  afterwards, what was weighed and paid, and the recycle points earned.
-  Cancelling is free until the shop is on the way.
-
-**Kabadiwalas**, in the app at `/app`:
-
-- **Requests** (`/app/requests`): **New** pickups to accept or decline,
-  **Today**'s to start and weigh, and **Done**. The household's number and
-  address appear only once the shop accepts.
-- **Weigh and pay** (`/app/requests/{id}`): weigh each material in half-kilo
-  steps and pay in cash or UPI. The receipt reaches the household and the stock
-  updates itself.
-- **My prices** (`/app/prices`): the shop's rate card, beside the market price
-  and never below the admin's minimum.
-- **Stock and Sell** (`/app/stock`, `/app/sell`): what's in the shop and what
-  it's worth, and lots put on sale for yards. Then **Trades**, **Impact** and
-  **Compliance**.
-
-**Yards and recyclers**, at `/app`:
-
-- **Buy** (`/app/market`): lots from the step below, by material, weight and
-  price.
-- **Trades** (`/app/trades`): each purchase and sale through escrow (requested,
-  accepted, in escrow, dispatched, delivered), a trade receipt once the buyer pays
-  (`/app/trades/{id}/invoice`), and a flag when goods over ₹50,000 need an
-  e-way bill.
-- **Stock**, **Sell**, **Impact** and **Compliance**, as for kabadiwalas.
-
-**Manufacturers**, at `/app`:
-
-- **Buy** recycled PET flakes, HDPE granules, kraft paper and aluminium ingots
-  from verified recyclers, through the same escrow steps.
-- **Compliance** (`/app/compliance`): the EPR record of recycled material
-  bought this financial year, trade receipts, and a checklist of the factory's
-  own GST, consent and safety.
-- **Impact** (`/app/impact`): recycled material used and the CO₂e it avoided.
-
-**Saathis**, at `/app`:
-
-- **Jobs**: home pickups, help at a shop, sorting shifts and factory shifts,
-  those in their area first, with the day, time and pay. Take one, and mark it
-  done on the day.
-- **Earnings** (`/app/impact`): this week's and in all, job by job.
-
-**The admin**, at `/admin` (English only, for the one operator):
-
-- **Verification** (`/admin/verification`): every application with its
-  documents and photos and a 12–24 hour target. Approve once every check for the
-  role is ticked, ask for changes with a note, or reject with a reason.
-- **Prices** (`/admin/prices`): Bengaluru's minimum and fallback price for
-  every material.
-- **Support** (`/admin/support`): messages from the help centre and the solar
-  page.
-
-**Public pages**, open to everyone and in every language (`/kn/prices`,
-`/hi/help`, …):
-
-| Page      | URL                                          | What it's for                                                                          |
-| --------- | -------------------------------------------- | -------------------------------------------------------------------------------------- |
-| Home      | `/`                                          | What Luma.Green is, for each role                                                      |
-| Prices    | `/prices`                                    | Today's Bengaluru scrap prices, the floor, a 30-day chart and factory-gate prices      |
-| Standards | `/standards`                                 | The Luma.Green standard: open material codes, grading, fair weighing, receipts, escrow |
-| Solar     | `/solar`                                     | A rooftop solar calculator with the PM Surya Ghar subsidy, and a call-back request     |
-| Help      | `/help`                                      | Guides, answers and training for every role, and a contact form                        |
-| Join      | `/join`                                      | What each role needs to apply, then the application itself                             |
-| More      | `/how-it-works`, `/participants`, `/contact` | How the platform works, who it's for, how to reach us                                  |
+Cashfree Payment Gateway with Easy Split is selected. The implemented backend
+slice is sandbox-only and does not advance live trades, stock or settlement.
+Merchant/use-case approval, Easy Split enablement, vendor KYC and actual
+payment, payout and refund proof are still required. See
+[payments](docs/architecture/payments.md).
 
 ## See it
 
-Taken by `pnpm screenshots` from the prototype on its demo data (sample
-figures), at phone (390 × 844) and desktop (1440 × 900) sizes. Open a picture
-for full size; how to take them again is in
-[docs/testing](docs/testing/README.md#screenshots).
+These are **historical prototype captures** with synthetic data, at phone
+(390 × 844) and desktop (1440 × 900) sizes. The image paths and older screen
+labels remain for reference. They do not prove current authentication,
+permissions, provider payments or deployment. Open an image for full size.
+Use the [maintained guide capture procedure](docs/user-guide/README.md) for new
+evidence; the [historical screenshot notes](docs/testing/README.md#screenshots)
+explain the old list.
 
 <details open>
 <summary><strong>Households and the public site</strong>: home, prices, sell, tracking, join, help, solar, standards</summary>
@@ -183,12 +147,12 @@ for full size; how to take them again is in
 </details>
 
 <details>
-<summary><strong>Yard, recycler and manufacturer</strong>: market, trades, recycler home, compliance</summary>
+<summary><strong>Preprocessor, recycler and manufacturer</strong>: market, trades, recycler home, compliance</summary>
 
 | Screen                                            |                                                     Phone                                                      |                                                      Desktop                                                       |
 | ------------------------------------------------- | :------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
-| **Yard: buy**<br>`/app/market`                    |       <img src="docs/screenshots/yard-market-phone.png" width="180" alt="The yard's market on a phone">        |       <img src="docs/screenshots/yard-market-desktop.png" width="460" alt="The yard's market on a desktop">        |
-| **Yard: trades**<br>`/app/trades`                 |       <img src="docs/screenshots/yard-trades-phone.png" width="180" alt="The yard's trades on a phone">        |       <img src="docs/screenshots/yard-trades-desktop.png" width="460" alt="The yard's trades on a desktop">        |
+| **Preprocessor: buy**<br>`/app/market`            |   <img src="docs/screenshots/yard-market-phone.png" width="180" alt="The preprocessor's market on a phone">    |   <img src="docs/screenshots/yard-market-desktop.png" width="460" alt="The preprocessor's market on a desktop">    |
+| **Preprocessor: trades**<br>`/app/trades`         |   <img src="docs/screenshots/yard-trades-phone.png" width="180" alt="The preprocessor's trades on a phone">    |   <img src="docs/screenshots/yard-trades-desktop.png" width="460" alt="The preprocessor's trades on a desktop">    |
 | **Recycler: home**<br>`/app`                      |        <img src="docs/screenshots/recycler-home-phone.png" width="180" alt="Recycler home on a phone">         |        <img src="docs/screenshots/recycler-home-desktop.png" width="460" alt="Recycler home on a desktop">         |
 | **Manufacturer: compliance**<br>`/app/compliance` | <img src="docs/screenshots/manufacturer-compliance-phone.png" width="180" alt="Compliance and EPR on a phone"> | <img src="docs/screenshots/manufacturer-compliance-desktop.png" width="460" alt="Compliance and EPR on a desktop"> |
 
@@ -205,70 +169,55 @@ for full size; how to take them again is in
 
 ## Try it with the demo logins
 
-Sign in at `/login` with a number below and the code **123456**. Demo logins
-work only on the dev deployment, where `AUTH_DEV_MODE=true`, and no SMS is ever
-sent to them; on production they are ordinary numbers and the code opens
-nothing. Every flow, step by step with what you should see, is in the
-[A-to-Z test plan](docs/testing/README.md).
+This legacy heading is retained for existing links. Shared demo logins and
+fixed codes are withdrawn. Use the
+[disposable local acceptance setup](scripts/local-acceptance/README.md) and
+[current launch plan](docs/testing/launch-2026-10-10.md).
 
-| Phone           | Who                                                             | What to try                                                                                   |
-| --------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| +91 90000 00101 | **Kabadiwala**: Ramesh Kumar, Ramesh Kabadi Store, Yeshwanthpur | Accept Priya's pickup, weigh and pay the one on its way, change a price, list stock for yards |
-| +91 90000 00102 | **Yard**: Farida Begum, Peenya Paper & Plastic Yard             | Buy a kabadiwala's newspaper, pay into escrow, confirm delivery; sell PET bales to a recycler |
-| +91 90000 00103 | **Recycler**: Suresh Reddy, GreenLoop Polymers, Bommasandra     | Dispatch Deccan Packaging's paid order of PET flakes, buy PET from a yard, check EPR records  |
-| +91 90000 00104 | **Manufacturer**: Anita Rao, Deccan Packaging, Nelamangala      | Order recycled PET flakes, confirm a delivery, check compliance and recycled content          |
-| +91 90000 00105 | **Saathi**: Lakshmi Devi, Yeshwanthpur                          | Take a job near you, mark one done, see earnings                                              |
-| +91 90000 00106 | **New applicant**                                               | Join as any role from scratch                                                                 |
-| +91 90000 00107 | **Yard applicant**: Mohammed Irfan, Irfan Metal & Plastic Yard  | An application waiting for the admin                                                          |
-| +91 90000 00108 | **Kabadiwala applicant**: Kavitha S, Kavitha Raddi Shop         | An application waiting for the admin                                                          |
-| +91 90000 00109 | **Household**: Priya Sharma                                     | Book a pickup at `/sell` with this number; follow hers at `/t/priyademo1` (no sign-in needed) |
-| On request      | **Admin**                                                       | `/admin/login`: email, password and an authenticator-app code. Ask the founder for access     |
+The runner uses supported signup, verification and sign-in handlers against
+an isolated local backend. Existing approved synthetic accounts may be reused
+for their recorded test run. Keep passwords and challenge access in the
+restricted annex or a password manager, outside Git and the shared guide.
+Never put credentials, contact details or recovery material in screenshots.
+The [historical test catalogue](docs/testing/README.md) retains useful cases,
+but its sample people and records are not a current account roster.
 
 ## Run it locally
 
-You need Node 24 (see `.nvmrc`), pnpm 11 through Corepack, and a Convex account
-with access to the Luma.Green project.
+Use Node 24 (`.nvmrc`) and the pinned pnpm 11 version. A disconnected clone
+builds with optional services absent. Preserve an existing `.env.local`.
 
-```bash
-corepack enable          # pnpm 11, pinned in package.json
+```sh
+corepack enable
 pnpm install
-cp .env.example .env.local
-npx convex dev           # sign in to Convex and pick the Luma.Green project;
-                         # writes the Convex URLs into .env.local and keeps your
-                         # functions in sync with your dev deployment. Leave it running.
 ```
 
-Convex gives each person on the team their own dev deployment. The first time
-you use yours, set its sign-in variables and fill it with the demo world, in a
-second terminal:
+For connected acceptance, follow [environment setup](docs/operations/environments.md)
+and [local account preparation](scripts/local-acceptance/README.md). The current
+run uses `http://localhost:3100`, anonymous local Convex at
+`http://127.0.0.1:3210`, and HTTP actions at `http://127.0.0.1:3211`.
+Reuse existing processes. A local frontend must not point to a cloud backend.
+Keep both cloud deployments paused.
 
-```bash
-npx convex env set SITE_URL http://localhost:3000
-npx convex env set BETTER_AUTH_SECRET "$(openssl rand -base64 32)"
-npx convex env set AUTH_DEV_MODE true   # demo logins; other numbers' codes go to the Convex log
-npx convex run demo:seed                # the demo world (does nothing if it's already there)
-pnpm dev                                # http://localhost:3000
-```
+Development verification requires `AUTH_LOCAL_TEST_MODE=true`, loopback
+`SITE_URL`, and the system loopback `CONVEX_SITE_URL`. The guarded private local
+inbox keeps verification delivery on the machine. Keep live provider keys
+absent; no local verification bypass is allowed in cloud development, preview
+or production. Do not run the old whole-table demo seed or reset. Cleanup must
+remove only the selected run's recorded data.
 
-Then sign in at `http://localhost:3000/login` with a demo login.
+Normal hosted email verification, password recovery and invitations require
+Resend and a verified sender. Live phone OTP requires MSG91 account and
+DLT/template proof. Missing configuration must show an unavailable state.
+Optional AI, telemetry and push have their own provider gates; see the
+[launch checklist](docs/operations/launch-checklist.md) and
+[observability setup](docs/operations/observability.md).
 
-- **Start over:** `npx convex run demo:reset` wipes the prototype's data and
-  seeds it again; sign-ins survive. Seed and reset refuse to run unless
-  `AUTH_DEV_MODE=true`, so production is never touched.
-- **Another port:** sign-in trusts `SITE_URL` only. Add more with
-  `npx convex env set EXTRA_TRUSTED_ORIGINS http://localhost:3100`.
-- **Optional services:** configure SMS and AI in their documented deployment
-  environments. PostHog, GA4 and Sentry also require an explicit telemetry switch;
-  visit analytics wait for the visitor choice. See
-  [observability setup](docs/operations/observability.md). Payments remain a demo;
-  browser location requires no map-service key.
-
-```bash
-pnpm check          # lint + typecheck + unit tests: run before every push
-pnpm test           # unit tests (Vitest, Testing Library, convex-test)
-pnpm e2e            # Playwright end-to-end tests
-pnpm build          # production build
-pnpm screenshots    # the "See it" pictures, from a running app
+```sh
+pnpm check          # lint, types and unit tests before push
+pnpm test           # focused unit and component checks
+pnpm e2e            # browser tests with their documented local setup
+pnpm build          # frontend production build, not a backend deployment
 ```
 
 ## Android, iOS, macOS and Windows
@@ -292,18 +241,18 @@ features still need signed store releases. See the [architecture](docs/architect
 
 ## Tech stack
 
-| Layer     | Choice                                                                                                                                                                                                                                  |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                                                                                 |
-| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; light/dark/system themes, mobile first                                                                                                                                   |
-| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                                                                                              |
-| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                                                                             |
-| Sign-in   | Better Auth inside Convex: phone codes for everyone, password and authenticator for the admin                                                                                                                                           |
-| Languages | next-intl: 12 languages, English URLs, right to left for Urdu and Arabic                                                                                                                                                                |
-| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                                                                                         |
-| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                                                                                   |
-| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                                                                                 |
-| Waiting   | MSG91 and optional AI endpoint: implementation ready for account setup and provider checks. PostHog, GA4 and Sentry are implemented but need configured projects and delivery checks. Maps use browser location. Payments remain a demo |
+| Layer     | Choice                                                                                                                                                                                                                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| App       | Next.js 16 (App Router, Turbopack), React 19, TypeScript in strict mode                                                                                                                                                                                                                          |
+| Interface | Tailwind CSS v4, shadcn/ui on Radix, lucide icons, Noto fonts; light/dark/system themes, mobile first                                                                                                                                                                                            |
+| Apps      | Expo 57 / React Native for iOS and Android; Electron for macOS and Windows                                                                                                                                                                                                                       |
+| Backend   | Convex: database, server functions, file storage and live queries (EU West)                                                                                                                                                                                                                      |
+| Sign-in   | Better Auth on Convex: verified email/password or phone OTP; separate admin password and required authenticator                                                                                                                                                                                  |
+| Languages | next-intl: 33 languages, English URLs, right to left for Urdu and Arabic                                                                                                                                                                                                                         |
+| Forms     | React Hook Form and Zod; the server checks the same rules again                                                                                                                                                                                                                                  |
+| Quality   | Vitest, Testing Library, convex-test, Playwright; type-aware ESLint, Prettier, commitlint, CodeRabbit                                                                                                                                                                                            |
+| Hosting   | Vercel for the web app, Convex for the backend; pnpm 11                                                                                                                                                                                                                                          |
+| Waiting   | MSG91 and optional AI endpoint: implementation ready for account setup and provider checks. PostHog, GA4 and Sentry are implemented but need configured projects and delivery checks. Maps use browser location. Cashfree sandbox backend only; live gateway approval and execution remain gated |
 
 ## Docs
 
@@ -311,7 +260,7 @@ features still need signed store releases. See the [architecture](docs/architect
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | [docs/README.md](docs/README.md)                                   | The index: the plan, and the reasons behind it. Start here                                 |
 | [docs/product/features.md](docs/product/features.md)               | Every feature: what's built (with URLs), what's sample data, what's next                   |
-| [docs/testing/README.md](docs/testing/README.md)                   | The A-to-Z test plan: every flow, step by step, with expected results                      |
+| [docs/testing/README.md](docs/testing/README.md)                   | Historical A-to-Z cases; current acceptance is in the 10 October plan                      |
 | [docs/product/vision.md](docs/product/vision.md)                   | What and why, starting with the vision; roles, flows, onboarding and pricing sit beside it |
 | [docs/architecture/overview.md](docs/architecture/overview.md)     | How it's built, then URLs, frontend, sign-in, data model and AI estimation                 |
 | [docs/decisions/README.md](docs/decisions/README.md)               | One record per architecture decision                                                       |
@@ -322,44 +271,30 @@ features still need signed store releases. See the [architecture](docs/architect
 
 ## Status
 
-A prototype with a local pilot implementation pass on 1 October 2026, ahead
-of the Bengaluru pilot on 13–20 October 2026. See the
-[delivery log](docs/delivery/cleanup-progress.md) and the exact
-[account and environment checklist](docs/operations/launch-checklist.md).
+The current target is **Saturday, 10 October 2026**, conditional on release
+evidence in the [launch plan](docs/testing/launch-2026-10-10.md) and
+[launch checklist](docs/operations/launch-checklist.md). Read the
+[handoff](docs/delivery/handoff.md) for the current candidate and check results.
+This README is not a test report or a launch approval.
 
-**Existing development flows** (deployment status must be checked before launch):
-
-- Sign-in with phone codes, and the admin's password and authenticator, with
-  fixed-length sessions and rate limits.
-- Onboarding for every role: drafts saved as you type, uploads checked by their
-  real file type, a version kept for each submission, and the admin's decision.
-- Every screen reads and writes live data, and updates without a refresh:
-  pickups go from request to receipt, stock follows what's weighed, trades move
-  through each escrow step, jobs are taken and finished, messages reach the
-  admin.
-- 12 languages, right-to-left layouts, phone and desktop.
-
-**Sample**, there to show the idea:
-
-- The demo world: every business, person, pickup, lot, trade and job, defined in
-  [convex/lib/demo.ts](convex/lib/demo.ts). The names are invented, and the
-  demo GSTINs and pollution-board consent numbers are made up (the GSTINs fail
-  the official checksum on purpose).
-- Prices are Bengaluru sample figures, not market data. CO₂e factors and solar
-  figures are indicative. Screens that show them say so.
-- No money moves. Households are paid at the door and the amount is recorded
-  ([ADR 0009](docs/decisions/0009-money-off-platform-first.md)); escrow between
-  businesses is simulated.
-- SMS requires approved MSG91 templates and Convex configuration. Only explicit
-  development mode uses demo codes or log delivery. Local provider tests use mocks.
-- The optional AI photo estimate uses an evaluated model through OpenRouter or a
-  self-hosted endpoint ([cost and setup guide](docs/operations/low-cost-operation.md));
-  rupee amounts always come from the price tables
-  ([ADR 0015](docs/decisions/0015-bounded-photo-cache-and-selectable-inference.md)).
-- Documents in the demo applications are generated samples.
-
-**Next**: the [roadmap](docs/delivery/roadmap.md), and the list at the end of
-[features.md](docs/product/features.md#next).
+- Local auth, workspace roles, stakeholder requests, material evidence and the
+  bounded Cashfree sandbox backend are under combined acceptance. Local tests
+  and synthetic records do not prove provider delivery or production access.
+- Both cloud backends were verified empty and paused on 6 October. A frontend
+  page does not prove its backend is active. Backend release, frontend release
+  and post-deployment checks must be recorded separately.
+- The kabadiwala pays the household directly. B2B payment-dependent actions
+  remain blocked until verified gateway integration. Simulated escrow is not
+  payment evidence and cannot authorize trade or stock changes.
+- Prices, factors and solar estimates are samples or estimates where labelled.
+  Historic application documents and participant names are synthetic. Lot and
+  compliance evidence does not mint credits or certify legal compliance.
+- Resend delivery, MSG91/DLT approval, Cashfree marketplace approval and Easy
+  Split enablement, vendor KYC, payout/refund proof, native releases and cloud
+  deployment remain separate release gates.
+- The 33-locale interface needs native review and current visual evidence.
+  The maintained guide source, screenshots and Word document must match the
+  reviewed candidate before publication.
 
 ## Contributing
 

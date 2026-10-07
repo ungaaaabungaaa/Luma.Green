@@ -1,6 +1,6 @@
 # Services and accounts
 
-> Status: inventory updated 6 October 2026. This is a setup and evidence record,
+> Status: inventory updated 7 October 2026. This is a setup and evidence record,
 > not a claim of live provider readiness. Account ownership is unverified unless
 > stated below. The [setup checklist](launch-checklist.md) owns exact settings;
 > the [10 October test plan](../testing/launch-2026-10-10.md) owns acceptance.
@@ -12,30 +12,30 @@ cloud test-code delivery is authorized are superseded for this work.
 
 ## Existing platform and access to reuse
 
-| Service                                 | Current evidence and remaining action                                                                                                                                                                                                                                                    |
-| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GitHub                                  | Existing repository and protected PR path. Verify required checks on the exact release head; owner access/recovery and current CI are release checks.                                                                                                                                    |
-| Convex                                  | Existing dev `glorious-rooster-470` and prod `outstanding-buzzard-942`. The 6 October reset record verifies both empty and paused. Preserve recovery exports; deploy and reactivate only through the approved release.                                                                   |
-| Local Convex                            | Anonymous local process reported at `127.0.0.1:3210` and HTTP actions at `127.0.0.1:3211`. Component auth, persistence and storage acceptance still need proof. Local deployments are beta and have no public URL; see [official limits](https://docs.convex.dev/cli/local-deployments). |
-| Vercel                                  | Existing `luma_green` project. Confirm domain, branch, environment and build command. Default repository build does not deploy Convex; configured release build must deploy the matching backend first.                                                                                  |
-| Domain and DNS                          | Reuse `luma.green` ownership. Verify registrar access, Vercel HTTPS/domain records and Resend sending-domain records. DNS access is not yet verified here.                                                                                                                               |
-| Better Auth                             | Existing self-hosted library on Convex; no separate account. New normal email verification/reset and invitations are under implementation. Admin TOTP and recovery remain separate.                                                                                                      |
-| Next.js, Tailwind, shadcn and next-intl | Existing local packages, not service accounts. Keep the current UI contract and all registered locales; an installed package is not acceptance evidence.                                                                                                                                 |
+| Service                                 | Current evidence and remaining action                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GitHub                                  | Existing repository and protected PR path. Verify required checks on the exact release head; owner access/recovery and current CI are release checks.                                                                                                                                                                                                                                                                             |
+| Convex                                  | Existing dev `glorious-rooster-470` and prod `outstanding-buzzard-942`. The 6 October reset record verifies both empty and paused. Preserve recovery exports; deploy and reactivate only through the approved release.                                                                                                                                                                                                            |
+| Local Convex                            | Anonymous local backend uses `127.0.0.1:3210` and HTTP actions at `127.0.0.1:3211`. The pre-bridge connected local suite passed 49 cases on 7 October, including real component signup, verification and session flows. Restart persistence and private storage must retain their own evidence; local results do not prove provider or production behavior. See [official limits](https://docs.convex.dev/cli/local-deployments). |
+| Vercel                                  | Existing `luma_green` project. Confirm domain, branch, environment and build command. Default repository build does not deploy Convex; configured release build must deploy the matching backend first.                                                                                                                                                                                                                           |
+| Domain and DNS                          | Reuse `luma.green` ownership. Verify registrar access, Vercel HTTPS/domain records and Resend sending-domain records. DNS access is not yet verified here.                                                                                                                                                                                                                                                                        |
+| Better Auth                             | Existing self-hosted library on Convex; no separate account. Normal email verification/reset and invitations are implemented locally. The pre-bridge connected local suite passed; final retest and external delivery remain open. Admin TOTP and recovery remain separate.                                                                                                                                                       |
+| Next.js, Tailwind, shadcn and next-intl | Existing local packages, not service accounts. Keep the current UI contract and all registered locales; an installed package is not acceptance evidence.                                                                                                                                                                                                                                                                          |
 
 ## Required external paths for the approved launch
 
-| Service             | Setup and release gate                                                                                                                                                                                                                                                |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resend email        | Required for production email signup verification, password reset and workspace invite delivery under the approved plan. Create/verify account, owned domain, DNS, restricted sending key and sender. Existing admin recovery code does not prove the new paths work. |
-| MSG91 OTP           | Required for production phone signup/login. Create/verify account, DLT entity/header/content approvals, OTP template, credits and limits. The local pass sends no external SMS. Require controlled-handset proof before production.                                   |
-| MSG91 Flow          | Optional status messages for booking/application events once configured. Use separate approved Flow IDs and language mappings. Verify actual recipient delivery separately from the API response.                                                                     |
-| B2B payment gateway | Provider not selected and payment integration not established. Confirm marketplace/vendor settlement fit, eligibility and onboarding. Complete sandbox and live gates. Never replace gateway state with manual approval, payment-proof upload or simulated escrow.    |
+| Service                               | Setup and release gate                                                                                                                                                                                                                                                                                                               |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Resend email                          | Required for production email signup verification, password reset and workspace invite delivery under the approved plan. Create/verify account, owned domain, DNS, restricted sending key and sender. Normal verification, reset and invitation code is implemented and locally tested. Real inbox delivery remains a separate gate. |
+| MSG91 OTP                             | Required for production phone signup/login. Create/verify account, DLT entity/header/content approvals, OTP template, credits and limits. The local pass sends no external SMS. Require controlled-handset proof before production.                                                                                                  |
+| MSG91 Flow                            | Optional status messages for booking/application events once configured. Use separate approved Flow IDs and language mappings. Verify actual recipient delivery separately from the API response.                                                                                                                                    |
+| Cashfree Payment Gateway + Easy Split | Selected for implementation on 6 October under the founder's delegated choice. Create/verify a business account and request Easy Split activation for the marketplace model. Confirm use-case eligibility, seller onboarding, refunds and settlement. Sandbox and live approval remain separate gates. No manual paid substitute.    |
 
-[Razorpay Route](https://razorpay.com/docs/payments/route/) and
 [Cashfree Easy Split](https://www.cashfree.com/docs/payments/split/overview)
-are examples for provider review, not a recommendation that Luma is eligible.
-Route publishes turnover/review eligibility; Easy Split needs account-manager
-enablement. The [setup checklist](launch-checklist.md) records the current
+supports marketplace vendors, order splits, refunds and settlement reports.
+It requires account-manager enablement; selection does not confirm Luma's
+eligibility. Razorpay Route was considered but is not a second implementation.
+The [setup checklist](launch-checklist.md) records the current
 checks. B2B payment-dependent actions remain blocked until verified gateway
 state exists. A kabadiwala pays a household directly; Luma records that fact
 without collecting or transferring those funds.
@@ -68,8 +68,10 @@ explains the required mapping.
 | CodeRabbit, uptime and backup tooling              | Optional operations services; verify any existing account first and name the alert/recovery owner.                                                                                             |
 
 No Mapbox account is needed for current browser location. No Cloudflare R2
-account is needed for current Convex document storage. No payment key can make
-an unimplemented gateway work. Follow [native app releases](app-releases.md),
+account is needed for current Convex document storage. The bounded live trade lifecycle is source-implemented, with 137 focused backend
+tests and independent review passed. Adding
+payment keys does not complete combined acceptance, approved business policy or
+prove collection, refund or seller settlement. Follow [native app releases](app-releases.md),
 [observability](observability.md), [push](push-notifications.md) and
 [public data](public-data.md) for each enabled feature's setup.
 

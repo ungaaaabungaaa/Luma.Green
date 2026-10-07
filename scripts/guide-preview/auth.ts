@@ -14,12 +14,25 @@ export const authClient = {
         : rejectAccountChange(),
   },
   signUp: { email: rejectAccountChange },
-  // A truthy marker renders signed-in controls; it is not a valid auth session.
+  // Fictional identity renders account boundaries; it is not a valid auth session.
   useSession: () => ({
-    data: { fixture: true, session: { id: undefined } },
+    data: {
+      fixture: true,
+      user: {
+        id: "guide-fictional-user",
+        email: "guide-fictional@example.test",
+        emailVerified: new URLSearchParams(window.location.search).has("phone"),
+        phoneNumberVerified:
+          new URLSearchParams(window.location.search).get("phone") ===
+          "verified",
+      },
+      session: { id: undefined },
+    },
+    refetch: rejectAccountChange,
     isPending: false,
     error: null,
   }),
+  phoneNumber: { verify: rejectAccountChange, sendOtp: rejectAccountChange },
   signOut: rejectAccountChange,
   requestPasswordReset: rejectAccountChange,
   resetPassword: rejectAccountChange,

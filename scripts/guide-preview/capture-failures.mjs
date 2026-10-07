@@ -75,6 +75,7 @@ const sources = [
   "scripts/guide-preview/auth.ts",
   "scripts/guide-preview/provider.tsx",
   "scripts/guide-preview/queries.ts",
+  "scripts/guide-preview/finance-fixtures.ts",
   "scripts/guide-preview/vite.config.mts",
 ];
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
@@ -110,7 +111,11 @@ try {
       : ["en", "ar"];
     for (const locale of locales)
       for (const theme of ["light", "dark"])
-        for (const [size, viewport] of viewports) {
+        for (const [size, standardViewport] of viewports) {
+          const viewport =
+            scenario === "signout"
+              ? { ...standardViewport, height: 1800 }
+              : standardViewport;
           await test(`${scenario} ${locale} ${theme} ${size}`, async () => {
             const context = await browser.newContext({
               viewport,
@@ -239,7 +244,6 @@ try {
                     .click();
                   // Give the unchanged menu, error toast and documentation note
                   // separate space. Only the harness note is repositioned.
-                  await page.setViewportSize({ ...viewport, height: 1100 });
                   await page
                     .getByRole("note", {
                       name: "Screenshot provenance",

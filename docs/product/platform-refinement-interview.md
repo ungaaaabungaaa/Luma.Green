@@ -638,7 +638,7 @@ actual deployment smoke tests before making a release claim. Production
 credentials, provider secrets, delivery and payment remain separate gates.
 
 **Decisions still needed during implementation.** The exact email sender and
-domain, SMS provider availability, gateway provider, team invitation email
+domain, SMS provider availability, gateway activation, team invitation email
 delivery, permission details for each observer, and whether a phone-only person
 can later add a password need named owners. Missing providers must show an honest
 unavailable state; no preview challenge can produce a production session.
@@ -659,8 +659,8 @@ Use the [account checklist](../operations/launch-checklist.md) and
 [service inventory](../operations/services.md). Reuse GitHub, Convex, Vercel and
 domain access where available. Better Auth needs no separate hosted account.
 The approved production email path needs a verified Resend sender and API key;
-phone OTP needs MSG91/DLT approval. B2B gateway provider fit and onboarding remain
-open. Optional AI, telemetry, search, news, public data and native distribution
+phone OTP needs MSG91/DLT approval. Cashfree is selected below; provider
+approval, Easy Split activation and onboarding remain pending. Optional AI, telemetry, search, news, public data and native distribution
 accounts are required only for their enabled features. No new account has been
 created or verified by this entry.
 
@@ -671,6 +671,58 @@ and preserve its sharing. Both cloud Convex deployments remain paused until the
 validated release action. Saturday release is conditional on the exact tested
 scope and provider readiness; blocked flows stay listed. The founder must
 explicitly approve any smaller release scope rather than silently dropping work.
+
+### 6 October 2026 payment provider selection and local acceptance
+
+The founder delegated the provider choice to the engineer. Select **Cashfree
+Payment Gateway with Easy Split** for B2B checkout and payments to sellers.
+Its documented vendor, order-split, refund and settlement features fit this
+marketplace flow. Cashfree must still approve the use case, business account,
+seller verification and Easy Split activation. No provider account was created
+by this decision. See [ADR 0019](../decisions/0019-gateway-only-business-payments.md)
+and [Cashfree Easy Split](https://www.cashfree.com/docs/payments/split/overview).
+
+Keep household payments unchanged: the kabadiwala pays the household directly.
+All B2B payment-dependent actions must wait for verified gateway evidence.
+Store material price, any disclosed Luma service fee, payment status and seller
+settlement status separately. No fee amount or deduction is approved by the
+provider selection. The initial adapter is sandbox-only until refund,
+settlement, webhook reconciliation and trade/stock integration are verified.
+
+The local runner has created 28 disposable email accounts through actual signup,
+email verification and password sign-in handlers. Domain fixtures give each
+account its test role; stakeholder approval does not grant private trade access.
+The first manual browser sign-in opened the kabadiwala workspace. The full role,
+household, PET, admin and payment acceptance matrix is still in progress.
+Credentials remain in a restricted local file and must stay out of Git and the
+broadly shared guide. A local inbox receives real verification tokens; it does
+not replace the production Resend or MSG91 delivery gates.
+
+### 6 October 2026 local implementation and browser checkpoint
+
+The integration worktree now includes email signup/recovery, workspace roles
+and invitations, and material-lot custody, transformation and quality screens.
+The 28 disposable account access cases passed. Separate browser tests passed
+email verification/reset/session revocation, the workspace invitation journey,
+existing admin password/TOTP/logout, optional user TOTP setup and removal,
+household pickup/receipt, and lot dispatch/receipt and inspection correction.
+These focused results do not prove all business workflows or production access.
+The current case-level status is in section 13 of the launch test plan.
+
+Actual browser review found Arabic control direction defects and a temporary
+authentication failure during rapid navigation. Both are being repaired and
+retested. The full regression also found obsolete prototype test/document
+expectations. Keep the current permissions and required checks; update stale
+expectations and rebuild the guide from current browser evidence. Full checks,
+reviewed Word guides, the same-ID Google document update, CI and deployment
+remain release gates.
+
+Cashfree remains sandbox-only and disabled without settings. No provider call
+or payment was made. The founder has been asked who will bear gateway fees,
+refund costs and chargebacks. The provider choice does not resolve these
+commercial terms. Live collection, refunds, seller settlement and the matching
+trade/inventory transitions must remain blocked until they are defined and
+verified. No manual paid action is introduced.
 
 ## Documentation and implementation boundary
 
@@ -727,3 +779,220 @@ GPS metadata. The founder asked to decide whether every accepted image format
 must have GPS removed before storage during file review. A user-entered address
 or site location is a separate product question; this decision only covers
 metadata inside photos.
+
+### 6 October 2026 — Industry, material, byproduct and CPCB workbook
+
+The founder supplied `Luma.Green_Industry_Material_Byproduct_CPCB_Combined.xlsx`
+and requested implementation of the additional architecture. This expands the
+current refinement. It does not mark every workbook recommendation delivered.
+The earlier PET example remains one material flow within this broader model.
+
+#### Source layers and quality findings
+
+The workbook contains 99 industry examples, 33 lifecycle rows, 30 byproduct
+examples, 12 workflow stages, 419 rows labelled as the CPCB official master and
+419 corresponding commercial-analysis rows. The strategy and Sources sheets
+explicitly separate regulatory context from Luma's inferred material analysis.
+The cited uploaded CPCB PDF, earlier platform DOCX and KSPCB reference are source
+references, not new instructions or proof of facility permission.
+
+The official CPCB January 2025 report confirms 419 sectors: 125 Red, 137 Orange,
+94 Green, 54 White and 9 Blue. This count agreement does not validate every copied
+workbook cell. See the [CPCB report hosted by MPCB](https://mpcb.gov.in/sites/default/files/Establishment%20of%20MPCB/Seniority%20list/2014/Categorization_of_Industries_CPCB_2025_.pdf),
+pages 16 and 36. The implementation owner checked this primary report; each
+facility's applicable approvals remain a separate review.
+
+Preserve the supplied workbook as a reference and mark imported rows
+`workbook_unverified`. Do not relabel the imported text as verified law. The
+extract contains damaged threshold text in the final hydel/mining rows and a
+submission-format footer in the final row. Those fields need comparison with the
+source before they can support decisions. The dashboard formulas include header
+rows: industry 100 instead of 99, lifecycle 34 instead of 33, byproduct 31 instead
+of 30, and workflow 13 instead of 12. Its hard-coded group totals sum to 98;
+Food/Agro/Dairy has 11 actual examples, not 10. Recalculate counts from validated
+data rows; do not display the dashboard figures as platform facts.
+
+Sector codes are not unique keys. The 419 official-labelled rows contain only
+413 distinct annexure/code pairs: Annexure II repeats codes 1.1, 1.2, 1.3, 2.0,
+3.1 and 3.2 for distinct sector entries. Retain workbook sheet and source-row
+identity, category, description and source links. Never collapse repeated codes
+or silently overwrite one sector with another. Preserve the original text
+alongside any later reviewed correction and its audit evidence.
+
+#### Requirements accepted for implementation
+
+1. **Represent each processing function.** Include sorting, baling, washing,
+   granulation, stripping, shredding, compounding and recovery. The architecture
+   decision is to model these as explicit process capabilities on the existing
+   organisation/workspace model. A washer or compounder remains a business with
+   its own team roles; it is not a new login system or a grant of admin rights.
+   A business can have several processes. Keep the mandatory user-facing term
+   **preprocessor** where the workbook uses yard or aggregator. Existing internal
+   route keys do not change merely because the display term changes.
+2. **Separate sector from permission.** A facility can reference a workbook
+   sector and record its activities. A CPCB colour, pollution index, capability
+   choice or opportunity score does not approve handling, declare material
+   non-hazardous, verify a consent or allow a sale. Keep source provenance and
+   commercial interpretation separate. Only reviewed facility/material scope
+   can grant the existing controlled commercial permissions.
+3. **Track material state through processes.** Describe the input, process and
+   output states for lots, including sorted material, bales, flakes, washed
+   flakes, pellets, compounds and finished outputs. The workbook chain is a
+   graph of examples, not a rule that all materials must pass every stage.
+   Each authorised transformation preserves parentage and creates distinct
+   output lots with exact integer grams and its process record.
+4. **Classify each output stream.** Support Main product, Saleable byproduct,
+   Recoverable waste and Residual waste as distinct stream classes. Class is
+   separate from material family, grade, processing state and hazard status.
+   A user selecting “Saleable byproduct” does not itself make a listing eligible.
+   For the new classified-output/evidence-lot path, linked material must be
+   explicitly non-hazardous and a main product, saleable byproduct or recoverable
+   waste. Missing/unassessed/unspecified, controlled and residual lots cannot
+   supply that link; recheck at listing, request and acceptance. This restricts
+   evidence linkage and does not approve the material. Unlinked inventory offers
+   retain their existing catalogue/family and actor rules. Retain the
+   manufacturer's existing non-hazardous and approved-buyer checks.
+5. **Preserve complete mass balance.** Input grams must account for every main
+   output, byproduct, recoverable fraction, residual, contamination and recorded
+   loss exactly once. Prevent negative, duplicate or unaccounted mass and prevent
+   later edits from rewriting a completed transformation or accepted inspection.
+   A correction is a new attributable record, not an overwritten result.
+6. **Give controlled residuals a restricted route.** Record residual type,
+   quantity and intended authorised destination/evidence where supported. Block
+   ordinary marketplace offers for controlled residuals. Do not simulate a
+   completed authorised disposal, manifest or portal action when that integration
+   is absent. An evidence-only record must say what is unverified.
+7. **Keep price and quality specific.** Material/grade, specification, location,
+   amount and date remain relevant to price. Record actual quality observations
+   and buyer acceptance; do not invent moisture, purity or PVC limits from the
+   workbook. Exact money remains integer paise. Physical-material price, SaaS
+   charge and any future transaction fee stay separate.
+8. **Keep hand-offs auditable.** Preserve actor, weight, price where relevant,
+   event time, source, destination and lot links. “Location” means the chosen
+   site/address or other explicitly authorised location field, not GPS metadata
+   extracted from uploaded photos. The founder's prior EXIF decision remains.
+
+#### Contradictions resolved and gates retained
+
+| Workbook statement                                                                          | Implementation interpretation and remaining limit                                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Create explicit user types for each processor                                               | Use explicit business process capabilities with existing accounts and owner/admin/member/viewer permissions. Do not create duplicate identities or grant access from a process label.                                                                           |
+| “Saleable” byproducts and likely next buyers                                                | Treat these as inferred matching candidates. Material status, consent, hazard and buyer handling approval still require verification.                                                                                                                           |
+| Red/Orange/Green/White/Blue category                                                        | Regulatory sector context only. It is not a product/waste classification or automatic marketplace allowlist.                                                                                                                                                    |
+| Verified impact or EPR evidence from mass balance                                           | A balanced ledger is traceability evidence. It does not establish an emission factor, mint a carbon/EPR certificate or replace portal authority. Unknown factors keep CO₂e unavailable.                                                                         |
+| Every transaction creates a commercial event                                                | Record only events that actually occur and are authorised. Accepted B2B trades remain at the gateway hold; neither a sector assignment nor a transformation bypasses it.                                                                                        |
+| Location captured at collection                                                             | Preserve the agreed explicit site/address workflow. Embedded photo GPS is not required; metadata-removal handling remains its separate file-review decision.                                                                                                    |
+| Demand board, standing orders, recurring demand, supplier qualification, route optimisation | Implemented in the 7 October completion slice: demand board, explicit recurring publication, qualification history, acknowledged standing plans/releases and capacity-checked geometric route planning. Final connected and visual acceptance remains separate. |
+
+The workbook's phase labels are recommendations, not acceptance results. Supplier
+samples and qualification, recurring demand, detailed QC attachments, route/load
+optimisation, residual destinations/manifests and specialised manufacturer flows
+must each be checked against implemented scope. Do not reduce them to a heading
+and call the whole platform complete. S2P/P2P segmentation remains open as already
+recorded. Household payment remains the kabadiwala's responsibility; B2B live
+payment, refund/chargeback fee policy and seller settlement remain gated.
+
+#### Acceptance before release
+
+The new registry must retain every distinct source row without code collisions;
+source-derived and inferred fields must remain identifiable. Capability and
+output-stream mutations need server permission checks, audit entries, exact mass
+accounting and negative tests for controlled/unknown material. Test unauthorised
+users and viewers, cross-workspace references, correction history and denied
+ordinary listings. Repeat the changed forms in English, Kannada and Arabic,
+phone/tablet/desktop, light and dark, then update their real browser evidence.
+
+The manual's WORKBOOK cases describe this acceptance. Their initial status is
+**Not run** until a candidate implements the case and produces evidence; missing
+features stay **Blocked — implementation required**. Hold final screenshots,
+Word publication and the same Google Doc update until this new scope and its
+explicit remaining gates are reflected in the reviewed source.
+
+### 7 October 2026 stock intake, material review and multi-input processing
+
+The source now separates three actions that must not be confused:
+
+- **Manufacturer stock intake:** an approved manufacturer records its own weighed production byproduct with a unique intake reference, production date, batch and weighing references, and an explicit non-duplication confirmation. A successful guarded save creates an immutable intake and atomically adds exact grams to inventory. An identical retry returns the original; a changed payload using the same reference fails. Only approved active non-hazardous scrap in the business's material-family scope is eligible. This is the manufacturer's declaration, not independent ownership, weighing, quality or regulatory verification.
+- **Admin material classification:** the platform admin reviews an active scrap material, explicitly records hazardous or non-hazardous status and a 3–160-character rationale/evidence reference. The action is audited. A workbook colour or facility process never grants this classification. Hazardous material is blocked from ordinary byproduct offers; non-hazardous status does not override business, material-family, buyer, stock or gateway checks.
+- **Multi-input processing evidence:** a business may combine up to 20 distinct available ordinary-route lots it currently holds. Every input has exact consumed grams. Combined input equals all measured outputs plus contamination and process loss; separately recorded residual outputs are not counted as loss again. Immutable input edges retain source history and own output genealogy. This transformation does not add inventory or issue a credit. Recipients of transferred outputs or input remainders see their custody records, not the processing business's private recipe, parent or sibling history.
+
+The multi-input slice passed 32 focused tests and one local connected industry journey. These bounded results are not the final combined regression, screenshot review, production deployment or provider acceptance. The current test manual includes INTAKE, CLASSIFY and MULTI cases. Final screenshots and guide copies must use the stable source. B2B live payment, fee policy, refund/settlement integration, provider approval and final acceptance of the additional workbook workflows below remain separate gates.
+
+### 7 October financial lifecycle refinement
+
+The key-free completion audit found the missing payment-to-trade bridge. The
+current source now supports one full agreed quantity, one full INR collection
+and one seller split. Verified live collection authorizes dispatch; the seller's
+stock is deducted once at dispatch and the buyer's stock added once at receipt.
+Sandbox records never grant that authority. No-live-order cancellation releases
+an accepted commitment without changing on-hand stock. A live order requires
+terminal unpaid provider proof; expiry and browser closure are not proof.
+
+Live activation is default-off and requires an explicit server flag, selected
+immutable approved policy, matching credentials and provider/vendor checks.
+The agreement owner must supply fee payer, refund funder, settlement terms and
+provider-acceptance reference. No business policy was invented. Existing funds
+and dispatched receipts retain their frozen policy when new checkout is paused.
+
+The configured administrator can request one full remaining refund with a stable
+reference and provider identity. Confirmed refund remains a review hold: it does
+not prove physical return, cancel the trade or restore stock. Automatic approval
+review rejected automatic post-refund cancellation, so that behavior was not
+applied. Partial refunds, partial delivery, arbitrary adjustments, replacement
+orders and dispute decisions remain unsupported review paths. Seller settlement
+needs order-specific allocation plus signed transfer evidence, with fees under
+the frozen policy; a general payout event alone is insufficient.
+
+Backend focused verification: 137 tests, backend types, scoped lint and independent
+review passed. Financial UI focused verification: 50 tests passed. The earlier
+49-case browser pass predates the bridge. The updated connected suite passed
+all 50 cases against the local production build in 4.0 minutes on 7 October;
+the log is `/private/tmp/luma-final-connected-production.log`. This includes
+inactive local policy save and unpaid cancellation, with no provider execution.
+Current screenshots, Word/Google Docs publication, final whole-project checks,
+provider acceptance and production release remain pending. These source results
+do not mean only keys remain. See the payment lifecycle completion record for
+exact evidence.
+
+### 7 October workbook completion implementation
+
+The key-free workflow audit was resolved through the documented
+[completion plan](../plans/2026-10-07-workbook-completion.md). Current source has:
+
+- Demand board, supplier/sample qualification, explicit recurring-demand
+  publication, rescheduling of overdue plans, standing agreements and individually
+  acknowledged releases. These planning records do not place an order, reserve
+  stock or collect payment. A late acknowledgement retains its original date.
+- Private QC/COA attachments with server file validation, current-access checks,
+  buyer decisions and withdrawal. Evidence owners can share bounded immutable
+  reports with a named approved stakeholder and revoke or expire access.
+- Manual route/load plans with exact integer capacity, entered sites/coordinates,
+  versioned corrections and archive. Optional ordering uses straight-line
+  geometry, not road routing, navigation, live GPS or a delivery-time promise.
+- Admin-governed material-state/grade/specification definitions, business search,
+  immutable recipe versions and production declarations linked to transformations
+  and output inspections. Recycled-input fractions describe declared inputs;
+  they do not certify the output or add inventory.
+- Scoped facility/registration evidence review and controlled destination records.
+  Facility revisions invalidate stale reviews. Linked dispositions recheck the
+  current destination scope and retain exact measured grams and references.
+
+Independent code review is complete for these slices. Production build, web/backend types and full lint pass (zero errors, 20 warnings).
+The final combined local production-build browser run passed all 55 cases in
+4.6 minutes; native tests passed 49 mobile and 22 desktop cases. Evidence is
+`/private/tmp/luma-final-connected-scope-copy.log`. Final capture and document
+review, 16 capture/Word freshness gates and the final full check remain pending. This is an implementation checkpoint, not a production or provider
+acceptance claim. Native-language review of newly drafted translations remains
+an owner/team check. The founder requested Vercel production release on 7 October;
+use the protected PR and backend-before-frontend process after checks pass.
+
+After that combined run, visual review found that stock without a market price
+showed a zero value. The correction keeps unavailable or partially priced stock
+values unavailable. All 20 focused stock tests and both connected byproduct
+cases passed; the browser rerun took 9.6 seconds. The production build passed
+again. The full visual matrix and final whole-project check are being refreshed
+for this correction; these targeted results do not replace those gates.
+
+The latest full unit preflight passed 2,306 of 2,322 tests in 79.58 seconds.
+The 16 failures are capture or Word freshness gates; no functional unit test
+failed. The final lint rerun and complete project check remain pending.

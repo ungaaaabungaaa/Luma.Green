@@ -8,13 +8,14 @@
       "width": 1280,
       "height": 900
     },
-    "revision": "f82df3c341bcfa1f976af67919162fef1f88e191",
+    "revision": "9146ce6840b86e6b9c26a63ea67a48f28f0cfa2c",
     "sourceHashes": {
-      "scripts/capture-price-guide.mts": "ee0bace09af370b9a6ceb814f7857da0013e56319b47b0259aaac64acf28c9b6",
+      "scripts/capture-price-guide.mts": "87e5e37bbb96368d6d7a54470c7c4589e871969d88f4c61b178607f4b1ae4d57",
+      "convex/lib/catalogue.ts": "417c4c52a692e252ebacafeb9ac9f818dbee270c60bbc913360e439da1b10a3a",
       "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
-      "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
-      "src/app/[locale]/(site)/prices/page.tsx": "f525ba637e7eb973236504f455179278e99636c4b9285b773135986ca148188e",
-      "src/components/site/page-header.tsx": "611e100176a354cbe4843d7e0f362fbb77d57ab7eed781310e53a74527a88c3c",
+      "src/lib/fonts.ts": "ffb4b8691eadcdf377fd3c0e2584c82683ffbbef7008fe1800f31dcba8e785db",
+      "src/app/[locale]/(site)/prices/page.tsx": "1b078f2553ba20526a51cc3661a73b40e38cfb52ff9b68a0cff3bfaf6e00d308",
+      "src/components/site/page-header.tsx": "66f1c5b11bbf4b4be4ef05f5a298ac50ef831c77661e328d7a3478effed88511",
       "src/components/site/page-banner.tsx": "5c9bbdbfa88b8336e204c8aad939d2639c2e8a221e1692826b23940916b2ce6e",
       "src/components/showcase/role-story-image.tsx": "241cd78e6518cd8e1e6ec1b7bd02c15a0c8c977ef13bcbed11d3e4566d9a0504",
       "src/components/prices/price-guide.tsx": "5c8c14f3f52de8d24b8477dc4efae65dd9d55843aacf75096dd756b3596e6341",
@@ -28,21 +29,149 @@
       "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
       "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
       "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
-      "src/components/app/page-parts.tsx": "a025b1e0c7afce7da3d3e20988c6d801dcff3be5e94ed553ceba24944cca563b",
-      "messages/en.json": "ffede6185ab4b962f50b010b7438b56b966e53488207ea4dea758dac5cc7661c"
+      "src/components/app/page-parts.tsx": "3dd45298c34917424abb92916e71bbff759f0de850d5f2153fd47322b82b5c1a",
+      "messages/en.json": "c1318be00feb4378b7c68a4434a2f17b8e271cf7ed249e552c40a189a3cb2629"
     },
-    "capturedAt": "2026-10-02T23:20:38.968Z",
+    "capturedAt": "2026-10-06T22:38:48.735Z",
     "kind": "current-local-connected-demo",
-    "backendDeployment": "glorious-rooster-470",
+    "backendDeployment": "isolated-anonymous-local",
+    "environment": "isolated-local",
+    "frontendOrigin": "http://localhost:3100",
+    "backendOrigin": "http://127.0.0.1:3210",
+    "backendSiteOrigin": "http://127.0.0.1:3211",
+    "siteAgreement": true,
+    "writesBlocked": true,
     "sampleData": true,
     "productionFrontendTested": false,
     "authenticationTested": false,
     "mutationsPerformed": false,
-    "rows": 26,
+    "rows": 28,
+    "materials": [
+      {
+        "code": "PAPER-NEWS",
+        "name": "Newspaper"
+      },
+      {
+        "code": "PAPER-CARTON",
+        "name": "Cardboard boxes"
+      },
+      {
+        "code": "PAPER-BOOKS",
+        "name": "Books and notebooks"
+      },
+      {
+        "code": "PAPER-OFFICE",
+        "name": "White office paper"
+      },
+      {
+        "code": "PAPER-MIXED",
+        "name": "Mixed paper"
+      },
+      {
+        "code": "LOCAL-PAPER-BYPRODUCT",
+        "name": "Local test paper offcuts"
+      },
+      {
+        "code": "LOCAL-PAPER-UNCLASSIFIED",
+        "name": "Local test unclassified paper"
+      },
+      {
+        "code": "PLASTIC-PET",
+        "name": "PET bottles"
+      },
+      {
+        "code": "PLASTIC-HDPE",
+        "name": "Hard plastic (HDPE)"
+      },
+      {
+        "code": "PLASTIC-PP",
+        "name": "Plastic containers (PP)"
+      },
+      {
+        "code": "PLASTIC-LDPE",
+        "name": "Plastic covers (LDPE)"
+      },
+      {
+        "code": "PLASTIC-MIXED",
+        "name": "Mixed plastic"
+      },
+      {
+        "code": "METAL-IRON",
+        "name": "Iron and steel"
+      },
+      {
+        "code": "METAL-SS",
+        "name": "Stainless steel"
+      },
+      {
+        "code": "METAL-ALU-CAN",
+        "name": "Aluminium cans"
+      },
+      {
+        "code": "METAL-ALU",
+        "name": "Aluminium (utensils)"
+      },
+      {
+        "code": "METAL-COPPER",
+        "name": "Copper"
+      },
+      {
+        "code": "METAL-BRASS",
+        "name": "Brass"
+      },
+      {
+        "code": "GLASS-BOTTLE",
+        "name": "Glass bottles"
+      },
+      {
+        "code": "EWASTE-SMALL",
+        "name": "Small electronics"
+      },
+      {
+        "code": "EWASTE-PHONE",
+        "name": "Old mobile phones"
+      },
+      {
+        "code": "EWASTE-CABLE",
+        "name": "Wires and cables"
+      },
+      {
+        "code": "EWASTE-BATTERY",
+        "name": "Lead batteries"
+      },
+      {
+        "code": "OTHER-CLOTHES",
+        "name": "Old clothes"
+      },
+      {
+        "code": "RECYCLED-PET-FLAKE",
+        "name": "Recycled PET flakes"
+      },
+      {
+        "code": "RECYCLED-HDPE-GRANULE",
+        "name": "Recycled HDPE granules"
+      },
+      {
+        "code": "RECYCLED-KRAFT",
+        "name": "Recycled kraft paper"
+      },
+      {
+        "code": "RECYCLED-ALU-INGOT",
+        "name": "Recycled aluminium ingots"
+      }
+    ],
+    "originalCatalogueRows": 26,
+    "localFixtureRows": 2,
     "historyPoints": null,
     "browserErrors": [],
     "blockedRequests": [],
-    "sha256": "7ed167d9ab8ae3ae44544e3fe82bb0c0eb41679b4753a6dcf293b194401b9716"
+    "sha256": "b0a9f3594d98922381e943c8d182b35833b882e5f06803a434eb1313935407d9",
+    "visualReview": {
+      "status": "passed",
+      "reviewedAt": "2026-10-06T22:45:12.966558+00:00",
+      "method": "original-png-at-readable-resolution",
+      "note": "Current local synthetic price rows and history table inspected; readable layout, no sensitive pixels. Not production market evidence."
+    }
   },
   {
     "name": "public-price-history-demo-dark",
@@ -53,13 +182,14 @@
       "width": 1280,
       "height": 900
     },
-    "revision": "f82df3c341bcfa1f976af67919162fef1f88e191",
+    "revision": "9146ce6840b86e6b9c26a63ea67a48f28f0cfa2c",
     "sourceHashes": {
-      "scripts/capture-price-guide.mts": "ee0bace09af370b9a6ceb814f7857da0013e56319b47b0259aaac64acf28c9b6",
+      "scripts/capture-price-guide.mts": "87e5e37bbb96368d6d7a54470c7c4589e871969d88f4c61b178607f4b1ae4d57",
+      "convex/lib/catalogue.ts": "417c4c52a692e252ebacafeb9ac9f818dbee270c60bbc913360e439da1b10a3a",
       "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
-      "src/lib/fonts.ts": "0c77a18060d4788b62934f2a827b5cf6f563ca77d8f6b7002f29c62dde719ff0",
-      "src/app/[locale]/(site)/prices/page.tsx": "f525ba637e7eb973236504f455179278e99636c4b9285b773135986ca148188e",
-      "src/components/site/page-header.tsx": "611e100176a354cbe4843d7e0f362fbb77d57ab7eed781310e53a74527a88c3c",
+      "src/lib/fonts.ts": "ffb4b8691eadcdf377fd3c0e2584c82683ffbbef7008fe1800f31dcba8e785db",
+      "src/app/[locale]/(site)/prices/page.tsx": "1b078f2553ba20526a51cc3661a73b40e38cfb52ff9b68a0cff3bfaf6e00d308",
+      "src/components/site/page-header.tsx": "66f1c5b11bbf4b4be4ef05f5a298ac50ef831c77661e328d7a3478effed88511",
       "src/components/site/page-banner.tsx": "5c9bbdbfa88b8336e204c8aad939d2639c2e8a221e1692826b23940916b2ce6e",
       "src/components/showcase/role-story-image.tsx": "241cd78e6518cd8e1e6ec1b7bd02c15a0c8c977ef13bcbed11d3e4566d9a0504",
       "src/components/prices/price-guide.tsx": "5c8c14f3f52de8d24b8477dc4efae65dd9d55843aacf75096dd756b3596e6341",
@@ -73,20 +203,148 @@
       "src/components/prices/sparkline.tsx": "9a698a128f3802e5ac5127f00e2c1e5aaf1ea557d19dbe29a0f40d4fbbb19afe",
       "src/components/prices/chart-geometry.ts": "d034c72e1c151e90ee492a7bcdda4e05bb68dd82ef7b8b0c7df74955b45e04bf",
       "src/components/app/format.ts": "efea09a9f734c886248bc51e6eecd18f38dc8163444b9afb9f6c3d755592d0fe",
-      "src/components/app/page-parts.tsx": "a025b1e0c7afce7da3d3e20988c6d801dcff3be5e94ed553ceba24944cca563b",
-      "messages/en.json": "ffede6185ab4b962f50b010b7438b56b966e53488207ea4dea758dac5cc7661c"
+      "src/components/app/page-parts.tsx": "3dd45298c34917424abb92916e71bbff759f0de850d5f2153fd47322b82b5c1a",
+      "messages/en.json": "c1318be00feb4378b7c68a4434a2f17b8e271cf7ed249e552c40a189a3cb2629"
     },
-    "capturedAt": "2026-10-02T23:20:40.630Z",
+    "capturedAt": "2026-10-06T22:38:49.283Z",
     "kind": "current-local-connected-demo",
-    "backendDeployment": "glorious-rooster-470",
+    "backendDeployment": "isolated-anonymous-local",
+    "environment": "isolated-local",
+    "frontendOrigin": "http://localhost:3100",
+    "backendOrigin": "http://127.0.0.1:3210",
+    "backendSiteOrigin": "http://127.0.0.1:3211",
+    "siteAgreement": true,
+    "writesBlocked": true,
     "sampleData": true,
     "productionFrontendTested": false,
     "authenticationTested": false,
     "mutationsPerformed": false,
-    "rows": 26,
+    "rows": 28,
+    "materials": [
+      {
+        "code": "PAPER-NEWS",
+        "name": "Newspaper"
+      },
+      {
+        "code": "PAPER-CARTON",
+        "name": "Cardboard boxes"
+      },
+      {
+        "code": "PAPER-BOOKS",
+        "name": "Books and notebooks"
+      },
+      {
+        "code": "PAPER-OFFICE",
+        "name": "White office paper"
+      },
+      {
+        "code": "PAPER-MIXED",
+        "name": "Mixed paper"
+      },
+      {
+        "code": "LOCAL-PAPER-BYPRODUCT",
+        "name": "Local test paper offcuts"
+      },
+      {
+        "code": "LOCAL-PAPER-UNCLASSIFIED",
+        "name": "Local test unclassified paper"
+      },
+      {
+        "code": "PLASTIC-PET",
+        "name": "PET bottles"
+      },
+      {
+        "code": "PLASTIC-HDPE",
+        "name": "Hard plastic (HDPE)"
+      },
+      {
+        "code": "PLASTIC-PP",
+        "name": "Plastic containers (PP)"
+      },
+      {
+        "code": "PLASTIC-LDPE",
+        "name": "Plastic covers (LDPE)"
+      },
+      {
+        "code": "PLASTIC-MIXED",
+        "name": "Mixed plastic"
+      },
+      {
+        "code": "METAL-IRON",
+        "name": "Iron and steel"
+      },
+      {
+        "code": "METAL-SS",
+        "name": "Stainless steel"
+      },
+      {
+        "code": "METAL-ALU-CAN",
+        "name": "Aluminium cans"
+      },
+      {
+        "code": "METAL-ALU",
+        "name": "Aluminium (utensils)"
+      },
+      {
+        "code": "METAL-COPPER",
+        "name": "Copper"
+      },
+      {
+        "code": "METAL-BRASS",
+        "name": "Brass"
+      },
+      {
+        "code": "GLASS-BOTTLE",
+        "name": "Glass bottles"
+      },
+      {
+        "code": "EWASTE-SMALL",
+        "name": "Small electronics"
+      },
+      {
+        "code": "EWASTE-PHONE",
+        "name": "Old mobile phones"
+      },
+      {
+        "code": "EWASTE-CABLE",
+        "name": "Wires and cables"
+      },
+      {
+        "code": "EWASTE-BATTERY",
+        "name": "Lead batteries"
+      },
+      {
+        "code": "OTHER-CLOTHES",
+        "name": "Old clothes"
+      },
+      {
+        "code": "RECYCLED-PET-FLAKE",
+        "name": "Recycled PET flakes"
+      },
+      {
+        "code": "RECYCLED-HDPE-GRANULE",
+        "name": "Recycled HDPE granules"
+      },
+      {
+        "code": "RECYCLED-KRAFT",
+        "name": "Recycled kraft paper"
+      },
+      {
+        "code": "RECYCLED-ALU-INGOT",
+        "name": "Recycled aluminium ingots"
+      }
+    ],
+    "originalCatalogueRows": 26,
+    "localFixtureRows": 2,
     "historyPoints": 29,
     "browserErrors": [],
     "blockedRequests": [],
-    "sha256": "67a0bd11ba468577efee5a08e55faeaca6dffcad7241b88f80678ee3e3c485d6"
+    "sha256": "eb16f3c6094a07fd729be813fd728bb47144d846d5cfa4d3a45f33aa540b9c81",
+    "visualReview": {
+      "status": "passed",
+      "reviewedAt": "2026-10-06T22:45:12.968905+00:00",
+      "method": "original-png-at-readable-resolution",
+      "note": "Current local synthetic price rows and history table inspected; readable layout, no sensitive pixels. Not production market evidence."
+    }
   }
 ]

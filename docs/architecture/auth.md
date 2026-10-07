@@ -17,6 +17,27 @@ points follow the number across devices. Email signup creates a separate verifie
 email identity. These methods do not silently merge accounts or bypass phone
 verification required by booking.
 
+### Verify a phone on an existing email account
+
+A verified non-admin email member can open Account Security and explicitly verify
+one unused Indian mobile number. The real SMS code is delivered through MSG91,
+or through the secured inbox on the local-only test deployment. Delivery stays
+unavailable without either configuration. This binds possession to the current
+email identity; it does not merge an existing phone account or enable phone-only
+sign-in for the email account. Continue to sign in with email and the existing
+second factor, when enabled.
+
+The verification endpoint requires the existing five-minute full-authentication
+assurance. If it has expired, the screen offers sign-in again. A required TOTP
+challenge must already have passed. Anonymous users, unverified email users,
+admins, phone-only identities, already-bound identities and numbers owned by
+another account are rejected. Generic user updates cannot set or remove a phone.
+The Convex adapter checks unique phone ownership inside its write transaction.
+The same transaction updates the matching profile and records `auth.phone.verified`
+without copying the phone or code to the audit log. User identity, session and
+TOTP remain unchanged. This supplies the verified matching phone required by the
+payment preparation guard; it does not enable live payment processing.
+
 ## How it's built
 
 **Better Auth, running inside Convex** through the `@convex-dev/better-auth`
@@ -52,6 +73,16 @@ component. Built and tested on 29 Sep 2026.
   requests: 10 requests a minute per client IP on the phone endpoints, 3 per
   10 seconds on two-factor. The client IP is Vercel's `x-forwarded-for`,
   passed through the Next.js proxy.
+- **Public signing-key discovery:** only `GET /api/auth/convex/jwks` is exempt
+  from the per-IP auth limiter through Better Auth's exact-path `customRules`.
+  It returns public verification keys, creates no user session and grants no
+  access. Convex verifiers share a network address; limiting their key fetches
+  caused HTTP 429 responses and loss of client auth while login sessions remained
+  valid. Other methods and auth routes retain their limits, including signup,
+  sign-in, verification email, password recovery and token issuance. This rule
+  does not cover the server-only `latest-jwks` route or expose private key fields.
+  A real-handler regression performs 105 key reads from one IP and checks the
+  existing credential quotas and unauthenticated token denial.
 
 ### SMS codes
 
@@ -267,3 +298,22 @@ platform staff (`profiles.kind = "admin"`) from business users; team members
 become staff roles — _reviewer_ (verification only), _support_ (read-only plus
 notes), _owner_ (everything) — with the permission table above gaining columns.
 No schema rewrite is needed.
+
+### Server session availability
+
+Protected locale routes and the admin console use `hasServerSession` for the
+server gate. It calls the configured Convex token endpoint with only the incoming
+cookie, authorization and client IP headers. The check has no token cache and no
+automatic retry. A valid token response permits rendering; explicit HTTP 401/403
+keeps the sign-in redirect. HTTP 429, other failed responses, malformed success
+responses and network failures stop private rendering and reach a recovery
+boundary above the guarded layouts. These failures never claim that a valid
+session has ended.
+
+Recovery is an explicit current-page reload. It also recreates a browser auth
+client that retained a failed token request; a segment-only retry does not do
+that in the installed adapter. The existing token quota remains in force. Local
+capture tools use separate client IPs and bounded quiet intervals that respect
+`X-Retry-After`. Better Auth 1.6.33 resets its counter after the full quiet window
+since the last accepted request, so a continuous capture can otherwise reach the
+quota over more than one nominal window. No capture may silently sign in again.

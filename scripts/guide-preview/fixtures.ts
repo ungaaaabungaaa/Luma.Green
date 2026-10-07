@@ -273,6 +273,7 @@ export function offersFixture(): FunctionReturnType<typeof api.market.browse> {
   return [
     {
       id: "guide-listing" as Id<"listings">,
+      specification: undefined,
       seller: {
         name: "Demo material supplier",
         area: "Peenya",
@@ -366,6 +367,12 @@ export const fixtures: Record<string, unknown> = {
   "review:queue": queue,
   "review:get": application,
   "support:list": support,
+  // Read-only examples. No hazard decision or approval is fabricated.
+  "byproductClassification:list": materials.map((material) => ({
+    code: material.code,
+    name: material.names.en,
+    review: null,
+  })) satisfies FunctionReturnType<typeof api.byproductClassification.list>,
   "adminPrices:list": rateCard.rows.map((row) => ({
     ...row.material,
     stage: "scrap",
@@ -432,6 +439,7 @@ export const trackedBooking: TrackedBooking = {
   createdAt: NOW - HOUR,
 };
 const demoTrade: TradeView = {
+  specification: undefined,
   id: "guide-trade" as Id<"trades">,
   material: paper,
   grams: 100_000,
@@ -529,6 +537,7 @@ export const myListingsFixture: FunctionReturnType<
 > = [
   {
     id: "guide-own-listing" as Id<"listings">,
+    specification: undefined,
     seller: { name: "Demo sorting yard", kind: "yard", area: "Peenya" },
     material: paper,
     grams: 60_000,
@@ -577,6 +586,16 @@ export const impactFixture: OrgImpact = {
   co2eKg: 100,
   families: [{ family: "paper", grams: 100_000, co2eKg: 100 }],
   since: NOW - 7 * 24 * HOUR,
+};
+
+/** Named synthetic missing-factor state; measured material remains visible. */
+export const unknownFactorImpactFixture: OrgImpact = {
+  ...impactFixture,
+  co2eKg: null,
+  families: impactFixture.families.map((family) => ({
+    ...family,
+    co2eKg: null,
+  })),
 };
 
 /** Draft values are already present on mount; captures never change or save them. */

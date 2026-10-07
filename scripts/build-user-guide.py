@@ -22,6 +22,8 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 from PIL import Image
 
+from document_links import add_document_hyperlink, resolve_document_link
+
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'docs/user-guide/guide.md'
 OUTPUT = ROOT / 'output/docx/luma-green-user-guide.docx'
@@ -38,7 +40,7 @@ def image_paths() -> list[Path]:
 
 
 def input_paths() -> list[Path]:
-    paths = [SOURCE, Path(__file__).resolve(), ROOT / 'scripts/user-guide-requirements.txt']
+    paths = [SOURCE, Path(__file__).resolve(), ROOT / 'scripts/user-guide-requirements.txt', ROOT / 'scripts/document_links.py']
     paths += image_paths()
     paths += sorted(SOURCE.parent.rglob('*captures.json'))
     return list(dict.fromkeys(paths))
@@ -52,6 +54,8 @@ def check_document() -> None:
     with zipfile.ZipFile(OUTPUT) as archive:
         document = ElementTree.fromstring(archive.read('word/document.xml'))
         text = ' '.join(document.itertext())
+        if '**' in text:
+            raise SystemExit('Unparsed Markdown emphasis remains in the Word guide.')
         for required in ['Kabadiwala', 'Admin', 'Synthetic documentation fixture', 'not a GST', 'Evidence and maintenance']:
             if required not in text:
                 raise SystemExit(f'Missing required Word content: {required}')
@@ -60,6 +64,13 @@ def check_document() -> None:
             raise SystemExit('The Word guide requires an editable Title style.')
         if len(document.findall('.//w:drawing', namespace)) != len(image_paths()):
             raise SystemExit('The Word guide must include every screenshot use.')
+        relationships = ElementTree.fromstring(archive.read('word/_rels/document.xml.rels'))
+        actual_links = {item.attrib['Target'] for item in relationships
+                        if item.attrib['Type'].endswith('/hyperlink')}
+        expected_links = {resolve_document_link(target, SOURCE, ROOT)
+                          for target in re.findall(r'(?<!!)\[[^\]]+\]\(([^)]+)\)', SOURCE.read_text())}
+        if not expected_links <= actual_links:
+            raise SystemExit('The Word guide must preserve every Markdown link as a clickable portable target.')
         if archive.testzip() is not None:
             raise SystemExit('The Word document archive is damaged.')
 
@@ -109,8 +120,9 @@ def inline(paragraph, value: str, bold: bool = False) -> None:
             run.font.size = Pt(9)
         elif match := re.fullmatch(r'\[([^\]]+)\]\(([^)]+)\)', token):
             label, url = match.groups()
-            # Visible URLs survive Word and Google Docs import without hidden destinations.
-            run = paragraph.add_run(f'{label} ({url})' if label != url else label)
+            destination = resolve_document_link(url, SOURCE, ROOT)
+            visible = f'{label} ({destination})' if label != destination else label
+            run = add_document_hyperlink(paragraph, visible, destination, bold=bold)
         else:
             run = paragraph.add_run(token)
         if bold:
@@ -165,7 +177,12 @@ def add_table(document, rows: list[list[str]]) -> None:
     count = len(rows[0])
     if any(len(row) != count for row in rows):
         raise ValueError('A guide table has inconsistent column counts.')
-    proportions = [.29, .71] if count == 2 else [.23, .30, .47] if count == 3 else [1 / count] * count
+    if count == 4 and rows[0][0] == 'Step':
+        proportions = [.06, .22, .38, .34]
+    elif count == 3 and rows[0][0] == 'Your task':
+        proportions = [.35, .17, .48]
+    else:
+        proportions = [.29, .71] if count == 2 else [.23, .30, .47] if count == 3 else [1 / count] * count
     table = document.add_table(rows=0, cols=count)
     table.autofit = False
     for column, proportion in zip(table.columns, proportions):
@@ -197,7 +214,7 @@ def add_table(document, rows: list[list[str]]) -> None:
             paragraph.paragraph_format.line_spacing = 1.05
             inline(paragraph, value, bold=row_index == 0)
             for run in paragraph.runs:
-                run.font.size = Pt(8.5)
+                run.font.size = Pt(9.5 if count == 4 else 8.5)
             shade = OxmlElement('w:shd')
             shade.set(qn('w:fill'), 'E8EEF2' if row_index == 0 else 'FFFFFF')
             cell._tc.get_or_add_tcPr().append(shade)
@@ -279,6 +296,10 @@ def build() -> None:
             paragraph.paragraph_format.page_break_before = next_page or title in {'Error reports and owner settings', 'Local desktop demonstration'}
             next_page = False
         elif re.match(r'^(?:\d+\.|-) ', line):
+            # Markdown soft wraps belong to the same list item, including emphasis.
+            while index < len(lines) and lines[index].strip() and not re.match(r'^(?:#|\||!\[|---|\d+\. |- )', lines[index].strip()):
+                line += ' ' + lines[index].strip()
+                index += 1
             # Preserve procedure step numbers exactly; each procedure restarts in source.
             paragraph = document.add_paragraph(style='List Bullet' if line.startswith('- ') else 'Normal')
             if line.startswith('- '):

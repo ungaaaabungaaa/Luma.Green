@@ -23,6 +23,7 @@ import { CompliancePage } from "@/components/insights/compliance-page";
 import { ImpactPage } from "@/components/insights/impact-page";
 import { BusinessJoin, KabadiwalaJoin } from "@/components/join/join-pages";
 import { StatusView } from "@/components/join/status-view";
+import { FinancialLifecycle } from "@/components/market/financial-lifecycle";
 import { InvoicePage } from "@/components/market/invoice-page";
 import { MarketPage } from "@/components/market/market-page";
 import { SellPage } from "@/components/market/sell-page";
@@ -36,6 +37,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { TrackView } from "@/components/track/track-view";
 import { localeMeta } from "@/i18n/locales";
 
+import type { Id } from "../../convex/_generated/dataModel";
 import { NOW, trackedBooking } from "./fixtures";
 import { locale, messages } from "./locale";
 import { SellSelectionFixture } from "./selection-fixtures";
@@ -71,6 +73,18 @@ const defaultAppPage = path.includes("/requests/") ? (
   <RoleHome />
 );
 const operationalPages: Record<string, ReactNode | undefined> = {
+  "/en/app/finance-example": (
+    <div className="flex flex-col gap-6">
+      <h1 className="text-2xl font-semibold">
+        {messages.tradeLifecycle.title}
+      </h1>
+      <p className="text-sm text-muted-foreground">
+        SIMULATED FINANCIAL STATE — interface example only. No actual payment,
+        provider evidence, authorization or stock movement. All writes disabled.
+      </p>
+      <FinancialLifecycle tradeId={"guide-finance-example" as Id<"trades">} />
+    </div>
+  ),
   "/en/app/prices": <RateCardPage />,
   "/en/app/stock": <StockPage />,
   "/en/app/sell": <SellPage />,

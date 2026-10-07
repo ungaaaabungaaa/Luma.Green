@@ -88,10 +88,10 @@ const browser = await chromium.launch();
 try {
   for (const entry of cases) {
     const name = `api-access-${entry.locale}-${entry.width}-${entry.theme}`;
-    const viewport = {
-      width: entry.width,
-      height: entry.width < 768 ? 844 : 1000,
-    };
+    let height = entry.width < 768 ? 844 : 1000;
+    // A tall tablet documentation view keeps the fixed navigation below all form controls.
+    if (entry.width >= 768 && entry.width < 1280) height = 1600;
+    const viewport = { width: entry.width, height };
     const page = await browser.newPage({
       viewport,
       deviceScaleFactor: 1,

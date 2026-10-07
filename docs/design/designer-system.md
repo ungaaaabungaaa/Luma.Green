@@ -83,6 +83,26 @@ labelled fixtures. The delivery handoff owns verification and release status.
 
 ## Current UI contract
 
+### Platform UI pass — 6 October 2026
+
+The founder requested a platform-wide UI pass after reviewing the phone/email
+switch. Preserve the identity below, but replace oversized selection trays and
+inconsistent task-page spacing. Tabs use content-width labels, a thin baseline
+and a green active underline. Each target stays at least 44px tall; labels can
+move to another row as a group instead of clipping or shrinking. Keyboard
+navigation, visible focus, disabled states and locale direction remain required.
+
+Operational and account headings use a compact 24/30px hierarchy. Forms and
+task sections use a 24px rhythm. Team records align identity and controls on
+wide screens and stack on phones. Public task pages put the useful search,
+form or data closer to the heading; their required imagery remains secondary.
+Story pages retain their editorial composition. Collection and tracking pages
+use the same compact task hierarchy without changing the booking process.
+
+The route inventory and verification status are recorded in
+`docs/delivery/ui-refinement-2026-10-06.md`. Earlier screenshots do not verify
+this revision. Rebuild the maintained guide from reviewed current captures.
+
 This section is the canonical design rule set for future agents and teammates.
 It consolidates the founder's accepted requests on 2 October 2026. Apply it to
 public, sign-in, onboarding, household, operator and admin screens. The dated

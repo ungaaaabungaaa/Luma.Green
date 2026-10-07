@@ -47,6 +47,7 @@ export function securityFixture(
     locale: undefined,
     adminName: undefined,
     hasProfile: true,
+    hasPassword: new URLSearchParams(search).has("phone"),
     twoFactorEnabled: new URLSearchParams(search).get("security") === "on",
   };
 }

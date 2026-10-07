@@ -1,4 +1,414 @@
-# Agent handoff — 6 October 2026
+# Agent handoff — updated 7 October 2026
+
+## Release checkpoint — 7 October 2026
+
+Application commit `f5c5b91` contains the final implementation and the report
+approval fix. Pending corrections and superseded inspections cannot be shared.
+The quality regression tests pass 21 cases; the real local sharing and revocation
+browser flow passes. Normal commit hooks passed. Mobile checks pass 49 tests and
+desktop checks pass 22 tests. The final lots matrix has 450 captures: 77 newly
+inspected originals and 373 exact-byte carryovers. Its two freshness tests pass.
+The refinement matrix has 246 reviewed views and 18 honest unavailable skips;
+its five tests pass. The public matrix has 37 reviewed views and no external or
+authentication requests. The public screenshot margin has been corrected.
+The workbook matrix has 342 reviewed views, no skipped views and two passing
+freshness tests. All final manifests bind to this application revision. The final
+Word guide has 167 visually reviewed pages and 147 screenshot uses; its source,
+image and document hashes pass the freshness check. The production build passes. Rejected capture runs are not release evidence.
+
+Fresh production preflight confirms paused state, zero rows, zero files, zero
+queued scheduled functions, no application components, an empty active schema,
+no deployed functions and no cron definitions. There are 76 empty table names in
+the metadata. This is an empty dataset, not evidence that no table definitions
+exist. No deletion or production deployment was performed at this checkpoint.
+Local verification and live-payment activation remain absent from production.
+The production administrator identity is still unconfigured.
+
+The current release scan checks 1,302 text/XML files against 35 private values
+and common key patterns, with zero matches. Local logs are in the ignored
+`.convex/release-work` directory. The final main Word has 167 reviewed pages. The team manual has 72 pages;
+reconstructed old/new renders match exactly after the shared builder refresh.
+The complete `pnpm check` passes: 2,324 web/backend tests, 49 mobile tests and
+22 desktop tests, with types and lint passing. The production build and formatting
+check pass. Protected PR/CI, backend-before-frontend publication and cloud-guide
+readback remain open. Logs: `.convex/release-work/release-final-check-2.log`,
+`final-production-build.log` and `release-final-format.log`.
+
+## Restored local runtime acceptance — 7 October 2026
+
+A runtime interruption removed temporary logs and stopped local services. The
+repository and private local database survived. The local backend was restarted
+with explicit loopback bindings on ports 3210 and 3211; the local inbox and the
+existing production web build were restored. All **55 connected browser tests
+passed again in 4.3 minutes**. Current durable evidence is the ignored
+`.convex/release-work/connected-restored-runtime.log` in the integration checkout.
+Earlier `/private/tmp` paths below are historical records and no longer exist.
+No production data or deployment was changed during recovery.
+
+## Final connected acceptance passed — 7 October 2026
+
+The normal Turbopack production build passed. All **55 connected browser cases
+passed in 4.7 minutes** on the isolated local backend
+(`/private/tmp/luma-final-connected-menu-acceptance.log`). All five analytics
+consent cases passed in 7.1 seconds with intercepted vendors; both analytics
+originals were visually inspected. Full lint passes with zero errors and 21
+warnings. All source files pass Prettier. The final known-secret scan checked
+2,821 candidate files and DOCX XML against 33 private values and common key
+patterns, with zero matches. It does not replace provider or security acceptance.
+
+Public37 and fixture126 were recaptured after the AccountMenu fix, with current
+source/PNG review bindings. Workbook342, lots450 and refinement246 refreshes are
+running against the final local build. Main guide copy now includes all workbook
+routes and correct conditional gateway instructions. Team Word72 and planning
+Word13/12 remain reviewed. Final main Word/full checks, protected PR/CI,
+production deployment, same-ID Google Docs update and worktree cleanup remain.
+
+## Public browser acceptance passed — 7 October 2026
+
+The full 747-case disconnected public suite completed with 719 passes and 28
+failures in 7.3 minutes (`/private/tmp/luma-release-public-e2e-menu-fixed.log`).
+The failures were stale expectations for renamed preprocessors, gateway wording,
+compact secondary page artwork, and two alert selectors that also matched Next's
+route announcer. No image-loading, resolution, content or layout check was removed.
+All 77 cases across the four affected specs pass after repair
+(`/private/tmp/luma-final-public-repaired-specs.log`, 18.3 seconds).
+Together these runs cover every case in the public suite on the current build.
+
+The prior disconnected AccountMenu session-hook defect was fixed and verified:
+five focused unit tests and all preview no-auth-request browser checks pass.
+The image-quality test now checks decoded dimensions against rendered width and
+height for the approved direct WebP assets. Its ten browser cases pass.
+
+The 37 public screenshots were recaptured after the menu fix. Every new PNG is
+byte-identical to its directly inspected original; current source hashes and
+explicit carry-forward review bindings are recorded. The remaining connected
+and fixture capture refresh, analytics checks, main Word rebuild, full checks,
+protected PR/CI, same-ID Google Docs update and production deployment are pending.
+Team Word is reviewed at 72 pages; planning outputs are reviewed at 13 and 12 pages.
+The main/team DOCX artifact marker ran once for two edits; do not repeat it.
+
+## Final visual-review correction — 7 October 2026
+
+Original-image review found that Stock and the shop Home summary labelled a sum
+of priced rows as the complete valuation, even when some held materials had no
+price. `stock.mine` now returns a null total for incomplete pricing; both screens
+show a dash and the existing translated missing-price message. Empty stock still
+has a true zero value. Regression tests reproduced four failures before the fix
+and pass 20/20 after it. Schema and money arithmetic are unchanged. The local
+backend reload passed. The production webpack build and focused connected byproduct check (2/2 in
+9.6 seconds) pass. Final capture refresh is in progress. Guide chapter 11
+explains the distinction.
+
+The first final capture review completed36 admin and2 price originals; their
+source hashes and review records match. Account recovery captured36 originals,
+verified six manual recoveries/sign-outs and passed visual review. These use
+local disposable accounts and do not prove a live provider or production login.
+
+## Production preparation and copy review — 7 October 2026
+
+Production `outstanding-buzzard-942` remains paused. Exact owner authorization
+verified its production type and regional endpoint. The read-only scheduled-table
+command returned no records (exit0). A deployment dry run with type checking
+passed; no functions or schema were deployed. The authorized release preparation
+set only `SITE_URL=https://lumagreen.vercel.app` and a fresh private
+`BETTER_AUTH_SECRET`. Private readback matched both values, confirmed paused
+state, and confirmed no local test mode or production admin identity. No provider
+was activated. Production admin identity remains a founder setup requirement.
+Private setup files and readback are in the primary checkout's ignored
+`.convex/platform-release-2026-10-06` directory. Never print their values.
+
+The first final246-image review found outdated source-chain wording in business
+Home and Buy. Four message keys are now corrected in all33 locales; Buy explains
+approved material scope for kabadiwalas too. Focused locale/buyer/home tests pass
+110/110. The webpack production build passes (the existing third-party Sentry
+instrumentation warning remains). The repeated connected55-case run passed55/55 in4.6 minutes against this updated
+source (`/private/tmp/luma-final-connected-scope-copy.log`). Final capture review
+is in progress. Prior246 originals
+are diagnostic layout evidence only, not final content approval.
+
+## Current verified candidate — 7 October 2026
+
+The final combined connected suite passed **55 of 55 browser cases in 4.6 minutes**
+against the local production build on 7 October 2026. Evidence:
+`/private/tmp/luma-final-connected-scope-copy.log`. This includes the new sourcing,
+route/load, governed operations, private quality-file/report-sharing and dialog
+keyboard journeys, plus the existing account, workspace, material and financial
+flows. Full lint passed with zero errors and 20 warnings; production build,
+web/backend types and native tests (49 mobile, 22 desktop) passed.
+
+Final responsive captures and original-image review, maintained Word rebuilds,
+same-ID Google Docs publication and the final full `pnpm check` remain pending.
+The latest full preflight passed 2,306 of 2,322 tests in 79.58 seconds. All
+16 remaining failures concern capture/document freshness. Web/backend type
+checks and native checks (49 mobile, 22 desktop) pass. Protected PR/CI, backend-before-frontend deployment, production
+smoke tests and actual provider acceptance are separate pending gates. Local
+results do not establish production or provider execution.
+
+Planning Word documents are rebuilt and reviewed: interview 13 pages and launch 12
+pages. Every final page is covered by original-image inspection; clickable
+repository/external hyperlinks are verified. Hash-bound evidence is in
+[planning document review](planning-documents-review.json). This does not complete
+the main platform guide, team review pack or Google Docs publication.
+
+Earlier dated sections below retain the audit history and are superseded by this
+checkpoint where their current-state counts differ. Application source is frozen
+for final captures. No production seed is included in release.
+
+## Workbook completion active; production release requested — 7 October, 03:05 IST
+
+The source freeze is lifted for the eight account-free workflow gaps in
+[the workbook completion plan](../plans/2026-10-07-workbook-completion.md).
+Sourcing, quality files/report sharing, route planning, governed definitions,
+production declarations and facility/destination review are integrated in source.
+All 33 locale fragments are merged. Focused results so far: sourcing 30,
+quality/sharing 24, logistics 15, root operations backend 8 and UI 3 passes.
+Independent cross-review is active; integrated checks and real browser journeys
+for this new source remain pending. Earlier 50-case browser acceptance and 246
+reviewed captures below are historical checkpoints, not final current evidence.
+The founder explicitly requested Vercel production deployment; proceed through
+the existing protected PR and backend-before-frontend release checks. Do not
+claim deployment before verification. Estimated progress shared with the founder:
+80% implementation, 60% complete launch handoff, approximate rather than measured.
+Guide impact: add all new workflows, capture the final UI, rebuild/review Word,
+update the existing Google Doc, and retain private credentials separately.
+
+## Workbook verification checkpoint — 7 October, 03:23 IST
+
+Full preflight: 2,294 tests passed, 23 failed. Twenty-one failures concern pending
+capture/Word evidence; the two others were Italian upload copy and the seven-link
+admin navigation expectation. Locale validation now passes all33 catalogues and
+2,940 messages; focused locale101 and admin navigation6 tests pass. Full lint has
+zero errors and20 warnings. The production build passes.
+The second new browser run passed4/5, including operations, sourcing, logistics
+and keyboard dialog scrolling. Private-file download remains under diagnosis by
+auth_release. Final combined old/new acceptance and all final evidence remain
+pending; do not treat preflight as a green `pnpm check`.
+Vercel project luma_green access is verified. Its production public Convex endpoint
+is the regional outstanding-buzzard-942.eu-west-1.convex.cloud host. Sensitive
+values pulled by Vercel are redacted; do not mistake redaction placeholders for
+actual settings or propagate them into a deployment. Both cloud Convex targets
+remain paused with no application tables. No cloud mutation or PR has occurred.
+
+## Workbook first browser run and local credential rotation
+
+The first new-workflow run passed logistics and dialog keyboard scrolling,
+but failed operations, quality sharing and sourcing (2/5). The operations page
+was outside the admin `(console)` layout; it is now moved under that existing
+authenticated layout. Quality's test matched a populated draft before the save;
+sourcing's test omitted the visible dates around the status. Both test assertions
+are corrected without changing application rules. A rebuilt rerun is required.
+
+A process diagnostic accidentally printed the local instance credential. The
+local instance secret and admin key were rotated, with a private database backup.
+The previous key is rejected; the new key reads all78 table mappings. Cloud keys
+were not involved. Backup/config stay under ignored mode0700/0600 storage.
+A new local runtime runs in session89120. No source or credential reset was made.
+
+## Production-mode local acceptance passed; final visual review active
+
+The complete post-bridge suite passed **50 of 50** browser cases in 4.0 minutes
+against the local production build on 7 October. Log:
+`/private/tmp/luma-final-connected-production.log`. Build:
+`/private/tmp/luma-connected-production-build-final.log`. This includes actual
+local signup, verification, recovery, phone binding, all account roles, workspace
+permissions, inactive policy save and unpaid order cancellation. No provider or
+cloud execution is implied. The first visual matrix is complete: 246 actual browser captures passed original-image
+review, with all image and source hashes checked. Eighteen accepted-purchase views
+remain explicit skips because that account has no accepted purchase. The separate
+buyer/material matrix is next. That checkpoint source was frozen for evidence collection; the newer workbook scope above supersedes it.
+
+The earlier development-mode exception below did not repeat in this complete
+run. Private development logs contain a Turbopack CSS hot-reload rejection,
+`No link element found for chunk <CSS_PATH>`, from `DEV_BACKEND.reloadChunk`.
+Its exact correlation with the original account event remains unproven because
+those log lines lack timestamps. No application assertion or quota was changed.
+
+Full web/backend type checks passed. The full unit preflight passed 2,218 cases
+and found four stale trade-page mock failures plus 19 documentation freshness
+failures. The mock was corrected and all six tests in that file passed. The 19
+capture/Word checks remain required; final `pnpm check` follows rebuilt evidence.
+Full lint's capture-script and test-only errors were corrected with scoped
+passes. Final full checks, guide publication, CI and deployment remain pending.
+
+## Integrated browser result under investigation
+
+The first post-bridge combined run passed 49 of 50 cases in 4.9 minutes
+(`/private/tmp/luma-final-connected-5.log`). The city-official journey passed
+its screen and permission assertions but recorded one unexpected browser
+exception. The exception is not waived. Auth review owns a private diagnostic
+reproduction before the capture freeze; all other cases, including inactive
+policy save and unpaid cancellation, passed. No production or final visual
+acceptance is claimed from this run.
+
+## Financial source frozen; integrated checks pending — 7 October 2026
+
+A financial audit found missing payment-to-trade code that could be completed
+without provider accounts or keys. That implementation is now in source, authorized by
+the founder's instruction to finish all such work. The reviewed financial
+backend is now frozen; root has restored the source freeze for integrated
+checks. The final connected run must pass before capture resumes.
+`business_release` owns the backend and its tests; root owns integration and any
+required UI; `auth_release` reviews the financial and permission boundaries;
+`guide_release` reconciles the handoff, guide, manual and launch records.
+
+The 49/49 connected browser pass below is the **pre-bridge baseline**, not
+acceptance of the new payment code. The 2,167 application-test passes and existing
+type/lint evidence have the same scope. Re-run affected financial, permission,
+stock, replay and connected tests after implementation and independent review.
+The contract must distinguish collected funds, trade allocation, cancellation,
+refund and seller settlement. Record the final supported behavior from code;
+do not imply that provider keys alone complete it.
+
+Root stopped the earlier 264-view capture run. Final capture and Word render/review
+queues await the revised frozen source's integrated checks. Partial
+images and previously rebuilt documents are not final evidence for this change.
+Capture/Word freshness gates remain open, including the new financial fixture
+manifest; the earlier failure count is not a current total. Do not waive them. Provider
+approval, actual sandbox execution, live activation and the production admin
+identity remain separate external gates. No deployment is claimed.
+
+### Financial backend checkpoint — 7 October 2026
+
+The backend owner reports the reviewed source frozen with **137 of 137 focused
+financial tests passed**, backend TypeScript and scoped lint passed, and no
+remaining actionable independent-review finding in that boundary. See
+[payment lifecycle completion](payment-lifecycle-completion.md) for the exact
+scope and logs. Whole-project integration, the planned 50-case browser suite,
+visual evidence, final documents and release gates are still pending. The admin
+browser case now includes a local synthetic policy-form save; this does not
+select a live production policy or activate checkout.
+
+The contract is one full quantity, one INR collection and one seller split.
+Collection authorizes dispatch without moving stock; dispatch deducts seller
+stock once and receipt adds buyer stock once. No-live-order cancellation releases
+only the accepted commitment. A live order requires terminal unpaid provider
+proof; expiry alone does not release it. Refunds use the frozen authority/funder,
+keep one refund identity, and leave the trade held without automatic stock
+restoration. Existing receipt/refund/reconciliation retains frozen terms when
+new checkout is paused. Approved policy values and actual provider acceptance
+remain required; no real provider or cloud operation occurred.
+
+### Financial UI checkpoint — 7 October 2026
+
+The root-owned financial UI latest focused run passed **50 of 50 tests** across
+eight files. Log: `/private/tmp/luma-financial-ui-tests-final-2.log`. Focused lint
+passed with warnings only. This supersedes the earlier 46-case focused run. Coverage includes explicit live
+mode and mismatch handling, provider-derived status, visible cancellation holds,
+viewer denial, retained action/reference drafts and a pending policy save.
+The new screens are `src/components/market/financial-lifecycle.tsx` and
+`src/components/admin/payment-lifecycle.tsx`; the existing checkout component
+now has an explicitly selected live path as well as sandbox mode. Local UI tests
+and injected provider state do not prove real payment or provider acceptance.
+
+A real-browser cancellation case was added, bringing the planned combined suite
+to **50 cases**. It has not yet run against the final financial implementation.
+At that UI checkpoint, backend implementation and independent review were still
+ongoing; the newer backend checkpoint above supersedes that status.
+Whole-project type checks are running after a test-only type correction;
+there is no final passing type result for this checkpoint yet.
+
+Automatic approval review rejected automatic trade cancellation after a refund.
+The retained boundary is deliberate: a confirmed refund leaves the trade held
+for review and does not automatically restore stock. The founder has been
+informed. Do not describe a refund as physical return, completed trade
+cancellation or inventory restoration. Remaining code/review and business
+agreement gates are separate from provider keys; do not say only keys remain.
+
+## Overnight completion instruction — 6 October 2026
+
+The founder explicitly requested completion of all work possible without new
+account signups, API keys or other external setup. This includes final visuals,
+updated documentation, the production release and a practical work routine.
+Update the existing Google Doc in place with current screenshots and detailed
+screen-by-screen instructions for two teammates who have never used Luma.
+Complete the manual test document and keep remaining setup/manual checks clear.
+This authorizes release through the existing protected PR and verification path;
+it does not authorize fake payment success, production test bypasses, credentials
+in the shared guide or removal of failing checks.
+
+Current owners: root integrates/releases and updates Google Docs; `auth_release`
+reviews auth and commercial boundaries; `business_release` owns facility/lot UI
+and its capture matrix; `guide_release` owns guide/manual copy and fixture/admin
+captures. All use the existing integration worktree. Serialize heavy runtime jobs
+on this Mac and preserve source, private local state and credentials before
+worktree cleanup.
+
+The pre-bridge connected browser run passed **49 of 49** cases on 7 October in
+4.6 minutes, including the new intake, admin classification and multi-input
+processing flows. Log: `/private/tmp/luma-final-connected-4.log`. The real local
+invitation restored the test member before this run; no quota or record was
+reset. The 264-view refinement capture was stopped when the payment source freeze was revoked. The complete lot
+matrix has 450 views and the current admin matrix has 36. The guide owner also
+plans 36 explicitly synthetic financial interface examples. Final original-image
+review, Word/Google Docs refresh, full `pnpm check`, build, CI and deployment are
+still pending. Full web/backend type checks pass. The unit run passed 2,167;
+capture and Word freshness checks remain pending, including the new financial
+fixture manifest. Do not bypass them. The only full-lint errors were in test
+diagnostic code; these were fixed and scoped lint passed. Final whole-repository
+lint remains part of `pnpm check`.
+
+Earlier combined local browser runs passed **48 of 49** cases. The first exposed an
+invitation stuck at Loading after a failed authentication request. The page now
+shows an error and explicit retry while retaining the invitation in memory.
+Eight component tests and a real injected-failure/retry journey passed. The
+second combined run reached that honest error state instead of the expected
+wrong-recipient denial. The test clients now use one consistent address per
+browser context for both HTTP calls and navigation; no quota was disabled or
+reset. The third complete run again passed **48 of 49**, now failing when sending
+the member invitation. A private read confirmed the workspace had reached its
+real limit of 20 invitations in one hour. Its first records expire from that
+window after 00:54 IST on 7 October; sufficient capacity for restoration and a
+new complete run returns after 00:58. No record or limit was reset. The run left
+the test member removed, so restore it through an actual invitation before the
+role preconditions run. Root prepared a private loopback-only restoration script.
+The specific limit message now preserves the draft; nine UI tests passed.
+The complete passing run above supersedes those failed attempts. All 33 catalogues
+now have 2,742 messages with zero mechanical coverage issues; native review is pending.
+Full lint found four capture-script errors, now repaired with a focused pass;
+the final whole-repository check is still required. Word/capture freshness
+checks must pass after final rendering and visual inspection, without bypasses.
+
+The new industry/material/byproduct/CPCB workbook is imported as versioned,
+unverified reference data: 419 sector rows, 99 industry examples, 33 lifecycle
+rows and 30 byproduct examples. Facility process capabilities, append-only
+registration references, material stream/handling classes and controlled
+residual disposition now have backend/UI and real local browser coverage.
+Sector classifications never grant commercial permission. Seller grade and
+specification snapshots are retained on orders; optional evidence links require
+explicit non-hazardous, non-residual classification and existing material scope.
+A final restriction repair passed 56 focused market/date regression tests.
+The first facility journey and 17 related UI/logic tests passed. The capture
+runner now requires 450 original lot/facility/market views; final captures and
+readable inspection remain pending. The master requirements and beginner manual
+record workbook source defects, supported behavior and undelivered roadmap items.
+
+The clean-account review found a launch gap hidden by local seeded stock:
+manufacturers could offer their byproducts but could not record their own new
+stock. The business owner added an immutable, audited own-production intake
+with source/weighing references, exact grams, approved material scope and
+idempotent reference handling. Eighteen focused tests and a real browser intake,
+offer, request and acceptance journey passed. The auth owner added the admin UI
+for the existing material-classification review mutation; nine tests and the
+actual password/TOTP browser flow passed. Multi-input processing now accepts up
+to 20 distinct held inputs, consumes exact grams atomically and retains input
+edges and own-workspace parent history. Thirty-two tests and the real two-input
+industry journey passed. The independent review found and repaired private
+sibling-input exposure after a remainder hand-off; cross-business process
+history remains private. That earlier feature freeze was revoked for the payment
+bridge work described at the top of this handoff.
+Validated recipe specifications, supplier qualification, recurring demand and
+purpose-scoped auditor reports are not proved delivered.
+
+Release target readback: the existing Vercel project is `luma_green` under
+`thehelds-projects`, ID `prj_ceMcCzKReKt06pJ3fIYcSexsoLd1`. Its current production
+alias is `https://lumagreen.vercel.app`; `luma.green` was not found as a configured
+domain in that scope. Both named cloud Convex deployments still read paused and
+empty. Production environment-name readback contains no Better Auth secret or
+site URL. Development contains the legacy `AUTH_DEV_MODE` name; its value was
+not established by that name-only check. The Vercel settings export redacts
+values as `[SENSITIVE]`; those redactions are not evidence of invalid settings.
+Preserve existing provider settings rather than deleting or copying redacted
+values. No cloud deployment or reactivation occurred during these checks.
 
 ## Platform refinement implementation in progress
 
@@ -25,8 +435,10 @@ after implementation, update its existing document ID with the reviewed guide
 and distribute the annex only to the named test team.
 
 Decisions: a kabadiwala buys household material and pays the household; Luma
-does not handle that payment. Every B2B payment must use a future gateway;
-the provider is not yet chosen, and simulated escrow cannot authorize live
+does not handle that payment. Cashfree Payment Gateway with Easy Split was
+selected on 6 October under the founder's delegated provider choice. Provider
+approval, seller verification and live activation remain pending. Every B2B
+payment must use the gateway; simulated escrow cannot authorize live
 trade. A manufacturer may offer a non-hazardous recyclable byproduct to any
 approved buyer handling that material. City, CSR, lender, auditor, union,
 brand and material-generator accounts need default-deny permissions. Use
@@ -90,6 +502,107 @@ verification. The current guide source changed for source classification but
 its screenshot manifest and maintained Word guide are stale; this is an
 explicit release gate. Do not claim a live B2B gateway, payment, certificate
 or production release until actual provider/deployment evidence exists.
+
+### Local account and payment checkpoint — 6 October 2026
+
+Integration HEAD is `9146ce6`. Auth, workspace, payment, lot/quality UI and
+current documentation changes remain uncommitted. Root owns Git, local runtime
+and release. Preserve the task changes, local fixtures and original checkout.
+The current execution log is section 13 of
+`docs/testing/launch-2026-10-10.md`; it distinguishes focused local passes from
+unrun full, provider and deployment gates.
+
+Twenty-eight disposable email identities were created through real signup,
+verification and sign-in, followed by `identity.ensureProfile` and the strict
+local domain fixture. No auth rows were inserted directly. Local Next is on
+localhost:3100, Convex is on 127.0.0.1:3210/3211, and the protected in-memory
+inbox is on 127.0.0.1:3215. Private configuration and credentials are in ignored
+`.convex/local-acceptance/` with directory mode 0700 and file mode 0600. Do not
+print secrets or put them in Git, screenshots, traces or the shared guide.
+
+The 28-account browser access run passed all account cases but initially failed
+its workspace invitation case. The invitation return-link repair passed a
+focused retest. Email lifecycle, existing admin password/TOTP/logout, optional
+user TOTP setup/recovery display/removal, household pickup/receipt and the
+lot/quality/custody journey have separately passed real local browser tests.
+Fresh admin setup after the remount repair and a final combined run remain
+required. See the execution log for exact evidence limits and arithmetic.
+
+Repairs preserve app children through same-user session rotation and clear
+secret-owning forms on identity change. Push cleanup checks the expected
+session before removing a subscription rebound to a new session. Independent
+review and 127 focused auth/notification tests passed. Public GET JWKS reads
+are exempt from the shared auth rate bucket; credential/token limits remain.
+Continuous screenshot navigation later hit `/convex/token`429 while the cookie
+session remained valid. The adapter treated temporary failure as signed-out.
+The canonical server guard now distinguishes a missing session from temporary
+auth-service failure. It preserves the quota and presents a safe retry screen.
+Explicit reload restores the provider with the existing session. Independent
+review, 54 focused tests and actual local recovery/admin browser tests passed.
+Capture runners respect the quota's quiet window; they must not hide failures
+with relogin or remove the quota.
+
+The Cashfree capture/vendor verification increment is integrated and passes
+102 focused payment/market tests. No provider call or funds movement has run.
+Live checkout and payment-dependent trade transitions remain blocked. The
+founder has been asked who bears gateway, refund and chargeback costs; no fee
+or funding policy may be invented. The lot/quality UI and scoped read APIs are
+integrated; 144 focused navigation, lot and catalogue tests passed. The actual
+browser journey passed custody and correction permissions. Lot records do not
+alter inventory, ownership, payments or certificates.
+
+The full regression run passed lint and both TypeScript checks, then reported
+1,953 passing, 27 failing and 10 skipped unit tests. These included stale guide
+records, old prototype copy, test setup problems and in-progress RTL tests.
+Focused repairs passed 81 tests across 12 files. The required final full run is
+still pending. Separately, 49 mobile and 22 desktop checks passed. Arabic tab
+and stakeholder Select direction repairs passed focused tests. An actual glyph
+check then found an early Arial fallback; explicit empty fallback lists on
+Geist/Noto Sans fixed the font order, with 13 script browser cases passing.
+Keep all required checks. Guide
+source labels historical screenshots; seven capture sets, current authenticated
+captures, the maintained guide DOCX/build record, the team test DOCX and the
+existing Google Doc update must be completed. No deployment has occurred.
+
+### Whole-platform UI pass and storage — 6 October 2026
+
+The founder requested a UI pass across every page after rejecting the oversized
+phone/email switch. The route inventory and owner split are in
+`docs/delivery/ui-refinement-2026-10-06.md`. Shared tabs now use an underline,
+44px targets and correct Radix orientation. Auth/account/join, operational,
+public/help/admin and household/track pages are being revised in parallel.
+Styling retains the existing brand, semantics, data and permission boundaries.
+The household pass moved first material choices into the desktop viewport.
+Focused shared-tab checks passed 21 tests; household/track passed 89 tests.
+Auth/account UI checks passed 103 tests, and operational checks passed 187.
+The latest combined connected browser suite finished with 37 passing and four
+failing tests. Admin authentication, the exact household receipt, lot custody,
+six responsive tab cases, optional TOTP, quota recovery and email lifecycle
+passed. Three role cases failed during sign-in or navigation, and the workspace
+case failed when a pending invitation did not appear. These failures remain
+under investigation. The earlier inbox query race was fixed and passed seven
+focused tests plus a real local browser probe. Final screenshots, visual review
+and guide rebuild remain open. Serialize test, build and capture processes on
+this Mac; concurrent jobs previously caused resource-related test timeouts.
+
+The founder also requested removal of all Luma worktrees after implementation.
+Do not discard work to reclaim space. Preserve committed/uncommitted changes,
+unmerged commits and the required ignored local environment, database and
+restricted credentials before archiving. The original project stays intact.
+The retired temporary Next dev cache at
+`/private/tmp/luma-next-dev-before-font-refresh-20261006` was removed after the
+replacement runtime passed checks; its measured size was 4.1GB. No worktree was
+removed. The subsequent filesystem check showed approximately 18GiB available.
+Later builds reduced free space to 8.6GiB. A second storage check found an unused
+4.3GB generated `.next` directory in the `recycling-ui` worktree. No running
+Node process used that checkout, no process arguments referenced it, and Git
+tracked none of its generated files. Only that cache was removed; its source
+checkout and Git state remain. The subsequent check showed 12.9GiB free.
+
+The restricted credentials Word annex is mode 0600 in the ignored local
+directory. All 28 password values were checked against its private source. Its
+eight-page placeholder layout twin was rendered and inspected; secrets were
+not rendered into screenshots. Admin TOTP/recovery values are excluded.
 
 ## Approved recycling UI release — 3 October 2026
 
