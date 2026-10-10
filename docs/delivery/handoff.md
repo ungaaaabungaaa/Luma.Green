@@ -1,4 +1,55 @@
-# Agent handoff — updated 7 October 2026
+# Agent handoff — updated 10 October 2026
+
+## Investor demo seed — 10 October 2026
+
+The owner requested a populated production and development investor demonstration.
+The additive `investor-2026-10-10` batch is now imported into
+`outstanding-buzzard-942` and `glorious-rooster-470`. Each environment contains
+140 fictional password identities (five examples of each of 28 persona templates),
+40 organisations, 60 stakeholder accounts, 558 facility examples, 240 stock rows,
+120 lots and 60 requested/accepted trades. No platform administrator was created.
+All identities and businesses are visibly labelled DEMO. Real business research
+is background only, not evidence of customers or affiliation.
+
+Both deployments passed count, five-cohort integrity and 40-page reference checks:
+3,903 manifest references exist, with no missing/duplicate references, stock
+mismatches, seeded admin profiles or provider-payment records. The import gates
+were removed after each run. Hosted local auth flags are absent; the obsolete
+`AUTH_DEV_MODE` was removed from development. Existing public signup and factor
+rules were not changed. Development was resumed after confirming no queued jobs.
+
+No production export was performed: automatic approval review rejected copying
+unrelated production records. Import receipts are an exact additive inventory;
+they do not represent a backup. Later cleanup must review these receipts and
+subsequent user activity before removal. Do not run a broad reset.
+
+Normal email UI sign-in and sign-out passed initially in both environments.
+The short investor guide has 14 reviewed pages and 12 fresh development browser
+screenshots. Full role checks found and reproduced an explicit sign-out race:
+Convex revoked the token before Better Auth cleared its cached session. The
+correction pauses queries only for that exact deliberate logout after device
+revocation; failure restores ordinary recovery, and a different session remains
+fully verified. Its 60 focused tests, four repeated browser logout cases and independent review pass. Full checks,
+frontend release and post-fix browser acceptance are being finalised; read
+`docs/investor-demo` for the final evidence. Phone verification, gateway payment,
+email delivery, regulatory approvals and physical material events remain unproved.
+Convex warned that the team is above Free plan limits; no plan upgrade was made.
+
+Private credentials and annexes are preserved in the primary checkout under
+`.convex/investor-demo/{development,production}` with restricted permissions.
+Never add these files to Git or the shared platform guide. Production uses
+<https://lumagreen.vercel.app>; cloud-development frontend testing uses local
+<http://localhost:3102> and requires the local server to run.
+
+Guide impact: no public route, control, permission or normal auth flow changed.
+The separate short investor tour has fresh seeded browser evidence. The maintained
+platform guide keeps its original images, timestamps and review records.
+An explicit nonvisual source compatibility record binds the changed internal
+seed/schema/config files and the sign-out ordering fix. Seven affected screenshot
+matrices retain their original source snapshots and an explicit compatibility review.
+Dedicated browser checks, not historical screenshots, prove the corrected sign-out. A rebuild matched all 165 Word ZIP member payloads;
+the original DOCX bytes and 167-page review remain unchanged. Google Docs body
+content did not change. See `docs/user-guide/investor-source-compatibility.json`.
 
 ## Production frontend verified — 7 October 2026
 

@@ -1,0 +1,429 @@
+{
+  "title": "Luma Green investor walkthrough",
+  "edition": "Investor demonstration · 10 October 2026",
+  "status": "current_demo_captures_reviewed_account_validation_pending",
+  "production_url": "https://lumagreen.vercel.app",
+  "development_url": "http://localhost:3102",
+  "accounts_per_environment": 140,
+  "persona_templates": 28,
+  "accounts_per_template": 5,
+  "admin_accounts": 0,
+  "source_guide": "docs/user-guide/guide.md",
+  "pages": [
+    {
+      "title": "The material journey",
+      "role": "Visitor",
+      "intro": "Follow material collection, business planning, trade and evidence in one platform.",
+      "steps": [
+        "Open https://lumagreen.vercel.app and confirm the demonstration environment.",
+        "Open Participants or How it works to see the material chain.",
+        "Open Prices and read the sample-data or unavailable notice."
+      ],
+      "result": "Households, shops, preprocessors, recyclers, manufacturers and Saathis have distinct work.",
+      "limit": "All investor records are imported samples. They do not prove customer activity, revenue or material recovery.",
+      "screenshot": {
+        "page": 1,
+        "path": "screenshots/investor-development-01.png",
+        "caption": "Actual development demo: the material journey. Imported samples; not real payment or certification.",
+        "sha256": "dde1980df9fe5b64839eb0fa722e872ed690fe60de2dc80fb0c3cf52dd1a6a0d",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:12.347Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.508852+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Sign in and select a workspace",
+      "role": "Assigned demonstration user",
+      "intro": "Use the restricted credentials document for the selected environment.",
+      "steps": [
+        "Choose Email on Sign in and use the assigned account. Keep credentials off screen.",
+        "Open Workspaces and team; confirm the business name and your role.",
+        "Open Account security and Notifications, then return to the workspace."
+      ],
+      "result": "The correct identity and business are visible before any action. Compare Viewer access in a separate browser profile.",
+      "limit": "There are 28 persona templates with five users each: 140 accounts per environment. No platform admin is included. Account creation and access must be verified after seeding.",
+      "screenshot": {
+        "page": 2,
+        "path": "screenshots/investor-development-02.png",
+        "caption": "Actual development demo: sign in and select a workspace. Imported samples; not real payment or certification.",
+        "sha256": "306944e82d032af1fd326bce0a7980f00f309a4663333a93ce0ee7c3bdc5e496",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:14.703Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.509219+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Collect household material",
+      "role": "Household then kabadiwala",
+      "intro": "Read sample collection requests from the shop workspace.",
+      "steps": [
+        "Sign in as the assigned kabadiwala and open Requests.",
+        "Compare the requested, accepted and completed sample collections.",
+        "Open a completed record and read its recorded weight and receipt."
+      ],
+      "result": "The shop can inspect the imported collection stages. Household collection access still requires its phone verification step.",
+      "limit": "The kabadiwala pays the household directly. These imported examples do not prove a real payment. No SMS-verified phone is supplied by this demo.",
+      "screenshot": {
+        "page": 3,
+        "path": "screenshots/investor-development-03.png",
+        "caption": "Actual development demo: collect household material. Imported samples; not real payment or certification.",
+        "sha256": "40370d9be7876781d7b308ec575a0073c166d516a674b8c79bab8b209ece67f3",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:17.217Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.509565+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Record stock and byproducts",
+      "role": "Manufacturer",
+      "intro": "A manufacturer can record its own material and offer an eligible byproduct.",
+      "steps": [
+        "Open Stock and inspect the sample intake history.",
+        "Open Record stock intake to see grams, production and weighing references; cancel without saving.",
+        "Open Sell and read the material, grade and written specification."
+      ],
+      "result": "Inventory, an intake declaration and a sale offer have different purposes.",
+      "limit": "A real intake adds inventory. Do not resubmit an imported sample. Only approved, eligible material can use the ordinary trade route.",
+      "screenshot": {
+        "page": 4,
+        "path": "screenshots/investor-development-04.png",
+        "caption": "Actual development demo: record stock and byproducts. Imported samples; not real payment or certification.",
+        "sha256": "d0e96850a23ae6e339e44b55769bca2ecdfbe46170e1b34507009d328346a3c6",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:42:46.571Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:43:57.352604+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen. No password or contact detail; development badge retained."
+      }
+    },
+    {
+      "title": "Match buyers and sellers",
+      "role": "Approved seller then buyer",
+      "intro": "Read an offer and the matching trade records from both sides.",
+      "steps": [
+        "Open Buy and inspect an offer for material the buyer handles.",
+        "Open the prepared order in Trades, then switch to its seller.",
+        "Read the order quantity, price and current payment state."
+      ],
+      "result": "The buyer and seller see consistent grams, paise and order status.",
+      "limit": "Only the gateway can establish B2B payment. Imported records are not proof of collection, settlement or delivery. Do not mark an order paid outside the gateway.",
+      "screenshot": {
+        "page": 5,
+        "path": "screenshots/investor-development-05.png",
+        "caption": "Actual development demo: match buyers and sellers. Imported samples; not real payment or certification.",
+        "sha256": "617ca61c0ec06d8ecc14b6729925b3652f1baf88da8a022156c9ac7c8b820723",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:42.420Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.510431+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Follow lots and quality",
+      "role": "Preprocessor then recycler",
+      "intro": "A lot retains material history and quality evidence.",
+      "steps": [
+        "Open Lots and quality, then select the sample washed PET flake lot.",
+        "Read its transformation: all input grams equal output, contamination and process-loss grams.",
+        "Read its inspection. The sample has no custody hand-off history; a correction form is available for later controlled testing."
+      ],
+      "result": "The imported input, output and inspection show how a process record links material. A real correction preserves its original.",
+      "limit": "Evidence lots do not independently credit sale inventory or issue carbon or EPR certificates. Another organisation cannot see private process recipes merely by receiving material.",
+      "screenshot": {
+        "page": 6,
+        "path": "screenshots/investor-development-06.png",
+        "caption": "Actual development demo: follow lots and quality. Imported samples; not real payment or certification.",
+        "sha256": "da32b8d13791de686b929202ef11e09fe554bb6624142742ea8a8ea45c201a9e",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:47.618Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.510746+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Review facilities and handling",
+      "role": "Business owner",
+      "intro": "Read declared processes and workbook-derived industry examples.",
+      "steps": [
+        "Open Facilities and processes and inspect a sample site.",
+        "Read the declared processes and linked sector reference.",
+        "Open Industry references to compare sector, material and byproduct examples."
+      ],
+      "result": "The facility record and source examples can be read without treating the workbook as approval.",
+      "limit": "Consent, registration and residual-disposition evidence are not seeded. Workbook categories do not certify a facility. Real controlled or residual material needs its restricted handling route.",
+      "screenshot": {
+        "page": 7,
+        "path": "screenshots/investor-development-07.png",
+        "caption": "Actual development demo: review facilities and handling. Imported samples; not real payment or certification.",
+        "sha256": "80b8c14ddc4f4d95fe6b41065c77b0d87723ef65d215ee36853f3d7986b4d580",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:53.477Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.511058+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Plan supply",
+      "role": "Business buyer then supplier",
+      "intro": "Sourcing records prepare a supply relationship before a trade.",
+      "steps": [
+        "Open Sourcing and read the Demand board and Recurring demand.",
+        "Open Supplier decisions to see the buyer’s private qualification record.",
+        "Open a Standing agreement and its acknowledgement and release history."
+      ],
+      "result": "The parties can record planned demand and agreed supply steps.",
+      "limit": "Publishing demand and acknowledging an agreement do not create a trade, reserve stock or confirm payment. Recurring demand still needs an explicit publish action.",
+      "screenshot": {
+        "page": 8,
+        "path": "screenshots/investor-development-08.png",
+        "caption": "Actual development demo: plan supply. Imported samples; not real payment or certification.",
+        "sha256": "0072e0f6543dbb45a4b425971e1fb64e00bded72b3993dae20211c474f57f53d",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:38:22.935Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.511447+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Read production declarations",
+      "role": "Recycler or manufacturer",
+      "intro": "Connect a recipe version to recorded production and inspection.",
+      "steps": [
+        "Open the material definition used by the example.",
+        "Open Production and read the recipe version and proportions.",
+        "Open a sample batch and follow its transformation and inspection references."
+      ],
+      "result": "The batch keeps its historical recipe and evidence links.",
+      "limit": "A declared recycled-input ratio is not a certified recycled-content claim. The sample is not a verified factory production event.",
+      "screenshot": {
+        "page": 9,
+        "path": "screenshots/investor-development-09.png",
+        "caption": "Actual development demo: read production declarations. Imported samples; not real payment or certification.",
+        "sha256": "3b5cc22839bc628a657824881ba826dfbdd2714b04b2d04a109accbfbea9cc9a",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:42:49.703Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:43:57.354843+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen. No password or contact detail; development badge retained."
+      }
+    },
+    {
+      "title": "Plan loads and local work",
+      "role": "Business operator then Saathi",
+      "intro": "Show practical work planning without implying live vehicle tracking.",
+      "steps": [
+        "Open Route and load plans, then Revision history for DEMO collection round.",
+        "Inspect entered stops, materials, grams and vehicle capacity.",
+        "Switch to Saathi and inspect the prepared local-work record."
+      ],
+      "result": "A route checks load capacity; the Saathi workspace records a separate work assignment.",
+      "limit": "Distances are straight-line estimates from entered coordinates. There is no road navigation, GPS-photo tracking or automatic dispatch. Sample earnings do not prove a payout.",
+      "screenshot": {
+        "page": 10,
+        "path": "screenshots/investor-development-10.png",
+        "caption": "Actual development demo: plan loads and local work. Imported samples; not real payment or certification.",
+        "sha256": "d9446dc12d1bd1d2f3062cea1855c5bbf267a16b79a46a11761fd0e9a24e2e95",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:19.567Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.509844+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Share evidence with a recipient",
+      "role": "Business owner then stakeholder",
+      "intro": "A report gives an approved recipient a defined view of evidence.",
+      "steps": [
+        "Open Quality documents and note the empty upload state; no attachments are included in this dataset.",
+        "Read the designated buyer’s separate decision.",
+        "Open Reports as owner, then inspect the assigned recipient’s granted report."
+      ],
+      "result": "The recipient sees only the explicitly shared fixed report.",
+      "limit": "Stakeholder approval grants no blanket business access. Expiry and revocation stop future downloads; downloaded copies cannot be recalled. File storage is not portal verification.",
+      "screenshot": {
+        "page": 11,
+        "path": "screenshots/investor-development-11.png",
+        "caption": "Actual development demo: share evidence with a recipient. Imported samples; not real payment or certification.",
+        "sha256": "97f5206f032a9b3a66941fd749f6446e9aa090a3e5727e2aead82d0872870ad8",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:43:04.173Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:43:57.357310+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen. No password or contact detail; development badge retained."
+      }
+    },
+    {
+      "title": "Explore team and platform controls",
+      "role": "Workspace owner or viewer",
+      "intro": "Use the supporting controls and explain the unavailable administration boundary.",
+      "steps": [
+        "Compare owner and viewer controls in separate browser profiles.",
+        "Open Help, Notifications and Account security; show language and appearance. Notifications start empty, with device delivery off.",
+        "Open API access with any secret hidden, or show its honest unavailable state."
+      ],
+      "result": "Users can find support, account controls and scoped access tools.",
+      "limit": "No platform admin account is supplied. Administrative reviews, prices and payment policy are owner setup topics, not an authenticated part of this demo. Native shells do not prove store approval or signed distribution.",
+      "screenshot": {
+        "page": 12,
+        "path": "screenshots/investor-development-12.png",
+        "caption": "Actual development demo: explore team and platform controls. Imported samples; not real payment or certification.",
+        "sha256": "b552ec368d20cb7d0499db48e95226da86802193b3d54667bb10f70c480bb805",
+        "environment": "development_demo",
+        "release": "310feaa with reviewed investor demo working tree 2026-10-10",
+        "dataset": "investor-2026-10-10",
+        "captured_at": "2026-10-10T10:37:21.915Z",
+        "actual_browser_capture": true,
+        "reviewed": true,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "reviewed_at": "2026-10-10T10:40:14.510086+00:00",
+        "review_notes": "Original PNG inspected at readable resolution. Loaded actual demo screen; no password or contact detail. Development badge retained where present. Browser session diagnostics are tracked separately."
+      }
+    },
+    {
+      "title": "Read the demonstration limits",
+      "role": "Presenter",
+      "intro": "Keep the account roster and provider readiness separate from the product tour.",
+      "steps": [
+        "Use one browser profile per active identity; sign out before changing users in a profile.",
+        "Use the same cohort number, 1 to 5, for a linked story. Begin with kabadiwala, then preprocessor, recycler, manufacturer and auditor.",
+        "Use the separate production and development credentials documents. Development opens at http://localhost:3102 on this Mac and uses the cloud development database.",
+        "Record which pages were demonstrated and which were reference only."
+      ],
+      "result": "Each result belongs to an environment and cohort. Other accounts cover households, applicants, Saathis, fibre/textile/garment makers, apartment communities, offices, hotels, resorts, other generators, city officials, CSR sponsors, lenders, unions, apparel/packaging brands, team roles, invitation recipients and an unrelated owner. Household coordinators have personal access only.",
+      "limit": "No SMS verification or real gateway payment is claimed. Email delivery, provider onboarding, live activation, webhook acceptance and signed native releases need separate verification. Unknown prices or carbon factors remain unavailable.",
+      "screenshot": null
+    },
+    {
+      "title": "Industry background",
+      "role": "Presenter",
+      "intro": "Official industry examples inform the fictional scenarios; they are not Luma customers.",
+      "steps": [],
+      "result": "PET is the main narrative. Paper, metal and bulk-generator examples show where the same record types can help.",
+      "limit": "No researched business is a Luma customer, partner, approved facility or demo account. No company identity, logo, contact or regulatory credential is copied into seed users.",
+      "screenshot": null
+    }
+  ],
+  "research": [
+    [
+      "Reliance polyesters",
+      "Polyester fibre and recycled PET material inform the bottle-to-textile example.",
+      "https://www.ril.com/businesses/petrochemicals/polyesters"
+    ],
+    [
+      "ITC circularity",
+      "Packaging, waste reduction and recycling inform the paper and packaging example.",
+      "https://itcportal.com/about-itc/sustainability/circularity.html"
+    ],
+    [
+      "Hindalco Novelis",
+      "Aluminium rolling and recycling inform a metal-material scenario.",
+      "https://www.hindalco.com/businesses/novelis"
+    ],
+    [
+      "Tata Steel circular economy",
+      "Scrap collection and shredding inform ferrous-material processing.",
+      "https://www.tatasteel.com/sustainability/environment/circular-economy/"
+    ],
+    [
+      "Saahas Zero Waste",
+      "Source segregation and materials recovery inform bulk-generator collection.",
+      "https://www.saahaszerowaste.com/"
+    ],
+    [
+      "IHCL Paathya",
+      "Hospitality resource management informs a fictional hotel or resort generator.",
+      "https://www.ihcltata.com/paathya"
+    ]
+  ]
+}

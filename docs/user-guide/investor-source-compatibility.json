@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-10T10:32:19.951Z",
+  "reason": "Source compatibility review only. The additive operator-only investor import and count-only verification functions, two bookkeeping tables, generated type declarations and server-only environment accessor do not change captured route components, translations, styles, ordinary authentication, authorization or public rendering. Existing local screenshots retain their original data, timestamps, pixels and visual review; they do not show the newly imported investor dataset or prove hosted provisioning, provider delivery, financial execution or a new browser run.",
+  "testsChanged": false,
+  "imagesChanged": false,
+  "guideContentChanged": false,
+  "manifests": [
+    {
+      "manifest": "docs/user-guide/lots-captures.json",
+      "captureCount": 450,
+      "capturedAt": "2026-10-07T03:04:31.734Z",
+      "oldManifestSha256": "942104ae4f4a43cfad368a33bb2f2bd52ac20ca10b903f4897676d7591e5bfbd",
+      "newManifestSha256": "401d99a62f1a528b05d6452270b149aedee49ed4c25bb743bc650882baea9899",
+      "changes": [
+        {
+          "path": "src/lib/env.ts",
+          "beforeSha256": "5e6c7484278f17114b6f61a1cb622620ef704d8275da635af6df9e12fb567aa9",
+          "afterSha256": "7ace329ae5ed7bb08a0957bf87c1df4aa0f5b4132e4745a1291d5aa36f8603e5"
+        },
+        {
+          "path": "convex/_generated/api.d.ts",
+          "beforeSha256": "fc49209a8f24235a5cf2ad92fefc9ba0113adf4ef811934c80281df6331ff4ad",
+          "afterSha256": "4655feef2624518058d6e0468ad88c3ae225c2b1437ded9708bf80a7a4bea28d"
+        },
+        {
+          "path": "convex/schema.ts",
+          "beforeSha256": "72d8c512cb27f8953b8ee7c4f7dd61426e0eed07c25af95959b25810c62521fa",
+          "afterSha256": "1beec8809c62dbc1f9000d8b7935d5b4d4351425f9bc236fffb67d87567b22b8"
+        },
+        {
+          "path": "convex/investorDemo.ts",
+          "beforeSha256": null,
+          "afterSha256": "486c542ca96cab81674ee3543f528d1102f301d74dc6ab4bb8ed09e3e7c7ec46"
+        },
+        {
+          "path": "convex/investorDemoAuth.ts",
+          "beforeSha256": null,
+          "afterSha256": "d06d54a079e374ff96bb64ca29e081758fbee2cd19fbd3522933200fc7e5af47"
+        },
+        {
+          "path": "convex/lib/investorDemoData.ts",
+          "beforeSha256": null,
+          "afterSha256": "f2ac027a060a1173e836f95bc2deaa471309689c5c88dfb29d584a14777d98a9"
+        },
+        {
+          "path": "convex/lib/investorDemoGuard.ts",
+          "beforeSha256": null,
+          "afterSha256": "5b0b5c626bd40b5c4ec3cf6204869a56e35965acb253e15ec211cf1df959d2f8"
+        },
+        {
+          "path": "convex/lib/investorDemoRoster.ts",
+          "beforeSha256": null,
+          "afterSha256": "882c69973e0b97d00838d6aa3881a5da6a103f832685809360630f2cf5e83eb9"
+        }
+      ]
+    },
+    {
+      "manifest": "docs/user-guide/refinement-captures.json",
+      "captureCount": 246,
+      "capturedAt": "2026-10-07T03:06:24.742Z",
+      "oldManifestSha256": "65b636a68c965536db3d88b2ec887c272b84aa0ff125a143d07f7e8ccfe3ae2a",
+      "newManifestSha256": "aec566358d6fa8b99d3532e4cb2a6d3014505c2fc0915e45e054528b9093e1f8",
+      "changes": [
+        {
+          "path": "convex/_generated/api.d.ts",
+          "beforeSha256": "fc49209a8f24235a5cf2ad92fefc9ba0113adf4ef811934c80281df6331ff4ad",
+          "afterSha256": "4655feef2624518058d6e0468ad88c3ae225c2b1437ded9708bf80a7a4bea28d"
+        },
+        {
+          "path": "convex/schema.ts",
+          "beforeSha256": "72d8c512cb27f8953b8ee7c4f7dd61426e0eed07c25af95959b25810c62521fa",
+          "afterSha256": "1beec8809c62dbc1f9000d8b7935d5b4d4351425f9bc236fffb67d87567b22b8"
+        },
+        {
+          "path": "src/lib/env.ts",
+          "beforeSha256": "5e6c7484278f17114b6f61a1cb622620ef704d8275da635af6df9e12fb567aa9",
+          "afterSha256": "7ace329ae5ed7bb08a0957bf87c1df4aa0f5b4132e4745a1291d5aa36f8603e5"
+        },
+        {
+          "path": "convex/investorDemo.ts",
+          "beforeSha256": null,
+          "afterSha256": "486c542ca96cab81674ee3543f528d1102f301d74dc6ab4bb8ed09e3e7c7ec46"
+        },
+        {
+          "path": "convex/investorDemoAuth.ts",
+          "beforeSha256": null,
+          "afterSha256": "d06d54a079e374ff96bb64ca29e081758fbee2cd19fbd3522933200fc7e5af47"
+        },
+        {
+          "path": "convex/lib/investorDemoData.ts",
+          "beforeSha256": null,
+          "afterSha256": "f2ac027a060a1173e836f95bc2deaa471309689c5c88dfb29d584a14777d98a9"
+        },
+        {
+          "path": "convex/lib/investorDemoGuard.ts",
+          "beforeSha256": null,
+          "afterSha256": "5b0b5c626bd40b5c4ec3cf6204869a56e35965acb253e15ec211cf1df959d2f8"
+        },
+        {
+          "path": "convex/lib/investorDemoRoster.ts",
+          "beforeSha256": null,
+          "afterSha256": "882c69973e0b97d00838d6aa3881a5da6a103f832685809360630f2cf5e83eb9"
+        }
+      ]
+    },
+    {
+      "manifest": "docs/user-guide/workbook-captures.json",
+      "captureCount": 342,
+      "capturedAt": "2026-10-07T03:10:49.041Z",
+      "oldManifestSha256": "2d39837cd4d27bdfc703e68d09f1e57f80b53244f01875ac0fa72cb9546b801a",
+      "newManifestSha256": "7f64e2c618489e4cf01ea6e317f3c2fc75dce0343ba141474888e163f253e26e",
+      "changes": [
+        {
+          "path": "convex/_generated/api.d.ts",
+          "beforeSha256": "fc49209a8f24235a5cf2ad92fefc9ba0113adf4ef811934c80281df6331ff4ad",
+          "afterSha256": "4655feef2624518058d6e0468ad88c3ae225c2b1437ded9708bf80a7a4bea28d"
+        },
+        {
+          "path": "convex/schema.ts",
+          "beforeSha256": "72d8c512cb27f8953b8ee7c4f7dd61426e0eed07c25af95959b25810c62521fa",
+          "afterSha256": "1beec8809c62dbc1f9000d8b7935d5b4d4351425f9bc236fffb67d87567b22b8"
+        },
+        {
+          "path": "src/lib/env.ts",
+          "beforeSha256": "5e6c7484278f17114b6f61a1cb622620ef704d8275da635af6df9e12fb567aa9",
+          "afterSha256": "7ace329ae5ed7bb08a0957bf87c1df4aa0f5b4132e4745a1291d5aa36f8603e5"
+        },
+        {
+          "path": "convex/investorDemo.ts",
+          "beforeSha256": null,
+          "afterSha256": "486c542ca96cab81674ee3543f528d1102f301d74dc6ab4bb8ed09e3e7c7ec46"
+        },
+        {
+          "path": "convex/investorDemoAuth.ts",
+          "beforeSha256": null,
+          "afterSha256": "d06d54a079e374ff96bb64ca29e081758fbee2cd19fbd3522933200fc7e5af47"
+        },
+        {
+          "path": "convex/lib/investorDemoData.ts",
+          "beforeSha256": null,
+          "afterSha256": "f2ac027a060a1173e836f95bc2deaa471309689c5c88dfb29d584a14777d98a9"
+        },
+        {
+          "path": "convex/lib/investorDemoGuard.ts",
+          "beforeSha256": null,
+          "afterSha256": "5b0b5c626bd40b5c4ec3cf6204869a56e35965acb253e15ec211cf1df959d2f8"
+        },
+        {
+          "path": "convex/lib/investorDemoRoster.ts",
+          "beforeSha256": null,
+          "afterSha256": "882c69973e0b97d00838d6aa3881a5da6a103f832685809360630f2cf5e83eb9"
+        }
+      ]
+    }
+  ],
+  "additionalBehaviorReview": {
+    "reviewedAt": "2026-10-10T10:54:32.427Z",
+    "reason": "The exact-session sign-out lifecycle was repaired: after device revocation succeeds, deliberate logout now pauses private queries and hides the stale session after server success; failed sign-out restores normal recovery, and new sessions are unaffected. This is a behavior change, not solely an import addition. Static captured route layouts, text, assets and pixels remain unchanged. These historical screenshots do not prove the repaired logout ordering. The dedicated deferred-promise regressions and separately recorded post-fix browser checks own that evidence. No new screenshot capture or visual inspection is claimed.",
+    "manifests": [
+      {
+        "manifest": "docs/user-guide/lots-captures.json",
+        "changes": [
+          {
+            "path": "src/components/providers/use-signed-in-query.ts",
+            "beforeSha256": "da6bacdd93940f401d4815c0972c8ffbadb0c34f57aa83b194183b48fa86c68f",
+            "afterSha256": "4b530c097b00ccc8ec29f3652eee65545150ed5ff76bb947d6b7b33f3184b4b4"
+          },
+          {
+            "path": "src/lib/sign-out.ts",
+            "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+            "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+          },
+          {
+            "path": "src/lib/sign-out-lifecycle.ts",
+            "beforeSha256": null,
+            "afterSha256": "05b9dbda8f1a9b9672086177b7dc519b76df582557fae6b78839d360b46316a3"
+          }
+        ]
+      },
+      {
+        "manifest": "docs/user-guide/refinement-captures.json",
+        "changes": [
+          {
+            "path": "src/components/providers/use-signed-in-query.ts",
+            "beforeSha256": "da6bacdd93940f401d4815c0972c8ffbadb0c34f57aa83b194183b48fa86c68f",
+            "afterSha256": "4b530c097b00ccc8ec29f3652eee65545150ed5ff76bb947d6b7b33f3184b4b4"
+          },
+          {
+            "path": "src/lib/sign-out.ts",
+            "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+            "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+          },
+          {
+            "path": "src/lib/sign-out-lifecycle.ts",
+            "beforeSha256": null,
+            "afterSha256": "05b9dbda8f1a9b9672086177b7dc519b76df582557fae6b78839d360b46316a3"
+          }
+        ]
+      },
+      {
+        "manifest": "docs/user-guide/workbook-captures.json",
+        "changes": [
+          {
+            "path": "src/components/providers/use-signed-in-query.ts",
+            "beforeSha256": "da6bacdd93940f401d4815c0972c8ffbadb0c34f57aa83b194183b48fa86c68f",
+            "afterSha256": "4b530c097b00ccc8ec29f3652eee65545150ed5ff76bb947d6b7b33f3184b4b4"
+          },
+          {
+            "path": "src/lib/sign-out.ts",
+            "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+            "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+          },
+          {
+            "path": "src/lib/sign-out-lifecycle.ts",
+            "beforeSha256": null,
+            "afterSha256": "05b9dbda8f1a9b9672086177b7dc519b76df582557fae6b78839d360b46316a3"
+          }
+        ]
+      }
+    ],
+    "actualPostFixBrowser": {
+      "verifiedAt": "2026-10-10T10:58:12.003211+00:00",
+      "environment": "approved cloud development frontend",
+      "method": "Real browser email/password sign-in, session identity and role-page checks, UI sign-out, then confirmed null session; manufacturer and Saathi repeated twice.",
+      "passed": 4,
+      "failed": 0,
+      "pageErrors": 0,
+      "blockedWrites": 0,
+      "rateLimited": false,
+      "sourceHashes": {
+        "src/lib/sign-out-lifecycle.ts": "05b9dbda8f1a9b9672086177b7dc519b76df582557fae6b78839d360b46316a3",
+        "src/lib/sign-out.ts": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505",
+        "src/components/providers/use-signed-in-query.ts": "4b530c097b00ccc8ec29f3652eee65545150ed5ff76bb947d6b7b33f3184b4b4"
+      },
+      "privateReports": [
+        {
+          "privateEvidenceFile": "browser-logout-regression-1.json",
+          "sha256": "793607aed453f25dbaa541e233248b799e91b45e305804f46be8e1540aba0d28",
+          "passed": 2
+        },
+        {
+          "privateEvidenceFile": "browser-logout-regression-2.json",
+          "sha256": "88ce1d6621ab35dfef2846b26ae1431d00b4330c90ad40027b109394d9099161",
+          "passed": 2
+        }
+      ],
+      "limits": "No new screenshot capture. This targeted evidence does not claim all-account completion, production logout verification or external provider execution."
+    }
+  },
+  "relatedStaticCaptureReviews": [
+    {
+      "manifest": "docs/user-guide/admin-current-captures.json",
+      "originalManifestSha256": "56380e3191af146f06dfff1cbe9d2b41c8d1572e22d8f234f6f70980ce4bacf5",
+      "originalImageCountChecked": 36,
+      "changes": [
+        {
+          "path": "src/lib/sign-out.ts",
+          "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+          "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+        }
+      ]
+    },
+    {
+      "manifest": "docs/user-guide/failure-captures.json",
+      "originalManifestSha256": "51ab6c1272f641dabca10d46b5403f797b735689e9c2561bc8d9a159d68db177",
+      "originalImageCountChecked": 78,
+      "changes": [
+        {
+          "path": "src/lib/sign-out.ts",
+          "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+          "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+        }
+      ]
+    },
+    {
+      "manifest": "docs/user-guide/screenshots/fixture-captures.json",
+      "originalManifestSha256": "d00d85ec688ad4782cc193a47e54b126ccbbdbd3503bdcb7845b4200f380d9dc",
+      "originalImageCountChecked": 126,
+      "changes": [
+        {
+          "path": "src/lib/sign-out.ts",
+          "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+          "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+        }
+      ]
+    },
+    {
+      "manifest": "docs/user-guide/screenshots/industry-api-captures.json",
+      "originalManifestSha256": "c5bb69c473f3f00546c8535ba7227a980c9847e62b68f91fb65ab9d65a983dff",
+      "originalImageCountChecked": 90,
+      "changes": [
+        {
+          "path": "src/lib/sign-out.ts",
+          "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+          "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+        }
+      ]
+    }
+  ]
+}

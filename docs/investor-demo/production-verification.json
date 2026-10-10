@@ -1,0 +1,549 @@
+{
+  "deployment": "outstanding-buzzard-942",
+  "status": {
+    "accountCount": 140,
+    "batchKey": "investor-2026-10-10",
+    "cohorts": [
+      {
+        "accounts": 28,
+        "cohort": 1,
+        "expectedAccounts": 28,
+        "organisations": 8
+      },
+      {
+        "accounts": 28,
+        "cohort": 2,
+        "expectedAccounts": 28,
+        "organisations": 8
+      },
+      {
+        "accounts": 28,
+        "cohort": 3,
+        "expectedAccounts": 28,
+        "organisations": 8
+      },
+      {
+        "accounts": 28,
+        "cohort": 4,
+        "expectedAccounts": 28,
+        "organisations": 8
+      },
+      {
+        "accounts": 28,
+        "cohort": 5,
+        "expectedAccounts": 28,
+        "organisations": 8
+      }
+    ],
+    "duplicateMarkerKeys": 0,
+    "duplicateRecordReferences": 0,
+    "expectedAccountCount": 140,
+    "invalidAccountCount": 0,
+    "markerCount": 3903,
+    "recordCounts": [
+      {
+        "count": 5,
+        "table": "applications"
+      },
+      {
+        "count": 1979,
+        "table": "auditLog"
+      },
+      {
+        "count": 60,
+        "table": "auditReports"
+      },
+      {
+        "count": 15,
+        "table": "bookingOffers"
+      },
+      {
+        "count": 15,
+        "table": "bookings"
+      },
+      {
+        "count": 30,
+        "table": "commercialEvidence"
+      },
+      {
+        "count": 30,
+        "table": "conversationMessages"
+      },
+      {
+        "count": 30,
+        "table": "conversations"
+      },
+      {
+        "count": 558,
+        "table": "industrialFacilities"
+      },
+      {
+        "count": 240,
+        "table": "inventory"
+      },
+      {
+        "count": 15,
+        "table": "jobs"
+      },
+      {
+        "count": 30,
+        "table": "listings"
+      },
+      {
+        "count": 40,
+        "table": "lotInspections"
+      },
+      {
+        "count": 40,
+        "table": "lotTransformationInputs"
+      },
+      {
+        "count": 40,
+        "table": "lotTransformations"
+      },
+      {
+        "count": 100,
+        "table": "manufacturerStockIntakes"
+      },
+      {
+        "count": 30,
+        "table": "materialDemands"
+      },
+      {
+        "count": 120,
+        "table": "materialLots"
+      },
+      {
+        "count": 6,
+        "table": "materials"
+      },
+      {
+        "count": 55,
+        "table": "memberships"
+      },
+      {
+        "count": 40,
+        "table": "orgs"
+      },
+      {
+        "count": 40,
+        "table": "productionDeclarations"
+      },
+      {
+        "count": 40,
+        "table": "productionRecipes"
+      },
+      {
+        "count": 60,
+        "table": "rateCards"
+      },
+      {
+        "count": 5,
+        "table": "routePlans"
+      },
+      {
+        "count": 5,
+        "table": "routePlanVersions"
+      },
+      {
+        "count": 5,
+        "table": "saathiProfiles"
+      },
+      {
+        "count": 30,
+        "table": "sourcingAgreements"
+      },
+      {
+        "count": 30,
+        "table": "sourcingEvents"
+      },
+      {
+        "count": 30,
+        "table": "sourcingPlans"
+      },
+      {
+        "count": 30,
+        "table": "sourcingReleases"
+      },
+      {
+        "count": 60,
+        "table": "stakeholderAccounts"
+      },
+      {
+        "count": 30,
+        "table": "supplierQualifications"
+      },
+      {
+        "count": 60,
+        "table": "trades"
+      }
+    ],
+    "scope": "batch_manifest_counts_only",
+    "truncated": false,
+    "unexpectedTableMarkers": 0
+  },
+  "cohorts": [
+    {
+      "accountCount": 28,
+      "cohort": 1,
+      "expectedMarkers": 142,
+      "invalidAccountCount": 0,
+      "inventory": {
+        "baselineChangedRows": 0,
+        "checkedRows": 48,
+        "commitmentExcessPairs": 0,
+        "intakeMismatchRows": 0,
+        "invalidIntegerRows": 0,
+        "missingAuditRows": 0,
+        "missingRows": 0
+      },
+      "missingMarkers": 0,
+      "nonMemberProfileCount": 0,
+      "paymentObservations": {
+        "orgsWithProviderVendors": 0,
+        "tradesWithFinancialMovements": 0,
+        "tradesWithFinancialRecords": 0,
+        "tradesWithProviderOrders": 0
+      },
+      "scopedAdminProfileCount": 0
+    },
+    {
+      "accountCount": 28,
+      "cohort": 2,
+      "expectedMarkers": 142,
+      "invalidAccountCount": 0,
+      "inventory": {
+        "baselineChangedRows": 0,
+        "checkedRows": 48,
+        "commitmentExcessPairs": 0,
+        "intakeMismatchRows": 0,
+        "invalidIntegerRows": 0,
+        "missingAuditRows": 0,
+        "missingRows": 0
+      },
+      "missingMarkers": 0,
+      "nonMemberProfileCount": 0,
+      "paymentObservations": {
+        "orgsWithProviderVendors": 0,
+        "tradesWithFinancialMovements": 0,
+        "tradesWithFinancialRecords": 0,
+        "tradesWithProviderOrders": 0
+      },
+      "scopedAdminProfileCount": 0
+    },
+    {
+      "accountCount": 28,
+      "cohort": 3,
+      "expectedMarkers": 142,
+      "invalidAccountCount": 0,
+      "inventory": {
+        "baselineChangedRows": 0,
+        "checkedRows": 48,
+        "commitmentExcessPairs": 0,
+        "intakeMismatchRows": 0,
+        "invalidIntegerRows": 0,
+        "missingAuditRows": 0,
+        "missingRows": 0
+      },
+      "missingMarkers": 0,
+      "nonMemberProfileCount": 0,
+      "paymentObservations": {
+        "orgsWithProviderVendors": 0,
+        "tradesWithFinancialMovements": 0,
+        "tradesWithFinancialRecords": 0,
+        "tradesWithProviderOrders": 0
+      },
+      "scopedAdminProfileCount": 0
+    },
+    {
+      "accountCount": 28,
+      "cohort": 4,
+      "expectedMarkers": 142,
+      "invalidAccountCount": 0,
+      "inventory": {
+        "baselineChangedRows": 0,
+        "checkedRows": 48,
+        "commitmentExcessPairs": 0,
+        "intakeMismatchRows": 0,
+        "invalidIntegerRows": 0,
+        "missingAuditRows": 0,
+        "missingRows": 0
+      },
+      "missingMarkers": 0,
+      "nonMemberProfileCount": 0,
+      "paymentObservations": {
+        "orgsWithProviderVendors": 0,
+        "tradesWithFinancialMovements": 0,
+        "tradesWithFinancialRecords": 0,
+        "tradesWithProviderOrders": 0
+      },
+      "scopedAdminProfileCount": 0
+    },
+    {
+      "accountCount": 28,
+      "cohort": 5,
+      "expectedMarkers": 142,
+      "invalidAccountCount": 0,
+      "inventory": {
+        "baselineChangedRows": 0,
+        "checkedRows": 48,
+        "commitmentExcessPairs": 0,
+        "intakeMismatchRows": 0,
+        "invalidIntegerRows": 0,
+        "missingAuditRows": 0,
+        "missingRows": 0
+      },
+      "missingMarkers": 0,
+      "nonMemberProfileCount": 0,
+      "paymentObservations": {
+        "orgsWithProviderVendors": 0,
+        "tradesWithFinancialMovements": 0,
+        "tradesWithFinancialRecords": 0,
+        "tradesWithProviderOrders": 0
+      },
+      "scopedAdminProfileCount": 0
+    }
+  ],
+  "slices": [
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 100,
+      "isDone": false,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    },
+    {
+      "checkedRecords": 3,
+      "isDone": true,
+      "missingRecords": 0,
+      "unexpectedTableMarkers": 0
+    }
+  ]
+}

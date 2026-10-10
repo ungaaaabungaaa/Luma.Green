@@ -267,3 +267,36 @@ requires that review and fails while the manifest is absent, pending or stale.
 The final 7 October matrix contains 342 reviewed views and no skipped views.
 Its two freshness tests pass. The manifest records source and original-image
 hashes; these local captures do not prove production access or provider delivery.
+
+## Investor demo import and screenshot compatibility
+
+The separate [investor walkthrough](../investor-demo/README.md) describes the
+new fictional demonstration dataset. Credentials belong only in the restricted,
+ignored annexes; they must not enter this guide or the shared Google document.
+
+The investor import adds internal operator functions, bookkeeping tables and a
+server-only configuration accessor. It does not change the screens, translations
+or ordinary sign-in controls shown in this guide. The lots, refinement and
+workbook manifests retain their original capture source snapshots, capture dates,
+pixel hashes and visual review times. Their explicit source compatibility reviews
+bind the unchanged screenshots to the additive code changes. These are existing
+local captures, not new investor-environment captures or hosted execution proof.
+See [the compatibility record](investor-source-compatibility.json) for the exact
+source hashes and evidence limits.
+
+The Word guide was rebuilt after the metadata update. Every ZIP member payload
+matched the reviewed original, so its exact DOCX bytes and 167-page review were
+retained. `build.json` records that comparison and the new input hashes. The
+Google document body is unchanged; its prior publication verification remains
+historical evidence rather than a claim of a new cloud update.
+
+A later exact-session logout repair changes the sign-out transition, while the
+static screens remain unchanged. Its compatibility review is separate from the
+import-only review and preserves the first capture snapshot. Historical images
+do not prove the repair: deferred-response auth regressions and new browser
+sign-out checks supply that evidence.
+
+The same static-state review also covers the shared sign-out helper in the admin,
+failure, protected-screen and industry API capture manifests. Their original
+source maps and screenshot bytes are retained. The synthetic failure screens
+remain fixture evidence; the new real logout checks are recorded separately.
