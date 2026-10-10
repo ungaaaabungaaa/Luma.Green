@@ -11,6 +11,7 @@ import { InvitationPage } from "./invitation-page";
 
 const state = vi.hoisted(() => ({
   status: "ready",
+  sessionSequence: 0,
   authenticated: true,
   reload: vi.fn(),
   accept: vi.fn(),
@@ -49,7 +50,7 @@ vi.mock("@/lib/auth-client", () => ({
   authClient: {
     useSession: () => ({
       data: {
-        session: { id: "fixture-session" },
+        session: { id: `fixture-session-${String(state.sessionSequence)}` },
         user: { id: "fixture-user" },
       },
       isPending: false,
@@ -63,6 +64,7 @@ vi.mock("@/lib/reload-current-page", () => ({
 vi.mock("sonner", () => ({ toast: { error: state.error } }));
 beforeEach(() => {
   vi.resetAllMocks();
+  state.sessionSequence += 1;
   state.status = "ready";
   state.authenticated = true;
   state.revoke.mockResolvedValue(undefined);

@@ -2,9 +2,15 @@
 
 import { useConvexAuth, useQuery } from "convex/react";
 import type { FunctionReference, FunctionReturnType } from "convex/server";
+import { useSyncExternalStore } from "react";
 
 import { authClient } from "@/lib/auth-client";
 import { AuthServiceUnavailable } from "@/lib/auth-session";
+import {
+  getServerSignOutLifecycle,
+  getSignOutLifecycle,
+  subscribeSignOutLifecycle,
+} from "@/lib/sign-out-lifecycle";
 
 type SignedInQuery = FunctionReference<
   "query",
@@ -35,6 +41,19 @@ export function useSignedInQuery<Query extends SignedInQuery>(
 export function useVerifiedSession() {
   const { isLoading, isAuthenticated } = useConvexAuth();
   const session = authClient.useSession();
+  const signOut = useSyncExternalStore(
+    subscribeSignOutLifecycle,
+    getSignOutLifecycle,
+    getServerSignOutLifecycle,
+  );
+  // Convex can reject the revoked token before Better Auth clears its cached
+  // session. Only this exact deliberate logout may suppress that mismatch.
+  if (signOut && signOut.sessionId === session.data?.session.id)
+    return {
+      isPending: signOut.status === "pending",
+      isReady: false,
+      userId: undefined,
+    };
   const isPending = isLoading || session.isPending;
   const isDenied =
     session.error?.status === 401 || session.error?.status === 403;
