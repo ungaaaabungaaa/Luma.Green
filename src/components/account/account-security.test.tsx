@@ -45,10 +45,11 @@ vi.mock("qrcode", () => ({
   default: { toDataURL: () => Promise.resolve("") },
 }));
 
+const sequence = { session: 0 };
 beforeEach(() => {
   vi.resetAllMocks();
   mocks.session.data = {
-    session: { id: "fixture-session" },
+    session: { id: `fixture-session-${String(++sequence.session)}` },
     user: { id: "fixture-user" },
   };
   mocks.useSession.mockImplementation(() => mocks.session);

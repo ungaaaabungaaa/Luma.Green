@@ -1,0 +1,48 @@
+{
+  "status": "reviewed_final_candidate",
+  "publication_mode": "final_candidate",
+  "planned_pages": 14,
+  "image_count": 12,
+  "docx": "output/docx/luma-green-investor-demo.docx",
+  "docx_sha256": "cf97eeb232ad7d7656b5fccfcefeca10135c7a5c4dcd81725fb3de80fccd5f53",
+  "inputs": {
+    "docs/investor-demo/tour.json": "4e28ad7746f22b633df622b8b96f6a0fa344cfa5faf461698f6e7a01ce542ca5",
+    "scripts/build-investor-demo.py": "7688c9347fa79ede8f42874f014a505b87a170c097739ae91611a04ccc24ac11",
+    "scripts/document_links.py": "eaec2789a1f3f7c4969a73c572ef2e6fdfe2cd251a21e36460b8460ba7f3ba89",
+    "docs/investor-demo/screenshots/investor-development-01.png": "dde1980df9fe5b64839eb0fa722e872ed690fe60de2dc80fb0c3cf52dd1a6a0d",
+    "docs/investor-demo/screenshots/investor-development-02.png": "306944e82d032af1fd326bce0a7980f00f309a4663333a93ce0ee7c3bdc5e496",
+    "docs/investor-demo/screenshots/investor-development-03.png": "40370d9be7876781d7b308ec575a0073c166d516a674b8c79bab8b209ece67f3",
+    "docs/investor-demo/screenshots/investor-development-04.png": "d0e96850a23ae6e339e44b55769bca2ecdfbe46170e1b34507009d328346a3c6",
+    "docs/investor-demo/screenshots/investor-development-05.png": "617ca61c0ec06d8ecc14b6729925b3652f1baf88da8a022156c9ac7c8b820723",
+    "docs/investor-demo/screenshots/investor-development-06.png": "da32b8d13791de686b929202ef11e09fe554bb6624142742ea8a8ea45c201a9e",
+    "docs/investor-demo/screenshots/investor-development-07.png": "80b8c14ddc4f4d95fe6b41065c77b0d87723ef65d215ee36853f3d7986b4d580",
+    "docs/investor-demo/screenshots/investor-development-08.png": "0072e0f6543dbb45a4b425971e1fb64e00bded72b3993dae20211c474f57f53d",
+    "docs/investor-demo/screenshots/investor-development-09.png": "3b5cc22839bc628a657824881ba826dfbdd2714b04b2d04a109accbfbea9cc9a",
+    "docs/investor-demo/screenshots/investor-development-10.png": "d9446dc12d1bd1d2f3062cea1855c5bbf267a16b79a46a11761fd0e9a24e2e95",
+    "docs/investor-demo/screenshots/investor-development-11.png": "97f5206f032a9b3a66941fd749f6446e9aa090a3e5727e2aead82d0872870ad8",
+    "docs/investor-demo/screenshots/investor-development-12.png": "b552ec368d20cb7d0499db48e95226da86802193b3d54667bb10f70c480bb805"
+  },
+  "visual_review": {
+    "status": "passed",
+    "pages": 14,
+    "docx_sha256": "cf97eeb232ad7d7656b5fccfcefeca10135c7a5c4dcd81725fb3de80fccd5f53",
+    "reviewed_at": "2026-10-10T10:51:02.044918+00:00",
+    "page_images": {
+      "page-1.png": "23f7bfe73d1b59fa6593d4960449985d99fbe4420e415d166b6bd87a33fc4cf5",
+      "page-10.png": "462ab01f45495fc05bc4c335743501af6ba26f287e5c6a24ffe18968e367a13a",
+      "page-11.png": "47a93a4daf583f2f33540335543ba12a9784105e26ae873e1f519bf8159e2760",
+      "page-12.png": "64ae7a010f45503a142defb51e2b88016384aa45bc26586310eb519a6b6964d8",
+      "page-13.png": "df2accacf58f298055d11f730d3ba7b1479eb3e2dfe80297b13b9625cced39c3",
+      "page-14.png": "69f96d4c231bd7eb9ee92f57d2c9de67c7055709b4b70ddca37ad8fa8b7b62ff",
+      "page-2.png": "f6fafe850c9955686c5021cac3356a03b36398deffbace778d9caa154c094fd4",
+      "page-3.png": "28f0a9f1ee4c14e8bc0c5276150d736897f2dae33d6dfde6d2be96e1795b2c6c",
+      "page-4.png": "4d5df3e21a16144460e1531c6111e76f498592e3732b30a62445502d4d532b85",
+      "page-5.png": "c8df3537d2fae22ff66fc3dccbbc985cf8154eddf68bc76f5cd1bd418544d6b2",
+      "page-6.png": "7fb8dd4cc5cb2d9e87b0ead230683e624853b24e3372f2f286c0fa5b82ef5a73",
+      "page-7.png": "52f25ea7ad4b03de2a72f815177af1e0a59a032e7870395ac6424d895fc2234c",
+      "page-8.png": "c87ede18ef163be3d6a9a1232c21269653dd98d8cbbafa44c5e3e247d751c827",
+      "page-9.png": "59e72cbf24dc6bccd9ed07c418eec8e1dcd389a67079aae62d9d3cbca1cb3fdc"
+    },
+    "method": "All14 originals inspected in review2. Review3 changed only page13, which was opened again; other13 PNG bytes matched exactly."
+  }
+}

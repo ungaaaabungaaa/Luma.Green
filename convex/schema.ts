@@ -63,6 +63,29 @@ const timestamps = {
 };
 
 export default defineSchema({
+  /** Operator-imported synthetic demo identities; no passwords or sessions. */
+  investorDemoAccounts: defineTable({
+    batchKey: v.string(),
+    personaKey: v.string(),
+    email: v.string(),
+    authUserId: v.string(),
+    profileId: v.id("profiles"),
+    passwordHashDigest: v.string(),
+    createdAt: v.number(),
+  })
+    .index("by_batch_persona", ["batchKey", "personaKey"])
+    .index("by_email", ["email"])
+    .index("by_auth_user", ["authUserId"]),
+  /** Exact inserted-record inventory for bounded reruns and later cleanup review. */
+  investorDemoRecords: defineTable({
+    batchKey: v.string(),
+    key: v.string(),
+    table: v.string(),
+    recordId: v.string(),
+    createdAt: v.number(),
+  })
+    .index("by_batch_key", ["batchKey", "key"])
+    .index("by_batch", ["batchKey"]),
   ...operationalTables,
   ...sourcingTables,
   ...routePlanningTables,

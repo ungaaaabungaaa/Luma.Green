@@ -161,17 +161,68 @@
     "docs/user-guide/screenshots/api-controls-en-390-light.png": "396a2d2b44601386ce637bec738328be40bc52c011f0746ab609d1ff23dd991f",
     "docs/user-guide/screenshots/api-access-ar-390-dark.png": "58712311bbfb0b8ea1e0879917752c6c46cda87ebcbc49043058b6cf971d005e",
     "docs/user-guide/screenshots/api-access-ta-390-light.png": "e44c4f787a1a19f063005ab31c3f4ffda31eb09dc272bc08dc8309eec71e6794",
-    "docs/user-guide/admin-current-captures.json": "56380e3191af146f06dfff1cbe9d2b41c8d1572e22d8f234f6f70980ce4bacf5",
+    "docs/user-guide/admin-current-captures.json": "51fbee051edad356d9188f4b8c5897b5be5f2c9c2e49f2ea6c9e13448a374366",
     "docs/user-guide/analytics-captures.json": "f85b7bd35774046a5bcbd42526bace18c97ad2921f082647f049cd8287a7c4ff",
-    "docs/user-guide/failure-captures.json": "51ab6c1272f641dabca10d46b5403f797b735689e9c2561bc8d9a159d68db177",
+    "docs/user-guide/failure-captures.json": "ce6b7568d721d728adb8613110e446e5a3682d03b38af6c5eacb69c29a85473f",
     "docs/user-guide/finance-fixture-captures.json": "071040e58cc2b4d4f8b1f6c940078d432e156ee2153f33f1922671ee2a2f9633",
-    "docs/user-guide/lots-captures.json": "942104ae4f4a43cfad368a33bb2f2bd52ac20ca10b903f4897676d7591e5bfbd",
+    "docs/user-guide/lots-captures.json": "401d99a62f1a528b05d6452270b149aedee49ed4c25bb743bc650882baea9899",
     "docs/user-guide/price-captures.json": "e5df98adac4eb7762de9f14094bbe6ddd3f565e1c04ee6a860eba9a2d8f43e85",
     "docs/user-guide/public-captures.json": "94375b829681458eb522e1f0ea39a66810d4928f76896233269a0fa856c65822",
-    "docs/user-guide/refinement-captures.json": "65b636a68c965536db3d88b2ec887c272b84aa0ff125a143d07f7e8ccfe3ae2a",
-    "docs/user-guide/screenshots/fixture-captures.json": "d00d85ec688ad4782cc193a47e54b126ccbbdbd3503bdcb7845b4200f380d9dc",
-    "docs/user-guide/screenshots/industry-api-captures.json": "c5bb69c473f3f00546c8535ba7227a980c9847e62b68f91fb65ab9d65a983dff",
+    "docs/user-guide/refinement-captures.json": "aec566358d6fa8b99d3532e4cb2a6d3014505c2fc0915e45e054528b9093e1f8",
+    "docs/user-guide/screenshots/fixture-captures.json": "1aadc3fa4e87d728ec1c4831383ca3de2d225818fe8f5d1b63a9b1f9b1677a6a",
+    "docs/user-guide/screenshots/industry-api-captures.json": "e2cf1e284147335ee0de33dcfd05e49deb0f8b9ce77787f00648bf37157a043e",
     "docs/user-guide/showcase-captures.json": "83b06e3a38041d7aace10c0368e41f69aa276d7a3a089eaa47af3e304fe9e536",
-    "docs/user-guide/workbook-captures.json": "2d39837cd4d27bdfc703e68d09f1e57f80b53244f01875ac0fa72cb9546b801a"
+    "docs/user-guide/workbook-captures.json": "7f64e2c618489e4cf01ea6e317f3c2fc75dce0343ba141474888e163f253e26e"
+  },
+  "input_only_rebuild_history": [
+    {
+      "reviewedAt": "2026-10-10T10:33:15.457175+00:00",
+      "reason": "Only capture provenance compatibility metadata changed; guide text, source screenshots and all rebuilt DOCX ZIP member payloads are byte-identical. Retained the original reviewed DOCX bytes and its 167-page review. No new visual inspection claimed.",
+      "priorBuildSha256": "c6ff3c6ac123ec3a1c303a0aa2a6bd166f7eaa67996008e99d4088c26a8f5dca",
+      "candidateDocxSha256": "710e4ba7ce30021bb0603517673d7a4022a1d0cba7d26c5ca7cedbc251640ce1",
+      "retainedDocxSha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
+      "zipMembersCompared": 165,
+      "allZipMemberPayloadsIdentical": true,
+      "freshRenderPerformed": false,
+      "nativeDocumentUpdateRequired": false,
+      "compatibilityRecord": "docs/user-guide/investor-source-compatibility.json",
+      "manifestFormattingNormalized": true
+    },
+    {
+      "reviewedAt": "2026-10-10T10:54:59.066951+00:00",
+      "reason": "Logout compatibility metadata update only; guide text and every rebuilt DOCX ZIP member payload remain byte-identical to the reviewed original. Retained original DOCX and 167-page review. No new visual review claimed.",
+      "priorBuildSha256": "90f30b7ea5c28f5600fb3447b590319238e0a1f684f4e41360b389baac7f28fb",
+      "candidateDocxSha256": "f801d59bfb52afdb59d9fbf9010ca227313838ada3dae3888b58bde4908b43b2",
+      "retainedDocxSha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
+      "zipMembersCompared": 165,
+      "allZipMemberPayloadsIdentical": true,
+      "freshRenderPerformed": false,
+      "nativeDocumentUpdateRequired": false,
+      "compatibilityRecord": "docs/user-guide/investor-source-compatibility.json"
+    },
+    {
+      "reviewedAt": "2026-10-10T10:59:12.330508+00:00",
+      "reason": "Added separately verified development logout browser proof to compatibility metadata. Guide text and all rebuilt DOCX ZIP payloads remain byte-identical to the reviewed original; retained exact DOCX and 167-page review, without new visual-review claims.",
+      "priorBuildSha256": "b0218f9130aefc4fe68b709b263a19274ab9f1978cedcbbf0c173e75581e4394",
+      "candidateDocxSha256": "bb8c5671b693176826bf6b0c8b0613dbfb7fcc2cd6e295a52932a01058d635f9",
+      "retainedDocxSha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
+      "zipMembersCompared": 165,
+      "allZipMemberPayloadsIdentical": true,
+      "freshRenderPerformed": false,
+      "nativeDocumentUpdateRequired": false,
+      "compatibilityRecord": "docs/user-guide/investor-source-compatibility.json"
+    }
+  ],
+  "input_only_rebuild": {
+    "reviewedAt": "2026-10-10T11:01:31.185613+00:00",
+    "reason": "Added separately verified development logout browser proof to compatibility metadata. Guide text and all rebuilt DOCX ZIP payloads remain byte-identical to the reviewed original; retained exact DOCX and 167-page review, without new visual-review claims.",
+    "priorBuildSha256": "ed4371934b544ae8712d563e7b4fc9bd324b3d1658ca820a930f43cba45b62b5",
+    "candidateDocxSha256": "f87779034ee762086584f44c85f7516258ea5b71b70d521262f24fa29d863781",
+    "retainedDocxSha256": "92b01a7ce27edcb82d7b9d5ad545b898a4d82e3ec709b527cc39e8eb833120c0",
+    "zipMembersCompared": 165,
+    "allZipMemberPayloadsIdentical": true,
+    "freshRenderPerformed": false,
+    "nativeDocumentUpdateRequired": false,
+    "compatibilityRecord": "docs/user-guide/investor-source-compatibility.json"
   }
 }

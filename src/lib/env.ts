@@ -395,3 +395,11 @@ export function cashfreePolicyVersion(): string | null {
   const value = process.env.CASHFREE_LIVE_POLICY_VERSION?.trim();
   return value && /^[A-Za-z0-9_-]{1,80}$/.test(value) ? value : null;
 }
+
+/** One-time operator import configuration; never exposed to browser settings. */
+export function investorDemoImportEnv() {
+  return {
+    targetUrl: process.env.INVESTOR_DEMO_TARGET_URL,
+    expiresAt: process.env.INVESTOR_DEMO_IMPORT_EXPIRES_AT,
+  };
+}

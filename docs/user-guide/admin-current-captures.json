@@ -30,7 +30,7 @@
     "convex/lib/access.ts": "a975c8ca96fc917b8bcc8a4220349b4396aab5881824db9a0c1ae575696930fd",
     "src/components/account/use-sign-out.ts": "1553c45b5602ef9a1cb369fcc946d453e37bc3eeca8e88cae3f95b66dac5d455",
     "src/components/admin/use-admin-sign-out.ts": "f2caf07bfe67c46732c8a76ca14218df20eda0d0da3a054cad1e68eeaba90889",
-    "src/lib/sign-out.ts": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa"
+    "src/lib/sign-out.ts": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
   },
   "captures": [
     {
@@ -372,5 +372,58 @@
     "method": "original-png-at-readable-resolution",
     "reviewedCount": 36,
     "note": "All 36 originals inspected in light and dark at phone, tablet and desktop sizes; readable controls, no overlap, no sensitive pixels. Local synthetic data only."
+  },
+  "captureSourceSnapshot": {
+    "sourceHashes": {
+      "scripts/capture-admin-guide.mts": "01465186a1e5c8b2e66270adf44c997367646ea1bf5a91ee50d795bed5f252fd",
+      "e2e/connected/totp.ts": "d66c43c811a7be431a638e1feea2e49f2974aed8a1ee500ce82eb37707958585",
+      "src/components/admin/console-shell.tsx": "d35efdf3bbfc13eb8de12109cbc6140866acd7fca3e2d99707117aa8eeffeba9",
+      "src/components/admin/payment-setup.tsx": "fb919c2565655a22659652f27616c2d23853de6920a1b8a5d6460481d3475e93",
+      "src/components/admin/payment-lifecycle.tsx": "d90931c8dffd0ed6d86094b5923de7f7752814299296e9288414bfa3d2e973d3",
+      "convex/cashfreeLifecycle.ts": "bc874f27cbb491951833913d82716bcc96e437f343f1f66c08fb396f4a0c6a2f",
+      "convex/cashfreeLifecycleActions.ts": "a310cec7e9229cbe0cfcdd04d385e3ec461229f613ed36eb26a1e9d9dc3259fc",
+      "convex/cashfreeRefunds.ts": "44097fea279dc00c65b36d7e4b70bd49e08c33dd4ec1d50d7978d264d31618ae",
+      "convex/lib/cashfreeLifecycle.ts": "7d9bf93cb350e98d3a214e314a9a015c00cc279e92920231d67fb370ff7ac1bf",
+      "convex/lib/cashfreeLifecycleContract.ts": "64e66b8058b13fdaa850e69c3680a099b2d14088c54b3887c7194ac9ab893234",
+      "convex/lib/cashfreeLifecycleProvider.ts": "a5295558631f420213acb3a2af9ca8aa2660323807e855e1e63e7536234c2af1",
+      "convex/lib/cashfreeLifecycleSchema.ts": "30c7ebe5f692478eb919a6d8eb69f8ca573fc07dd93005248128a42c87b265ce",
+      "src/components/admin/prices/catalogue-setup.tsx": "fa3a1226dace1c1e40d0945b34844d1c5f922e094a02534d6fdc3a1cd70696b9",
+      "src/components/admin/prices/material-classification.tsx": "6115b67907ea5f499d9e6b81ad4a68def74de5309b30a38af1f4f27d77a6951a",
+      "convex/byproductClassification.ts": "703f25a21c200656b8807fad6d4dd7b74f54bb8b4fb3adf9b0f1df0a4af293d3",
+      "src/components/admin/prices/price-tables.tsx": "f793e9a2fd3c644b84a98e5fe79dbd004a053de28c61075e910dddb545ec1fac",
+      "src/components/ui/dialog.tsx": "9cee303ad5afb2d5b5e22c2219d972b54f656e66c4ac2157f9e1b6d126b53f12",
+      "src/components/theme/theme.ts": "22951a490c4e48f016e10a8339ab52adfefaddd330c6d32b1d1a94b49cedb9b6",
+      "src/components/ui/tabs.tsx": "1d804caf8bdd09a5b4a1b5fabf3c623b740356bf58e105e52aa260b148a50a44",
+      "src/components/ui/button.tsx": "541fcd6054a1dfa7fc114bc8c3468b8d408a347a55938107e74f93cc504cb367",
+      "src/app/globals.css": "7d48913ef6ba79d423f69f34e21ee3fecf87242e5da8d70869806e02d38e2c09",
+      "src/lib/fonts.ts": "ffb4b8691eadcdf377fd3c0e2584c82683ffbbef7008fe1800f31dcba8e785db",
+      "convex/cashfreePayments.ts": "fec84782033c91b1a9454a2b45fb0eb83b7ef65fba40123cb532042b98aea1e1",
+      "convex/cashfreeActions.ts": "861acac877e5f25d1cfbd930ebc7f45fd1ea775cfd70e4db0e42a63d329780b1",
+      "convex/catalogue.ts": "45c8b2db5a261153297b3ff497fa407fc1e917f2a66130b7d665a76f5267b1f4",
+      "convex/lib/access.ts": "a975c8ca96fc917b8bcc8a4220349b4396aab5881824db9a0c1ae575696930fd",
+      "src/components/account/use-sign-out.ts": "1553c45b5602ef9a1cb369fcc946d453e37bc3eeca8e88cae3f95b66dac5d455",
+      "src/components/admin/use-admin-sign-out.ts": "f2caf07bfe67c46732c8a76ca14218df20eda0d0da3a054cad1e68eeaba90889",
+      "src/lib/sign-out.ts": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa"
+    },
+    "sourceCommit": null,
+    "capturedAt": null,
+    "manifestSha256": "56380e3191af146f06dfff1cbe9d2b41c8d1572e22d8f234f6f70980ce4bacf5"
+  },
+  "sourceCompatibilityReview": {
+    "reviewedAt": "2026-10-10T11:01:14.029775+00:00",
+    "reviewer": "auth_release",
+    "method": "unchanged-static-state-source-review-and-original-image-hash-check",
+    "changes": [
+      {
+        "path": "src/lib/sign-out.ts",
+        "beforeSha256": "a25761b573f68d12bd62a3c303016a1bccd6879a1188e51ab012abd3aca1b9aa",
+        "afterSha256": "9755828776420cc7019acb5db9efbfc8b12918b76936e2bae9b76ff93439e505"
+      }
+    ],
+    "newBrowserCapture": false,
+    "originalImageCountChecked": 36,
+    "originalCaptureAndReviewTimesPreserved": true,
+    "reason": "The shared sign-out helper now records exact-session logout intent only after device revocation, then clears or completes it with the real auth result. No captured page layout, copy, style or field changed. The synthetic sign-out failure fixture still rejects account changes and keeps the same error/retry screen. These historical images remain static visual evidence, not proof of the repaired real sign-out transition.",
+    "behaviorVerification": "docs/user-guide/investor-source-compatibility.json#additionalBehaviorReview.actualPostFixBrowser"
   }
 }
