@@ -1,3 +1,31 @@
+## Branch consolidation — 14 October 2026
+
+The owner requested one main branch and integration of open PRs. PR #56 was
+blocked by the old admin password-recovery browser expectation. Its approved
+phone-only contract redirects both retired recovery routes to `/admin/login`.
+The browser regression now verifies both redirects, absence of email/password
+inputs, and retained noindex metadata. All nine focused account/email-route
+browser tests pass. Required full and hosted checks must pass before merge.
+
+The primary checkout's unfinished prototype and SMS files were reviewed against
+current main and PR #56. The SMS delta is superseded by the newer guarded PR
+implementation; the older admin setup lacks the PR's session-change/unmount
+protection. The prototype route depends on the excluded public
+`demoWorkspace.prototype` function, while current main retains only the guarded
+preview. Later product interview decisions supersede the old interview state.
+Old screenshots and generated guide artifacts do not prove the current UI.
+Do not merge this stale checkout over the release.
+
+All pre-cleanup refs and unfinished tracked/untracked files are preserved in
+`.git/luma-cleanup-20261014/` with a verified Git bundle and checksums. This is
+local recovery material, not a deployment artifact. Old branch names may be
+removed without claiming their unique commits were merged.
+
+Guide impact: this consolidation changes tests and repository state only; no
+screen or workflow changes beyond the existing PR. No guide rebuild is needed
+for this regression correction. PR #56's previously deferred guide work remains
+deferred; historical captures are not current-release proof.
+
 # Agent handoff — updated 12 October 2026
 
 ## Impeccable platform UI release — 12 October 2026
