@@ -2,8 +2,10 @@
 
 Owner authorization now includes finishing backend work, tests, commit, push and
 production deployment. UI redesign and new organization/task screens remain on
-hold. Native work is still on hold; only earlier approved Turnstile native policy
-edits are preserved, without packaging or releasing binaries.
+hold. Native work is still on hold. Earlier approved Turnstile native policy
+edits are preserved. The owner also approved only the Expo 57.0.30 patch and
+required dependency updates after hosted compatibility checks requested it.
+No native binaries are released.
 
 New-site requests now use separate application IDs, canonical validation and
 platform approval. Personal onboarding keeps its original no-argument reader.
@@ -30,8 +32,11 @@ type checks, lint (31 existing warnings, no errors), and 73 native policy tests
 plus their type checks. Formatting and diff checks passed. Both isolated
 Turnstile browser tests passed. The production build passed with optional Convex/Turnstile settings empty.
 Its first attempt ran out of local disk space; deleting only this checkout's
-generated `.next` tree and rebuilding succeeded. Standard browser suite, remote
-CI and deployment results remain the next release gates.
+generated `.next` tree and rebuilding succeeded. All 753 standard local browser tests passed. Core commit `62c327c` passed the
+five required hosted web checks and produced a ready Vercel preview. Its native
+compatibility check required Expo 57.0.30; the approved patch now passes local
+compatibility and all 73 native policy tests/types. Remote checks for the patch
+and production deployment remain release gates.
 
 The first full unit run passed 2,393 tests and exposed a team-review capture hash
 change from a duplicated notification catalog key. Task notices now reuse the

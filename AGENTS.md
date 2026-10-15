@@ -28,6 +28,9 @@ pass during backend implementation. Mobile browser usability
 is in scope; native app work is not. Do not change, package, release or deploy
 `apps/mobile` or `apps/desktop` until the owner explicitly resumes that work.
 Preserve existing native changes; this hold does not authorize discarding them.
+On 15 October 2026, the owner approved only the Expo 57.0.29 → 57.0.30 patch
+and its required dependency updates to pass compatibility checks. Test that
+patch, but do not use this exception to add native features or release binaries.
 Shared web/backend changes may later appear in hosted native screens, but do not
 claim native acceptance without a separate test after the hold is lifted.
 
