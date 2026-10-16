@@ -27,7 +27,12 @@ desktop widths. Current local captures are in `captures/2026-10-16-recycling`.
 The clean webpack production build passed all 3,119 pages. The additive backend
 is deployed to verified production `outstanding-buzzard-942.eu-west-1.convex.cloud`
 with no index removals. Production function metadata confirms the new photo API.
-No SMS/provider acceptance is claimed. Development sync and commit/push follow. Earlier screenshots and
+No SMS/provider acceptance is claimed. The matching development deployment
+`glorious-rooster-470` also passed. Source checkpoint `28111d0` contains the
+verified implementation; this documentation update does not change runtime code.
+Read current GitHub state for the final merge result. Recovery history and the
+pre-release working tree are saved under
+`/tmp/luma-20261016-release-recovery/`. Only `main` is to remain after cleanup. Earlier screenshots and
 2,435-test combined-run results below do not certify this latest revision. No SMS
 has been sent. Convex reports that the team is above Free-plan limits. This is an account
 usage warning; no service purchase or upgrade was performed.
