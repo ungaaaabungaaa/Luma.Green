@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
 import pellets from "../../../../public/images/showcase/recycle-chain-illustration.webp";
+import { actionName } from "../action-name";
 import { Container } from "../container";
 
 /** Business trade claims stay bounded by recorded dispatch and payment status. */
@@ -57,7 +58,7 @@ export async function BusinessTrade() {
           <Button asChild size="lg">
             <Link
               href="/join/manufacturer"
-              aria-label={roles("manufacturer.cta")}
+              aria-label={actionName(join("start"), roles("manufacturer.cta"))}
             >
               {join("start")}
               <ArrowRightIcon aria-hidden className="rtl:rotate-180" />

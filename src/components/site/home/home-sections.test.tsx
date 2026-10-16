@@ -124,7 +124,7 @@ describe("home page", () => {
     expect(screen.getAllByRole("listitem")).toHaveLength(3);
     expect(screen.getByText(messages.howItWorks.trade.body)).toBeVisible();
     const action = screen.getByRole("link", {
-      name: messages.home.roles.manufacturer.cta,
+      name: `${messages.join.start}: ${messages.home.roles.manufacturer.cta}`,
     });
     expect(action).toHaveTextContent(messages.join.start);
     expect(action).toHaveAttribute("href", "/join/manufacturer");
