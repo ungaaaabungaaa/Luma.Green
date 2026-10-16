@@ -142,7 +142,7 @@ for (const { locale, copy } of [
             expect(action).not.toBeNull();
             if (!action) throw new Error("Collection action must render");
             const prices = await hero
-              .locator('a[href$="/prices"]')
+              .locator('a[data-slot="button"][href$="/prices"]')
               .boundingBox();
             expect(prices).not.toBeNull();
             if (!prices) throw new Error("Price action must render");
