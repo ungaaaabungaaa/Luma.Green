@@ -32,6 +32,7 @@ export default async function PricesPage() {
   const t = await getTranslations("prices");
   const help = await getTranslations("help");
   const sell = await getTranslations("sell");
+  const nav = await getTranslations("nav");
 
   return (
     <>
@@ -70,7 +71,7 @@ export default async function PricesPage() {
           </div>
           <Button asChild size="lg" className="h-12 px-5 text-base">
             <Link href="/sell">
-              {t("sellCta.action")}
+              {nav("sellScrap")}
               <ArrowRightIcon aria-hidden className="rtl:rotate-180" />
             </Link>
           </Button>

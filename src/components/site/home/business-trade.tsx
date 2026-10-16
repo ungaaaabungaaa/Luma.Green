@@ -10,17 +10,18 @@ import { Container } from "../container";
 
 /** Business trade claims stay bounded by recorded dispatch and payment status. */
 export async function BusinessTrade() {
-  const [roles, trade] = await Promise.all([
+  const [roles, trade, join] = await Promise.all([
     getTranslations("home.roles"),
     getTranslations("howItWorks.trade"),
+    getTranslations("join"),
   ]);
   return (
     <section
       aria-labelledby="business-trade-heading"
       className="py-12 sm:py-16 lg:py-24"
     >
-      <Container className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
-        <div className="relative aspect-[3/2] overflow-hidden bg-muted">
+      <Container className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
+        <div className="relative aspect-[3/2] min-w-0 overflow-hidden bg-muted">
           <Image
             src={pellets}
             alt=""
@@ -29,10 +30,10 @@ export async function BusinessTrade() {
             className="object-cover"
           />
         </div>
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6 [overflow-wrap:anywhere]">
           <h2
             id="business-trade-heading"
-            className="font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl"
+            className="font-display text-2xl leading-tight font-semibold tracking-tight sm:text-4xl"
           >
             {roles("manufacturer.one")}
           </h2>
@@ -46,7 +47,7 @@ export async function BusinessTrade() {
                   aria-hidden
                   className="mt-0.5 size-5 shrink-0 text-primary"
                 />
-                <span>{trade(point)}</span>
+                <span className="min-w-0">{trade(point)}</span>
               </li>
             ))}
           </ul>
@@ -54,8 +55,11 @@ export async function BusinessTrade() {
             {trade("body")}
           </p>
           <Button asChild size="lg">
-            <Link href="/join/manufacturer">
-              {roles("manufacturer.cta")}
+            <Link
+              href="/join/manufacturer"
+              aria-label={roles("manufacturer.cta")}
+            >
+              {join("start")}
               <ArrowRightIcon aria-hidden className="rtl:rotate-180" />
             </Link>
           </Button>
